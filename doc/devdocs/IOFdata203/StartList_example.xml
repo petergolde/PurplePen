@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE StartList SYSTEM "IOFdata.dtd">
+<StartList>
+   <IOFVersion version="2.0.3" />
+
+   <EventId type="int" idManager="IOF">WC1</EventId>
+
+   <ClassStart>
+      <ClassShortName>Men</ClassShortName>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Plattner</Family>
+
+               <Given sequence="1">Christoph</Given>
+            </PersonName>
+
+            <PersonId>101</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>101</BibNumber>
+
+            <StartTime>
+               <Clock>09:00:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Ivarsson</Family>
+
+               <Given sequence="1">Johan</Given>
+            </PersonName>
+
+            <PersonId>102</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>102</BibNumber>
+
+            <StartTime>
+               <Clock>09:00:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Modig</Family>
+
+               <Given sequence="1">Johan</Given>
+            </PersonName>
+
+            <PersonId>103</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>103</BibNumber>
+
+            <StartTime>
+               <Clock>09:01:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Cederberg</Family>
+
+               <Given sequence="1">Kenneth</Given>
+            </PersonName>
+
+            <PersonId>104</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>104</BibNumber>
+
+            <StartTime>
+               <Clock>09:01:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Andersson</Family>
+
+               <Given sequence="1">Tobias</Given>
+            </PersonName>
+
+            <PersonId>105</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>105</BibNumber>
+
+            <StartTime>
+               <Clock>09:02:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Stevenson</Family>
+
+               <Given sequence="1">Jamie</Given>
+            </PersonName>
+
+            <PersonId>106</PersonId>
+         </Person>
+
+         <CountryId value="GBR" />
+
+         <Start>
+            <BibNumber>106</BibNumber>
+
+            <StartTime>
+               <Clock>09:02:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Axelssom</Family>
+
+               <Given sequence="1">Erik</Given>
+            </PersonName>
+
+            <PersonId>107</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>107</BibNumber>
+
+            <StartTime>
+               <Clock>09:03:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Hjerrild</Family>
+
+               <Given sequence="1">Thomas</Given>
+            </PersonName>
+
+            <PersonId>108</PersonId>
+         </Person>
+
+         <CountryId value="DEN" />
+
+         <Start>
+            <BibNumber>108</BibNumber>
+
+            <StartTime>
+               <Clock>09:03:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Toelkkoe</Family>
+
+               <Given sequence="1">Tommi</Given>
+            </PersonName>
+
+            <PersonId>109</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>109</BibNumber>
+
+            <StartTime>
+               <Clock>09:04:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Mogensen</Family>
+
+               <Given sequence="1">Allan</Given>
+            </PersonName>
+
+            <PersonId>110</PersonId>
+         </Person>
+
+         <CountryId value="DEN" />
+
+         <Start>
+            <BibNumber>110</BibNumber>
+
+            <StartTime>
+               <Clock>09:04:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Bührer</Family>
+
+               <Given sequence="1">Thomas</Given>
+            </PersonName>
+
+            <PersonId>111</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>111</BibNumber>
+
+            <StartTime>
+               <Clock>09:05:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Kahelin</Family>
+
+               <Given sequence="1">Jouni</Given>
+            </PersonName>
+
+            <PersonId>112</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>112</BibNumber>
+
+            <StartTime>
+               <Clock>09:05:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Eriksson</Family>
+
+               <Given sequence="1">Håkan</Given>
+            </PersonName>
+
+            <PersonId>113</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>113</BibNumber>
+
+            <StartTime>
+               <Clock>09:06:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Kristiansen</Family>
+
+               <Given sequence="1">Øystein</Given>
+            </PersonName>
+
+            <PersonId>114</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>114</BibNumber>
+
+            <StartTime>
+               <Clock>09:06:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Laitinen</Family>
+
+               <Given sequence="1">Petteri</Given>
+            </PersonName>
+
+            <PersonId>115</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>115</BibNumber>
+
+            <StartTime>
+               <Clock>09:07:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Lakanen</Family>
+
+               <Given sequence="1">Jani</Given>
+            </PersonName>
+
+            <PersonId>116</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>116</BibNumber>
+
+            <StartTime>
+               <Clock>09:07:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Haldin</Family>
+
+               <Given sequence="1">Mats</Given>
+            </PersonName>
+
+            <PersonId>117</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>117</BibNumber>
+
+            <StartTime>
+               <Clock>09:08:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Salmi</Family>
+
+               <Given sequence="1">Janne</Given>
+            </PersonName>
+
+            <PersonId>118</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>118</BibNumber>
+
+            <StartTime>
+               <Clock>09:08:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Pilblad</Family>
+
+               <Given sequence="1">Jonas</Given>
+            </PersonName>
+
+            <PersonId>119</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>119</BibNumber>
+
+            <StartTime>
+               <Clock>09:09:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Valstad</Family>
+
+               <Given sequence="1">Bjørnar</Given>
+            </PersonName>
+
+            <PersonId>120</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>120</BibNumber>
+
+            <StartTime>
+               <Clock>09:09:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Hale</Family>
+
+               <Given sequence="1">Steven</Given>
+            </PersonName>
+
+            <PersonId>121</PersonId>
+         </Person>
+
+         <CountryId value="GBR" />
+
+         <Start>
+            <BibNumber>121</BibNumber>
+
+            <StartTime>
+               <Clock>09:10:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Mamleev</Family>
+
+               <Given sequence="1">Michael</Given>
+            </PersonName>
+
+            <PersonId>122</PersonId>
+         </Person>
+
+         <CountryId value="RUS" />
+
+         <Start>
+            <BibNumber>122</BibNumber>
+
+            <StartTime>
+               <Clock>09:10:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Wingstedt</Family>
+
+               <Given sequence="1">Emil</Given>
+            </PersonName>
+
+            <PersonId>123</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>123</BibNumber>
+
+            <StartTime>
+               <Clock>09:11:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Jonasson</Family>
+
+               <Given sequence="1">Niklas</Given>
+            </PersonName>
+
+            <PersonId>124</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>124</BibNumber>
+
+            <StartTime>
+               <Clock>09:11:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Sandvik</Family>
+
+               <Given sequence="1">Tore</Given>
+            </PersonName>
+
+            <PersonId>125</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>125</BibNumber>
+
+            <StartTime>
+               <Clock>09:12:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Troeng</Family>
+
+               <Given sequence="1">Mats</Given>
+            </PersonName>
+
+            <PersonId>126</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>126</BibNumber>
+
+            <StartTime>
+               <Clock>09:12:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Huovila</Family>
+
+               <Given sequence="1">Jarkko</Given>
+            </PersonName>
+
+            <PersonId>127</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>127</BibNumber>
+
+            <StartTime>
+               <Clock>09:13:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Asp</Family>
+
+               <Given sequence="1">Thomas</Given>
+            </PersonName>
+
+            <PersonId>128</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>128</BibNumber>
+
+            <StartTime>
+               <Clock>09:13:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Karlsson</Family>
+
+               <Given sequence="1">Klas</Given>
+            </PersonName>
+
+            <PersonId>129</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>129</BibNumber>
+
+            <StartTime>
+               <Clock>09:14:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Karppinen</Family>
+
+               <Given sequence="1">Timo</Given>
+            </PersonName>
+
+            <PersonId>130</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>130</BibNumber>
+
+            <StartTime>
+               <Clock>09:14:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Martomaa</Family>
+
+               <Given sequence="1">Simo</Given>
+            </PersonName>
+
+            <PersonId>131</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>131</BibNumber>
+
+            <StartTime>
+               <Clock>09:15:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Jörgensen</Family>
+
+               <Given sequence="1">Carsten</Given>
+            </PersonName>
+
+            <PersonId>132</PersonId>
+         </Person>
+
+         <CountryId value="DEN" />
+
+         <Start>
+            <BibNumber>132</BibNumber>
+
+            <StartTime>
+               <Clock>09:15:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Näsman</Family>
+
+               <Given sequence="1">Johan</Given>
+            </PersonName>
+
+            <PersonId>133</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>133</BibNumber>
+
+            <StartTime>
+               <Clock>09:16:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Rostrup</Family>
+
+               <Given sequence="1">Jørgen</Given>
+            </PersonName>
+
+            <PersonId>134</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>134</BibNumber>
+
+            <StartTime>
+               <Clock>09:16:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Johansen</Family>
+
+               <Given sequence="1">Holger</Given>
+
+               <Given sequence="2">Hott</Given>
+            </PersonName>
+
+            <PersonId>135</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>135</BibNumber>
+
+            <StartTime>
+               <Clock>09:17:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Muukkonen</Family>
+
+               <Given sequence="1">Petteri</Given>
+            </PersonName>
+
+            <PersonId>136</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>136</BibNumber>
+
+            <StartTime>
+               <Clock>09:17:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Davidik</Family>
+
+               <Given sequence="1">Marian</Given>
+            </PersonName>
+
+            <PersonId>137</PersonId>
+         </Person>
+
+         <CountryId value="SVK" />
+
+         <Start>
+            <BibNumber>137</BibNumber>
+
+            <StartTime>
+               <Clock>09:18:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Novikov</Family>
+
+               <Given sequence="1">Valentin</Given>
+            </PersonName>
+
+            <PersonId>138</PersonId>
+         </Person>
+
+         <CountryId value="RUS" />
+
+         <Start>
+            <BibNumber>138</BibNumber>
+
+            <StartTime>
+               <Clock>09:18:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Löwegren</Family>
+
+               <Given sequence="1">Fredrik</Given>
+            </PersonName>
+
+            <PersonId>139</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>139</BibNumber>
+
+            <StartTime>
+               <Clock>09:19:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="M">
+            <PersonName>
+               <Family>Bjørnsgaard</Family>
+
+               <Given sequence="1">Bernt</Given>
+            </PersonName>
+
+            <PersonId>140</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>140</BibNumber>
+
+            <StartTime>
+               <Clock>09:19:00</Clock>
+            </StartTime>
+
+            <CourseLength>9600</CourseLength>
+         </Start>
+      </PersonStart>
+   </ClassStart>
+
+   <ClassStart>
+      <ClassShortName>Women</ClassShortName>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Staff</Family>
+
+               <Given sequence="1">Hanne</Given>
+            </PersonName>
+
+            <PersonId>201</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>201</BibNumber>
+
+            <StartTime>
+               <Clock>09:20:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Haapakoski</Family>
+
+               <Given sequence="1">Paula</Given>
+            </PersonName>
+
+            <PersonId>202</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>202</BibNumber>
+
+            <StartTime>
+               <Clock>09:20:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Granstedt</Family>
+
+               <Given sequence="1">Anette</Given>
+            </PersonName>
+
+            <PersonId>203</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>203</BibNumber>
+
+            <StartTime>
+               <Clock>09:21:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Luder</Family>
+
+               <Given sequence="1">Simone</Given>
+            </PersonName>
+
+            <PersonId>204</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>204</BibNumber>
+
+            <StartTime>
+               <Clock>09:21:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Widler</Family>
+
+               <Given sequence="1">Käthi</Given>
+            </PersonName>
+
+            <PersonId>205</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>205</BibNumber>
+
+            <StartTime>
+               <Clock>09:22:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Arewang</Family>
+
+               <Given sequence="1">Karolina</Given>
+            </PersonName>
+
+            <PersonId>206</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>206</BibNumber>
+
+            <StartTime>
+               <Clock>09:22:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Maekitammi</Family>
+
+               <Given sequence="1">Satu</Given>
+            </PersonName>
+
+            <PersonId>207</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>207</BibNumber>
+
+            <StartTime>
+               <Clock>09:23:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Sieber</Family>
+
+               <Given sequence="1">Annemarie</Given>
+            </PersonName>
+
+            <PersonId>208</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>208</BibNumber>
+
+            <StartTime>
+               <Clock>09:23:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Koenig-Salmi</Family>
+
+               <Given sequence="1">Vroni</Given>
+            </PersonName>
+
+            <PersonId>209</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>209</BibNumber>
+
+            <StartTime>
+               <Clock>09:24:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Hoffman</Family>
+
+               <Given sequence="1">Maria</Given>
+            </PersonName>
+
+            <PersonId>210</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>210</BibNumber>
+
+            <StartTime>
+               <Clock>09:24:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Engstrand</Family>
+
+               <Given sequence="1">Emma</Given>
+            </PersonName>
+
+            <PersonId>211</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>211</BibNumber>
+
+            <StartTime>
+               <Clock>09:25:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Ingvaldsen</Family>
+
+               <Given sequence="1">Elisabeth</Given>
+            </PersonName>
+
+            <PersonId>212</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>212</BibNumber>
+
+            <StartTime>
+               <Clock>09:25:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Böhm</Family>
+
+               <Given sequence="1">Lucie</Given>
+            </PersonName>
+
+            <PersonId>213</PersonId>
+         </Person>
+
+         <CountryId value="AUT" />
+
+         <Start>
+            <BibNumber>213</BibNumber>
+
+            <StartTime>
+               <Clock>09:26:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Johansson</Family>
+
+               <Given sequence="1">Jenny</Given>
+            </PersonName>
+
+            <PersonId>214</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>214</BibNumber>
+
+            <StartTime>
+               <Clock>09:26:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Schmitt-Gran</Family>
+
+               <Given sequence="1">Frauke</Given>
+            </PersonName>
+
+            <PersonId>215</PersonId>
+         </Person>
+
+         <CountryId value="GER" />
+
+         <Start>
+            <BibNumber>215</BibNumber>
+
+            <StartTime>
+               <Clock>09:27:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Schmalfeld</Family>
+
+               <Given sequence="1">Karin</Given>
+            </PersonName>
+
+            <PersonId>216</PersonId>
+         </Person>
+
+         <CountryId value="GER" />
+
+         <Start>
+            <BibNumber>216</BibNumber>
+
+            <StartTime>
+               <Clock>09:27:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Meister</Family>
+
+               <Given sequence="1">Sabrina</Given>
+            </PersonName>
+
+            <PersonId>217</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>217</BibNumber>
+
+            <StartTime>
+               <Clock>09:28:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Baker</Family>
+
+               <Given sequence="1">Yvette</Given>
+            </PersonName>
+
+            <PersonId>218</PersonId>
+         </Person>
+
+         <CountryId value="GBR" />
+
+         <Start>
+            <BibNumber>218</BibNumber>
+
+            <StartTime>
+               <Clock>09:28:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Asklöf</Family>
+
+               <Given sequence="1">Johanna</Given>
+            </PersonName>
+
+            <PersonId>219</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>219</BibNumber>
+
+            <StartTime>
+               <Clock>09:29:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Allberg</Family>
+
+               <Given sequence="1">Katarina</Given>
+            </PersonName>
+
+            <PersonId>220</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>220</BibNumber>
+
+            <StartTime>
+               <Clock>09:29:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Nilsson</Family>
+
+               <Given sequence="1">Cecilia</Given>
+            </PersonName>
+
+            <PersonId>221</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>221</BibNumber>
+
+            <StartTime>
+               <Clock>09:30:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Wolf</Family>
+
+               <Given sequence="1">Brigitte</Given>
+            </PersonName>
+
+            <PersonId>222</PersonId>
+         </Person>
+
+         <CountryId value="SUI" />
+
+         <Start>
+            <BibNumber>222</BibNumber>
+
+            <StartTime>
+               <Clock>09:30:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Kolkkala</Family>
+
+               <Given sequence="1">Reeta</Given>
+            </PersonName>
+
+            <PersonId>223</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>223</BibNumber>
+
+            <StartTime>
+               <Clock>09:31:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Hellman</Family>
+
+               <Given sequence="1">Karin</Given>
+            </PersonName>
+
+            <PersonId>224</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>224</BibNumber>
+
+            <StartTime>
+               <Clock>09:31:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Gunell</Family>
+
+               <Given sequence="1">Yvonne</Given>
+            </PersonName>
+
+            <PersonId>225</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>225</BibNumber>
+
+            <StartTime>
+               <Clock>09:32:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Sandström</Family>
+
+               <Given sequence="1">Maria</Given>
+            </PersonName>
+
+            <PersonId>226</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>226</BibNumber>
+
+            <StartTime>
+               <Clock>09:32:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Jansson</Family>
+
+               <Given sequence="1">Marlena</Given>
+            </PersonName>
+
+            <PersonId>227</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>227</BibNumber>
+
+            <StartTime>
+               <Clock>09:33:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Jurenikova</Family>
+
+               <Given sequence="1">Eva</Given>
+            </PersonName>
+
+            <PersonId>228</PersonId>
+         </Person>
+
+         <CountryId value="other" />
+
+         <Start>
+            <BibNumber>228</BibNumber>
+
+            <StartTime>
+               <Clock>09:33:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Sareila</Family>
+
+               <Given sequence="1">Outi</Given>
+            </PersonName>
+
+            <PersonId>229</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>229</BibNumber>
+
+            <StartTime>
+               <Clock>09:34:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Borgström</Family>
+
+               <Given sequence="1">Jenny</Given>
+            </PersonName>
+
+            <PersonId>230</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>230</BibNumber>
+
+            <StartTime>
+               <Clock>09:34:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Nordrum</Family>
+
+               <Given sequence="1">Karina</Given>
+            </PersonName>
+
+            <PersonId>231</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>231</BibNumber>
+
+            <StartTime>
+               <Clock>09:35:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Paronen</Family>
+
+               <Given sequence="1">Anniina</Given>
+            </PersonName>
+
+            <PersonId>232</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>232</BibNumber>
+
+            <StartTime>
+               <Clock>09:35:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Garin</Family>
+
+               <Given sequence="1">Anna</Given>
+            </PersonName>
+
+            <PersonId>233</PersonId>
+         </Person>
+
+         <CountryId value="ESP" />
+
+         <Start>
+            <BibNumber>233</BibNumber>
+
+            <StartTime>
+               <Clock>09:36:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Bostroem</Family>
+
+               <Given sequence="1">Kirsi</Given>
+            </PersonName>
+
+            <PersonId>234</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>234</BibNumber>
+
+            <StartTime>
+               <Clock>09:36:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Husebye</Family>
+
+               <Given sequence="1">Birgitte</Given>
+            </PersonName>
+
+            <PersonId>235</PersonId>
+         </Person>
+
+         <CountryId value="NOR" />
+
+         <Start>
+            <BibNumber>235</BibNumber>
+
+            <StartTime>
+               <Clock>09:37:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Bostroem</Family>
+
+               <Given sequence="1">Monica</Given>
+            </PersonName>
+
+            <PersonId>236</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>236</BibNumber>
+
+            <StartTime>
+               <Clock>09:37:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Anttila</Family>
+
+               <Given sequence="1">Liisa</Given>
+            </PersonName>
+
+            <PersonId>237</PersonId>
+         </Person>
+
+         <CountryId value="FIN" />
+
+         <Start>
+            <BibNumber>237</BibNumber>
+
+            <StartTime>
+               <Clock>09:38:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Hausner</Family>
+
+               <Given sequence="1">Helene</Given>
+            </PersonName>
+
+            <PersonId>238</PersonId>
+         </Person>
+
+         <CountryId value="DEN" />
+
+         <Start>
+            <BibNumber>238</BibNumber>
+
+            <StartTime>
+               <Clock>09:38:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Oláh</Family>
+
+               <Given sequence="1">Katalin</Given>
+            </PersonName>
+
+            <PersonId>239</PersonId>
+         </Person>
+
+         <CountryId value="HUN" />
+
+         <Start>
+            <BibNumber>239</BibNumber>
+
+            <StartTime>
+               <Clock>09:39:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+
+      <PersonStart>
+         <Person sex="F">
+            <PersonName>
+               <Family>Svärd</Family>
+
+               <Given sequence="1">Gunilla</Given>
+            </PersonName>
+
+            <PersonId>240</PersonId>
+         </Person>
+
+         <CountryId value="SWE" />
+
+         <Start>
+            <BibNumber>240</BibNumber>
+
+            <StartTime>
+               <Clock>09:39:00</Clock>
+            </StartTime>
+
+            <CourseLength>5600</CourseLength>
+         </Start>
+      </PersonStart>
+   </ClassStart>
+</StartList>
+

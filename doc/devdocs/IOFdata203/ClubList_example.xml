@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ClubList SYSTEM "IOFdata.dtd">
+<ClubList>
+   <IOFVersion version="2.0.3" />
+
+   <Club>
+      <ClubId>3390</ClubId>
+
+      <Name>Orienteringsklubben Pan, Århus</Name>
+
+      <ShortName>OK Pan</ShortName>
+
+      <CountryId value="DEN" />
+
+      <Address street="Silistria, Ørneredevej" city="Højbjerg" zipCode="8270">
+         <AddressType value="official" />
+      </Address>
+
+      <Tele phoneNumber="+45 86256718">
+      </Tele>
+
+      <WebURL>http://www.orientering.dk/okpan/</WebURL>
+
+      <Account>1199 6000177</Account>
+
+      <Account type="bankAccount">7120 3788190</Account>
+
+      <Contact>
+         <Person>
+            <PersonName>
+               <Family>Ejsing</Family>
+
+               <Given>Sten</Given>
+            </PersonName>
+
+            <PersonId>11710</PersonId>
+
+            <Address street="Elsdyrvej 5" city="Højbjerg" zipCode="8270">
+               <AddressType value="home" />
+            </Address>
+
+            <Tele phoneNumber="+45 26172819" mailAddress="sten.ejsing@mail.dk">
+            </Tele>
+         </Person>
+
+         <ContactType value="official" />
+      </Contact>
+
+      <Contact>
+         <Person>
+            <PersonName>
+               <Family>Fenger-Grøn</Family>
+
+               <Given>Morten</Given>
+            </PersonName>
+
+            <PersonId>11468</PersonId>
+
+            <Tele phoneNumber="+45 2671880" mailAddress="mfg@mi.au.dk">
+            </Tele>
+         </Person>
+
+         <ContactType value="result" />
+      </Contact>
+
+      <Contact>
+         <Person>
+            <PersonName>
+               <Family>Arildsen</Family>
+
+               <Given>Finn</Given>
+            </PersonName>
+
+            <PersonId>11438</PersonId>
+
+            <Tele phoneNumber="+45 8671880" mailAddress="finn@arildsen.com">
+            </Tele>
+         </Person>
+
+         <ContactType value="financial" />
+      </Contact>
+   </Club>
+
+   <Club>
+      <ClubId>1244</ClubId>
+
+      <Name>Orienteringsklubben West</Name>
+
+      <ShortName>OK West</ShortName>
+
+      <CountryId value="DEN" />
+
+      <Address street="Vrøgum Skole, Vrøgum" city="Oksbøl" zipCode="6840">
+         <AddressType value="official" />
+      </Address>
+
+      <Tele phoneNumber="+45 75279298">
+      </Tele>
+
+      <Account>1199 6000277</Account>
+
+      <Contact>
+         <Person>
+            <PersonName>
+               <Family>Trab</Family>
+
+               <Given>Anna</Given>
+            </PersonName>
+
+            <PersonId>1380</PersonId>
+
+            <Tele phoneNumber="+45 75212819">
+            </Tele>
+         </Person>
+
+         <ContactType value="official" />
+      </Contact>
+   </Club>
+</ClubList>
+

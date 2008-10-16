@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "master.dwt" -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- #BeginEditable "doctitle" -->
+<title>Download Purple Pen</title>
+<script type="text/javascript">
+<!--
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
+<style type="text/css">
+.style1 {
+	border-style: none;
+	margin-left: 40px;
+}
+.style2 {
+	font-weight: normal;
+	color: black;
+	border-style: none;
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	font-weight: bold;
+	color: black;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom: 1.5pt solid black;
+	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<!-- #EndEditable -->
+<link rel="shortcut icon" href="http://purplepen.golde.org/favicon.ico" type="image/vnd.microsoft.icon"/>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+
+<div id="outer">
+<img alt="Purple Pen" src="title.png" class="logo" />
+<!-- #BeginEditable "body" -->
+<ul id="navlist">
+<li><a href="default.htm">Home</a></li>
+<li><a href="news.htm">News</a></li>
+<li><a href="about.htm">About</a></li>
+<li><a id="current" href="download.htm">Download</a></li>
+<li><a href="support.htm">Support</a></li>
+<li><a href="contribute.htm">Contribute</a></li>
+</ul>
+<div id="maindiv">
+<p>
+<a href="downloads/purplepen-100-beta3.exe">
+<img style="border: 0" id="img1" src="button22.jpg" height="41" width="205" alt="Download Now!" onmouseover="FP_swapImg(0,0,/*id*/'img1',/*url*/'button23.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button22.jpg')" onmousedown="FP_swapImg(0,0,/*id*/'img1',/*url*/'button24.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button23.jpg')" /><!-- MSComment="ibutton" fp-style="fp-btn: Metal Capsule 3; fp-font-size: 14; fp-preload: 0" fp-title="Download Now!" --></a><br />
+</p>
+<p>Click the button above to download the latest released version of Purple Pen. 
+Run it to install Purple Pen on your computer.</p>
+<h2><strong>Requirements</strong>:</h2>
+<p>Purple Pen requires Windows XP SP2 or Windows Vista. On Windows XP, Purple Pen 
+requires the Microsoft .NET Framework 2.0 to run. If you do not have this 
+installed on your machine, the installer will automatically download and install 
+it onto your machine. If you wish to install on a Windows XP machine that is not 
+connected to the internet, you can manually <a href="downloads/dotnetfx.exe">
+download, copy, and install the Microsoft .NET Framework 2.0 from here</a>.</p>
+<p>(Users report that Windows 2000 and Windows Me can also run Purple Pen, if 
+Windows is fully updated; however, this has not been tested, and may not work in future 
+versions.)</p>
+<h2><strong>All Released Versions:</strong></h2>
+<p>The following lists all released versions of Purple Pen. If you need a 
+version other than the most current, you can download it from here.</p>
+<table class="style1">
+	<!-- fpstyle: 2,011111000 -->
+	<tr>
+		<td class="style3">Version</td>
+		<td class="style3">File Name</td>
+	</tr>
+	<tr>
+		<td class="style2">Purple Pen 1.0.0 Beta 3</td>
+		<td class="style2"><a href="downloads/purplepen-100-beta3.exe">
+		purplepen-100-beta3.exe</a></td>
+	</tr>
+	<tr>
+		<td class="style2">Purple Pen 1.0.0 Beta 2</td>
+		<td class="style2"><a href="downloads/purplepen-100-beta2.exe">
+		purplepen-100-beta2.exe</a></td>
+	</tr>
+	<tr>
+		<td class="style2">Purple Pen 1.0.0 Beta 1</td>
+		<td class="style2"><a href="downloads/purplepen-100-beta1.exe">
+		purplepen-100-beta1.exe</a></td>
+	</tr>
+</table>
+<h2><strong>Source Code:</strong></h2>
+<p>The source code for Purple Pen is available from the Subversion Repository on 
+the <a href="http://sourceforge.net/projects/purple-pen">SourceForge development 
+site</a>.</p>
+<h2><strong>License:</strong></h2>
+<p>Purple Pen is released under a
+<a href="http://en.wikipedia.org/wiki/BSD_License">BSD-style license</a>. You 
+may use and distribute Purple Pen for free. <a href="license.htm">See the full 
+license.</a></p>
+</div>
+<!-- #EndEditable -->
+<br/>
+
+</div>
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

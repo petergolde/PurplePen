@@ -1,0 +1,61 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>sampleevent2</title>
+    <map kind="OCAD" scale="15000">..\Lake Sammamish.ocd</map>
+  </event>
+  <control id="1" kind="start">
+    <location x="21.75463" y="13.6407385" />
+  </control>
+  <control id="2" kind="normal">
+    <code>XWS</code>
+    <location x="24.3416672" y="-10.3481522" />
+    <description box="C" iof-2004-ref="0.1N" />
+    <description box="D" iof-2004-ref="1.12" />
+    <description box="F">15x20</description>
+  </control>
+  <control id="3" kind="normal">
+    <code>31</code>
+    <location x="-13.5231495" y="6.34999752" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">16.5</description>
+  </control>
+  <control id="4" kind="normal">
+    <code>W43</code>
+    <location x="-10.2305565" y="31.0444431" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="E" iof-2004-ref="2.4" />
+    <description box="F">145.75|5</description>
+  </control>
+  <control id="5" kind="normal">
+    <code>32</code>
+    <location x="12.3472214" y="28.4574051" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">13.65/4</description>
+  </control>
+  <control id="6" kind="finish">
+    <location x="37.5120354" y="21.6370335" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal">
+    <name>Course the long</name>
+    <secondary-title>This is a long description of this course</secondary-title>
+    <first course-control="1" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+</course-scribe-event>

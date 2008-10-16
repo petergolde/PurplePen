@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE EventList SYSTEM "IOFdata.dtd">
+<EventList>
+   <IOFVersion version="2.0.3" />
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">A1</EventClassificationId>
+
+      <Name>Dansk mesterskab</Name>
+   </EventClassification>
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">A2</EventClassificationId>
+
+      <Name>Internationalt løb</Name>
+   </EventClassification>
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">B</EventClassificationId>
+
+      <Name>B-løb</Name>
+   </EventClassification>
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">C</EventClassificationId>
+
+      <Name>C-løb</Name>
+   </EventClassification>
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">Div</EventClassificationId>
+
+      <Name>Divisionsmatch</Name>
+   </EventClassification>
+
+   <EventClassification>
+      <EventClassificationId type="nat" idManager="DOF">D</EventClassificationId>
+
+      <Name>D-løb</Name>
+   </EventClassification>
+
+   <Event>
+      <EventId type="nat" idManager="DOF">DOF2002101</EventId>
+
+      <Name>Slæbæk</Name>
+
+      <EventClassificationId type="nat" idManager="DOF">Div</EventClassificationId>
+
+      <StartDate>
+         <Date>2002-03-09</Date>
+
+         <Clock clockFormat="HH:MM">13:00</Clock>
+      </StartDate>
+
+      <Organiser>
+         <Club>
+            <ClubId type="nat" idManager="DOF">266</ClubId>
+
+            <ShortName>Svendborg OK</ShortName>
+
+            <CountryId value="DEN" />
+
+            <WebURL>http://www.orientering.dk/svendborg/</WebURL>
+         </Club>
+      </Organiser>
+
+      <EventRace>
+         <EventRaceId>1</EventRaceId>
+
+         <Name>
+         </Name>
+
+         <RaceDate>
+            <Date>2002-03-09</Date>
+
+            <Clock clockFormat="HH:MM">13:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <WebURL>http://www.orientering.dk/svendborg/Index5.htm</WebURL>
+
+      <EntryData>
+         <Address street="Nyborgvej 86" city="Svendborg" zipCode="5700">
+         </Address>
+
+         <Tele phoneNumber="62 80 01 56" mailAddress="kurt@convide.dk">
+         </Tele>
+      </EntryData>
+   </Event>
+
+   <Event>
+      <EventId type="nat" idManager="DOF">DOF2002102</EventId>
+
+      <Name>Stagsrode Skov</Name>
+
+      <EventClassificationId type="nat" idManager="DOF">Div</EventClassificationId>
+
+      <StartDate>
+         <Date>2002-03-10</Date>
+
+         <Clock clockFormat="HH:MM">10:00</Clock>
+      </StartDate>
+
+      <Organiser>
+         <Club>
+            <ClubId type="nat" idManager="DOF">234</ClubId>
+
+            <ShortName>Horsens OK</ShortName>
+
+            <CountryId value="DEN" />
+
+            <WebURL>http://www.horsensok.dk//</WebURL>
+         </Club>
+      </Organiser>
+
+      <EventRace>
+         <EventRaceId>1</EventRaceId>
+
+         <Name>
+         </Name>
+
+         <RaceDate>
+            <Date>2002-03-10</Date>
+
+            <Clock clockFormat="HH:MM">10:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <WebURL>http://www.horsensok.dk/lob/stagsrode.php</WebURL>
+
+      <EntryData>
+         <Address street="Hørvangen" city="Vejle Ø" zipCode="7120">
+         </Address>
+
+         <Tele mailAddress="tilmelding@horsensok.dk">
+         </Tele>
+      </EntryData>
+   </Event>
+
+   <Event>
+      <EventId type="nat" idManager="DOF">DOF2002050</EventId>
+
+      <Name>Spring Cup</Name>
+
+      <EventClassificationId type="nat" idManager="DOF">A2</EventClassificationId>
+
+      <StartDate>
+         <Date>2002-03-22</Date>
+      </StartDate>
+
+      <FinishDate>
+         <Date>2002-03-24</Date>
+      </FinishDate>
+
+      <Organiser>
+         <Club>
+            <ClubId type="nat" idManager="DOF">201</ClubId>
+
+            <ShortName>OK Øst</ShortName>
+
+            <CountryId value="DEN" />
+
+            <WebURL>http://www.orientering.dk/ok-oest/</WebURL>
+         </Club>
+
+         <Club>
+            <ClubId type="nat" idManager="DOF">202</ClubId>
+
+            <ShortName>FIF Hillerød</ShortName>
+
+            <CountryId value="DEN" />
+
+            <WebURL>http://hjem.get2net.dk/fif/</WebURL>
+         </Club>
+      </Organiser>
+
+      <EventRace>
+         <EventRaceId>1</EventRaceId>
+
+         <Name>Natsprint</Name>
+
+         <RaceDate>
+            <Date>2002-03-22</Date>
+
+            <Clock clockFormat="HH:MM">20:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <EventRace>
+         <EventRaceId>2</EventRaceId>
+
+         <Name>Klassisk</Name>
+
+         <RaceDate>
+            <Date>2002-03-23</Date>
+
+            <Clock clockFormat="HH:MM">10:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <EventRace>
+         <EventRaceId>3</EventRaceId>
+
+         <Name>Wormsdorfstafetten</Name>
+
+         <RaceDate>
+            <Date>2002-03-24</Date>
+
+            <Clock clockFormat="HH:MM">09:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <WebURL>http://www.springcup.dk/</WebURL>
+
+      <EntryData>
+         <Address street="Søvang 4" city="Birkerød" zipCode="DK-3460">
+            <CountryId value="DEN" />
+         </Address>
+
+         <Tele mailAddress="info@springcup.dk">
+         </Tele>
+      </EntryData>
+
+      <Account type="postalGiro">Denmark: 1199 586 5042</Account>
+
+      <Account type="bankAccount">Sweden: 6483 329 898 248</Account>
+
+      <Account type="bankAccount">Other countries: 3543 4835077802 (SWIFT: DABADKKK)</Account>
+   </Event>
+
+   <Event>
+      <EventId type="nat" idManager="DOF">DOF2002101</EventId>
+
+      <Name>Slæbæk</Name>
+
+      <EventClassificationId type="nat" idManager="DOF">Div</EventClassificationId>
+
+      <StartDate>
+         <Date>2002-03-09</Date>
+
+         <Clock clockFormat="HH:MM">13:00</Clock>
+      </StartDate>
+
+      <Organiser>
+         <Club>
+            <ClubId type="nat" idManager="DOF">266</ClubId>
+
+            <ShortName>Svendborg OK</ShortName>
+
+            <CountryId value="DEN" />
+
+            <WebURL>http://www.orientering.dk/svendborg/</WebURL>
+         </Club>
+      </Organiser>
+
+      <EventRace>
+         <EventRaceId>1</EventRaceId>
+
+         <Name>
+         </Name>
+
+         <RaceDate>
+            <Date>2002-03-09</Date>
+
+            <Clock clockFormat="HH:MM">13:00</Clock>
+         </RaceDate>
+      </EventRace>
+
+      <WebURL>http://www.orientering.dk/svendborg/Index5.htm</WebURL>
+
+      <EntryData>
+         <Address street="Nyborgvej 86" city="Svendborg" zipCode="5700">
+         </Address>
+
+         <Tele phoneNumber="62 80 01 56" mailAddress="kurt@convide.dk">
+         </Tele>
+      </EntryData>
+   </Event>
+</EventList>
+

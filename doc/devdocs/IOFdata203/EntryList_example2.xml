@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE EntryList SYSTEM "IOFdata.dtd">
+<EntryList>
+   <IOFVersion version="2.0.3" />
+
+   <ClubEntry>
+      <Club>
+         <ClubId>3390</ClubId>
+
+         <Name>OK Pan, Århus</Name>
+
+         <ShortName>OK Pan</ShortName>
+
+         <CountryId value="DEN" />
+
+         <Contact>
+            <Person>
+               <PersonName>
+                  <Family>Ejsing</Family>
+
+                  <Given>Sten</Given>
+               </PersonName>
+
+               <PersonId>11710</PersonId>
+
+               <Address street="Elsdyrvej 5" city="Højbjerg" zipCode="8270">
+               </Address>
+
+               <Tele phoneNumber="+45 26172819" mailAddress="sten.ejsing@mail.dk">
+               </Tele>
+            </Person>
+
+            <ContactType value="entry" />
+         </Contact>
+      </Club>
+
+      <Entry>
+         <TeamName>OK Pan 1</TeamName>
+
+         <Person>
+            <PersonName>
+               <Family>Fenger-Grøn</Family>
+
+               <Given>Morten</Given>
+            </PersonName>
+
+            <PersonId>11468</PersonId>
+         </Person>
+
+         <CCard>
+            <CCardId>287130</CCardId>
+
+            <PunchingUnitType value="SI" />
+         </CCard>
+
+         <CCard>
+            <CCardId>18547</CCardId>
+
+            <PunchingUnitType value="Emit" />
+         </CCard>
+
+         <TeamSequence>1</TeamSequence>
+
+         <Person>
+            <PersonName>
+               <Family>Sønnichsen</Family>
+
+               <Given>Kell</Given>
+            </PersonName>
+
+            <PersonId>11463</PersonId>
+         </Person>
+
+         <CCard>
+            <CCardId>287133</CCardId>
+
+            <PunchingUnitType value="SI" />
+         </CCard>
+
+         <TeamSequence>2</TeamSequence>
+
+         <Person>
+            <PersonName>
+               <Family>Sørensen</Family>
+
+               <Given sequence="1">Michael</Given>
+
+               <Given sequence="2">K.</Given>
+            </PersonName>
+
+            <PersonId>11268</PersonId>
+         </Person>
+
+         <CCard>
+            <CCardId>287230</CCardId>
+
+            <PunchingUnitType value="SI" />
+         </CCard>
+
+         <TeamSequence>3</TeamSequence>
+
+         <EntryClass>
+            <ClassShortName>Öppen Herr</ClassShortName>
+         </EntryClass>
+
+         <EntryDate>
+            <Date>2002-02-17</Date>
+         </EntryDate>
+      </Entry>
+
+      <Entry>
+         <Person>
+            <PersonName>
+               <Family>Arildsen</Family>
+
+               <Given>Finn</Given>
+            </PersonName>
+
+            <PersonId>11438</PersonId>
+         </Person>
+
+         <CCard>
+            <CCardId>287110</CCardId>
+
+            <PunchingUnitType value="SI" />
+         </CCard>
+
+         <EntryClass sequence="1">
+            <ClassShortName>Turist 5km</ClassShortName>
+         </EntryClass>
+
+         <EntryDate>
+            <Date>2002-02-17</Date>
+         </EntryDate>
+      </Entry>
+   </ClubEntry>
+</EntryList>
+

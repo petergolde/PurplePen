@@ -1,0 +1,78 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>SpecialLegs</title>
+    <map kind="none" scale="10000"></map>
+  </event>
+  <control id="1" kind="start">
+    <location x="74.1" y="14.0" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="37.7" y="-22.4" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="8.2" y="7.5" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="25.1" y="40.9" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="67.7" y="47.2" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="96.0" y="17.5" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal">
+    <name>Leggy</name>
+    <first course-control="1" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+
+	<leg id="1" start-control="1" end-control="2">
+		<bends>
+			<location x="68" y="-22" />
+		</bends>
+	</leg>
+
+	<!-- fully flagged leg 2 to 3 -->
+	<leg id="2" start-control="2" end-control="3">
+		<flagging kind="all" />
+	</leg>
+
+	<!-- partilly flagged leg 3 to 4 -->
+	<leg id="3" start-control="3" end-control="4">
+		<flagging kind="beginning-part" x="12" y="20" />
+		<bends>
+			<location x="12" y="20" />
+		</bends>
+	</leg>
+
+	<!-- bends 4 to 5 -->
+	<leg id="4" start-control="4" end-control="5">
+		<bends>
+			<location x="35" y="41" />
+			<location x="50" y="30" />
+		</bends>
+	</leg>
+
+</course-scribe-event>

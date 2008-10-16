@@ -1,0 +1,4 @@
+﻿hiddensymbols.ocd
+hiddensymbols.png
+-16,27,35,-20
+665,830

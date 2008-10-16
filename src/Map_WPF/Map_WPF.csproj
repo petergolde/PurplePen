@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6D375500-20E2-428A-BBCD-73BBE0F5F503}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Map_WPF</RootNamespace>
+    <AssemblyName>Map_WPF</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WPF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PurplePen\Map\Bezier.cs">
+      <Link>Bezier.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\Glyph.cs">
+      <Link>Glyph.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\GraphicsTarget.cs">
+      <Link>GraphicsTarget.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\InputOutput.cs">
+      <Link>InputOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\LZWCompression.cs">
+      <Link>LZWCompression.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\Map.cs">
+      <Link>Map.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\OcadExport.cs">
+      <Link>OcadExport.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\OcadFileFormat.cs">
+      <Link>OcadFileFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\OcadImport.cs">
+      <Link>OcadImport.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\Symbol.cs">
+      <Link>Symbol.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\SymColor.cs">
+      <Link>SymColor.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\SymDef.cs">
+      <Link>SymDef.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\SymPath.cs">
+      <Link>SymPath.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\Map\Util.cs">
+      <Link>Util.cs</Link>
+    </Compile>
+    <Compile Include="PointRect.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

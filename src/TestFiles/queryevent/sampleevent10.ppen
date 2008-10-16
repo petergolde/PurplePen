@@ -1,0 +1,128 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event 5</title>
+    <notes>This is a sample event with no finish.</notes>
+    <map kind="none" scale="15000" />
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+  </event>
+  <control id="20" kind="normal">
+    <code>60</code>
+    <location x="-35.51111" y="47.68148" />
+  </control>
+  <control id="21" kind="normal">
+    <code>65</code>
+    <location x="-11.2870359" y="18.9888878" />
+  </control>
+  <control id="22" kind="normal">
+    <code>64</code>
+    <location x="-7.05370331" y="32.159256" />
+  </control>
+  <control id="23" kind="normal">
+    <code>63</code>
+    <location x="-32.68889" y="20.870369" />
+  </control>
+  <control id="24" kind="normal">
+    <code>62</code>
+    <location x="-7.994444" y="51.914814" />
+  </control>
+  <control id="25" kind="start">
+    <location x="-50.91762" y="46.56323" />
+  </control>
+  <control id="26" kind="finish">
+    <location x="-41.5102119" y="10.8150816" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal">
+    <name>NoStartOrFinish</name>
+    <secondary-title>White is right</secondary-title>
+    <first course-control="101" />
+    <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
+  </course>
+  <course id="2" kind="normal">
+    <name>Empty</name>
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="score">
+    <name>Score</name>
+    <first course-control="103" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="4" kind="normal">
+    <name>StartOnly</name>
+    <first course-control="112" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="5" kind="normal">
+    <name>FinishOnly</name>
+    <first course-control="115" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="6" kind="normal">
+    <name>NoFinish</name>
+    <first course-control="116" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="7" kind="normal">
+    <name>NoStart</name>
+    <first course-control="122" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="8" kind="normal">
+    <name>Regular</name>
+    <first course-control="124" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="9" kind="normal">
+    <name>StartFinishOnly</name>
+    <first course-control="128" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course-control id="101" control="20">
+    <next course-control="102" />
+  </course-control>
+  <course-control id="102" control="21" />
+  <course-control id="103" control="25">
+    <next course-control="106" />
+  </course-control>
+  <course-control id="107" control="24">
+    <next course-control="108" />
+  </course-control>
+  <course-control id="106" control="20">
+    <next course-control="107" />
+  </course-control>
+  <course-control id="108" control="21">
+    <next course-control="109" />
+  </course-control>
+  <course-control id="109" control="26" />
+  <course-control id="116" control="25">
+    <next course-control="118" />
+  </course-control>
+  <course-control id="112" control="25" />
+  <course-control id="115" control="26" />
+  <course-control id="118" control="23">
+    <next course-control="119" />
+  </course-control>
+  <course-control id="119" control="24" />
+  <course-control id="124" control="25">
+    <next course-control="126" />
+  </course-control>
+  <course-control id="121" control="26" />
+  <course-control id="122" control="20">
+    <next course-control="123" />
+  </course-control>
+  <course-control id="123" control="22">
+    <next course-control="121" />
+  </course-control>
+  <course-control id="125" control="26" />
+  <course-control id="126" control="20">
+    <next course-control="127" />
+  </course-control>
+  <course-control id="127" control="22">
+    <next course-control="125" />
+  </course-control>
+  <course-control id="128" control="25">
+    <next course-control="129" />
+  </course-control>
+  <course-control id="129" control="26" />
+</course-scribe-event>

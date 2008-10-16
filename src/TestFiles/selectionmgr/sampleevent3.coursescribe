@@ -1,0 +1,60 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event 3</title>
+    <notes>This is a sample event for testing.</notes>
+    <map kind="OCAD" scale="15000">Lake Sammamish.ocd</map>
+  </event>
+  <control id="1" kind="start">
+    <location x="5" y="0" />
+    <description box="D" iof-2004-ref="2.8" />
+    <description box="E" iof-2004-ref="8.5" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="10" y="10" />
+    <description box="C" iof-2004-ref="0.3" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">2m</description>
+  </control>
+  <control id="3" kind="normal" gaps="11111111111111111111111111011111">
+    <code>32</code>
+    <location x="20" y="-10.5" />
+    <description box="D" iof-2004-ref="3.7" />
+    <description box="H" iof-2004-ref="12.1" />
+    <description-text>very marshy spot</description-text>
+  </control>
+  <control id="4" kind="normal">
+    <code>GO</code>
+    <location x="35.4" y="-22.5" />
+    <description box="C" iof-2004-ref="0.1N" />
+    <description box="D" iof-2004-ref="5.5" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.1" />
+    <description box="G" iof-2004-ref="11.1N" />
+    <description box="H" iof-2004-ref="12.3" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="30.3" y="-27.11" />
+    <description box="all" iof-2004-ref="14.2" />
+  </control>
+  <control id="7" kind="start">
+    <location x="0" y="5" />
+    <description box="C" iof-2004-ref="0.2NW" />
+    <description box="D" iof-2004-ref="1.7" />
+    <description box="F">2.5</description>
+  </control>
+  <course id="1" kind="normal">
+    <name>White</name>
+    <secondary-title>White is right</secondary-title>
+    <first course-control="1" />
+    <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
+    <description square-size="5.5" left-edge="0" top-edge="0" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="6" />
+</course-scribe-event>

@@ -1,0 +1,112 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\..\..\src\PurplePen\bin\release\Purple Pen Help.chm
+Contents file=Table of Contents.hhc
+Default Window=Help Viewer
+Default topic=Home.htm
+Display compile progress=No
+Full-text search=Yes
+Language=0x409 English (United States)
+Title=Purple Pen Help
+
+[WINDOWS]
+Help Viewer="Purple Pen Help","Table of Contents.hhc",,"Home.htm","Home.htm",,,,,0x2520,,0x204c,,,,,,,,0
+
+
+[FILES]
+Home.htm
+Moving around.htm
+ViewZoom.htm
+FileCreateOcadFiles.htm
+FileExit.htm
+FileNewEvent.htm
+FileOpen.htm
+FilePrintCourses.htm
+FilePrintDescriptions.htm
+FilePrintPunchCards.htm
+FileSave.htm
+FileSaveAs.htm
+FileSetPrintArea.htm
+EditAddControl.htm
+EditAddFinish.htm
+EditAddSpecialItem.htm
+EditAddStart.htm
+EditDelete.htm
+EditRedo.htm
+EditUndo.htm
+ViewAllControls.htm
+ViewEntireCourse.htm
+ViewEntireMap.htm
+ViewMapIntensity.htm
+ViewMapQuality.htm
+HelpMenu.htm
+CourseMenu.htm
+ViewMenu.htm
+EditMenu.htm
+FileMenu.htm
+CourseProperties.htm
+CourseDeleteCourse.htm
+CourseAddCourse.htm
+Toolbar.htm
+ControlsPunchPatterns.htm
+ControlsAutomaticNumbering.htm
+ControlsChangeCodes.htm
+HelpAbout.htm
+HelpSupport.htm
+HelpPurplePenWebSite.htm
+HelpContents.htm
+Selecting.htm
+EditLegFlagging.htm
+EditRemoveBend.htm
+EditAddBend.htm
+EditRemoveGap.htm
+EditAddGap.htm
+EditChangeDisplayedCourses.htm
+EditRotate.htm
+EditAddRegistrationMark.htm
+EditAddUncrossableBoundary.htm
+EditAddForbiddenRouteMarking.htm
+EditAddOptionalCrossingPoint.htm
+EditAddFirstAidLocation.htm
+EditAddWaterLocation.htm
+EditAddDangerousArea.htm
+EditAddControlDescriptions.htm
+EditAddOutOfBoundsArea.htm
+EditAddMandatoryCrossingPoint.htm
+CourseTabs.htm
+PurplePenWindow.htm
+MenuAndToolbarReference.htm
+MousePosition.htm
+QuickHelpBar.htm
+MapDisplay.htm
+ZoomSlider.htm
+SelectedObjectPane.htm
+ControlDescriptionsPane.htm
+FileCreateXml.htm
+ReportsControlAndLegLoad.htm
+ReportsControlCrossReference.htm
+ReportsCourseSummary.htm
+ReportsMenu.htm
+CreatingNewEvent.htm
+AddingCourses.htm
+InitialCourseDesign.htm
+RefiningTheCourseDesign.htm
+FinalPolish.htm
+Printing.htm
+ReportsLegLengths.htm
+ControlsCustomizeDescriptionText.htm
+CourseCourseOrder.htm
+CourseCompetitorLoad.htm
+EventMenu.htm
+ItemMenu.htm
+EventMapFile.htm
+MissingFontsDialog.htm
+ItemAddTextLine.htm
+NonPrintableObjectsDialog.htm
+UnsupportedSymbols.htm
+EditClearSelection.htm
+ReportsEventAudit.htm
+EventRemoveUnusedControls.htm
+
+[INFOTYPES]
+

@@ -1,0 +1,37 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x2  Version=8  SubVersion=0
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=0, nColorSep=0
+  CyanFreq=0; CyanAng=0
+  MagentaFreq=0; MagentaAng=0
+  YellowFreq=0; YellowAng=0
+  BlackFreq=0; BlackAng=0
+  Reserved1=0x0 Reserved2=0x0
+
+
+
+Setup structure:
+  Offset=(0.00,0.00), rGridDist=10
+  WorkMode=0, LineMode=0, EditMode=11
+  ActSym=-1, MapScale=15000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=1000
+  GpsAngle=0, nGpsAdjust=0
+  DraftScaleX=15000, DraftScaleY=15000
+  TempOffset=(0.00,0.00), TemplateFileName=
+  TemplateEnabled=0, TempResol=300, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(-50.00,-50.00), PrUpperRight=(50.00,50.00)
+  PrGrid=0, PrGridColor=0, PrOverlapX=1000, PrOverlapY=1000
+  PrintScale=15000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  FileName=C:\Documents and Settings\Peter\My Documents\Visual Studio Projects\MapEdit\tests\io\empty.ocd
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+

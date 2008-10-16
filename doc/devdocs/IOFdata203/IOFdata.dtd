@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- This file describes the IOF data exchange format for a wide
+	 selection of orienteering information regarding an orienteering
+	 event.
+	 
+	 The file is organized in a number of sections:
+	 - Person
+	 - Competitor
+	 - Club
+	 - Event
+	 - Entries
+	 - Start List
+	 - Result List
+	 - Classes
+	 - Controls and Courses
+	 - "Office" elements, i.e. non-orienteering and generic
+	 
+	 In the top of each section is a reference to the name of the
+	 lists that are meant to be exchanged between different software
+	 packages used in an orienteering event.
+	 A quick reference to these lists are:
+	 - PersonList - rarely used
+	 - CompetitorList - "brutto" list, e.g. a national database
+	 - RankList - competitors in a ranking list, e.g. World Ranking
+	 - ClubList - club database, national or event specific
+	 - EventList - used for fixtures
+	 - ServiceRequestList - rarely used
+	 - EntryList - club ordered entries for an event
+	 - StartList - class ordered start list
+	 - ResultList - class ordered results, not necessarily complete
+	 - ClassData - list of classes, national or event specific
+	 - CourseData - list of controls and courses of an event
+
+	 Authors:
+	 	Stefan Nordmark, SWE
+	 	Kell Sønnichsen, DEN
+	 	Finn Arildsen, DEN
+	 	
+	 Date:
+	 	01-2002
+	 	
+-->
+
+<!-- IOF Version
+	 Version of this standard.
+	 This is changed whenever this standard is changed.
+-->
+
+<!ELEMENT IOFVersion EMPTY>
+<!ATTLIST IOFVersion 
+  version CDATA #FIXED "2.0.3">
+
+
+
+<!-- ##########
+	 ### Person
+	 ##########
+	 
+	 Represents a person. This could either be a Competitor (see the
+	 Competitor section) or contact persons in a Club (see the Club
+	 section) or press (see the "Office" section).
+
+	 Lists to exchange:
+	 - PersonList
+
+-->
+
+<!-- PersonList
+	 List of persons. This is NOT to be used to exchange competitors.
+	 Use CompetitorList instead.
+-->
+
+<!ELEMENT PersonList (IOFVersion?, Person*)>
+
+<!-- Person
+	 Basic information of a person, either a competitor, contact,
+	 press etc.
+ -->
+
+<!ELEMENT Person (PersonName, PersonId, BirthDate?, Address*, Tele*,
+	Nationality?, ModifyDate?)>
+<!ATTLIST Person 
+  sex (M|F) #IMPLIED
+>
+
+<!ELEMENT PersonName (Family,Given+)>
+
+<!ELEMENT Family (#PCDATA)>
+
+<!ELEMENT Given (#PCDATA)>
+<!ATTLIST Given
+  sequence CDATA #IMPLIED
+>
+
+<!ELEMENT PersonId (#PCDATA)>
+<!ATTLIST PersonId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+ 
+<!ELEMENT BirthDate (Date)>
+
+<!ELEMENT Nationality (CountryId|Country)>
+
+<!ELEMENT Contact ((PersonId|Person), ContactType, ModifyDate?)>
+
+<!ELEMENT ContactType EMPTY>
+<!ATTLIST ContactType 
+  value (official|entry|result|info|financial|other) "official"
+>
+	 
+<!-- ##########
+	 ### Competitor
+	 ##########
+	 
+	 Elements associated with a Competitor from ranking to control
+	 card.
+	 Other elements, e.g. Class, are found in other sections.
+	 
+	 Lists to exchange:
+	 - CompetitorList
+	 - RankList
+
+-->	 
+
+<!-- CompetitorList
+	 A list of competitors. This is used to exchange a "brutto" list
+	 of possible competitors.
+	 This should NOT be used to exchange entries, use EntryList
+	 instead.
+-->
+
+<!ELEMENT CompetitorList (IOFVersion?, Competitor*)>
+
+<!-- Competitor -->
+
+<!ELEMENT Competitor ((PersonId|Person),
+	(ClubId|Club|Country|CountryId),
+	PreSelectedClass*, CCard*, Rank*, ModifyDate?)>
+
+<!ELEMENT Rank ((Name|OrganisationId|Organisation), RankPosition,
+	RankValue, ValidFromDate?, ValidToDate?, ModifyDate?)>
+
+<!ELEMENT RankPosition (#PCDATA)>
+
+<!ELEMENT RankValue (#PCDATA)>
+
+<!ELEMENT ValidFromDate (Date)>
+
+<!ELEMENT ValidToDate (Date)>
+
+<!-- Control Card -->
+
+<!ELEMENT CCard (CCardId, PunchingUnitType, ModifyDate?)>
+<!ATTLIST CCard 
+  miscData CDATA #IMPLIED
+>
+
+<!ELEMENT CCardId (#PCDATA)>
+
+
+<!-- RankList
+	 List of competitors in a specific ranking list identified
+	 by the Name subelement, e.g. 'World Ranking List'.
+ -->
+
+<!ELEMENT RankList (IOFVersion?, Name, (OrganisationId|Organisation)?,
+	Competitor*)>
+
+
+
+<!-- ##########
+	 ### Club
+	 ##########
+	 
+	 Information about a Club, i.e. address, contact person(s) etc.
+	 Makes some use of the elements in the "Office" section.
+	 Lists to exchange:
+	 - ClubList
+-->
+
+<!-- Club List
+	 List of clubs including address and contact information.
+-->
+
+<!ELEMENT ClubList (IOFVersion?, Club*)>
+
+<!-- Club -->
+
+<!ELEMENT Club (ClubId, Name?, ShortName, OrganisationId?,
+	(CountryId|Country), Address*, Tele*, WebURL*, Account*,
+	Contact*, ModifyDate?)>
+
+<!ELEMENT ClubId (#PCDATA)>
+<!ATTLIST ClubId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+
+
+<!-- ##########
+	 ### Event
+	 ##########
+	 
+	 Elemnts holding event specific information
+	 
+	 Lists to exchange:
+	 - EventList
+	 - ServiceRequestList
+-->
+
+<!-- EventList
+	 A list holding a number of events and event classification.
+	 This can be used to exchange fixtures.
+-->
+
+<!ELEMENT EventList (IOFVersion?, EventClassification*, Event*)>
+
+<!-- Event
+	 The main event element:
+	 - name of the event
+	 - start and finish dates (to support multiday events)
+	 - organizing club(s)
+	 - event officials
+	 - classes
+	 - races (i.e. event "days")
+	 - entry data (where to deliver entries)
+	 - services (e.g. accomodation)
+	 - web site information
+	 - accounts for fees
+-->
+
+<!ELEMENT Event (EventId, Name,
+	(EventClassificationId|EventClassification), StartDate,
+	FinishDate?, EventOfficial*, Organiser?, EventClass*, EventRace*,
+	WebURL*, EntryData?, Service*, Account*, ModifyDate?)>
+<!ATTLIST Event 
+  eventForm (IndSingleDay|IndMultiDay|teamSingleDay|teamMultiDay|
+  relay) "IndSingleDay" 
+>
+
+<!ELEMENT EventId (#PCDATA)>
+<!ATTLIST EventId
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!ELEMENT StartDate (Date, Clock?)>
+
+<!ELEMENT FinishDate (Date, Clock?)>
+
+<!ELEMENT Organiser ((ClubId|Club)*)>
+
+<!ELEMENT EventOfficial (EventOfficialRole, (PersonId|Person))>
+
+<!ELEMENT EventOfficialRole (#PCDATA)>
+
+<!ELEMENT EntryData (Address, Tele)*>
+
+
+<!-- Event Class
+	 A Class extended with event specific information, e.g. whether
+	 the class is transfered to another class due to lack of entries.
+-->
+
+<!ELEMENT EventClass ((ClassId|Class), (((ClassRaceInfo,
+	PunchingUnitType) | 
+	(EventRaceId, ClassRaceInfo, PunchingUnitType)+) |
+	TransferedToClass? | DividedIntoClass)?, ModifyDate?)>
+
+<!ELEMENT TransferedToClass (ClassId|ClassShortName)>
+
+<!ELEMENT DividedIntoClass (EventClass*)>
+
+<!ELEMENT EntryClass (ClassId|ClassShortName|EventClass)>
+<!ATTLIST EntryClass 
+  sequence           CDATA #IMPLIED
+>
+
+
+<!-- Event Classification
+	 e.g. 'World Ranking Event'
+-->
+
+<!ELEMENT EventClassification (EventClassificationId, Name,
+	ModifyDate?)>
+
+<!ELEMENT EventClassificationId (#PCDATA)>
+<!ATTLIST EventClassificationId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+
+<!-- Event Race 
+	 An event consists of a number of event races. The number is equal
+	 to the number of times a competitor should start:
+	 - one event race for a single day event
+	 - N event races for an N day event
+	 - two event races for a qualification and final (even if they
+	   are the same day - then use Clock to distinguish)
+-->
+
+<!ELEMENT EventRace (EventRaceId, Name, RaceDate, ModifyDate?)>
+
+<!ELEMENT EventRaceId (#PCDATA)>
+
+<!ELEMENT RaceDate (Date, Clock?)>
+
+
+<!-- Fee
+	 Competitor fees for entering the event.
+-->
+
+<!ELEMENT EntryFee (EntryFeeId?, Name?, Amount, ModifyDate?)>
+<!ATTLIST EntryFee
+  taxIncluded (Y|N) "Y"
+>
+
+<!ELEMENT EntryFeeId (#PCDATA)>
+<!ATTLIST EntryFeeId
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!ELEMENT Amount (#PCDATA)>
+<!ATTLIST Amount
+  currency CDATA #IMPLIED
+>
+
+
+
+
+<!-- ##########
+	 ### Entries
+	 ##########
+	 
+	 Elements supporting entries for an event, especially
+	 the persons entering
+	 
+	 Lists to exchange:
+	 - EntryList
+-->
+
+<!-- EntryList
+	 A number of Club Entries each holding a club, a club contact and
+	 the persons entering the competition, probably aggregated
+	 into teams if it is for a relay.
+-->
+<!ELEMENT EntryList (IOFVersion?, ClubEntry*)>
+
+<!ELEMENT ClubEntry ((ClubId|Club), Contact?, Entry*)>
+
+<!-- Entry
+	 An entry consists of 
+	 1) a person, his/hers personal control card, and a rank
+	    (e.g. from a ranking list, this could be needed by the event
+	    software to allocate starting times).
+	 2) a team, which holds a number of persons possibly ordered in
+	 	a sequence within the team.
+-->
+	 
+<!ELEMENT Entry (EntryId?, (((PersonId|Person), CCard*, Rank*)|
+	(TeamName, ((PersonId|Person), (ClubId|Club)?, CCard*, Rank*,
+	TeamSequence?)*)),
+	EntryClass*, AllocationControl?, EntryDate, ModifyDate?)>
+<!ATTLIST Entry
+  nonCompetitor (Y|N) "N"
+>
+
+<!ELEMENT EntryId (#PCDATA)>
+
+<!ELEMENT TeamName (#PCDATA)>
+
+<!ELEMENT TeamSequence (#PCDATA)>
+
+<!ELEMENT EntryDate (Date, Clock?)>
+
+<!-- AllocationControl
+	 Used to state start time allocation requests.
+	 It consists of a possible reference Club or Person and the
+	 allocation request, e.g. late start or grouped with the reference
+	 Club/Person.
+	 This way it is possible to state requests to the event organizer
+	 so that e.g. all members of a club has start times close to each
+	 other - or parents have start times far from each other.
+	 It is totally up to the event software and organizers whether
+	 they will support such requests.
+-->
+
+<!ELEMENT AllocationControl (((ClubId|Club)|(PersonId|Person))?,
+	AllocationControlType)>
+
+<!ELEMENT AllocationControlType EMPTY>
+<!ATTLIST AllocationControlType
+  value (normal|groupedWithRef|distributedFromRef|
+  	earlyStart|lateStart|other) "normal"
+>
+
+
+
+<!-- ##########
+	 ### Start List
+	 ##########
+	 
+	 Elements maintaining information of the start and start list
+	 
+	 Lists to exchange:
+	 - StartList
+-->
+
+<!-- StartList
+	 A list containing the event (or identification) and a number
+	 of class start lists
+-->
+
+<!ELEMENT StartList (IOFVersion?, (EventId|Event)?, ClassStart*,
+	ModifyDate?)>
+
+<!-- ClassStart
+	 The start list of a single class containing either individual
+	 start times for competitors or team start times for relays
+-->
+	 
+<!ELEMENT ClassStart ((ClassId|ClassShortName|EventClass),
+	(PersonStart|TeamStart)*)>
+
+<!-- PersonStart
+	 The start time(s) of a single competitor. In case of a multi day
+	 event all start times are listed.
+-->
+
+<!ELEMENT PersonStart ((PersonId|Person),
+	(ClubId|Club|CountryId|Country)?, Rank*,
+	(Start|RaceStart+))>
+
+<!ELEMENT TeamStart (TeamName, (CountryId|Country)?, PersonStart*)>
+
+<!-- Start
+	 The start information of a competitor of a single race.
+	 It contains the start number, bib number, control card of the
+	 competitor, the start time, the team order (if relay) and the
+	 course length.
+-->
+
+<!ELEMENT Start (StartNumber?, BibNumber?, (CCardId|CCard)?,
+	StartTime?, TeamSequence?, CourseLength, StartId?,
+	ModifyDate?)>
+
+<!ELEMENT RaceStart ((EventRaceId|EventRace), Start)>
+
+<!-- Start- and Bibnumber -->
+
+<!ELEMENT StartNumber (#PCDATA)>
+
+<!ELEMENT BibNumber (#PCDATA)>
+
+
+
+
+
+<!-- ##########
+	 ### ResultList
+	 ##########
+	 
+	 Results from an event. This can be a complete list (i.e. after
+	 the event), a snapshot (current standings - while the event is
+	 under way), or a delta list (changes since last list, meant for
+	 frequent exchange of results).
+	 
+	 Lists to exchange:
+	 - ResultList
+	 
+-->
+
+<!-- ResultList
+	 A result list containing an event (or identifier) and a number
+	 of class results. The list can be more or less complete as
+	 explained above.
+-->
+
+<!ELEMENT ResultList (IOFVersion?, (EventId|Event)?, ClassResult*,
+	ModifyDate?)>
+<!ATTLIST ResultList
+  status (complete|snapshot|delta) "complete"
+>
+
+<!-- ClassResult
+	 Results from a single class. It consists of a Class and a number
+	 of person or team results.
+-->
+
+<!ELEMENT ClassResult ((ClassId|ClassShortName|EventClass),
+	(PersonResult|TeamResult)*)>
+
+<!ELEMENT PersonResult ((PersonId|Person),
+	(ClubId|Club|CountryId|Country)?, Rank*, Result, RaceResult*)>
+
+<!ELEMENT TeamResult (TeamName, (CountryId|Country)?, StartNumber?,
+	BibNumber?, StartTime?, FinishTime?, Time?, ResultPosition?,
+	TeamStatus, Rank*, Point*, PersonResult*)>
+
+<!-- Result
+	 Overall result of a single competitor. For a multiday event
+	 this is the accumulated result
+-->
+
+<!ELEMENT Result (StartNumber?, BibNumber?, (CCardId|CCard)?,
+	StartTime?, FinishTime?, Time?, ResultPosition?,
+	CompetitorStatus, TeamSequence?,
+	(CourseVariationId|CourseVariation|CourseLength)?, SplitTime*,
+	(BadgeValueId|BadgeValue)?, Point*, ModifyDate?)>
+
+
+<!-- RaceResult
+	 Result for a single Competitor in a single Event Race
+-->
+<!ELEMENT RaceResult ((EventRaceId|EventRace), Result)>
+
+<!-- Status
+	 The status of the competitor or team at the time of the result
+	 generation:
+	 - Inactive		: Has not yet started
+	 - DidNotStart	: Did Not Start (in this race)
+	 - Active		: Currently on course
+	 - Finished		: Finished but not validated
+	 - OK			: Finished and validated
+	 - MisPunch		: Missing Punch
+	 - DidNotFinish	: Did Not Finish
+	 - Disqualified	: Disqualified
+	 - NotCompeting	: Not Competing (running outside the competition)
+	 - SportWithdr	: Sporting Withdrawal (e.g. helping injured)
+	 - OverTime 	: Overtime, i.e. did not finish within max time
+	 - Moved		: Moved to another class
+	 - MovedUp		: Moved to a "better" class, in case of entry
+	 				  restrictions
+	 - Cancelled	: The competitor has cancelled his/hers entry
+-->
+<!ELEMENT CompetitorStatus EMPTY>
+<!ATTLIST CompetitorStatus
+  value (Inactive | DidNotStart | Active | Finished | OK | MisPunch |
+  	DidNotFinish | Disqualified | NotCompeting | SportWithdr | 
+  	OverTime | Moved | MovedUp | Cancelled) #REQUIRED
+>
+
+<!ELEMENT TeamStatus EMPTY>
+<!ATTLIST TeamStatus
+  value (Inactive | DidNotStart | Active | Finished | OK | MisPunch |
+  	DidNotFinish | Disqualified | NotCompeting | SportWithdr | 
+  	OverTime | Moved | MovedUp | Cancelled) #REQUIRED
+>
+
+<!-- Point
+	 The point earned in this event for some purpose, e.g. a ranking
+	 list. The 'type' attribute is used to specify which purpose.
+-->
+<!ELEMENT Point EMPTY>
+<!ATTLIST Point
+  type CDATA #REQUIRED
+  value CDATA #REQUIRED
+>
+
+<!ELEMENT ResultPosition (#PCDATA)>
+
+<!ELEMENT SplitTime ((ControlCode|Control)?, Time?)>
+<!ATTLIST SplitTime
+  sequence CDATA #REQUIRED
+>
+
+<!-- Competition Badge -->
+
+<!ELEMENT BadgeList (IOFVersion?, BadgeValue*, BadgeLimit*)>
+
+<!ELEMENT BadgeValue (BadgeValueId, Name, ShortName?, ModifyDate?)>
+
+<!ELEMENT BadgeValueId (#PCDATA)>
+<!ATTLIST BadgeValueId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!ELEMENT BadgeLimit ((BadgeValueId|BadgeValue),
+	(EventClassificationId|EventClassification), 
+	(ClassTypeId|ClassType)?, TimeFactor, ModifyDate?)>
+
+<!ELEMENT TimeFactor (#PCDATA) >
+
+
+<!-- Result Selection
+	 Used to specify subresults of interest for the press (see the
+	 Press element in the "Office" section). The selection consists
+	 of a list of organisations, clubs, classes and a max position
+	 in the list, e.g. the top 3.
+-->
+
+<!ELEMENT ResultSelection ((OrganisationId|Organisation)*,
+	(ClubId|Club)*, (ClassId|ClassShortName|Class)*, Position,
+	ModifyDate)>
+
+<!ELEMENT Position (#PCDATA)>
+
+
+
+
+<!-- ##########
+	 ### Class
+	 ##########
+	 
+	 Elements associated with an Event Class - this being a real
+	 class in the event or a "standard" class.
+	 Lists to exchange are:
+	 - ClassData
+
+-->
+
+<!-- Class Data
+	 A list of classes.
+-->	 
+
+<!ELEMENT ClassData (IOFVersion?, ClassType*, Class*)>
+
+<!ELEMENT ClassType (ClassTypeId, Name, ModifyDate?)>
+
+<!ELEMENT ClassTypeId (#PCDATA)>
+<!ATTLIST ClassTypeId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!-- Class -->
+
+<!ELEMENT Class (ClassId, Name?, ClassShortName,
+	(ClassTypeId|ClassType)?, SubstituteClass?,
+	NotQualifiedSubstituteClass?, (EntryFeeId|EntryFee)*,
+	ModifyDate?)>
+<!ATTLIST Class
+  lowAge             CDATA #IMPLIED
+  highAge            CDATA #IMPLIED
+  sex                (M|F|B) #REQUIRED
+  numberInTeam       CDATA "1" 
+  teamEntry          (Y|N) "N"
+  maxNumberInClass   CDATA #IMPLIED
+  actualForRanking   (Y|N) "N"
+  timePresentation   (Y|N) "Y"
+  allowedMinAge      CDATA #IMPLIED
+  allowedMaxAge      CDATA #IMPLIED
+>
+
+<!ELEMENT ClassId (#PCDATA)>
+<!ATTLIST ClassId
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!ELEMENT ClassShortName (#PCDATA)>
+<!ATTLIST ClassShortName
+  idManager          CDATA #IMPLIED
+>
+
+<!ELEMENT SubstituteClass (ClassId|ClassShortName|Class)>
+
+<!ELEMENT NotQualifiedSubstituteClass
+	(ClassId|ClassShortName|Class)>
+
+
+<!ELEMENT PreSelectedClass (ClassId|ClassShortName|Class)>
+<!ATTLIST PreSelectedClass
+  sequence           CDATA #IMPLIED
+>
+
+<!-- Class Race Info
+	 Information about a class with respect to an event.
+	 The Class information above may make sense without attachment
+	 to an event, the information below doesn't.
+-->
+
+<!ELEMENT ClassRaceInfo (FirstStart?, StartInterval?,
+	EstimatedBestTime?,	EstimatedLastPrizeTime?, PrizeCeremonyTime?,
+	AllocationMethod?, StartMethod?, ClassRaceStatus,
+	CourseVariationId*, ModifyDate?)>
+<!ATTLIST ClassRaceInfo
+  numberOfVacants           CDATA #IMPLIED
+  rankingRace               (Y|N) "N"
+  numberOfPrizes            CDATA #IMPLIED
+  bibNumberPrefix           CDATA #IMPLIED
+  bibNumberBase             CDATA #IMPLIED
+  finishChute               CDATA #IMPLIED
+>
+
+<!ELEMENT AllocationMethod EMPTY>
+<!ATTLIST AllocationMethod 
+  value (normal|seeded|group|invertedResult|preseedingResult|
+  	manual|other) "normal"
+>
+
+<!ELEMENT StartMethod EMPTY>
+<!ATTLIST StartMethod 
+  value (allocatTime|punching|limitedPunching|other) #REQUIRED
+>
+
+<!ELEMENT ClassRaceStatus EMPTY>
+<!ATTLIST ClassRaceStatus
+  value (notAllocated|allocated|started|finished|deleted) #REQUIRED
+>
+
+<!ELEMENT FirstStart (Date?, Clock)>
+
+<!ELEMENT StartInterval (Time)>
+
+<!ELEMENT EstimatedBestTime (Time)>
+
+<!ELEMENT EstimatedLastPrizeTime (Time)>
+
+<!ELEMENT PrizeCeremonyTime (Date?, Clock)>
+
+
+
+<!-- ##########
+	 ### Control and Courses
+	 ##########
+	 
+	 All elements with information about controls and courses.
+	 Only exception is the Control Card, which is found in the
+	 Competitor section.
+	 
+	 Lists to exchange:
+	 - CourseData
+-->
+
+<!-- CourseData
+	 A list of starting points, finish controls, "real" controls,
+	 and courses. This defines all the control and course information.
+-->
+
+<!ELEMENT CourseData (IOFVersion?, Map?, StartPoint*, Control*,
+	FinishPoint*, Course*)>
+
+<!-- Control
+	 A Control consists of a control code, a description, a position
+	 in the terrain, a position on the map and a punching unit.
+	 This element is not the one used in the courses. For that, see
+	 CourseControl below.
+-->
+
+<!ELEMENT Control (ControlCode, Description?, ControlPosition?,
+	(PunchingUnit|PunchPattern)*, PunchingUnitType?, MapPosition?,
+	Comment*, ModifyDate?)>
+
+<!ELEMENT Description (Box*, ModifyDate?)>
+
+<!ELEMENT Box (Symbol+ | Text)?>
+
+<!ATTLIST Box
+  column  (A|B|C|D|E|F|G|H)  #REQUIRED
+  hasDiagonal (Y|N) "N"
+>
+
+<!ELEMENT Symbol (SymbolId, Name?)>
+
+<!ELEMENT SymbolId (#PCDATA)>
+
+<!ELEMENT Text (#PCDATA)>
+<!ATTLIST Text
+  languageId CDATA #IMPLIED
+>
+
+<!ELEMENT ControlCode (#PCDATA)>
+
+<!-- ControlPosition
+	 Position of the Control in the terrain
+-->
+
+<!ELEMENT ControlPosition EMPTY>
+<!ATTLIST ControlPosition
+  x CDATA #REQUIRED
+  y CDATA #REQUIRED
+  unit (m|ft|km|WGS-84|other) "m"
+>
+
+<!-- Map
+	 Information of the map used, scale and upper left corner of the
+	 bitmap used in course setting software wrt. the "real" map (yes,
+	 this _is_ in fact used!)
+-->
+
+<!ELEMENT Map (Scale, MapPosition)>
+
+<!ELEMENT Scale (#PCDATA)>
+
+<!-- MapPosition
+	 Position of the Control on the Map
+-->
+
+<!ELEMENT MapPosition EMPTY>
+<!ATTLIST MapPosition
+  x CDATA #REQUIRED
+  y CDATA #REQUIRED
+  unit (mm|other) "mm"
+>
+
+
+<!-- StartPoint
+	 Special control defining the starting point of a Course
+-->
+
+<!ELEMENT StartPoint (StartPointCode, Description?, ControlPosition?,
+	MapPosition?, Comment?,	DistanceFromStart?, ModifyDate?)>
+
+<!ELEMENT StartPointCode (#PCDATA)>
+
+<!ELEMENT DistanceFromStart (#PCDATA)>
+<!ATTLIST DistanceFromStart
+  unit (m|km|ft) "m"
+>
+
+<!ELEMENT Info (#PCDATA)>
+
+<!-- FinishPoint
+	 Special control positioned on the finish line. In case of
+	 electronic punching systems this control can be a real control,
+	 otherwise it is probably a virtual control.
+-->
+
+<!ELEMENT FinishPoint (FinishPointCode, Description?, ControlPosition?,
+	(PunchingUnit|PunchPattern)*, PunchingUnitType?, MapPosition?,
+	Comment?, ModifyDate?)>
+
+<!ELEMENT FinishPointCode (#PCDATA)>
+
+
+<!-- Course
+	 A Course consists of one or more Course Variations. This is done
+	 to support relays using "gafling".
+-->
+
+<!ELEMENT Course (CourseName, CourseId?, EventId?, EventRaceId?,
+	(ClassId|ClassShortName)*, CourseVariation*, CourseSectionList?)>
+  
+<!ELEMENT CourseName (#PCDATA)>
+
+<!ELEMENT CourseId (#PCDATA)>
+
+
+<!-- Course Variation
+	 Consists of a name, length, climb, start point, a number of
+	 course controls and a finish.
+-->
+
+<!ELEMENT CourseVariation (CourseVariationId, Name?, CourseLength,
+	CourseClimb?, (StartPointCode|StartPoint)?, FinishChute?,
+	CourseControl+,	(FinishPointCode|FinishPoint)?, DistanceToFinish?,
+	ModifyDate?)>
+<!ATTLIST CourseVariation
+  numberOfRunners CDATA #IMPLIED
+>
+
+<!ELEMENT CourseVariationId (#PCDATA)>
+
+<!ELEMENT CourseLength (#PCDATA)>
+<!ATTLIST CourseLength
+  unit (m|km|ft) "m"
+>
+
+<!ELEMENT CourseClimb (#PCDATA)>
+<!ATTLIST CourseClimb
+  unit (m|km|ft) "m"
+>
+
+<!ELEMENT StartId (#PCDATA)>
+
+<!ELEMENT FinishChute (#PCDATA)>
+
+<!ELEMENT FinishId (#PCDATA)>
+
+<!ELEMENT DistanceToFinish (#PCDATA)>
+<!ATTLIST DistanceToFinish
+  FromControl CDATA #IMPLIED
+  unit (m|km|ft) "m"
+>
+
+<!ELEMENT CourseSectionList (StartPointCode?, CourseSection+, FinishPointCode?, DistanceToFinish*)>
+
+<!ELEMENT CourseSection (CourseSectionId, CourseBranch+)>
+
+<!ELEMENT CourseSectionId (#PCDATA)>
+
+<!ELEMENT CourseBranch (CourseBranchId, CourseControl*)>
+
+<!ELEMENT CourseBranchId (#PCDATA)>
+
+<!-- CourseControl
+	 A control included in a course. It consists of a sequence number,
+	 a "real" control, a leglength and a position on the map for the
+	 control text, i.e. its sequence number.
+-->
+
+<!ELEMENT CourseControl (Sequence, (ControlCode|Control),
+	Comment*, LegLength*, MapTextPosition?)>
+<!ATTLIST CourseControl
+  markedRoute  (Y|N) "N"
+>
+
+<!ELEMENT LegLength (#PCDATA)>
+<!ATTLIST LegLength
+  FromControl CDATA #IMPLIED
+  unit (m|km|ft) "m"
+>
+
+<!ELEMENT Sequence (#PCDATA)>
+
+<!ELEMENT MapTextPosition (MapPosition)>
+
+
+<!-- Punching -->
+  
+<!ELEMENT PunchingUnit (UnitCode, PunchingUnitType, ModifyDate?)> 
+
+<!ELEMENT UnitCode (#PCDATA)>
+
+<!ELEMENT PunchingUnitType EMPTY>
+<!ATTLIST PunchingUnitType
+  value (manual|SI|Emit|other) #REQUIRED
+>
+
+<!ELEMENT PunchPattern (#PCDATA)>
+
+
+<!-- ##########
+	 ### "Office" elements
+	 ##########
+	 
+	 The following elements are used for non-orienteering purposes,
+	 i.e. accomodation, payment, addresses, press, dates etc.
+	 
+	 Also different "general purpose" elements, e.g. date and time.
+	 
+	 Lists to exchange:
+	 - OrganisationList
+	 - TransactionList
+-->
+
+<!-- Name -->
+
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name
+ languageId CDATA #IMPLIED
+>
+
+<!ELEMENT ShortName (#PCDATA)>
+<!ATTLIST ShortName
+ languageId CDATA #IMPLIED
+>
+
+<!-- Comment -->
+
+<!ELEMENT Comment (#PCDATA)>
+<!ATTLIST Comment
+ languageId CDATA #IMPLIED
+>
+
+
+<!-- Organisation
+	 An element representing "organisations" in a wider sense, i.e.
+	 clubs, federations, authorities, tv, etc.
+	 An organisation can contain suborganisations.
+-->
+
+<!ELEMENT Organisation (OrganisationId, Name, ShortName?,
+	(OrganisationTypeId|OrganisationType), (CountryId|Country)?,
+	Address*, Tele*, Account*, Contact*, SubOrganisation*,
+	ModifyDate?)>
+
+<!ELEMENT OrganisationId (#PCDATA)>
+<!ATTLIST OrganisationId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!ELEMENT SubOrganisationType (OrganisationTypeId|OrganisationType)>
+
+<!ELEMENT SubOrganisation (OrganisationId|Organisation)>
+
+<!-- OrganisationList
+	 List of organisations and their types.
+-->
+
+<!ELEMENT OrganisationList (IOFVersion?, OrganisationType*,
+	Organisation*)>
+
+<!ELEMENT OrganisationType (OrganisationTypeId, Name,
+	SubOrganisationType*, ModifyDate?)>
+
+<!ELEMENT OrganisationTypeId (#PCDATA)>
+<!ATTLIST OrganisationTypeId 
+  type (int|nat|reg|loc|other) #IMPLIED
+  idManager CDATA #IMPLIED
+>
+
+<!-- Press
+	 A special organisation that can contain a request for a
+	 special selection of results after the event. E.g. a foreign
+	 paper can have a speciel interest in the results of the
+	 competitors of that nationality.
+-->
+
+<!ELEMENT Press (Name, Contact*, Address*, Tele*,
+	(Country|CountryId), ResultSelection*, ModifyDate?)>
+<!ATTLIST Press 
+  mediaType (paper|tv|radio|magazine|web|other) #REQUIRED
+>
+
+<!-- PressList
+	 A list of Press elements
+-->
+
+<!ELEMENT PressList (IOFVersion?, Press*)>
+
+
+<!-- Service
+	 A general purpose service request, e.g. for accomodation.
+-->
+
+<!ELEMENT Service (ServiceId, Name, Amount, Comment?, MaxNumber?,
+	ModifyDate?)>
+
+<!ELEMENT ServiceId (#PCDATA)>
+
+<!-- Service Request List
+	 List of requests from clubs and organisations.
+-->
+
+<!ELEMENT ServiceRequestList (IOFVersion?, ClubServiceRequest*,
+	OrganisationServiceRequest*)>
+
+<!ELEMENT ClubServiceRequest ((ClubId|Club), ServiceRequest*,
+	PersonServiceRequest*)>
+
+<!ELEMENT OrganisationServiceRequest ((OrganisationId|Organisation),
+	ServiceRequest*, PersonServiceRequest*)>
+
+<!ELEMENT PersonServiceRequest ((PersonId|Person), ServiceRequest+)>
+
+<!ELEMENT ServiceRequest ((ServiceId|Service), ServiceOrderNumber?,
+	RequestedQuantity, DeliveredQuantity?, Comment?, ModifyDate?)>
+
+<!ELEMENT MaxNumber (#PCDATA)>
+<!ATTLIST MaxNumber
+  unit CDATA "Pcs"
+> 
+
+<!ELEMENT RequestedQuantity (#PCDATA)>
+<!ATTLIST RequestedQuantity
+  unit CDATA "Pcs"
+> 
+
+<!ELEMENT DeliveredQuantity (#PCDATA)>
+<!ATTLIST DeliveredQuantity
+  unit CDATA "Pcs"
+> 
+
+<!ELEMENT ServiceOrderNumber (#PCDATA)>
+
+
+<!-- Account -->
+
+<!ELEMENT Account (#PCDATA)>
+<!ATTLIST Account 
+  type (postalGiro|bankGiro|bankAccount|other) "postalGiro"
+>
+
+<!-- Transaction
+	 A financial transaction between two accounts, possibly linked
+	 to a number of entries and/or service requests.
+-->
+
+<!ELEMENT Transaction (Account, ForeignAccount?, Date, Amount,
+	(ClubId|Club|OrganisationId|Organisation), (PersonId|Person)*,
+	EntryId*, (ServiceOrderNumber|ServiceId|Service)*, ModifyDate?) >
+
+<!ELEMENT ForeignAccount (Account)> 
+
+<!-- TransactionList
+	 A list of transactions.
+-->
+
+<!ELEMENT TransactionList (IOFVersion?, (EventId|Event),
+	Transaction*)> 
+
+
+
+<!-- Address -->
+
+<!ELEMENT Address (AddressType?, (CountryId|Country)?, ModifyDate?)>
+<!ATTLIST Address
+  careOf     CDATA #IMPLIED 
+  street     CDATA #REQUIRED
+  city       CDATA #REQUIRED
+  zipCode    CDATA #IMPLIED
+>
+
+<!ELEMENT AddressType EMPTY>
+<!ATTLIST AddressType
+  value      (official|home|work|other) #REQUIRED
+>
+
+<!-- Country -->
+
+<!ELEMENT CountryList (IOFVersion?, Country*)>
+
+<!ELEMENT Country (CountryId, Name*, ModifyDate?)>
+
+<!ELEMENT CountryId EMPTY> 
+<!ATTLIST CountryId 
+  value (ARG|AUS|AUT|BEL|BLR|BRA|BUL|CAN|CHI|CHN|COL|CRO|CUB|CZE|
+  		 DEN|ECU|ESP|EST|FIN|FRA|GBR|GER|GRE|HKG|HUN|INA|IND|IRL|
+  		 ISR|ITA|JAM|JPN|KAZ|KOR|LAT|LTU|MAS|MDA|MKD|NED|NOR|NZL|
+  		 PAK|POL|POR|PRK|ROM|RSA|RUS|SLO|SUI|SVK|SWE|TPE|UKR|URU|
+  		 USA|VEN|YOG|other) #REQUIRED
+>
+
+<!-- Tele -->
+
+<!ELEMENT Tele (TeleType?, ModifyDate?)>
+<!ATTLIST Tele 
+  phoneNumber CDATA #IMPLIED
+  faxNumber CDATA #IMPLIED
+  mobilePhoneNumber CDATA #IMPLIED
+  mailAddress CDATA #IMPLIED
+>
+
+<!ELEMENT TeleType EMPTY>
+<!ATTLIST TeleType
+  value      (official|home|work|other) #REQUIRED
+>
+
+<!-- Web -->
+
+<!ELEMENT WebURL (#PCDATA)>
+
+
+<!-- Date
+	 Element for general purpose dates
+-->
+
+<!ELEMENT Date (#PCDATA)>
+<!ATTLIST Date 
+  dateFormat CDATA "YYYY-MM-DD"
+>
+
+<!-- Clock
+	 Specifies a time of the day, e.g. a start time.
+-->
+<!ELEMENT Clock (#PCDATA)>
+<!ATTLIST Clock
+  clockFormat CDATA "HH:MM:SS"
+>
+
+<!ELEMENT StartTime (Date?, Clock)>
+
+<!ELEMENT FinishTime (Date?, Clock)>
+
+<!-- Time
+	 Specifies a time period, e.g. a running time.
+-->
+<!ELEMENT Time (#PCDATA)>
+<!ATTLIST Time
+  timeFormat CDATA "MM:SS"
+>
+
+<!-- ModifyDate
+	 Used frequently to specify a timestamp of last modification
+	 of an element.
+-->
+
+<!ELEMENT ModifyDate (Date, Clock?)>
+

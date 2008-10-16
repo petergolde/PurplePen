@@ -1,0 +1,4 @@
+﻿linetextspacing.ocd
+linetextspacing.png
+-47.7004738,33.9491539,33.7931252,-36.2553
+693,597

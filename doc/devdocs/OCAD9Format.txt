@@ -1,0 +1,964 @@
+File format OCAD 9                                          (c) by 2006 OCAD AG, CH-6340 Baar
+=============================================================================================
+
+Version 26th January 2006
+
+General
+=============================================================================================
+This is a description of the file format of OCAD 9 files.
+
+Be aware that this is an internal format and may change in future versions. Instead of using
+the file format consider using one of the export formats which are more constant and easier
+to read:
+
+- EPS or AI for rendering the map in other systems.
+- DXF or Shape for transferring the map information to GIS systems.
+
+
+Data types used
+---------------
+OCAD is written in 32-bit Delphi and this description uses the names for the data types as
+they appear in Delphi. However the same data types are available in other development systems
+like C++.
+
+Integer       32-bit signed integer
+SmallInt      16-bit signed integer
+Word          16-bit unsigned integer
+WordBool      16-bit boolean
+String[x]     Pascal-style string. The first byte contains the number of characters followed
+              by the characters. The string is not zero-terminated. The maximum number of
+              characters is x. It occupies x + 1 bytes in the file.
+Double        64-bit floating point number
+TDPoly        A special data type (64-bit) used for all coordinates and text.
+              It is defined as
+
+              TDPoly = record x, y: integer; end;
+
+              The lowest 8 Bits are used to mark special points:
+              Marks for the x-coordinate:
+                1: this point is the first bezier curve point
+                2: this point is the second bezier curve point
+                4: for double lines: there is no left line
+                   between this point and the next point
+                8: this point is a area border line gap
+              Marks for y-coordinate:
+                1: this point is a corner point
+                2: this point is the first point of a hole in an area
+                4: for double lines: there is no right line
+                   between this point and the next point
+                8: this point is a dash point
+              The upper 24 bits contain the coordinate value measured in units of 0.01 mm.
+
+Note: all file positions are in bytes starting from the beginning of the file.
+
+
+
+File header
+=============================================================================================
+OCAD files start with a file header:
+
+  TFileHeader = record         // Size = 48 Byte
+    OCADMark: SmallInt;        // 3245 (hex 0cad)
+    FileType: Byte;            // File type
+                               //   0: normal map
+                               //   1: course setting project
+                               //   3: OCAD 8 Bahnlegung
+    FileStatus: Byte;          // Not used
+    Version: SmallInt;         // 9
+    Subversion: SmallInt;      // number of subversion (0 for 9.00, 1 for 9.1 etc.)
+    FirstSymbolIndexBlk: integer;   // file position of the first symbol index block
+    ObjectIndexBlk: integer;   // file position of object index block -> TObjectIndexBlock    // max 65536 * 256 objects
+    Res0: integer;             // Not used
+    Res1: integer;             // Not used
+    Res2: longint;             // Not used
+    InfoSize: longint;         // Not used
+    StringIndexBlk: longint;   // file position of string index block -> TStringIndexBlock    // max 256 strings
+    FileNamePos: integer;      // file position of file name, used for temporary files and 
+    						   // to recovery the file
+    FileNameSize: integer;     // size of the file name, used for temporary files only
+    Res4: integer;             // Not used
+  end;
+
+
+
+Symbols
+=============================================================================================
+The different types of symbols are defined in different structures. There is an abstract type
+TBaseSym, which contains the fields common to all symbols types. It is used for programming
+reasons, but does not exist in real OCAD files.
+
+
+Symbols - Base symbols
+----------------------
+  TBaseSym = packed record
+    Size: integer;             // Size of the symbol in bytes. This depends on the type.
+                               // Coordinates following the symbol are included.
+    SymNum: integer;           // Symbol number. This is 1000 times the integer part of
+                               // the number + the fractional part "right adjusted"
+                               // examples:
+                               //   101.5 is stored as 101005
+                               //   203.45 is stored as 203045
+                               //   203.145 is stored as 203145
+    Otp: byte;                 // Object type
+                               //   1: Point symbol
+                               //   2: Line symbol
+                               //   3: Area symbol
+                               //   4: Text symbol
+                               //   6: Line text symbol
+                               //   7: Rectangle symbol
+    Flags: byte;               // 1: rotatable symbol (not oriented to north)
+                               // 4: belongs to favorites
+    Selected: boolean;         // Symbol is selected in the symbol box
+    Status: byte;              // Status of the symbol
+                               //   0: Normal
+                               //   1: Protected
+                               //   2: Hidden
+    DrawingTool: byte;         // Preferred drawing tool
+                               //   0: off
+                               //   1: Curve mode
+                               //   2: Ellipse mode
+                               //   3: Circle mode
+                               //   4: Rectangular line mode
+                               //   5: Rectangular area mode
+                               //   6: Straight line mode
+                               //   7: Freehand mode
+    CsMode: byte;              // Course setting mode
+                               //   0: Not used for course setting
+                               //   1: course symbol
+                               //   2: control description symbol
+    CsObjType: byte;           // Course setting object type
+                               //   0: Start symbol (Point symbol)
+                               //   1: Control symbol (Point symbol)
+                               //   2: Finish symbol (Point symbol)
+                               //   3: Marked route (Line symbol)
+                               //   4: Control description symbol (Point symbol)
+                               //   5: Course Titel (Text symbol)
+                               //   6: Start Number (Text symbol)
+                               //   7: Variant (Text symbol)
+                               //   8: Text block (Text symbol)
+    CsCdFlags: byte;           // Course setting control description flags
+                               //   a combination of the flags
+                               //   32: available in column C
+                               //   16: available in column D
+                               //   8: available in column E
+                               //   4: available in column F
+                               //   2: available in column G
+                               //   1: available in column H
+    Extent: integer;           // Extent how much the rendered symbols can reach outside the
+                               // coordinates of an object with this symbol. For a point
+                               // object it tells how far away from the coordinates of the
+                               // object anything of the point symbol can appear.
+    FilePos: integer;          // Used internally. Value in the file is not defined.
+    Group: SmallInt;           // Group ID in the symbol tree. Lower and higher 8 bit are 
+                               // used for 2 different symbol trees.
+    nColors: SmallInt;         // Number of colors of the symbol max. 14
+                               //   -1: the number of colors is > 14
+    Colors: array[0..13] of SmallInt; // number of colors of the symbol
+    Description: string[31];          // Description text
+    IconBits: array[0..483] of byte;  // Each byte represents a pixel of the icon in a
+                                      // 256 color palette (icon 22x22 pixels)
+  end;
+
+
+Symbols - Point symbols
+-----------------------
+Point symbols are stored with this structure:
+
+  TPointSym = packed record   
+    Size: integer;             // See TBaseSym
+    SymNum: integer;           // See TBaseSym
+    Otp: byte;                 // 1
+    Flags: byte;               // See TBaseSym
+    Selected: boolean;         // See TBaseSym
+    Status: byte;              // See TBaseSym
+    Tool: byte;                // See TBaseSym
+    CsMode: byte;              // See TBaseSym
+    CsObjType: byte;           // See TBaseSym
+    CsCDFlags: byte;           // See TBaseSym
+    Extent: integer;           // See TBaseSym
+    FilePos: integer;          // See TBaseSym
+    Group: SmallInt;           // See TBaseSym
+    nColors: SmallInt;         // See TBaseSym
+    Colors: array[0..13] of SmallInt; // See TBaseSym
+    Description: string[31];   // See TBaseSym
+    IconBits: array[0..483] of byte; // See TBaseSym
+    DataSize: word;            // number of coordinates (each 8 bytes) which
+                               // follow this structure, each object header
+                               // counts as 2 Coordinates (16 bytes)
+    Reserved: SmallInt;        // Not used
+  end;
+
+
+After this structure follow the symbol elements which build that Point symbol. These symbol
+elements are stored in the following structure. Note that these symbol elements are stored
+in a different way than ordinary map objects.
+
+  TSymElt = record
+    stType: SmallInt;          // type of the symbol element
+                               //   1: line
+                               //   2: area
+                               //   3: circle
+                               //   4: dot (filled circle)
+    stFlags: word;             // Flags
+                               //   1: line with round ends
+    stColor: SmallInt;         // color of the object. This is the number which appears in
+                               // the colors dialog box
+    stLineWidth: SmallInt;     // line width for lines and circles unit 0.01 mm
+    stDiameter: SmallInt;      // Diameter for circles and dots. The line width is included
+                               // one time in this dimension for circles.
+    stnPoly: SmallInt;         // number of coordinates
+    stRes1: SmallInt;          // Not used
+    stRes2: SmallInt;          // Not used
+    stPoly: array[0..32767] of TPoint;  // coordinates of the symbol element
+  end;
+
+If there are several objects, they just follow each other (only the coordinates used are
+stored). To determine the number of objects the DataSize variable must be used.
+
+
+Symbols - Line symbols
+----------------------
+Line symbols are stored in the following structure. In the explanation the terms
+used in the Line Symbol dialog box are shown.
+
+  TLineSym = packed record
+    Size: integer;             // See TBaseSym
+    SymNum: integer;           // See TBaseSym
+    Otp: byte;                 // 2
+    Flags: byte;               // See TBaseSym
+    Selected: boolean;         // See TBaseSym
+    Status: byte;              // See TBaseSym
+    Tool: byte;                // See TBaseSym
+    CsMode: byte;              // See TBaseSym
+    CsObjType: byte;           // See TBaseSym
+    CsCDFlags: byte;           // See TBaseSym
+    Extent: integer;           // See TBaseSym
+    FilePos: integer;          // See TBaseSym
+    Group: SmallInt;           // See TBaseSym
+    nColors: SmallInt;         // See TBaseSym
+    Colors: array[0..13] of SmallInt; // See TBaseSym
+    Description: string[31];   // See TBaseSym
+    IconBits: array[0..483] of byte; // See TBaseSym
+    LineColor: SmallInt;       // Line color
+    LineWidth: SmallInt;       // Line width
+    LineStyle: SmallInt;       // Line style
+                               //   0: Bevel joins/flat caps
+                               //   1: Round joins/round caps
+                               //   4: Miter joins/flat caps                *** small redefintion
+    DistFromStart: SmallInt;   // Distance from start
+    DistToEnd: SmallInt;       // Distance to the end
+    MainLength: SmallInt;      // Main length a
+    EndLength: SmallInt;       // End length b
+    MainGap: SmallInt;         // Main gap C
+    SecGap: SmallInt;          // Gap D
+    EndGap: SmallInt;          // Gap E
+    MinSym: SmallInt;          // -1: At least 0 gaps/symbols
+                               //  0: At least 1 gap/symbol
+                               //  1: At least 2 gaps/symbols
+                               //  etc.
+    nPrimSym: SmallInt;        // Number of symbols
+    PrimSymDist: SmallInt;     // Distance
+    DblMode: word;             // Mode (Double line page)
+    DblFlags: word;            // Double line flags
+                               //    1: Fill color on
+                               //    2: Background color on      ** flag value 2 is new
+    DblFillColor: SmallInt;    // Fill color
+    DblLeftColor: SmallInt;    // Left line/Color
+    DblRightColor: SmallInt;   // Right line/Color
+    DblWidth: SmallInt;        // Width
+    DblLeftWidth: SmallInt;    // Left line/Line width
+    DblRightWidth: SmallInt;   // Right line/Line width
+    DblLength: SmallInt;       // Dashed/Distance a
+    DblGap: SmallInt;          // Dashed/Gap
+    Res0: SmallInt;     	   // Not used
+    Res1: array[0..1] of SmallInt;  // Not used
+    DecMode: word;             // Decrease mode
+                               //   0: Off
+                               //   1: Decreasing towards the end
+                               //   2: Decreasing towards both ends
+    DecLast: SmallInt;         // Last symbol
+    Res: SmallInt;             // Not used
+    FrColor: SmallInt;         // Color of the framing line
+    FrWidth: SmallInt;         // Line width of the framing line
+    FrStyle: SmallInt;         // Line style of the framing line
+                               //   0: Bevel joins/flat caps
+                               //   1: Round joins/round caps
+                               //   4: Miter joins/flat caps
+                               // PointedEnd := LineStyle and 2 > 0;    ** Pointed end is new [or newly documented]
+    PrimDSize: word;           // Number or coordinates (8 bytes) for the Main symbol A which
+                               // follow this structure.
+                               // Each symbol header counts as 2 coordinates (16 bytes).
+    SecDSize: word;            // Number or coordinates (8 bytes) for the Secondary symbol
+                               // which follow the Main symbol A.
+                               // Each symbol header counts as 2 coordinates (16 bytes).
+    CornerDSize: word;         // Number or coordinates (8 bytes) for the Corner symbol
+                               // which follow the Secondary symbol.
+                               // Each symbol header counts as 2 coordinates (16 bytes).
+    StartDSize: word;          // Number or coordinates (8 bytes) for the Start symbol C
+                               // which follow the Corner symbol.
+                               // Each symbol header counts as 2 coordinates (16 bytes).
+    EndDSize: word;            // Number or coordinates (8 bytes) for the End symbol D
+                               // which follow the Start symbol C.
+                               // Each symbol header counts as 2 coordinates (16 bytes).
+    Reserved: SmallInt;        // Not used
+  end;
+
+
+Symbols - Line Text symbols
+---------------------------
+Line Text symbols are stored in the following structure. In the explanation the
+terms used in the Line Text Symbol dialog box are shown. The unit of all dimensions
+is 0.01 mm, except for the font sizes which are measured in 0.1 typographical points.
+
+  TLTextSym = record
+  TLTextSym = packed record
+    Size: integer;             // See TBaseSym
+    SymNum: integer;           // See TBaseSym
+    Otp: byte;                 // 6
+    Flags: byte;               // See TBaseSym
+    Selected: boolean;         // See TBaseSym
+    Status: byte;              // See TBaseSym
+    Tool: byte;                // See TBaseSym
+    CsMode: byte;              // See TBaseSym
+    CsObjType: byte;           // See TBaseSym
+    CsCDFlags: byte;           // See TBaseSym
+    Extent: integer;           // See TBaseSym
+    FilePos: integer;          // See TBaseSym
+    Group: SmallInt;           // See TBaseSym
+    nColors: SmallInt;         // See TBaseSym
+    Colors: array[0..13] of SmallInt; // See TBaseSym
+    Description: string[31];   // See TBaseSym
+    IconBits: array[0..483] of byte; // See TBaseSym
+    FontName: string[31];      // TrueType font
+    FontColor: SmallInt;       // Color
+    FontSize: SmallInt;        // 10 times the value entered in Size
+    Weight: SmallInt;          // Bold as used in the Windows GDI
+                               //   400: normal
+                               //   700: bold
+    Italic: boolean;           // True if Italic is checked
+    Res0: byte;                // Not used
+    CharSpace: SmallInt;       // Character spacing
+    WordSpace: SmallInt;       // Word spacing
+    Alignment: SmallInt;       // Alignment
+                               //   0: Left
+                               //   1: Center
+                               //   2: Right
+                               //   3: All line
+    FrMode: byte;              // Framing mode
+                               //   0: no framing
+                               //   1: shadow framing
+                               //   2: line framing
+    Res1: byte;                // Not used
+    Res2: string[31];          // Not used
+    FrColor: SmallInt;         // Framing color
+    FrWidth: SmallInt;         // Framing width for line framing
+    Res3: SmallInt;            // Not used
+    Res4: wordbool;            // Not used
+    FrOfX: SmallInt;           // Horizontal offset for shadow framing
+    FrOfY: SmallInt;           // Vertical offset for shadow framing
+  end;
+
+
+Symbols - Area symbols
+----------------------
+Area symbols are stored in the following structure. In the explanation the terms
+used in the Area Symbol dialog box are shown. The unit of all dimensions is 0.01 mm.
+
+  TAreaSym = packed record
+    Size: integer;             // See TBaseSym
+    SymNum: integer;           // See TBaseSym
+    Otp: byte;                 // 3
+    Flags: byte;               // See TBaseSym
+    Selected: boolean;         // See TBaseSym
+    Status: byte;              // See TBaseSym
+    Tool: byte;                // See TBaseSym
+    CsMode: byte;              // See TBaseSym
+    CsObjType: byte;           // See TBaseSym
+    CsCDFlags: byte;           // See TBaseSym
+    Extent: integer;           // See TBaseSym
+    FilePos: integer;          // See TBaseSym
+    Group: SmallInt;           // See TBaseSym
+    nColors: SmallInt;         // See TBaseSym
+    Colors: array[0..13] of SmallInt; // See TBaseSym
+    Description: string[31];   // See TBaseSym
+    IconBits: array[0..483] of byte; // See TBaseSym
+    BorderSym: integer;        // Symbolnumber  for border line activated if BorderOn is true   ** NEW
+    FillColor: SmallInt;       // Fill color activated if FillOn is true
+    HatchMode: SmallInt;       // Hatch mode
+                               //   0: None
+                               //   1: Single hatch
+                               //   2: Cross hatch
+    HatchColor: SmallInt;      // Color (Hatch page)
+    HatchLineWidth: SmallInt;  // Line width
+    HatchDist: SmallInt;       // Distance
+    HatchAngle1: SmallInt;     // Angle 1
+    HatchAngle2: SmallInt;     // Angle 2
+    FillOn: boolean;           // Fill is activated     ** NEW
+    BorderOn: boolean;         // Border line is activated
+    StructMode: SmallInt;      // Structure
+                               //   0: None
+                               //   1: aligned rows
+                               //   2: shifted rows
+    StructWidth: SmallInt;     // Width
+    StructHeight: SmallInt;    // Height
+    StructAngle: SmallInt;     // Angle
+    Res: SmallInt;             // Not used
+    DataSize: word;            // number of coordinates (each 8 bytes) which follow this
+                               // structure, each object header counts as 2 Coordinates
+                               // (16 bytes)
+
+
+Symbols - Text symbols
+----------------------
+Text symbols are stored in the following structure. In the explanation the terms used in the
+Text Symbol dialog box are shown. The unit of all dimensions is 0.01 mm, except for the font
+sizes which are measured in 0.1 typographical points.
+
+  TTextSym = packed record
+    Size: integer;             // see TBaseSym
+    SymNum: integer;           // see TBaseSym
+    Otp: byte;                 // 4 or 5 (difference only for internal use)
+    Flags: byte;               // see TBaseSym
+    Selected: boolean;         // see TBaseSym
+    Status: byte;              // see TBaseSym
+    Tool: byte;                // see TBaseSym
+    CsMode: byte;              // see TBaseSym
+    CsObjType: byte;           // see TBaseSym
+    CsCDFlags: byte;           // see TBaseSym
+    Extent: integer;           // see TBaseSym
+    FilePos: integer;          // see TBaseSym
+    Group: SmallInt;           // see TBaseSym
+    nColors: SmallInt;         // see TBaseSym
+    Colors: array[0..13] of SmallInt; // see TBaseSym
+    Description: string[31];   // see TBaseSym
+    IconBits: array[0..483] of byte;
+    FontName: string[31];      // TrueType font
+    FontColor: SmallInt;       // Color
+    FontSize: SmallInt;        // 10 times the size in pt
+    Weight: SmallInt;          // Bold as used in the Windows GDI
+                               //   400: normal
+                               //   700: bold
+    Italic: boolean;           // true if Italic is checked
+    Res0: byte;                // not used
+    CharSpace: SmallInt;       // Character spacing
+    WordSpace: SmallInt;       // Word spacing
+    Alignment: SmallInt;       // Alignment
+                               //   0: Left
+                               //   1: Center
+                               //   2: Right
+                               //   3: Justified
+    LineSpace: SmallInt;       // Line spacing
+    ParaSpace: SmallInt;       // Space after Paragraph
+    IndentFirst: SmallInt;     // Indent first line
+    IndentOther: SmallInt;     // Indent other lines
+    nTabs: SmallInt;           // number of tabulators for text symbol
+    Tabs: array[0..31] of longint;   // Tabulators
+    LBOn: wordbool;            // true if Line below On is checked
+    LBColor: SmallInt;         // Line color (Line below)
+    LBWidth: SmallInt;         // Line width (Line below)
+    LBDist: SmallInt;          // Distance from text
+    Res3: SmallInt;
+    FrMode: byte;              // Framing mode
+                               //   0: no framing
+                               //   1: shadow framing   ** NEW STYLE
+                               //   2: line framing
+                               //   3: rectangle framing      ** NEW STYLE
+    Res1: byte;                // not used
+    Res2: string[23];          // not used
+    FrLeft: SmallInt;          // Left border for rectangle framing      ** NEW
+    FrBottom: SmallInt;        // Bottom border for rectangle framing   ** NEW
+    FrRight: SmallInt;         // Right border for rectangle framing   ** NEW
+    FrTop: SmallInt;           // Top border for rectangle framing  ** NEW
+    FrColor: SmallInt;         // Framing color   ** NEW
+    FrWidth: SmallInt;         // Framing width for line framing  ** NEW
+    Res3: SmallInt;            // not used
+    Res4: wordbool;            // not used
+    FrOfX: SmallInt;           // Horizontal offset for shadow framing  ** NEW USAGE
+    FrOfY: SmallInt;           // Vertical offset for shadow framing  ** NEW USAGE
+  end;
+
+
+Symbols - Rectangle symbols
+---------------------------
+Rectangle symbols are stored in the following structure. In the explanation the terms used in
+the Rectangle Symbol dialog box are shown. The unit of all dimensions is 0.01 mm.
+
+  TRectSym = packed record
+    Size: integer;             // See TBaseSym
+    SymNum: integer;           // See TBaseSym
+    Otp: byte;                 // 7
+    Flags: byte;               // See TBaseSym
+    Selected: boolean;         // See TBaseSym
+    Status: byte;              // See TBaseSym
+    Tool: byte;                // See TBaseSym
+    CsMode: byte;              // See TBaseSym
+    CsObjType: byte;           // See TBaseSym
+    CsCDFlags: byte;           // See TBaseSym
+    Extent: integer;           // See TBaseSym
+    FilePos: integer;          // See TBaseSym
+    Group: SmallInt;           // See TBaseSym
+    nColors: SmallInt;         // See TBaseSym
+    Colors: array[0..13] of SmallInt; // See TBaseSym
+    Description: string[31];   // See TBaseSym
+    IconBits: array[0..483] of byte; // See TBaseSym
+    LineColor: SmallInt;       // Line color
+    LineWidth: SmallInt;       // Line width
+    Radius: SmallInt;          // Corner radius
+    GridFlags: word;           // A combination of the flags
+                               //   1: Grid On
+                               //   2: Numbered from the bottom
+    CellWidth: SmallInt;       // Cell width
+    CellHeight: SmallInt;      // Cell height
+    Res0: SmallInt; // Not used
+    Res1: SmallInt; // Not used
+    UnnumCells: SmallInt;      // Unnumbered cells
+    UnnumText: string[3];      // Text in unnumbered cells
+    Res2: SmallInt;       	   // Not used
+    Res3: string[31];          // Not used     ** FONT INFO NO LONGER HERE
+    Res4: SmallInt;            // Not used
+    Res5: SmallInt;            // Not used
+    Res6: SmallInt;            // Not used
+    Res7: wordbool;            // Not used
+    Res8: SmallInt;            // Not used
+    Res9: SmallInt;            // Not used
+  end;
+
+
+
+Objects
+=============================================================================================
+Objects are stored as a TElement structure.
+
+  TElement = class(TObject)
+  public
+    Sym: integer;                       // symbol numer or symbol typ
+                                        // image object= -3 (imported from ai or pdf,
+                                        // no symbol assigned)
+                                        // graphic object = -2 (OCAD objects converted to
+                                        // graphics)
+                                        // imported object = -1 (imported, no symbol assigned)
+    Otp: byte;                          // object typ
+    Res0: byte;                         // reserved for Firebird
+    Ang: SmallInt;                      // Angle, unit is 0.1 degrees
+                                        // used for
+                                        // - point object
+                                        // - area objects with structure
+                                        //   text objects
+                                        // - rectangle objects
+    nItem: integer;                     // number of coordinates in the Poly array
+    nText: SmallInt;                    // number of coordinates in the Poly array used for
+                                        // storing text in Unicode for (line text and text
+                                        // objects) if nText is > 0
+                                        // for all other objects it is 0
+    Res1: SmallInt;                     // not used
+    Col: integer;                       // image object: CYMK color of object   ** NEW
+                                        // graphic object: color number  ** NEW
+    LineWidth: SmallInt;                // line with for image and graphic object  ** NEW
+    DiamFlags: SmallInt;                // flages: LineStyle by lines  ** NEW
+    Res2: double;                       // not used
+    Res3: double;                       // not used
+    Poly: TDPoly;                       // array[0..] coordinates of the object
+                                        // followed by a zero-terminated string
+                                        // if nText > 0 TCord is explained at
+                                        // the beginning of this description
+
+
+
+Parameter Strings
+=============================================================================================
+The Parameter Strings contain all the information about the setup structure, templates,
+course setting and database connection.
+
+Similar to the symbols and objects there are String Index Blocks which contain the basic
+information for 256 Parameter Strings and the file position of the strings.
+
+
+TStringIndexBlock contains the basic information for 256 strings
+  TStringIndexBlock = record
+    FilePos: integer;                   // file position of the next StringIndexBlock
+                                        // 0 if this is the last StringIndexBlock
+    Table: array[0..255] of TStringIndex;
+  end;
+
+TStIndex contains the basic information for 1 string:
+  TStringIndex = packed record
+    Pos: integer;                       // file position of string
+    Len: integer;                       // length reversed for the string
+    RecType: integer;                   // string typ number, if < 0 then deleted string
+    ObjIndex: integer;                  // number of the object
+  end;
+
+
+StringIndexBlk in the FileHeader points to the first StringIndexBlock.
+
+The strings (null terminated) have the following structure:
+
+- first field: all characters until the first tab (character 9). The first
+    field can be missing (the string starts with a tab).
+- tab (character 9)
+- code: this is the first character after the tab
+- value: all characters until the next tab
+- tab
+- code
+- value
+...
+
+Some of String Types (number > 1000) may have multiple instances of the same type.
+They have to be stored as lists.
+
+
+Parameter Strings - Orienteering course setting
+=============================================================================================
+
+si_CoursePar = 1031
+-------------------
+  // a = create classes automatically
+  // b = background for control descriptions
+  // c = numbering (0 = number, 1 = number and code, 2 = code only)
+  // d = control descriptions for all controls
+  // e = event titel
+  // h = horizontal thicker line (0=no, 1=each third, 2=each forth)
+  // i = maximum rows in control description [integer]
+  // l = distance to connection line
+  // n = distance to number
+  // s = cell size control description
+  // t = course title (0 = class, 1 = course name and class, 2 = course name only)
+  // r = export relay combination in XML file
+
+si_CsObject[list] = 1 (course setting object)
+---------------------------------------------
+  // First = Code 
+  // Y = Type (s = start, c = control, m = marked route, f = finish, d = control description,
+  //           n = course name, u = start number, v = variation code, t = text block)
+  // c = Symbol for field C
+  // d = Symbol for field D
+  // e = Symbol for field E
+  // f = Symbol for field F
+  // g = Symbol for field G
+  // h = Symbol for field H
+  // mf = Funnel tapes
+  // ot = Text control description object
+  // s = Size information
+  // t = Text for text description or text for text block
+
+si_Course[list] = 2 (course)
+----------------------------
+  // First = CourseName
+  // C = Climb
+  // E = Extra length
+  // F = from start number (auto created class)
+  // L = Relay legs
+  // M = Map file name for exporting
+  // R = number of runners/teams (auto created class)
+  // S = Map scale
+  // T = to start number (auto created class)
+  // Y = Course type (s = relay, o = one-man relay, n = normal)
+  // s = start
+  // c = control
+  // m = marked route
+  // k = mandatory crossing point
+  // w = mandatory passage through out of bounds area
+  // g = map change
+  // f = finish
+  // l = leg variation starts
+  // b = branch of a leg variation starts
+  // p = end of a leg variation
+  // r = relay variation starts
+  // v = branch of a relay variation starts
+  // q = end of a relay variation
+  // e = used internally only (control number)
+  // i = used internally only (back to begin of variation)
+  // j = used internally only (line to end of variation)
+  // n = course name object
+  // u = start number object
+  // t = text block for control description
+  // o = other object
+  // d = control description
+
+si_CsClass[list] = 3 (class)
+----------------------------
+  // First = class name
+  // c = Course name
+  // f = FromNumber (relay)
+  // r = Number of runners
+  // t = ToNumber (relay)
+
+si_CdPrintPar = 1027
+--------------------
+  // s = Size
+
+si_CourseSelPar = 1036 // Not used
+----------------------------------
+
+si_ExpCsTextPar = 1037 (export control description text)
+--------------------------------------------------------
+  // C = classes (0 = courses, 1 = classes)
+  // L = export climbing [boolean]
+  // N = Export number of controls [boolean]
+
+si_ExpCsStatPar = 1038 (export control description)
+---------------------------------------------------
+  // C = classes (0 = courses, 1 = classes)
+  // a = separator 1
+  // b = tab 1
+  // c = separator 2
+  // d = tab 2
+  // e = separator 3
+  // f = tab 3
+
+si_PrevObj[list] = 7 (course preview)
+-------------------------------------
+  // First = course name
+  // d = description (eg object name)
+  // f = from, startpoint of line
+  // t = to, end point of line
+
+Parameter Strings - Database
+=============================================================================================
+si_DataSet[list] = 4 (dataset)
+------------------------------
+  // First = dataset name
+  // e = dBase file
+  // d = ODBC data source
+  // t = table
+  // k = key field
+  // y = symbol field
+  // x = text field
+  // f = size field
+  // l = length unit
+  // a = area unit
+  // c = decimals
+  // h = horizontal coordiante
+  // v = vertical coordinate
+
+si_DbObject[list] = 5 (object linked to a database)
+---------------------------------------------------
+  // First = key
+  // d = Dataset
+
+si_DbCreateObjPar = 1040
+------------------------
+  // c = condition
+  // d = dataset
+  // t = text field
+  // m = unit of measure (m, km)
+  // u = horizontal offset
+  // v = vertical offset
+  // x = horizontal field
+  // y = vertical field
+
+si_DbPar = 1034
+---------------
+  // d = dataset
+  // l = last code
+  // n = create new record
+
+
+Parameter Strings - Export
+=============================================================================================
+si_ExportPar = 1035 (export settings)
+-------------------------------------
+  // First = Format (AI, BMP, DXF, EPS, GIF, JPEG, OIM, PDF, Shape, SVG, TIFF)
+  // a = Anti-Aliasing
+  // b = combined spot colors
+  // c = color format (0 = 32 bit, 1 = 24 bit, 2 = 256 colors, 3 = grayscale, 4 = 1 bit,
+  //                   5 = halftone screen)
+  // l = color correction (0 off, 1 on)
+  // o = spot color separations
+  // p = partial map (0 off, 1 on)
+  // r = resolution
+  // s = scale
+  // t = tiles (0 off, 1 on)
+
+si_OimPar = 1025 (OCAD Internet Maps )
+--------------------------------------
+  // First = OimFileName
+  // a = Antialiasing
+  // b = Border width
+  // c = compressed SVG
+  // e = External scripting
+  // f = Find label
+  // h = Height
+  // i = Overview height
+  // m = Do not create tiles
+  // r = Zoom range
+  // s = Select lable
+  // v = Overview width
+  // w = Width
+  // z = Zoom levels
+  // R = Fill color red
+  // G = Fill color green
+  // B = Fill color blue
+
+si_OimFile[list] = 6 (OCAD Internet Maps file)
+----------------------------------------------
+  // First = Filename
+
+si_OimFind[list] = 14 (OCAD Internet Maps find settings)
+--------------------------------------------------------
+  // First = Name
+  // c = Condition
+  // d = Dataset
+  // f = From zoom
+  // h = Hint field
+  // n = Name field
+  // l = list names
+  // o = Hotspot type
+  // p = Pointer type
+  // s = Show hotspots
+  // t = To zoom
+  // u = URL field
+  // x = Prefix
+  // y = Postfix
+  // z = Target
+  // r = Pointer color red
+  // g = Pointer color green
+  // b = Pointer color blue
+  // R = Hotspot color red
+  // G = Hotspot color green
+  // B = Hotspot color blue
+
+si_EpsPar = 1029
+----------------
+  // r = EPS resolution
+
+si_TiffPar = 1032
+-----------------
+  // c = compression (1 = no compression, 2 = CCITT, 4 = FaxG4, 5 = LZW)
+  // g = GeoTIFF
+  // s = pixel size
+  // w = TFW file
+
+si_TilesPar = 1033
+------------------
+  // w = width
+  // h = height
+
+Parameter Strings - Misc
+=============================================================================================
+si_FileInfo[list] = 11 (file informations)
+------------------------------------------
+  // First = text
+
+si_SymTree[list] = 15 (symbol tree)
+-----------------------------------
+  // First = name
+  // f = first node in subgroup
+  // g = group id
+  // l = last node in subgroup
+  // v = visible
+  // e = expand
+
+si_DisplayPar = 1024 (display setting)
+--------------------------------------
+  // f = Show symbol favorites
+  // g = selected symbol group
+  // s = selected symbol
+  // t = Show symbol tree
+  // x = SymBox width
+  // y = SymBox height
+  // h = horizontal splitter (pixel from top)
+  // v = vertical splitter (pixel from right)
+
+si_ViewPar = 1030 (view settings)
+---------------------------------
+  // b = draft mode IGN for ocad-map [int: 0..100]
+  // c = draft mode IGN background maps [int: 0..100]
+  // d = hidden background maps
+  // m = draft mode for ocad-map [int: 0..100]
+  // t = draft mode background maps [int: 0..100]
+  // v = view mode (0=normal, 1=spot colors, 2=draft, 3=draft IGN)
+  // x = offset x
+  // y = offset y
+  // z = zoom
+  // h = hatch areas (0 = normal, 1 = hatched)
+  // OLD: a, p, s
+
+si_PrintPar = 1026
+------------------
+  // a = print scale
+  // l = landscape
+  // c = print (0 = color map, 1 = spot color separation)
+  // g = print grid
+  // d = grid color
+  // i = intensity
+  // w = additional width for lines and dots
+  // r = Range (0 entire map, 1 partial map, 2 one page)
+  // L = partial map left
+  // B = partial map bottom
+  // R = partial map right
+  // T = partial map top
+  // x = horizontal overlap
+  // y = vertical overlap
+  // b = print black          (course setting only)
+  // m = mirror               (course setting only)
+  // s = horizontal scale     (course setting only)
+  // t = vertical scale       (course setting only)
+
+si_ScalePar = 1039 (scales settings)
+------------------------------------
+  // a = real world angle
+  // d = grid distance for real world  in m
+  // g = grid distance for paper coordiantes in mm
+  // i = grid and zone
+  // m = map scale
+  // r = real world cord (0 = paper, 1 = real world)
+  // x = real world offset x
+  // y = real world offset y
+
+si_Template[list] = 8 (templates)
+---------------------------------
+  // First = file name
+  // a = angle omega
+  // b = angle phi
+  // d = dim
+  // o = render with spot colors
+  // p = assigned to spot color
+  // q = subtract from spot color (0 = normal, 1 = subtract)
+  // r = visible in draft mode (0 = hidden, 1 = visible)
+  // s = visible in normal mode (0 = hidden, 1 = visible)
+  // t = transparent
+  // x = offset x
+  // y = offset y
+  // u = pixel size x
+  // v = pixel size y
+
+si_TemplatePar = 1028
+---------------------
+  // s = default scale
+
+si_Color[list] = 9 (colors)
+---------------------------
+  // First = name
+  // n = number
+  // c = cyan
+  // m = magenta
+  // y = yellow
+  // k = black
+  // o = overprint
+  // t = transparency
+  // s = sport color separation name
+  // p = percentage in the sport color separation
+
+si_SpotColor[list] = 10 (spot colors)
+-------------------------------------
+  // First = name
+  // v = visible
+  // n = number
+  // f = frequency (lpi)
+  // a = angle
+  // c = cyan
+  // m = magenta
+  // y = yellow
+  // k = black
+
+si_Zoom[list] = 12
+------------------
+  // x = offset x
+  // y = offset y
+  // z = zoom
+
+si_ImpLayer[list] = 13 (imported dxf layer)
+-------------------------------------------
+  // First = Name
+  // n = layer number

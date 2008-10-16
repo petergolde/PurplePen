@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- #BeginTemplate "master.dwt" -->
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<link rel=stylesheet href="StyleSheet.css" type="text/css">
+<!-- #BeginEditable "doctitle" -->
+<title>Reports/Event Audit</title>
+<!-- #EndEditable -->
+</HEAD>
+<BODY>
+<!-- #BeginEditable "content" -->
+<h1>Reports/Event Audit</h1>
+<p>The Event Audit report checks the event for a number of different kinds of 
+potential problems, and reports any that are found. The Event Audit consists of 
+a number of sections. If no problems are found for a given section, that section 
+is omitted. The sections are as follows:</p>
+<h2>Missing Items in Courses</h2>
+<ul>
+	<li>Reports any course without a start triangle.</li>
+	<li>Reports any normal course without a finish circle.</li>
+	<li>Reports any normal course without a climb amount.</li>
+	<li>If some courses have <a href="CourseCompetitorLoad.htm">competitor loads</a> 
+	defined, reports any course without a competitor load.</li>
+</ul>
+<h2>Close Together Controls</h2>
+<ul>
+	<li>Reports any pair of controls closer than 100m apart.</li>
+</ul>
+<h2>Unused Controls</h2>
+<ul>
+	<li>Reports all controls, starts, finishes, and mandatory crossing points 
+	that are in the All Controls collection, but not used in any course.</li>
+</ul>
+<h2>Missing Description Boxes</h2>
+<ul>
+	<li>Reports any control with no main symbol in column D.</li>
+	<li>Reports any controls using the &quot;crossing&quot;, &quot;junction&quot;, or &quot;between&quot; 
+	symbols that does not have a symbol in both columns D and E.</li>
+</ul>
+<h2>Missing Punch Patterns</h2>
+<ul>
+	<li>Reports all controls without a punch pattern defined. If none of the 
+	controls have punch patterns, then this section is omitted.</li>
+</ul>
+<h2>Missing Points</h2>
+<ul>
+	<li>Reports all controls in a score course that don&#39;t have points assigned 
+	to them. If none of the controls in the course have points assigned, then 
+	this section is omitted.</li>
+</ul>
+<p>&nbsp;</p>
+<p>To print the report, click the <strong>Print</strong> button. To view a preview of the printed 
+report, or to adjust margins, text size, headers and footers, or paper 
+orientation, click the <strong>Print Preview</strong> button.</p>
+<p>To copy all or part of the report to the clipboard, select the portion of the 
+report you wish to copy. Then click the right mouse button on the selected text, 
+and select Copy from the menu.</p>
+<p>&nbsp;</p>
+<!-- #EndEditable -->
+</BODY>
+<!-- #EndTemplate -->
+</HTML>

@@ -1,0 +1,5 @@
+;!@Install@!UTF-8!
+Title="Purple Pen Setup"
+Progress="yes"
+RunProgram="RunAndWait.exe setup"
+;!@InstallEnd@!

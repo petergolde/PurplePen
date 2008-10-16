@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE RankList SYSTEM "IOFdata.dtd">
+<RankList>
+   <IOFVersion version="2.0.3" />
+
+   <Name>World Cup</Name>
+
+   <Competitor>
+      <Person>
+         <PersonName>
+            <Family>Fenger-Grøn</Family>
+
+            <Given>Morten</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">1183</PersonId>
+
+         <Nationality>
+            <CountryId value="DEN" />
+         </Nationality>
+      </Person>
+
+      <Club>
+         <ClubId type="nat" idManager="DOF">1377</ClubId>
+
+         <ShortName>OK Pan</ShortName>
+
+         <CountryId value="DEN" />
+      </Club>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>134</RankPosition>
+
+         <RankValue>244</RankValue>
+
+         <ModifyDate>
+            <Date>2002-02-17</Date>
+         </ModifyDate>
+      </Rank>
+   </Competitor>
+
+   <Competitor>
+      <Person>
+         <PersonName>
+            <Family>Nero</Family>
+
+            <Given sequence="1">Peter</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">11383</PersonId>
+
+         <Nationality>
+            <CountryId value="SWE" />
+         </Nationality>
+      </Person>
+
+      <Club>
+         <ClubId type="nat" idManager="SOFT">3390</ClubId>
+
+         <ShortName>IFK Göteborg</ShortName>
+
+         <CountryId value="SWE" />
+      </Club>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>133</RankPosition>
+
+         <RankValue>248</RankValue>
+
+         <ModifyDate>
+            <Date>2002-02-17</Date>
+         </ModifyDate>
+      </Rank>
+   </Competitor>
+
+   <Competitor>
+      <Person>
+         <PersonName>
+            <Family>Plattner</Family>
+
+            <Given sequence="1">Christoph</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">1148</PersonId>
+
+         <Nationality>
+            <CountryId value="SUI" />
+         </Nationality>
+      </Person>
+
+      <Club>
+         <ClubId type="nat" idManager="SOLV">277</ClubId>
+
+         <ShortName>OLV Zürich</ShortName>
+
+         <CountryId value="SUI" />
+      </Club>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>13</RankPosition>
+
+         <RankValue>2442</RankValue>
+
+         <ModifyDate>
+            <Date>2002-02-17</Date>
+         </ModifyDate>
+      </Rank>
+   </Competitor>
+
+   <Competitor>
+      <Person>
+         <PersonName>
+            <Family>Ivarsson</Family>
+
+            <Given sequence="1">Johan</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">1783</PersonId>
+
+         <Nationality>
+            <CountryId value="SWE" />
+         </Nationality>
+      </Person>
+
+      <Club>
+         <ClubId type="nat" idManager="SOFT">4366</ClubId>
+
+         <ShortName>Laholms IF</ShortName>
+
+         <CountryId value="SWE" />
+      </Club>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>277</RankPosition>
+
+         <RankValue>144</RankValue>
+
+         <ModifyDate>
+            <Date>2002-02-17</Date>
+         </ModifyDate>
+      </Rank>
+   </Competitor>
+</RankList>
+

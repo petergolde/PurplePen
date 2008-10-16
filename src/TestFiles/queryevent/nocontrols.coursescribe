@@ -1,0 +1,13 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event 1</title>
+    <notes>This is a sample event with no controls.</notes>
+    <map kind="none" scale="15000"></map>
+  </event>
+	<course id="1" kind="normal">
+		<name>White</name>
+		<secondary-title>White is right</secondary-title>
+		<options print-scale="15000" climb="66" description-kind="symbols-and-text" />
+		<description square-size="5.5" left-edge="0" top-edge="0" />
+	</course>
+</course-scribe-event>

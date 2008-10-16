@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE StartList SYSTEM "IOFdata.dtd">
+<StartList>
+   <IOFVersion version="2.0.3" />
+
+   <EventId type="int" idManager="IOF">WC1</EventId>
+
+   <ClassStart>
+      <ClassShortName>Men</ClassShortName>
+
+      <TeamStart>
+         <TeamName>Switzerland 1</TeamName>
+
+         <CountryId value="SUI" />
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Plattner</Family>
+
+                  <Given sequence="1">Christoph</Given>
+               </PersonName>
+
+               <PersonId>101</PersonId>
+            </Person>
+
+            <CountryId value="SUI" />
+
+            <Start>
+               <BibNumber>1-1</BibNumber>
+
+               <StartTime>
+                  <Clock>09:00:00</Clock>
+               </StartTime>
+
+               <CourseLength>9600</CourseLength>
+            </Start>
+         </PersonStart>
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Ivarsson</Family>
+
+                  <Given sequence="1">Johan</Given>
+               </PersonName>
+
+               <PersonId>102</PersonId>
+            </Person>
+
+            <CountryId value="SWE" />
+
+            <Start>
+               <BibNumber>1-2</BibNumber>
+
+               <CourseLength>5400</CourseLength>
+            </Start>
+         </PersonStart>
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Modig</Family>
+
+                  <Given sequence="1">Johan</Given>
+               </PersonName>
+
+               <PersonId>103</PersonId>
+            </Person>
+
+            <CountryId value="SWE" />
+
+            <Start>
+               <BibNumber>1-3</BibNumber>
+
+               <CourseLength>9600</CourseLength>
+            </Start>
+         </PersonStart>
+      </TeamStart>
+
+      <TeamStart>
+         <TeamName>Finland 2</TeamName>
+
+         <CountryId value="FIN" />
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Cederberg</Family>
+
+                  <Given sequence="1">Kenneth</Given>
+               </PersonName>
+
+               <PersonId>104</PersonId>
+            </Person>
+
+            <CountryId value="FIN" />
+
+            <Start>
+               <BibNumber>4-1</BibNumber>
+
+               <StartTime>
+                  <Clock>09:00:00</Clock>
+               </StartTime>
+
+               <CourseLength>9600</CourseLength>
+            </Start>
+         </PersonStart>
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Andersson</Family>
+
+                  <Given sequence="1">Tobias</Given>
+               </PersonName>
+
+               <PersonId>105</PersonId>
+            </Person>
+
+            <CountryId value="SWE" />
+
+            <Start>
+               <BibNumber>4-2</BibNumber>
+
+               <CourseLength>5400</CourseLength>
+            </Start>
+         </PersonStart>
+
+         <PersonStart>
+            <Person sex="M">
+               <PersonName>
+                  <Family>Stevenson</Family>
+
+                  <Given sequence="1">Jamie</Given>
+               </PersonName>
+
+               <PersonId>106</PersonId>
+            </Person>
+
+            <CountryId value="GBR" />
+
+            <Start>
+               <BibNumber>4-3</BibNumber>
+
+               <CourseLength>9600</CourseLength>
+            </Start>
+         </PersonStart>
+      </TeamStart>
+   </ClassStart>
+</StartList>
+

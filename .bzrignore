@@ -1,0 +1,17 @@
+bin
+obj
+Debug
+Release
+*_temp.*
+*_diff.png
+*_new.png
+*.suo
+*.cache
+*.tmp
+*.user
+*.chm
+src/TestResults
+doc/userdocs/Help/_vti_cnf
+doc/userdocs/Help/_vti_pvt
+doc/userdocs/Help/*.log
+doc/userdocs/Help/desktop.ini

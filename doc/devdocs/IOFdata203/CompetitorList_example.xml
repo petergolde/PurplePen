@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE CompetitorList SYSTEM "IOFdata.dtd">
+<CompetitorList>
+   <IOFVersion version="2.0.3" />
+
+   <Competitor>
+      <Person sex="M">
+         <PersonName>
+            <Family>Plattner</Family>
+
+            <Given>Christoph</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">12345</PersonId>
+
+         <BirthDate>
+            <Date>1979-12-12</Date>
+         </BirthDate>
+
+         <Address street="Karl Stauffer Strasse 23" city="Zürich" zipCode="CH-8008">
+            <AddressType value="work" />
+
+            <CountryId value="SUI" />
+         </Address>
+
+         <Tele phoneNumber="+41 2 345 6789" mobilePhoneNumber="+41 1 234 5678">
+            <TeleType value="home" />
+         </Tele>
+
+         <Nationality>
+            <CountryId value="SUI" />
+         </Nationality>
+      </Person>
+
+      <Club>
+         <ClubId type="nat" idManager="SUI">12</ClubId>
+
+         <Name>OLG Zürich</Name>
+
+         <ShortName>OLG Zürich</ShortName>
+
+         <Country>
+            <CountryId value="SUI" />
+         </Country>
+
+         <Account type="bankAccount">1243 585 995</Account>
+
+         <Contact>
+            <Person>
+               <PersonName>
+                  <Family>Stauffer</Family>
+
+                  <Given sequence="1">André</Given>
+
+                  <Given sequence="2">Bourgeois</Given>
+               </PersonName>
+
+               <PersonId type="nat" idManager="SUI">1234</PersonId>
+
+               <Address street="Entlisbergstrasse 42" city="Zürich" zipCode="CH-8038">
+                  <AddressType value="home" />
+               </Address>
+
+               <Tele phoneNumber="+41 1 467 2772">
+                  <TeleType value="home" />
+               </Tele>
+            </Person>
+
+            <ContactType value="official" />
+         </Contact>
+
+         <Contact>
+            <PersonId type="nat" idManager="SUI">1234</PersonId>
+
+            <ContactType value="financial" />
+         </Contact>
+      </Club>
+
+      <PreSelectedClass>
+         <ClassShortName>M21E</ClassShortName>
+      </PreSelectedClass>
+
+      <CCard>
+         <CCardId>123456</CCardId>
+
+         <PunchingUnitType value="SI" />
+      </CCard>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>3</RankPosition>
+
+         <RankValue>234</RankValue>
+      </Rank>
+
+      <Rank>
+         <Name>World Rank</Name>
+
+         <RankPosition>23</RankPosition>
+
+         <RankValue>5144</RankValue>
+      </Rank>
+
+      <ModifyDate>
+         <Date>2002-02-02</Date>
+      </ModifyDate>
+   </Competitor>
+
+   <Competitor>
+      <Person sex="F">
+         <PersonName>
+            <Family>Widler</Family>
+
+            <Given>Käthi</Given>
+         </PersonName>
+
+         <PersonId type="int" idManager="IOF">12346</PersonId>
+      </Person>
+
+      <ClubId type="nat" idManager="SUI">12</ClubId>
+
+      <PreSelectedClass>
+         <ClassShortName>W21E</ClassShortName>
+      </PreSelectedClass>
+
+      <CCard>
+         <CCardId>23458</CCardId>
+
+         <PunchingUnitType value="Emit" />
+      </CCard>
+
+      <Rank>
+         <Name>World Cup</Name>
+
+         <RankPosition>34</RankPosition>
+
+         <RankValue>31</RankValue>
+      </Rank>
+
+      <Rank>
+         <Name>World Rank</Name>
+
+         <RankPosition>351</RankPosition>
+
+         <RankValue>514</RankValue>
+      </Rank>
+
+      <ModifyDate>
+         <Date>2002-02-02</Date>
+      </ModifyDate>
+   </Competitor>
+
+   <Competitor>
+      <Person sex="F">
+         <PersonName>
+            <Family>Nero</Family>
+
+            <Given sequence="1">Frida</Given>
+         </PersonName>
+
+         <PersonId>11468</PersonId>
+
+         <BirthDate>
+            <Date>1981-01-01</Date>
+         </BirthDate>
+
+         <Address street="Hultsvägen 222" city="Eskilstuna" zipCode="SE-123 17">
+            <AddressType value="home" />
+
+            <CountryId value="SWE" />
+         </Address>
+
+         <Tele phoneNumber="+46 123 45 67 89" mailAddress="frida@hotmail.com">
+            <TeleType value="home" />
+         </Tele>
+
+         <Nationality>
+            <CountryId value="SWE" />
+         </Nationality>
+
+         <ModifyDate>
+            <Date>2001-04-10</Date>
+         </ModifyDate>
+      </Person>
+
+      <ClubId type="nat" idManager="SWE">3390</ClubId>
+
+      <PreSelectedClass sequence="1">
+         <ClassId>40</ClassId>
+      </PreSelectedClass>
+
+      <PreSelectedClass sequence="2">
+         <ClassId>600</ClassId>
+      </PreSelectedClass>
+
+      <PreSelectedClass sequence="3">
+         <ClassId>610</ClassId>
+      </PreSelectedClass>
+
+      <CCard>
+         <CCardId>287130</CCardId>
+
+         <PunchingUnitType value="SI" />
+      </CCard>
+
+      <CCard>
+         <CCardId>18547</CCardId>
+
+         <PunchingUnitType value="Emit" />
+      </CCard>
+
+      <Rank>
+         <OrganisationId type="int" idManager="IOF">1</OrganisationId>
+
+         <RankPosition>202</RankPosition>
+
+         <RankValue>136.45</RankValue>
+
+         <ValidFromDate>
+            <Date>2001-01-01</Date>
+         </ValidFromDate>
+
+         <ValidToDate>
+            <Date>2001-12-31</Date>
+         </ValidToDate>
+      </Rank>
+
+      <Rank>
+         <OrganisationId type="nat" idManager="SWE">28</OrganisationId>
+
+         <RankPosition>14</RankPosition>
+
+         <RankValue>1.06</RankValue>
+
+         <ValidFromDate>
+            <Date>2001-01-01</Date>
+         </ValidFromDate>
+
+         <ValidToDate>
+            <Date>2001-12-31</Date>
+         </ValidToDate>
+      </Rank>
+   </Competitor>
+</CompetitorList>
+

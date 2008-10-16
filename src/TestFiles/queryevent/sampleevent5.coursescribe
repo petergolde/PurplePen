@@ -1,0 +1,41 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event 5</title>
+    <notes>This is a sample event with no finish.</notes>
+    <map kind="none" scale="15000"></map>
+  </event>
+	<control id="20" kind="normal">
+		<code>60</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+	<control id="21" kind="normal">
+		<code>65</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+	<control id="22" kind="normal">
+		<code>64</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+	<control id="23" kind="normal">
+		<code>63</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+	<control id="24" kind="normal">
+		<code>62</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+
+	<course id="1" kind="normal">
+		<name>White</name>
+		<secondary-title>White is right</secondary-title>
+		<first course-control="101" />
+		<options print-scale="15000" climb="66" description-kind="symbols-and-text" />
+		<description square-size="5.5" left-edge="0" top-edge="0" />
+	</course>
+
+	<course-control id="101" control="20">
+		<next course-control="102" />
+	</course-control>
+	<course-control id="102" control="21">
+	</course-control>
+</course-scribe-event>

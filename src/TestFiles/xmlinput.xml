@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rootsym>
+	<!-- This is a comment -->
+	<fiddle x="foo" y="1" z="false"></fiddle>
+	<faddle x="3.4" q="">
+		<zing>This is the zing</zing>
+		<ziddle>
+			This is ziddle.
+		</ziddle>
+		<zang r="1" z="froogle"/>
+		<!-- This is a comment -->
+		<zung>
+			<!-- comment -->
+			<diddle/>
+		</zung>
+		<zang r="1" z="froogle" q="12">This is zang.</zang>
+	</faddle>
+</rootsym>

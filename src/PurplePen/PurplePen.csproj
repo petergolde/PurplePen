@@ -1,0 +1,733 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PurplePen</RootNamespace>
+    <AssemblyName>PurplePen</AssemblyName>
+    <ApplicationIcon>Images\PurplePen.ico</ApplicationIcon>
+    <StartupObject>PurplePen.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DebugUI\NewLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\NewLanguage.Designer.cs">
+      <DependentUpon>NewLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionLocalize.cs" />
+    <Compile Include="GraphicsHelper.cs" />
+    <Compile Include="MapView\BitmapUtil.cs" />
+    <Compile Include="MapView\Highlight.cs" />
+    <Compile Include="MapView\MapViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MapView\Util.cs" />
+    <Compile Include="MapView\ViewCache.cs" />
+    <Compile Include="MapModel\Bezier.cs" />
+    <Compile Include="MapModel\Debug\OcadDump.cs" />
+    <Compile Include="MapModel\Glyph.cs" />
+    <Compile Include="MapModel\GraphicsTarget.cs" />
+    <Compile Include="MapModel\InputOutput.cs" />
+    <Compile Include="MapModel\LZWCompression.cs" />
+    <Compile Include="MapModel\Map.cs" />
+    <Compile Include="MapModel\OcadExport.cs" />
+    <Compile Include="MapModel\OcadFileFormat.cs" />
+    <Compile Include="MapModel\OcadImport.cs" />
+    <Compile Include="MapModel\Symbol.cs" />
+    <Compile Include="MapModel\SymColor.cs" />
+    <Compile Include="MapModel\SymDef.cs" />
+    <Compile Include="MapModel\SymPath.cs" />
+    <Compile Include="MapModel\Util.cs" />
+    <Compile Include="AddTextLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTextLine.Designer.cs">
+      <DependentUpon>AddTextLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllControlsProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllControlsProperties.Designer.cs">
+      <DependentUpon>AllControlsProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasicPrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChangeCourseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeCourseOrder.Designer.cs">
+      <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeMapFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeMapFile.Designer.cs">
+      <DependentUpon>ChangeMapFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseLoad.Designer.cs">
+      <DependentUpon>CourseLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoursePrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomSymbolText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomSymbolText.Designer.cs">
+      <DependentUpon>CustomSymbolText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\ControlTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\ControlTester.Designer.cs">
+      <DependentUpon>ControlTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\CourseSelectorTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\CourseSelectorTestForm.Designer.cs">
+      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\DescriptionBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\DescriptionBrowser.Designer.cs">
+      <DependentUpon>DescriptionBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\DotGridTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\DotGridTester.Designer.cs">
+      <DependentUpon>DotGridTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\MapTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\MapTester.Designer.cs">
+      <DependentUpon>MapTester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\SymbolBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\SymbolBrowser.Designer.cs">
+      <DependentUpon>SymbolBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportXml.cs" />
+    <Compile Include="MapUtil.cs" />
+    <Compile Include="MiscText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MissingFonts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MissingFonts.Designer.cs">
+      <DependentUpon>MissingFonts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventBitmapScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventBitmapScale.Designer.cs">
+      <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventPrintScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventPrintScale.Designer.cs">
+      <DependentUpon>NewEventPrintScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NonPrintableObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NonPrintableObjects.Designer.cs">
+      <DependentUpon>NonPrintableObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverwritingOcadFilesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverwritingOcadFilesDialog.Designer.cs">
+      <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintCourses.Designer.cs">
+      <DependentUpon>PrintCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionPrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintPunches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintPunches.Designer.cs">
+      <DependentUpon>PrintPunches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DotGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DotGrid.Designer.cs">
+      <DependentUpon>DotGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventNumbering.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventNumbering.Designer.cs">
+      <DependentUpon>NewEventNumbering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MapView\MapViewer.resx">
+      <DependentUpon>MapViewer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAllCodes.resx">
+      <DependentUpon>ChangeAllCodes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeSpecialCourses.resx">
+      <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseSelector.resx">
+      <DependentUpon>CourseSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateOcadFiles.resx">
+      <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionControl.resx">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RectanglePrinting.resx">
+      <DependentUpon>RectanglePrinting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitialScreen.resx">
+      <DependentUpon>InitialScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame.resx">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventDirectory.resx">
+      <DependentUpon>NewEventDirectory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventFinal.resx">
+      <DependentUpon>NewEventFinal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventMapFile.resx">
+      <DependentUpon>NewEventMapFile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventTitle.resx">
+      <DependentUpon>NewEventTitle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventWizard.resx">
+      <DependentUpon>NewEventWizard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDescriptions.resx">
+      <DependentUpon>PrintDescriptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>PurplePen</CustomToolNamespace>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddControlMode.cs" />
+    <Compile Include="AddCornerMode.cs" />
+    <Compile Include="AddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCourse.Designer.cs">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDescriptionMode.cs" />
+    <Compile Include="AddRemoveGapMode.cs" />
+    <Compile Include="Appearance.cs" />
+    <Compile Include="AutoNumbering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoNumbering.Designer.cs">
+      <DependentUpon>AutoNumbering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeAllCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAllCodes.Designer.cs">
+      <DependentUpon>ChangeAllCodes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeEvent.cs" />
+    <Compile Include="ChangeSpecialCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeSpecialCourses.Designer.cs">
+      <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller.cs" />
+    <Compile Include="CourseFormatter.cs" />
+    <Compile Include="CourseLayout.cs" />
+    <Compile Include="CourseObject.cs" />
+    <Compile Include="CourseSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CourseSelector.Designer.cs">
+      <DependentUpon>CourseSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseView.cs" />
+    <Compile Include="CreateOcadFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateOcadFiles.Designer.cs">
+      <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultMode.cs" />
+    <Compile Include="DescriptionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DescriptionControl.Designer.cs">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionFormatter.cs" />
+    <Compile Include="PunchcardLayoutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PunchcardLayoutDialog.Designer.cs">
+      <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PunchPrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RectanglePrinting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DescriptionRenderer.cs" />
+    <Compile Include="EventDB.cs" />
+    <Compile Include="Highlights.cs" />
+    <Compile Include="InitialScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialScreen.Designer.cs">
+      <DependentUpon>InitialScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LegGap.cs" />
+    <Compile Include="LicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicenseForm.Designer.cs">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrame.Designer.cs">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapDisplay.cs" />
+    <Compile Include="NewEventDirectory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventDirectory.Designer.cs">
+      <DependentUpon>NewEventDirectory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventFinal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventFinal.Designer.cs">
+      <DependentUpon>NewEventFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventMapFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventMapFile.Designer.cs">
+      <DependentUpon>NewEventMapFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventTitle.Designer.cs">
+      <DependentUpon>NewEventTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewEventWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEventWizard.Designer.cs">
+      <DependentUpon>NewEventWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectStore.cs" />
+    <Compile Include="OcadCreation.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="PrintDescriptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintDescriptions.Designer.cs">
+      <DependentUpon>PrintDescriptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="PunchesRenderer.cs" />
+    <Compile Include="PunchPatternDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PunchPatternDialog.Designer.cs">
+      <DependentUpon>PunchPatternDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueryEvent.cs" />
+    <Compile Include="RectangleSelectMode.cs" />
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs" />
+    <Compile Include="EnterSymbolText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterSymbolText.Designer.cs">
+      <DependentUpon>EnterSymbolText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RotateMode.cs" />
+    <Compile Include="SelectionDescriber.cs" />
+    <Compile Include="SelectionMgr.cs" />
+    <Compile Include="SetPrintAreaDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetPrintAreaDialog.Designer.cs">
+      <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetUILanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetUILanguage.Designer.cs">
+      <DependentUpon>SetUILanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SymbolDB.cs" />
+    <Compile Include="SymbolPopup.cs" />
+    <Compile Include="Textifier.cs" />
+    <Compile Include="ToolStripTrackBar.cs" />
+    <Compile Include="UndoMgr.cs" />
+    <Compile Include="UnusedControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnusedControls.Designer.cs">
+      <DependentUpon>UnusedControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="VersionNumber.cs" />
+    <Compile Include="XmlInput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MapView\DragCursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DebugUI\NewLanguage.resx">
+      <DependentUpon>NewLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\DeleteHandle.cur" />
+    <EmbeddedResource Include="Images\MoveHandle.cur" />
+    <EmbeddedResource Include="AddTextLine.resx">
+      <DependentUpon>AddTextLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllControlsProperties.resx">
+      <DependentUpon>AllControlsProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoNumbering.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AutoNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicPrinting.resx">
+      <DependentUpon>BasicPrinting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeCourseOrder.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeMapFile.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChangeMapFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>PurplePen</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseLoad.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CourseLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomSymbolText.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CustomSymbolText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\ControlTester.resx">
+      <DependentUpon>ControlTester.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\CourseSelectorTestForm.resx">
+      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\DescriptionBrowser.resx">
+      <DependentUpon>DescriptionBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\DotGridTester.resx">
+      <DependentUpon>DotGridTester.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\MapTester.resx">
+      <DependentUpon>MapTester.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\SymbolBrowser.resx">
+      <DependentUpon>SymbolBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>PurplePen</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingFonts.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MissingFonts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventBitmapScale.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventPrintScale.resx">
+      <DependentUpon>NewEventPrintScale.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NonPrintableObjects.resx">
+      <DependentUpon>NonPrintableObjects.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverwritingOcadFilesDialog.resx">
+      <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintCourses.resx">
+      <DependentUpon>PrintCourses.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPunches.resx">
+      <DependentUpon>PrintPunches.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DotGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DotGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventNumbering.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewEventNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PunchcardLayoutDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PunchPatternDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PunchPatternDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterSymbolText.resx">
+      <DependentUpon>EnterSymbolText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>PurplePen</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetPrintAreaDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetUILanguage.resx">
+      <DependentUpon>SetUILanguage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>PurplePen</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnusedControls.resx">
+      <DependentUpon>UnusedControls.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="latest_version.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\logobkgd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="symbols.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

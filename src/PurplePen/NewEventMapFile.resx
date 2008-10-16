@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="newEventMapFileLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 17</value>
+  </data>
+  <data name="newEventMapFileLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 39</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="newEventMapFileLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>In order to design your courses, you must select the map file you will be using. Typically this is an OCAD file (although image files like JPEGs can be used instead). Click the "Choose..." button to select a map file.</value>
+  </data>
+  <data name="&gt;&gt;newEventMapFileLabel.Name" xml:space="preserve">
+    <value>newEventMapFileLabel</value>
+  </data>
+  <data name="&gt;&gt;newEventMapFileLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;newEventMapFileLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;newEventMapFileLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chooseMapFileButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 62</value>
+  </data>
+  <data name="chooseMapFileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 22</value>
+  </data>
+  <data name="chooseMapFileButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chooseMapFileButton.Text" xml:space="preserve">
+    <value>&amp;Choose map file...</value>
+  </data>
+  <data name="&gt;&gt;chooseMapFileButton.Name" xml:space="preserve">
+    <value>chooseMapFileButton</value>
+  </data>
+  <data name="&gt;&gt;chooseMapFileButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chooseMapFileButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chooseMapFileButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>OCAD files (*.ocd)|*.ocd|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="mapFileNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 20</value>
+  </data>
+  <data name="mapFileNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Name" xml:space="preserve">
+    <value>mapFileNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Parent" xml:space="preserve">
+    <value>mapFileDisplay</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="mapFileDisplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 91</value>
+  </data>
+  <data name="mapFileDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 51</value>
+  </data>
+  <data name="mapFileDisplay.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Selected Map File</value>
+  </data>
+  <data name="mapFileDisplay.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;mapFileDisplay.Name" xml:space="preserve">
+    <value>mapFileDisplay</value>
+  </data>
+  <data name="&gt;&gt;mapFileDisplay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapFileDisplay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mapFileDisplay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="errorMessage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="errorMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 0</value>
+  </data>
+  <data name="errorMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 80</value>
+  </data>
+  <data name="errorMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.Name" xml:space="preserve">
+    <value>errorMessage</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.Parent" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="warningIconPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="warningIconPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 0</value>
+  </data>
+  <data name="warningIconPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 31</value>
+  </data>
+  <data name="warningIconPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;warningIconPictureBox.Name" xml:space="preserve">
+    <value>warningIconPictureBox</value>
+  </data>
+  <data name="&gt;&gt;warningIconPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;warningIconPictureBox.Parent" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;warningIconPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="errorDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 151</value>
+  </data>
+  <data name="errorDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 89</value>
+  </data>
+  <data name="errorDisplayPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="errorDisplayPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Name" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="infoMessage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 0</value>
+  </data>
+  <data name="infoMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 80</value>
+  </data>
+  <data name="infoMessage.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>The map file was successfully loaded. If send your Purple Pen file to someone else, they must have the map file also.</value>
+  </data>
+  <data name="&gt;&gt;infoMessage.Name" xml:space="preserve">
+    <value>infoMessage</value>
+  </data>
+  <data name="&gt;&gt;infoMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoMessage.Parent" xml:space="preserve">
+    <value>infoDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;infoMessage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="infoIconPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="infoIconPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 0</value>
+  </data>
+  <data name="infoIconPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="infoIconPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="infoIconPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;infoIconPictureBox.Name" xml:space="preserve">
+    <value>infoIconPictureBox</value>
+  </data>
+  <data name="&gt;&gt;infoIconPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoIconPictureBox.Parent" xml:space="preserve">
+    <value>infoDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;infoIconPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="infoDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 151</value>
+  </data>
+  <data name="infoDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 89</value>
+  </data>
+  <data name="infoDisplayPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="infoDisplayPanel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;infoDisplayPanel.Name" xml:space="preserve">
+    <value>infoDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;infoDisplayPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infoDisplayPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;infoDisplayPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>529, 247</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">
+    <value>openFileDialog</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>NewEventMapFile</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

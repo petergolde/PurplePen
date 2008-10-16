@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE CourseData SYSTEM "IOFdata.dtd">
+
+<CourseData>
+  <IOFVersion version="2.0.3" />
+
+  <Map>
+    <Scale> 15000 </Scale>
+    <MapPosition x="-10.5" y="277.0" />
+  </Map>
+
+  <StartPoint>
+    <StartPointCode> s1 </StartPointCode>
+    <MapPosition x="197.6" y="42.1"/>
+  </StartPoint>
+  <StartPoint>
+    <StartPointCode> s2 </StartPointCode>
+    <MapPosition x="182.4" y="42.1"/>
+  </StartPoint>
+  <StartPoint>
+    <StartPointCode> s3 </StartPointCode>
+    <MapPosition x="140.3" y="-42.0"/>
+  </StartPoint>
+
+  <Control>
+    <ControlCode> 31 </ControlCode>
+    <MapPosition x="172.8" y="54.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 32 </ControlCode>
+    <MapPosition x="168.4" y="57.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 33 </ControlCode>
+    <MapPosition x="142.9" y="43.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 34 </ControlCode>
+    <MapPosition x="123.8" y="38.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 35 </ControlCode>
+    <MapPosition x="113.6" y="50.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 36 </ControlCode>
+    <MapPosition x="201.2" y="58.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 37 </ControlCode>
+    <MapPosition x="205.2" y="57.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 38 </ControlCode>
+    <MapPosition x="198.2" y="64.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 39 </ControlCode>
+    <MapPosition x="202.3" y="67.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 40 </ControlCode>
+    <MapPosition x="193.1" y="81.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 41 </ControlCode>
+    <MapPosition x="195.3" y="101.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 42 </ControlCode>
+    <MapPosition x="183.9" y="111.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 43 </ControlCode>
+    <MapPosition x="192.8" y="113.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 44 </ControlCode>
+    <MapPosition x="187.5" y="123.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 45 </ControlCode>
+    <MapPosition x="190.4" y="123.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 46 </ControlCode>
+    <MapPosition x="182.6" y="138.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 47 </ControlCode>
+    <MapPosition x="178.6" y="144.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 48 </ControlCode>
+    <MapPosition x="172.3" y="147.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 49 </ControlCode>
+    <MapPosition x="175.2" y="158.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 50 </ControlCode>
+    <MapPosition x="185.2" y="152.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 51 </ControlCode>
+    <MapPosition x="191.4" y="148.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 52 </ControlCode>
+    <MapPosition x="170.5" y="116.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 53 </ControlCode>
+    <MapPosition x="207.6" y="141.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 54 </ControlCode>
+    <MapPosition x="201.1" y="133.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 55 </ControlCode>
+    <MapPosition x="225.2" y="125.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 56 </ControlCode>
+    <MapPosition x="217.5" y="125.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 57 </ControlCode>
+    <MapPosition x="212.3" y="119.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 58 </ControlCode>
+    <MapPosition x="170.7" y="120.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 59 </ControlCode>
+    <MapPosition x="158.0" y="113.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 60 </ControlCode>
+    <MapPosition x="161.3" y="109.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 61 </ControlCode>
+    <MapPosition x="149.1" y="119.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 62 </ControlCode>
+    <MapPosition x="140.3" y="113.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 63 </ControlCode>
+    <MapPosition x="134.5" y="106.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 64 </ControlCode>
+    <MapPosition x="137.0" y="103.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 65 </ControlCode>
+    <MapPosition x="136.6" y="97.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 66 </ControlCode>
+    <MapPosition x="140.9" y="95.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 67 </ControlCode>
+    <MapPosition x="152.4" y="100.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 68 </ControlCode>
+    <MapPosition x="152.4" y="94.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 69 </ControlCode>
+    <MapPosition x="153.6" y="89.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 70 </ControlCode>
+    <MapPosition x="103.3" y="88.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 71 </ControlCode>
+    <MapPosition x="89.0" y="97.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 72 </ControlCode>
+    <MapPosition x="84.0" y="91.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 74 </ControlCode>
+    <MapPosition x="70.1" y="88.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 75 </ControlCode>
+    <MapPosition x="92.1" y="70.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 76 </ControlCode>
+    <MapPosition x="81.5" y="70.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 77 </ControlCode>
+    <MapPosition x="81.6" y="63.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 78 </ControlCode>
+    <MapPosition x="73.5" y="74.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 79 </ControlCode>
+    <MapPosition x="66.9" y="76.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 80 </ControlCode>
+    <MapPosition x="68.5" y="69.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 81 </ControlCode>
+    <MapPosition x="94.1" y="50.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 82 </ControlCode>
+    <MapPosition x="98.3" y="43.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 83 </ControlCode>
+    <MapPosition x="94.0" y="42.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 84 </ControlCode>
+    <MapPosition x="158.1" y="60.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 85 </ControlCode>
+    <MapPosition x="169.7" y="59.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 90 </ControlCode>
+    <MapPosition x="152.0" y="4.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 91 </ControlCode>
+    <MapPosition x="146.0" y="5.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 92 </ControlCode>
+    <MapPosition x="146.9" y="11.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 93 </ControlCode>
+    <MapPosition x="146.9" y="19.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 94 </ControlCode>
+    <MapPosition x="139.1" y="19.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 95 </ControlCode>
+    <MapPosition x="135.8" y="13.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 96 </ControlCode>
+    <MapPosition x="139.4" y="7.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 97 </ControlCode>
+    <MapPosition x="132.6" y="-1.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 98 </ControlCode>
+    <MapPosition x="127.4" y="1.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 99 </ControlCode>
+    <MapPosition x="129.9" y="16.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 101 </ControlCode>
+    <MapPosition x="123.7" y="-5.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 102 </ControlCode>
+    <MapPosition x="114.9" y="-5.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 104 </ControlCode>
+    <MapPosition x="112.3" y="2.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 105 </ControlCode>
+    <MapPosition x="116.2" y="5.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 106 </ControlCode>
+    <MapPosition x="101.7" y="10.4"/>
+  </Control>
+  <Control>
+    <ControlCode> 107 </ControlCode>
+    <MapPosition x="84.8" y="11.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 108 </ControlCode>
+    <MapPosition x="86.4" y="3.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 109 </ControlCode>
+    <MapPosition x="102.5" y="-2.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 110 </ControlCode>
+    <MapPosition x="98.6" y="-4.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 111 </ControlCode>
+    <MapPosition x="89.5" y="-7.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 113 </ControlCode>
+    <MapPosition x="101.6" y="-7.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 114 </ControlCode>
+    <MapPosition x="97.3" y="-9.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 116 </ControlCode>
+    <MapPosition x="95.6" y="-24.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 117 </ControlCode>
+    <MapPosition x="100.9" y="-22.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 118 </ControlCode>
+    <MapPosition x="105.7" y="-17.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 119 </ControlCode>
+    <MapPosition x="109.9" y="-15.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 120 </ControlCode>
+    <MapPosition x="115.2" y="-16.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 121 </ControlCode>
+    <MapPosition x="121.9" y="-19.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 122 </ControlCode>
+    <MapPosition x="98.2" y="-34.2"/>
+  </Control>
+  <Control>
+    <ControlCode> 123 </ControlCode>
+    <MapPosition x="105.4" y="-30.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 124 </ControlCode>
+    <MapPosition x="109.3" y="-26.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 125 </ControlCode>
+    <MapPosition x="118.8" y="-24.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 126 </ControlCode>
+    <MapPosition x="129.0" y="-37.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 127 </ControlCode>
+    <MapPosition x="135.0" y="-30.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 128 </ControlCode>
+    <MapPosition x="142.1" y="-30.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 129 </ControlCode>
+    <MapPosition x="147.0" y="-15.7"/>
+  </Control>
+  <Control>
+    <ControlCode> 130 </ControlCode>
+    <MapPosition x="109.7" y="-35.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 131 </ControlCode>
+    <MapPosition x="105.7" y="-41.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 132 </ControlCode>
+    <MapPosition x="105.4" y="-48.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 133 </ControlCode>
+    <MapPosition x="116.5" y="-40.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 134 </ControlCode>
+    <MapPosition x="115.3" y="-44.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 135 </ControlCode>
+    <MapPosition x="124.8" y="-45.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 136 </ControlCode>
+    <MapPosition x="122.0" y="-48.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 137 </ControlCode>
+    <MapPosition x="116.2" y="-48.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 138 </ControlCode>
+    <MapPosition x="115.0" y="-52.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 139 </ControlCode>
+    <MapPosition x="116.9" y="-59.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 140 </ControlCode>
+    <MapPosition x="107.2" y="-59.3"/>
+  </Control>
+  <Control>
+    <ControlCode> 141 </ControlCode>
+    <MapPosition x="112.2" y="-68.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 142 </ControlCode>
+    <MapPosition x="116.9" y="-72.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 143 </ControlCode>
+    <MapPosition x="119.2" y="-66.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 144 </ControlCode>
+    <MapPosition x="121.8" y="-62.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 145 </ControlCode>
+    <MapPosition x="125.6" y="-63.1"/>
+  </Control>
+  <Control>
+    <ControlCode> 147 </ControlCode>
+    <MapPosition x="118.3" y="-87.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 148 </ControlCode>
+    <MapPosition x="126.5" y="-90.6"/>
+  </Control>
+  <Control>
+    <ControlCode> 149 </ControlCode>
+    <MapPosition x="131.7" y="-88.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 150 </ControlCode>
+    <MapPosition x="132.0" y="-94.5"/>
+  </Control>
+  <Control>
+    <ControlCode> 151 </ControlCode>
+    <MapPosition x="130.5" y="-100.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 152 </ControlCode>
+    <MapPosition x="141.1" y="-85.9"/>
+  </Control>
+  <Control>
+    <ControlCode> 153 </ControlCode>
+    <MapPosition x="143.7" y="-90.8"/>
+  </Control>
+  <Control>
+    <ControlCode> 154 </ControlCode>
+    <MapPosition x="148.4" y="-93.0"/>
+  </Control>
+  <Control>
+    <ControlCode> 200 </ControlCode>
+    <MapPosition x="146.1" y="-80.0"/>
+  </Control>
+
+
+  <FinishPoint>
+    <FinishPointCode> f1 </FinishPointCode>
+    <MapPosition x="159.7" y="-79.7"/>
+  </FinishPoint>
+
+  <Course>
+    <CourseName> Bane 01 </CourseName>
+    <CourseId> 0 </CourseId>
+    <ClassShortName> D 21 E1 </ClassShortName>
+    <CourseVariation>
+      <CourseVariationId> 0 </CourseVariationId>
+      <CourseLength> 7600 </CourseLength>
+      <StartPointCode> s1 </StartPointCode>
+      <CourseControl>
+        <Sequence> 1 </Sequence>
+        <ControlCode> 40 </ControlCode>
+        <LegLength> 599 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 2 </Sequence>
+        <ControlCode> 46 </ControlCode>
+        <LegLength> 857 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 3 </Sequence>
+        <ControlCode> 51 </ControlCode>
+        <LegLength> 200 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 4 </Sequence>
+        <ControlCode> 56 </ControlCode>
+        <LegLength> 524 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 5 </Sequence>
+        <ControlCode> 57 </ControlCode>
+        <LegLength> 111 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 6 </Sequence>
+        <ControlCode> 62 </ControlCode>
+        <LegLength> 1083 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 7 </Sequence>
+        <ControlCode> 64 </ControlCode>
+        <LegLength> 152 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 8 </Sequence>
+        <ControlCode> 75 </ControlCode>
+        <LegLength> 837 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 9 </Sequence>
+        <ControlCode> 81 </ControlCode>
+        <LegLength> 300 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 10 </Sequence>
+        <ControlCode> 999 </ControlCode>
+        <LegLength> 182 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 11 </Sequence>
+        <ControlCode> 125 </ControlCode>
+        <LegLength> 996 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 12 </Sequence>
+        <ControlCode> 134 </ControlCode>
+        <LegLength> 306 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 13 </Sequence>
+        <ControlCode> 138 </ControlCode>
+        <LegLength> 132 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 14 </Sequence>
+        <ControlCode> 145 </ControlCode>
+        <LegLength> 219 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 15 </Sequence>
+        <ControlCode> 149 </ControlCode>
+        <LegLength> 399 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 16 </Sequence>
+        <ControlCode> 154 </ControlCode>
+        <LegLength> 258 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 17 </Sequence>
+        <ControlCode> 200 </ControlCode>
+        <LegLength> 198 </LegLength>
+      </CourseControl>
+      <FinishPointCode> f1 </FinishPointCode>
+      <DistanceToFinish> 240 </DistanceToFinish>
+    </CourseVariation>
+  </Course>
+
+  <Course>
+    <CourseName> Bane 02 </CourseName>
+    <CourseId> 1 </CourseId>
+    <ClassShortName> H 21 E1 </ClassShortName>
+    <CourseVariation>
+      <CourseVariationId> 0 </CourseVariationId>
+      <CourseLength> 10950 </CourseLength>
+      <StartPointCode> s1 </StartPointCode>
+      <CourseControl>
+        <Sequence> 1 </Sequence>
+        <ControlCode> 36 </ControlCode>
+        <LegLength> 252 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 2 </Sequence>
+        <ControlCode> 52 </ControlCode>
+        <LegLength> 984 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 3 </Sequence>
+        <ControlCode> 44 </ControlCode>
+        <LegLength> 273 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 4 </Sequence>
+        <ControlCode> 47 </ControlCode>
+        <LegLength> 345 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 5 </Sequence>
+        <ControlCode> 50 </ControlCode>
+        <LegLength> 153 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 6 </Sequence>
+        <ControlCode> 54 </ControlCode>
+        <LegLength> 369 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 7 </Sequence>
+        <ControlCode> 55 </ControlCode>
+        <LegLength> 381 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 8 </Sequence>
+        <ControlCode> 57 </ControlCode>
+        <LegLength> 212 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 9 </Sequence>
+        <ControlCode> 60 </ControlCode>
+        <LegLength> 780 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 10 </Sequence>
+        <ControlCode> 78 </ControlCode>
+        <LegLength> 1413 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 11 </Sequence>
+        <ControlCode> 74 </ControlCode>
+        <LegLength> 216 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 12 </Sequence>
+        <ControlCode> 72 </ControlCode>
+        <LegLength> 212 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 13 </Sequence>
+        <ControlCode> 81 </ControlCode>
+        <LegLength> 636 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 14 </Sequence>
+        <ControlCode> 999 </ControlCode>
+        <LegLength> 182 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 15 </Sequence>
+        <ControlCode> 102 </ControlCode>
+        <LegLength> 716 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 16 </Sequence>
+        <ControlCode> 91 </ControlCode>
+        <LegLength> 497 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 17 </Sequence>
+        <ControlCode> 93 </ControlCode>
+        <LegLength> 203 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 18 </Sequence>
+        <ControlCode> 99 </ControlCode>
+        <LegLength> 257 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 19 </Sequence>
+        <ControlCode> 110 </ControlCode>
+        <LegLength> 567 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 20 </Sequence>
+        <ControlCode> 135 </ControlCode>
+        <LegLength> 723 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 21 </Sequence>
+        <ControlCode> 138 </ControlCode>
+        <LegLength> 188 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 22 </Sequence>
+        <ControlCode> 145 </ControlCode>
+        <LegLength> 219 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 23 </Sequence>
+        <ControlCode> 148 </ControlCode>
+        <LegLength> 413 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 24 </Sequence>
+        <ControlCode> 154 </ControlCode>
+        <LegLength> 330 </LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence> 25 </Sequence>
+        <ControlCode> 200 </ControlCode>
+        <LegLength> 198 </LegLength>
+      </CourseControl>
+      <FinishPointCode> f1 </FinishPointCode>
+      <DistanceToFinish> 240 </DistanceToFinish>
+    </CourseVariation>
+  </Course>
+
+</CourseData>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ResultList SYSTEM "IOFdata.dtd">
+<ResultList status="snapshot">
+   <IOFVersion version="2.0.3" />
+
+   <EventId type="int" idManager="IOF">WC1</EventId>
+
+   <ClassResult>
+      <ClassShortName>Men</ClassShortName>
+
+      <TeamResult>
+         <TeamName>Switzerland 1</TeamName>
+
+         <CountryId value="SUI" />
+
+         <Time>1:23:03</Time>
+
+         <ResultPosition>1</ResultPosition>
+
+         <TeamStatus value="OK" />
+
+         <PersonResult>
+            <PersonId>101</PersonId>
+
+            <Result>
+               <Time>27:52.5</Time>
+
+               <ResultPosition>17</ResultPosition>
+
+               <CompetitorStatus value="OK" />
+
+               <SplitTime sequence="1">
+                  <ControlCode>31</ControlCode>
+
+                  <Time>2:21</Time>
+               </SplitTime>
+
+               <SplitTime sequence="2">
+                  <ControlCode>33</ControlCode>
+
+                  <Time>4:52</Time>
+               </SplitTime>
+
+               <SplitTime sequence="3">
+                  <ControlCode>34</ControlCode>
+
+                  <Time>5:23</Time>
+               </SplitTime>
+
+               <SplitTime sequence="4">
+                  <ControlCode>38</ControlCode>
+
+                  <Time>8:54</Time>
+               </SplitTime>
+
+               <SplitTime sequence="5">
+                  <ControlCode>42</ControlCode>
+
+                  <Time>10:11</Time>
+               </SplitTime>
+
+               <SplitTime sequence="6">
+                  <ControlCode>43</ControlCode>
+
+                  <Time>10:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>13:47</Time>
+               </SplitTime>
+
+               <SplitTime sequence="8">
+                  <ControlCode>40</ControlCode>
+
+                  <Time>19:17</Time>
+               </SplitTime>
+
+               <SplitTime sequence="9">
+                  <ControlCode>35</ControlCode>
+
+                  <Time>24:32</Time>
+               </SplitTime>
+
+               <SplitTime sequence="10">
+                  <ControlCode>100</ControlCode>
+
+                  <Time>26:49</Time>
+               </SplitTime>
+
+               <SplitTime sequence="11">
+                  <ControlCode>300</ControlCode>
+
+                  <Time>37:52.5</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+
+         <PersonResult>
+            <PersonId>120</PersonId>
+
+            <Result>
+               <Time>28:05.4</Time>
+
+               <ResultPosition>18</ResultPosition>
+
+               <CompetitorStatus value="OK" />
+
+               <SplitTime sequence="1">
+                  <ControlCode>31</ControlCode>
+
+                  <Time>2:21</Time>
+               </SplitTime>
+
+               <SplitTime sequence="2">
+                  <ControlCode>33</ControlCode>
+
+                  <Time>4:52</Time>
+               </SplitTime>
+
+               <SplitTime sequence="3">
+                  <ControlCode>34</ControlCode>
+
+                  <Time>5:23</Time>
+               </SplitTime>
+
+               <SplitTime sequence="4">
+                  <ControlCode>38</ControlCode>
+
+                  <Time>8:54</Time>
+               </SplitTime>
+
+               <SplitTime sequence="5">
+                  <ControlCode>42</ControlCode>
+
+                  <Time>10:11</Time>
+               </SplitTime>
+
+               <SplitTime sequence="6">
+                  <ControlCode>43</ControlCode>
+
+                  <Time>10:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>13:33</Time>
+               </SplitTime>
+
+               <SplitTime sequence="8">
+                  <ControlCode>40</ControlCode>
+
+                  <Time>19:17</Time>
+               </SplitTime>
+
+               <SplitTime sequence="9">
+                  <ControlCode>35</ControlCode>
+
+                  <Time>24:32</Time>
+               </SplitTime>
+
+               <SplitTime sequence="10">
+                  <ControlCode>100</ControlCode>
+
+                  <Time>26:49</Time>
+               </SplitTime>
+
+               <SplitTime sequence="11">
+                  <ControlCode>300</ControlCode>
+
+                  <Time>38:05.4</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+
+         <PersonResult>
+            <PersonId>102</PersonId>
+
+            <Result>
+               <Time>26:10.0</Time>
+
+               <ResultPosition>3</ResultPosition>
+
+               <CompetitorStatus value="OK" />
+
+               <SplitTime sequence="1">
+                  <ControlCode>31</ControlCode>
+
+                  <Time>2:21</Time>
+               </SplitTime>
+
+               <SplitTime sequence="2">
+                  <ControlCode>33</ControlCode>
+
+                  <Time>4:52</Time>
+               </SplitTime>
+
+               <SplitTime sequence="3">
+                  <ControlCode>34</ControlCode>
+
+                  <Time>5:23</Time>
+               </SplitTime>
+
+               <SplitTime sequence="4">
+                  <ControlCode>38</ControlCode>
+
+                  <Time>8:54</Time>
+               </SplitTime>
+
+               <SplitTime sequence="5">
+                  <ControlCode>42</ControlCode>
+
+                  <Time>10:11</Time>
+               </SplitTime>
+
+               <SplitTime sequence="6">
+                  <ControlCode>43</ControlCode>
+
+                  <Time>10:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>13:45</Time>
+               </SplitTime>
+
+               <SplitTime sequence="8">
+                  <ControlCode>40</ControlCode>
+
+                  <Time>19:17</Time>
+               </SplitTime>
+
+               <SplitTime sequence="9">
+                  <ControlCode>35</ControlCode>
+
+                  <Time>24:32</Time>
+               </SplitTime>
+
+               <SplitTime sequence="10">
+                  <ControlCode>100</ControlCode>
+
+                  <Time>26:49</Time>
+               </SplitTime>
+
+               <SplitTime sequence="11">
+                  <ControlCode>300</ControlCode>
+
+                  <Time>36:10.0</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+      </TeamResult>
+
+      <TeamResult>
+         <TeamName>Denmark 1</TeamName>
+
+         <CountryId value="DEN" />
+
+         <Time>55:03</Time>
+
+         <TeamStatus value="Active" />
+
+         <PersonResult>
+            <PersonId>121</PersonId>
+
+            <Result>
+               <Time>26:28.8</Time>
+
+               <ResultPosition>6</ResultPosition>
+
+               <CompetitorStatus value="OK" />
+
+               <SplitTime sequence="1">
+                  <ControlCode>31</ControlCode>
+
+                  <Time>2:21</Time>
+               </SplitTime>
+
+               <SplitTime sequence="2">
+                  <ControlCode>33</ControlCode>
+
+                  <Time>4:52</Time>
+               </SplitTime>
+
+               <SplitTime sequence="3">
+                  <ControlCode>34</ControlCode>
+
+                  <Time>5:23</Time>
+               </SplitTime>
+
+               <SplitTime sequence="4">
+                  <ControlCode>38</ControlCode>
+
+                  <Time>8:54</Time>
+               </SplitTime>
+
+               <SplitTime sequence="5">
+                  <ControlCode>42</ControlCode>
+
+                  <Time>10:11</Time>
+               </SplitTime>
+
+               <SplitTime sequence="6">
+                  <ControlCode>43</ControlCode>
+
+                  <Time>10:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>13:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="8">
+                  <ControlCode>40</ControlCode>
+
+                  <Time>19:17</Time>
+               </SplitTime>
+
+               <SplitTime sequence="9">
+                  <ControlCode>35</ControlCode>
+
+                  <Time>24:32</Time>
+               </SplitTime>
+
+               <SplitTime sequence="10">
+                  <ControlCode>100</ControlCode>
+
+                  <Time>26:49</Time>
+               </SplitTime>
+
+               <SplitTime sequence="11">
+                  <ControlCode>300</ControlCode>
+
+                  <Time>36:28.8</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+
+         <PersonResult>
+            <PersonId>103</PersonId>
+
+            <Result>
+               <Time>28:35.7</Time>
+
+               <ResultPosition>21</ResultPosition>
+
+               <CompetitorStatus value="OK" />
+
+               <SplitTime sequence="1">
+                  <ControlCode>31</ControlCode>
+
+                  <Time>2:21</Time>
+               </SplitTime>
+
+               <SplitTime sequence="2">
+                  <ControlCode>33</ControlCode>
+
+                  <Time>4:52</Time>
+               </SplitTime>
+
+               <SplitTime sequence="3">
+                  <ControlCode>34</ControlCode>
+
+                  <Time>5:23</Time>
+               </SplitTime>
+
+               <SplitTime sequence="4">
+                  <ControlCode>38</ControlCode>
+
+                  <Time>8:54</Time>
+               </SplitTime>
+
+               <SplitTime sequence="5">
+                  <ControlCode>42</ControlCode>
+
+                  <Time>10:11</Time>
+               </SplitTime>
+
+               <SplitTime sequence="6">
+                  <ControlCode>43</ControlCode>
+
+                  <Time>10:34</Time>
+               </SplitTime>
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>15:20</Time>
+               </SplitTime>
+
+               <SplitTime sequence="8">
+                  <ControlCode>40</ControlCode>
+
+                  <Time>19:17</Time>
+               </SplitTime>
+
+               <SplitTime sequence="9">
+                  <ControlCode>35</ControlCode>
+
+                  <Time>24:32</Time>
+               </SplitTime>
+
+               <SplitTime sequence="10">
+                  <ControlCode>100</ControlCode>
+
+                  <Time>26:49</Time>
+               </SplitTime>
+
+               <SplitTime sequence="11">
+                  <ControlCode>300</ControlCode>
+
+                  <Time>38:35.7</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+
+         <PersonResult>
+            <PersonId>140</PersonId>
+
+            <Result>
+               <CompetitorStatus value="Active" />
+
+               <SplitTime sequence="7">
+                  <ControlCode>46</ControlCode>
+
+                  <Time>14:12</Time>
+               </SplitTime>
+            </Result>
+         </PersonResult>
+      </TeamResult>
+   </ClassResult>
+</ResultList>
+

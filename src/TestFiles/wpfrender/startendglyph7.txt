@@ -1,0 +1,4 @@
+﻿startendglyph7.ocd
+startendglyph9.png
+-15.7671423,5.801155,4.772681,-9.11629
+906,658

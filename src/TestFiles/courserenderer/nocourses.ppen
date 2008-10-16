@@ -1,0 +1,115 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Marymoor WIOL 2</title>
+    <notes>This is a sample event for testing.</notes>
+    <map kind="none" scale="10000" />
+  </event>
+  <control id="1" kind="start">
+    <location x="56.8" y="-8.7" />
+    <description box="D" iof-2004-ref="4.4" />
+  </control>
+  <control id="2" kind="finish">
+    <location x="53.2" y="-2.8" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="44" kind="normal">
+    <code>44</code>
+    <location x="37.6" y="-22.8" />
+    <description box="D" iof-2004-ref="6.1" />
+    <description box="G" iof-2004-ref="11.1E" />
+  </control>
+  <control id="48" kind="normal">
+    <code>48</code>
+    <location x="21.5" y="40.2" />
+    <description box="D" iof-2004-ref="1.9" />
+    <description box="G" iof-2004-ref="11.3NE" />
+  </control>
+  <control id="50" kind="normal">
+    <code>50</code>
+    <location x="45.2" y="22.8" />
+    <description box="D" iof-2004-ref="1.12" />
+    <description box="G" iof-2004-ref="11.3NW" />
+  </control>
+  <control id="51" kind="normal">
+    <code>51</code>
+    <location x="16.4" y="-11.9" />
+    <description box="D" iof-2004-ref="4.5" />
+    <description box="G" iof-2004-ref="11.1NW" />
+  </control>
+  <control id="53" kind="normal">
+    <code>53</code>
+    <location x="25.8" y="-10.5" />
+    <description box="D" iof-2004-ref="4.9" />
+    <description box="G" iof-2004-ref="11.1SW" />
+  </control>
+  <control id="57" kind="normal">
+    <code>57</code>
+    <location x="90" y="19.3" />
+    <description box="D" iof-2004-ref="4.5" />
+    <description box="G" iof-2004-ref="11.1NW" />
+  </control>
+  <control id="58" kind="normal">
+    <code>58</code>
+    <location x="20.3" y="-4" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.1" />
+    <description box="F" iof-2004-ref="10.2" />
+  </control>
+  <control id="70" kind="normal">
+    <code>70</code>
+    <location x="21.3" y="11.8" />
+    <description box="D" iof-2004-ref="3.4" />
+    <description box="G" iof-2004-ref="11.8NE" />
+  </control>
+  <control id="72" kind="normal">
+    <code>72</code>
+    <location x="-0.7" y="10.3" />
+    <description box="D" iof-2004-ref="5.9" />
+    <description box="G" iof-2004-ref="11.5NW" />
+  </control>
+  <control id="74" kind="normal">
+    <code>74</code>
+    <location x="61.2" y="-18.8" />
+    <description box="C" iof-2004-ref="0.1S" />
+    <description box="D" iof-2004-ref="4.9" />
+    <description box="G" iof-2004-ref="11.1SW" />
+  </control>
+  <control id="75" kind="normal">
+    <code>75</code>
+    <location x="72" y="27" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="3.5" />
+    <description box="F" iof-2004-ref="10.1" />
+  </control>
+  <control id="76" kind="normal">
+    <code>76</code>
+    <location x="5.6" y="-5.7" />
+    <description box="D" iof-2004-ref="3.4" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.1" />
+  </control>
+  <control id="77" kind="normal">
+    <code>77</code>
+    <location x="74.7" y="19.2" />
+    <description box="D" iof-2004-ref="3.5" />
+    <description box="E" iof-2004-ref="3.5" />
+    <description box="F" iof-2004-ref="10.2" />
+  </control>
+  <control id="78" kind="normal">
+    <code>78</code>
+    <location x="93.9" y="28.1" />
+    <description box="D" iof-2004-ref="5.11" />
+    <description box="G" iof-2004-ref="11.5SW" />
+  </control>
+  <control id="80" kind="normal">
+    <code>80</code>
+    <location x="41.9" y="6.8" />
+    <description box="D" iof-2004-ref="4.3" />
+    <description box="G" iof-2004-ref="11.4S" />
+  </control>
+  <special-object id="8" kind="descriptions">
+    <location x="-50" y="50" />
+    <location x="-45" y="50" />
+    <courses all="true" />
+  </special-object>
+</course-scribe-event>

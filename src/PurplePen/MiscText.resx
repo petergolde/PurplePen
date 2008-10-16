@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>No symbol</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>All controls</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Cannot load '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Cannot save '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Cannot load map file '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Cannot read image file '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Cannot print '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Cannot create '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Cannot create folder '{0}' for the following reason:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Cannot read map for the following reason: {0}</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Cannot create OCAD files for the following reason:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Do you want to save the changes you made to '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>File '{0}' already exists in the specified folder. Click the "Back" button and choose a new folder or a new event title.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>The control code '{0}' is already used by another control.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>The points for a control must be an integer 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>The climb for a course must be a number 0-9999, or blank.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>The load for a course must be an integer 0-999999, or blank.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Undo</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Redo</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Clear Selection</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>Ca&amp;ncel Operation</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Cancel Operation</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Enter new score</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Enter new code</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Enter feature size
+Use / for height on a slope
+Use | for two features</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Enter new event title
+(affects all courses)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Enter new secondary title
+(affects this course only)</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Enter new course name</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Enter new climb in meters</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Enter new symbol meaning
+(affects all courses)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Enter new text</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Controls {0} are no longer used by any course. Do you want to delete these controls from the control collection?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Control {0} is no longer used by any course. Do you want to delete this control from the control collection?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Control {0} is currently used by the following courses: {1}. Do you want to delete this control anyway?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>A control code must be one, two, or three letters or digits.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>A control code must not contain a space.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>A control code should be 31 or higher.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>A control code should not begin with zero.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>A control code should not look like another number when upside-down.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>The code "{0}" is used more than once.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>The print scale must be a number between 100 and 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Course Properties</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Landscape</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portrait</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>The page size is too small for any descriptions to be printed.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} of Purple Pen is now available for download. (You are currently running version {1}.)
+
+To download the latest version, visit the Purple Pen web site by selecting "Purple Pen Web Site" in the Help menu.</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Help file '{0}' could not be opened.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>The map file "{0}" could not be found.
+
+Most likely, the map file has been moved or deleted, or the Purple Pen file has been moved (possibly to a different computer). The map file must be present every time the Purple Pen event file is loaded. If you send a Purple Pen event file to another person, be sure that person has a copy of the map file also.
+
+After pressing OK, try to find a copy of the map file on your computer.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>All controls are used in a course.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Finish</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Next &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Control {0}</value>
+    <comment>{0} is the control code</comment>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+    <comment>Abbreviation for "Finish"</comment>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Mandatory crossing point</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Crossing</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+    <comment>Abbreviation for "Crossing"</comment>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>All: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Left: {0}, Right: {1}, Top: {2}, Bottom: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+    <comment>Abbreviation for "Start"</comment>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>plural</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>singular</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>The customized text requires a "*" to indicate where the object being modified is placed.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>course setting for orienteering</value>
+  </data>
+</root>

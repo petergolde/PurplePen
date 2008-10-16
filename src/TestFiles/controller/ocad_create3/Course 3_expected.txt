@@ -1,0 +1,1785 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=6
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=3, nColorSep=0
+  CyanFreq=1500; CyanAng=150
+  MagentaFreq=1500; MagentaAng=750
+  YellowFreq=1500; YellowAng=0
+  BlackFreq=1500; BlackAng=450
+  Reserved1=0x0 Reserved2=0x0
+
+Color #11:   name:  Purple  value:  Cy=30 Mg=180 Yl=0 Bk=50
+Color #0:   name:  Black  value:  Cy=0 Mg=0 Yl=0 Bk=200
+Color #44:   name:  White  value:  Cy=0 Mg=0 Yl=0 Bk=0
+
+
+Setup structure:
+  Offset=(0.00,0.00), rGridDist=10
+  WorkMode=0, LineMode=0, EditMode=0
+  ActSym=0, MapScale=10000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=0
+  GpsAngle=0.0000, nGpsAdjust=0
+  DraftScaleX=15000, DraftScaleY=15000
+  TempOffset=(0.00,0.00), TemplateFileName=
+  TemplateEnabled=0, TempResol=0, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(-29.26,-113.69), PrUpperRight=(233.24,86.88)
+  PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
+  PrintScale=11000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+
+Symbol definition for '890.0'
+ White out': 
+  Size=380, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  Flags=0, FillOn=True, FillColor=44
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
+Symbol definition for '810.0'
+ Description: line': 
+  Size=424, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  LineColor=0, LineWidth=21, LineEnds=4
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+
+Symbol definition for '810.1'
+ Description: line': 
+  Size=424, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F 0 F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  LineColor=0, LineWidth=11, LineEnds=4
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+
+Symbol definition for '810.2'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.3'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.4'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.5'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial, FontColor=0, FontSize=60
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.6'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=54
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.7'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.8'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=52
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.9'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial, FontColor=0, FontSize=63
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '811.0'
+ Description: text': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F 0 0 7 F F F F F 7 0 0 F 0 0 7 0 0 0 7 F F 
+    F 8 0 8 F F F F F 8 0 8 F 0 0 0 0 0 0 0 7 F 
+    F 7 0 0 F F F F F 0 0 7 F 0 0 0 F F 0 0 8 F 
+    F F 0 0 7 F F F 7 0 0 F F 0 0 7 F F 7 0 0 F 
+    F F 8 0 0 0 0 0 0 0 8 F F 0 0 F F F F 0 0 F 
+    F F 7 0 0 0 0 0 0 0 7 F F 0 0 F F F F 0 0 F 
+    F F F 0 0 F F F 0 0 F F F 0 0 7 F F 7 0 0 F 
+    F F F 8 0 8 F 8 0 8 F F F 0 0 0 F F 0 0 8 F 
+    F F F 7 0 8 F 8 0 7 F F F 0 0 0 0 0 0 0 7 F 
+    F F F F 0 0 7 0 0 F F F F 0 0 7 0 0 0 7 F F 
+    F F F F 8 0 8 0 8 F F F F 0 0 F F F F F F F 
+    F F F F 8 0 0 0 8 F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F 0 0 0 F F F F F 0 0 F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial Narrow, FontColor=0, FontSize=67
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '800.0'
+ Description: Start': 
+  Size=400, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F 8 8 F F F F F F F F F F F F F F F F 
+    F F F F 8 8 0 8 F F F F F F F F F F F F F F 
+    F F F F 8 8 F 8 0 7 F F F F F F F F F F F F 
+    F F F F 8 8 F F 7 8 8 7 F F F F F F F F F F 
+    F F F F 8 8 F F F F 7 0 8 F F F F F F F F F 
+    F F F F 8 8 F F F F F F 8 0 8 F F F F F F F 
+    F F F F 8 8 F F F F F F F F 8 0 7 F F F F F 
+    F F F F 8 8 F F F F F F F F F 7 0 8 F F F F 
+    F F F F 8 8 F F F F F F F F F F F 0 8 F F F 
+    F F F F 8 8 F F F F F F F F F 8 0 8 F F F F 
+    F F F F 8 8 F F F F F F F 7 0 8 F F F F F F 
+    F F F F 8 8 F F F F F 7 0 8 7 F F F F F F F 
+    F F F F 8 8 F F F F 8 0 7 F F F F F F F F F 
+    F F F F 8 8 F F 8 0 8 F F F F F F F F F F F 
+    F F F F 8 8 7 0 8 F F F F F F F F F F F F F 
+    F F F F 8 0 8 7 F F F F F F F F F F F F F F 
+    F F F F 7 7 F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 1 -- line
+    stFlags=4  stColor=0  stLineWidth=27  
+    (-1.19,1.38) (-1.19,-1.38) (1.21,0.00) (-1.19,1.38) 
+
+Symbol definition for '701.0'
+ Start': 
+  Size=400, Otp=1, SymTp=0, Flags=1
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F D D D D D D D D D D D D D D F F F F 
+    F F F F D D D D D D D D D D D D D 7 F F F F 
+    F F F F F D D F F F F F F F F D D F F F F F 
+    F F F F F 7 D D F F F F F F D D F F F F F F 
+    F F F F F F D D 7 F F F F 7 D D F F F F F F 
+    F F F F F F F D D F F F F D D F F F F F F F 
+    F F F F F F F D D D F F D D D F F F F F F F 
+    F F F F F F F F D D F F D D F F F F F F F F 
+    F F F F F F F F D D D D D 7 F F F F F F F F 
+    F F F F F F F F F D D D D F F F F F F F F F 
+    F F F F F F F F F 7 D D F F F F F F F F F F 
+    F F F F F F F F F F D D F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 1 -- line
+    stFlags=4  stColor=11  stLineWidth=38  
+    (0.00,4.45) (3.85,-2.22) (-3.85,-2.22) (0.00,4.45) 
+
+Symbol definition for '704.0'
+ Line': 
+  Size=424, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F 7 F F F F F F F F F F F F F F F 
+    F F F F F 7 D D F F F F F F F F F F F F F F 
+    F F F F F F D D 7 F F F F F F F F F F F F F 
+    F F F F F F 7 D D F F F F F F F F F F F F F 
+    F F F F F F F D D F F F F F F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F F D D F F F F F F F F F F F F 
+    F F F F F F F F D D D F F F F F F F F F F F 
+    F F F F F F F F F D D F F F F F F F F F F F 
+    F F F F F F F F F D D D F F F F F F F F F F 
+    F F F F F F F F F F D D F F F F F F F F F F 
+    F F F F F F F F F F D D D F F F F F F F F F 
+    F F F F F F F F F F F D D F F F F F F F F F 
+    F F F F F F F F F F F D D D F F F F F F F F 
+    F F F F F F F F F F F F D D F F F F F F F F 
+    F F F F F F F F F F F F D D F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  LineColor=11, LineWidth=38, LineEnds=0
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+
+Symbol definition for '702.0'
+ Control point': 
+  Size=376, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F D D D D D D F F F F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F 7 D D D F F F F D D D 7 F F F F F 
+    F F F F F D D 7 F F F F F F 7 D D F F F F F 
+    F F F F D D D F F F F F F F F D D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D D F F F F F F F F D D D F F F F 
+    F F F F F D D F F F F F F F 7 D D F F F F F 
+    F F F F F 7 D D D F F F F D D D 7 F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F F F F D D D D D D F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=3
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=38  stDiameter=660
+    (0.00,0.00) 
+
+Symbol definition for '706.0'
+ Finish': 
+  Size=400, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F 7 7 F F F F F F F F F F 
+    F F F F F F F D D D D D D D D F F F F F F F 
+    F F F F F F D D D D F F D D D D F F F F F F 
+    F F F F F D D D F F F F F F D D D F F F F F 
+    F F F F D D 7 F F D D D D F F D D D F F F F 
+    F F F F D D F F D D D D D D F F D D F F F F 
+    F F F F D 7 F D D 7 F F F D D F D D F F F F 
+    F F F 7 D F F D D F F F F D D F F D 7 F F F 
+    F F F 7 D F F D D F F F F D D F F D 7 F F F 
+    F F F F D 7 F D D D F F 7 D D F D D F F F F 
+    F F F F D D F F D D D D D D F F D D F F F F 
+    F F F F D D 7 F F D D D D F F D D D F F F F 
+    F F F F F D D 7 F F F F F F 7 D D F F F F F 
+    F F F F F F D D D 7 F F 7 D D D F F F F F F 
+    F F F F F F F D D D D D D D D F F F F F F F 
+    F F F F F F F F F F 7 7 F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=38  stDiameter=550
+    (0.00,0.00) 
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=38  stDiameter=770
+    (0.00,0.00) 
+
+Symbol definition for '703.0'
+ Control number': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F D D D D D F F F F F F F F 
+    F F F F F F F F D D D D D D D F F F F F F F 
+    F F F F F F F D D D D D D D D D F F F F F F 
+    F F F F F F 7 D D D F F F D D D 7 F F F F F 
+    F F F F F F D D D 7 F F F F D D D F F F F F 
+    F F F F F F D D D F F F F F D D D F F F F F 
+    F F F F F F F F F F F F F F D D D F F F F F 
+    F F F F F F F F F F F F F F D D D F F F F F 
+    F F F F F F D D D 7 F F F D D D D F F F F F 
+    F F F F F F D D D D D D D D D D F F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F F F D D D D D D D F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F D D D D D D D D D F F F F F F 
+    F F F F F F F F D D D D D D D D F F F F F F 
+    F F F F F F F F D D D D D D D D F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial, FontColor=11, FontSize=174
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=100, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Index entry Sym=890.0
+Object Sym=890 Otp=3
+  nItem=5, nText=0
+  Ang=0
+    (148.62,55.26) (183.03,55.26) (183.03,-17.39) (148.62,-17.39) 
+    (148.62,55.26) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,55.05) (182.82,55.05) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,55.16) (148.83,50.69) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,55.16) (182.82,50.69) 
+
+Index entry Sym=810.2
+Object Sym=810.2 Otp=5
+  nItem=4, nText=2
+  Ang=0
+  Text=Marymoor WIOL 2
+    (148.83,51.60) (182.82,51.60) (182.82,54.84) (148.83,54.84) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,50.80) (182.82,50.80) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,50.91) (148.83,46.45) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,50.91) (182.82,46.45) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (161.57,50.91) (161.57,46.45) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (174.32,50.91) (174.32,46.45) 
+
+Index entry Sym=810.2
+Object Sym=810.2 Otp=5
+  nItem=4, nText=2
+  Ang=0
+  Text=Course 3
+    (148.83,47.35) (161.57,47.35) (161.57,50.59) (148.83,50.59) 
+
+Index entry Sym=810.2
+Object Sym=810.2 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=2.9 km
+    (161.57,47.35) (174.32,47.35) (174.32,50.59) (161.57,50.59) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,46.55) (182.82,46.55) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,46.66) (148.83,42.20) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,46.66) (182.82,42.20) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,46.66) (153.08,42.20) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,46.66) (157.32,42.20) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=2
+  Ang=0
+  Text=Start: clearing
+    (157.96,43.49) (182.18,43.49) (182.18,45.70) (157.96,45.70) 
+
+Index entry Sym=800.0
+Object Sym=800 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (150.95,44.43) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,42.30) (182.82,42.30) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,42.41) (148.83,37.95) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,42.41) (182.82,37.95) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,42.41) (153.08,37.95) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,42.41) (157.32,37.95) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=N side of thicket
+    (157.96,39.24) (182.18,39.24) (182.18,41.45) (157.96,41.45) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=1
+    (148.83,38.74) (153.08,38.74) (153.08,41.99) (148.83,41.99) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=59
+    (153.08,38.85) (157.32,38.85) (157.32,42.09) (153.08,42.09) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,38.05) (182.82,38.05) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,38.16) (148.83,33.70) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,38.16) (182.82,33.70) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,38.16) (153.08,33.70) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,38.16) (157.32,33.70) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=SW side of lone tree
+    (157.96,34.99) (182.18,34.99) (182.18,37.21) (157.96,37.21) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=2
+    (148.83,34.50) (153.08,34.50) (153.08,37.74) (148.83,37.74) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=53
+    (153.08,34.60) (157.32,34.60) (157.32,37.84) (153.08,37.84) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,33.81) (182.82,33.81) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,33.91) (148.83,29.45) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,33.91) (182.82,29.45) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,33.91) (153.08,29.45) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,33.91) (157.32,29.45) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=NW edge of thicket
+    (157.96,30.75) (182.18,30.75) (182.18,32.96) (157.96,32.96) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=3
+    (148.83,30.25) (153.08,30.25) (153.08,33.49) (148.83,33.49) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=41
+    (153.08,30.35) (157.32,30.35) (157.32,33.59) (153.08,33.59) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,29.56) (182.82,29.56) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,29.66) (148.83,25.20) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,29.66) (182.82,25.20) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,29.66) (153.08,25.20) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,29.66) (157.32,25.20) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Text=NW outside corner of fence
+    (157.96,26.50) (182.18,26.50) (182.18,28.71) (157.96,28.71) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=4
+    (148.83,26.00) (153.08,26.00) (153.08,29.24) (148.83,29.24) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=72
+    (153.08,26.11) (157.32,26.11) (157.32,29.35) (153.08,29.35) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,25.31) (182.82,25.31) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,25.41) (148.83,20.95) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,25.41) (182.82,20.95) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,25.41) (153.08,20.95) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,25.41) (157.32,20.95) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=NW side of thicket
+    (157.96,22.25) (182.18,22.25) (182.18,24.46) (157.96,24.46) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=5
+    (148.83,21.75) (153.08,21.75) (153.08,24.99) (148.83,24.99) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=47
+    (153.08,21.86) (157.32,21.86) (157.32,25.10) (153.08,25.10) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,21.06) (182.82,21.06) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,21.17) (148.83,16.71) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,21.17) (182.82,16.71) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,21.17) (153.08,16.71) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,21.17) (157.32,16.71) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=S side of lone tree
+    (157.96,18.00) (182.18,18.00) (182.18,20.21) (157.96,20.21) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=6
+    (148.83,17.50) (153.08,17.50) (153.08,20.74) (148.83,20.74) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=71
+    (153.08,17.61) (157.32,17.61) (157.32,20.85) (153.08,20.85) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,16.81) (182.82,16.81) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,16.92) (148.83,12.46) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,16.92) (182.82,12.46) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,16.92) (153.08,12.46) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,16.92) (157.32,12.46) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=2
+  Ang=0
+  Text=Ditch junction
+    (157.96,13.75) (182.18,13.75) (182.18,15.96) (157.96,15.96) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=7
+    (148.83,13.25) (153.08,13.25) (153.08,16.50) (148.83,16.50) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=77
+    (153.08,13.36) (157.32,13.36) (157.32,16.60) (153.08,16.60) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,12.56) (182.82,12.56) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,12.67) (148.83,8.21) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,12.67) (182.82,8.21) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,12.67) (153.08,8.21) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,12.67) (157.32,8.21) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Text=SW outside corner of building
+    (157.96,9.50) (182.18,9.50) (182.18,11.71) (157.96,11.71) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=8
+    (148.83,9.00) (153.08,9.00) (153.08,12.25) (148.83,12.25) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=78
+    (153.08,9.11) (157.32,9.11) (157.32,12.35) (153.08,12.35) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,8.31) (182.82,8.31) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,8.42) (148.83,3.96) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,8.42) (182.82,3.96) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,8.42) (153.08,3.96) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,8.42) (157.32,3.96) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Text=E ditch and thicket crossing
+    (157.96,5.25) (182.18,5.25) (182.18,7.47) (157.96,7.47) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=9
+    (148.83,4.75) (153.08,4.75) (153.08,8.00) (148.83,8.00) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=43
+    (153.08,4.86) (157.32,4.86) (157.32,8.10) (153.08,8.10) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,4.07) (182.82,4.07) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,4.17) (148.83,-0.29) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,4.17) (182.82,-0.29) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,4.17) (153.08,-0.29) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,4.17) (157.32,-0.29) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=Path and ditch crossing
+    (157.96,1.01) (182.18,1.01) (182.18,3.22) (157.96,3.22) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=10
+    (148.83,0.51) (153.08,0.51) (153.08,3.75) (148.83,3.75) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=75
+    (153.08,0.61) (157.32,0.61) (157.32,3.85) (153.08,3.85) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-0.18) (182.82,-0.18) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-0.08) (148.83,-4.54) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,-0.08) (182.82,-4.54) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,-0.08) (153.08,-4.54) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,-0.08) (157.32,-4.54) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=SW tip of thicket
+    (157.96,-3.24) (182.18,-3.24) (182.18,-1.03) (157.96,-1.03) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=11
+    (148.83,-3.74) (153.08,-3.74) (153.08,-0.50) (148.83,-0.50) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=45
+    (153.08,-3.63) (157.32,-3.63) (157.32,-0.39) (153.08,-0.39) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-4.43) (182.82,-4.43) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-4.33) (148.83,-8.79) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,-4.33) (182.82,-8.79) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,-4.33) (153.08,-8.79) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,-4.33) (157.32,-8.79) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Text=S inside corner of forest corner
+    (157.96,-7.49) (182.18,-7.49) (182.18,-5.28) (157.96,-5.28) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=12
+    (148.83,-7.99) (153.08,-7.99) (153.08,-4.75) (148.83,-4.75) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=80
+    (153.08,-7.88) (157.32,-7.88) (157.32,-4.64) (153.08,-4.64) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-8.68) (182.82,-8.68) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-8.57) (148.83,-13.04) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,-8.57) (182.82,-13.04) 
+
+Index entry Sym=810.1
+Object Sym=810.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (153.08,-8.57) (153.08,-13.04) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (157.32,-8.57) (157.32,-13.04) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Text=E outside corner of forest corner
+    (157.96,-11.74) (182.18,-11.74) (182.18,-9.53) (157.96,-9.53) 
+
+Index entry Sym=810.3
+Object Sym=810.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=13
+    (148.83,-12.24) (153.08,-12.24) (153.08,-9.00) (148.83,-9.00) 
+
+Index entry Sym=810.4
+Object Sym=810.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Text=38
+    (153.08,-12.13) (157.32,-12.13) (157.32,-8.89) (153.08,-8.89) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-12.93) (182.82,-12.93) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-17.18) (182.82,-17.18) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (148.83,-12.82) (148.83,-17.28) 
+
+Index entry Sym=810.0
+Object Sym=810 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (182.82,-12.82) (182.82,-17.28) 
+
+Index entry Sym=810.8
+Object Sym=810.8 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Text=Navigate 60 m to finish
+    (149.47,-15.99) (182.18,-15.99) (182.18,-13.78) (149.47,-13.78) 
+
+Index entry Sym=701.0
+Object Sym=701 Otp=1
+  nItem=1, nText=0
+  Ang=1630
+    (56.80,-8.70) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (55.51,-12.91) (52.11,-24.03) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (51.20,-27.00) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (48.59,-25.31) (28.41,-12.19) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (25.80,-10.50) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (26.21,-7.42) (27.59,3.12) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (28.00,6.20) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (24.92,6.64) (2.38,9.86) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (-0.70,10.30) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (-0.23,13.37) (2.04,28.25) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (2.51,31.32) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (5.42,30.24) (37.19,18.48) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (40.10,17.40) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (43.20,17.56) (71.60,19.04) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (74.70,19.20) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (77.52,20.51) (91.08,26.79) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (93.90,28.10) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (91.29,29.79) (86.61,32.81) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (84.00,34.50) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (81.36,32.85) (74.64,28.65) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (72.00,27.00) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (68.90,26.73) (59.00,25.87) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (55.90,25.60) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (54.04,23.11) (43.76,9.29) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (41.90,6.80) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+    (44.72,5.49) (47.48,4.21) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (50.30,2.90) 
+
+Index entry Sym=706.0
+Object Sym=706 Otp=1
+  nItem=1, nText=0
+  Ang=0
+    (53.20,-2.80) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=1
+    (52.00,-36.50) (52.00,-37.79) (55.41,-37.79) (55.41,-30.37) 
+    (52.00,-30.37) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=2
+    (17.38,-16.50) (17.38,-17.80) (20.79,-17.80) (20.79,-10.37) 
+    (17.38,-10.37) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=3
+    (26.78,11.51) (26.78,10.21) (30.19,10.21) (30.19,17.63) 
+    (26.78,17.63) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=4
+    (-8.39,2.92) (-8.39,1.62) (-4.99,1.62) (-4.99,9.05) (-8.39,9.05) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=5
+    (-3.19,36.11) (-3.19,34.81) (0.22,34.81) (0.22,42.24) (-3.19,42.24) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=6
+    (40.39,22.70) (40.39,21.40) (43.79,21.40) (43.79,28.83) 
+    (40.39,28.83) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=7
+    (75.50,9.70) (75.50,8.41) (78.91,8.41) (78.91,15.83) (75.50,15.83) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=8
+    (99.06,22.59) (99.06,21.29) (102.46,21.29) (102.46,28.72) 
+    (99.06,28.72) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=9
+    (82.78,39.81) (82.78,38.51) (86.19,38.51) (86.19,45.93) 
+    (82.78,45.93) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=10
+    (66.07,32.31) (66.07,31.01) (72.88,31.01) (72.88,38.43) 
+    (66.07,38.43) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=11
+    (48.24,30.84) (48.24,29.54) (55.06,29.54) (55.06,36.97) 
+    (48.24,36.97) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=12
+    (34.83,-2.75) (34.83,-4.05) (41.65,-4.05) (41.65,3.38) (34.83,3.38) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Text=13
+    (53.83,6.86) (53.83,5.56) (60.65,5.56) (60.65,12.99) (53.83,12.99) 
+

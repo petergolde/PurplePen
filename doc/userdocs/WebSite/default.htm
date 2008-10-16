@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "master.dwt" -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- #BeginEditable "doctitle" -->
+<title>Purple Pen</title>
+<script type="text/javascript">
+<!--
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
+<style type="text/css">
+.style1 {
+	color: #FF0000;
+}
+</style>
+<!-- #EndEditable -->
+<link rel="shortcut icon" href="http://purplepen.golde.org/favicon.ico" type="image/vnd.microsoft.icon"/>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+
+<div id="outer">
+<img alt="Purple Pen" src="title.png" class="logo" />
+<!-- #BeginEditable "body" -->
+<ul id="navlist">
+<li><a id="current" href="default.htm">Home</a></li>
+<li><a href="news.htm">News</a></li>
+<li><a href="about.htm">About</a></li>
+<li><a href="download.htm">Download</a></li>
+<li><a href="support.htm">Support</a></li>
+<li><a href="contribute.htm">Contribute</a></li>
+</ul>
+<div id="maindiv">
+
+<p><span class="style1"><strong>New!</strong></span> <a href="news.htm">Beta 3 
+released.</a></p>
+<p>Purple Pen is course setting software for orienteering. Purple Pen makes it easy 
+to design orienteering courses and their associated control descriptions.</p>
+<p>Design your courses visually — directly on any OCAD 
+map. View the course and the control descriptions at the same time, and simply 
+click on the control descriptions to set the correct description for each 
+control. Purple Pen automatically does all the busywork:</p>
+<ul>
+	<li>Export course maps to OCAD for final printing.</li>
+	<li>Print a perfectly formatted control description sheet, with symbolic or 
+	English descriptions (or both). English descriptions are automatically 
+	generated. Description sheets can be placed onto the map.</li>
+	<li>Calculate the length of each course automatically.</li>
+	<li>Make sure that the codes and descriptions of shared controls are in 
+	sync.</li>
+	<li>View or print an all controls map.</li>
+	<li>Easily change control codes — one at a time or all at once.</li>
+	<li>Calculate how many competitors are visiting a control or running a leg.</li>
+	<li>Print master punch cards for easy control card checking.</li>
+	<li>Export course data to event management or electronic punching software 
+	(IOF standard XML format).</li>
+	<li>View or print several different reports about the courses and controls.</li>
+</ul>
+<p>Best of all, Purple Pen is completely free software.</p>
+<a href="downloads/purplepen-100-beta3.exe">
+<img style="border: 0" id="img1" src="button29.jpg" height="41" width="205" alt="Download Now!" onmouseover="FP_swapImg(0,0,/*id*/'img1',/*url*/'button2A.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button29.jpg')" onmousedown="FP_swapImg(0,0,/*id*/'img1',/*url*/'button2B.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button2A.jpg')" /><!-- MSComment="ibutton" fp-style="fp-btn: Metal Capsule 3; fp-font-size: 14; fp-preload: 0" fp-title="Download Now!" --></a></div>
+<!-- #EndEditable -->
+<br/>
+
+</div>
+</body>
+
+<!-- #EndTemplate -->
+
+</html>

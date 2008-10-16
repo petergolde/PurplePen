@@ -1,0 +1,24 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Foo Event</title>
+    <map kind="none" scale="15000"></map>
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+  </event>
+  <course id="1" kind="normal">
+    <name>Banana</name>
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="score">
+    <name>alpha dude</name>
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="normal">
+    <name>smedly</name>
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="4" kind="normal">
+    <name>Mr. B</name>
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+</course-scribe-event>

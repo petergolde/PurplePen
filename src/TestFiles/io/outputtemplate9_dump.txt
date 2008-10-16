@@ -1,0 +1,33 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=9
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+String of type 1039
+  ObjIndex=0
+  firstField=
+  code=m, value=15000
+  code=g, value=10.00
+  code=r, value=0
+  code=x, value=0.0
+  code=y, value=0.0
+  code=a, value=0.0
+  code=d, value=500.0
+
+String of type 1026
+  ObjIndex=0
+  firstField=
+  code=a, value=0
+  code=r, value=0
+
+String of type 8
+  ObjIndex=0
+  firstField=[[TESTDIR]]\io\subdir\k.ocd
+  code=r, value=1
+  code=s, value=1
+  code=x, value=4
+  code=y, value=5
+  code=a, value=7.4
+  code=u, value=0.0769697
+  code=v, value=0.0769697
+

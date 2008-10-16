@@ -1,0 +1,118 @@
+From: Gian-Reto Schaad OCAD AG [grs@ocad.com]
+Sent: Thursday, September 21, 2006 12:01 AM
+To: Peter Golde
+Subject: Re: RE: Ocad 9 File Format question
+
+Follow Up Flag: Follow up
+Flag Status: Green
+
+Grüezi Peter Golde
+
+I will help you.
+
+*** ObjType
+See in text description Symbols -> Base symbols -> Otp
+                               // 1 = Point object
+                               // 2 = Line object
+                               // 3 = Area object
+                               // 4 = Unformatted text
+                               // 5 = Formatted text
+                               // 6 = Line text
+                               // 7 = Rectangle object
+
+*** Rex
+Sorry. 'Res' for reserved.
+
+***Status
+See in text description Symbols -> Base symbols -> Status
+                               // 0 = deleted (not undo) 
+                               // 1 = normal
+                               // 2 = hidden
+                               // 3 = deleted for undo
+
+*** ViewType 
+                               // 0 = normal object
+                               // 1 = Only in course setting projects: course setting object 
+                               // 2 = Only in course setting projects: modified preview object
+                               // 3 = Only in course setting projects: unmodified preview object
+                               // 4 = temporary object (symbol editor or control description)
+                               // 10 = DXF import, GPS import
+
+*** Color
+Number of the color  (si_Color, parameter 'n')
+
+*** ImpLayer
+Layer number of imported objects (si_ImpLayer, 'n')
+
+Best regards
+Gian-Reto Schaad
+
+OCAD AG
+Mühlegasse 36
+CH-6340 Baar
+
+Email:  grs@ocad.com
+Internet:  www.ocad.com
+Phone:  +41 (0) 41 763 18 60
+Fax:  +41 (0) 41 763 18 64
+
+-----Original Message-----
+From: "Peter Golde" <peter@golde.org>
+To: "'Gian-Reto Schaad OCAD AG'" <grs@ocad.com>
+Sent: Wed, 20 Sep 2006 14:13:34 -0700
+Subject: RE: Ocad 9 File Format question
+
+>The PDF tells me the name and type of the new fields, but not the meaning.
+>
+>In particular, the meaning of "ObjType", "Rex", "Status", "ViewType", 
+>"Color", and "ImpLayer" is not described anywhere. It would be nice to 
+>know the meaning of these fields, and not have to guess from the name. 
+>Can you provide any help?
+>
+>Peter Golde
+>
+>-----Original Message-----
+>From: Gian-Reto Schaad OCAD AG [mailto:grs@ocad.com]
+>Sent: Thursday, September 14, 2006 11:26 PM
+>To: Peter Golde
+>Subject: Re: Ocad 9 File Format question
+>
+>Grüezi Peter Golde
+>
+>Yes, that is correct. 
+>
+>But see the OCAD 9 graphic:
+>http://www.ocad.com/docs/OCAD9Format.pdf
+>Here you can find all information.
+>
+>Best regards
+>Gian-Reto Schaad
+>
+>OCAD AG
+>Mühlegasse 36
+>CH-6340 Baar
+>
+>Email:  grs@ocad.com
+>Internet:  www.ocad.com
+>Phone:  +41 (0) 41 763 18 60
+>Fax:  +41 (0) 41 763 18 64
+>
+>-----Original Message-----
+>From: "Peter Golde" <peter@golde.org>
+>To: <info@ocad.com>
+>Sent: Thu, 14 Sep 2006 09:51:58 -0700
+>Subject: Ocad 9 File Format question
+>
+>>The TObjectIndex structure does not seem to be documented in the OCAD 
+>>9
+>file
+>>format document. Is there any way you could document this? I need it 
+>>in order to be able to correctly create OCAD 9 format files.
+>>
+>> 
+>>
+>>Peter Golde
+>>
+>
+>
+>

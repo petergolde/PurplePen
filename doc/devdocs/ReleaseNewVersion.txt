@@ -1,0 +1,23 @@
+Releasing a new version of Purple Pen.
+
+1. Update VersionNumber.cs
+
+2. In solution explorer, highlight setup project, select View/Properties Window (NOT Property Pages). Changes
+version code to match, say Yes when prompted to update product code.
+
+3. Build release build.
+
+4. Copy and rename src\Setup\Release\purplepen-setup.exe and place in http://purplepen.golde.org/downloads
+
+5. Change "latest_version.txt" on web server http://purplepen.golde.org/downloads
+
+6. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
+
+7. Update News page with news about the new version.
+
+8. Upload a new change list document.
+
+9. Create a new branch in Subversion:
+    
+
+

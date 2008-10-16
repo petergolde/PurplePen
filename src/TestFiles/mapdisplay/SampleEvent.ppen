@@ -1,0 +1,660 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event</title>
+    <map kind="OCAD" scale="15000">SampleMap.ocd</map>
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+  </event>
+  <control id="1" kind="finish">
+    <location x="-0.602915764" y="33.6102524" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="2" kind="start">
+    <location x="1.64988375" y="58.90722" />
+    <description box="D" iof-2004-ref="1.12" />
+  </control>
+  <control id="3" kind="normal">
+    <code>31</code>
+    <location x="16.9738255" y="66.82275" />
+    <description box="D" iof-2004-ref="2.6" />
+    <description box="G" iof-2004-ref="11.1NW" />
+    <punch-pattern size="7">
+1000001
+0000000
+0000000
+0001000
+0000000
+0000000
+1000001
+</punch-pattern>
+  </control>
+  <control id="5" kind="normal">
+    <code>32</code>
+    <location x="-8.151211" y="84.61516" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.1" />
+    <punch-pattern size="7">
+0000000
+1001001
+0000000
+0000000
+1001001
+0000000
+0000000
+</punch-pattern>
+  </control>
+  <control id="6" kind="normal">
+    <code>33</code>
+    <location x="-12.2488632" y="68.3324051" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">1.5</description>
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+0001000
+0000000
+0000000
+0000001
+</punch-pattern>
+  </control>
+  <control id="7" kind="normal">
+    <code>34</code>
+    <location x="-18.5031643" y="50.3243332" />
+    <description box="D" iof-2004-ref="5.8" />
+    <description box="E" iof-2004-ref="8.11" />
+    <description box="G" iof-2004-ref="11.8S" />
+    <description box="H" iof-2004-ref="12.2" />
+    <punch-pattern size="7">
+0000000
+0010100
+0000000
+1000001
+0000000
+0010100
+0000000
+</punch-pattern>
+  </control>
+  <control id="8" kind="normal">
+    <code>35</code>
+    <location x="-41.4715462" y="36.52174" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.2" />
+    <punch-pattern size="7">
+0001000
+0000000
+0000000
+0001000
+0000000
+0000000
+0001000
+</punch-pattern>
+  </control>
+  <control id="9" kind="normal">
+    <code>36</code>
+    <location x="-18.6418324" y="24.2288017" />
+    <description box="C" iof-2004-ref="0.2SW" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.1" />
+    <punch-pattern size="7">
+1001001
+0000000
+0000000
+1000001
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="10" kind="normal">
+    <code>37</code>
+    <location x="-3.62224126" y="24.3366356" />
+    <description box="D" iof-2004-ref="4.9" />
+    <description box="G" iof-2004-ref="11.1N" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+1001000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="11" kind="normal">
+    <code>38</code>
+    <location x="13.73882" y="79.8705139" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">2.5</description>
+    <description box="G" iof-2004-ref="11.1N" />
+    <punch-pattern size="7">
+0000000
+0100010
+0000000
+0000000
+0000000
+0100010
+0000000
+</punch-pattern>
+  </control>
+  <control id="12" kind="normal">
+    <code>39</code>
+    <location x="-37.91308" y="103.917213" />
+    <description box="D" iof-2004-ref="1.2" />
+    <punch-pattern size="7">
+1001001
+0000000
+0000000
+1001001
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="13" kind="normal">
+    <code>40</code>
+    <location x="-53.8723755" y="45.57969" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">2</description>
+    <description box="G" iof-2004-ref="11.1S" />
+    <punch-pattern size="7">
+1001001
+0000000
+0000000
+0001000
+0000000
+0000000
+0001000
+</punch-pattern>
+  </control>
+  <control id="15" kind="normal">
+    <code>41</code>
+    <location x="-10.4157734" y="10.9653826" />
+    <description box="D" iof-2004-ref="1.12" />
+    <description box="G" iof-2004-ref="11.3S" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+0001000
+0000000
+0000000
+0000001
+</punch-pattern>
+  </control>
+  <control id="16" kind="normal">
+    <code>42</code>
+    <location x="-5.239801" y="103.05455" />
+    <description box="D" iof-2004-ref="3.7" />
+    <description box="G" iof-2004-ref="11.2E" />
+    <punch-pattern size="7">
+1000001
+0000000
+0000000
+1000001
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="17" kind="normal">
+    <code>43</code>
+    <location x="14.601429" y="135.404388" />
+    <description box="D" iof-2004-ref="2.1" />
+    <description box="G" iof-2004-ref="11.13" />
+    <punch-pattern size="7">
+1001000
+0000010
+0000000
+1001000
+0000000
+0000000
+1000000
+</punch-pattern>
+  </control>
+  <control id="18" kind="normal">
+    <code>44</code>
+    <location x="24.0907135" y="154.2751" />
+    <description box="D" iof-2004-ref="2.1" />
+    <description box="G" iof-2004-ref="11.14N" />
+    <description box="H" iof-2004-ref="12.2" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+1000000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="19" kind="normal">
+    <code>45</code>
+    <location x="5.75327539" y="153.540649" />
+    <description box="D" iof-2004-ref="1.2" />
+    <punch-pattern size="7">
+0000000
+0100010
+0000000
+0000000
+0000000
+0100010
+0000000
+</punch-pattern>
+  </control>
+  <control id="20" kind="normal">
+    <code>46</code>
+    <location x="-28.639513" y="61.53893" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">3</description>
+    <description box="G" iof-2004-ref="11.1N" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+1001000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="21" kind="normal">
+    <code>47</code>
+    <location x="40.5168" y="53.920742" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">2.5</description>
+    <description box="G" iof-2004-ref="11.1SE" />
+    <punch-pattern size="7">
+0000000
+0001000
+0000000
+0101010
+0000000
+0001000
+0000000
+</punch-pattern>
+  </control>
+  <control id="22" kind="normal">
+    <code>48</code>
+    <location x="68.3437347" y="43.0207825" />
+    <description box="D" iof-2004-ref="2.1" />
+    <description box="G" iof-2004-ref="11.14E" />
+    <punch-pattern size="7">
+0101010
+0000000
+0000000
+0001000
+0000000
+0000000
+0101010
+</punch-pattern>
+  </control>
+  <control id="23" kind="normal">
+    <code>49</code>
+    <location x="44.6917458" y="90.852356" />
+    <description box="D" iof-2004-ref="4.9" />
+    <description box="E" iof-2004-ref="4.9" />
+    <description box="G" iof-2004-ref="11.15" />
+    <punch-pattern size="7">
+1001000
+0000000
+0000000
+1001001
+0000000
+0000000
+0001001
+</punch-pattern>
+  </control>
+  <control id="24" kind="normal">
+    <code>50</code>
+    <location x="21.666254" y="104.188766" />
+    <description box="D" iof-2004-ref="1.12" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+1000000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="25" kind="normal">
+    <code>51</code>
+    <location x="-19.8818188" y="93.5453" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">1.5</description>
+    <description box="G" iof-2004-ref="11.1S" />
+    <punch-pattern size="7">
+1000100
+0000000
+0000000
+1010000
+0000000
+0000000
+1000100
+</punch-pattern>
+  </control>
+  <control id="26" kind="normal">
+    <code>52</code>
+    <location x="-37.450016" y="91.75003" />
+    <description box="D" iof-2004-ref="2.1" />
+    <description box="G" iof-2004-ref="11.14SW" />
+    <description box="H" iof-2004-ref="12.2" />
+    <punch-pattern size="7">
+0001001
+0000000
+0000000
+1001000
+0000000
+0000000
+1000000
+</punch-pattern>
+  </control>
+  <control id="27" kind="normal">
+    <code>53</code>
+    <location x="-43.8475533" y="72.87616" />
+    <description box="D" iof-2004-ref="1.12" />
+    <description box="G" iof-2004-ref="11.3SW" />
+    <punch-pattern size="7">
+1001001
+0000000
+0000000
+1000001
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="28" kind="normal">
+    <code>54</code>
+    <location x="-37.1935463" y="10.3209581" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">3</description>
+    <description box="G" iof-2004-ref="11.1SE" />
+    <punch-pattern size="7">
+0001000
+0000000
+0000000
+1001001
+0000000
+0000000
+0001000
+</punch-pattern>
+  </control>
+  <control id="29" kind="normal">
+    <code>55</code>
+    <location x="31.41204" y="-0.7072302" />
+    <description box="D" iof-2004-ref="1.12" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+1001000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <control id="30" kind="normal">
+    <code>56</code>
+    <location x="-41.99502" y="57.86767" />
+    <description box="C" iof-2004-ref="0.2NE" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="F">2</description>
+    <description box="G" iof-2004-ref="11.1S" />
+    <punch-pattern size="7">
+1000000
+0000000
+0000000
+0001000
+0000000
+0000000
+0000001
+</punch-pattern>
+  </control>
+  <control id="31" kind="normal">
+    <code>57</code>
+    <location x="26.2825756" y="114.575851" />
+    <description box="D" iof-2004-ref="2.1" />
+    <description box="G" iof-2004-ref="11.14NE" />
+    <punch-pattern size="7">
+1001001
+0000000
+0000000
+0001000
+0000000
+0000000
+1001001
+</punch-pattern>
+  </control>
+  <course id="1" kind="normal">
+    <name>White</name>
+    <first course-control="6" />
+    <options print-scale="15000" climb="25" load="10" description-kind="text" />
+  </course>
+  <course id="2" kind="normal">
+    <name>Yellow</name>
+    <first course-control="7" />
+    <options print-scale="15000" climb="45" load="10" description-kind="symbols-and-text" />
+  </course>
+  <course id="3" kind="normal">
+    <name>Orange</name>
+    <first course-control="8" />
+    <options print-scale="15000" climb="70" load="20" description-kind="symbols" />
+  </course>
+  <course id="4" kind="normal">
+    <name>Green</name>
+    <first course-control="9" />
+    <options print-scale="15000" climb="110" load="45" description-kind="symbols" />
+  </course>
+  <course id="5" kind="normal">
+    <name>Red</name>
+    <first course-control="10" />
+    <options print-scale="15000" climb="210" load="40" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1" />
+  <course-control id="2" control="1" />
+  <course-control id="3" control="1" />
+  <course-control id="4" control="1" />
+  <course-control id="5" control="1" />
+  <course-control id="6" control="2">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="7" control="2">
+    <next course-control="19" />
+  </course-control>
+  <course-control id="8" control="2">
+    <next course-control="28" />
+  </course-control>
+  <course-control id="9" control="2">
+    <next course-control="50" />
+  </course-control>
+  <course-control id="10" control="2">
+    <next course-control="37" />
+  </course-control>
+  <course-control id="11" control="3">
+    <next course-control="13" />
+  </course-control>
+  <course-control id="13" control="5">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="14" control="6">
+    <next course-control="15" />
+    <number-location x="3.75665569" y="-4.062683" />
+  </course-control>
+  <course-control id="15" control="7">
+    <next course-control="16" />
+    <number-location x="5.57854652" y="-2.96838379" />
+  </course-control>
+  <course-control id="16" control="8">
+    <next course-control="17" />
+    <number-location x="-5.59895325" y="2.32645035" />
+  </course-control>
+  <course-control id="17" control="9">
+    <next course-control="18" />
+    <number-location x="-5.142498" y="-3.92785835" />
+  </course-control>
+  <course-control id="18" control="10">
+    <next course-control="1" />
+    <number-location x="1.09233022" y="-6.64016151" />
+  </course-control>
+  <course-control id="19" control="11">
+    <next course-control="20" />
+  </course-control>
+  <course-control id="20" control="5">
+    <next course-control="21" />
+    <number-location x="-4.600437" y="-6.468384" />
+  </course-control>
+  <course-control id="21" control="12">
+    <next course-control="22" />
+  </course-control>
+  <course-control id="22" control="13">
+    <next course-control="26" />
+    <number-location x="-4.804756" y="-1.18537521" />
+  </course-control>
+  <course-control id="26" control="7">
+    <next course-control="27" />
+    <number-location x="5.341343" y="-2.03117371" />
+  </course-control>
+  <course-control id="24" control="10">
+    <next course-control="2" />
+    <number-location x="2.00447083" y="-7.178871" />
+  </course-control>
+  <course-control id="27" control="15">
+    <next course-control="24" />
+    <number-location x="-6.13925362" y="-5.44251" />
+  </course-control>
+  <course-control id="28" control="16">
+    <next course-control="29" />
+  </course-control>
+  <course-control id="29" control="17">
+    <next course-control="30" />
+    <number-location x="6.749153" y="0.00225830078" />
+  </course-control>
+  <course-control id="30" control="18">
+    <next course-control="31" />
+    <number-location x="3.90710831" y="6.058304" />
+  </course-control>
+  <course-control id="31" control="19">
+    <next course-control="32" />
+    <number-location x="-0.6791425" y="7.1824646" />
+  </course-control>
+  <course-control id="32" control="12">
+    <next course-control="33" />
+  </course-control>
+  <course-control id="33" control="20">
+    <next course-control="34" />
+    <number-location x="-5.7186985" y="5.96556473" />
+  </course-control>
+  <course-control id="34" control="7">
+    <next course-control="36" />
+    <number-location x="5.44592476" y="-1.12284851" />
+  </course-control>
+  <course-control id="59" control="13">
+    <next course-control="55" />
+    <number-location x="-6.11741638" y="5.29844666" />
+  </course-control>
+  <course-control id="36" control="10">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="37" control="21">
+    <next course-control="38" />
+  </course-control>
+  <course-control id="38" control="22">
+    <next course-control="39" />
+  </course-control>
+  <course-control id="39" control="23">
+    <next course-control="40" />
+  </course-control>
+  <course-control id="40" control="24">
+    <next course-control="49" />
+    <number-location x="-4.56458664" y="2.631462" />
+  </course-control>
+  <course-control id="41" control="19">
+    <next course-control="42" />
+    <number-location x="-0.9356117" y="6.669525" />
+  </course-control>
+  <course-control id="42" control="25">
+    <next course-control="43" />
+    <number-location x="3.01585" y="-6.38369751" />
+  </course-control>
+  <course-control id="43" control="26">
+    <next course-control="44" />
+  </course-control>
+  <course-control id="44" control="27">
+    <next course-control="45" />
+    <number-location x="-4.44484329" y="-3.70057678" />
+  </course-control>
+  <course-control id="45" control="20">
+    <next course-control="46" />
+    <number-location x="5.94230843" y="-0.151073456" />
+  </course-control>
+  <course-control id="46" control="28">
+    <next course-control="47" />
+    <number-location x="-7.593151" y="0.124144554" />
+  </course-control>
+  <course-control id="47" control="29">
+    <next course-control="48" />
+  </course-control>
+  <course-control id="48" control="10">
+    <next course-control="5" />
+    <number-location x="-8.891705" y="2.58753586" />
+  </course-control>
+  <course-control id="49" control="18">
+    <next course-control="41" />
+    <number-location x="3.52240562" y="6.44300842" />
+  </course-control>
+  <course-control id="50" control="24">
+    <next course-control="58" />
+  </course-control>
+  <course-control id="51" control="17">
+    <next course-control="52" />
+    <number-location x="-8.668095" y="-2.4979248" />
+  </course-control>
+  <course-control id="52" control="19">
+    <next course-control="53" />
+  </course-control>
+  <course-control id="53" control="26">
+    <next course-control="54" />
+  </course-control>
+  <course-control id="54" control="30">
+    <next course-control="59" />
+  </course-control>
+  <course-control id="55" control="28">
+    <next course-control="56" />
+    <number-location x="-5.59781265" y="-0.661755562" />
+  </course-control>
+  <course-control id="56" control="15">
+    <next course-control="57" />
+    <number-location x="3.50030518" y="-4.61776447" />
+  </course-control>
+  <course-control id="57" control="10">
+    <next course-control="4" />
+    <number-location x="1.930675" y="-7.196928" />
+  </course-control>
+  <course-control id="58" control="31">
+    <next course-control="51" />
+    <number-location x="6.502119" y="4.68618" />
+  </course-control>
+  <special-object id="1" kind="descriptions">
+    <location x="82.84506" y="214.435684" />
+    <location x="88.8556061" y="214.435684" />
+    <courses>
+      <course course="1" />
+      <course course="3" />
+      <course course="4" />
+      <course course="5" />
+    </courses>
+  </special-object>
+  <special-object id="2" kind="descriptions">
+    <location x="56.0435562" y="214.229065" />
+    <location x="61.80371" y="214.229065" />
+    <courses>
+      <course course="2" />
+    </courses>
+  </special-object>
+</course-scribe-event>

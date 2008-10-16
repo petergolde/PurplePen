@@ -1,0 +1,181 @@
+/* Copyright (c) 2006-2007, Peter Golde
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without 
+ * modification, are permitted provided that the following conditions are 
+ * met:
+ * 
+ * 1. Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ * 
+ * 2. Redistributions in binary form must reproduce the above copyright
+ * notice, this list of conditions and the following disclaimer in the
+ * documentation and/or other materials provided with the distribution.
+ * 
+ * 3. Neither the name of Peter Golde, nor "Purple Pen", nor the names
+ * of its contributors may be used to endorse or promote products
+ * derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+ * OF SUCH DAMAGE.
+ */
+
+#if TEST
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Diagnostics;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TestingUtils;
+
+namespace PurplePen.Tests
+{
+    [TestClass]
+    public class CoursePrintingTests: TestFixtureBase
+    {
+        TestUI ui;
+        Controller controller;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            ui = TestUI.Create();
+            controller = ui.controller;
+        }
+
+        [TestMethod]
+        public void LayoutPageDimension()
+        {
+            // Should fit on one page
+            List<CoursePrinting.DimensionLayout> result = new List<CoursePrinting.DimensionLayout>(
+                CoursePrinting.LayoutPageDimension(-10.0F, 240.0F, 50F, 1000F, 1.0F));
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(-10.0F, result[0].startMap);
+            Assert.AreEqual(240.0F, result[0].lengthMap);
+            Assert.AreEqual(77.56F, result[0].startPage, 0.01F);
+            Assert.AreEqual(944.88F, result[0].lengthPage, 0.01F);
+
+            // Fit on two pages
+            result = new List<CoursePrinting.DimensionLayout>(
+                CoursePrinting.LayoutPageDimension(-100.0F, 380.0F, 50F, 1000F, 1.0F));
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(-100.0F, result[0].startMap);
+            Assert.AreEqual(254.0F, result[0].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[0].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[0].lengthPage, 0.01F);
+            Assert.AreEqual(26.0F, result[1].startMap);
+            Assert.AreEqual(254.0F, result[1].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[1].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[1].lengthPage, 0.01F);
+
+            // Barely fit 3 pages, with minimum 1 inch overlap.
+            result = new List<CoursePrinting.DimensionLayout>(
+                CoursePrinting.LayoutPageDimension(-100.0F, 710.0F, 50F, 1000F, 1.0F));
+            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(-100.0F, result[0].startMap);
+            Assert.AreEqual(254.0F, result[0].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[0].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[0].lengthPage, 0.01F);
+            Assert.AreEqual(128.0F, result[1].startMap, 0.01);
+            Assert.AreEqual(254.0F, result[1].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[1].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[1].lengthPage, 0.01F);
+            Assert.AreEqual(356.0F, result[2].startMap, 0.01F);
+            Assert.AreEqual(254.0F, result[2].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[2].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[2].lengthPage, 0.01F);
+
+            // Must go onto 4 pages
+            result = new List<CoursePrinting.DimensionLayout>(
+                CoursePrinting.LayoutPageDimension(-100.0F, 715.0F, 50F, 1000F, 1.0F));
+            Assert.AreEqual(4, result.Count);
+        }
+
+        [TestMethod]
+        public void LayoutPageDimensionScaleRatio()
+        {
+            // Would fit on one page with 1.0 scale ratio. Now requires 2.
+            List<CoursePrinting.DimensionLayout> result = new List<CoursePrinting.DimensionLayout>(
+                CoursePrinting.LayoutPageDimension(-10.0F, 200.0F, 50F, 1000F, 0.5F));
+            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(-10.0F, result[0].startMap, 0.01F);
+            Assert.AreEqual(127.0F, result[0].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[0].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[0].lengthPage, 0.01F);
+            Assert.AreEqual(63.0F, result[1].startMap, 0.01F);
+            Assert.AreEqual(127.0F, result[1].lengthMap, 0.01F);
+            Assert.AreEqual(50F, result[1].startPage, 0.01F);
+            Assert.AreEqual(1000F, result[1].lengthPage, 0.01F);
+        }
+
+        private void CoursePrintingTest(string basename, CoursePrintSettings coursePrintSettings)
+        {
+            // Get the map display
+            MapDisplay mapDisplay = new MapDisplay();
+            mapDisplay.MapIntensity = 0.6F;
+            mapDisplay.AntiAlias = true;
+            mapDisplay.SetMapFile(controller.MapType, controller.MapFileName);
+
+            // Get the pages of the printing.
+            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings);
+            Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
+            coursePrinter.Dispose();
+
+            // Check all the pages against the baseline.
+            for (int page = 0; page < bitmaps.Length; ++page) {
+                Bitmap bm = bitmaps[page];
+                string baseFileName = basename + "_page" + (page + 1).ToString();
+                TestUtil.CheckBitmapsBase(bm, baseFileName);
+            }
+        }
+
+        [TestMethod]
+        public void PrintCourses1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            CoursePrintingTest("courseprinting\\test1", coursePrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintingException()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };
+            coursePrintSettings.PageSettings.PrinterSettings.PrinterName = "foobar";
+
+            bool success = controller.PrintCourses(coursePrintSettings, false);
+
+            Assert.IsFalse(success);
+            string expected =
+@"ERROR: 'Cannot print 'Marymoor WIOL 2' for the following reason:
+
+Settings to access printer 'foobar' are not valid.'
+";
+
+            Assert.AreEqual(expected, ui.output.ToString());
+        }
+
+    }
+}
+
+#endif //TEST

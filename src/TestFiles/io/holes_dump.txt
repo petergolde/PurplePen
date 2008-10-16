@@ -1,0 +1,269 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x7
+  Version=7
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=33, nColorSep=7
+  CyanFreq=1500; CyanAng=150
+  MagentaFreq=1500; MagentaAng=750
+  YellowFreq=1500; YellowAng=0
+  BlackFreq=1500; BlackAng=450
+  Reserved1=0x0 Reserved2=0x0
+
+Color #11:   name:  Purple  value:  Cy=0 Mg=200 Yl=0 Bk=0
+Color #17:   name:  Purple 50%  value:  Cy=0 Mg=100 Yl=0 Bk=0
+Color #18:   name:  Purple 20%  value:  Cy=0 Mg=40 Yl=0 Bk=0
+Color #14:   name:  All color separations  value:  Cy=200 Mg=200 Yl=200 Bk=200
+Color #29:   name:  Green for Ski-O  value:  Cy=182 Mg=0 Yl=166 Bk=0
+Color #0:   name:  Black  value:  Cy=0 Mg=0 Yl=0 Bk=200
+Color #32:   name:  White for road under construct.  value:  Cy=0 Mg=0 Yl=0 Bk=0
+Color #15:   name:  Street infill  value:  Cy=0 Mg=56 Yl=100 Bk=19
+Color #30:   name:  Street infill 30%  value:  Cy=0 Mg=34 Yl=60 Bk=11
+Color #25:   name:  Street borderlines  value:  Cy=0 Mg=0 Yl=0 Bk=200
+Color #31:   name:  Street borderlines 50%  value:  Cy=0 Mg=0 Yl=0 Bk=100
+Color #2:   name:  Blue  value:  Cy=174 Mg=36 Yl=0 Bk=0
+Color #3:   name:  Blue 50%  value:  Cy=87 Mg=19 Yl=0 Bk=0
+Color #20:   name:  Blue 20%  value:  Cy=35 Mg=7 Yl=0 Bk=0
+Color #4:   name:  Brown  value:  Cy=0 Mg=112 Yl=200 Bk=36
+Color #12:   name:  Yellow100%/Green 50%  value:  Cy=76 Mg=54 Yl=200 Bk=0
+Color #13:   name:  White for green  value:  Cy=0 Mg=0 Yl=0 Bk=0
+Color #6:   name:  Green  value:  Cy=152 Mg=0 Yl=182 Bk=0
+Color #7:   name:  Green 60%  value:  Cy=91 Mg=0 Yl=109 Bk=0
+Color #8:   name:  Green 30%  value:  Cy=46 Mg=0 Yl=55 Bk=0
+Color #5:   name:  Brown 50%  value:  Cy=0 Mg=56 Yl=100 Bk=19
+Color #21:   name:  Brown 30%  value:  Cy=0 Mg=34 Yl=60 Bk=11
+Color #19:   name:  Black 50%  value:  Cy=0 Mg=0 Yl=0 Bk=100
+Color #1:   name:  Black 30%  value:  Cy=0 Mg=0 Yl=0 Bk=60
+Color #26:   name:  White for yellow  value:  Cy=0 Mg=0 Yl=0 Bk=0
+Color #9:   name:  Yellow  value:  Cy=0 Mg=54 Yl=158 Bk=0
+Color #10:   name:  Yellow 50%  value:  Cy=0 Mg=27 Yl=79 Bk=0
+Color #16:   name:  Yellow 20%  value:  Cy=0 Mg=11 Yl=32 Bk=0
+Color #22:   name:  Gray  value:  Cy=0 Mg=0 Yl=0 Bk=46
+Color #23:   name:  Gray 50%  value:  Cy=0 Mg=0 Yl=0 Bk=23
+Color #24:   name:  Gray 20%  value:  Cy=0 Mg=0 Yl=0 Bk=9
+Color #27:   name:  Yellow 50%/Green 50%  value:  Cy=76 Mg=27 Yl=170 Bk=0
+Color #28:   name:  Yellow 50%/Green 20%  value:  Cy=30 Mg=27 Yl=115 Bk=0
+
+Color separation name: Black  Color= Cy=0 Mg=0 Yl=0 Bk=200  RasterFreq=1500, RasterAngle=450
+Color separation name: Blue  Color= Cy=174 Mg=37 Yl=0 Bk=0  RasterFreq=1500, RasterAngle=450
+Color separation name: Brown  Color= Cy=0 Mg=112 Yl=163 Bk=37  RasterFreq=1500, RasterAngle=450
+Color separation name: Green  Color= Cy=152 Mg=0 Yl=182 Bk=0  RasterFreq=1500, RasterAngle=450
+Color separation name: Yellow  Color= Cy=0 Mg=55 Yl=158 Bk=0  RasterFreq=1500, RasterAngle=300
+Color separation name: Purple  Color= Cy=0 Mg=200 Yl=0 Bk=0  RasterFreq=1500, RasterAngle=450
+Color separation name: Gray  Color= Cy=0 Mg=0 Yl=0 Bk=60  RasterFreq=1500, RasterAngle=450
+
+Setup structure:
+  Offset=(0.00,0.00), rGridDist=10
+  WorkMode=12, LineMode=10, EditMode=11
+  ActSym=0, MapScale=10000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=500
+  GpsAngle=0.0000, nGpsAdjust=0
+  DraftScaleX=10000, DraftScaleY=10000
+  TempOffset=(0.00,0.00), TemplateFileName=
+  TemplateEnabled=0, TempResol=300, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(-50.00,-50.00), PrUpperRight=(50.00,50.00)
+  PrGrid=0, PrGridColor=0, PrOverlapX=1000, PrOverlapY=1000
+  PrintScale=10000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+
+Symbol definition for '404.0 Rough open land with sc. trees': 
+  Size=404, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000100000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    B B B B B B B B B B B B B B B B B B B B B B 
+    B B B B B B B B B B B B B B B B B B B B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B F F F F F F B B B B F F F F F F B B B 
+    B B B B B B B B B B B B B B B B B B B B B B 
+    B B B B B B B B B B B B B B B B B B B B B B 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+    F F F F B B B B F F F F F F B B B B F F F F 
+  Flags=0, FillOn=True, FillColor=10
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=1, StructWidth=105, StructHeight=105, StructAngle=450
+  StructElts:
+  SymbolElement of type 4 -- dot
+    stColor=26  stDiameter=82
+    (0.00,0.00) 
+
+Symbol definition for '406.0 Forest: slow running': 
+  Size=380, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+    F A F A F A F A F A F A F A F A F A F A F A 
+    A F A F A F A F A F A F A F A F A F A F A F 
+  Flags=0, FillOn=True, FillColor=8
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
+Symbol definition for '710.0 Dangerous area': 
+  Size=380, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F D F F F F F D F F F F F D F F F F F D 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    D F F F F F D F F F F F D F F F F F D F F F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F F F D F F F F F D F F F F F D F F F F F D 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    D F F F F F D F F F F F D F F F F F D F F F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F F F D F F F F F D F F F F F D F F F F F D 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    D F F F F F D F F F F F D F F F F F D F F F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F F F D F F F F F D F F F F F D F F F F F D 
+    F F D F D F F F D F D F F F D F D F F F D F 
+    F D F F F D F D F F F D F D F F F D F D F F 
+    D F F F F F D F F F F F D F F F F F D F F F 
+  Flags=0, FillOn=False, FillColor=0
+  HatchMode=2, HatchColor=2, HatchLineWidth=11, HatchDist=38
+  HatchAngle1=-450, HatchAngle2=450, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
+Index entry Sym=404.0
+Object Sym=404 Otp=3
+  nItem=177, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-39.44,27.04) (-46.32,14.08, Corner) (-25.71,3.13, Corner) 
+    (-34.28,-12.99, Corner) (-17.12,-22.10, Corner) (3.80,17.32, Corner) 
+    (-38.38,39.70, Corner) (-44.27,28.61, Corner) (-43.87,29.38, Corner) 
+    (-39.44,27.04) (-30.96,29.76, Hole) (-37.12,23.68) (-37.34,22.65) 
+    (-37.34,22.38) (-37.26,21.22) (-37.18,20.97) (-37.02,20.74) 
+    (-36.82,20.54) (-36.62,20.34) (-35.70,19.78) (-34.98,19.46) 
+    (-33.94,19.30) (-32.97,19.18) (-32.32,19.10) (-31.70,18.98) 
+    (-31.34,18.98) (-28.98,19.22) (-28.72,19.30) (-28.48,19.46) 
+    (-27.85,20.02) (-27.46,20.38) (-27.13,20.50) (-26.82,20.78) 
+    (-26.58,20.98) (-26.50,21.21) (-26.58,23.74) (-26.74,24.30) 
+    (-27.14,25.18) (-27.54,25.98) (-27.74,26.31) (-27.86,26.62) 
+    (-28.10,27.11) (-28.26,27.36) (-28.46,27.62) (-28.66,27.90) 
+    (-29.06,28.41) (-29.82,29.18) (-30.02,29.42) (-30.47,29.66) 
+    (-30.72,29.68) (-12.40,18.88, Hole) (-12.68,19.11, Curve1) 
+    (-12.86,19.20, Curve2) (-13.20,19.28) (-14.18,19.49, Curve1) 
+    (-14.68,19.60, Curve2) (-15.68,19.60) (-17.57,19.58, Curve1) 
+    (-18.53,19.74, Curve2) (-20.40,19.52) (-20.73,19.48, Curve1) 
+    (-20.90,19.46, Curve2) (-21.20,19.36) (-21.52,19.25, Curve1) 
+    (-21.62,19.09, Curve2) (-21.92,18.96) (-22.14,18.86, Curve1) 
+    (-22.29,18.91, Curve2) (-22.48,18.80) (-23.09,18.43, Curve1) 
+    (-23.36,18.17, Curve2) (-23.76,17.60) (-24.24,16.93, Curve1) 
+    (-24.47,16.55, Curve2) (-24.64,15.76) (-24.98,14.23, Curve1) 
+    (-24.81,13.25, Curve2) (-24.00,11.92) (-23.95,11.82, Curve1) 
+    (-23.84,11.84, Curve2) (-23.76,11.76) (-23.29,11.20, Curve1) 
+    (-23.22,10.77, Curve2) (-22.64,10.32) (-21.89,9.71, Curve1) 
+    (-21.47,9.46, Curve2) (-20.64,8.96) (-20.32,8.75, Curve1) 
+    (-20.15,8.62, Curve2) (-19.76,8.56) (-19.32,8.48, Curve1) 
+    (-19.09,8.55, Curve2) (-18.64,8.48) (-18.47,8.45, Curve1) 
+    (-18.42,8.33, Curve2) (-18.24,8.32) (-17.35,8.22, Curve1) 
+    (-16.90,8.15, Curve2) (-16.00,8.08) (-15.75,8.05, Curve1) 
+    (-15.62,8.06, Curve2) (-15.36,8.08) (-14.02,8.17, Curve1) 
+    (-13.33,8.05, Curve2) (-12.00,8.32) (-11.67,8.38, Curve1) 
+    (-11.54,8.54, Curve2) (-11.20,8.64) (-10.83,8.74, Curve1) 
+    (-10.61,8.67, Curve2) (-10.24,8.80) (-9.84,8.94, Curve1) 
+    (-9.65,9.05, Curve2) (-9.28,9.28) (-9.09,9.39, Curve1) (-9.06,9.53, Curve2) 
+    (-8.88,9.68) (-8.61,9.91, Curve1) (-8.41,9.97, Curve2) (-8.16,10.24) 
+    (-8.10,10.31, Curve1) (-8.22,10.39, Curve2) (-8.16,10.48) 
+    (-8.10,10.57, Curve1) (-8.00,10.54, Curve2) (-7.92,10.64) 
+    (-7.74,10.87, Curve1) (-7.72,11.04, Curve2) (-7.52,11.28) 
+    (-7.44,11.38, Curve1) (-7.31,11.28, Curve2) (-7.20,11.36) 
+    (-7.02,11.48, Curve1) (-6.96,11.59, Curve2) (-6.80,11.76) 
+    (-6.46,12.12, Curve1) (-6.35,12.36, Curve2) (-6.08,12.80) 
+    (-5.98,12.96, Curve1) (-6.00,13.08, Curve2) (-6.00,13.28) 
+    (-6.00,13.76, Curve1) (-5.94,14.02, Curve2) (-6.08,14.48) 
+    (-6.22,14.90, Curve1) (-6.36,15.09, Curve2) (-6.64,15.44) 
+    (-7.21,16.12, Curve1) (-7.64,16.32, Curve2) (-8.24,16.96) 
+    (-8.31,17.03, Curve1) (-8.24,17.14, Curve2) (-8.32,17.20) 
+    (-9.21,17.81, Curve1) (-9.89,17.59, Curve2) (-10.88,18.00) 
+    (-11.53,18.26, Curve1) (-11.85,18.44, Curve2) (-12.40,18.88) 
+    (-20.25,2.64, Hole) (-22.96,2.25, Curve1) (-24.85,-0.30, Curve2) 
+    (-24.45,-3.01) (-24.06,-5.71, Curve1) (-21.52,-7.60, Curve2) 
+    (-18.81,-7.20) (-16.10,-6.81, Curve1) (-14.21,-4.27, Curve2) 
+    (-14.61,-1.57) (-15.00,1.15, Curve1) (-17.54,3.04, Curve2) 
+    (-20.25,2.64) (-30.88,21.84, Hole) (-31.44,12.08, Corner) 
+    (-20.00,13.44, Corner) (-21.60,27.36, Corner) (-31.04,21.76) 
+
+Index entry Sym=710.0
+Object Sym=710 Otp=3
+  nItem=30, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (21.76,26.16) (10.16,4.00, Corner) (28.24,-3.68, Corner) 
+    (18.48,-16.80, Corner) (21.84,6.88, Corner) (44.48,1.60, Corner) 
+    (42.56,26.40, Corner) (12.16,16.00, Corner) (9.52,31.92, Corner) 
+    (32.56,32.48, Corner) (32.08,15.84, Corner) (21.68,25.92) 
+    (23.28,16.96, Hole) (25.28,11.36, Corner) (37.94,15.88, Corner) 
+    (35.93,21.48, Corner) (23.28,16.96) (20.15,10.39, Hole) 
+    (24.84,9.31, Curve1) (29.56,12.27, Curve2) (30.64,16.95) 
+    (31.72,21.63, Curve1) (28.76,26.35, Curve2) (24.07,27.43) 
+    (19.40,28.51, Curve1) (14.67,25.55, Curve2) (13.60,20.87) 
+    (12.52,16.19, Curve1) (15.48,11.46, Curve2) (20.15,10.39) 
+
+Index entry Sym=406.0
+Object Sym=406 Otp=3
+  nItem=26, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-1.93,-18.24) (-5.98,-23.68, Curve1) (-4.85,-31.44, Curve2) 
+    (0.59,-35.49) (6.02,-39.54, Curve1) (13.78,-38.40, Curve2) 
+    (17.83,-32.96) (21.88,-27.54, Curve1) (20.74,-19.77, Curve2) 
+    (15.31,-15.73) (9.88,-11.67, Curve1) (2.11,-12.81, Curve2) 
+    (-1.93,-18.24) (1.19,-26.32, Hole) (1.15,-28.44, Curve1) 
+    (4.20,-30.22, Curve2) (7.97,-30.28) (11.73,-30.35, Curve1) 
+    (14.84,-28.68, Curve2) (14.87,-26.56, Corner) (14.91,-24.46, Curve1) 
+    (11.86,-22.68, Curve2) (8.10,-22.62) (4.33,-22.55, Curve1) 
+    (1.22,-24.22, Curve2) (1.19,-26.32) 
+

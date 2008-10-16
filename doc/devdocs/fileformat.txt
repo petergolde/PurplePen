@@ -1,0 +1,223 @@
+MapEdit file format specification.
+
+geode - top node of the document
+  Attributes:
+    format: (int) full version of the format. Changes in this are totally uncompatible
+    revision: (int) revision of the format. Indicates the version of nodes and attributes 
+              in the file format. When reading a version with a revision > one you
+              know, warn the user and ignore stuff you don't understand
+    creator: (text) Program that wrote the document
+    
+  SubNodes:
+    info: information associated with this file
+    map: a map in this file
+
+  Content:
+    none.    
+    
+map - describes a map
+  SubNodes:
+    layers: layers in this map
+    symboldefs: symbol definitions
+    symbols: symbols
+    
+layers: describes the layers on a map in order that they are drawn.
+  SubNodes:
+    layer: on layer in the map
+    
+layer: describes on layer in the map
+  Attributes:
+    id: (text) unique id [required]
+    name: (text) user name of the layer [optional: def empty]
+    ocad-id: value used in ocad. [required]
+    red: red value as float 0.0 to 1.0 [required]
+    green: green value as float 0.0 to 1.0 [required]
+    blue: blue value as float 0.0 to 1.0 [required]
+
+symboldefs: contains all the symbol definitions in the map
+  SubNodes:
+    symboldef
+
+symboldef:
+  Attributes:
+     id - id of the symbol definiton [required]
+     name - name of the symbol definition [optional: def empty]
+     isom-number - number of the symbol for ISOM/OCAD [required]
+     type - type is "point", "line", "area", "text" [required]
+     
+  SubNodes:
+    rotation - (point, area) [optional]
+    pointsymbol - (point) zero or more of line, area, circle, disc [required]
+    mainline - (line) main line info [optional]
+    secondaryline - (line) secondary line info [optional]
+    doubleline - (line) double line info [optional]
+    linesymbol - (line, multiple) line glyph [optional]
+    solidfill - (area) solid fill info [optional]
+    hatching - (area) hatching info [optional]
+    pattern - (area) pattern info [optional]
+    font - (text) font info [required]
+    layout - (text) spacing info [required]
+    toolbox-image - (all) toolbox image, base64 encoding of PNG format. [optional]
+  
+  
+rotation:
+  Attributes:
+     allow-rotation - (bool) Whether to rotate this symbol/area patten when symbol is rotated/drawn.
+         default is true.  
+mainline:
+   Attributes:
+     layer - layer of the main line [required]
+     width - width of the main line [required]
+     rounded-ends - boolean [required]
+     corner-style - miter/bevel/round [required]
+   SubNodes:
+     dashes - dash info
+     shorten - line shortening information [optional]
+     
+secondaryline:
+   Attributes:
+     layer - layer of the main line [required]
+     width - width of the main line [required]
+     rounded-ends - boolean [required]
+     corner-style - miter/bevel/round [required]
+   No SubNodes.
+     
+dashes:
+   Attributes:
+     dash-length - length of dashes [required]
+     gap-length - length of gaps [required]
+     minimum-gaps - min # of gaps [optional, 1]
+     secondary-gaps - (optional) # of secondary gaps [optional, default: 0]
+     secondary-gap-length - (options) length of secondary gaps [options: default: 0]
+     
+shorten:
+   Attributes:
+     beginning-length - lenght of beginning shortening [required]
+     end-length - length of end shortening [required]
+     pointed-ends - draw pointed ends? [required]
+     
+doubleline:
+   Attributes:
+     fill-layer - (optional) layer for filling 
+     fill-width - width of fill area
+     border-layer - (optional) layer for border
+     border-width - (optional) width of border area
+     
+linesymbol:
+    Attributes:
+      location -(required) where on line glyph appears ("begin", "end", ...)
+      number - (optional) number of glyphs at each point [ default: 1]
+      spacing - (optional, if number > 1) spacing of mulptiple glyphs [
+      spaced-distance - (if location=="spaced") spacing along line
+      spaced-end-distance - (if location=="spaced") spacing from end of line
+      spaced-minimum - (if location=="spaced") minimum number of symbols [optional, default = 1]
+    SubNodes:
+     zero or more of line, area, circle, disc
+
+pointsymbol:
+    SubNodes:
+     zero or more of line, area, circle, disc
+     
+solidfill:
+   Attributes:
+     layer - layer id
+     
+hatching:
+   Attributes:
+      layer - layer id [required]
+      width - width of hatching lines [required]
+      spacing  - spacing of hatching lines [required]
+      angle - angle of hatching lines [required]
+      secondary-angle - (optional) if present, angle of second lines
+
+pattern:
+   Attributes:
+      offset-rows - is every other row offset [options, default = false]
+      width - width of pattern [required]
+      height - heigh of pattern [required]
+      angle - angle of pattern [required]
+   SubNodes:  
+     zero or more of line, area, circle, disc
+     
+font:
+   Attributes:
+      layer - layer id [required]
+      facename - name of font face [required]
+      height - em-height of font [required]
+      bold - is bold? [opt - default false]
+      italic - is italic? [opt - default false]
+      
+layout:
+   Attributes:
+      alignment - left, right, center [opt - default left]
+      line-spacing - spacing of lines [required]
+      para-spacing - spacing of paragraphs [opt - default 0
+    
+area:
+   Attributes:
+     layer - id of the color layer to fill
+   SubNodes:
+     coordinates - list of coordinates in the area
+     
+line:
+   Attributes:
+     layer - ids of the color layer to draw [required]
+     width - width of the line [required]
+     rounded-ends - are ends rounded [required]
+     corner-style - style of corners (miter/bevel/round) [required]
+   SubNodes:
+     coordinates - list of coordinates in the area [required]
+  
+circle:
+   Attributes:
+     layer - ids of the color layer to draw [required]
+     width - width of the line [required]
+     diameter - diameter of the circle [required]
+   SubNodes:
+     position - coordinate of center point of the circle [required]
+  
+disc:
+   Attributes:
+     layer - ids of the color layer to draw [required]
+     diameter - diameter of the circle [required]
+   SubNodes:
+     position - coordinate of center point of the disc [required]
+
+symbol:
+   Attributes: 
+     type - "line", "point", "text", "area"
+     symboldef - id of the symbol def
+     angle - (point, text, area) angle of rotation [opt - default is 0]
+     width - (text, optional), width to format text
+     
+   SubNodes
+     coordinates (line, area - required)  If it's an area, the start and end points must be identical
+     holes (area - options)
+     position (point, text - required)
+     text (text - required)
+       
+    
+coordinates: describes a path in coordinates
+  Content: a series of coordinates. Each coordinate has three parts
+    CoordType: S (start) -- may only occur at beginning
+               E (end)   -- may only occur at end
+               N (normal)
+               C (corner)
+               B (bezier control)
+               D (dash)
+    XCoord: floating point number
+    YCoord: floating point number
+    
+    e.g. <coordinates>S 4.5 1.2 N 4.7 5.2 E 7.8 1.2</coordinates>
+
+holes: show all the holes in the area
+  SubNodes:
+    coordinates (one for each hole)
+    
+position:
+  describes a single coordinate
+   e.g. <position>4.5 6.7</position>
+text:
+  Context:
+    the text to show
+    

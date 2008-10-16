@@ -1,0 +1,68 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Event 1</title>
+    <notes>This is a sample event with no controls.</notes>
+    <map kind="none" scale="15000"></map>
+	  <numbering start="60" disallow-invertible="true"/>
+  </event>
+	<control id="20" kind="normal">
+		<code>60</code>
+		<location x="-21.4" y="33.1" />
+		<punch-pattern size="9">
+			100000000
+			000000000
+			000000000
+			000000000
+			000010000
+			000000000
+			000000000
+			000000000
+			100000001
+		</punch-pattern>
+	</control>
+	<control id="21" kind="normal">
+		<code>65</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+	<control id="22" kind="normal">
+		<code>64</code>
+		<location x="-21.4" y="33.1" />
+		<punch-pattern size="9">
+			000000000
+			000000000
+			000000000
+			000000000
+			000000000
+			000000000
+			000000000
+			000000000
+			101010101
+		</punch-pattern>
+	</control>
+	<control id="23" kind="normal">
+		<code>63</code>
+		<location x="-21.4" y="33.1" />
+		<punch-pattern size="9">
+			100000000
+			100000100
+			000000000
+			000000000
+			000000000
+			000000000
+			100000000
+			000000000
+			100000000
+		</punch-pattern>
+	</control>
+	<control id="24" kind="normal">
+		<code>62</code>
+		<location x="-21.4" y="33.1" />
+	</control>
+
+	<course id="1" kind="normal">
+		<name>White</name>
+		<secondary-title>White is right</secondary-title>
+		<options print-scale="15000" climb="66" description-kind="symbols-and-text" />
+		<description square-size="5.5" left-edge="0" top-edge="0" />
+	</course>
+</course-scribe-event>
