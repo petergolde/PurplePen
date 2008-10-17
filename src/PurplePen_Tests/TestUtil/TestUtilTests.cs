@@ -72,7 +72,7 @@ namespace TestingUtils.Tests
             Bitmap diff = TestUtil.CompareBitmaps(bm1, bm3, Color.FromArgb(255, 225, 235), Color.Transparent);
             Assert.IsNotNull(diff);
 
-            Assert.IsNull(TestUtil.CompareBitmaps(diff, (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare_diff.png")), Color.LightPink, Color.Transparent));
+            Assert.IsNull(TestUtil.CompareBitmaps(diff, (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare_difference.png")), Color.LightPink, Color.Transparent));
         }
 
         private Bitmap CreateTestBitmap(bool addSlash)

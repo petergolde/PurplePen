@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="DescriptionLocalize.cs" />
     <Compile Include="GraphicsHelper.cs" />
+    <Compile Include="MapModel\DebugCode\OcadDump.cs" />
     <Compile Include="MapView\BitmapUtil.cs" />
     <Compile Include="MapView\Highlight.cs" />
     <Compile Include="MapView\MapViewer.cs">
@@ -77,7 +78,6 @@
     <Compile Include="MapView\Util.cs" />
     <Compile Include="MapView\ViewCache.cs" />
     <Compile Include="MapModel\Bezier.cs" />
-    <Compile Include="MapModel\Debug\OcadDump.cs" />
     <Compile Include="MapModel\Glyph.cs" />
     <Compile Include="MapModel\GraphicsTarget.cs" />
     <Compile Include="MapModel\InputOutput.cs" />
