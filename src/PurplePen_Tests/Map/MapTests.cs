@@ -160,7 +160,7 @@ namespace PurplePen.MapModel.Tests
         public void RoundTripTemplate()
         {
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
-            string filename = TestUtil.GetTestFile(@"io\outputtemplate.ocd");
+            string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
             Map map = new Map();
             using (map.Write())
@@ -176,7 +176,7 @@ namespace PurplePen.MapModel.Tests
         public void RoundTripTemplate8()
         {
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
-            string filename = TestUtil.GetTestFile(@"io\outputtemplate.ocd");
+            string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
             Map map = new Map();
             using (map.Write())
@@ -192,7 +192,7 @@ namespace PurplePen.MapModel.Tests
         public void RoundTripTemplate9()
         {
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
-            string filename = TestUtil.GetTestFile(@"io\outputtemplate.ocd");
+            string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
             Map map = new Map();
             using (map.Write())

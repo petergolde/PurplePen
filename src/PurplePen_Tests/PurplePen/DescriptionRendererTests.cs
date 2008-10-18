@@ -241,7 +241,7 @@ namespace PurplePen.Tests
                 descriptionRenderer.RenderToMap(map, color, location, new Dictionary<object,SymDef>());
             }
 
-            InputOutput.WriteFile(TestUtil.GetTestFile("descriptions\\desc.ocd"), map, 8);
+            InputOutput.WriteFile(TestUtil.GetTestFile("descriptions\\desc_temp.ocd"), map, 8);
 
             using (map.Read()) {
                 RenderOptions renderOpts = new RenderOptions();

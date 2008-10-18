@@ -1819,6 +1819,8 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.yellow = 0;
             settings.black = 0.25F;
 
+            Directory.CreateDirectory(settings.outputDirectory);
+
             CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, 
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create1\\Course 2.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create1\\Course 2_expected.txt") });
@@ -1837,6 +1839,8 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.magenta = 0.9F;
             settings.yellow = 0;
             settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
 
             CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings,
                                         new string[3] { TestUtil.GetTestFile("controller\\ocad_create2\\Course 3.ocd"),
@@ -1861,6 +1865,8 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.yellow = 0;
             settings.black = 0.25F;
 
+            Directory.CreateDirectory(TestUtil.GetTestFile("controller\\ocad_create3"));
+
             string outputFile = TestUtil.GetTestFile("controller\\ocad_create3\\Course 3.ocd");
             File.Delete(outputFile);
             Assert.IsFalse(File.Exists(outputFile));
@@ -1883,6 +1889,9 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.magenta = 0.9F;
             settings.yellow = 0;
             settings.black = 0.25F;
+
+            Directory.CreateDirectory(TestUtil.GetTestFile("controller\\ocad_create3"));
+            Directory.CreateDirectory(TestUtil.GetTestFile("controller\\ocad_create4"));
 
             string outputFile = TestUtil.GetTestFile("controller\\Course 3.ocd");
             File.Delete(outputFile);
@@ -1907,6 +1916,8 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.magenta = 0.9F;
             settings.yellow = 0;
             settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
 
             CreateOcadFiles(TestUtil.GetTestFile("controller\\create_ocad5.ppen"), settings,
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing-A&B_C&D_E_F.ocd") },
