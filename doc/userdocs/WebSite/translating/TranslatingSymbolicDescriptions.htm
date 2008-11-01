@@ -5,6 +5,11 @@
 <meta http-equiv="Content-Language" content="en-us" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Translating Symbolic Description</title>
+<style type="text/css">
+.style1 {
+	font-family: "Courier New", Courier, monospace;
+}
+</style>
 </head>
 
 <body>
@@ -14,11 +19,25 @@
 the program with support for doing these translations (in the future, all 
 versions of Purple Pen will have this support built in, although hidden from 
 normal use). Download and install the special translation version of Purple Pen 
-from here. This version will replace your current version of Purple Pen -- it 
+<a href="../downloads/purplepen-translate.exe">from here</a>. This version will replace your current version of Purple Pen -- it 
 has all the usual functionality plus a little more.</p>
 <p>Once you have installed your new version of Purple Pen, run it and open the 
-sample event. To begin translation, hold down the Ctrl and Shift keys 
-simultaneously, and open the Help menu. A special sub-menu called &quot;Translate 
+sample event. </p>
+<p><strong>Windows Vista only: </strong>You must be running Purple Pen as an 
+Administrator in order to translate the symbolic description. To do this on 
+Windows Vista:</p>
+<ul>
+	<li>On the start menu, open &quot;All Programs&quot;, then &quot;Accessories&quot;, the <em>
+	right-click</em> on &quot;Command Prompt&quot;. From the right-click menu, choose &quot;Run 
+	As Adminstrator&quot;.</li>
+	<li>&nbsp;Confirm the User Account Control dialog by clicking Continue.</li>
+	<li>In the command prompt, type &quot;<span class="style1"><strong>cd C:\Program 
+	Files\Purple Pen</strong></span>&quot;.</li>
+	<li>To start Purple Pen, type &quot;<span class="style1"><strong>PurplePen</strong></span>&quot; in the command prompt. </li>
+</ul>
+<h2>Accessing the translation menu</h2>
+<p>To begin translation, <em>hold down the Ctrl and Shift keys 
+simultaneously</em>, and open the Help menu. A special sub-menu called &quot;Translate 
 Description Texts&quot; is available only if Ctrl and Shift are both held down. </p>
 <p><img alt="screenshot 1" src="screenshot1.png" width="557" height="402" /></p>
 <p>&nbsp;</p>
@@ -100,7 +119,25 @@ For example:</p>
 <p>In this window, enter the text in the last column of the grid. If applicable, 
 be sure to set the gender of the word in the dropdown at the bottom of the 
 window.</p>
-<h2>Symbol types</h2>
+<p>See the Appendix for information with detailed information about different 
+symbol types and how they are combined to make the full textual description.</p>
+<h2>Checking your translations</h2>
+<p>After entering translations, it is a good idea to return the main program and 
+test out different descriptions to look at the text forms, to make sure that 
+your translations combine in a reasonable grammatical way. When any control is 
+selected, the text version is show in the selected object pane, right below the 
+description sheet. You may need to enlarge the pane to see it.</p>
+
+<h2>Submitting your translations</h2>
+<p>Once you are happy with the translations, email the file &quot;<a href="file:///C:/Program%20Files/Purple%20Pen/symbols.xml">C:\Program 
+Files\Purple Pen\symbols.xml</a>&quot; to <a href="mailto:peter@golde.org">
+peter@golde.org</a>. I will incorporate the translation in the next release of 
+Purple Pen, and make sure that no one else does the same translation.</p>
+<h2>Asking for help</h2>
+<p>If you have any questions, please feel free to email
+<a href="mailto:peter@golde.org">peter@golde.org</a> with any questions.</p>
+<hr />
+<h2>Appendix: Symbol types</h2>
 <p>While the symbols that appear in column D (Control feature) are fairly 
 straightforward, other symbols are somewhat more complex. Many symbols use <em>
 replaceable text</em>, which is replaced with actual text when the description 
@@ -180,9 +217,55 @@ column F (objects of same kind) = singular &quot;{0} crossing&quot; / plural &qu
 crossings&quot; --&gt; singular &quot;path crossing&quot; / plural &quot;path crossings&quot;<br />
 column G (objects of same kind) = &quot;between {1}&quot; -&gt; &quot;between path crossings&quot;</p>
 <h3>Size of feature in Column F</h3>
-<p>&nbsp;</p>
+<p>There are several different &quot;symbols&quot; that affect how size numbers in column 
+F are translated into text. The following describes the purpose of each of these 
+symbols:</p>
+<p>&quot;Height of feature&quot;:&nbsp; used when column F is a simple number, such as 
+&quot;5&quot;, which describes how high the main feature is (e.g., a boulder). The special 
+text {0} is replaced with the height in meters.</p>
+<p>&quot;Depth of feature&quot;: used when column F is a simple number, such as &quot;5&quot;, which 
+describes how deep the main feature is (e.g., a pit). The special text {0} is 
+replaced with the depth in meters.</p>
+<p>&quot;Size of feature&quot;: used when column F has two numbers separated by an &quot;x&quot;, 
+such as &quot;5x8&quot;, which describes the size of the feature (e.g., a clearing). The 
+special text {0} is replaced with the first length, and the special text {1} is 
+replaced by the second length.</p>
+<p>&quot;Height of feature on slope&quot;: used when column F is two numbers separated by 
+a slash, such as &quot;1/3&quot;, which describes the height of a feature on a slope. The 
+special text {0} is replaced with the first height, and the special text {1} is 
+replaced by the second height.</p>
+<p>&quot;Depth of feature on slope&quot;: used when column F is two numbers separated by a 
+slash, such as &quot;1/3&quot;, used with a feature that is deep rather than high. The 
+special text {0} is replaced with the first height, and the special text {1} is 
+replaced by the second height.</p>
+<p>&quot;Size of two features&quot;: used when column F describes the sizes of two 
+different main features, one above the other (entered in Purple Pen using a 
+&quot;|&quot;). The special text {0} is replaced with the first size, and {1} with the 
+second size. In this case, the {0} and {1} texts are those formed by one of the 
+other size symbol textgs.</p>
 <h3>Special directives with distances (finish, flagged routes)</h3>
-<p>&nbsp;</p>
+<p>There are symbols for the various special directive that span all eight boxed 
+(the pictures look kind of squished in the translation window!) The directives 
+for finishes, marked routes, and finishes have special text {0} which is 
+replaced with the appropriate distance, <em>plus a space</em>. Thus the {0} 
+should be right in front of the next word, without any space. For example, the 
+finish symbol without tapes in English is &quot;navigate {0}to finish&quot;, with no space 
+between &quot;{0}&quot; and &quot;to&quot;.</p>
+<h3>Other special symbols</h3>
+<p>A few other special &quot;symbols&quot; (which do not have actual graphics symbols) are 
+used for a few pieces of text that appear in descriptions, as follows:</p>
+<p>&quot;Course length&quot; --&gt; describes the course statistics, when the course has no 
+climb. {0} is replaced with the length</p>
+<p>&quot;Course length and climb&quot; --&gt; describes the course statistics, when the 
+course has climb. {0} is replaced with the length, {1} with the climb.</p>
+<p>&quot;Number of Controls&quot; --&gt; used in the all controls description sheet to show 
+the number of controls. {0} is replaced with the number of controls.</p>
+<p>&quot;Number of Points&quot; --&gt; used in score course description sheet to show the 
+total number of points. {0} is replaced with the number of points.</p>
+<p>&quot;And&quot; --&gt; used when two features are placed in column D and E, but without 
+the crossing, between, or junction symbols being used. This is non-standard, but 
+occasionally used. {0} is replaced with the first feature, {1} with the second 
+feature.</p>
 
 </body>
 

@@ -18,7 +18,7 @@ namespace PurplePen.DebugUI
 
         public string LangId
         {
-            get { return ((CultureInfo) (languageComboBox.SelectedItem)).TwoLetterISOLanguageName; }
+            get { return ((CultureInfo) (languageComboBox.SelectedItem)).Name; }
         }
 
         public string LanguageName
@@ -50,9 +50,8 @@ namespace PurplePen.DebugUI
 
         private void NewLanguage_Load(object sender, EventArgs e)
         {
-            foreach (CultureInfo cultureInfo in CultureInfo.GetCultures(CultureTypes.FrameworkCultures)) {
-                if (cultureInfo.IsNeutralCulture)
-                    languageComboBox.Items.Add(cultureInfo);
+            foreach (CultureInfo cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures)) {
+                languageComboBox.Items.Add(cultureInfo);
             }
 
             pluralNounCheckBox_CheckedChanged(this, EventArgs.Empty);
