@@ -137,7 +137,6 @@ namespace PurplePen.DebugUI
             this.descriptionControl1.Location = new System.Drawing.Point(207, 36);
             this.descriptionControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.descriptionControl1.Name = "descriptionControl1";
-            this.descriptionControl1.SelectedLine = -1;
             this.descriptionControl1.Size = new System.Drawing.Size(328, 400);
             this.descriptionControl1.SymbolDB = null;
             this.descriptionControl1.TabIndex = 0;

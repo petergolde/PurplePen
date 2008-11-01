@@ -113,7 +113,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(26.3F, -17.3F), eventDB.GetControl(newControlId).location);
 
             // The control should be highlighted.
-            Assert.AreEqual(28, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 28, 28);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(newControlId.id, highlights[0].controlId.id);
@@ -197,7 +197,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
             // The control should be highlighted.
-            Assert.AreEqual(8, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 8, 8);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(newControlId.id, highlights[0].controlId.id);
@@ -243,7 +243,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
             // The control should be highlighted.
-            Assert.AreEqual(8, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 8, 8);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(48, highlights[0].controlId.id);
@@ -312,7 +312,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
             // The control should be highlighted.
-            Assert.AreEqual(8, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 8, 8);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(41, highlights[0].controlId.id);
@@ -402,7 +402,7 @@ namespace PurplePen.Tests
             // There should be a new start control, with the given location.
             // Is should be selected.
             // The control should be highlighted.
-            Assert.AreEqual(2, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 2, 2);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;
@@ -468,7 +468,7 @@ namespace PurplePen.Tests
 
             // There should be a new start control, with the given location.
             // It should be selected.
-            Assert.AreEqual(2, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 2, 2);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;
@@ -513,7 +513,7 @@ namespace PurplePen.Tests
             // Mouse down on new start.
             MapViewer.DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
 
-            Assert.AreEqual(2, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 2, 2);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(newControlId, highlights[0].controlId);
@@ -568,7 +568,7 @@ namespace PurplePen.Tests
             // There should be a new finish control, with the given location.
             // Is should be selected.
             // The control should be highlighted.
-            Assert.AreEqual(39, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 39, 39);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;
@@ -635,7 +635,7 @@ namespace PurplePen.Tests
 
             // There should be a new finish control, with the given location.
             // It should be selected.
-            Assert.AreEqual(16, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 16, 16);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;
@@ -681,7 +681,7 @@ namespace PurplePen.Tests
             // Mouse down on new finish.
             MapViewer.DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
 
-            Assert.AreEqual(16, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 16, 16);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(newControlId, highlights[0].controlId);
@@ -860,7 +860,7 @@ namespace PurplePen.Tests
             // There should be a new mandatory, with the given location.
             // Is should be selected.
             // The control should be highlighted.
-            Assert.AreEqual(8, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 8, 8);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;

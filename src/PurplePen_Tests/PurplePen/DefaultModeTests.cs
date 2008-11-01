@@ -76,13 +76,13 @@ namespace PurplePen.Tests
             
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on control 5 (#47).
             dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
 
             // Check correct description line highlighted.
-            Assert.AreEqual(7, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 7, 7);
 
             // Check correct highlights appear.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -93,13 +93,13 @@ namespace PurplePen.Tests
 
             // Select all controls.
             controller.SelectTab(0);    
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on number for control #54.
             dragAction = controller.LeftButtonDown(new PointF(59.3F, 5.5F), 0.1F);
 
             // Check correct description line highlighted.
-            Assert.AreEqual(22, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 22, 22);
 
             // Check correct highlights appear.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -123,13 +123,13 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(new PointF(15.3F, -42F), 0.1F);
 
             // Check no description line highlighted.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Check correct highlights appear.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -138,13 +138,13 @@ namespace PurplePen.Tests
 
             // Select all controls.
             controller.SelectTab(0);
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(new PointF(13.3F, -41F), 0.1F);
 
             // Check no description line highlighted.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Check correct highlights appear.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -211,11 +211,11 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Select control 5.
             controller.SelectDescriptionLine(7);
-            Assert.AreEqual(7, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 7, 7);
 
             // Click on control 5 (#47).
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
@@ -280,11 +280,11 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Select control 5.
             controller.SelectDescriptionLine(7);
-            Assert.AreEqual(7, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 7, 7);
 
             // Click on the control number.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-1.5F, 38.8F), 0.1F);
@@ -333,7 +333,7 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on first aid point to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(15.3F, -42F), 0.1F);
@@ -399,7 +399,7 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on area to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-0.3F, 0.2F), 0.1F);
@@ -469,7 +469,7 @@ namespace PurplePen.Tests
 
             // Select course 3.
             controller.SelectTab(3);       // Course 3.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on area to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-24, 12), 0.1F);
@@ -535,7 +535,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
@@ -598,7 +598,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);
@@ -662,7 +662,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(64, 3.3F), 0.3F);

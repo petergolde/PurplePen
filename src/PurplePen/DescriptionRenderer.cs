@@ -48,7 +48,8 @@ namespace PurplePen
     enum HitTestKind
     {
         None,               // didn't hit anything
-        Title,              // hit a title (box always 0, use line to distiguish primary/secondary)
+        Title,              // hit a title (box always 0)
+        SecondaryTitle,              // hit a secondary title (box always 0)
         Header,             // hit the header (name, length, climb, or total controls -- box is 0, 1, 2).
         NormalBox,          // hit a normal box (box indicates A-H)
         NormalText,         // hit the text part of a normal box line (box is not valid)
@@ -62,7 +63,7 @@ namespace PurplePen
     struct HitTestResult
     {
         public HitTestKind kind;   // What did we hit?
-        public int line;          // What line of the description?
+        public int firstLine, lastLine;          // What line(s) of the description?
         public int box;           // Which box in the description?
         public RectangleF rect;    // What are the bounds of that box?
     }
@@ -148,17 +149,17 @@ namespace PurplePen
         }
 
         // Measure the bounds of one line. Does not include margings or line widths.
-        public RectangleF LineBounds(int line)
+        public RectangleF LineBounds(int firstLine, int lastLine)
         {
-            RectangleF rect = new RectangleF(0, line * cellSize, WidthInCells() * cellSize, cellSize);
+            RectangleF rect = new RectangleF(0, firstLine * cellSize, WidthInCells() * cellSize, cellSize * (lastLine - firstLine + 1));
             rect.Offset(margin, margin);
             return rect;
         }
 
         // Measure the bounds of one box.
-        public RectangleF BoxBounds(int line, int startBox, int endBox)
+        public RectangleF BoxBounds(int firstLine, int lastLine, int startBox, int endBox)
         {
-            RectangleF rect = new RectangleF(startBox * cellSize, line * cellSize, cellSize * (endBox - startBox + 1), cellSize);
+            RectangleF rect = new RectangleF(startBox * cellSize, firstLine * cellSize, cellSize * (endBox - startBox + 1), cellSize * (lastLine - firstLine + 1));
              rect.Offset(margin, margin);
              return rect;
          }
@@ -229,7 +230,7 @@ namespace PurplePen
                 for (int line = 0; line < description.Length; ++line) {
                     if (line >= startLine && line < startLine + countLines) {
                         // Figure out if this line needs to be drawn.
-                        RectangleF bounds = LineBounds(line);
+                        RectangleF bounds = LineBounds(line, line);
                         bounds.Inflate(thickLineWidth, thickLineWidth);
 
                         if (bounds.IntersectsWith(clipRect)) {
@@ -249,8 +250,10 @@ namespace PurplePen
                                                                   clipRect.Height * 100.0F / cellSize);
 
                             // Draw the line.
+                            // Don't draw a top line if it's a title/secondary and so was the previous.
+                            bool noTopLine = (line != 0) && (description[line].kind == DescriptionLineKind.Title || description[line].kind == DescriptionLineKind.SecondaryTitle) && (description[line].kind == description[line - 1].kind);
                             RenderLine(renderer, description[line], descriptionKind, (line == description.Length - 1 || line == startLine + countLines - 1), 
-                                (thickLineCounter == 0 || line == startLine), clipWorld);
+                                (thickLineCounter == 0 || line == startLine), noTopLine, clipWorld);
 
                             renderer.Transform = matrixSave;
                         }
@@ -264,6 +267,20 @@ namespace PurplePen
             finally {
                 DisposeObjects();
             }
+        }
+
+        // Find line bounds of lines of a given kind.
+        void LineBoundsOfKind(int line, out int firstLine, out int lastLine)
+        {
+            DescriptionLineKind lineKind = description[line].kind;
+
+            firstLine = line;
+            while (firstLine > 0 && description[firstLine - 1].kind == lineKind)
+                --firstLine;
+
+            lastLine = line;
+            while (lastLine < description.Length - 1 && description[lastLine + 1].kind == lineKind)
+                ++lastLine;
         }
 
         // Hit test a point (in device coordinates) so we know what was clicked on.
@@ -282,7 +299,7 @@ namespace PurplePen
             if (point.X < 0 || point.X >= width || point.Y < 0 || point.Y >= height) {
                 // Outside the bounds of the description.
                 result.kind = HitTestKind.None;
-                result.line = -1;
+                result.firstLine = result.lastLine = -1;
                 result.box = -1;
                 result.rect = new RectangleF();
                 return result;
@@ -293,14 +310,22 @@ namespace PurplePen
             Debug.Assert(iLine >= 0 && iLine < description.Length);
             int iCol = (int)(point.X / cellSize);
             Debug.Assert(iCol >= 0 && iCol < WidthInCells());
-            result.line = iLine;
+            result.firstLine = result.lastLine = iLine;
             DescriptionLineKind lineKind = description[iLine].kind;
 
             switch (lineKind) {
                 case DescriptionLineKind.Title:
                     result.kind = HitTestKind.Title;
                     result.box = 0;
-                    result.rect = new RectangleF(0, iLine * cellSize, width, cellSize);
+                    LineBoundsOfKind(iLine, out result.firstLine, out result.lastLine);
+                    result.rect = new RectangleF(0, result.firstLine * cellSize, width, cellSize * (result.lastLine - result.firstLine + 1));
+                    break;
+
+                case DescriptionLineKind.SecondaryTitle:
+                    result.kind = HitTestKind.SecondaryTitle;
+                    result.box = 0;
+                    LineBoundsOfKind(iLine, out result.firstLine, out result.lastLine);
+                    result.rect = new RectangleF(0, result.firstLine * cellSize, width, cellSize * (result.lastLine - result.firstLine + 1));
                     break;
 
                 case DescriptionLineKind.Header2Box:
@@ -568,15 +593,18 @@ namespace PurplePen
         // Render a single line of the description. "lastLine" is true if this is the last line (draws the bottom line). The "thickLineCounter"
         // is used to decide when to draw the thick lines.
         // clipRect is the clipping rectangle in world coordinates. Only need to draw things that intersect it.
-        private void RenderLine(IRenderer renderer, DescriptionLine descriptionLine, DescriptionKind descriptionKind, bool lastLine, bool drawThickLine, RectangleF clipRect)
+        private void RenderLine(IRenderer renderer, DescriptionLine descriptionLine, DescriptionKind descriptionKind, bool lastLine, bool drawThickLine, bool noTopLine, RectangleF clipRect)
         {
-            // Draw top line.
             float fullWidth = WidthInCells() * 100;
-            if (descriptionLine.kind != DescriptionLineKind.Normal || drawThickLine) {
-                renderer.DrawLine(thickPen, 0, 0, fullWidth, 0);
-            }
-            else {
-                renderer.DrawLine(thinPen, 0, 0, fullWidth, 0);
+
+            // Draw top line.
+            if (!noTopLine) {
+                if (descriptionLine.kind != DescriptionLineKind.Normal || drawThickLine) {
+                    renderer.DrawLine(thickPen, 0, 0, fullWidth, 0);
+                }
+                else {
+                    renderer.DrawLine(thinPen, 0, 0, fullWidth, 0);
+                }
             }
 
             // Draw bottom line, if requested
@@ -587,13 +615,17 @@ namespace PurplePen
             float lineTop = -DescriptionAppearance.thickDescriptionLine / 2;
             float lineBottom = 100 + DescriptionAppearance.thickDescriptionLine / 2;
             renderer.DrawLine(thickPen, 0, lineTop, 0, lineBottom);
-            if (! (descriptionKind == DescriptionKind.SymbolsAndText && (descriptionLine.kind == DescriptionLineKind.Title || descriptionLine.kind == DescriptionLineKind.Text)))
+            if (! (descriptionKind == DescriptionKind.SymbolsAndText && (descriptionLine.kind == DescriptionLineKind.Title || descriptionLine.kind == DescriptionLineKind.SecondaryTitle || descriptionLine.kind == DescriptionLineKind.Text)))
                 renderer.DrawLine(thickPen, 800, lineTop, 800, lineBottom);
             if (descriptionKind == DescriptionKind.SymbolsAndText)
                 renderer.DrawLine(thickPen, 1300, lineTop, 1300, lineBottom);
 
             switch (descriptionLine.kind) {
                 case DescriptionLineKind.Title:
+                    RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.boxes[0]), 0, 0, fullWidth, 100, clipRect);
+                    break;
+
+                case DescriptionLineKind.SecondaryTitle:
                     RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.boxes[0]), 0, 0, fullWidth, 100, clipRect);
                     break;
 

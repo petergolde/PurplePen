@@ -80,7 +80,8 @@ namespace PurplePen
         CourseView activeCourseView;            // The active course view.
 
         DescriptionLine[] activeDescription;    // The active description.
-        int selectedDescriptionLine;             // If there is a selection, the selected row of the description.
+        int selectedDescriptionLineFirst;             // If there is a selection, the first selected row of the description.
+        int selectedDescriptionLineLast;             // If there is a selection, the last selected row of the description.
 
         CourseLayout activeCourse;             // The active course.
         CourseObj[] selectedCourseObjects;  // The selected objects in the active course.
@@ -180,6 +181,13 @@ namespace PurplePen
             }
         }
 
+        public void GetSelectedLines(out int firstLine, out int lastLine)
+        {
+            UpdateState();
+            firstLine = selectedDescriptionLineFirst;
+            lastLine = selectedDescriptionLineLast;
+        }
+
         // Course view for the active tab.
         public CourseView ActiveCourseView
         {
@@ -210,35 +218,28 @@ namespace PurplePen
             }
         }
 
-        // Which line in the description is selected, or -1 for no line.
-        public int SelectedDescriptionLine
+       public void SelectDescriptionLine(int line)
         {
-            get
-            {
-                UpdateState();
-                return selectedDescriptionLine;
+            UpdateState();
+            if (line == -1) {
+                ClearSelection();
             }
-            set
-            {
-                UpdateState();
-                if (value == -1) {
-                    ClearSelection();
-                }
-                else {
-                    DescriptionLineKind kind = activeDescription[value].kind;
-                    if (kind == DescriptionLineKind.Title)
-                        SetSelection(value == 0 ? SelectionKind.Title : SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
-                    else if (kind == DescriptionLineKind.Header2Box || kind == DescriptionLineKind.Header3Box)
-                        SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
-                    else if (kind == DescriptionLineKind.Key)
-                        SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[value].boxes[0], DescriptionLine.TextLineKind.None);
-                    else if (kind == DescriptionLineKind.Text)
-                        SetSelection(SelectionKind.TextLine, activeDescription[value].courseControlId, Id<CourseControl>.None, activeDescription[value].controlId, Id<Special>.None, null, activeDescription[value].textLineKind);
-                    else if (activeDescription[value].isLeg)
-                        SetSelection(SelectionKind.Leg, activeDescription[value].courseControlId, activeDescription[value].courseControlId2, activeDescription[value].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
-                    else
-                        SetSelection(SelectionKind.Control, activeDescription[value].courseControlId, Id<CourseControl>.None, activeDescription[value].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
-                }
+            else {
+                DescriptionLineKind kind = activeDescription[line].kind;
+                if (kind == DescriptionLineKind.Title)
+                    SetSelection(SelectionKind.Title, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                else if (kind == DescriptionLineKind.SecondaryTitle)
+                    SetSelection(SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                else if (kind == DescriptionLineKind.Header2Box || kind == DescriptionLineKind.Header3Box)
+                    SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                else if (kind == DescriptionLineKind.Key)
+                    SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
+                else if (kind == DescriptionLineKind.Text)
+                    SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
+                else if (activeDescription[line].isLeg)
+                    SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                else
+                    SetSelection(SelectionKind.Control, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
             }
         }
 
@@ -503,8 +504,10 @@ namespace PurplePen
         // Update the selected line in the active description.
         void UpdateSelectedLine()
         {
+            bool titleFound = false;
+
             if (selectionKind == SelectionKind.None || selectionKind == SelectionKind.Special) {
-                selectedDescriptionLine = -1;
+                selectedDescriptionLineFirst = selectedDescriptionLineLast = -1;
                 return;
             }
 
@@ -512,41 +515,45 @@ namespace PurplePen
             for (int line = 0; line < activeDescription.Length; ++line) {
                 DescriptionLineKind lineKind = activeDescription[line].kind;
 
-                if (selectionKind == SelectionKind.Title && lineKind == DescriptionLineKind.Title && line == 0) {
-                    selectedDescriptionLine = line;
-                    return;
+                if (selectionKind == SelectionKind.Title && lineKind == DescriptionLineKind.Title) {
+                    if (!titleFound)
+                        selectedDescriptionLineFirst = line;
+                    selectedDescriptionLineLast = line;
+                    titleFound = true;
                 }
 
-                if (selectionKind == SelectionKind.SecondaryTitle && lineKind == DescriptionLineKind.Title && line != 0) {
-                    selectedDescriptionLine = line;
-                    return;
+                if (selectionKind == SelectionKind.SecondaryTitle && lineKind == DescriptionLineKind.SecondaryTitle) {
+                    if (!titleFound)
+                        selectedDescriptionLineFirst = line;
+                    selectedDescriptionLineLast = line;
+                    titleFound = true;
                 }
 
                 if (selectionKind == SelectionKind.Header && (lineKind == DescriptionLineKind.Header2Box || lineKind == DescriptionLineKind.Header3Box)) {
-                    selectedDescriptionLine = line;
+                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }
 
                 if (selectionKind == SelectionKind.Key && (lineKind == DescriptionLineKind.Key && activeDescription[line].boxes[0] == selectedKeySymbol)) {
-                    selectedDescriptionLine = line;
+                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }
 
                 if (selectionKind == SelectionKind.TextLine && (lineKind == DescriptionLineKind.Text && activeDescription[line].textLineKind == selectedTextLineKind &&
                                                                                           selectedCourseControl == activeDescription[line].courseControlId && selectedControl == activeDescription[line].controlId)) {
-                    selectedDescriptionLine = line;
+                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }
 
                 if (selectionKind == SelectionKind.Control && (lineKind == DescriptionLineKind.Normal || lineKind == DescriptionLineKind.Directive) && !activeDescription[line].isLeg) {
                     if (selectedCourseControl.IsNotNone && selectedCourseControl == activeDescription[line].courseControlId) {
                         selectedControl = activeDescription[line].controlId;
-                        selectedDescriptionLine = line;
+                        selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                         return;
                     }
 
                     if (selectedCourseControl.IsNone && selectedControl.IsNotNone && selectedControl == activeDescription[line].controlId) {
-                        selectedDescriptionLine = line;
+                        selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                         return;
                     }
                 }
@@ -554,20 +561,23 @@ namespace PurplePen
                 if (selectionKind == SelectionKind.Leg && activeDescription[line].isLeg) {
                     if (selectedCourseControl.IsNotNone && selectedCourseControl == activeDescription[line].courseControlId &&
                         selectedCourseControl2.IsNotNone && selectedCourseControl2 == activeDescription[line].courseControlId2) {
-                        selectedDescriptionLine = line;
+                        selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                         return;
                     }
                 }
             }
 
+            if (titleFound)
+                return;
+
             if (selectionKind == SelectionKind.Leg) {
                 // Not all legs have a matching line.
-                selectedDescriptionLine = -1;
+                selectedDescriptionLineFirst = selectedDescriptionLineLast = -1;
                 return;
             }
 
             // No matching line.
-            selectedDescriptionLine = -1;
+            selectedDescriptionLineFirst = selectedDescriptionLineLast = -1;
 
             if (selectionKind == SelectionKind.TextLine || selectionKind == SelectionKind.Key || selectionKind == SelectionKind.SecondaryTitle) {
                 // no matching line found. The selection must be gone.

@@ -2023,12 +2023,12 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             controller.AddTextLine("hello sailor", DescriptionLine.TextLineKind.BeforeControl);
             Assert.AreEqual("hello sailor", eventDB.GetControl(ControlId(7)).descTextBefore);
             Assert.AreEqual(null, eventDB.GetControl(ControlId(7)).descTextAfter);
-            Assert.AreEqual(8, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 8, 8);
 
             controller.GetUndoMgr().Undo();
             Assert.AreEqual(null, eventDB.GetControl(ControlId(7)).descTextBefore);
             Assert.AreEqual(null, eventDB.GetControl(ControlId(7)).descTextAfter);
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             controller.SelectTab(4);
             controller.SelectDescriptionLine(13);
@@ -2037,7 +2037,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             Assert.AreEqual("Control 303 after", eventDB.GetControl(ControlId(18)).descTextAfter);
             Assert.AreEqual("Course Control 303 before", eventDB.GetCourseControl(CourseControlId(208)).descTextBefore);
             Assert.AreEqual("hello there", eventDB.GetCourseControl(CourseControlId(208)).descTextAfter);
-            Assert.AreEqual(14, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 14, 14);
 
             controller.SelectTab(4);
             controller.SelectDescriptionLine(13);
@@ -2046,7 +2046,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             Assert.AreEqual(null, eventDB.GetControl(ControlId(18)).descTextAfter);
             Assert.AreEqual("Course Control 303 before", eventDB.GetCourseControl(CourseControlId(208)).descTextBefore);
             Assert.AreEqual("hello there", eventDB.GetCourseControl(CourseControlId(208)).descTextAfter);
-            Assert.AreEqual(13, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, 13, 13);
         }
 
         [TestMethod]

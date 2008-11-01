@@ -214,11 +214,12 @@ Use | for two features</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
     <value>Enter new event title
+Use | to separate lines
 (affects all courses)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
     <value>Enter new secondary title
-(affects this course only)</value>
+Use | to separate lines</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Enter new course name</value>

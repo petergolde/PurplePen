@@ -86,8 +86,8 @@ namespace PurplePen
             // 
             // cancelButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -126,12 +126,12 @@ namespace PurplePen
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.oneToPrefixLabel);
             this.groupBox1.Controls.Add(this.descriptionAppearanceLabel);
             this.groupBox1.Controls.Add(this.mapScaleLabel);
             this.groupBox1.Controls.Add(this.descKindCombo);
             this.groupBox1.Controls.Add(this.scaleCombo);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -177,6 +177,7 @@ namespace PurplePen
             // 
             // secondaryTitleTextBox
             // 
+            this.secondaryTitleTextBox.AcceptsReturn = true;
             resources.ApplyResources(this.secondaryTitleTextBox, "secondaryTitleTextBox");
             this.secondaryTitleTextBox.Name = "secondaryTitleTextBox";
             // 

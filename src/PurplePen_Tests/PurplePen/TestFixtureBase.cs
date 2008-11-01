@@ -77,5 +77,13 @@ namespace PurplePen.Tests
         {
             return new Id<Leg>(id);
         }
+
+        internal void CheckHighlightedLines(Controller controller, int expectedStartLine, int exepectedEndLine)
+        {
+            int first, last;
+            controller.GetHighlightedDescriptionLines(out first, out last);
+            Assert.AreEqual(expectedStartLine, first);
+            Assert.AreEqual(exepectedEndLine, last);
+        }
     }
 }

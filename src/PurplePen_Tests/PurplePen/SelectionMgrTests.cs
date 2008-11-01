@@ -224,8 +224,9 @@ namespace PurplePen.Tests
             writer = new StringWriter();
         }
 
-        void RoundtripSelectedLines(string testFileName)
+        void RoundtripSelectedLines(string testFileName, bool singleLineOnly)
         {
+
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile(testFileName));
             Assert.IsTrue(success);
 
@@ -233,9 +234,18 @@ namespace PurplePen.Tests
             for (int tab = 0; tab < selectionMgr.TabCount; ++tab) {
                 selectionMgr.ActiveTab = tab;
                 for (int line = -1; line < selectionMgr.ActiveDescription.Length; ++line) {
-                    selectionMgr.SelectedDescriptionLine = line;
+                    selectionMgr.SelectDescriptionLine(line); 
                     Assert.AreEqual(tab, selectionMgr.ActiveTab);
-                    Assert.AreEqual(line, selectionMgr.SelectedDescriptionLine);
+                    int firstLine, lastLine;
+                    selectionMgr.GetSelectedLines(out firstLine, out lastLine);
+                    if (singleLineOnly) {
+                        Assert.AreEqual(line, firstLine);
+                        Assert.AreEqual(line, lastLine);
+                    }
+                    else {
+                        Assert.IsTrue(line >= firstLine);
+                        Assert.IsTrue(line <= lastLine);
+                    }
                 }
             }
         }
@@ -243,25 +253,39 @@ namespace PurplePen.Tests
         [TestMethod]
         public void RoundtripSelectedLine()
         {
-            RoundtripSelectedLines("selectionmgr\\sampleevent1.coursescribe");
+            RoundtripSelectedLines("selectionmgr\\sampleevent1.coursescribe", true);
         }
 
         [TestMethod]
         public void RoundtripSelectedLine2()
         {
-            RoundtripSelectedLines("selectionmgr\\speciallegs.coursescribe");
+            RoundtripSelectedLines("selectionmgr\\speciallegs.coursescribe", true);
         }
 
         [TestMethod]
         public void RoundtripSelectedLine3()
         {
-            RoundtripSelectedLines("selectionmgr\\sampleevent5.ppen");
+            RoundtripSelectedLines("selectionmgr\\sampleevent5.ppen", true);
         }
 
         [TestMethod]
         public void RoundtripSelectedLine4()
         {
-            RoundtripSelectedLines("selectionmgr\\desctext.ppen");
+            RoundtripSelectedLines("selectionmgr\\desctext.ppen", true);
+        }
+
+        [TestMethod]
+        public void RoundtripSelectedLine5()
+        {
+            RoundtripSelectedLines("selectionmgr\\sampleevent6.coursescribe", false);
+        }
+
+        void CheckSelectedLines(int expectedFirstLine, int expectedLastLine)
+        {
+            int firstLine, lastLine;
+            selectionMgr.GetSelectedLines(out firstLine, out lastLine);
+            Assert.AreEqual(expectedFirstLine, firstLine);
+            Assert.AreEqual(expectedLastLine, lastLine);
         }
 
         [TestMethod]
@@ -271,16 +295,18 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.ActiveTab = 0;
-            selectionMgr.SelectedDescriptionLine = 4;
+            selectionMgr.SelectDescriptionLine(4);
+            CheckSelectedLines(4, 4);
 
             selectionMgr.ClearSelection();
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
 
             selectionMgr.ActiveTab = 3;
-            selectionMgr.SelectedDescriptionLine = 5;
+            selectionMgr.SelectDescriptionLine(5);
+            CheckSelectedLines(5, 5);
 
             selectionMgr.ClearSelection();
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
         }
 
         [TestMethod]
@@ -304,33 +330,59 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(CourseId(4));
 
             selectionMgr.SelectHeader();
-            Assert.AreEqual(1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(1,1);
 
             selectionMgr.SelectTitle();
-            Assert.AreEqual(0, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(0, 0);
 
             selectionMgr.SelectCourseControl(CourseControlId(11));
-            Assert.AreEqual(2, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(2, 2);
 
             selectionMgr.SelectCourseControl(CourseControlId(12));
-            Assert.AreEqual(3, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(3, 3);
 
             selectionMgr.SelectCourseControl(CourseControlId(13));
-            Assert.AreEqual(4, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(4, 4);
 
             selectionMgr.SelectCourseControl(CourseControlId(16));
-            Assert.AreEqual(6, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(6, 6);
 
             selectionMgr.SelectControl(ControlId(6));
-            Assert.AreEqual(9, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(9, 9);
 
             selectionMgr.SelectCourseView(CourseId(0));
             selectionMgr.SelectControl(ControlId(8));
-            Assert.AreEqual(10, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(10, 10);
 
             selectionMgr.SelectCourseView(CourseId(5));
             selectionMgr.SelectSecondaryTitle();
-            Assert.AreEqual(1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(1, 1);
+        }
+
+        [TestMethod]
+        public void SelectMultilineTitle()
+        {
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent6.coursescribe"));
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectDescriptionLine(1);
+            CheckSelectedLines(0, 1);
+            selectionMgr.SelectDescriptionLine(3);
+            CheckSelectedLines(2, 4);
+            selectionMgr.SelectDescriptionLine(0);
+            CheckSelectedLines(0, 1);
+            selectionMgr.SelectDescriptionLine(4);
+            CheckSelectedLines(2, 4);
+            selectionMgr.SelectDescriptionLine(1);
+            CheckSelectedLines(0, 1);
+            selectionMgr.SelectDescriptionLine(2);
+            CheckSelectedLines(2, 4);
+
+            selectionMgr.SelectTitle();
+            CheckSelectedLines(0, 1);
+            selectionMgr.SelectSecondaryTitle();
+            CheckSelectedLines(2, 4);
         }
 
         [TestMethod]
@@ -340,10 +392,10 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
-            selectionMgr.SelectedDescriptionLine = 5;
+            selectionMgr.SelectDescriptionLine(5);
             selectionMgr.SelectLeg(CourseControlId(13), CourseControlId(14));
 
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Leg, selectionInfo.SelectionKind);
             Assert.AreEqual(22, selectionInfo.SelectedControl.id);
@@ -365,7 +417,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(CourseId(1));
             selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3));
 
-            Assert.AreEqual(4, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(4, 4);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Leg, selectionInfo.SelectionKind);
             Assert.AreEqual(2, selectionInfo.SelectedControl.id);
@@ -374,7 +426,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0, selectionInfo.SelectedSpecial.id);
 
             selectionMgr.SelectLeg(CourseControlId(1), CourseControlId(2));
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
         }
 
         [TestMethod]
@@ -415,7 +467,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseControl(CourseControlId(11));
             selectionMgr.SelectSpecial(SpecialId(5));
 
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Special, selectionInfo.SelectionKind);
             Assert.AreEqual(0, selectionInfo.SelectedControl.id);
@@ -477,9 +529,9 @@ namespace PurplePen.Tests
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Key, selectionInfo.SelectionKind);
             Assert.AreEqual("5.6", selectionInfo.SelectedKeySymbol.Id);
-            Assert.AreEqual(16, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(16, 16);
 
-            selectionMgr.SelectedDescriptionLine = 17;
+            selectionMgr.SelectDescriptionLine(17);
             selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Key, selectionInfo.SelectionKind);
             Assert.AreEqual("12.1", selectionInfo.SelectedKeySymbol.Id);
@@ -499,7 +551,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(courseobject.specialId.id == 4);
             selectionMgr.SelectCourseObject(courseobject);
 
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Special, selectionInfo.SelectionKind);
             Assert.AreEqual(0, selectionInfo.SelectedControl.id);
@@ -517,7 +569,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(courseobject.specialId.id == 3);
             selectionMgr.SelectCourseObject(courseobject);
 
-            Assert.AreEqual(-1, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(-1, -1);
             selectionInfo = selectionMgr.Selection;
             Assert.AreEqual(SelectionMgr.SelectionKind.Special, selectionInfo.SelectionKind);
             Assert.AreEqual(0, selectionInfo.SelectedControl.id);
@@ -576,22 +628,22 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             CourseObj courseobject = course[4];
             Assert.IsTrue(courseobject.controlId.id == 38);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.IsTrue(selectionMgr.SelectedDescriptionLine == 6);
+            CheckSelectedLines(6, 6);
 
             courseobject = course[0];
             Assert.IsTrue(courseobject.controlId.id == 1);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.IsTrue(selectionMgr.SelectedDescriptionLine == 2);
+            CheckSelectedLines(2, 2);
 
             courseobject = course[37];
             Assert.IsTrue(courseobject.controlId.id == 2);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.IsTrue(selectionMgr.SelectedDescriptionLine == 39);
+            CheckSelectedLines(39, 39);
 
             courseobject = course[41];
             Assert.IsTrue(courseobject.controlId.id == 38);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.IsTrue(selectionMgr.SelectedDescriptionLine == 6);
+            CheckSelectedLines(6, 6);
         }
 
         [TestMethod]
@@ -607,17 +659,17 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             courseobject = course[0];
             Assert.IsTrue(courseobject.controlId.id == 1);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.AreEqual(2, selectionMgr.SelectedDescriptionLine );
+            CheckSelectedLines(2, 2);
 
             courseobject = course[6];
             Assert.IsTrue(courseobject.controlId.id == 41);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.AreEqual(5, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(5, 5);
 
             courseobject = course[30];
             Assert.IsTrue(courseobject.controlId.id == 53);
             selectionMgr.SelectCourseObject(courseobject);
-            Assert.AreEqual(4, selectionMgr.SelectedDescriptionLine);
+            CheckSelectedLines(4, 4);
         }
 
         [TestMethod]

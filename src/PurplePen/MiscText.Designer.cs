@@ -397,6 +397,7 @@ namespace PurplePen {
         
         /// <summary>
         ///   Looks up a localized string similar to Enter new event title
+        ///Use | to separate lines
         ///(affects all courses).
         /// </summary>
         internal static string EnterEventTitle {
@@ -416,7 +417,7 @@ namespace PurplePen {
         
         /// <summary>
         ///   Looks up a localized string similar to Enter new secondary title
-        ///(affects this course only).
+        ///Use | to separate lines.
         /// </summary>
         internal static string EnterSecondaryTitle {
             get {

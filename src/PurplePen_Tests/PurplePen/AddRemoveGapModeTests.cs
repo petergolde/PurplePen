@@ -73,7 +73,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on control to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(27F, 41F), 0.3F);
@@ -127,7 +127,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on control 1 to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(38.6F, -21F), 0.3F);
@@ -182,7 +182,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);
@@ -236,7 +236,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(20, -5), 0.3F);
@@ -291,7 +291,7 @@ namespace PurplePen.Tests
 
             // Select course 1.
             controller.SelectTab(1);       // Course 1.
-            Assert.AreEqual(-1, controller.GetHighlightedDescriptionLine());
+            CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);

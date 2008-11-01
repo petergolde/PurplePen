@@ -65,7 +65,8 @@ namespace PurplePen
         CourseView.CourseViewKind courseViewKind;
         SymbolPopup popup;
 
-        int selectedLine = -1;                  // selected line, or -1 for no selection.
+        int firstSelectedLine = -1;                  // first selected line, or -1 for no selection.
+        int lastSelectedLine = -1;                  // last selected line, or -1 for no selection.
         Brush selectionBrush = Brushes.Yellow;  // brush to draw the selection in.
 
         int scrollWidth;                 // width of a vertical scroll bar.
@@ -162,12 +163,13 @@ namespace PurplePen
         // Popup the control code popup on the selected line.
         public void PopupControlCode()
         {
-            if (selectedLine >= 0) {
+            if (firstSelectedLine >= 0) {
                 HitTestResult hittest = new HitTestResult();
                 hittest.kind = HitTestKind.NormalBox;
-                hittest.line = selectedLine;
+                hittest.firstLine = firstSelectedLine;
+                hittest.lastLine = lastSelectedLine;
                 hittest.box = 1;
-                hittest.rect = renderer.BoxBounds(selectedLine, 1, 1);
+                hittest.rect = renderer.BoxBounds(firstSelectedLine, lastSelectedLine, 1, 1);
                 PopupMenu(hittest);
             }
         }
@@ -175,7 +177,7 @@ namespace PurplePen
         // Make sure the given line is in view.
         public void ScrollLineIntoView(int line)
         {
-            Rectangle lineRect = Util.Round(renderer.LineBounds(line));
+            Rectangle lineRect = Util.Round(renderer.LineBounds(line, line));
             Point currentScrollPosition = AutoScrollPosition;
             lineRect.Offset(currentScrollPosition);
             Rectangle client = ClientRectangle;
@@ -194,27 +196,34 @@ namespace PurplePen
             }
         }
 
-        public int SelectedLine
+        public void GetSelection(out int firstLine, out int lastLine)
         {
-            get {
-                return selectedLine;
-            }
-            set
-            {
-                if (value < -1 || value >= ((Description == null) ? 0 : Description.Length))
-                    throw new ArgumentOutOfRangeException("value");
+            firstLine = firstSelectedLine;
+            lastLine = lastSelectedLine;
+        }
 
-                int old = selectedLine;
-                selectedLine = value;
+        public void SetSelection(int firstLine, int lastLine)
+        {
+            if (firstLine < -1 || firstLine >= ((Description == null) ? 0 : Description.Length))
+                throw new ArgumentOutOfRangeException("firstLine");
+            if (lastLine < -1 || lastLine >= ((Description == null) ? 0 : Description.Length))
+                throw new ArgumentOutOfRangeException("lastLine");
 
-                // Invalidate parts based on the line.
-                if (old != value) {
-                    if (selectedLine != -1)
-                        ScrollLineIntoView(selectedLine);
-                    if (old >= 0)
-                        InvalidateLine(old);
-                    if (value >= 0)
-                        InvalidateLine(value);
+            int oldFirstLine = firstSelectedLine, oldLastLine = lastSelectedLine;
+            firstSelectedLine = firstLine;
+            lastSelectedLine = lastLine;
+
+            // Invalidate parts based on the line.
+            if (oldFirstLine != firstSelectedLine || oldLastLine != lastSelectedLine) {
+                if (firstSelectedLine != -1)
+                    ScrollLineIntoView(firstSelectedLine);
+                if (oldFirstLine >= 0) {
+                    for (int l = oldFirstLine; l <= oldLastLine; ++l)
+                        InvalidateLine(l);
+                }
+                if (firstSelectedLine >= 0) {
+                    for (int l = firstSelectedLine; l <= lastSelectedLine; ++l)
+                        InvalidateLine(l);
                 }
             }
         }
@@ -245,8 +254,8 @@ namespace PurplePen
                     UpdatePanelSize();
 
                 // Is selection is out of range, remove it.
-                if (selectedLine >= value.Length)
-                    selectedLine = -1;
+                if (firstSelectedLine >= value.Length || lastSelectedLine >= value.Length)
+                    firstSelectedLine = lastSelectedLine = -1;
 
                 // Eventually, check if the description changed only a little and
                 // just invalidate the line(s) that changed.
@@ -272,7 +281,7 @@ namespace PurplePen
                     invalidate = true;
 
                 if (invalidate) {
-                    RectangleF bounds = renderer.LineBounds(i);
+                    RectangleF bounds = renderer.LineBounds(i, i);
                     descriptionPanel.Invalidate(Util.Round(bounds));
                 }
             }
@@ -355,7 +364,7 @@ namespace PurplePen
         // Invalidate the given line of the description.
         void InvalidateLine(int line)
         {
-            RectangleF rect = renderer.LineBounds(line);
+            RectangleF rect = renderer.LineBounds(line, line);
             descriptionPanel.Invalidate(Util.Round(rect));
         }
 
@@ -367,32 +376,47 @@ namespace PurplePen
                              (int)Math.Round(hitTest.rect.Top + renderer.CellSize * 0.75F));
         }
 
+        // Combine text from several lines.
+        string CombineBoxTexts(int firstLine, int lastLine, int boxNumber, string combineWith)
+        {
+            string result = "";
+            for (int l = firstLine; l <= lastLine; ++l) {
+                if (result != "")
+                    result += combineWith;
+                result += (string) renderer.Description[l].boxes[boxNumber];
+            }
+
+            return result;
+        }
+
         // Show the correct popup menu, give the box the user clicked.
         void PopupMenu(HitTestResult hitTest)
         {
+            string text;
+
             // Get location for menu to appear.
             Point location = GetPopupMenuLocation(hitTest);
 
             // Save the line/box we are possibly changing
             popupKind = ChangeKind.None;     // will change this below if we actual pop something up!
-            popupLine = hitTest.line;
+            popupLine = hitTest.firstLine;
             popupBox = hitTest.box;
 
             switch (hitTest.kind) {
                 case HitTestKind.NormalBox:
                     if (hitTest.box == 0) {
                         // Column A:
-                        if (courseViewKind == CourseView.CourseViewKind.Score && !(renderer.Description[hitTest.line].boxes[0] is Symbol)) {
+                        if (courseViewKind == CourseView.CourseViewKind.Score && !(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
                             // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
                             popupKind = ChangeKind.Score;
-                            popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterScore, (string)renderer.Description[hitTest.line].boxes[0], 2, descriptionPanel, location);
+                            popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterScore, (string) renderer.Description[hitTest.firstLine].boxes[0], 2, descriptionPanel, location);
                         }
                     }
                     else if (hitTest.box == 1) {
                         // Column B
-                        if (! (renderer.Description[hitTest.line].boxes[0] is Symbol)) {
+                        if (!(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
                             popupKind = ChangeKind.Code;
-                            popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterCode, (string)renderer.Description[hitTest.line].boxes[1], 2, descriptionPanel, location);
+                            popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCode, (string) renderer.Description[hitTest.firstLine].boxes[1], 2, descriptionPanel, location);
                         }
                     }
                     else if (hitTest.box == 4) {
@@ -403,8 +427,8 @@ namespace PurplePen
                     else if (hitTest.box == 5) {
                         // Column F
                         string initialText = "";
-                        if (renderer.Description[hitTest.line].boxes[5] is string && renderer.Description[hitTest.line].boxes[5] != null)
-                            initialText = (string)renderer.Description[hitTest.line].boxes[5];
+                        if (renderer.Description[hitTest.firstLine].boxes[5] is string && renderer.Description[hitTest.firstLine].boxes[5] != null)
+                            initialText = (string) renderer.Description[hitTest.firstLine].boxes[5];
                         popupKind = ChangeKind.DescriptionBox;
                         popup.ShowPopup(8, 'F', (char) 0, true, MiscText.EnterDimensions, initialText, 4, descriptionPanel, location);
                     }
@@ -416,7 +440,7 @@ namespace PurplePen
                     break;
 
                 case HitTestKind.Directive:
-                    Symbol current = renderer.Description[hitTest.line].boxes[0] as Symbol;
+                    Symbol current = renderer.Description[hitTest.firstLine].boxes[0] as Symbol;
                     if (current != null) {
                         char kind = current.Kind;       // Allow changing in the existing kind only.
 
@@ -429,40 +453,40 @@ namespace PurplePen
                     break;
 
                 case HitTestKind.Title:
-                    string text;
-                    if (hitTest.line == 0) {
-                        text = MiscText.EnterEventTitle;
-                        popupKind = ChangeKind.Title;
-                    }
-                    else {
-                        text = MiscText.EnterSecondaryTitle;
-                        popupKind = ChangeKind.SecondaryTitle;
-                    }
+                    text = MiscText.EnterEventTitle;
+                    popupKind = ChangeKind.Title;
 
-                    popup.ShowPopup(8, (char)0, (char)0, false, text, (string) renderer.Description[hitTest.line].boxes[0], 8, descriptionPanel, location);
+                    popup.ShowPopup(8, (char)0, (char)0, false, text, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
+                    break;
+
+                case HitTestKind.SecondaryTitle:
+                    text = MiscText.EnterSecondaryTitle;
+                    popupKind = ChangeKind.SecondaryTitle;
+
+                    popup.ShowPopup(8, (char) 0, (char) 0, false, text, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
                     break;
 
                 case HitTestKind.Header:
                     if (hitTest.box == 0 && courseViewKind != CourseView.CourseViewKind.AllControls) {
                         // the course name. Can't change the "All Controls" name.
                         popupKind = ChangeKind.CourseName;
-                        popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, (string) renderer.Description[hitTest.line].boxes[0], 6, descriptionPanel, location);
+                        popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, (string) renderer.Description[hitTest.firstLine].boxes[0], 6, descriptionPanel, location);
                     }
                     else if (hitTest.box == 2) {
                         // the climb
                         popupKind = ChangeKind.Climb;
-                        popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterClimb, Util.RemoveMeterSuffix((string)renderer.Description[hitTest.line].boxes[2]), 4, descriptionPanel, location);
+                        popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterClimb, Util.RemoveMeterSuffix((string) renderer.Description[hitTest.firstLine].boxes[2]), 4, descriptionPanel, location);
                     }
                     break;
 
                 case HitTestKind.Key:
                     popupKind = ChangeKind.Key;
-                    popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterSymbolText, (string) renderer.Description[hitTest.line].boxes[1], 8, descriptionPanel, location);
+                    popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterSymbolText, (string) renderer.Description[hitTest.firstLine].boxes[1], 8, descriptionPanel, location);
                     break;
 
                 case HitTestKind.OtherTextLine:
                     popupKind = ChangeKind.TextLine;
-                    popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterTextLine, (string) renderer.Description[hitTest.line].boxes[0], 8, descriptionPanel, location);
+                    popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterTextLine, (string) renderer.Description[hitTest.firstLine].boxes[0], 8, descriptionPanel, location);
                     break;
 
                 default: Debug.Fail("bad hit test kind"); break;
@@ -470,10 +494,10 @@ namespace PurplePen
         }
 
         // Draw the highlight rectangle to show selection for a given line.
-        private void DrawSelection(Graphics g, int line, Rectangle clip)
+        private void DrawSelection(Graphics g, int firstLine, int lastLine, Rectangle clip)
         {
-            if (line >= 0) {
-                Rectangle selectedRect = Util.Round(renderer.LineBounds(line));
+            if (firstLine >= 0 && lastLine >= 0) {
+                Rectangle selectedRect = Util.Round(renderer.LineBounds(firstLine, lastLine));
                 if (selectedRect.IntersectsWith(clip))
                     g.FillRectangle(selectionBrush, selectedRect);
             }
@@ -486,7 +510,7 @@ namespace PurplePen
                 Graphics g = e.Graphics;
 
                 // Draw the selected line.
-                DrawSelection(g, selectedLine, e.ClipRectangle);
+                DrawSelection(g, firstSelectedLine, lastSelectedLine, e.ClipRectangle);
 
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
@@ -506,15 +530,14 @@ namespace PurplePen
         private void descriptionPanel_MouseDown(object sender, MouseEventArgs e)
         {
             HitTestResult hitTest = renderer.HitTest(e.Location);
-            int line = hitTest.line;
-            if (line < 0)
+            if (hitTest.firstLine < 0)
                 return;             // clicked outside the description.
 
-            bool alreadySelected = (line == selectedLine);
+            bool alreadySelected = (hitTest.firstLine == firstSelectedLine);
 
             if (!alreadySelected) {
                 // Move the selected line.
-                SelectedLine = line;
+                SetSelection(hitTest.firstLine, hitTest.lastLine);
                 if (SelectedIndexChange != null)
                     SelectedIndexChange(this, EventArgs.Empty);
             }

@@ -296,7 +296,6 @@ namespace PurplePen
             this.descriptionControl.CustomSymbolText = null;
             this.descriptionControl.Description = null;
             this.descriptionControl.Name = "descriptionControl";
-            this.descriptionControl.SelectedLine = -1;
             this.descriptionControl.SymbolDB = null;
             this.descriptionControl.Change += new PurplePen.DescriptionControl.DescriptionChangedHandler(this.descriptionControl_Change);
             this.descriptionControl.SelectedIndexChange += new System.EventHandler(this.descriptionControl_SelectedIndexChange);

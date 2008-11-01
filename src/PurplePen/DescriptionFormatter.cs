@@ -44,6 +44,7 @@ namespace PurplePen
     public enum DescriptionLineKind
     {
         Title,                                      // A title line. Uses 1 box for the title text.
+        SecondaryTitle,                     // A secondary title line. Uses 1 box for the title text.
         Header3Box,                                 // A normal 3-box header line (name, length, climb)
         Header2Box,                                 // A 2-box header line (name, total point or total # controls)
         Normal,                                     // A normal 8-box line
@@ -130,17 +131,25 @@ namespace PurplePen
                 return null;  // Probably all controls. No second line is correct for that.
         }
 
-        // Given the text, create a description line for a title line with that text.
-        private static DescriptionLine GetTitleLineFromText(string text)
+        // Given the text, create descriptions line for a title line with that text. Lines are split by vertical bars.
+        private static DescriptionLine[] GetTitleLineFromText(DescriptionLineKind kind, string text)
         {
-            DescriptionLine line = new DescriptionLine();
+            string[] texts = text.Split(new char[] { '|' });
+            int lineCount = texts.Length;
 
-            line.kind = DescriptionLineKind.Title;
-            line.boxes = new object[1];
-            line.boxes[0] = text;
-            line.textual = text;
+            DescriptionLine[] lines = new DescriptionLine[lineCount];
+            for (int index = 0; index < lineCount; ++index) {
+                DescriptionLine line = new DescriptionLine();
 
-            return line;
+                line.kind = kind;
+                line.boxes = new object[1];
+                line.boxes[0] = texts[index];
+                line.textual = texts[index];
+
+                lines[index] = line;
+            }
+
+            return lines;
         }
 
         // Create a description line for a normal header line: name, length, climb
@@ -426,19 +435,20 @@ namespace PurplePen
             List<DescriptionLine> list = new List<DescriptionLine>(courseView.ControlViews.Count + 4);
             string text;
             DescriptionLine line;
+            DescriptionLine[] lines;
             Dictionary<string, string> descriptionKey = new Dictionary<string, string>(); // dictionary for any symbols encountered with custom text.
 
             // Get the first title line.
             text = GetTitleLine1(eventDB, courseView);
             Debug.Assert(text != null);
-            line = GetTitleLineFromText(text);
-            list.Add(line);
+            lines = GetTitleLineFromText(DescriptionLineKind.Title, text);
+            list.AddRange(lines);
 
             // Get the second title line.
             text = GetTitleLine2(eventDB, courseView);
             if (text != null) {
-                line = GetTitleLineFromText(text);
-                list.Add(line);
+                lines = GetTitleLineFromText(DescriptionLineKind.SecondaryTitle, text);
+                list.AddRange(lines);
             }
 
             // Get the header line, depending on the kind of course.
@@ -453,7 +463,7 @@ namespace PurplePen
                     line = GetScoreHeaderLine(courseView, symbolDB); break;
 
                 default:
-                    Debug.Fail("unknown CourseViewKind"); break;
+                    Debug.Fail("unknown CourseViewKind"); line = null;  break;
             }
 
             if (line != null)
@@ -534,6 +544,7 @@ namespace PurplePen
 
             switch (line.kind) {
                 case DescriptionLineKind.Title:
+                case DescriptionLineKind.SecondaryTitle:
                 case DescriptionLineKind.Text:
                     writer.Write(" {0,-46}|", line.boxes[0]);
                     break;

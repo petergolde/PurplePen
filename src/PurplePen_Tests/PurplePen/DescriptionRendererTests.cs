@@ -214,6 +214,14 @@ namespace PurplePen.Tests
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.SymbolsAndText);
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.Text);
         }
+
+        [TestMethod] 
+        public void MultiLineTitle()
+        {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Symbols);
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.SymbolsAndText);
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Text);
+        }
 	
 
         // Render a description to a map, then to a bitmap for testing purposes. Hardcoded 6 mm box size.
@@ -364,6 +372,14 @@ namespace PurplePen.Tests
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.SymbolsAndText);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.Text);
         }
+
+        [TestMethod]
+        public void MultiLineTitleToMap()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Symbols);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.SymbolsAndText);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Text);
+        }
 	
 
 #if false  // These tests are too slow to run normally.
@@ -436,13 +452,14 @@ namespace PurplePen.Tests
 
 #endif 
 
-        void CheckHitTest(DescriptionRenderer renderer, Point pt, HitTestKind expectedKind, int expectedLine, int expectedBox, RectangleF expectedRect)
+        void CheckHitTest(DescriptionRenderer renderer, Point pt, HitTestKind expectedKind, int expectedFirstLine, int expectedLastLine, int expectedBox, RectangleF expectedRect)
         {
             HitTestResult result;
             result = renderer.HitTest(pt);
 
             Assert.AreEqual(expectedKind, result.kind);
-            Assert.AreEqual(expectedLine, result.line);
+            Assert.AreEqual(expectedFirstLine, result.firstLine);
+            Assert.AreEqual(expectedLastLine, result.lastLine);
             Assert.AreEqual(expectedBox, result.box);
             Assert.AreEqual(expectedRect, result.rect);
         }
@@ -464,40 +481,40 @@ namespace PurplePen.Tests
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Symbols;
 
-            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(116, 53), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(259,78), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38,97), HitTestKind.NormalBox, 2, 0, new RectangleF(5,85, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(226,260), HitTestKind.NormalBox, 6, 5, new RectangleF(205,245, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(68,999), HitTestKind.Directive, 24, 0, new RectangleF(5, 965, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18,0, new RectangleF(5, 725, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(116, 53), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(259,78), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38,97), HitTestKind.NormalBox, 2, 2, 0, new RectangleF(5,85, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(226,260), HitTestKind.NormalBox, 6, 6, 5, new RectangleF(205,245, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(68,999), HitTestKind.Directive, 24, 24, 0, new RectangleF(5, 965, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18, 18,0, new RectangleF(5, 725, 320, 40));
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Text;
 
-            CheckHitTest(descriptionRenderer, new Point(311,12), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(16,82), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(178,76), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38, 97), HitTestKind.NormalBox, 2, 0, new RectangleF(5, 85, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(182,234), HitTestKind.NormalText, 5, -1, new RectangleF(85,205, 240, 40));
-            CheckHitTest(descriptionRenderer, new Point(60,942), HitTestKind.DirectiveText, 23,-1, new RectangleF(5,925, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18,0, new RectangleF(5, 725, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(311,12), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(16,82), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(178,76), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38, 97), HitTestKind.NormalBox, 2, 2, 0, new RectangleF(5, 85, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(182,234), HitTestKind.NormalText, 5, 5, -1, new RectangleF(85,205, 240, 40));
+            CheckHitTest(descriptionRenderer, new Point(60,942), HitTestKind.DirectiveText, 23, 23,-1, new RectangleF(5,925, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18, 18,0, new RectangleF(5, 725, 320, 40));
 
             descriptionRenderer.DescriptionKind = DescriptionKind.SymbolsAndText;
 
-            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(434, 25), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(116, 53), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(259, 78), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(380, 76), HitTestKind.None, 1, -1, new RectangleF(325,45, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38, 97), HitTestKind.NormalBox, 2, 0, new RectangleF(5, 85, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 5, new RectangleF(205, 245, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(68, 999), HitTestKind.Directive, 24, 0, new RectangleF(5, 965, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(398,554), HitTestKind.NormalText, 13, -1, new RectangleF(325,525, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(401, 934), HitTestKind.DirectiveText, 23, -1, new RectangleF(325, 925, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18,0, new RectangleF(5, 725, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(434, 25), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(116, 53), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(259, 78), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(380, 76), HitTestKind.None, 1, 1, -1, new RectangleF(325,45, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38, 97), HitTestKind.NormalBox, 2, 2, 0, new RectangleF(5, 85, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 6, 5, new RectangleF(205, 245, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(68, 999), HitTestKind.Directive, 24, 24, 0, new RectangleF(5, 965, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(398,554), HitTestKind.NormalText, 13, 13, -1, new RectangleF(325,525, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(401, 934), HitTestKind.DirectiveText, 23, 23, -1, new RectangleF(325, 925, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(262,745), HitTestKind.OtherTextLine, 18, 18,0, new RectangleF(5, 725, 520, 40));
         }
 
         [TestMethod]
@@ -517,42 +534,42 @@ namespace PurplePen.Tests
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Symbols;
 
-            CheckHitTest(descriptionRenderer, new Point(201,36), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(79,50), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(145,80), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 2, new RectangleF(245, 45, 80, 40));
-            CheckHitTest(descriptionRenderer, new Point(175,216), HitTestKind.NormalBox, 5,4, new RectangleF(165,205, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(285,365), HitTestKind.NormalBox, 9,7, new RectangleF(285, 365, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(81,193), HitTestKind.Directive, 4,0, new RectangleF(5,165, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(328,147), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 0, new RectangleF(5, 405, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(201,36), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(79,50), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(145,80), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 1, 2, new RectangleF(245, 45, 80, 40));
+            CheckHitTest(descriptionRenderer, new Point(175,216), HitTestKind.NormalBox, 5, 5,4, new RectangleF(165,205, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(285,365), HitTestKind.NormalBox, 9, 9,7, new RectangleF(285, 365, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(81,193), HitTestKind.Directive, 4, 4,0, new RectangleF(5,165, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(328,147), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 10, 0, new RectangleF(5, 405, 320, 40));
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Text;
-            CheckHitTest(descriptionRenderer, new Point(201, 36), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(79, 50), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(145, 80), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 2, new RectangleF(245, 45, 80, 40));
-            CheckHitTest(descriptionRenderer, new Point(175, 216), HitTestKind.NormalText, 5, -1, new RectangleF(85, 205, 240, 40));
-            CheckHitTest(descriptionRenderer, new Point(285, 365), HitTestKind.NormalText, 9, -1, new RectangleF(85, 365, 240, 40));
-            CheckHitTest(descriptionRenderer, new Point(59, 302), HitTestKind.NormalBox, 7, 1, new RectangleF(45,285, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(81, 193), HitTestKind.DirectiveText, 4, -1, new RectangleF(5, 165, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(328, 147), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 0, new RectangleF(5, 405, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(201, 36), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(79, 50), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(145, 80), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 1, 2, new RectangleF(245, 45, 80, 40));
+            CheckHitTest(descriptionRenderer, new Point(175, 216), HitTestKind.NormalText, 5, 5, -1, new RectangleF(85, 205, 240, 40));
+            CheckHitTest(descriptionRenderer, new Point(285, 365), HitTestKind.NormalText, 9, 9, -1, new RectangleF(85, 365, 240, 40));
+            CheckHitTest(descriptionRenderer, new Point(59, 302), HitTestKind.NormalBox, 7, 7, 1, new RectangleF(45,285, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(81, 193), HitTestKind.DirectiveText, 4, 4, -1, new RectangleF(5, 165, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(328, 147), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 10, 0, new RectangleF(5, 405, 320, 40));
 
 
             descriptionRenderer.DescriptionKind = DescriptionKind.SymbolsAndText;
-            CheckHitTest(descriptionRenderer, new Point(201, 36), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(79, 50), HitTestKind.Header, 1, 0, new RectangleF(5, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(145, 80), HitTestKind.Header, 1, 1, new RectangleF(125, 45, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 2, new RectangleF(245, 45, 80, 40));
-            CheckHitTest(descriptionRenderer, new Point(175, 216), HitTestKind.NormalBox, 5, 4, new RectangleF(165, 205, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(285, 365), HitTestKind.NormalBox, 9, 7, new RectangleF(285, 365, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(81, 193), HitTestKind.Directive, 4, 0, new RectangleF(5, 165, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(431, 56), HitTestKind.None, 1, -1, new RectangleF(325, 45, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(333, 131), HitTestKind.NormalText, 3, -1, new RectangleF(325, 125, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(491,252), HitTestKind.DirectiveText, 6, -1, new RectangleF(325, 245, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(527,433), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 0, new RectangleF(5, 405, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(201, 36), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(79, 50), HitTestKind.Header, 1, 1, 0, new RectangleF(5, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(145, 80), HitTestKind.Header, 1, 1, 1, new RectangleF(125, 45, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(289, 60), HitTestKind.Header, 1, 1, 2, new RectangleF(245, 45, 80, 40));
+            CheckHitTest(descriptionRenderer, new Point(175, 216), HitTestKind.NormalBox, 5, 5, 4, new RectangleF(165, 205, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(285, 365), HitTestKind.NormalBox, 9, 9, 7, new RectangleF(285, 365, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(81, 193), HitTestKind.Directive, 4, 4, 0, new RectangleF(5, 165, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(431, 56), HitTestKind.None, 1, 1, -1, new RectangleF(325, 45, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(333, 131), HitTestKind.NormalText, 3, 3, -1, new RectangleF(325, 125, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(491,252), HitTestKind.DirectiveText, 6, 6, -1, new RectangleF(325, 245, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(527,433), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(255, 427), HitTestKind.OtherTextLine, 10, 10, 0, new RectangleF(5, 405, 520, 40));
 
 
         }
@@ -574,39 +591,83 @@ namespace PurplePen.Tests
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Symbols;
 
-            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(178,51), HitTestKind.Title, 1, 0, new RectangleF(5, 45, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(116, 93), HitTestKind.Header, 2, 0, new RectangleF(5, 85, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(259, 118), HitTestKind.Header, 2, 1, new RectangleF(125, 85, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 0, new RectangleF(5, 125, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 5, new RectangleF(205, 245, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(228,534), HitTestKind.OtherTextLine, 13,0, new RectangleF(5, 525, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(178,51), HitTestKind.SecondaryTitle, 1, 1, 0, new RectangleF(5, 45, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(116, 93), HitTestKind.Header, 2, 2, 0, new RectangleF(5, 85, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(259, 118), HitTestKind.Header, 2, 2, 1, new RectangleF(125, 85, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 3, 0, new RectangleF(5, 125, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 6, 5, new RectangleF(205, 245, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(228,534), HitTestKind.OtherTextLine, 13, 13,0, new RectangleF(5, 525, 320, 40));
 
             descriptionRenderer.DescriptionKind = DescriptionKind.Text;
 
-            CheckHitTest(descriptionRenderer, new Point(311, 12), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(178, 51), HitTestKind.Title, 1, 0, new RectangleF(5, 45, 320, 40));
-            CheckHitTest(descriptionRenderer, new Point(16, 112), HitTestKind.Header, 2, 0, new RectangleF(5, 85, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(178, 116), HitTestKind.Header, 2, 1, new RectangleF(125, 85, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 0, new RectangleF(5, 125, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(182, 234), HitTestKind.NormalText, 5, -1, new RectangleF(85, 205, 240, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(228, 534), HitTestKind.OtherTextLine, 13, 0, new RectangleF(5, 525, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(311, 12), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(178, 51), HitTestKind.SecondaryTitle, 1, 1, 0, new RectangleF(5, 45, 320, 40));
+            CheckHitTest(descriptionRenderer, new Point(16, 112), HitTestKind.Header, 2, 2, 0, new RectangleF(5, 85, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(178, 116), HitTestKind.Header, 2, 2, 1, new RectangleF(125, 85, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 3, 0, new RectangleF(5, 125, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(182, 234), HitTestKind.NormalText, 5, 5, -1, new RectangleF(85, 205, 240, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(228, 534), HitTestKind.OtherTextLine, 13, 13, 0, new RectangleF(5, 525, 320, 40));
 
             descriptionRenderer.DescriptionKind = DescriptionKind.SymbolsAndText;
 
-            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(178, 51), HitTestKind.Title, 1, 0, new RectangleF(5, 45, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(434, 25), HitTestKind.Title, 0, 0, new RectangleF(5, 5, 520, 40));
-            CheckHitTest(descriptionRenderer, new Point(116, 93), HitTestKind.Header, 2, 0, new RectangleF(5, 85, 120, 40));
-            CheckHitTest(descriptionRenderer, new Point(259, 118), HitTestKind.Header, 2, 1, new RectangleF(125, 85, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(380, 116), HitTestKind.None, 2, -1, new RectangleF(325, 85, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 0, new RectangleF(5, 125, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 5, new RectangleF(205, 245, 40, 40));
-            CheckHitTest(descriptionRenderer, new Point(398, 594), HitTestKind.NormalText, 14, -1, new RectangleF(325, 565, 200, 40));
-            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, new RectangleF(0, 0, 0, 0));
-            CheckHitTest(descriptionRenderer, new Point(451, 534), HitTestKind.OtherTextLine, 13, 0, new RectangleF(5, 525, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(178, 51), HitTestKind.SecondaryTitle, 1, 1, 0, new RectangleF(5, 45, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(434, 25), HitTestKind.Title, 0, 0, 0, new RectangleF(5, 5, 520, 40));
+            CheckHitTest(descriptionRenderer, new Point(116, 93), HitTestKind.Header, 2, 2, 0, new RectangleF(5, 85, 120, 40));
+            CheckHitTest(descriptionRenderer, new Point(259, 118), HitTestKind.Header, 2, 2, 1, new RectangleF(125, 85, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(380, 116), HitTestKind.None, 2, 2, -1, new RectangleF(325, 85, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(38, 137), HitTestKind.NormalBox, 3, 3, 0, new RectangleF(5, 125, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(226, 260), HitTestKind.NormalBox, 6, 6, 5, new RectangleF(205, 245, 40, 40));
+            CheckHitTest(descriptionRenderer, new Point(398, 594), HitTestKind.NormalText, 14, 14, -1, new RectangleF(325, 565, 200, 40));
+            CheckHitTest(descriptionRenderer, new Point(3, 184), HitTestKind.None, -1, -1, -1, new RectangleF(0, 0, 0, 0));
+            CheckHitTest(descriptionRenderer, new Point(451, 534), HitTestKind.OtherTextLine, 13, 13, 0, new RectangleF(5, 525, 520, 40));
+        }
+
+
+        [TestMethod]
+        public void HitTestMultiLine()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            eventDB.Load(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"));
+            eventDB.Validate();
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1));
+            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            DescriptionRenderer descriptionRenderer = new DescriptionRenderer(symbolDB);
+            descriptionRenderer.Description = description;
+            descriptionRenderer.CellSize = 40;
+            descriptionRenderer.Margin = 5;
+
+            descriptionRenderer.DescriptionKind = DescriptionKind.Symbols;
+
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 320, 80));
+            CheckHitTest(descriptionRenderer, new Point(13, 51), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 320, 80));
+            CheckHitTest(descriptionRenderer, new Point(178, 101), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 141), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 181), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(116, 213), HitTestKind.Header, 5, 5, 0, new RectangleF(5, 205, 120, 40));
+
+            descriptionRenderer.DescriptionKind = DescriptionKind.Text;
+            
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 320, 80));
+            CheckHitTest(descriptionRenderer, new Point(13, 51), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 320, 80));
+            CheckHitTest(descriptionRenderer, new Point(178, 101), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 141), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 181), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 320, 120));
+            CheckHitTest(descriptionRenderer, new Point(116, 213), HitTestKind.Header, 5, 5, 0, new RectangleF(5, 205, 120, 40));
+
+            descriptionRenderer.DescriptionKind = DescriptionKind.SymbolsAndText;
+
+            CheckHitTest(descriptionRenderer, new Point(143, 22), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 520, 80));
+            CheckHitTest(descriptionRenderer, new Point(13, 51), HitTestKind.Title, 0, 1, 0, new RectangleF(5, 5, 520, 80));
+            CheckHitTest(descriptionRenderer, new Point(178, 101), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 520, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 141), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 520, 120));
+            CheckHitTest(descriptionRenderer, new Point(178, 181), HitTestKind.SecondaryTitle, 2, 4, 0, new RectangleF(5, 85, 520, 120));
+            CheckHitTest(descriptionRenderer, new Point(116, 213), HitTestKind.Header, 5, 5, 0, new RectangleF(5, 205, 120, 40));
         }
 
     }

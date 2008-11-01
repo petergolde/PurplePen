@@ -472,9 +472,9 @@ namespace PurplePen
         }
 
         // Get the current description line to highlight, or -1 for none.
-        public int GetHighlightedDescriptionLine()
+        public void GetHighlightedDescriptionLines(out int firstLine, out int lastLine)
         {
-            return selectionMgr.SelectedDescriptionLine;
+            selectionMgr.GetSelectedLines(out firstLine, out lastLine);
         }
 
         // Get the current course to show in the course pane. This might include additional
@@ -538,7 +538,7 @@ namespace PurplePen
         public void SelectDescriptionLine(int line)
         {
             CancelMode();
-            selectionMgr.SelectedDescriptionLine = line;
+            selectionMgr.SelectDescriptionLine(line);
         }
 
         // Set the AllControlsDisplay of the selection manager correction.
@@ -1671,8 +1671,10 @@ namespace PurplePen
                 defaultText = eventDB.GetControl(selection.SelectedControl).descTextAfter;
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.TextLine) {
+                int line, dummy;
                 textLineKind = selection.SelectedTextLineKind;
-                defaultText = (string) selectionMgr.ActiveDescription[selectionMgr.SelectedDescriptionLine].boxes[0];
+                selectionMgr.GetSelectedLines(out line, out dummy);
+                defaultText = (string) selectionMgr.ActiveDescription[line].boxes[0];
             }
             else {
                 textLineKind = DescriptionLine.TextLineKind.None;

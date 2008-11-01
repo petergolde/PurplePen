@@ -94,20 +94,21 @@ namespace PurplePen
             }
         }
 
+        // Secondary title uses vertical bar for new line.
         public string SecondaryTitle
         {
             get {
                 if (secondaryTitleTextBox.Text == "")
                     return null;
                 else
-                    return secondaryTitleTextBox.Text; 
+                    return secondaryTitleTextBox.Text.Replace("\r\n", "|"); 
             }
             set
             {
                 if (value == null)
                     secondaryTitleTextBox.Text = "";
                 else
-                    secondaryTitleTextBox.Text = value;
+                    secondaryTitleTextBox.Text = value.Replace("|", "\r\n");
             }
         }
 

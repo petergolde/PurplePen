@@ -244,7 +244,7 @@ namespace PurplePen.DebugUI
             labelPoint.Text = string.Format("Location: ({0},{1})", e.X, e.Y);
             labelHitTestKind.Text = string.Format("Hit: {0}", hitTest.kind);
             labelHitTestCol.Text = string.Format("Box: {0}", hitTest.box);
-            labelHitTestLine.Text = string.Format("Line: {0}", hitTest.line);
+            labelHitTestLine.Text = string.Format("Line: {0}-{1}", hitTest.firstLine, hitTest.lastLine);
             labelHitTestRect.Text = string.Format("Rect: ({0},{1}) wid={2} hgt={3}", hitTest.rect.Left, hitTest.rect.Top, hitTest.rect.Width, hitTest.rect.Height);
             this.Invalidate(true);
 

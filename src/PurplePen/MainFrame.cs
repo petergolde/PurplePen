@@ -316,7 +316,9 @@ namespace PurplePen
         // Update the selected line.
         void UpdateSelection()
         {
-            descriptionControl.SelectedLine = controller.GetHighlightedDescriptionLine();
+            int firstLine, lastLine;
+            controller.GetHighlightedDescriptionLines(out firstLine, out lastLine);
+            descriptionControl.SetSelection(firstLine, lastLine);
         }
 
         // Update the highlights.
@@ -860,7 +862,9 @@ namespace PurplePen
         private void descriptionControl_SelectedIndexChange(object sender, EventArgs e)
         {
             // User changed the selected line. Update the selection manager.
-            controller.SelectDescriptionLine(descriptionControl.SelectedLine);
+            int firstLine, lastLine;
+            descriptionControl.GetSelection(out firstLine, out lastLine);
+            controller.SelectDescriptionLine(firstLine);
         }
 
         private void mapViewer_OnPointerMove(object sender, bool inViewport, PointF location)
