@@ -801,5 +801,12 @@ namespace PurplePen
 
             return ev.descriptionLangId;
         }
+
+        // Get the event title, with particular string for newlines.
+        public static string GetEventTitle(EventDB eventDB, string lineSep)
+        {
+            Event ev = eventDB.GetEvent();
+            return ev.title.Replace("|", lineSep);            // In internal storage, | is used as line seperator.
+        }
     }
 }

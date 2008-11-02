@@ -270,7 +270,7 @@ namespace PurplePen
             InitReport();
 
             // Header.
-            WriteH1(string.Format(ReportText.CourseSummary_Title, eventDB.GetEvent().title));
+            WriteH1(string.Format(ReportText.CourseSummary_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             // Table of all courses.
             BeginTable("", 4, "leftalign", "rightalign", "rightalign", "rightalign");
@@ -315,7 +315,7 @@ namespace PurplePen
             InitReport();
 
             // Header.
-            WriteH1(string.Format(ReportText.Load_Title, eventDB.GetEvent().title));
+            WriteH1(string.Format(ReportText.Load_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             if (! QueryEvent.AllCoursesHaveLoads(eventDB)) {
                 // Some or all courses don't have loads set. Warn.
@@ -459,7 +459,7 @@ namespace PurplePen
             InitReport();
 
             // Header.
-            WriteH1(string.Format(ReportText.CrossRef_Title, eventDB.GetEvent().title));
+            WriteH1(string.Format(ReportText.CrossRef_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             Id<ControlPoint>[] controlsToXref = GetControlIdsToXref(eventDB);
             Id<Course>[] coursesToXref = QueryEvent.SortedCourseIds(eventDB);
@@ -602,7 +602,7 @@ namespace PurplePen
             InitReport();
 
             // Header.
-            WriteH1(string.Format(ReportText.LegLength_Title, eventDB.GetEvent().title));
+            WriteH1(string.Format(ReportText.LegLength_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             // Enumerate all courses.
             Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB);
@@ -890,7 +890,7 @@ namespace PurplePen
             InitReport();
 
             // Header.
-            WriteH1(string.Format(ReportText.EventAudit_Title, eventDB.GetEvent().title));
+            WriteH1(string.Format(ReportText.EventAudit_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             // Courses missing things. Climb (not score course), start, finish (not score course), competitor load.
             List<MissingThing> missingCourseThings = MissingCourseThings(eventDB);

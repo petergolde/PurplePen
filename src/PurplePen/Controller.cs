@@ -646,7 +646,7 @@ namespace PurplePen
                             descriptionPrinter.Print();
                     }
                 },
-                MiscText.CannotPrint, eventDB.GetEvent().title);
+                MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
             return success;
         }
@@ -663,7 +663,7 @@ namespace PurplePen
                             punchPrinter.Print();
                     }
                 },
-                MiscText.CannotPrint, eventDB.GetEvent().title);
+                MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
             return success;
         }
@@ -680,7 +680,7 @@ namespace PurplePen
                             coursePrinter.Print();
                     }
                 },
-                MiscText.CannotPrint, eventDB.GetEvent().title);
+                MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
             return success;
         }

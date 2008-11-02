@@ -114,8 +114,7 @@ namespace PurplePen
         // Get the text of the firse (main) title line.
         private static string GetTitleLine1(EventDB eventDB, CourseView courseView)
         {
-            Event e = eventDB.GetEvent();
-            return e.title;
+            return QueryEvent.GetEventTitle(eventDB, "|");
         }
 
         // Get the text of the second title line, or null if there is no such title line.

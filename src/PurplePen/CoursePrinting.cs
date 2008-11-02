@@ -86,7 +86,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings)
-            : base(eventDB.GetEvent().title, coursePrintSettings.PageSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;

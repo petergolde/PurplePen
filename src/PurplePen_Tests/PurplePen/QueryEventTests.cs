@@ -1089,6 +1089,29 @@ namespace PurplePen.Tests
             result = QueryEvent.GetDefaultDescKind(eventDB, CourseId(3));
             Assert.AreEqual(DescriptionKind.Text, result);
         }
+
+        [TestMethod]
+        public void GetEventTitle1()
+        {
+            Setup("queryevent\\sampleevent12.ppen");
+            string result = QueryEvent.GetEventTitle(eventDB, " ");
+            Assert.AreEqual("Sample Event 1", result);
+        }
+
+        [TestMethod]
+        public void GetEventTitle2()
+        {
+            Setup("queryevent\\sampleevent13.ppen");
+
+            string result = QueryEvent.GetEventTitle(eventDB, "+++");
+            Assert.AreEqual("Sample Event 1+++Second line+++Third line", result);
+
+            result = QueryEvent.GetEventTitle(eventDB, " ");
+            Assert.AreEqual("Sample Event 1 Second line Third line", result);
+
+            result = QueryEvent.GetEventTitle(eventDB, "\r\n");
+            Assert.AreEqual("Sample Event 1\r\nSecond line\r\nThird line", result);
+        }
     }
 }
 #endif

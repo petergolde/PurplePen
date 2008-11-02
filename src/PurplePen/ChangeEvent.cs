@@ -184,7 +184,7 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, controlPoint);
         }
 
-        // Change the event title.
+        // Change the event title. Seperate lines with "|".
         public static void ChangeEventTitle(EventDB eventDB, string newTitle)
         {
             Event e = eventDB.GetEvent();
