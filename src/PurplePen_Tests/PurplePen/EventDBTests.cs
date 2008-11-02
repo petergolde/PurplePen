@@ -473,10 +473,11 @@ namespace PurplePen.Tests
             sp5.allCourses = false;
             sp5.courses = new Id<Course>[1] { CourseId(2) };
             sp6 = new Special(SpecialKind.Descriptions, new PointF[2] { new PointF(5, 6), new PointF(11, 6) });
-            sp7 = new Special(SpecialKind.CourseName, new PointF[2] { new PointF(8, 7), new PointF(18, 5) });
+            sp7 = new Special(SpecialKind.Text, new PointF[2] { new PointF(8, 7), new PointF(18, 5) });
             sp7.fontName = "Courier New";
             sp7.fontBold = false;
             sp7.fontItalic = true;
+            sp7.text = "$(CourseName)";
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);

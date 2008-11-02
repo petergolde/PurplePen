@@ -973,8 +973,7 @@ namespace PurplePen
         Boundary,                        // a boundary   (line)
         OOB,                                // out of bounds   (area)
         Dangerous,                      // dangerous area    (area)
-        CourseName,                   // the course name  (rectangle)
-        Text,                                // arbitrary text   (rectangle)
+        Text,                                // arbitrary text, with replacements   (rectangle)
         Descriptions,                    // control description sheet (rectangle of first square)
     }
 
@@ -1029,7 +1028,6 @@ namespace PurplePen
                     throw new ApplicationException(string.Format("Special line object {0} should have 3 or more coordinates", id));
                 break;
 
-            case SpecialKind.CourseName:
             case SpecialKind.Text:
             case SpecialKind.Descriptions:
                 if (locations.Length != 2)
@@ -1043,7 +1041,7 @@ namespace PurplePen
             if (kind == SpecialKind.Text && text == null)
                 throw new ApplicationException(string.Format("Text object {0} should have non-null text", id));
 
-            if (kind == SpecialKind.Text || kind == SpecialKind.CourseName) {
+            if (kind == SpecialKind.Text) {
                 if (fontName == null || fontName == "")
                     throw new ApplicationException(string.Format("Text object {0} should have non-null font name", id));
             }
@@ -1141,7 +1139,6 @@ namespace PurplePen
             case "boundary": kind = SpecialKind.Boundary; break;
             case "out-of-bounds": kind = SpecialKind.OOB; break;
             case "dangerous-area": kind = SpecialKind.Dangerous; break;
-            case "course-name": kind = SpecialKind.CourseName; break;
             case "text": kind = SpecialKind.Text; break;
             case "descriptions": kind = SpecialKind.Descriptions; break;
             default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
@@ -1204,7 +1201,7 @@ namespace PurplePen
 
             if (locationList.Count == 0)
                 xmlinput.BadXml("missing 'location' element");
-            if ((kind == SpecialKind.Text || kind == SpecialKind.CourseName) && fontName == null)
+            if ((kind == SpecialKind.Text) && fontName == null)
                 xmlinput.BadXml("missing 'font' element");
             locations = locationList.ToArray();
         }
@@ -1223,7 +1220,6 @@ namespace PurplePen
             case SpecialKind.Boundary: kindText = "boundary"; break;
             case SpecialKind.OOB: kindText = "out-of-bounds"; break;
             case SpecialKind.Dangerous: kindText = "dangerous-area"; break;
-            case SpecialKind.CourseName: kindText = "course-name"; break;
             case SpecialKind.Text: kindText = "text"; break;
             case SpecialKind.Descriptions: kindText = "descriptions"; break;
             default:
@@ -1240,7 +1236,7 @@ namespace PurplePen
                 xmloutput.WriteElementString("text", text);
             }
 
-            if (kind == SpecialKind.Text || kind == SpecialKind.CourseName) {
+            if (kind == SpecialKind.Text) {
                 xmloutput.WriteStartElement("font");
                 xmloutput.WriteAttributeString("name", fontName);
                 xmloutput.WriteAttributeString("bold", XmlConvert.ToString(fontBold));

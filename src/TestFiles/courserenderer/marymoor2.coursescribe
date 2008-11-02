@@ -657,7 +657,8 @@
 			<course course="10" />
 		</courses>
 	</special-object>
-	<special-object id="7" kind="course-name">
+	<special-object id="7" kind="text">
+		<text>$(CourseName)</text>
 		<font name="Times New Roman" italic="true" bold="true"></font>
 		<location x="45" y="40" />
 		<location x="70" y="34" />

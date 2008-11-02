@@ -341,6 +341,13 @@ namespace PurplePen
             return new PointF(rectCenter.X + centerPt.X, rectCenter.Y + centerPt.Y);
         }
 
+        // Expand text
+        static string ExpandText(EventDB eventDB, CourseView courseView, string text)
+        {
+            text = text.Replace("$(CourseName)", courseView.CourseName);
+            return text;
+        }
+
         // Create the course objects associated with this special. Assign the given layer to it.
         static CourseObj CreateSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView courseView, float scaleRatio, Id<Special> specialId, CourseLayer normalLayer)
         {
@@ -365,8 +372,7 @@ namespace PurplePen
             case SpecialKind.Dangerous:
                 courseObj = new DangerousCourseObj(specialId, scaleRatio, special.locations); break;
             case SpecialKind.Text:
-            case SpecialKind.CourseName:
-                string text = (special.kind == SpecialKind.CourseName) ? courseView.CourseName : special.text;
+                string text = ExpandText(eventDB, courseView, special.text);
                 FontStyle fontStyle = special.fontBold ? FontStyle.Bold : FontStyle.Regular;
                 if (special.fontItalic)
                     fontStyle |= FontStyle.Italic;
