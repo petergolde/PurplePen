@@ -342,9 +342,40 @@ namespace PurplePen
         }
 
         // Expand text
+#if TEST
+        internal
+#endif
         static string ExpandText(EventDB eventDB, CourseView courseView, string text)
         {
-            text = text.Replace("$(CourseName)", courseView.CourseName);
+            if (text.Contains("$(EventTitle)"))
+                text = text.Replace("$(EventTitle)", QueryEvent.GetEventTitle(eventDB, " "));
+
+            if (text.Contains("$(CourseName)"))
+                text = text.Replace("$(CourseName)", courseView.CourseName);
+
+            if (text.Contains("$(CourseLength)"))
+                text = text.Replace("$(CourseLength)", string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
+
+            if (text.Contains("$(CourseClimb)")) {
+                if (courseView.TotalClimb < 0)
+                    text = text.Replace("$(CourseClimb)", "");
+                else
+                    text = text.Replace("$(CourseClimb)", Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));
+            }
+
+            if (text.Contains("$(ClassList)")) {
+                string classList = "";
+                if (courseView.BaseCourseId.IsNotNone) {
+                    classList = eventDB.GetCourse(courseView.BaseCourseId).secondaryTitle;
+                    if (classList == null)
+                        classList = "";
+                    else
+                        classList = classList.Replace("|", " ");
+                }
+
+                text = text.Replace("$(ClassList)", classList);
+            }
+            
             return text;
         }
 

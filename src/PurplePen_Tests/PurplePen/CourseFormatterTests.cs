@@ -633,6 +633,56 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             TestRectangleCenter(3.2, new PointF(-6F, 0.6784F));
             TestRectangleCenter(-2.95, new PointF(-6F, -0.0668F));
         }
+
+        [TestMethod]
+        public void ExpandText()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            CourseView courseView;
+
+            eventDB.Load(TestUtil.GetTestFile("courseformat\\marymoor3.coursescribe"));
+            eventDB.Validate();
+
+            // Use course 1
+            courseView = CourseView.CreateCourseView(eventDB, CourseId(1));
+
+            string result;
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Simple text");
+            Assert.AreEqual("Simple text", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$10 bill < $20 bill");
+            Assert.AreEqual("$10 bill < $20 bill", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "");
+            Assert.AreEqual("", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 1", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(EventTitle): $(CourseName)");
+            Assert.AreEqual("Marymoor WIOL 2 The remake: Course 1", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km");
+            Assert.AreEqual("Course: Course 1 Length: 1.5 km", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Climb: $(CourseClimb) m");
+            Assert.AreEqual("Course: Course 1 Climb: 20 m", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName) / $(ClassList)");
+            Assert.AreEqual("Course 1 / This is cool very cool", result);
+
+            // All Controls
+            courseView = CourseView.CreateAllControlsView(eventDB);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km");
+            Assert.AreEqual("Course: All controls Length: 0.0 km", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName) / $(ClassList)");
+            Assert.AreEqual("All controls / ", result);
+        }
 	
     }
 }
