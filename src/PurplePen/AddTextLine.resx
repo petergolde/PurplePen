@@ -157,7 +157,7 @@
     <value>0</value>
   </data>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Enter text to place on seperate line of control descriptions:</value>
+    <value>Enter text to place on separate line of control descriptions:</value>
   </data>
   <data name="&gt;&gt;textLineLabel.Name" xml:space="preserve">
     <value>textLineLabel</value>
