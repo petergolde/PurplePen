@@ -155,6 +155,7 @@ namespace PurplePen
             this.addForbiddenMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addBoundaryMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addRegMarkMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteItemMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -220,6 +221,7 @@ namespace PurplePen
             this.forbiddenRouteMarkingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boundaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrationMarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addBendToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addGapToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -874,7 +876,8 @@ namespace PurplePen
             this.addFirstAidMenu,
             this.addForbiddenMenu,
             this.addBoundaryMenu,
-            this.addRegMarkMenu});
+            this.addRegMarkMenu,
+            this.addTextMenu});
             this.addSpecialItemMenu.Name = "addSpecialItemMenu";
             resources.ApplyResources(this.addSpecialItemMenu, "addSpecialItemMenu");
             // 
@@ -931,6 +934,12 @@ namespace PurplePen
             this.addRegMarkMenu.Name = "addRegMarkMenu";
             resources.ApplyResources(this.addRegMarkMenu, "addRegMarkMenu");
             this.addRegMarkMenu.Click += new System.EventHandler(this.addRegMarkMenu_Click);
+            // 
+            // addTextMenu
+            // 
+            this.addTextMenu.Name = "addTextMenu";
+            resources.ApplyResources(this.addTextMenu, "addTextMenu");
+            this.addTextMenu.Click += new System.EventHandler(this.addTextMenu_Click);
             // 
             // addTextLineMenu
             // 
@@ -1320,7 +1329,8 @@ namespace PurplePen
             this.firstAidLocationToolStripMenuItem,
             this.forbiddenRouteMarkingToolStripMenuItem,
             this.boundaryToolStripMenuItem,
-            this.registrationMarkToolStripMenuItem});
+            this.registrationMarkToolStripMenuItem,
+            this.textToolStripMenuItem});
             resources.ApplyResources(this.ncross, "ncross");
             this.ncross.Name = "ncross";
             // 
@@ -1377,6 +1387,12 @@ namespace PurplePen
             resources.ApplyResources(this.registrationMarkToolStripMenuItem, "registrationMarkToolStripMenuItem");
             this.registrationMarkToolStripMenuItem.Name = "registrationMarkToolStripMenuItem";
             this.registrationMarkToolStripMenuItem.Click += new System.EventHandler(this.addRegMarkMenu_Click);
+            // 
+            // textToolStripMenuItem
+            // 
+            resources.ApplyResources(this.textToolStripMenuItem, "textToolStripMenuItem");
+            this.textToolStripMenuItem.Name = "textToolStripMenuItem";
+            this.textToolStripMenuItem.Click += new System.EventHandler(this.addTextMenu_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1658,6 +1674,8 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem translateMenu;
         private System.Windows.Forms.ToolStripMenuItem addDescriptionLanguageMenu;
         private System.Windows.Forms.ToolStripMenuItem addTranslatedTextsMenu;
+        private System.Windows.Forms.ToolStripMenuItem addTextMenu;
+        private System.Windows.Forms.ToolStripMenuItem textToolStripMenuItem;
 
     }
 }

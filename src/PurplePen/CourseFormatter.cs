@@ -43,6 +43,16 @@ using PurplePen.MapModel;
 
 namespace PurplePen
 {
+    // macros that are expanded inside text specials.
+    static class TextMacros
+    {
+        public const string EventTitle = "$(EventTitle)";
+        public const string CourseName = "$(CourseName)";
+        public const string CourseLength = "$(CourseLength)";
+        public const string CourseClimb = "$(CourseClimb)";
+        public const string ClassList = "$(ClassList)";
+    }
+
     // The course formatter transforms a CourseView into a abstract description of a course, which
     // is a CourseLayout. It does not include the description block itself.
     static class CourseFormatter
@@ -347,23 +357,23 @@ namespace PurplePen
 #endif
         static string ExpandText(EventDB eventDB, CourseView courseView, string text)
         {
-            if (text.Contains("$(EventTitle)"))
-                text = text.Replace("$(EventTitle)", QueryEvent.GetEventTitle(eventDB, " "));
+            if (text.Contains(TextMacros.EventTitle))
+                text = text.Replace(TextMacros.EventTitle, QueryEvent.GetEventTitle(eventDB, " "));
 
-            if (text.Contains("$(CourseName)"))
-                text = text.Replace("$(CourseName)", courseView.CourseName);
+            if (text.Contains(TextMacros.CourseName))
+                text = text.Replace(TextMacros.CourseName, courseView.CourseName);
 
-            if (text.Contains("$(CourseLength)"))
-                text = text.Replace("$(CourseLength)", string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
+            if (text.Contains(TextMacros.CourseLength))
+                text = text.Replace(TextMacros.CourseLength, string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
 
-            if (text.Contains("$(CourseClimb)")) {
+            if (text.Contains(TextMacros.CourseClimb)) {
                 if (courseView.TotalClimb < 0)
-                    text = text.Replace("$(CourseClimb)", "");
+                    text = text.Replace(TextMacros.CourseClimb, "");
                 else
-                    text = text.Replace("$(CourseClimb)", Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));
+                    text = text.Replace(TextMacros.CourseClimb, Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));
             }
 
-            if (text.Contains("$(ClassList)")) {
+            if (text.Contains(TextMacros.ClassList)) {
                 string classList = "";
                 if (courseView.BaseCourseId.IsNotNone) {
                     classList = eventDB.GetCourse(courseView.BaseCourseId).secondaryTitle;
@@ -373,7 +383,7 @@ namespace PurplePen
                         classList = classList.Replace("|", " ");
                 }
 
-                text = text.Replace("$(ClassList)", classList);
+                text = text.Replace(TextMacros.ClassList, classList);
             }
             
             return text;

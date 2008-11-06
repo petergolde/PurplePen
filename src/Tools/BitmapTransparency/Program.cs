@@ -30,8 +30,8 @@ namespace BitmapTransparency
 
         static void Main(string[] args)
         {
-            string inputFile = @"C:\Documents and Settings\Peter\My Documents\CourseScribe\CourseScribe\Images\BoundaryBW.png";
-            string outputFile = @"C:\Documents and Settings\Peter\My Documents\CourseScribe\CourseScribe\Images\BoundaryTransparent.png";
+            string inputFile = @"C:\Users\Peter\Documents\Purplepen\branches\textspecial\src\PurplePen\Images\TextBW.png";
+            string outputFile = @"C:\Users\Peter\Documents\Purplepen\branches\textspecial\src\PurplePen\Images\TextTransparent.png";
 
             TranslateBitmap(inputFile, outputFile);
         }

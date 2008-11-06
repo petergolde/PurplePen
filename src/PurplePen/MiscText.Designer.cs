@@ -61,6 +61,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the text you wish to place on the map. After pressing OK, drag the mouse to place the text in the desired location..
+        /// </summary>
+        internal static string AddTextSpecialExplanation {
+            get {
+                return ResourceManager.GetString("AddTextSpecialExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Text.
+        /// </summary>
+        internal static string AddTextSpecialTitle {
+            get {
+                return ResourceManager.GetString("AddTextSpecialTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All controls.
         /// </summary>
         internal static string AllControls {
