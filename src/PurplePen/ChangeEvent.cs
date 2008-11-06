@@ -746,6 +746,18 @@ namespace PurplePen
             return specialId;
         }
 
+        // Add a text special to the event
+        public static Id<Special> AddTextSpecial(EventDB eventDB, RectangleF boundingRectangle, string text, string fontName, bool bold, bool italic)
+        {
+            Special special = new Special(SpecialKind.Text, new PointF[2] { new PointF(boundingRectangle.Left, boundingRectangle.Bottom), new PointF(boundingRectangle.Right, boundingRectangle.Top) });
+            special.text = text;
+            special.fontName = fontName;
+            special.fontBold = bold;
+            special.fontItalic = italic;
+
+            return eventDB.AddSpecial(special);
+        }
+
         // Delete a course and all of its course controls.
         public static void DeleteCourse(EventDB eventDB, Id<Course> courseId)
         {

@@ -2015,6 +2015,12 @@ namespace PurplePen
             SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseId, description, descKind)); 
         }
 
+        // Start the mode to add text to a course
+        public void BeginAddTextSpecialMode(string text)
+        {
+            SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text));
+        }
+
         // Move a control.
         public void MoveControl(Id<ControlPoint> controlId, PointF newLocation)
         {

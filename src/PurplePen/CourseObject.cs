@@ -982,7 +982,7 @@ namespace PurplePen
         public PointF topLeft;                      // top-left of the text.
         public string fontName;                  // font name
         public FontStyle fontStyle;              // font style
-        public float emHeight;                     // em height of the font.
+        private float emHeight;                     // em height of the font.
 
         protected SizeF size;                       // size of the text.
 
@@ -999,11 +999,23 @@ namespace PurplePen
             this.size = MeasureText();
        }
 
+        public float EmHeight
+        {
+            get { return emHeight; }
+            set
+            {
+                emHeight = value;
+                this.size = MeasureText();
+            }
+        }
+
         // Get the name for the text symdef created.
         protected abstract string SymDefName {get;} 
 
         // Get the ID for the text symdef created.
         protected abstract int OcadIdIntegerPart { get;}
+
+        public 
 
         // A struct synthesizes Equals/GetHashCode automatically.
         // CONSIDER: use FontDesc instead!
@@ -1846,6 +1858,36 @@ namespace PurplePen
            get { return 730; }
        }
 
+       public override PointF[] GetHandles()
+       {
+           // Handles on sides and corners. Handle 0 is at bottom-left (which corresponds to rectBounding.Left,rectBounding.Top, since rectBounding is inverted). Goes counter-clockwise
+           // from there.
+           float middleWidth = (rectBounding.Left + rectBounding.Right) / 2;
+           float middleHeight = (rectBounding.Top + rectBounding.Bottom) / 2;
+           PointF[] handles = { new PointF(rectBounding.Left, rectBounding.Top), new PointF(middleWidth, rectBounding.Top), new PointF(rectBounding.Right, rectBounding.Top),
+                                             new PointF(rectBounding.Left, middleHeight), new PointF(rectBounding.Right, middleHeight),
+                                             new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(middleWidth, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Bottom)};
+           return handles;
+       }
+
+       public override Cursor GetHandleCursor(PointF handlePoint)
+       {
+           // Get the correct sizing cursors for each point given above. 
+           int index = Array.IndexOf(GetHandles(), handlePoint);
+
+           switch (index) {
+           case 0:
+           case 7: return Cursors.SizeNESW;
+           case 1:
+           case 6: return Cursors.SizeNS;
+           case 2:
+           case 5: return Cursors.SizeNWSE;
+           case 3:
+           case 4: return Cursors.SizeWE;
+           default: return Util.MoveHandleCursor;
+           }
+       }
+
        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
        {
            // Draw the text.
@@ -1860,10 +1902,54 @@ namespace PurplePen
            }
        }
 
+       // Get the bounds of the highlight
+       public override RectangleF GetHighlightBounds()
+       {
+           return rectBounding;
+       }
+
        public override void Offset(float dx, float dy)
        {
            base.Offset(dx, dy);
            rectBounding.Offset(dx, dy);
+       }
+
+       // Move a handle on the rectangle.
+       public override void MoveHandle(PointF oldHandle, PointF newHandle)
+       {
+           PointF[] handles = GetHandles();
+           int handleIndex = Array.IndexOf(handles, oldHandle);
+
+           // Existing coordinates of the rectangle.
+           float left = rectBounding.Left, top = rectBounding.Top, right = rectBounding.Right, bottom = rectBounding.Bottom;
+
+           // Figure out which coord(s) moving this handle changes.
+           bool changeLeft = false, changeTop = false, changeRight = false, changeBottom = false;
+           switch (handleIndex) {
+           case 0: changeLeft = true; changeTop = true; break;
+           case 1: changeTop = true; break;
+           case 2: changeRight = true; changeTop = true; break;
+           case 3: changeLeft = true; break;
+           case 4: changeRight = true; break;
+           case 5: changeLeft = true; changeBottom = true; break;
+           case 6: changeBottom = true; break;
+           case 7: changeRight = true; changeBottom = true; break;
+           default:
+               Debug.Fail("bad handle"); break;
+           }
+
+           // Update the coordinates based on movement.
+           if (changeLeft) left = newHandle.X;
+           if (changeTop) top = newHandle.Y;
+           if (changeRight) right = newHandle.X;
+           if (changeBottom) bottom = newHandle.Y;
+
+           RectangleF newRect = Util.RectFromPoints(left, top, right, bottom);
+
+           // Update the rectangle.
+           base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, newRect.Size);
+           base.topLeft = new PointF(newRect.Left, newRect.Bottom);
+           rectBounding = newRect;
        }
 
        public override string ToString()

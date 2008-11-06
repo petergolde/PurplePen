@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTextMode.cs" />
     <Compile Include="ChangeText.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1603,6 +1603,35 @@ namespace PurplePen.Tests
 
             Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
         }
+
+        [TestMethod]
+        public void AddTextSpecial()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(13, "add text special");
+            Id<Special> newSpecialId = ChangeEvent.AddTextSpecial(eventDB, new RectangleF(10, 20, 30, 40), "hello $(CourseName)", "Arial", true, true);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            Assert.AreEqual(2, special.locations.Length);
+            Assert.AreEqual(new PointF(10, 60), special.locations[0]);
+            Assert.AreEqual(new PointF(40, 20), special.locations[1]);
+            Assert.AreEqual(SpecialKind.Text, special.kind);
+            Assert.AreEqual(0, special.orientation);
+            Assert.AreEqual("Arial", special.fontName);
+            Assert.AreEqual("hello $(CourseName)", special.text);
+            Assert.IsTrue(special.fontBold);
+            Assert.IsTrue(special.fontItalic);
+            Assert.IsTrue(special.allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
 	
 
         [TestMethod]

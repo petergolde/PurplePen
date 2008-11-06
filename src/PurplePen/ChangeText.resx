@@ -150,6 +150,9 @@
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="okButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>156, 129</value>
   </data>
@@ -228,6 +231,15 @@
   <metadata name="specialTextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="specialTextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 114</value>
+  </data>
+  <data name="&gt;&gt;specialTextMenu.Name" xml:space="preserve">
+    <value>specialTextMenu</value>
+  </data>
+  <data name="&gt;&gt;specialTextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="eventTitleMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -257,15 +269,6 @@
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Class List</value>
-  </data>
-  <data name="specialTextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 114</value>
-  </data>
-  <data name="&gt;&gt;specialTextMenu.Name" xml:space="preserve">
-    <value>specialTextMenu</value>
-  </data>
-  <data name="&gt;&gt;specialTextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="usageLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

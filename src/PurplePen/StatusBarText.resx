@@ -201,4 +201,7 @@
   <data name="AddingLineArea" xml:space="preserve">
     <value>Hold down left mouse button and drag to add a line segment; click the left mouse button to finish adding object</value>
   </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Hold down left mouse button and drag to create text</value>
+  </data>
 </root>
