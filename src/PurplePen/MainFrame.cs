@@ -1,4 +1,4 @@
-/* Copyright (c) 2006-2007, Peter Golde
+/* Copyright (c) 2006-2008, Peter Golde
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
@@ -122,7 +122,6 @@ namespace PurplePen
             addOutOfBoundsMenu.Image = outOfBoundsToolStripMenuItem.Image;
             addDangerousMenu.Image = dangerousToolStripMenuItem.Image;
             addBoundaryMenu.Image = boundaryToolStripMenuItem.Image;
-            addTextMenu.Image = textToolStripMenuItem.Image;
             addGapMenu.Image = addGapToolStripButton.Image;
             addBendMenu.Image = addBendToolStripButton.Image;
         }
@@ -1161,16 +1160,6 @@ namespace PurplePen
         private void addRegMarkMenu_Click(object sender, EventArgs e)
         {
             controller.BeginAddPointSpecialMode(SpecialKind.RegMark);
-        }
-
-        private void addTextMenu_Click(object sender, EventArgs e)
-        {
-            ChangeText dialog = new ChangeText(MiscText.AddTextSpecialTitle, MiscText.AddTextSpecialExplanation, true);
-            if (dialog.ShowDialog(this) == DialogResult.OK) {
-
-            }
-
-            dialog.Dispose();
         }
 
         private void addBendMenu_Click(object sender, EventArgs e)
