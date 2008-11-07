@@ -1146,6 +1146,71 @@ namespace PurplePen.Tests
             BoundaryCourseObj obj = (BoundaryCourseObj) highlights[0];
         }
 
+        // Add a text space to one course..
+        [TestMethod]
+        public void AddTextSpecial()
+        {
+            CourseObj[] highlights;
+
+            // Select All Controls.
+            controller.SelectTab(3);
+
+            // Begin adding a description.
+            controller.BeginAddTextSpecialMode("Course: $(CourseName)");
+
+            // Check the status text.
+            Assert.AreEqual(StatusBarText.AddingText, controller.StatusText);
+
+            // Click the mouse and drag.
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
+            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(23, 37), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
+
+            controller.LeftButtonDrag(new PointF(74, 12), 0.1F);
+
+            // Check the highlights.
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            BasicTextCourseObj obj = (BasicTextCourseObj) highlights[0];
+            Assert.AreEqual(23F, obj.GetHighlightBounds().Left, 0.01F);
+            Assert.AreEqual(37F, obj.GetHighlightBounds().Bottom, 0.01F);
+            Assert.AreEqual(74F, obj.GetHighlightBounds().Right, 0.01F);
+            Assert.AreEqual(12F, obj.GetHighlightBounds().Top, 0.01F);
+            Assert.AreEqual("Course: Course 3", obj.text);
+            Assert.AreEqual("Arial", obj.fontName);
+            Assert.AreEqual(FontStyle.Bold, obj.fontStyle);
+
+            // Finish the drag.
+            controller.LeftButtonEndDrag(new PointF(76, 11), 0.1F);
+
+            // There should be a text special, with the given location.
+            // Is should be selected.
+            int countTextSpecials = 0;
+            EventDB eventDB = controller.GetEventDB();
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Text) {
+                    ++countTextSpecials;
+                    Assert.AreEqual(23F, special.locations[0].X, 0.01F);
+                    Assert.AreEqual(37F, special.locations[0].Y, 0.01F);
+                    Assert.AreEqual(76F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(11F, special.locations[1].Y, 0.01F);
+                    Assert.IsTrue(special.allCourses);
+                    Assert.AreEqual("Course: $(CourseName)", special.text);
+                    Assert.AreEqual("Arial", special.fontName);
+                    Assert.IsTrue(special.fontBold);
+                    Assert.IsFalse(special.fontItalic);
+                }
+            }
+            Assert.AreEqual(1, countTextSpecials);
+
+            // The text special should be highlighted.
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.IsInstanceOfType(highlights[0], typeof(BasicTextCourseObj));
+        }
+
+
     }
 
 }

@@ -227,6 +227,10 @@ namespace PurplePen
 
         // Brush to use to highlight areas.
         public static readonly Brush areaHighlight = new HatchBrush(HatchStyle.Percent25, CourseAppearance.highlightColor, Color.Transparent);
+
+        // The font used for text specials.
+        public static string fontNameTextSpecial = "Arial";
+        public static FontStyle fontStyleTextSpecial = FontStyle.Bold;
     }
 
     // Class with constants that describe how a punch card should appear.

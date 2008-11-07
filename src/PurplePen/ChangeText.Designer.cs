@@ -61,6 +61,7 @@
             // 
             resources.ApplyResources(this.textBoxMain, "textBoxMain");
             this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
             // insertSpecialButton
             // 

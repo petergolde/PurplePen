@@ -715,6 +715,132 @@ namespace PurplePen.Tests
             Assert.AreEqual(7, leg.gaps[0].distanceFromStart, 0.01F);
             Assert.AreEqual(27F, leg.gaps[0].length, 0.01F);
         }
+
+        [TestMethod]
+        // Move a text special with the mouse.
+        public void MoveTextSpecial()
+        {
+            Setup("modes\\marymoor2.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on text special
+            controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+
+            // text special should be selected.
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)",
+                                        highlights[0].ToString());
+            
+            // Drag the special
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(58F, 35.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
+
+            controller.LeftButtonDrag(new PointF(99F, 48.5F), 0.1F);
+            ui.MouseMoved(99F, 48.5F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(86,53)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(86,53)-(111,47)",
+                                        highlights[0].ToString());
+
+            // Check the status text
+            Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
+
+            // Finish dragging the special
+            controller.LeftButtonEndDrag(new PointF(100F, 47.5F), 0.1F);
+            ui.MouseMoved(100F, 47.5F, 0.1F);
+            // Check the status text
+            Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
+
+            // Check the highlights
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(87,52)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(87,52)-(112,46)",
+                                        highlights[0].ToString());
+
+            // Make sure the special is now moved.
+            Special newSpecial = eventDB.GetSpecial(SpecialId(7));
+            Assert.AreEqual(newSpecial.kind, SpecialKind.Text);
+            Assert.AreEqual("$(CourseName)", newSpecial.text);
+            Assert.AreEqual("Times New Roman", newSpecial.fontName);
+            Assert.IsTrue(newSpecial.fontBold);
+            Assert.IsTrue(newSpecial.fontItalic);
+            Assert.AreEqual(new PointF(87, 52), newSpecial.locations[0]);
+            Assert.AreEqual(new PointF(112, 46), newSpecial.locations[1]);
+        }
+
+        [TestMethod]
+        // Size a text special with the mouse.
+        public void SizeTextSpecialHandle()
+        {
+            Setup("modes\\marymoor2.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on text special
+            controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+
+            // text special should be selected.
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)",
+                                        highlights[0].ToString());
+
+            // Drag the handle
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(57.5F, 34F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
+            Cursor cursor = controller.GetMouseCursor(new PointF(57.5F, 34F), 0.1F);
+            Assert.AreSame(Cursors.SizeNS, cursor);
+
+            controller.LeftButtonDrag(new PointF(60F, 29F), 0.1F);
+            ui.MouseMoved(60F, 29F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.765328  rect:(45,40)-(70,29)",
+                                        highlights[0].ToString());
+
+            // Check the status text
+            Assert.AreEqual(StatusBarText.DraggingCorner, controller.StatusText);
+
+            // Finish dragging the special
+            controller.LeftButtonEndDrag(new PointF(66F, 22F), 0.1F);
+            ui.MouseMoved(66F, 22F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[]) controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.765328  rect:(45,40)-(70,22)",
+                                        highlights[0].ToString());
+
+
+            // Make sure the special is now moved.
+            Special newSpecial = eventDB.GetSpecial(SpecialId(7));
+            Assert.AreEqual(newSpecial.kind, SpecialKind.Text);
+            Assert.AreEqual("$(CourseName)", newSpecial.text);
+            Assert.AreEqual("Times New Roman", newSpecial.fontName);
+            Assert.IsTrue(newSpecial.fontBold);
+            Assert.IsTrue(newSpecial.fontItalic);
+            Assert.AreEqual(new PointF(45,40), newSpecial.locations[0]);
+            Assert.AreEqual(new PointF(70,22), newSpecial.locations[1]);
+ 
+        }
+
+
     }
 }
 

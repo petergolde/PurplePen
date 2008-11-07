@@ -165,7 +165,7 @@ namespace PurplePen
                 CourseObj courseObj;
 
                 if (onMap && (courseObj = HitTestHandle(location, pixelSize, out dummy, out handleCursor)) != null) {
-                    if (courseObj is RectCourseObj)
+                    if (courseObj is RectCourseObj || courseObj is BasicTextCourseObj)
                         return StatusBarText.SizeRectangle;
                     else
                         return StatusBarText.DragCorner;
@@ -462,7 +462,7 @@ namespace PurplePen
         {
             get
             {
-                if (courseObjectDrag is RectCourseObj)
+                if (courseObjectDrag is RectCourseObj || courseObjectDrag is BasicTextCourseObj)
                     return StatusBarText.SizingRectangle;
                 else
                     return StatusBarText.DraggingCorner;
@@ -501,6 +501,13 @@ namespace PurplePen
                     DescriptionCourseObj descObj = (DescriptionCourseObj) courseObjectStart.Clone();
                     descObj.MoveHandle(handleLocation, location);
                     controller.MoveSpecial(specialId, new PointF[2] { new PointF(descObj.rect.Left, descObj.rect.Bottom), new PointF(descObj.rect.Left + descObj.CellSize, descObj.rect.Bottom) });
+                }
+                else if (courseObjectStart is BasicTextCourseObj) {
+                    // Moving text handles is sort of special too.
+                    BasicTextCourseObj textObj = (BasicTextCourseObj) courseObjectStart.Clone();
+                    textObj.MoveHandle(handleLocation, location);
+                    RectangleF rect = textObj.GetHighlightBounds();
+                    controller.MoveSpecial(specialId, new PointF[2] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) });
                 }
                 else {
                     controller.MoveSpecialPoint(specialId, handleLocation, newHandleLocation);

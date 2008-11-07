@@ -72,6 +72,11 @@ namespace PurplePen
             InsertSpecialText(TextMacros.ClassList);
         }
 
+        private void textBoxMain_TextChanged(object sender, EventArgs e)
+        {
+            okButton.Enabled = textBoxMain.Text != "";
+        }
+
 
     }
 }
