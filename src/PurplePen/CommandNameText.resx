@@ -264,4 +264,7 @@
   <data name="SetDescriptionLanguage" xml:space="preserve">
     <value>Change Description Language</value>
   </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Change Text</value>
+  </data>
 </root>

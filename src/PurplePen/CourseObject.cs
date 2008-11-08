@@ -1015,8 +1015,6 @@ namespace PurplePen
         // Get the ID for the text symdef created.
         protected abstract int OcadIdIntegerPart { get;}
 
-        public 
-
         // A struct synthesizes Equals/GetHashCode automatically.
         // CONSIDER: use FontDesc instead!
         struct MySymdefKey
@@ -1079,6 +1077,9 @@ namespace PurplePen
         // Measure the text.
         private SizeF MeasureText()
         {
+            if (emHeight == 0)
+                return new SizeF(0, 0);
+
             Graphics g = Util.GetHiresGraphics();
             using (Font f = new Font(fontName, emHeight, fontStyle, GraphicsUnit.World))
                 return g.MeasureString(text, f, topLeft, StringFormat.GenericTypographic);

@@ -367,4 +367,10 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Add Text</value>
   </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Enter the new text.</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Change Text</value>
+  </data>
 </root>

@@ -286,6 +286,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Text.
+        /// </summary>
+        internal static string ChangeText {
+            get {
+                return ResourceManager.GetString("ChangeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Text Line.
         /// </summary>
         internal static string ChangeTextLine {

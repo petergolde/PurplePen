@@ -1460,6 +1460,26 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeSpecialText()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            Assert.AreEqual("$(CourseName)", eventDB.GetSpecial(SpecialId(7)).text);
+
+            undomgr.BeginCommand(11, "change text");
+            ChangeEvent.ChangeSpecialText(eventDB, SpecialId(7), "Mr. Mr.");
+            undomgr.EndCommand(11);
+            eventDB.Validate();
+
+            Assert.AreEqual("Mr. Mr.", eventDB.GetSpecial(SpecialId(7)).text);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual("$(CourseName)", eventDB.GetSpecial(SpecialId(7)).text);
+        }
+
+        [TestMethod]
         public void DeleteSpecial()
         {
             Setup("changeevent\\sampleevent1.coursescribe");

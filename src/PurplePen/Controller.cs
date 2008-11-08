@@ -1528,6 +1528,37 @@ namespace PurplePen
             }
         }
 
+        // Command status for changing the text of a given item.
+        public CommandStatus CanChangeText()
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            // Only text special can have their text changed.
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.Text)
+                return CommandStatus.Enabled;
+            else
+                return CommandStatus.Disabled;
+        }
+
+        // Get the text of a object if can change the text.
+        public string GetChangableText()
+        {
+            if (CanChangeText() == CommandStatus.Enabled) 
+                return eventDB.GetSpecial(selectionMgr.Selection.SelectedSpecial).text;
+            else
+                return null;
+        }
+
+        // Change the text.
+        public void ChangeText(string newText)
+        {
+            if (CanChangeText() == CommandStatus.Enabled) {
+                undoMgr.BeginCommand(7114, CommandNameText.ChangeText);
+                ChangeEvent.ChangeSpecialText(eventDB, selectionMgr.Selection.SelectedSpecial, newText);
+                undoMgr.EndCommand(7114);
+            }
+        }
+
         // Get all the controls codes, sorted in display order and keyed by an object used
         // for SetAllControlCodes.
         public KeyValuePair<object, string>[] GetAllControlCodes()

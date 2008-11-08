@@ -515,6 +515,19 @@ namespace PurplePen
             eventDB.ReplaceSpecial(specialId, special);
         }
 
+        // Change the text associated with a special. Must be an text special
+        public static void ChangeSpecialText(EventDB eventDB, Id<Special> specialId, string newText)
+        {
+            Special special = eventDB.GetSpecial(specialId);
+
+            Debug.Assert(special.kind == SpecialKind.Text);
+
+            special = (Special) special.Clone();
+            special.text = newText;
+
+            eventDB.ReplaceSpecial(specialId, special);
+        }
+
 
 
         // Remove a control from a course. Caller must ensure the current is actually in this course.

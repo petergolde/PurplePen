@@ -49,7 +49,6 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
-        Id<Course> courseId;                         // course we are adding to.
         BasicTextCourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
         BasicTextCourseObj currentObj;           // current object being dragged out.
         PointF startLocation;                               // location where dragging started.
@@ -108,7 +107,7 @@ namespace PurplePen
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
-            return MapViewer.DragAction.ImmediateDrag;
+            return MapViewer.DragAction.DelayedDrag;  // Also allow a click.
         }
 
         public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
@@ -117,18 +116,42 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // User just clicked. Create text of a default size.
+            SizeF size;
+            Graphics g = Util.GetHiresGraphics();
+            using (Font f = new Font(CourseAppearance.fontNameTextSpecial, CourseAppearance.emHeightDefaultTextSpecial, CourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
+                size = g.MeasureString(displayText, f, new PointF(0,0), StringFormat.GenericTypographic);
+
+            CreateTextSpecial(new RectangleF(new PointF(location.X, location.Y - size.Height), size));
+            displayUpdateNeeded = true;
+        }
+
         public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             DragTo(location);
 
+            RectangleF rect = currentObj.GetHighlightBounds();
+            if (rect.Height < 1 || rect.Width < 1) {
+                // Too small. Use the click action.
+                LeftButtonClick(location, pixelSize, ref displayUpdateNeeded);
+            }
+            else {
+                CreateTextSpecial(rect);
+                displayUpdateNeeded = true;
+            }
+        }
+
+        void CreateTextSpecial(RectangleF boundingRect)
+        {
             undoMgr.BeginCommand(1551, CommandNameText.AddObject);
-            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, currentObj.GetHighlightBounds(), text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0);
+            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, boundingRect, text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0);
             undoMgr.EndCommand(1551);
 
             selectionMgr.SelectSpecial(specialId);
 
             controller.DefaultCommandMode();
-            displayUpdateNeeded = true;
         }
     }
 

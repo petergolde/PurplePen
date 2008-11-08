@@ -241,6 +241,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the new text..
+        /// </summary>
+        internal static string ChangeTextSpecialExplanation {
+            get {
+                return ResourceManager.GetString("ChangeTextSpecialExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Text.
+        /// </summary>
+        internal static string ChangeTextTitle {
+            get {
+                return ResourceManager.GetString("ChangeTextTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;Clear Selection.
         /// </summary>
         internal static string ClearSelectionWithShortcut {

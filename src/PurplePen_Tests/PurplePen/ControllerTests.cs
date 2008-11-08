@@ -1541,6 +1541,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             Assert.AreEqual(FlaggingKind.All, QueryEvent.GetLegFlagging(eventDB, ControlId(2), ControlId(3)));
         }
 
+
         [TestMethod]
         public void GetAllCodes()
         {

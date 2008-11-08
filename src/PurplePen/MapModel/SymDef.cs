@@ -1935,7 +1935,13 @@ namespace PurplePen.MapModel
             FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, brush);
             g.DrawingContext.DrawText(formattedText, new Point(pt.X, pt.Y));
 #else
-            g.Graphics.DrawString(text, font, brush, pt, stringFormat);
+            // Occasonal GDI+ throws an exception if the font size is super small.
+            try {
+                g.Graphics.DrawString(text, font, brush, pt, stringFormat);
+            }
+            catch (System.Runtime.InteropServices.ExternalException) {
+                // Do nothing
+            }
 #endif
         }
 
