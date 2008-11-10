@@ -314,6 +314,10 @@
 					<param name="Name" value="Registration Mark">
 					<param name="Local" value="EditAddRegistrationMark.htm">
 					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Text">
+					<param name="Local" value="EditAddText.htm">
+					</OBJECT>
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Add Text line...">
@@ -338,6 +342,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Remove Gap">
 				<param name="Local" value="EditRemoveGap.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change Text...">
+				<param name="Local" value="ItemChangeText.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Rotate">

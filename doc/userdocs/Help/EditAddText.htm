@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- #BeginTemplate "master.dwt" -->
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<link rel=stylesheet href="StyleSheet.css" type="text/css">
+<!-- #BeginEditable "doctitle" -->
+<title>Item/Add Special Item/Text</title>
+<style type="text/css">
+.style1 {
+border-collapse:collapse;
+margin-left:60px;
+}
+.style2 {
+	border: 1px solid black;
+	padding:5;
+}
+</style>
+<!-- #EndEditable -->
+</HEAD>
+<BODY>
+<!-- #BeginEditable "content" -->
+<h1>Item/Add Special Item/Text</h1>
+<p>Adds a special item that is text. The text can be any size, but is always 
+printed in purple. The font is not customizable.</p>
+<p>Part (or all) of the text can be &quot;special text&quot; pieces, which are replaced with 
+appropriate text differently for each course. This can be used, for example, to 
+place the name of each course on the map. The special texts are:</p>
+<table class="style1">
+	<tr>
+		<td class="style2">$(EventTitle)</td>
+		<td class="style2">The main title of the entire event.</td>
+	</tr>
+	<tr>
+		<td class="style2">$(CourseName)</td>
+		<td class="style2">The name of the course</td>
+	</tr>
+	<tr>
+		<td class="style2">$(CourseLength)</td>
+		<td class="style2">The length of the course, in km.</td>
+	</tr>
+	<tr>
+		<td class="style2">$(CourseClimb)</td>
+		<td class="style2">The climb of the course. Blank if not climb was specified.</td>
+	</tr>
+	<tr>
+		<td class="style2">$(ClassList)</td>
+		<td class="style2">The secondary title or class list for the course, if 
+		any.</td>
+	</tr>
+</table>
+<p>To add text, select the Add Special Item/Text command.</p>
+<p>First, you enter the text to display in a dialog:</p>
+<p><img alt="Add Text Dialog" src="AddTextDialog.png" width="340" height="200"></p>
+<p>Type the text you wish to display. The &quot;Insert Special Text&quot; button can be 
+used to easily insert one of the special texts from the table above.</p>
+<p>After clicking &quot;OK&quot;, then press and hold the left mouse button. Drag the 
+mouse to size the text as desired. When the text is the correct size, release 
+the left mouse button.</p>
+<p>&nbsp;</p>
+<p><strong>Note: </strong>once the text is placed, use the
+<a href="ItemChangeText.htm">Item/Change Text...</a> menu item to change it.</p>
+<!-- #EndEditable -->
+</BODY>
+<!-- #EndTemplate -->
+</HTML>
