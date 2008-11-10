@@ -183,6 +183,36 @@ namespace PurplePen.Tests
         {
             CheckCourse("courserenderer\\allcontrolscodepos.ppen", Id<Course>.None, false, "allcontrolscodepos", new RectangleF(-20, -50, 160, 160));
         }
+
+        [TestMethod]
+        public void OverlappedAllControls()
+        {
+            CheckCourse("courserenderer\\Overlapper.ppen", Id<Course>.None, false, "overlapped_all", new RectangleF(55, -25, 75, 75));
+        }
+
+        [TestMethod]
+        public void Overlapped1()
+        {
+            CheckCourse("courserenderer\\Overlapper.ppen", CourseId(1), false, "overlapped_1", new RectangleF(55, -25, 75, 75));
+        }
+
+        [TestMethod]
+        public void Overlapped2()
+        {
+            CheckCourse("courserenderer\\Overlapper.ppen", CourseId(2), false, "overlapped_2", new RectangleF(55, -25, 75, 75));
+        }
+
+        [TestMethod]
+        public void Overlapped2WithAll()
+        {
+            CheckCourse("courserenderer\\Overlapper.ppen", CourseId(2), true, "overlapped_2_all", new RectangleF(55, -25, 75, 75));
+        }
+
+        [TestMethod]
+        public void OverlappedScore()
+        {
+            CheckCourse("courserenderer\\Overlapper.ppen", CourseId(3), false, "overlapped_score", new RectangleF(55, -25, 75, 75));
+        }
     }
 }
 

@@ -1164,7 +1164,7 @@ namespace PurplePen.Tests
             // Click the mouse and drag.
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(23, 37), 0.1F);
-            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
 
             controller.LeftButtonDrag(new PointF(74, 12), 0.1F);

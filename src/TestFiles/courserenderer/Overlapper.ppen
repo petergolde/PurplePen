@@ -1,0 +1,223 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Overlapper</title>
+    <map kind="none" scale="10000" ignore-missing-fonts="false"></map>
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <descriptions lang="en" />
+  </event>
+  <control id="1" kind="start">
+    <location x="64.75271" y="6.23824835" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="69.00885" y="7.817466" />
+    <gaps scale="7500">00011111111111111111111111111111</gaps>
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="85.59681" y="23.5896263" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="99.2812958" y="9.81735" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="100.272682" y="8.143535" />
+  </control>
+  <control id="6" kind="normal">
+    <code>35</code>
+    <location x="117.277771" y="0.407382" />
+    <gaps scale="10000">11111111111111100011111111111111</gaps>
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="105.880669" y="-10.5106" />
+    <gaps scale="7500">00011111111111111111111111111111</gaps>
+  </control>
+  <control id="8" kind="normal">
+    <code>37</code>
+    <location x="101.764519" y="-10.5106" />
+  </control>
+  <control id="9" kind="normal">
+    <code>38</code>
+    <location x="99.07095" y="5.00077152" />
+  </control>
+  <control id="10" kind="normal">
+    <code>39</code>
+    <location x="66.35242" y="-12.4068022" />
+  </control>
+  <control id="11" kind="finish">
+    <location x="64.60483" y="-11.7683134" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="12" kind="normal">
+    <code>40</code>
+    <location x="67.33308" y="5.1923" />
+  </control>
+  <control id="13" kind="normal">
+    <code>41</code>
+    <location x="121.194267" y="3.44296217" />
+  </control>
+  <control id="14" kind="normal">
+    <code>42</code>
+    <location x="89.1537" y="24.158802" />
+  </control>
+  <control id="15" kind="normal">
+    <code>43</code>
+    <location x="61.78393" y="-7.78912449" />
+  </control>
+  <control id="16" kind="normal">
+    <code>44</code>
+    <location x="65.0351944" y="24.13923" />
+  </control>
+  <control id="17" kind="crossing-point" orientation="83.84482">
+    <location x="67.2439" y="23.8911762" />
+    <description box="all" iof-2004-ref="13.3" />
+  </control>
+  <control id="18" kind="normal">
+    <code>45</code>
+    <location x="83.1541748" y="-0.1038244" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <first course-control="1" />
+    <options print-scale="7500" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course 2</name>
+    <first course-control="13" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="score" order="3">
+    <name>Score</name>
+    <first course-control="25" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="39" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="24" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="7" control="7">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="8">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="9">
+    <next course-control="10" />
+    <number-location x="4.2800827" y="-3.3762958" />
+  </course-control>
+  <course-control id="10" control="10">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="11" />
+  <course-control id="12" control="14">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="13" control="1">
+    <next course-control="41" />
+  </course-control>
+  <course-control id="14" control="11" />
+  <course-control id="15" control="3">
+    <next course-control="20" />
+  </course-control>
+  <course-control id="16" control="13">
+    <next course-control="17" />
+  </course-control>
+  <course-control id="17" control="6">
+    <next course-control="18" />
+  </course-control>
+  <course-control id="18" control="7">
+    <next course-control="19" />
+  </course-control>
+  <course-control id="19" control="8">
+    <next course-control="42" />
+  </course-control>
+  <course-control id="20" control="4">
+    <next course-control="22" />
+  </course-control>
+  <course-control id="23" control="10">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="22" control="5">
+    <next course-control="16" />
+  </course-control>
+  <course-control id="24" control="13">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="25" control="1">
+    <next course-control="27" />
+  </course-control>
+  <course-control id="26" control="11" />
+  <course-control id="27" control="3">
+    <next course-control="28" />
+  </course-control>
+  <course-control id="28" control="14">
+    <next course-control="29" />
+  </course-control>
+  <course-control id="29" control="4">
+    <next course-control="30" />
+  </course-control>
+  <course-control id="30" control="5">
+    <next course-control="32" />
+  </course-control>
+  <course-control id="38" control="15">
+    <next course-control="26" />
+  </course-control>
+  <course-control id="32" control="2">
+    <next course-control="33" />
+  </course-control>
+  <course-control id="33" control="8">
+    <next course-control="34" />
+  </course-control>
+  <course-control id="34" control="7">
+    <next course-control="35" />
+  </course-control>
+  <course-control id="35" control="6">
+    <next course-control="36" />
+  </course-control>
+  <course-control id="36" control="13">
+    <next course-control="38" />
+  </course-control>
+  <course-control id="39" control="16">
+    <next course-control="40" />
+  </course-control>
+  <course-control id="40" control="17">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="41" control="18">
+    <next course-control="15" />
+  </course-control>
+  <course-control id="42" control="18">
+    <next course-control="23" />
+  </course-control>
+  <special-object id="1" kind="water">
+    <location x="84.60853" y="26.1563435" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="5" kind="forbidden-route">
+    <location x="121.195374" y="5.65403461" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="6" kind="forbidden-route">
+    <location x="121.448669" y="7.764815" />
+    <courses all="true" />
+  </special-object>
+</course-scribe-event>

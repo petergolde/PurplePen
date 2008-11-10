@@ -136,6 +136,10 @@ namespace PurplePen
                     }
                 }
             }
+
+            // Automatically add cuts to close control circles in the layout.
+            if (courseView.Kind != CourseView.CourseViewKind.AllControls)
+                AutoCutCircles(courseLayout, layer);
         }
 
         // Does this control view have a custom number placement?
@@ -721,6 +725,51 @@ namespace PurplePen
             }
 
             return Math.Atan2(pt2.Y - pt1.Y, pt2.X - pt1.X);
+        }
+
+        // Cut any overlapping control circles in the given layer.
+        private static void AutoCutCircles(CourseLayout courseLayout, CourseLayer layer)
+        {
+            foreach (CourseObj courseObj in courseLayout) {
+                if (courseObj.layer == layer && (courseObj is ControlCourseObj || courseObj is FinishCourseObj))
+                    AutoCutControl((PointCourseObj) courseObj, courseLayout);
+            }
+        }
+
+        // Check this control and add cuts to it if needed.
+        private static void AutoCutControl(PointCourseObj controlObj, CourseLayout courseLayout)
+        {
+            foreach (CourseObj courseObj in courseLayout) {
+                if (courseObj != controlObj && courseObj.layer == controlObj.layer && courseObj is PointCourseObj)
+                    CutControlWithRespectTo(controlObj, (PointCourseObj)courseObj);
+            }
+        }
+
+        // Cut "controlObj" with respect to "courseObj", if courseObj is close enough to overlap.
+        private static void CutControlWithRespectTo(PointCourseObj controlObj, PointCourseObj courseObj)
+        {
+            float radiusControl = controlObj.TrueRadius;
+            float radiusOther = courseObj.TrueRadius;
+            double distance = Util.Distance(controlObj.location, courseObj.location);
+
+            if (distance < (radiusControl + radiusOther) * 0.9F && distance > (radiusControl + radiusOther) * 0.35F) {
+                // The other object is close enough to the control to merit cutting, but not too close. (0.9 and 0.35 were just arrived by what looks good.)
+                for (int gapNum = 0; gapNum < 32; ++gapNum) {
+                    PointF gapEnd1 = GapStartLocation(controlObj.location, radiusControl, gapNum);
+                    PointF gapEnd2 = GapStartLocation(controlObj.location, radiusControl, gapNum + 1);
+                    // If both ends of the gap are overlapped, cut it out.
+                    if (Util.Distance(gapEnd1, courseObj.location) < radiusOther &&
+                        Util.Distance(gapEnd2, courseObj.location) < radiusOther) {
+                        controlObj.gaps &= ~(1U << gapNum);   // add a gap.
+                    }
+                }
+            }
+        }
+
+        // Find location where the gap begins.
+        private static PointF GapStartLocation(PointF pointF, float radiusControl, int gapNum)
+        {
+            return MapModel.Util.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
         }
     }
 }

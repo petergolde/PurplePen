@@ -814,7 +814,7 @@ namespace PurplePen.Tests
                                         highlights[0].ToString());
 
             // Check the status text
-            Assert.AreEqual(StatusBarText.DraggingCorner, controller.StatusText);
+            Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
 
             // Finish dragging the special
             controller.LeftButtonEndDrag(new PointF(66F, 22F), 0.1F);

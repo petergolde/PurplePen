@@ -289,6 +289,12 @@ namespace PurplePen
             this.radius = radius;
        }
 
+        // Get the true radius of this point object. Used for current adjacent circles, for example.
+        public float TrueRadius
+        {
+            get { return radius * scaleRatio; }
+        }
+
         protected override void AddToMap(Map map, SymDef symdef)
         {
             float[] circleGaps = ComputeCircleGaps(gaps);
