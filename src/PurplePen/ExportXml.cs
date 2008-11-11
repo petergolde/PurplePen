@@ -60,9 +60,6 @@ namespace PurplePen
             settings.Indent = true;
             xmlWriter = XmlWriter.Create(filename, settings);
 
-            // Write the DOCTYPE
-            xmlWriter.WriteDocType("CourseData", null, @"IOFdata.dtd", null);
-
             // Write the root
             xmlWriter.WriteStartElement("CourseData");
 
