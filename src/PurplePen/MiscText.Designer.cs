@@ -571,6 +571,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Another program has changed the map file &quot;{0}&quot;. Purple Pen will now reload the map..
+        /// </summary>
+        internal static string MapFileChanged {
+            get {
+                return ResourceManager.GetString("MapFileChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All: {0}.
         /// </summary>
         internal static string Margins_All {

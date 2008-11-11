@@ -56,6 +56,7 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         string fileName;        // full file name of the event.
         MapDisplay mapDisplay = new MapDisplay();  // The map display being used.
+        DateTime mapFileLastWrite;        // last write time of the map file, if any.
 
         ICommandMode currentMode;     // current command mode.
         ICommandMode defaultMode;     // default command mode (we return to this after a command finishes).
@@ -226,6 +227,9 @@ namespace PurplePen
                 MiscText.CannotLoadMapFile, MapFileName);
 
             if (success) {
+                if (MapFileName != null)
+                    mapFileLastWrite = File.GetLastWriteTime(MapFileName);
+
                 // Update the map scale from the scale of the map.
                 this.MapScale = mapDisplay.MapScale;
 
@@ -262,6 +266,25 @@ namespace PurplePen
 
             // Ask the UI to set a new map file.
             return ui.FindMissingMapFile(missingMapFile);
+        }
+
+        private bool inChangeMapFileCheck = false;       // prevent recursive calls.
+
+        // Check if the map file has changed.
+        public void CheckForChangedMapFile()
+        {
+            if (!inChangeMapFileCheck && mapDisplay != null && MapFileName != null && mapFileLastWrite != File.GetLastWriteTime(MapFileName)) {
+                inChangeMapFileCheck = true;
+
+                try {
+                    ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
+                    mapDisplay.SetMapFile(MapType, MapFileName);
+                    NewMapFileLoaded(false);
+                }
+                finally {
+                    inChangeMapFileCheck = false;
+                }
+            }
         }
 
         // Once each time the map file is loaded, and if the event is not set to disallow it, return a list of missing fonts. Once this 

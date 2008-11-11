@@ -337,7 +337,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAADgtwCAbbsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAADgtwDAbbsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -362,7 +362,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAKPJzwoUgCsIh8vNC
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAKPJzwoYgCsIh8vNC
         zhyKQgs=
 </value>
   </data>
@@ -1044,6 +1044,12 @@
   <data name="toolStripSeparator20.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 6</value>
   </data>
+  <data name="changeTextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 22</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Change &amp;Text...</value>
+  </data>
   <data name="rotateMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
   </data>
@@ -1079,6 +1085,9 @@
   </data>
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>End of Leg Flagged</value>
+  </data>
+  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 6</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
@@ -1808,15 +1817,6 @@
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Create XML Interchange File</value>
   </data>
-  <data name="changeTextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="changeTextMenu.Text" xml:space="preserve">
-    <value>Change &amp;Text...</value>
-  </data>
-  <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2464,6 +2464,12 @@
   <data name="&gt;&gt;toolStripSeparator20.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;changeTextMenu.Name" xml:space="preserve">
+    <value>changeTextMenu</value>
+  </data>
+  <data name="&gt;&gt;changeTextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;rotateMenu.Name" xml:space="preserve">
     <value>rotateMenu</value>
   </data>
@@ -2499,6 +2505,12 @@
   </data>
   <data name="&gt;&gt;endFlaggingMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator19.Name" xml:space="preserve">
+    <value>toolStripSeparator19</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;changeDisplayedCoursesMenu.Name" xml:space="preserve">
     <value>changeDisplayedCoursesMenu</value>
@@ -2859,18 +2871,6 @@
   </data>
   <data name="&gt;&gt;saveXmlFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;changeTextMenu.Name" xml:space="preserve">
-    <value>changeTextMenu</value>
-  </data>
-  <data name="&gt;&gt;changeTextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator19.Name" xml:space="preserve">
-    <value>toolStripSeparator19</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>
