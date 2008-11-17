@@ -111,7 +111,7 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, int dpi)
+        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
         {
             positioner.DrawPage(g, pageNumber);
         }

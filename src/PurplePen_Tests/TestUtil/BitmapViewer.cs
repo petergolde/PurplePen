@@ -459,7 +459,7 @@ namespace TestingUtils
 
             g.MultiplyTransform(GetWorldToPixelXform());
             if (bitmap != null)
-                g.DrawImage(bitmap, new Point(0, 0));
+                g.DrawImage(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
         }
 
         private void canvas_Resize(object sender, EventArgs e)

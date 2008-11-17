@@ -144,12 +144,15 @@ namespace PurplePen
 
                 Size pageSize = pageSettings.Bounds.Size;        
 
-                Bitmap bm = new Bitmap(pageSize.Width, pageSize.Height, PixelFormat.Format24bppRgb);
+                Bitmap bm = new Bitmap(pageSize.Width * 2, pageSize.Height * 2, PixelFormat.Format24bppRgb);
+                bm.SetResolution(200, 200);           // using 200 dpi.
 
                 using (Graphics g = Graphics.FromImage(bm)) {
                     g.Clear(Color.White);
                     g.SmoothingMode = SmoothingMode.AntiAlias;
                     g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.ScaleTransform(2, 2);
                     Rectangle pageBounds = pageSettings.Bounds;
                     Rectangle marginBounds = Rectangle.FromLTRB(pageBounds.Left + pageSettings.Margins.Left, pageBounds.Top + pageSettings.Margins.Top, pageBounds.Right - pageSettings.Margins.Right, pageBounds.Bottom - pageSettings.Margins.Bottom);
                     printPageArgs = new PrintPageEventArgs(g, marginBounds, pageBounds, pageSettings);
@@ -175,7 +178,7 @@ namespace PurplePen
                 origin = new PointF();
 
             // Get the dpi of the printer.
-            int dpi = Math.Max((int) g.DpiX, (int) g.DpiY);
+            float dpi = Math.Max((int) g.DpiX, (int) g.DpiY);
 
             // Move the origin of the graphics to the margin boundaries.
             g.TranslateTransform(e.MarginBounds.Left - origin.X, e.MarginBounds.Top - origin.Y);
@@ -220,7 +223,7 @@ namespace PurplePen
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea is the size to draw into (in hundreths of an inch), within the margins.
         // dpi is the resolution of the printing in dots per inch.
-        protected abstract void DrawPage(Graphics g, int pageNumber, SizeF printArea, int dpi);
+        protected abstract void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi);
     }
 }
 

@@ -253,7 +253,7 @@ namespace PurplePen.Tests
 
             using (map.Read()) {
                 RenderOptions renderOpts = new RenderOptions();
-                renderOpts.forceBitmapGlyphs = false;
+                renderOpts.usePatternBitmaps = true;
                 renderOpts.minResolution = 0.1F;
                 map.Draw(g, new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height), renderOpts);
             }

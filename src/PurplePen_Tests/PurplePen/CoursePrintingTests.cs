@@ -175,6 +175,30 @@ Settings to access printer 'foobar' are not valid.'
             Assert.AreEqual(expected, ui.output.ToString());
         }
 
+        [TestMethod]
+        public void AdjustDpi()
+        {
+            float result;
+
+            result = CoursePrinting.AdjustDpi(300);
+            Assert.AreEqual(600, result);
+
+            result = CoursePrinting.AdjustDpi(600);
+            Assert.AreEqual(600, result);
+
+            result = CoursePrinting.AdjustDpi(720);
+            Assert.AreEqual(720, result);
+
+            result = CoursePrinting.AdjustDpi(1800);
+            Assert.AreEqual(900, result);
+
+            result = CoursePrinting.AdjustDpi(100);
+            Assert.AreEqual(400, result);
+
+            result = CoursePrinting.AdjustDpi(300);
+            Assert.AreEqual(600, result);
+        }
+
     }
 }
 

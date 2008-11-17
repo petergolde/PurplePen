@@ -228,6 +228,9 @@ namespace PurplePen
             }
         }
 
+        // Are we printing?
+        public bool Printing { get; set; }
+
         // Anti-alias the map display?
         public bool ShowSymbolBounds
         {
@@ -347,7 +350,6 @@ namespace PurplePen
             using (map.Write()) {
                 map.ColorMatrix = ComputeColorMatrix();
                 map.Draw(g, visRect, renderOptions);
-                map.ColorMatrix = null;
             }
         }
 
@@ -383,14 +385,23 @@ namespace PurplePen
         public void Draw(Graphics g, RectangleF visRect, float minResolution)
         {
             RenderOptions renderOptions = new RenderOptions();
-            renderOptions.minResolution = (antialiased) ? (minResolution / 2) : (minResolution);
-            renderOptions.forceBitmapGlyphs = false;
+            renderOptions.minResolution = minResolution;
+
+            if (Printing)
+                renderOptions.usePatternBitmaps = false;   // don't use pattern bitmaps when printing, they cause some problems in some printer drivers and we want best quality.
+            else if (antialiased && minResolution < 0.007F)  // use pattern bitmaps unless high quality and zoomed in very far
+                renderOptions.usePatternBitmaps = false;
+            else
+                renderOptions.usePatternBitmaps = true;
+
             renderOptions.showSymbolBounds = showBounds;
 
-            if (antialiased)
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            if (Printing)
+                g.SmoothingMode = SmoothingMode.Default;         // don't anti-alias on printer
+            else if (antialiased)
+                g.SmoothingMode = SmoothingMode.AntiAlias;
             else
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+                g.SmoothingMode = SmoothingMode.HighSpeed;
 
 
             // First draw the real map.
@@ -409,7 +420,11 @@ namespace PurplePen
             }
 
             // Now draw the courseMap on top.
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;   // always anti-alias the course.
+            if (Printing)
+                g.SmoothingMode = SmoothingMode.Default;
+            else
+                g.SmoothingMode = SmoothingMode.AntiAlias;   // always anti-alias the course unless printing
+
             if (courseMap != null) {
                 using (courseMap.Read())
                     courseMap.Draw(g, visRect, renderOptions);

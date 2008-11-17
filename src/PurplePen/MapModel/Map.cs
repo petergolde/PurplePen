@@ -337,6 +337,22 @@ namespace PurplePen.MapModel
         // CONSIDER: why doesn't AddColor just take a SymColor? This seems inconsistent with the way the
         // other methods work.
 
+        private bool EqualColorMatrix(ColorMatrix mat1, ColorMatrix mat2)
+        {
+            if (mat1 == null)
+                return (mat2 == null);
+            else if (mat2 == null)
+                return (mat1 == null);
+            else {
+                for (int i = 0; i < 5; ++i)
+                    for (int j = 0; j < 5; ++j)
+                        if (mat1[i, j] != mat2[i, j])
+                            return false;
+
+                return true;
+            }
+        }
+
         // The ColorMatrix transforms the colors before rendering. This is useful, for example, to draw
         // in a lighted fashion or similar.
         public ColorMatrix ColorMatrix {
@@ -346,6 +362,10 @@ namespace PurplePen.MapModel
 
             set {
                 CheckWritable();
+
+                if (EqualColorMatrix(colorMatrix, value))
+                    return;         // no change in matrix.
+
                 this.colorMatrix = value;
 
                 // Free GDI objects that might be using the old colors. They are recreated on demand.
@@ -708,7 +728,7 @@ namespace PurplePen.MapModel
     public class RenderOptions
     {
         public float minResolution;  // minimum size of a feature to render (typically the pixel size)
-        public bool forceBitmapGlyphs; // if true, always use bitmap glyphs to render, if false, use depending on resolution
+        public bool usePatternBitmaps; // if true, always use bitmap glyphs to render area patterns, if false, use direct drawing and clipping
 
         // debug options.
         public bool showSymbolBounds;      // Show the bounds of symbols.

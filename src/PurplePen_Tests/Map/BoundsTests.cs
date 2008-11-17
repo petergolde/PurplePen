@@ -68,7 +68,7 @@ namespace PurplePen.MapModel.Tests
             Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
             using (Graphics g = Graphics.FromImage(bitmapNew)) {
                 RenderOptions renderOpts = new RenderOptions();
-                renderOpts.forceBitmapGlyphs = false;
+                renderOpts.usePatternBitmaps = true;
                 renderOpts.minResolution = mapArea.Width / (float) bitmapSize.Width;
                 renderOpts.showSymbolBounds = true;
 

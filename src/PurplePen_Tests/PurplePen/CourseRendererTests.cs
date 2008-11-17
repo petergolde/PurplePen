@@ -82,7 +82,7 @@ namespace PurplePen.Tests
             using (Graphics g = Graphics.FromImage(bm)) {
                 RenderOptions options = new RenderOptions();
 
-                options.forceBitmapGlyphs = false;
+                options.usePatternBitmaps = true;
                 options.minResolution = (float) (rect.Width / bm.Width);
 
                 g.ScaleTransform((float) (bm.Width / rect.Width), - (float) (bm.Height / rect.Height));

@@ -1208,11 +1208,14 @@ namespace PurplePen.MapModel
         float patternHeight; // size of pattern element
         float patternAngle;  // angle of pattern
         Glyph patternGlyph;  // pattern element
+
+        // Cached brushes for faster pattern drawing.
+#if !WPF
+        float pixelSizeCached;                          // pixel size in mm that the patternBrushes are created for. (WPF brushes are resolution independent).
+#endif
         Dictionary<SymColor, Brush> patternBrushes; // pattern brushes, indexed by color
 
         bool pensAndBrushesCreated; // are pens and brushed created.
-
-        const float GLYPH_BITMAP_PIXEL = 0.03F;   // size of each pixel in mm
 
         public override void SetMap(Map newMap)
         {
@@ -1293,10 +1296,6 @@ namespace PurplePen.MapModel
 
         void CreatePensAndBrushes()
         {
-            RenderOptions renderOpts = new RenderOptions();
-            renderOpts.minResolution = GLYPH_BITMAP_PIXEL;
-            renderOpts.forceBitmapGlyphs = false;
-
             Debug.Assert(!pensAndBrushesCreated && hatchPen == null && patternBrushes == null);
 
             if (hatchMode != 0) {
@@ -1304,98 +1303,9 @@ namespace PurplePen.MapModel
             }
 
             if (drawPattern) {
-                patternBrushes = new Dictionary<SymColor, Brush>(2);
-                foreach (SymColor color in map.colors) {
-                    if (!patternGlyph.HasColor(color))
-                        continue;
-
 #if WPF
-                    // Create a visual with the glyph to tile in it.
-                    DrawingVisual visual = new DrawingVisual();
-                    DrawingContext dc = visual.RenderOpen();
-                    GraphicsTarget grTarget = new GraphicsTarget(dc);
-
-                    patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                    if (offsetRows) {
-                        patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                        patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                    }
-
-                    dc.Close();
-
-                    // Get a drawing from the drawingvisual
-                    Drawing drawing = visual.Drawing;
-                    drawing.Freeze();
-
-                    // Create a brush from the drawing.
-                    DrawingBrush brush = new DrawingBrush(drawing);
-                    brush.Stretch = Stretch.Fill;
-                    brush.TileMode = TileMode.Tile;
-                    brush.ViewboxUnits = BrushMappingMode.Absolute;
-                    brush.ViewportUnits = BrushMappingMode.Absolute;
-                    if (offsetRows)
-                        brush.Viewbox = brush.Viewport = new Rect(-patternWidth / 2, -patternHeight / 2, patternWidth, patternHeight * 2);
-                    else
-                        brush.Viewbox = brush.Viewport = new Rect(-patternWidth / 2, -patternHeight / 2, patternWidth, patternHeight);
-                    brush.Transform = new RotateTransform(patternAngle);
-
-                    // Set the minimum and maximum relative sizes for regenerating the tiled brush.
-                    // The tiled brush will be regenerated when the size is
-                    //   0.5x, 0.25x (and so forth)
-                    // and
-                    //   2x, 4x, 8x (and so forth)
-                    // of the original size.
-                    System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMinimum(brush, 0.5);
-                    System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMaximum(brush, 2.0);
-
-                    // Set the caching hint option for the brush.
-                    System.Windows.Media.RenderOptions.SetCachingHint(brush, CachingHint.Cache);
-
-                    // Freeze the brush.
-                    brush.Freeze();
-
-#else
-                    const float SCALE = 1.0F / GLYPH_BITMAP_PIXEL;
-
-                    // Create a bitmap with the image of the pattern.
-                    float width = (float) Math.Round(patternWidth * SCALE);
-                    float height = (float) Math.Round(patternHeight * SCALE);
-
-                    // Create a new bitmap and fill it transparent.
-                    Bitmap bitmap = new Bitmap((int) width, (int) (offsetRows ? height * 2 : height));
-                    Graphics g = Graphics.FromImage(bitmap);
-                    g.CompositingMode = CompositingMode.SourceCopy;
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.FillRectangle(new SolidBrush(Color.Transparent), 0, 0, bitmap.Width, bitmap.Height);
-
-                    // Set the center of the bitmap to 0,0, and scale to mm (each pixel is 0.01 mm).
-                    g.TranslateTransform(width / 2.0F, height / 2.0F);
-                    g.ScaleTransform(width / patternWidth, height / patternHeight);
-
-                    // Draw the pattern into the bitmap.
-                    GraphicsTarget grTarget = new GraphicsTarget(g);
-                    patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-
-                    if (offsetRows) {
-                        patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                        patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                    }
-
-                    // Create a TextureBrush on the bitmap.
-                    TextureBrush brush = new TextureBrush(bitmap);
-
-                    // Scale and the texture brush.
-                    brush.RotateTransform(patternAngle);
-                    brush.ScaleTransform(patternWidth / width, patternHeight / height);
-                    brush.TranslateTransform(-width / 2.0F, -height / 2.0F);
-
-                    // Dispose of the graphics.
-                    g.Dispose();
+                CreatePatternBrush();
 #endif
-
-                    // Add it to the collection of brushes.
-                    patternBrushes.Add(color, brush);
-                }
             }
 
             pensAndBrushesCreated = true;
@@ -1453,11 +1363,13 @@ namespace PurplePen.MapModel
                 // Faster to draw the pattern with a texture brush that has a bitmap
                 // of the pattern in it. Better quality to do it all with glyph drawing.
                 // Choose based on the renderOptions.
-#if !WPF
-                if (renderOpts.forceBitmapGlyphs || renderOpts.minResolution > GLYPH_BITMAP_PIXEL / 2)
-#endif
+#if WPF
+                DrawPatternWithTexBrush(g, path, angle, color, renderOpts);
+#else
+                if (renderOpts.usePatternBitmaps) {
+                    CreatePatternBrush(renderOpts.minResolution);
                     DrawPatternWithTexBrush(g, path, angle, color, renderOpts);
-#if !WPF
+                }
                 else
                     DrawPattern(g, path, angle, color, renderOpts);
 #endif
@@ -1554,6 +1466,136 @@ namespace PurplePen.MapModel
                 path.Fill(g, brush);
             }
         }
+
+#if WPF
+        void CreatePatternBrush() 
+        {
+            patternBrushes = new Dictionary<SymColor, Brush>(2);
+
+            foreach (SymColor color in map.colors) {
+                if (!patternGlyph.HasColor(color))
+                    continue;
+
+                // Create a visual with the glyph to tile in it.
+                DrawingVisual visual = new DrawingVisual();
+                DrawingContext dc = visual.RenderOpen();
+                GraphicsTarget grTarget = new GraphicsTarget(dc);
+
+                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                if (offsetRows) {
+                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                }
+
+                dc.Close();
+
+                // Get a drawing from the drawingvisual
+                Drawing drawing = visual.Drawing;
+                drawing.Freeze();
+
+                // Create a brush from the drawing.
+                DrawingBrush brush = new DrawingBrush(drawing);
+                brush.Stretch = Stretch.Fill;
+                brush.TileMode = TileMode.Tile;
+                brush.ViewboxUnits = BrushMappingMode.Absolute;
+                brush.ViewportUnits = BrushMappingMode.Absolute;
+                if (offsetRows)
+                    brush.Viewbox = brush.Viewport = new Rect(-patternWidth / 2, -patternHeight / 2, patternWidth, patternHeight * 2);
+                else
+                    brush.Viewbox = brush.Viewport = new Rect(-patternWidth / 2, -patternHeight / 2, patternWidth, patternHeight);
+                brush.Transform = new RotateTransform(patternAngle);
+
+                // Set the minimum and maximum relative sizes for regenerating the tiled brush.
+                // The tiled brush will be regenerated when the size is
+                //   0.5x, 0.25x (and so forth)
+                // and
+                //   2x, 4x, 8x (and so forth)
+                // of the original size.
+                System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMinimum(brush, 0.5);
+                System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMaximum(brush, 2.0);
+
+                // Set the caching hint option for the brush.
+                System.Windows.Media.RenderOptions.SetCachingHint(brush, CachingHint.Cache);
+
+                // Freeze the brush.
+                brush.Freeze();
+
+                // Add it to the collection of brushes.
+                patternBrushes.Add(color, brush);
+            }
+        }
+#else
+        void CreatePatternBrush(float pixelSize)
+        {
+            //  Determine adjusted pixel size of the brush to create. 
+            const float MAX_PATTERN_SIZE = 80;
+            const float MIN_PATTERN_SIZE = 10;
+            if (pixelSize < patternWidth / MAX_PATTERN_SIZE)
+                pixelSize = patternWidth / MAX_PATTERN_SIZE;
+            if (pixelSize < patternHeight / MAX_PATTERN_SIZE)
+                pixelSize = patternHeight / MAX_PATTERN_SIZE;
+            if (pixelSize > patternWidth / MIN_PATTERN_SIZE)
+                pixelSize = patternWidth / MIN_PATTERN_SIZE;
+            if (pixelSize > patternHeight / MIN_PATTERN_SIZE)
+                pixelSize = patternHeight / MIN_PATTERN_SIZE;
+
+            if (patternBrushes != null && Math.Abs(pixelSize - pixelSizeCached) / pixelSize < 0.01)
+                return;         // the pattern brush is already OK size.
+
+            // Get size of bitmap to create with the image of the pattern.
+            float width = (float) Math.Round(patternWidth / pixelSize);
+            float height = (float) Math.Round(patternHeight / pixelSize);
+
+            Debug.WriteLine(string.Format("Caching pattern bitmap of size {0} x {1} for symdef {2}, pizelSize={3}, pixelSizeCached={4}", width, height, this.OcadID, pixelSize, pixelSizeCached));
+
+            // Create dictionary to hold brushes for each color.
+            patternBrushes = new Dictionary<SymColor, Brush>(2);
+            pixelSizeCached = pixelSize;
+
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.minResolution = pixelSize;
+            renderOpts.usePatternBitmaps = false;
+
+            foreach (SymColor color in map.colors) {
+                if (!patternGlyph.HasColor(color))
+                    continue;
+
+                // Create a new bitmap and fill it transparent.
+                Bitmap bitmap = new Bitmap((int) width, (int) (offsetRows ? height * 2 : height));
+                Graphics g = Graphics.FromImage(bitmap);
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.FillRectangle(new SolidBrush(Color.Transparent), 0, 0, bitmap.Width, bitmap.Height);
+
+                // Set the center of the bitmap to 0,0, and scale to mm (each pixel is 0.01 mm).
+                g.TranslateTransform(width / 2.0F, height / 2.0F);
+                g.ScaleTransform(width / patternWidth, height / patternHeight);
+
+                // Draw the pattern into the bitmap.
+                GraphicsTarget grTarget = new GraphicsTarget(g);
+                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+
+                if (offsetRows) {
+                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                }
+
+                // Create a TextureBrush on the bitmap.
+                TextureBrush brush = new TextureBrush(bitmap);
+
+                // Scale and the texture brush.
+                brush.RotateTransform(patternAngle);
+                brush.ScaleTransform(patternWidth / width, patternHeight / height);
+                brush.TranslateTransform(-width / 2.0F, -height / 2.0F);
+
+                // Dispose of the graphics.
+                g.Dispose();
+
+                // Add it to the collection of brushes.
+                patternBrushes.Add(color, brush);
+            }
+        }
+#endif
 
         // Draw the pattern (at the given angle) inside the path.
         void DrawPattern(GraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)

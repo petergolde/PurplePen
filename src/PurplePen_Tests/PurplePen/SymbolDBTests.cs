@@ -354,7 +354,7 @@ namespace PurplePen.Tests
             using (Graphics g = Graphics.FromImage(bm)) {
                 RenderOptions options = new RenderOptions();
 
-                options.forceBitmapGlyphs = false;
+                options.usePatternBitmaps = true;
                 options.minResolution = (float) (8.0 / bm.Width);
 
                 Matrix saveTransform = g.Transform;

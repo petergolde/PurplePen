@@ -32,6 +32,8 @@
  * OF SUCH DAMAGE.
  */
 
+#define BITMAPPRINTING
+
 using System;
 using System.ComponentModel;
 using System.Collections.Generic;
@@ -40,6 +42,7 @@ using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
+
 
 namespace PurplePen
 {
@@ -97,6 +100,7 @@ namespace PurplePen
             // Set default features for printing.
             mapDisplay.MapIntensity = 1.0F;
             mapDisplay.AntiAlias = false;
+            mapDisplay.Printing = true;
         }
 
         // Layout all the pages, return the total number of pages.
@@ -109,9 +113,10 @@ namespace PurplePen
                 // Get the layout for the course.
                 List<CoursePage> coursePages = LayoutOptimizedCourse(pageSettings, courseId);
 
-                // Add as many copies as desired.
-                for (int i = 0; i < coursePrintSettings.Count; ++i)
-                    pages.AddRange(coursePages);
+                pageSettings.PrinterSettings.Copies = (short) coursePrintSettings.Count;
+                pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
+
+                pages.AddRange(coursePages);
             }
 
             return pages.Count;            // total number of pages.
@@ -250,7 +255,7 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, int dpi)
+        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
         {
             CoursePage page = pages[pageNumber];
 
@@ -281,6 +286,42 @@ namespace PurplePen
             // Save and restore state so we can mess with stuff.
             GraphicsState graphicsState = g.Save();
 
+#if BITMAPPRINTING
+            dpi = AdjustDpi(dpi);
+
+            const long MAX_PIXELS_PER_BAND = 20000000;    // 20M pixels = 60M bytes (3 bytes per pixel).
+            List<CoursePage> bands = BandPageToLimitBitmapSize(page, dpi, MAX_PIXELS_PER_BAND);
+
+            // Create the bitmap. Can do this once because each band is the same size.
+            int bitmapWidth = (int) Math.Round(bands[0].printRectangle.Width * dpi / 100F);
+            int bitmapHeight = (int) Math.Round(bands[0].printRectangle.Height * dpi / 100F);
+            Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+            foreach (CoursePage band in bands) {
+                // Create graphics to draw into the bitmap.
+                Graphics bitmapGraphics = Graphics.FromImage(bitmap);
+                bitmapGraphics.Clear(Color.White);
+
+                // Set the transform
+                Matrix transform = Util.CreateRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight), true);
+                bitmapGraphics.MultiplyTransform(transform);
+
+                // Determine the resolution in map coordinates.
+                Matrix inverseTransform = transform.Clone();
+                inverseTransform.Invert();
+                float minResolution = Util.TransformDistance(1F, inverseTransform);
+
+                // And draw.
+                mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
+                bitmapGraphics.Dispose();
+
+                // Draw the bitmap on the printer.
+                g.DrawImage(bitmap, band.printRectangle);
+            }
+
+            bitmap.Dispose();
+
+#else
             // Set the transform, and the clip.
             Matrix transform = Util.CreateRectangleTransform(page.mapRectangle, page.printRectangle, true);
             g.IntersectClip(page.printRectangle);
@@ -291,14 +332,77 @@ namespace PurplePen
             inverseTransform.Invert();
             float minResolutionPage = 100F / dpi;
             float minResolutionMap = Util.TransformDistance(minResolutionPage, inverseTransform);
-            if (minResolutionMap > 0.01F)
-                minResolutionMap = 0.01F;     // always draw with at least 0.01F resolution. This prevents bitmap glyphs from being used in patterned areas, and always makes sure the quality is good.
 
             // And draw.
             mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
-
+#endif
             // restore state.
             g.Restore(graphicsState);
+        }
+
+        const float MIN_DPI = 400;
+        const float MAX_DPI = 1500;
+
+        // Adjust the DPI in case of drivers that report too high or too low. Keep it a multiple/divisor of the reported DPI.
+#if TEST
+        internal
+#endif
+        static float AdjustDpi(float dpi)
+        {
+            while (dpi < MIN_DPI)
+                dpi *= 2;
+
+            while (dpi > MAX_DPI)
+                dpi /= 2;
+
+            return dpi;
+        }
+
+
+        // Split up a course page into bands, so that each band is
+        //    a) exactly the same size
+        //    b) no more than maxPixels in size
+        //    c) goes top to bottom for portraint, left to right for landscape.
+        List<CoursePage> BandPageToLimitBitmapSize(CoursePage page, float dpi, long maxPixels)
+        {
+            List<CoursePage> list = new List<CoursePage>();
+            bool landscape = page.landscape;
+
+            // Figure out how many bands we need to limit the pixel size of each band.
+            long pixelsOnPage = (long) Math.Round(page.printRectangle.Width * dpi / 100F) * (long) Math.Round(page.printRectangle.Height * dpi / 100F);
+            int numBands = (int) Math.Ceiling((double)pixelsOnPage / (double) maxPixels);
+
+            // Calculate the band size.
+            float mapBandSize, printBandSize;
+            if (landscape) {
+                mapBandSize = page.mapRectangle.Width / numBands;
+                printBandSize = page.printRectangle.Width / numBands;
+            }
+            else {
+                mapBandSize = page.mapRectangle.Height / numBands;
+                printBandSize = page.printRectangle.Height / numBands;
+            }
+
+            // Create the bands.
+            for (int i = 0; i < numBands; ++i) {
+                CoursePage band = new CoursePage();
+                band.landscape = landscape;
+                band.courseId = page.courseId;
+
+                if (landscape) {
+                    band.mapRectangle = new RectangleF(page.mapRectangle.Left + i * mapBandSize, page.mapRectangle.Top, mapBandSize, page.mapRectangle.Height);
+                    band.printRectangle = new RectangleF(page.printRectangle.Left + i * printBandSize, page.printRectangle.Top, printBandSize, page.printRectangle.Height);
+                }
+                else {
+                    band.mapRectangle = new RectangleF(page.mapRectangle.Left, page.mapRectangle.Top + (numBands - 1 - i) * mapBandSize, page.mapRectangle.Width, mapBandSize);
+                    band.printRectangle = new RectangleF(page.printRectangle.Left, page.printRectangle.Top + i * printBandSize, page.printRectangle.Width, printBandSize);
+                }
+
+                list.Add(band);
+            }
+
+            // Return the list of bands.
+            return list;
         }
 
     }
