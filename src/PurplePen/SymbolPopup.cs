@@ -376,7 +376,7 @@ namespace PurplePen
             case ToolStripDropDownCloseReason.AppFocusChange:
                 // Clicked outside of the drop-down.
                 // If the user has changed the text box, commit that change, else cancel
-                if (textboxChanged) {
+                if (textbox != null && textboxChanged) {
                     textbox.PerformClick();
                 }
                 else {

@@ -222,6 +222,13 @@ namespace PurplePen.Tests
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.SymbolsAndText);
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Text);
         }
+
+        [TestMethod]
+        public void LongDescriptions()
+        {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.SymbolsAndText);
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.Text);
+        }
 	
 
         // Render a description to a map, then to a bitmap for testing purposes. Hardcoded 6 mm box size.
@@ -379,6 +386,13 @@ namespace PurplePen.Tests
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Symbols);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.SymbolsAndText);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent6.coursescribe"), CourseId(1), DescriptionKind.Text);
+        }
+
+        [TestMethod]
+        public void LongDescriptionsToMap()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.SymbolsAndText);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.Text);
         }
 	
 

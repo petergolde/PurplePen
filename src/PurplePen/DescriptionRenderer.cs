@@ -521,7 +521,20 @@ namespace PurplePen
             if (!rect.IntersectsWith(clipRect))
                 return;
 
-            renderer.DrawWrappedText(fonts[fontIndex], s, rect, alignment);
+            object currentFont = fonts[fontIndex];
+            float currentHeight = fontDescs[fontIndex].EmHeight;
+
+            // Keep shrinking the font by 5% until it fits.
+            bool fits;
+            do {
+                fits = renderer.WrappedTextFits(currentFont, s, rect, alignment);
+                if (!fits) {
+                    currentHeight *= 0.95F;
+                    currentFont = renderer.CreateFont(fontDescs[fontIndex].Name, currentHeight, fontDescs[fontIndex].Bold, fontDescs[fontIndex].Italic, fontAlignments[fontIndex]);
+                }
+            } while (!fits);
+
+            renderer.DrawWrappedText(currentFont, s, rect, alignment);
         }
 
         // Render a symbol inside the given rectangle.
@@ -755,6 +768,9 @@ namespace PurplePen
         // Draw some text, wrapping to multiple lines
         void DrawWrappedText(object font, string text, RectangleF rect, StringAlignment horizAlignment);
 
+        // Determine if wrapped lines will fit in the rectangle.
+        bool WrappedTextFits(object font, string text, RectangleF rect, StringAlignment horizAlignment);
+
         // Draw a symbol.
         void DrawSymbol(Symbol symbol, RectangleF rect);
     }
@@ -823,6 +839,16 @@ namespace PurplePen
             stringFormat.FormatFlags = StringFormatFlags.NoWrap;
 
             g.DrawString(text, (Font) font, Brushes.Black, rect, stringFormat);
+        }
+
+        public bool WrappedTextFits(object font, string text, RectangleF rect, StringAlignment horizAlignment)
+        {
+            StringFormat stringFormat = new StringFormat(StringFormat.GenericTypographic);
+            stringFormat.Alignment = horizAlignment;
+            stringFormat.LineAlignment = StringAlignment.Center;
+
+            SizeF size = g.MeasureString(text, (Font) font, new SizeF(rect.Width, rect.Height * 2), stringFormat);
+            return size.Height <= rect.Height;
         }
 
         public void DrawWrappedText(object font, string text, RectangleF rect, StringAlignment horizAlignment)
@@ -947,6 +973,20 @@ namespace PurplePen
 
             TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Util.TransformDistance(rect.Width, currentTransform));
             map.AddSymbol(symbol);
+        }
+
+        public bool WrappedTextFits(object font, string text, RectangleF rect, StringAlignment horizAlignment)
+        {
+            TextSymDef symdef = (TextSymDef) font;
+
+            PointF baseLocation;
+            float x = rect.Left;
+            float y = rect.Top;    
+            baseLocation = Util.TransformPoint(new PointF(x, y), currentTransform);
+
+            // Need to create the symbol to get it's height.
+            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Util.TransformDistance(rect.Width, currentTransform));
+            return symbol.TextSize.Height <= Util.TransformDistance(rect.Height, currentTransform);
         }
 
         public void DrawWrappedText(object font, string text, RectangleF rect, StringAlignment horizAlignment)
