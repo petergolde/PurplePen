@@ -59,6 +59,7 @@ namespace PurplePen
         TableLayoutSettings tableLayoutSettings;    // The table layout setting for the downdrop.
         ToolStripTextBox textbox;       // If a text box is included, this is it.
         ToolStripSeparator separator;   // If a seperator is included, this is it.
+        bool textboxChanged;         // has the text box been changed?
 
         // An item or text was selected
         public event SymbolPopupEventHandler Selected;
@@ -237,6 +238,10 @@ namespace PurplePen
             textbox.KeyDown += TextKeyDown;             // handle the Enter key.
             textbox.Size = new Size(boxSize * textBoxWidth, boxSize);
             textbox.Text = initialText;
+
+            ((TextBox)(textbox.Control)).PreviewKeyDown += PreviewKeyDown;
+            textboxChanged = false;
+
             AddItem(textbox, textBoxWidth, true);
         }
 
@@ -341,14 +346,24 @@ namespace PurplePen
             }
         }
 
+        // Preview the key down in the text control.
+        void PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            // Work-around bug. The AltGr key doesn't work in the text box unless you do this.
+            if (e.Alt && e.Control && e.KeyCode == Keys.Menu)
+                e.IsInputKey = true;
+        }
+
         // Keydown in the text control
         void TextKeyDown(object sender, KeyEventArgs args)
         {
-            if (args.KeyCode == Keys.Enter)
-            {
+            if (args.KeyCode == Keys.Enter) {
                 args.Handled = true;
                 args.SuppressKeyPress = true;
-                ((ToolStripItem)sender).PerformClick();
+                ((ToolStripItem) sender).PerformClick();
+            }
+            else {
+                textboxChanged = true;
             }
         }
 
@@ -356,9 +371,30 @@ namespace PurplePen
         void ClosedDropdown(object sender, ToolStripDropDownClosedEventArgs args)
         {
             // The drop-down closed for some reason other than the item was clicked.
-            if (args.CloseReason != ToolStripDropDownCloseReason.ItemClicked) {
+            switch (args.CloseReason) {
+            case ToolStripDropDownCloseReason.AppClicked:
+            case ToolStripDropDownCloseReason.AppFocusChange:
+                // Clicked outside of the drop-down.
+                // If the user has changed the text box, commit that change, else cancel
+                if (textboxChanged) {
+                    textbox.PerformClick();
+                }
+                else {
+                    if (Canceled != null)
+                        Canceled(this, EventArgs.Empty);
+                }
+                break;
+
+            case ToolStripDropDownCloseReason.CloseCalled:
+            case ToolStripDropDownCloseReason.Keyboard:
+                // Canceled the drop down.
                 if (Canceled != null)
                     Canceled(this, EventArgs.Empty);
+                break;
+
+            case ToolStripDropDownCloseReason.ItemClicked:
+                // Do nothing here, the item clicked handler will handle it.
+                break;
             }
         }
 
