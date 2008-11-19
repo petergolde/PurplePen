@@ -103,7 +103,7 @@ namespace PurplePen
         {
             // Begin dragging out the description block.
             startLocation = location;
-            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), CourseAppearance.fontNameTextSpecial, CourseAppearance.fontStyleTextSpecial);
+            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.fontStyleTextSpecial);
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
@@ -121,7 +121,7 @@ namespace PurplePen
             // User just clicked. Create text of a default size.
             SizeF size;
             Graphics g = Util.GetHiresGraphics();
-            using (Font f = new Font(CourseAppearance.fontNameTextSpecial, CourseAppearance.emHeightDefaultTextSpecial, CourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
+            using (Font f = new Font(NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.emHeightDefaultTextSpecial, NormalCourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
                 size = g.MeasureString(displayText, f, new PointF(0,0), StringFormat.GenericTypographic);
 
             CreateTextSpecial(new RectangleF(new PointF(location.X, location.Y - size.Height), size));

@@ -479,9 +479,9 @@ namespace PurplePen
         {
             // Place the active course in the layout.
             activeCourse = new CourseLayout();
-            activeCourse.SetLayerColor(CourseLayer.Descriptions, CourseAppearance.blackColorOcadId, CourseAppearance.blackColorName, CourseAppearance.blackColorC, CourseAppearance.blackColorM, CourseAppearance.blackColorY, CourseAppearance.blackColorK);
-            activeCourse.SetLayerColor(CourseLayer.MainCourse, CourseAppearance.courseOcadId, CourseAppearance.courseColorName, 
-                CourseAppearance.courseColorC, CourseAppearance.courseColorM, CourseAppearance.courseColorY, CourseAppearance.courseColorK);
+            activeCourse.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
+            activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, 
+                NormalCourseAppearance.courseColorC, NormalCourseAppearance.courseColorM, NormalCourseAppearance.courseColorY, NormalCourseAppearance.courseColorK);
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, activeCourse, CourseLayer.MainCourse);
 
             if (showAllControls && activeCourseId.IsNotNone) {
@@ -489,8 +489,8 @@ namespace PurplePen
                 CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { activeCourseId }, allControlsFilter, false, true);
 
                 // Add it to the CourseLayout.
-                activeCourse.SetLayerColor(CourseLayer.AllControls, CourseAppearance.allControlsOcadId, CourseAppearance.allControlsColorName,
-                    CourseAppearance.allControlsColorC, CourseAppearance.allControlsColorM, CourseAppearance.allControlsColorY, CourseAppearance.allControlsColorK);
+                activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
+                    NormalCourseAppearance.allControlsColorC, NormalCourseAppearance.allControlsColorM, NormalCourseAppearance.allControlsColorY, NormalCourseAppearance.allControlsColorK);
                 CourseFormatter.FormatCourseToLayout(symbolDB, allControlsView, activeCourse, CourseLayer.AllControls);
             }
         }

@@ -1510,6 +1510,51 @@ namespace PurplePen
     // The type of map used.
     public enum MapType { None, OCAD, Bitmap };
 
+    // Describes appearance of the courses.
+    public class CourseAppearance
+    {
+        public float controlCircleSize = 1.0F;            // ratio to apply to control circles and other point features.
+        public float lineWidth = 1.0F;                       // ratio to apply to the width of lines
+        public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
+
+        public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
+        public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || !(obj is CourseAppearance))
+                return false;
+
+            CourseAppearance other = (CourseAppearance) obj;
+
+            if (controlCircleSize != other.controlCircleSize)
+                return false;
+            if (lineWidth != other.lineWidth)
+                return false;
+            if (numberHeight != other.numberHeight)
+                return false;
+            if (useDefaultPurple != other.useDefaultPurple)
+                return false;
+            if (useDefaultPurple == false) {
+                // The specific purple colors are not used if useDefaultPurple is false.
+                if (purpleC != other.purpleC)
+                    return false;
+                if (purpleM != other.purpleM)
+                    return false;
+                if (purpleY != other.purpleY)
+                    return false;
+                if (purpleK != other.purpleK)
+                    return false;
+            }
+
+            return true;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+    }
     
     // Describes the entire event. Only one of these should ever be in the event DB at a 
     // time. If none are, a default one is returned.
@@ -1528,6 +1573,7 @@ namespace PurplePen
         public bool disallowInvertibleCodes;   // disallow codes that are invertable (e.g., 161).
         public bool ignoreMissingFonts;   // If true, don't warn about missing fonts in the map.
         public PunchcardFormat punchcardFormat = new PunchcardFormat();   // format of punch cards
+        public CourseAppearance courseAppearance = new CourseAppearance();   // appearance of courses.
         public string descriptionLangId;   // language id for descriptions.
         public Dictionary<string, List<SymbolText>> customSymbolText = new Dictionary<string, List<SymbolText>>();   // maps symbol IDs to list of custom symbol text.
         public Dictionary<string, bool> customSymbolKey = new Dictionary<string, bool>();   // maps symbol IDs to whether to display key for this custom symbol
@@ -1578,6 +1624,8 @@ namespace PurplePen
             }
 
             ev.customSymbolKey = Util.CopyDictionary(customSymbolKey);
+            ev.punchcardFormat = (PunchcardFormat) punchcardFormat.Clone();
+            ev.courseAppearance = (CourseAppearance) courseAppearance.Clone();
             return ev;
         }
 
@@ -1611,6 +1659,8 @@ namespace PurplePen
             if (ignoreMissingFonts != other.ignoreMissingFonts)
                 return false;
             if (!object.Equals(punchcardFormat, other.punchcardFormat))
+                return false;
+            if (!object.Equals(courseAppearance, other.courseAppearance))
                 return false;
             if (other.printArea != printArea)
                 return false;
@@ -1702,6 +1752,21 @@ namespace PurplePen
             xmloutput.WriteAttributeString("top-to-bottom", XmlConvert.ToString(punchcardFormat.topToBottom));
             xmloutput.WriteEndElement();
 
+            xmloutput.WriteStartElement("course-appearance");
+            if (courseAppearance.controlCircleSize != 1.0F)
+                xmloutput.WriteAttributeString("control-circle-size-ratio", XmlConvert.ToString(courseAppearance.controlCircleSize));
+            if (courseAppearance.lineWidth != 1.0F)
+                xmloutput.WriteAttributeString("line-width-ratio", XmlConvert.ToString(courseAppearance.lineWidth));
+            if (courseAppearance.numberHeight != 1.0F)
+                xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
+            if (courseAppearance.useDefaultPurple == false) {
+                xmloutput.WriteAttributeString("purple-cyan", XmlConvert.ToString(courseAppearance.purpleC));
+                xmloutput.WriteAttributeString("purple-magenta", XmlConvert.ToString(courseAppearance.purpleM));
+                xmloutput.WriteAttributeString("purple-yellow", XmlConvert.ToString(courseAppearance.purpleY));
+                xmloutput.WriteAttributeString("purple-black", XmlConvert.ToString(courseAppearance.purpleK));
+            }
+            xmloutput.WriteEndElement();
+
             xmloutput.WriteStartElement("descriptions");
             xmloutput.WriteAttributeString("lang", descriptionLangId);
             xmloutput.WriteEndElement();
@@ -1722,7 +1787,7 @@ namespace PurplePen
             disallowInvertibleCodes = true;
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "print-area", "descriptions", "custom-symbol-text")) {
+            while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "custom-symbol-text")) {
                 switch (xmlinput.Name) {
                     case "title":
                         title = xmlinput.GetContentString();
@@ -1779,6 +1844,18 @@ namespace PurplePen
                         punchcardFormat.boxesAcross = xmlinput.GetAttributeInt("columns", PunchcardAppearance.defaultBoxesAcross);
                         punchcardFormat.leftToRight = xmlinput.GetAttributeBool("left-to-right", PunchcardAppearance.defaultLeftToRight);
                         punchcardFormat.topToBottom = xmlinput.GetAttributeBool("top-to-bottom", PunchcardAppearance.defaultTopToBottom);
+                        xmlinput.Skip();
+                        break;
+
+                    case "course-appearance":
+                        courseAppearance.controlCircleSize = xmlinput.GetAttributeFloat("control-circle-size-ratio", 1.0F);
+                        courseAppearance.lineWidth = xmlinput.GetAttributeFloat("line-width-ratio", 1.0F);
+                        courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
+                        courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
+                        courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
+                        courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);
+                        courseAppearance.purpleK = xmlinput.GetAttributeFloat("purple-black", -1F);
+                        courseAppearance.useDefaultPurple = (courseAppearance.purpleC < 0 || courseAppearance.purpleM < 0 || courseAppearance.purpleY < 0 || courseAppearance.purpleK < 0);
                         xmlinput.Skip();
                         break;
 

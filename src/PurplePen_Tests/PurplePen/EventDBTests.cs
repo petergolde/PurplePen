@@ -413,6 +413,41 @@ namespace PurplePen.Tests
             undomgr.Clear();
             eventDB = new EventDB(undomgr);
 
+            e.title = "Hi";
+            e.notes = null;
+            e.mapType = MapType.None;
+            e.mapFileName = null;
+            e.mapScale = 12000;
+            e.mapDpi = 330;
+            e.allControlsPrintScale = 7500;
+            e.allControlsDescKind = DescriptionKind.Text;
+            e.courseAppearance.lineWidth = 1.3F;
+            e.courseAppearance.controlCircleSize = 0.9F;
+            e.courseAppearance.numberHeight = 1.1F;
+            e.courseAppearance.useDefaultPurple = false;
+            e.courseAppearance.purpleC = 0.4F;
+            e.courseAppearance.purpleM = 0.4F;
+            e.courseAppearance.purpleY = 0.4F;
+            e.courseAppearance.purpleK = 0.4F;
+
+            undomgr.BeginCommand(198, "change event");
+            eventDB.ChangeEvent(e);
+            undomgr.EndCommand(198);
+
+            eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput5_temp.xml"));
+
+            undomgr.Clear();
+            eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("eventdb\\testoutput5_temp.xml"));
+
+            Assert.AreEqual(e, eventDB.GetEvent());
+
+            /* --- */
+
+            undomgr.Clear();
+            eventDB = new EventDB(undomgr);
+
             e.title = "Mr. Event";
             e.notes = null;
             e.mapType = MapType.OCAD;

@@ -170,7 +170,9 @@ namespace PurplePen
 
     }
 
-    static class CourseAppearance 
+    // Describes the normal default course appearance. Most items can be customized via a CourseAppearance object,
+    // so use this directly with care.
+    static class NormalCourseAppearance 
     {
         // The dimensions of objects in the course display. The units are in map units (which is always mm).
         // Other coordinates are directly in CourseObj class which has the details of what various symbols look like.
@@ -226,7 +228,7 @@ namespace PurplePen
         public static readonly Color highlightColor = Color.FromArgb(255, 0, 0);
 
         // Brush to use to highlight areas.
-        public static readonly Brush areaHighlight = new HatchBrush(HatchStyle.Percent25, CourseAppearance.highlightColor, Color.Transparent);
+        public static readonly Brush areaHighlight = new HatchBrush(HatchStyle.Percent25, NormalCourseAppearance.highlightColor, Color.Transparent);
 
         // The font used for text specials.
         public static string fontNameTextSpecial = "Arial";

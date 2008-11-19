@@ -60,8 +60,8 @@ namespace PurplePen
         {
             // Create the CourseLayout.
             CourseLayout courseLayout = new CourseLayout();
-            courseLayout.SetLayerColor(CourseLayer.Descriptions, CourseAppearance.blackColorOcadId, CourseAppearance.blackColorName, CourseAppearance.blackColorC, CourseAppearance.blackColorM, CourseAppearance.blackColorY, CourseAppearance.blackColorK);
-            courseLayout.SetLayerColor(CourseLayer.MainCourse, CourseAppearance.courseOcadId, CourseAppearance.courseColorName,
+            courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
+            courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
                 creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseLayout, CourseLayer.MainCourse);
 

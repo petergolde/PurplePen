@@ -171,7 +171,7 @@ namespace PurplePen
                 // wide lines. This must be due to some optimizations in GDI+. So we fake it by using
                 // a single pixel texture brush.
                 Bitmap bm = new Bitmap(1, 1);
-                bm.SetPixel(0, 0, CourseAppearance.highlightColor);
+                bm.SetPixel(0, 0, NormalCourseAppearance.highlightColor);
                 highlightBrush = new TextureBrush(bm);
                 bm.Dispose();
             }
@@ -681,7 +681,7 @@ namespace PurplePen
             if (erasing)
                 fillBrush = brush;
             else
-                fillBrush = CourseAppearance.areaHighlight;
+                fillBrush = NormalCourseAppearance.areaHighlight;
 
             // Draw the interior
             path.FillTransformed(new GraphicsTarget(g), fillBrush, xformWorldToPixel);
@@ -811,7 +811,7 @@ namespace PurplePen
             if (erasing)
                 fillBrush = brush;
             else
-                fillBrush = CourseAppearance.areaHighlight;
+                fillBrush = NormalCourseAppearance.areaHighlight;
 
             // Draw the interior
             g.FillRectangle(fillBrush, xformedRect);
@@ -1174,7 +1174,7 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), CourseAppearance.lineThickness * scaleRatio, diameter * scaleRatio);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio, diameter * scaleRatio);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Control point", 702000, glyph, false);
@@ -1194,10 +1194,10 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
-            float radius = ((diameter - CourseAppearance.lineThickness) * scaleRatio) / 2F;
+            float radius = ((diameter - NormalCourseAppearance.lineThickness) * scaleRatio) / 2F;
             PointF[] pts = new PointF[] { location, new PointF(location.X - radius, location.Y - radius), new PointF(location.X + radius, location.Y + radius) };
             xformWorldToPixel.TransformPoints(pts);
 
@@ -1240,7 +1240,7 @@ namespace PurplePen
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Start", 701000, glyph, true);
@@ -1260,7 +1260,7 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Get coordinates of the triangle and transform to pixel coords.
             PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[]) coords.Clone(), orientation)), location.X, location.Y);
@@ -1287,8 +1287,8 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), CourseAppearance.lineThickness * scaleRatio, 5.0F * scaleRatio);
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), CourseAppearance.lineThickness * scaleRatio, 7.0F * scaleRatio);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio, 5.0F * scaleRatio);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio, 7.0F * scaleRatio);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Finish", 706000, glyph, false);
@@ -1308,11 +1308,11 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner inner, 2 = lower-right corner inner, 3 = upper-left outer, 4=lower-right outer
-            float radiusOuter = ((7.0F - CourseAppearance.lineThickness) * scaleRatio) / 2F;
-            float radiusInner = ((5.0F - CourseAppearance.lineThickness) * scaleRatio) / 2F;
+            float radiusOuter = ((7.0F - NormalCourseAppearance.lineThickness) * scaleRatio) / 2F;
+            float radiusInner = ((5.0F - NormalCourseAppearance.lineThickness) * scaleRatio) / 2F;
             PointF[] pts = new PointF[] { location, new PointF(location.X - radiusInner, location.Y - radiusInner), new PointF(location.X + radiusInner, location.Y + radiusInner),
                                                                          new PointF(location.X - radiusOuter, location.Y - radiusOuter), new PointF(location.X + radiusOuter, location.Y + radiusOuter)};
             xformWorldToPixel.TransformPoints(pts);
@@ -1439,16 +1439,16 @@ namespace PurplePen
             Glyph glyph = new Glyph();
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
 
             path = new SymPath(ScaleCoords((PointF[]) coords3.Clone()), kinds3);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
 
             path = new SymPath(ScaleCoords((PointF[]) coords4.Clone()), kinds4);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Rounded);
 
             glyph.ConstructionComplete();
 
@@ -1465,7 +1465,7 @@ namespace PurplePen
             float thickness;
 
             // Get line thickness.
-            thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Get the paths.
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
@@ -1519,8 +1519,8 @@ namespace PurplePen
             SymPath path1, path2;
             
             GetPaths(out path1, out path2);
-            glyph.AddLine(symColor, path1, CourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
-            glyph.AddLine(symColor, path2, CourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
+            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
+            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
 
             glyph.ConstructionComplete();
 
@@ -1536,7 +1536,7 @@ namespace PurplePen
             float thickness;
 
             // Get line thickness.
-            thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Get the paths.
             GetPaths(out path1, out path2);
@@ -1633,10 +1633,10 @@ namespace PurplePen
             Glyph glyph = new Glyph();
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, CourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Mitered);
 
             glyph.ConstructionComplete();
 
@@ -1652,7 +1652,7 @@ namespace PurplePen
             float thickness;
 
             // Get line thickness.
-            thickness = TransformDistance(CourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
+            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio, xformWorldToPixel);
 
             // Get the paths.
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
@@ -1670,13 +1670,13 @@ namespace PurplePen
     class LegCourseObj : LineCourseObj
     {
         public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, CourseAppearance.lineThickness, path, gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, NormalCourseAppearance.lineThickness, path, gaps)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", 704000, symColor, CourseAppearance.lineThickness * scaleRatio, LineStyle.Beveled);
+            LineSymDef symdef = new LineSymDef("Line", 704000, symColor, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Beveled);
             symdef.ToolboxImage = Properties.Resources.Line_OcadToolbox;
             map.AddSymdef(symdef);
             return symdef;
@@ -1692,13 +1692,13 @@ namespace PurplePen
     class FlaggedLegCourseObj : LineCourseObj
     {
         public FlaggedLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, CourseAppearance.lineThickness, path, gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, NormalCourseAppearance.lineThickness, path, gaps)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Marked route", 705000, symColor, CourseAppearance.lineThickness * scaleRatio, LineStyle.Beveled);
+            LineSymDef symdef = new LineSymDef("Marked route", 705000, symColor, NormalCourseAppearance.lineThickness * scaleRatio, LineStyle.Beveled);
 
             LineSymDef.DashInfo dashes = new LineSymDef.DashInfo();
             dashes.dashLength = dashes.firstDashLength = dashes.lastDashLength = 2.0F * scaleRatio;
@@ -1778,7 +1778,7 @@ namespace PurplePen
         public PointF centerPoint;
 
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, CourseAppearance.controlNumberFont.Name, CourseAppearance.controlNumberFont.Style, CourseAppearance.controlNumberFont.EmHeight * scaleRatio)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberFont.Style, NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -1802,7 +1802,7 @@ namespace PurplePen
         public PointF centerPoint;
 
         public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, CourseAppearance.controlCodeFont.Name, CourseAppearance.controlCodeFont.Style, CourseAppearance.controlCodeFont.EmHeight * scaleRatio)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;

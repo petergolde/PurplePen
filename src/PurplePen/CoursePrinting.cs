@@ -267,17 +267,17 @@ namespace PurplePen
             float purpleC, purpleM, purpleY, purpleK;
             if (! FindPurple.FindPurpleColor(mapDisplay.GetMapColors(), out ocadId, out purpleC, out purpleM, out purpleY, out purpleK)) {
                 // Use a default purple.
-                ocadId = CourseAppearance.courseOcadId;
-                purpleC = CourseAppearance.courseColorC;
-                purpleM = CourseAppearance.courseColorM;
-                purpleY = CourseAppearance.courseColorY;
-                purpleK = CourseAppearance.courseColorK;
+                ocadId = NormalCourseAppearance.courseOcadId;
+                purpleC = NormalCourseAppearance.courseColorC;
+                purpleM = NormalCourseAppearance.courseColorM;
+                purpleY = NormalCourseAppearance.courseColorY;
+                purpleK = NormalCourseAppearance.courseColorK;
             }
 
             // Create a course layout from the view.
             CourseLayout layout = new CourseLayout();
-            layout.SetLayerColor(CourseLayer.Descriptions, CourseAppearance.blackColorOcadId, CourseAppearance.blackColorName, CourseAppearance.blackColorC, CourseAppearance.blackColorM, CourseAppearance.blackColorY, CourseAppearance.blackColorK);
-            layout.SetLayerColor(CourseLayer.MainCourse, ocadId, CourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK);
+            layout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
+            layout.SetLayerColor(CourseLayer.MainCourse, ocadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, layout, CourseLayer.MainCourse);
 
             // Set the course layout into the map display

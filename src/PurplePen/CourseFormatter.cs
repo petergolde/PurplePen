@@ -168,8 +168,8 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
-                    textCenterLocation = GetTextLocation(controlLocation, (CourseAppearance.controlRadius + CourseAppearance.controlNumberCircleDistance) * scaleRatio,
-                                                                                  text, CourseAppearance.controlNumberFont, scaleRatio, existingObjects);
+                    textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlRadius + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio,
+                                                                                  text, NormalCourseAppearance.controlNumberFont, scaleRatio, existingObjects);
                 }
 
                 return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, text, textCenterLocation);
@@ -188,7 +188,7 @@ namespace PurplePen
             PointF controlLocation = control.location;
             string text;
             PointF textCenterLocation;
-            float distanceFromCenter = (CourseAppearance.controlRadius + CourseAppearance.codeCircleDistance) * scaleRatio;
+            float distanceFromCenter = (NormalCourseAppearance.controlRadius + NormalCourseAppearance.codeCircleDistance) * scaleRatio;
 
             if (control.kind == ControlPointKind.Normal) {
                 text = control.code;
@@ -197,11 +197,11 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else if (courseControl == null && control.customCodeLocation) {
-                    textCenterLocation = GetRectangleCenter(controlLocation, distanceFromCenter, (float) (control.codeLocationAngle * Math.PI / 180F), GetTextSize(text, CourseAppearance.controlCodeFont, scaleRatio));
+                    textCenterLocation = GetRectangleCenter(controlLocation, distanceFromCenter, (float) (control.codeLocationAngle * Math.PI / 180F), GetTextSize(text, NormalCourseAppearance.controlCodeFont, scaleRatio));
                 }
                 else {
                     textCenterLocation = GetTextLocation(controlLocation, distanceFromCenter,
-                                                                                 text, CourseAppearance.controlCodeFont, scaleRatio, existingObjects);
+                                                                                 text, NormalCourseAppearance.controlCodeFont, scaleRatio, existingObjects);
                 }
 
                 return new CodeCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, text, textCenterLocation);
@@ -231,8 +231,8 @@ namespace PurplePen
             PointF bestPoint = new PointF();
             double bestDistance = -1;
 
-            for (double angle = CourseAppearance.defaultControlNumberAngle; 
-                   angle < CourseAppearance.defaultControlNumberAngle + 2 * Math.PI; 
+            for (double angle = NormalCourseAppearance.defaultControlNumberAngle; 
+                   angle < NormalCourseAppearance.defaultControlNumberAngle + 2 * Math.PI; 
                    angle += deltaAngle) 
             {
                 PointF pt = GetRectangleCenter(controlLocation, distanceFromCenter, angle, textSize);
@@ -681,18 +681,18 @@ namespace PurplePen
 
             switch (controlKind) {
             case ControlPointKind.CrossingPoint:
-                radius = CourseAppearance.crossingRadius; break;
+                radius = NormalCourseAppearance.crossingRadius; break;
 
             case ControlPointKind.Finish:
-                radius = CourseAppearance.finishRadius;
+                radius = NormalCourseAppearance.finishRadius;
                 break;
 
             case ControlPointKind.Start:
-                radius = CourseAppearance.startRadius;
+                radius = NormalCourseAppearance.startRadius;
                 break;
 
             case ControlPointKind.Normal:
-                radius = CourseAppearance.controlRadius;
+                radius = NormalCourseAppearance.controlRadius;
                 break;
 
             default:
