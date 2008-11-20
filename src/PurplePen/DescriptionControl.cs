@@ -148,6 +148,7 @@ namespace PurplePen
         }
 
         // language id for symbol names.
+        [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), System.ComponentModel.Browsable(false)]
         public string LangId
         {
             get

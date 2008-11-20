@@ -1297,6 +1297,17 @@ namespace PurplePen
             eventDB.ChangeEvent(e);
         }
 
+        // Set the course appearance for this event.
+        public static void ChangeCourseAppearance(EventDB eventDB, CourseAppearance courseAppearance)
+        {
+            Event e = eventDB.GetEvent();
+
+            e = (Event) e.Clone();
+            e.courseAppearance = (CourseAppearance) courseAppearance.Clone();
+
+            eventDB.ChangeEvent(e);
+        }
+
         // Change the custom system text for the event.
         public static void ChangeCustomSymbolText(EventDB eventDB, Dictionary<string, List<SymbolText>> customSymbolText, Dictionary<string, bool> customSymbolKey)
         {

@@ -2295,6 +2295,47 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeCourseAppearance()
+        {
+            Setup("changeevent\\sampleevent3.ppen");
+
+            CourseAppearance courseAppearance = new CourseAppearance();
+            courseAppearance.lineWidth = 1.3F;
+            courseAppearance.controlCircleSize = 0.9F;
+            courseAppearance.numberHeight = 1.1F;
+            courseAppearance.useDefaultPurple = false;
+            courseAppearance.purpleC = 0.4F;
+            courseAppearance.purpleM = 0.5F;
+            courseAppearance.purpleY = 0.6F;
+            courseAppearance.purpleK = 0.74F;
+
+            undomgr.BeginCommand(7712, "Change course appearance");
+            ChangeEvent.ChangeCourseAppearance(eventDB, courseAppearance);
+            undomgr.EndCommand(7712);
+
+            eventDB.Validate();
+
+            CourseAppearance n = eventDB.GetEvent().courseAppearance;
+            Assert.AreEqual(1.3F, n.lineWidth);
+            Assert.AreEqual(0.9F, n.controlCircleSize);
+            Assert.AreEqual(1.1F, n.numberHeight);
+            Assert.AreEqual(false, n.useDefaultPurple);
+            Assert.AreEqual(0.4F, n.purpleC);
+            Assert.AreEqual(0.5F, n.purpleM);
+            Assert.AreEqual(0.6F, n.purpleY);
+            Assert.AreEqual(0.74F, n.purpleK);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            n = eventDB.GetEvent().courseAppearance;
+            Assert.AreEqual(1.0F, n.lineWidth);
+            Assert.AreEqual(1.0F, n.controlCircleSize);
+            Assert.AreEqual(1.0F, n.numberHeight);
+            Assert.AreEqual(true, n.useDefaultPurple);
+        }
+
+        [TestMethod]
         public void ChangeCustomSymbolText()
         {
             Setup("changeevent\\sampleevent3.ppen");

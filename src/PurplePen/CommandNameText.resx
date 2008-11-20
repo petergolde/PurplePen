@@ -267,4 +267,7 @@
   <data name="ChangeText" xml:space="preserve">
     <value>Change Text</value>
   </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Customize Course Appearance</value>
+  </data>
 </root>

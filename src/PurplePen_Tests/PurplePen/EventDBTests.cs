@@ -426,9 +426,9 @@ namespace PurplePen.Tests
             e.courseAppearance.numberHeight = 1.1F;
             e.courseAppearance.useDefaultPurple = false;
             e.courseAppearance.purpleC = 0.4F;
-            e.courseAppearance.purpleM = 0.4F;
-            e.courseAppearance.purpleY = 0.4F;
-            e.courseAppearance.purpleK = 0.4F;
+            e.courseAppearance.purpleM = 0.5F;
+            e.courseAppearance.purpleY = 0.6F;
+            e.courseAppearance.purpleK = 0.74F;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

@@ -182,13 +182,16 @@ namespace PurplePen
 
         // Distances that the leg line should go to.
         public const float startRadius = 4.0F;
-        public const float controlRadius = 3.0F - lineThickness / 2F;
+        public const float controlOutsideDiameter = 6.0F;
+        public const float controlRadius = (controlOutsideDiameter / 2F) - lineThickness / 2F;
         public const float finishRadius = 3.5F - lineThickness / 2F;
         public const float crossingRadius = 2.5F;
 
         // Font to use for the control number in regular courses.
         // An Em Height of 5.57 yields the IOF specified 4mm for the height of a digit.
-        public static readonly FontDesc controlNumberFont = new FontDesc("Arial", false, false, 5.57F);
+        public const float nominalControlNumberHeight = 4.0F;          // nominal height from top to bottom of a digit
+        public const float controlNumberHeightFactor = 5.57F / 4.0F;  // scale factor from control number height to font EM size
+        public static readonly FontDesc controlNumberFont = new FontDesc("Arial", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
 
         public const float controlNumberCircleDistance = 2.0F;   // default distance of control number from edge of control circle
 

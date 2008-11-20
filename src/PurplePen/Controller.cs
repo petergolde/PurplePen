@@ -1803,6 +1803,21 @@ namespace PurplePen
             undoMgr.EndCommand(9712);
         }
 
+        // Get the course appearance
+        public CourseAppearance GetCourseAppearance()
+        {
+            Event ev = eventDB.GetEvent();
+            return (CourseAppearance) ev.courseAppearance.Clone();
+        }
+
+        // Change the course appearance
+        public void SetCourseAppearance(CourseAppearance courseAppearance)
+        {
+            undoMgr.BeginCommand(318, CommandNameText.ChangeCourseAppearance);
+            ChangeEvent.ChangeCourseAppearance(eventDB, courseAppearance);
+            undoMgr.EndCommand(318);
+        }
+
         // Get the auto-number values.
         public void GetAutoNumbering(out int firstCode, out bool disallowInvertibleCodes)
         {

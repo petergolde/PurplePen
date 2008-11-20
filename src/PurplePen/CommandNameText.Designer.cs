@@ -196,6 +196,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Customize Course Appearance.
+        /// </summary>
+        internal static string ChangeCourseAppearance {
+            get {
+                return ResourceManager.GetString("ChangeCourseAppearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Course Name.
         /// </summary>
         internal static string ChangeCourseName {

@@ -68,6 +68,12 @@
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseAppearanceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseAppearanceDialog.Designer.cs">
+      <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DebugUI\NewLanguage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -724,6 +730,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ChangeText.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseAppearanceDialog.resx">
+      <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Images\logobkgd.png" />
   </ItemGroup>
