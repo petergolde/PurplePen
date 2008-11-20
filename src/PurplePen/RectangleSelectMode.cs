@@ -218,7 +218,7 @@ namespace PurplePen
     class SelectingRectangleCourseObj: RectCourseObj
     {
         public SelectingRectangleCourseObj(RectangleF rect) :
-            base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, 1.0F, rect)
+            base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, 1.0F, new CourseAppearance(), rect)
         {}
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)

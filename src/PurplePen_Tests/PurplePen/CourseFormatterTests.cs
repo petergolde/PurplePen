@@ -64,7 +64,7 @@ namespace PurplePen.Tests
             else
                 courseView = CourseView.CreateCourseView(eventDB, courseId);
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, layer);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, layer);
 
             // Dump it to a string.
             StringWriter writer = new StringWriter();
@@ -502,14 +502,14 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
                 courseView = CourseView.CreateCourseView(eventDB, courseId);
                 course = new CourseLayout();
-                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
                 course.Dump(Console.Out);
                 Console.WriteLine();
             }
 
             courseView = CourseView.CreateAllControlsView(eventDB);
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             course.Dump(Console.Out);
         }
 

@@ -65,13 +65,13 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Add all controls if requested.
             if (addAllControls && courseId.IsNotNone) {
                 courseView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { courseId }, ControlPointKind.None, false, true);
                 course.SetLayerColor(CourseLayer.AllControls, 12, "LightPurple", 0.1F, 0.5F, 0.0F, 0.0F);
-                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.AllControls);
+                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.AllControls);
             }
 
             // Render to a map

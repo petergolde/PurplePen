@@ -371,7 +371,7 @@ namespace PurplePen
                     Id<CourseControl> nextCourseControl = (nextIndex >= 0) ? courseView.ControlViews[nextIndex].courseControlId : Id<CourseControl>.None;
 
                     // Get additional highlights to and from those controls.
-                    additionalHighlights = AddControlMode.CreateLegHighlights(eventDB, ((PointCourseObj) courseObjectDrag).location, courseObjectDrag.controlId, control.kind, prevCourseControl, nextCourseControl, courseView.ScaleRatio);
+                    additionalHighlights = AddControlMode.CreateLegHighlights(eventDB, ((PointCourseObj) courseObjectDrag).location, courseObjectDrag.controlId, control.kind, prevCourseControl, nextCourseControl, courseView.ScaleRatio, courseObjectStart.appearance);
 
                     // If we're dragging the start, update the angle of the start appropriately.
                     if (control.kind == ControlPointKind.Start && additionalHighlights.Length > 0) {

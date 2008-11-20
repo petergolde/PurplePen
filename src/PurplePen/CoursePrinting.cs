@@ -86,9 +86,10 @@ namespace PurplePen
         private SymbolDB symbolDB;
         private Controller controller;
         private MapDisplay mapDisplay;
+        private CourseAppearance appearance;
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
-        public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings)
+        public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
             : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
         {
             this.eventDB = eventDB;
@@ -96,6 +97,7 @@ namespace PurplePen
             this.controller = controller;
             this.mapDisplay = mapDisplay;
             this.coursePrintSettings = coursePrintSettings;
+            this.appearance = appearance;
 
             // Set default features for printing.
             mapDisplay.MapIntensity = 1.0F;
@@ -265,20 +267,13 @@ namespace PurplePen
             // Get the correct purple color to print the course in.
             short ocadId;
             float purpleC, purpleM, purpleY, purpleK;
-            if (! FindPurple.FindPurpleColor(mapDisplay.GetMapColors(), out ocadId, out purpleC, out purpleM, out purpleY, out purpleK)) {
-                // Use a default purple.
-                ocadId = NormalCourseAppearance.courseOcadId;
-                purpleC = NormalCourseAppearance.courseColorC;
-                purpleM = NormalCourseAppearance.courseColorM;
-                purpleY = NormalCourseAppearance.courseColorY;
-                purpleK = NormalCourseAppearance.courseColorK;
-            }
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out purpleC, out purpleM, out purpleY, out purpleK);
 
             // Create a course layout from the view.
             CourseLayout layout = new CourseLayout();
             layout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
             layout.SetLayerColor(CourseLayer.MainCourse, ocadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, layout, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, layout, CourseLayer.MainCourse);
 
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);

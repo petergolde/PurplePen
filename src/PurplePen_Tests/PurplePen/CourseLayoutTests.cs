@@ -73,7 +73,7 @@ namespace PurplePen.Tests
             // Create the all controls course
             courseView = CourseView.CreateAllControlsView(eventDB);
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
 
             CheckHitTest(course, new PointF(9.0F, 12.4F), 0, null, "Water:          special:1  scale:1  location:(7.996275,12.34392)");
             CheckHitTest(course, new PointF(54.7F, 12.2F), 0, null, null);
@@ -85,7 +85,7 @@ namespace PurplePen.Tests
             // Create course 3
             courseView = CourseView.CreateCourseView(eventDB, CourseId(3));
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
 
             CheckHitTest(course, new PointF(-3.5F, 10.3F), 0, null, "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:11111111111111111111111111111111");
             CheckHitTest(course, new PointF(35.6F, 17.7F), 0, null, null);
@@ -96,7 +96,7 @@ namespace PurplePen.Tests
 
             // Add in all controls.  Test with true and false for all Layers.
             courseView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { CourseId(3) }, ControlPointKind.Normal, false, true);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.AllControls);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.AllControls);
 
             CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.All, null, @"Control:        layer:2  control:76  scale:1  location:(5.6,-5.7)  gaps:11111111111111111111111111111111");
             CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.MainCourse, null, null);
@@ -124,7 +124,7 @@ namespace PurplePen.Tests
             // Create the all controls course
             courseView = CourseView.CreateAllControlsView(eventDB);
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             RectangleF bounding = course.BoundingRect();
             RectangleF expected = new RectangleF(-16.05F, -34.22F, 151.44F, 79.67F);
             TestUtil.AssertEqualRect(expected, bounding, 0.01F, "Bounding rect all controls");
@@ -132,7 +132,7 @@ namespace PurplePen.Tests
             // Try course 1
             courseView = CourseView.CreateCourseView(eventDB, CourseId(1));
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             bounding = course.BoundingRect();
             expected = RectangleF.FromLTRB(-2.1F, -32.6F, 62.6F, 27.3F);
             TestUtil.AssertEqualRect(expected, bounding, 0.1F, "Bounding rect course 1");
@@ -140,7 +140,7 @@ namespace PurplePen.Tests
             // Try course with control descriptions on it.
             courseView = CourseView.CreateCourseView(eventDB, CourseId(10));
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             bounding = course.BoundingRect();
             expected = RectangleF.FromLTRB(6.0F, -40.1F, 127.9F, 36.9F);
             TestUtil.AssertEqualRect(expected, bounding, 0.1F, "Bounding rect course 10");
@@ -148,7 +148,7 @@ namespace PurplePen.Tests
             // Do an empty course
             courseView = CourseView.CreateCourseView(eventDB, CourseId(11));
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             bounding = course.BoundingRect();
             expected = RectangleF.FromLTRB(0,0,0,0);
             TestUtil.AssertEqualRect(expected, bounding, 0.001F, "Bounding rect blank course");
@@ -172,14 +172,14 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create the all controls course again
             courseView2 = CourseView.CreateAllControlsView(eventDB);
             course2 = new CourseLayout();
             course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, course2, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.
             Assert.AreEqual(course, course, "CourseLayouts that are equivalent should compare equal.");
@@ -203,14 +203,14 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create it again
             courseView2 = CourseView.CreateCourseView(eventDB, CourseId(3));
             course2 = new CourseLayout();
             course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, course2, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.
             Assert.AreEqual(course, course, "CourseLayouts that are equivalent should compare equal.");

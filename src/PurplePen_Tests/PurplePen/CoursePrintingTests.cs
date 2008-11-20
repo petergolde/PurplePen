@@ -132,7 +132,7 @@ namespace PurplePen.Tests
             mapDisplay.SetMapFile(controller.MapType, controller.MapFileName);
 
             // Get the pages of the printing.
-            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings);
+            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, defaultCourseAppearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
             coursePrinter.Dispose();
 

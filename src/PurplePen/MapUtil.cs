@@ -142,5 +142,33 @@ namespace PurplePen
             cyan = 0; magenta = 0; yellow = 0; black = 0;
             return false;
         }
+
+        // Get the purple color to use for display, taking into account the user preferences in courseAppearance, the map loaded into the mapDisplay, 
+        // and the default purple if none of those provide a color. MapDisplay and courseAppearance can be null, in which case they won't be used.
+        public static void GetPurpleColor(MapDisplay mapDisplay, CourseAppearance courseAppearance, out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
+        {
+            if (courseAppearance != null && !courseAppearance.useDefaultPurple) {
+                // Use the purple from the course display.
+                cyan = courseAppearance.purpleC;
+                magenta = courseAppearance.purpleM;
+                yellow = courseAppearance.purpleY;
+                black = courseAppearance.purpleK;
+                ocadId = NormalCourseAppearance.courseOcadId;
+                return;
+            }
+            else if (mapDisplay != null && FindPurpleColor(mapDisplay.GetMapColors(), out ocadId, out cyan, out magenta, out yellow, out black)) {
+                // FindPurpleColor found a purple to use.
+                return;
+            }
+            else {
+                // Use the program default.
+                ocadId = NormalCourseAppearance.courseOcadId;
+                cyan = NormalCourseAppearance.courseColorC;
+                magenta = NormalCourseAppearance.courseColorM;
+                yellow = NormalCourseAppearance.courseColorY;
+                black = NormalCourseAppearance.courseColorK;
+                return;
+            }
+        }
     }
 }

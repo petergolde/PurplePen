@@ -55,17 +55,19 @@ namespace PurplePen
         public Id<CourseControl> courseControlId;             // Id of associated course control (control/start/finish/crossing)
         public Id<Special> specialId;                                // Id of special (water/dangerous/etc)
         public float scaleRatio;                   // scale to display in (1.0 is normal scale).
+        public CourseAppearance appearance;       // customize course appearance
 
         static Brush highlightBrush;             // brush used to draw highlights.
 
         public const int HANDLESIZE = 5;          // side of a square handle (should be odd).
 
-        protected CourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio)
+        protected CourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance)
         {
             this.controlId = controlId;
             this.courseControlId = courseControlId;
             this.specialId = specialId;
             this.scaleRatio = scaleRatio;
+            this.appearance = appearance;
         }
 
         // Add the given course object to the map, creating a SymDef if needed. The passed dictionary
@@ -280,8 +282,8 @@ namespace PurplePen
         float radius;                                 // radius of the object (for hit-testing) -- unscaled.
 
 
-        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, uint gaps, float orientation, float radius, PointF location) :
-           base(controlId, courseControlId, specialId, scaleRatio)
+        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, uint gaps, float orientation, float radius, PointF location) :
+           base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
             this.gaps = gaps;
             this.orientation = orientation;
@@ -421,8 +423,8 @@ namespace PurplePen
         public LegGap[] gaps;                     // Gaps (can be null)
         float thickness;                               // thickness of the line  (unscaled)        
 
-        protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float scaleRatio, float thickness, SymPath path, LegGap[] gaps) :
-           base(controlId, courseControlId, specialId, scaleRatio)
+        protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float thickness, SymPath path, LegGap[] gaps) :
+           base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
            this.courseControlId2 = courseControlId2;
            this.thickness = thickness;
@@ -611,8 +613,8 @@ namespace PurplePen
         // NOTE: if new fields are added, update Equals implementation.
         SymPathWithHoles path;                // closed path with the area to fill
 
-        protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, PointF[] pts):
-           base(controlId, courseControlId, specialId, scaleRatio)
+        protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts) :
+           base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
             bool lastPtSynthesized = false;
 
@@ -746,9 +748,9 @@ namespace PurplePen
         // NOTE: if new fields are added, update Equals implementation.
         public RectangleF rect;                // rectangle with the area.
 
-        protected RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, RectangleF rect)
+        protected RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
             :
-           base(controlId, courseControlId, specialId, scaleRatio)
+           base(controlId, courseControlId, specialId, scaleRatio, appearance)
         {
             this.rect = rect;
         }
@@ -909,8 +911,8 @@ namespace PurplePen
     {
         private float aspect;                    // aspect to maintain: width / height
 
-        public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, RectangleF rect)
-            : base (controlId, courseControlId, specialId, scaleRatio, rect)
+        public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
+            : base (controlId, courseControlId, specialId, scaleRatio, appearance, rect)
         {
             if (rect.Height != 0)
                 aspect = rect.Width / rect.Height;
@@ -995,7 +997,7 @@ namespace PurplePen
         // NOTE: scale ratio is not used for this type of object!
         public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight)
             :
-           base(controlId, courseControlId, specialId, 1.0F)
+           base(controlId, courseControlId, specialId, 1.0F, new CourseAppearance())
        {
             this.text = text;
             this.topLeft = topLeft;
@@ -1166,8 +1168,8 @@ namespace PurplePen
     {
         public const float diameter = 6.0F;
 
-        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, uint gaps, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, gaps, 0, 3.0F, location)
+        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.0F, location)
         {
         }
 
@@ -1228,8 +1230,8 @@ namespace PurplePen
         // Coordinates of the triangle.
         static readonly PointF[] coords = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
 
-        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio,  float orientation, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, 0xFFFFFFFF, orientation, 4.041F, location)
+        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, 0xFFFFFFFF, orientation, 4.041F, location)
         {
         }
 
@@ -1279,8 +1281,8 @@ namespace PurplePen
     // Finish circle
     class FinishCourseObj : PointCourseObj
     {
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, uint gaps, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, gaps, 0, 3.5F, location)
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.5F, location)
         {
         }
 
@@ -1352,8 +1354,8 @@ namespace PurplePen
                 new PointF(-0.5F, -0.5F), new PointF(-1.5F, -0.5F), new PointF(-1.5F,  0.5F), new PointF(-0.5F, 0.5F), new PointF(-0.5F, 1.5F) 
             };
 
-        public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, 0xFFFFFFFF, 0, 1.5F, location)
+        public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
         {
         }
 
@@ -1429,8 +1431,8 @@ namespace PurplePen
                 new PointF(-1.5F, 1.375F), new PointF(-1.0F, -1.5F),
             };
 
-        public WaterCourseObj(Id<Special> specialId, float scaleRatio, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, 0xFFFFFFFF, 0, 2.0F, location)
+        public WaterCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
         {
         }
 
@@ -1491,8 +1493,8 @@ namespace PurplePen
         static readonly PointF[] coords1 = { new PointF(-0.85F, -1.5F), new PointF(-0.35F, -0.65F), new PointF(-0.35F, 0.65F), new PointF(-0.85F, 1.5F) };
         static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
-        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, float orientation, PointF location)
-            : base(controlId, courseControlId, specialId, scaleRatio, 0xFFFFFFFF, orientation, 1.72F, location)
+        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
+            : base(controlId, courseControlId, specialId, scaleRatio, appearance, 0xFFFFFFFF, orientation, 1.72F, location)
         {
         }
 
@@ -1572,8 +1574,8 @@ namespace PurplePen
         PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(0F, -2F), new PointF(0F, 2F) };
 
-        public RegMarkCourseObj(Id<Special> specialId, float scaleRatio, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, 0xFFFFFFFF, 0, 2.0F, location)
+        public RegMarkCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
         {
         }
 
@@ -1623,8 +1625,8 @@ namespace PurplePen
         PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(1.06F, -1.06F), new PointF(-1.06F, 1.06F) };
 
-        public ForbiddenCourseObj(Id<Special> specialId, float scaleRatio, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, 0xFFFFFFFF, 0, 1.5F, location)
+        public ForbiddenCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
         {
         }
 
@@ -1669,8 +1671,8 @@ namespace PurplePen
     // A normal leg
     class LegCourseObj : LineCourseObj
     {
-        public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, NormalCourseAppearance.lineThickness, path, gaps)
+        public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, NormalCourseAppearance.lineThickness, path, gaps)
         {
         }
 
@@ -1691,8 +1693,8 @@ namespace PurplePen
     // A flagged leg
     class FlaggedLegCourseObj : LineCourseObj
     {
-        public FlaggedLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, NormalCourseAppearance.lineThickness, path, gaps)
+        public FlaggedLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, NormalCourseAppearance.lineThickness, path, gaps)
         {
         }
 
@@ -1720,8 +1722,8 @@ namespace PurplePen
     // A boundary
     class BoundaryCourseObj : LineCourseObj
     {
-        public BoundaryCourseObj(Id<Special> specialId, float scaleRatio, SymPath path)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, scaleRatio, 0.7F, path, null)
+        public BoundaryCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, SymPath path)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0.7F, path, null)
         {
         }
 
@@ -1737,8 +1739,8 @@ namespace PurplePen
     // An out of bounds area
     class OOBCourseObj : AreaCourseObj
     {
-        public OOBCourseObj(Id<Special> specialId, float scaleRatio, PointF[] pts)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, pts)
+        public OOBCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
         {
         }
 
@@ -1755,8 +1757,8 @@ namespace PurplePen
     // A dangerous area
     class DangerousCourseObj : AreaCourseObj
     {
-        public DangerousCourseObj(Id<Special> specialId, float scaleRatio, PointF[] pts)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, pts)
+        public DangerousCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
         {
         }
 
@@ -1777,7 +1779,7 @@ namespace PurplePen
     {
         public PointF centerPoint;
 
-        public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, string text, PointF centerPoint)
+        public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberFont.Style, NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio)
         {
             // Update the top left coord so the text is centered on centerPoint.
@@ -1801,7 +1803,7 @@ namespace PurplePen
     {
         public PointF centerPoint;
 
-        public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, string text, PointF centerPoint)
+        public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio)
         {
             // Update the top left coord so the text is centered on centerPoint.
@@ -1973,7 +1975,7 @@ namespace PurplePen
 
         // Create a new description course object.
         public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, GetRect(topLeft, cellSize, symbolDB, description, kind))
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind))
         {
             // Create the renderer.
             renderer = new DescriptionRenderer(symbolDB);

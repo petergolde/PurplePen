@@ -57,9 +57,8 @@ namespace PurplePen
     // is a CourseLayout. It does not include the description block itself.
     static class CourseFormatter
     {
-
         // Format the given CourseView into a bunch of course objects, and add it to the given course Layout
-        public static void FormatCourseToLayout(SymbolDB symbolDB, CourseView courseView, CourseLayout courseLayout, CourseLayer layer)
+        public static void FormatCourseToLayout(SymbolDB symbolDB, CourseView courseView, CourseAppearance appearance, CourseLayout courseLayout, CourseLayer layer)
         {
             EventDB eventDB = courseView.EventDB;
             CourseView.CourseViewKind kind = courseView.Kind;
@@ -69,7 +68,7 @@ namespace PurplePen
 
             // Go through all the specials in the view and process them to create course objects
             foreach(Id<Special> specialId in courseView.SpecialIds) {
-                courseObj = CreateSpecial(eventDB, symbolDB, courseView, scaleRatio, specialId, layer);
+                courseObj = CreateSpecial(eventDB, symbolDB, courseView, scaleRatio, appearance, specialId, layer);
                 if (courseObj != null)
                     courseLayout.AddCourseObject(courseObj);
             }
@@ -82,7 +81,7 @@ namespace PurplePen
                 double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
 
                 // Get the normal course object associated with this control.
-                courseObj = CreateCourseObject(eventDB, scaleRatio, courseView.PrintScale, controlView, angleOut);
+                courseObj = CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale, controlView, angleOut);
                 if (courseObj != null) {
                     courseObj.layer = layer;
                     courseLayout.AddCourseObject(courseObj);
@@ -91,9 +90,9 @@ namespace PurplePen
                 // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
                 if (CustomPlaceNumber(eventDB, controlView)) {
                     if (kind == CourseView.CourseViewKind.Normal)
-                        courseObj = CreateControlNumber(eventDB, scaleRatio, controlView, courseLayout);
+                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
-                        courseObj = CreateCode(eventDB, scaleRatio, controlView, courseLayout);
+                        courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
 
                     if (courseObj != null) {
                         courseObj.layer = layer;
@@ -105,7 +104,7 @@ namespace PurplePen
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
-                            CourseObj[] courseObjs = CreateLeg(eventDB, scaleRatio, controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
+                            CourseObj[] courseObjs = CreateLeg(eventDB, scaleRatio, appearance, controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
                             if (courseObjs != null) {
                                 foreach (CourseObj o in courseObjs) {
                                     o.layer = layer;
@@ -126,9 +125,9 @@ namespace PurplePen
                 // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
                 if (! CustomPlaceNumber(eventDB, controlView)) {
                     if (kind == CourseView.CourseViewKind.Normal)
-                        courseObject = CreateControlNumber(eventDB, scaleRatio, controlView, courseLayout);
+                        courseObject = CreateControlNumber(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
-                        courseObject = CreateCode(eventDB, scaleRatio, controlView, courseLayout);
+                        courseObject = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
 
                     if (courseObject != null) {
                         courseObject.layer = layer;
@@ -150,7 +149,7 @@ namespace PurplePen
         }
 
         // Create the control number text object, avoiding existing objects on the map.
-        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
+        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlId);
@@ -172,7 +171,7 @@ namespace PurplePen
                                                                                   text, NormalCourseAppearance.controlNumberFont, scaleRatio, existingObjects);
                 }
 
-                return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, text, textCenterLocation);
+                return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
             }
             else {
                 // Only normal controls have numbers.
@@ -181,7 +180,7 @@ namespace PurplePen
         }
 
         // Create the control code text object, avoiding existing objects on the map.
-        private static CourseObj CreateCode(EventDB eventDB, float scaleRatio, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
+        private static CourseObj CreateCode(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl = controlView.courseControlId.IsNotNone ? eventDB.GetCourseControl(controlView.courseControlId) : null;
@@ -204,7 +203,7 @@ namespace PurplePen
                                                                                  text, NormalCourseAppearance.controlCodeFont, scaleRatio, existingObjects);
                 }
 
-                return new CodeCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, text, textCenterLocation);
+                return new CodeCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
             }
             else {
                 // Only normal controls get codes.
@@ -392,28 +391,28 @@ namespace PurplePen
         }
 
         // Create the course objects associated with this special. Assign the given layer to it.
-        static CourseObj CreateSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView courseView, float scaleRatio, Id<Special> specialId, CourseLayer normalLayer)
+        static CourseObj CreateSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView courseView, float scaleRatio, CourseAppearance appearance, Id<Special> specialId, CourseLayer normalLayer)
         {
             Special special = eventDB.GetSpecial(specialId);
             CourseObj courseObj = null;
 
             switch (special.kind) {
             case SpecialKind.FirstAid:
-                courseObj = new FirstAidCourseObj(specialId, scaleRatio, special.locations[0]); break;
+                courseObj = new FirstAidCourseObj(specialId, scaleRatio, appearance, special.locations[0]); break;
             case SpecialKind.Water:
-                courseObj = new WaterCourseObj(specialId, scaleRatio, special.locations[0]); break;
+                courseObj = new WaterCourseObj(specialId, scaleRatio, appearance, special.locations[0]); break;
             case SpecialKind.OptCrossing:
-                courseObj = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, special.orientation, special.locations[0]); break;
+                courseObj = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, special.orientation, special.locations[0]); break;
             case SpecialKind.Forbidden:
-                courseObj = new ForbiddenCourseObj(specialId, scaleRatio, special.locations[0]); break;
+                courseObj = new ForbiddenCourseObj(specialId, scaleRatio, appearance, special.locations[0]); break;
             case SpecialKind.RegMark:
-                courseObj = new RegMarkCourseObj(specialId, scaleRatio, special.locations[0]); break;
+                courseObj = new RegMarkCourseObj(specialId, scaleRatio, appearance, special.locations[0]); break;
             case SpecialKind.Boundary:
-                courseObj = new BoundaryCourseObj(specialId, scaleRatio, new SymPath(special.locations)); break;
+                courseObj = new BoundaryCourseObj(specialId, scaleRatio, appearance, new SymPath(special.locations)); break;
             case SpecialKind.OOB:
-                courseObj = new OOBCourseObj(specialId, scaleRatio, special.locations); break;
+                courseObj = new OOBCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.Dangerous:
-                courseObj = new DangerousCourseObj(specialId, scaleRatio, special.locations); break;
+                courseObj = new DangerousCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.Text:
                 string text = ExpandText(eventDB, courseView, special.text);
                 FontStyle fontStyle = special.fontBold ? FontStyle.Bold : FontStyle.Regular;
@@ -491,7 +490,7 @@ namespace PurplePen
 
         // Create the object associated with the control/start/finish etc with this control view.
         // AngleOut is the direction IN RADIANs leaving the control.
-        static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, float printScale, CourseView.ControlView controlView, double angleOut)
+        static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             uint gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
@@ -499,19 +498,19 @@ namespace PurplePen
 
             switch (control.kind) {
             case ControlPointKind.Start:
-                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, double.IsNaN(angleOut) ? 0 : (float)Util.RadiansToDegrees(angleOut), control.location);
+                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Util.RadiansToDegrees(angleOut), control.location);
                 break;
 
             case ControlPointKind.Finish:
-                courseObj = new FinishCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, gaps, control.location);
+                courseObj = new FinishCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.Normal:
-                courseObj = new ControlCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, gaps, control.location);
+                courseObj = new ControlCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.CrossingPoint:
-                courseObj = new CrossingCourseObj(controlView.controlId, controlView.courseControlId, Id<Special>.None, scaleRatio, control.orientation, control.location);
+                courseObj = new CrossingCourseObj(controlView.controlId, controlView.courseControlId, Id<Special>.None, scaleRatio, appearance, control.orientation, control.location);
                 break;
 
             default:
@@ -538,7 +537,7 @@ namespace PurplePen
 
         // Create a single object associated with the leg from courseControlId1 to courseControlId2. Does not consider
         // flagging (but does consider bends and gaps.) Used for highlighting on the map. 
-        public static CourseObj CreateSimpleLeg(EventDB eventDB, float scaleRatio, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
+        public static CourseObj CreateSimpleLeg(EventDB eventDB, float scaleRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
         {
             Id<ControlPoint> controlId1 = eventDB.GetCourseControl(courseControlId1).control;
             Id<ControlPoint> controlId2 = eventDB.GetCourseControl(courseControlId2).control;
@@ -546,16 +545,16 @@ namespace PurplePen
             ControlPoint control2 = eventDB.GetControl(controlId2);
             LegGap[] gaps;
 
-            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlId1, control2.location, control2.kind, controlId2, scaleRatio, out gaps);
+            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlId1, control2.location, control2.kind, controlId2, scaleRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
-            return new LegCourseObj(controlId1, courseControlId1, courseControlId2, scaleRatio, legPath, gaps);
+            return new LegCourseObj(controlId1, courseControlId1, courseControlId2, scaleRatio, appearance, legPath, gaps);
         }
 
         // Create the objects associated with the leg from controlView1 to controlView2. Could be multiple because
         // a leg may be partly flagged, and so forth. Gaps do not create separate course objects.
-        private static CourseObj[] CreateLeg(EventDB eventDB, float scaleRatio, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
+        private static CourseObj[] CreateLeg(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
         {
             ControlPoint control1 = eventDB.GetControl(controlView1.controlId);
             ControlPoint control2 = eventDB.GetControl(controlView2.controlId);
@@ -567,7 +566,7 @@ namespace PurplePen
             LegGap[] gaps;                // What kind of gaps are present? Null array if none 
 
             // Get the path of the line, and the gaps.
-            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlView1.controlId, control2.location, control2.kind, controlView2.controlId, scaleRatio, out gaps);
+            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlView1.controlId, control2.location, control2.kind, controlView2.controlId, scaleRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
@@ -606,9 +605,9 @@ namespace PurplePen
             CourseObj[] objs = new CourseObj[paths.Count];
             for (int i = 0; i < paths.Count; ++i) {
                 if (isFlagged[i]) 
-                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, paths[i], gapsList[i]);
+                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, appearance, paths[i], gapsList[i]);
                 else
-                    objs[i] = new LegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, paths[i], gapsList[i]);
+                    objs[i] = new LegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, appearance, paths[i], gapsList[i]);
             }
 
             return objs;
@@ -618,7 +617,7 @@ namespace PurplePen
         // be of zero length, return null. The controlIds for the start and end points are optional -- if supplied, they are used
         // to deal with bends and gaps. If either is None, then the legs don't use bends or gaps. Returns the gaps to used
         // with the radius subtracted from them.
-        public static SymPath GetLegPath(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, float scaleRatio, out LegGap[] gaps)
+        public static SymPath GetLegPath(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, float scaleRatio, CourseAppearance appearance, out LegGap[] gaps)
         {
             PointF[] bends = null;
             gaps = null;
@@ -635,7 +634,7 @@ namespace PurplePen
                 }
             }
 
-            return GetLegPath(pt1, GetLegRadius(kind1, scaleRatio), pt2, GetLegRadius(kind2, scaleRatio), bends, gaps);
+            return GetLegPath(pt1, GetLegRadius(kind1, scaleRatio, appearance), pt2, GetLegRadius(kind2, scaleRatio, appearance), bends, gaps);
         }
 
         // Create a path from pt1 to pt2, with the given radius around the legs. If the leg would
@@ -675,7 +674,7 @@ namespace PurplePen
         }
 
         // Get the radius of where the leg should start from a control point of a given kind.
-        private static double GetLegRadius(ControlPointKind controlKind, float scaleRatio)
+        private static double GetLegRadius(ControlPointKind controlKind, float scaleRatio, CourseAppearance appearance)
         {
             double radius;
 

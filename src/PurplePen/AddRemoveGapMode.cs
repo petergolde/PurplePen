@@ -210,7 +210,7 @@ namespace PurplePen
 
             // Put the new gaps into the highlight.
             courseObjDrag = new LegCourseObj(courseObjStart.controlId, courseObjStart.courseControlId, courseObjStart.courseControlId2,
-                courseObjStart.scaleRatio, courseObjStart.path, newGaps);
+                courseObjStart.scaleRatio, courseObjStart.appearance, courseObjStart.path, newGaps);
 
             displayUpdateNeeded = true;
         }

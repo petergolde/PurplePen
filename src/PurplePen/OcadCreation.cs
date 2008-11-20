@@ -45,13 +45,15 @@ namespace PurplePen
         SymbolDB symbolDB;
         EventDB eventDB;
         Controller controller;
+        CourseAppearance courseAppearance;
         OcadCreationSettings creationSettings;
 
-        public OcadCreation(SymbolDB symbolDB, EventDB eventDB, Controller controller, OcadCreationSettings creationSettings)
+        public OcadCreation(SymbolDB symbolDB, EventDB eventDB, Controller controller, CourseAppearance courseAppearance, OcadCreationSettings creationSettings)
         {
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
             this.controller = controller;
+            this.courseAppearance = courseAppearance;
             this.creationSettings = creationSettings;
         }
 
@@ -63,7 +65,7 @@ namespace PurplePen
             courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
             courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
                 creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseLayout, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseAppearance, courseLayout, CourseLayer.MainCourse);
 
             // Create the map and write it out.
             Map map = courseLayout.RenderToMap();

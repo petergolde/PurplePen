@@ -54,6 +54,7 @@ namespace PurplePen
         bool allControls;                  // Are we in All Controls (true), or adding to a course (false)
         ControlPointKind controlKind;      // Kind of control we are adding.
         float scaleRatio;
+        CourseAppearance appearance;
 
         PointCourseObj highlight;    // the highlight of the control we are creating.
         CourseObj[] additionalHighlights;  // additional highlights to show also. 
@@ -67,6 +68,7 @@ namespace PurplePen
             this.allControls = allControls;
             this.controlKind = controlKind;
             this.scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
+            this.appearance = controller.GetCourseAppearance();
         }
 
         public override void BeginMode()
@@ -284,26 +286,26 @@ namespace PurplePen
 
             switch (controlKind) {
             case ControlPointKind.Normal:
-                highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, 0xFFFFFFFF, highlightLocation);
+                highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
 
                 if (courseId.IsNotNone && eventDB.GetCourse(courseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
-                    additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio);
+                    additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
                 break;
 
             case ControlPointKind.Start:
-                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, 0, highlightLocation);
+                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
                 break;
             case ControlPointKind.Finish:
-                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, 0xFFFFFFFF, highlightLocation);
+                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
                 break;
             case ControlPointKind.CrossingPoint:
-                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, scaleRatio, 0, highlightLocation);
+                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, scaleRatio, appearance, 0, highlightLocation);
 
                 if (courseId.IsNotNone && eventDB.GetCourse(courseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
-                    additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio);
+                    additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
                 break;
             default:
@@ -316,13 +318,13 @@ namespace PurplePen
 
         // Create a leg object from one point to another. Might return null. The controlIds can be None, but if they are supplied, then
         // they are used to handle bends. If either is null, the leg object is just straight. Gaps are never displayed.
-        private static LegCourseObj CreateLegHighlight(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, float scaleRatio)
+        private static LegCourseObj CreateLegHighlight(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, float scaleRatio, CourseAppearance appearance)
         {
             LegGap[] gaps;
 
-            SymPath path = CourseFormatter.GetLegPath(eventDB, pt1, kind1, controlId1, pt2, kind2, controlId2, scaleRatio, out gaps);
+            SymPath path = CourseFormatter.GetLegPath(eventDB, pt1, kind1, controlId1, pt2, kind2, controlId2, scaleRatio, appearance, out gaps);
             if (path != null)
-                return new LegCourseObj(controlId1, Id<CourseControl>.None, Id<CourseControl>.None, scaleRatio, path, null);     // We never display the gaps, because it looks dumb.
+                return new LegCourseObj(controlId1, Id<CourseControl>.None, Id<CourseControl>.None, scaleRatio, appearance, path, null);     // We never display the gaps, because it looks dumb.
             else
                 return null;
         }
@@ -330,14 +332,14 @@ namespace PurplePen
         // Create highlights to and from a point to course controls. If controlDrag is set (optional), it is 
         // used to get the correct bends for legs.
         // Static because it is used from DragControlMode also.
-        public static CourseObj[] CreateLegHighlights(EventDB eventDB, PointF newPoint, Id<ControlPoint>controlDrag, ControlPointKind controlKind, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, float scaleRatio)
+        public static CourseObj[] CreateLegHighlights(EventDB eventDB, PointF newPoint, Id<ControlPoint>controlDrag, ControlPointKind controlKind, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance)
         {
             List<CourseObj> highlights = new List<CourseObj>();
 
             if (courseControlId1.IsNotNone) {
                 Id<ControlPoint> controlId1 = eventDB.GetCourseControl(courseControlId1).control;
                 ControlPoint control1 = eventDB.GetControl(controlId1);
-                LegCourseObj highlight = CreateLegHighlight(eventDB, control1.location, control1.kind, controlId1, newPoint, controlKind, controlDrag, scaleRatio);
+                LegCourseObj highlight = CreateLegHighlight(eventDB, control1.location, control1.kind, controlId1, newPoint, controlKind, controlDrag, scaleRatio, appearance);
                 if (highlight != null)
                     highlights.Add(highlight);
             }
@@ -345,7 +347,7 @@ namespace PurplePen
             if (courseControlId2.IsNotNone) {
                 Id<ControlPoint> controlId2 = eventDB.GetCourseControl(courseControlId2).control;
                 ControlPoint control2 = eventDB.GetControl(controlId2);
-                LegCourseObj highlight = CreateLegHighlight(eventDB, newPoint, controlKind, controlDrag, control2.location, control2.kind, controlId2, scaleRatio);
+                LegCourseObj highlight = CreateLegHighlight(eventDB, newPoint, controlKind, controlDrag, control2.location, control2.kind, controlId2, scaleRatio, appearance);
                 if (highlight != null)
                     highlights.Add(highlight);
             }
@@ -365,6 +367,7 @@ namespace PurplePen
         EventDB eventDB;
         SpecialKind specialKind;      // Kind of special we are adding.
         float scaleRatio;
+        CourseAppearance appearance;
 
         PointCourseObj highlight;    // the highlight we are creating.
 
@@ -376,6 +379,7 @@ namespace PurplePen
             this.eventDB = eventDB;
             this.specialKind = specialKind;
             this.scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
+            this.appearance = controller.GetCourseAppearance();
         }
 
         public override void BeginMode()
@@ -442,19 +446,19 @@ namespace PurplePen
             // Note, we cannot change this existing highlight because it is needed for erasing.
             switch (specialKind) {
             case SpecialKind.FirstAid:
-                highlight = new FirstAidCourseObj(Id<Special>.None, scaleRatio, highlightLocation);
+                highlight = new FirstAidCourseObj(Id<Special>.None, scaleRatio, appearance, highlightLocation);
                 break;
             case SpecialKind.Water:
-                highlight = new WaterCourseObj(Id<Special>.None, scaleRatio, highlightLocation);
+                highlight = new WaterCourseObj(Id<Special>.None, scaleRatio, appearance, highlightLocation);
                 break;
             case SpecialKind.OptCrossing:
-                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, scaleRatio, 0, highlightLocation);
+                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, scaleRatio, appearance, 0, highlightLocation);
                 break;
             case SpecialKind.Forbidden:
-                highlight = new ForbiddenCourseObj(Id<Special>.None, scaleRatio, highlightLocation);
+                highlight = new ForbiddenCourseObj(Id<Special>.None, scaleRatio, appearance, highlightLocation);
                 break;
             case SpecialKind.RegMark:
-                highlight = new RegMarkCourseObj(Id<Special>.None, scaleRatio, highlightLocation);
+                highlight = new RegMarkCourseObj(Id<Special>.None, scaleRatio, appearance, highlightLocation);
                 break;
             default:
                 throw new Exception("bad special kind");
@@ -477,6 +481,7 @@ namespace PurplePen
         SpecialKind specialKind;      // Kind of special we are adding.
         bool isArea;                     // is it an area special?
         float scaleRatio;
+        CourseAppearance appearance;
 
         List<PointF> points = new List<PointF>();      // the list of coordinates in the path we are creating.
         int numberFixedPoints = 0;                          // number of coordinates now fixed in place. 
@@ -492,6 +497,7 @@ namespace PurplePen
             this.specialKind = specialKind;
             this.isArea = isArea;
             this.scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
+            this.appearance = controller.GetCourseAppearance();
         }
 
         public override string StatusText
@@ -579,7 +585,7 @@ namespace PurplePen
                 points[numberFixedPoints] = newPoint;
 
             if (points.Count >= 2)
-                highlight = new BoundaryCourseObj(Id<Special>.None, scaleRatio, new SymPath(points.ToArray()));
+                highlight = new BoundaryCourseObj(Id<Special>.None, scaleRatio, appearance, new SymPath(points.ToArray()));
         }
 
         // Create the object with the number of fixed points there are, if there are enough. Returns true if object was created, false

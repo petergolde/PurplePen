@@ -696,7 +696,7 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings)) {
+                    using (CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance())) {
                         if (preview)
                             coursePrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
                         else
@@ -729,7 +729,7 @@ namespace PurplePen
 
             bool success = HandleExceptions(
                 delegate {
-                    OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, creationSettings);
+                    OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, GetCourseAppearance(), creationSettings);
                     creation.CreateOcadFiles();
                 },
                 MiscText.CannotCreateOcadFiles);
@@ -742,7 +742,7 @@ namespace PurplePen
         {
             SetOutputDirectory(creationSettings);
 
-            OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, creationSettings);
+            OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, GetCourseAppearance(), creationSettings);
             return creation.OverwrittenFiles();
         }
 
@@ -981,7 +981,7 @@ namespace PurplePen
             // The default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
             CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseId);
             CourseLayout layout = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, layout, 0);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, GetCourseAppearance(), layout, 0);
             RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
             defaultPrintArea = RectangleF.Union(courseObjects, mapDisplay.MapBounds);
 

@@ -477,12 +477,14 @@ namespace PurplePen
         // Update the course
         void UpdateCourse()
         {
+            CourseAppearance appearance = controller.GetCourseAppearance();
+
             // Place the active course in the layout.
             activeCourse = new CourseLayout();
             activeCourse.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
             activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, 
                 NormalCourseAppearance.courseColorC, NormalCourseAppearance.courseColorM, NormalCourseAppearance.courseColorY, NormalCourseAppearance.courseColorK);
-            CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, activeCourse, CourseLayer.MainCourse);
+            CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
             if (showAllControls && activeCourseId.IsNotNone) {
                 // Create the all controls view.
@@ -491,7 +493,7 @@ namespace PurplePen
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
                     NormalCourseAppearance.allControlsColorC, NormalCourseAppearance.allControlsColorM, NormalCourseAppearance.allControlsColorY, NormalCourseAppearance.allControlsColorK);
-                CourseFormatter.FormatCourseToLayout(symbolDB, allControlsView, activeCourse, CourseLayer.AllControls);
+                CourseFormatter.FormatCourseToLayout(symbolDB, allControlsView, appearance, activeCourse, CourseLayer.AllControls);
             }
         }
 
@@ -609,7 +611,7 @@ namespace PurplePen
                             courseobj.courseControlId == selectedCourseControl &&
                             ((LineCourseObj) courseobj).courseControlId2 == selectedCourseControl2) {
                         // The leg may be made up of multiple parts due to flagging and gaps. Create a single course object for the whole thing.
-                        list.Add(CourseFormatter.CreateSimpleLeg(eventDB, courseobj.scaleRatio, selectedCourseControl, selectedCourseControl2));
+                        list.Add(CourseFormatter.CreateSimpleLeg(eventDB, courseobj.scaleRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2));
                         break;
                     }
                     else if (selectionKind == SelectionKind.Special &&

@@ -43,6 +43,8 @@ namespace PurplePen.Tests
     {
         private TestContext testContextInstance;
 
+        protected CourseAppearance defaultCourseAppearance = new CourseAppearance();          // Use when you the default course appearance.
+
         /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
