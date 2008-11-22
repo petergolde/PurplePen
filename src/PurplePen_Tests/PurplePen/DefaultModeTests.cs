@@ -623,7 +623,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:3,l:9.74) (s:21,l:9)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:2.96,l:9.74) (s:20.96,l:9)",
                                         highlights[0].ToString());
 
 
@@ -642,7 +642,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:3,l:11.3) (s:21,l:9)",
+            Assert.AreEqual("Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:2.96,l:11.3) (s:20.96,l:9)",
                                         highlights[0].ToString());
 
             // Make sure the gaps are now moved.
@@ -687,7 +687,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.27,11.17)--N(39.7,-20.4)  gaps: (s:3,l:8.52) (s:21,l:9)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.24,11.14)--N(39.7,-20.4)  gaps: (s:2.96,l:8.52) (s:20.96,l:9)",
                                         highlights[0].ToString());
 
 
@@ -706,7 +706,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.27,11.17)--N(39.7,-20.4)  gaps: (s:3,l:27)",
+            Assert.AreEqual("Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.24,11.14)--N(39.7,-20.4)  gaps: (s:2.96,l:27)",
                                         highlights[0].ToString());
 
             // Make sure the gaps are now moved.

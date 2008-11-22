@@ -102,7 +102,7 @@ BasicText:      layer:2  special:7  scale:1  text:StartAngle  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=29.5,Width=40.5,Height=20.5}
 Start:          layer:2  control:1  course-control:801  scale:1  location:(56.8,-8.7)  orientation:82.66
-Leg:            layer:2  control:1  course-control:801  scale:1  course-control2:802  path:N(52.83,-8.19)--N(23.1,-4.36)
+Leg:            layer:2  control:1  course-control:801  scale:1  course-control2:802  path:N(52.79,-8.18)--N(23.1,-4.36)
 Control:        layer:2  control:58  course-control:802  scale:1  location:(20.3,-4)  gaps:11111111111111111111111111111111
 ControlNumber:  layer:2  control:58  course-control:802  scale:1  text:1  top-left:(12.65,-4.41)
                 font-name:Arial  font-style:Regular  font-height:5.57
@@ -121,7 +121,7 @@ BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-35.5,Width=40.5,Height=85.5}
 Start:          control:1  course-control:301  scale:1  location:(56.8,-8.7)  orientation:162.99
-Leg:            control:1  course-control:301  scale:1  course-control2:302  path:N(55.63,-12.52)--N(52.03,-24.3)
+Leg:            control:1  course-control:301  scale:1  course-control2:302  path:N(55.62,-12.56)--N(52.03,-24.3)
 Control:        control:59  course-control:302  scale:1  location:(51.2,-27)  gaps:11111111111111111111111111111111
 Leg:            control:59  course-control:302  scale:1  course-control2:303  path:N(48.83,-25.46)--N(28.17,-12.04)
 Control:        control:53  course-control:303  scale:1  location:(25.8,-10.5)  gaps:11111111111111111111111111111111
@@ -240,7 +240,7 @@ BasicText:      special:7  scale:1  text:5K  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=9.5,Width=40.5,Height=40.5}
 Start:          control:1  course-control:916  scale:0.5  location:(56.8,-8.7)  orientation:126.29
-Leg:            control:1  course-control:916  scale:0.5  course-control2:920  path:N(55.19,-9.88)--N(38.74,-21.96)
+Leg:            control:1  course-control:916  scale:0.5  course-control2:920  path:N(55.17,-9.9)--N(38.74,-21.96)
 Control:        control:44  course-control:920  scale:0.5  location:(37.6,-22.8)  gaps:11111111111111111111111111111111
 Leg:            control:44  course-control:920  scale:0.5  course-control2:921  path:N(36.2,-22.62)--N(23.4,-20.98)
 Control:        control:49  course-control:921  scale:0.5  location:(22,-20.8)  gaps:11111111111111111111111111110001
@@ -465,7 +465,7 @@ Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=39.5,Width=40.5,Heigh
         {
             CheckCourse("courseformat\\speciallegs.coursescribe", CourseId(1), 0, @"
 Start:          control:1  course-control:1  scale:1  location:(74.1,14)  orientation:135
-Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.27,11.17)--N(39.7,-20.4)
+Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(71.24,11.14)--N(39.7,-20.4)
 Control:        control:2  course-control:2  scale:1  location:(37.7,-22.4)  gaps:11111111111111111111111111111111
 FlaggedLeg:     control:2  course-control:2  scale:1  course-control2:3  path:N(35.72,-20.39)--N(10.18,5.49)
 Control:        control:3  course-control:3  scale:1  location:(8.2,7.5)  gaps:11111111111111111111111111111111

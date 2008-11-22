@@ -734,7 +734,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             Assert.AreEqual(
 @"
 Start:          control:1  course-control:1  scale:1  location:(5,0)  orientation:333.43
-Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.79,3.58)--N(8.74,7.47)
+Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.81,3.61)--N(8.74,7.47)
 Control:        control:2  course-control:2  scale:1  location:(10,10)  gaps:11111111111111111111111111111111
 Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(11.36,7.52)--N(28.7,-24.19)
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:11111111111111111111111111111111
@@ -750,7 +750,7 @@ ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(7.56,19.
             Assert.AreEqual(
 @"
 Start:          control:1  course-control:1  scale:1  location:(5,0)  orientation:333.43
-Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.79,3.58)--N(8.74,7.47)
+Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.81,3.61)--N(8.74,7.47)
 Control:        control:2  course-control:2  scale:1  location:(10,10)  gaps:11111111111111111111111111111111
 Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(11.36,7.52)--N(28.7,-24.19)
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:11111111111111111111111111111111
@@ -773,7 +773,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             Assert.AreEqual(
 @"
 Start:          control:1  course-control:1  scale:1  location:(5,0)  orientation:333.43
-Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.79,3.58)--N(8.74,7.47)
+Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.81,3.61)--N(8.74,7.47)
 Control:        control:2  course-control:2  scale:1  location:(10,10)  gaps:11111111111111111111111111111111
 Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(11.36,7.52)--N(28.7,-24.19)
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:11111111111111111111111111111111
@@ -791,7 +791,7 @@ Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
             Assert.AreEqual(
 @"
 Start:          control:1  course-control:1  scale:1  location:(5,0)  orientation:333.43
-Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.79,3.58)--N(8.74,7.47)
+Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(6.81,3.61)--N(8.74,7.47)
 Control:        control:2  course-control:2  scale:1  location:(10,10)  gaps:11111111111111111111111111111111
 Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(11.36,7.52)--N(28.7,-24.19)
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:11111111111111111111111111111111

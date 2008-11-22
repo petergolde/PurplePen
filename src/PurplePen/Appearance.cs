@@ -181,7 +181,7 @@ namespace PurplePen
         public const float lineThickness = 0.35F;
 
         // Distances that the leg line should go to.
-        public const float startRadius = 4f;// 4.04F;
+        public const float startRadius = 4.04F;
         public const float controlOutsideDiameter = 6.0F;  
         public const float finishOutsideDiameter = 7.0F;
         public const float crossingRadius = 2.5F;

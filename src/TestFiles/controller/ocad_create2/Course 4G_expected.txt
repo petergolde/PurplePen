@@ -3088,7 +3088,7 @@ Index entry Sym=70400.0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
-    (52.86,-9.39) (45.78,-10.62) 
+    (52.82,-9.39) (45.78,-10.62) 
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1

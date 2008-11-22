@@ -201,7 +201,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:3,l:3.5) (s:21,l:9)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:2.96,l:3.5) (s:20.96,l:9)",
                                         highlights[0].ToString());
 
             // Click to remove the gap.
@@ -218,7 +218,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:3,l:3.5)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:2.96,l:3.5)",
                                         highlights[0].ToString());
 
             // Make sure the leg gap is removed.
@@ -310,7 +310,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:3,l:3.5) (s:21,l:9)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:2.96,l:3.5) (s:20.96,l:9)",
                                         highlights[0].ToString());
 
             // Click and drag add a gap.
@@ -328,7 +328,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.06)--N(68,-22)--N(40.52,-22.36)  gaps: (s:0.29,l:50.26)",
+            Assert.AreEqual(@"Leg:            control:1  course-control:1  scale:1  course-control2:2  path:N(73.43,10.02)--N(68,-22)--N(40.52,-22.36)  gaps: (s:0.25,l:50.26)",
                                         highlights[0].ToString());
 
             // Make sure the leg gap is added.
