@@ -181,10 +181,9 @@ namespace PurplePen
         public const float lineThickness = 0.35F;
 
         // Distances that the leg line should go to.
-        public const float startRadius = 4.0F;
-        public const float controlOutsideDiameter = 6.0F;
-        public const float controlRadius = (controlOutsideDiameter / 2F) - lineThickness / 2F;
-        public const float finishRadius = 3.5F - lineThickness / 2F;
+        public const float startRadius = 4f;// 4.04F;
+        public const float controlOutsideDiameter = 6.0F;  
+        public const float finishOutsideDiameter = 7.0F;
         public const float crossingRadius = 2.5F;
 
         // Font to use for the control number in regular courses.
@@ -193,13 +192,13 @@ namespace PurplePen
         public const float controlNumberHeightFactor = 5.57F / 4.0F;  // scale factor from control number height to font EM size
         public static readonly FontDesc controlNumberFont = new FontDesc("Arial", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
 
-        public const float controlNumberCircleDistance = 2.0F;   // default distance of control number from edge of control circle
+        public const float controlNumberCircleDistance = 1.825F;   // default distance of control number from edge of control circle
 
         // Font to use for the code number in score courses and all controls.
         // Em height of 4.18 yields actual digit height of 3mm.
         public static readonly FontDesc controlCodeFont = new FontDesc("Arial Narrow", true, false, 4.18F, 4.00F);
 
-        public const float codeCircleDistance = 0.5F;   // default distance of code from edge of control circle
+        public const float codeCircleDistance = 0.325F;   // default distance of code from edge of control circle
 
         public const double defaultControlNumberAngle = Math.PI / 6;  // default angle of the control number absent constraints, in radian.
 

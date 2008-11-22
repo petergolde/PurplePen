@@ -167,8 +167,8 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
-                    textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlRadius + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio,
-                                                                                  text, NormalCourseAppearance.controlNumberFont, scaleRatio, existingObjects);
+                    textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio * appearance.controlCircleSize,
+                                                                                  text, NormalCourseAppearance.controlNumberFont, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
                 return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
@@ -187,7 +187,7 @@ namespace PurplePen
             PointF controlLocation = control.location;
             string text;
             PointF textCenterLocation;
-            float distanceFromCenter = (NormalCourseAppearance.controlRadius + NormalCourseAppearance.codeCircleDistance) * scaleRatio;
+            float distanceFromCenter = (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.codeCircleDistance) * scaleRatio * appearance.controlCircleSize;
 
             if (control.kind == ControlPointKind.Normal) {
                 text = control.code;
@@ -200,7 +200,7 @@ namespace PurplePen
                 }
                 else {
                     textCenterLocation = GetTextLocation(controlLocation, distanceFromCenter,
-                                                                                 text, NormalCourseAppearance.controlCodeFont, scaleRatio, existingObjects);
+                                                                                 text, NormalCourseAppearance.controlCodeFont, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
                 return new CodeCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
@@ -215,7 +215,7 @@ namespace PurplePen
 #if TEST
         internal
 #endif
-        static PointF GetTextLocation(PointF controlLocation, float distanceFromCenter, string text, FontDesc font, float scaleRatio, IEnumerable<CourseObj> list)
+        static PointF GetTextLocation(PointF controlLocation, float distanceFromCenter, string text, FontDesc font, float fontScaling, IEnumerable<CourseObj> list)
         {
             const double deltaAngle = Math.PI / 16;             // angle to increase by each time when testing an angle.
 
@@ -223,7 +223,7 @@ namespace PurplePen
             List<CourseObj> nearbyObjects = GetNearbyObjects(list, controlLocation, distanceFromCenter * 4);
 
             // Get the size of the text.
-            SizeF textSize = GetTextSize(text, font, scaleRatio);
+            SizeF textSize = GetTextSize(text, font, fontScaling);
 
             // Try 32 different locations for the number, finding which angle has the largest distance from nearby objects.
             // Start at the default angle, so if all angles are equally good that is the one we pick.
@@ -283,16 +283,16 @@ namespace PurplePen
 #if TEST
         internal
 #endif
-        static SizeF GetTextSize(string text, FontDesc font, float scaleRatio)
+        static SizeF GetTextSize(string text, FontDesc font, float fontScaling)
         {
             Graphics g = Util.GetHiresGraphics();
-            using (Font f = font.GetScaledFont(scaleRatio)) {
+            using (Font f = font.GetScaledFont(fontScaling)) {
                 SizeF size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
 
                 // We really want the size of just the digits/capital letters. So, reduce by the descender size from 
                 // bottom and top (no way to get offset from top of box to top of cap letters).
                 FontFamily family = f.FontFamily;
-                float descender = family.GetCellDescent(f.Style) * font.EmHeight * scaleRatio / family.GetEmHeight(f.Style);
+                float descender = family.GetCellDescent(f.Style) * font.EmHeight * fontScaling / family.GetEmHeight(f.Style);
                 size.Height = size.Height - 2 * descender;
 
                 return size;
@@ -676,30 +676,23 @@ namespace PurplePen
         // Get the radius of where the leg should start from a control point of a given kind.
         private static double GetLegRadius(ControlPointKind controlKind, float scaleRatio, CourseAppearance appearance)
         {
-            double radius;
-
             switch (controlKind) {
             case ControlPointKind.CrossingPoint:
-                radius = NormalCourseAppearance.crossingRadius; break;
-
-            case ControlPointKind.Finish:
-                radius = NormalCourseAppearance.finishRadius;
-                break;
-
-            case ControlPointKind.Start:
-                radius = NormalCourseAppearance.startRadius;
-                break;
+                return scaleRatio * NormalCourseAppearance.crossingRadius * appearance.controlCircleSize;
 
             case ControlPointKind.Normal:
-                radius = NormalCourseAppearance.controlRadius;
-                break;
+                return scaleRatio * ((NormalCourseAppearance.controlOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
+
+            case ControlPointKind.Finish:
+                return scaleRatio * ((NormalCourseAppearance.finishOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
+
+            case ControlPointKind.Start:
+                return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
 
             default:
                 Debug.Fail("Bad kind");
                 return 0;
             }
-
-            return radius * scaleRatio;
         }
 
         // Get the angle from the given control index to the next control. 

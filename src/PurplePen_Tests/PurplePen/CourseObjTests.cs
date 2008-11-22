@@ -49,6 +49,17 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseObjTests: TestFixtureBase
     {
+        CourseAppearance specialAppearance;
+
+        public CourseObjTests()
+        {
+            // Special appearance to test the usage of CourseAppearance.
+            specialAppearance = new CourseAppearance();
+            specialAppearance.controlCircleSize = 0.666667F;  // 4mm control circle
+            specialAppearance.lineWidth = 2.85714F; // 1mm lines
+            specialAppearance.numberHeight = 1.75F; // 7mm numbers.
+        }
+
         // Draw a grid on the graphics
         void DrawGrid(Graphics g, RectangleF rect, float spacing)
         {
@@ -149,10 +160,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleSpecial()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            SingleObject(courseobj, "control_circle_special");
+        }
+
+        [TestMethod]
         public void ControlCircleGaps()
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0, 0));
             SingleObject(courseobj, "control_circle_gaps");
+        }
+
+        [TestMethod]
+        public void ControlCircleGapsSpecial()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0, 0));
+            SingleObject(courseobj, "control_circle_gaps_special");
         }
 
         [TestMethod]
@@ -170,10 +195,31 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FinishSpecial()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            SingleObject(courseobj, "finish_circle_special");
+        }
+
+        [TestMethod]
+        public void FinishGapsSpecial()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0, 0));
+            SingleObject(courseobj, "finish_circle_gaps_special");
+        }
+
+        [TestMethod]
         public void Start()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0));
             SingleObject(courseobj, "start_triangle");
+        }
+
+        [TestMethod]
+        public void StartSpecial()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            SingleObject(courseobj, "start_triangle_special");
         }
 
         [TestMethod]
@@ -184,10 +230,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FirstAidSpecial()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "first_aid_special");
+        }
+
+        [TestMethod]
         public void Water()
         {
             CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
             SingleObject(courseobj, "water");
+        }
+
+        [TestMethod]
+        public void WaterSpecial()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "water_special");
         }
 
         [TestMethod]
@@ -198,10 +258,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void CrossingPointSpecial()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            SingleObject(courseobj, "crossing_point_special");
+        }
+
+        [TestMethod]
         public void Forbidden()
         {
             CourseObj courseobj = new ForbiddenCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
             SingleObject(courseobj, "forbidden");
+        }
+
+        [TestMethod]
+        public void ForbiddenSpecial()
+        {
+            CourseObj courseobj = new ForbiddenCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "forbidden_special");
         }
 
         [TestMethod]
@@ -212,10 +286,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RegMarkSpecial()
+        {
+            CourseObj courseobj = new RegMarkCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "reg_mark_special");
+        }
+
+        [TestMethod]
         public void OutOfBounds()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObject(courseobj, "out_of_bounds");
+        }
+
+        [TestMethod]
+        public void OutOfBoundsSpecial()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "out_of_bounds_special");
         }
 
         [TestMethod]
@@ -226,10 +314,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void DangerousSpecial()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "dangerous_special");
+        }
+
+        [TestMethod]
         public void Leg()
         {
             CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
             SingleObject(courseobj, "normal_leg");
+        }
+
+        [TestMethod]
+        public void LegSpecial()
+        {
+            CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
+            SingleObject(courseobj, "normal_leg_special");
         }
 
         [TestMethod]
@@ -241,10 +343,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GappedLegSpecial()
+        {
+            CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }),
+                                                  new LegGap[] { new LegGap(1.5F, 2.0F), new LegGap(6F, 1.4F), new LegGap(10F, 5F) });
+            SingleObject(courseobj, "gapped_leg_special");
+        }
+
+        [TestMethod]
         public void FlaggedLeg()
         {
             CourseObj courseobj = new FlaggedLegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
             SingleObject(courseobj, "flagged_leg");
+        }
+
+        [TestMethod]
+        public void FlaggedLegSpecial()
+        {
+            CourseObj courseobj = new FlaggedLegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
+            SingleObject(courseobj, "flagged_leg_special");
         }
 
         [TestMethod]
@@ -263,6 +380,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void BoundarySpecial()
+        {
+            CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "boundary_special");
+        }
+
+        [TestMethod]
         public void ControlNumber()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
@@ -272,12 +396,30 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlNumberSpecial()
+        {
+            CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "37", new PointF(0, 0));
+            CheckRenderBitmap(courseobj, "control_number_special");
+            courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "37", new PointF(0, 0));
+            CheckRenderBitmapSmall(courseobj, "control_number_special");
+        }
+
+        [TestMethod]
         public void Code()
         {
             CourseObj courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "108", new PointF(0, 0));
             CheckRenderBitmap(courseobj, "code_number");
             courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, "108", new PointF(0, 0));
             CheckRenderBitmapSmall(courseobj, "code_number");
+        }
+
+        [TestMethod]
+        public void CodeSpecial()
+        {
+            CourseObj courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "108", new PointF(0, 0));
+            CheckRenderBitmap(courseobj, "code_number_special");
+            courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "108", new PointF(0, 0));
+            CheckRenderBitmapSmall(courseobj, "code_number_special");
         }
 
         [TestMethod]
@@ -654,6 +796,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleHighlightSpecial()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "control_circle_highlight_special");
+        }
+
+        [TestMethod]
         public void ControlCircleGapsHighlight()
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0.5F, 0.5F));
@@ -675,10 +824,31 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FinishHighlightSpecial()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "finish_circle_highlight_special");
+        }
+
+        [TestMethod]
+        public void FinishGapsHighlightSpecial()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "finish_circle_gaps_highlight_special");
+        }
+
+        [TestMethod]
         public void StartHighlight()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "start_triangle_highlight");
+        }
+
+        [TestMethod]
+        public void StartHighlightSpecial()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "start_triangle_highlight_special");
         }
 
         [TestMethod]
@@ -689,10 +859,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FirstAidHighlightSpecial()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "first_aid_highlight_special");
+        }
+
+        [TestMethod]
         public void CrossingPointHighlight()
         {
             CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "crossing_point_highlight");
+        }
+
+        [TestMethod]
+        public void CrossingPointHighlightSpecial()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "crossing_point_highlight_special");
         }
 
         [TestMethod]
@@ -703,6 +887,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsHighlightSpecial()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "out_of_bounds_highlight_special");
+        }
+
+        [TestMethod]
         public void DangerousHighlight()
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -710,10 +901,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void DangerousHighlightSpecial()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "dangerous_highlight_special");
+        }
+
+        [TestMethod]
         public void LegHighlight()
         {
             CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
             SingleObjectHighlight(courseobj, "normal_leg_highlight");
+        }
+
+        [TestMethod]
+        public void LegHighlightSpecial()
+        {
+            CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
+            SingleObjectHighlight(courseobj, "normal_leg_highlight_special");
         }
 
         [TestMethod]
@@ -725,10 +930,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GappedLegHighlightSpecial()
+        {
+            CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }),
+                                                  new LegGap[] { new LegGap(1.5F, 2.0F), new LegGap(6F, 1.4F), new LegGap(10F, 5F) });
+            SingleObjectHighlight(courseobj, "gapped_leg_highlight_special");
+        }
+
+        [TestMethod]
         public void FlaggedLegHighlight()
         {
             CourseObj courseobj = new FlaggedLegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
             SingleObjectHighlight(courseobj, "flagged_leg_highlight");
+        }
+
+        [TestMethod]
+        public void FlaggedLegHighlightSpecial()
+        {
+            CourseObj courseobj = new FlaggedLegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
+            SingleObjectHighlight(courseobj, "flagged_leg_highlight_special");
         }
 
         [TestMethod]
@@ -740,10 +960,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GappedFlaggedLegHighlightSpecial()
+        {
+            CourseObj courseobj = new FlaggedLegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }),
+                                                  new LegGap[] { new LegGap(1.5F, 2.0F), new LegGap(6F, 1.4F), new LegGap(10F, 5F) });
+            SingleObjectHighlight(courseobj, "gapped_flagged_leg_highlight_special");
+        }
+
+        [TestMethod]
         public void BoundaryHighlight()
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectHighlight(courseobj, "boundary_highlight");
+        }
+
+        [TestMethod]
+        public void BoundaryHighlightSpecial()
+        {
+            CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectHighlight(courseobj, "boundary_highlight_special");
         }
 
         [TestMethod]
@@ -756,12 +991,30 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlNumberHighlightSpecial()
+        {
+            CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "37", new PointF(0, 0));
+            CheckHighlightBitmap(courseobj, "control_number_highlight_special");
+            courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "37", new PointF(0.1F, 0.4F));
+            CheckHighlightBitmapSmall(courseobj, "control_number_highlight_special");
+        }
+
+        [TestMethod]
         public void CodeHighlight()
         {
             CourseObj courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "108", new PointF(0.1F, 0.4F));
             CheckHighlightBitmap(courseobj, "code_number_highlight");
             courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, "108", new PointF(0, 0));
             CheckHighlightBitmapSmall(courseobj, "code_number_highlight");
+        }
+
+        [TestMethod]
+        public void CodeHighlightSpecial()
+        {
+            CourseObj courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "108", new PointF(0.1F, 0.4F));
+            CheckHighlightBitmap(courseobj, "code_number_highlight_special");
+            courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "108", new PointF(0, 0));
+            CheckHighlightBitmapSmall(courseobj, "code_number_highlight_special");
         }
 
         [TestMethod]
@@ -772,10 +1025,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void WaterHighlightSpecial()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "water_highlight_special");
+        }
+
+        [TestMethod]
         public void ForbiddenHighlight()
         {
             CourseObj courseobj = new ForbiddenCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "forbidden_highlight");
+        }
+
+        [TestMethod]
+        public void ForbiddenHighlightSpecial()
+        {
+            CourseObj courseobj = new ForbiddenCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "forbidden_highlight_special");
         }
 
         [TestMethod]
