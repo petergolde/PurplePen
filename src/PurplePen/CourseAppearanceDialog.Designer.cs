@@ -332,6 +332,7 @@
             this.Name = "CourseAppearanceDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CourseAppearanceDialog_HelpButtonClicked);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.upDownNumberHeight)).EndInit();

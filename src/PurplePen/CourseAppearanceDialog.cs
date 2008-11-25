@@ -185,5 +185,11 @@ namespace PurplePen
         {
             UpdatePreview();
         }
+
+        private void CourseAppearanceDialog_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Util.ShowHelpTopic(this, "EventCustomizeCourseAppearance.htm");
+            e.Cancel = true;
+        }
     }
 }
