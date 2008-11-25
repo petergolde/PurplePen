@@ -70,5 +70,10 @@ namespace PurplePen
         {
             GraphicsHelper.DrawPurplePenLogo(e.Graphics, logoPanel);
         }
+
+        private void creditsButton_Click(object sender, EventArgs e)
+        {
+            Util.ShowHelpTopic(this, "Credits.htm");
+        }
     }
 }

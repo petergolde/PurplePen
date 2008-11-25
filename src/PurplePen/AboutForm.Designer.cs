@@ -69,6 +69,7 @@ namespace PurplePen
             this.licenseButton = new System.Windows.Forms.Button();
             this.disclaimerLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
+            this.creditsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // logoPanel
@@ -112,11 +113,19 @@ namespace PurplePen
             resources.ApplyResources(this.versionLabel, "versionLabel");
             this.versionLabel.Name = "versionLabel";
             // 
+            // creditsButton
+            // 
+            resources.ApplyResources(this.creditsButton, "creditsButton");
+            this.creditsButton.Name = "creditsButton";
+            this.creditsButton.UseVisualStyleBackColor = true;
+            this.creditsButton.Click += new System.EventHandler(this.creditsButton_Click);
+            // 
             // AboutForm
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.creditsButton);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.disclaimerLabel);
             this.Controls.Add(this.licenseButton);
@@ -146,5 +155,6 @@ namespace PurplePen
         private System.Windows.Forms.Button licenseButton;
         private System.Windows.Forms.Label disclaimerLabel;
         private System.Windows.Forms.Label versionLabel;
+        private System.Windows.Forms.Button creditsButton;
     }
 }
