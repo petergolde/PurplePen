@@ -1855,7 +1855,14 @@ namespace PurplePen
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);
                         courseAppearance.purpleK = xmlinput.GetAttributeFloat("purple-black", -1F);
-                        courseAppearance.useDefaultPurple = (courseAppearance.purpleC < 0 || courseAppearance.purpleM < 0 || courseAppearance.purpleY < 0 || courseAppearance.purpleK < 0);
+                        if (courseAppearance.purpleC < 0 || courseAppearance.purpleM < 0 || courseAppearance.purpleY < 0 || courseAppearance.purpleK < 0) {
+                            courseAppearance.useDefaultPurple = true;
+                            courseAppearance.purpleC = courseAppearance.purpleM = courseAppearance.purpleY = courseAppearance.purpleK = 1;
+                        }
+                        else {
+                            courseAppearance.useDefaultPurple = false;
+                        }
+
                         xmlinput.Skip();
                         break;
 

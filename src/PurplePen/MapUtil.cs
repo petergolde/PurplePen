@@ -116,7 +116,7 @@ namespace PurplePen
                 }
             }
 
-            // Search all colors for one that is closest to purple
+            // Search all colors for one that is closest to pure magenta.
             double distance, minDistance = 1000;
             SymColor bestColor = null;
             foreach (SymColor color in colors) {

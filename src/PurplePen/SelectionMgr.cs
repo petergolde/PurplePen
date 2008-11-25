@@ -479,11 +479,15 @@ namespace PurplePen
         {
             CourseAppearance appearance = controller.GetCourseAppearance();
 
+            // Get purple color.
+            short purpleOcadId;
+            float purpleC, purpleM, purpleY, purpleK;
+            controller.GetPurpleColor(out purpleOcadId, out purpleC, out purpleM, out purpleY, out purpleK);
+
             // Place the active course in the layout.
             activeCourse = new CourseLayout();
             activeCourse.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
-            activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, 
-                NormalCourseAppearance.courseColorC, NormalCourseAppearance.courseColorM, NormalCourseAppearance.courseColorY, NormalCourseAppearance.courseColorK);
+            activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK); 
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
             if (showAllControls && activeCourseId.IsNotNone) {

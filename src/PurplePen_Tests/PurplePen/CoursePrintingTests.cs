@@ -123,7 +123,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(1000F, result[1].lengthPage, 0.01F);
         }
 
-        private void CoursePrintingTest(string basename, CoursePrintSettings coursePrintSettings)
+        private void CoursePrintingTest(string basename, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
         {
             // Get the map display
             MapDisplay mapDisplay = new MapDisplay();
@@ -132,7 +132,7 @@ namespace PurplePen.Tests
             mapDisplay.SetMapFile(controller.MapType, controller.MapFileName);
 
             // Get the pages of the printing.
-            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, defaultCourseAppearance);
+            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, appearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
             coursePrinter.Dispose();
 
@@ -151,7 +151,27 @@ namespace PurplePen.Tests
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
-            CoursePrintingTest("courseprinting\\test1", coursePrintSettings);
+            CoursePrintingTest("courseprinting\\test1", coursePrintSettings, new CourseAppearance());
+        }
+
+        [TestMethod]
+        public void PrintCourses2()
+        {
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.controlCircleSize = 0.75F;  //smaller circles
+            appearance.lineWidth = 3F; // thin lines
+            appearance.numberHeight = 0.5F; // small numbers.
+            appearance.useDefaultPurple = false;
+            appearance.purpleC = 0.32F;
+            appearance.purpleY = 1.00F;
+            appearance.purpleM = 0;
+            appearance.purpleK = 0.30F;
+
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            CoursePrintingTest("courseprinting\\test2", coursePrintSettings, appearance);
         }
 
         [TestMethod]

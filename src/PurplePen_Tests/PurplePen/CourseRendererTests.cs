@@ -106,6 +106,11 @@ namespace PurplePen.Tests
             specialAppearance.controlCircleSize = 1.6F;  //big control circle
             specialAppearance.lineWidth = 0.2F; // thin lines
             specialAppearance.numberHeight = 2F; // really big numbers.
+            specialAppearance.useDefaultPurple = false;
+            specialAppearance.purpleC = 0.32F;
+            specialAppearance.purpleY = 1.00F;
+            specialAppearance.purpleM = 0;
+            specialAppearance.purpleK = 0.30F;
 
             CheckCourse(filename, courseId, addAllControls, testName, rect, defaultCourseAppearance);
             CheckCourse(filename, courseId, addAllControls, testName + "_special", rect, specialAppearance);

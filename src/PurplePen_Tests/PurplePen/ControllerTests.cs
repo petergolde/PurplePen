@@ -1788,12 +1788,14 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         }
 
         // Create some courses, write them, and check against a dump.
-        void CreateOcadFiles(string file, OcadCreationSettings settings, string[] expectedFiles, string[] expectedDumps)
+        void CreateOcadFiles(string file, OcadCreationSettings settings, CourseAppearance appearance, string[] expectedFiles, string[] expectedDumps)
         {
             EventDB eventDB = controller.GetEventDB();
 
             bool success = controller.LoadInitialFile(file);
             Assert.IsTrue(success);
+
+            controller.SetCourseAppearance(appearance);
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 File.Delete(expectedFiles[i]);
@@ -1822,7 +1824,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             Directory.CreateDirectory(settings.outputDirectory);
 
-            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, 
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create1\\Course 2.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create1\\Course 2_expected.txt") });
         }
@@ -1843,7 +1845,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             Directory.CreateDirectory(settings.outputDirectory);
 
-            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings,
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, new CourseAppearance(),
                                         new string[3] { TestUtil.GetTestFile("controller\\ocad_create2\\Course 3.ocd"),
                                                                  TestUtil.GetTestFile("controller\\ocad_create2\\Course 4G.ocd"),
                                                                  TestUtil.GetTestFile("controller\\ocad_create2\\All controls.ocd")},
@@ -1871,7 +1873,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             string outputFile = TestUtil.GetTestFile("controller\\ocad_create3\\Course 3.ocd");
             File.Delete(outputFile);
             Assert.IsFalse(File.Exists(outputFile));
-            CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, 
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create3\\Course 3.ocd")},
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create3\\Course 3_expected.txt")});
             Assert.IsTrue(File.Exists(outputFile));
@@ -1897,7 +1899,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             string outputFile = TestUtil.GetTestFile("controller\\Course 3.ocd");
             File.Delete(outputFile);
             Assert.IsFalse(File.Exists(outputFile));
-            CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, 
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\Course 3.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create4\\Course 3_expected.txt") });
             Assert.IsTrue(File.Exists(outputFile));
@@ -1920,9 +1922,36 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             Directory.CreateDirectory(settings.outputDirectory);
 
-            CreateOcadFiles(TestUtil.GetTestFile("controller\\create_ocad5.ppen"), settings,
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\create_ocad5.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing-A&B_C&D_E_F.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing-A&B_C&D_E_F_expected.txt") });
+        }
+
+        [TestMethod]
+        public void OcadCreation6()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create6");
+            settings.CourseIds = new Id<Course>[1] { CourseId(2) };
+            settings.version = 8;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.controlCircleSize = 0.75F;  //smaller circles
+            appearance.lineWidth = 3F; // thin lines
+            appearance.numberHeight = 0.5F; // small numbers.
+            appearance.useDefaultPurple = false;
+
+            settings.cyan = appearance.purpleC = 0.32F;
+            settings.yellow = appearance.purpleY = 1.00F;
+            settings.magenta = appearance.purpleM = 0;
+            settings.black = appearance.purpleK = 0.30F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create6\\Course 2.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create6\\Course 2_expected.txt") });
         }
 
         // Test overwritting files

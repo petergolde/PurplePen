@@ -1810,6 +1810,12 @@ namespace PurplePen
             return (CourseAppearance) ev.courseAppearance.Clone();
         }
 
+        // Get the purple color to use.
+        public void GetPurpleColor(out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
+        {
+            FindPurple.GetPurpleColor(mapDisplay, GetCourseAppearance(), out ocadId, out cyan, out magenta, out yellow, out black);
+        }
+
         // Change the course appearance
         public void SetCourseAppearance(CourseAppearance courseAppearance)
         {
