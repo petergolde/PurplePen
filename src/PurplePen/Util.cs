@@ -467,7 +467,10 @@ namespace PurplePen
         // UNDONE: handle metric if we're in a metric locale.
         public static string GetDistanceText(int distance)
         {
-            return (distance / 100.0).ToString("0.#") + "\"";
+            if (RegionInfo.CurrentRegion.IsMetric)
+                return (distance * 25.4 / 100.0).ToString("0") + "mm";
+            else
+                return (distance / 100.0).ToString("0.#") + "\"";
         }
 
         // Get text describing a paper size.

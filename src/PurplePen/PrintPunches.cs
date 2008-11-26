@@ -39,6 +39,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace PurplePen
 {
@@ -136,6 +137,11 @@ namespace PurplePen
             controller.HandleExceptions(
                 delegate {
                     UpdateSettings();
+                    Margins originalMargins = settings.PageSettings.Margins;
+
+                    if (RegionInfo.CurrentRegion.IsMetric)     // work around bug
+                        settings.PageSettings.Margins = PrinterUnitConvert.Convert(settings.PageSettings.Margins, PrinterUnit.Display, PrinterUnit.TenthsOfAMillimeter);
+
                     pageSetupDialog.PageSettings = settings.PageSettings;
                     pageSetupDialog.PrinterSettings = settings.PageSettings.PrinterSettings;
 
@@ -144,6 +150,10 @@ namespace PurplePen
                         settings.PageSettings = pageSetupDialog.PageSettings;
                         UpdateDialog();
                     }
+                    else {
+                        settings.PageSettings.Margins = originalMargins;
+                    }
+
                 }
             );
         }
