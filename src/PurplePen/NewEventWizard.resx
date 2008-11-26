@@ -129,13 +129,10 @@
     <value>26, 18</value>
   </data>
   <data name="titleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 16</value>
+    <value>0, 16</value>
   </data>
   <data name="titleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="titleLabel.Text" xml:space="preserve">
-    <value>Panel Title Description</value>
   </data>
   <data name="&gt;&gt;titleLabel.Name" xml:space="preserve">
     <value>titleLabel</value>
