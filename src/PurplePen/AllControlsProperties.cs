@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace PurplePen
 {
-    public partial class AllControlsProperties: Form
+    public partial class AllControlsProperties: OkCancelDialog
     {
         float printScale;
 
@@ -68,30 +68,21 @@ namespace PurplePen
                 this.scaleCombo.Items.Add(scale);
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        protected override bool OkButtonClicked()
         {
             // Validate scale.
             float enteredScale;
             if (!float.TryParse(scaleCombo.Text, out enteredScale) || enteredScale < 100 || enteredScale > 100000) {
                 MessageBox.Show(this, MiscText.BadScale, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 scaleCombo.Focus();
-                return;
+                return false;
             }
             else {
                 printScale = enteredScale;
             }
 
-
-            DialogResult = DialogResult.OK;
-            Close();
+            return true;
         }
-
-        private void AllControlsProperties_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "AllControlsProperties.htm");
-            e.Cancel = true;
-        }
-
 
     }
 }

@@ -29,32 +29,42 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllControlsProperties));
             this.appearanceGroupBox = new System.Windows.Forms.GroupBox();
-            this.oneToPrefix = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.descriptionAppearanceLabel = new System.Windows.Forms.Label();
             this.printingScaleLabel = new System.Windows.Forms.Label();
-            this.descKindCombo = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.oneToPrefix = new System.Windows.Forms.Label();
             this.scaleCombo = new System.Windows.Forms.ComboBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.descKindCombo = new System.Windows.Forms.ComboBox();
             this.allControlsPropertiesLabel = new System.Windows.Forms.Label();
             this.appearanceGroupBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // appearanceGroupBox
             // 
-            this.appearanceGroupBox.Controls.Add(this.oneToPrefix);
-            this.appearanceGroupBox.Controls.Add(this.descriptionAppearanceLabel);
-            this.appearanceGroupBox.Controls.Add(this.printingScaleLabel);
-            this.appearanceGroupBox.Controls.Add(this.descKindCombo);
-            this.appearanceGroupBox.Controls.Add(this.scaleCombo);
+            this.appearanceGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.appearanceGroupBox, "appearanceGroupBox");
             this.appearanceGroupBox.Name = "appearanceGroupBox";
             this.appearanceGroupBox.TabStop = false;
             // 
-            // oneToPrefix
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.oneToPrefix, "oneToPrefix");
-            this.oneToPrefix.Name = "oneToPrefix";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.descriptionAppearanceLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.printingScaleLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.descKindCombo, 1, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // descriptionAppearanceLabel
             // 
@@ -66,16 +76,17 @@
             resources.ApplyResources(this.printingScaleLabel, "printingScaleLabel");
             this.printingScaleLabel.Name = "printingScaleLabel";
             // 
-            // descKindCombo
+            // flowLayoutPanel1
             // 
-            this.descKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.descKindCombo.FormattingEnabled = true;
-            this.descKindCombo.Items.AddRange(new object[] {
-            resources.GetString("descKindCombo.Items"),
-            resources.GetString("descKindCombo.Items1"),
-            resources.GetString("descKindCombo.Items2")});
-            resources.ApplyResources(this.descKindCombo, "descKindCombo");
-            this.descKindCombo.Name = "descKindCombo";
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.oneToPrefix);
+            this.flowLayoutPanel1.Controls.Add(this.scaleCombo);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // oneToPrefix
+            // 
+            resources.ApplyResources(this.oneToPrefix, "oneToPrefix");
+            this.oneToPrefix.Name = "oneToPrefix";
             // 
             // scaleCombo
             // 
@@ -83,19 +94,16 @@
             resources.ApplyResources(this.scaleCombo, "scaleCombo");
             this.scaleCombo.Name = "scaleCombo";
             // 
-            // okButton
+            // descKindCombo
             // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.descKindCombo, "descKindCombo");
+            this.descKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.descKindCombo.FormattingEnabled = true;
+            this.descKindCombo.Items.AddRange(new object[] {
+            resources.GetString("descKindCombo.Items"),
+            resources.GetString("descKindCombo.Items1"),
+            resources.GetString("descKindCombo.Items2")});
+            this.descKindCombo.Name = "descKindCombo";
             // 
             // allControlsPropertiesLabel
             // 
@@ -104,24 +112,22 @@
             // 
             // AllControlsProperties
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.allControlsPropertiesLabel);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.appearanceGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "AllControlsProperties.htm";
             this.Name = "AllControlsProperties";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AllControlsProperties_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.appearanceGroupBox, 0);
+            this.Controls.SetChildIndex(this.allControlsPropertiesLabel, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.appearanceGroupBox.ResumeLayout(false);
             this.appearanceGroupBox.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -129,13 +135,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox appearanceGroupBox;
-        private System.Windows.Forms.Label oneToPrefix;
+        private System.Windows.Forms.Label allControlsPropertiesLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label descriptionAppearanceLabel;
         private System.Windows.Forms.Label printingScaleLabel;
         private System.Windows.Forms.ComboBox descKindCombo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label oneToPrefix;
         private System.Windows.Forms.ComboBox scaleCombo;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label allControlsPropertiesLabel;
     }
 }
