@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class AddTextLine: Form
+    public partial class AddTextLine: OkCancelDialog
     {
         public AddTextLine()
         {
@@ -97,12 +97,6 @@ namespace PurplePen
                 else
                     comboBoxCourses.SelectedIndex = 1;
             }
-        }
-
-        private void AddTextLine_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "ItemAddTextLine.htm");
-            e.Cancel = true;
         }
     }
 }

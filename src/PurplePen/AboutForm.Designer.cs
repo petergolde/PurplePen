@@ -133,14 +133,8 @@ namespace PurplePen
             this.Controls.Add(this.freeLabel);
             this.Controls.Add(this.copyrightLabel);
             this.Controls.Add(this.logoPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "HelpAbout.htm";
             this.Name = "AboutForm";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AboutForm_HelpButtonClicked);
             this.ResumeLayout(false);
             this.PerformLayout();
 

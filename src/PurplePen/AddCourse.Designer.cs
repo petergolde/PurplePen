@@ -62,83 +62,59 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.courseNameLabel = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.courseKindCombo = new System.Windows.Forms.ComboBox();
-            this.courseTypeLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.oneToPrefixLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.descriptionAppearanceLabel = new System.Windows.Forms.Label();
             this.mapScaleLabel = new System.Windows.Forms.Label();
-            this.descKindCombo = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.oneToPrefixLabel = new System.Windows.Forms.Label();
             this.scaleCombo = new System.Windows.Forms.ComboBox();
+            this.descKindCombo = new System.Windows.Forms.ComboBox();
             this.secondaryTitleGroup = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.secondaryTitleTextBox = new System.Windows.Forms.TextBox();
             this.secondaryTitleDescription = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.climbLabel = new System.Windows.Forms.Label();
+            this.courseTypeLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.courseNameLabel = new System.Windows.Forms.Label();
+            this.courseKindCombo = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.climbTextBox = new System.Windows.Forms.TextBox();
             this.metersSuffix = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.secondaryTitleGroup.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // okButton
             // 
             resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // courseNameLabel
+            // cancelButton
             // 
-            resources.ApplyResources(this.courseNameLabel, "courseNameLabel");
-            this.courseNameLabel.Name = "courseNameLabel";
-            // 
-            // nameTextBox
-            // 
-            resources.ApplyResources(this.nameTextBox, "nameTextBox");
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
-            // 
-            // courseKindCombo
-            // 
-            this.courseKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.courseKindCombo.FormattingEnabled = true;
-            this.courseKindCombo.Items.AddRange(new object[] {
-            resources.GetString("courseKindCombo.Items"),
-            resources.GetString("courseKindCombo.Items1")});
-            resources.ApplyResources(this.courseKindCombo, "courseKindCombo");
-            this.courseKindCombo.Name = "courseKindCombo";
-            // 
-            // courseTypeLabel
-            // 
-            resources.ApplyResources(this.courseTypeLabel, "courseTypeLabel");
-            this.courseTypeLabel.Name = "courseTypeLabel";
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.oneToPrefixLabel);
-            this.groupBox1.Controls.Add(this.descriptionAppearanceLabel);
-            this.groupBox1.Controls.Add(this.mapScaleLabel);
-            this.groupBox1.Controls.Add(this.descKindCombo);
-            this.groupBox1.Controls.Add(this.scaleCombo);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
-            // oneToPrefixLabel
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.oneToPrefixLabel, "oneToPrefixLabel");
-            this.oneToPrefixLabel.Name = "oneToPrefixLabel";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.descriptionAppearanceLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mapScaleLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.descKindCombo, 1, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // descriptionAppearanceLabel
             // 
@@ -150,16 +126,17 @@ namespace PurplePen
             resources.ApplyResources(this.mapScaleLabel, "mapScaleLabel");
             this.mapScaleLabel.Name = "mapScaleLabel";
             // 
-            // descKindCombo
+            // flowLayoutPanel2
             // 
-            this.descKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.descKindCombo.FormattingEnabled = true;
-            this.descKindCombo.Items.AddRange(new object[] {
-            resources.GetString("descKindCombo.Items"),
-            resources.GetString("descKindCombo.Items1"),
-            resources.GetString("descKindCombo.Items2")});
-            resources.ApplyResources(this.descKindCombo, "descKindCombo");
-            this.descKindCombo.Name = "descKindCombo";
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Controls.Add(this.oneToPrefixLabel);
+            this.flowLayoutPanel2.Controls.Add(this.scaleCombo);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // oneToPrefixLabel
+            // 
+            resources.ApplyResources(this.oneToPrefixLabel, "oneToPrefixLabel");
+            this.oneToPrefixLabel.Name = "oneToPrefixLabel";
             // 
             // scaleCombo
             // 
@@ -167,13 +144,30 @@ namespace PurplePen
             resources.ApplyResources(this.scaleCombo, "scaleCombo");
             this.scaleCombo.Name = "scaleCombo";
             // 
+            // descKindCombo
+            // 
+            resources.ApplyResources(this.descKindCombo, "descKindCombo");
+            this.descKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.descKindCombo.FormattingEnabled = true;
+            this.descKindCombo.Items.AddRange(new object[] {
+            resources.GetString("descKindCombo.Items"),
+            resources.GetString("descKindCombo.Items1"),
+            resources.GetString("descKindCombo.Items2")});
+            this.descKindCombo.Name = "descKindCombo";
+            // 
             // secondaryTitleGroup
             // 
-            this.secondaryTitleGroup.Controls.Add(this.secondaryTitleTextBox);
-            this.secondaryTitleGroup.Controls.Add(this.secondaryTitleDescription);
+            this.secondaryTitleGroup.Controls.Add(this.tableLayoutPanel3);
             resources.ApplyResources(this.secondaryTitleGroup, "secondaryTitleGroup");
             this.secondaryTitleGroup.Name = "secondaryTitleGroup";
             this.secondaryTitleGroup.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.secondaryTitleTextBox, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.secondaryTitleDescription, 0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
             // secondaryTitleTextBox
             // 
@@ -184,12 +178,57 @@ namespace PurplePen
             // secondaryTitleDescription
             // 
             resources.ApplyResources(this.secondaryTitleDescription, "secondaryTitleDescription");
+            this.secondaryTitleDescription.MaximumSize = new System.Drawing.Size(320, 100);
             this.secondaryTitleDescription.Name = "secondaryTitleDescription";
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.climbLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.courseTypeLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.courseNameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.courseKindCombo, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // climbLabel
             // 
             resources.ApplyResources(this.climbLabel, "climbLabel");
             this.climbLabel.Name = "climbLabel";
+            // 
+            // courseTypeLabel
+            // 
+            resources.ApplyResources(this.courseTypeLabel, "courseTypeLabel");
+            this.courseTypeLabel.Name = "courseTypeLabel";
+            // 
+            // nameTextBox
+            // 
+            resources.ApplyResources(this.nameTextBox, "nameTextBox");
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
+            // 
+            // courseNameLabel
+            // 
+            resources.ApplyResources(this.courseNameLabel, "courseNameLabel");
+            this.courseNameLabel.Name = "courseNameLabel";
+            // 
+            // courseKindCombo
+            // 
+            resources.ApplyResources(this.courseKindCombo, "courseKindCombo");
+            this.courseKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.courseKindCombo.FormattingEnabled = true;
+            this.courseKindCombo.Items.AddRange(new object[] {
+            resources.GetString("courseKindCombo.Items"),
+            resources.GetString("courseKindCombo.Items1")});
+            this.courseKindCombo.Name = "courseKindCombo";
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.climbTextBox);
+            this.flowLayoutPanel1.Controls.Add(this.metersSuffix);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // climbTextBox
             // 
@@ -203,57 +242,55 @@ namespace PurplePen
             // 
             // AddCourse
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.metersSuffix);
-            this.Controls.Add(this.climbTextBox);
-            this.Controls.Add(this.climbLabel);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.secondaryTitleGroup);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.courseTypeLabel);
-            this.Controls.Add(this.courseKindCombo);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.courseNameLabel);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "AddCourse";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AddCourse_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.secondaryTitleGroup, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.secondaryTitleGroup.ResumeLayout(false);
-            this.secondaryTitleGroup.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Label courseNameLabel;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.ComboBox courseKindCombo;
-        private System.Windows.Forms.Label courseTypeLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox secondaryTitleGroup;
-        private System.Windows.Forms.Label secondaryTitleDescription;
-        private System.Windows.Forms.Label oneToPrefixLabel;
-        private System.Windows.Forms.Label descriptionAppearanceLabel;
-        private System.Windows.Forms.Label mapScaleLabel;
-        private System.Windows.Forms.ComboBox descKindCombo;
-        private System.Windows.Forms.ComboBox scaleCombo;
-        private System.Windows.Forms.TextBox secondaryTitleTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label courseTypeLabel;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label courseNameLabel;
         private System.Windows.Forms.Label climbLabel;
+        private System.Windows.Forms.ComboBox courseKindCombo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox climbTextBox;
         private System.Windows.Forms.Label metersSuffix;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label descriptionAppearanceLabel;
+        private System.Windows.Forms.Label mapScaleLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label oneToPrefixLabel;
+        private System.Windows.Forms.ComboBox scaleCombo;
+        private System.Windows.Forms.ComboBox descKindCombo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox secondaryTitleTextBox;
+        private System.Windows.Forms.Label secondaryTitleDescription;
     }
 }

@@ -151,13 +151,13 @@
     <value>True</value>
   </data>
   <data name="copyrightLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Tahoma, 11.25pt</value>
   </data>
   <data name="copyrightLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 183</value>
   </data>
   <data name="copyrightLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 18</value>
+    <value>263, 18</value>
   </data>
   <data name="copyrightLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -178,7 +178,7 @@
     <value>6</value>
   </data>
   <data name="freeLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Tahoma, 11.25pt</value>
   </data>
   <data name="freeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 213</value>
@@ -286,19 +286,16 @@
     <value>True</value>
   </data>
   <data name="versionLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Tahoma, 11.25pt</value>
   </data>
   <data name="versionLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 154</value>
   </data>
   <data name="versionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 18</value>
+    <value>0, 18</value>
   </data>
   <data name="versionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
-  </data>
-  <data name="versionLabel.Text" xml:space="preserve">
-    <value>Version 1.0.1</value>
   </data>
   <data name="&gt;&gt;versionLabel.Name" xml:space="preserve">
     <value>versionLabel</value>
@@ -354,9 +351,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>447, 402</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About Purple Pen</value>
   </data>
@@ -364,6 +358,6 @@
     <value>AboutForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

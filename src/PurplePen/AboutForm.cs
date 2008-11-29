@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class AboutForm: Form
+    public partial class AboutForm: BaseDialog
     {
         public AboutForm()
         {
@@ -58,12 +58,6 @@ namespace PurplePen
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void AboutForm_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "HelpAbout.htm");
-            e.Cancel = true;
         }
 
         private void logoPanel_Paint(object sender, PaintEventArgs e)

@@ -42,12 +42,10 @@ using System.Diagnostics;
 
 namespace PurplePen
 {
-    partial class AddCourse: Form
+    partial class AddCourse: OkCancelDialog
     {
         float printScale;
         float climb;
-
-        public string HelpTopicPage;            // Show this help topic.
 
         public AddCourse()
         {
@@ -182,7 +180,7 @@ namespace PurplePen
             okButton.Enabled = (nameTextBox.Text != "");
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        protected override bool OkButtonClicked()
         {
             // Validate scale.
             float enteredScale;
@@ -190,7 +188,7 @@ namespace PurplePen
             {
                 MessageBox.Show(this, MiscText.BadScale, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 scaleCombo.Focus();
-                return;
+                return false;
             }
             else {
                 printScale = enteredScale;
@@ -204,20 +202,13 @@ namespace PurplePen
             else if (!float.TryParse(climbTextBox.Text, out enteredClimb) || enteredClimb < 0 || enteredClimb > 9999) {
                 MessageBox.Show(this, MiscText.BadClimb, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 climbTextBox.Focus();
-                return;
+                return false;
             }
             else {
                 climb = enteredClimb;
             }
 
-            DialogResult = DialogResult.OK;
-            Close();
-        }
-
-        private void AddCourse_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, HelpTopicPage);
-            e.Cancel = true;
+            return true;
         }
     }
 }

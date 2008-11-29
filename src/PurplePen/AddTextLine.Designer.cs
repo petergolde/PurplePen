@@ -62,25 +62,57 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTextLine));
-            this.textBoxText = new System.Windows.Forms.TextBox();
             this.textLineLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxText = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.coursesLabel = new System.Windows.Forms.Label();
             this.positionLabel = new System.Windows.Forms.Label();
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
-            this.coursesLabel = new System.Windows.Forms.Label();
             this.comboBoxCourses = new System.Windows.Forms.ComboBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            // 
+            // textLineLabel
+            // 
+            resources.ApplyResources(this.textLineLabel, "textLineLabel");
+            this.textLineLabel.MaximumSize = new System.Drawing.Size(410, 0);
+            this.textLineLabel.Name = "textLineLabel";
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.textLineLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxText, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // textBoxText
             // 
             resources.ApplyResources(this.textBoxText, "textBoxText");
             this.textBoxText.Name = "textBoxText";
             // 
-            // textLineLabel
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.textLineLabel, "textLineLabel");
-            this.textLineLabel.Name = "textLineLabel";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.coursesLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.positionLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxPosition, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxCourses, 1, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // coursesLabel
+            // 
+            resources.ApplyResources(this.coursesLabel, "coursesLabel");
+            this.coursesLabel.Name = "coursesLabel";
             // 
             // positionLabel
             // 
@@ -97,11 +129,6 @@ namespace PurplePen
             resources.GetString("comboBoxPosition.Items1")});
             this.comboBoxPosition.Name = "comboBoxPosition";
             // 
-            // coursesLabel
-            // 
-            resources.ApplyResources(this.coursesLabel, "coursesLabel");
-            this.coursesLabel.Name = "coursesLabel";
-            // 
             // comboBoxCourses
             // 
             resources.ApplyResources(this.comboBoxCourses, "comboBoxCourses");
@@ -112,42 +139,22 @@ namespace PurplePen
             resources.GetString("comboBoxCourses.Items1")});
             this.comboBoxCourses.Name = "comboBoxCourses";
             // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // AddTextLine
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.comboBoxCourses);
-            this.Controls.Add(this.coursesLabel);
-            this.Controls.Add(this.comboBoxPosition);
-            this.Controls.Add(this.positionLabel);
-            this.Controls.Add(this.textLineLabel);
-            this.Controls.Add(this.textBoxText);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.HelpTopic = "ItemAddTextLine.htm";
             this.Name = "AddTextLine";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AddTextLine_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,13 +162,13 @@ namespace PurplePen
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxText;
         private System.Windows.Forms.Label textLineLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBoxText;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label coursesLabel;
         private System.Windows.Forms.Label positionLabel;
         private System.Windows.Forms.ComboBox comboBoxPosition;
-        private System.Windows.Forms.Label coursesLabel;
         private System.Windows.Forms.ComboBox comboBoxCourses;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
     }
 }
