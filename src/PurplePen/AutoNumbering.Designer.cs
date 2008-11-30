@@ -61,5 +61,9 @@ namespace PurplePen
             base.Dispose(disposing);
         }
 
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label startingCodeLabel;
+        private NumericUpDown startingCodeNumericUpDown;
+
     }
 }

@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class AutoNumbering: Form
+    public partial class AutoNumbering: OkCancelDialog
     {
         public int FirstCode {
             get {
@@ -91,43 +91,26 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoNumbering));
-            this.startingCodeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.startingCodeLabel = new System.Windows.Forms.Label();
             this.disallowInvertibleCheckBox = new System.Windows.Forms.CheckBox();
             this.existingControlsGroupBox = new System.Windows.Forms.GroupBox();
             this.renumberExistingRadioButton = new System.Windows.Forms.RadioButton();
             this.newControlsOnlyRadioButton = new System.Windows.Forms.RadioButton();
             this.automaticNumberingLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).BeginInit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.startingCodeLabel = new System.Windows.Forms.Label();
+            this.startingCodeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.existingControlsGroupBox.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // startingCodeNumericUpDown
+            // okButton
             // 
-            resources.ApplyResources(this.startingCodeNumericUpDown, "startingCodeNumericUpDown");
-            this.startingCodeNumericUpDown.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.startingCodeNumericUpDown.Minimum = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
-            this.startingCodeNumericUpDown.Name = "startingCodeNumericUpDown";
-            this.startingCodeNumericUpDown.Value = new decimal(new int[] {
-            31,
-            0,
-            0,
-            0});
+            resources.ApplyResources(this.okButton, "okButton");
             // 
-            // startingCodeLabel
+            // cancelButton
             // 
-            resources.ApplyResources(this.startingCodeLabel, "startingCodeLabel");
-            this.startingCodeLabel.Name = "startingCodeLabel";
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // disallowInvertibleCheckBox
             // 
@@ -162,56 +145,67 @@ namespace PurplePen
             resources.ApplyResources(this.automaticNumberingLabel, "automaticNumberingLabel");
             this.automaticNumberingLabel.Name = "automaticNumberingLabel";
             // 
-            // cancelButton
+            // flowLayoutPanel1
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.startingCodeLabel);
+            this.flowLayoutPanel1.Controls.Add(this.startingCodeNumericUpDown);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
-            // okButton
+            // startingCodeLabel
             // 
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.startingCodeLabel, "startingCodeLabel");
+            this.startingCodeLabel.Name = "startingCodeLabel";
+            // 
+            // startingCodeNumericUpDown
+            // 
+            resources.ApplyResources(this.startingCodeNumericUpDown, "startingCodeNumericUpDown");
+            this.startingCodeNumericUpDown.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.startingCodeNumericUpDown.Minimum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.startingCodeNumericUpDown.Name = "startingCodeNumericUpDown";
+            this.startingCodeNumericUpDown.Value = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
             // 
             // AutoNumbering
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.automaticNumberingLabel);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.existingControlsGroupBox);
             this.Controls.Add(this.disallowInvertibleCheckBox);
-            this.Controls.Add(this.startingCodeLabel);
-            this.Controls.Add(this.startingCodeNumericUpDown);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "AutoNumbering";
-            this.ShowInTaskbar = false;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AutoNumbering_HelpButtonClicked);
-            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).EndInit();
+            this.Controls.SetChildIndex(this.disallowInvertibleCheckBox, 0);
+            this.Controls.SetChildIndex(this.existingControlsGroupBox, 0);
+            this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.automaticNumberingLabel, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.existingControlsGroupBox.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        private NumericUpDown startingCodeNumericUpDown;
-        private Label startingCodeLabel;
         private CheckBox disallowInvertibleCheckBox;
         private GroupBox existingControlsGroupBox;
         private RadioButton renumberExistingRadioButton;
         private RadioButton newControlsOnlyRadioButton;
-        private Label automaticNumberingLabel;
-        private Button cancelButton;
-        private Button okButton;       
+        private Label automaticNumberingLabel;       
 
         #endregion
 
