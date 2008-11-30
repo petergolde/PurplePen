@@ -187,7 +187,6 @@ namespace PurplePen
             this.Controls.Add(this.disallowInvertibleCheckBox);
             this.HelpTopic = "ControlsAutomaticNumbering.htm";
             this.Name = "AutoNumbering";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AutoNumbering_HelpButtonClicked);
             this.Controls.SetChildIndex(this.disallowInvertibleCheckBox, 0);
             this.Controls.SetChildIndex(this.existingControlsGroupBox, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);

@@ -96,14 +96,29 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeAllCodes));
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grid = new System.Windows.Forms.DataGridView();
             this.OldCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.changeControlCodesLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.grid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.grid, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.changeControlCodesLabel, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // grid
             // 
@@ -124,9 +139,6 @@ namespace PurplePen
             this.grid.RowTemplate.Height = 24;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grid.ShowEditingIcon = false;
-            this.grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellValueChanged);
-            this.grid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grid_CellFormatting);
-            this.grid.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grid_CellValidating);
             // 
             // OldCode
             // 
@@ -147,42 +159,26 @@ namespace PurplePen
             this.NewCode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.NewCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // changeControlCodesLabel
             // 
             resources.ApplyResources(this.changeControlCodesLabel, "changeControlCodesLabel");
+            this.changeControlCodesLabel.MaximumSize = new System.Drawing.Size(273, 100);
             this.changeControlCodesLabel.Name = "changeControlCodesLabel";
             // 
             // ChangeAllCodes
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.changeControlCodesLabel);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.grid);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "ControlsChangeCodes.htm";
             this.Name = "ChangeAllCodes";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.ChangeAllCodes_HelpButtonClicked);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.grid)).EndInit();
             this.ResumeLayout(false);
 
@@ -190,11 +186,11 @@ namespace PurplePen
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView grid;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label changeControlCodesLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn OldCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn NewCode;
+        private System.Windows.Forms.Label changeControlCodesLabel;
+
     }
 }

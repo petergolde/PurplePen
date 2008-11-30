@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class ChangeAllCodes: Form
+    public partial class ChangeAllCodes: OkCancelDialog
     {
         private object[] codeKeys;
         private EventDB eventDB;
@@ -145,7 +145,7 @@ namespace PurplePen
             return -1;     // no problem.
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        protected override bool OkButtonClicked()
         {
             // Check for duplicate codes.
             int duplicateRow = FindDuplicateCodes();
@@ -154,18 +154,11 @@ namespace PurplePen
                 // A duplicate was found.
                 ErrorMessage(string.Format(MiscText.DuplicateCode, grid[1, duplicateRow].Value));
                 grid.CurrentCell = grid[1, duplicateRow];
+                return false;
             }
             else {
-                DialogResult = DialogResult.OK;
+                return true;
             }
         }
-
-        private void ChangeAllCodes_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "ControlsChangeCodes.htm");
-            e.Cancel = true;
-        }
-
-
     }
 }
