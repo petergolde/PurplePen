@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class ChangeCourseOrder: Form
+    public partial class ChangeCourseOrder: OkCancelDialog
     {
         Controller.CourseOrderInfo[] orders;
 
@@ -108,17 +108,6 @@ namespace PurplePen
         {
             moveUpButton.Enabled = (listBoxCourses.SelectedIndex != 0);
             moveDownButton.Enabled = (listBoxCourses.SelectedIndex != listBoxCourses.Items.Count - 1);
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
-
-        private void ChangeCourseOrder_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "CourseCourseOrder.htm");
-            e.Cancel = true;
         }
     }
 }
