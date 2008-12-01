@@ -29,8 +29,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeText));
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
             this.textBoxMain = new System.Windows.Forms.TextBox();
             this.insertSpecialButton = new System.Windows.Forms.Button();
             this.specialTextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,19 +41,13 @@
             this.specialTextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // okButton
             // 
             resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // textBoxMain
             // 
@@ -119,20 +111,17 @@
             // 
             // ChangeText
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.usageLabel);
             this.Controls.Add(this.insertSpecialButton);
             this.Controls.Add(this.textBoxMain);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.cancelButton);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "ChangeText";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.Controls.SetChildIndex(this.textBoxMain, 0);
+            this.Controls.SetChildIndex(this.insertSpecialButton, 0);
+            this.Controls.SetChildIndex(this.usageLabel, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.specialTextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,8 +130,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.TextBox textBoxMain;
         private System.Windows.Forms.Button insertSpecialButton;
         private System.Windows.Forms.ContextMenuStrip specialTextMenu;

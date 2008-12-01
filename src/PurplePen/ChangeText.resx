@@ -117,53 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 129</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="okButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 129</value>
-  </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>135, 145</value>
   </data>
   <data name="&gt;&gt;okButton.Name" xml:space="preserve">
     <value>okButton</value>
@@ -175,17 +131,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 145</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBoxMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="textBoxMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 76</value>
+    <value>13, 84</value>
   </data>
   <data name="textBoxMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 20</value>
+    <value>299, 23</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBoxMain.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -199,16 +172,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="insertSpecialButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="insertSpecialButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="insertSpecialButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 102</value>
+    <value>13, 111</value>
   </data>
   <data name="insertSpecialButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 23</value>
+    <value>126, 25</value>
   </data>
   <data name="insertSpecialButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -226,20 +202,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;insertSpecialButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="specialTextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="specialTextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 114</value>
-  </data>
-  <data name="&gt;&gt;specialTextMenu.Name" xml:space="preserve">
-    <value>specialTextMenu</value>
-  </data>
-  <data name="&gt;&gt;specialTextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="eventTitleMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 22</value>
   </data>
@@ -270,6 +237,15 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Class List</value>
   </data>
+  <data name="specialTextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 114</value>
+  </data>
+  <data name="&gt;&gt;specialTextMenu.Name" xml:space="preserve">
+    <value>specialTextMenu</value>
+  </data>
+  <data name="&gt;&gt;specialTextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="usageLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -277,7 +253,7 @@
     <value>13, 13</value>
   </data>
   <data name="usageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 60</value>
+    <value>299, 68</value>
   </data>
   <data name="usageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;usageLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -301,13 +277,10 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>324, 164</value>
+    <value>330, 179</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>336, 180</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;eventTitleMenuItem.Name" xml:space="preserve">
     <value>eventTitleMenuItem</value>
@@ -343,6 +316,6 @@
     <value>ChangeText</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

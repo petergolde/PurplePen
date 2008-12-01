@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class ChangeText: Form
+    public partial class ChangeText: OkCancelDialog
     {
         public ChangeText()
         {
