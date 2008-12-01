@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    partial class CourseLoad: Form
+    partial class CourseLoad: OkCancelDialog
     {
         public Controller.CourseLoadInfo[] courseLoads;
 
@@ -110,15 +110,5 @@ namespace PurplePen
             }
         }
 
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
-
-        private void CourseLoad_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "CourseCompetitorLoad.htm");
-            e.Cancel = true;
-        }
     }
 }

@@ -65,11 +65,17 @@ namespace PurplePen
             this.grid = new System.Windows.Forms.DataGridView();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Load = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
             this.courseLoadLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.grid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // grid
             // 
@@ -111,20 +117,6 @@ namespace PurplePen
             this.Load.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Load.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
             // courseLoadLabel
             // 
             resources.ApplyResources(this.courseLoadLabel, "courseLoadLabel");
@@ -132,21 +124,18 @@ namespace PurplePen
             // 
             // CourseLoad
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.courseLoadLabel);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
             this.Controls.Add(this.grid);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "CourseCompetitorLoad.htm";
             this.Name = "CourseLoad";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CourseLoad_HelpButtonClicked);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Controls.SetChildIndex(this.grid, 0);
+            this.Controls.SetChildIndex(this.courseLoadLabel, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             ((System.ComponentModel.ISupportInitialize) (this.grid)).EndInit();
             this.ResumeLayout(false);
 
@@ -155,8 +144,6 @@ namespace PurplePen
         #endregion
 
         private System.Windows.Forms.DataGridView grid;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Label courseLoadLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
         private new System.Windows.Forms.DataGridViewTextBoxColumn Load;
