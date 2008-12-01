@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    partial class ChangeSpecialCourses: Form
+    partial class ChangeSpecialCourses: OkCancelDialog
     {
         public ChangeSpecialCourses()
         {
@@ -70,10 +70,5 @@ namespace PurplePen
             }
         }
 
-        private void ChangeSpecialCourses_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "EditChangeDisplayedCourses.htm");
-            e.Cancel = true;
-        }
     }
 }

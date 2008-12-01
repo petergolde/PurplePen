@@ -78,6 +78,7 @@ namespace PurplePen
         }
 
         // Get or set the selected courses.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
         public Id<Course>[] SelectedCourses
         {
             get

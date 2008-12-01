@@ -106,7 +106,9 @@ namespace PurplePen
             this.Name = "CourseSelector";
             this.Load += new System.EventHandler(this.CourseSelector_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
