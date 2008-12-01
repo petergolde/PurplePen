@@ -62,12 +62,10 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomSymbolText));
-            this.buttonOk = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.descriptionLanguageGroupBox = new System.Windows.Forms.GroupBox();
             this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
             this.labelChooseLanguage = new System.Windows.Forms.Label();
-            this.customizedTextGroupBox = new System.Windows.Forms.GroupBox();
+            this.textBoxSymbolName = new System.Windows.Forms.TextBox();
+            this.labelSymbolName = new System.Windows.Forms.Label();
             this.labelCustomizedText = new System.Windows.Forms.Label();
             this.buttonChangeText = new System.Windows.Forms.Button();
             this.buttonDefault = new System.Windows.Forms.Button();
@@ -76,33 +74,15 @@ namespace PurplePen
             this.checkBoxShowKey = new System.Windows.Forms.CheckBox();
             this.listBoxSymbols = new System.Windows.Forms.ListBox();
             this.labelCustomizeText = new System.Windows.Forms.Label();
-            this.labelSymbolName = new System.Windows.Forms.Label();
-            this.textBoxSymbolName = new System.Windows.Forms.TextBox();
-            this.descriptionLanguageGroupBox.SuspendLayout();
-            this.customizedTextGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonOk
+            // okButton
             // 
-            resources.ApplyResources(this.buttonOk, "buttonOk");
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            resources.ApplyResources(this.okButton, "okButton");
             // 
-            // buttonCancel
+            // cancelButton
             // 
-            resources.ApplyResources(this.buttonCancel, "buttonCancel");
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // descriptionLanguageGroupBox
-            // 
-            resources.ApplyResources(this.descriptionLanguageGroupBox, "descriptionLanguageGroupBox");
-            this.descriptionLanguageGroupBox.Controls.Add(this.comboBoxLanguage);
-            this.descriptionLanguageGroupBox.Controls.Add(this.labelChooseLanguage);
-            this.descriptionLanguageGroupBox.Name = "descriptionLanguageGroupBox";
-            this.descriptionLanguageGroupBox.TabStop = false;
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // comboBoxLanguage
             // 
@@ -117,21 +97,15 @@ namespace PurplePen
             resources.ApplyResources(this.labelChooseLanguage, "labelChooseLanguage");
             this.labelChooseLanguage.Name = "labelChooseLanguage";
             // 
-            // customizedTextGroupBox
+            // textBoxSymbolName
             // 
-            resources.ApplyResources(this.customizedTextGroupBox, "customizedTextGroupBox");
-            this.customizedTextGroupBox.Controls.Add(this.textBoxSymbolName);
-            this.customizedTextGroupBox.Controls.Add(this.labelSymbolName);
-            this.customizedTextGroupBox.Controls.Add(this.labelCustomizedText);
-            this.customizedTextGroupBox.Controls.Add(this.buttonChangeText);
-            this.customizedTextGroupBox.Controls.Add(this.buttonDefault);
-            this.customizedTextGroupBox.Controls.Add(this.textBoxCurrent);
-            this.customizedTextGroupBox.Controls.Add(this.labelStandardText);
-            this.customizedTextGroupBox.Controls.Add(this.checkBoxShowKey);
-            this.customizedTextGroupBox.Controls.Add(this.listBoxSymbols);
-            this.customizedTextGroupBox.Controls.Add(this.labelCustomizeText);
-            this.customizedTextGroupBox.Name = "customizedTextGroupBox";
-            this.customizedTextGroupBox.TabStop = false;
+            resources.ApplyResources(this.textBoxSymbolName, "textBoxSymbolName");
+            this.textBoxSymbolName.Name = "textBoxSymbolName";
+            // 
+            // labelSymbolName
+            // 
+            resources.ApplyResources(this.labelSymbolName, "labelSymbolName");
+            this.labelSymbolName.Name = "labelSymbolName";
             // 
             // labelCustomizedText
             // 
@@ -183,59 +157,58 @@ namespace PurplePen
             resources.ApplyResources(this.labelCustomizeText, "labelCustomizeText");
             this.labelCustomizeText.Name = "labelCustomizeText";
             // 
-            // labelSymbolName
-            // 
-            resources.ApplyResources(this.labelSymbolName, "labelSymbolName");
-            this.labelSymbolName.Name = "labelSymbolName";
-            // 
-            // textBoxSymbolName
-            // 
-            resources.ApplyResources(this.textBoxSymbolName, "textBoxSymbolName");
-            this.textBoxSymbolName.Name = "textBoxSymbolName";
-            // 
             // CustomSymbolText
             // 
-            this.AcceptButton = this.buttonOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.buttonCancel;
-            this.Controls.Add(this.customizedTextGroupBox);
-            this.Controls.Add(this.descriptionLanguageGroupBox);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonOk);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.textBoxCurrent);
+            this.Controls.Add(this.labelCustomizedText);
+            this.Controls.Add(this.textBoxSymbolName);
+            this.Controls.Add(this.labelSymbolName);
+            this.Controls.Add(this.buttonChangeText);
+            this.Controls.Add(this.checkBoxShowKey);
+            this.Controls.Add(this.listBoxSymbols);
+            this.Controls.Add(this.labelStandardText);
+            this.Controls.Add(this.labelCustomizeText);
+            this.Controls.Add(this.comboBoxLanguage);
+            this.Controls.Add(this.buttonDefault);
+            this.Controls.Add(this.labelChooseLanguage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "ControlsCustomizeDescriptionText.htm";
             this.Name = "CustomSymbolText";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.CustomSymbolText_Load);
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CustomSymbolText_HelpButtonClicked);
-            this.descriptionLanguageGroupBox.ResumeLayout(false);
-            this.descriptionLanguageGroupBox.PerformLayout();
-            this.customizedTextGroupBox.ResumeLayout(false);
-            this.customizedTextGroupBox.PerformLayout();
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Controls.SetChildIndex(this.labelChooseLanguage, 0);
+            this.Controls.SetChildIndex(this.buttonDefault, 0);
+            this.Controls.SetChildIndex(this.comboBoxLanguage, 0);
+            this.Controls.SetChildIndex(this.labelCustomizeText, 0);
+            this.Controls.SetChildIndex(this.labelStandardText, 0);
+            this.Controls.SetChildIndex(this.listBoxSymbols, 0);
+            this.Controls.SetChildIndex(this.checkBoxShowKey, 0);
+            this.Controls.SetChildIndex(this.buttonChangeText, 0);
+            this.Controls.SetChildIndex(this.labelSymbolName, 0);
+            this.Controls.SetChildIndex(this.textBoxSymbolName, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.labelCustomizedText, 0);
+            this.Controls.SetChildIndex(this.textBoxCurrent, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonOk;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.GroupBox descriptionLanguageGroupBox;
         private System.Windows.Forms.ComboBox comboBoxLanguage;
         private System.Windows.Forms.Label labelChooseLanguage;
-        private System.Windows.Forms.GroupBox customizedTextGroupBox;
-        private System.Windows.Forms.CheckBox checkBoxShowKey;
-        private System.Windows.Forms.ListBox listBoxSymbols;
-        private System.Windows.Forms.Label labelCustomizeText;
+        private System.Windows.Forms.TextBox textBoxSymbolName;
+        private System.Windows.Forms.Label labelSymbolName;
+        private System.Windows.Forms.Label labelCustomizedText;
         private System.Windows.Forms.Button buttonChangeText;
         private System.Windows.Forms.Button buttonDefault;
         private System.Windows.Forms.TextBox textBoxCurrent;
         private System.Windows.Forms.Label labelStandardText;
-        private System.Windows.Forms.Label labelCustomizedText;
-        private System.Windows.Forms.TextBox textBoxSymbolName;
-        private System.Windows.Forms.Label labelSymbolName;
+        private System.Windows.Forms.CheckBox checkBoxShowKey;
+        private System.Windows.Forms.ListBox listBoxSymbols;
+        private System.Windows.Forms.Label labelCustomizeText;
     }
 }

@@ -43,7 +43,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class CustomSymbolText: Form
+    public partial class CustomSymbolText: OkCancelDialog
     {
         SymbolDB symbolDB;
         bool useAsLocalizeTool;           // If true, this dialog is being used as a localization tool, not an end-use customization.
@@ -293,18 +293,12 @@ namespace PurplePen
             UpdateControlsFromId(selectedId);
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
+        protected override bool OkButtonClicked()
         {
             if (selectedId != null)
                 UpdateDataFromControls(selectedId);
 
-            DialogResult = DialogResult.OK;
-        }
-
-        private void CustomSymbolText_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "ControlsCustomizeDescriptionText.htm");
-            e.Cancel = true;
+            return true;
         }
 
         private void buttonDefault_Click(object sender, EventArgs e)
@@ -394,11 +388,6 @@ namespace PurplePen
         {
             UpdateControlsFromId(selectedId);
             listBoxSymbols.Refresh();
-        }
-
-        private void CustomSymbolText_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
