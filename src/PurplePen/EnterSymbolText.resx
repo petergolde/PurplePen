@@ -117,69 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>388, 293</value>
-  </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>279, 294</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="buttonOk.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
+    <value>okButton</value>
   </data>
-  <data name="buttonOk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonOk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 293</value>
-  </data>
-  <data name="buttonOk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="buttonOk.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="buttonOk.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Name" xml:space="preserve">
-    <value>buttonOk</value>
-  </data>
-  <data name="&gt;&gt;buttonOk.Type" xml:space="preserve">
+  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonOk.Parent" xml:space="preserve">
+  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonOk.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 294</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -190,7 +166,7 @@
     <value>Number</value>
   </data>
   <data name="numberColumn.Width" type="System.Int32, mscorlib">
-    <value>50</value>
+    <value>57</value>
   </data>
   <metadata name="genderColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -199,7 +175,7 @@
     <value>Gender</value>
   </data>
   <data name="genderColumn.Width" type="System.Int32, mscorlib">
-    <value>48</value>
+    <value>51</value>
   </data>
   <metadata name="textColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -232,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="checkBoxPlural.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,7 +217,7 @@
     <value>13, 57</value>
   </data>
   <data name="checkBoxPlural.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
+    <value>122, 19</value>
   </data>
   <data name="checkBoxPlural.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -259,16 +235,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBoxPlural.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="checkBoxGender.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="checkBoxGender.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 57</value>
+    <value>237, 57</value>
   </data>
   <data name="checkBoxGender.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 17</value>
+    <value>129, 19</value>
   </data>
   <data name="checkBoxGender.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -286,16 +262,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;checkBoxGender.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="labelDescription.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>5</value>
   </data>
   <data name="labelDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 10</value>
   </data>
   <data name="labelDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 13</value>
+    <value>449, 44</value>
   </data>
   <data name="labelDescription.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -313,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelDescription.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="labelGenderChooser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -322,7 +295,7 @@
     <value>13, 268</value>
   </data>
   <data name="labelGenderChooser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>48, 15</value>
   </data>
   <data name="labelGenderChooser.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -340,13 +313,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelGenderChooser.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="comboBoxGenderChooser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 265</value>
+    <value>110, 265</value>
   </data>
   <data name="comboBoxGenderChooser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 21</value>
+    <value>141, 23</value>
   </data>
   <data name="comboBoxGenderChooser.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -361,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboBoxGenderChooser.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -371,9 +344,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>474, 328</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customized Symbol Text</value>
@@ -400,6 +370,6 @@
     <value>EnterSymbolText</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

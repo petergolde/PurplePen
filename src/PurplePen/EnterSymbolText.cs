@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    partial class EnterSymbolText: Form
+    partial class EnterSymbolText: OkCancelDialog
     {
         List<SymbolText> symbolTexts;
         SymbolLanguage symLanguage;
@@ -152,11 +152,6 @@ namespace PurplePen
                 ReadGrid();
                 UpdateGrid();
             }
-        }
-
-        private void buttonOk_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
         }
 
         private void EnterSymbolText_Shown(object sender, EventArgs e)

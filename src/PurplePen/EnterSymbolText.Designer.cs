@@ -28,8 +28,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnterSymbolText));
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonOk = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.numberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,19 +40,13 @@
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonCancel
+            // okButton
             // 
-            resources.ApplyResources(this.buttonCancel, "buttonCancel");
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.okButton, "okButton");
             // 
-            // buttonOk
+            // cancelButton
             // 
-            resources.ApplyResources(this.buttonOk, "buttonOk");
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // dataGridView
             // 
@@ -132,25 +124,25 @@
             // 
             // EnterSymbolText
             // 
-            this.AcceptButton = this.buttonOk;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.buttonCancel;
             this.Controls.Add(this.comboBoxGenderChooser);
             this.Controls.Add(this.labelGenderChooser);
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.checkBoxGender);
             this.Controls.Add(this.checkBoxPlural);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonOk);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpButton = false;
             this.Name = "EnterSymbolText";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.Shown += new System.EventHandler(this.EnterSymbolText_Shown);
+            this.Controls.SetChildIndex(this.dataGridView, 0);
+            this.Controls.SetChildIndex(this.checkBoxPlural, 0);
+            this.Controls.SetChildIndex(this.checkBoxGender, 0);
+            this.Controls.SetChildIndex(this.labelDescription, 0);
+            this.Controls.SetChildIndex(this.labelGenderChooser, 0);
+            this.Controls.SetChildIndex(this.comboBoxGenderChooser, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,8 +151,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.CheckBox checkBoxPlural;
         private System.Windows.Forms.CheckBox checkBoxGender;
