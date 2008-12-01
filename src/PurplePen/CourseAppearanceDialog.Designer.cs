@@ -50,8 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.upDownCyan = new System.Windows.Forms.NumericUpDown();
             this.checkBoxDefaultPurple = new System.Windows.Forms.CheckBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonOK = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.groupBoxPreview = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
@@ -67,6 +65,14 @@
             this.groupBoxPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // groupBoxSizes
             // 
@@ -280,20 +286,6 @@
             this.checkBoxDefaultPurple.UseVisualStyleBackColor = true;
             this.checkBoxDefaultPurple.CheckedChanged += new System.EventHandler(this.checkBoxDefaultPurple_CheckedChanged);
             // 
-            // buttonCancel
-            // 
-            resources.ApplyResources(this.buttonCancel, "buttonCancel");
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonOK
-            // 
-            resources.ApplyResources(this.buttonOK, "buttonOK");
-            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            // 
             // colorDialog
             // 
             this.colorDialog.AnyColor = true;
@@ -316,23 +308,18 @@
             // 
             // CourseAppearanceDialog
             // 
-            this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.buttonCancel;
             this.Controls.Add(this.groupBoxPreview);
-            this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.groupBoxPurple);
             this.Controls.Add(this.groupBoxSizes);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "EventCustomizeCourseAppearance.htm";
             this.Name = "CourseAppearanceDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CourseAppearanceDialog_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.groupBoxSizes, 0);
+            this.Controls.SetChildIndex(this.groupBoxPurple, 0);
+            this.Controls.SetChildIndex(this.groupBoxPreview, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.upDownNumberHeight)).EndInit();
@@ -357,8 +344,6 @@
         private System.Windows.Forms.NumericUpDown upDownControlCircle;
         private System.Windows.Forms.CheckBox checkBoxStandardSizes;
         private System.Windows.Forms.GroupBox groupBoxPurple;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Label labelControlNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown upDownNumberHeight;

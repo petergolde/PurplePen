@@ -10,7 +10,7 @@ using PurplePen.MapModel;
 
 namespace PurplePen
 {
-    public partial class CourseAppearanceDialog: Form
+    public partial class CourseAppearanceDialog: OkCancelDialog
     {
         float defaultPurpleC, defaultPurpleM, defaultPurpleY, defaultPurpleK;
 
@@ -184,12 +184,6 @@ namespace PurplePen
         private void upDown_ValueChanged(object sender, EventArgs e)
         {
             UpdatePreview();
-        }
-
-        private void CourseAppearanceDialog_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "EventCustomizeCourseAppearance.htm");
-            e.Cancel = true;
         }
     }
 }
