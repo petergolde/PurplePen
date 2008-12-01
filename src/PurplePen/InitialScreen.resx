@@ -189,14 +189,17 @@
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="okButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 262</value>
+    <value>243, 262</value>
   </data>
   <data name="okButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 25</value>
+    <value>83, 25</value>
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -219,6 +222,9 @@
   <data name="quitButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="quitButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="quitButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 262</value>
   </data>
@@ -226,7 +232,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="quitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 25</value>
+    <value>83, 25</value>
   </data>
   <data name="quitButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -402,6 +408,6 @@
     <value>InitialScreen</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

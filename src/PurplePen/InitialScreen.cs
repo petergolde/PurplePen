@@ -43,7 +43,7 @@ using System.IO;
 
 namespace PurplePen
 {
-    public partial class InitialScreen : Form
+    public partial class InitialScreen : BaseDialog
     {
         public InitialScreen()
         {

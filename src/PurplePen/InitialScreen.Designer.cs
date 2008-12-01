@@ -120,9 +120,7 @@ namespace PurplePen
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.createNewRadioButton);
             this.Controls.Add(this.openExistingRadioButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpButton = false;
             this.Name = "InitialScreen";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InitialScreen_FormClosed);
