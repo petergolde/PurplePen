@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace PurplePen
 {
-    public partial class ChangeMapFile: Form
+    public partial class ChangeMapFile: OkCancelDialog
     {
         private string mapFile;
         private MapType mapType;
@@ -17,6 +17,7 @@ namespace PurplePen
         public ChangeMapFile()
         {
             InitializeComponent();
+            errorMessage.Font = new Font(Font, FontStyle.Bold);
 
             UpdateMapFile();
         }
@@ -157,7 +158,7 @@ namespace PurplePen
 
         private void UpdateOKButton()
         {
-            buttonOK.Enabled = IsOK();
+            okButton.Enabled = IsOK();
         }
 
         private void textBoxScale_TextChanged(object sender, EventArgs e)
@@ -170,11 +171,6 @@ namespace PurplePen
             UpdateOKButton();
         }
 
-        private void ChangeMapFile_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "EventMapFile.htm");
-            e.Cancel = true;
-        }
 
     }
 }
