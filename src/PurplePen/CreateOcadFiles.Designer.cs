@@ -68,10 +68,11 @@ namespace PurplePen
             this.cancelButton = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
-            this.filenamePrefixTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.fileNamePrefixLabel = new System.Windows.Forms.Label();
-            this.fileFormatCombo = new System.Windows.Forms.ComboBox();
+            this.filenamePrefixTextBox = new System.Windows.Forms.TextBox();
             this.fileFormatLabel = new System.Windows.Forms.Label();
+            this.fileFormatCombo = new System.Windows.Forms.ComboBox();
             this.folderGroupBox = new System.Windows.Forms.GroupBox();
             this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
             this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
@@ -80,6 +81,7 @@ namespace PurplePen
             this.coursesDirectory = new System.Windows.Forms.RadioButton();
             this.coursesGroupBox.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.folderGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +96,6 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
-            this.courseSelector.SelectedCourses = new PurplePen.Id<PurplePen.Course>[0];
             this.courseSelector.ShowAllControls = true;
             // 
             // createButton
@@ -106,8 +107,8 @@ namespace PurplePen
             // 
             // cancelButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -117,26 +118,38 @@ namespace PurplePen
             // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Controls.Add(this.filenamePrefixTextBox);
-            this.outputGroupBox.Controls.Add(this.fileNamePrefixLabel);
-            this.outputGroupBox.Controls.Add(this.fileFormatCombo);
-            this.outputGroupBox.Controls.Add(this.fileFormatLabel);
+            this.outputGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.outputGroupBox, "outputGroupBox");
             this.outputGroupBox.Name = "outputGroupBox";
             this.outputGroupBox.TabStop = false;
             // 
-            // filenamePrefixTextBox
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.filenamePrefixTextBox, "filenamePrefixTextBox");
-            this.filenamePrefixTextBox.Name = "filenamePrefixTextBox";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.fileNamePrefixLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.filenamePrefixTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.fileFormatLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.fileFormatCombo, 1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // fileNamePrefixLabel
             // 
             resources.ApplyResources(this.fileNamePrefixLabel, "fileNamePrefixLabel");
             this.fileNamePrefixLabel.Name = "fileNamePrefixLabel";
             // 
+            // filenamePrefixTextBox
+            // 
+            resources.ApplyResources(this.filenamePrefixTextBox, "filenamePrefixTextBox");
+            this.filenamePrefixTextBox.Name = "filenamePrefixTextBox";
+            // 
+            // fileFormatLabel
+            // 
+            resources.ApplyResources(this.fileFormatLabel, "fileFormatLabel");
+            this.fileFormatLabel.Name = "fileFormatLabel";
+            // 
             // fileFormatCombo
             // 
+            resources.ApplyResources(this.fileFormatCombo, "fileFormatCombo");
             this.fileFormatCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fileFormatCombo.FormattingEnabled = true;
             this.fileFormatCombo.Items.AddRange(new object[] {
@@ -144,13 +157,7 @@ namespace PurplePen
             resources.GetString("fileFormatCombo.Items1"),
             resources.GetString("fileFormatCombo.Items2"),
             resources.GetString("fileFormatCombo.Items3")});
-            resources.ApplyResources(this.fileFormatCombo, "fileFormatCombo");
             this.fileFormatCombo.Name = "fileFormatCombo";
-            // 
-            // fileFormatLabel
-            // 
-            resources.ApplyResources(this.fileFormatLabel, "fileFormatLabel");
-            this.fileFormatLabel.Name = "fileFormatLabel";
             // 
             // folderGroupBox
             // 
@@ -208,20 +215,16 @@ namespace PurplePen
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.cancelButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "FileCreateOcadFiles.htm";
             this.Name = "CreateOcadFiles";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.CreateOcadFiles_HelpButtonClicked);
             this.coursesGroupBox.ResumeLayout(false);
             this.outputGroupBox.ResumeLayout(false);
-            this.outputGroupBox.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.folderGroupBox.ResumeLayout(false);
             this.folderGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,15 +236,16 @@ namespace PurplePen
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.GroupBox outputGroupBox;
-        private System.Windows.Forms.ComboBox fileFormatCombo;
-        private System.Windows.Forms.Label fileFormatLabel;
         private System.Windows.Forms.GroupBox folderGroupBox;
         private System.Windows.Forms.RadioButton otherDirectory;
         private System.Windows.Forms.RadioButton mapDirectory;
         private System.Windows.Forms.RadioButton coursesDirectory;
         private System.Windows.Forms.Button selectOtherDirectoryButton;
         private System.Windows.Forms.TextBox otherDirectoryTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label fileNamePrefixLabel;
         private System.Windows.Forms.TextBox filenamePrefixTextBox;
+        private System.Windows.Forms.Label fileFormatLabel;
+        private System.Windows.Forms.ComboBox fileFormatCombo;
     }
 }

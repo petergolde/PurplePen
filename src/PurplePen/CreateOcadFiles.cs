@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    partial class CreateOcadFiles: Form
+    partial class CreateOcadFiles: BaseDialog
     {
         private OcadCreationSettings settings;
 
@@ -142,10 +142,5 @@ namespace PurplePen
             selectOtherDirectoryButton.Visible = otherDirectory.Checked;
         }
 
-        private void CreateOcadFiles_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "FileCreateOcadFiles.htm");
-            e.Cancel = true;
-        }
     }
 }
