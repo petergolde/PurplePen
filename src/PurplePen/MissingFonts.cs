@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class MissingFonts: Form
+    public partial class MissingFonts: BaseDialog
     {
         string mapName;
         string[] missingFontList;
@@ -54,12 +54,5 @@ namespace PurplePen
                 checkBoxDontWarnAgain.Checked = value;
             }
         }
-
-        private void MissingFonts_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "MissingFontsDialog.htm");
-            e.Cancel = true;
-        }
-
     }
 }
