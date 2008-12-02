@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class OverwritingOcadFilesDialog: Form
+    public partial class OverwritingOcadFilesDialog: BaseDialog
     {
         public OverwritingOcadFilesDialog()
         {
@@ -22,6 +22,16 @@ namespace PurplePen
                 foreach (string s in value)
                     listBoxFiles.Items.Add(s);
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

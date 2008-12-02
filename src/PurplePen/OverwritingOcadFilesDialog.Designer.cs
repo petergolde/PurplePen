@@ -51,6 +51,7 @@
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -58,6 +59,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // OverwritingOcadFilesDialog
             // 
@@ -69,12 +71,12 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.confirmReplaceLabel);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpButton = false;
             this.Name = "OverwritingOcadFilesDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
