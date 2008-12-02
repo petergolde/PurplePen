@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class NonPrintableObjects: Form
+    public partial class NonPrintableObjects: BaseDialog
     {
         string mapName;
         string[] badObjectList;
@@ -41,17 +41,6 @@ namespace PurplePen
                         listBoxBadObjects.Items.Add(s);
                 }
             }
-        }
-
-        private void NonPrintableObjects_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "NonPrintableObjectsDialog.htm");
-            e.Cancel = true;
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-
         }
 
     }

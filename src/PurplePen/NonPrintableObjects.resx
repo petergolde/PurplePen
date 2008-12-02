@@ -117,12 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelWarning.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelWarning.Location" type="System.Drawing.Point, System.Drawing">
     <value>60, 9</value>
   </data>
   <data name="labelWarning.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 98</value>
+    <value>406, 141</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="labelWarning.TabIndex" type="System.Int32, mscorlib">
@@ -146,14 +150,20 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="&gt;&gt;labelWarning.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="listBoxBadObjects.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="listBoxBadObjects.HorizontalScrollbar" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="listBoxBadObjects.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="listBoxBadObjects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 110</value>
+    <value>15, 153</value>
   </data>
   <data name="listBoxBadObjects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 147</value>
+    <value>451, 154</value>
   </data>
   <data name="listBoxBadObjects.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -170,8 +180,11 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="&gt;&gt;listBoxBadObjects.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 275</value>
+    <value>284, 313</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 26</value>
@@ -194,8 +207,11 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 275</value>
+    <value>378, 313</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 26</value>
@@ -282,11 +298,7 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>478, 313</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>478, 351</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Map File Cannot Be Printed Accurately</value>
@@ -295,6 +307,6 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
     <value>NonPrintableObjects</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

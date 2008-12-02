@@ -43,23 +43,22 @@ namespace PurplePen
             // 
             // listBoxBadObjects
             // 
-            this.listBoxBadObjects.FormattingEnabled = true;
             resources.ApplyResources(this.listBoxBadObjects, "listBoxBadObjects");
+            this.listBoxBadObjects.FormattingEnabled = true;
             this.listBoxBadObjects.Name = "listBoxBadObjects";
             this.listBoxBadObjects.Sorted = true;
             // 
             // okButton
             // 
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.okButton, "okButton");
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Name = "okButton";
             this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -81,14 +80,10 @@ namespace PurplePen
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.listBoxBadObjects);
             this.Controls.Add(this.labelWarning);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "NonPrintableObjectsDialog.htm";
             this.Name = "NonPrintableObjects";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.NonPrintableObjects_HelpButtonClicked);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             ((System.ComponentModel.ISupportInitialize) (this.iconWarningPictureBox)).EndInit();
             this.ResumeLayout(false);
 
