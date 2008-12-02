@@ -325,7 +325,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAADgtwBAcLsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAADgtwCAcLsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -435,9 +435,6 @@
   <data name="splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="splitContainer.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;splitContainer.Name" xml:space="preserve">
     <value>splitContainer</value>
   </data>
@@ -450,21 +447,21 @@
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>120, 17</value>
-  </data>
+  </metadata>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen files|*.ppen|All files|*.*</value>
   </data>
-  <data name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>244, 17</value>
-  </data>
+  </metadata>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen file|*.ppen</value>
   </data>
-  <data name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
-  </data>
+  </metadata>
   <data name="newEventMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>252, 22</value>
   </data>
@@ -1221,9 +1218,6 @@
   <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="mainMenu.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
     <value>mainMenu</value>
   </data>
@@ -1236,9 +1230,9 @@
   <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="toolbar.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="toolbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
-  </data>
+  </metadata>
   <data name="openToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1684,9 +1678,6 @@
   <data name="addBendToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="addBendToolStripButton.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Add Bend (Ctrl+B)</value>
   </data>
@@ -1721,9 +1712,6 @@
   <data name="toolbar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="toolbar.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;toolbar.Name" xml:space="preserve">
     <value>toolbar</value>
   </data>
@@ -1736,9 +1724,9 @@
   <data name="&gt;&gt;toolbar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="statusBar.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="statusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 350</value>
-  </data>
+  </metadata>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>443, 20</value>
   </data>
@@ -1756,9 +1744,6 @@
   </data>
   <data name="zoomTracker.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 23</value>
-  </data>
-  <data name="zoomTracker.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="locationDisplay.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1784,9 +1769,6 @@
   <data name="statusBar.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="statusBar.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="&gt;&gt;statusBar.Name" xml:space="preserve">
     <value>statusBar</value>
   </data>
@@ -1799,29 +1781,26 @@
   <data name="&gt;&gt;statusBar.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="versionCheckWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="versionCheckWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>653, 17</value>
-  </data>
-  <data name="saveXmlFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="saveXmlFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>817, 17</value>
-  </data>
+  </metadata>
   <data name="saveXmlFileDialog.Filter" xml:space="preserve">
     <value>XML file|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Create XML Interchange File</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>740, 375</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 8.25pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
