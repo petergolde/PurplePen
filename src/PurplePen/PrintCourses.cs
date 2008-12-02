@@ -44,7 +44,7 @@ namespace PurplePen
 {
     // Dialog used to get the settings for printing description. The dialog is used to fill out a DescriptionPrintSettings
     // class which contains the settings.
-    partial class PrintCourses: Form
+    partial class PrintCourses: OkCancelDialog
     {
         CoursePrintSettings settings;
         internal Controller controller;
@@ -114,21 +114,11 @@ namespace PurplePen
             );
         }
 
-        private void printButton_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.OK;
-        }
-
         private void previewButton_Click(object sender, EventArgs e)
         {
             controller.PrintCourses(PrintSettings, true);
         }
 
-        private void PrintCourses_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "FilePrintCourses.htm");
-            e.Cancel = true;
-        }
-
+        
     }
 }

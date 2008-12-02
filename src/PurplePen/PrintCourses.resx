@@ -118,90 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="paperSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 34</value>
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 347</value>
   </data>
-  <data name="paperSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 13</value>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Print</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="paperSize.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
+    <value>okButton</value>
   </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;paperSize.Name" xml:space="preserve">
-    <value>paperSize</value>
+  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;paperSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;paperSize.Parent" xml:space="preserve">
-    <value>printerGroup</value>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>429, 347</value>
   </data>
-  <data name="&gt;&gt;paperSize.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="paperSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="printerChange.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="printerChange.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="paperSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 34</value>
-  </data>
-  <data name="paperSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
-  </data>
-  <data name="paperSizeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Paper Size:</value>
-  </data>
-  <data name="&gt;&gt;paperSizeLabel.Name" xml:space="preserve">
-    <value>paperSizeLabel</value>
-  </data>
-  <data name="&gt;&gt;paperSizeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;paperSizeLabel.Parent" xml:space="preserve">
-    <value>printerGroup</value>
-  </data>
-  <data name="&gt;&gt;paperSizeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="printerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 17</value>
-  </data>
-  <data name="printerName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 13</value>
-  </data>
-  <data name="printerName.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Printer Name</value>
-  </data>
-  <data name="&gt;&gt;printerName.Name" xml:space="preserve">
-    <value>printerName</value>
-  </data>
-  <data name="&gt;&gt;printerName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printerName.Parent" xml:space="preserve">
-    <value>printerGroup</value>
-  </data>
-  <data name="&gt;&gt;printerName.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="printerChange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="printerChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 12</value>
+    <value>355, 3</value>
   </data>
   <data name="printerChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 22</value>
+    <value>134, 25</value>
   </data>
   <data name="printerChange.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>15</value>
   </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Change Printer...</value>
@@ -213,22 +184,121 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printerChange.Parent" xml:space="preserve">
-    <value>printerGroup</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;printerChange.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="paperSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="paperSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="paperSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 30</value>
+  </data>
+  <data name="paperSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 13</value>
+  </data>
+  <data name="paperSize.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="&gt;&gt;paperSize.Name" xml:space="preserve">
+    <value>paperSize</value>
+  </data>
+  <data name="&gt;&gt;paperSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paperSize.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;paperSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="paperSizeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="paperSizeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="paperSizeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="paperSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="paperSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
+  </data>
+  <data name="paperSizeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Paper Size:</value>
+  </data>
+  <data name="&gt;&gt;paperSizeLabel.Name" xml:space="preserve">
+    <value>paperSizeLabel</value>
+  </data>
+  <data name="&gt;&gt;paperSizeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paperSizeLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;paperSizeLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="printerName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="printerName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="printerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 5</value>
+  </data>
+  <data name="printerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 13</value>
+  </data>
+  <data name="printerName.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Printer Name</value>
+  </data>
+  <data name="&gt;&gt;printerName.Name" xml:space="preserve">
+    <value>printerName</value>
+  </data>
+  <data name="&gt;&gt;printerName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;printerName.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;printerName.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="printerLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="printerLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="printerLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="printerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 17</value>
+    <value>3, 4</value>
   </data>
   <data name="printerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>45, 15</value>
   </data>
   <data name="printerLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>10</value>
   </data>
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Printer:</value>
@@ -240,19 +310,49 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printerLabel.Parent" xml:space="preserve">
-    <value>printerGroup</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;printerLabel.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 19</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 49</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>printerGroup</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="printerChange" Row="0" RowSpan="2" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="paperSize" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="paperSizeLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="printerName" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="printerLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,50,Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="printerGroup.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 12</value>
   </data>
   <data name="printerGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>498, 63</value>
+    <value>498, 71</value>
   </data>
   <data name="printerGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Output</value>
@@ -269,62 +369,17 @@
   <data name="&gt;&gt;printerGroup.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 344</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="printButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 344</value>
-  </data>
-  <data name="printButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="printButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="printButton.Text" xml:space="preserve">
-    <value>Print</value>
-  </data>
-  <data name="&gt;&gt;printButton.Name" xml:space="preserve">
-    <value>printButton</value>
-  </data>
-  <data name="&gt;&gt;printButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;printButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;printButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="previewButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="previewButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 344</value>
   </data>
   <data name="previewButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
+    <value>90, 25</value>
   </data>
   <data name="previewButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Preview...</value>
@@ -339,12 +394,11 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;previewButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="courseSelector.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 24</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="courseSelector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
@@ -358,7 +412,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=1.0.0.2300, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -367,13 +421,13 @@
     <value>0</value>
   </data>
   <data name="coursesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 81</value>
+    <value>13, 89</value>
   </data>
   <data name="coursesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 242</value>
+    <value>246, 234</value>
   </data>
   <data name="coursesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Courses</value>
@@ -388,19 +442,67 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;coursesGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tableLayoutPanel2.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="copiesUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="copiesUpDown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="copiesUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 3</value>
+  </data>
+  <data name="copiesUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 23</value>
+  </data>
+  <data name="copiesUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="copiesUpDown.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;copiesUpDown.Name" xml:space="preserve">
+    <value>copiesUpDown</value>
+  </data>
+  <data name="&gt;&gt;copiesUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copiesUpDown.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;copiesUpDown.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="copiesLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="copiesLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="copiesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="copiesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 26</value>
+    <value>3, 5</value>
+  </data>
+  <data name="copiesLabel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 3</value>
   </data>
   <data name="copiesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
+    <value>126, 18</value>
   </data>
   <data name="copiesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Copies of each course:</value>
@@ -412,40 +514,46 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;copiesLabel.Parent" xml:space="preserve">
-    <value>copiesGroupBox</value>
+    <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;copiesLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="copiesUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 24</value>
-  </data>
-  <data name="copiesUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
-  </data>
-  <data name="copiesUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;copiesUpDown.Name" xml:space="preserve">
-    <value>copiesUpDown</value>
-  </data>
-  <data name="&gt;&gt;copiesUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;copiesUpDown.Parent" xml:space="preserve">
-    <value>copiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;copiesUpDown.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 29</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>copiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="copiesUpDown" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="copiesLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="copiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 81</value>
+    <value>272, 89</value>
   </data>
   <data name="copiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 71</value>
   </data>
   <data name="copiesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copies</value>
@@ -460,7 +568,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;copiesGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
@@ -473,9 +581,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>528, 381</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Print Courses</value>
@@ -490,6 +595,6 @@
     <value>PrintCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

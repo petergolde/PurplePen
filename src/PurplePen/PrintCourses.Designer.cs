@@ -63,36 +63,60 @@ namespace PurplePen
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintCourses));
             this.printerGroup = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.printerChange = new System.Windows.Forms.Button();
             this.paperSize = new System.Windows.Forms.Label();
             this.paperSizeLabel = new System.Windows.Forms.Label();
             this.printerName = new System.Windows.Forms.Label();
-            this.printerChange = new System.Windows.Forms.Button();
             this.printerLabel = new System.Windows.Forms.Label();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.printButton = new System.Windows.Forms.Button();
             this.previewButton = new System.Windows.Forms.Button();
             this.coursesGroupBox = new System.Windows.Forms.GroupBox();
             this.courseSelector = new PurplePen.CourseSelector();
             this.copiesGroupBox = new System.Windows.Forms.GroupBox();
-            this.copiesLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.copiesUpDown = new System.Windows.Forms.NumericUpDown();
+            this.copiesLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printerGroup.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).BeginInit();
             this.SuspendLayout();
             // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            // 
             // printerGroup
             // 
-            this.printerGroup.Controls.Add(this.paperSize);
-            this.printerGroup.Controls.Add(this.paperSizeLabel);
-            this.printerGroup.Controls.Add(this.printerName);
-            this.printerGroup.Controls.Add(this.printerChange);
-            this.printerGroup.Controls.Add(this.printerLabel);
+            this.printerGroup.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.printerGroup, "printerGroup");
             this.printerGroup.Name = "printerGroup";
             this.printerGroup.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.printerChange, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.paperSize, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.paperSizeLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.printerName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.printerLabel, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // printerChange
+            // 
+            resources.ApplyResources(this.printerChange, "printerChange");
+            this.printerChange.Name = "printerChange";
+            this.tableLayoutPanel1.SetRowSpan(this.printerChange, 2);
+            this.printerChange.UseVisualStyleBackColor = true;
+            this.printerChange.Click += new System.EventHandler(this.printerChange_Click);
             // 
             // paperSize
             // 
@@ -109,31 +133,10 @@ namespace PurplePen
             resources.ApplyResources(this.printerName, "printerName");
             this.printerName.Name = "printerName";
             // 
-            // printerChange
-            // 
-            resources.ApplyResources(this.printerChange, "printerChange");
-            this.printerChange.Name = "printerChange";
-            this.printerChange.UseVisualStyleBackColor = true;
-            this.printerChange.Click += new System.EventHandler(this.printerChange_Click);
-            // 
             // printerLabel
             // 
             resources.ApplyResources(this.printerLabel, "printerLabel");
             this.printerLabel.Name = "printerLabel";
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // printButton
-            // 
-            resources.ApplyResources(this.printButton, "printButton");
-            this.printButton.Name = "printButton";
-            this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // previewButton
             // 
@@ -153,21 +156,21 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
-            this.courseSelector.SelectedCourses = new PurplePen.Id<PurplePen.Course>[0];
             this.courseSelector.ShowAllControls = true;
             // 
             // copiesGroupBox
             // 
-            this.copiesGroupBox.Controls.Add(this.copiesLabel);
-            this.copiesGroupBox.Controls.Add(this.copiesUpDown);
+            this.copiesGroupBox.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.copiesGroupBox, "copiesGroupBox");
             this.copiesGroupBox.Name = "copiesGroupBox";
             this.copiesGroupBox.TabStop = false;
             // 
-            // copiesLabel
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.copiesLabel, "copiesLabel");
-            this.copiesLabel.Name = "copiesLabel";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.copiesUpDown, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.copiesLabel, 0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // copiesUpDown
             // 
@@ -189,6 +192,11 @@ namespace PurplePen
             0,
             0});
             // 
+            // copiesLabel
+            // 
+            resources.ApplyResources(this.copiesLabel, "copiesLabel");
+            this.copiesLabel.Name = "copiesLabel";
+            // 
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
@@ -197,46 +205,48 @@ namespace PurplePen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.copiesGroupBox);
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.previewButton);
-            this.Controls.Add(this.printButton);
-            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.copiesGroupBox);
             this.Controls.Add(this.printerGroup);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "FilePrintCourses.htm";
             this.Name = "PrintCourses";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.PrintCourses_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.printerGroup, 0);
+            this.Controls.SetChildIndex(this.copiesGroupBox, 0);
+            this.Controls.SetChildIndex(this.previewButton, 0);
+            this.Controls.SetChildIndex(this.coursesGroupBox, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.printerGroup.ResumeLayout(false);
-            this.printerGroup.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.coursesGroupBox.ResumeLayout(false);
             this.copiesGroupBox.ResumeLayout(false);
             this.copiesGroupBox.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox printerGroup;
-        private System.Windows.Forms.Button printerChange;
-        private System.Windows.Forms.Label printerLabel;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button previewButton;
-        private System.Windows.Forms.Label printerName;
         private System.Windows.Forms.GroupBox coursesGroupBox;
-        private System.Windows.Forms.Label paperSizeLabel;
-        private System.Windows.Forms.Label paperSize;
         private System.Windows.Forms.GroupBox copiesGroupBox;
-        private System.Windows.Forms.Label copiesLabel;
-        private System.Windows.Forms.NumericUpDown copiesUpDown;
         private CourseSelector courseSelector;
         private System.Windows.Forms.PrintDialog printDialog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button printerChange;
+        private System.Windows.Forms.Label paperSize;
+        private System.Windows.Forms.Label paperSizeLabel;
+        private System.Windows.Forms.Label printerName;
+        private System.Windows.Forms.Label printerLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.NumericUpDown copiesUpDown;
+        private System.Windows.Forms.Label copiesLabel;
     }
 }
