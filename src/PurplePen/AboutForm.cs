@@ -55,11 +55,6 @@ namespace PurplePen
             new LicenseForm().ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logoPanel_Paint(object sender, PaintEventArgs e)
         {
             GraphicsHelper.DrawPurplePenLogo(e.Graphics, logoPanel);

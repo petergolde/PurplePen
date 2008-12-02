@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="licenseTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
+    <value>13, 50</value>
   </data>
   <data name="licenseTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>477, 304</value>
+    <value>477, 292</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="licenseTextBox.TabIndex" type="System.Int32, mscorlib">
@@ -150,11 +150,14 @@
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="okButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>410, 9</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 22</value>
+    <value>80, 25</value>
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -174,17 +177,14 @@
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="bsdLicenseLinkLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="bsdLicenseLinkLabel.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>31, 19</value>
   </data>
   <data name="bsdLicenseLinkLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 9</value>
+    <value>13, 9</value>
   </data>
   <data name="bsdLicenseLinkLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 17</value>
+    <value>391, 38</value>
   </data>
   <data name="bsdLicenseLinkLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -213,9 +213,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>502, 354</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen License</value>
   </data>
@@ -223,6 +220,6 @@
     <value>LicenseForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
