@@ -1903,6 +1903,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[1] { TestUtil.GetTestFile("controller\\Course 3.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create4\\Course 3_expected.txt") });
             Assert.IsTrue(File.Exists(outputFile));
+            File.Delete(outputFile);
         }
 
         // Test invalid paths and prefix
