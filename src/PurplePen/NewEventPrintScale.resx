@@ -122,7 +122,7 @@
     <value>29, 17</value>
   </data>
   <data name="newEventPrintScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 55</value>
+    <value>435, 55</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventPrintScaleLabel.TabIndex" type="System.Int32, mscorlib">
@@ -227,7 +227,7 @@
     <value>4</value>
   </data>
   <data name="oneToPrefixLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 114</value>
+    <value>194, 114</value>
   </data>
   <data name="oneToPrefixLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
@@ -254,7 +254,7 @@
     <value>3</value>
   </data>
   <data name="oneToPrefixLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 81</value>
+    <value>194, 81</value>
   </data>
   <data name="oneToPrefixLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
@@ -284,7 +284,7 @@
     <value>True</value>
   </data>
   <data name="labelMapScale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 81</value>
+    <value>222, 81</value>
   </data>
   <data name="labelMapScale.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 13</value>
@@ -305,7 +305,7 @@
     <value>1</value>
   </data>
   <data name="comboBoxPrintScale.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 111</value>
+    <value>222, 111</value>
   </data>
   <data name="comboBoxPrintScale.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 21</value>

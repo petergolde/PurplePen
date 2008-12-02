@@ -42,7 +42,7 @@ using System.IO;
 
 namespace PurplePen
 {
-    public partial class NewEventWizard: Form
+    public partial class NewEventWizard: BaseDialog
     {
         // The pages of the wizard.
         IWizardPage[] pages;

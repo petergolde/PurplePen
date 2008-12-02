@@ -147,7 +147,7 @@
     <value>True</value>
   </data>
   <data name="useMapDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 50</value>
+    <value>32, 59</value>
   </data>
   <data name="useMapDirectory.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
@@ -174,7 +174,7 @@
     <value>True</value>
   </data>
   <data name="useOtherFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 78</value>
+    <value>32, 87</value>
   </data>
   <data name="useOtherFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
@@ -197,14 +197,17 @@
   <data name="&gt;&gt;useOtherFolder.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="chooseFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="chooseFolder.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="chooseFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 106</value>
+    <value>61, 115</value>
   </data>
   <data name="chooseFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 22</value>
+    <value>130, 23</value>
   </data>
   <data name="chooseFolder.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -225,7 +228,7 @@
     <value>2</value>
   </data>
   <data name="folderName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 132</value>
+    <value>58, 141</value>
   </data>
   <data name="folderName.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 51</value>
@@ -276,7 +279,7 @@
     <value>0</value>
   </data>
   <data name="directoryDisplay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 134</value>
+    <value>58, 143</value>
   </data>
   <data name="directoryDisplay.Size" type="System.Drawing.Size, System.Drawing">
     <value>445, 51</value>

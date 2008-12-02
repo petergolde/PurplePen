@@ -118,8 +118,8 @@ namespace PurplePen
             // 
             // cancelButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -138,16 +138,15 @@ namespace PurplePen
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpButton = false;
             this.Name = "NewEventWizard";
-            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.NewEventWizard_Load);
             this.Shown += new System.EventHandler(this.NewEventWizard_Shown);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewEventWizard_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -122,7 +122,7 @@
     <value>29, 17</value>
   </data>
   <data name="bitmapScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 110</value>
+    <value>461, 130</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bitmapScaleLabel.TabIndex" type="System.Int32, mscorlib">
@@ -149,7 +149,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>6</value>
   </data>
   <data name="dpiTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 134</value>
+    <value>192, 165</value>
   </data>
   <data name="dpiTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -173,7 +173,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>True</value>
   </data>
   <data name="resolutionLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 137</value>
+    <value>29, 168</value>
   </data>
   <data name="resolutionLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -200,7 +200,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>True</value>
   </data>
   <data name="dpiLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 137</value>
+    <value>270, 168</value>
   </data>
   <data name="dpiLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
@@ -224,7 +224,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>3</value>
   </data>
   <data name="oneToPrefixLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>108, 165</value>
+    <value>166, 196</value>
   </data>
   <data name="oneToPrefixLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>25, 13</value>
@@ -254,7 +254,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>True</value>
   </data>
   <data name="mapScaleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 165</value>
+    <value>29, 196</value>
   </data>
   <data name="mapScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -278,7 +278,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>1</value>
   </data>
   <data name="scaleTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 162</value>
+    <value>192, 193</value>
   </data>
   <data name="scaleTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>

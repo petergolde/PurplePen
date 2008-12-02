@@ -131,6 +131,7 @@ namespace PurplePen
             this.infoDisplayPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.infoIconPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

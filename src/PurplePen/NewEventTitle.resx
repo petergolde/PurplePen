@@ -122,7 +122,7 @@
     <value>29, 17</value>
   </data>
   <data name="newEventTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 85</value>
+    <value>465, 113</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventTitleLabel.TabIndex" type="System.Int32, mscorlib">
@@ -149,7 +149,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>True</value>
   </data>
   <data name="eventTitleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 131</value>
+    <value>29, 157</value>
   </data>
   <data name="eventTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 13</value>
@@ -173,7 +173,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>1</value>
   </data>
   <data name="titleText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 128</value>
+    <value>192, 154</value>
   </data>
   <data name="titleText.MaxLength" type="System.Int32, mscorlib">
     <value>35</value>

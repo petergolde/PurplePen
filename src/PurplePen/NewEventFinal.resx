@@ -122,7 +122,7 @@
     <value>29, 17</value>
   </data>
   <data name="newEventFinalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 24</value>
+    <value>466, 34</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventFinalLabel.TabIndex" type="System.Int32, mscorlib">
@@ -144,10 +144,10 @@
     <value>3</value>
   </data>
   <data name="afterEventCreatedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 88</value>
+    <value>29, 93</value>
   </data>
   <data name="afterEventCreatedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 42</value>
+    <value>466, 52</value>
   </data>
   <data name="afterEventCreatedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -168,7 +168,7 @@
     <value>2</value>
   </data>
   <data name="eventFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 42</value>
+    <value>32, 59</value>
   </data>
   <data name="eventFileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>462, 20</value>

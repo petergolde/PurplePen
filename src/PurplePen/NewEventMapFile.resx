@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="newEventMapFileLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 17</value>
+    <value>32, 17</value>
   </data>
   <data name="newEventMapFileLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 39</value>
+    <value>458, 62</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventMapFileLabel.TabIndex" type="System.Int32, mscorlib">
@@ -143,11 +143,14 @@
   <data name="&gt;&gt;newEventMapFileLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="chooseMapFileButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="chooseMapFileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 62</value>
+    <value>32, 82</value>
   </data>
   <data name="chooseMapFileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 22</value>
+    <value>148, 23</value>
   </data>
   <data name="chooseMapFileButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -195,10 +198,10 @@
     <value>0</value>
   </data>
   <data name="mapFileDisplay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 91</value>
+    <value>32, 113</value>
   </data>
   <data name="mapFileDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 51</value>
+    <value>471, 48</value>
   </data>
   <data name="mapFileDisplay.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -303,10 +306,10 @@
     <value>1</value>
   </data>
   <data name="errorDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 151</value>
+    <value>35, 167</value>
   </data>
   <data name="errorDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 89</value>
+    <value>465, 73</value>
   </data>
   <data name="errorDisplayPanel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -422,10 +425,10 @@
     <value>1</value>
   </data>
   <data name="infoDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 151</value>
+    <value>35, 167</value>
   </data>
   <data name="infoDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 89</value>
+    <value>465, 73</value>
   </data>
   <data name="infoDisplayPanel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
