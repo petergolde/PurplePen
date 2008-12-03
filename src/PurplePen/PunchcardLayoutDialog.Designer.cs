@@ -72,21 +72,29 @@ namespace PurplePen
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.orderLRBT = new System.Windows.Forms.RadioButton();
             this.sizeGroupBox = new System.Windows.Forms.GroupBox();
-            this.colsUpDown = new System.Windows.Forms.NumericUpDown();
-            this.rowsUpDown = new System.Windows.Forms.NumericUpDown();
-            this.columnsLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rowsLabel = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.columnsLabel = new System.Windows.Forms.Label();
+            this.rowsUpDown = new System.Windows.Forms.NumericUpDown();
+            this.colsUpDown = new System.Windows.Forms.NumericUpDown();
             this.boxOrderGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.sizeGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.colsUpDown)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.rowsUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.colsUpDown)).BeginInit();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // boxOrderGroupBox
             // 
@@ -156,33 +164,29 @@ namespace PurplePen
             // 
             // sizeGroupBox
             // 
-            this.sizeGroupBox.Controls.Add(this.colsUpDown);
-            this.sizeGroupBox.Controls.Add(this.rowsUpDown);
-            this.sizeGroupBox.Controls.Add(this.columnsLabel);
-            this.sizeGroupBox.Controls.Add(this.rowsLabel);
+            this.sizeGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.sizeGroupBox, "sizeGroupBox");
             this.sizeGroupBox.Name = "sizeGroupBox";
             this.sizeGroupBox.TabStop = false;
             // 
-            // colsUpDown
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.colsUpDown, "colsUpDown");
-            this.colsUpDown.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.colsUpDown.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.colsUpDown.Name = "colsUpDown";
-            this.colsUpDown.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.colsUpDown, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.rowsUpDown, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.columnsLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.rowsLabel, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // rowsLabel
+            // 
+            resources.ApplyResources(this.rowsLabel, "rowsLabel");
+            this.rowsLabel.Name = "rowsLabel";
+            // 
+            // columnsLabel
+            // 
+            resources.ApplyResources(this.columnsLabel, "columnsLabel");
+            this.columnsLabel.Name = "columnsLabel";
             // 
             // rowsUpDown
             // 
@@ -204,48 +208,38 @@ namespace PurplePen
             0,
             0});
             // 
-            // columnsLabel
+            // colsUpDown
             // 
-            resources.ApplyResources(this.columnsLabel, "columnsLabel");
-            this.columnsLabel.Name = "columnsLabel";
-            // 
-            // rowsLabel
-            // 
-            resources.ApplyResources(this.rowsLabel, "rowsLabel");
-            this.rowsLabel.Name = "rowsLabel";
-            // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.colsUpDown, "colsUpDown");
+            this.colsUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.colsUpDown.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.colsUpDown.Name = "colsUpDown";
+            this.colsUpDown.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // PunchcardLayoutDialog
             // 
-            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
             this.Controls.Add(this.sizeGroupBox);
             this.Controls.Add(this.boxOrderGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "PunchCardLayout.htm";
             this.Name = "PunchcardLayoutDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.PunchcardLayoutDialog_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.boxOrderGroupBox, 0);
+            this.Controls.SetChildIndex(this.sizeGroupBox, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.boxOrderGroupBox.ResumeLayout(false);
             this.boxOrderGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
@@ -253,9 +247,10 @@ namespace PurplePen
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.sizeGroupBox.ResumeLayout(false);
-            this.sizeGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.colsUpDown)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.rowsUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.colsUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,12 +259,6 @@ namespace PurplePen
 
         private System.Windows.Forms.GroupBox boxOrderGroupBox;
         private System.Windows.Forms.GroupBox sizeGroupBox;
-        private System.Windows.Forms.NumericUpDown colsUpDown;
-        private System.Windows.Forms.NumericUpDown rowsUpDown;
-        private System.Windows.Forms.Label columnsLabel;
-        private System.Windows.Forms.Label rowsLabel;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.RadioButton orderLRBT;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton orderRLTB;
@@ -278,5 +267,10 @@ namespace PurplePen
         private System.Windows.Forms.RadioButton orderRLBT;
         private System.Windows.Forms.RadioButton orderLRTB;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.NumericUpDown colsUpDown;
+        private System.Windows.Forms.NumericUpDown rowsUpDown;
+        private System.Windows.Forms.Label columnsLabel;
+        private System.Windows.Forms.Label rowsLabel;
     }
 }

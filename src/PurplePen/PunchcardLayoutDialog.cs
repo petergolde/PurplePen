@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class PunchcardLayoutDialog: Form
+    public partial class PunchcardLayoutDialog: OkCancelDialog
     {
         public PunchcardLayoutDialog()
         {
@@ -85,12 +85,6 @@ namespace PurplePen
                 else if (!value.leftToRight && !value.topToBottom)
                     orderRLBT.Checked = true;
             }
-        }
-
-        private void PunchcardLayoutDialog_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "PunchCardLayout.htm");
-            e.Cancel = true;
         }
     }
 }

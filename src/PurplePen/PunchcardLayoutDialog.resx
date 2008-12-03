@@ -117,11 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 272</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
+    <value>okButton</value>
+  </data>
+  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 272</value>
+  </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
+    <value>cancelButton</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="orderRLTB.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="orderRLTB.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 101</value>
   </data>
@@ -146,8 +182,8 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAA3CAIAAADyq5FcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAABmFJREFUaEPtmi80bl0QxgVBEARBEARBEARBEARBEARBuEEQBEEQBEEQBEEQBFG4QRAE
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCQAA
+        CwkBEvpHPgAABmFJREFUaEPtmi80bl0QxgVBEARBEARBEARBEARBEARBuEEQBEEQBEEQBEEQBFG4QRAE
         QRBuEARBFARBEARBsNa9v2+N9azj7H/znvNZPvd733DXce7eM/PsmXn2nNm7p6f7+93ix+q1mP37y6f/
         4/1vDaCl8V38Jf+/vb2Njo4aS4SLnQqfk5OT6enpvr4+BoyPj+/v7yPHP/38/Lw6fW9vr6PppmhpaSll
         tg14p758CB0eHooinQA2NzdDVl1cXAwxRJfv4OAgnA4Yp3Ybdnd319vb2xb/6+vr0NBQR/hvbm5SWwrA
@@ -205,8 +241,8 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAA3CAIAAADyq5FcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAABmRJREFUaEPtmy00bVsUx28QBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBFEQBEEQ
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCQAA
+        CwkBEvpHPgAABmRJREFUaEPtmy00bVsUx28QBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBFEQBEEQ
         BEEQBEEUBEEQBEEwxn0/Y57xv2us77PPOO8O751d7rbXmh//NT/WXHOd++tX7/ndwcPqdUD9+6+Tf1v/
         RwPoUPke/pj9Pz4+9vb2JiYmLDnwsru7y8dwsUP3yecTj0PK+z4/P5E4NjbGhOHh4e3t7a+vrxrpLy8v
         UQWibtKa6Y2Bc2pqKuQyPT0dLkE38CNlZmbGU2B+fr4G/8XFRaf4WWyxwPKTk5P6E5sUDZix/8DAQJGc
@@ -311,8 +347,8 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAA3CAIAAADyq5FcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAABmJJREFUaEPtmh9UZV8UxweCgSAIBoIgCIIgGAiCIBgIgiAIgmAgCIIgCIIgCIIwCIIg
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCQAA
+        CwkBEvpHPgAABmJJREFUaEPtmh9UZV8UxweCgSAIBoIgCIIgGAiCIBgIgiAIgmAgCIIgCIIgCIIwCIIg
         CIIgCIIgDIIgGAiCoLVmPq3d+v7uuvucc/d97/eb95s170Lrdt/Z++zv/nf22ed8+tR/fnbxoL0uqH/2
         nPzd+n80gC6F7+Nvsv/i4qKliKSmc9/Pz8+np6c/f/7MgImJid3d3be3N88hR35yclIl39vba0WuiaAa
         GxvLyf+R+goudH9/PzAw0Bb//v6+z6roMYh/Y2PDky8sLHgVNAbvwcGBWCVnL/n/y8vL169fC/Rw9BJU
@@ -369,8 +405,8 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFUAAAA3CAIAAADyq5FcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
-        CwwBP0AiyAAABkZJREFUaEPtmis0bVEUhgVBEARBEARBEARBEARBEARBEARBEARBEARBEARBEAVBEARB
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALCQAA
+        CwkBEvpHPgAABkZJREFUaEPtmis0bVEUhgVBEARBEARBEARBEARBEARBEARBEARBEARBEARBEAVBEARB
         EARBEERBEARBEARj3PvdO41/rLHXY8/t3OvcxznB2PZZ8/HP15prrtPV1fl8a+GD9Vqg/tZ28h/e/6sB
         tKh8B3/K/4+Pj8myEBs7Fz5vb29bW1vDw8MsGBgY2NjYeH9/95CXy1GFQ1L66+vr9vb26OioseIBTXiZ
         lJ72/+npaSv4ETY5OVnhMDMz8wX4ET0+Ph4rPzExEZvgY1ms1ubmZiv4V1dXk+SYtdaBBf/39vbWkhNo
@@ -472,14 +508,20 @@
   <data name="&gt;&gt;boxOrderGroupBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="colsUpDown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="colsUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 51</value>
+    <value>67, 32</value>
   </data>
   <data name="colsUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>35, 23</value>
   </data>
   <data name="colsUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;colsUpDown.Name" xml:space="preserve">
     <value>colsUpDown</value>
@@ -488,19 +530,22 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colsUpDown.Parent" xml:space="preserve">
-    <value>sizeGroupBox</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;colsUpDown.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="rowsUpDown.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="rowsUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 26</value>
+    <value>67, 3</value>
   </data>
   <data name="rowsUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>35, 23</value>
   </data>
   <data name="rowsUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;rowsUpDown.Name" xml:space="preserve">
     <value>rowsUpDown</value>
@@ -509,7 +554,7 @@
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rowsUpDown.Parent" xml:space="preserve">
-    <value>sizeGroupBox</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;rowsUpDown.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -517,14 +562,20 @@
   <data name="columnsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="columnsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="columnsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 53</value>
+    <value>3, 34</value>
+  </data>
+  <data name="columnsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 0</value>
   </data>
   <data name="columnsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>58, 15</value>
   </data>
   <data name="columnsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Columns:</value>
@@ -536,7 +587,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;columnsLabel.Parent" xml:space="preserve">
-    <value>sizeGroupBox</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;columnsLabel.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -544,14 +595,20 @@
   <data name="rowsLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="rowsLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="rowsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 27</value>
+    <value>3, 5</value>
+  </data>
+  <data name="rowsLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 5, 3, 0</value>
   </data>
   <data name="rowsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
+    <value>38, 15</value>
   </data>
   <data name="rowsLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Rows:</value>
@@ -563,10 +620,37 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rowsLabel.Parent" xml:space="preserve">
-    <value>sizeGroupBox</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;rowsLabel.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 24</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 65</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>sizeGroupBox</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="colsUpDown" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="rowsUpDown" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="columnsLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="rowsLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="sizeGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 12</value>
@@ -592,60 +676,6 @@
   <data name="&gt;&gt;sizeGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 269</value>
-  </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
-  </data>
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
-    <value>okButton</value>
-  </data>
-  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 269</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -655,9 +685,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>314, 306</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Punch Card Layout</value>
   </data>
@@ -665,6 +692,6 @@
     <value>PunchcardLayoutDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
