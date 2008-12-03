@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class ReportForm: Form
+    public partial class ReportForm: BaseDialog
     {
         private string helpPage;
 
@@ -56,18 +56,13 @@ namespace PurplePen
             InitializeComponent();
 
             Text = title;
+            HelpTopic = helpPage;
             this.helpPage = helpPage;
             string htmlText = htmlTemplate.Replace("<!--@@TITLE@@-->", title).Replace("<!--@@STYLES@@-->", styles).Replace("<!--@@BODY@@-->", body);
 
             webBrowser.DocumentText = htmlText;
         }
 
-
-        private void ReportForm_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, helpPage);
-            e.Cancel = true;
-        }
 
         private void printButton_Click(object sender, EventArgs e)
         {
