@@ -45,7 +45,7 @@ namespace PurplePen
 {
     // Dialog used to get the settings for printing description. The dialog is used to fill out a DescriptionPrintSettings
     // class which contains the settings.
-    partial class PrintPunches: Form
+    partial class PrintPunches: BaseDialog
     {
         PunchPrintSettings settings;
         internal Controller controller;
@@ -182,12 +182,5 @@ namespace PurplePen
 
             dialog.Dispose();
         }
-
-        private void PrintPunches_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "FilePrintPunchCards.htm");
-            e.Cancel = true;
-        }
-
     }
 }

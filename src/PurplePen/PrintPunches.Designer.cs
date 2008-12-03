@@ -63,6 +63,7 @@ namespace PurplePen
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintPunches));
             this.printerGroup = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.marginChange = new System.Windows.Forms.Button();
             this.paperSize = new System.Windows.Forms.Label();
             this.paperSizeLabel = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@ namespace PurplePen
             this.printerChange = new System.Windows.Forms.Button();
             this.printerLabel = new System.Windows.Forms.Label();
             this.layoutGroup = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.punchCardLayoutButton = new System.Windows.Forms.Button();
             this.mmSuffixLabel = new System.Windows.Forms.Label();
             this.boxSizeUpDown = new System.Windows.Forms.NumericUpDown();
@@ -85,37 +87,48 @@ namespace PurplePen
             this.courseSelector = new PurplePen.CourseSelector();
             this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
             this.copiesGroupBox = new System.Windows.Forms.GroupBox();
-            this.descriptionsLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.descriptionsUpDown = new System.Windows.Forms.NumericUpDown();
+            this.descriptionsLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printerGroup.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.layoutGroup.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.boxSizeUpDown)).BeginInit();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.descriptionsUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // printerGroup
             // 
-            this.printerGroup.Controls.Add(this.marginChange);
-            this.printerGroup.Controls.Add(this.paperSize);
-            this.printerGroup.Controls.Add(this.paperSizeLabel);
-            this.printerGroup.Controls.Add(this.margins);
-            this.printerGroup.Controls.Add(this.marginsLabel);
-            this.printerGroup.Controls.Add(this.orientation);
-            this.printerGroup.Controls.Add(this.orientationLabel);
-            this.printerGroup.Controls.Add(this.printerName);
-            this.printerGroup.Controls.Add(this.printerChange);
-            this.printerGroup.Controls.Add(this.printerLabel);
+            this.printerGroup.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.printerGroup, "printerGroup");
             this.printerGroup.Name = "printerGroup";
             this.printerGroup.TabStop = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.marginChange, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.paperSize, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.paperSizeLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.margins, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.marginsLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.orientation, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.orientationLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.printerName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.printerChange, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.printerLabel, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // marginChange
             // 
             resources.ApplyResources(this.marginChange, "marginChange");
             this.marginChange.Name = "marginChange";
+            this.tableLayoutPanel1.SetRowSpan(this.marginChange, 2);
             this.marginChange.UseVisualStyleBackColor = true;
             this.marginChange.Click += new System.EventHandler(this.marginChange_Click);
             // 
@@ -158,6 +171,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.printerChange, "printerChange");
             this.printerChange.Name = "printerChange";
+            this.tableLayoutPanel1.SetRowSpan(this.printerChange, 2);
             this.printerChange.UseVisualStyleBackColor = true;
             this.printerChange.Click += new System.EventHandler(this.printerChange_Click);
             // 
@@ -168,17 +182,24 @@ namespace PurplePen
             // 
             // layoutGroup
             // 
-            this.layoutGroup.Controls.Add(this.punchCardLayoutButton);
-            this.layoutGroup.Controls.Add(this.mmSuffixLabel);
-            this.layoutGroup.Controls.Add(this.boxSizeUpDown);
-            this.layoutGroup.Controls.Add(this.punchBoxSizeLabel);
+            this.layoutGroup.Controls.Add(this.tableLayoutPanel3);
             resources.ApplyResources(this.layoutGroup, "layoutGroup");
             this.layoutGroup.Name = "layoutGroup";
             this.layoutGroup.TabStop = false;
             // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.punchCardLayoutButton, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.mmSuffixLabel, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.boxSizeUpDown, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.punchBoxSizeLabel, 0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
             // punchCardLayoutButton
             // 
             resources.ApplyResources(this.punchCardLayoutButton, "punchCardLayoutButton");
+            this.tableLayoutPanel3.SetColumnSpan(this.punchCardLayoutButton, 3);
             this.punchCardLayoutButton.Name = "punchCardLayoutButton";
             this.punchCardLayoutButton.UseVisualStyleBackColor = true;
             this.punchCardLayoutButton.Click += new System.EventHandler(this.punchCardLayoutButton_Click);
@@ -190,13 +211,13 @@ namespace PurplePen
             // 
             // boxSizeUpDown
             // 
+            resources.ApplyResources(this.boxSizeUpDown, "boxSizeUpDown");
             this.boxSizeUpDown.DecimalPlaces = 1;
             this.boxSizeUpDown.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            resources.ApplyResources(this.boxSizeUpDown, "boxSizeUpDown");
             this.boxSizeUpDown.Minimum = new decimal(new int[] {
             5,
             0,
@@ -216,8 +237,8 @@ namespace PurplePen
             // 
             // cancelButton
             // 
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +267,6 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
-            this.courseSelector.SelectedCourses = new PurplePen.Id<PurplePen.Course>[0];
             this.courseSelector.ShowAllControls = true;
             // 
             // pageSetupDialog
@@ -255,16 +275,17 @@ namespace PurplePen
             // 
             // copiesGroupBox
             // 
-            this.copiesGroupBox.Controls.Add(this.descriptionsLabel);
-            this.copiesGroupBox.Controls.Add(this.descriptionsUpDown);
+            this.copiesGroupBox.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.copiesGroupBox, "copiesGroupBox");
             this.copiesGroupBox.Name = "copiesGroupBox";
             this.copiesGroupBox.TabStop = false;
             // 
-            // descriptionsLabel
+            // tableLayoutPanel2
             // 
-            resources.ApplyResources(this.descriptionsLabel, "descriptionsLabel");
-            this.descriptionsLabel.Name = "descriptionsLabel";
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.descriptionsUpDown, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.descriptionsLabel, 0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // descriptionsUpDown
             // 
@@ -286,14 +307,21 @@ namespace PurplePen
             0,
             0});
             // 
+            // descriptionsLabel
+            // 
+            resources.ApplyResources(this.descriptionsLabel, "descriptionsLabel");
+            this.descriptionsLabel.Name = "descriptionsLabel";
+            // 
             // printDialog
             // 
             this.printDialog.UseEXDialog = true;
             // 
             // PrintPunches
             // 
+            this.AcceptButton = this.printButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.copiesGroupBox);
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.previewButton);
@@ -301,54 +329,55 @@ namespace PurplePen
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.layoutGroup);
             this.Controls.Add(this.printerGroup);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.HelpTopic = "FilePrintPunchCards.htm";
             this.Name = "PrintPunches";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.PrintPunches_HelpButtonClicked);
             this.printerGroup.ResumeLayout(false);
-            this.printerGroup.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.layoutGroup.ResumeLayout(false);
-            this.layoutGroup.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.boxSizeUpDown)).EndInit();
             this.coursesGroupBox.ResumeLayout(false);
             this.copiesGroupBox.ResumeLayout(false);
-            this.copiesGroupBox.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.descriptionsUpDown)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox printerGroup;
-        private System.Windows.Forms.Button printerChange;
-        private System.Windows.Forms.Label printerLabel;
         private System.Windows.Forms.GroupBox layoutGroup;
-        private System.Windows.Forms.Label mmSuffixLabel;
-        private System.Windows.Forms.NumericUpDown boxSizeUpDown;
-        private System.Windows.Forms.Label punchBoxSizeLabel;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button previewButton;
+        private System.Windows.Forms.GroupBox coursesGroupBox;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
+        private System.Windows.Forms.GroupBox copiesGroupBox;
+        private CourseSelector courseSelector;
+        private System.Windows.Forms.PrintDialog printDialog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button marginChange;
+        private System.Windows.Forms.Label paperSize;
+        private System.Windows.Forms.Label paperSizeLabel;
+        private System.Windows.Forms.Label margins;
         private System.Windows.Forms.Label marginsLabel;
         private System.Windows.Forms.Label orientation;
         private System.Windows.Forms.Label orientationLabel;
         private System.Windows.Forms.Label printerName;
-        private System.Windows.Forms.Label margins;
-        private System.Windows.Forms.GroupBox coursesGroupBox;
-        private System.Windows.Forms.Label paperSizeLabel;
-        private System.Windows.Forms.Label paperSize;
-        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
-        private System.Windows.Forms.GroupBox copiesGroupBox;
-        private System.Windows.Forms.Label descriptionsLabel;
-        private System.Windows.Forms.NumericUpDown descriptionsUpDown;
-        private CourseSelector courseSelector;
+        private System.Windows.Forms.Button printerChange;
+        private System.Windows.Forms.Label printerLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button punchCardLayoutButton;
-        private System.Windows.Forms.PrintDialog printDialog;
-        private System.Windows.Forms.Button marginChange;
+        private System.Windows.Forms.Label mmSuffixLabel;
+        private System.Windows.Forms.NumericUpDown boxSizeUpDown;
+        private System.Windows.Forms.Label punchBoxSizeLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.NumericUpDown descriptionsUpDown;
+        private System.Windows.Forms.Label descriptionsLabel;
     }
 }
