@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class PunchPatternDialog: Form
+    public partial class PunchPatternDialog: OkCancelDialog
     {
         Dictionary<string, PunchPattern> patternDictionary;
         PunchcardFormat punchcardFormat;
@@ -177,12 +177,5 @@ namespace PurplePen
 
             dialog.Dispose();
         }
-
-        private void PunchPatternDialog_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "ControlsPunchPatterns.htm");
-            e.Cancel = true;
-        }
-
     }
 }

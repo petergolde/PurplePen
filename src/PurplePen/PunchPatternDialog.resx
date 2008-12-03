@@ -117,47 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="codeList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="codeList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 81</value>
-  </data>
-  <data name="codeList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 212</value>
+  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>233, 372</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="codeList.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;codeList.Name" xml:space="preserve">
-    <value>codeList</value>
-  </data>
-  <data name="&gt;&gt;codeList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;codeList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;codeList.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 325</value>
-  </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
-  </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;okButton.Name" xml:space="preserve">
     <value>okButton</value>
@@ -169,22 +135,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>1</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 325</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
+    <value>329, 372</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
     <value>cancelButton</value>
@@ -196,19 +153,53 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="codeList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="codeList.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="codeList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 96</value>
+  </data>
+  <data name="codeList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 244</value>
+  </data>
+  <data name="codeList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;codeList.Name" xml:space="preserve">
+    <value>codeList</value>
+  </data>
+  <data name="&gt;&gt;codeList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;codeList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;codeList.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="formatButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="formatButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="formatButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="formatButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 325</value>
+    <value>9, 372</value>
   </data>
   <data name="formatButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 25</value>
+    <value>127, 25</value>
   </data>
   <data name="formatButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="formatButton.Text" xml:space="preserve">
     <value>Punch Card Layout...</value>
@@ -223,16 +214,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;formatButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="punchPatternsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="punchPatternsLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 13</value>
+    <value>6, 9</value>
   </data>
   <data name="punchPatternsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 54</value>
+    <value>406, 83</value>
   </data>
   <data name="punchPatternsLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -250,34 +241,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;punchPatternsLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="dotGrid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="dotGrid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 81</value>
+    <value>158, 96</value>
   </data>
   <data name="dotGrid.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="dotGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 222</value>
+    <value>261, 266</value>
   </data>
   <data name="dotGrid.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;dotGrid.Name" xml:space="preserve">
     <value>dotGrid</value>
   </data>
   <data name="&gt;&gt;dotGrid.Type" xml:space="preserve">
-    <value>PurplePen.DotGrid, PurplePen, Version=1.0.0.2300, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DotGrid, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;dotGrid.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dotGrid.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -286,10 +277,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>396, 362</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>428, 406</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Punch Patterns</value>
@@ -298,6 +286,6 @@
     <value>PunchPatternDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

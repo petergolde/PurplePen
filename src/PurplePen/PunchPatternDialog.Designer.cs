@@ -63,12 +63,18 @@ namespace PurplePen
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PunchPatternDialog));
             this.codeList = new System.Windows.Forms.ListBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.formatButton = new System.Windows.Forms.Button();
             this.punchPatternsLabel = new System.Windows.Forms.Label();
             this.dotGrid = new PurplePen.DotGrid();
             this.SuspendLayout();
+            // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // codeList
             // 
@@ -77,20 +83,6 @@ namespace PurplePen
             this.codeList.Name = "codeList";
             this.codeList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.codeList_DrawItem);
             this.codeList.SelectedIndexChanged += new System.EventHandler(this.codeList_SelectedIndexChanged);
-            // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Name = "okButton";
-            this.okButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // formatButton
             // 
@@ -117,20 +109,21 @@ namespace PurplePen
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.punchPatternsLabel);
-            this.Controls.Add(this.formatButton);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.dotGrid);
             this.Controls.Add(this.codeList);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Controls.Add(this.formatButton);
+            this.Controls.Add(this.dotGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "ControlsPunchPatterns.htm";
             this.Name = "PunchPatternDialog";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.PunchPatternDialog_HelpButtonClicked);
+            this.Controls.SetChildIndex(this.dotGrid, 0);
+            this.Controls.SetChildIndex(this.formatButton, 0);
+            this.Controls.SetChildIndex(this.codeList, 0);
+            this.Controls.SetChildIndex(this.punchPatternsLabel, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -138,8 +131,6 @@ namespace PurplePen
 
         private System.Windows.Forms.ListBox codeList;
         private DotGrid dotGrid;
-        private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button formatButton;
         private System.Windows.Forms.Label punchPatternsLabel;
     }
