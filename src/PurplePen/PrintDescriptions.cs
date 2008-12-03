@@ -45,7 +45,7 @@ namespace PurplePen
 {
     // Dialog used to get the settings for printing description. The dialog is used to fill out a DescriptionPrintSettings
     // class which contains the settings.
-    partial class PrintDescriptions: Form
+    partial class PrintDescriptions: BaseDialog
     {
         DescriptionPrintSettings settings;
         internal Controller controller;
@@ -217,12 +217,5 @@ namespace PurplePen
         private void descriptionKindCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-
-        private void PrintDescriptions_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "FilePrintDescriptions.htm");
-            e.Cancel = true;
-        }
-
     }
 }
