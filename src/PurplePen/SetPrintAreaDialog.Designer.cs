@@ -89,16 +89,15 @@ namespace PurplePen
             // 
             // SetPrintAreaDialog
             // 
+            this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.setPrintAreaLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SetPrintAreaDialog";
-            this.ShowInTaskbar = false;
             this.ResumeLayout(false);
 
         }

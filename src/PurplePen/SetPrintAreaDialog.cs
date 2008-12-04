@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class SetPrintAreaDialog: Form
+    public partial class SetPrintAreaDialog: BaseDialog
     {
         internal Controller controller;
         internal bool allCourses;

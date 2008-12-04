@@ -126,7 +126,7 @@
     <value>100, 86</value>
   </data>
   <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 24</value>
+    <value>82, 24</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
@@ -181,7 +181,7 @@
     <value>15, 13</value>
   </data>
   <data name="setPrintAreaLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 30</value>
+    <value>166, 70</value>
   </data>
   <data name="setPrintAreaLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -220,6 +220,6 @@
     <value>SetPrintAreaDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
