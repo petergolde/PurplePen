@@ -140,6 +140,10 @@
 				<param name="Local" value="FileSetPrintArea.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Program Language...">
+				<param name="Local" value="FileSetProgramLanguage.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Exit">
 				<param name="Local" value="FileExit.htm">
 				</OBJECT>

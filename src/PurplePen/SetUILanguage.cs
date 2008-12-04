@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace PurplePen
 {
-    public partial class SetUILanguage: Form
+    public partial class SetUILanguage: OkCancelDialog
     {
         public SetUILanguage()
         {
