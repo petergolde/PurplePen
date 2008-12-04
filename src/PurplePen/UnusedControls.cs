@@ -43,7 +43,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class UnusedControls: Form
+    public partial class UnusedControls: OkCancelDialog
     {
         class ListItem {
             public Id<ControlPoint> Id;
@@ -82,12 +82,6 @@ namespace PurplePen
             foreach (ListItem item in codeListBox.CheckedItems)
                 controlsToDelete.Add(item.Id);
             return controlsToDelete;
-        }
-
-        private void UnusedControls_HelpButtonClicked(object sender, CancelEventArgs e)
-        {
-            Util.ShowHelpTopic(this, "EventRemoveUnusedControls.htm");
-            e.Cancel = true;
         }
     }
 }
