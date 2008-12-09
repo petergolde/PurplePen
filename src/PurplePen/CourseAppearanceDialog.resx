@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelControlNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 99</value>
+    <value>36, 99</value>
   </data>
   <data name="labelControlNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 15</value>
@@ -241,7 +241,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelLineWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 73</value>
+    <value>36, 73</value>
   </data>
   <data name="labelLineWidth.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 15</value>
@@ -319,7 +319,7 @@
     <value>True</value>
   </data>
   <data name="labelControlCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 47</value>
+    <value>36, 47</value>
   </data>
   <data name="labelControlCircle.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 15</value>

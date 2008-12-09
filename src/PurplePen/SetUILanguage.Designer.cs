@@ -52,10 +52,10 @@
             // languageListBox
             // 
             resources.ApplyResources(this.languageListBox, "languageListBox");
-            this.languageListBox.DisplayMember = "NativeName";
             this.languageListBox.FormattingEnabled = true;
             this.languageListBox.Name = "languageListBox";
             this.languageListBox.Sorted = true;
+            this.languageListBox.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.languageListBox_Format);
             // 
             // introLabel
             // 

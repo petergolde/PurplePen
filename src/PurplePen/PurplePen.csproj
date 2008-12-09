@@ -743,18 +743,166 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AboutForm.af.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.az.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.fr.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCourse.az.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTextLine.az.resx">
+      <DependentUpon>AddTextLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllControlsProperties.az.resx">
+      <DependentUpon>AllControlsProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoNumbering.az.resx">
+      <DependentUpon>AutoNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDialog.az.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseDialog.resx">
       <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicPrinting.az.resx">
+      <DependentUpon>BasicPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAllCodes.az.resx">
+      <DependentUpon>ChangeAllCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeCourseOrder.az.resx">
+      <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeMapFile.az.resx">
+      <DependentUpon>ChangeMapFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeSpecialCourses.az.resx">
+      <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeText.az.resx">
+      <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeText.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.az.resx" />
+    <EmbeddedResource Include="CourseAppearanceDialog.az.resx">
+      <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CourseLoad.az.resx">
+      <DependentUpon>CourseLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseSelector.az.resx">
+      <DependentUpon>CourseSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateOcadFiles.az.resx">
+      <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomSymbolText.az.resx">
+      <DependentUpon>CustomSymbolText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionControl.az.resx">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionPrinting.az.resx">
+      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterSymbolText.az.resx">
+      <DependentUpon>EnterSymbolText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images\logobkgd.png" />
+    <EmbeddedResource Include="InitialScreen.az.resx">
+      <DependentUpon>InitialScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseForm.az.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame.az.resx">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.az.resx" />
+    <EmbeddedResource Include="MissingFonts.az.resx">
+      <DependentUpon>MissingFonts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventBitmapScale.az.resx">
+      <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventDirectory.az.resx">
+      <DependentUpon>NewEventDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventFinal.az.resx">
+      <DependentUpon>NewEventFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventMapFile.az.resx">
+      <DependentUpon>NewEventMapFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventNumbering.az.resx">
+      <DependentUpon>NewEventNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventPrintScale.az.resx">
+      <DependentUpon>NewEventPrintScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventTitle.az.resx">
+      <DependentUpon>NewEventTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventWizard.az.resx">
+      <DependentUpon>NewEventWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NonPrintableObjects.az.resx">
+      <DependentUpon>NonPrintableObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkCancelDialog.az.resx">
+      <DependentUpon>OkCancelDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OkCancelDialog.resx">
       <DependentUpon>OkCancelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverwritingOcadFilesDialog.az.resx">
+      <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintCourses.az.resx">
+      <DependentUpon>PrintCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintDescriptions.az.resx">
+      <DependentUpon>PrintDescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPunches.az.resx">
+      <DependentUpon>PrintPunches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PunchcardLayoutDialog.az.resx">
+      <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PunchPatternDialog.az.resx">
+      <DependentUpon>PunchPatternDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RectanglePrinting.az.resx">
+      <DependentUpon>RectanglePrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.az.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.az.resx" />
+    <EmbeddedResource Include="SetPrintAreaDialog.az.resx">
+      <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetUILanguage.az.resx">
+      <DependentUpon>SetUILanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.az.resx" />
+    <EmbeddedResource Include="UnusedControls.af.resx">
+      <DependentUpon>UnusedControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnusedControls.az.resx">
+      <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

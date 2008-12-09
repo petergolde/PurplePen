@@ -280,7 +280,7 @@
     <value>31, 3</value>
   </data>
   <data name="scaleCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 23</value>
+    <value>67, 23</value>
   </data>
   <data name="scaleCombo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -304,7 +304,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 29</value>
+    <value>187, 29</value>
   </data>
   <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -355,13 +355,13 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 22</value>
+    <value>11, 22</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 59</value>
+    <value>324, 59</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

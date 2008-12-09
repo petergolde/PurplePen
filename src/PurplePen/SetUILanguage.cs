@@ -61,5 +61,11 @@ namespace PurplePen
 
             return true;
         }
+
+        private void languageListBox_Format(object sender, ListControlConvertEventArgs e)
+        {
+            CultureInfo culture = (CultureInfo) e.ListItem;
+            e.Value = culture.TextInfo.ToTitleCase(culture.NativeName);
+        }
     }
 }

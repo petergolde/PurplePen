@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,94 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>äŵŵäy ƒƒřřőmm ččőŉŉŧŧřřőľ</value>
   </data>
-  <data name="okButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
+  <data name="Climb" xml:space="preserve">
+    <value>CCľįmmþþ:</value>
   </data>
-  <data name="okButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="CompetitorLoad" xml:space="preserve">
+    <value>CCőmmppęŧŧįŧŧőřř ľőäđđ:</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 247</value>
+  <data name="ControlsInUse" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľş įŉŉ ūşę:</value>
   </data>
-  <data name="okButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 3, 0</value>
+  <data name="ControlsNotInUse" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľş ŉŉőŧŧ įŉŉ ūşę:</value>
   </data>
-  <data name="okButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
+  <data name="Control_Plural" xml:space="preserve">
+    <value>ččőŉŉŧŧřřőľş</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="Control_Singular" xml:space="preserve">
+    <value>ččőŉŉŧŧřřőľ</value>
   </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
+  <data name="CourseList_AllCourses" xml:space="preserve">
+    <value>Åľľ ččőūřřşęş</value>
   </data>
-  <data name="&gt;&gt;okButton.Name" xml:space="preserve">
-    <value>okButton</value>
+  <data name="CourseList_None" xml:space="preserve">
+    <value>ŃŃőŉŉę</value>
   </data>
-  <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CourseName" xml:space="preserve">
+    <value>CCőūřřşę "{0}"</value>
   </data>
-  <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>CCūşŧŧőmmįžžęđđ şymmþþőľ đđęşččřřįppŧŧįőŉŉ</value>
   </data>
-  <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="EntireLeg" xml:space="preserve">
+    <value>ęŉŉŧŧįřřę ľęģģ</value>
   </data>
-  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="FinishFunnel" xml:space="preserve">
+    <value>ƒƒįŉŉįşĥĥ ƒƒūŉŉŉŉęľ</value>
   </data>
-  <data name="cancelButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
+  <data name="Finish_Plural" xml:space="preserve">
+    <value>ƒƒįŉŉįşĥĥęş</value>
   </data>
-  <data name="cancelButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="Finish_Singular" xml:space="preserve">
+    <value>ƒƒįŉŉįşĥĥ</value>
   </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 247</value>
+  <data name="Flagging" xml:space="preserve">
+    <value>FFľäģģģģįŉŉģģ:</value>
   </data>
-  <data name="cancelButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 0, 0</value>
+  <data name="IntoControl" xml:space="preserve">
+    <value>įŉŉŧŧő ččőŉŉŧŧřřőľ</value>
   </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 25</value>
+  <data name="IntoFinishFunnel" xml:space="preserve">
+    <value>įŉŉŧŧő ƒƒįŉŉįşĥĥ ƒƒūŉŉŉŉęľ</value>
   </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="Length" xml:space="preserve">
+    <value>Ŀęŉŉģģŧŧĥĥ:</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="LineHeight" xml:space="preserve">
+    <value>Ŀįŉŉę ĥĥęįģģĥĥŧŧ:</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
+  <data name="Location" xml:space="preserve">
+    <value>Ŀőččäŧŧįőŉŉ:</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="MandCrossing_Plural" xml:space="preserve">
+    <value>mmäŉŉđđäŧŧőřřy ččřřőşşįŉŉģģ ppőįŉŉŧŧş</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="MandCrossing_Singular" xml:space="preserve">
+    <value>mmäŉŉđđäŧŧőřřy ččřřőşşįŉŉģģ ppőįŉŉŧŧ</value>
   </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="None" xml:space="preserve">
+    <value>ŉŉőŉŉę</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>96, 96</value>
+  <data name="SpecialName_Boundary" xml:space="preserve">
+    <value>Ůŉŉččřřőşşäþþľę ßßőūŉŉđđäřřy</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 281</value>
+  <data name="SpecialName_CourseName" xml:space="preserve">
+    <value>CCőūřřşę ŃŃämmę</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>OkCancelDialog</value>
+  <data name="SpecialName_Dangerous" xml:space="preserve">
+    <value>ĐĐäŉŉģģęřřőūş Åřřęä</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľ ĐĐęşččřřįppŧŧįőŉŉş</value>
+  </data>
+  <data name="SpecialName_FirstAid" xml:space="preserve">
+    <value>FFįřřşŧŧ Åįđđ Ŀőččäŧŧįőŉŉ</value>
+  </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>FFőřřþþįđđđđęŉŉ Ŗőūŧŧę</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>Øūŧŧ-őƒƒ-þþőūŉŉđđş Åřřęä</value>
+  </data>
+  <data name="SpecialName_OptCrossing" xml:space="preserve">
+    <value>Øppŧŧįőŉŉäľ CCřřőşşįŉŉģģ Pőįŉŉŧŧ</value>
+  </data>
+  <data name="SpecialName_RegMark" xml:space="preserve">
+    <value>Ŗęģģįşŧŧřřäŧŧįőŉŉ MMäřřĸĸ</value>
+  </data>
+  <data name="SpecialName_Text" xml:space="preserve">
+    <value>ŦŦęχχŧŧ</value>
+  </data>
+  <data name="SpecialName_Water" xml:space="preserve">
+    <value>ŴŴäŧŧęřř Ŀőččäŧŧįőŉŉ</value>
+  </data>
+  <data name="Start_Plural" xml:space="preserve">
+    <value>şŧŧäřřŧŧş</value>
+  </data>
+  <data name="Start_Singular" xml:space="preserve">
+    <value>şŧŧäřřŧŧ</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>ŦŦęχχŧŧ đđęşččřřįppŧŧįőŉŉ:</value>
+  </data>
+  <data name="TextLine" xml:space="preserve">
+    <value>ŦŦęχχŧŧ ľįŉŉę</value>
+  </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>Åppppęäřřş äþþővvę {0}, įŉŉ äľľ ččőūřřşęş ŧŧĥĥäŧŧ ččőŉŉŧŧäįŉŉ {0}</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>Åppppęäřřş äþþővvę {0}, įŉŉ ŧŧĥĥįş ččőūřřşę őŉŉľy</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>Åppppęäřřş þþęľőŵŵ {0}, įŉŉ äľľ ččőūřřşęş ŧŧĥĥäŧŧ ččőŉŉŧŧäįŉŉ {0}</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>Åppppęäřřş þþęľőŵŵ {0}, įŉŉ ŧŧĥĥįş ččőūřřşę őŉŉľy</value>
+  </data>
+  <data name="TotalControls" xml:space="preserve">
+    <value>ŦŦőŧŧäľ ččőŉŉŧŧřřőľş:</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>ŦŦőŧŧäľ şččőřřę:</value>
+  </data>
+  <data name="UsedInCourses" xml:space="preserve">
+    <value>Ůşęđđ įŉŉ ččőūřřşęş:</value>
   </data>
 </root>

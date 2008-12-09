@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>CCŧŧřřľ+ŻŻ</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>CCŧŧřřľ+Ÿ</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Ēşčč</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Pūřřppľę Pęŉŉ</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>ŃŃő şymmþþőľ</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Åľľ ččőŉŉŧŧřřőľş</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ľőäđđ '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ şävvę '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ľőäđđ mmäpp ƒƒįľę '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ řřęäđđ įmmäģģę ƒƒįľę '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ppřřįŉŉŧŧ '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ččřřęäŧŧę '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ččřřęäŧŧę ƒƒőľđđęřř '{0}' ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ řřęäđđ mmäpp ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ: {0}</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>CCäŉŉŉŉőŧŧ ččřřęäŧŧę ØCCÅĐĐ ƒƒįľęş ƒƒőřř ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ řřęäşőŉŉ:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>ĐĐő yőū ŵŵäŉŉŧŧ ŧŧő şävvę ŧŧĥĥę ččĥĥäŉŉģģęş yőū mmäđđę ŧŧő '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>FFįľę '{0}' äľřřęäđđy ęχχįşŧŧş įŉŉ ŧŧĥĥę şppęččįƒƒįęđđ ƒƒőľđđęřř. CCľįččĸĸ ŧŧĥĥę "ßßäččĸĸ" þþūŧŧŧŧőŉŉ äŉŉđđ ččĥĥőőşę ä ŉŉęŵŵ ƒƒőľđđęřř őřř ä ŉŉęŵŵ ęvvęŉŉŧŧ ŧŧįŧŧľę.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>ŦŦĥĥę ččőŉŉŧŧřřőľ ččőđđę '{0}' įş äľřřęäđđy ūşęđđ þþy äŉŉőŧŧĥĥęřř ččőŉŉŧŧřřőľ.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>ŦŦĥĥę ppőįŉŉŧŧş ƒƒőřř ä ččőŉŉŧŧřřőľ mmūşŧŧ þþę äŉŉ įŉŉŧŧęģģęřř 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>ŦŦĥĥę ččľįmmþþ ƒƒőřř ä ččőūřřşę mmūşŧŧ þþę ä ŉŉūmmþþęřř 0-9999, őřř þþľäŉŉĸĸ.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>ŦŦĥĥę ľőäđđ ƒƒőřř ä ččőūřřşę mmūşŧŧ þþę äŉŉ įŉŉŧŧęģģęřř 0-999999, őřř þþľäŉŉĸĸ.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Ůŉŉđđő</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Ůŉŉđđő</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Ŗęđđő</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Ŗęđđő</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;CCľęäřř Ŝęľęččŧŧįőŉŉ</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>CCä&amp;ŉŉččęľ Øppęřřäŧŧįőŉŉ</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>CCäŉŉččęľ Øppęřřäŧŧįőŉŉ</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ şččőřřę</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ ččőđđę</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ƒƒęäŧŧūřřę şįžžę
+Ůşę / ƒƒőřř ĥĥęįģģĥĥŧŧ őŉŉ ä şľőppę
+Ůşę | ƒƒőřř ŧŧŵŵő ƒƒęäŧŧūřřęş</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ ęvvęŉŉŧŧ ŧŧįŧŧľę
+Ůşę | ŧŧő şęppäřřäŧŧę ľįŉŉęş
+(äƒƒƒƒęččŧŧş äľľ ččőūřřşęş)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ şęččőŉŉđđäřřy ŧŧįŧŧľę
+Ůşę | ŧŧő şęppäřřäŧŧę ľįŉŉęş</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ ččőūřřşę ŉŉämmę</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ ččľįmmþþ įŉŉ mmęŧŧęřřş</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ şymmþþőľ mmęäŉŉįŉŉģģ
+(äƒƒƒƒęččŧŧş äľľ ččőūřřşęş)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŉŉęŵŵ ŧŧęχχŧŧ</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľş {0} äřřę ŉŉő ľőŉŉģģęřř ūşęđđ þþy äŉŉy ččőūřřşę. ĐĐő yőū ŵŵäŉŉŧŧ ŧŧő đđęľęŧŧę ŧŧĥĥęşę ččőŉŉŧŧřřőľş ƒƒřřőmm ŧŧĥĥę ččőŉŉŧŧřřőľ ččőľľęččŧŧįőŉŉ?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľ {0} įş ŉŉő ľőŉŉģģęřř ūşęđđ þþy äŉŉy ččőūřřşę. ĐĐő yőū ŵŵäŉŉŧŧ ŧŧő đđęľęŧŧę ŧŧĥĥįş ččőŉŉŧŧřřőľ ƒƒřřőmm ŧŧĥĥę ččőŉŉŧŧřřőľ ččőľľęččŧŧįőŉŉ?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľ {0} įş ččūřřřřęŉŉŧŧľy ūşęđđ þþy ŧŧĥĥę ƒƒőľľőŵŵįŉŉģģ ččőūřřşęş: {1}. ĐĐő yőū ŵŵäŉŉŧŧ ŧŧő đđęľęŧŧę ŧŧĥĥįş ččőŉŉŧŧřřőľ äŉŉyŵŵäy?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Å ččőŉŉŧŧřřőľ ččőđđę mmūşŧŧ þþę őŉŉę, ŧŧŵŵő, őřř ŧŧĥĥřřęę ľęŧŧŧŧęřřş őřř đđįģģįŧŧş.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Å ččőŉŉŧŧřřőľ ččőđđę mmūşŧŧ ŉŉőŧŧ ččőŉŉŧŧäįŉŉ ä şppäččę.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Å ččőŉŉŧŧřřőľ ččőđđę şĥĥőūľđđ þþę 31 őřř ĥĥįģģĥĥęřř.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Å ččőŉŉŧŧřřőľ ččőđđę şĥĥőūľđđ ŉŉőŧŧ þþęģģįŉŉ ŵŵįŧŧĥĥ žžęřřő.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Å ččőŉŉŧŧřřőľ ččőđđę şĥĥőūľđđ ŉŉőŧŧ ľőőĸĸ ľįĸĸę äŉŉőŧŧĥĥęřř ŉŉūmmþþęřř ŵŵĥĥęŉŉ ūppşįđđę-đđőŵŵŉŉ.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>ŦŦĥĥę ččőđđę "{0}" įş ūşęđđ mmőřřę ŧŧĥĥäŉŉ őŉŉččę.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>ŦŦĥĥę ppřřįŉŉŧŧ şččäľę mmūşŧŧ þþę ä ŉŉūmmþþęřř þþęŧŧŵŵęęŉŉ 100 äŉŉđđ 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>CCőūřřşę Přřőppęřřŧŧįęş</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Ŀäŉŉđđşččäppę</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Pőřřŧŧřřäįŧŧ</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>ŦŦĥĥę ppäģģę şįžžę įş ŧŧőő şmmäľľ ƒƒőřř äŉŉy đđęşččřřįppŧŧįőŉŉş ŧŧő þþę ppřřįŉŉŧŧęđđ.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>VVęřřşįőŉŉ {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>VVęřřşįőŉŉ {0} őƒƒ Pūřřppľę Pęŉŉ įş ŉŉőŵŵ ävväįľäþþľę ƒƒőřř đđőŵŵŉŉľőäđđ. (Ÿőū äřřę ččūřřřřęŉŉŧŧľy řřūŉŉŉŉįŉŉģģ vvęřřşįőŉŉ {1}.)
+
+ŦŦő đđőŵŵŉŉľőäđđ ŧŧĥĥę ľäŧŧęşŧŧ vvęřřşįőŉŉ, vvįşįŧŧ ŧŧĥĥę Pūřřppľę Pęŉŉ ŵŵęþþ şįŧŧę þþy şęľęččŧŧįŉŉģģ "Pūřřppľę Pęŉŉ ŴŴęþþ Ŝįŧŧę" įŉŉ ŧŧĥĥę ĦĦęľpp mmęŉŉū.</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>ĦĦęľpp ƒƒįľę '{0}' ččőūľđđ ŉŉőŧŧ þþę őppęŉŉęđđ.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>ŻŻőőmm</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>ŦŦĥĥę mmäpp ƒƒįľę "{0}" ččőūľđđ ŉŉőŧŧ þþę ƒƒőūŉŉđđ.
+
+MMőşŧŧ ľįĸĸęľy, ŧŧĥĥę mmäpp ƒƒįľę ĥĥäş þþęęŉŉ mmővvęđđ őřř đđęľęŧŧęđđ, őřř ŧŧĥĥę Pūřřppľę Pęŉŉ ƒƒįľę ĥĥäş þþęęŉŉ mmővvęđđ (ppőşşįþþľy ŧŧő ä đđįƒƒƒƒęřřęŉŉŧŧ ččőmmppūŧŧęřř). ŦŦĥĥę mmäpp ƒƒįľę mmūşŧŧ þþę ppřřęşęŉŉŧŧ ęvvęřřy ŧŧįmmę ŧŧĥĥę Pūřřppľę Pęŉŉ ęvvęŉŉŧŧ ƒƒįľę įş ľőäđđęđđ. Ĩƒƒ yőū şęŉŉđđ ä Pūřřppľę Pęŉŉ ęvvęŉŉŧŧ ƒƒįľę ŧŧő äŉŉőŧŧĥĥęřř ppęřřşőŉŉ, þþę şūřřę ŧŧĥĥäŧŧ ppęřřşőŉŉ ĥĥäş ä ččőppy őƒƒ ŧŧĥĥę mmäpp ƒƒįľę äľşő.
+
+Åƒƒŧŧęřř ppřřęşşįŉŉģģ ØĶĶ, ŧŧřřy ŧŧő ƒƒįŉŉđđ ä ččőppy őƒƒ ŧŧĥĥę mmäpp ƒƒįľę őŉŉ yőūřř ččőmmppūŧŧęřř.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Åľľ ččőŉŉŧŧřřőľş äřřę ūşęđđ įŉŉ ä ččőūřřşę.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;FFįŉŉįşĥĥ</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;ŃŃęχχŧŧ &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>CCőŉŉŧŧřřőľ {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>FFįŉŉįşĥĥ</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>FF</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>MMäŉŉđđäŧŧőřřy ččřřőşşįŉŉģģ ppőįŉŉŧŧ</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>CCřřőşşįŉŉģģ</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>CC</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Åľľ: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Ŀęƒƒŧŧ: {0}, Ŗįģģĥĥŧŧ: {1}, ŦŦőpp: {2}, ßßőŧŧŧŧőmm: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Ŝŧŧäřřŧŧ</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>Ŝ</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Åľppĥĥä {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>ßßęŧŧä {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>ŖCC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>ppľūřřäľ</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>şįŉŉģģūľäřř</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>ŦŦĥĥę ččūşŧŧőmmįžžęđđ ŧŧęχχŧŧ řřęqqūįřřęş ä "*" ŧŧő įŉŉđđįččäŧŧę ŵŵĥĥęřřę ŧŧĥĥę őþþĵĵęččŧŧ þþęįŉŉģģ mmőđđįƒƒįęđđ įş ppľäččęđđ.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>ččőūřřşę şęŧŧŧŧįŉŉģģ ƒƒőřř őřřįęŉŉŧŧęęřřįŉŉģģ</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŧŧĥĥę ŧŧęχχŧŧ yőū ŵŵįşĥĥ ŧŧő ppľäččę őŉŉ ŧŧĥĥę mmäpp. Åƒƒŧŧęřř ppřřęşşįŉŉģģ ØĶĶ, đđřřäģģ ŧŧĥĥę mmőūşę ŧŧő ppľäččę ŧŧĥĥę ŧŧęχχŧŧ įŉŉ ŧŧĥĥę đđęşįřřęđđ ľőččäŧŧįőŉŉ.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Åđđđđ ŦŦęχχŧŧ</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Ēŉŉŧŧęřř ŧŧĥĥę ŉŉęŵŵ ŧŧęχχŧŧ.</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>CCĥĥäŉŉģģę ŦŦęχχŧŧ</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Åŉŉőŧŧĥĥęřř ppřřőģģřřämm ĥĥäş ččĥĥäŉŉģģęđđ ŧŧĥĥę mmäpp ƒƒįľę "{0}". Pūřřppľę Pęŉŉ ŵŵįľľ ŉŉőŵŵ řřęľőäđđ ŧŧĥĥę mmäpp.</value>
+  </data>
+</root>

@@ -126,7 +126,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="openExistingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 178</value>
+    <value>47, 178</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="openExistingRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -160,7 +160,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="createNewRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 140</value>
+    <value>47, 140</value>
   </data>
   <data name="createNewRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -289,7 +289,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="openSampleRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 216</value>
+    <value>47, 216</value>
   </data>
   <data name="openSampleRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
