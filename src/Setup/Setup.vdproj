@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9E4BBB6156924D9EB1B520C72E71CFEA"
+        "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CCCD39442E3F482E930F72F7115C0432"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +47,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9E4BBB6156924D9EB1B520C72E71CFEA"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -178,6 +190,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E4BBB6156924D9EB1B520C72E71CFEA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9E4BBB6156924D9EB1B520C72E71CFEA"
+                    {
+                    "Name" = "8:Microsoft.VisualBasic.PowerPacks.Vs.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.VisualBasic.PowerPacks.Vs.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CCCD39442E3F482E930F72F7115C0432"
             {
             "SourcePath" = "8:..\\PurplePen\\bin\\release\\Purple Pen Help.chm"
@@ -300,7 +343,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
         "ProductCode" = "8:{AD043A3F-4F78-41DF-B252-32C7F8F34ECD}"
-        "PackageCode" = "8:{FBD9103E-AB11-466B-BCBE-32778E667584}"
+        "PackageCode" = "8:{840EAADA-A169-468D-93D7-1F58A166297C}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
@@ -832,6 +875,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2FBC235FB987406887F882A20255C043"
+            {
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:LocalizedResourceDlls"
+            "OutputProjectGuid" = "8:{C1715D94-3BEB-4D86-8402-80A57C9D11C5}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_75BEA61185F8480D8B278E736F729F55"
             {
             "SourcePath" = "8:..\\PurplePen\\obj\\Release\\PurplePen.exe"
