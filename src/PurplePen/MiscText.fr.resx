@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Échap</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Pas de symbole</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Tous les postes</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Ne peut pas charger '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Ne peut pas sauvegarder '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Ne peut pas charger la carte '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Ne peut pas lire le fichier image '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Ne peut pas imprimer '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Ne peut pas créer '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Ne peut pas créer le dossier '{0}' pour les raisons suivantes :</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Ne peut pas ouvrir la carte pour les raisons suivantes : {0}</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Ne peut pas créer les fichiers OCAD pour les raisons suivantes :</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Voulez-vous sauvegarder les modifications effectuées sur  '{0}' ?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Le fichier '{0}' existe déjà dans le dossier indiqué. Cliquer sur le bouton "Retour" et choisissez un nouveau dossier ou un nouveau nom pour cette course.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Le numéro du poste '{0}' est déjà utilisé sur autre poste.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Les points affectés à un poste doivent correspondre à un nombre entier compris entre 1 et 999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>La dénivelée d'un circuit doit être vide ou un nombre compris entre 0 et 9999.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Le nombre de concurrent sur un circuit doit être vide ou un nombre entier compris entre 0 et 999999.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Annuler</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Refaire</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Refaire</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Désélectionner</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>A&amp;nnuler l'opération</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Annuler l'opération</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Entrer le nouveau score</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Entrer le nouveau numéro</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Entrer la taille de l'élément
+Utiliser / pour la hauteur sur une pente
+Utiliser | pour deux éléments</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Entrer un nouveau titre pour la course
+(affecte tous les circuits)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Entrer un nouveau titre secondaire
+(affecte uniquement ce circuit)</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Entrer un nouveau nom pour le circuit</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Entrer la nouvelle dénivelée en mètres</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Entrer une nouvelle signification pour le symbole
+(affecte tous les circuits)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Entrer le nouveau texte</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Les numéros de postes {0} ne sont plus utilisés sur un quelconque circuit. Voulez-vous supprimer ces numéros de la bibliothèque de postes ?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Le numéro de poste {0} n'est plus utilisé sur un quelconque circuit. Voulez-vous supprimer ce numéro de la bibliothèque de postes ?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Le numéro de poste {0} est actuellement utilisé sur le(s) circuit(s) suivant(s) : {1}. Voulez-vous vraiment le supprimer ?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Un numéro de poste doit correspondre à 1, 2 ou 3 lettres ou chiffres.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Un numéro de poste ne doit pas contenir d'espace.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Un numéro de poste devrait être supérieur ou égal à 31.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Un numéro de poste ne devrait pas commencer par zéro.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Un numéro de poste ne devrait pas ressembler à un autre quand on le lit à l'envers.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Le numéro de poste "{0}" est utilisé plus d'une fois.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>L'échelle d'impression doit correspondre à un nombre compris entre 100 et 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Propriétés du circuit</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Paysage</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portrait</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>La taille de la page est trop petite pour que les définitions soient imprimées.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>La version {0} de Purple Pen est maintenant disponible en téléchargement. (Vous utilisez actuellement la version {1}.)
+Pour télécharger la dernière version, visitez le site web de Purple Pen en choisissant "Site Web Purple Pen" dans le menu Aide (?).</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Le fichier d'Aide '{0}' n'a pas pu être ouvert.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>La carte "{0}" n'a pas été trouvée.Le fichier de la carte a probablement été déplacé ou supprimé, ou le fichier Purple Pen a été déplacé (éventuellement sur un ordinateur différent). Le fichier de la carte doit être systématiquement présent chaque fois que le fichier Purple Pen de la course est chargé. Si vous envoyez le fichier Purple Pen de la course à une autre personne, assurez-vous que cette personne possède également une copie du fichier de la carte.
+Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte sur votre ordinateur.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Tous les numéros de poste sont utilisés sur un circuit.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Terminer</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Suivant &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Poste n° {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Arrivée</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Point de passage obligatoire</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Passage</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Tous : {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Gauche : {0}, Droite : {1}, Haut : {2}, Bas : {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Départ</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Béta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>pluriel</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>singulier</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Le texte personnalisé recquiert une "*" afin d'indiquer l'emplacement de l'objet en cours de modification.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>élaborateur de circuits de course d'orientation</value>
+  </data>
+</root>

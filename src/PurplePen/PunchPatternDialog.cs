@@ -141,22 +141,24 @@ namespace PurplePen
             e.DrawBackground();
 
             // Get the string to draw, and the color to draw in.
-            string s = (string) codeList.Items[e.Index];
-            PunchPattern currentPunch;
-            if (e.Index == codeList.SelectedIndex)
-                currentPunch = GetPunchPattern();
-            else
-                currentPunch = patternDictionary[s];
-            bool drawRed = (currentPunch == null);
+            if (e.Index >= 0) {
+                string s = (string) codeList.Items[e.Index];
+                PunchPattern currentPunch;
+                if (e.Index == codeList.SelectedIndex)
+                    currentPunch = GetPunchPattern();
+                else
+                    currentPunch = patternDictionary[s];
+                bool drawRed = (currentPunch == null);
 
-            Brush textBrush;
-            if ((e.State & DrawItemState.Selected) != 0)
-                textBrush = SystemBrushes.HighlightText;
-            else
-                textBrush = drawRed ? Brushes.Red : SystemBrushes.WindowText;
+                Brush textBrush;
+                if ((e.State & DrawItemState.Selected) != 0)
+                    textBrush = SystemBrushes.HighlightText;
+                else
+                    textBrush = drawRed ? Brushes.Red : SystemBrushes.WindowText;
 
-            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            e.Graphics.DrawString(s, e.Font, textBrush, e.Bounds, StringFormat.GenericDefault);
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+                e.Graphics.DrawString(s, e.Font, textBrush, e.Bounds, StringFormat.GenericDefault);
+            }
 
             e.DrawFocusRectangle();
         }
