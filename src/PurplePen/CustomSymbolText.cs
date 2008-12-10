@@ -134,6 +134,8 @@ namespace PurplePen
         void FillLanguages()
         {
             languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
+            languages.Sort((lang1, lang2) => string.Compare(lang1.Name, lang2.Name, true));
+
             foreach (SymbolLanguage lang in languages) {
                 comboBoxLanguage.Items.Add(lang.Name);
             }
@@ -271,8 +273,9 @@ namespace PurplePen
 
                 e.Graphics.SmoothingMode = oldSmoothing;
 
-                // Draw the text.
-                string text = symbol.GetName(Util.CurrentLangName());
+                // Draw the text. Use English if we're customizing text, otherwise use the set language.
+                string langId = useAsLocalizeTool ? "en" : LangId;
+                string text = symbol.GetName(langId);
 
                 StringFormat stringFormat = new StringFormat(StringFormat.GenericDefault);
                 stringFormat.Alignment = StringAlignment.Near;
