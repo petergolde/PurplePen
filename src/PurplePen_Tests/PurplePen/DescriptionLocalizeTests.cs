@@ -226,6 +226,48 @@ namespace PurplePen.Tests
             Assert.AreEqual("New German Statue", symbolDB["5.20"].GetName("de"));
         }
 
+        [TestMethod]
+        public void Merge()
+        {
+            File.Delete(TestUtil.GetTestFile("desclocalize\\symbols_working.xml"));
+            File.Copy(TestUtil.GetTestFile("desclocalize\\symbols.xml"), TestUtil.GetTestFile("desclocalize\\symbols_working.xml"));
+
+            SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("desclocalize\\symbols_working.xml"));
+            DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
+
+            localizer.MergeSymbolsFile(TestUtil.GetTestFile("desclocalize\\symbols-to-merge.xml"), "fr");
+
+            SymbolLanguage[] expected = {
+                                            new SymbolLanguage("English", "en", true, false, false, null),
+                                            new SymbolLanguage("French", "fr", true, true, true, new string[] { "masculine", "feminine" }),
+                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"})};
+
+            List<SymbolLanguage> languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
+
+            CollectionAssert.AreEquivalent(expected, languages);
+
+            SymbolText[] expectedTexts = {
+                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "Length {0}, climb {1}"},
+                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "Frenchy Length {0}, climb {1}"},
+            };
+            List<SymbolText> actualTexts = symbolDB["course_length_climb"].SymbolTexts;
+
+            CollectionAssert.AreEquivalent(expectedTexts, actualTexts);
+
+            expectedTexts = new SymbolText[] {
+                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "overgrown {0}"},
+                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "fr sing fem overgrown {0}"},
+                new SymbolText() {Lang = "fr", Plural = true, Gender = "feminine", Text = "fr plur fem overgrown {0}"},
+                new SymbolText() {Lang = "fr", Plural = false, Gender = "masculine", Text = "fr sing masc overgrown {0}"},
+                new SymbolText() {Lang = "fr", Plural = true, Gender = "masculine", Text = "fr plur masc overgrown {0}"},
+            };
+            actualTexts = symbolDB["8.4"].SymbolTexts;
+
+            CollectionAssert.AreEquivalent(expectedTexts, actualTexts);
+
+            Assert.AreEqual("Fr Overgrown", symbolDB["8.4"].GetName("fr"));
+
+        }
 
     }
 }

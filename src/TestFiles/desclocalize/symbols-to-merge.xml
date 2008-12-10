@@ -117,9 +117,8 @@ for the symbols.
 	<!-- Languages. Lists of the languages available for descriptions. -->
 
 	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English</language>
-	
-	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine,neuter">Deutsch</language>
 	<language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">French</language>
+	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine,neuter">Deutsch</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
@@ -181,9 +180,9 @@ for the symbols.
 		<name lang="en">Start</name>
 		<text lang="en">start</text>
 		<polygon thickness="12.5" corners="sharp">
-			<point x="-56" y="65" />
-			<point x="-56" y="-65" />
-			<point x="57" y="0" />
+			<point x="-56" y="65"/>
+			<point x="-56" y="-65"/>
+			<point x="57" y="0"/>
 		</polygon>
 	</symbol>
 
@@ -196,112 +195,112 @@ for the symbols.
 	<symbol kind="C" id="0.1N">
 		<name lang="en">Northern</name>
 		<text lang="en">N {0}</text>
-		<lines thickness="12.5">
-			<point x="0" y="-65" />
-			<point x="0" y="65" />
+		<lines thickness="12.5" >
+			<point x="0" y="-65"/>
+			<point x="0" y="65"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="-30" y="35" />
-			<point x="0" y="65" />
-			<point x="30" y="35" />
+			<point x="-30" y="35"/>
+			<point x="0" y="65"/>
+			<point x="30" y="35"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.2NE">
 		<name lang="en">North-eastern</name>
 		<text lang="en">NE {0}</text>
-		<lines thickness="12.5">
-			<point x="-55" y="-55" />
-			<point x="55" y="55" />
+		<lines thickness="12.5" >
+			<point x="-55" y="-55"/>
+			<point x="55" y="55"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="55" y="15" />
-			<point x="55" y="55" />
-			<point x="15" y="55" />
+			<point x="55" y="15"/>
+			<point x="55" y="55"/>
+			<point x="15" y="55"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.1E">
 		<name lang="en">Eastern</name>
 		<text lang="en">E {0}</text>
-		<lines thickness="12.5">
-			<point x="-65" y="0" />
-			<point x="65" y="0" />
+		<lines thickness="12.5" >
+			<point x="-65" y="0"/>
+			<point x="65" y="0"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="35" y="-30" />
-			<point x="65" y="0" />
-			<point x="35" y="30" />
+			<point x="35" y="-30"/>
+			<point x="65" y="0"/>
+			<point x="35" y="30"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.2SE">
 		<name lang="en">South-eastern</name>
 		<text lang="en">SE {0}</text>
-		<lines thickness="12.5">
-			<point x="-55" y="55" />
-			<point x="55" y="-55" />
+		<lines thickness="12.5" >
+			<point x="-55" y="55"/>
+			<point x="55" y="-55"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="55" y="-15" />
-			<point x="55" y="-55" />
-			<point x="15" y="-55" />
+			<point x="55" y="-15"/>
+			<point x="55" y="-55"/>
+			<point x="15" y="-55"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.1S">
 		<name lang="en">Southern</name>
 		<text lang="en">S {0}</text>
-	<lines thickness="12.5">
-			<point x="0" y="-65" />
-			<point x="0" y="65" />
+	<lines thickness="12.5" >
+			<point x="0" y="-65"/>
+			<point x="0" y="65"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="-30" y="-35" />
-			<point x="0" y="-65" />
-			<point x="30" y="-35" />
+			<point x="-30" y="-35"/>
+			<point x="0" y="-65"/>
+			<point x="30" y="-35"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.2SW">
 		<name lang="en">South-western</name>
 		<text lang="en">SW {0}</text>
-		<lines thickness="12.5">
-			<point x="55" y="55" />
-			<point x="-55" y="-55" />
+		<lines thickness="12.5" >
+			<point x="55" y="55"/>
+			<point x="-55" y="-55"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="-55" y="-15" />
-			<point x="-55" y="-55" />
-			<point x="-15" y="-55" />
+			<point x="-55" y="-15"/>
+			<point x="-55" y="-55"/>
+			<point x="-15" y="-55"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.1W">
 		<name lang="en">Western</name>
 		<text lang="en">W {0}</text>
-		<lines thickness="12.5">
-			<point x="-65" y="0" />
-			<point x="65" y="0" />
+		<lines thickness="12.5" >
+			<point x="-65" y="0"/>
+			<point x="65" y="0"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="-35" y="-30" />
-			<point x="-65" y="0" />
-			<point x="-35" y="30" />
+			<point x="-35" y="-30"/>
+			<point x="-65" y="0"/>
+			<point x="-35" y="30"/>
 		</lines>
 	</symbol>
 
 	<symbol kind="C" id="0.2NW">
 		<name lang="en">North-western</name>
 		<text lang="en">NW {0}</text>
-		<lines thickness="12.5">
-			<point x="55" y="-55" />
-			<point x="-55" y="55" />
+		<lines thickness="12.5" >
+			<point x="55" y="-55"/>
+			<point x="-55" y="55"/>
 		</lines>
 		<lines thickness="12.5" corners="sharp">
-			<point x="-55" y="15" />
-			<point x="-55" y="55" />
-			<point x="-15" y="55" />
+			<point x="-55" y="15"/>
+			<point x="-55" y="55"/>
+			<point x="-15" y="55"/>
 		</lines>
 	</symbol>
 
@@ -309,15 +308,15 @@ for the symbols.
 		<name lang="en">Upper</name>
 		<text lang="en">upper {0}</text>
 		<lines thickness="12.5" ends="round">
-			<point x="-60" y="40" />
-			<point x="60" y="40" />
+			<point x="-60" y ="40"/>
+			<point x="60" y ="40"/>
 		</lines>
 		<lines thickness="12.5" ends="round">
-			<point x="-60" y="-40" />
-			<point x="60" y="-40" />
+			<point x="-60" y ="-40"/>
+			<point x="60" y ="-40"/>
 		</lines>
 		<filled-circle radius="20">
-			<point x="0" y="40" />
+			<point x="0" y="40"/>
 		</filled-circle>
 	</symbol>
 
@@ -325,15 +324,15 @@ for the symbols.
 		<name lang="en">Lower</name>
 		<text lang="en">lower {0}</text>
 		<lines thickness="12.5" ends="round">
-			<point x="-60" y="40" />
-			<point x="60" y="40" />
+			<point x="-60" y ="40"/>
+			<point x="60" y ="40"/>
 		</lines>
 		<lines thickness="12.5" ends="round">
-			<point x="-60" y="-40" />
-			<point x="60" y="-40" />
+			<point x="-60" y ="-40"/>
+			<point x="60" y ="-40"/>
 		</lines>
 		<filled-circle radius="20">
-			<point x="0" y="-40" />
+			<point x="0" y="-40"/>
 		</filled-circle>
 	</symbol>
 
@@ -341,19 +340,19 @@ for the symbols.
 		<name lang="en">Middle</name>
 		<text lang="en">middle {0}</text>
 		<lines thickness="12.5" ends="round">
-			<point x="-50" y="60" />
-			<point x="-50" y="-60" />
+			<point x="-50" y ="60"/>
+			<point x="-50" y ="-60"/>
 		</lines>
 		<lines thickness="12.5" ends="round">
-			<point x="50" y="60" />
-			<point x="50" y="-60" />
+			<point x="50" y ="60"/>
+			<point x="50" y ="-60"/>
 		</lines>
 		<lines thickness="12.5" ends="round">
-			<point x="0" y="60" />
-			<point x="0" y="-60" />
+			<point x="0" y ="60"/>
+			<point x="0" y ="-60"/>
 		</lines>
 		<filled-circle radius="20">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -366,25 +365,25 @@ for the symbols.
 		<text lang="en">terrace</text>
 		<text lang="en" plural="true">terraces</text>
 		<beziers thickness="12.5">
-			<point x="-60" y="-70" />
-			<point x="-50" y="-30" />
-			<point x="-50" y="30" />
-			<point x="-60" y="70" />
+			<point x="-60" y="-70"/>
+			<point x="-50" y="-30"/>
+			<point x="-50" y="30"/>
+			<point x="-60" y="70"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-32" y="-70" />
-				<point x="-30" y="-60" />
-				<point x="-30" y="-48" />
-			<point x="0" y="-46" />
-				<point x="30" y="-44" />
-				<point x="50" y="-47" />
-			<point x="50" y="0" />
-				<point x="50" y="47" />
-				<point x="30" y="44" />
-			<point x="0" y="46" />
-				<point x="-30" y="48" />
-				<point x="-30" y="60" />
-			<point x="-32" y="70" />
+			<point x="-32"  y="-70"/>
+				<point x="-30"  y="-60"/>
+				<point x="-30"  y="-48"/>
+			<point x="0"  y="-46"/>
+				<point x="30"   y="-44"/>
+				<point x="50"   y="-47"/>
+			<point x="50"   y="0"  />
+				<point x="50"   y="47" />
+				<point x="30"   y="44" />
+			<point x="0"  y="46" />
+				<point x="-30"  y="48" />
+				<point x="-30"  y="60" />
+			<point x="-32"  y="70" />
 		</beziers>
 	</symbol>
 
@@ -393,25 +392,25 @@ for the symbols.
 		<text lang="en">spur</text>
 		<text lang="en" plural="true">spurs</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="-70" />
-			<point x="-60" y="-30" />
-			<point x="-60" y="30" />
-			<point x="-70" y="70" />
+			<point x="-70" y="-70"/>
+			<point x="-60" y="-30"/>
+			<point x="-60" y="30"/>
+			<point x="-70" y="70"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-42" y="-70" />
-				<point x="-37" y="-42" />
-				<point x="-40" y="-23" />
-			<point x="-10" y="-21" />
-				<point x="20" y="-19" />
-				<point x="70" y="-27" />
-			<point x="70" y="0" />
-				<point x="70" y="27" />
-				<point x="20" y="19" />
-			<point x="-10" y="21" />
-				<point x="-40" y="23" />
-				<point x="-37" y="42" />
-			<point x="-42" y="70" />
+			<point x="-42"  y="-70"/>
+				<point x="-37"  y="-42"/>
+				<point x="-40"  y="-23"/>
+			<point x="-10"  y="-21"/>
+				<point x="20"   y="-19"/>
+				<point x="70"   y="-27"/>
+			<point x="70"   y="0"  />
+				<point x="70"   y="27" />
+				<point x="20"   y="19" />
+			<point x="-10"  y="21" />
+				<point x="-40"  y="23" />
+				<point x="-37"  y="42" />
+			<point x="-42"  y="70" />
 		</beziers>
 	</symbol>
 
@@ -420,19 +419,19 @@ for the symbols.
 		<text lang="en">reentrant</text>
 		<text lang="en" plural="true">reentrants</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="-70" />
-			<point x="-42" y="-73" />
-			<point x="-38" y="-40" />
-			<point x="-36" y="-10" />
-			<point x="-34" y="20" />
-			<point x="-27" y="70" />
-			<point x="0" y="70" />
-			<point x="27" y="70" />
-			<point x="34" y="20" />
-			<point x="36" y="-10" />
-			<point x="38" y="-40" />
-			<point x="42" y="-73" />
-			<point x="70" y="-70" />
+			<point x="-70"  y="-70"/>
+			<point x="-42"  y="-73"/>
+			<point x="-38"  y="-40"/>
+			<point x="-36"  y="-10"/>
+			<point x="-34"  y="20"/>
+			<point x="-27"  y="70"/>
+			<point x="0"    y="70"/>
+			<point x="27"   y="70"/>
+			<point x="34"   y="20"/>
+			<point x="36"   y="-10"/>
+			<point x="38"   y="-40"/>
+			<point x="42"   y="-73"/>
+			<point x="70"   y="-70"/>
 		</beziers>
 	</symbol>
 
@@ -441,26 +440,26 @@ for the symbols.
 		<text lang="en">earth bank</text>
 		<text lang="en" plural="true">earth banks</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="20" />
-			<point x="-30" y="-10" />
-			<point x="30" y="-10" />
-			<point x="70" y="20" />
+			<point x="-70" y="20"/>
+			<point x="-30" y="-10"/>
+			<point x="30" y="-10"/>
+			<point x="70" y="20"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="20" y="-5" />
-			<point x="25" y="-29" />
+			<point x="20" y ="-5"/>
+			<point x="25" y ="-29"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-20" y="-5" />
-			<point x="-25" y="-29" />
+			<point x="-20" y ="-5"/>
+			<point x="-25" y ="-29"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="55" y="9" />
-			<point x="65" y="-13" />
+			<point x="55" y ="9"/>
+			<point x="65" y ="-13"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-55" y="9" />
-			<point x="-65" y="-13" />
+			<point x="-55" y ="9"/>
+			<point x="-65" y ="-13"/>
 		</lines>
 	</symbol>
 
@@ -469,29 +468,29 @@ for the symbols.
 		<text lang="en">quarry</text>
 		<text lang="en" plural="true">quarries</text>
 		<beziers thickness="12.5">
-			<point x="54" y="-60" />
-				<point x="93" y="5" />
-				<point x="52" y="64" />
-			<point x="0" y="64" />
-				<point x="-52" y="64" />
-				<point x="-93" y="5" />
-			<point x="-54" y="-60" />
+			<point x="54"  y ="-60"/>
+				<point x="93"  y ="5"/>
+				<point x="52"  y ="64"/>
+			<point x="0"    y ="64"/>
+				<point x="-52"   y ="64"/>
+				<point x="-93"   y ="5"/>
+			<point x="-54"   y ="-60"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="40" y="48" />
-			<point x="20" y="23" />
+			<point x="40" y ="48"/>
+			<point x="20" y ="23"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-40" y="48" />
-			<point x="-20" y="23" />
+			<point x="-40" y ="48"/>
+			<point x="-20" y ="23"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="66" y="-25" />
-			<point x="40" y="-17.5" />
+			<point x="66" y ="-25"/>
+			<point x="40" y ="-17.5"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-66" y="-25" />
-			<point x="-40" y="-17.5" />
+			<point x="-66" y ="-25"/>
+			<point x="-40" y ="-17.5"/>
 		</lines>
 	</symbol>
 
@@ -500,24 +499,24 @@ for the symbols.
 		<text lang="en">earth wall</text>
 		<text lang="en" plural="true">earth walls</text>
 		<lines thickness="12.5">
-			<point x="-70" y="0" />
-			<point x="70" y="0" />
+			<point x="-70" y ="0"/>
+			<point x="70" y ="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-48" y="17" />
-			<point x="-48" y="-17" />
+			<point x="-48" y ="17"/>
+			<point x="-48" y ="-17"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-16" y="-25" />
-			<point x="-16" y="25" />
+			<point x="-16" y ="-25"/>
+			<point x="-16" y ="25"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="16" y="-25" />
-			<point x="16" y="25" />
+			<point x="16" y ="-25"/>
+			<point x="16" y ="25"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="48" y="17" />
-			<point x="48" y="-17" />
+			<point x="48" y ="17"/>
+			<point x="48" y ="-17"/>
 		</lines>
 	</symbol>
 
@@ -526,9 +525,9 @@ for the symbols.
 		<text lang="en">gully</text>
 		<text lang="en" plural="true">gullies</text>
 		<lines thickness="12.5">
-			<point x="40" y="-70" />
-			<point x="0" y="70" />
-			<point x="-40" y="-70" />
+			<point x="40" y ="-70"/>
+			<point x="0" y ="70"/>
+			<point x="-40" y ="-70"/>
 		</lines>
 	</symbol>
 
@@ -537,27 +536,27 @@ for the symbols.
 		<text lang="en">small gully</text>
 		<text lang="en" plural="true">small gullies</text>
 		<lines thickness="12.5">
-			<point x="-21" y="61" />
-			<point x="61" y="-21" />
+			<point x="-21" y ="61"/>
+			<point x="61" y ="-21"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-61" y="21" />
-			<point x="21" y="-61" />
+			<point x="-61" y ="21"/>
+			<point x="21" y ="-61"/>
 		</lines>
 		<filled-circle radius="7.5">
-			<point x="-40" y="40" />
+			<point x="-40" y ="40"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-20" y="20" />
+			<point x="-20" y ="20"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="0" />
+			<point x="0" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="20" y="-20" />
+			<point x="20" y ="-20"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="40" y="-40" />
+			<point x="40" y ="-40"/>
 		</filled-circle>
 	</symbol>
 
@@ -566,19 +565,19 @@ for the symbols.
 		<text lang="en">hill</text>
 		<text lang="en" plural="true">hills</text>
 		<beziers thickness="12.5">
-			<point x="0" y="48.21" />
-			<point x="40.71" y="48.21" />
-			<point x="75" y="26.79" />
-			<point x="75" y="0" />
-			<point x="75" y="-26.79" />
-			<point x="40.71" y="-48.21" />
-			<point x="0" y="-48.21" />
-			<point x="-40.71" y="-48.21" />
-			<point x="-75" y="-26.79" />
-			<point x="-75" y="0" />
-			<point x="-75" y="26.79" />
-			<point x="-40.71" y="48.21" />
-			<point x="0" y="48.21" />
+			<point x="0" y ="48.21"/>
+			<point x="40.71" y ="48.21"/>
+			<point x="75" y ="26.79"/>
+			<point x="75" y ="0"/>
+			<point x="75" y ="-26.79"/>
+			<point x="40.71" y ="-48.21"/>
+			<point x="0" y ="-48.21"/>
+			<point x="-40.71" y ="-48.21"/>
+			<point x="-75" y ="-26.79"/>
+			<point x="-75" y ="0"/>
+			<point x="-75" y ="26.79"/>
+			<point x="-40.71" y ="48.21"/>
+			<point x="0" y ="48.21"/>
 		</beziers>
 	</symbol>
 
@@ -587,7 +586,7 @@ for the symbols.
 		<text lang="en">knoll</text>
 		<text lang="en" plural="true">knolls</text>
 		<filled-circle radius="23">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -596,16 +595,16 @@ for the symbols.
 		<text lang="en">saddle</text>
 		<text lang="en" plural="true">saddles</text>
 		<beziers thickness="12.5">
-			<point x="-40" y="-70" />
-			<point x="-10" y="-30" />
-			<point x="-10" y="30" />
-			<point x="-40" y="70" />
+			<point x="-40" y="-70"/>
+			<point x="-10" y="-30"/>
+			<point x="-10" y="30"/>
+			<point x="-40" y="70"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="40" y="-70" />
-			<point x="10" y="-30" />
-			<point x="10" y="30" />
-			<point x="40" y="70" />
+			<point x="40" y="-70"/>
+			<point x="10" y="-30"/>
+			<point x="10" y="30"/>
+			<point x="40" y="70"/>
 		</beziers>
 	</symbol>
 
@@ -614,27 +613,27 @@ for the symbols.
 		<text lang="en">depression</text>
 		<text lang="en" plural="true">depressions</text>
 		<beziers thickness="12.5">
-			<point x="0" y="48.21" />
-			<point x="40.71" y="48.21" />
-			<point x="75" y="26.79" />
-			<point x="75" y="0" />
-			<point x="75" y="-26.79" />
-			<point x="40.71" y="-48.21" />
-			<point x="0" y="-48.21" />
-			<point x="-40.71" y="-48.21" />
-			<point x="-75" y="-26.79" />
-			<point x="-75" y="0" />
-			<point x="-75" y="26.79" />
-			<point x="-40.71" y="48.21" />
-			<point x="0" y="48.21" />
+			<point x="0" y ="48.21"/>
+			<point x="40.71" y ="48.21"/>
+			<point x="75" y ="26.79"/>
+			<point x="75" y ="0"/>
+			<point x="75" y ="-26.79"/>
+			<point x="40.71" y ="-48.21"/>
+			<point x="0" y ="-48.21"/>
+			<point x="-40.71" y ="-48.21"/>
+			<point x="-75" y ="-26.79"/>
+			<point x="-75" y ="0"/>
+			<point x="-75" y ="26.79"/>
+			<point x="-40.71" y ="48.21"/>
+			<point x="0" y ="48.21"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="72" y="0" />
-			<point x="30" y="0" />
+			<point x="72" y="0"/>
+			<point x="30" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-72" y="0" />
-			<point x="-30" y="0" />
+			<point x="-72" y="0"/>
+			<point x="-30" y="0"/>
 		</lines>
 	</symbol>
 
@@ -643,13 +642,13 @@ for the symbols.
 		<text lang="en">small depression</text>
 		<text lang="en" plural="true">small depressions</text>
 		<beziers thickness="12.5">
-			<point x="-50" y="50" />
-			<point x="-75" y="0" />
-			<point x="-40" y="-45" />
-			<point x="0" y="-45" />
-			<point x="40" y="-45" />
-			<point x="75" y="0" />
-			<point x="50" y="50" />
+			<point x="-50"  y ="50"/>
+			<point x="-75"  y ="0"/>
+			<point x="-40"  y ="-45"/>
+			<point x="0"    y ="-45"/>
+			<point x="40"   y ="-45"/>
+			<point x="75"   y ="0"/>
+			<point x="50"   y ="50"/>
 		</beziers>
 	</symbol>
 
@@ -658,9 +657,9 @@ for the symbols.
 		<text lang="en">pit</text>
 		<text lang="en" plural="true">pits</text>
 		<lines thickness="12.5">
-			<point x="-50" y="50" />
-			<point x="0" y="-50" />
-			<point x="50" y="50" />
+			<point x="-50" y ="50"/>
+			<point x="0"    y ="-50"/>
+			<point x="50"  y ="50"/>
 		</lines>
 	</symbol>
 
@@ -669,31 +668,31 @@ for the symbols.
 		<text lang="en">broken ground</text>
 		<text lang="en" plural="true">broken ground</text>
 		<beziers thickness="12.5">
-			<point x="-65" y="50" />
-			<point x="-75" y="30" />
-			<point x="-61" y="13" />
-			<point x="-45" y="13" />
-			<point x="-29" y="13" />
-			<point x="-15" y="30" />
-			<point x="-25" y="50" />
+			<point x="-65"  y ="50"/>
+			<point x="-75"  y ="30"/>
+			<point x="-61"  y ="13"/>
+			<point x="-45"    y ="13"/>
+			<point x="-29"   y ="13"/>
+			<point x="-15"   y ="30"/>
+			<point x="-25"   y ="50"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="65" y="50" />
-			<point x="75" y="30" />
-			<point x="61" y="13" />
-			<point x="45" y="13" />
-			<point x="29" y="13" />
-			<point x="15" y="30" />
-			<point x="25" y="50" />
+			<point x="65"  y ="50"/>
+			<point x="75"  y ="30"/>
+			<point x="61"  y ="13"/>
+			<point x="45"    y ="13"/>
+			<point x="29"   y ="13"/>
+			<point x="15"   y ="30"/>
+			<point x="25"   y ="50"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="20" y="-20" />
-			<point x="30" y="-40" />
-			<point x="16" y="-57" />
-			<point x="0" y="-57" />
-			<point x="-16" y="-57" />
-			<point x="-30" y="-40" />
-			<point x="-20" y="-20" />
+			<point x="20"  y ="-20"/>
+			<point x="30"  y ="-40"/>
+			<point x="16"  y ="-57"/>
+			<point x="0"    y ="-57"/>
+			<point x="-16"   y ="-57"/>
+			<point x="-30"   y ="-40"/>
+			<point x="-20"   y ="-20"/>
 		</beziers>
 	</symbol>
 
@@ -702,20 +701,20 @@ for the symbols.
 		<text lang="en">ant hill</text>
 		<text lang="en" plural="true">ant hills</text>
 		<lines thickness="12.5">
-			<point x="-70" y="0" />
-			<point x="70" y="0" />
+			<point x="-70" y ="0"/>
+			<point x="70" y ="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="-70" />
-			<point x="0" y="70" />
+			<point x="0" y ="-70"/>
+			<point x="0" y ="70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-49.5" y="-49.5" />
-			<point x="49.5" y="49.5" />
+			<point x="-49.5" y ="-49.5"/>
+			<point x="49.5" y ="49.5"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-49.5" y="49.5" />
-			<point x="49.5" y="-49.5" />
+			<point x="-49.5" y ="49.5"/>
+			<point x="49.5" y ="-49.5"/>
 		</lines>
 	</symbol>
 
@@ -724,18 +723,18 @@ for the symbols.
 		<text lang="en">cliff</text>
 		<text lang="en" plural="true">cliffs</text>
 		<lines thickness="12.5">
-			<point x="-70" y="-20" />
-			<point x="-70" y="20" />
-			<point x="70" y="20" />
-			<point x="70" y="-20" />
+			<point x="-70" y ="-20"/>
+			<point x="-70" y ="20"/>
+			<point x="70" y ="20"/>
+			<point x="70" y ="-20"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-23.33" y="-20" />
-			<point x="-23.33" y="15" />
+			<point x="-23.33" y ="-20"/>
+			<point x="-23.33" y ="15"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="23.33" y="-20" />
-			<point x="23.33" y="15" />
+			<point x="23.33" y ="-20"/>
+			<point x="23.33" y ="15"/>
 		</lines>
 	</symbol>
 
@@ -744,9 +743,9 @@ for the symbols.
 		<text lang="en">rock pillar</text>
 		<text lang="en" plural="true">rock pillars</text>
 		<filled-polygon>
-			<point x="0" y="70" />
-			<point x="37" y="-70" />
-			<point x="-37" y="-70" />
+			<point x="0" y ="70"/>
+			<point x="37" y ="-70"/>
+			<point x="-37" y ="-70"/>
 		</filled-polygon>
 	</symbol>
 
@@ -755,21 +754,21 @@ for the symbols.
 		<text lang="en">cave</text>
 		<text lang="en" plural="true">caves</text>
 		<lines thickness="12.5">
-			<point x="50" y="30" />
-			<point x="-50" y="0" />
-			<point x="50" y="-30" />
+			<point x="50" y ="30"/>
+			<point x="-50" y ="0"/>
+			<point x="50" y ="-30"/>
 		</lines>
 		<beziers thickness="12.5">
-			<point x="-25" y="70" />
-			<point x="-10.4" y="55.4" />
-			<point x="-1.4" y="35.6" />
-			<point x="0" y="15" />
+			<point x="-25" y ="70"/>
+			<point x="-10.4" y ="55.4"/>
+			<point x="-1.4" y ="35.6"/>
+			<point x="0" y ="15"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-25" y="-70" />
-			<point x="-10.4" y="-55.4" />
-			<point x="-1.4" y="-35.6" />
-			<point x="0" y="-15" />
+			<point x="-25" y ="-70"/>
+			<point x="-10.4" y ="-55.4"/>
+			<point x="-1.4" y ="-35.6"/>
+			<point x="0" y ="-15"/>
 		</beziers>
 	</symbol>
 
@@ -778,9 +777,9 @@ for the symbols.
 		<text lang="en">boulder</text>
 		<text lang="en" plural="true">boulders</text>
 		<filled-polygon>
-			<point x="0" y="55" />
-			<point x="63.5" y="-55" />
-			<point x="-63.5" y="-55" />
+			<point x="0" y ="55"/>
+			<point x="63.5" y ="-55"/>
+			<point x="-63.5" y ="-55"/>
 		</filled-polygon>
 	</symbol>
 
@@ -789,29 +788,29 @@ for the symbols.
 		<text lang="en">boulder field</text>
 		<text lang="en" plural="true">boulder fields</text>
 		<filled-polygon>
-			<point x="-72" y="-72" />
-			<point x="-44.25" y="-24" />
-			<point x="-16.5" y="-72" />
+			<point x="-72" y ="-72"/>
+			<point x="-44.25" y ="-24"/>
+			<point x="-16.5" y ="-72"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="72" y="-72" />
-			<point x="44.25" y="-24" />
-			<point x="16.5" y="-72" />
+			<point x="72" y ="-72"/>
+			<point x="44.25" y ="-24"/>
+			<point x="16.5" y ="-72"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-72" y="24" />
-			<point x="-44.25" y="72" />
-			<point x="-16.5" y="24" />
+			<point x="-72" y ="24"/>
+			<point x="-44.25" y ="72"/>
+			<point x="-16.5" y ="24"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="72" y="24" />
-			<point x="44.25" y="72" />
-			<point x="16.5" y="24" />
+			<point x="72" y ="24"/>
+			<point x="44.25" y ="72"/>
+			<point x="16.5" y ="24"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-27.75" y="-24" />
-			<point x="0" y="24" />
-			<point x="27.75" y="-24" />
+			<point x="-27.75" y ="-24"/>
+			<point x="0" y ="24"/>
+			<point x="27.75" y ="-24"/>
 		</filled-polygon>
 	</symbol>
 
@@ -820,14 +819,14 @@ for the symbols.
 		<text lang="en">boulder cluster</text>
 		<text lang="en" plural="true">boulder clusters</text>
 		<filled-polygon>
-			<point x="25.1" y="30" />
-			<point x="69.3" y="-50" />
-			<point x="-25.1" y="-50" />
+			<point x="25.1" y ="30"/>
+			<point x="69.3" y ="-50"/>
+			<point x="-25.1" y ="-50"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-25.1" y="50" />
-			<point x="25.1" y="-30" />
-			<point x="-69.3" y="-30" />
+			<point x="-25.1" y ="50"/>
+			<point x="25.1" y ="-30"/>
+			<point x="-69.3" y ="-30"/>
 		</filled-polygon>
 	</symbol>
 
@@ -836,79 +835,79 @@ for the symbols.
 		<text lang="en">stony ground</text>
 		<text lang="en" plural="true">stony ground</text>
 		<filled-circle radius="7.5">
-			<point x="-60" y="-60" />
+			<point x="-60" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="-30" />
+			<point x="-60" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="-0" />
+			<point x="-60" y="-0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="30" />
+			<point x="-60" y="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="60" />
+			<point x="-60" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-30" y="-60" />
+			<point x="-30" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-30" y="-30" />
+			<point x="-30" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-30" y="-0" />
+			<point x="-30" y="-0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-30" y="30" />
+			<point x="-30" y="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-30" y="60" />
+			<point x="-30" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-60" />
+			<point x="0" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-30" />
+			<point x="0" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-0" />
+			<point x="0" y="-0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="30" />
+			<point x="0" y="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="60" />
+			<point x="0" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="30" y="-60" />
+			<point x="30" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="30" y="-30" />
+			<point x="30" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="30" y="-0" />
+			<point x="30" y="-0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="30" y="30" />
+			<point x="30" y="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="30" y="60" />
+			<point x="30" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="-60" />
+			<point x="60" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="-30" />
+			<point x="60" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="-0" />
+			<point x="60" y="-0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="30" />
+			<point x="60" y="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="60" />
+			<point x="60" y="60"/>
 		</filled-circle>
 	</symbol>
 
@@ -917,36 +916,36 @@ for the symbols.
 		<text lang="en">bare rock</text>
 		<text lang="en" plural="true">bare rock</text>
 		<lines thickness="12.5">
-			<point x="-70" y="0" />
-			<point x="-25" y="0" />
+			<point x="-70" y ="0"/>
+			<point x="-25" y ="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="-70" />
-			<point x="0" y="-25" />
+			<point x="0" y ="-70"/>
+			<point x="0" y ="-25"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="70" y="0" />
-			<point x="25" y="0" />
+			<point x="70" y ="0"/>
+			<point x="25" y ="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="70" />
-			<point x="0" y="25" />
+			<point x="0" y ="70"/>
+			<point x="0" y ="25"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-49.5" y="-49.5" />
-			<point x="-17.68" y="-17.68" />
+			<point x="-49.5" y ="-49.5"/>
+			<point x="-17.68" y ="-17.68"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-49.5" y="49.5" />
-			<point x="-17.68" y="17.68" />
+			<point x="-49.5" y ="49.5"/>
+			<point x="-17.68" y ="17.68"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="49.5" y="-49.5" />
-			<point x="17.68" y="-17.68" />
+			<point x="49.5" y ="-49.5"/>
+			<point x="17.68" y ="-17.68"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="49.5" y="49.5" />
-			<point x="17.68" y="17.68" />
+			<point x="49.5" y ="49.5"/>
+			<point x="17.68" y ="17.68"/>
 		</lines>
 	</symbol>
 
@@ -955,16 +954,16 @@ for the symbols.
 		<text lang="en">narrow passage</text>
 		<text lang="en" plural="true">narrow passages</text>
 		<lines thickness="12.5">
-			<point x="-45" y="-70" />
-			<point x="-20" y="-70" />
-			<point x="-20" y="70" />
-			<point x="-45" y="70" />
+			<point x="-45" y ="-70"/>
+			<point x="-20" y ="-70"/>
+			<point x="-20" y ="70"/>
+			<point x="-45" y ="70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="45" y="-70" />
-			<point x="20" y="-70" />
-			<point x="20" y="70" />
-			<point x="45" y="70" />
+			<point x="45" y ="-70"/>
+			<point x="20" y ="-70"/>
+			<point x="20" y ="70"/>
+			<point x="45" y ="70"/>
 		</lines>
 	</symbol>
 
@@ -973,37 +972,37 @@ for the symbols.
 		<text lang="en">lake</text>
 		<text lang="en" plural="true">lakes</text>
 		<beziers thickness="10">
-			<point x="-39" y="-10" />
-			<point x="-39" y="-5" />
-			<point x="-39" y="-5" />
-			<point x="-39" y="0" />
-			<point x="-39" y="20" />
-			<point x="-13" y="20" />
-			<point x="-13" y="0" />
-			<point x="-13" y="-20" />
-			<point x="13" y="-20" />
-			<point x="13" y="0" />
-			<point x="13" y="20" />
-			<point x="39" y="20" />
-			<point x="39" y="0" />
-			<point x="39" y="-5" />
-			<point x="39" y="-5" />
-			<point x="39" y="-10" />
+			<point x="-39" y ="-10"/>
+			<point x="-39" y ="-5"/>
+			<point x="-39" y ="-5"/>
+			<point x="-39" y ="0"/>
+			<point x="-39" y ="20"/>
+			<point x="-13" y ="20"/>
+			<point x="-13" y ="0"/>
+			<point x="-13" y ="-20"/>
+			<point x="13" y ="-20"/>
+			<point x="13" y ="0"/>
+			<point x="13" y ="20"/>
+			<point x="39" y ="20"/>
+			<point x="39" y ="0"/>
+			<point x="39" y ="-5"/>
+			<point x="39" y ="-5"/>
+			<point x="39" y ="-10"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="0" y="48.21" />
-			<point x="40.71" y="48.21" />
-			<point x="75" y="26.79" />
-			<point x="75" y="0" />
-			<point x="75" y="-26.79" />
-			<point x="40.71" y="-48.21" />
-			<point x="0" y="-48.21" />
-			<point x="-40.71" y="-48.21" />
-			<point x="-75" y="-26.79" />
-			<point x="-75" y="0" />
-			<point x="-75" y="26.79" />
-			<point x="-40.71" y="48.21" />
-			<point x="0" y="48.21" />
+			<point x="0" y ="48.21"/>
+			<point x="40.71" y ="48.21"/>
+			<point x="75" y ="26.79"/>
+			<point x="75" y ="0"/>
+			<point x="75" y ="-26.79"/>
+			<point x="40.71" y ="-48.21"/>
+			<point x="0" y ="-48.21"/>
+			<point x="-40.71" y ="-48.21"/>
+			<point x="-75" y ="-26.79"/>
+			<point x="-75" y ="0"/>
+			<point x="-75" y ="26.79"/>
+			<point x="-40.71" y ="48.21"/>
+			<point x="0" y ="48.21"/>
 		</beziers>
 	</symbol>
 
@@ -1012,37 +1011,37 @@ for the symbols.
 		<text lang="en">pond</text>
 		<text lang="en" plural="true">ponds</text>
 		<beziers thickness="10">
-			<point x="-65" y="45" />
-			<point x="-65" y="50" />
-			<point x="-65" y="50" />
-			<point x="-65" y="55" />
-			<point x="-65" y="75" />
-			<point x="-39" y="75" />
-			<point x="-39" y="55" />
-			<point x="-39" y="35" />
-			<point x="-13" y="35" />
-			<point x="-13" y="55" />
-			<point x="-13" y="75" />
-			<point x="13" y="75" />
-			<point x="13" y="55" />
-			<point x="13" y="35" />
-			<point x="39" y="35" />
-			<point x="39" y="55" />
-			<point x="39" y="75" />
-			<point x="65" y="75" />
-			<point x="65" y="55" />
-			<point x="65" y="50" />
-			<point x="65" y="50" />
-			<point x="65" y="45" />
+			<point x="-65" y ="45"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="55"/>
+			<point x="-65" y ="75"/>
+			<point x="-39" y ="75"/>
+			<point x="-39" y ="55"/>
+			<point x="-39" y ="35"/>
+			<point x="-13" y ="35"/>
+			<point x="-13" y ="55"/>
+			<point x="-13" y ="75"/>
+			<point x="13" y ="75"/>
+			<point x="13" y ="55"/>
+			<point x="13" y ="35"/>
+			<point x="39" y ="35"/>
+			<point x="39" y ="55"/>
+			<point x="39" y ="75"/>
+			<point x="65" y ="75"/>
+			<point x="65" y ="55"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="45"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-40" y="10" />
-			<point x="-60" y="-30" />
-			<point x="-32" y="-66" />
-			<point x="0" y="-66" />
-			<point x="32" y="-66" />
-			<point x="60" y="-30" />
-			<point x="40" y="10" />
+			<point x="-40"  y ="10"/>
+			<point x="-60"  y ="-30"/>
+			<point x="-32"  y ="-66"/>
+			<point x="0"    y ="-66"/>
+			<point x="32"   y ="-66"/>
+			<point x="60"   y ="-30"/>
+			<point x="40"   y ="10"/>
 		</beziers>
 	</symbol>
 
@@ -1051,33 +1050,33 @@ for the symbols.
 		<text lang="en">water hole</text>
 		<text lang="en" plural="true">water holes</text>
 		<beziers thickness="10">
-			<point x="-65" y="45" />
-			<point x="-65" y="50" />
-			<point x="-65" y="50" />
-			<point x="-65" y="55" />
-			<point x="-65" y="75" />
-			<point x="-39" y="75" />
-			<point x="-39" y="55" />
-			<point x="-39" y="35" />
-			<point x="-13" y="35" />
-			<point x="-13" y="55" />
-			<point x="-13" y="75" />
-			<point x="13" y="75" />
-			<point x="13" y="55" />
-			<point x="13" y="35" />
-			<point x="39" y="35" />
-			<point x="39" y="55" />
-			<point x="39" y="75" />
-			<point x="65" y="75" />
-			<point x="65" y="55" />
-			<point x="65" y="50" />
-			<point x="65" y="50" />
-			<point x="65" y="45" />
+			<point x="-65" y ="45"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="55"/>
+			<point x="-65" y ="75"/>
+			<point x="-39" y ="75"/>
+			<point x="-39" y ="55"/>
+			<point x="-39" y ="35"/>
+			<point x="-13" y ="35"/>
+			<point x="-13" y ="55"/>
+			<point x="-13" y ="75"/>
+			<point x="13" y ="75"/>
+			<point x="13" y ="55"/>
+			<point x="13" y ="35"/>
+			<point x="39" y ="35"/>
+			<point x="39" y ="55"/>
+			<point x="39" y ="75"/>
+			<point x="65" y ="75"/>
+			<point x="65" y ="55"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="45"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="-40" y="10" />
-			<point x="0" y="-70" />
-			<point x="40" y="10" />
+			<point x="-40" y ="10"/>
+			<point x="0" y ="-70"/>
+			<point x="40" y ="10"/>
 		</lines>
 	</symbol>
 
@@ -1086,34 +1085,34 @@ for the symbols.
 		<text lang="en">stream</text>
 		<text lang="en" plural="true">streams</text>
 		<beziers thickness="12.5">
-			<point x="-60" y="80" />
-				<point x="-65" y="75" />
-				<point x="-65" y="75" />
-			<point x="-70" y="70" />
-				<point x="-90" y="50" />
-				<point x="-70" y="30" />
-			<point x="-50" y="50" />
-				<point x="-30" y="70" />
-				<point x="-10" y="50" />
-			<point x="-30" y="30" />
-				<point x="-50" y="10" />
-				<point x="-30" y="-10" />
-			<point x="-10" y="10" />
-				<point x="10" y="30" />
-				<point x="30" y="10" />
-			<point x="10" y="-10" />
-				<point x="-10" y="-30" />
-				<point x="10" y="-50" />
-			<point x="30" y="-30" />
-				<point x="50" y="-10" />
-				<point x="70" y="-30" />
-			<point x="50" y="-50" />
-				<point x="30" y="-70" />
-				<point x="50" y="-90" />
-			<point x="70" y="-70" />
-				<point x="75" y="-65" />
-				<point x="75" y="-65" />
-			<point x="80" y="-60" />
+			<point x="-60" y ="80"/>
+				<point x="-65" y ="75"/>
+				<point x="-65" y ="75"/>
+			<point x="-70" y ="70"/>
+				<point x="-90" y ="50"/>
+				<point x="-70" y ="30"/>
+			<point x="-50" y ="50"/>
+				<point x="-30" y ="70"/>
+				<point x="-10" y ="50"/>
+			<point x="-30" y ="30"/>
+				<point x="-50" y ="10"/>
+				<point x="-30" y ="-10"/>
+			<point x="-10" y ="10"/>
+				<point x="10" y ="30"/>
+				<point x="30" y ="10"/>
+			<point x="10" y ="-10"/>
+				<point x="-10" y ="-30"/>
+				<point x="10" y ="-50"/>
+			<point x="30" y ="-30"/>
+				<point x="50" y ="-10"/>
+				<point x="70" y ="-30"/>
+			<point x="50" y ="-50"/>
+				<point x="30" y ="-70"/>
+				<point x="50" y ="-90"/>
+			<point x="70" y ="-70"/>
+				<point x="75" y ="-65"/>
+				<point x="75" y ="-65"/>
+			<point x="80" y ="-60"/>
 		</beziers>
 	</symbol>
 
@@ -1122,58 +1121,58 @@ for the symbols.
 		<text lang="en">ditch</text>
 		<text lang="en" plural="true">ditches</text>
 		<beziers thickness="10">
-			<point x="-48" y="64" />
-				<point x="-52" y="60" />
-				<point x="-52" y="60" />
-			<point x="-56" y="56" />
-				<point x="-72" y="40" />
-				<point x="-56" y="24" />
-			<point x="-40" y="40" />
-				<point x="-24" y="56" />
-				<point x="-8" y="40" />
-			<point x="-24" y="24" />
-				<point x="-40" y="8" />
-				<point x="-24" y="-8" />
-			<point x="-8" y="8" />
-				<point x="8" y="24" />
-				<point x="24" y="8" />
-			<point x="8" y="-8" />
-				<point x="-8" y="-24" />
-				<point x="8" y="-40" />
-			<point x="24" y="-24" />
-				<point x="40" y="-8" />
-				<point x="56" y="-24" />
-			<point x="40" y="-40" />
-				<point x="24" y="-56" />
-				<point x="40" y="-72" />
-			<point x="56" y="-56" />
-				<point x="60" y="-52" />
-				<point x="60" y="-52" />
-			<point x="64" y="-48" />
+			<point x="-48" y ="64"/>
+				<point x="-52" y ="60"/>
+				<point x="-52" y ="60"/>
+			<point x="-56" y ="56"/>
+				<point x="-72" y ="40"/>
+				<point x="-56" y ="24"/>
+			<point x="-40" y ="40"/>
+				<point x="-24" y ="56"/>
+				<point x="-8" y ="40"/>
+			<point x="-24" y ="24"/>
+				<point x="-40" y ="8"/>
+				<point x="-24" y ="-8"/>
+			<point x="-8" y ="8"/>
+				<point x="8" y ="24"/>
+				<point x="24" y ="8"/>
+			<point x="8" y ="-8"/>
+				<point x="-8" y ="-24"/>
+				<point x="8" y ="-40"/>
+			<point x="24" y ="-24"/>
+				<point x="40" y ="-8"/>
+				<point x="56" y ="-24"/>
+			<point x="40" y ="-40"/>
+				<point x="24" y ="-56"/>
+				<point x="40" y ="-72"/>
+			<point x="56" y ="-56"/>
+				<point x="60" y ="-52"/>
+				<point x="60" y ="-52"/>
+			<point x="64" y ="-48"/>
 		</beziers>
 		<lines thickness="10">
-			<point x="-32" y="80" />
-			<point x="-5" y="53" />
+			<point x="-32" y ="80"/>
+			<point x="-5" y ="53"/>
 		</lines>
 		<lines thickness="10">
-			<point x="10" y="38" />
-			<point x="38" y="10" />
+			<point x="10" y ="38"/>
+			<point x="38" y ="10"/>
 		</lines>
 		<lines thickness="10">
-			<point x="53" y="-5" />
-			<point x="80" y="-32" />
+			<point x="53" y ="-5"/>
+			<point x="80" y ="-32"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-80" y="32" />
-			<point x="-53" y="5" />
+			<point x="-80" y ="32"/>
+			<point x="-53" y ="5"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-38" y="-10" />
-			<point x="-10" y="-38" />
+			<point x="-38" y ="-10"/>
+			<point x="-10" y ="-38"/>
 		</lines>
 		<lines thickness="10">
-			<point x="5" y="-53" />
-			<point x="32" y="-80" />
+			<point x="5" y ="-53"/>
+			<point x="32" y ="-80"/>
 		</lines>
 	</symbol>
 
@@ -1182,19 +1181,19 @@ for the symbols.
 		<text lang="en">narrow marsh</text>
 		<text lang="en" plural="true">narrow marshes</text>
 		<filled-circle radius="7.5">
-			<point x="-50" y="50" />
+			<point x="-50" y ="50"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-25" y="25" />
+			<point x="-25" y ="25"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="0" />
+			<point x="0" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="25" y="-25" />
+			<point x="25" y ="-25"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="50" y="-50" />
+			<point x="50" y ="-50"/>
 		</filled-circle>
 	</symbol>
 
@@ -1203,24 +1202,24 @@ for the symbols.
 		<text lang="en">marsh</text>
 		<text lang="en" plural="true">marshes</text>
 		<lines thickness="12.5">
-			<point x="-64" y="0" />
-			<point x="64" y="0" />
+			<point x="-64" y="0"/>
+			<point x="64" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-48" y="32" />
-			<point x="48" y="32" />
+			<point x="-48" y="32"/>
+			<point x="48" y="32"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-48" y="-32" />
-			<point x="48" y="-32" />
+			<point x="-48" y="-32"/>
+			<point x="48" y="-32"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-32" y="64" />
-			<point x="32" y="64" />
+			<point x="-32" y="64"/>
+			<point x="32" y="64"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-32" y="-64" />
-			<point x="32" y="-64" />
+			<point x="-32" y="-64"/>
+			<point x="32" y="-64"/>
 		</lines>
 	</symbol>
 	
@@ -1229,58 +1228,58 @@ for the symbols.
 		<text lang="en">firm ground in marsh</text>
 		<text lang="en" plural="true">firm ground in marsh</text>
 		<filled-polygon>
-			<point x="70" y="70" />
-			<point x="70" y="57.5" />
-			<point x="-70" y="57.5" />
-			<point x="-70" y="70" />
+			<point x="70" y="70"/>
+			<point x="70" y="57.5"/>
+			<point x="-70" y="57.5"/>
+			<point x="-70" y="70"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="70" y="38.125" />
-			<point x="70" y="25.625" />
-			<point x="36.991" y="25.625" />
-			<point x="31.765" y="31.875" />
-			<point x="23.906" y="38.125" />
+			<point x="70" y="38.125"/>
+			<point x="70" y="25.625"/>
+			<point x="36.991" y="25.625"/>
+			<point x="31.765" y="31.875"/>
+			<point x="23.906" y="38.125"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-70" y="38.125" />
-			<point x="-70" y="25.625" />
-			<point x="-36.991" y="25.625" />
-			<point x="-31.765" y="31.875" />
-			<point x="-23.906" y="38.125" />
+			<point x="-70" y="38.125"/>
+			<point x="-70" y="25.625"/>
+			<point x="-36.991" y="25.625"/>
+			<point x="-31.765" y="31.875"/>
+			<point x="-23.906" y="38.125"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-70" y="6.25" />
-			<point x="-70" y="-6.25" />
-			<point x="-44.564" y="-6.25" />
-			<point x="-45" y="0" />
-			<point x="-44.564" y="6.25" />
+			<point x="-70" y="6.25"/>
+			<point x="-70" y="-6.25"/>
+			<point x="-44.564" y="-6.25"/>
+			<point x="-45" y="0"/>
+			<point x="-44.564" y="6.25"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="70" y="6.25" />
-			<point x="70" y="-6.25" />
-			<point x="44.564" y="-6.25" />
-			<point x="45" y="0" />
-			<point x="44.564" y="6.25" />
+			<point x="70" y="6.25"/>
+			<point x="70" y="-6.25"/>
+			<point x="44.564" y="-6.25"/>
+			<point x="45" y="0"/>
+			<point x="44.564" y="6.25"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="70" y="-38.125" />
-			<point x="70" y="-25.625" />
-			<point x="36.991" y="-25.625" />
-			<point x="31.765" y="-31.875" />
-			<point x="23.906" y="-38.125" />
+			<point x="70" y="-38.125"/>
+			<point x="70" y="-25.625"/>
+			<point x="36.991" y="-25.625"/>
+			<point x="31.765" y="-31.875"/>
+			<point x="23.906" y="-38.125"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-70" y="-38.125" />
-			<point x="-70" y="-25.625" />
-			<point x="-36.991" y="-25.625" />
-			<point x="-31.765" y="-31.875" />
-			<point x="-23.906" y="-38.125" />
+			<point x="-70" y="-38.125"/>
+			<point x="-70" y="-25.625"/>
+			<point x="-36.991" y="-25.625"/>
+			<point x="-31.765" y="-31.875"/>
+			<point x="-23.906" y="-38.125"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="70" y="-70" />
-			<point x="70" y="-57.5" />
-			<point x="-70" y="-57.5" />
-			<point x="-70" y="-70" />
+			<point x="70" y="-70"/>
+			<point x="70" y="-57.5"/>
+			<point x="-70" y="-57.5"/>
+			<point x="-70" y="-70"/>
 		</filled-polygon>
 	</symbol>
 
@@ -1289,25 +1288,25 @@ for the symbols.
 		<text lang="en">well</text>
 		<text lang="en" plural="true">wells</text>
 		<beziers thickness="10">
-			<point x="-39" y="-60" />
-			<point x="-39" y="-55" />
-			<point x="-39" y="-55" />
-			<point x="-39" y="-50" />
-			<point x="-39" y="-30" />
-			<point x="-13" y="-30" />
-			<point x="-13" y="-50" />
-			<point x="-13" y="-70" />
-			<point x="13" y="-70" />
-			<point x="13" y="-50" />
-			<point x="13" y="-30" />
-			<point x="39" y="-30" />
-			<point x="39" y="-50" />
-			<point x="39" y="-55" />
-			<point x="39" y="-55" />
-			<point x="39" y="-60" />
+			<point x="-39" y ="-60"/>
+			<point x="-39" y ="-55"/>
+			<point x="-39" y ="-55"/>
+			<point x="-39" y ="-50"/>
+			<point x="-39" y ="-30"/>
+			<point x="-13" y ="-30"/>
+			<point x="-13" y ="-50"/>
+			<point x="-13" y ="-70"/>
+			<point x="13" y ="-70"/>
+			<point x="13" y ="-50"/>
+			<point x="13" y ="-30"/>
+			<point x="39" y ="-30"/>
+			<point x="39" y ="-50"/>
+			<point x="39" y ="-55"/>
+			<point x="39" y ="-55"/>
+			<point x="39" y ="-60"/>
 		</beziers>
 		<circle thickness="12.5" radius="44">
-			<point x="0" y="25" />
+			<point x="0" y ="25"/>
 		</circle>
 	</symbol>
 
@@ -1316,28 +1315,28 @@ for the symbols.
 		<text lang="en">spring</text>
 		<text lang="en" plural="true">springs</text>
 		<beziers thickness="12.5">
-			<point x="-35" y="35" />
-			<point x="-28" y="26" />
-			<point x="-10" y="5" />
-			<point x="1" y="7" />
-			<point x="26" y="10" />
-			<point x="40" y="0" />
-			<point x="20" y="-20" />
-			<point x="0" y="-40" />
-			<point x="20" y="-60" />
-			<point x="40" y="-40" />
-			<point x="60" y="-20" />
-			<point x="80" y="-40" />
-			<point x="60" y="-60" />
-			<point x="55" y="-66" />
-			<point x="55" y="-69" />
-			<point x="55" y="-75" />
+			<point x="-35" y ="35"/>
+			<point x="-28" y ="26"/>
+			<point x="-10" y ="5"/>
+			<point x="1" y ="7"/>
+			<point x="26" y ="10"/>
+			<point x="40" y ="0"/>
+			<point x="20" y ="-20"/>
+			<point x="0" y ="-40"/>
+			<point x="20" y ="-60"/>
+			<point x="40" y ="-40"/>
+			<point x="60" y ="-20"/>
+			<point x="80" y ="-40"/>
+			<point x="60" y ="-60"/>
+			<point x="55" y ="-66"/>
+			<point x="55" y ="-69"/>
+			<point x="55" y ="-75"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-10" y="50" />
-			<point x="-40" y="103" />
-			<point x="-103" y="40" />
-			<point x="-50" y="10" />
+			<point x="-10" y ="50"/>
+			<point x="-40" y ="103"/>
+			<point x="-103" y ="40"/>
+			<point x="-50" y ="10"/>
 		</beziers>
 	</symbol>
 
@@ -1346,34 +1345,34 @@ for the symbols.
 		<text lang="en">water tank</text>
 		<text lang="en" plural="true">water tanks</text>
 		<beziers thickness="10">
-			<point x="-65" y="45" />
-			<point x="-65" y="50" />
-			<point x="-65" y="50" />
-			<point x="-65" y="55" />
-			<point x="-65" y="75" />
-			<point x="-39" y="75" />
-			<point x="-39" y="55" />
-			<point x="-39" y="35" />
-			<point x="-13" y="35" />
-			<point x="-13" y="55" />
-			<point x="-13" y="75" />
-			<point x="13" y="75" />
-			<point x="13" y="55" />
-			<point x="13" y="35" />
-			<point x="39" y="35" />
-			<point x="39" y="55" />
-			<point x="39" y="75" />
-			<point x="65" y="75" />
-			<point x="65" y="55" />
-			<point x="65" y="50" />
-			<point x="65" y="50" />
-			<point x="65" y="45" />
+			<point x="-65" y ="45"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="50"/>
+			<point x="-65" y ="55"/>
+			<point x="-65" y ="75"/>
+			<point x="-39" y ="75"/>
+			<point x="-39" y ="55"/>
+			<point x="-39" y ="35"/>
+			<point x="-13" y ="35"/>
+			<point x="-13" y ="55"/>
+			<point x="-13" y ="75"/>
+			<point x="13" y ="75"/>
+			<point x="13" y ="55"/>
+			<point x="13" y ="35"/>
+			<point x="39" y ="35"/>
+			<point x="39" y ="55"/>
+			<point x="39" y ="75"/>
+			<point x="65" y ="75"/>
+			<point x="65" y ="55"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="50"/>
+			<point x="65" y ="45"/>
 		</beziers>
 		<polygon thickness="12.5">
-			<point x="-50" y="10" />
-			<point x="-50" y="-50" />
-			<point x="50" y="-50" />
-			<point x="50" y="10" />
+			<point x="-50" y ="10"/>
+			<point x="-50" y ="-50"/>
+			<point x="50" y ="-50"/>
+			<point x="50" y ="10"/>
 		</polygon>
 	</symbol>
 
@@ -1382,10 +1381,10 @@ for the symbols.
 		<text lang="en">open land</text>
 		<text lang="en" plural="true">open land</text>
 		<polygon thickness="12.5" corners="round">
-			<point x="0" y="66" />
-			<point x="66" y="0" />
-			<point x="0" y="-66" />
-			<point x="-66" y="0" />
+			<point x="0" y ="66"/>
+			<point x="66" y ="0"/>
+			<point x="0" y ="-66"/>
+			<point x="-66" y ="0"/>
 		</polygon>
 	</symbol>
 
@@ -1394,40 +1393,40 @@ for the symbols.
 		<text lang="en">semi-open land</text>
 		<text lang="en" plural="true">semi-open land</text>
 		<filled-circle radius="7.5">
-			<point x="0" y="66" />
+			<point x="0" y ="66"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="22" y="44" />
+			<point x="22" y ="44"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="44" y="22" />
+			<point x="44" y ="22"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="66" y="0" />
+			<point x="66" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="44" y="-22" />
+			<point x="44" y ="-22"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="22" y="-44" />
+			<point x="22" y ="-44"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-66" />
+			<point x="0" y ="-66"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-22" y="-44" />
+			<point x="-22" y ="-44"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-44" y="-22" />
+			<point x="-44" y ="-22"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-66" y="0" />
+			<point x="-66" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-44" y="22" />
+			<point x="-44" y ="22"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-22" y="44" />
+			<point x="-22" y ="44"/>
 		</filled-circle>
 	</symbol>
 
@@ -1436,11 +1435,11 @@ for the symbols.
 		<text lang="en">forest corner</text>
 		<text lang="en" plural="true">forest corners</text>
 		<polygon thickness="12.5" corners="round">
-			<point x="0" y="0" />
-			<point x="0" y="66" />
-			<point x="-66" y="0" />
-			<point x="0" y="-66" />
-			<point x="66" y="0" />
+			<point x="0" y ="0"/>
+			<point x="0" y ="66"/>
+			<point x="-66" y ="0"/>
+			<point x="0" y ="-66"/>
+			<point x="66" y ="0"/>
 		</polygon>
 	</symbol>
 
@@ -1449,40 +1448,40 @@ for the symbols.
 		<text lang="en">clearing</text>
 		<text lang="en" plural="true">clearings</text>
 		<filled-circle radius="7.5">
-			<point x="0" y="66" />
+			<point x="0" y ="66"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="33" y="57.16" />
+			<point x="33" y ="57.16"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="57.16" y="33" />
+			<point x="57.16" y ="33"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="66" y="0" />
+			<point x="66" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="57.16" y="-33" />
+			<point x="57.16" y ="-33"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="33" y="-57.16" />
+			<point x="33" y ="-57.16"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-66" />
+			<point x="0" y ="-66"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-33" y="-57.16" />
+			<point x="-33" y ="-57.16"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-57.16" y="-33" />
+			<point x="-57.16" y ="-33"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-66" y="0" />
+			<point x="-66" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-57.16" y="33" />
+			<point x="-57.16" y ="33"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-33" y="57.16" />
+			<point x="-33" y ="57.16"/>
 		</filled-circle>
 	</symbol>
 
@@ -1491,29 +1490,29 @@ for the symbols.
 		<text lang="en">thicket</text>
 		<text lang="en" plural="true">thickets</text>
 		<lines thickness="12.5">
-			<point x="21" y="71" />
-			<point x="-71" y="-21" />
+			<point x="21" y ="71"/>
+			<point x="-71" y ="-21"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="47" y="47" />
-			<point x="-47" y="-47" />
+			<point x="47" y ="47"/>
+			<point x="-47" y ="-47"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="71" y="21" />
-			<point x="-21" y="-71" />
+			<point x="71" y ="21"/>
+			<point x="-21" y ="-71"/>
 		</lines>
 
 		<lines thickness="12.5">
-			<point x="-21" y="71" />
-			<point x="71" y="-21" />
+			<point x="-21" y ="71"/>
+			<point x="71" y ="-21"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-47" y="47" />
-			<point x="47" y="-47" />
+			<point x="-47" y ="47"/>
+			<point x="47" y ="-47"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-71" y="21" />
-			<point x="21" y="-71" />
+			<point x="-71" y ="21"/>
+			<point x="21" y ="-71"/>
 		</lines>
 	</symbol>
 
@@ -1523,29 +1522,29 @@ for the symbols.
 		<text lang="en">thin thicket</text>
 		<text lang="en" plural="true">thin thickets</text>
 		<lines thickness="12.5">
-			<point x="-75" y="-75" />
-			<point x="-63" y="-63" />
+			<point x="-75" y ="-75"/>
+			<point x="-63" y ="-63"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="75" y="75" />
-			<point x="63" y="63" />
+			<point x="75" y ="75"/>
+			<point x="63" y ="63"/>
 		</lines>
 		<lines thickness="12.5" ends="flat">
-			<point x="35" y="35" />
-			<point x="12" y="12" />
+			<point x="35" y ="35"/>
+			<point x="12" y ="12"/>
 		</lines>
 		<lines thickness="12.5" ends="flat">
-			<point x="-35" y="-35" />
-			<point x="-12" y="-12" />
+			<point x="-35" y ="-35"/>
+			<point x="-12" y ="-12"/>
 		</lines>
 		<circle radius="17.5" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<circle radius="17.5" thickness="10">
-			<point x="47.5" y="47.5" />
+			<point x="47.5" y="47.5"/>
 		</circle>
 		<circle radius="17.5" thickness="10">
-			<point x="-47.5" y="-47.5" />
+			<point x="-47.5" y="-47.5"/>
 		</circle>
 	</symbol>
 
@@ -1554,31 +1553,31 @@ for the symbols.
 		<text lang="en">vegetation boundary</text>
 		<text lang="en" plural="true">vegetation boundaries</text>
 		<filled-circle radius="7.5">
-			<point x="-50" y="60" />
+			<point x="-50" y ="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-25" y="45" />
+			<point x="-25" y ="45"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="30" />
+			<point x="0" y ="30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="25" y="15" />
+			<point x="25" y ="15"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="50" y="0" />
+			<point x="50" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="25" y="-15" />
+			<point x="25" y ="-15"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-30" />
+			<point x="0" y ="-30"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-25" y="-45" />
+			<point x="-25" y ="-45"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-50" y="-60" />
+			<point x="-50" y ="-60"/>
 		</filled-circle>
 	</symbol>
 
@@ -1587,19 +1586,19 @@ for the symbols.
 		<text lang="en">copse</text>
 		<text lang="en" plural="true">copses</text>
 		<polygon thickness="12.5">
-			<point x="-60" y="-35" />
-			<point x="-23" y="70" />
-			<point x="0" y="4.73" />
-			<point x="23" y="70" />
-			<point x="60" y="-35" />
+			<point x="-60" y="-35"/>
+			<point x="-23" y="70"/>
+			<point x="0" y="4.73"/>
+			<point x="23" y="70"/>
+			<point x="60" y="-35"/>
 		</polygon>
 		<lines thickness="12.5">
-			<point x="-23" y="-40" />
-			<point x="-23" y="-70" />
+			<point x="-23" y="-40"/>
+			<point x="-23" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="23" y="-40" />
-			<point x="23" y="-70" />
+			<point x="23" y="-40"/>
+			<point x="23" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -1608,13 +1607,13 @@ for the symbols.
 		<text lang="en">lone tree</text>
 		<text lang="en" plural="true">lone trees</text>
 		<polygon thickness="12.5">
-			<point x="0" y="70" />
-			<point x="-37" y="-35" />
-			<point x="37" y="-35" />
+			<point x="0" y="70"/>
+			<point x="-37" y="-35"/>
+			<point x="37" y="-35"/>
 		</polygon>
 		<lines thickness="12.5">
-			<point x="0" y="-40" />
-			<point x="0" y="-70" />
+			<point x="0" y="-40"/>
+			<point x="0" y="-70"/>
 		</lines>
 	</symbol>
 	
@@ -1623,15 +1622,15 @@ for the symbols.
 		<text lang="en">root stock</text>
 		<text lang="en" plural="true">root stocks</text>
 		<circle thickness="12.5" radius="60">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5" ends="flat">
-			<point x="42" y="42" />
-			<point x="-42" y="-42" />
+			<point x="42" y="42"/>
+			<point x="-42" y="-42"/>
 		</lines>
 		<lines thickness="12.5" ends="flat">
-			<point x="42" y="-42" />
-			<point x="-42" y="42" />
+			<point x="42" y="-42"/>
+			<point x="-42" y="42"/>
 		</lines>
 	</symbol>
 
@@ -1640,8 +1639,8 @@ for the symbols.
 		<text lang="en">road</text>
 		<text lang="en" plural="true">roads</text>
 		<lines thickness="15">
-			<point x="-73" y="-73" />
-			<point x="73" y="73" />
+			<point x="-73" y ="-73"/>
+			<point x="73" y ="73"/>
 		</lines>
 	</symbol>
 
@@ -1650,16 +1649,16 @@ for the symbols.
 		<text lang="en">path</text>
 		<text lang="en" plural="true">paths</text>
 		<lines thickness="12.5">
-			<point x="-75" y="-75" />
-			<point x="-39" y="-39" />
+			<point x="-75" y ="-75"/>
+			<point x="-39" y ="-39"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="18" y="18" />
-			<point x="-18" y="-18" />
+			<point x="18" y ="18"/>
+			<point x="-18" y ="-18"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="75" y="75" />
-			<point x="39" y="39" />
+			<point x="75" y ="75"/>
+			<point x="39" y ="39"/>
 		</lines>
 	</symbol>
 
@@ -1668,40 +1667,40 @@ for the symbols.
 		<text lang="en">ride</text>
 		<text lang="en" plural="true">rides</text>
 		<filled-circle radius="7.5">
-			<point x="48" y="72" />
+			<point x="48" y ="72"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="24" y="48" />
+			<point x="24" y ="48"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="24" />
+			<point x="0" y ="24"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-24" y="0" />
+			<point x="-24" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-48" y="-24" />
+			<point x="-48" y ="-24"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-72" y="-48" />
+			<point x="-72" y ="-48"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="72" y="48" />
+			<point x="72" y ="48"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="48" y="24" />
+			<point x="48" y ="24"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="24" y="0" />
+			<point x="24" y ="0"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="0" y="-24" />
+			<point x="0" y ="-24"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-24" y="-48" />
+			<point x="-24" y ="-48"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-48" y="-72" />
+			<point x="-48" y ="-72"/>
 		</filled-circle>
 	</symbol>
 
@@ -1710,16 +1709,16 @@ for the symbols.
 		<text lang="en">bridge</text>
 		<text lang="en" plural="true">bridges</text>
 		<lines thickness="12.5">
-			<point x="20" y="70" />
-			<point x="20" y="40" />
-			<point x="-40" y="-20" />
-			<point x="-70" y="-20" />
+			<point x="20" y ="70"/>
+			<point x="20" y ="40"/>
+			<point x="-40" y ="-20"/>
+			<point x="-70" y ="-20"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="70" y="20" />
-			<point x="40" y="20" />
-			<point x="-20" y="-40" />
-			<point x="-20" y="-70" />
+			<point x="70" y ="20"/>
+			<point x="40" y ="20"/>
+			<point x="-20" y ="-40"/>
+			<point x="-20" y ="-70"/>
 		</lines>
 	</symbol>
 
@@ -1728,20 +1727,20 @@ for the symbols.
 		<text lang="en">power line</text>
 		<text lang="en" plural="true">power lines</text>
 		<lines thickness="12.5">
-			<point x="-75" y="-75" />
-			<point x="75" y="75" />
+			<point x="-75" y ="-75"/>
+			<point x="75" y ="75"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="17.5" y="57.5" />
-			<point x="57.5" y="17.5" />
+			<point x="17.5" y ="57.5"/>
+			<point x="57.5" y ="17.5"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-17.5" y="-57.5" />
-			<point x="-57.5" y="-17.5" />
+			<point x="-17.5" y ="-57.5"/>
+			<point x="-57.5" y ="-17.5"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-20" y="20" />
-			<point x="20" y="-20" />
+			<point x="-20" y ="20"/>
+			<point x="20" y ="-20"/>
 		</lines>
 	</symbol>
 
@@ -1750,23 +1749,23 @@ for the symbols.
 		<text lang="en">power pylon</text>
 		<text lang="en" plural="true">power pylons</text>
 		<lines thickness="10">
-			<point x="-75" y="-75" />
-			<point x="75" y="75" />
+			<point x="-75" y ="-75"/>
+			<point x="75" y ="75"/>
 		</lines>
 		<lines thickness="10">
-			<point x="25" y="55" />
-			<point x="55" y="25" />
+			<point x="25" y ="55"/>
+			<point x="55" y ="25"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-25" y="-55" />
-			<point x="-55" y="-25" />
+			<point x="-25" y ="-55"/>
+			<point x="-55" y ="-25"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-15" y="15" />
-			<point x="15" y="-15" />
+			<point x="-15" y ="15"/>
+			<point x="15" y ="-15"/>
 		</lines>
 		<circle radius="40" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y ="0"/>
 		</circle>
 	</symbol>
 
@@ -1775,22 +1774,22 @@ for the symbols.
 		<text lang="en">tunnel</text>
 		<text lang="en" plural="true">tunnels</text>
 		<lines thickness="12.5">
-			<point x="-65" y="-30" />
-			<point x="65" y="-30" />
+			<point x="-65" y ="-30"/>
+			<point x="65" y ="-30"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-65" y="30" />
-			<point x="65" y="30" />
+			<point x="-65" y ="30"/>
+			<point x="65" y ="30"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-25" y="65" />
-			<point x="0" y="30" />
-			<point x="25" y="65" />
+			<point x="-25" y ="65"/>
+			<point x="0" y ="30"/>
+			<point x="25" y ="65"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-25" y="-65" />
-			<point x="0" y="-30" />
-			<point x="25" y="-65" />
+			<point x="-25" y ="-65"/>
+			<point x="0" y ="-30"/>
+			<point x="25" y ="-65"/>
 		</lines>
 	</symbol>
 
@@ -1799,17 +1798,17 @@ for the symbols.
 		<text lang="en">stone wall</text>
 		<text lang="en" plural="true">stone walls</text>
 		<lines thickness="12.5">
-			<point x="-75" y="-75" />
-			<point x="75" y="75" />
+			<point x="-75" y ="-75"/>
+			<point x="75" y ="75"/>
 		</lines>
 		<filled-circle radius="20">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</filled-circle>
 		<filled-circle radius="20">
-			<point x="45" y="45" />
+			<point x="45" y="45"/>
 		</filled-circle>
 		<filled-circle radius="20">
-			<point x="-45" y="-45" />
+			<point x="-45" y="-45"/>
 		</filled-circle>
 	</symbol>
 
@@ -1818,24 +1817,24 @@ for the symbols.
 		<text lang="en">fence</text>
 		<text lang="en" plural="true">fences</text>
 		<lines thickness="12.5">
-			<point x="50" y="70" />
-			<point x="-50" y="-30" />
+			<point x="50" y ="70"/>
+			<point x="-50" y ="-30"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="50" y="70" />
-			<point x="50" y="30" />
+			<point x="50" y ="70"/>
+			<point x="50" y ="30"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="16.67" y="36.67" />
-			<point x="16.67" y="-3.33" />
+			<point x="16.67" y ="36.67"/>
+			<point x="16.67" y ="-3.33"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-16.67" y="3.33" />
-			<point x="-16.67" y="-36.67" />
+			<point x="-16.67" y ="3.33"/>
+			<point x="-16.67" y ="-36.67"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-50" y="-30" />
-			<point x="-50" y="-70" />
+			<point x="-50" y ="-30"/>
+			<point x="-50" y ="-70"/>
 		</lines>
 	</symbol>
 
@@ -1844,20 +1843,20 @@ for the symbols.
 		<text lang="en">crossing point</text>
 		<text lang="en" plural="true">crossing points</text>
 		<lines thickness="12.5">
-			<point x="-65" y="0" />
-			<point x="-20" y="0" />
+			<point x="-65" y="0"/>
+			<point x="-20" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="65" y="0" />
-			<point x="20" y="0" />
+			<point x="65" y="0"/>
+			<point x="20" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-20" y="70" />
-			<point x="-20" y="-70" />
+			<point x="-20" y="70"/>
+			<point x="-20" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="20" y="70" />
-			<point x="20" y="-70" />
+			<point x="20" y="70"/>
+			<point x="20" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -1866,10 +1865,10 @@ for the symbols.
 		<text lang="en">building</text>
 		<text lang="en" plural="true">buildings</text>
 		<filled-polygon>
-			<point x="-50" y="-50" />
-			<point x="-50" y="50" />
-			<point x="50" y="50" />
-			<point x="50" y="-50" />
+			<point x="-50" y="-50"/>
+			<point x="-50" y="50"/>
+			<point x="50" y="50"/>
+			<point x="50" y="-50"/>
 		</filled-polygon>
 	</symbol>
 
@@ -1878,26 +1877,26 @@ for the symbols.
 		<text lang="en">paved area</text>
 		<text lang="en" plural="true">paved areas</text>
 		<polygon thickness="12.5">
-			<point x="-60" y="-60" />
-			<point x="-60" y="60" />
-			<point x="60" y="60" />
-			<point x="60" y="-60" />
+			<point x="-60" y="-60"/>
+			<point x="-60" y="60"/>
+			<point x="60" y="60"/>
+			<point x="60" y="-60"/>
 		</polygon>
 		<lines thickness="12.5">
-			<point x="-12" y="60" />
-			<point x="-60" y="12" />
+			<point x="-12" y="60"/>
+			<point x="-60" y="12"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="36" y="60" />
-			<point x="-60" y="-36" />
+			<point x="36" y="60"/>
+			<point x="-60" y="-36"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-36" y="-60" />
-			<point x="60" y="36" />
+			<point x="-36" y="-60"/>
+			<point x="60" y="36"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="12" y="-60" />
-			<point x="60" y="-12" />
+			<point x="12" y="-60"/>
+			<point x="60" y="-12"/>
 		</lines>
 	</symbol>
 
@@ -1906,24 +1905,24 @@ for the symbols.
 		<text lang="en">ruin</text>
 		<text lang="en" plural="true">ruins</text>
 		<lines thickness="12.5">
-			<point x="-60" y="15" />
-			<point x="-60" y="60" />
-			<point x="-15" y="60" />
+			<point x="-60" y="15"/>
+			<point x="-60" y="60"/>
+			<point x="-15" y="60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-60" y="-15" />
-			<point x="-60" y="-60" />
-			<point x="-15" y="-60" />
+			<point x="-60" y="-15"/>
+			<point x="-60" y="-60"/>
+			<point x="-15" y="-60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="60" y="15" />
-			<point x="60" y="60" />
-			<point x="15" y="60" />
+			<point x="60" y="15"/>
+			<point x="60" y="60"/>
+			<point x="15" y="60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="60" y="-15" />
-			<point x="60" y="-60" />
-			<point x="15" y="-60" />
+			<point x="60" y="-15"/>
+			<point x="60" y="-60"/>
+			<point x="15" y="-60"/>
 		</lines>
 	</symbol>
 
@@ -1932,23 +1931,23 @@ for the symbols.
 		<text lang="en">pipeline</text>
 		<text lang="en" plural="true">pipelines</text>
 		<lines thickness="12.5">
-			<point x="70" y="70" />
-			<point x="-57.5" y="-57.5" />
+			<point x="70" y ="70"/>
+			<point x="-57.5" y ="-57.5"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-70" y="-30" />
-			<point x="-30" y="-30" />
-			<point x="-30" y="-70" />
+			<point x="-70" y ="-30"/>
+			<point x="-30" y ="-30"/>
+			<point x="-30" y ="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-30" y="10" />
-			<point x="10" y="10" />
-			<point x="10" y="-30" />
+			<point x="-30" y ="10"/>
+			<point x="10" y ="10"/>
+			<point x="10" y ="-30"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="10" y="50" />
-			<point x="50" y="50" />
-			<point x="50" y="10" />
+			<point x="10" y ="50"/>
+			<point x="50" y ="50"/>
+			<point x="50" y ="10"/>
 		</lines>
 	</symbol>
 
@@ -1957,12 +1956,12 @@ for the symbols.
 		<text lang="en">tower</text>
 		<text lang="en" plural="true">towers</text>
 		<lines thickness="12.5">
-			<point x="-50" y="60" />
-			<point x="50" y="60" />
+			<point x="-50" y="60"/>
+			<point x="50" y="60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="60" />
-			<point x="0" y="-60" />
+			<point x="0" y="60"/>
+			<point x="0" y="-60"/>
 		</lines>
 	</symbol>
 
@@ -1971,9 +1970,9 @@ for the symbols.
 		<text lang="en">shooting platform</text>
 		<text lang="en" plural="true">shooting platforms</text>
 		<lines thickness="12.5">
-			<point x="30" y="60" />
-			<point x="-30" y="60" />
-			<point x="-30" y="-60" />
+			<point x="30" y="60"/>
+			<point x="-30" y="60"/>
+			<point x="-30" y="-60"/>
 		</lines>
 	</symbol>
 
@@ -1982,10 +1981,10 @@ for the symbols.
 		<text lang="en">cairn</text>
 		<text lang="en" plural="true">cairns</text>
 		<circle radius="60" thickness="12.5">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="20">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -1993,18 +1992,18 @@ for the symbols.
 		<name lang="en">Fodder rack</name>
 		<text lang="en">fodder rack</text>
 		<text lang="en" plural="true">fodder racks</text>
-		<lines thickness="12.5">
-			<point x="0" y="-65" />
-			<point x="0" y="65" />
+		<lines thickness="12.5" >
+			<point x="0" y="-65"/>
+			<point x="0" y="65"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-30" y="35" />
-			<point x="0" y="65" />
-			<point x="30" y="35" />
+			<point x="-30" y="35"/>
+			<point x="0" y="65"/>
+			<point x="30" y="35"/>
 		</lines>
-		<lines thickness="12.5">
-			<point x="-30" y="-65" />
-			<point x="30" y="-65" />
+		<lines thickness="12.5" >
+			<point x="-30" y="-65"/>
+			<point x="30" y="-65"/>
 		</lines>
 	</symbol>
 
@@ -2013,12 +2012,12 @@ for the symbols.
 		<text lang="en">charcoal burning ground</text>
 		<text lang="en" plural="true">charcoal burning grounds</text>
 		<circle radius="68" thickness="12.5">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<polygon thickness="10">
-			<point x="0" y="68" />
-			<point x="58.9" y="-34" />
-			<point x="-58.9" y="-34" />
+			<point x="0" y="68"/>
+			<point x="58.9" y="-34"/>
+			<point x="-58.9" y="-34"/>
 		</polygon>
 	</symbol>
 
@@ -2026,14 +2025,14 @@ for the symbols.
 		<name lang="en">Monument or statue</name>
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
-		<lines thickness="12.5">
-			<point x="-55" y="-60" />
-			<point x="55" y="-60" />
+		<lines thickness="12.5" >
+			<point x="-55" y="-60"/>
+			<point x="55" y="-60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-35" y="-60" />
-			<point x="0" y="60" />
-			<point x="35" y="-60" />
+			<point x="-35" y="-60"/>
+			<point x="0" y="60"/>
+			<point x="35" y="-60"/>
 		</lines>
 	</symbol>
 
@@ -2041,17 +2040,17 @@ for the symbols.
 		<name lang="en">Building pass-through</name>
 		<text lang="en">building pass-through</text>
 		<text lang="en" plural="true">building pass-throughs</text>
-		<lines thickness="12.5">
-			<point x="-60" y="60" />
-			<point x="60" y="60" />
+		<lines thickness="12.5" >
+			<point x="-60" y="60"/>
+			<point x="60" y="60"/>
 		</lines>
-		<lines thickness="12.5">
-			<point x="-40" y="60" />
-			<point x="-40" y="-60" />
+		<lines thickness="12.5" >
+			<point x="-40" y="60"/>
+			<point x="-40" y="-60"/>
 		</lines>
-		<lines thickness="12.5">
-			<point x="40" y="60" />
-			<point x="40" y="-60" />
+		<lines thickness="12.5" >
+			<point x="40" y="60"/>
+			<point x="40" y="-60"/>
 		</lines>
 	</symbol>
 
@@ -2060,14 +2059,14 @@ for the symbols.
 		<text lang="en">stairway</text>
 		<text lang="en" plural="true">stairways</text>
 		<lines thickness="12.5">
-			<point x="-70" y="-45" />
-			<point x="-35" y="-45" />
-			<point x="-35" y="-15" />
-			<point x="0" y="-15" />
-			<point x="0" y="15" />
-			<point x="35" y="15" />
-			<point x="35" y="45" />
-			<point x="70" y="45" />
+			<point x="-70" y="-45"/>
+			<point x="-35" y="-45"/>
+			<point x="-35" y="-15"/>
+			<point x="0" y="-15"/>
+			<point x="0" y="15"/>
+			<point x="35" y="15"/>
+			<point x="35" y="45"/>
+			<point x="70" y="45"/>
 		</lines>
 	</symbol>
 
@@ -2076,12 +2075,12 @@ for the symbols.
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<lines thickness="12.5">
-			<point x="45" y="45" />
-			<point x="-45" y="-45" />
+			<point x="45" y="45"/>
+			<point x="-45" y="-45"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-45" y="45" />
-			<point x="45" y="-45" />
+			<point x="-45" y="45"/>
+			<point x="45" y="-45"/>
 		</lines>
 	</symbol>
 
@@ -2090,7 +2089,7 @@ for the symbols.
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<circle radius="55" thickness="12.5">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 	</symbol>
 
@@ -2101,10 +2100,10 @@ for the symbols.
 		<name lang="en">Low</name>
 		<text lang="en">low {0}</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="-10" />
-			<point x="-30" y="20" />
-			<point x="30" y="20" />
-			<point x="70" y="-10" />
+			<point x="-70" y="-10"/>
+			<point x="-30" y="20"/>
+			<point x="30" y="20"/>
+			<point x="70" y="-10"/>
 		</beziers>
 	</symbol>
 
@@ -2112,10 +2111,10 @@ for the symbols.
 		<name lang="en">Shallow</name>
 		<text lang="en">shallow {0}</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="10" />
-			<point x="-30" y="-20" />
-			<point x="30" y="-20" />
-			<point x="70" y="10" />
+			<point x="-70" y="10"/>
+			<point x="-30" y="-20"/>
+			<point x="30" y="-20"/>
+			<point x="70" y="10"/>
 		</beziers>
 	</symbol>
 
@@ -2123,19 +2122,19 @@ for the symbols.
 		<name lang="en">Deep</name>
 		<text lang="en">deep {0}</text>
 		<beziers thickness="12.5">
-			<point x="-70" y="70" />
-				<point x="-35" y="72" />
-				<point x="-30" y="50" />
-			<point x="-30" y="10" />
-				<point x="-30" y="-30" />
-				<point x="-30" y="-70" />
-			<point x="0" y="-70" />
-				<point x="30" y="-70" />
-				<point x="30" y="-30" />
-			<point x="30" y="10" />
-				<point x="30" y="50" />
-				<point x="35" y="72" />
-			<point x="70" y="70" />
+			<point x="-70"  y="70"/>
+				<point x="-35"  y="72"/>
+				<point x="-30"  y="50"/>
+			<point x="-30"  y="10"/>
+				<point x="-30"  y="-30"/>
+				<point x="-30"  y="-70"/>
+			<point x="0"    y="-70"/>
+				<point x="30"   y="-70"/>
+				<point x="30"   y="-30"/>
+			<point x="30"   y="10"/>
+				<point x="30"   y="50"/>
+				<point x="35"   y="72"/>
+			<point x="70"   y="70"/>
 		</beziers>
 	</symbol>
 
@@ -2148,36 +2147,36 @@ for the symbols.
 		<text lang="fr" gender="masculine">fr sing masc overgrown {0}</text>
 		<text lang="fr" plural="true" gender="masculine">fr plur masc overgrown {0}</text>
 		<lines thickness="10">
-			<point x="42" y="64" />
-			<point x="42" y="-64" />
+			<point x="42" y="64"/>
+			<point x="42" y="-64"/>
 		</lines>
 		<lines thickness="10">
-			<point x="14" y="64" />
-			<point x="14" y="-64" />
+			<point x="14" y="64"/>
+			<point x="14" y="-64"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-14" y="64" />
-			<point x="-14" y="-64" />
+			<point x="-14" y="64"/>
+			<point x="-14" y="-64"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-42" y="64" />
-			<point x="-42" y="-64" />
+			<point x="-42" y="64"/>
+			<point x="-42" y="-64"/>
 		</lines>
 		<lines thickness="10">
-			<point x="64" y="42" />
-			<point x="-64" y="42" />
+			<point x="64" y="42"/>
+			<point x="-64" y="42"/>
 		</lines>
 		<lines thickness="10">
-			<point x="64" y="14" />
-			<point x="-64" y="14" />
+			<point x="64" y="14"/>
+			<point x="-64" y="14"/>
 		</lines>
 		<lines thickness="10">
-			<point x="64" y="-14" />
-			<point x="-64" y="-14" />
+			<point x="64" y="-14"/>
+			<point x="-64" y="-14"/>
 		</lines>
 		<lines thickness="10">
-			<point x="64" y="-42" />
-			<point x="-64" y="-42" />
+			<point x="64" y="-42"/>
+			<point x="-64" y="-42"/>
 		</lines>
 	</symbol>
 	
@@ -2185,40 +2184,40 @@ for the symbols.
 		<name lang="en">Open</name>
 		<text lang="en">open {0}</text>
 		<filled-circle radius="7.5">
-			<point x="-60" y="60" />
+			<point x="-60" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-20" y="60" />
+			<point x="-20" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="20" y="60" />
+			<point x="20" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="60" />
+			<point x="60" y="60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="20" />
+			<point x="-60" y="20"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="-20" />
+			<point x="-60" y="-20"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-60" y="-60" />
+			<point x="-60" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="-20" y="-60" />
+			<point x="-20" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="20" y="-60" />
+			<point x="20" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="-60" />
+			<point x="60" y="-60"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="-20" />
+			<point x="60" y="-20"/>
 		</filled-circle>
 		<filled-circle radius="7.5">
-			<point x="60" y="20" />
+			<point x="60" y="20"/>
 		</filled-circle>
 	</symbol>
 
@@ -2226,19 +2225,19 @@ for the symbols.
 		<name lang="en">Rocky, stony</name>
 		<text lang="en">rocky {0}</text>
 		<filled-polygon>
-			<point x="-72" y="0" />
-			<point x="-44.25" y="48" />
-			<point x="-16.5" y="0" />
+			<point x="-72" y ="0"/>
+			<point x="-44.25" y ="48"/>
+			<point x="-16.5" y ="0"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="72" y="0" />
-			<point x="44.25" y="48" />
-			<point x="16.5" y="0" />
+			<point x="72" y ="0"/>
+			<point x="44.25" y ="48"/>
+			<point x="16.5" y ="0"/>
 		</filled-polygon>
 		<filled-polygon>
-			<point x="-27.75" y="-48" />
-			<point x="0" y="0" />
-			<point x="27.75" y="-48" />
+			<point x="-27.75" y ="-48"/>
+			<point x="0" y ="0"/>
+			<point x="27.75" y ="-48"/>
 		</filled-polygon>
 	</symbol>
 
@@ -2246,16 +2245,16 @@ for the symbols.
 		<name lang="en">Marshy</name>
 		<text lang="en">marshy {0}</text>
 		<lines thickness="12.5">
-			<point x="30" y="35" />
-			<point x="-30" y="35" />
+			<point x="30" y="35"/>
+			<point x="-30" y="35"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="30" y="0" />
-			<point x="-30" y="0" />
+			<point x="30" y="0"/>
+			<point x="-30" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="30" y="-35" />
-			<point x="-30" y="-35" />
+			<point x="30" y="-35"/>
+			<point x="-30" y="-35"/>
 		</lines>
 	</symbol>
 
@@ -2263,154 +2262,154 @@ for the symbols.
 		<name lang="en">Sandy</name>
 		<text lang="en">sandy {0}</text>
 		<filled-circle radius="5">
-			<point x="-15" y="-31" />
+			<point x="-15" y="-31"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="48" y="2" />
+			<point x="48" y="2"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-70" y="-31" />
+			<point x="-70" y="-31"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="17" y="-46" />
+			<point x="17" y="-46"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-34" y="13" />
+			<point x="-34" y="13"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-24" y="30" />
+			<point x="-24" y="30"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="28" y="44" />
+			<point x="28" y="44"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-4" y="26" />
+			<point x="-4" y="26"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="47" y="-45" />
+			<point x="47" y="-45"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="38" y="19" />
+			<point x="38" y="19"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="33" y="-64" />
+			<point x="33" y="-64"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="62" y="41" />
+			<point x="62" y="41"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-64" y="20" />
+			<point x="-64" y="20"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-65" y="62" />
+			<point x="-65" y="62"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="56" y="-25" />
+			<point x="56" y="-25"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="69" y="-67" />
+			<point x="69" y="-67"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-41" y="42" />
+			<point x="-41" y="42"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-70" y="-65" />
+			<point x="-70" y="-65"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="20" y="-7" />
+			<point x="20" y="-7"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-39" y="-65" />
+			<point x="-39" y="-65"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="56" y="63" />
+			<point x="56" y="63"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-52" y="-48" />
+			<point x="-52" y="-48"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-34" y="-6" />
+			<point x="-34" y="-6"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-6" y="65" />
+			<point x="-6" y="65"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-21" y="-69" />
+			<point x="-21" y="-69"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="67" y="-49" />
+			<point x="67" y="-49"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-51" y="-30" />
+			<point x="-51" y="-30"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-2" y="0" />
+			<point x="-2" y="0"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-61" y="-8" />
+			<point x="-61" y="-8"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="19" y="69" />
+			<point x="19" y="69"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="6" y="46" />
+			<point x="6" y="46"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="0" y="-56" />
+			<point x="0" y="-56"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="6" y="-25" />
+			<point x="6" y="-25"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-25" y="-50" />
+			<point x="-25" y="-50"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="19" y="28" />
+			<point x="19" y="28"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="69" y="-12" />
+			<point x="69" y="-12"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="66" y="19" />
+			<point x="66" y="19"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-66" y="38" />
+			<point x="-66" y="38"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-24" y="65" />
+			<point x="-24" y="65"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="35" y="-21" />
+			<point x="35" y="-21"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-33" y="-33" />
+			<point x="-33" y="-33"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="51" y="-63" />
+			<point x="51" y="-63"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="38" y="67" />
+			<point x="38" y="67"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="14" y="-70" />
+			<point x="14" y="-70"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-44" y="66" />
+			<point x="-44" y="66"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="13" y="10" />
+			<point x="13" y="10"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-14" y="47" />
+			<point x="-14" y="47"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-17" y="-12" />
+			<point x="-17" y="-12"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-16" y="12" />
+			<point x="-16" y="12"/>
 		</filled-circle>
 		<filled-circle radius="5">
-			<point x="-51" y="7" />
+			<point x="-51" y="7"/>
 		</filled-circle>
 	</symbol>
 
@@ -2418,19 +2417,19 @@ for the symbols.
 		<name lang="en">Needle-leaved</name>
 		<text lang="en">needle-leaved {0}</text>
 		<polygon thickness="12.5">
-			<point x="0" y="70" />
-			<point x="-35" y="15" />
-			<point x="35" y="15" />
+			<point x="0" y="70"/>
+			<point x="-35" y="15"/>
+			<point x="35" y="15"/>
 		</polygon>
 		<lines thickness="12.5">
-			<point x="-17" y="10" />
-			<point x="-40" y="-35" />
-			<point x="40" y="-35" />
-			<point x="17" y="10" />
+			<point x="-17" y="10"/>
+			<point x="-40" y="-35"/>
+			<point x="40" y="-35"/>
+			<point x="17" y="10"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="-40" />
-			<point x="0" y="-70" />
+			<point x="0" y="-40"/>
+			<point x="0" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -2479,18 +2478,18 @@ for the symbols.
 		<name lang="en">Ruined</name>
 		<text lang="en">ruined {0}</text>
 		<beziers thickness="12.5">
-			<point x="-60" y="-60" />
-			<point x="-58" y="8" />
-			<point x="-67" y="44" />
-			<point x="-45" y="58" />
-			<point x="-25" y="70" />
-			<point x="18" y="20" />
-			<point x="60" y="-30" />
+			<point x="-60" y="-60"/>
+			<point x="-58" y="8"/>
+			<point x="-67" y="44"/>
+			<point x="-45" y="58"/>
+			<point x="-25" y="70"/>
+			<point x="18"  y="20"/>
+			<point x="60" y="-30"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="20" y="-30" />
-			<point x="60" y="-30" />
-			<point x="60" y="10" />
+			<point x="20" y="-30"/>
+			<point x="60"  y="-30"/>
+			<point x="60" y="10"/>
 		</lines>
 	</symbol>
 
@@ -2518,12 +2517,12 @@ for the symbols.
 		<text lang="en">{0} and {1} crossing</text>
 		<text lang="en" plural="true">{0} and {1} crossings</text>
 		<lines thickness="12.5">
-			<point x="70" y="70" />
-			<point x="-70" y="-70" />
+			<point x="70" y="70"/>
+			<point x="-70" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-70" y="70" />
-			<point x="70" y="-70" />
+			<point x="-70" y="70"/>
+			<point x="70" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -2538,12 +2537,12 @@ for the symbols.
 		<text lang="en">{0} and {1} junction</text>
 		<text lang="en" plural="true">{0} and {1} junctions</text>
 		<lines thickness="12.5">
-			<point x="55" y="70" />
-			<point x="-55" y="-70" />
+			<point x="55" y="70"/>
+			<point x="-55" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-55" y="70" />
-			<point x="0" y="0" />
+			<point x="-55" y="70"/>
+			<point x="0" y="0"/>
 		</lines>
 	</symbol>
 
@@ -2604,10 +2603,10 @@ for the symbols.
 		<name lang="en">North side</name>
 		<text lang="en">N side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="-20" />
+			<point x="0" y="-20"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="0" y="65" />
+			<point x="0" y="65"/>
 		</filled-circle>
 	</symbol>
 
@@ -2615,10 +2614,10 @@ for the symbols.
 		<name lang="en">North-east side</name>
 		<text lang="en">NE side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="-14.14" y="-14.14" />
+			<point x="-14.14" y="-14.14"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="45.96" y="45.96" />
+			<point x="45.96" y="45.96"/>
 		</filled-circle>
 	</symbol>
 
@@ -2626,10 +2625,10 @@ for the symbols.
 		<name lang="en">East side</name>
 		<text lang="en">E side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="-20" y="0" />
+			<point x="-20" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="65" y="0" />
+			<point x="65" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2637,10 +2636,10 @@ for the symbols.
 		<name lang="en">South-east side</name>
 		<text lang="en">SE side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="-14.14" y="14.14" />
+			<point x="-14.14" y="14.14"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="45.96" y="-45.96" />
+			<point x="45.96" y="-45.96"/>
 		</filled-circle>
 	</symbol>
 
@@ -2648,10 +2647,10 @@ for the symbols.
 		<name lang="en">South side</name>
 		<text lang="en">S side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="20" />
+			<point x="0" y="20"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="0" y="-65" />
+			<point x="0" y="-65"/>
 		</filled-circle>
 	</symbol>
 
@@ -2659,10 +2658,10 @@ for the symbols.
 		<name lang="en">South-west side</name>
 		<text lang="en">SW side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="14.14" y="14.14" />
+			<point x="14.14" y="14.14"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-45.96" y="-45.96" />
+			<point x="-45.96" y="-45.96"/>
 		</filled-circle>
 	</symbol>
 
@@ -2670,10 +2669,10 @@ for the symbols.
 		<name lang="en">West side</name>
 		<text lang="en">W side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="20" y="0" />
+			<point x="20" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-65" y="0" />
+			<point x="-65" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2681,10 +2680,10 @@ for the symbols.
 		<name lang="en">North-west side</name>
 		<text lang="en">NW side of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="14.14" y="-14.14" />
+			<point x="14.14" y="-14.14"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-45.96" y="45.96" />
+			<point x="-45.96" y="45.96"/>
 		</filled-circle>
 	</symbol>
 
@@ -2692,11 +2691,11 @@ for the symbols.
 		<name lang="en">North edge</name>
 		<text lang="en">N edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="0" y="35" />
-			<point x="0" y="75" />
+			<point x="0" y="35"/>
+			<point x="0" y="75"/>
 		</lines>
 	</symbol>
 
@@ -2704,11 +2703,11 @@ for the symbols.
 		<name lang="en">North-east edge</name>
 		<text lang="en">NE edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="24.75" y="24.75" />
-			<point x="53.03" y="53.03" />
+			<point x="24.75" y="24.75"/>
+			<point x="53.03" y="53.03"/>
 		</lines>
 	</symbol>
 
@@ -2716,11 +2715,11 @@ for the symbols.
 		<name lang="en">East edge</name>
 		<text lang="en">E edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="35" y="0" />
-			<point x="75" y="0" />
+			<point x="35" y="0"/>
+			<point x="75" y="0"/>
 		</lines>
 	</symbol>
 
@@ -2728,11 +2727,11 @@ for the symbols.
 		<name lang="en">South-east edge</name>
 		<text lang="en">SE edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="24.75" y="-24.75" />
-			<point x="53.03" y="-53.03" />
+			<point x="24.75" y="-24.75"/>
+			<point x="53.03" y="-53.03"/>
 		</lines>
 	</symbol>
 
@@ -2740,11 +2739,11 @@ for the symbols.
 		<name lang="en">South edge</name>
 		<text lang="en">S edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="0" y="-35" />
-			<point x="0" y="-75" />
+			<point x="0" y="-35"/>
+			<point x="0" y="-75"/>
 		</lines>
 	</symbol>
 
@@ -2752,11 +2751,11 @@ for the symbols.
 		<name lang="en">South-west edge</name>
 		<text lang="en">SW edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-24.75" y="-24.75" />
-			<point x="-53.03" y="-53.03" />
+			<point x="-24.75" y="-24.75"/>
+			<point x="-53.03" y="-53.03"/>
 		</lines>
 	</symbol>
 
@@ -2764,11 +2763,11 @@ for the symbols.
 		<name lang="en">West edge</name>
 		<text lang="en">W edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-35" y="0" />
-			<point x="-75" y="0" />
+			<point x="-35" y="0"/>
+			<point x="-75" y="0"/>
 		</lines>
 	</symbol>
 
@@ -2776,11 +2775,11 @@ for the symbols.
 		<name lang="en">North-west edge</name>
 		<text lang="en">NW edge of {0}</text>
 		<circle radius="55" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-24.75" y="24.75" />
-			<point x="-53.03" y="53.03" />
+			<point x="-24.75" y="24.75"/>
+			<point x="-53.03" y="53.03"/>
 		</lines>
 	</symbol>
 
@@ -2788,10 +2787,10 @@ for the symbols.
 		<name lang="en">North part</name>
 		<text lang="en">N part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="0" y="35" />
+			<point x="0" y="35"/>
 		</filled-circle>
 	</symbol>
 
@@ -2799,10 +2798,10 @@ for the symbols.
 		<name lang="en">North-east part</name>
 		<text lang="en">NE part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="24.75" y="24.75" />
+			<point x="24.75" y="24.75"/>
 		</filled-circle>
 	</symbol>
 
@@ -2810,10 +2809,10 @@ for the symbols.
 		<name lang="en">East part</name>
 		<text lang="en">E part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="35" y="0" />
+			<point x="35" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2821,10 +2820,10 @@ for the symbols.
 		<name lang="en">South-east part</name>
 		<text lang="en">SE part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="24.75" y="-24.75" />
+			<point x="24.75" y="-24.75"/>
 		</filled-circle>
 	</symbol>
 
@@ -2832,10 +2831,10 @@ for the symbols.
 		<name lang="en">South part</name>
 		<text lang="en">S part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="0" y="-35" />
+			<point x="0" y="-35"/>
 		</filled-circle>
 	</symbol>
 
@@ -2843,10 +2842,10 @@ for the symbols.
 		<name lang="en">South-west part</name>
 		<text lang="en">SW part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-24.75" y="-24.75" />
+			<point x="-24.75" y="-24.75"/>
 		</filled-circle>
 	</symbol>
 
@@ -2854,10 +2853,10 @@ for the symbols.
 		<name lang="en">West part</name>
 		<text lang="en">W part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-35" y="0" />
+			<point x="-35" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2865,10 +2864,10 @@ for the symbols.
 		<name lang="en">North-west part</name>
 		<text lang="en">NW part of {0}</text>
 		<circle radius="65" thickness="10">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</circle>
 		<filled-circle radius="12.5">
-			<point x="-24.75" y="24.75" />
+			<point x="-24.75" y="24.75"/>
 		</filled-circle>
 	</symbol>
 
@@ -2876,12 +2875,12 @@ for the symbols.
 		<name lang="en">North corner (inside)</name>
 		<text lang="en">N inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="-15" />
-			<point x="0" y="50" />
-			<point x="65" y="-15" />
+			<point x="-65" y="-15"/>
+			<point x="0" y="50"/>
+			<point x="65" y="-15"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="12.5" />
+			<point x="0" y="12.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -2889,12 +2888,12 @@ for the symbols.
 		<name lang="en">North-east corner (inside)</name>
 		<text lang="en">NE inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-56.57" y="35.36" />
-			<point x="35.36" y="35.36" />
-			<point x="35.36" y="-56.57" />
+			<point x="-56.57" y="35.36"/>
+			<point x="35.36" y="35.36"/>
+			<point x="35.36" y="-56.57"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="8.84" y="8.84" />
+			<point x="8.84" y="8.84"/>
 		</filled-circle>
 	</symbol>
 
@@ -2902,12 +2901,12 @@ for the symbols.
 		<name lang="en">East corner (inside)</name>
 		<text lang="en">E inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-15" y="-65" />
-			<point x="50" y="0" />
-			<point x="-15" y="65" />
+			<point x="-15" y="-65"/>
+			<point x="50" y="0"/>
+			<point x="-15" y="65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="12.5" y="0" />
+			<point x="12.5" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2915,12 +2914,12 @@ for the symbols.
 		<name lang="en">South-east corner (inside)</name>
 		<text lang="en">SE inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-56.57" y="-35.36" />
-			<point x="35.36" y="-35.36" />
-			<point x="35.36" y="56.57" />
+			<point x="-56.57" y="-35.36"/>
+			<point x="35.36" y="-35.36"/>
+			<point x="35.36" y="56.57"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="8.84" y="-8.84" />
+			<point x="8.84" y="-8.84"/>
 		</filled-circle>
 	</symbol>
 
@@ -2928,12 +2927,12 @@ for the symbols.
 		<name lang="en">South corner (inside)</name>
 		<text lang="en">S inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="15" />
-			<point x="0" y="-50" />
-			<point x="65" y="15" />
+			<point x="-65" y="15"/>
+			<point x="0" y="-50"/>
+			<point x="65" y="15"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-12.5" />
+			<point x="0" y="-12.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -2941,12 +2940,12 @@ for the symbols.
 		<name lang="en">South-west corner (inside)</name>
 		<text lang="en">SW inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="56.57" y="-35.36" />
-			<point x="-35.36" y="-35.36" />
-			<point x="-35.36" y="56.57" />
+			<point x="56.57" y="-35.36"/>
+			<point x="-35.36" y="-35.36"/>
+			<point x="-35.36" y="56.57"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-8.84" y="-8.84" />
+			<point x="-8.84" y="-8.84"/>
 		</filled-circle>
 	</symbol>
 
@@ -2954,12 +2953,12 @@ for the symbols.
 		<name lang="en">West corner (inside)</name>
 		<text lang="en">W inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="15" y="-65" />
-			<point x="-50" y="0" />
-			<point x="15" y="65" />
+			<point x="15" y="-65"/>
+			<point x="-50" y="0"/>
+			<point x="15" y="65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-12.5" y="0" />
+			<point x="-12.5" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -2967,12 +2966,12 @@ for the symbols.
 		<name lang="en">North-west corner (inside)</name>
 		<text lang="en">NW inside corner of {0}</text>
 		<lines thickness="10">
-			<point x="56.57" y="35.36" />
-			<point x="-35.36" y="35.36" />
-			<point x="-35.36" y="-56.57" />
+			<point x="56.57" y="35.36"/>
+			<point x="-35.36" y="35.36"/>
+			<point x="-35.36" y="-56.57"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-8.84" y="8.84" />
+			<point x="-8.84" y="8.84"/>
 		</filled-circle>
 	</symbol>
 
@@ -2980,12 +2979,12 @@ for the symbols.
 		<name lang="en">North corner (outside)</name>
 		<text lang="en">N outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="65" y="-40" />
-			<point x="0" y="25" />
-			<point x="-65" y="-40" />
+			<point x="65" y="-40"/>
+			<point x="0" y="25"/>
+			<point x="-65" y="-40"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="55" />
+			<point x="0" y="55"/>
 		</filled-circle>
 	</symbol>
 
@@ -2993,12 +2992,12 @@ for the symbols.
 		<name lang="en">North-east corner (outside)</name>
 		<text lang="en">NE outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-69.25" y="22.68" />
-			<point x="22.68" y="22.68" />
-			<point x="22.68" y="-69.25" />
+			<point x="-69.25" y="22.68"/>
+			<point x="22.68" y="22.68"/>
+			<point x="22.68" y="-69.25"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="43.89" y="43.89" />
+			<point x="43.89" y="43.89"/>
 		</filled-circle>
 	</symbol>
 
@@ -3006,12 +3005,12 @@ for the symbols.
 		<name lang="en">East corner (outside)</name>
 		<text lang="en">E outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-40" y="-65" />
-			<point x="25" y="0" />
-			<point x="-40" y="65" />
+			<point x="-40" y="-65"/>
+			<point x="25" y="0"/>
+			<point x="-40" y="65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="55" y="0" />
+			<point x="55" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -3019,12 +3018,12 @@ for the symbols.
 		<name lang="en">South-east corner (outside)</name>
 		<text lang="en">SE outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="-69.25" y="-22.68" />
-			<point x="22.68" y="-22.68" />
-			<point x="22.68" y="69.25" />
+			<point x="-69.25" y="-22.68"/>
+			<point x="22.68" y="-22.68"/>
+			<point x="22.68" y="69.25"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="43.89" y="-43.89" />
+			<point x="43.89" y="-43.89"/>
 		</filled-circle>
 	</symbol>
 
@@ -3032,12 +3031,12 @@ for the symbols.
 		<name lang="en">South corner (outside)</name>
 		<text lang="en">S outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="65" y="40" />
-			<point x="0" y="-25" />
-			<point x="-65" y="40" />
+			<point x="65" y="40"/>
+			<point x="0" y="-25"/>
+			<point x="-65" y="40"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-55" />
+			<point x="0" y="-55"/>
 		</filled-circle>
 	</symbol>
 
@@ -3045,12 +3044,12 @@ for the symbols.
 		<name lang="en">South-west corner (outside)</name>
 		<text lang="en">SW outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="69.25" y="-22.68" />
-			<point x="-22.68" y="-22.68" />
-			<point x="-22.68" y="69.25" />
+			<point x="69.25" y="-22.68"/>
+			<point x="-22.68" y="-22.68"/>
+			<point x="-22.68" y="69.25"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-43.89" y="-43.89" />
+			<point x="-43.89" y="-43.89"/>
 		</filled-circle>
 	</symbol>
 
@@ -3058,12 +3057,12 @@ for the symbols.
 		<name lang="en">West corner (outside)</name>
 		<text lang="en">W outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="40" y="-65" />
-			<point x="-25" y="0" />
-			<point x="40" y="65" />
+			<point x="40" y="-65"/>
+			<point x="-25" y="0"/>
+			<point x="40" y="65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-55" y="0" />
+			<point x="-55" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -3071,12 +3070,12 @@ for the symbols.
 		<name lang="en">North-west corner (outside)</name>
 		<text lang="en">NW outside corner of {0}</text>
 		<lines thickness="10">
-			<point x="69.25" y="22.68" />
-			<point x="-22.68" y="22.68" />
-			<point x="-22.68" y="-69.25" />
+			<point x="69.25" y="22.68"/>
+			<point x="-22.68" y="22.68"/>
+			<point x="-22.68" y="-69.25"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-43.89" y="43.89" />
+			<point x="-43.89" y="43.89"/>
 		</filled-circle>
 	</symbol>
 
@@ -3084,12 +3083,12 @@ for the symbols.
 		<name lang="en">North tip</name>
 		<text lang="en">N tip of {0}</text>
 		<lines thickness="10">
-			<point x="30" y="-65" />
-			<point x="0" y="30" />
-			<point x="-30" y="-65" />
+			<point x="30" y="-65"/>
+			<point x="0" y="30"/>
+			<point x="-30" y="-65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="60" />
+			<point x="0" y="60"/>
 		</filled-circle>
 	</symbol>
 
@@ -3097,12 +3096,12 @@ for the symbols.
 		<name lang="en">North-east tip</name>
 		<text lang="en">NE tip of {0}</text>
 		<lines thickness="10">
-			<point x="-67.18" y="-24.75" />
-			<point x="21.21" y="21.21" />
-			<point x="-24.75" y="-67.18" />
+			<point x="-67.18" y="-24.75"/>
+			<point x="21.21" y="21.21"/>
+			<point x="-24.75" y="-67.18"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="42.43" y="42.43" />
+			<point x="42.43" y="42.43"/>
 		</filled-circle>
 	</symbol>
 
@@ -3110,12 +3109,12 @@ for the symbols.
 		<name lang="en">East tip</name>
 		<text lang="en">E tip of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="30" />
-			<point x="30" y="0" />
-			<point x="-65" y="-30" />
+			<point x="-65" y="30"/>
+			<point x="30" y="0"/>
+			<point x="-65" y="-30"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="60" y="0" />
+			<point x="60" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -3123,12 +3122,12 @@ for the symbols.
 		<name lang="en">South-east tip</name>
 		<text lang="en">SE tip of {0}</text>
 		<lines thickness="10">
-			<point x="-67.18" y="24.75" />
-			<point x="21.21" y="-21.21" />
-			<point x="-24.75" y="67.18" />
+			<point x="-67.18" y="24.75"/>
+			<point x="21.21" y="-21.21"/>
+			<point x="-24.75" y="67.18"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="42.43" y="-42.43" />
+			<point x="42.43" y="-42.43"/>
 		</filled-circle>
 	</symbol>
 
@@ -3136,12 +3135,12 @@ for the symbols.
 		<name lang="en">South tip</name>
 		<text lang="en">S tip of {0}</text>
 		<lines thickness="10">
-			<point x="30" y="65" />
-			<point x="0" y="-30" />
-			<point x="-30" y="65" />
+			<point x="30" y="65"/>
+			<point x="0" y="-30"/>
+			<point x="-30" y="65"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-60" />
+			<point x="0" y="-60"/>
 		</filled-circle>
 	</symbol>
 
@@ -3149,12 +3148,12 @@ for the symbols.
 		<name lang="en">South-west tip</name>
 		<text lang="en">SW tip of {0}</text>
 		<lines thickness="10">
-			<point x="67.18" y="24.75" />
-			<point x="-21.21" y="-21.21" />
-			<point x="24.75" y="67.18" />
+			<point x="67.18" y="24.75"/>
+			<point x="-21.21" y="-21.21"/>
+			<point x="24.75" y="67.18"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-42.43" y="-42.43" />
+			<point x="-42.43" y="-42.43"/>
 		</filled-circle>
 	</symbol>
 
@@ -3162,12 +3161,12 @@ for the symbols.
 		<name lang="en">West tip</name>
 		<text lang="en">W tip of {0}</text>
 		<lines thickness="10">
-			<point x="65" y="30" />
-			<point x="-30" y="0" />
-			<point x="65" y="-30" />
+			<point x="65" y="30"/>
+			<point x="-30" y="0"/>
+			<point x="65" y="-30"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-60" y="0" />
+			<point x="-60" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -3175,12 +3174,12 @@ for the symbols.
 		<name lang="en">North-west tip</name>
 		<text lang="en">NW tip of {0}</text>
 		<lines thickness="10">
-			<point x="67.18" y="-24.75" />
-			<point x="-21.21" y="21.21" />
-			<point x="24.75" y="-67.18" />
+			<point x="67.18" y="-24.75"/>
+			<point x="-21.21" y="21.21"/>
+			<point x="24.75" y="-67.18"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="-42.43" y="42.43" />
+			<point x="-42.43" y="42.43"/>
 		</filled-circle>
 	</symbol>
 
@@ -3188,12 +3187,12 @@ for the symbols.
 		<name lang="en">North end</name>
 		<text lang="en">N end of {0}</text>
 		<lines thickness="10">
-			<point x="0" y="-65" />
-			<point x="0" y="65" />
+			<point x="0" y="-65"/>
+			<point x="0" y="65"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-25" y="65" />
-			<point x="25" y="65" />
+			<point x="-25" y="65"/>
+			<point x="25" y="65"/>
 		</lines>
 	</symbol>
 
@@ -3201,12 +3200,12 @@ for the symbols.
 		<name lang="en">North-east end</name>
 		<text lang="en">NE end of {0}</text>
 		<lines thickness="10">
-			<point x="-45.96" y="-45.96" />
-			<point x="45.96" y="45.96" />
+			<point x="-45.96" y="-45.96"/>
+			<point x="45.96" y="45.96"/>
 		</lines>
 		<lines thickness="10">
-			<point x="28.28" y="63.64" />
-			<point x="63.64" y="28.28" />
+			<point x="28.28" y="63.64"/>
+			<point x="63.64" y="28.28"/>
 		</lines>
 	</symbol>
 
@@ -3214,12 +3213,12 @@ for the symbols.
 		<name lang="en">East end</name>
 		<text lang="en">E end of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="0" />
-			<point x="65" y="0" />
+			<point x="-65" y="0"/>
+			<point x="65" y="0"/>
 		</lines>
 		<lines thickness="10">
-			<point x="65" y="-25" />
-			<point x="65" y="25" />
+			<point x="65" y="-25"/>
+			<point x="65" y="25"/>
 		</lines>
 	</symbol>
 
@@ -3227,12 +3226,12 @@ for the symbols.
 		<name lang="en">South-east end</name>
 		<text lang="en">SE end of {0}</text>
 		<lines thickness="10">
-			<point x="-45.96" y="45.96" />
-			<point x="45.96" y="-45.96" />
+			<point x="-45.96" y="45.96"/>
+			<point x="45.96" y="-45.96"/>
 		</lines>
 		<lines thickness="10">
-			<point x="28.28" y="-63.64" />
-			<point x="63.64" y="-28.28" />
+			<point x="28.28" y="-63.64"/>
+			<point x="63.64" y="-28.28"/>
 		</lines>
 	</symbol>
 
@@ -3240,12 +3239,12 @@ for the symbols.
 		<name lang="en">South end</name>
 		<text lang="en">S end of {0}</text>
 		<lines thickness="10">
-			<point x="0" y="-65" />
-			<point x="0" y="65" />
+			<point x="0" y="-65"/>
+			<point x="0" y="65"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-25" y="-65" />
-			<point x="25" y="-65" />
+			<point x="-25" y="-65"/>
+			<point x="25" y="-65"/>
 		</lines>
 	</symbol>
 
@@ -3253,12 +3252,12 @@ for the symbols.
 		<name lang="en">South-west end</name>
 		<text lang="en">SW end of {0}</text>
 		<lines thickness="10">
-			<point x="45.96" y="45.96" />
-			<point x="-45.96" y="-45.96" />
+			<point x="45.96" y="45.96"/>
+			<point x="-45.96" y="-45.96"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-28.28" y="-63.64" />
-			<point x="-63.64" y="-28.28" />
+			<point x="-28.28" y="-63.64"/>
+			<point x="-63.64" y="-28.28"/>
 		</lines>
 	</symbol>
 
@@ -3266,12 +3265,12 @@ for the symbols.
 		<name lang="en">West end</name>
 		<text lang="en">W end of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="0" />
-			<point x="65" y="0" />
+			<point x="-65" y="0"/>
+			<point x="65" y="0"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-65" y="-25" />
-			<point x="-65" y="25" />
+			<point x="-65" y="-25"/>
+			<point x="-65" y="25"/>
 		</lines>
 	</symbol>
 
@@ -3279,12 +3278,12 @@ for the symbols.
 		<name lang="en">North-west end</name>
 		<text lang="en">NW end of {0}</text>
 		<lines thickness="10">
-			<point x="45.96" y="-45.96" />
-			<point x="-45.96" y="45.96" />
+			<point x="45.96" y="-45.96"/>
+			<point x="-45.96" y="45.96"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-28.28" y="63.64" />
-			<point x="-63.64" y="28.28" />
+			<point x="-28.28" y="63.64"/>
+			<point x="-63.64" y="28.28"/>
 		</lines>
 	</symbol>
 
@@ -3292,12 +3291,12 @@ for the symbols.
 		<name lang="en">North foot</name>
 		<text lang="en">N foot of {0}</text>
 		<lines thickness="10">
-			<point x="-10" y="80" />
-			<point x="-10" y="40" />
-			<point x="15" y="40" />
+			<point x="-10" y="80"/>
+			<point x="-10" y="40"/>
+			<point x="15" y="40"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="0" y="-30" />
+			<point x="0" y="-30"/>
 		</circle>
 	</symbol>
 
@@ -3305,12 +3304,12 @@ for the symbols.
 		<name lang="en">North-east foot</name>
 		<text lang="en">NE foot of {0}</text>
 		<lines thickness="10">
-			<point x="40" y="70" />
-			<point x="40" y="30" />
-			<point x="65" y="30" />
+			<point x="40" y="70"/>
+			<point x="40" y="30"/>
+			<point x="65" y="30"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="-20" y="-20" />
+			<point x="-20" y="-20"/>
 		</circle>
 	</symbol>
 
@@ -3318,12 +3317,12 @@ for the symbols.
 		<name lang="en">East foot</name>
 		<text lang="en">E foot of {0}</text>
 		<lines thickness="10">
-			<point x="50" y="20" />
-			<point x="50" y="-20" />
-			<point x="75" y="-20" />
+			<point x="50" y="20"/>
+			<point x="50" y="-20"/>
+			<point x="75" y="-20"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="-25" y="0" />
+			<point x="-25" y="0"/>
 		</circle>
 	</symbol>
 
@@ -3331,12 +3330,12 @@ for the symbols.
 		<name lang="en">South-east foot</name>
 		<text lang="en">SE foot of {0}</text>
 		<lines thickness="10">
-			<point x="40" y="-30" />
-			<point x="40" y="-70" />
-			<point x="65" y="-70" />
+			<point x="40" y="-30"/>
+			<point x="40" y="-70"/>
+			<point x="65" y="-70"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="-20" y="20" />
+			<point x="-20" y="20"/>
 		</circle>
 	</symbol>
 
@@ -3344,12 +3343,12 @@ for the symbols.
 		<name lang="en">South foot</name>
 		<text lang="en">S foot of {0}</text>
 		<lines thickness="10">
-			<point x="-10" y="-40" />
-			<point x="-10" y="-80" />
-			<point x="15" y="-80" />
+			<point x="-10" y="-40"/>
+			<point x="-10" y="-80"/>
+			<point x="15" y="-80"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="0" y="30" />
+			<point x="0" y="30"/>
 		</circle>
 	</symbol>
 
@@ -3357,12 +3356,12 @@ for the symbols.
 		<name lang="en">South-west foot</name>
 		<text lang="en">SW foot of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="-30" />
-			<point x="-65" y="-70" />
-			<point x="-40" y="-70" />
+			<point x="-65" y="-30"/>
+			<point x="-65" y="-70"/>
+			<point x="-40" y="-70"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="20" y="20" />
+			<point x="20" y="20"/>
 		</circle>
 	</symbol>
 
@@ -3370,12 +3369,12 @@ for the symbols.
 		<name lang="en">West foot</name>
 		<text lang="en">W foot of {0}</text>
 		<lines thickness="10">
-			<point x="-75" y="20" />
-			<point x="-75" y="-20" />
-			<point x="-50" y="-20" />
+			<point x="-75" y="20"/>
+			<point x="-75" y="-20"/>
+			<point x="-50" y="-20"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="25" y="0" />
+			<point x="25" y="0"/>
 		</circle>
 	</symbol>
 
@@ -3383,12 +3382,12 @@ for the symbols.
 		<name lang="en">North-west foot</name>
 		<text lang="en">NW foot of {0}</text>
 		<lines thickness="10">
-			<point x="-65" y="70" />
-			<point x="-65" y="30" />
-			<point x="-40" y="30" />
+			<point x="-65" y="70"/>
+			<point x="-65" y="30"/>
+			<point x="-40" y="30"/>
 		</lines>
 		<circle radius="50" thickness="10">
-			<point x="20" y="-20" />
+			<point x="20" y="-20"/>
 		</circle>
 	</symbol>
 
@@ -3396,16 +3395,16 @@ for the symbols.
 		<name lang="en">Bend</name>
 		<text lang="en">bend in {0}</text>
 		<beziers thickness="10">
-			<point x="35" y="70" />
-				<point x="25" y="62.22" />
-				<point x="-15" y="31.11" />
-			<point x="-25" y="23.33" />
-				<point x="-45" y="7.78" />
-				<point x="-45" y="-7.78" />
-			<point x="-25" y="-23.33" />
-				<point x="-15" y="-31.11" />
-				<point x="25" y="-62.22" />
-			<point x="35" y="-70" />
+			<point x="35" y="70"/>
+				<point x="25" y="62.22"/>
+				<point x="-15" y="31.11"/>
+			<point x="-25" y="23.33"/>
+				<point x="-45" y="7.78"/>
+				<point x="-45"  y="-7.78"/>
+			<point x="-25" y="-23.33"/>
+				<point x="-15" y="-31.11"/>
+				<point x="25"  y="-62.22"/>
+			<point x="35" y="-70"/>
 		</beziers>
 	</symbol>
 
@@ -3413,15 +3412,15 @@ for the symbols.
 		<name lang="en">Upper part</name>
 		<text lang="en">upper part of {0}</text>
 		<lines thickness="10">
-			<point x="-30" y="60" />
-			<point x="-30" y="-60" />
+			<point x="-30" y="60"/>
+			<point x="-30" y="-60"/>
 		</lines>
 		<lines thickness="10">
-			<point x="30" y="60" />
-			<point x="30" y="-60" />
+			<point x="30" y="60"/>
+			<point x="30" y="-60"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="52.5" />
+			<point x="0" y="52.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -3429,15 +3428,15 @@ for the symbols.
 		<name lang="en">Lower part</name>
 		<text lang="en">lower part of {0}</text>
 		<lines thickness="10">
-			<point x="-30" y="60" />
-			<point x="-30" y="-60" />
+			<point x="-30" y="60"/>
+			<point x="-30" y="-60"/>
 		</lines>
 		<lines thickness="10">
-			<point x="30" y="60" />
-			<point x="30" y="-60" />
+			<point x="30" y="60"/>
+			<point x="30" y="-60"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-52.5" />
+			<point x="0" y="-52.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -3445,13 +3444,13 @@ for the symbols.
 		<name lang="en">Top</name>
 		<text lang="en">top of {0}</text>
 		<lines thickness="10">
-			<point x="-28" y="-60" />
-			<point x="-28" y="25" />
-			<point x="28" y="25" />
-			<point x="28" y="-60" />
+			<point x="-28" y="-60"/>
+			<point x="-28" y="25"/>
+			<point x="28" y="25"/>
+			<point x="28" y="-60"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="52.5" />
+			<point x="0" y="52.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -3459,13 +3458,13 @@ for the symbols.
 		<name lang="en">Beneath</name>
 		<text lang="en">beneath {0}</text>
 		<lines thickness="10">
-			<point x="-50" y="-30" />
-			<point x="-50" y="30" />
-			<point x="50" y="30" />
-			<point x="50" y="-30" />
+			<point x="-50" y="-30"/>
+			<point x="-50" y="30"/>
+			<point x="50" y="30"/>
+			<point x="50" y="-30"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-22.5" />
+			<point x="0" y="-22.5"/>
 		</filled-circle>
 	</symbol>
 
@@ -3473,12 +3472,12 @@ for the symbols.
 		<name lang="en">Foot</name>
 		<text lang="en">foot of {0}</text>
 		<lines thickness="10">
-			<point x="-30" y="60" />
-			<point x="-30" y="-60" />
-			<point x="30" y="-60" />
+			<point x="-30" y="60"/>
+			<point x="-30" y="-60"/>
+			<point x="30" y="-60"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="-30" />
+			<point x="0" y="-30"/>
 		</filled-circle>
 	</symbol>
 
@@ -3500,15 +3499,15 @@ for the symbols.
 		<name lang="en">Between</name>
 		<text lang="en">between {0} and {1}</text>
 		<lines thickness="10">
-			<point x="-60" y="40" />
-			<point x="60" y="40" />
+			<point x="-60" y="40"/>
+			<point x="60" y="40"/>
 		</lines>
 		<lines thickness="10">
-			<point x="-60" y="-40" />
-			<point x="60" y="-40" />
+			<point x="-60" y="-40"/>
+			<point x="60" y="-40"/>
 		</lines>
 		<filled-circle radius="12.5">
-			<point x="0" y="0" />
+			<point x="0" y="0"/>
 		</filled-circle>
 	</symbol>
 
@@ -3524,18 +3523,18 @@ for the symbols.
 		<name lang="en">First aid post</name>
 		<text lang="en">first aid</text>
 		<filled-polygon>
-			<point x="-20" y="60" />
-			<point x="20" y="60" />
-			<point x="20" y="20" />
-			<point x="60" y="20" />
-			<point x="60" y="-20" />
-			<point x="20" y="-20" />
-			<point x="20" y="-60" />
-			<point x="-20" y="-60" />
-			<point x="-20" y="-20" />
-			<point x="-60" y="-20" />
-			<point x="-60" y="20" />
-			<point x="-20" y="20" />
+			<point x="-20" y="60"/>
+			<point x="20" y="60"/>
+			<point x="20" y="20"/>
+			<point x="60" y="20"/>
+			<point x="60" y="-20"/>
+			<point x="20" y="-20"/>
+			<point x="20" y="-60"/>
+			<point x="-20" y="-60"/>
+			<point x="-20" y="-20"/>
+			<point x="-60" y="-20"/>
+			<point x="-60" y="20"/>
+			<point x="-20" y="20"/>
 		</filled-polygon>
 	</symbol>
 
@@ -3543,36 +3542,36 @@ for the symbols.
 		<name lang="en">Refreshment point</name>
 		<text lang="en">water</text>
 		<beziers thickness="12.5">
-			<point x="60" y="55" />
-				<point x="60" y="63.3" />
-				<point x="33.1" y="70" />
-			<point x="0" y="70" />
-				<point x="-33.1" y="70" />
-				<point x="-60" y="63.3" />
-			<point x="-60" y="55" />
-				<point x="-60" y="46.7" />
-				<point x="-33.1" y="40" />
-			<point x="0" y="40" />
-				<point x="33.1" y="40" />
-				<point x="60" y="46.7" />
-			<point x="60" y="55" />
+			<point x="60" y="55"/>
+				<point x="60" y="63.3"/>
+				<point x="33.1" y="70"/>
+			<point x="0" y="70"/>
+				<point x="-33.1" y="70"/>
+				<point x="-60" y="63.3"/>
+			<point x="-60" y="55"/>
+				<point x="-60" y="46.7"/>
+				<point x="-33.1" y="40"/>
+			<point x="0" y="40"/>
+				<point x="33.1" y="40"/>
+				<point x="60" y="46.7"/>
+			<point x="60" y="55"/>
 		</beziers>
 		<lines thickness="12.5">
-			<point x="60" y="55" />
-			<point x="40" y="-60" />
+			<point x="60" y="55"/>
+			<point x="40" y="-60"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-60" y="55" />
-			<point x="-40" y="-60" />
+			<point x="-60" y="55"/>
+			<point x="-40" y="-60"/>
 		</lines>
 		<beziers thickness="12.5">
-			<point x="40" y="-60" />
-				<point x="40" y="-65.5" />
-				<point x="22.05" y="-70" />
-			<point x="0" y="-70" />
-				<point x="-22.05" y="-70" />
-				<point x="-40" y="-65.5" />
-			<point x="-40" y="-60" />
+			<point x="40" y="-60"/>
+				<point x="40" y="-65.5"/>
+				<point x="22.05" y="-70"/>
+			<point x="0" y="-70"/>
+				<point x="-22.05" y="-70"/>
+				<point x="-40" y="-65.5"/>
+			<point x="-40" y="-60"/>
 		</beziers>
 	</symbol>
 
@@ -3580,10 +3579,10 @@ for the symbols.
 		<name lang="en">Radio or TV control</name>
 		<text lang="en">radio</text>
 		<lines thickness="12.5">
-			<point x="40" y="70" />
-			<point x="-30" y="0" />
-			<point x="30" y="0" />
-			<point x="-40" y="-70" />
+			<point x="40" y="70"/>
+			<point x="-30" y="0"/>
+			<point x="30" y="0"/>
+			<point x="-40" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3591,21 +3590,21 @@ for the symbols.
 		<name lang="en">Control check</name>
 		<text lang="en">manned</text>
 		<lines thickness="12.5">
-			<point x="-35" y="-70" />
-			<point x="0" y="-20" />
-			<point x="35" y="-70" />
+			<point x="-35" y="-70"/>
+			<point x="0" y="-20"/>
+			<point x="35" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-35" y="0" />
-			<point x="0" y="20" />
-			<point x="35" y="0" />
+			<point x="-35" y="0"/>
+			<point x="0" y="20"/>
+			<point x="35" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="0" y="-20" />
-			<point x="0" y="50" />
+			<point x="0" y="-20"/>
+			<point x="0" y="50"/>
 		</lines>
 		<filled-circle radius="20">
-			<point x="0" y="53" />
+			<point x="0" y="53"/>
 		</filled-circle>
 	</symbol>
 
@@ -3617,36 +3616,36 @@ for the symbols.
 		<name lang="en">Taped route away from control</name>
 		<text lang="en">follow tapes {0}away from control</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
-		<lines thickness="12.5">
-			<point x="-630" y="0" />
-			<point x="-510" y="0" />
+		<lines thickness="12.5" >
+			<point x="-630" y="0"/>
+			<point x="-510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-480" y="0" />
-			<point x="-360" y="0" />
+			<point x="-480" y="0"/>
+			<point x="-360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-330" y="0" />
-			<point x="-210" y="0" />
+			<point x="-330" y="0"/>
+			<point x="-210" y="0"/>
+		</lines>
+		<lines thickness="12.5" >
+			<point x="625" y="0"/>
+			<point x="510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="625" y="0" />
-			<point x="510" y="0" />
+			<point x="480" y="0"/>
+			<point x="360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="480" y="0" />
-			<point x="360" y="0" />
+			<point x="330" y="0"/>
+			<point x="210" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="330" y="0" />
-			<point x="210" y="0" />
-		</lines>
-		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3654,39 +3653,39 @@ for the symbols.
 		<name lang="en">Taped route between controls</name>
 		<text lang="en">follow tapes {0}between controls</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
-		<lines thickness="12.5">
-			<point x="-630" y="0" />
-			<point x="-510" y="0" />
+		<lines thickness="12.5" >
+			<point x="-630" y="0"/>
+			<point x="-510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-480" y="0" />
-			<point x="-360" y="0" />
+			<point x="-480" y="0"/>
+			<point x="-360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-330" y="0" />
-			<point x="-210" y="0" />
+			<point x="-330" y="0"/>
+			<point x="-210" y="0"/>
+		</lines>
+		<lines thickness="12.5" >
+			<point x="630" y="0"/>
+			<point x="510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="630" y="0" />
-			<point x="510" y="0" />
+			<point x="480" y="0"/>
+			<point x="360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="480" y="0" />
-			<point x="360" y="0" />
+			<point x="330" y="0"/>
+			<point x="210" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="330" y="0" />
-			<point x="210" y="0" />
-		</lines>
-		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3696,32 +3695,32 @@ for the symbols.
 		<name lang="en">Mandatory crossing point or points</name>
 		<text lang="en">mandatory crossing point</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-555" y="70" />
-			<point x="-625" y="0" />
-			<point x="-555" y="-70" />
+			<point x="-555" y="70"/>
+			<point x="-625" y="0"/>
+			<point x="-555" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 		<beziers thickness="12.5">
-			<point x="-150" y="70" />
-			<point x="-80" y="0" />
-			<point x="80" y="0" />
-			<point x="150" y="70" />
+			<point x="-150" y="70"/>
+			<point x="-80" y="0"/>
+			<point x="80" y="0"/>
+			<point x="150" y="70"/>
 		</beziers>
 		<beziers thickness="12.5">
-			<point x="-150" y="-70" />
-			<point x="-80" y="0" />
-			<point x="80" y="0" />
-			<point x="150" y="-70" />
+			<point x="-150" y="-70"/>
+			<point x="-80" y="0"/>
+			<point x="80" y="0"/>
+			<point x="150" y="-70"/>
 		</beziers>
 	</symbol>
 
@@ -3729,32 +3728,32 @@ for the symbols.
 		<name lang="en">Mandatory passage</name>
 		<text lang="en">mandatory passage</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-555" y="70" />
-			<point x="-625" y="0" />
-			<point x="-555" y="-70" />
+			<point x="-555" y="70"/>
+			<point x="-625" y="0"/>
+			<point x="-555" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-300" y="70" />
-			<point x="-250" y="20" />
-			<point x="250" y="20" />
-			<point x="300" y="70" />
+			<point x="-300" y="70"/>
+			<point x="-250" y="20"/>
+			<point x="250" y="20"/>
+			<point x="300" y="70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-300" y="-70" />
-			<point x="-250" y="-20" />
-			<point x="250" y="-20" />
-			<point x="300" y="-70" />
+			<point x="-300" y="-70"/>
+			<point x="-250" y="-20"/>
+			<point x="250" y="-20"/>
+			<point x="300" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3765,42 +3764,42 @@ for the symbols.
 		<name lang="en">Map exchange</name>
 		<text lang="en">follow tapes {0}to map exchange</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
-		<lines thickness="12.5">
-			<point x="-630" y="0" />
-			<point x="-510" y="0" />
+		<lines thickness="12.5" >
+			<point x="-630" y="0"/>
+			<point x="-510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-480" y="0" />
-			<point x="-360" y="0" />
+			<point x="-480" y="0"/>
+			<point x="-360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-330" y="0" />
-			<point x="-210" y="0" />
+			<point x="-330" y="0"/>
+			<point x="-210" y="0"/>
+		</lines>
+		<lines thickness="12.5" >
+			<point x="625" y="0"/>
+			<point x="510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="625" y="0" />
-			<point x="510" y="0" />
+			<point x="480" y="0"/>
+			<point x="360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="480" y="0" />
-			<point x="360" y="0" />
+			<point x="330" y="0"/>
+			<point x="210" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="330" y="0" />
-			<point x="210" y="0" />
-		</lines>
-		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 
 		<polygon thickness="10">
-			<point x="700" y="70" />
-			<point x="760.6" y="-35" />
-			<point x="639.4" y="-35" />
+			<point x="700" y="70"/>
+			<point x="760.6" y="-35"/>
+			<point x="639.4" y="-35"/>
 		</polygon>
 	</symbol>
 
@@ -3813,42 +3812,42 @@ for the symbols.
 		<name lang="en">Taped route to finish</name>
 		<text lang="en">follow tapes {0}to finish</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="50">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
-		<lines thickness="12.5">
-			<point x="-630" y="0" />
-			<point x="-510" y="0" />
+		<lines thickness="12.5" >
+			<point x="-630" y="0"/>
+			<point x="-510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-480" y="0" />
-			<point x="-360" y="0" />
+			<point x="-480" y="0"/>
+			<point x="-360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-330" y="0" />
-			<point x="-210" y="0" />
+			<point x="-330" y="0"/>
+			<point x="-210" y="0"/>
+		</lines>
+		<lines thickness="12.5" >
+			<point x="630" y="0"/>
+			<point x="510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="630" y="0" />
-			<point x="510" y="0" />
+			<point x="480" y="0"/>
+			<point x="360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="480" y="0" />
-			<point x="360" y="0" />
+			<point x="330" y="0"/>
+			<point x="210" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="330" y="0" />
-			<point x="210" y="0" />
-		</lines>
-		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3856,43 +3855,43 @@ for the symbols.
 		<name lang="en">Navigate to finish funnel</name>
 		<text lang="en">navigate {0}to finish funnel</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="50">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-550" y="70" />
-			<point x="-480" y="0" />
-			<point x="-550" y="-70" />
+			<point x="-550" y="70"/>
+			<point x="-480" y="0"/>
+			<point x="-550" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-480" y="0" />
-			<point x="-360" y="0" />
+			<point x="-480" y="0"/>
+			<point x="-360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="-330" y="0" />
-			<point x="-210" y="0" />
+			<point x="-330" y="0"/>
+			<point x="-210" y="0"/>
+		</lines>
+		<lines thickness="12.5" >
+			<point x="630" y="0"/>
+			<point x="510" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="630" y="0" />
-			<point x="510" y="0" />
+			<point x="480" y="0"/>
+			<point x="360" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="480" y="0" />
-			<point x="360" y="0" />
+			<point x="330" y="0"/>
+			<point x="210" y="0"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="330" y="0" />
-			<point x="210" y="0" />
-		</lines>
-		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 	</symbol>
 
@@ -3900,23 +3899,23 @@ for the symbols.
 		<name lang="en">Navigate to finish (no tapes)</name>
 		<text lang="en">navigate {0}to finish</text>
 		<circle thickness="10" radius="70">
-			<point x="-700" y="0" />
+			<point x="-700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="70">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<circle thickness="10" radius="50">
-			<point x="700" y="0" />
+			<point x="700" y="0"/>
 		</circle>
 		<lines thickness="12.5">
-			<point x="-555" y="70" />
-			<point x="-625" y="0" />
-			<point x="-555" y="-70" />
+			<point x="-555" y="70"/>
+			<point x="-625" y="0"/>
+			<point x="-555" y="-70"/>
 		</lines>
 		<lines thickness="12.5">
-			<point x="555" y="70" />
-			<point x="625" y="0" />
-			<point x="555" y="-70" />
+			<point x="555" y="70"/>
+			<point x="625" y="0"/>
+			<point x="555" y="-70"/>
 		</lines>
 	</symbol>
 </symbols>

@@ -2143,6 +2143,13 @@ namespace PurplePen
             localizer.CustomizeDescriptionTexts(symbolTexts);
         }
 
+        // Merge another symbols.xml
+        public void MergeSymbolsXml(string filename, string langId)
+        {
+            DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
+
+            localizer.MergeSymbolsFile(filename, langId);
+        }
 
         // Mouse actions are delegated to the current mode that is active. If a display updated
         // is requested, the changeNum is incremented.

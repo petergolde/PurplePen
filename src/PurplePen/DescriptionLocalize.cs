@@ -177,6 +177,57 @@ namespace PurplePen
             }
         }
 
-    
+        public void MergeSymbolsFile(string fileToMerge, string langId)
+        {
+            XmlDocument docToMerge;
+            XmlNode rootToMerge;
+
+            // Load documents.
+            LoadXmlDocument();
+            docToMerge = new XmlDocument();
+            docToMerge.PreserveWhitespace = true;
+            docToMerge.Load(fileToMerge);
+            rootToMerge = docToMerge.DocumentElement;
+
+            // Remove all language nodes from the current document.
+            string xpath = string.Format("//*[@lang='{0}']", langId);
+            foreach (XmlElement node in root.SelectNodes(xpath)) {
+                node.ParentNode.RemoveChild(node);
+            }
+
+            // Copy nodes over
+            foreach (XmlElement node in rootToMerge.SelectNodes(xpath)) {
+                ImportAndInsertNode(node);
+            }
+
+            SaveXmlDocument();
+        }
+
+        // Import another node, and insert in the correct place.
+        void ImportAndInsertNode(XmlElement oldNode)
+        {
+            XmlElement newNode = (XmlElement) xmldoc.ImportNode(oldNode, true);
+
+            if (newNode.Name == "language") {
+                XmlNodeList languageNodes = root.SelectNodes("/symbols/language");
+                root.InsertAfter(newNode, languageNodes.Item(languageNodes.Count - 1));
+                root.InsertBefore(xmldoc.CreateTextNode("\r\n\t"), newNode);
+            }
+            else if (newNode.Name == "name") {
+                string id = ((XmlElement) oldNode.ParentNode).GetAttribute("id");
+                XmlNodeList nameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/name", id));
+                XmlNode last = nameNodes.Item(nameNodes.Count - 1);
+                last.ParentNode.InsertAfter(newNode, last);
+                last.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            }
+            else if (newNode.Name == "text") {
+                string id = ((XmlElement) oldNode.ParentNode).GetAttribute("id");
+                XmlNodeList textNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/text", id));
+                XmlNode last = textNodes.Item(textNodes.Count - 1);
+                last.ParentNode.InsertAfter(newNode, last);
+                last.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            }
+        }
+
     }
 }
