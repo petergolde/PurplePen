@@ -122,6 +122,8 @@ namespace PurplePen
             this.Controls.Add(this.openExistingRadioButton);
             this.HelpButton = false;
             this.Name = "InitialScreen";
+            this.ShowIcon = true;
+            this.ShowInTaskbar = true;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InitialScreen_FormClosed);
             this.ResumeLayout(false);

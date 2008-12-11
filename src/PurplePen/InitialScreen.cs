@@ -56,15 +56,14 @@ namespace PurplePen
         // Create new event was selected.
         public void CreateNewEvent()
         {
-            Hide();
-
             NewEventWizard wizard = new NewEventWizard();
-            DialogResult result = wizard.ShowDialog();
+            DialogResult result = wizard.ShowDialog(this);
 
             if (result == DialogResult.Cancel) {
                 // User cancelled 
                 // Go back and show the initial screen again.
                 Show();
+                Activate();
                 return;
             }
             else {
@@ -88,6 +87,7 @@ namespace PurplePen
                     // Failure: Go back and show the initial screen again.
                     mainFrame.Dispose();
                     Show();
+                    Activate();
                 }
             }
         }
@@ -95,8 +95,6 @@ namespace PurplePen
         // Open existing event was selected.
         public void OpenExistingEvent()
         {
-            Hide();
-
             MainFrame mainFrame = new MainFrame();
             Controller controller = new Controller(mainFrame);
 
@@ -105,7 +103,7 @@ namespace PurplePen
                 // User cancelled or the file didn't load. 
                 // Go back and show the initial screen again.
                 mainFrame.Dispose();
-                Show();
+                Activate();
                 return;
             }
 
@@ -126,8 +124,6 @@ namespace PurplePen
         // Open sample event was selected.
         public void OpenSampleEvent()
         {
-            Hide();
-
             MainFrame mainFrame = new MainFrame();
             Controller controller = new Controller(mainFrame);
 
@@ -135,7 +131,7 @@ namespace PurplePen
                 // File didn't load. 
                 // Go back and show the initial screen again.
                 mainFrame.Dispose();
-                Show();
+                Activate();
                 return;
             }
 
