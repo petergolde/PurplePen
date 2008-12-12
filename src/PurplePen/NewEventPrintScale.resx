@@ -199,14 +199,11 @@
   <data name="&gt;&gt;defaultPrintScaleLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="changeLaterLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="changeLaterLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 191</value>
+    <value>29, 180</value>
   </data>
   <data name="changeLaterLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>419, 13</value>
+    <value>469, 45</value>
   </data>
   <data name="changeLaterLabel.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>

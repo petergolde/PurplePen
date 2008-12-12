@@ -195,6 +195,7 @@ namespace PurplePen
             // copiesLabel
             // 
             resources.ApplyResources(this.copiesLabel, "copiesLabel");
+            this.copiesLabel.MaximumSize = new System.Drawing.Size(130, 50);
             this.copiesLabel.Name = "copiesLabel";
             // 
             // printDialog

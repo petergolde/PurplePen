@@ -309,9 +309,6 @@
   <data name="buttonChangeText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="buttonChangeText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="buttonChangeText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -341,9 +338,6 @@
   </data>
   <data name="buttonDefault.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
-  </data>
-  <data name="buttonDefault.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="buttonDefault.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
