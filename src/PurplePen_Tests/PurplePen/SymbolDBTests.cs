@@ -298,6 +298,15 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void HasLanguage()
+        {
+            SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\intl_symbols.xml"));
+            Assert.IsTrue(symbolDB.HasLanguage("en"));
+            Assert.IsTrue(symbolDB.HasLanguage("bg"));
+            Assert.IsFalse(symbolDB.HasLanguage("az"));
+        }
+
+        [TestMethod]
         public void LanguageTexts()
         {
             SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\intl_symbols.xml"));

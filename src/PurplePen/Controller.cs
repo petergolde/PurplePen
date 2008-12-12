@@ -630,6 +630,12 @@ namespace PurplePen
             return success;
         }
 
+        // Mark the file clean, without saving. Be careful -- this can easily lead to data loss!!!
+        public void MarkClean()
+        {
+            undoMgr.MarkClean();
+        }
+
         // Try to close the current file and reinitialize state. 
         // If we're dirty, ask the user whether to save, not save, or cancel.
         // Return true if closed and re-initialized.
@@ -1705,6 +1711,12 @@ namespace PurplePen
             ChangeEvent.ChangeDescriptionLanguage(eventDB, descriptionLangId);
             ChangeEvent.ChangeCustomSymbolText(eventDB, customSymbolText, customSymbolKey);
             undoMgr.EndCommand(9329);
+        }
+
+        // Is the description language existing?
+        public bool HasDescriptionLanguage(string langId)
+        {
+            return symbolDB.HasLanguage(langId);
         }
 
         // Set the description language

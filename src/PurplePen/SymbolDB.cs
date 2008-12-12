@@ -848,6 +848,12 @@ namespace PurplePen
             get { return languages; }
         }
 
+        // Does the language exist?
+        public bool HasLanguage(string langId)
+        {
+            return languages.Exists(symlang => (symlang.LangId == langId));
+        }
+
         /// <summary>
         /// Get the symbol with a given id. If id doesn't exist, throws exception.
         /// </summary>

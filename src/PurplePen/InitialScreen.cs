@@ -135,6 +135,13 @@ namespace PurplePen
                 return;
             }
 
+            // Set the description language to the UI language.
+            string langId = Util.CurrentLangName();
+            if (controller.HasDescriptionLanguage(langId)) {
+                controller.SetDescriptionLanguage(langId);
+                controller.MarkClean();
+            }
+
             // Start the UI
             mainFrame.Show();
             mainFrame.Activate();
