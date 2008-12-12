@@ -241,6 +241,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The current event has textual control descriptions in {0}. Would you like to change the language of control descriptions to {1}?.
+        /// </summary>
+        internal static string ChangeDescriptionLanguage {
+            get {
+                return ResourceManager.GetString("ChangeDescriptionLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter the new text..
         /// </summary>
         internal static string ChangeTextSpecialExplanation {

@@ -112,6 +112,12 @@ namespace PurplePen
             return changed;
         }
 
+        // Update changenum.
+        public void ForceChangeUpdate()
+        {
+            ++selectionChangeNum;
+        }
+
         // Get the number of tabs to show in the UI.
         public int TabCount
         {

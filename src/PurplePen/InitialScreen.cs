@@ -153,7 +153,7 @@ namespace PurplePen
             return Util.GetFileInAppDirectory(@"Samples\Sample Event.ppen");
         }
 
-        // Open sample event was selected.
+        // Open sample event was selected
         public void OpenSampleEvent()
         {
             MainFrame mainFrame = new MainFrame();

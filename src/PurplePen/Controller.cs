@@ -130,6 +130,13 @@ namespace PurplePen
             return changed;
         }
 
+        // Update changenum.
+        public void ForceChangeUpdate()
+        {
+            ++changeNum;
+            selectionMgr.ForceChangeUpdate();
+        }
+
         // Should the highlight be scrolled into view?
         // Returns true once after set to true, then resets to false.
         public bool ScrollHighlightIntoView

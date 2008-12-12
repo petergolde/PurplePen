@@ -1546,8 +1546,6 @@ namespace PurplePen.MapModel
             float width = (float) Math.Round(patternWidth / pixelSize);
             float height = (float) Math.Round(patternHeight / pixelSize);
 
-            Debug.WriteLine(string.Format("Caching pattern bitmap of size {0} x {1} for symdef {2}, pizelSize={3}, pixelSizeCached={4}", width, height, this.OcadID, pixelSize, pixelSizeCached));
-
             // Create dictionary to hold brushes for each color.
             patternBrushes = new Dictionary<SymColor, Brush>(2);
             pixelSizeCached = pixelSize;
