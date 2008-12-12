@@ -111,6 +111,7 @@ namespace PurplePen
             resources.ApplyResources(this.openLastRadioButton, "openLastRadioButton");
             this.openLastRadioButton.Checked = true;
             this.openLastRadioButton.Name = "openLastRadioButton";
+            this.openLastRadioButton.TabStop = true;
             // 
             // InitialScreen
             // 

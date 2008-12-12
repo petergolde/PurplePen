@@ -126,7 +126,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="openExistingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 188</value>
+    <value>34, 160</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="openExistingRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -169,7 +169,7 @@
     <value>170, 22</value>
   </data>
   <data name="createNewRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
     <value>Create a new event...</value>
@@ -202,7 +202,7 @@
     <value>83, 25</value>
   </data>
   <data name="okButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
@@ -268,7 +268,7 @@
     <value>335, 117</value>
   </data>
   <data name="backgroundPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;backgroundPanel.Name" xml:space="preserve">
     <value>backgroundPanel</value>
@@ -298,7 +298,7 @@
     <value>167, 22</value>
   </data>
   <data name="openSampleRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
     <value>Open a sample event</value>
@@ -325,7 +325,7 @@
     <value>NoControl</value>
   </data>
   <data name="openLastRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 160</value>
+    <value>34, 188</value>
   </data>
   <data name="openLastRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -334,7 +334,7 @@
     <value>179, 22</value>
   </data>
   <data name="openLastRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Open last viewed event</value>
