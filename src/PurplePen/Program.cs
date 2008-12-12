@@ -83,7 +83,7 @@ namespace PurplePen
             MainFrame mainFrame = new MainFrame();
             Controller controller = new Controller(mainFrame);
 
-            if (!controller.LoadInitialFile(filename)) {
+            if (!controller.LoadInitialFile(filename, true)) {
                 // File didn't load. 
                 // Go back and show the initial screen again.
                 mainFrame.Dispose();

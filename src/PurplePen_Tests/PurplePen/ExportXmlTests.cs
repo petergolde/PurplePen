@@ -60,7 +60,7 @@ namespace PurplePen.Tests
         {
             ui = TestUI.Create();
             controller = ui.controller;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(filename));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(filename), true);
             Assert.IsTrue(success);
         }
 

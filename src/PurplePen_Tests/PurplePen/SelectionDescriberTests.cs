@@ -69,7 +69,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(2));
@@ -114,7 +114,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectControl(ControlId(81));
@@ -158,7 +158,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(2));
@@ -211,7 +211,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(2));
@@ -256,7 +256,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(2));
@@ -309,7 +309,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(2));
@@ -354,7 +354,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(5));
@@ -399,7 +399,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\sampleevent2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\sampleevent2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(6));
@@ -418,7 +418,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(6));
@@ -448,7 +448,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(3));
@@ -484,7 +484,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(3));
@@ -528,7 +528,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(9));
@@ -564,7 +564,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(6));
@@ -610,7 +610,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(6));
@@ -664,7 +664,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));
@@ -710,7 +710,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));
@@ -755,7 +755,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));
@@ -800,7 +800,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
@@ -829,7 +829,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(3));
@@ -867,7 +867,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(10));
@@ -912,7 +912,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(5));
@@ -957,7 +957,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(10));
@@ -996,7 +996,7 @@ namespace PurplePen.Tests
             TextPart textpart;
             int index;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Id<Course>.None);

@@ -63,7 +63,7 @@ namespace PurplePen.Tests
 
             string fileName = TestUtil.GetTestFile("modes\\marymoor.coursescribe");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
         }
 

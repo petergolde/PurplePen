@@ -74,7 +74,7 @@ namespace PurplePen.Tests
         {
             string fileName = TestUtil.GetTestFile("controller\\sampleevent1.coursescribe");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
 
             EventDB eventDB = controller.GetEventDB();
@@ -95,7 +95,7 @@ namespace PurplePen.Tests
             ui.newMapType = MapType.OCAD;
             ui.newMapDpi = 0;
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
 
             string expected = "ERROR: '" + String.Format(MiscText.MissingMapFile, Path.GetFileName(ui.expectedMissingMapFile)) + "'\r\n";
@@ -113,7 +113,7 @@ namespace PurplePen.Tests
         {
             string fileName = TestUtil.GetTestFile("controller\\missingmap.ppen");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
 
             EventDB eventDB = controller.GetEventDB();
@@ -130,7 +130,7 @@ namespace PurplePen.Tests
         {
             string fileName = TestUtil.GetTestFile("XBogus.coursescribe");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsFalse(success);
             Console.WriteLine(ui.output.ToString());
 
@@ -195,7 +195,7 @@ Invalid control point kind 'norfmal''
         [TestMethod]
         public void NewEvent()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             controller.SaveAs(TestUtil.GetTestFile("file_temp.coursescribe"));
             File.Delete(TestUtil.GetTestFile("file_temp.coursescribe"));
@@ -282,7 +282,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void IsDirty()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.IsDirty);
@@ -303,7 +303,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             File.Delete(newFile1);
             File.Delete(newFile2);
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SaveAs(newFile1);
@@ -311,7 +311,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
 
             // Load the file we saved, make sure it is ok.
             Setup();
-            success = controller.LoadInitialFile(newFile1);
+            success = controller.LoadInitialFile(newFile1, true);
             Assert.IsTrue(success);
 
             eventDB = controller.GetEventDB();
@@ -327,7 +327,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
 
             // Load the new files we saved, make sure it has the change.
             Setup();
-            success = controller.LoadInitialFile(newFile2);
+            success = controller.LoadInitialFile(newFile2, true);
             Assert.IsTrue(success);
 
             eventDB = controller.GetEventDB();
@@ -340,7 +340,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void TryCloseFileClean()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             success = controller.TryCloseFile();
@@ -351,7 +351,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void TryCloseFileYes()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             controller.SaveAs(TestUtil.GetTestFile("file_temp.coursescribe"));
             File.Delete(TestUtil.GetTestFile("file_temp.coursescribe"));
@@ -371,7 +371,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void TryCloseFileNo()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             controller.SaveAs(TestUtil.GetTestFile("file_temp.coursescribe"));
             File.Delete(TestUtil.GetTestFile("file_temp.coursescribe"));
@@ -392,7 +392,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void TryCloseFileCancel()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             controller.SaveAs(TestUtil.GetTestFile("file_temp.coursescribe"));
             File.Delete(TestUtil.GetTestFile("file_temp.coursescribe"));
@@ -413,7 +413,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void LoadNewFile()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             controller.SaveAs(TestUtil.GetTestFile("controller\\file_temp.coursescribe"));
             File.Delete(TestUtil.GetTestFile("controller\\file_temp.coursescribe"));
@@ -443,7 +443,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void UndoRedo()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
             Assert.IsFalse(controller.IsDirty);
 
@@ -481,7 +481,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(3);
@@ -518,7 +518,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -544,7 +544,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             // course control 15 -- was control 4 (code 32). change to control 17 (code 302)
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             CourseControl courseControl;
@@ -568,7 +568,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
@@ -589,7 +589,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
@@ -610,7 +610,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -629,7 +629,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -653,7 +653,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -669,7 +669,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(5);
@@ -688,7 +688,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);
@@ -718,7 +718,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Dictionary<string, bool> customSymbolKey;
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent5.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent5.ppen"), true);
             Assert.IsTrue(success);
 
             // Change to new text.
@@ -743,7 +743,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);
@@ -764,7 +764,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             EventDB eventDB = controller.GetEventDB();
             SymbolDB symbolDB = ui.symbolDB;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(5);
@@ -781,7 +781,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             string fileName = TestUtil.GetTestFile("controller\\sampleevent1.coursescribe");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(MapType.OCAD, controller.MapType);
@@ -794,7 +794,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             UndoMgr undomgr = controller.GetUndoMgr();
             string fileName = TestUtil.GetTestFile("controller\\sampleevent1.coursescribe");
 
-            bool success = controller.LoadInitialFile(fileName);
+            bool success = controller.LoadInitialFile(fileName, true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(MapType.OCAD, controller.MapType);
@@ -841,7 +841,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void TabList()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             string[] expected = { "All controls", "Green Y", "Rambo", "SampleCourse4", "Score 4", "White", "Yellow" };
@@ -857,7 +857,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void ActiveTab()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(0, controller.ActiveTab);
@@ -884,7 +884,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void CanDelete()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.CanDeleteSelection());
@@ -904,7 +904,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void CanDeleteSpecial()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.CanDeleteSelection());
@@ -922,7 +922,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         public void DeleteSpecial()
         {
             EventDB eventDB = controller.GetEventDB();
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.GetSelectionMgr().SelectSpecial(SpecialId(1));
@@ -946,7 +946,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteCourseControl()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -970,7 +970,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteCourseControlAndControl()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);
@@ -1000,7 +1000,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteCourseControlButNotControl()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);
@@ -1030,7 +1030,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteAllControlsUnusedControl()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
@@ -1052,7 +1052,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteAllControlsUsedControlYes()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
@@ -1086,7 +1086,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void DeleteAllControlsUsedControlNo()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
@@ -1113,7 +1113,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         public void DeleteStartCourseControlAndControl()
         {
             EventDB eventDB = controller.GetEventDB();
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             // Change course 6 to use a new start control.
@@ -1157,7 +1157,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void ShowAllControls()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -1196,7 +1196,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         [TestMethod]
         public void ShowAllControls2()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             // Show all controls is available for the all controls tab, but doesn't add another course layout.
@@ -1235,7 +1235,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
         {
             StringWriter writer;
             string mainCourseText;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent3.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent3.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(1);
@@ -1298,7 +1298,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         [TestMethod]
         public void ScrollHighlightIntoView()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.ScrollHighlightIntoView);
@@ -1314,7 +1314,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         [TestMethod]
         public void DeleteCourseNotControls()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.CanDeleteCurrentCourse());
@@ -1353,7 +1353,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         [TestMethod]
         public void DeleteCourseAndControls()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(controller.CanDeleteCurrentCourse());
@@ -1394,7 +1394,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.NewCourse(CourseKind.Normal, "My New Course", "Secondary Title", 15000, 25, DescriptionKind.Symbols);
@@ -1417,7 +1417,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"), true);
 
             Assert.IsTrue(success);
 
@@ -1456,7 +1456,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent12.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent12.ppen"), true);
 
             Assert.IsTrue(success);
 
@@ -1473,7 +1473,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.MoveSpecial(SpecialId(1), new PointF[1] { new PointF(12.1F, -38.1F) });
@@ -1485,7 +1485,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
             controller.MoveSpecialDelta(SpecialId(1), 6.5F, -1.1F);
@@ -1502,7 +1502,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\speciallegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\speciallegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             FlaggingKind flagging;
@@ -1522,7 +1522,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\speciallegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\speciallegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             FlaggingKind flagging;
@@ -1547,7 +1547,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             string[] expected = { "31","32","74","189","190","191","210","211","290","291","301","302","303","304","305","306","GO"};
@@ -1565,7 +1565,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             string[] expected = { "31", "32", "74", "189", "190", "191", "210", "211", "290", "291", "301", "302", "303", "304", "305", "306", "GO" };
@@ -1601,7 +1601,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor3.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor3.coursescribe"), true);
             Assert.IsTrue(success);
 
             loads = controller.GetAllCourseLoads();
@@ -1636,7 +1636,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor3.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor3.coursescribe"), true);
             Assert.IsTrue(success);
 
             Controller.CourseLoadInfo[] loads = controller.GetAllCourseLoads();
@@ -1664,7 +1664,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.coursescribe"), true);
             Assert.IsTrue(success);
 
             orders = controller.GetAllCourseOrders();
@@ -1691,7 +1691,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.coursescribe"), true);
             Assert.IsTrue(success);
 
             Controller.CourseOrderInfo[] orders = controller.GetAllCourseOrders();
@@ -1715,7 +1715,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(eventDB.GetCourseControl(CourseControlId(206)).customNumberPlacement);
@@ -1737,7 +1737,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
             UndoMgr undoMgr = controller.GetUndoMgr();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.IsFalse(eventDB.GetControl(ControlId(17)).customCodeLocation);
@@ -1755,7 +1755,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         [TestMethod]
         public void MissingFontWarning()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\missingfont.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\missingfont.ppen"), true);
             Assert.IsTrue(success);
 
             // First time, should get the list of missing fonts.
@@ -1792,7 +1792,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(file);
+            bool success = controller.LoadInitialFile(file, true);
             Assert.IsTrue(success);
 
             controller.SetCourseAppearance(appearance);
@@ -1973,7 +1973,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             EventDB eventDB = controller.GetEventDB();
 
             // First, create ocad files.
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\create_ocad5.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\create_ocad5.ppen"), true);
             Assert.IsTrue(success);
 
             success = controller.CreateOcadFiles(settings);
@@ -1997,7 +1997,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             DescriptionLine.TextLineKind textLineKind;
             bool canAdd, enableThisCourse;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);    // All controls.
@@ -2046,7 +2046,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(0);    // All controls.
@@ -2085,7 +2085,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);    // All controls.
@@ -2119,7 +2119,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             controller.SelectTab(4);    // All controls.
@@ -2149,7 +2149,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.ppen"), true);
             Assert.IsTrue(success);
 
             List<KeyValuePair<Id<ControlPoint>, string>> result, expected;
@@ -2176,7 +2176,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         {
             EventDB eventDB = controller.GetEventDB();
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor5.ppen"), true);
             Assert.IsTrue(success);
 
             controller.RemoveControls(new List<Id<ControlPoint>> { ControlId(83), ControlId(86), ControlId(87), ControlId(42) });

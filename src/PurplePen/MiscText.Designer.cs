@@ -649,6 +649,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open &quot;{0}&quot;.
+        /// </summary>
+        internal static string OpenLastEvent {
+            get {
+                return ResourceManager.GetString("OpenLastEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The page size is too small for any descriptions to be printed..
         /// </summary>
         internal static string PageTooSmall {

@@ -126,7 +126,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="openExistingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 178</value>
+    <value>34, 188</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="openExistingRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;openExistingRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="createNewRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -160,7 +160,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="createNewRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 140</value>
+    <value>34, 132</value>
   </data>
   <data name="createNewRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;createNewRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="okButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -217,7 +217,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="quitButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -250,7 +250,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;quitButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="backgroundPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -280,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;backgroundPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="openSampleRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +289,7 @@
     <value>Tahoma, 11.25pt</value>
   </data>
   <data name="openSampleRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 216</value>
+    <value>34, 216</value>
   </data>
   <data name="openSampleRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -313,6 +313,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;openSampleRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="openLastRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="openLastRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 11.25pt</value>
+  </data>
+  <data name="openLastRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="openLastRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 160</value>
+  </data>
+  <data name="openLastRadioButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="openLastRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="openLastRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Open last viewed event</value>
+  </data>
+  <data name="&gt;&gt;openLastRadioButton.Name" xml:space="preserve">
+    <value>openLastRadioButton</value>
+  </data>
+  <data name="&gt;&gt;openLastRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openLastRadioButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;openLastRadioButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

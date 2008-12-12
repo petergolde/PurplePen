@@ -51,6 +51,16 @@ namespace PurplePen
 
             // Only enable the sample event if it exists.
             openSampleRadioButton.Enabled = File.Exists(SampleEventFileName());
+
+            // Only enable last event if it exists.
+            if (File.Exists(Settings.Default.LastLoadedFile)) {
+                openLastRadioButton.Text = string.Format(MiscText.OpenLastEvent, Path.GetFileNameWithoutExtension(Settings.Default.LastLoadedFile));
+            }
+            else {
+                openLastRadioButton.Enabled = false;
+                openLastRadioButton.Checked = false;
+                openExistingRadioButton.Checked = true;
+            }
         }
 
         // Create new event was selected.
@@ -99,7 +109,29 @@ namespace PurplePen
             Controller controller = new Controller(mainFrame);
 
             string fileName = mainFrame.GetOpenFileName();
-            if (fileName == null || ! controller.LoadInitialFile(fileName)) {
+            if (fileName == null || ! controller.LoadInitialFile(fileName, true)) {
+                // User cancelled or the file didn't load. 
+                // Go back and show the initial screen again.
+                mainFrame.Dispose();
+                Activate();
+                return;
+            }
+
+            // Start the UI
+            mainFrame.Show();
+            mainFrame.Activate();
+
+            Close();
+            Dispose();      // The initial screen is over and out.
+        }
+
+        // Open existing event was selected.
+        public void OpenLastViewedEvent()
+        {
+            MainFrame mainFrame = new MainFrame();
+            Controller controller = new Controller(mainFrame);
+
+            if (!controller.LoadInitialFile(Settings.Default.LastLoadedFile, true)) {
                 // User cancelled or the file didn't load. 
                 // Go back and show the initial screen again.
                 mainFrame.Dispose();
@@ -127,7 +159,7 @@ namespace PurplePen
             MainFrame mainFrame = new MainFrame();
             Controller controller = new Controller(mainFrame);
 
-            if (!controller.LoadInitialFile(SampleEventFileName())) {
+            if (!controller.LoadInitialFile(SampleEventFileName(), false)) {        // Don't set sample event as the last loaded file.
                 // File didn't load. 
                 // Go back and show the initial screen again.
                 mainFrame.Dispose();
@@ -154,6 +186,9 @@ namespace PurplePen
         {
             if (openExistingRadioButton.Checked) {
                 OpenExistingEvent();
+            }
+            else if (openLastRadioButton.Checked) {
+                OpenLastViewedEvent();
             }
             else if (createNewRadioButton.Checked) {
                 CreateNewEvent();

@@ -147,7 +147,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintCourses1()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
@@ -167,7 +167,7 @@ namespace PurplePen.Tests
             appearance.purpleM = 0;
             appearance.purpleK = 0.30F;
 
-            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
@@ -177,7 +177,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintingException()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };

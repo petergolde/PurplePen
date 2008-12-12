@@ -76,7 +76,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintDescriptions1()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
             DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
 
             descPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };
@@ -86,7 +86,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintDescriptions2()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
             DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
             descPrintSettings.PageSettings.Landscape = true;
             descPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
@@ -99,7 +99,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintDescriptions3()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor2.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor2.ppen"), true);
             DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
             descPrintSettings.PageSettings.Landscape = true;
             descPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
@@ -111,7 +111,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintingException()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
             DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
 
             descPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };

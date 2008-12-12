@@ -360,7 +360,7 @@ namespace PurplePen
         }
 
         // Load the initial file. Should only be called before any file has been loaded.
-        public bool LoadInitialFile(string fileName)
+        public bool LoadInitialFile(string fileName, bool setAsLastLoadedFile)
         {
             bool success = HandleExceptions(
                 delegate { eventDB.Load(fileName); },
@@ -368,6 +368,10 @@ namespace PurplePen
 
             if (success) {
                 this.fileName = Path.GetFullPath(fileName);
+                if (setAsLastLoadedFile) {
+                    Settings.Default.LastLoadedFile = this.fileName;
+                    Settings.Default.Save();
+                }
                 undoMgr.MarkClean();
                 selectionMgr.SelectCourseView(Id<Course>.None);
                 selectionMgr.ClearSelection();
@@ -382,7 +386,7 @@ namespace PurplePen
         public bool LoadNewFile(string fileName)
         {
             ResetState();
-            return LoadInitialFile(fileName);
+            return LoadInitialFile(fileName, true);
         }
 
         // Info needed to create a new event.
@@ -623,6 +627,8 @@ namespace PurplePen
 
             if (success) {
                 this.fileName = Path.GetFullPath(newFileName);
+                Settings.Default.LastLoadedFile = this.fileName;
+                Settings.Default.Save();
                 ++changeNum;
                 undoMgr.MarkClean();        // we saved, so the file isn't dirty any more.
             }

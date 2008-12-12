@@ -76,7 +76,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintPunches1()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);
             PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
             punchPrintSettings.BoxSize = 18;
 
@@ -87,7 +87,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintPunches2()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);
             PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
             punchPrintSettings.PageSettings.Landscape = true;
             punchPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
@@ -100,7 +100,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PrintingException()
         {
-            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"));
+            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);
             PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
 
             punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };

@@ -65,7 +65,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TabList()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(7, selectionMgr.TabCount);
@@ -93,7 +93,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddRemoveTabs()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(7, selectionMgr.TabCount);
@@ -130,7 +130,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ActiveTab()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             Assert.AreEqual(7, selectionMgr.TabCount);
@@ -158,7 +158,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ActiveDescription()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.ActiveTab = 3;
@@ -227,7 +227,7 @@ namespace PurplePen.Tests
         void RoundtripSelectedLines(string testFileName, bool singleLineOnly)
         {
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(testFileName));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(testFileName), true);
             Assert.IsTrue(success);
 
             // Make sure every line in every tab can be selected.
@@ -291,7 +291,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ClearSelection()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.ActiveTab = 0;
@@ -312,7 +312,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectCourseView()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(3));
@@ -324,7 +324,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SetSelection()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
@@ -362,7 +362,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectMultilineTitle()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent6.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent6.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));
@@ -388,7 +388,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectLeg()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
@@ -411,7 +411,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectLeg2()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\speciallegs.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\speciallegs.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));
@@ -432,7 +432,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectLegTestObj()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
@@ -460,7 +460,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectSpecial()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(4));
@@ -483,7 +483,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectTextLine()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\desctext.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(6));
@@ -520,7 +520,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectKeyLine()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent5.ppen"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent5.ppen"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(5));
@@ -541,7 +541,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectSpecialCourseObj()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
             // Select a special in all controls.
@@ -585,7 +585,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SelectedCourseObjects()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             StringWriter writer = new StringWriter();
@@ -619,7 +619,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
         [TestMethod]
         public void SelectCourseObjectAllControls()
         {
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(0));
@@ -650,7 +650,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
         public void SelectCourseObjectNormalCourse()
         {
             CourseObj courseobject;
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(3));
@@ -677,7 +677,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
         {
             SelectionMgr.SelectionInfo info;
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(0));
@@ -724,7 +724,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
         public void SetAllControlsDisplay()
         {
             StringWriter writer = new StringWriter();
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent3.coursescribe"));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent3.coursescribe"), true);
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(CourseId(1));

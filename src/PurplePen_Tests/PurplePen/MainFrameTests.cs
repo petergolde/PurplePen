@@ -56,7 +56,7 @@ namespace PurplePen.Tests
             mainFrame = new MainFrame();
             controller = new Controller(mainFrame);
 
-            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(filename));
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(filename), true);
             Assert.IsTrue(success);
 
             // Start the UI
