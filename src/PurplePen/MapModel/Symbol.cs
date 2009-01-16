@@ -337,7 +337,7 @@ namespace PurplePen.MapModel
             PointF[] pts = new PointF[4];
             TextSymDefAlignment fontAlign = def.FontAlignment;
 
-            if (fontAlign == TextSymDefAlignment.Left) {
+            if (fontAlign == TextSymDefAlignment.Left || fontAlign == TextSymDefAlignment.Justified) {
                 pts[0] = adjustedLocation;
                 pts[1].X = pts[0].X + size.Width; pts[1].Y = pts[0].Y;
                 pts[2].X = pts[0].X + size.Width; pts[2].Y = pts[0].Y - size.Height;
