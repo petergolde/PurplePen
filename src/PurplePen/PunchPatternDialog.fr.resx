@@ -121,7 +121,7 @@
     <value>Format du carton de contrôle...</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>Cliquer sur un numéro de poste dans la liste de gauche puis indiquer le schéma des poinçons sur le côté droit. Les postes dont les numéros sont en rouge n'ont pas encore de schéma.</value>
+    <value>Cliquer sur un numéro de poste dans la liste de gauche puis indiquer le schéma des poinçons sur le côté droit. Les postes dont les numéros sont en rouge n'ont pas de schéma défini.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Schéma des poinçons</value>

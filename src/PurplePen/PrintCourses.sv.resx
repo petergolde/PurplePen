@@ -118,9 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+    <value>Skriv ut</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Byt skrivare...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Pappersstorlek:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Skrivarnamn</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Skrivare:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Förhandsgranska...</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Banor</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Antal kopior av varje bana:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopior</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Skriv ut banor</value>
   </data>
 </root>

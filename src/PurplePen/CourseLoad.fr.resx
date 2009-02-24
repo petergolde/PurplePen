@@ -124,7 +124,7 @@
     <value>Nombre de concurrents</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
-    <value>Modifier le nombre de compétiteurs de chaque circuit en cliquant dans la seconde colonne et en tapant un numéro.</value>
+    <value>Modifier le nombre de concurrent sur chaque circuit en cliquant dans la seconde colonne et en tapant un nombre.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nombre de concurrent sur le circuit</value>

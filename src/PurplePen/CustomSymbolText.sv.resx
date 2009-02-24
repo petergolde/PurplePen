@@ -117,10 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>Välj språk för kontrollbeskrivning i textformat:</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="labelSymbolName.Text" xml:space="preserve">
+    <value>Symbolnamn:</value>
+  </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>Anpassad Text:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>Ändra text...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>Återställ standardinställning</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>Standard text:</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Visa betydelse under symbol för kontrollbeskrivning</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>Klicka på en symbol beskrivning för att anpassa den text som används i den skrivna kontrollbeskrivningen.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Anpassa text för kontrollbeskrivning</value>
   </data>
 </root>

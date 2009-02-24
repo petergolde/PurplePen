@@ -124,7 +124,7 @@
     <value>Créer une nouvelle course...</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Valider</value>
   </data>
   <data name="quitButton.Text" xml:space="preserve">
     <value>Quitter</value>

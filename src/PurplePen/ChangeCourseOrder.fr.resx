@@ -124,7 +124,9 @@
     <value>Utiliser les boutons "Monter" et "Descendre" pour changer l'ordre des circuits affichés dans l'interface utilisateur, les rapports et le module d'impression.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
-    <value>↑ Monter</value>
+    <value>↑ Monter
+
+</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ordre des circuits</value>

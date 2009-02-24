@@ -117,10 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Ändra marginaler...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Pappersstorlek:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Ovanför: 0.55", Nedanför: 0.55", Vänster: 0.55", Höger: 0.55"</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Marginaler:</value>
+  </data>
+  <data name="orientation.Text" xml:space="preserve">
+    <value>Liggande</value>
+  </data>
+  <data name="orientationLabel.Text" xml:space="preserve">
+    <value>Orientering:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Skrivarnamn</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Byt skrivare...</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Skrivare:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
+  <data name="punchCardLayoutButton.Text" xml:space="preserve">
+    <value>Stämpelkort layout...</value>
+  </data>
+  <data name="mmSuffixLabel.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="punchBoxSizeLabel.Text" xml:space="preserve">
+    <value>Storlek på stämpelruta:</value>
+  </data>
+  <data name="layoutGroup.Text" xml:space="preserve">
+    <value>Utseende</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Avbryt</value>
+  </data>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>Skriv ut</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Förhandsgranska...</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Banor</value>
+  </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>Kopior:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopior</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Skriv ut stämpelkort</value>
   </data>
 </root>

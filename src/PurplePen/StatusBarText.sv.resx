@@ -117,10 +117,88 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Vänster musknapp: Välj objekt; Höger musknapp: Flytta karta; Musens scrollhjul: Zooma in/ut</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Vänster musknapp: flytta/storleksförändra rektangel; Höger musknapp: flytta karta; Musens scrollhjul: Zooma in/ut</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Håll ner vänster musknapp och dra för att flytta valt objekt</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Håll ner vänster musknapp och dra hörnpunkten för att flytta den</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Flytta objektet till önskad position och släpp musknappen</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Flytta hörnpunkten till önskad position och släpp musknappen</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Klicka på vänster musknapp för att placera ut en ny kontroll</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Klicka på vänster musknapp för att lägga till kontroll "{0}" till banan</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Klicka på vänster musknapp för att lägga till en ny start</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Klicka med vänster musknapp för att lägga till befintlig start till bana</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Klicka på vänster musknapp för att lägga till ett nytt mål</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Klicka med vänster musknapp för att lägga till mål till bana.</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Klicka med vänster musknapp för att placera ut ny obligatorisk passage.</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Klicka med vänster musknapp för att lägga till befintlig obligatorisk passage till bana</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Klicka på vänster musknapp för att lägga till ett nytt objekt</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Klicka med vänster musknapp på platsen för böjen</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Klicka med vänster musknapp för att placera ut nytt hörn.</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Klicka på en böj med vänster musknapp för att ta bort den.</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Klicka på ett hörn med vänster musknapp för att ta bort det.</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Klicka på en kontroll med vänster musknapp för att skapa gap i ringen</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Klicka på ett gap i kontrollcirkeln med vänster musknapp för att ta bort det.</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Håll ner vänster mus knapp och drag för att skapa gap i linjen för sträckan</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Klicka på ett gap i sträckans linje med vänster musknapp för att ta bort gapet</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Håll ner vänster musknapp och dra till önskad storlek för valt objekt</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Flytta kant(er) till önskad position och släpp mus knapp</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Håll ned vänster musknapp och drag för att addera kontrollbeskrivning</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Klicka med vänster musknapp när passagen är roterad i rätt riktning.</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Håll ned vänster musknapp och drag för att addera ett nytt segment i linjen, klicka med vänster musknapp för att avsluta</value>
   </data>
 </root>

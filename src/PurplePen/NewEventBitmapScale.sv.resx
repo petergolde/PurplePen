@@ -117,10 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>När du använder en bildfil som kartunderlag måste du specificera upplösningen på bilden och kartskalan. 
+
+Upplösningen på bilden anger hur många pixlar eller punkter det är i bilden för varje (engelsk) tum på den utskrivna kartan; vanligtvis benämd punkter per tum (dots per inch, dpi).
+
+Kartans skala anger förhållandet mellan (utskriven) karta och verkligheten.
+</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Bildens upplösning:</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>punkter per tum</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Kartskala:</value>
   </data>
 </root>

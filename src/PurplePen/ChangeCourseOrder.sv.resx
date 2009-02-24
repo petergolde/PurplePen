@@ -117,10 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="moveDownButton.Text" xml:space="preserve">
+    <value>↓ Flytta ned</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="courseOrderLabel.Text" xml:space="preserve">
+    <value>Använd knapparna "Flytta upp" respektive "Flytta ner" för att ändra ordningen som banor är listade i användargränssnittet, på rapporter och vid utskrift.</value>
+  </data>
+  <data name="moveUpButton.Text" xml:space="preserve">
+    <value>↑ Flytta upp
+
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Banornas visningsordning</value>
   </data>
 </root>

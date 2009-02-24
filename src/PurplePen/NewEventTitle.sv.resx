@@ -117,10 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>Tävlingstiteln kommer visas på första raden på varje sida av kontrollbeskrivning. Det används användas som filnamnet för att spara din tävling på hårddisken.
+
+För att passa in på kontrollbeskrivningen måste den vara mindre än 25 tecken lång. Exempel på bra tävlingstitlar är "O-ringen Etapp 1" eller "Skogen OK, 5 jan 2009".</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="eventTitleLabel.Text" xml:space="preserve">
+    <value>Tävlingens namn:</value>
   </data>
 </root>

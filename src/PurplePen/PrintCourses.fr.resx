@@ -150,6 +150,9 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copies</value>
   </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Présentation</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimer les circuits</value>
   </data>

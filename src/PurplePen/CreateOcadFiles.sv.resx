@@ -117,10 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Banor</value>
+  </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Skapa</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Avbryt</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Välj katalog för OCAD-filerna</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Filnamnsprefix:</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Filformat:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
+  <data name="fileFormatCombo.Items3" xml:space="preserve">
+    <value>OCAD 9</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Katalog</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Välj katalog...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annan katalog</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som kartfilen</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som Puple Pen-filen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Skapa OCAD-filer</value>
   </data>
 </root>

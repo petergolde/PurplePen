@@ -121,7 +121,7 @@
     <value>Ne plus m'alerter sur les polices manquantes pour cette course</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Valider</value>
   </data>
   <data name="labelWarning.Text" xml:space="preserve">
     <value>La carte "{0}" utilise des polices qui ne sont pas installées sur votre ordinateur. Le texte qui utilise ces polices sera affiché et imprimé avec une police par défaut, ce qui pourra le faire apparaitre différemment de ce qu'avait prévu le créateur de la carte. 

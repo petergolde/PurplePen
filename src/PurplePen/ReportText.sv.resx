@@ -117,148 +117,154 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ChangeSymbol" xml:space="preserve">
-    <value>Modifier le symbole</value>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Stigning</value>
   </data>
-  <data name="ChangeCode" xml:space="preserve">
-    <value>Modifier le numéro de poste</value>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Kodsiffra</value>
   </data>
-  <data name="ChangeControl" xml:space="preserve">
-    <value>Modifier le poste</value>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Kolumn</value>
   </data>
-  <data name="ChangeScore" xml:space="preserve">
-    <value>Modifier les points affectés au poste</value>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Kontroll</value>
   </data>
-  <data name="ChangeTitle" xml:space="preserve">
-    <value>Changer le titre</value>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Kodsiffror</value>
   </data>
-  <data name="ChangeClimb" xml:space="preserve">
-    <value>Modifier la dénivelée</value>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Kontroller</value>
   </data>
-  <data name="ChangeCourseName" xml:space="preserve">
-    <value>Modifier le nom du circuit</value>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Bana</value>
   </data>
-  <data name="ChangeTextLine" xml:space="preserve">
-    <value>Modifier la ligne de texte</value>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distans</value>
   </data>
-  <data name="ChangeScale" xml:space="preserve">
-    <value>Mettre à jour l'échelle de la carte</value>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Objekt</value>
   </data>
-  <data name="MoveControl" xml:space="preserve">
-    <value>Déplacer le poste</value>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Sträcka</value>
   </data>
-  <data name="MoveControlNumber" xml:space="preserve">
-    <value>Déplacer le numéro du poste</value>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Längd</value>
   </data>
-  <data name="MoveObject" xml:space="preserve">
-    <value>Déplacer l'objet</value>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Ladda</value>
   </data>
-  <data name="DeleteControl" xml:space="preserve">
-    <value>Supprimer le poste</value>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Plats</value>
   </data>
-  <data name="DeleteObject" xml:space="preserve">
-    <value>Supprimer l'objet</value>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Banor</value>
   </data>
-  <data name="DeleteTextLine" xml:space="preserve">
-    <value>Supprimer la ligne de texte</value>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Orsak</value>
   </data>
-  <data name="AddControl" xml:space="preserve">
-    <value>Ajouter un poste</value>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Samma symbol?</value>
   </data>
-  <data name="AddStart" xml:space="preserve">
-    <value>Ajouter un départ</value>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Bansammanställning för {0}</value>
   </data>
-  <data name="AddFinish" xml:space="preserve">
-    <value>Ajouter une arrivée</value>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Korsreferens kontroller för {0}</value>
   </data>
-  <data name="AddCrossingPoint" xml:space="preserve">
-    <value>Ajouter un passage obligatoire</value>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Tättliggande kontroller</value>
   </data>
-  <data name="AddObject" xml:space="preserve">
-    <value>Ajouter un objet</value>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Tabellen visar kontrollpar som ligger inom {0} meters avstånd från varandra. Symbolkolumn D visar om de två kontrollerna även är av samma typ.</value>
   </data>
-  <data name="DeleteCourse" xml:space="preserve">
-    <value>Supprimer le circuit</value>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Saknade kontrollbeskrivningsrutor</value>
   </data>
-  <data name="NewCourse" xml:space="preserve">
-    <value>Nouveau Circuit</value>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Vanliga banor ska indikera hur mycket stigning de har</value>
   </data>
-  <data name="ChangeCourseProperties" xml:space="preserve">
-    <value>Modifier les propriétés du circuit</value>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Alla kontroller måste ha en symbol i kolumn D</value>
   </data>
-  <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Modifier les propriétés Tous Postes</value>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Om "mellan" används i kolumn G, så måste två föremål visas i kolumn D och E</value>
   </data>
-  <data name="NewEvent" xml:space="preserve">
-    <value>Créer une nouvelle course</value>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Om "förgrening" eller "korsning" används i kolumn F, så måste två föremål visas i kolumn D och E</value>
   </data>
-  <data name="SetLegFlagging" xml:space="preserve">
-    <value>Modifier le jalonnage de l'interposte</value>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Vanliga banor skall ha en målplats</value>
   </data>
-  <data name="ChangeCodes" xml:space="preserve">
-    <value>Modifier les numéros de poste</value>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Saknade objekt i banor</value>
   </data>
-  <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Modifier les circuits affichés</value>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Banan förväntas belastas med följande antal löpare</value>
   </data>
-  <data name="MoveBend" xml:space="preserve">
-    <value>Déplacer le coude</value>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Ingen stämpelmall angiven</value>
   </data>
-  <data name="AddBend" xml:space="preserve">
-    <value>Insérer un coude</value>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Stämpelmall saknas</value>
   </data>
-  <data name="AddCorner" xml:space="preserve">
-    <value>Insérer un coin</value>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Poängbanor skall ha poäng angiven för alla kontroller eller inga kontroller</value>
   </data>
-  <data name="DeleteBend" xml:space="preserve">
-    <value>Supprimer un coude</value>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Det saknas poäng</value>
   </data>
-  <data name="DeleteCorner" xml:space="preserve">
-    <value>Supprimer un coin</value>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Vanliga banor skall ha en startplats</value>
   </data>
-  <data name="AddGap" xml:space="preserve">
-    <value>Insérer un intervalle</value>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Poängbanor skall ha en startplats</value>
   </data>
-  <data name="RemoveGap" xml:space="preserve">
-    <value>Supprimer un intervalle</value>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Nej</value>
   </data>
-  <data name="MoveGap" xml:space="preserve">
-    <value>Bouger un intervalle</value>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Allt är OK</value>
   </data>
-  <data name="Rotate" xml:space="preserve">
-    <value>Rotation</value>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Tävlingskontroll för {0}</value>
   </data>
-  <data name="AutoNumbering" xml:space="preserve">
-    <value>Numérotation Automatique</value>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Oanvända kontroller</value>
   </data>
-  <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>Modifier Poinçons</value>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Följande kontroller finns i samlingen Alla kontroller men används inte i någn bana. Ta bort dem genom "Ta bort oanvända kontroller" som finns under Tävlingsmenyn. Dessa kontroller kommer inte att räknas in i resten av denna rapport.</value>
   </data>
-  <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Modifier format carton de contrôle</value>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Ja</value>
   </data>
-  <data name="SetPrintArea" xml:space="preserve">
-    <value>Définir la zone d'impression</value>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Medelvärde</value>
   </data>
-  <data name="SetCourseLoad" xml:space="preserve">
-    <value>Modifier le nombre de concurrents</value>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} kontroller, {2:0.0} km, {3} m stigning)</value>
   </data>
-  <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>Personnaliser le texte descriptif</value>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} kontroller, {2:0.0} km)</value>
   </data>
-  <data name="ChangeCourseOrder" xml:space="preserve">
-    <value>Modifier l'ordre des circuits</value>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Sträcklängdsrapport för {0}</value>
   </data>
-  <data name="ChangeMapFile" xml:space="preserve">
-    <value>Changer de carte</value>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Belastning kontroll</value>
   </data>
-  <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignorer les polices manquantes</value>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Belastning sträcka</value>
   </data>
-  <data name="AddTextLine" xml:space="preserve">
-    <value>Ajouter une ligne de texte</value>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Några eller alla banor saknar angivelse om hur många löpare det är per bana. Tätheten av löpare angiven nedan kan därför vara saknad eller felaktig. För att ange antal löpare per bana, välj "Inställning av antal löpare per bana" från menyn "Bana"</value>
   </data>
-  <data name="RemoveUnusedControls" xml:space="preserve">
-    <value>Supprimer les postes inutilisés</value>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(Enbart sträckor som används i mer än en bana syns i denna rapport)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Sammanfattning av antal löpare för {0}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>VARNING:</value>
   </data>
 </root>

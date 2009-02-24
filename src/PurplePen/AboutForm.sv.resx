@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="copyrightLabel.Text" xml:space="preserve">
+    <value>Copyright © 2007-2009 Peter Golde</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="freeLabel.Text" xml:space="preserve">
+    <value>Purple Pen är fri programvara och får spridas.</value>
+  </data>
+  <data name="disclaimerLabel.Text" xml:space="preserve">
+    <value>DEN HÄR PROGRAMVARAN TILLHANDAHÅLLS AV UPPHOVSRÄTTSINNEHAVARNA OCH MEDARBETARNA "SOM DEN ÄR" OCH FRÅNSÄGER SIG NÅGRA SOM HELST UTTRYCKTA ELLER UNDERFÖRSTÅDDA GARANTIER, INKLUDERANDE, MEN EJ BEGRÄNSAD TILL, DE UNDERFÖRSTÅDDA GARANTIERNA AV SÄLJBARHET OCH LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL.</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="licenseButton.Text" xml:space="preserve">
+    <value>Se hela licensen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Om Purple Pen</value>
   </data>
 </root>

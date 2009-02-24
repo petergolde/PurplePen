@@ -117,10 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
+    <value>Definitionens utseende</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Kartans utskriftsskala:</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
+  </data>
+  <data name="descKindCombo.Items" xml:space="preserve">
+    <value>Symboler</value>
+  </data>
+  <data name="descKindCombo.Items1" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="descKindCombo.Items2" xml:space="preserve">
+    <value>Symboler och text</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Standard utseende</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Följande text kommer synas på andra raden av Kontrolldefinitionen (Valfritt).</value>
+  </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>Klasslista / sekundär titel</value>
+  </data>
+  <data name="climbLabel.Text" xml:space="preserve">
+    <value>Stigning:</value>
+  </data>
+  <data name="courseTypeLabel.Text" xml:space="preserve">
+    <value>Bantyp:</value>
+  </data>
+  <data name="courseNameLabel.Text" xml:space="preserve">
+    <value>Banans namn:</value>
+  </data>
+  <data name="courseKindCombo.Items" xml:space="preserve">
+    <value>Normal bana</value>
+  </data>
+  <data name="courseKindCombo.Items1" xml:space="preserve">
+    <value>Poängbana</value>
+  </data>
+  <data name="metersSuffix.Text" xml:space="preserve">
+    <value>meter</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ny bana</value>
   </data>
 </root>

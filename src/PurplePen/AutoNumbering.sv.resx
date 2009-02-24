@@ -117,10 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
+    <value>Tillåt inte kodsiffror som kan läsas upp-och-ned (t.ex. "68" och "89")</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="renumberExistingRadioButton.Text" xml:space="preserve">
+    <value>Numrera om existerande kontroller med</value>
+  </data>
+  <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
+    <value>Använd inställningar endast på nyskapade kontroller</value>
+  </data>
+  <data name="existingControlsGroupBox.Text" xml:space="preserve">
+    <value>Existerande Kontroller</value>
+  </data>
+  <data name="automaticNumberingLabel.Text" xml:space="preserve">
+    <value>Nya kontroller numreras automatiskt efter följande inställningar</value>
+  </data>
+  <data name="startingCodeLabel.Text" xml:space="preserve">
+    <value>Börja med kodsiffra:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Automatisk numrering</value>
   </data>
 </root>

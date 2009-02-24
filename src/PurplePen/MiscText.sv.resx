@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Ingen symbol</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Alla kontroller</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Kan inte läsa '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Kan inte spara '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Kan inte läsa kartfil '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Kan inte läsa bildfil '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Kan inte skriva ut '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Kan inte skapa '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Kan inte skapa katalog '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Kan inte läsa kartan av följande skäl: {0}</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Kan inte skapa OCAD-filer av följande skäl:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Vill du spara ändringarna du gjort till '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Fil '{0}' finns redan i denna katalog. Klicka på "Tillbaka"-knappen och välj en ny katalog eller ett nytt tävlingsnamn.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Kodsiffra '{0}' används redan till en annan kontroll.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Poängen för en kontroll måste vara ett heltal (1-999).</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Stigningen för en bana måste vara ett heltal 0-9999 eller lämnas tomt.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Antal löpare på en bana måste vara ett heltal 0-999999 eller lämnas tomt.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Ångra</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Ångra</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Gör om</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Gör om</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Töm val</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>A&amp;vbryt åtgärd</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Avbryt åtgärd</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Ange ny poäng</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Skriv in ny kodsiffra</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Skriv in föremålets storlek
+Använd / för höjder i en sluttning
+Använd | för två föremål</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Skriv in ett nytt tävlingsnamn
+(påverkar alla banor)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Ange ny sekundär titel
+(påverkar endast denna bana)</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Skriv in nytt bannamn</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Skriv in ny stigning i meter</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Ange ny betydelse för symbol
+(påverkar alla banor)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Skriv in ny text</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Kontrollerna {0} används inte längre av någon bana. Vill du ta bort dessa kontroller?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Kontroll {0} används inte längre av någon bana. Vill du ta bort denna kontroll?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Kontroll {0} används av följande banor: {1}. Vill du ändå ta bort denna kontroll?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>En kodsiffra måste bestå av en, två eller tre siffror (eller bokstäver).</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>En kodsiffra får inte innehålla mellanslag.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>En kodsiffra ska vara 31 eller större.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>En kodsiffra får inte börja med en nolla.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>En kodsiffra ska inte kunna läsas upp-och-ner som en annan kodsiffra.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Kodsiffra "{0}" används mer än en gång.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Utskriftsskalan måste vara ett tal mellan 100 och 100 000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Banegenskaper</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Liggande</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Stående</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Sidans storlek är för liten för att någon kontrollbeskrivning ska kunna skrivas ut.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} av Purple Pen finns nu tillgänglig för nedladdning. (Du använder version {1}.)
+
+För att ladda ned den senaste versionen besöker du webbsidan för Purple Pen genom att klicka på Hjälp i menyn och välja "Purple Pen på webben".</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Hjälpfilen '{0}' kunde inte öppnas.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Kartfilen '{0}' kunde inte hittas.
+
+Troligen har kartfilen flyttats eller tagits bort, eller så har Purple Pen-filen flyttats. Kartfilen måste finnas tillgänglig varje gång tävlingsfilen laddas in. Om du skickar en tävlingsfil till en annan person, så måste en kopia av kartfilen också följa med.
+
+Tryck OK och försök hitta kartfilen på din dator.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Alla kontroller används i någon bana.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Slut&amp;för</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Nästa &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Kontroll {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Slutför</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Obligatorisk passage</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Passage</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Alla: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Vänster: {0}, Höger: {1}, Topp: {2}, Botten: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>plural</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>singular</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Den anpassade texten måste ha ett "*", för att ange var objektet som ändras ska placeras.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>banläggning för orientering</value>
+  </data>
+</root>

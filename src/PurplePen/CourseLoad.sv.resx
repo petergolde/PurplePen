@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="CourseName.HeaderText" xml:space="preserve">
+    <value>Banans namn</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Antal löpare</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Mata in antalet löpare på varje bana genom att klicka i andra kolumnen och skriv in antalet löpare.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Antal löpare</value>
   </data>
 </root>

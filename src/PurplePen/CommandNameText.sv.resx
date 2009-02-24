@@ -117,10 +117,148 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Ändra symbol</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Ändra kodsiffra</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Ändra Kontroll</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Ändra kontrollpunkter</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Ändra titel</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Ändra stigning</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Ändra bannamn</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Ändra text</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Uppdatera kartskala</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Flytta kontrollring</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Flytta kontrollnummer</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Flytta objekt</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Ta bort kontroll</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Ta bort objekt</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Ta bort textraden</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Lägg till kontroll</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Lägg till start</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Lägg till mål</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Lägg till obligatorisk passage</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Lägg till objekt</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Ta bort bana</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>Ny bana</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Ändra banegenskaper</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Ändra egenskaper för alla kontroller</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Skapa ny tävling</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Ändra flagga för sträcka</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Ändra kodsiffror</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Ändra visade banor</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Flytta Böj</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Lägg Till Böjning</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Lägg till hörn</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Ta bort Böj</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Ta bort hörn</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Lägg till gap</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Ta bort gap</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Flytta gap</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Rotera</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Automatisk numrering</value>
+  </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Ändra stämpelmönster</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Ändra utseende på stämpelkortet</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Välj utskriftsområde</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Ändra antal löpare</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Anpassa text för kontrollbeskrivning</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Ändra banordning</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Byt kartfil</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Ignorera saknade teckensnitt</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Lägg till textrad</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Ta bort oanvända kontroller</value>
   </data>
 </root>

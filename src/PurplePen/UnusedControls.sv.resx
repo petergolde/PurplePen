@@ -118,9 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+    <value>Ta bort</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Följande kontroller finns i samlingen "Alla kontroller" men ingen av dem används i någon bana. Klicka Ta bort för att ta bort alla markerade kontroller</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Oanvända kontroller</value>
   </data>
 </root>

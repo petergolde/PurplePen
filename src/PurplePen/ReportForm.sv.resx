@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>Skriv ut...</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Förhandsgranska utskrift...</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Stäng</value>
   </data>
 </root>

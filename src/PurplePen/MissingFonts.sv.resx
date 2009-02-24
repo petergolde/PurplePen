@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>Valider</value>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>Varna inte om saknade teckensnitt för den här tävlingen i fortsättningen</value>
   </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Annuler</value>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Kartfil "{0}" använder teckensnitt som inte är installerade på datorn. Text med dessa teckensnitt kommer visas med en standardteckensnitt, vilket kan leda till att text ser annorlunda ut jämfört med hur kartritaren tänkt sig. 
+
+För att åtgärda problemet, leta upp och installera teckensnitten listade nedan (använd Windows kontrollpanel). Starta sedan om Purple Pen.
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Typsnitt saknas</value>
   </data>
 </root>
