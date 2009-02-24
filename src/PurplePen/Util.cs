@@ -135,6 +135,13 @@ namespace PurplePen
             return Path.Combine(appPath, filename);
         }
 
+
+        // Remove the "&" prefix in menu names
+        public static string RemoveHotkeyPrefix(string s)
+        {
+            return s.Replace("&", "");
+        }
+
         // Remove a "m" or " m" suffix from a string. If none, return the string itself.
         public static string RemoveMeterSuffix(string s)
         {

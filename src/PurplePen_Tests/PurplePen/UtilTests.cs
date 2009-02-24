@@ -471,6 +471,13 @@ namespace PurplePen.Tests
             CollectionAssert.AreEqual(new float[] { 4000, 5000, 7500, 8000, 10000, 15000 }, result);
         }
 
+        [TestMethod]
+        public void RemoveHotkeyPrefix()
+        {
+            Assert.AreEqual("My Report", Util.RemoveHotkeyPrefix("My &Report"));
+            Assert.AreEqual("Hello", Util.RemoveHotkeyPrefix("Hello"));
+        }
+
         /*
         void WriteResourceText(Type type, string filename)
         {
