@@ -167,6 +167,16 @@ namespace PurplePen
             }
         }
 
+        RectangleF GetPrintableArea(PageSettings pageSettings)
+        {
+            // Get the available page size on the page. Note the PrintableArea member of PageSettings does not automatically does the
+            // landscape into account.
+            RectangleF printableArea = pageSettings.PrintableArea;
+            if (pageSettings.Landscape)
+                printableArea = new RectangleF(printableArea.Top, printableArea.Left, printableArea.Height, printableArea.Width);  // reverse rectangle for landscape
+            return printableArea;
+        }
+
         // Layout a course onto one or more pages.
         List<CoursePage> LayoutCourse(PageSettings pageSettings, Id<Course> courseId)
         {
@@ -174,13 +184,11 @@ namespace PurplePen
 
             // Get the area of the map we want to print, in map coordinates, and the ratio between print scale and map scale.
             float scaleRatio;
-            RectangleF mapArea = GetPrintAreaForCourse(courseId, out scaleRatio);
+            RectangleF mapArea = GetPrintAreaForCourse(pageSettings, courseId, out scaleRatio);
 
             // Get the available page size on the page. Note the PrintableArea member of PageSettings does not automatically does the
             // landscape into account.
-            RectangleF printableArea = pageSettings.PrintableArea;
-            if (pageSettings.Landscape)
-                printableArea = new RectangleF(printableArea.Top, printableArea.Left, printableArea.Height, printableArea.Width);  // reverse rectangle for landscape
+            RectangleF printableArea = GetPrintableArea(pageSettings);
             SizeF pageSizeAvailable = printableArea.Size;
 
             // Layout both page dimensions, iterate through them to get all the pages we have.
@@ -239,13 +247,95 @@ namespace PurplePen
 
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
-        RectangleF GetPrintAreaForCourse(Id<Course> courseId, out float scaleRatio)
+        // If asked for, crop to a single page size.
+        RectangleF GetPrintAreaForCourse(PageSettings pageSettings, Id<Course> courseId, out float scaleRatio)
         {
             // Get the course view to get the scale ratio.
             CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseId);
             scaleRatio = courseView.ScaleRatio;
 
-            return controller.GetPrintArea(courseId);
+            RectangleF printArea = controller.GetPrintArea(courseId);
+
+            if (coursePrintSettings.CropLargePrintArea) {
+                // Crop the print area to a single page, portrait or landscape.
+                // Try to keep CourseObjects in view as much as possible.
+                CourseLayout layout = new CourseLayout();
+                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, controller.GetCourseAppearance(), layout, 0);
+                RectangleF courseObjectsArea = layout.BoundingRect();
+                courseObjectsArea.Intersect(printArea);
+
+                // We may need to crop the print area to fit. Try both landscape and portrait.
+                float areaCoveredLandscape, areaCoveredPortrait;
+                bool saveLandscape = pageSettings.Landscape;
+                pageSettings.Landscape = false;
+                RectangleF portraitPrintArea = CropPrintArea(printArea, courseObjectsArea, pageSettings, out areaCoveredPortrait);
+                pageSettings.Landscape = true;
+                RectangleF landscapePrintArea = CropPrintArea(printArea, courseObjectsArea, pageSettings, out areaCoveredLandscape);
+                pageSettings.Landscape = saveLandscape;
+
+                // Choose the best one: first look at amount of course covered, then most like the defined print area.
+                if (areaCoveredPortrait > areaCoveredLandscape)
+                    return portraitPrintArea;
+                else if (areaCoveredLandscape > areaCoveredPortrait)
+                    return landscapePrintArea;
+                else if (printArea.Width < printArea.Height)
+                    return portraitPrintArea;
+                else
+                    return landscapePrintArea;
+            }
+            else {
+                return printArea;
+            }
+        }
+
+        // Find a crop of printArea that includes as much of courseObjectsArea as possible, that is of the printableSize;
+#if TEST
+        internal
+#endif
+        RectangleF CropPrintArea(RectangleF printArea, RectangleF courseObjectsArea, PageSettings pageSettings, out float areaCovered)
+        {
+            SizeF printableSize = GetPrintableArea(pageSettings).Size;
+            float left, top, right, bottom;
+
+            if (printableSize.Width <= printArea.Width) {
+                left = printArea.Left; right = printArea.Right;
+            }
+            else {
+                // Center on courseObjectsArea as much as possible, while staying fully inside printArea.
+                left = (courseObjectsArea.Left + courseObjectsArea.Right) / 2 - printableSize.Width / 2;
+                right = (courseObjectsArea.Left + courseObjectsArea.Right) / 2 - printableSize.Width / 2;
+                if (left < printArea.Left) {
+                    right += (printArea.Left - left); left = printArea.Left;
+                }
+                else if (right > printArea.Right) {
+                    left -= (right - printArea.Right); right = printArea.Right;
+                }
+            }
+
+            if (printableSize.Height <= printArea.Height) {
+                top = printArea.Top; bottom = printArea.Bottom;
+            }
+            else {
+                // Center on courseObjectsArea as much as possible, while staying fully inside printArea.
+                top = (courseObjectsArea.Top + courseObjectsArea.Bottom) / 2 - printableSize.Height / 2;
+                bottom = (courseObjectsArea.Top + courseObjectsArea.Bottom) / 2 - printableSize.Height / 2;
+                if (top < printArea.Top) {
+                    bottom += (printArea.Top - top); top = printArea.Top;
+                }
+                else if (bottom > printArea.Bottom) {
+                    top -= (bottom - printArea.Bottom); bottom = printArea.Bottom;
+                }
+            }
+
+            // Create the rectangle.
+            RectangleF result = RectangleF.FromLTRB(left, top, right, bottom);
+
+            // Calculate the intersected area.
+            RectangleF intersect = result;
+            intersect.Intersect(courseObjectsArea);
+            areaCovered = intersect.Height * intersect.Width;
+
+            return result;
         }
 
         // Set landscape/portrait and margins for a particular page.
@@ -428,5 +518,6 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
         public int Count = 1;                         // count of copies to print
+        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages                
     }
 }

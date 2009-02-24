@@ -82,6 +82,8 @@ namespace PurplePen
             paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
 
             copiesUpDown.Value = settings.Count;
+            radioButtonOnePage.Checked = settings.CropLargePrintArea;
+            radioButtonMultiPage.Checked = !settings.CropLargePrintArea;
         }
 
         // Update the settings with information from the dialog.
@@ -92,6 +94,7 @@ namespace PurplePen
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
+            settings.CropLargePrintArea = radioButtonOnePage.Checked;
         }
 
         private void printerChange_Click(object sender, EventArgs e)
@@ -118,7 +121,5 @@ namespace PurplePen
         {
             controller.PrintCourses(PrintSettings, true);
         }
-
-        
     }
 }

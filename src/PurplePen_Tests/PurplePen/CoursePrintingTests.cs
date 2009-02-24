@@ -149,6 +149,7 @@ namespace PurplePen.Tests
         {
             controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test1", coursePrintSettings, new CourseAppearance());
@@ -169,6 +170,7 @@ namespace PurplePen.Tests
 
             controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test2", coursePrintSettings, appearance);

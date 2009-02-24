@@ -121,6 +121,10 @@
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 347</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="okButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Print</value>
   </data>
@@ -139,6 +143,9 @@
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>429, 347</value>
   </data>
+  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
     <value>cancelButton</value>
   </data>
@@ -151,7 +158,6 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -367,7 +373,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;printerGroup.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="previewButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -379,7 +385,7 @@
     <value>90, 25</value>
   </data>
   <data name="previewButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Preview...</value>
@@ -394,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;previewButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="courseSelector.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 24</value>
@@ -442,7 +448,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;coursesGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -568,11 +574,116 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;copiesGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
   </metadata>
+  <data name="radioButtonMultiPage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonMultiPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonMultiPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 81</value>
+  </data>
+  <data name="radioButtonMultiPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 19</value>
+  </data>
+  <data name="radioButtonMultiPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Print on multiple pages</value>
+  </data>
+  <data name="&gt;&gt;radioButtonMultiPage.Name" xml:space="preserve">
+    <value>radioButtonMultiPage</value>
+  </data>
+  <data name="&gt;&gt;radioButtonMultiPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonMultiPage.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;radioButtonMultiPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelAppearanceInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 21</value>
+  </data>
+  <data name="labelAppearanceInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 32</value>
+  </data>
+  <data name="labelAppearanceInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>If the print area is too large to fit on one page:</value>
+  </data>
+  <data name="&gt;&gt;labelAppearanceInfo.Name" xml:space="preserve">
+    <value>labelAppearanceInfo</value>
+  </data>
+  <data name="&gt;&gt;labelAppearanceInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelAppearanceInfo.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;labelAppearanceInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radioButtonOnePage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonOnePage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 56</value>
+  </data>
+  <data name="radioButtonOnePage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 19</value>
+  </data>
+  <data name="radioButtonOnePage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Crop to a single page</value>
+  </data>
+  <data name="&gt;&gt;radioButtonOnePage.Name" xml:space="preserve">
+    <value>radioButtonOnePage</value>
+  </data>
+  <data name="&gt;&gt;radioButtonOnePage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radioButtonOnePage.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;radioButtonOnePage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBoxAppearance.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 166</value>
+  </data>
+  <data name="groupBoxAppearance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 123</value>
+  </data>
+  <data name="groupBoxAppearance.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAppearance.Name" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAppearance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAppearance.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBoxAppearance.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

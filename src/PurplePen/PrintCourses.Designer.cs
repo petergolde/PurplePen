@@ -77,12 +77,17 @@ namespace PurplePen
             this.copiesUpDown = new System.Windows.Forms.NumericUpDown();
             this.copiesLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
+            this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
+            this.labelAppearanceInfo = new System.Windows.Forms.Label();
+            this.radioButtonMultiPage = new System.Windows.Forms.RadioButton();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).BeginInit();
+            this.groupBoxAppearance.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -202,10 +207,39 @@ namespace PurplePen
             // 
             this.printDialog.UseEXDialog = true;
             // 
+            // groupBoxAppearance
+            // 
+            this.groupBoxAppearance.Controls.Add(this.radioButtonMultiPage);
+            this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
+            this.groupBoxAppearance.Controls.Add(this.radioButtonOnePage);
+            resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
+            this.groupBoxAppearance.Name = "groupBoxAppearance";
+            this.groupBoxAppearance.TabStop = false;
+            // 
+            // radioButtonOnePage
+            // 
+            resources.ApplyResources(this.radioButtonOnePage, "radioButtonOnePage");
+            this.radioButtonOnePage.Checked = true;
+            this.radioButtonOnePage.Name = "radioButtonOnePage";
+            this.radioButtonOnePage.TabStop = true;
+            this.radioButtonOnePage.UseVisualStyleBackColor = true;
+            // 
+            // labelAppearanceInfo
+            // 
+            resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
+            this.labelAppearanceInfo.Name = "labelAppearanceInfo";
+            // 
+            // radioButtonMultiPage
+            // 
+            resources.ApplyResources(this.radioButtonMultiPage, "radioButtonMultiPage");
+            this.radioButtonMultiPage.Name = "radioButtonMultiPage";
+            this.radioButtonMultiPage.UseVisualStyleBackColor = true;
+            // 
             // PrintCourses
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.groupBoxAppearance);
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.previewButton);
             this.Controls.Add(this.copiesGroupBox);
@@ -216,6 +250,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.copiesGroupBox, 0);
             this.Controls.SetChildIndex(this.previewButton, 0);
             this.Controls.SetChildIndex(this.coursesGroupBox, 0);
+            this.Controls.SetChildIndex(this.groupBoxAppearance, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.printerGroup.ResumeLayout(false);
@@ -227,6 +262,8 @@ namespace PurplePen
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).EndInit();
+            this.groupBoxAppearance.ResumeLayout(false);
+            this.groupBoxAppearance.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +286,9 @@ namespace PurplePen
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.NumericUpDown copiesUpDown;
         private System.Windows.Forms.Label copiesLabel;
+        private System.Windows.Forms.GroupBox groupBoxAppearance;
+        private System.Windows.Forms.Label labelAppearanceInfo;
+        private System.Windows.Forms.RadioButton radioButtonOnePage;
+        private System.Windows.Forms.RadioButton radioButtonMultiPage;
     }
 }

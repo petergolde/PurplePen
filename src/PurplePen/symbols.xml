@@ -3744,7 +3744,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.5E">
 		<name lang="en">East corner (outside)</name>
-		<name lang="fr">{0}, angle Est (extérieur)</name>
+		<name lang="fr">Angle Est (extérieur)</name>
 		<name lang="en-GB">East corner (outside)</name>
 		<text lang="en">E outside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (extérieur)</text>
@@ -3897,7 +3897,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.6SE">
 		<name lang="en">South-east tip</name>
-		<name lang="fr">{0}, pointe SE</name>
+		<name lang="fr">Pointe SE</name>
 		<name lang="en-GB">South-east tip</name>
 		<text lang="en">SE tip of {0}</text>
 		<text lang="fr">{0}, pointe SE</text>
@@ -3931,7 +3931,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.6SW">
 		<name lang="en">South-west tip</name>
-		<name lang="fr">{0}, pointe SO</name>
+		<name lang="fr">Pointe SO</name>
 		<name lang="en-GB">South-west tip</name>
 		<text lang="en">SW tip of {0}</text>
 		<text lang="fr">{0}, pointe SO</text>
@@ -3948,7 +3948,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.6W">
 		<name lang="en">West tip</name>
-		<name lang="fr">{0}, pointe Ouest</name>
+		<name lang="fr">Pointe Ouest</name>
 		<name lang="en-GB">West tip</name>
 		<text lang="en">W tip of {0}</text>
 		<text lang="fr">{0}, pointe Ouest</text>
@@ -3965,7 +3965,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.6NW">
 		<name lang="en">North-west tip</name>
-		<name lang="fr">{0}, pointe NO</name>
+		<name lang="fr">Pointe NO</name>
 		<name lang="en-GB">North-west tip</name>
 		<text lang="en">NW tip of {0}</text>
 		<text lang="fr">{0}, pointe NO</text>
@@ -4101,7 +4101,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.8NW">
 		<name lang="en">North-west end</name>
-		<name lang="fr">{0}, extrémité NO</name>
+		<name lang="fr">Extrémité NO</name>
 		<name lang="en-GB">North-west end</name>
 		<text lang="en">NW end of {0}</text>
 		<text lang="fr">{0}, extrémité NO</text>
@@ -4220,7 +4220,7 @@ for the symbols.
 
 	<symbol kind="G" id="11.14W">
 		<name lang="en">West foot</name>
-		<name lang="fr">{0}, pied Ouest</name>
+		<name lang="fr">Pied Ouest</name>
 		<name lang="en-GB">West foot</name>
 		<text lang="en">W foot of {0}</text>
 		<text lang="fr">{0}, pied Ouest</text>
