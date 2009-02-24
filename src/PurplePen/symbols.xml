@@ -119,6 +119,7 @@ for the symbols.
 	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English</language>
 	<language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculin,féminin">Français</language>
 	<language lang="en-GB" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English (United Kingdom)</language>
+	<language lang="sv" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">Svenska</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
@@ -130,9 +131,11 @@ for the symbols.
 		<name lang="en">Course Length</name>
 		<name lang="fr">Longueur du circuit</name>
 		<name lang="en-GB">Course Length</name>
+		<name lang="sv">Banlängd</name>
 		<text lang="en">Length {0}</text>
 		<text lang="fr">Longueur {0}</text>
 		<text lang="en-GB">Length {0}</text>
+		<text lang="sv">Längd {0}</text>
 	</symbol>
 
 	<!-- Used for the course length and climb
@@ -143,9 +146,11 @@ for the symbols.
 		<name lang="en">Course Length and Climb</name>
 		<name lang="fr">Longueur du circuit et Dénivelée</name>
 		<name lang="en-GB">Course Length and Climb</name>
+		<name lang="sv">Banlängd och stigning</name>
 		<text lang="en">Length {0}, climb {1}</text>
 		<text lang="fr">Longueur {0}, dénivelée {1}</text>
 		<text lang="en-GB">{0},  {1}</text>
+		<text lang="sv">Längd {0}, stigning {1}</text>
 	</symbol>
 
 	<!-- Used for the number of controls in score course or All Controls
@@ -155,9 +160,11 @@ for the symbols.
 		<name lang="en">Number of Controls</name>
 		<name lang="fr">Nombre de poste</name>
 		<name lang="en-GB">Number of Controls</name>
+		<name lang="sv">Antal kontroller</name>
 		<text lang="en">{0} controls</text>
 		<text lang="fr">{0} postes</text>
 		<text lang="en-GB">{0} controls</text>
+		<text lang="sv">{0} kontroller</text>
 	</symbol>
 
 	<!-- Used for the total score in a score course
@@ -167,9 +174,11 @@ for the symbols.
 		<name lang="en">Number of Points</name>
 		<name lang="fr">Nombre de point</name>
 		<name lang="en-GB">Number of Points</name>
+		<name lang="sv">Antal punkter</name>
 		<text lang="en">{0} points</text>
 		<text lang="fr">{0} points</text>
 		<text lang="en-GB">{0} points</text>
+		<text lang="sv">{0} punkter</text>
 	</symbol>
 
 	<!-- Used when regular symbols are present in both column D and E, but no crossing/junction/between
@@ -181,9 +190,11 @@ for the symbols.
 		<name lang="en">And</name>
 		<name lang="fr">Et</name>
 		<name lang="en-GB">And</name>
+		<name lang="sv">Och</name>
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
 		<text lang="en-GB">{0} and {1}</text>
+		<text lang="sv">{0} och {1}</text>
 	</symbol>
 
 
@@ -198,9 +209,11 @@ for the symbols.
 		<name lang="en">Start</name>
 		<name lang="fr">Départ</name>
 		<name lang="en-GB">Start</name>
+		<name lang="sv">Start</name>
 		<text lang="en">start</text>
 		<text lang="fr">départ </text>
 		<text lang="en-GB">start</text>
+		<text lang="sv">start</text>
 		<polygon thickness="12.5" corners="sharp">
 			<point x="-56" y="65" />
 			<point x="-56" y="-65" />
@@ -218,10 +231,12 @@ for the symbols.
 		<name lang="en">Northern</name>
 		<name lang="fr">Le plus au Nord</name>
 		<name lang="en-GB">Northern</name>
+		<name lang="sv">Norra</name>
 		<text lang="en">N {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Nord</text>
 		<text lang="fr" gender="masculin">{0}, le plus au Nord</text>
 		<text lang="en-GB">N. {0}</text>
+		<text lang="sv">Norra {0}</text>
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -237,10 +252,12 @@ for the symbols.
 		<name lang="en">North-eastern</name>
 		<name lang="fr">Le plus au NE</name>
 		<name lang="en-GB">North-eastern</name>
+		<name lang="sv">Nordöstra</name>
 		<text lang="en">NE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NE</text>
 		<text lang="fr" gender="masculin">{0}, le plus au NE</text>
 		<text lang="en-GB">NE. {0}</text>
+		<text lang="sv">Nordöstra {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="-55" />
 			<point x="55" y="55" />
@@ -256,10 +273,12 @@ for the symbols.
 		<name lang="en">Eastern</name>
 		<name lang="fr">Le plus à l'Est</name>
 		<name lang="en-GB">Eastern</name>
+		<name lang="sv">Östra</name>
 		<text lang="en">E {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Est</text>
 		<text lang="fr" gender="masculin">{0}, le plus à l'Est</text>
 		<text lang="en-GB">E. {0}</text>
+		<text lang="sv">Östra {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -275,10 +294,12 @@ for the symbols.
 		<name lang="en">South-eastern</name>
 		<name lang="fr">Le plus au SE</name>
 		<name lang="en-GB">South-eastern</name>
+		<name lang="sv">Sydöstra</name>
 		<text lang="en">SE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SE</text>
 		<text lang="fr" gender="masculin">{0}, le plus au SE</text>
 		<text lang="en-GB">SE. {0}</text>
+		<text lang="sv">Sydöstra {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="55" />
 			<point x="55" y="-55" />
@@ -294,10 +315,12 @@ for the symbols.
 		<name lang="en">Southern</name>
 		<name lang="fr">Le plus au Sud</name>
 		<name lang="en-GB">Southern</name>
+		<name lang="sv">Södra</name>
 		<text lang="en">S {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Sud</text>
 		<text lang="fr" gender="masculin">{0}, le plus au Sud</text>
 		<text lang="en-GB">S. {0}</text>
+		<text lang="sv">Södra {0}</text>
 	<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -313,10 +336,12 @@ for the symbols.
 		<name lang="en">South-western</name>
 		<name lang="fr">Le plus au SO</name>
 		<name lang="en-GB">South-western</name>
+		<name lang="sv">Sydvästra</name>
 		<text lang="en">SW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SO</text>
 		<text lang="fr" gender="masculin">{0}, le plus au SO</text>
 		<text lang="en-GB">SW. {0}</text>
+		<text lang="sv">Sydvästra {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="55" />
 			<point x="-55" y="-55" />
@@ -332,10 +357,12 @@ for the symbols.
 		<name lang="en">Western</name>
 		<name lang="fr">Le plus à l'Ouest</name>
 		<name lang="en-GB">Western</name>
+		<name lang="sv">Västra</name>
 		<text lang="en">W {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Ouest</text>
 		<text lang="fr" gender="masculin">{0}, le plus à l'Ouest</text>
 		<text lang="en-GB">W. {0}</text>
+		<text lang="sv">Västra {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -351,10 +378,12 @@ for the symbols.
 		<name lang="en">North-western</name>
 		<name lang="fr">Le plus au NO</name>
 		<name lang="en-GB">North-western</name>
+		<name lang="sv">Nordvästra</name>
 		<text lang="en">NW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NO</text>
 		<text lang="fr" gender="masculin">{0}, le plus au NO</text>
 		<text lang="en-GB">NW. {0}</text>
+		<text lang="sv">Nordvästra {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="-55" />
 			<point x="-55" y="55" />
@@ -370,10 +399,12 @@ for the symbols.
 		<name lang="en">Upper</name>
 		<name lang="fr">Supérieur</name>
 		<name lang="en-GB">Upper</name>
+		<name lang="sv">Övre</name>
 		<text lang="en">upper {0}</text>
 		<text lang="fr" gender="féminin">{0} supérieure</text>
 		<text lang="fr" gender="masculin">{0} supérieur</text>
 		<text lang="en-GB">Upper {0}</text>
+		<text lang="sv">övre {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -391,10 +422,12 @@ for the symbols.
 		<name lang="en">Lower</name>
 		<name lang="fr">Inférieur</name>
 		<name lang="en-GB">Lower</name>
+		<name lang="sv">Nedre</name>
 		<text lang="en">lower {0}</text>
 		<text lang="fr" gender="féminin">{0} inférieure</text>
 		<text lang="fr" gender="masculin">{0} inférieur</text>
 		<text lang="en-GB">Lower {0}</text>
+		<text lang="sv">nedre {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -412,10 +445,12 @@ for the symbols.
 		<name lang="en">Middle</name>
 		<name lang="fr">Central</name>
 		<name lang="en-GB">Middle</name>
+		<name lang="sv">Mellersta</name>
 		<text lang="en">middle {0}</text>
 		<text lang="fr" gender="féminin">{0} centrale</text>
 		<text lang="fr" gender="masculin">{0} central</text>
 		<text lang="en-GB">Middle {0}</text>
+		<text lang="sv">mellertsa {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-50" y="60" />
 			<point x="-50" y="-60" />
@@ -441,12 +476,15 @@ for the symbols.
 		<name lang="en">Terrace</name>
 		<name lang="fr">Terrasse</name>
 		<name lang="en-GB">Terrace</name>
+		<name lang="sv">Terrass</name>
 		<text lang="en">terrace</text>
 		<text lang="en" plural="true">terraces</text>
 		<text lang="fr" plural="true" gender="féminin">terrasses</text>
 		<text lang="fr" gender="féminin">terrasse</text>
 		<text lang="en-GB" plural="true">Terraces</text>
 		<text lang="en-GB">Terrace</text>
+		<text lang="sv" plural="true">terrassor</text>
+		<text lang="sv">terrassen</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="-70" />
 			<point x="-50" y="-30" />
@@ -474,12 +512,15 @@ for the symbols.
 		<name lang="en">Spur</name>
 		<name lang="fr">Éperon</name>
 		<name lang="en-GB">Spur</name>
+		<name lang="sv">Näsa</name>
 		<text lang="en">spur</text>
 		<text lang="en" plural="true">spurs</text>
 		<text lang="fr" plural="true" gender="masculin">éperons</text>
 		<text lang="fr" gender="masculin">éperon</text>
 		<text lang="en-GB" plural="true">Spurs</text>
 		<text lang="en-GB">Spur</text>
+		<text lang="sv" plural="true">näsarna</text>
+		<text lang="sv">näsan</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-70" />
 			<point x="-60" y="-30" />
@@ -507,12 +548,15 @@ for the symbols.
 		<name lang="en">Reentrant</name>
 		<name lang="fr">Rentrant</name>
 		<name lang="en-GB">Re-entrant</name>
+		<name lang="sv">Sänka</name>
 		<text lang="en">reentrant</text>
 		<text lang="en" plural="true">reentrants</text>
 		<text lang="fr" plural="true" gender="masculin">rentrants</text>
 		<text lang="fr" gender="masculin">rentrant</text>
 		<text lang="en-GB" plural="true">Re-entrants</text>
 		<text lang="en-GB">Re-entrant</text>
+		<text lang="sv" plural="true">sänkorna</text>
+		<text lang="sv">sänkan</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-70" />
 			<point x="-42" y="-73" />
@@ -534,12 +578,15 @@ for the symbols.
 		<name lang="en">Earth bank</name>
 		<name lang="fr">Talus raide</name>
 		<name lang="en-GB">Earth bank</name>
+		<name lang="sv">Skärning</name>
 		<text lang="en">earth bank</text>
 		<text lang="en" plural="true">earth banks</text>
 		<text lang="fr" plural="true" gender="masculin">talus raides</text>
 		<text lang="fr" gender="masculin">talus raide</text>
 		<text lang="en-GB" plural="true">Earth banks</text>
 		<text lang="en-GB">Earth bank</text>
+		<text lang="sv" plural="true">skärningar</text>
+		<text lang="sv">skärning</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="20" />
 			<point x="-30" y="-10" />
@@ -568,12 +615,14 @@ for the symbols.
 		<name lang="en">Quarry</name>
 		<name lang="fr">Carrière</name>
 		<name lang="en-GB">Quarry</name>
+		<name lang="sv">Grustag/stenbrott</name>
 		<text lang="en">quarry</text>
 		<text lang="en" plural="true">quarries</text>
 		<text lang="fr" plural="true" gender="féminin">carrières</text>
 		<text lang="fr" gender="féminin">carrière</text>
 		<text lang="en-GB" plural="true">Quarries</text>
 		<text lang="en-GB">Quarry</text>
+		<text lang="sv">grustag/stenbrott</text>
 		<beziers thickness="12.5">
 			<point x="54" y="-60" />
 				<point x="93" y="5" />
@@ -605,12 +654,15 @@ for the symbols.
 		<name lang="en">Earth wall</name>
 		<name lang="fr">Levée de terre</name>
 		<name lang="en-GB">Earth wall</name>
+		<name lang="sv">Jordvall</name>
 		<text lang="en">earth wall</text>
 		<text lang="en" plural="true">earth walls</text>
 		<text lang="fr" plural="true" gender="féminin">levées de terre</text>
 		<text lang="fr" gender="féminin">levée de terre</text>
 		<text lang="en-GB" plural="true">Earth Walls</text>
 		<text lang="en-GB">Earth Wall</text>
+		<text lang="sv" plural="true">jordvallar</text>
+		<text lang="sv">jordvallen</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="70" y="0" />
@@ -637,12 +689,15 @@ for the symbols.
 		<name lang="en">Erosion gully</name>
 		<name lang="fr">Ravine</name>
 		<name lang="en-GB">Erosion gully</name>
+		<name lang="sv">Fåra</name>
 		<text lang="en">gully</text>
 		<text lang="en" plural="true">gullies</text>
 		<text lang="fr" plural="true" gender="féminin">ravines</text>
 		<text lang="fr" gender="féminin">ravine</text>
 		<text lang="en-GB" plural="true">Gullies</text>
 		<text lang="en-GB">Gully</text>
+		<text lang="sv" plural="true">fåror</text>
+		<text lang="sv">fåran</text>
 		<lines thickness="12.5">
 			<point x="40" y="-70" />
 			<point x="0" y="70" />
@@ -654,12 +709,15 @@ for the symbols.
 		<name lang="en">Small erosion gully</name>
 		<name lang="fr">Fossé sec</name>
 		<name lang="en-GB">Small erosion gully</name>
+		<name lang="sv">Liten fåra</name>
 		<text lang="en">small gully</text>
 		<text lang="en" plural="true">small gullies</text>
 		<text lang="fr" plural="true" gender="masculin">fossés secs</text>
 		<text lang="fr" gender="masculin">fossé sec</text>
 		<text lang="en-GB" plural="true">Small Gullies</text>
 		<text lang="en-GB">Small Gully</text>
+		<text lang="sv" plural="true">små fåror</text>
+		<text lang="sv">liten fåra</text>
 		<lines thickness="12.5">
 			<point x="-21" y="61" />
 			<point x="61" y="-21" />
@@ -689,12 +747,15 @@ for the symbols.
 		<name lang="en">Hill</name>
 		<name lang="fr">Colline</name>
 		<name lang="en-GB">Hill</name>
+		<name lang="sv">Höjd</name>
 		<text lang="en">hill</text>
 		<text lang="en" plural="true">hills</text>
 		<text lang="fr" plural="true" gender="féminin">collines</text>
 		<text lang="fr" gender="féminin">colline</text>
 		<text lang="en-GB" plural="true">Hills</text>
 		<text lang="en-GB">Hill</text>
+		<text lang="sv" plural="true">höjderna</text>
+		<text lang="sv">höjden</text>
 		<beziers thickness="12.5">
 			<point x="0" y="48.21" />
 			<point x="40.71" y="48.21" />
@@ -716,12 +777,15 @@ for the symbols.
 		<name lang="en">Knoll</name>
 		<name lang="fr">Butte</name>
 		<name lang="en-GB">Knoll</name>
+		<name lang="sv">Punkthöjd</name>
 		<text lang="en">knoll</text>
 		<text lang="en" plural="true">knolls</text>
 		<text lang="fr" plural="true" gender="féminin">buttes</text>
 		<text lang="fr" gender="féminin">butte</text>
 		<text lang="en-GB" plural="true">Knolls</text>
 		<text lang="en-GB">Knoll</text>
+		<text lang="sv" plural="true">punkthöjderna</text>
+		<text lang="sv">punkthöjden</text>
 		<filled-circle radius="23">
 			<point x="0" y="0" />
 		</filled-circle>
@@ -731,12 +795,15 @@ for the symbols.
 		<name lang="en">Saddle</name>
 		<name lang="fr">Col, passage</name>
 		<name lang="en-GB">Saddle</name>
+		<name lang="sv">Sadel</name>
 		<text lang="en">saddle</text>
 		<text lang="en" plural="true">saddles</text>
 		<text lang="fr" plural="true" gender="masculin">cols ou passages</text>
 		<text lang="fr" gender="masculin">col ou passage</text>
 		<text lang="en-GB" plural="true">Saddles</text>
 		<text lang="en-GB">Saddle</text>
+		<text lang="sv" plural="true">sadlena</text>
+		<text lang="sv">sadeln</text>
 		<beziers thickness="12.5">
 			<point x="-40" y="-70" />
 			<point x="-10" y="-30" />
@@ -755,12 +822,15 @@ for the symbols.
 		<name lang="en">Depression</name>
 		<name lang="fr">Dépression</name>
 		<name lang="en-GB">Depression</name>
+		<name lang="sv">Grop</name>
 		<text lang="en">depression</text>
 		<text lang="en" plural="true">depressions</text>
 		<text lang="fr" plural="true" gender="féminin">dépressions</text>
 		<text lang="fr" gender="féminin">dépression</text>
 		<text lang="en-GB" plural="true">Depressions</text>
 		<text lang="en-GB">Depression</text>
+		<text lang="sv" plural="true">groparna</text>
+		<text lang="sv">gropen</text>
 		<beziers thickness="12.5">
 			<point x="0" y="48.21" />
 			<point x="40.71" y="48.21" />
@@ -790,12 +860,15 @@ for the symbols.
 		<name lang="en">Small depression</name>
 		<name lang="fr">Petite dépression</name>
 		<name lang="en-GB">Small depression</name>
+		<name lang="sv">Liten naturlig grop</name>
 		<text lang="en">small depression</text>
 		<text lang="en" plural="true">small depressions</text>
 		<text lang="fr" plural="true" gender="féminin">petites dépressions</text>
 		<text lang="fr" gender="féminin">petite dépression</text>
 		<text lang="en-GB" plural="true">Small Depressions</text>
 		<text lang="en-GB">Small Depression</text>
+		<text lang="sv" plural="true">små naturliga gropar</text>
+		<text lang="sv">liten naturlig grop</text>
 		<beziers thickness="12.5">
 			<point x="-50" y="50" />
 			<point x="-75" y="0" />
@@ -811,12 +884,15 @@ for the symbols.
 		<name lang="en">Pit</name>
 		<name lang="fr">Trou</name>
 		<name lang="en-GB">Pit</name>
+		<name lang="sv">Liten grävd grop</name>
 		<text lang="en">pit</text>
 		<text lang="en" plural="true">pits</text>
 		<text lang="fr" plural="true" gender="masculin">trous</text>
 		<text lang="fr" gender="masculin">trou</text>
 		<text lang="en-GB" plural="true">Pits</text>
 		<text lang="en-GB">Pit</text>
+		<text lang="sv" plural="true">små grävda gropar</text>
+		<text lang="sv">liten grävd grop</text>
 		<lines thickness="12.5">
 			<point x="-50" y="50" />
 			<point x="0" y="-50" />
@@ -828,12 +904,14 @@ for the symbols.
 		<name lang="en">Broken ground</name>
 		<name lang="fr">Terrain accidenté</name>
 		<name lang="en-GB">Broken ground</name>
+		<name lang="sv">Småkuperad terräng</name>
 		<text lang="en">broken ground</text>
 		<text lang="en" plural="true">broken ground</text>
 		<text lang="fr" plural="true" gender="masculin">terrains accidentés</text>
 		<text lang="fr" gender="masculin">terrain accidenté</text>
 		<text lang="en-GB" plural="true">Broken Ground</text>
 		<text lang="en-GB">Broken Ground</text>
+		<text lang="sv">småkuperad terräng</text>
 		<beziers thickness="12.5">
 			<point x="-65" y="50" />
 			<point x="-75" y="30" />
@@ -867,12 +945,15 @@ for the symbols.
 		<name lang="en">Ant hill (termite mound)</name>
 		<name lang="fr">Fourmilière</name>
 		<name lang="en-GB">Ant hill (termite mound)</name>
+		<name lang="sv">Myrstack</name>
 		<text lang="en">ant hill</text>
 		<text lang="en" plural="true">ant hills</text>
 		<text lang="fr" plural="true" gender="féminin">fourmilières</text>
 		<text lang="fr" gender="féminin">fourmilière</text>
 		<text lang="en-GB" plural="true">Ant Hills</text>
 		<text lang="en-GB">Ant Hill</text>
+		<text lang="sv" plural="true">myrstackar</text>
+		<text lang="sv">myrstacken</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="70" y="0" />
@@ -895,12 +976,15 @@ for the symbols.
 		<name lang="en">Cliff</name>
 		<name lang="fr">Falaise</name>
 		<name lang="en-GB">Crag</name>
+		<name lang="sv">Brant</name>
 		<text lang="en">cliff</text>
 		<text lang="en" plural="true">cliffs</text>
 		<text lang="fr" plural="true" gender="féminin">falaises</text>
 		<text lang="fr" gender="féminin">falaise</text>
 		<text lang="en-GB" plural="true">Crags</text>
 		<text lang="en-GB">Crag</text>
+		<text lang="sv" plural="true">brantarna</text>
+		<text lang="sv">branten</text>
 		<lines thickness="12.5">
 			<point x="-70" y="-20" />
 			<point x="-70" y="20" />
@@ -921,12 +1005,15 @@ for the symbols.
 		<name lang="en">Rock pillar</name>
 		<name lang="fr">Aiguille rocheuse</name>
 		<name lang="en-GB">Rock pillar</name>
+		<name lang="sv">Klippa</name>
 		<text lang="en">rock pillar</text>
 		<text lang="en" plural="true">rock pillars</text>
 		<text lang="fr" plural="true" gender="féminin">aiguilles rocheuses</text>
 		<text lang="fr" gender="féminin">aiguille rocheuse</text>
 		<text lang="en-GB" plural="true">Rock Pillars</text>
 		<text lang="en-GB">Rock Pillar</text>
+		<text lang="sv" plural="true">klipporna</text>
+		<text lang="sv">klippan</text>
 		<filled-polygon>
 			<point x="0" y="70" />
 			<point x="37" y="-70" />
@@ -938,12 +1025,15 @@ for the symbols.
 		<name lang="en">Cave</name>
 		<name lang="fr">Caverne</name>
 		<name lang="en-GB">Cave</name>
+		<name lang="sv">Grotta</name>
 		<text lang="en">cave</text>
 		<text lang="en" plural="true">caves</text>
 		<text lang="fr" plural="true" gender="féminin">cavernes</text>
 		<text lang="fr" gender="féminin">caverne</text>
 		<text lang="en-GB" plural="true">Caves</text>
 		<text lang="en-GB">Cave</text>
+		<text lang="sv" plural="true">grottorna</text>
+		<text lang="sv">grottan</text>
 		<lines thickness="12.5">
 			<point x="50" y="30" />
 			<point x="-50" y="0" />
@@ -967,12 +1057,15 @@ for the symbols.
 		<name lang="en">Boulder</name>
 		<name lang="fr">Rocher, bloc</name>
 		<name lang="en-GB">Boulder</name>
+		<name lang="sv">Sten</name>
 		<text lang="en">boulder</text>
 		<text lang="en" plural="true">boulders</text>
 		<text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
 		<text lang="fr" gender="masculin">rocher ou bloc</text>
 		<text lang="en-GB" plural="true">Boulders</text>
 		<text lang="en-GB">Boulder</text>
+		<text lang="sv" plural="true">stenarna</text>
+		<text lang="sv">stenen</text>
 		<filled-polygon>
 			<point x="0" y="55" />
 			<point x="63.5" y="-55" />
@@ -984,12 +1077,14 @@ for the symbols.
 		<name lang="en">Boulder field</name>
 		<name lang="fr">Zone rocheuse</name>
 		<name lang="en-GB">Boulder field</name>
+		<name lang="sv">Blockterräng</name>
 		<text lang="en">boulder field</text>
 		<text lang="en" plural="true">boulder fields</text>
 		<text lang="fr" plural="true" gender="féminin">zones rocheuses</text>
 		<text lang="fr" gender="féminin">zone rocheuse</text>
 		<text lang="en-GB" plural="true">Boulder Fields</text>
 		<text lang="en-GB">Boulder Field</text>
+		<text lang="sv">blockterrängen</text>
 		<filled-polygon>
 			<point x="-72" y="-72" />
 			<point x="-44.25" y="-24" />
@@ -1021,12 +1116,15 @@ for the symbols.
 		<name lang="en">Boulder cluster</name>
 		<name lang="fr">Tas de pierre</name>
 		<name lang="en-GB">Boulder cluster</name>
+		<name lang="sv">Stensamling</name>
 		<text lang="en">boulder cluster</text>
 		<text lang="en" plural="true">boulder clusters</text>
 		<text lang="fr" plural="true" gender="masculin">tas de pierre</text>
 		<text lang="fr" gender="masculin">tas de pierre</text>
 		<text lang="en-GB" plural="true">Boulder Clusters</text>
 		<text lang="en-GB">Boulder Cluster</text>
+		<text lang="sv" plural="true">stensamlingarna</text>
+		<text lang="sv">stensamlingen</text>
 		<filled-polygon>
 			<point x="25.1" y="30" />
 			<point x="69.3" y="-50" />
@@ -1043,12 +1141,14 @@ for the symbols.
 		<name lang="en">Stony ground</name>
 		<name lang="fr">Pierrier</name>
 		<name lang="en-GB">Stony ground</name>
+		<name lang="sv">Stenig mark</name>
 		<text lang="en">stony ground</text>
 		<text lang="en" plural="true">stony ground</text>
 		<text lang="fr" plural="true" gender="masculin">pierriers</text>
 		<text lang="fr" gender="masculin">pierrier</text>
 		<text lang="en-GB" plural="true">Stony Ground</text>
 		<text lang="en-GB">Stony Ground</text>
+		<text lang="sv">stenig mark</text>
 		<filled-circle radius="7.5">
 			<point x="-60" y="-60" />
 		</filled-circle>
@@ -1130,12 +1230,14 @@ for the symbols.
 		<name lang="en">Bare rock</name>
 		<name lang="fr">Affleurement rocheux</name>
 		<name lang="en-GB">Bare rock</name>
+		<name lang="sv">Berg i dagen</name>
 		<text lang="en">bare rock</text>
 		<text lang="en" plural="true">bare rock</text>
 		<text lang="fr" plural="true" gender="masculin">affleurements rocheux</text>
 		<text lang="fr" gender="masculin">affleurement rocheux</text>
 		<text lang="en-GB" plural="true">Bare Rock</text>
 		<text lang="en-GB">Bare Rock</text>
+		<text lang="sv">berg i dagen</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="-25" y="0" />
@@ -1174,12 +1276,15 @@ for the symbols.
 		<name lang="en">Narrow passage</name>
 		<name lang="fr">Passage étroit (entre falaise)</name>
 		<name lang="en-GB">Narrow passage</name>
+		<name lang="sv">Trång passage</name>
 		<text lang="en">narrow passage</text>
 		<text lang="en" plural="true">narrow passages</text>
 		<text lang="fr" plural="true" gender="masculin">passages étroits</text>
 		<text lang="fr" gender="masculin">passage étroit</text>
 		<text lang="en-GB" plural="true">Narrow Passages</text>
 		<text lang="en-GB">Narrow Passage</text>
+		<text lang="sv" plural="true">trångar passager</text>
+		<text lang="sv">trång passage</text>
 		<lines thickness="12.5">
 			<point x="-45" y="-70" />
 			<point x="-20" y="-70" />
@@ -1198,12 +1303,15 @@ for the symbols.
 		<name lang="en">Lake</name>
 		<name lang="fr">Étang ou lac</name>
 		<name lang="en-GB">Lake</name>
+		<name lang="sv">Sjö</name>
 		<text lang="en">lake</text>
 		<text lang="en" plural="true">lakes</text>
 		<text lang="fr" plural="true" gender="masculin">étangs ou lacs</text>
 		<text lang="fr" gender="masculin">étang ou lac</text>
 		<text lang="en-GB" plural="true">Lakes</text>
 		<text lang="en-GB">Lake</text>
+		<text lang="sv" plural="true">sjöarna</text>
+		<text lang="sv">sjön</text>
 		<beziers thickness="10">
 			<point x="-39" y="-10" />
 			<point x="-39" y="-5" />
@@ -1243,12 +1351,15 @@ for the symbols.
 		<name lang="en">Pond</name>
 		<name lang="fr">Mare</name>
 		<name lang="en-GB">Pond</name>
+		<name lang="sv">Göl</name>
 		<text lang="en">pond</text>
 		<text lang="en" plural="true">ponds</text>
 		<text lang="fr" plural="true" gender="féminin">mares</text>
 		<text lang="fr" gender="féminin">mare</text>
 		<text lang="en-GB" plural="true">Ponds</text>
 		<text lang="en-GB">Pond</text>
+		<text lang="sv" plural="true">gölarna</text>
+		<text lang="sv">gölen</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -1288,12 +1399,14 @@ for the symbols.
 		<name lang="en">Water hole</name>
 		<name lang="fr">Trou d'eau</name>
 		<name lang="en-GB">Water hole</name>
+		<name lang="sv">Vattenhål</name>
 		<text lang="en">water hole</text>
 		<text lang="en" plural="true">water holes</text>
 		<text lang="fr" plural="true" gender="masculin">trous d'eau</text>
 		<text lang="fr" gender="masculin">trou d'eau</text>
 		<text lang="en-GB" plural="true">Water Holes</text>
 		<text lang="en-GB">Water Hole</text>
+		<text lang="sv">vattenhålen</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -1329,12 +1442,14 @@ for the symbols.
 		<name lang="en">River, stream, water course</name>
 		<name lang="fr">Cours d'eau</name>
 		<name lang="en-GB">River, stream, water course</name>
+		<name lang="sv">Älv, Å, Vattendrag</name>
 		<text lang="en">stream</text>
 		<text lang="en" plural="true">streams</text>
 		<text lang="fr" plural="true" gender="masculin">cours d'eau</text>
 		<text lang="fr" gender="masculin">cours d'eau</text>
 		<text lang="en-GB" plural="true">Streams</text>
 		<text lang="en-GB">Stream</text>
+		<text lang="sv">vattendrag</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="80" />
 				<point x="-65" y="75" />
@@ -1371,12 +1486,15 @@ for the symbols.
 		<name lang="en">Minor water channel, ditch</name>
 		<name lang="fr">Fossé ou rigole</name>
 		<name lang="en-GB">Minor water channel, ditch</name>
+		<name lang="sv">Mindre vattendrag, dike</name>
 		<text lang="en">ditch</text>
 		<text lang="en" plural="true">ditches</text>
 		<text lang="fr" plural="true" gender="masculin">fossés ou rigoles</text>
 		<text lang="fr" gender="masculin">fossé ou rigole</text>
 		<text lang="en-GB" plural="true">Ditches</text>
 		<text lang="en-GB">Ditch</text>
+		<text lang="sv" plural="true">diken</text>
+		<text lang="sv">dike</text>
 		<beziers thickness="10">
 			<point x="-48" y="64" />
 				<point x="-52" y="60" />
@@ -1437,12 +1555,15 @@ for the symbols.
 		<name lang="en">Narrow marsh</name>
 		<name lang="fr">Marais étroit</name>
 		<name lang="en-GB">Narrow marsh</name>
+		<name lang="sv">Smal sankmark</name>
 		<text lang="en">narrow marsh</text>
 		<text lang="en" plural="true">narrow marshes</text>
 		<text lang="fr" plural="true" gender="masculin">marais étroits</text>
 		<text lang="fr" gender="masculin">marais étroit</text>
 		<text lang="en-GB" plural="true">Narrow Marshes</text>
 		<text lang="en-GB">Narrow Marsh</text>
+		<text lang="sv" plural="true">smala sankmarker</text>
+		<text lang="sv">smal sankmark</text>
 		<filled-circle radius="7.5">
 			<point x="-50" y="50" />
 		</filled-circle>
@@ -1464,12 +1585,15 @@ for the symbols.
 		<name lang="en">Marsh</name>
 		<name lang="fr">Marais</name>
 		<name lang="en-GB">Marsh</name>
+		<name lang="sv">Sankmark</name>
 		<text lang="en">marsh</text>
 		<text lang="en" plural="true">marshes</text>
 		<text lang="fr" plural="true" gender="masculin">marais</text>
 		<text lang="fr" gender="masculin">marais</text>
 		<text lang="en-GB" plural="true">Marshes</text>
 		<text lang="en-GB">Marsh</text>
+		<text lang="sv" plural="true">sankmarker</text>
+		<text lang="sv">sankmarken</text>
 		<lines thickness="12.5">
 			<point x="-64" y="0" />
 			<point x="64" y="0" />
@@ -1496,12 +1620,14 @@ for the symbols.
 		<name lang="en">Firm ground in marsh</name>
 		<name lang="fr">Terrain ferme dans marais</name>
 		<name lang="en-GB">Firm ground in marsh</name>
+		<name lang="sv">Fastmark i sankmark</name>
 		<text lang="en">firm ground in marsh</text>
 		<text lang="en" plural="true">firm ground in marsh</text>
 		<text lang="fr" plural="true" gender="masculin">terrains fermes</text>
 		<text lang="fr" gender="masculin">terrain ferme</text>
 		<text lang="en-GB" plural="true">Firm Ground in Marsh</text>
 		<text lang="en-GB">Firm Ground in Marsh</text>
+		<text lang="sv">fastmark</text>
 		<filled-polygon>
 			<point x="70" y="70" />
 			<point x="70" y="57.5" />
@@ -1562,12 +1688,15 @@ for the symbols.
 		<name lang="en">Well</name>
 		<name lang="fr">Puits</name>
 		<name lang="en-GB">Well</name>
+		<name lang="sv">Brunn</name>
 		<text lang="en">well</text>
 		<text lang="en" plural="true">wells</text>
 		<text lang="fr" plural="true" gender="masculin">puits</text>
 		<text lang="fr" gender="masculin">puits</text>
 		<text lang="en-GB" plural="true">Wells</text>
 		<text lang="en-GB">Well</text>
+		<text lang="sv" plural="true">brunnarna</text>
+		<text lang="sv">brunnen</text>
 		<beziers thickness="10">
 			<point x="-39" y="-60" />
 			<point x="-39" y="-55" />
@@ -1595,12 +1724,15 @@ for the symbols.
 		<name lang="en">Spring</name>
 		<name lang="fr">Source</name>
 		<name lang="en-GB">Spring</name>
+		<name lang="sv">Källa</name>
 		<text lang="en">spring</text>
 		<text lang="en" plural="true">springs</text>
 		<text lang="fr" plural="true" gender="féminin">sources</text>
 		<text lang="fr" gender="féminin">source</text>
 		<text lang="en-GB" plural="true">Springs</text>
 		<text lang="en-GB">Spring</text>
+		<text lang="sv" plural="true">källorna</text>
+		<text lang="sv">källan</text>
 		<beziers thickness="12.5">
 			<point x="-35" y="35" />
 			<point x="-28" y="26" />
@@ -1631,12 +1763,14 @@ for the symbols.
 		<name lang="en">Water tank, trough</name>
 		<name lang="fr">Réservoir d'eau, citerne</name>
 		<name lang="en-GB">Water tank, trough</name>
+		<name lang="sv">Vattentank</name>
 		<text lang="en">water tank</text>
 		<text lang="en" plural="true">water tanks</text>
 		<text lang="fr" plural="true" gender="masculin">réservoirs d'eau ou citernes</text>
 		<text lang="fr" gender="masculin">réservoir d'eau ou citerne</text>
 		<text lang="en-GB" plural="true">Water Tanks</text>
 		<text lang="en-GB">Water Tank</text>
+		<text lang="sv">vattentank</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -1673,12 +1807,14 @@ for the symbols.
 		<name lang="en">Open land</name>
 		<name lang="fr">Champ</name>
 		<name lang="en-GB">Open land</name>
+		<name lang="sv">Öppen mark</name>
 		<text lang="en">open land</text>
 		<text lang="en" plural="true">open land</text>
 		<text lang="fr" plural="true" gender="masculin">champs</text>
 		<text lang="fr" gender="masculin">champ</text>
 		<text lang="en-GB" plural="true">Open Land</text>
 		<text lang="en-GB">Open Land</text>
+		<text lang="sv">öppen mark</text>
 		<polygon thickness="12.5" corners="round">
 			<point x="0" y="66" />
 			<point x="66" y="0" />
@@ -1691,12 +1827,14 @@ for the symbols.
 		<name lang="en">Semi-open land</name>
 		<name lang="fr">Zone partiellement boisée</name>
 		<name lang="en-GB">Semi-open land</name>
+		<name lang="sv">Halvöppen mark</name>
 		<text lang="en">semi-open land</text>
 		<text lang="en" plural="true">semi-open land</text>
 		<text lang="fr" plural="true" gender="féminin">zones partiellement boisées</text>
 		<text lang="fr" gender="féminin">zone partiellement boisée</text>
 		<text lang="en-GB" plural="true">Semi-open Land</text>
 		<text lang="en-GB">Semi-open Land</text>
+		<text lang="sv">halvöppen mark</text>
 		<filled-circle radius="7.5">
 			<point x="0" y="66" />
 		</filled-circle>
@@ -1739,12 +1877,14 @@ for the symbols.
 		<name lang="en">Forest corner</name>
 		<name lang="fr">Corne de forêt</name>
 		<name lang="en-GB">Forest corner</name>
+		<name lang="sv">Skogshörn</name>
 		<text lang="en">forest corner</text>
 		<text lang="en" plural="true">forest corners</text>
 		<text lang="fr" plural="true" gender="féminin">cornes de forêt</text>
 		<text lang="fr" gender="féminin">corne de forêt</text>
 		<text lang="en-GB" plural="true">Forest Corners</text>
 		<text lang="en-GB">Forest Corner</text>
+		<text lang="sv">skogshörn</text>
 		<polygon thickness="12.5" corners="round">
 			<point x="0" y="0" />
 			<point x="0" y="66" />
@@ -1758,12 +1898,15 @@ for the symbols.
 		<name lang="en">Clearing</name>
 		<name lang="fr">Clairière</name>
 		<name lang="en-GB">Clearing</name>
+		<name lang="sv">Glänta</name>
 		<text lang="en">clearing</text>
 		<text lang="en" plural="true">clearings</text>
 		<text lang="fr" plural="true" gender="féminin">clairières</text>
 		<text lang="fr" gender="féminin">clairière</text>
 		<text lang="en-GB" plural="true">Clearings</text>
 		<text lang="en-GB">Clearing</text>
+		<text lang="sv" plural="true">gläntarna</text>
+		<text lang="sv">gläntan</text>
 		<filled-circle radius="7.5">
 			<point x="0" y="66" />
 		</filled-circle>
@@ -1806,12 +1949,14 @@ for the symbols.
 		<name lang="en">Thicket</name>
 		<name lang="fr">Fourré</name>
 		<name lang="en-GB">Thicket</name>
+		<name lang="sv">Tät skog</name>
 		<text lang="en">thicket</text>
 		<text lang="en" plural="true">thickets</text>
 		<text lang="fr" plural="true" gender="masculin">fourrés</text>
 		<text lang="fr" gender="masculin">fourré</text>
 		<text lang="en-GB" plural="true">Thickets</text>
 		<text lang="en-GB">Thicket</text>
+		<text lang="sv">tät skog</text>
 		<lines thickness="12.5">
 			<point x="21" y="71" />
 			<point x="-71" y="-21" />
@@ -1844,12 +1989,15 @@ for the symbols.
 		<name lang="en">Hedge, Linear thicket</name>
 		<name lang="fr">Haie</name>
 		<name lang="en-GB">Hedge</name>
+		<name lang="sv">Häck</name>
 		<text lang="en">hedge</text>
 		<text lang="en" plural="true">hedges</text>
 		<text lang="fr" plural="true" gender="féminin">haies</text>
 		<text lang="fr" gender="féminin">haie</text>
 		<text lang="en-GB" plural="true">Hedges</text>
 		<text lang="en-GB">Hedge</text>
+		<text lang="sv" plural="true">häckarna</text>
+		<text lang="sv">häcken</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="-63" y="-63" />
@@ -1881,12 +2029,14 @@ for the symbols.
 		<name lang="en">Vegetation boundary</name>
 		<name lang="fr">Limite de végétation</name>
 		<name lang="en-GB">Vegetation boundary</name>
+		<name lang="sv">Beståndsgräns</name>
 		<text lang="en">vegetation boundary</text>
 		<text lang="en" plural="true">vegetation boundaries</text>
 		<text lang="fr" plural="true" gender="féminin">limites de végétation</text>
 		<text lang="fr" gender="féminin">limite de végétation</text>
 		<text lang="en-GB" plural="true">Vegetation Boundaries</text>
 		<text lang="en-GB">Vegetation Boundary</text>
+		<text lang="sv">beståndsgräns</text>
 		<filled-circle radius="7.5">
 			<point x="-50" y="60" />
 		</filled-circle>
@@ -1920,12 +2070,15 @@ for the symbols.
 		<name lang="en">Copse</name>
 		<name lang="fr">Bosquet</name>
 		<name lang="en-GB">Copse</name>
+		<name lang="sv">Dunge</name>
 		<text lang="en">copse</text>
 		<text lang="en" plural="true">copses</text>
 		<text lang="fr" plural="true" gender="masculin">bosquets</text>
 		<text lang="fr" gender="masculin">bosquet</text>
 		<text lang="en-GB" plural="true">Copses</text>
 		<text lang="en-GB">Copse</text>
+		<text lang="sv" plural="true">dunger</text>
+		<text lang="sv">dunge</text>
 		<polygon thickness="12.5">
 			<point x="-60" y="-35" />
 			<point x="-23" y="70" />
@@ -1947,12 +2100,15 @@ for the symbols.
 		<name lang="en">Distinctive tree</name>
 		<name lang="fr">Arbre remarquable</name>
 		<name lang="en-GB">Distinctive tree</name>
+		<name lang="sv">Särpräglad träd</name>
 		<text lang="en">lone tree</text>
 		<text lang="en" plural="true">lone trees</text>
 		<text lang="fr" plural="true" gender="masculin">arbres remarquables</text>
 		<text lang="fr" gender="masculin">arbre remarquable</text>
 		<text lang="en-GB" plural="true">Single Trees</text>
 		<text lang="en-GB">Single Tree</text>
+		<text lang="sv" plural="true">särpräglade träd</text>
+		<text lang="sv">Särpräglat träd</text>
 		<polygon thickness="12.5">
 			<point x="0" y="70" />
 			<point x="-37" y="-35" />
@@ -1968,12 +2124,15 @@ for the symbols.
 		<name lang="en">Tree stump, Root stock</name>
 		<name lang="fr">Souche</name>
 		<name lang="en-GB">Tree stump, Root stock</name>
+		<name lang="sv">Rotvälta, stubbe</name>
 		<text lang="en">root stock</text>
 		<text lang="en" plural="true">root stocks</text>
 		<text lang="fr" plural="true" gender="féminin">souches</text>
 		<text lang="fr" gender="féminin">souche</text>
 		<text lang="en-GB" plural="true">Root Stocks</text>
 		<text lang="en-GB">Root Stock</text>
+		<text lang="sv" plural="true">rotvältor</text>
+		<text lang="sv">rotvälta/stubbe</text>
 		<circle thickness="12.5" radius="60">
 			<point x="0" y="0" />
 		</circle>
@@ -1991,12 +2150,15 @@ for the symbols.
 		<name lang="en">Road</name>
 		<name lang="fr">Route</name>
 		<name lang="en-GB">Road</name>
+		<name lang="sv">Väg</name>
 		<text lang="en">road</text>
 		<text lang="en" plural="true">roads</text>
 		<text lang="fr" plural="true" gender="féminin">routes</text>
 		<text lang="fr" gender="féminin">route</text>
 		<text lang="en-GB" plural="true">Roads</text>
 		<text lang="en-GB">Road</text>
+		<text lang="sv" plural="true">vägar</text>
+		<text lang="sv">väg</text>
 		<lines thickness="15">
 			<point x="-73" y="-73" />
 			<point x="73" y="73" />
@@ -2007,12 +2169,15 @@ for the symbols.
 		<name lang="en">Track, Path</name>
 		<name lang="fr">Chemin, sentier</name>
 		<name lang="en-GB">Track, Path</name>
+		<name lang="sv">Stig</name>
 		<text lang="en">path</text>
 		<text lang="en" plural="true">paths</text>
 		<text lang="fr" plural="true" gender="masculin">chemins ou sentiers</text>
 		<text lang="fr" gender="masculin">chemin ou sentier</text>
 		<text lang="en-GB" plural="true">Paths</text>
 		<text lang="en-GB">Path</text>
+		<text lang="sv" plural="true">stigar</text>
+		<text lang="sv">stig</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="-39" y="-39" />
@@ -2031,12 +2196,15 @@ for the symbols.
 		<name lang="en">Ride</name>
 		<name lang="fr">Layon étroit</name>
 		<name lang="en-GB">Ride</name>
+		<name lang="sv">Rågång</name>
 		<text lang="en">ride</text>
 		<text lang="en" plural="true">rides</text>
 		<text lang="fr" plural="true" gender="masculin">layons étroits</text>
 		<text lang="fr" gender="masculin">layon étroit</text>
 		<text lang="en-GB" plural="true">Rides</text>
 		<text lang="en-GB">Ride</text>
+		<text lang="sv" plural="true">rågångar</text>
+		<text lang="sv">rågång</text>
 		<filled-circle radius="7.5">
 			<point x="48" y="72" />
 		</filled-circle>
@@ -2079,12 +2247,15 @@ for the symbols.
 		<name lang="en">Bridge</name>
 		<name lang="fr">Pont, passerelle</name>
 		<name lang="en-GB">Bridge</name>
+		<name lang="sv">Bro</name>
 		<text lang="en">bridge</text>
 		<text lang="en" plural="true">bridges</text>
 		<text lang="fr" plural="true" gender="masculin">ponts</text>
 		<text lang="fr" gender="masculin">pont</text>
 		<text lang="en-GB" plural="true">Bridges</text>
 		<text lang="en-GB">Bridge</text>
+		<text lang="sv" plural="true">broar</text>
+		<text lang="sv">bro</text>
 		<lines thickness="12.5">
 			<point x="20" y="70" />
 			<point x="20" y="40" />
@@ -2103,12 +2274,15 @@ for the symbols.
 		<name lang="en">Power line</name>
 		<name lang="fr">Ligne à Haute Tension</name>
 		<name lang="en-GB">Power line</name>
+		<name lang="sv">Kraftledning</name>
 		<text lang="en">power line</text>
 		<text lang="en" plural="true">power lines</text>
 		<text lang="fr" plural="true" gender="féminin">lignes à haute tension</text>
 		<text lang="fr" gender="féminin">ligne à haute tension</text>
 		<text lang="en-GB" plural="true">Power Lines</text>
 		<text lang="en-GB">Power Line</text>
+		<text lang="sv" plural="true">kraftledningar</text>
+		<text lang="sv">kraftledning</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -2131,12 +2305,15 @@ for the symbols.
 		<name lang="en">Power line pylon</name>
 		<name lang="fr">Pylône de ligne HT</name>
 		<name lang="en-GB">Power line pylon</name>
+		<name lang="sv">Kraftledningsstolpe</name>
 		<text lang="en">power pylon</text>
 		<text lang="en" plural="true">power pylons</text>
 		<text lang="fr" plural="true" gender="masculin">pylônes de ligne HT</text>
 		<text lang="fr" gender="masculin">pylône de ligne HT</text>
 		<text lang="en-GB" plural="true">Pylons</text>
 		<text lang="en-GB">Pylon</text>
+		<text lang="sv" plural="true">kraftledningsstolpar</text>
+		<text lang="sv">kraftledningsstolpe</text>
 		<lines thickness="10">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -2162,12 +2339,15 @@ for the symbols.
 		<name lang="en">Tunnel</name>
 		<name lang="fr">Tunnel</name>
 		<name lang="en-GB">Tunnel</name>
+		<name lang="sv">Tunnel</name>
 		<text lang="en">tunnel</text>
 		<text lang="en" plural="true">tunnels</text>
 		<text lang="fr" plural="true" gender="masculin">tunnels</text>
 		<text lang="fr" gender="masculin">tunnel</text>
 		<text lang="en-GB" plural="true">Tunnels</text>
 		<text lang="en-GB">Tunnel</text>
+		<text lang="sv" plural="true">tunnlar</text>
+		<text lang="sv">tunnel</text>
 		<lines thickness="12.5">
 			<point x="-65" y="-30" />
 			<point x="65" y="-30" />
@@ -2192,12 +2372,15 @@ for the symbols.
 		<name lang="en">Stone wall</name>
 		<name lang="fr">Mur</name>
 		<name lang="en-GB">Stone wall</name>
+		<name lang="sv">Stenmur</name>
 		<text lang="en">stone wall</text>
 		<text lang="en" plural="true">stone walls</text>
 		<text lang="fr" plural="true" gender="masculin">murs</text>
 		<text lang="fr" gender="masculin">mur</text>
 		<text lang="en-GB" plural="true">Walls</text>
 		<text lang="en-GB">Wall</text>
+		<text lang="sv" plural="true">stenmurar</text>
+		<text lang="sv">stenmur</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -2217,12 +2400,15 @@ for the symbols.
 		<name lang="en">Fence</name>
 		<name lang="fr">Clôture</name>
 		<name lang="en-GB">Fence</name>
+		<name lang="sv">Stängsel</name>
 		<text lang="en">fence</text>
 		<text lang="en" plural="true">fences</text>
 		<text lang="fr" plural="true" gender="féminin">clôtures</text>
 		<text lang="fr" gender="féminin">clôture</text>
 		<text lang="en-GB" plural="true">Fences</text>
 		<text lang="en-GB">Fence</text>
+		<text lang="sv" plural="true">stängslar</text>
+		<text lang="sv">stängsel</text>
 		<lines thickness="12.5">
 			<point x="50" y="70" />
 			<point x="-50" y="-30" />
@@ -2249,12 +2435,15 @@ for the symbols.
 		<name lang="en">Crossing point</name>
 		<name lang="fr">Passage</name>
 		<name lang="en-GB">Crossing point</name>
+		<name lang="sv">Genomgång</name>
 		<text lang="en">crossing point</text>
 		<text lang="en" plural="true">crossing points</text>
 		<text lang="fr" plural="true" gender="masculin">passages</text>
 		<text lang="fr" gender="masculin">passage</text>
 		<text lang="en-GB" plural="true">Crossing Points</text>
 		<text lang="en-GB">Crossing Point</text>
+		<text lang="sv" plural="true">genomgångar</text>
+		<text lang="sv">genomgång</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="-20" y="0" />
@@ -2277,12 +2466,15 @@ for the symbols.
 		<name lang="en">Building</name>
 		<name lang="fr">Construction</name>
 		<name lang="en-GB">Building</name>
+		<name lang="sv">Byggnad</name>
 		<text lang="en">building</text>
 		<text lang="en" plural="true">buildings</text>
 		<text lang="fr" plural="true" gender="féminin">constructions</text>
 		<text lang="fr" gender="féminin">construction</text>
 		<text lang="en-GB" plural="true">Buildings</text>
 		<text lang="en-GB">Building</text>
+		<text lang="sv" plural="true">byggnaderna</text>
+		<text lang="sv">byggnaden</text>
 		<filled-polygon>
 			<point x="-50" y="-50" />
 			<point x="-50" y="50" />
@@ -2295,12 +2487,15 @@ for the symbols.
 		<name lang="en">Paved area</name>
 		<name lang="fr">Zone pavée</name>
 		<name lang="en-GB">Paved area</name>
+		<name lang="sv">Asfalt/grusyta</name>
 		<text lang="en">paved area</text>
 		<text lang="en" plural="true">paved areas</text>
 		<text lang="fr" plural="true" gender="féminin">zones pavées</text>
 		<text lang="fr" gender="féminin">zone pavée</text>
 		<text lang="en-GB" plural="true">Paved Areas</text>
 		<text lang="en-GB">Paved Area</text>
+		<text lang="sv" plural="true">asfalt/grusytor</text>
+		<text lang="sv">asfalt/grusyta</text>
 		<polygon thickness="12.5">
 			<point x="-60" y="-60" />
 			<point x="-60" y="60" />
@@ -2329,12 +2524,15 @@ for the symbols.
 		<name lang="en">Ruin</name>
 		<name lang="fr">Ruine</name>
 		<name lang="en-GB">Ruin</name>
+		<name lang="sv">Ruin</name>
 		<text lang="en">ruin</text>
 		<text lang="en" plural="true">ruins</text>
 		<text lang="fr" plural="true" gender="féminin">ruines</text>
 		<text lang="fr" gender="féminin">ruine</text>
 		<text lang="en-GB" plural="true">Ruins</text>
 		<text lang="en-GB">Ruin</text>
+		<text lang="sv" plural="true">ruinerna</text>
+		<text lang="sv">ruinen</text>
 		<lines thickness="12.5">
 			<point x="-60" y="15" />
 			<point x="-60" y="60" />
@@ -2361,12 +2559,15 @@ for the symbols.
 		<name lang="en">Pipeline</name>
 		<name lang="fr">Pipeline</name>
 		<name lang="en-GB">Pipeline</name>
+		<name lang="sv">Rörledning</name>
 		<text lang="en">pipeline</text>
 		<text lang="en" plural="true">pipelines</text>
 		<text lang="fr" plural="true" gender="masculin">pipelines</text>
 		<text lang="fr" gender="masculin">pipeline</text>
 		<text lang="en-GB" plural="true">Pipelines</text>
 		<text lang="en-GB">Pipeline</text>
+		<text lang="sv" plural="true">rörledningar</text>
+		<text lang="sv">rörledning</text>
 		<lines thickness="12.5">
 			<point x="70" y="70" />
 			<point x="-57.5" y="-57.5" />
@@ -2392,12 +2593,15 @@ for the symbols.
 		<name lang="en">Tower</name>
 		<name lang="fr">Tour</name>
 		<name lang="en-GB">Tower</name>
+		<name lang="sv">Torn</name>
 		<text lang="en">tower</text>
 		<text lang="en" plural="true">towers</text>
 		<text lang="fr" plural="true" gender="féminin">tours</text>
 		<text lang="fr" gender="féminin">tour</text>
 		<text lang="en-GB" plural="true">Towers</text>
 		<text lang="en-GB">Tower</text>
+		<text lang="sv" plural="true">tornen</text>
+		<text lang="sv">tornet</text>
 		<lines thickness="12.5">
 			<point x="-50" y="60" />
 			<point x="50" y="60" />
@@ -2412,12 +2616,15 @@ for the symbols.
 		<name lang="en">Shooting platform</name>
 		<name lang="fr">Poste d'observation</name>
 		<name lang="en-GB">Shooting platform</name>
+		<name lang="sv">Jakttorn</name>
 		<text lang="en">shooting platform</text>
 		<text lang="en" plural="true">shooting platforms</text>
 		<text lang="fr" plural="true" gender="masculin">postes d'observation</text>
 		<text lang="fr" gender="masculin">poste d'observation</text>
 		<text lang="en-GB" plural="true">Shooting Platforms</text>
 		<text lang="en-GB">Shooting Platform</text>
+		<text lang="sv" plural="true">jakttornen</text>
+		<text lang="sv">jakttornet</text>
 		<lines thickness="12.5">
 			<point x="30" y="60" />
 			<point x="-30" y="60" />
@@ -2429,12 +2636,15 @@ for the symbols.
 		<name lang="en">Boundary stone, Cairn</name>
 		<name lang="fr">Borne</name>
 		<name lang="en-GB">Boundary stone, Cairn</name>
+		<name lang="sv">Röse</name>
 		<text lang="en">cairn</text>
 		<text lang="en" plural="true">cairns</text>
 		<text lang="fr" plural="true" gender="féminin">bornes</text>
 		<text lang="fr" gender="féminin">borne</text>
 		<text lang="en-GB" plural="true">Cairns</text>
 		<text lang="en-GB">Cairn</text>
+		<text lang="sv" plural="true">rösen</text>
+		<text lang="sv">röset</text>
 		<circle radius="60" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -2447,12 +2657,15 @@ for the symbols.
 		<name lang="en">Fodder rack</name>
 		<name lang="fr">Mangeoire</name>
 		<name lang="en-GB">Fodder rack</name>
+		<name lang="sv">Foderhäck</name>
 		<text lang="en">fodder rack</text>
 		<text lang="en" plural="true">fodder racks</text>
 		<text lang="fr" plural="true" gender="féminin">mangeoires</text>
 		<text lang="fr" gender="féminin">mangeoire</text>
 		<text lang="en-GB" plural="true">Fodder Racks</text>
 		<text lang="en-GB">Fodder Rack</text>
+		<text lang="sv" plural="true">foderhäckarna</text>
+		<text lang="sv">foderhäcken</text>
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -2472,12 +2685,15 @@ for the symbols.
 		<name lang="en">Charcoal burning ground</name>
 		<name lang="fr">Charbonnière</name>
 		<name lang="en-GB">Charcoal burning ground</name>
+		<name lang="sv">Kolbotten</name>
 		<text lang="en">charcoal burning ground</text>
 		<text lang="en" plural="true">charcoal burning grounds</text>
 		<text lang="fr" plural="true" gender="féminin">charbonnières</text>
 		<text lang="fr" gender="féminin">charbonnière</text>
 		<text lang="en-GB" plural="true">Platforms</text>
 		<text lang="en-GB">Platform</text>
+		<text lang="sv" plural="true">kolbottnar</text>
+		<text lang="sv">kolbotten</text>
 		<circle radius="68" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -2492,12 +2708,15 @@ for the symbols.
 		<name lang="en">Monument or statue</name>
 		<name lang="fr">Monument ou statue</name>
 		<name lang="en-GB">Monument or statue</name>
+		<name lang="sv">Monument/staty</name>
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
 		<text lang="fr" plural="true" gender="masculin">monuments ou statues</text>
 		<text lang="fr" gender="masculin">monument ou statue</text>
 		<text lang="en-GB" plural="true">Monuments</text>
 		<text lang="en-GB">Monument</text>
+		<text lang="sv" plural="true">statyar</text>
+		<text lang="sv">monument/staty</text>
 		<lines thickness="12.5">
 			<point x="-55" y="-60" />
 			<point x="55" y="-60" />
@@ -2513,12 +2732,15 @@ for the symbols.
 		<name lang="en">Building pass-through</name>
 		<name lang="fr">Passage couvert</name>
 		<name lang="en-GB">Building pass-through</name>
+		<name lang="sv">Passage under byggnad</name>
 		<text lang="en">building pass-through</text>
 		<text lang="en" plural="true">building pass-throughs</text>
 		<text lang="fr" plural="true" gender="masculin">passages couverts</text>
 		<text lang="fr" gender="masculin">passage couvert</text>
 		<text lang="en-GB" plural="true">Building Pass-throughs</text>
 		<text lang="en-GB">Building Pass-through</text>
+		<text lang="sv" plural="true">passager under byggnad</text>
+		<text lang="sv">passage under byggnad</text>
 		<lines thickness="12.5">
 			<point x="-60" y="60" />
 			<point x="60" y="60" />
@@ -2537,12 +2759,14 @@ for the symbols.
 		<name lang="en">Stairway</name>
 		<name lang="fr">Escalier</name>
 		<name lang="en-GB">Stairway</name>
+		<name lang="sv">Trappor</name>
 		<text lang="en">stairway</text>
 		<text lang="en" plural="true">stairways</text>
 		<text lang="fr" plural="true" gender="masculin">escaliers</text>
 		<text lang="fr" gender="masculin">escalier</text>
 		<text lang="en-GB" plural="true">Stairways</text>
 		<text lang="en-GB">Stairway</text>
+		<text lang="sv">trappor</text>
 		<lines thickness="12.5">
 			<point x="-70" y="-45" />
 			<point x="-35" y="-45" />
@@ -2559,12 +2783,15 @@ for the symbols.
 		<name lang="en">Special item</name>
 		<name lang="fr">Objet particulier devant être défini au préalable</name>
 		<name lang="en-GB">Special item</name>
+		<name lang="sv">Speciellt föremål</name>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<text lang="fr" plural="true" gender="masculin">objets particuliers</text>
 		<text lang="fr" gender="masculin">objet particulier</text>
 		<text lang="en-GB" plural="true">Special Items</text>
 		<text lang="en-GB">Special Item</text>
+		<text lang="sv" plural="true">speciella föremål</text>
+		<text lang="sv">speciellt föremål</text>
 		<lines thickness="12.5">
 			<point x="45" y="45" />
 			<point x="-45" y="-45" />
@@ -2579,12 +2806,15 @@ for the symbols.
 		<name lang="en">Special item</name>
 		<name lang="fr">Objet particulier devant être défini au préalable</name>
 		<name lang="en-GB">Special item</name>
+		<name lang="sv">Speciellt föremål</name>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<text lang="fr" plural="true" gender="masculin">objets particuliers</text>
 		<text lang="fr" gender="masculin">objet particulier</text>
 		<text lang="en-GB" plural="true">Special Items</text>
 		<text lang="en-GB">Special Item</text>
+		<text lang="sv" plural="true">speciella föremål</text>
+		<text lang="sv">Speciellt föremål</text>
 		<circle radius="55" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -2597,12 +2827,14 @@ for the symbols.
 		<name lang="en">Low</name>
 		<name lang="fr">Plat</name>
 		<name lang="en-GB">Low</name>
+		<name lang="sv">Låg</name>
 		<text lang="en">low {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} aplaties</text>
 		<text lang="fr" plural="true" gender="masculin">{0} aplatis</text>
 		<text lang="fr" gender="féminin">{0} aplatie</text>
 		<text lang="fr" gender="masculin">{0} aplati</text>
 		<text lang="en-GB">{0}, Low</text>
+		<text lang="sv">{0}, låg</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-10" />
 			<point x="-30" y="20" />
@@ -2615,12 +2847,14 @@ for the symbols.
 		<name lang="en">Shallow</name>
 		<name lang="fr">Évasé</name>
 		<name lang="en-GB">Shallow</name>
+		<name lang="sv">Flack</name>
 		<text lang="en">shallow {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} évasées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} évasés</text>
 		<text lang="fr" gender="féminin">{0} évasée</text>
 		<text lang="fr" gender="masculin">{0} évasé</text>
 		<text lang="en-GB">{0}, Shallow</text>
+		<text lang="sv">{0}, flack</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="10" />
 			<point x="-30" y="-20" />
@@ -2633,12 +2867,14 @@ for the symbols.
 		<name lang="en">Deep</name>
 		<name lang="fr">Profond</name>
 		<name lang="en-GB">Deep</name>
+		<name lang="sv">Djup</name>
 		<text lang="en">deep {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} profondes</text>
 		<text lang="fr" plural="true" gender="masculin">{0} profonds</text>
 		<text lang="fr" gender="féminin">{0} profonde</text>
 		<text lang="fr" gender="masculin">{0} profond</text>
 		<text lang="en-GB">{0},  Deep</text>
+		<text lang="sv">{0}, djup</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="70" />
 				<point x="-35" y="72" />
@@ -2660,12 +2896,14 @@ for the symbols.
 		<name lang="en">Overgrown</name>
 		<name lang="fr">Couvert de végétation</name>
 		<name lang="en-GB">Overgrown</name>
+		<name lang="sv">Bevuxen</name>
 		<text lang="en">overgrown {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} couvertes de végétation</text>
 		<text lang="fr" plural="true" gender="masculin">{0} couverts de végétation</text>
 		<text lang="fr" gender="féminin">{0} couverte de végétation</text>
 		<text lang="fr" gender="masculin">{0} couvert de végétation</text>
 		<text lang="en-GB">{0}, Overgrown</text>
+		<text lang="sv">{0}, bevuxen</text>
 		<lines thickness="10">
 			<point x="42" y="64" />
 			<point x="42" y="-64" />
@@ -2704,12 +2942,14 @@ for the symbols.
 		<name lang="en">Open</name>
 		<name lang="fr">Dégagé</name>
 		<name lang="en-GB">Open</name>
+		<name lang="sv">Öppen</name>
 		<text lang="en">open {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} dégagées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} dégagés</text>
 		<text lang="fr" gender="féminin">{0} dégagée</text>
 		<text lang="fr" gender="masculin">{0} dégagé</text>
 		<text lang="en-GB">{0}, Open</text>
+		<text lang="sv">{0}, öppen</text>
 		<filled-circle radius="7.5">
 			<point x="-60" y="60" />
 		</filled-circle>
@@ -2752,12 +2992,14 @@ for the symbols.
 		<name lang="en">Rocky, stony</name>
 		<name lang="fr">Rocailleux</name>
 		<name lang="en-GB">Rocky, stony</name>
+		<name lang="sv">Stenig</name>
 		<text lang="en">rocky {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} rocailleuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} rocailleux</text>
 		<text lang="fr" gender="féminin">{0} rocailleuse</text>
 		<text lang="fr" gender="masculin">{0} rocailleux</text>
 		<text lang="en-GB">{0}, Rocky</text>
+		<text lang="sv">{0}, stenig</text>
 		<filled-polygon>
 			<point x="-72" y="0" />
 			<point x="-44.25" y="48" />
@@ -2779,12 +3021,14 @@ for the symbols.
 		<name lang="en">Marshy</name>
 		<name lang="fr">Marécageux</name>
 		<name lang="en-GB">Marshy</name>
+		<name lang="sv">Sank</name>
 		<text lang="en">marshy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} marécageuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} marécageux</text>
 		<text lang="fr" gender="féminin">{0} marécageuse</text>
 		<text lang="fr" gender="masculin">{0} marécageux</text>
 		<text lang="en-GB">{0}, Marshy</text>
+		<text lang="sv">{0}, sank</text>
 		<lines thickness="12.5">
 			<point x="30" y="35" />
 			<point x="-30" y="35" />
@@ -2803,12 +3047,14 @@ for the symbols.
 		<name lang="en">Sandy</name>
 		<name lang="fr">Sablonneux</name>
 		<name lang="en-GB">Sandy</name>
+		<name lang="sv">Sandig</name>
 		<text lang="en">sandy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} sablonneuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} sablonneux</text>
 		<text lang="fr" gender="féminin">{0} sablonneuse</text>
 		<text lang="fr" gender="masculin">{0} sablonneux</text>
 		<text lang="en-GB">{0}, Sandy</text>
+		<text lang="sv">{0}, sandig</text>
 		<filled-circle radius="5">
 			<point x="-15" y="-31" />
 		</filled-circle>
@@ -2965,10 +3211,12 @@ for the symbols.
 		<name lang="en">Needle-leaved</name>
 		<name lang="fr">Conifère</name>
 		<name lang="en-GB">Needle-leaved</name>
+		<name lang="sv">Barrträd</name>
 		<text lang="en">needle-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, conifères</text>
 		<text lang="fr">{0}, conifère</text>
 		<text lang="en-GB">{0}, Needle-leaved</text>
+		<text lang="sv">{0}, barrträd </text>
 		<polygon thickness="12.5">
 			<point x="0" y="70" />
 			<point x="-35" y="15" />
@@ -2990,10 +3238,12 @@ for the symbols.
 		<name lang="en">Broad-leaved</name>
 		<name lang="fr">Feuillu</name>
 		<name lang="en-GB">Broad-leaved</name>
+		<name lang="sv">Lövträd</name>
 		<text lang="en">broad-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, feuillus</text>
 		<text lang="fr">{0}, feuillu</text>
 		<text lang="en-GB">{0}, Broad-leaved</text>
+		<text lang="sv">{0}, lövträd </text>
 		<beziers thickness="12.5">
 			<point x="0" y="-20" />
 			<point x="15" y="-70" />
@@ -3036,12 +3286,14 @@ for the symbols.
 		<name lang="en">Ruined</name>
 		<name lang="fr">Ruiné ou tombé</name>
 		<name lang="en-GB">Ruined</name>
+		<name lang="sv">Raserad</name>
 		<text lang="en">ruined {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} ruinées ou tombées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} ruinés ou tombés</text>
 		<text lang="fr" gender="féminin">{0} ruinée ou tombée</text>
 		<text lang="fr" gender="masculin">{0} ruiné ou tombé</text>
 		<text lang="en-GB">ruined {0}</text>
+		<text lang="sv">{0}, raserad </text>
 		<beziers thickness="12.5">
 			<point x="-60" y="-60" />
 			<point x="-58" y="8" />
@@ -3081,10 +3333,12 @@ for the symbols.
 		<name lang="en">Crossing</name>
 		<name lang="fr">Croisement</name>
 		<name lang="en-GB">Crossing</name>
+		<name lang="sv">Korsning</name>
 		<text lang="en">{0} and {1} crossing</text>
 		<text lang="en" plural="true">{0} and {1} crossings</text>
 		<text lang="fr" gender="masculin">croisement entre {0} et {1}</text>
 		<text lang="en-GB">{0}/{1} crossing</text>
+		<text lang="sv">{0} korsar {1}</text>
 		<lines thickness="12.5">
 			<point x="70" y="70" />
 			<point x="-70" y="-70" />
@@ -3099,20 +3353,26 @@ for the symbols.
 		<name lang="en">Crossing (objects of same kind)</name>
 		<name lang="fr">Croisement (mêmes symboles)</name>
 		<name lang="en-GB">Crossing (objects of same kind)</name>
+		<name lang="sv">Korsning (samma symbol)</name>
 		<text lang="en">{0} crossing</text>
 		<text lang="en" plural="true">{0} crossings</text>
 		<text lang="fr" gender="masculin">croisement de {1}</text>
 		<text lang="en-GB">{0} crossing</text>
+		<text lang="sv" plural="true">{0}korsningar</text>
+		<text lang="sv">{0}korsning</text>
 	</symbol>
 	
 	<symbol kind="F" id="10.2">
 		<name lang="en">Junction</name>
 		<name lang="fr">Jonction</name>
 		<name lang="en-GB">Junction</name>
+		<name lang="sv">Förgrening</name>
 		<text lang="en">{0} and {1} junction</text>
 		<text lang="en" plural="true">{0} and {1} junctions</text>
 		<text lang="fr" gender="féminin">jonction entre {0} et {1}</text>
 		<text lang="en-GB">{0}/{1} Junction</text>
+		<text lang="sv" plural="true">{0}/{1} förgreningar</text>
+		<text lang="sv">{0}/{1} förgrening</text>
 		<lines thickness="12.5">
 			<point x="55" y="70" />
 			<point x="-55" y="-70" />
@@ -3127,10 +3387,13 @@ for the symbols.
 		<name lang="en">Junction (objects of same kind)</name>
 		<name lang="fr">Jonction (mêmes symboles)</name>
 		<name lang="en-GB">Junction (objects of same kind)</name>
+		<name lang="sv">Förgrening (samma symbol)</name>
 		<text lang="en">{0} junction</text>
 		<text lang="en" plural="true">{0} junctions</text>
 		<text lang="fr" gender="féminin">jonction de {1}</text>
 		<text lang="en-GB">{0} Junction</text>
+		<text lang="sv" plural="true">{0}förgreningar</text>
+		<text lang="sv">{0}förgrening</text>
 	</symbol>
 
 	<!-- The dimensions of the symbol don't have a symbol, just text. Note that
@@ -3142,45 +3405,55 @@ for the symbols.
 		<name lang="en">Height of feature</name>
 		<name lang="fr">Hauteur en mètre</name>
 		<name lang="en-GB">Height of feature</name>
+		<name lang="sv">Höjd</name>
 		<text lang="en">{0} high</text>
 		<text lang="fr">hauteur {0}</text>
 		<text lang="en-GB">{0}</text>
+		<text lang="sv">{0} hög</text>
 	</symbol>
 
 	<symbol kind="F" id="9.1deep">
 		<name lang="en">Depth of feature</name>
 		<name lang="fr">Profondeur en mètre</name>
 		<name lang="en-GB">Depth of feature</name>
+		<name lang="sv">Djup</name>
 		<text lang="en">{0} deep</text>
 		<text lang="fr">profondeur {0}</text>
 		<text lang="en-GB">{0}</text>
+		<text lang="sv">{0} djup</text>
 	</symbol>
 
 	<symbol kind="F" id="9.2">
 		<name lang="en">Size of feature</name>
 		<name lang="fr">Dimension en mètre</name>
 		<name lang="en-GB">Size of feature</name>
+		<name lang="sv">Storlek</name>
 		<text lang="en">{0} by {1}</text>
 		<text lang="fr">{0} x {1}</text>
 		<text lang="en-GB">{0} x {1}</text>
+		<text lang="sv">{0} x {1}</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3high">
 		<name lang="en">Height of feature on slope</name>
 		<name lang="fr">Hauteur d'un élément sur une pente</name>
 		<name lang="en-GB">Height of feature on slope</name>
+		<name lang="sv">Höjd i sluttning</name>
 		<text lang="en">{0} to {1} high</text>
 		<text lang="fr">de {0} à {1} de haut</text>
 		<text lang="en-GB">{0}/{1} </text>
+		<text lang="sv">{0}/{1} hög</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3deep">
 		<name lang="en">Depth of feature on slope</name>
 		<name lang="fr">Profondeur d'un élément sur une pente</name>
 		<name lang="en-GB">Depth of feature on slope</name>
+		<name lang="sv">Djup i en sluttning</name>
 		<text lang="en">{0} to {1} deep</text>
 		<text lang="fr">de {0} à {1} de profondeur</text>
 		<text lang="en-GB">{0}/{1}</text>
+		<text lang="sv">{0}/{1} djup</text>
 	</symbol>
 
 	<!-- Note that in the below, {0} and {1} are replaced with the 
@@ -3191,9 +3464,11 @@ for the symbols.
 		<name lang="en">Size of two features</name>
 		<name lang="fr">Hauteur de deux éléments</name>
 		<name lang="en-GB">Size of two features</name>
+		<name lang="sv">Höjden på två föremål</name>
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
 		<text lang="en-GB">{0} &amp; {1}</text>
+		<text lang="sv">{0} och {1}</text>
 	</symbol>
 
 
@@ -3208,9 +3483,11 @@ for the symbols.
 		<name lang="en">North side</name>
 		<name lang="fr">Côté Nord</name>
 		<name lang="en-GB">North side</name>
+		<name lang="sv">Norra sidan</name>
 		<text lang="en">N side of {0}</text>
 		<text lang="fr">{0}, côté Nord</text>
 		<text lang="en-GB">{0}, N. Side</text>
+		<text lang="sv">{0}, Norra sidan </text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="-20" />
 		</circle>
@@ -3223,9 +3500,11 @@ for the symbols.
 		<name lang="en">North-east side</name>
 		<name lang="fr">Côté NE</name>
 		<name lang="en-GB">North-east side</name>
+		<name lang="sv">Nordöstra sidan</name>
 		<text lang="en">NE side of {0}</text>
 		<text lang="fr">{0}, côté NE</text>
 		<text lang="en-GB">{0}, NE. Side</text>
+		<text lang="sv">{0}, Nordöstra sidan </text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="-14.14" />
 		</circle>
@@ -3238,9 +3517,11 @@ for the symbols.
 		<name lang="en">East side</name>
 		<name lang="fr">Côté Est</name>
 		<name lang="en-GB">East side</name>
+		<name lang="sv">Östra sidan</name>
 		<text lang="en">E side of {0}</text>
 		<text lang="fr">{0}, côté Est</text>
 		<text lang="en-GB">{0}, E. Side</text>
+		<text lang="sv">{0}, Östra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="-20" y="0" />
 		</circle>
@@ -3253,9 +3534,11 @@ for the symbols.
 		<name lang="en">South-east side</name>
 		<name lang="fr">Côté SE</name>
 		<name lang="en-GB">South-east side</name>
+		<name lang="sv">Sydöstra sidan</name>
 		<text lang="en">SE side of {0}</text>
 		<text lang="fr">{0}, côté SE</text>
 		<text lang="en-GB">{0}, SE. Side</text>
+		<text lang="sv">{0}, Sydöstra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="14.14" />
 		</circle>
@@ -3268,9 +3551,11 @@ for the symbols.
 		<name lang="en">South side</name>
 		<name lang="fr">Côté Sud</name>
 		<name lang="en-GB">South side</name>
+		<name lang="sv">Södra sidan</name>
 		<text lang="en">S side of {0}</text>
 		<text lang="fr">{0}, côté Sud</text>
 		<text lang="en-GB">{0}, S. Side</text>
+		<text lang="sv">{0}, Södra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="20" />
 		</circle>
@@ -3283,9 +3568,11 @@ for the symbols.
 		<name lang="en">South-west side</name>
 		<name lang="fr">Côté SO</name>
 		<name lang="en-GB">South-west side</name>
+		<name lang="sv">Sydvästra sidan</name>
 		<text lang="en">SW side of {0}</text>
 		<text lang="fr">{0}, côté SO</text>
 		<text lang="en-GB">{0}, SW. Side</text>
+		<text lang="sv">{0}, Sydvästra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="14.14" />
 		</circle>
@@ -3298,9 +3585,11 @@ for the symbols.
 		<name lang="en">West side</name>
 		<name lang="fr">Côté Ouest</name>
 		<name lang="en-GB">West side</name>
+		<name lang="sv">Västra sidan</name>
 		<text lang="en">W side of {0}</text>
 		<text lang="fr">{0}, côté Ouest</text>
 		<text lang="en-GB">{0}, W. Side</text>
+		<text lang="sv">{0}, Västra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="20" y="0" />
 		</circle>
@@ -3313,9 +3602,11 @@ for the symbols.
 		<name lang="en">North-west side</name>
 		<name lang="fr">Côté NO</name>
 		<name lang="en-GB">North-west side</name>
+		<name lang="sv">Nordvästra sidan</name>
 		<text lang="en">NW side of {0}</text>
 		<text lang="fr">{0}, côté NO</text>
 		<text lang="en-GB">{0}, NW. Side</text>
+		<text lang="sv">{0}, Nordvästra sidan</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="-14.14" />
 		</circle>
@@ -3328,9 +3619,11 @@ for the symbols.
 		<name lang="en">North edge</name>
 		<name lang="fr">Bord Nord</name>
 		<name lang="en-GB">North edge</name>
+		<name lang="sv">Norra kanten</name>
 		<text lang="en">N edge of {0}</text>
 		<text lang="fr">{0}, bord Nord</text>
 		<text lang="en-GB">{0}, N. Edge</text>
+		<text lang="sv">{0}, Norra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3344,9 +3637,11 @@ for the symbols.
 		<name lang="en">North-east edge</name>
 		<name lang="fr">Bord NE</name>
 		<name lang="en-GB">North-east edge</name>
+		<name lang="sv">Nordöstra kanten</name>
 		<text lang="en">NE edge of {0}</text>
 		<text lang="fr">{0}, bord NE</text>
 		<text lang="en-GB">{0}, NE. Edge</text>
+		<text lang="sv">{0}, Nordöstra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3360,9 +3655,11 @@ for the symbols.
 		<name lang="en">East edge</name>
 		<name lang="fr">Bord Est</name>
 		<name lang="en-GB">East edge</name>
+		<name lang="sv">Östra kanten</name>
 		<text lang="en">E edge of {0}</text>
 		<text lang="fr">{0}, bord Est</text>
 		<text lang="en-GB">{0}, E. Edge</text>
+		<text lang="sv">{0}, Östra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3376,9 +3673,11 @@ for the symbols.
 		<name lang="en">South-east edge</name>
 		<name lang="fr">Bord SE</name>
 		<name lang="en-GB">South-east edge</name>
+		<name lang="sv">Sydöstra kanten</name>
 		<text lang="en">SE edge of {0}</text>
 		<text lang="fr">{0}, bord SE</text>
 		<text lang="en-GB">{0}, SE. Edge</text>
+		<text lang="sv">{0}, Sydöstra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3392,9 +3691,11 @@ for the symbols.
 		<name lang="en">South edge</name>
 		<name lang="fr">Bord Sud</name>
 		<name lang="en-GB">South edge</name>
+		<name lang="sv">Södra kanten</name>
 		<text lang="en">S edge of {0}</text>
 		<text lang="fr">{0}, bord Sud</text>
 		<text lang="en-GB">{0}, S. Edge</text>
+		<text lang="sv">{0}, Södra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3408,9 +3709,11 @@ for the symbols.
 		<name lang="en">South-west edge</name>
 		<name lang="fr">Bord SO</name>
 		<name lang="en-GB">South-west edge</name>
+		<name lang="sv">Sydvästra kanten</name>
 		<text lang="en">SW edge of {0}</text>
 		<text lang="fr">{0}, bord SO</text>
 		<text lang="en-GB">{0}, SW. Edge</text>
+		<text lang="sv">{0}, Sydvästra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3424,9 +3727,11 @@ for the symbols.
 		<name lang="en">West edge</name>
 		<name lang="fr">Bord Ouest</name>
 		<name lang="en-GB">West edge</name>
+		<name lang="sv">Västra kanten</name>
 		<text lang="en">W edge of {0}</text>
 		<text lang="fr">{0}, bord Ouest</text>
 		<text lang="en-GB">{0}, W. Edge</text>
+		<text lang="sv">{0}, Västra kanten </text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3440,9 +3745,11 @@ for the symbols.
 		<name lang="en">North-west edge</name>
 		<name lang="fr">Bord NO</name>
 		<name lang="en-GB">North-west edge</name>
+		<name lang="sv">Nordvästra kanten</name>
 		<text lang="en">NW edge of {0}</text>
 		<text lang="fr">{0}, Bord NO</text>
 		<text lang="en-GB">{0}, NW. Edge</text>
+		<text lang="sv">{0}, Nordvästra kanten</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3456,9 +3763,11 @@ for the symbols.
 		<name lang="en">North part</name>
 		<name lang="fr">Partie Nord</name>
 		<name lang="en-GB">North part</name>
+		<name lang="sv">Norra delen</name>
 		<text lang="en">N part of {0}</text>
 		<text lang="fr">{0}, partie Nord</text>
 		<text lang="en-GB">{0}, N. Part</text>
+		<text lang="sv">{0}, Norra delen </text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3471,9 +3780,11 @@ for the symbols.
 		<name lang="en">North-east part</name>
 		<name lang="fr">Partie NE</name>
 		<name lang="en-GB">North-east part</name>
+		<name lang="sv">Nordöstra delen</name>
 		<text lang="en">NE part of {0}</text>
 		<text lang="fr">{0}, partie NE</text>
 		<text lang="en-GB">{0}, NE. Part</text>
+		<text lang="sv">{0}, Nordöstra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3486,9 +3797,11 @@ for the symbols.
 		<name lang="en">East part</name>
 		<name lang="fr">Partie Est</name>
 		<name lang="en-GB">East part</name>
+		<name lang="sv">Östra delen</name>
 		<text lang="en">E part of {0}</text>
 		<text lang="fr">{0}, partie Est</text>
 		<text lang="en-GB">{0}, E. Part</text>
+		<text lang="sv">{0}, Östra delen </text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3501,9 +3814,11 @@ for the symbols.
 		<name lang="en">South-east part</name>
 		<name lang="fr">Partie SE</name>
 		<name lang="en-GB">South-east part</name>
+		<name lang="sv">Sydöstra delen</name>
 		<text lang="en">SE part of {0}</text>
 		<text lang="fr">{0}, partie SE</text>
 		<text lang="en-GB">{0}, SE. Part</text>
+		<text lang="sv">{0}, Sydöstra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3516,9 +3831,11 @@ for the symbols.
 		<name lang="en">South part</name>
 		<name lang="fr">Partie Sud</name>
 		<name lang="en-GB">South part</name>
+		<name lang="sv">Södra delen</name>
 		<text lang="en">S part of {0}</text>
 		<text lang="fr">{0}, partie Sud</text>
 		<text lang="en-GB">{0}, S. Part</text>
+		<text lang="sv">{0}, Södra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3531,9 +3848,11 @@ for the symbols.
 		<name lang="en">South-west part</name>
 		<name lang="fr">Partie SO</name>
 		<name lang="en-GB">South-west part</name>
+		<name lang="sv">Sydvästra delen</name>
 		<text lang="en">SW part of {0}</text>
 		<text lang="fr">{0}, partie SO</text>
 		<text lang="en-GB">{0}, SW. Part</text>
+		<text lang="sv">{0}, Sydvästra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3546,9 +3865,11 @@ for the symbols.
 		<name lang="en">West part</name>
 		<name lang="fr">Partie Ouest</name>
 		<name lang="en-GB">West part</name>
+		<name lang="sv">Västra delen</name>
 		<text lang="en">W part of {0}</text>
 		<text lang="fr">{0}, partie Ouest</text>
 		<text lang="en-GB">{0}, W. Part</text>
+		<text lang="sv">{0}, Västra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3561,9 +3882,11 @@ for the symbols.
 		<name lang="en">North-west part</name>
 		<name lang="fr">Partie NO</name>
 		<name lang="en-GB">North-west part</name>
+		<name lang="sv">Nordvästra delen</name>
 		<text lang="en">NW part of {0}</text>
 		<text lang="fr">{0}, partie NO</text>
 		<text lang="en-GB">{0}, NW. Part</text>
+		<text lang="sv">{0}, Nordvästra delen</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -3576,9 +3899,11 @@ for the symbols.
 		<name lang="en">North corner (inside)</name>
 		<name lang="fr">Angle Nord (intérieur)</name>
 		<name lang="en-GB">North corner (inside)</name>
+		<name lang="sv">Norra hörnet (insidan)</name>
 		<text lang="en">N inside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (intérieur)</text>
 		<text lang="en-GB">{0}, N. Corner (inside)</text>
+		<text lang="sv">{0}, Norra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="-65" y="-15" />
 			<point x="0" y="50" />
@@ -3593,9 +3918,11 @@ for the symbols.
 		<name lang="en">North-east corner (inside)</name>
 		<name lang="fr">Angle NE (intérieur)</name>
 		<name lang="en-GB">North-east corner (inside)</name>
+		<name lang="sv">Nordöstra hörnet (insidan)</name>
 		<text lang="en">NE inside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (intérieur)</text>
 		<text lang="en-GB">{0}, NE Corner (inside)</text>
+		<text lang="sv">{0}, Nordöstra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="-56.57" y="35.36" />
 			<point x="35.36" y="35.36" />
@@ -3610,9 +3937,11 @@ for the symbols.
 		<name lang="en">East corner (inside)</name>
 		<name lang="fr">Angle Est (intérieur)</name>
 		<name lang="en-GB">East corner (inside)</name>
+		<name lang="sv">Östra hörnet (insidan)</name>
 		<text lang="en">E inside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (intérieur)</text>
 		<text lang="en-GB">{0}, E. corner (inside)</text>
+		<text lang="sv">{0}, Östra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="-15" y="-65" />
 			<point x="50" y="0" />
@@ -3627,9 +3956,11 @@ for the symbols.
 		<name lang="en">South-east corner (inside)</name>
 		<name lang="fr">Angle SE (intérieur)</name>
 		<name lang="en-GB">South-east corner (inside)</name>
+		<name lang="sv">Sydöstra hörnet (insidan)</name>
 		<text lang="en">SE inside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (intérieur)</text>
 		<text lang="en-GB">{0}, SE. Corner (inside)</text>
+		<text lang="sv">{0}, Sydöstra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="-56.57" y="-35.36" />
 			<point x="35.36" y="-35.36" />
@@ -3644,9 +3975,11 @@ for the symbols.
 		<name lang="en">South corner (inside)</name>
 		<name lang="fr">Angle Sud (intérieur)</name>
 		<name lang="en-GB">South corner (inside)</name>
+		<name lang="sv">Södra hörnet (insidan)</name>
 		<text lang="en">S inside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (intérieur)</text>
 		<text lang="en-GB">{0}, S. Corner (inside)</text>
+		<text lang="sv">{0}, Södra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="-65" y="15" />
 			<point x="0" y="-50" />
@@ -3661,9 +3994,11 @@ for the symbols.
 		<name lang="en">South-west corner (inside)</name>
 		<name lang="fr">Angle SO (intérieur)</name>
 		<name lang="en-GB">South-west corner (inside)</name>
+		<name lang="sv">Sydvästra hörnet (insidan)</name>
 		<text lang="en">SW inside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (intérieur)</text>
 		<text lang="en-GB">{0}, SW. Corner (inside)</text>
+		<text lang="sv">{0}, Sydvästra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="56.57" y="-35.36" />
 			<point x="-35.36" y="-35.36" />
@@ -3678,9 +4013,11 @@ for the symbols.
 		<name lang="en">West corner (inside)</name>
 		<name lang="fr">Angle Ouest (intérieur)</name>
 		<name lang="en-GB">West corner (inside)</name>
+		<name lang="sv">Västra hörnet (insidan)</name>
 		<text lang="en">W inside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (intérieur)</text>
 		<text lang="en-GB">{0}, W. Corner (inside)</text>
+		<text lang="sv">{0}, Västra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="15" y="-65" />
 			<point x="-50" y="0" />
@@ -3695,9 +4032,11 @@ for the symbols.
 		<name lang="en">North-west corner (inside)</name>
 		<name lang="fr">Angle NO (intérieur)</name>
 		<name lang="en-GB">North-west corner (inside)</name>
+		<name lang="sv">Nordvästra hörnet (insidan)</name>
 		<text lang="en">NW inside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (intérieur)</text>
 		<text lang="en-GB">{0}, NW. Corner (inside)</text>
+		<text lang="sv">{0}, Nordvästra hörnet (insidan)</text>
 		<lines thickness="10">
 			<point x="56.57" y="35.36" />
 			<point x="-35.36" y="35.36" />
@@ -3712,9 +4051,11 @@ for the symbols.
 		<name lang="en">North corner (outside)</name>
 		<name lang="fr">Angle Nord (extérieur)</name>
 		<name lang="en-GB">North corner (outside)</name>
+		<name lang="sv">Norra hörnet (utsidan)</name>
 		<text lang="en">N outside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (extérieur)</text>
 		<text lang="en-GB">{0}, N Corner (outside)</text>
+		<text lang="sv">{0}, Norra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="65" y="-40" />
 			<point x="0" y="25" />
@@ -3729,9 +4070,11 @@ for the symbols.
 		<name lang="en">North-east corner (outside)</name>
 		<name lang="fr">Angle NE (extérieur)</name>
 		<name lang="en-GB">North-east corner (outside)</name>
+		<name lang="sv">Nordöstra hörnet (utsidan)</name>
 		<text lang="en">NE outside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (extérieur)</text>
 		<text lang="en-GB">{0}, NE. Corner (outside)</text>
+		<text lang="sv">{0}, Nordöstra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="-69.25" y="22.68" />
 			<point x="22.68" y="22.68" />
@@ -3746,9 +4089,11 @@ for the symbols.
 		<name lang="en">East corner (outside)</name>
 		<name lang="fr">Angle Est (extérieur)</name>
 		<name lang="en-GB">East corner (outside)</name>
+		<name lang="sv">Östra hörnet (utsidan)</name>
 		<text lang="en">E outside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (extérieur)</text>
 		<text lang="en-GB">{0}, E. Corner (outside)</text>
+		<text lang="sv">{0}, Östra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="-40" y="-65" />
 			<point x="25" y="0" />
@@ -3763,9 +4108,11 @@ for the symbols.
 		<name lang="en">South-east corner (outside)</name>
 		<name lang="fr">Angle SE (extérieur)</name>
 		<name lang="en-GB">South-east corner (outside)</name>
+		<name lang="sv">Sydöstra hörnet (utsidan)</name>
 		<text lang="en">SE outside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (extérieur)</text>
 		<text lang="en-GB">{0}, SE. Corner (outside)</text>
+		<text lang="sv">{0}, Sydöstra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="-69.25" y="-22.68" />
 			<point x="22.68" y="-22.68" />
@@ -3780,9 +4127,11 @@ for the symbols.
 		<name lang="en">South corner (outside)</name>
 		<name lang="fr">Angle Sud (extérieur)</name>
 		<name lang="en-GB">South corner (outside)</name>
+		<name lang="sv">Södra hörnet (utsidan)</name>
 		<text lang="en">S outside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (extérieur)</text>
 		<text lang="en-GB">{0}, S. Corner (outside)</text>
+		<text lang="sv">{0}, Södra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="65" y="40" />
 			<point x="0" y="-25" />
@@ -3797,9 +4146,11 @@ for the symbols.
 		<name lang="en">South-west corner (outside)</name>
 		<name lang="fr">Angle SO (extérieur)</name>
 		<name lang="en-GB">South-west corner (outside)</name>
+		<name lang="sv">Sydvästra hörnet (utsidan)</name>
 		<text lang="en">SW outside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (extérieur)</text>
 		<text lang="en-GB">{0}, SW. Corner (outside)</text>
+		<text lang="sv">{0}, Sydvästra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="69.25" y="-22.68" />
 			<point x="-22.68" y="-22.68" />
@@ -3814,9 +4165,11 @@ for the symbols.
 		<name lang="en">West corner (outside)</name>
 		<name lang="fr">Angle Ouest (extérieur)</name>
 		<name lang="en-GB">West corner (outside)</name>
+		<name lang="sv">Västra hörnet (utsidan) </name>
 		<text lang="en">W outside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (extérieur)</text>
 		<text lang="en-GB">{0}, W Corner (outside)</text>
+		<text lang="sv">{0}, Västra hörnet (utsidan)</text>
 		<lines thickness="10">
 			<point x="40" y="-65" />
 			<point x="-25" y="0" />
@@ -3831,9 +4184,11 @@ for the symbols.
 		<name lang="en">North-west corner (outside)</name>
 		<name lang="fr">Angle NO(extérieur)</name>
 		<name lang="en-GB">North-west corner (outside)</name>
+		<name lang="sv">Nordvästra hörnet (utsidan) </name>
 		<text lang="en">NW outside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (extérieur)</text>
 		<text lang="en-GB">{0}, NW. Corner (outside)</text>
+		<text lang="sv">{0}, Nordvästra hörnet (utsidan) </text>
 		<lines thickness="10">
 			<point x="69.25" y="22.68" />
 			<point x="-22.68" y="22.68" />
@@ -3848,9 +4203,11 @@ for the symbols.
 		<name lang="en">North tip</name>
 		<name lang="fr">Pointe Nord</name>
 		<name lang="en-GB">North tip</name>
+		<name lang="sv">Norra spetsen</name>
 		<text lang="en">N tip of {0}</text>
 		<text lang="fr">{0}, pointe Nord</text>
 		<text lang="en-GB">{0}, N. Tip</text>
+		<text lang="sv">{0}, Norra spetsen</text>
 		<lines thickness="10">
 			<point x="30" y="-65" />
 			<point x="0" y="30" />
@@ -3865,9 +4222,11 @@ for the symbols.
 		<name lang="en">North-east tip</name>
 		<name lang="fr">Pointe NE</name>
 		<name lang="en-GB">North-east tip</name>
+		<name lang="sv">Nordöstra spetsen</name>
 		<text lang="en">NE tip of {0}</text>
 		<text lang="fr">{0}, pointe NE</text>
 		<text lang="en-GB">{0}, NE. Tip</text>
+		<text lang="sv">{0}, Nordöstra spetsen</text>
 		<lines thickness="10">
 			<point x="-67.18" y="-24.75" />
 			<point x="21.21" y="21.21" />
@@ -3882,9 +4241,11 @@ for the symbols.
 		<name lang="en">East tip</name>
 		<name lang="fr">Pointe Est</name>
 		<name lang="en-GB">East tip</name>
+		<name lang="sv">Östra spetsen</name>
 		<text lang="en">E tip of {0}</text>
 		<text lang="fr">{0}, pointe Est</text>
 		<text lang="en-GB">{0}, E. Tip</text>
+		<text lang="sv">{0}, Östra spetsen</text>
 		<lines thickness="10">
 			<point x="-65" y="30" />
 			<point x="30" y="0" />
@@ -3899,9 +4260,11 @@ for the symbols.
 		<name lang="en">South-east tip</name>
 		<name lang="fr">Pointe SE</name>
 		<name lang="en-GB">South-east tip</name>
+		<name lang="sv">Sydöstra spetsen</name>
 		<text lang="en">SE tip of {0}</text>
 		<text lang="fr">{0}, pointe SE</text>
 		<text lang="en-GB">{0},  SE. Tip</text>
+		<text lang="sv">{0}, Sydöstra spetsen</text>
 		<lines thickness="10">
 			<point x="-67.18" y="24.75" />
 			<point x="21.21" y="-21.21" />
@@ -3916,9 +4279,11 @@ for the symbols.
 		<name lang="en">South tip</name>
 		<name lang="fr">Pointe Sud</name>
 		<name lang="en-GB">South tip</name>
+		<name lang="sv">Södra spetsen</name>
 		<text lang="en">S tip of {0}</text>
 		<text lang="fr">{0}, pointe Sud</text>
 		<text lang="en-GB">{0}, S. Tip</text>
+		<text lang="sv">{0}, Södra spetsen</text>
 		<lines thickness="10">
 			<point x="30" y="65" />
 			<point x="0" y="-30" />
@@ -3933,9 +4298,11 @@ for the symbols.
 		<name lang="en">South-west tip</name>
 		<name lang="fr">Pointe SO</name>
 		<name lang="en-GB">South-west tip</name>
+		<name lang="sv">Sydvästra spetsen</name>
 		<text lang="en">SW tip of {0}</text>
 		<text lang="fr">{0}, pointe SO</text>
 		<text lang="en-GB">{0}, SW. Tip</text>
+		<text lang="sv">{0}, Sydvästra spetsen</text>
 		<lines thickness="10">
 			<point x="67.18" y="24.75" />
 			<point x="-21.21" y="-21.21" />
@@ -3950,9 +4317,11 @@ for the symbols.
 		<name lang="en">West tip</name>
 		<name lang="fr">Pointe Ouest</name>
 		<name lang="en-GB">West tip</name>
+		<name lang="sv">Västra spetsen</name>
 		<text lang="en">W tip of {0}</text>
 		<text lang="fr">{0}, pointe Ouest</text>
 		<text lang="en-GB">{0}, W. Tip</text>
+		<text lang="sv">{0}, Västra spetsen</text>
 		<lines thickness="10">
 			<point x="65" y="30" />
 			<point x="-30" y="0" />
@@ -3967,9 +4336,11 @@ for the symbols.
 		<name lang="en">North-west tip</name>
 		<name lang="fr">Pointe NO</name>
 		<name lang="en-GB">North-west tip</name>
+		<name lang="sv">Nordvästra spetsen</name>
 		<text lang="en">NW tip of {0}</text>
 		<text lang="fr">{0}, pointe NO</text>
 		<text lang="en-GB">{0}, NW. Tip</text>
+		<text lang="sv">{0}, Nordvästra spetsen</text>
 		<lines thickness="10">
 			<point x="67.18" y="-24.75" />
 			<point x="-21.21" y="21.21" />
@@ -3984,9 +4355,11 @@ for the symbols.
 		<name lang="en">North end</name>
 		<name lang="fr">Extrémité Nord</name>
 		<name lang="en-GB">North end</name>
+		<name lang="sv">Norra slutet</name>
 		<text lang="en">N end of {0}</text>
 		<text lang="fr">{0}, extrémité Nord</text>
 		<text lang="en-GB">{0}, N. End</text>
+		<text lang="sv">{0}, Norra slutet</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -4001,9 +4374,11 @@ for the symbols.
 		<name lang="en">North-east end</name>
 		<name lang="fr">Extrémité NE</name>
 		<name lang="en-GB">North-east end</name>
+		<name lang="sv">Nordöstra slutet</name>
 		<text lang="en">NE end of {0}</text>
 		<text lang="fr">{0}, extrémité NE</text>
 		<text lang="en-GB">{0}, NE. End</text>
+		<text lang="sv">{0}, Nordöstra slutet</text>
 		<lines thickness="10">
 			<point x="-45.96" y="-45.96" />
 			<point x="45.96" y="45.96" />
@@ -4018,9 +4393,11 @@ for the symbols.
 		<name lang="en">East end</name>
 		<name lang="fr">Extrémité Est</name>
 		<name lang="en-GB">East end</name>
+		<name lang="sv">Östra slutet</name>
 		<text lang="en">E end of {0}</text>
 		<text lang="fr">{0}, extrémité Est</text>
 		<text lang="en-GB">{0}, E. End</text>
+		<text lang="sv">{0}, Östra slutet</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -4035,9 +4412,11 @@ for the symbols.
 		<name lang="en">South-east end</name>
 		<name lang="fr">Extrémité SE</name>
 		<name lang="en-GB">South-east end</name>
+		<name lang="sv">Sydöstra slutet</name>
 		<text lang="en">SE end of {0}</text>
 		<text lang="fr">{0}, extrémité SE</text>
 		<text lang="en-GB">{0}, SE. End</text>
+		<text lang="sv">{0}, Sydöstra slutet</text>
 		<lines thickness="10">
 			<point x="-45.96" y="45.96" />
 			<point x="45.96" y="-45.96" />
@@ -4052,9 +4431,11 @@ for the symbols.
 		<name lang="en">South end</name>
 		<name lang="fr">Extrémité Sud</name>
 		<name lang="en-GB">South end</name>
+		<name lang="sv">Södra slutet</name>
 		<text lang="en">S end of {0}</text>
 		<text lang="fr">{0}, extrémité Sud</text>
 		<text lang="en-GB">{0}, S. End</text>
+		<text lang="sv">{0}, Södra slutet</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -4069,9 +4450,11 @@ for the symbols.
 		<name lang="en">South-west end</name>
 		<name lang="fr">Extrémité SO</name>
 		<name lang="en-GB">South-west end</name>
+		<name lang="sv">Sydvästra slutet</name>
 		<text lang="en">SW end of {0}</text>
 		<text lang="fr">{0}, extrémité SO</text>
 		<text lang="en-GB">{0}, SW. End</text>
+		<text lang="sv">{0}, Sydvästra slutet</text>
 		<lines thickness="10">
 			<point x="45.96" y="45.96" />
 			<point x="-45.96" y="-45.96" />
@@ -4086,9 +4469,11 @@ for the symbols.
 		<name lang="en">West end</name>
 		<name lang="fr">Extrémité Ouest</name>
 		<name lang="en-GB">West end</name>
+		<name lang="sv">Västra slutet</name>
 		<text lang="en">W end of {0}</text>
 		<text lang="fr">{0}, extrémité Ouest</text>
 		<text lang="en-GB">{0}, W. End</text>
+		<text lang="sv">{0}, Västra slutet</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -4103,9 +4488,11 @@ for the symbols.
 		<name lang="en">North-west end</name>
 		<name lang="fr">Extrémité NO</name>
 		<name lang="en-GB">North-west end</name>
+		<name lang="sv">Nordvästra slutet</name>
 		<text lang="en">NW end of {0}</text>
 		<text lang="fr">{0}, extrémité NO</text>
 		<text lang="en-GB">{0}, NW. End</text>
+		<text lang="sv">{0}, Nordvästra slutet</text>
 		<lines thickness="10">
 			<point x="45.96" y="-45.96" />
 			<point x="-45.96" y="45.96" />
@@ -4120,9 +4507,11 @@ for the symbols.
 		<name lang="en">North foot</name>
 		<name lang="fr">Pied Nord</name>
 		<name lang="en-GB">North foot</name>
+		<name lang="sv">Norra foten</name>
 		<text lang="en">N foot of {0}</text>
 		<text lang="fr">{0}, pied Nord</text>
 		<text lang="en-GB">{0}, N. Foot</text>
+		<text lang="sv">{0}, Norra foten</text>
 		<lines thickness="10">
 			<point x="-10" y="80" />
 			<point x="-10" y="40" />
@@ -4137,9 +4526,11 @@ for the symbols.
 		<name lang="en">North-east foot</name>
 		<name lang="fr">Pied NE</name>
 		<name lang="en-GB">North-east foot</name>
+		<name lang="sv">Nordöstra foten</name>
 		<text lang="en">NE foot of {0}</text>
 		<text lang="fr">{0}, pied NE</text>
 		<text lang="en-GB">{0}, NE. Foot</text>
+		<text lang="sv">{0}, Nordöstra foten</text>
 		<lines thickness="10">
 			<point x="40" y="70" />
 			<point x="40" y="30" />
@@ -4154,9 +4545,11 @@ for the symbols.
 		<name lang="en">East foot</name>
 		<name lang="fr">Pied Est</name>
 		<name lang="en-GB">East foot</name>
+		<name lang="sv">Östra foten</name>
 		<text lang="en">E foot of {0}</text>
 		<text lang="fr">{0}, pied Est</text>
 		<text lang="en-GB">{0}, E. Foot</text>
+		<text lang="sv">{0}, Östra foten</text>
 		<lines thickness="10">
 			<point x="50" y="20" />
 			<point x="50" y="-20" />
@@ -4171,9 +4564,11 @@ for the symbols.
 		<name lang="en">South-east foot</name>
 		<name lang="fr">Pied SE</name>
 		<name lang="en-GB">South-east foot</name>
+		<name lang="sv">Sydöstra foten</name>
 		<text lang="en">SE foot of {0}</text>
 		<text lang="fr">{0}, pied SE</text>
 		<text lang="en-GB">{0}, SE. Foot</text>
+		<text lang="sv">{0}, Sydöstra foten</text>
 		<lines thickness="10">
 			<point x="40" y="-30" />
 			<point x="40" y="-70" />
@@ -4188,9 +4583,11 @@ for the symbols.
 		<name lang="en">South foot</name>
 		<name lang="fr">Pied Sud</name>
 		<name lang="en-GB">South foot</name>
+		<name lang="sv">Södra foten</name>
 		<text lang="en">S foot of {0}</text>
 		<text lang="fr">{0}, pied Sud</text>
 		<text lang="en-GB">{0}, S. Foot</text>
+		<text lang="sv">{0}, Södra foten</text>
 		<lines thickness="10">
 			<point x="-10" y="-40" />
 			<point x="-10" y="-80" />
@@ -4205,9 +4602,11 @@ for the symbols.
 		<name lang="en">South-west foot</name>
 		<name lang="fr">Pied SO</name>
 		<name lang="en-GB">South-west foot</name>
+		<name lang="sv">Sydvästra foten</name>
 		<text lang="en">SW foot of {0}</text>
 		<text lang="fr">{0}, pied SO</text>
 		<text lang="en-GB">{0}, SW. Foot</text>
+		<text lang="sv">{0}, Sydvästra foten</text>
 		<lines thickness="10">
 			<point x="-65" y="-30" />
 			<point x="-65" y="-70" />
@@ -4222,9 +4621,11 @@ for the symbols.
 		<name lang="en">West foot</name>
 		<name lang="fr">Pied Ouest</name>
 		<name lang="en-GB">West foot</name>
+		<name lang="sv">Västra foten</name>
 		<text lang="en">W foot of {0}</text>
 		<text lang="fr">{0}, pied Ouest</text>
 		<text lang="en-GB">{0}, W. Foot</text>
+		<text lang="sv">{0}, Västra foten</text>
 		<lines thickness="10">
 			<point x="-75" y="20" />
 			<point x="-75" y="-20" />
@@ -4239,9 +4640,11 @@ for the symbols.
 		<name lang="en">North-west foot</name>
 		<name lang="fr">Pied NO</name>
 		<name lang="en-GB">North-west foot</name>
+		<name lang="sv">Nordvästra foten</name>
 		<text lang="en">NW foot of {0}</text>
 		<text lang="fr">{0}, pied NO</text>
 		<text lang="en-GB">{0}, NW. Foot</text>
+		<text lang="sv">{0}, Nordvästra foten</text>
 		<lines thickness="10">
 			<point x="-65" y="70" />
 			<point x="-65" y="30" />
@@ -4256,9 +4659,11 @@ for the symbols.
 		<name lang="en">Bend</name>
 		<name lang="fr">Coude</name>
 		<name lang="en-GB">Bend</name>
+		<name lang="sv">Krök</name>
 		<text lang="en">bend in {0}</text>
 		<text lang="fr">{0}, au coude</text>
 		<text lang="en-GB">{0} bend</text>
+		<text lang="sv">{0}, kröken</text>
 		<beziers thickness="10">
 			<point x="35" y="70" />
 				<point x="25" y="62.22" />
@@ -4277,9 +4682,11 @@ for the symbols.
 		<name lang="en">Upper part</name>
 		<name lang="fr">Partie amont</name>
 		<name lang="en-GB">Upper part</name>
+		<name lang="sv">Övre delen</name>
 		<text lang="en">upper part of {0}</text>
 		<text lang="fr">{0}, partie amont</text>
 		<text lang="en-GB">{0}, Upper Part</text>
+		<text lang="sv">{0}, övre delen</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -4297,9 +4704,11 @@ for the symbols.
 		<name lang="en">Lower part</name>
 		<name lang="fr">Partie aval</name>
 		<name lang="en-GB">Lower part</name>
+		<name lang="sv">Nedre delen</name>
 		<text lang="en">lower part of {0}</text>
 		<text lang="fr">{0}, partie aval</text>
 		<text lang="en-GB">{0}, Lower Part</text>
+		<text lang="sv">{0}, Nedre delen</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -4317,9 +4726,11 @@ for the symbols.
 		<name lang="en">Top</name>
 		<name lang="fr">Sur</name>
 		<name lang="en-GB">Top</name>
+		<name lang="sv">Uppe på</name>
 		<text lang="en">top of {0}</text>
 		<text lang="fr">sur {0}</text>
 		<text lang="en-GB">{0}, Top</text>
+		<text lang="sv">{0}, uppe på</text>
 		<lines thickness="10">
 			<point x="-28" y="-60" />
 			<point x="-28" y="25" />
@@ -4335,9 +4746,11 @@ for the symbols.
 		<name lang="en">Beneath</name>
 		<name lang="fr">Sous</name>
 		<name lang="en-GB">Beneath</name>
+		<name lang="sv">Under</name>
 		<text lang="en">beneath {0}</text>
 		<text lang="fr">sous {0}</text>
 		<text lang="en-GB">{0}, Beneath</text>
+		<text lang="sv">{0}, under</text>
 		<lines thickness="10">
 			<point x="-50" y="-30" />
 			<point x="-50" y="30" />
@@ -4353,9 +4766,11 @@ for the symbols.
 		<name lang="en">Foot</name>
 		<name lang="fr">Au pied</name>
 		<name lang="en-GB">Foot</name>
+		<name lang="sv">Foten</name>
 		<text lang="en">foot of {0}</text>
 		<text lang="fr">{0}, au pied</text>
 		<text lang="en-GB">{0}, Foot</text>
+		<text lang="sv">{0}, foten</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -4384,9 +4799,11 @@ for the symbols.
 		<name lang="en">Between</name>
 		<name lang="fr">Entre</name>
 		<name lang="en-GB">Between</name>
+		<name lang="sv">Mellan</name>
 		<text lang="en">between {0} and {1}</text>
 		<text lang="fr">entre {0} et {1}</text>
 		<text lang="en-GB">between {0} and {1}</text>
+		<text lang="sv">mellan {0} och {1}</text>
 		<lines thickness="10">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -4404,9 +4821,11 @@ for the symbols.
 		<name lang="en">Between (objects of same kind)</name>
 		<name lang="fr">Entre (objets de même symbole)</name>
 		<name lang="en-GB">Between (objects of same kind)</name>
+		<name lang="sv">Mellan (samma symbol)</name>
 		<text lang="en">between {1}</text>
 		<text lang="fr">entre les {1}</text>
 		<text lang="en-GB">between {1}</text>
+		<text lang="sv">mellan {1}</text>
 	</symbol>
 
 	<!-- Kind "H". Symbols that go only in column H:
@@ -4416,9 +4835,11 @@ for the symbols.
 		<name lang="en">First aid post</name>
 		<name lang="fr">Secours</name>
 		<name lang="en-GB">First aid post</name>
+		<name lang="sv">Sjukvård</name>
 		<text lang="en">first aid</text>
 		<text lang="fr">secours</text>
 		<text lang="en-GB">first aid</text>
+		<text lang="sv">Sjukvård</text>
 		<filled-polygon>
 			<point x="-20" y="60" />
 			<point x="20" y="60" />
@@ -4439,9 +4860,11 @@ for the symbols.
 		<name lang="en">Refreshment point</name>
 		<name lang="fr">Ravitaillement</name>
 		<name lang="en-GB">Refreshment point</name>
+		<name lang="sv">Vätska</name>
 		<text lang="en">water</text>
 		<text lang="fr">ravitaillement</text>
 		<text lang="en-GB">water</text>
+		<text lang="sv">Vätska</text>
 		<beziers thickness="12.5">
 			<point x="60" y="55" />
 				<point x="60" y="63.3" />
@@ -4480,9 +4903,11 @@ for the symbols.
 		<name lang="en">Radio or TV control</name>
 		<name lang="fr">Radio ou TV (transmission)</name>
 		<name lang="en-GB">Radio or TV control</name>
+		<name lang="sv">Radio eller TV kontroll</name>
 		<text lang="en">radio</text>
 		<text lang="fr">radio ou TV</text>
 		<text lang="en-GB">radio</text>
+		<text lang="sv">radio</text>
 		<lines thickness="12.5">
 			<point x="40" y="70" />
 			<point x="-30" y="0" />
@@ -4495,9 +4920,11 @@ for the symbols.
 		<name lang="en">Control check</name>
 		<name lang="fr">Contrôleur</name>
 		<name lang="en-GB">Control check</name>
+		<name lang="sv">Bemannad kontroll</name>
 		<text lang="en">manned</text>
 		<text lang="fr">contrôleur</text>
 		<text lang="en-GB">manned</text>
+		<text lang="sv">bemannad</text>
 		<lines thickness="12.5">
 			<point x="-35" y="-70" />
 			<point x="0" y="-20" />
@@ -4525,9 +4952,11 @@ for the symbols.
 		<name lang="en">Taped route away from control</name>
 		<name lang="fr">Parcours balisé après le poste</name>
 		<name lang="en-GB">Taped route away from control</name>
+		<name lang="sv">Snitsel bort från kontroll</name>
 		<text lang="en">follow tapes {0}away from control</text>
 		<text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
 		<text lang="en-GB">Follow Tapes {0}away from control</text>
+		<text lang="sv">följ snitsel {0}bort från kontrollen</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4566,9 +4995,11 @@ for the symbols.
 		<name lang="en">Taped route between controls</name>
 		<name lang="fr">Parcours balisé entre deux postes</name>
 		<name lang="en-GB">Taped route between controls</name>
+		<name lang="sv">Snitsel mellan kontroller</name>
 		<text lang="en">follow tapes {0}between controls</text>
 		<text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
 		<text lang="en-GB">Follow Tapes {0}between controls</text>
+		<text lang="sv">följ snitsel {0}mellan kontrollerna</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4612,9 +5043,11 @@ for the symbols.
 		<name lang="en">Mandatory crossing point or points</name>
 		<name lang="fr">Point de passage obligatoire</name>
 		<name lang="en-GB">Mandatory crossing point or points</name>
+		<name lang="sv">Obligatorisk passerpunkt</name>
 		<text lang="en">mandatory crossing point</text>
 		<text lang="fr">point de passage obligatoire</text>
 		<text lang="en-GB">Use Compulsory Crossing Point</text>
+		<text lang="sv">obligatorisk passerpunkt</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4649,9 +5082,11 @@ for the symbols.
 		<name lang="en">Mandatory passage</name>
 		<name lang="fr">Passage obligatoire dans une zone interdite</name>
 		<name lang="en-GB">Mandatory passage</name>
+		<name lang="sv">Obligatorisk passage</name>
 		<text lang="en">mandatory passage</text>
 		<text lang="fr">passage obligatoire à travers une zone interdite</text>
 		<text lang="en-GB">mandatory passage</text>
+		<text lang="sv">obligatorisk passage</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4689,9 +5124,11 @@ for the symbols.
 		<name lang="en">Map exchange</name>
 		<name lang="fr">Parcours balisé jusqu'au changement de carte</name>
 		<name lang="en-GB">Map exchange</name>
+		<name lang="sv">Kartbyte</name>
 		<text lang="en">follow tapes {0}to map exchange</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
 		<text lang="en-GB">Follow Tapes {0}to map exchange</text>
+		<text lang="sv">följ snitsel {0}till kartbyte</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4741,9 +5178,11 @@ for the symbols.
 		<name lang="en">Taped route to finish</name>
 		<name lang="fr">Parcours entièrement balisé</name>
 		<name lang="en-GB">Taped route to finish</name>
+		<name lang="sv">Snitsel till mål</name>
 		<text lang="en">follow tapes {0}to finish</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'à l'arrivée</text>
 		<text lang="en-GB">Follow Tapes {0}to Finish</text>
+		<text lang="sv">följ snitsel {0}till mål</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4788,9 +5227,11 @@ for the symbols.
 		<name lang="en">Navigate to finish funnel</name>
 		<name lang="fr">Balisage convergent</name>
 		<name lang="en-GB">Navigate to finish funnel</name>
+		<name lang="sv">uppfångande snitsel till mål</name>
 		<text lang="en">navigate {0}to finish funnel</text>
 		<text lang="fr">{0}jusqu'à l'arrivée (balisage convergent)</text>
 		<text lang="en-GB">Navigate  to Finish Funnel, then follow tapes for {0}</text>
+		<text lang="sv">uppfångande snitsel, {0} från sista kontrollen till mål</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -4836,9 +5277,11 @@ for the symbols.
 		<name lang="en">Navigate to finish (no tapes)</name>
 		<name lang="fr">Trajet non balisé</name>
 		<name lang="en-GB">Navigate to finish (no tapes)</name>
+		<name lang="sv">Ingen snitsel till mål</name>
 		<text lang="en">navigate {0}to finish</text>
 		<text lang="fr">s'orienter sur {0}jusqu'à l'arrivée (trajet non balisé)</text>
 		<text lang="en-GB">Navigate {0}to Finish</text>
+		<text lang="sv">ingen snitsel {0}till mål</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
