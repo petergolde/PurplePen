@@ -1182,7 +1182,7 @@ namespace PurplePen.MapModel
 
             while (j != i) {
                 if (j < 0) {
-                    if (isClosed)
+                    if (isClosed && i != points.Length - 1)
                         j = points.Length - 1;
                     else
                         break;
@@ -1204,7 +1204,7 @@ namespace PurplePen.MapModel
 
             while (j != i) {
                 if (j == points.Length) {
-                    if (isClosed)
+                    if (isClosed && i != 0)
                         j = 0;
                     else
                         break;

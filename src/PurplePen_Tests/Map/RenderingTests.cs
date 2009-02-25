@@ -555,6 +555,12 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTest("aiimport.txt", true, true, 9, 9);
         }
+
+        [TestMethod]
+        public void Clouds()
+        {
+            CheckTest("Clouds.txt", false, true, 7, 9);
+        }
     }
 
 }

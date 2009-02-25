@@ -59,6 +59,7 @@ namespace PurplePen.MapModel
         BinaryReader reader;
         string filename;        // File name being read.
         int version;       // OCAD version being read
+        long totalFileSize;        // Total length of file, for validating offsets.
 
         // Map the symbol colors to SymColor instances.
         Dictionary<int, SymColor> mapOcadIdToSymColor = new Dictionary<int, SymColor>();
@@ -175,6 +176,9 @@ namespace PurplePen.MapModel
 
         // Read an OCAD file from a stream, and returns the version number (6,7,8).
         public int ReadOcadFile(Stream stm, string filename) {
+            // Get the total size of the stream.
+            totalFileSize = stm.Length;
+
             using (reader = new BinaryReader(stm, Encoding.GetEncoding(1252))) 
             using (map.Write()) {
                 map.Clear();
@@ -1080,11 +1084,12 @@ namespace PurplePen.MapModel
             List<OcadSymbol> list = new List<OcadSymbol>();
         
             for (int i = 0; i < b.filepositions.Length; ++i) {
-                if (b.filepositions[i] != 0) {
+                if (b.filepositions[i] > 0 && b.filepositions[i] <= totalFileSize) {
                     OcadSymbol sym;
                     reader.BaseStream.Seek(b.filepositions[i], SeekOrigin.Begin);
                     sym = OcadSymbol.Read(reader, version);
-                    list.Add(sym);
+                    if (sym != null)
+                        list.Add(sym);
                 }
             }
 
@@ -1099,7 +1104,7 @@ namespace PurplePen.MapModel
 
         void ReadAndCreateObjects(OcadIndexBlocks b) {
             for (int i = 0; i < b.indexes.Length; ++i) {
-                if (b.indexes[i].Sym != 0 && (version <= 8 || b.indexes[i].Status == 1)) {
+                if (b.indexes[i].Sym != 0 && (version <= 8 || b.indexes[i].Status == 1) && b.indexes[i].Pos > 0 && b.indexes[i].Pos <= totalFileSize) {
                     OcadObject obj = new OcadObject();
                     reader.BaseStream.Seek(b.indexes[i].Pos, SeekOrigin.Begin);
                     obj.Read(reader, version);
