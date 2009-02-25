@@ -117,9 +117,8 @@ for the symbols.
 	<!-- Languages. Lists of the languages available for descriptions. -->
 
 	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English</language>
-	
+	<language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">Francais</language>
 	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine,neuter">Deutsch</language>
-	<language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">French</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
@@ -138,9 +137,7 @@ for the symbols.
 	-->
 	<symbol kind="@" id="course_length_climb">
 		<name lang="en">Course Length and Climb</name>
-		<name lang="fr">Frenchy Length/Climb</name>
 		<text lang="en">Length {0}, climb {1}</text>
-		<text lang="fr" gender="feminine">Frenchy Length {0}, climb {1}</text>
 	</symbol>
 
 	<!-- Used for the number of controls in score course or All Controls
@@ -2023,7 +2020,9 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.20">
-		<name lang="en">Monument or statue</name>
+		<name lang="en">New English Statue</name>
+		<name lang="de">New German Statue</name>
+		
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
 		<lines thickness="12.5">
@@ -2141,12 +2140,7 @@ for the symbols.
 
 	<symbol kind="E" id="8.4">
 		<name lang="en">Overgrown</name>
-		<name lang="fr">Fr Overgrown</name>
 		<text lang="en">overgrown {0}</text>
-		<text lang="fr" gender="feminine">fr sing fem overgrown {0}</text>
-		<text lang="fr" plural="true" gender="feminine">fr plur fem overgrown {0}</text>
-		<text lang="fr" gender="masculine">fr sing masc overgrown {0}</text>
-		<text lang="fr" plural="true" gender="masculine">fr plur masc overgrown {0}</text>
 		<lines thickness="10">
 			<point x="42" y="64" />
 			<point x="42" y="-64" />
