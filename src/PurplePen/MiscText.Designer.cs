@@ -277,6 +277,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purple Pen must be closed before loading the created OCAD files..
+        /// </summary>
+        internal static string ClosePPBeforeLoadingOCAD {
+            get {
+                return ResourceManager.GetString("ClosePPBeforeLoadingOCAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A control code must be one, two, or three letters or digits..
         /// </summary>
         internal static string CodeBadLength {
