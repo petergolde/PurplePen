@@ -176,6 +176,18 @@ namespace PurplePen.Tests
             CoursePrintingTest("courseprinting\\test2", coursePrintSettings, appearance);
         }
 
+        // Test with crop print area.
+        [TestMethod]
+        public void PrintCourses3()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor2.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = true;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            CoursePrintingTest("courseprinting\\test3", coursePrintSettings, new CourseAppearance());
+        }
+
         [TestMethod]
         public void PrintingException()
         {
