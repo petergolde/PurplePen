@@ -196,14 +196,28 @@ namespace PurplePen
             );
         }
 
+        // If at least one course is selected, return true. Otherwise, show an error message an 
+        // return false;
+        private bool SomeCoursesSelected()
+        {
+            if (courseSelector.SelectedCourses.Length > 0)
+                return true;
+            else {
+                ((MainFrame) Owner).ErrorMessage(MiscText.NoCoursesSelected);
+                return false;
+            }
+        }
+
         private void printButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (SomeCoursesSelected())
+                DialogResult = DialogResult.OK;
         }
 
         private void previewButton_Click(object sender, EventArgs e)
         {
-            controller.PrintDescriptions(PrintSettings, true);
+            if (SomeCoursesSelected())
+                controller.PrintDescriptions(PrintSettings, true);
         }
 
         private void copiesCombo_SelectedIndexChanged(object sender, EventArgs e)

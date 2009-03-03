@@ -117,9 +117,30 @@ namespace PurplePen
             );
         }
 
+        // If at least one course is selected, return true. Otherwise, show an error message an 
+        // return false;
+        private bool SomeCoursesSelected()
+        {
+            if (courseSelector.SelectedCourses.Length > 0)
+                return true;
+            else {
+                ((MainFrame) Owner).ErrorMessage(MiscText.NoCoursesSelected);
+                return false;
+            }
+        }
+
         private void previewButton_Click(object sender, EventArgs e)
         {
-            controller.PrintCourses(PrintSettings, true);
+            if (SomeCoursesSelected())
+                controller.PrintCourses(PrintSettings, true);
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            if (SomeCoursesSelected())
+                DialogResult = DialogResult.OK;
+            else
+                DialogResult = DialogResult.None;
         }
     }
 }

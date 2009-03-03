@@ -78,9 +78,9 @@ namespace PurplePen
             this.copiesLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
-            this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
-            this.labelAppearanceInfo = new System.Windows.Forms.Label();
             this.radioButtonMultiPage = new System.Windows.Forms.RadioButton();
+            this.labelAppearanceInfo = new System.Windows.Forms.Label();
+            this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
@@ -93,6 +93,7 @@ namespace PurplePen
             // okButton
             // 
             resources.ApplyResources(this.okButton, "okButton");
+            this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
             // cancelButton
             // 
@@ -216,6 +217,17 @@ namespace PurplePen
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
             // 
+            // radioButtonMultiPage
+            // 
+            resources.ApplyResources(this.radioButtonMultiPage, "radioButtonMultiPage");
+            this.radioButtonMultiPage.Name = "radioButtonMultiPage";
+            this.radioButtonMultiPage.UseVisualStyleBackColor = true;
+            // 
+            // labelAppearanceInfo
+            // 
+            resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
+            this.labelAppearanceInfo.Name = "labelAppearanceInfo";
+            // 
             // radioButtonOnePage
             // 
             resources.ApplyResources(this.radioButtonOnePage, "radioButtonOnePage");
@@ -223,17 +235,6 @@ namespace PurplePen
             this.radioButtonOnePage.Name = "radioButtonOnePage";
             this.radioButtonOnePage.TabStop = true;
             this.radioButtonOnePage.UseVisualStyleBackColor = true;
-            // 
-            // labelAppearanceInfo
-            // 
-            resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
-            this.labelAppearanceInfo.Name = "labelAppearanceInfo";
-            // 
-            // radioButtonMultiPage
-            // 
-            resources.ApplyResources(this.radioButtonMultiPage, "radioButtonMultiPage");
-            this.radioButtonMultiPage.Name = "radioButtonMultiPage";
-            this.radioButtonMultiPage.UseVisualStyleBackColor = true;
             // 
             // PrintCourses
             // 
