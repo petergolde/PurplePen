@@ -319,11 +319,14 @@ namespace PurplePen
         }
 
         // Add the appropriate specials for the given course to the course view.
-        private void AddSpecials(Id<Course> courseId)
+        // If descriptionSpecialOnly is true, then only description sheet specials are added.
+        private void AddSpecials(Id<Course> courseId, bool descriptionSpecialsOnly)
         {
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
-                if (QueryEvent.CourseContainsSpecial(eventDB, courseId, specialId))
-                    specialIds.Add(specialId);
+                if (!descriptionSpecialsOnly || eventDB.GetSpecial(specialId).kind == SpecialKind.Descriptions) {
+                    if (QueryEvent.CourseContainsSpecial(eventDB, courseId, specialId))
+                        specialIds.Add(specialId);
+                }
             }
         }
 
@@ -331,7 +334,7 @@ namespace PurplePen
         //  -----------  Static methods to create a new CourseView.  -----------------
 
         // Create a normal course view -- the standard view in order.
-        public static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId)
+        public static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId, bool descriptionSpecialsOnly)
         {
             Course course = eventDB.GetCourse(courseId);
             CourseView courseView;
@@ -343,7 +346,7 @@ namespace PurplePen
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseId);
+            courseView.AddSpecials(courseId, descriptionSpecialsOnly);
 
             return courseView;
         }
@@ -427,7 +430,16 @@ namespace PurplePen
             if (courseId.IsNone)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseId);
+                return CourseView.CreateCourseView(eventDB, courseId, false);
+        }
+
+        // Create the course view for positioning the print area.
+        public static CourseView CreatePositioningCourseView(EventDB eventDB, Id<Course> courseId)
+        {
+            if (courseId.IsNone)
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+            else
+                return CourseView.CreateCourseView(eventDB, courseId, true);
         }
 
         // Create the standard view onto a regular course, without variations.

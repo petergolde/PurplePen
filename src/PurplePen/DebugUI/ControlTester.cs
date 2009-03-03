@@ -102,7 +102,7 @@ namespace PurplePen.DebugUI
             if (id.IsNone)
                 courseView = CourseView.CreateAllControlsView(eventDB);
             else
-                courseView = CourseView.CreateCourseView(eventDB, id);
+                courseView = CourseView.CreateCourseView(eventDB, id, false);
 
             return DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
         }

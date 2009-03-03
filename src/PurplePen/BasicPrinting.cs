@@ -49,8 +49,9 @@ namespace PurplePen
     abstract class BasicPrinting: Component
     {
         private PageSettings pageSettings;
-        private PrintDocument printDocument;
+        protected PrintDocument printDocument;
         private int currentPage, totalPages;
+        private bool printingToBitmaps = false;
 
         public BasicPrinting(string title, PageSettings pageSettings)
         {
@@ -127,13 +128,17 @@ namespace PurplePen
         public Bitmap[] PrintBitmaps()
         {
             // Set up and position everything.
+            printingToBitmaps = true;
             SetupPrinting();
+
+            if (totalPages <= 0)
+                return new Bitmap[0];
 
             PrintEventArgs printArgs = new PrintEventArgs();
             PrintPageEventArgs printPageArgs;
             List<Bitmap> bitmapList = new List<Bitmap>();
 
-            printDocument.PrintController = new PreviewPrintController();
+            printDocument.PrintController = new StandardPrintController(); //new PreviewPrintController();
             printDocument.PrinterSettings = pageSettings.PrinterSettings;
             BeginPrint(this, printArgs);
 
@@ -169,26 +174,29 @@ namespace PurplePen
 
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Get the graphics and origin relative to the page edge.
-            Graphics g = e.Graphics;
-            PointF origin;
-            if (!printDocument.PrintController.IsPreview)
-                origin = new PointF(e.PageSettings.HardMarginX, e.PageSettings.HardMarginY);
-            else
-                origin = new PointF();
+            if (currentPage < totalPages) {
+                // Get the graphics and origin relative to the page edge.
+                Graphics g = e.Graphics;
+                PointF origin;
+                if (!printDocument.PrintController.IsPreview && !printingToBitmaps)
+                    origin = new PointF(e.PageSettings.HardMarginX, e.PageSettings.HardMarginY);
+                else
+                    origin = new PointF();
 
-            // Get the dpi of the printer.
-            float dpi = Math.Max((int) g.DpiX, (int) g.DpiY);
+                // Get the dpi of the printer.
+                float dpi = Math.Max((int) g.DpiX, (int) g.DpiY);
 
-            // Move the origin of the graphics to the margin boundaries.
-            g.TranslateTransform(e.MarginBounds.Left - origin.X, e.MarginBounds.Top - origin.Y);
-            SizeF size = new SizeF(e.MarginBounds.Width, e.MarginBounds.Height);
+                // Move the origin of the graphics to the margin boundaries.
+                g.TranslateTransform(e.MarginBounds.Left - origin.X, e.MarginBounds.Top - origin.Y);
+                SizeF size = new SizeF(e.MarginBounds.Width, e.MarginBounds.Height);
 
-            // Draw the page.
-            DrawPage(g, currentPage, size, dpi);
+                // Draw the page.
+                DrawPage(g, currentPage, size, dpi);
 
-            // Update page count.
-            ++currentPage;
+                // Update page count.
+                ++currentPage;
+            }
+
             e.HasMorePages = (currentPage < totalPages);
         }
 
@@ -206,9 +214,11 @@ namespace PurplePen
 
         protected virtual void QueryPageSettings(object sender, QueryPageSettingsEventArgs e)
         {
-            bool landscape = e.PageSettings.Landscape;
-            ChangePageSettings(currentPage, ref landscape, e.PageSettings.Margins);
-            e.PageSettings.Landscape = landscape;
+            if (currentPage < totalPages) {
+                bool landscape = e.PageSettings.Landscape;
+                ChangePageSettings(currentPage, ref landscape, e.PageSettings.Margins);
+                e.PageSettings.Landscape = landscape;
+            }
         }
 
         // Routine to change page settings for a particular page.

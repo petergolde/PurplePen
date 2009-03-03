@@ -998,7 +998,7 @@ namespace PurplePen
             RectangleF defaultPrintArea;
 
             // The default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseId);
             CourseLayout layout = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, GetCourseAppearance(), layout, 0);
             RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);

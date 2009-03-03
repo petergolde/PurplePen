@@ -152,7 +152,7 @@ namespace PurplePen.Tests
         public void SetPrintArea1()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = RectangleF.FromLTRB(-3.05F, -43.7F, 78.72F, 28.26F);
+            RectangleF currentPrintArea = new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
             SetPrintArea(1, currentPrintArea, newPrintArea, false);
@@ -182,7 +182,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllControls()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -43.7F, 136.38F, 48.39F);
+            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, 20F, 70F, 130F);
 
             SetPrintArea(0, currentPrintArea, newPrintArea, false);
@@ -197,7 +197,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllCourses()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -43.7F, 136.38F, 48.39F);
+            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
             SetPrintArea(1, currentPrintArea, newPrintArea, true);
@@ -250,9 +250,9 @@ namespace PurplePen.Tests
         {
             Setup("modes\\printarea.ppen");
 
-            SetPrintArea(1, RectangleF.FromLTRB(-3.05F, -43.7F, 78.72F, 28.26F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), false);
+            SetPrintArea(1, new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), false);
             SetPrintArea(2, RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F), RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F), false);
-            SetPrintArea(0, RectangleF.FromLTRB(-17.05F, -43.7F, 136.38F, 48.39F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), false);
+            SetPrintArea(0, RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), false);
 
             OcadCreationSettings settings = new OcadCreationSettings();
             settings.mapDirectory = settings.fileDirectory = false;

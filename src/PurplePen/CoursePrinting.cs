@@ -88,6 +88,8 @@ namespace PurplePen
         private MapDisplay mapDisplay;
         private CourseAppearance appearance;
 
+        private RectangleF portraitPrintableArea, landscapePrintableArea;
+
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
             : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
@@ -105,15 +107,38 @@ namespace PurplePen
             mapDisplay.Printing = true;
         }
 
+        RectangleF GetPrintableArea(PageSettings pageSettings)
+        {
+            // Get the available page size on the page. Note the PrintableArea member of PageSettings does not automatically does the
+            // landscape into account.
+            RectangleF printableArea = pageSettings.PrintableArea;
+            if (pageSettings.Landscape)
+                printableArea = new RectangleF(printableArea.Top, printableArea.Left, printableArea.Height, printableArea.Width);  // reverse rectangle for landscape
+            return printableArea;
+        }
+
+        // Get the printable area and store them.
+        void StorePrintableAreas(PageSettings pageSettings)
+        {
+            bool saveLandscape = pageSettings.Landscape;
+            pageSettings.Landscape = false;
+            portraitPrintableArea = GetPrintableArea(pageSettings);
+            pageSettings.Landscape = true;
+            landscapePrintableArea = GetPrintableArea(pageSettings);
+            pageSettings.Landscape = saveLandscape;
+        }
+
         // Layout all the pages, return the total number of pages.
         protected override int LayoutPages(PageSettings pageSettings, SizeF printArea)
         {
+            StorePrintableAreas(pageSettings);
+
             pages.Clear();
 
             // Go through each course and lay it out, then add to the page list.
             foreach (Id<Course> courseId in coursePrintSettings.CourseIds) {
                 // Get the layout for the course.
-                List<CoursePage> coursePages = LayoutOptimizedCourse(pageSettings, courseId);
+                List<CoursePage> coursePages = LayoutOptimizedCourse(courseId);
 
                 pageSettings.PrinterSettings.Copies = (short) coursePrintSettings.Count;
                 pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
@@ -126,20 +151,13 @@ namespace PurplePen
 
         // Layout a single course onto one or more pages.
         // Optimize onto portrait or landscape.
-        List<CoursePage> LayoutOptimizedCourse(PageSettings pageSettings, Id<Course> courseId)
+        List<CoursePage> LayoutOptimizedCourse(Id<Course> courseId)
         {
             List<CoursePage> portraitLayout, landscapeLayout;
-            bool saveLandscape;
 
             // Layout in both portrait and landscape, and use the one which uses the least pages.
-            // Note the strange fact that some printer drivers return different printable areas for landscale and 
-            // portrait.
-            saveLandscape = pageSettings.Landscape;
-            pageSettings.Landscape = false;
-            portraitLayout = LayoutCourse(pageSettings, courseId);
-            pageSettings.Landscape = true;
-            landscapeLayout = LayoutCourse(pageSettings, courseId);
-            pageSettings.Landscape = saveLandscape;
+            portraitLayout = LayoutCourse(false, courseId);
+            landscapeLayout = LayoutCourse(true, courseId);
 
             bool useLandscape;
 
@@ -167,28 +185,18 @@ namespace PurplePen
             }
         }
 
-        RectangleF GetPrintableArea(PageSettings pageSettings)
-        {
-            // Get the available page size on the page. Note the PrintableArea member of PageSettings does not automatically does the
-            // landscape into account.
-            RectangleF printableArea = pageSettings.PrintableArea;
-            if (pageSettings.Landscape)
-                printableArea = new RectangleF(printableArea.Top, printableArea.Left, printableArea.Height, printableArea.Width);  // reverse rectangle for landscape
-            return printableArea;
-        }
 
         // Layout a course onto one or more pages.
-        List<CoursePage> LayoutCourse(PageSettings pageSettings, Id<Course> courseId)
+        List<CoursePage> LayoutCourse(bool landscape, Id<Course> courseId)
         {
             List<CoursePage> pageList = new List<CoursePage>();
 
             // Get the area of the map we want to print, in map coordinates, and the ratio between print scale and map scale.
             float scaleRatio;
-            RectangleF mapArea = GetPrintAreaForCourse(pageSettings, courseId, out scaleRatio);
+            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseId, out scaleRatio);
 
-            // Get the available page size on the page. Note the PrintableArea member of PageSettings does not automatically does the
-            // landscape into account.
-            RectangleF printableArea = GetPrintableArea(pageSettings);
+            // Get the available page size on the page. 
+            RectangleF printableArea = landscape ? landscapePrintableArea : portraitPrintableArea;
             SizeF pageSizeAvailable = printableArea.Size;
 
             // Layout both page dimensions, iterate through them to get all the pages we have.
@@ -197,7 +205,7 @@ namespace PurplePen
                 {
                     CoursePage page = new CoursePage();
                     page.courseId = courseId;
-                    page.landscape = pageSettings.Landscape;
+                    page.landscape = landscape;
                     page.mapRectangle = new RectangleF(horizontalLayout.startMap, verticalLayout.startMap, horizontalLayout.lengthMap, verticalLayout.lengthMap);
                     page.printRectangle = new RectangleF(horizontalLayout.startPage, verticalLayout.startPage, horizontalLayout.lengthPage, verticalLayout.lengthPage);
                     pageList.Add(page);
@@ -245,13 +253,22 @@ namespace PurplePen
             }
         }
 
+        // Get the printable size, scaled to map units(mm) and taking scaleRatio into account. To avoid some round-off problems, the size
+        // is reduced by 0.1mm in each direction
+        SizeF GetScaledPrintableSizeInMapUnits(RectangleF printableArea, float scaleRatio)
+        {
+            float mmPerPageUnit = (0.254F * scaleRatio);
+            return new SizeF(printableArea.Width * mmPerPageUnit - 0.1F, printableArea.Height * mmPerPageUnit - 0.1F);
+        }
+
+
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
         // If asked for, crop to a single page size.
-        RectangleF GetPrintAreaForCourse(PageSettings pageSettings, Id<Course> courseId, out float scaleRatio)
+        RectangleF GetPrintAreaForCourse(bool landscape, Id<Course> courseId, out float scaleRatio)
         {
             // Get the course view to get the scale ratio.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseId);
             scaleRatio = courseView.ScaleRatio;
 
             RectangleF printArea = controller.GetPrintArea(courseId);
@@ -266,12 +283,8 @@ namespace PurplePen
 
                 // We may need to crop the print area to fit. Try both landscape and portrait.
                 float areaCoveredLandscape, areaCoveredPortrait;
-                bool saveLandscape = pageSettings.Landscape;
-                pageSettings.Landscape = false;
-                RectangleF portraitPrintArea = CropPrintArea(printArea, courseObjectsArea, pageSettings, out areaCoveredPortrait);
-                pageSettings.Landscape = true;
-                RectangleF landscapePrintArea = CropPrintArea(printArea, courseObjectsArea, pageSettings, out areaCoveredLandscape);
-                pageSettings.Landscape = saveLandscape;
+                RectangleF portraitPrintArea = CropPrintArea(printArea, courseObjectsArea, GetScaledPrintableSizeInMapUnits(portraitPrintableArea, scaleRatio), out areaCoveredPortrait);
+                RectangleF landscapePrintArea = CropPrintArea(printArea, courseObjectsArea, GetScaledPrintableSizeInMapUnits(landscapePrintableArea, scaleRatio), out areaCoveredLandscape);
 
                 // Choose the best one: first look at amount of course covered, then most like the defined print area.
                 if (areaCoveredPortrait > areaCoveredLandscape)
@@ -292,18 +305,17 @@ namespace PurplePen
 #if TEST
         internal
 #endif
-        RectangleF CropPrintArea(RectangleF printArea, RectangleF courseObjectsArea, PageSettings pageSettings, out float areaCovered)
+        static RectangleF CropPrintArea(RectangleF printArea, RectangleF courseObjectsArea, SizeF printableSize, out float areaCovered)
         {
-            SizeF printableSize = GetPrintableArea(pageSettings).Size;
             float left, top, right, bottom;
 
-            if (printableSize.Width <= printArea.Width) {
+            if (printableSize.Width >= printArea.Width) {
                 left = printArea.Left; right = printArea.Right;
             }
             else {
                 // Center on courseObjectsArea as much as possible, while staying fully inside printArea.
                 left = (courseObjectsArea.Left + courseObjectsArea.Right) / 2 - printableSize.Width / 2;
-                right = (courseObjectsArea.Left + courseObjectsArea.Right) / 2 - printableSize.Width / 2;
+                right = (courseObjectsArea.Left + courseObjectsArea.Right) / 2 + printableSize.Width / 2;
                 if (left < printArea.Left) {
                     right += (printArea.Left - left); left = printArea.Left;
                 }
@@ -312,13 +324,13 @@ namespace PurplePen
                 }
             }
 
-            if (printableSize.Height <= printArea.Height) {
+            if (printableSize.Height >= printArea.Height) {
                 top = printArea.Top; bottom = printArea.Bottom;
             }
             else {
                 // Center on courseObjectsArea as much as possible, while staying fully inside printArea.
                 top = (courseObjectsArea.Top + courseObjectsArea.Bottom) / 2 - printableSize.Height / 2;
-                bottom = (courseObjectsArea.Top + courseObjectsArea.Bottom) / 2 - printableSize.Height / 2;
+                bottom = (courseObjectsArea.Top + courseObjectsArea.Bottom) / 2 + printableSize.Height / 2;
                 if (top < printArea.Top) {
                     bottom += (printArea.Top - top); top = printArea.Top;
                 }
@@ -368,59 +380,65 @@ namespace PurplePen
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);
 
+            // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
+            GC.Collect();
+
             // Save and restore state so we can mess with stuff.
             GraphicsState graphicsState = g.Save();
 
-#if BITMAPPRINTING
-            dpi = AdjustDpi(dpi);
+            if (!printDocument.PrintController.IsPreview) {
+                // Printing via a bitmap. Works best with some print drivers.
+                dpi = AdjustDpi(dpi);
 
-            const long MAX_PIXELS_PER_BAND = 20000000;    // 20M pixels = 60M bytes (3 bytes per pixel).
-            List<CoursePage> bands = BandPageToLimitBitmapSize(page, dpi, MAX_PIXELS_PER_BAND);
+                const long MAX_PIXELS_PER_BAND = 20000000;    // 20M pixels = 60M bytes (3 bytes per pixel).
+                List<CoursePage> bands = BandPageToLimitBitmapSize(page, dpi, MAX_PIXELS_PER_BAND);
 
-            // Create the bitmap. Can do this once because each band is the same size.
-            int bitmapWidth = (int) Math.Round(bands[0].printRectangle.Width * dpi / 100F);
-            int bitmapHeight = (int) Math.Round(bands[0].printRectangle.Height * dpi / 100F);
-            Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                // Create the bitmap. Can do this once because each band is the same size.
+                int bitmapWidth = (int) Math.Round(bands[0].printRectangle.Width * dpi / 100F);
+                int bitmapHeight = (int) Math.Round(bands[0].printRectangle.Height * dpi / 100F);
+                Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 
-            foreach (CoursePage band in bands) {
-                // Create graphics to draw into the bitmap.
-                Graphics bitmapGraphics = Graphics.FromImage(bitmap);
-                bitmapGraphics.Clear(Color.White);
+                foreach (CoursePage band in bands) {
+                    // Create graphics to draw into the bitmap.
+                    Graphics bitmapGraphics = Graphics.FromImage(bitmap);
+                    bitmapGraphics.Clear(Color.White);
 
-                // Set the transform
-                Matrix transform = Util.CreateRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight), true);
-                bitmapGraphics.MultiplyTransform(transform);
+                    // Set the transform
+                    Matrix transform = Util.CreateRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight), true);
+                    bitmapGraphics.MultiplyTransform(transform);
+
+                    // Determine the resolution in map coordinates.
+                    Matrix inverseTransform = transform.Clone();
+                    inverseTransform.Invert();
+                    float minResolution = Util.TransformDistance(1F, inverseTransform);
+
+                    // And draw.
+                    mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
+                    bitmapGraphics.Dispose();
+
+                    // Draw the bitmap on the printer.
+                    g.DrawImage(bitmap, band.printRectangle);
+                }
+
+                bitmap.Dispose();
+            }
+            else {
+                // Print directly. Works best with print preview.
+                // Set the transform, and the clip.
+                Matrix transform = Util.CreateRectangleTransform(page.mapRectangle, page.printRectangle, true);
+                g.IntersectClip(page.printRectangle);
+                g.MultiplyTransform(transform);
 
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
                 inverseTransform.Invert();
-                float minResolution = Util.TransformDistance(1F, inverseTransform);
+                float minResolutionPage = 100F / dpi;
+                float minResolutionMap = Util.TransformDistance(minResolutionPage, inverseTransform);
 
                 // And draw.
-                mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
-                bitmapGraphics.Dispose();
-
-                // Draw the bitmap on the printer.
-                g.DrawImage(bitmap, band.printRectangle);
+                mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
             }
 
-            bitmap.Dispose();
-
-#else
-            // Set the transform, and the clip.
-            Matrix transform = Util.CreateRectangleTransform(page.mapRectangle, page.printRectangle, true);
-            g.IntersectClip(page.printRectangle);
-            g.MultiplyTransform(transform);
-
-            // Determine the resolution in map coordinates.
-            Matrix inverseTransform = transform.Clone();
-            inverseTransform.Invert();
-            float minResolutionPage = 100F / dpi;
-            float minResolutionMap = Util.TransformDistance(minResolutionPage, inverseTransform);
-
-            // And draw.
-            mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
-#endif
             // restore state.
             g.Restore(graphicsState);
         }

@@ -61,7 +61,7 @@ namespace PurplePen
                 if (courseId.IsNone)
                     rendererList.Add(GetRenderer(CourseView.CreateAllControlsView(eventDB)));
                 else
-                    rendererList.Add(GetRenderer(CourseView.CreateCourseView(eventDB, courseId)));
+                    rendererList.Add(GetRenderer(CourseView.CreateCourseView(eventDB, courseId, false)));
             }
 
             return rendererList.ToArray();

@@ -221,6 +221,33 @@ Settings to access printer 'foobar' are not valid.'
             Assert.AreEqual(600, result);
         }
 
+        [TestMethod]
+        public void CropPrintArea()
+        {
+            RectangleF printArea = RectangleF.FromLTRB(10, 40, 120, 90);
+            RectangleF result;
+            float area;
+
+            // Printable area bigger than printArea -- should just get printArea back.
+            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(30, 40, 140, 80), new SizeF(110, 100), out area);
+            Assert.AreEqual(printArea, result);
+            Assert.AreEqual(90 * 40, area);
+
+            // Printable area smaller than print area, larger than courseObjects
+            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(70, 40), out area);
+            Assert.AreEqual(RectangleF.FromLTRB(17.5F, 40, 87.5F, 80), result);
+            Assert.AreEqual(55 * 20, area);
+
+            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 60, 80, 85), new SizeF(70, 40), out area);
+            Assert.AreEqual(RectangleF.FromLTRB(17.5F, 50, 87.5F, 90), result);
+            Assert.AreEqual(55 * 25, area);
+
+            // Printable area smaller than  courseObjects
+            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(15, 10), out area);
+            Assert.AreEqual(RectangleF.FromLTRB(45, 40, 60, 50), result);
+            //Assert.AreEqual(55 * 20, area);
+        }
+
     }
 }
 

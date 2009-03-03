@@ -649,6 +649,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No courses were selected to print..
+        /// </summary>
+        internal static string NoCoursesSelected {
+            get {
+                return ResourceManager.GetString("NoCoursesSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No symbol.
         /// </summary>
         internal static string NoSymbol {

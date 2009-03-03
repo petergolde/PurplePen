@@ -81,7 +81,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId);
+                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, false);
                 DumpCourseView(courseView, Console.Out);
                 Console.WriteLine();
             }
@@ -99,7 +99,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4));
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -130,6 +130,46 @@ Special 6 (Descriptions)
         }
 
         [TestMethod]
+        public void DescriptionSpecialsOnly()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true);
+            DumpCourseView(courseView, writer);
+            actual = writer.ToString();
+            expected =
+@"Name='SampleCourse4', Kind='Normal', CourseId=4
+Total Length=4667.309  Total Climb=173  Total Score=0  Total Controls=4
+ 0: Ids:  1, 11
+    Legs: (Next:1,Id:0,length:340.1033)  
+ 1: Ids: 11, 12
+    Legs: (Next:2,Id:0,length:537.7557)  
+ 2: Ids: 22, 13
+    Legs: (Next:3,Id:0,length:245.7254)  
+ 3: Ids:  3, 14
+    Legs: (Next:4,Id:0,length:112.54)  
+ 4: Ids:  4, 15
+    Legs: (Next:5,Id:0,length:280.2271)  
+ 5: Ids: 15, 16
+    Legs: (Next:6,Id:0,length:287.0649)  
+ 6: Ids:  5, 17
+    Legs: (Next:7,Id:0,length:1440)  
+ 7: Ids: 18, 18
+    Legs: (Next:8,Id:0,length:1423.892)  
+ 8: Ids:  6, 19
+Special 6 (Descriptions)
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void ScoreCourseView()
         {
             UndoMgr undomgr = new UndoMgr(5);
@@ -141,7 +181,7 @@ Special 6 (Descriptions)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5));
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -166,6 +206,44 @@ Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
 Special 1 (FirstAid)
 Special 3 (Boundary)
 Special 4 (OOB)
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ScoreDescriptionSpecialsOnly()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true);
+            DumpCourseView(courseView, writer);
+            actual = writer.ToString();
+            expected =
+@"Name='Score 4', Kind='Score', CourseId=5
+Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
+ 0: Ids:  1,101
+ 1: Ids: 17,109
+ 2: Ids:  2,113
+ 3: Ids:  7,114
+ 4: Ids: 11,102
+ 5: Ids:  8,115
+ 6: Ids: 20,112
+ 7: Ids:  5,107
+ 8: Ids:  4,105
+ 9: Ids: 16,108
+10: Ids: 18,110
+11: Ids: 19,111
+12: Ids:  6,116
+13: Ids: 15,106
+14: Ids:  3,104
+15: Ids: 22,103
 ";
             Assert.AreEqual(expected, actual);
         }
@@ -268,7 +346,7 @@ Total Length=0  Total Climb=-1  Total Score=0  Total Controls=12
             eventDB.Load(TestUtil.GetTestFile("courseview\\speciallegs.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1));
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1), false);
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -305,9 +383,9 @@ Total Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
             Assert.AreEqual(-47.8F, bounds.Top);
             Assert.AreEqual(106.9F, bounds.Width);
             Assert.AreEqual(92.9F, bounds.Height, 0.0001);
-            courseView = CourseView.CreateCourseView(eventDB, CourseId(4));
+            courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
             Assert.AreEqual(new RectangleF(-51.4F, -39F, 96.8F, 84.1F), courseView.GetViewBounds());
-            courseView = CourseView.CreateCourseView(eventDB, CourseId(5));
+            courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
             Assert.AreEqual(new RectangleF(-51.4F, -39F, 106.9F, 84.1F), courseView.GetViewBounds());
         }
 	

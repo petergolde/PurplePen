@@ -475,7 +475,7 @@ namespace PurplePen
                 for (int i = 1; i < courseViewIds.Length; ++i)
                     if (courseViewIds[i] == activeCourseId) {
                         activeCourseViewIndex = i;
-                        activeCourseView = CourseView.CreateCourseView(eventDB, activeCourseId);
+                        activeCourseView = CourseView.CreateCourseView(eventDB, activeCourseId, false);
                     }
             }
         }
