@@ -15,6 +15,75 @@
 <body>
 
 <h1>Purple Pen Change Summary</h1>
+<h2>Changes in 1.0.0</h2>
+<h3>New Features</h3>
+<ul>
+    <li>
+    <p class=featurelist>The user interface of the program can be displayed in multiple languages. Use the File/Program Language
+    command to change the language of the user interface. English, French, and 
+	Swedish languages are provided.</p>
+    </li>
+    <li>
+    <p class=featurelist>Automatically generated textual control descriptions can be displayed or printed in different languages.
+    To change the language for an event, use the Event/Customize Description Text command. 
+	English, French, Swedish, and UK English are provided.</p>
+    </li>
+	<li>
+    <p class=featurelist>By default, when printing the map is cropped to fit on 
+	a single page. In most cases, this means you don&#39;t have to set the print 
+	area manually, since Purple Pen intelligently crops to fit the course best 
+	on the page. If you want you can still print a map across multiple pages.</p>
+    </li>
+	<li>
+    <p class=featurelist>Arbitrary text can be added to the map using Item/Add 
+	Special Item/Text. This text can have special text in it that changes 
+	depending on the course (e.g., $(CourseName) becomes the name of the 
+	course). </p>
+    </li>
+	<li>
+    <p class=featurelist>The new Event / Customize Course Appearance command can 
+	be used to adjust the sizes of controls circles, lines, and control numbers. 
+	It can also be used to change the shade of purple used for the course.</p>
+    </li>
+    <li>
+    <p class=featurelist>The event title, and the class list/secondary title, can have multiple lines in them. This is 
+    especially useful for courses with many classes in them. When editing directly in the description pane, use vertical
+    bar (|) to separate the lines.</p>
+    </li>
+	<li>
+    <p class=featurelist>Overlapping control circles are automatically cut to 
+	avoid the overlap (except on the All Controls display).</p>
+   </li>
+	<li>
+    <p class=featurelist>In the initial start up window, you are now given a 
+	choice (the default choice, in fact), to load the last file you were working 
+	on.</p>
+   </li>
+	<li>
+    <p class=featurelist>Dialog windows now use a nicer looking and slightly 
+	bigger font.</p>
+   </li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li><p class="featurelist">Problems loading or drawing certain OCAD files have 
+been fixed.</p></li><li><p class="featurelist">Exported IOF XML (Create E-Punch Interface File) no longer contains the 
+DOCTYPE declaration referencing the IOFdata.dtd file, since it caused problems 
+with some programs.</p></li>
+<li><p class="featurelist">Printing should be faster, especially in cases with large patterned area (e.g., open land with scattered trees), or printing multiple copies of the same map.</p></li>
+<li><p class="featurelist">If the background map is changed while it is open 
+(for example, the map is edited and saved in OCAD), Purple Pen will 
+automatically reload the changed map file.</p></li>
+<li><p class="featurelist">The AltGr key on some keyboards now works correctly 
+when directly editing the title of an event or the dimensions in column F. Also, 
+if you enter text here and then click outside the popup without pressing Enter, 
+the entered text is used instead of discarded.</p></li>
+<li><p class="featurelist">If the textual description for a control is too long 
+to fit into two lines using the default font size, the font size is 
+automatically shrunk so the description will fit.</p></li>
+<li><p class="featurelist">Display of the margins and page size now is in mm 
+when in a metric locale, instead of inches.</p></li>
+</ul> 
 <h2>Changes in 1.0.0 beta 3</h2>
 <h3>New Features</h3>
 <ul>
