@@ -1798,10 +1798,13 @@ namespace PurplePen.MapModel
                 fontStyle |= FontStyle.Bold;
             if (italic)
                 fontStyle |= FontStyle.Italic;
+
+            float nominalFontSize = Math.Max(fontSize, 0.01F);            // 0 size fonts cause exception!
+
             if (Util.FontExists(fontName))
-                font = new Font(fontName, fontSize, fontStyle, GraphicsUnit.World);
+                font = new Font(fontName, nominalFontSize, fontStyle, GraphicsUnit.World);
             else
-                font = new Font(new FontFamily(GenericFontFamilies.SansSerif), fontSize, fontStyle, GraphicsUnit.World);
+                font = new Font(new FontFamily(GenericFontFamilies.SansSerif), nominalFontSize, fontStyle, GraphicsUnit.World);
 
             stringFormat = new StringFormat(StringFormat.GenericTypographic);
             stringFormat.Alignment = StringAlignment.Near;
