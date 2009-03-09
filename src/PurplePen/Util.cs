@@ -538,6 +538,14 @@ namespace PurplePen
                 else
                     return MiscText.MandCrossing_Short;
 
+            case ControlPointKind.MapExchange:
+                if (style == NameStyle.Long)
+                    return MiscText.MapExchange_Long;
+                else if (style == NameStyle.Medium)
+                    return MiscText.MapExchange_Medium;
+                else
+                    return MiscText.MapExchange_Short;
+
             default:
                 Debug.Fail("bad control kind");
                 return "";

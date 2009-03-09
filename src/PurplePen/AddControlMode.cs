@@ -36,6 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
@@ -115,6 +116,8 @@ namespace PurplePen
                     return (existingControl.IsNone) ? StatusBarText.AddingFinish : StatusBarText.AddingExistingFinish;
                 case ControlPointKind.CrossingPoint:
                     return (existingControl.IsNone) ? StatusBarText.AddingCrossingPoint : StatusBarText.AddingExistingCrossingPoint;
+                case ControlPointKind.MapExchange:
+                    return (existingControl.IsNone) ? StatusBarText.AddingMapExchange : StatusBarText.AddingExistingMapExchange;
                 case ControlPointKind.Normal:
                     return (existingControl.IsNone) ? StatusBarText.AddingControl : string.Format(StatusBarText.AddingExistingControl, eventDB.GetControl(existingControl).code);
                 default:
@@ -221,6 +224,7 @@ namespace PurplePen
             case ControlPointKind.Start: commandString = CommandNameText.AddStart; break;
             case ControlPointKind.Finish: commandString = CommandNameText.AddFinish; break;
             case ControlPointKind.CrossingPoint: commandString = CommandNameText.AddCrossingPoint; break;
+            case ControlPointKind.MapExchange: commandString = CommandNameText.AddMapExchange; break;
             default: commandString = CommandNameText.AddControl; break;
             }
 
@@ -236,6 +240,8 @@ namespace PurplePen
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "14.3");   // set finish to "navigate to finish".
                 else if (controlKind == ControlPointKind.CrossingPoint)
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "13.3");   // set to mandatory crossing point.
+                else if (controlKind == ControlPointKind.MapExchange)
+                    Debug.Fail("UNDONE MAPEXCHANGE");
             }
 
             if (allControls) {
@@ -295,6 +301,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Start:
+            case ControlPointKind.MapExchange:
                 highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
                 break;
             case ControlPointKind.Finish:
@@ -308,6 +315,7 @@ namespace PurplePen
                     additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
                 break;
+
             default:
                 throw new Exception("bad control kind");
             }

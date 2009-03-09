@@ -589,6 +589,33 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map exchange.
+        /// </summary>
+        internal static string MapExchange_Long {
+            get {
+                return ResourceManager.GetString("MapExchange_Long", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exchange.
+        /// </summary>
+        internal static string MapExchange_Medium {
+            get {
+                return ResourceManager.GetString("MapExchange_Medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MX.
+        /// </summary>
+        internal static string MapExchange_Short {
+            get {
+                return ResourceManager.GetString("MapExchange_Short", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Another program has changed the map file &quot;{0}&quot;. Purple Pen will now reload the map..
         /// </summary>
         internal static string MapFileChanged {

@@ -265,13 +265,13 @@ namespace PurplePen
         private static string CountControls(CourseView courseView, Predicate<Id<ControlPoint>> predicate)
         {
             string desc = "";
-            int[] count = new int[5];
+            int[] count = new int[6];
 
             foreach (CourseView.ControlView controlView in courseView.ControlViews) {
                 if (predicate(controlView.controlId)) {
                     ControlPoint control = courseView.EventDB.GetControl(controlView.controlId);
                     if (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start || 
-                        control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.CrossingPoint)
+                        control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.CrossingPoint || control.kind == ControlPointKind.MapExchange)
                     {
                         count[(int) control.kind] += 1;
                     }
@@ -291,6 +291,10 @@ namespace PurplePen
 
             if (count[(int) ControlPointKind.CrossingPoint] > 0)
                 desc = AddCount(desc, count[(int) ControlPointKind.CrossingPoint], SelectionDescriptionText.MandCrossing_Singular, SelectionDescriptionText.MandCrossing_Plural);
+
+            if (count[(int) ControlPointKind.MapExchange] > 0)
+                desc = AddCount(desc, count[(int) ControlPointKind.MapExchange], SelectionDescriptionText.MapExchange_Singular, SelectionDescriptionText.MapExchange_Plural);
+
 
             // If we didn't find anthing the count string will still be empty.
             if (desc == "")

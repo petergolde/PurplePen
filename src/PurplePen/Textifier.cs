@@ -84,6 +84,11 @@ namespace PurplePen
                     text = CreateTextForDirective(controlPoint.symbolIds[0], distanceText);
                     break;
 
+                case ControlPointKind.MapExchange:
+                    Debug.Fail("UNDONE MAPEXCHANGE");
+                    text = "";
+                    break;
+
                 default:
                     Debug.Fail("bad control point kind"); text = ""; break;
             };

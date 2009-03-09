@@ -260,4 +260,10 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Used in courses:</value>
   </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>map exchanges</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>map exchange</value>
+  </data>
 </root>

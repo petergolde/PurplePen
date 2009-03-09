@@ -184,6 +184,10 @@ namespace PurplePen
                     distanceThisLeg = 0;
                     break;
 
+                case ControlPointKind.MapExchange:
+                    Debug.Fail("UNDONE MAPEXCHANGE");
+                    break;
+
                 case ControlPointKind.Normal:
                     xmlWriter.WriteStartElement("CourseControl");
 

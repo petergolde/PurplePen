@@ -204,4 +204,10 @@
   <data name="AddingText" xml:space="preserve">
     <value>Hold down left mouse button and drag to create text</value>
   </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Click left mouse button to add existing map exchange to course</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Click left mouse button to place new map exchange</value>
+  </data>
 </root>

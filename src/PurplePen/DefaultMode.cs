@@ -374,7 +374,7 @@ namespace PurplePen
                     additionalHighlights = AddControlMode.CreateLegHighlights(eventDB, ((PointCourseObj) courseObjectDrag).location, courseObjectDrag.controlId, control.kind, prevCourseControl, nextCourseControl, courseView.ScaleRatio, courseObjectStart.appearance);
 
                     // If we're dragging the start, update the angle of the start appropriately.
-                    if (control.kind == ControlPointKind.Start && additionalHighlights.Length > 0) {
+                    if ((control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange) && additionalHighlights.Length > 0) {
                         SymPath pathFromStart = ((LineCourseObj) additionalHighlights[0]).path;
                         PointF[] pts = pathFromStart.FlattenedPoints;
                         double angleOut = Math.Atan2(pts[1].Y - pts[0].Y, pts[1].X - pts[0].X);

@@ -498,6 +498,7 @@ namespace PurplePen
 
             switch (control.kind) {
             case ControlPointKind.Start:
+            case ControlPointKind.MapExchange:
                 courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Util.RadiansToDegrees(angleOut), control.location);
                 break;
 
@@ -687,6 +688,7 @@ namespace PurplePen
                 return scaleRatio * ((NormalCourseAppearance.finishOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
 
             case ControlPointKind.Start:
+            case ControlPointKind.MapExchange:
                 return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
 
             default:

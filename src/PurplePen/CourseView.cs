@@ -464,6 +464,7 @@ namespace PurplePen
                 controlView.controlId = courseControl.control;
 
                 // Set the ordinal number.
+                // UNDONE MAPEXCHANGE: Need to do something special for map exchanges here?
                 if (control.kind == ControlPointKind.Normal)
                     controlView.ordinal = ordinal++;
                 else if (control.kind == ControlPointKind.Start)

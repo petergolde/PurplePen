@@ -124,6 +124,7 @@ namespace PurplePen
         Normal,                         // A normal control point
         Finish,                         // A finish point
         CrossingPoint,                  // A crossing point
+        MapExchange,             // A map exchange (that isn't a control)
     }
 
     /// <summary>
@@ -163,7 +164,7 @@ namespace PurplePen
 
             if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[1];
         }
 
@@ -176,7 +177,7 @@ namespace PurplePen
 
             if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start) && symbolIds.Length != 6)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 6 symbols", id));
-            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint) && symbolIds.Length != 1)
+            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange) && symbolIds.Length != 1)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 1 symbol", id));
 
             if ((kind != ControlPointKind.Normal && kind != ControlPointKind.Start) && columnFText != null)
@@ -265,12 +266,13 @@ namespace PurplePen
                 case "start":               kind = ControlPointKind.Start; break;
                 case "finish":              kind = ControlPointKind.Finish; break;
                 case "crossing-point":      kind = ControlPointKind.CrossingPoint; break;
+                case "map-exchange": kind = ControlPointKind.MapExchange; break;
                 default:                    xmlinput.BadXml("Invalid control point kind '{0}'", kindText); break;
             }
 
             if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[1];
 
             code = null;
@@ -398,6 +400,7 @@ namespace PurplePen
                 case ControlPointKind.Start: kindText = "start"; break;
                 case ControlPointKind.Finish: kindText = "finish"; break;
                 case ControlPointKind.CrossingPoint: kindText = "crossing-point"; break;
+                case ControlPointKind.MapExchange: kindText = "map-exchange"; break;
                 default: Debug.Fail("bad kind"); kindText = "none"; break;
             }
 
