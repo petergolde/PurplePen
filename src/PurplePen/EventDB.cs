@@ -756,6 +756,7 @@ namespace PurplePen
     public class CourseControl: StorableObject
     {
         public Id<ControlPoint> control;             // Id of the control.
+        public bool exchange;     // Is this control a map exchange? (must be true for ControlPointKind.MapExchange)
         public bool split;              // Is this the first control before a relay variation split?
         public bool join;               // Is this the control after a relay variation.
         public Id<CourseControl> nextCourseControl;   // Next control, or 0 if this is the last control of the course or split is true.
@@ -784,6 +785,12 @@ namespace PurplePen
             if (control.IsNone)
                 throw new ApplicationException(string.Format("Course control '{0}' must have a control", id));
             validateInfo.eventDB.CheckControlId(control);
+
+            if (validateInfo.eventDB.GetControl(control).kind == ControlPointKind.MapExchange && !exchange)
+                throw new ApplicationException(string.Format("Course control '{0}' should be marked as a map exchange", id));
+
+            if (exchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.MapExchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.Normal)
+                throw new ApplicationException(string.Format("Course control '{0}' is a exchange, but is not a control or map exchange", id));
 
             if (split) {
                 if (nextSplitCourseControls == null)
@@ -814,6 +821,8 @@ namespace PurplePen
             if (other.split != split)
                 return false;
             if (other.join != join)
+                return false;
+            if (other.exchange != exchange)
                 return false;
             if (other.points != points)
                 return false;
@@ -860,6 +869,7 @@ namespace PurplePen
             control = new Id<ControlPoint>(xmlinput.GetAttributeInt("control"));
             split = xmlinput.GetAttributeBool("relay-split", false);
             join = xmlinput.GetAttributeBool("relay-join", false);
+            exchange = xmlinput.GetAttributeBool("map-exchange", false);
             points = xmlinput.GetAttributeInt("points", 0);
 
             List<Id<CourseControl>> nextCourseControls = new List<Id<CourseControl>>();
@@ -917,6 +927,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("relay-split", XmlConvert.ToString(true));
             if (join)
                 xmloutput.WriteAttributeString("relay-join", XmlConvert.ToString(true));
+            if (exchange)
+                xmloutput.WriteAttributeString("map-exchange", XmlConvert.ToString(true));
             if (points != 0)
                 xmloutput.WriteAttributeString("points", XmlConvert.ToString(points));
 

@@ -195,7 +195,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            CourseControl ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7;
+            CourseControl ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -230,6 +230,10 @@ namespace PurplePen.Tests
             ctl7.descTextAfter = "goodbye";
             eventDB.AddCourseControl(ctl7);
 
+            ctl8 = new CourseControl(ControlId(5), CourseControlId(7));
+            ctl8.exchange = true;
+            eventDB.AddCourseControl(ctl8);
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -248,6 +252,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(5), ctl5),
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(6), ctl6),
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(7), ctl7),
+                    new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(8), ctl8),
                 }
             );
         }
