@@ -70,21 +70,18 @@ namespace PurplePen
             this.errorDisplayPanel.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.errorDisplayPanel, "errorDisplayPanel");
             this.errorDisplayPanel.Name = "errorDisplayPanel";
-            this.errorDisplayPanel.UseWaitCursor = false;
             // 
             // errorMessage
             // 
             this.errorMessage.ForeColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.errorMessage, "errorMessage");
             this.errorMessage.Name = "errorMessage";
-            this.errorMessage.UseWaitCursor = false;
             // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = false;
             // 
             // mapFileDisplay
             // 
@@ -176,7 +173,7 @@ namespace PurplePen
             // ChangeMapFile
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.panelScaleDpi);
             this.Controls.Add(this.errorDisplayPanel);
             this.Controls.Add(this.mapFileDisplay);

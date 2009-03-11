@@ -177,7 +177,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;disallowInvertibleCheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="renumberExistingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 66</value>
@@ -249,13 +249,17 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;existingControlsGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="automaticNumberingLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="automaticNumberingLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 13</value>
   </data>
   <data name="automaticNumberingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 58</value>
+    <value>308, 49</value>
   </data>
   <data name="automaticNumberingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -273,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;automaticNumberingLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -281,7 +285,6 @@
   <data name="startingCodeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="startingCodeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -352,7 +355,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -370,6 +373,6 @@
     <value>AutoNumbering</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

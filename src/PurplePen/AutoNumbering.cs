@@ -181,16 +181,16 @@ namespace PurplePen
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.automaticNumberingLabel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.existingControlsGroupBox);
             this.Controls.Add(this.disallowInvertibleCheckBox);
+            this.Controls.Add(this.automaticNumberingLabel);
             this.HelpTopic = "ControlsAutomaticNumbering.htm";
             this.Name = "AutoNumbering";
+            this.Controls.SetChildIndex(this.automaticNumberingLabel, 0);
             this.Controls.SetChildIndex(this.disallowInvertibleCheckBox, 0);
             this.Controls.SetChildIndex(this.existingControlsGroupBox, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.automaticNumberingLabel, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.existingControlsGroupBox.ResumeLayout(false);

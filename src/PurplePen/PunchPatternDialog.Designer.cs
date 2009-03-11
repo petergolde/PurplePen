@@ -78,8 +78,9 @@ namespace PurplePen
             // 
             // codeList
             // 
-            resources.ApplyResources(this.codeList, "codeList");
+            this.codeList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.codeList.FormattingEnabled = true;
+            resources.ApplyResources(this.codeList, "codeList");
             this.codeList.Name = "codeList";
             this.codeList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.codeList_DrawItem);
             this.codeList.SelectedIndexChanged += new System.EventHandler(this.codeList_SelectedIndexChanged);

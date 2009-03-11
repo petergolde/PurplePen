@@ -79,8 +79,8 @@ namespace PurplePen
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
             this.radioButtonMultiPage = new System.Windows.Forms.RadioButton();
-            this.labelAppearanceInfo = new System.Windows.Forms.Label();
             this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
+            this.labelAppearanceInfo = new System.Windows.Forms.Label();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
@@ -211,8 +211,8 @@ namespace PurplePen
             // groupBoxAppearance
             // 
             this.groupBoxAppearance.Controls.Add(this.radioButtonMultiPage);
-            this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
             this.groupBoxAppearance.Controls.Add(this.radioButtonOnePage);
+            this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
             resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
@@ -223,11 +223,6 @@ namespace PurplePen
             this.radioButtonMultiPage.Name = "radioButtonMultiPage";
             this.radioButtonMultiPage.UseVisualStyleBackColor = true;
             // 
-            // labelAppearanceInfo
-            // 
-            resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
-            this.labelAppearanceInfo.Name = "labelAppearanceInfo";
-            // 
             // radioButtonOnePage
             // 
             resources.ApplyResources(this.radioButtonOnePage, "radioButtonOnePage");
@@ -235,6 +230,11 @@ namespace PurplePen
             this.radioButtonOnePage.Name = "radioButtonOnePage";
             this.radioButtonOnePage.TabStop = true;
             this.radioButtonOnePage.UseVisualStyleBackColor = true;
+            // 
+            // labelAppearanceInfo
+            // 
+            resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
+            this.labelAppearanceInfo.Name = "labelAppearanceInfo";
             // 
             // PrintCourses
             // 

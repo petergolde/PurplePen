@@ -141,7 +141,7 @@
     <value>4</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 359</value>
+    <value>257, 360</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 25</value>
@@ -334,7 +334,7 @@
     <value>Symbols and text</value>
   </data>
   <data name="descKindCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 33</value>
+    <value>140, 32</value>
   </data>
   <data name="descKindCombo.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 23</value>
@@ -823,6 +823,6 @@
     <value>AddCourse</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

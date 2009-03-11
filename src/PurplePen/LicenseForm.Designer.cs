@@ -97,8 +97,6 @@ namespace PurplePen
             this.Controls.Add(this.bsdLicenseLinkLabel);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.licenseTextBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.HelpButton = false;
             this.Name = "LicenseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.ResumeLayout(false);
