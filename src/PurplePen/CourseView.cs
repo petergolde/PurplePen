@@ -540,4 +540,64 @@ namespace PurplePen
         }
     }
 
+    // A CourseDesignator indicates a course or part of a course for creating a course view.
+    // It describes the current view.
+    public class CourseDesignator
+    {
+        private Id<Course> courseId;   // ID of the course, none for all controls.
+        private int part;                         // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is CourseDesignator))
+                return false;
+            CourseDesignator other = (CourseDesignator) obj;
+
+            return (courseId == other.courseId && part == other.part);
+        }
+
+        public override int GetHashCode()
+        {
+            return courseId.GetHashCode() ^ part.GetHashCode();
+        }
+
+        public static CourseDesignator AllControls = new CourseDesignator(Id<Course>.None);
+
+        // Create a course designator for all parts
+        public CourseDesignator(Id<Course> course)
+        {
+            this.courseId = course;
+            this.part = -1;
+        }
+
+        // Create a course designator for a part
+        public CourseDesignator(Id<Course> course, int part)
+        {
+            Debug.Assert(part >= 0);
+            Debug.Assert(course.IsNotNone);
+            this.courseId = course;
+            this.part = part;
+        }
+
+        // Accessors.
+        public bool IsAllControls
+        {
+            get { return courseId.IsNone; }
+        }
+
+        public Id<Course> CourseId
+        {
+            get { return courseId; }
+        }
+
+        public bool AllParts
+        {
+            get { return part == -1; }
+        }
+
+        public int Part
+        {
+            get { return part; }
+        }
+    }
 }

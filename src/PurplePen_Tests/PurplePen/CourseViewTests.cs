@@ -388,7 +388,66 @@ Total Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
             courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
             Assert.AreEqual(new RectangleF(-51.4F, -39F, 106.9F, 84.1F), courseView.GetViewBounds());
         }
-	
+
+        [TestMethod]
+        public void AllControlsCourseDesignator()
+        {
+            CourseDesignator d1, d2;
+
+            d1 = CourseDesignator.AllControls;
+            d2 = new CourseDesignator(Id<Course>.None);
+
+            Assert.IsTrue(d1.Equals(d2));
+            Assert.IsFalse(d1.Equals(new CourseDesignator(CourseId(1))));
+
+            Assert.IsTrue(d1.GetHashCode() == d2.GetHashCode());
+            Assert.IsFalse(d1.GetHashCode() == new CourseDesignator(CourseId(1)).GetHashCode());
+
+            Assert.IsTrue(d1.IsAllControls);
+            Assert.IsTrue(d1.CourseId.IsNone);
+            Assert.IsTrue(d1.AllParts);
+        }
+
+        [TestMethod]
+        public void CourseDesignatorRegular()
+        {
+            CourseDesignator d1, d2, d3;
+
+            d1 = new CourseDesignator(CourseId(2));
+            d2 = new CourseDesignator(CourseId(2));
+            d3 = new CourseDesignator(CourseId(3));
+
+            Assert.IsTrue(d1.Equals(d2));
+            Assert.IsFalse(d1.Equals(d3));
+
+            Assert.IsTrue(d1.GetHashCode() == d2.GetHashCode());
+            Assert.IsFalse(d1.GetHashCode() == d3.GetHashCode());
+
+            Assert.IsFalse(d1.IsAllControls);
+            Assert.IsTrue(d1.CourseId.id == 2);
+            Assert.IsTrue(d1.AllParts);
+        }
+
+        [TestMethod]
+        public void CourseDesignatorPart()
+        {
+            CourseDesignator d1, d2, d3;
+
+            d1 = new CourseDesignator(CourseId(2), 1);
+            d2 = new CourseDesignator(CourseId(2), 1);
+            d3 = new CourseDesignator(CourseId(2));
+
+            Assert.IsTrue(d1.Equals(d2));
+            Assert.IsFalse(d1.Equals(d3));
+
+            Assert.IsTrue(d1.GetHashCode() == d2.GetHashCode());
+            Assert.IsFalse(d1.GetHashCode() == d3.GetHashCode());
+
+            Assert.IsFalse(d1.IsAllControls);
+            Assert.IsTrue(d1.CourseId.id == 2);
+            Assert.IsFalse(d1.AllParts);
+            Assert.IsTrue(d1.Part == 1);
+        }
     }
 }
 
