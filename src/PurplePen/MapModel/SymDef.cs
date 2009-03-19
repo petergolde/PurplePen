@@ -2275,13 +2275,16 @@ namespace PurplePen.MapModel
                 return new string[0];
             }
 
-            string[] newLines = new string[text.Length * 2 - 1];
-            lineWidths = new float[text.Length * 2 - 1];
+            // We ignore ONE initial blank line for OCAD compatibility.
+            int firstLine = (text[0] == "") ? 1 : 0;
 
-            for (int i = 0; i < text.Length; ++i) {
-                newLines[i * 2] = text[i];
-                lineWidths[i * 2] = LineWidth(text[i]);
-                if (i != text.Length - 1) {
+            string[] newLines = new string[(text.Length - firstLine) * 2 - 1];
+            lineWidths = new float[newLines.Length];
+
+            for (int i = 0; i < text.Length - firstLine; ++i) {
+                newLines[i * 2] = text[i + firstLine];
+                lineWidths[i * 2] = LineWidth(text[i + firstLine]);
+                if (i + firstLine != text.Length - 1) {
                     newLines[i * 2 + 1] = ParagraphMark;
                     lineWidths[i * 2 + 1] = 0;
                 }
@@ -2312,7 +2315,10 @@ namespace PurplePen.MapModel
                 widthFirstLine = widthRemainingLines = width;
             }
 
-            for (int i = 0; i < text.Length; ++i) {
+            // We ignore ONE initial blank line for OCAD compatibility.
+            int firstLine = (text.Length > 0 && text[0] == "") ? 1 : 0;
+
+            for (int i = firstLine; i < text.Length; ++i) {
                 WrapParagraph(text[i], widthFirstLine, widthRemainingLines, lineList, widthList);
                 if (i < text.Length - 1) {
                     lineList.Add(ParagraphMark);

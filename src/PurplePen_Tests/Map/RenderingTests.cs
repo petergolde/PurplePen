@@ -363,6 +363,12 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
+        public void Newlines()
+        {
+            CheckTest("newlines.txt", false, true, 6, 9);
+        }
+
+        [TestMethod]
         public void UnderlineText()
         {
             CheckTest("underlinetext.txt", false, true, 6, 9);
