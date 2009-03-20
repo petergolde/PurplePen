@@ -76,16 +76,6 @@
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommandNameText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="CourseAppearanceDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,16 +201,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MiscText.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="MissingFonts.cs">
       <SubType>Form</SubType>
@@ -541,28 +521,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.resx</DependentUpon>
     </Compile>
-    <Compile Include="ReportText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="RotateMode.cs" />
     <Compile Include="SelectionDescriber.cs" />
-    <Compile Include="SelectionDescriptionText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="SelectionMgr.cs" />
     <Compile Include="SetPrintAreaDialog.cs">
       <SubType>Form</SubType>
@@ -585,16 +545,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusBarText.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="SymbolDB.cs" />
     <Compile Include="SymbolPopup.cs" />
@@ -1126,7 +1076,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\UpArrow.png" />
     <None Include="Images\MenuDown.png" />
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

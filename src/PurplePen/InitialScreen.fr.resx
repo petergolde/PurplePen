@@ -132,6 +132,9 @@
   <data name="openSampleRadioButton.Text" xml:space="preserve">
     <value>Ouvrir un exemple</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Ouvrir la dernière course visualisée</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bienvenue sur Purple Pen</value>
   </data>

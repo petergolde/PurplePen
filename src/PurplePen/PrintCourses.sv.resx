@@ -150,6 +150,15 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopior</value>
   </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Skriv ut på fler sidor</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Beskär till ett en enskild sida</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Om utskriftsområdet är för stort för en sida:</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
-    <value>Choisir la langue utilisée pour le texte des descriptions de poste</value>
+    <value>Choisir la langue utilisée pour les définitions de poste :</value>
   </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Nom du symbole :</value>
@@ -142,6 +142,6 @@
     <value>Cliquer sur un symbole pour personnaliser la description textuelle affichée.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personnaliser le texte descriptif</value>
+    <value>Personnaliser la description textuelle</value>
   </data>
 </root>

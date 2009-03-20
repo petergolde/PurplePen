@@ -267,6 +267,9 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Anpassa &amp;Beskrivningstext...</value>
   </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Ändra banans &amp;utseende...</value>
+  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Tävling</value>
   </data>
@@ -350,6 +353,9 @@
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
     <value>Ta bort gap i figur</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Ändra &amp;Text</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otera</value>
@@ -437,6 +443,9 @@
   </data>
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>Lägg till översatta texter....</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Merge Symbols.xml...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>&amp;Översätt Kontrollbeskrivning</value>

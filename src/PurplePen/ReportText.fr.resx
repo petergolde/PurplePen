@@ -175,7 +175,7 @@
     <value>Postes proches</value>
   </data>
   <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
-    <value>Le tableau suivant indique toutes les paires de postes qui sont dans un rayon de {0} mètres. La colonne "même symbole" indique si les 2 postes possèdent le même symbole de base (colonne D)</value>
+    <value>Le tableau suivant indique toutes les paires de postes qui sont dans un rayon de {0} mètres. La colonne 'Symbole identique ?' précise si les 2 postes possèdent le même symbole de base (colonne D)</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
     <value>Cases de définition manquantes</value>
@@ -247,7 +247,7 @@
     <value>{0} ({1} postes, {2:0.0} km)</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
-    <value>Rapport de la longueur d'interposte pour {0}</value>
+    <value>Longueur des interpostes pour {0}</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Nombre de concurrents passant au poste</value>
@@ -256,7 +256,7 @@
     <value>Nombre de concurrents sur l'interposte</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>Vous n'avez pas défini le nombre de concurrents pour certains circuits (ou pour tous). Pour cette raison, les charges listées ci-dessous peuvent être absentes ou incorrectes. Pour définir le nombre de concurrents, sélectionner "Nombre Concurrents" dans le menu "Circuit".</value>
+    <value>Vous n'avez pas défini le nombre de concurrents pour certains circuits (ou pour tous). Pour cette raison, les charges listées ci-dessous peuvent être absentes ou incorrectes. Pour définir le nombre de concurrents, sélectionner "Nombre de Concurrents" dans le menu "Circuit".</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
     <value>(seules les interpostes utilisés sur plus d'un circuit apparaissent dans le tableau suivant)</value>

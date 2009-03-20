@@ -163,13 +163,13 @@
     <value>Supprimer la ligne de texte</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Ajouter un poste</value>
+    <value>Ajouter un Poste</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Ajouter un départ</value>
+    <value>Ajouter un Départ</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Ajouter une arrivée</value>
+    <value>Ajouter une Arrivée</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
     <value>Ajouter un passage obligatoire</value>
@@ -211,7 +211,7 @@
     <value>Insérer un coin</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Supprimer un coude</value>
+    <value>Supprimer un Coude</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
     <value>Supprimer un coin</value>
@@ -244,7 +244,7 @@
     <value>Modifier le nombre de concurrents</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>Personnaliser le texte descriptif</value>
+    <value>Personnaliser la description textuelle</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Modifier l'ordre des circuits</value>
@@ -260,5 +260,14 @@
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
     <value>Supprimer les postes inutilisés</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Modifier la langue des définitions</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Modifier le texte</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Personnaliser la présentation du circuit</value>
   </data>
 </root>

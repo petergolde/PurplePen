@@ -139,19 +139,19 @@
     <value>Enregistrer &amp;Sous...</value>
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Créer &amp;Fichiers OCAD...</value>
+    <value>Créer des &amp;Fichiers OCAD...</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Créer Fichier &amp;Interchange E-Punch...</value>
+    <value>Créer Fichier &amp;Interchange XML...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Imprimer Définitions...</value>
+    <value>&amp;Imprimer les Définitions...</value>
   </data>
   <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Imprimer Car&amp;tons de Contrôle...</value>
+    <value>Imprimer les Car&amp;tons de Contrôle...</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Imprimer &amp;Circuits...</value>
+    <value>Imprimer les &amp;Circuits...</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Ce circuit</value>
@@ -160,10 +160,10 @@
     <value>&amp;Tous les circuits</value>
   </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Définir &amp;Zone Impression</value>
+    <value>Définir la &amp;Zone d'Impression</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>&amp;Langue du programme...</value>
+    <value>Choisir &amp;Langue par défaut...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Quitter</value>
@@ -232,7 +232,7 @@
     <value>&amp;Totale</value>
   </data>
   <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Opacité Carte</value>
+    <value>&amp;Opacité de la Carte</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Basse</value>
@@ -241,7 +241,7 @@
     <value>Haute</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Qualité Carte</value>
+    <value>&amp;Qualité de la Carte</value>
   </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Tous Postes</value>
@@ -253,37 +253,40 @@
     <value>&amp;Carte...</value>
   </data>
   <data name="changeCodesMenu.Text" xml:space="preserve">
-    <value>&amp;Modifier Numéros Poste...</value>
+    <value>&amp;Modifier Numéros de Poste...</value>
   </data>
   <data name="autoNumberingMenu.Text" xml:space="preserve">
     <value>&amp;Numérotation automatique...</value>
   </data>
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
-    <value>&amp;Supprimer Postes Inutilisés...</value>
+    <value>&amp;Supprimer les Postes Inutilisés...</value>
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Poinçons...</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
-    <value>Personnaliser &amp;Texte Descriptif...</value>
+    <value>Personnaliser Description &amp;Textuelle...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Personnaliser Présent&amp;ation Circuit...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>C&amp;ourse</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Ajouter Circuit...</value>
+    <value>&amp;Ajouter un Circuit...</value>
   </data>
   <data name="deleteCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Supprimer Circuit</value>
+    <value>&amp;Supprimer un Circuit</value>
   </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Propriétés...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>&amp;Ordre Circuits...</value>
+    <value>&amp;Ordre des Circuits...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>&amp;Nombre Concurrents...</value>
+    <value>&amp;Nombre de Concurrents...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Circuit</value>
@@ -340,16 +343,19 @@
     <value>&amp;Supprimer</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
-    <value>Insérer &amp;Coude</value>
+    <value>Insérer un &amp;Coude</value>
   </data>
   <data name="removeBendMenu.Text" xml:space="preserve">
-    <value>Supprimer Point d'Inf&amp;lexion</value>
+    <value>Supprimer un C&amp;oude</value>
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Insérer &amp;Intervalle</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
     <value>Supprimer I&amp;ntervalle</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Modifier &amp;Texte...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Rotation</value>
@@ -367,7 +373,7 @@
     <value>Fin Interposte Jalonnée</value>
   </data>
   <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Jalonnage Interposte</value>
+    <value>&amp;Jalonnage de l'Interposte</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Modifier Affichage Circuits...</value>
@@ -438,6 +444,9 @@
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>Ajouter les textes traduits...</value>
   </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Fusionner Symbols.xml...</value>
+  </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>&amp;Traduire le texte des définitions</value>
   </data>
@@ -472,19 +481,19 @@
     <value>Supprimer (Suppr)</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter un départ</value>
+    <value>Ajouter un Départ</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter un poste</value>
+    <value>Ajouter un Poste</value>
   </data>
   <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
     <value>Ajouter un poste (Ctrl+A)</value>
   </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter une arrivée</value>
+    <value>Ajouter une Arrivée</value>
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajouter Dé&amp;finitions</value>
+    <value>Ajouter les Définitions</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>
@@ -517,10 +526,10 @@
     <value>Texte</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
-    <value>Ajouter un symbole spécial</value>
+    <value>Ajouter un Symbole Spécial</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Insérer un coude (Ctrl+B)</value>
+    <value>Insérer un Coude (Ctrl+B)</value>
   </data>
   <data name="addGapToolStripButton.Text" xml:space="preserve">
     <value>toolStripButton1</value>

@@ -121,7 +121,7 @@
     <value>Les nouveaux postes sont numérotés automatiquement. Merci de sélectionner le premier numéro de poste à utiliser.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Refuser les numéros de poste pouvant être lus à l'envers (exemple : "68"/"89")</value>
+    <value>Ecarter les numéros de poste pouvant être lus à l'envers (exemple : 68 / 89)</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Premier numéro de poste :</value>
