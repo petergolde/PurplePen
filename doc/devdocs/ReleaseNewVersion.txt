@@ -17,7 +17,7 @@ version code to match, say Yes when prompted to update product code.
 
 8. Upload a new change list document.
 
-9. Create a new branch in Subversion:
+9. Create a new tag in BZR:
     
 
 
