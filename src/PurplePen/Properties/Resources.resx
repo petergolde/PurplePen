@@ -136,6 +136,9 @@
   <data name="DescText_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\DescText_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DownArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\DownArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Finish_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Finish_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,9 @@
   <data name="Line_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Line_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MenuDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MenuDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Number_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Number_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +165,9 @@
   </data>
   <data name="Start_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Start_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\UpArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Water_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Water_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -58,6 +58,7 @@
             // insertSpecialButton
             // 
             resources.ApplyResources(this.insertSpecialButton, "insertSpecialButton");
+            this.insertSpecialButton.Image = global::PurplePen.Properties.Resources.MenuDown;
             this.insertSpecialButton.Name = "insertSpecialButton";
             this.insertSpecialButton.UseVisualStyleBackColor = true;
             this.insertSpecialButton.Click += new System.EventHandler(this.insertSpecialButton_Click);
