@@ -1112,6 +1112,55 @@ namespace PurplePen.Tests
             result = QueryEvent.GetEventTitle(eventDB, "\r\n");
             Assert.AreEqual("Sample Event 1\r\nSecond line\r\nThird line", result);
         }
+
+        [TestMethod]
+        public void CountCourseParts()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            Assert.AreEqual(4, QueryEvent.CountCourseParts(eventDB, CourseId(6)));
+            Assert.AreEqual(1, QueryEvent.CountCourseParts(eventDB, CourseId(1)));
+        }
+
+        [TestMethod]
+        public void GetCoursePartBounds()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            Id<CourseControl> startCourseControlId, endCourseControlId;
+            bool result;
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 0, out startCourseControlId, out endCourseControlId);
+            Assert.IsTrue(result);
+            Assert.AreEqual(CourseControlId(601), startCourseControlId);
+            Assert.AreEqual(CourseControlId(611), endCourseControlId);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 1, out startCourseControlId, out endCourseControlId);
+            Assert.IsTrue(result);
+            Assert.AreEqual(CourseControlId(611), startCourseControlId);
+            Assert.AreEqual(CourseControlId(615), endCourseControlId);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 2, out startCourseControlId, out endCourseControlId);
+            Assert.IsTrue(result);
+            Assert.AreEqual(CourseControlId(615), startCourseControlId);
+            Assert.AreEqual(CourseControlId(616), endCourseControlId);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 3, out startCourseControlId, out endCourseControlId);
+            Assert.IsTrue(result);
+            Assert.AreEqual(CourseControlId(616), startCourseControlId);
+            Assert.AreEqual(CourseControlId(620), endCourseControlId);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 4, out startCourseControlId, out endCourseControlId);
+            Assert.IsFalse(result);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(1), 0, out startCourseControlId, out endCourseControlId);
+            Assert.IsTrue(result);
+            Assert.AreEqual(CourseControlId(101), startCourseControlId);
+            Assert.AreEqual(CourseControlId(112), endCourseControlId);
+
+            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(1), 1, out startCourseControlId, out endCourseControlId);
+            Assert.IsFalse(result);
+        }
     }
 }
 #endif

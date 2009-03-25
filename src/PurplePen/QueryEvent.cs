@@ -218,6 +218,52 @@ namespace PurplePen
             return list.ToArray();
         }
 
+        // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
+        // map exchange has 2 parts, etc.
+        public static int CountCourseParts(EventDB eventDB, Id<Course> courseId)
+        {
+            int currentPart = 0;
+
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+                if (eventDB.GetCourseControl(courseControlId).exchange)
+                    ++currentPart;
+            }
+
+            return currentPart + 1;
+        }
+
+
+        // Get the start and end coursecontrols (inclusive on both ends) for a particular part of a course (parts separated by map exchanges).
+        // If the given part doesn't exist, return false. If there are no map exchanges, then part 0 is the entire course.
+        public static bool GetCoursePartBounds(EventDB eventDB, Id<Course> courseId, int part, out Id<CourseControl> startCourseControlId, out Id<CourseControl> endCourseControlId)
+        {
+            startCourseControlId = endCourseControlId = Id<CourseControl>.None;
+
+            int currentPart = 0;
+            bool startFound = false;      // did we find the beginning part of the course part?
+
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+                if (currentPart == part) {
+                    if (!startFound) {
+                        startFound = true;
+                        startCourseControlId = courseControlId;
+                    }
+                    endCourseControlId = courseControlId;
+                }
+
+                if (eventDB.GetCourseControl(courseControlId).exchange) {
+                    ++currentPart;
+
+                    if (currentPart == part) {
+                        startFound = true;
+                        startCourseControlId = courseControlId;
+                    }
+                }
+            }
+
+            return startFound;
+        }
+
         // Given an array of courses, compute the control load. Return -1 if no control load set for any containing courses, or array is empty.
         private static int ComputeLoad(EventDB eventDB, Id<Course>[] courses)
         {
