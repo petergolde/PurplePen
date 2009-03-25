@@ -162,9 +162,9 @@ namespace PurplePen
             else
                 Debug.Assert(code == null);         // only normal controls should have codes
 
-            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
+            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
                 symbolIds = new string[1];
         }
 
@@ -175,9 +175,9 @@ namespace PurplePen
             if (kind != ControlPointKind.Normal && code != null)
                 throw new ApplicationException(string.Format("Control point '{0}' should not have a code", id));
 
-            if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start) && symbolIds.Length != 6)
+            if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange) && symbolIds.Length != 6)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 6 symbols", id));
-            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange) && symbolIds.Length != 1)
+            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint) && symbolIds.Length != 1)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 1 symbol", id));
 
             if ((kind != ControlPointKind.Normal && kind != ControlPointKind.Start) && columnFText != null)
@@ -270,9 +270,9 @@ namespace PurplePen
                 default:                    xmlinput.BadXml("Invalid control point kind '{0}'", kindText); break;
             }
 
-            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
+            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapExchange)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
                 symbolIds = new string[1];
 
             code = null;

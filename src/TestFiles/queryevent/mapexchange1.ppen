@@ -16,6 +16,9 @@
   </control>
   <control id="35" kind="map-exchange">
     <location x="115.6" y="-11.8" />
+    <description box="C" iof-2004-ref="0.1E" />
+    <description box="D" iof-2004-ref="4.5" />
+    <description box="G" iof-2004-ref="11.2E" />
   </control>
   <control id="36" kind="normal">
     <code>36</code>
