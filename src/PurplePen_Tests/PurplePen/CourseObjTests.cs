@@ -83,6 +83,14 @@ namespace PurplePen.Tests
 
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
+
+                // Create white color and white-out symdef.
+                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
+                AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
+                whiteArea.ToolboxImage = Properties.Resources.WhiteOut_OcadToolbox;
+                map.AddSymdef(whiteArea);
+                dict[CourseLayout.KeyWhiteOut] = whiteArea;
+
                 SymColor symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
                 courseobj.AddToMap(map, symColor, dict);
             }
@@ -143,6 +151,14 @@ namespace PurplePen.Tests
             courseobj.scaleRatio *= 0.5F;
 
             CheckRenderBitmap(courseobj, basename + "_small");
+        }
+
+        // Reduce the scale by 50% and check also.
+        internal void CheckRenderBitmapSmall(CourseObj courseobj, string basename, Color backColor)
+        {
+            courseobj.scaleRatio *= 0.5F;
+
+            CheckRenderBitmap(courseobj, basename + "_small", backColor);
         }
 
         // Check a course made up of a single object.
@@ -318,6 +334,22 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObject(courseobj, "dangerous_special");
+        }
+
+        [TestMethod]
+        public void WhiteOut()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            CheckRenderBitmap(courseobj, "whiteout", Color.YellowGreen);
+            CheckRenderBitmapSmall(courseobj, "whiteout_small", Color.YellowGreen);
+        }
+        
+        [TestMethod]
+        public void WhiteOutSpecial()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            CheckRenderBitmap(courseobj, "whiteout_special", Color.YellowGreen);
+            CheckRenderBitmapSmall(courseobj, "whiteout_special_small", Color.YellowGreen);
         }
 
         [TestMethod]
@@ -593,6 +625,16 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void WhiteoutDistance()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
+            Assert.AreEqual(Math.Round(1.414213, 3), Math.Round(courseobj.DistanceFromPoint(new PointF(1, 3)), 3));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(3.7F, 1.1F)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(2F, 1.5F)));
+            Assert.AreEqual(1.0, Math.Round(courseobj.DistanceFromPoint(new PointF(5, 1)), 3));
+        }
+
+        [TestMethod]
         public void ControlNumberDistance()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
@@ -715,6 +757,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
             AssertDump(courseobj, @"Dangerous:      scale:0.5  path:N(3,3)--N(1,1)--N(4,1)--N(3,3)");
+        }
+
+        [TestMethod]
+        public void WhiteOutDump()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
+            AssertDump(courseobj, @"WhiteOut:       scale:0.5  path:N(3,3)--N(1,1)--N(4,1)--N(3,3)");
         }
 
         [TestMethod]
@@ -901,10 +950,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void WhiteOutHighlight()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "whiteout_highlight");
+        }
+
+        [TestMethod]
         public void DangerousHighlightSpecial()
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectHighlight(courseobj, "dangerous_highlight_special");
+        }
+
+        [TestMethod]
+        public void WhiteOutHighlightSpecial()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "whiteout_highlight_special");
         }
 
         [TestMethod]
@@ -1158,6 +1221,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectOffset(courseobj, "dangerous_offset");
+        }
+
+        [TestMethod]
+        public void WhiteOutOffset()
+        {
+            CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "whiteout_offset");
         }
 
         [TestMethod]

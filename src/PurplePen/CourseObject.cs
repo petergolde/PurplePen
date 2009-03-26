@@ -1775,7 +1775,27 @@ namespace PurplePen
         }
   }
 
-  // CONSIDER: merge ControlNumberCourseObj and CodeCourseObj since they are so similar!
+    // A dangerous area
+    class WhiteOutCourseObj: AreaCourseObj
+    {
+        public WhiteOutCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
+        {
+        }
+        
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            Debug.Fail("should never be called");
+            return null;
+        }
+
+        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        {
+            AddToMap(map, dict[CourseLayout.KeyWhiteOut]);
+        }
+    }
+
+    // CONSIDER: merge ControlNumberCourseObj and CodeCourseObj since they are so similar!
 
     // A control number
     class ControlNumberCourseObj : TextCourseObj

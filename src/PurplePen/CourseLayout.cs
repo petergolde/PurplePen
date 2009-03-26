@@ -64,6 +64,8 @@ namespace PurplePen
         float[] colorY = new float[LAYERCOUNT];
         float[] colorK = new float[LAYERCOUNT];
 
+        public static readonly object KeyWhiteOut = "WhiteOutKey";   // key to get the "white out" symdef.
+
         // Set the color of a particular layer. Layer 0 is black, layer 1 is the primary course, layer 2 all other controls, 
         // and layers 3 and above for other courses.
         public void SetLayerColor(CourseLayer layer, short ocadColorId, string colorName, float colorC, float colorM, float colorY, float colorK)
@@ -119,6 +121,13 @@ namespace PurplePen
             using (map.Write()) {
                 // Create dictionary for holding Symdef state
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
+
+                // Create white color and white-out symdef.
+                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
+                AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
+                whiteArea.ToolboxImage = Properties.Resources.WhiteOut_OcadToolbox;
+                map.AddSymdef(whiteArea);
+                dict[KeyWhiteOut] = whiteArea;
 
                 foreach (CourseObj courseObject in this) {
                     int layerIndex = (int) courseObject.layer;
