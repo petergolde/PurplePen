@@ -436,6 +436,13 @@ namespace PurplePen.Tests
             CheckRenderBitmap(courseobj, "text2");
         }
 
+        [TestMethod]
+        public void TextEmpty()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "", new RectangleF(-4, -2, 8, 6), "Arial", FontStyle.Bold);
+            CheckRenderBitmap(courseobj, "textempty");
+        }
+
         // Create a description course object to use in testing.
         DescriptionCourseObj CreateDescriptionCourseObj()
         {
