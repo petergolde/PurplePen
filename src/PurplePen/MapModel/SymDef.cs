@@ -2270,13 +2270,13 @@ namespace PurplePen.MapModel
             if (!objectsCreated)
                 CreateObjects();
 
-            if (text.Length == 0) {
+            // We ignore ONE initial blank line for OCAD compatibility.
+            int firstLine = (text.Length > 0 && text[0] == "") ? 1 : 0;
+
+            if (text.Length == firstLine) {
                 lineWidths = new float[0];
                 return new string[0];
             }
-
-            // We ignore ONE initial blank line for OCAD compatibility.
-            int firstLine = (text[0] == "") ? 1 : 0;
 
             string[] newLines = new string[(text.Length - firstLine) * 2 - 1];
             lineWidths = new float[newLines.Length];
