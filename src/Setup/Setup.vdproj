@@ -299,14 +299,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
-        "ProductCode" = "8:{8019270E-4197-4CAF-BBD6-543B66415435}"
-        "PackageCode" = "8:{EE279AAE-B7AF-4CA5-97B6-393FAC5151EC}"
+        "ProductCode" = "8:{768345AE-103E-4D68-94D0-7BF668FF1911}"
+        "PackageCode" = "8:{A5BC3E3A-2C7B-424F-8222-49B878C3B1B6}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.3100"
+        "ProductVersion" = "8:1.0.15000"
         "Manufacturer" = "8:Golde Software"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://purplepen.golde.org/support"
@@ -862,7 +862,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_75BEA61185F8480D8B278E736F729F55"
             {
-            "SourcePath" = "8:..\\PurplePen\\obj\\Debug\\PurplePen.exe"
+            "SourcePath" = "8:..\\PurplePen\\obj\\Release\\PurplePen.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"

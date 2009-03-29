@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Infoga text</value>
+  </data>
+  <data name="eventTitleMenuItem.Text" xml:space="preserve">
+    <value>Tävlingens Titel</value>
+  </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Banans namn</value>
+  </data>
+  <data name="courseLengthMenuItem.Text" xml:space="preserve">
+    <value>Banlängd</value>
+  </data>
+  <data name="courseClimbMenuItem.Text" xml:space="preserve">
+    <value>Banans Stigning</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>Klasslista</value>
   </data>
 </root>

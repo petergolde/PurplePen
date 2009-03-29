@@ -3,6 +3,40 @@
   Version=9
   Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
 
+Symbol definition for '890.0'
+ White out': 
+  Size=604, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=44 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C 1F  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 1F 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  Flags=0, FillOn=True, FillColor=44
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
 Symbol definition for '701.0'
  Start': 
   Size=624, Otp=1, SymTp=0, Flags=1
@@ -813,6 +847,16 @@ String of type 9
   code=m, value=90
   code=y, value=0
   code=k, value=25
+  code=o, value=0
+
+String of type 9
+  ObjIndex=0
+  firstField=White
+  code=n, value=44
+  code=c, value=0
+  code=m, value=0
+  code=y, value=0
+  code=k, value=0
   code=o, value=0
 
 String of type 1039

@@ -413,6 +413,8 @@ namespace PurplePen
                 courseObj = new OOBCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.Dangerous:
                 courseObj = new DangerousCourseObj(specialId, scaleRatio, appearance, special.locations); break;
+            case SpecialKind.WhiteOut:
+                courseObj = new WhiteOutCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.Text:
                 string text = ExpandText(eventDB, courseView, special.text);
                 FontStyle fontStyle = special.fontBold ? FontStyle.Bold : FontStyle.Regular;

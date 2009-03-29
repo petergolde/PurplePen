@@ -394,6 +394,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to White Out Area.
+        /// </summary>
+        internal static string SpecialName_WhiteOut {
+            get {
+                return ResourceManager.GetString("SpecialName_WhiteOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to starts.
         /// </summary>
         internal static string Start_Plural {

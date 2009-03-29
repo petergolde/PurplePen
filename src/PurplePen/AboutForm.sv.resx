@@ -129,6 +129,9 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="creditsButton.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>Se hela licensen</value>
   </data>

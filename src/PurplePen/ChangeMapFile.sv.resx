@@ -132,6 +132,9 @@
   <data name="labelScale.Text" xml:space="preserve">
     <value>Skala:</value>
   </data>
+  <data name="labelOneTo.Text" xml:space="preserve">
+    <value>1 :</value>
+  </data>
   <data name="labelDpi2.Text" xml:space="preserve">
     <value>punkter per tum</value>
   </data>

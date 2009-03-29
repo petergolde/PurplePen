@@ -820,8 +820,14 @@
     <EmbeddedResource Include="ChangeText.sv.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandNameText.fr.resx" />
-    <EmbeddedResource Include="CommandNameText.sv.resx" />
+    <EmbeddedResource Include="CommandNameText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.fr.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -901,8 +907,14 @@
     <EmbeddedResource Include="MainFrame.sv.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.fr.resx" />
-    <EmbeddedResource Include="MiscText.sv.resx" />
+    <EmbeddedResource Include="MiscText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.fr.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
@@ -1020,10 +1032,22 @@
     <EmbeddedResource Include="ReportForm.sv.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportText.fr.resx" />
-    <EmbeddedResource Include="ReportText.sv.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.fr.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.sv.resx" />
+    <EmbeddedResource Include="ReportText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.fr.resx">
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1036,8 +1060,14 @@
     <EmbeddedResource Include="SetUILanguage.sv.resx">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusBarText.fr.resx" />
-    <EmbeddedResource Include="StatusBarText.sv.resx" />
+    <EmbeddedResource Include="StatusBarText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.fr.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>
@@ -1046,6 +1076,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\MenuDown.png" />
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

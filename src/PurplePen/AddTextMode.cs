@@ -118,11 +118,14 @@ namespace PurplePen
 
         public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            // If text is empty, use a non-empty text
+            string measureText = string.IsNullOrEmpty(displayText) ? "000000" : displayText;
+
             // User just clicked. Create text of a default size.
             SizeF size;
             Graphics g = Util.GetHiresGraphics();
             using (Font f = new Font(NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.emHeightDefaultTextSpecial, NormalCourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
-                size = g.MeasureString(displayText, f, new PointF(0,0), StringFormat.GenericTypographic);
+                size = g.MeasureString(measureText, f, new PointF(0,0), StringFormat.GenericTypographic);
 
             CreateTextSpecial(new RectangleF(new PointF(location.X, location.Y - size.Height), size));
             displayUpdateNeeded = true;

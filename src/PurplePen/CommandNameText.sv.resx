@@ -261,4 +261,13 @@
   <data name="RemoveUnusedControls" xml:space="preserve">
     <value>Ta bort oanvända kontroller</value>
   </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Byt Kontrolldefinitionens Språk</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Byt Text</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Ändra Banans Utseende</value>
+  </data>
 </root>

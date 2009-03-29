@@ -1136,49 +1136,56 @@ namespace PurplePen.MapModel
                 symid = (obj.Sym / 10) * 1000 + (obj.Sym % 10);
             }
 
-            if (! symdefids.ContainsKey(symid)) {
+            if (! symdefids.ContainsKey(symid) || symdefids[symid] == null) {
                 // Unknown symbol definition.
                 // CONSIDER: produce warning that at unsymbols object is being ignored?
                 return;
             }
 
-            SymDef symdef = symdefids[symid] as SymDef;
+            SymDef symdef = symdefids[symid];
 
             Symbol sym = null;
 
+            // Note that we just ignore a symbol if the Otp value is inconsistent with the type of
+            // symdef it is associated with. This can happen in OCAD files if a symbol type is deleted 
+            // and replaced with a different kind.
             switch (obj.Otp) {
             default: 
                 throw new OcadFileFormatException("Invalid Otp value {0} in object", obj.Otp);
             case 1:
-                sym = CreatePointSymbol(obj, symdef as PointSymDef);
+                if (symdef is PointSymDef)
+                    sym = CreatePointSymbol(obj, symdef as PointSymDef);
                 break; 
             case 2:
                 // Line or line text symbols.
                 if (symdef is LineSymDef)
                     sym = CreateLineSymbol(obj, symdef as LineSymDef);
-                else
+                else if (symdef is TextSymDef)
                     sym = CreateLineTextSymbol(obj, symdef as TextSymDef);
                 break;
             case 3:
                 // Area symbols.
-                sym = CreateAreaSymbol(obj, symdef as AreaSymDef);
+                if (symdef is AreaSymDef)
+                    sym = CreateAreaSymbol(obj, symdef as AreaSymDef);
                 break;
 
             case 4:
                 // Text symbols
-                sym = CreateTextSymbol(obj, symdef as TextSymDef, false);
+                if (symdef is TextSymDef)
+                    sym = CreateTextSymbol(obj, symdef as TextSymDef, false);
                 break;
 
             case 6:
                 // Line text symbol.
-                sym = CreateLineTextSymbol(obj, symdef as TextSymDef);
+                if (symdef is TextSymDef)
+                    sym = CreateLineTextSymbol(obj, symdef as TextSymDef);
                 break;
 
             case 5: case 7:
                 // formatted text or rectangle symbol
                 if (symdef is TextSymDef) 
                     sym = CreateTextSymbol(obj, symdef as TextSymDef, true);
-                else {
+                else if (symdef is LineSymDef) {
                     RectangleInfo rectinfo = (RectangleInfo) rectangleInfos[symid];
                     Symbol[] syms = CreateRectangleSymbol(obj, symdef as LineSymDef, rectinfo);
                     if (syms != null) {

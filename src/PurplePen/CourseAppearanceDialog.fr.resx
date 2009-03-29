@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Taille des numéros de poste :</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Largeur de ligne :</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>Diamètre du cercle du poste :</value>
+  </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>Utiliser les tailles IOF standards</value>
+  </data>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Tailles des objets</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Sélecteur de couleur...</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Noir :</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Jaune :</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Magenta :</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bleu :</value>
+  </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Utiliser la couleur violine de la carte</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Couleur violine</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>Aperçu</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Personnaliser la présentation du circuit</value>
   </data>
 </root>

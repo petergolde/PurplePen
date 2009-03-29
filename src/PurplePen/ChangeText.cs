@@ -22,6 +22,8 @@ namespace PurplePen
             this.usageLabel.Text = explanation;
             if (!allowSpecialTextInsert)
                 insertSpecialButton.Visible = false;
+
+            textBoxMain_TextChanged(this, EventArgs.Empty);
         }
 
         public string UserText

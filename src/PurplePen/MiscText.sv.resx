@@ -157,7 +157,7 @@
     <value>Kan inte skapa katalog '{0}' av följande skäl:</value>
   </data>
   <data name="CannotReadMap" xml:space="preserve">
-    <value>Kan inte läsa kartan av följande skäl: {0}</value>
+    <value>Kartfilen kan inte läsas: '{0}' Använd Optimize/Repair i OCAD för att förhoppningsvis fixa problemet.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Kan inte skapa OCAD-filer av följande skäl:</value>
@@ -213,12 +213,13 @@ Använd / för höjder i en sluttning
 Använd | för två föremål</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>Skriv in ett nytt tävlingsnamn
-(påverkar alla banor)</value>
+    <value>Ny titel för tävlingen
+Använd | för att separera rader
+(påverkar samtliga banor)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>Ange ny sekundär titel
-(påverkar endast denna bana)</value>
+    <value>Lägg till ny andrahands titel
+Använd | för att separera rader</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Skriv in nytt bannamn</value>
@@ -355,5 +356,29 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>banläggning för orientering</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Skriv in texten du vill ha på kartan. Tryck på OK, sedan klicka och dra på kartan för att placera texten.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Lägg till Text</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Skriv in ny text</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Byt Text</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Ett annant program har gjort ändringar på kartan "{0}". Purple Pen kommer ladda om kartan nu.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Tävlingen har nuvarande kontrolldefinitioner på {0}. Vill du ändra språk till {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Öppna "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Du måste stänga Purple Pen innan du kan öppna de skapade OCAD filerna.</value>
   </data>
 </root>

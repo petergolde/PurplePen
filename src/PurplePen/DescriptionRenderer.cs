@@ -200,14 +200,11 @@ namespace PurplePen
             
             // White out the background.
             SizeF size = Measure();
-            SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
-            AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
-            map.AddSymdef(whiteArea);
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal};
             PointF[] pts = {Util.TransformPoint(new PointF(0, 0), mat), Util.TransformPoint(new PointF(size.Width, 0), mat),Util.TransformPoint(new PointF(size.Width, size.Height), mat),
                 Util.TransformPoint(new PointF(0, size.Height), mat),Util.TransformPoint(new PointF(0, 0), mat) };
             SymPath path = new SymPath(pts, kinds);
-            AreaSymbol whiteout = new AreaSymbol(whiteArea, new SymPathWithHoles(path, null), 0);
+            AreaSymbol whiteout = new AreaSymbol((AreaSymDef) dict[CourseLayout.KeyWhiteOut], new SymPathWithHoles(path, null), 0);
             map.AddSymbol(whiteout);
 
             replaceMultiplySign = false;   // OCAD doesn't handle the multiple character well.

@@ -124,7 +124,7 @@
     <value>Nouveau Numéro</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Pour changer le numéro d'un ou plusieurs postes, veuillez cliquer sur la colonne "Nouveau Numéro" puis insérer le. </value>
+    <value>Pour changer le numéro d'un ou plusieurs postes, veuillez cliquer sur la colonne "Nouveau Numéro" puis renseignez-le. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Changer les numéros de poste</value>

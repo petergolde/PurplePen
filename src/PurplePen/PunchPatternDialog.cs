@@ -54,6 +54,8 @@ namespace PurplePen
 
             codeList.DrawMode = DrawMode.OwnerDrawFixed;
             codeList.ItemHeight = codeList.Font.Height + 2;
+            codeList.Height = dotGrid.Height;
+            codeList.Width = formatButton.Width;
         }
 
         // Get or set a dictionary containing all the punch patterns.

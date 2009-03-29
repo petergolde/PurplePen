@@ -136,7 +136,7 @@
     <value>Texte et symboles</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Apparence par défaut</value>
+    <value>Présentation par défaut</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>Le texte suivant (facultatif) apparaîtra sur la deuxième ligne des définitions :</value>

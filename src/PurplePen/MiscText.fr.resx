@@ -133,7 +133,7 @@
     <value>Pas de symbole</value>
   </data>
   <data name="AllControls" xml:space="preserve">
-    <value>Tous les postes</value>
+    <value>Tous Postes</value>
   </data>
   <data name="CannotLoadFile" xml:space="preserve">
     <value>Ne peut pas charger '{0}' pour les raisons suivantes :</value>
@@ -157,7 +157,7 @@
     <value>Ne peut pas créer le dossier '{0}' pour les raisons suivantes :</value>
   </data>
   <data name="CannotReadMap" xml:space="preserve">
-    <value>Ne peut pas ouvrir la carte pour les raisons suivantes : {0}</value>
+    <value>Impossible de lire la carte pour les raisons suivantes : '{0}' Utiliser 'Optimiser/Réparer' dans OCAD pourrait résoudre les problèmes.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Ne peut pas créer les fichiers OCAD pour les raisons suivantes :</value>
@@ -178,7 +178,7 @@
     <value>La dénivelée d'un circuit doit être vide ou un nombre compris entre 0 et 9999.</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
-    <value>Le nombre de concurrent sur un circuit doit être vide ou un nombre entier compris entre 0 et 999999.</value>
+    <value>Le nombre de concurrents sur un circuit doit être vide ou un nombre entier compris entre 0 et 999999.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>&amp;Annuler</value>
@@ -213,12 +213,13 @@ Utiliser / pour la hauteur sur une pente
 Utiliser | pour deux éléments</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>Entrer un nouveau titre pour la course
+    <value>Entrer le nouveau nom de la course
+Utiliser | pour séparer les lignes
 (affecte tous les circuits)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>Entrer un nouveau titre secondaire
-(affecte uniquement ce circuit)</value>
+    <value>Entrer le nouveau titre secondaire
+Utiliser | pour séparer les lignes</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Entrer un nouveau nom pour le circuit</value>
@@ -351,5 +352,29 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>élaborateur de circuits de course d'orientation</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Entrer le texte que vous souhaitez disposer sur la carte. Cliquez sur OK, puis glisser la souris pour positionner le texte à l'emplacement désiré.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Ajouter du texte</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Entrer le nouveau texte.</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Modifier le texte</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Un autre programme a modifié la carte "{0}". Purple Pen va recharger cette carte maintenant.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>La course actuelle a des définitions de poste en {0}. Voulez vous changer la langue des définitions de poste pour le {1} ?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Ouvrir "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen doit être fermé avant de charger les fichiers OCAD créés.</value>
   </data>
 </root>

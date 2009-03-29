@@ -1798,10 +1798,13 @@ namespace PurplePen.MapModel
                 fontStyle |= FontStyle.Bold;
             if (italic)
                 fontStyle |= FontStyle.Italic;
+
+            float nominalFontSize = Math.Max(fontSize, 0.01F);            // 0 size fonts cause exception!
+
             if (Util.FontExists(fontName))
-                font = new Font(fontName, fontSize, fontStyle, GraphicsUnit.World);
+                font = new Font(fontName, nominalFontSize, fontStyle, GraphicsUnit.World);
             else
-                font = new Font(new FontFamily(GenericFontFamilies.SansSerif), fontSize, fontStyle, GraphicsUnit.World);
+                font = new Font(new FontFamily(GenericFontFamilies.SansSerif), nominalFontSize, fontStyle, GraphicsUnit.World);
 
             stringFormat = new StringFormat(StringFormat.GenericTypographic);
             stringFormat.Alignment = StringAlignment.Near;
@@ -2267,18 +2270,21 @@ namespace PurplePen.MapModel
             if (!objectsCreated)
                 CreateObjects();
 
-            if (text.Length == 0) {
+            // We ignore ONE initial blank line for OCAD compatibility.
+            int firstLine = (text.Length > 0 && text[0] == "") ? 1 : 0;
+
+            if (text.Length == firstLine) {
                 lineWidths = new float[0];
                 return new string[0];
             }
 
-            string[] newLines = new string[text.Length * 2 - 1];
-            lineWidths = new float[text.Length * 2 - 1];
+            string[] newLines = new string[(text.Length - firstLine) * 2 - 1];
+            lineWidths = new float[newLines.Length];
 
-            for (int i = 0; i < text.Length; ++i) {
-                newLines[i * 2] = text[i];
-                lineWidths[i * 2] = LineWidth(text[i]);
-                if (i != text.Length - 1) {
+            for (int i = 0; i < text.Length - firstLine; ++i) {
+                newLines[i * 2] = text[i + firstLine];
+                lineWidths[i * 2] = LineWidth(text[i + firstLine]);
+                if (i + firstLine != text.Length - 1) {
                     newLines[i * 2 + 1] = ParagraphMark;
                     lineWidths[i * 2 + 1] = 0;
                 }
@@ -2309,7 +2315,10 @@ namespace PurplePen.MapModel
                 widthFirstLine = widthRemainingLines = width;
             }
 
-            for (int i = 0; i < text.Length; ++i) {
+            // We ignore ONE initial blank line for OCAD compatibility.
+            int firstLine = (text.Length > 0 && text[0] == "") ? 1 : 0;
+
+            for (int i = firstLine; i < text.Length; ++i) {
                 WrapParagraph(text[i], widthFirstLine, widthRemainingLines, lineList, widthList);
                 if (i < text.Length - 1) {
                     lineList.Add(ParagraphMark);

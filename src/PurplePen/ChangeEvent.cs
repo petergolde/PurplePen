@@ -1185,7 +1185,7 @@ namespace PurplePen
         public static void AddSpecialCorner(EventDB eventDB, Id<Special> specialId, PointF newCorner)
         {
             Special special = eventDB.GetSpecial(specialId);
-            Debug.Assert(special.kind == SpecialKind.OOB || special.kind == SpecialKind.Dangerous || special.kind == SpecialKind.Boundary);
+            Debug.Assert(special.kind == SpecialKind.OOB || special.kind == SpecialKind.Dangerous || special.kind == SpecialKind.Boundary || special.kind == SpecialKind.WhiteOut);
             bool isArea = (special.kind != SpecialKind.Boundary);
 
             PointF[] oldLocations, newLocations;
@@ -1220,7 +1220,7 @@ namespace PurplePen
         public static void RemoveSpecialCorner(EventDB eventDB, Id<Special> specialId, PointF cornerToRemove)
         {
             Special special = eventDB.GetSpecial(specialId);
-            Debug.Assert(((special.kind == SpecialKind.OOB || special.kind == SpecialKind.Dangerous) && special.locations.Length > 3) || 
+            Debug.Assert(((special.kind == SpecialKind.OOB || special.kind == SpecialKind.Dangerous || special.kind == SpecialKind.WhiteOut) && special.locations.Length > 3) || 
                 (special.kind == SpecialKind.Boundary && special.locations.Length > 2));
 
             // Remove the corner

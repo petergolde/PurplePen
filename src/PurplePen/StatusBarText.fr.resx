@@ -201,4 +201,7 @@
   <data name="AddingLineArea" xml:space="preserve">
     <value>Appuyer sur le bouton gauche de votre souris et glisser pour ajouter un segment de ligne ; cliquer sur le bouton gauche pour terminer l'ajout d'un objet</value>
   </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Appuyer sur le bouton gauche de votre souris et glisser pour créer le texte</value>
+  </data>
 </root>

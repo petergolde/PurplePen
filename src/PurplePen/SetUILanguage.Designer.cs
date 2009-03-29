@@ -65,7 +65,7 @@
             // SetUILanguage
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tableLayoutPanel1);
             this.HelpTopic = "FileSetProgramLanguage.htm";
             this.Name = "SetUILanguage";

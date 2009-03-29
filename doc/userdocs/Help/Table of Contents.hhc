@@ -323,6 +323,10 @@
 					<param name="Local" value="EditAddRegistrationMark.htm">
 					</OBJECT>
 				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="White Out Area">
+					<param name="Local" value="EditAddWhiteOut.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Text">
 					<param name="Local" value="EditAddText.htm">
 					</OBJECT>

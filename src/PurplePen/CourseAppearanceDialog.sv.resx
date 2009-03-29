@@ -117,13 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Kontrollnummrets höjd</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Linjens bredd</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>Kontrollcirkelns diameter</value>
+  </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>Använd IOF standardstorlek</value>
+  </data>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Objektets Storlek</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Färgväljare...</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Black:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Yellow:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cyan:</value>
+  </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Använd lila färgen från kartan</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lila Färg</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>Förhandsvisning</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ändra Banans Utseende</value>
   </data>
 </root>
