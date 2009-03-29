@@ -260,4 +260,7 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Used in courses:</value>
   </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>White Out Area</value>
+  </data>
 </root>

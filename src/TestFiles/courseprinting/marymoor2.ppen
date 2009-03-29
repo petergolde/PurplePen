@@ -879,4 +879,18 @@
     <location x="244.30304" y="-121.997795" />
     <courses all="true" />
   </special-object>
+  <special-object id="6" kind="text">
+    <text>Name: $(CourseName)</text>
+    <font name="Arial" bold="true" italic="false" />
+    <location x="62.68746" y="7.373291" />
+    <location x="96.20972" y="2.82676554" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="7" kind="white-out">
+    <location x="61.83418" y="8.508673" />
+    <location x="61.550087" y="1.97447956" />
+    <location x="97.6301956" y="1.40628886" />
+    <location x="97.6301956" y="8.508673" />
+    <courses all="true" />
+  </special-object>
 </course-scribe-event>

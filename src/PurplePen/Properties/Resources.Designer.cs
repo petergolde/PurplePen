@@ -185,5 +185,12 @@ namespace PurplePen.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap WhiteOut_OcadToolbox {
+            get {
+                object obj = ResourceManager.GetObject("WhiteOut_OcadToolbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

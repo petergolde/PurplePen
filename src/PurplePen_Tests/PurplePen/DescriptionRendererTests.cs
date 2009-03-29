@@ -252,8 +252,17 @@ namespace PurplePen.Tests
 
             Map map = new Map();
             using (map.Write()) {
+                Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
+
+                // Create white color and white-out symdef.
+                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
+                AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
+                whiteArea.ToolboxImage = Properties.Resources.WhiteOut_OcadToolbox;
+                map.AddSymdef(whiteArea);
+                dict[CourseLayout.KeyWhiteOut] = whiteArea;
+
                 SymColor color = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
-                descriptionRenderer.RenderToMap(map, color, location, new Dictionary<object,SymDef>());
+                descriptionRenderer.RenderToMap(map, color, location, dict);
             }
 
             InputOutput.WriteFile(TestUtil.GetTestFile("descriptions\\desc_temp.ocd"), map, 8);

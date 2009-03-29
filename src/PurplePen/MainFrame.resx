@@ -217,7 +217,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=1.0.0.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -355,7 +355,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=1.0.0.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -938,6 +938,12 @@
   </data>
   <data name="addRegMarkMenu.Text" xml:space="preserve">
     <value>Registration Mark</value>
+  </data>
+  <data name="whiteOutMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>White Out Area</value>
   </data>
   <data name="addTextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1627,6 +1633,19 @@
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
     <value>Registration Mark</value>
   </data>
+  <data name="whiteOutToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC9JREFUOE9j+M/w
+        /z8DEJBLg/QCjSATgCwH2UwuANs+6oLRMBhNB+BcDMkLFGRpAL1nZsRg6xF3AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>White Out Area</value>
+  </data>
   <data name="textToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1734,7 +1753,7 @@
     <value>0, 350</value>
   </metadata>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 20</value>
+    <value>433, 20</value>
   </data>
   <data name="statusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -2395,6 +2414,12 @@
   <data name="&gt;&gt;addRegMarkMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;whiteOutMenu.Name" xml:space="preserve">
+    <value>whiteOutMenu</value>
+  </data>
+  <data name="&gt;&gt;whiteOutMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;addTextMenu.Name" xml:space="preserve">
     <value>addTextMenu</value>
   </data>
@@ -2803,6 +2828,12 @@
   <data name="&gt;&gt;registrationMarkToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;whiteOutToolStripMenuItem.Name" xml:space="preserve">
+    <value>whiteOutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;whiteOutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;textToolStripMenuItem.Name" xml:space="preserve">
     <value>textToolStripMenuItem</value>
   </data>
@@ -2849,7 +2880,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=1.0.0.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>

@@ -489,7 +489,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7;
+            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8;
 
             undomgr.BeginCommand(88, "Command1");
 
@@ -513,6 +513,7 @@ namespace PurplePen.Tests
             sp7.fontBold = false;
             sp7.fontItalic = true;
             sp7.text = "$(CourseName)";
+            sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
@@ -521,6 +522,7 @@ namespace PurplePen.Tests
             eventDB.AddSpecial(sp5);
             eventDB.AddSpecial(sp6);
             eventDB.AddSpecial(sp7);
+            eventDB.AddSpecial(sp8);
 
             undomgr.EndCommand(88);
 
@@ -540,6 +542,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Special>,Special>(SpecialId(5), sp5),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(6), sp6),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(7), sp7),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(8), sp8),
                 }
             );
         }

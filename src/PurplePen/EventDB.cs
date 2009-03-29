@@ -973,6 +973,7 @@ namespace PurplePen
         Boundary,                        // a boundary   (line)
         OOB,                                // out of bounds   (area)
         Dangerous,                      // dangerous area    (area)
+        WhiteOut,                        // white out area (area)
         Text,                                // arbitrary text, with replacements   (rectangle)
         Descriptions,                    // control description sheet (rectangle of first square)
     }
@@ -1024,6 +1025,7 @@ namespace PurplePen
 
             case SpecialKind.OOB:
             case SpecialKind.Dangerous:
+            case SpecialKind.WhiteOut:
                 if (locations.Length < 2)
                     throw new ApplicationException(string.Format("Special line object {0} should have 3 or more coordinates", id));
                 break;
@@ -1139,6 +1141,7 @@ namespace PurplePen
             case "boundary": kind = SpecialKind.Boundary; break;
             case "out-of-bounds": kind = SpecialKind.OOB; break;
             case "dangerous-area": kind = SpecialKind.Dangerous; break;
+            case "white-out": kind = SpecialKind.WhiteOut; break;
             case "text": kind = SpecialKind.Text; break;
             case "descriptions": kind = SpecialKind.Descriptions; break;
             default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
@@ -1220,6 +1223,7 @@ namespace PurplePen
             case SpecialKind.Boundary: kindText = "boundary"; break;
             case SpecialKind.OOB: kindText = "out-of-bounds"; break;
             case SpecialKind.Dangerous: kindText = "dangerous-area"; break;
+            case SpecialKind.WhiteOut: kindText = "white-out"; break;
             case SpecialKind.Text: kindText = "text"; break;
             case SpecialKind.Descriptions: kindText = "descriptions"; break;
             default:
