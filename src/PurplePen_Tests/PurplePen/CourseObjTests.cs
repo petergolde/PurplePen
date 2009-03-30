@@ -484,7 +484,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
             CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), false);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(false);
 
             return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
         }
@@ -1430,10 +1431,11 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
             CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), false);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(false);
 
             CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            description = descFormatter.CreateDescription(false);
             CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
             CourseObj courseobj3 = (CourseObj) courseobj1.Clone();
             CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols);
@@ -1443,21 +1445,21 @@ namespace PurplePen.Tests
             undomgr.BeginCommand(12, "move control");
             ChangeEvent.ChangeControlLocation(eventDB, ControlId(11), new PointF(4, 8));
             undomgr.EndCommand(12);
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            description = descFormatter.CreateDescription(false);
             CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
 
             undomgr.BeginCommand(13, "change description");
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.4");
             undomgr.EndCommand(13);
 
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            description = descFormatter.CreateDescription(false);
             CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
 
             undomgr.BeginCommand(13, "change description");  // change description back
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.2");
             undomgr.EndCommand(13);
 
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            description = descFormatter.CreateDescription(false);
             CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
 
             Assert.AreEqual(courseobj1, courseobj2);

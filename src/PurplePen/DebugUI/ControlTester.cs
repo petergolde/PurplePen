@@ -104,7 +104,8 @@ namespace PurplePen.DebugUI
             else
                 courseView = CourseView.CreateCourseView(eventDB, id, false);
 
-            return DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            return descFormatter.CreateDescription(false);
         }
 
         private void listBoxCourses_SelectedIndexChanged(object sender, EventArgs e)

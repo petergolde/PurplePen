@@ -109,16 +109,30 @@ namespace PurplePen
     /// The description formatter takes a CourseView, and transforms it into a generic
     /// description sheet -- an array of DescriptionLine objects.
     /// </summary>
-    static class DescriptionFormatter
+    class DescriptionFormatter
     {
+        private EventDB eventDB;
+        private SymbolDB symbolDB;
+        private CourseView courseView;
+
+        // Create a description formatter to format the given courseView.
+        // Currently, the language for the text descriptions is taken from the language set for the event. It would be easy to make this
+        // a parameter to the constructor (e.g., to allow printing in a different language), but this currently isn't required.
+        public DescriptionFormatter(CourseView courseView, SymbolDB symbolDB)
+        {
+            this.courseView = courseView;
+            this.eventDB = courseView.EventDB;
+            this.symbolDB = symbolDB;
+        }
+
         // Get the text of the firse (main) title line.
-        private static string GetTitleLine1(EventDB eventDB, CourseView courseView)
+        private string GetTitleLine1()
         {
             return QueryEvent.GetEventTitle(eventDB, "|");
         }
 
         // Get the text of the second title line, or null if there is no such title line.
-        private static string GetTitleLine2(EventDB eventDB, CourseView courseView)
+        private string GetTitleLine2()
         {
             Id<Course> id = courseView.BaseCourseId;
 
@@ -131,7 +145,7 @@ namespace PurplePen
         }
 
         // Given the text, create descriptions line for a title line with that text. Lines are split by vertical bars.
-        private static DescriptionLine[] GetTitleLineFromText(DescriptionLineKind kind, string text)
+        private DescriptionLine[] GetTitleLineFromText(DescriptionLineKind kind, string text)
         {
             string[] texts = text.Split(new char[] { '|' });
             int lineCount = texts.Length;
@@ -152,7 +166,7 @@ namespace PurplePen
         }
 
         // Create a description line for a normal header line: name, length, climb
-        private static DescriptionLine GetNormalHeaderLine(CourseView courseView, SymbolDB symbolDB)
+        private DescriptionLine GetNormalHeaderLine()
         {
             DescriptionLine line = new DescriptionLine();
 
@@ -173,7 +187,7 @@ namespace PurplePen
         }
 
         // Get the header line for the All Controls listing.
-        private static DescriptionLine GetAllControlsHeaderLine(CourseView courseView, SymbolDB symbolDB)
+        private DescriptionLine GetAllControlsHeaderLine()
         {
             DescriptionLine line = new DescriptionLine();
 
@@ -187,7 +201,7 @@ namespace PurplePen
         }
 
         // Get a description line for the header line for a score course, which contains the total points
-        private static DescriptionLine GetScoreHeaderLine(CourseView courseView, SymbolDB symbolDB)
+        private DescriptionLine GetScoreHeaderLine()
         {
             DescriptionLine line = new DescriptionLine();
 
@@ -208,7 +222,7 @@ namespace PurplePen
         }
 
         // Given the text, create a text line for that text.
-        private static DescriptionLine GetTextLineFromText(string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
+        private DescriptionLine GetTextLineFromText(string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
         {
             DescriptionLine line = new DescriptionLine();
 
@@ -224,7 +238,7 @@ namespace PurplePen
         }
 
         // Given some text, a text line for it to a list if the text is non-empty.
-        private static void AddTextLine(List<DescriptionLine> list, string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
+        private void AddTextLine(List<DescriptionLine> list, string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
         {
             if (!string.IsNullOrEmpty(text)) {
                 list.Add(GetTextLineFromText(text, courseControlId, controlId, textLineKind));
@@ -232,7 +246,7 @@ namespace PurplePen
         }
 
         // Get a regular 8-box line for a start or regular control.
-        private static DescriptionLine GetRegularLine(SymbolDB symbolDB, EventDB eventDB, CourseView.CourseViewKind kind, CourseView.ControlView controlView, string language, Dictionary<string,string> descriptionKey)
+        private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, string language, Dictionary<string, string> descriptionKey)
         {
             Event ev = eventDB.GetEvent();
             ControlPoint control = eventDB.GetControl(controlView.controlId);
@@ -299,7 +313,7 @@ namespace PurplePen
         }
 
         // Get a directive line for a finish or crossingpoint.
-        private static DescriptionLine GetDirectiveLine(SymbolDB symbolDB, EventDB eventDB, CourseView.CourseViewKind kind, CourseView.ControlView controlView, CourseView.ControlView controlViewPrev, string language)
+        private DescriptionLine GetDirectiveLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, CourseView.ControlView controlViewPrev, string language)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl;
@@ -345,7 +359,7 @@ namespace PurplePen
 
         // Get a directive line for a marked route (not to the finish). The legId must be valid, because a marked route only occurs
         // with a real leg id.
-        private static DescriptionLine GetMarkedRouteLine(SymbolDB symbolDB, EventDB eventDB, CourseView.ControlView controlViewFrom, CourseView.ControlView controlViewTo, Id<Leg> legId, string language)
+        private DescriptionLine GetMarkedRouteLine(CourseView.ControlView controlViewFrom, CourseView.ControlView controlViewTo, Id<Leg> legId, string language)
         {
             Leg leg = eventDB.GetLeg(legId);
 
@@ -382,7 +396,7 @@ namespace PurplePen
         }
 
         // Return true if this control should be included, false if not.
-        private static bool FilterControl(CourseView.CourseViewKind kind, ControlPoint control, ControlPoint controlPrev, ControlPoint controlNext)
+        private bool FilterControl(CourseView.CourseViewKind kind, ControlPoint control, ControlPoint controlPrev, ControlPoint controlNext)
         {
             switch (kind) {
                 case CourseView.CourseViewKind.AllControls:
@@ -409,7 +423,7 @@ namespace PurplePen
         }
 
         // Return true if this leg should be included, false if not.
-        private static bool FilterLeg(CourseView.CourseViewKind kind, ControlPoint from, ControlPoint to, Leg leg)
+        private bool FilterLeg(CourseView.CourseViewKind kind, ControlPoint from, ControlPoint to, Leg leg)
         {
             if (leg == null)
                 return false;
@@ -424,9 +438,7 @@ namespace PurplePen
 
         // Create a set of description lines for a course. If "createKey" is true, then lines for a key are created based on any symbols
         // that have custom text. This is typically done only if text description are not already being printed.
-        // Currently, the language for the text descriptions is taken from the language set for the event. It would be easy to make this
-        // a parameter (e.g., to allow printing in a different language), but this currently isn't required.
-        public static DescriptionLine[] CreateDescription(CourseView courseView, SymbolDB symbolDB, bool createKey)
+        public DescriptionLine[] CreateDescription(bool createKey)
         {
             EventDB eventDB = courseView.EventDB;
             string language = QueryEvent.GetDescriptionLanguage(eventDB);
@@ -438,13 +450,13 @@ namespace PurplePen
             Dictionary<string, string> descriptionKey = new Dictionary<string, string>(); // dictionary for any symbols encountered with custom text.
 
             // Get the first title line.
-            text = GetTitleLine1(eventDB, courseView);
+            text = GetTitleLine1();
             Debug.Assert(text != null);
             lines = GetTitleLineFromText(DescriptionLineKind.Title, text);
             list.AddRange(lines);
 
             // Get the second title line.
-            text = GetTitleLine2(eventDB, courseView);
+            text = GetTitleLine2();
             if (text != null) {
                 lines = GetTitleLineFromText(DescriptionLineKind.SecondaryTitle, text);
                 list.AddRange(lines);
@@ -453,13 +465,13 @@ namespace PurplePen
             // Get the header line, depending on the kind of course.
             switch (kind) {
                 case CourseView.CourseViewKind.Normal:
-                    line = GetNormalHeaderLine(courseView, symbolDB); break;
+                line = GetNormalHeaderLine(); break;
 
                 case CourseView.CourseViewKind.AllControls:
-                    line = GetAllControlsHeaderLine(courseView, symbolDB); break;
+                    line = GetAllControlsHeaderLine(); break;
 
                 case CourseView.CourseViewKind.Score:
-                    line = GetScoreHeaderLine(courseView, symbolDB); break;
+                    line = GetScoreHeaderLine(); break;
 
                 default:
                     Debug.Fail("unknown CourseViewKind"); line = null;  break;
@@ -490,10 +502,10 @@ namespace PurplePen
                     if (control.kind == ControlPointKind.Finish ||
                         control.kind == ControlPointKind.CrossingPoint) 
                     {
-                        line = GetDirectiveLine(symbolDB, eventDB, kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null, language);
+                        line = GetDirectiveLine(kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null, language);
                     }
                     else {
-                        line = GetRegularLine(symbolDB, eventDB, kind, controlView, language, descriptionKey);
+                        line = GetRegularLine(kind, controlView, language, descriptionKey);
                     }
                     Debug.Assert(line != null);
                     list.Add(line);
@@ -509,7 +521,7 @@ namespace PurplePen
                     Id<Leg> legId = controlView.legId[0];
                     Leg leg = (legId.IsNotNone) ? eventDB.GetLeg(legId) : null;
                     if (FilterLeg(kind, control, controlNext, leg)) {
-                        line = GetMarkedRouteLine(symbolDB, eventDB, controlView, courseView.ControlViews[controlView.legTo[0]], legId, language);
+                        line = GetMarkedRouteLine(controlView, courseView.ControlViews[controlView.legTo[0]], legId, language);
                         Debug.Assert(line != null);
                         list.Add(line);
                     }

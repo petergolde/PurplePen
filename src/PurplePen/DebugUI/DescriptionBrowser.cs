@@ -119,7 +119,8 @@ namespace PurplePen.DebugUI
             else
                 courseView = CourseView.CreateCourseView(eventDB, courseItem.id, false);
 
-            return DescriptionFormatter.CreateDescription(courseView, symbolDB, customKeyCheckBox.Checked);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            return descFormatter.CreateDescription(customKeyCheckBox.Checked);
         }
 
         private DescriptionKind GetDescriptionKind()

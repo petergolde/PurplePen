@@ -464,8 +464,9 @@ namespace PurplePen
                 courseViewDescription = CourseView.CreateCourseView(eventDB, courseId, false);
 
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB);
             descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-            description = DescriptionFormatter.CreateDescription(courseViewDescription, symbolDB, descKind == DescriptionKind.Symbols);
+            description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             if (noTextOrSymbols)
                 DescriptionFormatter.ClearTextAndSymbols(description);
 
@@ -479,8 +480,9 @@ namespace PurplePen
             Id<Course> longestCourse = Id<Course>.None;
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
+                DescriptionFormatter descFormatter = new DescriptionFormatter(CourseView.CreateCourseView(eventDB, courseId, false), symbolDB);
                 DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-                DescriptionLine[] description = DescriptionFormatter.CreateDescription(CourseView.CreateCourseView(eventDB, courseId, false), symbolDB, descKind == DescriptionKind.Symbols);
+                DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
                 if (description.Length > longest) {
                     longest = description.Length;
                     longestCourse = courseId;

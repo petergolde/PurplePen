@@ -510,7 +510,8 @@ namespace PurplePen
         // Update the active description.
         void UpdateActiveDescription()
         {
-            activeDescription = DescriptionFormatter.CreateDescription(activeCourseView, symbolDB, true);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(activeCourseView, symbolDB);
+            activeDescription = descFormatter.CreateDescription(true);
         }
 
         // Update the selected line in the active description.
