@@ -114,10 +114,7 @@ namespace PurplePen.DebugUI
             else
                 id = courseItem.id;
 
-            if (id.IsNone)
-                courseView = CourseView.CreateAllControlsView(eventDB);
-            else
-                courseView = CourseView.CreateCourseView(eventDB, courseItem.id, false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
 
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             return descFormatter.CreateDescription(customKeyCheckBox.Checked);

@@ -268,7 +268,7 @@ namespace PurplePen
         RectangleF GetPrintAreaForCourse(bool landscape, Id<Course> courseId, out float scaleRatio)
         {
             // Get the course view to get the scale ratio.
-            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, new CourseDesignator(courseId));
             scaleRatio = courseView.ScaleRatio;
 
             RectangleF printArea = controller.GetPrintArea(courseId);
@@ -364,7 +364,7 @@ namespace PurplePen
             CoursePage page = pages[pageNumber];
 
             // Get the course view for the course we are printing.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, page.courseId);
+            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, new CourseDesignator(page.courseId));
 
             // Get the correct purple color to print the course in.
             short ocadId;

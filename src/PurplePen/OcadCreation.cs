@@ -120,7 +120,7 @@ namespace PurplePen
             string outputFilename = CreateOutputFileName(courseId);
 
             // Create the course view.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, new CourseDesignator(courseId));
 
             // Write the OCAD file.
             ExportMap(courseView, outputFilename);

@@ -334,7 +334,7 @@ namespace PurplePen
         //  -----------  Static methods to create a new CourseView.  -----------------
 
         // Create a normal course view -- the standard view in order.
-        public static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId, bool descriptionSpecialsOnly)
+        private static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId, bool descriptionSpecialsOnly)
         {
             Course course = eventDB.GetCourse(courseId);
             CourseView courseView;
@@ -352,7 +352,7 @@ namespace PurplePen
         }
 
         // Create the All Controls view -- show all controls, sorted.
-        public static CourseView CreateAllControlsView(EventDB eventDB)
+        private static CourseView CreateAllControlsView(EventDB eventDB)
         {
             return CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
         }
@@ -424,22 +424,31 @@ namespace PurplePen
             return courseView;
         }
 
-        // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
-        public static CourseView CreatePrintingCourseView(EventDB eventDB, Id<Course> courseId)
+        // Create a course view for normal viewing.
+        public static CourseView CreateViewingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
+                return CourseView.CreateAllControlsView(eventDB);
+            else
+                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, false);
+        }
+
+        // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
+        public static CourseView CreatePrintingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseId, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, false);
         }
 
         // Create the course view for positioning the print area.
-        public static CourseView CreatePositioningCourseView(EventDB eventDB, Id<Course> courseId)
+        public static CourseView CreatePositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseId, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, true);
         }
 
         // Create the standard view onto a regular course, without variations.

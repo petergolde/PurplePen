@@ -61,14 +61,14 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
                 descFormatter = new DescriptionFormatter(courseView, symbolDB);
                 description = descFormatter.CreateDescription(false);
                 DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
                 Console.WriteLine();
             }
 
-            courseView = CourseView.CreateAllControlsView(eventDB);
+            courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             descFormatter = new DescriptionFormatter(courseView, symbolDB);
             description = descFormatter.CreateDescription(false);
             DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
@@ -88,10 +88,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView;
-            if (courseId.IsNotNone)
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
-            else
-                courseView = CourseView.CreateAllControlsView(eventDB);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(createKey);
 
@@ -226,7 +223,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(4)));
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
             DescriptionFormatter.ClearTextAndSymbols(description);

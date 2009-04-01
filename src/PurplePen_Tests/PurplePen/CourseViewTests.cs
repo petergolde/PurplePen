@@ -81,7 +81,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
                 DumpCourseView(courseView, Console.Out);
                 Console.WriteLine();
             }
@@ -99,7 +99,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(4)));
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -141,7 +141,7 @@ Special 6 (Descriptions)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, new CourseDesignator(CourseId(4)));
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -181,7 +181,7 @@ Special 6 (Descriptions)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(5)));
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -222,7 +222,7 @@ Special 4 (OOB)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, new CourseDesignator(CourseId(5)));
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -260,7 +260,7 @@ Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateAllControlsView(eventDB);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -346,7 +346,7 @@ Total Length=0  Total Climb=-1  Total Score=0  Total Controls=12
             eventDB.Load(TestUtil.GetTestFile("courseview\\speciallegs.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1), false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(1)));
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =
@@ -377,15 +377,15 @@ Total Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateAllControlsView(eventDB);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             RectangleF bounds = courseView.GetViewBounds();
             Assert.AreEqual(-51.4F, bounds.Left);
             Assert.AreEqual(-47.8F, bounds.Top);
             Assert.AreEqual(106.9F, bounds.Width);
             Assert.AreEqual(92.9F, bounds.Height, 0.0001);
-            courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(4)));
             Assert.AreEqual(new RectangleF(-51.4F, -39F, 96.8F, 84.1F), courseView.GetViewBounds());
-            courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(5)));
             Assert.AreEqual(new RectangleF(-51.4F, -39F, 106.9F, 84.1F), courseView.GetViewBounds());
         }
 

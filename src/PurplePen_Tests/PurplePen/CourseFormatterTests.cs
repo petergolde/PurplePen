@@ -59,10 +59,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Create the course
-            if (courseId.IsNone)
-                courseView = CourseView.CreateAllControlsView(eventDB);
-            else
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             course = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, layer);
 
@@ -500,14 +497,14 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
                 course = new CourseLayout();
                 CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
                 course.Dump(Console.Out);
                 Console.WriteLine();
             }
 
-            courseView = CourseView.CreateAllControlsView(eventDB);
+            courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             course = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
             course.Dump(Console.Out);
@@ -646,7 +643,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             eventDB.Validate();
 
             // Use course 1
-            courseView = CourseView.CreateCourseView(eventDB, CourseId(1), false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(1)));
 
             string result;
 
@@ -675,7 +672,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             Assert.AreEqual("Course 1 / This is cool very cool", result);
 
             // All Controls
-            courseView = CourseView.CreateAllControlsView(eventDB);
+            courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km");
             Assert.AreEqual("Course: All controls Length: 0.0 km", result);

@@ -60,10 +60,7 @@ namespace PurplePen
 
             // Get the list of renderers for the descriptions we're printing.
             foreach (Id<Course> courseId in descPrintSettings.CourseIds) {
-                if (courseId.IsNone)
-                    rendererList.Add(GetRenderer(CourseView.CreateAllControlsView(eventDB)));
-                else
-                    rendererList.Add(GetRenderer(CourseView.CreateCourseView(eventDB, courseId, false)));
+                rendererList.Add(GetRenderer(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId))));
             }
 
             return rendererList.ToArray();

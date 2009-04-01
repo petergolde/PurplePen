@@ -477,13 +477,13 @@ namespace PurplePen
             // is present.
             if (activeCourseId.IsNone) {
                 activeCourseViewIndex = 0;
-                activeCourseView = CourseView.CreateAllControlsView(eventDB);
+                activeCourseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             }
             else {
                 for (int i = 1; i < courseViewIds.Length; ++i)
                     if (courseViewIds[i] == activeCourseId) {
                         activeCourseViewIndex = i;
-                        activeCourseView = CourseView.CreateCourseView(eventDB, activeCourseId, false);
+                        activeCourseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(activeCourseId));
                     }
             }
         }
