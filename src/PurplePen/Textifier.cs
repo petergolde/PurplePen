@@ -76,17 +76,13 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.Start:
+                case ControlPointKind.MapExchange:
                     text = CreateTextForStartControl(controlPoint);
                     break;
 
                 case ControlPointKind.Finish:
                 case ControlPointKind.CrossingPoint:
                     text = CreateTextForDirective(controlPoint.symbolIds[0], distanceText);
-                    break;
-
-                case ControlPointKind.MapExchange:
-                    Debug.Fail("UNDONE MAPEXCHANGE");
-                    text = "";
                     break;
 
                 default:

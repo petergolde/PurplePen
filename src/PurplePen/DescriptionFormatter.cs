@@ -114,6 +114,7 @@ namespace PurplePen
         private EventDB eventDB;
         private SymbolDB symbolDB;
         private CourseView courseView;
+        private string language;
 
         // Create a description formatter to format the given courseView.
         // Currently, the language for the text descriptions is taken from the language set for the event. It would be easy to make this
@@ -123,6 +124,7 @@ namespace PurplePen
             this.courseView = courseView;
             this.eventDB = courseView.EventDB;
             this.symbolDB = symbolDB;
+            this.language = QueryEvent.GetDescriptionLanguage(eventDB);
         }
 
         // Get the text of the firse (main) title line.
@@ -246,7 +248,7 @@ namespace PurplePen
         }
 
         // Get a regular 8-box line for a start or regular control.
-        private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, string language, Dictionary<string, string> descriptionKey)
+        private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, Dictionary<string, string> descriptionKey)
         {
             Event ev = eventDB.GetEvent();
             ControlPoint control = eventDB.GetControl(controlView.controlId);
@@ -257,14 +259,14 @@ namespace PurplePen
             else
                 courseControl = eventDB.GetCourseControl(controlView.courseControlId);
 
-            Debug.Assert(control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start);
+            Debug.Assert(control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange);
 
             DescriptionLine line = new DescriptionLine();
             line.kind = DescriptionLineKind.Normal;
             line.boxes = new object[8];
             
             // Box A: ordinal or start triangle or points.
-            if (control.kind == ControlPointKind.Start)
+            if (control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange)
                 line.boxes[0] = symbolDB["start"];
             else if (kind == CourseView.CourseViewKind.Normal) 
                 line.boxes[0] = Convert.ToString(controlView.ordinal);
@@ -313,7 +315,7 @@ namespace PurplePen
         }
 
         // Get a directive line for a finish or crossingpoint.
-        private DescriptionLine GetDirectiveLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, CourseView.ControlView controlViewPrev, string language)
+        private DescriptionLine GetDirectiveLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, CourseView.ControlView controlViewPrev)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl;
@@ -359,7 +361,7 @@ namespace PurplePen
 
         // Get a directive line for a marked route (not to the finish). The legId must be valid, because a marked route only occurs
         // with a real leg id.
-        private DescriptionLine GetMarkedRouteLine(CourseView.ControlView controlViewFrom, CourseView.ControlView controlViewTo, Id<Leg> legId, string language)
+        private DescriptionLine GetMarkedRouteLine(CourseView.ControlView controlViewFrom, CourseView.ControlView controlViewTo, Id<Leg> legId)
         {
             Leg leg = eventDB.GetLeg(legId);
 
@@ -395,6 +397,69 @@ namespace PurplePen
             return line;
         }
 
+        // Get a directive line for a flagged route to map exchange (not to the finish). The distance between the controls is calculated and used for the distance
+        // in the direction. 
+        private DescriptionLine GetMapExchangeLine(CourseView.ControlView controlViewFrom, CourseView.ControlView controlViewTo)
+        {
+            DescriptionLine line = new DescriptionLine();
+            line.kind = DescriptionLineKind.Directive;
+            line.boxes = new object[2];
+
+            // Figure out the distance in the directive, rounded to nearest 10m.
+            float distance;       // default distance is zero.
+            string distanceText;
+            distance = controlViewFrom.legLength[0];
+            distance = (float) (Math.Round(distance / 10.0) * 10.0);      // round to nearest 10 m.
+            distanceText = string.Format("{0} m", distance);
+
+            // Box 1: directive graphics.
+            string symbolId = "13.5";
+            line.boxes[0] = symbolDB[symbolId];
+
+            // Box 2: distance of the flagging
+            line.boxes[1] = distanceText;
+
+            // Get the text version of the control using the Textifier.
+            Textifier textifier = new Textifier(eventDB, symbolDB, language);
+            line.textual = textifier.CreateTextForDirective(symbolId, distanceText);
+
+            // The course control IDs, for use in coordinating the selection
+            line.isLeg = true;
+            line.controlId = controlViewFrom.controlId;
+            line.courseControlId = controlViewFrom.courseControlId;
+            line.courseControlId2 = controlViewTo.courseControlId;
+
+            return line;
+        }
+
+        // Get a directive line for a map exchange at a control (not to the finish). 
+        private DescriptionLine GetMapExchangeAtControlLine(CourseView.ControlView controlWithExchange)
+        {
+            DescriptionLine line = new DescriptionLine();
+            line.kind = DescriptionLineKind.Directive;
+            line.boxes = new object[2];
+
+            // Distance is 0m at the control!
+            string distanceText = string.Format("{0} m", 0);
+
+            // Box 1: directive graphics.
+            string symbolId = "13.5control";
+            line.boxes[0] = symbolDB[symbolId];
+
+            // Box 2: distance of the flagging
+            line.boxes[1] = distanceText;
+
+            // Get the text version of the control using the Textifier.
+            Textifier textifier = new Textifier(eventDB, symbolDB, language);
+            line.textual = textifier.CreateTextForDirective(symbolId, distanceText);
+
+            // The course control IDs, for use in coordinating the selection
+            line.controlId = controlWithExchange.controlId;
+            line.courseControlId = controlWithExchange.courseControlId;
+
+            return line;
+        }
+
         // Return true if this control should be included, false if not.
         private bool FilterControl(CourseView.CourseViewKind kind, ControlPoint control, ControlPoint controlPrev, ControlPoint controlNext)
         {
@@ -408,6 +473,10 @@ namespace PurplePen
 
                     // filter out duplicate crossing points.
                     if (control.kind == ControlPointKind.CrossingPoint && controlPrev != null && controlPrev.kind == ControlPointKind.CrossingPoint)
+                        return false;
+
+                    // Don't show map exchange that is the last control being shown.
+                    if (control.kind == ControlPointKind.MapExchange && controlNext == null)
                         return false;
 
                     return true;
@@ -431,9 +500,12 @@ namespace PurplePen
             if (leg.flagging == FlaggingKind.None || leg.flagging == FlaggingKind.End)
                 return false;
 
-            // Flagged legs that start at a crossing point are not shown. Also, flagged legs that end at the finish are 
+            // Flagged legs that start at a crossing point are not shown. Also, flagged legs that end at the finish or a map exchange are 
             // included in the finish control.
-            return (from.kind != ControlPointKind.CrossingPoint && to.kind != ControlPointKind.Finish);
+            if (from.kind == ControlPointKind.CrossingPoint || to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
+                return false;
+
+            return true;
         }
 
         // Create a set of description lines for a course. If "createKey" is true, then lines for a key are created based on any symbols
@@ -441,7 +513,6 @@ namespace PurplePen
         public DescriptionLine[] CreateDescription(bool createKey)
         {
             EventDB eventDB = courseView.EventDB;
-            string language = QueryEvent.GetDescriptionLanguage(eventDB);
             CourseView.CourseViewKind kind = courseView.Kind;
             List<DescriptionLine> list = new List<DescriptionLine>(courseView.ControlViews.Count + 4);
             string text;
@@ -489,6 +560,8 @@ namespace PurplePen
                 // CONSIDER: this might need to be updated for relay or split controls.
                 ControlPoint controlPrev = (iLine > 0) ? eventDB.GetControl(courseView.ControlViews[iLine - 1].controlId) : null;
                 ControlPoint controlNext = (iLine < courseView.ControlViews.Count - 1) ? eventDB.GetControl(courseView.ControlViews[iLine + 1].controlId) : null;
+                //Id<CourseControl> courseControlIdNext = (iLine < courseView.ControlViews.Count - 1) ? courseView.ControlViews[iLine + 1].courseControlId : Id<CourseControl>.None;
+                //CourseControl courseControlNext = courseControlIdNext.IsNotNone ? eventDB.GetCourseControl(coruseControlIdNext) : null;
 
                 // Do the control.control
                 if (FilterControl(kind, control, controlPrev, controlNext)) 
@@ -502,10 +575,10 @@ namespace PurplePen
                     if (control.kind == ControlPointKind.Finish ||
                         control.kind == ControlPointKind.CrossingPoint) 
                     {
-                        line = GetDirectiveLine(kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null, language);
+                        line = GetDirectiveLine(kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null);
                     }
                     else {
-                        line = GetRegularLine(kind, controlView, language, descriptionKey);
+                        line = GetRegularLine(kind, controlView, descriptionKey);
                     }
                     Debug.Assert(line != null);
                     list.Add(line);
@@ -516,16 +589,29 @@ namespace PurplePen
                     AddTextLine(list, control.descTextAfter, controlView.courseControlId, controlView.controlId, DescriptionLine.TextLineKind.AfterControl);
                 }
 
+                // Add any map exchange lines.
+                if (courseView.Kind == CourseView.CourseViewKind.Normal) {
+                    if (controlNext != null && controlNext.kind == ControlPointKind.MapExchange) {
+                        line = GetMapExchangeLine(controlView, courseView.ControlViews[controlView.legTo[0]]);
+                        list.Add(line);
+                    }
+                    else if (courseControl != null && courseControl.exchange && control.kind != ControlPointKind.MapExchange && controlPrev != null) {
+                        line = GetMapExchangeAtControlLine(controlView);
+                        list.Add(line);
+                    }
+                }
+
                 // Do the leg (if any).
                 if (controlView.legTo != null && controlView.legTo.Length > 0) {
                     Id<Leg> legId = controlView.legId[0];
                     Leg leg = (legId.IsNotNone) ? eventDB.GetLeg(legId) : null;
                     if (FilterLeg(kind, control, controlNext, leg)) {
-                        line = GetMarkedRouteLine(controlView, courseView.ControlViews[controlView.legTo[0]], legId, language);
+                        line = GetMarkedRouteLine(controlView, courseView.ControlViews[controlView.legTo[0]], legId);
                         Debug.Assert(line != null);
                         list.Add(line);
                     }
                 }
+
             }
 
             // Add the key if desired.

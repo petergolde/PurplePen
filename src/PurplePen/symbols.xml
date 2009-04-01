@@ -5169,6 +5169,52 @@ for the symbols.
 		</polygon>
 	</symbol>
 
+	<!-- Used for a map exchange at a control. -->
+	<symbol kind="W" id="13.5control">
+		<name lang="en">Map exchange at a control</name>
+		<name lang="en-GB">Map exchange at a control</name>
+		<text lang="en">map exchange at the control</text>
+		<text lang="en-GB">Map exchange at the control</text>
+		<circle thickness="10" radius="70">
+			<point x="-700" y="0" />
+		</circle>
+		<lines thickness="12.5">
+			<point x="-630" y="0" />
+			<point x="-510" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="-480" y="0" />
+			<point x="-360" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="-330" y="0" />
+			<point x="-210" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="625" y="0" />
+			<point x="510" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="480" y="0" />
+			<point x="360" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="330" y="0" />
+			<point x="210" y="0" />
+		</lines>
+		<lines thickness="12.5">
+			<point x="555" y="70" />
+			<point x="625" y="0" />
+			<point x="555" y="-70" />
+		</lines>
+
+		<polygon thickness="10">
+			<point x="700" y="70" />
+			<point x="760.6" y="-35" />
+			<point x="639.4" y="-35" />
+		</polygon>
+	</symbol>
+
 
 	<!-- Kind "Z". Finish instructional lines. -->
 	<!-- {0} has the distance, plus a space

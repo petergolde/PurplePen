@@ -121,10 +121,10 @@ namespace PurplePen
         // The order here determines the order of sorting for all controls course view or score course view
         None,
         Start,                          // A start point
+        MapExchange,             // A map exchange (that isn't a control)
         Normal,                         // A normal control point
         Finish,                         // A finish point
         CrossingPoint,                  // A crossing point
-        MapExchange,             // A map exchange (that isn't a control)
     }
 
     /// <summary>
