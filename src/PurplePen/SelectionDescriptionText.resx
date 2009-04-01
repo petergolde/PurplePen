@@ -269,4 +269,8 @@
   <data name="MapExchange_Singular" xml:space="preserve">
     <value>map exchange</value>
   </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Map exchange at {0}</value>
+    <comment>{0} gets control code</comment>
+  </data>
 </root>

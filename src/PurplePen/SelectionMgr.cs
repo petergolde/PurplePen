@@ -48,7 +48,7 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         Controller controller;        // controller
 
-        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key };
+        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key, MapExchangeAtControl };
 
         // These variables have the current active state of the application, apart from 
         // the event database. Changes to the event database could delete these ids.
@@ -242,6 +242,8 @@ namespace PurplePen
                     SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Text)
                     SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
+                else if (kind == DescriptionLineKind.Directive && ((Symbol)(activeDescription[line].boxes[0])).Id == "13.5control")
+                    SetSelection(SelectionKind.MapExchangeAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (activeDescription[line].isLeg)
                     SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else
@@ -353,6 +355,12 @@ namespace PurplePen
         public void SelectTextLine(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, DescriptionLine.TextLineKind textLineKind)
         {
             SetSelection(SelectionKind.TextLine, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, textLineKind);
+        }
+
+        // Set a map exchange at control line
+        public void SelectMapExchangeAtControl(Id<ControlPoint> controlId, Id<CourseControl> courseControlId)
+        {
+            SetSelection(SelectionKind.MapExchangeAtControl, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
 
@@ -554,6 +562,13 @@ namespace PurplePen
 
                 if (selectionKind == SelectionKind.TextLine && (lineKind == DescriptionLineKind.Text && activeDescription[line].textLineKind == selectedTextLineKind &&
                                                                                           selectedCourseControl == activeDescription[line].courseControlId && selectedControl == activeDescription[line].controlId)) {
+                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
+                    return;
+                }
+
+                if (selectionKind == SelectionKind.MapExchangeAtControl && lineKind == DescriptionLineKind.Directive && (activeDescription[line].boxes[0] is Symbol) &&
+                    (activeDescription[line].boxes[0] as Symbol).Id == "13.5control" && selectedCourseControl == activeDescription[line].courseControlId)
+                {
                     selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }

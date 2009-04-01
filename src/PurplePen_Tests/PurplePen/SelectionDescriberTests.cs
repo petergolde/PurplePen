@@ -795,6 +795,27 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SelectedMapExchangeAtControl()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\mapexchange2.ppen"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectMapExchangeAtControl(ControlId(43), CourseControlId(615));
+            TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Map exchange at Control 43", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
         public void OutOfBounds()
         {
             TextPart textpart;

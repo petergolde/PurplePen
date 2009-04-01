@@ -286,6 +286,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map exchange at {0}.
+        /// </summary>
+        internal static string MapExchangeAtControl {
+            get {
+                return ResourceManager.GetString("MapExchangeAtControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to none.
         /// </summary>
         internal static string None {

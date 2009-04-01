@@ -84,6 +84,9 @@ namespace PurplePen
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 return DescribeSpecial(eventDB, selection.SelectedSpecial, activeCourseView.ScaleRatio);
             }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+                return DescribeMapExchangeAtControl(eventDB, selection.SelectedControl);
+            }
             else if (selection.ActiveCourseId.IsNotNone) {
                 return DescribeCourse(eventDB, activeCourseView);
             }
@@ -383,6 +386,16 @@ namespace PurplePen
             // Flagging
             list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Flagging + "  "));
             list.Add(new TextPart(TextFormat.SameLine, FlaggingType(eventDB, controlId1, controlId2, legId)));
+
+            return list.ToArray();
+        }
+
+        // Describe a map exchange at control
+        private static TextPart[] DescribeMapExchangeAtControl(EventDB eventDB, Id<ControlPoint> controlId)
+        {
+            List<TextPart> list = new List<TextPart>();
+
+            list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.MapExchangeAtControl, Util.ControlPointName(eventDB, controlId, NameStyle.Long))));
 
             return list.ToArray();
         }

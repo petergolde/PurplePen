@@ -280,6 +280,12 @@ namespace PurplePen.Tests
             RoundtripSelectedLines("selectionmgr\\sampleevent6.coursescribe", false);
         }
 
+        [TestMethod]
+        public void RoundtripSelectedLine6()
+        {
+            RoundtripSelectedLines("selectionmgr\\mapexchange2.ppen", false);
+        }
+
         void CheckSelectedLines(int expectedFirstLine, int expectedLastLine)
         {
             int firstLine, lastLine;
