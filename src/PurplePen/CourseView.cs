@@ -71,7 +71,7 @@ namespace PurplePen
 
         private EventDB eventDB;
         private string courseName;
-        private Id<Course> courseId;
+        private CourseDesignator courseDesignator;
 
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
@@ -102,9 +102,14 @@ namespace PurplePen
             get { return eventDB; }
         }
 
+        public CourseDesignator CourseDesignator
+        {
+            get { return courseDesignator; }
+        }
+
         // Get the ID of the Course in the event DB. Returns None for an All Controls view.
         public Id<Course> BaseCourseId {
-            get { return courseId; }
+            get { return courseDesignator.CourseId; }
         }
 
         // Get the kind of the course view.
@@ -112,10 +117,10 @@ namespace PurplePen
         {
             get
             {
-                if (courseId.IsNone)
+                if (courseDesignator.IsAllControls)
                     return CourseViewKind.AllControls;
                 else {
-                    Course course = eventDB.GetCourse(courseId);
+                    Course course = eventDB.GetCourse(courseDesignator.CourseId);
                     if (course.kind == CourseKind.Score)
                         return CourseViewKind.Score;
                     else if (course.kind == CourseKind.Normal)
@@ -153,7 +158,7 @@ namespace PurplePen
             }
         }
 
-        public float TotalNormalControls
+        public int TotalNormalControls
         {
             get
             {
@@ -226,17 +231,17 @@ namespace PurplePen
             return bounds;
         }
 
-        private CourseView(EventDB eventDB, Id<Course> courseId)
+        private CourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             this.eventDB = eventDB;
-            this.courseId = courseId;
+            this.courseDesignator = courseDesignator;
         }
 
         // Get the map and print scales.
         private void GetScales()
         {
             mapScale = eventDB.GetEvent().mapScale;
-            printScale = QueryEvent.GetPrintScale(eventDB, courseId);
+            printScale = QueryEvent.GetPrintScale(eventDB, courseDesignator.CourseId);
         }
 
 
@@ -283,10 +288,10 @@ namespace PurplePen
             normalControlCount = 0;
             totalLength = 0;
 
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
                 totalClimb = -1;
             else
-                totalClimb = eventDB.GetCourse(courseId).climb;
+                totalClimb = eventDB.GetCourse(courseDesignator.CourseId).climb;
 
             for (int i = 0; i < controlViews.Count; ++i) {
                 ControlView controlView = controlViews[i];
@@ -333,20 +338,23 @@ namespace PurplePen
 
         //  -----------  Static methods to create a new CourseView.  -----------------
 
-        // Create a normal course view -- the standard view in order.
-        private static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId, bool descriptionSpecialsOnly)
+        // Create a normal course view -- the standard view in order, from start control to finish control. courseId may NOT be None.
+        private static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, bool descriptionSpecialsOnly)
         {
-            Course course = eventDB.GetCourse(courseId);
+            Debug.Assert(! courseDesignator.IsAllControls);
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
             CourseView courseView;
             if (course.kind == CourseKind.Score) 
-                courseView = CreateScoreCourseView(eventDB, courseId);
-            else if (course.kind == CourseKind.Normal)
-                courseView = CreateStandardCourseView(eventDB, courseId);
+                courseView = CreateScoreCourseView(eventDB, courseDesignator);
+            else if (course.kind == CourseKind.Normal) {
+                courseView = CreateStandardCourseView(eventDB, courseDesignator);
+            }
             else {
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseId, descriptionSpecialsOnly);
+            courseView.AddSpecials(courseDesignator.CourseId, descriptionSpecialsOnly);
 
             return courseView;
         }
@@ -362,7 +370,7 @@ namespace PurplePen
         // kindFilter, if non-null, limits the controls to this kind of controls.
         public static CourseView CreateFilteredAllControlsView(EventDB eventDB, Id<Course>[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
         {
-            CourseView courseView = new CourseView(eventDB, Id<Course>.None);
+            CourseView courseView = new CourseView(eventDB, CourseDesignator.AllControls);
 
             courseView.courseName = MiscText.AllControls;
 
@@ -430,7 +438,7 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateAllControlsView(eventDB);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false);
         }
 
         // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
@@ -439,7 +447,7 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false);
         }
 
         // Create the course view for positioning the print area.
@@ -448,23 +456,44 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator.CourseId, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, true);
         }
 
         // Create the standard view onto a regular course, without variations.
-        private static CourseView CreateStandardCourseView(EventDB eventDB, Id<Course> courseId)
+        private static CourseView CreateStandardCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Course course = eventDB.GetCourse(courseId);
-            CourseView courseView = new CourseView(eventDB, courseId);
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+
+            // Get sub-part of the course. firstCourseControls is the first control to process, lastCourseControl is the last one to 
+            // process, or None if process to the end of the course.
+            Id<CourseControl> firstCourseControl, lastCourseControl;
+            if (courseDesignator.AllParts) {
+                firstCourseControl = course.firstCourseControl;
+                lastCourseControl = Id<CourseControl>.None;
+            }
+            else {
+                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator.CourseId, courseDesignator.Part, out firstCourseControl, out lastCourseControl);
+            }
+            
+            CourseView courseView = new CourseView(eventDB, courseDesignator);
             Id<CourseControl> courseControlId;
             int ordinal;
 
             courseView.courseName = course.name;
 
-            courseControlId = course.firstCourseControl;
             ordinal = 1;
+            courseControlId = course.firstCourseControl;
 
-            while (courseControlId.IsNotNone) {
+            // Increase the ordinal value for each normal control before the first one we're considering.
+            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { // also break loop at lastCourseControlId
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                ControlPoint control = eventDB.GetControl(courseControl.control);
+                if (control.kind == ControlPointKind.Normal)
+                    ++ordinal;
+                courseControlId = courseControl.nextCourseControl;
+            }
+
+            while (courseControlId.IsNotNone) { // also break loop at lastCourseControlId
                 ControlView controlView = new ControlView();
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
@@ -476,7 +505,7 @@ namespace PurplePen
                 // UNDONE MAPEXCHANGE: Need to do something special for map exchanges here?
                 if (control.kind == ControlPointKind.Normal)
                     controlView.ordinal = ordinal++;
-                else if (control.kind == ControlPointKind.Start)
+                else if (control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange)
                     controlView.ordinal = 0;
                 else
                     controlView.ordinal = -1;
@@ -486,12 +515,16 @@ namespace PurplePen
 
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
-                if (courseControl.nextCourseControl.IsNotNone) {
+                if (courseControl.nextCourseControl.IsNotNone && courseControlId != lastCourseControl) {
                     controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
                 }
 
-                // Move to the next control.
+                // Add the controlview.
                 courseView.controlViews.Add(controlView);
+
+                // Move to the next control.
+                if (courseControlId == lastCourseControl)
+                    break;
                 courseControlId = courseControl.nextCourseControl;
             }
 
@@ -500,10 +533,10 @@ namespace PurplePen
         }
 
         // Create the normal view onto a score course
-        private static CourseView CreateScoreCourseView(EventDB eventDB, Id<Course> courseId)
+        private static CourseView CreateScoreCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Course course = eventDB.GetCourse(courseId);
-            CourseView courseView = new CourseView(eventDB, courseId);
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+            CourseView courseView = new CourseView(eventDB, courseDesignator);
             Id<CourseControl> courseControlId;
 
             courseView.courseName = course.name;
