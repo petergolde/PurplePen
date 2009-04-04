@@ -75,8 +75,13 @@ namespace PurplePen.Tests
 
         }
 
+        private void TestCourseFormatter(string testFileName, Id<Course> courseId, bool createKey, string expected)
+        {
+            TestCourseFormatter(testFileName, new CourseDesignator(courseId), createKey, expected);
+        }
+
         // Test the course description formatter with a given file and course
-        public void TestCourseFormatter(string testFileName, Id<Course> courseId, bool createKey, string expected)
+        private void TestCourseFormatter(string testFileName, CourseDesignator courseDesignator, bool createKey, string expected)
         {
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
@@ -88,7 +93,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView;
-            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+            courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(createKey);
 
@@ -324,6 +329,67 @@ namespace PurplePen.Tests
 ( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
 ( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
+( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]
+( 38) |   17|   38|     |  4.3|     |     |11.5E|     |   [E outside corner of forest corner]
+(  2) |                 14.3: 60 m                    |   [Navigate 60 m to finish]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart1()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 0), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+(  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
+( 59) |    1|   59|     |  4.5|     |     |11.1N|     |   [N side of thicket]
+( 51) |    2|   51|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 46) |    3|   46|     | 1.12|     |     |11.1NW|     |   [NW side of depression]
+( 47) |    4|   47|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 48) |    5|   48|     |  1.9|     |     |11.3NE|     |   [NE part of hill]
+( 50) |    6|   50|     | 1.12|     |     |11.3NW|     |   [NW part of depression]
+( 56) |    7|   56| 0.1W|  4.5|     |     |11.1E|     |   [E side of W thicket]
+( 57) |    8|   57|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 79) |    9|   79|     |  4.8|     |     |11.2W|     |   [W edge of copse]
+( 79) |                 13.5: 210 m                   |   [Follow tapes 210 m to map exchange]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart2()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 1), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 35) |start|     | 0.1E|  4.5|     |     |11.2E|     |   [Start: E edge of E thicket]
+( 37) |   10|   37|     |  4.5|     |     |11.6NW|     |   [NW tip of thicket]
+( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
+( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart3()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 2), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
+( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart4()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 3), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
 ( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]
 ( 38) |   17|   38|     |  4.3|     |     |11.5E|     |   [E outside corner of forest corner]

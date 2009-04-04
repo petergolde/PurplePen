@@ -79,6 +79,7 @@ namespace PurplePen
         private int normalControlCount;         // number of normal controls.
         private float totalPoints;              // total points.
         private float totalLength;              // total length.
+        private float partLength;
         private float totalClimb;
 
         private float mapScale;                // scale of map
@@ -137,13 +138,24 @@ namespace PurplePen
             get { return courseName; }
         }
 
+        // If multi-part course, length of all parts
         public float TotalLength {
             get { 
                 return totalLength;
             }
         }
 
-        public float TotalScore {
+        // If multi-part course, length of this part only
+        public float PartLength
+        {
+            get
+            {
+                return partLength;
+            }
+        }
+
+        public float TotalScore
+        {
             get
             {
                 return totalPoints;
@@ -286,7 +298,7 @@ namespace PurplePen
         {
             totalPoints = 0;
             normalControlCount = 0;
-            totalLength = 0;
+            partLength = 0;
 
             if (courseDesignator.IsAllControls)
                 totalClimb = -1;
@@ -311,7 +323,15 @@ namespace PurplePen
 
                 // Always use the first leg for split controls.
                 if (controlView.legTo != null && controlView.legTo.Length > 0)
-                    totalLength += controlView.legLength[0];
+                    partLength += controlView.legLength[0];
+            }
+
+            // Get the total length from another course view, if this is just a partial course.
+            if (courseDesignator.AllParts || courseDesignator.IsAllControls)
+                totalLength = partLength;
+            else {
+                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false);
+                totalLength = viewEntireCourse.TotalLength;
             }
         }
 

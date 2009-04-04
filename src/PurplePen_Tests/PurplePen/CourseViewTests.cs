@@ -55,7 +55,7 @@ namespace PurplePen.Tests
                 writer.Write(", Part={0}", courseView.CourseDesignator.Part);
             writer.WriteLine();
 
-            writer.WriteLine("Total Length={0}  Total Climb={1}  Total Score={2}  Total Controls={3}", courseView.TotalLength, courseView.TotalClimb, courseView.TotalScore, courseView.TotalNormalControls);
+            writer.WriteLine("Total Length={0}  Part Length={1}  Total Climb={2}  Total Score={3}  Total Controls={4}", courseView.TotalLength, courseView.PartLength, courseView.TotalClimb, courseView.TotalScore, courseView.TotalNormalControls);
 
             for (int i = 0; i < courseView.ControlViews.Count; ++i) {
                 CourseView.ControlView controlView = courseView.ControlViews[i];
@@ -108,7 +108,7 @@ namespace PurplePen.Tests
             actual = writer.ToString();
             expected =
 @"Name='SampleCourse4', Kind='Normal', CourseId=4
-Total Length=4667.309  Total Climb=173  Total Score=0  Total Controls=4
+Total Length=4667.309  Part Length=4667.309  Total Climb=173  Total Score=0  Total Controls=4
  0: [ 0] Ids:  1, 11
     Legs: (Next:1,Id:0,length:340.1033)  
  1: [ 1] Ids: 11, 12
@@ -150,7 +150,7 @@ Special 6 (Descriptions)
             actual = writer.ToString();
             expected =
 @"Name='SampleCourse4', Kind='Normal', CourseId=4
-Total Length=4667.309  Total Climb=173  Total Score=0  Total Controls=4
+Total Length=4667.309  Part Length=4667.309  Total Climb=173  Total Score=0  Total Controls=4
  0: [ 0] Ids:  1, 11
     Legs: (Next:1,Id:0,length:340.1033)  
  1: [ 1] Ids: 11, 12
@@ -190,7 +190,7 @@ Special 6 (Descriptions)
             actual = writer.ToString();
             expected =
 @"Name='Score 4', Kind='Score', CourseId=5
-Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
+Total Length=0  Part Length=0  Total Climb=-1  Total Score=155  Total Controls=11
  0: [-1] Ids:  1,101
  1: [-1] Ids: 17,109
  2: [-1] Ids:  2,113
@@ -231,7 +231,7 @@ Special 4 (OOB)
             actual = writer.ToString();
             expected =
 @"Name='Score 4', Kind='Score', CourseId=5
-Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
+Total Length=0  Part Length=0  Total Climb=-1  Total Score=155  Total Controls=11
  0: [-1] Ids:  1,101
  1: [-1] Ids: 17,109
  2: [-1] Ids:  2,113
@@ -269,7 +269,7 @@ Total Length=0  Total Climb=-1  Total Score=155  Total Controls=11
             actual = writer.ToString();
             expected =
 @"Name='All controls', Kind='AllControls', CourseId=0
-Total Length=0  Total Climb=-1  Total Score=0  Total Controls=17
+Total Length=0  Part Length=0  Total Climb=-1  Total Score=0  Total Controls=17
  0: [-1] Ids: 23,  0
  1: [-1] Ids:  1,  0
  2: [-1] Ids:  2,  0
@@ -320,7 +320,7 @@ Special 5 (Text)
             actual = writer.ToString();
             expected =
 @"Name='All controls', Kind='AllControls', CourseId=0
-Total Length=0  Total Climb=-1  Total Score=0  Total Controls=12
+Total Length=0  Part Length=0  Total Climb=-1  Total Score=0  Total Controls=12
  0: [-1] Ids:  2,  0
  1: [-1] Ids: 12,  0
  2: [-1] Ids:  7,  0
@@ -355,7 +355,7 @@ Total Length=0  Total Climb=-1  Total Score=0  Total Controls=12
             actual = writer.ToString();
             expected =
 @"Name='Leggy', Kind='Normal', CourseId=1
-Total Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
+Total Length=2242.754  Part Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
  0: [ 0] Ids:  1,  1
     Legs: (Next:1,Id:0,length:515.8431)  
  1: [ 1] Ids:  2,  2
@@ -389,7 +389,7 @@ Total Length=2242.754  Total Climb=-1  Total Score=0  Total Controls=4
             actual = writer.ToString();
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=0
-Total Length=2643.736  Total Climb=-1  Total Score=0  Total Controls=9
+Total Length=5002.36  Part Length=2643.736  Total Climb=-1  Total Score=0  Total Controls=9
  0: [ 0] Ids:  1,601
     Legs: (Next:1,Id:5,length:191.3766)  
  1: [ 1] Ids: 59,602
@@ -420,7 +420,7 @@ Total Length=2643.736  Total Climb=-1  Total Score=0  Total Controls=9
             actual = writer.ToString();
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=1
-Total Length=1195.639  Total Climb=-1  Total Score=0  Total Controls=4
+Total Length=5002.36  Part Length=1195.639  Total Climb=-1  Total Score=0  Total Controls=4
  0: [ 0] Ids: 35,611
     Legs: (Next:1,Id:4,length:128.0156)  
  1: [10] Ids: 37,612
@@ -439,7 +439,7 @@ Total Length=1195.639  Total Climb=-1  Total Score=0  Total Controls=4
             actual = writer.ToString();
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=2
-Total Length=401.2206  Total Climb=-1  Total Score=0  Total Controls=2
+Total Length=5002.36  Part Length=401.2206  Total Climb=-1  Total Score=0  Total Controls=2
  0: [13] Ids: 43,615
     Legs: (Next:1,Id:2,length:401.2206)  
  1: [14] Ids: 54,616
@@ -452,7 +452,7 @@ Total Length=401.2206  Total Climb=-1  Total Score=0  Total Controls=2
             actual = writer.ToString();
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=3
-Total Length=761.7648  Total Climb=-1  Total Score=0  Total Controls=4
+Total Length=5002.36  Part Length=761.7648  Total Climb=-1  Total Score=0  Total Controls=4
  0: [14] Ids: 54,616
     Legs: (Next:1,Id:3,length:257.777)  
  1: [15] Ids: 41,617

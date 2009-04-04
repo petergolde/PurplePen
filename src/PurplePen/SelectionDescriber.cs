@@ -212,6 +212,8 @@ namespace PurplePen
         {
             List<TextPart> list = new List<TextPart>();
 
+            // UNDONE MAPEXCHANGE: do special something for a part of a course.
+
             // Course name
             list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.CourseName, activeCourseView.CourseName)));
 
