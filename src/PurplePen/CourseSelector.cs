@@ -81,13 +81,34 @@ namespace PurplePen
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
         public Id<Course>[] SelectedCourses
         {
+            get {
+                CourseDesignator[] array = SelectedCourseDesignators;
+                Id<Course>[] result = new Id<Course>[array.Length];
+                for (int i = 0; i < array.Length; ++i)
+                    result[i] = array[i].CourseId;
+                return result;
+            }
+
+            set
+            {
+                CourseDesignator[] array = new CourseDesignator[value.Length];
+                for (int i = 0; i < array.Length; ++i)
+                    array[i] = new CourseDesignator(value[i]);
+                SelectedCourseDesignators = array;
+            }
+        }
+
+        // Get or set the selected courses designator
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
+        public CourseDesignator[] SelectedCourseDesignators
+        {
             get
             {
                 LoadList();
-                List<Id<Course>> list = new List<Id<Course>>();
-                for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                    if (courseListBox.GetItemChecked(i)) {
-                        list.Add(((CourseItem) courseListBox.Items[i]).courseId);
+                List<CourseDesignator> list = new List<CourseDesignator>();
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    if (node.Checked){
+                        list.Add((CourseDesignator)(node.Tag));
                     }
                 }
 
@@ -97,25 +118,22 @@ namespace PurplePen
             set
             {
                 LoadList();
-                for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                    Id<Course> courseId = ((CourseItem) courseListBox.Items[i]).courseId;
-                    courseListBox.SetItemChecked(i, Array.IndexOf(value, courseId) >= 0);
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    node.Checked = Array.IndexOf(value, ((CourseDesignator) (node.Tag))) >= 0;
                 }
             }
         }
 
-            private void selectAll_Click(object sender, EventArgs e)
+        private void selectAll_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                courseListBox.SetItemChecked(i, true);
-            }
+            foreach (TreeNode node in courseTreeView.Nodes)
+                node.Checked = true;
         }
 
         private void selectNone_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                courseListBox.SetItemChecked(i, false);
-            }
+            foreach (TreeNode node in courseTreeView.Nodes)
+                node.Checked = false;
         }
 
         private void CourseSelector_Load(object sender, EventArgs e)
@@ -127,36 +145,17 @@ namespace PurplePen
         {
             if (eventDB != null && !loaded) {
                 if (showAllControls) {
-                    courseListBox.Items.Add(new CourseItem(Id<Course>.None, MiscText.AllControls));
+                    courseTreeView.Nodes.Add(new TreeNode(MiscText.AllControls) {Tag = CourseDesignator.AllControls});
                 }
 
-                List<CourseItem> list = new List<CourseItem>();
                 foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                    list.Add(new CourseItem(courseId, eventDB.GetCourse(courseId).name));
+                    courseTreeView.Nodes.Add(new TreeNode(eventDB.GetCourse(courseId).name) { 
+                        Tag = new CourseDesignator(courseId),
+                        Checked = true
+                    });
                 }
 
-                foreach (CourseItem item in list) {
-                    int index = courseListBox.Items.Add(item);
-                    courseListBox.SetItemChecked(index, true);
-                }
                 loaded = true;
-            }
-        }
-
-        private class CourseItem
-        {
-            public Id<Course> courseId;
-            public string name;
-
-            public CourseItem(Id<Course> courseId, string name)
-            {
-                this.courseId = courseId;
-                this.name = name;
-            }
-
-            public override string ToString()
-            {
-                return name;
             }
         }
     }
