@@ -1,17 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurplePen", "PurplePen\PurplePen.csproj", "{C1715D94-3BEB-4D86-8402-80A57C9D11C5}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{16EB4FF5-70E3-4C13-B58D-957A7360C4B5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurplePen_Tests", "PurplePen_Tests\PurplePen_Tests.csproj", "{0690D25C-7696-4B7A-9AAB-FBBCAFD0EEF5}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F9CA30D-5D8A-45D0-84CE-7192B327609B}"
 	ProjectSection(SolutionItems) = preProject
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 		PPen.vsmdi = PPen.vsmdi
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurplePen", "PurplePen\PurplePen.csproj", "{C1715D94-3BEB-4D86-8402-80A57C9D11C5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{16EB4FF5-70E3-4C13-B58D-957A7360C4B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurplePen_Tests", "PurplePen_Tests\PurplePen_Tests.csproj", "{0690D25C-7696-4B7A-9AAB-FBBCAFD0EEF5}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

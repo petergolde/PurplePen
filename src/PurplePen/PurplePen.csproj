@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -15,7 +16,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <OldToolsVersion>2.0</OldToolsVersion>
+    <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -31,6 +32,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +77,16 @@
     </Compile>
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="CourseAppearanceDialog.cs">
       <SubType>Form</SubType>
@@ -201,6 +213,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MiscText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="MissingFonts.cs">
       <SubType>Form</SubType>
@@ -521,8 +543,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.sv.resx</DependentUpon>
+    </Compile>
     <Compile Include="RotateMode.cs" />
     <Compile Include="SelectionDescriber.cs" />
+    <Compile Include="SelectionDescriptionText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.sv.resx</DependentUpon>
+    </Compile>
     <Compile Include="SelectionMgr.cs" />
     <Compile Include="SetPrintAreaDialog.cs">
       <SubType>Form</SubType>
@@ -545,6 +587,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusBarText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="SymbolDB.cs" />
     <Compile Include="SymbolPopup.cs" />
