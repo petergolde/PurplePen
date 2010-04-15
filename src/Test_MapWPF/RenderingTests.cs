@@ -8,9 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using MapScribe.Map;
+using PurplePen.MapModel;
 using TestingUtils;
-using RenderOptions = MapScribe.Map.RenderOptions;
+using RenderOptions = PurplePen.MapModel.RenderOptions;
 
 namespace TestWpfMap
 {
@@ -84,7 +84,7 @@ namespace TestWpfMap
 
             // Get the render options.
             RenderOptions renderOpts = new RenderOptions();
-            renderOpts.forceBitmapGlyphs = false;
+            renderOpts.usePatternBitmaps = false;
             renderOpts.minResolution = (float) (1 / scaleFactor);
 
             // Create a drawing of the map.

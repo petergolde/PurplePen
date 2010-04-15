@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Controls;
-using MapScribe.Map;
+using PurplePen.MapModel;
 
 using System.Diagnostics;
 using System.ComponentModel;
@@ -126,8 +126,8 @@ namespace WpfMap
             matrix.TranslatePrepend(- mapArea.portion.X, - mapArea.portion.Y);
 
             // Get the render options.
-            MapScribe.Map.RenderOptions renderOpts = new MapScribe.Map.RenderOptions();
-            renderOpts.forceBitmapGlyphs = false;
+            PurplePen.MapModel.RenderOptions renderOpts = new PurplePen.MapModel.RenderOptions();
+            renderOpts.usePatternBitmaps = false;
             renderOpts.minResolution = (float) mapArea.pixelSize;
 
             // Create a visual of the map, appropriately transformed

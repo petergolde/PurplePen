@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MapScribe.Map
+namespace PurplePen.MapModel
 {
 #if WPF
     // A point with "float".

@@ -1481,6 +1481,10 @@ namespace PurplePen.MapModel
                 DrawingContext dc = visual.RenderOpen();
                 GraphicsTarget grTarget = new GraphicsTarget(dc);
 
+                RenderOptions renderOpts = new RenderOptions();
+                renderOpts.minResolution = 0.01F;
+                renderOpts.usePatternBitmaps = false;
+
                 patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
                 if (offsetRows) {
                     patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
