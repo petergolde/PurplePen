@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapViewer\BitmapTests.cs" />
     <Compile Include="Map\BezierTests.cs" />
     <Compile Include="Map\BoundsTests.cs" />
     <Compile Include="Map\MapLoadTests.cs" />
@@ -58,58 +57,6 @@
     <Compile Include="Map\RenderingTests.cs" />
     <Compile Include="Map\RoundtripOcadTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurplePen\AddControlModeTests.cs" />
-    <Compile Include="PurplePen\AddCornerModeTests.cs" />
-    <Compile Include="PurplePen\AddRemoveGapModeTests.cs" />
-    <Compile Include="PurplePen\ChangeEventTests.cs" />
-    <Compile Include="PurplePen\CompatibilityTests.cs" />
-    <Compile Include="PurplePen\ControllerTests.cs" />
-    <Compile Include="PurplePen\CourseFormatterTests.cs" />
-    <Compile Include="PurplePen\CourseLayoutTests.cs" />
-    <Compile Include="PurplePen\CourseObjTests.cs" />
-    <Compile Include="PurplePen\CoursePrintingTests.cs" />
-    <Compile Include="PurplePen\CourseRendererTests.cs" />
-    <Compile Include="PurplePen\CourseSelectorTestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurplePen\CourseSelectorTestForm.Designer.cs">
-      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurplePen\CourseViewTests.cs" />
-    <Compile Include="PurplePen\DefaultModeTests.cs" />
-    <Compile Include="PurplePen\DescriptionFormatterTests.cs" />
-    <Compile Include="PurplePen\DescriptionLocalizeTests.cs" />
-    <Compile Include="PurplePen\DescriptionPrintingTests.cs" />
-    <Compile Include="PurplePen\DescriptionRendererTests.cs" />
-    <Compile Include="PurplePen\DotGridTester.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurplePen\DotGridTester.Designer.cs">
-      <DependentUpon>DotGridTester.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurplePen\EventDBTests.cs" />
-    <Compile Include="PurplePen\ExportXmlTests.cs" />
-    <Compile Include="PurplePen\FindPurpleTests.cs" />
-    <Compile Include="PurplePen\LegGapTests.cs" />
-    <Compile Include="PurplePen\MainFrameTests.cs" />
-    <Compile Include="PurplePen\MapDisplayTests.cs" />
-    <Compile Include="PurplePen\ObjectStoreTests.cs" />
-    <Compile Include="PurplePen\PairTests.cs" />
-    <Compile Include="PurplePen\PunchcardPrintingTests.cs" />
-    <Compile Include="PurplePen\PunchesRendererTests.cs" />
-    <Compile Include="PurplePen\QueryEventTests.cs" />
-    <Compile Include="PurplePen\ReportTests.cs" />
-    <Compile Include="PurplePen\RotateModeTests.cs" />
-    <Compile Include="PurplePen\SelectionDescriberTests.cs" />
-    <Compile Include="PurplePen\SelectionMgrTests.cs" />
-    <Compile Include="PurplePen\SetPrintAreaTests.cs" />
-    <Compile Include="PurplePen\SymbolDBTests.cs" />
-    <Compile Include="PurplePen\TestFixtureBase.cs" />
-    <Compile Include="PurplePen\TestUI.cs" />
-    <Compile Include="PurplePen\TextifierTests.cs" />
-    <Compile Include="PurplePen\UndoMgrTests.cs" />
-    <Compile Include="PurplePen\UtilTests.cs" />
-    <Compile Include="PurplePen\XmlInputTests.cs" />
     <Compile Include="TestUtil\BitmapCompareDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,14 +101,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PurplePen\CourseSelectorTestForm.resx">
-      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurplePen\DotGridTester.resx">
-      <DependentUpon>DotGridTester.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="TestUtil\BitmapCompareDialog.resx">
       <DependentUpon>BitmapCompareDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
