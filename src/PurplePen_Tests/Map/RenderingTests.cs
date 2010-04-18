@@ -40,6 +40,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 
@@ -124,8 +125,14 @@ namespace PurplePen.MapModel.Tests
             Map map = new Map();
             InputOutput.ReadFile(mapFileName, map);
 
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             // Draw into a new bitmap.
             Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
+
+            sw.Stop();
+            Console.WriteLine("Rendered bitmap '{0}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds);
 
             TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
 

@@ -35,6 +35,14 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Drawing = System.Drawing;
+#if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+using WpfMatrix = System.Windows.Media.Matrix;
+#endif
 #if WPF
 using System.Windows;
 using System.Windows.Media;
@@ -45,12 +53,95 @@ using System.Drawing.Drawing2D;
 
 namespace PurplePen.MapModel
 {
+    public interface IGraphicsBrush : IDisposable
+    {
+        Brush Brush { get; }
+    }
+
+    public interface IGraphicsPen : IDisposable
+    { }
+    public interface IGraphicsPath : IDisposable
+    { }
+    public interface IGraphicsFont : IDisposable
+    { }
+
+    public enum GraphicsPathPartKind { Start, Lines, Beziers, Close };
+
+    public struct GraphicsPathPart {
+        public readonly GraphicsPathPartKind Kind;
+        public readonly PointF[] Points;
+
+        public GraphicsPathPart(GraphicsPathPartKind kind, PointF[] points)
+        {
+            this.Kind = kind;
+            this.Points = points;
+        }
+    }
+
+    public interface IGraphicsTarget_X: IDisposable
+    {
+        // Prepend a transform to the graphics drawing target.
+        void PushTransform(Matrix matrix);
+        void PopTransform();
+
+        // Set a clip on the graphics drawing target.
+        void PushClip(IGraphicsPath geometry);
+        void PopClip();
+
+        // Create paths.
+        IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, Drawing.Drawing2D.FillMode windingMode);
+        IGraphicsPath CreateMultiPath(IEnumerable<IEnumerable<GraphicsPathPart>> multiParts, Drawing.Drawing2D.FillMode windingMode);
+
+        // Create brushes and pens
+        IGraphicsBrush CreateSolidBrush(Color color);
+        IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight);
+        IGraphicsPen CreatePen(IGraphicsBrush brush, float width, Drawing.Drawing2D.LineCap caps, Drawing.Drawing2D.LineJoin join, float miterLimit);
+
+        // Create font
+        IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic);
+
+        // Draw an line with a pen.
+        void DrawLine(IGraphicsPen pen, PointF start, PointF finish);
+
+        // Draw an ellipse with a pen.
+        void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY);
+
+        // Fill an ellipse with a pen.
+        void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY);
+
+        // Draw a rectangle with a pen.
+        void DrawRectangle(IGraphicsPen pen, RectangleF rect);
+
+        // Fill a rectangle with a brush.
+        void FillRectangle(IGraphicsBrush brush, RectangleF rect);
+
+        // Fill a polygon with a brush
+        void FillPolygon(IGraphicsBrush brush, PointF[] pts, Drawing.Drawing2D.FillMode windingMode);
+
+        // Draw text with upper-left corner of text at the given locations.
+        void DrawText(string text, IGraphicsBrush brush, PointF upperLeft);
+
+        // Draw text with upper-left corner of text at upper-left corner of rectangle, clipped.
+        void DrawClippedText(string text, IGraphicsBrush brush, RectangleF rect);
+    }
+
+    public interface IBrushTarget: IGraphicsTarget_X
+    {
+        IGraphicsBrush FinishBrush();
+    }
+
+
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
     public struct GraphicsTarget
     {
 #if WPF
         public DrawingContext DrawingContext;
         private int pushLevel;      // How many pushes have we done?
+
+        public IGraphicsBrush CreateSolidBrush(Color color)
+        {
+            return new WPF_Brush(color);
+        }
 
         public GraphicsTarget(DrawingContext dc)
         {
@@ -79,7 +170,7 @@ namespace PurplePen.MapModel
         // Prepend a transform to the graphics drawing target.
         public void Transform(Matrix matrix)
         {
-            DrawingContext.PushTransform(new MatrixTransform(matrix));
+            DrawingContext.PushTransform(new MatrixTransform(GraphicsUtil.GetWpfMatrix(matrix)));
             ++pushLevel;
         }
 
@@ -133,8 +224,27 @@ namespace PurplePen.MapModel
             DrawingContext.DrawGeometry(brush, null, geometry);
         }
 
+        // Fill a polygon with a brush
+        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, Drawing.Drawing2D.FillMode windingMode)
+        {
+            Point[] points = new Point[pts.Length];
+            for (int i = 0; i < pts.Length; ++i)
+                points[i] = new Point(pts[i].X, pts[i].Y);
+
+            PathSegment segment = new PolyLineSegment(points, true);
+            PathFigure figure = new PathFigure(points[points.Length - 1], new PathSegment[] { segment }, true);
+            PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, windingMode == Drawing.Drawing2D.FillMode.Winding ? FillRule.Nonzero : FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
+            DrawingContext.DrawGeometry((brush as WPF_Brush).Brush, null, geometry);
+        }
+
+
 #else
         public Graphics Graphics;
+
+        public IGraphicsBrush CreateSolidBrush(Color color)
+        {
+            return new GDIPlus_Brush(color);
+        }
 
         public GraphicsTarget(Graphics g)
         {
@@ -201,61 +311,87 @@ namespace PurplePen.MapModel
             Graphics.FillPolygon(brush, pts, windingMode ? FillMode.Winding : FillMode.Alternate);
         }
 
+        // Fill a polygon with a brush
+        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, FillMode windingMode)
+        {
+            Graphics.FillPolygon((brush as GDIPlus_Brush).Brush, pts, windingMode);
+        }
+
 #endif
     }
+
+#if WPF
+    public class WPF_Brush : IGraphicsBrush
+    {
+        private Brush brush;
+
+        public WPF_Brush(Color color)
+        {
+            brush = new SolidColorBrush(color);
+            brush.Freeze();
+        }
+
+        public Brush Brush
+        {
+            get { return brush; }
+        }
+
+        public void Dispose()
+        {
+            brush = null;
+        }
+    }
+#else
+    public class GDIPlus_Brush : IGraphicsBrush
+    {
+        private Brush brush;
+
+        public Brush Brush
+        {
+            get { return brush; }
+        }
+
+        public GDIPlus_Brush(Color color)
+        {
+            brush = new SolidBrush(color);
+        }
+
+        public void Dispose()
+        {
+            brush.Dispose();
+        }
+    }
+#endif
 
     public static class GraphicsUtil
     {
         public static float MITER_LIMIT = 5.0F;
 
-        // A get a new copy of an identity matrix.
-        public static Matrix IdentityMatrix
-        {
-            get {
-#if WPF
-                return Matrix.Identity;
-#else
-                return new Matrix();
-#endif
-
-            }
-        }
-
         // Transform points according to a matrix. Does NOT change the input points.
         public static PointF[] TransformPoints(PointF[] pts, Matrix matrix)
         {
-#if WPF
-            Point[] wpfPoints = new Point[pts.Length];
-            for (int i = 0; i < pts.Length; ++i)
-                wpfPoints[i] = new Point(pts[i].X, pts[i].Y);
-
-            matrix.Transform(wpfPoints);
-
-            PointF[] xformedPts = new PointF[wpfPoints.Length];
-            for (int i = 0; i < wpfPoints.Length; ++i)
-                xformedPts[i] = new PointF((float) wpfPoints[i].X, (float) wpfPoints[i].Y);
-
-            return xformedPts;
-#else
             PointF[] xformedPts = (PointF[]) pts.Clone();
             matrix.TransformPoints(xformedPts);
             return xformedPts;
-#endif
         }
 
         // Transform one point according to a matrix. 
         public static PointF TransformPoint(PointF pt, Matrix matrix)
         {
-#if WPF
-            Point point = matrix.Transform(new Point(pt.X, pt.Y));
-            return new PointF((float) point.X, (float) point.Y);
-#else
             PointF[] xformedPts = new PointF[1] { pt };
             matrix.TransformPoints(xformedPts);
             return xformedPts[0];
-#endif
         }
 
+#if WPF
+        public static WpfMatrix GetWpfMatrix(Matrix source)
+        {
+            float[] elements = source.Elements;
+            return new WpfMatrix(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5]);
+        }
+#endif
+
+#if false
         // Create a solid brush.
         public static Brush CreateSolidBrush(Color color)
         {
@@ -267,6 +403,7 @@ namespace PurplePen.MapModel
             return new SolidBrush(color);
 #endif
         }
+#endif
 
         // Create a solid pen
         public static Pen CreateSolidPen(Color color, float thickness, LineStyle style)
@@ -333,60 +470,12 @@ namespace PurplePen.MapModel
 #endif
         }
 
-        // Create rotation matrix.
-        public static Matrix RotationMatrix(float angle, PointF location)
-        {
-#if WPF
-            Matrix m = Matrix.Identity;
-            m.RotateAtPrepend(angle, location.X, location.Y);
-            return m;
-#else
-            Matrix m = new Matrix();
-            m.RotateAt(angle, location);
-            return m;
-#endif
-        }
-
-        // Create translation matrix.
-        public static Matrix TranslationMatrix(float dx, float dy)
-        {
-#if WPF
-            Matrix m = Matrix.Identity;
-            m.TranslatePrepend(dx, dy);
-            return m;
-#else
-            Matrix m = new Matrix();
-            m.Translate(dx, dy);
-            return m;
-#endif
-        }
-
-        // Create scale matrix.
-        public static Matrix ScalingMatrix(float dx, float dy)
-        {
-#if WPF
-            Matrix m = Matrix.Identity;
-            m.ScalePrepend(dx, dy);
-            return m;
-#else
-            Matrix m = new Matrix();
-            m.Scale(dx, dy);
-            return m;
-#endif
-        }
-
         // Multiple two matrixes, giving a third
         public static Matrix Multiply(Matrix m1, Matrix m2)
         {
-#if WPF
-            Matrix result = m1;  // copies m1, since Matrix is a struct.
-            result.Append(m2);
-            return result;
-#else
             Matrix result = m1.Clone();
-            result.Multiply(m2, MatrixOrder.Append);
+            result.Multiply(m2, System.Drawing.Drawing2D.MatrixOrder.Append);
             return result;
-#endif
         }
 
     }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Windows;
+using System.Diagnostics;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -11,6 +12,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PurplePen.MapModel;
 using TestingUtils;
 using RenderOptions = PurplePen.MapModel.RenderOptions;
+using RectangleF = System.Drawing.RectangleF;
+using PointF = System.Drawing.PointF;
 
 namespace TestWpfMap
 {
@@ -158,7 +161,15 @@ namespace TestWpfMap
             InputOutput.ReadFile(mapFileName, map);
 
             // Draw into a new bitmap.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             BitmapSource bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
+
+            sw.Stop();
+            Console.WriteLine("Rendered bitmap '{0}' rect={1} size=({2},{3}) in {4} ms", mapFileName, mapArea, bmWidth, bmHeight, sw.ElapsedMilliseconds);
+
+
             WritePng(bitmapNew, newBitmapName);
             TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
 

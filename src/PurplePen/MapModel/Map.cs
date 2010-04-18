@@ -39,6 +39,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 #if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+#if WPF
 using System.Windows.Media;
 #else
 using System.Drawing;
@@ -149,8 +155,6 @@ namespace PurplePen.MapModel
         public event MapChangedHandler OnMapChanged;
         public delegate void SymdefsChangedHandler(Map sender);
         public event SymdefsChangedHandler OnSymdefsChanged;
-
-        Brush solidWhite = GraphicsUtil.CreateSolidBrush(Color.FromArgb(255, 255, 255, 255)); // solid white
 
         public struct WriteReleaser: IDisposable
         {

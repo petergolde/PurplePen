@@ -35,6 +35,12 @@
 using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+#if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
 #if !WPF
 using System.Drawing;
 #endif

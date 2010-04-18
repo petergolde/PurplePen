@@ -38,6 +38,14 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.IO;
+using SysDraw = System.Drawing;
+#if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+
 #if WPF
 using System.Windows;
 using System.Windows.Media;
@@ -213,7 +221,7 @@ namespace PurplePen.MapModel
         // Draw this point symbol at point pt with angle ang in this graphics (given color only).
         internal void Draw(GraphicsTarget g, PointF pt, float angle, float[] gaps, SymColor color, RenderOptions renderOpts)
         {
-            glyph.Draw(g, pt, angle, GraphicsUtil.IdentityMatrix, gaps, color, renderOpts);
+            glyph.Draw(g, pt, angle, null, gaps, color, renderOpts);
         }
 
         // Calculate the bounding box
@@ -321,7 +329,7 @@ namespace PurplePen.MapModel
         bool pensCreated = false;
         Pen mainPen;
         Pen secondPen;
-        Brush pointyEndsBrush;
+        IGraphicsBrush pointyEndsBrush;
         Pen doubleFillPen;
         Pen doubleLeftPen;
         Pen doubleRightPen;
@@ -427,7 +435,7 @@ namespace PurplePen.MapModel
             this.shortenInfo = shortenInfo;
         }
 
-        void CreatePens()
+        void CreatePens(GraphicsTarget g)
         {
             Debug.Assert(!pensCreated && mainPen == null);
 
@@ -467,7 +475,7 @@ namespace PurplePen.MapModel
                 }
 
                 if (shortenInfo.pointyEnds)
-                    pointyEndsBrush = GraphicsUtil.CreateSolidBrush(lineColor.ColorValue);
+                    pointyEndsBrush = g.CreateSolidBrush(lineColor.ColorValue);
             }
 
             if (secondLineColor != null && secondThickness > 0) {
@@ -496,7 +504,7 @@ namespace PurplePen.MapModel
                 mainPen = null;
             }
             if (pointyEndsBrush != null) {
-                GraphicsUtil.DisposeBrush(pointyEndsBrush);
+                pointyEndsBrush.Dispose();
                 pointyEndsBrush = null;
             }
             if (secondPen != null) {
@@ -562,7 +570,7 @@ namespace PurplePen.MapModel
                 return;             // Don't draw anything for a zero-length path.
 
             if (!pensCreated)
-                CreatePens();
+                CreatePens(g);
 
             SymPath mainPath = path;  // the path for the main part of the line (might be shortened).
             if (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F) {
@@ -1121,7 +1129,7 @@ namespace PurplePen.MapModel
                     points = path.FindPointsAlongLineBizzarro(distances, out perpAngles);
 
                 for (int i = 0; i < points.Length; ++i) {
-                    glyphInfo.glyph.Draw(g, points[i], perpAngles[i], GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                    glyphInfo.glyph.Draw(g, points[i], perpAngles[i], null, null, color, renderOpts);
                 }
             }
         }
@@ -1152,7 +1160,7 @@ namespace PurplePen.MapModel
                 tipCorners[4] = Util.MoveDistance(pointsAlongPath[1], midpointWidth / 2, angles[1] + 90.0F);
                 tipCorners[2] = Util.MoveDistance(pointsAlongPath[2], lineWidth / 2, angles[2] - 90.0F);
                 tipCorners[3] = Util.MoveDistance(pointsAlongPath[2], lineWidth / 2, angles[2] + 90.0F);
-                g.FillPolygon(pointyEndsBrush, tipCorners, true);
+                g.FillPolygon(pointyEndsBrush, tipCorners, SysDraw.Drawing2D.FillMode.Winding);
             }
 
             if (pointyLengthEnd > 0) {
@@ -1162,7 +1170,7 @@ namespace PurplePen.MapModel
                 tipCorners[4] = Util.MoveDistance(pointsAlongPath[4], midpointWidth / 2, angles[4] + 90.0F);
                 tipCorners[2] = Util.MoveDistance(pointsAlongPath[3], lineWidth / 2, angles[3] - 90.0F);
                 tipCorners[3] = Util.MoveDistance(pointsAlongPath[3], lineWidth / 2, angles[3] + 90.0F);
-                g.FillPolygon(pointyEndsBrush, tipCorners, true);
+                g.FillPolygon(pointyEndsBrush, tipCorners, SysDraw.Drawing2D.FillMode.Winding);
             }
         }
 
@@ -1352,7 +1360,7 @@ namespace PurplePen.MapModel
                 CreatePensAndBrushes();
 
             if (color == fillColor) {
-                path.Fill(g, color.Brush);
+                path.Fill(g, color.GetBrush(g).Brush);
             }
 
             if (hatchMode != 0 && hatchColor == color) {
@@ -1399,7 +1407,8 @@ namespace PurplePen.MapModel
                 g.SetClip(path);
 
                 // use a transform to rotate and then draw hatching.
-                Matrix matrix = GraphicsUtil.RotationMatrix(hatchAngle1 + angle, new PointF(0, 0));
+                Matrix matrix = new Matrix();
+                matrix.RotateAt(hatchAngle1 + angle, new PointF(0, 0));
                 g.Transform(matrix);
 
                 // Get the correct bounding rect.
@@ -1412,7 +1421,8 @@ namespace PurplePen.MapModel
                     // Get the correct bounding rect.
                     bounding = Util.BoundsOfRotatedRectangle(path.BoundingBox, new PointF(), -(hatchAngle2 + angle));
 
-                    matrix = GraphicsUtil.RotationMatrix(hatchAngle2 - hatchAngle1, new PointF(0, 0));
+                    matrix = new Matrix();
+                    matrix.RotateAt(hatchAngle2 - hatchAngle1, new PointF(0, 0));
                     g.Transform(matrix);
                     DrawHatchLines(g, hatchPen, hatchSpacing, bounding, renderOpts);
                 }
@@ -1449,7 +1459,8 @@ namespace PurplePen.MapModel
                     g.SetClip(path);
 
                     // use a transform to rotate.
-                    Matrix matrix = GraphicsUtil.RotationMatrix(angle, new PointF(0, 0));
+                    Matrix matrix = new Matrix();
+                    matrix.RotateAt(angle, new PointF(0, 0));
                     g.Transform(matrix);
 
                     // Get the correct bounding rect.
@@ -1485,10 +1496,10 @@ namespace PurplePen.MapModel
                 renderOpts.minResolution = 0.01F;
                 renderOpts.usePatternBitmaps = false;
 
-                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, null, null, color, renderOpts);
                 if (offsetRows) {
-                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, null, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, null, null, color, renderOpts);
                 }
 
                 dc.Close();
@@ -1575,11 +1586,11 @@ namespace PurplePen.MapModel
 
                 // Draw the pattern into the bitmap.
                 GraphicsTarget grTarget = new GraphicsTarget(g);
-                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                patternGlyph.Draw(grTarget, new PointF(0F, 0F), -patternAngle, null, null, color, renderOpts);
 
                 if (offsetRows) {
-                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
-                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(patternWidth / 2, patternHeight), -patternAngle, null, null, color, renderOpts);
+                    patternGlyph.Draw(grTarget, new PointF(-patternWidth / 2, patternHeight), -patternAngle, null, null, color, renderOpts);
                 }
 
                 // Create a TextureBrush on the bitmap.
@@ -1609,7 +1620,8 @@ namespace PurplePen.MapModel
                 g.SetClip(path);
 
                 // use a transform to rotate 
-                Matrix matrix = GraphicsUtil.RotationMatrix(patternAngle + angle, new PointF(0, 0));
+                Matrix matrix = new Matrix();
+                matrix.RotateAt(patternAngle + angle, new PointF(0, 0));
                 g.Transform(matrix);
 
                 // Get the correct bounding rect.
@@ -1638,12 +1650,12 @@ namespace PurplePen.MapModel
             for (double y = topLine; y <= bottomLine; y += patternHeight) {
                 if (offsetThisLine) {
                     for (double x = offsetLeftLine; x <= offsetRightLine; x += patternWidth) {
-                        patternGlyph.Draw(g, new PointF((float) x, (float) y), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                        patternGlyph.Draw(g, new PointF((float) x, (float) y), -patternAngle, null, null, color, renderOpts);
                     }
                 }
                 else {
                     for (double x = leftLine; x <= rightLine; x += patternWidth) {
-                        patternGlyph.Draw(g, new PointF((float) x, (float) y), -patternAngle, GraphicsUtil.IdentityMatrix, null, color, renderOpts);
+                        patternGlyph.Draw(g, new PointF((float) x, (float) y), -patternAngle, null, null, color, renderOpts);
                     }
                 }
 
@@ -2007,7 +2019,7 @@ namespace PurplePen.MapModel
         private void DrawStringWithEffects(GraphicsTarget g, SymColor color, string text, PointF pt)
         {
             if (color == fontColor) {
-                DrawSingleLineString(g, text, fontColor.Brush, pt);
+                DrawSingleLineString(g, text, fontColor.GetBrush(g).Brush, pt);
             }
 
             if (framing.framingStyle != FramingStyle.None && color == framing.framingColor) {
@@ -2027,7 +2039,7 @@ namespace PurplePen.MapModel
 #endif
                 }
                 else if (framing.framingStyle == FramingStyle.Shadow) {
-                    DrawSingleLineString(g, text, framing.framingColor.Brush, new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
+                    DrawSingleLineString(g, text, framing.framingColor.GetBrush(g).Brush, new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
                 }
             }
         }
@@ -2058,7 +2070,7 @@ namespace PurplePen.MapModel
                 r += framing.rectBorderRight;
 
                 // Draw the rectangle
-                g.FillRectangle(color.Brush, new RectangleF(l, t, r - l, b - t));
+                g.FillRectangle(color.GetBrush(g).Brush, new RectangleF(l, t, r - l, b - t));
             }
         }
 
@@ -2112,10 +2124,11 @@ namespace PurplePen.MapModel
             // Move location to draw at to the origin.
             object graphicsState = g.Save();
 
-            Matrix matrix = GraphicsUtil.TranslationMatrix(location.X, location.Y);
-            matrix = GraphicsUtil.Multiply(GraphicsUtil.ScalingMatrix(1, -1), matrix); // Reverse Y direction so text is correct way around.
+            Matrix matrix = new Matrix();
+            matrix.Translate(location.X, location.Y);
+            matrix.Scale(1, -1); // Reverse Y direction so text is correct way around.
             if (angle != 0)
-                matrix = GraphicsUtil.Multiply(GraphicsUtil.RotationMatrix(-angle, new PointF(0,0)), matrix);
+                matrix.RotateAt(-angle, new PointF(0,0));
             g.Transform(matrix);
 
             try {
@@ -2532,9 +2545,10 @@ namespace PurplePen.MapModel
 
                 try {
                     // Move location to draw at to the origin, set angle for drawing text.
-                    Matrix matrix = GraphicsUtil.TranslationMatrix(grapheme.pointStart.X, grapheme.pointStart.Y);
-                    matrix = GraphicsUtil.Multiply(GraphicsUtil.ScalingMatrix(1, -1), matrix);      // Reverse Y so text is correct way aroun
-                    matrix = GraphicsUtil.Multiply(GraphicsUtil.RotationMatrix(-grapheme.angle, new PointF(0,0)), matrix);
+                    Matrix matrix = new Matrix();
+                    matrix.Translate(grapheme.pointStart.X, grapheme.pointStart.Y);
+                    matrix.Scale(1, -1);      // Reverse Y so text is correct way aroun
+                    matrix.RotateAt(-grapheme.angle, new PointF(0,0));
                     g.Transform(matrix);
 
                     DrawStringWithEffects(g, color, grapheme.grapheme, topAscentPoint);

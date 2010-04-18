@@ -3,6 +3,7 @@
 namespace PurplePen.MapModel
 {
 #if WPF
+#if false
     // A point with "float".
     public struct PointF
     {
@@ -342,6 +343,7 @@ namespace PurplePen.MapModel
             get { return width == 0 || height == 0; }
         }
     }
+#endif
 
     // A color matrix
     public class ColorMatrix

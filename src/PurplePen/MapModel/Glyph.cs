@@ -36,6 +36,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 #if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+#if WPF
 using System.Windows;
 using System.Windows.Media;
 #else
@@ -76,7 +82,7 @@ namespace PurplePen.MapModel
 					break;
 
 				case GlyphPartKind.Area:
-					areaPath.Fill(g, color.Brush);
+					areaPath.Fill(g, color.GetBrush(g).Brush);
 					break;
 
 				case GlyphPartKind.Circle:
@@ -113,7 +119,7 @@ namespace PurplePen.MapModel
 				case GlyphPartKind.FilledCircle:
                     if (circleDiam > 0) {
                         radius = circleDiam / 2;
-                        g.FillEllipse(color.Brush, point, radius, radius);
+                        g.FillEllipse(color.GetBrush(g).Brush, point, radius, radius);
                     }
 					break;
 				}
@@ -178,11 +184,21 @@ namespace PurplePen.MapModel
 			return false;
 		}
 
+        private static Matrix identityMatrix = new Matrix();
+
         internal void Draw(GraphicsTarget g, PointF pt, float angle, Matrix extraTransform, float[] gaps, SymColor color, RenderOptions renderOpts)
         {
             Debug.Assert(constructed);
 
-			if (! simple || gaps != null || !extraTransform.IsIdentity) {
+            if (simple && gaps == null && extraTransform == null)
+            {
+                if (color == parts[0].color) 
+                    DrawSimple(g, pt, renderOpts);
+            }
+            else {
+                if (extraTransform == null)
+                    extraTransform = identityMatrix;
+
                 object graphicsState = null;
 				for (int i = 0; i < parts.Length; ++i) {
 					if (parts[i].color == color) {
@@ -190,7 +206,9 @@ namespace PurplePen.MapModel
 						if (graphicsState == null) {
                             graphicsState = g.Save();
 
-                            Matrix matrix = GraphicsUtil.Multiply(GraphicsUtil.RotationMatrix(angle, new PointF(0,0)), GraphicsUtil.TranslationMatrix(pt.X, pt.Y));
+                            Matrix matrix = new Matrix();
+                            matrix.Translate(pt.X, pt.Y);
+                            matrix.RotateAt(angle, new PointF(0, 0));
                             if (extraTransform != null)
                                 matrix = GraphicsUtil.Multiply(extraTransform, matrix);
 
@@ -202,9 +220,6 @@ namespace PurplePen.MapModel
 
 				if (graphicsState != null)
 					g.Restore(graphicsState);
-			}
-			else if (color == parts[0].color) {
-				DrawSimple(g, pt, renderOpts);
 			}
 		}
 
@@ -225,7 +240,7 @@ namespace PurplePen.MapModel
              	// filled circle
                 if (parts[0].circleDiam > 0) {
                     float radius = parts[0].circleDiam / 2;
-                    g.FillEllipse(parts[0].color.Brush, pt, radius, radius);
+                    g.FillEllipse(parts[0].color.GetBrush(g).Brush, pt, radius, radius);
                 }
 			}
 		}

@@ -37,6 +37,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 #if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+#if WPF
 using System.Windows;
 using System.Windows.Media;
 #else
@@ -439,7 +445,7 @@ namespace PurplePen.MapModel
 #if WPF
             // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the pen.
             Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(transform);
+            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(transform));
 
             g.DrawingContext.DrawGeometry(null, pen, xformedGeometry);
 #else
@@ -505,7 +511,7 @@ namespace PurplePen.MapModel
 #if WPF
             // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the pen.
             Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(transform);
+            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(transform));
             g.DrawingContext.DrawGeometry(b, null, xformedGeometry);
 #else
             FillTransformedWithHoles(g, b, transform, null);
@@ -1821,7 +1827,7 @@ namespace PurplePen.MapModel
 #if WPF
             // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the brush.
             Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(matrix);
+            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(matrix));
             g.DrawingContext.DrawGeometry(brush, null, xformedGeometry);
 #else
             MainPath.FillTransformedWithHoles(g, brush, matrix, Holes);

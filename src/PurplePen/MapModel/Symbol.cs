@@ -36,6 +36,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 #if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+#if WPF
 using System.Windows.Media;
 #else
 using System.Drawing;
@@ -365,7 +371,8 @@ namespace PurplePen.MapModel
             sizeText = size;
 
             if (rotation != 0) {
-                Matrix mat = GraphicsUtil.RotationMatrix(rotation, adjustedLocation);
+                Matrix mat = new Matrix();
+                mat.RotateAt(rotation, adjustedLocation);
                 pts = GraphicsUtil.TransformPoints(pts, mat);
                 baselinePoint = GraphicsUtil.TransformPoint(baselinePoint, mat);
             }
@@ -417,7 +424,7 @@ namespace PurplePen.MapModel
         public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == fillColor) {
-                path.Fill(g, fillColor.Brush);
+                path.Fill(g, fillColor.GetBrush(g).Brush);
             }
         }
     }
@@ -465,9 +472,9 @@ namespace PurplePen.MapModel
         public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
-                Brush brush = GraphicsUtil.CreateSolidBrush(map.TransformColor(fillColor));
-                path.Fill(g, brush);
-                GraphicsUtil.DisposeBrush(brush);
+                IGraphicsBrush brush = g.CreateSolidBrush(map.TransformColor(fillColor));
+                path.Fill(g, brush.Brush);
+                brush.Dispose();
             }
         }
     }

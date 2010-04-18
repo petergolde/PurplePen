@@ -39,6 +39,12 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Text;
 #if WPF
+using PointF = System.Drawing.PointF;
+using RectangleF = System.Drawing.RectangleF;
+using SizeF = System.Drawing.SizeF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+#endif
+#if WPF
 using System.Windows.Media;
 #else
 using System.Drawing;
@@ -164,7 +170,8 @@ namespace PurplePen.MapModel
 
 		// Rotate a rectangle around a point, and return the new rectangle that bounds the corners of the rotated one.
 		public static RectangleF BoundsOfRotatedRectangle(RectangleF rect, PointF rotateAt, float angle) {
-            Matrix m = GraphicsUtil.RotationMatrix(angle, rotateAt);
+            Matrix m = new Matrix();
+            m.RotateAt(angle, rotateAt);
 			return BoundsOfTransformedRectangle(rect, m);
 		}
 
@@ -173,9 +180,10 @@ namespace PurplePen.MapModel
 		public static Matrix TransformInvertedRectangle(RectangleF source, RectangleF dest) {
 			SizeF sourceSize = source.Size, destSize = dest.Size;
 
-            Matrix m = GraphicsUtil.TranslationMatrix(-source.Left, -source.Top);
-            m = GraphicsUtil.Multiply(m, GraphicsUtil.ScalingMatrix(destSize.Width / sourceSize.Width, -destSize.Height / sourceSize.Height));
-            m = GraphicsUtil.Multiply(m, GraphicsUtil.TranslationMatrix(dest.Left, dest.Bottom));
+            Matrix m = new Matrix();
+            m.Translate(-source.Left, -source.Top);
+            m.Scale(destSize.Width / sourceSize.Width, -destSize.Height / sourceSize.Height, System.Drawing.Drawing2D.MatrixOrder.Append);
+            m.Translate(dest.Left, dest.Bottom, System.Drawing.Drawing2D.MatrixOrder.Append);
             return m;
 		}
 
