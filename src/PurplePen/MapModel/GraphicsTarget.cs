@@ -35,7 +35,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Drawing = System.Drawing;
+using SysDraw = System.Drawing;
+using SysDraw2D = System.Drawing.Drawing2D;
 #if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
@@ -89,13 +90,13 @@ namespace PurplePen.MapModel
         void PopClip();
 
         // Create paths.
-        IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, Drawing.Drawing2D.FillMode windingMode);
-        IGraphicsPath CreateMultiPath(IEnumerable<IEnumerable<GraphicsPathPart>> multiParts, Drawing.Drawing2D.FillMode windingMode);
+        IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, SysDraw2D.FillMode windingMode);
+        IGraphicsPath CreateMultiPath(IEnumerable<IEnumerable<GraphicsPathPart>> multiParts, SysDraw2D.FillMode windingMode);
 
         // Create brushes and pens
         IGraphicsBrush CreateSolidBrush(Color color);
         IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight);
-        IGraphicsPen CreatePen(IGraphicsBrush brush, float width, Drawing.Drawing2D.LineCap caps, Drawing.Drawing2D.LineJoin join, float miterLimit);
+        IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit);
 
         // Create font
         IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic);
@@ -116,7 +117,7 @@ namespace PurplePen.MapModel
         void FillRectangle(IGraphicsBrush brush, RectangleF rect);
 
         // Fill a polygon with a brush
-        void FillPolygon(IGraphicsBrush brush, PointF[] pts, Drawing.Drawing2D.FillMode windingMode);
+        void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode);
 
         // Draw text with upper-left corner of text at the given locations.
         void DrawText(string text, IGraphicsBrush brush, PointF upperLeft);
@@ -132,7 +133,7 @@ namespace PurplePen.MapModel
 
 
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
-    public struct GraphicsTarget
+    public class GraphicsTarget
     {
 #if WPF
         public DrawingContext DrawingContext;
@@ -143,42 +144,45 @@ namespace PurplePen.MapModel
             return new WPF_Brush(color);
         }
 
+#if false
+        GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
+        {
+            // Create a visual with the glyph to tile in it.
+            DrawingVisual visual = new DrawingVisual();
+            DrawingContext dc = visual.RenderOpen();
+            return new GraphicsBrushTarget(dc, visual, size, bitmapWidth, bitmapHeight);
+            GraphicsTarget grTarget = new GraphicsTarget(dc);
+        }
+#endif
+
         public GraphicsTarget(DrawingContext dc)
         {
             this.DrawingContext = dc;
             pushLevel = 0;
         }
 
-        public object Save()
-        {
-            return pushLevel;
-        }
-
-        public void Restore(object state)
-        {
-            int desiredLevel = (int) state;
-
-            if (pushLevel < desiredLevel)
-                throw new InvalidOperationException("GraphicsTarget.Restore done with invalid state");
-
-            while (pushLevel > desiredLevel) {
-                DrawingContext.Pop();
-                --pushLevel;
-            }
-        }
-
         // Prepend a transform to the graphics drawing target.
-        public void Transform(Matrix matrix)
+        public void PushTransform(Matrix matrix)
         {
             DrawingContext.PushTransform(new MatrixTransform(GraphicsUtil.GetWpfMatrix(matrix)));
             ++pushLevel;
         }
 
+        public void PopTransform()
+        {
+            DrawingContext.Pop();
+        }
+
         // Set a clip on the graphics drawing target.
-        public void SetClip(SymPathWithHoles path)
+        public void PushClip(SymPathWithHoles path)
         {
             DrawingContext.PushClip(path.Geometry);
             ++pushLevel;
+        }
+
+        public void PopClip()
+        {
+            DrawingContext.Pop();
         }
 
         // Draw an line with a pen.
@@ -205,10 +209,15 @@ namespace PurplePen.MapModel
             DrawingContext.DrawRectangle(null, pen, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
         }
 
-        // Fill a rectangle with a brush.
         public void FillRectangle(Brush brush, RectangleF rect)
         {
             DrawingContext.DrawRectangle(brush, null, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
+        }
+
+        // Fill a rectangle with a brush.
+        public void FillRectangle(IGraphicsBrush brush, RectangleF rect)
+        {
+            DrawingContext.DrawRectangle((brush as WPF_Brush).Brush, null, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
         }
 
         // Fill a polygon with a brush
@@ -225,7 +234,7 @@ namespace PurplePen.MapModel
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, Drawing.Drawing2D.FillMode windingMode)
+        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode)
         {
             Point[] points = new Point[pts.Length];
             for (int i = 0; i < pts.Length; ++i)
@@ -233,7 +242,7 @@ namespace PurplePen.MapModel
 
             PathSegment segment = new PolyLineSegment(points, true);
             PathFigure figure = new PathFigure(points[points.Length - 1], new PathSegment[] { segment }, true);
-            PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, windingMode == Drawing.Drawing2D.FillMode.Winding ? FillRule.Nonzero : FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
+            PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, windingMode == SysDraw2D.FillMode.Winding ? FillRule.Nonzero : FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
             DrawingContext.DrawGeometry((brush as WPF_Brush).Brush, null, geometry);
         }
 
@@ -241,38 +250,55 @@ namespace PurplePen.MapModel
 #else
         public Graphics Graphics;
 
+        private Stack<GraphicsState> stateStack;
+
         public IGraphicsBrush CreateSolidBrush(Color color)
         {
             return new GDIPlus_Brush(color);
         }
 
+        public GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
+        {
+                // Create a new bitmap and fill it transparent.
+                Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
+                Graphics g = Graphics.FromImage(bitmap);
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.SmoothingMode = SmoothingMode.HighQuality;
+                g.FillRectangle(Brushes.Transparent, 0, 0, bitmap.Width, bitmap.Height);
+                g.ScaleTransform((float)bitmapWidth / size.Width, (float)bitmapHeight / size.Height);
+
+                return new GraphicsBrushTarget(g, bitmap, size);
+        }
         public GraphicsTarget(Graphics g)
         {
             this.Graphics = g;
-        }
-
-        // Save state of transform, clip region.
-        public object Save()
-        {
-            return Graphics.Save();
-        }
-
-        // Restore state
-        public void Restore(object state)
-        {
-            Graphics.Restore((GraphicsState) state);
+            stateStack = new Stack<GraphicsState>();
         }
 
         // Prepend a transform to the graphics drawing target.
-        public void Transform(Matrix matrix)
+        public void PushTransform(Matrix matrix)
         {
+            stateStack.Push(Graphics.Save());
             Graphics.MultiplyTransform(matrix, MatrixOrder.Prepend);
         }
 
-        // Set a clip on the graphics drawing target.
-        public void SetClip(SymPathWithHoles path)
+        // Pop the transform
+        public void PopTransform()
         {
+            Graphics.Restore(stateStack.Pop());
+        }
+
+        // Set a clip on the graphics drawing target.
+        public void PushClip(SymPathWithHoles path)
+        {
+            stateStack.Push(Graphics.Save());
             Graphics.IntersectClip(new Region(path.GetPath()));
+        }
+
+        // Pop the clip.
+        public void PopClip()
+        {
+            Graphics.Restore(stateStack.Pop());
         }
 
         // Draw an line with a pen.
@@ -305,20 +331,98 @@ namespace PurplePen.MapModel
             Graphics.FillRectangle(brush, rect.X, rect.Y, rect.Width, rect.Height);
         }
 
-        // Fill a polygon with a brush
-        public void FillPolygon(Brush brush, PointF[] pts, bool windingMode)
+        // Fill a rectangle with a brush.
+        public void FillRectangle(IGraphicsBrush brush, RectangleF rect)
         {
-            Graphics.FillPolygon(brush, pts, windingMode ? FillMode.Winding : FillMode.Alternate);
+            Graphics.FillRectangle((brush as GDIPlus_Brush).Brush, rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, FillMode windingMode)
+        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode)
         {
             Graphics.FillPolygon((brush as GDIPlus_Brush).Brush, pts, windingMode);
         }
 
 #endif
     }
+
+#if WPF
+    public class GraphicsBrushTarget : GraphicsTarget
+    {
+        private DrawingVisual visual;
+        private SizeF size;
+        private int bitmapWidth, bitmapHeight;
+
+        public GraphicsBrushTarget(DrawingContext dc, DrawingVisual visual, SizeF size, int bitmapWidth, int bitmapHeight)
+        : base(dc)
+        {
+            this.visual = visual;
+            this.size = size;
+            this.bitmapWidth = bitmapWidth;
+            this.bitmapHeight = bitmapHeight;
+        }
+
+        public IGraphicsBrush FinishPatternBrush()
+        {
+            DrawingContext.Close();
+
+            // Get a drawing from the drawingvisual
+            Drawing drawing = visual.Drawing;
+            drawing.Freeze();
+
+            // Create a brush from the drawing.
+            DrawingBrush brush = new DrawingBrush(drawing);
+            brush.Stretch = Stretch.Fill;
+            brush.TileMode = TileMode.Tile;
+            brush.ViewboxUnits = BrushMappingMode.Absolute;
+            brush.ViewportUnits = BrushMappingMode.Absolute;
+            brush.Viewbox = brush.Viewport = new Rect(0, 0, size.Width, size.Height);
+
+            // Set the minimum and maximum relative sizes for regenerating the tiled brush.
+            // The tiled brush will be regenerated when the size is
+            //   0.5x, 0.25x (and so forth)
+            // and
+            //   2x, 4x, 8x (and so forth)
+            // of the original size.
+            System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMinimum(brush, 0.5);
+            System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMaximum(brush, 2.0);
+
+            // Set the caching hint option for the brush.
+            System.Windows.Media.RenderOptions.SetCachingHint(brush, CachingHint.Cache);
+
+            // Freeze the brush.
+            brush.Freeze();
+            return new WPF_Brush(brush);
+        }
+    }
+#else
+    public class GraphicsBrushTarget : GraphicsTarget
+    {
+        private Bitmap bitmap;
+        private SizeF size;
+
+        public GraphicsBrushTarget(Graphics g, Bitmap bitmap, SizeF size)
+        : base(g)
+        {
+            this.bitmap = bitmap;
+            this.size = size;
+        }
+
+        public IGraphicsBrush FinishPatternBrush()
+        {
+            // Create a TextureBrush on the bitmap.
+            TextureBrush brush = new TextureBrush(bitmap);
+
+            // Scale and the texture brush.
+            brush.ScaleTransform(size.Width / (float)bitmap.Width, size.Height / (float)bitmap.Height);
+
+            // Dispose of the graphics.
+            Graphics.Dispose();
+            return new GDIPlus_Brush(brush);
+        }
+    }
+
+#endif
 
 #if WPF
     public class WPF_Brush : IGraphicsBrush
@@ -329,6 +433,11 @@ namespace PurplePen.MapModel
         {
             brush = new SolidColorBrush(color);
             brush.Freeze();
+        }
+
+        public WPF_Brush(Brush brush)
+        {
+            this.brush = brush;
         }
 
         public Brush Brush
@@ -354,6 +463,11 @@ namespace PurplePen.MapModel
         public GDIPlus_Brush(Color color)
         {
             brush = new SolidBrush(color);
+        }
+
+        public GDIPlus_Brush(Brush brush)
+        {
+            this.brush = brush;
         }
 
         public void Dispose()

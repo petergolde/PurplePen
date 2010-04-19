@@ -1400,17 +1400,16 @@ namespace PurplePen.MapModel
         // Draw the hatching into the interior of the SymPath.
         void DrawHatching(GraphicsTarget g, SymPathWithHoles path, float angle, RenderOptions renderOpts)
         {
-            object graphicsState = g.Save();
+            // Set the clipping region to draw only inside the area.
+            g.PushClip(path);
 
-            try {
-                // Set the clipping region to draw only inside the area.
-                g.SetClip(path);
+            // use a transform to rotate and then draw hatching.
+            Matrix matrix = new Matrix();
+            matrix.RotateAt(hatchAngle1 + angle, new PointF(0, 0));
+            g.PushTransform(matrix);
 
-                // use a transform to rotate and then draw hatching.
-                Matrix matrix = new Matrix();
-                matrix.RotateAt(hatchAngle1 + angle, new PointF(0, 0));
-                g.Transform(matrix);
-
+            try
+            {
                 // Get the correct bounding rect.
                 RectangleF bounding = Util.BoundsOfRotatedRectangle(path.BoundingBox, new PointF(), -(hatchAngle1 + angle));
 
@@ -1423,13 +1422,21 @@ namespace PurplePen.MapModel
 
                     matrix = new Matrix();
                     matrix.RotateAt(hatchAngle2 - hatchAngle1, new PointF(0, 0));
-                    g.Transform(matrix);
-                    DrawHatchLines(g, hatchPen, hatchSpacing, bounding, renderOpts);
+                    g.PushTransform(matrix);
+                    try
+                    {
+                        DrawHatchLines(g, hatchPen, hatchSpacing, bounding, renderOpts);
+                    }
+                    finally
+                    {
+                        g.PopTransform();
+                    }
                 }
             }
             finally {
                 // restore the clip region and the transform
-                g.Restore(graphicsState);
+                g.PopTransform();
+                g.PopClip();
             }
         }
 
@@ -1452,17 +1459,16 @@ namespace PurplePen.MapModel
             Debug.Assert(brush != null);
 
             if (angle != 0.0F) {
-                object graphicsState = g.Save();
+                // Set the clipping region to draw only inside the area.
+                g.PushClip(path);
 
-                try {
-                    // Set the clipping region to draw only inside the area.
-                    g.SetClip(path);
+                // use a transform to rotate.
+                Matrix matrix = new Matrix();
+                matrix.RotateAt(angle, new PointF(0, 0));
+                g.PushTransform(matrix);
 
-                    // use a transform to rotate.
-                    Matrix matrix = new Matrix();
-                    matrix.RotateAt(angle, new PointF(0, 0));
-                    g.Transform(matrix);
-
+                try
+                {
                     // Get the correct bounding rect.
                     RectangleF bounding = Util.BoundsOfRotatedRectangle(path.BoundingBox, new PointF(), -angle);
 
@@ -1470,7 +1476,8 @@ namespace PurplePen.MapModel
                 }
                 finally {
                     // restore the clip region and the transform
-                    g.Restore(graphicsState);
+                    g.PopTransform();
+                    g.PopClip();
                 }
             }
             else {
@@ -1613,17 +1620,16 @@ namespace PurplePen.MapModel
         // Draw the pattern (at the given angle) inside the path.
         void DrawPattern(GraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
-            object graphicsState = g.Save();
+            // Set the clipping region to draw only inside the area.
+            g.PushClip(path);
 
-            try {
-                // Set the clipping region to draw only inside the area.
-                g.SetClip(path);
+            // use a transform to rotate 
+            Matrix matrix = new Matrix();
+            matrix.RotateAt(patternAngle + angle, new PointF(0, 0));
+            g.PushTransform(matrix);
 
-                // use a transform to rotate 
-                Matrix matrix = new Matrix();
-                matrix.RotateAt(patternAngle + angle, new PointF(0, 0));
-                g.Transform(matrix);
-
+            try
+            {
                 // Get the correct bounding rect.
                 RectangleF bounding = Util.BoundsOfRotatedRectangle(path.BoundingBox, new PointF(), -(patternAngle + angle));
 
@@ -1631,7 +1637,8 @@ namespace PurplePen.MapModel
             }
             finally {
                 // restore the clip region and the transform
-                g.Restore(graphicsState);
+                g.PopTransform();
+                g.PopClip();
             }
         }
 
@@ -2122,14 +2129,12 @@ namespace PurplePen.MapModel
                 CreateObjects();
 
             // Move location to draw at to the origin.
-            object graphicsState = g.Save();
-
             Matrix matrix = new Matrix();
             matrix.Translate(location.X, location.Y);
             matrix.Scale(1, -1); // Reverse Y direction so text is correct way around.
             if (angle != 0)
                 matrix.RotateAt(-angle, new PointF(0,0));
-            g.Transform(matrix);
+            g.PushTransform(matrix);
 
             try {
                 // Draw all the lines of text.
@@ -2206,7 +2211,7 @@ namespace PurplePen.MapModel
                 DrawFramingRectangle(g, lineWidths, fullWidth, color, baselineOfLine);
             }
             finally {
-                g.Restore(graphicsState);
+                g.PopTransform();
             }
         }
 
@@ -2540,21 +2545,19 @@ namespace PurplePen.MapModel
             PointF topAscentPoint = new PointF(0, -FontAscent);    // Drawing is relative to top of char, we want to draw at baseline.
 
             foreach (GraphemePlacement grapheme in graphemeList) {
-                object graphicsState;
-                graphicsState = g.Save();
+                // Move location to draw at to the origin, set angle for drawing text.
+                Matrix matrix = new Matrix();
+                matrix.Translate(grapheme.pointStart.X, grapheme.pointStart.Y);
+                matrix.Scale(1, -1);      // Reverse Y so text is correct way aroun
+                matrix.RotateAt(-grapheme.angle, new PointF(0,0));
+                g.PushTransform(matrix);
 
-                try {
-                    // Move location to draw at to the origin, set angle for drawing text.
-                    Matrix matrix = new Matrix();
-                    matrix.Translate(grapheme.pointStart.X, grapheme.pointStart.Y);
-                    matrix.Scale(1, -1);      // Reverse Y so text is correct way aroun
-                    matrix.RotateAt(-grapheme.angle, new PointF(0,0));
-                    g.Transform(matrix);
-
+                try
+                {
                     DrawStringWithEffects(g, color, grapheme.grapheme, topAscentPoint);
                 }
                 finally {
-                    g.Restore(graphicsState);  // restore transform
+                    g.PopTransform();  // restore transform
                 }
             }
         }

@@ -199,12 +199,13 @@ namespace PurplePen.MapModel
                 if (extraTransform == null)
                     extraTransform = identityMatrix;
 
-                object graphicsState = null;
+                bool transformApplied = false;
+
 				for (int i = 0; i < parts.Length; ++i) {
 					if (parts[i].color == color) {
                         // Establish transformation matrix.
-						if (graphicsState == null) {
-                            graphicsState = g.Save();
+						if (!transformApplied) {
+                            transformApplied = true;
 
                             Matrix matrix = new Matrix();
                             matrix.Translate(pt.X, pt.Y);
@@ -212,14 +213,14 @@ namespace PurplePen.MapModel
                             if (extraTransform != null)
                                 matrix = GraphicsUtil.Multiply(extraTransform, matrix);
 
-                            g.Transform(matrix);
+                            g.PushTransform(matrix);
                         }
                         parts[i].Draw(g, gaps, renderOpts);						
 					}
 				}
 
-				if (graphicsState != null)
-					g.Restore(graphicsState);
+                if (transformApplied)
+                    g.PopTransform();
 			}
 		}
 
