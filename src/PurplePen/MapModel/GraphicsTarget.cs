@@ -144,16 +144,13 @@ namespace PurplePen.MapModel
             return new WPF_Brush(color);
         }
 
-#if false
-        GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
+        public GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
         {
             // Create a visual with the glyph to tile in it.
             DrawingVisual visual = new DrawingVisual();
             DrawingContext dc = visual.RenderOpen();
             return new GraphicsBrushTarget(dc, visual, size, bitmapWidth, bitmapHeight);
-            GraphicsTarget grTarget = new GraphicsTarget(dc);
         }
-#endif
 
         public GraphicsTarget(DrawingContext dc)
         {
@@ -262,9 +259,10 @@ namespace PurplePen.MapModel
                 // Create a new bitmap and fill it transparent.
                 Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
                 Graphics g = Graphics.FromImage(bitmap);
-                g.CompositingMode = CompositingMode.SourceCopy;
-                g.SmoothingMode = SmoothingMode.HighQuality;
+                //g.CompositingMode = CompositingMode.SourceCopy;
+                g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.FillRectangle(Brushes.Transparent, 0, 0, bitmap.Width, bitmap.Height);
+                g.TranslateTransform((float)bitmapWidth / 2F, (float)bitmapHeight / 2F);
                 g.ScaleTransform((float)bitmapWidth / size.Width, (float)bitmapHeight / size.Height);
 
                 return new GraphicsBrushTarget(g, bitmap, size);
@@ -362,7 +360,7 @@ namespace PurplePen.MapModel
             this.bitmapHeight = bitmapHeight;
         }
 
-        public IGraphicsBrush FinishPatternBrush()
+        public IGraphicsBrush FinishPatternBrush(float rotationAngle)
         {
             DrawingContext.Close();
 
@@ -376,7 +374,8 @@ namespace PurplePen.MapModel
             brush.TileMode = TileMode.Tile;
             brush.ViewboxUnits = BrushMappingMode.Absolute;
             brush.ViewportUnits = BrushMappingMode.Absolute;
-            brush.Viewbox = brush.Viewport = new Rect(0, 0, size.Width, size.Height);
+            brush.Viewbox = brush.Viewport = new Rect(-size.Width / 2, -size.Height / 2, size.Width, size.Height);
+            brush.Transform = new RotateTransform(rotationAngle);
 
             // Set the minimum and maximum relative sizes for regenerating the tiled brush.
             // The tiled brush will be regenerated when the size is
@@ -408,20 +407,21 @@ namespace PurplePen.MapModel
             this.size = size;
         }
 
-        public IGraphicsBrush FinishPatternBrush()
+        public IGraphicsBrush FinishPatternBrush(float angle)
         {
             // Create a TextureBrush on the bitmap.
             TextureBrush brush = new TextureBrush(bitmap);
 
             // Scale and the texture brush.
+            brush.RotateTransform(angle);
             brush.ScaleTransform(size.Width / (float)bitmap.Width, size.Height / (float)bitmap.Height);
+            brush.TranslateTransform(-bitmap.Width / 2F, -bitmap.Height / 2F);
 
             // Dispose of the graphics.
             Graphics.Dispose();
             return new GDIPlus_Brush(brush);
         }
     }
-
 #endif
 
 #if WPF
