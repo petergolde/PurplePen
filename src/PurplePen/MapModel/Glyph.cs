@@ -119,7 +119,7 @@ namespace PurplePen.MapModel
 				case GlyphPartKind.FilledCircle:
                     if (circleDiam > 0) {
                         radius = circleDiam / 2;
-                        g.FillEllipse(color.GetBrush(g).Brush, point, radius, radius);
+                        g.FillEllipse(color.GetBrush(g), point, radius, radius);
                     }
 					break;
 				}
@@ -241,7 +241,7 @@ namespace PurplePen.MapModel
              	// filled circle
                 if (parts[0].circleDiam > 0) {
                     float radius = parts[0].circleDiam / 2;
-                    g.FillEllipse(parts[0].color.GetBrush(g).Brush, pt, radius, radius);
+                    g.FillEllipse(parts[0].color.GetBrush(g), pt, radius, radius);
                 }
 			}
 		}

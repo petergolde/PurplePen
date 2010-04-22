@@ -195,9 +195,9 @@ namespace PurplePen.MapModel
         }
 
         // Fill an ellipse with a pen.
-        public void FillEllipse(Brush brush, PointF center, float radiusX, float radiusY)
+        public void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY)
         {
-            DrawingContext.DrawEllipse(brush, null, new Point(center.X, center.Y), radiusX, radiusY);
+            DrawingContext.DrawEllipse(brush.Brush, null, new Point(center.X, center.Y), radiusX, radiusY);
         }
 
         // Draw a rectangle with a pen.
@@ -309,6 +309,12 @@ namespace PurplePen.MapModel
         public void DrawEllipse(Pen pen, PointF center, float radiusX, float radiusY)
         {
             Graphics.DrawEllipse(pen, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+        }
+
+        // Fill an ellipse with a pen.
+        public void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY)
+        {
+            Graphics.FillEllipse(brush.Brush, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
         }
 
         // Fill an ellipse with a pen.
