@@ -431,23 +431,23 @@ namespace PurplePen.MapModel
             return new SymPath(pointsXform, kinds, startStopFlags, lastPointSynthesized);
         }
 
-        public void Draw(GraphicsTarget g, Pen pen)
+        public void Draw(GraphicsTarget g, IGraphicsPen pen)
         {
 #if WPF
-            g.DrawingContext.DrawGeometry(null, pen, Geometry);
+            g.DrawingContext.DrawGeometry(null, pen.Pen, Geometry);
 #else
             DrawCore(g, pen, points);
 #endif
         }
 
-        public void DrawTransformed(GraphicsTarget g, Pen pen, Matrix transform)
+        public void DrawTransformed(GraphicsTarget g, IGraphicsPen pen, Matrix transform)
         {
 #if WPF
             // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the pen.
             Geometry xformedGeometry = Geometry.Clone();
             xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(transform));
 
-            g.DrawingContext.DrawGeometry(null, pen, xformedGeometry);
+            g.DrawingContext.DrawGeometry(null, pen.Pen, xformedGeometry);
 #else
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
             DrawCore(g, pen, pointsXform);
@@ -455,7 +455,7 @@ namespace PurplePen.MapModel
         }
 
 #if !WPF
-        void DrawCore(GraphicsTarget g, Pen pen, PointF[] points) 
+        void DrawCore(GraphicsTarget g, IGraphicsPen pen, PointF[] points) 
         {
             try {
                 if (isClosedCurve) {
@@ -463,30 +463,30 @@ namespace PurplePen.MapModel
                     // to look correct.
                     if (!anyBeziers) {
                         // Draw a polygon.
-                        g.Graphics.DrawPolygon(pen, points);
+                        g.Graphics.DrawPolygon(pen.Pen, points);
                     }
                     else {
                         // use a graphics path.
                         GraphicsPath grPath = new GraphicsPath();
                         AddToGraphicsPath(grPath, this, points);
                         grPath.CloseFigure();
-                        g.Graphics.DrawPath(pen, grPath);
+                        g.Graphics.DrawPath(pen.Pen, grPath);
                         grPath.Dispose();
                     }
                 }
                 else {
                     if (!anyBeziers) {
-                        g.Graphics.DrawLines(pen, points);
+                        g.Graphics.DrawLines(pen.Pen, points);
                     }
                     else if (allBeziers) {
-                        g.Graphics.DrawBeziers(pen, points);
+                        g.Graphics.DrawBeziers(pen.Pen, points);
                     }
                     else {
                         // A mixture of straight lines and beziers. Must use a GraphicsPath to get the 
                         // corners to look right.
                         GraphicsPath grPath = new GraphicsPath();
                         AddToGraphicsPath(grPath, this, points);
-                        g.Graphics.DrawPath(pen, grPath);
+                        g.Graphics.DrawPath(pen.Pen, grPath);
                         grPath.Dispose();
                     }
                 }
@@ -639,27 +639,27 @@ namespace PurplePen.MapModel
         // Draw a dashed lines. The dashLengths array contains the dash/gap lengths for the whole line. If we reach 
         // the end of this array, we wrap around. The variable offsetToStart indicates how far into the array to 
         // start.
-        public void DrawDashed(GraphicsTarget g, Pen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashed(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, 0, 1);
         }
 
-        public void DrawDashedBizzarro(GraphicsTarget g, Pen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashedBizzarro(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, 0, 1);
         }
 
-        public void DrawDashedOffset(GraphicsTarget g, Pen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffset(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, offsetRight, miterLimit);
         }
 
-        public void DrawDashedOffsetBizzarro(GraphicsTarget g, Pen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffsetBizzarro(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, offsetRight, miterLimit);
         }
 
-        private void DrawDashedCore(GraphicsTarget g, Pen pen, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
+        private void DrawDashedCore(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
         {
             double nextLength = dashLengths[0];  // distance to next dash beginning/end
             int curDash = 0;			// current index into dashLengths array.
@@ -723,7 +723,7 @@ namespace PurplePen.MapModel
                         geoContext.BeginFigure(new Point(pts[0].X, pts[0].Y), false, false);
                         geoContext.PolyLineTo(new PointList(pts, 1, pts.Length - 1), true, false);
 #else
-                        g.Graphics.DrawLines(pen, pts);
+                        g.Graphics.DrawLines(pen.Pen, pts);
 #endif
                     }
 
@@ -760,13 +760,13 @@ namespace PurplePen.MapModel
                 geoContext.BeginFigure(new Point(pts[0].X, pts[0].Y), false, false);
                 geoContext.PolyLineTo(new PointList(pts, 1, pts.Length - 1), true, false);
 #else
-                g.Graphics.DrawLines(pen, pts);
+                g.Graphics.DrawLines(pen.Pen, pts);
 #endif
             }
 
 #if WPF
             geoContext.Close();
-            g.DrawingContext.DrawGeometry(null, pen, geo);
+            g.DrawingContext.DrawGeometry(null, pen.Pen, geo);
 #endif
         }
 
@@ -1799,7 +1799,7 @@ namespace PurplePen.MapModel
 
 #endif
 
-        public void Draw(GraphicsTarget g, Pen pen) {
+        public void Draw(GraphicsTarget g, IGraphicsPen pen) {
             MainPath.Draw(g, pen);
             if (Holes != null) {
                 foreach (SymPath hole in Holes)
@@ -1807,7 +1807,8 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void DrawTransformed(GraphicsTarget g, Pen pen, Matrix matrix) {
+        public void DrawTransformed(GraphicsTarget g, IGraphicsPen pen, Matrix matrix)
+        {
             MainPath.DrawTransformed(g, pen, matrix);
             if (Holes != null) {
                 foreach (SymPath hole in Holes)
@@ -1815,11 +1816,11 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void Fill(GraphicsTarget g, Brush brush) {
+        public void Fill(GraphicsTarget g, IGraphicsBrush brush) {
 #if WPF
-            g.DrawingContext.DrawGeometry(brush, null, Geometry);
+            g.DrawingContext.DrawGeometry(brush.Brush, null, Geometry);
 #else
-            MainPath.FillWithHoles(g, brush, Holes);
+            MainPath.FillWithHoles(g, brush.Brush, Holes);
 #endif
         }
 

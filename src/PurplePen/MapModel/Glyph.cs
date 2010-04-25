@@ -65,7 +65,7 @@ namespace PurplePen.MapModel
             public SymPathWithHoles areaPath;  // for kind==Area
 			public PointF point;      // for kind==Circle or FilledCircle
 
-			internal Pen pen;		
+			internal IGraphicsPen pen;		
 
             // Draw this glyph part. gaps is used only for Circle parts, and is a set of gaps in the circle in degrees.
 			public void Draw(GraphicsTarget g, float[] gaps, RenderOptions renderOpts) {
@@ -75,20 +75,20 @@ namespace PurplePen.MapModel
 				case GlyphPartKind.Line:
                     if (lineWidth > 0 && path.Length > 0) {
                         if (pen == null) {
-                            pen = GraphicsUtil.CreateSolidPen(color.ColorValue, lineWidth, lineStyle);
+                            pen = GraphicsUtil.CreateSolidPen(g, color.ColorValue, lineWidth, lineStyle);
                         }
                         path.Draw(g, pen);
                     }
 					break;
 
 				case GlyphPartKind.Area:
-					areaPath.Fill(g, color.GetBrush(g).Brush);
+					areaPath.Fill(g, color.GetBrush(g));
 					break;
 
 				case GlyphPartKind.Circle:
                     if (lineWidth > 0 && circleDiam > lineWidth) {
                         if (pen == null) {
-                            pen = GraphicsUtil.CreateSolidPen(color.ColorValue, lineWidth, LineStyle.Mitered);
+                            pen = GraphicsUtil.CreateSolidPen(g, color.ColorValue, lineWidth, LineStyle.Mitered);
                         }
 
                         radius = (circleDiam - lineWidth) / 2;
@@ -107,9 +107,9 @@ namespace PurplePen.MapModel
                                 ArcSegment segment = new ArcSegment(ptEnd, new Size(radius, radius), 0, ((endArc - startArc + 360.0) % 360.0) > 180.0, SweepDirection.Clockwise, true);
                                 PathFigure figure = new PathFigure(ptStart, new PathSegment[] { segment }, false);
                                 PathGeometry geometry = new PathGeometry(new PathFigure[] { figure });
-                                g.DrawingContext.DrawGeometry(null, pen, geometry);
+                                g.DrawingContext.DrawGeometry(null, pen.Pen, geometry);
 #else
-                                g.Graphics.DrawArc(pen, rect, startArc, (float) ((endArc - startArc + 360.0) % 360.0));
+                                g.Graphics.DrawArc(pen.Pen, rect, startArc, (float) ((endArc - startArc + 360.0) % 360.0));
 #endif
                             }
                         }
@@ -151,9 +151,8 @@ namespace PurplePen.MapModel
 
 			public void FreeGDIObjects() {
 				if (pen != null) {
-					Pen p = this.pen;
+					pen.Dispose();
 					this.pen = null;
-                    GraphicsUtil.DisposePen(p);
 				}
 			}
 		}
@@ -232,7 +231,7 @@ namespace PurplePen.MapModel
 			if (parts[0].kind == GlyphPartKind.Circle) {
                 if (parts[0].lineWidth > 0 && parts[0].circleDiam > 0) {
                     if (parts[0].pen == null)
-                        parts[0].pen = GraphicsUtil.CreateSolidPen(parts[0].color.ColorValue, parts[0].lineWidth, LineStyle.Mitered);
+                        parts[0].pen = GraphicsUtil.CreateSolidPen(g, parts[0].color.ColorValue, parts[0].lineWidth, LineStyle.Mitered);
                     float radius = (parts[0].circleDiam - parts[0].lineWidth) / 2;
                     g.DrawEllipse(parts[0].pen, pt, radius, radius);
                 }

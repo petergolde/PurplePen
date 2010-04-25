@@ -43,6 +43,8 @@ using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
+using LineJoin = System.Drawing.Drawing2D.LineJoin;
+using LineCap = System.Drawing.Drawing2D.LineCap;
 #endif
 #if WPF
 using System.Windows.Media;
@@ -103,7 +105,7 @@ namespace PurplePen.MapModel
         bool boundsAccurate = false;          // Are the map bounds accurate?
         RectangleF bounds;                        // If boundsAccurate is true, the bounds are accurate.
 
-        Pen boundsPen;                          // pen for drawing symbol bounds.
+        IGraphicsPen boundsPen;                          // pen for drawing symbol bounds.
 
 
         OcadSetup ocadSetupStructure;    // An OCAD setup structure to preserve.
@@ -606,7 +608,7 @@ namespace PurplePen.MapModel
             GraphicsTarget grTarget = new GraphicsTarget(dc);
 
             if (renderOpts.showSymbolBounds)
-                boundsPen = GraphicsUtil.CreateSolidPen(Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
+                boundsPen = GraphicsUtil.CreateSolidPen(grTarget, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
 
             // Draw the image layer.
             DrawColor(grTarget, null, rect, true, renderOpts);
@@ -617,7 +619,7 @@ namespace PurplePen.MapModel
             }
 
             if (renderOpts.showSymbolBounds)
-                GraphicsUtil.DisposePen(boundsPen);
+                boundsPen.Dispose();
 
             Trace.Unindent();
         }
@@ -650,7 +652,7 @@ namespace PurplePen.MapModel
                 g.TextRenderingHint = TextRenderingHint.AntiAlias;
 
                 if (renderOpts.showSymbolBounds)
-                    boundsPen = new Pen(Color.FromArgb(100, Color.Red), 0);
+                    boundsPen = grTarget.CreatePen(Color.FromArgb(100, Color.Red), 0, LineCap.Flat, LineJoin.Miter, 4);
 
                 // Draw the image layer.
                 DrawColor(grTarget, null, rect, clipRegionIsRectangle, renderOpts);

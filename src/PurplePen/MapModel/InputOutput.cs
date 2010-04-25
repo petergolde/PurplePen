@@ -34,12 +34,6 @@
 
 using System;
 using System.IO;
-#if WPF
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-#endif
 
 namespace PurplePen.MapModel
 {

@@ -43,6 +43,8 @@ using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using WpfMatrix = System.Windows.Media.Matrix;
+using LineJoin = System.Drawing.Drawing2D.LineJoin;
+using LineCap = System.Drawing.Drawing2D.LineCap;
 #endif
 #if WPF
 using System.Windows;
@@ -60,7 +62,10 @@ namespace PurplePen.MapModel
     }
 
     public interface IGraphicsPen : IDisposable
-    { }
+    {
+        Pen Pen { get; }
+    }
+
     public interface IGraphicsPath : IDisposable
     { }
     public interface IGraphicsFont : IDisposable
@@ -77,6 +82,22 @@ namespace PurplePen.MapModel
             this.Kind = kind;
             this.Points = points;
         }
+    }
+
+    public interface ITextFaceMetrics : IDisposable
+    {
+        float EmHeight { get; }
+        float Ascent { get; }
+        float Descent { get; }
+        float CapHeight { get; }
+        float SpaceWidth { get; }
+        float GetTextWidth(string text);
+    }
+
+    public interface ITextMetrics : IDisposable
+    {
+        ITextFaceMetrics GetTextFaceMetrics(string familyName, float emHeight, bool bold, bool italic);
+        bool TextFaceIsInstalled(string familyName);
     }
 
     public interface IGraphicsTarget_X: IDisposable
@@ -97,6 +118,7 @@ namespace PurplePen.MapModel
         IGraphicsBrush CreateSolidBrush(Color color);
         IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight);
         IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit);
+        IGraphicsPen CreatePen(Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit);
 
         // Create font
         IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic);
@@ -120,10 +142,10 @@ namespace PurplePen.MapModel
         void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode);
 
         // Draw text with upper-left corner of text at the given locations.
-        void DrawText(string text, IGraphicsBrush brush, PointF upperLeft);
+        void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, PointF upperLeft);
 
         // Draw text with upper-left corner of text at upper-left corner of rectangle, clipped.
-        void DrawClippedText(string text, IGraphicsBrush brush, RectangleF rect);
+        void DrawClippedText(string text, IGraphicsFont font, IGraphicsBrush brush, RectangleF rect);
     }
 
     public interface IBrushTarget: IGraphicsTarget_X
@@ -144,6 +166,50 @@ namespace PurplePen.MapModel
             return new WPF_Brush(color);
         }
 
+        public IGraphicsPen CreatePen(Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        {
+            return CreatePen(CreateSolidBrush(color), width, caps, join, miterLimit);
+        }
+
+        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        {
+            Pen pen = new Pen((brush as WPF_Brush).Brush, width);
+            
+            switch (caps)
+	        {
+                case System.Drawing.Drawing2D.LineCap.Flat:
+                    pen.StartLineCap = pen.EndLineCap = PenLineCap.Flat;
+                    break;
+                case System.Drawing.Drawing2D.LineCap.Round:
+                    pen.StartLineCap = pen.EndLineCap = PenLineCap.Round;
+                    break;
+                case System.Drawing.Drawing2D.LineCap.Square:
+                    pen.StartLineCap = pen.EndLineCap = PenLineCap.Square;
+                    break;
+                default:
+                    throw new ArgumentException("bad line cap", "caps");
+	        }
+
+            switch (join)
+            {
+                case System.Drawing.Drawing2D.LineJoin.Bevel:
+                    pen.LineJoin = PenLineJoin.Bevel;
+                    break;
+                case System.Drawing.Drawing2D.LineJoin.Miter:
+                    pen.LineJoin = PenLineJoin.Miter;
+                    pen.MiterLimit = miterLimit;
+                    break;
+                case System.Drawing.Drawing2D.LineJoin.Round:
+                    pen.LineJoin = PenLineJoin.Round;
+                    break;
+                default:
+                    throw new ArgumentException("bad line join", "join");
+            }
+
+            pen.Freeze();
+            return new WPF_Pen(pen);
+        }
+
         public GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
         {
             // Create a visual with the glyph to tile in it.
@@ -161,7 +227,7 @@ namespace PurplePen.MapModel
         // Prepend a transform to the graphics drawing target.
         public void PushTransform(Matrix matrix)
         {
-            DrawingContext.PushTransform(new MatrixTransform(GraphicsUtil.GetWpfMatrix(matrix)));
+            DrawingContext.PushTransform(new MatrixTransform(GetWpfMatrix(matrix)));
             ++pushLevel;
         }
 
@@ -183,15 +249,15 @@ namespace PurplePen.MapModel
         }
 
         // Draw an line with a pen.
-        public void DrawLine(Pen pen, PointF start, PointF finish)
+        public void DrawLine(IGraphicsPen pen, PointF start, PointF finish)
         {
-            DrawingContext.DrawLine(pen, new Point(start.X, start.Y), new Point(finish.X, finish.Y));
+            DrawingContext.DrawLine((pen as WPF_Pen).Pen, new Point(start.X, start.Y), new Point(finish.X, finish.Y));
         }
 
         // Draw an ellipse with a pen.
-        public void DrawEllipse(Pen pen, PointF center, float radiusX, float radiusY)
+        public void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY)
         {
-            DrawingContext.DrawEllipse(null, pen, new Point(center.X, center.Y), radiusX, radiusY);
+            DrawingContext.DrawEllipse(null, (pen as WPF_Pen).Pen, new Point(center.X, center.Y), radiusX, radiusY);
         }
 
         // Fill an ellipse with a pen.
@@ -201,14 +267,9 @@ namespace PurplePen.MapModel
         }
 
         // Draw a rectangle with a pen.
-        public void DrawRectangle(Pen pen, RectangleF rect)
+        public void DrawRectangle(IGraphicsPen pen, RectangleF rect)
         {
-            DrawingContext.DrawRectangle(null, pen, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
-        }
-
-        public void FillRectangle(Brush brush, RectangleF rect)
-        {
-            DrawingContext.DrawRectangle(brush, null, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
+            DrawingContext.DrawRectangle(null, (pen as WPF_Pen).Pen, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
         }
 
         // Fill a rectangle with a brush.
@@ -243,6 +304,11 @@ namespace PurplePen.MapModel
             DrawingContext.DrawGeometry((brush as WPF_Brush).Brush, null, geometry);
         }
 
+        private static WpfMatrix GetWpfMatrix(Matrix source)
+        {
+            float[] elements = source.Elements;
+            return new WpfMatrix(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5]);
+        }
 
 #else
         public Graphics Graphics;
@@ -267,6 +333,25 @@ namespace PurplePen.MapModel
 
                 return new GraphicsBrushTarget(g, bitmap, size);
         }
+
+        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        {
+            Pen pen = new Pen((brush as GDIPlus_Brush).Brush, width);
+            pen.StartCap = pen.EndCap = caps;
+            pen.LineJoin = join;
+            pen.MiterLimit = miterLimit;
+            return new GDIPlus_Pen(pen);
+        }
+
+        public IGraphicsPen CreatePen(Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        {
+            Pen pen = new Pen(color, width);
+            pen.StartCap = pen.EndCap = caps;
+            pen.LineJoin = join;
+            pen.MiterLimit = miterLimit;
+            return new GDIPlus_Pen(pen);
+        }
+
         public GraphicsTarget(Graphics g)
         {
             this.Graphics = g;
@@ -300,39 +385,27 @@ namespace PurplePen.MapModel
         }
 
         // Draw an line with a pen.
-        public void DrawLine(Pen pen, PointF start, PointF finish)
+        public void DrawLine(IGraphicsPen pen, PointF start, PointF finish)
         {
-            Graphics.DrawLine(pen, start, finish);
+            Graphics.DrawLine((pen as GDIPlus_Pen).Pen, start, finish);
         }
 
         // Draw an ellipse with a pen.
-        public void DrawEllipse(Pen pen, PointF center, float radiusX, float radiusY)
+        public void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY)
         {
-            Graphics.DrawEllipse(pen, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            Graphics.DrawEllipse((pen as GDIPlus_Pen).Pen, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
         }
 
-        // Fill an ellipse with a pen.
+        // Fill an ellipse with a brush.
         public void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY)
         {
-            Graphics.FillEllipse(brush.Brush, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
-        }
-
-        // Fill an ellipse with a pen.
-        public void FillEllipse(Brush brush, PointF center, float radiusX, float radiusY)
-        {
-            Graphics.FillEllipse(brush, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            Graphics.FillEllipse((brush as GDIPlus_Brush).Brush, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
         }
 
         // Draw a rectangle with a pen.
-        public void DrawRectangle(Pen pen, RectangleF rect)
+        public void DrawRectangle(IGraphicsPen pen, RectangleF rect)
         {
-            Graphics.DrawRectangle(pen, rect.X, rect.Y, rect.Width, rect.Height);
-        }
-
-        // Fill a rectangle with a brush.
-        public void FillRectangle(Brush brush, RectangleF rect)
-        {
-            Graphics.FillRectangle(brush, rect.X, rect.Y, rect.Width, rect.Height);
+            Graphics.DrawRectangle((pen as GDIPlus_Pen).Pen, rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         // Fill a rectangle with a brush.
@@ -456,6 +529,28 @@ namespace PurplePen.MapModel
             brush = null;
         }
     }
+
+    public class WPF_Pen : IGraphicsPen
+    {
+        private Pen pen;
+
+        public WPF_Pen(Pen pen)
+        {
+            pen.Freeze();
+            this.pen = pen;
+        }
+
+        public Pen Pen
+        {
+            get { return pen; }
+        }
+
+        public void Dispose()
+        {
+            pen = null;
+        }
+    }
+
 #else
     public class GDIPlus_Brush : IGraphicsBrush
     {
@@ -481,6 +576,27 @@ namespace PurplePen.MapModel
             brush.Dispose();
         }
     }
+
+    public class GDIPlus_Pen : IGraphicsPen
+    {
+        private Pen pen;
+
+        public Pen Pen
+        {
+            get { return pen; }
+        }
+
+        public GDIPlus_Pen(Pen pen)
+        {
+            this.pen = pen;
+        }
+
+        public void Dispose()
+        {
+            pen.Dispose();
+        }
+    }
+
 #endif
 
     public static class GraphicsUtil
@@ -511,83 +627,22 @@ namespace PurplePen.MapModel
         }
 #endif
 
-#if false
-        // Create a solid brush.
-        public static Brush CreateSolidBrush(Color color)
-        {
-#if WPF
-            Brush brush = new SolidColorBrush(color);
-            brush.Freeze();
-            return brush;
-#else
-            return new SolidBrush(color);
-#endif
-        }
-#endif
-
         // Create a solid pen
-        public static Pen CreateSolidPen(Color color, float thickness, LineStyle style)
+        public static IGraphicsPen CreateSolidPen(GraphicsTarget g, Color color, float thickness, LineStyle style)
         {
-#if WPF
-            Pen pen = new Pen(new SolidColorBrush(color), thickness);
-            if (style == LineStyle.Rounded) {
-                pen.StartLineCap = pen.EndLineCap = PenLineCap.Round;
-                pen.LineJoin = PenLineJoin.Round;
+            switch (style)
+            {
+                case LineStyle.Rounded:
+                    return g.CreatePen(color, thickness, LineCap.Round, LineJoin.Round, MITER_LIMIT);
+                case LineStyle.Beveled:
+                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Bevel, MITER_LIMIT);
+                case LineStyle.Mitered:
+                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Miter, MITER_LIMIT);
+                case LineStyle.FlatRounded:
+                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Round, MITER_LIMIT);
+                default:
+                    throw new ArgumentException();
             }
-            else if (style == LineStyle.Beveled) {
-                pen.StartLineCap = pen.EndLineCap = PenLineCap.Flat;
-                pen.LineJoin = PenLineJoin.Bevel;
-            }
-            else if (style == LineStyle.Mitered) {
-                pen.StartLineCap = pen.EndLineCap = PenLineCap.Flat;
-                pen.LineJoin = PenLineJoin.Miter;
-                pen.MiterLimit = MITER_LIMIT;
-            }
-            else if (style == LineStyle.FlatRounded) {
-                pen.StartLineCap = pen.EndLineCap = PenLineCap.Flat;
-                pen.LineJoin = PenLineJoin.Round;
-            }
-
-            pen.Freeze();
-            return pen;
-#else
-            Pen pen = new Pen(color, thickness);
-            if (style == LineStyle.Rounded) {
-                pen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Flat);
-                pen.LineJoin = LineJoin.Round;
-            }
-            else if (style == LineStyle.Beveled) {
-                pen.SetLineCap(LineCap.Flat, LineCap.Flat, DashCap.Flat);
-                pen.LineJoin = LineJoin.Bevel;
-            }
-            else if (style == LineStyle.Mitered) {
-                pen.SetLineCap(LineCap.Flat, LineCap.Flat, DashCap.Flat);
-                pen.LineJoin = LineJoin.Miter;
-                pen.MiterLimit = MITER_LIMIT;
-            }
-            else if (style == LineStyle.FlatRounded) {
-                pen.SetLineCap(LineCap.Flat, LineCap.Flat, DashCap.Flat);
-                pen.LineJoin = LineJoin.Round;
-            }
-
-            return pen;
-#endif
-        }
-
-        // Dispose of a pen
-        public static void DisposePen(Pen pen)
-        {
-#if !WPF
-            pen.Dispose();
-#endif
-        }
-
-        // Dispose of a brush
-        public static void DisposeBrush(Brush brush)
-        {
-#if !WPF
-            brush.Dispose();
-#endif
         }
 
         // Multiple two matrixes, giving a third

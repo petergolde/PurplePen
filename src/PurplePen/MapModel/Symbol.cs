@@ -424,7 +424,7 @@ namespace PurplePen.MapModel
         public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == fillColor) {
-                path.Fill(g, fillColor.GetBrush(g).Brush);
+                path.Fill(g, fillColor.GetBrush(g));
             }
         }
     }
@@ -473,7 +473,7 @@ namespace PurplePen.MapModel
         {
             if (color == null) {
                 IGraphicsBrush brush = g.CreateSolidBrush(map.TransformColor(fillColor));
-                path.Fill(g, brush.Brush);
+                path.Fill(g, brush);
                 brush.Dispose();
             }
         }
@@ -527,9 +527,9 @@ namespace PurplePen.MapModel
         public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == lineColor) {
-                Pen pen = GraphicsUtil.CreateSolidPen(lineColor.ColorValue, thickness, lineStyle);
+                IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, lineColor.ColorValue, thickness, lineStyle);
                 path.Draw(g, pen);
-                GraphicsUtil.DisposePen(pen);
+                pen.Dispose();
             }
         }
     }
@@ -582,9 +582,9 @@ namespace PurplePen.MapModel
         public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
-                Pen pen = GraphicsUtil.CreateSolidPen(map.TransformColor(lineColor), thickness, lineStyle);
+                IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, map.TransformColor(lineColor), thickness, lineStyle);
                 path.Draw(g, pen);
-                GraphicsUtil.DisposePen(pen);
+                pen.Dispose();
             }
         }
     }
