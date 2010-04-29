@@ -38,18 +38,14 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Globalization;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
-#endif
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-#endif
+using Color = System.Drawing.Color;
+#if !WPF
+using Bitmap = System.Drawing.Bitmap;
+#endif 
 
 namespace PurplePen.MapModel
 {

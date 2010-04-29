@@ -1378,7 +1378,7 @@ namespace PurplePen.MapModel
         void DrawHatching(GraphicsTarget g, SymPathWithHoles path, float angle, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
-            g.PushClip(path);
+            g.PushClip(path.GetIGraphicsPath(g));
 
             // use a transform to rotate and then draw hatching.
             Matrix matrix = new Matrix();
@@ -1437,7 +1437,7 @@ namespace PurplePen.MapModel
 
             if (angle != 0.0F) {
                 // Set the clipping region to draw only inside the area.
-                g.PushClip(path);
+                g.PushClip(path.GetIGraphicsPath(g));
 
                 // use a transform to rotate.
                 Matrix matrix = new Matrix();
@@ -1589,7 +1589,7 @@ namespace PurplePen.MapModel
         void DrawPattern(GraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
-            g.PushClip(path);
+            g.PushClip(path.GetIGraphicsPath(g));
 
             // use a transform to rotate 
             Matrix matrix = new Matrix();
@@ -1978,15 +1978,15 @@ namespace PurplePen.MapModel
         }
 
         // Draw a single line of text at the given point with the given brush.
-        private void DrawSingleLineString(GraphicsTarget g, string text, Brush brush, PointF pt)
+        private void DrawSingleLineString(GraphicsTarget g, string text, IGraphicsBrush brush, PointF pt)
         {
 #if WPF
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, brush);
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, (brush as WPF_Brush).Brush);
             g.DrawingContext.DrawText(formattedText, new Point(pt.X, pt.Y));
 #else
             // Occasonal GDI+ throws an exception if the font size is super small.
             try {
-                g.Graphics.DrawString(text, font, brush, pt, stringFormat);
+                g.Graphics.DrawString(text, font, (brush as GDIPlus_Brush).Brush, pt, stringFormat);
             }
             catch (System.Runtime.InteropServices.ExternalException) {
                 // Do nothing
@@ -2009,7 +2009,7 @@ namespace PurplePen.MapModel
         private void DrawStringWithEffects(GraphicsTarget g, SymColor color, string text, PointF pt)
         {
             if (color == fontColor) {
-                DrawSingleLineString(g, text, fontColor.GetBrush(g).Brush, pt);
+                DrawSingleLineString(g, text, fontColor.GetBrush(g), pt);
             }
 
             if (framing.framingStyle != FramingStyle.None && color == framing.framingColor) {
@@ -2018,18 +2018,18 @@ namespace PurplePen.MapModel
                     FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, Brushes.Black);
                     Geometry geometry = formattedText.BuildGeometry(new Point(pt.X, pt.Y));
                     foreach (IGraphicsPen p in framingPens)
-                        g.DrawingContext.DrawGeometry(null, p.Pen, geometry);
+                        g.DrawingContext.DrawGeometry(null, (p as WPF_Pen).Pen, geometry);
 #else
                     GraphicsPath grPath = new GraphicsPath(FillMode.Winding);
                     Debug.Assert(font.Unit == GraphicsUnit.World);
                     grPath.AddString(text, font.FontFamily, (int) font.Style, font.Size, pt, stringFormat);
 
                     foreach (IGraphicsPen p in framingPens)
-                        g.Graphics.DrawPath(p.Pen, grPath);
+                        g.Graphics.DrawPath((p as GDIPlus_Pen).Pen, grPath);
 #endif
                 }
                 else if (framing.framingStyle == FramingStyle.Shadow) {
-                    DrawSingleLineString(g, text, framing.framingColor.GetBrush(g).Brush, new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
+                    DrawSingleLineString(g, text, framing.framingColor.GetBrush(g), new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
                 }
             }
         }

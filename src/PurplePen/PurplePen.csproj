@@ -67,10 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapModel\GraphicsUtil.cs" />
     <Compile Include="MapModel\DebugCode\OcadDump.cs" />
     <Compile Include="MapModel\Bezier.cs" />
     <Compile Include="MapModel\Glyph.cs" />
     <Compile Include="MapModel\GraphicsTarget.cs" />
+    <Compile Include="MapModel\IGraphicsTarget.cs" />
     <Compile Include="MapModel\InputOutput.cs" />
     <Compile Include="MapModel\LZWCompression.cs" />
     <Compile Include="MapModel\Map.cs" />

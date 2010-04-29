@@ -76,8 +76,11 @@
     <Compile Include="..\PurplePen\MapModel\Glyph.cs">
       <Link>Glyph.cs</Link>
     </Compile>
-    <Compile Include="..\PurplePen\MapModel\GraphicsTarget.cs">
-      <Link>GraphicsTarget.cs</Link>
+    <Compile Include="..\PurplePen\MapModel\GraphicsUtil.cs">
+      <Link>GraphicsUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\PurplePen\MapModel\IGraphicsTarget.cs">
+      <Link>IGraphicsTarget.cs</Link>
     </Compile>
     <Compile Include="..\PurplePen\MapModel\InputOutput.cs">
       <Link>InputOutput.cs</Link>
@@ -112,7 +115,10 @@
     <Compile Include="..\PurplePen\MapModel\Util.cs">
       <Link>Util.cs</Link>
     </Compile>
-    <Compile Include="PointRect.cs" />
+    <Compile Include="GraphicsTarget.cs" />
+    <Compile Include="PointRect.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

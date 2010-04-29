@@ -36,19 +36,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
-#endif
-#if WPF
-using System.Windows;
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-#endif
+using FillMode = System.Drawing.Drawing2D.FillMode;
 
 namespace PurplePen.MapModel
 {
@@ -69,15 +61,11 @@ namespace PurplePen.MapModel
 
         bool lastPointSynthesized; // If true, the last point was added to close the curve when imported. Used for re-exporting to get round-trip.
         bool anyBeziers;    // Are there any beziers in this path
-        bool allBeziers;    // Are there all beziers in this path
+        // bool allBeziers;    // Are there all beziers in this path
         bool isClosedCurve; // true if end point is the same as start point (closed curve)
         float length = -1;  // -1 means not computed yet.
         float bizzarroLength = -1;  // -1 means not computed yet.
         float maxMiter = 0;  // 0 means not computed yet.
-
-#if WPF
-        Geometry geometry;        // created on demand -- the geometry for this SymPath.
-#endif
 
         const float FLATTENAMOUNT = 0.01F;
 
@@ -121,25 +109,6 @@ namespace PurplePen.MapModel
             }
         }
 
-#if !WPF
-        public SymPath(GraphicsPath path) {
-            PointF[] points = path.PathPoints;
-            byte[] types = path.PathTypes;
-            PointKind[] kinds = new PointKind[types.Length];
-
-            for (int i = 0; i < types.Length; ++i) {
-                PathPointType type = (PathPointType) types[i] & PathPointType.PathTypeMask;
-
-                if (type == PathPointType.Bezier)
-                    kinds[i] = PointKind.BezierControl;
-                else 
-                    kinds[i] = PointKind.Normal;
-            }
-
-            InitFromPoints(points, kinds, null);
-        }
-#endif
-
         public bool IsClosedCurve { get { return isClosedCurve; }}
 
         public bool LastPointSynthesized { get { return lastPointSynthesized; }}
@@ -172,7 +141,7 @@ namespace PurplePen.MapModel
             float boundingTop = float.MaxValue;
             float boundingBottom = float.MinValue;
 
-            allBeziers = true;
+            //allBeziers = true;
             for (int i = 0; i < kinds.Length; ++i) 
             {
                 PointF pt = points[i];
@@ -189,8 +158,9 @@ namespace PurplePen.MapModel
                         throw new MapUsageException("exactly two bezier control points must be in sequence");
                 }
                 else {
-                    if (i > 0 && kinds[i - 1] != PointKind.BezierControl)
-                        allBeziers = false;            // 2 non-bezier control in a row.
+                    if (i > 0 && kinds[i - 1] != PointKind.BezierControl) {
+                        //allBeziers = false;            // 2 non-bezier control in a row.
+                    }
                 }
             }
 
@@ -241,189 +211,6 @@ namespace PurplePen.MapModel
             get { return points[points.Length - 1]; }
         }
 
-#if WPF
-        // Wraps a read-only list around part of a PointF array.
-        private class PointList: IList<Point>
-        {
-            PointF[] points;
-            int start, count;
-
-            public PointList(PointF[] points, int start, int count)
-            {
-                this.points = points;
-                this.start = start;
-                this.count = count;
-            }
-
-            public int IndexOf(Point item)
-            {
-                for (int i = 0; i < count; ++i) {
-                    if (points[start + i].X == item.X && points[start + i].Y == item.Y)
-                        return i;
-                }
-
-                return -1;
-            }
-
-            public bool Contains(Point item)
-            {
-                return IndexOf(item) >= 0;
-            }
-
-            public void CopyTo(Point[] array, int arrayIndex)
-            {
-                for (int i = 0; i < count; ++i)
-                    array[arrayIndex + i] = new Point(points[i + start].X, points[i + start].Y);
-            }
-
-            public int Count
-            {
-                get { return count; }
-            }
-
-            public bool IsReadOnly
-            {
-                get { return true; }
-            }
-
-            public Point this[int index]
-            {
-                get
-                {
-                    return new Point(points[index + start].X, points[index + start].Y);
-                }
-                set
-                {
-                    throw new NotSupportedException();
-                }
-            }
-
-            private class PointEnumerator: IEnumerator<Point>, System.Collections.IEnumerator
-            {
-                PointF[] points;
-                int current, limit;
-
-                public PointEnumerator(PointF[] points, int first, int count)
-                {
-                    this.points = points;
-                    this.current = first - 1;
-                    this.limit = first + count;
-                }
-
-                public Point Current
-                {
-                    get { return new Point(points[current].X, points[current].Y); }
-                }
-
-                public void Dispose()
-                {
-                }
-
-                object System.Collections.IEnumerator.Current
-                {
-                    get { return Current; }
-                }
-
-                public bool MoveNext()
-                {
-                    ++current;
-                    return (current >= limit);
-                }
-
-                public void Reset()
-                {
-                    throw new NotSupportedException();
-                }
-            }
-
-            public IEnumerator<Point> GetEnumerator()
-            {
-                return new PointEnumerator(points, start, count);
-            }
-
-            System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-            {
-                return new PointEnumerator(points, start, count);
-            }
-
-            public void Insert(int index, Point item)       { throw new NotSupportedException(); }
-            public void RemoveAt(int index)                   { throw new NotSupportedException(); }
-            public void Add(Point item)                           { throw new NotSupportedException(); }
-            public void Clear()                                        { throw new NotSupportedException(); }
-            public bool Remove(Point item)                    { throw new NotSupportedException(); }
-        }
-
-        public Geometry Geometry
-        {
-            get
-            {
-                if (geometry == null)
-                    geometry = CreateGeometryWithHoles(null);
-
-                return geometry;
-            }
-        }
-
-        public Geometry CreateGeometryWithHoles(SymPath[] holes)
-        {
-            StreamGeometry geo = new StreamGeometry();
-            geo.FillRule = FillRule.EvenOdd;
-            StreamGeometryContext geoContext = geo.Open();
-
-            AddToGeometryContext(geoContext);
-
-            if (holes != null) {
-                for (int i = 0; i < holes.Length; ++i) {
-                    holes[i].AddToGeometryContext(geoContext);
-                }
-            }
-
-            geoContext.Close();
-            geo.Freeze();
-            return geo;
-        }
-
-        void AddToGeometryContext(StreamGeometryContext geoContext) 
-        {
-            geoContext.BeginFigure(new Point(points[0].X, points[0].Y), IsClosedCurve, IsClosedCurve);
-
-            if (! anyBeziers) {
-                geoContext.PolyLineTo(new PointList(points, 1, points.Length - 1), true, false); 
-            }
-            else if (allBeziers) {
-                geoContext.PolyBezierTo(new PointList(points, 1, points.Length - 1), true, false);  
-            }
-            else {
-                int iStart = 0, iEnd;
-                while (iStart + 1 < points.Length) {
-                    // First, scan ahead to find the number of points we can draw in a 
-                    // single call. 
-                    bool scanningBezier = (kinds[iStart + 1] == PointKind.BezierControl);
-                    for (iEnd = iStart + 1; iEnd < points.Length; ++iEnd) {
-                        PointKind kind = kinds[iEnd];
-
-                        // Check for switch between bezier/non-bezier.
-                        if (!scanningBezier && kind == PointKind.BezierControl)
-                            break;
-                        if (scanningBezier && (iEnd - iStart) % 3 != 0 && kind != PointKind.BezierControl)
-                            break;
-                    }
-
-                    // Now we can add a component from iStart to iEnd, where iEnd is just beyond the last point.
-                    if (iEnd > iStart + 1) {
-                        if (scanningBezier)
-                            geoContext.PolyBezierTo(new PointList(points, iStart + 1, iEnd - iStart - 1), true, false); 
-                        else
-                            geoContext.PolyLineTo(new PointList(points, iStart + 1, iEnd - iStart - 1), true, false); 
-                    }
-
-                    // Advance iStart for the next component.
-                    iStart = iEnd - 1;
-                }
-            }
-        }
-#endif                  
-
 
         // Create a new path that is the current path transformed by a matrix.
         public SymPath Transform(Matrix mat) {
@@ -433,93 +220,43 @@ namespace PurplePen.MapModel
 
         public void Draw(GraphicsTarget g, IGraphicsPen pen)
         {
-#if WPF
-            g.DrawingContext.DrawGeometry(null, pen.Pen, Geometry);
-#else
             DrawCore(g, pen, points);
-#endif
         }
 
         public void DrawTransformed(GraphicsTarget g, IGraphicsPen pen, Matrix transform)
         {
-#if WPF
-            // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the pen.
-            Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(transform));
-
-            g.DrawingContext.DrawGeometry(null, pen.Pen, xformedGeometry);
-#else
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
             DrawCore(g, pen, pointsXform);
-#endif
         }
 
-#if !WPF
         void DrawCore(GraphicsTarget g, IGraphicsPen pen, PointF[] points) 
         {
-            try {
-                if (isClosedCurve) {
-                    // Closed curves need to be drawn differently, in order to get the line join at the start/finish point
-                    // to look correct.
-                    if (!anyBeziers) {
-                        // Draw a polygon.
-                        g.Graphics.DrawPolygon(pen.Pen, points);
-                    }
-                    else {
-                        // use a graphics path.
-                        GraphicsPath grPath = new GraphicsPath();
-                        AddToGraphicsPath(grPath, this, points);
-                        grPath.CloseFigure();
-                        g.Graphics.DrawPath(pen.Pen, grPath);
-                        grPath.Dispose();
-                    }
-                }
-                else {
-                    if (!anyBeziers) {
-                        g.Graphics.DrawLines(pen.Pen, points);
-                    }
-                    else if (allBeziers) {
-                        g.Graphics.DrawBeziers(pen.Pen, points);
-                    }
-                    else {
-                        // A mixture of straight lines and beziers. Must use a GraphicsPath to get the 
-                        // corners to look right.
-                        GraphicsPath grPath = new GraphicsPath();
-                        AddToGraphicsPath(grPath, this, points);
-                        g.Graphics.DrawPath(pen.Pen, grPath);
-                        grPath.Dispose();
-                    }
-                }
+            if (!anyBeziers)
+            {
+                if (isClosedCurve)
+                    g.DrawPolygon(pen, points);
+                else
+                    g.DrawPolyline(pen, points);
             }
-            catch (OutOfMemoryException) {
-                // Do nothing. Very occasionally, GDI+ given an out of memory exception for very short curves. Just ignore it; there's nothing else to do. See bug #1997301.
+            else
+            {
+                using (IGraphicsPath grPath = GetIGraphicsPath(g)) {
+                    g.DrawPath(pen, grPath);
+                }
             }
         }
-#endif
 
-        public void Fill(GraphicsTarget g, Brush b)
+        public void Fill(GraphicsTarget g, IGraphicsBrush b)
         {
-#if WPF
-            g.DrawingContext.DrawGeometry(b, null, Geometry);
-#else
             FillCore(g, b, points, null, null);
-#endif
         }
 
-        public void FillTransformed(GraphicsTarget g, Brush b, Matrix transform)
+        public void FillTransformed(GraphicsTarget g, IGraphicsBrush b, Matrix transform)
         {
-#if WPF
-            // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the pen.
-            Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(transform));
-            g.DrawingContext.DrawGeometry(b, null, xformedGeometry);
-#else
             FillTransformedWithHoles(g, b, transform, null);
-#endif
         }
 
-#if !WPF
-        public void FillWithHoles(GraphicsTarget g, Brush b, SymPath[] holes) {
+        public void FillWithHoles(GraphicsTarget g, IGraphicsBrush b, SymPath[] holes) {
             PointF[][] holePoints = null;
             if (holes != null) {
                 holePoints = new PointF[holes.Length][];
@@ -530,7 +267,7 @@ namespace PurplePen.MapModel
             FillCore(g, b, points, holes, holePoints);
         }
 
-        public void FillTransformedWithHoles(GraphicsTarget g, Brush b, Matrix transform, SymPath[] holes) {
+        public void FillTransformedWithHoles(GraphicsTarget g, IGraphicsBrush b, Matrix transform, SymPath[] holes) {
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
 
             PointF[][] holePoints = null;
@@ -544,97 +281,112 @@ namespace PurplePen.MapModel
             FillCore(g, b, pointsXform, holes, holePoints);
         }
 
-        void FillCore(GraphicsTarget g, Brush brush, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
+        void FillCore(GraphicsTarget g, IGraphicsBrush brush, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
         {
             if (anyBeziers || holes != null) 
             {
                 // Use a path.
-                using (GraphicsPath path = GetPathCore(points, holes, holePoints)) 
+                using (IGraphicsPath path = GetIGraphicsPathCore(g, points, holes, holePoints)) 
                 {
-                    g.Graphics.FillPath(brush, path);
+                    g.FillPath(brush, path);
                 }
             }
             else 
             {
                 // One simple line. Fill it in directly.
-                g.Graphics.FillPolygon(brush, points, FillMode.Alternate);
+                g.FillPolygon(brush, points, FillMode.Alternate);
             }
         }
-#endif
 
-#if !WPF
-        public GraphicsPath GetPath()
+        public IGraphicsPath GetIGraphicsPath(GraphicsTarget g)
         {
-            return GetPathCore(points, null, null);
+            return GetIGraphicsPathCore(g, points, null, null);
         }
 
-        public GraphicsPath GetPathWithHoles(SymPath[] holes) {
+        public IGraphicsPath GetIGraphicsPathWithHoles(GraphicsTarget g, SymPath[] holes)
+        {
             if (holes == null)
-                return GetPathCore(points, null, null);
-            else {
+                return GetIGraphicsPathCore(g, points, null, null);
+            else
+            {
                 PointF[][] holePoints = null;
-                if (holes != null) {
+                if (holes != null)
+                {
                     holePoints = new PointF[holes.Length][];
                     for (int i = 0; i < holes.Length; ++i)
                         holePoints[i] = holes[i].points;
                 }
-                return GetPathCore(points, holes, holePoints);
+                return GetIGraphicsPathCore(g, points, holes, holePoints);
             }
         }
 
-        static void AddToGraphicsPath(GraphicsPath grPath, SymPath path, PointF[] points) {
-            if (! path.anyBeziers) {
-                grPath.AddLines(points);
+        static void AddToPathPartList(List<GraphicsPathPart> partList, SymPath path, PointF[] points, bool alwaysClose)
+        {
+            // Add the start point.
+            partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[] { points[0] }));
+
+            if (!path.anyBeziers)
+            {
+                PointF[] newArray = new PointF[points.Length - 1];
+                Array.Copy(points, 1, newArray, 0, points.Length - 1);
+                partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Lines, newArray));
             }
-            else {
-                int iStart = 0, iEnd;
-                while (iStart+1 < points.Length) {
+            else
+            {
+                int iStart = 1, iEnd;
+                while (iStart < points.Length)
+                {
                     // First, scan ahead to find the number of points we can draw in a 
                     // single call. 
-                    bool scanningBezier = (path.kinds[iStart+1] == PointKind.BezierControl);
-                    for (iEnd = iStart+1; iEnd < points.Length; ++iEnd) {
+                    bool scanningBezier = (path.kinds[iStart] == PointKind.BezierControl);
+                    for (iEnd = iStart; iEnd < points.Length; ++iEnd)
+                    {
                         PointKind kind = path.kinds[iEnd];
 
                         // Check for switch between bezier/non-bezier.
-                        if (! scanningBezier && kind == PointKind.BezierControl) 
+                        if (!scanningBezier && kind == PointKind.BezierControl)
                             break;
-                        if (scanningBezier && (iEnd - iStart) % 3 != 0 && kind != PointKind.BezierControl) 
+                        if (scanningBezier && (iEnd - iStart + 1) % 3 != 0 && kind != PointKind.BezierControl)
                             break;
                     }
 
                     // Now we can add a component from iStart to iEnd, where iEnd is just beyond the last point.
-                    if (iEnd > iStart + 1) {
+                    if (iEnd > iStart)
+                    {
                         PointF[] ptArray = new PointF[iEnd - iStart];
                         Array.Copy(points, iStart, ptArray, 0, ptArray.Length);
-                        if (scanningBezier) 
-                            grPath.AddBeziers(ptArray);
-                        else 
-                            grPath.AddLines(ptArray);
+                        if (scanningBezier)
+                            partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Beziers, ptArray));
+                        else
+                            partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Lines, ptArray));
                     }
 
                     // Advance iStart for the next component.
-                    iStart = iEnd - 1;
+                    iStart = iEnd;
                 }
             }
+
+            if (alwaysClose || path.IsClosedCurve)
+                partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, null));
         }
-                  
-        GraphicsPath GetPathCore(PointF[] points, SymPath[] holes, PointF[][] holePoints) 
+
+        IGraphicsPath GetIGraphicsPathCore(GraphicsTarget g, PointF[] points, SymPath[] holes, PointF[][] holePoints)
         {
-            GraphicsPath grPath = new GraphicsPath(FillMode.Alternate);
+            List<GraphicsPathPart> partList = new List<GraphicsPathPart>();
 
-            AddToGraphicsPath(grPath, this, points);
-            
-            if (holes != null) {
-                grPath.CloseFigure();
-                for (int i = 0; i < holes.Length; ++i) {
-                    AddToGraphicsPath(grPath, holes[i], holePoints[i]);
-                    grPath.CloseFigure();
+            AddToPathPartList(partList, this, points, holes != null);
+
+            if (holes != null)
+            {
+                for (int i = 0; i < holes.Length; ++i)
+                {
+                    AddToPathPartList(partList, holes[i], holePoints[i], true);
+                    partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, null));
                 }
             }
 
-            return grPath;
+            return g.CreatePath(partList, FillMode.Alternate);
         }
-#endif
 
         // Draw a dashed lines. The dashLengths array contains the dash/gap lengths for the whole line. If we reach 
         // the end of this array, we wrap around. The variable offsetToStart indicates how far into the array to 
@@ -668,11 +420,6 @@ namespace PurplePen.MapModel
             bool inDrawnPart = true;		// true=in a drawn part, false=in a gap part
             PointF lastDashEnd;			// point last the was beginning/end of a dash
             int lastDashEndIndex;			// index into flatpoints just beyond that.
-
-#if WPF
-            StreamGeometry geo = new StreamGeometry();
-            StreamGeometryContext geoContext = geo.Open();
-#endif
 
             // Consume offsetToStart.
             while (offsetToStart >= nextLength && offsetToStart > 0) {
@@ -719,12 +466,7 @@ namespace PurplePen.MapModel
                             Array.Copy(flatpoints, lastDashEndIndex, pts, 1, i - lastDashEndIndex);
                         if (offsetRight != 0)
                             pts = OffsetPointsRight(pts, offsetRight, miterLimit, isClosedCurve);
-#if WPF
-                        geoContext.BeginFigure(new Point(pts[0].X, pts[0].Y), false, false);
-                        geoContext.PolyLineTo(new PointList(pts, 1, pts.Length - 1), true, false);
-#else
-                        g.Graphics.DrawLines(pen.Pen, pts);
-#endif
+                        g.DrawPolyline(pen, pts);
                     }
 
                     // update lastDashEnd with the current point
@@ -756,18 +498,8 @@ namespace PurplePen.MapModel
                     Array.Copy(flatpoints, lastDashEndIndex, pts, 1, flatpoints.Length - lastDashEndIndex);
                 if (offsetRight != 0)
                     pts = OffsetPointsRight(pts, offsetRight, miterLimit, isClosedCurve);
-#if WPF
-                geoContext.BeginFigure(new Point(pts[0].X, pts[0].Y), false, false);
-                geoContext.PolyLineTo(new PointList(pts, 1, pts.Length - 1), true, false);
-#else
-                g.Graphics.DrawLines(pen.Pen, pts);
-#endif
+                g.DrawPolyline(pen, pts);
             }
-
-#if WPF
-            geoContext.Close();
-            g.DrawingContext.DrawGeometry(null, pen.Pen, geo);
-#endif
         }
 
         // Fill in the flatpoints and flatkinds fields with the flattened path. A 
@@ -1752,10 +1484,6 @@ namespace PurplePen.MapModel
         RectangleF boundingBox;
         public RectangleF BoundingBox { get { return boundingBox; }}
 
-#if WPF
-        Geometry geometry;        // created on demand -- the geometry for this SymPath, including holes
-#endif
-
         // Create a sympath from a path and various holes in it. If there are holes, the path
         // and all the holes must be closed.
         public SymPathWithHoles(SymPath path, SymPath[] holes) {
@@ -1785,19 +1513,6 @@ namespace PurplePen.MapModel
             boundingBox = box;
         }
 
-#if WPF
-        public Geometry Geometry
-        {
-            get
-            {
-                if (geometry == null)
-                    geometry = MainPath.CreateGeometryWithHoles(holes);
-
-                return geometry;
-            }
-        }
-
-#endif
 
         public void Draw(GraphicsTarget g, IGraphicsPen pen) {
             MainPath.Draw(g, pen);
@@ -1817,29 +1532,17 @@ namespace PurplePen.MapModel
         }
 
         public void Fill(GraphicsTarget g, IGraphicsBrush brush) {
-#if WPF
-            g.DrawingContext.DrawGeometry(brush.Brush, null, Geometry);
-#else
-            MainPath.FillWithHoles(g, brush.Brush, Holes);
-#endif
+            MainPath.FillWithHoles(g, brush, Holes);
         }
 
-        public void FillTransformed(GraphicsTarget g, Brush brush, Matrix matrix) {
-#if WPF
-            // It is tempting but wrong to do a dc.PushTransform here. We want to transform the path, but NOT the brush.
-            Geometry xformedGeometry = Geometry.Clone();
-            xformedGeometry.Transform = new MatrixTransform(GraphicsUtil.GetWpfMatrix(matrix));
-            g.DrawingContext.DrawGeometry(brush, null, xformedGeometry);
-#else
+        public void FillTransformed(GraphicsTarget g, IGraphicsBrush brush, Matrix matrix) {
             MainPath.FillTransformedWithHoles(g, brush, matrix, Holes);
-#endif
         }
 
-#if !WPF
-        public GraphicsPath GetPath() {
-            return MainPath.GetPathWithHoles(Holes);
+        public IGraphicsPath GetIGraphicsPath(GraphicsTarget g)
+        {
+            return MainPath.GetIGraphicsPathWithHoles(g, Holes);
         }
-#endif
 
         public SymPathWithHoles Transform(Matrix mat) {
             SymPath mainPath = MainPath.Transform(mat);

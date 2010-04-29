@@ -38,26 +38,47 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using LineJoin = System.Drawing.Drawing2D.LineJoin;
 using LineCap = System.Drawing.Drawing2D.LineCap;
-#endif
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-using System.Drawing.Imaging;
-#endif
+using Color = System.Drawing.Color;
 
 namespace PurplePen.MapModel
 {
-    class MapUsageException: Exception
+    // A color matrix
+    public class ColorMatrix
+    {
+        private float[][] entries;
+
+        public ColorMatrix()
+        {
+            entries = new float[5][];
+            for (int i = 0; i < 5; ++i)
+                entries[i] = new float[5];
+        }
+
+        public ColorMatrix(float[][] entries)
+        {
+            this.entries = entries;
+        }
+
+        public float this[int i, int j]
+        {
+            get
+            {
+                return entries[i][j];
+            }
+            set
+            {
+                entries[i][j] = value;
+            }
+        }
+    }
+
+    class MapUsageException : Exception
     {
         public MapUsageException(string message) : base(message)
         {}
@@ -598,7 +619,7 @@ namespace PurplePen.MapModel
         }
 
 #if WPF
-        public void Draw(DrawingContext dc, RectangleF rect, RenderOptions renderOpts)
+        public void Draw(System.Windows.Media.DrawingContext dc, RectangleF rect, RenderOptions renderOpts)
         {
             CheckReadable();
 
@@ -629,27 +650,27 @@ namespace PurplePen.MapModel
         // Draw the elements of the map that lie within the rectange rect
         // into the Graphics g, which already has its world coordinates set up
         // correctly and the clipping region.
-        public void Draw(Graphics g, RectangleF rect, RenderOptions renderOpts)
+        public void Draw(System.Drawing.Graphics g, RectangleF rect, RenderOptions renderOpts)
         {
             CheckReadable();
 
             TraceLine("Begin drawing rectangle ({0},{1})-({2},{3})", rect.Left, rect.Top, rect.Right, rect.Bottom);
             Trace.Indent();
 
-            GraphicsState graphicsState = g.Save();
+            System.Drawing.Drawing2D.GraphicsState graphicsState = g.Save();
             GraphicsTarget grTarget = new GraphicsTarget(g);
             try {
                 // Get clipping region and bounding rectangle. If the clipping region isn't a rectangle,
                 // then it is worth doing extra work to eliminate symbols.
                 // UNDONE: clipRegionIsRectangle is given false on full repaint. Need to fix this.
-                Region clipRegion;
+                System.Drawing.Region clipRegion;
                 rect.Intersect(g.ClipBounds);
                 clipRegion = g.Clip.Clone();
                 clipRegion.Xor(rect);
                 bool clipRegionIsRectangle = clipRegion.IsEmpty(g);
                 clipRegion.Dispose();
 
-                g.TextRenderingHint = TextRenderingHint.AntiAlias;
+                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
                 if (renderOpts.showSymbolBounds)
                     boundsPen = grTarget.CreatePen(Color.FromArgb(100, Color.Red), 0, LineCap.Flat, LineJoin.Miter, 4);

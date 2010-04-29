@@ -35,19 +35,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
-#endif
-#if WPF
-using System.Windows;
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-#endif
 
 namespace PurplePen.MapModel
 {
@@ -101,16 +92,7 @@ namespace PurplePen.MapModel
                             for (int i = 1; i < gaps.Length; i += 2) {
                                 float startArc = gaps[i];
                                 float endArc = (i == gaps.Length - 1) ? gaps[0] : gaps[i + 1];
-#if WPF
-                                Point ptStart = new Point(Math.Cos(startArc * Math.PI / 180.0) * radius, Math.Sin(startArc * Math.PI / 180.0) * radius);
-                                Point ptEnd = new Point(Math.Cos(endArc * Math.PI / 180.0) * radius, Math.Sin(endArc * Math.PI / 180.0) * radius);
-                                ArcSegment segment = new ArcSegment(ptEnd, new Size(radius, radius), 0, ((endArc - startArc + 360.0) % 360.0) > 180.0, SweepDirection.Clockwise, true);
-                                PathFigure figure = new PathFigure(ptStart, new PathSegment[] { segment }, false);
-                                PathGeometry geometry = new PathGeometry(new PathFigure[] { figure });
-                                g.DrawingContext.DrawGeometry(null, pen.Pen, geometry);
-#else
-                                g.Graphics.DrawArc(pen.Pen, rect, startArc, (float) ((endArc - startArc + 360.0) % 360.0));
-#endif
+                                g.DrawArc(pen, rect, startArc, (float) ((endArc - startArc + 360.0) % 360.0));
                             }
                         }
                     }

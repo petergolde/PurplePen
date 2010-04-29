@@ -36,17 +36,12 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
-#endif
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-#endif
+using Color = System.Drawing.Color;
+using Bitmap = System.Drawing.Bitmap;
 
 // Several fields in the below structures are not used.
 #pragma warning disable 649
