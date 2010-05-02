@@ -128,6 +128,8 @@ namespace PurplePen.MapModel
 
         IGraphicsPen boundsPen;                          // pen for drawing symbol bounds.
 
+        ITextMetrics textMetricsProvider;
+
 
         OcadSetup ocadSetupStructure;    // An OCAD setup structure to preserve.
         internal OcadSetup OcadSetupStructure {
@@ -243,8 +245,10 @@ namespace PurplePen.MapModel
             mapDirty = true;
         }
 
-        public Map()
+        public Map(ITextMetrics textMetricsProvider)
         {
+            this.textMetricsProvider = textMetricsProvider;
+
             using (Write()) {
                 Clear();
             }
@@ -281,6 +285,14 @@ namespace PurplePen.MapModel
         void MapChanged() {
             if (OnMapChanged != null)
                 OnMapChanged(this);
+        }
+
+        internal ITextMetrics TextMetricsProvider
+        {
+            get
+            {
+                return textMetricsProvider;
+            }
         }
 
         public ICollection<SymDef> AllSymdefs {

@@ -64,7 +64,7 @@ namespace PurplePen.MapModel.Tests
             int format;
 
             // Create and open the map file.
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             format = InputOutput.ReadFile(mapOrigFileName, map);
 
             // Save the file again.

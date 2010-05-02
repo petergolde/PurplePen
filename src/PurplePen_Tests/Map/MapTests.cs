@@ -51,7 +51,7 @@ namespace PurplePen.MapModel.Tests
         private void CheckReadTemplateInfo(string filename, TemplateInfo expected)
         {
             // Create and open the map file.
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(filename, map);
 
             TemplateInfo actual;
@@ -120,7 +120,7 @@ namespace PurplePen.MapModel.Tests
         // Make sure that we can write the template information to a file.
         public void WriteTemplateInfo()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write()) {
                 map.MapScale = 15000;
                 map.Template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
@@ -133,7 +133,7 @@ namespace PurplePen.MapModel.Tests
         // Make sure that we can write the template information to a file.
         public void WriteTemplateInfo8()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write()) {
                 map.MapScale = 15000;
                 map.Template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
@@ -146,7 +146,7 @@ namespace PurplePen.MapModel.Tests
         // Make sure that we can write the template information to a file.
         public void WriteTemplateInfo9()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write()) {
                 map.MapScale = 15000;
                 map.Template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
@@ -162,7 +162,7 @@ namespace PurplePen.MapModel.Tests
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
             string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write())
                 map.Template = template;
 
@@ -178,7 +178,7 @@ namespace PurplePen.MapModel.Tests
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
             string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write())
                 map.Template = template;
 
@@ -194,7 +194,7 @@ namespace PurplePen.MapModel.Tests
             TemplateInfo template = new TemplateInfo(TestUtil.GetTestFile(@"io\subdir\k.ocd"), new PointF(4.0F, 5.0F), 330F, 7.4F, true);
             string filename = TestUtil.GetTestFile(@"io\outputtemplate_temp.ocd");
 
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             using (map.Write())
                 map.Template = template;
 
@@ -206,7 +206,7 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void Bounds()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             SymColor black;
             RectangleF result;
             LineSymDef lineSymDef;
@@ -266,7 +266,7 @@ namespace PurplePen.MapModel.Tests
 
         void TestPrintArea(string filename, RectangleF expectedPrintArea)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(filename, map);
 
             RectangleF printArea;
@@ -292,7 +292,7 @@ namespace PurplePen.MapModel.Tests
 
         void TestScales(string filename, float expectedMapScale, float expectedPrintScale)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(filename, map);
 
             float mapScale, printScale;
@@ -320,7 +320,7 @@ namespace PurplePen.MapModel.Tests
 
         void TestWriteScales(int version, string expectedDumpFileName)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
 
             using (map.Write()) {
                 map.MapScale = 7200;
@@ -344,7 +344,7 @@ namespace PurplePen.MapModel.Tests
 
         void TestWritePrintArea(int version, string expectedDumpFileName)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
 
             using (map.Write()) {
                 map.MapScale = 15000;
@@ -370,7 +370,7 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void GetFreeOcadId()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(TestUtil.GetTestFile(@"io\isompoints.ocd"), map);
 
             List<SymColor> colors;

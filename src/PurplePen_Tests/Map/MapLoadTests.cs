@@ -51,7 +51,7 @@ namespace PurplePen.MapModel.Tests
         static Map ReadMap(string baseFileName)
         {
             string mapFileName = TestUtil.GetTestFile("loadmap\\" + baseFileName);
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(mapFileName, map);
 
             return map;

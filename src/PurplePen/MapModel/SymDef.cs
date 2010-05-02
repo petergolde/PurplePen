@@ -1697,16 +1697,11 @@ namespace PurplePen.MapModel
         List<IGraphicsPen> framingPens;
         IGraphicsPen underlinePen;
 
-        bool fontsCreated;
-#if WPF
-        Typeface typeface;
-        float ascent, descent, capHeight;
-#else
-        Font font;
-        StringFormat stringFormat;
-#endif
+        bool fontMetricsCreated;
+        ITextFaceMetrics textFaceMetrics;
 
-        float spaceWidth;     // width of one space.
+        bool fontsCreated;
+        IGraphicsFont font;
 
         const string ParagraphMark = "\x2029";  // string denoted a paragraph boundary (Unicode paragraph mark).
 
@@ -1720,95 +1715,18 @@ namespace PurplePen.MapModel
             base.SetMap(newMap);
         }
 
-#if WPF
-        [DllImport("shell32.dll")]
-        private static extern bool SHGetSpecialFolderPath(IntPtr hwndOwner,
-           [Out] StringBuilder lpszPath, int nFolder, bool fCreate);
-        const int CSIDL_FONTS = 0x14;  // Font folder
-
-        // Create a Typeface, taking into account a nasty WPF bugs regarding Arial Narrow.
-        private Typeface CreateTypeface(string fontName, bool bold, bool italic)
+        private void CreateFontMetrics()
         {
-            if (!Util.FontExists(fontName))
-                fontName = "Arial";          // Map non-existant fonts to "Arial".
-
-            if (fontName == "Arial Narrow") {
-                // Arial Narrow doesn't work right in WPF. We can work around by going directly to the font file.
-                string fontfileName;
-                if (!bold && !italic)
-                    fontfileName = "arialn.ttf";
-                else if (bold && !italic)
-                    fontfileName = "arialnb.ttf";
-                else if (!bold && italic)
-                    fontfileName = "arialni.ttf";
-                else
-                    fontfileName = "arialnbi.ttf";
-
-                // Get font folder
-                StringBuilder fontPath = new StringBuilder(260);
-                if (SHGetSpecialFolderPath(IntPtr.Zero, fontPath, CSIDL_FONTS, false)) {
-                    // Get path to font name.
-                    string fontfile = Path.Combine(fontPath.ToString(), fontfileName);
-                    UriBuilder fontfileUriBuilder = new UriBuilder(new Uri(fontfile));
-                    fontfileUriBuilder.Fragment = "Arial";
-                    Typeface typeface = new Typeface(new FontFamily(fontfileUriBuilder.Uri.ToString()), italic ? FontStyles.Italic : FontStyles.Normal, bold ? FontWeights.Bold : FontWeights.Normal, FontStretches.Condensed);
-                    GlyphTypeface gtf;
-                    if (typeface.TryGetGlyphTypeface(out gtf))
-                        return typeface;           // Make sure that the font file really exists, by getting the glyph typeface.
-                }
-            }
-
-            return new Typeface(new FontFamily(fontName), italic ? FontStyles.Italic : FontStyles.Normal, bold ? FontWeights.Bold : FontWeights.Normal, FontStretches.Normal);
+            Debug.Assert(!fontMetricsCreated);
+            textFaceMetrics = map.TextMetricsProvider.GetTextFaceMetrics(fontName, fontSize, bold, italic);
+            fontMetricsCreated = true;
         }
-#endif
 
-        private void CreateFonts()
+        private void CreateFonts(GraphicsTarget g)
         {
             Debug.Assert(!fontsCreated);
 
-#if WPF
-            // Get the typeface.
-            typeface = CreateTypeface(fontName, bold, italic);
-            FontFamily family = typeface.FontFamily;
-            GlyphTypeface glyphTypeface = null;
-            typeface.TryGetGlyphTypeface(out glyphTypeface);
-
-            // Get the ascent, descent, capheight values.
-            ascent = (float)(family.Baseline * fontSize);
-            capHeight = (float)(typeface.CapsHeight * fontSize);
-            if (glyphTypeface != null)
-            {
-                descent = (float)((glyphTypeface.Height - glyphTypeface.Baseline) * fontSize);
-                spaceWidth = (float)(glyphTypeface.AdvanceWidths[glyphTypeface.CharacterToGlyphMap[32]] * fontSize);
-            }
-            else
-            {
-                // We can try to measure characters instead.
-                throw new NotImplementedException();
-            }
-
-#else
-            FontStyle fontStyle = FontStyle.Regular;
-            if (bold)
-                fontStyle |= FontStyle.Bold;
-            if (italic)
-                fontStyle |= FontStyle.Italic;
-
-            float nominalFontSize = Math.Max(fontSize, 0.01F);            // 0 size fonts cause exception!
-
-            if (Util.FontExists(fontName))
-                font = new Font(fontName, nominalFontSize, fontStyle, GraphicsUnit.World);
-            else
-                font = new Font(new FontFamily(GenericFontFamilies.SansSerif), nominalFontSize, fontStyle, GraphicsUnit.World);
-
-            stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = StringAlignment.Near;
-            stringFormat.LineAlignment = StringAlignment.Near;
-            stringFormat.FormatFlags |= StringFormatFlags.NoClip;
-            stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
-
-            spaceWidth = Util.GetHiresGraphics().MeasureString(" ", font, 1000000, stringFormat).Width;
-#endif
+            font = g.CreateFont(fontName, fontSize, bold, italic);
 
             fontsCreated = true;
         }
@@ -1817,8 +1735,10 @@ namespace PurplePen.MapModel
         {
             Debug.Assert(!objectsCreated);
 
+            if (!fontMetricsCreated)
+                CreateFontMetrics();
             if (!fontsCreated)
-                CreateFonts();
+                CreateFonts(g);
 
             if (framing.framingStyle == FramingStyle.Line) {
                 framingPens = new List<IGraphicsPen>();
@@ -1842,12 +1762,10 @@ namespace PurplePen.MapModel
 
         public override void FreeGdiObjects()
         {
-#if !WPF
             if (font != null) {
                 font.Dispose();
                 font = null;
             }
-#endif
 
             if (framingPens != null) {
                 foreach (IGraphicsPen p in framingPens)
@@ -1860,8 +1778,14 @@ namespace PurplePen.MapModel
                 underlinePen = null;
             }
 
+            if (textFaceMetrics != null) {
+                textFaceMetrics.Dispose();
+                textFaceMetrics = null;
+            }
+
             objectsCreated = false;
             fontsCreated = false;
+            fontMetricsCreated = false;
         }
 
 
@@ -1925,18 +1849,10 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontsCreated)
-                    CreateFonts();
+                if (!fontMetricsCreated)
+                    CreateFontMetrics();
 
-#if WPF
-                return ascent;
-#else
-                FontFamily fam = font.FontFamily;
-                FontStyle fontStyle = font.Style;
-                int emHeight = fam.GetEmHeight(fontStyle);
-                int ascent = fam.GetCellAscent(fontStyle);
-                return (ascent * fontSize) / emHeight;
-#endif
+                return textFaceMetrics.Ascent;
             }
         }
 
@@ -1945,16 +1861,10 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontsCreated)
-                    CreateFonts();
+                if (!fontMetricsCreated)
+                    CreateFontMetrics();
 
-#if WPF
-                return capHeight;
-#else
-                GraphicsPath path = new GraphicsPath();
-                path.AddString("W", font.FontFamily, (int)font.Style, font.Size, new PointF(0, 0), stringFormat);
-                return path.GetBounds().Height;
-#endif
+                return textFaceMetrics.CapHeight; ;
             }
         }
 
@@ -1962,47 +1872,26 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontsCreated)
-                    CreateFonts();
+                if (!fontMetricsCreated)
+                    CreateFontMetrics();
 
-#if WPF
-                return descent;
-#else
-                FontFamily fam = font.FontFamily;
-                FontStyle fontStyle = font.Style;
-                int emHeight = fam.GetEmHeight(fontStyle);
-                int descent = fam.GetCellDescent(fontStyle);
-                return (descent * fontSize) / emHeight;
-#endif
+                return textFaceMetrics.Descent;
             }
         }
 
         // Draw a single line of text at the given point with the given brush.
         private void DrawSingleLineString(GraphicsTarget g, string text, IGraphicsBrush brush, PointF pt)
         {
-#if WPF
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, (brush as WPF_Brush).Brush);
-            g.DrawingContext.DrawText(formattedText, new Point(pt.X, pt.Y));
-#else
-            // Occasonal GDI+ throws an exception if the font size is super small.
-            try {
-                g.Graphics.DrawString(text, font, (brush as GDIPlus_Brush).Brush, pt, stringFormat);
-            }
-            catch (System.Runtime.InteropServices.ExternalException) {
-                // Do nothing
-            }
-#endif
+            g.DrawText(text, font, brush, pt);
         }
 
         // Measure the width of a single line of text.
         private float MeasureStringWidth(string text)
         {
-#if WPF
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, Brushes.Black);
-            return (float) formattedText.Width;
-#else
-            return Util.GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat).Width;
-#endif
+            if (!fontMetricsCreated)
+                CreateFontMetrics();
+
+            return textFaceMetrics.GetTextWidth(text);
         }
 
         // Draw a string with shadow or line framing effects, if specified. The font from this symdef is used.
@@ -2014,19 +1903,8 @@ namespace PurplePen.MapModel
 
             if (framing.framingStyle != FramingStyle.None && color == framing.framingColor) {
                 if (framing.framingStyle == FramingStyle.Line) {
-#if WPF
-                    FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, fontSize, Brushes.Black);
-                    Geometry geometry = formattedText.BuildGeometry(new Point(pt.X, pt.Y));
                     foreach (IGraphicsPen p in framingPens)
-                        g.DrawingContext.DrawGeometry(null, (p as WPF_Pen).Pen, geometry);
-#else
-                    GraphicsPath grPath = new GraphicsPath(FillMode.Winding);
-                    Debug.Assert(font.Unit == GraphicsUnit.World);
-                    grPath.AddString(text, font.FontFamily, (int) font.Style, font.Size, pt, stringFormat);
-
-                    foreach (IGraphicsPen p in framingPens)
-                        g.Graphics.DrawPath((p as GDIPlus_Pen).Pen, grPath);
-#endif
+                        g.DrawTextOutline(text, font, p, pt);
                 }
                 else if (framing.framingStyle == FramingStyle.Shadow) {
                     DrawSingleLineString(g, text, framing.framingColor.GetBrush(g), new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
@@ -2147,7 +2025,7 @@ namespace PurplePen.MapModel
                         }
 
                         // Get the size of spaces. Justification is done by adjusting this.
-                        float sizeOfSpace = wordSpacing * spaceWidth;            // basic width of spaces as set by the symdef
+                        float sizeOfSpace = wordSpacing * textFaceMetrics.SpaceWidth;            // basic width of spaces as set by the symdef
                         if (fontAlign == TextSymDefAlignment.Justified && !lastLineOfPara && fullWidth > 0)
                             sizeOfSpace += JustifyText(line, lineWidth, fullWidth - indent);
 
@@ -2172,7 +2050,7 @@ namespace PurplePen.MapModel
                                 pt.X += MeasureStringWidth(textSegment);
 
                                 if (charSpacing > 0)
-                                    pt.X += charSpacing * spaceWidth;
+                                    pt.X += charSpacing * textFaceMetrics.SpaceWidth;
                             }
 
                             index += textSegment.Length;
@@ -2216,8 +2094,8 @@ namespace PurplePen.MapModel
         // Calculate the bounding box. 
         public RectangleF CalcBounds(string[] text, float[] lineWidths, PointF location, float angle, float fullWidth, out SizeF size)
         {
-            if (!fontsCreated)
-                CreateFonts();
+            if (!fontMetricsCreated)
+                CreateFontMetrics();
 
             // count number of lines, number of new paragraphs.
             int lineCount, newParaCount = 0;
@@ -2272,8 +2150,8 @@ namespace PurplePen.MapModel
         // between each line. The lineWidths array has the width of each line.
         internal string[] BreakUnwrappedLines(string[] text, out float[] lineWidths)
         {
-            if (!fontsCreated)
-                CreateFonts();
+            if (!fontMetricsCreated)
+                CreateFontMetrics();
 
             // We ignore ONE initial blank line for OCAD compatibility.
             int firstLine = (text.Length > 0 && text[0] == "") ? 1 : 0;
@@ -2304,8 +2182,8 @@ namespace PurplePen.MapModel
         // width of each line.
         internal string[] BreakLines(string[] text, float width, out float[] lineWidths)
         {
-            if (!fontsCreated)
-                CreateFonts();
+            if (!fontMetricsCreated)
+                CreateFontMetrics();
 
             List<String> lineList = new List<String>();
             List<float> widthList = new List<float>();
@@ -2448,7 +2326,7 @@ namespace PurplePen.MapModel
         private float WidthOfTextSegment(string text, float widthSoFar)
         {
             if (text == " ") {
-                return spaceWidth * wordSpacing;
+                return textFaceMetrics.SpaceWidth * wordSpacing;
             }
             else if (text == "\t") {
                 if (tabs == null || tabs.Length == 0)
@@ -2481,7 +2359,7 @@ namespace PurplePen.MapModel
                 float width = 0;
                 TextElementEnumerator enumTextElements = StringInfo.GetTextElementEnumerator(text);
                 while (enumTextElements.MoveNext()) 
-                    width += MeasureStringWidth(enumTextElements.GetTextElement()) + (charSpacing * spaceWidth);
+                    width += MeasureStringWidth(enumTextElements.GetTextElement()) + (charSpacing * textFaceMetrics.SpaceWidth);
                 return width;
             }
             else {
@@ -2590,10 +2468,10 @@ namespace PurplePen.MapModel
                 float graphemeWidth;
 
                 if (grapheme == " ")
-                    graphemeWidth = wordSpacing * spaceWidth;
+                    graphemeWidth = wordSpacing * textFaceMetrics.SpaceWidth;
                 else {
                     float width = MeasureStringWidth(grapheme);
-                    graphemeWidth = width + charSpacing * spaceWidth;
+                    graphemeWidth = width + charSpacing * textFaceMetrics.SpaceWidth;
                 }
 
                 graphemeList.Add(new GraphemePlacement(grapheme, graphemeWidth, new PointF(), 0));
@@ -2624,8 +2502,8 @@ namespace PurplePen.MapModel
                 if (charSpacing > 0) {
                     // last character doesn't have space added.
                     GraphemePlacement graphemePlacement = graphemeList[graphemeList.Count - 1];
-                    graphemePlacement.width -= charSpacing * spaceWidth;
-                    totalWidth -= charSpacing * spaceWidth;
+                    graphemePlacement.width -= charSpacing * textFaceMetrics.SpaceWidth;
+                    totalWidth -= charSpacing * textFaceMetrics.SpaceWidth;
                     graphemeList[graphemeList.Count - 1] = graphemePlacement;
                 }
 

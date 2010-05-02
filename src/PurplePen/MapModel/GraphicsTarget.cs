@@ -61,8 +61,8 @@ namespace PurplePen.MapModel
     public class GraphicsTarget
     {
         public Graphics Graphics;
-
         private Stack<GraphicsState> stateStack;
+        private StringFormat stringFormat;
 
         public IGraphicsBrush CreateSolidBrush(Color color)
         {
@@ -101,10 +101,21 @@ namespace PurplePen.MapModel
             return new GDIPlus_Pen(pen);
         }
 
+        // Create font
+        public IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic)
+        {
+            return new GDIPlus_Font(familyName, emHeight, bold, italic);
+        }
+
         public GraphicsTarget(Graphics g)
         {
             this.Graphics = g;
             stateStack = new Stack<GraphicsState>();
+            stringFormat = new StringFormat(StringFormat.GenericTypographic);
+            stringFormat.Alignment = StringAlignment.Near;
+            stringFormat.LineAlignment = StringAlignment.Near;
+            stringFormat.FormatFlags |= StringFormatFlags.NoClip;
+            stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
         }
 
         public IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
@@ -262,6 +273,29 @@ namespace PurplePen.MapModel
         {
             Graphics.FillPath((brush as GDIPlus_Brush).Brush, (path as GDIPlus_Path).GraphicsPath);
         }
+
+        // Draw text with upper-left corner of text at the given locations.
+        public void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, PointF upperLeft)
+        {
+            // Occasonal GDI+ throws an exception if the font size is super small.
+            try {
+                Graphics.DrawString(text, (font as GDIPlus_Font).Font, (brush as GDIPlus_Brush).Brush, upperLeft, stringFormat);
+            }
+            catch (System.Runtime.InteropServices.ExternalException) {
+                // Do nothing
+            }
+        }
+
+        // Draw text outline with upper-left corner of text at the given locations.
+        public void DrawTextOutline(string text, IGraphicsFont font, IGraphicsPen pen, PointF upperLeft)
+        {
+            Font gdiFont = (font as GDIPlus_Font).Font;
+            GraphicsPath grPath = new GraphicsPath(FillMode.Winding);
+            Debug.Assert(gdiFont.Unit == GraphicsUnit.World);
+
+            grPath.AddString(text, gdiFont.FontFamily, (int)gdiFont.Style, gdiFont.Size, upperLeft, stringFormat);
+            Graphics.DrawPath((pen as GDIPlus_Pen).Pen, grPath);
+        }
     }
 
     public class GraphicsBrushTarget : GraphicsTarget
@@ -354,6 +388,182 @@ namespace PurplePen.MapModel
         public void Dispose()
         {
             path.Dispose();
+        }
+    }
+
+    public class GDIPlus_Font : IGraphicsFont
+    {
+        Font font;
+        private float emHeight;
+
+        public GDIPlus_Font(string familyName, float emHeight, bool bold, bool italic)
+        {
+            FontStyle fontStyle = FontStyle.Regular;
+            if (bold)
+                fontStyle |= FontStyle.Bold;
+            if (italic)
+                fontStyle |= FontStyle.Italic;
+
+            this.emHeight = Math.Max(emHeight, 0.01F);            // 0 size fonts cause exception!
+            font = new Font(familyName, this.emHeight, fontStyle, GraphicsUnit.World);
+        }
+
+        public Font Font
+        {
+            get { return font; }
+        }
+
+        public float EmHeight
+        {
+            get { return emHeight; }
+        }
+
+        public void Dispose()
+        {
+            font.Dispose();
+            font = null;
+        }
+    }
+
+    public class GDIPlus_TextMetrics : ITextMetrics
+    {
+        public ITextFaceMetrics GetTextFaceMetrics(string familyName, float emHeight, bool bold, bool italic)
+        {
+            if (!TextFaceIsInstalled(familyName))
+                familyName = "Arial";          // Map non-existant fonts to "Arial".
+
+            return new GDIPlus_TextFaceMetrics(familyName, emHeight, bold, italic);
+        }
+
+        public bool TextFaceIsInstalled(string familyName)
+        {
+            // Doesn't seem to be an easy way to determine if a font exists.
+            try {
+                FontFamily family = new FontFamily(familyName);
+                family.Dispose();
+                return true;
+            }
+            catch {
+                return false;
+            }
+        }
+
+        public void Dispose()
+        {
+        }
+    }
+
+    public class GDIPlus_TextFaceMetrics : ITextFaceMetrics
+    {
+        private Font font;
+        private FontFamily fontFamily;
+        private FontStyle fontStyle;
+        private StringFormat stringFormat;
+        private float emHeight;
+
+        public GDIPlus_TextFaceMetrics(string familyName, float emHeight, bool bold, bool italic)
+        {
+            fontStyle = FontStyle.Regular;
+            if (bold)
+                fontStyle |= FontStyle.Bold;
+            if (italic)
+                fontStyle |= FontStyle.Italic;
+
+            float nominalFontSize = Math.Max(emHeight, 0.01F);            // 0 size fonts cause exception!
+            this.emHeight = nominalFontSize;
+
+            font = new Font(familyName, nominalFontSize, fontStyle, GraphicsUnit.World);
+            fontFamily = font.FontFamily;
+
+            stringFormat = new StringFormat(StringFormat.GenericTypographic);
+            stringFormat.Alignment = StringAlignment.Near;
+            stringFormat.LineAlignment = StringAlignment.Near;
+            stringFormat.FormatFlags |= StringFormatFlags.NoClip;
+            stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
+        }
+
+        public float  EmHeight
+        {
+	        get { return emHeight; }
+        }
+
+        private float ascent = -1;
+
+        public float  Ascent
+        {
+	        get {
+                if (ascent < 0) {
+                    int nominalEmHeight = fontFamily.GetEmHeight(fontStyle);
+                    int nominalAscent = fontFamily.GetCellAscent(fontStyle);
+                    ascent = (nominalAscent * emHeight) / nominalEmHeight;
+                }
+                return ascent;
+            }
+        }
+
+        private float descent = -1;
+        public float  Descent
+        {
+	        get {
+                if (descent < 0) {
+                    int nominalEmHeight = fontFamily.GetEmHeight(fontStyle);
+                    int nominalDescent = fontFamily.GetCellDescent(fontStyle);
+                    descent = (nominalDescent * emHeight) / nominalEmHeight;
+                }
+                return descent;
+            }
+        }
+
+        private float capHeight = -1;
+        public float  CapHeight
+        {
+	        get {
+                if (capHeight < 0) {
+                    GraphicsPath path = new GraphicsPath();
+                    path.AddString("W", fontFamily, (int)fontStyle, font.Size, new PointF(0, 0), stringFormat);
+                    return path.GetBounds().Height;
+                }
+                return capHeight;
+            }
+        }
+
+        private float spaceWidth = -1;
+        public float  SpaceWidth
+        {
+	        get {
+                if (spaceWidth < 0) {
+                    spaceWidth = GetTextWidth(" ");
+                }
+                return spaceWidth;
+            }
+        }
+
+        public float  GetTextWidth(string text)
+        {
+            return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat).Width;
+        }
+
+        public SizeF  GetTextSize(string text)
+        {
+            return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat);
+        }
+
+        static Graphics hiResGraphics = null;
+        private static Graphics GetHiresGraphics()
+        {
+            if (hiResGraphics == null) {
+                hiResGraphics = Graphics.FromHwnd(IntPtr.Zero);
+                hiResGraphics.ScaleTransform(50F, -50F);
+            }
+            return hiResGraphics;
+        }
+
+        public void  Dispose()
+        {
+            fontFamily.Dispose();
+            fontFamily = null;
+ 	        font.Dispose();
+            font = null;
         }
     }
 }

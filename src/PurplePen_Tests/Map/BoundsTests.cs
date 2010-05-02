@@ -113,7 +113,7 @@ namespace PurplePen.MapModel.Tests
             pngFileName = Path.Combine(directoryName, pngFileName);
 
             // Create and open the map file.
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(mapFileName, map);
 
             // Draw into a new bitmap.

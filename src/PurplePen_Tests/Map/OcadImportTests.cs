@@ -120,14 +120,14 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void MissingFonts()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(TestUtil.GetTestFile("ocadimport\\missingfont9.ocd"), map);
 
             string[] expected = { "Spyroclassic", "GeosansLight" };
             string[] missingFonts = map.MissingFonts;
             TestUtil.TestEnumerableAnyOrder(missingFonts, expected);
 
-            map = new Map();
+            map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(TestUtil.GetTestFile("ocadimport\\missingfont6.ocd"), map);
 
             missingFonts = map.MissingFonts;
@@ -137,7 +137,7 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void UnrenderableObjects9()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(TestUtil.GetTestFile("ocadimport\\nonrenderable9.ocd"), map);
 
             string[] expected = {
@@ -151,7 +151,7 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void UnrenderableObjects6()
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(TestUtil.GetTestFile("ocadimport\\nonrenderable6.ocd"), map);
 
             string[] expected = {

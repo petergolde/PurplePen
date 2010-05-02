@@ -122,7 +122,7 @@ namespace PurplePen.MapModel.Tests
             File.Delete(ocadFileName);
 
             // Create and open the map file.
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
             InputOutput.ReadFile(mapFileName, map);
 
             Stopwatch sw = new Stopwatch();
@@ -159,7 +159,7 @@ namespace PurplePen.MapModel.Tests
                     InputOutput.WriteFile(ocadFileName, map, version);
 
                     // Create and open the map file.
-                    map = new Map();
+                    map = new Map(new GDIPlus_TextMetrics());
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
