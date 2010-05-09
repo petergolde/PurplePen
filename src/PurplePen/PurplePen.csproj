@@ -71,7 +71,6 @@
     <Compile Include="MapModel\DebugCode\OcadDump.cs" />
     <Compile Include="MapModel\Bezier.cs" />
     <Compile Include="MapModel\Glyph.cs" />
-    <Compile Include="MapModel\GraphicsTarget.cs" />
     <Compile Include="MapModel\IGraphicsTarget.cs" />
     <Compile Include="MapModel\InputOutput.cs" />
     <Compile Include="MapModel\LZWCompression.cs" />
@@ -83,6 +82,7 @@
     <Compile Include="MapModel\SymColor.cs" />
     <Compile Include="MapModel\SymDef.cs" />
     <Compile Include="MapModel\SymPath.cs" />
+    <Compile Include="MapModel\ToolboxIcon.cs" />
     <Compile Include="MapModel\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

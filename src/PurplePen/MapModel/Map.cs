@@ -630,25 +630,22 @@ namespace PurplePen.MapModel
             }
         }
 
-#if WPF
-        public void Draw(System.Windows.Media.DrawingContext dc, RectangleF rect, RenderOptions renderOpts)
+        public void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts)
         {
             CheckReadable();
 
             TraceLine("Begin drawing rectangle ({0},{1})-({2},{3})", rect.Left, rect.Top, rect.Right, rect.Bottom);
             Trace.Indent();
 
-            GraphicsTarget grTarget = new GraphicsTarget(dc);
-
             if (renderOpts.showSymbolBounds)
-                boundsPen = GraphicsUtil.CreateSolidPen(grTarget, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
+                boundsPen = GraphicsUtil.CreateSolidPen(g, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
 
             // Draw the image layer.
-            DrawColor(grTarget, null, rect, true, renderOpts);
+            DrawColor(g, null, rect,  renderOpts);
 
             // Draw each color separately, to get correct layering.
             foreach (SymColor curColor in colors) {
-                DrawColor(grTarget, curColor, rect, true, renderOpts);
+                DrawColor(g, curColor, rect,  renderOpts);
             }
 
             if (renderOpts.showSymbolBounds)
@@ -657,58 +654,9 @@ namespace PurplePen.MapModel
             Trace.Unindent();
         }
 
-#else
-
-        // Draw the elements of the map that lie within the rectange rect
-        // into the Graphics g, which already has its world coordinates set up
-        // correctly and the clipping region.
-        public void Draw(System.Drawing.Graphics g, RectangleF rect, RenderOptions renderOpts)
-        {
-            CheckReadable();
-
-            TraceLine("Begin drawing rectangle ({0},{1})-({2},{3})", rect.Left, rect.Top, rect.Right, rect.Bottom);
-            Trace.Indent();
-
-            System.Drawing.Drawing2D.GraphicsState graphicsState = g.Save();
-            GraphicsTarget grTarget = new GraphicsTarget(g);
-            try {
-                // Get clipping region and bounding rectangle. If the clipping region isn't a rectangle,
-                // then it is worth doing extra work to eliminate symbols.
-                // UNDONE: clipRegionIsRectangle is given false on full repaint. Need to fix this.
-                System.Drawing.Region clipRegion;
-                rect.Intersect(g.ClipBounds);
-                clipRegion = g.Clip.Clone();
-                clipRegion.Xor(rect);
-                bool clipRegionIsRectangle = clipRegion.IsEmpty(g);
-                clipRegion.Dispose();
-
-                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-
-                if (renderOpts.showSymbolBounds)
-                    boundsPen = grTarget.CreatePen(Color.FromArgb(100, Color.Red), 0, LineCap.Flat, LineJoin.Miter, 4);
-
-                // Draw the image layer.
-                DrawColor(grTarget, null, rect, clipRegionIsRectangle, renderOpts);
-
-                // Draw each color separately, to get correct layering.
-                foreach (SymColor curColor in colors) {
-                    DrawColor(grTarget, curColor, rect, clipRegionIsRectangle, renderOpts);
-                }
-
-                if (renderOpts.showSymbolBounds)
-                    boundsPen.Dispose();
-
-                Trace.Unindent();
-            }
-            finally {
-                g.Restore(graphicsState);
-            }
-        }
-
-#endif
 
         // Draw a particular color layer. If curColor is null, draw the image layer. 
-        private void DrawColor(GraphicsTarget g, SymColor curColor, RectangleF rect, bool clipRegionIsRectangle, RenderOptions renderOpts)
+        private void DrawColor(IGraphicsTarget g, SymColor curColor, RectangleF rect, RenderOptions renderOpts)
         {
             foreach (SymDef symdef in symdefs) {
                 if (IsSymdefVisible(symdef) && symdef.HasColor(curColor)) {
@@ -717,9 +665,6 @@ namespace PurplePen.MapModel
                         // the bounding box first as it's faster exclusion than MayIntersectRect.
                         RectangleF bounds = curSym.BoundingBox;
                         if (bounds.IntersectsWith(rect) &&
-#if !WPF
-                            (clipRegionIsRectangle || g.Graphics.IsVisible(Util.InflateRect(bounds, renderOpts.minResolution))) &&
-#endif
                             curSym.MayIntersectRect(rect)) 
                         {
                             curSym.Draw(g, curColor, renderOpts);

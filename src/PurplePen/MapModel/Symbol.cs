@@ -40,12 +40,6 @@ using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using Color = System.Drawing.Color;
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-#endif
 
 namespace PurplePen.MapModel
 {
@@ -82,7 +76,7 @@ namespace PurplePen.MapModel
         public abstract bool MayIntersectRect(RectangleF rect);
 
         // Draw this color, if used, of this symbol.
-        public abstract void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts);
+        public abstract void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts);
     }
 
     public class PointSymbol: Symbol
@@ -132,7 +126,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             def.Draw(g, location, rotation, gaps, color, renderOpts);
         }
@@ -172,7 +166,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             def.Draw(g, path, color, renderOpts);
         }
@@ -216,7 +210,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             def.DrawTextOnPath(g, path, text, color, renderOpts);
         }
@@ -260,7 +254,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             def.Draw(g, path, color, angle, renderOpts);
         }
@@ -335,7 +329,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts) {
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts) {
             def.Draw(g, wrappedText, wrappedLineWidths, adjustedLocation, rotation, width, color, renderOpts);
         }
 
@@ -418,7 +412,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == fillColor) {
                 path.Fill(g, fillColor.GetBrush(g));
@@ -465,7 +459,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
                 IGraphicsBrush brush = g.CreateSolidBrush(map.TransformColor(fillColor));
@@ -520,7 +514,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == lineColor) {
                 IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, lineColor.ColorValue, thickness, lineStyle);
@@ -575,7 +569,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this color, if used, of this symbol.
-        public override void Draw(GraphicsTarget g, SymColor color, RenderOptions renderOpts)
+        public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
                 IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, map.TransformColor(lineColor), thickness, lineStyle);

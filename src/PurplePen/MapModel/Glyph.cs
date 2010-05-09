@@ -59,7 +59,7 @@ namespace PurplePen.MapModel
 			internal IGraphicsPen pen;		
 
             // Draw this glyph part. gaps is used only for Circle parts, and is a set of gaps in the circle in degrees.
-			public void Draw(GraphicsTarget g, float[] gaps, RenderOptions renderOpts) {
+			public void Draw(IGraphicsTarget g, float[] gaps, RenderOptions renderOpts) {
 				float radius;
 
 				switch (kind) {
@@ -167,7 +167,7 @@ namespace PurplePen.MapModel
 
         private static Matrix identityMatrix = new Matrix();
 
-        internal void Draw(GraphicsTarget g, PointF pt, float angle, Matrix extraTransform, float[] gaps, SymColor color, RenderOptions renderOpts)
+        internal void Draw(IGraphicsTarget g, PointF pt, float angle, Matrix extraTransform, float[] gaps, SymColor color, RenderOptions renderOpts)
         {
             Debug.Assert(constructed);
 
@@ -205,7 +205,7 @@ namespace PurplePen.MapModel
 			}
 		}
 
-		void DrawSimple(GraphicsTarget g, PointF pt, RenderOptions renderOpts) {
+		void DrawSimple(IGraphicsTarget g, PointF pt, RenderOptions renderOpts) {
 			Debug.Assert(parts.Length == 1);
 			Debug.Assert(parts[0].kind == GlyphPartKind.Circle || parts[0].kind == GlyphPartKind.FilledCircle);
 			Debug.Assert(parts[0].point.X == 0.0F && parts[0].point.Y == 0.0F);

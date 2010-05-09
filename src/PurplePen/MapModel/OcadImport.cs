@@ -43,9 +43,6 @@ using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using Color = System.Drawing.Color;
-#if !WPF
-using Bitmap = System.Drawing.Bitmap;
-#endif 
 
 namespace PurplePen.MapModel
 {
@@ -106,16 +103,15 @@ namespace PurplePen.MapModel
             return (float) ocadAngle * 0.1F;
         }
 
-#if !WPF
-        static Bitmap ConvertOcadIcon(byte[] bytes) {
-            Bitmap bm = new Bitmap(24,24);
+        static ToolboxIcon ConvertOcadIcon(byte[] bytes) {
+            ToolboxIcon icon = new ToolboxIcon();
 
             for (int i = 0; i < 24; ++i) {
                 for (int j = 0; j < 24; ++j) {
 
                     // Ocad bitmap is 22x22 -- border is transparent
                     if (i == 0 || i == 23 || j == 0 || j == 23)
-                        bm.SetPixel(i, j, Color.Transparent);
+                        icon.SetPixel(i, j, Color.Transparent);
                     else {
                         int x = i-1, y = 22-j; // coords in ocad bitmap.
                         byte ocadPixel;
@@ -124,39 +120,40 @@ namespace PurplePen.MapModel
                         else
                             ocadPixel = (byte) (bytes[y * 12 + (x/2)] & 0xF);
 
-                        bm.SetPixel(i, j, OcadConstants.ocadColorMap4Bit[ocadPixel]);
+                        icon.SetPixel(i, j, OcadConstants.ocadColorMap4Bit[ocadPixel]);
                     }
                 }
             }
 
-            return bm;
+            return icon;
         }
 
-        static Bitmap ConvertOcad9Icon(byte[] bytes)
+        static ToolboxIcon ConvertOcad9Icon(byte[] bytes)
         {
-            Bitmap bm = new Bitmap(24,24);
+            ToolboxIcon icon = new ToolboxIcon();
 
             for (int i = 0; i < 24; ++i) {
                 for (int j = 0; j < 24; ++j) {
 
                     // Ocad bitmap is 22x22 -- border is transparent
                     if (i == 0 || i == 23 || j == 0 || j == 23)
-                        bm.SetPixel(i, j, Color.Transparent);
+                        icon.SetPixel(i, j, Color.Transparent);
                     else {
                         int x = i-1, y = 22-j; // coords in ocad bitmap.
                         byte ocadPixel = bytes[y * 22 + x];
                         if (ocadPixel >= OcadConstants.ocadColorMap8Bit.Length)
-                            bm.SetPixel(i, j, Color.White);
+                            icon.SetPixel(i, j, Color.White);
                         else
-                            bm.SetPixel(i, j, OcadConstants.ocadColorMap8Bit[ocadPixel]);
+                            icon.SetPixel(i, j, OcadConstants.ocadColorMap8Bit[ocadPixel]);
                     }
                 }
             }
 
-            return bm;
+            return icon;
         }
 
-        static Bitmap ConvertCompressedOcadIcon(byte[] bytes) {
+        static ToolboxIcon ConvertCompressedOcadIcon(byte[] bytes)
+        {
             byte[] compressed = new byte[248];
             byte[] uncompressed = new byte[22 * 22];
 
@@ -166,7 +163,6 @@ namespace PurplePen.MapModel
 
             return ConvertOcad9Icon(uncompressed);
         }
-#endif
 
         // See if this looks like an ocad file.
         public static bool IsOcadFile(Stream stm) {
@@ -531,14 +527,12 @@ namespace PurplePen.MapModel
             }
 
             if (symdef != null) {
-#if !WPF
                 if (version == 9)
                     symdef.ToolboxImage = ConvertOcad9Icon(ocadSym.IconBits);
                 else if ((ocadSym.Flags & 2) != 0)
                     symdef.ToolboxImage = ConvertCompressedOcadIcon(ocadSym.IconBits);
                 else
                     symdef.ToolboxImage = ConvertOcadIcon(ocadSym.IconBits);
-#endif
 
                 map.AddSymdef(symdef);
                 symdefids[symid] = symdef;
@@ -1874,7 +1868,7 @@ namespace PurplePen.MapModel
         // Check a font to see if it exists or not, and if not, remember it. Only done when an symbol (not a symdef) that uses that font is read.
         void CheckFont(string fontName)
         {
-            if (!missingFontNames.ContainsKey(fontName) && !Util.FontExists(fontName))
+            if (!missingFontNames.ContainsKey(fontName) && !map.TextMetricsProvider.TextFaceIsInstalled(fontName))
                 missingFontNames.Add(fontName, true);
         }
     }

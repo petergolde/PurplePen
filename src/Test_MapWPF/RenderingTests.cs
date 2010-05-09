@@ -102,7 +102,7 @@ namespace TestWpfMap
 
             // Draw the map.
             using (map.Read())
-                map.Draw(dc, mapArea, renderOpts);
+                map.Draw(new WPF_GraphicsTarget(dc), mapArea, renderOpts);
             dc.Close();
 
             // Draw into a new bitmap.

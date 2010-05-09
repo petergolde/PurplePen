@@ -95,6 +95,10 @@
     <Content Include="TestUtil\TestUtil.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
+      <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
+      <Name>Map_GDIPlus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PurplePen\PurplePen.csproj">
       <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
       <Name>PurplePen</Name>

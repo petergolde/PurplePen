@@ -38,20 +38,11 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Globalization;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using Color = System.Drawing.Color;
-#endif
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
-#endif
 
 namespace PurplePen.MapModel {
     public class OcadExport {
@@ -362,11 +353,8 @@ namespace PurplePen.MapModel {
 
             
             symbol.Description = symdef.Name;
-#if WPF
-            symbol.IconBits = new byte[version <= 8 ? 264 : 22 * 22];
-#else
-            symbol.IconBits = ImageToOcadIcon(symdef.ToolboxImage, version);
-#endif
+            symbol.IconBits = ToolboxIconToOcadIcon(symdef.ToolboxImage, version);
+
             if (version == 8) 
                 symbol.Flags |= 2;
 
@@ -753,23 +741,16 @@ namespace PurplePen.MapModel {
         }
 
 
-#if !WPF
-        // Convert an image into an OCAD icon bits.
-        unsafe byte[] ImageToOcadIcon(Image image, int version) {
-            Bitmap bitmap = new Bitmap(24, 24, PixelFormat.Format24bppRgb);
-            Graphics g = Graphics.FromImage(bitmap);
-            g.Clear(Color.White);
-            g.DrawImage(image, new Rectangle(0, 0, 24, 24));
-            g.Dispose();
-
+        // Convert an ToolboxIcon into an OCAD icon bits.
+        unsafe byte[] ToolboxIconToOcadIcon(ToolboxIcon toolboxIcon, int version) {
             if (version <= 7) {
                 // ocad 6, 7 -- 4 bit color
                 byte[] array = new byte[264];
 
                 for (int row = 1; row <= 22; ++row)
                     for (int col = 1; col <= 22; col += 2) {
-                        int colorIndex1 = NearestOcadColor(bitmap.GetPixel(col, row), false);
-                        int colorIndex2 = NearestOcadColor(bitmap.GetPixel(col + 1, row), false);
+                        int colorIndex1 = NearestOcadColor(toolboxIcon.GetPixel(col, row), false);
+                        int colorIndex2 = NearestOcadColor(toolboxIcon.GetPixel(col + 1, row), false);
                         array[(22 - row) * 12 + (col - 1) / 2] = (byte) ((colorIndex1 << 4) + colorIndex2);
                     }
 
@@ -780,7 +761,7 @@ namespace PurplePen.MapModel {
                 byte[] uncompressed = new byte[22 * 22];
                 for (int row = 1; row <= 22; ++row)
                     for (int col = 1; col <= 22; ++col) {
-                        int colorIndex = NearestOcadColor(bitmap.GetPixel(col, row), true);
+                        int colorIndex = NearestOcadColor(toolboxIcon.GetPixel(col, row), true);
                         uncompressed[(22-row) * 22 + (col - 1)] = colorIndex > 128 ? (byte)0 : (byte) colorIndex;
                     }
 
@@ -807,7 +788,6 @@ namespace PurplePen.MapModel {
                 }
             }
         }
-#endif
 
         OcadSymbolElt[] SymbolEltsFromGlyph(Glyph glyph, out short datasize) {
             Glyph.GlyphPart[] parts = glyph.GetParts();

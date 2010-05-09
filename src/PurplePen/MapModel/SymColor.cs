@@ -79,7 +79,7 @@ namespace PurplePen.MapModel
             } 
         }
 
-        public IGraphicsBrush GetBrush(GraphicsTarget g)
+        public IGraphicsBrush GetBrush(IGraphicsTarget g)
         {
             if (brush == null)
                 CreateBrush(g);
@@ -105,7 +105,7 @@ namespace PurplePen.MapModel
 			this.brush = null;
 		}
 
-        void CreateBrush(GraphicsTarget g)
+        void CreateBrush(IGraphicsTarget g)
         {
             brush = g.CreateSolidBrush(ColorValue);
         }

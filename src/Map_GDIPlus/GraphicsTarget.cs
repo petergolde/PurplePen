@@ -35,41 +35,39 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using SysDraw = System.Drawing;
-using SysDraw2D = System.Drawing.Drawing2D;
-#if WPF
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using WpfMatrix = System.Windows.Media.Matrix;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-#endif
-#if WPF
-using System.Windows;
-using System.Windows.Media;
-#else
 using System.Drawing;
 using System.Drawing.Drawing2D;
-#endif
+
+using PurplePen.MapModel;
 
 namespace PurplePen.MapModel
 {
 
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
-    public class GraphicsTarget
+    public class GDIPlus_GraphicsTarget: IGraphicsTarget
     {
         public Graphics Graphics;
         private Stack<GraphicsState> stateStack;
         private StringFormat stringFormat;
+
+        public GDIPlus_GraphicsTarget(Graphics g)
+        {
+            this.Graphics = g;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            stateStack = new Stack<GraphicsState>();
+            stringFormat = new StringFormat(StringFormat.GenericTypographic);
+            stringFormat.Alignment = StringAlignment.Near;
+            stringFormat.LineAlignment = StringAlignment.Near;
+            stringFormat.FormatFlags |= StringFormatFlags.NoClip;
+            stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
+        }
 
         public IGraphicsBrush CreateSolidBrush(Color color)
         {
             return new GDIPlus_Brush(color);
         }
 
-        public GraphicsBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
+        public IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
         {
                 // Create a new bitmap and fill it transparent.
                 Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
@@ -80,10 +78,10 @@ namespace PurplePen.MapModel
                 g.TranslateTransform((float)bitmapWidth / 2F, (float)bitmapHeight / 2F);
                 g.ScaleTransform((float)bitmapWidth / size.Width, (float)bitmapHeight / size.Height);
 
-                return new GraphicsBrushTarget(g, bitmap, size);
+                return new GDIPlus_BrushTarget(g, bitmap, size);
         }
 
-        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, LineCap caps, LineJoin join, float miterLimit)
         {
             Pen pen = new Pen((brush as GDIPlus_Brush).Brush, width);
             pen.StartCap = pen.EndCap = caps;
@@ -92,7 +90,7 @@ namespace PurplePen.MapModel
             return new GDIPlus_Pen(pen);
         }
 
-        public IGraphicsPen CreatePen(Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public IGraphicsPen CreatePen(Color color, float width, LineCap caps, LineJoin join, float miterLimit)
         {
             Pen pen = new Pen(color, width);
             pen.StartCap = pen.EndCap = caps;
@@ -105,17 +103,6 @@ namespace PurplePen.MapModel
         public IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic)
         {
             return new GDIPlus_Font(familyName, emHeight, bold, italic);
-        }
-
-        public GraphicsTarget(Graphics g)
-        {
-            this.Graphics = g;
-            stateStack = new Stack<GraphicsState>();
-            stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = StringAlignment.Near;
-            stringFormat.LineAlignment = StringAlignment.Near;
-            stringFormat.FormatFlags |= StringFormatFlags.NoClip;
-            stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
         }
 
         public IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
@@ -250,7 +237,7 @@ namespace PurplePen.MapModel
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode)
+        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, FillMode windingMode)
         {
             Graphics.FillPolygon((brush as GDIPlus_Brush).Brush, pts, windingMode);
         }
@@ -296,21 +283,24 @@ namespace PurplePen.MapModel
             grPath.AddString(text, gdiFont.FontFamily, (int)gdiFont.Style, gdiFont.Size, upperLeft, stringFormat);
             Graphics.DrawPath((pen as GDIPlus_Pen).Pen, grPath);
         }
+
+        public void Dispose()
+        { }
     }
 
-    public class GraphicsBrushTarget : GraphicsTarget
+    public class GDIPlus_BrushTarget : GDIPlus_GraphicsTarget, IBrushTarget
     {
         private Bitmap bitmap;
         private SizeF size;
 
-        public GraphicsBrushTarget(Graphics g, Bitmap bitmap, SizeF size)
+        public GDIPlus_BrushTarget(Graphics g, Bitmap bitmap, SizeF size)
         : base(g)
         {
             this.bitmap = bitmap;
             this.size = size;
         }
 
-        public IGraphicsBrush FinishPatternBrush(float angle)
+        public IGraphicsBrush FinishBrush(float angle)
         {
             // Create a TextureBrush on the bitmap.
             TextureBrush brush = new TextureBrush(bitmap);

@@ -39,24 +39,12 @@ using System.Globalization;
 using System.Text;
 using System.IO;
 using SysDraw = System.Drawing;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using LineJoin = System.Drawing.Drawing2D.LineJoin;
 using LineCap = System.Drawing.Drawing2D.LineCap;
-#endif
-
-#if WPF
-using System.Windows;
-using System.Windows.Media;
-using System.Runtime.InteropServices;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
-#endif
 
 namespace PurplePen.MapModel
 {
@@ -93,24 +81,22 @@ namespace PurplePen.MapModel
         protected Map map;
         public Map ContainingMap { get { return map; } }
 
-#if !WPF
-        private Image toolboxImage;
-        public Image ToolboxImage
+        private ToolboxIcon toolboxIcon;
+
+        public ToolboxIcon ToolboxImage
         {
             get
             {
-                if (toolboxImage == null) {
-                    Bitmap bitmap = new Bitmap(24, 24);
-                    using (Graphics g = Graphics.FromImage(bitmap))
-                        g.Clear(Color.Transparent);
-                    toolboxImage = bitmap;
-                }
-
-                return toolboxImage;
+                if (toolboxIcon == null)
+                    toolboxIcon = new ToolboxIcon();
+                return toolboxIcon;
             }
-            set { CheckModifiable(); toolboxImage = value; }
+            set
+            {
+                CheckModifiable();
+                toolboxIcon = value;
+            }
         }
-#endif
 
         private int ocadID;
         public int OcadID { get { return ocadID; } }
@@ -221,7 +207,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this point symbol at point pt with angle ang in this graphics (given color only).
-        internal void Draw(GraphicsTarget g, PointF pt, float angle, float[] gaps, SymColor color, RenderOptions renderOpts)
+        internal void Draw(IGraphicsTarget g, PointF pt, float angle, float[] gaps, SymColor color, RenderOptions renderOpts)
         {
             glyph.Draw(g, pt, angle, null, gaps, color, renderOpts);
         }
@@ -437,7 +423,7 @@ namespace PurplePen.MapModel
             this.shortenInfo = shortenInfo;
         }
 
-        void CreatePens(GraphicsTarget g)
+        void CreatePens(IGraphicsTarget g)
         {
             Debug.Assert(!pensCreated && mainPen == null);
 
@@ -547,7 +533,7 @@ namespace PurplePen.MapModel
 
         // Draw this line symbol in the graphics along the path provided, with
         // the given color only.
-        internal void Draw(GraphicsTarget g, SymPath path, SymColor color, RenderOptions renderOpts)
+        internal void Draw(IGraphicsTarget g, SymPath path, SymColor color, RenderOptions renderOpts)
         {
             Debug.Assert(map != null);
 
@@ -981,12 +967,12 @@ namespace PurplePen.MapModel
             return list.ToArray();
         }
 
-        private static void DrawDashed(GraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, RenderOptions renderOpts)
+        private static void DrawDashed(IGraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, RenderOptions renderOpts)
         {
             DrawDashedWithOffset(g, path, pen, dashes, 0, 1, renderOpts);
         }
 
-        private static void DrawDashedWithOffset(GraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, float offsetRight, float miterLimit, RenderOptions renderOpts)
+        private static void DrawDashedWithOffset(IGraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, float offsetRight, float miterLimit, RenderOptions renderOpts)
         {
             float[] distances;
 
@@ -1008,7 +994,7 @@ namespace PurplePen.MapModel
 
         // Draw the glyphs along the path. "longPath" is the same as path unless shortening of the ends has occurred, in which case
         // path is the shortened path (used for all glyphs except start and end), and longPath is used for the start and end.
-        private void DrawGlyphs(GraphicsTarget g, GlyphInfo glyphInfo, SymPath path, SymPath longPath, SymColor color, RenderOptions renderOpts)
+        private void DrawGlyphs(IGraphicsTarget g, GlyphInfo glyphInfo, SymPath path, SymPath longPath, SymColor color, RenderOptions renderOpts)
         {
             float[] distances;
             PointF[] points;
@@ -1120,7 +1106,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw the pointy ends on a line.
-        void DrawPointyEnds(GraphicsTarget g, SymPath longPath, float pointyLengthStart, float pointyLengthEnd, float lineWidth)
+        void DrawPointyEnds(IGraphicsTarget g, SymPath longPath, float pointyLengthStart, float pointyLengthEnd, float lineWidth)
         {
             // Get locations of points at the tip, half-way, and base of the pointy tips.
             float length = longPath.BizzarroLength;
@@ -1203,7 +1189,7 @@ namespace PurplePen.MapModel
         Glyph patternGlyph;  // pattern element
 
         // Cached brushes for faster pattern drawing.
-        float pixelSizeCached;                          // pixel size in mm that the patternBrushes are created for. (WPF brushes are resolution independent).
+        float pixelSizeCached;                          // pixel size in mm that the patternBrushes are created for. 
         Dictionary<SymColor, IGraphicsBrush> patternBrushes; // pattern brushes, indexed by color
 
         bool pensAndBrushesCreated; // are pens and brushed created.
@@ -1285,7 +1271,7 @@ namespace PurplePen.MapModel
         }
 
 
-        void CreatePensAndBrushes(GraphicsTarget g)
+        void CreatePensAndBrushes(IGraphicsTarget g)
         {
             Debug.Assert(!pensAndBrushesCreated && hatchPen == null && patternBrushes == null);
 
@@ -1331,7 +1317,7 @@ namespace PurplePen.MapModel
 
         // Draw this area symbol in the graphics inside/around the path provided, with
         // the given color only.
-        internal void Draw(GraphicsTarget g, SymPathWithHoles path, SymColor color, float angle, RenderOptions renderOpts)
+        internal void Draw(IGraphicsTarget g, SymPathWithHoles path, SymColor color, float angle, RenderOptions renderOpts)
         {
             if (!pensAndBrushesCreated)
                 CreatePensAndBrushes(g);
@@ -1375,7 +1361,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw the hatching into the interior of the SymPath.
-        void DrawHatching(GraphicsTarget g, SymPathWithHoles path, float angle, RenderOptions renderOpts)
+        void DrawHatching(IGraphicsTarget g, SymPathWithHoles path, float angle, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
             g.PushClip(path.GetIGraphicsPath(g));
@@ -1419,7 +1405,7 @@ namespace PurplePen.MapModel
 
         // Draw a set of horizontal hatching lines at the given spacing with
         // the given pen. A line should be centered on the zero y coordinate.
-        void DrawHatchLines(GraphicsTarget g, IGraphicsPen pen, float spacing, RectangleF boundingRect, RenderOptions renderOpts)
+        void DrawHatchLines(IGraphicsTarget g, IGraphicsPen pen, float spacing, RectangleF boundingRect, RenderOptions renderOpts)
         {
             double firstLine = Math.Round(boundingRect.Top / spacing) * spacing;
             double lastLine = (Math.Round(boundingRect.Bottom / spacing) + 0.5) * spacing;
@@ -1430,7 +1416,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw the pattern using the texture brush.
-        void DrawPatternWithTexBrush(GraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
+        void DrawPatternWithTexBrush(IGraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
             IGraphicsBrush brush = patternBrushes[color];
             Debug.Assert(brush != null);
@@ -1524,7 +1510,7 @@ namespace PurplePen.MapModel
             }
         }
 #endif
-        void CreatePatternBrush(float pixelSize, GraphicsTarget gt)
+        void CreatePatternBrush(float pixelSize, IGraphicsTarget gt)
         {
             //  Determine adjusted pixel size of the brush to create. 
             const float MAX_PATTERN_SIZE = 80;
@@ -1561,7 +1547,7 @@ namespace PurplePen.MapModel
                     continue;
 
                 // Create a new pattern brush.
-                GraphicsBrushTarget brushTarget = gt.CreatePatternBrush(new SizeF(patternWidth, (offsetRows ? patternHeight * 2 : patternHeight)), bitmapWidth, bitmapHeight);
+                IBrushTarget brushTarget = gt.CreatePatternBrush(new SizeF(patternWidth, (offsetRows ? patternHeight * 2 : patternHeight)), bitmapWidth, bitmapHeight);
 
                 // Draw the pattern into the bitmap.
                 if (offsetRows)
@@ -1578,7 +1564,7 @@ namespace PurplePen.MapModel
                 }
 
                 // Get the brush
-                IGraphicsBrush brush = brushTarget.FinishPatternBrush(patternAngle);
+                IGraphicsBrush brush = brushTarget.FinishBrush(patternAngle);
                 
                 // Add it to the collection of brushes.
                 patternBrushes.Add(color, brush);
@@ -1586,7 +1572,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw the pattern (at the given angle) inside the path.
-        void DrawPattern(GraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
+        void DrawPattern(IGraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
             g.PushClip(path.GetIGraphicsPath(g));
@@ -1611,7 +1597,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw a set of rows of the pattern with the given rectangle
-        void DrawPatternRows(GraphicsTarget g, RectangleF boundingRect, SymColor color, RenderOptions renderOpts)
+        void DrawPatternRows(IGraphicsTarget g, RectangleF boundingRect, SymColor color, RenderOptions renderOpts)
         {
             double topLine = Math.Round(boundingRect.Top / patternHeight) * patternHeight;
             double bottomLine = (Math.Round(boundingRect.Bottom / patternHeight) + 0.5) * patternHeight;
@@ -1722,7 +1708,7 @@ namespace PurplePen.MapModel
             fontMetricsCreated = true;
         }
 
-        private void CreateFonts(GraphicsTarget g)
+        private void CreateFonts(IGraphicsTarget g)
         {
             Debug.Assert(!fontsCreated);
 
@@ -1731,7 +1717,7 @@ namespace PurplePen.MapModel
             fontsCreated = true;
         }
 
-        private void CreateObjects(GraphicsTarget g)
+        private void CreateObjects(IGraphicsTarget g)
         {
             Debug.Assert(!objectsCreated);
 
@@ -1880,7 +1866,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw a single line of text at the given point with the given brush.
-        private void DrawSingleLineString(GraphicsTarget g, string text, IGraphicsBrush brush, PointF pt)
+        private void DrawSingleLineString(IGraphicsTarget g, string text, IGraphicsBrush brush, PointF pt)
         {
             g.DrawText(text, font, brush, pt);
         }
@@ -1895,7 +1881,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw a string with shadow or line framing effects, if specified. The font from this symdef is used.
-        private void DrawStringWithEffects(GraphicsTarget g, SymColor color, string text, PointF pt)
+        private void DrawStringWithEffects(IGraphicsTarget g, SymColor color, string text, PointF pt)
         {
             if (color == fontColor) {
                 DrawSingleLineString(g, text, fontColor.GetBrush(g), pt);
@@ -1913,7 +1899,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw the framing rectangle around some text. The top of the text is at 0, and the bottom baseline of text is at "bottomOfText".
-        private void DrawFramingRectangle(GraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float bottomOfText)
+        private void DrawFramingRectangle(IGraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float bottomOfText)
         {
             if (framing.framingStyle == FramingStyle.Rectangle && color == framing.framingColor) {
                 // First, figure out the width of the rectangle. If fullWidth is zero, used the maximum line width.
@@ -1956,7 +1942,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw an underline under the text, if applicable.
-        private void DrawUnderline(GraphicsTarget g, SymColor color, float baseline, float width, float indent)
+        private void DrawUnderline(IGraphicsTarget g, SymColor color, float baseline, float width, float indent)
         {
             if (underline.underlineOn && color == underline.underlineColor) {
                 // Figure out the left and right sides of the underline.
@@ -1979,7 +1965,7 @@ namespace PurplePen.MapModel
 
 
         // Draw this text symbol at point pt with angle ang in this graphics (given color only). 
-        internal void Draw(GraphicsTarget g, string[] text, float[] lineWidths, PointF location, float angle,  float fullWidth, SymColor color, RenderOptions renderOpts)
+        internal void Draw(IGraphicsTarget g, string[] text, float[] lineWidths, PointF location, float angle,  float fullWidth, SymColor color, RenderOptions renderOpts)
         {
             if (color == null)
                 return;
@@ -2391,7 +2377,7 @@ namespace PurplePen.MapModel
         }
 
         // Draw this text symbol along a path.
-        internal void DrawTextOnPath(GraphicsTarget g, SymPath path, string text, SymColor color, RenderOptions renderOpts)
+        internal void DrawTextOnPath(IGraphicsTarget g, SymPath path, string text, SymColor color, RenderOptions renderOpts)
         {
             if (color == null)
                 return;

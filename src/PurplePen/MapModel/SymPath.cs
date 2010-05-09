@@ -218,18 +218,18 @@ namespace PurplePen.MapModel
             return new SymPath(pointsXform, kinds, startStopFlags, lastPointSynthesized);
         }
 
-        public void Draw(GraphicsTarget g, IGraphicsPen pen)
+        public void Draw(IGraphicsTarget g, IGraphicsPen pen)
         {
             DrawCore(g, pen, points);
         }
 
-        public void DrawTransformed(GraphicsTarget g, IGraphicsPen pen, Matrix transform)
+        public void DrawTransformed(IGraphicsTarget g, IGraphicsPen pen, Matrix transform)
         {
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
             DrawCore(g, pen, pointsXform);
         }
 
-        void DrawCore(GraphicsTarget g, IGraphicsPen pen, PointF[] points) 
+        void DrawCore(IGraphicsTarget g, IGraphicsPen pen, PointF[] points) 
         {
             if (!anyBeziers)
             {
@@ -246,17 +246,17 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void Fill(GraphicsTarget g, IGraphicsBrush b)
+        public void Fill(IGraphicsTarget g, IGraphicsBrush b)
         {
             FillCore(g, b, points, null, null);
         }
 
-        public void FillTransformed(GraphicsTarget g, IGraphicsBrush b, Matrix transform)
+        public void FillTransformed(IGraphicsTarget g, IGraphicsBrush b, Matrix transform)
         {
             FillTransformedWithHoles(g, b, transform, null);
         }
 
-        public void FillWithHoles(GraphicsTarget g, IGraphicsBrush b, SymPath[] holes) {
+        public void FillWithHoles(IGraphicsTarget g, IGraphicsBrush b, SymPath[] holes) {
             PointF[][] holePoints = null;
             if (holes != null) {
                 holePoints = new PointF[holes.Length][];
@@ -267,7 +267,7 @@ namespace PurplePen.MapModel
             FillCore(g, b, points, holes, holePoints);
         }
 
-        public void FillTransformedWithHoles(GraphicsTarget g, IGraphicsBrush b, Matrix transform, SymPath[] holes) {
+        public void FillTransformedWithHoles(IGraphicsTarget g, IGraphicsBrush b, Matrix transform, SymPath[] holes) {
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
 
             PointF[][] holePoints = null;
@@ -281,7 +281,7 @@ namespace PurplePen.MapModel
             FillCore(g, b, pointsXform, holes, holePoints);
         }
 
-        void FillCore(GraphicsTarget g, IGraphicsBrush brush, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
+        void FillCore(IGraphicsTarget g, IGraphicsBrush brush, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
         {
             if (anyBeziers || holes != null) 
             {
@@ -298,12 +298,12 @@ namespace PurplePen.MapModel
             }
         }
 
-        public IGraphicsPath GetIGraphicsPath(GraphicsTarget g)
+        public IGraphicsPath GetIGraphicsPath(IGraphicsTarget g)
         {
             return GetIGraphicsPathCore(g, points, null, null);
         }
 
-        public IGraphicsPath GetIGraphicsPathWithHoles(GraphicsTarget g, SymPath[] holes)
+        public IGraphicsPath GetIGraphicsPathWithHoles(IGraphicsTarget g, SymPath[] holes)
         {
             if (holes == null)
                 return GetIGraphicsPathCore(g, points, null, null);
@@ -370,7 +370,7 @@ namespace PurplePen.MapModel
                 partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, null));
         }
 
-        IGraphicsPath GetIGraphicsPathCore(GraphicsTarget g, PointF[] points, SymPath[] holes, PointF[][] holePoints)
+        IGraphicsPath GetIGraphicsPathCore(IGraphicsTarget g, PointF[] points, SymPath[] holes, PointF[][] holePoints)
         {
             List<GraphicsPathPart> partList = new List<GraphicsPathPart>();
 
@@ -391,27 +391,27 @@ namespace PurplePen.MapModel
         // Draw a dashed lines. The dashLengths array contains the dash/gap lengths for the whole line. If we reach 
         // the end of this array, we wrap around. The variable offsetToStart indicates how far into the array to 
         // start.
-        public void DrawDashed(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashed(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, 0, 1);
         }
 
-        public void DrawDashedBizzarro(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashedBizzarro(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, 0, 1);
         }
 
-        public void DrawDashedOffset(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffset(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, offsetRight, miterLimit);
         }
 
-        public void DrawDashedOffsetBizzarro(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffsetBizzarro(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
             DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, offsetRight, miterLimit);
         }
 
-        private void DrawDashedCore(GraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
+        private void DrawDashedCore(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
         {
             double nextLength = dashLengths[0];  // distance to next dash beginning/end
             int curDash = 0;			// current index into dashLengths array.
@@ -1514,7 +1514,7 @@ namespace PurplePen.MapModel
         }
 
 
-        public void Draw(GraphicsTarget g, IGraphicsPen pen) {
+        public void Draw(IGraphicsTarget g, IGraphicsPen pen) {
             MainPath.Draw(g, pen);
             if (Holes != null) {
                 foreach (SymPath hole in Holes)
@@ -1522,7 +1522,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void DrawTransformed(GraphicsTarget g, IGraphicsPen pen, Matrix matrix)
+        public void DrawTransformed(IGraphicsTarget g, IGraphicsPen pen, Matrix matrix)
         {
             MainPath.DrawTransformed(g, pen, matrix);
             if (Holes != null) {
@@ -1531,15 +1531,15 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void Fill(GraphicsTarget g, IGraphicsBrush brush) {
+        public void Fill(IGraphicsTarget g, IGraphicsBrush brush) {
             MainPath.FillWithHoles(g, brush, Holes);
         }
 
-        public void FillTransformed(GraphicsTarget g, IGraphicsBrush brush, Matrix matrix) {
+        public void FillTransformed(IGraphicsTarget g, IGraphicsBrush brush, Matrix matrix) {
             MainPath.FillTransformedWithHoles(g, brush, matrix, Holes);
         }
 
-        public IGraphicsPath GetIGraphicsPath(GraphicsTarget g)
+        public IGraphicsPath GetIGraphicsPath(IGraphicsTarget g)
         {
             return MainPath.GetIGraphicsPathWithHoles(g, Holes);
         }

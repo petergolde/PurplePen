@@ -38,7 +38,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -47,7 +47,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;WPF</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -70,55 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PurplePen\MapModel\Bezier.cs">
-      <Link>Bezier.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\Glyph.cs">
-      <Link>Glyph.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\GraphicsUtil.cs">
-      <Link>GraphicsUtil.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\IGraphicsTarget.cs">
-      <Link>IGraphicsTarget.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\InputOutput.cs">
-      <Link>InputOutput.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\LZWCompression.cs">
-      <Link>LZWCompression.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\Map.cs">
-      <Link>Map.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\OcadExport.cs">
-      <Link>OcadExport.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\OcadFileFormat.cs">
-      <Link>OcadFileFormat.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\OcadImport.cs">
-      <Link>OcadImport.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\Symbol.cs">
-      <Link>Symbol.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\SymColor.cs">
-      <Link>SymColor.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\SymDef.cs">
-      <Link>SymDef.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\SymPath.cs">
-      <Link>SymPath.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\MapModel\Util.cs">
-      <Link>Util.cs</Link>
-    </Compile>
-    <Compile Include="GraphicsTarget.cs" />
-    <Compile Include="PointRect.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="WpfGraphicsTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +89,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PurplePen\PurplePen.csproj">
+      <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
+      <Name>PurplePen</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

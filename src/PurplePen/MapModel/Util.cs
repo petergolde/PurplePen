@@ -38,21 +38,11 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Text;
-#if WPF
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
 using Matrix = System.Drawing.Drawing2D.Matrix;
 using Color = System.Drawing.Color;
-#endif
-#if WPF
-using System.Windows.Media;
-#else
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Drawing.Text;
-#endif
 
 namespace PurplePen.MapModel
 {
@@ -92,25 +82,6 @@ namespace PurplePen.MapModel
 				bytes[i] = reader.ReadByte();
 			}
 			return bytes;
-		}
-
-		public static bool FontExists(string fontname) {
-#if WPF
-            // Get the glyphTypeface to see if the font exists.
-            GlyphTypeface glyphTypeface;
-            Typeface typeface = new Typeface(fontname);
-            return typeface.TryGetGlyphTypeface(out glyphTypeface);
-#else
-			// Doesn't seem to be an easy way to determine if a font exists.
-			try {
-				FontFamily family = new FontFamily(fontname);
-				family.Dispose();
-				return true;
-			}
-			catch {
-				return false;
-			}
-#endif
 		}
 
 		public static double Distance(PointF pt1, PointF pt2) {
@@ -364,20 +335,6 @@ namespace PurplePen.MapModel
             else
                 return 1.0F;
         }
-
-#if !WPF
-		private static Graphics hiresGraphics;
-
-		// Returns a graphics scaled with negative Y and hi-resolution (50 units/pixel or so).
-		public static Graphics GetHiresGraphics() {
-            if (hiresGraphics == null) {
-                hiresGraphics = Graphics.FromHwnd(IntPtr.Zero);
-                hiresGraphics.ScaleTransform(50F, -50F);
-            }
-
-			return hiresGraphics;
-		}
-#endif
 
 		// Split a string with newlines in it into lines.
 		public static string[] SplitLines(string s) {
