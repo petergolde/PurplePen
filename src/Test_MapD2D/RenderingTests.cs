@@ -1,143 +1,176 @@
-/* Copyright (c) 2006-2008, Peter Golde
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without 
- * modification, are permitted provided that the following conditions are 
- * met:
- * 
- * 1. Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- * 
- * 2. Redistributions in binary form must reproduce the above copyright
- * notice, this list of conditions and the following disclaimer in the
- * documentation and/or other materials provided with the distribution.
- * 
- * 3. Neither the name of Peter Golde, nor "Purple Pen", nor the names
- * of its contributors may be used to endorse or promote products
- * derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
- * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
- * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
- * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
- * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
- * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
- * OF SUCH DAMAGE.
- */
-
-#if TEST
-using System;
+﻿using System;
+using System.Text;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Windows.Forms;
+using System.Linq;
 using System.IO;
+using System.Windows;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using TestingUtils;
+using RectangleF = System.Drawing.RectangleF;
+using PointF = System.Drawing.PointF;
+using Matrix = System.Drawing.Drawing2D.Matrix;
+using MatrixOrder = System.Drawing.Drawing2D.MatrixOrder;
+using Color = System.Drawing.Color;
+using LineCap = System.Drawing.Drawing2D.LineCap;
+using LineJoin = System.Drawing.Drawing2D.LineJoin;
 
-namespace PurplePen.MapModel.Tests
+using Microsoft.WindowsAPICodePack.DirectX.WindowsImagingComponent;
+using Microsoft.WindowsAPICodePack.DirectX.Direct2D1;
+
+using PurplePen.MapModel;
+using Map_D2D;
+
+namespace TestWpfMap
 {
+    /// <summary>
+    /// Summary description for UnitTest1
+    /// </summary>
     [TestClass]
-    public class Rendering 
+    public class RenderingTests
     {
+        private TestContext testContextInstance;
 
-        // Write a bitmap to a PNG.
-        void WriteBitmap(Bitmap bmp, string filename) {
-           bmp.Save(filename, ImageFormat.Png);
+        /// <summary>
+        ///Gets or sets the test context which provides
+        ///information about and functionality for the current test run.
+        ///</summary>
+        public TestContext TestContext
+        {
+            get
+            {
+                return testContextInstance;
+            }
+            set
+            {
+                testContextInstance = value;
+            }
         }
 
-        void GDIPlus_RenderingTest(int width, RectangleF drawingRectangle, string pngFileName, Action<IGraphicsTarget> draw)
+        #region Additional test attributes
+        //
+        // You can use the following additional attributes as you write your tests:
+        //
+        // Use ClassInitialize to run code before running the first test in the class
+        // [ClassInitialize()]
+        // public static void MyClassInitialize(TestContext testContext) { }
+        //
+        // Use ClassCleanup to run code after all tests in a class have run
+        // [ClassCleanup()]
+        // public static void MyClassCleanup() { }
+        //
+        // Use TestInitialize to run code before running each test 
+        // [TestInitialize()]
+        // public void MyTestInitialize() { }
+        //
+        // Use TestCleanup to run code after each test has run
+        // [TestCleanup()]
+        // public void MyTestCleanup() { }
+        //
+        #endregion
+
+        private ImagingFactory wicFactory = new ImagingFactory();
+        private D2DFactory d2dFactory = D2DFactory.CreateFactory(D2DFactoryType.SingleThreaded);
+
+        // Write a bitmap to a PNG.
+        void WriteWicBitmap(WICBitmap bmp, string filename)
         {
-            int height = (int)Math.Ceiling(width * drawingRectangle.Height / drawingRectangle.Width);
+            bmp.SaveToFile(wicFactory, ContainerFormats.Png, filename);
+        }
+
+        WICBitmap RenderToBitmap(int width, int height, Action<RenderTarget> draw)
+        {
+            // Create the render target.
+            WICBitmap wicBitmap = wicFactory.CreateWICBitmap((uint)width, (uint)height, PixelFormats.Pf32bppPBGRA, BitmapCreateCacheOption.CacheOnLoad);
+            RenderTargetProperties rtProps = new RenderTargetProperties(RenderTargetType.Default, new PixelFormat(Microsoft.WindowsAPICodePack.DirectX.DXGI.Format.B8G8R8A8_UNORM, AlphaMode.Premultiplied), 96, 96, RenderTargetUsage.None, Microsoft.WindowsAPICodePack.DirectX.Direct3D.FeatureLevel.Default);
+            using (RenderTarget rt = d2dFactory.CreateWicBitmapRenderTarget(wicBitmap, rtProps)) {
+                rt.BeginDraw();
+                draw(rt);
+                rt.EndDraw();
+            }
+
+            return wicBitmap;
+        }
+
+        void TestD2DRendering(int width, RectangleF drawingRectangle, string pngFileName, Action<IGraphicsTarget> draw) {
+            int height = (int) Math.Ceiling(width * drawingRectangle.Height / drawingRectangle.Width);
 
             // Calculate the transform matrix.
             PointF midpoint = new PointF(width / 2.0F, height / 2.0F);
-            float scaleFactor = (float)width / drawingRectangle.Width;
+            float scaleFactor = width / drawingRectangle.Width;
             PointF centerPoint = new PointF((drawingRectangle.Left + drawingRectangle.Right) / 2, (drawingRectangle.Top + drawingRectangle.Bottom) / 2);
             Matrix matrix = new Matrix();
             matrix.Translate(midpoint.X, midpoint.Y, MatrixOrder.Prepend);
             matrix.Scale(scaleFactor, -scaleFactor, MatrixOrder.Prepend);  // y scale is negative to get to cartesian orientation.
             matrix.Translate(-centerPoint.X, -centerPoint.Y, MatrixOrder.Prepend);
 
-            // Draw into a new bitmap.
-            Bitmap bitmapNew = new Bitmap(width, height, PixelFormat.Format24bppRgb);
-            using (Graphics g = Graphics.FromImage(bitmapNew)) {
-                g.Clear(Color.White);
-                g.Transform = matrix;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                draw(new GDIPlus_GraphicsTarget(g));
-            }
-
             string directoryName = Path.GetDirectoryName(pngFileName);
             string newBitmapName = Path.Combine(directoryName,
                                         Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
             File.Delete(newBitmapName);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            WICBitmap wicBitmap = RenderToBitmap(width, height,
+                    renderTarget => {
+                        IGraphicsTarget grTarget = new D2DGraphicsTarget(d2dFactory, renderTarget);
+                        grTarget.PushTransform(matrix);
+                        draw(grTarget);
+                        grTarget.PopTransform();
+                    });
+
+            WriteWicBitmap(wicBitmap, newBitmapName);
+
+            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
         }
 
-
         [TestMethod]
-        public void PatternBrush() {
-            GDIPlus_RenderingTest(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("rendering\\patternbrush"),
+        public void SimpleDrawing() {
+            TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\simpledraw"),
                 grTarget => {
-                    IBrushTarget brushTarget = grTarget.CreatePatternBrush(new SizeF(20, 20), 60, 60);
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 1.5F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawLine(pen, new PointF(-7, -7), new PointF(-1, 5));
+                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 5.0F, LineCap.Round, LineJoin.Round, 5F)) {
+                        grTarget.DrawPolyline(pen, new PointF[] { new PointF(-70, 30), new PointF(-10, -30), new PointF(40, -30), new PointF(70, 70)});
                     }
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Blue, 3F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
-                    }
-                    IGraphicsBrush brush = brushTarget.FinishBrush(0);
-
-                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
-                    brush.Dispose();
                 });
         }
 
 
-
-
-        [TestInitialize]
-        public void Init()
-        {
-        }
-
-        static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea)
+#if false
+        // Render part of a map to a bitmap.
+        static BitmapSource RenderBitmap(Map map, int bmWidth, int bmHeight, RectangleF mapArea)
         {
             // Calculate the transform matrix.
-            PointF midpoint = new PointF(bitmapSize.Width / 2.0F, bitmapSize.Height / 2.0F);
-            float scaleFactor = (float) bitmapSize.Width / mapArea.Width;
+            Point midpoint = new Point(bmWidth / 2.0F, bmHeight / 2.0F);
+            double scaleFactor = bmWidth / mapArea.Width;
             PointF centerPoint = new PointF((mapArea.Left + mapArea.Right) / 2, (mapArea.Top + mapArea.Bottom) / 2);
-            Matrix matrix = new Matrix();
-            matrix.Translate(midpoint.X, midpoint.Y, MatrixOrder.Prepend);
-            matrix.Scale(scaleFactor, -scaleFactor, MatrixOrder.Prepend);  // y scale is negative to get to cartesian orientation.
-            matrix.Translate(-centerPoint.X, -centerPoint.Y, MatrixOrder.Prepend);
+            Matrix matrix = Matrix.Identity;
+            matrix.TranslatePrepend(midpoint.X, midpoint.Y);
+            matrix.ScalePrepend(scaleFactor, -scaleFactor);  // y scale is negative to get to cartesian orientation.
+            matrix.TranslatePrepend(-centerPoint.X, -centerPoint.Y);
+
+            // Get the render options.
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = false;
+            renderOpts.minResolution = (float) (1 / scaleFactor);
+
+            // Create a drawing of the map.
+            DrawingVisual visual = new DrawingVisual();
+            DrawingContext dc = visual.RenderOpen();
+
+            // Clear the bitmap
+            dc.DrawRectangle(Brushes.White, null, new Rect(-1, -1, bmWidth + 2, bmHeight + 2));  // clear background.
+
+            // Transform to map coords.
+            dc.PushTransform(new MatrixTransform(matrix));
+
+            // Draw the map.
+            using (map.Read())
+                map.Draw(new WPF_GraphicsTarget(dc), mapArea, renderOpts);
+            dc.Close();
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
-            using (Graphics g = Graphics.FromImage(bitmapNew)) {
-                RenderOptions renderOpts = new RenderOptions();
-                renderOpts.usePatternBitmaps = true;
-                renderOpts.minResolution = mapArea.Width / (float) bitmapSize.Width;
-
-                g.Clear(Color.White);
-                g.Transform = matrix;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), mapArea, renderOpts);
-            }
+            RenderTargetBitmap bitmapNew = new RenderTargetBitmap(bmWidth, bmHeight, 96.0, 96.0, PixelFormats.Pbgra32);
+            bitmapNew.Render(visual);
+            bitmapNew.Freeze();
 
             return bitmapNew;
         }
@@ -146,14 +179,14 @@ namespace PurplePen.MapModel.Tests
         // a difference bitmap is written out.
         static bool VerifyTestFile(string filename, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
         {
-
             string pngFileName;
             string mapFileName;
             string geodeFileName;
             string ocadFileName;
             string directoryName;
+            string newBitmapName;
             RectangleF mapArea;
-            Size size;
+            int bmWidth, bmHeight;
 
             // Read the test file, and get the other file names and the area.
             using (StreamReader reader = new StreamReader(filename)) {
@@ -166,7 +199,8 @@ namespace PurplePen.MapModel.Tests
                 mapArea = new RectangleF(left, top, right - left, bottom - top);
                 string sizeLine = reader.ReadLine();
                 coords = sizeLine.Split(',');
-                size = new Size(int.Parse(coords[0]), int.Parse(coords[1]));
+                bmWidth = int.Parse(coords[0]);
+                bmHeight = int.Parse(coords[1]);
             }
 
             // Convert to absolute paths.
@@ -177,24 +211,29 @@ namespace PurplePen.MapModel.Tests
                                          Path.GetFileNameWithoutExtension(mapFileName) + "_temp.geode");
             ocadFileName = Path.Combine(directoryName,
                                          Path.GetFileNameWithoutExtension(mapFileName) + "_temp.ocd");
+            newBitmapName = Path.Combine(directoryName,
+                                        Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
 
             File.Delete(geodeFileName);
             File.Delete(ocadFileName);
+            File.Delete(newBitmapName);
 
             // Create and open the map file.
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new WPF_TextMetrics());
             InputOutput.ReadFile(mapFileName, map);
 
+            // Draw into a new bitmap.
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
+            BitmapSource bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
+            Console.WriteLine("Rendered bitmap '{0}' rect={1} size=({2},{3}) in {4} ms", mapFileName, mapArea, bmWidth, bmHeight, sw.ElapsedMilliseconds);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+
+            WritePng(bitmapNew, newBitmapName);
+            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
 
             if (testLightenedColor) {
                 using (map.Write()) {
@@ -209,23 +248,24 @@ namespace PurplePen.MapModel.Tests
                 }
 
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Bitmap bitmapLight = RenderBitmap(map, size, mapArea);
-                TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName);
+                BitmapSource bitmapLight = RenderBitmap(map, bmWidth, bmHeight, mapArea);
+                WritePng(bitmapLight, newBitmapName);
+                TestUtil.CompareBitmapBaseline(newBitmapName, lightenedPngFileName);
             }
 
             if (roundtripToOcadFile) {
-                for (int version = minOcadVersion; version <= maxOcadVersion; ++version) {  
+                for (int version = minOcadVersion; version <= maxOcadVersion; ++version) {
                     // Save and load to a temp file name.
                     InputOutput.WriteFile(ocadFileName, map, version);
 
                     // Create and open the map file.
-                    map = new Map(new GDIPlus_TextMetrics());
+                    map = new Map(new WPF_TextMetrics());
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
-                    bitmapNew = RenderBitmap(map, size, mapArea);
-
-                    TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+                    bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
+                    WritePng(bitmapNew, newBitmapName);
+                    TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
 
                     File.Delete(ocadFileName);
                 }
@@ -234,42 +274,12 @@ namespace PurplePen.MapModel.Tests
             return true;
         }
 
-        void TimeMapRender(Map map, Size size, RectangleF mapArea, string name) {
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
-
-            sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
-        }
-
 
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
-            string fullname = TestUtil.GetTestFile("rendering\\" + filename);
+            string fullname = TestUtil.GetTestFile("wpfrender\\" + filename);
             bool ok = VerifyTestFile(fullname, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
-        }
-
-        public void TimeTeanWest() {
-            // Create and open the map file.
-            Map map = new Map(new GDIPlus_TextMetrics());
-            InputOutput.ReadFile(@"C:\Users\Peter\Documents\PurplePen\newmapmodel\src\TestFiles\d2drender\teanwest.ocd", map);
-
-            TimeMapRender(map, new Size(1814, 1022), new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
-            TimeMapRender(map, new Size(1814, 1022), new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
-            TimeMapRender(map, new Size(1814, 1022), new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
-            TimeMapRender(map, new Size(1814, 1022), new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
-            TimeMapRender(map, new Size(1814, 1022), new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
-        }
-
-
-        [TestMethod]
-        public void TestWest() {
-            CheckTest("teanwest.txt", false, false, 9, 9);
-            CheckTest("teanwest.txt", false, false, 9, 9);
         }
 
         [TestMethod]
@@ -334,7 +344,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("hiddensymbols.txt", false, true, 6, 9);
             CheckTest("hiddensymbols9.txt", false, true, 6, 9);
         }
-    
+
 
         [TestMethod]
         public void RotatedAreas()
@@ -348,7 +358,7 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTest("borderedarea9.txt", false, true, 9, 9);
         }
-    
+
 
         [TestMethod]
         public void TextSymbols()
@@ -376,7 +386,6 @@ namespace PurplePen.MapModel.Tests
         [TestMethod]
         public void LakeSammMap9()
         {
-            CheckTest("lksamm9_1.txt", false, false, 6, 9);
             CheckTest("lksamm9_1.txt", false, false, 6, 9);
             // CheckTest("lksamm9_2.txt", true, false, 6);  // this one has very slight rendering differences each time. odd...
             CheckTest("lksamm9_3.txt", false, false, 6, 9);
@@ -461,12 +470,6 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
-        public void Newlines()
-        {
-            CheckTest("newlines.txt", false, true, 6, 9);
-        }
-
-        [TestMethod]
         public void UnderlineText()
         {
             CheckTest("underlinetext.txt", false, true, 6, 9);
@@ -476,7 +479,7 @@ namespace PurplePen.MapModel.Tests
         public void LineText1()
         {
             CheckTest("linetext_6.txt", false, true, 6, 9);
-            CheckTest("linetext_9.txt", false, true, 6, 9);   
+            CheckTest("linetext_9.txt", false, true, 6, 9);
         }
 
         [TestMethod]
@@ -645,7 +648,6 @@ namespace PurplePen.MapModel.Tests
         public void DecreaseSymbols()
         {
             CheckTest("decreasesymbols.txt", false, true, 6, 9);
-            CheckTest("decreasesymbols6.txt", false, true, 6, 9);
         }
 
         [TestMethod]
@@ -661,12 +663,28 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
-        public void Clouds()
+        public void Ijk()
         {
-            CheckTest("Clouds.txt", false, true, 7, 9);
+            CheckTest("ijk.txt", true, false, 9, 9);
         }
+
+        [TestMethod]
+        public void Tiling1()
+        {
+            CheckTest("tiling1.txt", false, false, 9, 9);
+        }
+
+        [TestMethod]
+        public void Seam()
+        {
+            CheckTest("seam.txt", false, false, 9, 9);
+        }
+
+        [TestMethod]
+        public void ArialNarrow()
+        {
+            CheckTest("arialnarrow.txt", false, false, 9, 9);
+        }
+#endif
     }
-
 }
-
-#endif //TEST

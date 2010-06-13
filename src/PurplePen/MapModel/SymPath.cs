@@ -381,7 +381,6 @@ namespace PurplePen.MapModel
                 for (int i = 0; i < holes.Length; ++i)
                 {
                     AddToPathPartList(partList, holes[i], holePoints[i], true);
-                    partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, null));
                 }
             }
 

@@ -84,7 +84,7 @@ namespace PurplePen.MapModel
             Pen pen = new Pen((brush as WPF_Brush).Brush, width);
             
             switch (caps)
-	        {
+            {
                 case System.Drawing.Drawing2D.LineCap.Flat:
                     pen.StartLineCap = pen.EndLineCap = PenLineCap.Flat;
                     break;
@@ -96,7 +96,7 @@ namespace PurplePen.MapModel
                     break;
                 default:
                     throw new ArgumentException("bad line cap", "caps");
-	        }
+            }
 
             switch (join)
             {
