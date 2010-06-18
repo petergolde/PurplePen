@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2D_Tests", "D2D_Tests\D2D_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleOutput", "ConsoleOutput\ConsoleOutput.csproj", "{4284485D-9CF7-4954-ABD1-56E3D9F9D4D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMap", "WpfMap\WpfMap.csproj", "{3D9AB499-D11F-4C43-B3F0-F598091985EA}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = PPen.vsmdi
@@ -116,6 +118,16 @@ Global
 		{4284485D-9CF7-4954-ABD1-56E3D9F9D4D0}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4284485D-9CF7-4954-ABD1-56E3D9F9D4D0}.Release|x86.ActiveCfg = Release|x86
 		{4284485D-9CF7-4954-ABD1-56E3D9F9D4D0}.Release|x86.Build.0 = Release|x86
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3D9AB499-D11F-4C43-B3F0-F598091985EA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

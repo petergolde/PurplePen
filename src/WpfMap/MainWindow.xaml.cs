@@ -47,7 +47,7 @@ namespace WpfMap
             if (dlg.ShowDialog() == true) {
                 string filename = dlg.FileName;
 
-                Map map = new Map();
+                Map map = new Map(new GDIPlus_TextMetrics());
                 InputOutput.ReadFile(filename, map);
                 NewMap(map);
             }

@@ -212,6 +212,28 @@ namespace TestWpfMap
             return true;
         }
 
+        void TimeMapRender(Map map, int width, int height, RectangleF mapArea, string name) {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            // Draw into a new bitmap.
+            BitmapSource bitmapNew = RenderBitmap(map, width, height, mapArea);
+
+            sw.Stop();
+            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
+        }
+
+        public void TimeTeanWest() {
+            // Create and open the map file.
+            Map map = new Map(new WPF_TextMetrics());
+            InputOutput.ReadFile(@"C:\Users\Peter\Documents\PurplePen\newmapmodel\src\TestFiles\d2drender\teanwest.ocd", map);
+
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+        }
 
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {

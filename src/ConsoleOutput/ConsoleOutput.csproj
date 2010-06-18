@@ -59,6 +59,10 @@
       <Project>{0690D25C-7696-4B7A-9AAB-FBBCAFD0EEF5}</Project>
       <Name>PurplePen_Tests</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Test_MapWPF\Test_MapWPF.csproj">
+      <Project>{BBD89855-C12F-4823-AA6F-27482478E7F8}</Project>
+      <Name>Test_MapWPF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -73,7 +73,6 @@ namespace PurplePen.MapModel.Tests
             using (Graphics g = Graphics.FromImage(bitmapNew)) {
                 g.Clear(Color.White);
                 g.Transform = matrix;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
 
                 draw(new GDIPlus_GraphicsTarget(g));
             }
@@ -133,7 +132,6 @@ namespace PurplePen.MapModel.Tests
 
                 g.Clear(Color.White);
                 g.Transform = matrix;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
 
                 using (map.Read())
                     map.Draw(new GDIPlus_GraphicsTarget(g), mapArea, renderOpts);

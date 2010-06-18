@@ -19,6 +19,7 @@ using FillMode = System.Drawing.Drawing2D.FillMode;
 
 using Microsoft.WindowsAPICodePack.DirectX.WindowsImagingComponent;
 using Microsoft.WindowsAPICodePack.DirectX.Direct2D1;
+using D3D = Microsoft.WindowsAPICodePack.DirectX.Direct3D10;
 
 using PurplePen.MapModel;
 using Map_D2D;
@@ -55,13 +56,33 @@ namespace TestD2D
             bmp.SaveToFile(wicFactory, ContainerFormats.Png, filename);
         }
 
-        WICBitmap RenderToBitmap(int width, int height, Action<RenderTarget> draw)
+        void RenderToBitmapHW(int width, int height, Action<RenderTarget> draw)
         {
             // Create the render target.
+            D3D.D3DDevice device = D3D.D3DDevice.CreateDevice();
+            D3D.Texture2DDescription texDesc = new D3D.Texture2DDescription() { 
+                Width = (uint)width,
+                Height = (uint)height,
+                MipLevels = 1,
+                ArraySize = 1,
+                Format = Microsoft.WindowsAPICodePack.DirectX.DXGI.Format.B8G8R8A8_UNORM, 
+                SampleDescription = new Microsoft.WindowsAPICodePack.DirectX.DXGI.SampleDescription() { Count = 1, Quality = 0},
+                Usage = D3D.Usage.Default,
+                BindFlags = D3D.BindFlag.RenderTarget,
+                CpuAccessFlags = D3D.CpuAccessFlag.Unspecified,
+                MiscFlags = D3D.ResourceMiscFlag.Undefined };
+            device.CreateTexture2D(texDesc);
+        }
+
+        [TestMethod]
+        public void TestHW() {
+            RenderToBitmapHW(1000, 1000, rt => { });
+        }
+
+        WICBitmap RenderToBitmap(int width, int height, Action<RenderTarget> draw) {
             WICBitmap wicBitmap = wicFactory.CreateWICBitmap((uint)width, (uint)height, PixelFormats.Pf32bppPBGRA, BitmapCreateCacheOption.CacheOnLoad);
             RenderTargetProperties rtProps = new RenderTargetProperties(RenderTargetType.Default, new PixelFormat(Microsoft.WindowsAPICodePack.DirectX.DXGI.Format.B8G8R8A8_UNORM, AlphaMode.Premultiplied), 96, 96, RenderTargetUsage.None, Microsoft.WindowsAPICodePack.DirectX.Direct3D.FeatureLevel.Default);
             using (RenderTarget rt = d2dFactory.CreateWicBitmapRenderTarget(wicBitmap, rtProps)) {
-                rt.AntialiasMode = AntialiasMode.Aliased;
                 rt.BeginDraw();
                 rt.Clear(new ColorF(Microsoft.WindowsAPICodePack.DirectX.Colors.White));
                 draw(rt);
@@ -117,6 +138,35 @@ namespace TestD2D
         }
 
         void TimeRendering(int width, RectangleF drawingRectangle, string name, Action<IGraphicsTarget> draw) {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+
+            int height = (int)Math.Ceiling(width * drawingRectangle.Height / drawingRectangle.Width);
+
+            // Calculate the transform matrix.
+            PointF midpoint = new PointF(width / 2.0F, height / 2.0F);
+            float scaleFactor = width / drawingRectangle.Width;
+            PointF centerPoint = new PointF((drawingRectangle.Left + drawingRectangle.Right) / 2, (drawingRectangle.Top + drawingRectangle.Bottom) / 2);
+            Matrix matrix = new Matrix();
+            matrix.Translate(midpoint.X, midpoint.Y, MatrixOrder.Prepend);
+            matrix.Scale(scaleFactor, -scaleFactor, MatrixOrder.Prepend);  // y scale is negative to get to cartesian orientation.
+            matrix.Translate(-centerPoint.X, -centerPoint.Y, MatrixOrder.Prepend);
+
+            WICBitmap wicBitmap = RenderToBitmap(width, height,
+                    renderTarget => {
+                        IGraphicsTarget grTarget = new D2D_GraphicsTarget(d2dFactory, renderTarget);
+                        grTarget.PushTransform(matrix);
+                        draw(grTarget);
+                        grTarget.PopTransform();
+                    });
+
+            watch.Stop();
+            Console.WriteLine("Drawing to {0} in {1} ms", name, watch.ElapsedMilliseconds);
+
+            wicBitmap.Dispose();
+        }
+
+        void TimeRenderingHW(int width, RectangleF drawingRectangle, string name, Action<IGraphicsTarget> draw) {
             Stopwatch watch = new Stopwatch();
             watch.Start();
 

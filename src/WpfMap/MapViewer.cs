@@ -11,16 +11,21 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Windows.Threading;
 
+using Dr = System.Drawing;
+using RectangleF = System.Drawing.RectangleF;
+using Bitmap = System.Drawing.Bitmap;
+using Graphics = System.Drawing.Graphics;
+
 namespace WpfMap
 {
     class MapViewer: FrameworkElement
     {
         class CachedMapArea
         {
-            public RectangleF portion;       // portion of the map that is cached.
+            public Rect portion;       // portion of the map that is cached.
             public double pixelSize;           // pixel size at which it is rendered
             public bool isUpToDate;       // if true, the bitmap is up to date.
-            public RenderTargetBitmap bitmap;   // bitmap with the cached section.
+            public BitmapSource bitmap;   // bitmap with the cached section.
         }
 
         private Map map;
@@ -90,7 +95,7 @@ namespace WpfMap
             double ratio = bounds.Width / bounds.Height;
             double pixelSize = bounds.Height / Math.Sqrt((ENTIRE_MAP_PIXELS / ratio));
 
-            wholeMap.portion = bounds;
+            wholeMap.portion = bounds.ToRect();
             wholeMap.pixelSize = pixelSize;
             wholeMap.isUpToDate = false;
             CreateBitmap(wholeMap);
@@ -102,7 +107,7 @@ namespace WpfMap
             timer.Stop();
 
             // Get the portion of the map to cache. This the currently visible area.
-            detailMap.portion = (RectangleF) panAndZoom.VisibleRect;
+            detailMap.portion =  panAndZoom.VisibleRect;
             detailMap.pixelSize = panAndZoom.PixelSize;
             detailMap.isUpToDate = false;
 
@@ -113,6 +118,19 @@ namespace WpfMap
             InvalidateVisual();
         }
 
+        BitmapSource CopyBitmapToBitmapSource(Bitmap bm) {
+            Debug.Assert(bm.PixelFormat == Dr.Imaging.PixelFormat.Format32bppPArgb);
+
+            int width = bm.Width, height = bm.Height;
+
+            Dr.Imaging.BitmapData bmData = bm.LockBits(new Dr.Rectangle(0, 0, width, height), Dr.Imaging.ImageLockMode.ReadOnly, Dr.Imaging.PixelFormat.Format32bppPArgb);
+
+            BitmapSource bitmap = BitmapSource.Create(width, height, 96, 96, PixelFormats.Pbgra32, null, bmData.Scan0, bmData.Height * bmData.Stride, bmData.Stride);
+            bm.UnlockBits(bmData);
+            return bitmap;
+        }
+
+
         // Fill in the bitmap member of a cached map area with a bitmap, created from the current map. 
         void CreateBitmap(CachedMapArea mapArea)
         {
@@ -121,29 +139,34 @@ namespace WpfMap
             int width = (int) Math.Ceiling(mapArea.portion.Width / mapArea.pixelSize);
 
             // Create transformation matrix from map coords to the bitmap coords
-            Matrix matrix = Matrix.Identity;
-            matrix.ScalePrepend(1 / mapArea.pixelSize, 1 / mapArea.pixelSize);
-            matrix.TranslatePrepend(- mapArea.portion.X, - mapArea.portion.Y);
+            Point midpoint = new Point(width / 2.0F, height / 2.0F);
+            float scaleFactor = (float)(width / mapArea.portion.Width);
+            Point centerPoint = new Point((mapArea.portion.Left + mapArea.portion.Right) / 2, (mapArea.portion.Top + mapArea.portion.Bottom) / 2);
+            Dr.Drawing2D.Matrix matrix = new Dr.Drawing2D.Matrix();
+            matrix.Translate((float) midpoint.X, (float) midpoint.Y, Dr.Drawing2D.MatrixOrder.Prepend);
+            matrix.Scale(scaleFactor, scaleFactor, Dr.Drawing2D.MatrixOrder.Prepend);  // y scale is negative to get to cartesian orientation.
+            matrix.Translate((float)(-centerPoint.X), (float)(-centerPoint.Y), Dr.Drawing2D.MatrixOrder.Prepend);
 
             // Get the render options.
             PurplePen.MapModel.RenderOptions renderOpts = new PurplePen.MapModel.RenderOptions();
-            renderOpts.usePatternBitmaps = false;
+            renderOpts.usePatternBitmaps = true;
             renderOpts.minResolution = (float) mapArea.pixelSize;
 
-            // Create a visual of the map, appropriately transformed
-            DrawingVisual visual = new DrawingVisual();
-            DrawingContext dc = visual.RenderOpen();
-            dc.PushTransform(new MatrixTransform(matrix));
-            using (map.Read())
-                map.Draw(dc, mapArea.portion, renderOpts);
-            dc.Close();
+            // Create a bitmap of the map, appropriately transformed.
+            Bitmap bitmapNew = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+            using (Graphics g = Graphics.FromImage(bitmapNew)) {
+                g.Clear(Dr.Color.Transparent);
+                g.Transform = matrix;
 
-            // Draw it into a new bitmap.
-            if (mapArea.bitmap != null && mapArea.bitmap.PixelWidth >= width && mapArea.bitmap.PixelHeight >= height)
-                mapArea.bitmap.Clear();  // reuse the old bitmap again by clearing it.
-            else
-                mapArea.bitmap = new RenderTargetBitmap(width, height, 96.0, 96.0, PixelFormats.Pbgra32);
-            mapArea.bitmap.Render(visual);
+                using (map.Read())
+                    map.Draw(new GDIPlus_GraphicsTarget(g), mapArea.portion.ToRectangleF(), renderOpts);
+            }
+
+            bitmapNew.Save(@"C:\Users\Peter\Documents\PurplePen\newmapmodel\src\WpfMap\TestResults\output.png", Dr.Imaging.ImageFormat.Png);
+
+            // Copy the bitmap into WPF format.
+            mapArea.bitmap = CopyBitmapToBitmapSource(bitmapNew);
+            bitmapNew.Dispose();
             
             // Mark as up to date.
             mapArea.isUpToDate = true;
@@ -162,7 +185,7 @@ namespace WpfMap
             if (map == null)
                 return;
 
-            RectangleF visiblePortion = (RectangleF) panAndZoom.VisibleRect; 
+            Rect visiblePortion = panAndZoom.VisibleRect; 
             double pixelSize = panAndZoom.PixelSize;
 
             if (detailMap.isUpToDate && detailMap.portion == visiblePortion && detailMap.pixelSize == pixelSize) {
