@@ -173,11 +173,11 @@ namespace PurplePen.MapModel
 
     public class PointSymDef: SymDef
     {
-        Glyph glyph;
+        private readonly Glyph glyph;
 
         public Glyph Glyph { get { return glyph; } }
 
-        bool allowRotation;  // Should this glyph rotate when the feature/map is rotates, or always remain in the same orientation.
+        readonly bool allowRotation;  // Should this glyph rotate when the feature/map is rotates, or always remain in the same orientation.
         public bool AllowRotation { get { return allowRotation; } }
 
         public float Radius { get { return glyph.Radius; } }

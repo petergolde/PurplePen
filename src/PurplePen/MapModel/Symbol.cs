@@ -174,13 +174,13 @@ namespace PurplePen.MapModel
 
     public class LineTextSymbol: Symbol
     {
-        TextSymDef def;
+        readonly TextSymDef def;
         public override SymDef Definition { get { return def; } }
 
-        SymPath path;
+        readonly SymPath path;
         public SymPath Path { get { return path; } }
 
-        string text;
+        readonly string text;
         public string Text { get { return text; } }
 
         public LineTextSymbol(TextSymDef def, SymPath path, string text)
@@ -218,13 +218,13 @@ namespace PurplePen.MapModel
 
     public class AreaSymbol: Symbol
     {
-        AreaSymDef def;
+        readonly AreaSymDef def;
         public override SymDef Definition { get { return def; }}
 
-        SymPathWithHoles path;
+        readonly SymPathWithHoles path;
         public SymPathWithHoles Path { get { return path; }}
 
-        float angle;
+        readonly float angle;
         public float Angle { get { return angle; }}
 
         public AreaSymbol(AreaSymDef def, SymPathWithHoles path, float angle) 
@@ -376,13 +376,13 @@ namespace PurplePen.MapModel
     // This is an area object creating by a "ToGraphics" operation -- it defines its own color.
     public class GraphicsAreaSymbol: Symbol
     {
-        GraphicsSymDef def;
+        readonly GraphicsSymDef def;
         public override SymDef Definition { get { return def; } }
 
-        SymPathWithHoles path;
+        readonly SymPathWithHoles path;
         public SymPathWithHoles Path { get { return path; } }
 
-        SymColor fillColor;
+        readonly SymColor fillColor;
         public SymColor FillColor { get { return fillColor; } }
 
         public GraphicsAreaSymbol(GraphicsSymDef def, SymPathWithHoles path, SymColor fillColor)

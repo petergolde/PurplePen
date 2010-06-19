@@ -94,6 +94,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapRenderCache.cs" />
     <Compile Include="MapViewer.cs" />
     <Compile Include="PanAndZoom.xaml.cs">
       <DependentUpon>PanAndZoom.xaml</DependentUpon>

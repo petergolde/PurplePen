@@ -474,14 +474,14 @@ namespace PurplePen.MapModel
 
         public float  EmHeight
         {
-	        get { return emHeight; }
+            get { return emHeight; }
         }
 
         private float ascent = -1;
 
         public float  Ascent
         {
-	        get {
+            get {
                 if (ascent < 0) {
                     int nominalEmHeight = fontFamily.GetEmHeight(fontStyle);
                     int nominalAscent = fontFamily.GetCellAscent(fontStyle);
@@ -494,7 +494,7 @@ namespace PurplePen.MapModel
         private float descent = -1;
         public float  Descent
         {
-	        get {
+            get {
                 if (descent < 0) {
                     int nominalEmHeight = fontFamily.GetEmHeight(fontStyle);
                     int nominalDescent = fontFamily.GetCellDescent(fontStyle);
@@ -507,7 +507,7 @@ namespace PurplePen.MapModel
         private float capHeight = -1;
         public float  CapHeight
         {
-	        get {
+            get {
                 if (capHeight < 0) {
                     GraphicsPath path = new GraphicsPath();
                     path.AddString("W", fontFamily, (int)fontStyle, font.Size, new PointF(0, 0), stringFormat);
@@ -520,7 +520,7 @@ namespace PurplePen.MapModel
         private float spaceWidth = -1;
         public float  SpaceWidth
         {
-	        get {
+            get {
                 if (spaceWidth < 0) {
                     spaceWidth = GetTextWidth(" ");
                 }
@@ -552,7 +552,7 @@ namespace PurplePen.MapModel
         {
             fontFamily.Dispose();
             fontFamily = null;
- 	        font.Dispose();
+            font.Dispose();
             font = null;
         }
     }

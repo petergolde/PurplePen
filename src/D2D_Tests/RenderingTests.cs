@@ -74,7 +74,6 @@ namespace TestD2D
             device.CreateTexture2D(texDesc);
         }
 
-        [TestMethod]
         public void TestHW() {
             RenderToBitmapHW(1000, 1000, rt => { });
         }
@@ -205,7 +204,7 @@ namespace TestD2D
                 grTarget => {
                     // Draw the map.
                     using (map.Read())
-                        map.Draw(grTarget, drawingRectangle, renderOpts);
+                        map.Draw(grTarget, drawingRectangle, renderOpts, null);
                 });
         }
 
@@ -221,7 +220,7 @@ namespace TestD2D
                 grTarget => {
                     // Draw the map.
                     using (map.Read())
-                        map.Draw(grTarget, drawingRectangle, renderOpts);
+                        map.Draw(grTarget, drawingRectangle, renderOpts, null);
                 });
         }
 

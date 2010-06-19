@@ -134,7 +134,7 @@ namespace PurplePen.MapModel.Tests
                 g.Transform = matrix;
 
                 using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), mapArea, renderOpts);
+                    map.Draw(new GDIPlus_GraphicsTarget(g), mapArea, renderOpts, null);
             }
 
             return bitmapNew;

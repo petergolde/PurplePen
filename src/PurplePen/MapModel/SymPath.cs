@@ -558,11 +558,11 @@ namespace PurplePen.MapModel
         }
 
         // Normal Euclidean distance between points.
-		private static double EuclidDistance(PointF pt1, PointF pt2) {
-			double delta1 = (double)pt2.X - (double)pt1.X;
-			double delta2 = (double)pt2.Y - (double)pt1.Y;
-			return Math.Sqrt(delta1 * delta1 + delta2 * delta2);
-		}
+        private static double EuclidDistance(PointF pt1, PointF pt2) {
+            double delta1 = (double)pt2.X - (double)pt1.X;
+            double delta2 = (double)pt2.Y - (double)pt1.Y;
+            return Math.Sqrt(delta1 * delta1 + delta2 * delta2);
+        }
 
         // Determines the Bizzarro distance between two points. This should be just the Pythagorian formula, but
         // for unknown reasons OCAD uses this metric for text along a path, and for dashes along a path. It makes no sense AT ALL.

@@ -165,8 +165,6 @@ namespace PurplePen.MapModel
 			return false;
 		}
 
-        private static Matrix identityMatrix = new Matrix();
-
         internal void Draw(IGraphicsTarget g, PointF pt, float angle, Matrix extraTransform, float[] gaps, SymColor color, RenderOptions renderOpts)
         {
             Debug.Assert(constructed);
@@ -177,9 +175,6 @@ namespace PurplePen.MapModel
                     DrawSimple(g, pt, renderOpts);
             }
             else {
-                if (extraTransform == null)
-                    extraTransform = identityMatrix;
-
                 bool transformApplied = false;
 
 				for (int i = 0; i < parts.Length; ++i) {

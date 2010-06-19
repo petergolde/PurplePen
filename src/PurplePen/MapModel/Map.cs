@@ -630,7 +630,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts)
+        public void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts, Action throwOnCancel)
         {
             CheckReadable();
 
@@ -640,24 +640,33 @@ namespace PurplePen.MapModel
             if (renderOpts.showSymbolBounds)
                 boundsPen = GraphicsUtil.CreateSolidPen(g, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
 
-            // Draw the image layer.
-            DrawColor(g, null, rect,  renderOpts);
+            try {
+                // Draw the image layer.
+                DrawColor(g, null, rect, renderOpts, throwOnCancel);
+                if (throwOnCancel != null)
+                    throwOnCancel();
 
-            // Draw each color separately, to get correct layering.
-            foreach (SymColor curColor in colors) {
-                DrawColor(g, curColor, rect,  renderOpts);
+                // Draw each color separately, to get correct layering.
+                foreach (SymColor curColor in colors) {
+                    DrawColor(g, curColor, rect, renderOpts, throwOnCancel);
+                    if (throwOnCancel != null)
+                        throwOnCancel();
+                }
             }
-
-            if (renderOpts.showSymbolBounds)
-                boundsPen.Dispose();
+            finally {
+                if (renderOpts.showSymbolBounds)
+                    boundsPen.Dispose();
+            }
 
             Trace.Unindent();
         }
 
 
         // Draw a particular color layer. If curColor is null, draw the image layer. 
-        private void DrawColor(IGraphicsTarget g, SymColor curColor, RectangleF rect, RenderOptions renderOpts)
+        private void DrawColor(IGraphicsTarget g, SymColor curColor, RectangleF rect, RenderOptions renderOpts, Action throwOnCancel)
         {
+            int symbolsDrawn = 0;
+
             foreach (SymDef symdef in symdefs) {
                 if (IsSymdefVisible(symdef) && symdef.HasColor(curColor)) {
                     foreach (Symbol curSym in symdef.symbols) {
@@ -668,9 +677,13 @@ namespace PurplePen.MapModel
                             curSym.MayIntersectRect(rect)) 
                         {
                             curSym.Draw(g, curColor, renderOpts);
+                            ++symbolsDrawn;
 
                             if (renderOpts.showSymbolBounds)
                                 g.DrawRectangle(boundsPen, bounds);
+
+                            if (throwOnCancel != null && symbolsDrawn % 64 == 0)
+                                throwOnCancel();
                         }
                     }
                 }
