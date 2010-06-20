@@ -123,6 +123,7 @@ namespace WpfMap
             BitmapSource resultBitmap;
             using (Bitmap bitmap = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppPArgb)) {
                 using (Graphics g = Graphics.FromImage(bitmap)) {
+                    g.SmoothingMode = Dr.Drawing2D.SmoothingMode.AntiAlias;
                     g.Clear(Dr.Color.Transparent);
                     g.Transform = matrix;
 
@@ -191,9 +192,13 @@ namespace WpfMap
                         {
                             // This code is run back on the UI thread, so we don't have to worry about races.
                             if (! cancelToken.IsCancellationRequested) {
-                                CancelBackgroundTask();
+                                bgCancellationSource = null;
+                                bgTask = null;
+                                bgRenderParameters = null;
+
                                 currentBestParameters = parameters;
                                 currentBestCache = bitmap;
+
                                 if (callback != null)
                                     callback();
                             }

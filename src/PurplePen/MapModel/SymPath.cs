@@ -218,45 +218,44 @@ namespace PurplePen.MapModel
             return new SymPath(pointsXform, kinds, startStopFlags, lastPointSynthesized);
         }
 
-        public void Draw(IGraphicsTarget g, IGraphicsPen pen)
+        public void Draw(IGraphicsTarget g, object penKey)
         {
-            DrawCore(g, pen, points);
+            DrawCore(g, penKey, points);
         }
 
-        public void DrawTransformed(IGraphicsTarget g, IGraphicsPen pen, Matrix transform)
+        public void DrawTransformed(IGraphicsTarget g, object penKey, Matrix transform)
         {
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
-            DrawCore(g, pen, pointsXform);
+            DrawCore(g, penKey, pointsXform);
         }
 
-        void DrawCore(IGraphicsTarget g, IGraphicsPen pen, PointF[] points) 
+        void DrawCore(IGraphicsTarget g, object penKey, PointF[] points) 
         {
             if (!anyBeziers)
             {
                 if (isClosedCurve)
-                    g.DrawPolygon(pen, points);
+                    g.DrawPolygon(penKey, points);
                 else
-                    g.DrawPolyline(pen, points);
+                    g.DrawPolyline(penKey, points);
             }
             else
             {
-                using (IGraphicsPath grPath = GetIGraphicsPath(g)) {
-                    g.DrawPath(pen, grPath);
-                }
+                object pathKey = GetPathKey(g);
+                g.DrawPath(penKey, pathKey);
             }
         }
 
-        public void Fill(IGraphicsTarget g, IGraphicsBrush b)
+        public void Fill(IGraphicsTarget g, object brushKey)
         {
-            FillCore(g, b, points, null, null);
+            FillCore(g, brushKey, points, null, null);
         }
 
-        public void FillTransformed(IGraphicsTarget g, IGraphicsBrush b, Matrix transform)
+        public void FillTransformed(IGraphicsTarget g, object brushKey, Matrix transform)
         {
-            FillTransformedWithHoles(g, b, transform, null);
+            FillTransformedWithHoles(g, brushKey, transform, null);
         }
 
-        public void FillWithHoles(IGraphicsTarget g, IGraphicsBrush b, SymPath[] holes) {
+        public void FillWithHoles(IGraphicsTarget g, object brushKey, SymPath[] holes) {
             PointF[][] holePoints = null;
             if (holes != null) {
                 holePoints = new PointF[holes.Length][];
@@ -264,10 +263,10 @@ namespace PurplePen.MapModel
                     holePoints[i] = holes[i].points;
             }
 
-            FillCore(g, b, points, holes, holePoints);
+            FillCore(g, brushKey, points, holes, holePoints);
         }
 
-        public void FillTransformedWithHoles(IGraphicsTarget g, IGraphicsBrush b, Matrix transform, SymPath[] holes) {
+        public void FillTransformedWithHoles(IGraphicsTarget g, object brushKey, Matrix transform, SymPath[] holes) {
             PointF[] pointsXform = GraphicsUtil.TransformPoints(points, transform);
 
             PointF[][] holePoints = null;
@@ -278,35 +277,33 @@ namespace PurplePen.MapModel
                 }
             }
 
-            FillCore(g, b, pointsXform, holes, holePoints);
+            FillCore(g, brushKey, pointsXform, holes, holePoints);
         }
 
-        void FillCore(IGraphicsTarget g, IGraphicsBrush brush, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
+        void FillCore(IGraphicsTarget g, object brushKey, PointF[] points, SymPath[] holes, PointF[][] holePoints) 
         {
             if (anyBeziers || holes != null) 
             {
                 // Use a path.
-                using (IGraphicsPath path = GetIGraphicsPathCore(g, points, holes, holePoints)) 
-                {
-                    g.FillPath(brush, path);
-                }
+                object pathKey = GetPathKeyCore(g, new object(), points, holes, holePoints);
+                g.FillPath(brushKey, pathKey);
             }
             else 
             {
                 // One simple line. Fill it in directly.
-                g.FillPolygon(brush, points, FillMode.Alternate);
+                g.FillPolygon(brushKey, points, FillMode.Alternate);
             }
         }
 
-        public IGraphicsPath GetIGraphicsPath(IGraphicsTarget g)
+        public object GetPathKey(IGraphicsTarget g)
         {
-            return GetIGraphicsPathCore(g, points, null, null);
+            return GetPathKeyCore(g, this, points, null, null);
         }
 
-        public IGraphicsPath GetIGraphicsPathWithHoles(IGraphicsTarget g, SymPath[] holes)
+        public object GetPathKeyWithHoles(IGraphicsTarget g, object pathKey, SymPath[] holes)
         {
             if (holes == null)
-                return GetIGraphicsPathCore(g, points, null, null);
+                return GetPathKeyCore(g, pathKey, points, null, null);
             else
             {
                 PointF[][] holePoints = null;
@@ -316,7 +313,7 @@ namespace PurplePen.MapModel
                     for (int i = 0; i < holes.Length; ++i)
                         holePoints[i] = holes[i].points;
                 }
-                return GetIGraphicsPathCore(g, points, holes, holePoints);
+                return GetPathKeyCore(g, pathKey, points, holes, holePoints);
             }
         }
 
@@ -370,8 +367,11 @@ namespace PurplePen.MapModel
                 partList.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, null));
         }
 
-        IGraphicsPath GetIGraphicsPathCore(IGraphicsTarget g, PointF[] points, SymPath[] holes, PointF[][] holePoints)
+        object GetPathKeyCore(IGraphicsTarget g, object pathKey, PointF[] points, SymPath[] holes, PointF[][] holePoints)
         {
+            if (g.HasPath(pathKey))
+                return pathKey;
+
             List<GraphicsPathPart> partList = new List<GraphicsPathPart>();
 
             AddToPathPartList(partList, this, points, holes != null);
@@ -384,33 +384,34 @@ namespace PurplePen.MapModel
                 }
             }
 
-            return g.CreatePath(partList, FillMode.Alternate);
+            g.CreatePath(pathKey, partList, FillMode.Alternate);
+            return pathKey;
         }
 
         // Draw a dashed lines. The dashLengths array contains the dash/gap lengths for the whole line. If we reach 
         // the end of this array, we wrap around. The variable offsetToStart indicates how far into the array to 
         // start.
-        public void DrawDashed(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashed(IGraphicsTarget g, object penKey, float[] dashLengths, float offsetToStart)
         {
-            DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, 0, 1);
+            DrawDashedCore(g, penKey, dashLengths, offsetToStart, EuclidDistance, 0, 1);
         }
 
-        public void DrawDashedBizzarro(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart)
+        public void DrawDashedBizzarro(IGraphicsTarget g, object penKey, float[] dashLengths, float offsetToStart)
         {
-            DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, 0, 1);
+            DrawDashedCore(g, penKey, dashLengths, offsetToStart, BizzarroDistance, 0, 1);
         }
 
-        public void DrawDashedOffset(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffset(IGraphicsTarget g, object penKey, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
-            DrawDashedCore(g, pen, dashLengths, offsetToStart, EuclidDistance, offsetRight, miterLimit);
+            DrawDashedCore(g, penKey, dashLengths, offsetToStart, EuclidDistance, offsetRight, miterLimit);
         }
 
-        public void DrawDashedOffsetBizzarro(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
+        public void DrawDashedOffsetBizzarro(IGraphicsTarget g, object penKey, float[] dashLengths, float offsetToStart, float offsetRight, float miterLimit)
         {
-            DrawDashedCore(g, pen, dashLengths, offsetToStart, BizzarroDistance, offsetRight, miterLimit);
+            DrawDashedCore(g, penKey, dashLengths, offsetToStart, BizzarroDistance, offsetRight, miterLimit);
         }
 
-        private void DrawDashedCore(IGraphicsTarget g, IGraphicsPen pen, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
+        private void DrawDashedCore(IGraphicsTarget g, object penKey, float[] dashLengths, float offsetToStart, DistanceMetric metric, float offsetRight, float miterLimit)
         {
             double nextLength = dashLengths[0];  // distance to next dash beginning/end
             int curDash = 0;			// current index into dashLengths array.
@@ -465,7 +466,7 @@ namespace PurplePen.MapModel
                             Array.Copy(flatpoints, lastDashEndIndex, pts, 1, i - lastDashEndIndex);
                         if (offsetRight != 0)
                             pts = OffsetPointsRight(pts, offsetRight, miterLimit, isClosedCurve);
-                        g.DrawPolyline(pen, pts);
+                        g.DrawPolyline(penKey, pts);
                     }
 
                     // update lastDashEnd with the current point
@@ -497,7 +498,7 @@ namespace PurplePen.MapModel
                     Array.Copy(flatpoints, lastDashEndIndex, pts, 1, flatpoints.Length - lastDashEndIndex);
                 if (offsetRight != 0)
                     pts = OffsetPointsRight(pts, offsetRight, miterLimit, isClosedCurve);
-                g.DrawPolyline(pen, pts);
+                g.DrawPolyline(penKey, pts);
             }
         }
 
@@ -1414,7 +1415,7 @@ namespace PurplePen.MapModel
             return (float) (Math.Abs(sum) / 2.0);
         }
 
-
+#if false
         // override object.Equals to test two paths for equality.
         public override bool Equals(object obj)
         {
@@ -1444,6 +1445,7 @@ namespace PurplePen.MapModel
         {
             throw new NotSupportedException("GetHashCode not supported.");
         }
+#endif
 
         // Create a string representation with the kinds and points of the path, with kinds represented by single letters.
         public override string ToString()
@@ -1513,34 +1515,34 @@ namespace PurplePen.MapModel
         }
 
 
-        public void Draw(IGraphicsTarget g, IGraphicsPen pen) {
-            MainPath.Draw(g, pen);
+        public void Draw(IGraphicsTarget g, object penKey) {
+            MainPath.Draw(g, penKey);
             if (Holes != null) {
                 foreach (SymPath hole in Holes)
-                    hole.Draw(g, pen);
+                    hole.Draw(g, penKey);
             }
         }
 
-        public void DrawTransformed(IGraphicsTarget g, IGraphicsPen pen, Matrix matrix)
+        public void DrawTransformed(IGraphicsTarget g, object penKey, Matrix matrix)
         {
-            MainPath.DrawTransformed(g, pen, matrix);
+            MainPath.DrawTransformed(g, penKey, matrix);
             if (Holes != null) {
                 foreach (SymPath hole in Holes)
-                    hole.DrawTransformed(g, pen, matrix);
+                    hole.DrawTransformed(g, penKey, matrix);
             }
         }
 
-        public void Fill(IGraphicsTarget g, IGraphicsBrush brush) {
-            MainPath.FillWithHoles(g, brush, Holes);
+        public void Fill(IGraphicsTarget g, object brushKey) {
+            MainPath.FillWithHoles(g, brushKey, Holes);
         }
 
-        public void FillTransformed(IGraphicsTarget g, IGraphicsBrush brush, Matrix matrix) {
-            MainPath.FillTransformedWithHoles(g, brush, matrix, Holes);
+        public void FillTransformed(IGraphicsTarget g, object brushKey, Matrix matrix) {
+            MainPath.FillTransformedWithHoles(g, brushKey, matrix, Holes);
         }
 
-        public IGraphicsPath GetIGraphicsPath(IGraphicsTarget g)
+        public object GetPathKey(IGraphicsTarget g)
         {
-            return MainPath.GetIGraphicsPathWithHoles(g, Holes);
+            return MainPath.GetPathKeyWithHoles(g, this, Holes);
         }
 
         public SymPathWithHoles Transform(Matrix mat) {
@@ -1636,7 +1638,7 @@ namespace PurplePen.MapModel
             return (float) maxDist;
         }
 
-
+#if false
         // override object.Equals to test two paths for equality.
         public override bool Equals(object obj)
         {
@@ -1668,6 +1670,7 @@ namespace PurplePen.MapModel
         {
             throw new NotSupportedException("GetHashCode not supported.");
         }
+#endif
 
         // Convert to a string showing the main sympath and its holes.
         public override string ToString()

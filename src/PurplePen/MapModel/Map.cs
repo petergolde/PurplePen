@@ -126,7 +126,7 @@ namespace PurplePen.MapModel
         bool boundsAccurate = false;          // Are the map bounds accurate?
         RectangleF bounds;                        // If boundsAccurate is true, the bounds are accurate.
 
-        IGraphicsPen boundsPen;                          // pen for drawing symbol bounds.
+        object boundsPenKey = new object();      // pen for drawing symbol bounds.
 
         ITextMetrics textMetricsProvider;
 
@@ -637,25 +637,19 @@ namespace PurplePen.MapModel
             TraceLine("Begin drawing rectangle ({0},{1})-({2},{3})", rect.Left, rect.Top, rect.Right, rect.Bottom);
             Trace.Indent();
 
-            if (renderOpts.showSymbolBounds)
-                boundsPen = GraphicsUtil.CreateSolidPen(g, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
+            if (renderOpts.showSymbolBounds && !g.HasPen(boundsPenKey))
+                GraphicsUtil.CreateSolidPen(g, boundsPenKey, Color.FromArgb(100, 255, 0, 0), 0.01F, LineStyle.Mitered);
 
-            try {
-                // Draw the image layer.
-                DrawColor(g, null, rect, renderOpts, throwOnCancel);
+            // Draw the image layer.
+            DrawColor(g, null, rect, renderOpts, throwOnCancel);
+            if (throwOnCancel != null)
+                throwOnCancel();
+
+            // Draw each color separately, to get correct layering.
+            foreach (SymColor curColor in colors) {
+                DrawColor(g, curColor, rect, renderOpts, throwOnCancel);
                 if (throwOnCancel != null)
                     throwOnCancel();
-
-                // Draw each color separately, to get correct layering.
-                foreach (SymColor curColor in colors) {
-                    DrawColor(g, curColor, rect, renderOpts, throwOnCancel);
-                    if (throwOnCancel != null)
-                        throwOnCancel();
-                }
-            }
-            finally {
-                if (renderOpts.showSymbolBounds)
-                    boundsPen.Dispose();
             }
 
             Trace.Unindent();
@@ -680,7 +674,7 @@ namespace PurplePen.MapModel
                             ++symbolsDrawn;
 
                             if (renderOpts.showSymbolBounds)
-                                g.DrawRectangle(boundsPen, bounds);
+                                g.DrawRectangle(boundsPenKey, bounds);
 
                             if (throwOnCancel != null && symbolsDrawn % 64 == 0)
                                 throwOnCancel();

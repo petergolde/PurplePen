@@ -49,6 +49,10 @@ namespace PurplePen.MapModel
         public Graphics Graphics;
         private Stack<GraphicsState> stateStack;
         private StringFormat stringFormat;
+        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>();
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
+        private Dictionary<object, Font> fontMap = new Dictionary<object, Font>();
+        private Dictionary<object, GraphicsPath> pathMap = new Dictionary<object, GraphicsPath>();
 
         public GDIPlus_GraphicsTarget(Graphics g)
         {
@@ -62,51 +66,77 @@ namespace PurplePen.MapModel
             stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
         }
 
-        public IGraphicsBrush CreateSolidBrush(Color color)
+        public void CreateSolidBrush(object brushKey, Color color)
         {
-            return new GDIPlus_Brush(color);
+            if (brushMap.ContainsKey(brushKey))
+                throw new InvalidOperationException("Key already has a brush created for it");
+
+            brushMap.Add(brushKey, new SolidBrush(color));
         }
 
         public IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
         {
-                // Create a new bitmap and fill it transparent.
-                Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
-                Graphics g = Graphics.FromImage(bitmap);
-                //g.CompositingMode = CompositingMode.SourceCopy;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.FillRectangle(Brushes.Transparent, 0, 0, bitmap.Width, bitmap.Height);
-                g.TranslateTransform((float)bitmapWidth / 2F, (float)bitmapHeight / 2F);
-                g.ScaleTransform((float)bitmapWidth / size.Width, (float)bitmapHeight / size.Height);
+            // Create a new bitmap and fill it transparent.
+            Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
+            Graphics g = Graphics.FromImage(bitmap);
+            //g.CompositingMode = CompositingMode.SourceCopy;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.FillRectangle(Brushes.Transparent, 0, 0, bitmap.Width, bitmap.Height);
+            g.TranslateTransform((float)bitmapWidth / 2F, (float)bitmapHeight / 2F);
+            g.ScaleTransform((float)bitmapWidth / size.Width, (float)bitmapHeight / size.Height);
 
-                return new GDIPlus_BrushTarget(g, bitmap, size);
+            return new GDIPlus_BrushTarget(this, g, bitmap, size);
         }
 
-        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit)
         {
-            Pen pen = new Pen((brush as GDIPlus_Brush).Brush, width);
+            if (penMap.ContainsKey(penKey))
+                throw new InvalidOperationException("Key already has a pen created for it");
+
+            Pen pen = new Pen(GetBrush(brushKey), width);
             pen.StartCap = pen.EndCap = caps;
             pen.LineJoin = join;
             pen.MiterLimit = miterLimit;
-            return new GDIPlus_Pen(pen);
+
+            penMap.Add(penKey, pen);
         }
 
-        public IGraphicsPen CreatePen(Color color, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, Color color, float width, LineCap caps, LineJoin join, float miterLimit)
         {
+            if (penMap.ContainsKey(penKey))
+                throw new InvalidOperationException("Key already has a pen created for it");
+
             Pen pen = new Pen(color, width);
             pen.StartCap = pen.EndCap = caps;
             pen.LineJoin = join;
             pen.MiterLimit = miterLimit;
-            return new GDIPlus_Pen(pen);
+
+            penMap.Add(penKey, pen);
         }
 
         // Create font
-        public IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic)
+        public void CreateFont(object fontKey, string familyName, float emHeight, bool bold, bool italic)
         {
-            return new GDIPlus_Font(familyName, emHeight, bold, italic);
+            if (fontMap.ContainsKey(fontKey))
+                throw new InvalidOperationException("Key already has a font created for it");
+
+            FontStyle fontStyle = FontStyle.Regular;
+            if (bold)
+                fontStyle |= FontStyle.Bold;
+            if (italic)
+                fontStyle |= FontStyle.Italic;
+
+            emHeight = Math.Max(emHeight, 0.01F);            // 0 size fonts cause exception!
+            Font font = new Font(familyName, emHeight, fontStyle, GraphicsUnit.World);
+
+            fontMap.Add(fontKey, font);
         }
 
-        public IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object pathKey, IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
         {
+            if (pathMap.ContainsKey(pathKey))
+                throw new InvalidOperationException("Key already has a path created for it");
+
             GraphicsPath path = new GraphicsPath(windingMode);
             PointF startPoint = default(PointF);
 
@@ -146,7 +176,7 @@ namespace PurplePen.MapModel
                 }
             }
 
-            return new GDIPlus_Path(path);
+            pathMap.Add(pathKey, path);
         }
 
         // Prepend a transform to the graphics drawing target.
@@ -163,10 +193,11 @@ namespace PurplePen.MapModel
         }
 
         // Set a clip on the graphics drawing target.
-        public void PushClip(IGraphicsPath path)
+        public void PushClip(object pathKey)
         {
             stateStack.Push(Graphics.Save());
-            Graphics.IntersectClip(new Region((path as GDIPlus_Path).GraphicsPath));
+            using (Region region = new Region(GetGraphicsPath(pathKey)))
+                Graphics.IntersectClip(region);
         }
 
         // Pop the clip.
@@ -176,47 +207,47 @@ namespace PurplePen.MapModel
         }
 
         // Draw an line with a pen.
-        public void DrawLine(IGraphicsPen pen, PointF start, PointF finish)
+        public void DrawLine(object penKey, PointF start, PointF finish)
         {
-            Graphics.DrawLine((pen as GDIPlus_Pen).Pen, start, finish);
+            Graphics.DrawLine(GetPen(penKey), start, finish);
         }
 
         // Draw an arc with a pen.
-        public void DrawArc(IGraphicsPen pen, RectangleF boundingRect, float startAngle, float sweepAngle)
+        public void DrawArc(object penKey, RectangleF boundingRect, float startAngle, float sweepAngle)
         {
-            Graphics.DrawArc((pen as GDIPlus_Pen).Pen, boundingRect, startAngle, sweepAngle);
+            Graphics.DrawArc(GetPen(penKey), boundingRect, startAngle, sweepAngle);
         }
 
         // Draw an ellipse with a pen.
-        public void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY)
+        public void DrawEllipse(object penKey, PointF center, float radiusX, float radiusY)
         {
-            Graphics.DrawEllipse((pen as GDIPlus_Pen).Pen, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            Graphics.DrawEllipse(GetPen(penKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
         }
 
         // Fill an ellipse with a brush.
-        public void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY)
+        public void FillEllipse(object brushKey, PointF center, float radiusX, float radiusY)
         {
-            Graphics.FillEllipse((brush as GDIPlus_Brush).Brush, center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            Graphics.FillEllipse(GetBrush(brushKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
         }
 
         // Draw a rectangle with a pen.
-        public void DrawRectangle(IGraphicsPen pen, RectangleF rect)
+        public void DrawRectangle(object penKey, RectangleF rect)
         {
-            Graphics.DrawRectangle((pen as GDIPlus_Pen).Pen, rect.X, rect.Y, rect.Width, rect.Height);
+            Graphics.DrawRectangle(GetPen(penKey), rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         // Fill a rectangle with a brush.
-        public void FillRectangle(IGraphicsBrush brush, RectangleF rect)
+        public void FillRectangle(object brushKey, RectangleF rect)
         {
-            Graphics.FillRectangle((brush as GDIPlus_Brush).Brush, rect.X, rect.Y, rect.Width, rect.Height);
+            Graphics.FillRectangle(GetBrush(brushKey), rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         // Draw a polygon with a brush
-        public void DrawPolygon(IGraphicsPen pen, PointF[] pts)
+        public void DrawPolygon(object penKey, PointF[] pts)
         {
             try
             {
-                Graphics.DrawPolygon((pen as GDIPlus_Pen).Pen, pts);
+                Graphics.DrawPolygon(GetPen(penKey), pts);
             }
             catch (OutOfMemoryException) {
                 // Do nothing. Very occasionally, GDI+ given an out of memory exception for very short curves. Just ignore it; there's nothing else to do. See bug #1997301.
@@ -224,11 +255,11 @@ namespace PurplePen.MapModel
         }
 
         // Draw lines with a brush
-        public void DrawPolyline(IGraphicsPen pen, PointF[] pts)
+        public void DrawPolyline(object penKey, PointF[] pts)
         {
             try
             {
-                Graphics.DrawLines((pen as GDIPlus_Pen).Pen, pts);
+                Graphics.DrawLines(GetPen(penKey), pts);
             }
             catch (OutOfMemoryException)
             {
@@ -237,17 +268,17 @@ namespace PurplePen.MapModel
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode)
         {
-            Graphics.FillPolygon((brush as GDIPlus_Brush).Brush, pts, windingMode);
+            Graphics.FillPolygon(GetBrush(brushKey), pts, windingMode);
         }
 
         // Draw a path with a pen.
-        public void DrawPath(IGraphicsPen pen, IGraphicsPath path)
+        public void DrawPath(object penKey, object pathKey)
         {
             try
             {
-                Graphics.DrawPath((pen as GDIPlus_Pen).Pen, (path as GDIPlus_Path).GraphicsPath);
+                Graphics.DrawPath(GetPen(penKey), GetGraphicsPath(pathKey));
             }
             catch (OutOfMemoryException)
             {
@@ -256,17 +287,17 @@ namespace PurplePen.MapModel
         }
 
         // Fill a path with a brush.
-        public void FillPath(IGraphicsBrush brush, IGraphicsPath path)
+        public void FillPath(object brushKey, object pathKey)
         {
-            Graphics.FillPath((brush as GDIPlus_Brush).Brush, (path as GDIPlus_Path).GraphicsPath);
+            Graphics.FillPath(GetBrush(brushKey), GetGraphicsPath(pathKey));
         }
 
         // Draw text with upper-left corner of text at the given locations.
-        public void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, PointF upperLeft)
+        public void DrawText(string text, object fontKey, object brushKey, PointF upperLeft)
         {
             // Occasonal GDI+ throws an exception if the font size is super small.
             try {
-                Graphics.DrawString(text, (font as GDIPlus_Font).Font, (brush as GDIPlus_Brush).Brush, upperLeft, stringFormat);
+                Graphics.DrawString(text, GetFont(fontKey), GetBrush(brushKey), upperLeft, stringFormat);
             }
             catch (System.Runtime.InteropServices.ExternalException) {
                 // Do nothing
@@ -274,146 +305,117 @@ namespace PurplePen.MapModel
         }
 
         // Draw text outline with upper-left corner of text at the given locations.
-        public void DrawTextOutline(string text, IGraphicsFont font, IGraphicsPen pen, PointF upperLeft)
+        public void DrawTextOutline(string text, object fontKey, object penKey, PointF upperLeft)
         {
-            Font gdiFont = (font as GDIPlus_Font).Font;
+            Font gdiFont = GetFont(fontKey);
             GraphicsPath grPath = new GraphicsPath(FillMode.Winding);
             Debug.Assert(gdiFont.Unit == GraphicsUnit.World);
 
             grPath.AddString(text, gdiFont.FontFamily, (int)gdiFont.Style, gdiFont.Size, upperLeft, stringFormat);
-            Graphics.DrawPath((pen as GDIPlus_Pen).Pen, grPath);
+            Graphics.DrawPath(GetPen(penKey), grPath);
         }
 
-        public void Dispose()
-        { }
-    }
-
-    public class GDIPlus_BrushTarget : GDIPlus_GraphicsTarget, IBrushTarget
-    {
-        private Bitmap bitmap;
-        private SizeF size;
-
-        public GDIPlus_BrushTarget(Graphics g, Bitmap bitmap, SizeF size)
-        : base(g)
-        {
-            this.bitmap = bitmap;
-            this.size = size;
+        public bool HasPath(object pathKey) {
+            return pathMap.ContainsKey(pathKey);
         }
 
-        public IGraphicsBrush FinishBrush(float angle)
-        {
-            // Create a TextureBrush on the bitmap.
-            TextureBrush brush = new TextureBrush(bitmap);
-
-            // Scale and the texture brush.
-            brush.RotateTransform(angle);
-            brush.ScaleTransform(size.Width / (float)bitmap.Width, size.Height / (float)bitmap.Height);
-            brush.TranslateTransform(-bitmap.Width / 2F, -bitmap.Height / 2F);
-
-            // Dispose of the graphics.
-            Graphics.Dispose();
-            return new GDIPlus_Brush(brush);
-        }
-    }
-
-    public class GDIPlus_Brush : IGraphicsBrush
-    {
-        private Brush brush;
-
-        public Brush Brush
-        {
-            get { return brush; }
+        public bool HasPen(object penKey) {
+            return penMap.ContainsKey(penKey);
         }
 
-        public GDIPlus_Brush(Color color)
-        {
-            brush = new SolidBrush(color);
+        public bool HasBrush(object brushKey) {
+            return brushMap.ContainsKey(brushKey);
         }
 
-        public GDIPlus_Brush(Brush brush)
-        {
-            this.brush = brush;
+        public bool HasFont(object fontKey) {
+            return fontMap.ContainsKey(fontKey);
         }
 
-        public void Dispose()
-        {
-            brush.Dispose();
-        }
-    }
-
-    public class GDIPlus_Pen : IGraphicsPen
-    {
-        private Pen pen;
-
-        public Pen Pen
-        {
-            get { return pen; }
+        private Brush GetBrush(object brushKey) {
+            Brush brush;
+            if (brushMap.TryGetValue(brushKey, out brush))
+                return brush;
+            else
+                throw new ArgumentException("Given key does not have a brush created for it", "brushKey");
         }
 
-        public GDIPlus_Pen(Pen pen)
-        {
-            this.pen = pen;
+        private Pen GetPen(object penKey) {
+            Pen pen;
+            if (penMap.TryGetValue(penKey, out pen))
+                return pen;
+            else
+                throw new ArgumentException("Given key does not have a pen created for it", "penKey");
+        }
+
+        private Font GetFont(object fontKey) {
+            Font font;
+            if (fontMap.TryGetValue(fontKey, out font))
+                return font;
+            else
+                throw new ArgumentException("Given key does not have a font created for it", "fontKey");
+        }
+
+        private GraphicsPath GetGraphicsPath(object pathKey) {
+            GraphicsPath path;
+            if (pathMap.TryGetValue(pathKey, out path))
+                return path;
+            else
+                throw new ArgumentException("Given key does not have a path created for it", "pathKey");
         }
 
         public void Dispose()
         {
-            pen.Dispose();
+            foreach (Pen pen in penMap.Values)
+                pen.Dispose();
+            penMap.Clear();
+
+            foreach (Brush brush in brushMap.Values)
+                brush.Dispose();
+            brushMap.Clear();
+
+            foreach (GraphicsPath path in pathMap.Values)
+                path.Dispose();
+            pathMap.Clear();
+
+            foreach (Font font in fontMap.Values)
+                font.Dispose();
+            fontMap.Clear();
+        }
+
+        private class GDIPlus_BrushTarget : GDIPlus_GraphicsTarget, IBrushTarget
+        {
+            private GDIPlus_GraphicsTarget owningTarget;
+            private Bitmap bitmap;
+            private SizeF size;
+
+            public GDIPlus_BrushTarget(GDIPlus_GraphicsTarget owningTarget, Graphics g, Bitmap bitmap, SizeF size)
+                : base(g) {
+                this.owningTarget = owningTarget;
+                this.bitmap = bitmap;
+                this.size = size;
+            }
+
+            public void FinishBrush(object brushKey, float angle) {
+                // Dispose of the graphics.
+                Graphics.Dispose();
+
+                if (brushMap.ContainsKey(brushKey))
+                    throw new InvalidOperationException("Key already has a brush created for it");
+
+                // Create a TextureBrush on the bitmap.
+                TextureBrush brush = new TextureBrush(bitmap);
+
+                // Scale and the texture brush.
+                brush.RotateTransform(angle);
+                brush.ScaleTransform(size.Width / (float)bitmap.Width, size.Height / (float)bitmap.Height);
+                brush.TranslateTransform(-bitmap.Width / 2F, -bitmap.Height / 2F);
+
+                owningTarget.brushMap.Add(brushKey, brush);
+            }
         }
     }
 
-    public class GDIPlus_Path : IGraphicsPath
-    {
-        private GraphicsPath path;
 
-        public GraphicsPath GraphicsPath
-        {
-            get { return path; }
-        }
-
-        public GDIPlus_Path(GraphicsPath path)
-        {
-            this.path = path;
-        }
-
-        public void Dispose()
-        {
-            path.Dispose();
-        }
-    }
-
-    public class GDIPlus_Font : IGraphicsFont
-    {
-        Font font;
-        private float emHeight;
-
-        public GDIPlus_Font(string familyName, float emHeight, bool bold, bool italic)
-        {
-            FontStyle fontStyle = FontStyle.Regular;
-            if (bold)
-                fontStyle |= FontStyle.Bold;
-            if (italic)
-                fontStyle |= FontStyle.Italic;
-
-            this.emHeight = Math.Max(emHeight, 0.01F);            // 0 size fonts cause exception!
-            font = new Font(familyName, this.emHeight, fontStyle, GraphicsUnit.World);
-        }
-
-        public Font Font
-        {
-            get { return font; }
-        }
-
-        public float EmHeight
-        {
-            get { return emHeight; }
-        }
-
-        public void Dispose()
-        {
-            font.Dispose();
-            font = null;
-        }
-    }
 
     public class GDIPlus_TextMetrics : ITextMetrics
     {
@@ -538,7 +540,9 @@ namespace PurplePen.MapModel
             return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat);
         }
 
+        [ThreadStatic]
         static Graphics hiResGraphics = null;
+
         private static Graphics GetHiresGraphics()
         {
             if (hiResGraphics == null) {

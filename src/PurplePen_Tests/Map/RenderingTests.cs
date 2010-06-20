@@ -91,16 +91,19 @@ namespace PurplePen.MapModel.Tests
             GDIPlus_RenderingTest(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("rendering\\patternbrush"),
                 grTarget => {
                     IBrushTarget brushTarget = grTarget.CreatePatternBrush(new SizeF(20, 20), 60, 60);
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 1.5F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawLine(pen, new PointF(-7, -7), new PointF(-1, 5));
-                    }
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Blue, 3F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
-                    }
-                    IGraphicsBrush brush = brushTarget.FinishBrush(0);
+
+                    object pen = new object();
+                    brushTarget.CreatePen(pen, System.Drawing.Color.Red, 1.5F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.DrawLine(pen, new PointF(-7, -7), new PointF(-1, 5));
+
+                    pen = new object();
+                    brushTarget.CreatePen(pen, System.Drawing.Color.Blue, 3F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
+
+                    object brush = new object();
+                    brushTarget.FinishBrush(brush, 0);
 
                     grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
-                    brush.Dispose();
                 });
         }
 

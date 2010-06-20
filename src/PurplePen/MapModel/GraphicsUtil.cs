@@ -34,18 +34,18 @@ namespace PurplePen.MapModel
         }
 
         // Create a solid pen
-        public static IGraphicsPen CreateSolidPen(IGraphicsTarget g, Color color, float thickness, LineStyle style)
+        public static void CreateSolidPen(IGraphicsTarget g, object penKey, Color color, float thickness, LineStyle style)
         {
             switch (style)
             {
                 case LineStyle.Rounded:
-                    return g.CreatePen(color, thickness, LineCap.Round, LineJoin.Round, MITER_LIMIT);
+                    g.CreatePen(penKey, color, thickness, LineCap.Round, LineJoin.Round, MITER_LIMIT); break;
                 case LineStyle.Beveled:
-                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Bevel, MITER_LIMIT);
+                    g.CreatePen(penKey, color, thickness, LineCap.Flat, LineJoin.Bevel, MITER_LIMIT); break;
                 case LineStyle.Mitered:
-                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Miter, MITER_LIMIT);
+                    g.CreatePen(penKey, color, thickness, LineCap.Flat, LineJoin.Miter, MITER_LIMIT); break;
                 case LineStyle.FlatRounded:
-                    return g.CreatePen(color, thickness, LineCap.Flat, LineJoin.Round, MITER_LIMIT);
+                    g.CreatePen(penKey, color, thickness, LineCap.Flat, LineJoin.Round, MITER_LIMIT); break;
                 default:
                     throw new ArgumentException();
             }

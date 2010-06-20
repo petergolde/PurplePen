@@ -48,7 +48,6 @@ namespace PurplePen.MapModel
 		private float cyan, magenta, yellow, black;  // For OCAD purposes, we save the CMYK instead of the RGB..
         private string name;
         private Map map;
-        private IGraphicsBrush brush;
 		private short ocadId;
 
         public string Name { get { return name; } set {this.name = value; }}
@@ -79,11 +78,11 @@ namespace PurplePen.MapModel
             } 
         }
 
-        public IGraphicsBrush GetBrush(IGraphicsTarget g)
+        public object GetBrushKey(IGraphicsTarget g)
         {
-            if (brush == null)
-                CreateBrush(g);
-            return brush;
+            if (!g.HasBrush(this))
+                g.CreateSolidBrush(this, ColorValue);
+            return this;
         }
 
 		public short OcadId {
@@ -102,20 +101,10 @@ namespace PurplePen.MapModel
 			this.black = other.black;
 			this.name = other.name;
 			this.ocadId = other.ocadId;
-			this.brush = null;
 		}
-
-        void CreateBrush(IGraphicsTarget g)
-        {
-            brush = g.CreateSolidBrush(ColorValue);
-        }
 
         public void FreeGdiObjects()
         {
-            if (brush != null) {
-                brush.Dispose();
-                brush = null;
-            }
         }
 
         internal void SetMap(Map newMap)

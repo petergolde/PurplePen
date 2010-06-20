@@ -39,6 +39,7 @@ namespace WpfMap
 
         public MapViewer()
         {
+            System.Windows.Media.RenderOptions.SetBitmapScalingMode(this, BitmapScalingMode.Linear);
         }
 
         public PanAndZoom PanAndZoomControl

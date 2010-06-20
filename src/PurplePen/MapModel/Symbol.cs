@@ -415,7 +415,7 @@ namespace PurplePen.MapModel
         public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == fillColor) {
-                path.Fill(g, fillColor.GetBrush(g));
+                path.Fill(g, fillColor.GetBrushKey(g));
             }
         }
     }
@@ -429,7 +429,7 @@ namespace PurplePen.MapModel
         SymPathWithHoles path;
         public SymPathWithHoles Path { get { return path; } }
 
-        Color fillColor;          // Note: not a SymColor, but a real RGC color!
+        readonly Color fillColor;          // Note: not a SymColor, but a real RGC color!
         public Color FillColor { get { return fillColor; } }
 
         public ImageAreaSymbol(ImageSymDef def, SymPathWithHoles path, Color fillColor)
@@ -462,9 +462,10 @@ namespace PurplePen.MapModel
         public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
-                IGraphicsBrush brush = g.CreateSolidBrush(map.TransformColor(fillColor));
-                path.Fill(g, brush);
-                brush.Dispose();
+                if (!g.HasBrush(this))
+                    g.CreateSolidBrush(this, map.TransformColor(fillColor));
+
+                path.Fill(g, this);
             }
         }
     }
@@ -517,9 +518,10 @@ namespace PurplePen.MapModel
         public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == lineColor) {
-                IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, lineColor.ColorValue, thickness, lineStyle);
-                path.Draw(g, pen);
-                pen.Dispose();
+                if (! g.HasPen(this))
+                    GraphicsUtil.CreateSolidPen(g, this, lineColor.ColorValue, thickness, lineStyle);
+
+                path.Draw(g, this);
             }
         }
     }
@@ -572,9 +574,10 @@ namespace PurplePen.MapModel
         public override void Draw(IGraphicsTarget g, SymColor color, RenderOptions renderOpts)
         {
             if (color == null) {
-                IGraphicsPen pen = GraphicsUtil.CreateSolidPen(g, map.TransformColor(lineColor), thickness, lineStyle);
-                path.Draw(g, pen);
-                pen.Dispose();
+                if (! g.HasPen(this))
+                    GraphicsUtil.CreateSolidPen(g, this, map.TransformColor(lineColor), thickness, lineStyle);
+
+                path.Draw(g, this);
             }
         }
     }

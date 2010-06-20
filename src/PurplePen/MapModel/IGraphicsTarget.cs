@@ -14,20 +14,6 @@ using Color = System.Drawing.Color;
 
 namespace PurplePen.MapModel
 {
-    public interface IGraphicsBrush : IDisposable
-    {
-    }
-
-    public interface IGraphicsPen : IDisposable
-    {
-    }
-
-    public interface IGraphicsPath : IDisposable
-    { }
-
-    public interface IGraphicsFont : IDisposable
-    { }
-
     public enum GraphicsPathPartKind { 
         Start,    // 1 point
         Lines,    // n points, n >= 1
@@ -71,65 +57,71 @@ namespace PurplePen.MapModel
         void PopTransform();
 
         // Set a clip on the graphics drawing target.
-        void PushClip(IGraphicsPath geometry);
+        void PushClip(object pathKey);
         void PopClip();
 
         // Create paths.
-        IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, FillMode windingMode);
+        void CreatePath(object key, IEnumerable<GraphicsPathPart> parts, FillMode windingMode);
 
         // Create brushes and pens
-        IGraphicsBrush CreateSolidBrush(Color color);
+        void CreateSolidBrush(object key, Color color);
         IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight);
-        IGraphicsPen CreatePen(IGraphicsBrush brush, float width, LineCap caps, LineJoin join, float miterLimit);
-        IGraphicsPen CreatePen(Color color, float width, LineCap caps, LineJoin join, float miterLimit);
+        void CreatePen(object key, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit);
+        void CreatePen(object key, Color color, float width, LineCap caps, LineJoin join, float miterLimit);
 
         // Create font
-        IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic);
+        void CreateFont(object key, string familyName, float emHeight, bool bold, bool italic);
+
+        // Determine if objects exist.
+        bool HasPath(object pathKey);
+        bool HasBrush(object brushKey);
+        bool HasPen(object penKey);
+        bool HasFont(object fontKey);
 
         // Draw an line with a pen.
-        void DrawLine(IGraphicsPen pen, PointF start, PointF finish);
+        void DrawLine(object penKey, PointF start, PointF finish);
 
         // Draw an arc with a pen.
-        void DrawArc(IGraphicsPen pen, RectangleF boundingRect, float startAngle, float sweepAngle);
+        void DrawArc(object penKey, RectangleF boundingRect, float startAngle, float sweepAngle);
 
         // Draw an ellipse with a pen.
-        void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY);
+        void DrawEllipse(object penKey, PointF center, float radiusX, float radiusY);
 
         // Fill an ellipse with a pen.
-        void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY);
+        void FillEllipse(object brushKey, PointF center, float radiusX, float radiusY);
 
         // Draw a rectangle with a pen.
-        void DrawRectangle(IGraphicsPen pen, RectangleF rect);
+        void DrawRectangle(object penKey, RectangleF rect);
 
         // Fill a rectangle with a brush.
-        void FillRectangle(IGraphicsBrush brush, RectangleF rect);
+        void FillRectangle(object brushKey, RectangleF rect);
 
         // Draw a polygon with a pen
-        void DrawPolygon(IGraphicsPen pen, PointF[] pts);
+        void DrawPolygon(object penKey, PointF[] pts);
 
         // Fill a polygon with a brush
-        void DrawPolyline(IGraphicsPen pen, PointF[] pts);
+        void DrawPolyline(object penKey, PointF[] pts);
 
         // Fill a polygon with a brush
-        void FillPolygon(IGraphicsBrush brush, PointF[] pts, FillMode windingMode);
+        void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode);
 
         // Draw a path with a pen.
-        void DrawPath(IGraphicsPen pen, IGraphicsPath path);
+        void DrawPath(object penKey, object pathKey);
 
         // Fill a path with a brush.
-        void FillPath(IGraphicsBrush brush, IGraphicsPath path);
+        void FillPath(object brushKey, object pathKey);
 
         // Draw text with upper-left corner of text at the given locations.
-        void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, PointF upperLeft);
+        void DrawText(string text, object fontKey, object brushKey, PointF upperLeft);
 
         // Draw text outline with upper-left corner of text at the given locations.
-        void DrawTextOutline(string text, IGraphicsFont font, IGraphicsPen pen, PointF upperLeft);
+        void DrawTextOutline(string text, object fontKey, object penKey, PointF upperLeft);
 
     }
 
     public interface IBrushTarget : IGraphicsTarget
     {
-        IGraphicsBrush FinishBrush(float rotationAngle);
+        void FinishBrush(object brushKey, float rotationAngle);
     }
 
 }

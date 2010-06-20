@@ -314,13 +314,12 @@ namespace PurplePen.MapModel
 
         GlyphInfo[] glyphs;
 
-        bool pensCreated = false;
-        IGraphicsPen mainPen;
-        IGraphicsPen secondPen;
-        IGraphicsBrush pointyEndsBrush;
-        IGraphicsPen doubleFillPen;
-        IGraphicsPen doubleLeftPen;
-        IGraphicsPen doubleRightPen;
+        object mainPen = new object();
+        object secondPen = new object();
+        object pointyEndsBrush = new object();
+        object doubleFillPen = new object();
+        object doubleLeftPen = new object();
+        object doubleRightPen = new object();
 
         float maxThickness, maxMiteredThickness;
 
@@ -425,84 +424,58 @@ namespace PurplePen.MapModel
 
         void CreatePens(IGraphicsTarget g)
         {
-            Debug.Assert(!pensCreated && mainPen == null);
-
             if (thickness > 0.0F && lineColor != null) {
+                if (g.HasPen(mainPen))
+                    return;
 
                 if (shortenInfo.shortenBeginning > 0 && shortenInfo.pointyEnds) {
                     // Always use round line cap with pointy ends.
                     if (lineStyle == LineStyle.Rounded || lineStyle == LineStyle.FlatRounded) {
-                        mainPen = g.CreatePen(lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Round, GraphicsUtil.MITER_LIMIT);
+                        g.CreatePen(mainPen, lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Round, GraphicsUtil.MITER_LIMIT);
                     }
                     else if (lineStyle == LineStyle.Beveled) {
-                        mainPen = g.CreatePen(lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Bevel, GraphicsUtil.MITER_LIMIT);
+                        g.CreatePen(mainPen, lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Bevel, GraphicsUtil.MITER_LIMIT);
                     }
                     else if (lineStyle == LineStyle.Mitered) {
-                        mainPen = g.CreatePen(lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Miter, GraphicsUtil.MITER_LIMIT);
+                        g.CreatePen(mainPen, lineColor.ColorValue, thickness, LineCap.Round, LineJoin.Miter, GraphicsUtil.MITER_LIMIT);
                     }
                 }
                 else {
-                    mainPen = GraphicsUtil.CreateSolidPen(g, lineColor.ColorValue, thickness, lineStyle);
+                    GraphicsUtil.CreateSolidPen(g, mainPen, lineColor.ColorValue, thickness, lineStyle);
                 }
 
                 if (shortenInfo.pointyEnds)
-                    pointyEndsBrush = g.CreateSolidBrush(lineColor.ColorValue);
+                    g.CreateSolidBrush(pointyEndsBrush,  lineColor.ColorValue);
             }
 
             if (secondLineColor != null && secondThickness > 0) {
-                secondPen = GraphicsUtil.CreateSolidPen(g, secondLineColor.ColorValue, secondThickness, secondLineStyle);
+                if (g.HasPen(secondPen))
+                    return;
+
+                GraphicsUtil.CreateSolidPen(g, secondPen, secondLineColor.ColorValue, secondThickness, secondLineStyle);
             }
 
             if (isDoubleLine) {
                 if (doubleLines.doubleFillColor != null) {
-                    doubleFillPen = GraphicsUtil.CreateSolidPen(g, doubleLines.doubleFillColor.ColorValue, doubleLines.doubleThick, LineStyle.Mitered);
+                    if (g.HasPen(doubleFillPen))
+                        return;
+                    GraphicsUtil.CreateSolidPen(g, doubleFillPen, doubleLines.doubleFillColor.ColorValue, doubleLines.doubleThick, LineStyle.Mitered);
                 }
                 if (doubleLines.doubleLeftWidth > 0.0F) {
-                    doubleLeftPen = GraphicsUtil.CreateSolidPen(g, doubleLines.doubleLeftColor.ColorValue, doubleLines.doubleLeftWidth, LineStyle.FlatRounded);
+                    if (g.HasPen(doubleLeftPen))
+                        return;
+                    GraphicsUtil.CreateSolidPen(g, doubleLeftPen, doubleLines.doubleLeftColor.ColorValue, doubleLines.doubleLeftWidth, LineStyle.FlatRounded);
                 }
                 if (doubleLines.doubleRightWidth > 0.0F) {
-                    doubleRightPen = GraphicsUtil.CreateSolidPen(g, doubleLines.doubleRightColor.ColorValue, doubleLines.doubleRightWidth, LineStyle.FlatRounded);
+                    if (g.HasPen(doubleRightPen))
+                        return;
+                    GraphicsUtil.CreateSolidPen(g, doubleRightPen, doubleLines.doubleRightColor.ColorValue, doubleLines.doubleRightWidth, LineStyle.FlatRounded);
                 }
             }
-
-            pensCreated = true;
         }
 
         public override void FreeGdiObjects()
         {
-            if (mainPen != null) {
-                mainPen.Dispose();
-                mainPen = null;
-            }
-            if (pointyEndsBrush != null) {
-                pointyEndsBrush.Dispose();
-                pointyEndsBrush = null;
-            }
-            if (secondPen != null) {
-                secondPen.Dispose();
-                secondPen = null;
-            }
-            if (doubleFillPen != null) {
-                doubleFillPen.Dispose();
-                doubleFillPen = null;
-            }
-            if (doubleLeftPen != null) {
-                doubleLeftPen.Dispose();
-                doubleLeftPen = null;
-            }
-            if (doubleRightPen != null) {
-                doubleRightPen.Dispose();
-                doubleRightPen = null;
-            }
-
-            if (glyphs != null) {
-                foreach (GlyphInfo glyphInfo in glyphs) {
-                    if (glyphInfo.glyph != null)
-                        glyphInfo.glyph.FreeGdiObjects();
-                }
-            }
-
-            pensCreated = false;
         }
 
 
@@ -540,8 +513,7 @@ namespace PurplePen.MapModel
             if (path.Length == 0)
                 return;             // Don't draw anything for a zero-length path.
 
-            if (!pensCreated)
-                CreatePens(g);
+            CreatePens(g);
 
             SymPath mainPath = path;  // the path for the main part of the line (might be shortened).
             if (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F) {
@@ -967,12 +939,12 @@ namespace PurplePen.MapModel
             return list.ToArray();
         }
 
-        private static void DrawDashed(IGraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, RenderOptions renderOpts)
+        private static void DrawDashed(IGraphicsTarget g, SymPath path, object penKey, DashInfo dashes, RenderOptions renderOpts)
         {
-            DrawDashedWithOffset(g, path, pen, dashes, 0, 1, renderOpts);
+            DrawDashedWithOffset(g, path, penKey, dashes, 0, 1, renderOpts);
         }
 
-        private static void DrawDashedWithOffset(IGraphicsTarget g, SymPath path, IGraphicsPen pen, DashInfo dashes, float offsetRight, float miterLimit, RenderOptions renderOpts)
+        private static void DrawDashedWithOffset(IGraphicsTarget g, SymPath path, object penKey, DashInfo dashes, float offsetRight, float miterLimit, RenderOptions renderOpts)
         {
             float[] distances;
 
@@ -982,13 +954,13 @@ namespace PurplePen.MapModel
                 // No dashes, or the dashes are too small to be visible. Draw solid.
                 if (offsetRight != 0) {
                     SymPath offsetPath = path.OffsetRight(offsetRight, miterLimit);
-                    offsetPath.Draw(g, pen);
+                    offsetPath.Draw(g, penKey);
                 }
                 else
-                    path.Draw(g, pen);
+                    path.Draw(g, penKey);
             }
             else {
-                path.DrawDashedOffsetBizzarro(g, pen, distances, 0, offsetRight, miterLimit);
+                path.DrawDashedOffsetBizzarro(g, penKey, distances, 0, offsetRight, miterLimit);
             }
         }
 
@@ -1178,7 +1150,7 @@ namespace PurplePen.MapModel
         float hatchSpacing;  // spacing of hatch lines
         float hatchAngle1;   // angle of hatching
         float hatchAngle2;   // angle of 2nd hatching (for double hatching only)
-        IGraphicsPen hatchPen;        // pen for hatching.
+        object hatchPen = new object();        // pen for hatching.
 
         // Pattern information
         bool drawPattern;    // are we drawing a pattern?
@@ -1189,10 +1161,7 @@ namespace PurplePen.MapModel
         Glyph patternGlyph;  // pattern element
 
         // Cached brushes for faster pattern drawing.
-        float pixelSizeCached;                          // pixel size in mm that the patternBrushes are created for. 
-        Dictionary<SymColor, IGraphicsBrush> patternBrushes; // pattern brushes, indexed by color
-
-        bool pensAndBrushesCreated; // are pens and brushed created.
+        Dictionary<SymColor, object> patternBrushes = new Dictionary<SymColor, object>(2); // pattern brushes, indexed by color
 
         public override void SetMap(Map newMap)
         {
@@ -1273,31 +1242,14 @@ namespace PurplePen.MapModel
 
         void CreatePensAndBrushes(IGraphicsTarget g)
         {
-            Debug.Assert(!pensAndBrushesCreated && hatchPen == null && patternBrushes == null);
-
             if (hatchMode != 0) {
-                hatchPen = g.CreatePen(hatchColor.GetBrush(g), hatchWidth, LineCap.Flat, LineJoin.Miter, GraphicsUtil.MITER_LIMIT);
+                if (! g.HasPen(hatchPen))
+                    g.CreatePen(hatchPen, hatchColor.GetBrushKey(g), hatchWidth, LineCap.Flat, LineJoin.Miter, GraphicsUtil.MITER_LIMIT);
             }
-
-            pensAndBrushesCreated = true;
         }
 
         public override void FreeGdiObjects()
         {
-            if (hatchPen != null) {
-                hatchPen.Dispose();
-                hatchPen = null;
-            }
-            if (patternBrushes != null) {
-                foreach (IGraphicsBrush brush in patternBrushes.Values)
-                    brush.Dispose();
-                patternBrushes.Clear();
-                patternBrushes = null;
-            }
-            if (patternGlyph != null)
-                patternGlyph.FreeGdiObjects();
-
-            pensAndBrushesCreated = false;
         }
 
 
@@ -1319,11 +1271,10 @@ namespace PurplePen.MapModel
         // the given color only.
         internal void Draw(IGraphicsTarget g, SymPathWithHoles path, SymColor color, float angle, RenderOptions renderOpts)
         {
-            if (!pensAndBrushesCreated)
-                CreatePensAndBrushes(g);
+            CreatePensAndBrushes(g);
 
             if (color == fillColor) {
-                path.Fill(g, color.GetBrush(g));
+                path.Fill(g, color.GetBrushKey(g));
             }
 
             if (hatchMode != 0 && hatchColor == color) {
@@ -1364,7 +1315,7 @@ namespace PurplePen.MapModel
         void DrawHatching(IGraphicsTarget g, SymPathWithHoles path, float angle, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
-            g.PushClip(path.GetIGraphicsPath(g));
+            g.PushClip(path.GetPathKey(g));
 
             // use a transform to rotate and then draw hatching.
             Matrix matrix = new Matrix();
@@ -1405,25 +1356,25 @@ namespace PurplePen.MapModel
 
         // Draw a set of horizontal hatching lines at the given spacing with
         // the given pen. A line should be centered on the zero y coordinate.
-        void DrawHatchLines(IGraphicsTarget g, IGraphicsPen pen, float spacing, RectangleF boundingRect, RenderOptions renderOpts)
+        void DrawHatchLines(IGraphicsTarget g, object penKey, float spacing, RectangleF boundingRect, RenderOptions renderOpts)
         {
             double firstLine = Math.Round(boundingRect.Top / spacing) * spacing;
             double lastLine = (Math.Round(boundingRect.Bottom / spacing) + 0.5) * spacing;
 
             for (double y = firstLine; y <= lastLine; y += spacing) {
-                g.DrawLine(pen, new PointF(boundingRect.Left, (float) y), new PointF(boundingRect.Right, (float) y));
+                g.DrawLine(penKey, new PointF(boundingRect.Left, (float) y), new PointF(boundingRect.Right, (float) y));
             }
         }
 
         // Draw the pattern using the texture brush.
         void DrawPatternWithTexBrush(IGraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
-            IGraphicsBrush brush = patternBrushes[color];
+            object brush = patternBrushes[color];
             Debug.Assert(brush != null);
 
             if (angle != 0.0F) {
                 // Set the clipping region to draw only inside the area.
-                g.PushClip(path.GetIGraphicsPath(g));
+                g.PushClip(path.GetPathKey(g));
 
                 // use a transform to rotate.
                 Matrix matrix = new Matrix();
@@ -1524,19 +1475,12 @@ namespace PurplePen.MapModel
             if (pixelSize > patternHeight / MIN_PATTERN_SIZE)
                 pixelSize = patternHeight / MIN_PATTERN_SIZE;
 
-            if (patternBrushes != null && Math.Abs(pixelSize - pixelSizeCached) / pixelSize < 0.01)
-                return;         // the pattern brush is already OK size.
-
             // Get size of bitmap to create with the image of the pattern.
             float width = (float) Math.Round(patternWidth / pixelSize);
             float height = (float) Math.Round(patternHeight / pixelSize);
 
             int bitmapWidth = (int) width;
             int bitmapHeight = (int) (offsetRows ? height * 2 : height);
-
-            // Create dictionary to hold brushes for each color.
-            patternBrushes = new Dictionary<SymColor, IGraphicsBrush>(2);
-            pixelSizeCached = pixelSize;
 
             RenderOptions renderOpts = new RenderOptions();
             renderOpts.minResolution = pixelSize;
@@ -1547,6 +1491,14 @@ namespace PurplePen.MapModel
                     continue;
 
                 // Create a new pattern brush.
+                if (!patternBrushes.ContainsKey(color)) {
+                    lock (patternBrushes) {
+                        patternBrushes.Add(color, new object());
+                    }
+                }
+
+                if (gt.HasBrush(patternBrushes[color]))
+                    continue;
                 IBrushTarget brushTarget = gt.CreatePatternBrush(new SizeF(patternWidth, (offsetRows ? patternHeight * 2 : patternHeight)), bitmapWidth, bitmapHeight);
 
                 // Draw the pattern into the bitmap.
@@ -1564,10 +1516,7 @@ namespace PurplePen.MapModel
                 }
 
                 // Get the brush
-                IGraphicsBrush brush = brushTarget.FinishBrush(patternAngle);
-                
-                // Add it to the collection of brushes.
-                patternBrushes.Add(color, brush);
+                brushTarget.FinishBrush(patternBrushes[color], patternAngle);
             }
         }
 
@@ -1575,7 +1524,7 @@ namespace PurplePen.MapModel
         void DrawPattern(IGraphicsTarget g, SymPathWithHoles path, float angle, SymColor color, RenderOptions renderOpts)
         {
             // Set the clipping region to draw only inside the area.
-            g.PushClip(path.GetIGraphicsPath(g));
+            g.PushClip(path.GetPathKey(g));
 
             // use a transform to rotate 
             Matrix matrix = new Matrix();
@@ -1679,15 +1628,13 @@ namespace PurplePen.MapModel
         Underlining underline;
 
         // GDI+ object correspoding to the above attributes.
-        bool objectsCreated;
-        List<IGraphicsPen> framingPens;
-        IGraphicsPen underlinePen;
+        List<object> framingPens = new List<object>();
+        object underlinePen = new object();
+        object font = new object();
 
         bool fontMetricsCreated;
         ITextFaceMetrics textFaceMetrics;
 
-        bool fontsCreated;
-        IGraphicsFont font;
 
         const string ParagraphMark = "\x2029";  // string denoted a paragraph boundary (Unicode paragraph mark).
 
@@ -1708,69 +1655,50 @@ namespace PurplePen.MapModel
             fontMetricsCreated = true;
         }
 
-        private void CreateFonts(IGraphicsTarget g)
-        {
-            Debug.Assert(!fontsCreated);
-
-            font = g.CreateFont(fontName, fontSize, bold, italic);
-
-            fontsCreated = true;
-        }
-
         private void CreateObjects(IGraphicsTarget g)
         {
-            Debug.Assert(!objectsCreated);
-
             if (!fontMetricsCreated)
                 CreateFontMetrics();
-            if (!fontsCreated)
-                CreateFonts(g);
+
+            if (!g.HasFont(font))
+                g.CreateFont(font, fontName, fontSize, bold, italic);
 
             if (framing.framingStyle == FramingStyle.Line) {
-                framingPens = new List<IGraphicsPen>();
-
                 // We use multiple pens to avoid weird artifacts with overlapping parts.
-                IGraphicsPen p;
+                int iPen = 0;
                 for (float width = 0; width < framing.lineWidth * 2; width += fontSize * 0.33F) {
-                    p = GraphicsUtil.CreateSolidPen(g, framing.framingColor.ColorValue, width, LineStyle.Beveled);
-                    framingPens.Add(p);
+                    if (iPen >= framingPens.Count) {
+                        lock (framingPens)
+                            framingPens.Add(new object());
+                    }
+
+                    if (! g.HasPen(framingPens[iPen]))
+                        GraphicsUtil.CreateSolidPen(g, framingPens[iPen], framing.framingColor.ColorValue, width, LineStyle.Beveled);
+                    ++iPen;
                 }
-                p = GraphicsUtil.CreateSolidPen(g, framing.framingColor.ColorValue, framing.lineWidth * 2, framing.lineStyle);
-                framingPens.Add(p);
+
+                if (iPen >= framingPens.Count) {
+                    lock (framingPens)
+                        framingPens.Add(new object());
+                }
+
+                if (!g.HasPen(framingPens[iPen]))
+                    GraphicsUtil.CreateSolidPen(g, framingPens[iPen], framing.framingColor.ColorValue, framing.lineWidth * 2, framing.lineStyle);
             }
 
             if (underline.underlineOn) {
-                underlinePen = GraphicsUtil.CreateSolidPen(g, underline.underlineColor.ColorValue, underline.underlineWidth, LineStyle.Mitered);
+                if (! g.HasPen(underlinePen))
+                    GraphicsUtil.CreateSolidPen(g, underlinePen, underline.underlineColor.ColorValue, underline.underlineWidth, LineStyle.Mitered);
             }
-
-            objectsCreated = true;
         }
 
         public override void FreeGdiObjects()
         {
-            if (font != null) {
-                font.Dispose();
-                font = null;
-            }
-
-            if (framingPens != null) {
-                foreach (IGraphicsPen p in framingPens)
-                    p.Dispose();
-                framingPens = null;
-            }
-
-            if (underlinePen != null) {
-                underlinePen.Dispose();
-                underlinePen = null;
-            }
-
             if (textFaceMetrics != null) {
                 textFaceMetrics.Dispose();
                 textFaceMetrics = null;
             }
 
-            objectsCreated = false;
-            fontsCreated = false;
             fontMetricsCreated = false;
         }
 
@@ -1866,9 +1794,9 @@ namespace PurplePen.MapModel
         }
 
         // Draw a single line of text at the given point with the given brush.
-        private void DrawSingleLineString(IGraphicsTarget g, string text, IGraphicsBrush brush, PointF pt)
+        private void DrawSingleLineString(IGraphicsTarget g, string text, object brushKey, PointF pt)
         {
-            g.DrawText(text, font, brush, pt);
+            g.DrawText(text, font, brushKey, pt);
         }
 
         // Measure the width of a single line of text.
@@ -1884,16 +1812,16 @@ namespace PurplePen.MapModel
         private void DrawStringWithEffects(IGraphicsTarget g, SymColor color, string text, PointF pt)
         {
             if (color == fontColor) {
-                DrawSingleLineString(g, text, fontColor.GetBrush(g), pt);
+                DrawSingleLineString(g, text, fontColor.GetBrushKey(g), pt);
             }
 
             if (framing.framingStyle != FramingStyle.None && color == framing.framingColor) {
                 if (framing.framingStyle == FramingStyle.Line) {
-                    foreach (IGraphicsPen p in framingPens)
+                    foreach (object p in framingPens)
                         g.DrawTextOutline(text, font, p, pt);
                 }
                 else if (framing.framingStyle == FramingStyle.Shadow) {
-                    DrawSingleLineString(g, text, framing.framingColor.GetBrush(g), new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
+                    DrawSingleLineString(g, text, framing.framingColor.GetBrushKey(g), new PointF(pt.X + framing.shadowX, pt.Y - framing.shadowY));
                 }
             }
         }
@@ -1924,7 +1852,7 @@ namespace PurplePen.MapModel
                 r += framing.rectBorderRight;
 
                 // Draw the rectangle
-                g.FillRectangle(color.GetBrush(g), new RectangleF(l, t, r - l, b - t));
+                g.FillRectangle(color.GetBrushKey(g), new RectangleF(l, t, r - l, b - t));
             }
         }
 
@@ -1972,8 +1900,7 @@ namespace PurplePen.MapModel
             if (color != fontColor && (framing.framingStyle == FramingStyle.None || color != framing.framingColor) && (!underline.underlineOn || color != underline.underlineColor))
                 return;
 
-            if (!objectsCreated)
-                CreateObjects(g);
+            CreateObjects(g);
 
             // Move location to draw at to the origin.
             Matrix matrix = new Matrix();
@@ -2384,8 +2311,7 @@ namespace PurplePen.MapModel
             if (color != fontColor && (framing.framingStyle == FramingStyle.None || color != framing.framingColor))
                 return;
 
-            if (!objectsCreated)
-                CreateObjects(g);
+            CreateObjects(g);
 
             // Get the location of each grapheme to print.
             List<GraphemePlacement> graphemeList = GetLineTextGraphemePlacement(path, text);
