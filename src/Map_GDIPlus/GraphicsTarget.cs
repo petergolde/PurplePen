@@ -79,7 +79,7 @@ namespace PurplePen.MapModel
             // Create a new bitmap and fill it transparent.
             Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight);
             Graphics g = Graphics.FromImage(bitmap);
-            //g.CompositingMode = CompositingMode.SourceCopy;
+            g.CompositingMode = CompositingMode.SourceCopy;
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.FillRectangle(Brushes.Transparent, 0, 0, bitmap.Width, bitmap.Height);
             g.TranslateTransform((float)bitmapWidth / 2F, (float)bitmapHeight / 2F);

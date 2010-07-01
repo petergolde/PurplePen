@@ -24,24 +24,26 @@ namespace WpfMap
     class MapRenderCache
     {
         private Map map;
+        private RectangleF mapBounds;
+        private double fullMapPixelSize;
         private CacheLevel fullMapLevel = new CacheLevel();
+        private CacheLevel mediumLevel = new CacheLevel();
         private CacheLevel detailLevel = new CacheLevel();
 
         // Number of pixels to use for full-map caches.
         private const int ENTIRE_MAP_PIXELS = 5000000;
+        private const double MEDIUM_LEVEL_RATIO = 3.0;      // ratio of medium level pixel size to full map pixel size.
 
         public MapRenderCache(Map map) {
             this.map = map;
 
-            RectangleF bounds;
-
             // Determine bounds of map, and pixel size to use.
             using (map.Read())
-                bounds = map.Bounds;
-            double ratio = bounds.Width / bounds.Height;
-            double pixelSize = bounds.Height / Math.Sqrt((ENTIRE_MAP_PIXELS / ratio));
+                mapBounds = map.Bounds;
+            double ratio = mapBounds.Width / mapBounds.Height;
+            fullMapPixelSize = mapBounds.Height / Math.Sqrt((ENTIRE_MAP_PIXELS / ratio));
 
-            fullMapLevel.QueueUpdate(new RenderParameters(map, bounds.ToRect(), pixelSize), null);
+            //fullMapLevel.QueueUpdate(new RenderParameters(map, mapBounds.ToRect(), fullMapPixelSize), null);
         }
 
         public void Render(DrawingContext dc, Rect visibleRect, double pixelSize) {
@@ -51,26 +53,33 @@ namespace WpfMap
                 // The current detail map is perfect.
                 detailLevel.Render(dc);
             }
+            else if (pixelSize >= fullMapPixelSize) {
+                // the full map is the best we can do at this pixel size.
+                fullMapLevel.Render(dc);
+            }
             else {
+                Geometry clipArea = new RectangleGeometry(visibleRect);
+
+                // Use detail map, the medium detail, then full map, in that order.
                 // Use the detail map if any portion is useful.
-                Geometry clipArea = null;
-                if (detailLevel.CachedParameters != null && visibleRect.IntersectsWith(detailLevel.CachedParameters.VisibleRect) && pixelSize < fullMapLevel.CachedParameters.PixelSize) {
-                    detailLevel.Render(dc);
+                clipArea = RenderCachedLevel(dc, detailLevel, clipArea);
+                clipArea = RenderCachedLevel(dc, mediumLevel, clipArea);
+                clipArea = RenderCachedLevel(dc, fullMapLevel, clipArea);
+            }
+        }
 
-                    // Exclude the detail map area, so we only draw the whole map around it.
-                    RectangleGeometry visibleGeometry = new RectangleGeometry(visibleRect);
-                    RectangleGeometry detailMapGeometry = new RectangleGeometry(detailLevel.CachedParameters.VisibleRect);
-                    clipArea = Geometry.Combine(visibleGeometry, detailMapGeometry, GeometryCombineMode.Exclude, null);
-                }
+        // Render a given cache level if it usefully contributes to rendering into the given clipArea. Only render into the clip area.
+        // Returns an updated clip area with the rendered section excluded.
+        private Geometry RenderCachedLevel(DrawingContext dc, CacheLevel cachedLevel, Geometry clipArea) {
+            if (cachedLevel.CachedParameters != null && !clipArea.IsEmpty() && clipArea.Bounds.IntersectsWith(cachedLevel.CachedParameters.VisibleRect)) {
+                dc.PushClip(clipArea);
+                cachedLevel.Render(dc);
+                dc.Pop();
 
-                // Use the whole map, unless the cliparea is empty.
-                if (fullMapLevel.CachedParameters != null && (clipArea == null || !clipArea.IsEmpty())) {
-                    if (clipArea != null)
-                        dc.PushClip(clipArea);
-                    fullMapLevel.Render(dc);
-                    if (clipArea != null)
-                        dc.Pop();
-                }
+                return Geometry.Combine(clipArea, new RectangleGeometry(cachedLevel.CachedParameters.VisibleRect), GeometryCombineMode.Exclude, null);
+            }
+            else {
+                return clipArea;
             }
         }
 
@@ -78,14 +87,33 @@ namespace WpfMap
         // Returns false if a new task was start to cache the area. In this case, the given callback is called back (on the current SynchronizationContext)
         // when complete.
         public bool CacheArea(Rect visibleRect, double pixelSize, Action callbackOnCompletion) {
-            if (fullMapLevel.CachedParameters == null || pixelSize < fullMapLevel.CachedParameters.PixelSize)
-                return detailLevel.QueueUpdate(new RenderParameters(map, visibleRect, pixelSize), callbackOnCompletion);
+            if (pixelSize < fullMapPixelSize) {
+                bool returnValue = detailLevel.QueueUpdate(new RenderParameters(map, visibleRect, pixelSize), callbackOnCompletion);
+                if (pixelSize < (fullMapPixelSize / MEDIUM_LEVEL_RATIO)) {
+                    // The map is detailed enough that we might want to cache a medium detail map.
+                    RenderParameters cachedParameters = mediumLevel.CachedParameters, inProgressParameters = mediumLevel.ParametersInProgress;
+                    if ((cachedParameters == null || (! cachedParameters.VisibleRect.Contains(visibleRect))) &&
+                        (inProgressParameters == null || (!inProgressParameters.VisibleRect.Contains(visibleRect)))) 
+                    {
+                        // The medium map level doesn't contain the current rect, nor is it building a reasonable rect, so build a new one.
+                        double mediumPixelSize = fullMapPixelSize/ MEDIUM_LEVEL_RATIO;
+                        Point mediumCenterPoint = new Point((visibleRect.Left + visibleRect.Right) / 2, (visibleRect.Top + visibleRect.Bottom) / 2);
+                        double mediumWidth = mapBounds.Width / MEDIUM_LEVEL_RATIO, mediumHeight = mapBounds.Height / MEDIUM_LEVEL_RATIO;
+                        Rect mediumRect = new Rect(mediumCenterPoint.X - (mediumWidth / 2), mediumCenterPoint.Y - (mediumHeight / 2), mediumWidth, mediumHeight);
+
+                        mediumLevel.QueueUpdate(new RenderParameters(map, mediumRect, mediumPixelSize), null);
+                    }
+                }
+
+                return returnValue;
+            }
+
             else
-                return true;        // full map already is detailed enough.
+                return fullMapLevel.QueueUpdate(new RenderParameters(map, mapBounds.ToRect(), fullMapPixelSize), callbackOnCompletion);        // full map already is detailed enough.
         }
 
 
-        // Copy a System.Draw.Bitmap to a BitmapSource.
+        // Copy a System.Drawing.Bitmap to a BitmapSource.
         static private BitmapSource CopyBitmapToBitmapSource(Bitmap bm) {
             Debug.Assert(bm.PixelFormat == Dr.Imaging.PixelFormat.Format32bppPArgb);
 
@@ -102,16 +130,17 @@ namespace WpfMap
         // Create a BitmapSource by rendering the map with the given render parameters.
         static BitmapSource CreateBitmap(RenderParameters parameters, CancellationToken cancellationToken) {
             // Determine the size of the bitmap we need.
-            int height = (int)Math.Ceiling(parameters.VisibleRect.Height / parameters.PixelSize);
-            int width = (int)Math.Ceiling(parameters.VisibleRect.Width / parameters.PixelSize);
+            int height = (int)Math.Round(parameters.VisibleRect.Height / parameters.PixelSize);
+            int width = (int)Math.Round(parameters.VisibleRect.Width / parameters.PixelSize);
 
             // Create transformation matrix from map coords to the bitmap coords
-            Point midpoint = new Point(width / 2.0F, height / 2.0F);
-            float scaleFactor = (float)(width / parameters.VisibleRect.Width);
+            Point midpoint = new Point((width-1) / 2.0, (height-1) / 2.0);
+            float scaleFactorX = (float)(width / parameters.VisibleRect.Width);
+            float scaleFactorY = (float)(height / parameters.VisibleRect.Height);
             Point centerPoint = new Point((parameters.VisibleRect.Left + parameters.VisibleRect.Right) / 2, (parameters.VisibleRect.Top + parameters.VisibleRect.Bottom) / 2);
             Dr.Drawing2D.Matrix matrix = new Dr.Drawing2D.Matrix();
             matrix.Translate((float)midpoint.X, (float)midpoint.Y, Dr.Drawing2D.MatrixOrder.Prepend);
-            matrix.Scale(scaleFactor, scaleFactor, Dr.Drawing2D.MatrixOrder.Prepend);  // y scale is negative to get to cartesian orientation.
+            matrix.Scale(scaleFactorX, scaleFactorY, Dr.Drawing2D.MatrixOrder.Prepend);  
             matrix.Translate((float)(-centerPoint.X), (float)(-centerPoint.Y), Dr.Drawing2D.MatrixOrder.Prepend);
 
             // Get the render options.
@@ -154,8 +183,13 @@ namespace WpfMap
                 get { return currentBestParameters; }
             }
 
+            public RenderParameters ParametersInProgress {
+                get { return bgRenderParameters; }
+            }
+
             public void Render(DrawingContext dc) {
-                dc.DrawImage(currentBestCache, currentBestParameters.VisibleRect);
+                if (currentBestParameters != null)
+                    dc.DrawImage(currentBestCache, currentBestParameters.VisibleRect);
             }
 
             private void CancelBackgroundTask()
