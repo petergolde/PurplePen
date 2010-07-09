@@ -399,7 +399,7 @@ namespace PurplePen.MapModel
                 // Dispose of the graphics.
                 Graphics.Dispose();
 
-                if (brushMap.ContainsKey(brushKey))
+                if (owningTarget.brushMap.ContainsKey(brushKey))
                     throw new InvalidOperationException("Key already has a brush created for it");
 
                 // Create a TextureBrush on the bitmap.

@@ -62,6 +62,10 @@ namespace PurplePen.MapModel
     {
         public DrawingContext DrawingContext;
         private int pushLevel;      // How many pushes have we done?
+        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>();
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
+        private Dictionary<object, WPF_Font> fontMap = new Dictionary<object, WPF_Font>();
+        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>();
 
         public WPF_GraphicsTarget(DrawingContext dc)
         {
@@ -69,19 +73,24 @@ namespace PurplePen.MapModel
             pushLevel = 0;
         }
 
-        public IGraphicsBrush CreateSolidBrush(SysDraw.Color color)
+        public void CreateSolidBrush(object brushKey, SysDraw.Color color)
         {
-            return new WPF_Brush(WpfUtil.ToWpfColor(color));
+            if (brushMap.ContainsKey(brushKey))
+                throw new InvalidOperationException("Key already has a brush created for it");
+
+            brushMap.Add(brushKey, new SolidColorBrush(WpfUtil.ToWpfColor(color)));
         }
 
-        public IGraphicsPen CreatePen(SysDraw.Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, SysDraw.Color color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
         {
-            return CreatePen(CreateSolidBrush(color), width, caps, join, miterLimit);
+            object brushKey = new object();
+            CreateSolidBrush(brushKey, color);
+            CreatePen(penKey, brushKey, width, caps, join, miterLimit);
         }
 
-        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
         {
-            Pen pen = new Pen((brush as WPF_Brush).Brush, width);
+            Pen pen = new Pen(GetBrush(brushKey), width);
             
             switch (caps)
             {
@@ -115,7 +124,7 @@ namespace PurplePen.MapModel
             }
 
             pen.Freeze();
-            return new WPF_Pen(pen);
+            penMap.Add(penKey, pen);
         }
 
         public IBrushTarget CreatePatternBrush(SizeF size, int bitmapWidth, int bitmapHeight)
@@ -123,17 +132,24 @@ namespace PurplePen.MapModel
             // Create a visual with the glyph to tile in it.
             DrawingVisual visual = new DrawingVisual();
             DrawingContext dc = visual.RenderOpen();
-            return new WPF_BrushTarget(dc, visual, size, bitmapWidth, bitmapHeight);
+            return new WPF_BrushTarget(this, dc, visual, size, bitmapWidth, bitmapHeight);
         }
 
         // Create font
-        public IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic)
+        public void CreateFont(object fontKey, string familyName, float emHeight, bool bold, bool italic)
         {
-            return new WPF_Font(familyName, emHeight, bold, italic);
+            if (fontMap.ContainsKey(fontKey))
+                throw new InvalidOperationException("Key already has a font created for it");
+
+            WPF_Font font = new WPF_Font(familyName, emHeight, bold, italic);
+            fontMap.Add(fontKey, font);
         }
 
-        public IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object pathKey, IEnumerable<GraphicsPathPart> parts, FillMode windingMode)
         {
+            if (geometryMap.ContainsKey(pathKey))
+                throw new InvalidOperationException("Key already has a path created for it");
+
             StreamGeometry geo = new StreamGeometry();
             geo.FillRule = (windingMode == FillMode.Alternate) ? FillRule.EvenOdd : FillRule.Nonzero;
             StreamGeometryContext geoContext = geo.Open();
@@ -181,7 +197,8 @@ namespace PurplePen.MapModel
 
             geoContext.Close();
             geo.Freeze();
-            return new WPF_Path(geo);
+
+            geometryMap.Add(pathKey, geo);
         }
 
         // Prepend a transform to the graphics drawing target.
@@ -197,9 +214,9 @@ namespace PurplePen.MapModel
         }
 
         // Set a clip on the graphics drawing target.
-        public void PushClip(IGraphicsPath path)
+        public void PushClip(object pathKey)
         {
-            DrawingContext.PushClip((path as WPF_Path).Geometry);
+            DrawingContext.PushClip(GetGeometry(pathKey));
             ++pushLevel;
         }
 
@@ -209,13 +226,13 @@ namespace PurplePen.MapModel
         }
 
         // Draw an line with a pen.
-        public void DrawLine(IGraphicsPen pen, PointF start, PointF finish)
+        public void DrawLine(object penKey, PointF start, PointF finish)
         {
-            DrawingContext.DrawLine((pen as WPF_Pen).Pen, new Point(start.X, start.Y), new Point(finish.X, finish.Y));
+            DrawingContext.DrawLine(GetPen(penKey), new Point(start.X, start.Y), new Point(finish.X, finish.Y));
         }
 
         // Draw an arc with a pen.
-        public void DrawArc(IGraphicsPen pen, RectangleF boundingRect, float startAngle, float sweepAngle)
+        public void DrawArc(object penKey, RectangleF boundingRect, float startAngle, float sweepAngle)
         {
             float endAngle = startAngle + sweepAngle;
             PointF centerPoint = new PointF((boundingRect.Left + boundingRect.Right) / 2, (boundingRect.Top + boundingRect.Bottom) / 2);
@@ -225,35 +242,35 @@ namespace PurplePen.MapModel
             ArcSegment segment = new ArcSegment(ptEnd, new Size(radiusX, radiusY), 0, sweepAngle > 180.0F, SweepDirection.Clockwise, true);
             PathFigure figure = new PathFigure(ptStart, new PathSegment[] { segment }, false);
             PathGeometry geometry = new PathGeometry(new PathFigure[] { figure });
-            DrawingContext.DrawGeometry(null, (pen as WPF_Pen).Pen, geometry);
+            DrawingContext.DrawGeometry(null, GetPen(penKey), geometry);
         }
 
         // Draw an ellipse with a pen.
-        public void DrawEllipse(IGraphicsPen pen, PointF center, float radiusX, float radiusY)
+        public void DrawEllipse(object penKey, PointF center, float radiusX, float radiusY)
         {
-            DrawingContext.DrawEllipse(null, (pen as WPF_Pen).Pen, new Point(center.X, center.Y), radiusX, radiusY);
+            DrawingContext.DrawEllipse(null, GetPen(penKey), new Point(center.X, center.Y), radiusX, radiusY);
         }
 
         // Fill an ellipse with a pen.
-        public void FillEllipse(IGraphicsBrush brush, PointF center, float radiusX, float radiusY)
+        public void FillEllipse(object brushKey, PointF center, float radiusX, float radiusY)
         {
-            DrawingContext.DrawEllipse((brush as WPF_Brush).Brush, null, new Point(center.X, center.Y), radiusX, radiusY);
+            DrawingContext.DrawEllipse(GetBrush(brushKey), null, new Point(center.X, center.Y), radiusX, radiusY);
         }
 
         // Draw a rectangle with a pen.
-        public void DrawRectangle(IGraphicsPen pen, RectangleF rect)
+        public void DrawRectangle(object penKey, RectangleF rect)
         {
-            DrawingContext.DrawRectangle(null, (pen as WPF_Pen).Pen, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
+            DrawingContext.DrawRectangle(null, GetPen(penKey), new Rect(rect.X, rect.Y, rect.Width, rect.Height));
         }
 
         // Fill a rectangle with a brush.
-        public void FillRectangle(IGraphicsBrush brush, RectangleF rect)
+        public void FillRectangle(object brushKey, RectangleF rect)
         {
-            DrawingContext.DrawRectangle((brush as WPF_Brush).Brush, null, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
+            DrawingContext.DrawRectangle(GetBrush(brushKey), null, new Rect(rect.X, rect.Y, rect.Width, rect.Height));
         }
 
         // Fill a polygon with a brush
-        public void DrawPolygon(IGraphicsPen pen, PointF[] pts)
+        public void DrawPolygon(object penKey, PointF[] pts)
         {
             Point[] points = new Point[pts.Length - 1];
             for (int i = 1; i < pts.Length; ++i)
@@ -263,11 +280,11 @@ namespace PurplePen.MapModel
             PathSegment segment = new PolyLineSegment(points, true);
             PathFigure figure = new PathFigure(startPoint, new PathSegment[] { segment }, true);
             PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
-            DrawingContext.DrawGeometry(null, (pen as WPF_Pen).Pen, geometry);
+            DrawingContext.DrawGeometry(null, GetPen(penKey), geometry);
         }
 
         // Fill a polygon with a brush
-        public void DrawPolyline(IGraphicsPen pen, PointF[] pts)
+        public void DrawPolyline(object penKey, PointF[] pts)
         {
             Point[] points = new Point[pts.Length - 1];
             for (int i = 1; i < pts.Length; ++i)
@@ -277,11 +294,11 @@ namespace PurplePen.MapModel
             PathSegment segment = new PolyLineSegment(points, true);
             PathFigure figure = new PathFigure(startPoint, new PathSegment[] { segment }, false);
             PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
-            DrawingContext.DrawGeometry(null, (pen as WPF_Pen).Pen, geometry);
+            DrawingContext.DrawGeometry(null, GetPen(penKey), geometry);
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(IGraphicsBrush brush, PointF[] pts, SysDraw2D.FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, SysDraw2D.FillMode windingMode)
         {
             Point[] points = new Point[pts.Length];
             for (int i = 0; i < pts.Length; ++i)
@@ -290,42 +307,96 @@ namespace PurplePen.MapModel
             PathSegment segment = new PolyLineSegment(points, true);
             PathFigure figure = new PathFigure(points[points.Length - 1], new PathSegment[] { segment }, true);
             PathGeometry geometry = new PathGeometry(new PathFigure[] { figure }, windingMode == SysDraw2D.FillMode.Winding ? FillRule.Nonzero : FillRule.EvenOdd, System.Windows.Media.Transform.Identity);
-            DrawingContext.DrawGeometry((brush as WPF_Brush).Brush, null, geometry);
+            DrawingContext.DrawGeometry(GetBrush(brushKey), null, geometry);
         }
 
         // Draw a path with a pen.
-        public void DrawPath(IGraphicsPen pen, IGraphicsPath path)
+        public void DrawPath(object penKey, object pathKey)
         {
-            DrawingContext.DrawGeometry(null, (pen as WPF_Pen).Pen, (path as WPF_Path).Geometry);
+            DrawingContext.DrawGeometry(null, GetPen(penKey), GetGeometry(pathKey));
         }
 
         // Fill a path with a brush.
-        public void FillPath(IGraphicsBrush brush, IGraphicsPath path)
+        public void FillPath(object brushKey, object pathKey)
         {
-            DrawingContext.DrawGeometry((brush as WPF_Brush).Brush, null, (path as WPF_Path).Geometry);
+            DrawingContext.DrawGeometry(GetBrush(brushKey), null, GetGeometry(pathKey));
         }
 
         // Draw text with upper-left corner of text at the given locations.
-        public void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, PointF upperLeft)
+        public void DrawText(string text, object fontKey, object brushKey, PointF upperLeft)
         {
+            WPF_Font font = GetFont(fontKey);
             Typeface typeface = (font as WPF_Font).Typeface;
             float emHeight = (font as WPF_Font).EmHeight;
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, (brush as WPF_Brush).Brush);
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, GetBrush(brushKey));
             DrawingContext.DrawText(formattedText, new Point(upperLeft.X, upperLeft.Y));
         }
 
         // Draw text outline with upper-left corner of text at the given locations.
-        public void DrawTextOutline(string text, IGraphicsFont font, IGraphicsPen pen, PointF upperLeft)
+        public void DrawTextOutline(string text, object fontKey, object penKey, PointF upperLeft)
         {
+            WPF_Font font = GetFont(fontKey);
             Typeface typeface = (font as WPF_Font).Typeface;
             float emHeight = (font as WPF_Font).EmHeight;
             FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black);
             Geometry geometry = formattedText.BuildGeometry(new Point(upperLeft.X, upperLeft.Y));
-            DrawingContext.DrawGeometry(null, (pen as WPF_Pen).Pen, geometry);
+            DrawingContext.DrawGeometry(null, GetPen(penKey), geometry);
         }
 
-        public void Dispose()
-        { }
+        public bool HasPath(object pathKey) {
+            return geometryMap.ContainsKey(pathKey);
+        }
+
+        public bool HasPen(object penKey) {
+            return penMap.ContainsKey(penKey);
+        }
+
+        public bool HasBrush(object brushKey) {
+            return brushMap.ContainsKey(brushKey);
+        }
+
+        public bool HasFont(object fontKey) {
+            return fontMap.ContainsKey(fontKey);
+        }
+
+        private Brush GetBrush(object brushKey) {
+            Brush brush;
+            if (brushMap.TryGetValue(brushKey, out brush))
+                return brush;
+            else
+                throw new ArgumentException("Given key does not have a brush created for it", "brushKey");
+        }
+
+        private Pen GetPen(object penKey) {
+            Pen pen;
+            if (penMap.TryGetValue(penKey, out pen))
+                return pen;
+            else
+                throw new ArgumentException("Given key does not have a pen created for it", "penKey");
+        }
+
+        private WPF_Font GetFont(object fontKey) {
+            WPF_Font font;
+            if (fontMap.TryGetValue(fontKey, out font))
+                return font;
+            else
+                throw new ArgumentException("Given key does not have a font created for it", "fontKey");
+        }
+
+        private Geometry GetGeometry(object pathKey) {
+            Geometry geo;
+            if (geometryMap.TryGetValue(pathKey, out geo))
+                return geo;
+            else
+                throw new ArgumentException("Given key does not have a path created for it", "pathKey");
+        }
+
+        public void Dispose() {
+            penMap.Clear();
+            brushMap.Clear();
+            geometryMap.Clear();
+            fontMap.Clear();
+        }
 
         private static WpfMatrix GetWpfMatrix(Matrix source)
         {
@@ -333,126 +404,62 @@ namespace PurplePen.MapModel
             return new WpfMatrix(elements[0], elements[1], elements[2], elements[3], elements[4], elements[5]);
         }
 
+        public class WPF_BrushTarget : WPF_GraphicsTarget, IBrushTarget
+        {
+            private WPF_GraphicsTarget owningTarget;
+            private DrawingVisual visual;
+            private SizeF size;
+            private int bitmapWidth, bitmapHeight;
+
+            public WPF_BrushTarget(WPF_GraphicsTarget owningTarget, DrawingContext dc, DrawingVisual visual, SizeF size, int bitmapWidth, int bitmapHeight)
+                : base(dc) {
+                this.owningTarget = owningTarget;
+                this.visual = visual;
+                this.size = size;
+                this.bitmapWidth = bitmapWidth;
+                this.bitmapHeight = bitmapHeight;
+            }
+
+            public void FinishBrush(object brushKey, float rotationAngle) {
+                DrawingContext.Close();
+
+                if (owningTarget.brushMap.ContainsKey(brushKey))
+                    throw new InvalidOperationException("Key already has a brush created for it");
+
+                // Get a drawing from the drawingvisual
+                Drawing drawing = visual.Drawing;
+                drawing.Freeze();
+
+                // Create a brush from the drawing.
+                DrawingBrush brush = new DrawingBrush(drawing);
+                brush.Stretch = Stretch.Fill;
+                brush.TileMode = TileMode.Tile;
+                brush.ViewboxUnits = BrushMappingMode.Absolute;
+                brush.ViewportUnits = BrushMappingMode.Absolute;
+                brush.Viewbox = brush.Viewport = new Rect(-size.Width / 2, -size.Height / 2, size.Width, size.Height);
+                brush.Transform = new RotateTransform(rotationAngle);
+
+                // Set the minimum and maximum relative sizes for regenerating the tiled brush.
+                // The tiled brush will be regenerated when the size is
+                //   0.5x, 0.25x (and so forth)
+                // and
+                //   2x, 4x, 8x (and so forth)
+                // of the original size.
+                System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMinimum(brush, 0.5);
+                System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMaximum(brush, 2.0);
+
+                // Set the caching hint option for the brush.
+                System.Windows.Media.RenderOptions.SetCachingHint(brush, CachingHint.Cache);
+
+                // Freeze the brush.
+                brush.Freeze();
+                owningTarget.brushMap.Add(brushKey, brush);
+            }
+        }
+
     }
 
-    public class WPF_BrushTarget : WPF_GraphicsTarget, IBrushTarget
-    {
-        private DrawingVisual visual;
-        private SizeF size;
-        private int bitmapWidth, bitmapHeight;
-
-        public WPF_BrushTarget(DrawingContext dc, DrawingVisual visual, SizeF size, int bitmapWidth, int bitmapHeight)
-        : base(dc)
-        {
-            this.visual = visual;
-            this.size = size;
-            this.bitmapWidth = bitmapWidth;
-            this.bitmapHeight = bitmapHeight;
-        }
-
-        public IGraphicsBrush FinishBrush(float rotationAngle)
-        {
-            DrawingContext.Close();
-
-            // Get a drawing from the drawingvisual
-            Drawing drawing = visual.Drawing;
-            drawing.Freeze();
-
-            // Create a brush from the drawing.
-            DrawingBrush brush = new DrawingBrush(drawing);
-            brush.Stretch = Stretch.Fill;
-            brush.TileMode = TileMode.Tile;
-            brush.ViewboxUnits = BrushMappingMode.Absolute;
-            brush.ViewportUnits = BrushMappingMode.Absolute;
-            brush.Viewbox = brush.Viewport = new Rect(-size.Width / 2, -size.Height / 2, size.Width, size.Height);
-            brush.Transform = new RotateTransform(rotationAngle);
-
-            // Set the minimum and maximum relative sizes for regenerating the tiled brush.
-            // The tiled brush will be regenerated when the size is
-            //   0.5x, 0.25x (and so forth)
-            // and
-            //   2x, 4x, 8x (and so forth)
-            // of the original size.
-            System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMinimum(brush, 0.5);
-            System.Windows.Media.RenderOptions.SetCacheInvalidationThresholdMaximum(brush, 2.0);
-
-            // Set the caching hint option for the brush.
-            System.Windows.Media.RenderOptions.SetCachingHint(brush, CachingHint.Cache);
-
-            // Freeze the brush.
-            brush.Freeze();
-            return new WPF_Brush(brush);
-        }
-    }
-
-    public class WPF_Brush : IGraphicsBrush
-    {
-        private Brush brush;
-
-        public WPF_Brush(Color color)
-        {
-            brush = new SolidColorBrush(color);
-            brush.Freeze();
-        }
-
-        public WPF_Brush(Brush brush)
-        {
-            this.brush = brush;
-        }
-
-        public Brush Brush
-        {
-            get { return brush; }
-        }
-
-        public void Dispose()
-        {
-            brush = null;
-        }
-    }
-
-    public class WPF_Pen : IGraphicsPen
-    {
-        private Pen pen;
-
-        public WPF_Pen(Pen pen)
-        {
-            pen.Freeze();
-            this.pen = pen;
-        }
-
-        public Pen Pen
-        {
-            get { return pen; }
-        }
-
-        public void Dispose()
-        {
-            pen = null;
-        }
-    }
-
-    public class WPF_Path : IGraphicsPath
-    {
-        private Geometry geometry;
-
-        public Geometry Geometry
-        {
-            get { return geometry; }
-        }
-
-        public WPF_Path(Geometry geometry)
-        {
-            this.geometry = geometry;
-        }
-
-        public void Dispose()
-        {
-            geometry = null;
-        }
-    }
-
-    public class WPF_Font : IGraphicsFont
+    public class WPF_Font
     {
         private Typeface typeface;
         private float emHeight;
