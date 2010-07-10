@@ -90,6 +90,9 @@ namespace PurplePen.MapModel
 
         public void CreatePen(object penKey, object brushKey, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
         {
+            if (penMap.ContainsKey(penKey))
+                throw new InvalidOperationException("Key already has a pen created for it");
+
             Pen pen = new Pen(GetBrush(brushKey), width);
             
             switch (caps)

@@ -25,6 +25,10 @@ namespace Map_D2D
         protected RenderTarget renderTarget;
         private Stack<Matrix3x2F> transformStack = new Stack<Matrix3x2F>();
         private Stack<Layer> layerStack = new Stack<Layer>();
+        private Dictionary<object, D2D_Pen> penMap = new Dictionary<object, D2D_Pen>();
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
+        private Dictionary<object, D2D_Font> fontMap = new Dictionary<object, D2D_Font>();
+        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>();
 
         public D2D_GraphicsTarget(D2DFactory factory, RenderTarget renderTarget)
         {
@@ -44,11 +48,11 @@ namespace Map_D2D
             renderTarget.Transform = transformStack.Pop();
         }
 
-        public void PushClip(IGraphicsPath path)
+        public void PushClip(object pathKey)
         {
             Layer layer = renderTarget.CreateLayer(new D2D.SizeF(0,0));
             renderTarget.PushLayer(new LayerParameters(new D2D.RectF(float.NegativeInfinity, float.NegativeInfinity, float.PositiveInfinity, float.PositiveInfinity),
-                                                                          (path as D2D_Path).Geometry,
+                                                                          GetGeometry(pathKey),
                                                                           AntialiasMode.PerPrimitive,
                                                                           Matrix3x2F.Identity,
                                                                           1.0F,
@@ -64,8 +68,11 @@ namespace Map_D2D
             layerStack.Pop().Dispose();
         }
 
-        public IGraphicsPath CreatePath(IEnumerable<GraphicsPathPart> parts, System.Drawing.Drawing2D.FillMode windingMode)
+        public void CreatePath(object pathKey, IEnumerable<GraphicsPathPart> parts, System.Drawing.Drawing2D.FillMode windingMode)
         {
+            if (geometryMap.ContainsKey(pathKey))
+                throw new InvalidOperationException("Key already has a path created for it");
+
             PathGeometry geo = factory.CreatePathGeometry();
             using (GeometrySink sink = geo.Open()) {
 
@@ -111,13 +118,16 @@ namespace Map_D2D
                 sink.Close();
             }
 
-            return new D2D_Path(geo);
+            geometryMap.Add(pathKey, geo);
         }
 
-        public IGraphicsBrush CreateSolidBrush(System.Drawing.Color color)
+        public void CreateSolidBrush(object brushKey, System.Drawing.Color color)
         {
+            if (brushMap.ContainsKey(brushKey))
+                throw new InvalidOperationException("Key already has a brush created for it");
+
             D2D.Brush brush = renderTarget.CreateSolidColorBrush(D2DUtil.ToD2DColor(color));
-            return new D2D_Brush(brush);
+            brushMap.Add(brushKey, brush);
         }
 
         public IBrushTarget CreatePatternBrush(System.Drawing.SizeF size, int bitmapWidth, int bitmapHeight)
@@ -134,32 +144,41 @@ namespace Map_D2D
             brushRenderTarget.Clear(new ColorF(0, 0, 0, 0));
             brushRenderTarget.Transform = D2DUtil.Multiply(d2dMatrix, brushRenderTarget.Transform);
 
-            return new D2D_BrushTarget(factory, brushRenderTarget, renderTarget, size, bitmapWidth, bitmapHeight);
+            return new D2D_BrushTarget(this, factory, brushRenderTarget, renderTarget, size, bitmapWidth, bitmapHeight);
         }
 
-        public IGraphicsPen CreatePen(IGraphicsBrush brush, float width, System.Drawing.Drawing2D.LineCap caps, System.Drawing.Drawing2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, System.Drawing.Drawing2D.LineCap caps, System.Drawing.Drawing2D.LineJoin join, float miterLimit)
         {
-            return new D2D_Pen((brush as D2D_Brush).Brush, false, width, D2DUtil.CreateStrokeStyle(factory, caps, join, miterLimit));
+            if (penMap.ContainsKey(penKey))
+                throw new InvalidOperationException("Key already has a pen created for it");
+
+            D2D_Pen pen = new D2D_Pen(GetBrush(brushKey), false, width, D2DUtil.CreateStrokeStyle(factory, caps, join, miterLimit));
+            penMap.Add(penKey, pen);
         }
 
-        public IGraphicsPen CreatePen(System.Drawing.Color color, float width, System.Drawing.Drawing2D.LineCap caps, System.Drawing.Drawing2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, System.Drawing.Color color, float width, System.Drawing.Drawing2D.LineCap caps, System.Drawing.Drawing2D.LineJoin join, float miterLimit)
         {
-            return new D2D_Pen((CreateSolidBrush(color) as D2D_Brush).Brush, true, width, D2DUtil.CreateStrokeStyle(factory, caps, join, miterLimit));
+            if (penMap.ContainsKey(penKey))
+                throw new InvalidOperationException("Key already has a pen created for it");
+
+            D2D.Brush brush = renderTarget.CreateSolidColorBrush(D2DUtil.ToD2DColor(color));
+            D2D_Pen pen = new D2D_Pen(brush, true, width, D2DUtil.CreateStrokeStyle(factory, caps, join, miterLimit));
+            penMap.Add(penKey, pen);
         }
 
-        public IGraphicsFont CreateFont(string familyName, float emHeight, bool bold, bool italic)
+        public void CreateFont(object fontKey, string familyName, float emHeight, bool bold, bool italic)
         {
             //throw new NotImplementedException();
-            return new D2D_Font();
+            fontMap.Add(fontKey, new D2D_Font());
         }
 
-        public void DrawLine(IGraphicsPen pen, System.Drawing.PointF start, System.Drawing.PointF finish)
+        public void DrawLine(object penKey, System.Drawing.PointF start, System.Drawing.PointF finish)
         {
-            D2D_Pen realPen = (D2D_Pen) pen;
+            D2D_Pen realPen = GetPen(penKey);
             renderTarget.DrawLine(D2DUtil.Point(start), D2DUtil.Point(finish), realPen.Brush, realPen.Width, realPen.StrokeStyle);
         }
 
-        public void DrawArc(IGraphicsPen pen, System.Drawing.RectangleF boundingRect, float startAngle, float sweepAngle)
+        public void DrawArc(object penKey, System.Drawing.RectangleF boundingRect, float startAngle, float sweepAngle)
         {
             float endAngle = startAngle + sweepAngle;
             PointF centerPoint = new PointF((boundingRect.Left + boundingRect.Right) / 2, (boundingRect.Top + boundingRect.Bottom) / 2);
@@ -168,7 +187,7 @@ namespace Map_D2D
             PointF ptEnd = new PointF(centerPoint.X + (float)Math.Cos(endAngle * Math.PI / 180.0) * radiusX, centerPoint.Y + (float)Math.Sin(endAngle * Math.PI / 180.0) * radiusY);
             ArcSegment segment = new ArcSegment(D2DUtil.Point(ptEnd), new D2D.SizeF(radiusX, radiusY), 0, SweepDirection.Clockwise, (sweepAngle > 180.0F) ? ArcSize.Large : ArcSize.Small);
 
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
 
             using (PathGeometry geo = factory.CreatePathGeometry()) {
                 using (GeometrySink sink = geo.Open()) {
@@ -182,31 +201,31 @@ namespace Map_D2D
             }
         }
 
-        public void DrawEllipse(IGraphicsPen pen, System.Drawing.PointF center, float radiusX, float radiusY)
+        public void DrawEllipse(object penKey, System.Drawing.PointF center, float radiusX, float radiusY)
         {
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
             renderTarget.DrawEllipse(new D2D.Ellipse(D2DUtil.Point(center), radiusX, radiusY), realPen.Brush, realPen.Width, realPen.StrokeStyle);
         }
 
-        public void FillEllipse(IGraphicsBrush brush, System.Drawing.PointF center, float radiusX, float radiusY)
+        public void FillEllipse(object brushKey, System.Drawing.PointF center, float radiusX, float radiusY)
         {
-            renderTarget.FillEllipse(new D2D.Ellipse(D2DUtil.Point(center), radiusX, radiusY), (brush as D2D_Brush).Brush);
+            renderTarget.FillEllipse(new D2D.Ellipse(D2DUtil.Point(center), radiusX, radiusY), GetBrush(brushKey));
         }
 
-        public void DrawRectangle(IGraphicsPen pen, System.Drawing.RectangleF rect)
+        public void DrawRectangle(object penKey, System.Drawing.RectangleF rect)
         {
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
             renderTarget.DrawRectangle(D2DUtil.Rectangle(rect), realPen.Brush, realPen.Width, realPen.StrokeStyle);
         }
 
-        public void FillRectangle(IGraphicsBrush brush, System.Drawing.RectangleF rect)
+        public void FillRectangle(object brushKey, System.Drawing.RectangleF rect)
         {
-            renderTarget.FillRectangle(D2DUtil.Rectangle(rect), (brush as D2D_Brush).Brush);
+            renderTarget.FillRectangle(D2DUtil.Rectangle(rect), GetBrush(brushKey));
         }
 
-        public void DrawPolygon(IGraphicsPen pen, System.Drawing.PointF[] pts)
+        public void DrawPolygon(object penKey, System.Drawing.PointF[] pts)
         {
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
 
             using (PathGeometry geo = factory.CreatePathGeometry()) {
                 using (GeometrySink sink = geo.Open()) {
@@ -222,9 +241,9 @@ namespace Map_D2D
             }
         }
 
-        public void DrawPolyline(IGraphicsPen pen, System.Drawing.PointF[] pts)
+        public void DrawPolyline(object penKey, System.Drawing.PointF[] pts)
         {
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
 
             using (PathGeometry geo = factory.CreatePathGeometry()) {
                 using (GeometrySink sink = geo.Open()) {
@@ -240,7 +259,7 @@ namespace Map_D2D
             }
         }
 
-        public void FillPolygon(IGraphicsBrush brush, System.Drawing.PointF[] pts, System.Drawing.Drawing2D.FillMode windingMode)
+        public void FillPolygon(object brushKey, System.Drawing.PointF[] pts, System.Drawing.Drawing2D.FillMode windingMode)
         {
             using (PathGeometry geo = factory.CreatePathGeometry()) {
                 using (GeometrySink sink = geo.Open()) {
@@ -253,115 +272,148 @@ namespace Map_D2D
                     sink.Close();
                 }
 
-                renderTarget.FillGeometry(geo, (brush as D2D_Brush).Brush);
+                renderTarget.FillGeometry(geo, GetBrush(brushKey));
             }
         }
 
-        public void DrawPath(IGraphicsPen pen, IGraphicsPath path)
+        public void DrawPath(object penKey, object pathKey)
         {
-            D2D_Pen realPen = (D2D_Pen)pen;
+            D2D_Pen realPen = GetPen(penKey);
 
-            renderTarget.DrawGeometry((path as D2D_Path).Geometry, realPen.Brush, realPen.Width, realPen.StrokeStyle);
+            renderTarget.DrawGeometry(GetGeometry(pathKey), realPen.Brush, realPen.Width, realPen.StrokeStyle);
         }
 
-        public void FillPath(IGraphicsBrush brush, IGraphicsPath path)
+        public void FillPath(object brushKey, object pathKey)
         {
-            renderTarget.FillGeometry((path as D2D_Path).Geometry, (brush as D2D_Brush).Brush);
+            renderTarget.FillGeometry(GetGeometry(pathKey), GetBrush(brushKey));
         }
 
-        public void DrawText(string text, IGraphicsFont font, IGraphicsBrush brush, System.Drawing.PointF upperLeft)
+        public void DrawText(string text, object fontKey, object brushKey, System.Drawing.PointF upperLeft)
         {
             //throw new NotImplementedException();
         }
 
-        public void DrawTextOutline(string text, IGraphicsFont font, IGraphicsPen pen, System.Drawing.PointF upperLeft)
+        public void DrawTextOutline(string text, object fontKey, object penKey, System.Drawing.PointF upperLeft)
         {
             //throw new NotImplementedException();
+        }
+
+        public bool HasPath(object pathKey) {
+            return geometryMap.ContainsKey(pathKey);
+        }
+
+        public bool HasPen(object penKey) {
+            return penMap.ContainsKey(penKey);
+        }
+
+        public bool HasBrush(object brushKey) {
+            return brushMap.ContainsKey(brushKey);
+        }
+
+        public bool HasFont(object fontKey) {
+            return fontMap.ContainsKey(fontKey);
+        }
+
+        private Brush GetBrush(object brushKey) {
+            Brush brush;
+            if (brushMap.TryGetValue(brushKey, out brush))
+                return brush;
+            else
+                throw new ArgumentException("Given key does not have a brush created for it", "brushKey");
+        }
+
+        private D2D_Pen GetPen(object penKey) {
+            D2D_Pen pen;
+            if (penMap.TryGetValue(penKey, out pen))
+                return pen;
+            else
+                throw new ArgumentException("Given key does not have a pen created for it", "penKey");
+        }
+
+        private D2D_Font GetFont(object fontKey) {
+            D2D_Font font;
+            if (fontMap.TryGetValue(fontKey, out font))
+                return font;
+            else
+                throw new ArgumentException("Given key does not have a font created for it", "fontKey");
+        }
+
+        private Geometry GetGeometry(object pathKey) {
+            Geometry geo;
+            if (geometryMap.TryGetValue(pathKey, out geo))
+                return geo;
+            else
+                throw new ArgumentException("Given key does not have a path created for it", "pathKey");
         }
 
         public void Dispose()
         {
+            foreach (D2D_Pen pen in penMap.Values)
+                pen.Dispose();
+            penMap.Clear();
+
+            foreach (Brush brush in brushMap.Values)
+                brush.Dispose();
+            brushMap.Clear();
+
+            foreach (Geometry geo in geometryMap.Values)
+                geo.Dispose();
+            geometryMap.Clear();
+
+            foreach (D2D_Font font in fontMap.Values)
+                font.Dispose();
+            fontMap.Clear();
+
             renderTarget.Dispose();
         }
-    }
 
-    public class D2D_BrushTarget : D2D_GraphicsTarget, IBrushTarget
-    {
-        private SizeF size;
-        private new BitmapRenderTarget renderTarget;
-        private RenderTarget originalRenderTarget;
-        private int bitmapWidth, bitmapHeight;
-
-        public D2D_BrushTarget(D2DFactory factory, BitmapRenderTarget renderTarget, RenderTarget originalRenderTarget, SizeF size, int bitmapWidth, int bitmapHeight)
-            : base(factory, renderTarget) 
+        public class D2D_BrushTarget : D2D_GraphicsTarget, IBrushTarget
         {
-            this.renderTarget = renderTarget;
-            this.originalRenderTarget = originalRenderTarget;
-            this.size = size;
-            this.bitmapWidth = bitmapWidth;
-            this.bitmapHeight = bitmapHeight;
-        }
+            private D2D_GraphicsTarget owningTarget;
+            private SizeF size;
+            private new BitmapRenderTarget renderTarget;
+            private RenderTarget originalRenderTarget;
+            private int bitmapWidth, bitmapHeight;
 
-        public IGraphicsBrush FinishBrush(float rotationAngle) {
-            renderTarget.EndDraw();
+            public D2D_BrushTarget(D2D_GraphicsTarget owningTarget, D2DFactory factory, BitmapRenderTarget renderTarget, RenderTarget originalRenderTarget, SizeF size, int bitmapWidth, int bitmapHeight)
+                : base(factory, renderTarget) {
+                this.owningTarget = owningTarget;
+                this.renderTarget = renderTarget;
+                this.originalRenderTarget = originalRenderTarget;
+                this.size = size;
+                this.bitmapWidth = bitmapWidth;
+                this.bitmapHeight = bitmapHeight;
+            }
 
-            // Get the bitmap.
-            D2D.D2DBitmap bitmap = renderTarget.GetBitmap();
+            public void FinishBrush(object brushKey, float rotationAngle) {
+                renderTarget.EndDraw();
 
-            Matrix matrix = new Matrix();
-            matrix.Rotate(rotationAngle);
-            matrix.Scale(size.Width / (float)bitmapWidth, size.Height / (float)bitmapHeight);
-            matrix.Translate(-bitmapWidth / 2F, -bitmapHeight / 2F);
+                if (owningTarget.brushMap.ContainsKey(brushKey))
+                    throw new InvalidOperationException("Key already has a brush created for it");
 
-            D2D.BitmapBrush brush = originalRenderTarget.CreateBitmapBrush(bitmap,
-                new BitmapBrushProperties(ExtendMode.Wrap, ExtendMode.Wrap, BitmapInterpolationMode.Linear),
-                new BrushProperties(1.0F, D2DUtil.GetD2DMatrix(matrix)));
+                // Get the bitmap.
+                D2D.D2DBitmap bitmap = renderTarget.GetBitmap();
 
-            //D2D.BitmapBrush brush = originalRenderTarget.CreateBitmapBrush(bitmap);
-            bitmap.Dispose();
-            Dispose();
+                Matrix matrix = new Matrix();
+                matrix.Rotate(rotationAngle);
+                matrix.Scale(size.Width / (float)bitmapWidth, size.Height / (float)bitmapHeight);
+                matrix.Translate(-bitmapWidth / 2F, -bitmapHeight / 2F);
 
-            return new D2D_Brush(brush);
-        }
-    }
+                D2D.BitmapBrush brush = originalRenderTarget.CreateBitmapBrush(bitmap,
+                    new BitmapBrushProperties(ExtendMode.Wrap, ExtendMode.Wrap, BitmapInterpolationMode.Linear),
+                    new BrushProperties(1.0F, D2DUtil.GetD2DMatrix(matrix)));
 
-    public class D2D_Path : IGraphicsPath
-    {
-        private D2D.PathGeometry geometry;
+                //D2D.BitmapBrush brush = originalRenderTarget.CreateBitmapBrush(bitmap);
+                bitmap.Dispose();
+                Dispose();
 
-        public D2D.PathGeometry Geometry { get { return geometry; } }
-
-        public void Dispose() {
-            if (geometry != null)
-                geometry.Dispose();
-            geometry = null;
-        }
-
-        public D2D_Path(PathGeometry geo) {
-            this.geometry = geo;
+                owningTarget.brushMap.Add(brushKey, brush);
+            }
         }
     }
 
-    public class D2D_Brush : IGraphicsBrush
-    {
-        private D2D.Brush brush;
 
-        public D2D.Brush Brush { get { return brush; } }
-
-        public void Dispose()
-        {
-            if (brush != null)
-                brush.Dispose();
-            brush = null;
-        }
-
-        public D2D_Brush(D2D.Brush brush)
-        {
-            this.brush = brush;
-        }
-    }
-
-    public class D2D_Pen : IGraphicsPen
+    public class D2D_Pen 
     {
         private D2D.Brush brush;
         float width;
@@ -392,7 +444,7 @@ namespace Map_D2D
         }
     }
 
-    public class D2D_Font : IGraphicsFont
+    public class D2D_Font 
     {
         public void Dispose() {
         }

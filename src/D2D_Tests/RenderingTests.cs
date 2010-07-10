@@ -305,9 +305,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawline"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 5.0F, LineCap.Round, LineJoin.Round, 5F)) {
-                        grTarget.DrawLine(pen, new PointF(-70, -70), new PointF(-10, 50));
-                    }
+                    object penKey = new object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 5.0F, LineCap.Round, LineJoin.Round, 5F);
+                    grTarget.DrawLine(penKey, new PointF(-70, -70), new PointF(-10, 50));
                 });
         }
 
@@ -317,9 +317,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawpolyline"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 5.0F, LineCap.Flat, LineJoin.Miter, 5F)) {
-                        grTarget.DrawPolyline(pen, new PointF[] {new PointF(-70, -70), new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90)});
-                    }
+                    object penKey = new object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 5.0F, LineCap.Flat, LineJoin.Miter, 5F);
+                    grTarget.DrawPolyline(penKey, new PointF[] {new PointF(-70, -70), new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90)});
                 });
         }
 
@@ -329,9 +329,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawpolygon"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 15.0F, LineCap.Flat, LineJoin.Miter, 5F)) {
-                        grTarget.DrawPolygon(pen, new PointF[] { new PointF(-70, -70), new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) });
-                    }
+                    object penKey = new object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 15.0F, LineCap.Flat, LineJoin.Miter, 5F);
+                    grTarget.DrawPolygon(penKey, new PointF[] { new PointF(-70, -70), new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) });
                 });
         }
 
@@ -341,25 +341,24 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawpath1"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 7.0F, LineCap.Flat, LineJoin.Miter, 5F)) {
-                        IGraphicsPath path = grTarget.CreatePath(new GraphicsPathPart[] {
-                                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
-                                new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) })},
-                            FillMode.Alternate);
-                        grTarget.DrawPath(pen, path);
-                    }
+                    object penKey1 = new object(), pathKey1 = new Object();
+                    grTarget.CreatePen(penKey1, System.Drawing.Color.Red, 7.0F, LineCap.Flat, LineJoin.Miter, 5F);
+                    grTarget.CreatePath(pathKey1, new GraphicsPathPart[] {
+                            new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
+                            new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) })},
+                        FillMode.Alternate);
+                    grTarget.DrawPath(penKey1, pathKey1);
 
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Green, 3.0F, LineCap.Round, LineJoin.Round, 5F)) {
-                        IGraphicsPath path = grTarget.CreatePath(new GraphicsPathPart[] {
-                                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
-                                new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
-                                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(0, 0)}),
-                                new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-50, 50), new PointF(50, 50) }),
-                                new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
-                            FillMode.Alternate);
-                        grTarget.DrawPath(pen, path);
-                    }
-                
+                    object penKey2 = new object(), pathKey2 = new Object();
+                    grTarget.CreatePen(penKey2, System.Drawing.Color.Green, 3.0F, LineCap.Round, LineJoin.Round, 5F);
+                    grTarget.CreatePath(pathKey2, new GraphicsPathPart[] {
+                            new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
+                            new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
+                            new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(0, 0)}),
+                            new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-50, 50), new PointF(50, 50) }),
+                            new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
+                        FillMode.Alternate);
+                    grTarget.DrawPath(penKey2, pathKey2);
                 });
         }
 
@@ -369,9 +368,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawrectangle"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 15.0F, LineCap.Flat, LineJoin.Bevel, 5F)) {
-                        grTarget.DrawRectangle(pen, new RectangleF(-40, -70, 130, 60));
-                    }
+                    object penKey = new object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 15.0F, LineCap.Flat, LineJoin.Bevel, 5F);
+                    grTarget.DrawRectangle(penKey, new RectangleF(-40, -70, 130, 60));
                 });
         }
 
@@ -382,9 +381,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawellipse"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 6.0F, LineCap.Flat, LineJoin.Bevel, 5F)) {
-                        grTarget.DrawEllipse(pen, new PointF(20, 20), 50, 35);
-                    }
+                    object penKey = new object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 6.0F, LineCap.Flat, LineJoin.Bevel, 5F);
+                    grTarget.DrawEllipse(penKey, new PointF(20, 20), 50, 35);
                 });
         }
 
@@ -394,9 +393,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\drawarc"),
                 grTarget => {
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 6.0F, LineCap.Flat, LineJoin.Bevel, 5F)) {
-                        grTarget.DrawArc(pen, new RectangleF(20, 20, 50, 35), 55, 120);
-                    }
+                    object penKey = new Object();
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Red, 6.0F, LineCap.Flat, LineJoin.Bevel, 5F);
+                    grTarget.DrawArc(penKey, new RectangleF(20, 20, 50, 35), 55, 120);
                 });
         }
 
@@ -406,9 +405,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\fillellipse"),
                 grTarget => {
-                    using (IGraphicsBrush brush = grTarget.CreateSolidBrush(System.Drawing.Color.Red)) {
-                        grTarget.FillEllipse(brush, new PointF(20, 20), 50, 35);
-                    }
+                    object brushKey = new object();
+                    grTarget.CreateSolidBrush(brushKey, System.Drawing.Color.Red);
+                    grTarget.FillEllipse(brushKey, new PointF(20, 20), 50, 35);
                 });
         }
 
@@ -418,9 +417,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\fillrectangle"),
                 grTarget => {
-                    using (IGraphicsBrush pen = grTarget.CreateSolidBrush(System.Drawing.Color.Red)) {
-                        grTarget.FillRectangle(pen, new RectangleF(-40, -70, 130, 60));
-                    }
+                    object brushKey = new Object();
+                    grTarget.CreateSolidBrush(brushKey, System.Drawing.Color.Red);
+                    grTarget.FillRectangle(brushKey, new RectangleF(-40, -70, 130, 60));
                 });
         }
 
@@ -430,9 +429,9 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\fillpolygon"),
                 grTarget => {
-                    using (IGraphicsBrush brush = grTarget.CreateSolidBrush(Color.Red)) {
-                        grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
-                    }
+                    object brushKey = new object();
+                    grTarget.CreateSolidBrush(brushKey, Color.Red);
+                    grTarget.FillPolygon(brushKey, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
                 });
         }
 
@@ -442,16 +441,14 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\fillpath"),
                 grTarget => {
-                    IGraphicsPath path = grTarget.CreatePath(new GraphicsPathPart[] {
-                                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-50, -30)}),
-                                new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] {new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50)})},
-                        FillMode.Alternate);
+                    object pathKey = new object(), brushKey = new object();
+                    grTarget.CreatePath(pathKey, new GraphicsPathPart[] {
+                            new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-50, -30)}),
+                            new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] {new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50)})},
+                            FillMode.Alternate);
 
-                    using (IGraphicsBrush brush = grTarget.CreateSolidBrush(Color.Green)) {
-                        grTarget.FillPath(brush, path);
-                    }
-
-                    path.Dispose();
+                    grTarget.CreateSolidBrush(brushKey, Color.Green);
+                    grTarget.FillPath(brushKey, pathKey);
                 });
         }
 
@@ -461,24 +458,22 @@ namespace TestD2D
 
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\pushclip"),
                 grTarget => {
-                    IGraphicsPath path = grTarget.CreatePath(new GraphicsPathPart[] {
-                                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-50, -30)}),
-                                new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] {new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50)})},
-                        FillMode.Alternate);
+                    object pathKey = new object(), brushKey = new object(), penKey = new object();
 
-                    grTarget.PushClip(path);
+                    grTarget.CreatePath(pathKey, new GraphicsPathPart[] {
+                            new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-50, -30)}),
+                            new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] {new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50)})},
+                            FillMode.Alternate);
 
-                    using (IGraphicsBrush brush = grTarget.CreateSolidBrush(Color.Red)) {
-                        grTarget.FillRectangle(brush, new RectangleF(-100, -100, 200, 200));
-                    }
+                    grTarget.PushClip(pathKey);
 
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Green, 15.0F, LineCap.Flat, LineJoin.Bevel, 5F)) {
-                        grTarget.DrawEllipse(pen, new PointF(0, 0), 40,50);
-                    }
+                    grTarget.CreateSolidBrush(brushKey, Color.Red);
+                    grTarget.FillRectangle(brushKey, new RectangleF(-100, -100, 200, 200));
+
+                    grTarget.CreatePen(penKey, System.Drawing.Color.Green, 15.0F, LineCap.Flat, LineJoin.Bevel, 5F);
+                    grTarget.DrawEllipse(penKey, new PointF(0, 0), 40,50);
 
                     grTarget.PopClip();
-
-                    path.Dispose();
                 });
         }
 
@@ -489,16 +484,16 @@ namespace TestD2D
             TestD2DRendering(500, new RectangleF(-100, -100, 200, 200), TestUtil.GetTestFile("d2drender\\patternbrush"),
                 grTarget => {
                     IBrushTarget brushTarget = grTarget.CreatePatternBrush(new System.Drawing.SizeF(20, 20), 60, 60);
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Red, 1.5F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawLine(pen, new PointF(-7, -7), new PointF(-1, 5));
-                    }
-                    using (IGraphicsPen pen = grTarget.CreatePen(System.Drawing.Color.Blue, 3F, LineCap.Round, LineJoin.Round, 5F)) {
-                        brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
-                    }
-                    IGraphicsBrush brush = brushTarget.FinishBrush(0);
 
-                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
-                    brush.Dispose();
+                    object penKey1 = new object(), penKey2 = new object(), brushKey = new object();
+
+                    brushTarget.CreatePen(penKey1, System.Drawing.Color.Red, 1.5F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.DrawLine(penKey1, new PointF(-7, -7), new PointF(-1, 5));
+                    brushTarget.CreatePen(penKey2, System.Drawing.Color.Blue, 3F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.DrawEllipse(penKey2, new PointF(1, -2), 5, 4);
+                    brushTarget.FinishBrush(brushKey, 0);
+
+                    grTarget.FillPolygon(brushKey, new PointF[] { new PointF(-50, -30), new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50) }, FillMode.Alternate);
                 });
         }
 
