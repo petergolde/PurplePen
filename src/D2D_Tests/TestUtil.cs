@@ -39,6 +39,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestingUtils
@@ -110,6 +111,9 @@ namespace TestingUtils
             int width = bm1.Width, height = bm1.Height;
             Rectangle rect = new Rectangle(0, 0, width, height);
             bool different = false;
+
+            Assert.IsTrue(bm1.PixelFormat == PixelFormat.Format24bppRgb);
+            Assert.IsTrue(bm2.PixelFormat == PixelFormat.Format24bppRgb);
 
             // This is a lot faster that using a zillion GetPixel calls.
             unsafe {
