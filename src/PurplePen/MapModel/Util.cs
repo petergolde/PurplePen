@@ -46,6 +46,8 @@ using Color = System.Drawing.Color;
 
 namespace PurplePen.MapModel
 {
+    public delegate void Operation();
+
 	public class Util {
 		public const float kappa = 0.5522847498F;  // constant used to create near-circle with a bezier.
 

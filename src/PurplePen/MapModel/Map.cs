@@ -630,7 +630,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts, Action throwOnCancel)
+        public void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts, Operation throwOnCancel)
         {
             CheckReadable();
 
@@ -657,7 +657,7 @@ namespace PurplePen.MapModel
 
 
         // Draw a particular color layer. If curColor is null, draw the image layer. 
-        private void DrawColor(IGraphicsTarget g, SymColor curColor, RectangleF rect, RenderOptions renderOpts, Action throwOnCancel)
+        private void DrawColor(IGraphicsTarget g, SymColor curColor, RectangleF rect, RenderOptions renderOpts, Operation throwOnCancel)
         {
             int symbolsDrawn = 0;
 
