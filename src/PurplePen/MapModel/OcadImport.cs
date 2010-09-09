@@ -368,7 +368,7 @@ namespace PurplePen.MapModel
                             listStringParameters[(int) stringType] = new List<OcadParamString>();
                         listStringParameters[(int) stringType].Add(param);
                     }
-                    else if (stringType < OcadStringParam.LastSingleParam) {
+                    else if (stringType < OcadStringParam.LastSingleParam && stringType >= OcadStringParam.FirstSingleParam) {
                         simpleStringParameters[stringType - OcadStringParam.FirstSingleParam] = param;
                     }
                 }
@@ -497,7 +497,11 @@ namespace PurplePen.MapModel
 
             switch (ocadSym.Otp) {
             default:
+#if DEBUG
                 throw new OcadFileFormatException("Invalid Otp value {0} in symbol {1}", ocadSym.Otp, symid);
+#else
+                break;
+#endif
             case 1:
                 symdef = CreatePointSymdef(name, symid, ocadSym as OcadPointSymbol);
                 break;
@@ -586,7 +590,11 @@ namespace PurplePen.MapModel
                     glyph.AddFilledCircle(color, PointFromOcadCoord(elt.stCoords[0]), ToWorldDimensions(elt.stDiameter));
                     break;
                 default:
+#if DEBUG
                     throw new OcadFileFormatException("Invalid symbol element kind {0}", elt.stType);
+#else
+                    break;
+#endif
                 }
             }
 
@@ -859,9 +867,14 @@ namespace PurplePen.MapModel
             }
 
             if (ocadSym.BorderOn) {
-                if (!symdefids.ContainsKey(ocadSym.BorderSym))
+                if (!symdefids.ContainsKey(ocadSym.BorderSym)) {
+#if DEBUG
                     throw new OcadFileFormatException("Invalid border sym {0} in symbol {1}", ocadSym.BorderSym, ocadSym.Sym);
-                borderSymdef = (LineSymDef) symdefids[ocadSym.BorderSym];
+#endif
+                }
+                else {
+                    borderSymdef = (LineSymDef)symdefids[ocadSym.BorderSym];
+                }
             }
 
             symdef = new AreaSymDef(name, ocadID, color, borderSymdef);
@@ -1147,7 +1160,11 @@ namespace PurplePen.MapModel
             // and replaced with a different kind.
             switch (obj.Otp) {
             default: 
+#if DEBUG
                 throw new OcadFileFormatException("Invalid Otp value {0} in object", obj.Otp);
+#else
+                break;
+#endif
             case 1:
                 if (symdef is PointSymDef)
                     sym = CreatePointSymbol(obj, symdef as PointSymDef);
@@ -1240,8 +1257,13 @@ namespace PurplePen.MapModel
 
         PointSymbol CreatePointSymbol(OcadObject obj, PointSymDef symdef)
         {
-            if (symdef == null) 
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#else
+                return null;
+#endif
+            }
 
             PointF location = PointFromOcadCoord(obj.coords[0]);
 
@@ -1262,8 +1284,12 @@ namespace PurplePen.MapModel
         }
 
         LineSymbol CreateLineSymbol(OcadObject obj, LineSymDef symdef) {
-            if (symdef == null) 
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#endif
+                return null;
+            }
 
             if (obj.coords == null || obj.coords.Length < 2)
                 return null;
@@ -1324,8 +1350,12 @@ namespace PurplePen.MapModel
 
         LineTextSymbol CreateLineTextSymbol(OcadObject obj, TextSymDef symdef)
         {
-            if (symdef == null)
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#endif
+                return null;
+            }
 
             if (obj.coords == null || obj.coords.Length < 2)
                 return null;
@@ -1342,8 +1372,12 @@ namespace PurplePen.MapModel
         Symbol[] CreateRectangleSymbol(OcadObject obj, LineSymDef symdef, RectangleInfo rectinfo) {
             List<Symbol> symlist = new List<Symbol>();  // list of symbols we're creating.
 
-            if (symdef == null) 
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#endif
+                return null;
+            }
 
             if (obj.coords == null || obj.coords.Length < 2)
                 return null;
@@ -1468,8 +1502,12 @@ namespace PurplePen.MapModel
         }
 
         AreaSymbol CreateAreaSymbol(OcadObject obj, AreaSymDef symdef) {
-            if (symdef == null) 
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#endif
+                return null;
+            }
 
             SymPathWithHoles path = CreateAreaSymPath(obj.coords);
 
@@ -1494,8 +1532,12 @@ namespace PurplePen.MapModel
 
 
         TextSymbol CreateTextSymbol(OcadObject obj, TextSymDef symdef, bool formatted) {
-            if (symdef == null) 
+            if (symdef == null) {
+#if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
+#endif
+                return null;
+            }
 
             string text = obj.text;
 

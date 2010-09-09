@@ -1,12 +1,12 @@
 vti_encoding:SR|utf8-nl
-vti_timelastmodified:TR|28 Mar 2009 17:19:34 -0000
+vti_timelastmodified:TR|09 Sep 2010 01:36:40 -0000
 vti_author:SR|Dell-Laptop\\Peter
-vti_modifiedby:SR|Dell-Laptop\\Peter
-vti_nexttolasttimemodified:TW|17 Apr 2008 04:51:19 -0000
+vti_modifiedby:SR|PETERGO-HOME\\Peter
+vti_nexttolasttimemodified:TW|29 Mar 2009 00:08:36 -0000
 vti_timecreated:TR|01 Nov 2007 21:29:30 -0000
-vti_extenderversion:SR|12.0.0.6211
+vti_extenderversion:SR|12.0.0.0
 vti_backlinkinfo:VX|
-vti_syncwith_www.golde.org\:21/purplepen.golde.org:TW|08 Jul 2008 20:58:07 -0000
-vti_syncofs_www.golde.org\:21/purplepen.golde.org:TW|20 Mar 2009 03:16:00 -0000
-vti_cacheddtm:TX|08 Jul 2008 20:58:07 -0000
+vti_syncwith_www.golde.org\:21/purplepen.golde.org:TX|09 Sep 2010 01:36:40 -0000
+vti_syncofs_www.golde.org\:21/purplepen.golde.org:TW|09 Sep 2010 13:06:00 -0000
+vti_cacheddtm:TX|09 Sep 2010 01:36:40 -0000
 vti_filesize:IR|12
