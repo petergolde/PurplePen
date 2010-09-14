@@ -112,7 +112,7 @@ namespace PurplePen
         public Map RenderToMap()
         {
             // Create the map to render into.
-            Map map = new Map();
+            Map map = new Map(MapUtil.TextMetricsProvider);
             if (Count == 0)
                 return map;
 
@@ -125,7 +125,7 @@ namespace PurplePen
                 // Create white color and white-out symdef.
                 SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
                 AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
-                whiteArea.ToolboxImage = Properties.Resources.WhiteOut_OcadToolbox;
+                whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);
                 dict[KeyWhiteOut] = whiteArea;
 

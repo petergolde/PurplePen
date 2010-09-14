@@ -42,6 +42,8 @@ namespace PurplePen
 {
     static class MapUtil
     {
+        public static ITextMetrics TextMetricsProvider = new GDIPlus_TextMetrics();
+
         // Validate the map file to make sure it is readable. If OK, return true and set the scale.
         // If not OK, return false and set the error message.
         public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out MapType mapType, out string errorMessageText)
@@ -49,7 +51,7 @@ namespace PurplePen
             scale = 0; dpi = 0;
             mapType = MapType.None;
 
-            Map map = new Map();
+            Map map = new Map(TextMetricsProvider);
 
             try {
                 InputOutput.ReadFile(mapFileName, map);
@@ -82,6 +84,18 @@ namespace PurplePen
             errorMessageText = "";
             mapType = MapType.OCAD;
             return true;
+        }
+
+        public static ToolboxIcon CreateToolboxIcon(Bitmap bm) {
+            ToolboxIcon icon = new ToolboxIcon();
+
+            for (int x = 0; x < ToolboxIcon.WIDTH; ++x) {
+                for (int y = 0; y < ToolboxIcon.HEIGHT; ++y) {
+                    icon.SetPixel(x, y, bm.GetPixel(x, y));
+                }
+            }
+
+            return icon;
         }
     }
 

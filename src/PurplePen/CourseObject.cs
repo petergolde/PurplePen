@@ -502,17 +502,22 @@ namespace PurplePen
        // Draw the highlight. Everything must be drawn in pixel coords so fast erase works correctly.
        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
        {
+           GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+           object brushKey = new object();
+           grTarget.CreateGdiPlusBrush(brushKey, brush);
+
            // Get thickness of line.
            float pixelThickness = TransformDistance(thickness * scaleRatio, xformWorldToPixel);
 
            SymPath[] gappedPaths = LegGap.SplitPathWithGaps(path, gaps);
 
            // Draw it.
-           using (Pen pen = new Pen(brush, pixelThickness)) {
-               foreach (SymPath p in gappedPaths) {
-                   p.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-               }
-           }
+           object penKey = new object();
+           grTarget.CreatePen(penKey, brushKey, pixelThickness, LineCap.Flat, LineJoin.Miter, 5);
+            foreach (SymPath p in gappedPaths) {
+                p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            }
        }
 
        // Get the bounds of the highlight.
@@ -653,9 +658,8 @@ namespace PurplePen
         public override double DistanceFromPoint(PointF pt)
         {
             // Is the point contained inside?
-            using (GraphicsPath grpath = path.GetPath())
-                if (grpath.IsVisible(pt, Util.GetHiresGraphics()))
-                    return 0.0;
+            if (path.IsInside(pt))
+                return 0.0;
 
            // Not inside: use the distance from the path.
            PointF closestPoint;
@@ -672,24 +676,28 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush);
+
             // Draw the boundary.
-            using (Pen pen = new Pen(brush, 2)) {
-                path.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-            }
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, 2, LineCap.Round, LineJoin.Round, 5);
+            path.DrawTransformed(grTarget, penKey, xformWorldToPixel);
 
             // Get a brush to fill the interior with.
-            Brush fillBrush;
+            object fillBrushKey;
 
             if (erasing)
-                fillBrush = brush;
-            else
-                fillBrush = NormalCourseAppearance.areaHighlight;
+                fillBrushKey = brushKey;
+            else {
+                fillBrushKey = new object();
+                grTarget.CreateGdiPlusBrush(fillBrushKey, NormalCourseAppearance.areaHighlight);
+            }
 
             // Draw the interior
-            path.FillTransformed(new GraphicsTarget(g), fillBrush, xformWorldToPixel);
-
-            if (brush is SolidBrush)
-                fillBrush.Dispose();
+            path.FillTransformed(grTarget, fillBrushKey, xformWorldToPixel);
         }
 
         // Get the bounds of the highlight.
@@ -1050,7 +1058,7 @@ namespace PurplePen
             TextSymDef symdef = new TextSymDef(SymDefName, ocadId);
             symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefAlignment.Left);
 
-            symdef.ToolboxImage = Properties.Resources.Number_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Number_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1180,7 +1188,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Control point", 702000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.Control_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Control_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1246,7 +1254,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Start", 701000, glyph, true);
-            symdef.ToolboxImage = Properties.Resources.Start_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Start_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1294,7 +1302,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Finish", 706000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.Finish_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Finish_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1374,7 +1382,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("First aid post", 712000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.FirstAid_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.FirstAid_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1455,7 +1463,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Refreshment point", 713000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.Water_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Water_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1466,6 +1474,11 @@ namespace PurplePen
             SymPath path1, path2, path3, path4;
             float thickness;
 
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush);
+
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
 
@@ -1475,14 +1488,14 @@ namespace PurplePen
             path3 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords3.Clone()), location.X, location.Y), kinds3);
             path4 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords4.Clone()), location.X, location.Y), kinds4);
 
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Round, LineJoin.Miter, 5);
+
             // Draw the paths
-            using (Pen pen = new Pen(brush, thickness)) {
-                pen.EndCap = pen.StartCap = LineCap.Round;
-                path1.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path2.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path3.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path4.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-            }
+            path1.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
+            path2.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
+            path3.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
+            path4.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
         }
 
     }
@@ -1527,7 +1540,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Crossing point", 708000, glyph, true);
-            symdef.ToolboxImage = Properties.Resources.Crossing_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Crossing_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1536,6 +1549,11 @@ namespace PurplePen
         {
             SymPath path1, path2;
             float thickness;
+
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush);
 
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
@@ -1550,11 +1568,12 @@ namespace PurplePen
             path1 = path1.Transform(moveAndRotate);
             path2 = path2.Transform(moveAndRotate);
 
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Flat, LineJoin.Miter, 5);
+
             // Draw it.
-            using (Pen pen = new Pen(brush, thickness)) {
-                path1.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path2.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-            }
+            path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
         }
 
         public override string ToString()
@@ -1592,7 +1611,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Registration mark", 714000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.Registration_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Registration_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1602,6 +1621,11 @@ namespace PurplePen
             SymPath path1, path2;
             float thickness;
 
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush);
+
             // Get line thickness.
             thickness = TransformDistance(lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
 
@@ -1609,11 +1633,12 @@ namespace PurplePen
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
             path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords2.Clone()), location.X, location.Y), kinds2);
 
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Flat, LineJoin.Miter, 5);
+
             // Draw the paths
-            using (Pen pen = new Pen(brush, thickness)) {
-                path1.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path2.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-            }
+            path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
         }
     }
 
@@ -1646,7 +1671,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Forbidden route", 710000, glyph, false);
-            symdef.ToolboxImage = Properties.Resources.Forbidden_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Forbidden_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1656,6 +1681,11 @@ namespace PurplePen
             SymPath path1, path2;
             float thickness;
 
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush);
+
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.controlCircleSize, xformWorldToPixel);
 
@@ -1664,10 +1694,11 @@ namespace PurplePen
             path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords2.Clone()), location.X, location.Y), kinds2);
 
             // Draw the paths
-            using (Pen pen = new Pen(brush, thickness)) {
-                path1.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-                path2.DrawTransformed(new GraphicsTarget(g), pen, xformWorldToPixel);
-            }
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Flat, LineJoin.Miter, 5);
+
+            path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
         }
     }
 
@@ -1682,7 +1713,7 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             LineSymDef symdef = new LineSymDef("Line", 704000, symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Beveled);
-            symdef.ToolboxImage = Properties.Resources.Line_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1711,7 +1742,7 @@ namespace PurplePen
             dashes.minGaps = 1;
             symdef.SetDashInfo(dashes);
 
-            symdef.ToolboxImage = Properties.Resources.DashedLine_OcadToolbox;   
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DashedLine_OcadToolbox);   
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1733,7 +1764,7 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             LineSymDef symdef = new LineSymDef("Uncrossable boundary", 707000, symColor, 0.7F * scaleRatio * appearance.lineWidth, LineStyle.Beveled);
-            symdef.ToolboxImage = Properties.Resources.Line_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1751,7 +1782,7 @@ namespace PurplePen
         {
             AreaSymDef symdef = new AreaSymDef("Out-of-bounds area", 709000, null, null);
             symdef.SetHatching(1, symColor, 0.25F * scaleRatio, 0.6F * scaleRatio, 90, 0);
-            symdef.ToolboxImage = Properties.Resources.OOB_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -1769,7 +1800,7 @@ namespace PurplePen
         {
             AreaSymDef symdef = new AreaSymDef("Dangerous area", 710000, null, null);
             symdef.SetHatching(2, symColor, 0.25F * scaleRatio, 0.6F * scaleRatio, 45, 135);
-            symdef.ToolboxImage = Properties.Resources.OOB_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }

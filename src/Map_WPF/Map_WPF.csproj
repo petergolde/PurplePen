@@ -64,7 +64,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -91,9 +90,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PurplePen\PurplePen.csproj">
-      <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
-      <Name>PurplePen</Name>
+    <ProjectReference Include="..\MapModel\MapModel.csproj">
+      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
+      <Name>MapModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -125,13 +125,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MapModel\MapModel.csproj">
+      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
+      <Name>MapModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
       <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
       <Name>Map_GDIPlus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PurplePen\PurplePen.csproj">
-      <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
-      <Name>PurplePen</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -66,6 +66,13 @@ namespace PurplePen.MapModel
             stringFormat.FormatFlags |= StringFormatFlags.MeasureTrailingSpaces;
         }
 
+        public void CreateGdiPlusBrush(object brushKey, System.Drawing.Brush brush) {
+            if (brushMap.ContainsKey(brushKey))
+                throw new InvalidOperationException("Key already has a brush created for it");
+
+            brushMap.Add(brushKey, brush);
+        }
+
         public void CreateSolidBrush(object brushKey, Color color)
         {
             if (brushMap.ContainsKey(brushKey))
