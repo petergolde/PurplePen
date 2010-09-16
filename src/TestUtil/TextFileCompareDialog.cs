@@ -71,7 +71,7 @@ namespace TestingUtils
         private void buttonShowDiff_Click(object sender, EventArgs e)
         {
             if (File.Exists(BaselineFilename)) {
-                Process.Start("windiff.exe", string.Format("\"{0}\" \"{1}\"", BaselineFilename, NewFilename));
+                Process.Start("winmergeu.exe", string.Format("\"{0}\" \"{1}\"", BaselineFilename, NewFilename));
             }
             else {
                 Process.Start("notepad.exe", string.Format("\"{0}\"", NewFilename));

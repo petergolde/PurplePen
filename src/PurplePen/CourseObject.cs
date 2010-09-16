@@ -1492,10 +1492,10 @@ namespace PurplePen
             grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Round, LineJoin.Miter, 5);
 
             // Draw the paths
-            path1.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
-            path2.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
-            path3.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
-            path4.DrawTransformed(new GDIPlus_GraphicsTarget(g), penKey, xformWorldToPixel);
+            path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path3.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+            path4.DrawTransformed(grTarget, penKey, xformWorldToPixel);
         }
 
     }

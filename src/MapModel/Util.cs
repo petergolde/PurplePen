@@ -453,6 +453,16 @@ namespace PurplePen.MapModel
                 return result.ToString();
             }
         }
+    }
 
+    public class IdentityComparer<T> : IEqualityComparer<T>
+    {
+        public bool Equals(T x, T y) {
+            return ((object)x == (object)y);
+        }
+
+        public int GetHashCode(T obj) {
+            return System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(obj);
+        }
     }
 }

@@ -62,10 +62,10 @@ namespace PurplePen.MapModel
     {
         public DrawingContext DrawingContext;
         private int pushLevel;      // How many pushes have we done?
-        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>();
-        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
-        private Dictionary<object, WPF_Font> fontMap = new Dictionary<object, WPF_Font>();
-        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>();
+        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>(new IdentityComparer<object>());
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>(new IdentityComparer<object>());
+        private Dictionary<object, WPF_Font> fontMap = new Dictionary<object, WPF_Font>(new IdentityComparer<object>());
+        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>(new IdentityComparer<object>());
 
         public WPF_GraphicsTarget(DrawingContext dc)
         {

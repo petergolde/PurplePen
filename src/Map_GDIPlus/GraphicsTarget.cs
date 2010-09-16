@@ -49,10 +49,10 @@ namespace PurplePen.MapModel
         public Graphics Graphics;
         private Stack<GraphicsState> stateStack;
         private StringFormat stringFormat;
-        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>();
-        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
-        private Dictionary<object, Font> fontMap = new Dictionary<object, Font>();
-        private Dictionary<object, GraphicsPath> pathMap = new Dictionary<object, GraphicsPath>();
+        private Dictionary<object, Pen> penMap = new Dictionary<object, Pen>(new IdentityComparer<object>());
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>(new IdentityComparer<object>());
+        private Dictionary<object, Font> fontMap = new Dictionary<object, Font>(new IdentityComparer<object>());
+        private Dictionary<object, GraphicsPath> pathMap = new Dictionary<object, GraphicsPath>(new IdentityComparer<object>());
 
         public GDIPlus_GraphicsTarget(Graphics g)
         {
@@ -132,6 +132,9 @@ namespace PurplePen.MapModel
                 fontStyle |= FontStyle.Bold;
             if (italic)
                 fontStyle |= FontStyle.Italic;
+
+            if (!GDIPlus_TextMetrics.FontFamilyIsInstalled(familyName))
+                familyName = "Arial";
 
             emHeight = Math.Max(emHeight, 0.01F);            // 0 size fonts cause exception!
             Font font = new Font(familyName, emHeight, fontStyle, GraphicsUnit.World);
@@ -434,7 +437,11 @@ namespace PurplePen.MapModel
             return new GDIPlus_TextFaceMetrics(familyName, emHeight, bold, italic);
         }
 
-        public bool TextFaceIsInstalled(string familyName)
+        public bool TextFaceIsInstalled(string familyName) {
+            return GDIPlus_TextMetrics.FontFamilyIsInstalled(familyName);
+        }
+
+        public static bool FontFamilyIsInstalled(string familyName)
         {
             // Doesn't seem to be an easy way to determine if a font exists.
             try {

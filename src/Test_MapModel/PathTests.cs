@@ -332,7 +332,7 @@ namespace PurplePen.MapModel.Tests
             Assert.AreEqual(74.5F, area, 0.1F);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void EqualPaths()
         {
             SymPath p1 = new SymPath(new PointF[] { new PointF(5, 5), new PointF(6, 3), new PointF(7, 8), new PointF(10, 5) },
@@ -364,7 +364,7 @@ namespace PurplePen.MapModel.Tests
             Assert.AreNotEqual(p7, p9);
         }
 
-        [TestMethod, Ignore]
+        [TestMethod]
         public void EqualPathsWithHoles()
         {
             SymPath p1 = new SymPath(new PointF[] { new PointF(5, 5), new PointF(6, 3), new PointF(7, 8), new PointF(5, 5) },

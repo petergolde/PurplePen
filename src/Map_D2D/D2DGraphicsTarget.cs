@@ -25,10 +25,10 @@ namespace Map_D2D
         protected RenderTarget renderTarget;
         private Stack<Matrix3x2F> transformStack = new Stack<Matrix3x2F>();
         private Stack<Layer> layerStack = new Stack<Layer>();
-        private Dictionary<object, D2D_Pen> penMap = new Dictionary<object, D2D_Pen>();
-        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>();
-        private Dictionary<object, D2D_Font> fontMap = new Dictionary<object, D2D_Font>();
-        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>();
+        private Dictionary<object, D2D_Pen> penMap = new Dictionary<object, D2D_Pen>(new IdentityComparer<object>());
+        private Dictionary<object, Brush> brushMap = new Dictionary<object, Brush>(new IdentityComparer<object>());
+        private Dictionary<object, D2D_Font> fontMap = new Dictionary<object, D2D_Font>(new IdentityComparer<object>());
+        private Dictionary<object, Geometry> geometryMap = new Dictionary<object, Geometry>(new IdentityComparer<object>());
 
         public D2D_GraphicsTarget(D2DFactory factory, RenderTarget renderTarget)
         {

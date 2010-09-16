@@ -240,7 +240,7 @@ namespace PurplePen.MapModel
             }
             else
             {
-                object pathKey = GetPathKey(g);
+                object pathKey = GetPathKeyCore(g, new object(), points, null, null);
                 g.DrawPath(penKey, pathKey);
             }
         }
