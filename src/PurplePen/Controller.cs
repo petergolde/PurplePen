@@ -943,10 +943,10 @@ namespace PurplePen
         }
 
         // Add a new course. If a unique start or finish control is found, it is added.
-        public void NewCourse(CourseKind courseKind, string name, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind)
+        public void NewCourse(CourseKind courseKind, string name, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
-            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, secondaryTitle, printScale, climb, descriptionKind, true);
+            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal, true);
             selectionMgr.SelectCourseView(newCourse);
             undoMgr.EndCommand(713);
         }
@@ -958,7 +958,7 @@ namespace PurplePen
         }
 
         // Get the properties of the current course?
-        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind)
+        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind, out int firstControlOrdinal)
         {
             Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseId);
             courseKind = course.kind;
@@ -967,13 +967,14 @@ namespace PurplePen
             printScale = course.printScale;
             climb = course.climb;
             descKind = course.descKind;
+            firstControlOrdinal = course.firstControlOrdinal;
         }
 
         // Change the properties of the current course.
-        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind)
+        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, secondaryTitle, printScale, climb, descriptionKind);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
             undoMgr.EndCommand(888);
         }
 

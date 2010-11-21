@@ -1291,8 +1291,9 @@ namespace PurplePen.MapModel
             if (symdef == null) {
 #if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
-#endif
+#else
                 return null;
+#endif
             }
 
             if (obj.coords == null || obj.coords.Length < 2)
@@ -1357,8 +1358,9 @@ namespace PurplePen.MapModel
             if (symdef == null) {
 #if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
-#endif
+#else
                 return null;
+#endif
             }
 
             if (obj.coords == null || obj.coords.Length < 2)
@@ -1379,8 +1381,9 @@ namespace PurplePen.MapModel
             if (symdef == null) {
 #if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
-#endif
+#else
                 return null;
+#endif
             }
 
             if (obj.coords == null || obj.coords.Length < 2)
@@ -1509,8 +1512,9 @@ namespace PurplePen.MapModel
             if (symdef == null) {
 #if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
-#endif
+#else
                 return null;
+#endif
             }
 
             SymPathWithHoles path = CreateAreaSymPath(obj.coords);
@@ -1539,8 +1543,9 @@ namespace PurplePen.MapModel
             if (symdef == null) {
 #if DEBUG
                 throw new OcadFileFormatException("Object has unknown or inconsistent symbol type {0}", obj.Sym);
-#endif
+#else
                 return null;
+#endif
             }
 
             string text = obj.text;

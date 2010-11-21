@@ -528,6 +528,7 @@ namespace PurplePen
         public float printScale;        // Print scale of the course
         public float climb;             // Climb in meters, or negative for no climb.
         public int load;                 // Competitor load, or negative for no load set.
+        public int firstControlOrdinal;  // Ordinal number of first control (usually 1 for a normal course.)
         public DescriptionKind descKind;// Kind of description to print
         public RectangleF printArea;  // print area, or empty if no defined print area.
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
@@ -544,6 +545,7 @@ namespace PurplePen
             this.sortOrder = sortOrder;
             this.climb = -1;
             this.load = -1;
+            this.firstControlOrdinal = 1;
         }
 
         public void Validate(Id<Course> id, EventDB.ValidateInfo validateInfo)
@@ -553,6 +555,8 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Course '{0}' should have a name", id));
             if (sortOrder <= 0)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid sort order {1}", id, sortOrder));
+            if (firstControlOrdinal <= 0)
+                throw new ApplicationException(string.Format("Course '{0}' has invalid first control number {1}", id, firstControlOrdinal));
             nextCourseControl = firstCourseControl;
 
             // Check that no sort order is used more than once.
@@ -639,6 +643,8 @@ namespace PurplePen
                 return false;
             if (other.printArea != printArea)
                 return false;
+            if (other.firstControlOrdinal != firstControlOrdinal)
+                return false;
 
             return true;
         }
@@ -658,6 +664,7 @@ namespace PurplePen
             printScale = 15000;
             descKind = DescriptionKind.Symbols;
             firstCourseControl = Id<CourseControl>.None;
+            firstControlOrdinal = 1;
 
             bool first = true;
             while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options")) {
@@ -672,6 +679,7 @@ namespace PurplePen
 
                     case "first":
                         firstCourseControl = new Id<CourseControl>(xmlinput.GetAttributeInt("course-control"));
+                        firstControlOrdinal = xmlinput.GetAttributeInt("control-number", 1);
                         xmlinput.Skip();
                         break;
 
@@ -719,6 +727,8 @@ namespace PurplePen
             if (firstCourseControl.IsNotNone) {
                 xmloutput.WriteStartElement("first");
                 xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(firstCourseControl.id));
+                if (firstControlOrdinal != 1)
+                    xmloutput.WriteAttributeString("control-number", XmlConvert.ToString(firstControlOrdinal));
                 xmloutput.WriteEndElement();
             }
 

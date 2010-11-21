@@ -166,6 +166,18 @@ namespace PurplePen
             }
         }
 
+        public int FirstControlOrdinal
+        {
+            get
+            {
+                return (int)firstControlUpDown.Value;
+            }
+            set
+            {
+                firstControlUpDown.Value = value;
+            }
+        }
+
         // Initialize the available print scales from the map scale.
         public void InitializePrintScales(float mapScale)
         {

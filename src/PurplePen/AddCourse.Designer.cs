@@ -64,6 +64,7 @@ namespace PurplePen
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.firstControlLabel = new System.Windows.Forms.Label();
             this.descriptionAppearanceLabel = new System.Windows.Forms.Label();
             this.mapScaleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -83,6 +84,7 @@ namespace PurplePen
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.climbTextBox = new System.Windows.Forms.TextBox();
             this.metersSuffix = new System.Windows.Forms.Label();
+            this.firstControlUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -90,6 +92,7 @@ namespace PurplePen
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -110,11 +113,18 @@ namespace PurplePen
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.firstControlLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.descriptionAppearanceLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.mapScaleLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.descKindCombo, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.firstControlUpDown, 1, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // firstControlLabel
+            // 
+            resources.ApplyResources(this.firstControlLabel, "firstControlLabel");
+            this.firstControlLabel.Name = "firstControlLabel";
             // 
             // descriptionAppearanceLabel
             // 
@@ -240,6 +250,26 @@ namespace PurplePen
             resources.ApplyResources(this.metersSuffix, "metersSuffix");
             this.metersSuffix.Name = "metersSuffix";
             // 
+            // firstControlUpDown
+            // 
+            resources.ApplyResources(this.firstControlUpDown, "firstControlUpDown");
+            this.firstControlUpDown.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Name = "firstControlUpDown";
+            this.firstControlUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // AddCourse
             // 
             resources.ApplyResources(this, "$this");
@@ -265,6 +295,7 @@ namespace PurplePen
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +323,7 @@ namespace PurplePen
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox secondaryTitleTextBox;
         private System.Windows.Forms.Label secondaryTitleDescription;
+        private System.Windows.Forms.Label firstControlLabel;
+        private System.Windows.Forms.NumericUpDown firstControlUpDown;
     }
 }

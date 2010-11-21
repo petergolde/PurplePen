@@ -453,7 +453,7 @@ namespace PurplePen
             courseView.courseName = course.name;
 
             courseControlId = course.firstCourseControl;
-            ordinal = 1;
+            ordinal = course.firstControlOrdinal;
 
             while (courseControlId.IsNotNone) {
                 ControlView controlView = new ControlView();

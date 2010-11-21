@@ -138,6 +138,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RegularCourseWithInitialNumber()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), false, "initnum", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), true, "initnum_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
         public void ScoreCourse()
         {
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(9), false, "score", new RectangleF(-10, -40, 120, 120));
