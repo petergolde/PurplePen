@@ -71,6 +71,7 @@ namespace PurplePen
             this.oneToPrefixLabel = new System.Windows.Forms.Label();
             this.scaleCombo = new System.Windows.Forms.ComboBox();
             this.descKindCombo = new System.Windows.Forms.ComboBox();
+            this.firstControlUpDown = new System.Windows.Forms.NumericUpDown();
             this.secondaryTitleGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.secondaryTitleTextBox = new System.Windows.Forms.TextBox();
@@ -84,15 +85,14 @@ namespace PurplePen
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.climbTextBox = new System.Windows.Forms.TextBox();
             this.metersSuffix = new System.Windows.Forms.Label();
-            this.firstControlUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).BeginInit();
             this.secondaryTitleGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -164,6 +164,26 @@ namespace PurplePen
             resources.GetString("descKindCombo.Items1"),
             resources.GetString("descKindCombo.Items2")});
             this.descKindCombo.Name = "descKindCombo";
+            // 
+            // firstControlUpDown
+            // 
+            resources.ApplyResources(this.firstControlUpDown, "firstControlUpDown");
+            this.firstControlUpDown.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Name = "firstControlUpDown";
+            this.firstControlUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // secondaryTitleGroup
             // 
@@ -250,26 +270,6 @@ namespace PurplePen
             resources.ApplyResources(this.metersSuffix, "metersSuffix");
             this.metersSuffix.Name = "metersSuffix";
             // 
-            // firstControlUpDown
-            // 
-            resources.ApplyResources(this.firstControlUpDown, "firstControlUpDown");
-            this.firstControlUpDown.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.firstControlUpDown.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.firstControlUpDown.Name = "firstControlUpDown";
-            this.firstControlUpDown.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // AddCourse
             // 
             resources.ApplyResources(this, "$this");
@@ -288,6 +288,7 @@ namespace PurplePen
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).EndInit();
             this.secondaryTitleGroup.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -295,7 +296,6 @@ namespace PurplePen
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
