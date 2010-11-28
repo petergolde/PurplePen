@@ -198,6 +198,29 @@ namespace PurplePen.Tests
             File.Delete(filename);
         }
 
+        [TestMethod]
+        public void ExportRouteGadget()
+        {
+            string ppenFileName = TestUtil.GetTestFile(@"routegadget\Sample Event.ppen");
+            string xmlFileName = TestUtil.GetTestFile(@"routegadget\Sample Event.xml");
+            string gifFileName = TestUtil.GetTestFile(@"routegadget\Sample Event.gif");
+
+            TestUI ui = TestUI.Create();
+            Controller controller = ui.controller;
+
+            bool success = controller.LoadInitialFile(ppenFileName, true);
+            Assert.IsTrue(success);
+
+            success = controller.ExportRouteGadget(xmlFileName, gifFileName);
+            Assert.IsTrue(success);
+
+            TestUtil.CompareBitmapBaseline((Bitmap) Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\Sample Event GIF.baseline.png"));
+            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\Sample Event XML.baseline.xml"));
+
+            File.Delete(xmlFileName);
+            File.Delete(gifFileName);
+        }
+
     }
 
 }

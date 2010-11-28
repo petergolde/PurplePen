@@ -60,7 +60,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
                 description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
                 DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
                 Console.WriteLine();
@@ -84,7 +84,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -116,7 +116,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -153,7 +153,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -182,7 +182,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -211,7 +211,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(2), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(2), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -283,7 +283,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\speciallegs.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -316,7 +316,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
             DescriptionFormatter.ClearTextAndSymbols(description);
 
@@ -349,7 +349,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent2.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, true);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -389,7 +389,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\desctext.ppen"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), true, true);
             DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, true);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);

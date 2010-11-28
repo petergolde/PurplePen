@@ -431,27 +431,27 @@
 1001001
 </punch-pattern>
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="1">
     <name>White</name>
     <first course-control="6" />
     <options print-scale="15000" climb="25" load="10" description-kind="text" />
   </course>
-  <course id="2" kind="normal">
+  <course id="2" kind="normal" order="2">
     <name>Yellow</name>
     <first course-control="7" />
     <options print-scale="15000" climb="45" load="10" description-kind="symbols-and-text" />
   </course>
-  <course id="3" kind="normal">
+  <course id="3" kind="normal" order="3">
     <name>Orange</name>
     <first course-control="8" />
     <options print-scale="15000" climb="70" load="20" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal">
+  <course id="4" kind="normal" order="4">
     <name>Green</name>
     <first course-control="9" />
     <options print-scale="15000" climb="110" load="45" description-kind="symbols" />
   </course>
-  <course id="5" kind="normal">
+  <course id="5" kind="normal" order="5">
     <name>Red</name>
     <first course-control="10" />
     <options print-scale="15000" climb="210" load="40" description-kind="symbols" />

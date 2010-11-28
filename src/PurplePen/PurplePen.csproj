@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="DescriptionLocalize.cs" />
     <Compile Include="ExportBitmap.cs" />
+    <Compile Include="ExportRouteGadget.cs" />
     <Compile Include="GraphicsHelper.cs" />
     <Compile Include="MapModel\DebugCode\OcadDump.cs" />
     <Compile Include="MapView\BitmapUtil.cs" />

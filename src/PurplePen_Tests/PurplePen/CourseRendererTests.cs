@@ -61,7 +61,7 @@ namespace PurplePen.Tests
             if (courseId.IsNone)
                 courseView = CourseView.CreateAllControlsView(eventDB);
             else
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F);

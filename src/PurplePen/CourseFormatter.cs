@@ -461,7 +461,7 @@ namespace PurplePen
             if (courseId.IsNone)
                 courseViewDescription = CourseView.CreateAllControlsView(eventDB);   // only happens if there are no active courses.
             else
-                courseViewDescription = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseViewDescription = CourseView.CreateCourseView(eventDB, courseId, true, true);
 
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
             descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
@@ -480,7 +480,7 @@ namespace PurplePen
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
                 DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-                DescriptionLine[] description = DescriptionFormatter.CreateDescription(CourseView.CreateCourseView(eventDB, courseId, false), symbolDB, descKind == DescriptionKind.Symbols);
+                DescriptionLine[] description = DescriptionFormatter.CreateDescription(CourseView.CreateCourseView(eventDB, courseId, true, true), symbolDB, descKind == DescriptionKind.Symbols);
                 if (description.Length > longest) {
                     longest = description.Length;
                     longestCourse = courseId;

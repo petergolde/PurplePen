@@ -486,6 +486,28 @@ namespace PurplePen
             return success;
         }
 
+        // Export RouteGadget files
+        public bool ExportRouteGadget(string xmlFileName, string gifFileName)
+        {
+            ExportRouteGadget exportRouteGadget = new ExportRouteGadget(symbolDB, eventDB, mapDisplay);
+
+            bool successXml = HandleExceptions(
+                delegate
+                {
+                    exportRouteGadget.ExportXml(xmlFileName);
+                },
+                MiscText.CannotCreateFile, xmlFileName);
+
+            bool successGif = HandleExceptions(
+                delegate
+                {
+                    exportRouteGadget.ExportGif(gifFileName);
+                },
+                MiscText.CannotCreateFile, gifFileName);
+
+            return successXml && successGif;
+        }
+
         // Get the list of tab names.
         public string[] GetTabNames()
         {
