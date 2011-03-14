@@ -508,6 +508,53 @@ namespace PurplePen
             return successXml && successGif;
         }
 
+        // Get the route gadget file names.
+        public void GetRouteGadgetFileNames(RouteGadgetCreationSettings settings, out string xmlFileName, out string gifFileName)
+        {
+            string outputDirectory;
+
+            // Process the fileDirectory and mapDirectory fields.
+            if (settings.fileDirectory) {
+                outputDirectory = Path.GetDirectoryName(FileName);
+            }
+            else if (settings.mapDirectory) {
+                outputDirectory = Path.GetDirectoryName(MapFileName);
+            }
+            else {
+                outputDirectory = settings.outputDirectory;
+            }
+
+            xmlFileName = Path.Combine(outputDirectory, settings.fileBaseName + ".xml");
+            gifFileName = Path.Combine(outputDirectory, settings.fileBaseName + ".gif");
+        }
+
+        // Get the list of files that will be overwritteing by creating RouteGadget files
+        public List<string> OverwritingRouteGadgetFiles(RouteGadgetCreationSettings settings)
+        {
+            string xmlFileName, gifFileName;
+
+            GetRouteGadgetFileNames(settings, out xmlFileName, out gifFileName);
+
+            List<string> overwrittenFiles = new List<string>();
+            if (File.Exists(xmlFileName))
+                overwrittenFiles.Add(xmlFileName);
+            if (File.Exists(gifFileName))
+                overwrittenFiles.Add(gifFileName);
+
+            return overwrittenFiles;
+        }
+
+
+        // Create the RouteGadgetFiles, given the settings.
+        public bool CreateRouteGadgetFiles(RouteGadgetCreationSettings settings)
+        {
+            string xmlFileName, gifFileName;
+
+            GetRouteGadgetFileNames(settings, out xmlFileName, out gifFileName);
+            return ExportRouteGadget(xmlFileName, gifFileName);
+        }
+
+
         // Get the list of tab names.
         public string[] GetTabNames()
         {
