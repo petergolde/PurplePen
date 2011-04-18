@@ -515,39 +515,43 @@ namespace PurplePen.MapModel
 
             CreatePens(g);
 
-            SymPath mainPath = path;  // the path for the main part of the line (might be shortened).
-            if (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F) {
-                mainPath = path.ShortenBizzarro(shortenInfo.shortenBeginning, shortenInfo.shortenEnd);
-                // NOTE: mainPath can be NULL below here!!!
-            }
+            SymPath[] pathsWithShortening, pathsWithoutShortening;
+            GetPathParts(path, out pathsWithShortening, out pathsWithoutShortening);
 
-            if (color == lineColor && thickness > 0.0F && mainPath != null) {
+            if (color == lineColor && thickness > 0.0F) {
                 if (!isDashed) {
                     // simple drawing.
-                    mainPath.Draw(g, mainPen);
+                    foreach (SymPath p in pathsWithShortening)
+                        p.Draw(g, mainPen);
                 }
                 else {
                     // Draw the dashed line.
-                    DrawDashed(g, mainPath, mainPen, dashInfo, renderOpts);
+                    foreach (SymPath p in pathsWithShortening)
+                        DrawDashed(g, p, mainPen, dashInfo, renderOpts);
                 }
             }
 
-            // Draw the pointy ends of the line. If mainPath is null, this is all the line!
-            if (color == lineColor && shortenInfo.pointyEnds && thickness > 0.0F && (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F))
+            // Draw the pointy ends of the line. If shortening has removed the whole line, this is all the line!
+            if (color == lineColor && shortenInfo.pointyEnds && thickness > 0.0F && (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F)) 
                 DrawPointyEnds(g, path, shortenInfo.shortenBeginning, shortenInfo.shortenEnd, thickness);
 
             if (color == secondLineColor && secondThickness > 0.0F && path != null) {
                 // note that shortened path not used for secondary line, the full length path is.
-                path.Draw(g, secondPen);
+                foreach (SymPath p in pathsWithoutShortening)
+                    p.Draw(g, secondPen);
             }
 
             // Double lines don't use the shortened path, but the full-length path.
             if (isDoubleLine) {
                 if (doubleLines.doubleFillColor == color) {
-                    if (doubleLines.doubleFillDashed)
-                        DrawDashed(g, path, doubleFillPen, doubleLines.doubleDashes, renderOpts);
-                    else
-                        path.Draw(g, doubleFillPen);
+                    if (doubleLines.doubleFillDashed) {
+                        foreach (SymPath p in pathsWithoutShortening)
+                            DrawDashed(g, p, doubleFillPen, doubleLines.doubleDashes, renderOpts);
+                    }
+                    else {
+                        foreach (SymPath p in pathsWithoutShortening)
+                            p.Draw(g, doubleFillPen);
+                    }
                 }
 
                 if (doubleLines.doubleLeftColor == color && doubleLines.doubleLeftWidth > 0.0F) {
@@ -577,11 +581,29 @@ namespace PurplePen.MapModel
                 }
             }
 
-            if (glyphs != null && mainPath != null) {
+            if (glyphs != null) {
                 foreach (GlyphInfo glyphInfo in glyphs) {
-                    if (glyphInfo.glyph.HasColor(color))
-                        DrawGlyphs(g, glyphInfo, mainPath, path, color, renderOpts);
+                    if (glyphInfo.glyph.HasColor(color)) {
+                        foreach (SymPath p in pathsWithShortening)
+                            DrawGlyphs(g, glyphInfo, p, path, color, renderOpts);
+                    }
                 }
+            }
+        }
+
+        // Apply the shortening and the start/stop flags to get an array of the paths to draw. This might be an empty array.
+        private void GetPathParts(SymPath path, out SymPath[] withShortening, out SymPath[] withoutShortening) {
+            withoutShortening = path.GetSubpaths(SymPath.MAIN_STARTSTOPFLAG);
+
+            if (shortenInfo.shortenBeginning > 0.0F || shortenInfo.shortenEnd > 0.0F) {
+                SymPath shortenedPath = path.ShortenBizzarro(shortenInfo.shortenBeginning, shortenInfo.shortenEnd);
+                if (shortenedPath == null)
+                    withShortening = new SymPath[0] { };
+                else
+                    withShortening = shortenedPath.GetSubpaths(SymPath.MAIN_STARTSTOPFLAG);
+            }
+            else {
+                withShortening = withoutShortening;
             }
         }
 
@@ -1297,17 +1319,15 @@ namespace PurplePen.MapModel
 #endif
             }
 
-            // Draw the border. Take into account the subpaths defined by start/stop flags along the paths.
+            // Draw the border. The Draw routine on LineSymDef automatically takes into account the subpaths defined by start/stop flags along the paths.
             if (borderSymdef != null && borderSymdef.HasColor(color)) {
                 // Draw main part of border.
-                foreach (SymPath subpath in path.MainPath.GetSubpaths(SymPath.AREA_BOUNDARY_STARTSTOPFLAG))
-                    borderSymdef.Draw(g, subpath, color, renderOpts);
+                borderSymdef.Draw(g, path.MainPath, color, renderOpts);
 
                 // Draw the holes.
                 if (path.Holes != null)
                     foreach (SymPath hole in path.Holes)
-                        foreach (SymPath subpath in hole.GetSubpaths(SymPath.AREA_BOUNDARY_STARTSTOPFLAG))
-                            borderSymdef.Draw(g, subpath, color, renderOpts);
+                        borderSymdef.Draw(g, hole, color, renderOpts);
             }
         }
 
@@ -1585,13 +1605,21 @@ namespace PurplePen.MapModel
         }
     }
 
-    // The alignment of text symbols.
-    public enum TextSymDefAlignment
+    // The horizontal alignment of text symbols.
+    public enum TextSymDefHorizAlignment
     {
         Left,
         Right,
         Center,
         Justified
+    }
+
+    // The vertical alignment of text symbols.
+    public enum TextSymDefVertAlignment
+    {
+        TopAscent,      // At the top of the ascent line
+        Midpoint,       // Midpoint between ascent and baseline
+        Baseline        // At the baseline
     }
 
     public class TextSymDef: SymDef
@@ -1618,7 +1646,8 @@ namespace PurplePen.MapModel
         float fontSize;
         string fontName;
         bool bold, italic;
-        TextSymDefAlignment fontAlign;
+        TextSymDefHorizAlignment fontAlign;
+        TextSymDefVertAlignment vertAlign;
         float lineSpacing;
         float paraSpacing;   
         float charSpacing, wordSpacing;
@@ -1626,6 +1655,7 @@ namespace PurplePen.MapModel
         float[] tabs;
         Framing framing;
         Underlining underline;
+        PointSymDef centerPointSymdef;          // if non-null, the center point symdef to use.
 
         // GDI+ object correspoding to the above attributes.
         List<object> framingPens = new List<object>();
@@ -1638,14 +1668,23 @@ namespace PurplePen.MapModel
 
         const string ParagraphMark = "\x2029";  // string denoted a paragraph boundary (Unicode paragraph mark).
 
-        public TextSymDef(string name, int ocadID)
+        public TextSymDef(string name, int ocadID, PointSymDef centerPointSymdef)
             : base(name, ocadID)
         {
+            this.centerPointSymdef = centerPointSymdef;
         }
 
         public override void SetMap(Map newMap)
         {
             base.SetMap(newMap);
+        }
+
+        public PointSymDef CenterPointSymdef { get { return centerPointSymdef; } }
+
+        public override SymDef DependsOnSymdef {
+            get {
+                return centerPointSymdef;
+            }
         }
 
         private void CreateFontMetrics()
@@ -1710,10 +1749,15 @@ namespace PurplePen.MapModel
             if (color == null)
                 return false;
 
-            return color == fontColor || (framing.framingStyle != FramingStyle.None && color == framing.framingColor) || (underline.underlineOn && color == underline.underlineColor);
+            return color == fontColor || 
+                   (framing.framingStyle != FramingStyle.None && color == framing.framingColor) || 
+                   (underline.underlineOn && color == underline.underlineColor) ||
+                   (centerPointSymdef != null && centerPointSymdef.HasColor(color));
         }
 
-        public void SetFont(string fontName, float fontSize, bool bold, bool italic, SymColor fontColor, float lineSpacing, float paraSpacing, float firstIndent, float restIndent, float[] tabs, float charSpacing, float wordSpacing, TextSymDefAlignment fontAlign)
+        public void SetFont(string fontName, float fontSize, bool bold, bool italic, SymColor fontColor, float lineSpacing, float paraSpacing, 
+                            float firstIndent, float restIndent, float[] tabs, float charSpacing, float wordSpacing, 
+                            TextSymDefHorizAlignment fontAlign, TextSymDefVertAlignment vertAlign)
         {
             CheckModifiable();
             this.fontName = fontName;
@@ -1728,6 +1772,7 @@ namespace PurplePen.MapModel
             this.charSpacing = charSpacing;
             this.wordSpacing = wordSpacing;
             this.fontAlign = fontAlign;
+            this.vertAlign = vertAlign;
             this.tabs = tabs;
         }
 
@@ -1743,7 +1788,8 @@ namespace PurplePen.MapModel
             this.underline = underline;
         }
 
-        public TextSymDefAlignment FontAlignment { get { return fontAlign; } }
+        public TextSymDefHorizAlignment FontAlignment { get { return fontAlign; } }
+        public TextSymDefVertAlignment VertAlignment { get { return vertAlign; } }
         public string FontName { get { return fontName; } }
         public bool Bold { get { return bold; } }
         public bool Italic { get { return italic; } }
@@ -1827,33 +1873,41 @@ namespace PurplePen.MapModel
         }
 
         // Draw the framing rectangle around some text. The top of the text is at 0, and the bottom baseline of text is at "bottomOfText".
-        private void DrawFramingRectangle(IGraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float bottomOfText)
+        private void DrawFramingRectangle(IGraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float topOfText, float bottomOfText)
         {
             if (framing.framingStyle == FramingStyle.Rectangle && color == framing.framingColor) {
-                // First, figure out the width of the rectangle. If fullWidth is zero, used the maximum line width.
-                fullWidth = CalcFullWidth(lineWidths, fullWidth);
-
-                // Next, figure out the rectangle, not counting padding.
-                float l, t, r, b;
-                if (fontAlign == TextSymDefAlignment.Right)
-                    l = -fullWidth;
-                else if (fontAlign == TextSymDefAlignment.Center)
-                    l = -(fullWidth / 2F);
-                else
-                    l = 0;
-                r = l + fullWidth;
-                t = FontAscent - WHeight;           // Place the top of the rectangle at top of letter "W", not top of accents.
-                b = bottomOfText;
+                RectangleF textRect = CalcTextRectangle(lineWidths, fullWidth, topOfText, bottomOfText);
 
                 // Add padding.
-                t -= framing.rectBorderTop;
-                b += framing.rectBorderBottom;
-                l -= framing.rectBorderLeft;
-                r += framing.rectBorderRight;
+                float t = textRect.Top - framing.rectBorderTop;
+                float b = textRect.Bottom + framing.rectBorderBottom;
+                float l = textRect.Left - framing.rectBorderLeft;
+                float r = textRect.Right + framing.rectBorderRight;
 
                 // Draw the rectangle
                 g.FillRectangle(color.GetBrushKey(g), new RectangleF(l, t, r - l, b - t));
             }
+        }
+
+        // Calculate the text rectangle of a piece of text, as for framing.
+        private RectangleF CalcTextRectangle(float[] lineWidths, float fullWidth, float topOfText, float bottomOfText) {
+            float l, t, r, b;  // The left, top, right, bottom of the rectangle.
+
+            // First, figure out the width of the rectangle. If fullWidth is zero, used the maximum line width.
+            fullWidth = CalcFullWidth(lineWidths, fullWidth);
+
+            // Next, figure out the rectangle, not counting padding.
+
+            if (fontAlign == TextSymDefHorizAlignment.Right)
+                l = -fullWidth;
+            else if (fontAlign == TextSymDefHorizAlignment.Center)
+                l = -(fullWidth / 2F);
+            else
+                l = 0;
+            r = l + fullWidth;
+            t = topOfText + FontAscent - WHeight;           // Place the top of the rectangle at top of letter "W", not top of accents.
+            b = bottomOfText;
+            return RectangleF.FromLTRB(l, t, r, b);
         }
 
         private float CalcFullWidth(float[] lineWidths, float fullWidth)
@@ -1863,10 +1917,19 @@ namespace PurplePen.MapModel
                     if (w > fullWidth)
                         fullWidth = w;
                 }
-                if (fontAlign == TextSymDefAlignment.Justified || fontAlign == TextSymDefAlignment.Left)
+                if (fontAlign == TextSymDefHorizAlignment.Justified || fontAlign == TextSymDefHorizAlignment.Left)
                     fullWidth += firstIndent;   // if fullWidth is zero, this is unformatted text, and only the firstIndent is used.
             }
             return fullWidth;
+        }
+
+        // Draw the center point symbol of the text, if applicable.
+        private void DrawCenterPoint(IGraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float topOfText, float bottomOfText, RenderOptions renderOpts) 
+        {
+            if (centerPointSymdef != null && centerPointSymdef.HasColor(color)) {
+                RectangleF textRect = CalcTextRectangle(lineWidths, fullWidth, topOfText, bottomOfText);
+                centerPointSymdef.Draw(g, Util.RectCenter(textRect), 0, null, color, renderOpts);
+            }
         }
 
         // Draw an underline under the text, if applicable.
@@ -1875,9 +1938,9 @@ namespace PurplePen.MapModel
             if (underline.underlineOn && color == underline.underlineColor) {
                 // Figure out the left and right sides of the underline.
                 float l, r;
-                if (fontAlign == TextSymDefAlignment.Right)
+                if (fontAlign == TextSymDefHorizAlignment.Right)
                     l = -width;
-                else if (fontAlign == TextSymDefAlignment.Center)
+                else if (fontAlign == TextSymDefHorizAlignment.Center)
                     l = -(width / 2F);
                 else
                     l = indent;
@@ -1915,6 +1978,13 @@ namespace PurplePen.MapModel
                 PointF pt = new PointF(0F, 0F);
                 float baselineOfLine = 0;          // y coordinate of baseline of line.
                 bool firstLineOfPara = true, lastLineOfPara;
+
+                if (vertAlign == TextSymDefVertAlignment.Baseline)
+                    pt.Y -= FontAscent;
+                else if (vertAlign == TextSymDefVertAlignment.Midpoint)
+                    pt.Y -= (FontAscent / 2.0F);
+                float topOfFirstLine = pt.Y;
+
                 for (int lineIndex = 0; lineIndex < text.Length; ++lineIndex) {
                     string line = text[lineIndex];
                     float lineWidth = lineWidths[lineIndex];
@@ -1928,9 +1998,9 @@ namespace PurplePen.MapModel
                     else {
                         float indent = 0;
                         float leftEdge;          // tabs are relative to this X position.
-                        if (fontAlign == TextSymDefAlignment.Right)
+                        if (fontAlign == TextSymDefHorizAlignment.Right)
                             pt.X = leftEdge = -lineWidth;
-                        else if (fontAlign == TextSymDefAlignment.Center)
+                        else if (fontAlign == TextSymDefHorizAlignment.Center)
                             pt.X = leftEdge = -(lineWidth / 2F);
                         else {
                             leftEdge = 0;
@@ -1939,7 +2009,7 @@ namespace PurplePen.MapModel
 
                         // Get the size of spaces. Justification is done by adjusting this.
                         float sizeOfSpace = wordSpacing * textFaceMetrics.SpaceWidth;            // basic width of spaces as set by the symdef
-                        if (fontAlign == TextSymDefAlignment.Justified && !lastLineOfPara && fullWidth > 0)
+                        if (fontAlign == TextSymDefHorizAlignment.Justified && !lastLineOfPara && fullWidth > 0)
                             sizeOfSpace += JustifyText(line, lineWidth, fullWidth - indent);
 
                         // Draw all the text segments in the line. (A text segment is a word, unless charSpacing>0, in which case it is graphemes).
@@ -1979,10 +2049,13 @@ namespace PurplePen.MapModel
                     }
                 }
 
+                // Draw the center point, if any.
+                DrawCenterPoint(g, lineWidths, fullWidth, color, topOfFirstLine, baselineOfLine, renderOpts);
+
                 // Draw the framing rectangle, if any.
                 if (underline.underlineOn)
                     baselineOfLine += underline.underlineDistance + underline.underlineWidth;
-                DrawFramingRectangle(g, lineWidths, fullWidth, color, baselineOfLine);
+                DrawFramingRectangle(g, lineWidths, fullWidth, color, topOfFirstLine, baselineOfLine);
             }
             finally {
                 g.PopTransform();
@@ -2028,12 +2101,12 @@ namespace PurplePen.MapModel
 
             // The rectangle, unrotated.
             RectangleF rect;
-            if (fontAlign == TextSymDefAlignment.Left || fontAlign == TextSymDefAlignment.Justified)
+            if (fontAlign == TextSymDefHorizAlignment.Left || fontAlign == TextSymDefHorizAlignment.Justified)
                 rect = new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height);  // indents only used for left aligned and justified text.
-            else if (fontAlign == TextSymDefAlignment.Right)
+            else if (fontAlign == TextSymDefHorizAlignment.Right)
                 rect = new RectangleF(location.X - size.Width, location.Y - size.Height, size.Width, size.Height);
             else {
-                Debug.Assert(fontAlign == TextSymDefAlignment.Center);
+                Debug.Assert(fontAlign == TextSymDefHorizAlignment.Center);
                 rect = new RectangleF(location.X - size.Width / 2, location.Y - size.Height, size.Width, size.Height);
             }
 
@@ -2051,6 +2124,12 @@ namespace PurplePen.MapModel
             }
             else if (framing.framingStyle == FramingStyle.Rectangle) 
                 rect = RectangleF.FromLTRB(rect.Left - framing.rectBorderLeft, rect.Top - framing.rectBorderBottom, rect.Right + framing.rectBorderRight, rect.Bottom + framing.rectBorderTop);
+
+            // Adjust for vertical alignment
+            if (vertAlign == TextSymDefVertAlignment.Baseline)
+                rect.Offset(0, FontAscent);
+            else if (vertAlign == TextSymDefVertAlignment.Midpoint)
+                rect.Offset(0, FontAscent / 2);
 
             // Rotate the rectangle.
             if (angle != 0)
@@ -2102,7 +2181,7 @@ namespace PurplePen.MapModel
             List<float> widthList = new List<float>();
 
             float widthFirstLine, widthRemainingLines;
-            if (fontAlign == TextSymDefAlignment.Left || fontAlign == TextSymDefAlignment.Justified) {
+            if (fontAlign == TextSymDefHorizAlignment.Left || fontAlign == TextSymDefHorizAlignment.Justified) {
                 widthFirstLine = Math.Max(0F, width - firstIndent);
                 widthRemainingLines = Math.Max(0F, width - restIndent);
             }
@@ -2388,29 +2467,29 @@ namespace PurplePen.MapModel
 
                 graphemeList.Add(new GraphemePlacement(grapheme, graphemeWidth, new PointF(), 0));
                 totalWidth += graphemeWidth;
-                if (totalWidth + 0.01F >= pathLength && fontAlign != TextSymDefAlignment.Justified)
+                if (totalWidth + 0.01F >= pathLength && fontAlign != TextSymDefHorizAlignment.Justified)
                     break;          // We don't have any room for more characters. (0.01 prevents a very small tail at the end.)
             }
 
             // For OCAD compatibility, truncate right aligned text if too big to fit so the whole
             // string fits. (Note that left-aligned text will typically show one more character than this.)
-            if (pathLength < totalWidth && fontAlign != TextSymDefAlignment.Left && fontAlign != TextSymDefAlignment.Justified) {
+            if (pathLength < totalWidth && fontAlign != TextSymDefHorizAlignment.Left && fontAlign != TextSymDefHorizAlignment.Justified) {
                 totalWidth -= graphemeList[graphemeList.Count - 1].width;
-                if (fontAlign == TextSymDefAlignment.Right)
+                if (fontAlign == TextSymDefHorizAlignment.Right)
                     graphemeList.RemoveAt(graphemeList.Count - 1);
             }
 
             // Where does the text begin?
             float startingDistance = 0;
-            if (fontAlign == TextSymDefAlignment.Left || fontAlign == TextSymDefAlignment.Justified)
+            if (fontAlign == TextSymDefHorizAlignment.Left || fontAlign == TextSymDefHorizAlignment.Justified)
                 startingDistance = 0;
-            else if (fontAlign == TextSymDefAlignment.Right)
+            else if (fontAlign == TextSymDefHorizAlignment.Right)
                 startingDistance = pathLength - totalWidth;
-            else if (fontAlign == TextSymDefAlignment.Center)
+            else if (fontAlign == TextSymDefHorizAlignment.Center)
                 startingDistance = (pathLength - totalWidth) / 2;
 
             // For justified (all-line) text, adjust the widths of each character so they all fit.
-            if (fontAlign == TextSymDefAlignment.Justified && graphemeList.Count > 1) {
+            if (fontAlign == TextSymDefHorizAlignment.Justified && graphemeList.Count > 1) {
                 if (charSpacing > 0) {
                     // last character doesn't have space added.
                     GraphemePlacement graphemePlacement = graphemeList[graphemeList.Count - 1];
@@ -2447,6 +2526,34 @@ namespace PurplePen.MapModel
             }
 
             return graphemeList;
+        }
+
+        // OCAD aligns text vertically a little differently than the map rendering. This function calculated
+        // the OCAD vertical adjustment amount, for formatted or unformatted text.
+        internal float GetOcadTopAdjustment(bool formatted) {
+            float topAdjust = 0;
+
+            if (formatted) {
+                // OCAD adds an extra internal leading (incorrectly).
+                topAdjust = this.FontEmHeight - (this.FontAscent + this.FontDescent);
+
+                // OCAD always aligns formatted text by the top.
+                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
+                if (this.VertAlignment == TextSymDefVertAlignment.Baseline)
+                    topAdjust -= this.FontAscent;
+                else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint)
+                    topAdjust -= this.FontAscent / 2F;
+            }
+            else {
+                if (this.VertAlignment == TextSymDefVertAlignment.TopAscent) {
+                    topAdjust = (this.FontAscent - this.WHeight);
+                }
+                else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint) {
+                    topAdjust = (this.FontAscent - this.WHeight) / 2;
+                }
+            }
+
+            return topAdjust;
         }
     }
 

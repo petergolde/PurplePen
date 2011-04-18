@@ -1676,13 +1676,13 @@ Index entry Sym=702.0
 Object Sym=702 Otp=1
   nItem=2, nText=0
   Ang=0
-    (50.30,2.90) (0.10,0.12, NoLeft, Hole, NoRight, DashPt) 
+    (50.30,2.90) (0.10,0.12, NoLeft, Gap, Hole, NoRight, DashPt) 
 
 Index entry Sym=706.0
 Object Sym=706 Otp=1
   nItem=3, nText=0
   Ang=0
-    (53.20,-2.80) (0.03,0.05, NoLeft, Hole, NoRight) (0.10,0.13, NoLeft, Corner, Hole, NoRight, DashPt) 
+    (53.20,-2.80) (0.03,0.05, NoLeft, Hole, NoRight) (0.10,0.13, NoLeft, Gap, Corner, Hole, NoRight, DashPt) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4

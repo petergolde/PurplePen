@@ -72,7 +72,7 @@ namespace PurplePen.MapModel
         // Constants for the start/stop flags.
         public const byte DOUBLE_LEFT_STARTSTOPFLAG = 0x1;
         public const byte DOUBLE_RIGHT_STARTSTOPFLAG = 0x2;
-        public const byte AREA_BOUNDARY_STARTSTOPFLAG = 0x4;
+        public const byte MAIN_STARTSTOPFLAG = 0x4;
 
         // A distance metric that computes the distance between two points.
         delegate double DistanceMetric(PointF pt1, PointF pt2);    

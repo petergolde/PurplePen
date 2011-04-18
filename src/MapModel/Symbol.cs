@@ -294,9 +294,9 @@ namespace PurplePen.MapModel
             // is the location that the text is aligned on.
             adjustedLocation = location;
             if (width > 0) {
-                if (def.FontAlignment == TextSymDefAlignment.Right)
+                if (def.FontAlignment == TextSymDefHorizAlignment.Right)
                     adjustedLocation = Util.MoveDistance(adjustedLocation, width, angle);
-                else if (def.FontAlignment == TextSymDefAlignment.Center)
+                else if (def.FontAlignment == TextSymDefHorizAlignment.Center)
                     adjustedLocation = Util.MoveDistance(adjustedLocation, width / 2, angle);
             }
 
@@ -336,22 +336,22 @@ namespace PurplePen.MapModel
         // Get four points that define the bounds of the text, and the size, and the baseline point.
         public PointF[] GetCornerPoints(out SizeF sizeText, out PointF baselinePoint) {
             PointF[] pts = new PointF[4];
-            TextSymDefAlignment fontAlign = def.FontAlignment;
+            TextSymDefHorizAlignment fontAlign = def.FontAlignment;
 
-            if (fontAlign == TextSymDefAlignment.Left || fontAlign == TextSymDefAlignment.Justified) {
+            if (fontAlign == TextSymDefHorizAlignment.Left || fontAlign == TextSymDefHorizAlignment.Justified) {
                 pts[0] = adjustedLocation;
                 pts[1].X = pts[0].X + size.Width; pts[1].Y = pts[0].Y;
                 pts[2].X = pts[0].X + size.Width; pts[2].Y = pts[0].Y - size.Height;
                 pts[3].X = pts[0].X; pts[3].Y = pts[0].Y - size.Height;
             }
-            else if (fontAlign == TextSymDefAlignment.Right) {
+            else if (fontAlign == TextSymDefHorizAlignment.Right) {
                 pts[0] = adjustedLocation;
                 pts[1].X = pts[0].X - size.Width; pts[1].Y = pts[0].Y;
                 pts[2].X = pts[0].X - size.Width; pts[2].Y = pts[0].Y - size.Height;
                 pts[3].X = pts[0].X; pts[3].Y = pts[0].Y - size.Height;
             }
             else {
-                Debug.Assert(fontAlign == TextSymDefAlignment.Center);
+                Debug.Assert(fontAlign == TextSymDefHorizAlignment.Center);
                 pts[0].X = adjustedLocation.X - size.Width / 2; pts[0].Y = adjustedLocation.Y;
                 pts[1].X = pts[0].X + size.Width; pts[1].Y = pts[0].Y;
                 pts[2].X = pts[0].X + size.Width; pts[2].Y = pts[0].Y - size.Height;

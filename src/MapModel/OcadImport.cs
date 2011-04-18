@@ -186,8 +186,8 @@ namespace PurplePen.MapModel
                 OcadFileHeader header = ReadFileHeader();
                 version = header.Version;
 
-                if (version < 6 || version > 9) 
-                    throw new OcadFileFormatException("File is in OCAD {0} format. Only OCAD formats 6, 7, 8, and 9 are supported.", version);
+                if (version < 6 || version > 10) 
+                    throw new OcadFileFormatException("File is in OCAD {0} format. Only OCAD formats 6, 7, 8, 9, and 10 are supported.", version);
 
                 if (version <= 8) {
                     // Only version 8 and less have the symbol header and setup structures. OCAD 9
@@ -531,7 +531,7 @@ namespace PurplePen.MapModel
             }
 
             if (symdef != null) {
-                if (version == 9)
+                if (version >= 9)
                     symdef.ToolboxImage = ConvertOcad9Icon(ocadSym.IconBits);
                 else if ((ocadSym.Flags & 2) != 0)
                     symdef.ToolboxImage = ConvertCompressedOcadIcon(ocadSym.IconBits);
@@ -550,14 +550,14 @@ namespace PurplePen.MapModel
 
         void CreateSymdefs(OcadSymbol[] symbols)
         {
-            // We need to read area symdefs after all others, because area symdefs can depend on line symdefs.
+            // We need to read area and text symdefs after all others, because area symdefs can depend on line symdefs and text symdefs can depend on point symdefs.
             foreach (OcadSymbol ocadSym in symbols) {
-                if (ocadSym.Otp != 3)
+                if (ocadSym.Otp != 3 && ocadSym.Otp != 4)
                     CreateSymdef(ocadSym);
             }
 
             foreach (OcadSymbol ocadSym in symbols) {
-                if (ocadSym.Otp == 3)
+                if (ocadSym.Otp == 3 || ocadSym.Otp == 4)
                     CreateSymdef(ocadSym);
             }
         }
@@ -582,7 +582,7 @@ namespace PurplePen.MapModel
                 case 3: // circle
                     float width = ToWorldDimensions(elt.stLineWidth);
                     float diameter = ToWorldDimensions(elt.stDiameter);
-                    if (version > 8)
+                    if (version >= 9)
                         diameter += width;              // diameter is from middle of line in OCAD 9+, from outer edges in OCAD 6-8.
                     glyph.AddCircle(color, PointFromOcadCoord(elt.stCoords[0]), width, diameter);
                     break;
@@ -819,8 +819,8 @@ namespace PurplePen.MapModel
             // UNDONE: Really should check that a real 
             // UNDONE: symbol isn't using these ids, or that there aren't already synthetic symbols that match.
             lineSymdef = new LineSymDef(name + " grid lines", ocadIdNext++, color, 0.15F, LineStyle.Beveled);
-            textSymdef = new TextSymDef(name + " grid text", ocadIdNext++);
-            textSymdef.SetFont("Arial", 15F / 72F * 25.4F, true, false, color, 0, 0, 0, 0, null, 0, 1F, TextSymDefAlignment.Left);
+            textSymdef = new TextSymDef(name + " grid text", ocadIdNext++, null);
+            textSymdef.SetFont("Arial", 15F / 72F * 25.4F, true, false, color, 0, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
             map.AddSymdef(lineSymdef);
             map.AddSymdef(textSymdef);
         }
@@ -873,7 +873,7 @@ namespace PurplePen.MapModel
 #endif
                 }
                 else {
-                    borderSymdef = (LineSymDef)symdefids[ocadSym.BorderSym];
+                    borderSymdef = symdefids[ocadSym.BorderSym] as LineSymDef; 
                 }
             }
 
@@ -908,21 +908,16 @@ namespace PurplePen.MapModel
             float firstIndent, restIndent;
             float charSpacing, wordSpacing;
             float[] tabs;
-            TextSymDefAlignment fontAlign;
+            TextSymDefHorizAlignment fontAlign;
+            TextSymDefVertAlignment vertAlign;
+            PointSymDef centerPointSymdef = null;
 
             fontColor = GetColor(ocadSym.FontColor);
 
             italic = ocadSym.Italic;
             bold = (ocadSym.Weight >= 500);
 
-            if (ocadSym.Alignment == 1)
-                fontAlign = TextSymDefAlignment.Center;
-            else if (ocadSym.Alignment == 2)
-                fontAlign = TextSymDefAlignment.Right;
-            else if (ocadSym.Alignment == 3)
-                fontAlign = TextSymDefAlignment.Justified;
-            else
-                fontAlign = TextSymDefAlignment.Left;
+            DecodeAlignment(ocadSym.Alignment, out fontAlign, out vertAlign);
 
             // ocadSym.FontSize is in 10ths of a point. Convert to mm.
             fontSize = ocadSym.FontSize / 720F * 25.4F;
@@ -943,9 +938,20 @@ namespace PurplePen.MapModel
                     tabs[i] = ToWorldDimensions(ocadSym.Tabs[i]);
             }
 
-            symdef = new TextSymDef(name, ocadID);
+            if (version >= 10 && ocadSym.PointSymOn) {
+                if (!symdefids.ContainsKey(ocadSym.PointSym)) {
+#if DEBUG
+                    throw new OcadFileFormatException("Invalid center point sym {0} in symbol {1}", ocadSym.PointSym, ocadSym.Sym);
+#endif
+                }
+                else {
+                    centerPointSymdef = symdefids[ocadSym.PointSym] as PointSymDef;
+                }
+            }
 
-            symdef.SetFont(ocadSym.FontName, fontSize, bold, italic, fontColor, fontSize * ocadSym.LineSpace / 100F, paraSpacing, firstIndent, restIndent, tabs, charSpacing, wordSpacing, fontAlign);
+            symdef = new TextSymDef(name, ocadID, centerPointSymdef);
+
+            symdef.SetFont(ocadSym.FontName, fontSize, bold, italic, fontColor, fontSize * ocadSym.LineSpace / 100F, paraSpacing, firstIndent, restIndent, tabs, charSpacing, wordSpacing, fontAlign, vertAlign);
 
             // handle framing.
             ReadFraming(ocadSym.FrMode, ocadSym.FrFlags, ocadSym.FrColor, ocadSym.FrWidth, ocadSym.FrSize, ocadSym.FrOfX, ocadSym.FrOfY, ocadSym.FrLeft, ocadSym.FrTop, ocadSym.FrRight, ocadSym.FrBottom, symdef);
@@ -960,6 +966,24 @@ namespace PurplePen.MapModel
             }
 
             return symdef;
+        }
+
+        // Decode the OCAD alignment enumeration into horizontal and vertical alignment parts.
+        void DecodeAlignment(short ocadAlignment, out TextSymDefHorizAlignment horizAlignment, out TextSymDefVertAlignment vertAlignment) {
+            vertAlignment = TextSymDefVertAlignment.Baseline;
+            horizAlignment = TextSymDefHorizAlignment.Left;
+            switch (ocadAlignment) {
+                case 0: horizAlignment = TextSymDefHorizAlignment.Left; break;
+                case 1: horizAlignment = TextSymDefHorizAlignment.Center; break;
+                case 2: horizAlignment = TextSymDefHorizAlignment.Right; break;
+                case 3: horizAlignment = TextSymDefHorizAlignment.Justified; break;
+                case 4: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Left; vertAlignment = TextSymDefVertAlignment.Midpoint; } break;
+                case 5: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Center; vertAlignment = TextSymDefVertAlignment.Midpoint; } break;
+                case 6: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Right; vertAlignment = TextSymDefVertAlignment.Midpoint; } break;
+                case 8: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Left; vertAlignment = TextSymDefVertAlignment.TopAscent; } break;
+                case 9: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Center; vertAlignment = TextSymDefVertAlignment.TopAscent; } break;
+                case 10: if (version > 9) { horizAlignment = TextSymDefHorizAlignment.Right; vertAlignment = TextSymDefVertAlignment.TopAscent; } break;
+            }
         }
 
         // Apply framing to a text sym.
@@ -1028,21 +1052,15 @@ namespace PurplePen.MapModel
             float fontSize;
             float charSpacing;
             float wordSpacing;
-            TextSymDefAlignment fontAlign;
+            TextSymDefHorizAlignment fontAlign;
+            TextSymDefVertAlignment vertAlign;
 
             fontColor = GetColor(ocadSym.FontColor);
 
             italic = ocadSym.Italic;
             bold = (ocadSym.Weight >= 500);
 
-            if (ocadSym.Alignment == 1)
-                fontAlign = TextSymDefAlignment.Center;
-            else if (ocadSym.Alignment == 2)
-                fontAlign = TextSymDefAlignment.Right;
-            else if (ocadSym.Alignment == 3)
-                fontAlign = TextSymDefAlignment.Justified;
-            else
-                fontAlign = TextSymDefAlignment.Left;
+            DecodeAlignment(ocadSym.Alignment, out fontAlign, out vertAlign);
 
             // ocadSym.FontSize is in 10ths of a point. Convert to mm.
             fontSize = ocadSym.FontSize / 720F * 25.4F;
@@ -1050,9 +1068,9 @@ namespace PurplePen.MapModel
             charSpacing = ocadSym.CharSpace / 100F;
             wordSpacing = ocadSym.WordSpace / 100F;
 
-            symdef = new TextSymDef(name, ocadID);
+            symdef = new TextSymDef(name, ocadID, null);
 
-            symdef.SetFont(ocadSym.FontName, fontSize, bold, italic, fontColor, fontSize, 0F, 0F, 0F, null, charSpacing, wordSpacing, fontAlign);
+            symdef.SetFont(ocadSym.FontName, fontSize, bold, italic, fontColor, fontSize, 0F, 0F, 0F, null, charSpacing, wordSpacing, fontAlign, vertAlign);
 
             // handle framing.
             ReadFraming(ocadSym.FrMode, ocadSym.FrFlags, ocadSym.FrColor, ocadSym.FrWidth, ocadSym.FrSize, ocadSym.FrOfX, ocadSym.FrOfY, 0, 0, 0, 0, symdef);
@@ -1555,14 +1573,15 @@ namespace PurplePen.MapModel
                 width = Util.DistanceF(location, PointFromOcadCoord(obj.coords[2]));
 
                 // OCAD adds an extra internal leading (incorrectly).
-                topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
+                topAdjust = symdef.GetOcadTopAdjustment(true);
             }
             else {
                 location = PointFromOcadCoord(obj.coords[0]);
                 width = 0;
+                topAdjust = 0;
 
-                // OCAD positions by baseline of text, we position at top of ascent of text.
-                topAdjust = symdef.FontAscent;
+                // OCAD top align uses the W height, while we use the Font ascent. Adjust for the small difference.
+                topAdjust = symdef.GetOcadTopAdjustment(false);
             }
 
             location.Y += (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
@@ -1627,8 +1646,8 @@ namespace PurplePen.MapModel
                 return false;
         }
 
-        // Is this OCAD coordinate a area boundary cutout?
-        static bool IsOcadCoordBoundaryCutOut(OcadCoord coord)
+        // Is this OCAD coordinate a main cutout?
+        static bool IsOcadCoordMainCutOut(OcadCoord coord)
         {
             if ((coord.x & 8) != 0)
                 return true;
@@ -1775,8 +1794,8 @@ namespace PurplePen.MapModel
                 b |= SymPath.DOUBLE_LEFT_STARTSTOPFLAG;
             if (IsOcadCoordRightCutOut(coord))
                 b |= SymPath.DOUBLE_RIGHT_STARTSTOPFLAG;
-            if (IsOcadCoordBoundaryCutOut(coord))
-                b |= SymPath.AREA_BOUNDARY_STARTSTOPFLAG;
+            if (IsOcadCoordMainCutOut(coord))
+                b |= SymPath.MAIN_STARTSTOPFLAG;
 
             return b;
         }

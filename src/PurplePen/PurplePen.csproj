@@ -6,7 +6,7 @@
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PurplePen</RootNamespace>
     <AssemblyName>PurplePen</AssemblyName>
@@ -950,7 +950,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MapModel\DebugCode\" />
     <Folder Include="MapView\Properties\" />
   </ItemGroup>
   <ItemGroup>

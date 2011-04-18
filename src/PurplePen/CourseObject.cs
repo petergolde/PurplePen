@@ -1055,8 +1055,8 @@ namespace PurplePen
             // Find a free id.
             int ocadId = map.GetFreeSymdefOcadId(OcadIdIntegerPart);
 
-            TextSymDef symdef = new TextSymDef(SymDefName, ocadId);
-            symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefAlignment.Left);
+            TextSymDef symdef = new TextSymDef(SymDefName, ocadId, null);
+            symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
 
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Number_OcadToolbox);
             map.AddSymdef(symdef);

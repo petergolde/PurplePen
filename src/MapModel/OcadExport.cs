@@ -91,7 +91,7 @@ namespace PurplePen.MapModel {
                 this.filename = filename;
                 this.useOcadSaved = useSavedOcadInfo;
 
-                if (version < 6 || version > 9)
+                if (version < 6 || version > 10)
                     throw new ArgumentException("Bad version number", "version");
 
                 OcadFileHeader fileHeader = new OcadFileHeader();
@@ -379,6 +379,51 @@ namespace PurplePen.MapModel {
             }
         }
 
+        short OcadTextAlignment(TextSymDefHorizAlignment horizAlign, TextSymDefVertAlignment vertAlign) {
+            if (version <= 9) {
+                // TODO: If we are saving a non-defalt vertical alginemtn in OCAD 9 or before, what is correct behavior?
+                // TODO: probably to adjust the coordinates on save. Also should have a way that the user knows what is happening.
+                switch (horizAlign) {
+                    case TextSymDefHorizAlignment.Left: return 0;
+                    case TextSymDefHorizAlignment.Center: return 1;
+                    case TextSymDefHorizAlignment.Right: return 2;
+                    case TextSymDefHorizAlignment.Justified: return 3;
+                    default: return 0;
+                }
+            }
+            else {
+                switch (horizAlign) {
+                    case TextSymDefHorizAlignment.Left:
+                        switch (vertAlign) {
+                            case TextSymDefVertAlignment.TopAscent: return 8;
+                            case TextSymDefVertAlignment.Midpoint: return 4;
+                            case TextSymDefVertAlignment.Baseline: return 0;
+                            default: return 0;
+                        }
+
+                    case TextSymDefHorizAlignment.Right:
+                        switch (vertAlign) {
+                            case TextSymDefVertAlignment.TopAscent: return 10;
+                            case TextSymDefVertAlignment.Midpoint: return 6;
+                            case TextSymDefVertAlignment.Baseline: return 2;
+                            default: return 2;
+                        }
+                    case TextSymDefHorizAlignment.Center:
+                        switch (vertAlign) {
+                            case TextSymDefVertAlignment.TopAscent: return 9;
+                            case TextSymDefVertAlignment.Midpoint: return 5;
+                            case TextSymDefVertAlignment.Baseline: return 1;
+                            default: return 0;
+                        }
+                    case TextSymDefHorizAlignment.Justified:
+                        return 3;
+                    default:
+                        return 0;
+                }
+            }
+        }
+
+
         void WriteLineSymDef(LineSymDef symdef) {
             OcadLineSymbol symbol = new OcadLineSymbol();
             FillInCommonSymdef(symbol, symdef);
@@ -619,12 +664,7 @@ namespace PurplePen.MapModel {
                 symbol.Weight = 700;
             else
                 symbol.Weight = 400;
-            if (symdef.FontAlignment == TextSymDefAlignment.Justified)
-                symbol.Alignment = 3;
-            if (symdef.FontAlignment == TextSymDefAlignment.Right)
-                symbol.Alignment = 2;
-            else if (symdef.FontAlignment == TextSymDefAlignment.Center)
-                symbol.Alignment = 1;
+            symbol.Alignment = OcadTextAlignment(symdef.FontAlignment, symdef.VertAlignment);
             symbol.FontSize = (short) Math.Round(symdef.FontEmHeight / 25.4F * 720F);
             symbol.FontName = symdef.FontName;
             symbol.LineSpace = (short) Math.Round(symdef.LineSpacing * 100F / symdef.FontEmHeight);
@@ -653,6 +693,15 @@ namespace PurplePen.MapModel {
                 symbol.LBColor = NumberOfColor(underline.underlineColor);
                 symbol.LBDist = (short) ToOcadDimensions(underline.underlineDistance);
                 symbol.LBWidth = (short) ToOcadDimensions(underline.underlineWidth);
+            }
+
+            if (symdef.CenterPointSymdef != null) {
+                // A center point symbol. Supported directly in OCAD 10. 
+                // UNDONE: must be emulated by writing additional objects in 6-9, which should be handled elsewhere.
+                if (version >= 10) {
+                    symbol.PointSymOn = true;
+                    symbol.PointSym = ConvertSymdefId(symdef.CenterPointSymdef.OcadID);
+                }
             }
 
             symbol.Write(writer, version);
@@ -880,7 +929,7 @@ namespace PurplePen.MapModel {
                         coords[i].x |= 4;
                     if ((startStopFlags[i] & SymPath.DOUBLE_RIGHT_STARTSTOPFLAG) != 0)
                         coords[i].y |= 4;
-                    if ((startStopFlags[i] & SymPath.AREA_BOUNDARY_STARTSTOPFLAG) != 0)
+                    if ((startStopFlags[i] & SymPath.MAIN_STARTSTOPFLAG) != 0)
                         coords[i].x |= 8;
                 }
             }
@@ -1002,7 +1051,15 @@ namespace PurplePen.MapModel {
                 points = new PointF[4];
                 float topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
                 float height = size.Height + symdef.FontEmHeight - symdef.FontAscent;
-                location.Y -= (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
+
+                // OCAD adds an extra internal leading (incorrectly).
+                topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
+
+                // OCAD always aligns formatted text by the top.
+                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
+                topAdjust = symdef.GetOcadTopAdjustment(true);
+
+                location.Y -= (float)(topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                 points[3] = location;
                 location.Y -= (float) (width * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
@@ -1017,21 +1074,25 @@ namespace PurplePen.MapModel {
             }
             else {
                 // Unformatted text
-                float topAdjust = symdef.FontAscent;
+                float topAdjust = 0;
                 float height = symdef.FontEmHeight;
                 float descent = symdef.FontDescent;
                 points = new PointF[5];
+
+                // OCAD top align uses the W height, while we use the Font ascent. Adjust for the small difference.
+                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
+                topAdjust = symdef.GetOcadTopAdjustment(false);
 
                 location.Y -= (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                 points[0] = location;
                 location.Y -= (float) (descent * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (descent * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
-                if (symdef.FontAlignment == TextSymDefAlignment.Right) {
+                if (symdef.FontAlignment == TextSymDefHorizAlignment.Right) {
                     location.Y += (float) (size.Width * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                     location.X -= (float) (size.Width * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 }
-                else if (symdef.FontAlignment == TextSymDefAlignment.Center) {
+                else if (symdef.FontAlignment == TextSymDefHorizAlignment.Center) {
                     location.Y += (float) ((size.Width/2) * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                     location.X -= (float) ((size.Width/2) * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 }

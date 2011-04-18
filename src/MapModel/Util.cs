@@ -165,7 +165,12 @@ namespace PurplePen.MapModel
 			rect.Inflate(delta, delta);
 			return rect;
 		}
-		
+
+        // Get the center point of a rectangle.
+        public static PointF RectCenter(RectangleF rect) {
+            return new PointF((rect.Left + rect.Right) / 2, (rect.Top + rect.Bottom) / 2);
+        }
+
 		// Find two control points around p2.
 		private static void FindControlPoints(PointF p1, PointF p2, PointF p3, out PointF c1, out PointF c2) {
 			if (p1 == p3) {

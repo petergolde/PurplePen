@@ -1100,6 +1100,8 @@ namespace PurplePen.MapModel
 		public short Res4;
 		public byte FrMode;
         public byte FrFlags;
+        public bool PointSymOn;
+        public int PointSym;
 		public string FrName;   // NOTE: Ocad 8 converts framing font to framed by line, always using 1/10 of the char height.
         public short FrLeft, FrBottom, FrRight, FrTop;
 		public short FrColor;
@@ -1142,10 +1144,27 @@ namespace PurplePen.MapModel
                 FrOfX = reader.ReadInt16();
                 FrOfY = reader.ReadInt16();
             }
-            else {
+            else if (version <= 9) {
                 FrMode = reader.ReadByte();
                 FrFlags = reader.ReadByte();
                 Util.ReadDelphiString(reader, 23);
+                FrLeft = reader.ReadInt16();
+                FrBottom = reader.ReadInt16();
+                FrRight = reader.ReadInt16();
+                FrTop = reader.ReadInt16();
+                FrColor = reader.ReadInt16();
+                FrSize = reader.ReadInt16();
+                FrWeight = reader.ReadInt16();
+                FrItalic = reader.ReadUInt16() != 0 ? true : false;
+                FrOfX = reader.ReadInt16();
+                FrOfY = reader.ReadInt16();
+            }
+            else {
+                FrMode = reader.ReadByte();
+                FrFlags = reader.ReadByte();
+                PointSymOn = reader.ReadBoolean();
+                PointSym = reader.ReadInt32();
+                Util.ReadDelphiString(reader, 18);
                 FrLeft = reader.ReadInt16();
                 FrBottom = reader.ReadInt16();
                 FrRight = reader.ReadInt16();
@@ -1185,7 +1204,16 @@ namespace PurplePen.MapModel
 			writer.Write(Res4);
 			writer.Write(FrMode);
             writer.Write(FrFlags);
-            if (version >= 9) {
+            if (version >= 10) {
+                writer.Write(PointSymOn);
+                writer.Write(PointSym);
+                Util.WriteDelphiString(writer, FrName, 18);
+                writer.Write(FrLeft);
+                writer.Write(FrBottom);
+                writer.Write(FrRight);
+                writer.Write(FrTop);
+            }
+            else if (version >= 9) {
                 Util.WriteDelphiString(writer, FrName, 23);
                 writer.Write(FrLeft);
                 writer.Write(FrBottom);
@@ -1325,6 +1353,7 @@ namespace PurplePen.MapModel
 			if ((xFlags & 1) != 0)  flags += ", Curve1";
 			if ((xFlags & 2) != 0)  flags += ", Curve2";
 			if ((xFlags & 4) != 0)  flags += ", NoLeft";
+            if ((xFlags & 8) != 0)  flags += ", Gap";
 			if ((yFlags & 1) != 0)  flags += ", Corner";
 			if ((yFlags & 2) != 0)  flags += ", Hole";
 			if ((yFlags & 4) != 0)  flags += ", NoRight";

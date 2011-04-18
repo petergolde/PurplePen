@@ -268,252 +268,263 @@ namespace PurplePen.MapModel.Tests
 
         [TestMethod]
         public void TestWest() {
-            CheckTest("teanwest.txt", false, false, 9, 9);
-            CheckTest("teanwest.txt", false, false, 9, 9);
+            CheckTest("teanwest.txt", false, false, 9, 10);
+            CheckTest("teanwest.txt", false, false, 9, 10);
         }
 
         [TestMethod]
         public void LineSymbols()
         {
-            CheckTest("isomlines.txt", true, true, 6, 9);
-            CheckTest("isomlines9.txt", true, true, 6, 9);
+            CheckTest("isomlines.txt", true, true, 6, 10);
+            CheckTest("isomlines9.txt", true, true, 6, 10);
         }
 
         [TestMethod]
         public void Fences()
         {
-            CheckTest("fences.txt", false, true, 6, 9);
-            CheckTest("fences9.txt", false, true, 6, 9);
+            CheckTest("fences.txt", false, true, 6, 10);
+            CheckTest("fences9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void FramingLines()
         {
-            CheckTest("framingline-test.txt", false, true, 6, 9);
-            CheckTest("framingline-test9.txt", false, true, 6, 9);
+            CheckTest("framingline-test.txt", false, true, 6, 10);
+            CheckTest("framingline-test9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void DashLines()
         {
-            CheckTest("dashline.txt", false, true, 6, 9);
-            CheckTest("dashline9.txt", false, true, 6, 9);
+            CheckTest("dashline.txt", false, true, 6, 10);
+            CheckTest("dashline9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void PointSymbols()
         {
-            CheckTest("isompoints.txt", true, true, 6, 9);
-            CheckTest("isompoints_9.txt", false, true, 6, 9);
+            CheckTest("isompoints.txt", true, true, 6, 10);
+            CheckTest("isompoints_9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void AreaSymbols()
         {
-            CheckTest("isomarea.txt", true, true, 6, 9);
-            CheckTest("isomarea9.txt", true, true, 6, 9);
+            CheckTest("isomarea.txt", true, true, 6, 10);
+            CheckTest("isomarea9.txt", true, true, 6, 10);
         }
 
         [TestMethod]
         public void AreaHoles()
         {
-            CheckTest("holes.txt", false, true, 6, 9);
-            CheckTest("holes9.txt", false, true, 6, 9);
+            CheckTest("holes.txt", false, true, 6, 10);
+            CheckTest("holes9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void CutCircles()
         {
-            CheckTest("cutcircles.txt", false, true, 6, 9);
+            CheckTest("cutcircles.txt", false, true, 6, 10);
             // CheckTest("cutcircles9.txt", false, false, 6);    OCAD 9 has some strange problems with cut circles...
         }
 
         [TestMethod]
         public void HiddenSymbols()
         {
-            CheckTest("hiddensymbols.txt", false, true, 6, 9);
-            CheckTest("hiddensymbols9.txt", false, true, 6, 9);
+            CheckTest("hiddensymbols.txt", false, true, 6, 10);
+            CheckTest("hiddensymbols9.txt", false, true, 6, 10);
         }
     
 
         [TestMethod]
         public void RotatedAreas()
         {
-            CheckTest("rotarea-test.txt", false, true, 6, 9);
-            CheckTest("rotarea-test9.txt", false, true, 6, 9);
+            CheckTest("rotarea-test.txt", false, true, 6, 10);
+            CheckTest("rotarea-test9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void BorderedAreas()
         {
-            CheckTest("borderedarea9.txt", false, true, 9, 9);
+            CheckTest("borderedarea9.txt", false, true, 9, 10);
         }
     
 
         [TestMethod]
         public void TextSymbols()
         {
-            CheckTest("simpletext.txt", true, true, 6, 9);
-            CheckTest("simpletext9.txt", true, true, 6, 9);
+            CheckTest("simpletext.txt", true, true, 6, 10);
+            CheckTest("simpletext9.txt", true, true, 6, 10);
         }
 
         [TestMethod]
         public void PunchBox()
         {
-            CheckTest("punchbox.txt", false, false, 6, 9);
-            CheckTest("punchbox9.txt", false, false, 6, 9);
+            CheckTest("punchbox.txt", false, false, 6, 10);
+            CheckTest("punchbox9.txt", false, false, 6, 10);
         }
 
         [TestMethod]
         public void LakeSammMap()
         {
-            CheckTest("lksamm1.txt", false, true, 6, 9);
+            CheckTest("lksamm1.txt", false, true, 6, 10);
             // CheckTest("lksamm2.txt", true, true, 6);   // this one has very slight rendering differences each time. odd...
-            CheckTest("lksamm3.txt", false, true, 6, 9);
-            CheckTest("lksamm4.txt", false, true, 6, 9);
+            CheckTest("lksamm3.txt", false, true, 6, 10);
+            CheckTest("lksamm4.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void LakeSammMap9()
         {
-            CheckTest("lksamm9_1.txt", false, false, 6, 9);
-            CheckTest("lksamm9_1.txt", false, false, 6, 9);
+            CheckTest("lksamm9_1.txt", false, false, 6, 10);
+            CheckTest("lksamm9_1.txt", false, false, 6, 10);
             // CheckTest("lksamm9_2.txt", true, false, 6);  // this one has very slight rendering differences each time. odd...
-            CheckTest("lksamm9_3.txt", false, false, 6, 9);
-            CheckTest("lksamm9_4.txt", false, false, 6, 9);
+            CheckTest("lksamm9_3.txt", false, false, 6, 10);
+            CheckTest("lksamm9_4.txt", false, false, 6, 10);
         }
 
         [TestMethod]
         public void DeletedItems()
         {
-            CheckTest("deleteditems.txt", false, true, 6, 9);
+            CheckTest("deleteditems.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void CornersAndEnds()
         {
-            CheckTest("corner_ends.txt", false, true, 6, 9);
-            CheckTest("corner_ends9.txt", false, true, 6, 9);
+            CheckTest("corner_ends.txt", false, true, 6, 10);
+            CheckTest("corner_ends9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void GlyphHoles()
         {
-            CheckTest("glyphholes.txt", false, true, 6, 9);
-            CheckTest("glyphholes9.txt", false, true, 6, 9);
+            CheckTest("glyphholes.txt", false, true, 6, 10);
+            CheckTest("glyphholes9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void ZeroGlyph()
         {
-            CheckTest("zeroglyph9.txt", false, true, 6, 9);
-            CheckTest("zeroglyph6.txt", false, true, 6, 9);
+            CheckTest("zeroglyph9.txt", false, true, 6, 10);
+            CheckTest("zeroglyph6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void ParaSpacing()
         {
-            CheckTest("paraspacing.txt", false, true, 6, 9);
-            CheckTest("paraspacing9.txt", false, true, 6, 9);
+            CheckTest("paraspacing.txt", false, true, 6, 10);
+            CheckTest("paraspacing9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void ParaIdent()
         {
-            CheckTest("paraindent9.txt", false, true, 6, 9);
-            CheckTest("paraindent6.txt", false, true, 6, 9);
+            CheckTest("paraindent9.txt", false, true, 6, 10);
+            CheckTest("paraindent6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void NarrowWrap()
         {
-            CheckTest("textnarrowwrap.txt", false, true, 6, 9);
+            CheckTest("textnarrowwrap.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void CharSpace()
         {
-            CheckTest("charspace.txt", false, true, 6, 9);
+            CheckTest("charspace.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void WordSpace()
         {
-            CheckTest("wordspace.txt", false, true, 6, 9);
+            CheckTest("wordspace.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void ComboSpace()
         {
-            CheckTest("combospace.txt", false, true, 6, 9);
+            CheckTest("combospace.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void TopAlignText()
+        {
+            CheckTest("topaligntext10.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
+        public void MidAlignText() {
+            CheckTest("midaligntext10.txt", false, true, 10, 10);
         }
 
         [TestMethod]
         public void Justify()
         {
-            CheckTest("justify.txt", false, true, 6, 9);
+            CheckTest("justify.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void TabbedText()
         {
-            CheckTest("tabbedtext.txt", false, true, 6, 9);
+            CheckTest("tabbedtext.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void Newlines()
         {
-            CheckTest("newlines.txt", false, true, 6, 9);
+            CheckTest("newlines.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void UnderlineText()
         {
-            CheckTest("underlinetext.txt", false, true, 6, 9);
+            CheckTest("underlinetext.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void LineText1()
         {
-            CheckTest("linetext_6.txt", false, true, 6, 9);
-            CheckTest("linetext_9.txt", false, true, 6, 9);   
+            CheckTest("linetext_6.txt", false, true, 6, 10);
+            CheckTest("linetext_9.txt", false, true, 6, 10);   
         }
 
         [TestMethod]
         public void LineText2()
         {
-            CheckTest("linetext2_6.txt", false, true, 6, 9);
-            CheckTest("linetext2_9.txt", false, true, 6, 9);
+            CheckTest("linetext2_6.txt", false, true, 6, 10);
+            CheckTest("linetext2_9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void LineTextSpacing()
         {
-            CheckTest("linetextspacing.txt", false, true, 6, 9);
+            CheckTest("linetextspacing.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void AllLineText()
         {
-            CheckTest("alllinetext.txt", false, true, 6, 9);
+            CheckTest("alllinetext.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void FramingText1()
         {
-            CheckTest("frametext1.txt", false, true, 7, 9);
+            CheckTest("frametext1.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void FramingText2()
         {
-            CheckTest("frametext2.txt", false, true, 9, 9);
+            CheckTest("frametext2.txt", false, true, 9, 10);
         }
 
         [TestMethod]
         public void FramingText3()
         {
-            CheckTest("frametext3.txt", false, true, 9, 9);
+            CheckTest("frametext3.txt", false, true, 9, 10);
             CheckTest("frametext3.txt", false, true, 6, 7);
         }
 
@@ -522,7 +533,7 @@ namespace PurplePen.MapModel.Tests
         {
             // Not supported in OCAD 8!!! (OCAD 8 didn't have font framing or offset framing
             CheckTest("framing_ocad6.txt", false, true, 6, 7);
-            CheckTest("framing_ocad6.txt", false, true, 9, 9);
+            CheckTest("framing_ocad6.txt", false, true, 9, 10);
         }
 
         [TestMethod]
@@ -530,140 +541,145 @@ namespace PurplePen.MapModel.Tests
         {
             // Not supported in OCAD 6 or 8!!! (OCAD 8 didn't have font framing or offset framing, OCAD 6 didn't have line framing).
             CheckTest("framing_ocad7.txt", false, true, 7, 7);
-            CheckTest("framing_ocad7.txt", false, true, 9, 9);
+            CheckTest("framing_ocad7.txt", false, true, 9, 10);
         }
 
         [TestMethod]
         public void Framing_Ocad8()
         {
-            CheckTest("framing_ocad8.txt", false, true, 7, 9);
+            CheckTest("framing_ocad8.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void DoubleLines()
         {
-            CheckTest("doublelines9.txt", false, true, 6, 9);
-            CheckTest("doublelines6.txt", false, true, 6, 9);
+            CheckTest("doublelines9.txt", false, true, 6, 10);
+            CheckTest("doublelines6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void CutDoubleSides()
         {
-            CheckTest("cutdoublesides9.txt", false, true, 6, 9);
-            CheckTest("cutdoublesides6.txt", false, true, 6, 9);
+            CheckTest("cutdoublesides9.txt", false, true, 6, 10);
+            CheckTest("cutdoublesides6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void CutAreaBorder()
         {
-            CheckTest("cutareaborder9.txt", false, true, 9, 9);
+            CheckTest("cutareaborder9.txt", false, true, 9, 10);
+        }
+
+        [TestMethod]
+        public void LineGaps10() {
+            CheckTest("linegaps10.txt", false, true, 10, 10);
         }
 
         [TestMethod]
         public void DashLengths()
         {
-            CheckTest("dashlengths9.txt", false, true, 6, 9);
-            CheckTest("dashlengths6.txt", false, true, 6, 9);
+            CheckTest("dashlengths9.txt", false, true, 6, 10);
+            CheckTest("dashlengths6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void AngleDashes()
         {
-            CheckTest("angledashes9.txt", false, true, 6, 9);
+            CheckTest("angledashes9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void DoubleDashLengths()
         {
-            CheckTest("dbldashlengths9.txt", false, true, 7, 9);  // OCAD 6 doesn't support dash points.
-            CheckTest("dbldashlengths7.txt", false, true, 7, 9);  // OCAD 6 doesn't support dash points.
+            CheckTest("dbldashlengths9.txt", false, true, 7, 10);  // OCAD 6 doesn't support dash points.
+            CheckTest("dbldashlengths7.txt", false, true, 7, 10);  // OCAD 6 doesn't support dash points.
         }
 
         [TestMethod]
         public void SecGapOnly()
         {
-            CheckTest("secgaponly9.txt", false, true, 6, 9);
-            CheckTest("secgaponly6.txt", false, true, 6, 9);
+            CheckTest("secgaponly9.txt", false, true, 6, 10);
+            CheckTest("secgaponly6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void PointyEnds()
         {
-            CheckTest("pointyends9.txt", false, true, 6, 9);
-            CheckTest("pointyends6.txt", false, true, 6, 9);
+            CheckTest("pointyends9.txt", false, true, 6, 10);
+            CheckTest("pointyends6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void Glyphs()
         {
-            CheckTest("glyphs9.txt", false, true, 6, 9);
+            CheckTest("glyphs9.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void MainGlyphs()
         {
-            CheckTest("mainglyph9.txt", false, true, 7, 9);
-            CheckTest("mainglyph7.txt", false, true, 7, 9);
+            CheckTest("mainglyph9.txt", false, true, 7, 10);
+            CheckTest("mainglyph7.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void Max2Glyphs()
         {
-            CheckTest("max2glyph9.txt", false, true, 7, 9);
-            CheckTest("max2glyph7.txt", false, true, 7, 9);
+            CheckTest("max2glyph9.txt", false, true, 7, 10);
+            CheckTest("max2glyph7.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void MultiMainGlyphs()
         {
-            CheckTest("multimainglyph9.txt", false, true, 7, 9);
-            CheckTest("multimainglyph7.txt", false, true, 7, 9);
+            CheckTest("multimainglyph9.txt", false, true, 7, 10);
+            CheckTest("multimainglyph7.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void SecondaryGlyphs()
         {
-            CheckTest("secglyph9.txt", false, true, 7, 9);
-            CheckTest("secglyph7.txt", false, true, 7, 9);
+            CheckTest("secglyph9.txt", false, true, 7, 10);
+            CheckTest("secglyph7.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void StartEndGlyph()
         {
-            CheckTest("startendglyph9.txt", false, true, 7, 9);
-            CheckTest("startendglyph7.txt", false, true, 7, 9);
+            CheckTest("startendglyph9.txt", false, true, 7, 10);
+            CheckTest("startendglyph7.txt", false, true, 7, 10);
         }
 
         [TestMethod]
         public void CornerGlyphs()
         {
-            CheckTest("cornerglyphs9.txt", false, true, 6, 9);
-            CheckTest("cornerglyphs6.txt", false, true, 6, 9);
+            CheckTest("cornerglyphs9.txt", false, true, 6, 10);
+            CheckTest("cornerglyphs6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void DecreaseSymbols()
         {
-            CheckTest("decreasesymbols.txt", false, true, 6, 9);
-            CheckTest("decreasesymbols6.txt", false, true, 6, 9);
+            CheckTest("decreasesymbols.txt", false, true, 6, 10);
+            CheckTest("decreasesymbols6.txt", false, true, 6, 10);
         }
 
         [TestMethod]
         public void GraphicsObjects()
         {
-            CheckTest("graphicobjects9.txt", true, true, 9, 9);
+            CheckTest("graphicobjects9.txt", true, true, 9, 10);
         }
 
         [TestMethod]
         public void ImageObjects()
         {
-            CheckTest("aiimport.txt", true, true, 9, 9);
+            CheckTest("aiimport.txt", true, true, 9, 10);
         }
 
         [TestMethod]
         public void Clouds()
         {
-            CheckTest("Clouds.txt", false, true, 7, 9);
+            CheckTest("Clouds.txt", false, true, 7, 10);
         }
     }
 
