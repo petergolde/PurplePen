@@ -2394,7 +2394,17 @@ namespace PurplePen.MapModel
 
             // Get the location of each grapheme to print.
             List<GraphemePlacement> graphemeList = GetLineTextGraphemePlacement(path, text);
-            PointF topAscentPoint = new PointF(0, -FontAscent);    // Drawing is relative to top of char, we want to draw at baseline.
+
+            // Get location to draw to, relative to the line we're drawing along.
+            PointF topAscentPoint;
+            if (vertAlign == TextSymDefVertAlignment.Baseline)
+                topAscentPoint = new PointF(0, -FontAscent);    // Drawing is relative to top of char, we want to draw at baseline.
+            else if (vertAlign == TextSymDefVertAlignment.TopAscent) // actually for line text we use top of W height.
+                topAscentPoint = new PointF(0, WHeight - FontAscent);
+            else {
+                Debug.Assert(vertAlign == TextSymDefVertAlignment.Midpoint);
+                topAscentPoint = new PointF(0, WHeight / 2 - FontAscent);
+            }
 
             foreach (GraphemePlacement grapheme in graphemeList) {
                 // Move location to draw at to the origin, set angle for drawing text.

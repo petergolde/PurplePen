@@ -510,6 +510,26 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
+        public void LineTextTop() {
+            CheckTest("linetext_top.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
+        public void LineTextTop2() {
+            CheckTest("linetext2_top.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
+        public void LineTextMid() {
+            CheckTest("linetext_mid.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
+        public void LineTextMid2() {
+            CheckTest("linetext2_mid.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
         public void FramingText1()
         {
             CheckTest("frametext1.txt", false, true, 7, 10);
