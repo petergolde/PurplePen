@@ -220,6 +220,12 @@
     <Compile Include="DebugUI\NewLanguage.Designer.cs">
       <DependentUpon>NewLanguage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DebugUI\ShowFontMetrics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\ShowFontMetrics.Designer.cs">
+      <DependentUpon>ShowFontMetrics.cs</DependentUpon>
+    </Compile>
     <Compile Include="DebugUI\SymbolBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -620,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DebugUI\NewLanguage.resx">
       <DependentUpon>NewLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\ShowFontMetrics.resx">
+      <DependentUpon>ShowFontMetrics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DebugUI\SymbolBrowser.resx">
       <DependentUpon>SymbolBrowser.cs</DependentUpon>

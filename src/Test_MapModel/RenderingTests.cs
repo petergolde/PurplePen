@@ -460,6 +460,11 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
+        public void CenterPointText() {
+            CheckTest("textpoint10.txt", false, true, 10, 10);
+        }
+
+        [TestMethod]
         public void Justify()
         {
             CheckTest("justify.txt", false, true, 6, 10);

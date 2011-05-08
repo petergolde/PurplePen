@@ -1052,12 +1052,8 @@ namespace PurplePen.MapModel {
                 float topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
                 float height = size.Height + symdef.FontEmHeight - symdef.FontAscent;
 
-                // OCAD adds an extra internal leading (incorrectly).
-                topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
-
                 // OCAD always aligns formatted text by the top.
-                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
-                topAdjust = symdef.GetOcadTopAdjustment(true);
+                topAdjust = symdef.GetOcadTopAdjustment(true, version);
 
                 location.Y -= (float)(topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
@@ -1080,8 +1076,7 @@ namespace PurplePen.MapModel {
                 points = new PointF[5];
 
                 // OCAD top align uses the W height, while we use the Font ascent. Adjust for the small difference.
-                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
-                topAdjust = symdef.GetOcadTopAdjustment(false);
+                topAdjust = symdef.GetOcadTopAdjustment(false, version);
 
                 location.Y -= (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));

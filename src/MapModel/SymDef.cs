@@ -1905,7 +1905,7 @@ namespace PurplePen.MapModel
             else
                 l = 0;
             r = l + fullWidth;
-            t = topOfText + FontAscent - WHeight;           // Place the top of the rectangle at top of letter "W", not top of accents.
+            t = topOfText + FontAscent - WHeight;
             b = bottomOfText;
             return RectangleF.FromLTRB(l, t, r, b);
         }
@@ -1927,8 +1927,36 @@ namespace PurplePen.MapModel
         private void DrawCenterPoint(IGraphicsTarget g, float[] lineWidths, float fullWidth, SymColor color, float topOfText, float bottomOfText, RenderOptions renderOpts) 
         {
             if (centerPointSymdef != null && centerPointSymdef.HasColor(color)) {
-                RectangleF textRect = CalcTextRectangle(lineWidths, fullWidth, topOfText, bottomOfText);
-                centerPointSymdef.Draw(g, Util.RectCenter(textRect), 0, null, color, renderOpts);
+                float l, r, t, b;  // bounding rectangle for calculating center point.
+
+                // First, figure out the width of the rectangle. If fullWidth is zero, used the maximum line width.
+                fullWidth = CalcFullWidth(lineWidths, fullWidth);
+
+                // Next, figure out the rectangle, not counting padding.
+                if (fontAlign == TextSymDefHorizAlignment.Right)
+                    l = -fullWidth;
+                else if (fontAlign == TextSymDefHorizAlignment.Center)
+                    l = -(fullWidth / 2F);
+                else
+                    l = 0;
+                r = l + fullWidth;
+                t = topOfText - (FontAscent + FontDescent) + FontEmHeight;  // strong OCAD adjustment.
+                b = bottomOfText + FontDescent;  // include the descender on the text.
+
+                PointF centerPoint = new PointF((r + l) / 2, (t + b) / 2);
+
+                // We're currently in a reversed coordinate space;  re-reverse it.
+                Matrix matrix = new Matrix();
+                matrix.Translate(centerPoint.X, centerPoint.Y);
+                matrix.Scale(1, -1);      // Reverse Y so text is correct way aroun
+                g.PushTransform(matrix);
+
+                try {
+                    centerPointSymdef.Draw(g, new PointF(0, 0), 0, null, color, renderOpts);
+                }
+                finally {
+                    g.PopTransform();  // restore transform
+                }
             }
         }
 
@@ -1960,7 +1988,10 @@ namespace PurplePen.MapModel
         {
             if (color == null)
                 return;
-            if (color != fontColor && (framing.framingStyle == FramingStyle.None || color != framing.framingColor) && (!underline.underlineOn || color != underline.underlineColor))
+            if (color != fontColor && 
+                (framing.framingStyle == FramingStyle.None || color != framing.framingColor) && 
+                (!underline.underlineOn || color != underline.underlineColor) &&
+                (centerPointSymdef == null || !centerPointSymdef.HasColor(color)))
                 return;
 
             CreateObjects(g);
@@ -2540,26 +2571,37 @@ namespace PurplePen.MapModel
 
         // OCAD aligns text vertically a little differently than the map rendering. This function calculated
         // the OCAD vertical adjustment amount, for formatted or unformatted text.
-        internal float GetOcadTopAdjustment(bool formatted) {
+        internal float GetOcadTopAdjustment(bool formatted, int version) {
             float topAdjust = 0;
 
             if (formatted) {
                 // OCAD adds an extra internal leading (incorrectly).
                 topAdjust = this.FontEmHeight - (this.FontAscent + this.FontDescent);
 
-                // OCAD always aligns formatted text by the top.
-                // TODO: Should we do this different for OCAD 9 and before if VertAlignment is not BaseLine?
+                // OCAD always aligns formatted text by the top, no matter when the alignment is.
                 if (this.VertAlignment == TextSymDefVertAlignment.Baseline)
                     topAdjust -= this.FontAscent;
                 else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint)
                     topAdjust -= this.FontAscent / 2F;
             }
             else {
-                if (this.VertAlignment == TextSymDefVertAlignment.TopAscent) {
-                    topAdjust = (this.FontAscent - this.WHeight);
+                if (version >= 10) {
+                    // OCAD version 10 and up support vertical alignment for unformatted text.
+                    if (this.VertAlignment == TextSymDefVertAlignment.TopAscent) {
+                        topAdjust = (this.FontAscent - this.WHeight);
+                    }
+                    else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint) {
+                        topAdjust = (this.FontAscent - this.WHeight) / 2;
+                    }
                 }
-                else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint) {
-                    topAdjust = (this.FontAscent - this.WHeight) / 2;
+                else {
+                    // OCAD version 9 and below do not support vertical alignment, but always align by baseline.
+                    if (this.VertAlignment == TextSymDefVertAlignment.TopAscent) {
+                        topAdjust = this.FontAscent;
+                    }
+                    else if (this.VertAlignment == TextSymDefVertAlignment.Midpoint) {
+                        topAdjust = this.FontAscent / 2;
+                    }
                 }
             }
 

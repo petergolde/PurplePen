@@ -1573,7 +1573,7 @@ namespace PurplePen.MapModel
                 width = Util.DistanceF(location, PointFromOcadCoord(obj.coords[2]));
 
                 // OCAD adds an extra internal leading (incorrectly).
-                topAdjust = symdef.GetOcadTopAdjustment(true);
+                topAdjust = symdef.GetOcadTopAdjustment(true, version);
             }
             else {
                 location = PointFromOcadCoord(obj.coords[0]);
@@ -1581,7 +1581,7 @@ namespace PurplePen.MapModel
                 topAdjust = 0;
 
                 // OCAD top align uses the W height, while we use the Font ascent. Adjust for the small difference.
-                topAdjust = symdef.GetOcadTopAdjustment(false);
+                topAdjust = symdef.GetOcadTopAdjustment(false, version);
             }
 
             location.Y += (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
