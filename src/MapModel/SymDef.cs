@@ -1940,7 +1940,7 @@ namespace PurplePen.MapModel
                 else
                     l = 0;
                 r = l + fullWidth;
-                t = topOfText - (FontAscent + FontDescent) + FontEmHeight;  // strong OCAD adjustment.
+                t = topOfText - (FontAscent + FontDescent) + FontEmHeight;  // strange OCAD adjustment.
                 b = bottomOfText + FontDescent;  // include the descender on the text.
 
                 PointF centerPoint = new PointF((r + l) / 2, (t + b) / 2);
@@ -2463,7 +2463,7 @@ namespace PurplePen.MapModel
             // But not that necessary.
 
             RectangleF rect = path.BoundingBox;
-            rect.Inflate(FontAscent, FontAscent);
+            rect.Inflate(FontAscent + FontDescent, FontAscent + FontDescent);
 
             if (framing.framingStyle == FramingStyle.Line)
                 rect.Inflate(framing.lineWidth, framing.lineWidth);

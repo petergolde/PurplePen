@@ -1049,11 +1049,10 @@ namespace PurplePen.MapModel {
             if (width > 0) {
                 // Formatted text
                 points = new PointF[4];
-                float topAdjust = symdef.FontEmHeight - (symdef.FontAscent + symdef.FontDescent);
                 float height = size.Height + symdef.FontEmHeight - symdef.FontAscent;
 
                 // OCAD always aligns formatted text by the top.
-                topAdjust = symdef.GetOcadTopAdjustment(true, version);
+                float topAdjust = symdef.GetOcadTopAdjustment(true, version);
 
                 location.Y -= (float)(topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
@@ -1070,17 +1069,28 @@ namespace PurplePen.MapModel {
             }
             else {
                 // Unformatted text
-                float topAdjust = 0;
                 float height = symdef.FontEmHeight;
                 float descent = symdef.FontDescent;
                 points = new PointF[5];
 
                 // OCAD top align uses the W height, while we use the Font ascent. Adjust for the small difference.
-                topAdjust = symdef.GetOcadTopAdjustment(false, version);
+                float topAdjust = symdef.GetOcadTopAdjustment(false, version);
 
                 location.Y -= (float) (topAdjust * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (topAdjust * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                 points[0] = location;
+
+                if (version >= 10) {
+                    if (symdef.VertAlignment == TextSymDefVertAlignment.TopAscent) {
+                        location.Y -= (float)(symdef.WHeight * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
+                        location.X -= (float)(symdef.WHeight * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
+                    }
+                    else if (symdef.VertAlignment == TextSymDefVertAlignment.Midpoint) {
+                        location.Y -= (float)((symdef.WHeight / 2) * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
+                        location.X -= (float)((symdef.WHeight / 2) * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
+                    }
+                }
+
                 location.Y -= (float) (descent * Math.Sin((angle + 90.0) / 360.0 * 2 * Math.PI));
                 location.X -= (float) (descent * Math.Cos((angle + 90.0) / 360.0 * 2 * Math.PI));
                 if (symdef.FontAlignment == TextSymDefHorizAlignment.Right) {
