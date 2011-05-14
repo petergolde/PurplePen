@@ -162,6 +162,16 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
+        public void TopText() {
+            CheckTest("toptext.txt");
+        }
+
+        [TestMethod]
+        public void MidText() {
+            CheckTest("midtext.txt");
+        }
+
+        [TestMethod]
         public void TextUnderline()
         {
             CheckTest("textunderline.txt");
