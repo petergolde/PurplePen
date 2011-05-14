@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Climb</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Column</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Control codes</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Controls</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Leg</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Courses</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Same symbol?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Course Summary for {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Control cross-reference for {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Neighbouring Controls</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>The following table shows all control pairs that are within {0} metres of each other. The same symbol column shows whether the two controls have the same primary symbol (column D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Missing Description Boxes</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Regular courses should indicate the amount of climb</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>All controls must have a main feature in column D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>When "between" is in column G, two features must be shown in columns D and E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>When "junction" or "crossing" is in column F, two features must be shown in columns D and E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Regular courses should have a finish circle</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Missing Items in Courses</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Course should have expected competitor load</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>No pin-punch pattern defined</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Missing Pin-Punch Patterns</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Score courses should have scores set for all controls or for no controls</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Missing Scores</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Regular courses should have a start triangle</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Score courses should have a start triangle</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>No problems found.</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Event Audit for {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Unused Controls</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>The following controls are present in the All Controls collection but are not used in any course. To remove them, use the "Remove Unused Controls" command on the "Event" menu. These controls will not be considered further in this report.</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controls, {2:0.0} km, {3} m climb)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controls, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Leg Length Report for {0}</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Control load</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Leg load</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Some or all courses do not have competitor loads set for them. The loads listed below may be incorrect or missing for this reason. To set competitor loads, select "Competitor Load" from the "Course" menu.</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(only legs used by more than one course appear in the following table)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Competitor Load Summary for {0}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>WARNING:</value>
+  </data>
+</root>
