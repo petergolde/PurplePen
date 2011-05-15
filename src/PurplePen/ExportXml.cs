@@ -151,7 +151,7 @@ namespace PurplePen
 
             Course course = eventDB.GetCourse(courseId);
             bool isScore = (course.kind == CourseKind.Score);
-            CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+            CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
             float distanceThisLeg = 0;
             int scoreSequence = 1;     // score courses need sequence #'s, even though there is no sequence.
 

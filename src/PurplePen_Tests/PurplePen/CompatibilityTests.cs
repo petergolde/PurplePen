@@ -112,6 +112,16 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void Version101()
+        {
+            TestLoadFile("compatibility\\Sample Event_101.ppen");
+            // Make sure first ordinal is correct.
+            EventDB eventDB = controller.GetEventDB();
+            Course course = eventDB.GetCourse(CourseId(3));
+            Assert.AreEqual(1, course.firstControlOrdinal);
+        }
+
+        [TestMethod]
         public void OldStyleCustomText()
         {
             TestLoadFile("compatibility\\customtext.ppen");

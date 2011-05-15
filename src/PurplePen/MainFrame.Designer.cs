@@ -82,6 +82,7 @@ namespace PurplePen
             this.saveAsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.createOcadFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.printDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -379,6 +380,7 @@ namespace PurplePen
             this.saveAsMenu,
             this.toolStripSeparator18,
             this.createOcadFilesMenu,
+            this.createRouteGadgetFilesMenu,
             this.createXmlMenu,
             this.toolStripMenuItem1,
             this.printDescriptionsMenu,
@@ -431,6 +433,12 @@ namespace PurplePen
             this.createOcadFilesMenu.Name = "createOcadFilesMenu";
             resources.ApplyResources(this.createOcadFilesMenu, "createOcadFilesMenu");
             this.createOcadFilesMenu.Click += new System.EventHandler(this.createOcadFilesMenu_Click);
+            // 
+            // createRouteGadgetFilesMenu
+            // 
+            this.createRouteGadgetFilesMenu.Name = "createRouteGadgetFilesMenu";
+            resources.ApplyResources(this.createRouteGadgetFilesMenu, "createRouteGadgetFilesMenu");
+            this.createRouteGadgetFilesMenu.Click += new System.EventHandler(this.createRouteGadgetFilesMenu_Click);
             // 
             // createXmlMenu
             // 
@@ -1746,6 +1754,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem mergeSymbolsMenu;
         private System.Windows.Forms.ToolStripMenuItem whiteOutMenu;
         private System.Windows.Forms.ToolStripMenuItem whiteOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem fontMetricsToolStripMenuItem;
 
     }

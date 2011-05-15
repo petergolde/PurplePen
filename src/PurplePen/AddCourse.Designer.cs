@@ -64,12 +64,14 @@ namespace PurplePen
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.firstControlLabel = new System.Windows.Forms.Label();
             this.descriptionAppearanceLabel = new System.Windows.Forms.Label();
             this.mapScaleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.oneToPrefixLabel = new System.Windows.Forms.Label();
             this.scaleCombo = new System.Windows.Forms.ComboBox();
             this.descKindCombo = new System.Windows.Forms.ComboBox();
+            this.firstControlUpDown = new System.Windows.Forms.NumericUpDown();
             this.secondaryTitleGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.secondaryTitleTextBox = new System.Windows.Forms.TextBox();
@@ -86,6 +88,7 @@ namespace PurplePen
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).BeginInit();
             this.secondaryTitleGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -110,11 +113,18 @@ namespace PurplePen
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.firstControlLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.descriptionAppearanceLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.mapScaleLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.descKindCombo, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.firstControlUpDown, 1, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // firstControlLabel
+            // 
+            resources.ApplyResources(this.firstControlLabel, "firstControlLabel");
+            this.firstControlLabel.Name = "firstControlLabel";
             // 
             // descriptionAppearanceLabel
             // 
@@ -154,6 +164,26 @@ namespace PurplePen
             resources.GetString("descKindCombo.Items1"),
             resources.GetString("descKindCombo.Items2")});
             this.descKindCombo.Name = "descKindCombo";
+            // 
+            // firstControlUpDown
+            // 
+            resources.ApplyResources(this.firstControlUpDown, "firstControlUpDown");
+            this.firstControlUpDown.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Name = "firstControlUpDown";
+            this.firstControlUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // secondaryTitleGroup
             // 
@@ -258,6 +288,7 @@ namespace PurplePen
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).EndInit();
             this.secondaryTitleGroup.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -292,5 +323,7 @@ namespace PurplePen
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox secondaryTitleTextBox;
         private System.Windows.Forms.Label secondaryTitleDescription;
+        private System.Windows.Forms.Label firstControlLabel;
+        private System.Windows.Forms.NumericUpDown firstControlUpDown;
     }
 }

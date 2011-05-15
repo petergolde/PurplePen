@@ -109,7 +109,7 @@ namespace PurplePen.Tests
             if (id.IsNone)
                 courseView = CourseView.CreateAllControlsView(eventDB);
             else
-                courseView = CourseView.CreateCourseView(eventDB, id, false);
+                courseView = CourseView.CreateCourseView(eventDB, id, true, true);
 
             Bitmap bmNew = RenderToBitmap(eventDB, courseView, format);
             TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, ""));
@@ -137,6 +137,18 @@ namespace PurplePen.Tests
             format.topToBottom = false;
 
             CheckRenderBitmap(TestUtil.GetTestFile("punchcards\\sample1.ppen"), CourseId(2), format);
+        }
+
+        [TestMethod]
+        public void AlternateStart1()
+        {
+            PunchcardFormat format = new PunchcardFormat();
+            format.boxesAcross = 9;
+            format.boxesDown = 3;
+            format.leftToRight = false;
+            format.topToBottom = false;
+
+            CheckRenderBitmap(TestUtil.GetTestFile("punchcards\\sample2.ppen"), CourseId(2), format);
         }
 
         [TestMethod]

@@ -61,7 +61,7 @@ namespace PurplePen.Tests
             if (courseId.IsNone)
                 courseView = CourseView.CreateAllControlsView(eventDB);
             else
-                courseView = CourseView.CreateCourseView(eventDB, courseId, false);
+                courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F);
@@ -135,6 +135,13 @@ namespace PurplePen.Tests
         {
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(3), false, "regular", new RectangleF(-10, -40, 120, 120));
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(3), true, "regular_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
+        public void RegularCourseWithInitialNumber()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), false, "initnum", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), true, "initnum_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]

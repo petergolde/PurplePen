@@ -486,6 +486,75 @@ namespace PurplePen
             return success;
         }
 
+        // Export RouteGadget files
+        public bool ExportRouteGadget(string xmlFileName, string gifFileName)
+        {
+            ExportRouteGadget exportRouteGadget = new ExportRouteGadget(symbolDB, eventDB, mapDisplay);
+
+            bool successXml = HandleExceptions(
+                delegate
+                {
+                    exportRouteGadget.ExportXml(xmlFileName);
+                },
+                MiscText.CannotCreateFile, xmlFileName);
+
+            bool successGif = HandleExceptions(
+                delegate
+                {
+                    exportRouteGadget.ExportGif(gifFileName);
+                },
+                MiscText.CannotCreateFile, gifFileName);
+
+            return successXml && successGif;
+        }
+
+        // Get the route gadget file names.
+        public void GetRouteGadgetFileNames(RouteGadgetCreationSettings settings, out string xmlFileName, out string gifFileName)
+        {
+            string outputDirectory;
+
+            // Process the fileDirectory and mapDirectory fields.
+            if (settings.fileDirectory) {
+                outputDirectory = Path.GetDirectoryName(FileName);
+            }
+            else if (settings.mapDirectory) {
+                outputDirectory = Path.GetDirectoryName(MapFileName);
+            }
+            else {
+                outputDirectory = settings.outputDirectory;
+            }
+
+            xmlFileName = Path.Combine(outputDirectory, settings.fileBaseName + ".xml");
+            gifFileName = Path.Combine(outputDirectory, settings.fileBaseName + ".gif");
+        }
+
+        // Get the list of files that will be overwritteing by creating RouteGadget files
+        public List<string> OverwritingRouteGadgetFiles(RouteGadgetCreationSettings settings)
+        {
+            string xmlFileName, gifFileName;
+
+            GetRouteGadgetFileNames(settings, out xmlFileName, out gifFileName);
+
+            List<string> overwrittenFiles = new List<string>();
+            if (File.Exists(xmlFileName))
+                overwrittenFiles.Add(xmlFileName);
+            if (File.Exists(gifFileName))
+                overwrittenFiles.Add(gifFileName);
+
+            return overwrittenFiles;
+        }
+
+
+        // Create the RouteGadgetFiles, given the settings.
+        public bool CreateRouteGadgetFiles(RouteGadgetCreationSettings settings)
+        {
+            string xmlFileName, gifFileName;
+
+            GetRouteGadgetFileNames(settings, out xmlFileName, out gifFileName);
+            return ExportRouteGadget(xmlFileName, gifFileName);
+        }
+
+
         // Get the list of tab names.
         public string[] GetTabNames()
         {
@@ -943,10 +1012,10 @@ namespace PurplePen
         }
 
         // Add a new course. If a unique start or finish control is found, it is added.
-        public void NewCourse(CourseKind courseKind, string name, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind)
+        public void NewCourse(CourseKind courseKind, string name, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
-            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, secondaryTitle, printScale, climb, descriptionKind, true);
+            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal, true);
             selectionMgr.SelectCourseView(newCourse);
             undoMgr.EndCommand(713);
         }
@@ -958,7 +1027,7 @@ namespace PurplePen
         }
 
         // Get the properties of the current course?
-        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind)
+        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind, out int firstControlOrdinal)
         {
             Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseId);
             courseKind = course.kind;
@@ -967,13 +1036,14 @@ namespace PurplePen
             printScale = course.printScale;
             climb = course.climb;
             descKind = course.descKind;
+            firstControlOrdinal = course.firstControlOrdinal;
         }
 
         // Change the properties of the current course.
-        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind)
+        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, secondaryTitle, printScale, climb, descriptionKind);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
             undoMgr.EndCommand(888);
         }
 

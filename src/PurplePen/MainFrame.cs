@@ -66,6 +66,7 @@ namespace PurplePen
         PunchPrintSettings punchPrintSettings = new PunchPrintSettings();     // printing settings for the description;
         CoursePrintSettings coursePrintSettings = new CoursePrintSettings();   // printing settings for courses.
         OcadCreationSettings ocadCreationSettingsPrevious = null;     // creation settings for OCAD creation, if it has been done before.
+        RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
 
         Uri helpFileUrl;                       // URL of the help file.
 
@@ -1005,7 +1006,7 @@ namespace PurplePen
             // If the dialog completed successfully, then add the course.
             if (result == DialogResult.OK) {
                 controller.NewCourse(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.SecondaryTitle,
-                    addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind);
+                    addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
             }
         }
 
@@ -1017,7 +1018,8 @@ namespace PurplePen
                 string courseName, secondaryTitle;
                 float printScale, climb;
                 DescriptionKind descKind;
-                controller.GetCurrentCourseProperties(out courseKind, out courseName, out secondaryTitle, out printScale, out climb, out descKind);
+                int firstControlOrdinal;
+                controller.GetCurrentCourseProperties(out courseKind, out courseName, out secondaryTitle, out printScale, out climb, out descKind, out firstControlOrdinal);
 
                 // Initialize the dialog
                 AddCourse addCourseDialog = new AddCourse();
@@ -1030,6 +1032,7 @@ namespace PurplePen
                 addCourseDialog.PrintScale = printScale;
                 addCourseDialog.Climb = climb;
                 addCourseDialog.DescKind = descKind;
+                addCourseDialog.FirstControlOrdinal = firstControlOrdinal;
 
                 // Display the dialog
                 DialogResult result = addCourseDialog.ShowDialog();
@@ -1037,7 +1040,7 @@ namespace PurplePen
                 // If the dialog completed successfully, then change the course.
                 if (result == DialogResult.OK) {
                     controller.ChangeCurrentCourseProperties(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.SecondaryTitle,
-                        addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind);
+                        addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
                 }
             }
             else {
@@ -1672,6 +1675,52 @@ namespace PurplePen
             createOcadFilesDialog.Dispose();
         }
 
+
+        private void createRouteGadgetFilesMenu_Click(object sender, EventArgs e)
+        {
+            // Get the settings for the dialog. If we've previously show the dialog, then
+            // use the previous settings. Note that the previous settings are wiped out when a new map file
+            // is loaded.
+            RouteGadgetCreationSettings settings;
+            if (routeGadgetCreationSettingsPrevious != null)
+                settings = routeGadgetCreationSettingsPrevious.Clone();
+            else {
+                // Default settings: creating in file directory, use format of the current map file.
+                settings = new RouteGadgetCreationSettings();
+
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
+                settings.fileBaseName = Path.GetFileNameWithoutExtension(controller.FileName);
+            }
+
+            // Initialize the dialog.
+            // CONSIDER: shouldn't have GetEventDB here! Do something different.
+            CreateRouteGadgetFiles createRouteGadgetFilesDialog = new CreateRouteGadgetFiles(controller.GetEventDB());
+            createRouteGadgetFilesDialog.RouteGadgetCreationSettings = settings;
+
+            // show the dialog; on success, create the files.
+            while (createRouteGadgetFilesDialog.ShowDialog(this) == DialogResult.OK) {
+                List<string> overwritingFiles = controller.OverwritingRouteGadgetFiles(createRouteGadgetFilesDialog.RouteGadgetCreationSettings);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
+                    overwriteDialog.Filenames = overwritingFiles;
+                    if (overwriteDialog.ShowDialog(this) == DialogResult.Cancel)
+                        continue;
+                }
+
+                // Save settings persisted between invocations of this dialog.
+                routeGadgetCreationSettingsPrevious = createRouteGadgetFilesDialog.RouteGadgetCreationSettings;
+                controller.CreateRouteGadgetFiles(createRouteGadgetFilesDialog.RouteGadgetCreationSettings);
+
+                break;
+            }
+
+            // And the dialog is done.
+            createRouteGadgetFilesDialog.Dispose();
+        }
+        
+        
         private void createXmlMenu_Click(object sender, EventArgs e)
         {
             // The default output for the XML is the same as the event file name, with xml extension.

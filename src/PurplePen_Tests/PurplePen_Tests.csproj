@@ -91,6 +91,7 @@
     <Compile Include="PurplePen\QueryEventTests.cs" />
     <Compile Include="PurplePen\ReportTests.cs" />
     <Compile Include="PurplePen\RotateModeTests.cs" />
+    <Compile Include="PurplePen\RouteGadgetTests.cs" />
     <Compile Include="PurplePen\SelectionDescriberTests.cs" />
     <Compile Include="PurplePen\SelectionMgrTests.cs" />
     <Compile Include="PurplePen\SetPrintAreaTests.cs" />

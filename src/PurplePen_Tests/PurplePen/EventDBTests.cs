@@ -163,6 +163,7 @@ namespace PurplePen.Tests
             course3.firstCourseControl = CourseControlId(2);
             course3.load = 125;
             course3.climb = 0;
+            course3.firstControlOrdinal = 7;
             course3.descKind = DescriptionKind.Text;
             eventDB.AddCourse(course3);
 
