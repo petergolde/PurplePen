@@ -936,6 +936,14 @@
     <EmbeddedResource Include="UnusedControls.sv.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\..\doc\userdocs\Sample\Sample Event.ppen">
+      <Link>Samples\Sample Event.ppen</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\doc\userdocs\Sample\SampleMap.ocd">
+      <Link>Samples\SampleMap.ocd</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
