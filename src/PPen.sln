@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_MapModel", "Test_MapMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUtil", "TestUtil\TestUtil.csproj", "{D50B6E2B-5E20-410D-B033-DEBB6B695E77}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = PPen1.vsmdi
@@ -164,6 +166,18 @@ Global
 		{D50B6E2B-5E20-410D-B033-DEBB6B695E77}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D50B6E2B-5E20-410D-B033-DEBB6B695E77}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D50B6E2B-5E20-410D-B033-DEBB6B695E77}.Release|x86.ActiveCfg = Release|Any CPU
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|Any CPU.ActiveCfg = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|Any CPU.Build.0 = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|Mixed Platforms.Build.0 = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|x86.ActiveCfg = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Debug|x86.Build.0 = Debug
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|Any CPU.ActiveCfg = Release
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|Any CPU.Build.0 = Release
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|Mixed Platforms.ActiveCfg = Release
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|Mixed Platforms.Build.0 = Release
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|x86.ActiveCfg = Release
+		{F9A33405-AD64-4FD2-AE34-212CBB2EEA38}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

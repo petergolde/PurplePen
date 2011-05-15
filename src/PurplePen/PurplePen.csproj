@@ -990,9 +990,9 @@
     <EmbeddedResource Include="Images\DeleteHandle.cur" />
     <EmbeddedResource Include="Images\MoveHandle.cur" />
     <EmbeddedResource Include="Images\logobkgd.png" />
-    <Content Include="latest_version.txt" />
+    <None Include="latest_version.txt" />
     <EmbeddedResource Include="MapView\DragCursor.cur" />
-    <Content Include="MapView\MapViewer.csproj" />
+    <None Include="MapView\MapViewer.csproj" />
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
