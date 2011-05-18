@@ -392,7 +392,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
         "ProductCode" = "8:{0ECEEB5F-58A5-45DE-AEB5-F016978EC87E}"
-        "PackageCode" = "8:{24CF8156-6AF7-47FE-A3C1-602FE7B6068A}"
+        "PackageCode" = "8:{BFEB4659-F895-427F-8040-E7B00C502BBB}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
