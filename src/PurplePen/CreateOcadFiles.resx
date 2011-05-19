@@ -136,7 +136,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=1.0.1.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -598,6 +598,6 @@
     <value>CreateOcadFiles</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.1.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
