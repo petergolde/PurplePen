@@ -15,20 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_122883FC6741BDA80C71371947BC45FE"
+        "MsmKey" = "8:_2ECFD27D8272442990DF0D18F6AA9DA7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_398B11DC950D81DC33259C2C611E394F"
         "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_122883FC6741BDA80C71371947BC45FE"
-        "OwnerKey" = "8:_7A2BBDAF46E46790618EA54E445150A3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2ECFD27D8272442990DF0D18F6AA9DA7"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_398B11DC950D81DC33259C2C611E394F"
+        "OwnerKey" = "8:_B40831A732A43D73D68D66F527EAD72A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -45,7 +45,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7A2BBDAF46E46790618EA54E445150A3"
+        "MsmKey" = "8:_B40831A732A43D73D68D66F527EAD72A"
         "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7A2BBDAF46E46790618EA54E445150A3"
+        "OwnerKey" = "8:_B40831A732A43D73D68D66F527EAD72A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_122883FC6741BDA80C71371947BC45FE"
+        "OwnerKey" = "8:_398B11DC950D81DC33259C2C611E394F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -168,14 +168,34 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_122883FC6741BDA80C71371947BC45FE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECFD27D8272442990DF0D18F6AA9DA7"
+            {
+            "SourcePath" = "8:..\\..\\doc\\userdocs\\Sample\\Sample Event.ppen"
+            "TargetName" = "8:Sample Event.ppen"
+            "Tag" = "8:"
+            "Folder" = "8:_E3E43A063E98401986DC0EB32B7FD497"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_398B11DC950D81DC33259C2C611E394F"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_122883FC6741BDA80C71371947BC45FE"
+                    "_398B11DC950D81DC33259C2C611E394F"
                     {
                     "Name" = "8:MapModel.dll"
                     "Attributes" = "3:512"
@@ -199,26 +219,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECFD27D8272442990DF0D18F6AA9DA7"
-            {
-            "SourcePath" = "8:..\\..\\doc\\userdocs\\Sample\\Sample Event.ppen"
-            "TargetName" = "8:Sample Event.ppen"
-            "Tag" = "8:"
-            "Folder" = "8:_E3E43A063E98401986DC0EB32B7FD497"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_683E9516E3F04C1EABA0AFCAA81FE7D4"
             {
             "SourcePath" = "8:..\\..\\doc\\userdocs\\Sample\\SampleMap.ocd"
@@ -239,14 +239,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7A2BBDAF46E46790618EA54E445150A3"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B40831A732A43D73D68D66F527EAD72A"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Map_GDIPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7A2BBDAF46E46790618EA54E445150A3"
+                    "_B40831A732A43D73D68D66F527EAD72A"
                     {
                     "Name" = "8:Map_GDIPlus.dll"
                     "Attributes" = "3:512"
@@ -392,7 +392,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
         "ProductCode" = "8:{0ECEEB5F-58A5-45DE-AEB5-F016978EC87E}"
-        "PackageCode" = "8:{BFEB4659-F895-427F-8040-E7B00C502BBB}"
+        "PackageCode" = "8:{103DDA50-EC1C-4FE0-9580-452CF79FAE1F}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -955,7 +955,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_75BEA61185F8480D8B278E736F729F55"
             {
-            "SourcePath" = "8:..\\PurplePen\\obj\\Release\\PurplePen.exe"
+            "SourcePath" = "8:..\\PurplePen\\obj\\Debug\\PurplePen.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"

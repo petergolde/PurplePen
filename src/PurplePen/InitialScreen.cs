@@ -90,7 +90,6 @@ namespace PurplePen
                     mainFrame.Activate();
 
                     // The initial screen is over and out.
-                    Close();
                     Dispose();
                 }
                 else {
@@ -121,7 +120,6 @@ namespace PurplePen
             mainFrame.Show();
             mainFrame.Activate();
 
-            Close();
             Dispose();      // The initial screen is over and out.
         }
 
@@ -143,7 +141,6 @@ namespace PurplePen
             mainFrame.Show();
             mainFrame.Activate();
 
-            Close();
             Dispose();      // The initial screen is over and out.
         }
 
@@ -178,7 +175,6 @@ namespace PurplePen
             mainFrame.Show();
             mainFrame.Activate();
 
-            Close();
             Dispose();      // The initial screen is over and out.
         }
 
@@ -202,6 +198,10 @@ namespace PurplePen
 
         private void quitButton_Click(object sender, EventArgs e)
         {
+            Quit();
+        }
+
+        private void Quit() {
             Close();
             Dispose();
             Application.ExitThread();
@@ -210,8 +210,7 @@ namespace PurplePen
         private void InitialScreen_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Shut down if the form is closed for some reason we don't understand.
-            if (e.CloseReason != CloseReason.UserClosing)
-                Application.Exit();
+            Application.Exit();
         }
 
         private void backgroundPanel_Paint(object sender, PaintEventArgs e)
