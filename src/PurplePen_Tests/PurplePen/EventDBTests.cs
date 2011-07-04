@@ -154,6 +154,7 @@ namespace PurplePen.Tests
             course2 = new Course(CourseKind.Normal, "Yellow", 15000, 2);
             course2.descKind = DescriptionKind.SymbolsAndText;
             course2.climb = 95;
+            course2.labelKind = ControlLabelKind.Code;
             course2.firstCourseControl = CourseControlId(0);
             course2.printArea = new RectangleF(50, 70, 200, 100);
             eventDB.AddCourse(course2);
@@ -164,6 +165,7 @@ namespace PurplePen.Tests
             course3.load = 125;
             course3.climb = 0;
             course3.firstControlOrdinal = 7;
+            course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
             eventDB.AddCourse(course3);
 

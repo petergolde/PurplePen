@@ -54,6 +54,9 @@ namespace PurplePen
             okButton.Enabled = false;           // disable until typed into
             descKindCombo.SelectedIndex = 0;
             courseKindCombo.SelectedIndex = 0;
+            labelKindCombo.SelectedIndex = 0;
+            scoreColumnCombo.SelectedIndex = 2;
+            CourseKindChanged();
         }
 
         public void SetCoursePropertiesTitle()
@@ -133,6 +136,41 @@ namespace PurplePen
                 case CourseKind.Score:
                     courseKindCombo.SelectedIndex = 1; break;
                 }
+
+                CourseKindChanged();
+            }
+        }
+
+
+        public ControlLabelKind ControlLabelKind
+        {
+            get
+            {
+                switch (this.labelKindCombo.SelectedIndex)
+                {
+                    case 0:
+                        return ControlLabelKind.Sequence;
+                    case 1:
+                        return ControlLabelKind.Code;
+                    case 2:
+                        return ControlLabelKind.SequenceAndCode;
+                    default:
+                        Debug.Fail("Bad control label kind???");
+                        return ControlLabelKind.Sequence;
+                }
+            }
+
+            set
+            {
+                switch (value)
+                {
+                    case ControlLabelKind.Sequence:
+                        labelKindCombo.SelectedIndex = 0; break;
+                    case ControlLabelKind.Code:
+                        labelKindCombo.SelectedIndex = 1; break;
+                    case ControlLabelKind.SequenceAndCode:
+                        labelKindCombo.SelectedIndex = 2; break;
+                }
             }
         }
 
@@ -175,6 +213,33 @@ namespace PurplePen
             set
             {
                 firstControlUpDown.Value = value;
+            }
+        }
+
+        public int ScoreColumn 
+        {
+            get {
+                if (CourseKind == CourseKind.Score) {
+                    switch (scoreColumnCombo.SelectedIndex) {
+                        case 0: return 0; // column A
+                        case 1: return 1; // column B
+                        case 2: return 7; // column H
+                        default: return -1; // None
+                    }
+                }
+                else { 
+                    return -1; // None;
+                }
+            }
+            set {
+                if (CourseKind == CourseKind.Score) {
+                    switch (value) {
+                        case 0: scoreColumnCombo.SelectedIndex = 0; break;
+                        case 1: scoreColumnCombo.SelectedIndex = 1; break;
+                        case 7: scoreColumnCombo.SelectedIndex = 2; break;
+                        default: scoreColumnCombo.SelectedIndex = 3; break;
+                    }
+                }
             }
         }
 
@@ -221,6 +286,27 @@ namespace PurplePen
             }
 
             return true;
+        }
+
+        private void courseKindCombo_SelectionChangeCommitted(object sender, EventArgs e) {
+            CourseKindChanged();
+        }
+
+        private void CourseKindChanged() {
+            bool enableScoreControls = (CourseKind == CourseKind.Score);
+            scoreColumnLabel.Visible = scoreColumnCombo.Visible = enableScoreControls;
+        }
+
+        private void scoreColumnCombo_SelectionChangeCommitted(object sender, EventArgs e) {
+            // Column A as Score Column means we need to display only codes, since there are no sequence numbers on the description.
+            if (ScoreColumn == 0)
+                ControlLabelKind = ControlLabelKind.Code;
+        }
+
+        private void labelKindCombo_SelectionChangeCommitted(object sender, EventArgs e) {
+            // Any seeting except code is incompatible with column A as score column.
+            if (ControlLabelKind != ControlLabelKind.Code && ScoreColumn == 0)
+                ScoreColumn = 1;
         }
     }
 }

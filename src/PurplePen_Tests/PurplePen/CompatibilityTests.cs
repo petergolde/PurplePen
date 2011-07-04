@@ -116,9 +116,15 @@ namespace PurplePen.Tests
         {
             TestLoadFile("compatibility\\Sample Event_101.ppen");
             // Make sure first ordinal is correct.
+            // Make sure label kind is correct.
             EventDB eventDB = controller.GetEventDB();
             Course course = eventDB.GetCourse(CourseId(3));
             Assert.AreEqual(1, course.firstControlOrdinal);
+            Assert.AreEqual(ControlLabelKind.Sequence, course.labelKind);
+            Assert.AreEqual(-1, course.scoreColumn);
+            course = eventDB.GetCourse(CourseId(6));
+            Assert.AreEqual(ControlLabelKind.Code, course.labelKind);
+            Assert.AreEqual(0, course.scoreColumn);
         }
 
         [TestMethod]

@@ -152,6 +152,18 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ScoreCourseSequence() {
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), false, "scoreseq", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), true, "scoreseq_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
+        public void ScoreCourseSequenceAndCode() {
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), false, "scoreseqcode", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), true, "scoreseqcode_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
         public void AllControls()
         {
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Id<Course>.None, false, "all_controls", new RectangleF(-20, -50, 160, 160));

@@ -314,6 +314,7 @@ namespace PurplePen
 
             descriptionControl.Description = controller.GetDescription(out kind);
             descriptionControl.CourseKind = kind;
+            descriptionControl.ScoreColumn = controller.GetScoreColumn();
             descriptionControl.LangId = controller.GetDescriptionLanguage();
         }
 
@@ -1005,7 +1006,7 @@ namespace PurplePen
 
             // If the dialog completed successfully, then add the course.
             if (result == DialogResult.OK) {
-                controller.NewCourse(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.SecondaryTitle,
+                controller.NewCourse(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
                     addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
             }
         }
@@ -1019,7 +1020,9 @@ namespace PurplePen
                 float printScale, climb;
                 DescriptionKind descKind;
                 int firstControlOrdinal;
-                controller.GetCurrentCourseProperties(out courseKind, out courseName, out secondaryTitle, out printScale, out climb, out descKind, out firstControlOrdinal);
+                ControlLabelKind labelKind;
+                int scoreColumn;
+                controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out descKind, out firstControlOrdinal);
 
                 // Initialize the dialog
                 AddCourse addCourseDialog = new AddCourse();
@@ -1033,13 +1036,15 @@ namespace PurplePen
                 addCourseDialog.Climb = climb;
                 addCourseDialog.DescKind = descKind;
                 addCourseDialog.FirstControlOrdinal = firstControlOrdinal;
+                addCourseDialog.ControlLabelKind = labelKind;
+                addCourseDialog.ScoreColumn = scoreColumn;
 
                 // Display the dialog
                 DialogResult result = addCourseDialog.ShowDialog();
 
                 // If the dialog completed successfully, then change the course.
                 if (result == DialogResult.OK) {
-                    controller.ChangeCurrentCourseProperties(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.SecondaryTitle,
+                    controller.ChangeCurrentCourseProperties(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
                         addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
                 }
             }

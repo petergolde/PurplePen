@@ -76,6 +76,8 @@ namespace PurplePen
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
 
+        private int scoreColumn;                // column to put score into.
+
         private int normalControlCount;         // number of normal controls.
         private float totalPoints;              // total points.
         private float totalLength;              // total length.
@@ -127,6 +129,16 @@ namespace PurplePen
             }
         }
 
+        // Get the label kind to use.
+        public ControlLabelKind ControlLabelKind {
+            get {
+                if (courseId.IsNone)
+                    return ControlLabelKind.Code;
+                else
+                    return eventDB.GetCourse(courseId).labelKind;
+            }
+        }
+
         public string CourseName
         {
             get { return courseName; }
@@ -159,6 +171,10 @@ namespace PurplePen
             {
                 return normalControlCount;
             }
+        }
+
+        public int ScoreColumn {
+            get { return scoreColumn; }
         }
 
         public float MapScale
@@ -460,6 +476,7 @@ namespace PurplePen
             int ordinal;
 
             courseView.courseName = course.name;
+            courseView.scoreColumn = -1;
 
             courseControlId = course.firstCourseControl;
             ordinal = course.firstControlOrdinal;
@@ -506,6 +523,7 @@ namespace PurplePen
             Id<CourseControl> courseControlId;
 
             courseView.courseName = course.name;
+            courseView.scoreColumn = course.scoreColumn;
 
             courseControlId = course.firstCourseControl;
 
@@ -516,7 +534,7 @@ namespace PurplePen
                 controlView.courseControlId = courseControlId;
                 controlView.controlId = courseControl.control;
 
-                // No ordinals in a score course.
+                // Ordinals assigned after sorting.
                 controlView.ordinal = -1;
                 controlView.variation = (char)0;
 
@@ -542,6 +560,15 @@ namespace PurplePen
                 else
                     return Util.CompareCodes(control1.code, control2.code);
             });
+
+            // Assign ordinals, if applicable. If scores in column A, then no ordinals will be assigned.
+            if (courseView.scoreColumn != 0) {
+                int ordinal = 1;
+                foreach (ControlView control in courseView.controlViews) {
+                    if (eventDB.GetControl(control.controlId).kind == ControlPointKind.Normal)
+                        control.ordinal = ordinal++;
+                }
+            }
 
             courseView.Finish();
             return courseView;
