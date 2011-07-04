@@ -3,9 +3,9 @@
     <title>My New Event</title>
     <map kind="OCAD" scale="10000" ignore-missing-fonts="false">marymoor.ocd</map>
     <all-controls print-scale="7500" description-kind="symbols" />
-    <numbering start="100" disallow-invertible="true" />
+    <numbering start="55" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
     <course-appearance />
-    <descriptions lang="de" />
+    <descriptions lang="en" />
   </event>
 </course-scribe-event>
