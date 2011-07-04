@@ -170,6 +170,21 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ScoreSymbolsColumnB() {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent4.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsColumnH() {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent5.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsNoColumn() {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent8.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
         public void ScoreText()
         {
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(3), DescriptionKind.Text);
@@ -344,6 +359,21 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ScoreSymbolsColumnBToMap() {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent4.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsColumnHToMap() {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent5.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsNoColumnToMap() {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent8.coursescribe"), CourseId(7), DescriptionKind.Symbols);
+        }
+        
+        [TestMethod]
         public void ScoreTextToMap()
         {
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(3), DescriptionKind.Text);
@@ -410,67 +440,67 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AllControlsSymbolsPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(0, DescriptionKind.Symbols);
+            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.Symbols);
         }
 
         [TestMethod]
         public void AllControlsTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(0, DescriptionKind.Text);
+            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.Text);
         }
 
         [TestMethod]
         public void AllControlsSymbolsAndTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(0, DescriptionKind.SymbolsAndText);
+            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.SymbolsAndText);
         }
 
         [TestMethod]
         public void RegularSymbolsPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(4, DescriptionKind.Symbols);
+            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.Symbols);
         }
 
         [TestMethod]
         public void RegularTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(4, DescriptionKind.Text);
+            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.Text);
         }
 
         [TestMethod]
         public void RegularSymbolsAndTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(4, DescriptionKind.SymbolsAndText);
+            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.SymbolsAndText);
         }
 
         [TestMethod]
         public void ScoreSymbolsPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(5, DescriptionKind.Symbols);
+            CheckRenderBitmapPixelAtATime(CourseId(5), DescriptionKind.Symbols);
         }
 
         [TestMethod]
         public void ScoreTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(3, DescriptionKind.Text);
+            CheckRenderBitmapPixelAtATime(CourseId(3), DescriptionKind.Text);
         }
 
         [TestMethod]
         public void ScoreSymbolsAndTextPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(5, DescriptionKind.SymbolsAndText);
+            CheckRenderBitmapPixelAtATime(CourseId(5), DescriptionKind.SymbolsAndText);
         }
 
         [TestMethod]
         public void RegularSymbols2PixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(6, DescriptionKind.Symbols);
+            CheckRenderBitmapPixelAtATime(CourseId(6), DescriptionKind.Symbols);
         }
 
         [TestMethod]
         public void EmptySymbolsPixelAtATime()
         {
-            CheckRenderBitmapPixelAtATime(2, DescriptionKind.Symbols);
+            CheckRenderBitmapPixelAtATime(CourseId(2), DescriptionKind.Symbols);
         }
 
 #endif 
