@@ -120,6 +120,10 @@
 				<param name="Local" value="FileCreateOcadFiles.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create RouteGadget Files...">
+				<param name="Local" value="FileCreateRouteGadget.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Create E-Punch Interchange File...">
 				<param name="Local" value="FileCreateXml.htm">
 				</OBJECT>

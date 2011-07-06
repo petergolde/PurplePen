@@ -74,7 +74,7 @@ namespace PurplePen
             this.nameGroupBox = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fileNameTextBox = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.learnMoreLink = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.folderGroupBox.SuspendLayout();
             this.nameGroupBox.SuspendLayout();
@@ -161,11 +161,12 @@ namespace PurplePen
             resources.ApplyResources(this.fileNameTextBox, "fileNameTextBox");
             this.fileNameTextBox.Name = "fileNameTextBox";
             // 
-            // linkLabel1
+            // learnMoreLink
             // 
-            resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.TabStop = true;
+            resources.ApplyResources(this.learnMoreLink, "learnMoreLink");
+            this.learnMoreLink.Name = "learnMoreLink";
+            this.learnMoreLink.TabStop = true;
+            this.learnMoreLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.learnMoreLink_LinkClicked);
             // 
             // label2
             // 
@@ -179,12 +180,12 @@ namespace PurplePen
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.learnMoreLink);
             this.Controls.Add(this.nameGroupBox);
             this.Controls.Add(this.folderGroupBox);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.cancelButton);
-            this.HelpTopic = "FileCreateOcadFiles.htm";
+            this.HelpTopic = "FileCreateRouteGadget.htm";
             this.Name = "CreateRouteGadgetFiles";
             this.folderGroupBox.ResumeLayout(false);
             this.folderGroupBox.PerformLayout();
@@ -209,7 +210,7 @@ namespace PurplePen
         private System.Windows.Forms.GroupBox nameGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox fileNameTextBox;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel learnMoreLink;
         private System.Windows.Forms.Label label2;
     }
 }

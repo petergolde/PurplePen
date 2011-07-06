@@ -122,6 +122,9 @@ namespace PurplePen
             selectOtherDirectoryButton.Visible = otherDirectory.Checked;
         }
 
+        private void learnMoreLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            Util.ShowHelpTopic(this, HelpTopic);
+        }
     }
 
 
