@@ -582,7 +582,7 @@ namespace PurplePen.MapModel
                 case 3: // circle
                     float width = ToWorldDimensions(elt.stLineWidth);
                     float diameter = ToWorldDimensions(elt.stDiameter);
-                    if (version >= 9)
+                    if (version >= 9 && diameter > width)
                         diameter += width;              // diameter is from middle of line in OCAD 9+, from outer edges in OCAD 6-8.
                     glyph.AddCircle(color, PointFromOcadCoord(elt.stCoords[0]), width, diameter);
                     break;

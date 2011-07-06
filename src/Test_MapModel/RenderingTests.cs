@@ -706,6 +706,11 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTest("Clouds.txt", false, true, 7, 10);
         }
+
+        [TestMethod]
+        public void LordHill() {
+            CheckTest("LordHill.txt", false, false, 6, 10);
+        }
     }
 
 }

@@ -219,37 +219,67 @@ namespace PurplePen.MapModel
         // Draw an line with a pen.
         public void DrawLine(object penKey, PointF start, PointF finish)
         {
-            Graphics.DrawLine(GetPen(penKey), start, finish);
+            try {
+                Graphics.DrawLine(GetPen(penKey), start, finish);
+            }
+            catch (OutOfMemoryException) { 
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw an arc with a pen.
         public void DrawArc(object penKey, RectangleF boundingRect, float startAngle, float sweepAngle)
         {
-            Graphics.DrawArc(GetPen(penKey), boundingRect, startAngle, sweepAngle);
+            try {
+                Graphics.DrawArc(GetPen(penKey), boundingRect, startAngle, sweepAngle);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw an ellipse with a pen.
         public void DrawEllipse(object penKey, PointF center, float radiusX, float radiusY)
         {
-            Graphics.DrawEllipse(GetPen(penKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            try {
+                Graphics.DrawEllipse(GetPen(penKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Fill an ellipse with a brush.
         public void FillEllipse(object brushKey, PointF center, float radiusX, float radiusY)
         {
-            Graphics.FillEllipse(GetBrush(brushKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            try {
+                Graphics.FillEllipse(GetBrush(brushKey), center.X - radiusX, center.Y - radiusY, 2 * radiusX, 2 * radiusY);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw a rectangle with a pen.
         public void DrawRectangle(object penKey, RectangleF rect)
         {
-            Graphics.DrawRectangle(GetPen(penKey), rect.X, rect.Y, rect.Width, rect.Height);
+            try {
+                Graphics.DrawRectangle(GetPen(penKey), rect.X, rect.Y, rect.Width, rect.Height);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Fill a rectangle with a brush.
         public void FillRectangle(object brushKey, RectangleF rect)
         {
-            Graphics.FillRectangle(GetBrush(brushKey), rect.X, rect.Y, rect.Width, rect.Height);
+            try {
+                Graphics.FillRectangle(GetBrush(brushKey), rect.X, rect.Y, rect.Width, rect.Height);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw a polygon with a brush
@@ -280,7 +310,12 @@ namespace PurplePen.MapModel
         // Fill a polygon with a brush
         public void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode)
         {
-            Graphics.FillPolygon(GetBrush(brushKey), pts, windingMode);
+            try {
+                Graphics.FillPolygon(GetBrush(brushKey), pts, windingMode);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw a path with a pen.
@@ -299,7 +334,12 @@ namespace PurplePen.MapModel
         // Fill a path with a brush.
         public void FillPath(object brushKey, object pathKey)
         {
-            Graphics.FillPath(GetBrush(brushKey), GetGraphicsPath(pathKey));
+            try {
+                Graphics.FillPath(GetBrush(brushKey), GetGraphicsPath(pathKey));
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw text with upper-left corner of text at the given locations.
@@ -312,6 +352,9 @@ namespace PurplePen.MapModel
             catch (System.Runtime.InteropServices.ExternalException) {
                 // Do nothing
             }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         // Draw text outline with upper-left corner of text at the given locations.
@@ -322,7 +365,12 @@ namespace PurplePen.MapModel
             Debug.Assert(gdiFont.Unit == GraphicsUnit.World);
 
             grPath.AddString(text, gdiFont.FontFamily, (int)gdiFont.Style, gdiFont.Size, upperLeft, stringFormat);
-            Graphics.DrawPath(GetPen(penKey), grPath);
+            try {
+                Graphics.DrawPath(GetPen(penKey), grPath);
+            }
+            catch (OutOfMemoryException) {
+                // Sometimes happens with very small items. Nothing to do but ignore it.
+            }
         }
 
         public bool HasPath(object pathKey) {

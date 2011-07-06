@@ -645,5 +645,10 @@ namespace TestWpfMap
         {
             CheckTest("arialnarrow.txt", false, false, 9, 9);
         }
+
+        [TestMethod]
+        public void LordHill() {
+            CheckTest("LordHill.txt", false, false, 6, 10);
+        }
     }
 }
