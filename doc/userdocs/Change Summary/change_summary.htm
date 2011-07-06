@@ -35,7 +35,7 @@ set it to another value as a way to handle multi-part courses and other special
 situations.</p>
 </li>
 	<li>
-	<p>You can specify the style to print the lables on control circles -- the 
+	<p>You can specify the style to print the labels on control circles -- the 
 	usual sequence number, the control code, or both (e.g., "4-234"). Thanks to 
 	Andy Simpson for contributing code for this feature.</p>
 </li>
@@ -50,6 +50,10 @@ situations.</p>
 <p>When a font cannot be found, and bold and/or italic was specified, uses
 the bold and/or italic version of Arial (matching OCAD's behavior), instead of the
 non-bold, non-italic Arial.</p>
+</li>
+	<li>
+	<p>Fixed a bug that would result in OutOfMemoryException when drawing 
+	certain OCAD maps.</p>
 </li>
 </ul>
 <h2>Changes in 1.0.2 </h2>
