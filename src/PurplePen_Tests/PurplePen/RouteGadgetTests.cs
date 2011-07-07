@@ -211,6 +211,8 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(ppenFileName, true);
             Assert.IsTrue(success);
 
+            controller.MapDisplay.SetCourse(controller.GetCourseLayout());
+
             success = controller.ExportRouteGadget(xmlFileName, gifFileName);
             Assert.IsTrue(success);
 

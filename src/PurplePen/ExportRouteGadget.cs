@@ -58,6 +58,7 @@ namespace PurplePen
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
             this.mapDisplay = mapDisplay.Clone();
+            this.mapDisplay.SetCourse(null);
         }
 
         public void ExportXml(string xmlFileName)
