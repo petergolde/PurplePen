@@ -44,6 +44,7 @@ namespace PurplePen
     partial class CourseSelector: UserControl
     {
         private bool showAllControls;
+        private bool showCourseParts;
         private EventDB eventDB;
 
         private bool loaded = false;
@@ -65,6 +66,18 @@ namespace PurplePen
             }
         }
 
+        public bool ShowCourseParts
+        {
+            get
+            {
+                return showCourseParts;
+            }
+            set
+            {
+                showCourseParts = value;
+            }
+        }
+
         internal EventDB EventDB
         {
             get
@@ -78,6 +91,7 @@ namespace PurplePen
         }
 
         // Get or set the selected courses.
+        // UNDONE MAPEXCHANGE - remove use of this property
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
         public Id<Course>[] SelectedCourses
         {
@@ -105,7 +119,9 @@ namespace PurplePen
             get
             {
                 LoadList();
+
                 List<CourseDesignator> list = new List<CourseDesignator>();
+
                 foreach (TreeNode node in courseTreeView.Nodes) {
                     if (node.Checked){
                         list.Add((CourseDesignator)(node.Tag));
@@ -118,6 +134,7 @@ namespace PurplePen
             set
             {
                 LoadList();
+
                 foreach (TreeNode node in courseTreeView.Nodes) {
                     node.Checked = Array.IndexOf(value, ((CourseDesignator) (node.Tag))) >= 0;
                 }
@@ -149,14 +166,79 @@ namespace PurplePen
                 }
 
                 foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                    courseTreeView.Nodes.Add(new TreeNode(eventDB.GetCourse(courseId).name) { 
-                        Tag = new CourseDesignator(courseId),
-                        Checked = true
-                    });
+                    TreeNode[] parts = null;
+
+                    // If the course has parts, get all the parts.
+                    int numberParts = QueryEvent.CountCourseParts(eventDB, courseId);
+                    if (showCourseParts && numberParts > 1) {
+                        parts = new TreeNode[numberParts];
+                        for (int part = 0; part < numberParts; ++part) {
+                            parts[part] = new TreeNode(string.Format(MiscText.PartN, part))
+                            {
+                                Tag = new CourseDesignator(courseId, part),
+                                Checked = true
+                            };
+                        }
+                    }
+
+                    // Add node for the course to the tree.
+                    TreeNode node;
+                    if (parts != null)
+                        node = new TreeNode(eventDB.GetCourse(courseId).name, parts);
+                    else
+                        node = new TreeNode(eventDB.GetCourse(courseId).name);
+
+                    node.Tag = new CourseDesignator(courseId);
+                    node.Checked = true;
+                    courseTreeView.Nodes.Add(node);
                 }
 
+                courseTreeView.ExpandAll();
                 loaded = true;
             }
+        }
+
+        // Prevent tree nodes from being collapsed.
+        private void courseTreeView_BeforeCollapse(object sender, TreeViewCancelEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private bool inCheckUpdating = false;
+
+        private void courseTreeView_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (!inCheckUpdating) {
+                inCheckUpdating = true;
+
+                TreeNode node = e.Node;
+                if (node.Level == 0)
+                    UpdateChildNodes(node);
+                else
+                    UpdateNodeBasedOnChildren(node.Parent);
+
+                inCheckUpdating = false;
+            }
+        }
+
+        // Set all children to checked/unchecked based on the current node state.
+        void UpdateChildNodes(TreeNode node)
+        {
+            bool isChecked = node.Checked;
+            foreach (TreeNode childNode in node.Nodes)
+                childNode.Checked = isChecked;
+        }
+
+        // Update parent node to checked iff all children are checked.
+        void UpdateNodeBasedOnChildren(TreeNode parent)
+        {
+            bool anyUnchecked = false;
+
+            foreach (TreeNode childNode in parent.Nodes)
+                if (!childNode.Checked)
+                    anyUnchecked = true;
+
+            parent.Checked = !anyUnchecked;
         }
     }
 }

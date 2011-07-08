@@ -94,8 +94,12 @@ namespace PurplePen
             // 
             this.courseTreeView.CheckBoxes = true;
             resources.ApplyResources(this.courseTreeView, "courseTreeView");
+            this.courseTreeView.LineColor = System.Drawing.Color.White;
             this.courseTreeView.Name = "courseTreeView";
+            this.courseTreeView.ShowPlusMinus = false;
             this.courseTreeView.ShowRootLines = false;
+            this.courseTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.courseTreeView_AfterCheck);
+            this.courseTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.courseTreeView_BeforeCollapse);
             // 
             // CourseSelector
             // 

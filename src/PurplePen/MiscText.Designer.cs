@@ -721,6 +721,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to part {0}.
+        /// </summary>
+        internal static string PartN {
+            get {
+                return ResourceManager.GetString("PartN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to plural.
         /// </summary>
         internal static string Plural {

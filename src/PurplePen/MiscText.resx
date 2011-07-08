@@ -398,4 +398,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <value>MX</value>
     <comment>Abbreviation for "Map Exchange"</comment>
   </data>
+  <data name="PartN" xml:space="preserve">
+    <value>part {0}</value>
+  </data>
 </root>
