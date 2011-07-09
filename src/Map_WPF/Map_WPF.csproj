@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,15 +10,35 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Map_WPF</RootNamespace>
     <AssemblyName>Map_WPF</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -27,7 +47,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;WPF</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -43,56 +63,37 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PurplePen\Map\Bezier.cs">
-      <Link>Bezier.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\Glyph.cs">
-      <Link>Glyph.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\GraphicsTarget.cs">
-      <Link>GraphicsTarget.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\InputOutput.cs">
-      <Link>InputOutput.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\LZWCompression.cs">
-      <Link>LZWCompression.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\Map.cs">
-      <Link>Map.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\OcadExport.cs">
-      <Link>OcadExport.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\OcadFileFormat.cs">
-      <Link>OcadFileFormat.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\OcadImport.cs">
-      <Link>OcadImport.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\Symbol.cs">
-      <Link>Symbol.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\SymColor.cs">
-      <Link>SymColor.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\SymDef.cs">
-      <Link>SymDef.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\SymPath.cs">
-      <Link>SymPath.cs</Link>
-    </Compile>
-    <Compile Include="..\PurplePen\Map\Util.cs">
-      <Link>Util.cs</Link>
-    </Compile>
-    <Compile Include="PointRect.cs" />
+    <Compile Include="WpfGraphicsTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MapModel\MapModel.csproj">
+      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
+      <Name>MapModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

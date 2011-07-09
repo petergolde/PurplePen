@@ -501,7 +501,9 @@ namespace PurplePen
 
             // Go through each course, and cross-reference.
             for (int col = 0; col < coursesToXref.Length; ++col) {
+                CourseView view = CourseView.CreateCourseView(eventDB, coursesToXref[col], false);
                 CourseView view = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(coursesToXref[col]));
+                CourseView view = CourseView.CreateCourseView(eventDB, coursesToXref[col], true, true);
                 foreach (CourseView.ControlView controlView in view.ControlViews) {
                     int row = Array.IndexOf(controlsToXref, controlView.controlId);
 
@@ -610,7 +612,9 @@ namespace PurplePen
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
                 BeginTableRow();
+                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, false);
                 CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
 
                 // Don't include score courses in the leg length report.
                 if (courseView.Kind == CourseView.CourseViewKind.Score)

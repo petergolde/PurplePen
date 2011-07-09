@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Tutti I Controlli</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>File Purple Pen|*.ppen|Tutti i file|*.*</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>File Purple Pen|*.ppen</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Nuovo Evento...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Apri...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Salva</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Salva &amp;Come...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Crea &amp;File OCAD...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Crea File Di Interscambio &amp;E-Punch</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>Stampa &amp;Descrizioni</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Stampa &amp;Corsi...</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Questo Corso</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Tutti I Corsi</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Imposta Stampa &amp;Area</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>&amp;Lingua Programma...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>E&amp;sci</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Pulisci Selezione</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Annulla</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>&amp;Ripristina</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Cancella</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Modifica</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Corso Intero</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>&amp;Mappa Intera</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>M&amp;olto Basso</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Basso</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Medio</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Alto</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Pieno</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Intensità Mappa</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Basso</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Qualità Mappa</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Tutti I Controlli</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Visualizza</value>
+  </data>
+  <data name="changeMapFileMenu.Text" xml:space="preserve">
+    <value>&amp;File Mappa...</value>
+  </data>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>Cambia &amp;Codici Di Controllo...</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>&amp;Numerazione Automatica</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>Rimuovi Controlli &amp;Inutilizzati</value>
+  </data>
+  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
+    <value>Personalizza &amp;Descrizione Del Testo...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Personalizza &amp;Aspetto Del Corso...</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nto</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Aggiungi Corso</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Rimuovi Corso</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>&amp;Proprietà...</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Ordine Corso...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Corso</value>
+  </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Inizio</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Controllo</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Fine</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Descrizioni</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Area Fuori Dai Limiti</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Area Pericolosa</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Posizione Dell'Acqua</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Posizione Del Primo Soccorso</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Confine Non Attraversabile</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Oggetto Speciale</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Linea Di Testo</value>
+  </data>
+  <data name="deleteItemMenu.Text" xml:space="preserve">
+    <value>&amp;Cancella</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Cambia &amp;Testo</value>
+  </data>
+  <data name="rotateMenu.Text" xml:space="preserve">
+    <value>R&amp;uota</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Oggetto</value>
+  </data>
+  <data name="courseSummaryMenu.Text" xml:space="preserve">
+    <value>&amp;Sommario Corso</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Riguardo A Purple Pen</value>
+  </data>
+  <data name="addStartToolStripButton.Text" xml:space="preserve">
+    <value>Aggiungi Inizio</value>
+  </data>
+  <data name="addControlToolStripButton.Text" xml:space="preserve">
+    <value>Aggiungi Controllo</value>
+  </data>
+  <data name="addFinishToolStripButton.Text" xml:space="preserve">
+    <value>Aggiungi Fine</value>
+  </data>
+  <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Area Fuori Dai Limiti</value>
+  </data>
+  <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Area Pericolosa</value>
+  </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Posizione Dell'Acqua</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Posizione Del Primo Soccorso</value>
+  </data>
+  <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Confine Non Attraversabile</value>
+  </data>
+  <data name="textToolStripMenuItem.Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
+</root>

@@ -70,6 +70,30 @@ namespace PurplePen
             default: xmlinput.BadXml("Invalid description-kind '{0}'", descKindText); return DescriptionKind.Symbols;
             }
         }
+
+        public static void WriteScoreColumnAttribute(System.Xml.XmlTextWriter xmloutput, int scoreColumn)
+        {
+            string scoreColumnText = null;
+            switch (scoreColumn) {
+                case -1: scoreColumnText = "none"; break;
+                case 0: scoreColumnText = "A"; break;
+                case 1: scoreColumnText = "B"; break;
+                case 7: scoreColumnText = "H"; break;
+            }
+            if (scoreColumnText != null)
+                xmloutput.WriteAttributeString("score-column", scoreColumnText);
+        }
+
+        public static int ReadScoreColumnAttribute(XmlInput xmlinput) {
+            string scoreColumnText = xmlinput.GetAttributeString("score-column", "").Trim().ToUpper();
+            switch (scoreColumnText) {
+                case "A": return 0; 
+                case "B": return 1; 
+                case "H": return 7; 
+                case "NONE": return -1; 
+                default: return 0; // prior default was column A
+            }
+        }
     }
 
     public class PunchPattern: ICloneable
@@ -512,6 +536,14 @@ namespace PurplePen
         Score                            // A score course
     }
 
+    // The diffrent kinds of control labelling
+    public enum ControlLabelKind
+    {
+        Sequence,                         // Control number only
+        Code,                           // Control code only
+        SequenceAndCode                   // Control number and code
+    }
+
     // The different kinds of control descriptions
     public enum DescriptionKind
     {
@@ -526,11 +558,14 @@ namespace PurplePen
     {
         public CourseKind kind;         // The kind of course
         public string name;             // Name of the course
+        public ControlLabelKind labelKind;// Kind of label for controls on the map
         public int sortOrder;             // Order this course is sorted in. Must be >0, and unique among all courses.
         public string secondaryTitle;   // Secondary title line, or null if none.
         public float printScale;        // Print scale of the course
         public float climb;             // Climb in meters, or negative for no climb.
         public int load;                 // Competitor load, or negative for no load set.
+        public int firstControlOrdinal;  // Ordinal number of first control (usually 1 for a normal course.)
+        public int scoreColumn;         // column for score, or -1 for none (must be -1 for a non-score course)
         public DescriptionKind descKind;// Kind of description to print
         public RectangleF printArea;  // print area, or empty if no defined print area.
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
@@ -543,10 +578,13 @@ namespace PurplePen
         {
             this.kind = kind;
             this.name = name;
-            this.printScale = printScale;
+            this.printScale = printScale; 
             this.sortOrder = sortOrder;
+            this.labelKind = (kind == CourseKind.Score) ? ControlLabelKind.Code : ControlLabelKind.Sequence;
             this.climb = -1;
             this.load = -1;
+            this.firstControlOrdinal = 1;
+            this.scoreColumn = -1;
         }
 
         public void Validate(Id<Course> id, EventDB.ValidateInfo validateInfo)
@@ -556,6 +594,13 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Course '{0}' should have a name", id));
             if (sortOrder <= 0)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid sort order {1}", id, sortOrder));
+            if (firstControlOrdinal <= 0)
+                throw new ApplicationException(string.Format("Course '{0}' has invalid first control number {1}", id, firstControlOrdinal));
+            if (labelKind != ControlLabelKind.Code && labelKind != ControlLabelKind.Sequence && labelKind != ControlLabelKind.SequenceAndCode)
+                throw new ApplicationException(string.Format("Course '{0}' has invalid label kind {1}", id, labelKind));
+            if (kind == 0 && scoreColumn != -1)
+                throw new ApplicationException(string.Format("Course '{0}' has invalid score column", id, scoreColumn));
+
             nextCourseControl = firstCourseControl;
 
             // Check that no sort order is used more than once.
@@ -624,6 +669,8 @@ namespace PurplePen
 
             if (other.kind != kind)
                 return false;
+            if (other.labelKind != labelKind)
+                return false;
             if (other.name != name)
                 return false;
             if (other.sortOrder != sortOrder)
@@ -641,6 +688,12 @@ namespace PurplePen
             if (other.firstCourseControl != firstCourseControl)
                 return false;
             if (other.printArea != printArea)
+                return false;
+            if (other.firstControlOrdinal != firstControlOrdinal)
+                return false;
+            if (other.labelKind != labelKind)
+                return false;
+            if (other.scoreColumn != scoreColumn)
                 return false;
 
             return true;
@@ -661,9 +714,12 @@ namespace PurplePen
             printScale = 15000;
             descKind = DescriptionKind.Symbols;
             firstCourseControl = Id<CourseControl>.None;
+            firstControlOrdinal = 1;
+            labelKind = (kind == CourseKind.Score) ? ControlLabelKind.Code : ControlLabelKind.Sequence;
+            scoreColumn = (kind == CourseKind.Score) ? 0 : -1;
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options")) {
+            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels")) {
                 switch (xmlinput.Name) {
                     case "name":
                         name = xmlinput.GetContentString();
@@ -675,6 +731,7 @@ namespace PurplePen
 
                     case "first":
                         firstCourseControl = new Id<CourseControl>(xmlinput.GetAttributeInt("course-control"));
+                        firstControlOrdinal = xmlinput.GetAttributeInt("control-number", 1);
                         xmlinput.Skip();
                         break;
 
@@ -691,7 +748,20 @@ namespace PurplePen
                         printScale = xmlinput.GetAttributeFloat("print-scale");
                         climb = xmlinput.GetAttributeFloat("climb", -1F);
                         load = xmlinput.GetAttributeInt("load", -1);
+                        if (kind == CourseKind.Score) 
+                            scoreColumn = EventDBUtil.ReadScoreColumnAttribute(xmlinput);
                         descKind = EventDBUtil.ReadDescriptionKindAttribute(xmlinput);
+                        xmlinput.Skip();
+                        break;
+
+                    case "labels":
+                        string labelKindText = xmlinput.GetAttributeString("label-kind");
+                        switch (labelKindText) {
+                            case "sequence":                labelKind = ControlLabelKind.Sequence; break;
+                            case "code":                    labelKind = ControlLabelKind.Code; break;
+                            case "sequence-and-code":       labelKind = ControlLabelKind.SequenceAndCode; break;
+                            default:                        labelKind = ControlLabelKind.Sequence; break;
+                        }
                         xmlinput.Skip();
                         break;
                 }
@@ -719,9 +789,22 @@ namespace PurplePen
             if (secondaryTitle != null)
                 xmloutput.WriteElementString("secondary-title", secondaryTitle);
 
+            string labelKindText;
+            switch (labelKind) {
+                case ControlLabelKind.Sequence: labelKindText = "sequence"; break;
+                case ControlLabelKind.Code: labelKindText = "code"; break;
+                case ControlLabelKind.SequenceAndCode: labelKindText = "sequence-and-code"; break;
+                default: Debug.Fail("bad labelKind"); labelKindText = "none"; break;
+            }
+            xmloutput.WriteStartElement("labels");
+            xmloutput.WriteAttributeString("label-kind", labelKindText);
+            xmloutput.WriteEndElement();
+
             if (firstCourseControl.IsNotNone) {
                 xmloutput.WriteStartElement("first");
                 xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(firstCourseControl.id));
+                if (firstControlOrdinal != 1)
+                    xmloutput.WriteAttributeString("control-number", XmlConvert.ToString(firstControlOrdinal));
                 xmloutput.WriteEndElement();
             }
 
@@ -740,6 +823,9 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("climb", XmlConvert.ToString(climb));
             if (load >= 0)
                 xmloutput.WriteAttributeString("load", XmlConvert.ToString(load));
+
+            if (kind == CourseKind.Score) 
+                EventDBUtil.WriteScoreColumnAttribute(xmloutput, scoreColumn);
 
             EventDBUtil.WriteDescriptionKindAttribute(xmloutput, descKind);
 

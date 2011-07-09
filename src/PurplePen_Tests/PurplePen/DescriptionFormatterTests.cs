@@ -158,6 +158,115 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ScoreCourseFormatterColumnB() {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent3.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
+            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+
+            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
+            actual = writer.ToString();
+            expected =
+@"      | Sample Event 1                                |   [Sample Event 1]
+      | Score more!                                   |   [Score more!]
+      |Score 4          |155 points                   |   [155 points]
+(  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
+( 17) |    1|    5|     | 1.14|     |     |11.1S|     |   [S side of pit]
+(  2) |    2|   10|  0.3|  2.4|     |   2m|     |     |   [Upper boulder, 2m high]
+(  7) |    3|   10|     |  1.8|  1.8| 10.2|     |     |   [Small gully junction]
+( 11) |    4|   10|     |  5.2|  5.2| 10.1|11.15|     |   [Between path crossings]
+(  8) |    5|   10|     | 5.11| 5.20|     |11.15|     |   [Between building and statue]
+( 20) |    6|   10|     |  2.7|     |  6x7|     | 12.4|   [Stony ground, 6m by 7m (manned)]
+(  5) |    7|   10| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
+(  4) |    8|   20|     |  3.7|     |     |     | 12.1|   [very marshy spot]
+( 16) |    9|   20|     | 1.14|  8.4|  3.0|     |     |   [Overgrown pit, 3m deep]
+( 18) |   10|   20|     |  1.3|     |    4|     |     |   [Reentrant, 4m deep]
+( 19) |   11|   30| 0.1S|     |  8.5|     |     |     |   [S ]
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void ScoreCourseFormatterColumnH() {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent4.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
+            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+
+            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
+            actual = writer.ToString();
+            expected =
+@"      | Sample Event 1                                |   [Sample Event 1]
+      | Score more!                                   |   [Score more!]
+      |Score 4          |155 points                   |   [155 points]
+(  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
+( 17) |    1|  302|     | 1.14|     |     |11.1S|    5|   [S side of pit]
+(  2) |    2|   31|  0.3|  2.4|     |   2m|     |   10|   [Upper boulder, 2m high]
+(  7) |    3|  189|     |  1.8|  1.8| 10.2|     |   10|   [Small gully junction]
+( 11) |    4|  191|     |  5.2|  5.2| 10.1|11.15|   10|   [Between path crossings]
+(  8) |    5|  210|     | 5.11| 5.20|     |11.15|   10|   [Between building and statue]
+( 20) |    6|  305|     |  2.7|     |  6x7|     |   10|   [Stony ground, 6m by 7m (manned)]
+(  5) |    7|   GO| 0.1N|  5.5|  5.2| 10.1|11.1N|   10|   [N side of N power line and path crossing (radio)]
+(  4) |    8|   32|     |  3.7|     |     |     |   20|   [very marshy spot]
+( 16) |    9|  301|     | 1.14|  8.4|  3.0|     |   20|   [Overgrown pit, 3m deep]
+( 18) |   10|  303|     |  1.3|     |    4|     |   20|   [Reentrant, 4m deep]
+( 19) |   11|  304| 0.1S|     |  8.5|     |     |   30|   [S ]
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void ScoreCourseFormatterNoScore() {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent5.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
+            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+
+            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
+            actual = writer.ToString();
+            expected =
+@"      | Sample Event 1                                |   [Sample Event 1]
+      | Score more!                                   |   [Score more!]
+      |Score 4          |155 points                   |   [155 points]
+(  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
+( 17) |    1|  302|     | 1.14|     |     |11.1S|     |   [S side of pit]
+(  2) |    2|   31|  0.3|  2.4|     |   2m|     |     |   [Upper boulder, 2m high]
+(  7) |    3|  189|     |  1.8|  1.8| 10.2|     |     |   [Small gully junction]
+( 11) |    4|  191|     |  5.2|  5.2| 10.1|11.15|     |   [Between path crossings]
+(  8) |    5|  210|     | 5.11| 5.20|     |11.15|     |   [Between building and statue]
+( 20) |    6|  305|     |  2.7|     |  6x7|     | 12.4|   [Stony ground, 6m by 7m (manned)]
+(  5) |    7|   GO| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
+(  4) |    8|   32|     |  3.7|     |     |     | 12.1|   [very marshy spot]
+( 16) |    9|  301|     | 1.14|  8.4|  3.0|     |     |   [Overgrown pit, 3m deep]
+( 18) |   10|  303|     |  1.3|     |    4|     |     |   [Reentrant, 4m deep]
+( 19) |   11|  304| 0.1S|     |  8.5|     |     |     |   [S ]
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void EmptyCourseFormatter()
         {
             TestCourseFormatter("descformatter\\sampleevent1.coursescribe", CourseId(2), false, 

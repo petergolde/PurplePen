@@ -444,6 +444,6 @@
     <value>InitialScreen</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

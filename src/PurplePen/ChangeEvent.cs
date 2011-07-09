@@ -365,17 +365,20 @@ namespace PurplePen
         }
 
         // Change the attributes of a course.
-        public static void ChangeCourseProperties(EventDB eventDB, Id<Course> courseId, CourseKind courseKind, string courseName, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind)
+        public static void ChangeCourseProperties(EventDB eventDB, Id<Course> courseId, CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             Course course = eventDB.GetCourse(courseId);
 
             course = (Course) course.Clone();
             course.kind = courseKind;
+            course.labelKind = labelKind;
+            course.scoreColumn = scoreColumn;
             course.name = courseName;
             course.secondaryTitle = secondaryTitle;
             course.printScale = printScale;
             course.climb = climb;
             course.descKind = descriptionKind;
+            course.firstControlOrdinal = firstControlOrdinal;
 
             eventDB.ReplaceCourse(courseId, course);
         }
@@ -829,7 +832,7 @@ namespace PurplePen
 
         // Create a new course with the given attributes. The course sorts after all existing courses.
         // If addStartAndFinish is true, then if exact one start control exists, it is added. If exactly one finish control exists, it is added.
-        public static Id<Course> CreateCourse(EventDB eventDB, CourseKind courseKind, string name, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, bool addStartAndFinish)
+        public static Id<Course> CreateCourse(EventDB eventDB, CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal, bool addStartAndFinish)
         {
             // Find max sort order in use.
             int maxSortOrder = 0;
@@ -841,6 +844,9 @@ namespace PurplePen
             newCourse.secondaryTitle = secondaryTitle;
             newCourse.climb = climb;
             newCourse.descKind = descriptionKind;
+            newCourse.labelKind = labelKind;
+            newCourse.scoreColumn = scoreColumn;
+            newCourse.firstControlOrdinal = firstControlOrdinal;
 
             Id<Course> newCourseId = eventDB.AddCourse(newCourse);
 

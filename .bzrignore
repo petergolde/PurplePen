@@ -6,6 +6,7 @@ Release
 *_diff.png
 *_new.png
 *.suo
+*.docstates
 *.cache
 *.tmp
 *.user

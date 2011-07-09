@@ -26,7 +26,7 @@ Symbol definition for '890.0'
     7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
     7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
     7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
-    7C 7C 1F  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 1F 7C 7C 
+    7C 7C  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1969,7 +1969,7 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=2, nText=0
   Ang=0
-    (50.30,2.90) (0.10,0.12, NoLeft, Hole, NoRight, DashPt) 
+    (50.30,2.90) (0.10,0.12, NoLeft, Gap, Hole, NoRight, DashPt) 
 
 Index entry Sym=70600.0
   ObjType=1  Rex=0  Status=1
@@ -1977,7 +1977,7 @@ Index entry Sym=70600.0
 Object Sym=70600 Otp=1
   nItem=3, nText=0
   Ang=0
-    (53.20,-2.80) (0.03,0.05, NoLeft, Hole, NoRight) (0.10,0.13, NoLeft, Corner, Hole, NoRight, DashPt) 
+    (53.20,-2.80) (0.03,0.05, NoLeft, Hole, NoRight) (0.10,0.13, NoLeft, Gap, Corner, Hole, NoRight, DashPt) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1

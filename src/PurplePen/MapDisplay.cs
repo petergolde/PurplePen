@@ -40,6 +40,7 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using PurplePen.MapModel;
 using PurplePen.MapView;
+using ColorMatrix = PurplePen.MapModel.ColorMatrix;
 
 
 namespace PurplePen
@@ -291,7 +292,7 @@ namespace PurplePen
                 bitmap = null;
             }
             else if (mapType == MapType.OCAD) {
-                map = new Map();
+                map = new Map(MapUtil.TextMetricsProvider);
                 mapVersion = InputOutput.ReadFile(filename, map);
                 bitmap = null;
             }
@@ -349,7 +350,7 @@ namespace PurplePen
         {
             using (map.Write()) {
                 map.ColorMatrix = ComputeColorMatrix();
-                map.Draw(g, visRect, renderOptions);
+                map.Draw(new GDIPlus_GraphicsTarget(g), visRect, renderOptions, null);
             }
         }
 
@@ -427,7 +428,7 @@ namespace PurplePen
 
             if (courseMap != null) {
                 using (courseMap.Read())
-                    courseMap.Draw(g, visRect, renderOptions);
+                    courseMap.Draw(new GDIPlus_GraphicsTarget(g), visRect, renderOptions, null);
             }
         }
 

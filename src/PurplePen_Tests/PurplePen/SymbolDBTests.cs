@@ -331,7 +331,7 @@ namespace PurplePen.Tests
         // Render one course object to a map.
         internal Map RenderSymbolToMap(Symbol sym, float boxSize)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
 
             using (map.Write()) {
                 //Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
@@ -375,7 +375,7 @@ namespace PurplePen.Tests
                 DrawGrid(g, new RectangleF(-4.0F, -4.0F, 8.0F, 8.0F), 1.0F);
 
                 using (map.Read())
-                    map.Draw(g, new RectangleF(-100F, -100F, 200F, 200F), options);
+                    map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(-100F, -100F, 200F, 200F), options, null);
 
                 // Now use normal drawing to super-impose.
                 g.Transform = saveTransform;

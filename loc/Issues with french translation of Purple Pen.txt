@@ -1,8 +1,0 @@
-Menus, Undo text should not be title cased
-print preview dialog title not translated.
-All and None buttons on all Print dialogs.
-Reports titles are not translated
-"meme symbole" == "Symbole identique ?" (Event Audit)
-Ravine is ravin
-Circuit Normal, Modifier les Marges,  is title cased (it shouldn't)
-I don't think Nord (and Sud, Est, Ouest) should be uppercase.

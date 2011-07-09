@@ -10,7 +10,7 @@ Language=0x409 English (United States)
 Title=Purple Pen Help
 
 [WINDOWS]
-Help Viewer="Purple Pen Help","Table of Contents.hhc",,"Home.htm","Home.htm",,,,,0x42520,,0x204c,[810,504,1216,1065],,,,,,,0
+Help Viewer="Purple Pen Help","Table of Contents.hhc",,"Home.htm","Home.htm",,,,,0x42520,,0x204c,[105,101,972,714],,,,,,,0
 
 
 [FILES]
@@ -114,6 +114,7 @@ Credits.htm
 FileSetProgramLanguage.htm
 FileSetProgramLanguage.htm
 EditAddWhiteOut.htm
+FileCreateRouteGadget.htm
 
 [INFOTYPES]
 

@@ -102,7 +102,7 @@ namespace PurplePen
             this.NewCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.changeControlCodesLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -179,7 +179,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 
         }

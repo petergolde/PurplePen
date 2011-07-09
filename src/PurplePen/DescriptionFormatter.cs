@@ -249,6 +249,7 @@ namespace PurplePen
 
         // Get a regular 8-box line for a start or regular control.
         private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, Dictionary<string, string> descriptionKey)
+        private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, int scoreColumn, CourseView.ControlView controlView, Dictionary<string, string> descriptionKey)
         {
             Event ev = eventDB.GetEvent();
             ControlPoint control = eventDB.GetControl(controlView.controlId);
@@ -268,16 +269,10 @@ namespace PurplePen
             // Box A: ordinal or start triangle or points.
             if (control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange)
                 line.boxes[0] = symbolDB["start"];
-            else if (kind == CourseView.CourseViewKind.Normal) 
+            else if (kind != CourseView.CourseViewKind.AllControls && controlView.ordinal > 0)
                 line.boxes[0] = Convert.ToString(controlView.ordinal);
-            else if (kind == CourseView.CourseViewKind.Score) {
-                if (courseControl.points > 0)
-                    line.boxes[0] = Convert.ToString(courseControl.points);
-            }
-            else if (kind == CourseView.CourseViewKind.AllControls)
+            else 
                 line.boxes[0] = null;
-            else
-                Debug.Fail("unknown course view kind");
 
             // Box B: code of the control
             if (control.kind == ControlPointKind.Normal)
@@ -301,6 +296,15 @@ namespace PurplePen
             if (control.columnFText != null) {
                 Debug.Assert(line.boxes[5] == null);
                 line.boxes[5] = control.columnFText;
+            }
+
+            // Put points in the score column, for a score course.
+            if (control.kind == ControlPointKind.Normal && scoreColumn >= 0 && courseControl != null) {
+                int points = courseControl.points;
+                if (points > 0)
+                    line.boxes[scoreColumn] = Convert.ToString(courseControl.points);
+                else
+                    line.boxes[scoreColumn] = null;
             }
 
             // Get the text version of the control using the Textifier.
@@ -514,6 +518,7 @@ namespace PurplePen
         {
             EventDB eventDB = courseView.EventDB;
             CourseView.CourseViewKind kind = courseView.Kind;
+            int scoreColumn = courseView.ScoreColumn;
             List<DescriptionLine> list = new List<DescriptionLine>(courseView.ControlViews.Count + 4);
             string text;
             DescriptionLine line;
@@ -579,6 +584,7 @@ namespace PurplePen
                     }
                     else {
                         line = GetRegularLine(kind, controlView, descriptionKey);
+                        line = GetRegularLine(kind, scoreColumn, controlView, descriptionKey);
                     }
                     Debug.Assert(line != null);
                     list.Add(line);

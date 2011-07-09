@@ -76,6 +76,8 @@ namespace PurplePen
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
 
+        private int scoreColumn;                // column to put score into.
+
         private int normalControlCount;         // number of normal controls.
         private float totalPoints;              // total points.
         private float totalLength;              // total length.
@@ -133,6 +135,16 @@ namespace PurplePen
             }
         }
 
+        // Get the label kind to use.
+        public ControlLabelKind ControlLabelKind {
+            get {
+                if (courseId.IsNone)
+                    return ControlLabelKind.Code;
+                else
+                    return eventDB.GetCourse(courseId).labelKind;
+            }
+        }
+
         public string CourseName
         {
             get { return courseName; }
@@ -176,6 +188,10 @@ namespace PurplePen
             {
                 return normalControlCount;
             }
+        }
+
+        public int ScoreColumn {
+            get { return scoreColumn; }
         }
 
         public float MapScale
@@ -345,14 +361,23 @@ namespace PurplePen
 
         // Add the appropriate specials for the given course to the course view.
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
-        private void AddSpecials(Id<Course> courseId, bool descriptionSpecialsOnly)
+        private void AddSpecials(Id<Course> courseId, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
-                if (!descriptionSpecialsOnly || eventDB.GetSpecial(specialId).kind == SpecialKind.Descriptions) {
+                if (ShouldAddSpecial(eventDB.GetSpecial(specialId).kind, addNonDescriptionSpecials, addDescriptionSpecials)) {
                     if (QueryEvent.CourseContainsSpecial(eventDB, courseId, specialId))
                         specialIds.Add(specialId);
                 }
             }
+        }
+
+        // Should we add the given special?
+        private bool ShouldAddSpecial(SpecialKind kind, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        {
+            if (kind == SpecialKind.Descriptions)
+                return addDescriptionSpecials;
+            else
+                return addNonDescriptionSpecials;
         }
 
 
@@ -467,7 +492,7 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
         }
 
         // Create the course view for positioning the print area.
@@ -476,7 +501,7 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
         }
 
         // Create the standard view onto a regular course, without variations.
@@ -500,9 +525,11 @@ namespace PurplePen
             int ordinal;
 
             courseView.courseName = course.name;
+            courseView.scoreColumn = -1;
 
             ordinal = 1;
             courseControlId = course.firstCourseControl;
+            ordinal = course.firstControlOrdinal;
 
             // Increase the ordinal value for each normal control before the first one we're considering.
             while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { // also break loop at lastCourseControlId
@@ -560,6 +587,7 @@ namespace PurplePen
             Id<CourseControl> courseControlId;
 
             courseView.courseName = course.name;
+            courseView.scoreColumn = course.scoreColumn;
 
             courseControlId = course.firstCourseControl;
 
@@ -570,7 +598,7 @@ namespace PurplePen
                 controlView.courseControlId = courseControlId;
                 controlView.controlId = courseControl.control;
 
-                // No ordinals in a score course.
+                // Ordinals assigned after sorting.
                 controlView.ordinal = -1;
                 controlView.variation = (char)0;
 
@@ -596,6 +624,15 @@ namespace PurplePen
                 else
                     return Util.CompareCodes(control1.code, control2.code);
             });
+
+            // Assign ordinals, if applicable. If scores in column A, then no ordinals will be assigned.
+            if (courseView.scoreColumn != 0) {
+                int ordinal = 1;
+                foreach (ControlView control in courseView.controlViews) {
+                    if (eventDB.GetControl(control.controlId).kind == ControlPointKind.Normal)
+                        control.ordinal = ordinal++;
+                }
+            }
 
             courseView.Finish();
             return courseView;

@@ -211,7 +211,7 @@ namespace PurplePen.Tests
         void DumpMapFile(string mapFileName, string outputDump)
         {
             using (TextWriter writer = new StreamWriter(outputDump, false, System.Text.Encoding.UTF8)) {
-                PurplePen.MapModel.Tests.OcadDump dump = new PurplePen.MapModel.Tests.OcadDump(TestUtil.GetTestFileDirectory());
+                PurplePen.MapModel.DebugCode.OcadDump dump = new PurplePen.MapModel.DebugCode.OcadDump(TestUtil.GetTestFileDirectory());
                 dump.DumpFile(mapFileName, writer);
             }
         }
@@ -238,7 +238,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             for (int i = 0; i < expectedOcadFiles.Length; ++i) {
-                Map newMap = new Map();
+                Map newMap = new Map(new GDIPlus_TextMetrics());
                 using (newMap.Write())
                     InputOutput.ReadFile(expectedOcadFiles[i], newMap);
                 using (newMap.Read())

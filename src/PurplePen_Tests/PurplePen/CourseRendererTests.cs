@@ -87,7 +87,7 @@ namespace PurplePen.Tests
 
                 g.Clear(Color.White);
                 using (map.Read())
-                    map.Draw(g, rect, options);
+                    map.Draw(new GDIPlus_GraphicsTarget(g), rect, options, null);
             }
 
             TestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName);
@@ -135,10 +135,29 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RegularCourseWithInitialNumber()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), false, "initnum", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), true, "initnum_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
         public void ScoreCourse()
         {
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(9), false, "score", new RectangleF(-10, -40, 120, 120));
             CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(9), true, "score_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
+        public void ScoreCourseSequence() {
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), false, "scoreseq", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), true, "scoreseq_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
+        public void ScoreCourseSequenceAndCode() {
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), false, "scoreseqcode", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), true, "scoreseqcode_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]

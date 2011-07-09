@@ -64,12 +64,18 @@ namespace PurplePen
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCourse));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.firstControlLabel = new System.Windows.Forms.Label();
             this.descriptionAppearanceLabel = new System.Windows.Forms.Label();
             this.mapScaleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.oneToPrefixLabel = new System.Windows.Forms.Label();
             this.scaleCombo = new System.Windows.Forms.ComboBox();
             this.descKindCombo = new System.Windows.Forms.ComboBox();
+            this.firstControlUpDown = new System.Windows.Forms.NumericUpDown();
+            this.labelKindLabel = new System.Windows.Forms.Label();
+            this.labelKindCombo = new System.Windows.Forms.ComboBox();
+            this.scoreColumnLabel = new System.Windows.Forms.Label();
+            this.scoreColumnCombo = new System.Windows.Forms.ComboBox();
             this.secondaryTitleGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.secondaryTitleTextBox = new System.Windows.Forms.TextBox();
@@ -86,6 +92,7 @@ namespace PurplePen
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).BeginInit();
             this.secondaryTitleGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -110,11 +117,23 @@ namespace PurplePen
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.firstControlLabel, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.descriptionAppearanceLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.mapScaleLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.descKindCombo, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.firstControlUpDown, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.labelKindLabel, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.labelKindCombo, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.scoreColumnLabel, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.scoreColumnCombo, 1, 4);
+            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // firstControlLabel
+            // 
+            resources.ApplyResources(this.firstControlLabel, "firstControlLabel");
+            this.firstControlLabel.Name = "firstControlLabel";
             // 
             // descriptionAppearanceLabel
             // 
@@ -154,6 +173,61 @@ namespace PurplePen
             resources.GetString("descKindCombo.Items1"),
             resources.GetString("descKindCombo.Items2")});
             this.descKindCombo.Name = "descKindCombo";
+            // 
+            // firstControlUpDown
+            // 
+            resources.ApplyResources(this.firstControlUpDown, "firstControlUpDown");
+            this.firstControlUpDown.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.firstControlUpDown.Name = "firstControlUpDown";
+            this.firstControlUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // labelKindLabel
+            // 
+            resources.ApplyResources(this.labelKindLabel, "labelKindLabel");
+            this.labelKindLabel.Name = "labelKindLabel";
+            // 
+            // labelKindCombo
+            // 
+            this.labelKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.labelKindCombo.FormattingEnabled = true;
+            this.labelKindCombo.Items.AddRange(new object[] {
+            resources.GetString("labelKindCombo.Items"),
+            resources.GetString("labelKindCombo.Items1"),
+            resources.GetString("labelKindCombo.Items2")});
+            resources.ApplyResources(this.labelKindCombo, "labelKindCombo");
+            this.labelKindCombo.Name = "labelKindCombo";
+            this.labelKindCombo.SelectionChangeCommitted += new System.EventHandler(this.labelKindCombo_SelectionChangeCommitted);
+            // 
+            // scoreColumnLabel
+            // 
+            resources.ApplyResources(this.scoreColumnLabel, "scoreColumnLabel");
+            this.scoreColumnLabel.Name = "scoreColumnLabel";
+            // 
+            // scoreColumnCombo
+            // 
+            this.scoreColumnCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.scoreColumnCombo.FormattingEnabled = true;
+            this.scoreColumnCombo.Items.AddRange(new object[] {
+            resources.GetString("scoreColumnCombo.Items"),
+            resources.GetString("scoreColumnCombo.Items1"),
+            resources.GetString("scoreColumnCombo.Items2"),
+            resources.GetString("scoreColumnCombo.Items3")});
+            resources.ApplyResources(this.scoreColumnCombo, "scoreColumnCombo");
+            this.scoreColumnCombo.Name = "scoreColumnCombo";
+            this.scoreColumnCombo.SelectionChangeCommitted += new System.EventHandler(this.scoreColumnCombo_SelectionChangeCommitted);
             // 
             // secondaryTitleGroup
             // 
@@ -222,6 +296,7 @@ namespace PurplePen
             resources.GetString("courseKindCombo.Items"),
             resources.GetString("courseKindCombo.Items1")});
             this.courseKindCombo.Name = "courseKindCombo";
+            this.courseKindCombo.SelectionChangeCommitted += new System.EventHandler(this.courseKindCombo_SelectionChangeCommitted);
             // 
             // flowLayoutPanel1
             // 
@@ -254,10 +329,12 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.secondaryTitleGroup, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstControlUpDown)).EndInit();
             this.secondaryTitleGroup.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -292,5 +369,11 @@ namespace PurplePen
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox secondaryTitleTextBox;
         private System.Windows.Forms.Label secondaryTitleDescription;
+        private System.Windows.Forms.NumericUpDown firstControlUpDown;
+        private System.Windows.Forms.Label firstControlLabel;
+        private System.Windows.Forms.Label labelKindLabel;
+        private System.Windows.Forms.ComboBox labelKindCombo;
+        private System.Windows.Forms.Label scoreColumnLabel;
+        private System.Windows.Forms.ComboBox scoreColumnCombo;
     }
 }

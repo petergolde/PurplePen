@@ -1,7 +1,7 @@
 File format OCAD 9                                          (c) by 2006 OCAD AG, CH-6340 Baar
 =============================================================================================
 
-Version 26th January 2006
+Version 14th December 2006
 
 General
 =============================================================================================
@@ -62,7 +62,7 @@ OCAD files start with a file header:
     FileType: Byte;            // File type
                                //   0: normal map
                                //   1: course setting project
-                               //   3: OCAD 8 Bahnlegung
+                               //   3: OCAD 8 course setting project
     FileStatus: Byte;          // Not used
     Version: SmallInt;         // 9
     Subversion: SmallInt;      // number of subversion (0 for 9.00, 1 for 9.1 etc.)
@@ -244,7 +244,7 @@ used in the Line Symbol dialog box are shown.
     LineStyle: SmallInt;       // Line style
                                //   0: Bevel joins/flat caps
                                //   1: Round joins/round caps
-                               //   4: Miter joins/flat caps                *** small redefintion
+                               //   4: Miter joins/flat caps
     DistFromStart: SmallInt;   // Distance from start
     DistToEnd: SmallInt;       // Distance to the end
     MainLength: SmallInt;      // Main length a
@@ -261,7 +261,7 @@ used in the Line Symbol dialog box are shown.
     DblMode: word;             // Mode (Double line page)
     DblFlags: word;            // Double line flags
                                //    1: Fill color on
-                               //    2: Background color on      ** flag value 2 is new
+                               //    2: Background color on
     DblFillColor: SmallInt;    // Fill color
     DblLeftColor: SmallInt;    // Left line/Color
     DblRightColor: SmallInt;   // Right line/Color
@@ -284,7 +284,7 @@ used in the Line Symbol dialog box are shown.
                                //   0: Bevel joins/flat caps
                                //   1: Round joins/round caps
                                //   4: Miter joins/flat caps
-                               // PointedEnd := LineStyle and 2 > 0;    ** Pointed end is new [or newly documented]
+                               // PointedEnd := LineStyle and 2 > 0;
     PrimDSize: word;           // Number or coordinates (8 bytes) for the Main symbol A which
                                // follow this structure.
                                // Each symbol header counts as 2 coordinates (16 bytes).
@@ -382,7 +382,7 @@ used in the Area Symbol dialog box are shown. The unit of all dimensions is 0.01
     Colors: array[0..13] of SmallInt; // See TBaseSym
     Description: string[31];   // See TBaseSym
     IconBits: array[0..483] of byte; // See TBaseSym
-    BorderSym: integer;        // Symbolnumber  for border line activated if BorderOn is true   ** NEW
+    BorderSym: integer;        // Symbolnumber  for border line activated if BorderOn is true
     FillColor: SmallInt;       // Fill color activated if FillOn is true
     HatchMode: SmallInt;       // Hatch mode
                                //   0: None
@@ -393,7 +393,7 @@ used in the Area Symbol dialog box are shown. The unit of all dimensions is 0.01
     HatchDist: SmallInt;       // Distance
     HatchAngle1: SmallInt;     // Angle 1
     HatchAngle2: SmallInt;     // Angle 2
-    FillOn: boolean;           // Fill is activated     ** NEW
+    FillOn: boolean;           // Fill is activated
     BorderOn: boolean;         // Border line is activated
     StructMode: SmallInt;      // Structure
                                //   0: None
@@ -460,21 +460,25 @@ sizes which are measured in 0.1 typographical points.
     Res3: SmallInt;
     FrMode: byte;              // Framing mode
                                //   0: no framing
-                               //   1: shadow framing   ** NEW STYLE
+                               //   1: shadow framing
                                //   2: line framing
-                               //   3: rectangle framing      ** NEW STYLE
-    Res1: byte;                // not used
+                               //   3: rectangle framing
+    FrLineStyle: byte;         // Framing line style                             
+                               //   0: default OCAD 8 Miter
+                               //   2: ps_Join_Bevel
+                               //   1: ps_Join_Round
+                               //   4: ps_Join_Miter    	
     Res2: string[23];          // not used
-    FrLeft: SmallInt;          // Left border for rectangle framing      ** NEW
-    FrBottom: SmallInt;        // Bottom border for rectangle framing   ** NEW
-    FrRight: SmallInt;         // Right border for rectangle framing   ** NEW
-    FrTop: SmallInt;           // Top border for rectangle framing  ** NEW
-    FrColor: SmallInt;         // Framing color   ** NEW
-    FrWidth: SmallInt;         // Framing width for line framing  ** NEW
+    FrLeft: SmallInt;          // Left border for rectangle framing
+    FrBottom: SmallInt;        // Bottom border for rectangle framing
+    FrRight: SmallInt;         // Right border for rectangle framing
+    FrTop: SmallInt;           // Top border for rectangle framing
+    FrColor: SmallInt;         // Framing color
+    FrWidth: SmallInt;         // Framing width for line framing
     Res3: SmallInt;            // not used
     Res4: wordbool;            // not used
-    FrOfX: SmallInt;           // Horizontal offset for shadow framing  ** NEW USAGE
-    FrOfY: SmallInt;           // Vertical offset for shadow framing  ** NEW USAGE
+    FrOfX: SmallInt;           // Horizontal offset for shadow framing
+    FrOfY: SmallInt;           // Vertical offset for shadow framing
   end;
 
 
@@ -506,7 +510,8 @@ the Rectangle Symbol dialog box are shown. The unit of all dimensions is 0.01 mm
     Radius: SmallInt;          // Corner radius
     GridFlags: word;           // A combination of the flags
                                //   1: Grid On
-                               //   2: Numbered from the bottom
+                               //   2: Numbering On
+                               //   4: Numbered from the bottom
     CellWidth: SmallInt;       // Cell width
     CellHeight: SmallInt;      // Cell height
     Res0: SmallInt; // Not used
@@ -514,7 +519,7 @@ the Rectangle Symbol dialog box are shown. The unit of all dimensions is 0.01 mm
     UnnumCells: SmallInt;      // Unnumbered cells
     UnnumText: string[3];      // Text in unnumbered cells
     Res2: SmallInt;       	   // Not used
-    Res3: string[31];          // Not used     ** FONT INFO NO LONGER HERE
+    Res3: string[31];          // Not used
     Res4: SmallInt;            // Not used
     Res5: SmallInt;            // Not used
     Res6: SmallInt;            // Not used
@@ -527,9 +532,68 @@ the Rectangle Symbol dialog box are shown. The unit of all dimensions is 0.01 mm
 
 Objects
 =============================================================================================
+
+TObjectIndexBlock
+-----------------
+
+Each Object Index Block contains the position of the next Object Index Block and the file
+position and other information of 256 objects. 
+
+  TObjectIndexBlock = record   // Size: 10296 Bytes
+    NextObjectIndexBlock: integer;
+    Table: array[0..255] of TObjectIndex;
+  end;
+
+
+TObjectIndex
+------------
+
+  TObjectIndex = record        // Size: 40 byte
+    rc: LRect;                 // bounding box (lower left and upper right)
+                               // all flag bits are set to 0
+    Pos: integer;              // file position of the object -> TElement
+    Len: integer;              // number of coordinate pairs,
+                               // the size of the object in the file is then
+                               // calculated by: 32 + 8*Len
+                               // Note: this is reserved space in the file, the
+                               // effective length of the object may be shorter
+    Sym: integer;              // > 0 = symbol number
+                               // -3 = image object eg AI object
+                               // -2 = graphic object
+                               // -1 = imported, no symbol assigned or symbol number
+    ObjType: byte;             // 1 = Point object
+                               // 2 = Line object
+                               // 3 = Area object
+                               // 4 = Unformatted text
+                               // 5 = Formatted text
+                               // 6 = Line text
+                               // 7 = Rectangle object
+    Res: byte;                 // not used
+    Status: byte;              // 0 = deleted (not undo) (eg from symbol editor or cs)
+                               // 1 = normal
+                               // 2 = hidden
+                               // 3 = deleted for undo
+    ViewType: byte;            // 0 = normal object
+                               // 1 = course setting object
+                               // 2 = modified preview object
+                               // 3 = unmodified preview object
+                               // 4 = temporary object (symbol editor or control description)
+                               // 10 = DXF import, GPS import
+    Color: SmallInt;           // symbolized objects: color number
+                               // graphic object: color number
+			       // image object: CYMK color of object
+    Res: SmallInt;             // not used
+    ImpLayer: SmallInt;        // Layer number of imported objects
+                               // 0 means no layer number
+    Res: SmallInt;             // not used
+
+
+TElement
+--------
+
 Objects are stored as a TElement structure.
 
-  TElement = class(TObject)
+  TElement = class(TObject)             // 40 byte + Poly
   public
     Sym: integer;                       // symbol numer or symbol typ
                                         // image object= -3 (imported from ai or pdf,
@@ -551,10 +615,11 @@ Objects are stored as a TElement structure.
                                         // objects) if nText is > 0
                                         // for all other objects it is 0
     Res1: SmallInt;                     // not used
-    Col: integer;                       // image object: CYMK color of object   ** NEW
-                                        // graphic object: color number  ** NEW
-    LineWidth: SmallInt;                // line with for image and graphic object  ** NEW
-    DiamFlags: SmallInt;                // flages: LineStyle by lines  ** NEW
+    Col: integer;                       // symbolized objects: color number
+                                        // graphic object: color number
+					// image object: CYMK color of object
+    LineWidth: SmallInt;                // line with for image and graphic object
+    DiamFlags: SmallInt;                // flages: LineStyle by lines
     Res2: double;                       // not used
     Res3: double;                       // not used
     Poly: TDPoly;                       // array[0..] coordinates of the object
@@ -612,9 +677,9 @@ Parameter Strings - Orienteering course setting
 
 si_CoursePar = 1031
 -------------------
-  // a = create classes automatically
+  // a = create classes automatically (0=off, 1=on)
   // b = background for control descriptions
-  // c = numbering (0 = number, 1 = number and code, 2 = code only)
+  // c = numbering (0=number, 1=number and code, 2=code only)
   // d = control descriptions for all controls
   // e = event titel
   // h = horizontal thicker line (0=no, 1=each third, 2=each forth)
@@ -622,14 +687,14 @@ si_CoursePar = 1031
   // l = distance to connection line
   // n = distance to number
   // s = cell size control description
-  // t = course title (0 = class, 1 = course name and class, 2 = course name only)
+  // t = course title (0=class, 1=course name and class, 2=course name only)
   // r = export relay combination in XML file
 
 si_CsObject[list] = 1 (course setting object)
 ---------------------------------------------
   // First = Code 
-  // Y = Type (s = start, c = control, m = marked route, f = finish, d = control description,
-  //           n = course name, u = start number, v = variation code, t = text block)
+  // Y = Type (s=start, c=control, m=marked route, f=finish, d=control description,
+  //           n=course title, u=start number, v=variation code, t=text block)
   // c = Symbol for field C
   // d = Symbol for field D
   // e = Symbol for field E
@@ -652,7 +717,7 @@ si_Course[list] = 2 (course)
   // R = number of runners/teams (auto created class)
   // S = Map scale
   // T = to start number (auto created class)
-  // Y = Course type (s = relay, o = one-man relay, n = normal)
+  // Y = Course type (s=relay, o=one-man relay, n=normal)
   // s = start
   // c = control
   // m = marked route
@@ -669,7 +734,7 @@ si_Course[list] = 2 (course)
   // e = used internally only (control number)
   // i = used internally only (back to begin of variation)
   // j = used internally only (line to end of variation)
-  // n = course name object
+  // n = course title object
   // u = start number object
   // t = text block for control description
   // o = other object
@@ -692,13 +757,13 @@ si_CourseSelPar = 1036 // Not used
 
 si_ExpCsTextPar = 1037 (export control description text)
 --------------------------------------------------------
-  // C = classes (0 = courses, 1 = classes)
+  // C = classes (0=courses, 1=classes)
   // L = export climbing [boolean]
   // N = Export number of controls [boolean]
 
 si_ExpCsStatPar = 1038 (export control description)
 ---------------------------------------------------
-  // C = classes (0 = courses, 1 = classes)
+  // C = classes (0=courses, 1=classes)
   // a = separator 1
   // b = tab 1
   // c = separator 2
@@ -761,8 +826,8 @@ si_ExportPar = 1035 (export settings)
   // First = Format (AI, BMP, DXF, EPS, GIF, JPEG, OIM, PDF, Shape, SVG, TIFF)
   // a = Anti-Aliasing
   // b = combined spot colors
-  // c = color format (0 = 32 bit, 1 = 24 bit, 2 = 256 colors, 3 = grayscale, 4 = 1 bit,
-  //                   5 = halftone screen)
+  // c = color format (0=32 bit, 1=24 bit, 2=256 colors, 3=grayscale, 4=8 bit CMYK                     
+  //     5=1 bit, 6=halftone screen)
   // l = color correction (0 off, 1 on)
   // o = spot color separations
   // p = partial map (0 off, 1 on)
@@ -824,7 +889,7 @@ si_EpsPar = 1029
 
 si_TiffPar = 1032
 -----------------
-  // c = compression (1 = no compression, 2 = CCITT, 4 = FaxG4, 5 = LZW)
+  // c = compression (1=no compression, 2=CCITT, 4=FaxG4, 5=LZW)
   // g = GeoTIFF
   // s = pixel size
   // w = TFW file
@@ -871,19 +936,19 @@ si_ViewPar = 1030 (view settings)
   // x = offset x
   // y = offset y
   // z = zoom
-  // h = hatch areas (0 = normal, 1 = hatched)
+  // h = hatch areas (0=normal, 1=hatched)
   // OLD: a, p, s
 
 si_PrintPar = 1026
 ------------------
   // a = print scale
   // l = landscape
-  // c = print (0 = color map, 1 = spot color separation)
+  // c = print (0=color map, 1=spot color separation)
   // g = print grid
   // d = grid color
   // i = intensity
-  // w = additional width for lines and dots
-  // r = Range (0 entire map, 1 partial map, 2 one page)
+  // w = additional width for lines and dots (line width)
+  // r = Range (0=entire map, 1=partial map, 2=one page)
   // L = partial map left
   // B = partial map bottom
   // R = partial map right
@@ -902,7 +967,7 @@ si_ScalePar = 1039 (scales settings)
   // g = grid distance for paper coordiantes in mm
   // i = grid and zone
   // m = map scale
-  // r = real world cord (0 = paper, 1 = real world)
+  // r = real world cord (0=paper, 1=real world)
   // x = real world offset x
   // y = real world offset y
 
@@ -914,9 +979,9 @@ si_Template[list] = 8 (templates)
   // d = dim
   // o = render with spot colors
   // p = assigned to spot color
-  // q = subtract from spot color (0 = normal, 1 = subtract)
-  // r = visible in draft mode (0 = hidden, 1 = visible)
-  // s = visible in normal mode (0 = hidden, 1 = visible)
+  // q = subtract from spot color (0=normal, 1=subtract)
+  // r = visible in draft mode (0=hidden, 1=visible)
+  // s = visible in normal mode (0=hidden, 1=visible)
   // t = transparent
   // x = offset x
   // y = offset y
@@ -962,3 +1027,9 @@ si_ImpLayer[list] = 13 (imported dxf layer)
 -------------------------------------------
   // First = Name
   // n = layer number
+
+si_XmlScriptPar = 1042                                                     
+-------------------------------------------
+  // f = last used file
+
+

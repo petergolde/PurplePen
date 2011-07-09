@@ -79,7 +79,7 @@ namespace PurplePen.Tests
         // Render one course object to a map.
         internal Map RenderCourseObjToMap(CourseObj courseobj)
         {
-            Map map = new Map();
+            Map map = new Map(new GDIPlus_TextMetrics());
 
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
@@ -87,7 +87,7 @@ namespace PurplePen.Tests
                 // Create white color and white-out symdef.
                 SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
                 AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
-                whiteArea.ToolboxImage = Properties.Resources.WhiteOut_OcadToolbox;
+                whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);
                 dict[CourseLayout.KeyWhiteOut] = whiteArea;
 
@@ -124,7 +124,7 @@ namespace PurplePen.Tests
 
                 g.Clear(backColor);
                 using (map.Read())
-                    map.Draw(g, new RectangleF(-100F, -100F, 200F, 200F), options);
+                    map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(-100F, -100F, 200F, 200F), options, null);
                 DrawGrid(g, new RectangleF(-4.0F, -4.0F, 8.0F, 8.0F), 1.0F);
             }
 

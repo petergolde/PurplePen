@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Windows;
+using System.Diagnostics;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using MapScribe.Map;
+using PurplePen.MapModel;
 using TestingUtils;
-using RenderOptions = MapScribe.Map.RenderOptions;
+using RenderOptions = PurplePen.MapModel.RenderOptions;
+using RectangleF = System.Drawing.RectangleF;
+using PointF = System.Drawing.PointF;
 
 namespace TestWpfMap
 {
@@ -84,7 +87,7 @@ namespace TestWpfMap
 
             // Get the render options.
             RenderOptions renderOpts = new RenderOptions();
-            renderOpts.forceBitmapGlyphs = false;
+            renderOpts.usePatternBitmaps = false;
             renderOpts.minResolution = (float) (1 / scaleFactor);
 
             // Create a drawing of the map.
@@ -99,7 +102,7 @@ namespace TestWpfMap
 
             // Draw the map.
             using (map.Read())
-                map.Draw(dc, mapArea, renderOpts);
+                map.Draw(new WPF_GraphicsTarget(dc), mapArea, renderOpts, null);
             dc.Close();
 
             // Draw into a new bitmap.
@@ -154,11 +157,19 @@ namespace TestWpfMap
             File.Delete(newBitmapName);
 
             // Create and open the map file.
-            Map map = new Map();
+            Map map = new Map(new WPF_TextMetrics());
             InputOutput.ReadFile(mapFileName, map);
 
             // Draw into a new bitmap.
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             BitmapSource bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
+
+            sw.Stop();
+            Console.WriteLine("Rendered bitmap '{0}' rect={1} size=({2},{3}) in {4} ms", mapFileName, mapArea, bmWidth, bmHeight, sw.ElapsedMilliseconds);
+
+
             WritePng(bitmapNew, newBitmapName);
             TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
 
@@ -186,7 +197,7 @@ namespace TestWpfMap
                     InputOutput.WriteFile(ocadFileName, map, version);
 
                     // Create and open the map file.
-                    map = new Map();
+                    map = new Map(new WPF_TextMetrics());
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
@@ -201,6 +212,28 @@ namespace TestWpfMap
             return true;
         }
 
+        void TimeMapRender(Map map, int width, int height, RectangleF mapArea, string name) {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            // Draw into a new bitmap.
+            BitmapSource bitmapNew = RenderBitmap(map, width, height, mapArea);
+
+            sw.Stop();
+            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
+        }
+
+        public void TimeTeanWest() {
+            // Create and open the map file.
+            Map map = new Map(new WPF_TextMetrics());
+            InputOutput.ReadFile(@"C:\Users\Peter\Documents\PurplePen\newmapmodel\src\TestFiles\d2drender\teanwest.ocd", map);
+
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+            TimeMapRender(map, 1814, 1022, new RectangleF(-347.3F, -275F, 408.3F, 230F), "TeanWest full");
+        }
 
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
@@ -611,6 +644,11 @@ namespace TestWpfMap
         public void ArialNarrow()
         {
             CheckTest("arialnarrow.txt", false, false, 9, 9);
+        }
+
+        [TestMethod]
+        public void LordHill() {
+            CheckTest("LordHill.txt", false, false, 6, 10);
         }
     }
 }

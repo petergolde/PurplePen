@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Cambia Simbolo</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Cambia Codice Di Controllo</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Cambia Controllo</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Cambia Punti Di Controllo</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Cambia Titolo</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Cambia Scalata</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Cambia Nome Corso</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Cambia Linea Di Testo</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Aggiorna Scala Mappa</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Muovi Controllo</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Muovi Numero Di Controllo</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Muovi Oggetto</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Elimina Controllo</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Elimina Oggetto</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Elimina Linea Di Testo</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Aggiungi Controllo</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Aggiungi Inizio</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Aggiungi Fine</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Aggiungi Oggetto</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Elimina Corso</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>Nuovo Corso</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Cambia Proprietà Del Corso</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Cambia Le Proprietà Di Tutti I Controlli</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Crea Nuovo Evento</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Cambia Codici</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Cambia Corsi Visualizzati</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Aggiungi Angolo</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Rimuovi Angolo</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Ruota</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Numerazione Automatica</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Imposta Area Di Stampa</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Personalizza il testo descrittivo</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Aggiungi Linea Di Testo</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Cambia Testo</value>
+  </data>
+</root>

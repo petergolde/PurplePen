@@ -64,6 +64,7 @@ namespace PurplePen
         DescriptionRenderer renderer;
         CourseView.CourseViewKind courseViewKind;
         SymbolPopup popup;
+        int scoreColumn;
 
         int firstSelectedLine = -1;                  // first selected line, or -1 for no selection.
         int lastSelectedLine = -1;                  // last selected line, or -1 for no selection.
@@ -308,6 +309,17 @@ namespace PurplePen
             }
         }
 
+        // lColumn that displays the score, or -1 if none.
+        [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), System.ComponentModel.Browsable(false)]
+        public int ScoreColumn {
+            get {
+                return scoreColumn;
+            }
+            set {
+                scoreColumn = value;
+            }
+        }
+
         // Update the size of the panel, because the description length changed or the size of the control changed.
         void UpdatePanelSize()
         {
@@ -405,13 +417,14 @@ namespace PurplePen
 
             switch (hitTest.kind) {
                 case HitTestKind.NormalBox:
-                    if (hitTest.box == 0) {
+                    if (scoreColumn >= 0 && hitTest.box == scoreColumn) {
+                        // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
+                        popupKind = ChangeKind.Score;
+                        popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterScore, (string)renderer.Description[hitTest.firstLine].boxes[hitTest.box], 2, descriptionPanel, location);
+                    }
+                    else if (hitTest.box == 0) {
                         // Column A:
-                        if (courseViewKind == CourseView.CourseViewKind.Score && !(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
-                            // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
-                            popupKind = ChangeKind.Score;
-                            popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterScore, (string) renderer.Description[hitTest.firstLine].boxes[0], 2, descriptionPanel, location);
-                        }
+                        // We don't allow changing the sequence number, so no popup allowed
                     }
                     else if (hitTest.box == 1) {
                         // Column B

@@ -15,7 +15,7 @@ using Microsoft.Win32;
 
 using System.Diagnostics;
 
-using MapScribe.Map;
+using PurplePen.MapModel;
 
 namespace WpfMap
 {
@@ -47,7 +47,7 @@ namespace WpfMap
             if (dlg.ShowDialog() == true) {
                 string filename = dlg.FileName;
 
-                Map map = new Map();
+                Map map = new Map(new GDIPlus_TextMetrics());
                 InputOutput.ReadFile(filename, map);
                 NewMap(map);
             }

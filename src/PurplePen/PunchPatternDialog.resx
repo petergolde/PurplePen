@@ -155,6 +155,10 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="codeList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="codeList.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
@@ -179,7 +183,6 @@
   <data name="&gt;&gt;codeList.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="formatButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -259,7 +262,7 @@
     <value>dotGrid</value>
   </data>
   <data name="&gt;&gt;dotGrid.Type" xml:space="preserve">
-    <value>PurplePen.DotGrid, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DotGrid, PurplePen, Version=1.0.1.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;dotGrid.Parent" xml:space="preserve">
     <value>$this</value>
@@ -283,6 +286,6 @@
     <value>PunchPatternDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.1.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

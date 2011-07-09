@@ -163,7 +163,7 @@
     <value>2</value>
   </data>
   <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>Copyright © 2007-2009 by Peter Golde</value>
+    <value>Copyright © 2007-2011 by Peter Golde</value>
   </data>
   <data name="&gt;&gt;copyrightLabel.Name" xml:space="preserve">
     <value>copyrightLabel</value>
@@ -415,6 +415,6 @@
     <value>AboutForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

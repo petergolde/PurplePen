@@ -62,6 +62,7 @@ namespace PurplePen
         {
             EventDB eventDB = courseView.EventDB;
             CourseView.CourseViewKind kind = courseView.Kind;
+            ControlLabelKind labelKind = courseView.ControlLabelKind;
             float scaleRatio = courseView.ScaleRatio;
             List<CourseView.ControlView> controlViews = courseView.ControlViews;
             CourseObj courseObj;
@@ -89,10 +90,10 @@ namespace PurplePen
 
                 // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
                 if (CustomPlaceNumber(eventDB, controlView)) {
-                    if (kind == CourseView.CourseViewKind.Normal)
-                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, controlView, courseLayout);
-                    else
+                    if (kind == CourseView.CourseViewKind.AllControls)
                         courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                    else
+                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
 
                     if (courseObj != null) {
                         courseObj.layer = layer;
@@ -120,18 +121,17 @@ namespace PurplePen
             // of all fixed-position objects influences the auto-positioned numbers so that they don't interfere.
             for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
                 CourseView.ControlView controlView = controlViews[controlIndex];
-                CourseObj courseObject;
 
                 // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
                 if (! CustomPlaceNumber(eventDB, controlView)) {
-                    if (kind == CourseView.CourseViewKind.Normal)
-                        courseObject = CreateControlNumber(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                    if (kind == CourseView.CourseViewKind.AllControls)
+                        courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
-                        courseObject = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
 
-                    if (courseObject != null) {
-                        courseObject.layer = layer;
-                        courseLayout.AddCourseObject(courseObject);
+                    if (courseObj != null) {
+                        courseObj.layer = layer;
+                        courseLayout.AddCourseObject(courseObj);
                     }
                 }
             }
@@ -148,8 +148,27 @@ namespace PurplePen
                         (controlView.courseControlId.IsNone && eventDB.GetControl(controlView.controlId).customCodeLocation));
         }
 
-        // Create the control number text object, avoiding existing objects on the map.
-        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
+        // Get the text for a control lable
+        private static string GetControlLabelText(EventDB eventDB, ControlLabelKind labelKind, CourseView.ControlView controlView) {
+            string text = "";
+
+            if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode) {
+                text += controlView.ordinal.ToString();
+                if (controlView.variation != 0)
+                    text += controlView.variation.ToString();
+            }
+            if (labelKind == ControlLabelKind.SequenceAndCode)
+                text += "-";
+            if (labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.Code) {
+                ControlPoint control = eventDB.GetControl(controlView.controlId);
+                text += control.code;
+            }
+
+            return text;
+        }
+
+        // Create the control number text object, avoiding existing objects on the map. This can be in the form of a sequence number, code, or both.
+        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, ControlLabelKind labelKind, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlId);
@@ -158,9 +177,7 @@ namespace PurplePen
             string text;
 
             if (control.kind == ControlPointKind.Normal) {
-                text = controlView.ordinal.ToString();
-                if (controlView.variation != 0)
-                    text += controlView.variation.ToString();
+                text = GetControlLabelText(eventDB, labelKind, controlView);
 
                 // Figure out where the control number goes.
                 if (courseControl.customNumberPlacement) {

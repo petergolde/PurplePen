@@ -22,6 +22,11 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("f4eead18-8c4a-46b1-be28-9c6eb7222e8f")]
 
+[assembly: AssemblyVersion(PurplePen.VersionNumber.Current)]
+[assembly: AssemblyFileVersion(PurplePen.VersionNumber.Current)]
+
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("PurplePen_Tests")]
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
@@ -29,7 +34,4 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion(PurplePen.VersionNumber.Current)]
-[assembly: AssemblyFileVersion(PurplePen.VersionNumber.Current)]
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("PurplePen_Tests")]

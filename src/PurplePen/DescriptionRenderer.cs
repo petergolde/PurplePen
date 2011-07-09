@@ -903,7 +903,7 @@ namespace PurplePen
         public object CreatePen(float thickness, LineStyle lineStyle)
         {
             LineSymDef symdef = new LineSymDef("Description: line", GetOcadId(), color, Util.TransformDistance(thickness, currentTransform), lineStyle);
-            symdef.ToolboxImage = Properties.Resources.DescLine_OcadToolbox;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DescLine_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -920,18 +920,18 @@ namespace PurplePen
 
         public object CreateFont(string fontName, float emHeight, bool bold, bool italic, StringAlignment alignment)
         {
-            TextSymDefAlignment fontAlign;
-            TextSymDef symdef = new TextSymDef("Description: text", GetOcadId());
+            TextSymDefHorizAlignment fontAlign;
+            TextSymDef symdef = new TextSymDef("Description: text", GetOcadId(), null);
 
             if (alignment == StringAlignment.Far)
-                fontAlign = TextSymDefAlignment.Right;
+                fontAlign = TextSymDefHorizAlignment.Right;
             else if (alignment == StringAlignment.Center)
-                fontAlign = TextSymDefAlignment.Center;
+                fontAlign = TextSymDefHorizAlignment.Center;
             else
-                fontAlign = TextSymDefAlignment.Left;
+                fontAlign = TextSymDefHorizAlignment.Left;
 
-            symdef.SetFont(fontName, Util.TransformDistance(emHeight, currentTransform), bold, italic, color, Util.TransformDistance(emHeight * 1.1F, currentTransform), 0, 0, 0, null, 0, 1F, fontAlign);
-            symdef.ToolboxImage = Properties.Resources.DescText_OcadToolbox;
+            symdef.SetFont(fontName, Util.TransformDistance(emHeight, currentTransform), bold, italic, color, Util.TransformDistance(emHeight * 1.1F, currentTransform), 0, 0, 0, null, 0, 1F, fontAlign, TextSymDefVertAlignment.TopAscent);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DescText_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }

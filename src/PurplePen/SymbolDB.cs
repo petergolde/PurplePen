@@ -469,7 +469,7 @@ namespace PurplePen
                     Draw(g, Color.Black, new RectangleF(0, 0, bm.Width, bm.Height));
                 }
             }
-            symdef.ToolboxImage = bm;
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(bm);
 
             // Add the symdef to the map.
             map.AddSymdef(symdef);

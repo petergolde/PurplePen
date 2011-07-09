@@ -137,6 +137,18 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void AlternateStart1()
+        {
+            PunchcardFormat format = new PunchcardFormat();
+            format.boxesAcross = 9;
+            format.boxesDown = 3;
+            format.leftToRight = false;
+            format.topToBottom = false;
+
+            CheckRenderBitmap(TestUtil.GetTestFile("punchcards\\sample2.ppen"), CourseId(2), format);
+        }
+
+        [TestMethod]
         public void RegularCourse2()
         {
             PunchcardFormat format = new PunchcardFormat();
