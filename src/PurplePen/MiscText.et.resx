@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Puudub sümbol</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Kõik KPd</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Ei saa lugeda '{0}' põhjusel:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Ei saa salvestada '{0}' põhjusel :</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Ei saa lugeda kaardi faili '{0}' põhjusel:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Ei saa lugeda pildi faili '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Ei saa trükkida '{0}' , põhjusel:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Ei saa luua '{0}' põhjusel:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Ei saa luua kausta '{0}' põhjusel:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Ei saa lugeda kaarti järgmisel põhjusel '{0}' Kasuta Optimeeri/Paranda funktsiooni OCADis probleemi parandamiseks.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Ei saa luua OCAD faili põhjusel:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Kas soovid salvestada muudatused mis tegid '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Fail '{0}' juba eksisteerib valitud kaustas. Vajuta "Back" nupule ja vali uus kaust või uus võistluse pealkiri.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Tunnusnumber '{0}' on juba kasutusel teise KP juures.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Tunnusnumber peab olema vahemikus 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Raja tõusumeetrid peavad olema numbrites vahemikus 0-9999, või tühi.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Raja osalejate arv peab olema numbrites vahemikus 0-999999, või tühi.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Võta tagasi</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Võta tagasi</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Tee uuesti</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Uuesti</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Puhasta valik</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>K&amp;atkesta tegevus</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Toimingu tühistamine</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Sisesta uus väärtus</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Sisesta uus tunnusnumber</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Sisesta objekti suurus
+Kasuta / näitamaks kõrgust nõlval
+Kasuta | kahe objekti korral</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Sisesta uus võistluse nimetus
+Kasuta | eraldamaks ridu
+(mõjutab kõikki radu)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Lisa teine rida
+Kasuta | eraldamaks ridu</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Sisesta uus raja nimi</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Sisesta tõusude summa meetrites</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Sisesta uus objekti legend
+(mõjutab kõikki radu)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Sisesta uus tekst</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>KPd {0} ei ole kasutusel ühegil rajal. Kas sa soovid need eemaldada?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>KP {0} ei ole kasutusel ühegil rajal. Kas sa soovid selle eemaldada?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>KP {0} on kasutusel rajal: {1}. Kas soovid selle eemaldada sellegi poolest?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Tunnusnumber peab oleama üks, kaks või kolm tähte või numbrit pikk.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Tunnusnumber ei tohi sisaldada tühikuid.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Tunnusnumber peab olema 31 või suurem.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Tunnusnumber ei tohi alata nulliga.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Tunnusnumber ei tohi olla loetav tagurpidi teise numbrina.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Tunnusnumber "{0}" on kasutusel rohkem kui üks kord.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Mastaap peab olema number 100 ja 100 000 vahel.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Raja seaded</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Maastik</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Püstine</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Lehekülje suurus on liiga väike legendide trükkimiseks.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Versioon {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Pen programmis on saadaval uuem versioon {0} . (Sa kasutad hetkel versiooni {1}.)
+Lae alla viimasem versioon Purple Pen koduleheküljelt, mille leiad menüüst Abi.</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Abifaili {0} ei saa avada.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Suurendus</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Kaardi faili "{0}" ei leidnud.
+Arvatavasti on kaardi faili asukoht muutunud või kustutatud, või on Purple Pen faili asukoht muutunud (näiteks teises arvutis). Kaardi fail peab olema kättesaadav alati, kui avatakse Purple Pen fail. Kui saadad faili teisele kasutajale, siis vaata, et ta saaks ka kaardi faili..
+Peale OK vajutamist, otsi kaardi fail arvutist..</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Kõik KPd on radadel kasutuses.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Finiš</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Edasi &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>KP {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finiš</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Kohustuslik läbipääsu punkt</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Ristumine</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Kõik: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Vasak: {0}, Parem: {1}, Ülalt: {2}, Alt: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beeta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>mitmuses</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>ainsuses</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Kohandatud tekst nõuab "*" märki näitamaks kus asub objekti kirjeldus.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>orienteerumisradade vormistamiseks</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Sisesta tekst mida soovid kaardile paigutada. Peale OK vajutamist, osuta hiirega kohta kuhu soovid teksti asetada.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Lisa tekst</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Sisesta uus tekst.</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Muuda teksti</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Mõni teine programm on muutnud kaardi faili "{0}". Purple Pen laeb kaardi uuesti.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Selle võistluse juures kasutatakse tekstilisi legende {0}. Kas soovid muuta legendide keeleks {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Ava "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen peab olema suletud enne loodud OCAD failide avamist.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Ühtegi rada ei ole valitud trükkimiseks</value>
+  </data>
+</root>
