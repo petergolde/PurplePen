@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Rutas</value>
@@ -128,9 +128,6 @@
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Seleccione una carpeta para los archivos OCAD</value>
-  </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Salida</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Prefijo del archivo:</value>
@@ -150,8 +147,8 @@
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Carpeta</value>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Salida</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Seleccionar carpeta...</value>
@@ -164,6 +161,9 @@
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo de Purple Pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Carpeta</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crear archivos OCAD</value>

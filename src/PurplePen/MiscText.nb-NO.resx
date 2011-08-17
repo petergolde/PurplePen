@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CtrlZ" xml:space="preserve">
     <value>Ctrl+Z</value>
@@ -133,7 +133,7 @@
     <value>Ingen symbol</value>
   </data>
   <data name="AllControls" xml:space="preserve">
-    <value>Alla poster</value>
+    <value>Alle poster</value>
   </data>
   <data name="CannotLoadFile" xml:space="preserve">
     <value>Kan ikke lese '{0}' på grunn av:</value>
@@ -157,7 +157,7 @@
     <value>Kan ikke opprette mappe '{0}' på grunn av:</value>
   </data>
   <data name="CannotReadMap" xml:space="preserve">
-    <value>Kartfilen kan ikke leses: '{0}' Forsøk "Optimera/Reparera" i OCAD for å utbedre problemet.</value>
+    <value>Kartfilen kan ikke leses: '{0}' Forsøk "Optimalisere/Reparere" i OCAD for å utbedre problemet.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Kan ikke lage OCAD filer på grunn av:</value>
@@ -166,7 +166,7 @@
     <value>Vill du lagre endringene i '{0}'?</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
-    <value>Filen '{0}' finnes allerede i denne mappe. Klikk på "Tillbake"-knappen og  velg en ny mappe eller ett nytt arrangementsnavn.</value>
+    <value>Filen '{0}' finnes allerede i denne mappe. Klikk på "Tilbake"-knappen og velg en ny mappe eller et nytt arrangementsnavn.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
     <value>Postkode '{0}' er i bruk på en annen post.</value>
@@ -209,7 +209,7 @@
   </data>
   <data name="EnterDimensions" xml:space="preserve">
     <value>Skriv in objektets størrelse
-Bruk / for højder i en skråning
+Bruk / for høyder i en skråning
 Bruk | for to objekt</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
@@ -380,5 +380,8 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
     <value>Purple Pen må avsluttes før du kan åpne filene i OCAD.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Ingen løyper ble valgt for utskrift.</value>
   </data>
 </root>

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Tous Postes</value>
@@ -153,12 +153,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Imprimer les &amp;Circuits...</value>
   </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Ce circuit</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Tous les circuits</value>
-  </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Définir la &amp;Zone d'Impression</value>
   </data>
@@ -170,6 +164,33 @@
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Fichier</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Édition</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Affichage</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>C&amp;ourse</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Circuit</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>Élémen&amp;t</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapports</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;?</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Ce circuit</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Tous les circuits</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Désélectionner</value>
@@ -183,14 +204,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Supprimer</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Édition</value>
-  </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>&amp;Circuit Complet</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>C&amp;arte Entière</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -213,8 +234,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Opacité de la Carte</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Très faible</value>
@@ -231,8 +252,8 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Totale</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Opacité de la Carte</value>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Qualité de la Carte</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Basse</value>
@@ -240,14 +261,8 @@
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Haute</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Qualité de la Carte</value>
-  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Tous Postes</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Affichage</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Carte...</value>
@@ -270,9 +285,6 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Personnaliser Présent&amp;ation Circuit...</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>C&amp;ourse</value>
-  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Ajouter un Circuit...</value>
   </data>
@@ -288,9 +300,6 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Nombre de Concurrents...</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Circuit</value>
-  </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>Ajouter &amp;Départ</value>
   </data>
@@ -302,6 +311,9 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Ajouter Dé&amp;finitions</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Ajouter S&amp;ymbole Spécial</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>
@@ -330,11 +342,11 @@
   <data name="addRegMarkMenu.Text" xml:space="preserve">
     <value>Croix de positionnement</value>
   </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Zone blanche</value>
+  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Texte</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Ajouter S&amp;ymbole Spécial</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Ajouter une ligne de texte...</value>
@@ -360,6 +372,9 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Rotation</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Jalonnage de l'Interposte</value>
+  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Sans Jalon</value>
   </data>
@@ -372,14 +387,8 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Fin Interposte Jalonnée</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Jalonnage de l'Interposte</value>
-  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Modifier Affichage Circuits...</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>Élémen&amp;t</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Synthèse Circuit</value>
@@ -396,9 +405,6 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>&amp;Charge Postes et Interpostes</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Rapports</value>
-  </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Aide Purple Pen</value>
   </data>
@@ -410,6 +416,9 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;À Propos de Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Déboguer</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Navigateur de symbole</value>
@@ -435,8 +444,8 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Testeur de rapport</value>
   </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Déboguer</value>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Traduire le texte des définitions</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Ajouter une langue pour les Définitions...</value>
@@ -446,12 +455,6 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Fusionner Symbols.xml...</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Traduire le texte des définitions</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;?</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Ouvrir</value>
@@ -495,6 +498,9 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter les Définitions</value>
   </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>Ajouter un Symbole Spécial</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>
   </data>
@@ -522,11 +528,11 @@
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
     <value>Croix de positionnement</value>
   </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zone blanche</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Texte</value>
-  </data>
-  <data name="ncross.Text" xml:space="preserve">
-    <value>Ajouter un Symbole Spécial</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Insérer un Coude (Ctrl+B)</value>

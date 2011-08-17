@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 1.0.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2010-09-21 08:24-07:00\n"
+"POT-Creation-Date: 2011-08-16 21:47-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © 2007-2009 by Peter Golde"
-msgstr "Copyright © 2007-2009 Peter Golde"
+msgid "Copyright © 2007-2011 by Peter Golde"
+msgstr "Copyright © 2007-2011 Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -51,6 +51,10 @@ msgstr "Zobrazit celou licenci"
 #: AboutForm.resx, $this.Text
 msgid "About Purple Pen"
 msgstr "O Purple Pen"
+
+#: AddCourse.resx, firstControlLabel.Text
+msgid "First control number:"
+msgstr ""
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -88,9 +92,49 @@ msgstr "Text"
 msgid "Symbols and text"
 msgstr "Symboly a text"
 
+#: AddCourse.resx, labelKindLabel.Text
+msgid "Control circle labels:"
+msgstr ""
+
+#: AddCourse.resx, labelKindCombo.Items
+msgid "Sequence number (3)"
+msgstr ""
+
+#: AddCourse.resx, labelKindCombo.Items1
+msgid "Control code (145)"
+msgstr ""
+
+#: AddCourse.resx, labelKindCombo.Items2
+msgid "Sequence and code (3-145)"
+msgstr ""
+
+#: AddCourse.resx, scoreColumnLabel.Text
+msgid "Show points in:"
+msgstr ""
+
+#: AddCourse.resx, scoreColumnCombo.Items
+msgid "Column A"
+msgstr ""
+
+#: AddCourse.resx, scoreColumnCombo.Items1
+msgid "Column B"
+msgstr ""
+
+#: AddCourse.resx, scoreColumnCombo.Items2
+msgid "Column H"
+msgstr ""
+
+#: AddCourse.resx, scoreColumnCombo.Items3
+msgid "(do not display)"
+msgstr ""
+
 #: AddCourse.resx, groupBox1.Text
-msgid "Default appearance"
-msgstr "Standardní zobrazení"
+#: AllControlsProperties.resx, appearanceGroupBox.Text
+#: PrintCourses.resx, groupBoxAppearance.Text
+#: PrintDescriptions.resx, layoutGroup.Text
+#: PrintPunches.resx, layoutGroup.Text
+msgid "Appearance"
+msgstr "Zobrazení"
 
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
@@ -165,13 +209,6 @@ msgstr "Všechny tratě s {0}"
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
 msgstr "Přidat řádku textu"
-
-#: AllControlsProperties.resx, appearanceGroupBox.Text
-#: PrintCourses.resx, groupBoxAppearance.Text
-#: PrintDescriptions.resx, layoutGroup.Text
-#: PrintPunches.resx, layoutGroup.Text
-msgid "Appearance"
-msgstr "Zobrazení"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
@@ -611,10 +648,12 @@ msgid "Courses"
 msgstr "Tratě"
 
 #: CreateOcadFiles.resx, createButton.Text
+#: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Vytvořit"
 
 #: CreateOcadFiles.resx, cancelButton.Text
+#: CreateRouteGadget.resx, cancelButton.Text
 #: NewEventWizard.resx, cancelButton.Text
 #: NonPrintableObjects.resx, cancelButton.Text
 #: OkCancelDialog.resx, cancelButton.Text
@@ -626,15 +665,9 @@ msgid "Cancel"
 msgstr "Zrušit"
 
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
+#: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Vyberte složku pro soubory OCADu"
-
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Výstup"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
@@ -660,28 +693,67 @@ msgstr "OCAD 8"
 msgid "OCAD 9"
 msgstr "OCAD 9"
 
-#: CreateOcadFiles.resx, folderGroupBox.Text
-msgid "Folder"
-msgstr "Složka"
+#: CreateOcadFiles.resx, fileFormatCombo.Items4
+msgid "OCAD 10"
+msgstr ""
+
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Výstup"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Vybrat složku..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Jiná složka"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
+#: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Stejná složka jako u mapového souboru"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Stejná složka jako u souboru Purple Pen"
 
+#: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreateRouteGadget.resx, folderGroupBox.Text
+msgid "Folder"
+msgstr "Složka"
+
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
+msgstr ""
+
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr ""
+
+#: CreateRouteGadget.resx, label1.Text
+msgid "Enter the name (without .xml or .gif) for both of the "
+"RouteGadget files:"
+msgstr ""
+
+#: CreateRouteGadget.resx, learnMoreLink.Text
+msgid "Learn more about RouteGadget"
+msgstr ""
+
+#: CreateRouteGadget.resx, label2.Text
+msgid "RouteGadget requires both an image file (.gif) and IOF XML "
+"file (.xml). Choose the name and folder for both of these "
+"files."
+msgstr ""
+
+#: CreateRouteGadget.resx, $this.Text
+msgid "Create RouteGadget Files"
 msgstr ""
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
@@ -810,6 +882,10 @@ msgstr "Uložit &jako..."
 msgid "Create OCAD &Files..."
 msgstr "Vytvořit &soubory OCAD..."
 
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr ""
+
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create &E-Punch Interchange File..."
 msgstr ""
@@ -826,14 +902,6 @@ msgstr ""
 msgid "Print &Courses..."
 msgstr "Tisknout &tratě..."
 
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Tato trať"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Všechny tratě"
-
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
 msgstr "Nastavit o&blast tisku"
@@ -849,6 +917,42 @@ msgstr "&Konec"
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Soubor"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Úpravy"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Zobrazit"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "U&dálost"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Trať"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr ""
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr ""
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Nápověda"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Tato trať"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Všechny tratě"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -870,10 +974,6 @@ msgstr "Z&novu"
 msgid "&Delete"
 msgstr "&Smazat"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Úpravy"
-
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
 msgstr ""
@@ -881,6 +981,10 @@ msgstr ""
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr ""
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zvětšení"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -910,9 +1014,9 @@ msgstr "500 %"
 msgid "1000%"
 msgstr "1000 %"
 
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zvětšení"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr ""
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -934,8 +1038,8 @@ msgstr ""
 msgid "&Full"
 msgstr ""
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
 msgstr ""
 
 #: MainFrame.resx, normalQualityMenu.Text
@@ -946,17 +1050,9 @@ msgstr ""
 msgid "High"
 msgstr ""
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr ""
-
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
 msgstr "&Všechny kontroly"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Zobrazit"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -986,10 +1082,6 @@ msgstr ""
 msgid "Customize Course &Appearance..."
 msgstr "Přizpůsobit vzhled tr&ati..."
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "U&dálost"
-
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
 msgstr "Přid&at trať..."
@@ -1010,10 +1102,6 @@ msgstr "Pořadí tratí..."
 msgid "Competitor &Load..."
 msgstr ""
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Trať"
-
 #: MainFrame.resx, addStartMenu.Text
 msgid "Add &Start"
 msgstr "Přidat &start"
@@ -1029,6 +1117,10 @@ msgstr "Přidat &cíl"
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "Add &Descriptions"
 msgstr "Přidat &popisy"
+
+#: MainFrame.resx, addSpecialItemMenu.Text
+msgid "Add Special &Item"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1087,10 +1179,6 @@ msgstr ""
 msgid "White Out Area"
 msgstr ""
 
-#: MainFrame.resx, addSpecialItemMenu.Text
-msgid "Add Special &Item"
-msgstr ""
-
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
 msgstr ""
@@ -1119,6 +1207,10 @@ msgstr "Změnit &text..."
 msgid "R&otate"
 msgstr "O&točit"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr ""
+
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr ""
@@ -1135,16 +1227,8 @@ msgstr ""
 msgid "End of Leg Flagged"
 msgstr ""
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr ""
-
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
-msgstr ""
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
 msgstr ""
 
 #: MainFrame.resx, courseSummaryMenu.Text
@@ -1167,10 +1251,6 @@ msgstr ""
 msgid "Control and Leg Loa&d"
 msgstr ""
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr ""
-
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
 msgstr "&Nápověda Purple Pen"
@@ -1186,6 +1266,10 @@ msgstr "&Podpora/Hlášení chyb"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&O programu Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr ""
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -1219,8 +1303,12 @@ msgstr ""
 msgid "Report Tester"
 msgstr ""
 
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
+#: MainFrame.resx, fontMetricsToolStripMenuItem.Text
+msgid "Font Metrics"
+msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -1234,14 +1322,6 @@ msgstr ""
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr ""
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Nápověda"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"

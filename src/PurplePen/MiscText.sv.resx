@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CtrlZ" xml:space="preserve">
     <value>Ctrl+Z</value>
@@ -380,5 +380,8 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
     <value>Du måste stänga Purple Pen innan du kan öppna de skapade OCAD filerna.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Ingen bana valdes för utskrift</value>
   </data>
 </root>

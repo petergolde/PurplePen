@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CtrlZ" xml:space="preserve">
     <value>Ctrl+Z</value>
@@ -162,11 +162,17 @@
   <data name="SaveChanges" xml:space="preserve">
     <value>¿Desea guardar los cambios realizados en «{0}»?</value>
   </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>El archivo «{0}» ya existe en la carpeta especificada. Pulse el botón «Atrás» y elija otra carpeta u otro título de evento.</value>
+  </data>
   <data name="CodeInUse" xml:space="preserve">
     <value>El código de control de '{0}' ya es utilizado por otro control.</value>
   </data>
   <data name="BadScore" xml:space="preserve">
     <value>Los puntos para un control deben ser un entero 1-999.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>La carga de una carrera debe ser un entero 0-999999, o blanco.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>&amp;Deshacer</value>

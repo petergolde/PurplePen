@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Alle poster</value>
@@ -153,12 +153,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Skriv ut løyper...</value>
   </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Denne løypen</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Alle løyper</value>
-  </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Velg utskriftsområde</value>
   </data>
@@ -170,6 +164,33 @@
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Arkiv</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Rediger</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Vis</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Konkurranse</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Løype</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Objekt</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapporter</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Hjelp</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Denne løypen</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Alle løyper</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Blank ut valgt</value>
@@ -183,14 +204,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Slett</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Rediger</value>
-  </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Hele &amp;Løype</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Hele &amp;kartet</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -213,8 +234,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Kart &amp;Intensitet</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Svært lavt</value>
@@ -231,8 +252,8 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Full</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Kart &amp;Intensitet</value>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Kartkvalitet</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Lav</value>
@@ -240,14 +261,8 @@
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Høy</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Kartkvalitet</value>
-  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Alle poster</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Vis</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kartfil...</value>
@@ -270,9 +285,6 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Tilpass løypens &amp;utseende</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Konkurranse</value>
-  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Legg til løype</value>
   </data>
@@ -288,9 +300,6 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Antall deltakere</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Løype</value>
-  </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>Legg til &amp;start</value>
   </data>
@@ -302,6 +311,9 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Legg til &amp;postbeskrivelser</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Legg til spesial &amp;element</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -330,11 +342,11 @@
   <data name="addRegMarkMenu.Text" xml:space="preserve">
     <value>Passpunkt</value>
   </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Lage hvitt område</value>
+  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Tekst</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Legg til spesial &amp;element</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Legg til tekst &amp;linje</value>
@@ -360,6 +372,9 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otere</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Merket strekk</value>
+  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Ingen merking</value>
   </data>
@@ -372,14 +387,8 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Slutten av strekket merket</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Merket strekk</value>
-  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Endre viste løyper</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Objekt</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Løype sammendrag</value>
@@ -396,9 +405,6 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Statistikk for post og strekkutnyttelse</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Rapporter</value>
-  </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Hjelp</value>
   </data>
@@ -410,6 +416,9 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Om Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Feilsøk</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolgalleri</value>
@@ -435,8 +444,8 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Test av rapporter</value>
   </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Feilsøk</value>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Oversett postbeskrivelse</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Legg til språk for postbeskrivelser...</value>
@@ -446,12 +455,6 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Slå sammen Symboler.xml...</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Oversett postbeskrivelse</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Hjelp</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Åpne</value>
@@ -475,7 +478,7 @@
     <value>Gjør om</value>
   </data>
   <data name="redoToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Gjø om (Ctrl+Y)</value>
+    <value>Gjør om (Ctrl+Y)</value>
   </data>
   <data name="deleteToolStripButton.Text" xml:space="preserve">
     <value>Slett (Del)</value>
@@ -494,6 +497,9 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Legg til beskrivelser</value>
+  </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>Legg til spesielt symbol</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -522,11 +528,11 @@
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
     <value>Passpunkt</value>
   </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lage hvitt område</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Tekst</value>
-  </data>
-  <data name="ncross.Text" xml:space="preserve">
-    <value>Legg til spesielt symbol</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Leg til bend (Ctrl+B)</value>

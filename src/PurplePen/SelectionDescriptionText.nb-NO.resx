@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
     <value>borte fra post</value>
@@ -163,7 +163,7 @@
     <value>mål</value>
   </data>
   <data name="Flagging" xml:space="preserve">
-    <value>Gafling:</value>
+    <value>Flagging</value>
   </data>
   <data name="IntoControl" xml:space="preserve">
     <value>inn til posten</value>
@@ -181,7 +181,7 @@
     <value>Sted:</value>
   </data>
   <data name="MandCrossing_Plural" xml:space="preserve">
-    <value>obligarorisje krysningspunkter</value>
+    <value>obligatoriske krysningspunkter</value>
   </data>
   <data name="MandCrossing_Singular" xml:space="preserve">
     <value>obligatorisk krysningspunkt</value>
@@ -254,5 +254,8 @@
   </data>
   <data name="UsedInCourses" xml:space="preserve">
     <value>Benyttes i løyper:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Lage hvitt område</value>
   </data>
 </root>
