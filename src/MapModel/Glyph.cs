@@ -129,11 +129,37 @@ namespace PurplePen.MapModel
                 }
             }
 
+            public RectangleF BoundingBox {
+                get {
+                    switch (kind) {
+                        case GlyphPartKind.Line:
+                            float width = lineWidth;
+                            if (lineStyle == LineStyle.Mitered)
+                                width *= path.MaxMiter;
+                            RectangleF bounding = path.BoundingBox;
+                            bounding.Inflate(new SizeF(width / 2, width / 2));
+                            return bounding;
+
+                        case GlyphPartKind.Area:
+                            return areaPath.BoundingBox;
+
+                        case GlyphPartKind.Circle:
+                        case GlyphPartKind.FilledCircle:
+                            float radius = circleDiam / 2;
+                            return new RectangleF(point.X - radius, point.Y - radius, circleDiam, circleDiam);
+                    }
+
+                    Debug.Assert(false);
+                    return new RectangleF();  // Can't get here.
+                }
+            }
+
             public void FreeGDIObjects() {
             }
         }
 
         float radius = 0.0F;    // max distance away from 0,0  
+        RectangleF boundingBox;  // bounding box of the 
         GlyphPart[] parts; // a sequence of parts.
         bool simple;	   // true if consist of a single, possibly filled, circle at 0,0.
         bool constructed = false;
@@ -147,6 +173,13 @@ namespace PurplePen.MapModel
             get {
                 CheckConstructed();
                 return radius;
+            }
+        }
+
+        public RectangleF BoundingBox {
+            get {
+                CheckConstructed();
+                return boundingBox;
             }
         }
 
@@ -278,12 +311,19 @@ namespace PurplePen.MapModel
             if (parts == null)
                 parts = new GlyphPart[0];
 
-            // Compute radius -- the max distance of this glyph from 0,0
+            // Compute radius-- the max distance of this glyph from 0,0 -- and bounding box.
             radius = 0.0F;
+            boundingBox = new RectangleF();
             for (int i = 0; i < parts.Length; ++i) {
                 float partRadius = parts[i].Radius;
                 if (partRadius > radius)
                     radius = partRadius;
+
+                RectangleF partBoundingBox = parts[i].BoundingBox;
+                if (i == 0)
+                    boundingBox = partBoundingBox;
+                else
+                    boundingBox = RectangleF.Union(boundingBox, partBoundingBox);
             }
         }
 

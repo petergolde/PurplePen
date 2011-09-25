@@ -114,7 +114,7 @@ namespace PurplePen.MapModel.Tests
         {
         }
 
-        static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea)
+        static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps)
         {
             // Calculate the transform matrix.
             PointF midpoint = new PointF(bitmapSize.Width / 2.0F, bitmapSize.Height / 2.0F);
@@ -129,7 +129,7 @@ namespace PurplePen.MapModel.Tests
             Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
             using (Graphics g = Graphics.FromImage(bitmapNew)) {
                 RenderOptions renderOpts = new RenderOptions();
-                renderOpts.usePatternBitmaps = true;
+                renderOpts.usePatternBitmaps = usePatternBitmaps;
                 renderOpts.minResolution = mapArea.Width / (float) bitmapSize.Width;
 
                 g.Clear(Color.White);
@@ -144,7 +144,7 @@ namespace PurplePen.MapModel.Tests
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
         // a difference bitmap is written out.
-        static bool VerifyTestFile(string filename, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
+        static bool VerifyTestFile(string filename, bool usePatternBitmaps, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
         {
 
             string pngFileName;
@@ -189,7 +189,7 @@ namespace PurplePen.MapModel.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
+            Bitmap bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps);
 
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
@@ -209,7 +209,7 @@ namespace PurplePen.MapModel.Tests
                 }
 
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Bitmap bitmapLight = RenderBitmap(map, size, mapArea);
+                Bitmap bitmapLight = RenderBitmap(map, size, mapArea, usePatternBitmaps);
                 TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName);
             }
 
@@ -223,7 +223,7 @@ namespace PurplePen.MapModel.Tests
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
-                    bitmapNew = RenderBitmap(map, size, mapArea);
+                    bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps);
 
                     TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
 
@@ -239,7 +239,7 @@ namespace PurplePen.MapModel.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
+            Bitmap bitmapNew = RenderBitmap(map, size, mapArea, true);
 
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
@@ -249,7 +249,13 @@ namespace PurplePen.MapModel.Tests
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("rendering\\" + filename);
-            bool ok = VerifyTestFile(fullname, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = VerifyTestFile(fullname, true, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+        }
+
+        void CheckTestNoPatternBitmaps(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion) {
+            string fullname = TestUtil.GetTestFile("rendering\\" + filename);
+            bool ok = VerifyTestFile(fullname, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
@@ -408,6 +414,26 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTest("zeroglyph9.txt", false, true, 6, 10);
             CheckTest("zeroglyph6.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void OffsetAreaPattern() {
+            CheckTest("offsetpattern.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void OffsetAreaPatternNoBitmap() {
+            CheckTestNoPatternBitmaps("offsetpattern_nopatbm.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void OffsetAreaPatternRotated() {
+            CheckTest("offsetpatternrot.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void OffsetAreaPatternRotatedNoBitmap() {
+            CheckTestNoPatternBitmaps("offsetpatternrot_nopatbm.txt", false, true, 6, 10);
         }
 
         [TestMethod]
