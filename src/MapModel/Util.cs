@@ -144,9 +144,14 @@ namespace PurplePen.MapModel
 
 		// Rotate a rectangle around a point, and return the new rectangle that bounds the corners of the rotated one.
 		public static RectangleF BoundsOfRotatedRectangle(RectangleF rect, PointF rotateAt, float angle) {
-            Matrix m = new Matrix();
-            m.RotateAt(angle, rotateAt);
-			return BoundsOfTransformedRectangle(rect, m);
+            if (angle == 0) {
+                return rect;
+            }
+            else {
+                Matrix m = new Matrix();
+                m.RotateAt(angle, rotateAt);
+                return BoundsOfTransformedRectangle(rect, m);
+            }
 		}
 
 		// Find the transformation matrix that transform a rectangle (with positive Y downward) to a different

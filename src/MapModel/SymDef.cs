@@ -1531,6 +1531,8 @@ namespace PurplePen.MapModel
                 // If the glyphPattern bounding box extend outside the brush box, then we need to render glyphPattern more then once. This
                 // is calculated in both the vertical and horizontal directions.
                 RectangleF patternGlyphBounds = patternGlyph.BoundingBox;
+                patternGlyphBounds = Util.BoundsOfRotatedRectangle(patternGlyphBounds, new PointF(0, 0), -patternAngle);
+
                 int rowStart = 0, rowEnd = 0, colStart = 0, colEnd = 0;
                 if (patternBox.Top > patternGlyphBounds.Top)
                     rowStart = -(int)Math.Ceiling((patternBox.Top - patternGlyphBounds.Top) / patternHeight);
@@ -1548,12 +1550,15 @@ namespace PurplePen.MapModel
                 }
 
                 // Draw the pattern into the bitmap
+                Matrix matrix = new Matrix();
+
                 for (int col = colStart; col <= colEnd; ++col) {
                     for (int row = rowStart; row <= rowEnd; ++row) {
-                        Matrix matrix = new Matrix();
+                        matrix = new Matrix();
                         matrix.Translate(-col * patternWidth, -row * patternHeight);
                         if (offsetRows && (row % 2) != 0)
                             matrix.Translate(-patternWidth / 2, 0);
+                        matrix.Rotate(-patternAngle);
                         brushTarget.PushTransform(matrix);
 
                         //if (offsetRows) {
@@ -1564,7 +1569,7 @@ namespace PurplePen.MapModel
                         //    patternGlyph.Draw(brushTarget, new PointF(-patternWidth / 2, -patternHeight), -patternAngle, null, null, color, renderOpts);
                         //}
                         //else {
-                            patternGlyph.Draw(brushTarget, new PointF(0F, 0F), -patternAngle, null, null, color, renderOpts);
+                            patternGlyph.Draw(brushTarget, new PointF(0F, 0F), 0, null, null, color, renderOpts);
                         //}
 
                         brushTarget.PopTransform();
@@ -1604,16 +1609,17 @@ namespace PurplePen.MapModel
         // Draw a set of rows of the pattern with the given rectangle
         void DrawPatternRows(IGraphicsTarget g, RectangleF boundingRect, SymColor color, RenderOptions renderOpts)
         {
-            RectangleF patternGlyphBounds = patternGlyph.BoundingBox;
+            RectangleF patternGlyphBounds = Util.BoundsOfRotatedRectangle(patternGlyph.BoundingBox, new PointF(0, 0), -patternAngle);
             RectangleF patternBounds = new RectangleF(-patternWidth / 2, -patternHeight / 2, patternWidth, patternHeight);
 
-            double topLine = Math.Round((boundingRect.Top - patternGlyphBounds.Bottom + patternBounds.Bottom) / patternHeight) * patternHeight;
+            long topLineCount = (long)Math.Round((boundingRect.Top - patternGlyphBounds.Bottom + patternBounds.Bottom) / patternHeight);
+            double topLine = topLineCount * patternHeight;
             double bottomLine = (Math.Round((boundingRect.Bottom - patternGlyphBounds.Top + patternBounds.Top) / patternHeight) + 0.5) * patternHeight;
             double leftLine = Math.Round((boundingRect.Left - patternGlyphBounds.Right + patternBounds.Right) / patternWidth) * patternWidth;
             double rightLine = (Math.Round((boundingRect.Right - patternGlyphBounds.Left + patternBounds.Left) / patternWidth) + 0.5) * patternWidth;
             double offsetLeftLine = leftLine - (patternWidth / 2);
             double offsetRightLine = rightLine + (patternWidth / 2);
-            bool firstLineOffset = ((long) Math.Round(boundingRect.Top / patternHeight) & 1) != 0;
+            bool firstLineOffset = (topLineCount & 1) != 0;
 
             bool offsetThisLine = offsetRows && firstLineOffset;
             for (double y = topLine; y <= bottomLine; y += patternHeight) {

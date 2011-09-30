@@ -432,8 +432,33 @@ namespace PurplePen.MapModel.Tests
         }
 
         [TestMethod]
+        public void OffsetAreaPatternRotated2() {
+            CheckTest("offsetpatternrot2.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
         public void OffsetAreaPatternRotatedNoBitmap() {
             CheckTestNoPatternBitmaps("offsetpatternrot_nopatbm.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void OffsetAreaPatternRotated2NoBitmap() {
+            CheckTestNoPatternBitmaps("offsetpatternrot2_nopatbm.txt", false, true, 6, 10);
+        }
+
+        [TestMethod]
+        public void AreaSymbolsBug() {
+            CheckTest("isomareabug.txt", false, false, 9, 9);
+        }
+
+        [TestMethod]
+        public void AreaSymbolsBugNoBitmap() {
+            CheckTestNoPatternBitmaps("isomareabug_nopatbm.txt", false, false,9, 9);
+        }
+
+        [TestMethod]
+        public void AreaSymbolsNoBitmap() {
+            CheckTestNoPatternBitmaps("isomarea_nopatbm.txt", true, true, 6, 9);
         }
 
         [TestMethod]

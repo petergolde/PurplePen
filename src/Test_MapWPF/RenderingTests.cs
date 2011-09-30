@@ -285,6 +285,11 @@ namespace TestWpfMap
         }
 
         [TestMethod]
+        public void AreaSymbolsBug() {
+            CheckTest("isomareabug.txt", false, false, 9, 9);
+        }
+
+        [TestMethod]
         public void AreaHoles()
         {
             CheckTest("holes.txt", false, true, 6, 9);
