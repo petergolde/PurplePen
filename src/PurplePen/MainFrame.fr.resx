@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Créer des &amp;Fichiers OCAD...</value>
   </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Création des fichiers RouteGadget...</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Créer Fichier &amp;Interchange XML...</value>
   </data>
@@ -443,6 +446,9 @@
   </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Testeur de rapport</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Police</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>&amp;Traduire le texte des définitions</value>

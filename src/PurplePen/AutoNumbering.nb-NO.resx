@@ -130,7 +130,7 @@
     <value>Eksisterende poster</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
-    <value>Nye poster nummereres automatiske etter følgende innstillinger</value>
+    <value>Nye poster nummereres automatisk etter følgende innstillinger</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Start med kode:</value>

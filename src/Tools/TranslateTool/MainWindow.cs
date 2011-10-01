@@ -271,42 +271,48 @@ namespace TranslateTool
         private void SynchronizePoFiles(string resxDirectory, string poDirectory, string programName, string email, string version)
         {
             // First, determine the cultures that we are doing from the PO Files.
-            List<CultureInfo> cultures = DetermineCultures(poDirectory);
-            string potFile = DeterminePotName(poDirectory);
+            string baseName;
+            string potFile = DeterminePotName(poDirectory, out baseName);
+            List<CultureInfo> cultures = DetermineCultures(poDirectory, baseName);
 
             foreach (CultureInfo culture in cultures) {
-                SynchronizePoFile(resxDirectory, poDirectory, culture, programName, email, version);
+                SynchronizePoFile(resxDirectory, poDirectory, baseName, culture, programName, email, version);
             }
 
             SynchronizePot(resxDirectory, potFile, programName, email, version);
         }
 
-        private List<CultureInfo> DetermineCultures(string poDirectory)
+        private List<CultureInfo> DetermineCultures(string poDirectory, string basename)
         {
             List<CultureInfo> cultureList = new List<CultureInfo>();
 
             foreach(string poFileName in Directory.GetFiles(poDirectory, "*.po", SearchOption.TopDirectoryOnly)) {
-                string cultureName =Path.GetFileNameWithoutExtension(poFileName);
-                cultureName = cultureName.Replace("_", "-");
-                if (cultureName == "nb" || cultureName == "nn")
-                    cultureName += "-NO";
-                CultureInfo culture = CultureInfo.GetCultureInfo(cultureName);
-                cultureList.Add(culture);
+                string filenameWithoutExtension = Path.GetFileNameWithoutExtension(poFileName);
+                if (filenameWithoutExtension.StartsWith(basename + "-")) {
+                    string cultureName = filenameWithoutExtension.Substring(basename.Length + 1);
+                    cultureName = cultureName.Replace("_", "-");
+                    if (cultureName == "nb" || cultureName == "nn")
+                        cultureName += "-NO";
+                    CultureInfo culture = CultureInfo.GetCultureInfo(cultureName);
+                    cultureList.Add(culture);
+                }
             }
 
             return cultureList;
         }
 
-        private string DeterminePotName(string poDirectory)
+        private string DeterminePotName(string poDirectory, out string basename)
         {
             string[] potFiles = Directory.GetFiles(poDirectory, "*.pot", SearchOption.TopDirectoryOnly);
             if (potFiles.Length != 1)
                 throw new ApplicationException(string.Format("Must have exactly 1 .POT file in {0}", poDirectory));
 
-            return potFiles[0];
+            string potName = potFiles[0];
+            basename = Path.GetFileNameWithoutExtension(potName);
+            return potName;
         }
 
-        private void SynchronizePoFile(string resxDirectory, string poDirectory, CultureInfo culture, string programName, string email, string version)
+        private void SynchronizePoFile(string resxDirectory, string poDirectory, string baseName, CultureInfo culture, string programName, string email, string version)
         {
             ResourceDirectory resourceDirectory = new ResourceDirectory();
 
@@ -318,7 +324,7 @@ namespace TranslateTool
                 cultureName = cultureName.Substring(0, 2);
             cultureName = cultureName.Replace("-", "_");
 
-            string poFileName = Path.Combine(poDirectory, cultureName + ".po");
+            string poFileName = Path.Combine(poDirectory, baseName + "-" + cultureName + ".po");
 
             PoReader reader = new PoReader(poFileName);
             List<PoEntry> entries = reader.ReadPo();

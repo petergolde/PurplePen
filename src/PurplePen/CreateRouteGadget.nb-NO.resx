@@ -141,4 +141,19 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Samme mappe som Purple Pen filen</value>
   </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Filnavn</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Skriv inn navnet (uten .xml og .gif) til begge RouteGadget filene:</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Finn ut mer om RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget trenger både en bildefil (.gif) og en IOF XML fil (.xml). Velg filnavn og plassering for begge disse filene.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Lag RouteGadget filer</value>
+  </data>
 </root>

@@ -121,7 +121,7 @@
     <value>Sett inn spesialtekst</value>
   </data>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
-    <value>Arrangementsnavn</value>
+    <value>Navn på arrangement</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Løypenavn</value>

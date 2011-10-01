@@ -190,7 +190,7 @@
     <value>Endre egenskaper for alle poster</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
-    <value>Opprett ny konkurranse</value>
+    <value>Opprett nytt arrangement</value>
   </data>
   <data name="SetLegFlagging" xml:space="preserve">
     <value>Endre markering for strekk</value>

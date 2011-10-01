@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>Første post nummer:</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Postbeskrivelsens utseende</value>
   </data>
@@ -134,6 +137,33 @@
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Symboler og tekst</value>
+  </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Postsirkel tekst:</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Sekvensnummer (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Post kode (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sekvens og kode (3-145)</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Vis poeng i:</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Kolonne A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Kolonne B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Kolonne H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(skjul)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>

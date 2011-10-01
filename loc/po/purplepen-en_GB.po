@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.0.3\n"
+"Project-Id-Version: Purple Pen 1.1.1\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 21:20-07:00\n"
+"POT-Creation-Date: 2011-09-30 23:00-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,12 +17,11 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © 2007-2011 by Peter Golde"
-msgstr "Copyright (C) 2007-2011 Peter Golde"
+msgstr "Copyright © 2007-2011 by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
-msgstr "Purple Pen on tasuta tarkvara, mida võib kopeerida ja "
-"jagada."
+msgstr "Purple Pen is free software and may be copied and shared."
 
 #: AboutForm.resx, disclaimerLabel.Text
 msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
@@ -46,15 +45,15 @@ msgstr "OK"
 
 #: AboutForm.resx, creditsButton.Text
 msgid "Credits"
-msgstr "Tunnustus"
+msgstr "Credits"
 
 #: AboutForm.resx, licenseButton.Text
 msgid "View Full License"
-msgstr "Tutvu põhilitsentsiga"
+msgstr "View Full Licence"
 
 #: AboutForm.resx, $this.Text
 msgid "About Purple Pen"
-msgstr "Programmist Purple Pen"
+msgstr "About Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
@@ -63,12 +62,12 @@ msgstr ""
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
 msgid "Description appearance:"
-msgstr "Legendi väljanägemine:"
+msgstr "Description appearance:"
 
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr "Trükikaardi mastaap"
+msgstr "Map printing scale:"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
@@ -79,7 +78,7 @@ msgstr "1 : "
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
 msgid "Symbols"
-msgstr "Sümbolid"
+msgstr "Symbols"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
@@ -89,12 +88,12 @@ msgstr "Sümbolid"
 #: PrintDescriptions.resx, descriptionKindCombo.Items2
 #: SelectionDescriptionText.resx, SpecialName_Text
 msgid "Text"
-msgstr "Tekst"
+msgstr "Text"
 
 #: AddCourse.resx, descKindCombo.Items2
 #: AllControlsProperties.resx, descKindCombo.Items2
 msgid "Symbols and text"
-msgstr "Sümbolid ja tekst"
+msgstr "Symbols and text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
@@ -138,187 +137,189 @@ msgstr ""
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
 msgid "Appearance"
-msgstr "Välimus"
+msgstr "Appearance"
 
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
-msgstr "Järgnev (täiendav) tekst lisatakse legendi teisele reale:"
+msgstr "The following (optional) text will appear on the second "
+"line of the control description sheet:"
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "Klasside nimekiri / Teine pealkiri"
+msgstr "Class list / Secondary title"
 
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
-msgstr "Tõus:"
+msgstr "Climb:"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
-msgstr "Raja tüüp:"
+msgstr "Course type:"
 
 #: AddCourse.resx, courseNameLabel.Text
 msgid "Course name:"
-msgstr "Raja nimi:"
+msgstr "Course name:"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr "Tavarada"
+msgstr "Normal Course"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr "Valikrada"
+msgstr "Score Course"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
-msgstr "meetrit"
+msgstr "metres"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr "Uus rada"
+msgstr "New Course"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Sisesta tekst, mis lisatakse legendi eraldi reana:"
+msgstr "Enter text to place on separate line of control "
+"descriptions:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
-msgstr "Rajad:"
+msgstr "Courses:"
 
 #: AddTextLine.resx, positionLabel.Text
 msgid "Position:"
-msgstr "Asukoht:"
+msgstr "Position:"
 
 #: AddTextLine.resx, comboBoxPosition.Items
 msgid "Above {0}"
-msgstr "Ette {0}"
+msgstr "Above {0}"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "Järel"
+msgstr "Below {0}"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
-msgstr "Ainult sellel rajal"
+msgstr "This course only"
 
 #: AddTextLine.resx, comboBoxCourses.Items1
 msgid "All courses with {0}"
-msgstr "Kõik rajad koos {0}"
+msgstr "All courses with {0}"
 
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr "Lisa teksti rida"
+msgstr "Add Text Line"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "Allolevad seaded määravad kuidas trükitakse kaardile "
-"legendid kõikide kontrollpunktide korral."
+msgstr "These settings control how the map and descriptions for "
+"All Controls are printed."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr "Kõik punktid seaded"
+msgstr "All Controls Properties"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Keela koodnumbrid, mida ei ole soovitav kasutada (näiteks "
-"\"68/89\")"
+msgstr "Disallow codes that could be read upside-down (e.g., "
+"\"68\"/\"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr "Nummerda ümber olemasolevad kontrollpunktid"
+msgstr "Renumber existing controls also"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "Rakenda seaded ainult uutele lisatavatele kontrollpunktidele"
+msgstr "Apply these settings to newly created controls only"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
-msgstr "Olemasolevad kontrollpunktid"
+msgstr "Existing Controls"
 
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr "Lisatud kontrollpunktid nummerdatakse automaatselt "
-"järgmiste reeglite järgi."
+msgstr "Newly created controls are automatically numbered "
+"according to the following settings."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
 msgid "Starting code:"
-msgstr "Stardi kood:"
+msgstr "Starting code:"
 
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
 msgid "Automatic Numbering"
-msgstr "Automaatne nummerdamine"
+msgstr "Automatic Numbering"
 
 #: ChangeAllCodes.resx, OldCode.HeaderText
 msgid "Original Code"
-msgstr "Originaal number"
+msgstr "Original Code"
 
 #: ChangeAllCodes.resx, NewCode.HeaderText
 msgid "New Code"
-msgstr "Uus number"
+msgstr "New Code"
 
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr "Ühe või mitme kontrollpunkti numbri muutmiseks kliki \"Uus "
-"kood\" veerul ja sisesta uus tunnusnumber. "
+msgstr "To change the code for one or more controls,click in the "
+"\"New Code\" column and enter the new code. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
-msgstr "Muuda KP tunnusnumbreid"
+msgstr "Change Control Codes"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
-msgstr "Liigu alla"
+msgstr "Move down"
 
 #: ChangeCourseOrder.resx, courseOrderLabel.Text
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr "Kasuta \"Liigu üles\" ja \"Liigu alla\" nuppe muutmaks radade "
-"järjestust programmis, aruannetes ja trükistes."
+msgstr "Use the \"Move Up\" and \"Move Down\" buttons to change the "
+"order that courses are listed in the user interface, "
+"reports, and printing."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
-msgstr "Liigu üles"
+msgstr "Move up"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr "Radade järjekord"
+msgstr "Course Order"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
-msgstr "Kasutatav kaardi fail"
+msgstr "Current Map File"
 
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr "&Vali kaardi fail..."
+msgstr "&Choose map file..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
 msgid "OCAD files (*.ocd)|*.ocd|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "OCAD failid "
-"(*.ocd)|*.ocd|Pildifailid|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*."
-"png;*.gif"
+msgstr "OCAD files (*.ocd)|*.ocd|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
-msgstr "Eraldusvõime:"
+msgstr "Resolution:"
 
 #: ChangeMapFile.resx, labelScale.Text
 msgid "Scale:"
-msgstr "Mastaap:"
+msgstr "Scale:"
 
 #: ChangeMapFile.resx, labelOneTo.Text
 msgid "1 :"
@@ -327,246 +328,247 @@ msgstr "1 :"
 #: ChangeMapFile.resx, labelDpi2.Text
 #: NewEventBitmapScale.resx, dpiLabel.Text
 msgid "dots per inch"
-msgstr "punkti tollile"
+msgstr "dots per inch"
 
 #: ChangeMapFile.resx, $this.Text
 msgid "Map File"
-msgstr "Kaardi fail"
+msgstr "Map File"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr "Vali rajad, kus valitud objekt kasutusel on:"
+msgstr "Choose the courses on which that this object will be "
+"displayed:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr "Muuda valitud radu"
+msgstr "Change Displayed Courses"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
-msgstr "Sisesta lisa tekst"
+msgstr "Insert Special Text"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 msgid "Event Title"
-msgstr "Võistluse pealkiri"
+msgstr "Event Title"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
 #: SelectionDescriptionText.resx, SpecialName_CourseName
 msgid "Course Name"
-msgstr "Raja nimi"
+msgstr "Course Name"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
-msgstr "Raja pikkus"
+msgstr "Course Length"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr "Tõusude summa"
+msgstr "Course Climb"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
-msgstr "Klasside nimekiri"
+msgstr "Class List"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
-msgstr "Muuda sümbolit"
+msgstr "Change Symbol"
 
 #: CommandNameText.resx, ChangeCode
 msgid "Change Control Code"
-msgstr "Muuda KP tunnusnumbrit"
+msgstr "Change Control Code"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
-msgstr "Muuda KPd"
+msgstr "Change Control"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr "Muuda KP asukohti"
+msgstr "Change Control Points"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
-msgstr "Muuda pealkirja"
+msgstr "Change Title"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
-msgstr "Muuda tõuse"
+msgstr "Change Climb"
 
 #: CommandNameText.resx, ChangeCourseName
 msgid "Change Course Name"
-msgstr "Muuda raja nime"
+msgstr "Change Course Name"
 
 #: CommandNameText.resx, ChangeTextLine
 msgid "Change Text Line"
-msgstr "Muuda teksti rida"
+msgstr "Change Text Line"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr "Uuenda kaardi mastaapi"
+msgstr "Update Map Scale"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
-msgstr "Liiguta KPd"
+msgstr "Move Control"
 
 #: CommandNameText.resx, MoveControlNumber
 msgid "Move Control Number"
-msgstr "Liiguta KP tunnusnumbrit"
+msgstr "Move Control Number"
 
 #: CommandNameText.resx, MoveObject
 msgid "Move Object"
-msgstr "Liiguta objekti"
+msgstr "Move Object"
 
 #: CommandNameText.resx, DeleteControl
 msgid "Delete Control"
-msgstr "Kustuta KP"
+msgstr "Delete Control"
 
 #: CommandNameText.resx, DeleteObject
 msgid "Delete Object"
-msgstr "Kustuta objekt"
+msgstr "Delete Object"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr "Kustuta teksti rida"
+msgstr "Delete Text Line"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr "Lisa KP"
+msgstr "Add Control"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr "Lisa start"
+msgstr "Add Start"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
 msgid "Add Finish"
-msgstr "Lisa finiš"
+msgstr "Add Finish"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
-msgstr "Lisa kohtustuslik läbipääsu koht"
+msgstr "Add Mandatory Crossing Point"
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
-msgstr "Lisa objekt"
+msgstr "Add Object"
 
 #: CommandNameText.resx, DeleteCourse
 msgid "Delete Course"
-msgstr "Kustuta rada"
+msgstr "Delete Course"
 
 #: CommandNameText.resx, ChangeCourseProperties
 msgid "Change Course Properties"
-msgstr "Muuda raja seadeid"
+msgstr "Change Course Properties"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr "Muuda kõikide KPde seadeid"
+msgstr "Change All Controls Properties"
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
 msgid "Create New Event"
-msgstr "Lisa uus võistlus"
+msgstr "Create New Event"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
-msgstr "Muuda etapi märgistust"
+msgstr "Change Leg Flagging"
 
 #: CommandNameText.resx, ChangeCodes
 msgid "Change Codes"
-msgstr "Muuda tunnusnumbreid"
+msgstr "Change Codes"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr "Liiguta murdepunkti"
+msgstr "Move Leg Bend"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr "Lisa murdepunkt"
+msgstr "Add Bend"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
-msgstr "Lisa nurgapunkt"
+msgstr "Add Corner"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "Eemalda murdepunkt"
+msgstr "Remove Bend"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
-msgstr "Eemalda nurgapunkt"
+msgstr "Remove Corner"
 
 #: CommandNameText.resx, AddGap
 msgid "Add Gap"
-msgstr "Lisa katkestus"
+msgstr "Add Gap"
 
 #: CommandNameText.resx, RemoveGap
 msgid "Remove Gap"
-msgstr "Eemalda katkestus"
+msgstr "Remove Gap"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr "Liiguta katkestust"
+msgstr "Move Gap"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
-msgstr "Pööra"
+msgstr "Rotate"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr "Muuda kompostri jäljendit"
+msgstr "Change Pin-Punch Patterns"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr "Muuda kontrollkaardi väljanägemist"
+msgstr "Change Control Card Layout"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
 msgid "Set Print Area"
-msgstr "Prindiala määramine"
+msgstr "Set Print Area"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr "Muuda osalejate arvu"
+msgstr "Change Competitor Load"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr "Muuda legendi"
+msgstr "Customize Description Text"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
-msgstr "Muuda radade järjestust"
+msgstr "Change Course Order"
 
 #: CommandNameText.resx, ChangeMapFile
 msgid "Change Map File"
-msgstr "Muuda kaardi faili"
+msgstr "Change Map File"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr "Ignoreeri puuduvaid fonte"
+msgstr "Ignore Missing Fonts"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
-msgstr "Eemalda kasutama KPd"
+msgstr "Remove Unused Controls"
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr "Muuda legendis kasutatavat keelt"
+msgstr "Change Description Language"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
 msgid "Change Text"
-msgstr "Muuda teksti"
+msgstr "Change Text"
 
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr "Muuda raja kuvamist"
+msgstr "Customize Course Appearance"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
-msgstr "KP tunnusnumbri kõrgus:"
+msgstr "Control number height:"
 
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -578,86 +580,86 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
-msgstr "Joone paksus:"
+msgstr "Line width:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr "KP rõnga diameeter:"
+msgstr "Control circle diameter:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
-msgstr "Kasuta IOF standard suuruseid"
+msgstr "Use IOF standard sizes"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr "Suurused"
+msgstr "Item Sizes"
 
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
-msgstr "Värvi valik..."
+msgstr "Colour Chooser..."
 
 #: CourseAppearanceDialog.resx, label5.Text
 msgid "Black:"
-msgstr "Must:"
+msgstr "Black:"
 
 #: CourseAppearanceDialog.resx, label6.Text
 msgid "Yellow:"
-msgstr "Kollane:"
+msgstr "Yellow:"
 
 #: CourseAppearanceDialog.resx, label3.Text
 msgid "Magenta:"
-msgstr "Purpur:"
+msgstr "Magenta:"
 
 #: CourseAppearanceDialog.resx, label1.Text
 msgid "Cyan:"
-msgstr "Lilla:"
+msgstr "Cyan:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr "Kasuta kaardil määratud lillat värvi"
+msgstr "Use purple colour from map"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr "Lilla värv"
+msgstr "Purple Colour"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
-msgstr "Eelvaade"
+msgstr "Preview"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "Osalejate arv"
+msgstr "Competitor Load"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr "Määra osalejate arv igal rajal, klikkides teisel veerul ja "
-"sisestades arvu."
+msgstr "Set the number of competitors on each course by clicking "
+"in the second column and typing a number."
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr "Raja laadimine"
+msgstr "Course Load"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
-msgstr "Kõik"
+msgstr "All"
 
 #: CourseSelector.resx, selectNone.Text
 #: SelectionDescriptionText.resx, CourseList_None
 msgid "None"
-msgstr "Pole"
+msgstr "None"
 
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
-msgstr "Rajad"
+msgstr "Courses"
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
-msgstr "Loo"
+msgstr "Create"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
@@ -669,20 +671,20 @@ msgstr "Loo"
 #: PrintPunches.resx, cancelButton.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
-msgstr "Katkesta"
+msgstr "Cancel"
 
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
-msgstr "Vali kaust OCADi failide jaoks"
+msgstr "Select a folder for the OCAD files"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
-msgstr "Failinime prefiks:"
+msgstr "File name prefix:"
 
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
-msgstr "Failivorming:"
+msgstr "File format:"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items
 msgid "OCAD 6"
@@ -709,36 +711,36 @@ msgstr ""
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
 msgid "Output"
-msgstr "Väljund"
+msgstr "Output"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
-msgstr "Vali kaust..."
+msgstr "Select folder..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
-msgstr "Teine kaust"
+msgstr "Other folder"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
-msgstr "Kausta kus asub kaardi fail"
+msgstr "Same folder as map file"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
-msgstr "Kausta kus asub Purple Pen fail"
+msgstr "Same folder as Purple Pen file"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
-msgstr "Kaust"
+msgstr "Folder"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
-msgstr "Loo OCADi failid"
+msgstr "Create OCAD Files"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
@@ -765,37 +767,37 @@ msgstr ""
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
-msgstr "Vali teksti legendides kasutatav keel:"
+msgstr "Choose the language used for textual control descriptions:"
 
 #: CustomSymbolText.resx, labelSymbolName.Text
 msgid "Symbol name:"
-msgstr "Sümboli nimi:"
+msgstr "Symbol name:"
 
 #: CustomSymbolText.resx, labelCustomizedText.Text
 msgid "Customized text:"
-msgstr "Kohendatud tekst:"
+msgstr "Customized text:"
 
 #: CustomSymbolText.resx, buttonChangeText.Text
 msgid "Change text..."
-msgstr "Muuda teksti..."
+msgstr "Change text..."
 
 #: CustomSymbolText.resx, buttonDefault.Text
 msgid "Reset to standard"
-msgstr "Taasta vaike väärtus"
+msgstr "Reset to standard"
 
 #: CustomSymbolText.resx, labelStandardText.Text
 msgid "Standard text:"
-msgstr "Vaiketekst:"
+msgstr "Standard text:"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr "Näita sümboli tähendust legendis"
+msgstr "Show meaning below symbolic descriptions"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr "Kliki sümbolil, kohendamaks teksti mis on kasutusel KP "
-"legendis."
+msgstr "Click on a description symbol to customize the text that "
+"is used in textual control descriptions."
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -803,92 +805,93 @@ msgstr "Number"
 
 #: EnterSymbolText.resx, genderColumn.HeaderText
 msgid "Gender"
-msgstr "Sugu"
+msgstr "Gender"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
-msgstr "Näita mitmuse forme"
+msgstr "Show plural forms"
 
 #: EnterSymbolText.resx, checkBoxGender.Text
 msgid "Show gender forms"
-msgstr "Näita soo vorme"
+msgstr "Show gender forms"
 
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr "Sisesta sümboli kohendatud tekst \"Tekst\" veerus."
+msgstr "Enter the customized text for the symbol in the \"Text\" "
+"column."
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
-msgstr "Sugu:"
+msgstr "Gender:"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
-msgstr "Kohendatud sümboli tekst"
+msgstr "Customized Symbol Text"
 
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
-msgstr "Ava eksisteeriv võistlus..."
+msgstr "Open an existing event..."
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
-msgstr "Loo uus võistlus..."
+msgstr "Create a new event..."
 
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
-msgstr "Lahku"
+msgstr "Exit"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
-msgstr "Ava näidis võistlus"
+msgstr "Open a sample event"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
-msgstr "Ava viimati vaadatud võistlus"
+msgstr "Open last viewed event"
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
-msgstr "Teretulemast Purple Peni"
+msgstr "Welcome to Purple Pen"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
-msgstr "Purple Pen on välja antud \"BSD\" litsentsi alusel."
+msgstr "Purple Pen is provided under a \"BSD\"-style licence."
 
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
-msgstr "Purple Pen litsents"
+msgstr "Purple Pen Licence"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
-msgstr "Kõik kontrollpunktid"
+msgstr "All Controls"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
-msgstr "Purple Pen failid|*.ppen|Kõik failid|*.*"
+msgstr "Purple Pen files|*.ppen|All files|*.*"
 
 #: MainFrame.resx, saveFileDialog.Filter
 msgid "Purple Pen file|*.ppen"
-msgstr "Purple Pen fail|*.ppen"
+msgstr "Purple Pen file|*.ppen"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr "&Uus võistlus..."
+msgstr "&New Event..."
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
-msgstr "&Ava..."
+msgstr "&Open..."
 
 #: MainFrame.resx, saveMenu.Text
 msgid "&Save"
-msgstr "&Salvesta"
+msgstr "&Save"
 
 #: MainFrame.resx, saveAsMenu.Text
 msgid "Save &As..."
-msgstr "Salvesta &nimega..."
+msgstr "Save &As..."
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr "Loo OCADi &Failid..."
+msgstr "Create OCAD &Files..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -896,103 +899,103 @@ msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create &E-Punch Interchange File..."
-msgstr "Loo &E-rajakirjelduse fail (IOF-xml) ..."
+msgstr "Create &E-Punch Interchange File..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
-msgstr "&Trüki legendid..."
+msgstr "&Print Descriptions..."
 
 #: MainFrame.resx, printPunchCardsMenu.Text
 msgid "Print Pu&nch Cards..."
-msgstr "Trüki kompostri kaardid"
+msgstr "Print Pu&nch Cards..."
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
-msgstr "Trüki &Rajad"
+msgstr "Print &Courses..."
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
-msgstr "Määra trüki&ala"
+msgstr "Set Print A&rea"
 
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
-msgstr "Programm &Keel"
+msgstr "Program &Language..."
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
-msgstr "V&älju"
+msgstr "E&xit"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
-msgstr "&Fail"
+msgstr "&File"
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
-msgstr "&Muuda"
+msgstr "&Edit"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
-msgstr "&Vaade"
+msgstr "&View"
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
-msgstr "&Võistlus"
+msgstr "Eve&nt"
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
-msgstr "&Rada"
+msgstr "&Course"
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr "Sümbol"
+msgstr "&Item"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
-msgstr "&Aruanded"
+msgstr "&Reports"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
-msgstr "&Abi"
+msgstr "&Help"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
-msgstr "See &rada"
+msgstr "&This Course"
 
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
-msgstr "&Kõik rajad"
+msgstr "&All Courses"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
 msgid "&Clear Selection"
-msgstr "&Puhasta valik"
+msgstr "&Clear Selection"
 
 #: MainFrame.resx, undoMenu.Text
 #: MiscText.resx, UndoWithShortcut
 msgid "&Undo"
-msgstr "&Võta tagasi"
+msgstr "&Undo"
 
 #: MainFrame.resx, redoMenu.Text
 #: MiscText.resx, RedoWithShortcut
 msgid "&Redo"
-msgstr "&Tee uuesti"
+msgstr "&Redo"
 
 #: MainFrame.resx, deleteMenu.Text
 #: MainFrame.resx, deleteItemMenu.Text
 msgid "&Delete"
-msgstr "&Kustuta"
+msgstr "&Delete"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr "Kogu &rada"
+msgstr "Entire &Course"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr "Kogu &kaart"
+msgstr "Entire &Map"
 
 #: MainFrame.resx, zoomMenu.Text
 msgid "&Zoom"
-msgstr "&Suurendus"
+msgstr "&Zoom"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1024,292 +1027,292 @@ msgstr "1000%"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr "Kaardi &intensiivsus"
+msgstr "Map &Intensity"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr "&Väga madal"
+msgstr "&Very Low"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
-msgstr "&Madal"
+msgstr "&Low"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
-msgstr "&Keskmine"
+msgstr "&Medium"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
-msgstr "&Kõrge"
+msgstr "&High"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr "&Täielik"
+msgstr "&Full"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
-msgstr "Kaardi &kvaliteet"
+msgstr "Map &Quality"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
-msgstr "Madal"
+msgstr "Low"
 
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
-msgstr "Kõrge"
+msgstr "High"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
-msgstr "&Kõik KPd"
+msgstr "&All Controls"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
-msgstr "&Kaardi fail"
+msgstr "&Map File..."
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
-msgstr "Muuda KP &tunnusnumbreid"
+msgstr "Change Control &Codes..."
 
 #: MainFrame.resx, autoNumberingMenu.Text
 msgid "Automatic &Numbering..."
-msgstr "Automaatne &nummerdamine"
+msgstr "Automatic &Numbering..."
 
 #: MainFrame.resx, removeUnusedControlsMenu.Text
 msgid "Remove &Unused Controls..."
-msgstr "Eemalda &kasutamata KPd..."
+msgstr "Remove &Unused Controls..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr "&Kompostri jäljendid..."
+msgstr "&Pin-Punch Patterns..."
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr "Muuda &selgituse teksti"
+msgstr "Customize &Description Text..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
-msgstr "Muuda raja &kujundust"
+msgstr "Customize Course & Appearance..."
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
-msgstr "&Lisa rada..."
+msgstr "&Add Course..."
 
 #: MainFrame.resx, deleteCourseMenu.Text
 msgid "&Delete Course"
-msgstr "Kustuta rada"
+msgstr "&Delete Course"
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
-msgstr "O&madused..."
+msgstr "&Properties..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course Order..."
-msgstr "Radade järjestus..."
+msgstr "Course Order..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "Osalejate &arv..."
+msgstr "Competitor &Load..."
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "Add &Start"
-msgstr "Lisa &Start"
+msgstr "Add &Start"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "Add &Control"
-msgstr "&Lisa KP"
+msgstr "Add &Control"
 
 #: MainFrame.resx, addFinishMenu.Text
 msgid "Add &Finish"
-msgstr "Lisa &Finiš"
+msgstr "Add &Finish"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "Add &Descriptions"
-msgstr "Lisa &legend"
+msgstr "Add & Descriptions"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
-msgstr "Lisa eri&sümbol"
+msgstr "Add Special &Item"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
 msgid "Mandatory Crossing Point"
-msgstr "Kohustuslik läbipääsu punk"
+msgstr "Mandatory Crossing Point"
 
 #: MainFrame.resx, addOptCrossingMenu.Text
 #: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_OptCrossing
 msgid "Optional Crossing Point"
-msgstr "Läbipääsu punkt"
+msgstr "Optional Crossing Point"
 
 #: MainFrame.resx, addOutOfBoundsMenu.Text
 #: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
 msgid "Out Of Bounds Area"
-msgstr "Keeluala"
+msgstr "Out-Of-Bounds Area"
 
 #: MainFrame.resx, addDangerousMenu.Text
 #: MainFrame.resx, dangerousToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
-msgstr "Ohtlik ala"
+msgstr "Dangerous Area"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Water
 msgid "Water Location"
-msgstr "Joogi koht"
+msgstr "Refreshment Point"
 
 #: MainFrame.resx, addFirstAidMenu.Text
 #: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_FirstAid
 msgid "First Aid Location"
-msgstr "Esmaaabi koht"
+msgstr "First Aid Posy"
 
 #: MainFrame.resx, addForbiddenMenu.Text
 #: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
 msgid "Forbidden Route Marking"
-msgstr "Keelatud liikuda teel"
+msgstr "Forbidden Route Marking"
 
 #: MainFrame.resx, addBoundaryMenu.Text
 #: MainFrame.resx, boundaryToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Boundary
 msgid "Uncrossable Boundary"
-msgstr "Ületamatu piir"
+msgstr "Uncrossable Boundary"
 
 #: MainFrame.resx, addRegMarkMenu.Text
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_RegMark
 msgid "Registration Mark"
-msgstr "Trükise rist"
+msgstr "Registration Mark"
 
 #: MainFrame.resx, whiteOutMenu.Text
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
-msgstr "Valge taust"
+msgstr "Whiteout Area"
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
-msgstr "Lisa &tekst"
+msgstr "Add Text & Line..."
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
-msgstr "Lisa &murd"
+msgstr "Add &Bend"
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr "Eemalda &Murrud"
+msgstr "Remove B&end"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr "Lisa &katkestus"
+msgstr "Add &Gap"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove G&ap"
-msgstr "Eemalda K&atkestus"
+msgstr "Remove G&ap"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
-msgstr "Muuda &teksti"
+msgstr "Change &Text..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
-msgstr "&Pööra"
+msgstr "R&otate"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr "Etapi tähistamine"
+msgstr "Taped Route"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
-msgstr "Tähistuseta"
+msgstr "No Taped Route"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr "Lisa etapi märgistus"
+msgstr "Entire Leg Taped"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr "Etapi algus on tähistatud"
+msgstr "Beginning of Leg Taped"
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr "Etapi lõpp on tähistatud"
+msgstr "End of Leg Taped"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
-msgstr "Muuda valitud radade..."
+msgstr "Change Displa&yed Courses..."
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
-msgstr "Raja kokkuvõte"
+msgstr "Course &Summary"
 
 #: MainFrame.resx, eventAuditMenu.Text
 msgid "Event &Audit"
-msgstr "Võistluse &kontroll"
+msgstr "Event &Audit"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr "&Etappide pikkused"
+msgstr "&Leg Lengths"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr "KPde &ristviited"
+msgstr "Control &Cross-reference"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr "KPde ja etappide koormused"
+msgstr "Control and Leg Loa&d"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
-msgstr "Purple Pen &Abi"
+msgstr "Purple Pen &Help"
 
 #: MainFrame.resx, mainWebSiteToolMenu.Text
 msgid "Purple Pen &Web Site"
-msgstr "Purpe Pen &Kodulehekülg"
+msgstr "Purple Pen &Website"
 
 #: MainFrame.resx, supportWebSiteMenu.Text
 msgid "&Support/Bug Reporting"
-msgstr "&Tugi ja vigadest teadaandmine"
+msgstr "&Support/Bug Reporting"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
-msgstr "&Programmist Purple Pen"
+msgstr "&About Purple Pen"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "&Debug"
-msgstr "S&ilumine"
+msgstr "&Debug"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
-msgstr "Sümbolite brauser"
+msgstr "Symbol Browser"
 
 #: MainFrame.resx, descriptionBrowserMenu.Text
 msgid "Description Browser"
-msgstr "Legendide brauser"
+msgstr "Description Browser"
 
 #: MainFrame.resx, controlTesterMenu.Text
 msgid "Control Tester"
-msgstr "KP Test"
+msgstr "Control Tester"
 
 #: MainFrame.resx, mapTesterMenu.Text
 msgid "Map Tester"
-msgstr "Kaardi test"
+msgstr "Map Tester"
 
 #: MainFrame.resx, courseSelectorTesterMenu.Text
 msgid "Course Selector Tester"
-msgstr "Raja valiku test"
+msgstr "Course Selector Tester"
 
 #: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
 msgid "Dot Grid Tester"
-msgstr "Kompostri ruudustik"
+msgstr "Dot Grid Tester"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr "Tühi OCADi fail"
+msgstr "Dump OCAD File"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
-msgstr "Aruande test"
+msgstr "Report Tester"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
@@ -1317,73 +1320,73 @@ msgstr ""
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr "&Tõlgi legendi tekst"
+msgstr "&Translate Description Text"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
-msgstr "Lisa legendide keel..."
+msgstr "Add Description Language..."
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr "Lisa tõlgitud tekst"
+msgstr "Add Translated Texts..."
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr "Liida Symbols.xml..."
+msgstr "Merge Symbols.xml..."
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
-msgstr "Ava"
+msgstr "Open"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr "Ava (CTRL+O)"
+msgstr "Open (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 msgid "Save"
-msgstr "Salvesta"
+msgstr "Save"
 
 #: MainFrame.resx, saveToolStripButton.ToolTipText
 msgid "Save (Ctrl+S)"
-msgstr "Savlesta (Ctrl+S)"
+msgstr "Save (Ctrl+S)"
 
 #: MainFrame.resx, undoToolStripButton.Text
 #: MiscText.resx, Undo
 msgid "Undo"
-msgstr "Võta tagasi"
+msgstr "Undo"
 
 #: MainFrame.resx, undoToolStripButton.ToolTipText
 msgid "Undo (Ctrl+Z)"
-msgstr "Võta tagasi (Ctrl+Z)"
+msgstr "Undo (Ctrl+Z)"
 
 #: MainFrame.resx, redoToolStripButton.Text
 #: MiscText.resx, Redo
 msgid "Redo"
-msgstr "Uuesti"
+msgstr "Redo"
 
 #: MainFrame.resx, redoToolStripButton.ToolTipText
 msgid "Redo (Ctrl+Y)"
-msgstr "Uuesti (Ctrl+Y)"
+msgstr "Redo (Ctrl+Y)"
 
 #: MainFrame.resx, deleteToolStripButton.Text
 msgid "Delete (Del)"
-msgstr "Kustuta (Del)"
+msgstr "Delete (Del)"
 
 #: MainFrame.resx, addControlToolStripButton.ToolTipText
 msgid "Add Control (Ctrl+A)"
-msgstr "Lisa KP (Ctrl+A)"
+msgstr "Add Control (Ctrl+A)"
 
 #: MainFrame.resx, descriptionsToolStripMenuItem.Text
 msgid "Add Descriptions"
-msgstr "Lisa legend"
+msgstr "Add Descriptions"
 
 #: MainFrame.resx, ncross.Text
 msgid "Add Special Item"
-msgstr "Lisa erisümbol"
+msgstr "Add Special Item"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
-msgstr "Lisa murdekoht (Ctrl+B)"
+msgstr "Add Bend (Ctrl+B)"
 
 #: MainFrame.resx, addGapToolStripButton.Text
 msgid "toolStripButton1"
@@ -1391,11 +1394,11 @@ msgstr "toolStripButton1"
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
-msgstr "Lisa katkestus (Ctrl+G)"
+msgstr "Add Gap (Ctrl+G)"
 
 #: MainFrame.resx, zoomAmountLabel.Text
 msgid "Zoom: 100%"
-msgstr "Suurendus : 100%"
+msgstr "Zoom: 100%"
 
 #: MainFrame.resx, locationDisplay.Text
 msgid "X:-999.99 Y:-999.99"
@@ -1403,11 +1406,11 @@ msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "XML file|*.xml"
-msgstr "XML fail|*.xml"
+msgstr "XML file|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr "Loo rajakirjelduse XML fail"
+msgstr "Create XML Interchange File"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1428,206 +1431,205 @@ msgstr "Esc"
 
 #: MiscText.resx, NoSymbol
 msgid "No symbol"
-msgstr "Puudub sümbol"
+msgstr "No symbol"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr "Kõik KPd"
+msgstr "All controls"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
-msgstr "Ei saa lugeda '{0}' põhjusel:"
+msgstr "Cannot load '{0}' for the following reason:"
 
 #: MiscText.resx, CannotSaveFile
 msgid "Cannot save '{0}' for the following reason:"
-msgstr "Ei saa salvestada '{0}' põhjusel :"
+msgstr "Cannot save '{0}' for the following reason:"
 
 #: MiscText.resx, CannotLoadMapFile
 msgid "Cannot load map file '{0}' for the following reason:"
-msgstr "Ei saa lugeda kaardi faili '{0}' põhjusel:"
+msgstr "Cannot load map file '{0}' for the following reason:"
 
 #: MiscText.resx, CannotReadImageFile
 msgid "Cannot read image file '{0}'."
-msgstr "Ei saa lugeda pildi faili '{0}'."
+msgstr "Cannot read image file '{0}'."
 
 #: MiscText.resx, CannotPrint
 msgid "Cannot print '{0}' for the following reason:"
-msgstr "Ei saa trükkida '{0}' , põhjusel:"
+msgstr "Cannot print '{0}' for the following reason:"
 
 #: MiscText.resx, CannotCreateFile
 msgid "Cannot create '{0}' for the following reason:"
-msgstr "Ei saa luua '{0}' põhjusel:"
+msgstr "Cannot create '{0}' for the following reason:"
 
 #: MiscText.resx, CannotCreateDirectory
 msgid "Cannot create folder '{0}' for the following reason:"
-msgstr "Ei saa luua kausta '{0}' põhjusel:"
+msgstr "Cannot create folder '{0}' for the following reason:"
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair in OCAD may fix problems."
-msgstr "Ei saa lugeda kaarti järgmisel põhjusel '{0}' Kasuta "
-"Optimeeri/Paranda funktsiooni OCADis probleemi "
-"parandamiseks."
+msgstr "Cannot read map for the following reason: '{0}' Using "
+"Optimize/Repair in OCAD may fix problems."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
-msgstr "Ei saa luua OCAD faili põhjusel:"
+msgstr "Cannot create OCAD files for the following reason:"
 
 #: MiscText.resx, SaveChanges
 msgid "Do you want to save the changes you made to '{0}'?"
-msgstr "Kas soovid salvestada muudatused mis tegid '{0}'?"
+msgstr "Do you want to save the changes you made to '{0}'?"
 
 #: MiscText.resx, FileAlreadyExists
 msgid "File '{0}' already exists in the specified folder. Click "
 "the \"Back\" button and choose a new folder or a new event "
 "title."
-msgstr "Fail '{0}' juba eksisteerib valitud kaustas. Vajuta \"Back\" "
-"nupule ja vali uus kaust või uus võistluse pealkiri."
+msgstr "File '{0}' already exists in the specified folder. Click "
+"the \"Back\" button and choose a new folder or a new event "
+"title."
 
 #: MiscText.resx, CodeInUse
 msgid "The control code '{0}' is already used by another control."
-msgstr "Tunnusnumber '{0}' on juba kasutusel teise KP juures."
+msgstr "The control code '{0}' is already used by another control."
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
-msgstr "Tunnusnumber peab olema vahemikus 1-999."
+msgstr "The points for a control must be an integer 1-999."
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr "Raja tõusumeetrid peavad olema numbrites vahemikus 0-9999, "
-"või tühi."
+msgstr "The climb for a course must be a number 0-9999, or blank."
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr "Raja osalejate arv peab olema numbrites vahemikus "
-"0-999999, või tühi."
+msgstr "The load for a course must be an integer 0-999999, or blank."
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
-msgstr "K&atkesta tegevus"
+msgstr "Ca&ncel Operation"
 
 #: MiscText.resx, CancelOperation
 msgid "Cancel Operation"
-msgstr "Toimingu tühistamine"
+msgstr "Cancel Operation"
 
 #: MiscText.resx, EnterScore
 msgid "Enter new score"
-msgstr "Sisesta uus väärtus"
+msgstr "Enter new score"
 
 #: MiscText.resx, EnterCode
 msgid "Enter new code"
-msgstr "Sisesta uus tunnusnumber"
+msgstr "Enter new code"
 
 #: MiscText.resx, EnterDimensions
 msgid "Enter feature size\n"
 "Use / for height on a slope\n"
 "Use | for two features"
-msgstr "Sisesta objekti suurus\n"
-"Kasuta / näitamaks kõrgust nõlval\n"
-"Kasuta | kahe objekti korral"
+msgstr "Enter feature size\n"
+"Use / for height on a slope\n"
+"Use | for two features"
 
 #: MiscText.resx, EnterEventTitle
 msgid "Enter new event title\n"
 "Use | to separate lines\n"
 "(affects all courses)"
-msgstr "Sisesta uus võistluse nimetus\n"
-"Kasuta | eraldamaks ridu\n"
-"(mõjutab kõikki radu)"
+msgstr "Enter new event title\n"
+"Use | to separate lines\n"
+"(affects all courses)"
 
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr "Lisa teine rida\n"
-"Kasuta | eraldamaks ridu"
+msgstr "Enter new secondary title\n"
+"Use | to separate lines"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
-msgstr "Sisesta uus raja nimi"
+msgstr "Enter new course name"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr "Sisesta tõusude summa meetrites"
+msgstr "Enter new climb in metres"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
 "(affects all courses)"
-msgstr "Sisesta uus objekti legend\n"
-"(mõjutab kõikki radu)"
+msgstr "Enter new symbol meaning\n"
+"(affects all courses)"
 
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text"
-msgstr "Sisesta uus tekst"
+msgstr "Enter new text"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
 "to delete these controls from the control collection?"
-msgstr "KPd {0} ei ole kasutusel ühegil rajal. Kas sa soovid need "
-"eemaldada?"
+msgstr "Controls {0} are no longer used by any course. Do you want "
+"to delete these controls from the control collection?"
 
 #: MiscText.resx, DeleteControlFromControlsCollection
 msgid "Control {0} is no longer used by any course. Do you want "
 "to delete this control from the control collection?"
-msgstr "KP {0} ei ole kasutusel ühegil rajal. Kas sa soovid selle "
-"eemaldada?"
+msgstr "Control {0} is no longer used by any course. Do you want "
+"to delete this control from the control collection?"
 
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr "KP {0} on kasutusel rajal: {1}. Kas soovid selle eemaldada "
-"sellegi poolest?"
+msgstr "Control {0} is currently used by the following courses: "
+"{1}. Do you want to delete this control anyway?"
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
-msgstr "Tunnusnumber peab oleama üks, kaks või kolm tähte või "
-"numbrit pikk."
+msgstr "A control code must be one, two, or three letters or digits."
 
 #: MiscText.resx, CodeContainsSpace
 msgid "A control code must not contain a space."
-msgstr "Tunnusnumber ei tohi sisaldada tühikuid."
+msgstr "A control code must not contain a space."
 
 #: MiscText.resx, CodeUnder31
 msgid "A control code should be 31 or higher."
-msgstr "Tunnusnumber peab olema 31 või suurem."
+msgstr "A control code should be 31 or higher."
 
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
-msgstr "Tunnusnumber ei tohi alata nulliga."
+msgstr "A control code should not begin with zero."
 
 #: MiscText.resx, CodeCouldBeUpsideDown
 msgid "A control code should not look like another number when "
 "upside-down."
-msgstr "Tunnusnumber ei tohi olla loetav tagurpidi teise numbrina."
+msgstr "A control code should not look like another number when "
+"upside-down."
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
-msgstr "Tunnusnumber \"{0}\" on kasutusel rohkem kui üks kord."
+msgstr "The code \"{0}\" is used more than once."
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
-msgstr "Mastaap peab olema number 100 ja 100 000 vahel."
+msgstr "The print scale must be a number between 100 and 100,000."
 
 #: MiscText.resx, CoursePropertiesTitle
 msgid "Course Properties"
-msgstr "Raja seaded"
+msgstr "Course Properties"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
-msgstr "Maastik"
+msgstr "Landscape"
 
 #: MiscText.resx, Portrait
 msgid "Portrait"
-msgstr "Püstine"
+msgstr "Portrait"
 
 #: MiscText.resx, PageTooSmall
 msgid "The page size is too small for any descriptions to be "
 "printed."
-msgstr "Lehekülje suurus on liiga väike legendide trükkimiseks."
+msgstr "The page size is too small for any descriptions to be "
+"printed."
 
 #: MiscText.resx, VersionLabel
 msgid "Version {0}"
-msgstr "Versioon {0}"
+msgstr "Version {0}"
 
 #: MiscText.resx, NewerVersionAvailable
 msgid "Version {0} of Purple Pen is now available for download. "
@@ -1635,18 +1637,19 @@ msgid "Version {0} of Purple Pen is now available for download. "
 "\n"
 "To download the latest version, visit the Purple Pen web "
 "site by selecting \"Purple Pen Web Site\" in the Help menu."
-msgstr "Purple Pen programmis on saadaval uuem versioon {0} . (Sa "
-"kasutad hetkel versiooni {1}.)\n"
-"Lae alla viimasem versioon Purple Pen koduleheküljelt, "
-"mille leiad menüüst Abi."
+msgstr "Version {0} of Purple Pen is now available for download. "
+"(You are currently running version {1}.)\n"
+"\n"
+"To download the latest version, visit the Purple Pen "
+"website by selecting \"Purple Pen Website\" in the Help menu."
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr "Abifaili {0} ei saa avada."
+msgstr "Help file '{0}' could not be opened."
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
-msgstr "Suurendus"
+msgstr "Zoom"
 
 #: MiscText.resx, MissingMapFile
 msgid "The map file \"{0}\" could not be found.\n"
@@ -1660,35 +1663,38 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr "Kaardi faili \"{0}\" ei leidnud.\n"
-"Arvatavasti on kaardi faili asukoht muutunud või "
-"kustutatud, või on Purple Pen faili asukoht muutunud "
-"(näiteks teises arvutis). Kaardi fail peab olema "
-"kättesaadav alati, kui avatakse Purple Pen fail. Kui "
-"saadad faili teisele kasutajale, siis vaata, et ta saaks "
-"ka kaardi faili..\n"
-"Peale OK vajutamist, otsi kaardi fail arvutist.."
+msgstr "The map file \"{0}\" could not be found.\n"
+"\n"
+"Most likely, the map file has been moved or deleted, or "
+"the Purple Pen file has been moved (possibly to a "
+"different computer). The map file must be present every "
+"time the Purple Pen event file is loaded. If you send a "
+"Purple Pen event file to another person, be sure that "
+"person has a copy of the map file also.\n"
+"\n"
+"After pressing OK, try to find a copy of the map file on "
+"your computer."
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
-msgstr "Kõik KPd on radadel kasutuses."
+msgstr "All controls are used in a course."
 
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "&Finiš"
+msgstr "&Finish"
 
 #: MiscText.resx, NextButtonText
 #: NewEventWizard.resx, nextButton.Text
 msgid "&Next >"
-msgstr "&Edasi >"
+msgstr "&Next >"
 
 #: MiscText.resx, Control_Code
 msgid "Control {0}"
-msgstr "KP {0}"
+msgstr "Control {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr "Finiš"
+msgstr "Finish"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
@@ -1696,11 +1702,11 @@ msgstr "F"
 
 #: MiscText.resx, MandCrossing_Long
 msgid "Mandatory crossing point"
-msgstr "Kohustuslik läbipääsu punkt"
+msgstr "Mandatory crossing point"
 
 #: MiscText.resx, MandCrossing_Medium
 msgid "Crossing"
-msgstr "Ristumine"
+msgstr "Crossing"
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
@@ -1708,11 +1714,11 @@ msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr "Kõik: {0}"
+msgstr "All: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr "Vasak: {0}, Parem: {1}, Ülalt: {2}, Alt: {3}"
+msgstr "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
 
 #: MiscText.resx, Start
 msgid "Start"
@@ -1724,11 +1730,11 @@ msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr "Alfa {0}"
+msgstr "Alpha {0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr "Beeta {0}"
+msgstr "Beta {0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
@@ -1736,67 +1742,69 @@ msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
-msgstr "mitmuses"
+msgstr "plural"
 
 #: MiscText.resx, Singular
 msgid "singular"
-msgstr "ainsuses"
+msgstr "singular"
 
 #: MiscText.resx, RequireStar
 msgid "The customized text requires a \"*\" to indicate where the "
 "object being modified is placed."
-msgstr "Kohandatud tekst nõuab \"*\" märki näitamaks kus asub "
-"objekti kirjeldus."
+msgstr "The customized text requires a \"*\" to indicate where the "
+"object being modified is placed."
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr "orienteerumisradade vormistamiseks"
+msgstr "course planning for orienteering"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
-msgstr "Sisesta tekst mida soovid kaardile paigutada. Peale OK "
-"vajutamist, osuta hiirega kohta kuhu soovid teksti asetada."
+msgstr "Enter the text you wish to place on the map. After "
+"pressing OK, drag the mouse to place the text in the "
+"desired location."
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr "Lisa tekst"
+msgstr "Add Text"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr "Sisesta uus tekst."
+msgstr "Enter the new text."
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr "Mõni teine programm on muutnud kaardi faili \"{0}\". Purple "
-"Pen laeb kaardi uuesti."
+msgstr "Another program has changed the map file \"{0}\". Purple Pen "
+"will now reload the map."
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr "Selle võistluse juures kasutatakse tekstilisi legende {0}. "
-"Kas soovid muuta legendide keeleks {1}?"
+msgstr "The current event has textual control descriptions in {0}. "
+"Would you like to change the language of control "
+"descriptions to {1}?"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr "Ava \"{0}\""
+msgstr "Open \"{0}\""
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr "Purple Pen peab olema suletud enne loodud OCAD failide "
-"avamist."
+msgstr "Purple Pen must be closed before loading the created OCAD "
+"files."
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
-msgstr "Ühtegi rada ei ole valitud trükkimiseks"
+msgstr "No courses were selected to print."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr "Ära rohkem kuva hoiatusi puuduvate fontide kohta."
+msgstr "Don't warn about missing fonts for this event again"
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -1807,16 +1815,18 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "To fix this problem, find and install the fonts listed "
 "below with the Windows control panel, then start Purple "
 "Pen again.\n"
-msgstr "Kaardi fail \"{0}\" kasutab fonte, mis ei ole installeeritud "
-"sinu arvutisse. Selle fondiga tekstid joonistatakse "
-"vaikefondiga, mis võib välja näha teisiti, kui kaardi "
-"vormistaja on mõelnud.\n"
-"Probleemi kõrvaldamiseks leia ja installeeri fondid "
-"Windowsi Control Panel kaudu ja taaskäivita Purple Pen.\n"
+msgstr "Map file \"{0}\" uses fonts that are not installed on your "
+"computer. Text using these fonts will be drawn and printed "
+"with a default font, which may cause text to appear "
+"differently than the map designer intended. \n"
+"\n"
+"To fix this problem, find and install the fonts listed "
+"below with the Windows Control Panel, then start Purple "
+"Pen again.\n"
 
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
-msgstr "Puuduvad fondid"
+msgstr "Missing Fonts"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -1828,17 +1838,19 @@ msgid "When using an image file as a map, you must specify the "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr "Kasutades kaardina pildifaili, pead määrama pildi "
-"resolutsiooni ja kaardi mõõtkava. \n"
-"Pildi resolutsioon näitab kui palju punkte on pildid ühe "
-"tolli kohta; tavaliselt tähistatakse seda väärtust kui "
-"\"punkti tollile\" (dots per inch) ehk \"dpi\".\n"
-"Kaardi mastaap näitab kui mitu korda on kaardil kujutatu "
-"väiksem reaalsest.\n"
+msgstr "When using an image file as a map, you must specify the "
+"resolution of the image and the map scale. \n"
+"\n"
+"The resolution of the image indicates how may pixels or "
+"dots are in the image for each inch on the paper map; "
+"usually termed dots per inch or \"dpi\".\n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
 
 #: NewEventBitmapScale.resx, resolutionLabel.Text
 msgid "Image resolution:"
-msgstr "Pildi resolutsioon:"
+msgstr "Image resolution:"
 
 #: NewEventBitmapScale.resx, oneToPrefixLabel.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel1.Text
@@ -1849,94 +1861,97 @@ msgstr "1:"
 #: NewEventBitmapScale.resx, mapScaleLabel.Text
 #: NewEventPrintScale.resx, mapScaleLabel.Text
 msgid "Map scale:"
-msgstr "Kaardi mõõtkava:"
+msgstr "Map scale:"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr "Mis kausta (kataloogi) soovid salvestada võistluse faile?"
+msgstr "In what folder (directory) do you want to save your course "
+"event file?"
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
-msgstr "Samasse kausta kus kaardi fail."
+msgstr "In the same folder as the map file."
 
 #: NewEventDirectory.resx, useOtherFolder.Text
 msgid "In another folder I choose."
-msgstr "Mõnda teisse kausta."
+msgstr "In another folder I choose."
 
 #: NewEventDirectory.resx, chooseFolder.Text
 msgid "Choose Folder..."
-msgstr "Fali kaust..."
+msgstr "Choose Folder..."
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr "Vali kaust võistluse failide jaoks"
+msgstr "Select the folder for your event file"
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
-msgstr "Vali kaust"
+msgstr "Selected Folder"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr "Uue võistluse failide loomiseks vajuta \"Finiš\". Võistluse "
-"failid salvestatakse kui:"
+msgstr "Click \"Finish\" to create your new event. Your event file "
+"will be saved as:"
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr "Kui võistlus on loodud, vali \"Uus rada...\" Rajad menüüst "
-"lisamaks ühe või mitu rada."
+msgstr "After your event is created, select \"New Course...\" from "
+"the Course menu to create one or more courses."
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
 "file you will be using. Typically this is an OCAD file "
 "(although image files like JPEGs can be used instead). "
 "Click the \"Choose...\" button to select a map file."
-msgstr "Raja loomiseks pead valima aluseks kaardi faili. "
-"Tavaliselt on selleks OCADi fail (samuti võib kasutada "
-"pildifail, näiteks JPEG). Vajuta \"Vali...\" nupule kaardi "
-"valimiseks."
+msgstr "In order to design your courses, you must select the map "
+"file you will be using. Typically this is an OCAD file "
+"(although image files like JPEGs can be used instead). "
+"Click the \"Choose...\" button to select a map file."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
-msgstr "Vali kaardi fail"
+msgstr "Selected Map File"
 
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If send your Purple "
 "Pen file to someone else, they must have the map file also."
-msgstr "Kaardi fail on edukalt loetud. Kui saadad Purple Pen faili "
-"kellegile teisele, siis pead saatma ka kaardifaili."
+msgstr "The map file was successfully loaded. If send your Purple "
+"Pen file to someone else, they must have the map file also."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr "Uued lisatud kontrollpunktid nummerdatakse automaatselt. "
-"Vali millisest numbrist alustatakse nummerdamist."
+msgstr "Newly created controls are automatically numbered. Please "
+"choose the starting control number to use."
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using "
 "Controls/Automatic Numbering)"
-msgstr "(Seda seadet on võimalik hiljem muuta "
-"Kontrolpunktid/Automaatne nummerdamine)"
+msgstr "(This setting can be changed later using "
+"Controls/Automatic Numbering)"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr "Millist mastaapi kasutatakse selle raja trükkimiseks? "
-"Tavaliselt kasutatakse sama mõõtkava mis kaardil.\n"
+msgstr "What scale will you be using to print your courses? In "
+"most cases, you will want to use the existing scale of the "
+"map.\n"
 "\n"
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr "Vaikimis trüki mastaap:"
+msgstr "Default &printing scale:"
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr "(Sa saad hiljem muuta trüki mastaapi valides Rajad/Seaded.)"
+msgstr "(You can change the printing scale later for any course by "
+"choosing Course/Properties.)"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -1946,19 +1961,21 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr "Võistluse pealkirja kasutatakse legendide kirjelduses "
-"pealkirjana. Seda kasutatakse samuti võistluse failinimes.\n"
-"Nimetus peaks olema lühem kui 25 märki, et ta mahuks "
-"legendilehele. Näiteks head nimetused on \"Spordipäev "
-"11juuni\" või \"Võistluse 1etapp\"."
+msgstr "The event title will be displayed on the first line of "
+"every control description sheet. It is also used as the "
+"file name for storing your event on disk.\n"
+"\n"
+"To fit on the description sheet, it should be less than 25 "
+"characters in length. Examples of good event titles are "
+"\"US Champs Day 1\" or \"Riverview Park, 12/4/06\"."
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
-msgstr "Võistluse nimetus:"
+msgstr "Event Title:"
 
 #: NewEventWizard.resx, backButton.Text
 msgid "< &Back"
-msgstr "< &Tagasi"
+msgstr "< &Back"
 
 #: NonPrintableObjects.resx, labelWarning.Text
 msgid "Map file \"{0}\" contains objects or symbols that are not "
@@ -1969,64 +1986,66 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr "Kaardifail \"{0}\" sisaldab sümboleid, mida Purple Pen ei "
-"toeta ja võib trükkida valesti. Nimekiri sümbolitest mis "
-"võivad puududa väljatrükil on toodud allpool.\n"
-"Võisluste jaoks on soovitav eksportida radade failid OCADi "
-"formaati (menüüst Failid/Loo OCAD failid...) ja trükkida "
-"kaardid välja OCADist.\n"
+msgstr "Map file \"{0}\" contains objects or symbols that are not "
+"fully supported by Purple Pen, and may not print "
+"correctly. The objects that may not print correctly are "
+"listed below.\n"
+"\n"
+"For printing competition maps, it is suggested that "
+"courses be exported to OCAD files (use File/Create OCAD "
+"Files...) and that the maps be printed from OCAD.\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr "Jätka"
+msgstr "Continue"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
-msgstr "Kaardi faili ei saa korrektselt välja trükkida"
+msgstr "Map File Cannot Be Printed Accurately"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
-msgstr "Alljärgnev fail juba eksisteerib. Kui jätkad, siis see "
-"asendatakse."
+msgstr "The following files already exist. If you continue, they "
+"will be replaced."
 
 #: OverwritingOcadFilesDialog.resx, buttonOK.Text
 msgid "Replace"
-msgstr "Asenda"
+msgstr "Replace"
 
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
-msgstr "Kinnita faili ülekirjutamine"
+msgstr "Confirm Replace Files"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
 #: PrintPunches.resx, printButton.Text
 msgid "Print"
-msgstr "Trüki"
+msgstr "Print"
 
 #: PrintCourses.resx, printerChange.Text
 #: PrintDescriptions.resx, printerChange.Text
 #: PrintPunches.resx, printerChange.Text
 msgid "Change Printer..."
-msgstr "Vali printer..."
+msgstr "Change Printer..."
 
 #: PrintCourses.resx, paperSize.Text
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr "Paber (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
 
 #: PrintCourses.resx, paperSizeLabel.Text
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
 msgid "Paper Size:"
-msgstr "Paberi suurus:"
+msgstr "Paper Size:"
 
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
 msgid "Printer Name"
-msgstr "Printeri nimi"
+msgstr "Printer Name"
 
 #: PrintCourses.resx, printerLabel.Text
 #: PrintDescriptions.resx, printerLabel.Text
@@ -2038,316 +2057,319 @@ msgstr "Printer:"
 #: PrintDescriptions.resx, previewButton.Text
 #: PrintPunches.resx, previewButton.Text
 msgid "Preview..."
-msgstr "Eelvaatlus..."
+msgstr "Preview..."
 
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
-msgstr "Koopiate arv iga raja kohta:"
+msgstr "Copies of each course:"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
 #: PrintPunches.resx, copiesGroupBox.Text
 msgid "Copies"
-msgstr "Koopiad"
+msgstr "Copies"
 
 #: PrintCourses.resx, radioButtonMultiPage.Text
 msgid "Print on multiple pages"
-msgstr "Trüki mitmele lehele"
+msgstr "Print on multiple pages"
 
 #: PrintCourses.resx, radioButtonOnePage.Text
 msgid "Crop to a single page"
-msgstr "Mahuta ühele lehele"
+msgstr "Crop to a single page"
 
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr "Kui trükiala on liiga suur, siis mahuta ühele lehele:"
+msgstr "If the print area is too large to fit on one page:"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
-msgstr "Trüki rajad"
+msgstr "Print Courses"
 
 #: PrintDescriptions.resx, marginChange.Text
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
-msgstr "Muuda ääriseid"
+msgstr "Change Margins..."
 
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Ülalt: 0.55\", Alt: 0.55\", Vasakult: 0.55\", Paremalt: 0.55\""
+msgstr "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
 
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
 msgid "Margins:"
-msgstr "Äärised:"
+msgstr "Margins:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
 msgid "Orientation:"
-msgstr "Suund:"
+msgstr "Orientation:"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr "Vaikimis rada"
+msgstr "Course default"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr "Sümbolid ja tekst"
+msgstr "Symbols & Text"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr "Legendi tüüp:"
+msgstr "Description type:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr "Joone suurus:"
+msgstr "Line size:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr "legend raja kohta"
+msgstr "descriptions per course"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr "üks koopia iga raja kohta"
+msgstr "one copy of each course"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
-msgstr "üks lehekülg raja kohta"
+msgstr "one page of each course"
 
 #: PrintDescriptions.resx, copiesCombo.Items2
 msgid "multiple pages of each course"
-msgstr "mitu lehekülge raja kohta"
+msgstr "multiple pages of each course"
 
 #: PrintDescriptions.resx, whatToPrintLabel.Text
 msgid "Print:"
-msgstr "Trüki:"
+msgstr "Print:"
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr "Trüki legendid:"
+msgstr "Print Descriptions"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr "Kompostri jäljendid..."
+msgstr "Control Card Layout..."
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr "Kompostri kasti suurus:"
+msgstr "Punch box size:"
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
-msgstr "Koopiaid:"
+msgstr "Copies:"
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr "Trüki kompostri kaardid"
+msgstr "Print Control Cards"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr "Ruutude järjekord"
+msgstr "Box Order"
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
-msgstr "Veerud:"
+msgstr "Columns:"
 
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
-msgstr "Read:"
+msgstr "Rows:"
 
 #: PunchcardLayoutDialog.resx, sizeGroupBox.Text
 msgid "Size"
-msgstr "Suurus"
+msgstr "Size"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr "Kompostri kaardi väljanägemine"
+msgstr "Control Card Layout"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr "Klõpsa tunnusnumbril vasakul ja joonista jäljend paremal "
-"pool. Punased numbrid näitavad, et jäljend on defineeritud."
+msgstr "Click on a control code in the left-hand list, and design "
+"the pin-punch pattern on the right-hand side. Red codes "
+"indicate controls that have no punch pattern defined."
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
-msgstr "Kompostri jäljendid"
+msgstr "Pin-Punch Patterns"
 
 #: ReportForm.resx, printButton.Text
 msgid "Print..."
-msgstr "Trüki..."
+msgstr "Print..."
 
 #: ReportForm.resx, previewButton.Text
 msgid "Print Preview..."
-msgstr "Väljatrüki eelvaatlus..."
+msgstr "Print Preview..."
 
 #: ReportForm.resx, okButton.Text
 msgid "Close"
-msgstr "Sulge"
+msgstr "Close"
 
 #: ReportText.resx, ColumnHeader_Climb
 msgid "Climb"
-msgstr "Tõus"
+msgstr "Climb"
 
 #: ReportText.resx, ColumnHeader_Code
 msgid "Code"
-msgstr "Tunnusnumber"
+msgstr "Code"
 
 #: ReportText.resx, ColumnHeader_Column
 msgid "Column"
-msgstr "Veerg"
+msgstr "Column"
 
 #: ReportText.resx, ColumnHeader_Control
 msgid "Control"
-msgstr "KP"
+msgstr "Control"
 
 #: ReportText.resx, ColumnHeader_ControlCodes
 msgid "Control codes"
-msgstr "Tunnusnumbrid"
+msgstr "Control codes"
 
 #: ReportText.resx, ColumnHeader_Controls
 msgid "Controls"
-msgstr "KPd"
+msgstr "Controls"
 
 #: ReportText.resx, ColumnHeader_Course
 msgid "Course"
-msgstr "Rada"
+msgstr "Course"
 
 #: ReportText.resx, ColumnHeader_Distance
 msgid "Distance"
-msgstr "Pikkus"
+msgstr "Distance"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr "Objekt"
+msgstr "Item"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr "Etapp"
+msgstr "Leg"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
-msgstr "Pikkus"
+msgstr "Length"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr "Lae"
+msgstr "Load"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
-msgstr "Asukoht"
+msgstr "Location"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
-msgstr "# radu"
+msgstr "# Courses"
 
 #: ReportText.resx, ColumnHeader_Reason
 msgid "Reason"
-msgstr "Põhjus"
+msgstr "Reason"
 
 #: ReportText.resx, ColumnHeader_SameSymbol
 msgid "Same symbol?"
-msgstr "Sama sümbol?"
+msgstr "Same symbol?"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr "Raja {0} kokkuvõte"
+msgstr "Course Summary for {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "Kontrollpunktide risttabel - {0}"
+msgstr "Control cross-reference for {0}"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr "Liialt lähedased KPd"
+msgstr "Neighbouring Controls"
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr "Alljärgnev tabel näitab KPde paare, mis on lähemal kui {0} "
-"meetrid üksteisest. Sama sümboli veerg näitab, et mõlemad "
-"KPd on tähistatud sama objektiga (veerg D)."
+msgstr "The following table shows all control pairs that are "
+"within {0} metres of each other. The same symbol column "
+"shows whether the two controls have the same primary "
+"symbol (column D)."
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr "Puudub legendi raam"
+msgstr "Missing Description Boxes"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr "Tavalisel rajal näidatakse ära tõusude summa"
+msgstr "Regular courses should indicate the amount of climb"
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
-msgstr "Kõik kontrollpunktid peavad omama objekti legendi veerus D"
+msgstr "All controls must have a main feature in column D"
 
 #: ReportText.resx, EventAudit_MissingEBetween
 msgid "When \"between\" is in column G, two features must be shown "
 "in columns D and E"
-msgstr "Kui \"vahel\" on veerus G, 2 objekti peab olema märgitud "
-"veergudes D ja E."
+msgstr "When \"between\" is in column G, two features must be shown "
+"in columns D and E"
 
 #: ReportText.resx, EventAudit_MissingEJunction
 msgid "When \"junction\" or \"crossing\" is in column F, two features "
 "must be shown in columns D and E"
-msgstr "Kui \"hargnemine\" või \"ristumine\" on näidatud veerus F, 2 "
-"objekti peab olema märgitud veergudes D ja E."
+msgstr "When \"junction\" or \"crossing\" is in column F, two features "
+"must be shown in columns D and E"
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
-msgstr "Tavalisel rajal peab oleam finiši asukoht"
+msgstr "Regular courses should have a finish circle"
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr "Rajalt puuduvad sümbolid"
+msgstr "Missing Items in Courses"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr "Radadel võiks olla eeldatav osalejate arv"
+msgstr "Course should have expected competitor load"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr "Kompostri jäljendid on defineerimata"
+msgstr "No pin-punch pattern defined"
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr "Puuduvad kompostri jäljendid"
+msgstr "Missing Pin-Punch Patterns"
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
 "controls"
-msgstr "Valik raja korral peab olema punkti arvestus kõigile KPdele"
+msgstr "Score courses should have scores set for all controls or "
+"for no controls"
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr "Puudub väärtus"
+msgstr "Missing Scores"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr "Tavalistel radadel peab olema stardikolmnurk"
+msgstr "Regular courses should have a start triangle"
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
-msgstr "Valikradadel peab olama stardikolmnurk"
+msgstr "Score courses should have a start triangle"
 
 #: ReportText.resx, EventAudit_No
 msgid "No"
-msgstr "Ei"
+msgstr "No"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr "Probleeme ei leitud."
+msgstr "No problems found."
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
-msgstr "Võistluse {0} ülevaade"
+msgstr "Event Audit for {0}"
 
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
 msgid "Unused Controls"
-msgstr "Kasutatud KPd"
+msgstr "Unused Controls"
 
 #: ReportText.resx, EventAudit_UnusedControlsExplanation
 msgid "The following controls are present in the All Controls "
@@ -2355,165 +2377,167 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr "Järgmised KPd on Kõig KPd lehel, kuid ei kasutata ühelgi "
-"rajal. Nende eemaldamiseks vali menüüst \"Võistlus\" "
-"\"Eemalda kasutamata KPd\""
+msgstr "The following controls are present in the All Controls "
+"collection but are not used in any course. To remove them, "
+"use the \"Remove Unused Controls\" command on the \"Event\" "
+"menu. These controls will not be considered further in "
+"this report."
 
 #: ReportText.resx, EventAudit_Yes
 msgid "Yes"
-msgstr "Jah"
+msgstr "Yes"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
-msgstr "Keskmine"
+msgstr "Average"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
-msgstr "{0} ({1} KPd, {2:0.0} km, {3} m tõusu)"
+msgstr "{0} ({1} controls, {2:0.0} km, {3} m climb)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2:0.0} km)"
-msgstr "{0} ({1} KPd, {2:0.0} km)"
+msgstr "{0} ({1} controls, {2:0.0} km)"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr "{0} etappide pikkuste aruanee"
+msgstr "Leg Length Report for {0}"
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr "KPde koormus"
+msgstr "Control load"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr "Etappide koormus"
+msgstr "Leg load"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr "Mõnele või kõikidele radadele ei ole määratud osalejate "
-"arvu. Seetõttu allpool toodud koormus puudub või on vale. "
-"Osalejate arvu sisestamiseks vali Rajad menüüst \"Osalejate "
-"arv\"."
+msgstr "Some or all courses do not have competitor loads set for "
+"them. The loads listed below may be incorrect or missing "
+"for this reason. To set competitor loads, select "
+"\"Competitor Load\" from the \"Course\" menu."
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr "(ainult need etapid mis on kasutusel rohkem kui ühe rada "
-"poolt)"
+msgstr "(only legs used by more than one course appear in the "
+"following table)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr "Osalejate summaarne arv {0}"
+msgstr "Competitor Load Summary for {0}"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
-msgstr "HOIATUS:"
+msgstr "WARNING:"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
-msgstr "KPst väljumisel"
+msgstr "away from control"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr "Osalejate arv:"
+msgstr "Competitor load:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr "Kasutusel KPd:"
+msgstr "Controls in use:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr "KPd mis ei ole kasutusel:"
+msgstr "Controls not in use:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
-msgstr "KPd"
+msgstr "controls"
 
 #: SelectionDescriptionText.resx, Control_Singular
 msgid "control"
-msgstr "KP"
+msgstr "control"
 
 #: SelectionDescriptionText.resx, CourseList_AllCourses
 msgid "All courses"
-msgstr "Kõik rajad"
+msgstr "All courses"
 
 #: SelectionDescriptionText.resx, CourseName
 msgid "Course \"{0}\""
-msgstr "Rada \"{0}\""
+msgstr "Course \"{0}\""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr "Kohandatud legend"
+msgstr "Customized symbol description"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr "Kogu etapp"
+msgstr "entire leg"
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
-msgstr "finiši tähistus"
+msgstr "finish funnel"
 
 #: SelectionDescriptionText.resx, Finish_Plural
 msgid "finishes"
-msgstr "finišid"
+msgstr "finishes"
 
 #: SelectionDescriptionText.resx, Finish_Singular
 msgid "finish"
-msgstr "finiš"
+msgstr "finish"
 
 #: SelectionDescriptionText.resx, Flagging
 msgid "Flagging:"
-msgstr "Tähistus:"
+msgstr "Flagging:"
 
 #: SelectionDescriptionText.resx, IntoControl
 msgid "into control"
-msgstr "enne KP"
+msgstr "into control"
 
 #: SelectionDescriptionText.resx, IntoFinishFunnel
 msgid "into finish funnel"
-msgstr "finiši tähistusse"
+msgstr "into finish funnel"
 
 #: SelectionDescriptionText.resx, Length
 msgid "Length:"
-msgstr "Pikkus:"
+msgstr "Length:"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr "Joone pikkus:"
+msgstr "Line height:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
-msgstr "Asukoht:"
+msgstr "Location:"
 
 #: SelectionDescriptionText.resx, MandCrossing_Plural
 msgid "mandatory crossing points"
-msgstr "kohustuslikud läbipääsu punktid"
+msgstr "mandatory crossing points"
 
 #: SelectionDescriptionText.resx, MandCrossing_Singular
 msgid "mandatory crossing point"
-msgstr "kohustuslik läbipääsu punkt"
+msgstr "mandatory crossing point"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
-msgstr "pole"
+msgstr "none"
 
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
-msgstr "KP legendid"
+msgstr "Control Descriptions"
 
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
-msgstr "Keelatud tee"
+msgstr "Forbidden Route"
 
 #: SelectionDescriptionText.resx, SpecialName_OOB
 msgid "Out-of-bounds Area"
-msgstr "Keeluala"
+msgstr "Out-Of-Bounds Area"
 
 #: SelectionDescriptionText.resx, Start_Plural
 msgid "starts"
-msgstr "stardid"
+msgstr "starts"
 
 #: SelectionDescriptionText.resx, Start_Singular
 msgid "start"
@@ -2521,204 +2545,207 @@ msgstr "start"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr "Tekst legend:"
+msgstr "Text description:"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
-msgstr "Tekst"
+msgstr "Text line"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
-msgstr "Leidub ülalpool {0}, radadel mis sisaldavad {0}"
+msgstr "Appears above {0}, in all courses that contain {0}"
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr "Leidub ülal {0}, ainult sellel rajal"
+msgstr "Appears above {0}, in this course only"
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
-msgstr "Leidub all {0}, radadel mis sisaldavad {0}"
+msgstr "Appears below {0}, in all courses that contain {0}"
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr "Leidub all {0}, ainult sellel rajal"
+msgstr "Appears below {0}, in this course only"
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr "Kontrollpunktide arv:"
+msgstr "Total controls:"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
-msgstr "Summaarne summa:"
+msgstr "Total score:"
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr "Kasutusel radadel:"
+msgstr "Used in courses:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
-msgstr "Valmis"
+msgstr "Done"
 
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
-msgstr "Määra hiirega vedadel soovitud prindi ala"
+msgstr "Set the desired printing area by dragging with the mouse."
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
 "user interface of Purple Pen (menus, windows, etc.)"
-msgstr "Vali keel, mida soovid kastuada Purple Pen "
-"kasutajaliideses (menüüd, aknad jne)"
+msgstr "Select the language that you would like to use for the "
+"user interface of Purple Pen (menus, windows, etc.)"
 
 #: SetUILanguage.resx, $this.Text
 msgid "Program Language"
-msgstr "Programmi keel"
+msgstr "Program Language"
 
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr "Hiire vasak nupp: vali objekt; Hiire parem nupp: liiguta "
-"kaarti; Hiire rullik: suurenda/vähenda"
+msgstr "Left mouse button: select object;   Right mouse button: "
+"move map;   Scroll wheel: zoom in/out"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr "Hiire vasak nupp: liiguta/suurenda ruutu; Hiire parem "
-"nupp: liiguta kaarti; Hiire rullik: suurenda/vähenda"
+msgstr "Left mouse button: move/size rectangle;   Right mouse "
+"button: move map;   Scroll wheel: zoom in/out"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
-msgstr "Hoia all hiire vasakut nuppu ja liiguta valitud objekti"
+msgstr "Hold down left mouse button and drag to move selected object"
 
 #: StatusBarText.resx, DragCorner
 msgid "Hold down left mouse button and drag corner point to move it"
-msgstr "Hoia all hiire vasakut nuppu ja liiguta nurgapunkti"
+msgstr "Hold down left mouse button and drag corner point to move it"
 
 #: StatusBarText.resx, DraggingObject
 msgid "Move object to desired location and release mouse button"
-msgstr "Liiguta objekt soovitud kohta ja vabasta hiire nupp"
+msgstr "Move object to desired location and release mouse button"
 
 #: StatusBarText.resx, DraggingCorner
 msgid "Move corner point to desired location and release mouse "
 "button"
-msgstr "Liiguta nurgapunkt soovitud kohta ja vabasta hiire nupp"
+msgstr "Move corner point to desired location and release mouse "
+"button"
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr "Uue KP lisamiseks klõpsa kaardil hiire vasaku nupuga"
+msgstr "Click left mouse button to place new control"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr "Klõpsa hiire vasaku nupuga lisamaks rajale \"{0}\" "
-"eksisteeriva KP"
+msgstr "Click left mouse button to add existing control \"{0}\" to "
+"course"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr "Stardi asetamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to place new start"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr "Rajale stardi asetamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to add existing start to course"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr "Finiši asetamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to place new finish"
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr "Rajale finiši asetamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to add existing finish to course"
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr "Kohustusliku läbipääsupunkti asetamiseks klõpsa hiire "
-"vasaku nupuga"
+msgstr "Click left mouse button to place new mandatory crossing "
+"point"
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr "Rajale kohustusliku läbipääsupunkti asetamiseks klõpsa "
-"hiire vasaku nupuga"
+msgstr "Click left mouse button to add existing mandatory crossing "
+"point to course"
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr "Uue objekti lisamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to place new object"
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr "Uue murdepunkti lisamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button at the location of the bend"
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr "Uue nurga lisamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button to add a new corner"
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr "Murdekoha eemaldamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button on a bend to remove it"
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr "Nurgapunkti eemaldamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button on a corner to remove it"
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a gap"
-msgstr "KP rõnga katkestamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button on the control circle to add a gap"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "KP rõnga katkestuse eemaldamiseks klõpsa hiire vasaku nupuga"
+msgstr "Click left mouse button on a gap in the control circle to "
+"remove it"
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Hold down left mouse button and drag to create a gap in "
 "the leg"
-msgstr "Hoia all hiire vasakut nuppu ja lohistades lisa etapile "
-"katkestus"
+msgstr "Hold down left mouse button and drag to create a gap in "
+"the leg"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr "Hiire vasaku nupuga eemalda etapilt katkestus"
+msgstr "Click left mouse button on a gap in the leg to remove it"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
 "object"
-msgstr "Hoides all hiire vasakut nuppu venita objekt soovitud "
-"suuruseks"
+msgstr "Hold down left mouse button and drag to size the selected "
+"object"
 
 #: StatusBarText.resx, SizingRectangle
 msgid "Move edge(s) to desired location and release mouse button"
-msgstr "Lohista äär(ed) soovitud kohta ja vabasta hiire nupp"
+msgstr "Move edge(s) to desired location and release mouse button"
 
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr "Hoia all hiire vasakut nuppu ja lohista KP legend"
+msgstr "Hold down left mouse button and drag to create control "
+"descriptions"
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr "Klõpsa hiire vasaku nupuga kuni läbipääsupunkt on õige "
-"nurga all"
+msgstr "Click left mouse button when the crossing point is rotated "
+"to the correct angle"
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
 "segment; click the left mouse button to finish adding object"
-msgstr "Hoia all hiire vasakut nuppu ja lohistades lisa joone osa; "
-"klõpsa hiire vasaku nupuga lõpetamaks objekti lisamist"
+msgstr "Hold down left mouse button and drag to add a line "
+"segment; click the left mouse button to finish adding object"
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr "Hoia all hiire vasakut nuppu ja lohistadel lisa tekst"
+msgstr "Hold down left mouse button and drag to create text"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
-msgstr "Kustuta"
+msgstr "Delete"
 
 #: UnusedControls.resx, unusedControlsLabel.Text
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
-msgstr "Järgnevad KPd on Kõikide KPde nimistus, kuid ei ole "
-"kasutusel ühelgi rajal. Klõpsa Kustuta nupule kustutamaks "
-"märgitud KPd."
+msgstr "The following controls are in the All Controls collection, "
+"but not used in any course. Click Delete to remove all "
+"checked controls."
 

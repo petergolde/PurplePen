@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.0.3\n"
+"Project-Id-Version: Purple Pen 1.1.1\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 21:20-07:00\n"
+"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © 2007-2011 by Peter Golde"
-msgstr "Copyright © 2007-2011 Peter Golde"
+msgstr "Copyright © 2007-2011 de Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
-msgstr "Purple Pen programvare kan kopieres og deles fritt"
+msgstr "Purple Pen es software libre y puede copiarse y compartirse."
 
 #: AboutForm.resx, disclaimerLabel.Text
 msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
@@ -29,10 +29,11 @@ msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
 "WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
 "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
 "PURPOSE ARE DISCLAIMED."
-msgstr "DENNE PROGRAMVAREN ER UTGITT AV RETTIGHETSINNEHAVERE OG "
-"BIDRAGSYTERE \"SOM DET ER\" OG FRASIER SEG ALLE SKREVNE OG "
-"USKREVNE GARANTIER, INKLUDERT, MEN IKKE BEGRENSET TIL "
-"DETTE ELLER OM PROGRAMVAREN ER BRUKBAR FOR SÆRKILTE FORMÅL"
+msgstr "ESTE SOFTWARE ES PROPORCIONADO POR LOS PROPIETARIOS DEL "
+"COPYRIGHT Y COLABORADORES «TAL CUAL» Y CUALQUIER GARANTÍA "
+"EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADA A, LAS "
+"GARANTÍAS DE COMERCIALIZACIÓN Y APTITUD PARA UN PROPÓSITO "
+"PARTICULAR."
 
 #: AboutForm.resx, okButton.Text
 #: InitialScreen.resx, okButton.Text
@@ -40,19 +41,19 @@ msgstr "DENNE PROGRAMVAREN ER UTGITT AV RETTIGHETSINNEHAVERE OG "
 #: MissingFonts.resx, okButton.Text
 #: OkCancelDialog.resx, okButton.Text
 msgid "OK"
-msgstr "OK"
+msgstr "Aceptar"
 
 #: AboutForm.resx, creditsButton.Text
 msgid "Credits"
-msgstr "Bidragsytere"
+msgstr "Créditos"
 
 #: AboutForm.resx, licenseButton.Text
 msgid "View Full License"
-msgstr "Se hele lisensen"
+msgstr "Ver licencia completa"
 
 #: AboutForm.resx, $this.Text
 msgid "About Purple Pen"
-msgstr "Om Purple Pen"
+msgstr "Acerca de Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
@@ -61,23 +62,23 @@ msgstr ""
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
 msgid "Description appearance:"
-msgstr "Postbeskrivelsens utseende"
+msgstr "Descripción de la apariencia"
 
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr "Utskriftsmålestokk"
+msgstr "Escala de impresión de mapa:"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
 msgid "1 : "
-msgstr "1: "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
 msgid "Symbols"
-msgstr "Symboler"
+msgstr "Símbolos"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
@@ -87,12 +88,12 @@ msgstr "Symboler"
 #: PrintDescriptions.resx, descriptionKindCombo.Items2
 #: SelectionDescriptionText.resx, SpecialName_Text
 msgid "Text"
-msgstr "Tekst"
+msgstr "Texto"
 
 #: AddCourse.resx, descKindCombo.Items2
 #: AllControlsProperties.resx, descKindCombo.Items2
 msgid "Symbols and text"
-msgstr "Symboler og tekst"
+msgstr "Símbolos y texto"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
@@ -104,31 +105,31 @@ msgstr ""
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Código de control (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Secuencia y código (3-145)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Mostrar puntos en:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Columna A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Columna B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Columna H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(no mostrar)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -136,189 +137,189 @@ msgstr ""
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
 msgid "Appearance"
-msgstr "Utseende"
+msgstr "Apariencia"
 
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
-msgstr "Følgende tekst vises på andre linje i postbeskrivelsen "
-"(valgfritt)"
+msgstr "El siguiente texto (opcional) aparecerá en la segunda "
+"línea de la hoja de descripción del control:"
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "Klasseliste / sekundær tittel"
+msgstr "Lista de clases / Título secundario"
 
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
-msgstr "Stigning:"
+msgstr "Subir:"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
-msgstr "Løypetype"
+msgstr "Tipo de ruta:"
 
 #: AddCourse.resx, courseNameLabel.Text
 msgid "Course name:"
-msgstr "Navn på løypa:"
+msgstr "Nombre de la ruta:"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr "Normal løype"
+msgstr "Ruta normal"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr "Poengløype"
+msgstr "Puntuación de la ruta"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
-msgstr "meter"
+msgstr "medidores"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr "Ny løype"
+msgstr "Nueva ruta"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Fyll inn tekst til egen linje i postbeskrivelsene:"
+msgstr "Introduzca el texto para colocar en línea separada de las "
+"descripciones de control:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
-msgstr "Løyper:"
+msgstr "Rutas:"
 
 #: AddTextLine.resx, positionLabel.Text
 msgid "Position:"
-msgstr "Plassering:"
+msgstr "Posición:"
 
 #: AddTextLine.resx, comboBoxPosition.Items
 msgid "Above {0}"
-msgstr "Over"
+msgstr "Arriba {0}"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "Under"
+msgstr "Abajo {0}"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
-msgstr "Bare denne løypa"
+msgstr "Solamente esta ruta"
 
 #: AddTextLine.resx, comboBoxCourses.Items1
 msgid "All courses with {0}"
-msgstr "Alle løyper med {0}"
+msgstr "Todos las rutas con {0}"
 
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr "Legg til tekstlinje"
+msgstr "Añadir línea de texto"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "Disse innstillingene avgjør hvordan kartet og "
-"postbeskrivelsen for alle poster skrives ut."
+msgstr "Estas opciones controlan como se imprimen el mapa y las "
+"descripciones para todos los controles."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr "Innstillinger alle poster"
+msgstr "Todas las propiedades del control"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Tillat ikke postkoder som kan leses opp-ned (f.eks. \"68\" "
-"og \"89\")"
+msgstr "Rechazar códigos que puedan leerse de forma inversa (ej. "
+"«68»/«89»)"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr "Renummerer alle postkoder"
+msgstr "También renumerar controles existentes"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "Kun bruk disse innstillingene på nye poster"
+msgstr "Aplicar estas opciones únicamente a nuevos controles"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
-msgstr "Eksisterende poster"
+msgstr "Controles existentes"
 
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr "Nye poster nummereres automatiske etter følgende "
-"innstillinger"
+msgstr "Los nuevos controles son numerados automáticamente de "
+"acuerdo a las siguientes opciones."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
 msgid "Starting code:"
-msgstr "Start med kode:"
+msgstr "Código inicial:"
 
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
 msgid "Automatic Numbering"
-msgstr "Automatisk nummerering"
+msgstr "Numeración automática"
 
 #: ChangeAllCodes.resx, OldCode.HeaderText
 msgid "Original Code"
-msgstr "Opprinnelig kode"
+msgstr "Código original"
 
 #: ChangeAllCodes.resx, NewCode.HeaderText
 msgid "New Code"
-msgstr "Ny kode"
+msgstr "Nuevo código"
 
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr "For å endre kode på en eller flere poster - klikk i \"Ny "
-"kode\"-kolonnen og skriv inn den nye koden. "
+msgstr "Para cambiar el código de uno o más controles, pulse en la "
+"columna «Nuevo código» e introduzca el nuevo código. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
-msgstr "Endre postkoder"
+msgstr "Cambiar códigos de control"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
-msgstr "Flytt ned"
+msgstr "Bajar"
 
 #: ChangeCourseOrder.resx, courseOrderLabel.Text
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr "Bruk \"Flytt opp\" og \"Flytt ned\"-knappene for å endre "
-"rekkefølgen løypene vises i brukergrensesnittet, på "
-"rapporter og utskrifter."
+msgstr "Use los botones «Subir» y «Bajar» para cambiar el orden en "
+"que las rutas están listados en la interfaz, los reportes "
+"y las impresiones."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
-msgstr "Flytt opp"
+msgstr "Subir"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr "Rekkefølge på løyper"
+msgstr "Orden de las rutas"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
-msgstr "Nåværende kartfil"
+msgstr "Archivo de mapa actual"
 
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr "&Velg kartfil..."
+msgstr "&Elija archivo de mapa..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
 msgid "OCAD files (*.ocd)|*.ocd|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "OCAD-filer "
-"(*.ocd)|*.ocd|Bildefiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.p"
-"ng;*.gif"
+msgstr "Archivos OCAD (*.ocd)|*.ocd|Archivos de "
+"Imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
-msgstr "Oppløsning:"
+msgstr "Resolución:"
 
 #: ChangeMapFile.resx, labelScale.Text
 msgid "Scale:"
-msgstr "Målestokk:"
+msgstr "Escala:"
 
 #: ChangeMapFile.resx, labelOneTo.Text
 msgid "1 :"
@@ -327,246 +328,246 @@ msgstr "1 :"
 #: ChangeMapFile.resx, labelDpi2.Text
 #: NewEventBitmapScale.resx, dpiLabel.Text
 msgid "dots per inch"
-msgstr "punkter per tomme"
+msgstr "puntos por pulgada"
 
 #: ChangeMapFile.resx, $this.Text
 msgid "Map File"
-msgstr "Kartfil"
+msgstr "Archivo de mapa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr "Velg hvilke løyper dette objektet skal vises på:"
+msgstr "Seleccione en que rutas se mostrará este objeto:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr "Endre viste løyper"
+msgstr "Cambiar las rutas mostradas"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
-msgstr "Sett inn spesialtekst"
+msgstr "Insertar texto especial"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 msgid "Event Title"
-msgstr "Arrangementsnavn"
+msgstr "Título del evento"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
 #: SelectionDescriptionText.resx, SpecialName_CourseName
 msgid "Course Name"
-msgstr "Løypenavn"
+msgstr "Nombre de la ruta"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
-msgstr "Løypelende"
+msgstr "Duración de la ruta"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr "Løypas stigning"
+msgstr "Elevación de la ruta"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
-msgstr "Klasseliste"
+msgstr "Lista de clase"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
-msgstr "Bytt symbol"
+msgstr "Cambiar símbolo"
 
 #: CommandNameText.resx, ChangeCode
 msgid "Change Control Code"
-msgstr "Endre postkode"
+msgstr "Cambiar código de control"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
-msgstr "Endre post"
+msgstr "Cambiar control"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr "Endre postpunkter"
+msgstr "Cambiar puntos de control"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
-msgstr "Endre tittel"
+msgstr "Cambiar titulo"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
-msgstr "Endre stigning"
+msgstr "Cambiar elevación"
 
 #: CommandNameText.resx, ChangeCourseName
 msgid "Change Course Name"
-msgstr "Endre løypenavn"
+msgstr "Cambiar nombre de la ruta"
 
 #: CommandNameText.resx, ChangeTextLine
 msgid "Change Text Line"
-msgstr "Endre tekstlinje"
+msgstr "Cambiar línea de texto"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr "Oppdatere målestokk"
+msgstr "Actualizar escala del mapa"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
-msgstr "Flytt postring"
+msgstr "Mover Control"
 
 #: CommandNameText.resx, MoveControlNumber
 msgid "Move Control Number"
-msgstr "Flytt postnummer"
+msgstr "Mover número de control"
 
 #: CommandNameText.resx, MoveObject
 msgid "Move Object"
-msgstr "Flytt objekt"
+msgstr "Mover objeto"
 
 #: CommandNameText.resx, DeleteControl
 msgid "Delete Control"
-msgstr "Slett post"
+msgstr "Borrar control"
 
 #: CommandNameText.resx, DeleteObject
 msgid "Delete Object"
-msgstr "Slett objekt"
+msgstr "Borrar objeto"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr "Fjern tekstlinje"
+msgstr "Eliminar Línea de Texto"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr "Legg til post"
+msgstr "Añadir control"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr "Legg til start"
+msgstr "Añadir inicio"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
 msgid "Add Finish"
-msgstr "Legg til mål"
+msgstr "Añadir final"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
-msgstr "Legg til obligatorisk krysningspunkt"
+msgstr "Añadir punto de intersección obligatorio"
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
-msgstr "Legg til objekt"
+msgstr "Añadir Objeto"
 
 #: CommandNameText.resx, DeleteCourse
 msgid "Delete Course"
-msgstr "Slett løype"
+msgstr "Eliminar ruta"
 
 #: CommandNameText.resx, ChangeCourseProperties
 msgid "Change Course Properties"
-msgstr "Endre løypeegenskaper"
+msgstr "Cambiar las propiedades de la ruta"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr "Endre egenskaper for alle poster"
+msgstr "Cambiar las Propiedades de Todos los Controles"
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
 msgid "Create New Event"
-msgstr "Opprett ny konkurranse"
+msgstr "Crear un nuevo Evento"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
-msgstr "Endre markering for strekk"
+msgstr "Cambiar Destacado de Pierna"
 
 #: CommandNameText.resx, ChangeCodes
 msgid "Change Codes"
-msgstr "Endre koder"
+msgstr "Cambiar Códigos"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr "Flytt bend"
+msgstr "Mover Curvatura de Pierna"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr "Legg til bend"
+msgstr "Agregar Curvatura"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
-msgstr "Legg til hjørne"
+msgstr "Agregar esquina"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "Slett bend"
+msgstr "Remover Curvatura"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
-msgstr "Ta bort hjørne"
+msgstr "Remover Esquina"
 
 #: CommandNameText.resx, AddGap
 msgid "Add Gap"
-msgstr "Legg til åpning"
+msgstr "Añadir brecha"
 
 #: CommandNameText.resx, RemoveGap
 msgid "Remove Gap"
-msgstr "Slett åpning"
+msgstr "Eliminar brecha"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr "Flytt åpning"
+msgstr "Mover brecha"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
-msgstr "Rotér"
+msgstr "Rotar"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr "Endre kontrollmønster"
+msgstr "Cambiar Patrones de Perforación"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr "Endre klippekortutseende"
+msgstr "Cambiar Disposición de la Tarjeta Perforada"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
 msgid "Set Print Area"
-msgstr "Sett utskriftsområde"
+msgstr "Establecer área de impresión"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr "Endre antall deltakere"
+msgstr "Cambiar Carga del Competidor"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr "Tilpass tekst på postbeskrivelse"
+msgstr "Personalizar Texto de Descripción"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
-msgstr "Endre løyperekkefølge"
+msgstr "Cambiar Orden de la ruta"
 
 #: CommandNameText.resx, ChangeMapFile
 msgid "Change Map File"
-msgstr "Bytt kartfil"
+msgstr "Cambiar Archivo de Mapa"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr "Ignorere manglende skrifttyper"
+msgstr "Ignorar Tipografías Faltantes"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
-msgstr "Slett ubrukte poster"
+msgstr "Remover Controles Inutilizados"
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr "Bytt språk på postbeskrivelsen"
+msgstr "Cambiar el Idioma de la Descripción"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
 msgid "Change Text"
-msgstr "Endre tekst"
+msgstr "Cambiar Texto"
 
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr "Endre løypens utseende"
+msgstr "Personalizar la Apariencia de la ruta"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
-msgstr "Postnummer høyde"
+msgstr "Altura del número de control:"
 
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -578,31 +579,31 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
-msgstr "Linjebredde:"
+msgstr "Ancho de línea:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr "Postsirkel diameter"
+msgstr "Diámetro del círculo de control:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
-msgstr "Bruk IOF-standardstørrelse"
+msgstr "Usar medidas estándar IOF"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr "Objektets størrelse"
+msgstr "Tamaño de Objetos"
 
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
-msgstr "Fargevelger..."
+msgstr "Selector de Color..."
 
 #: CourseAppearanceDialog.resx, label5.Text
 msgid "Black:"
-msgstr "Svart:"
+msgstr "Negro:"
 
 #: CourseAppearanceDialog.resx, label6.Text
 msgid "Yellow:"
-msgstr "Gul:"
+msgstr "Amarillo:"
 
 #: CourseAppearanceDialog.resx, label3.Text
 msgid "Magenta:"
@@ -610,54 +611,54 @@ msgstr "Magenta:"
 
 #: CourseAppearanceDialog.resx, label1.Text
 msgid "Cyan:"
-msgstr "Cyan:"
+msgstr "Cian:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr "Bruk lilla farge fra kartet"
+msgstr "Usar color púrpura del mapa"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr "Lilla farge"
+msgstr "Color púrpura"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
-msgstr "Forhåndsvisning"
+msgstr "Vista previa"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "Antall deltakere"
+msgstr "Carga de competidor"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr "Sett antall deltakere i hver løype ved å klikke i andre "
-"kolonne og skrive inn antallet."
+msgstr "Elija el número de competidores en cada ruta haciendo "
+"click en la segunda columna e introduciendo un número."
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr "Antall deltakere"
+msgstr "Carga de la ruta"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
-msgstr "Alle"
+msgstr "Todos"
 
 #: CourseSelector.resx, selectNone.Text
 #: SelectionDescriptionText.resx, CourseList_None
 msgid "None"
-msgstr "Ingen"
+msgstr "Ninguno"
 
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
-msgstr "Løyper"
+msgstr "Rutas"
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
-msgstr "Opprett"
+msgstr "Crear"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
@@ -669,20 +670,20 @@ msgstr "Opprett"
 #: PrintPunches.resx, cancelButton.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr "Cancelar"
 
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
-msgstr "Velg en mappe for OCAD filer"
+msgstr "Seleccione una carpeta para los archivos OCAD"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
-msgstr "Filnavnprefiks:"
+msgstr "Prefijo del archivo:"
 
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
-msgstr "Filformat:"
+msgstr "Formato de archivo:"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items
 msgid "OCAD 6"
@@ -702,47 +703,47 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
 msgid "Output"
-msgstr "Utdata"
+msgstr "Salida"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
-msgstr "Velg mappe..."
+msgstr "Seleccionar carpeta..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
-msgstr "Annen mappe"
+msgstr "Otra Carpeta"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
-msgstr "Samme mappe som kartfila"
+msgstr "Misma carpeta que el archivo del mapa"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
-msgstr "Samme mappe som Purple Pen filen"
+msgstr "Misma carpeta que el archivo de Purple Pen"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
-msgstr "Mappe"
+msgstr "Carpeta"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
-msgstr "Lag OCAD filer"
+msgstr "Crear archivos OCAD"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Nombre de archivo"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
@@ -751,7 +752,7 @@ msgstr ""
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Aprenda más sobre RouteGadget"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
@@ -765,130 +766,133 @@ msgstr ""
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
-msgstr "Velg språk for postbeskrivelser i tekstformat"
+msgstr "Elija el idioma utilizado para las descripciones de los "
+"controles textuales:"
 
 #: CustomSymbolText.resx, labelSymbolName.Text
 msgid "Symbol name:"
-msgstr "Symbolnavn"
+msgstr "Nombre del símbolo:"
 
 #: CustomSymbolText.resx, labelCustomizedText.Text
 msgid "Customized text:"
-msgstr "Tilpasset tekst:"
+msgstr "Texto personalizado:"
 
 #: CustomSymbolText.resx, buttonChangeText.Text
 msgid "Change text..."
-msgstr "Endre tekst..."
+msgstr "Cambiar Texto:"
 
 #: CustomSymbolText.resx, buttonDefault.Text
 msgid "Reset to standard"
-msgstr "Tilbakestill til standardinstillinger"
+msgstr "Restaurar estándar"
 
 #: CustomSymbolText.resx, labelStandardText.Text
 msgid "Standard text:"
-msgstr "Standard tekst:"
+msgstr "Texto estándar:"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr "Vis forklaring under symbolske postbeskrivelser"
+msgstr "Mostrar significados debajo de las descripciones simbólicas"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr "Klikk på en symbol beksrivelse for å tilpasse tekst som "
-"benyttes i tekst postbeskrivelsene."
+msgstr "Haga click en un símbolo descriptivo para personalizar el "
+"texto utilizado en las descripciones de los controles "
+"textuales."
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
-msgstr "Nummer"
+msgstr "Número"
 
 #: EnterSymbolText.resx, genderColumn.HeaderText
 msgid "Gender"
-msgstr "Kjønn"
+msgstr "Género"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
-msgstr "Vis flertallsformer"
+msgstr "Mostrar formas plurales"
 
 #: EnterSymbolText.resx, checkBoxGender.Text
 msgid "Show gender forms"
-msgstr "Vis kjønnendelser"
+msgstr "Mostrar formas de género"
 
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr "Skriv inn tilpasset tekst for symbol i \"Teskt\" kolonnen."
+msgstr "Introduzca el texto personalizado para el símbolo en la "
+"columna «texto»"
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
-msgstr "Kjønn:"
+msgstr "Género:"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
-msgstr "Tilpasset symboltekst"
+msgstr "Texto de símbolos personalizado"
 
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
-msgstr "Åpne et eksisterende arrangenment"
+msgstr "Abrir un evento existente..."
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
-msgstr "Lag et nytt arrangement..."
+msgstr "Crear un nuevo evento..."
 
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
-msgstr "Avslutt"
+msgstr "Salir"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
-msgstr "Åpne eksempel arrangement"
+msgstr "Abrir un ejemplo de evento"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
-msgstr "Åpne sist åpnede arrangement"
+msgstr "Abrir el último evento visto"
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
-msgstr "Velkommen til Purple Pen"
+msgstr "Bienvenido a Purple Pen"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
-msgstr "Purpel Pen er utgitt under \"BSD\" liknende lisens."
+msgstr "Purple Pen se suministra bajo una licencia de estilo «BSD»."
 
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
-msgstr "Lisens for Purple Pen"
+msgstr "Licencia Purple Pen"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
-msgstr "Alle poster"
+msgstr "Todos los controles"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
-msgstr "Purple Pen filer|*.ppen|Alle filer|*.*"
+msgstr "Archivos Purple Pen|*.ppen|Todos los archivos|*.*"
 
 #: MainFrame.resx, saveFileDialog.Filter
 msgid "Purple Pen file|*.ppen"
-msgstr "Purple Pen fil|*.ppen"
+msgstr "Archivo Purple Pen|*.ppen"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr "&Nytt arrangement..."
+msgstr "Evento &nuevo..."
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
-msgstr "&Åpne..."
+msgstr "&Abrir..."
 
 #: MainFrame.resx, saveMenu.Text
 msgid "&Save"
-msgstr "&Lagre"
+msgstr "&Guardar"
 
 #: MainFrame.resx, saveAsMenu.Text
 msgid "Save &As..."
-msgstr "Lagre &som …"
+msgstr "Gu&ardar como..."
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr "Lage OCAD &Filer..."
+msgstr "&Crear archivos OCAD..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -896,99 +900,99 @@ msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create &E-Punch Interchange File..."
-msgstr "Lag &E-Stemplingsfil for eksport"
+msgstr "Crear archivo de intercambio &E-Punch..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
-msgstr "&skriv ut postbeskrivelser"
+msgstr "Im&primir descripciones..."
 
 #: MainFrame.resx, printPunchCardsMenu.Text
 msgid "Print Pu&nch Cards..."
-msgstr "Skriv ut klippekort"
+msgstr ""
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
-msgstr "Skriv ut løyper..."
+msgstr "Imprimir &rutas..."
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
-msgstr "Velg utskriftsområde"
+msgstr "&Establecer área de impresión"
 
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
-msgstr "Programspråk"
+msgstr "&Lenguaje de programa..."
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
-msgstr "Avslutt"
+msgstr "&Salir"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
-msgstr "&Arkiv"
+msgstr "&Archivo"
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
-msgstr "&Rediger"
+msgstr "&Editar"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
-msgstr "&Vis"
+msgstr "&Vista"
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
-msgstr "Konkurranse"
+msgstr "Eve&nto"
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
-msgstr "&Løype"
+msgstr "&Curso"
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr "&Objekt"
+msgstr "&Elemento"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
-msgstr "&Rapporter"
+msgstr "&Informes"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
-msgstr "&Hjelp"
+msgstr "Ay&uda"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
-msgstr "&Denne løypen"
+msgstr "Es&ta ruta"
 
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
-msgstr "&Alle løyper"
+msgstr "&Todas las rutas"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
 msgid "&Clear Selection"
-msgstr "&Blank ut valgt"
+msgstr "Limpiar la sele&cción"
 
 #: MainFrame.resx, undoMenu.Text
 #: MiscText.resx, UndoWithShortcut
 msgid "&Undo"
-msgstr "&Angre"
+msgstr "&Deshacer"
 
 #: MainFrame.resx, redoMenu.Text
 #: MiscText.resx, RedoWithShortcut
 msgid "&Redo"
-msgstr "&Gjør om"
+msgstr "&Rehacer"
 
 #: MainFrame.resx, deleteMenu.Text
 #: MainFrame.resx, deleteItemMenu.Text
 msgid "&Delete"
-msgstr "&Slett"
+msgstr "&Borrar"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr "Hele &Løype"
+msgstr "&Ruta entera"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr "Hele &kartet"
+msgstr "&Mapa entero"
 
 #: MainFrame.resx, zoomMenu.Text
 msgid "&Zoom"
@@ -1024,292 +1028,292 @@ msgstr "1000%"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr "Kart &Intensitet"
+msgstr "&Intesidad de mapa"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr "&Svært lavt"
+msgstr "&Muy bajo"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
-msgstr "&Lav"
+msgstr "&Bajo"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
-msgstr "&Normal"
+msgstr "&Medio"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
-msgstr "&Høy"
+msgstr "&Alto"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr "&Full"
+msgstr "&Completa"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
-msgstr "&Kartkvalitet"
+msgstr "Calidad del &mapa"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
-msgstr "Lav"
+msgstr "Baja"
 
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
-msgstr "Høy"
+msgstr "Alta"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
-msgstr "&Alle poster"
+msgstr "&Todos los controles"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
-msgstr "&Kartfil..."
+msgstr "Archivo de &mapa..."
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
-msgstr "Endre &postkoder"
+msgstr "&Cambiar los códigos de control..."
 
 #: MainFrame.resx, autoNumberingMenu.Text
 msgid "Automatic &Numbering..."
-msgstr "Automatisk &nummrering"
+msgstr "&Numeración automática"
 
 #: MainFrame.resx, removeUnusedControlsMenu.Text
 msgid "Remove &Unused Controls..."
-msgstr "Slett &ubrukte poster"
+msgstr "Eliminar los controles sin &usar..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr "&Stemplingsmønster"
+msgstr ""
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr "Tilpass &beskrivelsestekst"
+msgstr "Personalizar los textos de las &descripciones..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
-msgstr "Tilpass løypens &utseende"
+msgstr "Personalizar la apariencia de la ruta"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
-msgstr "&Legg til løype"
+msgstr "&Añadir ruta"
 
 #: MainFrame.resx, deleteCourseMenu.Text
 msgid "&Delete Course"
-msgstr "&Slett løype"
+msgstr "&Borrar ruta"
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
-msgstr "&Egenskaper …"
+msgstr "&Propiedades..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course Order..."
-msgstr "Løyperekkefølge..."
+msgstr "Orden de ruta"
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "Antall deltakere"
+msgstr "Carga de &competidor..."
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "Add &Start"
-msgstr "Legg til &start"
+msgstr "Aña&dir inicio"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "Add &Control"
-msgstr "Legg til &post"
+msgstr "Añadir &control"
 
 #: MainFrame.resx, addFinishMenu.Text
 msgid "Add &Finish"
-msgstr "Legg til &mål"
+msgstr "Añadir &terminación"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "Add &Descriptions"
-msgstr "Legg til &postbeskrivelser"
+msgstr "Añadir &descripciones"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
-msgstr "Legg til spesial &element"
+msgstr "Añad&ir elemento especial"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
 msgid "Mandatory Crossing Point"
-msgstr "Obligatorisk kryssningspunkt"
+msgstr "Punto de paso obligatorio"
 
 #: MainFrame.resx, addOptCrossingMenu.Text
 #: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_OptCrossing
 msgid "Optional Crossing Point"
-msgstr "Frivillig krysningspunkt"
+msgstr "Punto de cruce opcional"
 
 #: MainFrame.resx, addOutOfBoundsMenu.Text
 #: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
 msgid "Out Of Bounds Area"
-msgstr "Forbudt område"
+msgstr "Área fuera de los límites"
 
 #: MainFrame.resx, addDangerousMenu.Text
 #: MainFrame.resx, dangerousToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
-msgstr "Farlig område"
+msgstr "Área peligrosa"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Water
 msgid "Water Location"
-msgstr "Væskestasjon"
+msgstr "Ubicación del agua"
 
 #: MainFrame.resx, addFirstAidMenu.Text
 #: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_FirstAid
 msgid "First Aid Location"
-msgstr "Førstehjelp"
+msgstr "Ubicación de primeos auxilios"
 
 #: MainFrame.resx, addForbiddenMenu.Text
 #: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
 msgid "Forbidden Route Marking"
-msgstr "Forbudt veg"
+msgstr ""
 
 #: MainFrame.resx, addBoundaryMenu.Text
 #: MainFrame.resx, boundaryToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Boundary
 msgid "Uncrossable Boundary"
-msgstr "Upasserbar/forbudt krysning"
+msgstr "Límite no transpasable"
 
 #: MainFrame.resx, addRegMarkMenu.Text
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_RegMark
 msgid "Registration Mark"
-msgstr "Passpunkt"
+msgstr "Marca de registro"
 
 #: MainFrame.resx, whiteOutMenu.Text
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
-msgstr "Lage hvitt område"
+msgstr ""
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
-msgstr "Legg til tekst &linje"
+msgstr "Añadir &línea de texto..."
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
-msgstr "Legg til &bend"
+msgstr ""
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr "Slett bend"
+msgstr ""
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr "Klipp linje"
+msgstr ""
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove G&ap"
-msgstr "Fjern klipp i linje"
+msgstr ""
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
-msgstr "Endre &tekst"
+msgstr "Cambiar &texto"
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
-msgstr "R&otere"
+msgstr "R&otar"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr "&Merket strekk"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
-msgstr "Ingen merking"
+msgstr ""
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr "Hele strekket merket"
+msgstr ""
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr "Start av strekket merket"
+msgstr ""
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr "Slutten av strekket merket"
+msgstr ""
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
-msgstr "Endre viste løyper"
+msgstr "Cambiar rutas most&radas..."
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
-msgstr "Løype sammendrag"
+msgstr "Re&sumen de la ruta"
 
 #: MainFrame.resx, eventAuditMenu.Text
 msgid "Event &Audit"
-msgstr "Kontroller arrangement"
+msgstr "&Auditoría de evento"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr "Strekklengder"
+msgstr ""
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr "Poster &Kryssreferanser"
+msgstr "Control de referencia &cruzada"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr "Statistikk for post og strekkutnyttelse"
+msgstr ""
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
-msgstr "&Hjelp"
+msgstr "Ay&uda de Puple Pen"
 
 #: MainFrame.resx, mainWebSiteToolMenu.Text
 msgid "Purple Pen &Web Site"
-msgstr "Purple Pen &Hjemmeside"
+msgstr "Sitio &web de Purple Pen"
 
 #: MainFrame.resx, supportWebSiteMenu.Text
 msgid "&Support/Bug Reporting"
-msgstr "&Support/Feilrapportering"
+msgstr "&soporte/informe de errores"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
-msgstr "&Om Purple Pen"
+msgstr "&Sobre Purple Pen"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "&Debug"
-msgstr "&Feilsøk"
+msgstr "&Depurar"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
-msgstr "Symbolgalleri"
+msgstr "Navegador de símbolos"
 
 #: MainFrame.resx, descriptionBrowserMenu.Text
 msgid "Description Browser"
-msgstr "Beskrivelsesgalleri"
+msgstr "Navegador de descipciones"
 
 #: MainFrame.resx, controlTesterMenu.Text
 msgid "Control Tester"
-msgstr "Posttest"
+msgstr "Pruebas de control"
 
 #: MainFrame.resx, mapTesterMenu.Text
 msgid "Map Tester"
-msgstr "Karttest"
+msgstr "Pruebas de mapa"
 
 #: MainFrame.resx, courseSelectorTesterMenu.Text
 msgid "Course Selector Tester"
-msgstr "Løypevalgstester"
+msgstr "Pruebas de selector de ruta"
 
 #: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
 msgid "Dot Grid Tester"
-msgstr "Test av rasterpunkter"
+msgstr "Prueba de rejilla de puntos"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr "Dump OCAD fil"
+msgstr "Archivo de volcado OCAD"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
-msgstr "Test av rapporter"
+msgstr "Prueba de informe"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
@@ -1317,81 +1321,81 @@ msgstr ""
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr "&Oversett postbeskrivelse"
+msgstr "&Traducir texto de descripción"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
-msgstr "Legg til språk for postbeskrivelser..."
+msgstr "Añadir idioma de descripción"
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr "Legg til oversatt tekst..."
+msgstr "Añadir textos traducidos"
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr "Slå sammen Symboler.xml..."
+msgstr "Mezclar Symbols.xml..."
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
-msgstr "Åpne"
+msgstr "Abrir"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr "Åpne (Ctrl+O)"
+msgstr "Abrir (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 msgid "Save"
-msgstr "Lagre"
+msgstr "Guardar"
 
 #: MainFrame.resx, saveToolStripButton.ToolTipText
 msgid "Save (Ctrl+S)"
-msgstr "Lagre (Ctrl+S)"
+msgstr "Guardar (Ctrl+S)"
 
 #: MainFrame.resx, undoToolStripButton.Text
 #: MiscText.resx, Undo
 msgid "Undo"
-msgstr "Angre"
+msgstr "Deshacer"
 
 #: MainFrame.resx, undoToolStripButton.ToolTipText
 msgid "Undo (Ctrl+Z)"
-msgstr "Angre (Ctrl+Z)"
+msgstr "Deshacer (Ctrl+Z)"
 
 #: MainFrame.resx, redoToolStripButton.Text
 #: MiscText.resx, Redo
 msgid "Redo"
-msgstr "Gjør om"
+msgstr "Rehacer"
 
 #: MainFrame.resx, redoToolStripButton.ToolTipText
 msgid "Redo (Ctrl+Y)"
-msgstr "Gjør om (Ctrl+Y)"
+msgstr "Rehacer (Ctrl+Y)"
 
 #: MainFrame.resx, deleteToolStripButton.Text
 msgid "Delete (Del)"
-msgstr "Slett (Del)"
+msgstr "Borrar (Supr)"
 
 #: MainFrame.resx, addControlToolStripButton.ToolTipText
 msgid "Add Control (Ctrl+A)"
-msgstr "Legg til post (Ctrl+A)"
+msgstr "Añadir control (Ctrl+A)"
 
 #: MainFrame.resx, descriptionsToolStripMenuItem.Text
 msgid "Add Descriptions"
-msgstr "Legg til beskrivelser"
+msgstr "Añadir descripciones"
 
 #: MainFrame.resx, ncross.Text
 msgid "Add Special Item"
-msgstr "Legg til spesielt symbol"
+msgstr "Añadir elemento especial"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
-msgstr "Leg til bend (Ctrl+B)"
+msgstr ""
 
 #: MainFrame.resx, addGapToolStripButton.Text
 msgid "toolStripButton1"
-msgstr "verktøystipeknapp1"
+msgstr "toolStripButton1"
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
-msgstr "Lag klipp i symbol (Ctrl+G)"
+msgstr ""
 
 #: MainFrame.resx, zoomAmountLabel.Text
 msgid "Zoom: 100%"
@@ -1403,11 +1407,11 @@ msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "XML file|*.xml"
-msgstr "XML fil|*.xml"
+msgstr "Archivo XML|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr "Lag en XML-fil for eksport"
+msgstr "Crear archivo XML de intercambio"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1428,207 +1432,203 @@ msgstr "Esc"
 
 #: MiscText.resx, NoSymbol
 msgid "No symbol"
-msgstr "Ingen symbol"
+msgstr "No hay símbolo"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr "Alle poster"
+msgstr "Todos los controles"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
-msgstr "Kan ikke lese '{0}' på grunn av:"
+msgstr "No se puede cargar '{0}' por la siguiente razón:"
 
 #: MiscText.resx, CannotSaveFile
 msgid "Cannot save '{0}' for the following reason:"
-msgstr "Kan ikke lagre '{0}' på grunn av:"
+msgstr "No se puede guardar '{0}' por la siguiente razón:"
 
 #: MiscText.resx, CannotLoadMapFile
 msgid "Cannot load map file '{0}' for the following reason:"
-msgstr "Kan ikke lese kartfil '{0}' på grunn av:"
+msgstr "No se puede cargar el archivo de mapa '{0}' por la "
+"siguiente razón:"
 
 #: MiscText.resx, CannotReadImageFile
 msgid "Cannot read image file '{0}'."
-msgstr "Kan ikke lese bildefil '{0}'."
+msgstr "No se puede leer el archivo de imagen '{0}'."
 
 #: MiscText.resx, CannotPrint
 msgid "Cannot print '{0}' for the following reason:"
-msgstr "Kan ikke skrive ut '{0}' på grunn av:"
+msgstr "No se puede imprimir '{0}' por la siguiente razón:"
 
 #: MiscText.resx, CannotCreateFile
 msgid "Cannot create '{0}' for the following reason:"
-msgstr "Kan ikke lage '{0}' på grunn av:"
+msgstr "No se puede crear '{0}' por la siguiente razón:"
 
 #: MiscText.resx, CannotCreateDirectory
 msgid "Cannot create folder '{0}' for the following reason:"
-msgstr "Kan ikke opprette mappe '{0}' på grunn av:"
+msgstr "No se puede crear la carpeta '{0}' por la siguiente razón:"
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair in OCAD may fix problems."
-msgstr "Kartfilen kan ikke leses: '{0}' Forsøk "
-"\"Optimalisere/Reparere\" i OCAD for å utbedre problemet."
+msgstr ""
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
-msgstr "Kan ikke lage OCAD filer på grunn av:"
+msgstr "No se pueden crear los archivos OCAD por las siguientes "
+"razones:"
 
 #: MiscText.resx, SaveChanges
 msgid "Do you want to save the changes you made to '{0}'?"
-msgstr "Vill du lagre endringene i '{0}'?"
+msgstr "¿Desea guardar los cambios realizados en «{0}»?"
 
 #: MiscText.resx, FileAlreadyExists
 msgid "File '{0}' already exists in the specified folder. Click "
 "the \"Back\" button and choose a new folder or a new event "
 "title."
-msgstr "Filen '{0}' finnes allerede i denne mappe. Klikk på "
-"\"Tilbake\"-knappen og velg en ny mappe eller et nytt "
-"arrangementsnavn."
+msgstr "El archivo «{0}» ya existe en la carpeta especificada. "
+"Pulse el botón «Atrás» y elija otra carpeta u otro título "
+"de evento."
 
 #: MiscText.resx, CodeInUse
 msgid "The control code '{0}' is already used by another control."
-msgstr "Postkode '{0}' er i bruk på en annen post."
+msgstr "El código de control de '{0}' ya es utilizado por otro "
+"control."
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
-msgstr "Postkode må være et heltall mellom 1-999."
+msgstr "Los puntos para un control deben ser un entero 1-999."
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr "Stigningen må være et heltall mellom 0 og 9999 eller blank."
+msgstr ""
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr "Antall deltakere i en løype må være et heltall mellom 0 og "
-"999999 eller være blank."
+msgstr "La carga de una carrera debe ser un entero 0-999999, o "
+"blanco."
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
-msgstr "A&vbryt oppgave"
+msgstr "Ca&ncelar operación"
 
 #: MiscText.resx, CancelOperation
 msgid "Cancel Operation"
-msgstr "Avbryt oppgave"
+msgstr "Cancelar operación"
 
 #: MiscText.resx, EnterScore
 msgid "Enter new score"
-msgstr "Oppgi nye poeng"
+msgstr "Introducir nueva puntuación"
 
 #: MiscText.resx, EnterCode
 msgid "Enter new code"
-msgstr "Skriv inn ny postkode"
+msgstr "Introducir nuevo código"
 
 #: MiscText.resx, EnterDimensions
 msgid "Enter feature size\n"
 "Use / for height on a slope\n"
 "Use | for two features"
-msgstr "Skriv in objektets størrelse\n"
-"Bruk / for høyder i en skråning\n"
-"Bruk | for to objekt"
+msgstr ""
 
 #: MiscText.resx, EnterEventTitle
 msgid "Enter new event title\n"
 "Use | to separate lines\n"
 "(affects all courses)"
-msgstr "Skriv inn nytt arrangementsnavn\n"
-"Bruk | for å skille rader\n"
-"(påvirker alle løyper)"
+msgstr "Entre nuevo título de evento\n"
+"Use | para separar líneas\n"
+"(afecta todos los cursos)"
 
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr "Legg til undertittel\n"
-"Bruk | for å skille rader"
+msgstr "Entre nuevo título secundario\n"
+"Use | para separar líneas"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
-msgstr "Skriv inn nytt løypenavn"
+msgstr "Introducir nombre nuevo de ruta"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr "Skriv inn ny  stigning i meter"
+msgstr "Introducir nueva escalada en metros"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
 "(affects all courses)"
-msgstr "Skriv inn ny symbolforklaring\n"
-"(påvirker all løyper)"
+msgstr ""
 
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text"
-msgstr "Skriv inn ny tekst"
+msgstr "Introducir nuevo texto"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
 "to delete these controls from the control collection?"
-msgstr "Postene {0} brukes ikke lengre i noen løyper. Vil du "
-"slette disse postene?"
+msgstr ""
 
 #: MiscText.resx, DeleteControlFromControlsCollection
 msgid "Control {0} is no longer used by any course. Do you want "
 "to delete this control from the control collection?"
-msgstr "Post {0} brukes ikke lenger i noen løyper. Vil du slette "
-"denne posten?"
+msgstr "El control {0} ya no es usado por ningún curso. ¿Desea "
+"eliminar este control de la colección de controles?"
 
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr "Post {0}brukes i følgende løyper: {1}. Vil du slette "
-"posten uansett?"
+msgstr ""
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
-msgstr "Postkoden må inneholde en, to eller tre tall eller "
-"bokstaver."
+msgstr ""
 
 #: MiscText.resx, CodeContainsSpace
 msgid "A control code must not contain a space."
-msgstr "En postkode kan ikke inneholde mellomrom."
+msgstr "Un código de control debe tener un espacio."
 
 #: MiscText.resx, CodeUnder31
 msgid "A control code should be 31 or higher."
-msgstr "Postkode skal være høyere enn 31"
+msgstr "Un código de control debe ser 31 o mayor"
 
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
-msgstr "Postkoder skal ikke begynne med 0"
+msgstr "Un código de control no puede empezar con cero."
 
 #: MiscText.resx, CodeCouldBeUpsideDown
 msgid "A control code should not look like another number when "
 "upside-down."
-msgstr "En postkode skal ikke kunne forveksles med et annet nummer "
-"om den leses opp ned."
+msgstr ""
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
-msgstr "Postkode \"{0}\" er i bruk mer enn en gang."
+msgstr "El código \"{0}\" es usado más de una vez."
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
-msgstr "Utskriftskala må være mellom 100 og 100000"
+msgstr "La escala de impresión debe ser un número entre 100 y "
+"100,000."
 
 #: MiscText.resx, CoursePropertiesTitle
 msgid "Course Properties"
-msgstr "Løypeegenskaper"
+msgstr "Propiedades de la ruta"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
-msgstr "Liggende"
+msgstr "Paisaje"
 
 #: MiscText.resx, Portrait
 msgid "Portrait"
-msgstr "Stående"
+msgstr "Retrato"
 
 #: MiscText.resx, PageTooSmall
 msgid "The page size is too small for any descriptions to be "
 "printed."
-msgstr "Sidestørrelsen er for liten til at postbeskrivelser kan "
-"skrives ut."
+msgstr "El tamaño de la página es muy pequeño para imprimir "
+"cualquier descripción."
 
 #: MiscText.resx, VersionLabel
 msgid "Version {0}"
-msgstr "Versjon {0}"
+msgstr "Versión {0}"
 
 #: MiscText.resx, NewerVersionAvailable
 msgid "Version {0} of Purple Pen is now available for download. "
@@ -1636,16 +1636,11 @@ msgid "Version {0} of Purple Pen is now available for download. "
 "\n"
 "To download the latest version, visit the Purple Pen web "
 "site by selecting \"Purple Pen Web Site\" in the Help menu."
-msgstr "Versjon {0} av Purple Pener nå tilgjengelig for "
-"nedlasting. (Du bruker versjon {1}.)\n"
-"\n"
-"For å laste ned den nyeste versjonen besøk Purple Pen "
-"hjemmesiden som du finner under Hjelp i menyen og velge "
-"\"Purple Pen hjemmeside\"."
+msgstr ""
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr "Hjelpfilen '{0}' kunne ikke åpnes."
+msgstr "El archivo de ayuda «{0}» no se puede abrir."
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
@@ -1663,36 +1658,28 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr "Kartfilen '{0}' kunne ikke finnes.\n"
-"\n"
-"Sannsynligvis er kartfilen eller Purple Pen filen flyttet "
-"eller kartfilen er fjernet. Kartfilen må være tilgjengelig "
-"hver gang arrangementfilen åpnes. Om du sender en "
-"arrangementsfil til en annen, må en kopi av kartfilen "
-"følge med.\n"
-"\n"
-"Trykk OK og forsøk å finne kartfilen på din datamaskin."
+msgstr ""
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
-msgstr "Alle poster benyttes i en løype."
+msgstr "Todos los controles se usan en la ruta"
 
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "&Fullfør"
+msgstr "&Finalizar"
 
 #: MiscText.resx, NextButtonText
 #: NewEventWizard.resx, nextButton.Text
 msgid "&Next >"
-msgstr "&Neste >"
+msgstr "Siguie&nte >"
 
 #: MiscText.resx, Control_Code
 msgid "Control {0}"
-msgstr "Post {0}"
+msgstr "Control {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr "Fullfør"
+msgstr "Finalizar"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
@@ -1700,11 +1687,11 @@ msgstr "F"
 
 #: MiscText.resx, MandCrossing_Long
 msgid "Mandatory crossing point"
-msgstr "Obligatorisk kryssningspunkt"
+msgstr "Punto de cruce obligatorio"
 
 #: MiscText.resx, MandCrossing_Medium
 msgid "Crossing"
-msgstr "Kryssning"
+msgstr "Cruce"
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
@@ -1712,19 +1699,19 @@ msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr "Alle: {0}"
+msgstr "Todo: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr "Venstre: {0}, Høyre: {1}, Topp: {2}, Bunn: {3}"
+msgstr "Izquierda: {0}, Derecha: {1}, Arriba: {2}, Abajo: {3}"
 
 #: MiscText.resx, Start
 msgid "Start"
-msgstr "Start"
+msgstr "Iniciar"
 
 #: MiscText.resx, Start_Short
 msgid "S"
-msgstr "S"
+msgstr "I"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
@@ -1740,66 +1727,62 @@ msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
-msgstr "flertall"
+msgstr "plural"
 
 #: MiscText.resx, Singular
 msgid "singular"
-msgstr "entall"
+msgstr "singular"
 
 #: MiscText.resx, RequireStar
 msgid "The customized text requires a \"*\" to indicate where the "
 "object being modified is placed."
-msgstr "Den tilpassede teksten må ha et \"*\", for å angi hvor det "
-"modifiserte objektet skal plasseres."
+msgstr ""
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr "Løypelegging for orientering"
+msgstr ""
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
-msgstr "Skriv inn teksten du vil ha på kartet. Trykk på OK, klikk "
-"og dra deretter teksten ut på kartet for å plassere den."
+msgstr ""
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr "Legg til tekst"
+msgstr "Añadir texto"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr "Skriv inn ny tekst."
+msgstr ""
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr "Et annet program har endret på kartet \"{0}\". Purple Pen "
-"vil lese inn kartet på nytt."
+msgstr ""
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr "Arrangementet har tekstbeskrivelser på {0}. Vil du endre "
-"språk til {1}?"
+msgstr ""
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr "Åpne \"{0}\""
+msgstr "Abrir \"{0}\""
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr "Purple Pen må avsluttes før du kan åpne filene i OCAD."
+msgstr ""
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
-msgstr "Ingen løyper ble valgt for utskrift."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr "Ikke varsle om manglende fonter igjen"
+msgstr ""
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -1810,18 +1793,11 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "To fix this problem, find and install the fonts listed "
 "below with the Windows control panel, then start Purple "
 "Pen again.\n"
-msgstr "Kartfilen \"{0}\"benytter en fontfil som ikke er installert "
-"på datamskinen. Tekst med denne fonten vil vises med "
-"standard font,dette kan medføre at tekst ikke ser ut som "
-"ønsket. \n"
-"\n"
-"For å rette på problemet må fonten installeres eller en "
-"annen font velges. Etter installasjon av fonter må Purple "
-"Pen startes på nytt for å kunne bruke nye fonter.\n"
+msgstr ""
 
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
-msgstr "Manglende fonter"
+msgstr "faltan tipografías"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -1833,18 +1809,11 @@ msgid "When using an image file as a map, you must specify the "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr "Når du benyttet en bildefil som kartunderlag må du legge "
-"inn oppløsningen på filen og kartskalaen.\n"
-"\n"
-"Oppløsningen på bildet angir hvor mange punkter / tomme på "
-"utskriften. Vanligvis betegnes dette \"dots per inch eller "
-"dpi.\n"
-"Kartets skala angir forholdet mellom utskrift av kartet og "
-"virkeligheten.\n"
+msgstr ""
 
 #: NewEventBitmapScale.resx, resolutionLabel.Text
 msgid "Image resolution:"
-msgstr "Bilde oppløsning:"
+msgstr "Resolución de la imagen:"
 
 #: NewEventBitmapScale.resx, oneToPrefixLabel.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel1.Text
@@ -1855,94 +1824,84 @@ msgstr "1:"
 #: NewEventBitmapScale.resx, mapScaleLabel.Text
 #: NewEventPrintScale.resx, mapScaleLabel.Text
 msgid "Map scale:"
-msgstr "Kartskala:"
+msgstr "Escala del mapa"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr "I hvilken mappe vil du lagre løypefilene i?"
+msgstr ""
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
-msgstr "I samme mappe som kartfilen"
+msgstr "En la misma carpeta que el archivo de mapa."
 
 #: NewEventDirectory.resx, useOtherFolder.Text
 msgid "In another folder I choose."
-msgstr "I en mappe jeg velger."
+msgstr "En otra carpeta que elija"
 
 #: NewEventDirectory.resx, chooseFolder.Text
 msgid "Choose Folder..."
-msgstr "Velg mappe..."
+msgstr "Elejir carpeta"
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr "Velg mappe for arrangmentsfil"
+msgstr "Seleccionar la carpeta para su archivo de evento"
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
-msgstr "Velg mappe"
+msgstr "Carpeta seleccionada"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr "Klikk ferdigstill for å opprette arrangementsfilen din. "
-"Arrangementsfilen vil lagres som:"
+msgstr ""
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr "Når arrangementsfilen er lagret velger du \"Ny løype...\" "
-"fra løypemenyen for å lage en eller flere løyper."
+msgstr ""
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
 "file you will be using. Typically this is an OCAD file "
 "(although image files like JPEGs can be used instead). "
 "Click the \"Choose...\" button to select a map file."
-msgstr "For å kunne lage løyper må du velge en kartfil. Dette er "
-"vanligvis en OCAD fil, men også bildefiler som JPEG og GIF "
-"kan benyttes. Klikk på \"Velg...\" for å velge kartfilen."
+msgstr ""
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
-msgstr "Valgt kartfil"
+msgstr "Archivo de mapa seleccionado"
 
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If send your Purple "
 "Pen file to someone else, they must have the map file also."
-msgstr "Kartet er lest inn. Desom du sender en Purpel Pen fil til "
-"noen må denne også ha tilgang til kartfilen."
+msgstr ""
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr "Nye poster nummereres automatisk. Velg nummeret du ønsker "
-"starte fra."
+msgstr ""
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using "
 "Controls/Automatic Numbering)"
-msgstr "(Dette valget kan endres i etterkant under "
-"Løyper/Automatisk Nummerering.)"
+msgstr ""
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr "Hvilken skala ønsker du løypene skal skrives ut i? "
-"Vanligvis vil du bruke skalaen til kartet.\n"
-"\n"
+msgstr ""
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr "Standard &utsriftskala"
+msgstr "Escala de im&presión predeterminada:"
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr "(Du kan endre utskriftskalaen senere for hver enkelt løype "
-"under Løype/Valg.)"
+msgstr ""
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -1952,21 +1911,15 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr "Arrangementsnavn vil vises på første linje av alle "
-"postsbeskrivelser. Det er også benyttet som navn "
-"arrangmentfilen lagres til maskinen.\n"
-"\n"
-"For å passe i postbeskrivelsen må teksten være mindre enn "
-"25 tegn. Eksempel på gode titler er \"Rankingløp 6 juni\" "
-"eller \"Vårspretten 2010\"."
+msgstr ""
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
-msgstr "Arrangements navn:"
+msgstr "Título del evento:"
 
 #: NewEventWizard.resx, backButton.Text
 msgid "< &Back"
-msgstr "< &Tilbake"
+msgstr "< &Anterior"
 
 #: NonPrintableObjects.resx, labelWarning.Text
 msgid "Map file \"{0}\" contains objects or symbols that are not "
@@ -1977,388 +1930,376 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr "Kartfilen {0} inneholder objekter eller symboler som ikke "
-"støttes fullstendig av Purple Pen, disse vil derfor "
-"kanskje ikke vises riktig. Objekter som kanskje ikke vises "
-"riktig er listet under.\n"
-"\n"
-"Til å skrive ut konkuranskekart anbefales at løypene "
-"eksporteres til OCAD filer Bruk Akriv/Lag OCAD filer... og "
-"skriv ut kartene fra OCAD.\n"
+msgstr ""
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr "Fortsett"
+msgstr "Continuar"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
-msgstr "Kartfil kan ikke skrives ut korrekt"
+msgstr ""
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
-msgstr "Den følgende filen finnes allerdede. Om du fortsetter vil "
-"disse overskrives."
+msgstr ""
 
 #: OverwritingOcadFilesDialog.resx, buttonOK.Text
 msgid "Replace"
-msgstr "Erstatt"
+msgstr "Reemplazar"
 
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
-msgstr "Bekreft overskriving av filer"
+msgstr "Confirmar reemplazamiento de archivos"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
 #: PrintPunches.resx, printButton.Text
 msgid "Print"
-msgstr "Skriv ut"
+msgstr "Imprimir"
 
 #: PrintCourses.resx, printerChange.Text
 #: PrintDescriptions.resx, printerChange.Text
 #: PrintPunches.resx, printerChange.Text
 msgid "Change Printer..."
-msgstr "Endre skriver..."
+msgstr "Cambiar impresora..."
 
 #: PrintCourses.resx, paperSize.Text
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
+msgstr "Tabloide (11\"x17\")"
 
 #: PrintCourses.resx, paperSizeLabel.Text
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
 msgid "Paper Size:"
-msgstr "Papirstørrelse:"
+msgstr "Tamaño del papel:"
 
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
 msgid "Printer Name"
-msgstr "Skrivernavn"
+msgstr "Nombre de la impresora"
 
 #: PrintCourses.resx, printerLabel.Text
 #: PrintDescriptions.resx, printerLabel.Text
 #: PrintPunches.resx, printerLabel.Text
 msgid "Printer:"
-msgstr "Skriver:"
+msgstr "Impresora:"
 
 #: PrintCourses.resx, previewButton.Text
 #: PrintDescriptions.resx, previewButton.Text
 #: PrintPunches.resx, previewButton.Text
 msgid "Preview..."
-msgstr "Forhåndsvisning …"
+msgstr "Vista previa..."
 
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
-msgstr "Antall kopier av hver løype:"
+msgstr "Copias de cada ruta"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
 #: PrintPunches.resx, copiesGroupBox.Text
 msgid "Copies"
-msgstr "Kopier"
+msgstr "Copias"
 
 #: PrintCourses.resx, radioButtonMultiPage.Text
 msgid "Print on multiple pages"
-msgstr "Skriv ut på flere sider"
+msgstr "Imprime en multiples paginas"
 
 #: PrintCourses.resx, radioButtonOnePage.Text
 msgid "Crop to a single page"
-msgstr "Beskjær til en side"
+msgstr "Recortar a una página"
 
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr "Dersom utskriftsomfådet er for stort til å passe på en side:"
+msgstr "Si el área de impresión es demasiado grande, ajustar en "
+"una página:"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
-msgstr "Skriv ut løyper"
+msgstr "Imprimir rutas"
 
 #: PrintDescriptions.resx, marginChange.Text
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
-msgstr "Endre marger..."
+msgstr "Cambiar márgenes..."
 
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Over: 0.55\", Under: 0.55\", Venstre: 0.55\", Høyre: 0.55\""
+msgstr "Arriba: 0.55\", Abajo: 0.55\", Izquierda: 0.55\", Derecha: "
+"0.55\""
 
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
 msgid "Margins:"
-msgstr "Marger:"
+msgstr "Márgenes:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
 msgid "Orientation:"
-msgstr "Retning:"
+msgstr "Orientación:"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr "Løype standard"
+msgstr "Ruta predeterminada"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr "Symboler og tekst"
+msgstr "Símbolos y texto"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr "Postbeskrivelsestype:"
+msgstr "Tipo de descripción:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr "Linje tykkelse:"
+msgstr "Tamaño de línea:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr "beskrivelser per løype"
+msgstr "descripción por ruta"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr "en kopi av hver løype"
+msgstr "una copia de cada ruta"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
-msgstr "en side av hver løype"
+msgstr "una página por cada ruta"
 
 #: PrintDescriptions.resx, copiesCombo.Items2
 msgid "multiple pages of each course"
-msgstr "flere sider av hver løype"
+msgstr "múltiples páginas por cada ruta"
 
 #: PrintDescriptions.resx, whatToPrintLabel.Text
 msgid "Print:"
-msgstr "Skriv ut:"
+msgstr "Imprimir:"
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr "Skriv ut postbeskrivelser"
+msgstr "Imprimir descripciones"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr "Klippekort layout..."
+msgstr ""
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr "Størrelse på stemplingsrute:"
+msgstr ""
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
-msgstr "Kopier:"
+msgstr "Copias:"
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr "Skriv ut stemplingskort"
+msgstr ""
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr "Klipprutesortering"
+msgstr ""
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
-msgstr "Kolonner:"
+msgstr "Columnas:"
 
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
-msgstr "Rader:"
+msgstr "Filas:"
 
 #: PunchcardLayoutDialog.resx, sizeGroupBox.Text
 msgid "Size"
-msgstr "Størrelse"
+msgstr "Tamaño"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr "Stemplingskort layout"
+msgstr ""
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr "Klikk på en postkode i listen på venstre side og lag "
-"stemplingsmønsteret på høyre siden. Røde koder angir "
-"poster som ikke har noe definert kontrollmønster."
+msgstr ""
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
-msgstr "Stemplingsmønster"
+msgstr ""
 
 #: ReportForm.resx, printButton.Text
 msgid "Print..."
-msgstr "Skriv ut …"
+msgstr "Imprimir..."
 
 #: ReportForm.resx, previewButton.Text
 msgid "Print Preview..."
-msgstr "Forhåndsvis utskrift ..."
+msgstr "Vista previa..."
 
 #: ReportForm.resx, okButton.Text
 msgid "Close"
-msgstr "Lukk"
+msgstr "Cerrar"
 
 #: ReportText.resx, ColumnHeader_Climb
 msgid "Climb"
-msgstr "Stigning"
+msgstr "Escalar"
 
 #: ReportText.resx, ColumnHeader_Code
 msgid "Code"
-msgstr "Kode"
+msgstr "Código"
 
 #: ReportText.resx, ColumnHeader_Column
 msgid "Column"
-msgstr "Kolonne"
+msgstr "Columna"
 
 #: ReportText.resx, ColumnHeader_Control
 msgid "Control"
-msgstr "Post"
+msgstr "Control"
 
 #: ReportText.resx, ColumnHeader_ControlCodes
 msgid "Control codes"
-msgstr "Post koder"
+msgstr "Códigos de control"
 
 #: ReportText.resx, ColumnHeader_Controls
 msgid "Controls"
-msgstr "Poster"
+msgstr "Controles"
 
 #: ReportText.resx, ColumnHeader_Course
 msgid "Course"
-msgstr "Løype"
+msgstr "Curso"
 
 #: ReportText.resx, ColumnHeader_Distance
 msgid "Distance"
-msgstr "Distanse"
+msgstr "Distancia"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr "Element"
+msgstr "Elemento"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr "Strekk"
+msgstr "Pierna"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
-msgstr "Lengde"
+msgstr "Longitud"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr "Les inn"
+msgstr "Cargar"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
-msgstr "Sted"
+msgstr "Ubicación"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
-msgstr "# Løyper"
+msgstr "# Rutas"
 
 #: ReportText.resx, ColumnHeader_Reason
 msgid "Reason"
-msgstr "Årsak"
+msgstr "Razón"
 
 #: ReportText.resx, ColumnHeader_SameSymbol
 msgid "Same symbol?"
-msgstr "Samme symbol?"
+msgstr "¿Mismo símbolo?"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr "Løypesammenstilling for {0}"
+msgstr "Resumen de ruta para {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "Kryssreferanse sjekk for  {0}"
+msgstr ""
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr "Tilliggende poster"
+msgstr ""
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr "Tabellen viser postpar som ligger mindre enn {0} meters "
-"avstand fra hverandre. Symbolkolonne D visar om de to "
-"postene er av av samme type."
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr "Manglende postbeskrivelsesruter"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr "Vanlige løyper bør indikere hvor mye stigning de har."
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
-msgstr "Alle poster må ha et symbol i kolonne D"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingEBetween
 msgid "When \"between\" is in column G, two features must be shown "
 "in columns D and E"
-msgstr "Dersom \"mellom\" benyttes i kolonne G, må to symboler vises "
-"i kolonne D og E"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingEJunction
 msgid "When \"junction\" or \"crossing\" is in column F, two features "
 "must be shown in columns D and E"
-msgstr "Når \"gren\" eller \"kryss\" benyttes i kolonne F må to "
-"symboler vises i kolonne D og E"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
-msgstr "Normale løyper skal ha målsirkel"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr "Manglende objekter i løyper"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr "Løypen forventes å ha følgende antall deltakere"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr "Ingen stemplingsmal er definert"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr "Manglende stemplingsmønster"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
 "controls"
-msgstr "Poengløyper skal ha angitt poeng for alle eller ingen poster"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr "Manglende poeng"
+msgstr "Faltan puntuaciones"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr "Normale løyper skal ha en starttrekant"
+msgstr ""
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
-msgstr "Poengløyper skal ha en starttrekant"
+msgstr ""
 
 #: ReportText.resx, EventAudit_No
 msgid "No"
-msgstr "Nei"
+msgstr "No"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr "Alt er OK"
+msgstr "No se encontraron problemas."
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
-msgstr "Arrangementskontroll for {0}"
+msgstr ""
 
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
 msgid "Unused Controls"
-msgstr "Ubrukte poster"
+msgstr "Controles sin usar"
 
 #: ReportText.resx, EventAudit_UnusedControlsExplanation
 msgid "The following controls are present in the All Controls "
@@ -2366,378 +2307,352 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr "Følgende poster er plassert men ikke benyttet i noen "
-"løyper. For å fjerne dem, bruk \"Fjern ubenyttede poster\" i "
-"\"Arrangement\" menyen. Postende vil ikke bli tatt hensyn "
-"til i resten av denne rapporten."
+msgstr ""
 
 #: ReportText.resx, EventAudit_Yes
 msgid "Yes"
-msgstr "Ja"
+msgstr "Sí"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
-msgstr "Gjennomsnitt"
+msgstr "Promedio"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
-msgstr "{0} ({1} poster, {2:0.0} km, {3} m stigning)"
+msgstr ""
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2:0.0} km)"
-msgstr "{0} ({1} poster, {2:0.0} km)"
+msgstr ""
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr "Strekklengde rapport for {0}"
+msgstr ""
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr "Belastning post"
+msgstr "carga de control"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr "Strekkbelastning"
+msgstr ""
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr "Noen eller alle løyper mangler angivelse om hvor mange "
-"deltakere det er pr løype. Tettheten av deltakere som "
-"angis under kan derfor mangle eller være feil- For å angi "
-"deltakere pr løype velg \"Instilling av antall deltakere pr "
-"løype\" fra \"Løype\" menyen."
+msgstr ""
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr "(Bare strekk som er benyttet i mer enn en løype vises i "
-"følgende tabell)"
+msgstr ""
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr "Summering av antall deltakere for {0}"
+msgstr ""
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
-msgstr "ADVARSEL:"
+msgstr "AVISO:"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
-msgstr "borte fra post"
+msgstr ""
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr "Antall deltakere:"
+msgstr "Carga de competidor:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr "Poster i bruk:"
+msgstr "Controles en uso:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr "Ubrukte poster:"
+msgstr "Controles no en uso:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
-msgstr "poster"
+msgstr "controles"
 
 #: SelectionDescriptionText.resx, Control_Singular
 msgid "control"
-msgstr "post"
+msgstr "control"
 
 #: SelectionDescriptionText.resx, CourseList_AllCourses
 msgid "All courses"
-msgstr "Alle løyper"
+msgstr "Todas las rutas"
 
 #: SelectionDescriptionText.resx, CourseName
 msgid "Course \"{0}\""
-msgstr "Løype \"{0}\""
+msgstr ""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr "Spesialtilpasset beskrivelsesymbol"
+msgstr ""
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr "hele strekket"
+msgstr ""
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
-msgstr "målsluse"
+msgstr ""
 
 #: SelectionDescriptionText.resx, Finish_Plural
 msgid "finishes"
-msgstr "mål"
+msgstr "termina"
 
 #: SelectionDescriptionText.resx, Finish_Singular
 msgid "finish"
-msgstr "mål"
+msgstr "terminar"
 
 #: SelectionDescriptionText.resx, Flagging
 msgid "Flagging:"
-msgstr "Flagging"
+msgstr ""
 
 #: SelectionDescriptionText.resx, IntoControl
 msgid "into control"
-msgstr "inn til posten"
+msgstr ""
 
 #: SelectionDescriptionText.resx, IntoFinishFunnel
 msgid "into finish funnel"
-msgstr "målsluse"
+msgstr ""
 
 #: SelectionDescriptionText.resx, Length
 msgid "Length:"
-msgstr "Lengde:"
+msgstr "Longitud:"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr "Linjehøyde:"
+msgstr "Altura de línea:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
-msgstr "Sted:"
+msgstr "Ubicación:"
 
 #: SelectionDescriptionText.resx, MandCrossing_Plural
 msgid "mandatory crossing points"
-msgstr "obligatoriske krysningspunkter"
+msgstr "puntos de cruce obligatorios"
 
 #: SelectionDescriptionText.resx, MandCrossing_Singular
 msgid "mandatory crossing point"
-msgstr "obligatorisk krysningspunkt"
+msgstr "punto de cruce obligatorio"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
-msgstr "ingen"
+msgstr "ninguno"
 
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
-msgstr "Postveskrivelser"
+msgstr "Descripciones de control"
 
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
-msgstr "Ulovlig veivalg"
+msgstr "Ruta prohibida"
 
 #: SelectionDescriptionText.resx, SpecialName_OOB
 msgid "Out-of-bounds Area"
-msgstr "Forbudt område"
+msgstr "Área fuera de límites"
 
 #: SelectionDescriptionText.resx, Start_Plural
 msgid "starts"
-msgstr "starter"
+msgstr "inicia"
 
 #: SelectionDescriptionText.resx, Start_Singular
 msgid "start"
-msgstr "start"
+msgstr "iniciar"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr "Tekst beskrivelse:"
+msgstr "Descripción de texto:"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
-msgstr "Tekstlinje"
+msgstr "Línea de texto"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
-msgstr "Vis over {0}, i alle løyper som inneholder {0}"
+msgstr ""
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr "Vis over {0}, i denna kun denne løypen"
+msgstr ""
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
-msgstr "Vis under {0}, i alle løyper som inneholder {0}"
+msgstr ""
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr "Vis under {0}, i bare denne løypen"
+msgstr ""
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr "Totalt antall poster:"
+msgstr "Controles totales"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
-msgstr "Total poeng:"
+msgstr "Puntuación total"
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr "Benyttes i løyper:"
+msgstr "Usado en rutas:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
-msgstr "Ferdig"
+msgstr "Hecho"
 
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
-msgstr "Velg utskrivftsområde ved å dra med musen."
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
 "user interface of Purple Pen (menus, windows, etc.)"
-msgstr "Velg språk du vil bruke i Purple Pen (Menyer, vinduer mm)"
+msgstr ""
 
 #: SetUILanguage.resx, $this.Text
 msgid "Program Language"
-msgstr "Programspråk"
+msgstr ""
 
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr "Venstre musetast: Velg objekt; Høyre museknapp: Flytt "
-"kart; Musens rullehjul: Zoom inn/ut"
+msgstr ""
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr "Venstre museknapp: flytte/endre størrelse på rektangel; "
-"Høyre musetast: flytte kart; Musens rullehjul: Zoome inn/ut"
+msgstr ""
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
-msgstr "Hold nede venstre museknapp og dra for å flytte valgte "
-"objekt"
+msgstr ""
 
 #: StatusBarText.resx, DragCorner
 msgid "Hold down left mouse button and drag corner point to move it"
-msgstr "Hold nede venstre museknapp og dra hjørnepunkt for å "
-"flytte det"
+msgstr ""
 
 #: StatusBarText.resx, DraggingObject
 msgid "Move object to desired location and release mouse button"
-msgstr "Flytt objekt til ønsket posisjon og slipp museknappen"
+msgstr ""
 
 #: StatusBarText.resx, DraggingCorner
 msgid "Move corner point to desired location and release mouse "
 "button"
-msgstr "Flytt hjørenepunkt til ønsket posisjon og slipp museknappen"
+msgstr ""
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr "Klikk på venstre museknapp for å plassere ut en ny post"
+msgstr ""
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr "Klikk på ventre museknapp for å legge til post \"{0}\" til "
-"løypen"
+msgstr ""
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr "Klikk på venstre museknapp for å legge til en ny start"
+msgstr ""
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr "Klikke ventre museknapp for å legge til eksisterende start "
-"til løype"
+msgstr ""
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr "Klikk venstre museknapp for å plassere nytt mål"
+msgstr ""
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr "Klikk venstre museknapp for å legge til eksisterende mål "
-"til løype"
+msgstr ""
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr "Klikk venstre museknapp for å plassere ut nytt "
-"obligatorisk kryssningspunkt"
+msgstr ""
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr "Klikk venstre museknapp for å legge til eksisterende "
-"obligatorisk krysningspunkt"
+msgstr ""
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr "Klikk venstre museknapp for å plassere et nytt objekt"
+msgstr ""
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr "Klikk venstre museknapp ved posisjonen til bendet"
+msgstr ""
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr "Klikk venstre museknapp for å plassere nytt hjørne"
+msgstr ""
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr "Klikk venstre museknapp på et bend for å slette det."
+msgstr ""
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr "Klikk venstre museknapp på et hjørne for å slette det."
+msgstr ""
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a gap"
-msgstr "Klikk venstre musetast på en postsirkel for å legge inn et "
-"klipp i denne"
+msgstr ""
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "Klikk med venstre musetast på et klipp for å fjerne dette"
+msgstr ""
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Hold down left mouse button and drag to create a gap in "
 "the leg"
-msgstr "Hold nede venstre musetast og dra for å lage et utklipp i "
-"strekket"
+msgstr ""
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr "Klikk venstre musetast på et klipp i en strekkstrek for å "
-"slette dette."
+msgstr ""
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
 "object"
-msgstr "Hold nede venstre musetast og dra til ønsket størrelse for "
-"valgt objetk"
+msgstr ""
 
 #: StatusBarText.resx, SizingRectangle
 msgid "Move edge(s) to desired location and release mouse button"
-msgstr "Flytt kant(er) til ønsket posisjon og slipp museknapp"
+msgstr ""
 
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr "Hold nede venstre museknapp og dra for å endre "
-"postbesktivelser"
+msgstr ""
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr "Klikk venstre museknapp når krysningspunktet er rotert i "
-"rett retning"
+msgstr ""
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
 "segment; click the left mouse button to finish adding object"
-msgstr "Hold nede ventre museknapp og dra for å legge  til et nytt "
-"linjesegment, klikk ventre museknapp for å avslutte"
+msgstr ""
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr "Hold nede venstre museknapp og fra for å lage tekst"
+msgstr ""
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
-msgstr "Slett"
+msgstr "Borrar"
 
 #: UnusedControls.resx, unusedControlsLabel.Text
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
-msgstr "Følgende poster er i \"Alle poster\" men ingen av dem "
-"benyttes i noen løype. Klikk ta bort for å slette alle "
-"markerte poster."
+msgstr ""
 

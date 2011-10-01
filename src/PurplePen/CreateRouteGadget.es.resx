@@ -141,4 +141,10 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo de Purple Pen</value>
   </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Nombre de archivo</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Aprenda más sobre RouteGadget</value>
+  </data>
 </root>

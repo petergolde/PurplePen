@@ -135,6 +135,27 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Símbolos y texto</value>
   </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Código de control (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Secuencia y código (3-145)</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Mostrar puntos en:</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Columna A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Columna B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Columna H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(no mostrar)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Apariencia</value>
   </data>

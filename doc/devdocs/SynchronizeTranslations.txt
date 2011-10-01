@@ -1,0 +1,9 @@
+How to synchronize new translations for Purple Pen.
+
+1. Go to https://translations.launchpad.net/purple-pen
+
+2. Click "download", select PO format, and request a download.
+
+3. Wait for email, then download the PO files (and the POT file) to the loc/po directory of Purple Pen.
+
+4. Build and run the TranslateTool program (in tools directory).

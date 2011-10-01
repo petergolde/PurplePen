@@ -139,7 +139,7 @@
     <value>Vis forklaring under symbolske postbeskrivelser</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Klikk på en symbol beksrivelse for å tilpasse tekst som benyttes i tekst postbeskrivelsene.</value>
+    <value>Klikk på en symbolbeksrivelse for å tilpasse tekst som benyttes i tekst postbeskrivelsene.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpass tekst på postbeskrivelse</value>
