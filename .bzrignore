@@ -12,6 +12,8 @@ Release
 *.user
 *.chm
 src/TestResults
+src/tools/TranslateTool/TestResults
+src/tools/TranslateTool/TestFiles
 src/PurplePen_Tests/Test References
 src/TestFiles/controller/ocad_create1/*.ocd
 src/TestFiles/controller/ocad_create2/*.ocd
