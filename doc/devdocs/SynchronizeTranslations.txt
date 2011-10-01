@@ -7,3 +7,7 @@ How to synchronize new translations for Purple Pen.
 3. Wait for email, then download the PO files (and the POT file) to the loc/po directory of Purple Pen.
 
 4. Build and run the TranslateTool program (in tools directory).
+
+5. Select "Synchronize ResX/POs", select src\PurplePen for the ResX dir and loc/po for the PO directory.
+
+6. Close the translation tool directory.
