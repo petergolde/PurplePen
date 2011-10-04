@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CourseData>
   <IOFVersion version="2.0.3" />
+  <ModifyDate>
+    <Date>2011-10-02</Date>
+    <Clock>17:53</Clock>
+  </ModifyDate>
   <Map>
     <Scale>15000</Scale>
     <MapPosition x="-65.22" y="183.83" />

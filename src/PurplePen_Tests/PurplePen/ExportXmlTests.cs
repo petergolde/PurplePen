@@ -66,8 +66,10 @@ namespace PurplePen.Tests
 
 
         [TestMethod]
-        public void ExportXml()
+        public void ExportXmlTest()
         {
+            Dictionary<string, string> exceptions = ExportXml.TestFileExceptionMap();
+
             string outputFile = TestUtil.GetTestFile("exportxml\\marymoor_actual.xml");
             string expectedFile = TestUtil.GetTestFile("exportxml\\marymoor_expected.xml");
 
@@ -75,7 +77,7 @@ namespace PurplePen.Tests
 
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F));
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile);
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
         }
     }
 }

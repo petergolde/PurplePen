@@ -11,3 +11,6 @@ How to synchronize new translations for Purple Pen.
 5. Select "Synchronize ResX/POs", select src\PurplePen for the ResX dir and loc/po for the PO directory.
 
 6. Close the translation tool directory.
+
+7. One built and committed, do a push back to launchpad, which will reimport the translations, or manually
+   upload them to launchpad.
