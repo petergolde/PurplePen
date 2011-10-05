@@ -368,13 +368,15 @@ namespace PurplePen.MapModel
 			return a.ToArray();
 		}
 
-		// Determine the distance between two colors. squareroot of sum of squares of distance.
-		public static double ColorDistance(Color col1, Color col2) {
-			double dist = 0;
-			dist += (col1.R - col2.R) * (col1.R - col2.R);
-			dist += (col1.G - col2.G) * (col1.G - col2.G);
-			dist += (col1.B - col2.B) * (col1.B - col2.B);
-			return Math.Sqrt(dist);
+		// Determine the distance between two colors. sum of squares of distance.
+		public static int ColorDistance(Color col1, Color col2) {
+            byte r1 = col1.R, r2 = col2.R;
+            int rd = r1 - r2;
+            byte g1 = col1.G, g2 = col2.G;
+            int gd = g1 - g2;
+            byte b1 = col1.B, b2 = col2.B;
+            int bd = b1 - b2;
+            return (rd * rd) + (gd * gd) + (bd * bd);
 		}
 
 

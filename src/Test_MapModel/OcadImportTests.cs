@@ -36,6 +36,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Color = System.Drawing.Color;
 
 using TestingUtils;
 
@@ -162,7 +163,21 @@ namespace PurplePen.MapModel.Tests
             TestUtil.TestEnumerableAnyOrder(nonrenderableObjects, expected);
         }
 
+        [TestMethod]
+        public void NearestColor() {
+            OcadExport exporter = new OcadExport();
 
+            Color c = Color.FromArgb(45, 198, 255);
+            Assert.AreEqual(exporter.NearestOcadColorSlow(c, true), exporter.NearestOcadColor(c, true));
+            c = Color.FromArgb(0, 0, 0);
+            Assert.AreEqual(exporter.NearestOcadColorSlow(c, true), exporter.NearestOcadColor(c, true));
+            c = Color.FromArgb(33, 198, 255);
+            Assert.AreEqual(exporter.NearestOcadColorSlow(c, true), exporter.NearestOcadColor(c, true));
+            c = Color.FromArgb(255, 255, 255);
+            Assert.AreEqual(exporter.NearestOcadColorSlow(c, true), exporter.NearestOcadColor(c, true));
+            c = Color.FromArgb(186, 96, 0);
+            Assert.AreEqual(exporter.NearestOcadColorSlow(c, true), exporter.NearestOcadColor(c, true));
+        }
 
     }
 }

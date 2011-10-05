@@ -772,8 +772,7 @@ namespace PurplePen.MapModel {
             }
         }
 
-
-        int NearestOcadColor(Color col, bool use8bit) {
+        internal int NearestOcadColorSlow(Color col, bool use8bit) {
             Color[] colorMap = use8bit ? OcadConstants.ocadColorMap8Bit : OcadConstants.ocadColorMap4Bit;
 
             // Search Ocad Color Map for closest color
@@ -787,6 +786,31 @@ namespace PurplePen.MapModel {
             }
 
             return bestIndex;
+        }
+
+        internal int NearestOcadColor(Color col, bool use8bit) {
+            if (use8bit) {
+                int rQuintile = (col.R + 31) / 64;
+                int gQuintile = (col.G + 31) / 64;
+                int bQuintile = (col.B + 31) / 64;
+                int index = (rQuintile * 25) + (gQuintile * 5) + bQuintile;
+                return index;
+            }
+            else {
+                Color[] colorMap = OcadConstants.ocadColorMap4Bit;
+
+                // Search Ocad Color Map for closest color
+                int bestIndex = 0;
+                int bestDist = int.MaxValue;
+                for (int index = 0; index < colorMap.Length; ++index) {
+                    int dist = Util.ColorDistance(col, colorMap[index]);
+                    if (dist < bestDist) {
+                        bestIndex = index; bestDist = dist;
+                    }
+                }
+
+                return bestIndex;
+            }
         }
 
 
