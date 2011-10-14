@@ -155,17 +155,20 @@ namespace PurplePen
 
         private void WriteCourses()
         {
+            // Sport Software requires that the courses be numbers started at 0.
+            int courseNumber = 0;
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                WriteCourse(courseId);
+                if (WriteCourse(courseId, courseNumber))
+                    ++courseNumber;
             }
         }
 
-        private void WriteCourse(Id<Course> courseId) {
+        private bool WriteCourse(Id<Course> courseId, int courseNumber) {
             // A course must have a start and a finish to be output.
             if (!QueryEvent.HasStartControl(eventDB, courseId))
-                return;
+                return false;
             if (!QueryEvent.HasFinishControl(eventDB, courseId))
-                return;
+                return false;
 
             Course course = eventDB.GetCourse(courseId);
             bool isScore = (course.kind == CourseKind.Score);
@@ -175,7 +178,7 @@ namespace PurplePen
 
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", course.name);
-            xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseId.id));
+            xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseNumber));
             xmlWriter.WriteStartElement("CourseVariation");
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
             if (!isScore) {
@@ -240,6 +243,8 @@ namespace PurplePen
 
             xmlWriter.WriteEndElement();     // "CourseVariation"
             xmlWriter.WriteEndElement();     // "Course"
+
+            return true;
         }
 
         // Return an exception map used to test exported XML files.
