@@ -58,6 +58,7 @@ namespace PurplePen.Tests
             specialAppearance.controlCircleSize = 0.666667F;  // 4mm control circle
             specialAppearance.lineWidth = 2.85714F; // 1mm lines
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
+            specialAppearance.numberBold = true;
         }
 
         // Draw a grid on the graphics

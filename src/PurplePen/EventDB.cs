@@ -1606,6 +1606,7 @@ namespace PurplePen
         public float controlCircleSize = 1.0F;            // ratio to apply to control circles and other point features.
         public float lineWidth = 1.0F;                       // ratio to apply to the width of lines
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
+        public bool numberBold = false;                 // Is the number bolded?
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
@@ -1622,6 +1623,8 @@ namespace PurplePen
             if (lineWidth != other.lineWidth)
                 return false;
             if (numberHeight != other.numberHeight)
+                return false;
+            if (numberBold != other.numberBold)
                 return false;
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
@@ -1849,6 +1852,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("line-width-ratio", XmlConvert.ToString(courseAppearance.lineWidth));
             if (courseAppearance.numberHeight != 1.0F)
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
+            if (courseAppearance.numberBold)
+                xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
             if (courseAppearance.useDefaultPurple == false) {
                 xmloutput.WriteAttributeString("purple-cyan", XmlConvert.ToString(courseAppearance.purpleC));
                 xmloutput.WriteAttributeString("purple-magenta", XmlConvert.ToString(courseAppearance.purpleM));
@@ -1941,6 +1946,7 @@ namespace PurplePen
                         courseAppearance.controlCircleSize = xmlinput.GetAttributeFloat("control-circle-size-ratio", 1.0F);
                         courseAppearance.lineWidth = xmlinput.GetAttributeFloat("line-width-ratio", 1.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
+                        courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);

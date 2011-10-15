@@ -184,8 +184,9 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
+                    FontDesc fontDesc = appearance.numberBold ? NormalCourseAppearance.controlNumberFont : NormalCourseAppearance.controlNumberFontBold;
                     textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio * appearance.controlCircleSize,
-                                                                                  text, NormalCourseAppearance.controlNumberFont, scaleRatio * appearance.numberHeight, existingObjects);
+                                                                                  text, fontDesc, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
                 return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
