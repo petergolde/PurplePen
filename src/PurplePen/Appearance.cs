@@ -166,7 +166,7 @@ namespace PurplePen
         public static readonly FontDesc keyFont = new FontDesc("Arial", false, false, 52F, 52F);
 
         // Font to use for other text lines.
-        public static readonly FontDesc textLineFont = new FontDesc("Arial Narrow", false, false, 56F, 50F);
+        public static readonly FontDesc textLineFont = new FontDesc("Arial Narrow", true, false, 56F, 50F);
 
     }
 

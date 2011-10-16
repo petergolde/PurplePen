@@ -712,7 +712,7 @@ namespace PurplePen
                     break;
 
                 case DescriptionLineKind.Text:
-                    RenderSingleLineText(renderer, TEXTLINE_FONT, StringAlignment.Near, (string) (descriptionLine.boxes[0]), 20, 0, fullWidth, 100, clipRect);
+                    RenderWrappedText(renderer, TEXTLINE_FONT, StringAlignment.Near, (string) (descriptionLine.boxes[0]), 20, 0, fullWidth, 100, clipRect);
                     break;
 
                 default:

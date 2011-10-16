@@ -718,7 +718,7 @@ Uncompressed:
 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
 
   FontName=Arial Narrow, FontColor=0, FontSize=67
-  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
   nTabs=0: 

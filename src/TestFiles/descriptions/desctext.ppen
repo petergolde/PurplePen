@@ -26,7 +26,7 @@
     <description box="D" iof-2004-ref="3.7" />
     <description box="H" iof-2004-ref="12.1" />
     <description-text>very marshy spot</description-text>
-	<description-text-line location="before">Beware of frogs!</description-text-line>
+	<description-text-line location="before">Beware of frogs, because they are very slippery and disgusting!</description-text-line>
   </control>
   <control id="5" kind="normal">
     <code>GO</code>
