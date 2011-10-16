@@ -59,6 +59,12 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Map_GDIPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -1144,16 +1150,6 @@
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MapModel\MapModel.csproj">
-      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
-      <Name>MapModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
-      <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
-      <Name>Map_GDIPlus</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
