@@ -1,4 +1,0 @@
-﻿underlinetext.ocd
-underlinetext.png
--26.3650761,40.21621,89.28633,-84.1055756
-827,889

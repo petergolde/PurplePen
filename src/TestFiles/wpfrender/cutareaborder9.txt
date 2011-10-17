@@ -1,4 +1,0 @@
-﻿cutareaborder9.ocd
-cutareaborder9.png
--51.7410469,71.22472,24.741169,-8.832325
-813,851

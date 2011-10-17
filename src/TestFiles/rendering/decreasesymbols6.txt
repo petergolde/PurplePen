@@ -1,4 +1,0 @@
-﻿decreasesymbols6.ocd
-decreasesymbols.png
--293.661774,199.867676,126.555542,4.863251
-1711,794
