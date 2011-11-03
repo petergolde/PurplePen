@@ -486,6 +486,9 @@ namespace PurplePen
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
 
+            // Update help menu
+            UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
+
             FlaggingKind currentFlagging;
             CommandStatus flaggingStatus = controller.CanSetLegFlagging(out currentFlagging);
             UpdateMenuItem(legFlaggingMenu, flaggingStatus);
@@ -1293,6 +1296,17 @@ namespace PurplePen
             ShowHelp(HelpNavigator.TableOfContents, null);
         }
 
+        private bool TranslatedWebSiteExists()
+        {
+            string url = MiscText.TranslatedHelpWebSite;
+            return (url.Length > 0 && url[0] == 'h');
+        }
+
+        private void helpTranslatedMenu_Click(object sender, EventArgs e)
+        {
+            Util.GoToWebPage(MiscText.TranslatedHelpWebSite);
+        }
+
         private void helpIndexMenu_Click(object sender, EventArgs e)
         {
             ShowHelp(HelpNavigator.Index, null);
@@ -2029,6 +2043,9 @@ namespace PurplePen
 
             openFile.Dispose();
         }
+
+
+
 
 
     }

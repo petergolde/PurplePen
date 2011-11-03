@@ -305,9 +305,13 @@
     </Compile>
     <Compile Include="MapView\Util.cs" />
     <Compile Include="MapView\ViewCache.cs" />
-    <Compile Include="MiscText.Designer.cs" />
     <Compile Include="MiscText.fr.Designer.cs" />
     <Compile Include="MiscText.sv.Designer.cs" />
+    <Compile Include="MiscText1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.resx</DependentUpon>
+    </Compile>
     <Compile Include="MissingFonts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -799,7 +803,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.fr.resx" />
     <EmbeddedResource Include="MiscText.nb-NO.resx" />
-    <EmbeddedResource Include="MiscText.resx" />
+    <EmbeddedResource Include="MiscText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiscText.sv.resx" />
     <EmbeddedResource Include="MissingFonts.fr.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>

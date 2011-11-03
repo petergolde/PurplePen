@@ -186,6 +186,7 @@ namespace PurplePen
             this.controlAndLegLoadMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpContentsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpTranslatedMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.mainWebSiteToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.supportWebSiteMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -200,6 +201,7 @@ namespace PurplePen
             this.dotGridTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dumpOCADFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontMetricsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionLanguageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTranslatedTextsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -241,7 +243,6 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.fontMetricsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -1132,6 +1133,7 @@ namespace PurplePen
             // 
             this.helpMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpContentsMenu,
+            this.helpTranslatedMenu,
             this.toolStripSeparator14,
             this.mainWebSiteToolMenu,
             this.supportWebSiteMenu,
@@ -1148,6 +1150,12 @@ namespace PurplePen
             this.helpContentsMenu.Name = "helpContentsMenu";
             resources.ApplyResources(this.helpContentsMenu, "helpContentsMenu");
             this.helpContentsMenu.Click += new System.EventHandler(this.helpContentsMenu_Click);
+            // 
+            // helpTranslatedMenu
+            // 
+            this.helpTranslatedMenu.Name = "helpTranslatedMenu";
+            resources.ApplyResources(this.helpTranslatedMenu, "helpTranslatedMenu");
+            this.helpTranslatedMenu.Click += new System.EventHandler(this.helpTranslatedMenu_Click);
             // 
             // toolStripSeparator14
             // 
@@ -1239,6 +1247,12 @@ namespace PurplePen
             this.reportTesterToolStripMenuItem.Name = "reportTesterToolStripMenuItem";
             resources.ApplyResources(this.reportTesterToolStripMenuItem, "reportTesterToolStripMenuItem");
             this.reportTesterToolStripMenuItem.Click += new System.EventHandler(this.reportTesterToolStripMenuItem_Click);
+            // 
+            // fontMetricsToolStripMenuItem
+            // 
+            this.fontMetricsToolStripMenuItem.Name = "fontMetricsToolStripMenuItem";
+            resources.ApplyResources(this.fontMetricsToolStripMenuItem, "fontMetricsToolStripMenuItem");
+            this.fontMetricsToolStripMenuItem.Click += new System.EventHandler(this.fontMetricsToolStripMenuItem_Click);
             // 
             // translateMenu
             // 
@@ -1534,12 +1548,6 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
-            // fontMetricsToolStripMenuItem
-            // 
-            this.fontMetricsToolStripMenuItem.Name = "fontMetricsToolStripMenuItem";
-            resources.ApplyResources(this.fontMetricsToolStripMenuItem, "fontMetricsToolStripMenuItem");
-            this.fontMetricsToolStripMenuItem.Click += new System.EventHandler(this.fontMetricsToolStripMenuItem_Click);
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1756,6 +1764,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem whiteOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem fontMetricsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpTranslatedMenu;
 
     }
 }
