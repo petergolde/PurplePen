@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Alle poster</value>
@@ -125,6 +125,51 @@
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen fil|*.ppen</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Arkiv</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Rediger</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Vis</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Arrangement</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Løype</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Objekt</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapporter</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>&amp;Hjelp</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Hjelp (norsk)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;hjemmeside</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Support/feilrapportering</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Om Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Feilsøk</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Oversett postbeskrivelse</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Hjelp</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Nytt arrangement...</value>
@@ -159,41 +204,17 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Velg utskriftsområde</value>
   </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Programspråk</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>Avslutt</value>
-  </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Arkiv</value>
-  </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Rediger</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Vis</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Arrangement</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Løype</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Objekt</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Rapporter</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Hjelp</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Denne løypen</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Alle løyper</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Programspråk</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>Avslutt</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Blank ut valgt</value>
@@ -408,21 +429,6 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Statistikk for post-og strekkutnyttelse</value>
   </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>&amp;Hjelp</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;hjemmeside</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Support/feilrapportering</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Om Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Feilsøk</value>
-  </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolgalleri</value>
   </data>
@@ -449,9 +455,6 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font beregninger</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Oversett postbeskrivelse</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Legg til språk for postbeskrivelser...</value>
@@ -563,8 +566,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
-  </data>
-  <data name="helpTranslatedMenu.Text" xml:space="preserve">
-    <value>Hjelp (norsk)</value>
   </data>
 </root>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:00-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -57,7 +57,7 @@ msgstr "About Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "First control number:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -97,39 +97,39 @@ msgstr "Symbols and text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "Control circle labels:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Sequence number (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Control code (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Sequence and code (3-145)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Show points in:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Column A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Column B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Column H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(do not display)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -566,6 +566,18 @@ msgstr "Change Text"
 msgid "Customize Course Appearance"
 msgstr "Customize Course Appearance"
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "Control number height:"
@@ -594,6 +606,10 @@ msgstr "Use IOF standard sizes"
 msgid "Item Sizes"
 msgstr "Item Sizes"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Purple Colour"
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr "Colour Chooser..."
@@ -617,10 +633,6 @@ msgstr "Cyan:"
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Use purple colour from map"
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Purple Colour"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -704,7 +716,7 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -744,26 +756,29 @@ msgstr "Create OCAD Files"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "File Name"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "Enter the name (without .xml or .gif) for both of the "
+"RouteGadget files:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Learn more about RouteGadget"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget requires both an image file (.gif) and IOF XML "
+"file (.xml). Choose the name and folder for both of these "
+"files."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr ""
+msgstr "Create RouteGadget Files"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
@@ -873,58 +888,6 @@ msgstr "Purple Pen files|*.ppen|All files|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen file|*.ppen"
 
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "&New Event..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Open..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Save"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Save &As..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Create OCAD &Files..."
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr ""
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create &E-Punch Interchange File..."
-msgstr "Create &E-Punch Interchange File..."
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Print Descriptions..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Print Pu&nch Cards..."
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Print &Courses..."
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Set Print A&rea"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Program &Language..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "E&xit"
-
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&File"
@@ -953,9 +916,81 @@ msgstr "&Item"
 msgid "&Reports"
 msgstr "&Reports"
 
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "Purple Pen &Help"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purple Pen &Website"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Support/Bug Reporting"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&About Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Debug"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Translate Description Text"
+
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
 msgstr "&Help"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&New Event..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Open..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Save"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Save &As..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Create OCAD &Files..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Create Route&Gadget Files..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create &E-Punch Interchange File..."
+msgstr "Create &E-Punch Interchange File..."
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Print Descriptions..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Print Pu&nch Cards..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Print &Courses..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Set Print A&rea"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -964,6 +999,14 @@ msgstr "&This Course"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&All Courses"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Program &Language..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "E&xit"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1262,26 +1305,6 @@ msgstr "Control &Cross-reference"
 msgid "Control and Leg Loa&d"
 msgstr "Control and Leg Loa&d"
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "Purple Pen &Help"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "Purple Pen &Website"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Support/Bug Reporting"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&About Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Debug"
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Symbol Browser"
@@ -1316,11 +1339,7 @@ msgstr "Report Tester"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Translate Description Text"
+msgstr "Font Metrics"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1801,6 +1820,13 @@ msgstr "Purple Pen must be closed before loading the created OCAD "
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
 msgstr "No courses were selected to print."
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

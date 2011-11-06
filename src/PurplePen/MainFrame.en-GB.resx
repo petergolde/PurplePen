@@ -126,42 +126,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen file|*.ppen</value>
   </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;New Event...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Open...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Save</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Save &amp;As...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Create OCAD &amp;Files...</value>
-  </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Create &amp;E-Punch Interchange File...</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Print Descriptions...</value>
-  </data>
-  <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Print Pu&amp;nch Cards...</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Print &amp;Courses...</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Set Print A&amp;rea</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Program &amp;Language...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
@@ -183,14 +147,71 @@
   <data name="reportMenu.Text" xml:space="preserve">
     <value>&amp;Reports</value>
   </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Help</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Website</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Support/Bug Reporting</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;About Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Debug</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Translate Description Text</value>
+  </data>
   <data name="helpMenu.Text" xml:space="preserve">
     <value>&amp;Help</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;New Event...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Open...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Save &amp;As...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Create OCAD &amp;Files...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Create Route&amp;Gadget Files...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Create &amp;E-Punch Interchange File...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Print Descriptions...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Print Pu&amp;nch Cards...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Print &amp;Courses...</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Set Print A&amp;rea</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;This Course</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;All Courses</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Program &amp;Language...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Clear Selection</value>
@@ -405,21 +426,6 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Control and Leg Loa&amp;d</value>
   </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Help</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Website</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Support/Bug Reporting</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;About Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Debug</value>
-  </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbol Browser</value>
   </data>
@@ -444,8 +450,8 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Report Tester</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Translate Description Text</value>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Font Metrics</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Add Description Language...</value>

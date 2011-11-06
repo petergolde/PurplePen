@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Kaikki rastit</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Tiedosto</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Muokkaa</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Näytä</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Rata</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Kohde</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>Ra&amp;portit</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;kotisivu</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Ohje</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Uusi tapahtuma...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Avaa...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Tallenna</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Tallenna &amp;nimellä...</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Tälle radalle</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Kaikille radoille</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Ohjelman &amp;kieli...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Lopeta</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Poista</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>Koko &amp;rata</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Koko &amp;kartta</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoomaa</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50 %</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100 %</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150 %</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200 %</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300 %</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500 %</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000 %</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Kaikki rastit</value>
+  </data>
+  <data name="changeMapFileMenu.Text" xml:space="preserve">
+    <value>&amp;Karttatiedosto</value>
+  </data>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>&amp;Vaihda rastikoodeja...</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>Automaattinen &amp;numerointi...</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Poista käyttämättömät rastit...</value>
+  </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>&amp;Leimauskuviot...</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Lisää rata...</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Poista rata</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>&amp;Ominaisuudet...</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Ratojen järjestys...</value>
+  </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;lähtö</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;rasti</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;maali</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Lisää ra&amp;stinmääritteet</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;erityiskohde</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Pakollinen ylitys/alituspaikka</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Ylitys/alituspaikka</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Kielletty alue</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Vaarallinen alue</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Juomapaikka</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Ensiapupaikka</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Kielletty reitti</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Sanalliset</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;tekstirivi...</value>
+  </data>
+  <data name="deleteItemMenu.Text" xml:space="preserve">
+    <value>&amp;Poista</value>
+  </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>Lisää k&amp;ulmapiste</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>Poista ku&amp;lmapiste</value>
+  </data>
+  <data name="addGapMenu.Text" xml:space="preserve">
+    <value>Lisää k&amp;atko</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>Poista katk&amp;o</value>
+  </data>
+  <data name="rotateMenu.Text" xml:space="preserve">
+    <value>&amp;Kierrä</value>
+  </data>
+  <data name="noFlaggingMenu.Text" xml:space="preserve">
+    <value>Ei viitoitusta</value>
+  </data>
+  <data name="entireFlaggingMenu.Text" xml:space="preserve">
+    <value>Koko rastiväli viitoitettu</value>
+  </data>
+  <data name="beginFlaggingMenu.Text" xml:space="preserve">
+    <value>Alku rastivälistä viitoitettu</value>
+  </data>
+  <data name="endFlaggingMenu.Text" xml:space="preserve">
+    <value>Loppu rastivälistä viitoitettu</value>
+  </data>
+  <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
+    <value>Muuta näk&amp;ymisasetuksia...</value>
+  </data>
+  <data name="courseSummaryMenu.Text" xml:space="preserve">
+    <value>&amp;Yhteenveto radoista</value>
+  </data>
+  <data name="legLengthsMenu.Text" xml:space="preserve">
+    <value>&amp;Rastivälien pituudet</value>
+  </data>
+  <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
+    <value>Lisää rastinmääritteiden kieli...</value>
+  </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>Avaa</value>
+  </data>
+  <data name="openToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Avaa (Ctrl+O)</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="saveToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Tallenna (Ctrl+S)</value>
+  </data>
+  <data name="deleteToolStripButton.Text" xml:space="preserve">
+    <value>Poista (Del)</value>
+  </data>
+  <data name="addStartToolStripButton.Text" xml:space="preserve">
+    <value>Lisää lähtö</value>
+  </data>
+  <data name="addControlToolStripButton.Text" xml:space="preserve">
+    <value>Lisää rasti</value>
+  </data>
+  <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Lisää rasti (Ctrl+A)</value>
+  </data>
+  <data name="addFinishToolStripButton.Text" xml:space="preserve">
+    <value>Lisää maali</value>
+  </data>
+  <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lisää rastinmääritteet</value>
+  </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>Lisää erityiskohde</value>
+  </data>
+  <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pakollinen ylitys/alituspaikka</value>
+  </data>
+  <data name="optionalCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ylitys/alituspaikka</value>
+  </data>
+  <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kielletty alue</value>
+  </data>
+  <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vaarallinen alue</value>
+  </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Juomapaikka</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ensiapupaikka</value>
+  </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kielletty reitti</value>
+  </data>
+  <data name="textToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sanalliset</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Lisää kulmapiste (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Lisää katko (Ctrl+G)</value>
+  </data>
+</root>

@@ -126,42 +126,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen fil|*.ppen</value>
   </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;Ny tävling...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Öppna...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Spara</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Spara &amp;som...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Skapa OCAD &amp;Filer...</value>
-  </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Skapa elektronisk stämpelfil för export</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Skriv ut kontrollbeskrivningar...</value>
-  </data>
-  <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Skriv ut stämpelkort...</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Skriv ut banor...</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Skapa utskriftsområde</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Programspråk...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>&amp;Avsluta</value>
-  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Fil</value>
   </data>
@@ -183,14 +147,71 @@
   <data name="reportMenu.Text" xml:space="preserve">
     <value>&amp;Rapporter</value>
   </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>&amp;Hjälp</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Webbsida</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Support/Felrapportering</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Om Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Felsökning</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Översätt Kontrollbeskrivning</value>
+  </data>
   <data name="helpMenu.Text" xml:space="preserve">
     <value>&amp;Hjälp</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Ny tävling...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Öppna...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Spara</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Spara &amp;som...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Skapa OCAD &amp;Filer...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Skapa RouteGadget-filer</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Skapa elektronisk stämpelfil för export</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Skriv ut kontrollbeskrivningar...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Skriv ut stämpelkort...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Skriv ut banor...</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Skapa utskriftsområde</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Denna bana</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Alla banor</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Programspråk...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Avsluta</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Töm val</value>
@@ -405,21 +426,6 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Statistik för kontroll och sträckutnyttjande</value>
   </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>&amp;Hjälp</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Webbsida</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Support/Felrapportering</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Om Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Felsökning</value>
-  </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolbläddrare</value>
   </data>
@@ -444,8 +450,8 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Test av rapporter</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Översätt Kontrollbeskrivning</value>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Typsnittsmått</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lägg till språk för kontrollbeskrivning...</value>

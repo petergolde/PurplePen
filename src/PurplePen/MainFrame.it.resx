@@ -126,6 +126,27 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>File Purple Pen|*.ppen</value>
   </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Modifica</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Visualizza</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nto</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Corso</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Oggetto</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Riguardo A Purple Pen</value>
+  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Nuovo Evento...</value>
   </data>
@@ -153,35 +174,17 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Imposta Stampa &amp;Area</value>
   </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>&amp;Lingua Programma...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>E&amp;sci</value>
-  </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Modifica</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Visualizza</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Eve&amp;nto</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Corso</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Oggetto</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Questo Corso</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Tutti I Corsi</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>&amp;Lingua Programma...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>E&amp;sci</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Pulisci Selezione</value>
@@ -338,9 +341,6 @@
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Sommario Corso</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Riguardo A Purple Pen</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
     <value>Aggiungi Inizio</value>

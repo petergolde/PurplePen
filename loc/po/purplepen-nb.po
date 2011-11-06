@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -564,6 +564,18 @@ msgstr "Endre tekst"
 msgid "Customize Course Appearance"
 msgstr "Endre løypens utseende"
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "Postnummer høyde"
@@ -592,6 +604,10 @@ msgstr "Bruk IOF-standardstørrelse"
 msgid "Item Sizes"
 msgstr "Objektets størrelse"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Lilla farge"
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr "Fargevelger..."
@@ -615,10 +631,6 @@ msgstr "Cyan:"
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Bruk lilla farge fra kartet"
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Lilla farge"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -873,6 +885,66 @@ msgstr "Purple Pen filer|*.ppen|Alle filer|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen fil|*.ppen"
 
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Arkiv"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Rediger"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Vis"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Arrangement"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Løype"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Objekt"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapporter"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "&Hjelp"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr "Hjelp (norsk)"
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purple Pen &hjemmeside"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Support/feilrapportering"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&Om Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Feilsøk"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Oversett postbeskrivelse"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Hjelp"
+
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Nytt arrangement..."
@@ -917,46 +989,6 @@ msgstr "Skriv ut løyper..."
 msgid "Set Print A&rea"
 msgstr "Velg utskriftsområde"
 
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Programspråk"
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "Avslutt"
-
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Arkiv"
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Rediger"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Vis"
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "&Arrangement"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Løype"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Objekt"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapporter"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Hjelp"
-
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
 msgstr "&Denne løypen"
@@ -964,6 +996,14 @@ msgstr "&Denne løypen"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&Alle løyper"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Programspråk"
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "Avslutt"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1262,26 +1302,6 @@ msgstr "Poster &kryssreferanser"
 msgid "Control and Leg Loa&d"
 msgstr "Statistikk for post-og strekkutnyttelse"
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "&Hjelp"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "Purple Pen &hjemmeside"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Support/feilrapportering"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&Om Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Feilsøk"
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Symbolgalleri"
@@ -1317,10 +1337,6 @@ msgstr "Test av rapporter"
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
 msgstr "Font beregninger"
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Oversett postbeskrivelse"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1799,6 +1815,13 @@ msgstr "Purple Pen må avsluttes før du kan åpne filene i OCAD."
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
 msgstr "Ingen løyper ble valgt for utskrift."
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr "http://www.ok-moss.no/mwiki/doku.php?id=purple_pen"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

@@ -141,6 +141,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Objektets Storlek</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lila Färg</value>
+  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Färgväljare...</value>
   </data>
@@ -158,9 +161,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Använd lila färgen från kartan</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lila Färg</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Förhandsvisning</value>

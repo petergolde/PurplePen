@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -564,6 +564,18 @@ msgstr "Muuda teksti"
 msgid "Customize Course Appearance"
 msgstr "Muuda raja kuvamist"
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "KP tunnusnumbri kõrgus:"
@@ -592,6 +604,10 @@ msgstr "Kasuta IOF standard suuruseid"
 msgid "Item Sizes"
 msgstr "Suurused"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Lilla värv"
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr "Värvi valik..."
@@ -615,10 +631,6 @@ msgstr "Lilla:"
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Kasuta kaardil määratud lillat värvi"
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Lilla värv"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -870,6 +882,66 @@ msgstr "Purple Pen failid|*.ppen|Kõik failid|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen fail|*.ppen"
 
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fail"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Muuda"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Vaade"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Võistlus"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Rada"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "Sümbol"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Aruanded"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "Purple Pen &Abi"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purpe Pen &Kodulehekülg"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Tugi ja vigadest teadaandmine"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&Programmist Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "S&ilumine"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Tõlgi legendi tekst"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Abi"
+
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Uus võistlus..."
@@ -914,46 +986,6 @@ msgstr "Trüki &Rajad"
 msgid "Set Print A&rea"
 msgstr "Määra trüki&ala"
 
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Programm &Keel"
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "V&älju"
-
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Fail"
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Muuda"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Vaade"
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "&Võistlus"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Rada"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "Sümbol"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Aruanded"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Abi"
-
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
 msgstr "See &rada"
@@ -961,6 +993,14 @@ msgstr "See &rada"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&Kõik rajad"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Programm &Keel"
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "V&älju"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1259,26 +1299,6 @@ msgstr "KPde &ristviited"
 msgid "Control and Leg Loa&d"
 msgstr "KPde ja etappide koormused"
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "Purple Pen &Abi"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "Purpe Pen &Kodulehekülg"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Tugi ja vigadest teadaandmine"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&Programmist Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "S&ilumine"
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Sümbolite brauser"
@@ -1314,10 +1334,6 @@ msgstr "Aruande test"
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
 msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Tõlgi legendi tekst"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1793,6 +1809,13 @@ msgstr "Purple Pen peab olema suletud enne loodud OCAD failide "
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
 msgstr "Ühtegi rada ei ole valitud trükkimiseks"
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

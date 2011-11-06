@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -568,6 +568,18 @@ msgstr "Modifier le texte"
 msgid "Customize Course Appearance"
 msgstr "Personnaliser la présentation du circuit"
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "Taille des numéros de poste :"
@@ -596,6 +608,10 @@ msgstr "Utiliser les tailles IOF standards"
 msgid "Item Sizes"
 msgstr "Tailles des objets"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Couleur violine"
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr "Sélecteur de couleur..."
@@ -619,10 +635,6 @@ msgstr "Bleu :"
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Utiliser la couleur violine de la carte"
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Couleur violine"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -878,6 +890,66 @@ msgstr "Fichiers Purple Pen|*.ppen|Tous les fichiers|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Fichier Purple Pen|*.ppen"
 
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fichier"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Édition"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Affichage"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "C&ourse"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Circuit"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "Élémen&t"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapports"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "&Aide Purple Pen"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Site &Web Purple Pen"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Support/Remonter un bogue"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&À Propos de Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Déboguer"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Traduire le texte des définitions"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&?"
+
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Nouvelle Course..."
@@ -922,46 +994,6 @@ msgstr "Imprimer les &Circuits..."
 msgid "Set Print A&rea"
 msgstr "Définir la &Zone d'Impression"
 
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Choisir &Langue par défaut..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Quitter"
-
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Fichier"
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Édition"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Affichage"
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "C&ourse"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Circuit"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "Élémen&t"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapports"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&?"
-
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
 msgstr "&Ce circuit"
@@ -969,6 +1001,14 @@ msgstr "&Ce circuit"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&Tous les circuits"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Choisir &Langue par défaut..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Quitter"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1267,26 +1307,6 @@ msgstr "Contrôle C&roisé"
 msgid "Control and Leg Loa&d"
 msgstr "&Charge Postes et Interpostes"
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "&Aide Purple Pen"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "Site &Web Purple Pen"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Support/Remonter un bogue"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&À Propos de Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Déboguer"
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Navigateur de symbole"
@@ -1322,10 +1342,6 @@ msgstr "Testeur de rapport"
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
 msgstr "Police"
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Traduire le texte des définitions"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1820,6 +1836,13 @@ msgstr "Purple Pen doit être fermé avant de charger les fichiers "
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
 msgstr "Aucun circuit sélectionné pour l'impression"
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

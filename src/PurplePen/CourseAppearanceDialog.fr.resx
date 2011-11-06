@@ -141,6 +141,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tailles des objets</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Couleur violine</value>
+  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Sélecteur de couleur...</value>
   </data>
@@ -158,9 +161,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Utiliser la couleur violine de la carte</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Couleur violine</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Aperçu</value>

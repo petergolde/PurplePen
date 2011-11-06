@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -58,7 +58,7 @@ msgstr "Om Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Första kodsiffra:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -98,39 +98,39 @@ msgstr "Symboler och text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "Kontrollcirkel-text:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Sekvensnummer (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Kodsiffra (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Sekvens och kodsiffra (3-145)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Visa poäng i:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Kolumn A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Kolumn B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Kolumn H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(visa ej)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -568,6 +568,18 @@ msgstr "Byt Text"
 msgid "Customize Course Appearance"
 msgstr "Ändra Banans Utseende"
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "Kontrollnummrets höjd"
@@ -596,6 +608,10 @@ msgstr "Använd IOF standardstorlek"
 msgid "Item Sizes"
 msgstr "Objektets Storlek"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Lila Färg"
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr "Färgväljare..."
@@ -619,10 +635,6 @@ msgstr "Cyan:"
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Använd lila färgen från kartan"
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Lila Färg"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -706,7 +718,7 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -746,22 +758,24 @@ msgstr "Skapa OCAD-filer"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Filnamn"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "Fyll i namnet (utan .xml eller .gif) för båda "
+"RouteGadget-filerna:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Läs mer om RouteGadget"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget kräver både en bild (.gif) och en IOF XML-fil "
+"(.xml). Välj namn och mapp för båda dessa filer."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -874,58 +888,6 @@ msgstr "Purple Pen filer|*.ppen|Alla filer|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen fil|*.ppen"
 
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "&Ny tävling..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Öppna..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Spara"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Spara &som..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Skapa OCAD &Filer..."
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr ""
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create &E-Punch Interchange File..."
-msgstr "Skapa elektronisk stämpelfil för export"
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Skriv ut kontrollbeskrivningar..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Skriv ut stämpelkort..."
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Skriv ut banor..."
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Skapa utskriftsområde"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Programspråk..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Avsluta"
-
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Fil"
@@ -954,9 +916,81 @@ msgstr "&Objekt"
 msgid "&Reports"
 msgstr "&Rapporter"
 
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "&Hjälp"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purple Pen &Webbsida"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Support/Felrapportering"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&Om Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Felsökning"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Översätt Kontrollbeskrivning"
+
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
 msgstr "&Hjälp"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&Ny tävling..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Öppna..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Spara"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Spara &som..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Skapa OCAD &Filer..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Skapa RouteGadget-filer"
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create &E-Punch Interchange File..."
+msgstr "Skapa elektronisk stämpelfil för export"
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Skriv ut kontrollbeskrivningar..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Skriv ut stämpelkort..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Skriv ut banor..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Skapa utskriftsområde"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -965,6 +999,14 @@ msgstr "&Denna bana"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&Alla banor"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Programspråk..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Avsluta"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1263,26 +1305,6 @@ msgstr "Korsreferens kontroller"
 msgid "Control and Leg Loa&d"
 msgstr "Statistik för kontroll och sträckutnyttjande"
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "&Hjälp"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "Purple Pen &Webbsida"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Support/Felrapportering"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&Om Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Felsökning"
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Symbolbläddrare"
@@ -1317,11 +1339,7 @@ msgstr "Test av rapporter"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Översätt Kontrollbeskrivning"
+msgstr "Typsnittsmått"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1802,6 +1820,13 @@ msgstr "Du måste stänga Purple Pen innan du kan öppna de skapade "
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
 msgstr "Ingen bana valdes för utskrift"
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

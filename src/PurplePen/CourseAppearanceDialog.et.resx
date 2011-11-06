@@ -141,6 +141,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Suurused</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lilla värv</value>
+  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värvi valik...</value>
   </data>
@@ -158,9 +161,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Kasuta kaardil määratud lillat värvi</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lilla värv</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Eelvaade</value>

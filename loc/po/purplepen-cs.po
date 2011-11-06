@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:00-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -558,6 +558,18 @@ msgstr "Změnit text"
 msgid "Customize Course Appearance"
 msgstr ""
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr "Výška čísla kontroly:"
@@ -586,6 +598,10 @@ msgstr "Používat velikosti standarní podle IOF"
 msgid "Item Sizes"
 msgstr "Velikosti položek"
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr ""
@@ -608,10 +624,6 @@ msgstr "Azurová:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr ""
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
@@ -862,6 +874,66 @@ msgstr "Soubory Purple Pen|*.ppen|Všechny soubory|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Soubor Purple Pen|*.ppen"
 
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Soubor"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Úpravy"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Zobrazit"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "U&dálost"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Trať"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr ""
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr ""
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "&Nápověda Purple Pen"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "&Webová stránka Purple Pen"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Podpora/Hlášení chyb"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&O programu Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr ""
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Nápověda"
+
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Nový závod..."
@@ -906,46 +978,6 @@ msgstr "Tisknout &tratě..."
 msgid "Set Print A&rea"
 msgstr "Nastavit o&blast tisku"
 
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "&Jazyk programu..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Konec"
-
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Soubor"
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Úpravy"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Zobrazit"
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "U&dálost"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Trať"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr ""
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr ""
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Nápověda"
-
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
 msgstr "&Tato trať"
@@ -953,6 +985,14 @@ msgstr "&Tato trať"
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
 msgstr "&Všechny tratě"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "&Jazyk programu..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Konec"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1251,26 +1291,6 @@ msgstr ""
 msgid "Control and Leg Loa&d"
 msgstr ""
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "&Nápověda Purple Pen"
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr "&Webová stránka Purple Pen"
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr "&Podpora/Hlášení chyb"
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr "&O programu Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr ""
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr "Prohlížeč symbolů"
@@ -1305,10 +1325,6 @@ msgstr ""
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -1765,6 +1781,13 @@ msgstr ""
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
+msgstr ""
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

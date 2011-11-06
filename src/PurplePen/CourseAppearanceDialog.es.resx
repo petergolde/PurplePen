@@ -141,6 +141,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tamaño de Objetos</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Color púrpura</value>
+  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Selector de Color...</value>
   </data>
@@ -158,9 +161,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Usar color púrpura del mapa</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Color púrpura</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vista previa</value>

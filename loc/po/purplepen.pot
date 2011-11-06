@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.1\n"
+"Project-Id-Version: Purple Pen 1.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2011-09-30 23:01-07:00\n"
+"POT-Creation-Date: 2011-11-06 12:01-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -552,6 +552,18 @@ msgstr ""
 msgid "Customize Course Appearance"
 msgstr ""
 
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
 msgstr ""
@@ -580,6 +592,10 @@ msgstr ""
 msgid "Item Sizes"
 msgstr ""
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, buttonColorChoosers.Text
 msgid "Color Chooser..."
 msgstr ""
@@ -602,10 +618,6 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr ""
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
@@ -856,6 +868,66 @@ msgstr ""
 msgid "Purple Pen file|*.ppen"
 msgstr ""
 
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr ""
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr ""
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr ""
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr ""
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr ""
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr ""
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr ""
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr ""
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr ""
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr ""
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr ""
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr ""
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr ""
+
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr ""
@@ -900,52 +972,20 @@ msgstr ""
 msgid "Set Print A&rea"
 msgstr ""
 
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr ""
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr ""
-
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr ""
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr ""
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr ""
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr ""
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr ""
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr ""
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr ""
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr ""
-
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
 msgstr ""
 
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
+msgstr ""
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr ""
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
 msgstr ""
 
 #: MainFrame.resx, cancelMenu.Text
@@ -1245,26 +1285,6 @@ msgstr ""
 msgid "Control and Leg Loa&d"
 msgstr ""
 
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr ""
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr ""
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr ""
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr ""
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr ""
-
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
 msgstr ""
@@ -1299,10 +1319,6 @@ msgstr ""
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -1748,6 +1764,13 @@ msgstr ""
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
+msgstr ""
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

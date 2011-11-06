@@ -126,6 +126,48 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Archivo Purple Pen|*.ppen</value>
   </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Archivo</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Editar</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Vista</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nto</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Curso</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Elemento</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Informes</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Ay&amp;uda de Puple Pen</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Sitio &amp;web de Purple Pen</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;soporte/informe de errores</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Sobre Purple Pen</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Depurar</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Traducir texto de descripción</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>Ay&amp;uda</value>
+  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>Evento &amp;nuevo...</value>
   </data>
@@ -153,41 +195,17 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>&amp;Establecer área de impresión</value>
   </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>&amp;Lenguaje de programa...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>&amp;Salir</value>
-  </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Archivo</value>
-  </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Editar</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Vista</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Eve&amp;nto</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Curso</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Elemento</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Informes</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>Ay&amp;uda</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>Es&amp;ta ruta</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Todas las rutas</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>&amp;Lenguaje de programa...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Salir</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>Limpiar la sele&amp;cción</value>
@@ -360,21 +378,6 @@
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
     <value>Control de referencia &amp;cruzada</value>
   </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>Ay&amp;uda de Puple Pen</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Sitio &amp;web de Purple Pen</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;soporte/informe de errores</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Sobre Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Depurar</value>
-  </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Navegador de símbolos</value>
   </data>
@@ -398,9 +401,6 @@
   </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Prueba de informe</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Traducir texto de descripción</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Añadir idioma de descripción</value>

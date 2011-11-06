@@ -141,6 +141,18 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Samma katalog som Puple Pen-filen</value>
   </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fyll i namnet (utan .xml eller .gif) för båda RouteGadget-filerna:</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Läs mer om RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget kräver både en bild (.gif) och en IOF XML-fil (.xml). Välj namn och mapp för båda dessa filer.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skapa OCAD-filer</value>
   </data>
