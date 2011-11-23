@@ -43,6 +43,8 @@ using PurplePen.MapModel;
 
 namespace PurplePen
 {
+    using PurplePen.Graphics2D;
+
     // Macros used in text specials
     static class TextMacros
     {
@@ -781,7 +783,7 @@ namespace PurplePen
         // Find location where the gap begins.
         private static PointF GapStartLocation(PointF pointF, float radiusControl, int gapNum)
         {
-            return MapModel.Util.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
+            return Geometry.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
         }
     }
 }

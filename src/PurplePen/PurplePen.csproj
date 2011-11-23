@@ -59,6 +59,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Graphics2D">
+      <HintPath>..\Libraries\MapModel\Debug\Graphics2D.dll</HintPath>
+    </Reference>
     <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
@@ -66,10 +69,10 @@
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PdfSharp">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
