@@ -39,6 +39,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Graphics2D, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MapModel\Debug\Graphics2D.dll</HintPath>
+    </Reference>
     <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
