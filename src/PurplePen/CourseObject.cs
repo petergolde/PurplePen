@@ -175,7 +175,6 @@ namespace PurplePen
                 Bitmap bm = new Bitmap(1, 1);
                 bm.SetPixel(0, 0, NormalCourseAppearance.highlightColor);
                 highlightBrush = new TextureBrush(bm);
-                bm.Dispose();
             }
             Highlight(g, xformWorldToPixel, highlightBrush, false);
 
@@ -518,6 +517,8 @@ namespace PurplePen
             foreach (SymPath p in gappedPaths) {
                 p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             }
+
+            grTarget.Dispose();
        }
 
        // Get the bounds of the highlight.
@@ -698,6 +699,8 @@ namespace PurplePen
 
             // Draw the interior
             path.FillTransformed(grTarget, fillBrushKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
         // Get the bounds of the highlight.
@@ -1125,13 +1128,14 @@ namespace PurplePen
                 format.LineAlignment = StringAlignment.Near;
                 format.FormatFlags |= StringFormatFlags.NoClip;
                 GraphicsPath path = new GraphicsPath();
-                path.AddString(text, new FontFamily(fontName), (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
+                path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
                 path.CloseAllFigures();
                 g.FillPath(brush, path);
                 path.Dispose();
 
                 // The above is similar to this, but produces results slightly more like the anti-aliased text.
-                //g.DrawString(text, font, brush, topLeftPixel[0], format);
+                //using (Font font = new Font(fontFam, pixelEmHight))
+                    //g.DrawString(text, font, brush, topLeftPixel[0], format);
             }
         }
 
@@ -1496,6 +1500,8 @@ namespace PurplePen
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path3.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path4.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
     }
@@ -1574,6 +1580,8 @@ namespace PurplePen
             // Draw it.
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
         public override string ToString()
@@ -1639,6 +1647,8 @@ namespace PurplePen
             // Draw the paths
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
     }
 
@@ -1699,6 +1709,8 @@ namespace PurplePen
 
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
     }
 
