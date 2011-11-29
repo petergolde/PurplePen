@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -99,7 +100,7 @@ namespace PurplePen
         {
             float r, g, b;
 
-            SymColor.CMYKtoRGB((float) upDownCyan.Value / 100F, (float) upDownMagenta.Value / 100F, (float) upDownYellow.Value / 100F, (float) upDownBlack.Value / 100F, out r, out g, out b);
+            CmykColor.CmykToRgb((float) upDownCyan.Value / 100F, (float) upDownMagenta.Value / 100F, (float) upDownYellow.Value / 100F, (float) upDownBlack.Value / 100F, out r, out g, out b);
             return Color.FromArgb((int) Math.Round(r * 255.0), (int) Math.Round(g * 255.0), (int) Math.Round(b * 255.0));
         }
 
@@ -108,7 +109,7 @@ namespace PurplePen
         {
             float c, m, y, k;
 
-            SymColor.RGBtoCMYK(color.R / 255.0F, color.G / 255.0F, color.B / 255.0F, out c, out m, out y, out k);
+            CmykColor.RgbToCmyk(color.R / 255.0F, color.G / 255.0F, color.B / 255.0F, out c, out m, out y, out k);
             SetCurrentCMYK(c, m, y, k);
         }
 
