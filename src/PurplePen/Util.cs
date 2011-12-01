@@ -45,6 +45,7 @@ using System.Drawing.Printing;
 using System.Globalization;
 using System.Windows.Forms;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -204,105 +205,6 @@ namespace PurplePen
             return Rectangle.FromLTRB((int)Math.Round(rect.Left), (int)Math.Round(rect.Top), (int)Math.Round(rect.Right), (int)Math.Round(rect.Bottom));
         }
 
-        // Converts an angle in radians, where 0 is to the right, to an angle in degrees, where 0 is up.
-        public static double RadiansToDegrees(double radians)
-        {
-            radians -= Math.PI / 2;      // make zero straight up.
-            if (radians < 0)
-                radians += (Math.PI * 2F);
-            return radians * (180.0 / Math.PI);
-        }
-
-        // Transform one point via a matrix.
-        public static PointF TransformPoint(PointF src, Matrix mat)
-        {
-            PointF[] pts = { src };
-            mat.TransformPoints(pts);
-            return pts[0];
-        }
-
-        // Transform a rectangle via a matrix. Must not rotate!
-        public static RectangleF TransformRectangle(RectangleF src, Matrix mat)
-        {
-            PointF[] pts = { src.Location, new PointF(src.Right, src.Bottom) };
-            mat.TransformPoints(pts);
-            return RectFromPoints(pts[0].X, pts[0].Y, pts[1].X, pts[1].Y);
-        }
-
-        // Transform a distance via a matrix
-        public static float TransformDistance(float src, Matrix mat)
-        {
-            PointF[] pts = { new PointF(0,0), new PointF(src, 0) };
-            mat.TransformPoints(pts);
-            return (float) Util.Distance(pts[0], pts[1]);
-        }
-
-        // Get a transform that maps one rectangle into another.
-        public static Matrix CreateRectangleTransform(RectangleF from, RectangleF to, bool reverseY)
-        {
-            Matrix transform = new Matrix();
-            if (reverseY) {
-                transform.Scale(to.Width / from.Width, - to.Height / from.Height);
-                PointF p = TransformPoint(new PointF(from.Left, from.Bottom), transform);
-                transform.Translate(to.Left - p.X, to.Top - p.Y, MatrixOrder.Append);
-            }
-            else {
-                transform.Scale(to.Width / from.Width, to.Height / from.Height);
-                PointF p = TransformPoint(new PointF(from.Left, from.Top), transform);
-                transform.Translate(to.Left - p.X, to.Top - p.Y, MatrixOrder.Append);
-            }
-
-            return transform;
-        }
-
-        // Return a centered location for of a rectangle relative to another.
-        public static RectangleF CenterRectangle(SizeF size, RectangleF centerOn)
-        {
-            PointF center = new PointF((centerOn.Left + centerOn.Right) / 2F, (centerOn.Top + centerOn.Bottom) / 2F);
-            PointF upperLeft = new PointF(center.X - size.Width / 2, center.Y - size.Height / 2);
-            return new RectangleF(upperLeft, size);
-        }
-
-        // Get a rectangle from any two opposite corners.
-        public static RectangleF RectFromPoints(float x1, float y1, float x2, float y2)
-        {
-            float left = Math.Min(x1, x2), right = Math.Max(x1, x2);
-            float top = Math.Min(y1, y2), bottom = Math.Max(y1, y2);
-            return new RectangleF(left, top, right - left, bottom - top);
-        }
-
-        // Get the center point of a rectangle.
-        public static PointF RectCenter(RectangleF rect)
-        {
-            return new PointF((rect.Left + rect.Right) / 2, (rect.Top + rect.Bottom) / 2);
-        }
-
-        // Return the distance between two points
-        public static double Distance(PointF pt1, PointF pt2)
-        {
-            double delta1 = (double) pt2.X - (double) pt1.X;
-            double delta2 = (double) pt2.Y - (double) pt1.Y;
-            return Math.Sqrt(delta1 * delta1 + delta2 * delta2);
-        }
-
-        // Return a point a given distance from pt1 towards pt2.
-        public static PointF DistanceAlongLine(PointF pt1, PointF pt2, double distance)
-        {
-            double ratio = distance / Util.Distance(pt1, pt2);
-            return new PointF((float) (pt1.X + (pt2.X - pt1.X) * ratio), (float) (pt1.Y + (pt2.Y - pt1.Y) * ratio));
-        }
-
-        // Get the angle at point2 between pt1 and pt3. 
-		public static float Angle(PointF pt1, PointF pt2, PointF pt3) {
-			if (pt1 == pt2 || pt2 == pt3)
-				return 0.0F;
-
-            double angle = Math.Abs(Math.Atan2(pt1.Y - pt2.Y, pt1.X - pt2.X) - Math.Atan2(pt3.Y - pt2.Y, pt3.X - pt2.X));
-            if (angle > Math.PI)
-                angle = (Math.PI * 2) - angle;     // convert to < a line.
-
-		    return (float) (angle * 360.0 / (Math.PI * 2));   // convert to degrees.
-		}
 
 
         private static Graphics hiresGraphics;

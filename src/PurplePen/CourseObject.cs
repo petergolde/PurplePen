@@ -41,6 +41,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.MapView;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -203,7 +204,7 @@ namespace PurplePen
         private void DrawHandle(PointF handleLocation, Graphics g, Matrix xformWorldToPixel)
         {
             const int HIGHLIGHTSIZE = 5;
-            Point pixelLocation = Point.Round(Util.TransformPoint(handleLocation, xformWorldToPixel));
+            Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
             Rectangle rect = new Rectangle(pixelLocation.X - (HIGHLIGHTSIZE - 1) / 2, pixelLocation.Y - (HIGHLIGHTSIZE - 1) / 2, HIGHLIGHTSIZE, HIGHLIGHTSIZE);
             g.FillRectangle(Brushes.Blue, rect);
@@ -212,7 +213,7 @@ namespace PurplePen
         // Erase a handle at a given location.
         private void EraseHandle(PointF handleLocation, Graphics g, Matrix xformWorldToPixel, Brush eraseBrush)
         {
-            Point pixelLocation = Point.Round(Util.TransformPoint(handleLocation, xformWorldToPixel));
+            Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
             Rectangle rect = new Rectangle(pixelLocation.X - (HANDLESIZE - 1) / 2, pixelLocation.Y - (HANDLESIZE - 1) / 2, HANDLESIZE, HANDLESIZE);
             g.FillRectangle(eraseBrush, rect);
@@ -349,7 +350,7 @@ namespace PurplePen
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {
-            double dist = Util.Distance(pt, location) - TrueRadius;
+            double dist = Geometry.Distance(pt, location) - TrueRadius;
             return Math.Max(0, dist);
         }
 
@@ -816,7 +817,7 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
-            RectangleF xformedRect = Util.TransformRectangle(rect, xformWorldToPixel);
+            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rect);
 
             // Get a brush to fill the interior with.
             Brush fillBrush;
@@ -882,7 +883,7 @@ namespace PurplePen
             if (changeRight)       right = newHandle.X;
             if (changeBottom)    bottom = newHandle.Y;
 
-            RectangleF newRect = Util.RectFromPoints(left, top, right, bottom);
+            RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
            
             // Update the rectangle.
             RectangleUpdating(ref newRect, false, changeLeft, changeTop, changeRight, changeBottom);
@@ -986,7 +987,7 @@ namespace PurplePen
                     }
                 }
 
-                newRect = Util.RectFromPoints(left, top, right, bottom);
+                newRect = Geometry.RectFromPoints(left, top, right, bottom);
             }
         }
     }
@@ -2022,7 +2023,7 @@ namespace PurplePen
            if (changeRight) right = newHandle.X;
            if (changeBottom) bottom = newHandle.Y;
 
-           RectangleF newRect = Util.RectFromPoints(left, top, right, bottom);
+           RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
 
            // Update the rectangle.
            base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, newRect.Size);

@@ -146,7 +146,7 @@ namespace PurplePen
             {
                 switch (mapType) {
                 case MapType.Bitmap:
-                    return Util.TransformRectangle(new RectangleF(0, 0, bitmap.Width, bitmap.Height), BitmapTransform());
+                    return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.Width, bitmap.Height));
 
                 case MapType.OCAD:
                     if (map != null) {

@@ -39,6 +39,7 @@ using System.Windows.Forms;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -542,7 +543,7 @@ namespace PurplePen
         public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             // If we ended near to the first point, we've create a polygon and creation is done.
-            if (numberFixedPoints >= 3 && Util.Distance(location, points[0]) < pixelSize * CLOSEDISTANCE) {
+            if (numberFixedPoints >= 3 && Geometry.Distance(location, points[0]) < pixelSize * CLOSEDISTANCE) {
                 if (!isArea)
                     AddFixedPoint(points[0]);  // area symbols close automatically.
 
