@@ -293,16 +293,16 @@ namespace PurplePen
         }
 
         // Get the angle at point2 between pt1 and pt3. 
-		public static float Angle(PointF pt1, PointF pt2, PointF pt3) {
-			if (pt1 == pt2 || pt2 == pt3)
-				return 0.0F;
+        public static float Angle(PointF pt1, PointF pt2, PointF pt3) {
+            if (pt1 == pt2 || pt2 == pt3)
+                return 0.0F;
 
             double angle = Math.Abs(Math.Atan2(pt1.Y - pt2.Y, pt1.X - pt2.X) - Math.Atan2(pt3.Y - pt2.Y, pt3.X - pt2.X));
             if (angle > Math.PI)
                 angle = (Math.PI * 2) - angle;     // convert to < a line.
 
-		    return (float) (angle * 360.0 / (Math.PI * 2));   // convert to degrees.
-		}
+            return (float) (angle * 360.0 / (Math.PI * 2));   // convert to degrees.
+        }
 
 
         private static Graphics hiresGraphics;
@@ -410,7 +410,7 @@ namespace PurplePen
 
                 // On which segment does the closest point lie?
                 int segmentStart, segmentEnd;
-                path.FindSegmentWithPoint(closestPoint, out segmentStart, out segmentEnd);
+                path.FindSegmentWithPoint(closestPoint, 0.01F, out segmentStart, out segmentEnd);
 
                 // Insert the point in that segment.
                 List<PointF> list = new List<PointF>(oldPoints);

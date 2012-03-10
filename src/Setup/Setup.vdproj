@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7BDC420DA13ECD8D36D9B70B63D765DC"
+        "OwnerKey" = "8:_3B2A8D78152744A817EAF33C1D848D1E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3B2A8D78152744A817EAF33C1D848D1E"
+        "OwnerKey" = "8:_7BDC420DA13ECD8D36D9B70B63D765DC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -195,11 +195,6 @@
             "AssemblyAsmDisplayName" = "8:MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3B2A8D78152744A817EAF33C1D848D1E"
-                    {
-                    "Name" = "8:MapModel.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MapModel.dll"
             "TargetName" = "8:"
@@ -246,11 +241,6 @@
             "AssemblyAsmDisplayName" = "8:Map_GDIPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7BDC420DA13ECD8D36D9B70B63D765DC"
-                    {
-                    "Name" = "8:Map_GDIPlus.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Map_GDIPlus.dll"
             "TargetName" = "8:"
@@ -391,15 +381,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
-        "ProductCode" = "8:{E1F582EE-5B6A-48FB-9B60-D437DA31FF73}"
-        "PackageCode" = "8:{48148AD6-44FF-484E-932D-0D70910EB95D}"
+        "ProductCode" = "8:{B0AEA91D-5F41-4A1D-9A0C-D9AD8C9F304D}"
+        "PackageCode" = "8:{F4E3BE4D-D308-474C-91F2-144A46249F10}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.25000"
+        "ProductVersion" = "8:1.1.35000"
         "Manufacturer" = "8:Golde Software"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://purplepen.golde.org/support"
@@ -955,7 +945,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_75BEA61185F8480D8B278E736F729F55"
             {
-            "SourcePath" = "8:..\\PurplePen\\obj\\Release\\PurplePen.exe"
+            "SourcePath" = "8:..\\PurplePen\\obj\\Debug\\PurplePen.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"
