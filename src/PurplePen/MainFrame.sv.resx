@@ -150,6 +150,9 @@
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Hjälp</value>
   </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Hjälp (översatt)</value>
+  </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Webbsida</value>
   </data>
@@ -208,7 +211,7 @@
     <value>&amp;Alla banor</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Programspråk...</value>
+    <value>Språk</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Avsluta</value>
@@ -331,7 +334,7 @@
     <value>Lägg till &amp;Mål</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Lägg till beskrivningar</value>
+    <value>Lägg till &amp;kontrollbeskrivning</value>
   </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Lägg till speciellt &amp;föremål</value>
@@ -502,10 +505,10 @@
     <value>Lägg till mål</value>
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lägg till beskrivningar</value>
+    <value>Lägg till kontrollbeskrivning</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
-    <value>Addera speciell symbol</value>
+    <value>Lägg till specialsymbol</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk passage</value>

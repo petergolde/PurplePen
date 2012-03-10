@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Cuando use una imagen como mapa de fondo, tiene que especificar la resolucion de la imagen y la escala del mapa. 
+
+La resolucion de la imagen indica la densidad de pixeles o puntos que hay por pulgada, en en ese mapa (ppp).
+
+La escala del mapa indica la relación que hay entre un representación en el papel y su correspondiente en el mundo real.
+</value>
+  </data>
   <data name="resolutionLabel.Text" xml:space="preserve">
     <value>Resolución de la imagen:</value>
   </data>

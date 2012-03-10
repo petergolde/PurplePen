@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3B2A8D78152744A817EAF33C1D848D1E"
+        "OwnerKey" = "8:_7BDC420DA13ECD8D36D9B70B63D765DC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7BDC420DA13ECD8D36D9B70B63D765DC"
+        "OwnerKey" = "8:_3B2A8D78152744A817EAF33C1D848D1E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -381,15 +381,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
-        "ProductCode" = "8:{B0AEA91D-5F41-4A1D-9A0C-D9AD8C9F304D}"
-        "PackageCode" = "8:{F4E3BE4D-D308-474C-91F2-144A46249F10}"
+        "ProductCode" = "8:{80CD9943-556C-45A8-A080-DE6965B3594A}"
+        "PackageCode" = "8:{C705B8EE-51D8-4402-8F83-BE955624076D}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.35000"
+        "ProductVersion" = "8:1.1.32100"
         "Manufacturer" = "8:Golde Software"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://purplepen.golde.org/support"

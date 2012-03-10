@@ -384,4 +384,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Ingen bana valdes för utskrift</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Om det finns en webbsida på det översatta språket som innehåller hjälp för Purple Pen, fyll i adressen (med http://) som översättning för denna sak. Lämna annars blankt.</value>
+  </data>
 </root>

@@ -7,19 +7,27 @@ namespace TranslateTool
 {
     class ApplyPo
     {
-        public void Apply(List<PoEntry> entries, ResourceDirectory resdir)
+        public void Apply(List<PoEntry> entries, ResourceDirectory resdir, TextWriter statusOutput)
         {
             foreach (PoEntry entry in entries) {
                 foreach (PoLocation location in entry.Locations) {
                     LocString str = FindLocString(location, resdir);
-                    if (str != null)
-                        ApplyEntry(entry, str);
+                    if (str != null) {
+                        ApplyEntry(entry, str, statusOutput);
+                    }
+                    else {
+                        statusOutput.WriteLine("No string found for non-loc '{0}' in '{1}'/'{2}' ", entry.NonLocalized, location.FileName, location.Name);
+                    }
                 }
 
                 foreach (ResXFile resxfile in resdir.AllFiles)
                     foreach (LocString str in resxfile.AllStrings) {
-                        if (str.NonLocalized == entry.NonLocalized)
-                            str.Localized = entry.Localized;
+                        if (str.NonLocalized == entry.NonLocalized) {
+                            if (str.Localized != entry.Localized) {
+                                statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, entry.Localized);
+                                str.Localized = entry.Localized;
+                            }
+                        }
                     }
             }
         }
@@ -35,10 +43,14 @@ namespace TranslateTool
             return null;
         }
 
-        void ApplyEntry(PoEntry entry, LocString str)
+        void ApplyEntry(PoEntry entry, LocString str, TextWriter statusOutput)
         {
-            if (str.NonLocalized == entry.NonLocalized)
-                str.Localized = entry.Localized;
+            if (str.NonLocalized == entry.NonLocalized) {
+                if (str.Localized != entry.Localized) {
+                    statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, entry.Localized);
+                    str.Localized = entry.Localized;
+                }
+            }
             else {
                 // Non-localized strings don't match any more. Prompt to get new translation.
                 ResolvePoEntry dialog = new ResolvePoEntry();
@@ -49,6 +61,7 @@ namespace TranslateTool
                 dialog.labelLanguageName.Text = str.File.Culture.DisplayName;
                 dialog.ShowDialog();
                 str.Localized = dialog.textBoxLocalized.Text;
+                statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, str.Localized);
                 dialog.Dispose();
             }
         }

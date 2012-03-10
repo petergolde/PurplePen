@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>El fichero del mapa "{0}" contiene objetos o simbolos que nos soportados por Purple Pen, y puede que no se impriman correctamente. Los objetos que se imprimiran correctamente se señalan debajo.
+
+Para imprimir mapas para una competición, se sugiere que los recorridos sean exportados a fichero OCAD (usando Ficheros/Crear archivo OCAD...) e imprimir el mapa desde OCAD.
+</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Continuar</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>El fichero del mapa no puede imprimirse correctamente</value>
   </data>
 </root>

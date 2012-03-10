@@ -150,6 +150,9 @@
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Help</value>
   </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Help (Translated)</value>
+  </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Website</value>
   </data>
@@ -301,10 +304,10 @@
     <value>&amp;Pin-Punch Patterns...</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
-    <value>Customize &amp;Description Text...</value>
+    <value>Customise &amp;Description Text...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Customize Course &amp; Appearance...</value>
+    <value>Customise Course &amp; Appearance...</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Add Course...</value>

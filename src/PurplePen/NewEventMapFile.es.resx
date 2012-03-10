@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Para poder trazar sus reocrridos necesita seleccionar el archivo del mapa con el que quiere trabajar. Normalmente será un fichero OCAD, aunque también puede ser un fichero imagen en JPG o similar. Pulse el boton "Seleccionar..." para buscar el  mapa.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Elija archivo de mapa...</value>
   </data>
@@ -125,5 +128,8 @@
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Archivo de mapa seleccionado</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>El mapa ha sido cargado correctamente. Si envia el fichero Purple Pen a alguien, este debe tener el fichero del mapa también.</value>
   </data>
 </root>

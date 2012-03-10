@@ -38,6 +38,11 @@ namespace TranslateTool
 
         static readonly AssemblyName[] noAssemblies = { };
 
+
+        public override string ToString()
+        {
+            return string.Format("NonLoc='{0}' Loc='{1}', Culture='{2}'", NonLocalizedFileName, LocalizedFileName, Culture.Name);
+        }
         public ICollection<LocString> AllStrings
         {
             get

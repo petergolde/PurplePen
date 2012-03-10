@@ -262,7 +262,7 @@
     <value>Ta bort oanvända kontroller</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Byt Kontrolldefinitionens Språk</value>
+    <value>Byt kontrolldefinitionens språk</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Byt Text</value>

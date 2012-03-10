@@ -150,6 +150,9 @@
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Aide Purple Pen</value>
   </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Aide de Purple Pen (traduite)</value>
+  </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Site &amp;Web Purple Pen</value>
   </data>

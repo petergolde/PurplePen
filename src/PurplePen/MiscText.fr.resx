@@ -380,4 +380,7 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Aucun circuit sélectionné pour l'impression</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** S'il existe un site web en langue française qui propose la documentation traduite de Purple Pen, entrer ici l'adresse URL complète (incluant http://). Sinon, laissez la zone vide.</value>
+  </data>
 </root>

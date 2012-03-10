@@ -1,6 +1,6 @@
 How to synchronize new translations for Purple Pen.
 
-1. Go to https://translations.launchpad.net/purple-pen
+1. Go to https://translations.launchpad.net/purple-pen. Log in if not logged in already.
 
 2. Click "download", select PO format, and request a download.
 

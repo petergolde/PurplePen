@@ -117,6 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>El titulo del Evento aparecerá en la primera linea de cada descripción de controles. Tambien se usara como nombre del archivo para guardar su evento en el disco.
+
+Para que entre en la descripción debe tener menos de 25 carateres. Ejemplos de un buen titulo "Costa Calida 2012, Dia 1" .</value>
+  </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Título del evento:</value>
   </data>

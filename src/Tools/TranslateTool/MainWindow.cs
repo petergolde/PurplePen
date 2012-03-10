@@ -260,7 +260,7 @@ namespace TranslateTool
                 PoReader reader = new PoReader(dialog.FileName);
                 List<PoEntry> entries = reader.ReadPo();
                 ApplyPo applyPo = new ApplyPo();
-                applyPo.Apply(entries, resourceDirectory);
+                applyPo.Apply(entries, resourceDirectory, new StringWriter());
                 PopulateListView();
             }
         }
@@ -273,13 +273,20 @@ namespace TranslateTool
             // First, determine the cultures that we are doing from the PO Files.
             string baseName;
             string potFile = DeterminePotName(poDirectory, out baseName);
+
+            TextWriter statusOutput = File.CreateText(Path.Combine(poDirectory, "PoSynchrozingLog.txt"));
+            statusOutput.WriteLine("Synchronizing PO/RESX at {0}", DateTime.Now);
+            statusOutput.WriteLine();
+
             List<CultureInfo> cultures = DetermineCultures(poDirectory, baseName);
 
             foreach (CultureInfo culture in cultures) {
-                SynchronizePoFile(resxDirectory, poDirectory, baseName, culture, programName, email, version);
+                SynchronizePoFile(resxDirectory, poDirectory, baseName, culture, programName, email, version, statusOutput);
             }
 
             SynchronizePot(resxDirectory, potFile, programName, email, version);
+
+            statusOutput.Close();
         }
 
         private List<CultureInfo> DetermineCultures(string poDirectory, string basename)
@@ -312,12 +319,18 @@ namespace TranslateTool
             return potName;
         }
 
-        private void SynchronizePoFile(string resxDirectory, string poDirectory, string baseName, CultureInfo culture, string programName, string email, string version)
+        private void SynchronizePoFile(string resxDirectory, string poDirectory, string baseName, CultureInfo culture, string programName, string email, string version, TextWriter statusOutput)
         {
             ResourceDirectory resourceDirectory = new ResourceDirectory();
 
+            statusOutput.WriteLine("Reading RESX directory '{0}' for culture '{1}'", resxDirectory, culture.Name);
             resourceDirectory.ReadFiles(resxDirectory, culture);
             resourceDirectory.ReadResources();
+
+            foreach (var resX in resourceDirectory.AllFiles) {
+                statusOutput.WriteLine("   {0}", resX);
+            }
+            statusOutput.WriteLine();
 
             string cultureName = culture.Name;
             if (cultureName.EndsWith("-NO"))
@@ -326,10 +339,11 @@ namespace TranslateTool
 
             string poFileName = Path.Combine(poDirectory, baseName + "-" + cultureName + ".po");
 
+            statusOutput.WriteLine("Reading PO file '{0}' for culture '{1}'", poFileName, culture.Name);
             PoReader reader = new PoReader(poFileName);
             List<PoEntry> entries = reader.ReadPo();
             ApplyPo applyPo = new ApplyPo();
-            applyPo.Apply(entries, resourceDirectory);
+            applyPo.Apply(entries, resourceDirectory, statusOutput);
 
             resourceDirectory.WriteResources();
 

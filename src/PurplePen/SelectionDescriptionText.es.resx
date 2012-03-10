@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>Lejos del control</value>
+  </data>
   <data name="Climb" xml:space="preserve">
     <value>Subir:</value>
   </data>
@@ -141,11 +144,32 @@
   <data name="CourseList_None" xml:space="preserve">
     <value>Ninguno</value>
   </data>
+  <data name="CourseName" xml:space="preserve">
+    <value>Recorrido "{0}"</value>
+  </data>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>Completar descripción de simbolos</value>
+  </data>
+  <data name="EntireLeg" xml:space="preserve">
+    <value>Tramo entero</value>
+  </data>
+  <data name="FinishFunnel" xml:space="preserve">
+    <value>Embudo de meta</value>
+  </data>
   <data name="Finish_Plural" xml:space="preserve">
     <value>termina</value>
   </data>
   <data name="Finish_Singular" xml:space="preserve">
     <value>terminar</value>
+  </data>
+  <data name="Flagging" xml:space="preserve">
+    <value>Balizados:</value>
+  </data>
+  <data name="IntoControl" xml:space="preserve">
+    <value>dentro del control</value>
+  </data>
+  <data name="IntoFinishFunnel" xml:space="preserve">
+    <value>dentro del embudo de meta</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>Longitud:</value>
@@ -210,6 +234,18 @@
   <data name="TextLine" xml:space="preserve">
     <value>Línea de texto</value>
   </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>Aparece encima {0}, en todas los recorridos que contiene {0}</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>Aparece encima {0}, solo en este recorrido</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>Appears debajo {0}, en todas los recorridos que contiene {0}</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>Aparece debajo {0}, solo en este recorrido</value>
+  </data>
   <data name="TotalControls" xml:space="preserve">
     <value>Controles totales</value>
   </data>
@@ -218,5 +254,8 @@
   </data>
   <data name="UsedInCourses" xml:space="preserve">
     <value>Usado en rutas:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Area fuera de carrera en blanco</value>
   </data>
 </root>

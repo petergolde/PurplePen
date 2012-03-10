@@ -150,8 +150,14 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Salida</value>
   </data>
+  <data name="punchCardLayoutButton.Text" xml:space="preserve">
+    <value>Modelo de Trajeta de Controles...</value>
+  </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="punchBoxSizeLabel.Text" xml:space="preserve">
+    <value>Tamaño de la casilla de picada:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Apariencia</value>
@@ -173,5 +179,8 @@
   </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copias</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Imprimir trajeta de controles</value>
   </data>
 </root>

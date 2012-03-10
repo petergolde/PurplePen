@@ -168,8 +168,56 @@
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Resumen de ruta para {0}</value>
   </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Referencias cruzadas para el control  {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Controles cercanos</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>La siguiente tabla muestra todos los controles que están a menos de {0} metros unos de otros. En la la misma columna definición del elemento muestra donde dos controles tiene el mismo elemento (columna D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Casillas de descripción olvidadas</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>En los recorridos oficiales se suele indicar el desnivel acumulado</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Todos los controles deben tener un elemento característico en la columna D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Cuando "entre" aparece en la columna G, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Cuando "union" o "cruce" aparecen en la columna F, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Normalmente los recorridos suelen terminar en un punto de meta</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Elementos olidados en el Recorrido</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>El recorrido necesita tener cargados competidores de paso</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Patrones de marca no definidos</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Patrones de marca olvidados</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Los recorridos en Socre debe tener un set de puntuacion para todos los controles o para ninguno</value>
+  </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
     <value>Faltan puntuaciones</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Normalmente una carrera suele tener un triangulo de salida</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Los recorridos Score suelen tener un triangulo de salida</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>No</value>
@@ -177,8 +225,14 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>No se encontraron problemas.</value>
   </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Revisión del evento para {0}</value>
+  </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
     <value>Controles sin usar</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Los siguientes controles aparecen en la descripción de Todos los Controles, pero no se usan en ningún recorrido. Para borrarlos, use el comando "Borrar Controles no Usados" en el menu "Evento". Estos controles no se consideran despues en este informe.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Sí</value>
@@ -186,8 +240,29 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Promedio</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controles, {2:0.0} km, {3} m desnivel)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controles, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Informe de longitud de tramos para {0}</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>carga de control</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Tramo ledio</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>A algunos o a todos los recorridos les falta indicar los competidores de paso. La lista de abajo puede estar equivocada o vacia por este motivo. Para indicar los corredores de paso, selecciona "Corredores de Paso" en el menu "Recorrido".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(solamente los tramos usados por más de un recorrido aparecen en la siguiente tabla)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Resumen de Competidores de Paso para {0}</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>AVISO:</value>

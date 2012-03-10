@@ -120,6 +120,9 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Borrar</value>
   </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Los siguientes controles estan in la descripción de Todos los Controles, pero no se usan en ningun recorrido. Pulsa Borrar para eliminar todos los controles que se relacionan</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Controles sin usar</value>
   </data>

@@ -157,7 +157,7 @@
     <value>Cannot create folder '{0}' for the following reason:</value>
   </data>
   <data name="CannotReadMap" xml:space="preserve">
-    <value>Cannot read map for the following reason: '{0}' Using Optimize/Repair in OCAD may fix problems.</value>
+    <value>Cannot read map for the following reason: '{0}' Using Optimise/Repair in OCAD may fix problems.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Cannot create OCAD files for the following reason:</value>
@@ -352,7 +352,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <value>singular</value>
   </data>
   <data name="RequireStar" xml:space="preserve">
-    <value>The customized text requires a "*" to indicate where the object being modified is placed.</value>
+    <value>The customised text requires a "*" to indicate where the object being modified is placed.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>course planning for orienteering</value>

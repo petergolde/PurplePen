@@ -124,7 +124,7 @@
     <value>Symbol name:</value>
   </data>
   <data name="labelCustomizedText.Text" xml:space="preserve">
-    <value>Customized text:</value>
+    <value>Customised text:</value>
   </data>
   <data name="buttonChangeText.Text" xml:space="preserve">
     <value>Change text...</value>
@@ -139,9 +139,9 @@
     <value>Show meaning below symbolic descriptions</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Click on a description symbol to customize the text that is used in textual control descriptions.</value>
+    <value>Click on a description symbol to customise the text that is used in textual control descriptions.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Customize Description Text</value>
+    <value>Customise Description Text</value>
   </data>
 </root>

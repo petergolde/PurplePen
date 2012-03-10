@@ -144,7 +144,16 @@
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>Nombre de archivo</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Introduzca el nombre (sin extensión .xml or .gif) para cualquiera de los arhivos RouteGadget:</value>
+  </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Aprenda más sobre RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget necesita una imagen (.gif) y un fichero IOF XML (.xml). Elige el nombre y la carpeta para estos dos ficheros.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Crear archivos RouteGadget</value>
   </data>
 </root>

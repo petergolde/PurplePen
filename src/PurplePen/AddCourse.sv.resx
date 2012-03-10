@@ -169,7 +169,7 @@
     <value>Utseende</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Följande text kommer synas på andra raden av Kontrolldefinitionen (Valfritt).</value>
+    <value>Följande text kommer synas på andra raden av kontrolldefinitionen (valfritt).</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasslista / sekundär titel</value>

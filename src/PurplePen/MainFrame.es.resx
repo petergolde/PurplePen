@@ -150,6 +150,9 @@
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Ay&amp;uda de Puple Pen</value>
   </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Ayuda de Purple Pen (Traducida)</value>
+  </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Sitio &amp;web de Purple Pen</value>
   </data>
@@ -183,11 +186,17 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>&amp;Crear archivos OCAD...</value>
   </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Crear archivos RouteGadget...</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Crear archivo de intercambio &amp;E-Punch...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Im&amp;primir descripciones...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Imprime Tarjetas de Control...</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Imprimir &amp;rutas...</value>
@@ -291,6 +300,9 @@
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>Eliminar los controles sin &amp;usar...</value>
   </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>Narcas de picada...</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Personalizar los textos de las &amp;descripciones...</value>
   </data>
@@ -345,11 +357,17 @@
   <data name="addFirstAidMenu.Text" xml:space="preserve">
     <value>Ubicación de primeos auxilios</value>
   </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Marca de ruta prohibida</value>
+  </data>
   <data name="addBoundaryMenu.Text" xml:space="preserve">
     <value>Límite no transpasable</value>
   </data>
   <data name="addRegMarkMenu.Text" xml:space="preserve">
     <value>Marca de registro</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Area fuera de carrera en blanco</value>
   </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Texto</value>
@@ -360,11 +378,38 @@
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Borrar</value>
   </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>Añade angulo</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>Elimina angulo</value>
+  </data>
+  <data name="addGapMenu.Text" xml:space="preserve">
+    <value>Añade ruta obligada</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>Elimnina ruta obligada</value>
+  </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Cambiar &amp;texto</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otar</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Datos del tramo</value>
+  </data>
+  <data name="noFlaggingMenu.Text" xml:space="preserve">
+    <value>Sin tramo balizado</value>
+  </data>
+  <data name="entireFlaggingMenu.Text" xml:space="preserve">
+    <value>Tramo balizado completamente</value>
+  </data>
+  <data name="beginFlaggingMenu.Text" xml:space="preserve">
+    <value>Inicio de tramo balizado</value>
+  </data>
+  <data name="endFlaggingMenu.Text" xml:space="preserve">
+    <value>Fin del tramo balizado</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Cambiar rutas most&amp;radas...</value>
@@ -375,8 +420,14 @@
   <data name="eventAuditMenu.Text" xml:space="preserve">
     <value>&amp;Auditoría de evento</value>
   </data>
+  <data name="legLengthsMenu.Text" xml:space="preserve">
+    <value>Distancia del tramo</value>
+  </data>
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
     <value>Control de referencia &amp;cruzada</value>
+  </data>
+  <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
+    <value>Cargar controles y tramos</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Navegador de símbolos</value>
@@ -401,6 +452,9 @@
   </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Prueba de informe</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Unidades en metros</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Añadir idioma de descripción</value>
@@ -474,17 +528,29 @@
   <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Ubicación de primeos auxilios</value>
   </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Marca de ruta prohibida</value>
+  </data>
   <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Límite no transpasable</value>
   </data>
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
     <value>Marca de registro</value>
   </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Area fuera de carrera en blanco</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Texto</value>
   </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Añade Angulo  (Ctrl+B)</value>
+  </data>
   <data name="addGapToolStripButton.Text" xml:space="preserve">
     <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Add Tramo Balizado (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Zoom: 100%</value>

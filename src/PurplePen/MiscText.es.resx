@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>No se puede crear la carpeta '{0}' por la siguiente razón:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>No se puede leer el mapa: '{0}' Utiliza la opción Optimizar/Reparar en OCAD para resolver el problema.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>No se pueden crear los archivos OCAD por las siguientes razones:</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="BadScore" xml:space="preserve">
     <value>Los puntos para un control deben ser un entero 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>El desnivel del recorrido debe ser un número entre 0-9999, o nulo.</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
     <value>La carga de una carrera debe ser un entero 0-999999, o blanco.</value>
@@ -201,6 +207,11 @@
   <data name="EnterCode" xml:space="preserve">
     <value>Introducir nuevo código</value>
   </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Introduce el tamaño del elemento
+Utiliza / para la altura de una pendiente
+Utiliza | para separar dos caracteristicas</value>
+  </data>
   <data name="EnterEventTitle" xml:space="preserve">
     <value>Entre nuevo título de evento
 Use | para separar líneas
@@ -216,11 +227,24 @@ Use | para separar líneas</value>
   <data name="EnterClimb" xml:space="preserve">
     <value>Introducir nueva escalada en metros</value>
   </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Introduce el significado del nuevo simbolo
+(afecta a todos los recorridos)</value>
+  </data>
   <data name="EnterTextLine" xml:space="preserve">
     <value>Introducir nuevo texto</value>
   </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Los Controles {0} no se usan en ningún reocrrido. Quieres borrar estos controles de la descripción de controles?.</value>
+  </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
     <value>El control {0} ya no es usado por ningún curso. ¿Desea eliminar este control de la colección de controles?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Los Controles {0} están en uso en alguno de los siguientes recorridos: {1}. Quieres borrarlos de todas maneras?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>El código del control debe tener entre una y tres letras o números.</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Un código de control debe tener un espacio.</value>
@@ -230,6 +254,9 @@ Use | para separar líneas</value>
   </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Un código de control no puede empezar con cero.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>El código de control no debe confundirse con otro si se ve boaca abajo.</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>El código "{0}" es usado más de una vez.</value>
@@ -252,11 +279,23 @@ Use | para separar líneas</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versión {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>La versión {0} de Purple Pen no está disponible para descarga. (La versión que estás usando es la {1}.)
+
+Para descargarse la ultima versión, visita la página web de Purple Pen en la opción  "Pagina Web de Purple Pen" en el menu Ayuda.</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>El archivo de ayuda «{0}» no se puede abrir.</value>
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>No se puede encontrar el archivo del mapa "{0}" .
+
+Probablemente, el archivo ha sido movido o borrado, o el programa de Purple Pen ha sido movido (posiblemente a otro ordenador). El archivo del mapa tiene que estar disponible siempre que se habra un Evento. Si ha recibido o enviado el fichero de un Evento Purple Pen a otra persona, asegurese de que le envia también el fichero del mapa.
+
+Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Todos los controles se usan en la ruta</value>
@@ -312,13 +351,40 @@ Use | para separar líneas</value>
   <data name="Singular" xml:space="preserve">
     <value>singular</value>
   </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Para modificar un Texto necesita poner "*" para indicar donde está el objeto que va a ser modificado.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>Trazado de recorridos para Orientación</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Introduce el Texto que quieres poner en el mapa. Despues de pulsar Aceptar, mueve el ratón hacia el lugar donde quieres ubicar el texto.</value>
+  </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Añadir texto</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Intoduce el nuevo Texto</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Cambiar Texto</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Otro programa ha cambiado el fichero del mapa "{0}". Purple Pen no recarga el mapa.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>El Evento actual tiene una descrpcion de controles con texto en {0}. Quieres cambiar el idioma de la descripcion de controles a {1}?</value>
+  </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>Abrir "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen debe cerrarse antes de leer los ficheros OCAD creados.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>No se han seleccionado recorridos para imprimir.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Si existe una pagina web traducida a otro idioma que contiene documentación para Purple Pen, introduce la URL (con http://) de la traducción de este tema. En otro caso no introduzcas nada.</value>
   </data>
 </root>

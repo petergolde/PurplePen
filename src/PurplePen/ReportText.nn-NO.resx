@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Stigning</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Kode</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Kolonne</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Postkoder</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Poster</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Løype</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distanse</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Strekk</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Lengd</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Opna</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Stad</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Løyper</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Årsak</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Same symbol?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Løypesammenstilling for {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Kryssreferansesjekk for  {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Nærliggande poster</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Tabellen viser postpar som ligger mindre enn {0} meters avstand fra hverandre. Symbolkolonne D visar om de to postene er av av samme type.</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Manglende postbeskrivelsesruter</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Vanlige løyper bør indikere kor mykje stigning de har.</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Alle poster må ha eit symbol i kolonne D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Dersom "mellom" benyttes i kolonne G, må to symboler vises i kolonne D og E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Når "gren" eller "kryss" benyttes i kolonne F må to symboler vises i kolonne D og E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Normale løyper skal ha målsirkel</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Manglande objekter i løyper</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Løypen forventes å ha følgende antall deltakere</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Ingen stemplingsmal er definert</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Manglande stemplingsmønster</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Poengløyper skal ha angitt poeng for alle eller ingen poster</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Manglande poeng</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Normale løyper skal ha ein starttrekant</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Poengløyper skal ha ein starttrekant</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Nei</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Alt er OK</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Arrangementskontroll for {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Ubrukte poster</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Følgende poster er plassert men ikkje benytta i nokon løyper. For å fjerne dem, bruk "Fjern ubenyttede poster" i "Arrangement" menyen. Postende vil ikkje bli tatt hensyn til i resten av denne rapporten.</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Gjennomsnitt</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} poster, {2:0.0} km, {3} m stigning)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} poster, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Strekklengderapport for {0}</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Kontrollpost</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Strekkbelastning</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Nokon eller alle løyper mangler angivelse om kor mange deltakere det er pr løype. Tettheten av deltakere som angis under kan derfor mangle eller være feil- For å angi deltakere pr løype velg "Instilling av antall deltakere pr løype" frå "Løype" menyen.</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(Berre strekk som er benyttet i meir enn ei løype vises i følgende tabell)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Summering av antall deltakere for {0}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>ADVARSEL:</value>
+  </data>
+</root>
