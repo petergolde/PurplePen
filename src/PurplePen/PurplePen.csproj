@@ -1460,6 +1460,7 @@
     <EmbeddedResource Include="ReportText.resx" />
     <EmbeddedResource Include="ReportText.sv.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.es.resx" />
+    <EmbeddedResource Include="SelectionDescriptionText.fi.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.fr.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx" />
