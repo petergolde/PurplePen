@@ -120,4 +120,13 @@
   <data name="CourseName.HeaderText" xml:space="preserve">
     <value>Radan nimi</value>
   </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Aseta kilpailijoiden lukumäärä kullekin radalle klikkaamalla toista saraketta ja kirjoittamalla lukumäärä.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kuormitus</value>
+  </data>
 </root>

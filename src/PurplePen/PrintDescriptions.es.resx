@@ -121,13 +121,13 @@
     <value>Salida</value>
   </data>
   <data name="marginChange.Text" xml:space="preserve">
-    <value>Cambiar márgenes...</value>
+    <value>Cambiar Márgenes...</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Tabloide (11"x17")</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Tamaño del papel:</value>
+    <value>Tamaño del Papel:</value>
   </data>
   <data name="margins.Text" xml:space="preserve">
     <value>Arriba: 0.55", Abajo: 0.55", Izquierda: 0.55", Derecha: 0.55"</value>
@@ -136,16 +136,16 @@
     <value>Márgenes:</value>
   </data>
   <data name="orientation.Text" xml:space="preserve">
-    <value>Paisaje</value>
+    <value>Apaisado</value>
   </data>
   <data name="orientationLabel.Text" xml:space="preserve">
     <value>Orientación:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
-    <value>Nombre de la impresora</value>
+    <value>Nombre de la Impresora</value>
   </data>
   <data name="printerChange.Text" xml:space="preserve">
-    <value>Cambiar impresora...</value>
+    <value>Seleccionar Impresora...</value>
   </data>
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Impresora:</value>
@@ -154,7 +154,7 @@
     <value>Apariencia</value>
   </data>
   <data name="descriptionKindCombo.Items" xml:space="preserve">
-    <value>Ruta predeterminada</value>
+    <value>Recorrido actual</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Símbolos</value>
@@ -163,10 +163,10 @@
     <value>Texto</value>
   </data>
   <data name="descriptionKindCombo.Items3" xml:space="preserve">
-    <value>Símbolos y texto</value>
+    <value>Símbolos y Texto</value>
   </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
-    <value>Tipo de descripción:</value>
+    <value>Tipo de Descripción:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
@@ -184,27 +184,27 @@
     <value>Vista previa...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>Rutas</value>
+    <value>Recorridos</value>
   </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copias</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>descripción por ruta</value>
+    <value>descripciones por recorrido</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
-    <value>una copia de cada ruta</value>
+    <value>una copia de cada recorrido</value>
   </data>
   <data name="copiesCombo.Items1" xml:space="preserve">
-    <value>una página por cada ruta</value>
+    <value>una página por cada recorrido</value>
   </data>
   <data name="copiesCombo.Items2" xml:space="preserve">
-    <value>múltiples páginas por cada ruta</value>
+    <value>múltiples páginas por cada recorrido</value>
   </data>
   <data name="whatToPrintLabel.Text" xml:space="preserve">
     <value>Imprimir:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Imprimir descripciones</value>
+    <value>Imprimir Descripciones</value>
   </data>
 </root>

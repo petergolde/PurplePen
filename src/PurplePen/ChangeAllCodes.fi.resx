@@ -126,4 +126,7 @@
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
     <value>Vaihtaaksesi yhtä tai useampaa rastikoodia klikkaa koodeja "Uusi koodi" -sarakkeessa ja kirjoita uusi rastikoodi. </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vaihda rastikoodeja</value>
+  </data>
 </root>

@@ -117,11 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
   <data name="NoSymbol" xml:space="preserve">
     <value>Ei symbolia</value>
   </data>
   <data name="AllControls" xml:space="preserve">
     <value>Kaikki rastit</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Tiedostoa '{0}' ei voida ladata seuraavasta syystä:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Tiedostoa '{0}' ei voida tallentaa seuraavasta syystä:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Karttatiedostoa '{0}' ei voida ladata seuraavasta syystä:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Kuvatiedostoa '{0}' ei voida lukea.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Ei voida tulostaa '{0}' seuraavasta syystä:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Tiedostoa '{0}' ei voida luoda seuraavasta syystä:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Kansiota '{0}' ei voida luoda seuraavasta syystä:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Karttaa ei voida lukea seuraavasta syystä: '{0}' OCAD:in optimoi/korjaa -toiminnon käyttäminen voi korjata ongelmat.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>OCAD-tiedostoja ei voida luoda seuraavasta syystä:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Haluatko tallentaa tiedostoon '{0}' tekemäsi muutokset?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Tiedosto '{0}' on jo olemassa valitussa kansiossa. Klikkaa "Edellinen"-painiketta ja valitse uusi kansio tai uusi tapahtuman nimi.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
     <value>Rastikoodi '{0}' on jo käytössä toisella rastilla.</value>
@@ -130,22 +175,76 @@
     <value>Rastin pistemäärän pitää olla kokonaisluku väliltä 1-999.</value>
   </data>
   <data name="BadClimb" xml:space="preserve">
-    <value>Noususumman pitää olla luku väliltä 0-9999 (tai tyhjä).</value>
+    <value>Kokonaisnousun pitää olla luku väliltä 0-9999 (tai tyhjä).</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
     <value>Suunnistajien lukumäärän pitää olla kokonaisluku väliltä 0-999999 (tai tyhjä).</value>
   </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Kumoa</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Kumoa</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Tee uudelleen</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Tee uudelleen</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>Tyhjennä &amp;valinta</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>P&amp;eru toiminto</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Peru toiminto</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Syötä uusi pistemäärä</value>
+  </data>
   <data name="EnterCode" xml:space="preserve">
-    <value>Vaihda rastikoodi</value>
+    <value>Syötä uusi rastikoodi</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Syötä kohteen koko
+Käytä / korkeuteen rinteessä
+Käytä | kahdelle kohteelle</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Syötä uusi tapahtuman nimi
+Käytä | erottaaksesi rivit
+(vaikuttaa kaikkiin ratoihin)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Syötä uusi alaotsikko
+Käytä | erottaaksesi rivit</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Syötä uusi radan nimi</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
-    <value>Lisää uusi noususumma metreinä</value>
+    <value>Syötä uusi kokonaisnousu metreinä</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Syötä uusi symbolin merkitys
+(vaikuttaa kaikkiin ratoihin)</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
-    <value>Kirjoita uusi  teksti</value>
+    <value>Syötä uusi teksti</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kohteet {0} eivät ole enää käytössä millään radalla. Haluatko poistaa nämä kohteet kaikki rastit -kokoelmasta?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Rasti {0} ei ole enää käytössä millään radalla. Haluatko poistaa tämän rastin kaikki rastit -kokoelmasta?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Rasti {0} on käytössä seuraavilla radoilla: {1}. Haluatko silti poistaa tämän rastin?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Rastikoodin pitää olla yksi, kaksi tai kolme merkkiä tai numeroa.</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Rastikoodissa ei saa olla välilyöntiä.</value>
@@ -156,8 +255,47 @@
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Rastikoodi ei saa alkaa nollalla.</value>
   </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Rastikoodi ei saisi näyttää toiselta numerolta ollessaan ylösalaisin.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Koodi "{0}" on käytössä useammin kuin kerran.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Tulostusmittakaavassa luvun pitää olla vähintään 100 ja enintään 100 000.</value>
+  </data>
   <data name="CoursePropertiesTitle" xml:space="preserve">
     <value>Radan ominaisuudet</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Vaaka</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Pysty</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Paperikoko on liian pieni rastinmääritteiden tulostamiseen.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Versio {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Pen versio {0} on nyt ladattavissa. (Sinulla on käytössä versio {1}.)
+
+Uusimman version voit ladata Purple Pen -kotisivuilta, jonne pääset Ohje-valikosta valitsemalla "Purple Pen -kotisivu".</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Ohjetiedostoa '{0}' ei voida avata.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoomaus</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Karttatiedostoa "{0}" ei löytynyt.
+
+Todennäköisesti karttatiedosto on siirretty tai poistettu tai Purple Pen -tiedosto on siirretty (mahdollisesti toiselle tietokoneelle). Karttatiedosto on oltava aina, kun Purple Pen -tiedostoa käytetään. Jos lähetät Purple Pen -tiedoston jollekin muulle, muista lähettää myös karttatiedosto ellei sitä ole vastaanottajalla.
+
+Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Kaikki rastit ovat käytössä radalla.</value>
@@ -171,13 +309,82 @@
   <data name="Control_Code" xml:space="preserve">
     <value>Rasti {0}</value>
   </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Maali</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Pakollinen ylitys/alituspaikka</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Ylitys/Alitus</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Kaikki: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Vasen: {0}, Oikea: {1}, Ylä: {2}, Ala: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Lähtö</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>monikko</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>yksikkö</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Muokattavassa tekstissä on oltava "*"-merkki osoittamassa kohdetta, jota tällä symbolilla täsmennetään.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>suunnistuksen ratasuunnitteluun</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Syötä teksti, jonka haluat lisätä kartalle. Paina OK, jonka jälkeen paina hiiren vasen painike pohjaan ja vedä sijoittaaksesi tekstin haluamaasi kohtaan kartalle.</value>
+  </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Lisää teksti</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Syötä uusi teksti.</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Muokkaa tekstiä</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Toinen ohjelma on muuttanut karttatiedostoa "{0}". Purple Pen lataa nyt kartan uudelleen.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Tapahtuman sanallisten rastinmääritteiden kielenä on {0}. Haluatko muuttaa rastinmääritteet kielelle {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Avaa "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen pitää sulkea ennen kuin voit avata luotuja OCAD-tiedostoja.</value>
+  </data>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Yhtään rataa ei ole valittuna tulostettavaksi.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Jos on olemassa verkkosivusto, joka sisältää Purple Pen -ohjeita tällä käännöskielellä, syötä sen täydellinen URL-osoite (http://...). Muutoin jätä tyhjäksi.</value>
   </data>
 </root>

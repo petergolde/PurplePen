@@ -121,9 +121,9 @@
     <value>Borrar</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>Los siguientes controles estan in la descripción de Todos los Controles, pero no se usan en ningun recorrido. Pulsa Borrar para eliminar todos los controles que se relacionan</value>
+    <value>Los siguientes controles estan en la descripción de Todos los Controles, pero no se usan en ningun recorrido. Pulsa Borrar para eliminar todos los controles mostrados.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Controles sin usar</value>
+    <value>Controles no Usados</value>
   </data>
 </root>

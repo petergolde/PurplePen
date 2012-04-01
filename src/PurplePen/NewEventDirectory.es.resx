@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventDirectoryLabel.Text" xml:space="preserve">
-    <value>En que carpte (directorio) quiere guardar el archivo del recorrido de este evento?</value>
+    <value>En que carpeta (directorio) quiere guardar el archivo de trazado de este evento?</value>
   </data>
   <data name="useMapDirectory.Text" xml:space="preserve">
     <value>En la misma carpeta que el archivo de mapa.</value>
   </data>
   <data name="useOtherFolder.Text" xml:space="preserve">
-    <value>En otra carpeta que elija</value>
+    <value>En la carpeta que elija.</value>
   </data>
   <data name="chooseFolder.Text" xml:space="preserve">
-    <value>Elejir carpeta</value>
+    <value>Elejir Carpeta...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Seleccionar la carpeta para su archivo de evento</value>
   </data>
   <data name="directoryDisplay.Text" xml:space="preserve">
-    <value>Carpeta seleccionada</value>
+    <value>Seleccionar Carpeta</value>
   </data>
 </root>

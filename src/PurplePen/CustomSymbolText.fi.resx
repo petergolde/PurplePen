@@ -123,4 +123,25 @@
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Symbolin nimi:</value>
   </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>Muokattu teksti:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>Muokkaa tekstiä...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>Palauta oletusmuotoon</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>Oletusteksti:</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Näytä merkitys symbolirastinmääritteiden alapuolella</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>Klikkaa symbolia muokataksesi sanallisessa rastinmääritteessä käytettävää tekstiä.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Muokkaa sanallisia rastinmääritteitä</value>
+  </data>
 </root>

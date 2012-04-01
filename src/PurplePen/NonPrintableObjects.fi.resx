@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Karttatiedostossa "{0}" on kohteita tai symboleita, joita Purple Pen ei täysin tue ja siksi ne eivät ehkä tulostu kunnolla. Kohteet, jotka eivät ehkä tulostu kunnolla, on listattu alla.
+
+Kilpailukarttojen tulostamiseksi on suositeltavaa viedä radat OCAD-tiedostoihin (Tiedosto/Vie OCAD-tiedostoihin...) ja tulostaa kartat OCAD:lla.
+</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Jatka</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Peruuta</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Karttatiedostoa ei voida tulostaa asianmukaisesti</value>
   </data>
 </root>

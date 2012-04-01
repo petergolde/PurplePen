@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Lisää erityisteksti</value>
+  </data>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
     <value>Tapahtuman nimi</value>
   </data>
@@ -125,5 +128,11 @@
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Radan pituus</value>
+  </data>
+  <data name="courseClimbMenuItem.Text" xml:space="preserve">
+    <value>Kokonaisnousu</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>Sarjalista</value>
   </data>
 </root>

@@ -118,21 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Insertar texto especial</value>
+    <value>Insertar Texto Especial</value>
   </data>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
-    <value>Título del evento</value>
+    <value>Título del Evento</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>Nombre de la ruta</value>
+    <value>Nombre del Recorrido</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
-    <value>Duración de la ruta</value>
+    <value>Longitud del Recorrido</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
-    <value>Elevación de la ruta</value>
+    <value>Desnivel del Recorrido</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
-    <value>Lista de clase</value>
+    <value>Categorías o Clases</value>
   </data>
 </root>

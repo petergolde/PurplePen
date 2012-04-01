@@ -139,6 +139,6 @@
     <value>Género:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Texto de símbolos personalizado</value>
+    <value>Personalizar Texto de Símbolos</value>
   </data>
 </root>

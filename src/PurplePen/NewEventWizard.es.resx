@@ -121,12 +121,12 @@
     <value>&lt; &amp;Anterior</value>
   </data>
   <data name="nextButton.Text" xml:space="preserve">
-    <value>Siguie&amp;nte &gt;</value>
+    <value>&amp;Siguiente &gt;</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Crear un nuevo Evento</value>
+    <value>Crear un Nuevo Evento</value>
   </data>
 </root>

@@ -124,9 +124,9 @@
     <value>Cancelar</value>
   </data>
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
-    <value>Ajusta el area de impresión arrastrando las esquinas con el ratón</value>
+    <value>Ajusta el area de impresión arrastrando las esquinas con el ratón.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Establecer área de impresión</value>
+    <value>Establecer Área de Impresión</value>
   </data>
 </root>

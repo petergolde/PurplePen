@@ -120,6 +120,9 @@
   <data name="DefaultStatus" xml:space="preserve">
     <value>Hiiren vasen painike: Valitse kohde; Hiiren oikea painike: Siirrä karttaa; Hiiren rulla: Lähennä/loitonna</value>
   </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Hiiren vasen painike: Siirrä/rajaa tulostusaluetta; Hiiren oikea painike: Siirrä karttaa; Hiiren rulla: Lähennä/loitonna</value>
+  </data>
   <data name="DragObject" xml:space="preserve">
     <value>Siirrä valittua kohdetta painamalla hiiren vasen painike pohjaan ja raahaamalla kohde haluamaasi paikkaan.</value>
   </data>
@@ -132,11 +135,44 @@
   <data name="DraggingCorner" xml:space="preserve">
     <value>Siirrä kulmapiste haluamaasi paikkaan ja vapauta painike</value>
   </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Lisää uusi rasti klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Lisää rasti "{0}" radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Lisää uusi lähtö klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Lisää lähtö radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Lisää uusi maali klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Lisää maali radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Lisää uusi pakollinen ylitys/alituspaikka klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Lisää pakollinen ylitys/alituspaikka radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Lisää uusi kohde klikkaamalla hiiren vasenta painiketta</value>
+  </data>
   <data name="AddingBend" xml:space="preserve">
     <value>Lisää kulmapiste klikkaamalla sen paikkaa hiiren vasemmalla painikkeella</value>
   </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Lisää uusi kulma klikkaamalla hiiren vasenta painiketta</value>
+  </data>
   <data name="DeletingBend" xml:space="preserve">
     <value>Poista kulmapiste klikkaamalla sitä hiiren vasemmalla painikkeella</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Poista kulma klikkaamalla sen kohdalla hiiren vasenta painiketta</value>
   </data>
   <data name="AddingControlGap" xml:space="preserve">
     <value>Lisää katko valittuun rastiympyrään klikkaamalla hiiren vasenta painiketta</value>
@@ -149,5 +185,23 @@
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Poista katko valitulta rastiväliviivalta klikkaamalla sitä hiiren vasemmalla painikkeella</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä muuttaaksesi valitun kohteen kokoa.</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Siirrä reuna(t) haluamaasi paikkaan ja vapauta painike</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä lisätäksesi rastinmääritteet</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Klikkaa hiiren vasenta painiketta, kun ylitys/alituspaikka on kierretty oikeaan kulmaan</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä piirtääksesi janan; klikkaa hiiren vasenta painiketta lopettaaksesi kohteen piirtämisen</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä lisätäksesi tekstin</value>
   </data>
 </root>

@@ -126,6 +126,9 @@
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
     <value>Käytä näitä asetuksia vain uusille rasteille.</value>
   </data>
+  <data name="existingControlsGroupBox.Text" xml:space="preserve">
+    <value>Olemassa olevat rastit</value>
+  </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
     <value>Uudet rastit numeroidaan automaattisesti seuraavien asetusten mukaisesti.</value>
   </data>

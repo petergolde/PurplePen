@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="formatButton.Text" xml:space="preserve">
+    <value>Leimauskuviokortin asettelu...</value>
+  </data>
+  <data name="punchPatternsLabel.Text" xml:space="preserve">
+    <value>Klikkaa rastikoodia vasemmalla puolella olevalla listalla ja määrittele leimauskuvio oikealla puolella. Punaisella koodilla merkityille rasteille ei ole määritelty leimauskuviota.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Leimauskuviot</value>
+  </data>
 </root>

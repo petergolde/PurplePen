@@ -131,4 +131,10 @@
   <data name="changeLaterLabel.Text" xml:space="preserve">
     <value>(Voit myöhemmin muuttaa tulostusmittakaavaa valitsemalla Rata/Ominaisuudet.)</value>
   </data>
+  <data name="oneToPrefixLabel1.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="oneToPrefixLabel2.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
 </root>

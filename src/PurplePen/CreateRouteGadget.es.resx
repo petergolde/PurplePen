@@ -142,10 +142,10 @@
     <value>Misma carpeta que el archivo de Purple Pen</value>
   </data>
   <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Nombre de archivo</value>
+    <value>Nombre del archivo</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Introduzca el nombre (sin extensión .xml or .gif) para cualquiera de los arhivos RouteGadget:</value>
+    <value>Introduzca el nombre sin extensión (.xml o .gif) para cualquiera de los arhivos RouteGadget (mapa o trazado):</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Aprenda más sobre RouteGadget</value>
@@ -154,6 +154,6 @@
     <value>RouteGadget necesita una imagen (.gif) y un fichero IOF XML (.xml). Elige el nombre y la carpeta para estos dos ficheros.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Crear archivos RouteGadget</value>
+    <value>Crear Archivos RouteGadget</value>
   </data>
 </root>

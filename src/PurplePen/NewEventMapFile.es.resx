@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>Para poder trazar sus reocrridos necesita seleccionar el archivo del mapa con el que quiere trabajar. Normalmente será un fichero OCAD, aunque también puede ser un fichero imagen en JPG o similar. Pulse el boton "Seleccionar..." para buscar el  mapa.</value>
+    <value>Para poder trazar sus recorridos necesita seleccionar el archivo del mapa con el que quiere trabajar. Normalmente será un fichero OCAD, aunque también puede usar un fichero imagen en JPG o similar. Pulse el boton "Seleccionar..." para buscar el mapa.</value>
   </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
-    <value>&amp;Elija archivo de mapa...</value>
+    <value>&amp;Seleccionar otro archivo de mapa...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Archivos OCAD (*.ocd)|*.ocd|Archivos de Imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
-    <value>Archivo de mapa seleccionado</value>
+    <value>Seleccionar Archivo de Mapa</value>
   </data>
   <data name="infoMessage.Text" xml:space="preserve">
     <value>El mapa ha sido cargado correctamente. Si envia el fichero Purple Pen a alguien, este debe tener el fichero del mapa también.</value>

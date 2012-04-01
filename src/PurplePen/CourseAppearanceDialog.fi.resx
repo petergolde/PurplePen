@@ -117,14 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Normaali</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Lihavoitu</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>Rastinumeron tyyli:</value>
+  </data>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Rastinumeron korkeus:</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Viivan leveys:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>Rastiympyrän halkaisija:</value>
+  </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>Käytä IOF:n standardimittoja</value>
+  </data>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Kohteiden mitat</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Violetti väri</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Värinvalitsin...</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Musta:</value>
@@ -138,7 +168,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Syaani:</value>
   </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Käytä kartan violettia väriä</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Esikatselu</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Muokkaa ratamerkintöjen ulkoasua</value>
   </data>
 </root>

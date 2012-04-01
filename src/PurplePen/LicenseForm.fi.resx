@@ -123,4 +123,7 @@
   <data name="bsdLicenseLinkLabel.Text" xml:space="preserve">
     <value>Purple Pen on julkaistu "BSD"-tyylisellä lisenssillä.</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Purple Pen lisenssi</value>
+  </data>
 </root>

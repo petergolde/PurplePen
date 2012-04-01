@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Codigo del primer control</value>
+    <value>Orden del primer control</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Descripción de la apariencia</value>
+    <value>Formato de la Descripción</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Escala de impresión de mapa:</value>
+    <value>Escala de impresión del mapa:</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1 : </value>
@@ -139,16 +139,16 @@
     <value>Símbolos y texto</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Etiqueta de controles</value>
+    <value>Etiqueta del Control:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
-    <value>Secuencia de numero (3)</value>
+    <value>Orden del control (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
     <value>Código de control (145)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
-    <value>Secuencia y código (3-145)</value>
+    <value>Orden y código (3-145)</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Mostrar puntos en:</value>
@@ -169,30 +169,30 @@
     <value>Apariencia</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>El siguiente texto (opcional) aparecerá en la segunda línea de la hoja de descripción del control:</value>
+    <value>El siguiente texto (opcional) aparecerá en la segunda línea de la Descripción de Controles:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Lista de clases / Título secundario</value>
+    <value>Categorías / Título secundario</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Subir:</value>
+    <value>Desnivel</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Tipo de ruta:</value>
+    <value>Tipo de Recorrido:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Nombre de la ruta:</value>
+    <value>Nombre del Recorrido:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Ruta normal</value>
+    <value>Trazado en Línea</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Puntuación de la ruta</value>
+    <value>Trazado en Score</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
-    <value>medidores</value>
+    <value>metros</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nueva ruta</value>
+    <value>Nuevo Recorrido</value>
   </data>
 </root>

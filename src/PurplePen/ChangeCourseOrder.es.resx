@@ -121,12 +121,12 @@
     <value>Bajar</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Use los botones «Subir» y «Bajar» para cambiar el orden en que las rutas están listados en la interfaz, los reportes y las impresiones.</value>
+    <value>Use los botones «Subir» y «Bajar» para cambiar el orden en que los recorridos aparecerán en los listados, informes e impresiones.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Orden de las rutas</value>
+    <value>Orden de los Recorridos</value>
   </data>
 </root>

@@ -121,12 +121,12 @@
     <value>Los controles nuevos serán automaticamente numerados. Por favor, elija el primer código a usar.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Rechazar códigos que puedan leerse de forma inversa (ej. «68»/«89»)</value>
+    <value>Evitar códigos que puedan leerse de forma inversa (ej. «68»/«89»)</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Código inicial:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(Esta propiedad puede cambiarse a posteriori usando Controles/Numeración Automatica)</value>
+    <value>(Esta propiedad puede cambiarse a posteriori en el menú Eventos-&gt;Numeración Automatica)</value>
   </data>
 </root>

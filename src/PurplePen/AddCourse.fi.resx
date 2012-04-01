@@ -171,8 +171,11 @@
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>Seuraava (vapaaehtoinen) teksti tulee rastinmääritteiden toiselle riville:</value>
   </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>Sarjalista / Alaotsikko</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Noususumma:</value>
+    <value>Kokonaisnousu:</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
     <value>Ratatyyppi:</value>
@@ -181,7 +184,7 @@
     <value>Radan nimi:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Normaali rata</value>
+    <value>Tavallinen rata</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
     <value>Pistesuunnistusrata</value>

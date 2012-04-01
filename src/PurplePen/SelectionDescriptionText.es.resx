@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
-    <value>Lejos del control</value>
+    <value>lejos del control</value>
   </data>
   <data name="Climb" xml:space="preserve">
-    <value>Subir:</value>
+    <value>Desnivel</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
-    <value>Carga de competidor:</value>
+    <value>Densidad de corredores:</value>
   </data>
   <data name="ControlsInUse" xml:space="preserve">
     <value>Controles en uso:</value>
   </data>
   <data name="ControlsNotInUse" xml:space="preserve">
-    <value>Controles no en uso:</value>
+    <value>Controles no usados:</value>
   </data>
   <data name="Control_Plural" xml:space="preserve">
     <value>controles</value>
@@ -139,7 +139,7 @@
     <value>control</value>
   </data>
   <data name="CourseList_AllCourses" xml:space="preserve">
-    <value>Todas las rutas</value>
+    <value>Todas los recorridos</value>
   </data>
   <data name="CourseList_None" xml:space="preserve">
     <value>Ninguno</value>
@@ -148,19 +148,19 @@
     <value>Recorrido "{0}"</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
-    <value>Completar descripción de simbolos</value>
+    <value>Completar descripción de símbolos</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
-    <value>Tramo entero</value>
+    <value>tramo entero</value>
   </data>
   <data name="FinishFunnel" xml:space="preserve">
-    <value>Embudo de meta</value>
+    <value>embudo de meta</value>
   </data>
   <data name="Finish_Plural" xml:space="preserve">
-    <value>termina</value>
+    <value>metas</value>
   </data>
   <data name="Finish_Singular" xml:space="preserve">
-    <value>terminar</value>
+    <value>meta</value>
   </data>
   <data name="Flagging" xml:space="preserve">
     <value>Balizados:</value>
@@ -169,64 +169,64 @@
     <value>dentro del control</value>
   </data>
   <data name="IntoFinishFunnel" xml:space="preserve">
-    <value>dentro del embudo de meta</value>
+    <value>hasta el embudo de meta</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>Longitud:</value>
   </data>
   <data name="LineHeight" xml:space="preserve">
-    <value>Altura de línea:</value>
+    <value>Altura de la línea:</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Ubicación:</value>
+    <value>Localización:</value>
   </data>
   <data name="MandCrossing_Plural" xml:space="preserve">
-    <value>puntos de cruce obligatorios</value>
+    <value>puntos de paso obligatorios</value>
   </data>
   <data name="MandCrossing_Singular" xml:space="preserve">
-    <value>punto de cruce obligatorio</value>
+    <value>punto de paso obligatorio</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>ninguno</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
-    <value>Límite no transpasable</value>
+    <value>Límite Infranqueable</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
-    <value>Nombre de la ruta</value>
+    <value>Nombre del Recorrido</value>
   </data>
   <data name="SpecialName_Dangerous" xml:space="preserve">
-    <value>Área peligrosa</value>
+    <value>Área Peligrosa</value>
   </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
-    <value>Descripciones de control</value>
+    <value>Descripciones de Controles</value>
   </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
-    <value>Ubicación de primeos auxilios</value>
+    <value>Punto de Primeros Auxilios</value>
   </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
-    <value>Ruta prohibida</value>
+    <value>Ruta Prohibida</value>
   </data>
   <data name="SpecialName_OOB" xml:space="preserve">
-    <value>Área fuera de límites</value>
+    <value>Área fuera de Carrera</value>
   </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
-    <value>Punto de cruce opcional</value>
+    <value>Punto de Paso Opcional</value>
   </data>
   <data name="SpecialName_RegMark" xml:space="preserve">
-    <value>Marca de registro</value>
+    <value>Marcas de Registro</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
   <data name="SpecialName_Water" xml:space="preserve">
-    <value>Ubicación del agua</value>
+    <value>Punto de Avituallamiento</value>
   </data>
   <data name="Start_Plural" xml:space="preserve">
-    <value>inicia</value>
+    <value>salidas</value>
   </data>
   <data name="Start_Singular" xml:space="preserve">
-    <value>iniciar</value>
+    <value>salida</value>
   </data>
   <data name="TextDescription" xml:space="preserve">
     <value>Descripción de texto:</value>
@@ -235,7 +235,7 @@
     <value>Línea de texto</value>
   </data>
   <data name="TextLine_AboveAllCourses" xml:space="preserve">
-    <value>Aparece encima {0}, en todas los recorridos que contiene {0}</value>
+    <value>Aparece sobre {0}, en todos los recorridos que contiene {0}</value>
   </data>
   <data name="TextLine_AboveThisCourse" xml:space="preserve">
     <value>Aparece encima {0}, solo en este recorrido</value>
@@ -247,15 +247,15 @@
     <value>Aparece debajo {0}, solo en este recorrido</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
-    <value>Controles totales</value>
+    <value>Controles totales:</value>
   </data>
   <data name="TotalScore" xml:space="preserve">
-    <value>Puntuación total</value>
+    <value>Puntuación total:</value>
   </data>
   <data name="UsedInCourses" xml:space="preserve">
-    <value>Usado en rutas:</value>
+    <value>Usado en recorridos:</value>
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
-    <value>Area fuera de carrera en blanco</value>
+    <value>Área con Fondo Blanco</value>
   </data>
 </root>

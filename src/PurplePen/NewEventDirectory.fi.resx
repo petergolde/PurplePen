@@ -129,6 +129,9 @@
   <data name="chooseFolder.Text" xml:space="preserve">
     <value>Valitse kansio...</value>
   </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Valitse kansio tapahtumatiedostollesi</value>
+  </data>
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Valittu kansio</value>
   </data>

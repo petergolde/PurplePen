@@ -117,17 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textLineLabel.Text" xml:space="preserve">
+    <value>Syötä rastinmääritteisiin omalle rivilleen tuleva teksti:</value>
+  </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Radat:</value>
   </data>
+  <data name="positionLabel.Text" xml:space="preserve">
+    <value>Sijainti:</value>
+  </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>Kohteen {0} yläpuolella</value>
+    <value>Ennen kohdetta {0}</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>Kohteen {0} alapuolella</value>
+    <value>Kohteen {0} jälkeen</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>Vain tälle radalle</value>
+  </data>
+  <data name="comboBoxCourses.Items1" xml:space="preserve">
+    <value>Kaikki radat, joilla on {0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lisää tekstirivi</value>

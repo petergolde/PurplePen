@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>Rutas</value>
+    <value>Recorridos</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
     <value>Crear</value>
@@ -130,7 +130,7 @@
     <value>Seleccione una carpeta para los archivos OCAD</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>Prefijo del archivo:</value>
+    <value>Extensión del archivo:</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Formato de archivo:</value>
@@ -169,6 +169,6 @@
     <value>Carpeta</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Crear archivos OCAD</value>
+    <value>Crear Archivos OCAD</value>
   </data>
 </root>

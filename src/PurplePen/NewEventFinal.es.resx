@@ -121,6 +121,6 @@
     <value>Pulsa "Terminar" para crear su nuevo evento. Su archivo del evento se guardará como:</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
-    <value>Despues de que su evento sea crado, selecciona "Nuevo Recorrido..." en el Menu Recorrido para crear uno o más trazados.</value>
+    <value>Despues de que su evento sea creado, seleccione "Nuevo Recorrido..." en el Menu Recorridos para crear uno o más trazados.</value>
   </data>
 </root>

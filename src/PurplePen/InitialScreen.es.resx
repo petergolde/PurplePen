@@ -130,10 +130,10 @@
     <value>Salir</value>
   </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
-    <value>Abrir un ejemplo de evento</value>
+    <value>Abrir el evento de ejemplo...</value>
   </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
-    <value>Abrir el último evento visto</value>
+    <value>Abrir el último evento utilizado...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bienvenido a Purple Pen</value>

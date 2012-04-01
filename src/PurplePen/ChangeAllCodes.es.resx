@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="OldCode.HeaderText" xml:space="preserve">
-    <value>Código original</value>
+    <value>Código Original</value>
   </data>
   <data name="NewCode.HeaderText" xml:space="preserve">
-    <value>Nuevo código</value>
+    <value>Nuevo Código</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Para cambiar el código de uno o más controles, pulse en la columna «Nuevo código» e introduzca el nuevo código. </value>
+    <value>Para cambiar el código de uno o más controles, pulse en la columna «Nuevo Código» e introduzca el nuevo código. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Cambiar códigos de control</value>
+    <value>Cambiar Códigos de Control</value>
   </data>
 </root>

@@ -135,6 +135,6 @@ La escala del mapa indica la relación que hay entre un representación en el pa
     <value>1:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Escala del mapa</value>
+    <value>Escala del mapa:</value>
   </data>
 </root>

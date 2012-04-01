@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Radat</value>
+  </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Vie</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Peruuta</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Valitse kansio OCAD-tiedostoille</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Tiedostonimen etuliite:</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Tiedostomuoto:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>
@@ -134,5 +149,26 @@
   </data>
   <data name="fileFormatCombo.Items4" xml:space="preserve">
     <value>OCAD 10</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Tuotos</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Valitse kansio...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Muu kansio</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Karttatiedoston kanssa samaan kansioon</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen -tiedoston kanssa samaan kansioon</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Kansio</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vie OCAD-tiedostoihin</value>
   </data>
 </root>

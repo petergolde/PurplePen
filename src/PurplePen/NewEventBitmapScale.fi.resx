@@ -117,6 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Kun käytät kuvatiedostoa karttana, sinun täytyy määrittää kuvan resoluutio ja kartan mittakaava.
+
+Kuvan resoluutio kertoo, kuinka monta pikseliä tai pistettä kuvassa on jokaista kartan tuumaa kohden (dots per inch, DPI).
+
+Kartan mittakaava kertoo kartan ja sen esittämän todellisen maaston mittojen välisen suhteen.
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Kuvan resoluutio:</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>pistettä tuumaa kohden (DPI)</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartan mittakaava:</value>
   </data>

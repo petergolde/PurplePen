@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Muuta symbolia</value>
+  </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Vaihda rastikoodi</value>
+    <value>Muuta rastikoodi</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Muuta rasti</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Muuta rastin pistemäärää</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Muuta otsikkoa</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Muuta kokonaisnousua</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Vaihda radan nimi</value>
@@ -126,8 +141,14 @@
   <data name="ChangeTextLine" xml:space="preserve">
     <value>Muuta tekstiriviä</value>
   </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Päivitä kartan mittakaava</value>
+  </data>
   <data name="MoveControl" xml:space="preserve">
     <value>Siirrä rastia</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Siirrä rastinumeroa</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
     <value>Siirrä kohdetta</value>
@@ -162,8 +183,20 @@
   <data name="NewCourse" xml:space="preserve">
     <value>Uusi rata</value>
   </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Muuta radan ominaisuuksia</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Muuta Kaikki rastit -kartan ominaisuuksia</value>
+  </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Luo uusi tapahtuma</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Muuta viitoitusta</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Vaihda rastikoodeja</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
     <value>Muuta näkymisasetuksia</value>
@@ -174,8 +207,14 @@
   <data name="AddBend" xml:space="preserve">
     <value>Lisää kulmapiste</value>
   </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Lisää kulma</value>
+  </data>
   <data name="DeleteBend" xml:space="preserve">
     <value>Poista kulmapiste</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Poista kulma</value>
   </data>
   <data name="AddGap" xml:space="preserve">
     <value>Lisää katko</value>
@@ -192,11 +231,29 @@
   <data name="AutoNumbering" xml:space="preserve">
     <value>Automaattinen numerointi</value>
   </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Muokkaa leimauskuvioita</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Muuta leimauskuviokortin asettelua</value>
+  </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Aseta tulostusalue</value>
   </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Muuta kuormitusta</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Muokkaa sanallisia rastinmääritteitä</value>
+  </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Muuta ratojen järjestystä</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Muuta karttatiedostoa</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Jätä huomiotta puuttuvat fontit</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Lisää tekstirivi</value>
@@ -209,5 +266,8 @@
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Muokkaa tekstiä</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Muokkaa ratamerkintöjen ulkoasua</value>
   </data>
 </root>

@@ -123,6 +123,21 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Valitse karttatiedosto...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>OCAD-tiedostot (*.ocd)|*.ocd|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="labelDpi.Text" xml:space="preserve">
+    <value>Resoluutio:</value>
+  </data>
+  <data name="labelScale.Text" xml:space="preserve">
+    <value>Mittakaava:</value>
+  </data>
+  <data name="labelOneTo.Text" xml:space="preserve">
+    <value>1 :</value>
+  </data>
+  <data name="labelDpi2.Text" xml:space="preserve">
+    <value>pistettä tuumaa kohden (DPI)</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Karttatiedosto</value>
   </data>
