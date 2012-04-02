@@ -70,7 +70,9 @@
     <Compile Include="PurplePen\ControllerTests.cs" />
     <Compile Include="PurplePen\CourseFormatterTests.cs" />
     <Compile Include="PurplePen\CourseLayoutTests.cs" />
-    <Compile Include="PurplePen\CourseObjTests.cs" />
+    <Compile Include="PurplePen\CourseObjTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PurplePen\CoursePrintingTests.cs" />
     <Compile Include="PurplePen\CourseRendererTests.cs" />
     <Compile Include="PurplePen\CourseSelectorTestForm.cs">
