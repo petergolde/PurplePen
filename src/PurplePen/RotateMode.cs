@@ -39,6 +39,7 @@ using System.Windows.Forms;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -92,7 +93,7 @@ namespace PurplePen
         private void RotateToAngle(PointF point)
         {
             double angleInRadians = Math.Atan2(point.Y - courseObj.location.Y, point.X - courseObj.location.X);
-            float angleInDegrees = (float) Util.RadiansToDegrees(angleInRadians);
+            float angleInDegrees = (float) Geometry.RadiansToDegrees(angleInRadians);
             courseObj = (CrossingCourseObj) courseObj.Clone();
             courseObj.ChangeOrientation(angleInDegrees);
         }

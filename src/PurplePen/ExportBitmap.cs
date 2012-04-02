@@ -43,6 +43,7 @@ using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -122,13 +123,13 @@ namespace PurplePen
                 bitmapGraphics.Clear(Color.White);
 
                 // Set the transform
-                Matrix transform = Util.CreateRectangleTransform(rect, new RectangleF(0, 0, bitmapWidth, bitmapHeight), true);
+                Matrix transform = Geometry.CreateInvertedRectangleTransform(rect, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
                 bitmapGraphics.MultiplyTransform(transform);
 
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
                 inverseTransform.Invert();
-                float minResolution = Util.TransformDistance(1F, inverseTransform);
+                float minResolution = Geometry.TransformDistance(1F, inverseTransform);
 
                 // And draw.
                 mapDisplay.Draw(bitmapGraphics, rect, minResolution);

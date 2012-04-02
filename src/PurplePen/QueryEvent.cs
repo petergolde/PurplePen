@@ -39,6 +39,7 @@ using System.Drawing;
 using System.Diagnostics;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -147,7 +148,7 @@ namespace PurplePen
                 else if (distance == closestSoFar) {
                     // Distances are equal. Use leg with the largest angle between the end points.
                     SymPath closestLegPath = GetLegPath(eventDB, eventDB.GetCourseControl(closestLegSoFar.courseControlId1).control, eventDB.GetCourseControl(closestLegSoFar.courseControlId2).control);
-                    if (Util.Angle(legPath.FirstPoint, pt, legPath.LastPoint) >  Util.Angle(closestLegPath.FirstPoint, pt, closestLegPath.LastPoint)) {
+                    if (Geometry.Angle(legPath.FirstPoint, pt, legPath.LastPoint) >  Geometry.Angle(closestLegPath.FirstPoint, pt, closestLegPath.LastPoint)) {
                         closestSoFar = distance;
                         closestLegSoFar = leg;
                     }
@@ -566,7 +567,7 @@ namespace PurplePen
             PointF location1 = eventDB.GetControl(controlId1).location;
             PointF location2 = eventDB.GetControl(controlId2).location;
 
-            return (float) ((eventDB.GetEvent().mapScale * Util.Distance(location1, location2)) / 1000.0);
+            return (float) ((eventDB.GetEvent().mapScale * Geometry.Distance(location1, location2)) / 1000.0);
         }
 
         // Similar to ComputeLegLength. However, if the leg is flagged partially, only the length of the flagged portion is returned.
@@ -585,7 +586,7 @@ namespace PurplePen
             }
 
             if (bends == null) {
-                return (float) ((eventDB.GetEvent().mapScale * Util.Distance(location1, location2)) / 1000.0);
+                return (float) ((eventDB.GetEvent().mapScale * Geometry.Distance(location1, location2)) / 1000.0);
             }
             else {
                 List<PointF> points = new List<PointF>();
@@ -609,7 +610,7 @@ namespace PurplePen
                 double dist = 0;
 
                 for (int i = bendIndexStart + 1; i <= bendIndexStop; ++i)
-                    dist += Util.Distance(points[i - 1], points[i]);
+                    dist += Geometry.Distance(points[i - 1], points[i]);
 
                 return (float) ((eventDB.GetEvent().mapScale * dist) / 1000.0);
             }

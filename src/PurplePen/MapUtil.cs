@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Drawing;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -109,7 +110,7 @@ namespace PurplePen
         public static bool IsPurple(float cyan, float magenta, float yellow, float black)
         {
             float h, s, v;
-            SymColor.CMYKtoHSV(cyan, magenta, yellow, black, out h, out s, out v);
+            CmykColor.CmykToHsv(cyan, magenta, yellow, black, out h, out s, out v);
             return (h >= 0.70 && h <= 0.95 && v >= 0.20);
         }
 

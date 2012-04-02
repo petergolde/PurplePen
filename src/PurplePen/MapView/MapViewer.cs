@@ -372,7 +372,7 @@ namespace PurplePen.MapView
                 return;
 
             // Get brush that erases.
-            TextureBrush eraseBrush = viewcache.GetCacheBrush(ClientSize, viewport, xformWorldToPixel);
+            Brush eraseBrush = viewcache.GetCacheBrush(ClientSize, viewport, xformWorldToPixel);
 
             foreach (IMapViewerHighlight h in highlights) {
                 h.EraseHighlight(g, xformWorldToPixel, eraseBrush);
