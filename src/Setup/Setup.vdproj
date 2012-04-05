@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_151929FD11D8FE4EFFA3978C420A156F"
+        "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_151929FD11D8FE4EFFA3978C420A156F"
+        "OwnerKey" = "8:_BFFA13C62DEE88E886C83F6745830C79"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2ECFD27D8272442990DF0D18F6AA9DA7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,7 +45,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7E6D3155A6A6C97BA190C27696C94B93"
+        "MsmKey" = "8:_BFFA13C62DEE88E886C83F6745830C79"
         "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,18 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CF9C5D4D4ADAA1BA4DADD44ABB7287D3"
-        "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CF9C5D4D4ADAA1BA4DADD44ABB7287D3"
-        "OwnerKey" = "8:_7E6D3155A6A6C97BA190C27696C94B93"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_75BEA61185F8480D8B278E736F729F55"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,13 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7E6D3155A6A6C97BA190C27696C94B93"
+        "OwnerKey" = "8:_BFFA13C62DEE88E886C83F6745830C79"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CF9C5D4D4ADAA1BA4DADD44ABB7287D3"
+        "OwnerKey" = "8:_151929FD11D8FE4EFFA3978C420A156F"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -168,6 +168,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_151929FD11D8FE4EFFA3978C420A156F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MapModel, Version=1.1.4.5000, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_151929FD11D8FE4EFFA3978C420A156F"
+                    {
+                    "Name" = "8:MapModel.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MapModel.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECFD27D8272442990DF0D18F6AA9DA7"
             {
             "SourcePath" = "8:..\\..\\doc\\userdocs\\Sample\\Sample Event.ppen"
@@ -208,14 +239,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7E6D3155A6A6C97BA190C27696C94B93"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BFFA13C62DEE88E886C83F6745830C79"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Map_GDIPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Map_GDIPlus, Version=1.1.4.5000, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7E6D3155A6A6C97BA190C27696C94B93"
+                    "_BFFA13C62DEE88E886C83F6745830C79"
                     {
                     "Name" = "8:Map_GDIPlus.dll"
                     "Attributes" = "3:512"
@@ -257,37 +288,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CF9C5D4D4ADAA1BA4DADD44ABB7287D3"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_CF9C5D4D4ADAA1BA4DADD44ABB7287D3"
-                    {
-                    "Name" = "8:MapModel.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:MapModel.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_8F047F74CC874B6BBEC7982915C3A662"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -391,15 +391,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Purple Pen"
-        "ProductCode" = "8:{3A70DE22-D988-41A5-8513-568C435730B5}"
-        "PackageCode" = "8:{2B8A5175-2976-4C4B-AF80-EFFB6EFFCC4C}"
+        "ProductCode" = "8:{93A8128F-3921-45C6-B0C7-D97C1A4B5A84}"
+        "PackageCode" = "8:{8853A130-6CAF-425C-982C-C7C81E79AF55}"
         "UpgradeCode" = "8:{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.35000"
+        "ProductVersion" = "8:1.1.45000"
         "Manufacturer" = "8:Golde Software"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://purplepen.golde.org/support"
