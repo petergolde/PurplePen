@@ -1789,12 +1789,12 @@ namespace PurplePen
 
         private void supportWebSiteMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purplepen.golde.org/support.htm");
+            Util.GoToWebPage("http://purple-pen.org/support.htm");
         }
 
         private void mainWebSiteToolMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purplepen.golde.org");
+            Util.GoToWebPage("http://purple-pen.org");
         }
 
         private void courseSummaryMenu_Click(object sender, EventArgs e)
@@ -1869,7 +1869,7 @@ namespace PurplePen
             WebClient client = new WebClient();
 
             // Download latest version.
-            string latestVersion = client.DownloadString("http://purplepen.golde.org/downloads/latest_version.txt");
+            string latestVersion = client.DownloadString("http://purple-pen.org/downloads/latest_version.txt");
 
             // Get first line.
             int index = latestVersion.IndexOfAny(new char[] { '\r', '\n' });
