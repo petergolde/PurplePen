@@ -48,7 +48,7 @@
     <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
-    <Reference Include="Map_GDIPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Map_GDIPlus">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />

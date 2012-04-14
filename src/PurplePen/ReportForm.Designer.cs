@@ -84,7 +84,7 @@ namespace PurplePen
             resources.ApplyResources(this.webBrowser, "webBrowser");
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Url = new System.Uri("http://purplepen.golde.org", System.UriKind.Absolute);
+            this.webBrowser.Url = new System.Uri("http://purple-pen.org", System.UriKind.Absolute);
             // 
             // ReportForm
             // 
