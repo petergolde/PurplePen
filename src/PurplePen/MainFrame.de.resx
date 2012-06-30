@@ -130,7 +130,7 @@
     <value>&amp;Datei</value>
   </data>
   <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Editieren</value>
+    <value>&amp;Bearbeiten</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Ansicht</value>
@@ -163,7 +163,7 @@
     <value>&amp;Übersetze Postenbeschreibungstext</value>
   </data>
   <data name="helpMenu.Text" xml:space="preserve">
-    <value>H&amp;ilfe</value>
+    <value>&amp;Hilfe</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Neuer Wettkampf...</value>
@@ -172,16 +172,19 @@
     <value>&amp;Öffnen …</value>
   </data>
   <data name="saveMenu.Text" xml:space="preserve">
-    <value>S&amp;peichern</value>
+    <value>&amp;Speichern</value>
   </data>
   <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Speichern &amp;unter...</value>
+    <value>Speichern &amp;unter …</value>
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Erstelle OCAD-Datei...</value>
+    <value>OCAD-Da&amp;teien erstellen …</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Erstelle Route&amp;Gadget Dateien...</value>
+    <value>Route&amp;Gadget-Dateien erstellen …</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>&amp;E-Punch Interchange-Datei erstellen …</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Drucke Postenbeschreibung...</value>

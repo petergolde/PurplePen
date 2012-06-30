@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Без символ</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Всички контролни точки</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Не може да зареди '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Не може да запише '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Не може да зареди картовия файл '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Не може да прочете графичен файл '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Не може да отпечата '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Не може да създаде '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Не може да създаде папка '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Не може да разчете картата поради следната причина: '{0}' Изполването на функцията Оптимизирай/Поправи в OCAD може да отстрани проблема.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Не може да създаде файлове за OCAD поради следната причина:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Искате ли да запишете промените направени в '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Файлът '{0}' вече съществува в указаната папка. Натисни бутона "Обратно" и избери нова папка или ново име на състезанието.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Сигнатурата '{0}' вече е използвана от друга контролна точка.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Стойностите на КТ трябва да са цяло число от 1 до 999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Сборното изкачване на маршрут трябва да е число от 0 до 9999 или празно поле.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Натовареността със състезатели на даден маршрут трябва да е число от 0 до 999999 или празно поле.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Отмени</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Отмени</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Възстанови</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Възстанови</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Изчисти избраното</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>&amp;Прекрати действието</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Прекрати действието</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Въведи нов маршрут</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Въведи нова сигнатура</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Въведи размер на обекта
+Използвай / за височина на склон
+Използвай | за два обекта</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Въведи ново име на състезанието
+Използвай | за разделяне на редовете
+(ще се приложи върху всички маршрути)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Въведи ново подзаглавие
+Използвай | за разделяне на редовете</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Въведи нов номер (име) на маршрута</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Въведи ново сборно изкачване в метри</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Въведи ново значение на символа
+(ще се приложи върху всички маршрути)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Въведи нов текст</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Контролните точки {0} повече не са използвани от никой от маршрутите. Искате ли да ги изтриете от сбирката с всички контролни точки?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Контролна точка {0} повече не се използва от никой от маршрутите. Искате ли да я изтриете от сбирката с всички контролни точки?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Контролна точка {0} е използвана в следните маршрути: {1}. Искате ли все пак да я изтриете?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Сигнатурата трябва да се състои от една, две или три букви или цифри.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>В сигнатурата не трябва да има празно пространство.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Сигнатурата трябва да е 31 или по-голямо число.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Сигнатурата не трябва да започва с нула.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Сигнатурата не трябва да прилича на друго число, ако се обърне обратно.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Сигнатурата "{0}" е използвана повече от един път.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Мащабът на печат трябва да е число между 100 и 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Данни за маршрута</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Хоризонтално</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Вертикално</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Размерът на страницата е твърде малък за отпечатване на описанията.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Версия {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Версия {0} на Purple Pen е налична за изтегляне. (В момента използвате версия {1}.)
+
+За да изтеглите последната версия, отидете на уебсайта на Purple Pen, като изберете "Purple Pen уебсайт" в менюто Помощ.</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Помощният файл '{0}' не може да бъде отворен.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Увеличи</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Картовият файл "{0}" не може да бъде открит.
+
+Най-вероятно картовият файл е бил преместен или изтрит, или Purple Pen файлът е бил преместен (може би на друг компютър). Картовият файл трябва да е наличен всеки път, когато Purple Pen файлът за съответното състезание се зарежда. Ако изпратите Purple Pen файла със състезанието на друг човек, уверете се, че той също притежава копие от картовия файл.
+
+След като натиснете Да, пробвайте да намерите копие от картовия файл на вашия компютър.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Всички контролни точки са използвани в маршрут.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Край</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Напред &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Контролна точка {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Финал</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Задължително място/точка за преминаване</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Пресичане</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Всички: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Отляво: {0}, Отдясно: {1}, Отгоре: {2}, Отдолу: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Старт</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>мн. ч.</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>ед. ч.</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Персонализираният текст изисква "*", за да се посочи къде е преместен промененият обект.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>програма за чертаене на маршрути по ориентиране</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Въведете текста, който искате да поставите на картата. След като натиснете Да, плъзнете мишката, за да поставите текста на желаното място.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Добави текст</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Въведи новия текст.</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Промени текст</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Друга програма е променила картовия файл "{0}". Purple Pen ще презареди картата.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Текущото състезание има текстови описания на контролните точки в {0}. Искате ли да промените езика на описанията на {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Отвори "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen трябва да се затвори преди да се заредят създадените файлове за OCAD.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Няма избрани маршрути за печат.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Ако на езика, на който се превежда, съществува уебсайт, съдържащ документация за Purple Pen, въведете адреса URL (включително http), както и преведеното наименование на този документ, в противен случай оставете празно.</value>
+  </data>
+</root>
