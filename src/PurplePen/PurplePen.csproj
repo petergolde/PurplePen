@@ -494,6 +494,9 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutForm.ro.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.sv.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,6 +519,9 @@
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.resx">
+      <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCourse.ro.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.sv.resx">
@@ -542,6 +548,9 @@
     <EmbeddedResource Include="AddTextLine.resx">
       <DependentUpon>AddTextLine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddTextLine.ro.resx">
+      <DependentUpon>AddTextLine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddTextLine.sv.resx">
       <DependentUpon>AddTextLine.cs</DependentUpon>
     </EmbeddedResource>
@@ -564,6 +573,9 @@
       <DependentUpon>AllControlsProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllControlsProperties.resx">
+      <DependentUpon>AllControlsProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllControlsProperties.ro.resx">
       <DependentUpon>AllControlsProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllControlsProperties.sv.resx">
@@ -590,6 +602,9 @@
     <EmbeddedResource Include="AutoNumbering.resx">
       <DependentUpon>AutoNumbering.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AutoNumbering.ro.resx">
+      <DependentUpon>AutoNumbering.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AutoNumbering.sv.resx">
       <DependentUpon>AutoNumbering.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +627,9 @@
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseDialog.resx">
+      <DependentUpon>BaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDialog.ro.resx">
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseDialog.sv.resx">
@@ -638,6 +656,9 @@
     <EmbeddedResource Include="BasicPrinting.resx">
       <DependentUpon>BasicPrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BasicPrinting.ro.resx">
+      <DependentUpon>BasicPrinting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BasicPrinting.sv.resx">
       <DependentUpon>BasicPrinting.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,6 +681,9 @@
       <DependentUpon>ChangeAllCodes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeAllCodes.resx">
+      <DependentUpon>ChangeAllCodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAllCodes.ro.resx">
       <DependentUpon>ChangeAllCodes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeAllCodes.sv.resx">
@@ -686,6 +710,9 @@
     <EmbeddedResource Include="ChangeCourseOrder.resx">
       <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeCourseOrder.ro.resx">
+      <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeCourseOrder.sv.resx">
       <DependentUpon>ChangeCourseOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -708,6 +735,9 @@
       <DependentUpon>ChangeMapFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeMapFile.resx">
+      <DependentUpon>ChangeMapFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeMapFile.ro.resx">
       <DependentUpon>ChangeMapFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeMapFile.sv.resx">
@@ -734,6 +764,9 @@
     <EmbeddedResource Include="ChangeSpecialCourses.resx">
       <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeSpecialCourses.ro.resx">
+      <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeSpecialCourses.sv.resx">
       <DependentUpon>ChangeSpecialCourses.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,6 +791,9 @@
     <EmbeddedResource Include="ChangeText.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeText.ro.resx">
+      <DependentUpon>ChangeText.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeText.sv.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
@@ -768,6 +804,7 @@
     <EmbeddedResource Include="CommandNameText.nb-NO.resx" />
     <EmbeddedResource Include="CommandNameText.nn-NO.resx" />
     <EmbeddedResource Include="CommandNameText.resx" />
+    <EmbeddedResource Include="CommandNameText.ro.resx" />
     <EmbeddedResource Include="CommandNameText.sv.resx" />
     <EmbeddedResource Include="CourseAppearanceDialog.bg.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
@@ -788,6 +825,9 @@
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.resx">
+      <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseAppearanceDialog.ro.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.sv.resx">
@@ -814,6 +854,9 @@
     <EmbeddedResource Include="CourseLoad.resx">
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CourseLoad.ro.resx">
+      <DependentUpon>CourseLoad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseLoad.sv.resx">
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </EmbeddedResource>
@@ -836,6 +879,9 @@
       <DependentUpon>CourseSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.resx">
+      <DependentUpon>CourseSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseSelector.ro.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.sv.resx">
@@ -862,6 +908,9 @@
     <EmbeddedResource Include="CreateOcadFiles.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateOcadFiles.ro.resx">
+      <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.sv.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </EmbeddedResource>
@@ -886,6 +935,9 @@
     <EmbeddedResource Include="CreateRouteGadget.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateRouteGadget.ro.resx">
+      <DependentUpon>CreateRouteGadget.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.sv.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
     </EmbeddedResource>
@@ -908,6 +960,9 @@
       <DependentUpon>CustomSymbolText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomSymbolText.resx">
+      <DependentUpon>CustomSymbolText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomSymbolText.ro.resx">
       <DependentUpon>CustomSymbolText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomSymbolText.sv.resx">
@@ -958,6 +1013,9 @@
     <EmbeddedResource Include="DescriptionControl.resx">
       <DependentUpon>DescriptionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionControl.ro.resx">
+      <DependentUpon>DescriptionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DescriptionControl.sv.resx">
       <DependentUpon>DescriptionControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -980,6 +1038,9 @@
       <DependentUpon>DescriptionPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DescriptionPrinting.resx">
+      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescriptionPrinting.ro.resx">
       <DependentUpon>DescriptionPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DescriptionPrinting.sv.resx">
@@ -1006,6 +1067,9 @@
     <EmbeddedResource Include="DotGrid.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DotGrid.ro.resx">
+      <DependentUpon>DotGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DotGrid.sv.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -1028,6 +1092,9 @@
       <DependentUpon>EnterSymbolText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterSymbolText.resx">
+      <DependentUpon>EnterSymbolText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterSymbolText.ro.resx">
       <DependentUpon>EnterSymbolText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterSymbolText.sv.resx">
@@ -1054,6 +1121,9 @@
     <EmbeddedResource Include="InitialScreen.resx">
       <DependentUpon>InitialScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InitialScreen.ro.resx">
+      <DependentUpon>InitialScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialScreen.sv.resx">
       <DependentUpon>InitialScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -1076,6 +1146,9 @@
       <DependentUpon>LicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseForm.ro.resx">
       <DependentUpon>LicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LicenseForm.sv.resx">
@@ -1102,6 +1175,9 @@
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainFrame.ro.resx">
+      <DependentUpon>MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.sv.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -1118,6 +1194,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.ro.resx" />
     <EmbeddedResource Include="MiscText.sv.resx" />
     <EmbeddedResource Include="MissingFonts.bg.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
@@ -1138,6 +1215,9 @@
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.resx">
+      <DependentUpon>MissingFonts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingFonts.ro.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.sv.resx">
@@ -1164,6 +1244,9 @@
     <EmbeddedResource Include="NewEventBitmapScale.resx">
       <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewEventBitmapScale.ro.resx">
+      <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventBitmapScale.sv.resx">
       <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
     </EmbeddedResource>
@@ -1186,6 +1269,9 @@
       <DependentUpon>NewEventDirectory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventDirectory.resx">
+      <DependentUpon>NewEventDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventDirectory.ro.resx">
       <DependentUpon>NewEventDirectory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventDirectory.sv.resx">
@@ -1212,6 +1298,9 @@
     <EmbeddedResource Include="NewEventFinal.resx">
       <DependentUpon>NewEventFinal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewEventFinal.ro.resx">
+      <DependentUpon>NewEventFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventFinal.sv.resx">
       <DependentUpon>NewEventFinal.cs</DependentUpon>
     </EmbeddedResource>
@@ -1234,6 +1323,9 @@
       <DependentUpon>NewEventMapFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventMapFile.resx">
+      <DependentUpon>NewEventMapFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventMapFile.ro.resx">
       <DependentUpon>NewEventMapFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventMapFile.sv.resx">
@@ -1260,6 +1352,9 @@
     <EmbeddedResource Include="NewEventNumbering.resx">
       <DependentUpon>NewEventNumbering.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewEventNumbering.ro.resx">
+      <DependentUpon>NewEventNumbering.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventNumbering.sv.resx">
       <DependentUpon>NewEventNumbering.cs</DependentUpon>
     </EmbeddedResource>
@@ -1282,6 +1377,9 @@
       <DependentUpon>NewEventPrintScale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventPrintScale.resx">
+      <DependentUpon>NewEventPrintScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventPrintScale.ro.resx">
       <DependentUpon>NewEventPrintScale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventPrintScale.sv.resx">
@@ -1308,6 +1406,9 @@
     <EmbeddedResource Include="NewEventTitle.resx">
       <DependentUpon>NewEventTitle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewEventTitle.ro.resx">
+      <DependentUpon>NewEventTitle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventTitle.sv.resx">
       <DependentUpon>NewEventTitle.cs</DependentUpon>
     </EmbeddedResource>
@@ -1330,6 +1431,9 @@
       <DependentUpon>NewEventWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventWizard.resx">
+      <DependentUpon>NewEventWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventWizard.ro.resx">
       <DependentUpon>NewEventWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventWizard.sv.resx">
@@ -1357,6 +1461,9 @@
       <DependentUpon>NonPrintableObjects.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="NonPrintableObjects.ro.resx">
+      <DependentUpon>NonPrintableObjects.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NonPrintableObjects.sv.resx">
       <DependentUpon>NonPrintableObjects.cs</DependentUpon>
     </EmbeddedResource>
@@ -1379,6 +1486,9 @@
       <DependentUpon>OkCancelDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OkCancelDialog.resx">
+      <DependentUpon>OkCancelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkCancelDialog.ro.resx">
       <DependentUpon>OkCancelDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OkCancelDialog.sv.resx">
@@ -1405,6 +1515,9 @@
     <EmbeddedResource Include="OverwritingOcadFilesDialog.resx">
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OverwritingOcadFilesDialog.ro.resx">
+      <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OverwritingOcadFilesDialog.sv.resx">
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1427,6 +1540,9 @@
       <DependentUpon>PrintCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintCourses.resx">
+      <DependentUpon>PrintCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintCourses.ro.resx">
       <DependentUpon>PrintCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintCourses.sv.resx">
@@ -1453,6 +1569,9 @@
     <EmbeddedResource Include="PrintDescriptions.resx">
       <DependentUpon>PrintDescriptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintDescriptions.ro.resx">
+      <DependentUpon>PrintDescriptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintDescriptions.sv.resx">
       <DependentUpon>PrintDescriptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -1475,6 +1594,9 @@
       <DependentUpon>PrintPunches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintPunches.resx">
+      <DependentUpon>PrintPunches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintPunches.ro.resx">
       <DependentUpon>PrintPunches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintPunches.sv.resx">
@@ -1511,6 +1633,9 @@
     <EmbeddedResource Include="PunchcardLayoutDialog.resx">
       <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PunchcardLayoutDialog.ro.resx">
+      <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PunchcardLayoutDialog.sv.resx">
       <DependentUpon>PunchcardLayoutDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1533,6 +1658,9 @@
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PunchPatternDialog.resx">
+      <DependentUpon>PunchPatternDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PunchPatternDialog.ro.resx">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PunchPatternDialog.sv.resx">
@@ -1559,6 +1687,9 @@
     <EmbeddedResource Include="RectanglePrinting.resx">
       <DependentUpon>RectanglePrinting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RectanglePrinting.ro.resx">
+      <DependentUpon>RectanglePrinting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RectanglePrinting.sv.resx">
       <DependentUpon>RectanglePrinting.cs</DependentUpon>
     </EmbeddedResource>
@@ -1583,6 +1714,9 @@
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.ro.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.sv.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1593,6 +1727,7 @@
     <EmbeddedResource Include="ReportText.nb-NO.resx" />
     <EmbeddedResource Include="ReportText.nn-NO.resx" />
     <EmbeddedResource Include="ReportText.resx" />
+    <EmbeddedResource Include="ReportText.ro.resx" />
     <EmbeddedResource Include="ReportText.sv.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.bg.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.es.resx" />
@@ -1601,6 +1736,7 @@
     <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.resx" />
+    <EmbeddedResource Include="SelectionDescriptionText.ro.resx" />
     <EmbeddedResource Include="SelectionDescriptionText.sv.resx" />
     <EmbeddedResource Include="SetPrintAreaDialog.bg.resx">
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
@@ -1621,6 +1757,9 @@
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.resx">
+      <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetPrintAreaDialog.ro.resx">
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.sv.resx">
@@ -1647,6 +1786,9 @@
     <EmbeddedResource Include="SetUILanguage.resx">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SetUILanguage.ro.resx">
+      <DependentUpon>SetUILanguage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SetUILanguage.sv.resx">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </EmbeddedResource>
@@ -1657,6 +1799,7 @@
     <EmbeddedResource Include="StatusBarText.nb-NO.resx" />
     <EmbeddedResource Include="StatusBarText.nn-NO.resx" />
     <EmbeddedResource Include="StatusBarText.resx" />
+    <EmbeddedResource Include="StatusBarText.ro.resx" />
     <EmbeddedResource Include="StatusBarText.sv.resx" />
     <EmbeddedResource Include="UnusedControls.bg.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
@@ -1677,6 +1820,9 @@
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.resx">
+      <DependentUpon>UnusedControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnusedControls.ro.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.sv.resx">

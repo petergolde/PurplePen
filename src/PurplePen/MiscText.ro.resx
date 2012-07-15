@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Nici un simbol</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Toate posturile</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Nu se poate încărca '{0}' deoarece:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Nu se poate salva '{0}' deoarece:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Nu se poate încărca fișierul hartă '{0}' deoarece:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Nu se poate citi fișierul de imagine '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Nu se poate tipări '{0}' deoarece:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Nu se poate crea '{0}' deoarece:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Nu se poate crea directorul '{0}' deoarece:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Nu se poate citi harta deoarece: '{0}' Folosind opțiunea Optimize/Repair în OCAD poate rezolva problema.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Nu se poate crea fișierul OCAD deoarece:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Doriți să salvați schimbările efectuate la '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Fișierul '{0}' exista deja în directorul specificat. Click pe butonul "Înapoi" și alegeți un nou director sau un nou titlu de eveniment.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Codul '{0}' este deja folosit de un alt post.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Punctajul pentru un post trebuie sa fie un întreg între 1 și  999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Diferența de nivel a traseului trebuie să fie număr de la 0 până la 9999, sau câmp gol.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Încărcarea unui traseu trebuie să fie un întreg de la 0 până la 999999, sau câmp gol.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>An&amp;ulare</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Refacere</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Refacere</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Golește selecția</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>Anulare Operațiune</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Anulare Operațiune</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Introduceți noul scor</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Introduceți noul cod</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Introduceți dimensiunea elementului
+Folosiți / pentru înălțime și pantă
+Folosiți | pentru două elemente</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Introduceți noul titlu de eveniment
+Folosiți | pentru a separa liniile
+(afectează toate traseele)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Introduceți noua linie secundară
+Folosiți | pentru a separa liniile</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Introduceți noul nume de traseu</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Introduceți noua diferență de nivel in metri</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Introduceți noua semnificație de simbol
+(afectează toate traseele)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Introduceți noul text</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Postul {0} nu mai este folosit în nici un traseu. Doriți sa-l stergeți din colecția de posturi?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Postul {0} nu mai este folosit în nici un traseu. Doriți să ștergeți acest post din colecția de posturi?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Postul {0} este folosit de următoarele trasee: {1}. Doriți oricum să-l ștegeți?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Un cod de post trebuie să conțină una, două sau trei litere sau cifre.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Un cod de post nu poate conține spațiu.</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Un cod de post trebuie să fie 31 sau mai mult.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Un cod de post nu poate începe cu zero.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Un cod de post nu trebuie să semene cu alt cod întors cu susul în jos.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Codul "{0}" e folosit cel puțin o dată.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Scara de imprimare trebuie să fie un număr între 100 și 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Proprietăți traseu</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Panoramic</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portret</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Dimensiunea paginii e prea mică pentru a tipări decrierea.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Versiunea {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Versiunea {0} a programului Purple Pen este disponibilă pentru descărcare. (Versiunea curentă este {1}.)
+
+Pentru a descărca ultima versiune, vizitați websit-ul Purple Pen prin selectarea meniului  Asistență - "Purple Pen Web Site".</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Fișierul de asistență '{0}' nu a putut fi deschis.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Fișierul hartă "{0}" nu a putut fi găsit.
+ 
+Cel mai probabil, fișierul hartă a fost mutat sau șters, sau fișierul Purple Pen a fost mutat (probabil pe un alt calculator). Fișierul hartă trebuie să fie prezent oricând se încarcă fișierul Purple Pen cu evenimentul dorit. Dacă trimiteți fișierul Purple Pen cu evenimentul unei alte persoane, asigurați-vă deasemeni că persoana respectivă deține o copie a fișierului hartă.
+ 
+După ce apăsați OK, încercați să localizați o copie a fișierului hartă pe calculatorul dumneavoastră.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Toate posturile sunt folosite într-un traseu.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Finalizare</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Următor &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Postul {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Sosire</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Punct de trecere obligatoriu</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Încrucișare</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Toate: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Stânga: {0}, Dreapta: {1}, Sus: {2}, Jos: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>plural</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>singular</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Textul personalizat are nevoie de simbolul "*" pentru a indica amplasarea obiectului modificat.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>setare traseu pentru orientare</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Introduceți textul pe care doriți să-l amplasați pe hartă. După ce apăsați OK, trageți mouse-ul pentru a poziționa textul în locația dorită.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Adăugare Text</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Introducere Text</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Schimbare Text</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Un alt program a modificat fișierul hartă "{0}". Purple Pen va reîncărca harta.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Evenimentul curent are descrierea posturilor în limba {0}. Doriți să schimbați descrierea posturilor în limba {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Deschidere "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen trebuie să fie închis înainte de a încărca fișierele OCAD create.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Nu a fost selectat nici un traseu pentru tipărire.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Dacă există un site în limba tradusă care conține documentație pentru Purple Pen, introduceți adresa de internet URL (inclusiv http) ca și traducere a acestui element. Altfel lăsați-l neatins.</value>
+  </data>
+</root>
