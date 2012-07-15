@@ -170,7 +170,7 @@ namespace PurplePen.Tests
         public void CustomSymbolsOtherLanguage()
         {
             Setup();
-            Textifier textifier = new Textifier(eventDB, symbolDB, "bg");
+            Textifier textifier = new Textifier(eventDB, symbolDB, "aa");
 
             Assert.AreEqual("Marshy special item", textifier.CreateTextForControl(ControlId(25), ""));
             Assert.AreEqual("Smurf (first aid)", textifier.CreateTextForControl(ControlId(26), ""));
