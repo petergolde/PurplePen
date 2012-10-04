@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Diferență de nivel</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Cod</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Coloană</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Post de control</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Coduri post</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Posturi de control</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Traseu</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distanță</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Secțiune</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Lungime</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Locație</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value>Număr Trasee</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Motiv</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Același simbol?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Rezumatul traseelor - {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Referințe încrucișate posturi de control - {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Posturi de Control Apropiate</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Tabelul următor afișează perechile de posturi de control care sunt mai aproape de {0} metri unul de celălalt. Coloana "același simbol" afișează dacă cele două posturi au același simbol primar (coloana D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Căsuțe Fără Descriere</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Traseele normale trebuie să indice diferența de nivel aferentă</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Toate posturile trebuie să aibă un simbol principal în coloana D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Când se folosește "între" în coloana G, cele două repere/simboluri trebuiesc specificate în coloanele D și E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Când se folosește "bifurcație" sau "intersecție" în coloana F, cele două elemente/simboluri trebuiesc specificate în coloanele D and E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Traseele normale trebuie să aibă un cerc de sosire</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Elemente Lipsă în Trasee</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Traseul ar trebui să aibă estimarea încărcării cu participanți</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Nu a fost definit nici un model de compostare</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Modele de Compostare Lipsă</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Traseul cu scor ar trebui să aibă setat un scor individual pentru toate posturile sau pentru nici un post de control</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Scoruri Lipsă</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Traseele normale trebuie sa aibă un triunghi de start</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Traseele cu scor trebuie sa aibă un triunghi de start</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Nu a fost identificată nici o problemă.</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Verificare Eveniment {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Posturi Control Nefolosite</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Următoarele posturi de control sunt prezente în lista tuturor posturilor dar nu sunt folosite în nici un traseu. Pentru a le elimina, accesați comanda "Eliminare Posturi Control Nefolosite" din meniul "Eveniment". Aceste posturi de control nu vor mai fi luate în considerare în continuare în acest raport.</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} posturi, {2:0.0} km, {3} m diferență nivel)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} posturi, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Raport Lungimi Secțiuni - {0}</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Încărcarea posturilor de control</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Încărcare Secțiuni</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Unele sau toate traseele nu au specificate încărcarea de participanți. Încărcările afișate dedesubt pot fi incorecte sau pot avea lipsuri din acest motiv. Pentru a introduce încărcarea cu participanți, accesați "Încărcare Participanți" din meniul "Traseu".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(doar secțiunile folosite în cel puțin un traseu apar în tabelul următor)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Rezumat încărcare participanți - {0}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>ATENȚIE:</value>
+  </data>
+</root>

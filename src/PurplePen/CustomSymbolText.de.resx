@@ -123,6 +123,9 @@
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Symbolname:</value>
   </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>Beutzererfinderter Text:</value>
+  </data>
   <data name="buttonChangeText.Text" xml:space="preserve">
     <value>Ändere Text...</value>
   </data>

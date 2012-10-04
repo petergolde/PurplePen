@@ -1,0 +1,2827 @@
+# Purple Pen localization file
+# Copyright (C) 2008
+# This file is distributed under the same license as the Purple Pen package.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Purple Pen 1.1.5\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2012-10-04 12:42-07:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AboutForm.resx, copyrightLabel.Text
+msgid "Copyright © 2007-2011 by Peter Golde"
+msgstr "© Peter Golde, 2007-2011"
+
+#: AboutForm.resx, freeLabel.Text
+msgid "Purple Pen is free software and may be copied and shared."
+msgstr "Purple Pen е свободен софтуер, който може да бъде копиран "
+"и споделян."
+
+#: AboutForm.resx, disclaimerLabel.Text
+msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
+"CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED "
+"WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED."
+msgstr "Този софтуер е предоставен от неговите автори и сътрудници "
+"във вида, в който е, като те се отказват от всички изрично "
+"споменати или подразбиращи се права, включително, но не "
+"само подразбиращите се права за платено разпространение и "
+"използване за определена цел."
+
+#: AboutForm.resx, okButton.Text
+#: InitialScreen.resx, okButton.Text
+#: LicenseForm.resx, okButton.Text
+#: MissingFonts.resx, okButton.Text
+#: OkCancelDialog.resx, okButton.Text
+msgid "OK"
+msgstr "Да"
+
+#: AboutForm.resx, creditsButton.Text
+msgid "Credits"
+msgstr "Заслуги"
+
+#: AboutForm.resx, licenseButton.Text
+msgid "View Full License"
+msgstr "Виж пълното съдържание на лиценза"
+
+#: AboutForm.resx, $this.Text
+msgid "About Purple Pen"
+msgstr "За програмата Purple Pen"
+
+#: AddCourse.resx, firstControlLabel.Text
+msgid "First control number:"
+msgstr "Номер на първата контролна точка:"
+
+#: AddCourse.resx, descriptionAppearanceLabel.Text
+#: AllControlsProperties.resx, descriptionAppearanceLabel.Text
+msgid "Description appearance:"
+msgstr "Оформление на описанията на КТ:"
+
+#: AddCourse.resx, mapScaleLabel.Text
+#: AllControlsProperties.resx, printingScaleLabel.Text
+msgid "Map printing scale:"
+msgstr "Мащаб на отпечатване на картата:"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1: "
+
+#: AddCourse.resx, descKindCombo.Items
+#: AllControlsProperties.resx, descKindCombo.Items
+#: PrintDescriptions.resx, descriptionKindCombo.Items1
+msgid "Symbols"
+msgstr "Символи"
+
+#: AddCourse.resx, descKindCombo.Items1
+#: AllControlsProperties.resx, descKindCombo.Items1
+#: EnterSymbolText.resx, textColumn.HeaderText
+#: MainFrame.resx, addTextMenu.Text
+#: MainFrame.resx, textToolStripMenuItem.Text
+#: PrintDescriptions.resx, descriptionKindCombo.Items2
+#: SelectionDescriptionText.resx, SpecialName_Text
+msgid "Text"
+msgstr "Текст"
+
+#: AddCourse.resx, descKindCombo.Items2
+#: AllControlsProperties.resx, descKindCombo.Items2
+msgid "Symbols and text"
+msgstr "Символи и текст"
+
+#: AddCourse.resx, labelKindLabel.Text
+msgid "Control circle labels:"
+msgstr "Вид на номерацията на КТ:"
+
+#: AddCourse.resx, labelKindCombo.Items
+msgid "Sequence number (3)"
+msgstr "Номер по ред (3)"
+
+#: AddCourse.resx, labelKindCombo.Items1
+msgid "Control code (145)"
+msgstr "Сигнатура (145)"
+
+#: AddCourse.resx, labelKindCombo.Items2
+msgid "Sequence and code (3-145)"
+msgstr "Номер по ред и сигнатура (3-145)"
+
+#: AddCourse.resx, scoreColumnLabel.Text
+msgid "Show points in:"
+msgstr "Покажи стойностите на КТ в:"
+
+#: AddCourse.resx, scoreColumnCombo.Items
+msgid "Column A"
+msgstr "Колона A"
+
+#: AddCourse.resx, scoreColumnCombo.Items1
+msgid "Column B"
+msgstr "Колона B"
+
+#: AddCourse.resx, scoreColumnCombo.Items2
+msgid "Column H"
+msgstr "Колона H"
+
+#: AddCourse.resx, scoreColumnCombo.Items3
+msgid "(do not display)"
+msgstr "(не показвай)"
+
+#: AddCourse.resx, groupBox1.Text
+#: AllControlsProperties.resx, appearanceGroupBox.Text
+#: PrintCourses.resx, groupBoxAppearance.Text
+#: PrintDescriptions.resx, layoutGroup.Text
+#: PrintPunches.resx, layoutGroup.Text
+msgid "Appearance"
+msgstr "Оформление"
+
+#: AddCourse.resx, secondaryTitleDescription.Text
+msgid "The following (optional) text will appear on the second "
+"line of the control description sheet:"
+msgstr "Следният (незадължителен) текст ще се изобрази на втория "
+"ред от описанието на КТ."
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Списък на класовете / Подзаглавие"
+
+#: AddCourse.resx, climbLabel.Text
+#: SelectionDescriptionText.resx, Climb
+msgid "Climb:"
+msgstr "Изкачване:"
+
+#: AddCourse.resx, courseTypeLabel.Text
+msgid "Course type:"
+msgstr "Вид на маршрута:"
+
+#: AddCourse.resx, courseNameLabel.Text
+msgid "Course name:"
+msgstr "Номер (име) на маршрута:"
+
+#: AddCourse.resx, courseKindCombo.Items
+msgid "Normal Course"
+msgstr "Обикновен маршрут"
+
+#: AddCourse.resx, courseKindCombo.Items1
+msgid "Score Course"
+msgstr "Скорелауф"
+
+#: AddCourse.resx, metersSuffix.Text
+msgid "meters"
+msgstr "метри"
+
+#: AddCourse.resx, $this.Text
+#: CommandNameText.resx, NewCourse
+msgid "New Course"
+msgstr "Нов маршрут"
+
+#: AddTextLine.resx, textLineLabel.Text
+msgid "Enter text to place on separate line of control "
+"descriptions:"
+msgstr "Въведете текст, който да се изобрази на отделен ред в "
+"описанието на КТ:"
+
+#: AddTextLine.resx, coursesLabel.Text
+msgid "Courses:"
+msgstr "Маршрути:"
+
+#: AddTextLine.resx, positionLabel.Text
+msgid "Position:"
+msgstr "Разположение:"
+
+#: AddTextLine.resx, comboBoxPosition.Items
+msgid "Above {0}"
+msgstr "Над {0}"
+
+#: AddTextLine.resx, comboBoxPosition.Items1
+msgid "Below {0}"
+msgstr "Под {0}"
+
+#: AddTextLine.resx, comboBoxCourses.Items
+msgid "This course only"
+msgstr "Само за този маршрут"
+
+#: AddTextLine.resx, comboBoxCourses.Items1
+msgid "All courses with {0}"
+msgstr "Всички маршрути с {0}"
+
+#: AddTextLine.resx, $this.Text
+#: CommandNameText.resx, AddTextLine
+msgid "Add Text Line"
+msgstr "Добави ред за текст"
+
+#: AllControlsProperties.resx, allControlsPropertiesLabel.Text
+msgid "These settings control how the map and descriptions for "
+"All Controls are printed."
+msgstr "Тези настройки контролират отпечатването на картата и "
+"описанията на всички контролни точки."
+
+#: AllControlsProperties.resx, $this.Text
+msgid "All Controls Properties"
+msgstr "Данни за всички КТ"
+
+#: AutoNumbering.resx, disallowInvertibleCheckBox.Text
+#: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
+msgid "Disallow codes that could be read upside-down (e.g., "
+"\"68\"/\"89\")"
+msgstr "Не позволявай сигнатури, които могат да се прочетат "
+"обратно (напр. \"68\"/\"89\")"
+
+#: AutoNumbering.resx, renumberExistingRadioButton.Text
+msgid "Renumber existing controls also"
+msgstr "Преподреди също и съществуващите КТ."
+
+#: AutoNumbering.resx, newControlsOnlyRadioButton.Text
+msgid "Apply these settings to newly created controls only"
+msgstr "Приложи тези настройки само за новосъздадени КТ."
+
+#: AutoNumbering.resx, existingControlsGroupBox.Text
+msgid "Existing Controls"
+msgstr "Съществуващи контролни точки"
+
+#: AutoNumbering.resx, automaticNumberingLabel.Text
+msgid "Newly created controls are automatically numbered "
+"according to the following settings."
+msgstr "Новосъздадените КТ се номерират автоматично според "
+"следните настройки."
+
+#: AutoNumbering.resx, startingCodeLabel.Text
+#: NewEventNumbering.resx, startingCodeLabel.Text
+msgid "Starting code:"
+msgstr "Начална сигнатура:"
+
+#: AutoNumbering.resx, $this.Text
+#: CommandNameText.resx, AutoNumbering
+msgid "Automatic Numbering"
+msgstr "Автоматично номериране"
+
+#: ChangeAllCodes.resx, OldCode.HeaderText
+msgid "Original Code"
+msgstr "Първоначална сигнатура"
+
+#: ChangeAllCodes.resx, NewCode.HeaderText
+msgid "New Code"
+msgstr "Нова сигнатура"
+
+#: ChangeAllCodes.resx, changeControlCodesLabel.Text
+msgid "To change the code for one or more controls,click in the "
+"\"New Code\" column and enter the new code. "
+msgstr "За да промените сигнатурата на една или повече КТ, "
+"кликнете в колоната \"Нова сигнатура\" и я въведете. "
+
+#: ChangeAllCodes.resx, $this.Text
+msgid "Change Control Codes"
+msgstr "Промени сигнатурите на КТ"
+
+#: ChangeCourseOrder.resx, moveDownButton.Text
+msgid "Move down"
+msgstr "Премести надолу"
+
+#: ChangeCourseOrder.resx, courseOrderLabel.Text
+msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
+"order that courses are listed in the user interface, "
+"reports, and printing."
+msgstr "Използвай бутоните \"Премести нагоре\" и \"Премести надолу\" "
+"за смяна на поредността, в която маршрутите се появяват в "
+"потребителския интерфейс, справките и за печат."
+
+#: ChangeCourseOrder.resx, moveUpButton.Text
+msgid "Move up"
+msgstr "Премести нагоре"
+
+#: ChangeCourseOrder.resx, $this.Text
+msgid "Course Order"
+msgstr "Поредност на маршрутите"
+
+#: ChangeMapFile.resx, mapFileDisplay.Text
+msgid "Current Map File"
+msgstr "Текущ картов файл"
+
+#: ChangeMapFile.resx, buttonChooseFile.Text
+#: NewEventMapFile.resx, chooseMapFileButton.Text
+msgid "&Choose map file..."
+msgstr "&Избери картов файл..."
+
+#: ChangeMapFile.resx, openFileDialog.Filter
+#: NewEventMapFile.resx, openFileDialog.Filter
+msgid "OCAD files (*.ocd)|*.ocd|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+msgstr "OCAD файлове (*.ocd)|*.ocd|Графични "
+"файлове|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+
+#: ChangeMapFile.resx, labelDpi.Text
+msgid "Resolution:"
+msgstr "Резолюция:"
+
+#: ChangeMapFile.resx, labelScale.Text
+msgid "Scale:"
+msgstr "Мащаб:"
+
+#: ChangeMapFile.resx, labelOneTo.Text
+msgid "1 :"
+msgstr "1:"
+
+#: ChangeMapFile.resx, labelDpi2.Text
+#: NewEventBitmapScale.resx, dpiLabel.Text
+msgid "dots per inch"
+msgstr "точки на инч"
+
+#: ChangeMapFile.resx, $this.Text
+msgid "Map File"
+msgstr "Картов файл"
+
+#: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
+msgid "Choose the courses that this object will be displayed on:"
+msgstr "Избери маршрутите, в които този обект ще се появи:"
+
+#: ChangeSpecialCourses.resx, $this.Text
+#: CommandNameText.resx, ChangeDisplayedCourses
+msgid "Change Displayed Courses"
+msgstr "Промени показаните маршрути"
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "Вмъкни специален текст"
+
+#: ChangeText.resx, eventTitleMenuItem.Text
+msgid "Event Title"
+msgstr "Наименование на състезанието"
+
+#: ChangeText.resx, courseNameMenuItem.Text
+#: CourseLoad.resx, CourseName.HeaderText
+#: SelectionDescriptionText.resx, SpecialName_CourseName
+msgid "Course Name"
+msgstr "Номер (име) на маршрута"
+
+#: ChangeText.resx, courseLengthMenuItem.Text
+msgid "Course Length"
+msgstr "Дължина на маршрута"
+
+#: ChangeText.resx, courseClimbMenuItem.Text
+msgid "Course Climb"
+msgstr "Сборно изкачване"
+
+#: ChangeText.resx, classListMenuItem.Text
+msgid "Class List"
+msgstr "Списък на класовете"
+
+#: CommandNameText.resx, ChangeSymbol
+msgid "Change Symbol"
+msgstr "Промени символа"
+
+#: CommandNameText.resx, ChangeCode
+msgid "Change Control Code"
+msgstr "Промени сигнатура"
+
+#: CommandNameText.resx, ChangeControl
+msgid "Change Control"
+msgstr "Промени контролната точка"
+
+#: CommandNameText.resx, ChangeScore
+msgid "Change Control Points"
+msgstr "Промени стойностите на КТ"
+
+#: CommandNameText.resx, ChangeTitle
+msgid "Change Title"
+msgstr "Промени наименованието"
+
+#: CommandNameText.resx, ChangeClimb
+msgid "Change Climb"
+msgstr "Промени сборното изкачване"
+
+#: CommandNameText.resx, ChangeCourseName
+msgid "Change Course Name"
+msgstr "Промени номера на маршрута"
+
+#: CommandNameText.resx, ChangeTextLine
+msgid "Change Text Line"
+msgstr "Промени реда за текст в описанията"
+
+#: CommandNameText.resx, ChangeScale
+msgid "Update Map Scale"
+msgstr "Актуализирай мащаба на картата"
+
+#: CommandNameText.resx, MoveControl
+msgid "Move Control"
+msgstr "Премести контролна точка"
+
+#: CommandNameText.resx, MoveControlNumber
+msgid "Move Control Number"
+msgstr "Премести номер на КТ"
+
+#: CommandNameText.resx, MoveObject
+msgid "Move Object"
+msgstr "Премести обекта"
+
+#: CommandNameText.resx, DeleteControl
+msgid "Delete Control"
+msgstr "Изтрий контролна точка"
+
+#: CommandNameText.resx, DeleteObject
+msgid "Delete Object"
+msgstr "Изтрий обект"
+
+#: CommandNameText.resx, DeleteTextLine
+msgid "Delete Text Line"
+msgstr "Изтрий ред за текст"
+
+#: CommandNameText.resx, AddControl
+#: MainFrame.resx, addControlToolStripButton.Text
+msgid "Add Control"
+msgstr "Добави контролна точка"
+
+#: CommandNameText.resx, AddStart
+#: MainFrame.resx, addStartToolStripButton.Text
+msgid "Add Start"
+msgstr "Добави старт"
+
+#: CommandNameText.resx, AddFinish
+#: MainFrame.resx, addFinishToolStripButton.Text
+msgid "Add Finish"
+msgstr "Добави финал"
+
+#: CommandNameText.resx, AddCrossingPoint
+msgid "Add Mandatory Crossing Point"
+msgstr "Добави задължително място за преминаване"
+
+#: CommandNameText.resx, AddObject
+msgid "Add Object"
+msgstr "Добави обект"
+
+#: CommandNameText.resx, DeleteCourse
+msgid "Delete Course"
+msgstr "Изтрий маршрут"
+
+#: CommandNameText.resx, ChangeCourseProperties
+msgid "Change Course Properties"
+msgstr "Промени данните на маршрута"
+
+#: CommandNameText.resx, ChangeAllControlsProperties
+msgid "Change All Controls Properties"
+msgstr "Промени данни за всички КТ"
+
+#: CommandNameText.resx, NewEvent
+#: NewEventWizard.resx, $this.Text
+msgid "Create New Event"
+msgstr "Създай ново състезание"
+
+#: CommandNameText.resx, SetLegFlagging
+msgid "Change Leg Flagging"
+msgstr "Промени маркировка на отсечка"
+
+#: CommandNameText.resx, ChangeCodes
+msgid "Change Codes"
+msgstr "Промени сигнатурите"
+
+#: CommandNameText.resx, MoveBend
+msgid "Move Leg Bend"
+msgstr "Премести извивката на отсечка"
+
+#: CommandNameText.resx, AddBend
+msgid "Add Bend"
+msgstr "Добави извивка"
+
+#: CommandNameText.resx, AddCorner
+msgid "Add Corner"
+msgstr "Добави ъгъл"
+
+#: CommandNameText.resx, DeleteBend
+msgid "Remove Bend"
+msgstr "Премахни извивка"
+
+#: CommandNameText.resx, DeleteCorner
+msgid "Remove Corner"
+msgstr "Премахни ъгъл"
+
+#: CommandNameText.resx, AddGap
+msgid "Add Gap"
+msgstr "Добави прекъсване"
+
+#: CommandNameText.resx, RemoveGap
+msgid "Remove Gap"
+msgstr "Премахни прекъсване"
+
+#: CommandNameText.resx, MoveGap
+msgid "Move Gap"
+msgstr "Премести прекъсване"
+
+#: CommandNameText.resx, Rotate
+msgid "Rotate"
+msgstr "Завърти"
+
+#: CommandNameText.resx, ChangePunchPatterns
+msgid "Change Punch Patterns"
+msgstr "Промени отпечатъците от перфораторите"
+
+#: CommandNameText.resx, ChangePunchcardFormat
+msgid "Change Punch Card Layout"
+msgstr "Промени оформлението на състезателния картон"
+
+#: CommandNameText.resx, SetPrintArea
+#: SetPrintAreaDialog.resx, $this.Text
+msgid "Set Print Area"
+msgstr "Задай зона за отпечатване"
+
+#: CommandNameText.resx, SetCourseLoad
+msgid "Change Competitor Load"
+msgstr "Промени броя състезатели на маршрут"
+
+#: CommandNameText.resx, SetCustomSymbolText
+#: CustomSymbolText.resx, $this.Text
+msgid "Customize Description Text"
+msgstr "Персонализирай текста на описанията"
+
+#: CommandNameText.resx, ChangeCourseOrder
+msgid "Change Course Order"
+msgstr "Промени поредността на маршрутите"
+
+#: CommandNameText.resx, ChangeMapFile
+msgid "Change Map File"
+msgstr "Смени файла на картата"
+
+#: CommandNameText.resx, IgnoreMissingFonts
+msgid "Ignore Missing Fonts"
+msgstr "Подмини съобщението за липсващи шрифтове"
+
+#: CommandNameText.resx, RemoveUnusedControls
+msgid "Remove Unused Controls"
+msgstr "Премахни неизползваните КТ"
+
+#: CommandNameText.resx, SetDescriptionLanguage
+msgid "Change Description Language"
+msgstr "Промени езика на описанията"
+
+#: CommandNameText.resx, ChangeText
+#: MiscText.resx, ChangeTextTitle
+msgid "Change Text"
+msgstr "Промени текст"
+
+#: CommandNameText.resx, ChangeCourseAppearance
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Course Appearance"
+msgstr "Персонализирай външния изглед на маршрута"
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr "Обикновен"
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "Получер"
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr "Стил на изписване на номера на КТ:"
+
+#: CourseAppearanceDialog.resx, labelControlNumber.Text
+msgid "Control number height:"
+msgstr "Височина на номера на КТ:"
+
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr "мм"
+
+#: CourseAppearanceDialog.resx, labelLineWidth.Text
+msgid "Line width:"
+msgstr "Дебелина на линията:"
+
+#: CourseAppearanceDialog.resx, labelControlCircle.Text
+msgid "Control circle diameter:"
+msgstr "Диаметър на окръжността на КТ:"
+
+#: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
+msgid "Use IOF standard sizes"
+msgstr "Използвай стандартните размери според МФО"
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Размери на елемента"
+
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Лилав цвят"
+
+#: CourseAppearanceDialog.resx, buttonColorChoosers.Text
+msgid "Color Chooser..."
+msgstr "Избор на цвят..."
+
+#: CourseAppearanceDialog.resx, label5.Text
+msgid "Black:"
+msgstr "Черно:"
+
+#: CourseAppearanceDialog.resx, label6.Text
+msgid "Yellow:"
+msgstr "Жълто:"
+
+#: CourseAppearanceDialog.resx, label3.Text
+msgid "Magenta:"
+msgstr "Лилаво (magenta):"
+
+#: CourseAppearanceDialog.resx, label1.Text
+msgid "Cyan:"
+msgstr "Синьо (циан):"
+
+#: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
+msgid "Use purple color from map"
+msgstr "Използвай лилавия цвят от картата"
+
+#: CourseAppearanceDialog.resx, groupBoxPreview.Text
+msgid "Preview"
+msgstr "Преглед преди печат"
+
+#: CourseLoad.resx, Load.HeaderText
+msgid "Competitor Load"
+msgstr "Брой състезатели на маршрут"
+
+#: CourseLoad.resx, courseLoadLabel.Text
+msgid "Set the number of competitors on each course by clicking "
+"in the second column and typing a number."
+msgstr "Задай броя състезатели за всеки маршрут чрез кликване във "
+"втората колона и нанасяне на бройка."
+
+#: CourseLoad.resx, $this.Text
+msgid "Course Load"
+msgstr "Натовареност на маршрут"
+
+#: CourseSelector.resx, selectAll.Text
+msgid "All"
+msgstr "всички"
+
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Никой"
+
+#: CreateOcadFiles.resx, coursesGroupBox.Text
+#: PrintCourses.resx, coursesGroupBox.Text
+#: PrintDescriptions.resx, coursesGroupBox.Text
+#: PrintPunches.resx, coursesGroupBox.Text
+msgid "Courses"
+msgstr "Маршрути"
+
+#: CreateOcadFiles.resx, createButton.Text
+#: CreateRouteGadget.resx, createButton.Text
+msgid "Create"
+msgstr "Създай"
+
+#: CreateOcadFiles.resx, cancelButton.Text
+#: CreateRouteGadget.resx, cancelButton.Text
+#: NewEventWizard.resx, cancelButton.Text
+#: NonPrintableObjects.resx, cancelButton.Text
+#: OkCancelDialog.resx, cancelButton.Text
+#: OverwritingOcadFilesDialog.resx, buttonCancel.Text
+#: PrintDescriptions.resx, cancelButton.Text
+#: PrintPunches.resx, cancelButton.Text
+#: SetPrintAreaDialog.resx, cancelButton.Text
+msgid "Cancel"
+msgstr "Откажи"
+
+#: CreateOcadFiles.resx, folderBrowserDialog.Description
+#: CreateRouteGadget.resx, folderBrowserDialog.Description
+msgid "Select a folder for the OCAD files"
+msgstr "Избери папка за OCAD файловете"
+
+#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
+msgid "File name prefix:"
+msgstr "Представка за име на файл:"
+
+#: CreateOcadFiles.resx, fileFormatLabel.Text
+msgid "File format:"
+msgstr "Формат на файла:"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items
+msgid "OCAD 6"
+msgstr "OCAD 6"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items1
+msgid "OCAD 7"
+msgstr "OCAD 7"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items2
+msgid "OCAD 8"
+msgstr "OCAD 8"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items3
+msgid "OCAD 9"
+msgstr "OCAD 9"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items4
+msgid "OCAD 10"
+msgstr "OCAD 10"
+
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Извеждане към"
+
+#: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
+msgid "Select folder..."
+msgstr "Избери папка..."
+
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Друга папка"
+
+#: CreateOcadFiles.resx, mapDirectory.Text
+#: CreateRouteGadget.resx, mapDirectory.Text
+msgid "Same folder as map file"
+msgstr "Същата папка като на файла с картата"
+
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Същата папка като на файла Purple Pen"
+
+#: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreateRouteGadget.resx, folderGroupBox.Text
+msgid "Folder"
+msgstr "Папка"
+
+#: CreateOcadFiles.resx, $this.Text
+msgid "Create OCAD Files"
+msgstr "Създай файлове за OCAD"
+
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Име на файла"
+
+#: CreateRouteGadget.resx, label1.Text
+msgid "Enter the name (without .xml or .gif) for both of the "
+"RouteGadget files:"
+msgstr "Въведи име (без .xml или .gif) за двата файла за "
+"RouteGadget:"
+
+#: CreateRouteGadget.resx, learnMoreLink.Text
+msgid "Learn more about RouteGadget"
+msgstr "Научи повече за RouteGadget"
+
+#: CreateRouteGadget.resx, label2.Text
+msgid "RouteGadget requires both an image file (.gif) and IOF XML "
+"file (.xml). Choose the name and folder for both of these "
+"files."
+msgstr "RouteGadget изисква едновременно графичен файл (.gif) и "
+"IOF XML файл (.xml). Изберете името и папката на тези два "
+"файла."
+
+#: CreateRouteGadget.resx, $this.Text
+msgid "Create RouteGadget Files"
+msgstr "Създай файлове за RouteGadget"
+
+#: CustomSymbolText.resx, labelChooseLanguage.Text
+msgid "Choose the language used for textual control descriptions:"
+msgstr "Избери езика за текстово описание на КТ:"
+
+#: CustomSymbolText.resx, labelSymbolName.Text
+msgid "Symbol name:"
+msgstr "Наименование на символа:"
+
+#: CustomSymbolText.resx, labelCustomizedText.Text
+msgid "Customized text:"
+msgstr "Персонализиран текст:"
+
+#: CustomSymbolText.resx, buttonChangeText.Text
+msgid "Change text..."
+msgstr "Промени текста..."
+
+#: CustomSymbolText.resx, buttonDefault.Text
+msgid "Reset to standard"
+msgstr "Върни към стандартното"
+
+#: CustomSymbolText.resx, labelStandardText.Text
+msgid "Standard text:"
+msgstr "Стандартен текст:"
+
+#: CustomSymbolText.resx, checkBoxShowKey.Text
+msgid "Show meaning below symbolic descriptions"
+msgstr "Покажи значението под символа за описание"
+
+#: CustomSymbolText.resx, labelCustomizeText.Text
+msgid "Click on a description symbol to customize the text that "
+"is used in textual control descriptions."
+msgstr "Кликни върху даден символ за персонализиране на текстовото "
+"описание на КТ."
+
+#: EnterSymbolText.resx, numberColumn.HeaderText
+msgid "Number"
+msgstr "Число"
+
+#: EnterSymbolText.resx, genderColumn.HeaderText
+msgid "Gender"
+msgstr "Род"
+
+#: EnterSymbolText.resx, checkBoxPlural.Text
+msgid "Show plural forms"
+msgstr "Покажи форма в множествено число"
+
+#: EnterSymbolText.resx, checkBoxGender.Text
+msgid "Show gender forms"
+msgstr "Покажи формите по род"
+
+#: EnterSymbolText.resx, labelDescription.Text
+msgid "Enter the customized text for the symbol in the \"Text\" "
+"column."
+msgstr "Въведи съответния текст към символа в колоната \"Текст\"."
+
+#: EnterSymbolText.resx, labelGenderChooser.Text
+msgid "Gender:"
+msgstr "Род:"
+
+#: EnterSymbolText.resx, $this.Text
+msgid "Customized Symbol Text"
+msgstr "Персонализиран текст към символ"
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Отвори вече създадено състезание..."
+
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Създай ново състезание..."
+
+#: InitialScreen.resx, quitButton.Text
+msgid "Exit"
+msgstr "Изход"
+
+#: InitialScreen.resx, openSampleRadioButton.Text
+msgid "Open a sample event"
+msgstr "Отвори модел на състезание"
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "Отвори последното видяно състезание"
+
+#: InitialScreen.resx, $this.Text
+msgid "Welcome to Purple Pen"
+msgstr "Добре дошли в Purple Pen!"
+
+#: LicenseForm.resx, bsdLicenseLinkLabel.Text
+msgid "Purple Pen is provided under a \"BSD\" style license."
+msgstr "Purple Pen е програма, разпространявана под BSD лиценз."
+
+#: LicenseForm.resx, $this.Text
+msgid "Purple Pen License"
+msgstr "Лиценз на Purple Pen"
+
+#: MainFrame.resx, tabPage1.Text
+msgid "All Controls"
+msgstr "Всички КТ"
+
+#: MainFrame.resx, openFileDialog.Filter
+msgid "Purple Pen files|*.ppen|All files|*.*"
+msgstr "Purple Pen файлове|*.ppen|All files|*.*"
+
+#: MainFrame.resx, saveFileDialog.Filter
+msgid "Purple Pen file|*.ppen"
+msgstr "Purple Pen файл|*.ppen"
+
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Файл"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Редактиране"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Изглед"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Състезание"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Маршрут"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Елементи"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Справки"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "Purple Pen &Помощ"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr "Помощ за Purple Pen (преведена)"
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purple Pen &уебсайт"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Поддръжка/Докладване за грешки"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&За програмата Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Откриване на грешки"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Преведи текста на описанията на контролните точки"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Помощ"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&Ново състезание..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Отвори..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Запиши"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Запиши &като..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Create &файлове за OCAD..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Create файлове за Route&Gadget..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create &E-Punch Interchange File..."
+msgstr "Създай &файл за обмен на данни с електронна система с "
+"чипове..."
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Печат на описанията на КТ..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Отпечатай &състезателни картони за съдиите..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Печат на &маршрутите..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Задай &зона за печат"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Този маршрут"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Всички маршрути"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "&Език на програмата..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Изход"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Изчисти избраното"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Отмени"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Възстанови"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Изтрий"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "Целия &маршрут"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Цялата &карта"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Увеличи"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "&Наситеност на картата"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "&Много ниска"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Ниска"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "&Средна"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Висока"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Пълна"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "&Качество на картата"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Ниско"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Високо"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Всички контролни точки"
+
+#: MainFrame.resx, changeMapFileMenu.Text
+msgid "&Map File..."
+msgstr "&Файл на картата..."
+
+#: MainFrame.resx, changeCodesMenu.Text
+msgid "Change Control &Codes..."
+msgstr "Промени &сигнатурите на КТ..."
+
+#: MainFrame.resx, autoNumberingMenu.Text
+msgid "Automatic &Numbering..."
+msgstr "Автоматично &номериране..."
+
+#: MainFrame.resx, removeUnusedControlsMenu.Text
+msgid "Remove &Unused Controls..."
+msgstr "Премахни &неизползваните КТ..."
+
+#: MainFrame.resx, punchPatternsMenu.Text
+msgid "&Punch Patterns..."
+msgstr "&Отпечатъци на перфораторите..."
+
+#: MainFrame.resx, customizeDescriptionsMenu.Text
+msgid "Customize &Description Text..."
+msgstr "Персонализирай &текста на описанията"
+
+#: MainFrame.resx, customizeCourseAppearanceMenu.Text
+msgid "Customize Course &Appearance..."
+msgstr "Персонализирай &изгледа на маршрута"
+
+#: MainFrame.resx, addCourseMenu.Text
+msgid "&Add Course..."
+msgstr "&Добави маршрут..."
+
+#: MainFrame.resx, deleteCourseMenu.Text
+msgid "&Delete Course"
+msgstr "&Изтрий маршрут"
+
+#: MainFrame.resx, propertiesMenu.Text
+msgid "&Properties..."
+msgstr "&Информация..."
+
+#: MainFrame.resx, courseOrderMenu.Text
+msgid "Course Order..."
+msgstr "Поредност на маршрутите..."
+
+#: MainFrame.resx, courseLoadMenu.Text
+msgid "Competitor &Load..."
+msgstr "&Брой състезатели на маршрут..."
+
+#: MainFrame.resx, addStartMenu.Text
+msgid "Add &Start"
+msgstr "Добави &старт"
+
+#: MainFrame.resx, addControlMenu.Text
+msgid "Add &Control"
+msgstr "Добави &контролна точка"
+
+#: MainFrame.resx, addFinishMenu.Text
+msgid "Add &Finish"
+msgstr "Добави &финал"
+
+#: MainFrame.resx, addDescriptionsMenu.Text
+msgid "Add &Descriptions"
+msgstr "Добави &описание на КТ"
+
+#: MainFrame.resx, addSpecialItemMenu.Text
+msgid "Add Special &Item"
+msgstr "Добави специален &елемент"
+
+#: MainFrame.resx, addMandatoryCrossingMenu.Text
+#: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
+msgid "Mandatory Crossing Point"
+msgstr "Задължително място за преминаване"
+
+#: MainFrame.resx, addOptCrossingMenu.Text
+#: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_OptCrossing
+msgid "Optional Crossing Point"
+msgstr "Препоръчително място за преминаване"
+
+#: MainFrame.resx, addOutOfBoundsMenu.Text
+#: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
+msgid "Out Of Bounds Area"
+msgstr "Забранен район"
+
+#: MainFrame.resx, addDangerousMenu.Text
+#: MainFrame.resx, dangerousToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Dangerous
+msgid "Dangerous Area"
+msgstr "Опасна зона"
+
+#: MainFrame.resx, addWaterMenu.Text
+#: MainFrame.resx, waterLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Water
+msgid "Water Location"
+msgstr "Подкрепителен пункт"
+
+#: MainFrame.resx, addFirstAidMenu.Text
+#: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_FirstAid
+msgid "First Aid Location"
+msgstr "Медицински пункт"
+
+#: MainFrame.resx, addForbiddenMenu.Text
+#: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
+msgid "Forbidden Route Marking"
+msgstr "Маркиране на забранен път"
+
+#: MainFrame.resx, addBoundaryMenu.Text
+#: MainFrame.resx, boundaryToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Boundary
+msgid "Uncrossable Boundary"
+msgstr "Органичителна линия"
+
+#: MainFrame.resx, addRegMarkMenu.Text
+#: MainFrame.resx, registrationMarkToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_RegMark
+msgid "Registration Mark"
+msgstr "Пасер"
+
+#: MainFrame.resx, whiteOutMenu.Text
+#: MainFrame.resx, whiteOutToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_WhiteOut
+msgid "White Out Area"
+msgstr "Празно пространство"
+
+#: MainFrame.resx, addTextLineMenu.Text
+msgid "Add Text &Line..."
+msgstr "Добави &ред за текст..."
+
+#: MainFrame.resx, addBendMenu.Text
+msgid "Add &Bend"
+msgstr "Добави &извивка"
+
+#: MainFrame.resx, removeBendMenu.Text
+msgid "Remove B&end"
+msgstr "Премахни &извивка"
+
+#: MainFrame.resx, addGapMenu.Text
+msgid "Add &Gap"
+msgstr "Добави &прекъсване"
+
+#: MainFrame.resx, removeGapMenu.Text
+msgid "Remove G&ap"
+msgstr "Премахни &прекъсване"
+
+#: MainFrame.resx, changeTextMenu.Text
+msgid "Change &Text..."
+msgstr "Промени &текста..."
+
+#: MainFrame.resx, rotateMenu.Text
+msgid "R&otate"
+msgstr "&Завърти"
+
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Маркировка"
+
+#: MainFrame.resx, noFlaggingMenu.Text
+msgid "No Flagging"
+msgstr "Без маркировка"
+
+#: MainFrame.resx, entireFlaggingMenu.Text
+msgid "Entire Leg Flagged"
+msgstr "Цяла отсечка с маркировка"
+
+#: MainFrame.resx, beginFlaggingMenu.Text
+msgid "Beginning of Leg Flagged"
+msgstr "Начало на отсечка с маркировка"
+
+#: MainFrame.resx, endFlaggingMenu.Text
+msgid "End of Leg Flagged"
+msgstr "Край на отсечка с маркировка"
+
+#: MainFrame.resx, changeDisplayedCoursesMenu.Text
+msgid "Change Displa&yed Courses..."
+msgstr "Промени &показаните маршрути..."
+
+#: MainFrame.resx, courseSummaryMenu.Text
+msgid "Course &Summary"
+msgstr "&Обобщение на маршрутите"
+
+#: MainFrame.resx, eventAuditMenu.Text
+msgid "Event &Audit"
+msgstr "&Проверка на състезанието"
+
+#: MainFrame.resx, legLengthsMenu.Text
+msgid "&Leg Lengths"
+msgstr "&Дължини на отсечките"
+
+#: MainFrame.resx, controlCrossrefMenu.Text
+msgid "Control &Cross-reference"
+msgstr "&Обобщение на КТ по маршрути"
+
+#: MainFrame.resx, controlAndLegLoadMenu.Text
+msgid "Control and Leg Loa&d"
+msgstr "&Натовареност на КТ и отсечките"
+
+#: MainFrame.resx, symbolBrowserMenu.Text
+msgid "Symbol Browser"
+msgstr "Търсачка на символи"
+
+#: MainFrame.resx, descriptionBrowserMenu.Text
+msgid "Description Browser"
+msgstr "Търсачка на описания на КТ"
+
+#: MainFrame.resx, controlTesterMenu.Text
+msgid "Control Tester"
+msgstr "Тестер за контролни точки"
+
+#: MainFrame.resx, mapTesterMenu.Text
+msgid "Map Tester"
+msgstr "Тестер за картата"
+
+#: MainFrame.resx, courseSelectorTesterMenu.Text
+msgid "Course Selector Tester"
+msgstr "Тестер за подбор на маршрут"
+
+#: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
+msgid "Dot Grid Tester"
+msgstr "Тестер на пикселната решетка"
+
+#: MainFrame.resx, dumpOCADFileMenu.Text
+msgid "Dump OCAD File"
+msgstr "Изхвърли OCAD файла"
+
+#: MainFrame.resx, reportTesterToolStripMenuItem.Text
+msgid "Report Tester"
+msgstr "Тестер за справки"
+
+#: MainFrame.resx, fontMetricsToolStripMenuItem.Text
+msgid "Font Metrics"
+msgstr "Елементи на шрифта"
+
+#: MainFrame.resx, addDescriptionLanguageMenu.Text
+msgid "Add Description Language..."
+msgstr "Добави език на описанията на КТ..."
+
+#: MainFrame.resx, addTranslatedTextsMenu.Text
+msgid "Add Translated Texts..."
+msgstr "Добави преведени текстове..."
+
+#: MainFrame.resx, mergeSymbolsMenu.Text
+msgid "Merge Symbols.xml..."
+msgstr "Обедини файла Symbols.xml..."
+
+#: MainFrame.resx, openToolStripButton.Text
+msgid "Open"
+msgstr "Отвори"
+
+#: MainFrame.resx, openToolStripButton.ToolTipText
+msgid "Open (Ctrl+O)"
+msgstr "Отвори (Ctrl+O)"
+
+#: MainFrame.resx, saveToolStripButton.Text
+msgid "Save"
+msgstr "Запиши"
+
+#: MainFrame.resx, saveToolStripButton.ToolTipText
+msgid "Save (Ctrl+S)"
+msgstr "Запиши (Ctrl+S)"
+
+#: MainFrame.resx, undoToolStripButton.Text
+#: MiscText.resx, Undo
+msgid "Undo"
+msgstr "Отмени"
+
+#: MainFrame.resx, undoToolStripButton.ToolTipText
+msgid "Undo (Ctrl+Z)"
+msgstr "Отмени (Ctrl+Z)"
+
+#: MainFrame.resx, redoToolStripButton.Text
+#: MiscText.resx, Redo
+msgid "Redo"
+msgstr "Възстанови"
+
+#: MainFrame.resx, redoToolStripButton.ToolTipText
+msgid "Redo (Ctrl+Y)"
+msgstr "Възстанови (Ctrl+Y)"
+
+#: MainFrame.resx, deleteToolStripButton.Text
+msgid "Delete (Del)"
+msgstr "Изтрий (Del)"
+
+#: MainFrame.resx, addControlToolStripButton.ToolTipText
+msgid "Add Control (Ctrl+A)"
+msgstr "Добави контролна точка (Ctrl+A)"
+
+#: MainFrame.resx, descriptionsToolStripMenuItem.Text
+msgid "Add Descriptions"
+msgstr "Добави описания на КТ"
+
+#: MainFrame.resx, ncross.Text
+msgid "Add Special Item"
+msgstr "Добави специален елемент"
+
+#: MainFrame.resx, addBendToolStripButton.ToolTipText
+msgid "Add Bend (Ctrl+B)"
+msgstr "Добави извивка (Ctrl+B)"
+
+#: MainFrame.resx, addGapToolStripButton.Text
+msgid "toolStripButton1"
+msgstr "toolStripButton1"
+
+#: MainFrame.resx, addGapToolStripButton.ToolTipText
+msgid "Add Gap (Ctrl+G)"
+msgstr "Добави прекъсване (Ctrl+G)"
+
+#: MainFrame.resx, zoomAmountLabel.Text
+msgid "Zoom: 100%"
+msgstr "Увеличи: 100%"
+
+#: MainFrame.resx, locationDisplay.Text
+msgid "X:-999.99 Y:-999.99"
+msgstr "X:-999.99 Y:-999.99"
+
+#: MainFrame.resx, saveXmlFileDialog.Filter
+msgid "XML file|*.xml"
+msgstr "XML файл|*.xml"
+
+#: MainFrame.resx, saveXmlFileDialog.Title
+msgid "Create XML Interchange File"
+msgstr "Създай XML файл за обмен на данни..."
+
+#: MainFrame.resx, $this.Text
+#: MiscText.resx, AppTitle
+msgid "Purple Pen"
+msgstr "Purple Pen"
+
+#: MiscText.resx, CtrlZ
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: MiscText.resx, CtrlY
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: MiscText.resx, Esc
+msgid "Esc"
+msgstr "Esc"
+
+#: MiscText.resx, NoSymbol
+msgid "No symbol"
+msgstr "Без символ"
+
+#: MiscText.resx, AllControls
+msgid "All controls"
+msgstr "Всички контролни точки"
+
+#: MiscText.resx, CannotLoadFile
+msgid "Cannot load '{0}' for the following reason:"
+msgstr "Не може да зареди '{0}' поради следната причина:"
+
+#: MiscText.resx, CannotSaveFile
+msgid "Cannot save '{0}' for the following reason:"
+msgstr "Не може да запише '{0}' поради следната причина:"
+
+#: MiscText.resx, CannotLoadMapFile
+msgid "Cannot load map file '{0}' for the following reason:"
+msgstr "Не може да зареди картовия файл '{0}' поради следната "
+"причина:"
+
+#: MiscText.resx, CannotReadImageFile
+msgid "Cannot read image file '{0}'."
+msgstr "Не може да прочете графичен файл '{0}'."
+
+#: MiscText.resx, CannotPrint
+msgid "Cannot print '{0}' for the following reason:"
+msgstr "Не може да отпечата '{0}' поради следната причина:"
+
+#: MiscText.resx, CannotCreateFile
+msgid "Cannot create '{0}' for the following reason:"
+msgstr "Не може да създаде '{0}' поради следната причина:"
+
+#: MiscText.resx, CannotCreateDirectory
+msgid "Cannot create folder '{0}' for the following reason:"
+msgstr "Не може да създаде папка '{0}' поради следната причина:"
+
+#: MiscText.resx, CannotReadMap
+msgid "Cannot read map for the following reason: '{0}' Using "
+"Optimize/Repair in OCAD may fix problems."
+msgstr "Не може да разчете картата поради следната причина: '{0}' "
+"Изполването на функцията Оптимизирай/Поправи в OCAD може "
+"да отстрани проблема."
+
+#: MiscText.resx, CannotCreateOcadFiles
+msgid "Cannot create OCAD files for the following reason:"
+msgstr "Не може да създаде файлове за OCAD поради следната причина:"
+
+#: MiscText.resx, SaveChanges
+msgid "Do you want to save the changes you made to '{0}'?"
+msgstr "Искате ли да запишете промените направени в '{0}'?"
+
+#: MiscText.resx, FileAlreadyExists
+msgid "File '{0}' already exists in the specified folder. Click "
+"the \"Back\" button and choose a new folder or a new event "
+"title."
+msgstr "Файлът '{0}' вече съществува в указаната папка. Натисни "
+"бутона \"Обратно\" и избери нова папка или ново име на "
+"състезанието."
+
+#: MiscText.resx, CodeInUse
+msgid "The control code '{0}' is already used by another control."
+msgstr "Сигнатурата '{0}' вече е използвана от друга контролна "
+"точка."
+
+#: MiscText.resx, BadScore
+msgid "The points for a control must be an integer 1-999."
+msgstr "Стойностите на КТ трябва да са цяло число от 1 до 999."
+
+#: MiscText.resx, BadClimb
+msgid "The climb for a course must be a number 0-9999, or blank."
+msgstr "Сборното изкачване на маршрут трябва да е число от 0 до "
+"9999 или празно поле."
+
+#: MiscText.resx, BadLoad
+msgid "The load for a course must be an integer 0-999999, or blank."
+msgstr "Натовареността със състезатели на даден маршрут трябва да "
+"е число от 0 до 999999 или празно поле."
+
+#: MiscText.resx, CancelOperationWithShortcut
+msgid "Ca&ncel Operation"
+msgstr "&Прекрати действието"
+
+#: MiscText.resx, CancelOperation
+msgid "Cancel Operation"
+msgstr "Прекрати действието"
+
+#: MiscText.resx, EnterScore
+msgid "Enter new score"
+msgstr "Въведи нов маршрут"
+
+#: MiscText.resx, EnterCode
+msgid "Enter new code"
+msgstr "Въведи нова сигнатура"
+
+#: MiscText.resx, EnterDimensions
+msgid "Enter feature size\n"
+"Use / for height on a slope\n"
+"Use | for two features"
+msgstr "Въведи размер на обекта\n"
+"Използвай / за височина на склон\n"
+"Използвай | за два обекта"
+
+#: MiscText.resx, EnterEventTitle
+msgid "Enter new event title\n"
+"Use | to separate lines\n"
+"(affects all courses)"
+msgstr "Въведи ново име на състезанието\n"
+"Използвай | за разделяне на редовете\n"
+"(ще се приложи върху всички маршрути)"
+
+#: MiscText.resx, EnterSecondaryTitle
+msgid "Enter new secondary title\n"
+"Use | to separate lines"
+msgstr "Въведи ново подзаглавие\n"
+"Използвай | за разделяне на редовете"
+
+#: MiscText.resx, EnterCourseName
+msgid "Enter new course name"
+msgstr "Въведи нов номер (име) на маршрута"
+
+#: MiscText.resx, EnterClimb
+msgid "Enter new climb in meters"
+msgstr "Въведи ново сборно изкачване в метри"
+
+#: MiscText.resx, EnterSymbolText
+msgid "Enter new symbol meaning\n"
+"(affects all courses)"
+msgstr "Въведи ново значение на символа\n"
+"(ще се приложи върху всички маршрути)"
+
+#: MiscText.resx, EnterTextLine
+msgid "Enter new text"
+msgstr "Въведи нов текст"
+
+#: MiscText.resx, DeleteMultipleControlsFromControlsCollection
+msgid "Controls {0} are no longer used by any course. Do you want "
+"to delete these controls from the control collection?"
+msgstr "Контролните точки {0} повече не са използвани от никой от "
+"маршрутите. Искате ли да ги изтриете от сбирката с всички "
+"контролни точки?"
+
+#: MiscText.resx, DeleteControlFromControlsCollection
+msgid "Control {0} is no longer used by any course. Do you want "
+"to delete this control from the control collection?"
+msgstr "Контролна точка {0} повече не се използва от никой от "
+"маршрутите. Искате ли да я изтриете от сбирката с всички "
+"контролни точки?"
+
+#: MiscText.resx, DeleteControlFromAllControls
+msgid "Control {0} is currently used by the following courses: "
+"{1}. Do you want to delete this control anyway?"
+msgstr "Контролна точка {0} е използвана в следните маршрути: {1}. "
+"Искате ли все пак да я изтриете?"
+
+#: MiscText.resx, CodeBadLength
+msgid "A control code must be one, two, or three letters or digits."
+msgstr "Сигнатурата трябва да се състои от една, две или три букви "
+"или цифри."
+
+#: MiscText.resx, CodeContainsSpace
+msgid "A control code must not contain a space."
+msgstr "В сигнатурата не трябва да има празно пространство."
+
+#: MiscText.resx, CodeUnder31
+msgid "A control code should be 31 or higher."
+msgstr "Сигнатурата трябва да е 31 или по-голямо число."
+
+#: MiscText.resx, CodeBeginsWithZero
+msgid "A control code should not begin with zero."
+msgstr "Сигнатурата не трябва да започва с нула."
+
+#: MiscText.resx, CodeCouldBeUpsideDown
+msgid "A control code should not look like another number when "
+"upside-down."
+msgstr "Сигнатурата не трябва да прилича на друго число, ако се "
+"обърне обратно."
+
+#: MiscText.resx, DuplicateCode
+msgid "The code \"{0}\" is used more than once."
+msgstr "Сигнатурата \"{0}\" е използвана повече от един път."
+
+#: MiscText.resx, BadScale
+msgid "The print scale must be a number between 100 and 100,000."
+msgstr "Мащабът на печат трябва да е число между 100 и 100,000."
+
+#: MiscText.resx, CoursePropertiesTitle
+msgid "Course Properties"
+msgstr "Данни за маршрута"
+
+#: MiscText.resx, Landscape
+#: PrintDescriptions.resx, orientation.Text
+#: PrintPunches.resx, orientation.Text
+msgid "Landscape"
+msgstr "Хоризонтално"
+
+#: MiscText.resx, Portrait
+msgid "Portrait"
+msgstr "Вертикално"
+
+#: MiscText.resx, PageTooSmall
+msgid "The page size is too small for any descriptions to be "
+"printed."
+msgstr "Размерът на страницата е твърде малък за отпечатване на "
+"описанията."
+
+#: MiscText.resx, VersionLabel
+msgid "Version {0}"
+msgstr "Версия {0}"
+
+#: MiscText.resx, NewerVersionAvailable
+msgid "Version {0} of Purple Pen is now available for download. "
+"(You are currently running version {1}.)\n"
+"\n"
+"To download the latest version, visit the Purple Pen web "
+"site by selecting \"Purple Pen Web Site\" in the Help menu."
+msgstr "Версия {0} на Purple Pen е налична за изтегляне. (В "
+"момента използвате версия {1}.)\n"
+"\n"
+"За да изтеглите последната версия, отидете на уебсайта на "
+"Purple Pen, като изберете \"Purple Pen уебсайт\" в менюто "
+"Помощ."
+
+#: MiscText.resx, HelpFileNotFound
+msgid "Help file '{0}' could not be opened."
+msgstr "Помощният файл '{0}' не може да бъде отворен."
+
+#: MiscText.resx, Zoom
+msgid "Zoom"
+msgstr "Увеличи"
+
+#: MiscText.resx, MissingMapFile
+msgid "The map file \"{0}\" could not be found.\n"
+"\n"
+"Most likely, the map file has been moved or deleted, or "
+"the Purple Pen file has been moved (possibly to a "
+"different computer). The map file must be present every "
+"time the Purple Pen event file is loaded. If you send a "
+"Purple Pen event file to another person, be sure that "
+"person has a copy of the map file also.\n"
+"\n"
+"After pressing OK, try to find a copy of the map file on "
+"your computer."
+msgstr "Картовият файл \"{0}\" не може да бъде открит.\n"
+"\n"
+"Най-вероятно картовият файл е бил преместен или изтрит, "
+"или Purple Pen файлът е бил преместен (може би на друг "
+"компютър). Картовият файл трябва да е наличен всеки път, "
+"когато Purple Pen файлът за съответното състезание се "
+"зарежда. Ако изпратите Purple Pen файла със състезанието "
+"на друг човек, уверете се, че той също притежава копие от "
+"картовия файл.\n"
+"\n"
+"След като натиснете Да, пробвайте да намерите копие от "
+"картовия файл на вашия компютър."
+
+#: MiscText.resx, NoUnusedControls
+msgid "All controls are used in a course."
+msgstr "Всички контролни точки са използвани в маршрут."
+
+#: MiscText.resx, FinishButtonText
+msgid "&Finish"
+msgstr "&Край"
+
+#: MiscText.resx, NextButtonText
+#: NewEventWizard.resx, nextButton.Text
+msgid "&Next >"
+msgstr "&Напред >"
+
+#: MiscText.resx, Control_Code
+msgid "Control {0}"
+msgstr "Контролна точка {0}"
+
+#: MiscText.resx, Finish
+msgid "Finish"
+msgstr "Финал"
+
+#: MiscText.resx, Finish_Short
+msgid "F"
+msgstr "F"
+
+#: MiscText.resx, MandCrossing_Long
+msgid "Mandatory crossing point"
+msgstr "Задължително място/точка за преминаване"
+
+#: MiscText.resx, MandCrossing_Medium
+msgid "Crossing"
+msgstr "Пресичане"
+
+#: MiscText.resx, MandCrossing_Short
+msgid "C"
+msgstr "C"
+
+#: MiscText.resx, Margins_All
+msgid "All: {0}"
+msgstr "Всички: {0}"
+
+#: MiscText.resx, Margins_LRTB
+msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
+msgstr "Отляво: {0}, Отдясно: {1}, Отгоре: {2}, Отдолу: {3}"
+
+#: MiscText.resx, Start
+msgid "Start"
+msgstr "Старт"
+
+#: MiscText.resx, Start_Short
+msgid "S"
+msgstr "S"
+
+#: MiscText.resx, Version_Alpha
+msgid "Alpha {0}"
+msgstr "Alpha {0}"
+
+#: MiscText.resx, Version_Beta
+msgid "Beta {0}"
+msgstr "Beta {0}"
+
+#: MiscText.resx, Version_RC
+msgid "RC {0}"
+msgstr "RC {0}"
+
+#: MiscText.resx, Plural
+msgid "plural"
+msgstr "мн. ч."
+
+#: MiscText.resx, Singular
+msgid "singular"
+msgstr "ед. ч."
+
+#: MiscText.resx, RequireStar
+msgid "The customized text requires a \"*\" to indicate where the "
+"object being modified is placed."
+msgstr "Персонализираният текст изисква \"*\", за да се посочи къде "
+"е преместен промененият обект."
+
+#: MiscText.resx, AppSubtitle
+msgid "course setting for orienteering"
+msgstr "програма за чертаене на маршрути по ориентиране"
+
+#: MiscText.resx, AddTextSpecialExplanation
+msgid "Enter the text you wish to place on the map. After "
+"pressing OK, drag the mouse to place the text in the "
+"desired location."
+msgstr "Въведете текста, който искате да поставите на картата. "
+"След като натиснете Да, плъзнете мишката, за да поставите "
+"текста на желаното място."
+
+#: MiscText.resx, AddTextSpecialTitle
+msgid "Add Text"
+msgstr "Добави текст"
+
+#: MiscText.resx, ChangeTextSpecialExplanation
+msgid "Enter the new text."
+msgstr "Въведи новия текст."
+
+#: MiscText.resx, MapFileChanged
+msgid "Another program has changed the map file \"{0}\". Purple Pen "
+"will now reload the map."
+msgstr "Друга програма е променила картовия файл \"{0}\". Purple Pen "
+"ще презареди картата."
+
+#: MiscText.resx, ChangeDescriptionLanguage
+msgid "The current event has textual control descriptions in {0}. "
+"Would you like to change the language of control "
+"descriptions to {1}?"
+msgstr "Текущото състезание има текстови описания на контролните "
+"точки в {0}. Искате ли да промените езика на описанията на "
+"{1}?"
+
+#: MiscText.resx, OpenLastEvent
+msgid "Open \"{0}\""
+msgstr "Отвори \"{0}\""
+
+#: MiscText.resx, ClosePPBeforeLoadingOCAD
+msgid "Purple Pen must be closed before loading the created OCAD "
+"files."
+msgstr "Purple Pen трябва да се затвори преди да се заредят "
+"създадените файлове за OCAD."
+
+#: MiscText.resx, NoCoursesSelected
+msgid "No courses were selected to print."
+msgstr "Няма избрани маршрути за печат."
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr "*** Ако на езика, на който се превежда, съществува "
+"уебсайт, съдържащ документация за Purple Pen, въведете "
+"адреса URL (включително http), както и преведеното "
+"наименование на този документ, в противен случай оставете "
+"празно."
+
+#: MissingFonts.resx, checkBoxDontWarnAgain.Text
+msgid "Don't warn about missing fonts for this event again"
+msgstr "Не ме предупреждавай повече за липсващи шрифтове за това "
+"състезание."
+
+#: MissingFonts.resx, labelWarning.Text
+msgid "Map file \"{0}\" uses fonts that are not installed on your "
+"computer. Text using these fonts will be drawn and printed "
+"with a default font, which may cause text to appear "
+"differently than the map designer intended. \n"
+"\n"
+"To fix this problem, find and install the fonts listed "
+"below with the Windows control panel, then start Purple "
+"Pen again.\n"
+msgstr "Картовият файл \"{0}\" използва шрифтове, които не са "
+"инсталирани на вашия компютър. Текстът, използващ тези "
+"шрифтове, ще бъде начертан и отпечатан със зададения шрифт "
+"по подразбиране, поради което текстът може да изглежда "
+"различно от желанията на картографа. \n"
+"\n"
+"За да остраните този проблем, намерете и инсталирайте "
+"изброените по-долу шрифтове от контролния панел на "
+"Windows, след това рестартирайте Purple Pen.\n"
+
+#: MissingFonts.resx, $this.Text
+msgid "Missing Fonts"
+msgstr "Липсващи шрифтове"
+
+#: NewEventBitmapScale.resx, bitmapScaleLabel.Text
+msgid "When using an image file as a map, you must specify the "
+"resolution of the image and the map scale. \n"
+"\n"
+"The resolution of the image indicates how may pixels or "
+"dots are in the image for each inch on the paper map; "
+"usually termed dots per inch or \"dpi\".\n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr "Когато използвате графичен файл като карта, трябва да "
+"укажете резолюцията на изображението и мащаба на картата. \n"
+"\n"
+"Резолюцията указва колко пиксела или точки се съдържат в "
+"един инч на изображението върху хартиена карта; обикновено "
+"се използва изразът \"точки на инч\" или \"dpi\".\n"
+"\n"
+"Мащабът на картата показва съотнасянето на книжната карта "
+"към действителността.\n"
+
+#: NewEventBitmapScale.resx, resolutionLabel.Text
+msgid "Image resolution:"
+msgstr "Резолюция на изображението:"
+
+#: NewEventBitmapScale.resx, oneToPrefixLabel.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel1.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel2.Text
+msgid "1:"
+msgstr "1:"
+
+#: NewEventBitmapScale.resx, mapScaleLabel.Text
+#: NewEventPrintScale.resx, mapScaleLabel.Text
+msgid "Map scale:"
+msgstr "Мащаб на картата:"
+
+#: NewEventDirectory.resx, newEventDirectoryLabel.Text
+msgid "What folder (directory) do you want to save your course "
+"event file in?"
+msgstr "В коя папка (директория) искате да запишете файла със "
+"състезанието?"
+
+#: NewEventDirectory.resx, useMapDirectory.Text
+msgid "In the same folder as the map file."
+msgstr "В същата папка, където е картовият файл."
+
+#: NewEventDirectory.resx, useOtherFolder.Text
+msgid "In another folder I choose."
+msgstr "В друга папка по избор."
+
+#: NewEventDirectory.resx, chooseFolder.Text
+msgid "Choose Folder..."
+msgstr "Избери папка..."
+
+#: NewEventDirectory.resx, folderBrowserDialog.Description
+msgid "Select the folder for your event file"
+msgstr "Изберете папка за вашия файл със състезанието"
+
+#: NewEventDirectory.resx, directoryDisplay.Text
+msgid "Selected Folder"
+msgstr "Избрана папка"
+
+#: NewEventFinal.resx, newEventFinalLabel.Text
+msgid "Click \"Finish\" to create your new event. Your event file "
+"will be saved as:"
+msgstr "Натисни \"Край\" за създаване на новото състезание. Файлът "
+"със състезанието ще се запише като:"
+
+#: NewEventFinal.resx, afterEventCreatedLabel.Text
+msgid "After your event is created, select \"New Course...\" from "
+"the Course menu to create one or more courses."
+msgstr "След като състезанието е създадено, избери \"Нов "
+"маршрут...\" от менюто Маршрут за създаване на един или "
+"повече маршрути."
+
+#: NewEventMapFile.resx, newEventMapFileLabel.Text
+msgid "In order to design your courses, you must select the map "
+"file you will be using. Typically this is an OCAD file "
+"(although image files like JPEGs can be used instead). "
+"Click the \"Choose...\" button to select a map file."
+msgstr "За начертаване на маршрутите трябва да изберете картов "
+"файл, който ще бъде използван. Обикновено това е OCAD файл "
+"(въпреки че графични файлове във формат JPEG също могат да "
+"се използват). Кликнете върху бутона \"Избери...\", за да "
+"изберете картов файл."
+
+#: NewEventMapFile.resx, mapFileDisplay.Text
+msgid "Selected Map File"
+msgstr "Избраният картов файл"
+
+#: NewEventMapFile.resx, infoMessage.Text
+msgid "The map file was successfully loaded. If send your Purple "
+"Pen file to someone else, they must have the map file also."
+msgstr "Картовият файл беше успешно зареден. Ако изпращате вашия "
+"Purple Pen файл на някой друг, той също трябва да има този "
+"картов файл."
+
+#: NewEventNumbering.resx, newEventNumberingLabel.Text
+msgid "Newly created controls are automatically numbered. Please "
+"choose the starting control number to use."
+msgstr "На новосъздадените КТ се поставят автоматично сигнатури. "
+"Моля, изберете началната сигнатура, която да бъде "
+"използвана."
+
+#: NewEventNumbering.resx, changeLaterLabel.Text
+msgid "(This setting can be changed later using "
+"Controls/Automatic Numbering)"
+msgstr "(Тази настройка може да се промени по-късно от менюто "
+"Контролни точки/Автоматично номериране)"
+
+#: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
+msgid "What scale will you be using to print your courses? In "
+"most cases, you will want to use the existing scale of the "
+"map.\n"
+"\n"
+msgstr "Какъв мащаб ще използвате за печат на маршрутите? В "
+"повечето случаи е препоръчително да използвате мащаба на "
+"картата.\n"
+"\n"
+
+#: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
+msgid "Default &printing scale:"
+msgstr "&Мащаб на печата по подразбиране:"
+
+#: NewEventPrintScale.resx, changeLaterLabel.Text
+msgid "(You can change the printing scale later for any course by "
+"choosing Course/Properties.)"
+msgstr "(По-късно можете да променяте мащаба на печат за който и "
+"да е маршрут, като изберете Маршрут/Данни.)"
+
+#: NewEventTitle.resx, newEventTitleLabel.Text
+msgid "The event title will be displayed on the first line of "
+"every control description sheet. It is also used as the "
+"file name for storing your event on disk.\n"
+"\n"
+"To fit on the description sheet, it should be less than 25 "
+"characters in length. Examples of good event titles are "
+"\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
+msgstr "Името на състезанието ще се появява на първия ред на всяко "
+"описание на КТ. То се използва също и за съхранение на "
+"данните за състезанието на диска.\n"
+"\n"
+"За да се побере в описанията, дължината му трябва да е "
+"по-малка от 25 символа. Примери за добро наименование на "
+"състезание са \"Шампионат на САЩ ден 1\" или \"Ривървю парк, "
+"4/12/06\"."
+
+#: NewEventTitle.resx, eventTitleLabel.Text
+msgid "Event Title:"
+msgstr "Наименование на състезанието:"
+
+#: NewEventWizard.resx, backButton.Text
+msgid "< &Back"
+msgstr "< &Назад"
+
+#: NonPrintableObjects.resx, labelWarning.Text
+msgid "Map file \"{0}\" contains objects or symbols that are not "
+"fully supported by Purple Pen, and may not print "
+"correctly. The objects that may not print correctly are "
+"listed below.\n"
+"\n"
+"For printing competition maps, it is suggested that "
+"courses be exported to OCAD files (use File/Create OCAD "
+"Files...) and to print the maps from OCAD.\n"
+msgstr "Картовият файл \"{0}\" съдържа обекти или символи, които не "
+"се поддържат от Purple Pen и могат да не се отпечатат "
+"правилно. Тези обекти са изброени по-долу.\n"
+"\n"
+"За отпечатване на карти за състезания се препоръчва "
+"маршрутите да се експортират във файлове за OCAD (чрез "
+"меню Файл/Създай файлове за OCAD...) и да принтирате "
+"картите от OCAD.\n"
+
+#: NonPrintableObjects.resx, okButton.Text
+msgid "Continue"
+msgstr "Продължи"
+
+#: NonPrintableObjects.resx, $this.Text
+msgid "Map File Cannot Be Printed Accurately"
+msgstr "Картовият файл не може да бъде отпечатан правилно."
+
+#: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
+msgid "The following files already exist. If you continue, they "
+"will be replaced."
+msgstr "Следните файлове вече съществуват. Ако продължите, те ще "
+"бъдат заменени."
+
+#: OverwritingOcadFilesDialog.resx, buttonOK.Text
+msgid "Replace"
+msgstr "Замени"
+
+#: OverwritingOcadFilesDialog.resx, $this.Text
+msgid "Confirm Replace Files"
+msgstr "Потвърди заменянето на файлове"
+
+#: PrintCourses.resx, okButton.Text
+#: PrintDescriptions.resx, printButton.Text
+#: PrintPunches.resx, printButton.Text
+msgid "Print"
+msgstr "Отпечатай"
+
+#: PrintCourses.resx, printerChange.Text
+#: PrintDescriptions.resx, printerChange.Text
+#: PrintPunches.resx, printerChange.Text
+msgid "Change Printer..."
+msgstr "Смени принтер..."
+
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Размер на хартията:"
+
+#: PrintCourses.resx, printerName.Text
+#: PrintDescriptions.resx, printerName.Text
+#: PrintPunches.resx, printerName.Text
+msgid "Printer Name"
+msgstr "Име на принтера"
+
+#: PrintCourses.resx, printerLabel.Text
+#: PrintDescriptions.resx, printerLabel.Text
+#: PrintPunches.resx, printerLabel.Text
+msgid "Printer:"
+msgstr "Принтер:"
+
+#: PrintCourses.resx, previewButton.Text
+#: PrintDescriptions.resx, previewButton.Text
+#: PrintPunches.resx, previewButton.Text
+msgid "Preview..."
+msgstr "Преглед:"
+
+#: PrintCourses.resx, copiesLabel.Text
+msgid "Copies of each course:"
+msgstr "Разпечатки за всеки маршрут:"
+
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Разпечатки"
+
+#: PrintCourses.resx, radioButtonMultiPage.Text
+msgid "Print on multiple pages"
+msgstr "Отпечатай на много страници"
+
+#: PrintCourses.resx, radioButtonOnePage.Text
+msgid "Crop to a single page"
+msgstr "Подрежи до единична страница"
+
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr "Ако зоната за печат е твърде широка за побиране в една "
+"страница:"
+
+#: PrintCourses.resx, $this.Text
+msgid "Print Courses"
+msgstr "Отпечатай маршрутите"
+
+#: PrintDescriptions.resx, marginChange.Text
+#: PrintPunches.resx, marginChange.Text
+msgid "Change Margins..."
+msgstr "Промени полетата..."
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Отгоре: 0.55\", Отдолу: 0.55\", Отляво: 0.55\", Отдясно: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Полета:"
+
+#: PrintDescriptions.resx, orientationLabel.Text
+#: PrintPunches.resx, orientationLabel.Text
+msgid "Orientation:"
+msgstr "Позиция:"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items
+msgid "Course default"
+msgstr "Настройки по подразбиране за маршрутите"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items3
+msgid "Symbols & Text"
+msgstr "Символи и текст"
+
+#: PrintDescriptions.resx, descriptionTypeLabel.Text
+msgid "Description type:"
+msgstr "Вид на описанията:"
+
+#: PrintDescriptions.resx, lineSizeLabel.Text
+msgid "Line size:"
+msgstr "Размер на линията:"
+
+#: PrintDescriptions.resx, descriptionsLabel.Text
+msgid "descriptions per course"
+msgstr "описания на маршрут"
+
+#: PrintDescriptions.resx, copiesCombo.Items
+msgid "one copy of each course"
+msgstr "едно копие за всеки маршрут"
+
+#: PrintDescriptions.resx, copiesCombo.Items1
+msgid "one page of each course"
+msgstr "една страница за всеки маршрут"
+
+#: PrintDescriptions.resx, copiesCombo.Items2
+msgid "multiple pages of each course"
+msgstr "много страници за всеки маршрут"
+
+#: PrintDescriptions.resx, whatToPrintLabel.Text
+msgid "Print:"
+msgstr "Отпечатай:"
+
+#: PrintDescriptions.resx, $this.Text
+msgid "Print Descriptions"
+msgstr "Отпечатай описанията"
+
+#: PrintPunches.resx, punchCardLayoutButton.Text
+#: PunchPatternDialog.resx, formatButton.Text
+msgid "Punch Card Layout..."
+msgstr "Оформление на състезателния картон..."
+
+#: PrintPunches.resx, punchBoxSizeLabel.Text
+msgid "Punch box size:"
+msgstr "Размер на квадратчето за перфоратора:"
+
+#: PrintPunches.resx, descriptionsLabel.Text
+msgid "Copies:"
+msgstr "Копия:"
+
+#: PrintPunches.resx, $this.Text
+msgid "Print Punch Cards"
+msgstr "Печат на отпечатъците на перфораторите"
+
+#: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
+msgid "Box Order"
+msgstr "Поредност на клетките"
+
+#: PunchcardLayoutDialog.resx, columnsLabel.Text
+msgid "Columns:"
+msgstr "Колони:"
+
+#: PunchcardLayoutDialog.resx, rowsLabel.Text
+msgid "Rows:"
+msgstr "Редове:"
+
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Размер"
+
+#: PunchcardLayoutDialog.resx, $this.Text
+msgid "Punch Card Layout"
+msgstr "Оформление на състезателния картон"
+
+#: PunchPatternDialog.resx, punchPatternsLabel.Text
+msgid "Click on a control code in the left-side list, and design "
+"the punch pattern in the right side. Red codes indicate "
+"controls that have no punch pattern defined."
+msgstr "Кликнете върху някоя от сигнатурите в списъка отляво, а "
+"отдясно изобразете съответстващия отпечатък на перфоратор. "
+"Сигнатурите в червено посочват КТ, за които не е определен "
+"отпечатък от перфоратор."
+
+#: PunchPatternDialog.resx, $this.Text
+msgid "Punch Patterns"
+msgstr "Отпечатъци на перфораторите"
+
+#: ReportForm.resx, printButton.Text
+msgid "Print..."
+msgstr "Печат..."
+
+#: ReportForm.resx, previewButton.Text
+msgid "Print Preview..."
+msgstr "Преглед преди печат..."
+
+#: ReportForm.resx, okButton.Text
+msgid "Close"
+msgstr "Затвори"
+
+#: ReportText.resx, ColumnHeader_Climb
+msgid "Climb"
+msgstr "Изкачване"
+
+#: ReportText.resx, ColumnHeader_Code
+msgid "Code"
+msgstr "Сигнатура"
+
+#: ReportText.resx, ColumnHeader_Column
+msgid "Column"
+msgstr "Колона"
+
+#: ReportText.resx, ColumnHeader_Control
+msgid "Control"
+msgstr "Контролна точка"
+
+#: ReportText.resx, ColumnHeader_ControlCodes
+msgid "Control codes"
+msgstr "Сигнатури на КТ"
+
+#: ReportText.resx, ColumnHeader_Controls
+msgid "Controls"
+msgstr "Контролни точки"
+
+#: ReportText.resx, ColumnHeader_Course
+msgid "Course"
+msgstr "Маршрут"
+
+#: ReportText.resx, ColumnHeader_Distance
+msgid "Distance"
+msgstr "Разстояние"
+
+#: ReportText.resx, ColumnHeader_Item
+msgid "Item"
+msgstr "Елемент"
+
+#: ReportText.resx, ColumnHeader_Leg
+msgid "Leg"
+msgstr "Отсечка"
+
+#: ReportText.resx, ColumnHeader_Length
+msgid "Length"
+msgstr "Дължина"
+
+#: ReportText.resx, ColumnHeader_Load
+msgid "Load"
+msgstr "Зареди"
+
+#: ReportText.resx, ColumnHeader_Location
+msgid "Location"
+msgstr "Местоположение"
+
+#: ReportText.resx, ColumnHeader_NumberOfCourses
+msgid "# Courses"
+msgstr "# Маршрути"
+
+#: ReportText.resx, ColumnHeader_Reason
+msgid "Reason"
+msgstr "Причина"
+
+#: ReportText.resx, ColumnHeader_SameSymbol
+msgid "Same symbol?"
+msgstr "Същия символ?"
+
+#: ReportText.resx, CourseSummary_Title
+msgid "Course Summary for {0}"
+msgstr "Обобщение за маршрут {0}"
+
+#: ReportText.resx, CrossRef_Title
+msgid "Control cross-reference for {0}"
+msgstr "Обобщение на КТ по маршрути за {0}"
+
+#: ReportText.resx, EventAudit_CloseTogetherControls
+msgid "Close Together Controls"
+msgstr "Контролни точки, твърде близки по разстояние"
+
+#: ReportText.resx, EventAudit_CloseTogetherExplanation
+msgid "The following table shows all control pairs that are "
+"within {0} meters of each other. The same symbol column "
+"shows whether the two controls have the same primary "
+"symbol (column D)."
+msgstr "Следната таблица показва всички двойки контролни точки в "
+"границите на {0} метра една от друга. Колоната от "
+"описанията, изобразяваща обекта на КТ, показва дали и "
+"двете имат един и същи символ (колона D)."
+
+#: ReportText.resx, EventAudit_MissingBoxes
+msgid "Missing Description Boxes"
+msgstr "Липсващи клетки в описанията"
+
+#: ReportText.resx, EventAudit_MissingClimb
+msgid "Regular courses should indicate the amount of climb"
+msgstr "При обикновените маршрути трябва да се посочва сборното "
+"изкачване в метри."
+
+#: ReportText.resx, EventAudit_MissingD
+msgid "All controls must have a main feature in column D"
+msgstr "На всички контролни точки трябва да отговаря обект в "
+"колона D."
+
+#: ReportText.resx, EventAudit_MissingEBetween
+msgid "When \"between\" is in column G, two features must be shown "
+"in columns D and E"
+msgstr "Когато символът \"между\" е в колона G, в колони D и E "
+"трябва да се посочат два обекта."
+
+#: ReportText.resx, EventAudit_MissingEJunction
+msgid "When \"junction\" or \"crossing\" is in column F, two features "
+"must be shown in columns D and E"
+msgstr "Когато символът \"Пресичане\" или \"Събиране/сливане\" е в "
+"колона F, в колони D и E трябва да се посочат два обекта."
+
+#: ReportText.resx, EventAudit_MissingFinish
+msgid "Regular courses should have a finish circle"
+msgstr "Обикновените маршрути трябва да имат обозначен финал (две "
+"концентрични окръжности)."
+
+#: ReportText.resx, EventAudit_MissingItems
+msgid "Missing Items in Courses"
+msgstr "Липсващи елементи в маршрутите"
+
+#: ReportText.resx, EventAudit_MissingLoad
+msgid "Course should have expected competitor load"
+msgstr "Маршрутът трябва да има очакван брой състезатели."
+
+#: ReportText.resx, EventAudit_MissingPunch
+msgid "No punch pattern defined"
+msgstr "Не са зададени никакви отпечатъци на перфоратори"
+
+#: ReportText.resx, EventAudit_MissingPunchPatterns
+msgid "Missing Punch Patterns"
+msgstr "Липсващи отпечатъци на перфоратори"
+
+#: ReportText.resx, EventAudit_MissingScore
+msgid "Score course should have score set for all controls or no "
+"controls"
+msgstr "Състезанието тип скорелауф трябва да има зададени "
+"стойности за всяка контролна точка или въобще да няма "
+"зададени такива."
+
+#: ReportText.resx, EventAudit_MissingScores
+msgid "Missing Scores"
+msgstr "Липсващи стойности на контролни точки"
+
+#: ReportText.resx, EventAudit_MissingStart
+msgid "Regular courses should have a start triangle"
+msgstr "Обикновените маршрути трябва да имат обозначен старт "
+"(триъгълник)."
+
+#: ReportText.resx, EventAudit_MissingStartScore
+msgid "Score courses should have a start triangle"
+msgstr "Състезанията тип скорелауф трябва да имат обозначен старт "
+"(триъгълник)."
+
+#: ReportText.resx, EventAudit_No
+msgid "No"
+msgstr "Не"
+
+#: ReportText.resx, EventAudit_NoProblems
+msgid "No problems found."
+msgstr "Не са открити проблеми."
+
+#: ReportText.resx, EventAudit_Title
+msgid "Event Audit for {0}"
+msgstr "Проверка на състезание {0}"
+
+#: ReportText.resx, EventAudit_UnusedControls
+#: UnusedControls.resx, $this.Text
+msgid "Unused Controls"
+msgstr "Неизползвани контролни точки"
+
+#: ReportText.resx, EventAudit_UnusedControlsExplanation
+msgid "The following controls are present in the All Controls "
+"collection but are not used in any course. To remove them, "
+"use the \"Remove Unused Controls\" command on the \"Event\" "
+"menu. These controls will not be considered further in "
+"this report."
+msgstr "Следните контролни точки са налични в сбирката от всички "
+"КТ, но не са използвани в никой от маршрутите. За да ги "
+"премахнете, използвайте командата \"Премахни неизползваните "
+"контролни точки\" от менюто \"Състезание\", след което тези "
+"КТ повече няма да се появяват в справката."
+
+#: ReportText.resx, EventAudit_Yes
+msgid "Yes"
+msgstr "Да"
+
+#: ReportText.resx, LegLength_Average
+msgid "Average"
+msgstr "Средно"
+
+#: ReportText.resx, LegLength_CourseInfo
+msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
+msgstr "{0} ({1} контролни точки, {2:0.0} km, {3} m изкачване)"
+
+#: ReportText.resx, LegLength_CourseInfoNoClimb
+msgid "{0} ({1} controls, {2:0.0} km)"
+msgstr "{0} ({1} контролни точки, {2:0.0} km)"
+
+#: ReportText.resx, LegLength_Title
+msgid "Leg Length Report for {0}"
+msgstr "Справка за дължината на отсечките за {0}"
+
+#: ReportText.resx, Load_ControlLoadSection
+msgid "Control load"
+msgstr "Натовареност на контролна точка"
+
+#: ReportText.resx, Load_LegLoadSection
+msgid "Leg load"
+msgstr "Натовареност на отсечка"
+
+#: ReportText.resx, Load_MissingLoads
+msgid "Some or all courses do not have competitor loads set for "
+"them. The loads listed below may be incorrect or missing "
+"for this reason. To set competitor loads, select "
+"\"Competitor Load\" from the \"Course\" menu."
+msgstr "Някои или всички маршрути нямат зададен брой състезатели. "
+"Поради това посочените по-долу цифри може да са неточни "
+"или да липсват. За да ги посочите, изберете \"Брой "
+"състезатели на маршрут\" от менюто \"Маршрут\"."
+
+#: ReportText.resx, Load_OnlyLegsMoreThanOnce
+msgid "(only legs used by more than one course appear in the "
+"following table)"
+msgstr "(само отсечките, които са използвани в повече от един "
+"маршрут, се появяват в следната таблица)"
+
+#: ReportText.resx, Load_Title
+msgid "Competitor Load Summary for {0}"
+msgstr "Обобщение за брой състезатели за {0}"
+
+#: ReportText.resx, Load_Warning
+msgid "WARNING:"
+msgstr "ВНИМАНИЕ:"
+
+#: SelectionDescriptionText.resx, AwayFromControl
+msgid "away from control"
+msgstr "далеч от контролна точка"
+
+#: SelectionDescriptionText.resx, CompetitorLoad
+msgid "Competitor load:"
+msgstr "Брой състезатели на маршрут:"
+
+#: SelectionDescriptionText.resx, ControlsInUse
+msgid "Controls in use:"
+msgstr "Използвани контролни точки:"
+
+#: SelectionDescriptionText.resx, ControlsNotInUse
+msgid "Controls not in use:"
+msgstr "Неизползвани контролни точки:"
+
+#: SelectionDescriptionText.resx, Control_Plural
+msgid "controls"
+msgstr "контролни точки"
+
+#: SelectionDescriptionText.resx, Control_Singular
+msgid "control"
+msgstr "контролна точка"
+
+#: SelectionDescriptionText.resx, CourseList_AllCourses
+msgid "All courses"
+msgstr "Всички маршрути"
+
+#: SelectionDescriptionText.resx, CourseName
+msgid "Course \"{0}\""
+msgstr "Маршрут \"{0}\""
+
+#: SelectionDescriptionText.resx, CustomizedSymbolDesc
+msgid "Customized symbol description"
+msgstr "Персонализирано описание на КТ"
+
+#: SelectionDescriptionText.resx, EntireLeg
+msgid "entire leg"
+msgstr "цяла отсечка"
+
+#: SelectionDescriptionText.resx, FinishFunnel
+msgid "finish funnel"
+msgstr "финален коридор"
+
+#: SelectionDescriptionText.resx, Finish_Plural
+msgid "finishes"
+msgstr "финали"
+
+#: SelectionDescriptionText.resx, Finish_Singular
+msgid "finish"
+msgstr "финал"
+
+#: SelectionDescriptionText.resx, Flagging
+msgid "Flagging:"
+msgstr "Маркировка:"
+
+#: SelectionDescriptionText.resx, IntoControl
+msgid "into control"
+msgstr "в контролна точка"
+
+#: SelectionDescriptionText.resx, IntoFinishFunnel
+msgid "into finish funnel"
+msgstr "във финалния коридор"
+
+#: SelectionDescriptionText.resx, Length
+msgid "Length:"
+msgstr "Дължина:"
+
+#: SelectionDescriptionText.resx, LineHeight
+msgid "Line height:"
+msgstr "Височина на линията:"
+
+#: SelectionDescriptionText.resx, Location
+msgid "Location:"
+msgstr "Местоположение:"
+
+#: SelectionDescriptionText.resx, MandCrossing_Plural
+msgid "mandatory crossing points"
+msgstr "задължителни места за преминаване"
+
+#: SelectionDescriptionText.resx, MandCrossing_Singular
+msgid "mandatory crossing point"
+msgstr "задължително място за преминаване"
+
+#: SelectionDescriptionText.resx, None
+msgid "none"
+msgstr "никакъв"
+
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Описания на контролните точки"
+
+#: SelectionDescriptionText.resx, SpecialName_Forbidden
+msgid "Forbidden Route"
+msgstr "Забранен път"
+
+#: SelectionDescriptionText.resx, SpecialName_OOB
+msgid "Out-of-bounds Area"
+msgstr "Забранен район"
+
+#: SelectionDescriptionText.resx, Start_Plural
+msgid "starts"
+msgstr "стартове"
+
+#: SelectionDescriptionText.resx, Start_Singular
+msgid "start"
+msgstr "старт"
+
+#: SelectionDescriptionText.resx, TextDescription
+msgid "Text description:"
+msgstr "Текстово описание:"
+
+#: SelectionDescriptionText.resx, TextLine
+msgid "Text line"
+msgstr "Ред за текст"
+
+#: SelectionDescriptionText.resx, TextLine_AboveAllCourses
+msgid "Appears above {0}, in all courses that contain {0}"
+msgstr "Ще се появи най-отгоре на {0} при всички маршрути, "
+"съдържащи {0}"
+
+#: SelectionDescriptionText.resx, TextLine_AboveThisCourse
+msgid "Appears above {0}, in this course only"
+msgstr "Ще се появи най-отгоре на {0} само за този маршрут"
+
+#: SelectionDescriptionText.resx, TextLine_BelowAllCourses
+msgid "Appears below {0}, in all courses that contain {0}"
+msgstr "Ще се появи най-отдолу на {0} при всички маршрути, "
+"съдържащи {0}"
+
+#: SelectionDescriptionText.resx, TextLine_BelowThisCourse
+msgid "Appears below {0}, in this course only"
+msgstr "Ще се появи най-отдолу на {0} само в този маршрут"
+
+#: SelectionDescriptionText.resx, TotalControls
+msgid "Total controls:"
+msgstr "Общо контролни точки:"
+
+#: SelectionDescriptionText.resx, TotalScore
+msgid "Total score:"
+msgstr "Общ резултат:"
+
+#: SelectionDescriptionText.resx, UsedInCourses
+msgid "Used in courses:"
+msgstr "Използван/и в маршрути:"
+
+#: SetPrintAreaDialog.resx, okButton.Text
+msgid "Done"
+msgstr "Готово"
+
+#: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
+msgid "Set the desired printing area by dragging with the mouse."
+msgstr "Изберете зоната за печат чрез плъзгане на мишката."
+
+#: SetUILanguage.resx, introLabel.Text
+msgid "Select the language that you would like to use for the "
+"user interface of Purple Pen (menus, windows, etc.)"
+msgstr "Изберете езика, който да използвате за потребителския "
+"интерфейс на Purple Pen (менюта, прозорци и т.н.)"
+
+#: SetUILanguage.resx, $this.Text
+msgid "Program Language"
+msgstr "Език на програмата"
+
+#: StatusBarText.resx, DefaultStatus
+msgid "Left mouse button: select object;   Right mouse button: "
+"move map;   Scroll wheel: zoom in/out"
+msgstr "Ляв бутон на мишката: Избери обект. Десен бутон на "
+"мишката: Премести картата. Завъртане на колелото на "
+"мишката: Увеличи/Намали."
+
+#: StatusBarText.resx, DefaultRectangle
+msgid "Left mouse button: move/size rectangle;   Right mouse "
+"button: move map;   Scroll wheel: zoom in/out"
+msgstr "Ляв бутон на мишката: Придвижи/Оразмери правоъгълника. "
+"Десен бутон на мишката: Премести картата. Завъртане на "
+"колелото на мишката: Увеличи/Намали."
+
+#: StatusBarText.resx, DragObject
+msgid "Hold down left mouse button and drag to move selected object"
+msgstr "Задръжте левия бутон на мишката и я плъзнете, за да "
+"преместите избрания обект."
+
+#: StatusBarText.resx, DragCorner
+msgid "Hold down left mouse button and drag corner point to move it"
+msgstr "Задръжте левия бутон на мишката и изтеглете върха на "
+"ъгъла, за да го преместите."
+
+#: StatusBarText.resx, DraggingObject
+msgid "Move object to desired location and release mouse button"
+msgstr "Преместете обекта до желаното местоположение и освободете "
+"бутона на мишката."
+
+#: StatusBarText.resx, DraggingCorner
+msgid "Move corner point to desired location and release mouse "
+"button"
+msgstr "Преместете върха на ъгъла до желаното местоположение и "
+"освободете бутона на мишката."
+
+#: StatusBarText.resx, AddingControl
+msgid "Click left mouse button to place new control"
+msgstr "Кликнете с левия бутон на мишката, за да поставите нова "
+"контролна точка."
+
+#: StatusBarText.resx, AddingExistingControl
+msgid "Click left mouse button to add existing control \"{0}\" to "
+"course"
+msgstr "Кликнете с левия бутон на мишката, за да добавите "
+"контролна точка \"{0}\" към маршрута."
+
+#: StatusBarText.resx, AddingStart
+msgid "Click left mouse button to place new start"
+msgstr "Кликнете с левия бутон на мишката, за да поставите нов "
+"старт."
+
+#: StatusBarText.resx, AddingExistingStart
+msgid "Click left mouse button to add existing start to course"
+msgstr "Кликнете с левия бутон на мишката, за да добавите "
+"съществуващ старт към маршрута."
+
+#: StatusBarText.resx, AddingFinish
+msgid "Click left mouse button to place new finish"
+msgstr "Кликнете с левия бутон на мишката, за да поставите нов "
+"финал."
+
+#: StatusBarText.resx, AddingExistingFinish
+msgid "Click left mouse button to add existing finish to course"
+msgstr "Кликнете с левия бутон на мишката, за да добавите "
+"съществуващ финал към маршрута."
+
+#: StatusBarText.resx, AddingCrossingPoint
+msgid "Click left mouse button to place new mandatory crossing "
+"point"
+msgstr "Кликнете с левия бутон на мишката, за да добавите ново "
+"задължително място за преминаване."
+
+#: StatusBarText.resx, AddingExistingCrossingPoint
+msgid "Click left mouse button to add existing mandatory crossing "
+"point to course"
+msgstr "Кликнете с левия бутон на мишката, за да добавите "
+"съществуващо задължително място за преминаване."
+
+#: StatusBarText.resx, AddingObject
+msgid "Click left mouse button to place new object"
+msgstr "Кликнете с левия бутон на мишката, за да поставите нов "
+"обект."
+
+#: StatusBarText.resx, AddingBend
+msgid "Click left mouse button at the location of the bend"
+msgstr "Кликнете с левия бутон на мишката, където е мястото на "
+"извивката."
+
+#: StatusBarText.resx, AddingCorner
+msgid "Click left mouse button to add a new corner"
+msgstr "Кликнете с левия бутон на мишката, за да добавите нов ъгъл."
+
+#: StatusBarText.resx, DeletingBend
+msgid "Click left mouse button on a bend to remove it"
+msgstr "Кликнете с левия бутон на мишката на мястото на извивката, "
+"за да я премахнете."
+
+#: StatusBarText.resx, DeletingCorner
+msgid "Click left mouse button on a corner to remove it"
+msgstr "Кликнете с левия бутон на мишката върху ъгъл, за да го "
+"премахнете."
+
+#: StatusBarText.resx, AddingControlGap
+msgid "Click left mouse button on the control circle to add a gap"
+msgstr "Кликнете с левия бутон на мишката върху окръжността на КТ, "
+"за да добавите прекъсване."
+
+#: StatusBarText.resx, RemovingControlGap
+msgid "Click left mouse button on a gap in the control circle to "
+"remove it"
+msgstr "Кликнете с левия бутон на мишката върху прекъсването на "
+"окръжността на КТ, за да го премахнете."
+
+#: StatusBarText.resx, AddingLegGap
+msgid "Hold down left mouse button and drag to create a gap in "
+"the leg"
+msgstr "Задръжте левия бутон на мишката и я плъзнете, за да "
+"вмъкнете прекъсване в отсечката."
+
+#: StatusBarText.resx, RemovingLegGap
+msgid "Click left mouse button on a gap in the leg to remove it"
+msgstr "Кликнете с левия бутон на мишката върху прекъсването на "
+"отсечката, за да го премахнете."
+
+#: StatusBarText.resx, SizeRectangle
+msgid "Hold down left mouse button and drag to size the selected "
+"object"
+msgstr "Задръжте левия бутон на мишката и плъзнете, за да "
+"оразмерите избрания обект."
+
+#: StatusBarText.resx, SizingRectangle
+msgid "Move edge(s) to desired location and release mouse button"
+msgstr "Преместете ъгъла (ъглите) до желаното място и освободете "
+"бутона на мишката."
+
+#: StatusBarText.resx, AddingDescription
+msgid "Hold down left mouse button and drag to create control "
+"descriptions"
+msgstr "Задръжте левия бутон на мишката и плъзнете, за да "
+"създадете описание на КТ."
+
+#: StatusBarText.resx, RotatingObject
+msgid "Click left mouse button when the crossing point is rotated "
+"to the correct angle"
+msgstr "Кликнете с левия бутон на мишката, когато мястото за "
+"преминаване е завъртяно под правилен ъгъл."
+
+#: StatusBarText.resx, AddingLineArea
+msgid "Hold down left mouse button and drag to add a line "
+"segment; click the left mouse button to finish adding object"
+msgstr "Задръжте левия бутон на мишката и дръпнете, за да добавите "
+"линеен сегмент. Кликнете с левия бутон на мишката, за да "
+"прекратите добавяне на обект."
+
+#: StatusBarText.resx, AddingText
+msgid "Hold down left mouse button and drag to create text"
+msgstr "Задръжте левия бутон на мишката и дръпнете, за да "
+"създадете текстово поле."
+
+#: UnusedControls.resx, okButton.Text
+msgid "Delete"
+msgstr "Изтрий"
+
+#: UnusedControls.resx, unusedControlsLabel.Text
+msgid "The following controls are in the All Controls collection, "
+"but not used in any course. Click Delete to remove all "
+"checked controls."
+msgstr "Следните контролни точки са в сбирката с всички КТ, но не "
+"се използват в никой от маршрутите. Натиснете Изтрий, за "
+"да премахнете всичките отметнати КТ."
+

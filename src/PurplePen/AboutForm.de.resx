@@ -121,7 +121,7 @@
     <value>Copyright © 2007-2011 by Peter Golde</value>
   </data>
   <data name="freeLabel.Text" xml:space="preserve">
-    <value>Purple Pen ist freie Software und darf kopiert und verteilt werden.</value>
+    <value>Purple Pen ist eine freie Software und darf kopiert und verteilt werden.</value>
   </data>
   <data name="disclaimerLabel.Text" xml:space="preserve">
     <value>Diese Software wurde vom Inhaber des Urheberrechts in der vorliegenden Form übergeben, ohne jegliche ausdrückliche oder stillschweigende Garantien, einschließlich, aber nicht beschränkt auf stillschweigende Garantien bezüglich hinreichender Art und Güte und bezüglich der Eignung für einen bestimmten Zweck.</value>
@@ -130,10 +130,10 @@
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Mitwirkende</value>
+    <value>Autoren</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
-    <value>Zeige die ganze Lizenz.</value>
+    <value>Lesen Sie die ganze Lizenz</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Über Purple Pen</value>

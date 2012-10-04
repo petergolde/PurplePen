@@ -117,10 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Drucker ändern...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Papiergröße:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Druckername</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Drucker:</value>
+  </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Ausgabe</value>
   </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Vorschau...</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Bahnen</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Darstellung</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bahnen drucken</value>
   </data>
 </root>

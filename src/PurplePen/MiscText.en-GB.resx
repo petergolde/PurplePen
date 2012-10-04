@@ -384,4 +384,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>No courses were selected to print.</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Eğer Mor Kalem için çevirilen dilde belgeler içeren bir internet sitesi bulunuyorsa, bu öğenin çevirisi olarak URL'yi (http içerecek şekilde) girin. Aksi halde boş bırakın.</value>
+  </data>
 </root>

@@ -1,0 +1,2810 @@
+# Purple Pen localization file
+# Copyright (C) 2008
+# This file is distributed under the same license as the Purple Pen package.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Purple Pen 1.1.5\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2012-10-04 12:42-07:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AboutForm.resx, copyrightLabel.Text
+msgid "Copyright © 2007-2011 by Peter Golde"
+msgstr "Copyright © 2007-2012 de către  Peter Golde"
+
+#: AboutForm.resx, freeLabel.Text
+msgid "Purple Pen is free software and may be copied and shared."
+msgstr "Purple Pen este software gratuit și poate fi copiat și "
+"distribuit."
+
+#: AboutForm.resx, disclaimerLabel.Text
+msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
+"CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED "
+"WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED."
+msgstr "ACEST PROGRAM ESTE OFERIT DE CĂTRE DEȚINĂTORUL DREPTURILOR "
+"DE AUTOR ȘI CONTRIBUTORI \"AȘA CUM ESTE\" ȘI SUNT EXCLUSE "
+"ORICE GARAȚII IMPLICITE SAU EXPLICITE, SAU GARAȚII "
+"IMPLICITE DE COMERCIALIZARE SAU PENTRU UN ANUMIT SCOP, DAR "
+"FARĂ A SE LIMITA LA ACESTEA."
+
+#: AboutForm.resx, okButton.Text
+#: InitialScreen.resx, okButton.Text
+#: LicenseForm.resx, okButton.Text
+#: MissingFonts.resx, okButton.Text
+#: OkCancelDialog.resx, okButton.Text
+msgid "OK"
+msgstr "OK"
+
+#: AboutForm.resx, creditsButton.Text
+msgid "Credits"
+msgstr "Mulţumiri"
+
+#: AboutForm.resx, licenseButton.Text
+msgid "View Full License"
+msgstr "Vizualizați întreaga licență"
+
+#: AboutForm.resx, $this.Text
+msgid "About Purple Pen"
+msgstr "Despre Purple Pen"
+
+#: AddCourse.resx, firstControlLabel.Text
+msgid "First control number:"
+msgstr "Numărul primului post:"
+
+#: AddCourse.resx, descriptionAppearanceLabel.Text
+#: AllControlsProperties.resx, descriptionAppearanceLabel.Text
+msgid "Description appearance:"
+msgstr "Aspect descriere:"
+
+#: AddCourse.resx, mapScaleLabel.Text
+#: AllControlsProperties.resx, printingScaleLabel.Text
+msgid "Map printing scale:"
+msgstr "Scara de tipărire a hărții:"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
+
+#: AddCourse.resx, descKindCombo.Items
+#: AllControlsProperties.resx, descKindCombo.Items
+#: PrintDescriptions.resx, descriptionKindCombo.Items1
+msgid "Symbols"
+msgstr "Simboluri"
+
+#: AddCourse.resx, descKindCombo.Items1
+#: AllControlsProperties.resx, descKindCombo.Items1
+#: EnterSymbolText.resx, textColumn.HeaderText
+#: MainFrame.resx, addTextMenu.Text
+#: MainFrame.resx, textToolStripMenuItem.Text
+#: PrintDescriptions.resx, descriptionKindCombo.Items2
+#: SelectionDescriptionText.resx, SpecialName_Text
+msgid "Text"
+msgstr "Text"
+
+#: AddCourse.resx, descKindCombo.Items2
+#: AllControlsProperties.resx, descKindCombo.Items2
+msgid "Symbols and text"
+msgstr "Simboluri și text"
+
+#: AddCourse.resx, labelKindLabel.Text
+msgid "Control circle labels:"
+msgstr "Etichete la cercul postului:"
+
+#: AddCourse.resx, labelKindCombo.Items
+msgid "Sequence number (3)"
+msgstr "Număr secvențial"
+
+#: AddCourse.resx, labelKindCombo.Items1
+msgid "Control code (145)"
+msgstr "Codul postului"
+
+#: AddCourse.resx, labelKindCombo.Items2
+msgid "Sequence and code (3-145)"
+msgstr "Număr și cod"
+
+#: AddCourse.resx, scoreColumnLabel.Text
+msgid "Show points in:"
+msgstr "Afișează punctele în:"
+
+#: AddCourse.resx, scoreColumnCombo.Items
+msgid "Column A"
+msgstr "Coloana A"
+
+#: AddCourse.resx, scoreColumnCombo.Items1
+msgid "Column B"
+msgstr "Coloana B"
+
+#: AddCourse.resx, scoreColumnCombo.Items2
+msgid "Column H"
+msgstr "Coloana H"
+
+#: AddCourse.resx, scoreColumnCombo.Items3
+msgid "(do not display)"
+msgstr "(nu afișa)"
+
+#: AddCourse.resx, groupBox1.Text
+#: AllControlsProperties.resx, appearanceGroupBox.Text
+#: PrintCourses.resx, groupBoxAppearance.Text
+#: PrintDescriptions.resx, layoutGroup.Text
+#: PrintPunches.resx, layoutGroup.Text
+msgid "Appearance"
+msgstr "Aspect"
+
+#: AddCourse.resx, secondaryTitleDescription.Text
+msgid "The following (optional) text will appear on the second "
+"line of the control description sheet:"
+msgstr "Următorul text (opțional) va apărea în a doua linie a "
+"tabelului de descriere al posturilor"
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Categorie / Titlu secundar"
+
+#: AddCourse.resx, climbLabel.Text
+#: SelectionDescriptionText.resx, Climb
+msgid "Climb:"
+msgstr "Diferență de nivel:"
+
+#: AddCourse.resx, courseTypeLabel.Text
+msgid "Course type:"
+msgstr "Tipul traseului:"
+
+#: AddCourse.resx, courseNameLabel.Text
+msgid "Course name:"
+msgstr "Numele traseului:"
+
+#: AddCourse.resx, courseKindCombo.Items
+msgid "Normal Course"
+msgstr "Traseu normal"
+
+#: AddCourse.resx, courseKindCombo.Items1
+msgid "Score Course"
+msgstr "Traseu cu scor"
+
+#: AddCourse.resx, metersSuffix.Text
+msgid "meters"
+msgstr "metri"
+
+#: AddCourse.resx, $this.Text
+#: CommandNameText.resx, NewCourse
+msgid "New Course"
+msgstr "Traseu nou"
+
+#: AddTextLine.resx, textLineLabel.Text
+msgid "Enter text to place on separate line of control "
+"descriptions:"
+msgstr "Introduceți textul plasat pe linie separată a descrierii "
+"punctelor de control:"
+
+#: AddTextLine.resx, coursesLabel.Text
+msgid "Courses:"
+msgstr "Trasee:"
+
+#: AddTextLine.resx, positionLabel.Text
+msgid "Position:"
+msgstr "Poziție:"
+
+#: AddTextLine.resx, comboBoxPosition.Items
+msgid "Above {0}"
+msgstr "Deasupra {0}"
+
+#: AddTextLine.resx, comboBoxPosition.Items1
+msgid "Below {0}"
+msgstr "Sub {0}"
+
+#: AddTextLine.resx, comboBoxCourses.Items
+msgid "This course only"
+msgstr "Doar acest traseu"
+
+#: AddTextLine.resx, comboBoxCourses.Items1
+msgid "All courses with {0}"
+msgstr "Toate traseele cu {0}"
+
+#: AddTextLine.resx, $this.Text
+#: CommandNameText.resx, AddTextLine
+msgid "Add Text Line"
+msgstr "Adaugă linie de text"
+
+#: AllControlsProperties.resx, allControlsPropertiesLabel.Text
+msgid "These settings control how the map and descriptions for "
+"All Controls are printed."
+msgstr "Aceste setări controlează cum vor fi tipărite harta și "
+"descrierea pentru toate posturile."
+
+#: AllControlsProperties.resx, $this.Text
+msgid "All Controls Properties"
+msgstr "Proprietăți toate posturile"
+
+#: AutoNumbering.resx, disallowInvertibleCheckBox.Text
+#: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
+msgid "Disallow codes that could be read upside-down (e.g., "
+"\"68\"/\"89\")"
+msgstr "Interzice codurile care pot fi citite inversate pe dos "
+"(ex, \"68\"/\"89\")"
+
+#: AutoNumbering.resx, renumberExistingRadioButton.Text
+msgid "Renumber existing controls also"
+msgstr "Renumerotează și posturile existente"
+
+#: AutoNumbering.resx, newControlsOnlyRadioButton.Text
+msgid "Apply these settings to newly created controls only"
+msgstr "Aplică aceste setări doar posturilor proaspăt create"
+
+#: AutoNumbering.resx, existingControlsGroupBox.Text
+msgid "Existing Controls"
+msgstr "Posturi Existente"
+
+#: AutoNumbering.resx, automaticNumberingLabel.Text
+msgid "Newly created controls are automatically numbered "
+"according to the following settings."
+msgstr "Posturile proaspăt create sunt numerotate automat în "
+"concordanță cu setările următoare."
+
+#: AutoNumbering.resx, startingCodeLabel.Text
+#: NewEventNumbering.resx, startingCodeLabel.Text
+msgid "Starting code:"
+msgstr "Codul de start:"
+
+#: AutoNumbering.resx, $this.Text
+#: CommandNameText.resx, AutoNumbering
+msgid "Automatic Numbering"
+msgstr "Numerotare Automată"
+
+#: ChangeAllCodes.resx, OldCode.HeaderText
+msgid "Original Code"
+msgstr "Codul Original"
+
+#: ChangeAllCodes.resx, NewCode.HeaderText
+msgid "New Code"
+msgstr "Noul Cod"
+
+#: ChangeAllCodes.resx, changeControlCodesLabel.Text
+msgid "To change the code for one or more controls,click in the "
+"\"New Code\" column and enter the new code. "
+msgstr "Pentru a schimba codul pentru unul sau mai multe posturi, "
+"click pe coloana \"Cod Nou\" și introduceți noul cod. "
+
+#: ChangeAllCodes.resx, $this.Text
+msgid "Change Control Codes"
+msgstr "Schimbare Coduri Posturi"
+
+#: ChangeCourseOrder.resx, moveDownButton.Text
+msgid "Move down"
+msgstr "Mută în jos"
+
+#: ChangeCourseOrder.resx, courseOrderLabel.Text
+msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
+"order that courses are listed in the user interface, "
+"reports, and printing."
+msgstr "Folosește butoanele \"Mută în sus\" și \"Mută în jos\" pentru "
+"a schimba ordinea de listare a traseelor în interfață, "
+"rapoarte și imprimare."
+
+#: ChangeCourseOrder.resx, moveUpButton.Text
+msgid "Move up"
+msgstr "Mută în sus"
+
+#: ChangeCourseOrder.resx, $this.Text
+msgid "Course Order"
+msgstr "Ordinea Traseelor"
+
+#: ChangeMapFile.resx, mapFileDisplay.Text
+msgid "Current Map File"
+msgstr "Fișierul Hărții Curente"
+
+#: ChangeMapFile.resx, buttonChooseFile.Text
+#: NewEventMapFile.resx, chooseMapFileButton.Text
+msgid "&Choose map file..."
+msgstr "&Alege fișierul de hartă..."
+
+#: ChangeMapFile.resx, openFileDialog.Filter
+#: NewEventMapFile.resx, openFileDialog.Filter
+msgid "OCAD files (*.ocd)|*.ocd|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+msgstr "Fișiere OCAD (*.ocd)|*.ocd|Fișiere "
+"imagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+
+#: ChangeMapFile.resx, labelDpi.Text
+msgid "Resolution:"
+msgstr "Rezoluție:"
+
+#: ChangeMapFile.resx, labelScale.Text
+msgid "Scale:"
+msgstr "Scara:"
+
+#: ChangeMapFile.resx, labelOneTo.Text
+msgid "1 :"
+msgstr "1 :"
+
+#: ChangeMapFile.resx, labelDpi2.Text
+#: NewEventBitmapScale.resx, dpiLabel.Text
+msgid "dots per inch"
+msgstr "puncte/ţol (dpi)"
+
+#: ChangeMapFile.resx, $this.Text
+msgid "Map File"
+msgstr "Fișier Hartă"
+
+#: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
+msgid "Choose the courses that this object will be displayed on:"
+msgstr "Alege traseele în care va fi afișat obiectul curent:"
+
+#: ChangeSpecialCourses.resx, $this.Text
+#: CommandNameText.resx, ChangeDisplayedCourses
+msgid "Change Displayed Courses"
+msgstr "Schimbă Traseele Afișate"
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "Adaugă Text Special"
+
+#: ChangeText.resx, eventTitleMenuItem.Text
+msgid "Event Title"
+msgstr "Titlul Evenimentului"
+
+#: ChangeText.resx, courseNameMenuItem.Text
+#: CourseLoad.resx, CourseName.HeaderText
+#: SelectionDescriptionText.resx, SpecialName_CourseName
+msgid "Course Name"
+msgstr "Numele Traseului"
+
+#: ChangeText.resx, courseLengthMenuItem.Text
+msgid "Course Length"
+msgstr "Lungimea Traseului"
+
+#: ChangeText.resx, courseClimbMenuItem.Text
+msgid "Course Climb"
+msgstr "Diferența de nivel a Traseului"
+
+#: ChangeText.resx, classListMenuItem.Text
+msgid "Class List"
+msgstr "Categoria"
+
+#: CommandNameText.resx, ChangeSymbol
+msgid "Change Symbol"
+msgstr "Schimbă Simbol"
+
+#: CommandNameText.resx, ChangeCode
+msgid "Change Control Code"
+msgstr "Schimbă Codul Postului"
+
+#: CommandNameText.resx, ChangeControl
+msgid "Change Control"
+msgstr "Schimbă Postul"
+
+#: CommandNameText.resx, ChangeScore
+msgid "Change Control Points"
+msgstr "Schimbă Punctele Postului"
+
+#: CommandNameText.resx, ChangeTitle
+msgid "Change Title"
+msgstr "Schimbă Titlul"
+
+#: CommandNameText.resx, ChangeClimb
+msgid "Change Climb"
+msgstr "Schimbă Diferența de Nivel"
+
+#: CommandNameText.resx, ChangeCourseName
+msgid "Change Course Name"
+msgstr "Schimbă Numele Traseului"
+
+#: CommandNameText.resx, ChangeTextLine
+msgid "Change Text Line"
+msgstr "Schimbă Linia de Text"
+
+#: CommandNameText.resx, ChangeScale
+msgid "Update Map Scale"
+msgstr "Actualizează Scara Hărții"
+
+#: CommandNameText.resx, MoveControl
+msgid "Move Control"
+msgstr "Mută Post"
+
+#: CommandNameText.resx, MoveControlNumber
+msgid "Move Control Number"
+msgstr "Mută Numărul Postului"
+
+#: CommandNameText.resx, MoveObject
+msgid "Move Object"
+msgstr "Mută Obiect"
+
+#: CommandNameText.resx, DeleteControl
+msgid "Delete Control"
+msgstr "Șterge Post"
+
+#: CommandNameText.resx, DeleteObject
+msgid "Delete Object"
+msgstr "Șterge Obiect"
+
+#: CommandNameText.resx, DeleteTextLine
+msgid "Delete Text Line"
+msgstr "Șterge Linia Text"
+
+#: CommandNameText.resx, AddControl
+#: MainFrame.resx, addControlToolStripButton.Text
+msgid "Add Control"
+msgstr "Adăugare Post"
+
+#: CommandNameText.resx, AddStart
+#: MainFrame.resx, addStartToolStripButton.Text
+msgid "Add Start"
+msgstr "Adăugare Start"
+
+#: CommandNameText.resx, AddFinish
+#: MainFrame.resx, addFinishToolStripButton.Text
+msgid "Add Finish"
+msgstr "Adăugare Sosire"
+
+#: CommandNameText.resx, AddCrossingPoint
+msgid "Add Mandatory Crossing Point"
+msgstr "Adăugare Punct Trecere Obligatoriu"
+
+#: CommandNameText.resx, AddObject
+msgid "Add Object"
+msgstr "Adăugare Obiect"
+
+#: CommandNameText.resx, DeleteCourse
+msgid "Delete Course"
+msgstr "Ștergere Traseu"
+
+#: CommandNameText.resx, ChangeCourseProperties
+msgid "Change Course Properties"
+msgstr "Schimbare Proprietăți Traseu"
+
+#: CommandNameText.resx, ChangeAllControlsProperties
+msgid "Change All Controls Properties"
+msgstr "Schimbare Proprietăți Toate Posturile"
+
+#: CommandNameText.resx, NewEvent
+#: NewEventWizard.resx, $this.Text
+msgid "Create New Event"
+msgstr "Creare Eveniment Nou"
+
+#: CommandNameText.resx, SetLegFlagging
+msgid "Change Leg Flagging"
+msgstr "Schimbare semnalizare secțiune"
+
+#: CommandNameText.resx, ChangeCodes
+msgid "Change Codes"
+msgstr "Schimbare Coduri"
+
+#: CommandNameText.resx, MoveBend
+msgid "Move Leg Bend"
+msgstr "Mutare cotitură secțiune"
+
+#: CommandNameText.resx, AddBend
+msgid "Add Bend"
+msgstr "Adăugare Îndoitură"
+
+#: CommandNameText.resx, AddCorner
+msgid "Add Corner"
+msgstr "Adăugare Colț"
+
+#: CommandNameText.resx, DeleteBend
+msgid "Remove Bend"
+msgstr "Ștergere Îndoitură"
+
+#: CommandNameText.resx, DeleteCorner
+msgid "Remove Corner"
+msgstr "Ștergere Colț"
+
+#: CommandNameText.resx, AddGap
+msgid "Add Gap"
+msgstr "Adăugare Spațiu Gol"
+
+#: CommandNameText.resx, RemoveGap
+msgid "Remove Gap"
+msgstr "Ștergere Spațiu Gol"
+
+#: CommandNameText.resx, MoveGap
+msgid "Move Gap"
+msgstr "Mutare Spațiu Gol"
+
+#: CommandNameText.resx, Rotate
+msgid "Rotate"
+msgstr "Rotire"
+
+#: CommandNameText.resx, ChangePunchPatterns
+msgid "Change Punch Patterns"
+msgstr "Schimbare Model de Compostare"
+
+#: CommandNameText.resx, ChangePunchcardFormat
+msgid "Change Punch Card Layout"
+msgstr "Schimare Aspect Fișă de Control"
+
+#: CommandNameText.resx, SetPrintArea
+#: SetPrintAreaDialog.resx, $this.Text
+msgid "Set Print Area"
+msgstr "Setare Zonă de Imprimare"
+
+#: CommandNameText.resx, SetCourseLoad
+msgid "Change Competitor Load"
+msgstr "Schimare Încărcare Participanți"
+
+#: CommandNameText.resx, SetCustomSymbolText
+#: CustomSymbolText.resx, $this.Text
+msgid "Customize Description Text"
+msgstr "Personalizare Text Descriere"
+
+#: CommandNameText.resx, ChangeCourseOrder
+msgid "Change Course Order"
+msgstr "Schimbare Ordine Traseu"
+
+#: CommandNameText.resx, ChangeMapFile
+msgid "Change Map File"
+msgstr "Schimare Fișier Hartă"
+
+#: CommandNameText.resx, IgnoreMissingFonts
+msgid "Ignore Missing Fonts"
+msgstr "Ignoră Lipsă Fonturi"
+
+#: CommandNameText.resx, RemoveUnusedControls
+msgid "Remove Unused Controls"
+msgstr "Eliminare Posturi Nefolosite"
+
+#: CommandNameText.resx, SetDescriptionLanguage
+msgid "Change Description Language"
+msgstr "Schimare Limbă Descriere"
+
+#: CommandNameText.resx, ChangeText
+#: MiscText.resx, ChangeTextTitle
+msgid "Change Text"
+msgstr "Schimbare Text"
+
+#: CommandNameText.resx, ChangeCourseAppearance
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Course Appearance"
+msgstr "Personalizare Aspect Traseu"
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr "Normal"
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "Îngroșat"
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr "Stil numerotare post:"
+
+#: CourseAppearanceDialog.resx, labelControlNumber.Text
+msgid "Control number height:"
+msgstr "Înălțime număr post"
+
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr "mm"
+
+#: CourseAppearanceDialog.resx, labelLineWidth.Text
+msgid "Line width:"
+msgstr "Grosime linie:"
+
+#: CourseAppearanceDialog.resx, labelControlCircle.Text
+msgid "Control circle diameter:"
+msgstr "Diametru cerc post:"
+
+#: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
+msgid "Use IOF standard sizes"
+msgstr "Utilizează standardele de dimensiune IOF"
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Dimensiuni Element"
+
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Culoarea Violet"
+
+#: CourseAppearanceDialog.resx, buttonColorChoosers.Text
+msgid "Color Chooser..."
+msgstr "Alege Culoarea..."
+
+#: CourseAppearanceDialog.resx, label5.Text
+msgid "Black:"
+msgstr "Negru:"
+
+#: CourseAppearanceDialog.resx, label6.Text
+msgid "Yellow:"
+msgstr "Galben:"
+
+#: CourseAppearanceDialog.resx, label3.Text
+msgid "Magenta:"
+msgstr "Magenta:"
+
+#: CourseAppearanceDialog.resx, label1.Text
+msgid "Cyan:"
+msgstr "Cyan:"
+
+#: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
+msgid "Use purple color from map"
+msgstr "Folosește culoarea violet din hartă"
+
+#: CourseAppearanceDialog.resx, groupBoxPreview.Text
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: CourseLoad.resx, Load.HeaderText
+msgid "Competitor Load"
+msgstr "Încărcare Participanți"
+
+#: CourseLoad.resx, courseLoadLabel.Text
+msgid "Set the number of competitors on each course by clicking "
+"in the second column and typing a number."
+msgstr "Setați numărul de participanți pentru fiecare traseu prin "
+"click pe coloana a doua și introducere număr."
+
+#: CourseLoad.resx, $this.Text
+msgid "Course Load"
+msgstr "Încărcare traseu"
+
+#: CourseSelector.resx, selectAll.Text
+msgid "All"
+msgstr "Toate"
+
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Nimic"
+
+#: CreateOcadFiles.resx, coursesGroupBox.Text
+#: PrintCourses.resx, coursesGroupBox.Text
+#: PrintDescriptions.resx, coursesGroupBox.Text
+#: PrintPunches.resx, coursesGroupBox.Text
+msgid "Courses"
+msgstr "Trasee"
+
+#: CreateOcadFiles.resx, createButton.Text
+#: CreateRouteGadget.resx, createButton.Text
+msgid "Create"
+msgstr "Creare"
+
+#: CreateOcadFiles.resx, cancelButton.Text
+#: CreateRouteGadget.resx, cancelButton.Text
+#: NewEventWizard.resx, cancelButton.Text
+#: NonPrintableObjects.resx, cancelButton.Text
+#: OkCancelDialog.resx, cancelButton.Text
+#: OverwritingOcadFilesDialog.resx, buttonCancel.Text
+#: PrintDescriptions.resx, cancelButton.Text
+#: PrintPunches.resx, cancelButton.Text
+#: SetPrintAreaDialog.resx, cancelButton.Text
+msgid "Cancel"
+msgstr "Anulare"
+
+#: CreateOcadFiles.resx, folderBrowserDialog.Description
+#: CreateRouteGadget.resx, folderBrowserDialog.Description
+msgid "Select a folder for the OCAD files"
+msgstr "Selectați un director pentru fișierul OCAD"
+
+#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
+msgid "File name prefix:"
+msgstr "Prefixul numelui de fișier:"
+
+#: CreateOcadFiles.resx, fileFormatLabel.Text
+msgid "File format:"
+msgstr "Format fişier:"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items
+msgid "OCAD 6"
+msgstr "OCAD 6"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items1
+msgid "OCAD 7"
+msgstr "OCAD 7"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items2
+msgid "OCAD 8"
+msgstr "OCAD 8"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items3
+msgid "OCAD 9"
+msgstr "OCAD 9"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items4
+msgid "OCAD 10"
+msgstr "OCAD 10"
+
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Rezultat"
+
+#: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
+msgid "Select folder..."
+msgstr "Selectare director..."
+
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Alt director"
+
+#: CreateOcadFiles.resx, mapDirectory.Text
+#: CreateRouteGadget.resx, mapDirectory.Text
+msgid "Same folder as map file"
+msgstr "Același director ca și fișierul hartă"
+
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Același director ca și fișierul Purple Pen"
+
+#: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreateRouteGadget.resx, folderGroupBox.Text
+msgid "Folder"
+msgstr "Director"
+
+#: CreateOcadFiles.resx, $this.Text
+msgid "Create OCAD Files"
+msgstr "Creare Fișier OCAD"
+
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Nume fișier"
+
+#: CreateRouteGadget.resx, label1.Text
+msgid "Enter the name (without .xml or .gif) for both of the "
+"RouteGadget files:"
+msgstr "Introduceți numele (fără .xml sau .gif) pentru ambele "
+"fișiere RouteGadget:"
+
+#: CreateRouteGadget.resx, learnMoreLink.Text
+msgid "Learn more about RouteGadget"
+msgstr "Află mai multe despre RouteGadget"
+
+#: CreateRouteGadget.resx, label2.Text
+msgid "RouteGadget requires both an image file (.gif) and IOF XML "
+"file (.xml). Choose the name and folder for both of these "
+"files."
+msgstr "RouteGadget are nevoie atât de fișierul imagine (.gif) cât "
+"și de fișierul IOF XML (.xml). Alegeți numele și "
+"directorul pentru ambele fișiere."
+
+#: CreateRouteGadget.resx, $this.Text
+msgid "Create RouteGadget Files"
+msgstr "Creare Fișier RouteGadget"
+
+#: CustomSymbolText.resx, labelChooseLanguage.Text
+msgid "Choose the language used for textual control descriptions:"
+msgstr "Alege Limba folosită pentru Descrierea Posturilor"
+
+#: CustomSymbolText.resx, labelSymbolName.Text
+msgid "Symbol name:"
+msgstr "Nume simbol:"
+
+#: CustomSymbolText.resx, labelCustomizedText.Text
+msgid "Customized text:"
+msgstr "Text personalizat:"
+
+#: CustomSymbolText.resx, buttonChangeText.Text
+msgid "Change text..."
+msgstr "Schimbare text..."
+
+#: CustomSymbolText.resx, buttonDefault.Text
+msgid "Reset to standard"
+msgstr "Reinițializare la valori implicite"
+
+#: CustomSymbolText.resx, labelStandardText.Text
+msgid "Standard text:"
+msgstr "Text standard:"
+
+#: CustomSymbolText.resx, checkBoxShowKey.Text
+msgid "Show meaning below symbolic descriptions"
+msgstr "Afișează semnificația sub simbolul de descriere"
+
+#: CustomSymbolText.resx, labelCustomizeText.Text
+msgid "Click on a description symbol to customize the text that "
+"is used in textual control descriptions."
+msgstr "Click pe un simbol de descriere pentru a personaliza "
+"textul folosit în descrierea textuală a postului."
+
+#: EnterSymbolText.resx, numberColumn.HeaderText
+msgid "Number"
+msgstr "Număr"
+
+#: EnterSymbolText.resx, genderColumn.HeaderText
+msgid "Gender"
+msgstr "Gen"
+
+#: EnterSymbolText.resx, checkBoxPlural.Text
+msgid "Show plural forms"
+msgstr "Afișează formele la plural"
+
+#: EnterSymbolText.resx, checkBoxGender.Text
+msgid "Show gender forms"
+msgstr "Afișează formele de gen"
+
+#: EnterSymbolText.resx, labelDescription.Text
+msgid "Enter the customized text for the symbol in the \"Text\" "
+"column."
+msgstr "Afișează textul personalizat pentru simbol în coloana \"Text\""
+
+#: EnterSymbolText.resx, labelGenderChooser.Text
+msgid "Gender:"
+msgstr "Gen:"
+
+#: EnterSymbolText.resx, $this.Text
+msgid "Customized Symbol Text"
+msgstr "Text simbol personalizat"
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Deschidere eveniment existent..."
+
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Creare eveniment nou..."
+
+#: InitialScreen.resx, quitButton.Text
+msgid "Exit"
+msgstr "Ieșire"
+
+#: InitialScreen.resx, openSampleRadioButton.Text
+msgid "Open a sample event"
+msgstr "Deshide un eveniment de exemplu"
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "Deschide ultimul eveniment vizualizat"
+
+#: InitialScreen.resx, $this.Text
+msgid "Welcome to Purple Pen"
+msgstr "Bunvenit în Purple Pen"
+
+#: LicenseForm.resx, bsdLicenseLinkLabel.Text
+msgid "Purple Pen is provided under a \"BSD\" style license."
+msgstr "Purple Pen este oferit sub tipul de licență \"BSD\""
+
+#: LicenseForm.resx, $this.Text
+msgid "Purple Pen License"
+msgstr "Licența Purple Pen"
+
+#: MainFrame.resx, tabPage1.Text
+msgid "All Controls"
+msgstr "Toate Posturile"
+
+#: MainFrame.resx, openFileDialog.Filter
+msgid "Purple Pen files|*.ppen|All files|*.*"
+msgstr "Fișiere Purple Pen|*.ppen|Toate fișierele|*.*"
+
+#: MainFrame.resx, saveFileDialog.Filter
+msgid "Purple Pen file|*.ppen"
+msgstr "Fișier Purple Pen|*.ppen"
+
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fişier"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Editare"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Vizualizare"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Eve&niment"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Traseu"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Element"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapoarte"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "&Asistență Purple Pen"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr "Asistență Purple Pen (Tradus)"
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Site-ul web Purple Pen"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "Asistență/&Raportare erori"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "&Despre Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr "&Depanare"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Traducere text descriere"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Asistență"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "Evniment &Nou..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Deschidere..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Salvare"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Salv&are ca..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Creare Fișiere &OCAD..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Creare Fișiere RouteGadget..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create &E-Punch Interchange File..."
+msgstr "Creare Fișier de schimb &E-Punch"
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Tipărire Descriere..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Tipărire Fișe de &Control..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Tipărire &Trasee..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Setare &Zonă de Tipărire"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Acest Traseu"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Toate Traseele"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "&Limba programului..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Ieșire"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Golește selecția"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "An&ulare"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Refacere"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Ștergere"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "Tot &Traseul"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Toată &Harta"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zoom"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "&Intensitate Hartă"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "Foarte s&căzută"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Scăzută"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "&Medie"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Ridicată"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Maximă"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "&Calitate hartă"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Scăzută"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Ridicată"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Toate Posturile"
+
+#: MainFrame.resx, changeMapFileMenu.Text
+msgid "&Map File..."
+msgstr "Fișier &Hartă..."
+
+#: MainFrame.resx, changeCodesMenu.Text
+msgid "Change Control &Codes..."
+msgstr "Schimbare Coduri Posturi..."
+
+#: MainFrame.resx, autoNumberingMenu.Text
+msgid "Automatic &Numbering..."
+msgstr "&Numerotare automată..."
+
+#: MainFrame.resx, removeUnusedControlsMenu.Text
+msgid "Remove &Unused Controls..."
+msgstr "Șterge Posturile &Nefolosite..."
+
+#: MainFrame.resx, punchPatternsMenu.Text
+msgid "&Punch Patterns..."
+msgstr "Modele de Compostare..."
+
+#: MainFrame.resx, customizeDescriptionsMenu.Text
+msgid "Customize &Description Text..."
+msgstr "Personalizare Text &Descriere..."
+
+#: MainFrame.resx, customizeCourseAppearanceMenu.Text
+msgid "Customize Course &Appearance..."
+msgstr "Personalizare &Aspect Traseu..."
+
+#: MainFrame.resx, addCourseMenu.Text
+msgid "&Add Course..."
+msgstr "&Adaugare Traseu..."
+
+#: MainFrame.resx, deleteCourseMenu.Text
+msgid "&Delete Course"
+msgstr "&Ștergere Traseu"
+
+#: MainFrame.resx, propertiesMenu.Text
+msgid "&Properties..."
+msgstr "&Proprietăți..."
+
+#: MainFrame.resx, courseOrderMenu.Text
+msgid "Course Order..."
+msgstr "Ordine Trasee..."
+
+#: MainFrame.resx, courseLoadMenu.Text
+msgid "Competitor &Load..."
+msgstr "&Încărcare Participanți..."
+
+#: MainFrame.resx, addStartMenu.Text
+msgid "Add &Start"
+msgstr "Adăugare &Start"
+
+#: MainFrame.resx, addControlMenu.Text
+msgid "Add &Control"
+msgstr "Adăugare &Post Control"
+
+#: MainFrame.resx, addFinishMenu.Text
+msgid "Add &Finish"
+msgstr "Adăugare S&osire"
+
+#: MainFrame.resx, addDescriptionsMenu.Text
+msgid "Add &Descriptions"
+msgstr "Adăugare &Descriere"
+
+#: MainFrame.resx, addSpecialItemMenu.Text
+msgid "Add Special &Item"
+msgstr "Adăugare &Element Special"
+
+#: MainFrame.resx, addMandatoryCrossingMenu.Text
+#: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
+msgid "Mandatory Crossing Point"
+msgstr "Punct Trecere Obligatoriu"
+
+#: MainFrame.resx, addOptCrossingMenu.Text
+#: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_OptCrossing
+msgid "Optional Crossing Point"
+msgstr "Punct Trecere Opțional"
+
+#: MainFrame.resx, addOutOfBoundsMenu.Text
+#: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
+msgid "Out Of Bounds Area"
+msgstr "Zonă Înafara Limitelor"
+
+#: MainFrame.resx, addDangerousMenu.Text
+#: MainFrame.resx, dangerousToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Dangerous
+msgid "Dangerous Area"
+msgstr "Zonă Periculoasă"
+
+#: MainFrame.resx, addWaterMenu.Text
+#: MainFrame.resx, waterLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Water
+msgid "Water Location"
+msgstr "Locație apă"
+
+#: MainFrame.resx, addFirstAidMenu.Text
+#: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_FirstAid
+msgid "First Aid Location"
+msgstr "Locație punct Prim Ajutor"
+
+#: MainFrame.resx, addForbiddenMenu.Text
+#: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
+msgid "Forbidden Route Marking"
+msgstr "Marcare Interzisă"
+
+#: MainFrame.resx, addBoundaryMenu.Text
+#: MainFrame.resx, boundaryToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Boundary
+msgid "Uncrossable Boundary"
+msgstr "Zonă Inaccesibilă"
+
+#: MainFrame.resx, addRegMarkMenu.Text
+#: MainFrame.resx, registrationMarkToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_RegMark
+msgid "Registration Mark"
+msgstr "Macaj de Înregistrare"
+
+#: MainFrame.resx, whiteOutMenu.Text
+#: MainFrame.resx, whiteOutToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_WhiteOut
+msgid "White Out Area"
+msgstr "Spațiu Alb"
+
+#: MainFrame.resx, addTextLineMenu.Text
+msgid "Add Text &Line..."
+msgstr "Adăugare Text Linie..."
+
+#: MainFrame.resx, addBendMenu.Text
+msgid "Add &Bend"
+msgstr "Adăugare &Curbă"
+
+#: MainFrame.resx, removeBendMenu.Text
+msgid "Remove B&end"
+msgstr "Ștergere C&urbă"
+
+#: MainFrame.resx, addGapMenu.Text
+msgid "Add &Gap"
+msgstr "Adăugare Spațiu &Gol"
+
+#: MainFrame.resx, removeGapMenu.Text
+msgid "Remove G&ap"
+msgstr "Ștergere Spațiu G&ol"
+
+#: MainFrame.resx, changeTextMenu.Text
+msgid "Change &Text..."
+msgstr "Schimbare &Text..."
+
+#: MainFrame.resx, rotateMenu.Text
+msgid "R&otate"
+msgstr "&Rotire"
+
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "Semnalizare &Secțiune"
+
+#: MainFrame.resx, noFlaggingMenu.Text
+msgid "No Flagging"
+msgstr "Fără Semnalizare"
+
+#: MainFrame.resx, entireFlaggingMenu.Text
+msgid "Entire Leg Flagged"
+msgstr "Întreaga Secțiune Semnalizată"
+
+#: MainFrame.resx, beginFlaggingMenu.Text
+msgid "Beginning of Leg Flagged"
+msgstr "Semnalizare doar Început de Secțiune"
+
+#: MainFrame.resx, endFlaggingMenu.Text
+msgid "End of Leg Flagged"
+msgstr "Semnalizare doar Sfârșit de Secțiune"
+
+#: MainFrame.resx, changeDisplayedCoursesMenu.Text
+msgid "Change Displa&yed Courses..."
+msgstr "Schimbare Trasee Afișate..."
+
+#: MainFrame.resx, courseSummaryMenu.Text
+msgid "Course &Summary"
+msgstr "Rezumat Traseu"
+
+#: MainFrame.resx, eventAuditMenu.Text
+msgid "Event &Audit"
+msgstr "Verificare Eveniment"
+
+#: MainFrame.resx, legLengthsMenu.Text
+msgid "&Leg Lengths"
+msgstr "&Lungimi Secțiuni"
+
+#: MainFrame.resx, controlCrossrefMenu.Text
+msgid "Control &Cross-reference"
+msgstr "Referințe Încrucișate Posturi"
+
+#: MainFrame.resx, controlAndLegLoadMenu.Text
+msgid "Control and Leg Loa&d"
+msgstr "&Încărcare Post de control si Secțiune"
+
+#: MainFrame.resx, symbolBrowserMenu.Text
+msgid "Symbol Browser"
+msgstr "Fruzărire Simboluri"
+
+#: MainFrame.resx, descriptionBrowserMenu.Text
+msgid "Description Browser"
+msgstr "Fruzărire Descrieri"
+
+#: MainFrame.resx, controlTesterMenu.Text
+msgid "Control Tester"
+msgstr "Verificator Post"
+
+#: MainFrame.resx, mapTesterMenu.Text
+msgid "Map Tester"
+msgstr "Verificator Hartă"
+
+#: MainFrame.resx, courseSelectorTesterMenu.Text
+msgid "Course Selector Tester"
+msgstr "Verificator Selecție Traseu"
+
+#: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
+msgid "Dot Grid Tester"
+msgstr "Testare Grid Puncte"
+
+#: MainFrame.resx, dumpOCADFileMenu.Text
+msgid "Dump OCAD File"
+msgstr "Dump OCAD File"
+
+#: MainFrame.resx, reportTesterToolStripMenuItem.Text
+msgid "Report Tester"
+msgstr "Verificator Raport"
+
+#: MainFrame.resx, fontMetricsToolStripMenuItem.Text
+msgid "Font Metrics"
+msgstr "Metrici de Font"
+
+#: MainFrame.resx, addDescriptionLanguageMenu.Text
+msgid "Add Description Language..."
+msgstr "Adăugare Limbă Descriere..."
+
+#: MainFrame.resx, addTranslatedTextsMenu.Text
+msgid "Add Translated Texts..."
+msgstr "Adăugare Texte Traduse..."
+
+#: MainFrame.resx, mergeSymbolsMenu.Text
+msgid "Merge Symbols.xml..."
+msgstr "Îmbină Symbol.xml..."
+
+#: MainFrame.resx, openToolStripButton.Text
+msgid "Open"
+msgstr "Deschidere"
+
+#: MainFrame.resx, openToolStripButton.ToolTipText
+msgid "Open (Ctrl+O)"
+msgstr "Deschidere (Ctrl+O)"
+
+#: MainFrame.resx, saveToolStripButton.Text
+msgid "Save"
+msgstr "Salvare"
+
+#: MainFrame.resx, saveToolStripButton.ToolTipText
+msgid "Save (Ctrl+S)"
+msgstr "Salvare (Ctrl+S)"
+
+#: MainFrame.resx, undoToolStripButton.Text
+#: MiscText.resx, Undo
+msgid "Undo"
+msgstr "Anulare"
+
+#: MainFrame.resx, undoToolStripButton.ToolTipText
+msgid "Undo (Ctrl+Z)"
+msgstr "Anulare (Ctrol+Z)"
+
+#: MainFrame.resx, redoToolStripButton.Text
+#: MiscText.resx, Redo
+msgid "Redo"
+msgstr "Refacere"
+
+#: MainFrame.resx, redoToolStripButton.ToolTipText
+msgid "Redo (Ctrl+Y)"
+msgstr "Refacere (Ctrl+Y)"
+
+#: MainFrame.resx, deleteToolStripButton.Text
+msgid "Delete (Del)"
+msgstr "Ștergere (Del)"
+
+#: MainFrame.resx, addControlToolStripButton.ToolTipText
+msgid "Add Control (Ctrl+A)"
+msgstr "Adăugare Post (Ctrl+A)"
+
+#: MainFrame.resx, descriptionsToolStripMenuItem.Text
+msgid "Add Descriptions"
+msgstr "Adăugare Descriere"
+
+#: MainFrame.resx, ncross.Text
+msgid "Add Special Item"
+msgstr "Adăugare Element Special"
+
+#: MainFrame.resx, addBendToolStripButton.ToolTipText
+msgid "Add Bend (Ctrl+B)"
+msgstr "Adăugare Cotitură (Ctrl+B)"
+
+#: MainFrame.resx, addGapToolStripButton.Text
+msgid "toolStripButton1"
+msgstr "toolStripButton1"
+
+#: MainFrame.resx, addGapToolStripButton.ToolTipText
+msgid "Add Gap (Ctrl+G)"
+msgstr "Adaugare Spațiu Gol (Ctrl+G)"
+
+#: MainFrame.resx, zoomAmountLabel.Text
+msgid "Zoom: 100%"
+msgstr "Zoom: 100%"
+
+#: MainFrame.resx, locationDisplay.Text
+msgid "X:-999.99 Y:-999.99"
+msgstr "X:-999.99 Y:-999.99"
+
+#: MainFrame.resx, saveXmlFileDialog.Filter
+msgid "XML file|*.xml"
+msgstr "Fișier XML|*.xml"
+
+#: MainFrame.resx, saveXmlFileDialog.Title
+msgid "Create XML Interchange File"
+msgstr "Creare fișier schimb XML"
+
+#: MainFrame.resx, $this.Text
+#: MiscText.resx, AppTitle
+msgid "Purple Pen"
+msgstr "Purple Pen"
+
+#: MiscText.resx, CtrlZ
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: MiscText.resx, CtrlY
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: MiscText.resx, Esc
+msgid "Esc"
+msgstr "Esc"
+
+#: MiscText.resx, NoSymbol
+msgid "No symbol"
+msgstr "Nici un simbol"
+
+#: MiscText.resx, AllControls
+msgid "All controls"
+msgstr "Toate posturile"
+
+#: MiscText.resx, CannotLoadFile
+msgid "Cannot load '{0}' for the following reason:"
+msgstr "Nu se poate încărca '{0}' deoarece:"
+
+#: MiscText.resx, CannotSaveFile
+msgid "Cannot save '{0}' for the following reason:"
+msgstr "Nu se poate salva '{0}' deoarece:"
+
+#: MiscText.resx, CannotLoadMapFile
+msgid "Cannot load map file '{0}' for the following reason:"
+msgstr "Nu se poate încărca fișierul hartă '{0}' deoarece:"
+
+#: MiscText.resx, CannotReadImageFile
+msgid "Cannot read image file '{0}'."
+msgstr "Nu se poate citi fișierul de imagine '{0}'."
+
+#: MiscText.resx, CannotPrint
+msgid "Cannot print '{0}' for the following reason:"
+msgstr "Nu se poate tipări '{0}' deoarece:"
+
+#: MiscText.resx, CannotCreateFile
+msgid "Cannot create '{0}' for the following reason:"
+msgstr "Nu se poate crea '{0}' deoarece:"
+
+#: MiscText.resx, CannotCreateDirectory
+msgid "Cannot create folder '{0}' for the following reason:"
+msgstr "Nu se poate crea directorul '{0}' deoarece:"
+
+#: MiscText.resx, CannotReadMap
+msgid "Cannot read map for the following reason: '{0}' Using "
+"Optimize/Repair in OCAD may fix problems."
+msgstr "Nu se poate citi harta deoarece: '{0}' Folosind opțiunea "
+"Optimize/Repair în OCAD poate rezolva problema."
+
+#: MiscText.resx, CannotCreateOcadFiles
+msgid "Cannot create OCAD files for the following reason:"
+msgstr "Nu se poate crea fișierul OCAD deoarece:"
+
+#: MiscText.resx, SaveChanges
+msgid "Do you want to save the changes you made to '{0}'?"
+msgstr "Doriți să salvați schimbările efectuate la '{0}'?"
+
+#: MiscText.resx, FileAlreadyExists
+msgid "File '{0}' already exists in the specified folder. Click "
+"the \"Back\" button and choose a new folder or a new event "
+"title."
+msgstr "Fișierul '{0}' exista deja în directorul specificat. Click "
+"pe butonul \"Înapoi\" și alegeți un nou director sau un nou "
+"titlu de eveniment."
+
+#: MiscText.resx, CodeInUse
+msgid "The control code '{0}' is already used by another control."
+msgstr "Codul '{0}' este deja folosit de un alt post."
+
+#: MiscText.resx, BadScore
+msgid "The points for a control must be an integer 1-999."
+msgstr "Punctajul pentru un post trebuie sa fie un întreg între 1 "
+"și  999."
+
+#: MiscText.resx, BadClimb
+msgid "The climb for a course must be a number 0-9999, or blank."
+msgstr "Diferența de nivel a traseului trebuie să fie număr de la "
+"0 până la 9999, sau câmp gol."
+
+#: MiscText.resx, BadLoad
+msgid "The load for a course must be an integer 0-999999, or blank."
+msgstr "Încărcarea unui traseu trebuie să fie un întreg de la 0 "
+"până la 999999, sau câmp gol."
+
+#: MiscText.resx, CancelOperationWithShortcut
+msgid "Ca&ncel Operation"
+msgstr "Anulare Operațiune"
+
+#: MiscText.resx, CancelOperation
+msgid "Cancel Operation"
+msgstr "Anulare Operațiune"
+
+#: MiscText.resx, EnterScore
+msgid "Enter new score"
+msgstr "Introduceți noul scor"
+
+#: MiscText.resx, EnterCode
+msgid "Enter new code"
+msgstr "Introduceți noul cod"
+
+#: MiscText.resx, EnterDimensions
+msgid "Enter feature size\n"
+"Use / for height on a slope\n"
+"Use | for two features"
+msgstr "Introduceți dimensiunea elementului\n"
+"Folosiți / pentru înălțime și pantă\n"
+"Folosiți | pentru două elemente"
+
+#: MiscText.resx, EnterEventTitle
+msgid "Enter new event title\n"
+"Use | to separate lines\n"
+"(affects all courses)"
+msgstr "Introduceți noul titlu de eveniment\n"
+"Folosiți | pentru a separa liniile\n"
+"(afectează toate traseele)"
+
+#: MiscText.resx, EnterSecondaryTitle
+msgid "Enter new secondary title\n"
+"Use | to separate lines"
+msgstr "Introduceți noua linie secundară\n"
+"Folosiți | pentru a separa liniile"
+
+#: MiscText.resx, EnterCourseName
+msgid "Enter new course name"
+msgstr "Introduceți noul nume de traseu"
+
+#: MiscText.resx, EnterClimb
+msgid "Enter new climb in meters"
+msgstr "Introduceți noua diferență de nivel in metri"
+
+#: MiscText.resx, EnterSymbolText
+msgid "Enter new symbol meaning\n"
+"(affects all courses)"
+msgstr "Introduceți noua semnificație de simbol\n"
+"(afectează toate traseele)"
+
+#: MiscText.resx, EnterTextLine
+msgid "Enter new text"
+msgstr "Introduceți noul text"
+
+#: MiscText.resx, DeleteMultipleControlsFromControlsCollection
+msgid "Controls {0} are no longer used by any course. Do you want "
+"to delete these controls from the control collection?"
+msgstr "Postul {0} nu mai este folosit în nici un traseu. Doriți "
+"sa-l stergeți din colecția de posturi?"
+
+#: MiscText.resx, DeleteControlFromControlsCollection
+msgid "Control {0} is no longer used by any course. Do you want "
+"to delete this control from the control collection?"
+msgstr "Postul {0} nu mai este folosit în nici un traseu. Doriți "
+"să ștergeți acest post din colecția de posturi?"
+
+#: MiscText.resx, DeleteControlFromAllControls
+msgid "Control {0} is currently used by the following courses: "
+"{1}. Do you want to delete this control anyway?"
+msgstr "Postul {0} este folosit de următoarele trasee: {1}. Doriți "
+"oricum să-l ștegeți?"
+
+#: MiscText.resx, CodeBadLength
+msgid "A control code must be one, two, or three letters or digits."
+msgstr "Un cod de post trebuie să conțină una, două sau trei "
+"litere sau cifre."
+
+#: MiscText.resx, CodeContainsSpace
+msgid "A control code must not contain a space."
+msgstr "Un cod de post nu poate conține spațiu."
+
+#: MiscText.resx, CodeUnder31
+msgid "A control code should be 31 or higher."
+msgstr "Un cod de post trebuie să fie 31 sau mai mult."
+
+#: MiscText.resx, CodeBeginsWithZero
+msgid "A control code should not begin with zero."
+msgstr "Un cod de post nu poate începe cu zero."
+
+#: MiscText.resx, CodeCouldBeUpsideDown
+msgid "A control code should not look like another number when "
+"upside-down."
+msgstr "Un cod de post nu trebuie să semene cu alt cod întors cu "
+"susul în jos."
+
+#: MiscText.resx, DuplicateCode
+msgid "The code \"{0}\" is used more than once."
+msgstr "Codul \"{0}\" e folosit cel puțin o dată."
+
+#: MiscText.resx, BadScale
+msgid "The print scale must be a number between 100 and 100,000."
+msgstr "Scara de imprimare trebuie să fie un număr între 100 și "
+"100,000."
+
+#: MiscText.resx, CoursePropertiesTitle
+msgid "Course Properties"
+msgstr "Proprietăți traseu"
+
+#: MiscText.resx, Landscape
+#: PrintDescriptions.resx, orientation.Text
+#: PrintPunches.resx, orientation.Text
+msgid "Landscape"
+msgstr "Panoramic"
+
+#: MiscText.resx, Portrait
+msgid "Portrait"
+msgstr "Portret"
+
+#: MiscText.resx, PageTooSmall
+msgid "The page size is too small for any descriptions to be "
+"printed."
+msgstr "Dimensiunea paginii e prea mică pentru a tipări decrierea."
+
+#: MiscText.resx, VersionLabel
+msgid "Version {0}"
+msgstr "Versiunea {0}"
+
+#: MiscText.resx, NewerVersionAvailable
+msgid "Version {0} of Purple Pen is now available for download. "
+"(You are currently running version {1}.)\n"
+"\n"
+"To download the latest version, visit the Purple Pen web "
+"site by selecting \"Purple Pen Web Site\" in the Help menu."
+msgstr "Versiunea {0} a programului Purple Pen este disponibilă "
+"pentru descărcare. (Versiunea curentă este {1}.)\n"
+"\n"
+"Pentru a descărca ultima versiune, vizitați websit-ul "
+"Purple Pen prin selectarea meniului  Asistență - \"Purple "
+"Pen Web Site\"."
+
+#: MiscText.resx, HelpFileNotFound
+msgid "Help file '{0}' could not be opened."
+msgstr "Fișierul de asistență '{0}' nu a putut fi deschis."
+
+#: MiscText.resx, Zoom
+msgid "Zoom"
+msgstr "Zoom"
+
+#: MiscText.resx, MissingMapFile
+msgid "The map file \"{0}\" could not be found.\n"
+"\n"
+"Most likely, the map file has been moved or deleted, or "
+"the Purple Pen file has been moved (possibly to a "
+"different computer). The map file must be present every "
+"time the Purple Pen event file is loaded. If you send a "
+"Purple Pen event file to another person, be sure that "
+"person has a copy of the map file also.\n"
+"\n"
+"After pressing OK, try to find a copy of the map file on "
+"your computer."
+msgstr "Fișierul hartă \"{0}\" nu a putut fi găsit.\n"
+" \n"
+"Cel mai probabil, fișierul hartă a fost mutat sau șters, "
+"sau fișierul Purple Pen a fost mutat (probabil pe un alt "
+"calculator). Fișierul hartă trebuie să fie prezent oricând "
+"se încarcă fișierul Purple Pen cu evenimentul dorit. Dacă "
+"trimiteți fișierul Purple Pen cu evenimentul unei alte "
+"persoane, asigurați-vă deasemeni că persoana respectivă "
+"deține o copie a fișierului hartă.\n"
+" \n"
+"După ce apăsați OK, încercați să localizați o copie a "
+"fișierului hartă pe calculatorul dumneavoastră."
+
+#: MiscText.resx, NoUnusedControls
+msgid "All controls are used in a course."
+msgstr "Toate posturile sunt folosite într-un traseu."
+
+#: MiscText.resx, FinishButtonText
+msgid "&Finish"
+msgstr "&Finalizare"
+
+#: MiscText.resx, NextButtonText
+#: NewEventWizard.resx, nextButton.Text
+msgid "&Next >"
+msgstr "&Următor >"
+
+#: MiscText.resx, Control_Code
+msgid "Control {0}"
+msgstr "Postul {0}"
+
+#: MiscText.resx, Finish
+msgid "Finish"
+msgstr "Sosire"
+
+#: MiscText.resx, Finish_Short
+msgid "F"
+msgstr "F"
+
+#: MiscText.resx, MandCrossing_Long
+msgid "Mandatory crossing point"
+msgstr "Punct de trecere obligatoriu"
+
+#: MiscText.resx, MandCrossing_Medium
+msgid "Crossing"
+msgstr "Încrucișare"
+
+#: MiscText.resx, MandCrossing_Short
+msgid "C"
+msgstr "C"
+
+#: MiscText.resx, Margins_All
+msgid "All: {0}"
+msgstr "Toate: {0}"
+
+#: MiscText.resx, Margins_LRTB
+msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
+msgstr "Stânga: {0}, Dreapta: {1}, Sus: {2}, Jos: {3}"
+
+#: MiscText.resx, Start
+msgid "Start"
+msgstr "Start"
+
+#: MiscText.resx, Start_Short
+msgid "S"
+msgstr "S"
+
+#: MiscText.resx, Version_Alpha
+msgid "Alpha {0}"
+msgstr "Alpha {0}"
+
+#: MiscText.resx, Version_Beta
+msgid "Beta {0}"
+msgstr "Beta {0}"
+
+#: MiscText.resx, Version_RC
+msgid "RC {0}"
+msgstr "RC {0}"
+
+#: MiscText.resx, Plural
+msgid "plural"
+msgstr "plural"
+
+#: MiscText.resx, Singular
+msgid "singular"
+msgstr "singular"
+
+#: MiscText.resx, RequireStar
+msgid "The customized text requires a \"*\" to indicate where the "
+"object being modified is placed."
+msgstr "Textul personalizat are nevoie de simbolul \"*\" pentru a "
+"indica amplasarea obiectului modificat."
+
+#: MiscText.resx, AppSubtitle
+msgid "course setting for orienteering"
+msgstr "setare traseu pentru orientare"
+
+#: MiscText.resx, AddTextSpecialExplanation
+msgid "Enter the text you wish to place on the map. After "
+"pressing OK, drag the mouse to place the text in the "
+"desired location."
+msgstr "Introduceți textul pe care doriți să-l amplasați pe hartă. "
+"După ce apăsați OK, trageți mouse-ul pentru a poziționa "
+"textul în locația dorită."
+
+#: MiscText.resx, AddTextSpecialTitle
+msgid "Add Text"
+msgstr "Adăugare Text"
+
+#: MiscText.resx, ChangeTextSpecialExplanation
+msgid "Enter the new text."
+msgstr "Introducere Text"
+
+#: MiscText.resx, MapFileChanged
+msgid "Another program has changed the map file \"{0}\". Purple Pen "
+"will now reload the map."
+msgstr "Un alt program a modificat fișierul hartă \"{0}\". Purple "
+"Pen va reîncărca harta."
+
+#: MiscText.resx, ChangeDescriptionLanguage
+msgid "The current event has textual control descriptions in {0}. "
+"Would you like to change the language of control "
+"descriptions to {1}?"
+msgstr "Evenimentul curent are descrierea posturilor în limba {0}. "
+"Doriți să schimbați descrierea posturilor în limba {1}?"
+
+#: MiscText.resx, OpenLastEvent
+msgid "Open \"{0}\""
+msgstr "Deschidere \"{0}\""
+
+#: MiscText.resx, ClosePPBeforeLoadingOCAD
+msgid "Purple Pen must be closed before loading the created OCAD "
+"files."
+msgstr "Purple Pen trebuie să fie închis înainte de a încărca "
+"fișierele OCAD create."
+
+#: MiscText.resx, NoCoursesSelected
+msgid "No courses were selected to print."
+msgstr "Nu a fost selectat nici un traseu pentru tipărire."
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr "*** Dacă există un site în limba tradusă care conține "
+"documentație pentru Purple Pen, introduceți adresa de "
+"internet URL (inclusiv http) ca și traducere a acestui "
+"element. Altfel lăsați-l neatins."
+
+#: MissingFonts.resx, checkBoxDontWarnAgain.Text
+msgid "Don't warn about missing fonts for this event again"
+msgstr "Nu mai avertiza lipsa fonturilor pentru acest eveniment."
+
+#: MissingFonts.resx, labelWarning.Text
+msgid "Map file \"{0}\" uses fonts that are not installed on your "
+"computer. Text using these fonts will be drawn and printed "
+"with a default font, which may cause text to appear "
+"differently than the map designer intended. \n"
+"\n"
+"To fix this problem, find and install the fonts listed "
+"below with the Windows control panel, then start Purple "
+"Pen again.\n"
+msgstr "Fișierul hartă \"{0}\" utilizează fonturi care nu sunt "
+"instalate pe acest calculator. Textele care folosesc "
+"aceste fonturi vof fi afișate si tipărite cu fontul "
+"implicit, care poate genera un aspect diferit față de "
+"designul original. \n"
+"\n"
+"Pentru a remedia acceastă problemă, căutați și instalați "
+"fonturile listate dedesubt în Windows Control Panel, apoi "
+"restartați Purple Pen.\n"
+
+#: MissingFonts.resx, $this.Text
+msgid "Missing Fonts"
+msgstr "Fonturi Lipsă"
+
+#: NewEventBitmapScale.resx, bitmapScaleLabel.Text
+msgid "When using an image file as a map, you must specify the "
+"resolution of the image and the map scale. \n"
+"\n"
+"The resolution of the image indicates how may pixels or "
+"dots are in the image for each inch on the paper map; "
+"usually termed dots per inch or \"dpi\".\n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr "Când folosiți o imagine ca și hartă, trebuie să "
+"specificați rezoluția imaginii și scara hărții. \n"
+"\n"
+"Rezoluția imaginii indică câți pixeli sau puncte sunt în "
+"imagine pentru fiecare inch de pe harta tipărită pe "
+"hârtie; termenul uzual \"dots per inch\" sau \"dpi\".\n"
+"\n"
+"Scara hărții indică relația dintre harta tipărită pe "
+"hârtie si realitatea din teren.\n"
+
+#: NewEventBitmapScale.resx, resolutionLabel.Text
+msgid "Image resolution:"
+msgstr "Rezoluția imaginii:"
+
+#: NewEventBitmapScale.resx, oneToPrefixLabel.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel1.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel2.Text
+msgid "1:"
+msgstr "1:"
+
+#: NewEventBitmapScale.resx, mapScaleLabel.Text
+#: NewEventPrintScale.resx, mapScaleLabel.Text
+msgid "Map scale:"
+msgstr "Scara hărții:"
+
+#: NewEventDirectory.resx, newEventDirectoryLabel.Text
+msgid "What folder (directory) do you want to save your course "
+"event file in?"
+msgstr "În ce director doriți să salvați fișierul cu evenimentul "
+"și traseele?"
+
+#: NewEventDirectory.resx, useMapDirectory.Text
+msgid "In the same folder as the map file."
+msgstr "În același director în care se află fișierul hartă."
+
+#: NewEventDirectory.resx, useOtherFolder.Text
+msgid "In another folder I choose."
+msgstr "Într-un director pe care îl aleg."
+
+#: NewEventDirectory.resx, chooseFolder.Text
+msgid "Choose Folder..."
+msgstr "Alegere Director..."
+
+#: NewEventDirectory.resx, folderBrowserDialog.Description
+msgid "Select the folder for your event file"
+msgstr "Selectați directorul pentru fișierul eveniment."
+
+#: NewEventDirectory.resx, directoryDisplay.Text
+msgid "Selected Folder"
+msgstr "Directorul Selectat"
+
+#: NewEventFinal.resx, newEventFinalLabel.Text
+msgid "Click \"Finish\" to create your new event. Your event file "
+"will be saved as:"
+msgstr "Click \"Terminare\" pentru a crea noul eveniment. Fișierul "
+"eveniment va fi salvat ca:"
+
+#: NewEventFinal.resx, afterEventCreatedLabel.Text
+msgid "After your event is created, select \"New Course...\" from "
+"the Course menu to create one or more courses."
+msgstr "După crearea evenimentului, selectați meniul Course - \"New "
+"Course...\" pentru a crea unul sau mai multe trasee."
+
+#: NewEventMapFile.resx, newEventMapFileLabel.Text
+msgid "In order to design your courses, you must select the map "
+"file you will be using. Typically this is an OCAD file "
+"(although image files like JPEGs can be used instead). "
+"Click the \"Choose...\" button to select a map file."
+msgstr "Pentru a defini traseele, trebuie selectat fișierul hartă "
+"care va fi utilizat. De obicei acesta este un fișier OCAD "
+"(deși pot fi folosite si fișiere imagine precum JPEG). "
+"Click pe butonul \"Selectează...\" pentru a selecta fișierul "
+"hartă."
+
+#: NewEventMapFile.resx, mapFileDisplay.Text
+msgid "Selected Map File"
+msgstr "Selectează Fișierul Hartă"
+
+#: NewEventMapFile.resx, infoMessage.Text
+msgid "The map file was successfully loaded. If send your Purple "
+"Pen file to someone else, they must have the map file also."
+msgstr "Fișierul hartă a fost încărcat. Dacă transmiteți fișierul "
+"Purple Pen altor persoane, acestea trebuie sa dețină "
+"deasemeni și fișierul hartă."
+
+#: NewEventNumbering.resx, newEventNumberingLabel.Text
+msgid "Newly created controls are automatically numbered. Please "
+"choose the starting control number to use."
+msgstr "Posturile noi create sunt numerotate automat. Alegeți "
+"numărul de start pentru posturile de control."
+
+#: NewEventNumbering.resx, changeLaterLabel.Text
+msgid "(This setting can be changed later using "
+"Controls/Automatic Numbering)"
+msgstr "(Această setare poate fi modificată mai târziu accesând "
+"Posturi/Numerotare Automată)"
+
+#: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
+msgid "What scale will you be using to print your courses? In "
+"most cases, you will want to use the existing scale of the "
+"map.\n"
+"\n"
+msgstr "Ce scară veți folosi pentru tipărirea traseelor? În "
+"majoritatea cazurilor, veți dori să folosiți scara "
+"implicită a hărții.\n"
+"\n"
+
+#: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
+msgid "Default &printing scale:"
+msgstr "Scara de &tipărire Implicită:"
+
+#: NewEventPrintScale.resx, changeLaterLabel.Text
+msgid "(You can change the printing scale later for any course by "
+"choosing Course/Properties.)"
+msgstr "(Puteți schimba scara de tipărire mai târziu pentru orice "
+"traseu accesând Traseu/Proprietăți.)"
+
+#: NewEventTitle.resx, newEventTitleLabel.Text
+msgid "The event title will be displayed on the first line of "
+"every control description sheet. It is also used as the "
+"file name for storing your event on disk.\n"
+"\n"
+"To fit on the description sheet, it should be less than 25 "
+"characters in length. Examples of good event titles are "
+"\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
+msgstr "Titlul evenimentului va fi afișat pe prima linie a "
+"tabelului de descriere a posturilor de control. Este "
+"totodată folosit ca și nume de fișier pentru a stoca "
+"evenimentul pe disk.\n"
+"\n"
+"Pentru a încăpea în tabelul de descriere, titlul ar trebui "
+"sa aibă o lungime mai mică de 25 caractere. Exemple de "
+"titluri potrivite sunt \"US Champs Day 1\" sau \"Riverview "
+"Park, 4/12/06\"."
+
+#: NewEventTitle.resx, eventTitleLabel.Text
+msgid "Event Title:"
+msgstr "Titlul Evenimentului:"
+
+#: NewEventWizard.resx, backButton.Text
+msgid "< &Back"
+msgstr "< &Înapoi"
+
+#: NonPrintableObjects.resx, labelWarning.Text
+msgid "Map file \"{0}\" contains objects or symbols that are not "
+"fully supported by Purple Pen, and may not print "
+"correctly. The objects that may not print correctly are "
+"listed below.\n"
+"\n"
+"For printing competition maps, it is suggested that "
+"courses be exported to OCAD files (use File/Create OCAD "
+"Files...) and to print the maps from OCAD.\n"
+msgstr "Fișierul hartă \"{0}\" conține obiecte sau simboluri care nu "
+"sunt suportate de Purple Pen, și e posibil să nu fie "
+"tipărite corect. Obiectele care e posibil să nu fie "
+"tipărite corect sunt listate mai jos.\n"
+"\n"
+"Pentru a tipări hărți de concurs, se recomandă exportul "
+"traseelor în fișiere OCAD (folosind meniul Fișiere/Creare "
+"Fișiere OCAD...) și tipărirea lor din OCAD.\n"
+
+#: NonPrintableObjects.resx, okButton.Text
+msgid "Continue"
+msgstr "Continuare"
+
+#: NonPrintableObjects.resx, $this.Text
+msgid "Map File Cannot Be Printed Accurately"
+msgstr "Fișierul Hartă nu poate fi tipărit cu acuratețe."
+
+#: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
+msgid "The following files already exist. If you continue, they "
+"will be replaced."
+msgstr "Următoarele fișiere există deja. Dacă se continuă, acestea "
+"vor fi suprascrise(înlocuite)."
+
+#: OverwritingOcadFilesDialog.resx, buttonOK.Text
+msgid "Replace"
+msgstr "Înlocuire"
+
+#: OverwritingOcadFilesDialog.resx, $this.Text
+msgid "Confirm Replace Files"
+msgstr "Confirmare Înlocuire Fișiere"
+
+#: PrintCourses.resx, okButton.Text
+#: PrintDescriptions.resx, printButton.Text
+#: PrintPunches.resx, printButton.Text
+msgid "Print"
+msgstr "Tipărire"
+
+#: PrintCourses.resx, printerChange.Text
+#: PrintDescriptions.resx, printerChange.Text
+#: PrintPunches.resx, printerChange.Text
+msgid "Change Printer..."
+msgstr "Schimbare Imprimantă..."
+
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Dimensiune Hârtie:"
+
+#: PrintCourses.resx, printerName.Text
+#: PrintDescriptions.resx, printerName.Text
+#: PrintPunches.resx, printerName.Text
+msgid "Printer Name"
+msgstr "Nume Imprimantă"
+
+#: PrintCourses.resx, printerLabel.Text
+#: PrintDescriptions.resx, printerLabel.Text
+#: PrintPunches.resx, printerLabel.Text
+msgid "Printer:"
+msgstr "Imprimantă:"
+
+#: PrintCourses.resx, previewButton.Text
+#: PrintDescriptions.resx, previewButton.Text
+#: PrintPunches.resx, previewButton.Text
+msgid "Preview..."
+msgstr "Previzualizare..."
+
+#: PrintCourses.resx, copiesLabel.Text
+msgid "Copies of each course:"
+msgstr "Număr exemplare pe fiecare traseu:"
+
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Număr exemplare"
+
+#: PrintCourses.resx, radioButtonMultiPage.Text
+msgid "Print on multiple pages"
+msgstr "Tipărește pe mai multe pagini"
+
+#: PrintCourses.resx, radioButtonOnePage.Text
+msgid "Crop to a single page"
+msgstr "Decupare într-o singură pagină"
+
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr "Dacă zona de imprimat este prea mare pentru a încăpea "
+"într-o pagină:"
+
+#: PrintCourses.resx, $this.Text
+msgid "Print Courses"
+msgstr "Tipărire Trasee"
+
+#: PrintDescriptions.resx, marginChange.Text
+#: PrintPunches.resx, marginChange.Text
+msgid "Change Margins..."
+msgstr "Schimbare Margini..."
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Sus: 0.55\", Jos: 0.55\", Stânga: 0.55\", Dreapta: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Margini:"
+
+#: PrintDescriptions.resx, orientationLabel.Text
+#: PrintPunches.resx, orientationLabel.Text
+msgid "Orientation:"
+msgstr "Direcție"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items
+msgid "Course default"
+msgstr "Valori implicite traseu"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items3
+msgid "Symbols & Text"
+msgstr "Simboluri și Text"
+
+#: PrintDescriptions.resx, descriptionTypeLabel.Text
+msgid "Description type:"
+msgstr "Tipul descrierii:"
+
+#: PrintDescriptions.resx, lineSizeLabel.Text
+msgid "Line size:"
+msgstr "Dimensiunea liniei:"
+
+#: PrintDescriptions.resx, descriptionsLabel.Text
+msgid "descriptions per course"
+msgstr "descrieri pe traseu"
+
+#: PrintDescriptions.resx, copiesCombo.Items
+msgid "one copy of each course"
+msgstr "un exemplar din fiecare traseu"
+
+#: PrintDescriptions.resx, copiesCombo.Items1
+msgid "one page of each course"
+msgstr "o pagină din fiecare traseu"
+
+#: PrintDescriptions.resx, copiesCombo.Items2
+msgid "multiple pages of each course"
+msgstr "mai multe pagini pe fiecare traseu"
+
+#: PrintDescriptions.resx, whatToPrintLabel.Text
+msgid "Print:"
+msgstr "Tipărire:"
+
+#: PrintDescriptions.resx, $this.Text
+msgid "Print Descriptions"
+msgstr "Tipărește Descrieri"
+
+#: PrintPunches.resx, punchCardLayoutButton.Text
+#: PunchPatternDialog.resx, formatButton.Text
+msgid "Punch Card Layout..."
+msgstr "Planul Fișei de Compostare..."
+
+#: PrintPunches.resx, punchBoxSizeLabel.Text
+msgid "Punch box size:"
+msgstr "Dimensiune căsuță compostare:"
+
+#: PrintPunches.resx, descriptionsLabel.Text
+msgid "Copies:"
+msgstr "Exemplare:"
+
+#: PrintPunches.resx, $this.Text
+msgid "Print Punch Cards"
+msgstr "Tiparire Fișe de Compostare"
+
+#: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
+msgid "Box Order"
+msgstr "Ordine Casuțe"
+
+#: PunchcardLayoutDialog.resx, columnsLabel.Text
+msgid "Columns:"
+msgstr "Coloane:"
+
+#: PunchcardLayoutDialog.resx, rowsLabel.Text
+msgid "Rows:"
+msgstr "Rânduri:"
+
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Dimensiune"
+
+#: PunchcardLayoutDialog.resx, $this.Text
+msgid "Punch Card Layout"
+msgstr "Planul Fișei de Compostare"
+
+#: PunchPatternDialog.resx, punchPatternsLabel.Text
+msgid "Click on a control code in the left-side list, and design "
+"the punch pattern in the right side. Red codes indicate "
+"controls that have no punch pattern defined."
+msgstr "Click pe codul postului in partea stângă a listei, și "
+"proiectați modelul de compostare în partea dreaptă. "
+"Codurile roșii indică posturile care nu au nici un model "
+"de compostare definit."
+
+#: PunchPatternDialog.resx, $this.Text
+msgid "Punch Patterns"
+msgstr "Model Compostare"
+
+#: ReportForm.resx, printButton.Text
+msgid "Print..."
+msgstr "Tipărire..."
+
+#: ReportForm.resx, previewButton.Text
+msgid "Print Preview..."
+msgstr "Previzualizare Tipărire..."
+
+#: ReportForm.resx, okButton.Text
+msgid "Close"
+msgstr "Închide"
+
+#: ReportText.resx, ColumnHeader_Climb
+msgid "Climb"
+msgstr "Diferență de nivel"
+
+#: ReportText.resx, ColumnHeader_Code
+msgid "Code"
+msgstr "Cod"
+
+#: ReportText.resx, ColumnHeader_Column
+msgid "Column"
+msgstr "Coloană"
+
+#: ReportText.resx, ColumnHeader_Control
+msgid "Control"
+msgstr "Post de control"
+
+#: ReportText.resx, ColumnHeader_ControlCodes
+msgid "Control codes"
+msgstr "Coduri post"
+
+#: ReportText.resx, ColumnHeader_Controls
+msgid "Controls"
+msgstr "Posturi de control"
+
+#: ReportText.resx, ColumnHeader_Course
+msgid "Course"
+msgstr "Traseu"
+
+#: ReportText.resx, ColumnHeader_Distance
+msgid "Distance"
+msgstr "Distanță"
+
+#: ReportText.resx, ColumnHeader_Item
+msgid "Item"
+msgstr "Element"
+
+#: ReportText.resx, ColumnHeader_Leg
+msgid "Leg"
+msgstr "Secțiune"
+
+#: ReportText.resx, ColumnHeader_Length
+msgid "Length"
+msgstr "Lungime"
+
+#: ReportText.resx, ColumnHeader_Load
+msgid "Load"
+msgstr "Încărcare"
+
+#: ReportText.resx, ColumnHeader_Location
+msgid "Location"
+msgstr "Locație"
+
+#: ReportText.resx, ColumnHeader_NumberOfCourses
+msgid "# Courses"
+msgstr "Număr Trasee"
+
+#: ReportText.resx, ColumnHeader_Reason
+msgid "Reason"
+msgstr "Motiv"
+
+#: ReportText.resx, ColumnHeader_SameSymbol
+msgid "Same symbol?"
+msgstr "Același simbol?"
+
+#: ReportText.resx, CourseSummary_Title
+msgid "Course Summary for {0}"
+msgstr "Rezumatul traseelor - {0}"
+
+#: ReportText.resx, CrossRef_Title
+msgid "Control cross-reference for {0}"
+msgstr "Referințe încrucișate posturi de control - {0}"
+
+#: ReportText.resx, EventAudit_CloseTogetherControls
+msgid "Close Together Controls"
+msgstr "Posturi de Control Apropiate"
+
+#: ReportText.resx, EventAudit_CloseTogetherExplanation
+msgid "The following table shows all control pairs that are "
+"within {0} meters of each other. The same symbol column "
+"shows whether the two controls have the same primary "
+"symbol (column D)."
+msgstr "Tabelul următor afișează perechile de posturi de control "
+"care sunt mai aproape de {0} metri unul de celălalt. "
+"Coloana \"același simbol\" afișează dacă cele două posturi "
+"au același simbol primar (coloana D)."
+
+#: ReportText.resx, EventAudit_MissingBoxes
+msgid "Missing Description Boxes"
+msgstr "Căsuțe Fără Descriere"
+
+#: ReportText.resx, EventAudit_MissingClimb
+msgid "Regular courses should indicate the amount of climb"
+msgstr "Traseele normale trebuie să indice diferența de nivel "
+"aferentă"
+
+#: ReportText.resx, EventAudit_MissingD
+msgid "All controls must have a main feature in column D"
+msgstr "Toate posturile trebuie să aibă un simbol principal în "
+"coloana D"
+
+#: ReportText.resx, EventAudit_MissingEBetween
+msgid "When \"between\" is in column G, two features must be shown "
+"in columns D and E"
+msgstr "Când se folosește \"între\" în coloana G, cele două "
+"repere/simboluri trebuiesc specificate în coloanele D și E"
+
+#: ReportText.resx, EventAudit_MissingEJunction
+msgid "When \"junction\" or \"crossing\" is in column F, two features "
+"must be shown in columns D and E"
+msgstr "Când se folosește \"bifurcație\" sau \"intersecție\" în "
+"coloana F, cele două elemente/simboluri trebuiesc "
+"specificate în coloanele D and E"
+
+#: ReportText.resx, EventAudit_MissingFinish
+msgid "Regular courses should have a finish circle"
+msgstr "Traseele normale trebuie să aibă un cerc de sosire"
+
+#: ReportText.resx, EventAudit_MissingItems
+msgid "Missing Items in Courses"
+msgstr "Elemente Lipsă în Trasee"
+
+#: ReportText.resx, EventAudit_MissingLoad
+msgid "Course should have expected competitor load"
+msgstr "Traseul ar trebui să aibă estimarea încărcării cu "
+"participanți"
+
+#: ReportText.resx, EventAudit_MissingPunch
+msgid "No punch pattern defined"
+msgstr "Nu a fost definit nici un model de compostare"
+
+#: ReportText.resx, EventAudit_MissingPunchPatterns
+msgid "Missing Punch Patterns"
+msgstr "Modele de Compostare Lipsă"
+
+#: ReportText.resx, EventAudit_MissingScore
+msgid "Score course should have score set for all controls or no "
+"controls"
+msgstr "Traseul cu scor ar trebui să aibă setat un scor individual "
+"pentru toate posturile sau pentru nici un post de control"
+
+#: ReportText.resx, EventAudit_MissingScores
+msgid "Missing Scores"
+msgstr "Scoruri Lipsă"
+
+#: ReportText.resx, EventAudit_MissingStart
+msgid "Regular courses should have a start triangle"
+msgstr "Traseele normale trebuie sa aibă un triunghi de start"
+
+#: ReportText.resx, EventAudit_MissingStartScore
+msgid "Score courses should have a start triangle"
+msgstr "Traseele cu scor trebuie sa aibă un triunghi de start"
+
+#: ReportText.resx, EventAudit_No
+msgid "No"
+msgstr "Nu"
+
+#: ReportText.resx, EventAudit_NoProblems
+msgid "No problems found."
+msgstr "Nu a fost identificată nici o problemă."
+
+#: ReportText.resx, EventAudit_Title
+msgid "Event Audit for {0}"
+msgstr "Verificare Eveniment {0}"
+
+#: ReportText.resx, EventAudit_UnusedControls
+#: UnusedControls.resx, $this.Text
+msgid "Unused Controls"
+msgstr "Posturi Control Nefolosite"
+
+#: ReportText.resx, EventAudit_UnusedControlsExplanation
+msgid "The following controls are present in the All Controls "
+"collection but are not used in any course. To remove them, "
+"use the \"Remove Unused Controls\" command on the \"Event\" "
+"menu. These controls will not be considered further in "
+"this report."
+msgstr "Următoarele posturi de control sunt prezente în lista "
+"tuturor posturilor dar nu sunt folosite în nici un traseu. "
+"Pentru a le elimina, accesați comanda \"Eliminare Posturi "
+"Control Nefolosite\" din meniul \"Eveniment\". Aceste posturi "
+"de control nu vor mai fi luate în considerare în "
+"continuare în acest raport."
+
+#: ReportText.resx, EventAudit_Yes
+msgid "Yes"
+msgstr "Da"
+
+#: ReportText.resx, LegLength_Average
+msgid "Average"
+msgstr "Media"
+
+#: ReportText.resx, LegLength_CourseInfo
+msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
+msgstr "{0} ({1} posturi, {2:0.0} km, {3} m diferență nivel)"
+
+#: ReportText.resx, LegLength_CourseInfoNoClimb
+msgid "{0} ({1} controls, {2:0.0} km)"
+msgstr "{0} ({1} posturi, {2:0.0} km)"
+
+#: ReportText.resx, LegLength_Title
+msgid "Leg Length Report for {0}"
+msgstr "Raport Lungimi Secțiuni - {0}"
+
+#: ReportText.resx, Load_ControlLoadSection
+msgid "Control load"
+msgstr "Încărcarea posturilor de control"
+
+#: ReportText.resx, Load_LegLoadSection
+msgid "Leg load"
+msgstr "Încărcare Secțiuni"
+
+#: ReportText.resx, Load_MissingLoads
+msgid "Some or all courses do not have competitor loads set for "
+"them. The loads listed below may be incorrect or missing "
+"for this reason. To set competitor loads, select "
+"\"Competitor Load\" from the \"Course\" menu."
+msgstr "Unele sau toate traseele nu au specificate încărcarea de "
+"participanți. Încărcările afișate dedesubt pot fi "
+"incorecte sau pot avea lipsuri din acest motiv. Pentru a "
+"introduce încărcarea cu participanți, accesați \"Încărcare "
+"Participanți\" din meniul \"Traseu\"."
+
+#: ReportText.resx, Load_OnlyLegsMoreThanOnce
+msgid "(only legs used by more than one course appear in the "
+"following table)"
+msgstr "(doar secțiunile folosite în cel puțin un traseu apar în "
+"tabelul următor)"
+
+#: ReportText.resx, Load_Title
+msgid "Competitor Load Summary for {0}"
+msgstr "Rezumat încărcare participanți - {0}"
+
+#: ReportText.resx, Load_Warning
+msgid "WARNING:"
+msgstr "ATENȚIE:"
+
+#: SelectionDescriptionText.resx, AwayFromControl
+msgid "away from control"
+msgstr "departe de postul de control"
+
+#: SelectionDescriptionText.resx, CompetitorLoad
+msgid "Competitor load:"
+msgstr "Încărcarea cu participanți:"
+
+#: SelectionDescriptionText.resx, ControlsInUse
+msgid "Controls in use:"
+msgstr "Posturi folosite:"
+
+#: SelectionDescriptionText.resx, ControlsNotInUse
+msgid "Controls not in use:"
+msgstr "Posturi nefolosite:"
+
+#: SelectionDescriptionText.resx, Control_Plural
+msgid "controls"
+msgstr "posturi de control"
+
+#: SelectionDescriptionText.resx, Control_Singular
+msgid "control"
+msgstr "post de control"
+
+#: SelectionDescriptionText.resx, CourseList_AllCourses
+msgid "All courses"
+msgstr "Toate traseele"
+
+#: SelectionDescriptionText.resx, CourseName
+msgid "Course \"{0}\""
+msgstr "Traseul \"{0}\""
+
+#: SelectionDescriptionText.resx, CustomizedSymbolDesc
+msgid "Customized symbol description"
+msgstr "Descriere personalizată simbol"
+
+#: SelectionDescriptionText.resx, EntireLeg
+msgid "entire leg"
+msgstr "întreaga secțiune"
+
+#: SelectionDescriptionText.resx, FinishFunnel
+msgid "finish funnel"
+msgstr "culoar de sosire"
+
+#: SelectionDescriptionText.resx, Finish_Plural
+msgid "finishes"
+msgstr "sosiri"
+
+#: SelectionDescriptionText.resx, Finish_Singular
+msgid "finish"
+msgstr "sosire"
+
+#: SelectionDescriptionText.resx, Flagging
+msgid "Flagging:"
+msgstr "Semnalizare:"
+
+#: SelectionDescriptionText.resx, IntoControl
+msgid "into control"
+msgstr "în postul de control"
+
+#: SelectionDescriptionText.resx, IntoFinishFunnel
+msgid "into finish funnel"
+msgstr "în culoarul de sosire"
+
+#: SelectionDescriptionText.resx, Length
+msgid "Length:"
+msgstr "Lungime:"
+
+#: SelectionDescriptionText.resx, LineHeight
+msgid "Line height:"
+msgstr "Înălțime linie:"
+
+#: SelectionDescriptionText.resx, Location
+msgid "Location:"
+msgstr "Locația:"
+
+#: SelectionDescriptionText.resx, MandCrossing_Plural
+msgid "mandatory crossing points"
+msgstr "puncte de trecere obligatorii"
+
+#: SelectionDescriptionText.resx, MandCrossing_Singular
+msgid "mandatory crossing point"
+msgstr "punct de trecere obligatoriu"
+
+#: SelectionDescriptionText.resx, None
+msgid "none"
+msgstr "nici unul"
+
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Descrierea Posturilor"
+
+#: SelectionDescriptionText.resx, SpecialName_Forbidden
+msgid "Forbidden Route"
+msgstr "Rută interzisă"
+
+#: SelectionDescriptionText.resx, SpecialName_OOB
+msgid "Out-of-bounds Area"
+msgstr "Zonă înafara limitelor"
+
+#: SelectionDescriptionText.resx, Start_Plural
+msgid "starts"
+msgstr "starturi"
+
+#: SelectionDescriptionText.resx, Start_Singular
+msgid "start"
+msgstr "start"
+
+#: SelectionDescriptionText.resx, TextDescription
+msgid "Text description:"
+msgstr "Descriere textuală:"
+
+#: SelectionDescriptionText.resx, TextLine
+msgid "Text line"
+msgstr "Linie de text"
+
+#: SelectionDescriptionText.resx, TextLine_AboveAllCourses
+msgid "Appears above {0}, in all courses that contain {0}"
+msgstr "Apare deasupra {0}, în toate traseele care conțin {0}"
+
+#: SelectionDescriptionText.resx, TextLine_AboveThisCourse
+msgid "Appears above {0}, in this course only"
+msgstr "Apare deasupra {0}, doar în acest traseu"
+
+#: SelectionDescriptionText.resx, TextLine_BelowAllCourses
+msgid "Appears below {0}, in all courses that contain {0}"
+msgstr "Apare sub {0}, în toate traseele care conțin {0}"
+
+#: SelectionDescriptionText.resx, TextLine_BelowThisCourse
+msgid "Appears below {0}, in this course only"
+msgstr "Apare sub {0}, doar în acest traseu"
+
+#: SelectionDescriptionText.resx, TotalControls
+msgid "Total controls:"
+msgstr "Total posturi de control:"
+
+#: SelectionDescriptionText.resx, TotalScore
+msgid "Total score:"
+msgstr "Total scor:"
+
+#: SelectionDescriptionText.resx, UsedInCourses
+msgid "Used in courses:"
+msgstr "Folosit în aceste trasee:"
+
+#: SetPrintAreaDialog.resx, okButton.Text
+msgid "Done"
+msgstr "Efectuat"
+
+#: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
+msgid "Set the desired printing area by dragging with the mouse."
+msgstr "Setați zona de tipărire dorită prin tragerea cu mouse-ul."
+
+#: SetUILanguage.resx, introLabel.Text
+msgid "Select the language that you would like to use for the "
+"user interface of Purple Pen (menus, windows, etc.)"
+msgstr "Selectați limba în care să apară interfața utilizator a "
+"programului Purple Pen (meniuri, ferestre, etc.)"
+
+#: SetUILanguage.resx, $this.Text
+msgid "Program Language"
+msgstr "Limba Programului"
+
+#: StatusBarText.resx, DefaultStatus
+msgid "Left mouse button: select object;   Right mouse button: "
+"move map;   Scroll wheel: zoom in/out"
+msgstr "Butonul stâng mouse: selecție obiect;   Butonul drept "
+"mouse: mutare hartă;   Învârtire rotiță mouse: "
+"marire/micșorare"
+
+#: StatusBarText.resx, DefaultRectangle
+msgid "Left mouse button: move/size rectangle;   Right mouse "
+"button: move map;   Scroll wheel: zoom in/out"
+msgstr "Butonul stâng mouse: mutare/dimensionare dreptunghi;   "
+"Butonul drept mouse: mutare hartă;   Învârtire rotiță "
+"mouse: marire/micșorare"
+
+#: StatusBarText.resx, DragObject
+msgid "Hold down left mouse button and drag to move selected object"
+msgstr "Țineți apăsat butonul stâng al mouse-ului și trageți "
+"pentru a muta obiectul selectat"
+
+#: StatusBarText.resx, DragCorner
+msgid "Hold down left mouse button and drag corner point to move it"
+msgstr "Țineți apăsat butonul stâng al mouse-ului și trageți "
+"punctele din colțuri pentru al muta"
+
+#: StatusBarText.resx, DraggingObject
+msgid "Move object to desired location and release mouse button"
+msgstr "Mutați obiectul în locația dorită si eliberați butonul "
+"mouse-ului"
+
+#: StatusBarText.resx, DraggingCorner
+msgid "Move corner point to desired location and release mouse "
+"button"
+msgstr "Mutați punctul din colț în locația dorită si eliberați "
+"butonul mouse-ului"
+
+#: StatusBarText.resx, AddingControl
+msgid "Click left mouse button to place new control"
+msgstr "Click butonul stâng mouse pentru a plasa un nou post de "
+"control"
+
+#: StatusBarText.resx, AddingExistingControl
+msgid "Click left mouse button to add existing control \"{0}\" to "
+"course"
+msgstr "Click butonul stâng mouse pentru a adăuga la traseu postul "
+"de control \"{0}\""
+
+#: StatusBarText.resx, AddingStart
+msgid "Click left mouse button to place new start"
+msgstr "Click butonul stâng mouse pentru a plasa un nou start"
+
+#: StatusBarText.resx, AddingExistingStart
+msgid "Click left mouse button to add existing start to course"
+msgstr "Click butonul stâng mouse pentru a adăuga la traseu un "
+"start pre-existent"
+
+#: StatusBarText.resx, AddingFinish
+msgid "Click left mouse button to place new finish"
+msgstr "Click butonul stâng mouse pentru a plasa o nouă sosire"
+
+#: StatusBarText.resx, AddingExistingFinish
+msgid "Click left mouse button to add existing finish to course"
+msgstr "Click buton stâng mouse pentru a adăuga la traseu o sosire "
+"pre-existentă"
+
+#: StatusBarText.resx, AddingCrossingPoint
+msgid "Click left mouse button to place new mandatory crossing "
+"point"
+msgstr "Click buton stâng mouse pentru a plasa un nou punct de "
+"trecere obligatoriu"
+
+#: StatusBarText.resx, AddingExistingCrossingPoint
+msgid "Click left mouse button to add existing mandatory crossing "
+"point to course"
+msgstr "Click buton stâng mouse pentru a adăuga la traseu un punct "
+"de trecere obligatoriu pre-existent"
+
+#: StatusBarText.resx, AddingObject
+msgid "Click left mouse button to place new object"
+msgstr "Click buton stâng mouse pentru a plasa un nou obiect"
+
+#: StatusBarText.resx, AddingBend
+msgid "Click left mouse button at the location of the bend"
+msgstr "Click buton stâng mouse în locația de cotitură"
+
+#: StatusBarText.resx, AddingCorner
+msgid "Click left mouse button to add a new corner"
+msgstr "Click buton stâng mouse pentru a adăuga un nou colț"
+
+#: StatusBarText.resx, DeletingBend
+msgid "Click left mouse button on a bend to remove it"
+msgstr "Click buton stâng mouse pe cotitură pentru al șterge"
+
+#: StatusBarText.resx, DeletingCorner
+msgid "Click left mouse button on a corner to remove it"
+msgstr "Click mouse stâng mouse pe un colț pentru al șterge"
+
+#: StatusBarText.resx, AddingControlGap
+msgid "Click left mouse button on the control circle to add a gap"
+msgstr "Click buton stâng mouse pe cercul postului de control "
+"pentru a adăuga un spațiu gol"
+
+#: StatusBarText.resx, RemovingControlGap
+msgid "Click left mouse button on a gap in the control circle to "
+"remove it"
+msgstr "Click buton stâng mouse pe un spațiu gol în cercul "
+"postului de control pentru a șterge golul."
+
+#: StatusBarText.resx, AddingLegGap
+msgid "Hold down left mouse button and drag to create a gap in "
+"the leg"
+msgstr "Țineți apăsat butonul stâng al mouse-ului și trageți "
+"pentru a crea un spațiu gol în secțiune"
+
+#: StatusBarText.resx, RemovingLegGap
+msgid "Click left mouse button on a gap in the leg to remove it"
+msgstr "Click buton stâng mouse pe un spațiu gol din secțiune "
+"pentru a-l elimina."
+
+#: StatusBarText.resx, SizeRectangle
+msgid "Hold down left mouse button and drag to size the selected "
+"object"
+msgstr "Țineți apăsat butonul stâng al mouse-ului și trageți "
+"pentru a dimensiona obiectul selectat"
+
+#: StatusBarText.resx, SizingRectangle
+msgid "Move edge(s) to desired location and release mouse button"
+msgstr "Mutați marginea(marginile) în locația dorită și eliberați "
+"butonul mouse-ului"
+
+#: StatusBarText.resx, AddingDescription
+msgid "Hold down left mouse button and drag to create control "
+"descriptions"
+msgstr "Țineți apăsat butonul stâng al mouse-ului și trageți "
+"pentru a crea descrierea posturilor de control"
+
+#: StatusBarText.resx, RotatingObject
+msgid "Click left mouse button when the crossing point is rotated "
+"to the correct angle"
+msgstr "Click buton stâng mouse când punctul de intersecție este "
+"rotit la unghiul corect"
+
+#: StatusBarText.resx, AddingLineArea
+msgid "Hold down left mouse button and drag to add a line "
+"segment; click the left mouse button to finish adding object"
+msgstr "Țineți apăsat butonul stâng mouse și trageți pentru a "
+"adăuga un segment de linie; click buton stânga mouse "
+"pentru a termina adaugarea obiectului"
+
+#: StatusBarText.resx, AddingText
+msgid "Hold down left mouse button and drag to create text"
+msgstr "Țineți apăsat butonul stâng mouse și trageți pentru a crea "
+"textul"
+
+#: UnusedControls.resx, okButton.Text
+msgid "Delete"
+msgstr "Ștergere"
+
+#: UnusedControls.resx, unusedControlsLabel.Text
+msgid "The following controls are in the All Controls collection, "
+"but not used in any course. Click Delete to remove all "
+"checked controls."
+msgstr "Următoarele posturi de control sunt în colecția de posturi "
+"dar nu sunt utilizare în nici un traseu. Click Ștergere "
+"pentru a elimina toate posturile de control selectate."
+

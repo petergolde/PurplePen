@@ -133,7 +133,7 @@
     <value>Ändere die Höhenmeter</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
-    <value>Ändere den Namen der Bahn</value>
+    <value>Bahnbezeichnung ändern</value>
   </data>
   <data name="ChangeTextLine" xml:space="preserve">
     <value>Ändere die Textzeile</value>
@@ -190,7 +190,7 @@
     <value>Ändere Codes</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Ändere die angezeigten Bahnen</value>
+    <value>Wechsle die angezeigten Bahnen</value>
   </data>
   <data name="AddBend" xml:space="preserve">
     <value>Kurve hinzufügen</value>
@@ -235,7 +235,7 @@
     <value>Ignoriere fehlende Schriften</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
-    <value>Füge Textzeile hizu</value>
+    <value>Eine Textzeile hinzufügen</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
     <value>Entferne ungenutzte Posten</value>

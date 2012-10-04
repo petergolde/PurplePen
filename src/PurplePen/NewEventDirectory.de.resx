@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>Im gleichen Ordner wie die Karte.</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>Ordner auswählen...</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>Ordner auswählen</value>
+  </data>
 </root>

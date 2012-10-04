@@ -124,7 +124,7 @@
     <value>Geschlecht</value>
   </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
-    <value>Text</value>
+    <value>Textbeschreibung</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Geschlecht:</value>
