@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 1.1.5\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2012-07-15 16:43-07:00\n"
+"POT-Creation-Date: 2012-10-04 12:42-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr "Purple Pen について"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "最初のコントロール番号"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -64,18 +64,18 @@ msgstr ""
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr ""
+msgstr "地図を印刷する縮尺:"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
 msgid "1 : "
-msgstr ""
+msgstr "1: "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
 msgid "Symbols"
-msgstr ""
+msgstr "記号"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
@@ -85,12 +85,12 @@ msgstr ""
 #: PrintDescriptions.resx, descriptionKindCombo.Items2
 #: SelectionDescriptionText.resx, SpecialName_Text
 msgid "Text"
-msgstr ""
+msgstr "テキスト"
 
 #: AddCourse.resx, descKindCombo.Items2
 #: AllControlsProperties.resx, descKindCombo.Items2
 msgid "Symbols and text"
-msgstr ""
+msgstr "記号とテキスト"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
@@ -875,31 +875,31 @@ msgstr ""
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
-msgstr ""
+msgstr "編集 (&E)"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
-msgstr ""
+msgstr "表示(&V)"
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
-msgstr ""
+msgstr "イベント(&N)"
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
-msgstr ""
+msgstr "コース(&C)"
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr ""
+msgstr "アイテム(&I)"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
-msgstr ""
+msgstr "レポート(&R)"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
-msgstr ""
+msgstr "Purple Pen のヘルプ(&H)"
 
 #: MainFrame.resx, helpTranslatedMenu.Text
 msgid "Purple Pen Help (Translated)"
@@ -927,7 +927,7 @@ msgstr ""
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
-msgstr ""
+msgstr "ヘルプ (&H)"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
@@ -947,7 +947,7 @@ msgstr ""
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr ""
+msgstr "OCADファイルを作成"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -967,7 +967,7 @@ msgstr ""
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
-msgstr ""
+msgstr "コースを印刷 (&C)"
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
@@ -1155,7 +1155,7 @@ msgstr ""
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
-msgstr ""
+msgstr "その他のコース記号(&I)"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text

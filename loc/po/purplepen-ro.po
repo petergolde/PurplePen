@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 1.1.5\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2012-07-15 16:43-07:00\n"
+"POT-Creation-Date: 2012-10-04 12:42-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,11 +30,11 @@ msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
 "WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
 "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
 "PURPOSE ARE DISCLAIMED."
-msgstr "ACEST PROGRAM ESTE OFERIT DE CATRE DETINATORUL DREPTURILOR "
-"DE AUTO SI CONTRIBUTORI \"AȘA CUM ESTE\" ȘI SUNT EXCLUSE "
-"ORICE GARAȚIO IMPLICITE SAU EXPLICITE, SAU GARAȚII "
-"IMPLICITE DE COMERCIALIZARE SAU PENTRU UN ANUMIT SCOPE, "
-"DAR FARĂ A SE LIMITA LA ACESTEA."
+msgstr "ACEST PROGRAM ESTE OFERIT DE CĂTRE DEȚINĂTORUL DREPTURILOR "
+"DE AUTOR ȘI CONTRIBUTORI \"AȘA CUM ESTE\" ȘI SUNT EXCLUSE "
+"ORICE GARAȚII IMPLICITE SAU EXPLICITE, SAU GARAȚII "
+"IMPLICITE DE COMERCIALIZARE SAU PENTRU UN ANUMIT SCOP, DAR "
+"FARĂ A SE LIMITA LA ACESTEA."
 
 #: AboutForm.resx, okButton.Text
 #: InitialScreen.resx, okButton.Text
@@ -1073,11 +1073,11 @@ msgstr "&Intensitate Hartă"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr "Foarte mi&că"
+msgstr "Foarte s&căzută"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
-msgstr "M&ică"
+msgstr "&Scăzută"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
@@ -1085,11 +1085,11 @@ msgstr "&Medie"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
-msgstr "&Mare"
+msgstr "&Ridicată"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr "&Completă"
+msgstr "&Maximă"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
@@ -1358,7 +1358,7 @@ msgstr "Deschidere"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr "Deschidere (Ctrol + O)"
+msgstr "Deschidere (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 msgid "Save"
@@ -2191,7 +2191,7 @@ msgstr "Planul Fișei de Compostare..."
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr "Dimensiunea căsuței de compostare:"
+msgstr "Dimensiune căsuță compostare:"
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
@@ -2312,11 +2312,11 @@ msgstr "Același simbol?"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr "Rezumatul traseului {0}"
+msgstr "Rezumatul traseelor - {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "Referințe încrucișate posturi control pentru {0}"
+msgstr "Referințe încrucișate posturi de control - {0}"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -2446,15 +2446,15 @@ msgstr "{0} ({1} posturi, {2:0.0} km)"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr "Raport Lungime Secțiune pentru {0}"
+msgstr "Raport Lungimi Secțiuni - {0}"
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr "Încărcarea postului de control"
+msgstr "Încărcarea posturilor de control"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr "Încărcare Secțiune"
+msgstr "Încărcare Secțiuni"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
@@ -2475,7 +2475,7 @@ msgstr "(doar secțiunile folosite în cel puțin un traseu apar în "
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr "Rezumat încărcare participanți pentru {0}"
+msgstr "Rezumat încărcare participanți - {0}"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -2623,7 +2623,7 @@ msgstr "Total scor:"
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr "Folosite în acest traseu:"
+msgstr "Folosit în aceste trasee:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"

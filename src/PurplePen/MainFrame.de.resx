@@ -321,14 +321,32 @@
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Gefährliches Gebiet</value>
   </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Verpflegungspunkt</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Erste Hilfe</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Verbotene Strecke</value>
+  </data>
   <data name="addBoundaryMenu.Text" xml:space="preserve">
     <value>Unpassierbare Grenze</value>
   </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Passkreuz</value>
+  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Text</value>
+    <value>Textbeschreibung</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
+  </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>Eckpunkt hinzufügen</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>Eckpunkt entfernen</value>
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Füge Lücke ein</value>
@@ -354,14 +372,47 @@
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolbrowser</value>
   </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>Öffnen</value>
+  </data>
+  <data name="openToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Öffnen (Ctrl+O</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>Speichern</value>
+  </data>
+  <data name="saveToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Speichern (Ctrl+S)</value>
+  </data>
+  <data name="undoToolStripButton.Text" xml:space="preserve">
+    <value>Rückgängig</value>
+  </data>
+  <data name="undoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Rückgängig (Ctrl+Z)</value>
+  </data>
+  <data name="redoToolStripButton.Text" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="redoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Wiederherstellen (Ctrl+Y)</value>
+  </data>
+  <data name="deleteToolStripButton.Text" xml:space="preserve">
+    <value>Löschen (Del)</value>
+  </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
     <value>Neuer Start</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
     <value>Neuer Posten</value>
   </data>
+  <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Posten hinzufügen</value>
+  </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
     <value>Neues Ziel</value>
+  </data>
+  <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Postenbeschreibung hinzufügen</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pflichtpassage</value>
@@ -372,10 +423,37 @@
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Gefährliches Gebiet</value>
   </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verpflegungspunkt</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Erste Hilfe</value>
+  </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Verbotene Strecke</value>
+  </data>
   <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Unpassierbare Grenze</value>
   </data>
+  <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Passkreuz</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
-    <value>Text</value>
+    <value>Textbeschreibung</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Eckpunkt hinzufügen (Ctrl+B)</value>
+  </data>
+  <data name="zoomAmountLabel.Text" xml:space="preserve">
+    <value>Zoom: 100%</value>
+  </data>
+  <data name="locationDisplay.Text" xml:space="preserve">
+    <value>Copy text t X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>XML file|*.xml</value>
+  </data>
+  <data name="saveXmlFileDialog.Title" xml:space="preserve">
+    <value>XML Interchange File ertsellen</value>
   </data>
 </root>

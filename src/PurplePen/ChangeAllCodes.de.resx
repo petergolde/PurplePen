@@ -118,9 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="OldCode.HeaderText" xml:space="preserve">
-    <value>Originaler Code</value>
+    <value>orginal Kontrollnummer</value>
   </data>
   <data name="NewCode.HeaderText" xml:space="preserve">
-    <value>Neuer Code</value>
+    <value>Neue Kontrollnummer</value>
+  </data>
+  <data name="changeControlCodesLabel.Text" xml:space="preserve">
+    <value>Um die Kontrollnummer für einen oder mehrere Posten zu ändern, klicke auf die Spalte "neue Kontrollnummer" und gib die neue Kontrollnummer ein. </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kontrollnummer wechseln</value>
   </data>
 </root>

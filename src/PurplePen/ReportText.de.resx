@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Steigung</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Spalte</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Bahn</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distanz</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Strecke</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Länge</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Keine Fehler gefunden</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} Posten, {2:0.0} km, {3} m Steigung)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} Posten, {2:0.0} km)</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>WARNUNG:</value>
+  </data>
 </root>

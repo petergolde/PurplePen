@@ -262,19 +262,19 @@
     <value>&amp;Intensitate Hartă</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>Foarte mi&amp;că</value>
+    <value>Foarte s&amp;căzută</value>
   </data>
   <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>M&amp;ică</value>
+    <value>&amp;Scăzută</value>
   </data>
   <data name="mediumIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Medie</value>
   </data>
   <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Mare</value>
+    <value>&amp;Ridicată</value>
   </data>
   <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Completă</value>
+    <value>&amp;Maximă</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Calitate hartă</value>
@@ -469,7 +469,7 @@
     <value>Deschidere</value>
   </data>
   <data name="openToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Deschidere (Ctrol + O)</value>
+    <value>Deschidere (Ctrl+O)</value>
   </data>
   <data name="saveToolStripButton.Text" xml:space="preserve">
     <value>Salvare</value>

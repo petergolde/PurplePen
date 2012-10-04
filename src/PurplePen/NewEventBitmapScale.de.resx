@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Bildauflösung:</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>Pixel pro Zoll</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Kartenmassstab:</value>
   </data>
 </root>

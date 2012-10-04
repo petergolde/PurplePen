@@ -117,13 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textLineLabel.Text" xml:space="preserve">
+    <value>Text eingeben für eine separate Zeile auf der Postenbeschreibung</value>
+  </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Bahnen:</value>
+  </data>
+  <data name="positionLabel.Text" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="comboBoxPosition.Items" xml:space="preserve">
+    <value>Über {0}</value>
+  </data>
+  <data name="comboBoxPosition.Items1" xml:space="preserve">
+    <value>Unter {0}</value>
+  </data>
+  <data name="comboBoxCourses.Items" xml:space="preserve">
+    <value>Nur diese Bahn</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
     <value>Alle Bahnen mit {0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Füge Textzeile hizu</value>
+    <value>Eine Textzeile hinzufügen</value>
   </data>
 </root>

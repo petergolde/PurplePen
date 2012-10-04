@@ -121,7 +121,7 @@
     <value>Wettkampfname</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>Name der Bahn</value>
+    <value>Bahnbezeichnung</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Länge der Bahn</value>

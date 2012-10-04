@@ -126,6 +126,9 @@
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stil der Postennummern</value>
   </data>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Postennummernhöhe:</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
   </data>

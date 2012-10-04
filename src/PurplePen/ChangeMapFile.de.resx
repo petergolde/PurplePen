@@ -121,7 +121,7 @@
     <value>aktuelle Kartendatei</value>
   </data>
   <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>&amp;Wähle Kartendatei</value>
+    <value>und wähle eine Kartendatei</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>OCAD Dateien (*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
@@ -130,7 +130,7 @@
     <value>Auflösung:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
-    <value>Maßstab:</value>
+    <value>Massstab</value>
   </data>
   <data name="labelOneTo.Text" xml:space="preserve">
     <value>1:</value>

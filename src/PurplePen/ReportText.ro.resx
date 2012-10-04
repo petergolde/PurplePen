@@ -166,10 +166,10 @@
     <value>Același simbol?</value>
   </data>
   <data name="CourseSummary_Title" xml:space="preserve">
-    <value>Rezumatul traseului {0}</value>
+    <value>Rezumatul traseelor - {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>Referințe încrucișate posturi control pentru {0}</value>
+    <value>Referințe încrucișate posturi de control - {0}</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Posturi de Control Apropiate</value>
@@ -247,13 +247,13 @@
     <value>{0} ({1} posturi, {2:0.0} km)</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
-    <value>Raport Lungime Secțiune pentru {0}</value>
+    <value>Raport Lungimi Secțiuni - {0}</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
-    <value>Încărcarea postului de control</value>
+    <value>Încărcarea posturilor de control</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
-    <value>Încărcare Secțiune</value>
+    <value>Încărcare Secțiuni</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
     <value>Unele sau toate traseele nu au specificate încărcarea de participanți. Încărcările afișate dedesubt pot fi incorecte sau pot avea lipsuri din acest motiv. Pentru a introduce încărcarea cu participanți, accesați "Încărcare Participanți" din meniul "Traseu".</value>
@@ -262,7 +262,7 @@
     <value>(doar secțiunile folosite în cel puțin un traseu apar în tabelul următor)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>Rezumat încărcare participanți pentru {0}</value>
+    <value>Rezumat încărcare participanți - {0}</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ATENȚIE:</value>

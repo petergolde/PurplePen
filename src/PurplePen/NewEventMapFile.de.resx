@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
-    <value>&amp;Wähle Kartendatei</value>
+    <value>und wähle eine Kartendatei</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>OCAD Dateien (*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
