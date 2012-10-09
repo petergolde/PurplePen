@@ -69,7 +69,7 @@ namespace PurplePen
             xmlWriter.WriteEndElement();
 
             // Write the modification date.
-            WriteModificationDate(DateTimeOffset.Now);
+            WriteModificationDate(DateTime.Now);
 
             // Write the map information.
             WriteMapInfo();
@@ -93,7 +93,7 @@ namespace PurplePen
             xmlWriter = null;
         }
 
-        private void WriteModificationDate(DateTimeOffset dateTime) {
+        private void WriteModificationDate(DateTime dateTime) {
             xmlWriter.WriteStartElement("ModifyDate");
 
             // Date

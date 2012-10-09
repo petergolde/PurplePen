@@ -15,11 +15,31 @@
 <body>
 
 <h1>Purple Pen Change Summary</h1>
+<h2>Changes in 1.1.5 </h2>
+<h3>New Features</h3>
+<ul>
+<li>
+<p>Bulgarian translation, thanks to Galena Tomova. </p>
+</li>
+<li>
+<p>Romanian translation, thanks to Virtual Orienteering (vorienteering.com). </p>
+</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+<li>
+<p>In certain rare cases where a line object ended with a corner point, fence symbols (and similar) had an extra tick mark
+and the very end of of the line. (Thanks to Mike Godfree for the report.)</p>
+</li>
+<li>
+<p>In rare cases an empty text object would cause the map not to display. (Thanks to Mike Godfree for the report.)</p>
+</li>
+</ul>
 <h2>Changes in 1.1.4 </h2>
 <h3>New Features</h3>
 <ul>
 <li>
-<p>Nynorsk translation, thanks to Michael Willing. </p>
+<p>Nynorsk translation, thTTTTanks to Michael Willig. </p>
 </li>
 <li>
 <p>Spanish translation, thanks to Antonio Salguero. </p>
@@ -38,7 +58,8 @@ this issue and providing a map that showed the problem.</p>
 <p>Treatment of symbols with colors that are not present the OCAD color table updated (now ignores color, rather than picking another color).</p>
 </li>
 <li>
-<p>Display of symbols with decreasing symbols improved.</p>
+<p>Display of lines with decreasing symbols was improved, and a crashing bug fixed if the final size was zero. These symbols are rarely used in 
+orienteering maps.</p>
 </li>
 </ul>
 <h2>Changes in 1.1.2 </h2>
