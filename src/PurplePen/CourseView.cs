@@ -138,10 +138,10 @@ namespace PurplePen
         // Get the label kind to use.
         public ControlLabelKind ControlLabelKind {
             get {
-                if (courseId.IsNone)
+                if (courseDesignator.IsAllControls)
                     return ControlLabelKind.Code;
                 else
-                    return eventDB.GetCourse(courseId).labelKind;
+                    return eventDB.GetCourse(courseDesignator.CourseId).labelKind;
             }
         }
 
@@ -346,7 +346,7 @@ namespace PurplePen
             if (courseDesignator.AllParts || courseDesignator.IsAllControls)
                 totalLength = partLength;
             else {
-                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false);
+                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false, false);
                 totalLength = viewEntireCourse.TotalLength;
             }
         }
@@ -384,7 +384,7 @@ namespace PurplePen
         //  -----------  Static methods to create a new CourseView.  -----------------
 
         // Create a normal course view -- the standard view in order, from start control to finish control. courseId may NOT be None.
-        private static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, bool descriptionSpecialsOnly)
+        private static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
             Debug.Assert(! courseDesignator.IsAllControls);
 
@@ -399,7 +399,7 @@ namespace PurplePen
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseDesignator.CourseId, descriptionSpecialsOnly);
+            courseView.AddSpecials(courseDesignator.CourseId, addNonDescriptionSpecials, addDescriptionSpecials);
 
             return courseView;
         }
@@ -483,7 +483,7 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateAllControlsView(eventDB);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
         }
 
         // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.

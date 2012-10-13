@@ -168,8 +168,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent3.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -204,8 +204,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent4.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -241,8 +241,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent5.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();

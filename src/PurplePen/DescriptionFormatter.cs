@@ -248,7 +248,6 @@ namespace PurplePen
         }
 
         // Get a regular 8-box line for a start or regular control.
-        private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, CourseView.ControlView controlView, Dictionary<string, string> descriptionKey)
         private DescriptionLine GetRegularLine(CourseView.CourseViewKind kind, int scoreColumn, CourseView.ControlView controlView, Dictionary<string, string> descriptionKey)
         {
             Event ev = eventDB.GetEvent();
@@ -583,7 +582,6 @@ namespace PurplePen
                         line = GetDirectiveLine(kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null);
                     }
                     else {
-                        line = GetRegularLine(kind, controlView, descriptionKey);
                         line = GetRegularLine(kind, scoreColumn, controlView, descriptionKey);
                     }
                     Debug.Assert(line != null);
