@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 using System.Drawing;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -423,7 +424,7 @@ namespace PurplePen
             // Line height for descriptions.
             if (special.kind == SpecialKind.Descriptions) {
                 list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.LineHeight + "  "));
-                list.Add(new TextPart(TextFormat.SameLine, string.Format("{0:#0.0} mm", Util.Distance(special.locations[0], special.locations[1]) / scaleRatio)));
+                list.Add(new TextPart(TextFormat.SameLine, string.Format("{0:#0.0} mm", Geometry.Distance(special.locations[0], special.locations[1]) / scaleRatio)));
             }
 
             // Which courses is it used in?

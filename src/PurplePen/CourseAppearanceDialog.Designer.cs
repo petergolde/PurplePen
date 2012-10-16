@@ -29,6 +29,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAppearanceDialog));
             this.groupBoxSizes = new System.Windows.Forms.GroupBox();
+            this.comboBoxControlNumberStyle = new System.Windows.Forms.ComboBox();
+            this.labelControlNumberStyle = new System.Windows.Forms.Label();
             this.labelControlNumber = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.upDownNumberHeight = new System.Windows.Forms.NumericUpDown();
@@ -54,16 +56,16 @@
             this.groupBoxPreview = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.groupBoxSizes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownNumberHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownLineWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownControlCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownControlCircle)).BeginInit();
             this.groupBoxPurple.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownBlack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownYellow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownMagenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownCyan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownYellow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownMagenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownCyan)).BeginInit();
             this.groupBoxPreview.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -77,6 +79,8 @@
             // groupBoxSizes
             // 
             resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
+            this.groupBoxSizes.Controls.Add(this.comboBoxControlNumberStyle);
+            this.groupBoxSizes.Controls.Add(this.labelControlNumberStyle);
             this.groupBoxSizes.Controls.Add(this.labelControlNumber);
             this.groupBoxSizes.Controls.Add(this.label4);
             this.groupBoxSizes.Controls.Add(this.upDownNumberHeight);
@@ -89,6 +93,22 @@
             this.groupBoxSizes.Controls.Add(this.checkBoxStandardSizes);
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
+            // 
+            // comboBoxControlNumberStyle
+            // 
+            this.comboBoxControlNumberStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxControlNumberStyle.FormattingEnabled = true;
+            this.comboBoxControlNumberStyle.Items.AddRange(new object[] {
+            resources.GetString("comboBoxControlNumberStyle.Items"),
+            resources.GetString("comboBoxControlNumberStyle.Items1")});
+            resources.ApplyResources(this.comboBoxControlNumberStyle, "comboBoxControlNumberStyle");
+            this.comboBoxControlNumberStyle.Name = "comboBoxControlNumberStyle";
+            this.comboBoxControlNumberStyle.SelectedIndexChanged += new System.EventHandler(this.comboBoxControlNumberStyle_SelectedIndexChanged);
+            // 
+            // labelControlNumberStyle
+            // 
+            resources.ApplyResources(this.labelControlNumberStyle, "labelControlNumberStyle");
+            this.labelControlNumberStyle.Name = "labelControlNumberStyle";
             // 
             // labelControlNumber
             // 
@@ -310,29 +330,29 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.groupBoxPreview);
-            this.Controls.Add(this.groupBoxPurple);
             this.Controls.Add(this.groupBoxSizes);
+            this.Controls.Add(this.groupBoxPurple);
+            this.Controls.Add(this.groupBoxPreview);
             this.HelpTopic = "EventCustomizeCourseAppearance.htm";
             this.Name = "CourseAppearanceDialog";
-            this.Controls.SetChildIndex(this.groupBoxSizes, 0);
-            this.Controls.SetChildIndex(this.groupBoxPurple, 0);
             this.Controls.SetChildIndex(this.groupBoxPreview, 0);
+            this.Controls.SetChildIndex(this.groupBoxPurple, 0);
+            this.Controls.SetChildIndex(this.groupBoxSizes, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownNumberHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownLineWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownControlCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownControlCircle)).EndInit();
             this.groupBoxPurple.ResumeLayout(false);
             this.groupBoxPurple.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownBlack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownYellow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownMagenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.upDownCyan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownYellow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownMagenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownCyan)).EndInit();
             this.groupBoxPreview.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBoxPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,5 +384,7 @@
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.GroupBox groupBoxPreview;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
+        private System.Windows.Forms.ComboBox comboBoxControlNumberStyle;
+        private System.Windows.Forms.Label labelControlNumberStyle;
     }
 }

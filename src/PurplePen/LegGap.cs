@@ -38,6 +38,7 @@ using System.Drawing;
 using System.Diagnostics;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -105,12 +106,12 @@ namespace PurplePen
                 PointF startPt = path.PointAtLength(gaps[i].distanceFromStart);
                 PointF endPt = path.PointAtLength(gaps[i].distanceFromStart + gaps[i].length);
 
-                if (Util.Distance(startPt, oldPt) < 0.01) {
+                if (Geometry.Distance(startPt, oldPt) < 0.01) {
                     // Moving start point of the gap.
                     newGaps[i].length -= (newLengthAlongPath - newGaps[i].distanceFromStart);
                     newGaps[i].distanceFromStart = newLengthAlongPath;
                 }
-                else if (Util.Distance(endPt, oldPt) < 0.01) {
+                else if (Geometry.Distance(endPt, oldPt) < 0.01) {
                     // Moving end point of the gap.
                     newGaps[i].length = newLengthAlongPath - gaps[i].distanceFromStart;
                 }

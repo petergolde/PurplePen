@@ -112,21 +112,21 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="moveDownButton.Text" xml:space="preserve">
     <value>Bajar</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Use los botones «Subir» y «Bajar» para cambiar el orden en que las rutas están listados en la interfaz, los reportes y las impresiones.</value>
+    <value>Use los botones «Subir» y «Bajar» para cambiar el orden en que los recorridos aparecerán en los listados, informes e impresiones.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Subir</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Orden de las rutas</value>
+    <value>Orden de los Recorridos</value>
   </data>
 </root>

@@ -9,13 +9,13 @@
 		<text lang="en">man-made object</text>
 	</custom-symbol-text>
     <custom-symbol-text iof-2004-ref="6.2" show-key="false">
-		<text lang="bg">smurf</text>
-		<text lang="bg" plural="true">smurfella</text>
+		<text lang="aa">smurf</text>
+		<text lang="aa" plural="true">smurfella</text>
 		<text lang="en">slide</text>
 		<text lang="en" plural="true">slides</text>
 	</custom-symbol-text>
     <custom-symbol-text iof-2004-ref="5.6" show-key="true">
-		<text lang="bg">bigrash</text>
+		<text lang="aa">bigrash</text>
 		<text lang="en">light pole</text>
 	</custom-symbol-text>
     <custom-symbol-text iof-2004-ref="12.1" show-key="true">

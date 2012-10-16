@@ -112,13 +112,13 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
-    <value>Elija el idioma utilizado para las descripciones de los controles textuales:</value>
+    <value>Elija el idioma utilizado para las descripciones de controles textuales:</value>
   </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Nombre del símbolo:</value>
@@ -127,7 +127,7 @@
     <value>Texto personalizado:</value>
   </data>
   <data name="buttonChangeText.Text" xml:space="preserve">
-    <value>Cambiar Texto:</value>
+    <value>Cambiar texto:</value>
   </data>
   <data name="buttonDefault.Text" xml:space="preserve">
     <value>Restaurar estándar</value>
@@ -139,9 +139,9 @@
     <value>Mostrar significados debajo de las descripciones simbólicas</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Haga click en un símbolo descriptivo para personalizar el texto utilizado en las descripciones de los controles textuales.</value>
+    <value>Haga click en la descripción de un símbolo para personalizar el texto utilizado en las descripciones de controles textuales.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar Texto de Descripción</value>
+    <value>Personalizar Textos de las Descripciones</value>
   </data>
 </root>

@@ -112,14 +112,11 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>Banor</value>
-  </data>
   <data name="createButton.Text" xml:space="preserve">
     <value>Skapa</value>
   </data>
@@ -128,6 +125,39 @@
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Välj katalog för OCAD-filerna</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Katalog</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Välj katalog...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annan katalog</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som kartfilen</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som Puple Pen-filen</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fyll i namnet (utan .xml eller .gif) för båda RouteGadget-filerna:</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Läs mer om RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget kräver både en bild (.gif) och en IOF XML-fil (.xml). Välj namn och mapp för båda dessa filer.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Skapa OCAD-filer</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Banor</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Utdata</value>
@@ -149,23 +179,5 @@
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
-  </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Katalog</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Välj katalog...</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annan katalog</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Samma katalog som kartfilen</value>
-  </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samma katalog som Puple Pen-filen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Skapa OCAD-filer</value>
   </data>
 </root>

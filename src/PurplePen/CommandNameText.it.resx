@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChangeSymbol" xml:space="preserve">
     <value>Cambia Simbolo</value>
@@ -171,6 +171,9 @@
   <data name="AddFinish" xml:space="preserve">
     <value>Aggiungi Fine</value>
   </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Aggiungi punto di incrocio obbligatorio</value>
+  </data>
   <data name="AddObject" xml:space="preserve">
     <value>Aggiungi Oggetto</value>
   </data>
@@ -189,17 +192,35 @@
   <data name="NewEvent" xml:space="preserve">
     <value>Crea Nuovo Evento</value>
   </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Cambia segnalazione della gamba</value>
+  </data>
   <data name="ChangeCodes" xml:space="preserve">
     <value>Cambia Codici</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
     <value>Cambia Corsi Visualizzati</value>
   </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Aggiungi Curva</value>
+  </data>
   <data name="AddCorner" xml:space="preserve">
     <value>Aggiungi Angolo</value>
   </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Rimuovi Curva</value>
+  </data>
   <data name="DeleteCorner" xml:space="preserve">
     <value>Rimuovi Angolo</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Aggiungi Varco</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Rimuovi Varco</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Muovi Varco</value>
   </data>
   <data name="Rotate" xml:space="preserve">
     <value>Ruota</value>
@@ -213,8 +234,20 @@
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>Personalizza il testo descrittivo</value>
   </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Cambia il file mappa</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Ignora i caratteri non trovati</value>
+  </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Aggiungi Linea Di Testo</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Rimuovi i controlli inutilizzati</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Modifica il linguaggio di descrizione</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Cambia Testo</value>

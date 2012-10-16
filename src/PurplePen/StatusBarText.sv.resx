@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
     <value>Vänster musknapp: Välj objekt; Höger musknapp: Flytta karta; Musens scrollhjul: Zooma in/ut</value>
@@ -193,13 +193,13 @@
     <value>Flytta kant(er) till önskad position och släpp mus knapp</value>
   </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>Håll ned vänster musknapp och drag för att addera kontrollbeskrivning</value>
+    <value>Håll ned vänster musknapp och drag för att lägga till kontrollbeskrivning</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
     <value>Klicka med vänster musknapp när passagen är roterad i rätt riktning.</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
-    <value>Håll ned vänster musknapp och drag för att addera ett nytt segment i linjen, klicka med vänster musknapp för att avsluta</value>
+    <value>Håll ned vänster musknapp och dra för att lägga till ett linjesegment, klicka med vänster musknapp för att avsluta</value>
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Håll ner vänster musknapp och dra för att skapa text</value>

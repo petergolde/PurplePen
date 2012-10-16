@@ -1,4 +1,0 @@
-﻿deleteditems.ocd
-deleteditems.png
--6,6,6,-6
-500,500

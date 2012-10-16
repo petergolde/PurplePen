@@ -388,6 +388,8 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>No courses were selected to print.</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** If there exists a web site in the translated language that contains documentation for Purple Pen, enter the URL (including http) as the translation of this item. Otherwise leave it alone.</value>
   <data name="MapExchange_Long" xml:space="preserve">
     <value>Map exchange</value>
   </data>

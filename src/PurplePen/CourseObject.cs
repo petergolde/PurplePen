@@ -41,6 +41,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.MapView;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -175,7 +176,6 @@ namespace PurplePen
                 Bitmap bm = new Bitmap(1, 1);
                 bm.SetPixel(0, 0, NormalCourseAppearance.highlightColor);
                 highlightBrush = new TextureBrush(bm);
-                bm.Dispose();
             }
             Highlight(g, xformWorldToPixel, highlightBrush, false);
 
@@ -204,7 +204,7 @@ namespace PurplePen
         private void DrawHandle(PointF handleLocation, Graphics g, Matrix xformWorldToPixel)
         {
             const int HIGHLIGHTSIZE = 5;
-            Point pixelLocation = Point.Round(Util.TransformPoint(handleLocation, xformWorldToPixel));
+            Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
             Rectangle rect = new Rectangle(pixelLocation.X - (HIGHLIGHTSIZE - 1) / 2, pixelLocation.Y - (HIGHLIGHTSIZE - 1) / 2, HIGHLIGHTSIZE, HIGHLIGHTSIZE);
             g.FillRectangle(Brushes.Blue, rect);
@@ -213,7 +213,7 @@ namespace PurplePen
         // Erase a handle at a given location.
         private void EraseHandle(PointF handleLocation, Graphics g, Matrix xformWorldToPixel, Brush eraseBrush)
         {
-            Point pixelLocation = Point.Round(Util.TransformPoint(handleLocation, xformWorldToPixel));
+            Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
             Rectangle rect = new Rectangle(pixelLocation.X - (HANDLESIZE - 1) / 2, pixelLocation.Y - (HANDLESIZE - 1) / 2, HANDLESIZE, HANDLESIZE);
             g.FillRectangle(eraseBrush, rect);
@@ -350,7 +350,7 @@ namespace PurplePen
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {
-            double dist = Util.Distance(pt, location) - TrueRadius;
+            double dist = Geometry.Distance(pt, location) - TrueRadius;
             return Math.Max(0, dist);
         }
 
@@ -518,6 +518,8 @@ namespace PurplePen
             foreach (SymPath p in gappedPaths) {
                 p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             }
+
+            grTarget.Dispose();
        }
 
        // Get the bounds of the highlight.
@@ -698,6 +700,8 @@ namespace PurplePen
 
             // Draw the interior
             path.FillTransformed(grTarget, fillBrushKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
         // Get the bounds of the highlight.
@@ -813,7 +817,7 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
-            RectangleF xformedRect = Util.TransformRectangle(rect, xformWorldToPixel);
+            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rect);
 
             // Get a brush to fill the interior with.
             Brush fillBrush;
@@ -879,7 +883,7 @@ namespace PurplePen
             if (changeRight)       right = newHandle.X;
             if (changeBottom)    bottom = newHandle.Y;
 
-            RectangleF newRect = Util.RectFromPoints(left, top, right, bottom);
+            RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
            
             // Update the rectangle.
             RectangleUpdating(ref newRect, false, changeLeft, changeTop, changeRight, changeBottom);
@@ -983,7 +987,7 @@ namespace PurplePen
                     }
                 }
 
-                newRect = Util.RectFromPoints(left, top, right, bottom);
+                newRect = Geometry.RectFromPoints(left, top, right, bottom);
             }
         }
     }
@@ -1125,13 +1129,14 @@ namespace PurplePen
                 format.LineAlignment = StringAlignment.Near;
                 format.FormatFlags |= StringFormatFlags.NoClip;
                 GraphicsPath path = new GraphicsPath();
-                path.AddString(text, new FontFamily(fontName), (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
+                path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
                 path.CloseAllFigures();
                 g.FillPath(brush, path);
                 path.Dispose();
 
                 // The above is similar to this, but produces results slightly more like the anti-aliased text.
-                //g.DrawString(text, font, brush, topLeftPixel[0], format);
+                //using (Font font = new Font(fontFam, pixelEmHight))
+                    //g.DrawString(text, font, brush, topLeftPixel[0], format);
             }
         }
 
@@ -1496,6 +1501,8 @@ namespace PurplePen
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path3.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path4.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
     }
@@ -1574,6 +1581,8 @@ namespace PurplePen
             // Draw it.
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
 
         public override string ToString()
@@ -1639,6 +1648,8 @@ namespace PurplePen
             // Draw the paths
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
     }
 
@@ -1699,6 +1710,8 @@ namespace PurplePen
 
             path1.DrawTransformed(grTarget, penKey, xformWorldToPixel);
             path2.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+            grTarget.Dispose();
         }
     }
 
@@ -1834,8 +1847,9 @@ namespace PurplePen
         public PointF centerPoint;
 
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberFont.Style, 
-            NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
+                   appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, 
+                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -2009,7 +2023,7 @@ namespace PurplePen
            if (changeRight) right = newHandle.X;
            if (changeBottom) bottom = newHandle.Y;
 
-           RectangleF newRect = Util.RectFromPoints(left, top, right, bottom);
+           RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
 
            // Update the rectangle.
            base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, newRect.Size);

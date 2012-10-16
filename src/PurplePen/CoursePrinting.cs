@@ -46,6 +46,8 @@ using System.Diagnostics;
 
 namespace PurplePen
 {
+    using PurplePen.Graphics2D;
+
     // Class to print out courses.
     class CoursePrinting: BasicPrinting
     {
@@ -404,13 +406,13 @@ namespace PurplePen
                     bitmapGraphics.Clear(Color.White);
 
                     // Set the transform
-                    Matrix transform = Util.CreateRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight), true);
+                    Matrix transform = Geometry.CreateInvertedRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
                     bitmapGraphics.MultiplyTransform(transform);
 
                     // Determine the resolution in map coordinates.
                     Matrix inverseTransform = transform.Clone();
                     inverseTransform.Invert();
-                    float minResolution = Util.TransformDistance(1F, inverseTransform);
+                    float minResolution = Geometry.TransformDistance(1F, inverseTransform);
 
                     // And draw.
                     mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
@@ -425,7 +427,7 @@ namespace PurplePen
             else {
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
-                Matrix transform = Util.CreateRectangleTransform(page.mapRectangle, page.printRectangle, true);
+                Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
                 g.IntersectClip(page.printRectangle);
                 g.MultiplyTransform(transform);
 
@@ -433,7 +435,7 @@ namespace PurplePen
                 Matrix inverseTransform = transform.Clone();
                 inverseTransform.Invert();
                 float minResolutionPage = 100F / dpi;
-                float minResolutionMap = Util.TransformDistance(minResolutionPage, inverseTransform);
+                float minResolutionMap = Geometry.TransformDistance(minResolutionPage, inverseTransform);
 
                 // And draw.
                 mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CtrlZ" xml:space="preserve">
     <value>Ctrl+Z</value>
@@ -156,17 +156,29 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>No se puede crear la carpeta '{0}' por la siguiente razón:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>No se puede leer el mapa: '{0}' Utiliza la opción Optimizar/Reparar en OCAD para resolver el problema.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>No se pueden crear los archivos OCAD por las siguientes razones:</value>
   </data>
   <data name="SaveChanges" xml:space="preserve">
-    <value>¿Desea guardar los cambios realizados en «{0}»?</value>
+    <value>¿Desea guardar los cambios realizados en '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>El archivo «{0}» ya existe en la carpeta especificada. Pulse el botón «Atrás» y elija otra carpeta u otro título de evento.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
-    <value>El código de control de '{0}' ya es utilizado por otro control.</value>
+    <value>El código de control «{0}» ya se usa en otro control.</value>
   </data>
   <data name="BadScore" xml:space="preserve">
-    <value>Los puntos para un control deben ser un entero 1-999.</value>
+    <value>Los puntos para un control deben ser un número entero entre 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>El desnivel del recorrido debe ser un número entre 0-9999, o nulo.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>La densidad de corredores para un recorrido debe ser un entero de 0-999999, o blanco.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>&amp;Deshacer</value>
@@ -181,13 +193,13 @@
     <value>Rehacer</value>
   </data>
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
-    <value>Limpiar la sele&amp;cción</value>
+    <value>&amp;Borrar Selección</value>
   </data>
   <data name="CancelOperationWithShortcut" xml:space="preserve">
-    <value>Ca&amp;ncelar operación</value>
+    <value>&amp;Cancelar Operación</value>
   </data>
   <data name="CancelOperation" xml:space="preserve">
-    <value>Cancelar operación</value>
+    <value>Cancelar Operación</value>
   </data>
   <data name="EnterScore" xml:space="preserve">
     <value>Introducir nueva puntuación</value>
@@ -195,29 +207,47 @@
   <data name="EnterCode" xml:space="preserve">
     <value>Introducir nuevo código</value>
   </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Introduce el tamaño del elemento
+Utiliza / para la altura en pendiente
+Utiliza | para separar dos caracteristicas</value>
+  </data>
   <data name="EnterEventTitle" xml:space="preserve">
     <value>Entre nuevo título de evento
 Use | para separar líneas
-(afecta todos los cursos)</value>
+(afecta todos los recorridos)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
     <value>Entre nuevo título secundario
 Use | para separar líneas</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
-    <value>Introducir nombre nuevo de ruta</value>
+    <value>Introducir el nombre del nuevo recorrido</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
-    <value>Introducir nueva escalada en metros</value>
+    <value>Introducir el desnivel en metros</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Introduce el significado del nuevo símbolo
+(afecta a todos los recorridos)</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
     <value>Introducir nuevo texto</value>
   </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Los Controles {0} no se usan en ningún recorrido. ¿Quieres borrarlos del mapa de controles maestro?.</value>
+  </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
-    <value>El control {0} ya no es usado por ningún curso. ¿Desea eliminar este control de la colección de controles?</value>
+    <value>El control {0} no se usa en ningún recorrido. ¿Quieres borrarlo del mapa de controles maestro?.</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Los Controles {0} están en uso en alguno de los siguientes recorridos: {1}. ¿Quieres borrarlos de todas maneras?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>El código del control debe tener entre una y tres letras o números.</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
-    <value>Un código de control debe tener un espacio.</value>
+    <value>Un código de control no puede tener espacios.</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Un código de control debe ser 31 o mayor</value>
@@ -225,26 +255,34 @@ Use | para separar líneas</value>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Un código de control no puede empezar con cero.</value>
   </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>El código de control no debe confundirse con otro si se ve boca abajo.</value>
+  </data>
   <data name="DuplicateCode" xml:space="preserve">
-    <value>El código "{0}" es usado más de una vez.</value>
+    <value>El código "{0}" se usa más de una vez.</value>
   </data>
   <data name="BadScale" xml:space="preserve">
-    <value>La escala de impresión debe ser un número entre 100 y 100,000.</value>
+    <value>La escala de impresión debe ser un número entre 100 y 100.000.</value>
   </data>
   <data name="CoursePropertiesTitle" xml:space="preserve">
-    <value>Propiedades de la ruta</value>
+    <value>Propiedades de Recorridos</value>
   </data>
   <data name="Landscape" xml:space="preserve">
-    <value>Paisaje</value>
+    <value>Apaisado</value>
   </data>
   <data name="Portrait" xml:space="preserve">
-    <value>Retrato</value>
+    <value>Vertical</value>
   </data>
   <data name="PageTooSmall" xml:space="preserve">
-    <value>El tamaño de la página es muy pequeño para imprimir cualquier descripción.</value>
+    <value>El tamaño de la página es muy pequeño para imprimir una descripción.</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versión {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>La versión {0} de Purple Pen no está disponible para descarga. (La versión que estás usando es la {1}.)
+
+Para descargarse la ultima versión, visita la página web de Purple Pen en la opción "Página Web de Purple Pen" en el menu Ayuda.</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>El archivo de ayuda «{0}» no se puede abrir.</value>
@@ -252,26 +290,33 @@ Use | para separar líneas</value>
   <data name="Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>No se puede encontrar el archivo del mapa "{0}" .
+
+Probablemente, el archivo ha sido movido o borrado, o el fichero de Purple Pen ha sido movido (posiblemente a otro ordenador). El archivo del mapa tiene que estar disponible siempre que se habra un Evento. Si ha recibido o enviado el fichero de un Evento Purple Pen a otra persona, asegurese de que le envia también el fichero del mapa.
+
+Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value>
+  </data>
   <data name="NoUnusedControls" xml:space="preserve">
-    <value>Todos los controles se usan en la ruta</value>
+    <value>Todos los controles se usan en algún recorrido.</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Finalizar</value>
+    <value>&amp;Meta</value>
   </data>
   <data name="NextButtonText" xml:space="preserve">
-    <value>Siguie&amp;nte &gt;</value>
+    <value>&amp;Siguiente &gt;</value>
   </data>
   <data name="Control_Code" xml:space="preserve">
     <value>Control {0}</value>
   </data>
   <data name="Finish" xml:space="preserve">
-    <value>Finalizar</value>
+    <value>Meta</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
     <value>F</value>
   </data>
   <data name="MandCrossing_Long" xml:space="preserve">
-    <value>Punto de cruce obligatorio</value>
+    <value>Punto de paso obligatorio</value>
   </data>
   <data name="MandCrossing_Medium" xml:space="preserve">
     <value>Cruce</value>
@@ -286,7 +331,7 @@ Use | para separar líneas</value>
     <value>Izquierda: {0}, Derecha: {1}, Arriba: {2}, Abajo: {3}</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Iniciar</value>
+    <value>Salida</value>
   </data>
   <data name="Start_Short" xml:space="preserve">
     <value>I</value>
@@ -306,13 +351,40 @@ Use | para separar líneas</value>
   <data name="Singular" xml:space="preserve">
     <value>singular</value>
   </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Para modificar un Texto necesita poner "*" para indicar donde está el objeto que va a ser modificado.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>trazado de recorridos para orientación</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Introduce el Texto que quieres poner en el mapa. Despues de pulsar Aceptar, mueve el ratón hacia el lugar donde quieres ubicar el texto.</value>
+  </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Añadir texto</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Intoduce el nuevo Texto</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Cambiar Texto</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Otro programa ha cambiado el fichero del mapa "{0}". Purple Pen no recarga el mapa.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>El Evento actual tiene descrpciones de controles textuales en {0}. ¿Quieres cambiar el idioma de la descripción de controles a {1}?</value>
+  </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>Abrir "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen debe cerrarse antes de leer los ficheros OCAD creados.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>No se han seleccionado recorridos para imprimir.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Si existe una página web traducida a otro idioma que contiene documentación para Purple Pen, introduce la URL (con http://) de la traducción de este tema. En otro caso no introduzcas nada.</value>
   </data>
 </root>

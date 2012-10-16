@@ -61,7 +61,7 @@ namespace PurplePen.MapView {
 		RectangleF mapView;		// The part of the map that is being cached in the bitmap
 		Matrix matTransform;	// The transform that maps from map view to the bitmap coordinates.
         IMapDisplay mapDisplay; // The map display being viewed.
-		TextureBrush bitmapBrush; // Brush made from bitmap.
+		Brush bitmapBrush; // Brush made from bitmap.
 
 		bool allValid, allInvalid; // State of the iamge in the bitmap: 
 		//  allValid=true -- all bits are a correct reflection of the map
@@ -105,7 +105,7 @@ namespace PurplePen.MapView {
 		}
 
 		// Get a brush whose texture is the (up-to-date) viewcache for the given location.  Do not dispose this brush!
-		public TextureBrush GetCacheBrush(Size sizeView, RectangleF mapAreaToView, Matrix transform) {
+		public Brush GetCacheBrush(Size sizeView, RectangleF mapAreaToView, Matrix transform) {
 			UpdateCache(sizeView, mapAreaToView, transform);
 
             if (bitmapBrush == null) {

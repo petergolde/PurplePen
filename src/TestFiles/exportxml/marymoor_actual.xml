@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CourseData>
   <IOFVersion version="2.0.3" />
+  <ModifyDate>
+    <Date>2012-10-15</Date>
+    <Clock>14:03</Clock>
+  </ModifyDate>
   <Map>
     <Scale>10000</Scale>
     <MapPosition x="-29.5" y="86.7" />
@@ -167,7 +171,7 @@
   </FinishPoint>
   <Course>
     <CourseName>Course 1</CourseName>
-    <CourseId>1</CourseId>
+    <CourseId>0</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>1600</CourseLength>
@@ -228,7 +232,7 @@
   </Course>
   <Course>
     <CourseName>Course 2</CourseName>
-    <CourseId>7</CourseId>
+    <CourseId>1</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>2200</CourseLength>
@@ -255,7 +259,7 @@
   </Course>
   <Course>
     <CourseName>Score</CourseName>
-    <CourseId>10</CourseId>
+    <CourseId>2</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <StartPointCode>STA1</StartPointCode>
@@ -344,7 +348,7 @@
   </Course>
   <Course>
     <CourseName>ScoreNoPoints</CourseName>
-    <CourseId>11</CourseId>
+    <CourseId>3</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <StartPointCode>STA2</StartPointCode>

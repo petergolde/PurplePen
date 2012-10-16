@@ -112,14 +112,11 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>Circuits</value>
-  </data>
   <data name="createButton.Text" xml:space="preserve">
     <value>Créer</value>
   </data>
@@ -128,6 +125,39 @@
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Sélectionner un dossier pour les fichiers OCAD</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dossier</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Sélectionner un dossier...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Autre dossier</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Même dossier que la carte</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Même dossier que le fichier Purple Pen</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Nom du fichier</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Entrer le nom valable pour les 2 fichiers RouteGadget (sans indiquer .xml ou .gif)</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>En savoir plus sur RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget exige à la fois un fichier image (.gif) et un fichier XML IOF (.xml). Choisissez le nom et le dossier de ces 2 fichiers.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Créer des fichiers RouteGadget</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Circuits</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Sortie</value>
@@ -149,23 +179,5 @@
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
-  </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Dossier</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Sélectionner un dossier...</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Autre dossier</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Même dossier que la carte</value>
-  </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Même dossier que le fichier Purple Pen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Créer des fichiers OCAD</value>
   </data>
 </root>

@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CourseData>
   <IOFVersion version="2.0.3" />
+  <ModifyDate>
+    <Date>2011-10-12</Date>
+    <Clock>08:54</Clock>
+  </ModifyDate>
   <Map>
     <Scale>15000</Scale>
     <MapPosition x="-65.22" y="183.83" />
@@ -123,7 +127,7 @@
   </FinishPoint>
   <Course>
     <CourseName>White</CourseName>
-    <CourseId>1</CourseId>
+    <CourseId>0</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>2400</CourseLength>
@@ -170,7 +174,7 @@
   </Course>
   <Course>
     <CourseName>Yellow</CourseName>
-    <CourseId>2</CourseId>
+    <CourseId>1</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>3600</CourseLength>
@@ -217,7 +221,7 @@
   </Course>
   <Course>
     <CourseName>Orange</CourseName>
-    <CourseId>3</CourseId>
+    <CourseId>2</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>4300</CourseLength>
@@ -269,7 +273,7 @@
   </Course>
   <Course>
     <CourseName>Green</CourseName>
-    <CourseId>4</CourseId>
+    <CourseId>3</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>4800</CourseLength>
@@ -331,7 +335,7 @@
   </Course>
   <Course>
     <CourseName>Red</CourseName>
-    <CourseId>5</CourseId>
+    <CourseId>4</CourseId>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>7700</CourseLength>

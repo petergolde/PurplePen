@@ -39,6 +39,7 @@ using System.Windows.Forms;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -102,7 +103,7 @@ namespace PurplePen
             PointF[] handles = courseObject.GetHandles();
             if (handles != null) {
                 foreach (PointF handle in handles) {
-                    double distance = Util.Distance(location, handle);
+                    double distance = Geometry.Distance(location, handle);
                     if (distance / pixelSize <= 3.0) {
                         // over a handle.
                         handleLocation = handle;

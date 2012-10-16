@@ -418,6 +418,7 @@ namespace PurplePen
             CourseView courseView = new CourseView(eventDB, CourseDesignator.AllControls);
 
             courseView.courseName = MiscText.AllControls;
+            courseView.scoreColumn = -1;
 
             // Add every control to the course view, subject to the filters.
             foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds) {

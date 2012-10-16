@@ -41,6 +41,7 @@ using System.Diagnostics;
 using PurplePen.MapModel;
 using PurplePen.MapView;
 using ColorMatrix = PurplePen.MapModel.ColorMatrix;
+using PurplePen.Graphics2D;
 
 
 namespace PurplePen
@@ -145,7 +146,7 @@ namespace PurplePen
             {
                 switch (mapType) {
                 case MapType.Bitmap:
-                    return Util.TransformRectangle(new RectangleF(0, 0, bitmap.Width, bitmap.Height), BitmapTransform());
+                    return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.Width, bitmap.Height));
 
                 case MapType.OCAD:
                     if (map != null) {
@@ -346,44 +347,48 @@ namespace PurplePen
 
 
         // Draw the ocad map part.
-        void DrawOcadMap(Graphics g, RectangleF visRect, RenderOptions renderOptions)
+        void DrawOcadMap(IGraphicsTarget grTarget, RectangleF visRect, RenderOptions renderOptions)
         {
             using (map.Write()) {
                 map.ColorMatrix = ComputeColorMatrix();
-                map.Draw(new GDIPlus_GraphicsTarget(g), visRect, renderOptions, null);
+                map.Draw(grTarget, visRect, renderOptions, null);
             }
         }
 
         // Draw the bitmap map part.
-        void DrawBitmapMap(Graphics g, RectangleF visRect)
+        void DrawBitmapMap(IGraphicsTarget grTarget, RectangleF visRect)
         {
-            GraphicsState savedState = g.Save();
+            // Setup transform.
+            grTarget.PushTransform(BitmapTransform());
 
-            try {
-                // Setup clipping and transform.
-                g.IntersectClip(visRect);
-                g.MultiplyTransform(BitmapTransform(), MatrixOrder.Prepend);
+            // Setup drawing map and intensity.
+            BitmapScaling scalingMode = antialiased ? BitmapScaling.MediumQuality : BitmapScaling.NearestNeighbor;
 
-                // Setup drawing map and intensity.
-                g.InterpolationMode = antialiased ? InterpolationMode.HighQualityBilinear : InterpolationMode.NearestNeighbor;
+            // Get source bitmap. Use the dimmed bitmap if there is one.
+            Bitmap sourceBitmap;
+            if (dimmedBitmap != null)
+                sourceBitmap = dimmedBitmap;
+            else
+                sourceBitmap = bitmap;
 
-                // Get source bitmap. Use the dimmed bitmap if there is one.
-                Bitmap sourceBitmap;
-                if (dimmedBitmap != null)
-                    sourceBitmap = dimmedBitmap;
-                else
-                    sourceBitmap = bitmap;
+            // Draw it.
+            grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.Width, bitmap.Height), scalingMode);
 
-                // Draw it.
-                g.DrawImage(sourceBitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel);
-            }
-            finally {
-                g.Restore(savedState);
-            }
+            // Pop transform
+            grTarget.PopTransform();
         }
 
         // Draw the map and course onto a graphics.
         public void Draw(Graphics g, RectangleF visRect, float minResolution)
+        {
+            using (IGraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g))
+            {
+                Draw(grTarget, visRect, minResolution);
+            }
+        }
+
+        // Draw the map and course onto a graphics.
+        public void Draw(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
         {
             RenderOptions renderOptions = new RenderOptions();
             renderOptions.minResolution = minResolution;
@@ -398,38 +403,42 @@ namespace PurplePen
             renderOptions.showSymbolBounds = showBounds;
 
             if (Printing)
-                g.SmoothingMode = SmoothingMode.Default;         // don't anti-alias on printer
-            else if (antialiased)
-                g.SmoothingMode = SmoothingMode.AntiAlias;
+                grTarget.PushAntiAliasing(false);       // don't anti-alias on printer
             else
-                g.SmoothingMode = SmoothingMode.HighSpeed;
-
+                grTarget.PushAntiAliasing(antialiased);
+            
 
             // First draw the real map.
             switch (mapType) {
             case MapType.OCAD:
-                DrawOcadMap(g, visRect, renderOptions);
+                DrawOcadMap(grTarget, visRect, renderOptions);
                 break;
 
             case MapType.Bitmap:
-                DrawBitmapMap(g, visRect);
+                DrawBitmapMap(grTarget, visRect);
                 break;
 
             case MapType.None:
-                g.Clear(Color.White);
+                object brushKey = new object();
+                grTarget.CreateSolidBrush(brushKey, CmykColor.FromRgb(1, 1, 1));
+                grTarget.FillRectangle(brushKey, visRect);
                 break;
             }
 
+            grTarget.PopAntiAliasing();
+
             // Now draw the courseMap on top.
             if (Printing)
-                g.SmoothingMode = SmoothingMode.Default;
+                grTarget.PushAntiAliasing(false);
             else
-                g.SmoothingMode = SmoothingMode.AntiAlias;   // always anti-alias the course unless printing
+                grTarget.PushAntiAliasing(true);   // always anti-alias the course unless printing
 
             if (courseMap != null) {
                 using (courseMap.Read())
-                    courseMap.Draw(new GDIPlus_GraphicsTarget(g), visRect, renderOptions, null);
+                    courseMap.Draw(grTarget, visRect, renderOptions, null);
             }
+
+            grTarget.PopAntiAliasing();
         }
 
         public event MapDisplayChanged Changed;

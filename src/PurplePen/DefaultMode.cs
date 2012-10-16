@@ -40,6 +40,7 @@ using System.Diagnostics;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -205,7 +206,7 @@ namespace PurplePen
                     PointF[] handles = courseObj.GetHandles();
                     if (handles != null) {
                         foreach (PointF handle in handles) {
-                            double distance = Util.Distance(location, handle);
+                            double distance = Geometry.Distance(location, handle);
                             if (distance / pixelSize <= 3.0) {
                                 // over a handle.
                                 handleLocation = handle;
@@ -379,7 +380,7 @@ namespace PurplePen
                         PointF[] pts = pathFromStart.FlattenedPoints;
                         double angleOut = Math.Atan2(pts[1].Y - pts[0].Y, pts[1].X - pts[0].X);
                         if (!double.IsNaN(angleOut)) 
-                            ((StartCourseObj) courseObjectDrag).orientation = (float) Util.RadiansToDegrees(angleOut);
+                            ((StartCourseObj) courseObjectDrag).orientation = (float) Geometry.RadiansToDegrees(angleOut);
                     }
                 }                                                             
             }

@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Drawing;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -82,7 +83,7 @@ namespace PurplePen
                 }
                 else if (controller.MapType == MapType.Bitmap) {
                     // Set bitmap as template.
-                    PointF centerPoint = Util.RectCenter(controller.MapDisplay.MapBounds);
+                    PointF centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
                     map.Template = new TemplateInfo(controller.MapFileName, centerPoint, controller.MapDpi, 0, true);
                 }
             }

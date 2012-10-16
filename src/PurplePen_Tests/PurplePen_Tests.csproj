@@ -10,13 +10,14 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PurplePen_Tests</RootNamespace>
     <AssemblyName>PurplePen_Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,9 +38,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Graphics2D, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MapModel\Debug\Graphics2D.dll</HintPath>
+    </Reference>
+    <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Map_GDIPlus">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -58,7 +70,9 @@
     <Compile Include="PurplePen\ControllerTests.cs" />
     <Compile Include="PurplePen\CourseFormatterTests.cs" />
     <Compile Include="PurplePen\CourseLayoutTests.cs" />
-    <Compile Include="PurplePen\CourseObjTests.cs" />
+    <Compile Include="PurplePen\CourseObjTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PurplePen\CoursePrintingTests.cs" />
     <Compile Include="PurplePen\CourseRendererTests.cs" />
     <Compile Include="PurplePen\CourseSelectorTestForm.cs">
@@ -108,14 +122,6 @@
     <Content Include="AuthoringTests.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MapModel\MapModel.csproj">
-      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
-      <Name>MapModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
-      <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
-      <Name>Map_GDIPlus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PurplePen\PurplePen.csproj">
       <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
       <Name>PurplePen</Name>

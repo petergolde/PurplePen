@@ -112,15 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventTitleLabel.Text" xml:space="preserve">
     <value>Arrangementsnavn vil vises på første linje av alle postsbeskrivelser. Det er også benyttet som navn arrangmentfilen lagres til maskinen.
 
-For å pass i postbeskrivelsen må teksten være mindre enn 25 tegn. Eksempel på gode titler er "Rankingløp 6 juni" eller "Vårspretten 2010".</value>
+For å passe i postbeskrivelsen må teksten være mindre enn 25 tegn. Eksempel på gode titler er "Rankingløp 6 juni" eller "Vårspretten 2010".</value>
   </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Arrangements navn:</value>

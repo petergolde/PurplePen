@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
     <value>Tillat ikke postkoder som kan leses opp-ned (f.eks. "68" og "89")</value>
@@ -130,7 +130,7 @@
     <value>Eksisterende poster</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
-    <value>Nye poster nummereres automatiske etter følgende innstillinger</value>
+    <value>Nye poster nummereres automatisk etter følgende innstillinger</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Start med kode:</value>

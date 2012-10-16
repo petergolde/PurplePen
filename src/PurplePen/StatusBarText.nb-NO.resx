@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
     <value>Venstre musetast: Velg objekt; Høyre museknapp: Flytt kart; Musens rullehjul: Zoom inn/ut</value>
@@ -124,7 +124,7 @@
     <value>Venstre museknapp: flytte/endre størrelse på rektangel; Høyre musetast: flytte kart; Musens rullehjul: Zoome inn/ut</value>
   </data>
   <data name="DragObject" xml:space="preserve">
-    <value>Hold nede venstre museknapp og fra for å flytte vlagte objekt</value>
+    <value>Hold nede venstre museknapp og dra for å flytte valgte objekt</value>
   </data>
   <data name="DragCorner" xml:space="preserve">
     <value>Hold nede venstre museknapp og dra hjørnepunkt for å flytte det</value>
@@ -154,7 +154,7 @@
     <value>Klikk venstre museknapp for å legge til eksisterende mål til løype</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
-    <value>Klikk venstre museknapp for å plasere ut nytt obligatorisk kryssningspunkt</value>
+    <value>Klikk venstre museknapp for å plassere ut nytt obligatorisk kryssningspunkt</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
     <value>Klikk venstre museknapp for å legge til eksisterende obligatorisk krysningspunkt</value>
@@ -163,7 +163,7 @@
     <value>Klikk venstre museknapp for å plassere et nytt objekt</value>
   </data>
   <data name="AddingBend" xml:space="preserve">
-    <value>Klikk venstre museknap ved posisjonen til bendet</value>
+    <value>Klikk venstre museknapp ved posisjonen til bendet</value>
   </data>
   <data name="AddingCorner" xml:space="preserve">
     <value>Klikk venstre museknapp for å plassere nytt hjørne</value>
@@ -196,7 +196,7 @@
     <value>Hold nede venstre museknapp og dra for å endre postbesktivelser</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
-    <value>Klikk ventste museknapp når krysningspunktet er rotert i rett retning</value>
+    <value>Klikk venstre museknapp når krysningspunktet er rotert i rett retning</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
     <value>Hold nede ventre museknapp og dra for å legge  til et nytt linjesegment, klikk ventre museknapp for å avslutte</value>

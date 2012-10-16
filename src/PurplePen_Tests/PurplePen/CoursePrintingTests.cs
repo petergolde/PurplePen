@@ -162,6 +162,7 @@ namespace PurplePen.Tests
             appearance.controlCircleSize = 0.75F;  //smaller circles
             appearance.lineWidth = 3F; // thin lines
             appearance.numberHeight = 0.5F; // small numbers.
+            appearance.numberBold = true; // bold numbers.
             appearance.useDefaultPurple = false;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;

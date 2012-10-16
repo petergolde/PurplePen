@@ -112,11 +112,14 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>First control number:</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Description appearance:</value>
   </data>
@@ -135,8 +138,35 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Symbols and text</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Control circle labels:</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Sequence number (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Control code (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sequence and code (3-145)</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Show points in:</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Column A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Column B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Column H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(do not display)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Default appearance</value>
+    <value>Appearance</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>The following (optional) text will appear on the second line of the control description sheet:</value>

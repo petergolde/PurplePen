@@ -112,11 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Gras</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>Style du numéro de poste :</value>
+  </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Taille des numéros de poste :</value>
   </data>
@@ -141,6 +150,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tailles des objets</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Couleur violine</value>
+  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Sélecteur de couleur...</value>
   </data>
@@ -158,9 +170,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Utiliser la couleur violine de la carte</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Couleur violine</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Aperçu</value>

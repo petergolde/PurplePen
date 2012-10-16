@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4C22B13-BBE0-442A-B2E9-8947A96EEF4D}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		TranslateTool.vsmdi = TranslateTool.vsmdi
+		TranslateTool1.vsmdi = TranslateTool1.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateTool", "TranslateTool.csproj", "{A0834B28-C6E7-40F4-B615-BFB076D934FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateTool_Tests", "TranslateTool_Tests\TranslateTool_Tests.csproj", "{549A11DD-4B89-4E5C-8EEF-DAC8BA1CBDF5}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TranslateTool1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0834B28-C6E7-40F4-B615-BFB076D934FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0834B28-C6E7-40F4-B615-BFB076D934FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0834B28-C6E7-40F4-B615-BFB076D934FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0834B28-C6E7-40F4-B615-BFB076D934FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{549A11DD-4B89-4E5C-8EEF-DAC8BA1CBDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{549A11DD-4B89-4E5C-8EEF-DAC8BA1CBDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{549A11DD-4B89-4E5C-8EEF-DAC8BA1CBDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{549A11DD-4B89-4E5C-8EEF-DAC8BA1CBDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

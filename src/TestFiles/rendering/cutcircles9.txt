@@ -1,4 +1,0 @@
-﻿cutcircles9.ocd
-cutcircles.png
--16,27,35,-20
-665,830

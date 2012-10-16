@@ -418,9 +418,11 @@ namespace PurplePen
             switch (hitTest.kind) {
                 case HitTestKind.NormalBox:
                     if (scoreColumn >= 0 && hitTest.box == scoreColumn) {
-                        // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
-                        popupKind = ChangeKind.Score;
-                        popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterScore, (string)renderer.Description[hitTest.firstLine].boxes[hitTest.box], 2, descriptionPanel, location);
+                        if (!(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
+                            // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
+                            popupKind = ChangeKind.Score;
+                            popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterScore, (string)renderer.Description[hitTest.firstLine].boxes[hitTest.box], 2, descriptionPanel, location);
+                        }
                     }
                     else if (hitTest.box == 0) {
                         // Column A:

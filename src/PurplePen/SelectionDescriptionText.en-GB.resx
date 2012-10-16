@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
     <value>away from control</value>
@@ -148,7 +148,7 @@
     <value>Course "{0}"</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
-    <value>Customized symbol description</value>
+    <value>Customised symbol description</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
     <value>entire leg</value>
@@ -254,5 +254,8 @@
   </data>
   <data name="UsedInCourses" xml:space="preserve">
     <value>Used in courses:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Whiteout Area</value>
   </data>
 </root>

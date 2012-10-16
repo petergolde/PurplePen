@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Všechny kontroly</value>
@@ -125,6 +125,36 @@
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Soubor Purple Pen|*.ppen</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Soubor</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Úpravy</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Zobrazit</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>U&amp;dálost</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Trať</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>&amp;Nápověda Purple Pen</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>&amp;Webová stránka Purple Pen</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Podpora/Hlášení chyb</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;O programu Purple Pen</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Nápověda</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Nový závod...</value>
@@ -144,23 +174,20 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Tisknout &amp;tratě...</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Nastavit o&amp;blast tisku</value>
+  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Tato trať</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Všechny tratě</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Nastavit o&amp;blast tisku</value>
-  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>&amp;Jazyk programu...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Konec</value>
-  </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Soubor</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Smazat výběr</value>
@@ -174,8 +201,8 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Smazat</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Úpravy</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zvětšení</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -198,14 +225,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000 %</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zvětšení</value>
-  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Všechny kontroly</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Zobrazit</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Mapový soubor...</value>
@@ -222,9 +243,6 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Přizpůsobit vzhled tr&amp;ati...</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>U&amp;dálost</value>
-  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>Přid&amp;at trať...</value>
   </data>
@@ -236,9 +254,6 @@
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
     <value>Pořadí tratí...</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Trať</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>Přidat &amp;start</value>
@@ -279,18 +294,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>O&amp;točit</value>
   </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>&amp;Nápověda Purple Pen</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>&amp;Webová stránka Purple Pen</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Podpora/Hlášení chyb</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;O programu Purple Pen</value>
-  </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Prohlížeč symbolů</value>
   </data>
@@ -299,9 +302,6 @@
   </data>
   <data name="mapTesterMenu.Text" xml:space="preserve">
     <value>Zkoušeč map</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Nápověda</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Otevřít</value>

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ColumnHeader_Climb" xml:space="preserve">
     <value>Stigning</value>
@@ -190,7 +190,7 @@
     <value>Dersom "mellom" benyttes i kolonne G, må to symboler vises i kolonne D og E</value>
   </data>
   <data name="EventAudit_MissingEJunction" xml:space="preserve">
-    <value>Ved "gren" eller "kryss" benyttes i kolonne F må to symboler vises i kolonne D og E</value>
+    <value>Når "gren" eller "kryss" benyttes i kolonne F må to symboler vises i kolonne D og E</value>
   </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
     <value>Normale løyper skal ha målsirkel</value>
@@ -232,7 +232,7 @@
     <value>Ubrukte poster</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>Følgende poster er plassert med ikke benyttet i noen løyper. For å fjerne dem, bruk "Fjern ubenyttede poster" i "Arrangement" menyen. Postende vil ikke bli tatt hensyn til i resten av denne rapporten.</value>
+    <value>Følgende poster er plassert men ikke benyttet i noen løyper. For å fjerne dem, bruk "Fjern ubenyttede poster" i "Arrangement" menyen. Postende vil ikke bli tatt hensyn til i resten av denne rapporten.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Ja</value>

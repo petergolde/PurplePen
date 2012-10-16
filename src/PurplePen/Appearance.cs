@@ -166,7 +166,7 @@ namespace PurplePen
         public static readonly FontDesc keyFont = new FontDesc("Arial", false, false, 52F, 52F);
 
         // Font to use for other text lines.
-        public static readonly FontDesc textLineFont = new FontDesc("Arial Narrow", false, false, 56F, 50F);
+        public static readonly FontDesc textLineFont = new FontDesc("Arial Narrow", true, false, 56F, 50F);
 
     }
 
@@ -191,6 +191,7 @@ namespace PurplePen
         public const float nominalControlNumberHeight = 4.0F;          // nominal height from top to bottom of a digit
         public const float controlNumberHeightFactor = 5.57F / 4.0F;  // scale factor from control number height to font EM size
         public static readonly FontDesc controlNumberFont = new FontDesc("Arial", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
+        public static readonly FontDesc controlNumberFontBold = new FontDesc("Arial", true, false, controlNumberHeightFactor * nominalControlNumberHeight);
 
         public const float controlNumberCircleDistance = 1.825F;   // default distance of control number from edge of control circle
 

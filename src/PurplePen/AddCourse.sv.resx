@@ -112,11 +112,14 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>Första kodsiffra:</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Definitionens utseende</value>
   </data>
@@ -135,11 +138,38 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Symboler och text</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Kontrollcirkel-text:</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Sekvensnummer (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Kodsiffra (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sekvens och kodsiffra (3-145)</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Visa poäng i:</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Kolumn A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Kolumn B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Kolumn H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(visa ej)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Standard utseende</value>
+    <value>Utseende</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Följande text kommer synas på andra raden av Kontrolldefinitionen (Valfritt).</value>
+    <value>Följande text kommer synas på andra raden av kontrolldefinitionen (valfritt).</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasslista / sekundär titel</value>

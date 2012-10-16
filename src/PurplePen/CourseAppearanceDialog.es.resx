@@ -112,11 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Negrita</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>Estilo de los numeros de control</value>
+  </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Altura del número de control:</value>
   </data>
@@ -130,7 +139,7 @@
     <value>mm</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>Diámetro del círculo de control:</value>
+    <value>Diámetro del círculo:</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
@@ -139,10 +148,13 @@
     <value>Usar medidas estándar IOF</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Tamaño de Objetos</value>
+    <value>Tamaño de Elementos</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Color Magenta</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
-    <value>Selector de Color...</value>
+    <value>Paleta de Colores...</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Negro:</value>
@@ -157,15 +169,12 @@
     <value>Cian:</value>
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
-    <value>Usar color púrpura del mapa</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Color púrpura</value>
+    <value>Usar color magenta standar</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vista previa</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar la Apariencia de la ruta</value>
+    <value>Personalizar la Impresión del Recorrido</value>
   </data>
 </root>

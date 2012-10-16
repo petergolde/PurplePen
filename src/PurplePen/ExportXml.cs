@@ -68,6 +68,9 @@ namespace PurplePen
             xmlWriter.WriteAttributeString("version", "2.0.3");
             xmlWriter.WriteEndElement();
 
+            // Write the modification date.
+            WriteModificationDate(DateTime.Now);
+
             // Write the map information.
             WriteMapInfo();
 
@@ -88,6 +91,22 @@ namespace PurplePen
             xmlWriter.Close();
             eventDB = null;
             xmlWriter = null;
+        }
+
+        private void WriteModificationDate(DateTime dateTime) {
+            xmlWriter.WriteStartElement("ModifyDate");
+
+            // Date
+            xmlWriter.WriteStartElement("Date");
+            xmlWriter.WriteString(dateTime.ToString("yyyy-MM-dd"));
+            xmlWriter.WriteEndElement();
+
+            // Time
+            xmlWriter.WriteStartElement("Clock");
+            xmlWriter.WriteString(dateTime.ToString("HH:mm"));
+            xmlWriter.WriteEndElement();
+
+            xmlWriter.WriteEndElement();
         }
 
         // Write the "Map" element and its information.
@@ -136,18 +155,20 @@ namespace PurplePen
 
         private void WriteCourses()
         {
+            // Sport Software requires that the courses be numbers started at 0.
+            int courseNumber = 0;
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                WriteCourse(courseId);
+                if (WriteCourse(courseId, courseNumber))
+                    ++courseNumber;
             }
         }
 
-        private void WriteCourse(Id<Course> courseId)
-        {
+        private bool WriteCourse(Id<Course> courseId, int courseNumber) {
             // A course must have a start and a finish to be output.
             if (!QueryEvent.HasStartControl(eventDB, courseId))
-                return;
+                return false;
             if (!QueryEvent.HasFinishControl(eventDB, courseId))
-                return;
+                return false;
 
             Course course = eventDB.GetCourse(courseId);
             bool isScore = (course.kind == CourseKind.Score);
@@ -157,7 +178,7 @@ namespace PurplePen
 
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", course.name);
-            xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseId.id));
+            xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseNumber));
             xmlWriter.WriteStartElement("CourseVariation");
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
             if (!isScore) {
@@ -181,37 +202,37 @@ namespace PurplePen
                     xmlWriter.WriteElementString("FinishPointCode", controlCodeMap[controlView.controlId]);
                     if (!isScore)
                         xmlWriter.WriteElementString("DistanceToFinish", XmlConvert.ToString(Math.Round(distanceThisLeg)));
-                    distanceThisLeg = 0;
-                    break;
-
-                case ControlPointKind.MapExchange:
-                    Debug.Fail("UNDONE MAPEXCHANGE");
-                    break;
-
-                case ControlPointKind.Normal:
-                    xmlWriter.WriteStartElement("CourseControl");
-
-                    if (!isScore)
-                        xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(controlView.ordinal));
-                    else
-                        xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(scoreSequence++));
-
-                    xmlWriter.WriteElementString("ControlCode", controlCodeMap[controlView.controlId]);
-
-                    if (!isScore) {
-                        xmlWriter.WriteElementString("LegLength", XmlConvert.ToString(Math.Round(distanceThisLeg)));
                         distanceThisLeg = 0;
-                    }
-                    if (isScore) {
-                        int points = eventDB.GetCourseControl(controlView.courseControlId).points;
-                        if (points > 0)
-                            xmlWriter.WriteElementString("ScoreOPoints", XmlConvert.ToString(points));
-                    }
-                        
-                    xmlWriter.WriteEndElement();         // "CourseControl"
-                    break;
+                        break;
 
-                // Intentionally skip crossing points.
+	                case ControlPointKind.MapExchange:
+	                    Debug.Fail("UNDONE MAPEXCHANGE");
+	                    break;
+	
+                    case ControlPointKind.Normal:
+                        xmlWriter.WriteStartElement("CourseControl");
+
+                        if (!isScore)
+                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(controlView.ordinal));
+                        else
+                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(scoreSequence++));
+
+                        xmlWriter.WriteElementString("ControlCode", controlCodeMap[controlView.controlId]);
+
+                        if (!isScore) {
+                            xmlWriter.WriteElementString("LegLength", XmlConvert.ToString(Math.Round(distanceThisLeg)));
+                            distanceThisLeg = 0;
+                        }
+                        if (isScore) {
+                            int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                            if (points > 0)
+                                xmlWriter.WriteElementString("ScoreOPoints", XmlConvert.ToString(points));
+                        }
+
+                        xmlWriter.WriteEndElement();         // "CourseControl"
+                        break;
+
+                    // Intentionally skip crossing points.
                 }
 
 
@@ -226,6 +247,16 @@ namespace PurplePen
 
             xmlWriter.WriteEndElement();     // "CourseVariation"
             xmlWriter.WriteEndElement();     // "Course"
+
+            return true;
+        }
+
+        // Return an exception map used to test exported XML files.
+        public static Dictionary<string, string> TestFileExceptionMap() {
+            Dictionary<string, string> exceptions = new Dictionary<string, string>();
+            exceptions[@"^    <Date>\d\d\d\d-\d\d-\d\d</Date>$"] = @"^    <Date>\d\d\d\d-\d\d-\d\d</Date>$";
+            exceptions[@"^    <Clock>\d\d\:\d\d</Clock>$"] = @"^    <Clock>\d\d\:\d\d</Clock>$";
+            return exceptions;
         }
 
     }

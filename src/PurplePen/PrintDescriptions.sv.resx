@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Utdata</value>
@@ -190,7 +190,7 @@
     <value>Kopior</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>beskrivningar per bana</value>
+    <value>kontrollbeskrivningar per bana</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
     <value>en kopia av varje bana</value>
@@ -205,6 +205,6 @@
     <value>Skriv ut:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Skriv ut beskrivningar</value>
+    <value>Skriv ut kontrollbeskrivningar</value>
   </data>
 </root>

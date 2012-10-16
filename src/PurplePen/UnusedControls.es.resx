@@ -112,15 +112,18 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
     <value>Borrar</value>
   </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Los siguientes controles estan en la descripción de Todos los Controles, pero no se usan en ningun recorrido. Pulsa Borrar para eliminar todos los controles mostrados.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Controles sin usar</value>
+    <value>Controles no Usados</value>
   </data>
 </root>

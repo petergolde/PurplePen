@@ -486,6 +486,9 @@ namespace PurplePen
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
 
+            // Update help menu
+            UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
+
             FlaggingKind currentFlagging;
             CommandStatus flaggingStatus = controller.CanSetLegFlagging(out currentFlagging);
             UpdateMenuItem(legFlaggingMenu, flaggingStatus);
@@ -1293,6 +1296,17 @@ namespace PurplePen
             ShowHelp(HelpNavigator.TableOfContents, null);
         }
 
+        private bool TranslatedWebSiteExists()
+        {
+            string url = MiscText.TranslatedHelpWebSite;
+            return (url.Length > 0 && url[0] == 'h');
+        }
+
+        private void helpTranslatedMenu_Click(object sender, EventArgs e)
+        {
+            Util.GoToWebPage(MiscText.TranslatedHelpWebSite);
+        }
+
         private void helpIndexMenu_Click(object sender, EventArgs e)
         {
             ShowHelp(HelpNavigator.Index, null);
@@ -1775,12 +1789,12 @@ namespace PurplePen
 
         private void supportWebSiteMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purplepen.golde.org/support.htm");
+            Util.GoToWebPage("http://purple-pen.org/support.htm");
         }
 
         private void mainWebSiteToolMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purplepen.golde.org");
+            Util.GoToWebPage("http://purple-pen.org");
         }
 
         private void courseSummaryMenu_Click(object sender, EventArgs e)
@@ -1855,7 +1869,7 @@ namespace PurplePen
             WebClient client = new WebClient();
 
             // Download latest version.
-            string latestVersion = client.DownloadString("http://purplepen.golde.org/downloads/latest_version.txt");
+            string latestVersion = client.DownloadString("http://purple-pen.org/downloads/latest_version.txt");
 
             // Get first line.
             int index = latestVersion.IndexOfAny(new char[] { '\r', '\n' });
@@ -2029,6 +2043,9 @@ namespace PurplePen
 
             openFile.Dispose();
         }
+
+
+
 
 
     }

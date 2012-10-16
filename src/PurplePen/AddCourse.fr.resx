@@ -112,11 +112,14 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>Premier numéro :</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Format des définitions :</value>
   </data>
@@ -135,8 +138,35 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Texte et symboles</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Etiquette des postes :</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Numéro d'ordre (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Numéro/code du poste (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Numéro d'ordre et code (3-145)</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Indiquer les points dans :</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Colonne A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Colonne B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Colonne H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(ne pas afficher)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Présentation par défaut</value>
+    <value>Présentation</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>Le texte suivant (facultatif) apparaîtra sur la deuxième ligne des définitions :</value>

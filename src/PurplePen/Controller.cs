@@ -42,6 +42,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -2216,7 +2217,7 @@ namespace PurplePen
             PointF controlLocation = eventDB.GetControl(controlId).location;
 
             // If moving control number on top of the circle, then go to default location.
-            bool defaultLocation = (Util.Distance(controlLocation, newLocation) <= (ControlCourseObj.diameter / 2) * scaleRatio);
+            bool defaultLocation = (Geometry.Distance(controlLocation, newLocation) <= (ControlCourseObj.diameter / 2) * scaleRatio);
 
             undoMgr.BeginCommand(138, CommandNameText.MoveControlNumber);
 

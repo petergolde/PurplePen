@@ -112,22 +112,37 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Numero di controllo altezza:</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Spessore linea:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>Controllo diametro del cerchio:</value>
+  </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>Usa le dimensioni standard IOF</value>
+  </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Dimensioni Oggetto</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Colore di Purple</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Selettore Del Colore...</value>
@@ -143,6 +158,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Ciano:</value>
+  </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Usa il colore dalla mappa</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Anteprima</value>

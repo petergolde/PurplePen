@@ -437,6 +437,7 @@ namespace PurplePen.Tests
             e.courseAppearance.lineWidth = 1.3F;
             e.courseAppearance.controlCircleSize = 0.9F;
             e.courseAppearance.numberHeight = 1.1F;
+            e.courseAppearance.numberBold = true;
             e.courseAppearance.useDefaultPurple = false;
             e.courseAppearance.purpleC = 0.4F;
             e.courseAppearance.purpleM = 0.5F;

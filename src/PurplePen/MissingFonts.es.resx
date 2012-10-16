@@ -112,15 +112,24 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>No repetir más el aviso de que faltan fuente para este evento.</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>El fichero del mapa "{0}" usa fuentes no instaladas en su ordenador. El texto que use esas fuentes será formateado e imprimido con la fuente por defecto, lo que puede provocar que el texto aparezca de forma distinta a lo deseado. 
+
+Para resolver el problema, busca e instala la relación de fuentes que abajo se indican mediante el Panel de Control de Windows. Despues arranca de nuevo Purple Pen.
+</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>faltan tipografías</value>
+    <value>Faltan fuentes</value>
   </data>
 </root>

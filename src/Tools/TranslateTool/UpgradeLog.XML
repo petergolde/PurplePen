@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TranslateTool">
+</Property><Property Name="Solution File" Value="C:\Users\Peter\Documents\Visual Studio 2008\Projects\TranslateTool\TranslateTool.sln">
+</Property><Property Name="Date" Value="Tuesday, August 16, 2011">
+</Property><Property Name="Time" Value="21:39 PM">
+</Property></Properties><Event ErrorLevel="1" Project="TranslateTool" Source="TranslateTool.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="TranslateTool" Source="TranslateTool.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TranslateTool" Source="TranslateTool.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TranslateTool_Tests" Source="TranslateTool_Tests\TranslateTool_Tests.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="TranslateTool_Tests" Source="TranslateTool_Tests\TranslateTool_Tests.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TranslateTool.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="TranslateTool.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TranslateTool" Source="TranslateTool.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="3" Project="" Source="LocalTestRun.testrunconfig" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="LocalTestRun.testrunconfig" Description="The file was converted to the current format.">
+</Event><Event ErrorLevel="3" Project="" Source="TranslateTool.vsmdi" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TranslateTool.vsmdi" Description="The file was converted to the current format.">
+</Event><Event ErrorLevel="3" Project="" Source="TranslateTool1.vsmdi" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TranslateTool1.vsmdi" Description="The file was converted to the current format.">
+</Event><Event ErrorLevel="0" Project="TranslateTool_Tests" Source="TranslateTool_Tests\TranslateTool_Tests.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

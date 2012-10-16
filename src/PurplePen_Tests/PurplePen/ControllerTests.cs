@@ -1967,6 +1967,33 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create6\\Course 2_expected.txt") });
         }
 
+        [TestMethod]
+        public void OcadCreation7() {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create7");
+            settings.CourseIds = new Id<Course>[1] { CourseId(2) };
+            settings.version = 8;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.controlCircleSize = 1.1F;  //smaller circles
+            appearance.lineWidth = 1.1F;
+            appearance.numberHeight = 1.2F; // slightly big numbers.
+            appearance.numberBold = true;
+            appearance.useDefaultPurple = false;
+
+            settings.cyan = appearance.purpleC = 0.00F;
+            settings.yellow = appearance.purpleY = 1.00F;
+            settings.magenta = appearance.purpleM = 1.00F;
+            settings.black = appearance.purpleK = 0.30F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create7\\Course 2.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create7\\Course 2_expected.txt") });
+        }
+
         // Test overwritting files
         [TestMethod]
         public void OverwritingOcadFiles()

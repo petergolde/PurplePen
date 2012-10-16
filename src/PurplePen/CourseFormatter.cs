@@ -43,6 +43,8 @@ using PurplePen.MapModel;
 
 namespace PurplePen
 {
+    using PurplePen.Graphics2D;
+
     // Macros used in text specials
     static class TextMacros
     {
@@ -184,8 +186,9 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
+                    FontDesc fontDesc = appearance.numberBold ? NormalCourseAppearance.controlNumberFont : NormalCourseAppearance.controlNumberFontBold;
                     textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio * appearance.controlCircleSize,
-                                                                                  text, NormalCourseAppearance.controlNumberFont, scaleRatio * appearance.numberHeight, existingObjects);
+                                                                                  text, fontDesc, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
                 return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
@@ -445,7 +448,7 @@ namespace PurplePen
             case SpecialKind.Descriptions:
                 DescriptionKind descKind;
                 DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, courseView.BaseCourseId, out descKind);
-                courseObj = new DescriptionCourseObj(specialId, special.locations[0], (float) Util.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
+                courseObj = new DescriptionCourseObj(specialId, special.locations[0], (float) Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
                 break;
 
             default:
@@ -661,7 +664,7 @@ namespace PurplePen
         // If gaps is non-null, updates the gaps by subtracting the radius from them.
         private static SymPath GetLegPath(PointF pt1, double radius1, PointF pt2, double radius2, PointF[] bends, LegGap[] gaps)
         {
-            double legLength = Util.Distance(pt1, pt2);
+            double legLength = Geometry.Distance(pt1, pt2);
 
             // Check for no leg.
             if (legLength <= radius1 + radius2)
@@ -672,8 +675,8 @@ namespace PurplePen
             PointKind[] kinds = new PointKind[2 + bendCount];
 
             // Set the end points.
-            coords[0] = Util.DistanceAlongLine(pt1, (bendCount > 0) ? bends[0] : pt2, radius1);
-            coords[coords.Length - 1] = Util.DistanceAlongLine(pt2, (bendCount > 0) ? bends[bends.Length - 1] : pt1, radius2);
+            coords[0] = Geometry.DistanceAlongLine(pt1, (bendCount > 0) ? bends[0] : pt2, radius1);
+            coords[coords.Length - 1] = Geometry.DistanceAlongLine(pt2, (bendCount > 0) ? bends[bends.Length - 1] : pt1, radius2);
 
             // Set the bends.
             if (bendCount > 0)
@@ -762,7 +765,7 @@ namespace PurplePen
         {
             float radiusControl = controlObj.TrueRadius;
             float radiusOther = courseObj.TrueRadius;
-            double distance = Util.Distance(controlObj.location, courseObj.location);
+            double distance = Geometry.Distance(controlObj.location, courseObj.location);
 
             if (distance < (radiusControl + radiusOther) * 0.9F && distance > (radiusControl + radiusOther) * 0.35F) {
                 // The other object is close enough to the control to merit cutting, but not too close. (0.9 and 0.35 were just arrived by what looks good.)
@@ -770,8 +773,8 @@ namespace PurplePen
                     PointF gapEnd1 = GapStartLocation(controlObj.location, radiusControl, gapNum);
                     PointF gapEnd2 = GapStartLocation(controlObj.location, radiusControl, gapNum + 1);
                     // If both ends of the gap are overlapped, cut it out.
-                    if (Util.Distance(gapEnd1, courseObj.location) < radiusOther &&
-                        Util.Distance(gapEnd2, courseObj.location) < radiusOther) {
+                    if (Geometry.Distance(gapEnd1, courseObj.location) < radiusOther &&
+                        Geometry.Distance(gapEnd2, courseObj.location) < radiusOther) {
                         controlObj.gaps &= ~(1U << gapNum);   // add a gap.
                     }
                 }
@@ -781,7 +784,7 @@ namespace PurplePen
         // Find location where the gap begins.
         private static PointF GapStartLocation(PointF pointF, float radiusControl, int gapNum)
         {
-            return MapModel.Util.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
+            return Geometry.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
         }
     }
 }

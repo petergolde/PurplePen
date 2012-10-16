@@ -216,8 +216,10 @@ namespace PurplePen.Tests
             success = controller.ExportRouteGadget(xmlFileName, gifFileName);
             Assert.IsTrue(success);
 
+            Dictionary<string, string> exceptions = ExportXml.TestFileExceptionMap();
+
             TestUtil.CompareBitmapBaseline((Bitmap) Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\Sample Event GIF.baseline.png"));
-            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\Sample Event XML.baseline.xml"));
+            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\Sample Event XML.baseline.xml"), exceptions);
 
             File.Delete(xmlFileName);
             File.Delete(gifFileName);

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
     <value>Velg språk for postbeskrivelser i tekstformat</value>
@@ -139,7 +139,7 @@
     <value>Vis forklaring under symbolske postbeskrivelser</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Klikk på en symbol beksrivelse for å tilpasse tekst som benyttes i tekst postbeskrivelsene.</value>
+    <value>Klikk på en symbolbeksrivelse for å tilpasse tekst som benyttes i tekst postbeskrivelsene.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpass tekst på postbeskrivelse</value>
