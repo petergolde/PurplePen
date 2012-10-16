@@ -520,7 +520,7 @@ namespace PurplePen
             switch (control.kind) {
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
-                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Util.RadiansToDegrees(angleOut), control.location);
+                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
                 break;
 
             case ControlPointKind.Finish:

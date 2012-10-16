@@ -1197,6 +1197,7 @@
     <EmbeddedResource Include="MiscText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.ro.resx" />
     <EmbeddedResource Include="MiscText.sv.resx" />

@@ -45,8 +45,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\MapModel\Debug\Graphics2D.dll</HintPath>
     </Reference>
-    <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
+    <Reference Include="MapModel, Version=1.1.4.5000, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\MapModel\Debug\MapModel.dll</HintPath>
     </Reference>
     <Reference Include="Map_GDIPlus">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>

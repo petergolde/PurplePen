@@ -108,7 +108,7 @@ namespace PurplePen
         private RectangleF GetCourseArea(Id<Course> courseId)
         {
             // The default route gadget is the union of the bounding rectangle of the course objects, not including specials, inflated by 2cm.
-            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, new CourseDesignator(courseId));
+            CourseView courseView = CourseView.CreateControlsOnlyPositioningCourseView(eventDB, new CourseDesignator(courseId));
             CourseLayout layout = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, eventDB.GetEvent().courseAppearance, layout, 0);
             RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 20.0F, 20.0F);

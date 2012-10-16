@@ -505,6 +505,15 @@ namespace PurplePen
                 return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
         }
 
+        // Create the course view for positioning the print area for just controls.
+        public static CourseView CreateControlsOnlyPositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+            else
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false, false);
+        }
+
         // Create the standard view onto a regular course, without variations.
         private static CourseView CreateStandardCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
