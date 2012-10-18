@@ -88,6 +88,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Parts.
+        /// </summary>
+        internal static string AllParts {
+            get {
+                return ResourceManager.GetString("AllParts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to course setting for orienteering.
         /// </summary>
         internal static string AppSubtitle {
@@ -726,6 +735,15 @@ namespace PurplePen {
         internal static string PartN {
             get {
                 return ResourceManager.GetString("PartN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part {0} (of {1}).
+        /// </summary>
+        internal static string PartXOfY {
+            get {
+                return ResourceManager.GetString("PartXOfY", resourceCulture);
             }
         }
         

@@ -74,6 +74,7 @@
       <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -174,6 +175,12 @@
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseObject.cs" />
+    <Compile Include="CoursePartBanner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoursePartBanner.Designer.cs">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoursePrinting.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -863,6 +870,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CourseLoad.sv.resx">
       <DependentUpon>CourseLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.bg.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>
