@@ -52,7 +52,7 @@ namespace PurplePen
 
         // These variables have the current active state of the application, apart from 
         // the event database. Changes to the event database could delete these ids.
-        Id<Course> activeCourseId;             // ID of the active course, or None if all controls.
+        CourseDesignator activeCourseDesignator;  // Designator of active course and part, or all controls.
 
         SelectionKind selectionKind;    // What is selected
         Id<CourseControl> selectedCourseControl;      // ID of the selected course control, if any.
@@ -91,6 +91,7 @@ namespace PurplePen
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
             this.controller = controller;
+            this.activeCourseDesignator = CourseDesignator.AllControls;
         }
 
         // Gets a change number that reflects both the selection and the event database.
@@ -175,7 +176,7 @@ namespace PurplePen
                 SelectionInfo info;
                 UpdateState();
 
-                info.ActiveCourseId = activeCourseId;
+                info.ActiveCourseId = activeCourseDesignator.CourseId;
                 info.SelectionKind = selectionKind;
                 info.SelectedControl = selectedControl;
                 info.SelectedCourseControl = selectedCourseControl;
@@ -265,12 +266,12 @@ namespace PurplePen
         public void SelectCourseView(Id<Course> id)
         {
             UpdateState();
-            if (activeCourseId != id) {
+            if (activeCourseDesignator.CourseId != id) {
                 ++selectionChangeNum;
 
                 // For now, when switching tabs, the selection is cleared.
                 // CONSIDER: maybe change this later; e.g., keep the selected control if it is in common.
-                activeCourseId = id;
+                activeCourseDesignator = new CourseDesignator(id);
                 ClearSelection();
 
                 // CONSIDER: record a non-persistant command with the Undo Manager.
@@ -421,9 +422,9 @@ namespace PurplePen
         void UpdateSelection()
         {
             // Check the selection validity.
-            if (activeCourseId.IsNotNone && !eventDB.IsCoursePresent(activeCourseId)) {
+            if (!activeCourseDesignator.IsAllControls && !eventDB.IsCoursePresent(activeCourseDesignator.CourseId)) {
                 // Active course was deleted. Switch to all controls.
-                activeCourseId = Id<Course>.None;
+                activeCourseDesignator = CourseDesignator.AllControls;
                 ClearSelection();
             }
 
@@ -449,7 +450,7 @@ namespace PurplePen
                 ClearSelection();
             }
 
-            if (selectedSpecial.IsNotNone && !(activeCourseId.IsNone || QueryEvent.CourseContainsSpecial(eventDB, activeCourseId, selectedSpecial))) {
+            if (selectedSpecial.IsNotNone && !(activeCourseDesignator.IsAllControls || QueryEvent.CourseContainsSpecial(eventDB, activeCourseDesignator.CourseId, selectedSpecial))) {
                 // Selected special is not in current course
                 ClearSelection();
             }
@@ -475,15 +476,15 @@ namespace PurplePen
 
             // Figure out which course view is the active one. We have already validate that the active course id
             // is present.
-            if (activeCourseId.IsNone) {
+            if (activeCourseDesignator.IsAllControls) {
                 activeCourseViewIndex = 0;
                 activeCourseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             }
             else {
                 for (int i = 1; i < courseViewIds.Length; ++i)
-                    if (courseViewIds[i] == activeCourseId) {
+                    if (courseViewIds[i] == activeCourseDesignator.CourseId) {
                         activeCourseViewIndex = i;
-                        activeCourseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(activeCourseId));
+                        activeCourseView = CourseView.CreateViewingCourseView(eventDB, activeCourseDesignator);
                     }
             }
         }
@@ -504,9 +505,9 @@ namespace PurplePen
             activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK); 
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
-            if (showAllControls && activeCourseId.IsNotNone) {
+            if (showAllControls && !activeCourseDesignator.IsAllControls) {
                 // Create the all controls view.
-                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { activeCourseId }, allControlsFilter, false, true);
+                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { activeCourseDesignator.CourseId }, allControlsFilter, false, true);
 
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
