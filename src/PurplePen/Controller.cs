@@ -911,11 +911,11 @@ namespace PurplePen
 
         private bool DeleteControlFromCourse(SelectionMgr.SelectionInfo selection)
         {
-            Debug.Assert(selection.ActiveCourseId.IsNotNone);
+            Debug.Assert(selection.ActiveCourseDesignator.IsNotAllControls);
 
             undoMgr.BeginCommand(177, CommandNameText.DeleteControl);
 
-            ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseId, selection.SelectedCourseControl);
+            ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl);
             if (QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl).Length == 0) {
                 // No other courses are using this control. Ask the user whether to delete it from the controls collection.
                 string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\""; 
@@ -934,7 +934,7 @@ namespace PurplePen
             bool delete = true;   // actually delete the control?
 
             // Deleting a control from the controls collection.
-            Debug.Assert(selection.ActiveCourseId.IsNone);
+            Debug.Assert(selection.ActiveCourseDesignator.IsAllControls);
 
             // If the control is used by any courses, ask the user if he is sure.
             Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl);
@@ -969,26 +969,26 @@ namespace PurplePen
         // Can we delete the current course
         public bool CanDeleteCurrentCourse()
         {
-            return (selectionMgr.Selection.ActiveCourseId.IsNotNone) ;
+            return (selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls) ;
         }
 
         // Delete the current course
         public bool DeleteCurrentCourse()
         {
-            Id<Course> courseId = selectionMgr.Selection.ActiveCourseId;
-            if (courseId.IsNone)
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
                 return false;
 
             // First get a list of all the controls in the course being deleted.
             List<Id<ControlPoint>> usedControls = new List<Id<ControlPoint>>();
 
-            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseDesignator.CourseId)) {
                 usedControls.Add(eventDB.GetCourseControl(courseControlId).control);
             }
 
             // Delete the course and course controls.
             undoMgr.BeginCommand(712, CommandNameText.DeleteCourse);
-            ChangeEvent.DeleteCourse(eventDB, courseId);
+            ChangeEvent.DeleteCourse(eventDB, courseDesignator.CourseId);
 
             // Determine if any of the controls are "orphaned".
             List<Id<ControlPoint>> orphanedControls = new List<Id<ControlPoint>>();
@@ -1029,13 +1029,13 @@ namespace PurplePen
         // Can we change the properties fo the current course?
         public bool CanChangeCourseProperties()
         {
-            return selectionMgr.Selection.ActiveCourseId.IsNotNone;
+            return selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls;
         }
 
         // Get the properties of the current course?
         public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind, out int firstControlOrdinal)
         {
-            Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseId);
+            Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
             courseKind = course.kind;
             courseName = course.name;
             labelKind = course.labelKind;
@@ -1051,7 +1051,7 @@ namespace PurplePen
         public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
             undoMgr.EndCommand(888);
         }
 
@@ -1091,7 +1091,7 @@ namespace PurplePen
             if (allCourses)
                 return GetPrintArea(Id<Course>.None);
             else
-                return GetPrintArea(selectionMgr.Selection.ActiveCourseId);
+                return GetPrintArea(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
         }
 
         // Begin the mode to set the print area, for the current course or all courses.
@@ -1117,7 +1117,7 @@ namespace PurplePen
                     }
                 }
                 else {
-                    ChangeEvent.ChangeCoursePrintArea(eventDB, selectionMgr.Selection.ActiveCourseId, newRectangle);
+                    ChangeEvent.ChangeCoursePrintArea(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newRectangle);
                 }
                 undoMgr.EndCommand(1127);
 
@@ -2011,7 +2011,7 @@ namespace PurplePen
                     }
 
                     undoMgr.BeginCommand(108, CommandNameText.ChangeClimb);
-                    ChangeEvent.ChangeCourseClimb(eventDB, selectionMgr.Selection.ActiveCourseId, newClimb);
+                    ChangeEvent.ChangeCourseClimb(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newClimb);
                     undoMgr.EndCommand(108);
                     break;
 
@@ -2035,16 +2035,16 @@ namespace PurplePen
                     break;
 
                 case DescriptionControl.ChangeKind.SecondaryTitle:
-                    Debug.Assert(selectionMgr.Selection.ActiveCourseId.IsNotNone);
+                    Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(106, CommandNameText.ChangeTitle);
-                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
                     undoMgr.EndCommand(106);
                     break;
 
                 case DescriptionControl.ChangeKind.CourseName:
-                    Debug.Assert(selectionMgr.Selection.ActiveCourseId.IsNotNone);
+                    Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(105, CommandNameText.ChangeCourseName);
-                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
                     undoMgr.EndCommand(105);
                     break;
 
@@ -2059,7 +2059,7 @@ namespace PurplePen
                         break;  // no change to control.
 
                     if (QueryEvent.IsCodeInUse(eventDB, (string)newValue)) {
-                        if (selectionMgr.Selection.ActiveCourseId.IsNone) {
+                        if (selectionMgr.Selection.ActiveCourseDesignator.IsAllControls) {
                             // In all controls. We can't change to a control that is in use.
                             ui.ErrorMessage(string.Format(MiscText.CodeInUse, (string) newValue));
                         }
@@ -2170,7 +2170,7 @@ namespace PurplePen
         // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
         public void BeginAddControlMode(ControlPointKind controlKind)
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseId.IsNone, controlKind));
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).
@@ -2189,8 +2189,8 @@ namespace PurplePen
         public void BeginAddDescriptionMode()
         {
             DescriptionKind descKind;
-            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseId, out descKind);
-            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseId, description, descKind)); 
+            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, out descKind);
+            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, description, descKind)); 
         }
 
         // Start the mode to add text to a course

@@ -694,6 +694,11 @@ namespace PurplePen
             get { return courseId.IsNone; }
         }
 
+        public bool IsNotAllControls
+        {
+            get { return !IsAllControls; }
+        }
+
         public Id<Course> CourseId
         {
             get { return courseId; }

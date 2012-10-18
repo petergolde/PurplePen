@@ -1,0 +1,11 @@
+Places that may need updating for multi-part courses:
+
+SelectionMgr.UpdateSelection -- handle case when selected course controls no longer on current part.
+QueryEvent.FindClosestLeg -- take a part?
+AddControlMode.GetControlInsertionPoint -- return SelectionDescription instead of course id?
+Controller.GetCurrentPrintArea -- should handle print area for just active part.
+Controller.EndSetPrintArea -- should set print area just for active part? Is this an option?
+Controller.BeginAddDescriptionMode -- handle adding description for a single part.
+AddControlMode -- take CourseDesignator instead of CourseId?
+
+Specials -- support specials in a single part.

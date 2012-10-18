@@ -688,31 +688,31 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
 
             selectionMgr.SelectCourseView(CourseId(0));
             info = selectionMgr.Selection;
-            Assert.AreEqual(0, info.ActiveCourseId.id);
+            Assert.AreEqual(0, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.None, info.SelectionKind);
 
             selectionMgr.SelectControl(ControlId(5));
             info = selectionMgr.Selection;
-            Assert.AreEqual(0, info.ActiveCourseId.id);
+            Assert.AreEqual(0, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.Control, info.SelectionKind);
             Assert.AreEqual(5, info.SelectedControl.id);
             Assert.AreEqual(0, info.SelectedCourseControl.id);
 
             selectionMgr.SelectCourseView(CourseId(6));
             info = selectionMgr.Selection;
-            Assert.AreEqual(6, info.ActiveCourseId.id);
+            Assert.AreEqual(6, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.None, info.SelectionKind);
 
             selectionMgr.SelectCourseControl(CourseControlId(204));
             info = selectionMgr.Selection;
-            Assert.AreEqual(6, info.ActiveCourseId.id);
+            Assert.AreEqual(6, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.Control, info.SelectionKind);
             Assert.AreEqual(8, info.SelectedControl.id);
             Assert.AreEqual(204, info.SelectedCourseControl.id);
 
             selectionMgr.SelectTitle();
             info = selectionMgr.Selection;
-            Assert.AreEqual(6, info.ActiveCourseId.id);
+            Assert.AreEqual(6, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.Title, info.SelectionKind);
             Assert.AreEqual(0, info.SelectedControl.id);
             Assert.AreEqual(0, info.SelectedCourseControl.id);
@@ -720,7 +720,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             selectionMgr.SelectCourseView(CourseId(5));
             selectionMgr.SelectSecondaryTitle();
             info = selectionMgr.Selection;
-            Assert.AreEqual(5, info.ActiveCourseId.id);
+            Assert.AreEqual(5, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.SecondaryTitle, info.SelectionKind);
             Assert.AreEqual(0, info.SelectedControl.id);
             Assert.AreEqual(0, info.SelectedCourseControl.id);

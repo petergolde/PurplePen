@@ -1399,7 +1399,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             controller.NewCourse(CourseKind.Normal, "My New Course", ControlLabelKind.SequenceAndCode, 1, "Secondary Title", 15000, 25, DescriptionKind.Symbols, 3);
             Assert.AreEqual("My New Course", controller.GetTabNames()[controller.ActiveTab]);
-            Id<Course> newCourse = controller.GetSelectionMgr().Selection.ActiveCourseId;
+            Id<Course> newCourse = controller.GetSelectionMgr().Selection.ActiveCourseDesignator.CourseId;
 
             Course course = eventDB.GetCourse(newCourse);
             Assert.AreEqual(CourseKind.Normal, course.kind);

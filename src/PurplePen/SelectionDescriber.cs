@@ -88,7 +88,7 @@ namespace PurplePen
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
                 return DescribeMapExchangeAtControl(eventDB, selection.SelectedControl);
             }
-            else if (selection.ActiveCourseId.IsNotNone) {
+            else if (selection.ActiveCourseDesignator.IsNotAllControls) {
                 return DescribeCourse(eventDB, activeCourseView);
             }
             else {

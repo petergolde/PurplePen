@@ -190,7 +190,8 @@ namespace PurplePen
         private void GetControlInsertionPoint(PointF pt, out Id<Course> courseId, out Id<CourseControl> courseControlId1, out Id<CourseControl> courseControlId2)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
-            courseId = selection.ActiveCourseId;
+            CourseDesignator courseDesignator = selection.ActiveCourseDesignator;
+            courseId = courseDesignator.CourseId;
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
 

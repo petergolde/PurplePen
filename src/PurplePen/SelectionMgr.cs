@@ -158,7 +158,7 @@ namespace PurplePen
         // A struct used to return information about the current selection.
         public struct SelectionInfo
         {
-            public Id<Course> ActiveCourseId;
+            public CourseDesignator ActiveCourseDesignator;
             public SelectionKind SelectionKind;
             public Id<ControlPoint> SelectedControl;
             public Id<CourseControl> SelectedCourseControl;
@@ -176,7 +176,7 @@ namespace PurplePen
                 SelectionInfo info;
                 UpdateState();
 
-                info.ActiveCourseId = activeCourseDesignator.CourseId;
+                info.ActiveCourseDesignator = activeCourseDesignator;
                 info.SelectionKind = selectionKind;
                 info.SelectedControl = selectedControl;
                 info.SelectedCourseControl = selectedCourseControl;
