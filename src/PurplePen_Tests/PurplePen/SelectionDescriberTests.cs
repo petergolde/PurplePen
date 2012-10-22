@@ -72,7 +72,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(2));
+            selectionMgr.SelectCourseView(Designator(2));
             selectionMgr.SelectControl(ControlId(70));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -161,7 +161,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(2));
+            selectionMgr.SelectCourseView(Designator(2));
             selectionMgr.SelectControl(ControlId(53));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -214,7 +214,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(2));
+            selectionMgr.SelectCourseView(Designator(2));
             selectionMgr.SelectControl(ControlId(1));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -259,7 +259,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(2));
+            selectionMgr.SelectCourseView(Designator(2));
             selectionMgr.SelectControl(ControlId(1));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -312,7 +312,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(2));
+            selectionMgr.SelectCourseView(Designator(2));
             selectionMgr.SelectControl(ControlId(2));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -357,7 +357,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(5));
+            selectionMgr.SelectCourseView(Designator(5));
             selectionMgr.SelectControl(ControlId(83));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -402,7 +402,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\sampleevent2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             selectionMgr.SelectKeyLine(ui.symbolDB["6.1"]);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -421,7 +421,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             selectionMgr.SelectTextLine(ControlId(18), CourseControlId(208), DescriptionLine.TextLineKind.BeforeControl);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -451,7 +451,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -487,7 +487,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -531,7 +531,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(9));
+            selectionMgr.SelectCourseView(Designator(9));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -567,7 +567,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -613,7 +613,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -667,7 +667,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             selectionMgr.SelectLeg(CourseControlId(4), CourseControlId(5));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -713,7 +713,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -758,7 +758,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\SpecialLegs.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             selectionMgr.SelectLeg(CourseControlId(5), CourseControlId(6));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -803,7 +803,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\mapexchange2.ppen"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             selectionMgr.SelectMapExchangeAtControl(ControlId(43), CourseControlId(615));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -824,7 +824,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
             selectionMgr.SelectSpecial(SpecialId(4));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -853,7 +853,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             selectionMgr.SelectSpecial(SpecialId(2));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -891,7 +891,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(10));
+            selectionMgr.SelectCourseView(Designator(10));
             selectionMgr.SelectSpecial(SpecialId(8));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -936,7 +936,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(5));
+            selectionMgr.SelectCourseView(Designator(5));
             selectionMgr.SelectSpecial(SpecialId(8));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -981,7 +981,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(10));
+            selectionMgr.SelectCourseView(Designator(10));
             selectionMgr.SelectSpecial(SpecialId(6));
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
@@ -1020,7 +1020,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(Id<Course>.None);
+            selectionMgr.SelectCourseView(CourseDesignator.AllControls);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 

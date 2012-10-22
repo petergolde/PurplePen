@@ -325,20 +325,20 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAwuACAcbsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuAAAc7sL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="mapViewer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 28</value>
+    <value>0, 30</value>
   </data>
   <data name="mapViewer.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="mapViewer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>532, 285</value>
+    <value>532, 283</value>
   </data>
   <data name="mapViewer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -347,8 +347,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAKMKMwsnTFsIiwgxD
-        AdCWQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAKMKMwuDEFcIiwgxD
+        EsGVQgs=
 </value>
   </data>
   <data name="&gt;&gt;mapViewer.Name" xml:space="preserve">
@@ -391,10 +391,10 @@
     <value>Right</value>
   </data>
   <data name="vertScroll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>532, 28</value>
+    <value>532, 30</value>
   </data>
   <data name="vertScroll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 305</value>
+    <value>20, 303</value>
   </data>
   <data name="vertScroll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -411,28 +411,28 @@
   <data name="&gt;&gt;vertScroll.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="coursePartBanner1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="coursePartBanner.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="coursePartBanner1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="coursePartBanner.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="coursePartBanner1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>552, 28</value>
+  <data name="coursePartBanner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>552, 30</value>
   </data>
-  <data name="coursePartBanner1.TabIndex" type="System.Int32, mscorlib">
+  <data name="coursePartBanner.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;coursePartBanner1.Name" xml:space="preserve">
-    <value>coursePartBanner1</value>
+  <data name="&gt;&gt;coursePartBanner.Name" xml:space="preserve">
+    <value>coursePartBanner</value>
   </data>
-  <data name="&gt;&gt;coursePartBanner1.Type" xml:space="preserve">
+  <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
     <value>PurplePen.CoursePartBanner, PurplePen, Version=1.1.5.5000, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;coursePartBanner1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
   </data>
-  <data name="&gt;&gt;coursePartBanner1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;coursePartBanner.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="&gt;&gt;splitContainer.Panel2.Name" xml:space="preserve">

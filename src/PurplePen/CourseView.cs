@@ -654,7 +654,7 @@ namespace PurplePen
     public class CourseDesignator
     {
         private Id<Course> courseId;   // ID of the course, none for all controls.
-        private int part;                         // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
+        private int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
 
         public override bool Equals(object obj)
         {
@@ -663,6 +663,19 @@ namespace PurplePen
             CourseDesignator other = (CourseDesignator) obj;
 
             return (courseId == other.courseId && part == other.part);
+        }
+
+        public static bool operator ==(CourseDesignator cd1, CourseDesignator cd2)
+        {
+            if ((object)cd1 == null)
+                return ((object)cd2 == null);
+            else
+                return cd1.Equals(cd2);
+        }
+
+        public static bool operator !=(CourseDesignator cd1, CourseDesignator cd2)
+        {
+            return !(cd1 == cd2);
         }
 
         public override int GetHashCode()

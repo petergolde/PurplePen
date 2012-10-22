@@ -1161,6 +1161,45 @@ namespace PurplePen.Tests
             result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(1), 1, out startCourseControlId, out endCourseControlId);
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void IsCourseControlInPart()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(601)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(611)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(602)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(610)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(612)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(620)));
+
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(611)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(615)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(612)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(614)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(601)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(610)));
+
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(616)));
+            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(615)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(601)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(614)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(617)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(620)));
+
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(616)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(620)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(617)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(619)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(615)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(614)));
+
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(101)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(112)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(102)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(111)));
+        }
     }
 }
 #endif

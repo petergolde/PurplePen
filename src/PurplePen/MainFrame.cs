@@ -307,6 +307,33 @@ namespace PurplePen
             mapDisplay.SetCourse(controller.GetCourseLayout());
         }
 
+        // Update the part banner in the map pane.
+        void UpdatePartBanner()
+        {
+            if (controller.NumberOfParts <= 1) {
+                SetBannerVisibility(false);
+            }
+            else {
+                coursePartBanner.NumberOfParts = controller.NumberOfParts;
+                coursePartBanner.SelectedPart = controller.CurrentPart;
+                SetBannerVisibility(true);
+            }
+        }
+
+        void SetBannerVisibility(bool bannerVisible)
+        {
+            if (!coursePartBanner.Visible && bannerVisible) {
+                // Banner becoming visible.
+                coursePartBanner.Visible = true;
+                mapViewer.ScrollView(0, - coursePartBanner.Height / 2);
+            }
+            else if (coursePartBanner.Visible && !bannerVisible) {
+                // Banner becoming hidden.
+                mapViewer.ScrollView(0, coursePartBanner.Height / 2);
+                coursePartBanner.Visible = false;
+            }
+        }
+
         // Update the description in the description pane.
         void UpdateDescription()
         {
@@ -656,6 +683,7 @@ namespace PurplePen
                         UpdateMapFile();
                         UpdateTabs();
                         UpdateCourse();
+                        UpdatePartBanner();
                         UpdateDescription();
                         UpdateSelection();
                         UpdateHighlight();
@@ -672,6 +700,10 @@ namespace PurplePen
             }
         }
 
+        private void coursePartBanner_SelectedPartChanged(object sender, EventArgs e)
+        {
+            controller.SelectPart(coursePartBanner.SelectedPart);
+        }
 
         private void symbolBrowserMenu_Click(object sender, EventArgs e)
         {

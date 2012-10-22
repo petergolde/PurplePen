@@ -381,7 +381,7 @@ namespace PurplePen
                     Settings.Default.Save();
                 }
                 undoMgr.MarkClean();
-                selectionMgr.SelectCourseView(Id<Course>.None);
+                selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
                 NewMapFileLoaded(true);
             }
@@ -438,7 +438,7 @@ namespace PurplePen
             // Save the new event in the given file.
             bool success = SaveAs(info.eventFileName);
             if (success) {
-                selectionMgr.SelectCourseView(Id<Course>.None);
+                selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
             }
 
@@ -607,6 +607,40 @@ namespace PurplePen
             {
                 return selectionMgr.ActiveTab;
             }
+        }
+
+        public int NumberOfParts
+        {
+            get
+            {
+                CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+                if (activeCourseDesignator.IsAllControls)
+                    return 1;
+                else
+                    return QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
+            }
+        }
+
+        public int CurrentPart
+        {
+            get
+            {
+                if (NumberOfParts == 1) {
+                    return -1; // all parts
+                }
+                else {
+                    return selectionMgr.Selection.ActiveCourseDesignator.Part;
+                }
+            }
+        }
+
+        public void SelectPart(int newPart)
+        {
+            if (newPart == -1)
+                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId));
+            else
+                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, newPart));
+            CancelMode();
         }
 
         // Get the text for the status line
@@ -1022,7 +1056,7 @@ namespace PurplePen
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
             Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal, true);
-            selectionMgr.SelectCourseView(newCourse);
+            selectionMgr.SelectCourseView(new CourseDesignator(newCourse));
             undoMgr.EndCommand(713);
         }
 

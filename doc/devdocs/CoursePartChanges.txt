@@ -1,6 +1,7 @@
 Places that may need updating for multi-part courses:
 
-SelectionMgr.UpdateSelection -- handle case when selected course controls no longer on current part.
+SelectionMgr.UpdateSelection -- handle case when selected course controls no longer on current part. 
+SelectionMgr.UpdateSelection -- handle case when number of parts changes; update active part.
 QueryEvent.FindClosestLeg -- take a part?
 AddControlMode.GetControlInsertionPoint -- return SelectionDescription instead of course id?
 Controller.GetCurrentPrintArea -- should handle print area for just active part.

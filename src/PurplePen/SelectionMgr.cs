@@ -144,7 +144,9 @@ namespace PurplePen
                 if (value < 0 || value >= courseViewNames.Length)
                     throw new ArgumentOutOfRangeException("value");
 
-                SelectCourseView(courseViewIds[value]);
+                if (courseViewIds[value] != activeCourseDesignator.CourseId) {
+                    SelectCourseView(new CourseDesignator(courseViewIds[value]));
+                }
             }
         }
 
@@ -263,16 +265,19 @@ namespace PurplePen
         }
 
         // Select the course with the given id as the active tab, id==0 means all controls.
-        public void SelectCourseView(Id<Course> id)
+        public void SelectCourseView(CourseDesignator newDesignator)
         {
             UpdateState();
-            if (activeCourseDesignator.CourseId != id) {
+            if (activeCourseDesignator != newDesignator) {
+                bool courseChanged = (activeCourseDesignator.CourseId != newDesignator.CourseId);
                 ++selectionChangeNum;
+                activeCourseDesignator = newDesignator;
 
-                // For now, when switching tabs, the selection is cleared.
+                // For now, when switching tabs (but not parts) the selection is cleared.
                 // CONSIDER: maybe change this later; e.g., keep the selected control if it is in common.
-                activeCourseDesignator = new CourseDesignator(id);
-                ClearSelection();
+                if (courseChanged) {
+                    ClearSelection();
+                }
 
                 // CONSIDER: record a non-persistant command with the Undo Manager.
             }
@@ -428,14 +433,39 @@ namespace PurplePen
                 ClearSelection();
             }
 
+            // Does the current part still exist?
+            if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && activeCourseDesignator.Part >= QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId)) {
+                // No part that large any more.
+                int numberOfParts = QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
+                if (numberOfParts > 1)
+                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId, numberOfParts - 1);
+                else
+                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId);
+                ClearSelection();
+            }
+
             if (selectedCourseControl.IsNotNone && !eventDB.IsCourseControlPresent(selectedCourseControl)) {
                 // Selected course control is no longer there.
                 selectedCourseControl = Id<CourseControl>.None;
                 ClearSelection();
             }
 
+            if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator.CourseId, activeCourseDesignator.Part, selectedCourseControl)) {
+                // Selected course control is not in active part.
+                selectedCourseControl = Id<CourseControl>.None;
+                ClearSelection();
+            }
+
             if (selectedCourseControl2.IsNotNone && !eventDB.IsCourseControlPresent(selectedCourseControl2)) {
                 // Selected course control 2 is no longer there.
+                selectedCourseControl2 = Id<CourseControl>.None;
+                ClearSelection();
+            }
+
+            if (selectedCourseControl2.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator.CourseId, activeCourseDesignator.Part, selectedCourseControl2)) {
+                // Selected course control 2 is not in active part.
                 selectedCourseControl2 = Id<CourseControl>.None;
                 ClearSelection();
             }

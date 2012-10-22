@@ -71,6 +71,7 @@ namespace PurplePen
             this.mapViewer = new PurplePen.MapView.MapViewer();
             this.horizScroll = new System.Windows.Forms.HScrollBar();
             this.vertScroll = new System.Windows.Forms.VScrollBar();
+            this.coursePartBanner = new PurplePen.CoursePartBanner();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
@@ -243,7 +244,6 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.coursePartBanner1 = new PurplePen.CoursePartBanner();
             this.courseTabs.SuspendLayout();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -286,7 +286,7 @@ namespace PurplePen
             this.splitContainer.Panel2.Controls.Add(this.mapViewer);
             this.splitContainer.Panel2.Controls.Add(this.horizScroll);
             this.splitContainer.Panel2.Controls.Add(this.vertScroll);
-            this.splitContainer.Panel2.Controls.Add(this.coursePartBanner1);
+            this.splitContainer.Panel2.Controls.Add(this.coursePartBanner);
             // 
             // splitDescription
             // 
@@ -348,6 +348,15 @@ namespace PurplePen
             resources.ApplyResources(this.vertScroll, "vertScroll");
             this.vertScroll.Name = "vertScroll";
             this.vertScroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vertScroll_Scroll);
+            // 
+            // coursePartBanner
+            // 
+            this.coursePartBanner.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.coursePartBanner, "coursePartBanner");
+            this.coursePartBanner.Name = "coursePartBanner";
+            this.coursePartBanner.NumberOfParts = 1;
+            this.coursePartBanner.SelectedPart = -1;
+            this.coursePartBanner.SelectedPartChanged += new System.EventHandler(this.coursePartBanner_SelectedPartChanged);
             // 
             // openFileDialog
             // 
@@ -1550,13 +1559,6 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
-            // coursePartBanner1
-            // 
-            this.coursePartBanner1.BackColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.coursePartBanner1, "coursePartBanner1");
-            this.coursePartBanner1.Name = "coursePartBanner1";
-            this.coursePartBanner1.NumberOfParts = 1;
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1774,7 +1776,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem fontMetricsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTranslatedMenu;
-        private CoursePartBanner coursePartBanner1;
+        private CoursePartBanner coursePartBanner;
 
     }
 }

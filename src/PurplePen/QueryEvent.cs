@@ -265,6 +265,26 @@ namespace PurplePen
             return startFound;
         }
 
+        // Determine if the given course control is in the given part.
+        public static bool IsCourseControlInPart(EventDB eventDB, Id<Course> courseId, int part, Id<CourseControl> courseControlId)
+        {
+            Id<CourseControl> startCourseControlId, endCourseControlId;
+
+            if (!GetCoursePartBounds(eventDB, courseId, part, out startCourseControlId, out endCourseControlId))
+                return false;
+
+            Id<CourseControl> current = startCourseControlId;
+            while (current.IsNotNone) {
+                if (current == courseControlId)
+                    return true;
+                if (current == endCourseControlId)
+                    break;
+                current = eventDB.GetCourseControl(current).nextCourseControl;
+            }
+
+            return false;
+        }
+
         // Given an array of courses, compute the control load. Return -1 if no control load set for any containing courses, or array is empty.
         private static int ComputeLoad(EventDB eventDB, Id<Course>[] courses)
         {

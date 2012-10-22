@@ -36,6 +36,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.coursePartLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.partComboBox, 1, 0);
@@ -48,6 +49,7 @@
             // 
             // partComboBox
             // 
+            this.partComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.partComboBox.FormattingEnabled = true;
             resources.ApplyResources(this.partComboBox, "partComboBox");
             this.partComboBox.Name = "partComboBox";
@@ -60,6 +62,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CoursePartBanner";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CoursePartBanner_Paint);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

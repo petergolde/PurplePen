@@ -321,9 +321,9 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             Assert.AreEqual(2, selectionMgr.ActiveTab);
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             Assert.AreEqual(0, selectionMgr.ActiveTab);
         }
 
@@ -333,7 +333,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
 
             selectionMgr.SelectHeader();
             CheckSelectedLines(1,1);
@@ -356,11 +356,11 @@ namespace PurplePen.Tests
             selectionMgr.SelectControl(ControlId(6));
             CheckSelectedLines(9, 9);
 
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             selectionMgr.SelectControl(ControlId(8));
             CheckSelectedLines(10, 10);
 
-            selectionMgr.SelectCourseView(CourseId(5));
+            selectionMgr.SelectCourseView(Designator(5));
             selectionMgr.SelectSecondaryTitle();
             CheckSelectedLines(1, 1);
         }
@@ -371,7 +371,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent6.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             selectionMgr.SelectDescriptionLine(1);
             CheckSelectedLines(0, 1);
             selectionMgr.SelectDescriptionLine(3);
@@ -397,7 +397,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
             selectionMgr.SelectDescriptionLine(5);
             selectionMgr.SelectLeg(CourseControlId(13), CourseControlId(14));
 
@@ -420,7 +420,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\speciallegs.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3));
 
             CheckSelectedLines(4, 4);
@@ -441,7 +441,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
             CourseLayout course = selectionMgr.CourseLayout;
             foreach (CourseObj courseobj in course) {
                 if (courseobj is LegCourseObj && courseobj.courseControlId == CourseControlId(13) &&
@@ -469,7 +469,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent4.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
             selectionMgr.SelectCourseControl(CourseControlId(11));
             selectionMgr.SelectSpecial(SpecialId(5));
 
@@ -492,7 +492,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\desctext.ppen"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
 
             selectionMgr.SelectTextLine(ControlId(18), CourseControlId(208), DescriptionLine.TextLineKind.BeforeCourseControl);            
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
@@ -529,7 +529,7 @@ namespace PurplePen.Tests
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent5.ppen"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(5));
+            selectionMgr.SelectCourseView(Designator(5));
 
             selectionMgr.SelectKeyLine(ui.symbolDB["5.6"]);            // light pole
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
@@ -551,7 +551,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             // Select a special in all controls.
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             CourseLayout course = selectionMgr.CourseLayout;
             CourseObj courseobject = course[3];
             Assert.IsTrue(courseobject.specialId.id == 4);
@@ -569,7 +569,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(@"OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)", selectedObjects[0].ToString());
 
             // Select a special in a course view
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             course = selectionMgr.CourseLayout;
             courseobject = course[2];
             Assert.IsTrue(courseobject.specialId.id == 3);
@@ -596,7 +596,7 @@ namespace PurplePen.Tests
 
             StringWriter writer = new StringWriter();
 
-            selectionMgr.SelectCourseView(CourseId(4));
+            selectionMgr.SelectCourseView(Designator(4));
             selectionMgr.SelectCourseControl(CourseControlId(11));
             CourseObj[] selectedObjects = selectionMgr.SelectedCourseObjects;
             foreach (CourseObj courseObject in selectedObjects) 
@@ -608,7 +608,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(expected, dump);
 
             writer = new StringWriter();
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             selectionMgr.SelectControl(ControlId(9));
             selectedObjects = selectionMgr.SelectedCourseObjects;
             foreach (CourseObj courseObject in selectedObjects)
@@ -628,7 +628,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             CourseLayout course = selectionMgr.CourseLayout;
 
             CourseObj courseobject = course[4];
@@ -659,7 +659,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\marymoor1.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(3));
+            selectionMgr.SelectCourseView(Designator(3));
             CourseLayout course = selectionMgr.CourseLayout;
 
             courseobject = course[0];
@@ -686,7 +686,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent1.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(0));
+            selectionMgr.SelectCourseView(Designator(0));
             info = selectionMgr.Selection;
             Assert.AreEqual(0, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.None, info.SelectionKind);
@@ -698,7 +698,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             Assert.AreEqual(5, info.SelectedControl.id);
             Assert.AreEqual(0, info.SelectedCourseControl.id);
 
-            selectionMgr.SelectCourseView(CourseId(6));
+            selectionMgr.SelectCourseView(Designator(6));
             info = selectionMgr.Selection;
             Assert.AreEqual(6, info.ActiveCourseDesignator.CourseId.id);
             Assert.AreEqual(SelectionMgr.SelectionKind.None, info.SelectionKind);
@@ -717,7 +717,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             Assert.AreEqual(0, info.SelectedControl.id);
             Assert.AreEqual(0, info.SelectedCourseControl.id);
 
-            selectionMgr.SelectCourseView(CourseId(5));
+            selectionMgr.SelectCourseView(Designator(5));
             selectionMgr.SelectSecondaryTitle();
             info = selectionMgr.Selection;
             Assert.AreEqual(5, info.ActiveCourseDesignator.CourseId.id);
@@ -733,7 +733,7 @@ Code:           control:9  scale:1  text:211  top-left:(36.72,-3.88)
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\sampleevent3.coursescribe"), true);
             Assert.IsTrue(success);
 
-            selectionMgr.SelectCourseView(CourseId(1));
+            selectionMgr.SelectCourseView(Designator(1));
             CourseLayout course = selectionMgr.CourseLayout;
 
             course.Dump(writer);
@@ -805,6 +805,44 @@ ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(7.56,19.
                 font-name:Arial  font-style:Regular  font-height:5.57
 ", writer.ToString());
 
+        }
+
+        [TestMethod]
+        public void MapExchangeSelectionChanges()
+        {
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectionmgr\\mapexchange2.ppen"), true);
+            Assert.IsTrue(success);
+
+            UndoMgr undoMgr = controller.GetUndoMgr();
+            EventDB eventDB = controller.GetEventDB();
+
+            selectionMgr.ActiveTab = selectionMgr.TabCount - 1;  // last tab
+            selectionMgr.SelectCourseControl(CourseControlId(602));
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.id == 602);
+            selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 0));
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.id == 602);
+            selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 1));
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.IsNone);
+
+            selectionMgr.SelectLeg(CourseControlId(611), CourseControlId(612));
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.id == 611);
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl2.id == 612);
+            selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 0));
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.IsNone);
+            Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl2.IsNone);
+
+            selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 3));
+            Assert.IsTrue(selectionMgr.Selection.ActiveCourseDesignator.Part == 3);
+            undoMgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, CourseControlId(615));
+            undoMgr.EndCommand(912);
+            Assert.AreEqual(2, selectionMgr.Selection.ActiveCourseDesignator.Part);
+
+            undoMgr.BeginCommand(915, "Remove Course Controls");
+            ChangeEvent.RemoveCourseControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, CourseControlId(611));
+            ChangeEvent.RemoveCourseControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, CourseControlId(616));
+            undoMgr.EndCommand(915);
+            Assert.IsTrue(selectionMgr.Selection.ActiveCourseDesignator.AllParts);
         }
 	
     }

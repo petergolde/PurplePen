@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -41,7 +42,11 @@ namespace PurplePen
         // Return selected part, or 0 for all parts.
         public int SelectedPart
         {
-            get { return partComboBox.SelectedIndex; }
+            get { return partComboBox.SelectedIndex - 1; }
+            set {
+                Debug.Assert(value >= -1 && value < numberOfParts);
+                partComboBox.SelectedIndex = value + 1; 
+            }
         }
 
         private void UpdateNumberOfParts()
@@ -49,21 +54,34 @@ namespace PurplePen
             int currentPart = SelectedPart;
 
             partComboBox.BeginUpdate();
+
             partComboBox.Items.Clear();
             partComboBox.Items.Add(MiscText.AllParts);
             if (numberOfParts > 1) {
                 for (int i = 1; i <= numberOfParts; ++i)
                     partComboBox.Items.Add(string.Format(MiscText.PartXOfY, i, numberOfParts));
             }
-            partComboBox.EndUpdate();
 
-            partComboBox.SelectedIndex = currentPart;
+            if (numberOfParts > 1 && currentPart < numberOfParts)
+                partComboBox.SelectedIndex = currentPart + 1;
+            else
+                partComboBox.SelectedIndex = 0;
+            partComboBox.Enabled = (numberOfParts > 1);
+
+            partComboBox.EndUpdate();
         }
 
         private void partComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SelectedPartChanged != null)
                 SelectedPartChanged(this, EventArgs.Empty);
+        }
+
+        private void CoursePartBanner_Paint(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(Color.FromKnownColor(KnownColor.ControlDark), 1)) {
+                e.Graphics.DrawLine(pen, new Point(0, this.Height - 1), new Point(this.Width - 1, this.Height - 1));
+            }
         }
     }
 }
