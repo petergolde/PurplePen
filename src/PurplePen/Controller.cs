@@ -2223,7 +2223,7 @@ namespace PurplePen
         public void BeginAddDescriptionMode()
         {
             DescriptionKind descKind;
-            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, out descKind);
+            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator, out descKind);
             SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, description, descKind)); 
         }
 

@@ -1,12 +1,14 @@
 Places that may need updating for multi-part courses:
 
-SelectionMgr.UpdateSelection -- handle case when selected course controls no longer on current part. 
-SelectionMgr.UpdateSelection -- handle case when number of parts changes; update active part.
 QueryEvent.FindClosestLeg -- take a part?
 AddControlMode.GetControlInsertionPoint -- return SelectionDescription instead of course id?
 Controller.GetCurrentPrintArea -- should handle print area for just active part.
 Controller.EndSetPrintArea -- should set print area just for active part? Is this an option?
 Controller.BeginAddDescriptionMode -- handle adding description for a single part.
 AddControlMode -- take CourseDesignator instead of CourseId?
+CourseView.CreateFilteredAllControlsView -- take course designators instead of course ids?
 
 Specials -- support specials in a single part.
+
+Look at references to CourseView.BaseCourseId -- should they be CourseDesignators instead?
+Check out "UNDONE MAPEXCHANGE" comments.

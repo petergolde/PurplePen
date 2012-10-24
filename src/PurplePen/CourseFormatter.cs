@@ -447,7 +447,7 @@ namespace PurplePen
 
             case SpecialKind.Descriptions:
                 DescriptionKind descKind;
-                DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, courseView.BaseCourseId, out descKind);
+                DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, courseView.CourseDesignator, out descKind);
                 courseObj = new DescriptionCourseObj(specialId, special.locations[0], (float) Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
                 break;
 
@@ -465,24 +465,24 @@ namespace PurplePen
         }
 
         // Return the description and description kind for a given CourseView.
-        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, Id<Course> courseId, out DescriptionKind descKind)
+        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, out DescriptionKind descKind)
         {
             CourseView courseViewDescription;
             DescriptionLine[] description;
             bool noTextOrSymbols = false;
 
             // For all controls, show the longest description we have, and don't show text and symbols (just the grid).
-            if (courseId.IsNone) {
-                courseId = FindLongestDescription(eventDB, symbolDB);
+            if (courseDesignator.IsAllControls) {
+                courseDesignator = FindLongestDescription(eventDB, symbolDB);
                 noTextOrSymbols = true;
             }
 
             // Get the course view for the description we're using.
-            courseViewDescription = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+            courseViewDescription = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
 
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB);
-            descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
+            descKind = QueryEvent.GetDefaultDescKind(eventDB, courseDesignator.CourseId);
             description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             if (noTextOrSymbols)
                 DescriptionFormatter.ClearTextAndSymbols(description);
@@ -491,18 +491,21 @@ namespace PurplePen
         }
 
         // Find the longest description we have. If we have no courses, then return None.
-        static Id<Course> FindLongestDescription(EventDB eventDB, SymbolDB symbolDB)
+        static CourseDesignator FindLongestDescription(EventDB eventDB, SymbolDB symbolDB)
         {
             int longest = 0;
-            Id<Course> longestCourse = Id<Course>.None;
+            CourseDesignator longestCourse = CourseDesignator.AllControls;
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                DescriptionFormatter descFormatter = new DescriptionFormatter(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId)), symbolDB);
-                DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-                DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
-                if (description.Length > longest) {
-                    longest = description.Length;
-                    longestCourse = courseId;
+                int numberOfParts = QueryEvent.CountCourseParts(eventDB, courseId);
+                for (int part = 0; part < numberOfParts; ++part) {
+                    DescriptionFormatter descFormatter = new DescriptionFormatter(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId, part)), symbolDB);
+                    DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
+                    DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
+                    if (description.Length > longest) {
+                        longest = description.Length;
+                        longestCourse = new CourseDesignator(courseId, part);
+                    }
                 }
             }
 
