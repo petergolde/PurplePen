@@ -405,7 +405,7 @@ namespace PurplePen
 
             // Get load information about each leg. To enumerate all legs, just enumerate all courses and all legs on each course.
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                foreach (QueryEvent.LegInfo leg in QueryEvent.EnumLegs(eventDB, courseId)) {
+                foreach (QueryEvent.LegInfo leg in QueryEvent.EnumLegs(eventDB, new CourseDesignator(courseId))) {
                     Id<ControlPoint> controlId1 = eventDB.GetCourseControl(leg.courseControlId1).control;
                     Id<ControlPoint> controlId2 = eventDB.GetCourseControl(leg.courseControlId2).control;
                     Pair<Id<ControlPoint>, Id<ControlPoint>> key = new Pair<Id<ControlPoint>, Id<ControlPoint>>(controlId1, controlId2);

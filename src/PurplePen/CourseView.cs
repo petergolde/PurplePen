@@ -413,7 +413,7 @@ namespace PurplePen
         // Create an filtered All Controls view -- show controls from the control collection, but only includes some.
         // excludedCourses contains an array of course ids to excluded from the contgrols.
         // kindFilter, if non-null, limits the controls to this kind of controls.
-        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, Id<Course>[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
+        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, CourseDesignator[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
         {
             CourseView courseView = new CourseView(eventDB, CourseDesignator.AllControls);
 
@@ -428,8 +428,8 @@ namespace PurplePen
 
                 if (excludedCourses != null) {
                     // Filter excluded courses.
-                    foreach (Id<Course> excludedCourseId in excludedCourses) {
-                        if (QueryEvent.CourseUsesControl(eventDB, excludedCourseId, controlId))
+                    foreach (CourseDesignator excludedCourseDesignator in excludedCourses) {
+                        if (QueryEvent.CourseUsesControl(eventDB, excludedCourseDesignator, controlId))
                             goto SKIP;
                     }
                 }
@@ -527,7 +527,7 @@ namespace PurplePen
                 lastCourseControl = Id<CourseControl>.None;
             }
             else {
-                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator.CourseId, courseDesignator.Part, out firstCourseControl, out lastCourseControl);
+                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator, out firstCourseControl, out lastCourseControl);
             }
             
             CourseView courseView = new CourseView(eventDB, courseDesignator);

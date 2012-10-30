@@ -88,7 +88,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -141,7 +141,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -191,8 +191,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(28.3F, 30.7F), eventDB.GetControl(newControlId).location);
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -225,7 +225,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -237,8 +237,8 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), ControlId(48)));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), ControlId(48))[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), ControlId(48)));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), ControlId(48))[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -271,7 +271,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -306,8 +306,8 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), ControlId(41)));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), ControlId(41))[1];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), ControlId(41)));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), ControlId(41))[1];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -337,7 +337,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -379,7 +379,7 @@ namespace PurplePen.Tests
 
             // Begin adding a start.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -433,7 +433,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             StartCourseObj obj = (StartCourseObj) highlights[0];
@@ -477,8 +477,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the start.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(302));
             Assert.IsTrue(eventDB.GetCourse(CourseId(3)).firstCourseControl == newCourseControlId);
         }
@@ -505,7 +505,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -521,8 +521,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the start.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(302));
             Assert.IsTrue(eventDB.GetCourse(CourseId(3)).firstCourseControl == newCourseControlId);
         }
@@ -545,7 +545,7 @@ namespace PurplePen.Tests
 
             // Begin adding a finish.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -600,7 +600,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             FinishCourseObj obj = (FinishCourseObj) highlights[0];
@@ -644,8 +644,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the finish.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl.IsNone);
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(314)).nextCourseControl == newCourseControlId);
         }
@@ -673,7 +673,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -689,8 +689,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the finish.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl.IsNone);
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(314)).nextCourseControl == newCourseControlId);
         }
@@ -829,7 +829,7 @@ namespace PurplePen.Tests
 
             // Begin adding a crossing point.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             CrossingCourseObj obj = (CrossingCourseObj) highlights[0];
@@ -870,8 +870,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(ControlPointKind.CrossingPoint, eventDB.GetControl(newControlId).kind);
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
         }

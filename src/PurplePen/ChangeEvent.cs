@@ -184,6 +184,18 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, controlPoint);
         }
 
+        // Change the number location for a course-control. If customLocation is false, puts the number location as automaticLocation
+        public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
+        {
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+
+            if (courseControl.exchange != isExchange) {
+                courseControl = (CourseControl)courseControl.Clone();
+                courseControl.exchange = isExchange;
+                eventDB.ReplaceCourseControl(courseControlId, courseControl);
+            }
+        }
+
         // Change the event title. Seperate lines with "|".
         public static void ChangeEventTitle(EventDB eventDB, string newTitle)
         {
@@ -575,7 +587,7 @@ namespace PurplePen
         {
             // Find all of the courses/course-controls that are this control.
             foreach (Id<Course> courseId in QueryEvent.CoursesUsingControl(eventDB, controlId)) {
-                foreach (Id<CourseControl> courseControlId in QueryEvent.GetCourseControlsInCourse(eventDB, courseId, controlId)) {
+                foreach (Id<CourseControl> courseControlId in QueryEvent.GetCourseControlsInCourse(eventDB, new CourseDesignator(courseId), controlId)) {
                     RemoveCourseControl(eventDB, courseId, courseControlId);
                 }
             }
@@ -778,7 +790,7 @@ namespace PurplePen
         public static void DeleteCourse(EventDB eventDB, Id<Course> courseId)
         {
             // Remember the set of course controls.
-            List<Id<CourseControl>> courseControls = new List<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, courseId));
+            List<Id<CourseControl>> courseControls = new List<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)));
 
             // Remove the course.
             eventDB.RemoveCourse(courseId);

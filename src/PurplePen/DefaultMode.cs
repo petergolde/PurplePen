@@ -376,7 +376,7 @@ namespace PurplePen
 
                     // If we're dragging the start, update the angle of the start appropriately.
                     if ((control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange) && additionalHighlights.Length > 0) {
-                        SymPath pathFromStart = ((LineCourseObj) additionalHighlights[0]).path;
+                        SymPath pathFromStart = ((LineCourseObj) additionalHighlights[additionalHighlights.Length - 1]).path;
                         PointF[] pts = pathFromStart.FlattenedPoints;
                         double angleOut = Math.Atan2(pts[1].Y - pts[0].Y, pts[1].X - pts[0].X);
                         if (!double.IsNaN(angleOut)) 

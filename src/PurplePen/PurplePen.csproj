@@ -156,9 +156,51 @@
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommandNameText.Designer.cs" />
-    <Compile Include="CommandNameText.fr.Designer.cs" />
-    <Compile Include="CommandNameText.sv.Designer.cs" />
+    <Compile Include="CommandNameText.bg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.fr1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.nb-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.nb-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.nn-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.nn-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.sv1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="CourseAppearanceDialog.cs">
       <SubType>Form</SubType>
@@ -316,8 +358,46 @@
     </Compile>
     <Compile Include="MapView\Util.cs" />
     <Compile Include="MapView\ViewCache.cs" />
-    <Compile Include="MiscText.fr.Designer.cs" />
-    <Compile Include="MiscText.sv.Designer.cs" />
+    <Compile Include="MiscText.bg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.nb-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.nb-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.nn-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.nn-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.sv.resx</DependentUpon>
+    </Compile>
     <Compile Include="MiscText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -446,14 +526,99 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs" />
-    <Compile Include="ReportText.Designer.cs" />
-    <Compile Include="ReportText.fr.Designer.cs" />
-    <Compile Include="ReportText.sv.Designer.cs" />
+    <Compile Include="ReportText.bg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.nb-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.nb-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.nn-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.nn-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.resx</DependentUpon>
+    </Compile>
     <Compile Include="RotateMode.cs" />
     <Compile Include="SelectionDescriber.cs" />
-    <Compile Include="SelectionDescriptionText.Designer.cs" />
+    <Compile Include="SelectionDescriptionText.bg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.fi.resx</DependentUpon>
+    </Compile>
     <Compile Include="SelectionDescriptionText.fr.Designer.cs" />
-    <Compile Include="SelectionDescriptionText.sv.Designer.cs" />
+    <Compile Include="SelectionDescriptionText.fr1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.nb-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.nb-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.nn-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.nn-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
+    </Compile>
     <Compile Include="SelectionMgr.cs" />
     <Compile Include="SetPrintAreaDialog.cs">
       <SubType>Form</SubType>
@@ -467,9 +632,51 @@
     <Compile Include="SetUILanguage.Designer.cs">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </Compile>
-    <Compile Include="StatusBarText.Designer.cs" />
-    <Compile Include="StatusBarText.fr.Designer.cs" />
-    <Compile Include="StatusBarText.sv.Designer.cs" />
+    <Compile Include="StatusBarText.bg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.nb-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.nb-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.nn-NO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.nn-NO.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.sv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.resx</DependentUpon>
+    </Compile>
     <Compile Include="SymbolDB.cs" />
     <Compile Include="SymbolPopup.cs" />
     <Compile Include="Textifier.cs" />
@@ -808,15 +1015,42 @@
     <EmbeddedResource Include="ChangeText.sv.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandNameText.bg.resx" />
-    <EmbeddedResource Include="CommandNameText.es.resx" />
-    <EmbeddedResource Include="CommandNameText.fi.resx" />
-    <EmbeddedResource Include="CommandNameText.fr.resx" />
-    <EmbeddedResource Include="CommandNameText.nb-NO.resx" />
-    <EmbeddedResource Include="CommandNameText.nn-NO.resx" />
-    <EmbeddedResource Include="CommandNameText.resx" />
-    <EmbeddedResource Include="CommandNameText.ro.resx" />
-    <EmbeddedResource Include="CommandNameText.sv.resx" />
+    <EmbeddedResource Include="CommandNameText.bg.resx">
+      <LastGenOutput>CommandNameText.bg.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.es.resx">
+      <LastGenOutput>CommandNameText.es.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.fi.resx">
+      <LastGenOutput>CommandNameText.fi.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.fr.resx">
+      <LastGenOutput>CommandNameText.fr1.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.nb-NO.resx">
+      <LastGenOutput>CommandNameText.nb-NO.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.nn-NO.resx">
+      <LastGenOutput>CommandNameText.nn-NO.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.ro.resx">
+      <LastGenOutput>CommandNameText.ro.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandNameText.sv.resx">
+      <LastGenOutput>CommandNameText.sv1.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.bg.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1198,19 +1432,43 @@
     <EmbeddedResource Include="MapView\MapViewer.resx">
       <DependentUpon>MapViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.bg.resx" />
-    <EmbeddedResource Include="MiscText.es.resx" />
-    <EmbeddedResource Include="MiscText.fi.resx" />
-    <EmbeddedResource Include="MiscText.fr.resx" />
-    <EmbeddedResource Include="MiscText.nb-NO.resx" />
-    <EmbeddedResource Include="MiscText.nn-NO.resx" />
+    <EmbeddedResource Include="MiscText.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.bg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.nb-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.nb-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.nn-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.nn-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiscText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.ro.resx" />
-    <EmbeddedResource Include="MiscText.sv.resx" />
+    <EmbeddedResource Include="MiscText.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.bg.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
@@ -1735,24 +1993,78 @@
     <EmbeddedResource Include="ReportForm.sv.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportText.bg.resx" />
-    <EmbeddedResource Include="ReportText.es.resx" />
-    <EmbeddedResource Include="ReportText.fi.resx" />
-    <EmbeddedResource Include="ReportText.fr.resx" />
-    <EmbeddedResource Include="ReportText.nb-NO.resx" />
-    <EmbeddedResource Include="ReportText.nn-NO.resx" />
-    <EmbeddedResource Include="ReportText.resx" />
-    <EmbeddedResource Include="ReportText.ro.resx" />
-    <EmbeddedResource Include="ReportText.sv.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.bg.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.es.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.fi.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.fr.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.ro.resx" />
-    <EmbeddedResource Include="SelectionDescriptionText.sv.resx" />
+    <EmbeddedResource Include="ReportText.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.bg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.nb-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.nb-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.nn-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.nn-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.bg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.fr1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.nb-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.nn-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.bg.resx">
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1807,15 +2119,42 @@
     <EmbeddedResource Include="SetUILanguage.sv.resx">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusBarText.bg.resx" />
-    <EmbeddedResource Include="StatusBarText.es.resx" />
-    <EmbeddedResource Include="StatusBarText.fi.resx" />
-    <EmbeddedResource Include="StatusBarText.fr.resx" />
-    <EmbeddedResource Include="StatusBarText.nb-NO.resx" />
-    <EmbeddedResource Include="StatusBarText.nn-NO.resx" />
-    <EmbeddedResource Include="StatusBarText.resx" />
-    <EmbeddedResource Include="StatusBarText.ro.resx" />
-    <EmbeddedResource Include="StatusBarText.sv.resx" />
+    <EmbeddedResource Include="StatusBarText.bg.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.bg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.nb-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.nb-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.nn-NO.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.nn-NO.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusBarText.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.sv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.bg.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </EmbeddedResource>

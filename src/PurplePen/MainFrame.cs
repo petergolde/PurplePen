@@ -114,7 +114,10 @@ namespace PurplePen
             addFinishMenu.Image = addFinishToolStripButton.Image;
             deleteMenu.Image = deleteToolStripButton.Image;
             deleteItemMenu.Image = deleteToolStripButton.Image;
-            addSpecialItemMenu.Image = ncross.Image;
+            addMapExchangeMenu.Image = mapExchangeToolStripMenu.Image;
+            mapExchangeControlMenuItem.Image = mapExchangeControlToolStripMenuItem.Image;
+            mapExchangeSeparateMenuItem.Image = mapExchangeSeparateToolStripMenuItem.Image;
+            addSpecialItemMenu.Image = specialItemToolStripMenu.Image;
             addOptCrossingMenu.Image = optionalCrossingPointToolStripMenuItem.Image;
             addMandatoryCrossingMenu.Image = mandatoryCrossingPointToolStripMenuItem.Image;
             addWaterMenu.Image = waterLocationToolStripMenuItem.Image;
@@ -512,6 +515,10 @@ namespace PurplePen
             UpdateMenuItem(rotateMenu, controller.CanRotate());
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
+            UpdateMenuItem(mapExchangeControlMenuItem, controller.CanAddMapExchangeControl());
+            UpdateMenuItem(mapExchangeControlToolStripMenuItem, controller.CanAddMapExchangeControl());
+            UpdateMenuItem(mapExchangeSeparateMenuItem, controller.CanAddMapExchangeSeparate());
+            UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -868,17 +875,27 @@ namespace PurplePen
 
         private void addControlMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
         }
 
         private void addStartMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
         }
 
         private void addFinishMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+        }
+
+        private void addMapExchangeControl_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.Normal, true);
+        }
+
+        private void addMapExchangeSeparate_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.MapExchange, false);
         }
 
         private void zoomMenu_Click(object sender, EventArgs e)
@@ -1170,7 +1187,7 @@ namespace PurplePen
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
         }
 
         private void addOutOfBoundsMenu_Click(object sender, EventArgs e)
@@ -2075,7 +2092,6 @@ namespace PurplePen
 
             openFile.Dispose();
         }
-
 
 
 

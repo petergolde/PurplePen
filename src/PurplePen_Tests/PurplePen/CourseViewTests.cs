@@ -399,7 +399,7 @@ Special 5 (Text)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] {CourseId(3), CourseId(4)}, ControlPointKind.Normal, false, true);
+            CourseView courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3), Designator(4) }, ControlPointKind.Normal, false, true);
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =

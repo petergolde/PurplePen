@@ -60,6 +60,11 @@ namespace PurplePen.Tests
             return new CourseDesignator(CourseId(id));
         }
 
+        internal CourseDesignator Designator(int id, int part)
+        {
+            return new CourseDesignator(CourseId(id), part);
+        }
+
         internal Id<Course> CourseId(int id)
         {
             return new Id<Course>(id);

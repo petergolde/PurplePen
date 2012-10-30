@@ -139,11 +139,13 @@ namespace PurplePen.Tests
 
             List<Id<CourseControl>> result = new List<Id<CourseControl>>();
 
-            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, CourseId(1)))
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(1)))
                 result.Add(id);
 
             TestUtil.TestEnumerableAnyOrder(result, new Id<CourseControl>[] { CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(4), CourseControlId(5), CourseControlId(6) });
         }
+
+        // UNDONE MAPEXCHANGE: Test EnumCourseControlIds for map exchanges.
 
         [TestMethod]
         public void EnumLegs()
@@ -152,7 +154,7 @@ namespace PurplePen.Tests
 
             List<QueryEvent.LegInfo> result = new List<QueryEvent.LegInfo>();
 
-            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, CourseId(1)))
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(1)))
                 result.Add(id);
 
             TestUtil.TestEnumerableAnyOrder(result, new QueryEvent.LegInfo[] 
@@ -166,47 +168,53 @@ namespace PurplePen.Tests
             });
 
             // Score course has no legs in it.
-            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, CourseId(5)))
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(5)))
                 Assert.Fail("Score course should have no legs in it");
 
             // Empty course has no legs in it.
-            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, CourseId(2)))
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(2)))
                 Assert.Fail("Empty course should have no legs in it");
         }
+
+        // UNDONE MAPEXCHANGE: Test EnumLegs for map exchanges.
+
 
         [TestMethod]
         public void FindClosestLeg()
         {
             Setup("queryevent\\sampleevent1.coursescribe");
 
-            QueryEvent.LegInfo result = QueryEvent.FindClosestLeg(eventDB, CourseId(4), new PointF(-8.6F, 0.5F));
+            QueryEvent.LegInfo result = QueryEvent.FindClosestLeg(eventDB, Designator(4), new PointF(-8.6F, 0.5F));
             Assert.AreEqual(CourseControlId(11), result.courseControlId1);
             Assert.AreEqual(CourseControlId(12), result.courseControlId2);
 
-            result = QueryEvent.FindClosestLeg(eventDB, CourseId(4), new PointF(-57F, 37F));
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(4), new PointF(-57F, 37F));
             Assert.AreEqual(CourseControlId(18), result.courseControlId1);
             Assert.AreEqual(CourseControlId(19), result.courseControlId2);
 
-            result = QueryEvent.FindClosestLeg(eventDB, CourseId(4), new PointF(-37F, 60F));
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(4), new PointF(-37F, 60F));
             Assert.AreEqual(CourseControlId(17), result.courseControlId1);
             Assert.AreEqual(CourseControlId(18), result.courseControlId2);
 
-            result = QueryEvent.FindClosestLeg(eventDB, CourseId(4), new PointF(9.8F, 4.5F));
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(4), new PointF(9.8F, 4.5F));
             Assert.AreEqual(CourseControlId(12), result.courseControlId1);
             Assert.AreEqual(CourseControlId(13), result.courseControlId2);
 
 
 
             // Score course should have no legs.
-            result = QueryEvent.FindClosestLeg(eventDB, CourseId(5), new PointF(-8.6F, 0.5F));
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(5), new PointF(-8.6F, 0.5F));
             Assert.IsTrue(result.courseControlId1.IsNone);
             Assert.IsTrue(result.courseControlId2.IsNone);
 
             // Empty course should have no legs.
-            result = QueryEvent.FindClosestLeg(eventDB, CourseId(2), new PointF(-8.6F, 0.5F));
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(2), new PointF(-8.6F, 0.5F));
             Assert.IsTrue(result.courseControlId1.IsNone);
             Assert.IsTrue(result.courseControlId2.IsNone);
         }
+
+        // UNDONE MAPEXCHANGE: Test FindClosesLeg for map exchanges.
+
 
         [TestMethod]
         public void GetCourseControlsInCourse()
@@ -215,23 +223,27 @@ namespace PurplePen.Tests
 
             Id<CourseControl>[] result;
 
-            result = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(1), ControlId(8));
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(1), ControlId(8));
             TestUtil.TestEnumerableAnyOrder(result, new Id<CourseControl>[] { CourseControlId(4) });
-            result = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(1), ControlId(19));
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(1), ControlId(19));
             Assert.AreEqual(0, result.Length);
         }
+
+        // UNDONE MAPEXCHANGE: Test GetCourseControlsInCourse for map exchanges.
 
         [TestMethod]
         public void CourseUsesControl()
         {
             Setup("queryevent\\sampleevent1.coursescribe");
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(1), ControlId(8)));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), ControlId(17)));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(4), ControlId(1)));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(4), ControlId(6)));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(4), ControlId(8)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(1), ControlId(8)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), ControlId(17)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(4), ControlId(1)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(4), ControlId(6)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(4), ControlId(8)));
         }
+
+        // UNDONE MAPEXCHANGE: Test CourseUsesControl for map exchanges.
 
         [TestMethod]
         public void IsPreferredCode()
@@ -463,40 +475,40 @@ namespace PurplePen.Tests
             Setup("queryevent\\sampleevent11.ppen");
 
             Id<CourseControl> courseControlId1, courseControlId2;
-            Id<Course> courseId = CourseId(6);          
+            CourseDesignator courseDesignator = Designator(6);          
 
             // Case 1: no course control or leg specified. Should go right before finish.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(212, courseControlId1.id);
             Assert.AreEqual(213, courseControlId2.id);
 
             // Case 2: selected control is start.
             courseControlId1 = CourseControlId(201);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(201, courseControlId1.id);
             Assert.AreEqual(202, courseControlId2.id);
 
             // Case 3: selected control is finish.
             courseControlId1 = CourseControlId(213);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(212, courseControlId1.id);
             Assert.AreEqual(213, courseControlId2.id);
 
             // Case 4: selected control is regular control
             courseControlId1 = CourseControlId(206);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(206, courseControlId1.id);
             Assert.AreEqual(207, courseControlId2.id);
 
             // Case 5: selected leg
             courseControlId1 = CourseControlId(204);
             courseControlId2 = CourseControlId(205);
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(204, courseControlId1.id);
             Assert.AreEqual(205, courseControlId2.id);
         }
@@ -508,33 +520,33 @@ namespace PurplePen.Tests
             Setup("queryevent\\sampleevent11.ppen");
 
             Id<CourseControl> courseControlId1, courseControlId2;
-            Id<Course> courseId = CourseId(7);
+            CourseDesignator courseDesignator = Designator(7);
 
             // Case 1: no course control or leg specified. Should go at end.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(216, courseControlId1.id);
             Assert.IsTrue(courseControlId2.IsNone);
 
             // Case 2: selected control is last.
             courseControlId1 = CourseControlId(216);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(216, courseControlId1.id);
             Assert.IsTrue(courseControlId2.IsNone);
 
             // Case 3: selected control is start.
             courseControlId1 = CourseControlId(214);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(214, courseControlId1.id);
             Assert.AreEqual(216, courseControlId2.id);
 
             // Case 5: selected leg
             courseControlId1 = CourseControlId(214);
             courseControlId2 = CourseControlId(216);
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.AreEqual(214, courseControlId1.id);
             Assert.AreEqual(216, courseControlId2.id);
         }
@@ -546,17 +558,17 @@ namespace PurplePen.Tests
             Setup("queryevent\\sampleevent11.ppen");
 
             Id<CourseControl> courseControlId1, courseControlId2;
-            Id<Course> courseId = CourseId(2);
+            CourseDesignator courseDesignator = Designator(2);
 
             // Case 1: no course control or leg specified. Should go as only control.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
             Assert.IsTrue(courseControlId1.IsNone);
             Assert.IsTrue(courseControlId2.IsNone);
         }
 	
-
+        // UNDONE MAPEXCHANGE: Test FindControlInsertionPoint for map exchanges.
 
 
         [TestMethod]
@@ -1130,35 +1142,35 @@ namespace PurplePen.Tests
             Id<CourseControl> startCourseControlId, endCourseControlId;
             bool result;
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 0, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(6, 0), out startCourseControlId, out endCourseControlId);
             Assert.IsTrue(result);
             Assert.AreEqual(CourseControlId(601), startCourseControlId);
             Assert.AreEqual(CourseControlId(611), endCourseControlId);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 1, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(6, 1), out startCourseControlId, out endCourseControlId);
             Assert.IsTrue(result);
             Assert.AreEqual(CourseControlId(611), startCourseControlId);
             Assert.AreEqual(CourseControlId(615), endCourseControlId);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 2, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(6, 2), out startCourseControlId, out endCourseControlId);
             Assert.IsTrue(result);
             Assert.AreEqual(CourseControlId(615), startCourseControlId);
             Assert.AreEqual(CourseControlId(616), endCourseControlId);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 3, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(6, 3), out startCourseControlId, out endCourseControlId);
             Assert.IsTrue(result);
             Assert.AreEqual(CourseControlId(616), startCourseControlId);
             Assert.AreEqual(CourseControlId(620), endCourseControlId);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(6), 4, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(6, 4), out startCourseControlId, out endCourseControlId);
             Assert.IsFalse(result);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(1), 0, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(1, 0), out startCourseControlId, out endCourseControlId);
             Assert.IsTrue(result);
             Assert.AreEqual(CourseControlId(101), startCourseControlId);
             Assert.AreEqual(CourseControlId(112), endCourseControlId);
 
-            result = QueryEvent.GetCoursePartBounds(eventDB, CourseId(1), 1, out startCourseControlId, out endCourseControlId);
+            result = QueryEvent.GetCoursePartBounds(eventDB, Designator(1, 1), out startCourseControlId, out endCourseControlId);
             Assert.IsFalse(result);
         }
 
@@ -1167,38 +1179,38 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\mapexchange1.ppen");
 
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(601)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(611)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(602)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(610)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(612)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 0, CourseControlId(620)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(601)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(611)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(602)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(610)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(612)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 0), CourseControlId(620)));
 
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(611)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(615)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(612)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(614)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(601)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 1, CourseControlId(610)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(611)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(615)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(612)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(614)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(601)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 1), CourseControlId(610)));
 
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(616)));
-            Assert.IsTrue( QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(615)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(601)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(614)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(617)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 2, CourseControlId(620)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(616)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(615)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(601)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(614)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(617)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 2), CourseControlId(620)));
 
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(616)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(620)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(617)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(619)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(615)));
-            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, CourseId(6), 3, CourseControlId(614)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(616)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(620)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(617)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(619)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(615)));
+            Assert.IsFalse(QueryEvent.IsCourseControlInPart(eventDB, Designator(6, 3), CourseControlId(614)));
 
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(101)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(112)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(102)));
-            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, CourseId(1), 0, CourseControlId(111)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(101)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(112)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(102)));
+            Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(111)));
         }
     }
 }

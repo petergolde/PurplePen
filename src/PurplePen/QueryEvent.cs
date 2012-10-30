@@ -64,15 +64,27 @@ namespace PurplePen
         }
 
         // Enumerate all the course controls ids for a particular course.
-        public static IEnumerable<Id<CourseControl>> EnumCourseControlIds(EventDB eventDB, Id<Course> courseId)
+        public static IEnumerable<Id<CourseControl>> EnumCourseControlIds(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Id<CourseControl> nextCourseControl = eventDB.GetCourse(courseId).firstCourseControl;
+            Debug.Assert(courseDesignator.IsNotAllControls);
+
+            Id<Course> courseId = courseDesignator.CourseId;
+            int part = courseDesignator.Part;
+            Id<CourseControl> nextCourseControlId = eventDB.GetCourse(courseId).firstCourseControl;
 
             // Traverse the course control links.
-            while (nextCourseControl.IsNotNone) {
-                yield return nextCourseControl;
+            int currentPart = 0;
+            while (nextCourseControlId.IsNotNone) {
+                if (courseDesignator.AllParts || currentPart == part)
+                    yield return nextCourseControlId;
 
-                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControl);
+                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+
+                if (courseCtl.exchange) {
+                    ++currentPart;
+                    if (!courseDesignator.AllParts && currentPart == part)
+                        yield return nextCourseControlId;
+                }
 
                 if (courseCtl.split) {
                     Id<CourseControl> joinId = Id<CourseControl>.None;
@@ -86,16 +98,17 @@ namespace PurplePen
                                 break;
                             }
                             else {
-                                yield return nextCourseControlInSplit;
+                                if (courseDesignator.AllParts || currentPart == part)
+                                    yield return nextCourseControlInSplit;
                                 nextCourseControlInSplit = eventDB.GetCourseControl(nextCourseControlInSplit).nextCourseControl;
                             }
                         }
                     }
 
-                    nextCourseControl = joinId;
+                    nextCourseControlId = joinId;
                 }
                 else {
-                    nextCourseControl = courseCtl.nextCourseControl;
+                    nextCourseControlId = courseCtl.nextCourseControl;
                 }
             }
         }
@@ -113,31 +126,40 @@ namespace PurplePen
             }
         }
 
-        public static IEnumerable<LegInfo> EnumLegs(EventDB eventDB, Id<Course> courseId)
+        public static IEnumerable<LegInfo> EnumLegs(EventDB eventDB, CourseDesignator courseDesignator)
         {
+            if (courseDesignator.IsAllControls)
+                yield break;
+
+            Id<Course> courseId = courseDesignator.CourseId;
+
             // Score courses, by definition, have no legs.
             if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
                 yield break;
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+            bool first = true;
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
-                if (courseControl.split) {
-                    foreach (Id<CourseControl> courseControlIdTo in courseControl.nextSplitCourseControls)
-                        yield return new LegInfo(courseControlId, courseControlIdTo);
-                }
-                else if (courseControl.nextCourseControl.IsNotNone) {
+                if (first || courseDesignator.AllParts || !courseControl.exchange) {
+                    if (courseControl.split) {
+                        foreach (Id<CourseControl> courseControlIdTo in courseControl.nextSplitCourseControls)
+                            yield return new LegInfo(courseControlId, courseControlIdTo);
+                    }
+                    else if (courseControl.nextCourseControl.IsNotNone) {
                         yield return new LegInfo(courseControlId, courseControl.nextCourseControl);
+                    }
                 }
+                first = false;
             }
         }
 
         // Find the closest leg to a given point on a course. The leg might be None/None if the course has no legs.
-        public static LegInfo FindClosestLeg(EventDB eventDB, Id<Course> courseId, PointF pt)
+        public static LegInfo FindClosestLeg(EventDB eventDB, CourseDesignator courseDesignator, PointF pt)
         {
             LegInfo closestLegSoFar = new LegInfo();
             float closestSoFar = 1E10F;
 
-            foreach (LegInfo leg in EnumLegs(eventDB, courseId)) {
+            foreach (LegInfo leg in EnumLegs(eventDB, courseDesignator)) {
                 PointF temp;
                 SymPath legPath = GetLegPath(eventDB, eventDB.GetCourseControl(leg.courseControlId1).control, eventDB.GetCourseControl(leg.courseControlId2).control);
                 float distance = legPath.DistanceFromPoint(pt, out temp);
@@ -160,11 +182,11 @@ namespace PurplePen
 
         // Find all the course controls for a particular control in a particular course. If the course
         // doesn't contain the given controlId, an empty array is returned.
-        public static Id<CourseControl>[] GetCourseControlsInCourse(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> controlId)
+        public static Id<CourseControl>[] GetCourseControlsInCourse(EventDB eventDB, CourseDesignator courseDesignator, Id<ControlPoint> controlId)
         {
             List<Id<CourseControl>> list = new List<Id<CourseControl>>();
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 if (eventDB.GetCourseControl(courseControlId).control == controlId)
                     list.Add(courseControlId);
             }
@@ -173,11 +195,11 @@ namespace PurplePen
         }
 
         // Return if a give course uses a given control.
-        public static bool CourseUsesControl(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> controlId)
+        public static bool CourseUsesControl(EventDB eventDB, CourseDesignator courseDesignator, Id<ControlPoint> controlId)
         {
             eventDB.CheckControlId(controlId);
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 if (eventDB.GetCourseControl(courseControlId).control == controlId)
                     return true;
             }
@@ -192,7 +214,7 @@ namespace PurplePen
             List<Id<Course>> list = new List<Id<Course>>();
 
             foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
-                if (CourseUsesControl(eventDB, courseId, controlId))
+                if (CourseUsesControl(eventDB, new CourseDesignator(courseId), controlId))
                     list.Add(courseId);
             }
 
@@ -206,7 +228,7 @@ namespace PurplePen
             List<Id<Course>> list = new List<Id<Course>>();
 
             foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
-                foreach (LegInfo leg in EnumLegs(eventDB, courseId)) {
+                foreach (LegInfo leg in EnumLegs(eventDB, new CourseDesignator(courseId))) {
                     if (eventDB.GetCourseControl(leg.courseControlId1).control == control1 &&
                         eventDB.GetCourseControl(leg.courseControlId2).control == control2) 
                     {
@@ -225,7 +247,7 @@ namespace PurplePen
         {
             int currentPart = 0;
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, new CourseDesignator(courseId))) {
                 if (eventDB.GetCourseControl(courseControlId).exchange)
                     ++currentPart;
             }
@@ -236,50 +258,31 @@ namespace PurplePen
 
         // Get the start and end coursecontrols (inclusive on both ends) for a particular part of a course (parts separated by map exchanges).
         // If the given part doesn't exist, return false. If there are no map exchanges, then part 0 is the entire course.
-        public static bool GetCoursePartBounds(EventDB eventDB, Id<Course> courseId, int part, out Id<CourseControl> startCourseControlId, out Id<CourseControl> endCourseControlId)
+        public static bool GetCoursePartBounds(EventDB eventDB, CourseDesignator courseDesignator, out Id<CourseControl> startCourseControlId, out Id<CourseControl> endCourseControlId)
         {
+            Debug.Assert(courseDesignator.IsNotAllControls);
+
             startCourseControlId = endCourseControlId = Id<CourseControl>.None;
 
-            int currentPart = 0;
             bool startFound = false;      // did we find the beginning part of the course part?
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
-                if (currentPart == part) {
-                    if (!startFound) {
-                        startFound = true;
-                        startCourseControlId = courseControlId;
-                    }
-                    endCourseControlId = courseControlId;
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
+                if (!startFound) {
+                    startFound = true;
+                    startCourseControlId = courseControlId;
                 }
-
-                if (eventDB.GetCourseControl(courseControlId).exchange) {
-                    ++currentPart;
-
-                    if (currentPart == part) {
-                        startFound = true;
-                        startCourseControlId = courseControlId;
-                    }
-                }
+                endCourseControlId = courseControlId;
             }
 
             return startFound;
         }
 
         // Determine if the given course control is in the given part.
-        public static bool IsCourseControlInPart(EventDB eventDB, Id<Course> courseId, int part, Id<CourseControl> courseControlId)
+        public static bool IsCourseControlInPart(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
         {
-            Id<CourseControl> startCourseControlId, endCourseControlId;
-
-            if (!GetCoursePartBounds(eventDB, courseId, part, out startCourseControlId, out endCourseControlId))
-                return false;
-
-            Id<CourseControl> current = startCourseControlId;
-            while (current.IsNotNone) {
-                if (current == courseControlId)
+            foreach (Id<CourseControl> courseControlInPart in EnumCourseControlIds(eventDB, courseDesignator)) {
+                if (courseControlInPart == courseControlId)
                     return true;
-                if (current == endCourseControlId)
-                    break;
-                current = eventDB.GetCourseControl(current).nextCourseControl;
             }
 
             return false;
@@ -524,7 +527,7 @@ namespace PurplePen
         {
             Id<CourseControl> last = Id<CourseControl>.None;
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, new CourseDesignator(courseId))) {
                 if (!dontReturnFinish || eventDB.GetControl(eventDB.GetCourseControl(courseControlId).control).kind != ControlPointKind.Finish)
                     last = courseControlId;
             }
@@ -583,8 +586,9 @@ namespace PurplePen
         //     If inserting as last course control -- courseControl1 is the current last control and courseControl2 is None  (only occurs when there is no finish)
         //     If inserting as first course control -- courseControl2 is None and courseControl2 is current first control (only occurs when there is no start)
         //     If inserting as only course control -- both are none (only occurs if course is currently empty)
-        public static void FindControlInsertionPoint(EventDB eventDB, Id<Course> courseId, ref Id<CourseControl> courseControl1, ref Id<CourseControl> courseControl2)
+        public static void FindControlInsertionPoint(EventDB eventDB, CourseDesignator courseDesignator, ref Id<CourseControl> courseControl1, ref Id<CourseControl> courseControl2)
         {
+            Id<Course> courseId = courseDesignator.CourseId;
             if (courseControl1.IsNotNone && courseControl2.IsNotNone) {
                 // A leg was specified already. Nothing to do.
                 return;
@@ -709,6 +713,8 @@ namespace PurplePen
 
             ControlPoint control2 = eventDB.GetControl(controlId2);
             if (control2.kind == ControlPointKind.Finish && control2.symbolIds[0] == "14.1")
+                flagging = FlaggingKind.All;
+            if (control2.kind == ControlPointKind.MapExchange)
                 flagging = FlaggingKind.All;
 
             return flagging;

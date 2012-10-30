@@ -55,13 +55,14 @@ namespace PurplePen
         EventDB eventDB;
         bool allControls;                  // Are we in All Controls (true), or adding to a course (false)
         ControlPointKind controlKind;      // Kind of control we are adding.
+        bool exchangeAtControl;            // If true, controlKind == Normal and we are changing a control to an exchange point.
         float scaleRatio;
         CourseAppearance appearance;
 
         PointCourseObj highlight;    // the highlight of the control we are creating.
         CourseObj[] additionalHighlights;  // additional highlights to show also. 
 
-        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, bool allControls, ControlPointKind controlKind)
+        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
@@ -69,6 +70,7 @@ namespace PurplePen
             this.eventDB = eventDB;
             this.allControls = allControls;
             this.controlKind = controlKind;
+            this.exchangeAtControl = exchangeAtControl;
             this.scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
             this.appearance = controller.GetCourseAppearance();
         }
@@ -88,7 +90,7 @@ namespace PurplePen
                 PointF highlightLocation;
                 bool temp = false;
                 HitTestPoint(location, pixelSize, out highlightLocation);
-                SetHighlightLocation(highlightLocation, ref temp);
+                SetHighlightLocation(highlightLocation, pixelSize, ref temp);
             }
         }
 
@@ -144,15 +146,22 @@ namespace PurplePen
                     return courseObj.controlId;
                 }
                 else {
-                    // Allow selecting a control in the current course for a butterfly course. But -- it must be a normal control or crossing point, and not adjacent to the control being inserted.
                     courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.MainCourse, typeof(PointCourseObj)) as PointCourseObj;
-                    if (courseObj != null && courseObj.controlId.IsNotNone && eventDB.GetControl(courseObj.controlId).kind == controlKind && (controlKind == ControlPointKind.Normal || controlKind == ControlPointKind.CrossingPoint)) {
-                        Id<CourseControl> courseControl1, courseControl2;
-                        Id<Course> courseId;
-                        GetControlInsertionPoint(courseObj.location, out courseId, out courseControl1, out courseControl2);
-                        if (eventDB.GetCourse(courseId).kind != CourseKind.Score && courseObj.courseControlId != courseControl1 && courseObj.courseControlId != courseControl2) {
-                            highlightLocation = courseObj.location;
-                            return courseObj.controlId;
+                    if (courseObj != null && 
+                        courseObj.controlId.IsNotNone)
+                    {
+                        // Allow selecting a control in the current course for a butterfly course. But -- it must be a normal control or crossing point, and not adjacent to the control being inserted.
+                        if (eventDB.GetControl(courseObj.controlId).kind == controlKind && (controlKind == ControlPointKind.Normal || controlKind == ControlPointKind.CrossingPoint)) 
+                        {
+                            Id<CourseControl> courseControl1, courseControl2;
+                            CourseDesignator courseDesignator;
+                            GetControlInsertionPoint(courseObj.location, out courseDesignator, out courseControl1, out courseControl2);
+                            if (eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score && 
+                                (exchangeAtControl || 
+                                 (courseObj.courseControlId != courseControl1 && courseObj.courseControlId != courseControl2))) {
+                                highlightLocation = courseObj.location;
+                                return courseObj.controlId;
+                            }
                         }
                     }
 
@@ -166,7 +175,7 @@ namespace PurplePen
         {
             PointF highlightLocation;
             Id<ControlPoint> controlId = HitTestPoint(location, pixelSize, out highlightLocation);
-            SetHighlightLocation(highlightLocation, ref displayUpdateNeeded);
+            SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
         }
 
         public override IMapViewerHighlight[] GetHighlights()
@@ -187,11 +196,10 @@ namespace PurplePen
         }
 
         // Get the controls the define where to insert the new control point.
-        private void GetControlInsertionPoint(PointF pt, out Id<Course> courseId, out Id<CourseControl> courseControlId1, out Id<CourseControl> courseControlId2)
+        private void GetControlInsertionPoint(PointF pt, out CourseDesignator courseDesignator, out Id<CourseControl> courseControlId1, out Id<CourseControl> courseControlId2)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
-            CourseDesignator courseDesignator = selection.ActiveCourseDesignator;
-            courseId = courseDesignator.CourseId;
+            courseDesignator = selection.ActiveCourseDesignator;
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
 
@@ -201,15 +209,15 @@ namespace PurplePen
                 courseControlId1 = selection.SelectedCourseControl;
                 courseControlId2 = selection.SelectedCourseControl2;
             }
-            else if (courseId.IsNotNone) {
+            else if (courseDesignator.IsNotAllControls) {
                 // Not all control, and neight control or leg is selected. Use the closest leg.
-                QueryEvent.LegInfo leg = QueryEvent.FindClosestLeg(eventDB, courseId, pt);
+                QueryEvent.LegInfo leg = QueryEvent.FindClosestLeg(eventDB, courseDesignator, pt);
                 courseControlId1 = leg.courseControlId1;
                 courseControlId2 = leg.courseControlId2;
             }
 
-            if (courseId.IsNotNone)
-                QueryEvent.FindControlInsertionPoint(eventDB, courseId, ref courseControlId1, ref courseControlId2);
+            if (courseDesignator.IsNotAllControls)
+                QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
         }
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
@@ -227,7 +235,12 @@ namespace PurplePen
             case ControlPointKind.Finish: commandString = CommandNameText.AddFinish; break;
             case ControlPointKind.CrossingPoint: commandString = CommandNameText.AddCrossingPoint; break;
             case ControlPointKind.MapExchange: commandString = CommandNameText.AddMapExchange; break;
-            default: commandString = CommandNameText.AddControl; break;
+            default:
+                if (exchangeAtControl)
+                    commandString = CommandNameText.AddMapExchange;
+                else
+                    commandString = CommandNameText.AddControl;
+                break;
             }
 
             undoMgr.BeginCommand(1321, commandString);
@@ -242,8 +255,6 @@ namespace PurplePen
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "14.3");   // set finish to "navigate to finish".
                 else if (controlKind == ControlPointKind.CrossingPoint)
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "13.3");   // set to mandatory crossing point.
-                else if (controlKind == ControlPointKind.MapExchange)
-                    Debug.Fail("UNDONE MAPEXCHANGE");
             }
 
             if (allControls) {
@@ -254,18 +265,33 @@ namespace PurplePen
                 // Add the control to the current course.
 
                 // Get where to add the control.
-                Id<Course> courseId;
+                CourseDesignator courseDesignator;
                 Id<CourseControl> courseControl1, courseControl2;
-                GetControlInsertionPoint(highlightLocation, out courseId, out courseControl1, out courseControl2);
+                GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2);
 
                 // And add it.
                 Id<CourseControl> courseControlId;
                 if (controlKind == ControlPointKind.Start)
-                    courseControlId = ChangeEvent.AddStartToCourse(eventDB, controlId, courseId, true);
+                    courseControlId = ChangeEvent.AddStartToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.Finish)
-                    courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseId, true);
-                else
-                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, courseControl1, courseControl2);
+                    courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseDesignator.CourseId, true);
+                else if (controlKind == ControlPointKind.MapExchange) {
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2);
+                    ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
+                }
+                else if (exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, courseDesignator, controlId)) {
+                    // Selected control already on course, just add map exchange at that courseControl(s)).
+                    courseControlId = Id<CourseControl>.None;
+                    foreach (Id<CourseControl> courseControlBecomesExchange in QueryEvent.GetCourseControlsInCourse(eventDB, courseDesignator, controlId)) {
+                        ChangeEvent.ChangeControlExchange(eventDB, courseControlBecomesExchange, true);
+                        courseControlId = courseControlBecomesExchange;
+                    }
+                }
+                else {
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2);
+                    if (exchangeAtControl)
+                        ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
+                }
 
                 // select the new control.
                 selectionMgr.SelectCourseControl(courseControlId);
@@ -280,39 +306,55 @@ namespace PurplePen
 
         // Create the highlight, and put it at the given location.
         // Set displayUpdateNeeded to true if the highlight was just created or was moved.
-        void SetHighlightLocation(PointF highlightLocation, ref bool displayUpdateNeeded)
+        void SetHighlightLocation(PointF highlightLocation, float pixelSize, ref bool displayUpdateNeeded)
         {
             if (highlight != null && highlight.location == highlightLocation)
                 return;
 
+            PointF unused;
+            Id<ControlPoint> existingControl = HitTestPoint(highlightLocation, pixelSize, out unused);
+
             // Get where the control is being inserted.
-            Id<Course> courseId;
+            CourseDesignator courseDesignator;
             Id<CourseControl> courseControl1, courseControl2;
-            GetControlInsertionPoint(highlightLocation, out courseId, out courseControl1, out courseControl2);
+            GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2);
 
             // Note, we cannot changed this existing highlight because it is needed for erasing.
+            additionalHighlights = null;
 
             switch (controlKind) {
             case ControlPointKind.Normal:
                 highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
 
-                if (courseId.IsNotNone && eventDB.GetCourse(courseId).kind != CourseKind.Score) {
+                if (courseDesignator.IsNotAllControls &&
+                    !(exchangeAtControl && existingControl.IsNotNone && QueryEvent.CourseUsesControl(eventDB, courseDesignator, existingControl)) &&
+                    eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
                     additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
                 break;
 
             case ControlPointKind.Start:
-            case ControlPointKind.MapExchange:
                 highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
                 break;
+
+            case ControlPointKind.MapExchange:
+                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
+
+                if (courseDesignator.IsNotAllControls && eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
+                    // Show the legs to and from the control also as additional highlights.
+                    additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
+                }
+                break;
+
             case ControlPointKind.Finish:
                 highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
                 break;
+
             case ControlPointKind.CrossingPoint:
                 highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, scaleRatio, appearance, 0, highlightLocation);
 
-                if (courseId.IsNotNone && eventDB.GetCourse(courseId).kind != CourseKind.Score) {
+                if (courseDesignator.IsNotAllControls && eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
                     additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
@@ -401,7 +443,7 @@ namespace PurplePen
             if (controller.GetCurrentLocation(out location, out pixelSize)) {
                 bool temp = false;
                 PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
-                SetHighlightLocation(highlightLocation, ref temp);
+                SetHighlightLocation(highlightLocation, pixelSize, ref temp);
             }
         }
 
@@ -416,7 +458,7 @@ namespace PurplePen
         public override void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
-            SetHighlightLocation(highlightLocation, ref displayUpdateNeeded);
+            SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
         }
 
         public override IMapViewerHighlight[] GetHighlights()
@@ -448,7 +490,7 @@ namespace PurplePen
 
         // Create the highlight, and put it at the given location.
         // Set displayUpdateNeeded to true if the highlight was just created or was moved.
-        void SetHighlightLocation(PointF highlightLocation, ref bool displayUpdateNeeded)
+        void SetHighlightLocation(PointF highlightLocation, float pixelSize, ref bool displayUpdateNeeded)
         {
             if (highlight != null && highlight.location == highlightLocation)
                 return;

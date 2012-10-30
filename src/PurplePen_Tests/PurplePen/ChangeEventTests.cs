@@ -250,6 +250,27 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeControlExchange()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(119, "Add exchange");
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(204), true);
+            undomgr.EndCommand(119);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsTrue(courseControl.exchange);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsFalse(courseControl.exchange);
+        }
+
+        [TestMethod]
         public void ChangeTextLine()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1070,15 +1091,15 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(957, "Add Control");
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), CourseControlId(204), CourseControlId(205));
             undomgr.EndCommand(957);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(6), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1087,10 +1108,11 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(204)).nextCourseControl == CourseControlId(205));
         }
 
+        // UNDONE MAPEXCHANGE: Test AddCourseControl for map exchanges
 
         [TestMethod]
         public void AddCourseControl3()
@@ -1101,17 +1123,17 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(958, "Add Control");
             Id<CourseControl> courseControl1 = Id<CourseControl>.None, courseControl2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, CourseId(6), ref courseControl1, ref courseControl2);
+            QueryEvent.FindControlInsertionPoint(eventDB, Designator(6), ref courseControl1, ref courseControl2);
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2);
             undomgr.EndCommand(958);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(6), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1120,7 +1142,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(212)).nextCourseControl == CourseControlId(213));
         }
 
@@ -1133,15 +1155,15 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
 
             undomgr.BeginCommand(959, "Add Control");
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(2), Id<CourseControl>.None, Id<CourseControl>.None);
             undomgr.EndCommand(959);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(2), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(2), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1150,7 +1172,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
             Assert.IsTrue(eventDB.GetCourse(CourseId(2)).firstCourseControl.IsNone);
         }
 
@@ -1170,7 +1192,7 @@ namespace PurplePen.Tests
             undomgr.EndCommand(960);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Course course = eventDB.GetCourse(CourseId(6));
             Id<CourseControl> first = course.firstCourseControl;
             Assert.AreEqual(controlId, eventDB.GetCourseControl(course.firstCourseControl).control);
@@ -1178,7 +1200,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             course = eventDB.GetCourse(CourseId(6));
             first = course.firstCourseControl;
             Assert.AreEqual(ControlId(1), eventDB.GetCourseControl(course.firstCourseControl).control);
@@ -1210,13 +1232,13 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Should have added the start to the empty course and course 2
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, noStartCourseId, controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noStartCourseId), controlId));
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, noStartCourseId, controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noStartCourseId), controlId));
         }
 
         [TestMethod]
@@ -1235,7 +1257,7 @@ namespace PurplePen.Tests
             undomgr.EndCommand(960);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Id<CourseControl> last = QueryEvent.LastCourseControl(eventDB, CourseId(6), false);
             Id<CourseControl> lastExceptFinish = QueryEvent.LastCourseControl(eventDB, CourseId(6), true);
             Assert.AreEqual(courseControlId, last);
@@ -1246,7 +1268,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             last = QueryEvent.LastCourseControl(eventDB, CourseId(6), false);
             lastExceptFinish = QueryEvent.LastCourseControl(eventDB, CourseId(6), true);
             Assert.AreNotEqual(controlId, eventDB.GetCourseControl(last).control);
@@ -1279,13 +1301,13 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Should have added the start to the empty course and course 2
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, noFinishCourseId, controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noFinishCourseId), controlId));
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, noFinishCourseId, controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noFinishCourseId), controlId));
         }
 
         [TestMethod]

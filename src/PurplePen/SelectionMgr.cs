@@ -451,7 +451,7 @@ namespace PurplePen
             }
 
             if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
-                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator.CourseId, activeCourseDesignator.Part, selectedCourseControl)) {
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl)) {
                 // Selected course control is not in active part.
                 selectedCourseControl = Id<CourseControl>.None;
                 ClearSelection();
@@ -464,7 +464,7 @@ namespace PurplePen
             }
 
             if (selectedCourseControl2.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
-                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator.CourseId, activeCourseDesignator.Part, selectedCourseControl2)) {
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl2)) {
                 // Selected course control 2 is not in active part.
                 selectedCourseControl2 = Id<CourseControl>.None;
                 ClearSelection();
@@ -537,7 +537,7 @@ namespace PurplePen
 
             if (showAllControls && !activeCourseDesignator.IsAllControls) {
                 // Create the all controls view.
-                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { activeCourseDesignator.CourseId }, allControlsFilter, false, true);
+                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { activeCourseDesignator }, allControlsFilter, false, true);
 
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,

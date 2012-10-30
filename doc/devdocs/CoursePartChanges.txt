@@ -12,3 +12,9 @@ Specials -- support specials in a single part.
 
 Look at references to CourseView.BaseCourseId -- should they be CourseDesignators instead?
 Check out "UNDONE MAPEXCHANGE" comments.
+
+Prohibit adding map exchange to score course.
+
+status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
+
+Allow adding start or finish to course part that shouldn't include that?

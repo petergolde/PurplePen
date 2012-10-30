@@ -1012,11 +1012,12 @@ namespace PurplePen
             CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
             if (courseDesignator.IsAllControls)
                 return false;
+            courseDesignator = new CourseDesignator(courseDesignator.CourseId);  // get designator for all controls in this course.
 
             // First get a list of all the controls in the course being deleted.
             List<Id<ControlPoint>> usedControls = new List<Id<ControlPoint>>();
 
-            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseDesignator.CourseId)) {
+            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseDesignator)) {
                 usedControls.Add(eventDB.GetCourseControl(courseControlId).control);
             }
 
@@ -2201,10 +2202,32 @@ namespace PurplePen
             }
         }
 
-        // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
-        public void BeginAddControlMode(ControlPointKind controlKind)
+        // Can we add a map exchange at a control?
+        public CommandStatus CanAddMapExchangeControl()
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind));
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
+                return CommandStatus.Disabled;
+            if (eventDB.GetCourse(courseDesignator.CourseId).kind == CourseKind.Score)
+                return CommandStatus.Disabled;
+            return CommandStatus.Enabled;
+        }
+
+        // Can we add a standalong map exchange 
+        public CommandStatus CanAddMapExchangeSeparate()
+        {
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
+                return CommandStatus.Enabled;
+            if (eventDB.GetCourse(courseDesignator.CourseId).kind == CourseKind.Score)
+                return CommandStatus.Disabled;
+            return CommandStatus.Enabled;
+        }
+
+        // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
+        public void BeginAddControlMode(ControlPointKind controlKind, bool exchangeAtControl)
+        {
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).
