@@ -380,8 +380,12 @@ namespace PurplePen
                 return -1;
             else if (control1.kind > control2.kind)
                 return 1;
-            else
-                return Util.CompareCodes(control1.code, control2.code);
+            
+            int result = Util.CompareCodes(control1.code, control2.code);
+            if (result != 0)
+                return result;
+
+            return controlId1.id.CompareTo(controlId2.id);
         }
 
         // Do all courses have loads set?

@@ -1034,7 +1034,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Assert.IsTrue(success);
 
             controller.SelectTab(0);
-            controller.SelectDescriptionLine(2);
+            controller.SelectDescriptionLine(3);
 
             ui.returnQuestion = DialogResult.No;
             success = controller.DeleteSelection();

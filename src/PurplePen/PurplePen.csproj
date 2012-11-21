@@ -156,46 +156,6 @@
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommandNameText.bg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.fi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.fr1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.nb-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.nb-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.nn-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.nn-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CommandNameText.sv1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommandNameText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="CommandNameText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -358,46 +318,6 @@
     </Compile>
     <Compile Include="MapView\Util.cs" />
     <Compile Include="MapView\ViewCache.cs" />
-    <Compile Include="MiscText.bg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.fi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.nb-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.nb-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.nn-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.nn-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MiscText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MiscText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="MiscText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -526,46 +446,6 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports.cs" />
-    <Compile Include="ReportText.bg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.fi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.nb-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.nb-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.nn-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.nn-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ReportText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="ReportText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -573,47 +453,6 @@
     </Compile>
     <Compile Include="RotateMode.cs" />
     <Compile Include="SelectionDescriber.cs" />
-    <Compile Include="SelectionDescriptionText.bg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.fi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.fr.Designer.cs" />
-    <Compile Include="SelectionDescriptionText.fr1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.nb-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.nb-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.nn-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.nn-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectionDescriptionText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SelectionDescriptionText.sv.resx</DependentUpon>
-    </Compile>
     <Compile Include="SelectionDescriptionText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -631,46 +470,6 @@
     </Compile>
     <Compile Include="SetUILanguage.Designer.cs">
       <DependentUpon>SetUILanguage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.bg.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.bg.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.fi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.fi.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.nb-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.nb-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.nn-NO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.nn-NO.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.ro.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StatusBarText.sv.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StatusBarText.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="StatusBarText1.Designer.cs">
       <AutoGen>True</AutoGen>
