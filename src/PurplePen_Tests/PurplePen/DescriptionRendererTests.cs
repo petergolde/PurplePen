@@ -265,7 +265,7 @@ namespace PurplePen.Tests
 
             g.Clear(Color.White);
 
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
 

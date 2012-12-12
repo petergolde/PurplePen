@@ -505,7 +505,7 @@ namespace PurplePen
            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
            object brushKey = new object();
-           grTarget.CreateGdiPlusBrush(brushKey, brush);
+           grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
            // Get thickness of line.
            float pixelThickness = TransformDistance(thickness * scaleRatio, xformWorldToPixel);
@@ -681,7 +681,7 @@ namespace PurplePen
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
-            grTarget.CreateGdiPlusBrush(brushKey, brush);
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Draw the boundary.
             object penKey = new object();
@@ -695,7 +695,7 @@ namespace PurplePen
                 fillBrushKey = brushKey;
             else {
                 fillBrushKey = new object();
-                grTarget.CreateGdiPlusBrush(fillBrushKey, NormalCourseAppearance.areaHighlight);
+                grTarget.CreateGdiPlusBrush(fillBrushKey, NormalCourseAppearance.areaHighlight, false);
             }
 
             // Draw the interior
@@ -1482,7 +1482,7 @@ namespace PurplePen
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
-            grTarget.CreateGdiPlusBrush(brushKey, brush);
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
@@ -1560,7 +1560,7 @@ namespace PurplePen
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
-            grTarget.CreateGdiPlusBrush(brushKey, brush);
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
@@ -1633,7 +1633,7 @@ namespace PurplePen
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
-            grTarget.CreateGdiPlusBrush(brushKey, brush);
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
             thickness = TransformDistance(lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
@@ -1695,7 +1695,7 @@ namespace PurplePen
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
-            grTarget.CreateGdiPlusBrush(brushKey, brush);
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.controlCircleSize, xformWorldToPixel);

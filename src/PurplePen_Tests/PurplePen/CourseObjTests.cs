@@ -80,7 +80,7 @@ namespace PurplePen.Tests
         // Render one course object to a map.
         internal Map RenderCourseObjToMap(CourseObj courseobj)
         {
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new GDIPlus_TextMetrics(), null);
 
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();

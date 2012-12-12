@@ -238,7 +238,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             for (int i = 0; i < expectedOcadFiles.Length; ++i) {
-                Map newMap = new Map(new GDIPlus_TextMetrics());
+                Map newMap = new Map(new GDIPlus_TextMetrics(), null);
                 using (newMap.Write())
                     InputOutput.ReadFile(expectedOcadFiles[i], newMap);
                 using (newMap.Read())

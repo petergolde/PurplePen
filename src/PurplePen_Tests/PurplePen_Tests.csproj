@@ -41,11 +41,10 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Graphics2D, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libraries\MapModel\Debug\Graphics2D.dll</HintPath>
+    <Reference Include="Graphics2D]">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
     </Reference>
-    <Reference Include="MapModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MapModel]">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
     <Reference Include="Map_GDIPlus">

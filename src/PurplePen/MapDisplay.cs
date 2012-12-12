@@ -42,6 +42,7 @@ using PurplePen.MapModel;
 using PurplePen.MapView;
 using ColorMatrix = PurplePen.MapModel.ColorMatrix;
 using PurplePen.Graphics2D;
+using System.IO;
 
 
 namespace PurplePen
@@ -55,8 +56,8 @@ namespace PurplePen
         MapType mapType;
         string filename;
 
-        Bitmap bitmap;     // the bitmap
-        Bitmap dimmedBitmap;  // the dimmed bitmap.
+        IGraphicsBitmap bitmap;     // the bitmap
+        IGraphicsBitmap dimmedBitmap;  // the dimmed bitmap.
         float bitmapDpi;     // dpi for bitmap
 
         int mapVersion;       // OCAD version. (OCAD maps only)
@@ -146,7 +147,7 @@ namespace PurplePen
             {
                 switch (mapType) {
                 case MapType.Bitmap:
-                    return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.Width, bitmap.Height));
+                    return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
 
                 case MapType.OCAD:
                     if (map != null) {
@@ -273,7 +274,7 @@ namespace PurplePen
             float scaleFactor = bitmapDpi / 25.4F;
 
             Matrix matrix = new Matrix();
-            matrix.Translate(0, bitmap.Height);
+            matrix.Translate(0, bitmap.PixelHeight);
             matrix.Scale(scaleFactor, -scaleFactor);
             matrix.Invert();
             return matrix;
@@ -293,15 +294,16 @@ namespace PurplePen
                 bitmap = null;
             }
             else if (mapType == MapType.OCAD) {
-                map = new Map(MapUtil.TextMetricsProvider);
+                map = new Map(MapUtil.TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(filename)));
                 mapVersion = InputOutput.ReadFile(filename, map);
                 bitmap = null;
             }
             else if (mapType == MapType.Bitmap) {
                 map = null;
                 mapVersion = 0;
-                bitmap = (Bitmap) Image.FromFile(filename);
-                bitmapDpi = bitmap.HorizontalResolution;
+                Bitmap bm = (Bitmap)Image.FromFile(filename);
+                bitmap = new GDIPlus_Bitmap(bm);
+                bitmapDpi = bm.HorizontalResolution;
             }
             else {
                 Debug.Fail("bad maptype");
@@ -333,12 +335,14 @@ namespace PurplePen
                 dimmedBitmap.Dispose();
 
             if (mapType == MapType.Bitmap && mapIntensity < 0.99F) {
-                dimmedBitmap = new Bitmap(bitmap.Width, bitmap.Height);
-                Graphics g = Graphics.FromImage(dimmedBitmap);
+                Bitmap dimmed = new Bitmap(bitmap.PixelWidth, bitmap.PixelHeight);
+                Graphics g = Graphics.FromImage(dimmed);
                 ImageAttributes imageAttributes = new ImageAttributes();
                 imageAttributes.SetColorMatrix(ComputeColorMatrix());
-                g.DrawImage(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel, imageAttributes);
+                g.DrawImage(((GDIPlus_Bitmap)bitmap).Bitmap, new Rectangle(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), 0, 0, bitmap.PixelWidth, bitmap.PixelHeight, GraphicsUnit.Pixel, imageAttributes);
                 g.Dispose();
+
+                dimmedBitmap = new GDIPlus_Bitmap(dimmed);
             }
             else {
                 dimmedBitmap = null;
@@ -365,14 +369,14 @@ namespace PurplePen
             BitmapScaling scalingMode = antialiased ? BitmapScaling.MediumQuality : BitmapScaling.NearestNeighbor;
 
             // Get source bitmap. Use the dimmed bitmap if there is one.
-            Bitmap sourceBitmap;
+            IGraphicsBitmap sourceBitmap;
             if (dimmedBitmap != null)
                 sourceBitmap = dimmedBitmap;
             else
                 sourceBitmap = bitmap;
 
             // Draw it.
-            grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.Width, bitmap.Height), scalingMode);
+            grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), scalingMode);
 
             // Pop transform
             grTarget.PopTransform();
