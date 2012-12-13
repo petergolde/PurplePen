@@ -44,7 +44,7 @@
     <Reference Include="Graphics2D]">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
     </Reference>
-    <Reference Include="MapModel]">
+    <Reference Include="MapModel">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
     <Reference Include="Map_GDIPlus">

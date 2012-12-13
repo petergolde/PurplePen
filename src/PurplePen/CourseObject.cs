@@ -42,6 +42,7 @@ using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.MapView;
 using PurplePen.Graphics2D;
+using System.Runtime.InteropServices;
 
 namespace PurplePen
 {
@@ -515,9 +516,9 @@ namespace PurplePen
            // Draw it.
            object penKey = new object();
            grTarget.CreatePen(penKey, brushKey, pixelThickness, LineCap.Flat, LineJoin.Miter, 5);
-            foreach (SymPath p in gappedPaths) {
-                p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
-            }
+           foreach (SymPath p in gappedPaths) {
+               p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+           }
 
             grTarget.Dispose();
        }
@@ -1221,14 +1222,19 @@ namespace PurplePen
                 RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
                 float[] circleGaps = ComputeCircleGaps(gaps);
 
-                if (circleGaps == null)
-                    g.DrawEllipse(pen, rect);
-                else {
-                    for (int i = 1; i < circleGaps.Length; i += 2) {
-                        float startArc = circleGaps[i];
-                        float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                        g.DrawArc(pen, rect, - startArc, - (float) ((endArc - startArc + 360.0) % 360.0));
+                try {
+                    if (circleGaps == null)
+                        g.DrawEllipse(pen, rect);
+                    else {
+                        for (int i = 1; i < circleGaps.Length; i += 2) {
+                            float startArc = circleGaps[i];
+                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
+                            g.DrawArc(pen, rect, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        }
                     }
+                }
+                catch (ExternalException) {
+                    // Ignore this exeption. Not sure what causes it.
                 }
             }
 
@@ -1338,18 +1344,24 @@ namespace PurplePen
                 RectangleF rect2 = RectangleF.FromLTRB(pts[3].X, pts[4].Y, pts[4].X, pts[3].Y);
                 float[] circleGaps = ComputeCircleGaps(gaps);
 
-                if (circleGaps == null) {
-                    g.DrawEllipse(pen, rect1);
-                    g.DrawEllipse(pen, rect2);
-                }
-                else {
-                    for (int i = 1; i < circleGaps.Length; i += 2) {
-                        float startArc = circleGaps[i];
-                        float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                        g.DrawArc(pen, rect1, -startArc, -(float) ((endArc - startArc + 360.0) % 360.0));
-                        g.DrawArc(pen, rect2, -startArc, -(float) ((endArc - startArc + 360.0) % 360.0));
+                try {
+                    if (circleGaps == null) {
+                        g.DrawEllipse(pen, rect1);
+                        g.DrawEllipse(pen, rect2);
+                    }
+                    else {
+                        for (int i = 1; i < circleGaps.Length; i += 2) {
+                            float startArc = circleGaps[i];
+                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
+                            g.DrawArc(pen, rect1, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                            g.DrawArc(pen, rect2, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        }
                     }
                 }
+                catch (ExternalException) {
+                    // Ignore this exeption. Not sure what causes it.
+                }
+
             }
 
             // Draw the cross-hair.
