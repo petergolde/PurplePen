@@ -157,7 +157,8 @@ namespace PurplePen
             resources.GetString("fileFormatCombo.Items1"),
             resources.GetString("fileFormatCombo.Items2"),
             resources.GetString("fileFormatCombo.Items3"),
-            resources.GetString("fileFormatCombo.Items4")});
+            resources.GetString("fileFormatCombo.Items4"),
+            resources.GetString("fileFormatCombo.Items5")});
             this.fileFormatCombo.Name = "fileFormatCombo";
             // 
             // folderGroupBox

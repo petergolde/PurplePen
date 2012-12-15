@@ -516,11 +516,17 @@ namespace PurplePen
            // Draw it.
            object penKey = new object();
            grTarget.CreatePen(penKey, brushKey, pixelThickness, LineCap.Flat, LineJoin.Miter, 5);
-           foreach (SymPath p in gappedPaths) {
-               p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+
+           try {
+               foreach (SymPath p in gappedPaths) {
+                   p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+               }
+           }
+           catch (ExternalException) {
+               // Ignore this exeption. Not sure what causes it.
            }
 
-            grTarget.Dispose();
+           grTarget.Dispose();
        }
 
        // Get the bounds of the highlight.

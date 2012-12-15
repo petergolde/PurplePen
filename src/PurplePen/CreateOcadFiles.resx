@@ -136,7 +136,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=1.1.5.5100, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -339,6 +339,9 @@
   <data name="fileFormatCombo.Items4" xml:space="preserve">
     <value>OCAD 10</value>
   </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
   <data name="fileFormatCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 3</value>
   </data>
@@ -445,10 +448,10 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="selectOtherDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 119</value>
+    <value>142, 117</value>
   </data>
   <data name="selectOtherDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
+    <value>91, 25</value>
   </data>
   <data name="selectOtherDirectoryButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -478,7 +481,7 @@
     <value>11, 66</value>
   </data>
   <data name="otherDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 17</value>
+    <value>89, 19</value>
   </data>
   <data name="otherDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -505,7 +508,7 @@
     <value>11, 42</value>
   </data>
   <data name="mapDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
+    <value>148, 19</value>
   </data>
   <data name="mapDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -532,7 +535,7 @@
     <value>11, 18</value>
   </data>
   <data name="coursesDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>181, 19</value>
   </data>
   <data name="coursesDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -598,6 +601,6 @@
     <value>CreateOcadFiles</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.5.5100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
