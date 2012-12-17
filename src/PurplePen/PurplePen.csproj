@@ -62,17 +62,13 @@
     <Reference Include="Graphics2D">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
     </Reference>
-    <Reference Include="MapModel, Version=1.1.4.5000, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="MapModel">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
     <Reference Include="Map_GDIPlus">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="PdfSharp">
-      <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -492,30 +488,38 @@
     <Compile Include="XmlInput.cs" />
     <EmbeddedResource Include="AboutForm.bg.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.es.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.fi.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.fr.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.nb-NO.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.nn-NO.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.ro.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.sv.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.bg.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
@@ -945,6 +949,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.fr.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.nb-NO.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
@@ -960,6 +965,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.sv.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.bg.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
@@ -972,6 +978,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.fr.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.nb-NO.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>

@@ -157,13 +157,13 @@
     <value>Radan oletus</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
-    <value>Kuvalliset</value>
+    <value>Symbolit</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
-    <value>Sanalliset</value>
+    <value>Teksti</value>
   </data>
   <data name="descriptionKindCombo.Items3" xml:space="preserve">
-    <value>Kuvalliset ja sanalliset</value>
+    <value>Symbolit ja teksti</value>
   </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
     <value>Rastinmääritetyyppi:</value>

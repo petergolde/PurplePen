@@ -49,7 +49,7 @@ namespace PurplePen
 
             licenseTextBox.Rtf =
 @"{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fnil\fcharset0 Microsoft Sans Serif;}}
-\viewkind4\uc1\pard\sb100\sa100\f0\fs24 Copyright \'a9 2007-2008, Peter Golde\line All rights reserved.\par
+\viewkind4\uc1\pard\sb100\sa100\f0\fs24 Copyright \'a9 2007-2012, Peter Golde\line All rights reserved.\par
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\par
 \pard\fi-360\li720\sb100\sa100\tx720\f1\fs20\'b7\tab\f0\fs24 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\par
 \pard\fi-360\li720\sb100\sa100\f1\fs20\'b7\tab\f0\fs24 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\par

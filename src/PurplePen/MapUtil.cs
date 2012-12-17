@@ -52,7 +52,7 @@ namespace PurplePen
             scale = 0; dpi = 0;
             mapType = MapType.None;
 
-            Map map = new Map(TextMetricsProvider);
+            Map map = new Map(TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(mapFileName)));
 
             try {
                 InputOutput.ReadFile(mapFileName, map);

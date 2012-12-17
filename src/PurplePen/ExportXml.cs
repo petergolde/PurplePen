@@ -58,6 +58,7 @@ namespace PurplePen
             // Create the XML writer.
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
+            settings.Encoding = new UTF8Encoding(false);
             xmlWriter = XmlWriter.Create(filename, settings);
 
             // Write the root

@@ -43,6 +43,7 @@ using System.Xml;
 using System.IO;
 
 using PurplePen.MapModel;
+using System.Runtime.InteropServices;
 
 namespace PurplePen
 {
@@ -659,8 +660,14 @@ namespace PurplePen
                         break;
 
                     case SymbolStrokes.Circle:
-                        using (Pen p = new Pen(color, thickness))
-                            g.DrawEllipse(p, new RectangleF(points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2));
+                        try {
+                            using (Pen p = new Pen(color, thickness))
+                                g.DrawEllipse(p, new RectangleF(points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2));
+                        }
+                        catch (ExternalException) {
+                            // Ignore this exeption. Not sure what causes it.
+                        }
+
                         break;
 
                     case SymbolStrokes.Polyline:

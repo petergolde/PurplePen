@@ -189,6 +189,8 @@ Index entry Sym=70100.0
 Object Sym=70100 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (56.80,-8.70) 
 
 Index entry Sym=70200.0
@@ -197,6 +199,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (115.60,-11.80) 
 
 Index entry Sym=70200.0
@@ -205,6 +209,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (128.40,6.10) 
 
 Index entry Sym=70200.0
@@ -213,6 +219,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (121.80,-23.00) 
 
 Index entry Sym=70200.0
@@ -221,6 +229,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (50.30,2.90) 
 
 Index entry Sym=70200.0
@@ -229,6 +239,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (129.20,37.70) 
 
 Index entry Sym=70200.0
@@ -237,6 +249,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (124.20,29.50) 
 
 Index entry Sym=70200.0
@@ -245,6 +259,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (28.00,6.20) 
 
 Index entry Sym=70200.0
@@ -253,6 +269,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (38.40,-14.00) 
 
 Index entry Sym=70200.0
@@ -261,6 +279,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (84.00,34.50) 
 
 Index entry Sym=70200.0
@@ -269,6 +289,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (37.60,-22.80) 
 
 Index entry Sym=70200.0
@@ -277,6 +299,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (55.90,25.60) 
 
 Index entry Sym=70200.0
@@ -285,6 +309,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (-9.20,8.30) 
 
 Index entry Sym=70200.0
@@ -293,6 +319,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (2.51,31.32) 
 
 Index entry Sym=70200.0
@@ -301,6 +329,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (21.50,40.20) 
 
 Index entry Sym=70200.0
@@ -309,6 +339,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (22.00,-20.80) 
 
 Index entry Sym=70200.0
@@ -317,6 +349,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (45.20,22.80) 
 
 Index entry Sym=70200.0
@@ -325,6 +359,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (16.40,-11.90) 
 
 Index entry Sym=70200.0
@@ -333,6 +369,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (43.00,-11.10) 
 
 Index entry Sym=70200.0
@@ -341,6 +379,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (25.80,-10.50) 
 
 Index entry Sym=70200.0
@@ -349,6 +389,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (53.70,8.20) 
 
 Index entry Sym=70200.0
@@ -357,6 +399,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (51.20,10.50) 
 
 Index entry Sym=70200.0
@@ -365,6 +409,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (81.30,24.00) 
 
 Index entry Sym=70200.0
@@ -373,6 +419,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (90.00,19.30) 
 
 Index entry Sym=70200.0
@@ -381,6 +429,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (20.30,-4.00) 
 
 Index entry Sym=70200.0
@@ -389,6 +439,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (51.20,-27.00) 
 
 Index entry Sym=70200.0
@@ -397,6 +449,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (21.30,11.80) 
 
 Index entry Sym=70200.0
@@ -405,6 +459,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (40.10,17.40) 
 
 Index entry Sym=70200.0
@@ -413,6 +469,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (-0.70,10.30) 
 
 Index entry Sym=70200.0
@@ -421,6 +479,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (57.40,-13.80) 
 
 Index entry Sym=70200.0
@@ -429,6 +489,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (61.20,-18.80) 
 
 Index entry Sym=70200.0
@@ -437,6 +499,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (72.00,27.00) 
 
 Index entry Sym=70200.0
@@ -445,6 +509,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (5.60,-5.70) 
 
 Index entry Sym=70200.0
@@ -453,6 +519,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (74.70,19.20) 
 
 Index entry Sym=70200.0
@@ -461,6 +529,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (93.90,28.10) 
 
 Index entry Sym=70200.0
@@ -469,6 +539,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (119.80,8.60) 
 
 Index entry Sym=70200.0
@@ -477,6 +549,8 @@ Index entry Sym=70200.0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (41.90,6.80) 
 
 Index entry Sym=70600.0
@@ -485,6 +559,8 @@ Index entry Sym=70600.0
 Object Sym=70600 Otp=1
   nItem=1, nText=0
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
     (53.20,-2.80) 
 
 Index entry Sym=72000.0
@@ -493,6 +569,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=35
     (109.94,-9.03) (109.94,-9.91) (113.76,-9.91) (113.76,-4.85) 
     (109.94,-4.85) 
@@ -503,6 +581,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=36
     (131.57,2.09) (131.57,1.21) (135.39,1.21) (135.39,6.27) 
     (131.57,6.27) 
@@ -513,6 +593,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=37
     (123.64,-28.79) (123.64,-29.67) (127.46,-29.67) (127.46,-24.61) 
     (123.64,-24.61) 
@@ -523,6 +605,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=38
     (43.45,-1.47) (43.45,-2.34) (47.26,-2.34) (47.26,2.71) (43.45,2.71) 
 
@@ -532,6 +616,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=39
     (130.72,40.66) (130.72,39.78) (134.53,39.78) (134.53,44.84) 
     (130.72,44.84) 
@@ -542,6 +628,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=40
     (118.87,23.52) (118.87,22.64) (122.68,22.64) (122.68,27.70) 
     (118.87,27.70) 
@@ -552,6 +640,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=41
     (28.82,-0.04) (28.82,-0.92) (32.64,-0.92) (32.64,4.14) (28.82,4.14) 
 
@@ -561,6 +651,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=42
     (31.26,-16.20) (31.26,-17.08) (35.08,-17.08) (35.08,-12.02) 
     (31.26,-12.02) 
@@ -571,6 +663,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=43
     (81.46,37.83) (81.46,36.95) (85.27,36.95) (85.27,42.01) 
     (81.46,42.01) 
@@ -581,6 +675,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=44
     (35.38,-29.14) (35.38,-30.02) (39.19,-30.02) (39.19,-24.96) 
     (35.38,-24.96) 
@@ -591,6 +687,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=45
     (55.29,28.92) (55.29,28.05) (59.10,28.05) (59.10,33.10) 
     (55.29,33.10) 
@@ -601,6 +699,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=46
     (-16.05,3.93) (-16.05,3.06) (-12.24,3.06) (-12.24,8.11) 
     (-16.05,8.11) 
@@ -611,6 +711,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=47
     (5.55,32.67) (5.55,31.79) (9.36,31.79) (9.36,36.85) (5.55,36.85) 
 
@@ -620,6 +722,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=48
     (24.54,41.55) (24.54,40.67) (28.35,40.67) (28.35,45.73) 
     (24.54,45.73) 
@@ -630,6 +734,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=49
     (20.73,-27.14) (20.73,-28.02) (24.54,-28.02) (24.54,-22.96) 
     (20.73,-22.96) 
@@ -640,6 +746,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=50
     (42.66,26.12) (42.66,25.25) (46.47,25.25) (46.47,30.30) 
     (42.66,30.30) 
@@ -650,6 +758,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=51
     (10.17,-17.20) (10.17,-18.08) (13.98,-18.08) (13.98,-13.02) 
     (10.17,-13.02) 
@@ -660,6 +770,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=52
     (45.66,-16.11) (45.66,-16.99) (49.47,-16.99) (49.47,-11.93) 
     (45.66,-11.93) 
@@ -670,6 +782,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=53
     (28.22,-8.22) (28.22,-9.10) (32.03,-9.10) (32.03,-4.04) 
     (28.22,-4.04) 
@@ -680,6 +794,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=54
     (56.87,4.19) (56.87,3.31) (60.69,3.31) (60.69,8.37) (56.87,8.37) 
 
@@ -689,6 +805,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=55
     (47.65,13.82) (47.65,12.95) (51.47,12.95) (51.47,18.00) 
     (47.65,18.00) 
@@ -699,6 +817,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=56
     (84.34,25.35) (84.34,24.47) (88.15,24.47) (88.15,29.53) 
     (84.34,29.53) 
@@ -709,6 +829,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=57
     (89.73,12.96) (89.73,12.08) (93.55,12.08) (93.55,17.14) 
     (89.73,17.14) 
@@ -719,6 +841,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=58
     (14.64,-1.23) (14.64,-2.11) (18.46,-2.11) (18.46,2.95) (14.64,2.95) 
 
@@ -728,6 +852,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=59
     (49.93,-33.34) (49.93,-34.22) (53.74,-34.22) (53.74,-29.16) 
     (49.93,-29.16) 
@@ -738,6 +864,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=70
     (14.83,13.79) (14.83,12.92) (18.64,12.92) (18.64,17.97) 
     (14.83,17.97) 
@@ -748,6 +876,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=71
     (32.96,15.20) (32.96,14.32) (36.78,14.32) (36.78,19.38) 
     (32.96,19.38) 
@@ -758,6 +888,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=72
     (2.34,11.65) (2.34,10.77) (6.15,10.77) (6.15,15.83) (2.34,15.83) 
 
@@ -767,6 +899,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=73
     (52.07,-19.78) (52.07,-20.66) (55.88,-20.66) (55.88,-15.60) 
     (52.07,-15.60) 
@@ -777,6 +911,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=74
     (63.04,-24.59) (63.04,-25.47) (66.86,-25.47) (66.86,-20.41) 
     (63.04,-20.41) 
@@ -787,6 +923,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=75
     (68.45,30.32) (68.45,29.45) (72.27,29.45) (72.27,34.51) 
     (68.45,34.51) 
@@ -797,6 +935,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=76
     (-1.39,-4.70) (-1.39,-5.58) (2.43,-5.58) (2.43,-0.52) (-1.39,-0.52) 
 
@@ -806,6 +946,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=77
     (70.43,12.89) (70.43,12.01) (74.24,12.01) (74.24,17.07) 
     (70.43,17.07) 
@@ -816,6 +958,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=78
     (97.21,28.36) (97.21,27.48) (101.03,27.48) (101.03,32.54) 
     (97.21,32.54) 
@@ -826,6 +970,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=79
     (112.81,9.60) (112.81,8.72) (116.63,8.72) (116.63,13.78) 
     (112.81,13.78) 
@@ -836,6 +982,8 @@ Index entry Sym=72000.0
 Object Sym=72000 Otp=4
   nItem=5, nText=1
   Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
   Text=80
     (34.76,6.69) (34.76,5.81) (38.58,5.81) (38.58,10.87) (34.76,10.87) 
 

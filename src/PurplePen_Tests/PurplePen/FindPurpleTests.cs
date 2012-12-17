@@ -63,7 +63,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FindPurpleByName()
         {
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
                 map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0);
                 map.AddColor("Purple", 11, 0.2F, 1F, 0.1F, 0.08F);
@@ -89,7 +89,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FindPurpleByValue()
         {
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
                 map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0);
                 map.AddColor("Purplicious", 11, 0.2F, 1F, 0.1F, 0.08F);
@@ -114,7 +114,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void NoPurple()
         {
-            Map map = new Map(new GDIPlus_TextMetrics());
+            Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
                 map.AddColor("Yellow", 11, 0.0F, 0.25F, 0.79F, 0.08F);
                 map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0);

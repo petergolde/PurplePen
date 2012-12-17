@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  Name="DisplayName"
+  Culture="Culture"
+  LicenseAgreement="eula.txt"
+>
+
+    <PackageFiles>
+        <PackageFile Name="eula.txt"/>
+    </PackageFiles>
+
+    <!-- Defines a localizable string table for error messages-->
+    <Strings>
+        <String Name="DisplayName">.NET Framework 2.0 (x86)</String>
+        <String Name="Culture">en</String>
+        <String Name="AdminRequired">Administrator permissions are required to install the .NET Framework 2.0. Contact your administrator.</String>
+        <String Name="InvalidPlatformWin9x">Installation of the .NET Framework 2.0 is not supported on Windows 95. Contact your application vendor.</String>
+        <String Name="InvalidPlatformWinNT">Installation of the .NET Framework 2.0 requires Windows 2000 Service Pack 3 or later. Contact your application vendor.</String>
+        <String Name="InvalidPlatformIE">Installation of the .NET Framework 2.0 requires Internet Explorer 5.01 or greater. Contact your application vendor.</String>
+        <String Name="InvalidPlatformArchitecture">This version of the .NET Framework 2.0 (x86) is not supported on a 64-bit operating system. Contact your application vendor.</String>
+        <String Name="WindowsInstallerImproperInstall">Due to an error with Windows Installer, the installation of the .NET Framework 2.0 (x86) cannot proceed.</String>
+        <String Name="AnotherInstanceRunning">Another instance of setup is already running. The running instance must complete before this setup can proceed.</String>
+        <String Name="BetaNDPFailure">A beta version of the .NET Framework was detected on the computer. Uninstall any previous beta versions of .NET Framework before continuing.</String>
+        <String Name="GeneralFailure">A failure occurred attempting to install the .NET Framework 2.0 (x86).</String>
+        <String Name="DotNetFXExe">http://go.microsoft.com/fwlink/?LinkId=37283</String>
+        <String Name="InstMsiAExe">http://go.microsoft.com/fwlink/?LinkId=37285</String>
+        <String Name="Msi31Exe">http://go.microsoft.com/fwlink/?LinkId=49256</String>
+    </Strings>
+
+</Package>

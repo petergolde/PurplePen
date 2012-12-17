@@ -112,7 +112,7 @@ namespace PurplePen
         public Map RenderToMap()
         {
             // Create the map to render into.
-            Map map = new Map(MapUtil.TextMetricsProvider);
+            Map map = new Map(MapUtil.TextMetricsProvider, null);
             if (Count == 0)
                 return map;
 
