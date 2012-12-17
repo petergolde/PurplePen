@@ -370,7 +370,7 @@
     <value>Valkoinen alue</value>
   </data>
   <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Sanalliset</value>
+    <value>Teksti</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Lisää &amp;tekstirivi...</value>
@@ -541,7 +541,7 @@
     <value>Valkoinen alue</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sanalliset</value>
+    <value>Teksti</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Lisää kulmapiste (Ctrl+B)</value>

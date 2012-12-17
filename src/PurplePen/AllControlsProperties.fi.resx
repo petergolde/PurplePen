@@ -127,13 +127,13 @@
     <value>1: </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Kuvalliset</value>
+    <value>Symbolit</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
-    <value>Sanalliset</value>
+    <value>Teksti</value>
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
-    <value>Kuvalliset ja sanalliset</value>
+    <value>Symbolit ja teksti</value>
   </data>
   <data name="appearanceGroupBox.Text" xml:space="preserve">
     <value>Ulkoasu</value>

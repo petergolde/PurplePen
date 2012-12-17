@@ -124,7 +124,7 @@
     <value>Suku</value>
   </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
-    <value>Sanalliset</value>
+    <value>Teksti</value>
   </data>
   <data name="checkBoxPlural.Text" xml:space="preserve">
     <value>Näytä monikkomuoto</value>
