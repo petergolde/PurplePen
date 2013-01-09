@@ -236,8 +236,10 @@ namespace PurplePen
                     return 1;
                 else if (size1.Width > size2.Width)
                     return -1;
-                else
+                else if (size2.Height != size1.Height)
                     return size2.Height.CompareTo(size1.Height);
+                else
+                    return Array.IndexOf(rectangles, size1) - Array.IndexOf(rectangles, size2);
             });
 
             StartNewPage();

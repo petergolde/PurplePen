@@ -547,12 +547,12 @@ namespace PurplePen.Tests
       <td>148</td>
     </tr>
     <tr>
-      <td>57–79</td>
+      <td>48–50</td>
       <td>2</td>
       <td>81</td>
     </tr>
     <tr>
-      <td>48–50</td>
+      <td>57–79</td>
       <td>2</td>
       <td>81</td>
     </tr>

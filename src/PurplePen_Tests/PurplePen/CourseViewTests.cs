@@ -243,8 +243,8 @@ Total Length=0  Total Climb=-1  ScoreColumn=0  Total Score=155  Total Controls=1
 10 [-1]: Ids: 18,110
 11 [-1]: Ids: 19,111
 12 [-1]: Ids:  6,116
-13 [-1]: Ids: 15,106
-14 [-1]: Ids:  3,104
+13 [-1]: Ids:  3,104
+14 [-1]: Ids: 15,106
 15 [-1]: Ids: 22,103
 Special 1 (FirstAid)
 Special 3 (Boundary)
@@ -283,8 +283,8 @@ Total Length=0  Total Climb=-1  ScoreColumn=1  Total Score=155  Total Controls=1
 10 [10]: Ids: 18,110
 11 [11]: Ids: 19,111
 12 [-1]: Ids:  6,116
-13 [-1]: Ids: 15,106
-14 [-1]: Ids:  3,104
+13 [-1]: Ids:  3,104
+14 [-1]: Ids: 15,106
 15 [-1]: Ids: 22,103
 Special 1 (FirstAid)
 Special 3 (Boundary)
@@ -324,8 +324,8 @@ Total Length=0  Total Climb=-1  ScoreColumn=0  Total Score=155  Total Controls=1
 10 [-1]: Ids: 18,110
 11 [-1]: Ids: 19,111
 12 [-1]: Ids:  6,116
-13 [-1]: Ids: 15,106
-14 [-1]: Ids:  3,104
+13 [-1]: Ids:  3,104
+14 [-1]: Ids: 15,106
 15 [-1]: Ids: 22,103
 ";
             Assert.AreEqual(expected, actual);
@@ -349,8 +349,8 @@ Total Length=0  Total Climb=-1  ScoreColumn=0  Total Score=155  Total Controls=1
             expected =
 @"Name='All controls', Kind='AllControls', CourseId=0
 Total Length=0  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=17
- 0 [-1]: Ids: 23,  0
- 1 [-1]: Ids:  1,  0
+ 0 [-1]: Ids:  1,  0
+ 1 [-1]: Ids: 23,  0
  2 [-1]: Ids:  2,  0
  3 [-1]: Ids:  4,  0
  4 [-1]: Ids: 12,  0
@@ -370,8 +370,8 @@ Total Length=0  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=17
 18 [-1]: Ids:  5,  0
 19 [-1]: Ids:  6,  0
 20 [-1]: Ids: 24,  0
-21 [-1]: Ids: 15,  0
-22 [-1]: Ids:  3,  0
+21 [-1]: Ids:  3,  0
+22 [-1]: Ids: 15,  0
 23 [-1]: Ids: 22,  0
 Special 1 (FirstAid)
 Special 2 (OptCrossing)
