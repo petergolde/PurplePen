@@ -402,7 +402,7 @@ namespace PurplePen.Tests
             // There should be a new start control, with the given location.
             // Is should be selected.
             // The control should be highlighted.
-            CheckHighlightedLines(controller, 2, 2);
+            CheckHighlightedLines(controller, 3, 3);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;
@@ -568,7 +568,7 @@ namespace PurplePen.Tests
             // There should be a new finish control, with the given location.
             // Is should be selected.
             // The control should be highlighted.
-            CheckHighlightedLines(controller, 39, 39);
+            CheckHighlightedLines(controller, 40, 40);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Id<ControlPoint> newControlId = highlights[0].controlId;

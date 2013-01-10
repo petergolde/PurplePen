@@ -194,8 +194,8 @@ namespace PurplePen.Tests
             expected =
 @"      | Sample Event 1                                |   [Sample Event 1]
       |All controls     |17 controls                  |   [17 controls]
-( 23) |start|     |0.2NW|  1.7|     |  2.5|     |     |   [Start: NW gully, 2.5m deep]
 (  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
+( 23) |start|     |0.2NW|  1.7|     |  2.5|     |     |   [Start: NW gully, 2.5m deep]
 (  2) |     |   31|  0.3|  2.4|     |   2m|     |     |   [Upper boulder, 2m high]
 (  4) |     |   32|     |  3.7|     |     |     | 12.1|   [very marshy spot]
 ( 12) |     |   74|     |  2.4|     |0.5/2.5|11.15|     |   [Between boulders, 0.5m to 2.5m high]
@@ -215,8 +215,8 @@ namespace PurplePen.Tests
 (  5) |     |   GO| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
 (  6) |                 14.2:                         |   [Navigate to finish funnel]
 ( 24) |                 14.1:                         |   [Follow tapes to finish]
-( 15) |                 13.3:                         |   [Mandatory crossing point]
 (  3) |                 13.3:                         |   [Mandatory crossing point]
+( 15) |                 13.3:                         |   [Mandatory crossing point]
 ( 22) |                 13.4:                         |   [Mandatory passage]
 ";
             Assert.AreEqual(expected, actual);

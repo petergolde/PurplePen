@@ -558,8 +558,11 @@ namespace PurplePen
                 
                 if (courseControl1.points != courseControl2.points)
                     return courseControl1.points.CompareTo(courseControl2.points);
-                else
-                    return Util.CompareCodes(control1.code, control2.code);
+                int result = Util.CompareCodes(control1.code, control2.code);
+                if (result != 0)
+                    return result;
+
+                return view1.controlId.id.CompareTo(view2.controlId.id);                
             });
 
             // Assign ordinals, if applicable. If scores in column A, then no ordinals will be assigned.
