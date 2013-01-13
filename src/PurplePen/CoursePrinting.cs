@@ -364,7 +364,6 @@ namespace PurplePen
         // and the printArea in the size to draw into (in hundreths of an inch).
         protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
-            Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
             CoursePage page = pages[pageNumber];
 
             // Get the course view for the course we are printing.
@@ -387,10 +386,11 @@ namespace PurplePen
             // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
             GC.Collect();
 
-            // Save and restore state so we can mess with stuff.
-            GraphicsState graphicsState = g.Save();
+            if (!printDocument.PrintController.IsPreview && graphicsTarget is GDIPlus_GraphicsTarget) {
+                Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
+                // Save and restore state so we can mess with stuff.
+                GraphicsState graphicsState = g.Save();
 
-            if (!printDocument.PrintController.IsPreview) {
                 // Printing via a bitmap. Works best with some print drivers.
                 dpi = AdjustDpi(dpi);
 
@@ -424,14 +424,16 @@ namespace PurplePen
                     g.DrawImage(bitmap, band.printRectangle);
                 }
 
+                // restore state.
+                g.Restore(graphicsState);
                 bitmap.Dispose();
             }
             else {
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
-                g.IntersectClip(page.printRectangle);
-                g.MultiplyTransform(transform);
+                graphicsTarget.PushClip(page.printRectangle);
+                graphicsTarget.PushTransform(transform);
 
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
@@ -440,11 +442,11 @@ namespace PurplePen
                 float minResolutionMap = Geometry.TransformDistance(minResolutionPage, inverseTransform);
 
                 // And draw.
-                mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
-            }
+                mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
-            // restore state.
-            g.Restore(graphicsState);
+                graphicsTarget.PopTransform();
+                graphicsTarget.PopClip();
+            }
         }
 
         const float MIN_DPI = 400;

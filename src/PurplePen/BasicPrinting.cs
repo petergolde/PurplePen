@@ -45,6 +45,8 @@ using PurplePen.MapModel;
 using System.Printing;
 using System.Printing.Interop;
 using System.Runtime.InteropServices;
+using System.Windows.Xps;
+using System.Windows.Documents;
 
 namespace PurplePen
 {
@@ -62,13 +64,13 @@ namespace PurplePen
         // These are used only for XPS printing:
         private PrintQueue printQueue;
         private PrintTicket printTicket;
-        private Margins margins;
 
         public BasicPrinting(string title, PageSettings pageSettings, bool useXpsPrinting)
         {
             InitializeComponent();
 
             this.pageSettings = pageSettings;
+            this.useXpsPrinting = useXpsPrinting;
 
             printDocument.DocumentName = title;
             printDocument.PrinterSettings = pageSettings.PrinterSettings;
@@ -246,11 +248,18 @@ namespace PurplePen
 
         #region Xps Printing Support
 
-
         private void PrintUsingXps()
         {
             printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
             printTicket = GetPrintTicket(printQueue, pageSettings);
+            Margins margins = pageSettings.Margins;
+
+            BeginPrint(this, new PrintEventArgs());
+
+            XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
+            documentWriter.Write(new Paginator(this, margins), printTicket);
+
+            EndPrint(this, new PrintEventArgs());
         }
 
         private PrintTicket GetPrintTicket(PrintQueue printQueue, System.Drawing.Printing.PageSettings pageSettings)
@@ -284,6 +293,53 @@ namespace PurplePen
             }
 
             return server.GetPrintQueue(printerName);
+        }
+
+        private class Paginator : DocumentPaginator
+        {
+            private BasicPrinting outer;
+            private System.Windows.Size pageSize;
+            private Margins margins;  // margins in 1/100 of an inch.
+
+            public Paginator(BasicPrinting outer, Margins margins)
+            {
+                this.outer = outer;
+                this.margins = margins;
+            }
+
+            public override DocumentPage GetPage(int pageNumber)
+            {
+                System.Windows.Media.DrawingVisual visual = new System.Windows.Media.DrawingVisual();
+                System.Windows.Rect contentRect = new System.Windows.Rect(margins.Left, margins.Top, pageSize.Width - margins.Left - margins.Right, pageSize.Height - margins.Top - margins.Bottom);
+                using (System.Windows.Media.DrawingContext dc = visual.RenderOpen()) {
+                    IGraphicsTarget graphicsTarget = new WPF_GraphicsTarget(dc);
+                    // UNDONE: DPI.
+                    outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), 600F);
+                }
+
+                return new DocumentPage(visual, pageSize, contentRect, contentRect);
+            }
+
+            public override bool IsPageCountValid
+            {
+                get { return true; }
+            }
+
+            public override int PageCount
+            {
+                get { return outer.totalPages; }
+            }
+
+            public override System.Windows.Size PageSize
+            {
+                get { return pageSize; }
+                set { pageSize = value; }
+            }
+
+            public override IDocumentPaginatorSource Source
+            {
+                get { return null; }
+            }
         }
 
         #endregion Xps Printing Support
