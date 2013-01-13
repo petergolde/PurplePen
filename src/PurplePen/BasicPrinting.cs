@@ -40,6 +40,11 @@ using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
+using System.Printing;
+using System.Printing.Interop;
+using System.Runtime.InteropServices;
 
 namespace PurplePen
 {
@@ -52,8 +57,14 @@ namespace PurplePen
         protected PrintDocument printDocument;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
+        private bool useXpsPrinting;
 
-        public BasicPrinting(string title, PageSettings pageSettings)
+        // These are used only for XPS printing:
+        private PrintQueue printQueue;
+        private PrintTicket printTicket;
+        private Margins margins;
+
+        public BasicPrinting(string title, PageSettings pageSettings, bool useXpsPrinting)
         {
             InitializeComponent();
 
@@ -90,7 +101,12 @@ namespace PurplePen
             // Set up and position everything.
             SetupPrinting();
 
-            printDocument.Print();
+            if (useXpsPrinting) {
+                PrintUsingXps();
+            }
+            else {
+                printDocument.Print();
+            }
         }
 
         // Do a print preview of the descriptions.
@@ -115,7 +131,7 @@ namespace PurplePen
         private SizeF GetPrintArea(PageSettings pageSettings)
         {
             return new SizeF(pageSettings.Bounds.Width - pageSettings.Margins.Left - pageSettings.Margins.Right,
-                                        pageSettings.Bounds.Height - pageSettings.Margins.Top - pageSettings.Margins.Bottom);
+                             pageSettings.Bounds.Height - pageSettings.Margins.Top - pageSettings.Margins.Bottom);
         }
 
         // Layout all pages, get the total number of pages, and get ready to print.
@@ -191,7 +207,9 @@ namespace PurplePen
                 SizeF size = new SizeF(e.MarginBounds.Width, e.MarginBounds.Height);
 
                 // Draw the page.
-                DrawPage(g, currentPage, size, dpi);
+                using (IGraphicsTarget graphicsTarget = new GDIPlus_GraphicsTarget(g)) {
+                    DrawPage(graphicsTarget, currentPage, size, dpi);
+                }
 
                 // Update page count.
                 ++currentPage;
@@ -226,6 +244,50 @@ namespace PurplePen
         {
         }
 
+        #region Xps Printing Support
+
+
+        private void PrintUsingXps()
+        {
+            printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
+            printTicket = GetPrintTicket(printQueue, pageSettings);
+        }
+
+        private PrintTicket GetPrintTicket(PrintQueue printQueue, System.Drawing.Printing.PageSettings pageSettings)
+        {
+            PrintTicketConverter printTicketConverter = new PrintTicketConverter(printQueue.FullName, printQueue.ClientPrintSchemaVersion);
+            IntPtr devmodeHandle = pageSettings.PrinterSettings.GetHdevmode(pageSettings);
+            int size = (int)GlobalSize(devmodeHandle);
+            IntPtr devmodePtr = GlobalLock(devmodeHandle);
+            byte[] devMode = new byte[size];
+            Marshal.Copy(devmodePtr, devMode, 0, size);
+            GlobalUnlock(devmodeHandle);
+            GlobalFree(devmodeHandle);
+            return printTicketConverter.ConvertDevModeToPrintTicket(devMode);
+        }
+
+        private PrintQueue GetPrintQueue(string printerName)
+        {
+            PrintServer server = null;
+
+            if (printerName.StartsWith(@"\\")) {
+                int indexOfSecondSlash = printerName.IndexOf('\\', 2);
+                if (indexOfSecondSlash > 2) {
+                    string serverName = printerName.Substring(0, indexOfSecondSlash);
+                    printerName = printerName.Substring(indexOfSecondSlash + 1);
+                    server = new PrintServer(serverName);
+                }
+            }
+
+            if (server == null) {
+                server = new LocalPrintServer();
+            }
+
+            return server.GetPrintQueue(printerName);
+        }
+
+        #endregion Xps Printing Support
+
         // Routine to layout all the pages. Must return the number of pages to print. "printArea" is the size
         // without the margins as set in the pageSettings. 
         protected abstract int LayoutPages(PageSettings pageSettings, SizeF printArea);
@@ -233,7 +295,20 @@ namespace PurplePen
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea is the size to draw into (in hundreths of an inch), within the margins.
         // dpi is the resolution of the printing in dots per inch.
-        protected abstract void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi);
+        protected abstract void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi);
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GlobalLock(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool GlobalUnlock(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GlobalFree(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        static extern UIntPtr GlobalSize(IntPtr hMem);
     }
 }
 

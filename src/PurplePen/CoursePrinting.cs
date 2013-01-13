@@ -47,6 +47,7 @@ using System.Diagnostics;
 namespace PurplePen
 {
     using PurplePen.Graphics2D;
+    using PurplePen.MapModel;
 
     // Class to print out courses.
     class CoursePrinting: BasicPrinting
@@ -94,7 +95,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.UseXpsPrinting)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
@@ -361,8 +362,9 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
+        protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
+            Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
             CoursePage page = pages[pageNumber];
 
             // Get the course view for the course we are printing.
@@ -538,6 +540,8 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
         public int Count = 1;                         // count of copies to print
-        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages                
+        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
+
+        public bool UseXpsPrinting = false;          // If true, use XPS printing
     }
 }

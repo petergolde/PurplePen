@@ -41,6 +41,8 @@ using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Diagnostics;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen
 {
@@ -66,7 +68,7 @@ namespace PurplePen
         protected abstract IPrintableRectangle[] GetDescriptionList();
 
         public RectanglePrinting(string title, PageSettings pageSettings, float boxSize, PrintingCountKind countKind, int count)
-            : base(title, pageSettings)
+            : base(title, pageSettings, false)
         {
             this.boxSize = boxSize;
             this.countKind = countKind;
@@ -111,8 +113,9 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
+        protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
+            Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
             positioner.DrawPage(g, pageNumber);
         }
     }
