@@ -84,6 +84,13 @@ namespace PurplePen
             copiesUpDown.Value = settings.Count;
             radioButtonOnePage.Checked = settings.CropLargePrintArea;
             radioButtonMultiPage.Checked = !settings.CropLargePrintArea;
+
+            if (settings.UseXpsPrinting) {
+                comboBoxPrintMethod.SelectedIndex = 1;
+            }
+            else {
+                comboBoxPrintMethod.SelectedIndex = 0;
+            }
         }
 
         // Update the settings with information from the dialog.
@@ -95,6 +102,8 @@ namespace PurplePen
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
             settings.CropLargePrintArea = radioButtonOnePage.Checked;
+
+            settings.UseXpsPrinting = (comboBoxPrintMethod.SelectedIndex == 1);
         }
 
         private void printerChange_Click(object sender, EventArgs e)

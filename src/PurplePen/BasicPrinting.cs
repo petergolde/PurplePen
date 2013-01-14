@@ -57,36 +57,32 @@ namespace PurplePen
     {
         private PageSettings pageSettings;
         protected PrintDocument printDocument;
+        private string documentTitle;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
         private bool useXpsPrinting;
 
-        // These are used only for XPS printing:
-        private PrintQueue printQueue;
-        private PrintTicket printTicket;
-
         public BasicPrinting(string title, PageSettings pageSettings, bool useXpsPrinting)
         {
-            InitializeComponent();
-
             this.pageSettings = pageSettings;
             this.useXpsPrinting = useXpsPrinting;
+            this.documentTitle = title;
 
-            printDocument.DocumentName = title;
-            printDocument.PrinterSettings = pageSettings.PrinterSettings;
-            printDocument.DefaultPageSettings = pageSettings;
+            InitializeComponent();
         }
 
         private void InitializeComponent()
         {
             this.printDocument = new System.Drawing.Printing.PrintDocument();
-            // 
-            // printDocument
-            // 
-            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintPage);
-            this.printDocument.QueryPageSettings += new System.Drawing.Printing.QueryPageSettingsEventHandler(this.QueryPageSettings);
-            this.printDocument.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.EndPrint);
-            this.printDocument.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.BeginPrint);
+
+            printDocument.DocumentName = documentTitle;
+            printDocument.PrinterSettings = pageSettings.PrinterSettings;
+            printDocument.DefaultPageSettings = pageSettings;
+            
+            this.printDocument.PrintPage += this.PrintPage;
+            this.printDocument.QueryPageSettings += this.QueryPageSettings;
+            this.printDocument.EndPrint += this.EndPrint;
+            this.printDocument.BeginPrint += this.BeginPrint;
 
         }
 
@@ -250,14 +246,15 @@ namespace PurplePen
 
         private void PrintUsingXps()
         {
-            printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
-            printTicket = GetPrintTicket(printQueue, pageSettings);
+            PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
+            PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
             Margins margins = pageSettings.Margins;
 
             BeginPrint(this, new PrintEventArgs());
 
+            printQueue.CurrentJobSettings.Description = documentTitle;
             XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
-            documentWriter.Write(new Paginator(this, margins), printTicket);
+            documentWriter.Write(new Paginator(this, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket)), printTicket);
 
             EndPrint(this, new PrintEventArgs());
         }
@@ -295,29 +292,68 @@ namespace PurplePen
             return server.GetPrintQueue(printerName);
         }
 
+        private float GetDPI(PrintTicket printTicket)
+        {
+            float dpi = Math.Max(printTicket.PageResolution.X ?? 1000, printTicket.PageResolution.Y ?? 1000);
+            return dpi;
+        }
+
         private class Paginator : DocumentPaginator
         {
             private BasicPrinting outer;
-            private System.Windows.Size pageSize;
+            private System.Windows.Size pageSize;  // page size in 1/96 of an inch.
             private Margins margins;  // margins in 1/100 of an inch.
+            private float dpi;
 
-            public Paginator(BasicPrinting outer, Margins margins)
+            public Paginator(BasicPrinting outer, SizeF pageSize, Margins margins, float dpi)
             {
                 this.outer = outer;
                 this.margins = margins;
+                this.dpi = dpi;
+                this.pageSize = new System.Windows.Size(HundrethsToPoints(pageSize.Width), HundrethsToPoints(pageSize.Height));
             }
 
             public override DocumentPage GetPage(int pageNumber)
             {
+                Margins margins = new Margins(this.margins.Left, this.margins.Right, this.margins.Top, this.margins.Bottom);
+                bool landscape = outer.pageSettings.Landscape;
+                bool rotate;
+                outer.ChangePageSettings(pageNumber, ref landscape, margins);
+                rotate = (landscape != outer.pageSettings.Landscape);
+
+                // Get margins in terms of normal page orientation, in points.
+                double leftMargin = HundrethsToPoints(rotate ? margins.Bottom : margins.Left);
+                double rightMargin = HundrethsToPoints(rotate ? margins.Top : margins.Right);
+                double topMargin = HundrethsToPoints(rotate ? margins.Left : margins.Top);
+                double bottomMargin = HundrethsToPoints(rotate ? margins.Right : margins.Bottom);
+                System.Windows.Rect contentRect = new System.Windows.Rect(leftMargin, topMargin, pageSize.Width - leftMargin - rightMargin, pageSize.Height - topMargin - bottomMargin);
+                System.Windows.Rect boundingRect = new System.Windows.Rect(0, 0, pageSize.Width - leftMargin - rightMargin, pageSize.Height - topMargin - bottomMargin);
                 System.Windows.Media.DrawingVisual visual = new System.Windows.Media.DrawingVisual();
-                System.Windows.Rect contentRect = new System.Windows.Rect(margins.Left, margins.Top, pageSize.Width - margins.Left - margins.Right, pageSize.Height - margins.Top - margins.Bottom);
+
                 using (System.Windows.Media.DrawingContext dc = visual.RenderOpen()) {
+                    // Clip to the bounding rect within margins.
+                    //dc.PushClip(new System.Windows.Media.RectangleGeometry(boundingRect));
+
+                    if (rotate) {
+                        // Rotate and translate to handle landscape mode.
+                        dc.PushTransform(new System.Windows.Media.TranslateTransform(0, boundingRect.Height));
+                        dc.PushTransform(new System.Windows.Media.RotateTransform(-90));
+                    }
+
+                    // Scale to hundreths of an inch instead of points (1/96 of inch).
+                    dc.PushTransform(new System.Windows.Media.ScaleTransform(96.0 / 100.0, 96.0 / 100.0));
+
                     IGraphicsTarget graphicsTarget = new WPF_GraphicsTarget(dc);
-                    // UNDONE: DPI.
-                    outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), 600F);
+                    outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), dpi);
                 }
 
                 return new DocumentPage(visual, pageSize, contentRect, contentRect);
+            }
+
+            // Convert 1/100 of an inch to 1/96 of an inch.
+            private double HundrethsToPoints(double hundreths)
+            {
+                return hundreths / 100.0 * 96.0;
             }
 
             public override bool IsPageCountValid
@@ -333,7 +369,7 @@ namespace PurplePen
             public override System.Windows.Size PageSize
             {
                 get { return pageSize; }
-                set { pageSize = value; }
+                set { return; }
             }
 
             public override IDocumentPaginatorSource Source

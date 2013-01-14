@@ -432,7 +432,8 @@ namespace PurplePen
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
-                graphicsTarget.PushClip(page.printRectangle);
+                //UNDONE: clip to boundary given. Or should this be done in BasicPrinting?
+                //graphicsTarget.PushClip(page.printRectangle);
                 graphicsTarget.PushTransform(transform);
 
                 // Determine the resolution in map coordinates.
@@ -445,7 +446,7 @@ namespace PurplePen
                 mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
                 graphicsTarget.PopTransform();
-                graphicsTarget.PopClip();
+                //graphicsTarget.PopClip();
             }
         }
 

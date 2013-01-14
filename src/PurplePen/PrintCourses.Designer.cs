@@ -81,13 +81,19 @@ namespace PurplePen
             this.radioButtonMultiPage = new System.Windows.Forms.RadioButton();
             this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
             this.labelAppearanceInfo = new System.Windows.Forms.Label();
+            this.groupBoxAdvanced = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxPrintMethod = new System.Windows.Forms.ComboBox();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copiesUpDown)).BeginInit();
             this.groupBoxAppearance.SuspendLayout();
+            this.groupBoxAdvanced.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -201,7 +207,6 @@ namespace PurplePen
             // copiesLabel
             // 
             resources.ApplyResources(this.copiesLabel, "copiesLabel");
-            this.copiesLabel.MaximumSize = new System.Drawing.Size(130, 50);
             this.copiesLabel.Name = "copiesLabel";
             // 
             // printDialog
@@ -236,10 +241,40 @@ namespace PurplePen
             resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
             this.labelAppearanceInfo.Name = "labelAppearanceInfo";
             // 
+            // groupBoxAdvanced
+            // 
+            this.groupBoxAdvanced.Controls.Add(this.tableLayoutPanel3);
+            resources.ApplyResources(this.groupBoxAdvanced, "groupBoxAdvanced");
+            this.groupBoxAdvanced.Name = "groupBoxAdvanced";
+            this.groupBoxAdvanced.TabStop = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxPrintMethod, 1, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // comboBoxPrintMethod
+            // 
+            resources.ApplyResources(this.comboBoxPrintMethod, "comboBoxPrintMethod");
+            this.comboBoxPrintMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPrintMethod.FormattingEnabled = true;
+            this.comboBoxPrintMethod.Items.AddRange(new object[] {
+            resources.GetString("comboBoxPrintMethod.Items"),
+            resources.GetString("comboBoxPrintMethod.Items1")});
+            this.comboBoxPrintMethod.Name = "comboBoxPrintMethod";
+            // 
             // PrintCourses
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.groupBoxAdvanced);
             this.Controls.Add(this.groupBoxAppearance);
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.previewButton);
@@ -254,6 +289,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.groupBoxAppearance, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.groupBoxAdvanced, 0);
             this.printerGroup.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -262,9 +298,12 @@ namespace PurplePen
             this.copiesGroupBox.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copiesUpDown)).EndInit();
             this.groupBoxAppearance.ResumeLayout(false);
             this.groupBoxAppearance.PerformLayout();
+            this.groupBoxAdvanced.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +330,9 @@ namespace PurplePen
         private System.Windows.Forms.Label labelAppearanceInfo;
         private System.Windows.Forms.RadioButton radioButtonOnePage;
         private System.Windows.Forms.RadioButton radioButtonMultiPage;
+        private System.Windows.Forms.GroupBox groupBoxAdvanced;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxPrintMethod;
     }
 }
