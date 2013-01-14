@@ -134,7 +134,6 @@ namespace PurplePen.Tests
             // Get the pages of the printing.
             CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, appearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
-            coursePrinter.Dispose();
 
             // Check all the pages against the baseline.
             for (int page = 0; page < bitmaps.Length; ++page) {

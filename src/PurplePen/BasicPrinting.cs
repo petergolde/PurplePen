@@ -53,44 +53,22 @@ namespace PurplePen
     // Basic class to handle printing / print preview.
     // Must override LayoutPages and DrawPage.
 
-    abstract class BasicPrinting: Component
+    abstract class BasicPrinting
     {
         private PageSettings pageSettings;
-        protected PrintDocument printDocument;
         private string documentTitle;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
-        private bool useXpsPrinting;
+        private bool printPreviewInProgress = false;
 
-        public BasicPrinting(string title, PageSettings pageSettings, bool useXpsPrinting)
+        public BasicPrinting(string title, PageSettings pageSettings)
         {
             this.pageSettings = pageSettings;
-            this.useXpsPrinting = useXpsPrinting;
             this.documentTitle = title;
-
-            InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            this.printDocument = new System.Drawing.Printing.PrintDocument();
-
-            printDocument.DocumentName = documentTitle;
-            printDocument.PrinterSettings = pageSettings.PrinterSettings;
-            printDocument.DefaultPageSettings = pageSettings;
-            
-            this.printDocument.PrintPage += this.PrintPage;
-            this.printDocument.QueryPageSettings += this.QueryPageSettings;
-            this.printDocument.EndPrint += this.EndPrint;
-            this.printDocument.BeginPrint += this.BeginPrint;
-
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-                printDocument.Dispose();
-            base.Dispose(disposing);
+        public bool PrintPreviewInProgress {
+            get { return printPreviewInProgress; }
         }
 
         // Print the descriptions.
@@ -98,11 +76,9 @@ namespace PurplePen
         {
             // Set up and position everything.
             SetupPrinting();
+            printPreviewInProgress = false;
 
-            if (useXpsPrinting) {
-                PrintUsingXps();
-            }
-            else {
+            using (PrintDocument printDocument = CreatePrintDocument()) {
                 printDocument.Print();
             }
         }
@@ -112,17 +88,20 @@ namespace PurplePen
         {
             // Set up and position everything.
             SetupPrinting();
+            printPreviewInProgress = true;
 
-            PrintPreviewDialog dialog = new PrintPreviewDialog();
-            dialog.UseAntiAlias = true;
-            dialog.Document = printDocument;
-            dialog.StartPosition = FormStartPosition.CenterParent;
-            dialog.Size = dialogSize;
-            dialog.SizeGripStyle = SizeGripStyle.Show;
-            dialog.ShowIcon = false;
+            using (PrintDocument printDocument = CreatePrintDocument()) {
+                PrintPreviewDialog dialog = new PrintPreviewDialog();
+                dialog.UseAntiAlias = true;
+                dialog.Document = printDocument;
+                dialog.StartPosition = FormStartPosition.CenterParent;
+                dialog.Size = dialogSize;
+                dialog.SizeGripStyle = SizeGripStyle.Show;
+                dialog.ShowIcon = false;
 
-            dialog.ShowDialog();
-            dialog.Dispose();
+                dialog.ShowDialog();
+                dialog.Dispose();
+            }
         }
 
         // Get the printing area from a pageSettings.
@@ -138,11 +117,29 @@ namespace PurplePen
             totalPages = LayoutPages(pageSettings, GetPrintArea(pageSettings));
         }
 
+        // Setup the print document for printing. Should be called after SetupPrinting().
+        private PrintDocument CreatePrintDocument()
+        {
+            PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+
+            printDocument.DocumentName = documentTitle;
+            printDocument.PrinterSettings = pageSettings.PrinterSettings;
+            printDocument.DefaultPageSettings = pageSettings;
+
+            printDocument.PrintPage += this.PrintPage;
+            printDocument.QueryPageSettings += this.QueryPageSettings;
+            printDocument.EndPrint += this.EndPrint;
+            printDocument.BeginPrint += this.BeginPrint;
+
+            return printDocument;
+        }
+
         // Do printing to a set of bitmaps. This is used for testing support.
         public Bitmap[] PrintBitmaps()
         {
             // Set up and position everything.
             printingToBitmaps = true;
+            printPreviewInProgress = false;
             SetupPrinting();
 
             if (totalPages <= 0)
@@ -152,8 +149,6 @@ namespace PurplePen
             PrintPageEventArgs printPageArgs;
             List<Bitmap> bitmapList = new List<Bitmap>();
 
-            printDocument.PrintController = new StandardPrintController(); //new PreviewPrintController();
-            printDocument.PrinterSettings = pageSettings.PrinterSettings;
             BeginPrint(this, printArgs);
 
             do {
@@ -161,7 +156,7 @@ namespace PurplePen
                 QueryPageSettingsEventArgs queryPageSettingsArgs = new QueryPageSettingsEventArgs(pageSettings);
                 QueryPageSettings(this, queryPageSettingsArgs);
 
-                Size pageSize = pageSettings.Bounds.Size;        
+                Size pageSize = pageSettings.Bounds.Size;
 
                 Bitmap bm = new Bitmap(pageSize.Width * 2, pageSize.Height * 2, PixelFormat.Format24bppRgb);
                 bm.SetResolution(200, 200);           // using 200 dpi.
@@ -192,7 +187,7 @@ namespace PurplePen
                 // Get the graphics and origin relative to the page edge.
                 Graphics g = e.Graphics;
                 PointF origin;
-                if (!printDocument.PrintController.IsPreview && !printingToBitmaps)
+                if (!printPreviewInProgress && !printingToBitmaps)
                     origin = new PointF(e.PageSettings.HardMarginX, e.PageSettings.HardMarginY);
                 else
                     origin = new PointF();
@@ -244,8 +239,11 @@ namespace PurplePen
 
         #region Xps Printing Support
 
-        private void PrintUsingXps()
+        public void PrintUsingXps()
         {
+            // Set up and position everything.
+            SetupPrinting();
+
             PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
             PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
             Margins margins = pageSettings.Margins;
@@ -332,7 +330,7 @@ namespace PurplePen
 
                 using (System.Windows.Media.DrawingContext dc = visual.RenderOpen()) {
                     // Clip to the bounding rect within margins.
-                    //dc.PushClip(new System.Windows.Media.RectangleGeometry(boundingRect));
+                    dc.PushClip(new System.Windows.Media.RectangleGeometry(boundingRect));
 
                     if (rotate) {
                         // Rotate and translate to handle landscape mode.

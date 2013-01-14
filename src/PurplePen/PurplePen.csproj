@@ -126,9 +126,7 @@
     <Compile Include="BaseDialog.Designer.cs">
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasicPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BasicPrinting.cs" />
     <Compile Include="ChangeAllCodes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +177,7 @@
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseObject.cs" />
-    <Compile Include="CoursePrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CoursePrinting.cs" />
     <Compile Include="CourseSelector.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -433,9 +429,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="QueryEvent.cs" />
-    <Compile Include="RectanglePrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RectanglePrinting.cs" />
     <Compile Include="RectangleSelectMode.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
@@ -651,33 +645,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseDialog.sv.resx">
       <DependentUpon>BaseDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.bg.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.es.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.fi.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.fr.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.nb-NO.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.nn-NO.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.ro.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.sv.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeAllCodes.bg.resx">
       <DependentUpon>ChangeAllCodes.cs</DependentUpon>
@@ -1038,33 +1005,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DescriptionControl.sv.resx">
       <DependentUpon>DescriptionControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.bg.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.es.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.fi.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.fr.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.nb-NO.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.nn-NO.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.ro.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.sv.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DotGrid.bg.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
@@ -1685,33 +1625,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PunchPatternDialog.sv.resx">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.bg.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.es.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.fi.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.fr.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.nb-NO.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.nn-NO.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.ro.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.sv.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.bg.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>

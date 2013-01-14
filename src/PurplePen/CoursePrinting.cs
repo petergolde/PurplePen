@@ -95,7 +95,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.UseXpsPrinting)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
@@ -386,7 +386,7 @@ namespace PurplePen
             // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
             GC.Collect();
 
-            if (!printDocument.PrintController.IsPreview && graphicsTarget is GDIPlus_GraphicsTarget) {
+            if (!PrintPreviewInProgress && graphicsTarget is GDIPlus_GraphicsTarget) {
                 Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
                 // Save and restore state so we can mess with stuff.
                 GraphicsState graphicsState = g.Save();
@@ -432,8 +432,6 @@ namespace PurplePen
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
-                //UNDONE: clip to boundary given. Or should this be done in BasicPrinting?
-                //graphicsTarget.PushClip(page.printRectangle);
                 graphicsTarget.PushTransform(transform);
 
                 // Determine the resolution in map coordinates.
@@ -446,7 +444,6 @@ namespace PurplePen
                 mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
                 graphicsTarget.PopTransform();
-                //graphicsTarget.PopClip();
             }
         }
 

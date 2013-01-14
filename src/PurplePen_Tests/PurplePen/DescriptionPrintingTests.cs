@@ -63,7 +63,6 @@ namespace PurplePen.Tests
             // Get the pages of the printing.
             DescriptionPrinting descPrinter = new DescriptionPrinting(controller.GetEventDB(), ui.symbolDB, descPrintSettings);
             Bitmap[] bitmaps = descPrinter.PrintBitmaps();
-            descPrinter.Dispose();
 
             // Check all the pages against the baseline.
             for (int page = 0; page < bitmaps.Length; ++page) {
