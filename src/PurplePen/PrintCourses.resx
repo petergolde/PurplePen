@@ -469,7 +469,7 @@
     <value>True</value>
   </data>
   <data name="copiesUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>125, 3</value>
   </data>
   <data name="copiesUpDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
@@ -502,7 +502,7 @@
     <value>NoControl</value>
   </data>
   <data name="copiesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 5</value>
+    <value>3, 5</value>
   </data>
   <data name="copiesLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>130, 50</value>
@@ -532,7 +532,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 24</value>
+    <value>9, 24</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -556,7 +556,7 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="copiesUpDown" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="copiesLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="copiesUpDown" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="copiesLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="copiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 89</value>
@@ -585,61 +585,121 @@
   <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
   </metadata>
-  <data name="radioButtonMultiPage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonMultiPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="radioButtonMultiPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 87</value>
-  </data>
-  <data name="radioButtonMultiPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 17</value>
-  </data>
-  <data name="radioButtonMultiPage.TabIndex" type="System.Int32, mscorlib">
+  <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="radioButtonMultiPage.Text" xml:space="preserve">
-    <value>Print on multiple pages</value>
+  <data name="comboBoxColorModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
   </data>
-  <data name="&gt;&gt;radioButtonMultiPage.Name" xml:space="preserve">
-    <value>radioButtonMultiPage</value>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
   </data>
-  <data name="&gt;&gt;radioButtonMultiPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
   </data>
-  <data name="&gt;&gt;radioButtonMultiPage.Parent" xml:space="preserve">
-    <value>groupBoxAppearance</value>
+  <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 4</value>
   </data>
-  <data name="&gt;&gt;radioButtonMultiPage.ZOrder" xml:space="preserve">
+  <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 21</value>
+  </data>
+  <data name="comboBoxColorModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Name" xml:space="preserve">
+    <value>comboBoxColorModel</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radioButtonOnePage.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelColorModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labelColorModel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radioButtonOnePage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 62</value>
+  <data name="labelColorModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
   </data>
-  <data name="radioButtonOnePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
+  <data name="labelColorModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
   </data>
-  <data name="radioButtonOnePage.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelColorModel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="radioButtonOnePage.Text" xml:space="preserve">
-    <value>Crop to a single page</value>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Color Model:</value>
   </data>
-  <data name="&gt;&gt;radioButtonOnePage.Name" xml:space="preserve">
-    <value>radioButtonOnePage</value>
+  <data name="&gt;&gt;labelColorModel.Name" xml:space="preserve">
+    <value>labelColorModel</value>
   </data>
-  <data name="&gt;&gt;radioButtonOnePage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;labelColorModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radioButtonOnePage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelColorModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;labelColorModel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 88</value>
+  </data>
+  <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 29</value>
+  </data>
+  <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Name" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel4.Parent" xml:space="preserve">
     <value>groupBoxAppearance</value>
   </data>
-  <data name="&gt;&gt;radioButtonOnePage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="comboBoxColorModel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelColorModel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Crop to a single page</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Print on multiple pages</value>
+  </data>
+  <data name="comboBoxMultiPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 56</value>
+  </data>
+  <data name="comboBoxMultiPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 21</value>
+  </data>
+  <data name="comboBoxMultiPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBoxMultiPage.Name" xml:space="preserve">
+    <value>comboBoxMultiPage</value>
+  </data>
+  <data name="&gt;&gt;comboBoxMultiPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxMultiPage.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;comboBoxMultiPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="labelAppearanceInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -821,9 +881,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Print Courses</value>

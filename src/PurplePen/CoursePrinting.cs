@@ -543,5 +543,8 @@ namespace PurplePen
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
 
         public bool UseXpsPrinting = false;          // If true, use XPS printing
+        public ColorModel PrintingColorModel = ColorModel.RGB;
+
+        public enum ColorModel { RGB, CMYK };
     }
 }
