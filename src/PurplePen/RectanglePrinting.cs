@@ -68,7 +68,7 @@ namespace PurplePen
         protected abstract IPrintableRectangle[] GetDescriptionList();
 
         public RectanglePrinting(string title, PageSettings pageSettings, float boxSize, PrintingCountKind countKind, int count)
-            : base(title, pageSettings)
+            : base(title, pageSettings, ColorModel.RGB)
         {
             this.boxSize = boxSize;
             this.countKind = countKind;

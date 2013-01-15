@@ -105,7 +105,7 @@ namespace PurplePen
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
             settings.UseXpsPrinting = (comboBoxPrintMethod.SelectedIndex == 1);
-            settings.PrintingColorModel = (CoursePrintSettings.ColorModel)comboBoxColorModel.SelectedIndex;
+            settings.PrintingColorModel = (BasicPrinting.ColorModel)comboBoxColorModel.SelectedIndex;
         }
 
         private void printerChange_Click(object sender, EventArgs e)

@@ -95,7 +95,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
@@ -387,7 +387,8 @@ namespace PurplePen
             GC.Collect();
 
             if (!PrintPreviewInProgress && graphicsTarget is GDIPlus_GraphicsTarget) {
-                Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
+                GDIPlus_GraphicsTarget gdiGraphicsTarget = ((GDIPlus_GraphicsTarget)graphicsTarget);
+                Graphics g = gdiGraphicsTarget.Graphics;
                 // Save and restore state so we can mess with stuff.
                 GraphicsState graphicsState = g.Save();
 
@@ -417,7 +418,9 @@ namespace PurplePen
                     float minResolution = Geometry.TransformDistance(1F, inverseTransform);
 
                     // And draw.
-                    mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
+                    using (IGraphicsTarget gt = new GDIPlus_GraphicsTarget(bitmapGraphics, gdiGraphicsTarget.ColorConverter)) {
+                        mapDisplay.Draw(gt, band.mapRectangle, minResolution);
+                    }
                     bitmapGraphics.Dispose();
 
                     // Draw the bitmap on the printer.
@@ -543,8 +546,7 @@ namespace PurplePen
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
 
         public bool UseXpsPrinting = false;          // If true, use XPS printing
-        public ColorModel PrintingColorModel = ColorModel.RGB;
+        public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.RGB;
 
-        public enum ColorModel { RGB, CMYK };
     }
 }

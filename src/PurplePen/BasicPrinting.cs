@@ -57,14 +57,18 @@ namespace PurplePen
     {
         private PageSettings pageSettings;
         private string documentTitle;
+        private ColorModel colorModel;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
         private bool printPreviewInProgress = false;
 
-        public BasicPrinting(string title, PageSettings pageSettings)
+        public enum ColorModel { RGB, CMYK };
+
+        public BasicPrinting(string title, PageSettings pageSettings, BasicPrinting.ColorModel colorModel)
         {
             this.pageSettings = pageSettings;
             this.documentTitle = title;
+            this.colorModel = colorModel;
         }
 
         public bool PrintPreviewInProgress {
@@ -200,9 +204,18 @@ namespace PurplePen
                 SizeF size = new SizeF(e.MarginBounds.Width, e.MarginBounds.Height);
 
                 // Draw the page.
-                using (IGraphicsTarget graphicsTarget = new GDIPlus_GraphicsTarget(g)) {
+                IGraphicsTarget graphicsTarget;
+                if (colorModel == ColorModel.RGB)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g);
+                else if (colorModel == ColorModel.CMYK)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g, new SwopColorConverter());
+                else
+                    throw new NotImplementedException();
+
+                using (graphicsTarget) {
                     DrawPage(graphicsTarget, currentPage, size, dpi);
                 }
+                graphicsTarget = null;
 
                 // Update page count.
                 ++currentPage;
@@ -341,8 +354,18 @@ namespace PurplePen
                     // Scale to hundreths of an inch instead of points (1/96 of inch).
                     dc.PushTransform(new System.Windows.Media.ScaleTransform(96.0 / 100.0, 96.0 / 100.0));
 
-                    IGraphicsTarget graphicsTarget = new WPF_GraphicsTarget(dc);
-                    outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), dpi);
+                    IGraphicsTarget graphicsTarget;
+                    if (outer.colorModel == ColorModel.RGB)
+                        graphicsTarget = new WPF_GraphicsTarget(dc);
+                    else if (outer.colorModel == ColorModel.CMYK)
+                        graphicsTarget = new WPF_GraphicsTarget(dc, new WPFSwopColorConverter());
+                    else
+                        throw new NotImplementedException();
+
+                    using (graphicsTarget) {
+                        outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), dpi);
+                    }
+                    graphicsTarget = null;
                 }
 
                 return new DocumentPage(visual, pageSize, contentRect, contentRect);
