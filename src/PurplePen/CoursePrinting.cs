@@ -545,8 +545,8 @@ namespace PurplePen
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
 
-        public bool UseXpsPrinting = false;          // If true, use XPS printing
-        public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.RGB;
+        public bool UseXpsPrinting = true;          // If true, use XPS printing
+        public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.CMYK;
 
     }
 }

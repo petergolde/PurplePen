@@ -592,9 +592,12 @@
     <value>Left, Right</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
-    <value>RGB</value>
+    <value>OCAD Compatible</value>
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
     <value>CMYK</value>
   </data>
   <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">

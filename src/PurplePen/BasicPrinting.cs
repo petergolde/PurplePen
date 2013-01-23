@@ -62,12 +62,20 @@ namespace PurplePen
         private bool printingToBitmaps = false;
         private bool printPreviewInProgress = false;
 
-        public enum ColorModel { RGB, CMYK };
+        public enum ColorModel { OCADCompatible, RGB, CMYK };
 
         public BasicPrinting(string title, PageSettings pageSettings, BasicPrinting.ColorModel colorModel)
         {
             this.pageSettings = pageSettings;
             this.documentTitle = title;
+
+            if (colorModel == ColorModel.OCADCompatible) {
+                // OCAD uses CMYK color mode for PostScript, and RGB for other printers. Do similar
+                // if OCAD compatible mode is used.
+                bool isPostscript = PrinterSupportsPostScript(pageSettings.PrinterSettings.PrinterName);
+                colorModel = isPostscript ? ColorModel.CMYK : ColorModel.RGB;
+            }
+
             this.colorModel = colorModel;
         }
 
@@ -305,7 +313,10 @@ namespace PurplePen
 
         private float GetDPI(PrintTicket printTicket)
         {
-            float dpi = Math.Max(printTicket.PageResolution.X ?? 1000, printTicket.PageResolution.Y ?? 1000);
+            float xResolution = (printTicket.PageResolution == null) ? 1000 : (printTicket.PageResolution.X ?? 1000);
+            float yResolution = (printTicket.PageResolution == null) ? 1000 : (printTicket.PageResolution.Y ?? 1000);
+
+            float dpi = Math.Max(xResolution, yResolution);
             return dpi;
         }
 
@@ -401,6 +412,58 @@ namespace PurplePen
 
         #endregion Xps Printing Support
 
+        #region Postscript detection
+        //By Justin Alexander, aka TheLoneCabbage
+
+        static Int32 GETTECHNOLOGY = 20;
+        static Int32 QUERYESCSUPPORT = 8;
+        static Int32 POSTSCRIPT_PASSTHROUGH = 4115;
+        static Int32 ENCAPSULATED_POSTSCRIPT = 4116;
+        static Int32 POSTSCRIPT_IDENTIFY = 4117;
+        static Int32 POSTSCRIPT_INJECTION = 4118;
+        static Int32 POSTSCRIPT_DATA = 37;
+        static Int32 POSTSCRIPT_IGNORE = 38;
+
+        static bool PrinterSupportsPostScript(string printername)
+        {
+            List<Int32> PSChecks = new List<Int32>();
+            PSChecks.Add(POSTSCRIPT_PASSTHROUGH);
+            PSChecks.Add(ENCAPSULATED_POSTSCRIPT);
+            PSChecks.Add(POSTSCRIPT_IDENTIFY);
+            PSChecks.Add(POSTSCRIPT_INJECTION);
+            PSChecks.Add(POSTSCRIPT_DATA);
+            PSChecks.Add(POSTSCRIPT_IGNORE);
+
+            IntPtr hDC = IntPtr.Zero;
+            IntPtr BLOB = IntPtr.Zero;
+
+            try {
+                hDC = CreateDC(null, printername, null, IntPtr.Zero);
+
+                int isz = 4;
+                BLOB = Marshal.AllocCoTaskMem(isz);
+                Marshal.WriteInt32(BLOB, GETTECHNOLOGY);
+
+                int test = ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
+                if (test == 0) return false; // printer driver does not support GETTECHNOLOGY Checks.
+
+                foreach (Int32 val in PSChecks) {
+                    Marshal.WriteInt32(BLOB, val);
+                    test = ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
+                    if (test != 0) return true; // if any of the checks pass, return true
+                }
+            }
+            catch (Exception) {  }
+            finally {
+                if (hDC != IntPtr.Zero) DeleteDC(hDC);
+                if (BLOB != IntPtr.Zero) Marshal.Release(BLOB);
+            };
+
+            return false;
+
+        }
+        #endregion
+
         // Routine to layout all the pages. Must return the number of pages to print. "printArea" is the size
         // without the margins as set in the pageSettings. 
         protected abstract int LayoutPages(PageSettings pageSettings, SizeF printArea);
@@ -422,6 +485,15 @@ namespace PurplePen
 
         [DllImport("kernel32.dll")]
         static extern UIntPtr GlobalSize(IntPtr hMem);
+
+        [DllImport("gdi32.dll")]
+        static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
+
+        [DllImport("gdi32.dll")]
+        static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
+
+        [DllImport("gdi32.dll")]
+        static extern bool DeleteDC(IntPtr hdc);
     }
 }
 

@@ -260,9 +260,7 @@
     </Compile>
     <Compile Include="DescriptionFormatter.cs" />
     <Compile Include="DescriptionLocalize.cs" />
-    <Compile Include="DescriptionPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="DescriptionPrinting.cs" />
     <Compile Include="DescriptionRenderer.cs" />
     <Compile Include="DotGrid.cs">
       <SubType>UserControl</SubType>
@@ -425,9 +423,7 @@
     <Compile Include="PunchPatternDialog.Designer.cs">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="PunchPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PunchPrinting.cs" />
     <Compile Include="QueryEvent.cs" />
     <Compile Include="RectanglePrinting.cs" />
     <Compile Include="RectangleSelectMode.cs" />
