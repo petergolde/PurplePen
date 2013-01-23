@@ -248,14 +248,18 @@ Total Length=0  Part Length=0  Total Climb=-1  ScoreColumn=0  Total Score=155  T
 10: [-1] Ids: 18,110
 11: [-1] Ids: 19,111
 12: [-1] Ids:  6,116
-13: [-1] Ids: 15,106
-14: [-1] Ids:  3,104
+13: [-1] Ids:  3,104
+14: [-1] Ids: 15,106
 15: [-1] Ids: 22,103
 Special 1 (FirstAid)
 Special 3 (Boundary)
 Special 4 (OOB)
 ";
+
+            
             Assert.AreEqual(expected, actual);
+
+
         }
 
         [TestMethod]
@@ -288,8 +292,8 @@ Total Length=0  Part Length=0  Total Climb=-1  ScoreColumn=1  Total Score=155  T
 10: [10] Ids: 18,110
 11: [11] Ids: 19,111
 12: [-1] Ids:  6,116
-13: [-1] Ids: 15,106
-14: [-1] Ids:  3,104
+13: [-1] Ids:  3,104
+14: [-1] Ids: 15,106
 15: [-1] Ids: 22,103
 Special 1 (FirstAid)
 Special 3 (Boundary)
@@ -329,8 +333,8 @@ Total Length=0  Part Length=0  Total Climb=-1  ScoreColumn=0  Total Score=155  T
 10: [-1] Ids: 18,110
 11: [-1] Ids: 19,111
 12: [-1] Ids:  6,116
-13: [-1] Ids: 15,106
-14: [-1] Ids:  3,104
+13: [-1] Ids:  3,104
+14: [-1] Ids: 15,106
 15: [-1] Ids: 22,103
 ";
             Assert.AreEqual(expected, actual);

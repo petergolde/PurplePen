@@ -327,7 +327,7 @@ namespace PurplePen.Tests
             Reports reports = new Reports();
             string result = reports.CreateLoadReport(eventDB);
 
-            Assert.AreEqual(@"
+            string expected = @"
   <h1>Competitor Load Summary for Marymoor WIOL 2</h1>
   <h2>Control load</h2>
   <table>
@@ -568,7 +568,9 @@ namespace PurplePen.Tests
     </tr>
   </table>
 
-", result);
+";
+
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod]

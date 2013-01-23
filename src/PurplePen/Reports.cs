@@ -374,7 +374,11 @@ namespace PurplePen
                 if (loadInfo1.numCourses < loadInfo2.numCourses) return 1;
                 else if (loadInfo1.numCourses > loadInfo2.numCourses) return -1;
 
-                return Util.CompareCodes(loadInfo1.controlName, loadInfo2.controlName);
+                int result = Util.CompareCodes(loadInfo1.controlName, loadInfo2.controlName);
+                if (result != 0)
+                    return result;
+
+                return loadInfo1.controlId.id.CompareTo(loadInfo2.controlId.id);
             });
 
             // Write the table.
