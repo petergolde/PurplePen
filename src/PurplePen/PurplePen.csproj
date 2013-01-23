@@ -19,7 +19,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -68,12 +68,21 @@
     <Reference Include="Map_GDIPlus">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
     </Reference>
+    <Reference Include="Map_WPF">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\Map_WPF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutForm.cs">
@@ -118,9 +127,7 @@
     <Compile Include="BaseDialog.Designer.cs">
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasicPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BasicPrinting.cs" />
     <Compile Include="ChangeAllCodes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,14 +180,12 @@
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseObject.cs" />
+    <Compile Include="CoursePrinting.cs" />
     <Compile Include="CoursePartBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CoursePartBanner.Designer.cs">
       <DependentUpon>CoursePartBanner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CoursePrinting.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CourseSelector.cs">
       <SubType>UserControl</SubType>
@@ -264,9 +269,7 @@
     </Compile>
     <Compile Include="DescriptionFormatter.cs" />
     <Compile Include="DescriptionLocalize.cs" />
-    <Compile Include="DescriptionPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="DescriptionPrinting.cs" />
     <Compile Include="DescriptionRenderer.cs" />
     <Compile Include="DotGrid.cs">
       <SubType>UserControl</SubType>
@@ -427,13 +430,9 @@
     <Compile Include="PunchPatternDialog.Designer.cs">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="PunchPrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="PunchPrinting.cs" />
     <Compile Include="QueryEvent.cs" />
-    <Compile Include="RectanglePrinting.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="RectanglePrinting.cs" />
     <Compile Include="RectangleSelectMode.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
@@ -472,6 +471,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </Compile>
+    <Compile Include="SWOPColorConverter.cs" />
     <Compile Include="SymbolDB.cs" />
     <Compile Include="SymbolPopup.cs" />
     <Compile Include="Textifier.cs" />
@@ -655,33 +655,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseDialog.sv.resx">
       <DependentUpon>BaseDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.bg.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.es.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.fi.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.fr.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.nb-NO.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.nn-NO.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.ro.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.sv.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeAllCodes.bg.resx">
       <DependentUpon>ChangeAllCodes.cs</DependentUpon>
@@ -1072,33 +1045,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DescriptionControl.sv.resx">
       <DependentUpon>DescriptionControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.bg.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.es.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.fi.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.fr.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.nb-NO.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.nn-NO.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.ro.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.sv.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DotGrid.bg.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
@@ -1745,33 +1691,6 @@
     <EmbeddedResource Include="PunchPatternDialog.sv.resx">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.bg.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.es.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.fi.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.fr.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.nb-NO.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.nn-NO.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.ro.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.sv.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.bg.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2006,6 +1925,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="RSWOP.ICM">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -2044,6 +1966,9 @@
     <None Include="latest_version.txt" />
     <EmbeddedResource Include="MapView\DragCursor.cur" />
     <None Include="MapView\MapViewer.csproj" />
+    <Content Include="RSWOP-readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

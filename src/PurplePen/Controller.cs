@@ -790,12 +790,11 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, descriptionPrintSettings)) {
-                        if (preview)
-                            descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            descriptionPrinter.Print();
-                    }
+                    DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, descriptionPrintSettings);
+                    if (preview)
+                        descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                    else
+                        descriptionPrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
@@ -807,12 +806,11 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings)) {
-                        if (preview)
-                            punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            punchPrinter.Print();
-                    }
+                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings);
+                    if (preview)
+                        punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                    else
+                        punchPrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
@@ -824,12 +822,13 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance())) {
-                        if (preview)
-                            coursePrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            coursePrinter.Print();
-                    }
+                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance());
+                    if (preview)
+                        coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
+                    else if (coursePrintSettings.UseXpsPrinting)
+                        coursePrinter.PrintUsingXps();
+                    else
+                        coursePrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 

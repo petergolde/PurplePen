@@ -10,6 +10,10 @@ copy "..\..\..\..\..\MapModel\%1\src\Map_GDIPlus\bin\Debug\Map_GDIPlus.dll" Debu
 copy "..\..\..\..\..\MapModel\%1\src\Map_GDIPlus\bin\Debug\Map_GDIPlus.pdb" Debug
 copy "..\..\..\..\..\MapModel\%1\src\Map_GDIPlus\bin\Release\Map_GDIPlus.dll" Release
 copy "..\..\..\..\..\MapModel\%1\src\Map_GDIPlus\bin\Release\Map_GDIPlus.pdb" Release
+copy "..\..\..\..\..\MapModel\%1\src\Map_WPF\bin\Debug\Map_WPF.dll" Debug
+copy "..\..\..\..\..\MapModel\%1\src\Map_WPF\bin\Debug\Map_WPF.pdb" Debug
+copy "..\..\..\..\..\MapModel\%1\src\Map_WPF\bin\Release\Map_WPF.dll" Release
+copy "..\..\..\..\..\MapModel\%1\src\Map_WPF\bin\Release\Map_WPF.pdb" Release
 copy "..\..\..\..\..\MapModel\%1\src\PdfSharp\bin\Debug\PdfSharp.dll" Debug
 copy "..\..\..\..\..\MapModel\%1\src\PdfSharp\bin\Debug\PdfSharp.pdb" Debug
 copy "..\..\..\..\..\MapModel\%1\src\PdfSharp\bin\Release\PdfSharp.dll" Release

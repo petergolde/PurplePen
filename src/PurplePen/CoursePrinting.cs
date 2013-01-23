@@ -47,6 +47,7 @@ using System.Diagnostics;
 namespace PurplePen
 {
     using PurplePen.Graphics2D;
+    using PurplePen.MapModel;
 
     // Class to print out courses.
     class CoursePrinting: BasicPrinting
@@ -94,7 +95,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
@@ -361,7 +362,7 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
+        protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
             CoursePage page = pages[pageNumber];
 
@@ -385,10 +386,12 @@ namespace PurplePen
             // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
             GC.Collect();
 
-            // Save and restore state so we can mess with stuff.
-            GraphicsState graphicsState = g.Save();
+            if (!PrintPreviewInProgress && graphicsTarget is GDIPlus_GraphicsTarget) {
+                GDIPlus_GraphicsTarget gdiGraphicsTarget = ((GDIPlus_GraphicsTarget)graphicsTarget);
+                Graphics g = gdiGraphicsTarget.Graphics;
+                // Save and restore state so we can mess with stuff.
+                GraphicsState graphicsState = g.Save();
 
-            if (!printDocument.PrintController.IsPreview) {
                 // Printing via a bitmap. Works best with some print drivers.
                 dpi = AdjustDpi(dpi);
 
@@ -415,21 +418,24 @@ namespace PurplePen
                     float minResolution = Geometry.TransformDistance(1F, inverseTransform);
 
                     // And draw.
-                    mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
+                    using (IGraphicsTarget gt = new GDIPlus_GraphicsTarget(bitmapGraphics, gdiGraphicsTarget.ColorConverter)) {
+                        mapDisplay.Draw(gt, band.mapRectangle, minResolution);
+                    }
                     bitmapGraphics.Dispose();
 
                     // Draw the bitmap on the printer.
                     g.DrawImage(bitmap, band.printRectangle);
                 }
 
+                // restore state.
+                g.Restore(graphicsState);
                 bitmap.Dispose();
             }
             else {
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
-                g.IntersectClip(page.printRectangle);
-                g.MultiplyTransform(transform);
+                graphicsTarget.PushTransform(transform);
 
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
@@ -438,11 +444,10 @@ namespace PurplePen
                 float minResolutionMap = Geometry.TransformDistance(minResolutionPage, inverseTransform);
 
                 // And draw.
-                mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
-            }
+                mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
-            // restore state.
-            g.Restore(graphicsState);
+                graphicsTarget.PopTransform();
+            }
         }
 
         const float MIN_DPI = 400;
@@ -538,6 +543,10 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
         public int Count = 1;                         // count of copies to print
-        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages                
+        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
+
+        public bool UseXpsPrinting = true;          // If true, use XPS printing
+        public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.CMYK;
+
     }
 }

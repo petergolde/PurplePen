@@ -82,8 +82,15 @@ namespace PurplePen
             paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
 
             copiesUpDown.Value = settings.Count;
-            radioButtonOnePage.Checked = settings.CropLargePrintArea;
-            radioButtonMultiPage.Checked = !settings.CropLargePrintArea;
+            comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
+            comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
+
+            if (settings.UseXpsPrinting) {
+                comboBoxPrintMethod.SelectedIndex = 1;
+            }
+            else {
+                comboBoxPrintMethod.SelectedIndex = 0;
+            }
         }
 
         // Update the settings with information from the dialog.
@@ -94,7 +101,11 @@ namespace PurplePen
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
-            settings.CropLargePrintArea = radioButtonOnePage.Checked;
+
+            // Appearance 
+            settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
+            settings.UseXpsPrinting = (comboBoxPrintMethod.SelectedIndex == 1);
+            settings.PrintingColorModel = (BasicPrinting.ColorModel)comboBoxColorModel.SelectedIndex;
         }
 
         private void printerChange_Click(object sender, EventArgs e)

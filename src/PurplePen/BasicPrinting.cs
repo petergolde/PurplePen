@@ -40,48 +40,47 @@ using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
+using System.Printing;
+using System.Printing.Interop;
+using System.Runtime.InteropServices;
+using System.Windows.Xps;
+using System.Windows.Documents;
 
 namespace PurplePen
 {
     // Basic class to handle printing / print preview.
     // Must override LayoutPages and DrawPage.
 
-    abstract class BasicPrinting: Component
+    abstract class BasicPrinting
     {
         private PageSettings pageSettings;
-        protected PrintDocument printDocument;
+        private string documentTitle;
+        private ColorModel colorModel;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
+        private bool printPreviewInProgress = false;
 
-        public BasicPrinting(string title, PageSettings pageSettings)
+        public enum ColorModel { OCADCompatible, RGB, CMYK };
+
+        public BasicPrinting(string title, PageSettings pageSettings, BasicPrinting.ColorModel colorModel)
         {
-            InitializeComponent();
-
             this.pageSettings = pageSettings;
+            this.documentTitle = title;
 
-            printDocument.DocumentName = title;
-            printDocument.PrinterSettings = pageSettings.PrinterSettings;
-            printDocument.DefaultPageSettings = pageSettings;
+            if (colorModel == ColorModel.OCADCompatible) {
+                // OCAD uses CMYK color mode for PostScript, and RGB for other printers. Do similar
+                // if OCAD compatible mode is used.
+                bool isPostscript = PrinterSupportsPostScript(pageSettings.PrinterSettings.PrinterName);
+                colorModel = isPostscript ? ColorModel.CMYK : ColorModel.RGB;
+            }
+
+            this.colorModel = colorModel;
         }
 
-        private void InitializeComponent()
-        {
-            this.printDocument = new System.Drawing.Printing.PrintDocument();
-            // 
-            // printDocument
-            // 
-            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintPage);
-            this.printDocument.QueryPageSettings += new System.Drawing.Printing.QueryPageSettingsEventHandler(this.QueryPageSettings);
-            this.printDocument.EndPrint += new System.Drawing.Printing.PrintEventHandler(this.EndPrint);
-            this.printDocument.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.BeginPrint);
-
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-                printDocument.Dispose();
-            base.Dispose(disposing);
+        public bool PrintPreviewInProgress {
+            get { return printPreviewInProgress; }
         }
 
         // Print the descriptions.
@@ -89,8 +88,11 @@ namespace PurplePen
         {
             // Set up and position everything.
             SetupPrinting();
+            printPreviewInProgress = false;
 
-            printDocument.Print();
+            using (PrintDocument printDocument = CreatePrintDocument()) {
+                printDocument.Print();
+            }
         }
 
         // Do a print preview of the descriptions.
@@ -98,24 +100,27 @@ namespace PurplePen
         {
             // Set up and position everything.
             SetupPrinting();
+            printPreviewInProgress = true;
 
-            PrintPreviewDialog dialog = new PrintPreviewDialog();
-            dialog.UseAntiAlias = true;
-            dialog.Document = printDocument;
-            dialog.StartPosition = FormStartPosition.CenterParent;
-            dialog.Size = dialogSize;
-            dialog.SizeGripStyle = SizeGripStyle.Show;
-            dialog.ShowIcon = false;
+            using (PrintDocument printDocument = CreatePrintDocument()) {
+                PrintPreviewDialog dialog = new PrintPreviewDialog();
+                dialog.UseAntiAlias = true;
+                dialog.Document = printDocument;
+                dialog.StartPosition = FormStartPosition.CenterParent;
+                dialog.Size = dialogSize;
+                dialog.SizeGripStyle = SizeGripStyle.Show;
+                dialog.ShowIcon = false;
 
-            dialog.ShowDialog();
-            dialog.Dispose();
+                dialog.ShowDialog();
+                dialog.Dispose();
+            }
         }
 
         // Get the printing area from a pageSettings.
         private SizeF GetPrintArea(PageSettings pageSettings)
         {
             return new SizeF(pageSettings.Bounds.Width - pageSettings.Margins.Left - pageSettings.Margins.Right,
-                                        pageSettings.Bounds.Height - pageSettings.Margins.Top - pageSettings.Margins.Bottom);
+                             pageSettings.Bounds.Height - pageSettings.Margins.Top - pageSettings.Margins.Bottom);
         }
 
         // Layout all pages, get the total number of pages, and get ready to print.
@@ -124,11 +129,29 @@ namespace PurplePen
             totalPages = LayoutPages(pageSettings, GetPrintArea(pageSettings));
         }
 
+        // Setup the print document for printing. Should be called after SetupPrinting().
+        private PrintDocument CreatePrintDocument()
+        {
+            PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+
+            printDocument.DocumentName = documentTitle;
+            printDocument.PrinterSettings = pageSettings.PrinterSettings;
+            printDocument.DefaultPageSettings = pageSettings;
+
+            printDocument.PrintPage += this.PrintPage;
+            printDocument.QueryPageSettings += this.QueryPageSettings;
+            printDocument.EndPrint += this.EndPrint;
+            printDocument.BeginPrint += this.BeginPrint;
+
+            return printDocument;
+        }
+
         // Do printing to a set of bitmaps. This is used for testing support.
         public Bitmap[] PrintBitmaps()
         {
             // Set up and position everything.
             printingToBitmaps = true;
+            printPreviewInProgress = false;
             SetupPrinting();
 
             if (totalPages <= 0)
@@ -138,8 +161,6 @@ namespace PurplePen
             PrintPageEventArgs printPageArgs;
             List<Bitmap> bitmapList = new List<Bitmap>();
 
-            printDocument.PrintController = new StandardPrintController(); //new PreviewPrintController();
-            printDocument.PrinterSettings = pageSettings.PrinterSettings;
             BeginPrint(this, printArgs);
 
             do {
@@ -147,7 +168,7 @@ namespace PurplePen
                 QueryPageSettingsEventArgs queryPageSettingsArgs = new QueryPageSettingsEventArgs(pageSettings);
                 QueryPageSettings(this, queryPageSettingsArgs);
 
-                Size pageSize = pageSettings.Bounds.Size;        
+                Size pageSize = pageSettings.Bounds.Size;
 
                 Bitmap bm = new Bitmap(pageSize.Width * 2, pageSize.Height * 2, PixelFormat.Format24bppRgb);
                 bm.SetResolution(200, 200);           // using 200 dpi.
@@ -178,7 +199,7 @@ namespace PurplePen
                 // Get the graphics and origin relative to the page edge.
                 Graphics g = e.Graphics;
                 PointF origin;
-                if (!printDocument.PrintController.IsPreview && !printingToBitmaps)
+                if (!printPreviewInProgress && !printingToBitmaps)
                     origin = new PointF(e.PageSettings.HardMarginX, e.PageSettings.HardMarginY);
                 else
                     origin = new PointF();
@@ -191,7 +212,18 @@ namespace PurplePen
                 SizeF size = new SizeF(e.MarginBounds.Width, e.MarginBounds.Height);
 
                 // Draw the page.
-                DrawPage(g, currentPage, size, dpi);
+                IGraphicsTarget graphicsTarget;
+                if (colorModel == ColorModel.RGB)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g);
+                else if (colorModel == ColorModel.CMYK)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g, new SwopColorConverter());
+                else
+                    throw new NotImplementedException();
+
+                using (graphicsTarget) {
+                    DrawPage(graphicsTarget, currentPage, size, dpi);
+                }
+                graphicsTarget = null;
 
                 // Update page count.
                 ++currentPage;
@@ -226,6 +258,212 @@ namespace PurplePen
         {
         }
 
+        #region Xps Printing Support
+
+        public void PrintUsingXps()
+        {
+            // Set up and position everything.
+            SetupPrinting();
+
+            PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
+            PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
+            Margins margins = pageSettings.Margins;
+
+            BeginPrint(this, new PrintEventArgs());
+
+            printQueue.CurrentJobSettings.Description = documentTitle;
+            XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
+            documentWriter.Write(new Paginator(this, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket)), printTicket);
+
+            EndPrint(this, new PrintEventArgs());
+        }
+
+        private PrintTicket GetPrintTicket(PrintQueue printQueue, System.Drawing.Printing.PageSettings pageSettings)
+        {
+            PrintTicketConverter printTicketConverter = new PrintTicketConverter(printQueue.FullName, printQueue.ClientPrintSchemaVersion);
+            IntPtr devmodeHandle = pageSettings.PrinterSettings.GetHdevmode(pageSettings);
+            int size = (int)GlobalSize(devmodeHandle);
+            IntPtr devmodePtr = GlobalLock(devmodeHandle);
+            byte[] devMode = new byte[size];
+            Marshal.Copy(devmodePtr, devMode, 0, size);
+            GlobalUnlock(devmodeHandle);
+            GlobalFree(devmodeHandle);
+            return printTicketConverter.ConvertDevModeToPrintTicket(devMode);
+        }
+
+        private PrintQueue GetPrintQueue(string printerName)
+        {
+            PrintServer server = null;
+
+            if (printerName.StartsWith(@"\\")) {
+                int indexOfSecondSlash = printerName.IndexOf('\\', 2);
+                if (indexOfSecondSlash > 2) {
+                    string serverName = printerName.Substring(0, indexOfSecondSlash);
+                    printerName = printerName.Substring(indexOfSecondSlash + 1);
+                    server = new PrintServer(serverName);
+                }
+            }
+
+            if (server == null) {
+                server = new LocalPrintServer();
+            }
+
+            return server.GetPrintQueue(printerName);
+        }
+
+        private float GetDPI(PrintTicket printTicket)
+        {
+            float xResolution = (printTicket.PageResolution == null) ? 1000 : (printTicket.PageResolution.X ?? 1000);
+            float yResolution = (printTicket.PageResolution == null) ? 1000 : (printTicket.PageResolution.Y ?? 1000);
+
+            float dpi = Math.Max(xResolution, yResolution);
+            return dpi;
+        }
+
+        private class Paginator : DocumentPaginator
+        {
+            private BasicPrinting outer;
+            private System.Windows.Size pageSize;  // page size in 1/96 of an inch.
+            private Margins margins;  // margins in 1/100 of an inch.
+            private float dpi;
+
+            public Paginator(BasicPrinting outer, SizeF pageSize, Margins margins, float dpi)
+            {
+                this.outer = outer;
+                this.margins = margins;
+                this.dpi = dpi;
+                this.pageSize = new System.Windows.Size(HundrethsToPoints(pageSize.Width), HundrethsToPoints(pageSize.Height));
+            }
+
+            public override DocumentPage GetPage(int pageNumber)
+            {
+                Margins margins = new Margins(this.margins.Left, this.margins.Right, this.margins.Top, this.margins.Bottom);
+                bool landscape = outer.pageSettings.Landscape;
+                bool rotate;
+                outer.ChangePageSettings(pageNumber, ref landscape, margins);
+                rotate = (landscape != outer.pageSettings.Landscape);
+
+                // Get margins in terms of normal page orientation, in points.
+                double leftMargin = HundrethsToPoints(rotate ? margins.Bottom : margins.Left);
+                double rightMargin = HundrethsToPoints(rotate ? margins.Top : margins.Right);
+                double topMargin = HundrethsToPoints(rotate ? margins.Left : margins.Top);
+                double bottomMargin = HundrethsToPoints(rotate ? margins.Right : margins.Bottom);
+                System.Windows.Rect contentRect = new System.Windows.Rect(leftMargin, topMargin, pageSize.Width - leftMargin - rightMargin, pageSize.Height - topMargin - bottomMargin);
+                System.Windows.Rect boundingRect = new System.Windows.Rect(0, 0, pageSize.Width - leftMargin - rightMargin, pageSize.Height - topMargin - bottomMargin);
+                System.Windows.Media.DrawingVisual visual = new System.Windows.Media.DrawingVisual();
+
+                using (System.Windows.Media.DrawingContext dc = visual.RenderOpen()) {
+                    // Clip to the bounding rect within margins.
+                    dc.PushClip(new System.Windows.Media.RectangleGeometry(boundingRect));
+
+                    if (rotate) {
+                        // Rotate and translate to handle landscape mode.
+                        dc.PushTransform(new System.Windows.Media.TranslateTransform(0, boundingRect.Height));
+                        dc.PushTransform(new System.Windows.Media.RotateTransform(-90));
+                    }
+
+                    // Scale to hundreths of an inch instead of points (1/96 of inch).
+                    dc.PushTransform(new System.Windows.Media.ScaleTransform(96.0 / 100.0, 96.0 / 100.0));
+
+                    IGraphicsTarget graphicsTarget;
+                    if (outer.colorModel == ColorModel.RGB)
+                        graphicsTarget = new WPF_GraphicsTarget(dc);
+                    else if (outer.colorModel == ColorModel.CMYK)
+                        graphicsTarget = new WPF_GraphicsTarget(dc, new WPFSwopColorConverter());
+                    else
+                        throw new NotImplementedException();
+
+                    using (graphicsTarget) {
+                        outer.DrawPage(graphicsTarget, pageNumber, new SizeF((float)contentRect.Width, (float)contentRect.Height), dpi);
+                    }
+                    graphicsTarget = null;
+                }
+
+                return new DocumentPage(visual, pageSize, contentRect, contentRect);
+            }
+
+            // Convert 1/100 of an inch to 1/96 of an inch.
+            private double HundrethsToPoints(double hundreths)
+            {
+                return hundreths / 100.0 * 96.0;
+            }
+
+            public override bool IsPageCountValid
+            {
+                get { return true; }
+            }
+
+            public override int PageCount
+            {
+                get { return outer.totalPages; }
+            }
+
+            public override System.Windows.Size PageSize
+            {
+                get { return pageSize; }
+                set { return; }
+            }
+
+            public override IDocumentPaginatorSource Source
+            {
+                get { return null; }
+            }
+        }
+
+        #endregion Xps Printing Support
+
+        #region Postscript detection
+        //By Justin Alexander, aka TheLoneCabbage
+
+        static Int32 GETTECHNOLOGY = 20;
+        static Int32 QUERYESCSUPPORT = 8;
+        static Int32 POSTSCRIPT_PASSTHROUGH = 4115;
+        static Int32 ENCAPSULATED_POSTSCRIPT = 4116;
+        static Int32 POSTSCRIPT_IDENTIFY = 4117;
+        static Int32 POSTSCRIPT_INJECTION = 4118;
+        static Int32 POSTSCRIPT_DATA = 37;
+        static Int32 POSTSCRIPT_IGNORE = 38;
+
+        static bool PrinterSupportsPostScript(string printername)
+        {
+            List<Int32> PSChecks = new List<Int32>();
+            PSChecks.Add(POSTSCRIPT_PASSTHROUGH);
+            PSChecks.Add(ENCAPSULATED_POSTSCRIPT);
+            PSChecks.Add(POSTSCRIPT_IDENTIFY);
+            PSChecks.Add(POSTSCRIPT_INJECTION);
+            PSChecks.Add(POSTSCRIPT_DATA);
+            PSChecks.Add(POSTSCRIPT_IGNORE);
+
+            IntPtr hDC = IntPtr.Zero;
+            IntPtr BLOB = IntPtr.Zero;
+
+            try {
+                hDC = CreateDC(null, printername, null, IntPtr.Zero);
+
+                int isz = 4;
+                BLOB = Marshal.AllocCoTaskMem(isz);
+                Marshal.WriteInt32(BLOB, GETTECHNOLOGY);
+
+                int test = ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
+                if (test == 0) return false; // printer driver does not support GETTECHNOLOGY Checks.
+
+                foreach (Int32 val in PSChecks) {
+                    Marshal.WriteInt32(BLOB, val);
+                    test = ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
+                    if (test != 0) return true; // if any of the checks pass, return true
+                }
+            }
+            catch (Exception) {  }
+            finally {
+                if (hDC != IntPtr.Zero) DeleteDC(hDC);
+                if (BLOB != IntPtr.Zero) Marshal.Release(BLOB);
+            };
+
+            return false;
+
+        }
+        #endregion
+
         // Routine to layout all the pages. Must return the number of pages to print. "printArea" is the size
         // without the margins as set in the pageSettings. 
         protected abstract int LayoutPages(PageSettings pageSettings, SizeF printArea);
@@ -233,7 +471,29 @@ namespace PurplePen
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea is the size to draw into (in hundreths of an inch), within the margins.
         // dpi is the resolution of the printing in dots per inch.
-        protected abstract void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi);
+        protected abstract void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi);
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GlobalLock(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool GlobalUnlock(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GlobalFree(IntPtr hMem);
+
+        [DllImport("kernel32.dll")]
+        static extern UIntPtr GlobalSize(IntPtr hMem);
+
+        [DllImport("gdi32.dll")]
+        static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
+
+        [DllImport("gdi32.dll")]
+        static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
+
+        [DllImport("gdi32.dll")]
+        static extern bool DeleteDC(IntPtr hdc);
     }
 }
 
