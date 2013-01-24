@@ -58,15 +58,15 @@ namespace PurplePen
         }
 
         // Get or set the courses checked in the dialog.
-        public Id<Course>[] DisplayedCourses
+        public CourseDesignator[] DisplayedCourses
         {
             get
             {
-                return courseSelector.SelectedCourses;
+                return courseSelector.SelectedCourseDesignators;
             }
             set
             {
-                courseSelector.SelectedCourses = value;
+                courseSelector.SelectedCourseDesignators = value;
             }
         }
 

@@ -1312,16 +1312,14 @@ namespace PurplePen
         {
             CourseDesignator[] displayedCourses;
 
-            // UNDONE MAPEXCHANGE -- transfer CourseDesignators to the dialog
-
             if (controller.CanChangeDisplayedCourses(out displayedCourses) == CommandStatus.Enabled) {
                 ChangeSpecialCourses changeCoursesDialog = new ChangeSpecialCourses();
                 changeCoursesDialog.EventDB = controller.GetEventDB();
-                changeCoursesDialog.DisplayedCourses = (from cd in displayedCourses select cd.CourseId).Distinct().ToArray();
+                changeCoursesDialog.DisplayedCourses = displayedCourses;
 
                 DialogResult result = changeCoursesDialog.ShowDialog(this);
                 if (result == DialogResult.OK) {
-                    controller.ChangeDisplayedCourses((from id in changeCoursesDialog.DisplayedCourses select new CourseDesignator(id)).ToArray());
+                    controller.ChangeDisplayedCourses(changeCoursesDialog.DisplayedCourses);
                 }
             }
         }
@@ -1372,7 +1370,8 @@ namespace PurplePen
         private void helpMenu_DropDownOpening(object sender, EventArgs e)
         {
             // The debug and translate menu show up only if Ctrl + Shift also pressed.
-            debugMenu.Visible = translateMenu.Visible = ((Control.ModifierKeys & (Keys.Control | Keys.Shift)) == (Keys.Control | Keys.Shift));
+            Debug.WriteLine(Control.ModifierKeys);
+            debugMenu.Visible = translateMenu.Visible = ((Control.ModifierKeys & (Keys.Control | Keys.Shift)) == (Keys.Control | Keys.Shift)) || ((Control.ModifierKeys & (Keys.Control | Keys.Alt)) == (Keys.Control | Keys.Alt));
         }
 
         // Change the viewport to show the given rectangle.

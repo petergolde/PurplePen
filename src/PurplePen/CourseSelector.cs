@@ -38,6 +38,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -91,7 +92,7 @@ namespace PurplePen
         }
 
         // Get or set the selected courses.
-        // UNDONE MAPEXCHANGE - remove use of this property
+        // Only use if ShowCourseParts is false.
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
         public Id<Course>[] SelectedCourses
         {
@@ -105,6 +106,8 @@ namespace PurplePen
 
             set
             {
+                Debug.Assert(!this.ShowCourseParts);
+
                 CourseDesignator[] array = new CourseDesignator[value.Length];
                 for (int i = 0; i < array.Length; ++i)
                     array[i] = new CourseDesignator(value[i]);
@@ -123,8 +126,15 @@ namespace PurplePen
                 List<CourseDesignator> list = new List<CourseDesignator>();
 
                 foreach (TreeNode node in courseTreeView.Nodes) {
-                    if (node.Checked){
+                    if (node.Checked) {
                         list.Add((CourseDesignator)(node.Tag));
+                    }
+                    else {
+                        foreach (TreeNode childNode in node.Nodes) {
+                            if (childNode.Checked) {
+                                list.Add((CourseDesignator)(childNode.Tag));
+                            }
+                        }
                     }
                 }
 
@@ -136,7 +146,19 @@ namespace PurplePen
                 LoadList();
 
                 foreach (TreeNode node in courseTreeView.Nodes) {
-                    node.Checked = Array.IndexOf(value, ((CourseDesignator) (node.Tag))) >= 0;
+                    node.Checked = false;
+                }
+
+                // Do children before parents.
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    if (Array.IndexOf(value, ((CourseDesignator)(node.Tag))) >= 0)
+                        node.Checked = true;
+                    else {
+                        foreach (TreeNode childNode in node.Nodes) {
+                            if (Array.IndexOf(value, ((CourseDesignator)(childNode.Tag))) >= 0)
+                                childNode.Checked = true;
+                        }
+                    }
                 }
             }
         }
@@ -173,7 +195,7 @@ namespace PurplePen
                     if (showCourseParts && numberParts > 1) {
                         parts = new TreeNode[numberParts];
                         for (int part = 0; part < numberParts; ++part) {
-                            parts[part] = new TreeNode(string.Format(MiscText.PartN, part))
+                            parts[part] = new TreeNode(string.Format(MiscText.PartN, part + 1))
                             {
                                 Tag = new CourseDesignator(courseId, part),
                                 Checked = true
@@ -204,12 +226,12 @@ namespace PurplePen
             e.Cancel = true;
         }
 
-        private bool inCheckUpdating = false;
+        private int inCheckUpdating = 0;
 
         private void courseTreeView_AfterCheck(object sender, TreeViewEventArgs e)
         {
-            if (!inCheckUpdating) {
-                inCheckUpdating = true;
+            if (inCheckUpdating == 0) {
+                inCheckUpdating++;
 
                 TreeNode node = e.Node;
                 if (node.Level == 0)
@@ -217,7 +239,7 @@ namespace PurplePen
                 else
                     UpdateNodeBasedOnChildren(node.Parent);
 
-                inCheckUpdating = false;
+                inCheckUpdating--;
             }
         }
 

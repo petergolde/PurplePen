@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CtrlZ" xml:space="preserve">
     <value>Ctrl+Z</value>
@@ -402,7 +402,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <comment>Abbreviation for "Map Exchange"</comment>
   </data>
   <data name="PartN" xml:space="preserve">
-    <value>part {0}</value>
+    <value>Part {0}</value>
   </data>
   <data name="AllParts" xml:space="preserve">
     <value>All Parts</value>
