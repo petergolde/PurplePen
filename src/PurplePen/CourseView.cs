@@ -361,11 +361,11 @@ namespace PurplePen
 
         // Add the appropriate specials for the given course to the course view.
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
-        private void AddSpecials(Id<Course> courseId, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        private void AddSpecials(CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 if (ShouldAddSpecial(eventDB.GetSpecial(specialId).kind, addNonDescriptionSpecials, addDescriptionSpecials)) {
-                    if (QueryEvent.CourseContainsSpecial(eventDB, courseId, specialId))
+                    if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
                         specialIds.Add(specialId);
                 }
             }
@@ -399,7 +399,7 @@ namespace PurplePen
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseDesignator.CourseId, addNonDescriptionSpecials, addDescriptionSpecials);
+            courseView.AddSpecials(courseDesignator, addNonDescriptionSpecials, addDescriptionSpecials);
 
             return courseView;
         }
@@ -654,7 +654,7 @@ namespace PurplePen
 
     // A CourseDesignator indicates a course or part of a course for creating a course view.
     // It describes the current view.
-    public class CourseDesignator
+    public class CourseDesignator: ICloneable
     {
         private Id<Course> courseId;   // ID of the course, none for all controls.
         private int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
@@ -684,6 +684,14 @@ namespace PurplePen
         public override int GetHashCode()
         {
             return courseId.GetHashCode() ^ part.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            if (AllParts)
+                return string.Format("Course {0}", courseId.id);
+            else
+                return string.Format("Course {0}, Part {1}", courseId.id, part);
         }
 
         public static CourseDesignator AllControls = new CourseDesignator(Id<Course>.None);
@@ -728,6 +736,16 @@ namespace PurplePen
         public int Part
         {
             get { return part; }
+        }
+
+        public CourseDesignator Clone()
+        {
+            return (CourseDesignator) base.MemberwiseClone();
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
     }
 }

@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Diagnostics;
+using System.Linq;
 
 using PurplePen.MapModel;
 
@@ -760,7 +761,7 @@ namespace PurplePen
         }
 
         // Add a description to the event. 
-        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, Id<Course>[] courses, PointF topLeft, float cellSize)
+        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize)
         {
             Special special = new Special(SpecialKind.Descriptions, new PointF[2] { topLeft, new PointF(topLeft.X + cellSize, topLeft.Y) });
             special.allCourses = allCourses;
@@ -804,7 +805,7 @@ namespace PurplePen
             List<Id<Special>> specialsToChange = new List<Id<Special>>();
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 Special special = eventDB.GetSpecial(specialId);
-                if (!special.allCourses && Array.IndexOf<Id<Course>>(special.courses, courseId) >= 0) {
+                if (!special.allCourses && special.courses.Any(cd => cd.CourseId == courseId)) {
                     // This special is not an all controls special, and is present on the course being deleted. Update it.
                     specialsToChange.Add(specialId);
                 }
@@ -813,13 +814,12 @@ namespace PurplePen
             // Update each of the specials.
             foreach (Id<Special> specialId in specialsToChange) {
                 Special special = eventDB.GetSpecial(specialId);
-                if (special.courses.Length == 1)
+                CourseDesignator[] newCourses = special.courses.Where(cd => cd.CourseId != courseId).ToArray();
+                if (newCourses.Length == 0)
                     ChangeEvent.DeleteSpecial(eventDB, specialId);
                 else {
                     special = (Special) special.Clone();
-                    List<Id<Course>> list = new List<Id<Course>>(special.courses);
-                    list.Remove(courseId);
-                    special.courses = list.ToArray();
+                    special.courses = newCourses;
                     eventDB.ReplaceSpecial(specialId, special);
                 }
             }
@@ -946,19 +946,24 @@ namespace PurplePen
 
         // Change the set of courses that a special is on. If all the courses are in the new array, changes the special to display in 
         // all courses.
-        public static void ChangeDisplayedCourses(EventDB eventDB, Id<Special> specialId, Id<Course>[] displayedCourses)
+        public static void ChangeDisplayedCourses(EventDB eventDB, Id<Special> specialId, CourseDesignator[] displayedCourses)
         {
             // Check if the array contains all of the courses.
-            bool allCourses = true;;
+            bool allCourses = true;
+            Special special = (Special) eventDB.GetSpecial(specialId).Clone();
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                if (Array.IndexOf(displayedCourses, courseId) < 0) {
+                if (Array.IndexOf(displayedCourses, new CourseDesignator(courseId)) < 0) {
                     allCourses = false;
                     break;
                 }
             }
 
-            Special special = (Special) eventDB.GetSpecial(specialId).Clone();
+            if (special.kind == SpecialKind.Descriptions) {
+                if (Array.IndexOf(displayedCourses, CourseDesignator.AllControls) < 0)
+                    allCourses = false;   // all courses includes all controls only for descriptions.
+            }
+
             special.allCourses = allCourses;
             if (allCourses) 
                 special.courses = null;
@@ -975,7 +980,7 @@ namespace PurplePen
         public static void UpdateDescriptionCourses(EventDB eventDB, Id<Special> descriptionId)
         {
             // Which courses to remove?
-            Id<Course>[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
+            CourseDesignator[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
 
             // Find all descriptions to change.
             List<Id<Special>> allDescriptionIds = new List<Id<Special>>();
@@ -987,11 +992,29 @@ namespace PurplePen
             foreach (Id<Special> descriptionToChange in allDescriptionIds) {
                 // Remove any courses that overlap with the courses the given description has..
                 bool changes = false;          // track if any changes made.
-                List<Id<Course>> courses = new List<Id<Course>>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange));
-                foreach (Id<Course> courseId in coursesToRemove) {
-                    if (courses.Contains(courseId)) {
-                        changes = true;
-                        courses.Remove(courseId);
+                List<CourseDesignator> courses = new List<CourseDesignator>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange));
+                for (int courseIndex = 0; courseIndex < courses.Count; ++courseIndex) {
+                    foreach (CourseDesignator courseToRemove in coursesToRemove) {
+                        if (courseIndex >= 0 && courseIndex < courses.Count) {
+                            if (courseToRemove == courses[courseIndex]) {
+                                changes = true;
+                                courses.RemoveAt(courseIndex--);
+                            }
+                            else if (courseToRemove.CourseId == courses[courseIndex].CourseId) {
+                                changes = true;
+                                if (!courseToRemove.AllParts && courses[courseIndex].AllParts) {
+                                    int removedPart = courseToRemove.Part;
+                                    courses.RemoveAt(courseIndex--);
+                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove.CourseId); ++part) {
+                                        if (part != removedPart)
+                                            courses.Add(new CourseDesignator(courseToRemove.CourseId, part));
+                                    }
+                                }
+                                else if (courseToRemove.AllParts) {
+                                    courses.RemoveAt(courseIndex--);
+                                }
+                            }
+                        }
                     }
                 }
 

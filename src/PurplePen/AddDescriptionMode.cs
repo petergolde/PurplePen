@@ -49,7 +49,7 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
-        Id<Course> courseId;                         // course we are adding to.
+        CourseDesignator courseDesignator;                         // course we are adding to.
         DescriptionCourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
         DescriptionCourseObj currentObj;           // current object being dragged out.
         PointF startLocation;                               // location where dragging started.
@@ -60,14 +60,14 @@ namespace PurplePen
         DescriptionLine[] description;
         DescriptionKind kind;
 
-        public AddDescriptionMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, Id<Course> courseId, DescriptionLine[] description, DescriptionKind kind)
+        public AddDescriptionMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, DescriptionLine[] description, DescriptionKind kind)
         {
             this.controller = controller;
             this.undoMgr = undoMgr;
             this.selectionMgr = selectionMgr;
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
-            this.courseId = courseId;
+            this.courseDesignator = courseDesignator;
             this.description = description;
             this.kind = kind;
         }
@@ -127,12 +127,12 @@ namespace PurplePen
 
             // Create the new description, unless it's ridiculously small.
             if (cellSize > 0.5F) {
-                Id<Course>[] courses = null;
-                if (courseId.IsNotNone)
-                    courses = new Id<Course>[] {courseId};
+                CourseDesignator[] courses = null;
+                if (courseDesignator.IsNotAllControls)
+                    courses = new CourseDesignator[] {courseDesignator};
 
                 undoMgr.BeginCommand(1522, CommandNameText.AddObject);
-                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, courseId.IsNone, courses, upperLeft, cellSize);
+                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, courseDesignator.IsAllControls, courses, upperLeft, cellSize);
                 undoMgr.EndCommand(1522);
 
                 selectionMgr.SelectSpecial(specialId);

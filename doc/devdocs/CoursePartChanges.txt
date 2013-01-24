@@ -1,5 +1,7 @@
 Places that may need updating for multi-part courses:
 
+Need to have data model and XML model for specials on a single part, descriptions on a single part, print area on a single part.
+
 QueryEvent.FindClosestLeg -- take a part?
 AddControlMode.GetControlInsertionPoint -- return SelectionDescription instead of course id?
 Controller.GetCurrentPrintArea -- should handle print area for just active part.
@@ -15,6 +17,8 @@ Check out "UNDONE MAPEXCHANGE" comments.
 
 Prohibit adding map exchange to score course.
 
-status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
+Status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
 
-Allow adding start or finish to course part that shouldn't include that?
+Allow adding start or finish to course part that shouldn't include that? Should that switch to all parts? Or just prohibit that if not on the right part.
+
+Removing map exchange at a control -- how?

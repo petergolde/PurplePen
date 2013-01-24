@@ -597,4 +597,21 @@
     <location x="34.263504" y="75.27393" />
     <courses all="true" />
   </special-object>
+  <special-object id="5" kind="descriptions">
+    <location x="-75.80325" y="44.5822372" />
+    <location x="-71.42619" y="44.5822372" />
+    <courses>
+      <course course="2" />
+      <course course="4" />
+    </courses>
+  </special-object>
+  <special-object id="6" kind="descriptions">
+    <location x="-75.80325" y="44.5822372" />
+    <location x="-71.42619" y="44.5822372" />
+    <courses>
+      <course course="6" part="3" />
+      <course course="6" part="1" />
+    </courses>
+  </special-object>
+
 </course-scribe-event>

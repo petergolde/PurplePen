@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Diagnostics;
+using System.Linq;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
@@ -560,12 +561,19 @@ namespace PurplePen
                 return true;
         }
 
-        // Does the given course (or all controls) contain the given special?
-        public static bool CourseContainsSpecial(EventDB eventDB, Id<Course> courseId, Id<Special> specialId)
+        // Does the given course (or all controls) contain the given special? If all controls is specified, only 
+        // if the special is specifically on the all controls course.
+        public static bool CourseContainsSpecial(EventDB eventDB, CourseDesignator courseDesignator, Id<Special> specialId)
         {
             Special special = eventDB.GetSpecial(specialId);
 
-            return (special.allCourses || Array.IndexOf<Id<Course>>(special.courses, courseId) >= 0);
+            if (special.allCourses)
+                return ! courseDesignator.IsAllControls;
+
+            if (courseDesignator.AllParts)
+                return special.courses.Any(cd => cd.CourseId == courseDesignator.CourseId);
+            else
+                return special.courses.Contains(courseDesignator) || special.courses.Contains(new CourseDesignator(courseDesignator.CourseId));
         }
 
         // Get the gaps in a control for a given scale.
@@ -781,20 +789,24 @@ namespace PurplePen
         }
 
         // Get the set of courses that a special is displayed on.
-        public static Id<Course>[] GetSpecialDisplayedCourses(EventDB eventDB, Id<Special> specialId)
+        public static CourseDesignator[] GetSpecialDisplayedCourses(EventDB eventDB, Id<Special> specialId)
         {
             Special special = eventDB.GetSpecial(specialId);
 
             if (special.allCourses) {
                 // special is on all courses. Return an array with all courses in it.
-                List<Id<Course>> list = new List<Id<Course>>();
+                List<CourseDesignator> list = new List<CourseDesignator>();
                 foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
-                    list.Add(courseId);
+                    list.Add(new CourseDesignator(courseId));
+                }
+                if (special.kind == SpecialKind.Descriptions) {
+                    // Descriptions also are on all controls separatedly.
+                    list.Add(CourseDesignator.AllControls);
                 }
                 return list.ToArray();
             }
             else {
-                return (Id<Course>[]) special.courses.Clone();       // clone so that changes don't affect it.
+                return (CourseDesignator[]) Util.CloneArrayAndElements(special.courses);       // clone so that changes don't affect it.
             }
         }
 

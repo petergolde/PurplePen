@@ -1599,7 +1599,7 @@ namespace PurplePen
         }
 
         // Command status for changing the set of displayed courses.
-        public CommandStatus CanChangeDisplayedCourses(out Id<Course>[] displayedCourses)
+        public CommandStatus CanChangeDisplayedCourses(out CourseDesignator[] displayedCourses)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
@@ -1615,7 +1615,7 @@ namespace PurplePen
         }
 
         // Change the set of displayed courses for the selection.
-        public void ChangeDisplayedCourses(Id<Course>[] displayedCourses)
+        public void ChangeDisplayedCourses(CourseDesignator[] displayedCourses)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
@@ -2246,7 +2246,7 @@ namespace PurplePen
         {
             DescriptionKind descKind;
             DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator, out descKind);
-            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, description, descKind)); 
+            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator, description, descKind)); 
         }
 
         // Start the mode to add text to a course

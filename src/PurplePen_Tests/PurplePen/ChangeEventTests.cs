@@ -1362,9 +1362,12 @@ namespace PurplePen.Tests
             Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(3)));  // only on course 3, so should be gone.
             Special sp2 = eventDB.GetSpecial(SpecialId(2));
             Assert.AreEqual(3, sp2.courses.Length);
-            Assert.AreEqual(1, sp2.courses[0].id);
-            Assert.AreEqual(2, sp2.courses[1].id);
-            Assert.AreEqual(6, sp2.courses[2].id);
+            Assert.AreEqual(1, sp2.courses[0].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[0].AllParts);
+            Assert.AreEqual(2, sp2.courses[1].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[1].AllParts);
+            Assert.AreEqual(6, sp2.courses[2].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[2].AllParts);
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1373,13 +1376,39 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.IsSpecialPresent(SpecialId(3)));
             Special sp3 = eventDB.GetSpecial(SpecialId(3));
             Assert.AreEqual(1, sp3.courses.Length);
-            Assert.AreEqual(3, sp3.courses[0].id);
+            Assert.AreEqual(3, sp3.courses[0].CourseId.id);
             sp2 = eventDB.GetSpecial(SpecialId(2));
             Assert.AreEqual(4, sp2.courses.Length);
-            Assert.AreEqual(1, sp2.courses[0].id);
-            Assert.AreEqual(2, sp2.courses[1].id);
-            Assert.AreEqual(3, sp2.courses[2].id);
-            Assert.AreEqual(6, sp2.courses[3].id);
+            Assert.AreEqual(1, sp2.courses[0].CourseId.id);
+            Assert.AreEqual(2, sp2.courses[1].CourseId.id);
+            Assert.AreEqual(3, sp2.courses[2].CourseId.id);
+            Assert.AreEqual(6, sp2.courses[3].CourseId.id);
+        }
+
+        [TestMethod]
+        public void DeleteCourse3()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "delete course");
+            ChangeEvent.DeleteCourse(eventDB, CourseId(6));
+            ChangeEvent.DeleteCourse(eventDB, CourseId(3));
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Special special = eventDB.GetSpecial(SpecialId(3));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1) });
+
+            special = eventDB.GetSpecial(SpecialId(1));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(0) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(2), Designator(4) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(6)));
+
+            undomgr.Undo();
+            eventDB.Validate();
         }
 
         [TestMethod]
@@ -1641,7 +1670,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(1), CourseId(3) }, new PointF(0, -25.5F), 5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(1), Designator(3) }, new PointF(0, -25.5F), 5F);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1653,7 +1682,61 @@ namespace PurplePen.Tests
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
             Assert.IsFalse(special.allCourses);
-            TestUtil.TestEnumerableAnyOrder(special.courses, new Id<Course>[] { CourseId(1), CourseId(3) });
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(1), Designator(3) });
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+
+        [TestMethod]
+        public void AddDescription3()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "add description");
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) }, new PointF(0, -25.5F), 5F);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 0), Designator(4) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(6)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+        [TestMethod]
+        public void AddDescription4()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "add description");
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) }, new PointF(0, -25.5F), 5F);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(2), Designator(4) });
+
+            special = eventDB.GetSpecial(SpecialId(6));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(6), 1) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(1)));
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1766,35 +1849,67 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(4117, "Change displayed courses");
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(3), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(4), new Id<Course>[] { CourseId(1), CourseId(2) });
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new Id<Course>[] {  });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(3), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(4), new CourseDesignator[] { Designator(1), Designator(2) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new CourseDesignator[] {  });
             undomgr.EndCommand(4117);
 
             eventDB.Validate();
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
             Assert.IsTrue(eventDB.GetSpecial(SpecialId(3)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new Id<Course>[] { CourseId(1), CourseId(2) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new CourseDesignator[] { Designator(1), Designator(2) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(4)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new Id<Course>[] {  });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] {  });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
 
             undomgr.Undo();
             eventDB.Validate();
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new Id<Course>[] { CourseId(3) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new CourseDesignator[] { Designator(3) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(3)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
             Assert.IsTrue(eventDB.GetSpecial(SpecialId(4)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new Id<Course>[] { CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] { Designator(5) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
 
         }
+
+
+        [TestMethod]
+        public void ChangeDisplayedCourse2()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(4117, "Change displayed courses");
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            undomgr.EndCommand(4117);
+
+            eventDB.Validate();
+
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            undomgr.BeginCommand(4117, "Change displayed courses");
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(6), new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            undomgr.EndCommand(4117);
+
+            eventDB.Validate();
+
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(6)), new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            Assert.IsTrue(eventDB.GetSpecial(SpecialId(6)).allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+        }
+
 
         [TestMethod]
         public void SingleDescriptionPerCourse()
@@ -1805,25 +1920,25 @@ namespace PurplePen.Tests
             undomgr.BeginCommand(7126, "Add descriptions");
 
             desc1 = ChangeEvent.AddDescription(eventDB, true, null, new PointF(0, 0), 5);
-            desc2 = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(3), CourseId(5) }, new PointF(0, 0), 5);
-            desc3 = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(5), CourseId(1) }, new PointF(0, 0), 5);
+            desc2 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(3), Designator(5) }, new PointF(0, 0), 5);
+            desc3 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(5), Designator(1) }, new PointF(0, 0), 5);
 
             undomgr.EndCommand(7126);
 
             eventDB.Validate();
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new Id<Course>[] { CourseId(2), CourseId(4), CourseId(6) });
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc2), new Id<Course>[] { CourseId(3) });
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new Id<Course>[] { CourseId(1), CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new CourseDesignator[] { Designator(0), Designator(2), Designator(4), Designator(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc2), new CourseDesignator[] { Designator(3) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new CourseDesignator[] { Designator(1), Designator(5) });
 
             undomgr.BeginCommand(7126, "Change descriptions");
 
-            ChangeEvent.ChangeDisplayedCourses(eventDB, desc1, new Id<Course>[] { CourseId(3), CourseId(6) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, desc1, new CourseDesignator[] { Designator(3), Designator(6) });
 
             undomgr.EndCommand(7126);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new Id<Course>[] { CourseId(3), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new CourseDesignator[] { Designator(3), Designator(6) });
             Assert.IsFalse(eventDB.IsSpecialPresent(desc2));
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new Id<Course>[] { CourseId(1), CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new CourseDesignator[] { Designator(1), Designator(5) });
         }
 	
 

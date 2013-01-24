@@ -44,6 +44,7 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Globalization;
+using System.Linq;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
@@ -543,7 +544,7 @@ namespace PurplePen
                 }
             }
 
-            Id<Course>[] displayedCourses;
+            CourseDesignator[] displayedCourses;
             UpdateMenuItem(changeDisplayedCoursesMenu, controller.CanChangeDisplayedCourses(out displayedCourses));
 
             // Update Zoom menu items -- check the correct one (if any).
@@ -1309,16 +1310,18 @@ namespace PurplePen
 
         private void changeDisplayedCoursesMenu_Click(object sender, EventArgs e)
         {
-            Id<Course>[] displayedCourses;
+            CourseDesignator[] displayedCourses;
+
+            // UNDONE MAPEXCHANGE -- transfer CourseDesignators to the dialog
 
             if (controller.CanChangeDisplayedCourses(out displayedCourses) == CommandStatus.Enabled) {
                 ChangeSpecialCourses changeCoursesDialog = new ChangeSpecialCourses();
                 changeCoursesDialog.EventDB = controller.GetEventDB();
-                changeCoursesDialog.DisplayedCourses = displayedCourses;
+                changeCoursesDialog.DisplayedCourses = (from cd in displayedCourses select cd.CourseId).Distinct().ToArray();
 
                 DialogResult result = changeCoursesDialog.ShowDialog(this);
                 if (result == DialogResult.OK) {
-                    controller.ChangeDisplayedCourses(changeCoursesDialog.DisplayedCourses);
+                    controller.ChangeDisplayedCourses((from id in changeCoursesDialog.DisplayedCourses select new CourseDesignator(id)).ToArray());
                 }
             }
         }

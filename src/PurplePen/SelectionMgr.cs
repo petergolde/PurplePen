@@ -480,7 +480,7 @@ namespace PurplePen
                 ClearSelection();
             }
 
-            if (selectedSpecial.IsNotNone && !(activeCourseDesignator.IsAllControls || QueryEvent.CourseContainsSpecial(eventDB, activeCourseDesignator.CourseId, selectedSpecial))) {
+            if (selectedSpecial.IsNotNone && !(activeCourseDesignator.IsAllControls || QueryEvent.CourseContainsSpecial(eventDB, activeCourseDesignator, selectedSpecial))) {
                 // Selected special is not in current course
                 ClearSelection();
             }

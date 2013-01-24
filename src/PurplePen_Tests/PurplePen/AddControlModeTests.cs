@@ -799,7 +799,7 @@ namespace PurplePen.Tests
                     Assert.AreEqual(37, special.locations[1].Y);
                     Assert.IsFalse(special.allCourses);
                     Assert.AreEqual(1, special.courses.Length);
-                    Assert.AreEqual(CourseId(3), special.courses[0]);
+                    Assert.AreEqual(Designator(3), special.courses[0]);
                 }
             }
             Assert.AreEqual(1, countDescriptions);

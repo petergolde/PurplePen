@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using PurplePen.Graphics2D;
 
 namespace PurplePen
@@ -132,6 +133,23 @@ namespace PurplePen
 
             return builder.ToString();
         }
+
+        // Get the text for a list of courses. Returns "None" for no courses. Returns "All courses" for all courses.
+        // The list of course names is sorted. Ignores part numbers, but doesn't duplicate a course if multiple parts
+        // are present.
+        private static string CourseListText(EventDB eventDB, CourseDesignator[] courseDesignators)
+        {
+            HashSet<Id<Course>> courses = new HashSet<Id<Course>>();
+            foreach (CourseDesignator designator in courseDesignators) {
+                if (designator.IsAllControls)
+                    return SelectionDescriptionText.CourseList_AllCourses;
+                else
+                    courses.Add(designator.CourseId);
+            }
+
+            return CourseListText(eventDB, courses.ToArray());
+        }
+
 
         // Describe the symbol key
         private static TextPart[] DescribeKey(EventDB eventDB)

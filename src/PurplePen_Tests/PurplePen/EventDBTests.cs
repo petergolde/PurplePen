@@ -510,7 +510,7 @@ namespace PurplePen.Tests
             sp1 = new Special(SpecialKind.FirstAid, new PointF[1] { new PointF(4.5F, 1.2F) });
             sp2 = new Special(SpecialKind.OptCrossing, new PointF[1] { new PointF(-4.2F, 1.7F) });
             sp2.allCourses = false;
-            sp2.courses = new Id<Course>[3] { CourseId(1), CourseId(2), CourseId(3) };
+            sp2.courses = new CourseDesignator[] { Designator(1), Designator(2), Designator(3), CourseDesignator.AllControls };
             sp2.orientation = 45F;
             sp3 = new Special(SpecialKind.Boundary, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
             sp4 = new Special(SpecialKind.OOB, new PointF[4] { new PointF(3, 7), new PointF(11, 2), new PointF(0, -1), new PointF(-12, -3) });
@@ -520,7 +520,7 @@ namespace PurplePen.Tests
             sp5.fontBold = true;
             sp5.fontItalic = false;
             sp5.allCourses = false;
-            sp5.courses = new Id<Course>[1] { CourseId(2) };
+            sp5.courses = new CourseDesignator[2] { Designator(2), new CourseDesignator(CourseId(3), 1) };
             sp6 = new Special(SpecialKind.Descriptions, new PointF[2] { new PointF(5, 6), new PointF(11, 6) });
             sp7 = new Special(SpecialKind.Text, new PointF[2] { new PointF(8, 7), new PointF(18, 5) });
             sp7.fontName = "Courier New";

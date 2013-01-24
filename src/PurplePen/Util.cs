@@ -199,6 +199,18 @@ namespace PurplePen
             }
         }
 
+        // Clone an array and its elemenets.
+        public static T[] CloneArrayAndElements<T>(T[] a)
+            where T : ICloneable
+        {
+            T[] newArray = new T[a.Length];
+            for (int i = 0; i < a.Length; ++i) {
+                newArray[i] = (T) a[i].Clone();
+            }
+
+            return newArray;
+        }
+
         // Round a rectangle. Returns a sane hittest of rounding each coordinate. Rectangle.Round doesn't do that!
         public static Rectangle Round(RectangleF rect)
         {

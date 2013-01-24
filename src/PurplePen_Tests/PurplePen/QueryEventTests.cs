@@ -576,16 +576,39 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\sampleevent6.coursescribe");
 
-            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseId(0), SpecialId(1)));
-            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseId(0), SpecialId(3)));
-            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseId(0), SpecialId(4)));
-            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseId(3), SpecialId(4)));
-            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseId(3), SpecialId(5)));
-            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseId(6), SpecialId(4)));
-            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseId(6), SpecialId(5)));
-            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseId(6), SpecialId(1)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(1)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(3)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(4)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(4)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(5)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(6), SpecialId(4)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(6), SpecialId(5)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(6), SpecialId(1)));
         }
 
+        [TestMethod]
+        public void CourseContainsSpecialMapExchange()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(1)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(3)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(4)));
+
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(2), SpecialId(3)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(3)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, Designator(6), SpecialId(3)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(6), 2), SpecialId(3)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(2), 1), SpecialId(3)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(2), 0), SpecialId(3)));
+
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, Designator(2), SpecialId(2)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(2)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(6), SpecialId(2)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(6), 2), SpecialId(2)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(2), 1), SpecialId(2)));
+            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, new CourseDesignator(CourseId(2), 0), SpecialId(2)));
+        }
 
         [TestMethod]
         public void ComputeLegLength()
@@ -806,15 +829,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void GetSpecialDisplayedCourses()
         {
-            Id<Course>[] result;
+            CourseDesignator[] result;
 
             Setup("queryevent\\specials.ppen");
 
             result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(7));
-            TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6), CourseId(7), CourseId(8), CourseId(9), CourseId(10)});
+            TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6), Designator(7), Designator(8), Designator(9), Designator(10)});
 
             result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(2));
-            TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(9) });
+            TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(9) });
         }
 
         [TestMethod]
@@ -1132,6 +1155,7 @@ namespace PurplePen.Tests
 
             Assert.AreEqual(4, QueryEvent.CountCourseParts(eventDB, CourseId(6)));
             Assert.AreEqual(1, QueryEvent.CountCourseParts(eventDB, CourseId(1)));
+            Assert.AreEqual(2, QueryEvent.CountCourseParts(eventDB, CourseId(2)));
         }
 
         [TestMethod]

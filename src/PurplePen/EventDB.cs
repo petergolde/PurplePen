@@ -1091,7 +1091,7 @@ namespace PurplePen
         public PointF[] locations;          // The location of the control; might be one or more coordinates (two for a rectangle)
         public float orientation;            // For crossing points only, the orientation in degress
         public bool allCourses;             // If true, special is in all courses.
-        public Id<Course>[] courses;   // If allCourses is false, an array of the courses this special is in.
+        public CourseDesignator[] courses;   // If allCourses is false, an array of the course designators this special is in.
         public string text;                      // for text objects, the text.
         public string fontName;             // for text objects, the font name
         public bool fontBold, fontItalic;  // for text objects, the font style
@@ -1156,23 +1156,31 @@ namespace PurplePen
                 if (kind == SpecialKind.Descriptions) {
                     // All the courses have used a description block
                     foreach (Id<Course> courseId in validateInfo.eventDB.AllCourseIds) {
-                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseId))
+                        if (validateInfo.usedDescriptionCourses.ContainsKey(new CourseDesignator(courseId)))
                             throw new ApplicationException(string.Format("Course {0} has multiple descriptions (special {1})", courseId, id));
-                        validateInfo.usedDescriptionCourses[courseId] = true;
+                        validateInfo.usedDescriptionCourses[new CourseDesignator(courseId)] = true;
                     }
                 }
             }
             else {
                 if (courses == null)  // ok to have zero-length array, if special is in all controls but not on any course.
                     throw new ApplicationException(string.Format("Special {0} should have real courses array", id));
-                foreach (Id<Course> courseId in courses) {
-                    validateInfo.eventDB.CheckCourseId(courseId);
+                foreach (CourseDesignator courseDesignator in courses) {
+                    if (courseDesignator.IsAllControls) {
+                        if (kind != SpecialKind.Descriptions)
+                            throw new ApplicationException("Only descriptions should be directly in all controls");
+                    }
+                    else {
+                        validateInfo.eventDB.CheckCourseId(courseDesignator.CourseId);
+                    }
 
                     if (kind == SpecialKind.Descriptions) {
                         // mark off courses that use this description block.
-                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseId))
-                            throw new ApplicationException(string.Format("Course {0} has multiple descriptions (special {1})", courseId, id));
-                        validateInfo.usedDescriptionCourses[courseId] = true;
+                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseDesignator))
+                            throw new ApplicationException(string.Format("{0} has multiple descriptions (special {1})", courseDesignator, id));
+                        if (! courseDesignator.AllParts && validateInfo.usedDescriptionCourses.ContainsKey(new CourseDesignator(courseDesignator.CourseId)))
+                            throw new ApplicationException(string.Format("{0} has conflict with all parts description (special {1})", courseDesignator, id));
+                        validateInfo.usedDescriptionCourses[courseDesignator] = true;
                     }
                 }
             }
@@ -1181,8 +1189,9 @@ namespace PurplePen
         public override StorableObject Clone()
         {
             Special n = (Special) base.Clone();
-            if (courses != null)
-                n.courses = (Id<Course>[]) n.courses.Clone();
+            if (courses != null) {
+                n.courses = Util.CloneArrayAndElements(n.courses);
+            }
             n.locations = (PointF[]) n.locations.Clone();
             return n;
         }
@@ -1281,13 +1290,17 @@ namespace PurplePen
                 case "courses":
                     allCourses = xmlinput.GetAttributeBool("all", false);
                     if (!allCourses) {
-                        List<Id<Course>> courseIdList = new List<Id<Course>>();
+                        List<CourseDesignator> courseIdList = new List<CourseDesignator>();
                         xmlinput.MoveToContent();
 
                         bool firstCourse = true;
                         while (xmlinput.FindSubElement(firstCourse, "course")) {
                             int id = xmlinput.GetAttributeInt("course");
-                            courseIdList.Add(new Id<Course>(id));
+                            int part = xmlinput.GetAttributeInt("part", -1);
+                            if (part >= 0)
+                                courseIdList.Add(new CourseDesignator(new Id<Course>(id), part));
+                            else
+                                courseIdList.Add(new CourseDesignator(new Id<Course>(id)));
                             xmlinput.Skip();
                             firstCourse = false;
                         }
@@ -1363,9 +1376,11 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("all", XmlConvert.ToString(true));
             }
             else {
-                foreach (Id<Course> course in courses) {
+                foreach (CourseDesignator courseDesignator in courses) {
                     xmloutput.WriteStartElement("course");
-                    xmloutput.WriteAttributeString("course", XmlConvert.ToString(course.id));
+                    xmloutput.WriteAttributeString("course", XmlConvert.ToString(courseDesignator.CourseId.id));
+                    if (!courseDesignator.AllParts)
+                        xmloutput.WriteAttributeString("part", XmlConvert.ToString(courseDesignator.Part));
                     xmloutput.WriteEndElement();
                 }
             }
@@ -2457,7 +2472,7 @@ namespace PurplePen
             public Dictionary<string, bool> usedCodes = new Dictionary<string, bool>();
 
             // Remembers used courses to make sure that no course has more than one description 
-            public Dictionary<Id<Course>, bool> usedDescriptionCourses = new Dictionary<Id<Course>, bool>();
+            public Dictionary<CourseDesignator, bool> usedDescriptionCourses = new Dictionary<CourseDesignator, bool>();
 
             // Remembers used sort orders to make sure that no sort order is used more than once.
             public Dictionary<int, Id<Course>> sortOrders = new Dictionary<int, Id<Course>>();
