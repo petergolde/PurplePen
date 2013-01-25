@@ -70,5 +70,11 @@ namespace PurplePen
             }
         }
 
+        public bool ShowAllControls
+        {
+            get { return courseSelector.ShowAllControls; }
+            set { courseSelector.ShowAllControls = value; }
+        }
+
     }
 }

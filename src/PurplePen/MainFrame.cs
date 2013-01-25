@@ -547,7 +547,8 @@ namespace PurplePen
             }
 
             CourseDesignator[] displayedCourses;
-            UpdateMenuItem(changeDisplayedCoursesMenu, controller.CanChangeDisplayedCourses(out displayedCourses));
+            bool showAllControls;
+            UpdateMenuItem(changeDisplayedCoursesMenu, controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls));
 
             // Update Zoom menu items -- check the correct one (if any).
             float currentZoom = mapViewer.ZoomFactor;
@@ -1313,11 +1314,13 @@ namespace PurplePen
         private void changeDisplayedCoursesMenu_Click(object sender, EventArgs e)
         {
             CourseDesignator[] displayedCourses;
+            bool showAllControls;
 
-            if (controller.CanChangeDisplayedCourses(out displayedCourses) == CommandStatus.Enabled) {
+            if (controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls) == CommandStatus.Enabled) {
                 ChangeSpecialCourses changeCoursesDialog = new ChangeSpecialCourses();
                 changeCoursesDialog.EventDB = controller.GetEventDB();
-                changeCoursesDialog.DisplayedCourses = displayedCourses;
+                changeCoursesDialog.ShowAllControls = showAllControls; changeCoursesDialog.DisplayedCourses = displayedCourses;
+
 
                 DialogResult result = changeCoursesDialog.ShowDialog(this);
                 if (result == DialogResult.OK) {

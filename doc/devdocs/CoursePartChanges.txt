@@ -16,7 +16,9 @@ DONE: Specials -- support specials in a single part.
 
 DONE: Look at references to CourseView.BaseCourseId -- should they be CourseDesignators instead?
 
-All parts course view should include descriptions from each part.
+DONE: All parts course view should not include descriptions from each part.
+
+DONE: Select which courses for descriptions should include all controls.
 
 Print courses should have option to print all parts together, or separate (the default). Enable only
 if there are any courses with multiple parts.

@@ -1599,17 +1599,19 @@ namespace PurplePen
         }
 
         // Command status for changing the set of displayed courses.
-        public CommandStatus CanChangeDisplayedCourses(out CourseDesignator[] displayedCourses)
+        public CommandStatus CanChangeDisplayedCourses(out CourseDesignator[] displayedCourses, out bool showAllControls)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 displayedCourses = QueryEvent.GetSpecialDisplayedCourses(eventDB, selection.SelectedSpecial);
+                showAllControls = (eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.Descriptions);
                 return CommandStatus.Enabled;
             }
             else {
                 displayedCourses = null;
+                showAllControls = false;
                 return CommandStatus.Disabled;
             }
         }
