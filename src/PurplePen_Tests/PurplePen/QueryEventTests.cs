@@ -576,7 +576,7 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\sampleevent6.coursescribe");
 
-            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(1)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(1)));
             Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(3)));
             Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(4)));
             Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(4)));
@@ -593,7 +593,7 @@ namespace PurplePen.Tests
 
             Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(1)));
             Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(3)));
-            Assert.IsFalse(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(4)));
+            Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, SpecialId(4)));
 
             Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(2), SpecialId(3)));
             Assert.IsTrue(QueryEvent.CourseContainsSpecial(eventDB, Designator(3), SpecialId(3)));

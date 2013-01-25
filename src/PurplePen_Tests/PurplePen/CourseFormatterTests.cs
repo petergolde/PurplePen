@@ -66,7 +66,6 @@ namespace PurplePen.Tests
             // Dump it to a string.
             StringWriter writer = new StringWriter();
             course.Dump(writer);
-            course.Dump(Console.Out);
 
             // Check that the string is correct.
             string actual = writer.ToString();
@@ -443,7 +442,7 @@ BasicText:      layer:2  special:6  scale:1  text:Frank Zappa  top-left:(13,-14)
                 font-name:Arial  font-style:Bold  font-height:2.685315  rect:(13,-14)-(71,-17)
 BasicText:      layer:2  special:7  scale:1  text:All controls  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
-Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-60.5,Width=40.5,Height=110.5}
+Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
 Start:          layer:2  control:1  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        layer:2  control:35  scale:1  location:(115.6,-11.8)  gaps:11111111111111111111111111111111
 Control:        layer:2  control:36  scale:1  location:(128.4,6.1)  gaps:11111111111111111111111111111111

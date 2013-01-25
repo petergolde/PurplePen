@@ -73,6 +73,10 @@ namespace PurplePen.Tests
             for (int i = 0; i < courseView.SpecialIds.Count; ++i) {
                 writer.WriteLine("Special {0} ({1})", courseView.SpecialIds[i], courseView.EventDB.GetSpecial(courseView.SpecialIds[i]).kind);
             }
+
+            for (int i = 0; i < courseView.DescriptionViews.Count; ++i) {
+                writer.WriteLine("Description {0} ({1})", courseView.DescriptionViews[i].SpecialId, courseView.DescriptionViews[i].CourseDesignator);
+            }
         }
 
         [TestMethod]
@@ -129,7 +133,7 @@ Total Length=4667.309  Part Length=4667.309  Total Climb=173  ScoreColumn=-1  To
  8: [-1] Ids:  6, 19
 Special 1 (FirstAid)
 Special 4 (OOB)
-Special 6 (Descriptions)
+Description 6 (Course 4)
 ";
             Assert.AreEqual(expected, actual);
         }
@@ -172,7 +176,7 @@ Total Length=4667.309  Part Length=4667.309  Total Climb=173  ScoreColumn=-1  To
  8: [-1] Ids:  6, 19
 Special 1 (FirstAid)
 Special 4 (OOB)
-Special 6 (Descriptions)
+Description 6 (Course 4)
 ";
             Assert.AreEqual(expected, actual);
         }
@@ -212,7 +216,7 @@ Total Length=4667.309  Part Length=4667.309  Total Climb=173  ScoreColumn=-1  To
  7: [ 4] Ids: 18, 18
     Legs: (Next:8,Id:0,length:1423.892)  
  8: [-1] Ids:  6, 19
-Special 6 (Descriptions)
+Description 6 (Course 4)
 ";
             Assert.AreEqual(expected, actual);
         }

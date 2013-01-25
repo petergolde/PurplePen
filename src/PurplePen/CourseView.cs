@@ -67,14 +67,27 @@ namespace PurplePen
             public Id<Leg>[] legId;                 // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
         };
-            
 
+        // A description that is being viewed.
+        public class DescriptionView
+        {
+            public readonly Id<Special> SpecialId;
+            public readonly CourseDesignator CourseDesignator;
+
+            public DescriptionView(Id<Special> specialId, CourseDesignator courseDesignator)
+            {
+                this.SpecialId = specialId;
+                this.CourseDesignator = courseDesignator;
+            }
+        }
+            
         private EventDB eventDB;
         private string courseName;
         private CourseDesignator courseDesignator;
 
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
+        private readonly List<DescriptionView> descriptionViews = new List<DescriptionView>();
 
         private int scoreColumn;                // column to put score into.
 
@@ -95,10 +108,15 @@ namespace PurplePen
             }
         }
 
-        // All the specials on this course.
+        // All the specials on this course, not include description blocks
         public List<Id<Special>> SpecialIds
         {
             get { return specialIds; }
+        }
+
+        public List<DescriptionView> DescriptionViews
+        {
+            get { return descriptionViews; }
         }
 
         public EventDB EventDB {
@@ -363,10 +381,24 @@ namespace PurplePen
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
         private void AddSpecials(CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
+            bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && (QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) > 1);
+
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
-                if (ShouldAddSpecial(eventDB.GetSpecial(specialId).kind, addNonDescriptionSpecials, addDescriptionSpecials)) {
-                    if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
-                        specialIds.Add(specialId);
+                SpecialKind specialKind = eventDB.GetSpecial(specialId).kind;
+
+                if (ShouldAddSpecial(specialKind, addNonDescriptionSpecials, addDescriptionSpecials)) {
+                    if (specialKind == SpecialKind.Descriptions) {
+                        // Descriptions are added differently. It's not entirely clear the best way to handle descriptions
+                        // for all-parts of a multi-part course. For now, we don't put any descriptions on.
+                        if (!multiPart) {
+                            if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
+                                descriptionViews.Add(new DescriptionView(specialId, courseDesignator));
+                        }
+                    }
+                    else {
+                        if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
+                            specialIds.Add(specialId);
+                    }
                 }
             }
         }
@@ -463,12 +495,12 @@ namespace PurplePen
 
             if (addSpecials) {
                 // Add every special, regardless of courses it is on, except for descriptions. Descriptions are added to all
-                // controls only if they appear in all courses (otherwise we'd see a ton of descriptions on all controls), and if "addDescription" is true
+                // controls only if they appear in all courses (or specifically for the all controls view), and if "addDescription" is true
                 foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                     Special special = eventDB.GetSpecial(specialId);
                     if (special.kind == SpecialKind.Descriptions) {
-                        if (addDescription && special.allCourses)
-                            courseView.specialIds.Add(specialId);
+                        if (addDescription && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                            courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
                     }
                     else
                         courseView.specialIds.Add(specialId);

@@ -71,7 +71,14 @@ namespace PurplePen
 
             // Go through all the specials in the view and process them to create course objects
             foreach(Id<Special> specialId in courseView.SpecialIds) {
-                courseObj = CreateSpecial(eventDB, symbolDB, courseView, scaleRatio, appearance, specialId, layer);
+                courseObj = CreateSpecial(eventDB, courseView, scaleRatio, appearance, specialId, layer);
+                if (courseObj != null)
+                    courseLayout.AddCourseObject(courseObj);
+            }
+
+            // Go through all the descriptions in the view and process them to create course objects
+            foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
+                courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView);
                 if (courseObj != null)
                     courseLayout.AddCourseObject(courseObj);
             }
@@ -396,7 +403,7 @@ namespace PurplePen
 
             if (text.Contains(TextMacros.ClassList)) {
                 string classList = "";
-                if (courseView.BaseCourseId.IsNotNone) {
+                if (courseView.CourseDesignator.IsNotAllControls) {
                     classList = eventDB.GetCourse(courseView.BaseCourseId).secondaryTitle;
                     if (classList == null)
                         classList = "";
@@ -411,7 +418,7 @@ namespace PurplePen
         }
 
         // Create the course objects associated with this special. Assign the given layer to it.
-        static CourseObj CreateSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView courseView, float scaleRatio, CourseAppearance appearance, Id<Special> specialId, CourseLayer normalLayer)
+        static CourseObj CreateSpecial(EventDB eventDB, CourseView courseView, float scaleRatio, CourseAppearance appearance, Id<Special> specialId, CourseLayer normalLayer)
         {
             Special special = eventDB.GetSpecial(specialId);
             CourseObj courseObj = null;
@@ -446,21 +453,26 @@ namespace PurplePen
                 break;
 
             case SpecialKind.Descriptions:
-                DescriptionKind descKind;
-                DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, courseView.CourseDesignator, out descKind);
-                courseObj = new DescriptionCourseObj(specialId, special.locations[0], (float) Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
-                break;
-
             default:
                 Debug.Fail("bad special kind");
                 return null;
             }
 
-            if (special.kind == SpecialKind.Descriptions)
-                courseObj.layer = CourseLayer.Descriptions;
-            else
-                courseObj.layer = normalLayer;
+            courseObj.layer = normalLayer;
 
+            return courseObj;
+        }
+
+        // Create the course objects associated with this special. Assign the given layer to it.
+        static CourseObj CreateDescriptionSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView.DescriptionView descriptionView)
+        {
+            Special special = eventDB.GetSpecial(descriptionView.SpecialId);
+            Debug.Assert(special.kind == SpecialKind.Descriptions);
+
+            DescriptionKind descKind;
+            DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind);
+            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
+            courseObj.layer = CourseLayer.Descriptions;
             return courseObj;
         }
 
@@ -470,12 +482,6 @@ namespace PurplePen
             CourseView courseViewDescription;
             DescriptionLine[] description;
             bool noTextOrSymbols = false;
-
-            // For all controls, show the longest description we have, and don't show text and symbols (just the grid).
-            if (courseDesignator.IsAllControls) {
-                courseDesignator = FindLongestDescription(eventDB, symbolDB);
-                noTextOrSymbols = true;
-            }
 
             // Get the course view for the description we're using.
             courseViewDescription = CourseView.CreateViewingCourseView(eventDB, courseDesignator);

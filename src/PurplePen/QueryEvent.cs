@@ -561,14 +561,13 @@ namespace PurplePen
                 return true;
         }
 
-        // Does the given course (or all controls) contain the given special? If all controls is specified, only 
-        // if the special is specifically on the all controls course.
+        // Does the given course (or all controls) contain the given special? 
         public static bool CourseContainsSpecial(EventDB eventDB, CourseDesignator courseDesignator, Id<Special> specialId)
         {
             Special special = eventDB.GetSpecial(specialId);
 
             if (special.allCourses)
-                return ! courseDesignator.IsAllControls;
+                return true;
 
             if (courseDesignator.AllParts)
                 return special.courses.Any(cd => cd.CourseId == courseDesignator.CourseId);
