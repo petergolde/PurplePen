@@ -203,6 +203,9 @@ namespace PurplePen
         public static T[] CloneArrayAndElements<T>(T[] a)
             where T : ICloneable
         {
+            if (a == null)
+                return null;
+
             T[] newArray = new T[a.Length];
             for (int i = 0; i < a.Length; ++i) {
                 newArray[i] = (T) a[i].Clone();

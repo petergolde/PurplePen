@@ -2241,6 +2241,19 @@ namespace PurplePen
             SetCommandMode(new AddLineAreaSpecialMode(this, selectionMgr, undoMgr, eventDB, specialKind, isArea));
         }
 
+        public CommandStatus CanAddDescriptions()
+        {
+            CourseDesignator currentCourse = selectionMgr.Selection.ActiveCourseDesignator;
+
+            // All controls or a single part or a 1-part course can add descriptions. All parts of multi-part cannot.
+            if (currentCourse.IsAllControls || ! currentCourse.AllParts)
+                return CommandStatus.Enabled;
+            if (QueryEvent.CountCourseParts(eventDB, currentCourse.CourseId) == 1)
+                return CommandStatus.Enabled;
+
+            return CommandStatus.Disabled;
+        }
+
         // Start the mode to add a control description block to a course
         public void BeginAddDescriptionMode()
         {

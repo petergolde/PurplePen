@@ -128,11 +128,10 @@ namespace PurplePen
             // Create the new description, unless it's ridiculously small.
             if (cellSize > 0.5F) {
                 CourseDesignator[] courses = null;
-                if (courseDesignator.IsNotAllControls)
-                    courses = new CourseDesignator[] {courseDesignator};
+                courses = new CourseDesignator[] {courseDesignator};
 
                 undoMgr.BeginCommand(1522, CommandNameText.AddObject);
-                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, courseDesignator.IsAllControls, courses, upperLeft, cellSize);
+                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, false, courses, upperLeft, cellSize);
                 undoMgr.EndCommand(1522);
 
                 selectionMgr.SelectSpecial(specialId);
