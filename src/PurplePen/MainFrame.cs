@@ -520,6 +520,8 @@ namespace PurplePen
             UpdateMenuItem(mapExchangeControlToolStripMenuItem, controller.CanAddMapExchangeControl());
             UpdateMenuItem(mapExchangeSeparateMenuItem, controller.CanAddMapExchangeSeparate());
             UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
+            UpdateMenuItem(mapExchangeToolStripMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
+            UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(addDescriptionsMenu, controller.CanAddDescriptions());
             UpdateMenuItem(descriptionsToolStripMenuItem, controller.CanAddDescriptions());
 

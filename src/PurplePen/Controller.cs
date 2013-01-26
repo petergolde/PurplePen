@@ -1623,7 +1623,7 @@ namespace PurplePen
 
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
-                undoMgr.BeginCommand(852, CommandNameText.SetLegFlagging);
+                undoMgr.BeginCommand(852, CommandNameText.ChangeDisplayedCourses);
 
                 ChangeEvent.ChangeDisplayedCourses(eventDB, selection.SelectedSpecial, displayedCourses);
 
@@ -2595,6 +2595,15 @@ namespace PurplePen
         Disabled,              // Show command as disabled
         Enabled               // Show the command as enabled.
     }
+
+    static class CommandStatusExtensions
+    {
+        public static CommandStatus Combine(this CommandStatus cs1, CommandStatus cs2)
+        {
+            return (CommandStatus) Math.Max((int) cs1, (int) cs2);
+        }
+    }
+
 
     // Indicates the status of undo.
     struct UndoStatus
