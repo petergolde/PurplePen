@@ -162,6 +162,8 @@ namespace PurplePen.Tests
             course2.labelKind = ControlLabelKind.Code;
             course2.firstCourseControl = CourseControlId(0);
             course2.printArea = new RectangleF(50, 70, 200, 100);
+            course2.partPrintAreas[1] = new RectangleF(10, 20, 30, 40);
+            course2.partPrintAreas[0] = new RectangleF(70, 10, 130, 140);
             eventDB.AddCourse(course2);
 
             course3 = new Course(CourseKind.Score, "Rambo", 10000, 3);
@@ -172,6 +174,7 @@ namespace PurplePen.Tests
             course3.firstControlOrdinal = 7;
             course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
+            course3.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
             eventDB.AddCourse(course3);
 
             undomgr.EndCommand(61);

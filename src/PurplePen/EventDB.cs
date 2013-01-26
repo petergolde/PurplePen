@@ -568,13 +568,15 @@ namespace PurplePen
         public int scoreColumn;         // column for score, or -1 for none (must be -1 for a non-score course)
         public DescriptionKind descKind;// Kind of description to print
         public RectangleF printArea;  // print area, or empty if no defined print area.
+        public Dictionary<int, RectangleF> partPrintAreas; // print area of parts.
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
         {
+            this.partPrintAreas = new Dictionary<int, RectangleF>();
         }
 
-        public Course(CourseKind kind, string name, float printScale, int sortOrder)
+        public Course(CourseKind kind, string name, float printScale, int sortOrder): this()
         {
             this.kind = kind;
             this.name = name;
@@ -695,6 +697,13 @@ namespace PurplePen
                 return false;
             if (other.scoreColumn != scoreColumn)
                 return false;
+            if (other.partPrintAreas.Count != this.partPrintAreas.Count)
+                return false;
+            foreach (KeyValuePair<int, RectangleF> kvp in this.partPrintAreas) {
+                RectangleF rect;
+                if (!other.partPrintAreas.TryGetValue(kvp.Key, out rect) || rect != kvp.Value)
+                    return false;
+            }
 
             return true;
         }
@@ -736,11 +745,18 @@ namespace PurplePen
                         break;
 
                     case "print-area":
+                        int part = xmlinput.GetAttributeInt("part", -1);
                         float left = xmlinput.GetAttributeFloat("left");
                         float top = xmlinput.GetAttributeFloat("top");
                         float right = xmlinput.GetAttributeFloat("right");
                         float bottom = xmlinput.GetAttributeFloat("bottom");
-                        printArea = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
+                        RectangleF area = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
+
+                        if (part == -1)
+                            printArea = area;
+                        else
+                            partPrintAreas[part] = area;
+
                         xmlinput.Skip();
                         break;
 
@@ -814,6 +830,16 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("top", XmlConvert.ToString(printArea.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
                 xmloutput.WriteAttributeString("right", XmlConvert.ToString(printArea.Right));
                 xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printArea.Top));   // rectangle is reversed, so top is really the bottom and vice versa
+                xmloutput.WriteEndElement();
+            }
+
+            foreach (KeyValuePair<int, RectangleF> kvp in partPrintAreas) {
+                xmloutput.WriteStartElement("print-area");
+                xmloutput.WriteAttributeString("part", XmlConvert.ToString(kvp.Key));
+                xmloutput.WriteAttributeString("left", XmlConvert.ToString(kvp.Value.Left));
+                xmloutput.WriteAttributeString("top", XmlConvert.ToString(kvp.Value.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
+                xmloutput.WriteAttributeString("right", XmlConvert.ToString(kvp.Value.Right));
+                xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(kvp.Value.Top));   // rectangle is reversed, so top is really the bottom and vice versa
                 xmloutput.WriteEndElement();
             }
 
