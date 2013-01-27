@@ -1622,11 +1622,11 @@ namespace PurplePen
             printCoursesDialog.Dispose();
         }
 
-        private void SetPrintArea(bool allCourses)
+        private void SetPrintArea(PrintArea printArea)
         {
             SetPrintAreaDialog dialog = new SetPrintAreaDialog();
             dialog.controller = controller;
-            dialog.allCourses = allCourses;
+            dialog.printArea = printArea;
 
             Point location = this.Location;
             location.Offset(10, 100);
@@ -1635,23 +1635,34 @@ namespace PurplePen
             dialog.Show(this);
 
             // Make sure the existing print area is fully visible.
-            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(allCourses);
+            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(printArea);
             if (!mapViewer.Viewport.Contains(rectangleCurrent)) {
                 rectangleCurrent.Inflate(rectangleCurrent.Width * 0.05F, rectangleCurrent.Height * 0.05F);
                 ShowRectangle(rectangleCurrent);
             }
 
-            controller.BeginSetPrintArea(allCourses, dialog);
+            controller.BeginSetPrintArea(printArea, dialog);
+        }
+
+        private void setPrintAreaMenu_DropDownOpening(object sender, EventArgs e)
+        {
+            bool multiPart = (controller.NumberOfParts > 1);
+            UpdateMenuItem(printAreaThisPartMenu, multiPart ? CommandStatus.Enabled : CommandStatus.Hidden);
+        }
+
+        private void printAreaThisPartMenu_Click(object sender, EventArgs e)
+        {
+            SetPrintArea(PrintArea.OnePart);
         }
 
         private void printAreaThisCourseMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(false);
+            SetPrintArea(PrintArea.OneCourse);
         }
 
         private void printAreaAllCoursesMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(true);
+            SetPrintArea(PrintArea.AllCourses);
         }
 
         private void changeMapFileMenu_Click(object sender, EventArgs e)

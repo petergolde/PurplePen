@@ -55,7 +55,7 @@ namespace PurplePen
         // Layout of a single page that is being print. Might be all of a course or just part.
         class CoursePage
         {
-            public Id<Course> courseId;             // course to print
+            public CourseDesignator courseDesignator;             // course to print
             public RectangleF mapRectangle;      // rectangle to print in map coordinates
             public RectangleF printRectangle;     // rectangle to print to on page, in hundredth of inch.
             public bool landscape;                       // true if page should be printed in landscape orientation
@@ -139,9 +139,10 @@ namespace PurplePen
             pages.Clear();
 
             // Go through each course and lay it out, then add to the page list.
+            // UNDONE MAPEXCHANGE: handle all parts correctly.
             foreach (Id<Course> courseId in coursePrintSettings.CourseIds) {
                 // Get the layout for the course.
-                List<CoursePage> coursePages = LayoutOptimizedCourse(courseId);
+                List<CoursePage> coursePages = LayoutOptimizedCourse(new CourseDesignator(courseId));
 
                 pageSettings.PrinterSettings.Copies = (short) coursePrintSettings.Count;
                 pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
@@ -154,13 +155,13 @@ namespace PurplePen
 
         // Layout a single course onto one or more pages.
         // Optimize onto portrait or landscape.
-        List<CoursePage> LayoutOptimizedCourse(Id<Course> courseId)
+        List<CoursePage> LayoutOptimizedCourse(CourseDesignator courseDesignator)
         {
             List<CoursePage> portraitLayout, landscapeLayout;
 
             // Layout in both portrait and landscape, and use the one which uses the least pages.
-            portraitLayout = LayoutCourse(false, courseId);
-            landscapeLayout = LayoutCourse(true, courseId);
+            portraitLayout = LayoutCourse(false, courseDesignator);
+            landscapeLayout = LayoutCourse(true, courseDesignator);
 
             bool useLandscape;
 
@@ -190,13 +191,13 @@ namespace PurplePen
 
 
         // Layout a course onto one or more pages.
-        List<CoursePage> LayoutCourse(bool landscape, Id<Course> courseId)
+        List<CoursePage> LayoutCourse(bool landscape, CourseDesignator courseDesignator)
         {
             List<CoursePage> pageList = new List<CoursePage>();
 
             // Get the area of the map we want to print, in map coordinates, and the ratio between print scale and map scale.
             float scaleRatio;
-            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseId, out scaleRatio);
+            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseDesignator, out scaleRatio);
 
             // Get the available page size on the page. 
             RectangleF printableArea = landscape ? landscapePrintableArea : portraitPrintableArea;
@@ -207,7 +208,7 @@ namespace PurplePen
                 foreach (DimensionLayout horizontalLayout in LayoutPageDimension(mapArea.Left, mapArea.Width, printableArea.Left, printableArea.Width, scaleRatio)) 
                 {
                     CoursePage page = new CoursePage();
-                    page.courseId = courseId;
+                    page.courseDesignator = courseDesignator;
                     page.landscape = landscape;
                     page.mapRectangle = new RectangleF(horizontalLayout.startMap, verticalLayout.startMap, horizontalLayout.lengthMap, verticalLayout.lengthMap);
                     page.printRectangle = new RectangleF(horizontalLayout.startPage, verticalLayout.startPage, horizontalLayout.lengthPage, verticalLayout.lengthPage);
@@ -268,13 +269,13 @@ namespace PurplePen
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
         // If asked for, crop to a single page size.
-        RectangleF GetPrintAreaForCourse(bool landscape, Id<Course> courseId, out float scaleRatio)
+        RectangleF GetPrintAreaForCourse(bool landscape, CourseDesignator courseDesignator, out float scaleRatio)
         {
             // Get the course view to get the scale ratio.
-            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, new CourseDesignator(courseId));
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             scaleRatio = courseView.ScaleRatio;
 
-            RectangleF printArea = controller.GetPrintArea(courseId);
+            RectangleF printArea = controller.GetPrintArea(courseDesignator);
 
             if (coursePrintSettings.CropLargePrintArea) {
                 // Crop the print area to a single page, portrait or landscape.
@@ -367,7 +368,7 @@ namespace PurplePen
             CoursePage page = pages[pageNumber];
 
             // Get the course view for the course we are printing.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, new CourseDesignator(page.courseId));
+            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator);
 
             // Get the correct purple color to print the course in.
             short ocadId;
@@ -497,7 +498,7 @@ namespace PurplePen
             for (int i = 0; i < numBands; ++i) {
                 CoursePage band = new CoursePage();
                 band.landscape = landscape;
-                band.courseId = page.courseId;
+                band.courseDesignator = page.courseDesignator;
 
                 if (landscape) {
                     band.mapRectangle = new RectangleF(page.mapRectangle.Left + i * mapBandSize, page.mapRectangle.Top, mapBandSize, page.mapRectangle.Height);

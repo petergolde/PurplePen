@@ -90,6 +90,7 @@ namespace PurplePen
             this.printPunchCardsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.printAreaThisPartMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaThisCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaAllCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -149,6 +150,9 @@ namespace PurplePen
             this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addFinishMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSpecialItemMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -247,13 +251,12 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitDescription)).BeginInit();
             this.splitDescription.Panel1.SuspendLayout();
             this.splitDescription.Panel2.SuspendLayout();
             this.splitDescription.SuspendLayout();
@@ -490,10 +493,18 @@ namespace PurplePen
             // setPrintAreaMenu
             // 
             this.setPrintAreaMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printAreaThisPartMenu,
             this.printAreaThisCourseMenu,
             this.printAreaAllCoursesMenu});
             this.setPrintAreaMenu.Name = "setPrintAreaMenu";
             resources.ApplyResources(this.setPrintAreaMenu, "setPrintAreaMenu");
+            this.setPrintAreaMenu.DropDownOpening += new System.EventHandler(this.setPrintAreaMenu_DropDownOpening);
+            // 
+            // printAreaThisPartMenu
+            // 
+            this.printAreaThisPartMenu.Name = "printAreaThisPartMenu";
+            resources.ApplyResources(this.printAreaThisPartMenu, "printAreaThisPartMenu");
+            this.printAreaThisPartMenu.Click += new System.EventHandler(this.printAreaThisPartMenu_Click);
             // 
             // printAreaThisCourseMenu
             // 
@@ -914,6 +925,26 @@ namespace PurplePen
             this.addDescriptionsMenu.Name = "addDescriptionsMenu";
             resources.ApplyResources(this.addDescriptionsMenu, "addDescriptionsMenu");
             this.addDescriptionsMenu.Click += new System.EventHandler(this.addDescriptionsMenu_Click);
+            // 
+            // addMapExchangeMenu
+            // 
+            this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapExchangeControlMenuItem,
+            this.mapExchangeSeparateMenuItem});
+            this.addMapExchangeMenu.Name = "addMapExchangeMenu";
+            resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
+            // 
+            // mapExchangeControlMenuItem
+            // 
+            this.mapExchangeControlMenuItem.Name = "mapExchangeControlMenuItem";
+            resources.ApplyResources(this.mapExchangeControlMenuItem, "mapExchangeControlMenuItem");
+            this.mapExchangeControlMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
+            // 
+            // mapExchangeSeparateMenuItem
+            // 
+            this.mapExchangeSeparateMenuItem.Name = "mapExchangeSeparateMenuItem";
+            resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
+            this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
             // 
             // addSpecialItemMenu
             // 
@@ -1587,26 +1618,6 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
-            // addMapExchangeMenu
-            // 
-            this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapExchangeControlMenuItem,
-            this.mapExchangeSeparateMenuItem});
-            this.addMapExchangeMenu.Name = "addMapExchangeMenu";
-            resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
-            // 
-            // mapExchangeControlMenuItem
-            // 
-            this.mapExchangeControlMenuItem.Name = "mapExchangeControlMenuItem";
-            resources.ApplyResources(this.mapExchangeControlMenuItem, "mapExchangeControlMenuItem");
-            this.mapExchangeControlMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
-            // 
-            // mapExchangeSeparateMenuItem
-            // 
-            this.mapExchangeSeparateMenuItem.Name = "mapExchangeSeparateMenuItem";
-            resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
-            this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1626,9 +1637,11 @@ namespace PurplePen
             this.courseTabs.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.splitDescription.Panel1.ResumeLayout(false);
             this.splitDescription.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitDescription)).EndInit();
             this.splitDescription.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
@@ -1831,6 +1844,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addMapExchangeMenu;
         private System.Windows.Forms.ToolStripMenuItem mapExchangeControlMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapExchangeSeparateMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printAreaThisPartMenu;
 
     }
 }

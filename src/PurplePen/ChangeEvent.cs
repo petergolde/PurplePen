@@ -356,10 +356,11 @@ namespace PurplePen
         }
 
         // Change the course print area. Use CourseId.None to change the all controls print area. Use empty
-        // rectangle to switch back to the default print area.
-        public static void ChangeCoursePrintArea(EventDB eventDB, Id<Course> courseId, RectangleF printArea)
+        // rectangle to switch back to the default print area. If "removeParts" is true, and the course is an all parts,
+        // then remove print descriptions for each part.
+        public static void ChangePrintArea(EventDB eventDB, CourseDesignator courseDesignator, bool removeParts, RectangleF printArea)
         {
-            if (courseId.IsNone) {
+            if (courseDesignator.IsAllControls) {
                 Event e = eventDB.GetEvent();
 
                 e = (Event) e.Clone();
@@ -368,12 +369,20 @@ namespace PurplePen
                 eventDB.ChangeEvent(e);
             }
             else {
-                Course course = eventDB.GetCourse(courseId);
+                Course course = eventDB.GetCourse(courseDesignator.CourseId);
 
                 course = (Course) course.Clone();
-                course.printArea = printArea;
 
-                eventDB.ReplaceCourse(courseId, course);
+                if (courseDesignator.AllParts) {
+                    course.printArea = printArea;
+                    if (removeParts)
+                        course.partPrintAreas = new Dictionary<int, RectangleF>();
+                }
+                else {
+                    course.partPrintAreas[courseDesignator.Part] = printArea;
+                }
+
+                eventDB.ReplaceCourse(courseDesignator.CourseId, course);
             }
         }
 

@@ -286,6 +286,8 @@
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
+    <print-area left="10" top="50" right="55" bottom="-10" />
+    <print-area part="1" left="0" top="80" right="90" bottom="30" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
@@ -586,8 +588,8 @@
   <special-object id="3" kind="first-aid">
     <location x="69.4530258" y="0.925992966" />
     <courses>
-      <course course="2" part="1"/>
-      <course course="3"/>
+      <course course="2" part="1" />
+      <course course="3" />
     </courses>
   </special-object>
   <special-object id="4" kind="dangerous-area">

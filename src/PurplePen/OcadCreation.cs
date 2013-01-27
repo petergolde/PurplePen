@@ -73,7 +73,7 @@ namespace PurplePen
             using (map.Write()) {
                 map.MapScale = courseView.MapScale;
                 map.PrintScale = courseView.PrintScale;
-                map.PrintArea = controller.GetPrintArea(courseView.BaseCourseId);
+                map.PrintArea = controller.GetPrintArea(courseView.CourseDesignator);
 
                 if (controller.MapType == MapType.OCAD) {
                     // Set OCAD map as template.

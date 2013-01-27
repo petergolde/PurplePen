@@ -2571,34 +2571,82 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent7.coursescribe");
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, Id<Course>.None, new RectangleF(25, 50, 110, 130));
+            ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, false, new RectangleF(25, 50, 110, 130));
             undomgr.EndCommand(9151);
           
-            RectangleF result = QueryEvent.GetPrintArea(eventDB, Id<Course>.None, new RectangleF(10, 10, 100, 100));
+            RectangleF result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(25, result.Left);
             Assert.AreEqual(50, result.Top);
             Assert.AreEqual(110 + 25, result.Right);
             Assert.AreEqual(130 + 50, result.Bottom);
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, CourseId(4), new RectangleF(35, 50, 110, 150));
+            ChangeEvent.ChangePrintArea(eventDB, Designator(4), false, new RectangleF(35, 50, 110, 150));
             undomgr.EndCommand(9151);
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseId(4), new RectangleF(10, 10, 100, 100));
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4), new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(35, result.Left);
             Assert.AreEqual(50, result.Top);
             Assert.AreEqual(110 + 35, result.Right);
             Assert.AreEqual(150 + 50, result.Bottom);
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, CourseId(4), new RectangleF());
+            ChangeEvent.ChangePrintArea(eventDB, Designator(4), false, new RectangleF());
             undomgr.EndCommand(9151);
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseId(4), new RectangleF(10, 10, 100, 100));
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4), new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(10, result.Left);
             Assert.AreEqual(10, result.Top);
             Assert.AreEqual(110, result.Right);
             Assert.AreEqual(110, result.Bottom);
+        }
+
+        [TestMethod]
+        public void ChangePrintArea2()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, false, new RectangleF(25, 50, 110, 130));
+            undomgr.EndCommand(9151);
+
+            RectangleF result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(25, result.Left);
+            Assert.AreEqual(50, result.Top);
+            Assert.AreEqual(110 + 25, result.Right);
+            Assert.AreEqual(130 + 50, result.Bottom);
+
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6), 2), false, new RectangleF(35, 50, 110, 150));
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6)), false, new RectangleF(5, 10, 15, 20));
+            undomgr.EndCommand(9151);
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6), 2), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(35, result.Left);
+            Assert.AreEqual(50, result.Top);
+            Assert.AreEqual(35 + 110, result.Right);
+            Assert.AreEqual(50 + 150, result.Bottom); 
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6)), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(5, result.Left);
+            Assert.AreEqual(10, result.Top);
+            Assert.AreEqual(5 + 15, result.Right);
+            Assert.AreEqual(10 + 20, result.Bottom);  
+          
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6)), true, new RectangleF(1, 2, 3, 4));
+            undomgr.EndCommand(9151);
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6), 2), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(1, result.Left);
+            Assert.AreEqual(2, result.Top);
+            Assert.AreEqual(1 + 3, result.Right);
+            Assert.AreEqual(2 + 4, result.Bottom);
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6)), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(1, result.Left);
+            Assert.AreEqual(2, result.Top);
+            Assert.AreEqual(1 + 3, result.Right);
+            Assert.AreEqual(2 + 4, result.Bottom);
         }
 
         [TestMethod]

@@ -45,7 +45,7 @@ namespace PurplePen
     public partial class SetPrintAreaDialog: BaseDialog
     {
         internal Controller controller;
-        internal bool allCourses;
+        internal PrintArea printArea;
 
         public SetPrintAreaDialog()
         {
@@ -54,7 +54,7 @@ namespace PurplePen
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            controller.EndSetPrintArea(allCourses);
+            controller.EndSetPrintArea(printArea);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
