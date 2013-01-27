@@ -1607,7 +1607,7 @@ namespace PurplePen
 
             // Initialize dialog
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
-            PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB());
+            PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB(), controller.AnyMultipart());
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
 

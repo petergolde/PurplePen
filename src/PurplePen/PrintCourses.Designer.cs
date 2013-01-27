@@ -78,15 +78,13 @@ namespace PurplePen
             this.copiesLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
+            this.checkBoxRasterPrinting = new System.Windows.Forms.CheckBox();
+            this.checkBoxMergeParts = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
             this.labelColorModel = new System.Windows.Forms.Label();
+            this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
             this.comboBoxMultiPage = new System.Windows.Forms.ComboBox();
             this.labelAppearanceInfo = new System.Windows.Forms.Label();
-            this.groupBoxAdvanced = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxPrintMethod = new System.Windows.Forms.ComboBox();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
@@ -95,8 +93,6 @@ namespace PurplePen
             ((System.ComponentModel.ISupportInitialize)(this.copiesUpDown)).BeginInit();
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBoxAdvanced.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -172,7 +168,7 @@ namespace PurplePen
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
-            this.courseSelector.ShowCourseParts = true;
+            this.courseSelector.ShowCourseParts = false;
             // 
             // copiesGroupBox
             // 
@@ -219,6 +215,8 @@ namespace PurplePen
             // 
             // groupBoxAppearance
             // 
+            this.groupBoxAppearance.Controls.Add(this.checkBoxRasterPrinting);
+            this.groupBoxAppearance.Controls.Add(this.checkBoxMergeParts);
             this.groupBoxAppearance.Controls.Add(this.tableLayoutPanel4);
             this.groupBoxAppearance.Controls.Add(this.comboBoxMultiPage);
             this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
@@ -226,12 +224,29 @@ namespace PurplePen
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
             // 
+            // checkBoxRasterPrinting
+            // 
+            resources.ApplyResources(this.checkBoxRasterPrinting, "checkBoxRasterPrinting");
+            this.checkBoxRasterPrinting.Name = "checkBoxRasterPrinting";
+            this.checkBoxRasterPrinting.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMergeParts
+            // 
+            resources.ApplyResources(this.checkBoxMergeParts, "checkBoxMergeParts");
+            this.checkBoxMergeParts.Name = "checkBoxMergeParts";
+            this.checkBoxMergeParts.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxColorModel, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.labelColorModel, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxColorModel, 1, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            // 
+            // labelColorModel
+            // 
+            resources.ApplyResources(this.labelColorModel, "labelColorModel");
+            this.labelColorModel.Name = "labelColorModel";
             // 
             // comboBoxColorModel
             // 
@@ -243,11 +258,6 @@ namespace PurplePen
             resources.GetString("comboBoxColorModel.Items1"),
             resources.GetString("comboBoxColorModel.Items2")});
             this.comboBoxColorModel.Name = "comboBoxColorModel";
-            // 
-            // labelColorModel
-            // 
-            resources.ApplyResources(this.labelColorModel, "labelColorModel");
-            this.labelColorModel.Name = "labelColorModel";
             // 
             // comboBoxMultiPage
             // 
@@ -264,40 +274,10 @@ namespace PurplePen
             resources.ApplyResources(this.labelAppearanceInfo, "labelAppearanceInfo");
             this.labelAppearanceInfo.Name = "labelAppearanceInfo";
             // 
-            // groupBoxAdvanced
-            // 
-            this.groupBoxAdvanced.Controls.Add(this.tableLayoutPanel3);
-            resources.ApplyResources(this.groupBoxAdvanced, "groupBoxAdvanced");
-            this.groupBoxAdvanced.Name = "groupBoxAdvanced";
-            this.groupBoxAdvanced.TabStop = false;
-            // 
-            // tableLayoutPanel3
-            // 
-            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.comboBoxPrintMethod, 1, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // comboBoxPrintMethod
-            // 
-            resources.ApplyResources(this.comboBoxPrintMethod, "comboBoxPrintMethod");
-            this.comboBoxPrintMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPrintMethod.FormattingEnabled = true;
-            this.comboBoxPrintMethod.Items.AddRange(new object[] {
-            resources.GetString("comboBoxPrintMethod.Items"),
-            resources.GetString("comboBoxPrintMethod.Items1")});
-            this.comboBoxPrintMethod.Name = "comboBoxPrintMethod";
-            // 
             // PrintCourses
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.groupBoxAdvanced);
             this.Controls.Add(this.groupBoxAppearance);
             this.Controls.Add(this.coursesGroupBox);
             this.Controls.Add(this.previewButton);
@@ -312,7 +292,6 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.groupBoxAppearance, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
-            this.Controls.SetChildIndex(this.groupBoxAdvanced, 0);
             this.printerGroup.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -325,9 +304,6 @@ namespace PurplePen
             this.groupBoxAppearance.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.groupBoxAdvanced.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,13 +328,11 @@ namespace PurplePen
         private System.Windows.Forms.Label copiesLabel;
         private System.Windows.Forms.GroupBox groupBoxAppearance;
         private System.Windows.Forms.Label labelAppearanceInfo;
-        private System.Windows.Forms.GroupBox groupBoxAdvanced;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxPrintMethod;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.ComboBox comboBoxColorModel;
         private System.Windows.Forms.Label labelColorModel;
         private System.Windows.Forms.ComboBox comboBoxMultiPage;
+        private System.Windows.Forms.CheckBox checkBoxRasterPrinting;
+        private System.Windows.Forms.CheckBox checkBoxMergeParts;
     }
 }

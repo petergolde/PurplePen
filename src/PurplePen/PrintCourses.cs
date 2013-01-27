@@ -63,10 +63,12 @@ namespace PurplePen
         }
 
         // CONSDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
-        public PrintCourses(EventDB eventDB)
+        public PrintCourses(EventDB eventDB, bool enableMultipart)
         {
             InitializeComponent();
             courseSelector.EventDB = eventDB;
+
+            checkBoxMergeParts.Visible = enableMultipart;
         }
 
         // Update the dialog with information from the settings.
@@ -84,13 +86,8 @@ namespace PurplePen
             copiesUpDown.Value = settings.Count;
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
-
-            if (settings.UseXpsPrinting) {
-                comboBoxPrintMethod.SelectedIndex = 1;
-            }
-            else {
-                comboBoxPrintMethod.SelectedIndex = 0;
-            }
+            checkBoxMergeParts.Checked = settings.PrintMapExchangesOnOneMap;
+            checkBoxRasterPrinting.Checked = !settings.UseXpsPrinting;
         }
 
         // Update the settings with information from the dialog.
@@ -104,7 +101,8 @@ namespace PurplePen
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
-            settings.UseXpsPrinting = (comboBoxPrintMethod.SelectedIndex == 1);
+            settings.UseXpsPrinting = ! checkBoxRasterPrinting.Checked;
+            settings.PrintMapExchangesOnOneMap = checkBoxMergeParts.Checked;
             settings.PrintingColorModel = (BasicPrinting.ColorModel)comboBoxColorModel.SelectedIndex;
         }
 

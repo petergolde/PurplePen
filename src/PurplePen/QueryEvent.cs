@@ -815,6 +815,16 @@ namespace PurplePen
             return eventDB.AllCourses.Count;
         }
 
+        public static bool AnyMultipartCourses(EventDB eventDB)
+        {
+            bool anyMultipart = false;
+            foreach (Id<Course> courseId in eventDB.AllCourseIds) {
+                anyMultipart |= (CountCourseParts(eventDB, courseId) > 1);
+            }
+
+            return anyMultipart;
+        }
+
         // Get all course IDs, in the correct sorted order.
         public static Id<Course>[] SortedCourseIds(EventDB eventDB)
         {

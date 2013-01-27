@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>429, 372</value>
@@ -156,7 +156,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -373,7 +373,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;printerGroup.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="previewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -403,7 +403,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;previewButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="courseSelector.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 24</value>
@@ -451,7 +451,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;coursesGroupBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -580,46 +580,64 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;copiesGroupBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
   </metadata>
+  <data name="checkBoxRasterPrinting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 166</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 35</value>
+  </data>
+  <data name="checkBoxRasterPrinting.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Rasterize Before Printing</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRasterPrinting.Name" xml:space="preserve">
+    <value>checkBoxRasterPrinting</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRasterPrinting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRasterPrinting.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;checkBoxRasterPrinting.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="checkBoxMergeParts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 124</value>
+  </data>
+  <data name="checkBoxMergeParts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>224, 35</value>
+  </data>
+  <data name="checkBoxMergeParts.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Print Map Exchanges on Same Map </value>
+  </data>
+  <data name="&gt;&gt;checkBoxMergeParts.Name" xml:space="preserve">
+    <value>checkBoxMergeParts</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMergeParts.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMergeParts.Parent" xml:space="preserve">
+    <value>groupBoxAppearance</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMergeParts.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="comboBoxColorModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="comboBoxColorModel.Items" xml:space="preserve">
-    <value>OCAD Compatible</value>
-  </data>
-  <data name="comboBoxColorModel.Items1" xml:space="preserve">
-    <value>RGB</value>
-  </data>
-  <data name="comboBoxColorModel.Items2" xml:space="preserve">
-    <value>CMYK</value>
-  </data>
-  <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 4</value>
-  </data>
-  <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 21</value>
-  </data>
-  <data name="comboBoxColorModel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxColorModel.Name" xml:space="preserve">
-    <value>comboBoxColorModel</value>
-  </data>
-  <data name="&gt;&gt;comboBoxColorModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxColorModel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;comboBoxColorModel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="labelColorModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -649,16 +667,49 @@
     <value>tableLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;labelColorModel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="comboBoxColorModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD Compatible</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 4</value>
+  </data>
+  <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 21</value>
+  </data>
+  <data name="comboBoxColorModel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Name" xml:space="preserve">
+    <value>comboBoxColorModel</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 88</value>
+    <value>6, 88</value>
   </data>
   <data name="tableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 29</value>
+    <value>230, 29</value>
   </data>
   <data name="tableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -673,10 +724,10 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="comboBoxColorModel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelColorModel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelColorModel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Crop to a single page</value>
@@ -685,7 +736,7 @@
     <value>Print on multiple pages</value>
   </data>
   <data name="comboBoxMultiPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 56</value>
+    <value>30, 55</value>
   </data>
   <data name="comboBoxMultiPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 21</value>
@@ -703,7 +754,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;comboBoxMultiPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="labelAppearanceInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -730,13 +781,13 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;labelAppearanceInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="groupBoxAppearance.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 160</value>
   </data>
   <data name="groupBoxAppearance.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 123</value>
+    <value>239, 203</value>
   </data>
   <data name="groupBoxAppearance.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -754,124 +805,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBoxAppearance.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
-  </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 10</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Print Method:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="comboBoxPrintMethod.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left, Right</value>
-  </data>
-  <data name="comboBoxPrintMethod.Items" xml:space="preserve">
-    <value>Raster</value>
-  </data>
-  <data name="comboBoxPrintMethod.Items1" xml:space="preserve">
-    <value>Vector</value>
-  </data>
-  <data name="comboBoxPrintMethod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 6</value>
-  </data>
-  <data name="comboBoxPrintMethod.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 21</value>
-  </data>
-  <data name="comboBoxPrintMethod.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPrintMethod.Name" xml:space="preserve">
-    <value>comboBoxPrintMethod</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPrintMethod.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPrintMethod.Parent" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPrintMethod.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 27</value>
-  </data>
-  <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 33</value>
-  </data>
-  <data name="tableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Name" xml:space="preserve">
-    <value>tableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>groupBoxAdvanced</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxPrintMethod" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="groupBoxAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>272, 289</value>
-  </data>
-  <data name="groupBoxAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 66</value>
-  </data>
-  <data name="groupBoxAdvanced.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="groupBoxAdvanced.Text" xml:space="preserve">
-    <value>Advanced</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAdvanced.Name" xml:space="preserve">
-    <value>groupBoxAdvanced</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAdvanced.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAdvanced.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBoxAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

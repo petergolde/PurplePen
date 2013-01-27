@@ -136,18 +136,24 @@ namespace PurplePen
         {
             StorePrintableAreas(pageSettings);
 
+            pageSettings.PrinterSettings.Copies = (short)coursePrintSettings.Count;
+            pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
+
             pages.Clear();
 
             // Go through each course and lay it out, then add to the page list.
-            // UNDONE MAPEXCHANGE: handle all parts correctly.
             foreach (Id<Course> courseId in coursePrintSettings.CourseIds) {
-                // Get the layout for the course.
-                List<CoursePage> coursePages = LayoutOptimizedCourse(new CourseDesignator(courseId));
+                int partCount = courseId.IsNotNone ? QueryEvent.CountCourseParts(eventDB, courseId) : 1;
 
-                pageSettings.PrinterSettings.Copies = (short) coursePrintSettings.Count;
-                pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
-
-                pages.AddRange(coursePages);
+                if (partCount == 1 || coursePrintSettings.PrintMapExchangesOnOneMap) {
+                    // Get the layout for the course.
+                    pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId)));
+                }
+                else {
+                    for (int part = 0; part < partCount; ++part) {
+                        pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId, part)));
+                    }
+                }
             }
 
             return pages.Count;            // total number of pages.
@@ -545,7 +551,7 @@ namespace PurplePen
 
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
-
+        public bool PrintMapExchangesOnOneMap = false;
         public bool UseXpsPrinting = true;          // If true, use XPS printing
         public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.CMYK;
 

@@ -643,6 +643,11 @@ namespace PurplePen
             CancelMode();
         }
 
+        public bool AnyMultipart()
+        {
+            return QueryEvent.AnyMultipartCourses(eventDB);
+        }
+
         // Get the text for the status line
         public string StatusText
         {

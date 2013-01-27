@@ -2,12 +2,12 @@ Places that may need updating for multi-part courses:
 
 DONE: Need to have data model and XML model for specials on a single part, descriptions on a single part
 
-Data and XML model for print area on a single part.
+DONE: Data and XML model for print area on a single part.
 
 DONE: QueryEvent.FindClosestLeg -- take a part?
 DONE: AddControlMode.GetControlInsertionPoint -- return SelectionDescription instead of course id?
-Controller.GetCurrentPrintArea -- should handle print area for just active part.
-Controller.EndSetPrintArea -- should set print area just for active part? Is this an option?
+DONE: Controller.GetCurrentPrintArea -- should handle print area for just active part.
+DONE: Controller.EndSetPrintArea -- should set print area just for active part? Is this an option?
 DONE: Controller.BeginAddDescriptionMode -- handle adding description for a single part.
 AddControlMode -- take CourseDesignator instead of CourseId?
 DONE: CourseView.CreateFilteredAllControlsView -- take course designators instead of course ids?
