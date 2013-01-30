@@ -214,18 +214,18 @@ namespace PurplePen
         // The color to use in the map display for the course (purple).
         public const string courseColorName = "Purple";
         public const short courseOcadId = 11;
-        public const float courseColorC = 0.2F;
+        public const float courseColorC = 0F;
         public const float courseColorM = 1.0F;
         public const float courseColorY = 0F;
-        public const float courseColorK = 0.20F;
+        public const float courseColorK = 0F;
 
         // The color to use in the map display for all other controls (low intensity purple).
         public const string allControlsColorName = "Light Purple";
         public const short allControlsOcadId = 34;
-        public const float allControlsColorC = 0.1F;
+        public const float allControlsColorC = 0.0F;
         public const float allControlsColorM = 0.5F;
         public const float allControlsColorY = 0F;
-        public const float allControlsColorK = 0.07F;
+        public const float allControlsColorK = 0.0F;
 
         // The color used to for the selected item in the map display.
         public static readonly Color highlightColor = Color.FromArgb(255, 0, 0);

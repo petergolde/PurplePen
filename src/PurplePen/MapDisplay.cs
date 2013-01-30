@@ -66,7 +66,8 @@ namespace PurplePen
         CourseLayout course;    // The course to display.
         Map courseMap;              // The courses, rendered into a map.
 
-        double mapIntensity = 1.0;   // Intensity to display the map at.
+        float mapIntensity = 1.0F;   // Intensity to display the map at.
+        ColorModel colorModel = ColorModel.CMYK; // color model to use (cannot be OCADCompatible)
         bool antialiased = false;        // anti-alias (high quality) the map display?
         bool showBounds = false;       // show symbols bounds (for testing)
 
@@ -180,7 +181,7 @@ namespace PurplePen
         }
 
         // Intensity to draw the map at.
-        public double MapIntensity
+        public float MapIntensity
         {
             get
             {
@@ -192,6 +193,19 @@ namespace PurplePen
                 if (MapIntensity != value) {
                     mapIntensity = value;
                     UpdateDimmedBitmap();
+                    RaiseChanged(null);
+                }
+            }
+        }
+
+        // Color model to use
+        public ColorModel ColorModel
+        {
+            get { return colorModel; }
+            set
+            {
+                if (colorModel != value) {
+                    colorModel = value;
                     RaiseChanged(null);
                 }
             }
@@ -354,7 +368,6 @@ namespace PurplePen
         void DrawOcadMap(IGraphicsTarget grTarget, RectangleF visRect, RenderOptions renderOptions)
         {
             using (map.Write()) {
-                map.ColorMatrix = ComputeColorMatrix();
                 map.Draw(grTarget, visRect, renderOptions, null);
             }
         }
@@ -385,14 +398,26 @@ namespace PurplePen
         // Draw the map and course onto a graphics.
         public void Draw(Graphics g, RectangleF visRect, float minResolution)
         {
-            using (IGraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g))
-            {
-                Draw(grTarget, visRect, minResolution);
+            Debug.Assert(colorModel == ColorModel.CMYK || colorModel == ColorModel.RGB);
+            GDIPlus_ColorConverter colorConverter = (colorModel == ColorModel.CMYK) ? new SwopColorConverter() : new GDIPlus_ColorConverter();
+
+            // Note that courses always drawn full intensity.
+            using (IGraphicsTarget grTargetDimmed = new GDIPlus_GraphicsTarget(g, colorConverter, mapIntensity))
+            using (IGraphicsTarget grTargetUndimmed = new GDIPlus_GraphicsTarget(g, colorConverter)) {
+                DrawHelper(grTargetDimmed, grTargetUndimmed, grTargetUndimmed, visRect, minResolution);
             }
         }
 
-        // Draw the map and course onto a graphics.
+        // Draw the map and course onto a graphics target. The color model is ignored. The intensity
+        // must be 1.
         public void Draw(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
+        {
+            Debug.Assert(MapIntensity == 1.0F);
+            DrawHelper(grTarget, grTarget, grTarget, visRect, minResolution);
+        }
+
+        // Draw the map and course onto a graphics. A helper for the other two draw methods.
+        private void DrawHelper(IGraphicsTarget grTargetOcadMap, IGraphicsTarget grTargetBitmapMap, IGraphicsTarget grTargetCourses, RectangleF visRect, float minResolution)
         {
             RenderOptions renderOptions = new RenderOptions();
             renderOptions.minResolution = minResolution;
@@ -406,43 +431,40 @@ namespace PurplePen
 
             renderOptions.showSymbolBounds = showBounds;
 
-            if (Printing)
-                grTarget.PushAntiAliasing(false);       // don't anti-alias on printer
-            else
-                grTarget.PushAntiAliasing(antialiased);
-            
 
             // First draw the real map.
             switch (mapType) {
             case MapType.OCAD:
-                DrawOcadMap(grTarget, visRect, renderOptions);
+                grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+                DrawOcadMap(grTargetOcadMap, visRect, renderOptions);
+                grTargetOcadMap.PopAntiAliasing();
                 break;
 
             case MapType.Bitmap:
-                DrawBitmapMap(grTarget, visRect);
+                grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+                DrawBitmapMap(grTargetBitmapMap, visRect);
+                grTargetOcadMap.PopAntiAliasing();
                 break;
 
             case MapType.None:
                 object brushKey = new object();
-                grTarget.CreateSolidBrush(brushKey, CmykColor.FromRgb(1, 1, 1));
-                grTarget.FillRectangle(brushKey, visRect);
+                grTargetBitmapMap.CreateSolidBrush(brushKey, CmykColor.FromRgb(1, 1, 1));
+                grTargetBitmapMap.FillRectangle(brushKey, visRect);
                 break;
             }
 
-            grTarget.PopAntiAliasing();
-
             // Now draw the courseMap on top.
             if (Printing)
-                grTarget.PushAntiAliasing(false);
+                grTargetCourses.PushAntiAliasing(false);
             else
-                grTarget.PushAntiAliasing(true);   // always anti-alias the course unless printing
+                grTargetCourses.PushAntiAliasing(true);   // always anti-alias the course unless printing
 
             if (courseMap != null) {
                 using (courseMap.Read())
-                    courseMap.Draw(grTarget, visRect, renderOptions, null);
+                    courseMap.Draw(grTargetCourses, visRect, renderOptions, null);
             }
 
-            grTarget.PopAntiAliasing();
+            grTargetCourses.PopAntiAliasing();
         }
 
         public event MapDisplayChanged Changed;

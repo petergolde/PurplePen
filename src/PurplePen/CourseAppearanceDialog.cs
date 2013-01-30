@@ -100,19 +100,8 @@ namespace PurplePen
         // Get a color value from the CMYK boxes
         Color GetCurrentColor()
         {
-            float r, g, b;
-
-            ColorConverter.CmykToRgb((float) upDownCyan.Value / 100F, (float) upDownMagenta.Value / 100F, (float) upDownYellow.Value / 100F, (float) upDownBlack.Value / 100F, out r, out g, out b);
-            return Color.FromArgb((int) Math.Round(r * 255.0), (int) Math.Round(g * 255.0), (int) Math.Round(b * 255.0));
-        }
-
-        // Set a color value into the CMYK boxes
-        void SetCurrentColor(Color color)
-        {
-            float c, m, y, k;
-
-            ColorConverter.RgbToCmyk(color.R / 255.0F, color.G / 255.0F, color.B / 255.0F, out c, out m, out y, out k);
-            SetCurrentCMYK(c, m, y, k);
+            CmykColor cmykColor = CmykColor.FromCmyk((float) upDownCyan.Value / 100F, (float) upDownMagenta.Value / 100F, (float) upDownYellow.Value / 100F, (float) upDownBlack.Value / 100F);
+            return SwopColorConverter.CmykToRgbColor(cmykColor);
         }
 
         // Set a CMYK value into the CMYK boxes.
@@ -129,19 +118,11 @@ namespace PurplePen
         {
             if (checkBoxDefaultPurple.Checked) {
                 SetCurrentCMYK(defaultPurpleC, defaultPurpleM, defaultPurpleY, defaultPurpleK);
-                upDownCyan.Enabled = upDownYellow.Enabled = upDownMagenta.Enabled = upDownBlack.Enabled = buttonColorChoosers.Enabled = false;
+                upDownCyan.Enabled = upDownYellow.Enabled = upDownMagenta.Enabled = upDownBlack.Enabled = false;
             }
             else {
-                upDownCyan.Enabled = upDownYellow.Enabled = upDownMagenta.Enabled = upDownBlack.Enabled = buttonColorChoosers.Enabled = true;
+                upDownCyan.Enabled = upDownYellow.Enabled = upDownMagenta.Enabled = upDownBlack.Enabled = true;
             }
-        }
-
-        private void buttonColorChoosers_Click(object sender, EventArgs e)
-        {
-            Color currentColor = GetCurrentColor();
-            colorDialog.Color = currentColor;
-            if (colorDialog.ShowDialog(this) == DialogResult.OK)
-                SetCurrentColor(colorDialog.Color);
         }
 
         private void pictureBoxPreview_Paint(object sender, PaintEventArgs e)
@@ -201,6 +182,11 @@ namespace PurplePen
 
         private void comboBoxControlNumberStyle_SelectedIndexChanged(object sender, EventArgs e) {
             UpdatePreview();
+        }
+
+        private void pictureBoxPreview_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,18 +53,18 @@ namespace PurplePen
     // Basic class to handle printing / print preview.
     // Must override LayoutPages and DrawPage.
 
+    public enum ColorModel { OCADCompatible, RGB, CMYK };
+
     abstract class BasicPrinting
     {
         private PageSettings pageSettings;
         private string documentTitle;
-        private ColorModel colorModel;
+        protected ColorModel colorModel;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
         private bool printPreviewInProgress = false;
 
-        public enum ColorModel { OCADCompatible, RGB, CMYK };
-
-        public BasicPrinting(string title, PageSettings pageSettings, BasicPrinting.ColorModel colorModel)
+        public BasicPrinting(string title, PageSettings pageSettings, ColorModel colorModel)
         {
             this.pageSettings = pageSettings;
             this.documentTitle = title;

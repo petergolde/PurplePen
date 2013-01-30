@@ -58,8 +58,9 @@ namespace PurplePen
         {
             this.mapDisplay = mapDisplay;
             this.mapDisplay.AntiAlias = true;
-            this.mapDisplay.MapIntensity = 1.0;
+            this.mapDisplay.MapIntensity = 1.0F;
             this.mapDisplay.Printing = false;
+            this.mapDisplay.ColorModel = ColorModel.CMYK;
         }
 
         // Get an encoder for the given format.

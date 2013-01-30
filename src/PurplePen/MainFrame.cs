@@ -76,7 +76,7 @@ namespace PurplePen
 
         const string HELP_FILE_NAME = "Purple Pen Help.chm";
 
-        const double DEFAULT_MAP_INTENSITY = 0.6;
+        const float DEFAULT_MAP_INTENSITY = 0.6F;
 
         public MainFrame()
         {
@@ -87,10 +87,10 @@ namespace PurplePen
             courseTabs.Height -= (courseTabs.DisplayRectangle.Height + 5);
 
             // Using the property designer for these doesn't totally work.
-            veryLowIntensityMenu.Tag = 0.2;
-            lowIntensityMenu.Tag = 0.4;
-            mediumIntensityMenu.Tag = 0.6;
-            highIntensityMenu.Tag = 0.8;
+            veryLowIntensityMenu.Tag = 0.4;
+            lowIntensityMenu.Tag = 0.65;
+            mediumIntensityMenu.Tag = 0.7;
+            highIntensityMenu.Tag = 0.85;
             fullIntensityMenu.Tag = 1.0;
                 
             // Set the trackbar properties that can't be done in the designer.
@@ -914,7 +914,7 @@ namespace PurplePen
         private void intensityMenu_Click(object sender, EventArgs e)
         {
             double intensityAmount = (double) ((ToolStripMenuItem) sender).Tag;
-            mapDisplay.MapIntensity = intensityAmount;
+            mapDisplay.MapIntensity = (float) intensityAmount;
         }
 
         private void courseTabs_Selected(object sender, TabControlEventArgs e)

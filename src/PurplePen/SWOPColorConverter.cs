@@ -19,7 +19,7 @@ namespace PurplePen
             SwopUri = new Uri(Util.GetFileInAppDirectory("RSWOP.icm"));
         }
 
-        static SD.Color CmykToRgbColor(CmykColor cmykColor)
+        public static SD.Color CmykToRgbColor(CmykColor cmykColor)
         {
             SD.Color result;
 

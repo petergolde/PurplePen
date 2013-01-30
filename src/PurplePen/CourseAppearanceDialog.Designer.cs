@@ -42,7 +42,6 @@
             this.upDownControlCircle = new System.Windows.Forms.NumericUpDown();
             this.checkBoxStandardSizes = new System.Windows.Forms.CheckBox();
             this.groupBoxPurple = new System.Windows.Forms.GroupBox();
-            this.buttonColorChoosers = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.upDownBlack = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -231,7 +230,6 @@
             // groupBoxPurple
             // 
             resources.ApplyResources(this.groupBoxPurple, "groupBoxPurple");
-            this.groupBoxPurple.Controls.Add(this.buttonColorChoosers);
             this.groupBoxPurple.Controls.Add(this.label5);
             this.groupBoxPurple.Controls.Add(this.upDownBlack);
             this.groupBoxPurple.Controls.Add(this.label6);
@@ -243,13 +241,6 @@
             this.groupBoxPurple.Controls.Add(this.checkBoxDefaultPurple);
             this.groupBoxPurple.Name = "groupBoxPurple";
             this.groupBoxPurple.TabStop = false;
-            // 
-            // buttonColorChoosers
-            // 
-            resources.ApplyResources(this.buttonColorChoosers, "buttonColorChoosers");
-            this.buttonColorChoosers.Name = "buttonColorChoosers";
-            this.buttonColorChoosers.UseVisualStyleBackColor = true;
-            this.buttonColorChoosers.Click += new System.EventHandler(this.buttonColorChoosers_Click);
             // 
             // label5
             // 
@@ -324,6 +315,7 @@
             resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
             this.pictureBoxPreview.Name = "pictureBoxPreview";
             this.pictureBoxPreview.TabStop = false;
+            this.pictureBoxPreview.Click += new System.EventHandler(this.pictureBoxPreview_Click);
             this.pictureBoxPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxPreview_Paint);
             // 
             // CourseAppearanceDialog
@@ -380,7 +372,6 @@
         private System.Windows.Forms.NumericUpDown upDownYellow;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown upDownMagenta;
-        private System.Windows.Forms.Button buttonColorChoosers;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.GroupBox groupBoxPreview;
         private System.Windows.Forms.PictureBox pictureBoxPreview;

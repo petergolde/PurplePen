@@ -35,3 +35,5 @@ Removing map exchange at a control -- how? Have menu item for this?
 
 Have event audit section for missing control descriptions.
 
+Test for printing courses, punch card and descriptions.
+

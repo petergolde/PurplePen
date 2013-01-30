@@ -108,6 +108,7 @@ namespace PurplePen
             mapDisplay.MapIntensity = 1.0F;
             mapDisplay.AntiAlias = false;
             mapDisplay.Printing = true;
+            mapDisplay.ColorModel = base.colorModel;
         }
 
         RectangleF GetPrintableArea(PageSettings pageSettings)
@@ -553,7 +554,7 @@ namespace PurplePen
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
         public bool UseXpsPrinting = true;          // If true, use XPS printing
-        public BasicPrinting.ColorModel PrintingColorModel = BasicPrinting.ColorModel.CMYK;
+        public ColorModel PrintingColorModel = ColorModel.CMYK;
 
     }
 }
