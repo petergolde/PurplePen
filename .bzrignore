@@ -26,3 +26,5 @@ doc/userdocs/Help/_vti_pvt
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
 src/PPenDXCore.Solution
+src/SetupIS/SetupIS
+

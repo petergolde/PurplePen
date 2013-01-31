@@ -20,7 +20,7 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -793,27 +793,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.bg.resx">
       <LastGenOutput>CommandNameText.bg.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.es.resx">
       <LastGenOutput>CommandNameText.es.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.fi.resx">
       <LastGenOutput>CommandNameText.fi.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.fr.resx">
       <LastGenOutput>CommandNameText.fr1.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.nb-NO.resx">
       <LastGenOutput>CommandNameText.nb-NO.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.nn-NO.resx">
       <LastGenOutput>CommandNameText.nn-NO.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -821,11 +815,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.ro.resx">
       <LastGenOutput>CommandNameText.ro.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.sv.resx">
       <LastGenOutput>CommandNameText.sv1.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.bg.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
@@ -1185,27 +1177,21 @@
       <DependentUpon>MapViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.bg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.fi.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.fi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.nb-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.nb-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.nn-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.nn-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.resx">
@@ -1214,11 +1200,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.ro.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.sv.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MiscText.sv.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.bg.resx">
@@ -1719,27 +1703,21 @@
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.bg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.fi.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.fi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.nb-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.nb-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.nn-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.nn-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.resx">
@@ -1747,35 +1725,27 @@
       <LastGenOutput>ReportText1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.ro.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.sv.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ReportText.sv.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.bg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.fi.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.fi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.fr1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.nb-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.nn-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.resx">
@@ -1783,11 +1753,9 @@
       <LastGenOutput>SelectionDescriptionText1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.ro.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.sv.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.bg.resx">
@@ -1845,27 +1813,21 @@
       <DependentUpon>SetUILanguage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.bg.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.bg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.fi.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.fi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.fr.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.nb-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.nb-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.nn-NO.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.nn-NO.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.resx">
@@ -1873,11 +1835,9 @@
       <LastGenOutput>StatusBarText1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.ro.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.sv.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StatusBarText.sv.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.bg.resx">
