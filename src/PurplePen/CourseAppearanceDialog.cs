@@ -32,11 +32,13 @@ namespace PurplePen
                 CourseAppearance result = new CourseAppearance();
                 if (checkBoxStandardSizes.Checked) {
                     result.lineWidth = result.numberHeight = result.controlCircleSize = 1.0F;
+                    result.centerDotDiameter = 0.0F;
                     result.numberBold = false;
                 }
                 else {
                     result.controlCircleSize = ((float) upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter;
                     result.lineWidth = ((float) upDownLineWidth.Value) / NormalCourseAppearance.lineThickness;
+                    result.centerDotDiameter = ((float)upDownCenterDot.Value);
                     result.numberHeight = ((float) upDownNumberHeight.Value) / NormalCourseAppearance.nominalControlNumberHeight;
                     result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
                 }
@@ -53,13 +55,14 @@ namespace PurplePen
             {
                 upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter * value.controlCircleSize);
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness * value.lineWidth);
+                upDownCenterDot.Value = (decimal)value.centerDotDiameter;
                 upDownNumberHeight.Value = (decimal) (NormalCourseAppearance.nominalControlNumberHeight * value.numberHeight);
                 if (value.numberBold)
                     comboBoxControlNumberStyle.SelectedIndex = 1;
                 else
                     comboBoxControlNumberStyle.SelectedIndex = 0;
 
-                checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.numberBold == false);
+                checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F && value.numberBold == false);
 
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
@@ -89,11 +92,12 @@ namespace PurplePen
                 upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter);
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness);
                 upDownNumberHeight.Value = (decimal) (NormalCourseAppearance.nominalControlNumberHeight);
+                upDownCenterDot.Value = (decimal)(NormalCourseAppearance.centerDotDiameter);
                 comboBoxControlNumberStyle.SelectedIndex = 0;
-                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = false;
+                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = false;
             }
             else {
-                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = true;
+                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = true;
             }
         }
 
@@ -137,6 +141,7 @@ namespace PurplePen
             // Get sizes and colors and so forth.
             float lineWidth = (float) upDownLineWidth.Value;           
             float circleDiameter = (float) upDownControlCircle.Value;    // outside diameter
+            float dotDiameter = (float) upDownCenterDot.Value;
             float numberHeight = (float) upDownNumberHeight.Value;     // number height
             float circleDrawRadius = (circleDiameter - lineWidth) / 2;    // radius to pen center
             float finishDrawRadiusOuter = ((circleDiameter * 7F / NormalCourseAppearance.controlOutsideDiameter) - lineWidth) / 2F;
@@ -149,6 +154,11 @@ namespace PurplePen
                 // Draw control circle
                 PointF centerCircle = new PointF(25, 5);
                 g.DrawEllipse(pen, RectangleF.FromLTRB(centerCircle.X - circleDrawRadius, centerCircle.Y - circleDrawRadius, centerCircle.X + circleDrawRadius, centerCircle.Y + circleDrawRadius));
+
+                // Draw center dot.
+                if (dotDiameter > 0.0F) {
+                    g.FillEllipse(brush, RectangleF.FromLTRB(centerCircle.X - dotDiameter / 2, centerCircle.Y - dotDiameter / 2, centerCircle.X + dotDiameter / 2, centerCircle.Y + dotDiameter / 2));
+                }
 
                 // Draw finish
                 PointF centerFinish = new PointF(7, 5);
@@ -180,13 +190,9 @@ namespace PurplePen
             UpdatePreview();
         }
 
-        private void comboBoxControlNumberStyle_SelectedIndexChanged(object sender, EventArgs e) {
-            UpdatePreview();
-        }
-
-        private void pictureBoxPreview_Click(object sender, EventArgs e)
+        private void comboBoxControlNumberStyle_SelectedIndexChanged(object sender, EventArgs e) 
         {
-
+            UpdatePreview();
         }
     }
 }

@@ -11,6 +11,8 @@ Release
 *.tmp
 *.user
 *.chm
+*.sdf
+*.opensdf
 src/TestResults
 src/tools/TranslateTool/TestResults
 src/tools/TranslateTool/TestFiles

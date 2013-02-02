@@ -1662,6 +1662,7 @@ namespace PurplePen
         public float controlCircleSize = 1.0F;            // ratio to apply to control circles and other point features.
         public float lineWidth = 1.0F;                       // ratio to apply to the width of lines
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
+        public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
@@ -1677,6 +1678,8 @@ namespace PurplePen
             if (controlCircleSize != other.controlCircleSize)
                 return false;
             if (lineWidth != other.lineWidth)
+                return false;
+            if (centerDotDiameter != other.centerDotDiameter)
                 return false;
             if (numberHeight != other.numberHeight)
                 return false;
@@ -1906,6 +1909,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("control-circle-size-ratio", XmlConvert.ToString(courseAppearance.controlCircleSize));
             if (courseAppearance.lineWidth != 1.0F)
                 xmloutput.WriteAttributeString("line-width-ratio", XmlConvert.ToString(courseAppearance.lineWidth));
+            if (courseAppearance.centerDotDiameter != 0.0F) 
+                xmloutput.WriteAttributeString("center-dot-diameter", XmlConvert.ToString(courseAppearance.centerDotDiameter));
             if (courseAppearance.numberHeight != 1.0F)
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
             if (courseAppearance.numberBold)
@@ -2001,6 +2006,7 @@ namespace PurplePen
                     case "course-appearance":
                         courseAppearance.controlCircleSize = xmlinput.GetAttributeFloat("control-circle-size-ratio", 1.0F);
                         courseAppearance.lineWidth = xmlinput.GetAttributeFloat("line-width-ratio", 1.0F);
+                        courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);

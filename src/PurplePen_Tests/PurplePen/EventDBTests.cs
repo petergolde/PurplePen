@@ -439,6 +439,7 @@ namespace PurplePen.Tests
             e.allControlsDescKind = DescriptionKind.Text;
             e.courseAppearance.lineWidth = 1.3F;
             e.courseAppearance.controlCircleSize = 0.9F;
+            e.courseAppearance.centerDotDiameter = 0.53F;
             e.courseAppearance.numberHeight = 1.1F;
             e.courseAppearance.numberBold = true;
             e.courseAppearance.useDefaultPurple = false;
