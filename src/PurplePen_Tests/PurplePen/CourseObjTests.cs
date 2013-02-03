@@ -56,6 +56,7 @@ namespace PurplePen.Tests
             // Special appearance to test the usage of CourseAppearance.
             specialAppearance = new CourseAppearance();
             specialAppearance.controlCircleSize = 0.666667F;  // 4mm control circle
+            specialAppearance.centerDotDiameter = 0.75F; // 0.75 mm center dot
             specialAppearance.lineWidth = 2.85714F; // 1mm lines
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;

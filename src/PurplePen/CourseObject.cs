@@ -1197,6 +1197,9 @@ namespace PurplePen
         {
             Glyph glyph = new Glyph();
             glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, diameter * scaleRatio * appearance.controlCircleSize);
+            if (appearance.centerDotDiameter > 0.0F) {
+                glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * scaleRatio);
+            }
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Control point", 702000, glyph, false);
@@ -1238,6 +1241,8 @@ namespace PurplePen
                             g.DrawArc(pen, rect, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
                         }
                     }
+
+                    // No center dot for highlighting (crosshair instead)
                 }
                 catch (ExternalException) {
                     // Ignore this exeption. Not sure what causes it.
