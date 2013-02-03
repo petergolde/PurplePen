@@ -255,7 +255,7 @@ namespace PurplePen
 
             CourseObj other = (CourseObj) obj;
             if (other.layer != layer || other.controlId != controlId || other.courseControlId != courseControlId || 
-                other.specialId != specialId || other.scaleRatio != scaleRatio)
+                other.specialId != specialId || other.scaleRatio != scaleRatio || ! other.appearance.Equals(appearance))
                 return false;
 
             return true;
