@@ -754,7 +754,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             EventDB eventDB = new EventDB(undomgr);
             CourseView courseView;
 
-            eventDB.Load(TestUtil.GetTestFile("courseformat\\marymoor3.coursescribe"));
+            eventDB.Load(TestUtil.GetTestFile("courseformat\\marymoor6.coursescribe"));
             eventDB.Validate();
 
             // Use course 1
@@ -777,8 +777,8 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(EventTitle): $(CourseName)");
             Assert.AreEqual("Marymoor WIOL 2 The remake: Course 1", result);
 
-            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km");
-            Assert.AreEqual("Course: Course 1 Length: 1.5 km", result);
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km Scale: $(PrintScale)");
+            Assert.AreEqual("Course: Course 1 Length: 1.5 km Scale: 1:7,500", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Climb: $(CourseClimb) m");
             Assert.AreEqual("Course: Course 1 Climb: 20 m", result);
@@ -789,8 +789,8 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             // All Controls
             courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
 
-            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km");
-            Assert.AreEqual("Course: All controls Length: 0.0 km", result);
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Course: $(CourseName) Length: $(CourseLength) km Scale: $(PrintScale)");
+            Assert.AreEqual("Course: All controls Length: 0.0 km Scale: 1:10,000", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName) / $(ClassList)");
             Assert.AreEqual("All controls / ", result);

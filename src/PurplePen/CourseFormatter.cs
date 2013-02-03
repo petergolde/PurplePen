@@ -53,6 +53,7 @@ namespace PurplePen
         public const string CourseLength = "$(CourseLength)";
         public const string CourseClimb = "$(CourseClimb)";
         public const string ClassList = "$(ClassList)";
+        public const string PrintScale = "$(PrintScale)";
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -399,6 +400,10 @@ namespace PurplePen
                     text = text.Replace(TextMacros.CourseClimb, "");
                 else
                     text = text.Replace(TextMacros.CourseClimb, Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));
+            }
+
+            if (text.Contains(TextMacros.PrintScale)) {
+                text = text.Replace(TextMacros.PrintScale, string.Format("1:{0:N0}", courseView.PrintScale));
             }
 
             if (text.Contains(TextMacros.ClassList)) {

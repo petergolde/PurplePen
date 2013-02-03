@@ -74,11 +74,14 @@ namespace PurplePen
             InsertSpecialText(TextMacros.ClassList);
         }
 
+        private void printScaleMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.PrintScale);
+        }
+
         private void textBoxMain_TextChanged(object sender, EventArgs e)
         {
             okButton.Enabled = textBoxMain.Text != "";
         }
-
-
     }
 }
