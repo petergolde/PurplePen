@@ -65,6 +65,7 @@
     <Compile Include="PurplePen\AddCornerModeTests.cs" />
     <Compile Include="PurplePen\AddRemoveGapModeTests.cs" />
     <Compile Include="PurplePen\ChangeEventTests.cs" />
+    <Compile Include="PurplePen\CircleGapTests.cs" />
     <Compile Include="PurplePen\CompatibilityTests.cs" />
     <Compile Include="PurplePen\ControllerTests.cs" />
     <Compile Include="PurplePen\CourseFormatterTests.cs" />

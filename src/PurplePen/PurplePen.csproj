@@ -159,6 +159,7 @@
     <Compile Include="ChangeText.Designer.cs">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
+    <Compile Include="CircleGap.cs" />
     <Compile Include="CommandNameText1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
