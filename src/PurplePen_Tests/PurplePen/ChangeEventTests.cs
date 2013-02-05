@@ -838,24 +838,24 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(819, "add gap");
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, 0x3FF1F00F);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 15000F, 0xF0FFFFFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F, 0xFFFFFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, CircleGap.ComputeCircleGaps(0x3FF1F00F));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 15000F, CircleGap.ComputeCircleGaps(0xF0FFFFFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F,  CircleGap.ComputeCircleGaps(0xFFFFFFFF));
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, 0xFFFFFFFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, 0xF00FFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, CircleGap.ComputeCircleGaps(0xF00FFFFF));
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, 0xFFFF4FFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, 0xFFFFFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, CircleGap.ComputeCircleGaps(0xFFFF4FFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
 
             undomgr.EndCommand(819);
             eventDB.Validate();
 
-            Assert.AreEqual(0x3FF1F00FU, eventDB.GetControl(ControlId(4)).gaps[10000]);
-            Assert.AreEqual(0xF0FFFFFFU, eventDB.GetControl(ControlId(4)).gaps[15000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0x3FF1F00FU), eventDB.GetControl(ControlId(4)).gaps[10000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xF0FFFFFFU), eventDB.GetControl(ControlId(4)).gaps[15000]);
             Assert.IsFalse(eventDB.GetControl(ControlId(4)).gaps.ContainsKey(5000));
 
-            Assert.AreEqual(0xF00FFFFFU, eventDB.GetControl(ControlId(2)).gaps[10000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xF00FFFFFU), eventDB.GetControl(ControlId(2)).gaps[10000]);
             Assert.IsFalse(eventDB.GetControl(ControlId(2)).gaps.ContainsKey(12000));
 
             Assert.IsFalse(eventDB.GetControl(ControlId(3)).gaps.ContainsKey(10000));
@@ -863,11 +863,10 @@ namespace PurplePen.Tests
             undomgr.Undo();
             eventDB.Validate();
 
-            Assert.AreEqual(0xFFFFFFDFU, eventDB.GetControl(ControlId(4)).gaps[15000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xFFFFFFDFU), eventDB.GetControl(ControlId(4)).gaps[15000]);
             Assert.IsNull(eventDB.GetControl(ControlId(2)).gaps);
             Assert.IsNull(eventDB.GetControl(ControlId(3)).gaps);
         }
-
 
         [TestMethod]
         public void RemoveCourseControl()
@@ -2253,23 +2252,23 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddGap()
         {
-            uint result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(1, 1.1));
-            Assert.AreEqual(0xFFFFFFC7U, result);
-            result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(0.05, 1));
-            Assert.AreEqual(0x7FFFFFFCU, result);
-            result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(-2, 1));
-            Assert.AreEqual(0xF1FFFFFFU, result);
+            CircleGap[] result = ChangeEvent.AddGap(null, Math.Atan2(1, 1.1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(27.27369F, 57.27369F) }, result);
+            result = ChangeEvent.AddGap(null, Math.Atan2(0.05, 1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-12.1376038F, 17.8624058F) }, result);
+            result = ChangeEvent.AddGap(null, Math.Atan2(-2, 1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(281.565063F, 311.565063F) }, result);
         }
 
         [TestMethod]
         public void RemoveGap()
         {
-            uint result = ChangeEvent.RemoveGap(0xFFFFFFFF, Math.Atan2(1, 1.1));
-            Assert.AreEqual(0xFFFFFFFF, result);
-            result = ChangeEvent.RemoveGap(0xD17FF03F, Math.Atan2(-2, 1));
-            Assert.AreEqual(0xDF7FF03F, result);
-            result = ChangeEvent.RemoveGap(0x7FF7FFFC, Math.Atan2(0.05, 1));
-            Assert.AreEqual(0xFFF7FFFF, result);
+            CircleGap[] result = ChangeEvent.RemoveGap(null, Math.Atan2(1, 1.1));
+            Assert.IsNull(result);
+            result = ChangeEvent.RemoveGap(CircleGap.ComputeCircleGaps(0xD17FF03F), Math.Atan2(-2, 1));
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xDF7FF03F), result);
+            result = ChangeEvent.RemoveGap(CircleGap.ComputeCircleGaps(0x7FF7FFFC), Math.Atan2(0.05, 1));
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xFFF7FFFF), result);
         }
 
         [TestMethod]

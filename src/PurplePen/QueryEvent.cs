@@ -575,20 +575,24 @@ namespace PurplePen
                 return special.courses.Contains(courseDesignator) || special.courses.Contains(new CourseDesignator(courseDesignator.CourseId));
         }
 
+
         // Get the gaps in a control for a given scale.
-        // Returns 0xFFFFFFFF if no gaps defined for that scale.
-        public static uint GetControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale)
+        // Returns null if no gaps defined for that scale.
+        public static CircleGap[] GetControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale)
         {
-            int scaleInt = (int) Math.Round(scale);
+            int scaleInt = (int)Math.Round(scale);
 
             ControlPoint control = eventDB.GetControl(controlId);
             if (control.gaps == null)
-                return 0xFFFFFFFF;
+                return null;
             else if (!control.gaps.ContainsKey(scaleInt))
-                return 0xFFFFFFFF;
-            else
+                return null;
+            else {
                 return control.gaps[scaleInt];
+            }
         }
+
+
 
         // Finds where a new regular control would be inserted into an existing course. courseControl1 and courseControl2 can either or both be none, to identify
         // a leg to insert into, a control to insert after, or no information about where to insert. Updates courseControl1 and courseControl2 to identify exactly

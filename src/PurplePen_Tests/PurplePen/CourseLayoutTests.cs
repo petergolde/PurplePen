@@ -77,7 +77,7 @@ namespace PurplePen.Tests
 
             CheckHitTest(course, new PointF(9.0F, 12.4F), 0, null, "Water:          special:1  scale:1  location:(7.996275,12.34392)");
             CheckHitTest(course, new PointF(54.7F, 12.2F), 0, null, null);
-            CheckHitTest(course, new PointF(0.5F, 9.0F), 0, null, "Control:        control:72  scale:1  location:(-0.7,10.3)  gaps:11111111111111111111111111111111");
+            CheckHitTest(course, new PointF(0.5F, 9.0F), 0, null, "Control:        control:72  scale:1  location:(-0.7,10.3)  gaps:");
             CheckHitTest(course, new PointF(58.5F, -9.2F), 0, null, "Start:          control:1  scale:1  location:(56.8,-8.7)  orientation:0");
             CheckHitTest(course, new PointF(46.6F, -15.9F), 0, null, @"Code:           control:52  scale:1  text:52  top-left:(45.66,-12.22)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18");
@@ -87,24 +87,24 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
 
-            CheckHitTest(course, new PointF(-3.5F, 10.3F), 0, null, "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:11111111111111111111111111111111");
+            CheckHitTest(course, new PointF(-3.5F, 10.3F), 0, null, "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:");
             CheckHitTest(course, new PointF(35.6F, 17.7F), 0, null, null);
             CheckHitTest(course, new PointF(59.2F, 18.5F), 0, null, "Leg:            control:71  course-control:307  scale:1  course-control2:308  path:N(42.92,17.55)--N(71.88,19.05)");
             CheckHitTest(course, new PointF(72.1F, 33.5F), 0, null, @"ControlNumber:  control:75  course-control:311  scale:1  text:10  top-left:(66.61,36.87)
                 font-name:Arial  font-style:Regular  font-height:5.57");
-            CheckHitTest(course, new PointF(50.2F, -2.9F), 0, null, @"Finish:         control:2  course-control:315  scale:1  location:(53.2,-2.8)  gaps:11111111111111111111111111111111");
+            CheckHitTest(course, new PointF(50.2F, -2.9F), 0, null, @"Finish:         control:2  course-control:315  scale:1  location:(53.2,-2.8)  gaps:");
 
             // Add in all controls.  Test with true and false for all Layers.
             courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3) }, ControlPointKind.Normal, false, true);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.AllControls);
 
-            CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.All, null, @"Control:        layer:2  control:76  scale:1  location:(5.6,-5.7)  gaps:11111111111111111111111111111111");
+            CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.All, null, @"Control:        layer:2  control:76  scale:1  location:(5.6,-5.7)  gaps:");
             CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.MainCourse, null, null);
 
             // Test the type filter
             CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, typeof(LegCourseObj), "Leg:            control:71  course-control:307  scale:1  course-control2:308  path:N(42.92,17.55)--N(71.88,19.05)");
             CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, typeof(PointCourseObj), null);
-            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, typeof(PointCourseObj), "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:11111111111111111111111111111111");
+            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, typeof(PointCourseObj), "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:");
             CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, typeof(LineCourseObj), null);
 
         }

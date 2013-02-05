@@ -494,7 +494,7 @@ namespace PurplePen
         }
 
         // Change the gaps of a control for a given scale.
-        public static void ChangeControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale, uint newGaps)
+        public static void ChangeControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale, CircleGap[] newGaps)
         {
             ControlPoint control = eventDB.GetControl(controlId);
 
@@ -502,13 +502,13 @@ namespace PurplePen
 
             int scaleInt = (int) Math.Round(scale);     // scale is stored as int in the gaps to prevent rounding problems.
 
-            if (newGaps == 0xFFFFFFFF) {
+            if (newGaps == null || newGaps.Length == 0) {
                 if (control.gaps != null)
                     control.gaps.Remove(scaleInt);
             }
             else {
                 if (control.gaps == null)
-                    control.gaps = new Dictionary<int, uint>();
+                    control.gaps = new Dictionary<int, CircleGap[]>();
                 control.gaps[scaleInt] = newGaps;
             }
 
@@ -1280,43 +1280,20 @@ namespace PurplePen
             ChangeSpecialLocations(eventDB, specialId, newPoints);
         }
 
-        // Add a gap at a particular radians to a gap bitflag field.
-        public static uint AddGap(uint start, double radians)
+        // Add a gap at a particular radians to a circle gaps.
+        public static CircleGap[] AddGap(CircleGap[] gaps, double radians)
         {
-            int bitNumber = (int) Math.Round(radians / (2 * Math.PI) * 32.0);
-
-            // Set 3 bits around the location of the gap.
-            uint result = Util.SetBit(start, bitNumber - 1, false);
-            result = Util.SetBit(result, bitNumber, false);
-            result = Util.SetBit(result, bitNumber + 1, false);
-            return result;
+            float angleInDegrees = (float)(180 * radians / Math.PI);
+            const float gapAngle = 30;
+            return CircleGap.AddGap(gaps, angleInDegrees - gapAngle / 2, angleInDegrees + gapAngle / 2);
         }
 
         // Remove a gap at a particular radians  
-        public static uint RemoveGap(uint start, double radians)
+        public static CircleGap[] RemoveGap(CircleGap[] start, double radians)
         {
-            uint result = start;
-            int bitNumber = (int) Math.Round(radians / (2 * Math.PI) * 32.0);
+            float angleInDegrees = (float)(180 * radians / Math.PI);
 
-            // If there is no gap at the given bit number, do nothing.
-            if (Util.GetBit(start, bitNumber) == true)
-                return start;
-
-            // Remove gap going up
-            int i = bitNumber + 1;
-            while (Util.GetBit(result, i) == false) {
-                result = Util.SetBit(result, i, true);
-                ++i;
-            }
-
-            // Remove map going down.
-            i = bitNumber;
-            while (Util.GetBit(result, i) == false) {
-                result = Util.SetBit(result, i, true);
-                --i;
-            }
-
-            return result;
+            return CircleGap.RemoveGap(start, angleInDegrees);
         }
 
         // Set all punch patterns, by code, for the event.

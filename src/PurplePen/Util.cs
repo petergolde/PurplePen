@@ -488,6 +488,24 @@ namespace PurplePen
             return culture.TwoLetterISOLanguageName;
         }
 
+        public static bool EqualArrays<T>(T[] a1, T[] a2)
+        {
+            if (a1 == null)
+                return (a2 == null);
+            else if (a2 == null)
+                return (a1 == null);
+            else {
+                if (a1.Length != a2.Length)
+                    return false;
+
+                for (int i = 0; i < a1.Length; ++i) {
+                    if (!a1[i].Equals(a2[i]))
+                        return false;
+                }
+            }
+
+            return true;
+        }
     }
 
 }

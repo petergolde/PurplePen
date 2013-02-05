@@ -1094,30 +1094,33 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\sampleevent1.coursescribe");
 
-            uint result;
+            CircleGap[] result;
 
             result = QueryEvent.GetControlGaps(eventDB, ControlId(4), 15000F);
-            Assert.AreEqual(0xFFFFFFDFU, result);
+            Assert.AreEqual(1, result.Length);
+            Assert.AreEqual(new CircleGap(56.25F, 67.5F), result[0]);
 
             result = QueryEvent.GetControlGaps(eventDB, ControlId(4), 12000F);
-            Assert.AreEqual(0xFFFFFFFFU, result);
+            Assert.IsNull(result);
 
             result = QueryEvent.GetControlGaps(eventDB, ControlId(3), 15000F);
-            Assert.AreEqual(0xFFFFFFFFU, result);
+            Assert.IsNull(result);
 
             undomgr.BeginCommand(819, "add gap");
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, 0xFFFFFFFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, 0xF00FFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, null);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, new CircleGap[] { new CircleGap(20,40), new CircleGap(180, 270) });
 
             undomgr.EndCommand(819);
             eventDB.Validate();
 
             result = QueryEvent.GetControlGaps(eventDB, ControlId(2), 12000F);
-            Assert.AreEqual(0xFFFFFFFFU, result);
+            Assert.IsNull(result);
 
             result = QueryEvent.GetControlGaps(eventDB, ControlId(2), 10000F);
-            Assert.AreEqual(0xF00FFFFFU, result);
+            Assert.AreEqual(2, result.Length);
+            Assert.AreEqual(20, result[0].startAngle);
+            Assert.AreEqual(270, result[1].stopAngle);
         }
 
         [TestMethod]

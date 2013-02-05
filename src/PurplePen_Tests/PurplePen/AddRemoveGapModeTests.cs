@@ -92,7 +92,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:11111111111111111111111111111111",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:",
                                         highlights[0].ToString());
 
             // Click to add a gap.
@@ -108,7 +108,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:11111000111111111111111111111111",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:260.707031:290.707031",
                                         highlights[0].ToString());
             Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.33,50.81)
                 font-name:Arial  font-style:Regular  font-height:5.57",
@@ -116,7 +116,7 @@ namespace PurplePen.Tests
 
             // Make sure the control has a new gap.
             ControlPoint control = eventDB.GetControl(ControlId(4));
-            Assert.AreEqual(0xF8FFFFFF, control.gaps[10000]);
+            CollectionAssert.AreEqual(new CircleGap[] {new CircleGap(260.707031F, 290.707031F)}, control.gaps[10000]);
         }
 
         // Remove a gap from a control.
@@ -146,7 +146,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:11111000011111111110001111111111",
+            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:112.5:146.25,258.75:303.75",
                                         highlights[0].ToString());
 
             // Click to add a gap.
@@ -163,7 +163,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:11111111111111111110001111111111",
+            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:112.5:146.25",
                                         highlights[0].ToString());
             Assert.AreEqual(@"ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(35.73,-26.06)
                 font-name:Arial  font-style:Regular  font-height:5.57",
@@ -171,7 +171,7 @@ namespace PurplePen.Tests
 
             // Make sure the control has a new gap.
             ControlPoint control = eventDB.GetControl(ControlId(2));
-            Assert.AreEqual(0xFFFFE3FF, control.gaps[10000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xFFFFE3FF), control.gaps[10000]);
         }
 
         // Remove a gap from a leg.

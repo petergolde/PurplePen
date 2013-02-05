@@ -528,7 +528,7 @@ namespace PurplePen
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
-            uint gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
             CourseObj courseObj = null;
 
             switch (control.kind) {
@@ -783,15 +783,13 @@ namespace PurplePen
 
             if (distance < (radiusControl + radiusOther) * 0.9F && distance > (radiusControl + radiusOther) * 0.35F) {
                 // The other object is close enough to the control to merit cutting, but not too close. (0.9 and 0.35 were just arrived by what looks good.)
-                for (int gapNum = 0; gapNum < 32; ++gapNum) {
-                    PointF gapEnd1 = GapStartLocation(controlObj.location, radiusControl, gapNum);
-                    PointF gapEnd2 = GapStartLocation(controlObj.location, radiusControl, gapNum + 1);
-                    // If both ends of the gap are overlapped, cut it out.
-                    if (Geometry.Distance(gapEnd1, courseObj.location) < radiusOther &&
-                        Geometry.Distance(gapEnd2, courseObj.location) < radiusOther) {
-                        controlObj.gaps &= ~(1U << gapNum);   // add a gap.
-                    }
-                }
+
+                // Law of cosines...
+                double arcCos = (radiusControl * radiusControl + distance * distance - radiusOther * radiusOther) / (2 * radiusControl * distance);
+                float halfAngleGap = (float) (180 * Math.Acos(arcCos) / Math.PI);
+                float angleGap = Geometry.Angle(controlObj.location, courseObj.location);
+
+                controlObj.gaps = CircleGap.AddGap(controlObj.gaps, angleGap - halfAngleGap, angleGap + halfAngleGap);
             }
         }
 

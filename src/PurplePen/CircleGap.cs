@@ -39,6 +39,8 @@ using System.Diagnostics;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Text;
+using System.Globalization;
 
 namespace PurplePen
 {
@@ -78,9 +80,46 @@ namespace PurplePen
             return !(gap1 == gap2);
         }
 
+
         /*
          * Static functions that work on arrays of circle gaps.
          */
+
+        // Encode a gap array as text. Format is 45-180,181-185,...
+        public static string EncodeGaps(CircleGap[] gaps)
+        {
+            if (gaps == null || gaps.Length == 0)
+                return "";
+
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < gaps.Length; ++i) {
+                if (i != 0)
+                    builder.Append(",");
+                builder.AppendFormat(CultureInfo.InvariantCulture, "{0:R}:{1:R}", gaps[i].startAngle, gaps[i].stopAngle);
+            }
+            return builder.ToString();
+        }
+
+        // Decode a gap array as text. Must be the exact kind produced from EncodeGaps.
+        public static CircleGap[] DecodeGaps(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return null;
+
+            List<CircleGap> gapList = new List<CircleGap>();
+            foreach (string gapText in text.Split(',')) {
+                string[] splitGapText = gapText.Split(':');
+                if (splitGapText.Length == 2) {
+                    float start, stop;
+                    if (float.TryParse(splitGapText[0], NumberStyles.Any, CultureInfo.InvariantCulture, out start) &&
+                        float.TryParse(splitGapText[1], NumberStyles.Any, CultureInfo.InvariantCulture, out stop)) {
+                        gapList.Add(new CircleGap(start, stop));
+                    }
+                }
+            }
+
+            return gapList.ToArray();
+        }
 
         // Get the start/stop points of the gaps. Primarily useful for finding where the handles should be.
         public static PointF[] GapStartStopPoints(PointF center, float radius, CircleGap[] gaps)
@@ -97,6 +136,20 @@ namespace PurplePen
             return pts;
         }
 
+        // Return start and stop points of the gaps, as used by MapModel.
+        public static float[] StartsAndStops(CircleGap[] gaps)
+        {
+            if (gaps == null || gaps.Length == 0)
+                return null;
+
+            float[] arcs = new float[gaps.Length * 2];
+            for (int i = 0; i < gaps.Length; i += 1) {
+                arcs[i * 2] = gaps[i].startAngle;
+                arcs[i * 2 + 1] = gaps[i].stopAngle;
+            }
+            return arcs;
+        }
+
         // Get a series of arc start angle/sweep angle pairs to draw a circle with the gaps. Gaps must be in simplified form.
         public static float[] ArcStartSweeps(CircleGap[] gaps)
         {
@@ -107,8 +160,8 @@ namespace PurplePen
             for (int i = 0; i < gaps.Length; i += 1) {
                 float startArc = gaps[i].stopAngle;
                 float endArc = (i == gaps.Length - 1) ? gaps[0].startAngle : gaps[i + 1].startAngle;
-                arcs[i * 2] = startArc;
-                arcs[i * 2 + 1] = (endArc - startArc + 360.0F) % 360.0F;
+                arcs[i * 2] = -startArc;
+                arcs[i * 2 + 1] = -((endArc - startArc + 360.0F) % 360.0F);
             }
             return arcs;
         }
@@ -159,6 +212,29 @@ namespace PurplePen
 
             // Simplify
             return SimplifyGaps(newGaps);
+        }
+
+        // Remove a gap (if any) from an array of gaps.
+        public static CircleGap[] RemoveGap(CircleGap[] original, float angle)
+        {
+            angle = angle % 360F;
+            if (angle < 0)
+                angle += 360F;
+
+            if (original == null)
+                return null;
+
+            List<CircleGap> newgaps = new List<CircleGap>(SimplifyGaps(original));
+            for (int i = 0; i < newgaps.Count; ++i) {
+                if ((newgaps[i].startAngle <= angle && newgaps[i].stopAngle >= angle) ||
+                    (newgaps[i].startAngle <= angle-360F && newgaps[i].stopAngle >= angle-360F))
+                    newgaps.RemoveAt(i);
+            }
+
+            if (newgaps.Count == 0)
+                return null;
+            else
+                return newgaps.ToArray();
         }
 
         // Simplify a gap array. Sorts in order, combines overlapping gaps, and removes gaps before and beyond end of length.

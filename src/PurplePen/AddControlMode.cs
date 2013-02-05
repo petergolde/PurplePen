@@ -324,7 +324,7 @@ namespace PurplePen
 
             switch (controlKind) {
             case ControlPointKind.Normal:
-                highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
+                highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, null, highlightLocation);
 
                 if (courseDesignator.IsNotAllControls &&
                     !(exchangeAtControl && existingControl.IsNotNone && QueryEvent.CourseUsesControl(eventDB, courseDesignator, existingControl)) &&
@@ -348,7 +348,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Finish:
-                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0xFFFFFFFF, highlightLocation);
+                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, null, highlightLocation);
                 break;
 
             case ControlPointKind.CrossingPoint:

@@ -165,7 +165,7 @@ namespace PurplePen
         public string descriptionText;  // null for auto-text, or custom description text
         public string[] symbolIds;      // Array of six symbols ids for column C-H (or one for Finish, CrossingPoint)
         public string columnFText;      // Text for column F, or null for none (/ or | to separate two numbers)
-        public Dictionary<int,uint> gaps;  // Bitfield for circle gaps (bits 0-31), indexed by scale (rounded to int to prevent rounding problems)
+        public Dictionary<int,CircleGap[]> gaps;  // Circle gaps, indexed by scale (rounded to int to prevent rounding problems)
         public string descTextBefore;       // Description text to show before this control (in all courses)
         public string descTextAfter;         // Description text to show after this control (in all courses)
         public bool customCodeLocation;  // If false, default code location in all controls view. If true, use codeLocationAngle.
@@ -219,7 +219,13 @@ namespace PurplePen
         {
             ControlPoint n = (ControlPoint) base.Clone();
             n.symbolIds = (string[]) n.symbolIds.Clone();
-            n.gaps = Util.CopyDictionary(n.gaps);
+            if (n.gaps != null) {
+                var newDict = new Dictionary<int, CircleGap[]>();
+                foreach (KeyValuePair<int, CircleGap[]> pair in n.gaps) {
+                    newDict.Add(pair.Key, (CircleGap[])pair.Value.Clone());
+                }
+                n.gaps = newDict;
+            }
             return n;
         }
 
@@ -262,7 +268,7 @@ namespace PurplePen
                 if (gaps.Count != other.gaps.Count)
                     return false;
                 foreach (int scale in gaps.Keys) {
-                    if (!other.gaps.ContainsKey(scale) || other.gaps[scale] != gaps[scale])
+                    if (!other.gaps.ContainsKey(scale) || ! Util.EqualArrays(other.gaps[scale], gaps[scale]))
                         return false;
                 }
             }
@@ -308,8 +314,8 @@ namespace PurplePen
             if (gapText != "") {
                 uint gapValue = Convert.ToUInt32(gapText, 2);
                 if (gaps == null)
-                    gaps = new Dictionary<int, uint>();
-                gaps[0] = gapValue;
+                    gaps = new Dictionary<int, CircleGap[]>();
+                gaps[0] = CircleGap.ComputeCircleGaps(gapValue);
             }
 
             string codeAngle = xmlinput.GetAttributeString("all-controls-code-angle", "");
@@ -363,12 +369,19 @@ namespace PurplePen
 
                     case "gaps":
                         int scale = xmlinput.GetAttributeInt("scale", 0);
-                        gapText = xmlinput.GetContentString();
+                        gapText = xmlinput.GetContentString().Trim();
 
-                        uint gapValue = Convert.ToUInt32(gapText, 2);
-                        if (gaps == null)
-                            gaps = new Dictionary<int, uint>();
-                        gaps[scale] = gapValue;
+                        if (gapText != "") {
+                            if (gaps == null)
+                                gaps = new Dictionary<int, CircleGap[]>();
+                            if (gapText.Contains(":")) {
+                                gaps[scale] = CircleGap.DecodeGaps(gapText);
+                            }
+                            else {
+                                uint gapValue = Convert.ToUInt32(gapText, 2);
+                                gaps[scale] = CircleGap.ComputeCircleGaps(gapValue);
+                            }
+                        }
 
                         break;
 
@@ -492,13 +505,11 @@ namespace PurplePen
 
             // Write gaps.
             if (gaps != null) {
-                foreach (KeyValuePair<int, uint> pair in gaps) {
+                foreach (KeyValuePair<int, CircleGap[]> pair in gaps) {
                     xmloutput.WriteStartElement("gaps");
                     xmloutput.WriteAttributeString("scale", XmlConvert.ToString(pair.Key));
 
-                    string gapText = Convert.ToString(pair.Value, 2);
-                    if (gapText.Length < 32)
-                        gapText = new string('0', 32 - gapText.Length) + gapText;
+                    string gapText = CircleGap.EncodeGaps(pair.Value);
                     xmloutput.WriteString(gapText);
 
                     xmloutput.WriteEndElement();
@@ -2412,13 +2423,13 @@ namespace PurplePen
                     // Fix up these gaps by adding the gap value in each scale being used (map scale and each course scale)
                     // Note that we are modifying control objects directly, which is normally a BAD thing, because is bypasses the 
                     // undo manager. But in this case, it is what we want to do because this is a load-time operation which shouldn't be undoable.
-                    uint gapValue = control.gaps[0];
+                    CircleGap[] gaps = control.gaps[0];
 
                     control.gaps.Remove(0);
-                    control.gaps[(int) Math.Round(GetEvent().mapScale)] = gapValue;
+                    control.gaps[(int) Math.Round(GetEvent().mapScale)] = gaps;
 
                     foreach (Course course in AllCourses)
-                        control.gaps[(int) Math.Round(course.printScale)] = gapValue;
+                        control.gaps[(int) Math.Round(course.printScale)] = gaps;
                 }
             }
         }

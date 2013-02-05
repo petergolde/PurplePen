@@ -80,9 +80,9 @@ namespace PurplePen.Tests
             ctl4 = new ControlPoint(ControlPointKind.Normal, "32", new PointF(20, -10.5F));
             ctl4.symbolIds[1] = "3.7";
             ctl4.symbolIds[5] = "12.1";
-            ctl4.gaps = new Dictionary<int,uint>();
-            ctl4.gaps.Add(15000, 0xFFFFFFDF);
-            ctl4.gaps.Add(10000, 0xFF00FFFF);
+            ctl4.gaps = new Dictionary<int,CircleGap[]>();
+            ctl4.gaps.Add(15000, CircleGap.ComputeCircleGaps(0xFFFFFFDF));
+            ctl4.gaps.Add(10000, CircleGap.ComputeCircleGaps(0xFF00FFFF));
             ctl4.descriptionText = "very marshy spot";
             ctl4.punches = new PunchPattern();
             ctl4.punches.size = 9;
@@ -284,9 +284,9 @@ namespace PurplePen.Tests
             ctl2 = new ControlPoint(ControlPointKind.Normal, "32", new PointF(20, -10.5F));
             ctl2.symbolIds[1] = "3.7";
             ctl2.symbolIds[5] = "12.1";
-            ctl2.gaps = new Dictionary<int, uint>();
-            ctl2.gaps.Add(15000, 0xFFFFFFDF);
-            ctl2.gaps.Add(10000, 0xFF00FFFF);
+            ctl2.gaps = new Dictionary<int, CircleGap[]>();
+            ctl2.gaps.Add(15000, CircleGap.ComputeCircleGaps(0xFFFFFFDF));
+            ctl2.gaps.Add(10000, CircleGap.ComputeCircleGaps(0xFF00FFFF));
             ctl2.descriptionText = "very marshy spot";
             ctlId2 = eventDB.AddControlPoint(ctl2);
 

@@ -228,7 +228,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
-            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(14.51,37.32)  gaps:11111111111111111111111111111111", 
+            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(14.51,37.32)  gaps:", 
                                         highlights[0].ToString());
             Assert.AreEqual("Leg:            control:72  scale:1  path:N(0.69,12.76)--N(13.12,34.86)",
                                         highlights[1].ToString());
@@ -243,7 +243,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
-            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(24.51,34.32)  gaps:11111111111111111111111111111111",
+            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(24.51,34.32)  gaps:",
                                         highlights[0].ToString());
             Assert.AreEqual("Leg:            control:72  scale:1  path:N(1.35,12.25)--N(22.46,32.37)",
                                         highlights[1].ToString());
@@ -261,7 +261,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(23.51,35.32)  gaps:11111111111111111111111111111111",
+            Assert.AreEqual("Control:        control:47  course-control:306  scale:1  location:(23.51,35.32)  gaps:",
                                         highlights[0].ToString());
             Assert.IsInstanceOfType(   highlights[1],   typeof(ControlNumberCourseObj));
             Assert.AreEqual(47, highlights[1].controlId.id);

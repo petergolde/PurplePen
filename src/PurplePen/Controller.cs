@@ -1444,7 +1444,7 @@ namespace PurplePen
 
                 // Change the gaps of the control.
                 undoMgr.BeginCommand(8142, CommandNameText.AddGap);
-                uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
                 gaps = ChangeEvent.AddGap(gaps, angleInRadians);
                 ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
                 undoMgr.EndCommand(8142);
@@ -1480,9 +1480,9 @@ namespace PurplePen
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
                 ControlPoint control = eventDB.GetControl(selection.SelectedControl);
                 if (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Finish) {
-                    uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                    CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
 
-                    if (gaps == 0xFFFFFFFF)
+                    if (gaps == null || gaps.Length == 0)
                         return CommandStatus.Disabled;        // no gaps to remove
                     else
                         return CommandStatus.Enabled;
@@ -1531,7 +1531,7 @@ namespace PurplePen
 
                 // Change the gaps of the control.
                 undoMgr.BeginCommand(8147, CommandNameText.RemoveGap);
-                uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
                 gaps = ChangeEvent.RemoveGap(gaps, angleInRadians);
                 ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
                 undoMgr.EndCommand(8147);

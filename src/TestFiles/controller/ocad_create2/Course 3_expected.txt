@@ -2279,7 +2279,7 @@ Object Sym=70200 Otp=1
   Ang=0
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
-    (50.30,2.90) (0.10,0.12, NoLeft, Gap, Hole, NoRight, DashPt) 
+    (50.30,2.90) (0.10,0.12, Curve1, Gap, Hole, DashPt) 
 
 Index entry Sym=70600.0
   ObjType=1  Rex=0  Status=1
@@ -2289,7 +2289,8 @@ Object Sym=70600 Otp=1
   Ang=0
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
-    (53.20,-2.80) (0.03,0.05, NoLeft, Hole, NoRight) (0.10,0.13, NoLeft, Gap, Corner, Hole, NoRight, DashPt) 
+    (53.20,-2.80) (0.03,0.05, Curve1, NoLeft, Gap, Hole, NoRight) 
+    (0.10,0.13, Curve2, Gap, Hole) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1

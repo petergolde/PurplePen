@@ -98,13 +98,9 @@ namespace PurplePen.Tests
             // Make sure gaps converted correctly.
             EventDB eventDB = controller.GetEventDB();
             ControlPoint control = eventDB.GetControl(ControlId(3));
-            CollectionAssert.AreEquivalent(
-                new KeyValuePair<int, uint>[] {
-                    new KeyValuePair<int,uint>(10000, 0x1FFFFF80),
-                    new KeyValuePair<int,uint>(15000, 0x1FFFFF80),
-                },
-                control.gaps);
-
+            Assert.AreEqual(2, control.gaps.Count);
+            CollectionAssert.AreEqual(control.gaps[10000], CircleGap.ComputeCircleGaps(0x1FFFFF80));
+            CollectionAssert.AreEqual(control.gaps[15000], CircleGap.ComputeCircleGaps(0x1FFFFF80));
 
             // Make sure all controls scale, description kind is correct by default.
             Assert.AreEqual(15000, eventDB.GetEvent().allControlsPrintScale);

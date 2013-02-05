@@ -47,6 +47,8 @@ using PurplePen.MapModel;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
+using System.Threading;
+using System.Globalization;
 
 namespace PurplePen.Tests
 {
@@ -94,7 +96,7 @@ namespace PurplePen.Tests
         {
             CircleGap[] gaps = new CircleGap[] { new CircleGap(-45, 30), new CircleGap(55, 270), new CircleGap(290, 300) };
             float[] result = CircleGap.ArcStartSweeps(gaps);
-            float[] expected = new float[] { 30F, 25F, 270F, 20F, 300F, 15F};
+            float[] expected = new float[] { -30F, -25F, -270F, -20F, -300F, -15F};
             
             Assert.AreEqual(expected.Length, result.Length);
 
@@ -131,6 +133,52 @@ namespace PurplePen.Tests
             Assert.AreEqual(new CircleGap(191.25F, 225F), result[2]);
             Assert.AreEqual(new CircleGap(292.5F, 315.0F), result[3]);
         
+        }
+
+        [TestMethod]
+        public void DecodeCircleGaps()
+        {
+            CircleGap[] result;
+
+            result = CircleGap.DecodeGaps(null);
+            Assert.IsNull(result);
+            result = CircleGap.DecodeGaps("");
+            Assert.IsNull(result);
+
+            CultureInfo cultureUISave = Thread.CurrentThread.CurrentUICulture;
+            CultureInfo cultureSave = Thread.CurrentThread.CurrentCulture;
+            try {
+                Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr");
+                result = CircleGap.DecodeGaps("45.4:90");
+                Assert.AreEqual(1, result.Length);
+                Assert.AreEqual(45.4F, result[0].startAngle);
+                Assert.AreEqual(90F, result[0].stopAngle);
+
+                result = CircleGap.DecodeGaps("-4.3:7.1,98:123.412,180:270");
+                Assert.AreEqual(3, result.Length);
+                Assert.AreEqual(-4.3F, result[0].startAngle);
+                Assert.AreEqual(7.1F, result[0].stopAngle);
+                Assert.AreEqual(98F, result[1].startAngle);
+                Assert.AreEqual(123.412F, result[1].stopAngle);
+                Assert.AreEqual(180F, result[2].startAngle);
+                Assert.AreEqual(270F, result[2].stopAngle);
+
+            }
+            finally {
+                Thread.CurrentThread.CurrentCulture = cultureSave;
+                Thread.CurrentThread.CurrentUICulture = cultureUISave;
+            }
+        }
+
+        [TestMethod]
+        public void EncodeCircleGaps()
+        {
+            Assert.AreEqual("", CircleGap.EncodeGaps(null));
+            Assert.AreEqual("", CircleGap.EncodeGaps(new CircleGap[0]));
+
+            Assert.AreEqual("-4.5:8.7", CircleGap.EncodeGaps(new CircleGap[] { new CircleGap(-4.5F, 8.7F) }));
+            Assert.AreEqual("-4.5:8.7,34.1:220", CircleGap.EncodeGaps(new CircleGap[] { new CircleGap(-4.5F, 8.7F), new CircleGap(34.1F, 220F) }));
+            Assert.AreEqual("-4.5:8.7,34.1:220,270:271.0001", CircleGap.EncodeGaps(new CircleGap[] { new CircleGap(-4.5F, 8.7F), new CircleGap(34.1F, 220F), new CircleGap(270F, 271.0001F) }));
         }
 
 #if false
@@ -177,19 +225,15 @@ namespace PurplePen.Tests
             expected = new CircleGap[] { new CircleGap(1, 2), new CircleGap(7, 1F), new CircleGap(12, 2) };
             TestUtil.TestEnumerableAnyOrder(result, expected);
         }
+#endif
 
         [TestMethod]
         public void AddGap1()
         {
-            // Add a gap to a null gap array.
-            SymPath path = new SymPath(new PointF[] { new PointF(10, 10), new PointF(10, 0), new PointF(0, 0) });
-            PointF pt1 = new PointF(7, -2);
-            PointF pt2 = new PointF(11, 4);
-
-            CircleGap[] gaps = CircleGap.AddGap(path, null, pt1, pt2);
+            CircleGap[] gaps = CircleGap.AddGap(null, 20, 50);
             Assert.AreEqual(1, gaps.Length);
-            Assert.AreEqual(6, gaps[0].distanceFromStart);
-            Assert.AreEqual(7, gaps[0].length);
+            Assert.AreEqual(20, gaps[0].startAngle);
+            Assert.AreEqual(50, gaps[0].stopAngle);
 
         }
 
@@ -197,28 +241,32 @@ namespace PurplePen.Tests
         public void AddGap2()
         {
             // Add a gap to an existing array.
-            SymPath path = new SymPath(new PointF[] { new PointF(10, 10), new PointF(10, 0), new PointF(0, 0) });
-            CircleGap[] oldGaps = { new CircleGap(6, 7) };
-            PointF pt1 = new PointF(8, -2);
-            PointF pt2 = new PointF(11, 8.5F);
+            CircleGap[] oldGaps = { new CircleGap(6, 8), new CircleGap(45, 90) };
 
-            CircleGap[] gaps = CircleGap.AddGap(path, oldGaps, pt1, pt2);
-            Assert.AreEqual(1, gaps.Length);
-            Assert.AreEqual(1.5F, gaps[0].distanceFromStart);
-            Assert.AreEqual(11.5F, gaps[0].length);
-
-            pt1 = new PointF(3, -2);
-            pt2 = new PointF(1.5F, 1);
-            gaps = CircleGap.AddGap(path, oldGaps, pt1, pt2);
+            CircleGap[] gaps = CircleGap.AddGap(oldGaps, -30, 7);
             Assert.AreEqual(2, gaps.Length);
-            Assert.AreEqual(6, gaps[0].distanceFromStart);
-            Assert.AreEqual(7, gaps[0].length);
-            Assert.AreEqual(17F, gaps[1].distanceFromStart);
-            Assert.AreEqual(1.5F, gaps[1].length);
+            Assert.AreEqual(-30F, gaps[0].startAngle);
+            Assert.AreEqual(8F, gaps[0].stopAngle);
+            Assert.AreEqual(45F, gaps[1].startAngle);
+            Assert.AreEqual(90F, gaps[1].stopAngle);
         }
 
-#endif
+        [TestMethod]
+        public void RemoveGap()
+        {
+            CircleGap[] gaps = CircleGap.RemoveGap(null, 40);
+            Assert.IsNull(gaps);
 
+            CircleGap[] oldGaps = { new CircleGap(6, 8), new CircleGap(45, 90) };
+            gaps = CircleGap.RemoveGap(oldGaps, 7);
+            Assert.AreEqual(1, gaps.Length);
+            Assert.AreEqual(45, gaps[0].startAngle);
+            Assert.AreEqual(90, gaps[0].stopAngle);
+
+            oldGaps = new CircleGap[] { new CircleGap(-10, 10) };
+            gaps = CircleGap.RemoveGap(oldGaps, 355);
+            Assert.IsNull(gaps);
+        }
 
     }
 }

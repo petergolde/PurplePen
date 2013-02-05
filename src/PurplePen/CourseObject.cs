@@ -277,13 +277,13 @@ namespace PurplePen
     abstract class PointCourseObj: CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
-        public uint gaps;                          // gaps if its a control or finish circle
+        public CircleGap[] gaps;                 // gaps if its a control or finish circle
         public float orientation;                // orientation in degrees (start/crossing).
         public PointF location;                  // location of the object
-        float radius;                                 // radius of the object (for hit-testing) -- unscaled.
+        float radius;                            // radius of the object (for hit-testing) -- unscaled.
 
 
-        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, uint gaps, float orientation, float radius, PointF location) :
+        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, float radius, PointF location) :
            base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
             this.gaps = gaps;
@@ -300,8 +300,7 @@ namespace PurplePen
 
         protected override void AddToMap(Map map, SymDef symdef)
         {
-            float[] circleGaps = ComputeCircleGaps(gaps);
-            PointSymbol sym = new PointSymbol((PointSymDef)symdef, location, orientation, circleGaps);
+            PointSymbol sym = new PointSymbol((PointSymDef)symdef, location, orientation, CircleGap.StartsAndStops(gaps));
             map.AddSymbol(sym);
         }
 
@@ -1188,7 +1187,7 @@ namespace PurplePen
     {
         public const float diameter = 6.0F;
 
-        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.0F, location)
         {
         }
@@ -1208,10 +1207,10 @@ namespace PurplePen
             return symdef;
         }
 
-        public override string  ToString()
+        public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  gaps:{0}",  Convert.ToString(gaps, 2));
+            result += string.Format("  gaps:{0}", CircleGap.EncodeGaps(gaps));
             return result;
         }
 
@@ -1229,16 +1228,16 @@ namespace PurplePen
             // Draw the control circle.
             using (Pen pen = new Pen(brush, thickness)) {
                 RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
-                float[] circleGaps = ComputeCircleGaps(gaps);
 
                 try {
-                    if (circleGaps == null)
+                    if (gaps == null)
                         g.DrawEllipse(pen, rect);
                     else {
-                        for (int i = 1; i < circleGaps.Length; i += 2) {
-                            float startArc = circleGaps[i];
-                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                            g.DrawArc(pen, rect, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gaps);
+                        for (int i = 0; i < arcStartSweeps.Length; i += 2) {
+                            float startArc = arcStartSweeps[i];
+                            float sweepArc = arcStartSweeps[i + 1];
+                            g.DrawArc(pen, rect, startArc, sweepArc);
                         }
                     }
 
@@ -1261,7 +1260,7 @@ namespace PurplePen
         static readonly PointF[] coords = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
 
         public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, 0xFFFFFFFF, orientation, 4.041F, location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 4.041F, location)
         {
         }
 
@@ -1311,7 +1310,7 @@ namespace PurplePen
     // Finish circle
     class FinishCourseObj : PointCourseObj
     {
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.5F, location)
         {
         }
@@ -1332,7 +1331,7 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  gaps:{0}", Convert.ToString(gaps, 2));
+            result += string.Format("  gaps:{0}", CircleGap.EncodeGaps(gaps));
             return result;
         }
 
@@ -1353,19 +1352,19 @@ namespace PurplePen
             using (Pen pen = new Pen(brush, thickness)) {
                 RectangleF rect1 = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
                 RectangleF rect2 = RectangleF.FromLTRB(pts[3].X, pts[4].Y, pts[4].X, pts[3].Y);
-                float[] circleGaps = ComputeCircleGaps(gaps);
 
                 try {
-                    if (circleGaps == null) {
+                    if (gaps == null) {
                         g.DrawEllipse(pen, rect1);
                         g.DrawEllipse(pen, rect2);
                     }
                     else {
-                        for (int i = 1; i < circleGaps.Length; i += 2) {
-                            float startArc = circleGaps[i];
-                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                            g.DrawArc(pen, rect1, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
-                            g.DrawArc(pen, rect2, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gaps);
+                        for (int i = 0; i < arcStartSweeps.Length; i += 2) {
+                            float startArc = arcStartSweeps[i];
+                            float sweepArc = arcStartSweeps[i + 1];
+                            g.DrawArc(pen, rect1, startArc, sweepArc);
+                            g.DrawArc(pen, rect2, startArc, sweepArc);
                         }
                     }
                 }
@@ -1391,7 +1390,7 @@ namespace PurplePen
             };
 
         public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
         {
         }
 
@@ -1468,7 +1467,7 @@ namespace PurplePen
             };
 
         public WaterCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
         {
         }
 
@@ -1537,7 +1536,7 @@ namespace PurplePen
         static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
         public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, specialId, scaleRatio, appearance, 0xFFFFFFFF, orientation, 1.72F, location)
+            : base(controlId, courseControlId, specialId, scaleRatio, appearance, null, orientation, 1.72F, location)
         {
         }
 
@@ -1626,7 +1625,7 @@ namespace PurplePen
         PointF[] coords2 = { new PointF(0F, -2F), new PointF(0F, 2F) };
 
         public RegMarkCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
         {
         }
 
@@ -1685,7 +1684,7 @@ namespace PurplePen
         PointF[] coords2 = { new PointF(1.06F, -1.06F), new PointF(-1.06F, 1.06F) };
 
         public ForbiddenCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
         {
         }
 
