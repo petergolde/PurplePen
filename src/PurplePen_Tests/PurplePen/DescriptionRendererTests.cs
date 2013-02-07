@@ -52,7 +52,7 @@ namespace PurplePen.Tests
     public class DescriptionRendererTests: TestFixtureBase
     {
         // Render the given course id (0 = all controls) and kind to a bitmap, and compare it to the saved version.
-        internal void CheckRenderBitmap(string filename, Id<Course> id, DescriptionKind kind)
+        internal void CheckRenderBitmap(string filename, Id<Course> id, DescriptionKind kind, int numColumns = 1)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
@@ -67,8 +67,11 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
-            Bitmap bmNew = DescriptionBrowser.RenderToBitmap(symbolDB, description, kind);
-            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "", kind));
+            Bitmap bmNew = DescriptionBrowser.RenderToBitmap(symbolDB, description, kind, numColumns);
+            if (numColumns > 1)
+                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_" + numColumns + "col", kind));
+            else
+                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "", kind));
         }
 
         // Render a description to a bitmap for testing purposes. Does one pixel at a time to test clip rectangle.
@@ -127,6 +130,18 @@ namespace PurplePen.Tests
         public void AllControlsSymbols()
         {
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void AllControlsSymbols2Col()
+        {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols, 2);
+        }
+
+        [TestMethod]
+        public void AllControlsSymbols3Col()
+        {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols, 3);
         }
 
         [TestMethod]
@@ -243,13 +258,14 @@ namespace PurplePen.Tests
 	
 
         // Render a description to a map, then to a bitmap for testing purposes. Hardcoded 6 mm box size.
-        internal static Bitmap RenderToMapThenToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
+        internal static Bitmap RenderToMapThenToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
         {
             DescriptionRenderer descriptionRenderer = new DescriptionRenderer(symbolDB);
             descriptionRenderer.Description = description;
             descriptionRenderer.DescriptionKind = kind;
             descriptionRenderer.CellSize = 6.0F;
             descriptionRenderer.Margin = 0.7F;
+            descriptionRenderer.NumberOfColumns = numColumns;
             PointF location = new PointF(30, -100);
 
             SizeF size = descriptionRenderer.Measure();
@@ -291,7 +307,7 @@ namespace PurplePen.Tests
         }
 
         // Render the given course id (0 = all controls) and kind to a map, and compare it to the saved version.
-        internal void CheckRenderMap(string filename, Id<Course> id, DescriptionKind kind)
+        internal void CheckRenderMap(string filename, Id<Course> id, DescriptionKind kind, int numColumns = 1)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
@@ -306,8 +322,11 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
-            Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind);
-            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad", kind));
+            Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, numColumns);
+            if (numColumns > 1)
+                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad_" + numColumns + "col", kind));
+            else
+                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad", kind));
         }
 
         [TestMethod]
@@ -317,15 +336,45 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void AllControlsSymbolsToMap2Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols, 2);
+        }
+
+        [TestMethod]
+        public void AllControlsSymbolsToMap3Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols, 3);
+        }
+
+        [TestMethod]
+        public void AllControlsSymbolsToMap4Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Symbols, 4);
+        }
+
+        [TestMethod]
         public void AllControlsTextToMap()
         {
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Text);
         }
 
         [TestMethod]
+        public void AllControlsTextToMap3Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.Text, 3);
+        }
+
+        [TestMethod]
         public void AllControlsSymbolsAndTextToMap()
         {
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.SymbolsAndText);
+        }
+
+        [TestMethod]
+        public void AllControlsSymbolsAndTextToMap3Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(0), DescriptionKind.SymbolsAndText, 3);
         }
 
         [TestMethod]
@@ -350,6 +399,24 @@ namespace PurplePen.Tests
         public void ScoreSymbolsToMap()
         {
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(5), DescriptionKind.Symbols);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsToMap2Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(5), DescriptionKind.Symbols, 2);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsToMap3Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(5), DescriptionKind.Symbols, 3);
+        }
+
+        [TestMethod]
+        public void ScoreSymbolsToMap5Col()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"), CourseId(5), DescriptionKind.Symbols, 5);
         }
 
         [TestMethod]

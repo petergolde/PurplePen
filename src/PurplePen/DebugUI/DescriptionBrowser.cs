@@ -205,7 +205,7 @@ namespace PurplePen.DebugUI
         private void buttonSaveBitmap_Click(object sender, EventArgs e)
         {
 #if TEST
-            Bitmap bm = RenderToBitmap(symbolDB, GetDescription(), GetDescriptionKind());
+            Bitmap bm = RenderToBitmap(symbolDB, GetDescription(), GetDescriptionKind(), 1);
             string filename = GetTestFile(GetBitmapFileName(eventDB, ((CourseItem)(listBoxCourses.SelectedItem)).id, "_baseline.png", GetDescriptionKind()));
             bm.Save(filename, System.Drawing.Imaging.ImageFormat.Png);
 #endif
@@ -294,13 +294,14 @@ namespace PurplePen.DebugUI
         }
 
         // Render a description to a bitmap for testing purposes. Hardcoded 40 pixel box size.
-        public static Bitmap RenderToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
+        public static Bitmap RenderToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
         {
             DescriptionRenderer descriptionRenderer = new DescriptionRenderer(symbolDB);
             descriptionRenderer.Description = description;
             descriptionRenderer.DescriptionKind = kind;
             descriptionRenderer.CellSize = 40;
             descriptionRenderer.Margin = 4;
+            descriptionRenderer.NumberOfColumns = numColumns;
 
             SizeF size = descriptionRenderer.Measure();
 
