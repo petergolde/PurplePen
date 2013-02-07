@@ -777,8 +777,8 @@ namespace PurplePen
         // Cut "controlObj" with respect to "courseObj", if courseObj is close enough to overlap.
         private static void CutControlWithRespectTo(PointCourseObj controlObj, PointCourseObj courseObj)
         {
-            float radiusControl = controlObj.TrueRadius;
-            float radiusOther = courseObj.TrueRadius;
+            float radiusControl = controlObj.ApparentRadius;
+            float radiusOther = courseObj.ApparentRadius;
             double distance = Geometry.Distance(controlObj.location, courseObj.location);
 
             if (distance < (radiusControl + radiusOther) * 0.9F && distance > (radiusControl + radiusOther) * 0.35F) {

@@ -79,7 +79,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click left mouse button on the control circle to add a gap.
+        ///   Looks up a localized string similar to Click left mouse button on the control circle to add a small gap; hold down left mouse button and drag to create a large gap.
         /// </summary>
         internal static string AddingControlGap {
             get {
@@ -169,7 +169,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hold down left mouse button and drag to create a gap in the leg.
+        ///   Looks up a localized string similar to Click left mouse button to create small gap; hold down left mouse button and drag to create a large gap in the leg.
         /// </summary>
         internal static string AddingLegGap {
             get {

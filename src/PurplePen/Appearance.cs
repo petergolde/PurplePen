@@ -229,7 +229,7 @@ namespace PurplePen
         public const float allControlsColorK = 0.0F;
 
         // The color used to for the selected item in the map display.
-        public static readonly Color highlightColor = Color.FromArgb(255, 0, 0);
+        public static readonly Color highlightColor = Color.FromArgb(255, 70, 0);
 
         // Brush to use to highlight areas.
         public static readonly Brush areaHighlight = new HatchBrush(HatchStyle.Percent25, NormalCourseAppearance.highlightColor, Color.Transparent);

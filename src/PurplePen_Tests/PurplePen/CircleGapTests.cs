@@ -268,6 +268,61 @@ namespace PurplePen.Tests
             Assert.IsNull(gaps);
         }
 
+        [TestMethod]
+        public void MoveStartStopPoint()
+        {
+            CircleGap[] oldGaps = { new CircleGap(-45, 90) };
+            PointF[] oldPts = CircleGap.GapStartStopPoints(new PointF(5, 7), 10, oldGaps);
+
+            CircleGap[] newGaps = CircleGap.MoveStartStopPoint(new PointF(5, 7), 10, oldGaps, oldPts[0], new PointF(35, 37));
+            Assert.AreEqual(1, newGaps.Length);
+            Assert.AreEqual(45, newGaps[0].startAngle);
+            Assert.AreEqual(90, newGaps[0].stopAngle);
+        }
+
+        [TestMethod]
+        public void OrderGapAngles()
+        {
+            float a1, a2;
+            bool result;
+
+            a1 = -15; a2 = -30;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(330, a1); Assert.AreEqual(345, a2); Assert.IsTrue(result);
+
+            a1 = -30; a2 = -15;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(330, a1); Assert.AreEqual(345, a2); Assert.IsFalse(result);
+
+            a1 = 270; a2 = 95;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(95, a1); Assert.AreEqual(270, a2); Assert.IsTrue(result);
+
+            a1 = 275; a2 = -90;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(270, a1); Assert.AreEqual(275, a2); Assert.IsTrue(result);
+
+            a1 = 265; a2 = -90;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(265, a1); Assert.AreEqual(270, a2); Assert.IsFalse(result);
+
+            a1 = -300; a2 = 300;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(-60, a1); Assert.AreEqual(60, a2); Assert.IsTrue(result);
+
+            a1 = 95; a2 = 270;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(95, a1); Assert.AreEqual(270, a2); Assert.IsFalse(result);
+
+            a1 = -90; a2 = 275;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(270, a1); Assert.AreEqual(275, a2); Assert.IsFalse(result);
+
+            a1 = 300; a2 = -300;
+            result = CircleGap.OrderGapAngles(ref a1, ref a2);
+            Assert.AreEqual(-60, a1); Assert.AreEqual(60, a2); Assert.IsFalse(result);
+        }
+
     }
 }
 

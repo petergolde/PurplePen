@@ -278,6 +278,7 @@ namespace PurplePen
     {
         // NOTE: if new fields are added, update Equals implementation.
         public CircleGap[] gaps;                 // gaps if its a control or finish circle
+        public CircleGap[] movableGaps;          // gaps if its a control or finish circle that can be moved via handles
         public float orientation;                // orientation in degrees (start/crossing).
         public PointF location;                  // location of the object
         float radius;                            // radius of the object (for hit-testing) -- unscaled.
@@ -287,15 +288,22 @@ namespace PurplePen
            base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
             this.gaps = gaps;
+            this.movableGaps = gaps;
             this.orientation = orientation;
             this.location = location;
             this.radius = radius;
        }
 
-        // Get the true radius of this point object. Used for current adjacent circles, for example.
-        public float TrueRadius
+        // Get the full radius of this point object. 
+        public float FullRadius
         {
             get { return radius * scaleRatio * appearance.controlCircleSize; }
+        }
+
+        // Get the radius that handles are placed on. Compensates for the line width. Used for cutting adjacent circles, and positioning handles
+        public float ApparentRadius
+        {
+            get {return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * scaleRatio) / 2.0F); }
         }
 
         protected override void AddToMap(Map map, SymDef symdef)
@@ -304,53 +312,10 @@ namespace PurplePen
             map.AddSymbol(sym);
         }
 
-        // Convert a 32-bit unsigned int into a gaps array.
-#if TEST
-        internal
-#else
-        protected
-#endif
- static float[] ComputeCircleGaps(uint gaps)
-        {
-            if (gaps == 0xFFFFFFFF)
-                return null;                       // no gaps
-            else if (gaps == 0)
-                return new float[2] { 0, (float) (359.9999) };  // all gap
-            else {
-                int firstGap = 0;
-
-                // Find the first gap start (a 1 to 0 transition).
-                for (int i = 0; i < 32; ++i) {
-                    if (!Util.GetBit(gaps, i) && Util.GetBit(gaps, i - 1)) {
-                        firstGap = i;
-                        break;
-                    }
-                }
-
-                List<float> gapList = new List<float>();
-                // Now create gaps.
-                int lastGapStart = firstGap;
-                for (int i = firstGap; i < firstGap + 32; ++i) {
-                    if (Util.GetBit(gaps, i) && !Util.GetBit(gaps, i - 1)) {
-                        // found end of gap.
-                        int endGap = i;
-
-                        gapList.Add((float) ((lastGapStart % 32) * 360.0 / 32));
-                        gapList.Add((float) ((endGap % 32) * 360.0 / 32));
-                    }
-                    else if (!Util.GetBit(gaps, i) && Util.GetBit(gaps, i - 1)) {
-                        lastGapStart = i;
-                    }
-                }
-
-                return gapList.ToArray();
-            }
-        }
-
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {
-            double dist = Geometry.Distance(pt, location) - TrueRadius;
+            double dist = Geometry.Distance(pt, location) - FullRadius;
             return Math.Max(0, dist);
         }
 
@@ -382,7 +347,22 @@ namespace PurplePen
         // Get the bounds of the highlight.
         public override RectangleF GetHighlightBounds()
         {
-            return new RectangleF(location.X - TrueRadius, location.Y - TrueRadius, TrueRadius * 2, TrueRadius * 2);
+            return new RectangleF(location.X - FullRadius, location.Y - FullRadius, FullRadius * 2, FullRadius * 2);
+        }
+
+        public override PointF[] GetHandles()
+        {
+            if (gaps == null)
+                return null;
+            else 
+                return CircleGap.GapStartStopPoints(location, ApparentRadius, movableGaps);
+        }
+
+        // Move a handle on the line.
+        public override void MoveHandle(PointF oldHandle, PointF newHandle)
+        {
+            movableGaps = CircleGap.MoveStartStopPoint(location, ApparentRadius, movableGaps, oldHandle, newHandle);
+            gaps = CircleGap.MoveStartStopPoint(location, ApparentRadius, gaps, oldHandle, newHandle);
         }
 
         // Offset the object by a given amount
@@ -1185,7 +1165,7 @@ namespace PurplePen
     // A control circle
     class ControlCourseObj : PointCourseObj
     {
-        public const float diameter = 6.0F;
+        public const float diameter = NormalCourseAppearance.controlOutsideDiameter;
 
         public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.0F, location)
@@ -1228,12 +1208,13 @@ namespace PurplePen
             // Draw the control circle.
             using (Pen pen = new Pen(brush, thickness)) {
                 RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
+                CircleGap[] gapsToDraw = CircleGap.SimplifyGaps(gaps);
 
                 try {
-                    if (gaps == null)
+                    if (gapsToDraw == null)
                         g.DrawEllipse(pen, rect);
                     else {
-                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gaps);
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gapsToDraw);
                         for (int i = 0; i < arcStartSweeps.Length; i += 2) {
                             float startArc = arcStartSweeps[i];
                             float sweepArc = arcStartSweeps[i + 1];

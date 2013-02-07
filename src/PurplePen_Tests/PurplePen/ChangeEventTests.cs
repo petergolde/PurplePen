@@ -869,6 +869,29 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void AddGapPoints()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(818, "change gap");
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, new CircleGap[] { new CircleGap(-20, 60) });
+            undomgr.EndCommand(818);
+
+            undomgr.BeginCommand(819, "add gap");
+            ChangeEvent.AddGap(eventDB, 10000F, ControlId(4), new PointF(18, 25), new PointF(-10, 16));
+            undomgr.EndCommand(819);
+
+            eventDB.Validate();
+
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-20, 60), new CircleGap(93.2245255F, 138.544769F) }, eventDB.GetControl(ControlId(4)).gaps[10000]);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-20, 60) }, eventDB.GetControl(ControlId(4)).gaps[10000]);
+        }
+
+        [TestMethod]
         public void RemoveCourseControl()
         {
             Setup("changeevent\\sampleevent1.coursescribe");

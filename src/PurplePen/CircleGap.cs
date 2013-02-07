@@ -85,6 +85,38 @@ namespace PurplePen
          * Static functions that work on arrays of circle gaps.
          */
 
+        // Order two angles in start/finish, with finish in range 0..360 and start in the range
+        // -180-360 and before finish. Assumed that gap in <=180 degrees.
+        // Returns true if the two angles with swapped in order.
+        public static bool OrderGapAngles(ref float angle1, ref float angle2)
+        {
+            bool swapped = false;
+
+            // Put angles into range -180 to 180
+            angle1 = (float)Math.IEEERemainder(angle1, 360);
+            angle2 = (float)Math.IEEERemainder(angle2, 360);
+            if (Math.Abs(angle2 - angle1) > 180) {
+                if (angle1 < angle2)
+                    angle1 += 360;
+                else
+                    angle2 += 360;
+            }
+
+            if (angle1 > angle2) {
+                swapped = true;
+                float t = angle2;
+                angle2 = angle1;
+                angle1 = t;
+            }
+
+            if (angle2 < 0) {
+                angle1 += 360; angle2 += 360;
+            }
+
+            return swapped;
+        }
+
+
         // Encode a gap array as text. Format is 45-180,181-185,...
         public static string EncodeGaps(CircleGap[] gaps)
         {
@@ -166,31 +198,41 @@ namespace PurplePen
             return arcs;
         }
 
-#if false
         // Move a gap start/stop point to a new location. Return the new gap array. The gap array is NOT simplified.
-        public static LegGap[] MoveStartStopPoint(SymPath path, LegGap[] gaps, PointF oldPt, PointF newPt)
+        public static CircleGap[] MoveStartStopPoint(PointF center, float radius, CircleGap[] gaps, PointF oldPt, PointF newPt)
         {
-            LegGap[] newGaps = (LegGap[])gaps.Clone();
-            float newLengthAlongPath = path.LengthToPoint(newPt);
+            CircleGap[] newGaps = (CircleGap[])gaps.Clone();
 
-            for (int i = 0; i < newGaps.Length; ++i) {
-                PointF startPt = path.PointAtLength(gaps[i].distanceFromStart);
-                PointF endPt = path.PointAtLength(gaps[i].distanceFromStart + gaps[i].length);
+            if (newPt != center) {
+                for (int i = 0; i < newGaps.Length; ++i) {
+                    PointF startPt = Geometry.MoveDistance(center, radius, gaps[i].startAngle);
+                    PointF stopPt = Geometry.MoveDistance(center, radius, gaps[i].stopAngle);
+                    float newStart, newStop;
 
-                if (Geometry.Distance(startPt, oldPt) < 0.01) {
-                    // Moving start point of the gap.
-                    newGaps[i].length -= (newLengthAlongPath - newGaps[i].distanceFromStart);
-                    newGaps[i].distanceFromStart = newLengthAlongPath;
-                }
-                else if (Geometry.Distance(endPt, oldPt) < 0.01) {
-                    // Moving end point of the gap.
-                    newGaps[i].length = newLengthAlongPath - gaps[i].distanceFromStart;
+                    if (Geometry.Distance(startPt, oldPt) < 0.01) {
+                        // Moving start point of the gap.
+                        newStart = Geometry.Angle(center, newPt);
+                        newStop = gaps[i].stopAngle;
+                    }
+                    else if (Geometry.Distance(stopPt, oldPt) < 0.01) {
+                        // Moving end point of the gap.
+                        newStart = gaps[i].startAngle;
+                        newStop = Geometry.Angle(center, newPt);
+                    }
+                    else {
+                        continue;
+                    }
+
+                    if (OrderGapAngles(ref newStart, ref newStop)) {
+                        float t = newStart; newStart = newStop; newStop = t;
+                    }
+                    newGaps[i] = new CircleGap(newStart, newStop);
+                    break;
                 }
             }
 
             return newGaps;
         }
-#endif
 
         // Add a new gap an an array of gaps. The resulting array is simplified. The original array may be null.
         public static CircleGap[] AddGap(CircleGap[] original, float startAngle, float stopAngle)
@@ -212,6 +254,18 @@ namespace PurplePen
 
             // Simplify
             return SimplifyGaps(newGaps);
+        }
+
+        // Add a gap defined by two points. The gap is assumed to be <=180 degrees.
+        public static CircleGap[] AddGap(PointF center, CircleGap[] original, PointF pt1, PointF pt2)
+        {
+            if (center == pt1 || center == pt2)
+                return original;
+
+            float angle1 = Geometry.Angle(center, pt1);
+            float angle2 = Geometry.Angle(center, pt2);
+            CircleGap.OrderGapAngles(ref angle1, ref angle2);
+            return AddGap(original, angle1, angle2);
         }
 
         // Remove a gap (if any) from an array of gaps.

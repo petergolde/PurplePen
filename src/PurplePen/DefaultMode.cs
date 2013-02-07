@@ -520,6 +520,11 @@ namespace PurplePen
 
                 controller.MoveLegBendOrGap(lineCourseObj.courseControlId, lineCourseObj.courseControlId2, handleLocation, newHandleLocation);
             }
+            else if ((courseObjectStart is ControlCourseObj) || (courseObjectStart is FinishCourseObj)) {
+                PointCourseObj pointObj = (PointCourseObj)courseObjectStart.Clone();
+                pointObj.MoveHandle(handleLocation, location);
+                controller.MoveControlGap(courseObjectStart.controlId, pointObj.movableGaps);
+            }
             else {
                 Debug.Fail("unknown situation");
             }

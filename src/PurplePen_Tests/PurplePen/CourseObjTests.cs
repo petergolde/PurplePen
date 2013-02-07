@@ -1594,31 +1594,6 @@ namespace PurplePen.Tests
             for (int i = 0; i < handles.Length; ++i)
                 Assert.AreEqual(expected[i], handles[i]);
         }
-
-        [TestMethod]
-        public void ComputeCircleGaps()
-        {
-                                                       //     28     24     20     16     12       8       4
-            uint gaps1 = 0x1f8d723e;  // 0001 1111 1000 1101 0111 0010 0011 1110 
-            float[] expectedScaled1 = 
-                { 6, 9, 10,12, 15, 16, 17, 18, 20, 23, 29, 1 };
-            float[] actual = PointCourseObj.ComputeCircleGaps(gaps1);
-            Assert.AreEqual(expectedScaled1.Length, actual.Length);
-            for (int i = 0; i < expectedScaled1.Length; ++i) {
-                Assert.AreEqual(expectedScaled1[i] * 360.0 / 32, actual[i], 0.00001);
-            }
-
-                                                     //     28     24     20     16     12       8       4
-            uint gaps2 = 0xff8d723f;  // 1111 1111 1000 1101 0111 0010 0011 1111 
-            float[] expectedScaled2 = 
-                { 6, 9, 10, 12, 15, 16, 17, 18, 20, 23 };
-            actual = PointCourseObj.ComputeCircleGaps(gaps2);
-            Assert.AreEqual(expectedScaled2.Length, actual.Length);
-            for (int i = 0; i < expectedScaled2.Length; ++i) {
-                Assert.AreEqual(expectedScaled2[i] * 360.0 / 32, actual[i], 0.00001);
-            }
-        }
-
     }
 }
 #endif

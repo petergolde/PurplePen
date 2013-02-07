@@ -194,7 +194,7 @@ BasicText:      special:7  scale:1  text:Course 1  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-20.5,Width=65.5,Height=70.5}
 Start:          control:1  course-control:101  scale:1  location:(56.8,-8.7)  orientation:186.71
-Control:        control:73  course-control:102  scale:1  location:(57.4,-13.8)  gaps:44.87797:148.541748
+Control:        control:73  course-control:102  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
 Leg:            control:73  course-control:102  scale:1  course-control2:103  path:N(54.83,-14.97)--N(40.17,-21.63)
 Control:        control:44  course-control:103  scale:1  location:(37.6,-22.8)  gaps:
 Leg:            control:44  course-control:103  scale:1  course-control2:104  path:N(34.8,-22.44)--N(24.8,-21.16)
@@ -283,12 +283,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:44  top-left:(40.5,-27.69)
                 font-name:Arial  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:81.86995:192.901932
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-98.1300659:12.9019279
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:44.87797:148.541748
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
@@ -336,12 +336,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:3  top-left:(42.05,-27.69)
                 font-name:Arial  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:81.86995:192.901932
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-98.1300659:12.9019279
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:44.87797:148.541748
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
@@ -389,12 +389,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:3-44  top-left:(38.03,-27.69)
                 font-name:Arial  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:81.86995:192.901932
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-98.1300659:12.9019279
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:44.87797:148.541748
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:

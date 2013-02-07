@@ -1451,6 +1451,27 @@ namespace PurplePen
             }
         }
 
+        // Add a gap to the selection control at a given location.
+        public void AddControlGap(PointF gapLocation1, PointF gapLocation2)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
+                // Change the gaps of the control.
+                undoMgr.BeginCommand(8142, CommandNameText.AddGap);
+                ChangeEvent.AddGap(eventDB, selectionMgr.ActiveCourseView.PrintScale, selection.SelectedControl, gapLocation1, gapLocation2);
+                undoMgr.EndCommand(8142);
+            }
+        }
+
+        // Move a gap end point on a control.
+        public void MoveControlGap(Id<ControlPoint> controlId, CircleGap[] newGaps)
+        {
+            undoMgr.BeginCommand(8142, CommandNameText.MoveGap);
+            ChangeEvent.ChangeControlGaps(eventDB, controlId, selectionMgr.ActiveCourseView.PrintScale, CircleGap.SimplifyGaps(newGaps));
+            undoMgr.EndCommand(8142);
+        }
+
         // Add a gap to the selected leg using two points as the end points of the gap.
         public void AddLegGap(PointF pt1, PointF pt2)
         {
@@ -1469,6 +1490,27 @@ namespace PurplePen
                 undoMgr.BeginCommand(8642, CommandNameText.AddGap);
                 ChangeEvent.ChangeLegGaps(eventDB, controlId1, controlId2, newGaps);
                 undoMgr.EndCommand(8642);
+            }
+        }
+
+        // Add a leg gap of 2mm around a center point.
+        public void AddLegGap(PointF ptCenter)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
+                Id<ControlPoint> controlId1 = selection.SelectedControl;
+                Id<ControlPoint> controlId2 = eventDB.GetCourseControl(selection.SelectedCourseControl2).control;
+
+                // Figure out the new gaps.
+                PointF ptOnPath;
+                SymPath path = QueryEvent.GetLegPath(eventDB, controlId1, controlId2);
+                path.DistanceFromPoint(ptCenter, out ptOnPath);
+                float dist = path.LengthToPoint(ptOnPath);
+                PointF pt1 = path.PointAtLength(dist - 1.0F);
+                PointF pt2 = path.PointAtLength(dist + 1.0F);
+
+                AddLegGap(pt1, pt2);
             }
         }
 

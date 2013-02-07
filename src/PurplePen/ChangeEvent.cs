@@ -40,6 +40,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -1286,6 +1287,22 @@ namespace PurplePen
             float angleInDegrees = (float)(180 * radians / Math.PI);
             const float gapAngle = 30;
             return CircleGap.AddGap(gaps, angleInDegrees - gapAngle / 2, angleInDegrees + gapAngle / 2);
+        }
+
+        // Add a gap with two points to a control point.
+        public static void AddGap(EventDB eventDB, float scale, Id<ControlPoint> controlId, PointF pt1, PointF pt2)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+            PointF center = control.location;
+            if (center == pt1 || center == pt2)
+                return;
+
+            float angle1 = Geometry.Angle(center, pt1);
+            float angle2 = Geometry.Angle(center, pt2);
+            CircleGap.OrderGapAngles(ref angle1, ref angle2);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, scale);
+            gaps = CircleGap.AddGap(gaps, angle1, angle2);
+            ChangeControlGaps(eventDB, controlId, scale, gaps);
         }
 
         // Remove a gap at a particular radians  
