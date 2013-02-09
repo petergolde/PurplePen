@@ -187,6 +187,12 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void MulticolDescription()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", Designator(4), false, "multicol", new RectangleF(-51, -36, 150, 150));
+        }
+
+        [TestMethod]
         public void AllControlsDescriptions()
         {
             CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", CourseDesignator.AllControls, false, "allcontrolsdesc", new RectangleF(-51, -76, 150, 150));

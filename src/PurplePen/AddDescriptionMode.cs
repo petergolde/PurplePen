@@ -103,9 +103,9 @@ namespace PurplePen
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // Begin dragging out the description block.
+            // Begin dragging out the description block; start at 1 column
             startLocation = location;
-            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind);
+            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind, 1);
             handleDragging = new PointF(startingObj.rect.Right, startingObj.rect.Top);
             DragTo(location);
             displayUpdateNeeded = true;

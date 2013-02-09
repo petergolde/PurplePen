@@ -2047,8 +2047,8 @@ namespace PurplePen
         float cellSizeRatio;                        // ratio of cell size to width.
 
         // Create a new description course object.
-        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind))
+        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind, numColumns))
         {
             // Create the renderer.
             renderer = new DescriptionRenderer(symbolDB);
@@ -2056,11 +2056,12 @@ namespace PurplePen
             renderer.DescriptionKind = kind;
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
+            renderer.NumberOfColumns = numColumns;
             cellSizeRatio = rect.Width / cellSize;
         }
 
         // Get the rectangle used by the description.
-        static RectangleF GetRect(PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
+        static RectangleF GetRect(PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
         {
             // Create the renderer.
             DescriptionRenderer renderer = new DescriptionRenderer(symbolDB);
@@ -2068,6 +2069,7 @@ namespace PurplePen
             renderer.DescriptionKind = kind;
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
+            renderer.NumberOfColumns = numColumns;
 
             SizeF size = renderer.Measure();
             return new RectangleF(topLeft.X, topLeft.Y - size.Height, size.Width, size.Height);
@@ -2088,6 +2090,12 @@ namespace PurplePen
             {
                 return renderer.CellSize;
             }
+        }
+
+        // Get the number of columns
+        public int NumberOfColumns
+        {
+            get { return renderer.NumberOfColumns; }
         }
 
         // Add the description to the map. Uses the map rendering functionality in the renderer.
@@ -2120,6 +2128,8 @@ namespace PurplePen
             // Check description kind
             if (renderer.DescriptionKind != other.renderer.DescriptionKind)
                 return false;
+            if (renderer.NumberOfColumns != other.renderer.NumberOfColumns)
+                return false;
 
             // Check description 
             DescriptionLine[] myDesc = renderer.Description;
@@ -2139,6 +2149,14 @@ namespace PurplePen
         public override int GetHashCode()
         {
             throw new NotSupportedException("The method or operation is not supported.");
+        }
+
+        public override string ToString()
+        {
+            string text = base.ToString();
+            if (NumberOfColumns > 1)
+                text += string.Format(" columns:{0}", NumberOfColumns);
+            return text;
         }
     }
 

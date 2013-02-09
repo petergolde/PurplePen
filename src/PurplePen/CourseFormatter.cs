@@ -476,7 +476,7 @@ namespace PurplePen
 
             DescriptionKind descKind;
             DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind);
-            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
+            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind, special.numColumns);
             courseObj.layer = CourseLayer.Descriptions;
             return courseObj;
         }

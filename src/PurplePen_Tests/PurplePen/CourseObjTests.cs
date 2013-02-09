@@ -478,7 +478,7 @@ namespace PurplePen.Tests
         }
 
         // Create a description course object to use in testing.
-        DescriptionCourseObj CreateDescriptionCourseObj()
+        DescriptionCourseObj CreateDescriptionCourseObj(int numColumns = 1)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
@@ -489,16 +489,29 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F / numColumns, symbolDB, description, DescriptionKind.Symbols, numColumns);
         }
 
         [TestMethod]
         public void Description()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(1);
             CheckRenderBitmap(courseobj, "description", Color.Wheat);
         }
-	
+
+        [TestMethod]
+        public void Description2Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CheckRenderBitmap(courseobj, "description_2col", Color.Wheat);
+        }
+
+        [TestMethod]
+        public void Description3Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CheckRenderBitmap(courseobj, "description_3col", Color.Wheat);
+        }
 
         [TestMethod]
         public void ControlCircleDistance()
@@ -789,6 +802,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = CreateDescriptionCourseObj();
             AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=-2.39,Width=7.29,Height=6.39}");
+        }
+
+        [TestMethod]
+        public void DescriptionDump2()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.155,Width=7.515,Height=1.845} columns:2");
         }
 	
 
@@ -1145,6 +1165,13 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj();
             CheckHighlightBitmap(courseobj, "description_highlight");
         }
+
+        [TestMethod]
+        public void DescriptionHighlight2Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CheckHighlightBitmap(courseobj, "description_highlight_2col");
+        }
 	
 
 
@@ -1436,33 +1463,34 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
             CourseObj courseobj3 = (CourseObj) courseobj1.Clone();
-            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols);
-            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols);
-            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text);
+            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text, 1);
 
             undomgr.BeginCommand(12, "move control");
             ChangeEvent.ChangeControlLocation(eventDB, ControlId(11), new PointF(4, 8));
             undomgr.EndCommand(12);
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
 
             undomgr.BeginCommand(13, "change description");
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.4");
             undomgr.EndCommand(13);
 
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
 
             undomgr.BeginCommand(13, "change description");  // change description back
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.2");
             undomgr.EndCommand(13);
 
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj10 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 2);
 
             Assert.AreEqual(courseobj1, courseobj2);
             Assert.AreEqual(courseobj1, courseobj3);
@@ -1472,6 +1500,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(courseobj1, courseobj7);
             Assert.AreNotEqual(courseobj1, courseobj8);
             Assert.AreEqual(courseobj1, courseobj9);
+            Assert.AreNotEqual(courseobj9, courseobj10);
         }
 
         [TestMethod]

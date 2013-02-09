@@ -1126,12 +1126,13 @@ namespace PurplePen
     {
         public SpecialKind kind;            // The kind of special.
         public PointF[] locations;          // The location of the control; might be one or more coordinates (two for a rectangle)
-        public float orientation;            // For crossing points only, the orientation in degress
+        public float orientation;           // For crossing points only, the orientation in degress
         public bool allCourses;             // If true, special is in all courses.
-        public CourseDesignator[] courses;   // If allCourses is false, an array of the course designators this special is in.
-        public string text;                      // for text objects, the text.
+        public CourseDesignator[] courses;  // If allCourses is false, an array of the course designators this special is in.
+        public string text;                 // for text objects, the text.
         public string fontName;             // for text objects, the font name
-        public bool fontBold, fontItalic;  // for text objects, the font style
+        public bool fontBold, fontItalic;   // for text objects, the font style
+        public int numColumns = 1;          // for description objects, the number of columns.
 
         public Special()
         {
@@ -1184,6 +1185,11 @@ namespace PurplePen
             if (kind == SpecialKind.Text) {
                 if (fontName == null || fontName == "")
                     throw new ApplicationException(string.Format("Text object {0} should have non-null font name", id));
+            }
+
+            if (kind == SpecialKind.Dangerous) {
+                if (numColumns < 1 || numColumns > 100)
+                    throw new ApplicationException(string.Format("Description object {0} should have 1-100 columns", id));
             }
 
             if (allCourses) {
@@ -1254,6 +1260,8 @@ namespace PurplePen
                 return false;
             if (other.fontItalic != fontItalic)
                 return false;
+            if (other.numColumns != numColumns)
+                return false;
             if ((other.courses == null || courses == null)) {
                 if (other.courses != courses)
                     return false;
@@ -1304,7 +1312,7 @@ namespace PurplePen
             List<PointF> locationList = new List<PointF>();
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "text", "font", "location", "courses")) {
+            while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses")) {
                 switch (xmlinput.Name) {
                 case "text":
                     text = xmlinput.GetContentString();
@@ -1321,6 +1329,11 @@ namespace PurplePen
                     float x = xmlinput.GetAttributeFloat("x");
                     float y = xmlinput.GetAttributeFloat("y");
                     locationList.Add(new PointF(x, y));
+                    xmlinput.Skip();
+                    break;
+
+                case "appearance":
+                    numColumns = xmlinput.GetAttributeInt("columns", 1);
                     xmlinput.Skip();
                     break;
 
@@ -1389,6 +1402,12 @@ namespace PurplePen
             // Write sub-elements
             if (text != null) {
                 xmloutput.WriteElementString("text", text);
+            }
+
+            if (kind == SpecialKind.Descriptions && numColumns > 1) {
+                xmloutput.WriteStartElement("appearance");
+                xmloutput.WriteAttributeString("columns", XmlConvert.ToString(numColumns));
+                xmloutput.WriteEndElement();
             }
 
             if (kind == SpecialKind.Text) {
