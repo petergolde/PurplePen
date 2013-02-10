@@ -267,7 +267,7 @@ namespace PurplePen
             throw new NotSupportedException("The method or operation is not supported.");
         }
 
-        public object Clone()
+        public virtual object Clone()
         {
             return base.MemberwiseClone();
         }
@@ -800,10 +800,9 @@ namespace PurplePen
             return result;
         }
 
-        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
-        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        protected static void DrawBorderedRectangle(Graphics g, Matrix xformWorldToPixel, RectangleF rectToDraw, Brush brush, bool erasing)
         {
-            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rect);
+            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rectToDraw);
 
             // Get a brush to fill the interior with.
             Brush fillBrush;
@@ -820,6 +819,12 @@ namespace PurplePen
             using (Pen pen = new Pen(brush, 2)) {
                 g.DrawRectangle(pen, xformedRect.Left, xformedRect.Top, xformedRect.Width, xformedRect.Height);
             }
+        }
+
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            DrawBorderedRectangle(g, xformWorldToPixel, rect, brush, erasing);
         }
 
         // Get the bounds of the highlight.
@@ -907,7 +912,7 @@ namespace PurplePen
     // A rectangle that preserves aspect when resized.
     abstract class AspectPreservingRectCourseObj: RectCourseObj
     {
-        private float aspect;                    // aspect to maintain: width / height
+        protected float aspect;                    // aspect to maintain: width / height
 
         public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
             : base (controlId, courseControlId, specialId, scaleRatio, appearance, rect)
@@ -2044,7 +2049,7 @@ namespace PurplePen
     class DescriptionCourseObj: AspectPreservingRectCourseObj
     {
         DescriptionRenderer renderer;        // The description renderer that holds the description.
-        float cellSizeRatio;                        // ratio of cell size to width.
+        float[] aspectAnglesByColumns;       // array describing the angles that are closest for each number of columns.
 
         // Create a new description course object.
         public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
@@ -2057,7 +2062,7 @@ namespace PurplePen
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
             renderer.NumberOfColumns = numColumns;
-            cellSizeRatio = rect.Width / cellSize;
+            aspectAnglesByColumns = ComputeAspectAngles();
         }
 
         // Get the rectangle used by the description.
@@ -2075,12 +2080,27 @@ namespace PurplePen
             return new RectangleF(topLeft.X, topLeft.Y - size.Height, size.Width, size.Height);
         }
 
+        public override object Clone()
+        {
+            DescriptionCourseObj c = (DescriptionCourseObj)(base.Clone());
+            c.renderer = (DescriptionRenderer) this.renderer.Clone();
+            return c;
+        }
+
         // The user has updated the rectangle. Update the cell size to match.
         public override void RectangleUpdating(ref RectangleF newRect, bool dragAll, bool dragLeft, bool dragTop, bool dragRight, bool dragBottom)
         {
+            int bestNumberOfColumns = BestNumberOfColumns(newRect.Size);
+
+            if (bestNumberOfColumns != renderer.NumberOfColumns) {
+                renderer.NumberOfColumns = bestNumberOfColumns;
+                SizeF size = renderer.Measure();
+                aspect = size.Width / size.Height;
+            }
+
             base.RectangleUpdating(ref newRect, dragAll, dragLeft, dragTop, dragRight, dragBottom);
 
-            renderer.CellSize = newRect.Width / cellSizeRatio;
+            renderer.CellSize = newRect.Height / renderer.ColumnLengthInCells;
         }
 
         // Get the cell size.
@@ -2114,6 +2134,53 @@ namespace PurplePen
         protected override void AddToMap(Map map, SymDef symdef)
         {
             throw new NotSupportedException("not supported");
+        }
+
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            if (NumberOfColumns == 1)
+                base.Highlight(g, xformWorldToPixel, brush, erasing);
+            else {
+                RectangleF currentColumnRect = rect;
+                currentColumnRect.Width = renderer.ColumnWidth;
+                for (int i = 0; i < renderer.NumberOfColumns; ++i) {
+                    DrawBorderedRectangle(g, xformWorldToPixel, currentColumnRect, brush, erasing);
+                    currentColumnRect.X += renderer.ColumnWidth + renderer.ColumnGap;
+                }
+            }
+        }
+
+        private float[] ComputeAspectAngles()
+        {
+            int numColumns = renderer.NumberOfColumns;
+            int maxColumns = Math.Max(1, (renderer.Description.Length - 1) / 4);  // maximum number of columns.
+            float[] aspectAnglesByColumns = new float[maxColumns + 1];
+            for (int i = 1; i <= maxColumns; ++i) {
+                renderer.NumberOfColumns = i;
+                SizeF size = renderer.Measure();
+                aspectAnglesByColumns[i] = (float)Math.Atan2(size.Height, size.Width);
+            }
+
+            renderer.NumberOfColumns = numColumns;
+            return aspectAnglesByColumns;
+        }
+
+        private int BestNumberOfColumns(SizeF currentSize)
+        {
+            float aspectAngle = (float) Math.Atan2(currentSize.Height, currentSize.Width);
+
+            float bestAngleDiff = Math.Abs(aspectAnglesByColumns[1] - aspectAngle);
+            int bestColumns = 1;
+            for (int i = 2; i < aspectAnglesByColumns.Length; ++i) {
+                float angleDiff = Math.Abs(aspectAnglesByColumns[i] - aspectAngle);
+                if (angleDiff < bestAngleDiff) {
+                    bestAngleDiff = angleDiff;
+                    bestColumns = i;
+                }
+            }
+
+            return bestColumns;
         }
 
         // Are we equal?

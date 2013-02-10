@@ -72,7 +72,7 @@ namespace PurplePen
     /// <summary>
     /// Renders a CourseView onto a Graphics.
     /// </summary>
-    class DescriptionRenderer: IPrintableRectangle
+    class DescriptionRenderer: IPrintableRectangle, ICloneable
     {
         private SymbolDB symbolDB;
 
@@ -94,6 +94,7 @@ namespace PurplePen
         private object[] fonts = new object[NUM_FONTS];
         private object thickPen, thinPen;
 
+        // Note: If you add new state -- be sure to update Clone().
         private float margin = 3;           
         private float cellSize = 30;
         private int numColumns = 1;
@@ -106,6 +107,18 @@ namespace PurplePen
         public DescriptionRenderer(SymbolDB symbolDB)
         {
             this.symbolDB = symbolDB;
+        }
+
+        public object Clone()
+        {
+            DescriptionRenderer n = new DescriptionRenderer(symbolDB);
+            n.margin = this.margin;
+            n.cellSize = this.cellSize;
+            n.numColumns = this.numColumns;
+            n.description = this.description;
+            n.descriptionKind = this.descriptionKind;
+            n.replaceMultiplySign = this.replaceMultiplySign;
+            return n;
         }
 
         // The margin around the side, in device units.
@@ -140,6 +153,16 @@ namespace PurplePen
         {
             get { return descriptionKind; }
             set { descriptionKind = value; }
+        }
+
+        public float ColumnWidth
+        {
+            get { return cellSize * WidthInCells(); }
+        }
+
+        public float ColumnGap
+        {
+            get { return cellSize * columnGap; }
         }
 
         // Measure the size of the description. Includes the margins and multi-column splitting.
@@ -457,7 +480,7 @@ namespace PurplePen
         }
 
         // Number of boxes down a full column.
-        private int ColumnLengthInCells
+        public int ColumnLengthInCells
         {
             get
             {
@@ -477,7 +500,7 @@ namespace PurplePen
                 int numberOfLongColumns = description.Length % numColumns;
                 if (numberOfLongColumns == 0)
                     numberOfLongColumns = numColumns;
-                int firstColumnLength = (description.Length + (numColumns - 1)) / numColumns;
+                int firstColumnLength = ColumnLengthInCells;
                 while (line >= ((column < numberOfLongColumns) ? firstColumnLength : firstColumnLength - 1)) {
                     line -= (column < numberOfLongColumns) ? firstColumnLength : firstColumnLength - 1;
                     ++column;

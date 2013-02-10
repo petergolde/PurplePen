@@ -1568,6 +1568,26 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeDescriptionColumns()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            Assert.AreEqual(1, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+
+            undomgr.BeginCommand(11, "change columns");
+            ChangeEvent.ChangeDescriptionColumns(eventDB, SpecialId(1), 3);
+            undomgr.EndCommand(11);
+            eventDB.Validate();
+
+            Assert.AreEqual(3, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(1, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+        }
+
+        [TestMethod]
         public void DeleteSpecial()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1667,7 +1687,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30,40), 4.5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30,40), 4.5F, 2);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1678,6 +1698,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(34.5F, 40F), special.locations[1]);
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
+            Assert.AreEqual(2, special.numColumns);
             Assert.IsTrue(special.allCourses);
 
             undomgr.Undo();
@@ -1692,7 +1713,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(1), Designator(3) }, new PointF(0, -25.5F), 5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(1), Designator(3) }, new PointF(0, -25.5F), 5F, 1);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1703,6 +1724,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(5, -25.5F), special.locations[1]);
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
+            Assert.AreEqual(1, special.numColumns);
             Assert.IsFalse(special.allCourses);
             TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(1), Designator(3) });
 
@@ -1719,7 +1741,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\mapexchange1.ppen");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) }, new PointF(0, -25.5F), 5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) }, new PointF(0, -25.5F), 5F, 1);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1744,7 +1766,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\mapexchange1.ppen");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) }, new PointF(0, -25.5F), 5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) }, new PointF(0, -25.5F), 5F, 1);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1941,9 +1963,9 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(7126, "Add descriptions");
 
-            desc1 = ChangeEvent.AddDescription(eventDB, true, null, new PointF(0, 0), 5);
-            desc2 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(3), Designator(5) }, new PointF(0, 0), 5);
-            desc3 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(5), Designator(1) }, new PointF(0, 0), 5);
+            desc1 = ChangeEvent.AddDescription(eventDB, true, null, new PointF(0, 0), 5, 1);
+            desc2 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(3), Designator(5) }, new PointF(0, 0), 5, 1);
+            desc3 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(5), Designator(1) }, new PointF(0, 0), 5, 1);
 
             undomgr.EndCommand(7126);
 

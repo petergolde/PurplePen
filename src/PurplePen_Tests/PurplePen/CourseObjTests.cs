@@ -1172,9 +1172,14 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj(2);
             CheckHighlightBitmap(courseobj, "description_highlight_2col");
         }
+
+        [TestMethod]
+        public void DescriptionHighlight3Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CheckHighlightBitmap(courseobj, "description_highlight_3col");
+        }
 	
-
-
         // Render to a bitmap and check against the saved version.
         internal void CheckOffsetBitmap(CourseObj courseobj, string basename, Color backColor)
         {

@@ -554,7 +554,18 @@ namespace PurplePen
             eventDB.ReplaceSpecial(specialId, special);
         }
 
+        // Change the number of columns of a descriptions
+        public static void ChangeDescriptionColumns(EventDB eventDB, Id<Special> specialId, int numColumns)
+        {
+            Special special = eventDB.GetSpecial(specialId);
 
+            Debug.Assert(special.kind == SpecialKind.Descriptions);
+
+            special = (Special)special.Clone();
+            special.numColumns = numColumns;
+
+            eventDB.ReplaceSpecial(specialId, special);
+        }
 
         // Remove a control from a course. Caller must ensure the current is actually in this course.
         public static void RemoveCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdRemove)
@@ -771,12 +782,13 @@ namespace PurplePen
         }
 
         // Add a description to the event. 
-        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize)
+        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize, int numColumns)
         {
             Special special = new Special(SpecialKind.Descriptions, new PointF[2] { topLeft, new PointF(topLeft.X + cellSize, topLeft.Y) });
             special.allCourses = allCourses;
             if (! allCourses)
                 special.courses = courses;
+            special.numColumns = numColumns;
             Id<Special> specialId =  eventDB.AddSpecial(special);
 
             // Descriptions special are unique per course -- enforce this.

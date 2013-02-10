@@ -1179,6 +1179,18 @@ namespace PurplePen
             undoMgr.EndCommand(871);
         }
 
+        // Move a descripion to a new location, and possibly change the number of columns also.
+        public void MoveSpecial(Id<Special> specialId, PointF[] newLocations, int numColumns)
+        {
+            undoMgr.BeginCommand(871, CommandNameText.MoveObject);
+            ChangeEvent.ChangeSpecialLocations(eventDB, specialId, newLocations);
+            int currentNumColumns = QueryEvent.GetDescriptionColumns(eventDB, specialId);
+            if (numColumns != currentNumColumns) {
+                ChangeEvent.ChangeDescriptionColumns(eventDB, specialId, numColumns);
+            }
+            undoMgr.EndCommand(871);
+        }
+
         // Move a special to a new location by translation
         public void MoveSpecialDelta(Id<Special> specialId, float deltaX, float deltaY)
         {
