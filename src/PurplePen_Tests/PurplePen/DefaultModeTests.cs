@@ -515,17 +515,84 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-76.66664,Width=59.99999,Height=126.6666}",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-77.41177,Width=60.35295,Height=127.4118}",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
             // Make sure the description is now sized.
             PointF[] newLocations = eventDB.GetSpecial(SpecialId(8)).locations;
             Assert.AreEqual(new PointF(-50,50), newLocations[0]);
-            Assert.AreEqual(-42.5925, newLocations[1].X, 0.001);
+            Assert.AreEqual(-42.549, newLocations[1].X, 0.001);
             Assert.AreEqual(50, newLocations[1].Y);
         }
 
+
+        [TestMethod]
+        // Size a description with the mouse.
+        public void SizeDescription2()
+        {
+            Setup("modes\\marymoor2.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on area to select it.
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-24, 12), 0.1F);
+
+            // Should have moving mouse cursor
+            Cursor cursor = controller.GetMouseCursor(new PointF(-24, 12), 0.1F);
+            Assert.AreSame(Cursors.SizeAll, cursor);
+
+            // Over size handle should have sizing cursor
+            ui.MouseMoved(-9F, 50.0F, 0.3F);
+            cursor = controller.GetMouseCursor(new PointF(-9F, 50.0F), 0.3F);
+            Assert.AreSame(Cursors.SizeNESW, cursor);
+
+            // And the moving description.
+            Assert.AreEqual(StatusBarText.SizeRectangle, controller.StatusText);
+
+            // Click on size handle to drag it.
+            dragAction = controller.LeftButtonDown(new PointF(-9F, 50.0F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
+            Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
+
+            // Drag the corner
+            controller.LeftButtonDrag(new PointF(-143F, -3.4F), 0.3F);
+            ui.MouseMoved(-143F, -3.4F, 0.1F);
+
+            // Check the highlights
+            CourseObj[] highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-143.5,Y=-35.5,Width=133.1361,Height=32.1} columns:3",
+                                        highlights[0].ToString());
+            // Check the status text
+            Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
+            // Check the cursor
+            cursor = controller.GetMouseCursor(new PointF(-143F, -3.4F), 0.3F);
+            Assert.AreSame(Cursors.SizeNESW, cursor);
+
+            // Finish dragging the size point
+            controller.LeftButtonEndDrag(new PointF(-105F, -47F), 0.3F);
+            ui.MouseMoved(-105F, -47F, 0.3F);
+            Assert.AreEqual(StatusBarText.SizeRectangle, controller.StatusText);
+
+            // Check the highlights
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-47.22101,Width=55.91665,Height=13.48188} columns:3",
+                                        highlights[0].ToString());
+            Assert.AreEqual(8, highlights[0].specialId.id);
+
+            // Make sure the description is now sized.
+            PointF[] newLocations = eventDB.GetSpecial(SpecialId(8)).locations;
+            Assert.AreEqual(new PointF(-105F, -33.7391319F), newLocations[0]);
+            Assert.AreEqual(-102.79F, newLocations[1].X, 0.001);
+            Assert.AreEqual(-33.739F, newLocations[1].Y, 0.001);
+
+            // Should be 3 columns.
+            Assert.AreEqual(3, eventDB.GetSpecial(SpecialId(8)).numColumns);
+        }
 
         [TestMethod]
         // Move a leg bend with the mouse.

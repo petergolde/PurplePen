@@ -810,6 +810,66 @@ namespace PurplePen.Tests
             Assert.IsInstanceOfType(   highlights[0],   typeof(DescriptionCourseObj));
         }
 
+        // Add a control description to all controls.
+        [TestMethod]
+        public void AddControlDescription2()
+        {
+            CourseObj[] highlights;
+
+            // Select All Controls.
+            controller.SelectTab(0);
+
+            // Begin adding a description.
+            controller.BeginAddDescriptionMode();
+
+            // Check the status text.
+            Assert.AreEqual(StatusBarText.AddingDescription, controller.StatusText);
+
+            // Click the mouse and drag.
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(10, -70), 0.1F));
+            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(10, -70), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(10, -70), 0.1F));
+
+            controller.LeftButtonDrag(new PointF(130, -100), 0.1F);
+
+            // Check the highlights.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            DescriptionCourseObj obj = (DescriptionCourseObj)highlights[0];
+            Assert.AreEqual(10, obj.rect.Left);
+            Assert.AreEqual(-70, obj.rect.Bottom);
+            Assert.AreEqual(130F, obj.rect.Right, 0.01F);
+            Assert.AreEqual(-105.75, obj.rect.Top, 0.01F);
+
+            // Finish the drag.
+            controller.LeftButtonEndDrag(new PointF(130, -100), 0.1F);
+
+            // There should be a description, with the given location.
+            // Is should be selected.
+            int countDescriptions = 0;
+            EventDB eventDB = controller.GetEventDB();
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Descriptions) {
+                    ++countDescriptions;
+                    Assert.AreEqual(10, special.locations[0].X);
+                    Assert.AreEqual(-70, special.locations[0].Y);
+                    Assert.AreEqual(13.575F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(-70, special.locations[1].Y);
+                    Assert.AreEqual(4, special.numColumns);
+                    Assert.IsFalse(special.allCourses);
+                    Assert.AreEqual(1, special.courses.Length);
+                    Assert.AreEqual(CourseDesignator.AllControls, special.courses[0]);
+                }
+            }
+            Assert.AreEqual(1, countDescriptions);
+
+            // The descriiption should be highlighted.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.IsInstanceOfType(highlights[0], typeof(DescriptionCourseObj));
+        }
+
 
         // Add a mandatory crossing point to a course. Adds a newly created crossing point.
         [TestMethod]
