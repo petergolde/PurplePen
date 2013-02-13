@@ -189,7 +189,7 @@ namespace PurplePen
 
             int row, col;
             ColumnAndRow(firstLine, out row, out col);
-            RectangleF rect = new RectangleF((WidthInCells() + columnGap) * (col - 1), row * cellSize, WidthInCells() * cellSize, cellSize * (lastLine - firstLine + 1));
+            RectangleF rect = new RectangleF((WidthInCells() + columnGap) * cellSize * col, row * cellSize, WidthInCells() * cellSize, cellSize * (lastLine - firstLine + 1));
             rect.Offset(margin, margin);
             return rect;
         }
