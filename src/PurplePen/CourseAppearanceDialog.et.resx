@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Tavaline</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Paks</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>KP numbri stiil:</value>
+  </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>KP tunnusnumbri kõrgus:</value>
   </data>
@@ -166,6 +175,6 @@
     <value>Eelvaade</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Muuda raja kuvamist</value>
+    <value>Muuda raja sümbolite väljanägemist</value>
   </data>
 </root>

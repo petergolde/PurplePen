@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddingControl" xml:space="preserve">
+    <value>左クリックで新しくコントロールを配置します</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>左クリックで既存のコントロール"{0}"をコースに追加します</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>左クリックで新しくスタートを配置します</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>左クリックで既存のスタートをコースに追加します</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>左クリックで新しくフィニッシュを追加します</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>左クリックで既存のフィニッシュをコースに追加します</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>左クリックで新しく横断地点を追加します</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>左クリックで既存の横断地点をコースに追加します</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>左クリックで新しくオブジェクトを追加します</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>マウスの左ボタンを押さえたままドラッグしてディスクリプションを作成します</value>
+  </data>
 </root>

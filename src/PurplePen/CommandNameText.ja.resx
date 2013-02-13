@@ -120,4 +120,34 @@
   <data name="ChangeScale" xml:space="preserve">
     <value>地図の縮尺を更新する</value>
   </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>コントロールを追加</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>スタートを追加</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>フィニッシュを追加</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>横断地点を追加</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>オブジェクトを追加</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>新規コース</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>新規イベントを作成</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>ディスクリプションのテキストをカスタマイズする</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>テキストラインを追加</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>ディスクリプションの言語を変更する</value>
+  </data>
 </root>

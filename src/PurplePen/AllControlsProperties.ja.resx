@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
+    <value>ディスクリプションの表示:</value>
+  </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
     <value>地図を印刷する縮尺:</value>
   </data>
@@ -131,5 +134,11 @@
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>記号とテキスト</value>
+  </data>
+  <data name="appearanceGroupBox.Text" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
+    <value>この設定は地図と全コントロールのディスクリプションがどのように印刷されるかを変更します。</value>
   </data>
 </root>

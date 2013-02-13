@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Loo</value>
+    <value>Tee</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Katkesta</value>
@@ -140,5 +140,20 @@
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Kausta kus asub Purple Pen fail</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Faili nimi</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sisesta nimi (ilma .xml või .gif laiendita) mõlema RouteGadgeti faili jaoks:</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Loe infot RouteGadgeti kohta</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget vajab kaardi (.gif) ja IOF XML (.xml) faili. Vali nimi ja kaust kuhu failid salvestatakse.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tee RouteGadgeti failid</value>
   </data>
 </root>

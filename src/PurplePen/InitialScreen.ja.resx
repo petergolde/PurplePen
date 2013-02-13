@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>既存のイベントを開く...</value>
+  </data>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>新規イベントを作成...</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>サンプルイベントを開く</value>
+  </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>前回使用したイベントを開く</value>
   </data>
 </root>
