@@ -126,6 +126,7 @@ for the symbols.
 	<language lang="fi" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">suomi</language>
 	<language lang="bg" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="мъжки,женски,среден">български (България)</language>
 	<language lang="ro" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">română</language>
+	<language lang="et" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">eesti</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
@@ -144,6 +145,7 @@ for the symbols.
 		<name lang="fi">Radan pituus</name>
 		<name lang="bg">Дължина на маршрута</name>
 		<name lang="ro">Lungime traseu</name>
+		<name lang="et">Raja pikkus</name>
 		<text lang="en">Length {0}</text>
 		<text lang="fr">Longueur {0}</text>
 		<text lang="en-GB">Length {0}</text>
@@ -154,6 +156,7 @@ for the symbols.
 		<text lang="fi">Pituus {0}</text>
 		<text lang="bg">дължина на маршрута {0}</text>
 		<text lang="ro">Lungime {0}</text>
+		<text lang="et">Pikkus {0}</text>
 	</symbol>
 
 	<!-- Used for the course length and climb
@@ -171,6 +174,7 @@ for the symbols.
 		<name lang="fi">Radan pituus ja nousu</name>
 		<name lang="bg">Дължина на маршрута и сборно изкачване</name>
 		<name lang="ro">Lungimea și diferența de nivel</name>
+		<name lang="et">Raja pikkus ja tõusude summa</name>
 		<text lang="en">Length {0}, climb {1}</text>
 		<text lang="fr">Longueur {0}, dénivelée {1}</text>
 		<text lang="en-GB">{0},  {1}</text>
@@ -181,6 +185,7 @@ for the symbols.
 		<text lang="fi">Pituus {0}, nousu {1}</text>
 		<text lang="bg">дължина на маршрута {0}, сборно изкачване {1}</text>
 		<text lang="ro">Lungime {0}, diferență de nivel {1}</text>
+		<text lang="et">Pikkus {0}, tõus {1}</text>
 	</symbol>
 
 	<!-- Used for the number of controls in score course or All Controls
@@ -197,6 +202,7 @@ for the symbols.
 		<name lang="fi">Rastien määrä</name>
 		<name lang="bg">Брой контролни точки</name>
 		<name lang="ro">Numărul de posturi</name>
+		<name lang="et">Kontrollpunktide arv</name>
 		<text lang="en">{0} controls</text>
 		<text lang="fr">{0} postes</text>
 		<text lang="en-GB">{0} controls</text>
@@ -207,6 +213,7 @@ for the symbols.
 		<text lang="fi">{0} rastia</text>
 		<text lang="bg">{0} контролни точки</text>
 		<text lang="ro">{0} posturi</text>
+		<text lang="et">{0} KPd</text>
 	</symbol>
 
 	<!-- Used for the total score in a score course
@@ -223,6 +230,7 @@ for the symbols.
 		<name lang="fi">Pisteiden määrä</name>
 		<name lang="bg">Брой точки</name>
 		<name lang="ro">Numărul de Puncte</name>
+		<name lang="et">Punktide arv</name>
 		<text lang="en">{0} points</text>
 		<text lang="fr">{0} points</text>
 		<text lang="en-GB">{0} points</text>
@@ -233,6 +241,7 @@ for the symbols.
 		<text lang="fi">{0} pistettä</text>
 		<text lang="bg">{0} точки</text>
 		<text lang="ro">{0} puncte</text>
+		<text lang="et">{0} punkti</text>
 	</symbol>
 
 	<!-- Used when regular symbols are present in both column D and E, but no crossing/junction/between
@@ -251,6 +260,7 @@ for the symbols.
 		<name lang="fi">Ja</name>
 		<name lang="bg">И</name>
 		<name lang="ro">Și</name>
+		<name lang="et">ja</name>
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
 		<text lang="en-GB">{0} and {1}</text>
@@ -261,6 +271,7 @@ for the symbols.
 		<text lang="fi">{0} ja {1}</text>
 		<text lang="bg">{0} и {1}</text>
 		<text lang="ro">{0} și {1}</text>
+		<text lang="et">{0} ja {1}</text>
 	</symbol>
 
 
@@ -282,6 +293,7 @@ for the symbols.
 		<name lang="fi">Lähtö</name>
 		<name lang="bg">Старт</name>
 		<name lang="ro">Start</name>
+		<name lang="et">Start</name>
 		<text lang="en">start</text>
 		<text lang="fr">départ </text>
 		<text lang="en-GB">start</text>
@@ -292,6 +304,7 @@ for the symbols.
 		<text lang="fi">lähtö</text>
 		<text lang="bg">старт</text>
 		<text lang="ro">start</text>
+		<text lang="et">start</text>
 		<polygon thickness="12.5" corners="sharp">
 			<point x="-56" y="65" />
 			<point x="-56" y="-65" />
@@ -316,6 +329,7 @@ for the symbols.
 		<name lang="fi">Pohjoinen</name>
 		<name lang="bg">Северният</name>
 		<name lang="ro">Nordic</name>
+		<name lang="et">Põhjapoolne</name>
 		<text lang="en">N {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Nord</text>
 		<text lang="fr" gender="masculin">{0}, le plus au Nord</text>
@@ -329,6 +343,7 @@ for the symbols.
 		<text lang="bg" gender="женски">северната {0}</text>
 		<text lang="bg" gender="мъжки">северният {0}</text>
 		<text lang="ro">N {0}</text>
+		<text lang="et">Põhjapoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -351,6 +366,7 @@ for the symbols.
 		<name lang="fi">Koillinen</name>
 		<name lang="bg">Североизточният</name>
 		<name lang="ro">Nord-estic</name>
+		<name lang="et">Kirdepoolne</name>
 		<text lang="en">NE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NE</text>
 		<text lang="fr" gender="masculin">{0}, le plus au NE</text>
@@ -364,6 +380,7 @@ for the symbols.
 		<text lang="bg" gender="женски">СИ {0}</text>
 		<text lang="bg" gender="мъжки">СИ {0}</text>
 		<text lang="ro">NE {0}</text>
+		<text lang="et">Kirdepoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="-55" />
 			<point x="55" y="55" />
@@ -386,6 +403,7 @@ for the symbols.
 		<name lang="fi">Itäinen</name>
 		<name lang="bg">Източният</name>
 		<name lang="ro">Estic</name>
+		<name lang="et">Idapoolne</name>
 		<text lang="en">E {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Est</text>
 		<text lang="fr" gender="masculin">{0}, le plus à l'Est</text>
@@ -399,6 +417,7 @@ for the symbols.
 		<text lang="bg" gender="женски">източната {0}</text>
 		<text lang="bg" gender="мъжки">източният {0}</text>
 		<text lang="ro">E {0}</text>
+		<text lang="et">Idapoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -421,6 +440,7 @@ for the symbols.
 		<name lang="fi">Kaakkoinen</name>
 		<name lang="bg">Югоизточният</name>
 		<name lang="ro">Sud-estic</name>
+		<name lang="et">Kagupoolne</name>
 		<text lang="en">SE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SE</text>
 		<text lang="fr" gender="masculin">{0}, le plus au SE</text>
@@ -434,6 +454,7 @@ for the symbols.
 		<text lang="bg" gender="женски">ЮИ {0}</text>
 		<text lang="bg" gender="мъжки">ЮИ {0}</text>
 		<text lang="ro">SE {0}</text>
+		<text lang="et">Kagupoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="55" />
 			<point x="55" y="-55" />
@@ -456,6 +477,7 @@ for the symbols.
 		<name lang="fi">Eteläinen</name>
 		<name lang="bg">Южният</name>
 		<name lang="ro">Sudic</name>
+		<name lang="et">Lõunapoolne</name>
 		<text lang="en">S {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Sud</text>
 		<text lang="fr" gender="masculin">{0}, le plus au Sud</text>
@@ -469,6 +491,7 @@ for the symbols.
 		<text lang="bg" gender="женски">южната {0}</text>
 		<text lang="bg" gender="мъжки">южният {0}</text>
 		<text lang="ro">S {0}</text>
+		<text lang="et">Lõunapoolne {0}</text>
 	<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -491,6 +514,7 @@ for the symbols.
 		<name lang="fi">Lounainen</name>
 		<name lang="bg">Югозападният</name>
 		<name lang="ro">Sud-vestic</name>
+		<name lang="et">Edelapoolne</name>
 		<text lang="en">SW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SO</text>
 		<text lang="fr" gender="masculin">{0}, le plus au SO</text>
@@ -504,6 +528,7 @@ for the symbols.
 		<text lang="bg" gender="женски">ЮЗ {0}</text>
 		<text lang="bg" gender="мъжки">ЮЗ {0}</text>
 		<text lang="ro">SW {0}</text>
+		<text lang="et">Edelapoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="55" />
 			<point x="-55" y="-55" />
@@ -526,6 +551,7 @@ for the symbols.
 		<name lang="fi">Läntinen</name>
 		<name lang="bg">Западният</name>
 		<name lang="ro">Vestic</name>
+		<name lang="et">Läänepoolne</name>
 		<text lang="en">W {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Ouest</text>
 		<text lang="fr" gender="masculin">{0}, le plus à l'Ouest</text>
@@ -539,6 +565,7 @@ for the symbols.
 		<text lang="bg" gender="женски">западната {0}</text>
 		<text lang="bg" gender="мъжки">западният {0}</text>
 		<text lang="ro">W {0}</text>
+		<text lang="et">Läänepoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -561,6 +588,7 @@ for the symbols.
 		<name lang="fi">Luoteinen</name>
 		<name lang="bg">Северозападният</name>
 		<name lang="ro">Nord-vestic</name>
+		<name lang="et">Loodepoolne</name>
 		<text lang="en">NW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NO</text>
 		<text lang="fr" gender="masculin">{0}, le plus au NO</text>
@@ -574,6 +602,7 @@ for the symbols.
 		<text lang="bg" gender="женски">СЗ {0}</text>
 		<text lang="bg" gender="мъжки">СЗ {0}</text>
 		<text lang="ro">NW {0}</text>
+		<text lang="et">Loodepoolne {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="-55" />
 			<point x="-55" y="55" />
@@ -596,6 +625,7 @@ for the symbols.
 		<name lang="fi">Ylempi</name>
 		<name lang="bg">Горният</name>
 		<name lang="ro">Superior</name>
+		<name lang="et">Ülemine</name>
 		<text lang="en">upper {0}</text>
 		<text lang="fr" gender="féminin">{0} supérieure</text>
 		<text lang="fr" gender="masculin">{0} supérieur</text>
@@ -609,6 +639,7 @@ for the symbols.
 		<text lang="bg" gender="женски">горната {0}</text>
 		<text lang="bg" gender="мъжки">горният {0}</text>
 		<text lang="ro">superior {0}</text>
+		<text lang="et">ülemine {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -633,6 +664,7 @@ for the symbols.
 		<name lang="fi">Alempi</name>
 		<name lang="bg">Долният</name>
 		<name lang="ro">Inferior</name>
+		<name lang="et">Alumine</name>
 		<text lang="en">lower {0}</text>
 		<text lang="fr" gender="féminin">{0} inférieure</text>
 		<text lang="fr" gender="masculin">{0} inférieur</text>
@@ -646,6 +678,7 @@ for the symbols.
 		<text lang="bg" gender="женски">долната {0}</text>
 		<text lang="bg" gender="мъжки">долният {0}</text>
 		<text lang="ro">inferior {0}</text>
+		<text lang="et">alumine {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -670,6 +703,7 @@ for the symbols.
 		<name lang="fi">Keskimmäinen</name>
 		<name lang="bg">Средният</name>
 		<name lang="ro">Mijloc</name>
+		<name lang="et">Keskmine</name>
 		<text lang="en">middle {0}</text>
 		<text lang="fr" gender="féminin">{0} centrale</text>
 		<text lang="fr" gender="masculin">{0} central</text>
@@ -683,6 +717,7 @@ for the symbols.
 		<text lang="bg" gender="женски">средната {0}</text>
 		<text lang="bg" gender="мъжки">средният {0}</text>
 		<text lang="ro">mijloc {0}</text>
+		<text lang="et">keskmine {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-50" y="60" />
 			<point x="-50" y="-60" />
@@ -715,6 +750,7 @@ for the symbols.
 		<name lang="fi">Tasanne</name>
 		<name lang="bg">Тераса</name>
 		<name lang="ro">Terasa</name>
+		<name lang="et">Terass</name>
 		<text lang="en">terrace</text>
 		<text lang="en" plural="true">terraces</text>
 		<text lang="fr" plural="true" gender="féminin">terrasses</text>
@@ -734,6 +770,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">тераси</text>
 		<text lang="bg" gender="женски">тераса</text>
 		<text lang="ro">terasă</text>
+		<text lang="et" plural="true">terasside</text>
+		<text lang="et">terass</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="-70" />
 			<point x="-50" y="-30" />
@@ -768,6 +806,7 @@ for the symbols.
 		<name lang="fi">Nenä</name>
 		<name lang="bg">Нос, късо било</name>
 		<name lang="ro">Pinten</name>
+		<name lang="et">Nina</name>
 		<text lang="en">spur</text>
 		<text lang="en" plural="true">spurs</text>
 		<text lang="fr" plural="true" gender="masculin">éperons</text>
@@ -787,6 +826,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">къси била</text>
 		<text lang="bg" gender="мъжки">нос/късо било</text>
 		<text lang="ro">pinten</text>
+		<text lang="et" plural="true">ninade</text>
+		<text lang="et">nina</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-70" />
 			<point x="-60" y="-30" />
@@ -821,6 +862,7 @@ for the symbols.
 		<name lang="fi">Notko</name>
 		<name lang="bg">Дере</name>
 		<name lang="ro">Vâlcel</name>
+		<name lang="et">Orvand</name>
 		<text lang="en">reentrant</text>
 		<text lang="en" plural="true">reentrants</text>
 		<text lang="fr" plural="true" gender="masculin">rentrants</text>
@@ -840,6 +882,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">дерета</text>
 		<text lang="bg" gender="среден">дере</text>
 		<text lang="ro">vâlcel</text>
+		<text lang="et" plural="true">orvandite</text>
+		<text lang="et">orvand</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-70" />
 			<point x="-42" y="-73" />
@@ -868,6 +912,7 @@ for the symbols.
 		<name lang="fi">Irtomaarinne</name>
 		<name lang="bg">Земен откос</name>
 		<name lang="ro">Ruptură de teren</name>
+		<name lang="et">Järsak</name>
 		<text lang="en">earth bank</text>
 		<text lang="en" plural="true">earth banks</text>
 		<text lang="fr" plural="true" gender="masculin">talus raides</text>
@@ -887,6 +932,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">земни откоси</text>
 		<text lang="bg" gender="мъжки">земен откос</text>
 		<text lang="ro">ruptură de teren</text>
+		<text lang="et" plural="true">järsakute</text>
+		<text lang="et">järsak</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="20" />
 			<point x="-30" y="-10" />
@@ -922,6 +969,7 @@ for the symbols.
 		<name lang="fi">Kaivanto</name>
 		<name lang="bg">Кариера</name>
 		<name lang="ro">Carieră</name>
+		<name lang="et">Karjäär</name>
 		<text lang="en">quarry</text>
 		<text lang="en" plural="true">quarries</text>
 		<text lang="fr" plural="true" gender="féminin">carrières</text>
@@ -940,6 +988,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">кариери</text>
 		<text lang="bg" gender="женски">кариера</text>
 		<text lang="ro">carieră</text>
+		<text lang="et" plural="true">karjääride</text>
+		<text lang="et">karjäär</text>
 		<beziers thickness="12.5">
 			<point x="54" y="-60" />
 				<point x="93" y="5" />
@@ -978,6 +1028,7 @@ for the symbols.
 		<name lang="fi">Maavalli</name>
 		<name lang="bg">Земна дига</name>
 		<name lang="ro">Zid de pământ</name>
+		<name lang="et">Pinnasevall</name>
 		<text lang="en">earth wall</text>
 		<text lang="en" plural="true">earth walls</text>
 		<text lang="fr" plural="true" gender="féminin">levées de terre</text>
@@ -997,6 +1048,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">земни диги</text>
 		<text lang="bg" gender="женски">земна дига</text>
 		<text lang="ro">zid de pământ</text>
+		<text lang="et" plural="true">vallide</text>
+		<text lang="et">vall</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="70" y="0" />
@@ -1030,6 +1083,7 @@ for the symbols.
 		<name lang="fi">Uurre</name>
 		<name lang="bg">Овраг</name>
 		<name lang="ro">Viroagă</name>
+		<name lang="et">Uhteorg</name>
 		<text lang="en">gully</text>
 		<text lang="en" plural="true">gullies</text>
 		<text lang="fr" plural="true" gender="féminin">ravines</text>
@@ -1049,6 +1103,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">оврази</text>
 		<text lang="bg" gender="мъжки">овраг</text>
 		<text lang="ro">viroagă</text>
+		<text lang="et" plural="true">uhteorud</text>
+		<text lang="et">uhteorg</text>
 		<lines thickness="12.5">
 			<point x="40" y="-70" />
 			<point x="0" y="70" />
@@ -1067,6 +1123,7 @@ for the symbols.
 		<name lang="fi">Kuiva pieni uoma</name>
 		<name lang="bg">Канавка</name>
 		<name lang="ro">Viroagă mica</name>
+		<name lang="et">Väike uhteorg</name>
 		<text lang="en">small gully</text>
 		<text lang="en" plural="true">small gullies</text>
 		<text lang="fr" plural="true" gender="masculin">fossés secs</text>
@@ -1086,6 +1143,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">канавки</text>
 		<text lang="bg" gender="женски">канавка</text>
 		<text lang="ro">viroagă mică</text>
+		<text lang="et" plural="true">väikesed uhteorud</text>
+		<text lang="et">väike uhteorg</text>
 		<lines thickness="12.5">
 			<point x="-21" y="61" />
 			<point x="61" y="-21" />
@@ -1122,6 +1181,7 @@ for the symbols.
 		<name lang="fi">Kukkula</name>
 		<name lang="bg">Връх</name>
 		<name lang="ro">Mamelon</name>
+		<name lang="et">Küngas</name>
 		<text lang="en">hill</text>
 		<text lang="en" plural="true">hills</text>
 		<text lang="fr" plural="true" gender="féminin">collines</text>
@@ -1141,6 +1201,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">върхове</text>
 		<text lang="bg" gender="мъжки">връх</text>
 		<text lang="ro">mamelon</text>
+		<text lang="et" plural="true">künkad</text>
+		<text lang="et">küngas</text>
 		<beziers thickness="12.5">
 			<point x="0" y="48.21" />
 			<point x="40.71" y="48.21" />
@@ -1169,6 +1231,7 @@ for the symbols.
 		<name lang="fi">Kumpare</name>
 		<name lang="bg">Могилка, малко връхче</name>
 		<name lang="ro">Movilă</name>
+		<name lang="et">Tipp</name>
 		<text lang="en">knoll</text>
 		<text lang="en" plural="true">knolls</text>
 		<text lang="fr" plural="true" gender="féminin">buttes</text>
@@ -1188,6 +1251,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">могилки</text>
 		<text lang="bg" gender="женски">могилка</text>
 		<text lang="ro">movilă</text>
+		<text lang="et" plural="true">tipud</text>
+		<text lang="et">tipp</text>
 		<filled-circle radius="23">
 			<point x="0" y="0" />
 		</filled-circle>
@@ -1204,6 +1269,7 @@ for the symbols.
 		<name lang="fi">Satula</name>
 		<name lang="bg">Седло</name>
 		<name lang="ro">Șa</name>
+		<name lang="et">Sadul</name>
 		<text lang="en">saddle</text>
 		<text lang="en" plural="true">saddles</text>
 		<text lang="fr" plural="true" gender="masculin">cols ou passages</text>
@@ -1223,6 +1289,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">седла</text>
 		<text lang="bg" gender="среден">седло</text>
 		<text lang="ro">șa</text>
+		<text lang="et" plural="true">sadulad</text>
+		<text lang="et">sadul</text>
 		<beziers thickness="12.5">
 			<point x="-40" y="-70" />
 			<point x="-10" y="-30" />
@@ -1248,6 +1316,7 @@ for the symbols.
 		<name lang="fi">Suppa</name>
 		<name lang="bg">Понор</name>
 		<name lang="ro">Găvan</name>
+		<name lang="et">Lohk</name>
 		<text lang="en">depression</text>
 		<text lang="en" plural="true">depressions</text>
 		<text lang="fr" plural="true" gender="féminin">dépressions</text>
@@ -1267,6 +1336,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">понори</text>
 		<text lang="bg" gender="мъжки">понор</text>
 		<text lang="ro">găvan</text>
+		<text lang="et" plural="true">lohud</text>
+		<text lang="et">lohk</text>
 		<beziers thickness="12.5">
 			<point x="0" y="48.21" />
 			<point x="40.71" y="48.21" />
@@ -1303,6 +1374,7 @@ for the symbols.
 		<name lang="fi">Pieni suppa</name>
 		<name lang="bg">Малка яма (плитка дупка)</name>
 		<name lang="ro">Groapă mică</name>
+		<name lang="et">Väike lohk</name>
 		<text lang="en">small depression</text>
 		<text lang="en" plural="true">small depressions</text>
 		<text lang="fr" plural="true" gender="féminin">petites dépressions</text>
@@ -1322,6 +1394,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">малки ями</text>
 		<text lang="bg" gender="женски">малка яма</text>
 		<text lang="ro">groapă mică</text>
+		<text lang="et" plural="true">väikeste lohkude</text>
+		<text lang="et">väike lohk</text>
 		<beziers thickness="12.5">
 			<point x="-50" y="50" />
 			<point x="-75" y="0" />
@@ -1344,6 +1418,7 @@ for the symbols.
 		<name lang="fi">Kuoppa</name>
 		<name lang="bg">Дупка</name>
 		<name lang="ro">Groapă mare</name>
+		<name lang="et">Auk</name>
 		<text lang="en">pit</text>
 		<text lang="en" plural="true">pits</text>
 		<text lang="fr" plural="true" gender="masculin">trous</text>
@@ -1363,6 +1438,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">дупки</text>
 		<text lang="bg" gender="женски">дупка</text>
 		<text lang="ro">groapă mare</text>
+		<text lang="et" plural="true">aukude</text>
+		<text lang="et">auk</text>
 		<lines thickness="12.5">
 			<point x="-50" y="50" />
 			<point x="0" y="-50" />
@@ -1381,6 +1458,7 @@ for the symbols.
 		<name lang="fi">Pienimuotoinen alue</name>
 		<name lang="bg">Неравен терен / лисичи дупки</name>
 		<name lang="ro">Teren frământat</name>
+		<name lang="et">Tõngermaa</name>
 		<text lang="en">broken ground</text>
 		<text lang="en" plural="true">broken ground</text>
 		<text lang="fr" plural="true" gender="masculin">terrains accidentés</text>
@@ -1398,6 +1476,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">неравни терени/лисичи дупки</text>
 		<text lang="bg" gender="мъжки">неравен терен/лисичи дупки</text>
 		<text lang="ro">teren frământat</text>
+		<text lang="et" plural="true">tõngermaad</text>
+		<text lang="et">tõngermaa</text>
 		<beziers thickness="12.5">
 			<point x="-65" y="50" />
 			<point x="-75" y="30" />
@@ -1438,6 +1518,7 @@ for the symbols.
 		<name lang="fi">Muurahaispesä (tai termiittikeko)</name>
 		<name lang="bg">Мравуняк</name>
 		<name lang="ro">Mușuroi</name>
+		<name lang="et">Sipelgapesa</name>
 		<text lang="en">ant hill</text>
 		<text lang="en" plural="true">ant hills</text>
 		<text lang="fr" plural="true" gender="féminin">fourmilières</text>
@@ -1457,6 +1538,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">мравуняци</text>
 		<text lang="bg" gender="мъжки">мравуняк</text>
 		<text lang="ro">mușuroi</text>
+		<text lang="et" plural="true">sipelgapesade</text>
+		<text lang="et">sipelgapesa</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="70" y="0" />
@@ -1486,6 +1569,7 @@ for the symbols.
 		<name lang="fi">Jyrkänne</name>
 		<name lang="bg">Скала, скална стена</name>
 		<name lang="ro">Margine stâncoasă</name>
+		<name lang="et">Kaljud</name>
 		<text lang="en">cliff</text>
 		<text lang="en" plural="true">cliffs</text>
 		<text lang="fr" plural="true" gender="féminin">falaises</text>
@@ -1505,6 +1589,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">скали</text>
 		<text lang="bg" gender="женски">скала</text>
 		<text lang="ro">margine stâncoasă</text>
+		<text lang="et" plural="true">kaljude</text>
+		<text lang="et">kalju</text>
 		<lines thickness="12.5">
 			<point x="-70" y="-20" />
 			<point x="-70" y="20" />
@@ -1532,6 +1618,7 @@ for the symbols.
 		<name lang="fi">Kivipilari</name>
 		<name lang="bg">Канара</name>
 		<name lang="ro">Stâlp piatră</name>
+		<name lang="et">Suur kivi</name>
 		<text lang="en">rock pillar</text>
 		<text lang="en" plural="true">rock pillars</text>
 		<text lang="fr" plural="true" gender="féminin">aiguilles rocheuses</text>
@@ -1551,6 +1638,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">канари</text>
 		<text lang="bg" gender="женски">канара</text>
 		<text lang="ro">stâlp piatră</text>
+		<text lang="et" plural="true">suurete kivide</text>
+		<text lang="et">suur kivi</text>
 		<filled-polygon>
 			<point x="0" y="70" />
 			<point x="37" y="-70" />
@@ -1569,6 +1658,7 @@ for the symbols.
 		<name lang="fi">Luola</name>
 		<name lang="bg">Пещера</name>
 		<name lang="ro">Peșteră</name>
+		<name lang="et">Koobas</name>
 		<text lang="en">cave</text>
 		<text lang="en" plural="true">caves</text>
 		<text lang="fr" plural="true" gender="féminin">cavernes</text>
@@ -1588,6 +1678,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">пещери</text>
 		<text lang="bg" gender="женски">пещера</text>
 		<text lang="ro">peșteră</text>
+		<text lang="et" plural="true">koopad</text>
+		<text lang="et">koobas</text>
 		<lines thickness="12.5">
 			<point x="50" y="30" />
 			<point x="-50" y="0" />
@@ -1618,6 +1710,7 @@ for the symbols.
 		<name lang="fi">Kivi</name>
 		<name lang="bg">Камък</name>
 		<name lang="ro">Bolovan</name>
+		<name lang="et">Kivi</name>
 		<text lang="en">boulder</text>
 		<text lang="en" plural="true">boulders</text>
 		<text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
@@ -1637,6 +1730,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">камъни</text>
 		<text lang="bg" gender="мъжки">камък</text>
 		<text lang="ro">bolovan</text>
+		<text lang="et" plural="true">kivid</text>
+		<text lang="et">kivi</text>
 		<filled-polygon>
 			<point x="0" y="55" />
 			<point x="63.5" y="-55" />
@@ -1655,6 +1750,7 @@ for the symbols.
 		<name lang="fi">Louhikko</name>
 		<name lang="bg">Каменно поле</name>
 		<name lang="ro">Teren bolovănos</name>
+		<name lang="et">Kivine väli</name>
 		<text lang="en">boulder field</text>
 		<text lang="en" plural="true">boulder fields</text>
 		<text lang="fr" plural="true" gender="féminin">zones rocheuses</text>
@@ -1672,6 +1768,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">каменни полета</text>
 		<text lang="bg" gender="среден">каменно поле</text>
 		<text lang="ro">teren bolovănos</text>
+		<text lang="et" plural="true">kivised alad</text>
+		<text lang="et">kivine ala</text>
 		<filled-polygon>
 			<point x="-72" y="-72" />
 			<point x="-44.25" y="-24" />
@@ -1710,6 +1808,7 @@ for the symbols.
 		<name lang="fi">Kiviryhmä</name>
 		<name lang="bg">Група камъни</name>
 		<name lang="ro">Adunătură de bolovani</name>
+		<name lang="et">Kivihunnik</name>
 		<text lang="en">boulder cluster</text>
 		<text lang="en" plural="true">boulder clusters</text>
 		<text lang="fr" plural="true" gender="masculin">tas de pierre</text>
@@ -1729,6 +1828,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">групи камъни</text>
 		<text lang="bg" gender="женски">група камъни</text>
 		<text lang="ro">adunătură de bolovani</text>
+		<text lang="et" plural="true">kivihunnikute</text>
+		<text lang="et">kivihunnik</text>
 		<filled-polygon>
 			<point x="25.1" y="30" />
 			<point x="69.3" y="-50" />
@@ -1752,6 +1853,7 @@ for the symbols.
 		<name lang="fi">Kivikko</name>
 		<name lang="bg">Камениста област</name>
 		<name lang="ro">teren pietros</name>
+		<name lang="et">Kivine ala</name>
 		<text lang="en">stony ground</text>
 		<text lang="en" plural="true">stony ground</text>
 		<text lang="fr" plural="true" gender="masculin">pierriers</text>
@@ -1769,6 +1871,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">каменисти области</text>
 		<text lang="bg" gender="женски">камениста област</text>
 		<text lang="ro">teren pietros</text>
+		<text lang="et" plural="true">kivised pinnased</text>
+		<text lang="et">kivine pinnas</text>
 		<filled-circle radius="7.5">
 			<point x="-60" y="-60" />
 		</filled-circle>
@@ -1857,6 +1961,7 @@ for the symbols.
 		<name lang="fi">Avokallio</name>
 		<name lang="bg">Открита скала</name>
 		<name lang="ro">Stâncă</name>
+		<name lang="et">Avakalju</name>
 		<text lang="en">bare rock</text>
 		<text lang="en" plural="true">bare rock</text>
 		<text lang="fr" plural="true" gender="masculin">affleurements rocheux</text>
@@ -1875,6 +1980,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">открити скали</text>
 		<text lang="bg" gender="женски">открита скала</text>
 		<text lang="ro">stâncă</text>
+		<text lang="et" plural="true">avakaljud</text>
+		<text lang="et">avakalju</text>
 		<lines thickness="12.5">
 			<point x="-70" y="0" />
 			<point x="-25" y="0" />
@@ -1920,6 +2027,7 @@ for the symbols.
 		<name lang="fi">Sola</name>
 		<name lang="bg">Проход</name>
 		<name lang="ro">Pasaj îngust</name>
+		<name lang="et">Kitsas läbipääs</name>
 		<text lang="en">narrow passage</text>
 		<text lang="en" plural="true">narrow passages</text>
 		<text lang="fr" plural="true" gender="masculin">passages étroits</text>
@@ -1939,6 +2047,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">проходи</text>
 		<text lang="bg" gender="мъжки">проход</text>
 		<text lang="ro">pasaj îngust</text>
+		<text lang="et" plural="true">kitsad läbipääsud</text>
+		<text lang="et">kitsas läbipääs</text>
 		<lines thickness="12.5">
 			<point x="-45" y="-70" />
 			<point x="-20" y="-70" />
@@ -1964,6 +2074,7 @@ for the symbols.
 		<name lang="fi">Vesialue</name>
 		<name lang="bg">Езеро</name>
 		<name lang="ro">Lac</name>
+		<name lang="et">Järv</name>
 		<text lang="en">lake</text>
 		<text lang="en" plural="true">lakes</text>
 		<text lang="fr" plural="true" gender="masculin">étangs ou lacs</text>
@@ -1983,6 +2094,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">езера</text>
 		<text lang="bg" gender="среден">езеро</text>
 		<text lang="ro">lac</text>
+		<text lang="et" plural="true">järved</text>
+		<text lang="et">järv</text>
 		<beziers thickness="10">
 			<point x="-39" y="-10" />
 			<point x="-39" y="-5" />
@@ -2029,6 +2142,7 @@ for the symbols.
 		<name lang="fi">Lammikko</name>
 		<name lang="bg">Езерце</name>
 		<name lang="ro">Baltă</name>
+		<name lang="et">Tiik</name>
 		<text lang="en">pond</text>
 		<text lang="en" plural="true">ponds</text>
 		<text lang="fr" plural="true" gender="féminin">mares</text>
@@ -2048,6 +2162,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">езерца</text>
 		<text lang="bg" gender="среден">езерце</text>
 		<text lang="ro">baltă</text>
+		<text lang="et" plural="true">tiigid</text>
+		<text lang="et">tiik</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -2094,6 +2210,7 @@ for the symbols.
 		<name lang="fi">Vesikuoppa</name>
 		<name lang="bg">Водна дупка</name>
 		<name lang="ro">Groapă cu apă</name>
+		<name lang="et">Vee auk</name>
 		<text lang="en">water hole</text>
 		<text lang="en" plural="true">water holes</text>
 		<text lang="fr" plural="true" gender="masculin">trous d'eau</text>
@@ -2112,6 +2229,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">водни дупки</text>
 		<text lang="bg" gender="женски">водна дупка</text>
 		<text lang="ro">groapă cu apă</text>
+		<text lang="et" plural="true">vee augud</text>
+		<text lang="et">vee auk</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -2154,6 +2273,7 @@ for the symbols.
 		<name lang="fi">Joki, puro, oja</name>
 		<name lang="bg">Река, поток</name>
 		<name lang="ro">Râu, fir, curs de apă</name>
+		<name lang="et">Jõgi, kraav, kanal</name>
 		<text lang="en">stream</text>
 		<text lang="en" plural="true">streams</text>
 		<text lang="fr" plural="true" gender="masculin">cours d'eau</text>
@@ -2172,6 +2292,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">реки, потоци</text>
 		<text lang="bg" gender="женски">река, поток</text>
 		<text lang="ro">fir</text>
+		<text lang="et" plural="true">jõed</text>
+		<text lang="et">jõgi</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="80" />
 				<point x="-65" y="75" />
@@ -2215,6 +2337,7 @@ for the symbols.
 		<name lang="fi">Epäselvä oja</name>
 		<name lang="bg">Малък воден канал/канавка</name>
 		<name lang="ro">Canal mic de apă, șanț</name>
+		<name lang="et">Väike kanal, kraav</name>
 		<text lang="en">ditch</text>
 		<text lang="en" plural="true">ditches</text>
 		<text lang="fr" plural="true" gender="masculin">fossés ou rigoles</text>
@@ -2234,6 +2357,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">малки водни канали</text>
 		<text lang="bg" gender="мъжки">малък воден канал</text>
 		<text lang="ro">șanț</text>
+		<text lang="et" plural="true">kraavid</text>
+		<text lang="et">kraav</text>
 		<beziers thickness="10">
 			<point x="-48" y="64" />
 				<point x="-52" y="60" />
@@ -2301,6 +2426,7 @@ for the symbols.
 		<name lang="fi">Suojuotti</name>
 		<name lang="bg">Заблатена ивица</name>
 		<name lang="ro">Mlaștina ingustă</name>
+		<name lang="et">Soo riba</name>
 		<text lang="en">narrow marsh</text>
 		<text lang="en" plural="true">narrow marshes</text>
 		<text lang="fr" plural="true" gender="masculin">marais étroits</text>
@@ -2320,6 +2446,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">заблатени ивици</text>
 		<text lang="bg" gender="женски">заблатена ивица</text>
 		<text lang="ro">mlaștina ingustă</text>
+		<text lang="et" plural="true">sooribad</text>
+		<text lang="et">sooriba</text>
 		<filled-circle radius="7.5">
 			<point x="-50" y="50" />
 		</filled-circle>
@@ -2348,6 +2476,7 @@ for the symbols.
 		<name lang="fi">Suo</name>
 		<name lang="bg">Блато</name>
 		<name lang="ro">Mlaștină</name>
+		<name lang="et">Soo</name>
 		<text lang="en">marsh</text>
 		<text lang="en" plural="true">marshes</text>
 		<text lang="fr" plural="true" gender="masculin">marais</text>
@@ -2367,6 +2496,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">блата</text>
 		<text lang="bg" gender="среден">блато</text>
 		<text lang="ro">mlaștină</text>
+		<text lang="et" plural="true">sood</text>
+		<text lang="et">soo</text>
 		<lines thickness="12.5">
 			<point x="-64" y="0" />
 			<point x="64" y="0" />
@@ -2400,6 +2531,7 @@ for the symbols.
 		<name lang="fi">Kovan maan alue suolla</name>
 		<name lang="bg">Твърда почва в блато</name>
 		<name lang="ro">Teren stabil în mlaștină</name>
+		<name lang="et">Firm ground in marsh</name>
 		<text lang="en">firm ground in marsh</text>
 		<text lang="en" plural="true">firm ground in marsh</text>
 		<text lang="fr" plural="true" gender="masculin">terrains fermes</text>
@@ -2417,6 +2549,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">твърди почви в блато</text>
 		<text lang="bg" gender="женски">твърда почва в блато</text>
 		<text lang="ro">teren stabil în mlaștină</text>
+		<text lang="et" plural="true">mineraalmaad</text>
+		<text lang="et">mineraalmaa</text>
 		<filled-polygon>
 			<point x="70" y="70" />
 			<point x="70" y="57.5" />
@@ -2484,6 +2618,7 @@ for the symbols.
 		<name lang="fi">Kaivo</name>
 		<name lang="bg">Кладенец</name>
 		<name lang="ro">Fântână</name>
+		<name lang="et">Kaev, Läte</name>
 		<text lang="en">well</text>
 		<text lang="en" plural="true">wells</text>
 		<text lang="fr" plural="true" gender="masculin">puits</text>
@@ -2503,6 +2638,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">кладенци</text>
 		<text lang="bg" gender="мъжки">кладенец</text>
 		<text lang="ro">fântână</text>
+		<text lang="et" plural="true">kaevud</text>
+		<text lang="et">kaev</text>
 		<beziers thickness="10">
 			<point x="-39" y="-60" />
 			<point x="-39" y="-55" />
@@ -2537,6 +2674,7 @@ for the symbols.
 		<name lang="fi">Lähde</name>
 		<name lang="bg">Извор</name>
 		<name lang="ro">Izvor</name>
+		<name lang="et">Oja</name>
 		<text lang="en">spring</text>
 		<text lang="en" plural="true">springs</text>
 		<text lang="fr" plural="true" gender="féminin">sources</text>
@@ -2556,6 +2694,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">извори</text>
 		<text lang="bg" gender="мъжки">извор</text>
 		<text lang="ro">izvor</text>
+		<text lang="et" plural="true">allikad</text>
+		<text lang="et">allikas</text>
 		<beziers thickness="12.5">
 			<point x="-35" y="35" />
 			<point x="-28" y="26" />
@@ -2593,6 +2733,7 @@ for the symbols.
 		<name lang="fi">Vesisäiliö</name>
 		<name lang="bg">Каптаж, воден резервоар</name>
 		<name lang="ro">Rezervor de apă</name>
+		<name lang="et">Veeanum, bassein</name>
 		<text lang="en">water tank</text>
 		<text lang="en" plural="true">water tanks</text>
 		<text lang="fr" plural="true" gender="masculin">réservoirs d'eau ou citernes</text>
@@ -2611,6 +2752,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">каптажи, водни резервоари</text>
 		<text lang="bg" gender="мъжки">каптаж, воден резервоар</text>
 		<text lang="ro">rezervor de apă</text>
+		<text lang="et" plural="true">veemahutid</text>
+		<text lang="et">veemahuti</text>
 		<beziers thickness="10">
 			<point x="-65" y="45" />
 			<point x="-65" y="50" />
@@ -2654,6 +2797,7 @@ for the symbols.
 		<name lang="fi">Avoin alue</name>
 		<name lang="bg">Открита площ</name>
 		<name lang="ro">Teren deschis</name>
+		<name lang="et">Avatud ala</name>
 		<text lang="en">open land</text>
 		<text lang="en" plural="true">open land</text>
 		<text lang="fr" plural="true" gender="masculin">champs</text>
@@ -2671,6 +2815,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">открити площи</text>
 		<text lang="bg" gender="женски">открита площ</text>
 		<text lang="ro">teren deschis</text>
+		<text lang="et" plural="true">avatud alad</text>
+		<text lang="et">avatud ala</text>
 		<polygon thickness="12.5" corners="round">
 			<point x="0" y="66" />
 			<point x="66" y="0" />
@@ -2690,6 +2836,7 @@ for the symbols.
 		<name lang="fi">Puoliavoin alue</name>
 		<name lang="bg">Полуоткрита площ</name>
 		<name lang="ro">Teren semideschis</name>
+		<name lang="et">Pool-avatud alad</name>
 		<text lang="en">semi-open land</text>
 		<text lang="en" plural="true">semi-open land</text>
 		<text lang="fr" plural="true" gender="féminin">zones partiellement boisées</text>
@@ -2707,6 +2854,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">полуоткрити площи</text>
 		<text lang="bg" gender="женски">полуоткрита площ</text>
 		<text lang="ro">teren semideschis</text>
+		<text lang="et" plural="true">poollagedad alad</text>
+		<text lang="et">poollage ala</text>
 		<filled-circle radius="7.5">
 			<point x="0" y="66" />
 		</filled-circle>
@@ -2756,6 +2905,7 @@ for the symbols.
 		<name lang="fi">Metsän kulma</name>
 		<name lang="bg">Ъгъл на гора</name>
 		<name lang="ro">Colț pădure</name>
+		<name lang="et">Metsa nurgad</name>
 		<text lang="en">forest corner</text>
 		<text lang="en" plural="true">forest corners</text>
 		<text lang="fr" plural="true" gender="féminin">cornes de forêt</text>
@@ -2774,6 +2924,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">ъгли на гора</text>
 		<text lang="bg" gender="мъжки">ъгъл на гора</text>
 		<text lang="ro">colț pădure</text>
+		<text lang="et" plural="true">metsa nurgad</text>
+		<text lang="et">metsa nurk</text>
 		<polygon thickness="12.5" corners="round">
 			<point x="0" y="0" />
 			<point x="0" y="66" />
@@ -2794,6 +2946,7 @@ for the symbols.
 		<name lang="fi">Aukko</name>
 		<name lang="bg">Просветление</name>
 		<name lang="ro">Defrișare</name>
+		<name lang="et">Lagendik</name>
 		<text lang="en">clearing</text>
 		<text lang="en" plural="true">clearings</text>
 		<text lang="fr" plural="true" gender="féminin">clairières</text>
@@ -2813,6 +2966,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">просветления</text>
 		<text lang="bg" gender="среден">просветление</text>
 		<text lang="ro">defrișare</text>
+		<text lang="et" plural="true">lagendikud</text>
+		<text lang="et">lagendik</text>
 		<filled-circle radius="7.5">
 			<point x="0" y="66" />
 		</filled-circle>
@@ -2862,6 +3017,7 @@ for the symbols.
 		<name lang="fi">Tiheikkö</name>
 		<name lang="bg">Гъсталак</name>
 		<name lang="ro">Desiș</name>
+		<name lang="et">Tihnik</name>
 		<text lang="en">thicket</text>
 		<text lang="en" plural="true">thickets</text>
 		<text lang="fr" plural="true" gender="masculin">fourrés</text>
@@ -2880,6 +3036,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">гъсталаци</text>
 		<text lang="bg" gender="мъжки">гъсталак</text>
 		<text lang="ro">desiș</text>
+		<text lang="et" plural="true">tihnikud</text>
+		<text lang="et">tihnik</text>
 		<lines thickness="12.5">
 			<point x="21" y="71" />
 			<point x="-71" y="-21" />
@@ -2919,6 +3077,7 @@ for the symbols.
 		<name lang="fi">Tiheikkökaistale</name>
 		<name lang="bg">Линеен растителен пояс</name>
 		<name lang="ro">Acoperire, desiș linear</name>
+		<name lang="et">Hekk, tihe puude rivi</name>
 		<text lang="en">hedge</text>
 		<text lang="en" plural="true">hedges</text>
 		<text lang="fr" plural="true" gender="féminin">haies</text>
@@ -2938,6 +3097,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">линейни растителни пояси</text>
 		<text lang="bg" gender="мъжки">линеен растителен пояс</text>
 		<text lang="ro">acoperire</text>
+		<text lang="et" plural="true">hekid</text>
+		<text lang="et">hekk</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="-63" y="-63" />
@@ -2976,6 +3137,7 @@ for the symbols.
 		<name lang="fi">Selvä kuvioraja</name>
 		<name lang="bg">Растителна граница</name>
 		<name lang="ro">Limită de vegetație</name>
+		<name lang="et">Kõlviku/taimestiku piir</name>
 		<text lang="en">vegetation boundary</text>
 		<text lang="en" plural="true">vegetation boundaries</text>
 		<text lang="fr" plural="true" gender="féminin">limites de végétation</text>
@@ -2994,6 +3156,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">растителни граници</text>
 		<text lang="bg" gender="женски">растителна граница</text>
 		<text lang="ro">limită de vegetație</text>
+		<text lang="et" plural="true">kõlviku piirid</text>
+		<text lang="et">kõlviku piir</text>
 		<filled-circle radius="7.5">
 			<point x="-50" y="60" />
 		</filled-circle>
@@ -3034,6 +3198,7 @@ for the symbols.
 		<name lang="fi">Puuryhmä</name>
 		<name lang="bg">Група дървета</name>
 		<name lang="ro">Crâng</name>
+		<name lang="et">Puudegrupp</name>
 		<text lang="en">copse</text>
 		<text lang="en" plural="true">copses</text>
 		<text lang="fr" plural="true" gender="masculin">bosquets</text>
@@ -3053,6 +3218,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">групи дървета</text>
 		<text lang="bg" gender="женски">група дървета</text>
 		<text lang="ro">crâng</text>
+		<text lang="et" plural="true">puudegrupid</text>
+		<text lang="et">puudegrupp</text>
 		<polygon thickness="12.5">
 			<point x="-60" y="-35" />
 			<point x="-23" y="70" />
@@ -3081,6 +3248,7 @@ for the symbols.
 		<name lang="fi">Huomattava puu</name>
 		<name lang="bg">Характерно дърво</name>
 		<name lang="ro">Copac distinctiv</name>
+		<name lang="et">Üksik puu</name>
 		<text lang="en">lone tree</text>
 		<text lang="en" plural="true">lone trees</text>
 		<text lang="fr" plural="true" gender="masculin">arbres remarquables</text>
@@ -3100,6 +3268,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">характерни дървета</text>
 		<text lang="bg" gender="среден">характерно дърво</text>
 		<text lang="ro">copac distinctiv</text>
+		<text lang="et" plural="true">üksikute puude</text>
+		<text lang="et">üksik puu</text>
 		<polygon thickness="12.5">
 			<point x="0" y="70" />
 			<point x="-37" y="-35" />
@@ -3122,6 +3292,7 @@ for the symbols.
 		<name lang="fi">Kanto, juurakko</name>
 		<name lang="bg">Коренище, дънер</name>
 		<name lang="ro">Buturugă</name>
+		<name lang="et">Känd, murdunud puu</name>
 		<text lang="en">root stock</text>
 		<text lang="en" plural="true">root stocks</text>
 		<text lang="fr" plural="true" gender="féminin">souches</text>
@@ -3141,6 +3312,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">коренища, дънери</text>
 		<text lang="bg" gender="среден">коренище, дънер</text>
 		<text lang="ro">buturugă</text>
+		<text lang="et" plural="true">känd</text>
+		<text lang="et">känd</text>
 		<circle thickness="12.5" radius="60">
 			<point x="0" y="0" />
 		</circle>
@@ -3165,6 +3338,7 @@ for the symbols.
 		<name lang="fi">Tie</name>
 		<name lang="bg">Шосе</name>
 		<name lang="ro">Drum</name>
+		<name lang="et">Tee</name>
 		<text lang="en">road</text>
 		<text lang="en" plural="true">roads</text>
 		<text lang="fr" plural="true" gender="féminin">routes</text>
@@ -3184,6 +3358,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">шосета</text>
 		<text lang="bg" gender="среден">шосе</text>
 		<text lang="ro">drum</text>
+		<text lang="et" plural="true">teed</text>
+		<text lang="et">tee</text>
 		<lines thickness="15">
 			<point x="-73" y="-73" />
 			<point x="73" y="73" />
@@ -3201,6 +3377,7 @@ for the symbols.
 		<name lang="fi">Polku</name>
 		<name lang="bg">Път, пътека</name>
 		<name lang="ro">Potecă</name>
+		<name lang="et">Rada, teerada</name>
 		<text lang="en">path</text>
 		<text lang="en" plural="true">paths</text>
 		<text lang="fr" plural="true" gender="masculin">chemins ou sentiers</text>
@@ -3220,6 +3397,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">пътища/пътеки</text>
 		<text lang="bg" gender="мъжки">път/пътека</text>
 		<text lang="ro">potecă</text>
+		<text lang="et" plural="true">rajad</text>
+		<text lang="et">rada</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="-39" y="-39" />
@@ -3245,6 +3424,7 @@ for the symbols.
 		<name lang="fi">Linja</name>
 		<name lang="bg">Просека</name>
 		<name lang="ro">Defrișare</name>
+		<name lang="et">Siht</name>
 		<text lang="en">ride</text>
 		<text lang="en" plural="true">rides</text>
 		<text lang="fr" plural="true" gender="masculin">layons étroits</text>
@@ -3263,6 +3443,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">просеки</text>
 		<text lang="bg" gender="женски">просека</text>
 		<text lang="ro">defrișare</text>
+		<text lang="et" plural="true">sihid</text>
+		<text lang="et">siht</text>
 		<filled-circle radius="7.5">
 			<point x="48" y="72" />
 		</filled-circle>
@@ -3312,6 +3494,7 @@ for the symbols.
 		<name lang="fi">Silta</name>
 		<name lang="bg">Мост</name>
 		<name lang="ro">Pod</name>
+		<name lang="et">Sild</name>
 		<text lang="en">bridge</text>
 		<text lang="en" plural="true">bridges</text>
 		<text lang="fr" plural="true" gender="masculin">ponts</text>
@@ -3331,6 +3514,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">мостове</text>
 		<text lang="bg" gender="мъжки">мост</text>
 		<text lang="ro">pod</text>
+		<text lang="et" plural="true">sillad</text>
+		<text lang="et">sild</text>
 		<lines thickness="12.5">
 			<point x="20" y="70" />
 			<point x="20" y="40" />
@@ -3356,6 +3541,7 @@ for the symbols.
 		<name lang="fi">Sähkölinja</name>
 		<name lang="bg">Далекопровод</name>
 		<name lang="ro">Linie de curent</name>
+		<name lang="et">Elektri liin</name>
 		<text lang="en">power line</text>
 		<text lang="en" plural="true">power lines</text>
 		<text lang="fr" plural="true" gender="féminin">lignes à haute tension</text>
@@ -3375,6 +3561,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">далекопроводи</text>
 		<text lang="bg" gender="мъжки">далекопровод</text>
 		<text lang="ro">linie de curent</text>
+		<text lang="et" plural="true">elektriliinid</text>
+		<text lang="et">elektriliin</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -3404,6 +3592,7 @@ for the symbols.
 		<name lang="fi">Sähkölinjan pylväs</name>
 		<name lang="bg">Стълб на далекопровод</name>
 		<name lang="ro">Stâlp de curent</name>
+		<name lang="et">Kõrgepinge mast</name>
 		<text lang="en">power pylon</text>
 		<text lang="en" plural="true">power pylons</text>
 		<text lang="fr" plural="true" gender="masculin">pylônes de ligne HT</text>
@@ -3423,6 +3612,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">стълбове на далекопровод</text>
 		<text lang="bg" gender="мъжки">стълб на далекопровод</text>
 		<text lang="ro">stâlp de curent</text>
+		<text lang="et" plural="true">kõrgepinge mastid</text>
+		<text lang="et">kõrgepinge mast</text>
 		<lines thickness="10">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -3455,6 +3646,7 @@ for the symbols.
 		<name lang="fi">Tunneli</name>
 		<name lang="bg">Тунел</name>
 		<name lang="ro">Tunel</name>
+		<name lang="et">Tunnel</name>
 		<text lang="en">tunnel</text>
 		<text lang="en" plural="true">tunnels</text>
 		<text lang="fr" plural="true" gender="masculin">tunnels</text>
@@ -3474,6 +3666,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">тунели</text>
 		<text lang="bg" gender="мъжки">тунел</text>
 		<text lang="ro">tunel</text>
+		<text lang="et" plural="true">tunnelid</text>
+		<text lang="et">tunnel</text>
 		<lines thickness="12.5">
 			<point x="-65" y="-30" />
 			<point x="65" y="-30" />
@@ -3505,6 +3699,7 @@ for the symbols.
 		<name lang="fi">Kiviaita</name>
 		<name lang="bg">Стена/зид</name>
 		<name lang="ro">Zid piatră</name>
+		<name lang="et">Kivimüür/aed</name>
 		<text lang="en">stone wall</text>
 		<text lang="en" plural="true">stone walls</text>
 		<text lang="fr" plural="true" gender="masculin">murs</text>
@@ -3524,6 +3719,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">стени/зидове</text>
 		<text lang="bg" gender="женски">стена/зид</text>
 		<text lang="ro">zid piatră</text>
+		<text lang="et" plural="true">kivimüürid</text>
+		<text lang="et">kivimüür</text>
 		<lines thickness="12.5">
 			<point x="-75" y="-75" />
 			<point x="75" y="75" />
@@ -3550,6 +3747,7 @@ for the symbols.
 		<name lang="fi">Aita</name>
 		<name lang="bg">Ограда</name>
 		<name lang="ro">Gard</name>
+		<name lang="et">Aed</name>
 		<text lang="en">fence</text>
 		<text lang="en" plural="true">fences</text>
 		<text lang="fr" plural="true" gender="féminin">clôtures</text>
@@ -3569,6 +3767,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">огради</text>
 		<text lang="bg" gender="женски">ограда</text>
 		<text lang="ro">gard</text>
+		<text lang="et" plural="true">aiad</text>
+		<text lang="et">aed</text>
 		<lines thickness="12.5">
 			<point x="50" y="70" />
 			<point x="-50" y="-30" />
@@ -3602,6 +3802,7 @@ for the symbols.
 		<name lang="fi">Portti, ylityspaikka</name>
 		<name lang="bg">Място за преминаване</name>
 		<name lang="ro">Punct de trecere</name>
+		<name lang="et">Läbipääsu koht</name>
 		<text lang="en">crossing point</text>
 		<text lang="en" plural="true">crossing points</text>
 		<text lang="fr" plural="true" gender="masculin">passages</text>
@@ -3620,6 +3821,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">места за преминаване</text>
 		<text lang="bg" gender="среден">място за преминаване</text>
 		<text lang="ro">punct de trecere</text>
+		<text lang="et" plural="true">läbipääsu kohad</text>
+		<text lang="et">läbipääsu koht</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
 			<point x="-20" y="0" />
@@ -3649,6 +3852,7 @@ for the symbols.
 		<name lang="fi">Rakennus</name>
 		<name lang="bg">Постройка</name>
 		<name lang="ro">Clădire</name>
+		<name lang="et">Ehitis</name>
 		<text lang="en">building</text>
 		<text lang="en" plural="true">buildings</text>
 		<text lang="fr" plural="true" gender="féminin">constructions</text>
@@ -3668,6 +3872,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">постройки</text>
 		<text lang="bg" gender="женски">постройка</text>
 		<text lang="ro">clădire</text>
+		<text lang="et" plural="true">buildings</text>
+		<text lang="et">building</text>
 		<filled-polygon>
 			<point x="-50" y="-50" />
 			<point x="-50" y="50" />
@@ -3687,6 +3893,7 @@ for the symbols.
 		<name lang="fi">Kenttä</name>
 		<name lang="bg">Павирана площ</name>
 		<name lang="ro">Zonă pavată</name>
+		<name lang="et">Kattega plats</name>
 		<text lang="en">paved area</text>
 		<text lang="en" plural="true">paved areas</text>
 		<text lang="fr" plural="true" gender="féminin">zones pavées</text>
@@ -3705,6 +3912,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">павирани площи</text>
 		<text lang="bg" gender="женски">павирана площ</text>
 		<text lang="ro">zonă pavată</text>
+		<text lang="et" plural="true">kattega platsid</text>
+		<text lang="et">kattega plats</text>
 		<polygon thickness="12.5">
 			<point x="-60" y="-60" />
 			<point x="-60" y="60" />
@@ -3740,6 +3949,7 @@ for the symbols.
 		<name lang="fi">Raunio</name>
 		<name lang="bg">Развалина</name>
 		<name lang="ro">Ruine</name>
+		<name lang="et">Vare, lagunenud hoone</name>
 		<text lang="en">ruin</text>
 		<text lang="en" plural="true">ruins</text>
 		<text lang="fr" plural="true" gender="féminin">ruines</text>
@@ -3759,6 +3969,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">развалини</text>
 		<text lang="bg" gender="женски">развалина</text>
 		<text lang="ro">ruine</text>
+		<text lang="et" plural="true">varemed</text>
+		<text lang="et">vare</text>
 		<lines thickness="12.5">
 			<point x="-60" y="15" />
 			<point x="-60" y="60" />
@@ -3792,6 +4004,7 @@ for the symbols.
 		<name lang="fi">Putkilinja</name>
 		<name lang="bg">Тръбопровод</name>
 		<name lang="ro">Conductă</name>
+		<name lang="et">Torujuhe</name>
 		<text lang="en">pipeline</text>
 		<text lang="en" plural="true">pipelines</text>
 		<text lang="fr" plural="true" gender="masculin">pipelines</text>
@@ -3811,6 +4024,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">тръбопроводи</text>
 		<text lang="bg" gender="мъжки">тръбопровод</text>
 		<text lang="ro">conductă</text>
+		<text lang="et" plural="true">torujuhtmed</text>
+		<text lang="et">torujuhe</text>
 		<lines thickness="12.5">
 			<point x="70" y="70" />
 			<point x="-57.5" y="-57.5" />
@@ -3843,6 +4058,7 @@ for the symbols.
 		<name lang="fi">Torni</name>
 		<name lang="bg">Кула</name>
 		<name lang="ro">Turn</name>
+		<name lang="et">Torn</name>
 		<text lang="en">tower</text>
 		<text lang="en" plural="true">towers</text>
 		<text lang="fr" plural="true" gender="féminin">tours</text>
@@ -3862,6 +4078,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">кули</text>
 		<text lang="bg" gender="женски">кула</text>
 		<text lang="ro">turn</text>
+		<text lang="et" plural="true">tornid</text>
+		<text lang="et">torn</text>
 		<lines thickness="12.5">
 			<point x="-50" y="60" />
 			<point x="50" y="60" />
@@ -3883,6 +4101,7 @@ for the symbols.
 		<name lang="fi">Metsästyslava</name>
 		<name lang="bg">Вишка</name>
 		<name lang="ro">Platformă de vânătoare</name>
+		<name lang="et">Jahi-isteplatvorm/torn</name>
 		<text lang="en">shooting platform</text>
 		<text lang="en" plural="true">shooting platforms</text>
 		<text lang="fr" plural="true" gender="masculin">postes d'observation</text>
@@ -3901,6 +4120,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">вишки</text>
 		<text lang="bg" gender="женски">вишка</text>
 		<text lang="ro">platformă de vânătoare</text>
+		<text lang="et" plural="true">jahiplatvormid</text>
+		<text lang="et">jahiplatvorm</text>
 		<lines thickness="12.5">
 			<point x="30" y="60" />
 			<point x="-30" y="60" />
@@ -3919,6 +4140,7 @@ for the symbols.
 		<name lang="fi">Rajapyykki</name>
 		<name lang="bg">Граничен камък</name>
 		<name lang="ro">Bornă</name>
+		<name lang="et">Kupits, piiritähis</name>
 		<text lang="en">cairn</text>
 		<text lang="en" plural="true">cairns</text>
 		<text lang="fr" plural="true" gender="féminin">bornes</text>
@@ -3938,6 +4160,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">гранични камъни</text>
 		<text lang="bg" gender="мъжки">граничен камък</text>
 		<text lang="ro">bornă</text>
+		<text lang="et" plural="true">kupitsad</text>
+		<text lang="et">kupits</text>
 		<circle radius="60" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -3957,6 +4181,7 @@ for the symbols.
 		<name lang="fi">Ruokintateline</name>
 		<name lang="bg">Хранилка</name>
 		<name lang="ro">Iesle/Hrănitoare</name>
+		<name lang="et">Söödasõim</name>
 		<text lang="en">fodder rack</text>
 		<text lang="en" plural="true">fodder racks</text>
 		<text lang="fr" plural="true" gender="féminin">mangeoires</text>
@@ -3976,6 +4201,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">хранилки</text>
 		<text lang="bg" gender="женски">хранилка</text>
 		<text lang="ro">iesle/hrănitoare</text>
+		<text lang="et" plural="true">söödasõimed</text>
+		<text lang="et">söödasõin</text>
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -4002,6 +4229,7 @@ for the symbols.
 		<name lang="fi">Miilun pohja, tekotasanne</name>
 		<name lang="bg">Останки от огнище</name>
 		<name lang="ro">Pământ cu cărbune ars</name>
+		<name lang="et">Lõkkease</name>
 		<text lang="en">charcoal burning ground</text>
 		<text lang="en" plural="true">charcoal burning grounds</text>
 		<text lang="fr" plural="true" gender="féminin">charbonnières</text>
@@ -4021,6 +4249,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="женски">останки от огнище</text>
 		<text lang="bg" gender="женски" />
 		<text lang="ro">pământ cu cărbune ars</text>
+		<text lang="et" plural="true">lõkkeasemed</text>
+		<text lang="et">lõkkease</text>
 		<circle radius="68" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -4042,6 +4272,7 @@ for the symbols.
 		<name lang="fi">Monumentti, patsas</name>
 		<name lang="bg">Паметник</name>
 		<name lang="ro">Monument sau statuie</name>
+		<name lang="et">Ausammas</name>
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
 		<text lang="fr" plural="true" gender="masculin">monuments ou statues</text>
@@ -4061,6 +4292,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">паметници</text>
 		<text lang="bg" gender="мъжки">паметник</text>
 		<text lang="ro">statuie</text>
+		<text lang="et" plural="true">ausambad</text>
+		<text lang="et">ausammas</text>
 		<lines thickness="12.5">
 			<point x="-55" y="-60" />
 			<point x="55" y="-60" />
@@ -4083,6 +4316,7 @@ for the symbols.
 		<name lang="fi">Käytävä läpi talon</name>
 		<name lang="bg">Вътрешен тунел</name>
 		<name lang="ro">Trecere</name>
+		<name lang="et">Sisse/läbipääs</name>
 		<text lang="en">building pass-through</text>
 		<text lang="en" plural="true">building pass-throughs</text>
 		<text lang="fr" plural="true" gender="masculin">passages couverts</text>
@@ -4102,6 +4336,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">вътрешни тунели</text>
 		<text lang="bg" gender="мъжки">вътрешен тунел</text>
 		<text lang="ro">trecere</text>
+		<text lang="et" plural="true">läbipääsud</text>
+		<text lang="et">läbipääs</text>
 		<lines thickness="12.5">
 			<point x="-60" y="60" />
 			<point x="60" y="60" />
@@ -4127,6 +4363,7 @@ for the symbols.
 		<name lang="fi">Portaat</name>
 		<name lang="bg">Стълбище</name>
 		<name lang="ro">Scări</name>
+		<name lang="et">Trepp</name>
 		<text lang="en">stairway</text>
 		<text lang="en" plural="true">stairways</text>
 		<text lang="fr" plural="true" gender="masculin">escaliers</text>
@@ -4145,6 +4382,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">стълбища</text>
 		<text lang="bg" gender="среден">стълбище</text>
 		<text lang="ro">scări</text>
+		<text lang="et" plural="true">trepid</text>
+		<text lang="et">trepp</text>
 		<lines thickness="12.5">
 			<point x="-70" y="-45" />
 			<point x="-35" y="-45" />
@@ -4168,6 +4407,7 @@ for the symbols.
 		<name lang="fi">Erikoiskohde</name>
 		<name lang="bg">Специфичен обект</name>
 		<name lang="ro">Reper special</name>
+		<name lang="et">Pisiobjekt</name>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<text lang="fr" plural="true" gender="masculin">objets particuliers</text>
@@ -4187,6 +4427,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">специфични обекти</text>
 		<text lang="bg" gender="мъжки">специфичен обект</text>
 		<text lang="ro">reper special</text>
+		<text lang="et" plural="true">pisiobjektid</text>
+		<text lang="et">pisiobjekt</text>
 		<lines thickness="12.5">
 			<point x="45" y="45" />
 			<point x="-45" y="-45" />
@@ -4208,6 +4450,7 @@ for the symbols.
 		<name lang="fi">Erikoiskohde</name>
 		<name lang="bg">Специфичен обект</name>
 		<name lang="ro">Reper special</name>
+		<name lang="et">Pisiobjekt</name>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<text lang="fr" plural="true" gender="masculin">objets particuliers</text>
@@ -4227,6 +4470,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="мъжки">специфични обекти</text>
 		<text lang="bg" gender="мъжки">специфичен обект</text>
 		<text lang="ro">reper special</text>
+		<text lang="et" plural="true">pisiobjektid</text>
+		<text lang="et">pisiobjekt</text>
 		<circle radius="55" thickness="12.5">
 			<point x="0" y="0" />
 		</circle>
@@ -4246,6 +4491,7 @@ for the symbols.
 		<name lang="fi">Matala</name>
 		<name lang="bg">Нисък</name>
 		<name lang="ro">Jos</name>
+		<name lang="et">Madal</name>
 		<text lang="en">low {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} aplaties</text>
 		<text lang="fr" plural="true" gender="masculin">{0} aplatis</text>
@@ -4267,6 +4513,7 @@ for the symbols.
 		<text lang="bg" gender="женски">ниска {0}</text>
 		<text lang="bg" gender="мъжки">нисък {0}</text>
 		<text lang="ro">jos {0}</text>
+		<text lang="et">madal {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-10" />
 			<point x="-30" y="20" />
@@ -4286,6 +4533,7 @@ for the symbols.
 		<name lang="fi">Laakea</name>
 		<name lang="bg">Плитък, разлят</name>
 		<name lang="ro">Puțin adânc</name>
+		<name lang="et">Lame</name>
 		<text lang="en">shallow {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} évasées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} évasés</text>
@@ -4305,6 +4553,7 @@ for the symbols.
 		<text lang="bg" gender="женски">плитка, разлята {0}</text>
 		<text lang="bg" gender="мъжки">плитък, разлят {0}</text>
 		<text lang="ro">puțin adânc {0}</text>
+		<text lang="et">lame {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="10" />
 			<point x="-30" y="-20" />
@@ -4324,6 +4573,7 @@ for the symbols.
 		<name lang="fi">Syvä</name>
 		<name lang="bg">Дълбок</name>
 		<name lang="ro">Adânc</name>
+		<name lang="et">Sügav</name>
 		<text lang="en">deep {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} profondes</text>
 		<text lang="fr" plural="true" gender="masculin">{0} profonds</text>
@@ -4345,6 +4595,7 @@ for the symbols.
 		<text lang="bg" gender="женски">дълбока {0}</text>
 		<text lang="bg" gender="мъжки">дълбок {0}</text>
 		<text lang="ro">adânc {0}</text>
+		<text lang="et">sügav {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="70" />
 				<point x="-35" y="72" />
@@ -4373,6 +4624,7 @@ for the symbols.
 		<name lang="fi">Umpeenkasvanut</name>
 		<name lang="bg">Обрасъл</name>
 		<name lang="ro">Super crescut</name>
+		<name lang="et">Tihe ala</name>
 		<text lang="en">overgrown {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} couvertes de végétation</text>
 		<text lang="fr" plural="true" gender="masculin">{0} couverts de végétation</text>
@@ -4391,6 +4643,7 @@ for the symbols.
 		<text lang="bg" gender="женски">обрасла {0}</text>
 		<text lang="bg" gender="мъжки">обрасъл {0}</text>
 		<text lang="ro">super crescut {0}</text>
+		<text lang="et">tihe {0}</text>
 		<lines thickness="10">
 			<point x="42" y="64" />
 			<point x="42" y="-64" />
@@ -4436,6 +4689,7 @@ for the symbols.
 		<name lang="fi">Avoin</name>
 		<name lang="bg">Открит</name>
 		<name lang="ro">Deschis</name>
+		<name lang="et">Avatud</name>
 		<text lang="en">open {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} dégagées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} dégagés</text>
@@ -4454,6 +4708,7 @@ for the symbols.
 		<text lang="bg" gender="женски">открита {0}</text>
 		<text lang="bg" gender="мъжки">открит {0}</text>
 		<text lang="ro">deschis {0}</text>
+		<text lang="et">avatud {0}</text>
 		<filled-circle radius="7.5">
 			<point x="-60" y="60" />
 		</filled-circle>
@@ -4503,6 +4758,7 @@ for the symbols.
 		<name lang="fi">Louhikkoinen, kivinen</name>
 		<name lang="bg">Каменист</name>
 		<name lang="ro">Stâncos</name>
+		<name lang="et">Kivine, kaljune</name>
 		<text lang="en">rocky {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} rocailleuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} rocailleux</text>
@@ -4521,6 +4777,7 @@ for the symbols.
 		<text lang="bg" gender="женски">камениста {0}</text>
 		<text lang="bg" gender="мъжки">каменист {0}</text>
 		<text lang="ro">stâncos {0}</text>
+		<text lang="et">kivine {0}</text>
 		<filled-polygon>
 			<point x="-72" y="0" />
 			<point x="-44.25" y="48" />
@@ -4549,6 +4806,7 @@ for the symbols.
 		<name lang="fi">Soinen</name>
 		<name lang="bg">Заблатено</name>
 		<name lang="ro">Mlăștinos</name>
+		<name lang="et">Soine</name>
 		<text lang="en">marshy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} marécageuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} marécageux</text>
@@ -4567,6 +4825,7 @@ for the symbols.
 		<text lang="bg" gender="женски">заблатена {0}</text>
 		<text lang="bg" gender="мъжки">заблатен {0}</text>
 		<text lang="ro">mlăștinos {0}</text>
+		<text lang="et">soine {0}</text>
 		<lines thickness="12.5">
 			<point x="30" y="35" />
 			<point x="-30" y="35" />
@@ -4592,6 +4851,7 @@ for the symbols.
 		<name lang="fi">Hietikkoinen</name>
 		<name lang="bg">Песъчлив</name>
 		<name lang="ro">Nisipos</name>
+		<name lang="et">Liivane</name>
 		<text lang="en">sandy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} sablonneuses</text>
 		<text lang="fr" plural="true" gender="masculin">{0} sablonneux</text>
@@ -4610,6 +4870,7 @@ for the symbols.
 		<text lang="bg" gender="женски">песъчлива {0}</text>
 		<text lang="bg" gender="мъжки">песъчлив {0}</text>
 		<text lang="ro">nisipos {0}</text>
+		<text lang="et">liivane {0}</text>
 		<filled-circle radius="5">
 			<point x="-15" y="-31" />
 		</filled-circle>
@@ -4773,6 +5034,7 @@ for the symbols.
 		<name lang="fi">Havupuu, havupensas</name>
 		<name lang="bg">Иглолистно дърво</name>
 		<name lang="ro">Ace de brad</name>
+		<name lang="et">Okaspuu</name>
 		<text lang="en">needle-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, conifères</text>
 		<text lang="fr">{0}, conifère</text>
@@ -4789,6 +5051,7 @@ for the symbols.
 		<text lang="bg" gender="женски">иглолистна {0}</text>
 		<text lang="bg" gender="мъжки">иглолистен {0}</text>
 		<text lang="ro">ace-brad {0}</text>
+		<text lang="et">okaspuu {0}</text>
 		<polygon thickness="12.5">
 			<point x="0" y="70" />
 			<point x="-35" y="15" />
@@ -4817,6 +5080,7 @@ for the symbols.
 		<name lang="fi">Lehtipuu, lehtipensas</name>
 		<name lang="bg">Широколистно дърво</name>
 		<name lang="ro">Frunze-late</name>
+		<name lang="et">Lehtpuu</name>
 		<text lang="en">broad-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, feuillus</text>
 		<text lang="fr">{0}, feuillu</text>
@@ -4833,6 +5097,7 @@ for the symbols.
 		<text lang="bg" gender="женски">широколистна {0}</text>
 		<text lang="bg" gender="мъжки">широколистен {0}</text>
 		<text lang="ro">frunze late {0}</text>
+		<text lang="et">lehtpuu {0}</text>
 		<beziers thickness="12.5">
 			<point x="0" y="-20" />
 			<point x="15" y="-70" />
@@ -4882,6 +5147,7 @@ for the symbols.
 		<name lang="fi">Sortunut</name>
 		<name lang="bg">Разрушен</name>
 		<name lang="ro">Dărăpănat</name>
+		<name lang="et">Lagunenud</name>
 		<text lang="en">ruined {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} ruinées ou tombées</text>
 		<text lang="fr" plural="true" gender="masculin">{0} ruinés ou tombés</text>
@@ -4900,6 +5166,7 @@ for the symbols.
 		<text lang="bg" gender="женски">разрушена {0}</text>
 		<text lang="bg" gender="мъжки">разрушен {0}</text>
 		<text lang="ro">dărăpănat {0}</text>
+		<text lang="et">lagunenud {0}</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="-60" />
 			<point x="-58" y="8" />
@@ -4946,6 +5213,7 @@ for the symbols.
 		<name lang="fi">Risteys</name>
 		<name lang="bg">Пресичане</name>
 		<name lang="ro">Intersecţie</name>
+		<name lang="et">Ristumine</name>
 		<text lang="en">{0} and {1} crossing</text>
 		<text lang="en" plural="true">{0} and {1} crossings</text>
 		<text lang="fr" gender="masculin">croisement entre {0} et {1}</text>
@@ -4960,6 +5228,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">пресичания на {0} и {1}</text>
 		<text lang="bg" gender="среден">пресичане на {0} и {1}</text>
 		<text lang="ro">intersecţia dintre {0} și {1}</text>
+		<text lang="et" plural="true">{0} ja {1} ristumised</text>
+		<text lang="et">{0} ja {1} ristumine</text>
 		<lines thickness="12.5">
 			<point x="70" y="70" />
 			<point x="-70" y="-70" />
@@ -4981,6 +5251,7 @@ for the symbols.
 		<name lang="fi">Risteys (kaksi samanlaista kohdetta)</name>
 		<name lang="bg">Пресичане (на обекти от един и същи вид)</name>
 		<name lang="ro">Intersecţie (obiecte de același tip)</name>
+		<name lang="et">Ristumine (samad objektid)</name>
 		<text lang="en">{0} crossing</text>
 		<text lang="en" plural="true">{0} crossings</text>
 		<text lang="fr" gender="masculin">croisement de {1}</text>
@@ -4996,6 +5267,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">пресичания на {0}</text>
 		<text lang="bg" gender="среден">пресичане на {0}</text>
 		<text lang="ro">intersecţie de {0}</text>
+		<text lang="et" plural="true">{0} ristumised</text>
+		<text lang="et">{0} ristumine</text>
 	</symbol>
 	
 	<symbol kind="F" id="10.2">
@@ -5009,6 +5282,7 @@ for the symbols.
 		<name lang="fi">Haara</name>
 		<name lang="bg">Събиране/сливане</name>
 		<name lang="ro">Bifurcație</name>
+		<name lang="et">Hargnemine</name>
 		<text lang="en">{0} and {1} junction</text>
 		<text lang="en" plural="true">{0} and {1} junctions</text>
 		<text lang="fr" gender="féminin">jonction entre {0} et {1}</text>
@@ -5024,6 +5298,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">събирания/сливания на {0} и {1}</text>
 		<text lang="bg" gender="среден">събиране/сливане на {0} и {1}</text>
 		<text lang="ro">bifurcație dintre {0} și {1}</text>
+		<text lang="et" plural="true">{0} ja {1} hargnemised</text>
+		<text lang="et">{0} ja {1} hargnemine</text>
 		<lines thickness="12.5">
 			<point x="55" y="70" />
 			<point x="-55" y="-70" />
@@ -5045,6 +5321,7 @@ for the symbols.
 		<name lang="fi">Haara (kaksi samanlaista kohdetta)</name>
 		<name lang="bg">Събиране/сливане (на обекти от един и същи вид)</name>
 		<name lang="ro">Bifurcație (obiecte de același tip)</name>
+		<name lang="et">Hargnemine (samad objektid)</name>
 		<text lang="en">{0} junction</text>
 		<text lang="en" plural="true">{0} junctions</text>
 		<text lang="fr" gender="féminin">jonction de {1}</text>
@@ -5061,6 +5338,8 @@ for the symbols.
 		<text lang="bg" plural="true" gender="среден">събирания/сливания на {0}</text>
 		<text lang="bg" gender="среден">събиране/сливане на {0}</text>
 		<text lang="ro">bifurcație de {0}</text>
+		<text lang="et" plural="true">{0} hargnemised</text>
+		<text lang="et">{0} hargnemine</text>
 	</symbol>
 
 	<!-- The dimensions of the symbol don't have a symbol, just text. Note that
@@ -5079,6 +5358,7 @@ for the symbols.
 		<name lang="fi">Kohteen korkeus</name>
 		<name lang="bg">Височина на обекта в метри</name>
 		<name lang="ro">Înălțimea reperului</name>
+		<name lang="et">Objekti kõrgus</name>
 		<text lang="en">{0} high</text>
 		<text lang="fr">hauteur {0}</text>
 		<text lang="en-GB">{0}</text>
@@ -5089,6 +5369,7 @@ for the symbols.
 		<text lang="fi">{0} korkea</text>
 		<text lang="bg">{0} височина</text>
 		<text lang="ro">{0} înălțime</text>
+		<text lang="et">{0} kõrge</text>
 	</symbol>
 
 	<symbol kind="F" id="9.1deep">
@@ -5102,6 +5383,7 @@ for the symbols.
 		<name lang="fi">Kohteen syvyys</name>
 		<name lang="bg">Дълбочина на обекта в метри</name>
 		<name lang="ro">Adâncimea reperului</name>
+		<name lang="et">Objekti sügavus</name>
 		<text lang="en">{0} deep</text>
 		<text lang="fr">profondeur {0}</text>
 		<text lang="en-GB">{0}</text>
@@ -5112,6 +5394,7 @@ for the symbols.
 		<text lang="fi">{0} syvä</text>
 		<text lang="bg">{0} дълбочина</text>
 		<text lang="ro">{0} adâncime</text>
+		<text lang="et">{0} sügav</text>
 	</symbol>
 
 	<symbol kind="F" id="9.2">
@@ -5125,6 +5408,7 @@ for the symbols.
 		<name lang="fi">Laajuus</name>
 		<name lang="bg">Размер на обекта в метри</name>
 		<name lang="ro">Dimensiunea reperului</name>
+		<name lang="et">Objekti suurus</name>
 		<text lang="en">{0} by {1}</text>
 		<text lang="fr">{0} x {1}</text>
 		<text lang="en-GB">{0} x {1}</text>
@@ -5135,6 +5419,7 @@ for the symbols.
 		<text lang="fi">{0} x {1}</text>
 		<text lang="bg">{0} на {1}</text>
 		<text lang="ro">{0} pe {1}</text>
+		<text lang="et">{0} korda {1}</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3high">
@@ -5148,6 +5433,7 @@ for the symbols.
 		<name lang="fi">Korkeus rinteessä</name>
 		<name lang="bg">Височина на обекта върху склона в метри</name>
 		<name lang="ro">Înălțimea pantei</name>
+		<name lang="et">Kõrgus nõlval</name>
 		<text lang="en">{0} to {1} high</text>
 		<text lang="fr">de {0} à {1} de haut</text>
 		<text lang="en-GB">{0}/{1} </text>
@@ -5158,6 +5444,7 @@ for the symbols.
 		<text lang="fi">{0}/{1} korkea</text>
 		<text lang="bg">{0} до {1} височина</text>
 		<text lang="ro">{0} pâna la {1} pantă</text>
+		<text lang="et">{0} kuni {1} kõrge</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3deep">
@@ -5171,6 +5458,7 @@ for the symbols.
 		<name lang="fi">Syvyys rinteessä</name>
 		<name lang="bg">Дълбочина на обекта върху склона в метри</name>
 		<name lang="ro">Adâncimea pantei</name>
+		<name lang="et">Objekti sügavus nõlval</name>
 		<text lang="en">{0} to {1} deep</text>
 		<text lang="fr">de {0} à {1} de profondeur</text>
 		<text lang="en-GB">{0}/{1}</text>
@@ -5181,6 +5469,7 @@ for the symbols.
 		<text lang="fi">{0}/{1} syvä</text>
 		<text lang="bg">{0} до {1} дълбочина</text>
 		<text lang="ro">{0} până la {1} pantă de adâncime</text>
+		<text lang="et">{0} kuni {1} sügav</text>
 	</symbol>
 
 	<!-- Note that in the below, {0} and {1} are replaced with the 
@@ -5198,6 +5487,7 @@ for the symbols.
 		<name lang="fi">Kohteiden korkeudet</name>
 		<name lang="bg">Височина на два обекта</name>
 		<name lang="ro">Dimensiunea a două repere</name>
+		<name lang="et">Kahe objekti suurused</name>
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
 		<text lang="en-GB">{0} &amp; {1}</text>
@@ -5208,6 +5498,7 @@ for the symbols.
 		<text lang="fi">{0} ja {1}</text>
 		<text lang="bg">{0} и {1}</text>
 		<text lang="ro">{0} și {1}</text>
+		<text lang="et">{0} ja {1}</text>
 	</symbol>
 
 
@@ -5229,6 +5520,7 @@ for the symbols.
 		<name lang="fi">Pohjoissivu</name>
 		<name lang="bg">Северна страна</name>
 		<name lang="ro">Partea nordică</name>
+		<name lang="et">Põhjaküljel</name>
 		<text lang="en">N side of {0}</text>
 		<text lang="fr">{0}, côté Nord</text>
 		<text lang="en-GB">{0}, N. Side</text>
@@ -5239,6 +5531,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoissivu</text>
 		<text lang="bg">северната страна на {0}</text>
 		<text lang="ro">{0} partea nordică</text>
+		<text lang="et">{0} põhjaküljel </text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="-20" />
 		</circle>
@@ -5258,6 +5551,7 @@ for the symbols.
 		<name lang="fi">Koillissivu</name>
 		<name lang="bg">Североизточна страна</name>
 		<name lang="ro">Partea nord estică</name>
+		<name lang="et">Kirdeküljel</name>
 		<text lang="en">NE side of {0}</text>
 		<text lang="fr">{0}, côté NE</text>
 		<text lang="en-GB">{0}, NE. Side</text>
@@ -5268,6 +5562,7 @@ for the symbols.
 		<text lang="fi">{0}, koillissivu</text>
 		<text lang="bg">СИ страна на {0}</text>
 		<text lang="ro">{0} partea nord estică</text>
+		<text lang="et">{0} kirdeküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="-14.14" />
 		</circle>
@@ -5287,6 +5582,7 @@ for the symbols.
 		<name lang="fi">Itäsivu</name>
 		<name lang="bg">Източна страна</name>
 		<name lang="ro">Partea estică</name>
+		<name lang="et">Idaküljel</name>
 		<text lang="en">E side of {0}</text>
 		<text lang="fr">{0}, côté Est</text>
 		<text lang="en-GB">{0}, E. Side</text>
@@ -5297,6 +5593,7 @@ for the symbols.
 		<text lang="fi">{0}, itäsivu</text>
 		<text lang="bg">източната страна на {0}</text>
 		<text lang="ro">{0} partea estică</text>
+		<text lang="et">{0} idaküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="-20" y="0" />
 		</circle>
@@ -5316,6 +5613,7 @@ for the symbols.
 		<name lang="fi">Kaakkoissivu</name>
 		<name lang="bg">Югоизточна страна</name>
 		<name lang="ro">Partea sud estică</name>
+		<name lang="et">Kaguküljel</name>
 		<text lang="en">SE side of {0}</text>
 		<text lang="fr">{0}, côté SE</text>
 		<text lang="en-GB">{0}, SE. Side</text>
@@ -5326,6 +5624,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoissivu</text>
 		<text lang="bg">ЮИ страна на {0}</text>
 		<text lang="ro">{0} partea sud estică</text>
+		<text lang="et">{0} kaguküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="14.14" />
 		</circle>
@@ -5345,6 +5644,7 @@ for the symbols.
 		<name lang="fi">Eteläsivu</name>
 		<name lang="bg">Южна страна</name>
 		<name lang="ro">Partea sudică</name>
+		<name lang="et">Lõunaküljel</name>
 		<text lang="en">S side of {0}</text>
 		<text lang="fr">{0}, côté Sud</text>
 		<text lang="en-GB">{0}, S. Side</text>
@@ -5355,6 +5655,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläsivu</text>
 		<text lang="bg">южната страна на {0}</text>
 		<text lang="ro">{0} partea sudică</text>
+		<text lang="et">{0} lõunaküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="20" />
 		</circle>
@@ -5374,6 +5675,7 @@ for the symbols.
 		<name lang="fi">Lounaissivu</name>
 		<name lang="bg">Югозападна страна</name>
 		<name lang="ro">Partea sud-vestică</name>
+		<name lang="et">Edelaküljel</name>
 		<text lang="en">SW side of {0}</text>
 		<text lang="fr">{0}, côté SO</text>
 		<text lang="en-GB">{0}, SW. Side</text>
@@ -5384,6 +5686,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaissivu</text>
 		<text lang="bg">ЮЗ страна на {0}</text>
 		<text lang="ro">{0} partea sud vestică</text>
+		<text lang="et">{0} edelaküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="14.14" />
 		</circle>
@@ -5403,6 +5706,7 @@ for the symbols.
 		<name lang="fi">Länsisivu</name>
 		<name lang="bg">Западна страна</name>
 		<name lang="ro">Partea vestică</name>
+		<name lang="et">Lääneküljel</name>
 		<text lang="en">W side of {0}</text>
 		<text lang="fr">{0}, côté Ouest</text>
 		<text lang="en-GB">{0}, W. Side</text>
@@ -5413,6 +5717,7 @@ for the symbols.
 		<text lang="fi">{0}, länsisivu</text>
 		<text lang="bg">западната страна на {0}</text>
 		<text lang="ro">{0} partea vestică</text>
+		<text lang="et">{0} lääneküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="20" y="0" />
 		</circle>
@@ -5432,6 +5737,7 @@ for the symbols.
 		<name lang="fi">Luoteissivu</name>
 		<name lang="bg">Северозападна страна</name>
 		<name lang="ro">Partea nord-vestică</name>
+		<name lang="et">Loodeküljel</name>
 		<text lang="en">NW side of {0}</text>
 		<text lang="fr">{0}, côté NO</text>
 		<text lang="en-GB">{0}, NW. Side</text>
@@ -5442,6 +5748,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteissivu</text>
 		<text lang="bg">СЗ страна на {0}</text>
 		<text lang="ro">{0} partea nord-vestică</text>
+		<text lang="et">{0} loodeküljel</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="-14.14" />
 		</circle>
@@ -5461,6 +5768,7 @@ for the symbols.
 		<name lang="fi">Pohjoisreuna</name>
 		<name lang="bg">Северен край</name>
 		<name lang="ro">Marginea nordică</name>
+		<name lang="et">Põhjaservas</name>
 		<text lang="en">N edge of {0}</text>
 		<text lang="fr">{0}, bord Nord</text>
 		<text lang="en-GB">{0}, N. Edge</text>
@@ -5471,6 +5779,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoisreuna</text>
 		<text lang="bg">северният край на {0}</text>
 		<text lang="ro">{0} marginea nordică</text>
+		<text lang="et">{0} põhjaservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5491,6 +5800,7 @@ for the symbols.
 		<name lang="fi">Koillisreuna</name>
 		<name lang="bg">Североизточен край</name>
 		<name lang="ro">Marginea nord-estică</name>
+		<name lang="et">Kirdeservas</name>
 		<text lang="en">NE edge of {0}</text>
 		<text lang="fr">{0}, bord NE</text>
 		<text lang="en-GB">{0}, NE. Edge</text>
@@ -5501,6 +5811,7 @@ for the symbols.
 		<text lang="fi">{0}, koillisreuna</text>
 		<text lang="bg">СИ край на {0}</text>
 		<text lang="ro">{0} marginea nord-estică</text>
+		<text lang="et">{0} kirdeservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5521,6 +5832,7 @@ for the symbols.
 		<name lang="fi">Itäreuna</name>
 		<name lang="bg">Източен край</name>
 		<name lang="ro">Marginea estică</name>
+		<name lang="et">Idaservas</name>
 		<text lang="en">E edge of {0}</text>
 		<text lang="fr">{0}, bord Est</text>
 		<text lang="en-GB">{0}, E. Edge</text>
@@ -5531,6 +5843,7 @@ for the symbols.
 		<text lang="fi">{0}, itäreuna</text>
 		<text lang="bg">източният край на {0}</text>
 		<text lang="ro">{0} marginea estică</text>
+		<text lang="et">{0} idaservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5551,6 +5864,7 @@ for the symbols.
 		<name lang="fi">Kaakkoisreuna</name>
 		<name lang="bg">Югоизточен край</name>
 		<name lang="ro">Marginea sud-estică</name>
+		<name lang="et">Kaguservas</name>
 		<text lang="en">SE edge of {0}</text>
 		<text lang="fr">{0}, bord SE</text>
 		<text lang="en-GB">{0}, SE. Edge</text>
@@ -5561,6 +5875,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoisreuna</text>
 		<text lang="bg">ЮИ край на {0}</text>
 		<text lang="ro">{0} marginea sud-estică</text>
+		<text lang="et">{0} kaguservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5581,6 +5896,7 @@ for the symbols.
 		<name lang="fi">Eteläreuna</name>
 		<name lang="bg">Южен край</name>
 		<name lang="ro">marginea sudică</name>
+		<name lang="et">Lõunaservas</name>
 		<text lang="en">S edge of {0}</text>
 		<text lang="fr">{0}, bord Sud</text>
 		<text lang="en-GB">{0}, S. Edge</text>
@@ -5591,6 +5907,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläreuna</text>
 		<text lang="bg">южният край на {0}</text>
 		<text lang="ro">{0} marginea sudică</text>
+		<text lang="et">{0} lõunaservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5611,6 +5928,7 @@ for the symbols.
 		<name lang="fi">Lounaisreuna</name>
 		<name lang="bg">Югозападен край</name>
 		<name lang="ro">marginea sud-vestică</name>
+		<name lang="et">Edelaservas</name>
 		<text lang="en">SW edge of {0}</text>
 		<text lang="fr">{0}, bord SO</text>
 		<text lang="en-GB">{0}, SW. Edge</text>
@@ -5621,6 +5939,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaisreuna</text>
 		<text lang="bg">ЮЗ край на {0}</text>
 		<text lang="ro">{0} marginea sud-vestică</text>
+		<text lang="et">{0} edelaservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5641,6 +5960,7 @@ for the symbols.
 		<name lang="fi">Länsireuna</name>
 		<name lang="bg">Западен край</name>
 		<name lang="ro">marginea vestică</name>
+		<name lang="et">Lääneservas</name>
 		<text lang="en">W edge of {0}</text>
 		<text lang="fr">{0}, bord Ouest</text>
 		<text lang="en-GB">{0}, W. Edge</text>
@@ -5651,6 +5971,7 @@ for the symbols.
 		<text lang="fi">{0}, länsireuna</text>
 		<text lang="bg">западният край на {0}</text>
 		<text lang="ro">{0} marginea vestică</text>
+		<text lang="et">{0} lääneservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5671,6 +5992,7 @@ for the symbols.
 		<name lang="fi">Luoteisreuna</name>
 		<name lang="bg">Северозападен край</name>
 		<name lang="ro">Marginea nord-vestică</name>
+		<name lang="et">Loodeservas</name>
 		<text lang="en">NW edge of {0}</text>
 		<text lang="fr">{0}, Bord NO</text>
 		<text lang="en-GB">{0}, NW. Edge</text>
@@ -5681,6 +6003,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteisreuna</text>
 		<text lang="bg">СЗ край на {0}</text>
 		<text lang="ro">{0} marginea nord-vestică</text>
+		<text lang="et">{0} loodeservas</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5701,6 +6024,7 @@ for the symbols.
 		<name lang="fi">Pohjoisosa</name>
 		<name lang="bg">Северна част</name>
 		<name lang="ro">Partea nordică interior</name>
+		<name lang="et">Põhjaosas</name>
 		<text lang="en">N part of {0}</text>
 		<text lang="fr">{0}, partie Nord</text>
 		<text lang="en-GB">{0}, N. Part</text>
@@ -5711,6 +6035,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoisosa</text>
 		<text lang="bg">северната част на {0}</text>
 		<text lang="ro">{0} partea nordică interior</text>
+		<text lang="et">{0} põhjaosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5730,6 +6055,7 @@ for the symbols.
 		<name lang="fi">Koillisosa</name>
 		<name lang="bg">Североизточна част</name>
 		<name lang="ro">Partea nord-estică interior</name>
+		<name lang="et">Kirdeosas</name>
 		<text lang="en">NE part of {0}</text>
 		<text lang="fr">{0}, partie NE</text>
 		<text lang="en-GB">{0}, NE. Part</text>
@@ -5740,6 +6066,7 @@ for the symbols.
 		<text lang="fi">{0}, koillisosa</text>
 		<text lang="bg">СИ част на {0}</text>
 		<text lang="ro">{0} partea nord-estică interior</text>
+		<text lang="et">{0} kirdeosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5759,6 +6086,7 @@ for the symbols.
 		<name lang="fi">Itäosa</name>
 		<name lang="bg">Източна част</name>
 		<name lang="ro">Partea estică interior</name>
+		<name lang="et">Idaosas</name>
 		<text lang="en">E part of {0}</text>
 		<text lang="fr">{0}, partie Est</text>
 		<text lang="en-GB">{0}, E. Part</text>
@@ -5769,6 +6097,7 @@ for the symbols.
 		<text lang="fi">{0}, itäosa</text>
 		<text lang="bg">източната част на {0}</text>
 		<text lang="ro">{0} partea estică interior</text>
+		<text lang="et">{0} idaosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5788,6 +6117,7 @@ for the symbols.
 		<name lang="fi">Kaakkoisosa</name>
 		<name lang="bg">Югоизточна част</name>
 		<name lang="ro">Partea sud-estică interior</name>
+		<name lang="et">Kaguosas</name>
 		<text lang="en">SE part of {0}</text>
 		<text lang="fr">{0}, partie SE</text>
 		<text lang="en-GB">{0}, SE. Part</text>
@@ -5798,6 +6128,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoisosa</text>
 		<text lang="bg">ЮИ част на {0}</text>
 		<text lang="ro">{0} partea sud-estică interior</text>
+		<text lang="et">{0} kaguosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5817,6 +6148,7 @@ for the symbols.
 		<name lang="fi">Eteläosa</name>
 		<name lang="bg">Южна част</name>
 		<name lang="ro">Partea sudică interior</name>
+		<name lang="et">Lõunaosas</name>
 		<text lang="en">S part of {0}</text>
 		<text lang="fr">{0}, partie Sud</text>
 		<text lang="en-GB">{0}, S. Part</text>
@@ -5827,6 +6159,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläosa</text>
 		<text lang="bg">южната част на {0}</text>
 		<text lang="ro">{0} partea sudică interior</text>
+		<text lang="et">{0} lõunaosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5846,6 +6179,7 @@ for the symbols.
 		<name lang="fi">Lounaisosa</name>
 		<name lang="bg">Югозападна част</name>
 		<name lang="ro">Partea sud-vestică interior</name>
+		<name lang="et">Edelaosas</name>
 		<text lang="en">SW part of {0}</text>
 		<text lang="fr">{0}, partie SO</text>
 		<text lang="en-GB">{0}, SW. Part</text>
@@ -5856,6 +6190,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaisosa</text>
 		<text lang="bg">ЮЗ част на {0}</text>
 		<text lang="ro">{0} partea sud-vestică interior</text>
+		<text lang="et">{0} edelaosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5875,6 +6210,7 @@ for the symbols.
 		<name lang="fi">Länsiosa</name>
 		<name lang="bg">Западна част</name>
 		<name lang="ro">Partea vestică interior</name>
+		<name lang="et">Lääneosas</name>
 		<text lang="en">W part of {0}</text>
 		<text lang="fr">{0}, partie Ouest</text>
 		<text lang="en-GB">{0}, W. Part</text>
@@ -5885,6 +6221,7 @@ for the symbols.
 		<text lang="fi">{0}, länsiosa</text>
 		<text lang="bg">западната част на {0}</text>
 		<text lang="ro">{0} partea vestică interior</text>
+		<text lang="et">{0} lääneosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5904,6 +6241,7 @@ for the symbols.
 		<name lang="fi">Luoteisosa</name>
 		<name lang="bg">Северозападна част</name>
 		<name lang="ro">Partea nord-vestică interior</name>
+		<name lang="et">Loodeosas</name>
 		<text lang="en">NW part of {0}</text>
 		<text lang="fr">{0}, partie NO</text>
 		<text lang="en-GB">{0}, NW. Part</text>
@@ -5914,6 +6252,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteisosa</text>
 		<text lang="bg">СЗ част на {0}</text>
 		<text lang="ro">{0} partea nord-vestică interior</text>
+		<text lang="et">{0} loodeosas</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
 		</circle>
@@ -5933,6 +6272,7 @@ for the symbols.
 		<name lang="fi">Pohjoiskulma (sisäpuolella)</name>
 		<name lang="bg">Северен ъгъл (отвътре)</name>
 		<name lang="ro">Colț nord interior</name>
+		<name lang="et">Põhjapoolne sisenurk</name>
 		<text lang="en">N inside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (intérieur)</text>
 		<text lang="en-GB">{0}, N. Corner (inside)</text>
@@ -5943,6 +6283,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoiskulma (sisäpuolella)</text>
 		<text lang="bg">северният ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț nord interior</text>
+		<text lang="et">{0} põhjapoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="-65" y="-15" />
 			<point x="0" y="50" />
@@ -5964,6 +6305,7 @@ for the symbols.
 		<name lang="fi">Koilliskulma (sisäpuolella)</name>
 		<name lang="bg">Североизточен ъгъл (отвътре)</name>
 		<name lang="ro">colț nord-est interior</name>
+		<name lang="et">Kirdepoolne sisenurk</name>
 		<text lang="en">NE inside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (intérieur)</text>
 		<text lang="en-GB">{0}, NE Corner (inside)</text>
@@ -5974,6 +6316,7 @@ for the symbols.
 		<text lang="fi">{0}, koilliskulma (sisäpuolella)</text>
 		<text lang="bg">СИ ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț nord-est interior</text>
+		<text lang="et">{0} kirdepoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="-56.57" y="35.36" />
 			<point x="35.36" y="35.36" />
@@ -5995,6 +6338,7 @@ for the symbols.
 		<name lang="fi">Itäkulma (sisäpuolella)</name>
 		<name lang="bg">Източен ъгъл (отвътре)</name>
 		<name lang="ro">Colț est interior</name>
+		<name lang="et">Idapoolne sisenurk</name>
 		<text lang="en">E inside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (intérieur)</text>
 		<text lang="en-GB">{0}, E. corner (inside)</text>
@@ -6005,6 +6349,7 @@ for the symbols.
 		<text lang="fi">{0}, itäkulma (sisäpuolella)</text>
 		<text lang="bg">източният ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț est interior</text>
+		<text lang="et">{0} idapoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="-15" y="-65" />
 			<point x="50" y="0" />
@@ -6026,6 +6371,7 @@ for the symbols.
 		<name lang="fi">Kaakkoiskulma (sisäpuolella)</name>
 		<name lang="bg">Югоизточен ъгъл (отвътре)</name>
 		<name lang="ro">Colț sud-est interior</name>
+		<name lang="et">Kagupoolne sisenurk</name>
 		<text lang="en">SE inside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (intérieur)</text>
 		<text lang="en-GB">{0}, SE. Corner (inside)</text>
@@ -6036,6 +6382,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoiskulma (sisäpuolella)</text>
 		<text lang="bg">ЮИ ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț sud-est interior</text>
+		<text lang="et">{0} kagupoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="-56.57" y="-35.36" />
 			<point x="35.36" y="-35.36" />
@@ -6057,6 +6404,7 @@ for the symbols.
 		<name lang="fi">Eteläkulma (sisäpuolella)</name>
 		<name lang="bg">Южен ъгъл (отвътре)</name>
 		<name lang="ro">Colț sud interior</name>
+		<name lang="et">Lõunapoolne sisenurk</name>
 		<text lang="en">S inside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (intérieur)</text>
 		<text lang="en-GB">{0}, S. Corner (inside)</text>
@@ -6067,6 +6415,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläkulma (sisäpuolella)</text>
 		<text lang="bg">южният ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț sud interior</text>
+		<text lang="et">{0} lõunapoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="-65" y="15" />
 			<point x="0" y="-50" />
@@ -6088,6 +6437,7 @@ for the symbols.
 		<name lang="fi">Lounaiskulma (sisäpuolella)</name>
 		<name lang="bg">Югозападен ъгъл (отвътре)</name>
 		<name lang="ro">Colț sud-vest interior</name>
+		<name lang="et">Edalapoolne sisenurk</name>
 		<text lang="en">SW inside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (intérieur)</text>
 		<text lang="en-GB">{0}, SW. Corner (inside)</text>
@@ -6098,6 +6448,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaiskulma (sisäpuolella)</text>
 		<text lang="bg">ЮЗ ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț sud-vest interior</text>
+		<text lang="et">{0} edelapoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="56.57" y="-35.36" />
 			<point x="-35.36" y="-35.36" />
@@ -6119,6 +6470,7 @@ for the symbols.
 		<name lang="fi">Länsikulma (sisäpuolella)</name>
 		<name lang="bg">Западен ъгъл (отвътре)</name>
 		<name lang="ro">Colț vest interior</name>
+		<name lang="et">Läänepoolne sisenurk</name>
 		<text lang="en">W inside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (intérieur)</text>
 		<text lang="en-GB">{0}, W. Corner (inside)</text>
@@ -6129,6 +6481,7 @@ for the symbols.
 		<text lang="fi">{0}, länsikulma (sisäpuolella)</text>
 		<text lang="bg">западният ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț vest interior</text>
+		<text lang="et">{0} läänepoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="15" y="-65" />
 			<point x="-50" y="0" />
@@ -6150,6 +6503,7 @@ for the symbols.
 		<name lang="fi">Luoteiskulma (sisäpuolella)</name>
 		<name lang="bg">Северозападен ъгъл (отвътре)</name>
 		<name lang="ro">Colț nord-vest interior</name>
+		<name lang="et">Loodepoolne sisenurk</name>
 		<text lang="en">NW inside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (intérieur)</text>
 		<text lang="en-GB">{0}, NW. Corner (inside)</text>
@@ -6160,6 +6514,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteiskulma (sisäpuolella)</text>
 		<text lang="bg">СЗ ъгъл (отвътре) на {0}</text>
 		<text lang="ro">{0} colț nord-vest interior</text>
+		<text lang="et">{0} loodepoolne sisenurk</text>
 		<lines thickness="10">
 			<point x="56.57" y="35.36" />
 			<point x="-35.36" y="35.36" />
@@ -6181,6 +6536,7 @@ for the symbols.
 		<name lang="fi">Pohjoiskulma (ulkopuolella)</name>
 		<name lang="bg">Северен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior nordic</name>
+		<name lang="et">Põhjapoolne välisnurk</name>
 		<text lang="en">N outside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (extérieur)</text>
 		<text lang="en-GB">{0}, N Corner (outside)</text>
@@ -6191,6 +6547,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoiskulma (ulkopuolella)</text>
 		<text lang="bg">северният ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior nordic</text>
+		<text lang="et">{0} põhjapoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="65" y="-40" />
 			<point x="0" y="25" />
@@ -6212,6 +6569,7 @@ for the symbols.
 		<name lang="fi">Koilliskulma (ulkopuolella)</name>
 		<name lang="bg">Североизточен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior nord-estic</name>
+		<name lang="et">Kirdepoolne välisnurk</name>
 		<text lang="en">NE outside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (extérieur)</text>
 		<text lang="en-GB">{0}, NE. Corner (outside)</text>
@@ -6222,6 +6580,7 @@ for the symbols.
 		<text lang="fi">{0}, koilliskulma (ulkopuolella)</text>
 		<text lang="bg">СИ ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior nord-estic</text>
+		<text lang="et">{0} kirdepoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="-69.25" y="22.68" />
 			<point x="22.68" y="22.68" />
@@ -6243,6 +6602,7 @@ for the symbols.
 		<name lang="fi">Itäkulma (ulkopuolella)</name>
 		<name lang="bg">Източен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior estic</name>
+		<name lang="et">Idapoolne välisnurk</name>
 		<text lang="en">E outside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (extérieur)</text>
 		<text lang="en-GB">{0}, E. Corner (outside)</text>
@@ -6253,6 +6613,7 @@ for the symbols.
 		<text lang="fi">{0}, itäkulma (ulkopuolella)</text>
 		<text lang="bg">източният ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior estic</text>
+		<text lang="et">{0} idapoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="-40" y="-65" />
 			<point x="25" y="0" />
@@ -6274,6 +6635,7 @@ for the symbols.
 		<name lang="fi">Kaakkoiskulma (ulkopuolella)</name>
 		<name lang="bg">Югоизточен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior sud-estic</name>
+		<name lang="et">Kagupoolne välisnurk</name>
 		<text lang="en">SE outside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (extérieur)</text>
 		<text lang="en-GB">{0}, SE. Corner (outside)</text>
@@ -6284,6 +6646,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoiskulma (ulkopuolella)</text>
 		<text lang="bg">ЮИ ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior sud-estic</text>
+		<text lang="et">{0} kagupoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="-69.25" y="-22.68" />
 			<point x="22.68" y="-22.68" />
@@ -6305,6 +6668,7 @@ for the symbols.
 		<name lang="fi">Eteläkulma (ulkopuolella)</name>
 		<name lang="bg">Южен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior sudic</name>
+		<name lang="et">Lõunapoolne välisnurk</name>
 		<text lang="en">S outside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (extérieur)</text>
 		<text lang="en-GB">{0}, S. Corner (outside)</text>
@@ -6315,6 +6679,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläkulma (ulkopuolella)</text>
 		<text lang="bg">южният ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior sudic</text>
+		<text lang="et">{0} lõunapoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="65" y="40" />
 			<point x="0" y="-25" />
@@ -6336,6 +6701,7 @@ for the symbols.
 		<name lang="fi">Lounaiskulma (ulkopuolella)</name>
 		<name lang="bg">Югозападен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior sud-vestic</name>
+		<name lang="et">Edelapoolne välisnurk</name>
 		<text lang="en">SW outside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (extérieur)</text>
 		<text lang="en-GB">{0}, SW. Corner (outside)</text>
@@ -6346,6 +6712,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaiskulma (ulkopuolella)</text>
 		<text lang="bg">ЮЗ ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior sud-vestic</text>
+		<text lang="et">{0} edelapoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="69.25" y="-22.68" />
 			<point x="-22.68" y="-22.68" />
@@ -6367,6 +6734,7 @@ for the symbols.
 		<name lang="fi">Länsikulma (ulkopuolella)</name>
 		<name lang="bg">Западен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior vestic</name>
+		<name lang="et">Läänepoolne välisnurk</name>
 		<text lang="en">W outside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (extérieur)</text>
 		<text lang="en-GB">{0}, W Corner (outside)</text>
@@ -6377,6 +6745,7 @@ for the symbols.
 		<text lang="fi">{0}, länsikulma (ulkopuolella)</text>
 		<text lang="bg">западният ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior vestic</text>
+		<text lang="et">{0} läänepoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="40" y="-65" />
 			<point x="-25" y="0" />
@@ -6398,6 +6767,7 @@ for the symbols.
 		<name lang="fi">Luoteiskulma (ulkopuolella)</name>
 		<name lang="bg">Северозападен ъгъл (отвън)</name>
 		<name lang="ro">Colț exterior nord-vestic</name>
+		<name lang="et">Loodepoolne välisnurk</name>
 		<text lang="en">NW outside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (extérieur)</text>
 		<text lang="en-GB">{0}, NW. Corner (outside)</text>
@@ -6408,6 +6778,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteiskulma (ulkopuolella)</text>
 		<text lang="bg">СЗ ъгъл (отвън) на {0}</text>
 		<text lang="ro">{0} colț exterior nord-vestic</text>
+		<text lang="et">{0} loodepoolne välisnurk</text>
 		<lines thickness="10">
 			<point x="69.25" y="22.68" />
 			<point x="-22.68" y="22.68" />
@@ -6429,6 +6800,7 @@ for the symbols.
 		<name lang="fi">Pohjoiskärki</name>
 		<name lang="bg">Северен връх</name>
 		<name lang="ro">Vârf nordic</name>
+		<name lang="et">Põhjatipp</name>
 		<text lang="en">N tip of {0}</text>
 		<text lang="fr">{0}, pointe Nord</text>
 		<text lang="en-GB">{0}, N. Tip</text>
@@ -6439,6 +6811,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoiskärki</text>
 		<text lang="bg">северният връх на {0}</text>
 		<text lang="ro">{0} vârf nordic</text>
+		<text lang="et">{0} põhjatipus</text>
 		<lines thickness="10">
 			<point x="30" y="-65" />
 			<point x="0" y="30" />
@@ -6460,6 +6833,7 @@ for the symbols.
 		<name lang="fi">Koilliskärki</name>
 		<name lang="bg">Североизточен връх</name>
 		<name lang="ro">Vârf nord-estic</name>
+		<name lang="et">Kirdetipus</name>
 		<text lang="en">NE tip of {0}</text>
 		<text lang="fr">{0}, pointe NE</text>
 		<text lang="en-GB">{0}, NE. Tip</text>
@@ -6470,6 +6844,7 @@ for the symbols.
 		<text lang="fi">{0}, koilliskärki</text>
 		<text lang="bg">СИ връх на {0}</text>
 		<text lang="ro">{0} vârf nord-estic</text>
+		<text lang="et">{0} kirdetipus</text>
 		<lines thickness="10">
 			<point x="-67.18" y="-24.75" />
 			<point x="21.21" y="21.21" />
@@ -6491,6 +6866,7 @@ for the symbols.
 		<name lang="fi">Itäkärki</name>
 		<name lang="bg">Източен връх</name>
 		<name lang="ro">Vârf estic</name>
+		<name lang="et">Idatipp</name>
 		<text lang="en">E tip of {0}</text>
 		<text lang="fr">{0}, pointe Est</text>
 		<text lang="en-GB">{0}, E. Tip</text>
@@ -6501,6 +6877,7 @@ for the symbols.
 		<text lang="fi">{0}, itäkärki</text>
 		<text lang="bg">източният връх на {0}</text>
 		<text lang="ro">{0} vârf estic</text>
+		<text lang="et">{0} idatipus</text>
 		<lines thickness="10">
 			<point x="-65" y="30" />
 			<point x="30" y="0" />
@@ -6522,6 +6899,7 @@ for the symbols.
 		<name lang="fi">Kaakkoiskärki</name>
 		<name lang="bg">Югоизточен връх</name>
 		<name lang="ro">Vârf sud-estic</name>
+		<name lang="et">Kagutipus</name>
 		<text lang="en">SE tip of {0}</text>
 		<text lang="fr">{0}, pointe SE</text>
 		<text lang="en-GB">{0},  SE. Tip</text>
@@ -6532,6 +6910,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoiskärki</text>
 		<text lang="bg">ЮИ връх на {0}</text>
 		<text lang="ro">{0} vârf sud-estic</text>
+		<text lang="et">{0} kagutipus</text>
 		<lines thickness="10">
 			<point x="-67.18" y="24.75" />
 			<point x="21.21" y="-21.21" />
@@ -6553,6 +6932,7 @@ for the symbols.
 		<name lang="fi">Eteläkärki</name>
 		<name lang="bg">Южен връх</name>
 		<name lang="ro">Vârf sudic</name>
+		<name lang="et">Lõunatipp</name>
 		<text lang="en">S tip of {0}</text>
 		<text lang="fr">{0}, pointe Sud</text>
 		<text lang="en-GB">{0}, S. Tip</text>
@@ -6563,6 +6943,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläkärki</text>
 		<text lang="bg">южният връх на {0}</text>
 		<text lang="ro">{0} vârf sudic</text>
+		<text lang="et">{0} lõunatipus</text>
 		<lines thickness="10">
 			<point x="30" y="65" />
 			<point x="0" y="-30" />
@@ -6584,6 +6965,7 @@ for the symbols.
 		<name lang="fi">Lounaiskärki</name>
 		<name lang="bg">Югозападен връх</name>
 		<name lang="ro">Vârf sud-vestic</name>
+		<name lang="et">Edelatipp</name>
 		<text lang="en">SW tip of {0}</text>
 		<text lang="fr">{0}, pointe SO</text>
 		<text lang="en-GB">{0}, SW. Tip</text>
@@ -6594,6 +6976,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaiskärki</text>
 		<text lang="bg">ЮЗ връх на {0}</text>
 		<text lang="ro">{0} vârf sud-vestic</text>
+		<text lang="et">{0} edelatipus</text>
 		<lines thickness="10">
 			<point x="67.18" y="24.75" />
 			<point x="-21.21" y="-21.21" />
@@ -6615,6 +6998,7 @@ for the symbols.
 		<name lang="fi">Länsikärki</name>
 		<name lang="bg">Западен връх</name>
 		<name lang="ro">Vârf vestic</name>
+		<name lang="et">Läänetipp</name>
 		<text lang="en">W tip of {0}</text>
 		<text lang="fr">{0}, pointe Ouest</text>
 		<text lang="en-GB">{0}, W. Tip</text>
@@ -6625,6 +7009,7 @@ for the symbols.
 		<text lang="fi">{0}, länsikärki</text>
 		<text lang="bg">западният връх на {0}</text>
 		<text lang="ro">{0} vârf vestic</text>
+		<text lang="et">{0} läänetipus</text>
 		<lines thickness="10">
 			<point x="65" y="30" />
 			<point x="-30" y="0" />
@@ -6646,6 +7031,7 @@ for the symbols.
 		<name lang="fi">Luoteiskärki</name>
 		<name lang="bg">Северозападен връх</name>
 		<name lang="ro">Vârf nord-vestic</name>
+		<name lang="et">Loodetipp</name>
 		<text lang="en">NW tip of {0}</text>
 		<text lang="fr">{0}, pointe NO</text>
 		<text lang="en-GB">{0}, NW. Tip</text>
@@ -6656,6 +7042,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteiskärki</text>
 		<text lang="bg">СЗ връх на {0}</text>
 		<text lang="ro">{0} vârf nord-vestic</text>
+		<text lang="et">{0} loodetipus</text>
 		<lines thickness="10">
 			<point x="67.18" y="-24.75" />
 			<point x="-21.21" y="21.21" />
@@ -6677,6 +7064,7 @@ for the symbols.
 		<name lang="fi">Pohjoispää</name>
 		<name lang="bg">Северен край</name>
 		<name lang="ro">Capăt nordic</name>
+		<name lang="et">Põhja otsa</name>
 		<text lang="en">N end of {0}</text>
 		<text lang="fr">{0}, extrémité Nord</text>
 		<text lang="en-GB">{0}, N. End</text>
@@ -6687,6 +7075,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoispää</text>
 		<text lang="bg">северният край на {0}</text>
 		<text lang="ro">{0} capăt nordic</text>
+		<text lang="et">{0} põhja ots</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -6708,6 +7097,7 @@ for the symbols.
 		<name lang="fi">Koillispää</name>
 		<name lang="bg">Североизточен край</name>
 		<name lang="ro">Capăt nord-estic</name>
+		<name lang="et">Kirdeots</name>
 		<text lang="en">NE end of {0}</text>
 		<text lang="fr">{0}, extrémité NE</text>
 		<text lang="en-GB">{0}, NE. End</text>
@@ -6718,6 +7108,7 @@ for the symbols.
 		<text lang="fi">{0}, koillispää</text>
 		<text lang="bg">СИ край на {0}</text>
 		<text lang="ro">{0} capăt nord-estic</text>
+		<text lang="et">{0} kirde ots</text>
 		<lines thickness="10">
 			<point x="-45.96" y="-45.96" />
 			<point x="45.96" y="45.96" />
@@ -6739,6 +7130,7 @@ for the symbols.
 		<name lang="fi">Itäpää</name>
 		<name lang="bg">Източен край</name>
 		<name lang="ro">Capăt estic</name>
+		<name lang="et">Idaots</name>
 		<text lang="en">E end of {0}</text>
 		<text lang="fr">{0}, extrémité Est</text>
 		<text lang="en-GB">{0}, E. End</text>
@@ -6749,6 +7141,7 @@ for the symbols.
 		<text lang="fi">{0}, itäpää</text>
 		<text lang="bg">източният край на {0}</text>
 		<text lang="ro">{0} capăt estic</text>
+		<text lang="et">{0} ida ots</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -6770,6 +7163,7 @@ for the symbols.
 		<name lang="fi">Kaakkoispää</name>
 		<name lang="bg">Югоизточен край</name>
 		<name lang="ro">Capăt sud-estic</name>
+		<name lang="et">Kaguots</name>
 		<text lang="en">SE end of {0}</text>
 		<text lang="fr">{0}, extrémité SE</text>
 		<text lang="en-GB">{0}, SE. End</text>
@@ -6780,6 +7174,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoispää</text>
 		<text lang="bg">ЮИ край на {0}</text>
 		<text lang="ro">{0} capăt sud-estic</text>
+		<text lang="et">{0} kagu ots</text>
 		<lines thickness="10">
 			<point x="-45.96" y="45.96" />
 			<point x="45.96" y="-45.96" />
@@ -6801,6 +7196,7 @@ for the symbols.
 		<name lang="fi">Eteläpää</name>
 		<name lang="bg">Южен край</name>
 		<name lang="ro">Capăt sudic</name>
+		<name lang="et">Lõunaots</name>
 		<text lang="en">S end of {0}</text>
 		<text lang="fr">{0}, extrémité Sud</text>
 		<text lang="en-GB">{0}, S. End</text>
@@ -6811,6 +7207,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläpää</text>
 		<text lang="bg">южният край на {0}</text>
 		<text lang="ro">{0} capăt sudic</text>
+		<text lang="et">{0} lõuna ots</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
 			<point x="0" y="65" />
@@ -6832,6 +7229,7 @@ for the symbols.
 		<name lang="fi">Lounaispää</name>
 		<name lang="bg">Югозападен край</name>
 		<name lang="ro">Capăt sud-vestic</name>
+		<name lang="et">Edelaots</name>
 		<text lang="en">SW end of {0}</text>
 		<text lang="fr">{0}, extrémité SO</text>
 		<text lang="en-GB">{0}, SW. End</text>
@@ -6842,6 +7240,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaispää</text>
 		<text lang="bg">ЮЗ край на {0}</text>
 		<text lang="ro">{0} capăt sud-vestic</text>
+		<text lang="et">{0} edela ots</text>
 		<lines thickness="10">
 			<point x="45.96" y="45.96" />
 			<point x="-45.96" y="-45.96" />
@@ -6863,6 +7262,7 @@ for the symbols.
 		<name lang="fi">Länsipää</name>
 		<name lang="bg">Западен край</name>
 		<name lang="ro">Capăt vestic</name>
+		<name lang="et">Lääneots</name>
 		<text lang="en">W end of {0}</text>
 		<text lang="fr">{0}, extrémité Ouest</text>
 		<text lang="en-GB">{0}, W. End</text>
@@ -6873,6 +7273,7 @@ for the symbols.
 		<text lang="fi">{0}, länsipää</text>
 		<text lang="bg">западният край на {0}</text>
 		<text lang="ro">{0} capăt vestic</text>
+		<text lang="et">{0} lääne ots</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
 			<point x="65" y="0" />
@@ -6894,6 +7295,7 @@ for the symbols.
 		<name lang="fi">Luoteispää</name>
 		<name lang="bg">Северозападен край</name>
 		<name lang="ro">Capăt nord-vestic</name>
+		<name lang="et">Loodeots</name>
 		<text lang="en">NW end of {0}</text>
 		<text lang="fr">{0}, extrémité NO</text>
 		<text lang="en-GB">{0}, NW. End</text>
@@ -6904,6 +7306,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteispää</text>
 		<text lang="bg">СЗ край на {0}</text>
 		<text lang="ro">{0} capăt nord-vestic</text>
+		<text lang="et">{0} loode ots</text>
 		<lines thickness="10">
 			<point x="45.96" y="-45.96" />
 			<point x="-45.96" y="45.96" />
@@ -6925,6 +7328,7 @@ for the symbols.
 		<name lang="fi">Pohjoisjuuri</name>
 		<name lang="bg">Северна основа</name>
 		<name lang="ro">Piciorul nordic</name>
+		<name lang="et">Põhjajalam</name>
 		<text lang="en">N foot of {0}</text>
 		<text lang="fr">{0}, pied Nord</text>
 		<text lang="en-GB">{0}, N. Foot</text>
@@ -6935,6 +7339,7 @@ for the symbols.
 		<text lang="fi">{0}, pohjoisjuuri</text>
 		<text lang="bg">северната основа на {0}</text>
 		<text lang="ro">{0} piciorul nordic</text>
+		<text lang="et">{0} põhjajalamil</text>
 		<lines thickness="10">
 			<point x="-10" y="80" />
 			<point x="-10" y="40" />
@@ -6956,6 +7361,7 @@ for the symbols.
 		<name lang="fi">Koillisjuuri</name>
 		<name lang="bg">Североизточна основа</name>
 		<name lang="ro">Piciorul nord-estic</name>
+		<name lang="et">Kirdejalam</name>
 		<text lang="en">NE foot of {0}</text>
 		<text lang="fr">{0}, pied NE</text>
 		<text lang="en-GB">{0}, NE. Foot</text>
@@ -6966,6 +7372,7 @@ for the symbols.
 		<text lang="fi">{0}, koillisjuuri</text>
 		<text lang="bg">СИ основа на {0}</text>
 		<text lang="ro">{0} piciorul nord-estic</text>
+		<text lang="et">{0} kirdejalamil</text>
 		<lines thickness="10">
 			<point x="40" y="70" />
 			<point x="40" y="30" />
@@ -6987,6 +7394,7 @@ for the symbols.
 		<name lang="fi">Itäjuuri</name>
 		<name lang="bg">Източна основа</name>
 		<name lang="ro">Piciorul estic</name>
+		<name lang="et">Idajalam</name>
 		<text lang="en">E foot of {0}</text>
 		<text lang="fr">{0}, pied Est</text>
 		<text lang="en-GB">{0}, E. Foot</text>
@@ -6997,6 +7405,7 @@ for the symbols.
 		<text lang="fi">{0}, itäjuuri</text>
 		<text lang="bg">източната основа на {0}</text>
 		<text lang="ro">{0} piciorul estic</text>
+		<text lang="et">{0} idajalamil</text>
 		<lines thickness="10">
 			<point x="50" y="20" />
 			<point x="50" y="-20" />
@@ -7018,6 +7427,7 @@ for the symbols.
 		<name lang="fi">Kaakkoisjuuri</name>
 		<name lang="bg">Югоизточна основа</name>
 		<name lang="ro">Piciorul sud-estic</name>
+		<name lang="et">Kagujalam</name>
 		<text lang="en">SE foot of {0}</text>
 		<text lang="fr">{0}, pied SE</text>
 		<text lang="en-GB">{0}, SE. Foot</text>
@@ -7028,6 +7438,7 @@ for the symbols.
 		<text lang="fi">{0}, kaakkoisjuuri</text>
 		<text lang="bg">ЮИ основа на {0}</text>
 		<text lang="ro">{0} piciorul sud-estic</text>
+		<text lang="et">{0} kagujalamil</text>
 		<lines thickness="10">
 			<point x="40" y="-30" />
 			<point x="40" y="-70" />
@@ -7049,6 +7460,7 @@ for the symbols.
 		<name lang="fi">Eteläjuuri</name>
 		<name lang="bg">Южна основа</name>
 		<name lang="ro">Piciorul sudic</name>
+		<name lang="et">Lõunajalam</name>
 		<text lang="en">S foot of {0}</text>
 		<text lang="fr">{0}, pied Sud</text>
 		<text lang="en-GB">{0}, S. Foot</text>
@@ -7059,6 +7471,7 @@ for the symbols.
 		<text lang="fi">{0}, eteläjuuri</text>
 		<text lang="bg">южната основа на {0}</text>
 		<text lang="ro">{0} piciorul sudic</text>
+		<text lang="et">{0} lõunajalamil</text>
 		<lines thickness="10">
 			<point x="-10" y="-40" />
 			<point x="-10" y="-80" />
@@ -7080,6 +7493,7 @@ for the symbols.
 		<name lang="fi">Lounaisjuuri</name>
 		<name lang="bg">Югозападна основа</name>
 		<name lang="ro">Piciorul sud-vestic</name>
+		<name lang="et">Edelajalam</name>
 		<text lang="en">SW foot of {0}</text>
 		<text lang="fr">{0}, pied SO</text>
 		<text lang="en-GB">{0}, SW. Foot</text>
@@ -7090,6 +7504,7 @@ for the symbols.
 		<text lang="fi">{0}, lounaisjuuri</text>
 		<text lang="bg">ЮЗ основа на {0}</text>
 		<text lang="ro">{0} piciorul sud-vestic</text>
+		<text lang="et">{0} edelajalamil</text>
 		<lines thickness="10">
 			<point x="-65" y="-30" />
 			<point x="-65" y="-70" />
@@ -7111,6 +7526,7 @@ for the symbols.
 		<name lang="fi">Länsijuuri</name>
 		<name lang="bg">Западна основа</name>
 		<name lang="ro">Piciorul vestic</name>
+		<name lang="et">Läänejalam</name>
 		<text lang="en">W foot of {0}</text>
 		<text lang="fr">{0}, pied Ouest</text>
 		<text lang="en-GB">{0}, W. Foot</text>
@@ -7121,6 +7537,7 @@ for the symbols.
 		<text lang="fi">{0}, länsijuuri</text>
 		<text lang="bg">западната основа на {0}</text>
 		<text lang="ro">{0} piciorul vestic</text>
+		<text lang="et">{0} läänejalamil</text>
 		<lines thickness="10">
 			<point x="-75" y="20" />
 			<point x="-75" y="-20" />
@@ -7142,6 +7559,7 @@ for the symbols.
 		<name lang="fi">Luoteisjuuri</name>
 		<name lang="bg">Северозападна основа</name>
 		<name lang="ro">Piciorul nord-vestic</name>
+		<name lang="et">Loodejalam</name>
 		<text lang="en">NW foot of {0}</text>
 		<text lang="fr">{0}, pied NO</text>
 		<text lang="en-GB">{0}, NW. Foot</text>
@@ -7152,6 +7570,7 @@ for the symbols.
 		<text lang="fi">{0}, luoteisjuuri</text>
 		<text lang="bg">СЗ основа на {0}</text>
 		<text lang="ro">{0} piciorul nord-vestic</text>
+		<text lang="et">{0} loodejalamil</text>
 		<lines thickness="10">
 			<point x="-65" y="70" />
 			<point x="-65" y="30" />
@@ -7173,6 +7592,7 @@ for the symbols.
 		<name lang="fi">Mutka</name>
 		<name lang="bg">Завой</name>
 		<name lang="ro">Cotitură</name>
+		<name lang="et">Käänak</name>
 		<text lang="en">bend in {0}</text>
 		<text lang="fr">{0}, au coude</text>
 		<text lang="en-GB">{0} bend</text>
@@ -7183,6 +7603,7 @@ for the symbols.
 		<text lang="fi">{0} mutka</text>
 		<text lang="bg">завой на {0}</text>
 		<text lang="ro">cotitură de {0}</text>
+		<text lang="et">{0} käänakul</text>
 		<beziers thickness="10">
 			<point x="35" y="70" />
 				<point x="25" y="62.22" />
@@ -7208,6 +7629,7 @@ for the symbols.
 		<name lang="fi">Yläosa (ylhäällä)</name>
 		<name lang="bg">Горната част</name>
 		<name lang="ro">Partea superioară</name>
+		<name lang="et">Ülaosas</name>
 		<text lang="en">upper part of {0}</text>
 		<text lang="fr">{0}, partie amont</text>
 		<text lang="en-GB">{0}, Upper Part</text>
@@ -7218,6 +7640,7 @@ for the symbols.
 		<text lang="fi">{0}, yläosa</text>
 		<text lang="bg">горната част на {0}</text>
 		<text lang="ro">partea superioară {0}</text>
+		<text lang="et">{0} ülaosas</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -7242,6 +7665,7 @@ for the symbols.
 		<name lang="fi">Alaosa (alhaalla)</name>
 		<name lang="bg">Долната част</name>
 		<name lang="ro">Partea inferioară</name>
+		<name lang="et">Lower part</name>
 		<text lang="en">lower part of {0}</text>
 		<text lang="fr">{0}, partie aval</text>
 		<text lang="en-GB">{0}, Lower Part</text>
@@ -7252,6 +7676,7 @@ for the symbols.
 		<text lang="fi">{0}, alaosa</text>
 		<text lang="bg">долната част на {0}</text>
 		<text lang="ro">partea inferioară {0}</text>
+		<text lang="et">{0} alumises osas</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -7276,6 +7701,7 @@ for the symbols.
 		<name lang="fi">Päällä</name>
 		<name lang="bg">Отгоре/върху</name>
 		<name lang="ro">În vârful</name>
+		<name lang="et">Peal</name>
 		<text lang="en">top of {0}</text>
 		<text lang="fr">sur {0}</text>
 		<text lang="en-GB">{0}, Top</text>
@@ -7286,6 +7712,7 @@ for the symbols.
 		<text lang="fi">{0}, päällä</text>
 		<text lang="bg">отгоре/върху {0}</text>
 		<text lang="ro">în vârful {0}</text>
+		<text lang="et">{0} peal</text>
 		<lines thickness="10">
 			<point x="-28" y="-60" />
 			<point x="-28" y="25" />
@@ -7308,6 +7735,7 @@ for the symbols.
 		<name lang="fi">Alla</name>
 		<name lang="bg">Отдолу/под</name>
 		<name lang="ro">Sub</name>
+		<name lang="et">All</name>
 		<text lang="en">beneath {0}</text>
 		<text lang="fr">sous {0}</text>
 		<text lang="en-GB">{0}, Beneath</text>
@@ -7318,6 +7746,7 @@ for the symbols.
 		<text lang="fi">{0}, alla</text>
 		<text lang="bg">отдолу/под {0}</text>
 		<text lang="ro">sub {0}</text>
+		<text lang="et">{0} all</text>
 		<lines thickness="10">
 			<point x="-50" y="-30" />
 			<point x="-50" y="30" />
@@ -7340,6 +7769,7 @@ for the symbols.
 		<name lang="fi">Juuri (ei suuntaa)</name>
 		<name lang="bg">В основата (без указване на местоположението)</name>
 		<name lang="ro">La piciorul</name>
+		<name lang="et">Jalamil</name>
 		<text lang="en">foot of {0}</text>
 		<text lang="fr">{0}, au pied</text>
 		<text lang="en-GB">{0}, Foot</text>
@@ -7350,6 +7780,7 @@ for the symbols.
 		<text lang="fi">{0}, juurella</text>
 		<text lang="bg">в основата на {0}</text>
 		<text lang="ro">La piciorul {0}</text>
+		<text lang="et">{0} jalamil</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
 			<point x="-30" y="-60" />
@@ -7385,6 +7816,7 @@ for the symbols.
 		<name lang="fi">Välissä</name>
 		<name lang="bg">Между</name>
 		<name lang="ro">Între</name>
+		<name lang="et">Vahel</name>
 		<text lang="en">between {0} and {1}</text>
 		<text lang="fr">entre {0} et {1}</text>
 		<text lang="en-GB">between {0} and {1}</text>
@@ -7395,6 +7827,7 @@ for the symbols.
 		<text lang="fi">{0} ja {1}, välissä</text>
 		<text lang="bg">между {0} и {1}</text>
 		<text lang="ro">Între {0} și {1}</text>
+		<text lang="et">{0} ja {1} vahel</text>
 		<lines thickness="10">
 			<point x="-60" y="40" />
 			<point x="60" y="40" />
@@ -7419,6 +7852,7 @@ for the symbols.
 		<name lang="fi">Välissä (kaksi samanlaista kohdetta)</name>
 		<name lang="bg">Между (обекти от един и същи вид)</name>
 		<name lang="ro">Între (obiecte de același tio)</name>
+		<name lang="et">Vahel (samad objektid)</name>
 		<text lang="en">between {1}</text>
 		<text lang="fr">entre les {1}</text>
 		<text lang="en-GB">between {1}</text>
@@ -7429,6 +7863,7 @@ for the symbols.
 		<text lang="fi">{1} välissä</text>
 		<text lang="bg">между {1}</text>
 		<text lang="ro">între {1}</text>
+		<text lang="et">{1} vahel</text>
 	</symbol>
 
 	<!-- Kind "H". Symbols that go only in column H:
@@ -7445,6 +7880,7 @@ for the symbols.
 		<name lang="fi">Ensiapu</name>
 		<name lang="bg">Медицински пункт</name>
 		<name lang="ro">Punct de prim ajutor</name>
+		<name lang="et">Esmaabi</name>
 		<text lang="en">first aid</text>
 		<text lang="fr">secours</text>
 		<text lang="en-GB">first aid</text>
@@ -7455,6 +7891,7 @@ for the symbols.
 		<text lang="fi">ensiapu</text>
 		<text lang="bg">медицински пункт</text>
 		<text lang="ro">punct de prim ajutor</text>
+		<text lang="et">esmaabi</text>
 		<filled-polygon>
 			<point x="-20" y="60" />
 			<point x="20" y="60" />
@@ -7482,6 +7919,7 @@ for the symbols.
 		<name lang="fi">Juoma</name>
 		<name lang="bg">Подкрепителен пункт</name>
 		<name lang="ro">Punct de reînvigorare</name>
+		<name lang="et">Joogi koht</name>
 		<text lang="en">water</text>
 		<text lang="fr">ravitaillement</text>
 		<text lang="en-GB">water</text>
@@ -7492,6 +7930,7 @@ for the symbols.
 		<text lang="fi">juoma</text>
 		<text lang="bg">подкрепителен пункт</text>
 		<text lang="ro">apă</text>
+		<text lang="et">jook</text>
 		<beziers thickness="12.5">
 			<point x="60" y="55" />
 				<point x="60" y="63.3" />
@@ -7537,6 +7976,7 @@ for the symbols.
 		<name lang="fi">Radio- tai tv-rasti</name>
 		<name lang="bg">Радио или ТВ контрола</name>
 		<name lang="ro">Punct radio sau TV</name>
+		<name lang="et">Raadio või TV kontrollpunkt</name>
 		<text lang="en">radio</text>
 		<text lang="fr">radio ou TV</text>
 		<text lang="en-GB">radio</text>
@@ -7547,6 +7987,7 @@ for the symbols.
 		<text lang="fi">radio</text>
 		<text lang="bg">радио или ТВ контрола</text>
 		<text lang="ro">radio-tv</text>
+		<text lang="et">raadio</text>
 		<lines thickness="12.5">
 			<point x="40" y="70" />
 			<point x="-30" y="0" />
@@ -7566,6 +8007,7 @@ for the symbols.
 		<name lang="fi">Miehitetty rasti</name>
 		<name lang="bg">Проверка на състезателен картон</name>
 		<name lang="ro">Punct de control</name>
+		<name lang="et">Kohtunikuga punkt</name>
 		<text lang="en">manned</text>
 		<text lang="fr">contrôleur</text>
 		<text lang="en-GB">manned</text>
@@ -7576,6 +8018,7 @@ for the symbols.
 		<text lang="fi">miehitetty</text>
 		<text lang="bg">място за проверка на състезателен картон</text>
 		<text lang="ro">cu arbitru</text>
+		<text lang="et">kohtunik</text>
 		<lines thickness="12.5">
 			<point x="-35" y="-70" />
 			<point x="0" y="-20" />
@@ -7610,6 +8053,7 @@ for the symbols.
 		<name lang="fi">Seuraa viitoitusta rastilta eteenpäin</name>
 		<name lang="bg">Следвай маркиран път след/от КТ</name>
 		<name lang="ro">Urmează ruta cu banda departe de control</name>
+		<name lang="et">Tähistus KPst väljumisel</name>
 		<text lang="en">follow tapes {0}away from control</text>
 		<text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
 		<text lang="en-GB">Follow Tapes {0}away from control</text>
@@ -7620,6 +8064,7 @@ for the symbols.
 		<text lang="fi">seuraa viitoitusta rastilta eteenpäin {0}</text>
 		<text lang="bg">Следвай маркиран път {0}след/от КТ.</text>
 		<text lang="ro">urmează ruta cu banda {0} departe de control</text>
+		<text lang="et">järgi tähistust {0} KPst väljumisel</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7665,6 +8110,7 @@ for the symbols.
 		<name lang="fi">Seuraa viitoitusta seuraavalle rastille</name>
 		<name lang="bg">Следвай маркиран път между КТ</name>
 		<name lang="ro">Bandă între punctele de control</name>
+		<name lang="et">Tähistus KPde vahel</name>
 		<text lang="en">follow tapes {0}between controls</text>
 		<text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
 		<text lang="en-GB">Follow Tapes {0}between controls</text>
@@ -7675,6 +8121,7 @@ for the symbols.
 		<text lang="fi">seuraa viitoitusta seuraavalle rastille {0}</text>
 		<text lang="bg">Следвай маркиран път {0}между КТ.</text>
 		<text lang="ro">urmează banda {0} între punctele de control</text>
+		<text lang="et">järgi tähistust {0} KPde vahel</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7725,6 +8172,7 @@ for the symbols.
 		<name lang="fi">Pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</name>
 		<name lang="bg">Задължително място/точка или места/точки за преминаване</name>
 		<name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
+		<name lang="et">Kohustuslik ristumine</name>
 		<text lang="en">mandatory crossing point</text>
 		<text lang="fr">point de passage obligatoire</text>
 		<text lang="en-GB">Use Compulsory Crossing Point</text>
@@ -7735,6 +8183,7 @@ for the symbols.
 		<text lang="fi">pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</text>
 		<text lang="bg">задължително място/точка за преминаване</text>
 		<text lang="ro">punct de trecere obligatoriu</text>
+		<text lang="et">kohustuslik ristumine</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7776,6 +8225,7 @@ for the symbols.
 		<name lang="fi">Pakollinen reitti läpi kielletyn alueen</name>
 		<name lang="bg">Задължителен път/отсечка за преминаване през забранена зона</name>
 		<name lang="ro">Pasaj obligatoriu</name>
+		<name lang="et">Kohustuslik läbipääs</name>
 		<text lang="en">mandatory passage</text>
 		<text lang="fr">passage obligatoire à travers une zone interdite</text>
 		<text lang="en-GB">mandatory passage</text>
@@ -7786,6 +8236,7 @@ for the symbols.
 		<text lang="fi">pakollinen reitti läpi kielletyn alueen</text>
 		<text lang="bg">задължителен път/отсечка за преминаване през забранена зона</text>
 		<text lang="ro">pasaj obligatoriu</text>
+		<text lang="et">kohustuslik läbipääs</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7830,6 +8281,7 @@ for the symbols.
 		<name lang="fi">Seuraa viitoitusta kartanvaihtopaikalle</name>
 		<name lang="bg">Следвай маркиран път до място за смяна на картата</name>
 		<name lang="ro">Schimb de hartă</name>
+		<name lang="et">Kaardivahetus</name>
 		<text lang="en">follow tapes {0}to map exchange</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
 		<text lang="en-GB">Follow Tapes {0}to map exchange</text>
@@ -7840,6 +8292,7 @@ for the symbols.
 		<text lang="fi">seuraa viitoitusta {0} kartanvaihtopaikalle</text>
 		<text lang="bg">Следвай маркиран път {0}до място за смяна на картата.</text>
 		<text lang="ro">urmează banda {0} pentru schimb de hartă</text>
+		<text lang="et">järgi tähistust {0} kaardivahetuseni</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7896,6 +8349,7 @@ for the symbols.
 		<name lang="fi">Seuraa rastilta lähtevää viitoitusta maaliin</name>
 		<name lang="bg">Следвай маркиран път от последна КТ до финала.</name>
 		<name lang="ro">Bandă până la sosire</name>
+		<name lang="et">Tähistus Finišisse</name>
 		<text lang="en">follow tapes {0}to finish</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'à l'arrivée</text>
 		<text lang="en-GB">Follow Tapes {0}to Finish</text>
@@ -7906,6 +8360,7 @@ for the symbols.
 		<text lang="fi">seuraa rastilta lähtevää viitoitusta {0} maaliin </text>
 		<text lang="bg">Следвай маркиран път {0}от последна КТ до финала.</text>
 		<text lang="ro">urmează banda {0} până la sosire</text>
+		<text lang="et">tähistus {0} finišisse</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -7957,6 +8412,7 @@ for the symbols.
 		<name lang="fi">Suunnista kokoavalle viitoitukselle, seuraa viitoitusta maaliin</name>
 		<name lang="bg">Ориентирайте се до финалния коридор/фуния, после следвайте маркировка до финала.</name>
 		<name lang="ro">Parcurgere până la pâlnia de sosire</name>
+		<name lang="et">Suundu finišikoridori</name>
 		<text lang="en">navigate {0}to finish funnel</text>
 		<text lang="fr">{0}jusqu'à l'arrivée (balisage convergent)</text>
 		<text lang="en-GB">Navigate  to Finish Funnel, then follow tapes for {0}</text>
@@ -7967,6 +8423,7 @@ for the symbols.
 		<text lang="fi">suunnista {0} maaliin, kokoava viitoitus</text>
 		<text lang="bg">Ориентирайте се до финалния коридор/фуния, после следвайте {0}маркировка до финала.</text>
 		<text lang="ro">parcurgere {0} până la pâlnia de sosire</text>
+		<text lang="et">suundu {0} finišikoridori</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
@@ -8019,6 +8476,7 @@ for the symbols.
 		<name lang="fi">Suunnista maaliin (ei viitoitusta)</name>
 		<name lang="bg">Ориентирайте се от последна КТ до финала, няма маркировка.</name>
 		<name lang="ro">Parcurgere până la sosire (fără bandă)</name>
+		<name lang="et">Suundu finišisse (tähistus puudub)</name>
 		<text lang="en">navigate {0}to finish</text>
 		<text lang="fr">s'orienter sur {0}jusqu'à l'arrivée (trajet non balisé)</text>
 		<text lang="en-GB">Navigate {0}to Finish</text>
@@ -8029,6 +8487,7 @@ for the symbols.
 		<text lang="fi">suunnista {0} maaliin (ei viitoitusta)</text>
 		<text lang="bg">Ориентирайте се {0}от последна КТ до финала, няма маркировка.</text>
 		<text lang="ro">parcurgere {0} până la sosire</text>
+		<text lang="et">suundu {0} finišisse</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
 		</circle>
