@@ -92,7 +92,7 @@ namespace PurplePen
             eventDB = new EventDB(undoMgr);
             selectionMgr = new SelectionMgr(eventDB, symbolDB, this);
 
-            currentMode = defaultMode = new DefaultMode(this, eventDB, selectionMgr);
+            currentMode = defaultMode = new DefaultMode(this, eventDB, symbolDB, selectionMgr);
 
             showAllControls = false;
             temporaryControlView = false;
@@ -2518,6 +2518,10 @@ namespace PurplePen
         public Cursor GetMouseCursor(PointF location, float pixelSize)
         { return currentMode.GetMouseCursor(location, pixelSize); }
 
+        public bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        {
+            return currentMode.GetToolTip(location, pixelSize, out tipText, out tipTitle);
+        }
 
         // Get the event database. In most, if not all cases, the UI should NOT interact
         // directly with the event database. This is primarily for test support purposes.
@@ -2625,6 +2629,9 @@ namespace PurplePen
 
         // Get shape of the mouse cursor
         Cursor GetMouseCursor(PointF location, float pixelSize);
+
+        // Get tool tip to be displayed on a hover.
+        bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitleText);
     }
 
     // Describes the interface to the user interface. Allows the UI

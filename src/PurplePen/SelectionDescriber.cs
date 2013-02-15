@@ -77,7 +77,6 @@ namespace PurplePen
                 return DescribeTextLine(eventDB, selection.SelectedControl, selection.SelectedTextLineKind);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
-                ControlPoint control = eventDB.GetControl(selection.SelectedControl);
                 return DescribeControlPoint(symbolDB, eventDB, selection.SelectedControl);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
@@ -94,6 +93,24 @@ namespace PurplePen
             }
             else {
                 return DescribeAllControls(eventDB, activeCourseView);
+            }
+        }
+
+        // Describe a course object, and return an array of TextParts for display in the UI. Return null if nothing useful
+        // can be said.
+        public static TextPart[] DescribeCourseObject(SymbolDB symbolDB, EventDB eventDB, CourseObj courseObj)
+        {
+            if (courseObj is LineCourseObj && courseObj.courseControlId.IsNotNone && ((LineCourseObj)courseObj).courseControlId2.IsNotNone) {
+                return DescribeLeg(eventDB, courseObj.courseControlId, ((LineCourseObj)courseObj).courseControlId2);
+            }
+            else if (courseObj.controlId.IsNotNone) {
+                return DescribeControlPoint(symbolDB, eventDB, courseObj.controlId);
+            }
+            else if (courseObj.specialId.IsNotNone) {
+                return DescribeSpecial(eventDB, courseObj.specialId, courseObj.scaleRatio);
+            }
+            else {
+                return null;
             }
         }
 

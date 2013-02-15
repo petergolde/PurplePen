@@ -374,11 +374,11 @@ namespace PurplePen
             if (v.Revision >= VersionNumber.Stable)
                 modifier = "";
             else if (v.Revision >= VersionNumber.RC)
-                modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 10.0);
             else if (v.Revision >= VersionNumber.Beta)
-                modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 10.0);
             else if (v.Revision >= VersionNumber.Alpha)
-                modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 10.0);
             else
                 modifier = string.Format(" ({0})", v.Revision);
 
@@ -505,6 +505,11 @@ namespace PurplePen
             }
 
             return true;
+        }
+
+        public static Point PointFromPointF(PointF pointf)
+        {
+            return new Point((int)Math.Round(pointf.X), (int)Math.Round(pointf.Y));
         }
     }
 

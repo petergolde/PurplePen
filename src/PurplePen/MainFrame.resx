@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 231</value>
+    <value>256, 234</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +217,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -253,7 +253,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 132</value>
+    <value>256, 129</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>231</value>
+    <value>234</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -325,7 +325,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADAersL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuAAAfbsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -347,7 +347,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwmY7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwm87J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -355,7 +355,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -427,7 +427,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -565,19 +565,19 @@
     <value>Print &amp;Courses...</value>
   </data>
   <data name="printAreaThisPartMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>This &amp;Part Only</value>
   </data>
   <data name="printAreaThisCourseMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;This Course</value>
   </data>
   <data name="printAreaAllCoursesMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;All Courses</value>
@@ -1577,12 +1577,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEiSURBVDhPvVI9DwFRENwoJAotUSiV/oNoNAqNiFaj0GgU
-        qtPpFLSi0fkVEq1C4nQ6HaWP4LgzI8/lcLknISQb97Kzs7uzI/Lvny127iKX8ld9HXGKCOcq1z4II29k
-        O9klkOyh0xgxt8RavMZZziuSMJg7ySntEm1kE/UCHkDdP5oOXBJ0rin2Jb7r6FJAZBEZb6CoRdxBDnvg
-        Kk/rIDlkEolmkGjUBJgZ9Ei94UDS4Y465TFB0hQz/NV1Pi42xAhh3HhQAfJVTo4Nur5nxkoT7h5EguK2
-        utzoCQfm3FGOa2Wm1utl+MYEeTQpcQri8G64JHxANFvnC2+eDbeyjbkkdKta4+5GGs/PseqCU1rC98wU
-        lLuqiQI10V6J2tCtWuCvATdy+TdGsNieRgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEhSURBVDhPvVKvD0FhFL0TbILKBFH0P5iiCIqZqgiKIkhP
+        0wSqKZq/wqYKNk/TNKIfw+M959jn7eHtfTbGdud9u+ee++MckX//bLFzF7mUv+rriFNEOFe59kEYeSPb
+        yS6BZA+dxoi5JdbiNc5yXpGEwdxJTmmXaCObqBfwAOr+0XTgkqBzTbEv8V1HlwIii8h4A0Ut4ray3QNX
+        eVoHySGTSDSDjsabADPDPVJvOJB0uKPu8gc5JE0xw1+p83GxIUYI48aDCpCvcnJs0PWVGStNuHsQCYrb
+        SrnREw7MuaMc18pMrVdl+MYEeTQpcQri8G64JHxANlvnC2+eDVETc0noVrXG3Y00np9jlYJTWsJXZh6U
+        u6qJAm+iVYm3oVu1wF8DblSNNzQfUwVOAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1865,7 +1865,7 @@
     <value>2</value>
   </data>
   <metadata name="statusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 350</value>
+    <value>1057, 17</value>
   </metadata>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>533, 20</value>
@@ -1933,6 +1933,9 @@
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Create XML Interchange File</value>
   </data>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>967, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3055,7 +3058,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>
@@ -3074,6 +3077,12 @@
   </data>
   <data name="&gt;&gt;saveXmlFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>

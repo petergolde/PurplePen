@@ -50,6 +50,7 @@ using PurplePen.MapView;
 using PurplePen.MapModel;
 
 using PurplePen.DebugUI;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -70,6 +71,8 @@ namespace PurplePen
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
 
         Uri helpFileUrl;                       // URL of the help file.
+
+        Point lastTooltipLocation;
 
         const double TRACKBAR_MIN = 0.25;      // minimum zoom on the zoom trackbar
         const double TRACKBAR_MAX = 10.0;     // maximum zoom on the zoom trackbar
@@ -944,8 +947,23 @@ namespace PurplePen
                 mapViewer.Cursor = controller.GetMouseCursor(location, mapViewer.PixelSize);
             }
 
+            PointF pixelLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
+            if (pixelLocation != lastTooltipLocation)
+                toolTip.Hide(mapViewer);
+
             UpdatePointerLabel(inViewport, location);
             UpdateStatusText();
+        }
+
+        private void mapViewer_OnPointerHover(object sender, bool inViewport, PointF location)
+        {
+            string tipText, titleText;
+            if (controller.GetToolTip(location, mapViewer.PixelSize, out tipText, out titleText)) {
+                toolTip.Hide(mapViewer);
+                toolTip.ToolTipTitle = titleText;
+                lastTooltipLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
+                toolTip.Show(tipText, mapViewer, lastTooltipLocation, 7000);
+            }
         }
 
         private void mapViewer_MouseEnter(object sender, EventArgs e)
@@ -966,6 +984,9 @@ namespace PurplePen
 
         private MapViewer.DragAction mapViewer_OnMouseEvent(object sender, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart)
         {
+            if (action != MouseAction.Move)
+                toolTip.Hide(mapViewer);
+
             if (action == MouseAction.Down && buttonNumber == MapViewer.LeftMouseButton)
                 return controller.LeftButtonDown(location, mapViewer.PixelSize);
             else if (action == MouseAction.Down && buttonNumber == MapViewer.RightMouseButton)

@@ -61,6 +61,7 @@ namespace PurplePen
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.courseTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -251,6 +252,7 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -336,6 +338,7 @@ namespace PurplePen
             this.mapViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer.CenterPoint")));
             resources.ApplyResources(this.mapViewer, "mapViewer");
             this.mapViewer.ForeColor = System.Drawing.Color.Black;
+            this.mapViewer.HoverDelay = 400;
             this.mapViewer.Name = "mapViewer";
             this.mapViewer.ShowGrid = false;
             this.mapViewer.ShowSymbolBounds = false;
@@ -343,6 +346,7 @@ namespace PurplePen
             this.mapViewer.ZoomFactor = 1F;
             this.mapViewer.OnViewportChange += new System.EventHandler(this.mapViewer_OnViewportChange);
             this.mapViewer.OnPointerMove += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerMove);
+            this.mapViewer.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerHover);
             this.mapViewer.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewer_OnMouseEvent);
             this.mapViewer.MouseEnter += new System.EventHandler(this.mapViewer_MouseEnter);
             // 
@@ -1618,6 +1622,9 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
+            // toolTip
+            // 
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1845,6 +1852,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem mapExchangeControlMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapExchangeSeparateMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printAreaThisPartMenu;
+        private System.Windows.Forms.ToolTip toolTip;
 
     }
 }

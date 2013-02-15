@@ -41,6 +41,7 @@ using System.Diagnostics;
 using PurplePen.MapView;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Text;
 
 namespace PurplePen
 {
@@ -118,6 +119,12 @@ namespace PurplePen
 
         public virtual void RightButtonCancelDrag(ref bool displayUpdateNeeded)
         { }
+
+        public virtual bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        {
+            tipText = titleText = "";
+            return false;
+        }
     }
 
 
@@ -129,12 +136,14 @@ namespace PurplePen
     {
         Controller controller;
         EventDB eventDB;
+        SymbolDB symbolDB;
         SelectionMgr selectionMgr;
 
-        public DefaultMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr)
+        public DefaultMode(Controller controller, EventDB eventDB, SymbolDB symbolDB, SelectionMgr selectionMgr)
         {
             this.controller = controller;
             this.eventDB = eventDB;
+            this.symbolDB = symbolDB;
             this.selectionMgr = selectionMgr;
         }
 
@@ -295,6 +304,61 @@ namespace PurplePen
             }
 
             return MapViewer.DragAction.None;
+        }
+
+        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        {
+            CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+
+            if (touchedObject == null)
+                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+
+            if (touchedObject != null) {
+                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject);
+                ConvertTextPartsToToolTip(textParts, out tipText, out tipTitle);
+                return true;
+            }
+            else {
+                tipText = tipTitle = "";
+                return false;
+            }
+        }
+
+        private void ConvertTextPartsToToolTip(TextPart[] textParts, out string tipText, out string tipTitle)
+        {
+            StringBuilder tipBuilder = new StringBuilder();
+            StringBuilder titleBuilder = new StringBuilder();
+
+            foreach (TextPart part in textParts) {
+                switch (part.format) {
+                    case TextFormat.NewLine:
+                        tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.SameLine:
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Title:
+                        titleBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Header:
+                        tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        tipBuilder.Append(" ");
+                        break;
+
+                    default:
+                        Debug.Fail("Unexpected part format");
+                        break;
+                }
+            }
+
+            tipText = tipBuilder.ToString();
+            tipTitle = titleBuilder.ToString();
         }
     }
 
