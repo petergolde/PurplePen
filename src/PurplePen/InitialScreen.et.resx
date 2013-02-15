@@ -121,7 +121,7 @@
     <value>Ava eksisteeriv võistlus...</value>
   </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
-    <value>Loo uus võistlus...</value>
+    <value>Lisa uus võistlus ...</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>

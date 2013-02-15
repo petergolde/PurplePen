@@ -150,6 +150,9 @@
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Abi</value>
   </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Abi (Tõlgitud)</value>
+  </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Purpe Pen &amp;Kodulehekülg</value>
   </data>
@@ -181,10 +184,13 @@
     <value>Salvesta &amp;nimega...</value>
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Loo OCADi &amp;Failid...</value>
+    <value>Tee OCADi &amp;failid...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Salvesta Route&amp;Gadget failid...</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Loo &amp;E-rajakirjelduse fail (IOF-xml) ...</value>
+    <value>Tee IOF-XML rajakirjelduse fail...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Trüki legendid...</value>
@@ -301,7 +307,7 @@
     <value>Muuda &amp;selgituse teksti</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Muuda raja &amp;kujundust</value>
+    <value>Muuda &amp;rajasümboleid</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Lisa rada...</value>
@@ -447,6 +453,9 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Aruande test</value>
   </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Font Metrics</value>
+  </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lisa legendide keel...</value>
   </data>
@@ -553,7 +562,7 @@
     <value>XML fail|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
-    <value>Loo rajakirjelduse XML fail</value>
+    <value>Tee rajakirjelduse XML fail</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

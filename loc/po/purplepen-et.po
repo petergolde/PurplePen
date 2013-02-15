@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.16\n"
+"Project-Id-Version: Purple Pen 1.2.1\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2012-12-15 17:12-08:00\n"
+"POT-Creation-Date: 2013-02-13 12:52-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © 2007-2011 by Peter Golde"
-msgstr "Copyright (C) 2007-2011 Peter Golde"
+msgid "Copyright © 2007-2012 by Peter Golde"
+msgstr "Copyright (C) 2007-2012 Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -30,11 +30,9 @@ msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
 "WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
 "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
 "PURPOSE ARE DISCLAIMED."
-msgstr "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
-"CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED "
-"WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
-"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
-"PURPOSE ARE DISCLAIMED."
+msgstr "SEE TARKVARA ON JAGATUD AUTORIÕIGUSE OMANIKE JA LEVITAJATE "
+"POOLT  \"NII NAGU ON\" JA OTSESEID EGA KAUDSEID GARANTIISID "
+"EI LUBATA."
 
 #: AboutForm.resx, okButton.Text
 #: InitialScreen.resx, okButton.Text
@@ -58,17 +56,17 @@ msgstr "Programmist Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Esimene kontrollpunkt:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
 msgid "Description appearance:"
-msgstr "Legendi väljanägemine:"
+msgstr "Legendi kujundus :"
 
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr "Trükikaardi mastaap"
+msgstr "Trükikaardi mastaap :"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
@@ -98,39 +96,39 @@ msgstr "Sümbolid ja tekst"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "KP rõnga pealkiri:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Järjekorra number (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Tunnusnumber (154)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Järjekorra ja tunnusnumber (3-145)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Näita punkte :"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Veerus A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Veerus B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Veerus H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(ära näita)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -164,7 +162,7 @@ msgstr "Raja nimi:"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr "Tavarada"
+msgstr "Suund-o rada"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
@@ -562,19 +560,19 @@ msgstr "Muuda teksti"
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr "Muuda raja kuvamist"
+msgstr "Muuda raja sümbolite väljanägemist"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
-msgstr ""
+msgstr "Tavaline"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
 msgid "Bold"
-msgstr ""
+msgstr "Paks"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr ""
+msgstr "KP numbri stiil:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
@@ -669,7 +667,7 @@ msgstr "Rajad"
 #: CreateOcadFiles.resx, createButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
-msgstr "Loo"
+msgstr "Tee"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
@@ -714,7 +712,7 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
@@ -754,30 +752,32 @@ msgstr "Kaust"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
-msgstr "Loo OCADi failid"
+msgstr "Tee OCADi failid"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Faili nimi"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "Sisesta nimi (ilma .xml või .gif laiendita) mõlema "
+"RouteGadgeti faili jaoks:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Loe infot RouteGadgeti kohta"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget vajab kaardi (.gif) ja IOF XML (.xml) faili. "
+"Vali nimi ja kaust kuhu failid salvestatakse."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr ""
+msgstr "Tee RouteGadgeti failid"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
@@ -848,7 +848,7 @@ msgstr "Ava eksisteeriv võistlus..."
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
-msgstr "Loo uus võistlus..."
+msgstr "Lisa uus võistlus ..."
 
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
@@ -920,7 +920,7 @@ msgstr "Purple Pen &Abi"
 
 #: MainFrame.resx, helpTranslatedMenu.Text
 msgid "Purple Pen Help (Translated)"
-msgstr ""
+msgstr "Purple Pen Abi (Tõlgitud)"
 
 #: MainFrame.resx, mainWebSiteToolMenu.Text
 msgid "Purple Pen &Web Site"
@@ -964,15 +964,15 @@ msgstr "Salvesta &nimega..."
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr "Loo OCADi &Failid..."
+msgstr "Tee OCADi &failid..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
-msgstr ""
+msgstr "Salvesta Route&Gadget failid..."
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create &E-Punch Interchange File..."
-msgstr "Loo &E-rajakirjelduse fail (IOF-xml) ..."
+msgstr "Tee IOF-XML rajakirjelduse fail..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1132,7 +1132,7 @@ msgstr "Muuda &selgituse teksti"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
-msgstr "Muuda raja &kujundust"
+msgstr "Muuda &rajasümboleid"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1337,7 +1337,7 @@ msgstr "Aruande test"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
+msgstr "Font Metrics"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1427,7 +1427,7 @@ msgstr "XML fail|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr "Loo rajakirjelduse XML fail"
+msgstr "Tee rajakirjelduse XML fail"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle

@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Climb" xml:space="preserve">
+    <value>登高</value>
+  </data>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>カスタマイズされた記号のディスクリプション</value>
+  </data>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>ディスクリプション</value>
+  </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>文字によるディスクリプション</value>
   </data>
 </root>
