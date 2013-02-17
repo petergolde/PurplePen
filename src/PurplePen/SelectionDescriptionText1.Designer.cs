@@ -241,6 +241,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Load:.
+        /// </summary>
+        internal static string Load {
+            get {
+                return ResourceManager.GetString("Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location:.
         /// </summary>
         internal static string Location {
@@ -498,6 +507,15 @@ namespace PurplePen {
         internal static string TotalScore {
             get {
                 return ResourceManager.GetString("TotalScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Used in:.
+        /// </summary>
+        internal static string UsedIn {
+            get {
+                return ResourceManager.GetString("UsedIn", resourceCulture);
             }
         }
         

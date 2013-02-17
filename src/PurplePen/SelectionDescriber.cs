@@ -67,6 +67,8 @@ namespace PurplePen
     // The selection describer creates a description of the selection for display in the description pane.
     class SelectionDescriber
     {
+        private enum DescKind { Tooltip, DescPane }
+
         // Describe the selection, and return an array of TextParts for display in the UI.
         public static TextPart[] DescribeSelection(SymbolDB symbolDB, EventDB eventDB, CourseView activeCourseView, SelectionMgr.SelectionInfo selection)
         {
@@ -77,13 +79,13 @@ namespace PurplePen
                 return DescribeTextLine(eventDB, selection.SelectedControl, selection.SelectedTextLineKind);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
-                return DescribeControlPoint(symbolDB, eventDB, selection.SelectedControl);
+                return DescribeControlPoint(symbolDB, eventDB, selection.SelectedControl, DescKind.DescPane);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
-                return DescribeLeg(eventDB, selection.SelectedCourseControl, selection.SelectedCourseControl2);
+                return DescribeLeg(eventDB, selection.SelectedCourseControl, selection.SelectedCourseControl2, DescKind.DescPane);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
-                return DescribeSpecial(eventDB, selection.SelectedSpecial, activeCourseView.ScaleRatio);
+                return DescribeSpecial(eventDB, selection.SelectedSpecial, activeCourseView.ScaleRatio, DescKind.DescPane);
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
                 return DescribeMapExchangeAtControl(eventDB, selection.SelectedControl);
@@ -101,13 +103,13 @@ namespace PurplePen
         public static TextPart[] DescribeCourseObject(SymbolDB symbolDB, EventDB eventDB, CourseObj courseObj)
         {
             if (courseObj is LineCourseObj && courseObj.courseControlId.IsNotNone && ((LineCourseObj)courseObj).courseControlId2.IsNotNone) {
-                return DescribeLeg(eventDB, courseObj.courseControlId, ((LineCourseObj)courseObj).courseControlId2);
+                return DescribeLeg(eventDB, courseObj.courseControlId, ((LineCourseObj)courseObj).courseControlId2, DescKind.Tooltip);
             }
             else if (courseObj.controlId.IsNotNone) {
-                return DescribeControlPoint(symbolDB, eventDB, courseObj.controlId);
+                return DescribeControlPoint(symbolDB, eventDB, courseObj.controlId, DescKind.Tooltip);
             }
             else if (courseObj.specialId.IsNotNone) {
-                return DescribeSpecial(eventDB, courseObj.specialId, courseObj.scaleRatio);
+                return DescribeSpecial(eventDB, courseObj.specialId, courseObj.scaleRatio, DescKind.Tooltip);
             }
             else {
                 return null;
@@ -210,8 +212,10 @@ namespace PurplePen
 
 
         // Describe a control point.
-        private static TextPart[] DescribeControlPoint(SymbolDB symbolDB, EventDB eventDB, Id<ControlPoint> controlId)
+        private static TextPart[] DescribeControlPoint(SymbolDB symbolDB, EventDB eventDB, Id<ControlPoint> controlId, DescKind descKind)
         {
+            Debug.Assert(descKind == DescKind.DescPane || descKind == DescKind.Tooltip);
+
             List<TextPart> list = new List<TextPart>();
             ControlPoint control = eventDB.GetControl(controlId);
 
@@ -219,26 +223,30 @@ namespace PurplePen
             list.Add(new TextPart(TextFormat.Title, Util.ControlPointName(eventDB, controlId, NameStyle.Long)));
 
             // Control location.
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Location + "  "));
-            list.Add(new TextPart(TextFormat.SameLine, string.Format("({0:##0.0}, {1:##0.0})", control.location.X, control.location.Y)));
+            if (descKind == DescKind.DescPane) {
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Location + "  "));
+                list.Add(new TextPart(TextFormat.SameLine, string.Format("({0:##0.0}, {1:##0.0})", control.location.X, control.location.Y)));
+            }
 
             // Which courses is it used in?
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.UsedInCourses));
+            list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.UsedIn : SelectionDescriptionText.UsedInCourses)));
             Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, controlId);
-            list.Add(new TextPart(TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
+            list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
 
             // What is the competitor load?
             int load = QueryEvent.GetControlLoad(eventDB, controlId);
             if (load >= 0) {
-                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.CompetitorLoad));
+                list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.Load : SelectionDescriptionText.CompetitorLoad)));
                 list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", load)));
             }
 
             // Text version of the descriptions
-            Textifier textifier = new Textifier(eventDB, symbolDB, QueryEvent.GetDescriptionLanguage(eventDB));
-            string descText = textifier.CreateTextForControl(controlId, null);
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.TextDescription));
-            list.Add(new TextPart(TextFormat.NewLine, descText));
+            if (descKind == DescKind.DescPane) {
+                Textifier textifier = new Textifier(eventDB, symbolDB, QueryEvent.GetDescriptionLanguage(eventDB));
+                string descText = textifier.CreateTextForControl(controlId, null);
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.TextDescription));
+                list.Add(new TextPart(TextFormat.NewLine, descText));
+            }
 
             return list.ToArray();
         }
@@ -393,8 +401,10 @@ namespace PurplePen
         }
 
         // Describe a leg.
-        private static TextPart[] DescribeLeg(EventDB eventDB, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
+        private static TextPart[] DescribeLeg(EventDB eventDB, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, DescKind descKind)
         {
+            Debug.Assert(descKind == DescKind.Tooltip || descKind == DescKind.DescPane);
+
             Id<ControlPoint> controlId1 = eventDB.GetCourseControl(courseControlId1).control;
             Id<ControlPoint> controlId2 = eventDB.GetCourseControl(courseControlId2).control;
             Id<Leg> legId = QueryEvent.FindLeg(eventDB, controlId1, controlId2);
@@ -410,20 +420,22 @@ namespace PurplePen
                 string.Format("{0:#,###} m", QueryEvent.ComputeLegLength(eventDB, controlId1, controlId2, legId)))); 
 
             // Which courses
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.UsedInCourses));
+            list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.UsedIn : SelectionDescriptionText.UsedInCourses)));
             Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingLeg(eventDB, controlId1, controlId2);
-            list.Add(new TextPart(TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
+            list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
 
             // What is the competitor load?
             int load = QueryEvent.GetLegLoad(eventDB, controlId1, controlId2);
             if (load >= 0) {
-                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.CompetitorLoad));
+                list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.CompetitorLoad : SelectionDescriptionText.Load)));
                 list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", load)));
             }
 
-            // Flagging
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Flagging + "  "));
-            list.Add(new TextPart(TextFormat.SameLine, FlaggingType(eventDB, controlId1, controlId2, legId)));
+            if (descKind == DescKind.DescPane) {
+                // Flagging
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Flagging + "  "));
+                list.Add(new TextPart(TextFormat.SameLine, FlaggingType(eventDB, controlId1, controlId2, legId)));
+            }
 
             return list.ToArray();
         }
@@ -440,20 +452,23 @@ namespace PurplePen
 
 
         // Describe a special.
-        private static TextPart[] DescribeSpecial(EventDB eventDB, Id<Special> specialId, float scaleRatio)
+        private static TextPart[] DescribeSpecial(EventDB eventDB, Id<Special> specialId, float scaleRatio, DescKind descKind)
         {
+            Debug.Assert(descKind == DescKind.Tooltip || descKind == DescKind.DescPane);
+
             List<TextPart> list = new List<TextPart>();
             Special special = eventDB.GetSpecial(specialId);
 
             // Name of the special.
             list.Add(new TextPart(TextFormat.Title, SpecialName(eventDB, specialId)));
 
-            // Special location.
-            if (special.kind == SpecialKind.FirstAid || special.kind == SpecialKind.Water || special.kind == SpecialKind.Forbidden ||
-                special.kind == SpecialKind.OptCrossing || special.kind == SpecialKind.RegMark || special.kind == SpecialKind.Descriptions) 
-            {
-                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Location + "  "));
-                list.Add(new TextPart(TextFormat.SameLine, string.Format("({0:##0.0}, {1:##0.0})", special.locations[0].X, special.locations[0].Y)));
+            if (descKind == DescKind.DescPane) {
+                // Special location.
+                if (special.kind == SpecialKind.FirstAid || special.kind == SpecialKind.Water || special.kind == SpecialKind.Forbidden ||
+                    special.kind == SpecialKind.OptCrossing || special.kind == SpecialKind.RegMark || special.kind == SpecialKind.Descriptions) {
+                    list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Location + "  "));
+                    list.Add(new TextPart(TextFormat.SameLine, string.Format("({0:##0.0}, {1:##0.0})", special.locations[0].X, special.locations[0].Y)));
+                }
             }
 
             // Line height for descriptions.
@@ -463,11 +478,11 @@ namespace PurplePen
             }
 
             // Which courses is it used in?
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.UsedInCourses));
+            list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.UsedIn : SelectionDescriptionText.UsedInCourses)));
             if (special.allCourses)
-                list.Add(new TextPart(TextFormat.NewLine, SelectionDescriptionText.CourseList_AllCourses));
+                list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, SelectionDescriptionText.CourseList_AllCourses));
             else
-                list.Add(new TextPart(TextFormat.NewLine, CourseListText(eventDB, special.courses)));
+                list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, CourseListText(eventDB, special.courses)));
 
             return list.ToArray();
         }

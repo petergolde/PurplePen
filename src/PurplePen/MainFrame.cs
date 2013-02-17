@@ -962,7 +962,7 @@ namespace PurplePen
                 toolTip.Hide(mapViewer);
                 toolTip.ToolTipTitle = titleText;
                 lastTooltipLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
-                toolTip.Show(tipText, mapViewer, lastTooltipLocation, 7000);
+                toolTip.Show(tipText, mapViewer, lastTooltipLocation.X, lastTooltipLocation.Y + 24, 7000);
             }
         }
 
