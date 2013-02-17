@@ -79,7 +79,7 @@ namespace PurplePen
 
         const string HELP_FILE_NAME = "Purple Pen Help.chm";
 
-        const float DEFAULT_MAP_INTENSITY = 0.6F;
+        const float DEFAULT_MAP_INTENSITY = 0.7F;
 
         public MainFrame()
         {
