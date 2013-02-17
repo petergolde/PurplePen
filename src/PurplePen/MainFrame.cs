@@ -91,7 +91,7 @@ namespace PurplePen
 
             // Using the property designer for these doesn't totally work.
             veryLowIntensityMenu.Tag = 0.4;
-            lowIntensityMenu.Tag = 0.65;
+            lowIntensityMenu.Tag = 0.55;
             mediumIntensityMenu.Tag = 0.7;
             highIntensityMenu.Tag = 0.85;
             fullIntensityMenu.Tag = 1.0;
@@ -239,8 +239,8 @@ namespace PurplePen
             if (mapDisplay != controller.MapDisplay) {
                 // The mapDisplay object is new. This currently only happens on startup.
                 mapDisplay = controller.MapDisplay;
-                mapDisplay.MapIntensity = DEFAULT_MAP_INTENSITY;
-                mapDisplay.AntiAlias = true;
+                mapDisplay.MapIntensity = Settings.Default.MapIntensity;
+                mapDisplay.AntiAlias = Settings.Default.MapHighQuality;
                 mapViewer.SetMap(mapDisplay);
                 ShowRectangle(mapDisplay.MapBounds);
             }
@@ -918,6 +918,8 @@ namespace PurplePen
         {
             double intensityAmount = (double) ((ToolStripMenuItem) sender).Tag;
             mapDisplay.MapIntensity = (float) intensityAmount;
+            Settings.Default.MapIntensity = mapDisplay.MapIntensity;
+            Settings.Default.Save();
         }
 
         private void courseTabs_Selected(object sender, TabControlEventArgs e)
@@ -1431,12 +1433,19 @@ namespace PurplePen
 
         private void highQualityMenu_Click(object sender, EventArgs e)
         {
-            mapDisplay.AntiAlias = true;
+            SetQuality(true);
         }
 
         private void normalQualityMenu_Click(object sender, EventArgs e)
         {
-            mapDisplay.AntiAlias = false;
+            SetQuality(false);
+        }
+
+        private void SetQuality(bool highQuality)
+        {
+            mapDisplay.AntiAlias = highQuality;
+            Settings.Default.MapHighQuality = highQuality;
+            Settings.Default.Save();
         }
 
         private void changeCodesMenu_Click(object sender, EventArgs e)
