@@ -2294,7 +2294,7 @@ namespace PurplePen
         // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
         public void BeginAddControlMode(ControlPointKind controlKind, bool exchangeAtControl)
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl));
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).

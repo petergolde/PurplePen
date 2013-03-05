@@ -125,6 +125,43 @@ namespace PurplePen
             tipText = titleText = "";
             return false;
         }
+
+        protected void ConvertTextPartsToToolTip(TextPart[] textParts, out string tipText, out string tipTitle)
+        {
+            StringBuilder tipBuilder = new StringBuilder();
+            StringBuilder titleBuilder = new StringBuilder();
+
+            foreach (TextPart part in textParts) {
+                switch (part.format) {
+                    case TextFormat.NewLine:
+                        tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.SameLine:
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Title:
+                        titleBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Header:
+                        tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        tipBuilder.Append(" ");
+                        break;
+
+                    default:
+                        Debug.Fail("Unexpected part format");
+                        break;
+                }
+            }
+
+            tipText = tipBuilder.ToString();
+            tipTitle = titleBuilder.ToString();
+        }
+
     }
 
 
@@ -325,41 +362,6 @@ namespace PurplePen
             }
         }
 
-        private void ConvertTextPartsToToolTip(TextPart[] textParts, out string tipText, out string tipTitle)
-        {
-            StringBuilder tipBuilder = new StringBuilder();
-            StringBuilder titleBuilder = new StringBuilder();
-
-            foreach (TextPart part in textParts) {
-                switch (part.format) {
-                    case TextFormat.NewLine:
-                        tipBuilder.AppendLine();
-                        tipBuilder.Append(part.text);
-                        break;
-
-                    case TextFormat.SameLine:
-                        tipBuilder.Append(part.text);
-                        break;
-
-                    case TextFormat.Title:
-                        titleBuilder.Append(part.text);
-                        break;
-
-                    case TextFormat.Header:
-                        tipBuilder.AppendLine();
-                        tipBuilder.Append(part.text);
-                        tipBuilder.Append(" ");
-                        break;
-
-                    default:
-                        Debug.Fail("Unexpected part format");
-                        break;
-                }
-            }
-
-            tipText = tipBuilder.ToString();
-            tipTitle = titleBuilder.ToString();
-        }
     }
 
     // Mode when an object is being dragged to a new position.

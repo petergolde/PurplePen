@@ -53,6 +53,7 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
+        SymbolDB symbolDB;
         bool allControls;                  // Are we in All Controls (true), or adding to a course (false)
         ControlPointKind controlKind;      // Kind of control we are adding.
         bool exchangeAtControl;            // If true, controlKind == Normal and we are changing a control to an exchange point.
@@ -62,12 +63,13 @@ namespace PurplePen
         PointCourseObj highlight;    // the highlight of the control we are creating.
         CourseObj[] additionalHighlights;  // additional highlights to show also. 
 
-        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl)
+        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SymbolDB symbolDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
             this.undoMgr = undoMgr;
             this.eventDB = eventDB;
+            this.symbolDB = symbolDB;
             this.allControls = allControls;
             this.controlKind = controlKind;
             this.exchangeAtControl = exchangeAtControl;
@@ -405,6 +407,21 @@ namespace PurplePen
             }
 
             return highlights.ToArray();
+        }
+
+        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        {
+            PointF highlightLocation;
+            Id<ControlPoint> existingControl = HitTestPoint(location, pixelSize, out highlightLocation);
+            if (existingControl.IsNotNone) {
+                TextPart[] textParts = SelectionDescriber.DescribeControl(symbolDB, eventDB, existingControl);
+                base.ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
+                return true;
+            }
+            else {
+                tipText = titleText = "";
+                return false;
+            }
         }
     }
 

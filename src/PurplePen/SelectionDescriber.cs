@@ -116,6 +116,12 @@ namespace PurplePen
             }
         }
 
+        // Description a control.
+        public static TextPart[] DescribeControl(SymbolDB symbolDB, EventDB eventDB, Id<ControlPoint> controlId)
+        {
+            return DescribeControlPoint(symbolDB, eventDB, controlId, DescKind.Tooltip);
+        }
+
         // Get the text name for a control.
         private static string SpecialName(EventDB eventDB, Id<Special> specialId)
         {
