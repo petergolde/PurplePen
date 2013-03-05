@@ -74,7 +74,7 @@ namespace PurplePen {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowPopupInfo {
+        public bool     ShowPopupInfo {
             get {
                 return ((bool)(this["ShowPopupInfo"]));
             }

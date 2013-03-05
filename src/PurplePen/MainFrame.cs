@@ -73,6 +73,7 @@ namespace PurplePen
         Uri helpFileUrl;                       // URL of the help file.
 
         Point lastTooltipLocation;
+        bool showToolTips = true;
 
         const double TRACKBAR_MIN = 0.25;      // minimum zoom on the zoom trackbar
         const double TRACKBAR_MAX = 10.0;     // maximum zoom on the zoom trackbar
@@ -100,6 +101,8 @@ namespace PurplePen
             zoomTracker.TrackBar.TickStyle = TickStyle.None;
             zoomTracker.TrackBar.Minimum = 0;
             zoomTracker.TrackBar.Maximum = 100;
+
+            showToolTips = Settings.Default.ShowPopupInfo;
 
             SetMenuIcons();
 
@@ -502,6 +505,9 @@ namespace PurplePen
                     redoMenu.Text = MiscText.RedoWithShortcut;
                 }
             }
+
+            // Update checkmark on View/Show Popup Information
+            showPopupsMenu.Checked = showToolTips;
 
             // Update Delete menu item
             deleteToolStripButton.Enabled =  deleteMenu.Enabled = deleteItemMenu.Enabled = controller.CanDeleteSelection();
@@ -922,6 +928,13 @@ namespace PurplePen
             Settings.Default.Save();
         }
 
+        private void showPopupsMenu_Click(object sender, EventArgs e)
+        {
+            showToolTips = !showToolTips;
+            Settings.Default.ShowPopupInfo = showToolTips;
+            Settings.Default.Save();
+        }
+
         private void courseTabs_Selected(object sender, TabControlEventArgs e)
         {
             controller.SelectTab(courseTabs.SelectedIndex);
@@ -960,7 +973,7 @@ namespace PurplePen
         private void mapViewer_OnPointerHover(object sender, bool inViewport, PointF location)
         {
             string tipText, titleText;
-            if (controller.GetToolTip(location, mapViewer.PixelSize, out tipText, out titleText)) {
+            if (showToolTips && controller.GetToolTip(location, mapViewer.PixelSize, out tipText, out titleText)) {
                 toolTip.Hide(mapViewer);
                 toolTip.ToolTipTitle = titleText;
                 lastTooltipLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
@@ -2142,7 +2155,6 @@ namespace PurplePen
 
             openFile.Dispose();
         }
-
 
 
 

@@ -126,6 +126,7 @@ namespace PurplePen
             this.mapQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.normalQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.highQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -599,6 +600,7 @@ namespace PurplePen
             this.allControlsToolStripMenuItem,
             this.mapIntensityMenu,
             this.mapQualityMenu,
+            this.showPopupsMenu,
             this.toolStripSeparator7,
             this.allControlsMenu});
             this.viewMenu.Name = "viewMenu";
@@ -748,6 +750,12 @@ namespace PurplePen
             this.highQualityMenu.Name = "highQualityMenu";
             resources.ApplyResources(this.highQualityMenu, "highQualityMenu");
             this.highQualityMenu.Click += new System.EventHandler(this.highQualityMenu_Click);
+            // 
+            // showPopupsMenu
+            // 
+            this.showPopupsMenu.Name = "showPopupsMenu";
+            resources.ApplyResources(this.showPopupsMenu, "showPopupsMenu");
+            this.showPopupsMenu.Click += new System.EventHandler(this.showPopupsMenu_Click);
             // 
             // toolStripSeparator7
             // 
@@ -1622,9 +1630,6 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
-            // toolTip
-            // 
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1853,6 +1858,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem mapExchangeSeparateMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printAreaThisPartMenu;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem showPopupsMenu;
 
     }
 }
