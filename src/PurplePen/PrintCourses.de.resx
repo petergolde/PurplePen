@@ -123,6 +123,9 @@
   <data name="printerChange.Text" xml:space="preserve">
     <value>Drucker ändern...</value>
   </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Papiergröße:</value>
   </data>
@@ -140,6 +143,21 @@
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Bahnen</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Kopien jeder Bahn:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopien</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Auf mehrere Seiten drucken</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Auf eine Seite zuschneiden</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Auf eine Seite einpassen, wenn der Druckbereich zu groß ist.</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Darstellung</value>

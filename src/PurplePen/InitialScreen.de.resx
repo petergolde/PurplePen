@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
-    <value>Öffne ein Wettkampf...</value>
+    <value>Bestehenden Wettkampf öffnen...</value>
   </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
-    <value>Erstelle einen Wettkampf...</value>
+    <value>Neuen Wettkampf erstellen...</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
@@ -130,10 +130,10 @@
     <value>Beenden</value>
   </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
-    <value>Öffne ein Beispielwettkampf</value>
+    <value>Beispielwettkampf öffnen</value>
   </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
-    <value>Öffne letzten Wettkampf</value>
+    <value>Letzten Wettkampf öffnen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Willkommen in Purple Pen</value>

@@ -120,10 +120,13 @@
   <data name="backButton.Text" xml:space="preserve">
     <value>&lt; &amp;Zurück</value>
   </data>
+  <data name="nextButton.Text" xml:space="preserve">
+    <value>&amp;Weiter &gt;</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Erstelle neuen Wettkampf</value>
+    <value>Neuen Wettkampf erstellen</value>
   </data>
 </root>

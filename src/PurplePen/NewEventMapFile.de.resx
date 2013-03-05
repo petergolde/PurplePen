@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Um Ihre Bahnen zu gestalten, müssen Sie zuvor eine Kartendatei auswählen, die verwendet werden soll. Normalerweise ist dies eine OCAD-Datei (obwohl stattdessen auch eine Rasterkarte (Image) verwendet werden kann). Klicken Sie die "Auswählen..." Schaltfläche, um eine Kartendatei auszuwählen.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
-    <value>und wähle eine Kartendatei</value>
+    <value>&amp;Kartendatei auswählen...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>OCAD Dateien (*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Ausgewählte Kartendatei</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Die Kartendatei wurde erfolgreich geladen. Wenn Sie Ihre Purple Pen-Datei jemand anderem schicken, müssen Sie die Kartendatei ebenfalls mitschicken.</value>
   </data>
 </root>

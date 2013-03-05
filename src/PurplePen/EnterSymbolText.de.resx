@@ -124,9 +124,21 @@
     <value>Geschlecht</value>
   </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
-    <value>Textbeschreibung</value>
+    <value>Text</value>
+  </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>Pluralformen anzeigen</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>Geschlechtsformen anzeigen</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Angepassten Text für das Symbol in die Spalte "Text" eintragen.</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Geschlecht:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Benutzerdefinierter Symboltext:</value>
   </data>
 </root>

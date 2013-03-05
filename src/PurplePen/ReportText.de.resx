@@ -120,8 +120,20 @@
   <data name="ColumnHeader_Climb" xml:space="preserve">
     <value>Steigung</value>
   </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
   <data name="ColumnHeader_Column" xml:space="preserve">
     <value>Spalte</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Posten</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Kontrollcodes</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Posten</value>
   </data>
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Bahn</value>
@@ -129,23 +141,128 @@
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Distanz</value>
   </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
   <data name="ColumnHeader_Leg" xml:space="preserve">
-    <value>Strecke</value>
+    <value>Etappe</value>
   </data>
   <data name="ColumnHeader_Length" xml:space="preserve">
     <value>Länge</value>
   </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Auslastung</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Speicherort</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Bahnen</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Grund</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Gleiches Symbol?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Bahnstatistik für {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Bahn-Posten Bezüge für {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Posten mit geringem Abstand</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Die folgende Tabelle listet alle Postenpaare, die weniger als {0} Meter Abstand zueinander haben. Die Spalte "Gleiches Symbol?" zeigt, ob diese beiden Posten die gleiche primäre Symbolbeschreibung haben (Spalte D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Fehlende Postensymbole</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Normalbahnen sollten eine Angabe der Höhenmeter haben</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Alle Posten müssen eine primäre Symbolbeschreibung in Spalte D haben</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Wenn "zwischen" in Spalte G gewählt wurde, muss je ein Element in den Spalten D und E stehen</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Wenn "Gabelung" oder "Kreuzung" in Spalte F gewählt wurde, muss je ein Element in den Spalten D und E stehen</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Normalbahnen sollten am Ende das Zielsymbol (Doppelkreis) haben</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Fehlende Objekte in Bahnen</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Bahn sollte eine Angabe zu der erwarteten Läuferanzahl haben</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Design für das Kontrollfeld nicht definiert</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Design für das Kontrollfeld fehlt</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Score-Bahnen sollten Punktbewertungen entweder für alle oder für keinen Posten haben</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Fehlende Punktbewertungen</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Normalbahnen sollten ein Start-Dreieck haben</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Score-Bahnen sollten ein Start-Dreieck haben</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
   <data name="EventAudit_NoProblems" xml:space="preserve">
-    <value>Keine Fehler gefunden</value>
+    <value>Keine Fehler gefunden.</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Wettkampfprüfung für {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Nicht verwendete Posten</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Die folgenden Posten aus der Gesamtpostenliste werden in keiner der Bahnen verwendet.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Ja</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Im Durchschnitt</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
     <value>{0} ({1} Posten, {2:0.0} km, {3} m Steigung)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
     <value>{0} ({1} Posten, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Liste der Etappenlängen für {0}</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Postenauslastung</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Etappenauslastung</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Einige oder alle Bahnen haben keine Angabe zur Läuferanzahl. Die Angaben zur Auslastung unten können deshalb fehlerhaft sein. Um die Läuferauslastung festzulegen, wählen Sie bitte "Läuferanzahl" aus dem Menü "Bahnen".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(In der folgenden Tabelle erscheinen nur Etappen, die von mehr als einer Bahn genutzt werden.)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Zusammenfassung der Läuferauslastung für {0}</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>WARNUNG:</value>

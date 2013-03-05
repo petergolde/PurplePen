@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Erzeuge</value>
+    <value>Erstelle</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
@@ -130,7 +130,7 @@
     <value>Ordner</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Wähle Ordner...</value>
+    <value>Ordner auswählen...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Anderer Ordner</value>
@@ -145,15 +145,15 @@
     <value>Dateiname</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Trage Namen ein für beide RouteGadget-Dateien. (ohne .xml or .gif)</value>
+    <value>Namen für beide RouteGadget-Dateien (ohne .xml or .gif) eintragen:</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
-    <value>Erfahre mehr von RouteGadget</value>
+    <value>Erfahre mehr über RouteGadget</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>RouteGadget benötigt eine Bilddatei (.gif) und eine IOF XML Datei (.xml). Wähle den Namen und den Ordner für beide Dateien.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Erstelle RouteGadget Dateien</value>
+    <value>RouteGadget Dateien erstellen</value>
   </data>
 </root>

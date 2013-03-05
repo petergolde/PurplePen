@@ -126,6 +126,9 @@
   <data name="Esc" xml:space="preserve">
     <value>Esc</value>
   </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
   <data name="NoSymbol" xml:space="preserve">
     <value>Kein Symbol</value>
   </data>
@@ -147,20 +150,35 @@
   <data name="CannotPrint" xml:space="preserve">
     <value>Kann '{0}' aus folgendem Grund nicht drucken:</value>
   </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Kann '{0}' aus folgendem Grund nicht erstellen:</value>
+  </data>
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Kann den Ordner '{0}' aus folgendem Grund nicht erstellen:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Kann Karte aus dem folgenden Grund nicht lesen: '{0} "Optimize/Repair" in OCAD behebt möglicherweise das Problem.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
-    <value>Die OCAD Datei kann aus folgendem Grund nicht erstellt werden:</value>
+    <value>Die OCAD Dateien können aus folgendem Grund nicht erstellt werden:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Sollen die Änderungen in '{0}' gespeichert werden?</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
-    <value>Die Datei '{0}' existiert bereits im ausgewählten Ordner. Klicken sie auf "Zurück" und wählen sie einen anderen Ordner oder einen neuen Wettkampfname.</value>
+    <value>Die Datei '{0}' existiert bereits im ausgewählten Ordner. Klicken sie auf "Zurück" und wählen sie einen anderen Ordner oder einen neuen Wettkampfnamen.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
-    <value>Die Postennummer '{0}' wird bereits bei einem anderen Posten verwendet.</value>
+    <value>Der Kontrollcode '{0}' wird bereits bei einem anderen Posten verwendet.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Die Punktzahl für einen Posten muss ganzzahlig sein (1-999).</value>
   </data>
   <data name="BadClimb" xml:space="preserve">
-    <value>Die Steigung einer Bahn muss eine Zahl von 0-9999 sein, oder leer.</value>
+    <value>Die Steigung einer Bahn muss eine Zahl von 0-9999 oder leer sein.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Die Läuferzahl für eine Bahn muss zwischen 1-999999 liegen oder leer bleiben.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>&amp;Rückgängig</value>
@@ -177,17 +195,31 @@
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
     <value>Auswahl &amp;aufheben</value>
   </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>Vorga&amp;ng abbrechen</value>
+  </data>
   <data name="CancelOperation" xml:space="preserve">
     <value>Vorgang abbrechen</value>
   </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Punktzahl eingeben</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Neuen Code eingeben</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Objektgröße eingeben
+"/" für die Höhe am Hang verwenden
+"|" für zwei Objekte verwenden</value>
+  </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>Neuer Wettkampfname eingeben
-Verwende | für eine neue Zeile
+    <value>Neuen Wettkampfnamen eingeben
+"|" für eine neue Zeile verwenden
 (wirkt sich auf alle Bahnen aus)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
     <value>Neuer Zusatztitel eingeben
-Verwende | für eine neue Zeile</value>
+"|" für eine neue Zeile verwenden</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Neue Bahnbezeichnung eingeben</value>
@@ -195,26 +227,39 @@ Verwende | für eine neue Zeile</value>
   <data name="EnterClimb" xml:space="preserve">
     <value>Neue Steigung in Meter eingeben</value>
   </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Neue Symbolbezeichnung festlegen
+(wirkt sich auf alle Bahnen aus)</value>
+  </data>
   <data name="EnterTextLine" xml:space="preserve">
-    <value>Neuer Text eingeben</value>
+    <value>Neuen Text eingeben</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
-    <value>Die Posten {0} werden von keiner Bahn mehr verwendet. Willst du diese Posten von der Postenliste löschen?</value>
+    <value>Die Posten {0} werden von keiner Bahn mehr verwendet. Sollen diese Posten von der Postenliste gelöscht werden?</value>
   </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
-    <value>Der Posten {0} wird von keiner Bahn mehr verwendet. Willst du diesen Posten von der Postenliste löschen?</value>
+    <value>Der Posten {0} wird von keiner Bahn mehr verwendet. Soll dieser Posten von der Postenliste gelöscht werden?</value>
   </data>
   <data name="DeleteControlFromAllControls" xml:space="preserve">
-    <value>Posten {0} wird noch von der folgenden Bahn verwendet: {1}. Willst du diesen Posten trotzdem löschen?</value>
+    <value>Posten {0} wird noch von der folgenden Bahnen verwendet: {1}. Sollen diese Posten trotzdem gelöscht werden?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Ein Kontrollcode muss aus 1, 2 oder 3 Buchstaben oder Zahlen bestehen.</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
-    <value>Die Postennummer darf keine Leerzeichen enthalten.</value>
+    <value>Der Kontrollcode darf keine Leerzeichen enthalten.</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
-    <value>Die Postennummer muss 31 oder grösser sein.</value>
+    <value>Ein Kontrollcode muss 31 oder größer sein.</value>
   </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
-    <value>Die Postennummer darf nicht mit einer Null beginnen.</value>
+    <value>Ein Kontrollcode darf nicht mit einer Null beginnen.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Ein Kontrollcode darf auf den Kopf gestellt keine andere Zahl darstellen.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Der Code "{0}" wird mehr, als einmal verwendet.</value>
   </data>
   <data name="BadScale" xml:space="preserve">
     <value>Der Druck-Massstab muss eine Zahl zwischen 100 und 100,000 sein.</value>
@@ -228,11 +273,53 @@ Verwende | für eine neue Zeile</value>
   <data name="Portrait" xml:space="preserve">
     <value>Hochformat</value>
   </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Die Seite ist zu klein, so dass keine Postenbeschreibungen gedruckt werden können.</value>
+  </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} von Purple Pen steht nun zum Download zur Verfügung. (Aktuell genutzte Version {1}.)
+
+Um die neueste Version herunterzuladen, gehen Sie bitte auf die Purple Pen Website, indem Sie "Purple Pen Web Site" im Hilfemenü anklicken.</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Die Hilfedatei '{0}' kann nicht geöffnet werden.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Die Kartendatei "{0}" kann nicht gefunden werden
+
+Vermutlich wurde sie verschoben oder gelöscht, oder die Purple Pen-Datei wurde verschoben (möglicherweise auf einen anderen Computer). Die Kartendatei muss immer vorhanden sein, wenn die Purple Pen Bahndatei geladen wird. Wenn die Purple Pen-Datei an eine andere Person gesendet wird, muss sie auch eine Kopie der Kartendatei erhalten.
+
+Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Alle Posten werden in Bahnen verwendet.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Fertigstellen</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Weiter &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Posten {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Ziel</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Pflichtquerung</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Querung</value>
   </data>
   <data name="MandCrossing_Short" xml:space="preserve">
     <value>C</value>
@@ -264,22 +351,40 @@ Verwende | für eine neue Zeile</value>
   <data name="Singular" xml:space="preserve">
     <value>Einzahl</value>
   </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Der geänderte Text benötigt einen "*" an der Stelle, an der das geänderte Objekt stehen soll.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>Bahneinstellungen für den Orientierungslauf</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Geben Sie den Text ein, der auf der Karte dargestellt werden soll. Ziehen Sie, nach Klicken auf "OK", mit der Maus ein Rechteck an der gewünschten Stelle auf, wo der Text erscheinen soll.</value>
+  </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Text hinzufügen</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Neuen Text eingeben</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Text ändern</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Ein anderes Programm hat die Kartendatei "{0}" verändert. Purple Pen wird die Karte nun neu laden.</value>
+  </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
-    <value>Die Text-Postenbeschreibung des aktuelle Wettkampf ist in {0} . Wollen sie die Sprache der Postenbeschreibung in {1} ändern?</value>
+    <value>Die Text-Postenbeschreibung des aktuellen Wettkampfs ist in {0} . Wollen Sie die Sprache der Postenbeschreibung in {1} ändern?</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
-    <value>Öffnen "{0}"</value>
+    <value>"{0}" öffnen</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
     <value>Purple Pen muss beendet werden bevor die erstellte OCAD-Datei geladen wird.</value>
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
-    <value>Es wurde keine Bahn zum drucken ausgewählt.</value>
+    <value>Es wurde keine Bahn zum Drucken ausgewählt.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Wenn es eine Website in der Übersetzungssprache gibt, die eine Dokumentation für Purple Pen enthält, fügen Sie bitte die URL (mit "http") als Übersetzung für dieses Objekt ein oder lassen SIe es leer.</value>
   </data>
 </root>

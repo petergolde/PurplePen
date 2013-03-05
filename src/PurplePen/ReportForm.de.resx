@@ -123,4 +123,7 @@
   <data name="previewButton.Text" xml:space="preserve">
     <value>Druckvorschau...</value>
   </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
 </root>

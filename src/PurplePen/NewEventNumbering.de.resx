@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventNumberingLabel.Text" xml:space="preserve">
+    <value>Neu erzeugte Posten werden automatisch nummeriert. Wählen Sie bitte den Startcode für den ersten Posten aus.</value>
+  </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Sperrt Kontrollnummern die verkehrt herum gelesen werden könnten (z.B. 68 / 89)</value>
+    <value>Sperrt Kontrollcodes, die verkehrt herum gelesen werden könnten (z.B. 68 / 89)</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
-    <value>Erste Kontrollnummer</value>
+    <value>Erster Kontrollcode:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Diese Einstellung kann später wieder unter "Wettkampf/Automatische Nummerierung..." geändert werden.)</value>
   </data>
 </root>

@@ -121,7 +121,7 @@
     <value>Bahnen</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Erzeuge</value>
+    <value>Erstelle</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
@@ -154,7 +154,7 @@
     <value>Ausgabe</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Wähle Ordner...</value>
+    <value>Ordner auswählen...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Anderer Ordner</value>
@@ -169,6 +169,6 @@
     <value>Ordner</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Erstelle OCAD Dateien</value>
+    <value>OCAD Dateien erstellen</value>
   </data>
 </root>

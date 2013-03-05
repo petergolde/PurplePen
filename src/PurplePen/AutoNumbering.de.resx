@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Sperrt Kontrollnummern die verkehrt herum gelesen werden könnten (z.B. 68 / 89)</value>
+    <value>Sperrt Kontrollcodes, die verkehrt herum gelesen werden könnten (z.B. 68 / 89)</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Bestehende Posten umnummerieren.</value>
+    <value>Auch bestehende Posten neu nummerieren.</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
     <value>Diese Einstellungen nur bei neuen Posten anwenden.</value>
   </data>
   <data name="existingControlsGroupBox.Text" xml:space="preserve">
-    <value>bereits existierende Posten</value>
+    <value>Bereits existierende Posten</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
     <value>Neu eingezeichnete Posten werden automatisch nach folgenden Einstellungen nummeriert.</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
-    <value>Erste Kontrollnummer</value>
+    <value>Erster Kontrollcode:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Automatische Nummerierung</value>

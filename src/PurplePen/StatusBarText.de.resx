@@ -117,7 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Linke Maustaste: Objekt auswählen; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Hinauszoomen</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Linke Maustaste: Rechteck verschieben/Größe ändern; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Hinauszoomen</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Um das ausgewählte Objekt zu verschieben, bewegen Sie die Maus mit gedrückter linker Maustaste</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Um den Eckpunkt zu verschieben, klicken sie auf ihn und bewegen die Maus mit gedrückter linker Maustaste</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Bewegen Sie das Objekt zum gewünschten Ort und lassen Sie dann die Maustaste los</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Bewegen Sie den Eckpunkt an die gewünschte Stelle und lassen dann die Maustaste los</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um einen neuen Posten zu platzieren</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um den bestenden Posten "{0}" zur Bahn hinzuzufügen</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um einen neuen Start zu platzieren</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um einen existierenden Start zur Bahn hinzuzufügen</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um ein neues Ziel zu platzieren</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um ein existierendes Ziel zur Bahn hinzuzufügen</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um eine neue Pflichtquerung hinzuzufügen</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um eine existierende Pflichtquerung zur Bahn hinzuzufügen</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um ein neues Objekt zu platzieren</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste an der Stelle, an der der Eckpunkt erzeugt werden soll</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Drücken Sie die linke Maustaste, um einen neuen Eckpunkt hinzuzufügen</value>
+  </data>
   <data name="DeletingBend" xml:space="preserve">
-    <value>Klicke mit der linken Maustaste auf einen Eckpunkt um diesen zu entfernen.</value>
+    <value>Klicken Sie mit der linken Maustaste auf einen Eckpunkt, um diesen zu entfernen.</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf einen Eckpunkt, um diesen zu entfernen.</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf den Postenkreis, um eine Lücke hinzuzufügen.</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf eine Lücke, um sie zu entfernen</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um eine Lücke in die Etappenlinie einzufügen</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf eine Lücke in der Etappe, um sie zu entfernen</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um die Größe des Objektes zu verändern</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Bewegen Sie die Kante(n) an die gewünschte Stelle und lassen Sie die Maustaste los</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um die Postenbeschreibungen zu platzieren</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste, wenn der Pflichübergang im richtigen Winkel liegt</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um ein Liniensegment hinzuzufügen; klicken Sie mit der linken Maustaste, um den Vorgang abzuschließen</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um den Text zu erzeugen</value>
   </data>
 </root>
