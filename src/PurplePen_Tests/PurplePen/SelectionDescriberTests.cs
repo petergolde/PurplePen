@@ -37,6 +37,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Linq;
 using System.Diagnostics;
 using System.Globalization;
 using System.Drawing;
@@ -109,6 +110,37 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SelectedControl1Toolstip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(2));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.controlId == ControlId(70) && co is ControlCourseObj select co).Single();
+
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control 70", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Course 1, Course 2", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
         public void SelectedControl2()
         {
             TextPart textpart;
@@ -148,6 +180,36 @@ namespace PurplePen.Tests
             textpart = description[index++];
             Assert.AreEqual("E edge of thicket", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
+        public void SelectedControl2Tooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectControl(ControlId(81));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.controlId == ControlId(81) && co is ControlCourseObj select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control 60", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("None", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
         }
@@ -206,6 +268,44 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SelectedControlWithLoadTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(2));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.controlId == ControlId(53) && co is ControlCourseObj select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control 53", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Course 1, Course 2, Course 3", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Load:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("6", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
         public void SelectedStart()
         {
             TextPart textpart;
@@ -246,6 +346,36 @@ namespace PurplePen.Tests
             textpart = description[index++];
             Assert.AreEqual("Start: clearing", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
+        public void SelectedStartTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(2));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.controlId == ControlId(1) && co is StartCourseObj select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Start", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
         }
@@ -439,9 +569,6 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
         }
 
-
-
-
         [TestMethod]
         public void SelectedCourse()
         {
@@ -460,7 +587,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -496,7 +623,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -577,7 +704,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -603,6 +730,43 @@ namespace PurplePen.Tests
             Assert.AreEqual(index, description.Length);
         }
 
+        [TestMethod]
+        public void SelectedLegTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(6));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.courseControlId == CourseControlId(606) && co is LegCourseObj && ((LegCourseObj)co).courseControlId2 == CourseControlId(607) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control 48 \u2013 Control 50", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("294 m", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Course 4B, Course 5", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
 
         [TestMethod]
         public void SelectedLegWithLoad()
@@ -623,7 +787,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -659,6 +823,53 @@ namespace PurplePen.Tests
 
 
         [TestMethod]
+        public void SelectedLegWithLoadTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(6));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.courseControlId == CourseControlId(606) && co is LegCourseObj && ((LegCourseObj)co).courseControlId2 == CourseControlId(607) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control 48 \u2013 Control 50", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("294 m", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Course 4B, Course 5", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Load:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("9", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+
+        [TestMethod]
         public void SelectedLegBends()
         {
             TextPart textpart;
@@ -677,7 +888,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -723,7 +934,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -768,7 +979,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("Length:  ", textpart.text);
+            Assert.AreEqual("Length:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
@@ -845,6 +1056,36 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(4));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.specialId == SpecialId(4) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Out-of-bounds Area", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
         public void OptionalCrossingPoint()
         {
             TextPart textpart;
@@ -877,6 +1118,36 @@ namespace PurplePen.Tests
             textpart = description[index++];
             Assert.AreEqual("Course 1, Course 2, Course 3, Score", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
+        public void OptionalCrossingPointTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(3));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.specialId == SpecialId(2) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Optional Crossing Point", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Course 1, Course 2, Course 3, Score", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
         }

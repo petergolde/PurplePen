@@ -269,7 +269,7 @@ namespace PurplePen
 
             if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
                 // Course length
-                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length + "  "));
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
                 list.Add(new TextPart(TextFormat.SameLine,
                     string.Format("{0:0.00} km", Math.Round(activeCourseView.TotalLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
 
@@ -421,7 +421,7 @@ namespace PurplePen
             list.Add(new TextPart(TextFormat.Title, string.Format("{0} \u2013 {1}", Util.ControlPointName(eventDB, controlId1, NameStyle.Long), Util.ControlPointName(eventDB, controlId2, NameStyle.Long))));
 
             // Course length
-            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length + "  "));
+            list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
             list.Add(new TextPart(TextFormat.SameLine,
                 string.Format("{0:#,###} m", QueryEvent.ComputeLegLength(eventDB, controlId1, controlId2, legId)))); 
 
@@ -433,7 +433,7 @@ namespace PurplePen
             // What is the competitor load?
             int load = QueryEvent.GetLegLoad(eventDB, controlId1, controlId2);
             if (load >= 0) {
-                list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.CompetitorLoad : SelectionDescriptionText.Load)));
+                list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.Load : SelectionDescriptionText.CompetitorLoad)));
                 list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", load)));
             }
 

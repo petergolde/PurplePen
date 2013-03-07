@@ -134,7 +134,8 @@ namespace PurplePen
             foreach (TextPart part in textParts) {
                 switch (part.format) {
                     case TextFormat.NewLine:
-                        tipBuilder.AppendLine();
+                        if (tipBuilder.Length > 0)
+                            tipBuilder.AppendLine();
                         tipBuilder.Append(part.text);
                         break;
 
@@ -147,7 +148,8 @@ namespace PurplePen
                         break;
 
                     case TextFormat.Header:
-                        tipBuilder.AppendLine();
+                        if (tipBuilder.Length > 0)
+                            tipBuilder.AppendLine();
                         tipBuilder.Append(part.text);
                         tipBuilder.Append(" ");
                         break;

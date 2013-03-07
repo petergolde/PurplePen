@@ -204,6 +204,55 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        // Should show various tool tips.
+        public void Tooltips()
+        {
+            string tipText, titleText;
+            bool result;
+
+            Setup("modes\\marymoor.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+
+            result = controller.GetToolTip(new PointF(66, 6.6F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(result);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
+
+            result = controller.GetToolTip(new PointF(27.8F, 5.5F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(result);
+            Assert.AreEqual("Control 41", titleText);
+            Assert.AreEqual("Used in: Course 3, Course 4B, Course 4G, Course 5", tipText);
+
+            result = controller.GetToolTip(new PointF(57.3F, -8.1F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(result);
+            Assert.AreEqual("Start", titleText);
+            Assert.AreEqual("Used in: All courses", tipText);
+
+            result = controller.GetToolTip(new PointF(84.8F, 23.7F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(result);
+            Assert.AreEqual("Control 77 \u2013 Control 78", titleText);
+            Assert.AreEqual("Length: 212 m\r\nUsed in: Course 3", tipText);
+
+            result = controller.GetToolTip(new PointF(-7.2F, 5.4F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(result);
+            Assert.AreEqual("Control 72", titleText);
+            Assert.AreEqual("Used in: Course 2, Course 3", tipText);
+
+            result = controller.GetToolTip(new PointF(14.3F, -41.8F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(result);
+            Assert.AreEqual("First Aid Location", titleText);
+            Assert.AreEqual("Used in: All courses", tipText);
+
+            result = controller.GetToolTip(new PointF(66, 6.6F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(result);
+            Assert.AreEqual("", tipText);
+            Assert.AreEqual("", titleText);
+
+        }
+
+        [TestMethod]
         // Move a control with the mouse.
         public void MoveControl()
         {

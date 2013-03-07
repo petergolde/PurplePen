@@ -71,6 +71,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddControlAllControls()
         {
+            bool isTooltip;
+            string tipText, titleText;
             CourseObj[] highlights;
 
             // Should be no control #60 now.
@@ -103,6 +105,18 @@ namespace PurplePen.Tests
             obj = (ControlCourseObj) highlights[0];
             Assert.AreEqual(new PointF(30.3F, -10.3F), obj.location);
 
+            // No tooltip.
+            isTooltip = controller.GetToolTip(new PointF(30.3F, -10.3F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
+
+            // No tooltip on a control, either
+            isTooltip = controller.GetToolTip(new PointF(52.9F, -28.5F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
+
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
 
@@ -124,6 +138,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddControlCourse1()
         {
+            bool isTooltip;
+            string tipText, titleText;
             CourseObj[] highlights;
 
             // Should be no control #60 now.
@@ -168,6 +184,18 @@ namespace PurplePen.Tests
             Assert.AreEqual("Leg:            scale:1  path:N(23.29,38.01)--N(38.31,19.59)",
                                          highlights[2].ToString());
             Assert.AreEqual(string.Format(StatusBarText.AddingExistingControl, "48"), controller.StatusText);
+
+            // Tooltip about control #48
+            isTooltip = controller.GetToolTip(new PointF(21.5F, 40.2F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(isTooltip);
+            Assert.AreEqual("Control 48", titleText);
+            Assert.AreEqual("Used in: Course 4B, Course 4G, Course 5", tipText);
+
+            // No tooltip on a leg, though
+            isTooltip = controller.GetToolTip(new PointF(66.9F, 18.9F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
 
             // Move the mouse over a control on the course next to current control (mouse buttons are up). Shouldn't select that control, but near it.
             ui.MouseMoved(40, 15.5F, 0.1F);
