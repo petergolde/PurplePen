@@ -278,6 +278,12 @@
     <Compile Include="DotGrid.Designer.cs">
       <DependentUpon>DotGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="DownloadProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadProgressDialog.Designer.cs">
+      <DependentUpon>DownloadProgressDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterSymbolText.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -484,6 +490,7 @@
     <Compile Include="UnusedControls.Designer.cs">
       <DependentUpon>UnusedControls.cs</DependentUpon>
     </Compile>
+    <Compile Include="Updater.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VersionNumber.cs" />
     <Compile Include="XmlInput.cs" />
@@ -954,6 +961,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.ro.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
@@ -1065,6 +1073,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DotGrid.sv.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadProgressDialog.resx">
+      <DependentUpon>DownloadProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EnterSymbolText.bg.resx">
       <DependentUpon>EnterSymbolText.cs</DependentUpon>

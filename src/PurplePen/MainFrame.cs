@@ -1965,40 +1965,12 @@ namespace PurplePen
         }
 
 
-        private void versionCheckWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            // The version check has completed. The result is either null, or the version string of the new version.
-            if (!e.Cancelled && e.Error == null && e.Result != null) {
-                InfoMessage(string.Format(MiscText.NewerVersionAvailable, Util.PrettyVersionString((string) e.Result), Util.PrettyVersionString(VersionNumber.Current)));
-            }
-        }
-
-        private void versionCheckWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // We need to check to see if a new version is available. We do this in the background.
-            // If a new version is available, the version number is returned as the result of the background
-            // processing. If no new version is available, null is returned.
-            WebClient client = new WebClient();
-
-            // Download latest version.
-            string latestVersion = client.DownloadString("http://purple-pen.org/downloads/latest_version.txt");
-
-            // Get first line.
-            int index = latestVersion.IndexOfAny(new char[] { '\r', '\n' });
-            if (index > 0)
-                latestVersion = latestVersion.Substring(0, index);
-
-            // Check against current version.
-            if (!string.IsNullOrEmpty(latestVersion) && Util.CompareVersionStrings(VersionNumber.Current, latestVersion) < 0) {
-                // The latest version is later than our version.
-                e.Result = latestVersion;
-            }
-        }
-
         private void MainFrame_Shown(object sender, EventArgs e)
         {
             // Begin check for new version in the background.
-            versionCheckWorker.RunWorkerAsync();
+            Updater.OwnerWindow = this;
+            Updater.Controller = this.controller;
+            Updater.CheckForUpdates();
         }
 
         private void dotGridTesterToolStripMenuItem_Click(object sender, EventArgs e)

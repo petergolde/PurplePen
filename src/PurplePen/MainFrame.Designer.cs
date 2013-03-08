@@ -251,7 +251,6 @@ namespace PurplePen
             this.zoomAmountLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomTracker = new PurplePen.ToolStripTrackBar();
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
-            this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.courseTabs.SuspendLayout();
@@ -1620,11 +1619,6 @@ namespace PurplePen
             this.locationDisplay.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.locationDisplay.Name = "locationDisplay";
             // 
-            // versionCheckWorker
-            // 
-            this.versionCheckWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.versionCheckWorker_DoWork);
-            this.versionCheckWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.versionCheckWorker_RunWorkerCompleted);
-            // 
             // saveXmlFileDialog
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
@@ -1750,7 +1744,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem dangerousToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boundaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createOcadFilesMenu;
-        private System.ComponentModel.BackgroundWorker versionCheckWorker;
         private System.Windows.Forms.ToolStripMenuItem entireMapMenu;
         private System.Windows.Forms.ToolStripMenuItem printPunchCardsMenu;
         private System.Windows.Forms.ToolStripMenuItem printCoursesMenu;

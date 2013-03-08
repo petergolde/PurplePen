@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 236</value>
+    <value>256, 237</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -253,7 +253,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 127</value>
+    <value>256, 126</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>236</value>
+    <value>237</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -325,7 +325,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACAfrsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuAAAf7sL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -347,7 +347,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwnQ7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwnc7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -1584,11 +1584,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqCkej/4ChXDBTmrBaC
-        xUIwYbMZtDoLzb+CzUpgk2s2miReZLze+XngYXfqDZmbfLfv7p73t5+2jkhRMNPs3MW/IVZcgvFc80cS
-        7rk6wUCDHMYHKtXh61TT8DsnmrQtidHkscbHHi511NlPO2xKij55ConKl6Yk+xv/V3yLsABP0iToxvx6
-        6n3gd+HhS2CsmRHDtasygU8Jnyb7yLsqAUnuqBTisHbzQw2PWmrtuvjPqKq6Q7uHLmYCe9k6Z4J7VyWw
-        MzPSi83uqkwQfGs7hM+uWoLMwUijdzPaFVYXSZMOTilyxn9ofsgVD1+0V+mqG3n2jWgF++ofeIovYywc
-        7OFZtSzi17AnQeGfZ7aF2qze0dqd/AqqBbDg4rYgfQJGUTcqmqyYVgAAAABJRU5ErkJggg==
+        xUIwYbMZtDoLzb+CzUpgk2s2mhQGyHi98/PAw+7UGzI3+W7f3T3vbz9tHZGiYKbZuYt/Q6y4BOO55o8k
+        3HN1goEGOYwPVKrD16mm4XdONGlbEqPJY42PPVzqqLOfdtiUFH3yFBKVL01J9jf+r/gWYQGepEnQjfn1
+        1PvA78LDl8BYMyOGa1dlAp8SPk32kXdVApLcUSnEYe3mhxoetdTadfGfUVV1h3YPXcwE9rJ1zgT3rkpg
+        Z2akF5vdVZkg+NZ2CJ9dtQSZg5FG72a0K6wukiYdnFLkjP/Q/JArHr5or9JVN/LsG9EK9tU/8BRfxlg4
+        2MOzalnEr2FPgsI/z2wLtVm9o7U7+RVUC2DBxW1B+gRCOTcmtLViegAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1930,9 +1930,6 @@
   <data name="&gt;&gt;statusBar.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="versionCheckWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>653, 17</value>
-  </metadata>
   <metadata name="saveXmlFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>817, 17</value>
   </metadata>
@@ -3080,12 +3077,6 @@
   </data>
   <data name="&gt;&gt;locationDisplay.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;versionCheckWorker.Name" xml:space="preserve">
-    <value>versionCheckWorker</value>
-  </data>
-  <data name="&gt;&gt;versionCheckWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;saveXmlFileDialog.Name" xml:space="preserve">
     <value>saveXmlFileDialog</value>

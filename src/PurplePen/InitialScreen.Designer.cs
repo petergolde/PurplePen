@@ -133,6 +133,7 @@ namespace PurplePen
             this.ShowInTaskbar = true;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InitialScreen_FormClosed);
+            this.Shown += new System.EventHandler(this.InitialScreen_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

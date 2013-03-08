@@ -667,7 +667,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Version {0} of Purple Pen is now available for download. (You are currently running version {1}.)
         ///
-        ///To download the latest version, visit the Purple Pen web site by selecting &quot;Purple Pen Web Site&quot; in the Help menu..
+        ///Would you like to download and install the latest version?.
         /// </summary>
         internal static string NewerVersionAvailable {
             get {

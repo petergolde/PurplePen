@@ -365,6 +365,14 @@ namespace PurplePen
             return v1.CompareTo(v2);
         }
 
+        // Compare version strings. Return true if all exception last component is same.
+        public static bool SameExceptRevision(string s1, string s2)
+        {
+            Version v1 = new Version(s1);
+            Version v2 = new Version(s2);
+            return (v1.Major == v2.Major && v1.Minor == v2.Minor && v1.Build == v2.Build);
+        }
+
         // Pretty-ize the version string. 
         public static string PrettyVersionString(string verString)
         {
