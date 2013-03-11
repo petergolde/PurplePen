@@ -166,7 +166,7 @@
     <value>Symbole &amp; Text</value>
   </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
-    <value>Postenbeschreibungstyp</value>
+    <value>Postenbeschreibungstyp:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
@@ -190,7 +190,7 @@
     <value>Kopien</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>Postenbeschreibungen pro Kurs</value>
+    <value>Postenbeschreibungen pro Bahn</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
     <value>Ein Exemplar pro Bahn</value>

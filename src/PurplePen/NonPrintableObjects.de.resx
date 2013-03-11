@@ -120,7 +120,7 @@
   <data name="labelWarning.Text" xml:space="preserve">
     <value>Die Kartendatei "{0}" enthält Objekte oder Symbole, die von Purple Pen nicht vollständig unterstützt werden und deshalb vermutlich nicht richtig gedruckt werden. Die Objekte, die evtl. nicht korrekt gedruckt werden können, werden im Folgenden gelistet.
 
-Zum Drucken der Wettkampfdateien wird empfohlen, sie nach OCAD zu exportieren (über Datei/OCAD-Da&amp;teien erstellen... ) und dann asu OCAD heraus zu drucken.
+Zum Drucken der Wettkampfdateien wird empfohlen, sie nach OCAD zu exportieren (über Datei/OCAD-Da&amp;teien erstellen... ) und dann aus OCAD heraus zu drucken.
 </value>
   </data>
   <data name="okButton.Text" xml:space="preserve">

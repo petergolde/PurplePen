@@ -124,10 +124,10 @@
     <value>Kontrollcode ändern</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Ändere den Posten</value>
+    <value>Posten ändern</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
-    <value>Posten ändern</value>
+    <value>Punktwert ändern</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
     <value>Titel ändern</value>
@@ -142,7 +142,7 @@
     <value>Textzeile ändern</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Kartenmassstab aktualisieren</value>
+    <value>Kartenmaßstab aktualisieren</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
     <value>Posten verschieben</value>

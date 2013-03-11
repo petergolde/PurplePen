@@ -124,7 +124,7 @@
     <value>OK</value>
   </data>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>Die Kartendatei "{0}" benutzt Schriftarten (Fonts), die auf diesem Computer nicht installiert sind. Texte, die diese Fonts verwenden, werden mit dem Standardfont gezeichnet und gedruckt, was den Text unter Umständen anders aussehen lässt, als der Bahnleger es beabsichtigt hatte. 
+    <value>Die Kartendatei "{0}" benutzt Schriftarten (Fonts), die auf diesem Computer nicht installiert sind. Texte, die diese Fonts verwenden, werden mit dem Standardfont gezeichnet und gedruckt, was den Text unter Umständen anders aussehen lässt, als der Bahnleger beabsichtigt hatte. 
 
 Um das Problem zu lösen, suchen und installieren Sie die unten gelisteten Fonts über die Windows Systemsteuerung. Starten Sie dann Purple Pen neu.
 </value>

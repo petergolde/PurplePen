@@ -121,7 +121,7 @@
     <value>Neu erzeugte Posten werden automatisch nummeriert. Wählen Sie bitte den Startcode für den ersten Posten aus.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Sperrt Kontrollcodes, die verkehrt herum gelesen werden könnten (z.B. 68 / 89)</value>
+    <value>Kontrollcodes verbieten, die verkehrt herum gelesen werden könnten (z.B. "66" / "89")</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Erster Kontrollcode:</value>

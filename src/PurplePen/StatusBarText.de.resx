@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
-    <value>Linke Maustaste: Objekt auswählen; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Hinauszoomen</value>
+    <value>Linke Maustaste: Objekt auswählen; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Herauszoomen</value>
   </data>
   <data name="DefaultRectangle" xml:space="preserve">
-    <value>Linke Maustaste: Rechteck verschieben/Größe ändern; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Hinauszoomen</value>
+    <value>Linke Maustaste: Rechteck verschieben/Größe ändern; Rechte Maustaste: Karte verschieben; Mausrad drehen: Hinein-/Herauszoomen</value>
   </data>
   <data name="DragObject" xml:space="preserve">
     <value>Um das ausgewählte Objekt zu verschieben, bewegen Sie die Maus mit gedrückter linker Maustaste</value>
@@ -136,10 +136,10 @@
     <value>Bewegen Sie den Eckpunkt an die gewünschte Stelle und lassen dann die Maustaste los</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
-    <value>Drücken Sie die linke Maustaste, um einen neuen Posten zu platzieren</value>
+    <value>Drücken Sie die linke Maustaste, um einen neuen Posten zu setzen</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>Drücken Sie die linke Maustaste, um den bestenden Posten "{0}" zur Bahn hinzuzufügen</value>
+    <value>Drücken Sie die linke Maustaste, um den bestehenden Posten "{0}" zur Bahn hinzuzufügen</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
     <value>Drücken Sie die linke Maustaste, um einen neuen Start zu platzieren</value>

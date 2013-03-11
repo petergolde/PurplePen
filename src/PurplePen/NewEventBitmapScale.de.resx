@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="bitmapScaleLabel.Text" xml:space="preserve">
-    <value>Wenn Sie eine Bildkarte (Raster) als Kartendatei verwenden, ist es erforderlich, die Auflösung der Rasterdatei, sowie deren Masstab anzugeben. 
+    <value>Wenn Sie eine Bildkarte (Raster) als Kartendatei verwenden, ist es erforderlich, die Auflösung der Bildkarte, sowie deren Maßstab anzugeben. 
 
-Die Auflösung der Rasterdatei gibt an, wie viele Bildpunkte (Pixel) des Rasters einem Zoll (inch) auf der Karte entsprechen; dies wird normalerweise "dots per inch" bzw. "dpi" genannt.
+Die Auflösung der Bildkarte gibt an, wie viele Bildpunkte (Pixel) des Rasters einem Zoll (inch) auf der Karte entsprechen; dies wird normalerweise "dots per inch" bzw. "dpi" genannt.
 
-Der Masstab der Karte stellt das Verhältnis zwischen Papierkarte und der realen Welt dar.
+Der Maßstab der Karte stellt das Verhältnis zwischen Papierkarte und der realen Welt dar.
 </value>
   </data>
   <data name="resolutionLabel.Text" xml:space="preserve">
@@ -135,6 +135,6 @@ Der Masstab der Karte stellt das Verhältnis zwischen Papierkarte und der realen
     <value>1:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Kartenmassstab:</value>
+    <value>Kartenmaßstab:</value>
   </data>
 </root>

@@ -187,7 +187,7 @@
     <value>Pflichtquerung</value>
   </data>
   <data name="None" xml:space="preserve">
-    <value>Kein</value>
+    <value>Keine</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
     <value>Unpassierbare Grenze</value>

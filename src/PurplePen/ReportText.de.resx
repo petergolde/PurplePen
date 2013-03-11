@@ -232,7 +232,7 @@
     <value>Nicht verwendete Posten</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>Die folgenden Posten aus der Gesamtpostenliste werden in keiner der Bahnen verwendet.</value>
+    <value>Die folgenden Posten aus der Gesamtpostenliste werden in keiner Bahn verwendet.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Ja</value>

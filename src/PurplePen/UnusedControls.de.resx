@@ -121,7 +121,7 @@
     <value>Löschen</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>Die folgenden Posten aus der Gesamtpostenliste werden in keiner der Bahnen verwendet. Klicken Sie auf Löschen, um alle ausgewählten Posten zu entfernen.</value>
+    <value>Die folgenden Posten aus der Gesamtpostenliste werden in keiner  Bahn verwendet. Klicken Sie auf Löschen, um alle angehakten Posten zu entfernen.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nicht verwendete Posten</value>

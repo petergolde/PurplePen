@@ -124,7 +124,7 @@
     <value>Neuer Kontrollcode</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Um die Kontrollcodes für einen oder mehrere Posten zu ändern, klicken Sie auf die Spalte "Neue Kontrollnummer" und geben den neuen Kontrollcode ein. </value>
+    <value>Um die Kontrollcodes für einen oder mehrere Posten zu ändern, klicken Sie auf die Spalte "Neuer Kontrollcode" und geben den neuen Kontrollcode ein. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kontrollcodes ändern</value>

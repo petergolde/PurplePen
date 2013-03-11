@@ -121,7 +121,7 @@
     <value>Postenbeschreibung</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>Druckmassstab</value>
+    <value>Druckmaßstab:</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
     <value>1: </value>

@@ -124,7 +124,7 @@
     <value>Postenbeschreibung</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Druckmassstab</value>
+    <value>Druckmaßstab:</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1: </value>
@@ -139,7 +139,7 @@
     <value>Symbole und Text</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Postennummerierung</value>
+    <value>Postenbeschriftung:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Postennummer (3)</value>
@@ -190,7 +190,7 @@
     <value>Score-Bahn</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
-    <value>Distanz</value>
+    <value>Meter</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Neue Bahn</value>

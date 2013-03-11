@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventDirectoryLabel.Text" xml:space="preserve">
-    <value>In welchem Ordner (Directory) wollen Sie die Wettkampfdatei abspeichern?</value>
+    <value>In welchem Ordner wollen Sie die Wettkampfdatei abspeichern?</value>
   </data>
   <data name="useMapDirectory.Text" xml:space="preserve">
     <value>Im gleichen Ordner wie die Kartendatei.</value>
@@ -130,7 +130,7 @@
     <value>Ordner auswählen...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Wählen Sie den Ordner für Ihre Wettkampfdatei aus.</value>
+    <value>Wählen Sie einen Ordner für Ihre Wettkampfdatei aus.</value>
   </data>
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Ausgewählter Ordner</value>

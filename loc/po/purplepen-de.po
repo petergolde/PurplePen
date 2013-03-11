@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 1.2.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-03-05 10:25-08:00\n"
+"POT-Creation-Date: 2013-03-11 12:54-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -69,7 +69,7 @@ msgstr "Postenbeschreibung"
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr "Druckmassstab"
+msgstr "Druckmaßstab:"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
@@ -99,7 +99,7 @@ msgstr "Symbole und Text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "Postennummerierung"
+msgstr "Postenbeschriftung:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
@@ -174,7 +174,7 @@ msgstr "Score-Bahn"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
-msgstr "Distanz"
+msgstr "Meter"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -184,8 +184,8 @@ msgstr "Neue Bahn"
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Text eingeben für eine separate Zeile auf der "
-"Postenbeschreibung:"
+msgstr "Text für eine separate Zeile auf der Postenbeschreibung "
+"eingeben:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -230,8 +230,8 @@ msgstr "Einstellungen für alle Posten"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Sperrt Kontrollcodes, die verkehrt herum gelesen werden "
-"könnten (z.B. 68 / 89)"
+msgstr "Kontrollcodes verbieten, die verkehrt herum gelesen werden "
+"könnten (z.B. \"66\" / \"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
@@ -273,7 +273,7 @@ msgstr "Neuer Kontrollcode"
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
 msgstr "Um die Kontrollcodes für einen oder mehrere Posten zu "
-"ändern, klicken Sie auf die Spalte \"Neue Kontrollnummer\" "
+"ändern, klicken Sie auf die Spalte \"Neuer Kontrollcode\" "
 "und geben den neuen Kontrollcode ein. "
 
 #: ChangeAllCodes.resx, $this.Text
@@ -314,7 +314,7 @@ msgstr "&Kartendatei auswählen..."
 #: NewEventMapFile.resx, openFileDialog.Filter
 msgid "OCAD files (*.ocd)|*.ocd|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "OCAD Dateien "
+msgstr "OCAD-Dateien "
 "(*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*."
 "png;*.gif"
 
@@ -324,7 +324,7 @@ msgstr "Auflösung:"
 
 #: ChangeMapFile.resx, labelScale.Text
 msgid "Scale:"
-msgstr "Massstab:"
+msgstr "Maßstab:"
 
 #: ChangeMapFile.resx, labelOneTo.Text
 msgid "1 :"
@@ -385,11 +385,11 @@ msgstr "Kontrollcode ändern"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
-msgstr "Ändere den Posten"
+msgstr "Posten ändern"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr "Posten ändern"
+msgstr "Punktwert ändern"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
@@ -409,7 +409,7 @@ msgstr "Textzeile ändern"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr "Kartenmassstab aktualisieren"
+msgstr "Kartenmaßstab aktualisieren"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
@@ -581,7 +581,7 @@ msgstr "Fett"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr "Stil der Postennummern"
+msgstr "Stil der Postennummern:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
@@ -676,7 +676,7 @@ msgstr "Bahnen"
 #: CreateOcadFiles.resx, createButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
-msgstr "Erstelle"
+msgstr "Erstellen"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
@@ -693,7 +693,7 @@ msgstr "Abbrechen"
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
-msgstr "Wähle einen Ordner für die OCAD-Dateien"
+msgstr "Wählen Sie einen Ordner für die OCAD-Dateien aus"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
@@ -725,7 +725,7 @@ msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
-msgstr ""
+msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -761,7 +761,7 @@ msgstr "Ordner"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
-msgstr "OCAD Dateien erstellen"
+msgstr "OCAD-Dateien erstellen"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
@@ -770,24 +770,24 @@ msgstr "Dateiname"
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr "Namen für beide RouteGadget-Dateien (ohne .xml or .gif) "
-"eintragen:"
+msgstr "Einen Namen (ohne .xml or .gif) für die beiden "
+"RouteGadget-Dateien eintragen:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr "Erfahre mehr über RouteGadget"
+msgstr "Mehr über RouteGadget erfahren"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr "RouteGadget benötigt eine Bilddatei (.gif) und eine IOF "
-"XML Datei (.xml). Wähle den Namen und den Ordner für beide "
-"Dateien."
+msgstr "RouteGadget benötigt sowohl eine Bilddatei (.gif), als "
+"auch eine IOF XML Datei (.xml). Wählen Sie Namen und "
+"Ordner für beide Dateien."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr "RouteGadget Dateien erstellen"
+msgstr "RouteGadget-Dateien erstellen"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
@@ -875,7 +875,7 @@ msgstr "Letzten Wettkampf öffnen"
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
-msgstr "Willkommen in Purple Pen"
+msgstr "Willkommen bei Purple Pen"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -983,7 +983,7 @@ msgstr "Route&Gadget-Dateien erstellen …"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create &E-Punch Interchange File..."
-msgstr "E-&Punch Interchange-Datei erstellen …"
+msgstr "E-&Punch-Austauschdatei erstellen …"
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1011,7 +1011,7 @@ msgstr "A&lle Bahnen"
 
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
-msgstr "Programm&sprache"
+msgstr "Programm&sprache festlegen"
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
@@ -1025,12 +1025,12 @@ msgstr "Auswahl &aufheben"
 #: MainFrame.resx, undoMenu.Text
 #: MiscText.resx, UndoWithShortcut
 msgid "&Undo"
-msgstr "&Rückgängig"
+msgstr "&Rückgängig:"
 
 #: MainFrame.resx, redoMenu.Text
 #: MiscText.resx, RedoWithShortcut
 msgid "&Redo"
-msgstr "&Wiederholen"
+msgstr "&Wiederholen:"
 
 #: MainFrame.resx, deleteMenu.Text
 #: MainFrame.resx, deleteItemMenu.Text
@@ -1099,7 +1099,7 @@ msgstr "&Hoch"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr "&Vollständig"
+msgstr "&Volle Helligkeit"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
@@ -1123,7 +1123,7 @@ msgstr "&Kartendatei..."
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
-msgstr "Posten&codes ändern..."
+msgstr "Kontroll&codes ändern..."
 
 #: MainFrame.resx, autoNumberingMenu.Text
 msgid "Automatic &Numbering..."
@@ -1340,7 +1340,7 @@ msgstr "Punktrastertester"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr "Test-OCAD Datei"
+msgstr "Test-OCAD-Datei"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
@@ -1368,7 +1368,7 @@ msgstr "Öffnen"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr "Öffnen (Ctrl+Ö)"
+msgstr "Öffnen (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 msgid "Save"
@@ -1381,20 +1381,20 @@ msgstr "Speichern (Ctrl+S)"
 #: MainFrame.resx, undoToolStripButton.Text
 #: MiscText.resx, Undo
 msgid "Undo"
-msgstr "Rückgängig"
+msgstr "Rückgängig:"
 
 #: MainFrame.resx, undoToolStripButton.ToolTipText
 msgid "Undo (Ctrl+Z)"
-msgstr "Rückgängig (Ctrl+Z)"
+msgstr "Rückgängig: (Ctrl+Z)"
 
 #: MainFrame.resx, redoToolStripButton.Text
 #: MiscText.resx, Redo
 msgid "Redo"
-msgstr "Wiederherstellen"
+msgstr "Wiederherstellen:"
 
 #: MainFrame.resx, redoToolStripButton.ToolTipText
 msgid "Redo (Ctrl+Y)"
-msgstr "Wiederherstellen (Ctrl+Y)"
+msgstr "Wiederherstellen: (Ctrl+Y)"
 
 #: MainFrame.resx, deleteToolStripButton.Text
 msgid "Delete (Del)"
@@ -1434,11 +1434,11 @@ msgstr "Copy text t X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "XML file|*.xml"
-msgstr "XML file|*.xml"
+msgstr "XML-Datei|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr "XML Interchange File ertsellen"
+msgstr "XML-Austausch Datei erstellen"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1496,12 +1496,12 @@ msgstr "Kann den Ordner '{0}' aus folgendem Grund nicht erstellen:"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair in OCAD may fix problems."
-msgstr "Kann Karte aus dem folgenden Grund nicht lesen: '{0} "
+msgstr "Kann die Karte aus dem folgenden Grund nicht lesen: '{0} "
 "\"Optimize/Repair\" in OCAD behebt möglicherweise das Problem."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
-msgstr "Die OCAD Dateien können aus folgendem Grund nicht erstellt "
+msgstr "Die OCAD-Dateien können aus folgendem Grund nicht erstellt "
 "werden:"
 
 #: MiscText.resx, SaveChanges
@@ -1606,8 +1606,8 @@ msgstr "Der Posten {0} wird von keiner Bahn mehr verwendet. Soll "
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr "Posten {0} wird noch von der folgenden Bahnen verwendet: "
-"{1}. Sollen diese Posten trotzdem gelöscht werden?"
+msgstr "Posten {0} wird noch in folgenden Bahnen verwendet: {1}. "
+"Soll dieser Posten trotzdem gelöscht werden?"
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
@@ -1638,7 +1638,7 @@ msgstr "Der Code \"{0}\" wird mehr, als einmal verwendet."
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
-msgstr "Der Druck-Massstab muss eine Zahl zwischen 100 und 100,000 "
+msgstr "Der Druckmaßstab muss eine Zahl zwischen 100 und 100.000 "
 "sein."
 
 #: MiscText.resx, CoursePropertiesTitle
@@ -1713,7 +1713,7 @@ msgstr "Die Kartendatei \"{0}\" kann nicht gefunden werden\n"
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
-msgstr "Alle Posten werden in Bahnen verwendet."
+msgstr "Jeder Posten wird in einer Bahn verwendet."
 
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
@@ -1792,7 +1792,7 @@ msgstr "Der geänderte Text benötigt einen \"*\" an der Stelle, an "
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr "Bahneinstellungen für den Orientierungslauf"
+msgstr "Bahnlegung für den Orientierungslauf"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
@@ -1809,7 +1809,7 @@ msgstr "Text hinzufügen"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr "Neuen Text eingeben"
+msgstr "Neuen Text eingeben."
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
@@ -1821,7 +1821,7 @@ msgstr "Ein anderes Programm hat die Kartendatei \"{0}\" verändert. "
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr "Die Text-Postenbeschreibung des aktuellen Wettkampfs ist "
+msgstr "Die Text-Postenbeschreibung des aktuellen Wettkampfes ist "
 "in {0} . Wollen Sie die Sprache der Postenbeschreibung in "
 "{1} ändern?"
 
@@ -1832,8 +1832,8 @@ msgstr "\"{0}\" öffnen"
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr "Purple Pen muss beendet werden bevor die erstellte "
-"OCAD-Datei geladen wird."
+msgstr "Purple Pen muss beendet werden, bevor die erstellten "
+"OCAD-Dateien geladen werden können."
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
@@ -1866,7 +1866,7 @@ msgstr "Die Kartendatei \"{0}\" benutzt Schriftarten (Fonts), die "
 "auf diesem Computer nicht installiert sind. Texte, die "
 "diese Fonts verwenden, werden mit dem Standardfont "
 "gezeichnet und gedruckt, was den Text unter Umständen "
-"anders aussehen lässt, als der Bahnleger es beabsichtigt "
+"anders aussehen lässt, als der Bahnleger beabsichtigt "
 "hatte. \n"
 "\n"
 "Um das Problem zu lösen, suchen und installieren Sie die "
@@ -1889,14 +1889,14 @@ msgid "When using an image file as a map, you must specify the "
 "the paper map and the real world.\n"
 msgstr "Wenn Sie eine Bildkarte (Raster) als Kartendatei "
 "verwenden, ist es erforderlich, die Auflösung der "
-"Rasterdatei, sowie deren Masstab anzugeben. \n"
+"Bildkarte, sowie deren Maßstab anzugeben. \n"
 "\n"
-"Die Auflösung der Rasterdatei gibt an, wie viele "
-"Bildpunkte (Pixel) des Rasters einem Zoll (inch) auf der "
-"Karte entsprechen; dies wird normalerweise \"dots per inch\" "
-"bzw. \"dpi\" genannt.\n"
+"Die Auflösung der Bildkarte gibt an, wie viele Bildpunkte "
+"(Pixel) des Rasters einem Zoll (inch) auf der Karte "
+"entsprechen; dies wird normalerweise \"dots per inch\" bzw. "
+"\"dpi\" genannt.\n"
 "\n"
-"Der Masstab der Karte stellt das Verhältnis zwischen "
+"Der Maßstab der Karte stellt das Verhältnis zwischen "
 "Papierkarte und der realen Welt dar.\n"
 
 #: NewEventBitmapScale.resx, resolutionLabel.Text
@@ -1912,13 +1912,12 @@ msgstr "1:"
 #: NewEventBitmapScale.resx, mapScaleLabel.Text
 #: NewEventPrintScale.resx, mapScaleLabel.Text
 msgid "Map scale:"
-msgstr "Kartenmassstab:"
+msgstr "Kartenmaßstab:"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr "In welchem Ordner (Directory) wollen Sie die "
-"Wettkampfdatei abspeichern?"
+msgstr "In welchem Ordner wollen Sie die Wettkampfdatei abspeichern?"
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
@@ -1934,7 +1933,7 @@ msgstr "Ordner auswählen..."
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr "Wählen Sie den Ordner für Ihre Wettkampfdatei aus."
+msgstr "Wählen Sie einen Ordner für Ihre Wettkampfdatei aus."
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
@@ -1949,7 +1948,7 @@ msgstr "Klicken Sie auf \"Fertigstellen\", um Ihren neuen Wettkampf "
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr "Nachden Ihr neuer Wettkampf angelegt wurde, wählen Sie "
+msgstr "Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie "
 "bitte \"Neue Bahn...\" im Bahnen-Menü aus, um eine oder "
 "mehrere neuen Bahnen anzulegen."
 
@@ -1958,12 +1957,11 @@ msgid "In order to design your courses, you must select the map "
 "file you will be using. Typically this is an OCAD file "
 "(although image files like JPEGs can be used instead). "
 "Click the \"Choose...\" button to select a map file."
-msgstr "Um Ihre Bahnen zu gestalten, müssen Sie zuvor eine "
-"Kartendatei auswählen, die verwendet werden soll. "
-"Normalerweise ist dies eine OCAD-Datei (obwohl stattdessen "
-"auch eine Rasterkarte (Image) verwendet werden kann). "
-"Klicken Sie die \"Auswählen...\" Schaltfläche, um eine "
-"Kartendatei auszuwählen."
+msgstr "Als Vorlage für die Bahnen müssen Sie eine Kartendatei "
+"auswählen. Normalerweise ist dies eine OCAD-Datei (obwohl "
+"stattdessen auch eine Rasterkarte (Bilddatei) verwendet "
+"werden kann). Klicken Sie auf \"Kartendatei auswählen...\", "
+"um eine Kartendatei auszuwählen."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -1993,18 +1991,18 @@ msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr "In welchem Masstab möchten Sie Ihre Bahnen drucken? In den "
-"meisten Fällen ist dies der Massstab der Kartendatei.\n"
+msgstr "In welchem Maßstab möchten Sie Ihre Bahnen drucken? In den "
+"meisten Fällen ist dies der Maßstab der Karte.\n"
 "\n"
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr "Standard &Druck-Massstab:"
+msgstr "Standard &Druckmaßstab:"
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr "(Sie können den Druckmasstab später unter "
+msgstr "(Sie können den Druckmaßstab später unter "
 "Bahn/Eigenschaften wieder ändern.)"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
@@ -2016,12 +2014,12 @@ msgid "The event title will be displayed on the first line of "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
 msgstr "Der Wettkampfname wird in der ersten Zeile jeder "
-"Postenbeschreibung angezeigt werden. Er wird auch als "
-"Dateiname beim Speichern der Wettkampf-Datei auf "
-"Festplatte verwendet werden.\n"
+"Postenbeschreibung angezeigt. Er wird auch als Dateiname "
+"beim Speichern der Wettkampf-Datei auf Festplatte "
+"verwendet.\n"
 "\n"
 "Damit er auf der Postenbeschreibung Platz findet sollte er "
-"nicht länger, als 25 Zeichen lang sein. Beispiele für gute "
+"nicht länger als 25 Zeichen lang sein. Beispiele für gute "
 "Wettkampfnamen sind \"1. RP Isar Cup\" oder \"Landshuter "
 "Nikolaus-OL\"."
 
@@ -2050,7 +2048,7 @@ msgstr "Die Kartendatei \"{0}\" enthält Objekte oder Symbole, die "
 "\n"
 "Zum Drucken der Wettkampfdateien wird empfohlen, sie nach "
 "OCAD zu exportieren (über Datei/OCAD-Da&teien erstellen... "
-") und dann asu OCAD heraus zu drucken.\n"
+") und dann aus OCAD heraus zu drucken.\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
@@ -2173,7 +2171,7 @@ msgstr "Symbole & Text"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr "Postenbeschreibungstyp"
+msgstr "Postenbeschreibungstyp:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
@@ -2181,7 +2179,7 @@ msgstr "Linienstärke:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr "Postenbeschreibungen pro Kurs"
+msgstr "Postenbeschreibungen pro Bahn"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
@@ -2439,7 +2437,7 @@ msgid "The following controls are present in the All Controls "
 "menu. These controls will not be considered further in "
 "this report."
 msgstr "Die folgenden Posten aus der Gesamtpostenliste werden in "
-"keiner der Bahnen verwendet."
+"keiner Bahn verwendet."
 
 #: ReportText.resx, EventAudit_Yes
 msgid "Yes"
@@ -2580,7 +2578,7 @@ msgstr "Pflichtquerung"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
-msgstr "Kein"
+msgstr "Keine"
 
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
@@ -2661,14 +2659,14 @@ msgstr "Programmsprache"
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
 msgstr "Linke Maustaste: Objekt auswählen; Rechte Maustaste: Karte "
-"verschieben; Mausrad drehen: Hinein-/Hinauszoomen"
+"verschieben; Mausrad drehen: Hinein-/Herauszoomen"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
 msgstr "Linke Maustaste: Rechteck verschieben/Größe ändern; Rechte "
 "Maustaste: Karte verschieben; Mausrad drehen: "
-"Hinein-/Hinauszoomen"
+"Hinein-/Herauszoomen"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
@@ -2694,12 +2692,12 @@ msgstr "Bewegen Sie den Eckpunkt an die gewünschte Stelle und "
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
 msgstr "Drücken Sie die linke Maustaste, um einen neuen Posten zu "
-"platzieren"
+"setzen"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr "Drücken Sie die linke Maustaste, um den bestenden Posten "
+msgstr "Drücken Sie die linke Maustaste, um den bestehenden Posten "
 "\"{0}\" zur Bahn hinzuzufügen"
 
 #: StatusBarText.resx, AddingStart
@@ -2825,6 +2823,6 @@ msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
 msgstr "Die folgenden Posten aus der Gesamtpostenliste werden in "
-"keiner der Bahnen verwendet. Klicken Sie auf Löschen, um "
-"alle ausgewählten Posten zu entfernen."
+"keiner  Bahn verwendet. Klicken Sie auf Löschen, um alle "
+"angehakten Posten zu entfernen."
 

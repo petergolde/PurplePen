@@ -190,7 +190,7 @@
     <value>Route&amp;Gadget-Dateien erstellen …</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>E-&amp;Punch Interchange-Datei erstellen …</value>
+    <value>E-&amp;Punch-Austauschdatei erstellen …</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Postenbeschreibungen &amp;drucken...</value>
@@ -211,7 +211,7 @@
     <value>A&amp;lle Bahnen</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Programm&amp;sprache</value>
+    <value>Programm&amp;sprache festlegen</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>B&amp;eenden</value>
@@ -220,10 +220,10 @@
     <value>Auswahl &amp;aufheben</value>
   </data>
   <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Rückgängig</value>
+    <value>&amp;Rückgängig:</value>
   </data>
   <data name="redoMenu.Text" xml:space="preserve">
-    <value>&amp;Wiederholen</value>
+    <value>&amp;Wiederholen:</value>
   </data>
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
@@ -274,7 +274,7 @@
     <value>&amp;Hoch</value>
   </data>
   <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Vollständig</value>
+    <value>&amp;Volle Helligkeit</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Karten&amp;qualität</value>
@@ -292,7 +292,7 @@
     <value>&amp;Kartendatei...</value>
   </data>
   <data name="changeCodesMenu.Text" xml:space="preserve">
-    <value>Posten&amp;codes ändern...</value>
+    <value>Kontroll&amp;codes ändern...</value>
   </data>
   <data name="autoNumberingMenu.Text" xml:space="preserve">
     <value>Automatische &amp;Nummerierung...</value>
@@ -448,7 +448,7 @@
     <value>Punktrastertester</value>
   </data>
   <data name="dumpOCADFileMenu.Text" xml:space="preserve">
-    <value>Test-OCAD Datei</value>
+    <value>Test-OCAD-Datei</value>
   </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Berichtstester</value>
@@ -469,7 +469,7 @@
     <value>Öffnen</value>
   </data>
   <data name="openToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Öffnen (Ctrl+Ö)</value>
+    <value>Öffnen (Ctrl+O)</value>
   </data>
   <data name="saveToolStripButton.Text" xml:space="preserve">
     <value>Speichern</value>
@@ -478,16 +478,16 @@
     <value>Speichern (Ctrl+S)</value>
   </data>
   <data name="undoToolStripButton.Text" xml:space="preserve">
-    <value>Rückgängig</value>
+    <value>Rückgängig:</value>
   </data>
   <data name="undoToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Rückgängig (Ctrl+Z)</value>
+    <value>Rückgängig: (Ctrl+Z)</value>
   </data>
   <data name="redoToolStripButton.Text" xml:space="preserve">
-    <value>Wiederherstellen</value>
+    <value>Wiederherstellen:</value>
   </data>
   <data name="redoToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Wiederherstellen (Ctrl+Y)</value>
+    <value>Wiederherstellen: (Ctrl+Y)</value>
   </data>
   <data name="deleteToolStripButton.Text" xml:space="preserve">
     <value>Löschen (Del)</value>
@@ -559,10 +559,10 @@
     <value>Copy text t X:-999.99 Y:-999.99</value>
   </data>
   <data name="saveXmlFileDialog.Filter" xml:space="preserve">
-    <value>XML file|*.xml</value>
+    <value>XML-Datei|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
-    <value>XML Interchange File ertsellen</value>
+    <value>XML-Austausch Datei erstellen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

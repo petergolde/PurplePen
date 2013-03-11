@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Erstelle</value>
+    <value>Erstellen</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Wähle einen Ordner für die OCAD-Dateien</value>
+    <value>Wählen Sie einen Ordner für die OCAD-Dateien aus</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>
@@ -145,15 +145,15 @@
     <value>Dateiname</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Namen für beide RouteGadget-Dateien (ohne .xml or .gif) eintragen:</value>
+    <value>Einen Namen (ohne .xml or .gif) für die beiden RouteGadget-Dateien eintragen:</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
-    <value>Erfahre mehr über RouteGadget</value>
+    <value>Mehr über RouteGadget erfahren</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>RouteGadget benötigt eine Bilddatei (.gif) und eine IOF XML Datei (.xml). Wähle den Namen und den Ordner für beide Dateien.</value>
+    <value>RouteGadget benötigt sowohl eine Bilddatei (.gif), als auch eine IOF XML Datei (.xml). Wählen Sie Namen und Ordner für beide Dateien.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>RouteGadget Dateien erstellen</value>
+    <value>RouteGadget-Dateien erstellen</value>
   </data>
 </root>
