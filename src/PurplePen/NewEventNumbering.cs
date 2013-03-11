@@ -22,7 +22,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Control Numbering"; }
+            get { return labelTitle.Text; }
         }
 
     }

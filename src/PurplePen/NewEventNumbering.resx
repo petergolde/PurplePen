@@ -112,19 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="newEventNumberingLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 18</value>
   </data>
   <data name="newEventNumberingLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>468, 49</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventNumberingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -135,13 +135,13 @@
     <value>newEventNumberingLabel</value>
   </data>
   <data name="&gt;&gt;newEventNumberingLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;newEventNumberingLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;newEventNumberingLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="disallowInvertibleCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -162,13 +162,13 @@
     <value>disallowInvertibleCheckBox</value>
   </data>
   <data name="&gt;&gt;disallowInvertibleCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;disallowInvertibleCheckBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;disallowInvertibleCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="startingCodeLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -189,13 +189,13 @@
     <value>startingCodeLabel</value>
   </data>
   <data name="&gt;&gt;startingCodeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;startingCodeLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;startingCodeLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="startingCodeNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 95</value>
@@ -210,13 +210,13 @@
     <value>startingCodeNumericUpDown</value>
   </data>
   <data name="&gt;&gt;startingCodeNumericUpDown.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;startingCodeNumericUpDown.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;startingCodeNumericUpDown.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="changeLaterLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 195</value>
@@ -228,21 +228,51 @@
     <value>4</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(This setting can be changed later using Controls/Automatic Numbering)</value>
+    <value>(This setting can be changed later using Event/Automatic Numbering)</value>
   </data>
   <data name="&gt;&gt;changeLaterLabel.Name" xml:space="preserve">
     <value>changeLaterLabel</value>
   </data>
   <data name="&gt;&gt;changeLaterLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;changeLaterLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;changeLaterLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 233</value>
+  </data>
+  <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Control Numbering</value>
+  </data>
+  <data name="labelTitle.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Name" xml:space="preserve">
+    <value>labelTitle</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -255,6 +285,6 @@
     <value>NewEventNumbering</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

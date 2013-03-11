@@ -67,7 +67,8 @@ namespace PurplePen
             this.startingCodeLabel = new System.Windows.Forms.Label();
             this.startingCodeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.changeLaterLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).BeginInit();
+            this.labelTitle = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCodeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // newEventNumberingLabel
@@ -111,17 +112,23 @@ namespace PurplePen
             resources.ApplyResources(this.changeLaterLabel, "changeLaterLabel");
             this.changeLaterLabel.Name = "changeLaterLabel";
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventNumbering
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.changeLaterLabel);
             this.Controls.Add(this.newEventNumberingLabel);
             this.Controls.Add(this.disallowInvertibleCheckBox);
             this.Controls.Add(this.startingCodeLabel);
             this.Controls.Add(this.startingCodeNumericUpDown);
             this.Name = "NewEventNumbering";
-            ((System.ComponentModel.ISupportInitialize) (this.startingCodeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCodeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +141,6 @@ namespace PurplePen
         private System.Windows.Forms.Label changeLaterLabel;
         public System.Windows.Forms.CheckBox disallowInvertibleCheckBox;
         public System.Windows.Forms.NumericUpDown startingCodeNumericUpDown;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

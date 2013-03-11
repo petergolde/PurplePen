@@ -68,7 +68,8 @@ namespace PurplePen
             this.warningIconPictureBox = new System.Windows.Forms.PictureBox();
             this.errorMessage = new System.Windows.Forms.Label();
             this.errorDisplayPanel = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize) (this.warningIconPictureBox)).BeginInit();
+            this.labelTitle = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.warningIconPictureBox)).BeginInit();
             this.errorDisplayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,16 +108,22 @@ namespace PurplePen
             resources.ApplyResources(this.errorDisplayPanel, "errorDisplayPanel");
             this.errorDisplayPanel.Name = "errorDisplayPanel";
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventFinal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.errorDisplayPanel);
             this.Controls.Add(this.eventFileName);
             this.Controls.Add(this.afterEventCreatedLabel);
             this.Controls.Add(this.newEventFinalLabel);
             this.Name = "NewEventFinal";
-            ((System.ComponentModel.ISupportInitialize) (this.warningIconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warningIconPictureBox)).EndInit();
             this.errorDisplayPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -131,5 +138,6 @@ namespace PurplePen
         private System.Windows.Forms.PictureBox warningIconPictureBox;
         public System.Windows.Forms.Label errorMessage;
         public System.Windows.Forms.Panel errorDisplayPanel;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

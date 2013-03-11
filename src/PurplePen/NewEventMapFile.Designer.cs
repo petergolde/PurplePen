@@ -39,11 +39,12 @@ namespace PurplePen
             this.infoDisplayPanel = new System.Windows.Forms.Panel();
             this.infoMessage = new System.Windows.Forms.Label();
             this.infoIconPictureBox = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.mapFileDisplay.SuspendLayout();
             this.errorDisplayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.warningIconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warningIconPictureBox)).BeginInit();
             this.infoDisplayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.infoIconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoIconPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // newEventMapFileLabel
@@ -113,10 +114,16 @@ namespace PurplePen
             this.infoIconPictureBox.Name = "infoIconPictureBox";
             this.infoIconPictureBox.TabStop = false;
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventMapFile
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.infoDisplayPanel);
             this.Controls.Add(this.errorDisplayPanel);
             this.Controls.Add(this.mapFileDisplay);
@@ -127,9 +134,9 @@ namespace PurplePen
             this.mapFileDisplay.ResumeLayout(false);
             this.mapFileDisplay.PerformLayout();
             this.errorDisplayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.warningIconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.warningIconPictureBox)).EndInit();
             this.infoDisplayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.infoIconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.infoIconPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +155,6 @@ namespace PurplePen
         private System.Windows.Forms.Panel infoDisplayPanel;
         private System.Windows.Forms.Label infoMessage;
         private System.Windows.Forms.PictureBox infoIconPictureBox;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

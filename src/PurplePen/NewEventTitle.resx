@@ -112,19 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="newEventTitleLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 17</value>
   </data>
   <data name="newEventTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>465, 113</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="newEventTitleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -137,13 +137,13 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>newEventTitleLabel</value>
   </data>
   <data name="&gt;&gt;newEventTitleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;newEventTitleLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;newEventTitleLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="eventTitleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -164,13 +164,13 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>eventTitleLabel</value>
   </data>
   <data name="&gt;&gt;eventTitleLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;eventTitleLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;eventTitleLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="titleText.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 154</value>
@@ -188,15 +188,45 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>titleText</value>
   </data>
   <data name="&gt;&gt;titleText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;titleText.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;titleText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 233</value>
+  </data>
+  <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Event Title</value>
+  </data>
+  <data name="labelTitle.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Name" xml:space="preserve">
+    <value>labelTitle</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -209,6 +239,6 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>NewEventTitle</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

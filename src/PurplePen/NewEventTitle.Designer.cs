@@ -65,6 +65,7 @@ namespace PurplePen
             this.newEventTitleLabel = new System.Windows.Forms.Label();
             this.eventTitleLabel = new System.Windows.Forms.Label();
             this.titleText = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newEventTitleLabel
@@ -82,10 +83,16 @@ namespace PurplePen
             resources.ApplyResources(this.titleText, "titleText");
             this.titleText.Name = "titleText";
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventTitle
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.titleText);
             this.Controls.Add(this.eventTitleLabel);
             this.Controls.Add(this.newEventTitleLabel);
@@ -100,5 +107,6 @@ namespace PurplePen
         private System.Windows.Forms.Label newEventTitleLabel;
         private System.Windows.Forms.Label eventTitleLabel;
         public System.Windows.Forms.TextBox titleText;
+        private System.Windows.Forms.Label labelTitle;
     }
 }
