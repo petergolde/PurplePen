@@ -36,6 +36,7 @@
             this.oneToPrefixLabel2 = new System.Windows.Forms.Label();
             this.labelMapScale = new System.Windows.Forms.Label();
             this.comboBoxPrintScale = new System.Windows.Forms.ComboBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // newEventPrintScaleLabel
@@ -79,10 +80,16 @@
             resources.ApplyResources(this.comboBoxPrintScale, "comboBoxPrintScale");
             this.comboBoxPrintScale.Name = "comboBoxPrintScale";
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventPrintScale
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.comboBoxPrintScale);
             this.Controls.Add(this.labelMapScale);
             this.Controls.Add(this.oneToPrefixLabel2);
@@ -109,5 +116,6 @@
         private System.Windows.Forms.Label oneToPrefixLabel2;
         private System.Windows.Forms.Label labelMapScale;
         private System.Windows.Forms.ComboBox comboBoxPrintScale;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

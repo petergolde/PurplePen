@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>Die Kartendatei wurde erfolgreich geladen. Wenn Sie Ihre Purple Pen-Datei jemand anderem schicken, müssen Sie die Kartendatei ebenfalls mitschicken.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Kartendatei</value>
+  </data>
 </root>

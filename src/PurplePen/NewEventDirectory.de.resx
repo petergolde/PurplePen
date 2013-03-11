@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Ausgewählter Ordner</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Wettkampfdatei</value>
+  </data>
 </root>

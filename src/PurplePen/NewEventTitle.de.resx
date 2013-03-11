@@ -125,4 +125,7 @@ Damit er auf der Postenbeschreibung Platz findet sollte er nicht länger als 25 
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Wettkampfname:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Wettkampfname</value>
+  </data>
 </root>

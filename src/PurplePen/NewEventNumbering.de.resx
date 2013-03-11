@@ -129,4 +129,7 @@
   <data name="changeLaterLabel.Text" xml:space="preserve">
     <value>(Diese Einstellung kann später wieder unter "Wettkampf/Automatische Nummerierung..." geändert werden.)</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Kontrollcode Nummerierung</value>
+  </data>
 </root>

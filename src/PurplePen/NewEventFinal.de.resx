@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie bitte "Neue Bahn..." im Bahnen-Menü aus, um eine oder mehrere neuen Bahnen anzulegen.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Wettkampf Anlegen</value>
+  </data>
 </root>

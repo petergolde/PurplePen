@@ -137,4 +137,7 @@ Der Maßstab der Karte stellt das Verhältnis zwischen Papierkarte und der reale
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartenmaßstab:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Bildauflösung</value>
+  </data>
 </root>

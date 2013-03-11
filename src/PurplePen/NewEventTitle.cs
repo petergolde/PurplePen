@@ -56,7 +56,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Event Title"; }
+            get { return labelTitle.Text; }
         }
 
         // Given the name of the event, convert to a file name.

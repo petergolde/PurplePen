@@ -34,7 +34,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Print Scale"; }
+            get { return labelTitle.Text; }
         }
 
         private void NewEventPrintScale_Load(object sender, EventArgs e)
