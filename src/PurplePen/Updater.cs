@@ -49,7 +49,7 @@ namespace PurplePen
     {
         // Locations of key files on the server.
         // Each file has two lines -- version number available, and file name in the same directory.
-        private const string downloadLocation = "http://purple-pen.org/testdownloads/";
+        private const string downloadLocation = "http://purple-pen.org/downloads/";
         private const string latestVersionName = "latest_version.txt";
         private const string latestPreleaseName = "latest_prerelease_version.txt";
 
