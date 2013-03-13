@@ -162,16 +162,23 @@ namespace PurplePen
         private static string GetControlLabelText(EventDB eventDB, ControlLabelKind labelKind, CourseView.ControlView controlView) {
             string text = "";
 
-            if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode) {
+            if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.SequenceAndScore) {
                 text += controlView.ordinal.ToString();
                 if (controlView.variation != 0)
                     text += controlView.variation.ToString();
             }
             if (labelKind == ControlLabelKind.SequenceAndCode)
                 text += "-";
-            if (labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.Code) {
+            if (labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.Code || labelKind == ControlLabelKind.CodeAndScore) {
                 ControlPoint control = eventDB.GetControl(controlView.controlId);
                 text += control.code;
+            }
+
+            if (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore) {
+                int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                if (points > 0) {
+                    text += "(" + points.ToString() + ")";
+                }
             }
 
             return text;

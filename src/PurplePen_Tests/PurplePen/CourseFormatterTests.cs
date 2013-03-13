@@ -426,6 +426,115 @@ ControlNumber:  control:78  course-control:904  scale:1  text:13-78  top-left:(9
 ");
         }
 
+        [TestMethod]
+        public void ScoreCourseSequenceAndScore()
+        {
+            CheckCourse("courseformat\\marymoor8.coursescribe", CourseId(9), 0, @"
+FirstAid:       special:1  scale:1  location:(14.5,31.2)
+Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
+OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
+Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
+Control:        control:41  course-control:914  scale:1  location:(28,6.2)  gaps:
+Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  gaps:
+ControlNumber:  control:44  course-control:912  scale:1  text:2  top-left:(42.05,-27.69)
+                font-name:Arial  font-style:Regular  font-height:5.57
+Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  gaps:
+Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
+Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
+Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
+Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
+Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
+Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
+Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
+ControlNumber:  control:41  course-control:914  scale:1  text:1  top-left:(31.26,3.83)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:38  course-control:908  scale:1  text:3(5)  top-left:(36.29,10.48)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:78  course-control:904  scale:1  text:4(5)  top-left:(98.54,34.47)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:75  course-control:902  scale:1  text:5(10)  top-left:(63.21,36.87)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:77  course-control:905  scale:1  text:6(10)  top-left:(60.63,15.67)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:73  course-control:911  scale:1  text:7(15)  top-left:(61.1,-15.72)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:70  course-control:913  scale:1  text:8(20)  top-left:(4.6,19.94)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:71  course-control:909  scale:1  text:9(20)  top-left:(27.67,27.27)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:54  course-control:907  scale:1  text:10(25)  top-left:(56.9,5.77)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:55  course-control:906  scale:1  text:11(25)  top-left:(42.26,20.37)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:56  course-control:903  scale:1  text:12(25)  top-left:(79.17,20.36)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:52  course-control:910  scale:1  text:13(30)  top-left:(22.07,-9.68)
+                font-name:Arial  font-style:Regular  font-height:5.57
+");
+        }
+
+
+        [TestMethod]
+        public void ScoreCourseCodeAndScore()
+        {
+            CheckCourse("courseformat\\marymoor7.coursescribe", CourseId(9), 0, @"
+FirstAid:       special:1  scale:1  location:(14.5,31.2)
+Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
+OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
+Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
+Control:        control:41  course-control:914  scale:1  location:(28,6.2)  gaps:
+Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  gaps:
+ControlNumber:  control:44  course-control:912  scale:1  text:44  top-left:(40.5,-27.69)
+                font-name:Arial  font-style:Regular  font-height:5.57
+Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  gaps:
+Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
+Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
+Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.6851578:144.734558
+Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
+Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
+Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
+Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
+ControlNumber:  control:41  course-control:914  scale:1  text:41  top-left:(31.6,4.17)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:38  course-control:908  scale:1  text:38(5)  top-left:(55.13,5.27)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:78  course-control:904  scale:1  text:78(5)  top-left:(98.38,34.94)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:75  course-control:902  scale:1  text:75(10)  top-left:(61.66,36.87)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:77  course-control:905  scale:1  text:77(10)  top-left:(53.77,20.62)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:73  course-control:911  scale:1  text:73(15)  top-left:(60.6,-16.23)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:70  course-control:913  scale:1  text:70(20)  top-left:(2,20.46)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:71  course-control:909  scale:1  text:71(20)  top-left:(26.12,27.27)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:54  course-control:907  scale:1  text:54(25)  top-left:(32.77,12.16)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:55  course-control:906  scale:1  text:55(25)  top-left:(40.86,20.37)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:56  course-control:903  scale:1  text:56(25)  top-left:(79.17,20.36)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(22.07,-9.68)
+                font-name:Arial  font-style:Regular  font-height:5.57
+");
+        }
+
 
 
         [TestMethod]

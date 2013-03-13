@@ -154,6 +154,10 @@ namespace PurplePen
                         return ControlLabelKind.Code;
                     case 2:
                         return ControlLabelKind.SequenceAndCode;
+                    case 3:
+                        return ControlLabelKind.SequenceAndScore;
+                    case 4:
+                        return ControlLabelKind.CodeAndScore;
                     default:
                         Debug.Fail("Bad control label kind???");
                         return ControlLabelKind.Sequence;
@@ -170,6 +174,10 @@ namespace PurplePen
                         labelKindCombo.SelectedIndex = 1; break;
                     case ControlLabelKind.SequenceAndCode:
                         labelKindCombo.SelectedIndex = 2; break;
+                    case ControlLabelKind.SequenceAndScore:
+                        labelKindCombo.SelectedIndex = 3; break;
+                    case ControlLabelKind.CodeAndScore:
+                        labelKindCombo.SelectedIndex = 4; break;
                 }
             }
         }

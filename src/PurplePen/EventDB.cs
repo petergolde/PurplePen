@@ -551,8 +551,10 @@ namespace PurplePen
     public enum ControlLabelKind
     {
         Sequence,                         // Control number only
-        Code,                           // Control code only
-        SequenceAndCode                   // Control number and code
+        Code,                             // Control code only
+        SequenceAndCode,                  // Control number and code
+        SequenceAndScore,                 // Number and score
+        CodeAndScore                      // Control code and score
     }
 
     // The different kinds of control descriptions
@@ -609,8 +611,10 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Course '{0}' has invalid sort order {1}", id, sortOrder));
             if (firstControlOrdinal <= 0)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid first control number {1}", id, firstControlOrdinal));
-            if (labelKind != ControlLabelKind.Code && labelKind != ControlLabelKind.Sequence && labelKind != ControlLabelKind.SequenceAndCode)
+            if (labelKind != ControlLabelKind.Code && labelKind != ControlLabelKind.Sequence && labelKind != ControlLabelKind.SequenceAndCode && labelKind != ControlLabelKind.CodeAndScore && labelKind != ControlLabelKind.SequenceAndScore)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid label kind {1}", id, labelKind));
+            if (kind != CourseKind.Score && (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore))
+                throw new ApplicationException(string.Format("Course '{0}' has invalid label kind {1} for non-score course", id, labelKind));
             if (kind == 0 && scoreColumn != -1)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid score column", id, scoreColumn));
 
@@ -787,6 +791,8 @@ namespace PurplePen
                             case "sequence":                labelKind = ControlLabelKind.Sequence; break;
                             case "code":                    labelKind = ControlLabelKind.Code; break;
                             case "sequence-and-code":       labelKind = ControlLabelKind.SequenceAndCode; break;
+                            case "sequence-and-score":      labelKind = ControlLabelKind.SequenceAndScore; break;
+                            case "code-and-score":          labelKind = ControlLabelKind.CodeAndScore; break;
                             default:                        labelKind = ControlLabelKind.Sequence; break;
                         }
                         xmlinput.Skip();
@@ -821,6 +827,8 @@ namespace PurplePen
                 case ControlLabelKind.Sequence: labelKindText = "sequence"; break;
                 case ControlLabelKind.Code: labelKindText = "code"; break;
                 case ControlLabelKind.SequenceAndCode: labelKindText = "sequence-and-code"; break;
+                case ControlLabelKind.SequenceAndScore: labelKindText = "sequence-and-score"; break;
+                case ControlLabelKind.CodeAndScore: labelKindText = "code-and-score"; break;
                 default: Debug.Fail("bad labelKind"); labelKindText = "none"; break;
             }
             xmloutput.WriteStartElement("labels");

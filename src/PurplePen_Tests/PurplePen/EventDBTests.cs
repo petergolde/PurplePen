@@ -145,7 +145,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Course course1, course2, course3;
+            Course course1, course2, course3, course4, course5;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -177,6 +177,28 @@ namespace PurplePen.Tests
             course3.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
             eventDB.AddCourse(course3);
 
+            course4 = new Course(CourseKind.Score, "Silly1", 10000, 3);
+            course4.secondaryTitle = "";
+            course4.firstCourseControl = CourseControlId(2);
+            course4.load = 0;
+            course4.climb = 25;
+            course4.firstControlOrdinal = 3;
+            course4.labelKind = ControlLabelKind.SequenceAndScore;
+            course4.descKind = DescriptionKind.SymbolsAndText;
+            course4.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            eventDB.AddCourse(course4);
+
+            course5 = new Course(CourseKind.Score, "Silly2", 10000, 3);
+            course5.secondaryTitle = "";
+            course5.firstCourseControl = CourseControlId(2);
+            course5.load = 125;
+            course5.climb = 0;
+            course5.firstControlOrdinal = 1;
+            course5.labelKind = ControlLabelKind.CodeAndScore;
+            course5.descKind = DescriptionKind.Symbols;
+            course5.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            eventDB.AddCourse(course5);
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -191,6 +213,8 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Course>,Course>(CourseId(1), course1),
                     new KeyValuePair<Id<Course>,Course>(CourseId(2), course2),
                     new KeyValuePair<Id<Course>,Course>(CourseId(3), course3),
+                    new KeyValuePair<Id<Course>,Course>(CourseId(4), course4),
+                    new KeyValuePair<Id<Course>,Course>(CourseId(5), course5),
                 }
             );
         }
