@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -46,10 +47,16 @@ namespace PurplePen
     {
         float printScale;
         float climb;
+        object[] labelKindItems;
 
         public AddCourse()
         {
             InitializeComponent();
+
+            labelKindItems =  new object[labelKindCombo.Items.Count];
+            for (int i = 0; i < labelKindItems.Length; ++i) {
+                labelKindItems[i] = labelKindCombo.Items[i];
+            }
 
             okButton.Enabled = false;           // disable until typed into
             descKindCombo.SelectedIndex = 0;
@@ -303,6 +310,21 @@ namespace PurplePen
         private void CourseKindChanged() {
             bool enableScoreControls = (CourseKind == CourseKind.Score);
             scoreColumnLabel.Visible = scoreColumnCombo.Visible = enableScoreControls;
+
+            // Only show the label kinds for the given kind.
+            SetLabelKindLength((CourseKind == CourseKind.Score) ? 5 : 3);
+        }
+
+        private void SetLabelKindLength(int l)
+        {
+            int index = labelKindCombo.SelectedIndex;
+
+            labelKindCombo.Items.Clear();
+            for (int i = 0; i < l; ++i) {
+                labelKindCombo.Items.Add(labelKindItems[i]);
+            }
+
+            labelKindCombo.SelectedIndex = (index < l) ? index : 0;
         }
 
         private void scoreColumnCombo_SelectionChangeCommitted(object sender, EventArgs e) {
