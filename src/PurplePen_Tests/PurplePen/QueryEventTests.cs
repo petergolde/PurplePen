@@ -145,7 +145,59 @@ namespace PurplePen.Tests
             TestUtil.TestEnumerableAnyOrder(result, new Id<CourseControl>[] { CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(4), CourseControlId(5), CourseControlId(6) });
         }
 
-        // UNDONE MAPEXCHANGE: Test EnumCourseControlIds for map exchanges.
+        // Test EnumCourseControlIds for map exchanges.
+        [TestMethod]
+        public void EnumCourseControlIdsMapExchange()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            List<Id<CourseControl>> result = new List<Id<CourseControl>>();
+
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(6)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(601), CourseControlId(602), CourseControlId(603), CourseControlId(604), CourseControlId(605), 
+                                                                              CourseControlId(606), CourseControlId(607), CourseControlId(608), CourseControlId(609), CourseControlId(610),
+                                                                              CourseControlId(611), CourseControlId(612), CourseControlId(613), CourseControlId(614), CourseControlId(615),
+                                                                              CourseControlId(616), CourseControlId(617), CourseControlId(618), CourseControlId(619), CourseControlId(620)
+                });
+
+            result.Clear();
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(6, 0)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(601), CourseControlId(602), CourseControlId(603), CourseControlId(604), CourseControlId(605), 
+                                                                              CourseControlId(606), CourseControlId(607), CourseControlId(608), CourseControlId(609), CourseControlId(610),
+                                                                              CourseControlId(611)
+                });
+
+            result.Clear();
+
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(6, 1)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(611), CourseControlId(612), CourseControlId(613), CourseControlId(614), CourseControlId(615)
+                });
+
+            result.Clear();
+
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(6, 2)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(615), CourseControlId(616)
+                });
+
+            result.Clear();
+
+            foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(6, 3)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] {  CourseControlId(616), CourseControlId(617), CourseControlId(618), CourseControlId(619), CourseControlId(620)
+                });
+
+            result.Clear();
+        }
+
 
         [TestMethod]
         public void EnumLegs()
@@ -157,7 +209,7 @@ namespace PurplePen.Tests
             foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(1)))
                 result.Add(id);
 
-            TestUtil.TestEnumerableAnyOrder(result, new QueryEvent.LegInfo[] 
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
             { 
                 new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2)),
                 new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
@@ -176,8 +228,93 @@ namespace PurplePen.Tests
                 Assert.Fail("Empty course should have no legs in it");
         }
 
-        // UNDONE MAPEXCHANGE: Test EnumLegs for map exchanges.
+        [TestMethod]
+        public void EnumLegsMapExchange()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
 
+            List<QueryEvent.LegInfo> result = new List<QueryEvent.LegInfo>();
+
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(6)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            { 
+                new QueryEvent.LegInfo(CourseControlId(601), CourseControlId(602)),
+                new QueryEvent.LegInfo(CourseControlId(602), CourseControlId(603)),
+                new QueryEvent.LegInfo(CourseControlId(603), CourseControlId(604)),
+                new QueryEvent.LegInfo(CourseControlId(604), CourseControlId(605)),
+                new QueryEvent.LegInfo(CourseControlId(605), CourseControlId(606)),
+                new QueryEvent.LegInfo(CourseControlId(606), CourseControlId(607)),
+                new QueryEvent.LegInfo(CourseControlId(607), CourseControlId(608)),
+                new QueryEvent.LegInfo(CourseControlId(608), CourseControlId(609)),
+                new QueryEvent.LegInfo(CourseControlId(609), CourseControlId(610)),
+                new QueryEvent.LegInfo(CourseControlId(610), CourseControlId(611)),
+                new QueryEvent.LegInfo(CourseControlId(611), CourseControlId(612)),
+                new QueryEvent.LegInfo(CourseControlId(612), CourseControlId(613)),
+                new QueryEvent.LegInfo(CourseControlId(613), CourseControlId(614)),
+                new QueryEvent.LegInfo(CourseControlId(614), CourseControlId(615)),
+                new QueryEvent.LegInfo(CourseControlId(615), CourseControlId(616)),
+                new QueryEvent.LegInfo(CourseControlId(616), CourseControlId(617)),
+                new QueryEvent.LegInfo(CourseControlId(617), CourseControlId(618)),
+                new QueryEvent.LegInfo(CourseControlId(618), CourseControlId(619)),
+                new QueryEvent.LegInfo(CourseControlId(619), CourseControlId(620)),
+            });
+
+            result.Clear();
+
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(6, 0)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            { 
+                new QueryEvent.LegInfo(CourseControlId(601), CourseControlId(602)),
+                new QueryEvent.LegInfo(CourseControlId(602), CourseControlId(603)),
+                new QueryEvent.LegInfo(CourseControlId(603), CourseControlId(604)),
+                new QueryEvent.LegInfo(CourseControlId(604), CourseControlId(605)),
+                new QueryEvent.LegInfo(CourseControlId(605), CourseControlId(606)),
+                new QueryEvent.LegInfo(CourseControlId(606), CourseControlId(607)),
+                new QueryEvent.LegInfo(CourseControlId(607), CourseControlId(608)),
+                new QueryEvent.LegInfo(CourseControlId(608), CourseControlId(609)),
+                new QueryEvent.LegInfo(CourseControlId(609), CourseControlId(610)),
+                new QueryEvent.LegInfo(CourseControlId(610), CourseControlId(611)),
+            });
+
+            result.Clear();
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(6, 1)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            { 
+                new QueryEvent.LegInfo(CourseControlId(611), CourseControlId(612)),
+                new QueryEvent.LegInfo(CourseControlId(612), CourseControlId(613)),
+                new QueryEvent.LegInfo(CourseControlId(613), CourseControlId(614)),
+                new QueryEvent.LegInfo(CourseControlId(614), CourseControlId(615)),
+            });
+
+            result.Clear();
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(6, 2)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            { 
+                new QueryEvent.LegInfo(CourseControlId(615), CourseControlId(616)),
+            });
+
+            result.Clear();
+            foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(6, 3)))
+                result.Add(id);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            { 
+                new QueryEvent.LegInfo(CourseControlId(616), CourseControlId(617)),
+                new QueryEvent.LegInfo(CourseControlId(617), CourseControlId(618)),
+                new QueryEvent.LegInfo(CourseControlId(618), CourseControlId(619)),
+                new QueryEvent.LegInfo(CourseControlId(619), CourseControlId(620)),
+            });
+
+            result.Clear();
+        }
 
         [TestMethod]
         public void FindClosestLeg()
@@ -213,8 +350,40 @@ namespace PurplePen.Tests
             Assert.IsTrue(result.courseControlId2.IsNone);
         }
 
-        // UNDONE MAPEXCHANGE: Test FindClosesLeg for map exchanges.
+        // Test FindClosesLeg for map exchanges.
+        [TestMethod]
+        public void FindClosestLegMapExchange()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
 
+            QueryEvent.LegInfo result = QueryEvent.FindClosestLeg(eventDB, Designator(6), new PointF(4.4F, 17.6F));
+            Assert.AreEqual(CourseControlId(604), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(605), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6), new PointF(63.6F, 14.2F));
+            Assert.AreEqual(CourseControlId(615), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(616), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6), new PointF(42.5F, -5.4F));
+            Assert.AreEqual(CourseControlId(618), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(619), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6,0), new PointF(68.7F, 19.7F));
+            Assert.AreEqual(CourseControlId(607), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(608), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6, 1), new PointF(68.7F, 19.7F));
+            Assert.AreEqual(CourseControlId(614), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(615), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6, 2), new PointF(68.7F, 19.7F));
+            Assert.AreEqual(CourseControlId(615), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(616), result.courseControlId2);
+
+            result = QueryEvent.FindClosestLeg(eventDB, Designator(6, 3), new PointF(68.7F, 19.7F));
+            Assert.AreEqual(CourseControlId(616), result.courseControlId1);
+            Assert.AreEqual(CourseControlId(617), result.courseControlId2);
+        }
 
         [TestMethod]
         public void GetCourseControlsInCourse()
@@ -229,7 +398,24 @@ namespace PurplePen.Tests
             Assert.AreEqual(0, result.Length);
         }
 
-        // UNDONE MAPEXCHANGE: Test GetCourseControlsInCourse for map exchanges.
+        [TestMethod]
+        public void GetCourseControlsInCourseMapExchange()
+        {
+            Setup("queryevent\\mapexchange2.ppen");
+
+            Id<CourseControl>[] result;
+
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6), ControlId(48));
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(606), CourseControlId(623), CourseControlId(626), CourseControlId(628), CourseControlId(629) });
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6, 0), ControlId(48));
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(606), CourseControlId(623), CourseControlId(626) });
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6, 1), ControlId(48));
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] { CourseControlId(628) });
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6, 2), ControlId(48));
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] {  });
+            result = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6, 3), ControlId(48));
+            CollectionAssert.AreEqual(result, new Id<CourseControl>[] {  CourseControlId(629) });
+        }
 
         [TestMethod]
         public void CourseUsesControl()
@@ -243,7 +429,47 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(4), ControlId(8)));
         }
 
-        // UNDONE MAPEXCHANGE: Test CourseUsesControl for map exchanges.
+        [TestMethod]
+        public void CourseUsesControlMapExchange()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(88)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(88)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(88)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(88)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(88)));
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(35)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(35)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(35)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(35)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(35)));
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(43)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(43)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(43)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(43)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(43)));
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(54)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(54)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(54)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(54)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(54)));
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(1)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(1)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(1)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(1)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(1)));
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(2)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 0), ControlId(2)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 1), ControlId(2)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6, 2), ControlId(2)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6, 3), ControlId(2)));
+        }
 
         [TestMethod]
         public void IsPreferredCode()

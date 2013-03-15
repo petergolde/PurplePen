@@ -9,7 +9,7 @@ DONE: AddControlMode.GetControlInsertionPoint -- return SelectionDescription ins
 DONE: Controller.GetCurrentPrintArea -- should handle print area for just active part.
 DONE: Controller.EndSetPrintArea -- should set print area just for active part? Is this an option?
 DONE: Controller.BeginAddDescriptionMode -- handle adding description for a single part.
-AddControlMode -- take CourseDesignator instead of CourseId?
+DONE: AddControlMode -- take CourseDesignator instead of CourseId?
 DONE: CourseView.CreateFilteredAllControlsView -- take course designators instead of course ids?
 
 DONE: Specials -- support specials in a single part.
