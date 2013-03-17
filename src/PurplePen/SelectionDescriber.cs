@@ -261,19 +261,25 @@ namespace PurplePen
         private static TextPart[] DescribeCourse(EventDB eventDB, CourseView activeCourseView)
         {
             List<TextPart> list = new List<TextPart>();
-
+            CourseDesignator courseDesignator = activeCourseView.CourseDesignator;
             // UNDONE MAPEXCHANGE: do special something for a part of a course.
 
             // Course name
-            list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.CourseName, activeCourseView.CourseName)));
+            if (courseDesignator.AllParts) {
+                list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.CourseName, activeCourseView.CourseName)));
+            }
+            else {
+                list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.CourseNameAndPart, activeCourseView.CourseName, courseDesignator.Part + 1)));
+            }
 
             if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
                 // Course length
                 list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
                 list.Add(new TextPart(TextFormat.SameLine,
-                    string.Format("{0:0.00} km", Math.Round(activeCourseView.TotalLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                    string.Format("{0:0.00} km", Math.Round(activeCourseView.PartLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
 
-                if (activeCourseView.TotalClimb >= 0) {
+                // Don't have climb for a single part of multi-part course.
+                if (activeCourseView.TotalClimb >= 0 && courseDesignator.AllParts) {
                     list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Climb + "  "));
                     list.Add(new TextPart(TextFormat.SameLine,
                         string.Format("{0:#,###} m", Math.Round(activeCourseView.TotalClimb, MidpointRounding.AwayFromZero))));

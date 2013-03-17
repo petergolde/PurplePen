@@ -279,4 +279,8 @@
   <data name="UsedIn" xml:space="preserve">
     <value>Used in:</value>
   </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Course "{0}", Part {1}</value>
+    <comment>{0} gets course name, {1} is part number</comment>
+  </data>
 </root>

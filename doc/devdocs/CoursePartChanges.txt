@@ -31,9 +31,12 @@ Status text when adding map exchange -- 3 options: existing map exchange, new ma
 
 Allow adding start or finish to course part that shouldn't include that? Should that switch to all parts? Or just prohibit that if not on the right part.
 
-Removing map exchange at a control -- how? Have menu item for this?
+Removing map exchange at a control -- how? Have menu item for this? Or maybe people just have to remove and re-add the control?
 
 Have event audit section for missing control descriptions on maps.
 
 Test for printing courses, punch card and descriptions.
 
+DONE: Description text for part of a course.
+
+Consider getting map exchanges working for score courses also. 

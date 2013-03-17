@@ -650,6 +650,43 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SelectedCourseMapExchange()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\mapexchange1.ppen"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(6, 1));
+            TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Course \"Course 5\", Part 2", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("1.20 km", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Competitor load:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("22", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+
+        [TestMethod]
         public void ScoreCourse()
         {
             TextPart textpart;

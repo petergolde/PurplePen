@@ -151,6 +151,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Course &quot;{0}&quot;, Part {1}.
+        /// </summary>
+        internal static string CourseNameAndPart {
+            get {
+                return ResourceManager.GetString("CourseNameAndPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Customized symbol description.
         /// </summary>
         internal static string CustomizedSymbolDesc {

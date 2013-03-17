@@ -1134,8 +1134,6 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(204)).nextCourseControl == CourseControlId(205));
         }
 
-        // UNDONE MAPEXCHANGE: Test AddCourseControl for map exchanges
-
         [TestMethod]
         public void AddCourseControl3()
         {
