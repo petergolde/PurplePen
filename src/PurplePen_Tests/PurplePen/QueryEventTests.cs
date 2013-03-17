@@ -1462,6 +1462,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void AnyMultipart1()
+        {
+            Setup("queryevent\\mapexchange1.ppen");
+
+            bool result = QueryEvent.AnyMultipartCourses(eventDB);
+            Assert.IsTrue(result);
+        }
+        
+        [TestMethod]
+        public void AnyMultipart2()
+        {
+            Setup("queryevent\\marymoor2.coursescribe");
+
+            bool result = QueryEvent.AnyMultipartCourses(eventDB);
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
         public void IsCourseControlInPart()
         {
             Setup("queryevent\\mapexchange1.ppen");

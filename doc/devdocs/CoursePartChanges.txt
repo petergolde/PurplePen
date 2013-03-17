@@ -20,12 +20,14 @@ DONE: All parts course view should not include descriptions from each part.
 
 DONE: Select which courses for descriptions should include all controls.
 
-Print courses should have option to print all parts together, or separate (the default). Enable only
+DONE: Print courses should have option to print all parts together, or separate (the default). Enable only
 if there are any courses with multiple parts.
 
-Check out "UNDONE MAPEXCHANGE" comments.
-
 DONE: Prohibit adding map exchange to score course.
+
+DONE: Description text for part of a course.
+
+XML export with map exchanges. Need to look at what other programs do.
 
 Status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
 
@@ -37,6 +39,7 @@ Have event audit section for missing control descriptions on maps.
 
 Test for printing courses, punch card and descriptions.
 
-DONE: Description text for part of a course.
-
 Consider getting map exchanges working for score courses also. 
+
+Check out "UNDONE MAPEXCHANGE" comments.
+

@@ -382,7 +382,7 @@
     <value>True</value>
   </data>
   <data name="previewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 369</value>
+    <value>13, 372</value>
   </data>
   <data name="previewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 25</value>
@@ -421,7 +421,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -832,6 +832,6 @@
     <value>PrintCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
