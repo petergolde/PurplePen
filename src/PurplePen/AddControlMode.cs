@@ -601,14 +601,14 @@ namespace PurplePen
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             // In the middle of dragging. Current location isn't fixed yet.
             AddUnfixedPoint(location);
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             // If we ended near to the first point, we've create a polygon and creation is done.
             if (numberFixedPoints >= 3 && Geometry.Distance(location, points[0]) < pixelSize * CLOSEDISTANCE) {

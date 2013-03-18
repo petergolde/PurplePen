@@ -82,7 +82,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
             Cursor cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeAll, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + delta, ptClick.Y), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X + delta, ptClick.Y), ptClick, 0.3F);
             currentRect.Offset(delta, 0);
 
             // 2. Move the bottom edge up or down.
@@ -93,7 +93,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
             cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNS, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X, ptClick.Y + delta), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X, ptClick.Y + delta), ptClick, 0.3F);
             currentRect.Height = currentRect.Height - delta;
             currentRect.Y = currentRect.Y + delta;
 
@@ -106,7 +106,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
             cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNESW, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), ptClick, 0.3F);
             currentRect = RectangleF.FromLTRB(currentRect.Left, currentRect.Top, currentRect.Right + deltaX, currentRect.Bottom + deltaY);
 
             TestUtil.AssertEqualRect(currentRect, finalRect, 0.01, "rectangle moving algorithm");

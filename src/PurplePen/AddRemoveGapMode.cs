@@ -83,7 +83,7 @@ namespace PurplePen
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             // Get the new set of gaps.
             CircleGap[] newGaps = CircleGap.AddGap(courseObjStart.location, courseObjStart.gaps, startDrag, location);
@@ -97,7 +97,7 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             controller.AddControlGap(startDrag, location);
 
@@ -241,7 +241,7 @@ namespace PurplePen
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             // Get the new set of gaps.
             LegGap[] newGaps = LegGap.AddGap(courseObjStart.path, courseObjStart.gaps, startDrag, location);
@@ -253,7 +253,7 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             controller.AddLegGap(startDrag, location);     // implicitly uses the current selected to determine which leg gets the gap.
 

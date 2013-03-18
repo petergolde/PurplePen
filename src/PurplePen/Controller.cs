@@ -2459,38 +2459,38 @@ namespace PurplePen
                 ++changeNum;
         }
 
-        public void LeftButtonDrag(PointF location, float pixelSize)
+        public void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonDrag(location, pixelSize, ref displayUpdateNeeded); 
+            currentMode.LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonDrag(PointF location, float pixelSize)
+        public void RightButtonDrag(PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonDrag(location, pixelSize, ref displayUpdateNeeded); 
+            currentMode.RightButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonEndDrag(PointF location, float pixelSize)
+        public void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonEndDrag(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.LeftButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonEndDrag(PointF location, float pixelSize)
+        public void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonEndDrag(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.RightButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
@@ -2610,12 +2610,12 @@ namespace PurplePen
         void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // The mouse is being dragged
-        void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag is ending (mouse released)
-        void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag was canceled (mouse taken away)
         void LeftButtonCancelDrag(ref bool displayUpdateNeeded);

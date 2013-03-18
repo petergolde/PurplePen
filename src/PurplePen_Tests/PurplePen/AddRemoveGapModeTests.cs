@@ -153,7 +153,7 @@ namespace PurplePen.Tests
             // Click to add a gap.
             dragAction = controller.LeftButtonDown(new PointF(35.0F, 31.5F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonEndDrag(new PointF(12, -1), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(12, -1), new PointF(35.0F, 31.5F), 0.3F);
 
             // Check the status text
             Assert.AreEqual(StatusBarText.DefaultStatus, controller.StatusText);
@@ -316,7 +316,7 @@ namespace PurplePen.Tests
             // Click and drag add a gap.
             dragAction = controller.LeftButtonDown(new PointF(30, -11), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonEndDrag(new PointF(12, -1), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(12, -1), new PointF(30, -11), 0.3F);
 
             // Check the status text
             ui.MouseMoved(12, -1, 0.1F);
@@ -371,7 +371,7 @@ namespace PurplePen.Tests
             // Click and drag add a gap.
             dragAction = controller.LeftButtonDown(new PointF(72, 10), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonEndDrag(new PointF(50, -25), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(50, -25), new PointF(72, 10), 0.3F);
 
             // Check the status text
             ui.MouseMoved(12, -1, 0.1F);

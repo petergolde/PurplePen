@@ -1015,13 +1015,13 @@ namespace PurplePen
             else if (action == MouseAction.Click && buttonNumber == MapViewer.RightMouseButton)
                 controller.RightButtonClick(location, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.LeftMouseButton) 
-                controller.LeftButtonDrag(location, mapViewer.PixelSize);
+                controller.LeftButtonDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonDrag(location, mapViewer.PixelSize);
+                controller.RightButtonDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonEndDrag(location, mapViewer.PixelSize);
+                controller.LeftButtonEndDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonEndDrag(location, mapViewer.PixelSize);
+                controller.RightButtonEndDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.LeftMouseButton)
                 controller.LeftButtonCancelDrag();
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.RightMouseButton)

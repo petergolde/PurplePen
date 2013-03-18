@@ -798,9 +798,9 @@ namespace PurplePen.Tests
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(23, 37), 0.1F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
-            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F)); 
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
 
-            controller.LeftButtonDrag(new PointF(34, 12), 0.1F);
+            controller.LeftButtonDrag(new PointF(34, 12), new PointF(23, 37), 0.1F);
 
             // Check the highlights.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -812,7 +812,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(12, obj.rect.Top);
 
             // Finish the drag.
-            controller.LeftButtonEndDrag(new PointF(36, 11), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(36, 11), new PointF(23, 37), 0.1F);
 
             // There should be a description, with the given location.
             // Is should be selected.
@@ -859,7 +859,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(10, -70), 0.1F));
 
-            controller.LeftButtonDrag(new PointF(130, -100), 0.1F);
+            controller.LeftButtonDrag(new PointF(130, -100), new PointF(10, -70), 0.1F);
 
             // Check the highlights.
             highlights = (CourseObj[])controller.GetHighlights();
@@ -871,7 +871,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(-105.75, obj.rect.Top, 0.01F);
 
             // Finish the drag.
-            controller.LeftButtonEndDrag(new PointF(130, -100), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(130, -100), new PointF(10, -70), 0.1F);
 
             // There should be a description, with the given location.
             // Is should be selected.
@@ -993,7 +993,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1060,7 +1060,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1076,7 +1076,7 @@ namespace PurplePen.Tests
             }
 
             // Now drag to close the beginning to end it..
-            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), new PointF(17, -8), 0.1F);
 
             // There should be a dangerous special, with the given location.
             // Is should be selected.
@@ -1127,7 +1127,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1143,7 +1143,7 @@ namespace PurplePen.Tests
             }
 
             // Now drag to close the beginning to end it..
-            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), new PointF(17, -8), 0.1F);
 
             // There should be a dangerous special, with the given location.
             // Is should be selected.
@@ -1195,7 +1195,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1255,7 +1255,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
 
-            controller.LeftButtonDrag(new PointF(74, 12), 0.1F);
+            controller.LeftButtonDrag(new PointF(74, 12), new PointF(23, 37), 0.1F);
 
             // Check the highlights.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -1270,7 +1270,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(FontStyle.Bold, obj.fontStyle);
 
             // Finish the drag.
-            controller.LeftButtonEndDrag(new PointF(76, 11), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(76, 11), new PointF(23, 37), 0.1F);
 
             // There should be a text special, with the given location.
             // Is should be selected.

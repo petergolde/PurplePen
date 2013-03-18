@@ -102,16 +102,16 @@ namespace PurplePen
         public virtual void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
         public virtual void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
@@ -302,6 +302,16 @@ namespace PurplePen
                 return Cursors.Default;
         }
 
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            base.LeftButtonClick(location, pixelSize, ref displayUpdateNeeded);
+        }
+
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            base.LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
+        }
+
         // Left mouse button selects the object clicked on, or drag something already selected.
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
@@ -413,7 +423,7 @@ namespace PurplePen
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             currentLocation = location;
 
@@ -462,7 +472,7 @@ namespace PurplePen
             return courseObjectStart.specialId.IsNone && !((courseObjectStart is ControlNumberCourseObj) || (courseObjectStart is CodeCourseObj));
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
@@ -543,7 +553,7 @@ namespace PurplePen
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             currentLocation = location;
 
@@ -555,7 +565,7 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
