@@ -166,6 +166,11 @@ namespace PurplePen.Tests
             controller.ChangeMapFile(newMapType, newMapFile, newMapScale, newMapDpi);
             return true;
         }
+
+        public void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd)
+        {
+            throw new NotSupportedException();
+        }
     }
 }
 

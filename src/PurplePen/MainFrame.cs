@@ -162,6 +162,11 @@ namespace PurplePen
             }
         }
 
+        public void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd)
+        {
+            mapViewer.BeginMapDragging(Util.PointFromPointF(mapViewer.WorldToPixel(initialPos)), buttonEnd);
+        }
+
         // Prompt the user for a file name to open.
         public string GetOpenFileName()
         {

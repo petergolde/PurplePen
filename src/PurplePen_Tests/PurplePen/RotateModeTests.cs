@@ -75,7 +75,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select mandatory crossing point.
-            controller.LeftButtonDown(new PointF(25.4F, 25.5F), 0.2F);
+            var dragAction = controller.LeftButtonDown(new PointF(25.4F, 25.5F), 0.2F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(25.4F, 25.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(82, highlights[0].controlId.id);
@@ -126,7 +129,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select mandatory crossing point.
-            controller.LeftButtonDown(new PointF(76, -5F), 0.2F);
+            var dragAction = controller.LeftButtonDown(new PointF(76, -5F), 0.2F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(76, -5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(2, highlights[0].specialId.id);

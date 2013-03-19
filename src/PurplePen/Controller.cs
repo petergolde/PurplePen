@@ -2513,6 +2513,10 @@ namespace PurplePen
                 ++changeNum;
         }
 
+        public void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd)
+        {
+            ui.InitiateMapDragging(initialPos, buttonEnd);
+        }
 
         // Get the shape that the mouse cursor should be in.
         public Cursor GetMouseCursor(PointF location, float pixelSize)
@@ -2659,6 +2663,9 @@ namespace PurplePen
 
         // Find a missing map file.
         bool FindMissingMapFile(string missingMapFile);
+
+        // Initiate map dragging.
+        void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd);
     }
 
     // Indicates the status of a contextual command

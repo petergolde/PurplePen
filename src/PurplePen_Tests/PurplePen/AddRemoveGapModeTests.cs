@@ -77,6 +77,8 @@ namespace PurplePen.Tests
 
             // Click on control to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(27F, 41F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(27F, 41F), 0.3F);
 
             // Begin the add bend mode.
             controller.BeginAddGap();
@@ -132,6 +134,8 @@ namespace PurplePen.Tests
 
             // Click on control to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(27F, 41F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(27F, 41F), 0.3F);
 
             // Begin the add bend mode.
             controller.BeginAddGap();
@@ -187,6 +191,8 @@ namespace PurplePen.Tests
 
             // Click on control 1 to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(38.6F, -21F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(38.6F, -21F), 0.3F);
 
             // Begin the remove gap mode.
             controller.BeginRemoveGap();
@@ -242,6 +248,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(71, 0), 0.3F);
 
             // Begin the remove gap mode.
             controller.BeginRemoveGap();
@@ -295,6 +303,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(20, -5), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(20, -5), 0.3F);
 
             // Begin the add gap mode.
             controller.BeginAddGap();
@@ -350,6 +360,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(71, 0), 0.3F);
 
             // Begin the add gap mode.
             controller.BeginAddGap();
@@ -405,6 +417,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(20, -5), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(20, -5), 0.3F);
 
             // Begin the add gap mode.
             controller.BeginAddGap();

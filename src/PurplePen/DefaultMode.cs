@@ -304,12 +304,21 @@ namespace PurplePen
 
         public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            base.LeftButtonClick(location, pixelSize, ref displayUpdateNeeded);
+            CourseObj clickedObject = HitTest(location, pixelSize);
+            if (clickedObject != null) {
+                selectionMgr.SelectCourseObject(clickedObject);
+            }
+            else {
+                // clicked on nothing. Clear selection.
+                controller.ClearSelection();
+            }
         }
 
         public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
-            base.LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
+            // If we dragged an object or corner, we would have entered a new mode. So this must be a delayed drag that should
+            // become map dragging.
+            controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
         }
 
         // Left mouse button selects the object clicked on, or drag something already selected.
@@ -340,19 +349,26 @@ namespace PurplePen
                 return MapViewer.DragAction.ImmediateDrag;
             }
 
-            // Are we clicked a non-selected object? If so, try to select it.
+            // Are we clicked a non-selected object? If so, drag will be map move, click will select.
+            clickedObject = HitTest(location, pixelSize);
+            if (clickedObject != null) {
+                return MapViewer.DragAction.DelayedDrag;
+            }
+
+            // drag map.
+            return MapViewer.DragAction.MapDrag;
+        }
+
+        private CourseObj HitTest(PointF location, float pixelSize)
+        {
+            CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseObj clickedObject;
+
             clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
             if (clickedObject == null)
                 clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
-            if (clickedObject != null) {
-                selectionMgr.SelectCourseObject(clickedObject);
-            }
-            else {
-                // clicked on nothing. Clear selection.
-                controller.ClearSelection();
-            }
 
-            return MapViewer.DragAction.None;
+            return clickedObject;
         }
 
         public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
@@ -389,6 +405,7 @@ namespace PurplePen
 
         public DragObjectMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF startDrag)
         {
+            Debug.WriteLine(string.Format("DragObjectMode start {0},{1}", startDrag.X, startDrag.Y));
             this.controller = controller;
             this.eventDB = eventDB;
             this.selectionMgr = selectionMgr;
@@ -474,6 +491,7 @@ namespace PurplePen
 
         public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.WriteLine(string.Format("DragObject end drag start=({0},{1}), loc=({2},{3})", locationStart.X, locationStart.Y, location.X, location.Y));
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
 

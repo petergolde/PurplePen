@@ -80,6 +80,8 @@ namespace PurplePen.Tests
 
             // Click on control 5 (#47).
             dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
 
             // Check correct description line highlighted.
             CheckHighlightedLines(controller, 7, 7);
@@ -97,6 +99,8 @@ namespace PurplePen.Tests
 
             // Click on number for control #54.
             dragAction = controller.LeftButtonDown(new PointF(59.3F, 5.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(59.3F, 5.5F), 0.3F);
 
             // Check correct description line highlighted.
             CheckHighlightedLines(controller, 22, 22);
@@ -127,6 +131,8 @@ namespace PurplePen.Tests
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(new PointF(15.3F, -42F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(15.4F, -42F), 0.3F);
 
             // Check no description line highlighted.
             CheckHighlightedLines(controller, -1, -1);
@@ -142,6 +148,8 @@ namespace PurplePen.Tests
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(new PointF(13.3F, -41F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(13.3F, -41F), 0.3F);
 
             // Check no description line highlighted.
             CheckHighlightedLines(controller, -1, -1);
@@ -386,6 +394,8 @@ namespace PurplePen.Tests
 
             // Click on first aid point to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(15.3F, -42F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(15.3F, -42F), 0.3F);
 
             // Should have moving mouse cursor
             Cursor cursor = controller.GetMouseCursor(new PointF(15F, -41.5F), 0.1F);
@@ -452,6 +462,8 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-0.3F, 0.2F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(-0.3F, 0.2F), 0.3F);
 
             // Should have moving mouse cursor
             Cursor cursor = controller.GetMouseCursor(new PointF(-0.3F, 0.2F), 0.1F);
@@ -522,6 +534,8 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-24, 12), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(-24, 12), 0.3F);
 
             // Should have moving mouse cursor
             Cursor cursor = controller.GetMouseCursor(new PointF(-24, 12), 0.1F);
@@ -588,6 +602,8 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(-24, 12), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(-24, 12), 0.3F);
 
             // Should have moving mouse cursor
             Cursor cursor = controller.GetMouseCursor(new PointF(-24, 12), 0.1F);
@@ -655,6 +671,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(18.4F, 30.1F), 0.3F);
 
             // Over corner should have move corner cursor
             ui.MouseMoved(12.2F, 19.4F, 0.3F);
@@ -718,6 +736,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(71, 0), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(71, 0), 0.3F);
 
             // Over leg gap should have move corner cursor
             ui.MouseMoved(72.5F, 3.5F, 0.3F);
@@ -782,6 +802,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(64, 3.3F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(64, 3.3F), 0.3F);
 
             // Over leg gap should have move corner cursor
             ui.MouseMoved(67, 6.6F, 0.3F);
@@ -843,7 +865,9 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on text special
-            controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
@@ -853,7 +877,7 @@ namespace PurplePen.Tests
                                         highlights[0].ToString());
             
             // Drag the special
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(58F, 35.5F), 0.1F);
+            dragAction = controller.LeftButtonDown(new PointF(58F, 35.5F), 0.1F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
 
             controller.LeftButtonDrag(new PointF(99F, 48.5F), new PointF(58F, 35.5F), 0.1F);
@@ -904,7 +928,9 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on text special
-            controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
@@ -914,7 +940,7 @@ namespace PurplePen.Tests
                                         highlights[0].ToString());
 
             // Drag the handle
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(57.5F, 34F), 0.1F);
+            dragAction = controller.LeftButtonDown(new PointF(57.5F, 34F), 0.1F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
             Cursor cursor = controller.GetMouseCursor(new PointF(57.5F, 34F), 0.1F);
             Assert.AreSame(Cursors.SizeNS, cursor);

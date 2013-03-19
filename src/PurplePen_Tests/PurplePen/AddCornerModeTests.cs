@@ -77,6 +77,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the add bend mode.
             controller.BeginAddLegBend();
@@ -133,6 +135,8 @@ namespace PurplePen.Tests
 
             // Click on area objects.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(1,-2), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(1, -2), 0.3F);
 
             // Begin the add corner mode.
             controller.BeginAddSpecialCorner();
@@ -191,6 +195,8 @@ namespace PurplePen.Tests
 
             // Click on area objects.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(1, -2), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(1, -2), 0.3F);
 
             // Begin the remove corner mode.
             controller.BeginRemoveBend();
@@ -239,6 +245,8 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the remove bend mode.
             controller.BeginRemoveBend();

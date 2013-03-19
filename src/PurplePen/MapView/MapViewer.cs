@@ -786,7 +786,7 @@ namespace PurplePen.MapView
         }
 
         private void MapViewer_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e) {
-            if (e.Button == endDragScrollButton) { 
+            if (dragScrollingInProgress && e.Button == endDragScrollButton) { 
                 EndMapDragging(new Point(e.X, e.Y));
             }
             else {

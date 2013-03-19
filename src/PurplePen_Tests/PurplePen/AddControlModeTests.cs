@@ -82,7 +82,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -149,7 +152,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -246,7 +252,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -291,7 +300,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -357,7 +369,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            ui.LeftButtonDown(0.9F, 30.5F, 0.1F);
+            var dragAction = ui.LeftButtonDown(0.9F, 30.5F, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+            
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -399,7 +414,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -453,7 +471,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -526,7 +547,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -565,8 +589,11 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
-            highlights = (CourseObj[]) controller.GetHighlights();
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
+            highlights = (CourseObj[])controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
             Assert.AreEqual(47, highlights[1].controlId.id);
@@ -620,7 +647,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -694,7 +724,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -734,7 +767,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -909,7 +945,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
