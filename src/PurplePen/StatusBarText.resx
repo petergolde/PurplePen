@@ -210,4 +210,7 @@
   <data name="AddingMapExchange" xml:space="preserve">
     <value>Click left mouse button to place new map exchange</value>
   </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Click left mouse button to add map exchange at control "{0}" </value>
+  </data>
 </root>

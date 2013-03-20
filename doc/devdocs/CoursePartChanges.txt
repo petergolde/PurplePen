@@ -29,7 +29,7 @@ DONE: Description text for part of a course.
 
 XML export with map exchanges. Need to look at what other programs do.
 
-Status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
+DONE: Status text when adding map exchange -- 3 options: existing map exchange, new map exchange, map exchange at control
 
 Allow adding start or finish to course part that shouldn't include that? Should that switch to all parts? Or just prohibit that if not on the right part.
 
@@ -40,6 +40,8 @@ Adding control to part when last control of part is selected doesn't work well.
 Have event audit section for missing control descriptions on maps.
 
 Test for printing courses, punch card and descriptions.
+
+Tests for adding map exchange in AddControlModeTests
 
 Consider getting map exchanges working for score courses also. 
 

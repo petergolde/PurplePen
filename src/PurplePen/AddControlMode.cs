@@ -124,7 +124,13 @@ namespace PurplePen
                 case ControlPointKind.MapExchange:
                     return (existingControl.IsNone) ? StatusBarText.AddingMapExchange : StatusBarText.AddingExistingMapExchange;
                 case ControlPointKind.Normal:
-                    return (existingControl.IsNone) ? StatusBarText.AddingControl : string.Format(StatusBarText.AddingExistingControl, eventDB.GetControl(existingControl).code);
+                    if (existingControl.IsNone) {
+                        return StatusBarText.AddingControl;
+                    } else {
+                        return string.Format(exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator, existingControl) ? 
+                                                    StatusBarText.AddingMapExchangeToControl : StatusBarText.AddingExistingControl, 
+                                             eventDB.GetControl(existingControl).code);
+                    }
                 default:
                     return "";
                 }

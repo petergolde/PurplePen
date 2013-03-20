@@ -196,6 +196,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click left mouse button to add map exchange at control &quot;{0}&quot; .
+        /// </summary>
+        internal static string AddingMapExchangeToControl {
+            get {
+                return ResourceManager.GetString("AddingMapExchangeToControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click left mouse button to place new object.
         /// </summary>
         internal static string AddingObject {
