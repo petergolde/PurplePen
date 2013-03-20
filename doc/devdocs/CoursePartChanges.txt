@@ -35,6 +35,8 @@ Allow adding start or finish to course part that shouldn't include that? Should 
 
 Removing map exchange at a control -- how? Have menu item for this? Or maybe people just have to remove and re-add the control?
 
+Adding control to part when last control of part is selected doesn't work well.
+
 Have event audit section for missing control descriptions on maps.
 
 Test for printing courses, punch card and descriptions.
