@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Text eingeben für eine separate Zeile auf der Postenbeschreibung</value>
+    <value>Text für eine separate Zeile auf der Postenbeschreibung eingeben:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Bahnen:</value>

@@ -70,6 +70,7 @@ namespace PurplePen
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.directoryDisplay = new System.Windows.Forms.GroupBox();
             this.directoryName = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.directoryDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,10 +123,16 @@ namespace PurplePen
             this.directoryName.Name = "directoryName";
             this.directoryName.ReadOnly = true;
             // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
             // NewEventDirectory
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.directoryDisplay);
             this.Controls.Add(this.folderName);
             this.Controls.Add(this.chooseFolder);
@@ -150,5 +157,6 @@ namespace PurplePen
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.GroupBox directoryDisplay;
         private System.Windows.Forms.TextBox directoryName;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

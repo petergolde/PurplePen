@@ -60,7 +60,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Map File"; }
+            get { return labelTitle.Text; }
         }
 
         private void button1_Click(object sender, EventArgs e)

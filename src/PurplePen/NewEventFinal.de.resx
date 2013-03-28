@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Klicken Sie auf "Fertigstellen", um Ihren neuen Wettkampf anzulegen. Ihre Wettkampfdatei wird gespeichert als:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie bitte "Neue Bahn..." im Bahnen-Menü aus, um eine oder mehrere neuen Bahnen anzulegen.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Wettkampf Anlegen</value>
+  </data>
 </root>

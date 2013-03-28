@@ -55,7 +55,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Create Event"; }
+            get { return labelTitle.Text; }
         }
 
     }

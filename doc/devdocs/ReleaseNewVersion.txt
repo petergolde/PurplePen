@@ -1,5 +1,7 @@
 Releasing a new version of Purple Pen.
 
+0. Update localizations from LaunchPad (see other list on this.)
+
 1. Updated change list with information about the new version. 
 
 2. Update credits page in the help with credits to anyone.

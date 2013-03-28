@@ -65,7 +65,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Bitmap Resolution"; }
+            get { return labelTitle.Text; }
         }
 
         private void NewEventBitmapScale_Load(object sender, EventArgs e)

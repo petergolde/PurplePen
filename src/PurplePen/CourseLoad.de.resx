@@ -120,4 +120,13 @@
   <data name="CourseName.HeaderText" xml:space="preserve">
     <value>Bahnbezeichnung</value>
   </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Läuferanzahl</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Legen Sie die Läuferanzahl für jede Bahn fest, indem Sie in die zweite Spalte klicken und eine Zahl eingeben.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bahnauslastung</value>
+  </data>
 </root>

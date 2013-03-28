@@ -123,6 +123,9 @@
   <data name="marginChange.Text" xml:space="preserve">
     <value>Ränder ändern...</value>
   </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Papiergröße:</value>
   </data>
@@ -150,20 +153,26 @@
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Darstellung</value>
   </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Wie in der Bahn festgelegt</value>
+  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
-    <value>Symbolbeschreibung</value>
+    <value>Symbole</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
-    <value>Textbeschreibung</value>
+    <value>Text</value>
+  </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>Symbole &amp; Text</value>
   </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
-    <value>Postenbeschreibung Typ</value>
+    <value>Postenbeschreibungstyp:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="lineSizeLabel.Text" xml:space="preserve">
-    <value>Linien grösse:</value>
+    <value>Linienstärke:</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
@@ -177,8 +186,11 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Bahnen</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopien</value>
+  </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>Postenbeschreibungen pro Kurs</value>
+    <value>Postenbeschreibungen pro Bahn</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
     <value>Ein Exemplar pro Bahn</value>
@@ -193,6 +205,6 @@
     <value>Drucken:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Postenbeschreibung drucken</value>
+    <value>Postenbeschreibungen drucken</value>
   </data>
 </root>

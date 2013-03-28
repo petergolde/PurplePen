@@ -118,24 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
-    <value>Wähle die Sprache für die textuelle Postenbeschreibung:</value>
+    <value>Sprache für die textuelle Postenbeschreibung auswählen:</value>
   </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Symbolname:</value>
   </data>
   <data name="labelCustomizedText.Text" xml:space="preserve">
-    <value>Beutzererfinderter Text:</value>
+    <value>Benutzerdefinierter Text:</value>
   </data>
   <data name="buttonChangeText.Text" xml:space="preserve">
-    <value>Ändere Text...</value>
+    <value>Text ändern...</value>
   </data>
   <data name="buttonDefault.Text" xml:space="preserve">
-    <value>Setze auf Standard zurück</value>
+    <value>Auf Standard zurücksetzen</value>
   </data>
   <data name="labelStandardText.Text" xml:space="preserve">
     <value>Standardtext:</value>
   </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Beschreibung unter den Symbolen anzeigen</value>
+  </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Klicke auf das Symbol um den entsprechenden Text in der textuellen Postenbeschreibung zu ändern.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Textbeschreibung anpassen</value>
   </data>
 </root>

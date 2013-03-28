@@ -121,25 +121,28 @@
     <value>Ändere das Symbol</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Ändere den Postencode</value>
+    <value>Kontrollcode ändern</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Ändere den Posten</value>
+    <value>Posten ändern</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Punktwert ändern</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
     <value>Titel ändern</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
-    <value>Ändere die Höhenmeter</value>
+    <value>Höhenmeter ändern</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Bahnbezeichnung ändern</value>
   </data>
   <data name="ChangeTextLine" xml:space="preserve">
-    <value>Ändere die Textzeile</value>
+    <value>Textzeile ändern</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Aktualisiere den Kartenmaßstab</value>
+    <value>Kartenmaßstab aktualisieren</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
     <value>Posten verschieben</value>
@@ -160,13 +163,16 @@
     <value>Textzeile löschen</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Neuer Posten</value>
+    <value>Posten hinzufügen</value>
   </data>
   <data name="AddStart" xml:space="preserve">
     <value>Neuer Start</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
     <value>Neues Ziel</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Pflichtquerung hinzufügen</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>Objekt hinzufügen</value>
@@ -181,28 +187,34 @@
     <value>Bahneinstellungen ändern</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Ändere alle Posteneinstellungen</value>
+    <value>Alle Posteneigenschaften ändern</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
-    <value>Erstelle neuen Wettkampf</value>
+    <value>Neuen Wettkampf erstellen</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Ausgeflaggte Strecke ändern</value>
   </data>
   <data name="ChangeCodes" xml:space="preserve">
-    <value>Ändere Codes</value>
+    <value>Codes ändern</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Wechsle die angezeigten Bahnen</value>
+    <value>Die angezeigten Bahnen wechseln</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Linieneckpunkt verschieben</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>Kurve hinzufügen</value>
+    <value>Linieneckpunkt hinzufügen</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
-    <value>Ecke hinzufügen</value>
+    <value>Eckpunkt hinzufügen</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Kurve lösche</value>
+    <value>Eckpunkt löschen</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
-    <value>Ecke entfernen</value>
+    <value>Eckpunkt löschen</value>
   </data>
   <data name="AddGap" xml:space="preserve">
     <value>Lücke hinzufügen</value>
@@ -219,28 +231,43 @@
   <data name="AutoNumbering" xml:space="preserve">
     <value>Automatische Nummerierung</value>
   </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Kontrollkartendesign ändern</value>
+  </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Ändere Kontrollmusterlayout</value>
+    <value>Kontrollkartenlayout ändern</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Druckbereich festlegen</value>
   </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Anzahl Wettkämpfer ändern</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Textbeschreibung anpassen</value>
+  </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
-    <value>Ändere Bahnreihenfolge</value>
+    <value>Bahnreihenfolge ändern</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
-    <value>Ändere Kartendatei</value>
+    <value>Kartendatei ändern</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignoriere fehlende Schriften</value>
+    <value>Fehlende Schriften ignorieren</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Eine Textzeile hinzufügen</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
-    <value>Entferne ungenutzte Posten</value>
+    <value>Ungenutzte Posten entfernen</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Beschreibungssprache ändern</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Text ändern</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Bahndesign ändern</value>
   </data>
 </root>

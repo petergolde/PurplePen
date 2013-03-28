@@ -124,31 +124,31 @@
     <value>Postenbeschreibung</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Kartenmassstab</value>
+    <value>Druckmaßstab:</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1: </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Symbolbeschreibung</value>
+    <value>Symbole</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
-    <value>Textbeschreibung</value>
+    <value>Text</value>
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
-    <value>Symbol und Text</value>
+    <value>Symbole und Text</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Postennummerierung</value>
+    <value>Postenbeschriftung:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
-    <value>Postennummer</value>
+    <value>Postennummer (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>Kontrollnummer</value>
+    <value>Kontrollcode (61)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
-    <value>Posten- und Kontrollnummer</value>
+    <value>Posten- und Kontrollcode (3-61)</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Zeige Punkte in:</value>
@@ -175,22 +175,22 @@
     <value>Kategorie</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Höhenmeter</value>
+    <value>Höhenmeter:</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Bahn</value>
+    <value>Bahntyp:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Bahnbezeichnung</value>
+    <value>Bahnbezeichnung:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>Normale Bahn</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Skore Wettkampf</value>
+    <value>Score-Bahn</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
-    <value>Distanz</value>
+    <value>Meter</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Neue Bahn</value>

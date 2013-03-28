@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="formatButton.Text" xml:space="preserve">
+    <value>Kontrollkartenlayout...</value>
+  </data>
+  <data name="punchPatternsLabel.Text" xml:space="preserve">
+    <value>Klicken Sie links auf einen Kontrollcode und gestalten Sie das zugehörige Kontrollfeld auf der rechten Seite. Rote Kontrollcodes zeigen an, dass für sie noch kein Kontrollfeld definiert wurde.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Design der Kontrollfelder</value>
+  </data>
 </root>

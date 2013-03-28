@@ -56,7 +56,7 @@ namespace PurplePen
 
         public string Title
         {
-            get { return "Event File Location"; } 
+            get { return labelTitle.Text; } 
         }
 
         private void useOtherFolder_CheckedChanged(object sender, EventArgs e)

@@ -117,7 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>Der Wettkampfname wird in der ersten Zeile jeder Postenbeschreibung angezeigt. Er wird auch als Dateiname beim Speichern der Wettkampf-Datei auf Festplatte verwendet.
+
+Damit er auf der Postenbeschreibung Platz findet sollte er nicht länger als 25 Zeichen lang sein. Beispiele für gute Wettkampfnamen sind "1. RP Isar Cup" oder "Landshuter Nikolaus-OL".</value>
+  </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
+    <value>Wettkampfname:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
     <value>Wettkampfname</value>
   </data>
 </root>
