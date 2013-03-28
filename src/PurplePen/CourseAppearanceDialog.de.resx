@@ -124,7 +124,7 @@
     <value>Fett</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>Stil der Postennummern</value>
+    <value>Stil der Postennummern:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Postennummernhöhe:</value>
@@ -147,11 +147,14 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Benutze IOF Standardgrößen</value>
   </data>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Maße der Bahnobjekte</value>
+  </data>
   <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Farbe Lila</value>
+    <value>Violetter Farbton</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
-    <value>Farbwähler</value>
+    <value>Farbauswahl...</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Schwarz:</value>
@@ -165,7 +168,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Cyan:</value>
   </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Violetten Farbton der Karte verwenden</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vorschau</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bahndesign ändern</value>
   </data>
 </root>

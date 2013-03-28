@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="mapFileDisplay.Text" xml:space="preserve">
-    <value>aktuelle Kartendatei</value>
+    <value>Aktuelle Kartendatei</value>
   </data>
   <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>und wähle eine Kartendatei</value>
+    <value>&amp;Kartendatei auswählen...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD Dateien (*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>OCAD-Dateien (*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Auflösung:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
-    <value>Massstab</value>
+    <value>Maßstab:</value>
   </data>
   <data name="labelOneTo.Text" xml:space="preserve">
     <value>1:</value>

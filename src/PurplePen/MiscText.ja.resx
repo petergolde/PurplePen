@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>新規コース名を入力</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>新規登高を入力</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>新規テキストを追加</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>ディスクリプションを印刷するページサイズが小さすぎます。</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>ヘルプファイル '{0}'　を開くことができませんでした。</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>テキストを追加</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>新規テキストを追加。</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>現在のイベントは {0} で文字によるディスクリプションがあります。ディスクリプションの言語を{1} に変更しますか?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>開く "{0}"</value>
+  </data>
 </root>

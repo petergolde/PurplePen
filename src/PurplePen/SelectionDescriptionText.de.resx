@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>vom Posten weg</value>
+  </data>
   <data name="Climb" xml:space="preserve">
-    <value>Höhenmeter</value>
+    <value>Höhenmeter:</value>
+  </data>
+  <data name="CompetitorLoad" xml:space="preserve">
+    <value>Läuferauslastung:</value>
+  </data>
+  <data name="ControlsInUse" xml:space="preserve">
+    <value>Verwendete Posten:</value>
+  </data>
+  <data name="ControlsNotInUse" xml:space="preserve">
+    <value>Nicht verwendete Posten:</value>
   </data>
   <data name="Control_Plural" xml:space="preserve">
     <value>Posten</value>
@@ -135,6 +147,48 @@
   <data name="CourseName" xml:space="preserve">
     <value>Bahn "{0}"</value>
   </data>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>Angepasste Symbolbeschreibung</value>
+  </data>
+  <data name="EntireLeg" xml:space="preserve">
+    <value>Gesamte Etappe</value>
+  </data>
+  <data name="FinishFunnel" xml:space="preserve">
+    <value>Zieleinlauf</value>
+  </data>
+  <data name="Finish_Plural" xml:space="preserve">
+    <value>Ziele</value>
+  </data>
+  <data name="Finish_Singular" xml:space="preserve">
+    <value>Ziel</value>
+  </data>
+  <data name="Flagging" xml:space="preserve">
+    <value>Ausflaggung:</value>
+  </data>
+  <data name="IntoControl" xml:space="preserve">
+    <value>zum Posten</value>
+  </data>
+  <data name="IntoFinishFunnel" xml:space="preserve">
+    <value>zum Zieleinlauf</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Länge:</value>
+  </data>
+  <data name="LineHeight" xml:space="preserve">
+    <value>Zeilenhöhe:</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="MandCrossing_Plural" xml:space="preserve">
+    <value>Pflichtquerungen</value>
+  </data>
+  <data name="MandCrossing_Singular" xml:space="preserve">
+    <value>Pflichtquerung</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
     <value>Unpassierbare Grenze</value>
   </data>
@@ -144,8 +198,17 @@
   <data name="SpecialName_Dangerous" xml:space="preserve">
     <value>Gefährliches Gebiet</value>
   </data>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>Postenbeschreibungen</value>
+  </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Erste Hilfe</value>
+  </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>Verbotene Strecke</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>Sperrgebiet</value>
   </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
     <value>Optionale Passage</value>
@@ -154,9 +217,45 @@
     <value>Passkreuz</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
-    <value>Textbeschreibung</value>
+    <value>Text</value>
   </data>
   <data name="SpecialName_Water" xml:space="preserve">
-    <value>Verpflegungspunkt</value>
+    <value>Getränkeposten</value>
+  </data>
+  <data name="Start_Plural" xml:space="preserve">
+    <value>Starts</value>
+  </data>
+  <data name="Start_Singular" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>Text-Postenbeschreibung:</value>
+  </data>
+  <data name="TextLine" xml:space="preserve">
+    <value>Textzeile</value>
+  </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>Erscheint über {0}, in allen Bahnen, die {0} enthalten</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>Erscheint über {0}, nur in dieser Bahn</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>Erscheint unter {0}, in allen Bahnen, die {0} enthalten</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>Erscheint unter {0}, nur in dieser Bahn</value>
+  </data>
+  <data name="TotalControls" xml:space="preserve">
+    <value>Gesamtzahl Posten:</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>Gesamtzahl Punkte:</value>
+  </data>
+  <data name="UsedInCourses" xml:space="preserve">
+    <value>Verwendet in Bahnen:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Weiße Fläche</value>
   </data>
 </root>

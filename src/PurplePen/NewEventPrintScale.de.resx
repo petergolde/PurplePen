@@ -117,16 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
+    <value>In welchem Maßstab möchten Sie Ihre Bahnen drucken? In den meisten Fällen ist dies der Maßstab der Karte.
+
+</value>
+  </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Kartenmassstab:</value>
+    <value>Kartenmaßstab:</value>
   </data>
   <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
-    <value>Standard &amp;Druck-Massstab:</value>
+    <value>Standard &amp;Druckmaßstab:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Sie können den Druckmaßstab später unter Bahn/Eigenschaften wieder ändern.)</value>
   </data>
   <data name="oneToPrefixLabel1.Text" xml:space="preserve">
     <value>1:</value>
   </data>
   <data name="oneToPrefixLabel2.Text" xml:space="preserve">
     <value>1:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Druck-Maßstab</value>
   </data>
 </root>

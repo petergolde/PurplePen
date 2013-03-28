@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>文字によるコントロール位置説明の言語を選択する:</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>クリックでディスクリプション記号を選択して、文字によるコントロール位置説明に使用されるテキストをカスタマイズします。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ディスクリプションのテキストをカスタマイズする</value>
+  </data>
 </root>

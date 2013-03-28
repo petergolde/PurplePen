@@ -121,13 +121,13 @@
     <value>Bahnen</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Erzeuge</value>
+    <value>Erstellen</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Wähle einen Ordner für die OCAD-Dateien</value>
+    <value>Wählen Sie einen Ordner für die OCAD-Dateien aus</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Präfix für Dateinamen:</value>
@@ -150,11 +150,14 @@
   <data name="fileFormatCombo.Items4" xml:space="preserve">
     <value>OCAD 10</value>
   </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Ausgabe</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Wähle Ordner...</value>
+    <value>Ordner auswählen...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Anderer Ordner</value>
@@ -169,6 +172,6 @@
     <value>Ordner</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Erstelle OCAD Dateien</value>
+    <value>OCAD-Dateien erstellen</value>
   </data>
 </root>

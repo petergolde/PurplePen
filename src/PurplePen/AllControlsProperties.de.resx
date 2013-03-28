@@ -121,25 +121,25 @@
     <value>Postenbeschreibung</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>Kartenmassstab</value>
+    <value>Druckmaßstab:</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
     <value>1: </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Symbolbeschreibung</value>
+    <value>Symbole</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
-    <value>Textbeschreibung</value>
+    <value>Text</value>
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
-    <value>Symbol und Text</value>
+    <value>Symbole und Text</value>
   </data>
   <data name="appearanceGroupBox.Text" xml:space="preserve">
     <value>Darstellung</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>Diese Einstellungen bestimmen die Druckeinstellungen für die Karte und die Postenbeschreibung</value>
+    <value>Diese Einstellungen bestimmen die Druckeinstellungen für die Karte und die Postenbeschreibung.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Einstellungen für alle Posten</value>

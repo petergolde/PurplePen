@@ -121,7 +121,7 @@
     <value>Rajad</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
-    <value>Loo</value>
+    <value>Tee</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Katkesta</value>
@@ -147,6 +147,9 @@
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
   </data>
+  <data name="fileFormatCombo.Items4" xml:space="preserve">
+    <value>OCAD 10</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Väljund</value>
   </data>
@@ -166,6 +169,6 @@
     <value>Kaust</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Loo OCADi failid</value>
+    <value>Tee OCADi failid</value>
   </data>
 </root>

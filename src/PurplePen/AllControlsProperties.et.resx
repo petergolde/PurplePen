@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Legendi väljanägemine:</value>
+    <value>Legendi kujundus :</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>Trükikaardi mastaap</value>
+    <value>Trükikaardi mastaap :</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
     <value>1 : </value>

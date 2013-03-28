@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.1.16\n"
+"Project-Id-Version: Purple Pen 1.2.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2012-12-15 17:12-08:00\n"
+"POT-Creation-Date: 2013-03-11 12:54-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © 2007-2011 by Peter Golde"
-msgstr "Copyright © 2007-2011 by Peter Golde"
+msgid "Copyright © 2007-2012 by Peter Golde"
+msgstr "Copyright © 2007-2012 by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -59,7 +59,7 @@ msgstr "最初のコントロール番号"
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
 msgid "Description appearance:"
-msgstr ""
+msgstr "ディスクリプションの表示:"
 
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
@@ -114,19 +114,19 @@ msgstr ""
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "A欄"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "B欄"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "H欄"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(非表示)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -134,12 +134,12 @@ msgstr ""
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
 msgid "Appearance"
-msgstr ""
+msgstr "表示"
 
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
-msgstr ""
+msgstr "以下に入力したテキストはディスクリプションの2行目に表示されます(任意):"
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
@@ -148,7 +148,7 @@ msgstr ""
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
-msgstr ""
+msgstr "登高"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
@@ -160,25 +160,25 @@ msgstr ""
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr ""
+msgstr "通常のコース"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr ""
+msgstr "スコア-Oのコース"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
-msgstr ""
+msgstr "メートル"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr ""
+msgstr "新規コース"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr ""
+msgstr "ディスクリプションの別の行に表示するテキストを入力してください:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -207,12 +207,12 @@ msgstr ""
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr ""
+msgstr "テキストラインを追加"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr ""
+msgstr "この設定は地図と全コントロールのディスクリプションがどのように印刷されるかを変更します。"
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
@@ -257,7 +257,7 @@ msgstr ""
 
 #: ChangeAllCodes.resx, NewCode.HeaderText
 msgid "New Code"
-msgstr ""
+msgstr "新規コード"
 
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
@@ -420,25 +420,25 @@ msgstr ""
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr ""
+msgstr "コントロールを追加"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr ""
+msgstr "スタートを追加"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
 msgid "Add Finish"
-msgstr ""
+msgstr "フィニッシュを追加"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
-msgstr ""
+msgstr "横断地点を追加"
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
-msgstr ""
+msgstr "オブジェクトを追加"
 
 #: CommandNameText.resx, DeleteCourse
 msgid "Delete Course"
@@ -455,7 +455,7 @@ msgstr ""
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
 msgid "Create New Event"
-msgstr ""
+msgstr "新規イベントを作成"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
@@ -521,7 +521,7 @@ msgstr ""
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr ""
+msgstr "ディスクリプションのテキストをカスタマイズする"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -541,7 +541,7 @@ msgstr ""
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr ""
+msgstr "ディスクリプションの言語を変更する"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
@@ -769,7 +769,7 @@ msgstr ""
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
-msgstr ""
+msgstr "文字によるコントロール位置説明の言語を選択する:"
 
 #: CustomSymbolText.resx, labelSymbolName.Text
 msgid "Symbol name:"
@@ -798,7 +798,7 @@ msgstr ""
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr ""
+msgstr "クリックでディスクリプション記号を選択して、文字によるコントロール位置説明に使用されるテキストをカスタマイズします。"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -831,11 +831,11 @@ msgstr ""
 
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
-msgstr ""
+msgstr "既存のイベントを開く..."
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
-msgstr ""
+msgstr "新規イベントを作成..."
 
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
@@ -843,11 +843,11 @@ msgstr ""
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
-msgstr ""
+msgstr "サンプルイベントを開く"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
-msgstr ""
+msgstr "前回使用したイベントを開く"
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -927,7 +927,7 @@ msgstr ""
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr ""
+msgstr "ディスクリプションのテキストを翻訳する(&T)"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
@@ -935,11 +935,11 @@ msgstr "ヘルプ (&H)"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr ""
+msgstr "新規イベント(&N)"
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
-msgstr ""
+msgstr "開く(&O)..."
 
 #: MainFrame.resx, saveMenu.Text
 msgid "&Save"
@@ -963,7 +963,7 @@ msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
-msgstr ""
+msgstr "ディスクリプションを印刷(&P)..."
 
 #: MainFrame.resx, printPunchCardsMenu.Text
 msgid "Print Pu&nch Cards..."
@@ -1115,7 +1115,7 @@ msgstr ""
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr ""
+msgstr "ディスクリプションのテキストをカスタマイズ"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
-msgstr ""
+msgstr "コースを追加(&A)"
 
 #: MainFrame.resx, deleteCourseMenu.Text
 msgid "&Delete Course"
@@ -1143,23 +1143,23 @@ msgstr ""
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "Add &Start"
-msgstr ""
+msgstr "スタートを追加(&S)"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "Add &Control"
-msgstr ""
+msgstr "コントロールを追加(&C)"
 
 #: MainFrame.resx, addFinishMenu.Text
 msgid "Add &Finish"
-msgstr ""
+msgstr "フィニッシュを追加(&F)"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "Add &Descriptions"
-msgstr ""
+msgstr "ディスクリプションを追加(&D)"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
-msgstr "その他のコース記号(&I)"
+msgstr "特殊なコース記号を追加(&I)"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1220,7 +1220,7 @@ msgstr ""
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
-msgstr ""
+msgstr "テキストラインを追加(&L)"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1296,7 +1296,7 @@ msgstr ""
 
 #: MainFrame.resx, descriptionBrowserMenu.Text
 msgid "Description Browser"
-msgstr ""
+msgstr "ディスクリプションブラウザ"
 
 #: MainFrame.resx, controlTesterMenu.Text
 msgid "Control Tester"
@@ -1328,11 +1328,11 @@ msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
-msgstr ""
+msgstr "ディスクリプション言語の追加..."
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr ""
+msgstr "翻訳テキストの追加..."
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
@@ -1340,11 +1340,11 @@ msgstr ""
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
-msgstr ""
+msgstr "開く"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr ""
+msgstr "開く(Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 msgid "Save"
@@ -1378,15 +1378,15 @@ msgstr ""
 
 #: MainFrame.resx, addControlToolStripButton.ToolTipText
 msgid "Add Control (Ctrl+A)"
-msgstr ""
+msgstr "コントロールを追加 (Ctrl+A)"
 
 #: MainFrame.resx, descriptionsToolStripMenuItem.Text
 msgid "Add Descriptions"
-msgstr ""
+msgstr "ディスクリプションを追加"
 
 #: MainFrame.resx, ncross.Text
 msgid "Add Special Item"
-msgstr ""
+msgstr "特殊なコース記号を追加"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
@@ -1539,11 +1539,11 @@ msgstr ""
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
-msgstr ""
+msgstr "新規コース名を入力"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr ""
+msgstr "新規登高を入力"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
@@ -1552,7 +1552,7 @@ msgstr ""
 
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text"
-msgstr ""
+msgstr "新規テキストを追加"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -1615,7 +1615,7 @@ msgstr ""
 #: MiscText.resx, PageTooSmall
 msgid "The page size is too small for any descriptions to be "
 "printed."
-msgstr ""
+msgstr "ディスクリプションを印刷するページサイズが小さすぎます。"
 
 #: MiscText.resx, VersionLabel
 msgid "Version {0}"
@@ -1631,7 +1631,7 @@ msgstr ""
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr ""
+msgstr "ヘルプファイル '{0}'　を開くことができませんでした。"
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
@@ -1741,11 +1741,11 @@ msgstr ""
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr ""
+msgstr "テキストを追加"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr ""
+msgstr "新規テキストを追加。"
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
@@ -1756,11 +1756,11 @@ msgstr ""
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr ""
+msgstr "現在のイベントは {0} で文字によるディスクリプションがあります。ディスクリプションの言語を{1} に変更しますか?"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr ""
+msgstr "開く \"{0}\""
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
@@ -2049,7 +2049,7 @@ msgstr ""
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr ""
+msgstr "ディスクリプションタイプ:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
@@ -2057,7 +2057,7 @@ msgstr ""
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr ""
+msgstr "コースごとのディスクリプション"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
@@ -2077,7 +2077,7 @@ msgstr ""
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr ""
+msgstr "ディスクリプションを印刷"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
@@ -2387,7 +2387,7 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr ""
+msgstr "カスタマイズされた記号のディスクリプション"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
@@ -2443,7 +2443,7 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
-msgstr ""
+msgstr "ディスクリプション"
 
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
@@ -2463,7 +2463,7 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr ""
+msgstr "文字によるディスクリプション"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
@@ -2543,42 +2543,42 @@ msgstr ""
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr ""
+msgstr "左クリックで新しくコントロールを配置します"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr ""
+msgstr "左クリックで既存のコントロール\"{0}\"をコースに追加します"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr ""
+msgstr "左クリックで新しくスタートを配置します"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr ""
+msgstr "左クリックで既存のスタートをコースに追加します"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr ""
+msgstr "左クリックで新しくフィニッシュを追加します"
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr ""
+msgstr "左クリックで既存のフィニッシュをコースに追加します"
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr ""
+msgstr "左クリックで新しく横断地点を追加します"
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr ""
+msgstr "左クリックで既存の横断地点をコースに追加します"
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr ""
+msgstr "左クリックで新しくオブジェクトを追加します"
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
@@ -2626,7 +2626,7 @@ msgstr ""
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr ""
+msgstr "マウスの左ボタンを押さえたままドラッグしてディスクリプションを作成します"
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
