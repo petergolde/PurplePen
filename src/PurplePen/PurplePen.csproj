@@ -700,12 +700,6 @@
     <EmbeddedResource Include="BaseDialog.sv.resx">
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.de.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BasicPrinting.et.resx">
-      <DependentUpon>BasicPrinting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChangeAllCodes.bg.resx">
       <DependentUpon>ChangeAllCodes.cs</DependentUpon>
     </EmbeddedResource>
@@ -1163,12 +1157,6 @@
     <EmbeddedResource Include="DescriptionControl.sv.resx">
       <DependentUpon>DescriptionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.de.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DescriptionPrinting.et.resx">
-      <DependentUpon>DescriptionPrinting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="DotGrid.bg.resx">
       <DependentUpon>DotGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -1345,9 +1333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.de.resx" />
     <EmbeddedResource Include="MiscText.es.resx">
-    <EmbeddedResource Include="MiscText.et.resx" />
       <LastGenOutput>MiscText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="MiscText.et.resx" />
     <EmbeddedResource Include="MiscText.fi.resx">
       <LastGenOutput>MiscText.fi.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -1943,12 +1931,6 @@
     <EmbeddedResource Include="PunchPatternDialog.sv.resx">
       <DependentUpon>PunchPatternDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.de.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RectanglePrinting.et.resx">
-      <DependentUpon>RectanglePrinting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.bg.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1986,7 +1968,6 @@
       <LastGenOutput>ReportText.bg.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportText.de.resx" />
-
     <EmbeddedResource Include="ReportText.es.resx">
       <LastGenOutput>ReportText.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
