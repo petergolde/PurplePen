@@ -78,6 +78,7 @@ namespace PurplePen
 
             // Write the start point information
             WriteControls(ControlPointKind.Start, "StartPoint", "STA");
+            WriteControls(ControlPointKind.MapExchange, "StartPoint", "XCHG");
 
             // Write the control information
             WriteControls(ControlPointKind.Normal, "Control", "CTL");
@@ -176,7 +177,7 @@ namespace PurplePen
             bool isScore = (course.kind == CourseKind.Score);
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             float distanceThisLeg = 0;
-            int scoreSequence = 1;     // score courses need sequence #'s, even though there is no sequence.
+            int sequenceNumber = 1;     // score courses need sequence #'s, even though there is no sequence.
 
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", course.name);
@@ -213,17 +214,12 @@ namespace PurplePen
                         distanceThisLeg = 0;
                         break;
 
-	                case ControlPointKind.MapExchange:
-	                    Debug.Fail("UNDONE MAPEXCHANGE");
-	                    break;
-	
-                    case ControlPointKind.Normal:
+                case ControlPointKind.MapExchange:
+                case ControlPointKind.Normal:
                         xmlWriter.WriteStartElement("CourseControl");
 
-                        if (!isScore)
-                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(controlView.ordinal));
-                        else
-                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(scoreSequence++));
+                        // With map exchanges, the sequence can be different than the ordinals. We always use the sequence.
+                        xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(sequenceNumber++));
 
                         xmlWriter.WriteElementString("ControlCode", controlCodeMap[controlView.controlId]);
 
@@ -240,7 +236,9 @@ namespace PurplePen
                         xmlWriter.WriteEndElement();         // "CourseControl"
                         break;
 
-                    // Intentionally skip crossing points.
+                    case ControlPointKind.CrossingPoint:
+                        // Intentionally skip crossing points.
+                        break;
                 }
 
 

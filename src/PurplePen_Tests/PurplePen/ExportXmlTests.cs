@@ -79,6 +79,22 @@ namespace PurplePen.Tests
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
         }
+
+        [TestMethod]
+        public void ExportXmlTestMapExchange()
+        {
+            Dictionary<string, string> exceptions = ExportXml.TestFileExceptionMap();
+
+            string outputFile = TestUtil.GetTestFile("exportxml\\mapexchange1_actual.xml");
+            string expectedFile = TestUtil.GetTestFile("exportxml\\mapexchange1_expected.xml");
+
+            Setup("exportxml\\mapexchange1.ppen");
+
+            controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F));
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+        }
+
     }
 }
 
