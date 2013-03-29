@@ -35,6 +35,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Xml;
 using System.Diagnostics;
 using System.Drawing;
@@ -180,6 +181,12 @@ namespace PurplePen
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", course.name);
             xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseNumber));
+
+            string[] classNames = GetClassNames(eventDB, courseId);
+            foreach (string className in classNames) {
+                xmlWriter.WriteElementString("ClassShortName", className);
+            }
+
             xmlWriter.WriteStartElement("CourseVariation");
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
             if (!isScore) {
@@ -250,6 +257,21 @@ namespace PurplePen
             xmlWriter.WriteEndElement();     // "Course"
 
             return true;
+        }
+
+        // Get all the class names associated with this course.
+        private string[] GetClassNames(EventDB eventDB, Id<Course> courseId)
+        {
+            Course course = eventDB.GetCourse(courseId);
+            string secondaryTitle = course.secondaryTitle;
+
+            if (!string.IsNullOrEmpty(secondaryTitle)) {
+                // Assumed that classes are separated with commas.
+                return (from s in secondaryTitle.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) select s.Trim()).ToArray();
+            }
+            else {
+                return new string[0];
+            }
         }
 
         // Return an exception map used to test exported XML files.

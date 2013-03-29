@@ -304,9 +304,9 @@ namespace TestingUtils
                     if (line1 != line2) {
                         bool matched = false;
                         foreach (KeyValuePair<string, string> pair in exceptionMap) {
-                            if (Regex.Match(line1, pair.Key).Success) {
+                            if (line1 != null && Regex.Match(line1, pair.Key).Success) {
                                 matched = true;
-                                if (!Regex.Match(line2, pair.Value).Success)
+                                if (line2 == null || !Regex.Match(line2, pair.Value).Success)
                                     equal = false;
                                 break;
                             }
@@ -324,6 +324,7 @@ namespace TestingUtils
         public static void CompareTextFileBaseline(string newFile, string baseline) {
             CompareTextFileBaseline(newFile, baseline, new Dictionary<string, string>());
         }
+
         // Compare text file against a baseline, showing a dialog if they don't compare.
         public static void CompareTextFileBaseline(string newFile, string baseline, Dictionary<string, string> exceptionMap)
         {
