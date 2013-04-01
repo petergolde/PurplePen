@@ -1659,6 +1659,13 @@ namespace PurplePen
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
 
+            if (Environment.OSVersion.Version.Major <= 5) {
+                // Windows XP. Force rasterization.
+                coursePrintSettings.UseXpsPrinting = false;
+                printCoursesDialog.PrintSettings = coursePrintSettings;
+                printCoursesDialog.EnableRasterizeChoice = false;
+            }
+
             // show the dialog, on success, print.
             if (printCoursesDialog.ShowDialog(this) == DialogResult.OK) {
                 // Save the settings for the next invocation of the dialog.

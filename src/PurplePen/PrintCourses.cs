@@ -71,6 +71,11 @@ namespace PurplePen
             checkBoxMergeParts.Visible = enableMultipart;
         }
 
+        public bool EnableRasterizeChoice {
+            get { return checkBoxRasterPrinting.Enabled; }
+            set { checkBoxRasterPrinting.Enabled = value;  }
+        }
+
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
