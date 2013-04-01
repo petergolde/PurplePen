@@ -456,7 +456,7 @@ namespace PurplePen
             catch (Exception) {  }
             finally {
                 if (hDC != IntPtr.Zero) DeleteDC(hDC);
-                if (BLOB != IntPtr.Zero) Marshal.Release(BLOB);
+                if (BLOB != IntPtr.Zero) Marshal.FreeCoTaskMem(BLOB);
             };
 
             return false;
