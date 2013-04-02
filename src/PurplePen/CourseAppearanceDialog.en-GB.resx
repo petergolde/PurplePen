@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Regular</value>
   </data>
@@ -150,12 +153,6 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Item Sizes</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Purple Colour</value>
-  </data>
-  <data name="buttonColorChoosers.Text" xml:space="preserve">
-    <value>Colour Chooser...</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Black:</value>
   </data>
@@ -171,10 +168,16 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Use purple colour from map</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Purple Colour</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Preview</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customise Course Appearance</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Colour Chooser...</value>
   </data>
 </root>

@@ -125,4 +125,7 @@ För att passa in på kontrollbeskrivningen måste den vara mindre än 25 tecken
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Tävlingens namn:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Tävlingens Titel</value>
+  </data>
 </root>

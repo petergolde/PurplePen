@@ -117,33 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>編集 (&amp;E)</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>表示(&amp;V)</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>イベント(&amp;N)</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>コース(&amp;C)</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>アイテム(&amp;I)</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>レポート(&amp;R)</value>
-  </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>Purple Pen のヘルプ(&amp;H)</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>ディスクリプションのテキストを翻訳する(&amp;T)</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>ヘルプ (&amp;H)</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>新規イベント(&amp;N)</value>
   </data>
@@ -159,17 +132,29 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>コースを印刷 (&amp;C)</value>
   </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>編集 (&amp;E)</value>
+  </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>コース全体の表示 (&amp;C)</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>地図全体の表示 (&amp;M)</value>
   </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>表示(&amp;V)</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>ディスクリプションのテキストをカスタマイズ</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>イベント(&amp;N)</value>
+  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>コースを追加(&amp;A)</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>コース(&amp;C)</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>スタートを追加(&amp;S)</value>
@@ -183,17 +168,26 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>ディスクリプションを追加(&amp;D)</value>
   </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>特殊なコース記号を追加(&amp;I)</value>
-  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>特殊なコース記号を追加(&amp;I)</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>テキストラインを追加(&amp;L)</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>回転(&amp;R)</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>アイテム(&amp;I)</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>レポート(&amp;R)</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen のヘルプ(&amp;H)</value>
   </data>
   <data name="descriptionBrowserMenu.Text" xml:space="preserve">
     <value>ディスクリプションブラウザ</value>
@@ -203,6 +197,12 @@
   </data>
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>翻訳テキストの追加...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>ディスクリプションのテキストを翻訳する(&amp;T)</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>ヘルプ (&amp;H)</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>開く</value>
@@ -225,10 +225,13 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>ディスクリプションを追加</value>
   </data>
-  <data name="ncross.Text" xml:space="preserve">
-    <value>特殊なコース記号を追加</value>
-  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>特殊なコース記号を追加</value>
+  </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>特殊なコース記号を追加</value>
   </data>
 </root>

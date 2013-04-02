@@ -125,4 +125,7 @@ Jotta nimi mahtuu rastinm채채ritteisiin, sen pit채채 olla alle 25 merkki채 pitk�
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Tapahtuman nimi:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Tapahtuman nimi</value>
+  </data>
 </root>

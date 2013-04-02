@@ -125,4 +125,7 @@ For å passe i postbeskrivelsen må teksten være mindre enn 25 tegn. Eksempel p
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Arrangementsnamn:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Namn på arrangement</value>
+  </data>
 </root>

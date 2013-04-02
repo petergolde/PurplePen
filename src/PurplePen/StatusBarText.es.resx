@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Clik Izquierdo: sobre una esqina para quitarla</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Clik Izquierdo: sobre el círculo para añadir un hueco en él</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Clik Izquierdo: sobre el hueco del circulo para eliminarlo</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Manten pulsado el boton izquierdo  y suéltalo para crear una hueco en la linea</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Clik Izquierdo: sobre el hueco en la linea para eliminarlo</value>

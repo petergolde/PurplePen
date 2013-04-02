@@ -126,51 +126,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen fail|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Fail</value>
-  </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Muuda</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Vaade</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Võistlus</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Rada</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>Sümbol</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Aruanded</value>
-  </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Abi</value>
-  </data>
-  <data name="helpTranslatedMenu.Text" xml:space="preserve">
-    <value>Purple Pen Abi (Tõlgitud)</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Purpe Pen &amp;Kodulehekülg</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Tugi ja vigadest teadaandmine</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Programmist Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>S&amp;ilumine</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Tõlgi legendi tekst</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Abi</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Uus võistlus...</value>
   </data>
@@ -201,20 +156,23 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Trüki &amp;Rajad</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Määra trüki&amp;ala</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>See &amp;rada</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Kõik rajad</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Määra trüki&amp;ala</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>Programm &amp;Keel</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>V&amp;älju</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Fail</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Puhasta valik</value>
@@ -228,14 +186,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Kustuta</value>
   </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Muuda</value>
+  </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Kogu &amp;rada</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Kogu &amp;kaart</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Suurendus</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -258,8 +216,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Kaardi &amp;intensiivsus</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Suurendus</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Väga madal</value>
@@ -276,8 +234,8 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Täielik</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Kaardi &amp;kvaliteet</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Kaardi &amp;intensiivsus</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Madal</value>
@@ -285,8 +243,14 @@
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Kõrge</value>
   </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Kaardi &amp;kvaliteet</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Kõik KPd</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Vaade</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kaardi fail</value>
@@ -309,6 +273,9 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Muuda &amp;rajasümboleid</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Võistlus</value>
+  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Lisa rada...</value>
   </data>
@@ -324,6 +291,9 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Osalejate &amp;arv...</value>
   </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Rada</value>
+  </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>Lisa &amp;Start</value>
   </data>
@@ -335,9 +305,6 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Lisa &amp;legend</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Lisa eri&amp;sümbol</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Kohustuslik läbipääsu punk</value>
@@ -372,6 +339,9 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Lisa eri&amp;sümbol</value>
+  </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Lisa &amp;tekst</value>
   </data>
@@ -396,9 +366,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Pööra</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>Etapi tähistamine</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Tähistuseta</value>
   </data>
@@ -411,8 +378,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Etapi lõpp on tähistatud</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Etapi tähistamine</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Muuda valitud radade...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>Sümbol</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Raja kokkuvõte</value>
@@ -428,6 +401,24 @@
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>KPde ja etappide koormused</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Aruanded</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Abi</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Abi (Tõlgitud)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purpe Pen &amp;Kodulehekülg</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Tugi ja vigadest teadaandmine</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Programmist Purple Pen</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Sümbolite brauser</value>
@@ -456,6 +447,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
   </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>S&amp;ilumine</value>
+  </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lisa legendide keel...</value>
   </data>
@@ -464,6 +458,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Liida Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Tõlgi legendi tekst</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Abi</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Ava</value>
@@ -507,9 +507,6 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lisa legend</value>
   </data>
-  <data name="ncross.Text" xml:space="preserve">
-    <value>Lisa erisümbol</value>
-  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Kohustuslik läbipääsu punk</value>
   </data>
@@ -543,6 +540,9 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Lisa erisümbol</value>
+  </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Lisa murdekoht (Ctrl+B)</value>
   </data>
@@ -566,5 +566,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>Lisa erisümbol</value>
   </data>
 </root>

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Tavaline</value>
   </data>
@@ -150,12 +153,6 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Suurused</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lilla värv</value>
-  </data>
-  <data name="buttonColorChoosers.Text" xml:space="preserve">
-    <value>Värvi valik...</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Must:</value>
   </data>
@@ -171,10 +168,16 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Kasuta kaardil määratud lillat värvi</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lilla värv</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Eelvaade</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muuda raja sümbolite väljanägemist</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Värvi valik...</value>
   </data>
 </root>

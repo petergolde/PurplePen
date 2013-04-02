@@ -120,4 +120,7 @@
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Název závodu:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Název závodu</value>
+  </data>
 </root>

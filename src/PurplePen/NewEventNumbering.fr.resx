@@ -126,7 +126,4 @@
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Premier numéro de poste :</value>
   </data>
-  <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(Ce numéro pourra être modifié ultérieurement en utilisant Postes/Numérotation Automatique)</value>
-  </data>
 </root>

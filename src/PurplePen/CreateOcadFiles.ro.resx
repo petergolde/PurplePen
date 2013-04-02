@@ -150,6 +150,9 @@
   <data name="fileFormatCombo.Items4" xml:space="preserve">
     <value>OCAD 10</value>
   </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Rezultat</value>
   </data>

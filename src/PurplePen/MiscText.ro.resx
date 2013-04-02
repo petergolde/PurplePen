@@ -279,11 +279,6 @@ Folosiți | pentru a separa liniile</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versiunea {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Versiunea {0} a programului Purple Pen este disponibilă pentru descărcare. (Versiunea curentă este {1}.)
-
-Pentru a descărca ultima versiune, vizitați websit-ul Purple Pen prin selectarea meniului  Asistență - "Purple Pen Web Site".</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Fișierul de asistență '{0}' nu a putut fi deschis.</value>
   </data>

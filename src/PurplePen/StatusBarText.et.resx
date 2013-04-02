@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Nurgapunkti eemaldamiseks klõpsa hiire vasaku nupuga</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>KP rõnga katkestamiseks klõpsa hiire vasaku nupuga</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>KP rõnga katkestuse eemaldamiseks klõpsa hiire vasaku nupuga</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Hoia all hiire vasakut nuppu ja lohistades lisa etapile katkestus</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Hiire vasaku nupuga eemalda etapilt katkestus</value>

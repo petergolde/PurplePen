@@ -150,11 +150,11 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Koopiad</value>
   </data>
-  <data name="radioButtonMultiPage.Text" xml:space="preserve">
-    <value>Trüki mitmele lehele</value>
-  </data>
-  <data name="radioButtonOnePage.Text" xml:space="preserve">
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Mahuta ühele lehele</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Trüki mitmele lehele</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Kui trükiala on liiga suur, siis mahuta ühele lehele:</value>
@@ -164,5 +164,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trüki rajad</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Trüki mitmele lehele</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Mahuta ühele lehele</value>
   </data>
 </root>

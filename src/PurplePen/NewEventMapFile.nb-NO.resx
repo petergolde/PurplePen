@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>Kartet er lest inn. Desom du sender en Purpel Pen fil til noen må denne også ha tilgang til kartfilen.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Kartfil</value>
+  </data>
 </root>

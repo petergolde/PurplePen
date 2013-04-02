@@ -125,4 +125,7 @@ Para que entre en la descripción debe tener menos de 25 carácteres. Ejemplos d
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Título del Evento:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Título del Evento</value>
+  </data>
 </root>

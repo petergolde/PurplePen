@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Zwykłe</value>
   </data>
@@ -150,22 +153,22 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Rozmiar Obiektów</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Purpurowy</value>
-  </data>
-  <data name="buttonColorChoosers.Text" xml:space="preserve">
-    <value>Wybierz Kolor...</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Czarny:</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Żółty:</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Purpurowy</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Podgląd</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Zmień Wygląd Tras</value>
+  </data>
+  <data name="buttonColorChoosers.Text" xml:space="preserve">
+    <value>Wybierz Kolor...</value>
   </data>
 </root>

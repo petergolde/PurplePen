@@ -150,11 +150,11 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopiar</value>
   </data>
-  <data name="radioButtonMultiPage.Text" xml:space="preserve">
-    <value>Skriv ut på fleire sider</value>
-  </data>
-  <data name="radioButtonOnePage.Text" xml:space="preserve">
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Beskjær til ein side</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Skriv ut på fleire sider</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Dersom utskriftsområdet er for stort til å passe på en side:</value>
@@ -164,5 +164,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut løyper</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Skriv ut på fleire sider</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Beskjær til ein side</value>
   </data>
 </root>

@@ -125,4 +125,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Event Title:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Event Title</value>
+  </data>
 </root>

@@ -279,11 +279,6 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Version {0} von Purple Pen steht nun zum Download zur Verfügung. (Aktuell genutzte Version {1}.)
-
-Um die neueste Version herunterzuladen, gehen Sie bitte auf die Purple Pen Website, indem Sie "Purple Pen Web Site" im Hilfemenü anklicken.</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Die Hilfedatei '{0}' kann nicht geöffnet werden.</value>
   </data>

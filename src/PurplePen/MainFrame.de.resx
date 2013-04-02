@@ -126,51 +126,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen-Dateien|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Datei</value>
-  </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Bearbeiten</value>
-  </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Ansicht</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Wettkampf</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>Bah&amp;nen</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Objekte</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>Be&amp;richte</value>
-  </data>
-  <data name="helpContentsMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Hilfe</value>
-  </data>
-  <data name="helpTranslatedMenu.Text" xml:space="preserve">
-    <value>Purple Pen Hilfe (Übersetzt)</value>
-  </data>
-  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
-    <value>Purple Pen &amp;Website</value>
-  </data>
-  <data name="supportWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Support/Fehler berichten</value>
-  </data>
-  <data name="aboutMenu.Text" xml:space="preserve">
-    <value>&amp;Über Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Debuggen</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Textbeschreibungen übersetzen</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Hilfe</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Neuer Wettkampf...</value>
   </data>
@@ -189,9 +144,6 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Route&amp;Gadget-Dateien erstellen …</value>
   </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>E-&amp;Punch-Austauschdatei erstellen …</value>
-  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Postenbeschreibungen &amp;drucken...</value>
   </data>
@@ -201,20 +153,23 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Bahnen drucken</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>D&amp;ruckbereich festlegen</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>D&amp;iese Bahn</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>A&amp;lle Bahnen</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>D&amp;ruckbereich festlegen</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>Programm&amp;sprache festlegen</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>B&amp;eenden</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Datei</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>Auswahl &amp;aufheben</value>
@@ -228,14 +183,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
   </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Bearbeiten</value>
+  </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Ganze &amp;Bahn</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Ganze &amp;Karte</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -258,8 +213,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Karten&amp;helligkeit</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Sehr gering</value>
@@ -276,8 +231,8 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Volle Helligkeit</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Karten&amp;qualität</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Karten&amp;helligkeit</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Niedrig</value>
@@ -285,8 +240,14 @@
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Hoch</value>
   </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Karten&amp;qualität</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Alle Posten</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Ansicht</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kartendatei...</value>
@@ -309,6 +270,9 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>&amp;Bahndesign anpassen</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Wettkampf</value>
+  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Neue Bahn...</value>
   </data>
@@ -324,6 +288,9 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Läu&amp;ferauslastung...</value>
   </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>Bah&amp;nen</value>
+  </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>&amp;Start hinzufügen</value>
   </data>
@@ -335,9 +302,6 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>P&amp;ostenbeschreibung hinzufügen</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>&amp;Besonderes Objekt hinzufügen</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pflichtpassage</value>
@@ -372,6 +336,9 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>&amp;Besonderes Objekt hinzufügen</value>
+  </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>&amp;Textzeile hinzufügen...</value>
   </data>
@@ -396,9 +363,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Drehen</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>Etappe &amp;ausflaggen</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Nicht ausgeflaggt</value>
   </data>
@@ -411,8 +375,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Ende der Etappe ausgeflaggt</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Etappe &amp;ausflaggen</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Anze&amp;ige besonderer Objekte...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Objekte</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Alle &amp;Bahndaten</value>
@@ -428,6 +398,24 @@
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Posten- und Etappen&amp;auslastung</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>Be&amp;richte</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Hilfe</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Hilfe (Übersetzt)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Website</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Support/Fehler berichten</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Über Purple Pen</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolbrowser</value>
@@ -456,6 +444,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Fontmaße</value>
   </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>&amp;Debuggen</value>
+  </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Beschreibungssprache hinzufügen...</value>
   </data>
@@ -464,6 +455,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Merge Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Textbeschreibungen übersetzen</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Hilfe</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Öffnen</value>
@@ -507,9 +504,6 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Postenbeschreibung hinzufügen</value>
   </data>
-  <data name="ncross.Text" xml:space="preserve">
-    <value>Besonderes Objekt hinzufügen</value>
-  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pflichtpassage</value>
   </data>
@@ -543,6 +537,9 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Besonderes Objekt hinzufügen</value>
+  </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Eckpunkt hinzufügen (Ctrl+B)</value>
   </data>
@@ -566,5 +563,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="ncross.Text" xml:space="preserve">
+    <value>Besonderes Objekt hinzufügen</value>
   </data>
 </root>
