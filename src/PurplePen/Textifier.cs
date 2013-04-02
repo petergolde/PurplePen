@@ -76,6 +76,7 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.Start:
+                case ControlPointKind.MapExchange:
                     text = CreateTextForStartControl(controlPoint);
                     break;
 

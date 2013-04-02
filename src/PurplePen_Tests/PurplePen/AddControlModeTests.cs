@@ -71,6 +71,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddControlAllControls()
         {
+            bool isTooltip;
+            string tipText, titleText;
             CourseObj[] highlights;
 
             // Should be no control #60 now.
@@ -80,7 +82,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -88,7 +93,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -102,6 +107,18 @@ namespace PurplePen.Tests
             Assert.AreEqual(1, highlights.Length);
             obj = (ControlCourseObj) highlights[0];
             Assert.AreEqual(new PointF(30.3F, -10.3F), obj.location);
+
+            // No tooltip.
+            isTooltip = controller.GetToolTip(new PointF(30.3F, -10.3F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
+
+            // No tooltip on a control, either
+            isTooltip = controller.GetToolTip(new PointF(52.9F, -28.5F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
 
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
@@ -124,6 +141,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddControlCourse1()
         {
+            bool isTooltip;
+            string tipText, titleText;
             CourseObj[] highlights;
 
             // Should be no control #60 now.
@@ -133,7 +152,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -141,7 +163,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -169,6 +191,18 @@ namespace PurplePen.Tests
                                          highlights[2].ToString());
             Assert.AreEqual(string.Format(StatusBarText.AddingExistingControl, "48"), controller.StatusText);
 
+            // Tooltip about control #48
+            isTooltip = controller.GetToolTip(new PointF(21.5F, 40.2F), 0.3F, out tipText, out titleText);
+            Assert.IsTrue(isTooltip);
+            Assert.AreEqual("Control 48", titleText);
+            Assert.AreEqual("Used in: Course 4B, Course 4G, Course 5", tipText);
+
+            // No tooltip on a leg, though
+            isTooltip = controller.GetToolTip(new PointF(66.9F, 18.9F), 0.3F, out tipText, out titleText);
+            Assert.IsFalse(isTooltip);
+            Assert.AreEqual("", titleText);
+            Assert.AreEqual("", tipText);
+
             // Move the mouse over a control on the course next to current control (mouse buttons are up). Shouldn't select that control, but near it.
             ui.MouseMoved(40, 15.5F, 0.1F);
 
@@ -191,8 +225,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(28.3F, 30.7F), eventDB.GetControl(newControlId).location);
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -218,14 +252,17 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -237,8 +274,8 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), ControlId(48)));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), ControlId(48))[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), ControlId(48)));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), ControlId(48))[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -263,7 +300,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -271,7 +311,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -306,8 +346,8 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), ControlId(41)));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), ControlId(41))[1];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), ControlId(41)));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), ControlId(41))[1];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
 
@@ -329,7 +369,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            ui.LeftButtonDown(0.9F, 30.5F, 0.1F);
+            var dragAction = ui.LeftButtonDown(0.9F, 30.5F, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+            
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -337,7 +380,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -371,7 +414,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -379,7 +425,7 @@ namespace PurplePen.Tests
 
             // Begin adding a start.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -425,7 +471,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -433,7 +482,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             StartCourseObj obj = (StartCourseObj) highlights[0];
@@ -477,8 +526,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the start.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(302));
             Assert.IsTrue(eventDB.GetCourse(CourseId(3)).firstCourseControl == newCourseControlId);
         }
@@ -498,14 +547,17 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -521,8 +573,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the start.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(302));
             Assert.IsTrue(eventDB.GetCourse(CourseId(3)).firstCourseControl == newCourseControlId);
         }
@@ -537,15 +589,18 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
-            highlights = (CourseObj[]) controller.GetHighlights();
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
+            highlights = (CourseObj[])controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a finish.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -592,7 +647,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -600,7 +658,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             FinishCourseObj obj = (FinishCourseObj) highlights[0];
@@ -644,8 +702,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the finish.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl.IsNone);
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(314)).nextCourseControl == newCourseControlId);
         }
@@ -666,14 +724,17 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -689,8 +750,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
 
             // The control should be on this course, at the finish.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl.IsNone);
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(314)).nextCourseControl == newCourseControlId);
         }
@@ -706,7 +767,10 @@ namespace PurplePen.Tests
             controller.SelectTab(0);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -770,9 +834,9 @@ namespace PurplePen.Tests
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(23, 37), 0.1F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
-            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F)); 
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
 
-            controller.LeftButtonDrag(new PointF(34, 12), 0.1F);
+            controller.LeftButtonDrag(new PointF(34, 12), new PointF(23, 37), 0.1F);
 
             // Check the highlights.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -784,7 +848,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(12, obj.rect.Top);
 
             // Finish the drag.
-            controller.LeftButtonEndDrag(new PointF(36, 11), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(36, 11), new PointF(23, 37), 0.1F);
 
             // There should be a description, with the given location.
             // Is should be selected.
@@ -799,7 +863,7 @@ namespace PurplePen.Tests
                     Assert.AreEqual(37, special.locations[1].Y);
                     Assert.IsFalse(special.allCourses);
                     Assert.AreEqual(1, special.courses.Length);
-                    Assert.AreEqual(CourseId(3), special.courses[0]);
+                    Assert.AreEqual(Designator(3), special.courses[0]);
                 }
             }
             Assert.AreEqual(1, countDescriptions);
@@ -808,6 +872,66 @@ namespace PurplePen.Tests
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(1, highlights.Length);
             Assert.IsInstanceOfType(   highlights[0],   typeof(DescriptionCourseObj));
+        }
+
+        // Add a control description to all controls.
+        [TestMethod]
+        public void AddControlDescription2()
+        {
+            CourseObj[] highlights;
+
+            // Select All Controls.
+            controller.SelectTab(0);
+
+            // Begin adding a description.
+            controller.BeginAddDescriptionMode();
+
+            // Check the status text.
+            Assert.AreEqual(StatusBarText.AddingDescription, controller.StatusText);
+
+            // Click the mouse and drag.
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(10, -70), 0.1F));
+            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(10, -70), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, action);
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(10, -70), 0.1F));
+
+            controller.LeftButtonDrag(new PointF(130, -100), new PointF(10, -70), 0.1F);
+
+            // Check the highlights.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            DescriptionCourseObj obj = (DescriptionCourseObj)highlights[0];
+            Assert.AreEqual(10, obj.rect.Left);
+            Assert.AreEqual(-70, obj.rect.Bottom);
+            Assert.AreEqual(130F, obj.rect.Right, 0.01F);
+            Assert.AreEqual(-105.75, obj.rect.Top, 0.01F);
+
+            // Finish the drag.
+            controller.LeftButtonEndDrag(new PointF(130, -100), new PointF(10, -70), 0.1F);
+
+            // There should be a description, with the given location.
+            // Is should be selected.
+            int countDescriptions = 0;
+            EventDB eventDB = controller.GetEventDB();
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Descriptions) {
+                    ++countDescriptions;
+                    Assert.AreEqual(10, special.locations[0].X);
+                    Assert.AreEqual(-70, special.locations[0].Y);
+                    Assert.AreEqual(13.575F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(-70, special.locations[1].Y);
+                    Assert.AreEqual(4, special.numColumns);
+                    Assert.IsFalse(special.allCourses);
+                    Assert.AreEqual(1, special.courses.Length);
+                    Assert.AreEqual(CourseDesignator.AllControls, special.courses[0]);
+                }
+            }
+            Assert.AreEqual(1, countDescriptions);
+
+            // The descriiption should be highlighted.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.IsInstanceOfType(highlights[0], typeof(DescriptionCourseObj));
         }
 
 
@@ -821,7 +945,10 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select control #47
-            controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            var dragAction = controller.LeftButtonDown(new PointF(0.9F, 30.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(0.9F, 30.5F), 0.3F);
+
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -829,7 +956,7 @@ namespace PurplePen.Tests
 
             // Begin adding a crossing point.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.AreEqual(3, highlights.Length);
             CrossingCourseObj obj = (CrossingCourseObj) highlights[0];
@@ -870,8 +997,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(ControlPointKind.CrossingPoint, eventDB.GetControl(newControlId).kind);
 
             // The control should be on this course, right before course control 307.
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(3), newControlId));
-            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(3), newControlId)[0];
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(3), newControlId));
+            Id<CourseControl> newCourseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(3), newControlId)[0];
             Assert.IsTrue(eventDB.GetCourseControl(newCourseControlId).nextCourseControl == CourseControlId(307));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(306)).nextCourseControl == newCourseControlId);
         }
@@ -905,7 +1032,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -972,7 +1099,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -988,7 +1115,7 @@ namespace PurplePen.Tests
             }
 
             // Now drag to close the beginning to end it..
-            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), new PointF(17, -8), 0.1F);
 
             // There should be a dangerous special, with the given location.
             // Is should be selected.
@@ -1039,7 +1166,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1055,7 +1182,7 @@ namespace PurplePen.Tests
             }
 
             // Now drag to close the beginning to end it..
-            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(28.2F, -18.1F), new PointF(17, -8), 0.1F);
 
             // There should be a dangerous special, with the given location.
             // Is should be selected.
@@ -1107,7 +1234,7 @@ namespace PurplePen.Tests
 
             // Drag to each of the other locations in turn.
             for (int i = 1; i <= 3; ++i) {
-                controller.LeftButtonEndDrag(locations[i], 0.1F);
+                controller.LeftButtonEndDrag(locations[i], new PointF(17, -8), 0.1F);
                 // Check the highlight.
                 highlights = (CourseObj[]) controller.GetHighlights();
                 Assert.AreEqual(1, highlights.Length);
@@ -1167,7 +1294,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
 
-            controller.LeftButtonDrag(new PointF(74, 12), 0.1F);
+            controller.LeftButtonDrag(new PointF(74, 12), new PointF(23, 37), 0.1F);
 
             // Check the highlights.
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -1182,7 +1309,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(FontStyle.Bold, obj.fontStyle);
 
             // Finish the drag.
-            controller.LeftButtonEndDrag(new PointF(76, 11), 0.1F);
+            controller.LeftButtonEndDrag(new PointF(76, 11), new PointF(23, 37), 0.1F);
 
             // There should be a text special, with the given location.
             // Is should be selected.

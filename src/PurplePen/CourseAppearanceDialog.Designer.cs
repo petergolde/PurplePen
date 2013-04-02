@@ -29,6 +29,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAppearanceDialog));
             this.groupBoxSizes = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.upDownCenterDot = new System.Windows.Forms.NumericUpDown();
             this.comboBoxControlNumberStyle = new System.Windows.Forms.ComboBox();
             this.labelControlNumberStyle = new System.Windows.Forms.Label();
             this.labelControlNumber = new System.Windows.Forms.Label();
@@ -42,7 +45,6 @@
             this.upDownControlCircle = new System.Windows.Forms.NumericUpDown();
             this.checkBoxStandardSizes = new System.Windows.Forms.CheckBox();
             this.groupBoxPurple = new System.Windows.Forms.GroupBox();
-            this.buttonColorChoosers = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.upDownBlack = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,6 +58,7 @@
             this.groupBoxPreview = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.groupBoxSizes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownControlCircle)).BeginInit();
@@ -79,6 +82,9 @@
             // groupBoxSizes
             // 
             resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
+            this.groupBoxSizes.Controls.Add(this.label8);
+            this.groupBoxSizes.Controls.Add(this.label7);
+            this.groupBoxSizes.Controls.Add(this.upDownCenterDot);
             this.groupBoxSizes.Controls.Add(this.comboBoxControlNumberStyle);
             this.groupBoxSizes.Controls.Add(this.labelControlNumberStyle);
             this.groupBoxSizes.Controls.Add(this.labelControlNumber);
@@ -93,6 +99,38 @@
             this.groupBoxSizes.Controls.Add(this.checkBoxStandardSizes);
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // upDownCenterDot
+            // 
+            this.upDownCenterDot.DecimalPlaces = 2;
+            this.upDownCenterDot.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            resources.ApplyResources(this.upDownCenterDot, "upDownCenterDot");
+            this.upDownCenterDot.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            65536});
+            this.upDownCenterDot.Name = "upDownCenterDot";
+            this.upDownCenterDot.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            65536});
+            this.upDownCenterDot.ValueChanged += new System.EventHandler(this.upDown_ValueChanged);
             // 
             // comboBoxControlNumberStyle
             // 
@@ -231,7 +269,6 @@
             // groupBoxPurple
             // 
             resources.ApplyResources(this.groupBoxPurple, "groupBoxPurple");
-            this.groupBoxPurple.Controls.Add(this.buttonColorChoosers);
             this.groupBoxPurple.Controls.Add(this.label5);
             this.groupBoxPurple.Controls.Add(this.upDownBlack);
             this.groupBoxPurple.Controls.Add(this.label6);
@@ -243,13 +280,6 @@
             this.groupBoxPurple.Controls.Add(this.checkBoxDefaultPurple);
             this.groupBoxPurple.Name = "groupBoxPurple";
             this.groupBoxPurple.TabStop = false;
-            // 
-            // buttonColorChoosers
-            // 
-            resources.ApplyResources(this.buttonColorChoosers, "buttonColorChoosers");
-            this.buttonColorChoosers.Name = "buttonColorChoosers";
-            this.buttonColorChoosers.UseVisualStyleBackColor = true;
-            this.buttonColorChoosers.Click += new System.EventHandler(this.buttonColorChoosers_Click);
             // 
             // label5
             // 
@@ -342,6 +372,7 @@
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownControlCircle)).EndInit();
@@ -380,11 +411,13 @@
         private System.Windows.Forms.NumericUpDown upDownYellow;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown upDownMagenta;
-        private System.Windows.Forms.Button buttonColorChoosers;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.GroupBox groupBoxPreview;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.ComboBox comboBoxControlNumberStyle;
         private System.Windows.Forms.Label labelControlNumberStyle;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown upDownCenterDot;
+        private System.Windows.Forms.Label label8;
     }
 }

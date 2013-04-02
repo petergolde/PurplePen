@@ -279,11 +279,6 @@ Käytä | erottaaksesi rivit</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versio {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Purple Pen versio {0} on nyt ladattavissa. (Sinulla on käytössä versio {1}.)
-
-Uusimman version voit ladata Purple Pen -kotisivuilta, jonne pääset Ohje-valikosta valitsemalla "Purple Pen -kotisivu".</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Ohjetiedostoa '{0}' ei voida avata.</value>
   </data>

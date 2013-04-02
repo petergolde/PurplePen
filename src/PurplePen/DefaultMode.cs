@@ -41,6 +41,7 @@ using System.Diagnostics;
 using PurplePen.MapView;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Text;
 
 namespace PurplePen
 {
@@ -101,16 +102,16 @@ namespace PurplePen
         public virtual void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
         public virtual void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
@@ -118,6 +119,51 @@ namespace PurplePen
 
         public virtual void RightButtonCancelDrag(ref bool displayUpdateNeeded)
         { }
+
+        public virtual bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        {
+            tipText = titleText = "";
+            return false;
+        }
+
+        protected void ConvertTextPartsToToolTip(TextPart[] textParts, out string tipText, out string tipTitle)
+        {
+            StringBuilder tipBuilder = new StringBuilder();
+            StringBuilder titleBuilder = new StringBuilder();
+
+            foreach (TextPart part in textParts) {
+                switch (part.format) {
+                    case TextFormat.NewLine:
+                        if (tipBuilder.Length > 0)
+                            tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.SameLine:
+                        tipBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Title:
+                        titleBuilder.Append(part.text);
+                        break;
+
+                    case TextFormat.Header:
+                        if (tipBuilder.Length > 0)
+                            tipBuilder.AppendLine();
+                        tipBuilder.Append(part.text);
+                        tipBuilder.Append(" ");
+                        break;
+
+                    default:
+                        Debug.Fail("Unexpected part format");
+                        break;
+                }
+            }
+
+            tipText = tipBuilder.ToString();
+            tipTitle = titleBuilder.ToString();
+        }
+
     }
 
 
@@ -129,12 +175,14 @@ namespace PurplePen
     {
         Controller controller;
         EventDB eventDB;
+        SymbolDB symbolDB;
         SelectionMgr selectionMgr;
 
-        public DefaultMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr)
+        public DefaultMode(Controller controller, EventDB eventDB, SymbolDB symbolDB, SelectionMgr selectionMgr)
         {
             this.controller = controller;
             this.eventDB = eventDB;
+            this.symbolDB = symbolDB;
             this.selectionMgr = selectionMgr;
         }
 
@@ -254,6 +302,25 @@ namespace PurplePen
                 return Cursors.Default;
         }
 
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            CourseObj clickedObject = HitTest(location, pixelSize);
+            if (clickedObject != null) {
+                selectionMgr.SelectCourseObject(clickedObject);
+            }
+            else {
+                // clicked on nothing. Clear selection.
+                controller.ClearSelection();
+            }
+        }
+
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // If we dragged an object or corner, we would have entered a new mode. So this must be a delayed drag that should
+            // become map dragging.
+            controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
+        }
+
         // Left mouse button selects the object clicked on, or drag something already selected.
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
@@ -282,20 +349,47 @@ namespace PurplePen
                 return MapViewer.DragAction.ImmediateDrag;
             }
 
-            // Are we clicked a non-selected object? If so, try to select it.
+            // Are we clicked a non-selected object? If so, drag will be map move, click will select.
+            clickedObject = HitTest(location, pixelSize);
+            if (clickedObject != null) {
+                return MapViewer.DragAction.DelayedDrag;
+            }
+
+            // drag map.
+            return MapViewer.DragAction.MapDrag;
+        }
+
+        private CourseObj HitTest(PointF location, float pixelSize)
+        {
+            CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseObj clickedObject;
+
             clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
             if (clickedObject == null)
                 clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
-            if (clickedObject != null) {
-                selectionMgr.SelectCourseObject(clickedObject);
+
+            return clickedObject;
+        }
+
+        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        {
+            CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+
+            if (touchedObject == null)
+                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+
+            if (touchedObject != null) {
+                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject);
+                ConvertTextPartsToToolTip(textParts, out tipText, out tipTitle);
+                return true;
             }
             else {
-                // clicked on nothing. Clear selection.
-                controller.ClearSelection();
+                tipText = tipTitle = "";
+                return false;
             }
-
-            return MapViewer.DragAction.None;
         }
+
     }
 
     // Mode when an object is being dragged to a new position.
@@ -311,6 +405,7 @@ namespace PurplePen
 
         public DragObjectMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF startDrag)
         {
+            Debug.WriteLine(string.Format("DragObjectMode start {0},{1}", startDrag.X, startDrag.Y));
             this.controller = controller;
             this.eventDB = eventDB;
             this.selectionMgr = selectionMgr;
@@ -345,7 +440,7 @@ namespace PurplePen
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             currentLocation = location;
 
@@ -375,8 +470,8 @@ namespace PurplePen
                     additionalHighlights = AddControlMode.CreateLegHighlights(eventDB, ((PointCourseObj) courseObjectDrag).location, courseObjectDrag.controlId, control.kind, prevCourseControl, nextCourseControl, courseView.ScaleRatio, courseObjectStart.appearance);
 
                     // If we're dragging the start, update the angle of the start appropriately.
-                    if (control.kind == ControlPointKind.Start && additionalHighlights.Length > 0) {
-                        SymPath pathFromStart = ((LineCourseObj) additionalHighlights[0]).path;
+                    if ((control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange) && additionalHighlights.Length > 0) {
+                        SymPath pathFromStart = ((LineCourseObj) additionalHighlights[additionalHighlights.Length - 1]).path;
                         PointF[] pts = pathFromStart.FlattenedPoints;
                         double angleOut = Math.Atan2(pts[1].Y - pts[0].Y, pts[1].X - pts[0].X);
                         if (!double.IsNaN(angleOut)) 
@@ -394,8 +489,9 @@ namespace PurplePen
             return courseObjectStart.specialId.IsNone && !((courseObjectStart is ControlNumberCourseObj) || (courseObjectStart is CodeCourseObj));
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.WriteLine(string.Format("DragObject end drag start=({0},{1}), loc=({2},{3})", locationStart.X, locationStart.Y, location.X, location.Y));
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
 
@@ -475,7 +571,7 @@ namespace PurplePen
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             currentLocation = location;
 
@@ -487,7 +583,7 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
@@ -501,7 +597,7 @@ namespace PurplePen
                     // Moving a description. Descriptions are rather special in the way their locations are used.
                     DescriptionCourseObj descObj = (DescriptionCourseObj) courseObjectStart.Clone();
                     descObj.MoveHandle(handleLocation, location);
-                    controller.MoveSpecial(specialId, new PointF[2] { new PointF(descObj.rect.Left, descObj.rect.Bottom), new PointF(descObj.rect.Left + descObj.CellSize, descObj.rect.Bottom) });
+                    controller.MoveSpecial(specialId, new PointF[2] { new PointF(descObj.rect.Left, descObj.rect.Bottom), new PointF(descObj.rect.Left + descObj.CellSize, descObj.rect.Bottom) }, descObj.NumberOfColumns);
                 }
                 else if (courseObjectStart is BasicTextCourseObj) {
                     // Moving text handles is sort of special too.
@@ -519,6 +615,11 @@ namespace PurplePen
                 LineCourseObj lineCourseObj = (LineCourseObj) courseObjectStart;
 
                 controller.MoveLegBendOrGap(lineCourseObj.courseControlId, lineCourseObj.courseControlId2, handleLocation, newHandleLocation);
+            }
+            else if ((courseObjectStart is ControlCourseObj) || (courseObjectStart is FinishCourseObj)) {
+                PointCourseObj pointObj = (PointCourseObj)courseObjectStart.Clone();
+                pointObj.MoveHandle(handleLocation, location);
+                controller.MoveControlGap(courseObjectStart.controlId, pointObj.movableGaps);
             }
             else {
                 Debug.Fail("unknown situation");

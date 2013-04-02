@@ -35,6 +35,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using System.Xml;
 using System.Diagnostics;
 using System.Drawing;
@@ -77,6 +78,7 @@ namespace PurplePen
 
             // Write the start point information
             WriteControls(ControlPointKind.Start, "StartPoint", "STA");
+            WriteControls(ControlPointKind.MapExchange, "StartPoint", "XCHG");
 
             // Write the control information
             WriteControls(ControlPointKind.Normal, "Control", "CTL");
@@ -173,13 +175,19 @@ namespace PurplePen
 
             Course course = eventDB.GetCourse(courseId);
             bool isScore = (course.kind == CourseKind.Score);
-            CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             float distanceThisLeg = 0;
-            int scoreSequence = 1;     // score courses need sequence #'s, even though there is no sequence.
+            int sequenceNumber = 1;     // score courses need sequence #'s, even though there is no sequence.
 
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", course.name);
             xmlWriter.WriteElementString("CourseId", XmlConvert.ToString(courseNumber));
+
+            string[] classNames = GetClassNames(eventDB, courseId);
+            foreach (string className in classNames) {
+                xmlWriter.WriteElementString("ClassShortName", className);
+            }
+
             xmlWriter.WriteStartElement("CourseVariation");
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
             if (!isScore) {
@@ -195,24 +203,23 @@ namespace PurplePen
                 ControlPointKind kind = eventDB.GetControl(controlView.controlId).kind;
 
                 switch (kind) {
-                    case ControlPointKind.Start:
-                        xmlWriter.WriteElementString("StartPointCode", controlCodeMap[controlView.controlId]);
-                        break;
+                case ControlPointKind.Start:
+                    xmlWriter.WriteElementString("StartPointCode", controlCodeMap[controlView.controlId]);
+                    break;
 
-                    case ControlPointKind.Finish:
-                        xmlWriter.WriteElementString("FinishPointCode", controlCodeMap[controlView.controlId]);
-                        if (!isScore)
-                            xmlWriter.WriteElementString("DistanceToFinish", XmlConvert.ToString(Math.Round(distanceThisLeg)));
+                case ControlPointKind.Finish:
+                    xmlWriter.WriteElementString("FinishPointCode", controlCodeMap[controlView.controlId]);
+                    if (!isScore)
+                        xmlWriter.WriteElementString("DistanceToFinish", XmlConvert.ToString(Math.Round(distanceThisLeg)));
                         distanceThisLeg = 0;
                         break;
 
-                    case ControlPointKind.Normal:
+                case ControlPointKind.MapExchange:
+                case ControlPointKind.Normal:
                         xmlWriter.WriteStartElement("CourseControl");
 
-                        if (!isScore)
-                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(controlView.ordinal));
-                        else
-                            xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(scoreSequence++));
+                        // With map exchanges, the sequence can be different than the ordinals. We always use the sequence.
+                        xmlWriter.WriteElementString("Sequence", XmlConvert.ToString(sequenceNumber++));
 
                         xmlWriter.WriteElementString("ControlCode", controlCodeMap[controlView.controlId]);
 
@@ -229,7 +236,9 @@ namespace PurplePen
                         xmlWriter.WriteEndElement();         // "CourseControl"
                         break;
 
-                    // Intentionally skip crossing points.
+                    case ControlPointKind.CrossingPoint:
+                        // Intentionally skip crossing points.
+                        break;
                 }
 
 
@@ -246,6 +255,21 @@ namespace PurplePen
             xmlWriter.WriteEndElement();     // "Course"
 
             return true;
+        }
+
+        // Get all the class names associated with this course.
+        private string[] GetClassNames(EventDB eventDB, Id<Course> courseId)
+        {
+            Course course = eventDB.GetCourse(courseId);
+            string secondaryTitle = course.secondaryTitle;
+
+            if (!string.IsNullOrEmpty(secondaryTitle)) {
+                // Assumed that classes are separated with commas.
+                return (from s in secondaryTitle.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) select s.Trim()).ToArray();
+            }
+            else {
+                return new string[0];
+            }
         }
 
         // Return an exception map used to test exported XML files.

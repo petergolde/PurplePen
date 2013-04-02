@@ -126,7 +126,4 @@
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Начална сигнатура:</value>
   </data>
-  <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(Тази настройка може да се промени по-късно от менюто Контролни точки/Автоматично номериране)</value>
-  </data>
 </root>

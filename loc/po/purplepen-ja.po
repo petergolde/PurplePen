@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.2.2\n"
+"Project-Id-Version: Purple Pen 2.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-03-11 12:54-07:00\n"
+"POT-Creation-Date: 2013-04-01 17:56-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -106,6 +106,14 @@ msgstr ""
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
+msgstr ""
+
+#: AddCourse.resx, labelKindCombo.Items3
+msgid "Sequence and score (3(30))"
+msgstr ""
+
+#: AddCourse.resx, labelKindCombo.Items4
+msgid "Code and score (145(30))"
 msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
@@ -319,6 +327,7 @@ msgid "dots per inch"
 msgstr ""
 
 #: ChangeMapFile.resx, $this.Text
+#: NewEventMapFile.resx, labelTitle.Text
 msgid "Map File"
 msgstr ""
 
@@ -336,6 +345,7 @@ msgid "Insert Special Text"
 msgstr ""
 
 #: ChangeText.resx, eventTitleMenuItem.Text
+#: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
 msgstr "イベント名"
 
@@ -355,6 +365,11 @@ msgstr ""
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
+msgstr ""
+
+#: ChangeText.resx, printScaleMenuItem.Text
+#: NewEventPrintScale.resx, labelTitle.Text
+msgid "Print Scale"
 msgstr ""
 
 #: CommandNameText.resx, ChangeSymbol
@@ -553,6 +568,24 @@ msgstr ""
 msgid "Customize Course Appearance"
 msgstr ""
 
+#: CommandNameText.resx, AddMapExchange
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Exchange"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, label8.Text
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, label7.Text
+msgid "Center dot diameter:"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
 msgstr ""
@@ -569,14 +602,6 @@ msgstr ""
 msgid "Control number height:"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, label4.Text
-#: CourseAppearanceDialog.resx, label2.Text
-#: CourseAppearanceDialog.resx, labelMM1.Text
-#: PrintDescriptions.resx, mmSuffixLabel.Text
-#: PrintPunches.resx, mmSuffixLabel.Text
-msgid "mm"
-msgstr ""
-
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
 msgstr ""
@@ -591,14 +616,6 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr ""
-
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr ""
-
-#: CourseAppearanceDialog.resx, buttonColorChoosers.Text
-msgid "Color Chooser..."
 msgstr ""
 
 #: CourseAppearanceDialog.resx, label5.Text
@@ -621,6 +638,10 @@ msgstr ""
 msgid "Use purple color from map"
 msgstr ""
 
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
 msgstr ""
@@ -636,6 +657,10 @@ msgstr ""
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
+msgstr ""
+
+#: CoursePartBanner.resx, coursePartLabel.Text
+msgid "Course Part:"
 msgstr ""
 
 #: CourseSelector.resx, selectAll.Text
@@ -873,66 +898,6 @@ msgstr ""
 msgid "Purple Pen file|*.ppen"
 msgstr ""
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr ""
-
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "編集 (&E)"
-
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "表示(&V)"
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "イベント(&N)"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "コース(&C)"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "アイテム(&I)"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "レポート(&R)"
-
-#: MainFrame.resx, helpContentsMenu.Text
-msgid "Purple Pen &Help"
-msgstr "Purple Pen のヘルプ(&H)"
-
-#: MainFrame.resx, helpTranslatedMenu.Text
-msgid "Purple Pen Help (Translated)"
-msgstr ""
-
-#: MainFrame.resx, mainWebSiteToolMenu.Text
-msgid "Purple Pen &Web Site"
-msgstr ""
-
-#: MainFrame.resx, supportWebSiteMenu.Text
-msgid "&Support/Bug Reporting"
-msgstr ""
-
-#: MainFrame.resx, aboutMenu.Text
-msgid "&About Purple Pen"
-msgstr ""
-
-#: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr ""
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "ディスクリプションのテキストを翻訳する(&T)"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "ヘルプ (&H)"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "新規イベント(&N)"
@@ -958,7 +923,7 @@ msgid "Create Route&Gadget Files..."
 msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
-msgid "Create &E-Punch Interchange File..."
+msgid "Create Data &Interchange File (IOF XML)..."
 msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
@@ -973,8 +938,8 @@ msgstr ""
 msgid "Print &Courses..."
 msgstr "コースを印刷 (&C)"
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
 msgstr ""
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
@@ -985,12 +950,20 @@ msgstr ""
 msgid "&All Courses"
 msgstr ""
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr ""
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr ""
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
+msgstr ""
+
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
 msgstr ""
 
 #: MainFrame.resx, cancelMenu.Text
@@ -1013,6 +986,10 @@ msgstr ""
 msgid "&Delete"
 msgstr ""
 
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "編集 (&E)"
+
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
 msgstr "コース全体の表示 (&C)"
@@ -1020,10 +997,6 @@ msgstr "コース全体の表示 (&C)"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "地図全体の表示 (&M)"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr ""
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1053,8 +1026,8 @@ msgstr ""
 msgid "1000%"
 msgstr ""
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
 msgstr ""
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
@@ -1077,8 +1050,8 @@ msgstr ""
 msgid "&Full"
 msgstr ""
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
 msgstr ""
 
 #: MainFrame.resx, normalQualityMenu.Text
@@ -1089,9 +1062,21 @@ msgstr ""
 msgid "High"
 msgstr ""
 
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr ""
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr ""
+
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
 msgstr ""
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "表示(&V)"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1121,6 +1106,10 @@ msgstr "ディスクリプションのテキストをカスタマイズ"
 msgid "Customize Course &Appearance..."
 msgstr ""
 
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "イベント(&N)"
+
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
 msgstr "コースを追加(&A)"
@@ -1141,6 +1130,10 @@ msgstr ""
 msgid "Competitor &Load..."
 msgstr ""
 
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "コース(&C)"
+
 #: MainFrame.resx, addStartMenu.Text
 msgid "Add &Start"
 msgstr "スタートを追加(&S)"
@@ -1157,9 +1150,17 @@ msgstr "フィニッシュを追加(&F)"
 msgid "Add &Descriptions"
 msgstr "ディスクリプションを追加(&D)"
 
-#: MainFrame.resx, addSpecialItemMenu.Text
-msgid "Add Special &Item"
-msgstr "特殊なコース記号を追加(&I)"
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr ""
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr ""
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Add Map E&xchange"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1218,6 +1219,10 @@ msgstr ""
 msgid "White Out Area"
 msgstr ""
 
+#: MainFrame.resx, addSpecialItemMenu.Text
+msgid "Add Special &Item"
+msgstr "特殊なコース記号を追加(&I)"
+
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
 msgstr "テキストラインを追加(&L)"
@@ -1246,10 +1251,6 @@ msgstr ""
 msgid "R&otate"
 msgstr "回転(&R)"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr ""
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr ""
@@ -1266,9 +1267,17 @@ msgstr ""
 msgid "End of Leg Flagged"
 msgstr ""
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr ""
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr ""
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "アイテム(&I)"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1288,6 +1297,30 @@ msgstr ""
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
+msgstr ""
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "レポート(&R)"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "Purple Pen のヘルプ(&H)"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr ""
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr ""
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr ""
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
 msgstr ""
 
 #: MainFrame.resx, symbolBrowserMenu.Text
@@ -1326,6 +1359,10 @@ msgstr ""
 msgid "Font Metrics"
 msgstr ""
 
+#: MainFrame.resx, debugMenu.Text
+msgid "&Debug"
+msgstr ""
+
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
 msgstr "ディスクリプション言語の追加..."
@@ -1337,6 +1374,14 @@ msgstr "翻訳テキストの追加..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "ディスクリプションのテキストを翻訳する(&T)"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "ヘルプ (&H)"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -1384,7 +1429,15 @@ msgstr "コントロールを追加 (Ctrl+A)"
 msgid "Add Descriptions"
 msgstr "ディスクリプションを追加"
 
-#: MainFrame.resx, ncross.Text
+#: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
+msgid "Map Exchange at Control Point"
+msgstr ""
+
+#: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
+msgid "Flagged Route to Map Exchange"
+msgstr ""
+
+#: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
 msgstr "特殊なコース記号を追加"
 
@@ -1625,8 +1678,7 @@ msgstr ""
 msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
-"To download the latest version, visit the Purple Pen web "
-"site by selecting \"Purple Pen Web Site\" in the Help menu."
+"Would you like to download and install the latest version?"
 msgstr ""
 
 #: MiscText.resx, HelpFileNotFound
@@ -1778,6 +1830,30 @@ msgid "*** If there exists a web site in the translated language "
 "Otherwise leave it alone."
 msgstr ""
 
+#: MiscText.resx, MapExchange_Long
+msgid "Map exchange"
+msgstr ""
+
+#: MiscText.resx, MapExchange_Medium
+msgid "Exchange"
+msgstr ""
+
+#: MiscText.resx, MapExchange_Short
+msgid "MX"
+msgstr ""
+
+#: MiscText.resx, PartN
+msgid "Part {0}"
+msgstr ""
+
+#: MiscText.resx, AllParts
+msgid "All Parts"
+msgstr ""
+
+#: MiscText.resx, PartXOfY
+msgid "Part {0} (of {1})"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr ""
@@ -1824,6 +1900,10 @@ msgstr ""
 msgid "Map scale:"
 msgstr "地図の縮尺:"
 
+#: NewEventBitmapScale.resx, labelTitle.Text
+msgid "Bitmap Resolution"
+msgstr ""
+
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
@@ -1849,6 +1929,10 @@ msgstr "イベントファイルを保存するフォルダを選択してくだ
 msgid "Selected Folder"
 msgstr ""
 
+#: NewEventDirectory.resx, labelTitle.Text
+msgid "Event File Location"
+msgstr ""
+
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
@@ -1857,6 +1941,10 @@ msgstr ""
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
+msgstr ""
+
+#: NewEventFinal.resx, labelTitle.Text
+msgid "Create Event"
 msgstr ""
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
@@ -1881,8 +1969,12 @@ msgid "Newly created controls are automatically numbered. Please "
 msgstr ""
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
-msgid "(This setting can be changed later using "
-"Controls/Automatic Numbering)"
+msgid "(This setting can be changed later using Event/Automatic "
+"Numbering)"
+msgstr ""
+
+#: NewEventNumbering.resx, labelTitle.Text
+msgid "Control Numbering"
 msgstr ""
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
@@ -2003,12 +2095,36 @@ msgstr ""
 msgid "Copies"
 msgstr ""
 
-#: PrintCourses.resx, radioButtonMultiPage.Text
-msgid "Print on multiple pages"
+#: PrintCourses.resx, checkBoxRasterPrinting.Text
+msgid "Rasterize Before Printing"
 msgstr ""
 
-#: PrintCourses.resx, radioButtonOnePage.Text
+#: PrintCourses.resx, checkBoxMergeParts.Text
+msgid "Print Map Exchanges on Same Map "
+msgstr ""
+
+#: PrintCourses.resx, labelColorModel.Text
+msgid "Color Model:"
+msgstr ""
+
+#: PrintCourses.resx, comboBoxColorModel.Items
+msgid "OCAD Compatible"
+msgstr ""
+
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr ""
+
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr ""
+
+#: PrintCourses.resx, comboBoxMultiPage.Items
 msgid "Crop to a single page"
+msgstr ""
+
+#: PrintCourses.resx, comboBoxMultiPage.Items1
+msgid "Print on multiple pages"
 msgstr ""
 
 #: PrintCourses.resx, labelAppearanceInfo.Text
@@ -2497,6 +2613,30 @@ msgstr ""
 msgid "Used in courses:"
 msgstr ""
 
+#: SelectionDescriptionText.resx, MapExchange_Plural
+msgid "map exchanges"
+msgstr ""
+
+#: SelectionDescriptionText.resx, MapExchange_Singular
+msgid "map exchange"
+msgstr ""
+
+#: SelectionDescriptionText.resx, MapExchangeAtControl
+msgid "Map exchange at {0}"
+msgstr ""
+
+#: SelectionDescriptionText.resx, Load
+msgid "Load:"
+msgstr ""
+
+#: SelectionDescriptionText.resx, UsedIn
+msgid "Used in:"
+msgstr ""
+
+#: SelectionDescriptionText.resx, CourseNameAndPart
+msgid "Course \"{0}\", Part {1}"
+msgstr ""
+
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
 msgstr ""
@@ -2597,7 +2737,9 @@ msgid "Click left mouse button on a corner to remove it"
 msgstr ""
 
 #: StatusBarText.resx, AddingControlGap
-msgid "Click left mouse button on the control circle to add a gap"
+msgid "Click left mouse button on the control circle to add a "
+"small gap; hold down left mouse button and drag to create "
+"a large gap"
 msgstr ""
 
 #: StatusBarText.resx, RemovingControlGap
@@ -2606,8 +2748,8 @@ msgid "Click left mouse button on a gap in the control circle to "
 msgstr ""
 
 #: StatusBarText.resx, AddingLegGap
-msgid "Hold down left mouse button and drag to create a gap in "
-"the leg"
+msgid "Click left mouse button to create small gap; hold down "
+"left mouse button and drag to create a large gap in the leg"
 msgstr ""
 
 #: StatusBarText.resx, RemovingLegGap
@@ -2640,6 +2782,20 @@ msgstr ""
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
+msgstr ""
+
+#: StatusBarText.resx, AddingExistingMapExchange
+msgid "Click left mouse button to add existing map exchange to "
+"course"
+msgstr ""
+
+#: StatusBarText.resx, AddingMapExchange
+msgid "Click left mouse button to place new map exchange"
+msgstr ""
+
+#: StatusBarText.resx, AddingMapExchangeToControl
+msgid "Click left mouse button to add map exchange at control "
+"\"{0}\" "
 msgstr ""
 
 #: UnusedControls.resx, okButton.Text

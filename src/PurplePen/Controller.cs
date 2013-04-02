@@ -92,7 +92,7 @@ namespace PurplePen
             eventDB = new EventDB(undoMgr);
             selectionMgr = new SelectionMgr(eventDB, symbolDB, this);
 
-            currentMode = defaultMode = new DefaultMode(this, eventDB, selectionMgr);
+            currentMode = defaultMode = new DefaultMode(this, eventDB, symbolDB, selectionMgr);
 
             showAllControls = false;
             temporaryControlView = false;
@@ -381,7 +381,7 @@ namespace PurplePen
                     Settings.Default.Save();
                 }
                 undoMgr.MarkClean();
-                selectionMgr.SelectCourseView(Id<Course>.None);
+                selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
                 NewMapFileLoaded(true);
             }
@@ -438,7 +438,7 @@ namespace PurplePen
             // Save the new event in the given file.
             bool success = SaveAs(info.eventFileName);
             if (success) {
-                selectionMgr.SelectCourseView(Id<Course>.None);
+                selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
             }
 
@@ -609,6 +609,45 @@ namespace PurplePen
             }
         }
 
+        public int NumberOfParts
+        {
+            get
+            {
+                CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+                if (activeCourseDesignator.IsAllControls)
+                    return 1;
+                else
+                    return QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
+            }
+        }
+
+        public int CurrentPart
+        {
+            get
+            {
+                if (NumberOfParts == 1) {
+                    return -1; // all parts
+                }
+                else {
+                    return selectionMgr.Selection.ActiveCourseDesignator.Part;
+                }
+            }
+        }
+
+        public void SelectPart(int newPart)
+        {
+            if (newPart == -1)
+                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId));
+            else
+                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, newPart));
+            CancelMode();
+        }
+
+        public bool AnyMultipart()
+        {
+            return QueryEvent.AnyMultipartCourses(eventDB);
+        }
+
         // Get the text for the status line
         public string StatusText
         {
@@ -756,12 +795,11 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, descriptionPrintSettings)) {
-                        if (preview)
-                            descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            descriptionPrinter.Print();
-                    }
+                    DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, descriptionPrintSettings);
+                    if (preview)
+                        descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                    else
+                        descriptionPrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
@@ -773,12 +811,11 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings)) {
-                        if (preview)
-                            punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            punchPrinter.Print();
-                    }
+                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings);
+                    if (preview)
+                        punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                    else
+                        punchPrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
@@ -790,12 +827,13 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    using (CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance())) {
-                        if (preview)
-                            coursePrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
-                        else
-                            coursePrinter.Print();
-                    }
+                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance());
+                    if (preview)
+                        coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
+                    else if (coursePrintSettings.UseXpsPrinting)
+                        coursePrinter.PrintUsingXps();
+                    else
+                        coursePrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
 
@@ -911,11 +949,11 @@ namespace PurplePen
 
         private bool DeleteControlFromCourse(SelectionMgr.SelectionInfo selection)
         {
-            Debug.Assert(selection.ActiveCourseId.IsNotNone);
+            Debug.Assert(selection.ActiveCourseDesignator.IsNotAllControls);
 
             undoMgr.BeginCommand(177, CommandNameText.DeleteControl);
 
-            ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseId, selection.SelectedCourseControl);
+            ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl);
             if (QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl).Length == 0) {
                 // No other courses are using this control. Ask the user whether to delete it from the controls collection.
                 string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\""; 
@@ -934,7 +972,7 @@ namespace PurplePen
             bool delete = true;   // actually delete the control?
 
             // Deleting a control from the controls collection.
-            Debug.Assert(selection.ActiveCourseId.IsNone);
+            Debug.Assert(selection.ActiveCourseDesignator.IsAllControls);
 
             // If the control is used by any courses, ask the user if he is sure.
             Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl);
@@ -969,26 +1007,27 @@ namespace PurplePen
         // Can we delete the current course
         public bool CanDeleteCurrentCourse()
         {
-            return (selectionMgr.Selection.ActiveCourseId.IsNotNone) ;
+            return (selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls) ;
         }
 
         // Delete the current course
         public bool DeleteCurrentCourse()
         {
-            Id<Course> courseId = selectionMgr.Selection.ActiveCourseId;
-            if (courseId.IsNone)
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
                 return false;
+            courseDesignator = new CourseDesignator(courseDesignator.CourseId);  // get designator for all controls in this course.
 
             // First get a list of all the controls in the course being deleted.
             List<Id<ControlPoint>> usedControls = new List<Id<ControlPoint>>();
 
-            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseId)) {
+            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, courseDesignator)) {
                 usedControls.Add(eventDB.GetCourseControl(courseControlId).control);
             }
 
             // Delete the course and course controls.
             undoMgr.BeginCommand(712, CommandNameText.DeleteCourse);
-            ChangeEvent.DeleteCourse(eventDB, courseId);
+            ChangeEvent.DeleteCourse(eventDB, courseDesignator.CourseId);
 
             // Determine if any of the controls are "orphaned".
             List<Id<ControlPoint>> orphanedControls = new List<Id<ControlPoint>>();
@@ -1022,20 +1061,20 @@ namespace PurplePen
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
             Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal, true);
-            selectionMgr.SelectCourseView(newCourse);
+            selectionMgr.SelectCourseView(new CourseDesignator(newCourse));
             undoMgr.EndCommand(713);
         }
 
         // Can we change the properties fo the current course?
         public bool CanChangeCourseProperties()
         {
-            return selectionMgr.Selection.ActiveCourseId.IsNotNone;
+            return selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls;
         }
 
         // Get the properties of the current course?
         public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind, out int firstControlOrdinal)
         {
-            Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseId);
+            Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
             courseKind = course.kind;
             courseName = course.name;
             labelKind = course.labelKind;
@@ -1051,7 +1090,7 @@ namespace PurplePen
         public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
             undoMgr.EndCommand(888);
         }
 
@@ -1071,53 +1110,60 @@ namespace PurplePen
         }
 
         // Get the print area for a course. Null means all controls. Uses the default print area, or the specific one set.
-        public RectangleF GetPrintArea(Id<Course> courseId)
+        public RectangleF GetPrintArea(CourseDesignator courseDesignator)
         {
             RectangleF defaultPrintArea;
 
             // The default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
-            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             CourseLayout layout = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, GetCourseAppearance(), layout, 0);
             RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
             defaultPrintArea = RectangleF.Union(courseObjects, mapDisplay.MapBounds);
 
-            return QueryEvent.GetPrintArea(eventDB, courseId, defaultPrintArea);
+            return QueryEvent.GetPrintArea(eventDB, courseDesignator, defaultPrintArea);
         }
 
         // Get the current print area, for the current course or all courses.
-        public RectangleF GetCurrentPrintArea(bool allCourses)
+        public RectangleF GetCurrentPrintArea(PrintArea printArea)
         {
-            if (allCourses)
-                return GetPrintArea(Id<Course>.None);
-            else
-                return GetPrintArea(selectionMgr.Selection.ActiveCourseId);
+            switch (printArea) {
+                case PrintArea.AllCourses:
+                    return GetPrintArea(CourseDesignator.AllControls);
+                case PrintArea.OneCourse:
+                    return GetPrintArea(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId));
+                case PrintArea.OnePart:
+                    return GetPrintArea(selectionMgr.Selection.ActiveCourseDesignator);
+                default:
+                    Debug.Fail("unknown print area");
+                    return new RectangleF();
+            }
         }
 
         // Begin the mode to set the print area, for the current course or all courses.
-        public void BeginSetPrintArea(bool allCourses, IDisposable disposeOnEndMode)
+        public void BeginSetPrintArea(PrintArea printArea, IDisposable disposeOnEndMode)
         {
-            RectangleF initialPrintArea = GetCurrentPrintArea(allCourses);
+            RectangleF initialPrintArea = GetCurrentPrintArea(printArea);
 
-            SetCommandMode(new RectangleSelectMode(this, initialPrintArea, disposeOnEndMode));
+            SetCommandMode(new RectangleSelectMode(this, initialPrintArea, disposeOnEndMode));  
         }
 
         // End the mode to set the print area, and set it.
-        public void EndSetPrintArea(bool allCourses)
+        public void EndSetPrintArea(PrintArea printArea)
         {
             if (currentMode is RectangleSelectMode) {
                 RectangleF newRectangle = ((RectangleSelectMode)currentMode).Rectangle;
 
                 undoMgr.BeginCommand(1127, CommandNameText.SetPrintArea);
-                if (allCourses) {
-                    ChangeEvent.ChangeCoursePrintArea(eventDB, Id<Course>.None, newRectangle);    // all controls
+                if (printArea == PrintArea.AllCourses) {
+                    ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, true, newRectangle);    // all controls
                     Id<Course>[] courses = QueryEvent.SortedCourseIds(eventDB);
                     foreach (Id<Course> courseId in courses) {
-                        ChangeEvent.ChangeCoursePrintArea(eventDB, courseId, newRectangle);  
+                        ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(courseId), true, newRectangle);  
                     }
                 }
                 else {
-                    ChangeEvent.ChangeCoursePrintArea(eventDB, selectionMgr.Selection.ActiveCourseId, newRectangle);
+                    ChangeEvent.ChangePrintArea(eventDB, selectionMgr.Selection.ActiveCourseDesignator, (printArea == PrintArea.OneCourse), newRectangle);
                 }
                 undoMgr.EndCommand(1127);
 
@@ -1130,6 +1176,18 @@ namespace PurplePen
         {
             undoMgr.BeginCommand(871, CommandNameText.MoveObject);
             ChangeEvent.ChangeSpecialLocations(eventDB, specialId, newLocations);
+            undoMgr.EndCommand(871);
+        }
+
+        // Move a descripion to a new location, and possibly change the number of columns also.
+        public void MoveSpecial(Id<Special> specialId, PointF[] newLocations, int numColumns)
+        {
+            undoMgr.BeginCommand(871, CommandNameText.MoveObject);
+            ChangeEvent.ChangeSpecialLocations(eventDB, specialId, newLocations);
+            int currentNumColumns = QueryEvent.GetDescriptionColumns(eventDB, specialId);
+            if (numColumns != currentNumColumns) {
+                ChangeEvent.ChangeDescriptionColumns(eventDB, specialId, numColumns);
+            }
             undoMgr.EndCommand(871);
         }
 
@@ -1398,11 +1456,32 @@ namespace PurplePen
 
                 // Change the gaps of the control.
                 undoMgr.BeginCommand(8142, CommandNameText.AddGap);
-                uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
                 gaps = ChangeEvent.AddGap(gaps, angleInRadians);
                 ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
                 undoMgr.EndCommand(8142);
             }
+        }
+
+        // Add a gap to the selection control at a given location.
+        public void AddControlGap(PointF gapLocation1, PointF gapLocation2)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
+                // Change the gaps of the control.
+                undoMgr.BeginCommand(8142, CommandNameText.AddGap);
+                ChangeEvent.AddGap(eventDB, selectionMgr.ActiveCourseView.PrintScale, selection.SelectedControl, gapLocation1, gapLocation2);
+                undoMgr.EndCommand(8142);
+            }
+        }
+
+        // Move a gap end point on a control.
+        public void MoveControlGap(Id<ControlPoint> controlId, CircleGap[] newGaps)
+        {
+            undoMgr.BeginCommand(8142, CommandNameText.MoveGap);
+            ChangeEvent.ChangeControlGaps(eventDB, controlId, selectionMgr.ActiveCourseView.PrintScale, CircleGap.SimplifyGaps(newGaps));
+            undoMgr.EndCommand(8142);
         }
 
         // Add a gap to the selected leg using two points as the end points of the gap.
@@ -1426,6 +1505,27 @@ namespace PurplePen
             }
         }
 
+        // Add a leg gap of 2mm around a center point.
+        public void AddLegGap(PointF ptCenter)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
+                Id<ControlPoint> controlId1 = selection.SelectedControl;
+                Id<ControlPoint> controlId2 = eventDB.GetCourseControl(selection.SelectedCourseControl2).control;
+
+                // Figure out the new gaps.
+                PointF ptOnPath;
+                SymPath path = QueryEvent.GetLegPath(eventDB, controlId1, controlId2);
+                path.DistanceFromPoint(ptCenter, out ptOnPath);
+                float dist = path.LengthToPoint(ptOnPath);
+                PointF pt1 = path.PointAtLength(dist - 1.0F);
+                PointF pt2 = path.PointAtLength(dist + 1.0F);
+
+                AddLegGap(pt1, pt2);
+            }
+        }
+
         // Get the command status for removing a gap.
         public CommandStatus CanRemoveGap()
         {
@@ -1434,9 +1534,9 @@ namespace PurplePen
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
                 ControlPoint control = eventDB.GetControl(selection.SelectedControl);
                 if (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Finish) {
-                    uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                    CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
 
-                    if (gaps == 0xFFFFFFFF)
+                    if (gaps == null || gaps.Length == 0)
                         return CommandStatus.Disabled;        // no gaps to remove
                     else
                         return CommandStatus.Enabled;
@@ -1485,7 +1585,7 @@ namespace PurplePen
 
                 // Change the gaps of the control.
                 undoMgr.BeginCommand(8147, CommandNameText.RemoveGap);
-                uint gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
                 gaps = ChangeEvent.RemoveGap(gaps, angleInRadians);
                 ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
                 undoMgr.EndCommand(8147);
@@ -1565,29 +1665,31 @@ namespace PurplePen
         }
 
         // Command status for changing the set of displayed courses.
-        public CommandStatus CanChangeDisplayedCourses(out Id<Course>[] displayedCourses)
+        public CommandStatus CanChangeDisplayedCourses(out CourseDesignator[] displayedCourses, out bool showAllControls)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 displayedCourses = QueryEvent.GetSpecialDisplayedCourses(eventDB, selection.SelectedSpecial);
+                showAllControls = (eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.Descriptions);
                 return CommandStatus.Enabled;
             }
             else {
                 displayedCourses = null;
+                showAllControls = false;
                 return CommandStatus.Disabled;
             }
         }
 
         // Change the set of displayed courses for the selection.
-        public void ChangeDisplayedCourses(Id<Course>[] displayedCourses)
+        public void ChangeDisplayedCourses(CourseDesignator[] displayedCourses)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
-                undoMgr.BeginCommand(852, CommandNameText.SetLegFlagging);
+                undoMgr.BeginCommand(852, CommandNameText.ChangeDisplayedCourses);
 
                 ChangeEvent.ChangeDisplayedCourses(eventDB, selection.SelectedSpecial, displayedCourses);
 
@@ -2011,7 +2113,7 @@ namespace PurplePen
                     }
 
                     undoMgr.BeginCommand(108, CommandNameText.ChangeClimb);
-                    ChangeEvent.ChangeCourseClimb(eventDB, selectionMgr.Selection.ActiveCourseId, newClimb);
+                    ChangeEvent.ChangeCourseClimb(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newClimb);
                     undoMgr.EndCommand(108);
                     break;
 
@@ -2035,16 +2137,16 @@ namespace PurplePen
                     break;
 
                 case DescriptionControl.ChangeKind.SecondaryTitle:
-                    Debug.Assert(selectionMgr.Selection.ActiveCourseId.IsNotNone);
+                    Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(106, CommandNameText.ChangeTitle);
-                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
                     undoMgr.EndCommand(106);
                     break;
 
                 case DescriptionControl.ChangeKind.CourseName:
-                    Debug.Assert(selectionMgr.Selection.ActiveCourseId.IsNotNone);
+                    Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(105, CommandNameText.ChangeCourseName);
-                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
                     undoMgr.EndCommand(105);
                     break;
 
@@ -2059,7 +2161,7 @@ namespace PurplePen
                         break;  // no change to control.
 
                     if (QueryEvent.IsCodeInUse(eventDB, (string)newValue)) {
-                        if (selectionMgr.Selection.ActiveCourseId.IsNone) {
+                        if (selectionMgr.Selection.ActiveCourseDesignator.IsAllControls) {
                             // In all controls. We can't change to a control that is in use.
                             ui.ErrorMessage(string.Format(MiscText.CodeInUse, (string) newValue));
                         }
@@ -2167,10 +2269,32 @@ namespace PurplePen
             }
         }
 
-        // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
-        public void BeginAddControlMode(ControlPointKind controlKind)
+        // Can we add a map exchange at a control?
+        public CommandStatus CanAddMapExchangeControl()
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, selectionMgr.Selection.ActiveCourseId.IsNone, controlKind));
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
+                return CommandStatus.Disabled;
+            if (eventDB.GetCourse(courseDesignator.CourseId).kind == CourseKind.Score)
+                return CommandStatus.Disabled;
+            return CommandStatus.Enabled;
+        }
+
+        // Can we add a standalong map exchange 
+        public CommandStatus CanAddMapExchangeSeparate()
+        {
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
+                return CommandStatus.Enabled;
+            if (eventDB.GetCourse(courseDesignator.CourseId).kind == CourseKind.Score)
+                return CommandStatus.Disabled;
+            return CommandStatus.Enabled;
+        }
+
+        // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
+        public void BeginAddControlMode(ControlPointKind controlKind, bool exchangeAtControl)
+        {
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).
@@ -2185,12 +2309,25 @@ namespace PurplePen
             SetCommandMode(new AddLineAreaSpecialMode(this, selectionMgr, undoMgr, eventDB, specialKind, isArea));
         }
 
+        public CommandStatus CanAddDescriptions()
+        {
+            CourseDesignator currentCourse = selectionMgr.Selection.ActiveCourseDesignator;
+
+            // All controls or a single part or a 1-part course can add descriptions. All parts of multi-part cannot.
+            if (currentCourse.IsAllControls || ! currentCourse.AllParts)
+                return CommandStatus.Enabled;
+            if (QueryEvent.CountCourseParts(eventDB, currentCourse.CourseId) == 1)
+                return CommandStatus.Enabled;
+
+            return CommandStatus.Disabled;
+        }
+
         // Start the mode to add a control description block to a course
         public void BeginAddDescriptionMode()
         {
             DescriptionKind descKind;
-            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseId, out descKind);
-            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseId, description, descKind)); 
+            DescriptionLine[] description = CourseFormatter.GetCourseDescription(eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator, out descKind);
+            SetCommandMode(new AddDescriptionMode(this, undoMgr, selectionMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator, description, descKind)); 
         }
 
         // Start the mode to add text to a course
@@ -2322,38 +2459,38 @@ namespace PurplePen
                 ++changeNum;
         }
 
-        public void LeftButtonDrag(PointF location, float pixelSize)
+        public void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonDrag(location, pixelSize, ref displayUpdateNeeded); 
+            currentMode.LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonDrag(PointF location, float pixelSize)
+        public void RightButtonDrag(PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonDrag(location, pixelSize, ref displayUpdateNeeded); 
+            currentMode.RightButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonEndDrag(PointF location, float pixelSize)
+        public void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonEndDrag(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.LeftButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonEndDrag(PointF location, float pixelSize)
+        public void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonEndDrag(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.RightButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
@@ -2376,11 +2513,19 @@ namespace PurplePen
                 ++changeNum;
         }
 
+        public void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd)
+        {
+            ui.InitiateMapDragging(initialPos, buttonEnd);
+        }
 
         // Get the shape that the mouse cursor should be in.
         public Cursor GetMouseCursor(PointF location, float pixelSize)
         { return currentMode.GetMouseCursor(location, pixelSize); }
 
+        public bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        {
+            return currentMode.GetToolTip(location, pixelSize, out tipText, out tipTitle);
+        }
 
         // Get the event database. In most, if not all cases, the UI should NOT interact
         // directly with the event database. This is primarily for test support purposes.
@@ -2469,12 +2614,12 @@ namespace PurplePen
         void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // The mouse is being dragged
-        void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag is ending (mouse released)
-        void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag was canceled (mouse taken away)
         void LeftButtonCancelDrag(ref bool displayUpdateNeeded);
@@ -2488,6 +2633,9 @@ namespace PurplePen
 
         // Get shape of the mouse cursor
         Cursor GetMouseCursor(PointF location, float pixelSize);
+
+        // Get tool tip to be displayed on a hover.
+        bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitleText);
     }
 
     // Describes the interface to the user interface. Allows the UI
@@ -2515,6 +2663,9 @@ namespace PurplePen
 
         // Find a missing map file.
         bool FindMissingMapFile(string missingMapFile);
+
+        // Initiate map dragging.
+        void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd);
     }
 
     // Indicates the status of a contextual command
@@ -2524,6 +2675,17 @@ namespace PurplePen
         Disabled,              // Show command as disabled
         Enabled               // Show the command as enabled.
     }
+
+    static class CommandStatusExtensions
+    {
+        public static CommandStatus Combine(this CommandStatus cs1, CommandStatus cs2)
+        {
+            return (CommandStatus) Math.Max((int) cs1, (int) cs2);
+        }
+    }
+
+    enum PrintArea { AllCourses, OneCourse, OnePart }
+
 
     // Indicates the status of undo.
     struct UndoStatus

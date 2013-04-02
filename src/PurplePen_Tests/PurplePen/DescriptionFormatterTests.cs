@@ -54,42 +54,60 @@ namespace PurplePen.Tests
             EventDB eventDB = new EventDB(undomgr);
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             CourseView courseView;
+            DescriptionFormatter descFormatter;
             DescriptionLine[] description;
 
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
-                description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+                courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+                descFormatter = new DescriptionFormatter(courseView, symbolDB);
+                description = descFormatter.CreateDescription(false);
                 DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
                 Console.WriteLine();
             }
 
-            courseView = CourseView.CreateAllControlsView(eventDB);
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
+            descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            description = descFormatter.CreateDescription(false);
             DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
 
         }
 
-        [TestMethod]
-        public void NormalCourseFormatter()
+        private void TestCourseFormatter(string testFileName, Id<Course> courseId, bool createKey, string expected)
+        {
+            TestCourseFormatter(testFileName, new CourseDesignator(courseId), createKey, expected);
+        }
+
+        // Test the course description formatter with a given file and course
+        private void TestCourseFormatter(string testFileName, CourseDesignator courseDesignator, bool createKey, string expected)
         {
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             StringWriter writer = new StringWriter();
-            string actual, expected;
+            string actual;
 
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
+            eventDB.Load(TestUtil.GetTestFile(testFileName));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView;
+            courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(createKey);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
-            expected =
+
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestMethod]
+        public void NormalCourseFormatter()
+        {
+            TestCourseFormatter("descformatter\\sampleevent1.coursescribe", CourseId(4), false, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       |SampleCourse4    |4.7 km           |175 m      |   [Length 4.7 km, climb 175 m]
 (  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
@@ -100,28 +118,13 @@ namespace PurplePen.Tests
 (  5) |    3|   GO| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
 ( 18) |    4|  303|     |  1.3|     |    4|     |     |   [Reentrant, 4m deep]
 (  6) |                 14.2: 1420 m                  |   [Navigate 1420 m to finish funnel]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
         public void ScoreCourseFormatter()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\sampleevent1.coursescribe", CourseId(5), false, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       | Score more!                                   |   [Score more!]
       |Score 4          |155 points                   |   [155 points]
@@ -137,28 +140,13 @@ namespace PurplePen.Tests
 ( 16) |   20|  301|     | 1.14|  8.4|  3.0|     |     |   [Overgrown pit, 3m deep]
 ( 18) |   20|  303|     |  1.3|     |    4|     |     |   [Reentrant, 4m deep]
 ( 19) |   30|  304| 0.1S|     |  8.5|     |     |     |   [S ]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
         public void ScoreCourseFormatter2()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\sampleevent1.coursescribe", CourseId(3), false, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       |Rambo            |4 controls                   |   [4 controls]
 (  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
@@ -166,37 +154,7 @@ namespace PurplePen.Tests
 ( 11) |     |  191|     |  5.2|  5.2| 10.1|11.15|     |   [Between path crossings]
 ( 16) |     |  301|     | 1.14|  8.4|  3.0|     |     |   [Overgrown pit, 3m deep]
 (  5) |     |   GO| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
-";
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void ScoreCourseFormatter3()
-        {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
-@"      | Sample Event 1                                |   [Sample Event 1]
-      |Rambo            |4 controls                   |   [4 controls]
-(  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
-(  4) |     |   32|     |  3.7|     |     |     | 12.1|   [very marshy spot]
-( 11) |     |  191|     |  5.2|  5.2| 10.1|11.15|     |   [Between path crossings]
-( 16) |     |  301|     | 1.14|  8.4|  3.0|     |     |   [Overgrown pit, 3m deep]
-(  5) |     |   GO| 0.1N|  5.5|  5.2| 10.1|11.1N| 12.3|   [N side of N power line and path crossing (radio)]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
@@ -210,8 +168,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent3.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -246,8 +204,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent4.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -283,8 +241,8 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent5.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(5), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -311,45 +269,16 @@ namespace PurplePen.Tests
         [TestMethod]
         public void EmptyCourseFormatter()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(2), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\sampleevent1.coursescribe", CourseId(2), false, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       |Yellow           |0.0 km           |           |   [Length 0.0 km]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
         public void AllControlsFormatter()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateAllControlsView(eventDB);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\sampleevent1.coursescribe", Id<Course>.None, false,
 @"      | Sample Event 1                                |   [Sample Event 1]
       |All controls     |17 controls                  |   [17 controls]
 (  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
@@ -376,29 +305,13 @@ namespace PurplePen.Tests
 (  3) |                 13.3:                         |   [Mandatory crossing point]
 ( 15) |                 13.3:                         |   [Mandatory crossing point]
 ( 22) |                 13.4:                         |   [Mandatory passage]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
         public void SpecialLegsFormatter()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\speciallegs.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(1), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            //Console.WriteLine(actual);
-            expected =
+            TestCourseFormatter("descformatter\\speciallegs.coursescribe", CourseId(1), false, 
 @"      | SpecialLegs                                   |   [SpecialLegs]
       |Leggy            |2.3 km           |           |   [Length 2.3 km]
 (  1) |start|     |     |     |     |     |     |     |   [Start: ]
@@ -409,8 +322,7 @@ namespace PurplePen.Tests
 (  4) |    3|   33|     |     |     |     |     |     |   []
 (  5) |    4|   34|     |     |     |     |     |     |   []
 (  6) |                 14.3: 410 m                   |   [Navigate 410 m to finish]
-";
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
@@ -425,8 +337,9 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(4), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(4)));
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(false);
             DescriptionFormatter.ClearTextAndSymbols(description);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -449,21 +362,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CustomSymbolKey()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent2.coursescribe"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, true);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\sampleevent2.coursescribe", CourseId(6), true, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       |Green Y          |9.4 km           |           |   [Length 9.4 km]
 (  1) |start|     |     |  2.8|  8.5|     |     |     |   [Start: open bare rock]
@@ -481,29 +380,13 @@ namespace PurplePen.Tests
 (  6) |                 14.2: 350 m                   |   [Navigate 350 m to finish funnel]
       |12.1             |medical                      |
       |6.1              |man-made object              |
-";
-
-            Assert.AreEqual(expected, actual);
+");
         }
 
         [TestMethod]
         public void DescriptionText()
         {
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            StringWriter writer = new StringWriter();
-            string actual, expected;
-
-            eventDB.Load(TestUtil.GetTestFile("descformatter\\desctext.ppen"));
-            eventDB.Validate();
-
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(6), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, true);
-
-            DescriptionFormatter.DumpDescription(symbolDB, description, writer);
-            actual = writer.ToString();
-            expected =
+            TestCourseFormatter("descformatter\\desctext.ppen", CourseId(6), true, 
 @"      | Sample Event 1                                |   [Sample Event 1]
       |Green Y          |9.5 km           |           |   [Length 9.5 km]
 (  1) | Get ready to go!                              |   [Get ready to go!]
@@ -527,12 +410,142 @@ namespace PurplePen.Tests
 ( 10) |   11|  190|     |  5.1|  5.5| 10.1|11.1N|     |   [N side of road and power line crossing]
 (  6) |                 14.2: 350 m                   |   [Navigate 350 m to finish funnel]
 (  6) | All done!                                     |   [All done!]
-";
-
-            Assert.AreEqual(expected, actual);
+");
         }
 
+        [TestMethod]
+        public void MapExchangeFullDescription()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", CourseId(6), true, 
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+(  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
+( 59) |    1|   59|     |  4.5|     |     |11.1N|     |   [N side of thicket]
+( 51) |    2|   51|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 46) |    3|   46|     | 1.12|     |     |11.1NW|     |   [NW side of depression]
+( 47) |    4|   47|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 48) |    5|   48|     |  1.9|     |     |11.3NE|     |   [NE part of hill]
+( 50) |    6|   50|     | 1.12|     |     |11.3NW|     |   [NW part of depression]
+( 56) |    7|   56| 0.1W|  4.5|     |     |11.1E|     |   [E side of W thicket]
+( 57) |    8|   57|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 79) |    9|   79|     |  4.8|     |     |11.2W|     |   [W edge of copse]
+( 79) |                 13.5: 210 m                   |   [Follow tapes 210 m to map exchange]
+( 35) |start|     | 0.1E|  4.5|     |     |11.2E|     |   [Start: E edge of E thicket]
+( 37) |   10|   37|     |  4.5|     |     |11.6NW|     |   [NW tip of thicket]
+( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
+( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
+( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
+( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]
+( 38) |   17|   38|     |  4.3|     |     |11.5E|     |   [E outside corner of forest corner]
+(  2) |                 14.3: 60 m                    |   [Navigate 60 m to finish]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart1()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 0), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+(  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
+( 59) |    1|   59|     |  4.5|     |     |11.1N|     |   [N side of thicket]
+( 51) |    2|   51|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 46) |    3|   46|     | 1.12|     |     |11.1NW|     |   [NW side of depression]
+( 47) |    4|   47|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 48) |    5|   48|     |  1.9|     |     |11.3NE|     |   [NE part of hill]
+( 50) |    6|   50|     | 1.12|     |     |11.3NW|     |   [NW part of depression]
+( 56) |    7|   56| 0.1W|  4.5|     |     |11.1E|     |   [E side of W thicket]
+( 57) |    8|   57|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 79) |    9|   79|     |  4.8|     |     |11.2W|     |   [W edge of copse]
+( 79) |                 13.5: 210 m                   |   [Follow tapes 210 m to map exchange]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart2()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 1), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 35) |start|     | 0.1E|  4.5|     |     |11.2E|     |   [Start: E edge of E thicket]
+( 37) |   10|   37|     |  4.5|     |     |11.6NW|     |   [NW tip of thicket]
+( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
+( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart3()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 2), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
+( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangePart4()
+        {
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 3), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
+( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
+( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]
+( 38) |   17|   38|     |  4.3|     |     |11.5E|     |   [E outside corner of forest corner]
+(  2) |                 14.3: 60 m                    |   [Navigate 60 m to finish]
+");
+        }
+
+        [TestMethod]
+        public void MapExchangeWithFlaggedLegsFullDescription()
+        {
+            TestCourseFormatter("descformatter\\mapexchange2.ppen", CourseId(6), true,
+@"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
+      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+(  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
+(  1) |                 13.2: 190 m                   |   [Follow tapes 190 m between controls]
+( 59) |    1|   59|     |  4.5|     |     |11.1N|     |   [N side of thicket]
+( 51) |    2|   51|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 51) |                 13.2: 330 m                   |   [Follow tapes 330 m between controls]
+( 46) |    3|   46|     | 1.12|     |     |11.1NW|     |   [NW side of depression]
+( 47) |    4|   47|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 48) |    5|   48|     |  1.9|     |     |11.3NE|     |   [NE part of hill]
+( 50) |    6|   50|     | 1.12|     |     |11.3NW|     |   [NW part of depression]
+( 56) |    7|   56| 0.1W|  4.5|     |     |11.1E|     |   [E side of W thicket]
+( 57) |    8|   57|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
+( 79) |    9|   79|     |  4.8|     |     |11.2W|     |   [W edge of copse]
+( 79) |                 13.5: 210 m                   |   [Follow tapes 210 m to map exchange]
+( 35) |start|     | 0.1E|  4.5|     |     |11.2E|     |   [Start: E edge of E thicket]
+( 35) |                 13.2: 130 m                   |   [Follow tapes 130 m between controls]
+( 37) |   10|   37|     |  4.5|     |     |11.6NW|     |   [NW tip of thicket]
+( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
+( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
+( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
+( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 43) |                 13.2: 400 m                   |   [Follow tapes 400 m between controls]
+( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
+( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 54) |                 13.2: 260 m                   |   [Follow tapes 260 m between controls]
+( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
+( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]
+( 38) |   17|   38|     |  4.3|     |     |11.5E|     |   [E outside corner of forest corner]
+(  2) |                 14.1: 80 m                    |   [Follow tapes 80 m to finish]
+");
+        }
     }
+
+
 }
+
 
 #endif //TEST

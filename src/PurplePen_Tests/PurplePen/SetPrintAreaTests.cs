@@ -82,7 +82,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
             Cursor cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeAll, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + delta, ptClick.Y), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X + delta, ptClick.Y), ptClick, 0.3F);
             currentRect.Offset(delta, 0);
 
             // 2. Move the bottom edge up or down.
@@ -93,7 +93,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
             cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNS, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X, ptClick.Y + delta), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X, ptClick.Y + delta), ptClick, 0.3F);
             currentRect.Height = currentRect.Height - delta;
             currentRect.Y = currentRect.Y + delta;
 
@@ -106,42 +106,42 @@ namespace PurplePen.Tests
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
             cursor = controller.GetMouseCursor(ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNESW, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), 0.3F);
+            controller.LeftButtonEndDrag(new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), ptClick, 0.3F);
             currentRect = RectangleF.FromLTRB(currentRect.Left, currentRect.Top, currentRect.Right + deltaX, currentRect.Bottom + deltaY);
 
             TestUtil.AssertEqualRect(currentRect, finalRect, 0.01, "rectangle moving algorithm");
         }
 
-        void SetPrintArea(int tabIndex, RectangleF expectedCurrent, RectangleF newPrintArea, bool allCourses)
+        void SetPrintArea(int tabIndex, RectangleF expectedCurrent, RectangleF newPrintArea, PrintArea printArea)
         {
             Dictionary<int, RectangleF> printAreas = new Dictionary<int, RectangleF>();
 
             // Remember print areas for all tabs.
             for (int tab = 0; tab < controller.GetTabNames().Length; ++tab) {
                 controller.SelectTab(tab);
-                printAreas.Add(tab, controller.GetCurrentPrintArea(false));
+                printAreas.Add(tab, controller.GetCurrentPrintArea(PrintArea.OneCourse));
             }
 
             controller.SelectTab(tabIndex);
 
-            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(allCourses);
+            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(printArea);
 
             TestUtil.AssertEqualRect(expectedCurrent, rectangleCurrent, 0.1, "initial print rectangle");
 
-            controller.BeginSetPrintArea(allCourses, null);
+            controller.BeginSetPrintArea(printArea, null);
 
             ChangeRectangle(expectedCurrent, newPrintArea);
 
-            controller.EndSetPrintArea(allCourses);
+            controller.EndSetPrintArea(printArea);
 
-            rectangleCurrent = controller.GetCurrentPrintArea(allCourses);
+            rectangleCurrent = controller.GetCurrentPrintArea(printArea);
             TestUtil.AssertEqualRect(newPrintArea, rectangleCurrent, 0.1, "final print rectangle");
 
             // Check all other tabs.
             for (int tab = 0; tab < controller.GetTabNames().Length; ++tab) {
                 controller.SelectTab(tab);
-                RectangleF rect = controller.GetCurrentPrintArea(false);
-                if (allCourses || tab == tabIndex)
+                RectangleF rect = controller.GetCurrentPrintArea(PrintArea.OneCourse);
+                if (printArea == PrintArea.AllCourses || tab == tabIndex)
                     TestUtil.AssertEqualRect(newPrintArea, rect, 0.1, "final print rectangle");
                 else 
                     TestUtil.AssertEqualRect(printAreas[tab], rect, 0.1, "original print rectangle  for that tab");
@@ -155,12 +155,12 @@ namespace PurplePen.Tests
             RectangleF currentPrintArea = new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
-            SetPrintArea(1, currentPrintArea, newPrintArea, false);
+            SetPrintArea(1, currentPrintArea, newPrintArea, PrintArea.OneCourse);
 
             currentPrintArea = newPrintArea;
             newPrintArea = RectangleF.FromLTRB(-25F, -27.5F, 100F, 35F);
 
-            SetPrintArea(1, currentPrintArea, newPrintArea, false);
+            SetPrintArea(1, currentPrintArea, newPrintArea, PrintArea.OneCourse);
         }
 	
         [TestMethod]
@@ -170,12 +170,12 @@ namespace PurplePen.Tests
             RectangleF currentPrintArea = RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F);
             RectangleF newPrintArea = RectangleF.FromLTRB(32.1F, -20F, 70F, 30F);
 
-            SetPrintArea(2, currentPrintArea, newPrintArea, false);
+            SetPrintArea(2, currentPrintArea, newPrintArea, PrintArea.OneCourse);
 
             currentPrintArea = newPrintArea;
             newPrintArea = RectangleF.FromLTRB(-25F, -27.5F, 100F, 35F);
 
-            SetPrintArea(2, currentPrintArea, newPrintArea, false);
+            SetPrintArea(2, currentPrintArea, newPrintArea, PrintArea.OneCourse);
         }
 
         [TestMethod]
@@ -185,12 +185,12 @@ namespace PurplePen.Tests
             RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, 20F, 70F, 130F);
 
-            SetPrintArea(0, currentPrintArea, newPrintArea, false);
+            SetPrintArea(0, currentPrintArea, newPrintArea, PrintArea.OneCourse);
 
             currentPrintArea = newPrintArea;
             newPrintArea = RectangleF.FromLTRB(-25F, -27.5F, 100F, 35F);
 
-            SetPrintArea(0, currentPrintArea, newPrintArea, false);
+            SetPrintArea(0, currentPrintArea, newPrintArea, PrintArea.OneCourse);
         }
 
         [TestMethod]
@@ -200,12 +200,12 @@ namespace PurplePen.Tests
             RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
-            SetPrintArea(1, currentPrintArea, newPrintArea, true);
+            SetPrintArea(1, currentPrintArea, newPrintArea, PrintArea.AllCourses);
 
             currentPrintArea = newPrintArea;
             newPrintArea = RectangleF.FromLTRB(-25F, -27.5F, 100F, 35F);
 
-            SetPrintArea(1, currentPrintArea, newPrintArea, true);
+            SetPrintArea(1, currentPrintArea, newPrintArea, PrintArea.AllCourses);
         }
 
         void DumpMapFile(string mapFileName, string outputDump)
@@ -250,9 +250,9 @@ namespace PurplePen.Tests
         {
             Setup("modes\\printarea.ppen");
 
-            SetPrintArea(1, new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), false);
-            SetPrintArea(2, RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F), RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F), false);
-            SetPrintArea(0, RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), false);
+            SetPrintArea(1, new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), PrintArea.OneCourse);
+            SetPrintArea(2, RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F), RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F), PrintArea.OneCourse);
+            SetPrintArea(0, RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), PrintArea.OneCourse);
 
             OcadCreationSettings settings = new OcadCreationSettings();
             settings.mapDirectory = settings.fileDirectory = false;

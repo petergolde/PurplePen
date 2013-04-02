@@ -67,20 +67,34 @@ namespace PurplePen
             public Id<Leg>[] legId;                 // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
         };
-            
 
+        // A description that is being viewed.
+        public class DescriptionView
+        {
+            public readonly Id<Special> SpecialId;
+            public readonly CourseDesignator CourseDesignator;
+
+            public DescriptionView(Id<Special> specialId, CourseDesignator courseDesignator)
+            {
+                this.SpecialId = specialId;
+                this.CourseDesignator = courseDesignator;
+            }
+        }
+            
         private EventDB eventDB;
         private string courseName;
-        private Id<Course> courseId;
+        private CourseDesignator courseDesignator;
 
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
+        private readonly List<DescriptionView> descriptionViews = new List<DescriptionView>();
 
         private int scoreColumn;                // column to put score into.
 
         private int normalControlCount;         // number of normal controls.
         private float totalPoints;              // total points.
         private float totalLength;              // total length.
+        private float partLength;
         private float totalClimb;
 
         private float mapScale;                // scale of map
@@ -94,19 +108,29 @@ namespace PurplePen
             }
         }
 
-        // All the specials on this course.
+        // All the specials on this course, not include description blocks
         public List<Id<Special>> SpecialIds
         {
             get { return specialIds; }
+        }
+
+        public List<DescriptionView> DescriptionViews
+        {
+            get { return descriptionViews; }
         }
 
         public EventDB EventDB {
             get { return eventDB; }
         }
 
+        public CourseDesignator CourseDesignator
+        {
+            get { return courseDesignator; }
+        }
+
         // Get the ID of the Course in the event DB. Returns None for an All Controls view.
         public Id<Course> BaseCourseId {
-            get { return courseId; }
+            get { return courseDesignator.CourseId; }
         }
 
         // Get the kind of the course view.
@@ -114,10 +138,10 @@ namespace PurplePen
         {
             get
             {
-                if (courseId.IsNone)
+                if (courseDesignator.IsAllControls)
                     return CourseViewKind.AllControls;
                 else {
-                    Course course = eventDB.GetCourse(courseId);
+                    Course course = eventDB.GetCourse(courseDesignator.CourseId);
                     if (course.kind == CourseKind.Score)
                         return CourseViewKind.Score;
                     else if (course.kind == CourseKind.Normal)
@@ -132,10 +156,10 @@ namespace PurplePen
         // Get the label kind to use.
         public ControlLabelKind ControlLabelKind {
             get {
-                if (courseId.IsNone)
+                if (courseDesignator.IsAllControls)
                     return ControlLabelKind.Code;
                 else
-                    return eventDB.GetCourse(courseId).labelKind;
+                    return eventDB.GetCourse(courseDesignator.CourseId).labelKind;
             }
         }
 
@@ -144,13 +168,24 @@ namespace PurplePen
             get { return courseName; }
         }
 
+        // If multi-part course, length of all parts
         public float TotalLength {
             get { 
                 return totalLength;
             }
         }
 
-        public float TotalScore {
+        // If multi-part course, length of this part only
+        public float PartLength
+        {
+            get
+            {
+                return partLength;
+            }
+        }
+
+        public float TotalScore
+        {
             get
             {
                 return totalPoints;
@@ -165,7 +200,7 @@ namespace PurplePen
             }
         }
 
-        public float TotalNormalControls
+        public int TotalNormalControls
         {
             get
             {
@@ -242,17 +277,17 @@ namespace PurplePen
             return bounds;
         }
 
-        private CourseView(EventDB eventDB, Id<Course> courseId)
+        private CourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             this.eventDB = eventDB;
-            this.courseId = courseId;
+            this.courseDesignator = courseDesignator;
         }
 
         // Get the map and print scales.
         private void GetScales()
         {
             mapScale = eventDB.GetEvent().mapScale;
-            printScale = QueryEvent.GetPrintScale(eventDB, courseId);
+            printScale = QueryEvent.GetPrintScale(eventDB, courseDesignator.CourseId);
         }
 
 
@@ -297,12 +332,12 @@ namespace PurplePen
         {
             totalPoints = 0;
             normalControlCount = 0;
-            totalLength = 0;
+            partLength = 0;
 
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
                 totalClimb = -1;
             else
-                totalClimb = eventDB.GetCourse(courseId).climb;
+                totalClimb = eventDB.GetCourse(courseDesignator.CourseId).climb;
 
             for (int i = 0; i < controlViews.Count; ++i) {
                 ControlView controlView = controlViews[i];
@@ -322,7 +357,15 @@ namespace PurplePen
 
                 // Always use the first leg for split controls.
                 if (controlView.legTo != null && controlView.legTo.Length > 0)
-                    totalLength += controlView.legLength[0];
+                    partLength += controlView.legLength[0];
+            }
+
+            // Get the total length from another course view, if this is just a partial course.
+            if (courseDesignator.AllParts || courseDesignator.IsAllControls)
+                totalLength = partLength;
+            else {
+                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false, false);
+                totalLength = viewEntireCourse.TotalLength;
             }
         }
 
@@ -336,12 +379,26 @@ namespace PurplePen
 
         // Add the appropriate specials for the given course to the course view.
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
-        private void AddSpecials(Id<Course> courseId, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        private void AddSpecials(CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
+            bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && (QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) > 1);
+
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
-                if (ShouldAddSpecial(eventDB.GetSpecial(specialId).kind, addNonDescriptionSpecials, addDescriptionSpecials)) {
-                    if (QueryEvent.CourseContainsSpecial(eventDB, courseId, specialId))
-                        specialIds.Add(specialId);
+                SpecialKind specialKind = eventDB.GetSpecial(specialId).kind;
+
+                if (ShouldAddSpecial(specialKind, addNonDescriptionSpecials, addDescriptionSpecials)) {
+                    if (specialKind == SpecialKind.Descriptions) {
+                        // Descriptions are added differently. It's not entirely clear the best way to handle descriptions
+                        // for all-parts of a multi-part course. For now, we don't put any descriptions on.
+                        if (!multiPart) {
+                            if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
+                                descriptionViews.Add(new DescriptionView(specialId, courseDesignator));
+                        }
+                    }
+                    else {
+                        if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
+                            specialIds.Add(specialId);
+                    }
                 }
             }
         }
@@ -358,26 +415,29 @@ namespace PurplePen
 
         //  -----------  Static methods to create a new CourseView.  -----------------
 
-        // Create a normal course view -- the standard view in order.
-        public static CourseView CreateCourseView(EventDB eventDB, Id<Course> courseId, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        // Create a normal course view -- the standard view in order, from start control to finish control. courseId may NOT be None.
+        private static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
-            Course course = eventDB.GetCourse(courseId);
+            Debug.Assert(! courseDesignator.IsAllControls);
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
             CourseView courseView;
             if (course.kind == CourseKind.Score) 
-                courseView = CreateScoreCourseView(eventDB, courseId);
-            else if (course.kind == CourseKind.Normal)
-                courseView = CreateStandardCourseView(eventDB, courseId);
+                courseView = CreateScoreCourseView(eventDB, courseDesignator);
+            else if (course.kind == CourseKind.Normal) {
+                courseView = CreateStandardCourseView(eventDB, courseDesignator);
+            }
             else {
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseId, addNonDescriptionSpecials, addDescriptionSpecials);
+            courseView.AddSpecials(courseDesignator, addNonDescriptionSpecials, addDescriptionSpecials);
 
             return courseView;
         }
 
         // Create the All Controls view -- show all controls, sorted.
-        public static CourseView CreateAllControlsView(EventDB eventDB)
+        private static CourseView CreateAllControlsView(EventDB eventDB)
         {
             return CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
         }
@@ -385,9 +445,9 @@ namespace PurplePen
         // Create an filtered All Controls view -- show controls from the control collection, but only includes some.
         // excludedCourses contains an array of course ids to excluded from the contgrols.
         // kindFilter, if non-null, limits the controls to this kind of controls.
-        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, Id<Course>[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
+        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, CourseDesignator[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
         {
-            CourseView courseView = new CourseView(eventDB, Id<Course>.None);
+            CourseView courseView = new CourseView(eventDB, CourseDesignator.AllControls);
 
             courseView.courseName = MiscText.AllControls;
             courseView.scoreColumn = -1;
@@ -400,8 +460,8 @@ namespace PurplePen
 
                 if (excludedCourses != null) {
                     // Filter excluded courses.
-                    foreach (Id<Course> excludedCourseId in excludedCourses) {
-                        if (QueryEvent.CourseUsesControl(eventDB, excludedCourseId, controlId))
+                    foreach (CourseDesignator excludedCourseDesignator in excludedCourses) {
+                        if (QueryEvent.CourseUsesControl(eventDB, excludedCourseDesignator, controlId))
                             goto SKIP;
                     }
                 }
@@ -435,12 +495,12 @@ namespace PurplePen
 
             if (addSpecials) {
                 // Add every special, regardless of courses it is on, except for descriptions. Descriptions are added to all
-                // controls only if they appear in all courses (otherwise we'd see a ton of descriptions on all controls), and if "addDescription" is true
+                // controls only if they appear in all courses (or specifically for the all controls view), and if "addDescription" is true
                 foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                     Special special = eventDB.GetSpecial(specialId);
                     if (special.kind == SpecialKind.Descriptions) {
-                        if (addDescription && special.allCourses)
-                            courseView.specialIds.Add(specialId);
+                        if (addDescription && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                            courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
                     }
                     else
                         courseView.specialIds.Add(specialId);
@@ -450,39 +510,79 @@ namespace PurplePen
             return courseView;
         }
 
-        // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
-        public static CourseView CreatePrintingCourseView(EventDB eventDB, Id<Course> courseId)
+        // Create a course view for normal viewing.
+        public static CourseView CreateViewingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
+                return CourseView.CreateAllControlsView(eventDB);
+            else
+                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
+        }
+
+        // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
+        public static CourseView CreatePrintingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseId, true, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
         }
 
         // Create the course view for positioning the print area.
-        public static CourseView CreatePositioningCourseView(EventDB eventDB, Id<Course> courseId)
+        public static CourseView CreatePositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
                 return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
             else
-                return CourseView.CreateCourseView(eventDB, courseId, false, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
+        }
+
+        // Create the course view for positioning the print area for just controls.
+        public static CourseView CreateControlsOnlyPositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+            else
+                return CourseView.CreateCourseView(eventDB, courseDesignator, false, false);
         }
 
         // Create the standard view onto a regular course, without variations.
-        private static CourseView CreateStandardCourseView(EventDB eventDB, Id<Course> courseId)
+        private static CourseView CreateStandardCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Course course = eventDB.GetCourse(courseId);
-            CourseView courseView = new CourseView(eventDB, courseId);
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+
+            // Get sub-part of the course. firstCourseControls is the first control to process, lastCourseControl is the last one to 
+            // process, or None if process to the end of the course.
+            Id<CourseControl> firstCourseControl, lastCourseControl;
+            if (courseDesignator.AllParts) {
+                firstCourseControl = course.firstCourseControl;
+                lastCourseControl = Id<CourseControl>.None;
+            }
+            else {
+                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator, out firstCourseControl, out lastCourseControl);
+            }
+            
+            CourseView courseView = new CourseView(eventDB, courseDesignator);
             Id<CourseControl> courseControlId;
             int ordinal;
 
             courseView.courseName = course.name;
             courseView.scoreColumn = -1;
 
+            ordinal = 1;
             courseControlId = course.firstCourseControl;
             ordinal = course.firstControlOrdinal;
 
-            while (courseControlId.IsNotNone) {
+            // Increase the ordinal value for each normal control before the first one we're considering.
+            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { // also break loop at lastCourseControlId
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                ControlPoint control = eventDB.GetControl(courseControl.control);
+                if (control.kind == ControlPointKind.Normal)
+                    ++ordinal;
+                courseControlId = courseControl.nextCourseControl;
+            }
+
+            while (courseControlId.IsNotNone) { // also break loop at lastCourseControlId
                 ControlView controlView = new ControlView();
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
@@ -493,7 +593,7 @@ namespace PurplePen
                 // Set the ordinal number.
                 if (control.kind == ControlPointKind.Normal)
                     controlView.ordinal = ordinal++;
-                else if (control.kind == ControlPointKind.Start)
+                else if (control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange)
                     controlView.ordinal = 0;
                 else
                     controlView.ordinal = -1;
@@ -503,12 +603,16 @@ namespace PurplePen
 
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
-                if (courseControl.nextCourseControl.IsNotNone) {
+                if (courseControl.nextCourseControl.IsNotNone && courseControlId != lastCourseControl) {
                     controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
                 }
 
-                // Move to the next control.
+                // Add the controlview.
                 courseView.controlViews.Add(controlView);
+
+                // Move to the next control.
+                if (courseControlId == lastCourseControl)
+                    break;
                 courseControlId = courseControl.nextCourseControl;
             }
 
@@ -517,10 +621,10 @@ namespace PurplePen
         }
 
         // Create the normal view onto a score course
-        private static CourseView CreateScoreCourseView(EventDB eventDB, Id<Course> courseId)
+        private static CourseView CreateScoreCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Course course = eventDB.GetCourse(courseId);
-            CourseView courseView = new CourseView(eventDB, courseId);
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+            CourseView courseView = new CourseView(eventDB, courseDesignator);
             Id<CourseControl> courseControlId;
 
             courseView.courseName = course.name;
@@ -579,4 +683,100 @@ namespace PurplePen
         }
     }
 
+    // A CourseDesignator indicates a course or part of a course for creating a course view.
+    // It describes the current view.
+    public class CourseDesignator: ICloneable
+    {
+        private Id<Course> courseId;   // ID of the course, none for all controls.
+        private int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is CourseDesignator))
+                return false;
+            CourseDesignator other = (CourseDesignator) obj;
+
+            return (courseId == other.courseId && part == other.part);
+        }
+
+        public static bool operator ==(CourseDesignator cd1, CourseDesignator cd2)
+        {
+            if ((object)cd1 == null)
+                return ((object)cd2 == null);
+            else
+                return cd1.Equals(cd2);
+        }
+
+        public static bool operator !=(CourseDesignator cd1, CourseDesignator cd2)
+        {
+            return !(cd1 == cd2);
+        }
+
+        public override int GetHashCode()
+        {
+            return courseId.GetHashCode() ^ part.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            if (AllParts)
+                return string.Format("Course {0}", courseId.id);
+            else
+                return string.Format("Course {0}, Part {1}", courseId.id, part);
+        }
+
+        public static CourseDesignator AllControls = new CourseDesignator(Id<Course>.None);
+
+        // Create a course designator for all parts
+        public CourseDesignator(Id<Course> course)
+        {
+            this.courseId = course;
+            this.part = -1;
+        }
+
+        // Create a course designator for a part
+        public CourseDesignator(Id<Course> course, int part)
+        {
+            Debug.Assert(part >= 0);
+            Debug.Assert(course.IsNotNone);
+            this.courseId = course;
+            this.part = part;
+        }
+
+        // Accessors.
+        public bool IsAllControls
+        {
+            get { return courseId.IsNone; }
+        }
+
+        public bool IsNotAllControls
+        {
+            get { return !IsAllControls; }
+        }
+
+        public Id<Course> CourseId
+        {
+            get { return courseId; }
+        }
+
+        public bool AllParts
+        {
+            get { return part == -1; }
+        }
+
+        public int Part
+        {
+            get { return part; }
+        }
+
+        public CourseDesignator Clone()
+        {
+            return (CourseDesignator) base.MemberwiseClone();
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
+        }
+    }
 }

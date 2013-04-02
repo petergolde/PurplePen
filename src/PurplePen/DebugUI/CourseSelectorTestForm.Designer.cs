@@ -61,28 +61,17 @@ namespace PurplePen.DebugUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.courseSelector1 = new PurplePen.CourseSelector();
             this.button1 = new System.Windows.Forms.Button();
             this.outputTextBox = new System.Windows.Forms.TextBox();
+            this.courseSelector1 = new PurplePen.CourseSelector();
             this.SuspendLayout();
-            // 
-            // courseSelector1
-            // 
-            this.courseSelector1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.courseSelector1.Location = new System.Drawing.Point(12, 12);
-            this.courseSelector1.Name = "courseSelector1";
-            this.courseSelector1.SelectedCourses = new PurplePen.Id<PurplePen.Course>[0];
-            this.courseSelector1.ShowAllControls = false;
-            this.courseSelector1.Size = new System.Drawing.Size(180, 249);
-            this.courseSelector1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(233, 23);
+            this.button1.Location = new System.Drawing.Point(3728, 170);
+            this.button1.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 23);
+            this.button1.Size = new System.Drawing.Size(2272, 170);
             this.button1.TabIndex = 1;
             this.button1.Text = "GetCheckedIds";
             this.button1.UseVisualStyleBackColor = true;
@@ -90,20 +79,33 @@ namespace PurplePen.DebugUI
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(235, 67);
+            this.outputTextBox.Location = new System.Drawing.Point(3760, 495);
+            this.outputTextBox.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
-            this.outputTextBox.Size = new System.Drawing.Size(139, 164);
+            this.outputTextBox.Size = new System.Drawing.Size(2164, 1186);
             this.outputTextBox.TabIndex = 2;
+            // 
+            // courseSelector1
+            // 
+            this.courseSelector1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.courseSelector1.Location = new System.Drawing.Point(0, 0);
+            this.courseSelector1.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            this.courseSelector1.Name = "courseSelector1";
+            this.courseSelector1.ShowAllControls = true;
+            this.courseSelector1.ShowCourseParts = true;
+            this.courseSelector1.Size = new System.Drawing.Size(384, 362);
+            this.courseSelector1.TabIndex = 0;
             // 
             // CourseSelectorTestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(416, 273);
+            this.ClientSize = new System.Drawing.Size(384, 362);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.courseSelector1);
+            this.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.Name = "CourseSelectorTestForm";
             this.Text = "CourseSelectorTestForm";
             this.ResumeLayout(false);

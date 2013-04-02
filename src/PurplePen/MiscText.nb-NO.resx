@@ -279,11 +279,6 @@ Bruk | for å skille rader</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versjon {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Versjon {0} av Purple Pener nå tilgjengelig for nedlasting. (Du bruker versjon {1}.)
-
-For å laste ned den nyeste versjonen besøk Purple Pen hjemmesiden som du finner under Hjelp i menyen og velge "Purple Pen hjemmeside".</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Hjelpfilen '{0}' kunne ikke åpnes.</value>
   </data>

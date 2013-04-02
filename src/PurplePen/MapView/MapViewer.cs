@@ -50,6 +50,9 @@ namespace PurplePen.MapView
         private IMapDisplay mapDisplay;							// The map display we are viewing.
         private ViewCache viewcache;							// The view cache for this map
 
+        // Timer for handling hover events.
+        private System.Windows.Forms.Timer hoverTimer = new System.Windows.Forms.Timer();
+
         // Mouse left/right button and drag state.
         public const int LeftMouseButton = 0;
         public const int RightMouseButton = 1;
@@ -89,6 +92,7 @@ namespace PurplePen.MapView
         public delegate DragAction MouseEventHandler(object sender, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart);
         public event EventHandler OnViewportChange;
         public event PointerEventHandler OnPointerMove;
+        public event PointerEventHandler OnPointerHover;
         public event MouseEventHandler OnMouseEvent;
 
         // Various constants
@@ -113,6 +117,8 @@ namespace PurplePen.MapView
             Graphics g = CreateGraphics();
             pixelPerMm = g.DpiX / 25.4F;
             g.Dispose();
+
+            hoverTimer.Tick += hoverTimer_Tick;
         }
 
         public void SetMap(IMapDisplay mapDisplay) {
@@ -323,6 +329,8 @@ namespace PurplePen.MapView
             }
         }
 
+        public int HoverDelay { get; set; }
+
         #endregion Property Accessors
 
         #region Change handling
@@ -396,6 +404,38 @@ namespace PurplePen.MapView
 
         #endregion
 
+        #region Hover handling
+
+        private PointF lastHoverLocation;
+
+        private void DisableHoverTimer()
+        {
+            hoverTimer.Enabled = false;
+            lastHoverLocation = new PointF(float.NaN, float.NaN);
+        }
+
+        private void ResetHoverTimer(PointF location)
+        {
+            if (location != lastHoverLocation) {
+                hoverTimer.Stop();
+                hoverTimer.Interval = this.HoverDelay;
+                hoverTimer.Enabled = true;
+                hoverTimer.Start();
+                lastHoverLocation = location;
+            }
+        }
+
+        void hoverTimer_Tick(object sender, EventArgs e)
+        {
+            if (hoverTimer.Enabled && OnPointerHover != null) {
+                OnPointerHover(this, mouseInView, mouseLocation);
+            }
+
+            hoverTimer.Enabled = false;
+        }
+
+        #endregion
+
         #region Mouse left/right button handling
         int ButtonNumberForEvent(MouseButtons b) {
             switch (b) {
@@ -412,8 +452,10 @@ namespace PurplePen.MapView
             if (mouseInView) {
                 mouseLocation = PixelToWorld(new PointF(xViewport, yViewport));
 
-                if (OnMouseEvent != null) 
+                if (OnMouseEvent != null)
                     OnMouseEvent(this, MouseAction.Move, -1, mouseDown, mouseLocation, mouseLocation);
+
+                ResetHoverTimer(mouseLocation);
 
                 // See if dragging is occurring/starting for any button
                 for (int buttonNumber = 0; buttonNumber < CountMouseButtons; ++buttonNumber) {
@@ -421,15 +463,20 @@ namespace PurplePen.MapView
                     if (mouseDown[buttonNumber] && !mouseDrag[buttonNumber] && canDrag[buttonNumber] &&
                         WorldToPixelDistance(Util.DistanceF(mouseLocation, downPos[buttonNumber])) >= MinDragDistance) {
                         mouseDrag[buttonNumber] = true;
+                        DisableHoverTimer();
                     }
 
                     // is a drag in progress?
-                    if (OnMouseEvent != null && mouseDown[buttonNumber] && mouseDrag[buttonNumber])
+                    if (OnMouseEvent != null && mouseDown[buttonNumber] && mouseDrag[buttonNumber]) {
                         OnMouseEvent(this, MouseAction.Drag, buttonNumber, mouseDown, mouseLocation, downPos[buttonNumber]);
+                        DisableHoverTimer();
+                    }
                 }
             }
-            else 
+            else {
                 mouseLocation = new PointF();
+                DisableHoverTimer();
+            }
 
             if (OnPointerMove != null)
                 OnPointerMove(this, mouseInView, mouseLocation);
@@ -447,7 +494,11 @@ namespace PurplePen.MapView
             if (OnMouseEvent != null) {
                 DragAction dragAction = OnMouseEvent(this, MouseAction.Down, buttonNumber, mouseDown, worldMouse, worldMouse);
                 canDrag[buttonNumber] = (dragAction == DragAction.ImmediateDrag || dragAction == DragAction.DelayedDrag);
-                mouseDrag[buttonNumber] = (dragAction == DragAction.ImmediateDrag);
+                if (dragAction == DragAction.ImmediateDrag) {
+                    mouseDrag[buttonNumber] = true;
+                    DisableHoverTimer();
+                }
+
                 if (dragAction == DragAction.MapDrag) {
                     // Map dragging has been requested.
                     BeginMapDragging(new Point(xViewport, yViewport), (buttonNumber == LeftMouseButton) ? MouseButtons.Left : MouseButtons.Right);
@@ -567,6 +618,7 @@ namespace PurplePen.MapView
             endDragScrollButton = endingButton;
             lastDragScrollPoint = pt;
             this.Cursor = DragCursor;
+            DisableHoverTimer();
         }
 
         void EndMapDragging(Point pt) {
@@ -734,7 +786,7 @@ namespace PurplePen.MapView
         }
 
         private void MapViewer_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e) {
-            if (e.Button == endDragScrollButton) { 
+            if (dragScrollingInProgress && e.Button == endDragScrollButton) { 
                 EndMapDragging(new Point(e.X, e.Y));
             }
             else {

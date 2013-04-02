@@ -282,7 +282,7 @@ namespace PurplePen
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
                 BeginTableRow();
-                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
+                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
 
                 // Course name
                 WriteTableCell(courseView.CourseName);
@@ -409,7 +409,7 @@ namespace PurplePen
 
             // Get load information about each leg. To enumerate all legs, just enumerate all courses and all legs on each course.
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                foreach (QueryEvent.LegInfo leg in QueryEvent.EnumLegs(eventDB, courseId)) {
+                foreach (QueryEvent.LegInfo leg in QueryEvent.EnumLegs(eventDB, new CourseDesignator(courseId))) {
                     Id<ControlPoint> controlId1 = eventDB.GetCourseControl(leg.courseControlId1).control;
                     Id<ControlPoint> controlId2 = eventDB.GetCourseControl(leg.courseControlId2).control;
                     Pair<Id<ControlPoint>, Id<ControlPoint>> key = new Pair<Id<ControlPoint>, Id<ControlPoint>>(controlId1, controlId2);
@@ -505,7 +505,7 @@ namespace PurplePen
 
             // Go through each course, and cross-reference.
             for (int col = 0; col < coursesToXref.Length; ++col) {
-                CourseView view = CourseView.CreateCourseView(eventDB, coursesToXref[col], true, true);
+                CourseView view = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(coursesToXref[col]));
                 foreach (CourseView.ControlView controlView in view.ControlViews) {
                     int row = Array.IndexOf(controlsToXref, controlView.controlId);
 
@@ -614,7 +614,7 @@ namespace PurplePen
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
                 BeginTableRow();
-                CourseView courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
+                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
 
                 // Don't include score courses in the leg length report.
                 if (courseView.Kind == CourseView.CourseViewKind.Score)

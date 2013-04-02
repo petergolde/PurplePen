@@ -126,7 +126,4 @@
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Start med kode:</value>
   </data>
-  <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(Dette valget kan endres i etterkant under Løyper/Automatisk Nummerering.)</value>
-  </data>
 </root>

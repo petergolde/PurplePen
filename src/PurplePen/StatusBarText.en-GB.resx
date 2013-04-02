@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Click left mouse button on a corner to remove it</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Click left mouse button on the control circle to add a gap</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Click left mouse button on a gap in the control circle to remove it</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Hold down left mouse button and drag to create a gap in the leg</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Click left mouse button on a gap in the leg to remove it</value>

@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>The map file was successfully loaded. If send your Purple Pen file to someone else, they must have the map file also.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Map File</value>
+  </data>
 </root>

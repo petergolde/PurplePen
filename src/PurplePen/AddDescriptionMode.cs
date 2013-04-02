@@ -49,7 +49,7 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
-        Id<Course> courseId;                         // course we are adding to.
+        CourseDesignator courseDesignator;                         // course we are adding to.
         DescriptionCourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
         DescriptionCourseObj currentObj;           // current object being dragged out.
         PointF startLocation;                               // location where dragging started.
@@ -60,14 +60,14 @@ namespace PurplePen
         DescriptionLine[] description;
         DescriptionKind kind;
 
-        public AddDescriptionMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, Id<Course> courseId, DescriptionLine[] description, DescriptionKind kind)
+        public AddDescriptionMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, DescriptionLine[] description, DescriptionKind kind)
         {
             this.controller = controller;
             this.undoMgr = undoMgr;
             this.selectionMgr = selectionMgr;
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
-            this.courseId = courseId;
+            this.courseDesignator = courseDesignator;
             this.description = description;
             this.kind = kind;
         }
@@ -103,36 +103,36 @@ namespace PurplePen
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // Begin dragging out the description block.
+            // Begin dragging out the description block; start at 1 column
             startLocation = location;
-            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind);
+            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind, 1);
             handleDragging = new PointF(startingObj.rect.Right, startingObj.rect.Top);
             DragTo(location);
             displayUpdateNeeded = true;
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             DragTo(location);
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             DragTo(location);
 
             PointF upperLeft = new PointF(currentObj.rect.Left, currentObj.rect.Bottom);
             float cellSize = currentObj.CellSize;
+            int numColumns = currentObj.NumberOfColumns;
 
             // Create the new description, unless it's ridiculously small.
             if (cellSize > 0.5F) {
-                Id<Course>[] courses = null;
-                if (courseId.IsNotNone)
-                    courses = new Id<Course>[] {courseId};
+                CourseDesignator[] courses = null;
+                courses = new CourseDesignator[] {courseDesignator};
 
                 undoMgr.BeginCommand(1522, CommandNameText.AddObject);
-                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, courseId.IsNone, courses, upperLeft, cellSize);
+                Id<Special> specialId = ChangeEvent.AddDescription(eventDB, false, courses, upperLeft, cellSize, numColumns);
                 undoMgr.EndCommand(1522);
 
                 selectionMgr.SelectSpecial(specialId);

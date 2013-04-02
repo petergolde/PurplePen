@@ -134,7 +134,6 @@ namespace PurplePen.Tests
             // Get the pages of the printing.
             CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, appearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
-            coursePrinter.Dispose();
 
             // Check all the pages against the baseline.
             for (int page = 0; page < bitmaps.Length; ++page) {
@@ -150,6 +149,7 @@ namespace PurplePen.Tests
             controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
             coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test1", coursePrintSettings, new CourseAppearance());
@@ -172,6 +172,7 @@ namespace PurplePen.Tests
             controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
             coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.RGB;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test2", coursePrintSettings, appearance);
@@ -184,6 +185,7 @@ namespace PurplePen.Tests
             controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor2.ppen"), true);
             CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
             coursePrintSettings.CropLargePrintArea = true;
+            coursePrintSettings.PrintingColorModel = ColorModel.RGB;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test3", coursePrintSettings, new CourseAppearance());

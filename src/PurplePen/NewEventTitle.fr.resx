@@ -124,4 +124,7 @@ Afin de rentrer sur la feuille de définitions, il devrait comporter moins de 25
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Nom de la course :</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Nom de la course</value>
+  </data>
 </root>

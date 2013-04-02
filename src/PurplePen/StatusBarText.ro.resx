@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Click mouse stâng mouse pe un colț pentru al șterge</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Click buton stâng mouse pe cercul postului de control pentru a adăuga un spațiu gol</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Click buton stâng mouse pe un spațiu gol în cercul postului de control pentru a șterge golul.</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Țineți apăsat butonul stâng al mouse-ului și trageți pentru a crea un spațiu gol în secțiune</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Click buton stâng mouse pe un spațiu gol din secțiune pentru a-l elimina.</value>

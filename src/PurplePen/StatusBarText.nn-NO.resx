@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Klikk venstre museknapp på eit hjørne for å slette det.</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Klikk venstre musetast på en postsirkel for å legge inn eit klipp i denne</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Klikk med venstre musetast på eit klipp for å fjerne dette</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Hold nede venstre musetast og dra for å lage et utklipp i strekket</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Klikk venstre musetast på eit klipp i en strekkstrek for å slette dette.</value>

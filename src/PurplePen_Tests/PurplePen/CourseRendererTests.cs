@@ -46,7 +46,7 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseRendererTests: TestFixtureBase
     {
-        void CheckCourse(string filename, Id<Course> courseId, bool addAllControls, string testName, RectangleF rect, CourseAppearance appearance)
+        void CheckCourse(string filename, CourseDesignator courseDesignator, bool addAllControls, string testName, RectangleF rect, CourseAppearance appearance)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
@@ -58,18 +58,15 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Create the course
-            if (courseId.IsNone)
-                courseView = CourseView.CreateAllControlsView(eventDB);
-            else
-                courseView = CourseView.CreateCourseView(eventDB, courseId, true, true);
+            courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
             course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, course, CourseLayer.MainCourse);
 
             // Add all controls if requested.
-            if (addAllControls && courseId.IsNotNone) {
-                courseView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { courseId }, ControlPointKind.None, false, true);
+            if (addAllControls && courseDesignator.IsNotAllControls) {
+                courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { courseDesignator }, ControlPointKind.None, false, true);
                 course.SetLayerColor(CourseLayer.AllControls, 12, "LightPurple", 0.1F, 0.5F, 0.0F, 0.0F);
                 CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, course, CourseLayer.AllControls);
             }
@@ -97,7 +94,7 @@ namespace PurplePen.Tests
         }
 
         // Do CheckCourse for normal and special appearances.
-        void CheckCourseBothAppearances(string filename, Id<Course> courseId, bool addAllControls, string testName, RectangleF rect)
+        void CheckCourseBothAppearances(string filename, CourseDesignator courseDesignator, bool addAllControls, string testName, RectangleF rect)
         {
             CourseAppearance specialAppearance;
 
@@ -113,147 +110,178 @@ namespace PurplePen.Tests
             specialAppearance.purpleM = 0;
             specialAppearance.purpleK = 0.30F;
 
-            CheckCourse(filename, courseId, addAllControls, testName, rect, defaultCourseAppearance);
-            CheckCourse(filename, courseId, addAllControls, testName + "_special", rect, specialAppearance);
+            CheckCourse(filename, courseDesignator, addAllControls, testName, rect, defaultCourseAppearance);
+            CheckCourse(filename, courseDesignator, addAllControls, testName + "_special", rect, specialAppearance);
         }
 
 
         [TestMethod]
         public void StartTriangle()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(8), false, "start_triangle", new RectangleF(5, -20, 60, 60));    
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(8), false, "start_triangle", new RectangleF(5, -20, 60, 60));    
         }
 
 
         [TestMethod]
         public void DefaultNumberLocation()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(7), false, "default_number_loc", new RectangleF(120, -5, 20, 20));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(7), false, "default_number_loc", new RectangleF(120, -5, 20, 20));
         }
 
         [TestMethod]
         public void RegularCourse()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(3), false, "regular", new RectangleF(-10, -40, 120, 120));
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(3), true, "regular_plusall", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(3), false, "regular", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(3), true, "regular_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]
         public void RegularCourseWithInitialNumber()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), false, "initnum", new RectangleF(-10, -40, 120, 120));
-            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", CourseId(3), true, "initnum_plusall", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", Designator(3), false, "initnum", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor4.coursescribe", Designator(3), true, "initnum_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]
         public void ScoreCourse()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(9), false, "score", new RectangleF(-10, -40, 120, 120));
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseId(9), true, "score_plusall", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(9), false, "score", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Designator(9), true, "score_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]
         public void ScoreCourseSequence() {
-            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), false, "scoreseq", new RectangleF(-10, -40, 120, 120));
-            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", CourseId(9), true, "scoreseq_plusall", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", Designator(9), false, "scoreseq", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor5.coursescribe", Designator(9), true, "scoreseq_plusall", new RectangleF(-10, -40, 120, 120));
         }
 
         [TestMethod]
         public void ScoreCourseSequenceAndCode() {
-            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), false, "scoreseqcode", new RectangleF(-10, -40, 120, 120));
-            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", CourseId(9), true, "scoreseqcode_plusall", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", Designator(9), false, "scoreseqcode", new RectangleF(-10, -40, 120, 120));
+            CheckCourseBothAppearances("courserenderer\\marymoor6.coursescribe", Designator(9), true, "scoreseqcode_plusall", new RectangleF(-10, -40, 120, 120));
+        }
+
+        [TestMethod]
+        public void ScoreCourseSequenceAndScore()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor7.coursescribe", Designator(9), false, "scoreseqscore", new RectangleF(-20, -60, 150, 140));
+            CheckCourseBothAppearances("courserenderer\\marymoor7.coursescribe", Designator(9), true, "scoreseqscore_plusall", new RectangleF(-20, -60, 150, 140));
+        }
+
+        [TestMethod]
+        public void ScoreCourseCodeAndScore()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor8.coursescribe", Designator(9), false, "scorecodescore", new RectangleF(-20, -60, 150, 140));
+            CheckCourseBothAppearances("courserenderer\\marymoor8.coursescribe", Designator(9), true, "scorescodescore_plusall", new RectangleF(-20, -60, 150, 140));
         }
 
         [TestMethod]
         public void AllControls()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", Id<Course>.None, false, "all_controls", new RectangleF(-20, -50, 160, 160));
+            CheckCourseBothAppearances("courserenderer\\marymoor1.coursescribe", CourseDesignator.AllControls, false, "all_controls", new RectangleF(-20, -50, 160, 160));
         }
 
         [TestMethod]
         public void CrossingPoints()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor3.coursescribe", CourseId(2), false, "crossing", new RectangleF(-10, -40, 90, 90));
-            CheckCourseBothAppearances("courserenderer\\marymoor3.coursescribe", CourseId(2), true, "crossing_plusall", new RectangleF(-10, -40, 90, 90));
+            CheckCourseBothAppearances("courserenderer\\marymoor3.coursescribe", Designator(2), false, "crossing", new RectangleF(-10, -40, 90, 90));
+            CheckCourseBothAppearances("courserenderer\\marymoor3.coursescribe", Designator(2), true, "crossing_plusall", new RectangleF(-10, -40, 90, 90));
         }
 
         [TestMethod]
         public void Specials1()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", CourseId(3), false, "specials1", new RectangleF(-51, -36, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", Designator(3), false, "specials1", new RectangleF(-51, -36, 150, 150));
         }
 
         [TestMethod]
         public void Specials2()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", CourseId(10), false, "specials2", new RectangleF(-51, -36, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", Designator(10), false, "specials2", new RectangleF(-51, -36, 150, 150));
+        }
+
+        [TestMethod]
+        public void MulticolDescription()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", Designator(4), false, "multicol", new RectangleF(-51, -36, 150, 150));
         }
 
         [TestMethod]
         public void AllControlsDescriptions()
         {
-            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", Id<Course>.None, false, "allcontrolsdesc", new RectangleF(-51, -76, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\marymoor2.coursescribe", CourseDesignator.AllControls, false, "allcontrolsdesc", new RectangleF(-51, -76, 150, 150));
         }
 
         [TestMethod]
         public void NoCoursesDescriptions()
         {
-            CheckCourseBothAppearances("courserenderer\\nocourses.ppen", Id<Course>.None, false, "nocoursesdesc", new RectangleF(-51, -76, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\nocourses.ppen", CourseDesignator.AllControls, false, "nocoursesdesc", new RectangleF(-51, -76, 150, 150));
         }
 
         [TestMethod]
         public void SpecialLegs()
         {
-            CheckCourseBothAppearances("courserenderer\\speciallegs.coursescribe", CourseId(1), false, "speciallegs", new RectangleF(0, -35, 110, 110));
+            CheckCourseBothAppearances("courserenderer\\speciallegs.coursescribe", Designator(1), false, "speciallegs", new RectangleF(0, -35, 110, 110));
         }
 
         [TestMethod]
         public void GappedLegs()
         {
-            CheckCourseBothAppearances("courserenderer\\gappedlegs.coursescribe", CourseId(1), false, "gappedlegs", new RectangleF(0, -35, 110, 110));
+            CheckCourseBothAppearances("courserenderer\\gappedlegs.coursescribe", Designator(1), false, "gappedlegs", new RectangleF(0, -35, 110, 110));
         }
 
         [TestMethod]
         public void AllControlsDifferentScale()
         {
-            CheckCourseBothAppearances("courserenderer\\allcontrolsscale.ppen", Id<Course>.None, false, "allcontrolsscale", new RectangleF(-20, -50, 160, 160));
+            CheckCourseBothAppearances("courserenderer\\allcontrolsscale.ppen", CourseDesignator.AllControls, false, "allcontrolsscale", new RectangleF(-20, -50, 160, 160));
         }
 
         [TestMethod]
         public void AllControlsCodePos()
         {
-            CheckCourseBothAppearances("courserenderer\\allcontrolscodepos.ppen", Id<Course>.None, false, "allcontrolscodepos", new RectangleF(-20, -50, 160, 160));
+            CheckCourseBothAppearances("courserenderer\\allcontrolscodepos.ppen", CourseDesignator.AllControls, false, "allcontrolscodepos", new RectangleF(-20, -50, 160, 160));
         }
 
         [TestMethod]
         public void OverlappedAllControls()
         {
-            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", Id<Course>.None, false, "overlapped_all", new RectangleF(55, -25, 75, 75));
+            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", CourseDesignator.AllControls, false, "overlapped_all", new RectangleF(55, -25, 75, 75));
         }
 
         [TestMethod]
         public void Overlapped1()
         {
-            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", CourseId(1), false, "overlapped_1", new RectangleF(55, -25, 75, 75));
+            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", Designator(1), false, "overlapped_1", new RectangleF(55, -25, 75, 75));
         }
 
         [TestMethod]
         public void Overlapped2()
         {
-            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", CourseId(2), false, "overlapped_2", new RectangleF(55, -25, 75, 75));
+            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", Designator(2), false, "overlapped_2", new RectangleF(55, -25, 75, 75));
         }
 
         [TestMethod]
         public void Overlapped2WithAll()
         {
-            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", CourseId(2), true, "overlapped_2_all", new RectangleF(55, -25, 75, 75));
+            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", Designator(2), true, "overlapped_2_all", new RectangleF(55, -25, 75, 75));
         }
 
         [TestMethod]
         public void OverlappedScore()
         {
-            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", CourseId(3), false, "overlapped_score", new RectangleF(55, -25, 75, 75));
+            CheckCourseBothAppearances("courserenderer\\Overlapper.ppen", Designator(3), false, "overlapped_score", new RectangleF(55, -25, 75, 75));
         }
+
+        [TestMethod]
+        public void MapExchange()
+        {
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", Designator(6), false, "exch_allparts", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 0), false, "exch_part1", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 1), false, "exch_part2", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 2), false, "exch_part3", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 3), false, "exch_part4", new RectangleF(-45, -60, 190, 190));
+        }
+    
     }
 }
 

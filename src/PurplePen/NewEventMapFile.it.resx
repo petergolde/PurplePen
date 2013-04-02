@@ -123,4 +123,7 @@
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>File OCAD (*.ocd)|*.ocd|File immagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>File Mappa</value>
+  </data>
 </root>

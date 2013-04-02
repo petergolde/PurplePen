@@ -106,10 +106,7 @@ namespace PurplePen.Tests
             eventDB.Load(filename);
             eventDB.Validate();
 
-            if (id.IsNone)
-                courseView = CourseView.CreateAllControlsView(eventDB);
-            else
-                courseView = CourseView.CreateCourseView(eventDB, id, true, true);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
 
             Bitmap bmNew = RenderToBitmap(eventDB, courseView, format);
             TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, ""));

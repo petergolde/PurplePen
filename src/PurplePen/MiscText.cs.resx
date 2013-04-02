@@ -237,11 +237,6 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>Verze {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Ke stažení je nyní dostupný Purple Pen ve verzi {0}. (Aktuálně používáte verzi {1}.)
-
-Pro stažení nejnovější verze, navštivte webovou stránku Purple Pen vybráním "Webová stránka Purple Pen" v nabídce Nápověda.</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Soubor nápovědy '{0}' nemohl být otevřen.</value>
   </data>

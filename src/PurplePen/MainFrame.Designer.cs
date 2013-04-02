@@ -61,6 +61,7 @@ namespace PurplePen
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.courseTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -71,6 +72,7 @@ namespace PurplePen
             this.mapViewer = new PurplePen.MapView.MapViewer();
             this.horizScroll = new System.Windows.Forms.HScrollBar();
             this.vertScroll = new System.Windows.Forms.VScrollBar();
+            this.coursePartBanner = new PurplePen.CoursePartBanner();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
@@ -89,6 +91,7 @@ namespace PurplePen
             this.printPunchCardsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.setPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.printAreaThisPartMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaThisCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaAllCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -123,6 +126,7 @@ namespace PurplePen
             this.mapQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.normalQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.highQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -148,6 +152,9 @@ namespace PurplePen
             this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addFinishMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSpecialItemMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -219,8 +226,11 @@ namespace PurplePen
             this.addControlToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addFinishToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.descriptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ncross = new System.Windows.Forms.ToolStripDropDownButton();
+            this.descriptionsToolStripMenuItem = new System.Windows.Forms.ToolStripButton();
+            this.mapExchangeToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mapExchangeControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeSeparateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.specialItemToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.mandatoryCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionalCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outOfBoundsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -241,12 +251,14 @@ namespace PurplePen
             this.zoomAmountLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.zoomTracker = new PurplePen.ToolStripTrackBar();
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
-            this.versionCheckWorker = new System.ComponentModel.BackgroundWorker();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.courseTabs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitDescription)).BeginInit();
             this.splitDescription.Panel1.SuspendLayout();
             this.splitDescription.Panel2.SuspendLayout();
             this.splitDescription.SuspendLayout();
@@ -285,6 +297,7 @@ namespace PurplePen
             this.splitContainer.Panel2.Controls.Add(this.mapViewer);
             this.splitContainer.Panel2.Controls.Add(this.horizScroll);
             this.splitContainer.Panel2.Controls.Add(this.vertScroll);
+            this.splitContainer.Panel2.Controls.Add(this.coursePartBanner);
             // 
             // splitDescription
             // 
@@ -325,6 +338,7 @@ namespace PurplePen
             this.mapViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer.CenterPoint")));
             resources.ApplyResources(this.mapViewer, "mapViewer");
             this.mapViewer.ForeColor = System.Drawing.Color.Black;
+            this.mapViewer.HoverDelay = 400;
             this.mapViewer.Name = "mapViewer";
             this.mapViewer.ShowGrid = false;
             this.mapViewer.ShowSymbolBounds = false;
@@ -332,6 +346,7 @@ namespace PurplePen
             this.mapViewer.ZoomFactor = 1F;
             this.mapViewer.OnViewportChange += new System.EventHandler(this.mapViewer_OnViewportChange);
             this.mapViewer.OnPointerMove += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerMove);
+            this.mapViewer.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerHover);
             this.mapViewer.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewer_OnMouseEvent);
             this.mapViewer.MouseEnter += new System.EventHandler(this.mapViewer_MouseEnter);
             // 
@@ -346,6 +361,15 @@ namespace PurplePen
             resources.ApplyResources(this.vertScroll, "vertScroll");
             this.vertScroll.Name = "vertScroll";
             this.vertScroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vertScroll_Scroll);
+            // 
+            // coursePartBanner
+            // 
+            this.coursePartBanner.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.coursePartBanner, "coursePartBanner");
+            this.coursePartBanner.Name = "coursePartBanner";
+            this.coursePartBanner.NumberOfParts = 1;
+            this.coursePartBanner.SelectedPart = -1;
+            this.coursePartBanner.SelectedPartChanged += new System.EventHandler(this.coursePartBanner_SelectedPartChanged);
             // 
             // openFileDialog
             // 
@@ -473,10 +497,18 @@ namespace PurplePen
             // setPrintAreaMenu
             // 
             this.setPrintAreaMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printAreaThisPartMenu,
             this.printAreaThisCourseMenu,
             this.printAreaAllCoursesMenu});
             this.setPrintAreaMenu.Name = "setPrintAreaMenu";
             resources.ApplyResources(this.setPrintAreaMenu, "setPrintAreaMenu");
+            this.setPrintAreaMenu.DropDownOpening += new System.EventHandler(this.setPrintAreaMenu_DropDownOpening);
+            // 
+            // printAreaThisPartMenu
+            // 
+            this.printAreaThisPartMenu.Name = "printAreaThisPartMenu";
+            resources.ApplyResources(this.printAreaThisPartMenu, "printAreaThisPartMenu");
+            this.printAreaThisPartMenu.Click += new System.EventHandler(this.printAreaThisPartMenu_Click);
             // 
             // printAreaThisCourseMenu
             // 
@@ -567,6 +599,7 @@ namespace PurplePen
             this.allControlsToolStripMenuItem,
             this.mapIntensityMenu,
             this.mapQualityMenu,
+            this.showPopupsMenu,
             this.toolStripSeparator7,
             this.allControlsMenu});
             this.viewMenu.Name = "viewMenu";
@@ -717,6 +750,12 @@ namespace PurplePen
             resources.ApplyResources(this.highQualityMenu, "highQualityMenu");
             this.highQualityMenu.Click += new System.EventHandler(this.highQualityMenu_Click);
             // 
+            // showPopupsMenu
+            // 
+            this.showPopupsMenu.Name = "showPopupsMenu";
+            resources.ApplyResources(this.showPopupsMenu, "showPopupsMenu");
+            this.showPopupsMenu.Click += new System.EventHandler(this.showPopupsMenu_Click);
+            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
@@ -855,6 +894,7 @@ namespace PurplePen
             this.addControlMenu,
             this.addFinishMenu,
             this.addDescriptionsMenu,
+            this.addMapExchangeMenu,
             this.addSpecialItemMenu,
             this.addTextLineMenu,
             this.toolStripSeparator4,
@@ -896,6 +936,26 @@ namespace PurplePen
             this.addDescriptionsMenu.Name = "addDescriptionsMenu";
             resources.ApplyResources(this.addDescriptionsMenu, "addDescriptionsMenu");
             this.addDescriptionsMenu.Click += new System.EventHandler(this.addDescriptionsMenu_Click);
+            // 
+            // addMapExchangeMenu
+            // 
+            this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapExchangeControlMenuItem,
+            this.mapExchangeSeparateMenuItem});
+            this.addMapExchangeMenu.Name = "addMapExchangeMenu";
+            resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
+            // 
+            // mapExchangeControlMenuItem
+            // 
+            this.mapExchangeControlMenuItem.Name = "mapExchangeControlMenuItem";
+            resources.ApplyResources(this.mapExchangeControlMenuItem, "mapExchangeControlMenuItem");
+            this.mapExchangeControlMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
+            // 
+            // mapExchangeSeparateMenuItem
+            // 
+            this.mapExchangeSeparateMenuItem.Name = "mapExchangeSeparateMenuItem";
+            resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
+            this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
             // 
             // addSpecialItemMenu
             // 
@@ -1298,7 +1358,8 @@ namespace PurplePen
             this.addFinishToolStripButton,
             this.toolStripLabel1,
             this.descriptionsToolStripMenuItem,
-            this.ncross,
+            this.mapExchangeToolStripMenu,
+            this.specialItemToolStripMenu,
             this.toolStripSeparator1,
             this.addBendToolStripButton,
             this.addGapToolStripButton});
@@ -1389,9 +1450,29 @@ namespace PurplePen
             this.descriptionsToolStripMenuItem.Name = "descriptionsToolStripMenuItem";
             this.descriptionsToolStripMenuItem.Click += new System.EventHandler(this.addDescriptionsMenu_Click);
             // 
-            // ncross
+            // mapExchangeToolStripMenu
             // 
-            this.ncross.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapExchangeToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapExchangeControlToolStripMenuItem,
+            this.mapExchangeSeparateToolStripMenuItem});
+            resources.ApplyResources(this.mapExchangeToolStripMenu, "mapExchangeToolStripMenu");
+            this.mapExchangeToolStripMenu.Name = "mapExchangeToolStripMenu";
+            // 
+            // mapExchangeControlToolStripMenuItem
+            // 
+            resources.ApplyResources(this.mapExchangeControlToolStripMenuItem, "mapExchangeControlToolStripMenuItem");
+            this.mapExchangeControlToolStripMenuItem.Name = "mapExchangeControlToolStripMenuItem";
+            this.mapExchangeControlToolStripMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
+            // 
+            // mapExchangeSeparateToolStripMenuItem
+            // 
+            resources.ApplyResources(this.mapExchangeSeparateToolStripMenuItem, "mapExchangeSeparateToolStripMenuItem");
+            this.mapExchangeSeparateToolStripMenuItem.Name = "mapExchangeSeparateToolStripMenuItem";
+            this.mapExchangeSeparateToolStripMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
+            // 
+            // specialItemToolStripMenu
+            // 
+            this.specialItemToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mandatoryCrossingPointToolStripMenuItem,
             this.optionalCrossingPointToolStripMenuItem,
             this.outOfBoundsToolStripMenuItem,
@@ -1403,8 +1484,8 @@ namespace PurplePen
             this.registrationMarkToolStripMenuItem,
             this.whiteOutToolStripMenuItem,
             this.textToolStripMenuItem});
-            resources.ApplyResources(this.ncross, "ncross");
-            this.ncross.Name = "ncross";
+            resources.ApplyResources(this.specialItemToolStripMenu, "specialItemToolStripMenu");
+            this.specialItemToolStripMenu.Name = "specialItemToolStripMenu";
             // 
             // mandatoryCrossingPointToolStripMenuItem
             // 
@@ -1538,11 +1619,6 @@ namespace PurplePen
             this.locationDisplay.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.locationDisplay.Name = "locationDisplay";
             // 
-            // versionCheckWorker
-            // 
-            this.versionCheckWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.versionCheckWorker_DoWork);
-            this.versionCheckWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.versionCheckWorker_RunWorkerCompleted);
-            // 
             // saveXmlFileDialog
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
@@ -1567,9 +1643,11 @@ namespace PurplePen
             this.courseTabs.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.splitDescription.Panel1.ResumeLayout(false);
             this.splitDescription.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitDescription)).EndInit();
             this.splitDescription.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
@@ -1643,7 +1721,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem propertiesMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton deleteToolStripButton;
-        private System.Windows.Forms.ToolStripDropDownButton ncross;
+        private System.Windows.Forms.ToolStripDropDownButton specialItemToolStripMenu;
         private System.Windows.Forms.ToolStripMenuItem optionalCrossingPointToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem waterLocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem firstAidLocationToolStripMenuItem;
@@ -1666,7 +1744,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem dangerousToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem boundaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createOcadFilesMenu;
-        private System.ComponentModel.BackgroundWorker versionCheckWorker;
         private System.Windows.Forms.ToolStripMenuItem entireMapMenu;
         private System.Windows.Forms.ToolStripMenuItem printPunchCardsMenu;
         private System.Windows.Forms.ToolStripMenuItem printCoursesMenu;
@@ -1741,7 +1818,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripButton addGapToolStripButton;
         private System.Windows.Forms.ToolStripButton addBendToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem addDescriptionsMenu;
-        private System.Windows.Forms.ToolStripMenuItem descriptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addTextLineMenu;
         private System.Windows.Forms.ToolStripMenuItem cancelMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
@@ -1765,6 +1841,17 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem fontMetricsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTranslatedMenu;
+        private CoursePartBanner coursePartBanner;
+        private System.Windows.Forms.ToolStripButton descriptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton mapExchangeToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem mapExchangeControlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapExchangeSeparateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addMapExchangeMenu;
+        private System.Windows.Forms.ToolStripMenuItem mapExchangeControlMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapExchangeSeparateMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printAreaThisPartMenu;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem showPopupsMenu;
 
     }
 }

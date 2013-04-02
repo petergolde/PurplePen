@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Klicka på ett hörn med vänster musknapp för att ta bort det.</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Klicka på en kontroll med vänster musknapp för att skapa gap i ringen</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Klicka på ett gap i kontrollcirkeln med vänster musknapp för att ta bort det.</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Håll ner vänster mus knapp och drag för att skapa gap i linjen för sträckan</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Klicka på ett gap i sträckans linje med vänster musknapp för att ta bort gapet</value>

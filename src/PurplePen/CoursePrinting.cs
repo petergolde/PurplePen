@@ -47,6 +47,7 @@ using System.Diagnostics;
 namespace PurplePen
 {
     using PurplePen.Graphics2D;
+    using PurplePen.MapModel;
 
     // Class to print out courses.
     class CoursePrinting: BasicPrinting
@@ -54,7 +55,7 @@ namespace PurplePen
         // Layout of a single page that is being print. Might be all of a course or just part.
         class CoursePage
         {
-            public Id<Course> courseId;             // course to print
+            public CourseDesignator courseDesignator;             // course to print
             public RectangleF mapRectangle;      // rectangle to print in map coordinates
             public RectangleF printRectangle;     // rectangle to print to on page, in hundredth of inch.
             public bool landscape;                       // true if page should be printed in landscape orientation
@@ -94,7 +95,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
@@ -107,6 +108,7 @@ namespace PurplePen
             mapDisplay.MapIntensity = 1.0F;
             mapDisplay.AntiAlias = false;
             mapDisplay.Printing = true;
+            mapDisplay.ColorModel = base.colorModel;
         }
 
         RectangleF GetPrintableArea(PageSettings pageSettings)
@@ -135,17 +137,24 @@ namespace PurplePen
         {
             StorePrintableAreas(pageSettings);
 
+            pageSettings.PrinterSettings.Copies = (short)coursePrintSettings.Count;
+            pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
+
             pages.Clear();
 
             // Go through each course and lay it out, then add to the page list.
             foreach (Id<Course> courseId in coursePrintSettings.CourseIds) {
-                // Get the layout for the course.
-                List<CoursePage> coursePages = LayoutOptimizedCourse(courseId);
+                int partCount = courseId.IsNotNone ? QueryEvent.CountCourseParts(eventDB, courseId) : 1;
 
-                pageSettings.PrinterSettings.Copies = (short) coursePrintSettings.Count;
-                pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
-
-                pages.AddRange(coursePages);
+                if (partCount == 1 || coursePrintSettings.PrintMapExchangesOnOneMap) {
+                    // Get the layout for the course.
+                    pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId)));
+                }
+                else {
+                    for (int part = 0; part < partCount; ++part) {
+                        pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId, part)));
+                    }
+                }
             }
 
             return pages.Count;            // total number of pages.
@@ -153,13 +162,13 @@ namespace PurplePen
 
         // Layout a single course onto one or more pages.
         // Optimize onto portrait or landscape.
-        List<CoursePage> LayoutOptimizedCourse(Id<Course> courseId)
+        List<CoursePage> LayoutOptimizedCourse(CourseDesignator courseDesignator)
         {
             List<CoursePage> portraitLayout, landscapeLayout;
 
             // Layout in both portrait and landscape, and use the one which uses the least pages.
-            portraitLayout = LayoutCourse(false, courseId);
-            landscapeLayout = LayoutCourse(true, courseId);
+            portraitLayout = LayoutCourse(false, courseDesignator);
+            landscapeLayout = LayoutCourse(true, courseDesignator);
 
             bool useLandscape;
 
@@ -189,13 +198,13 @@ namespace PurplePen
 
 
         // Layout a course onto one or more pages.
-        List<CoursePage> LayoutCourse(bool landscape, Id<Course> courseId)
+        List<CoursePage> LayoutCourse(bool landscape, CourseDesignator courseDesignator)
         {
             List<CoursePage> pageList = new List<CoursePage>();
 
             // Get the area of the map we want to print, in map coordinates, and the ratio between print scale and map scale.
             float scaleRatio;
-            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseId, out scaleRatio);
+            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseDesignator, out scaleRatio);
 
             // Get the available page size on the page. 
             RectangleF printableArea = landscape ? landscapePrintableArea : portraitPrintableArea;
@@ -206,7 +215,7 @@ namespace PurplePen
                 foreach (DimensionLayout horizontalLayout in LayoutPageDimension(mapArea.Left, mapArea.Width, printableArea.Left, printableArea.Width, scaleRatio)) 
                 {
                     CoursePage page = new CoursePage();
-                    page.courseId = courseId;
+                    page.courseDesignator = courseDesignator;
                     page.landscape = landscape;
                     page.mapRectangle = new RectangleF(horizontalLayout.startMap, verticalLayout.startMap, horizontalLayout.lengthMap, verticalLayout.lengthMap);
                     page.printRectangle = new RectangleF(horizontalLayout.startPage, verticalLayout.startPage, horizontalLayout.lengthPage, verticalLayout.lengthPage);
@@ -267,13 +276,13 @@ namespace PurplePen
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
         // If asked for, crop to a single page size.
-        RectangleF GetPrintAreaForCourse(bool landscape, Id<Course> courseId, out float scaleRatio)
+        RectangleF GetPrintAreaForCourse(bool landscape, CourseDesignator courseDesignator, out float scaleRatio)
         {
             // Get the course view to get the scale ratio.
-            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseId);
+            CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             scaleRatio = courseView.ScaleRatio;
 
-            RectangleF printArea = controller.GetPrintArea(courseId);
+            RectangleF printArea = controller.GetPrintArea(courseDesignator);
 
             if (coursePrintSettings.CropLargePrintArea) {
                 // Crop the print area to a single page, portrait or landscape.
@@ -361,12 +370,12 @@ namespace PurplePen
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
-        protected override void DrawPage(Graphics g, int pageNumber, SizeF printArea, float dpi)
+        protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
             CoursePage page = pages[pageNumber];
 
             // Get the course view for the course we are printing.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, page.courseId);
+            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator);
 
             // Get the correct purple color to print the course in.
             short ocadId;
@@ -385,10 +394,12 @@ namespace PurplePen
             // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
             GC.Collect();
 
-            // Save and restore state so we can mess with stuff.
-            GraphicsState graphicsState = g.Save();
+            if (!PrintPreviewInProgress && graphicsTarget is GDIPlus_GraphicsTarget) {
+                GDIPlus_GraphicsTarget gdiGraphicsTarget = ((GDIPlus_GraphicsTarget)graphicsTarget);
+                Graphics g = gdiGraphicsTarget.Graphics;
+                // Save and restore state so we can mess with stuff.
+                GraphicsState graphicsState = g.Save();
 
-            if (!printDocument.PrintController.IsPreview) {
                 // Printing via a bitmap. Works best with some print drivers.
                 dpi = AdjustDpi(dpi);
 
@@ -415,21 +426,24 @@ namespace PurplePen
                     float minResolution = Geometry.TransformDistance(1F, inverseTransform);
 
                     // And draw.
-                    mapDisplay.Draw(bitmapGraphics, band.mapRectangle, minResolution);
+                    using (IGraphicsTarget gt = new GDIPlus_GraphicsTarget(bitmapGraphics, gdiGraphicsTarget.ColorConverter)) {
+                        mapDisplay.Draw(gt, band.mapRectangle, minResolution);
+                    }
                     bitmapGraphics.Dispose();
 
                     // Draw the bitmap on the printer.
                     g.DrawImage(bitmap, band.printRectangle);
                 }
 
+                // restore state.
+                g.Restore(graphicsState);
                 bitmap.Dispose();
             }
             else {
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
-                g.IntersectClip(page.printRectangle);
-                g.MultiplyTransform(transform);
+                graphicsTarget.PushTransform(transform);
 
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
@@ -438,11 +452,10 @@ namespace PurplePen
                 float minResolutionMap = Geometry.TransformDistance(minResolutionPage, inverseTransform);
 
                 // And draw.
-                mapDisplay.Draw(g, page.mapRectangle, minResolutionMap);   
-            }
+                mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
-            // restore state.
-            g.Restore(graphicsState);
+                graphicsTarget.PopTransform();
+            }
         }
 
         const float MIN_DPI = 400;
@@ -492,7 +505,7 @@ namespace PurplePen
             for (int i = 0; i < numBands; ++i) {
                 CoursePage band = new CoursePage();
                 band.landscape = landscape;
-                band.courseId = page.courseId;
+                band.courseDesignator = page.courseDesignator;
 
                 if (landscape) {
                     band.mapRectangle = new RectangleF(page.mapRectangle.Left + i * mapBandSize, page.mapRectangle.Top, mapBandSize, page.mapRectangle.Height);
@@ -538,6 +551,10 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
         public int Count = 1;                         // count of copies to print
-        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages                
+        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
+        public bool PrintMapExchangesOnOneMap = false;
+        public bool UseXpsPrinting = true;          // If true, use XPS printing
+        public ColorModel PrintingColorModel = ColorModel.CMYK;
+
     }
 }

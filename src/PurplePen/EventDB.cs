@@ -145,6 +145,7 @@ namespace PurplePen
         // The order here determines the order of sorting for all controls course view or score course view
         None,
         Start,                          // A start point
+        MapExchange,             // A map exchange (that isn't a control)
         Normal,                         // A normal control point
         Finish,                         // A finish point
         CrossingPoint,                  // A crossing point
@@ -164,7 +165,7 @@ namespace PurplePen
         public string descriptionText;  // null for auto-text, or custom description text
         public string[] symbolIds;      // Array of six symbols ids for column C-H (or one for Finish, CrossingPoint)
         public string columnFText;      // Text for column F, or null for none (/ or | to separate two numbers)
-        public Dictionary<int,uint> gaps;  // Bitfield for circle gaps (bits 0-31), indexed by scale (rounded to int to prevent rounding problems)
+        public Dictionary<int,CircleGap[]> gaps;  // Circle gaps, indexed by scale (rounded to int to prevent rounding problems)
         public string descTextBefore;       // Description text to show before this control (in all courses)
         public string descTextAfter;         // Description text to show after this control (in all courses)
         public bool customCodeLocation;  // If false, default code location in all controls view. If true, use codeLocationAngle.
@@ -185,7 +186,7 @@ namespace PurplePen
             else
                 Debug.Assert(code == null);         // only normal controls should have codes
 
-            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
+            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
             else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
                 symbolIds = new string[1];
@@ -198,7 +199,7 @@ namespace PurplePen
             if (kind != ControlPointKind.Normal && code != null)
                 throw new ApplicationException(string.Format("Control point '{0}' should not have a code", id));
 
-            if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start) && symbolIds.Length != 6)
+            if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange) && symbolIds.Length != 6)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 6 symbols", id));
             if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint) && symbolIds.Length != 1)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 1 symbol", id));
@@ -218,7 +219,13 @@ namespace PurplePen
         {
             ControlPoint n = (ControlPoint) base.Clone();
             n.symbolIds = (string[]) n.symbolIds.Clone();
-            n.gaps = Util.CopyDictionary(n.gaps);
+            if (n.gaps != null) {
+                var newDict = new Dictionary<int, CircleGap[]>();
+                foreach (KeyValuePair<int, CircleGap[]> pair in n.gaps) {
+                    newDict.Add(pair.Key, (CircleGap[])pair.Value.Clone());
+                }
+                n.gaps = newDict;
+            }
             return n;
         }
 
@@ -261,7 +268,7 @@ namespace PurplePen
                 if (gaps.Count != other.gaps.Count)
                     return false;
                 foreach (int scale in gaps.Keys) {
-                    if (!other.gaps.ContainsKey(scale) || other.gaps[scale] != gaps[scale])
+                    if (!other.gaps.ContainsKey(scale) || ! Util.EqualArrays(other.gaps[scale], gaps[scale]))
                         return false;
                 }
             }
@@ -289,10 +296,11 @@ namespace PurplePen
                 case "start":               kind = ControlPointKind.Start; break;
                 case "finish":              kind = ControlPointKind.Finish; break;
                 case "crossing-point":      kind = ControlPointKind.CrossingPoint; break;
+                case "map-exchange": kind = ControlPointKind.MapExchange; break;
                 default:                    xmlinput.BadXml("Invalid control point kind '{0}'", kindText); break;
             }
 
-            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start)
+            if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
             else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
                 symbolIds = new string[1];
@@ -306,8 +314,8 @@ namespace PurplePen
             if (gapText != "") {
                 uint gapValue = Convert.ToUInt32(gapText, 2);
                 if (gaps == null)
-                    gaps = new Dictionary<int, uint>();
-                gaps[0] = gapValue;
+                    gaps = new Dictionary<int, CircleGap[]>();
+                gaps[0] = CircleGap.ComputeCircleGaps(gapValue);
             }
 
             string codeAngle = xmlinput.GetAttributeString("all-controls-code-angle", "");
@@ -361,12 +369,19 @@ namespace PurplePen
 
                     case "gaps":
                         int scale = xmlinput.GetAttributeInt("scale", 0);
-                        gapText = xmlinput.GetContentString();
+                        gapText = xmlinput.GetContentString().Trim();
 
-                        uint gapValue = Convert.ToUInt32(gapText, 2);
-                        if (gaps == null)
-                            gaps = new Dictionary<int, uint>();
-                        gaps[scale] = gapValue;
+                        if (gapText != "") {
+                            if (gaps == null)
+                                gaps = new Dictionary<int, CircleGap[]>();
+                            if (gapText.Contains(":")) {
+                                gaps[scale] = CircleGap.DecodeGaps(gapText);
+                            }
+                            else {
+                                uint gapValue = Convert.ToUInt32(gapText, 2);
+                                gaps[scale] = CircleGap.ComputeCircleGaps(gapValue);
+                            }
+                        }
 
                         break;
 
@@ -422,6 +437,7 @@ namespace PurplePen
                 case ControlPointKind.Start: kindText = "start"; break;
                 case ControlPointKind.Finish: kindText = "finish"; break;
                 case ControlPointKind.CrossingPoint: kindText = "crossing-point"; break;
+                case ControlPointKind.MapExchange: kindText = "map-exchange"; break;
                 default: Debug.Fail("bad kind"); kindText = "none"; break;
             }
 
@@ -489,13 +505,11 @@ namespace PurplePen
 
             // Write gaps.
             if (gaps != null) {
-                foreach (KeyValuePair<int, uint> pair in gaps) {
+                foreach (KeyValuePair<int, CircleGap[]> pair in gaps) {
                     xmloutput.WriteStartElement("gaps");
                     xmloutput.WriteAttributeString("scale", XmlConvert.ToString(pair.Key));
 
-                    string gapText = Convert.ToString(pair.Value, 2);
-                    if (gapText.Length < 32)
-                        gapText = new string('0', 32 - gapText.Length) + gapText;
+                    string gapText = CircleGap.EncodeGaps(pair.Value);
                     xmloutput.WriteString(gapText);
 
                     xmloutput.WriteEndElement();
@@ -537,8 +551,10 @@ namespace PurplePen
     public enum ControlLabelKind
     {
         Sequence,                         // Control number only
-        Code,                           // Control code only
-        SequenceAndCode                   // Control number and code
+        Code,                             // Control code only
+        SequenceAndCode,                  // Control number and code
+        SequenceAndScore,                 // Number and score
+        CodeAndScore                      // Control code and score
     }
 
     // The different kinds of control descriptions
@@ -565,13 +581,15 @@ namespace PurplePen
         public int scoreColumn;         // column for score, or -1 for none (must be -1 for a non-score course)
         public DescriptionKind descKind;// Kind of description to print
         public RectangleF printArea;  // print area, or empty if no defined print area.
+        public Dictionary<int, RectangleF> partPrintAreas; // print area of parts.
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
         {
+            this.partPrintAreas = new Dictionary<int, RectangleF>();
         }
 
-        public Course(CourseKind kind, string name, float printScale, int sortOrder)
+        public Course(CourseKind kind, string name, float printScale, int sortOrder): this()
         {
             this.kind = kind;
             this.name = name;
@@ -593,8 +611,10 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Course '{0}' has invalid sort order {1}", id, sortOrder));
             if (firstControlOrdinal <= 0)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid first control number {1}", id, firstControlOrdinal));
-            if (labelKind != ControlLabelKind.Code && labelKind != ControlLabelKind.Sequence && labelKind != ControlLabelKind.SequenceAndCode)
+            if (labelKind != ControlLabelKind.Code && labelKind != ControlLabelKind.Sequence && labelKind != ControlLabelKind.SequenceAndCode && labelKind != ControlLabelKind.CodeAndScore && labelKind != ControlLabelKind.SequenceAndScore)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid label kind {1}", id, labelKind));
+            if (kind != CourseKind.Score && (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore))
+                throw new ApplicationException(string.Format("Course '{0}' has invalid label kind {1} for non-score course", id, labelKind));
             if (kind == 0 && scoreColumn != -1)
                 throw new ApplicationException(string.Format("Course '{0}' has invalid score column", id, scoreColumn));
 
@@ -692,6 +712,13 @@ namespace PurplePen
                 return false;
             if (other.scoreColumn != scoreColumn)
                 return false;
+            if (other.partPrintAreas.Count != this.partPrintAreas.Count)
+                return false;
+            foreach (KeyValuePair<int, RectangleF> kvp in this.partPrintAreas) {
+                RectangleF rect;
+                if (!other.partPrintAreas.TryGetValue(kvp.Key, out rect) || rect != kvp.Value)
+                    return false;
+            }
 
             return true;
         }
@@ -733,11 +760,18 @@ namespace PurplePen
                         break;
 
                     case "print-area":
+                        int part = xmlinput.GetAttributeInt("part", -1);
                         float left = xmlinput.GetAttributeFloat("left");
                         float top = xmlinput.GetAttributeFloat("top");
                         float right = xmlinput.GetAttributeFloat("right");
                         float bottom = xmlinput.GetAttributeFloat("bottom");
-                        printArea = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
+                        RectangleF area = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
+
+                        if (part == -1)
+                            printArea = area;
+                        else
+                            partPrintAreas[part] = area;
+
                         xmlinput.Skip();
                         break;
 
@@ -757,6 +791,8 @@ namespace PurplePen
                             case "sequence":                labelKind = ControlLabelKind.Sequence; break;
                             case "code":                    labelKind = ControlLabelKind.Code; break;
                             case "sequence-and-code":       labelKind = ControlLabelKind.SequenceAndCode; break;
+                            case "sequence-and-score":      labelKind = ControlLabelKind.SequenceAndScore; break;
+                            case "code-and-score":          labelKind = ControlLabelKind.CodeAndScore; break;
                             default:                        labelKind = ControlLabelKind.Sequence; break;
                         }
                         xmlinput.Skip();
@@ -791,6 +827,8 @@ namespace PurplePen
                 case ControlLabelKind.Sequence: labelKindText = "sequence"; break;
                 case ControlLabelKind.Code: labelKindText = "code"; break;
                 case ControlLabelKind.SequenceAndCode: labelKindText = "sequence-and-code"; break;
+                case ControlLabelKind.SequenceAndScore: labelKindText = "sequence-and-score"; break;
+                case ControlLabelKind.CodeAndScore: labelKindText = "code-and-score"; break;
                 default: Debug.Fail("bad labelKind"); labelKindText = "none"; break;
             }
             xmloutput.WriteStartElement("labels");
@@ -811,6 +849,16 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("top", XmlConvert.ToString(printArea.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
                 xmloutput.WriteAttributeString("right", XmlConvert.ToString(printArea.Right));
                 xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printArea.Top));   // rectangle is reversed, so top is really the bottom and vice versa
+                xmloutput.WriteEndElement();
+            }
+
+            foreach (KeyValuePair<int, RectangleF> kvp in partPrintAreas) {
+                xmloutput.WriteStartElement("print-area");
+                xmloutput.WriteAttributeString("part", XmlConvert.ToString(kvp.Key));
+                xmloutput.WriteAttributeString("left", XmlConvert.ToString(kvp.Value.Left));
+                xmloutput.WriteAttributeString("top", XmlConvert.ToString(kvp.Value.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
+                xmloutput.WriteAttributeString("right", XmlConvert.ToString(kvp.Value.Right));
+                xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(kvp.Value.Top));   // rectangle is reversed, so top is really the bottom and vice versa
                 xmloutput.WriteEndElement();
             }
 
@@ -839,6 +887,7 @@ namespace PurplePen
     public class CourseControl: StorableObject
     {
         public Id<ControlPoint> control;             // Id of the control.
+        public bool exchange;     // Is this control a map exchange? (must be true for ControlPointKind.MapExchange)
         public bool split;              // Is this the first control before a relay variation split?
         public bool join;               // Is this the control after a relay variation.
         public Id<CourseControl> nextCourseControl;   // Next control, or 0 if this is the last control of the course or split is true.
@@ -867,6 +916,12 @@ namespace PurplePen
             if (control.IsNone)
                 throw new ApplicationException(string.Format("Course control '{0}' must have a control", id));
             validateInfo.eventDB.CheckControlId(control);
+
+            if (validateInfo.eventDB.GetControl(control).kind == ControlPointKind.MapExchange && !exchange)
+                throw new ApplicationException(string.Format("Course control '{0}' should be marked as a map exchange", id));
+
+            if (exchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.MapExchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.Normal)
+                throw new ApplicationException(string.Format("Course control '{0}' is a exchange, but is not a control or map exchange", id));
 
             if (split) {
                 if (nextSplitCourseControls == null)
@@ -897,6 +952,8 @@ namespace PurplePen
             if (other.split != split)
                 return false;
             if (other.join != join)
+                return false;
+            if (other.exchange != exchange)
                 return false;
             if (other.points != points)
                 return false;
@@ -943,6 +1000,7 @@ namespace PurplePen
             control = new Id<ControlPoint>(xmlinput.GetAttributeInt("control"));
             split = xmlinput.GetAttributeBool("relay-split", false);
             join = xmlinput.GetAttributeBool("relay-join", false);
+            exchange = xmlinput.GetAttributeBool("map-exchange", false);
             points = xmlinput.GetAttributeInt("points", 0);
 
             List<Id<CourseControl>> nextCourseControls = new List<Id<CourseControl>>();
@@ -1000,6 +1058,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("relay-split", XmlConvert.ToString(true));
             if (join)
                 xmloutput.WriteAttributeString("relay-join", XmlConvert.ToString(true));
+            if (exchange)
+                xmloutput.WriteAttributeString("map-exchange", XmlConvert.ToString(true));
             if (points != 0)
                 xmloutput.WriteAttributeString("points", XmlConvert.ToString(points));
 
@@ -1074,12 +1134,13 @@ namespace PurplePen
     {
         public SpecialKind kind;            // The kind of special.
         public PointF[] locations;          // The location of the control; might be one or more coordinates (two for a rectangle)
-        public float orientation;            // For crossing points only, the orientation in degress
+        public float orientation;           // For crossing points only, the orientation in degress
         public bool allCourses;             // If true, special is in all courses.
-        public Id<Course>[] courses;   // If allCourses is false, an array of the courses this special is in.
-        public string text;                      // for text objects, the text.
+        public CourseDesignator[] courses;  // If allCourses is false, an array of the course designators this special is in.
+        public string text;                 // for text objects, the text.
         public string fontName;             // for text objects, the font name
-        public bool fontBold, fontItalic;  // for text objects, the font style
+        public bool fontBold, fontItalic;   // for text objects, the font style
+        public int numColumns = 1;          // for description objects, the number of columns.
 
         public Special()
         {
@@ -1134,6 +1195,11 @@ namespace PurplePen
                     throw new ApplicationException(string.Format("Text object {0} should have non-null font name", id));
             }
 
+            if (kind == SpecialKind.Dangerous) {
+                if (numColumns < 1 || numColumns > 100)
+                    throw new ApplicationException(string.Format("Description object {0} should have 1-100 columns", id));
+            }
+
             if (allCourses) {
                 if (courses != null)
                     throw new ApplicationException(string.Format("Special {0} should have null courses array", id));
@@ -1141,23 +1207,31 @@ namespace PurplePen
                 if (kind == SpecialKind.Descriptions) {
                     // All the courses have used a description block
                     foreach (Id<Course> courseId in validateInfo.eventDB.AllCourseIds) {
-                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseId))
+                        if (validateInfo.usedDescriptionCourses.ContainsKey(new CourseDesignator(courseId)))
                             throw new ApplicationException(string.Format("Course {0} has multiple descriptions (special {1})", courseId, id));
-                        validateInfo.usedDescriptionCourses[courseId] = true;
+                        validateInfo.usedDescriptionCourses[new CourseDesignator(courseId)] = true;
                     }
                 }
             }
             else {
                 if (courses == null)  // ok to have zero-length array, if special is in all controls but not on any course.
                     throw new ApplicationException(string.Format("Special {0} should have real courses array", id));
-                foreach (Id<Course> courseId in courses) {
-                    validateInfo.eventDB.CheckCourseId(courseId);
+                foreach (CourseDesignator courseDesignator in courses) {
+                    if (courseDesignator.IsAllControls) {
+                        if (kind != SpecialKind.Descriptions)
+                            throw new ApplicationException("Only descriptions should be directly in all controls");
+                    }
+                    else {
+                        validateInfo.eventDB.CheckCourseId(courseDesignator.CourseId);
+                    }
 
                     if (kind == SpecialKind.Descriptions) {
                         // mark off courses that use this description block.
-                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseId))
-                            throw new ApplicationException(string.Format("Course {0} has multiple descriptions (special {1})", courseId, id));
-                        validateInfo.usedDescriptionCourses[courseId] = true;
+                        if (validateInfo.usedDescriptionCourses.ContainsKey(courseDesignator))
+                            throw new ApplicationException(string.Format("{0} has multiple descriptions (special {1})", courseDesignator, id));
+                        if (! courseDesignator.AllParts && validateInfo.usedDescriptionCourses.ContainsKey(new CourseDesignator(courseDesignator.CourseId)))
+                            throw new ApplicationException(string.Format("{0} has conflict with all parts description (special {1})", courseDesignator, id));
+                        validateInfo.usedDescriptionCourses[courseDesignator] = true;
                     }
                 }
             }
@@ -1166,8 +1240,9 @@ namespace PurplePen
         public override StorableObject Clone()
         {
             Special n = (Special) base.Clone();
-            if (courses != null)
-                n.courses = (Id<Course>[]) n.courses.Clone();
+            if (courses != null) {
+                n.courses = Util.CloneArrayAndElements(n.courses);
+            }
             n.locations = (PointF[]) n.locations.Clone();
             return n;
         }
@@ -1192,6 +1267,8 @@ namespace PurplePen
             if (other.fontBold != fontBold)
                 return false;
             if (other.fontItalic != fontItalic)
+                return false;
+            if (other.numColumns != numColumns)
                 return false;
             if ((other.courses == null || courses == null)) {
                 if (other.courses != courses)
@@ -1243,7 +1320,7 @@ namespace PurplePen
             List<PointF> locationList = new List<PointF>();
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "text", "font", "location", "courses")) {
+            while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses")) {
                 switch (xmlinput.Name) {
                 case "text":
                     text = xmlinput.GetContentString();
@@ -1263,16 +1340,25 @@ namespace PurplePen
                     xmlinput.Skip();
                     break;
 
+                case "appearance":
+                    numColumns = xmlinput.GetAttributeInt("columns", 1);
+                    xmlinput.Skip();
+                    break;
+
                 case "courses":
                     allCourses = xmlinput.GetAttributeBool("all", false);
                     if (!allCourses) {
-                        List<Id<Course>> courseIdList = new List<Id<Course>>();
+                        List<CourseDesignator> courseIdList = new List<CourseDesignator>();
                         xmlinput.MoveToContent();
 
                         bool firstCourse = true;
                         while (xmlinput.FindSubElement(firstCourse, "course")) {
                             int id = xmlinput.GetAttributeInt("course");
-                            courseIdList.Add(new Id<Course>(id));
+                            int part = xmlinput.GetAttributeInt("part", -1);
+                            if (part >= 0)
+                                courseIdList.Add(new CourseDesignator(new Id<Course>(id), part));
+                            else
+                                courseIdList.Add(new CourseDesignator(new Id<Course>(id)));
                             xmlinput.Skip();
                             firstCourse = false;
                         }
@@ -1326,6 +1412,12 @@ namespace PurplePen
                 xmloutput.WriteElementString("text", text);
             }
 
+            if (kind == SpecialKind.Descriptions && numColumns > 1) {
+                xmloutput.WriteStartElement("appearance");
+                xmloutput.WriteAttributeString("columns", XmlConvert.ToString(numColumns));
+                xmloutput.WriteEndElement();
+            }
+
             if (kind == SpecialKind.Text) {
                 xmloutput.WriteStartElement("font");
                 xmloutput.WriteAttributeString("name", fontName);
@@ -1348,9 +1440,11 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("all", XmlConvert.ToString(true));
             }
             else {
-                foreach (Id<Course> course in courses) {
+                foreach (CourseDesignator courseDesignator in courses) {
                     xmloutput.WriteStartElement("course");
-                    xmloutput.WriteAttributeString("course", XmlConvert.ToString(course.id));
+                    xmloutput.WriteAttributeString("course", XmlConvert.ToString(courseDesignator.CourseId.id));
+                    if (!courseDesignator.AllParts)
+                        xmloutput.WriteAttributeString("part", XmlConvert.ToString(courseDesignator.Part));
                     xmloutput.WriteEndElement();
                 }
             }
@@ -1606,6 +1700,7 @@ namespace PurplePen
         public float controlCircleSize = 1.0F;            // ratio to apply to control circles and other point features.
         public float lineWidth = 1.0F;                       // ratio to apply to the width of lines
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
+        public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
@@ -1621,6 +1716,8 @@ namespace PurplePen
             if (controlCircleSize != other.controlCircleSize)
                 return false;
             if (lineWidth != other.lineWidth)
+                return false;
+            if (centerDotDiameter != other.centerDotDiameter)
                 return false;
             if (numberHeight != other.numberHeight)
                 return false;
@@ -1850,6 +1947,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("control-circle-size-ratio", XmlConvert.ToString(courseAppearance.controlCircleSize));
             if (courseAppearance.lineWidth != 1.0F)
                 xmloutput.WriteAttributeString("line-width-ratio", XmlConvert.ToString(courseAppearance.lineWidth));
+            if (courseAppearance.centerDotDiameter != 0.0F) 
+                xmloutput.WriteAttributeString("center-dot-diameter", XmlConvert.ToString(courseAppearance.centerDotDiameter));
             if (courseAppearance.numberHeight != 1.0F)
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
             if (courseAppearance.numberBold)
@@ -1945,6 +2044,7 @@ namespace PurplePen
                     case "course-appearance":
                         courseAppearance.controlCircleSize = xmlinput.GetAttributeFloat("control-circle-size-ratio", 1.0F);
                         courseAppearance.lineWidth = xmlinput.GetAttributeFloat("line-width-ratio", 1.0F);
+                        courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
@@ -2350,13 +2450,13 @@ namespace PurplePen
                     // Fix up these gaps by adding the gap value in each scale being used (map scale and each course scale)
                     // Note that we are modifying control objects directly, which is normally a BAD thing, because is bypasses the 
                     // undo manager. But in this case, it is what we want to do because this is a load-time operation which shouldn't be undoable.
-                    uint gapValue = control.gaps[0];
+                    CircleGap[] gaps = control.gaps[0];
 
                     control.gaps.Remove(0);
-                    control.gaps[(int) Math.Round(GetEvent().mapScale)] = gapValue;
+                    control.gaps[(int) Math.Round(GetEvent().mapScale)] = gaps;
 
                     foreach (Course course in AllCourses)
-                        control.gaps[(int) Math.Round(course.printScale)] = gapValue;
+                        control.gaps[(int) Math.Round(course.printScale)] = gaps;
                 }
             }
         }
@@ -2442,7 +2542,7 @@ namespace PurplePen
             public Dictionary<string, bool> usedCodes = new Dictionary<string, bool>();
 
             // Remembers used courses to make sure that no course has more than one description 
-            public Dictionary<Id<Course>, bool> usedDescriptionCourses = new Dictionary<Id<Course>, bool>();
+            public Dictionary<CourseDesignator, bool> usedDescriptionCourses = new Dictionary<CourseDesignator, bool>();
 
             // Remembers used sort orders to make sure that no sort order is used more than once.
             public Dictionary<int, Id<Course>> sortOrders = new Dictionary<int, Id<Course>>();

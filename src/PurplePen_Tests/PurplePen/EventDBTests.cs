@@ -55,7 +55,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7;
+            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -80,9 +80,9 @@ namespace PurplePen.Tests
             ctl4 = new ControlPoint(ControlPointKind.Normal, "32", new PointF(20, -10.5F));
             ctl4.symbolIds[1] = "3.7";
             ctl4.symbolIds[5] = "12.1";
-            ctl4.gaps = new Dictionary<int,uint>();
-            ctl4.gaps.Add(15000, 0xFFFFFFDF);
-            ctl4.gaps.Add(10000, 0xFF00FFFF);
+            ctl4.gaps = new Dictionary<int,CircleGap[]>();
+            ctl4.gaps.Add(15000, CircleGap.ComputeCircleGaps(0xFFFFFFDF));
+            ctl4.gaps.Add(10000, CircleGap.ComputeCircleGaps(0xFF00FFFF));
             ctl4.descriptionText = "very marshy spot";
             ctl4.punches = new PunchPattern();
             ctl4.punches.size = 9;
@@ -112,6 +112,10 @@ namespace PurplePen.Tests
             ctl7.descTextAfter = "bye there";
             eventDB.AddControlPoint(ctl7);
 
+            ctl8 = new ControlPoint(ControlPointKind.MapExchange, null, new PointF(133, 7.8F));
+            ctl8.symbolIds[0] = "13.5";
+            eventDB.AddControlPoint(ctl8);
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -129,7 +133,8 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(4), ctl4),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(5), ctl5),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(6), ctl6),
-                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(7), ctl7)
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(7), ctl7),
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(8), ctl8)
                 }
             );
         }
@@ -140,7 +145,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Course course1, course2, course3;
+            Course course1, course2, course3, course4, course5;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -157,6 +162,8 @@ namespace PurplePen.Tests
             course2.labelKind = ControlLabelKind.Code;
             course2.firstCourseControl = CourseControlId(0);
             course2.printArea = new RectangleF(50, 70, 200, 100);
+            course2.partPrintAreas[1] = new RectangleF(10, 20, 30, 40);
+            course2.partPrintAreas[0] = new RectangleF(70, 10, 130, 140);
             eventDB.AddCourse(course2);
 
             course3 = new Course(CourseKind.Score, "Rambo", 10000, 3);
@@ -167,7 +174,30 @@ namespace PurplePen.Tests
             course3.firstControlOrdinal = 7;
             course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
+            course3.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
             eventDB.AddCourse(course3);
+
+            course4 = new Course(CourseKind.Score, "Silly1", 10000, 3);
+            course4.secondaryTitle = "";
+            course4.firstCourseControl = CourseControlId(2);
+            course4.load = 0;
+            course4.climb = 25;
+            course4.firstControlOrdinal = 3;
+            course4.labelKind = ControlLabelKind.SequenceAndScore;
+            course4.descKind = DescriptionKind.SymbolsAndText;
+            course4.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            eventDB.AddCourse(course4);
+
+            course5 = new Course(CourseKind.Score, "Silly2", 10000, 3);
+            course5.secondaryTitle = "";
+            course5.firstCourseControl = CourseControlId(2);
+            course5.load = 125;
+            course5.climb = 0;
+            course5.firstControlOrdinal = 1;
+            course5.labelKind = ControlLabelKind.CodeAndScore;
+            course5.descKind = DescriptionKind.Symbols;
+            course5.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            eventDB.AddCourse(course5);
 
             undomgr.EndCommand(61);
 
@@ -183,6 +213,8 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Course>,Course>(CourseId(1), course1),
                     new KeyValuePair<Id<Course>,Course>(CourseId(2), course2),
                     new KeyValuePair<Id<Course>,Course>(CourseId(3), course3),
+                    new KeyValuePair<Id<Course>,Course>(CourseId(4), course4),
+                    new KeyValuePair<Id<Course>,Course>(CourseId(5), course5),
                 }
             );
         }
@@ -193,7 +225,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            CourseControl ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7;
+            CourseControl ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -228,6 +260,10 @@ namespace PurplePen.Tests
             ctl7.descTextAfter = "goodbye";
             eventDB.AddCourseControl(ctl7);
 
+            ctl8 = new CourseControl(ControlId(5), CourseControlId(7));
+            ctl8.exchange = true;
+            eventDB.AddCourseControl(ctl8);
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -246,6 +282,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(5), ctl5),
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(6), ctl6),
                     new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(7), ctl7),
+                    new KeyValuePair<Id<CourseControl>,CourseControl>(CourseControlId(8), ctl8),
                 }
             );
         }
@@ -271,9 +308,9 @@ namespace PurplePen.Tests
             ctl2 = new ControlPoint(ControlPointKind.Normal, "32", new PointF(20, -10.5F));
             ctl2.symbolIds[1] = "3.7";
             ctl2.symbolIds[5] = "12.1";
-            ctl2.gaps = new Dictionary<int, uint>();
-            ctl2.gaps.Add(15000, 0xFFFFFFDF);
-            ctl2.gaps.Add(10000, 0xFF00FFFF);
+            ctl2.gaps = new Dictionary<int, CircleGap[]>();
+            ctl2.gaps.Add(15000, CircleGap.ComputeCircleGaps(0xFFFFFFDF));
+            ctl2.gaps.Add(10000, CircleGap.ComputeCircleGaps(0xFF00FFFF));
             ctl2.descriptionText = "very marshy spot";
             ctlId2 = eventDB.AddControlPoint(ctl2);
 
@@ -426,6 +463,7 @@ namespace PurplePen.Tests
             e.allControlsDescKind = DescriptionKind.Text;
             e.courseAppearance.lineWidth = 1.3F;
             e.courseAppearance.controlCircleSize = 0.9F;
+            e.courseAppearance.centerDotDiameter = 0.53F;
             e.courseAppearance.numberHeight = 1.1F;
             e.courseAppearance.numberBold = true;
             e.courseAppearance.useDefaultPurple = false;
@@ -500,7 +538,7 @@ namespace PurplePen.Tests
             sp1 = new Special(SpecialKind.FirstAid, new PointF[1] { new PointF(4.5F, 1.2F) });
             sp2 = new Special(SpecialKind.OptCrossing, new PointF[1] { new PointF(-4.2F, 1.7F) });
             sp2.allCourses = false;
-            sp2.courses = new Id<Course>[3] { CourseId(1), CourseId(2), CourseId(3) };
+            sp2.courses = new CourseDesignator[] { Designator(1), Designator(2), Designator(3), CourseDesignator.AllControls };
             sp2.orientation = 45F;
             sp3 = new Special(SpecialKind.Boundary, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
             sp4 = new Special(SpecialKind.OOB, new PointF[4] { new PointF(3, 7), new PointF(11, 2), new PointF(0, -1), new PointF(-12, -3) });
@@ -510,8 +548,9 @@ namespace PurplePen.Tests
             sp5.fontBold = true;
             sp5.fontItalic = false;
             sp5.allCourses = false;
-            sp5.courses = new Id<Course>[1] { CourseId(2) };
+            sp5.courses = new CourseDesignator[2] { Designator(2), new CourseDesignator(CourseId(3), 1) };
             sp6 = new Special(SpecialKind.Descriptions, new PointF[2] { new PointF(5, 6), new PointF(11, 6) });
+            sp6.numColumns = 2;
             sp7 = new Special(SpecialKind.Text, new PointF[2] { new PointF(8, 7), new PointF(18, 5) });
             sp7.fontName = "Courier New";
             sp7.fontBold = false;

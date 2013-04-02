@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>El mapa ha sido cargado correctamente. Si envia el fichero Purple Pen a alguien, este debe tener el fichero del mapa también.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Archivo de Mapa</value>
+  </data>
 </root>

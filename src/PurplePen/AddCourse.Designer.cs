@@ -206,7 +206,9 @@ namespace PurplePen
             this.labelKindCombo.Items.AddRange(new object[] {
             resources.GetString("labelKindCombo.Items"),
             resources.GetString("labelKindCombo.Items1"),
-            resources.GetString("labelKindCombo.Items2")});
+            resources.GetString("labelKindCombo.Items2"),
+            resources.GetString("labelKindCombo.Items3"),
+            resources.GetString("labelKindCombo.Items4")});
             resources.ApplyResources(this.labelKindCombo, "labelKindCombo");
             this.labelKindCombo.Name = "labelKindCombo";
             this.labelKindCombo.SelectionChangeCommitted += new System.EventHandler(this.labelKindCombo_SelectionChangeCommitted);
@@ -252,7 +254,6 @@ namespace PurplePen
             // secondaryTitleDescription
             // 
             resources.ApplyResources(this.secondaryTitleDescription, "secondaryTitleDescription");
-            this.secondaryTitleDescription.MaximumSize = new System.Drawing.Size(320, 100);
             this.secondaryTitleDescription.Name = "secondaryTitleDescription";
             // 
             // tableLayoutPanel1

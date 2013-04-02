@@ -255,7 +255,7 @@ namespace PurplePen
 
             CourseObj other = (CourseObj) obj;
             if (other.layer != layer || other.controlId != controlId || other.courseControlId != courseControlId || 
-                other.specialId != specialId || other.scaleRatio != scaleRatio)
+                other.specialId != specialId || other.scaleRatio != scaleRatio || ! other.appearance.Equals(appearance))
                 return false;
 
             return true;
@@ -267,7 +267,7 @@ namespace PurplePen
             throw new NotSupportedException("The method or operation is not supported.");
         }
 
-        public object Clone()
+        public virtual object Clone()
         {
             return base.MemberwiseClone();
         }
@@ -277,81 +277,45 @@ namespace PurplePen
     abstract class PointCourseObj: CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
-        public uint gaps;                          // gaps if its a control or finish circle
+        public CircleGap[] gaps;                 // gaps if its a control or finish circle
+        public CircleGap[] movableGaps;          // gaps if its a control or finish circle that can be moved via handles
         public float orientation;                // orientation in degrees (start/crossing).
         public PointF location;                  // location of the object
-        float radius;                                 // radius of the object (for hit-testing) -- unscaled.
+        float radius;                            // radius of the object (for hit-testing) -- unscaled.
 
 
-        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, uint gaps, float orientation, float radius, PointF location) :
+        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, float radius, PointF location) :
            base(controlId, courseControlId, specialId, scaleRatio, appearance)
        {
             this.gaps = gaps;
+            this.movableGaps = gaps;
             this.orientation = orientation;
             this.location = location;
             this.radius = radius;
        }
 
-        // Get the true radius of this point object. Used for current adjacent circles, for example.
-        public float TrueRadius
+        // Get the full radius of this point object. 
+        public float FullRadius
         {
             get { return radius * scaleRatio * appearance.controlCircleSize; }
         }
 
-        protected override void AddToMap(Map map, SymDef symdef)
+        // Get the radius that handles are placed on. Compensates for the line width. Used for cutting adjacent circles, and positioning handles
+        public float ApparentRadius
         {
-            float[] circleGaps = ComputeCircleGaps(gaps);
-            PointSymbol sym = new PointSymbol((PointSymDef)symdef, location, orientation, circleGaps);
-            map.AddSymbol(sym);
+            get {return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * scaleRatio) / 2.0F); }
         }
 
-        // Convert a 32-bit unsigned int into a gaps array.
-#if TEST
-        internal
-#else
-        protected
-#endif
- static float[] ComputeCircleGaps(uint gaps)
+        protected override void AddToMap(Map map, SymDef symdef)
         {
-            if (gaps == 0xFFFFFFFF)
-                return null;                       // no gaps
-            else if (gaps == 0)
-                return new float[2] { 0, (float) (359.9999) };  // all gap
-            else {
-                int firstGap = 0;
-
-                // Find the first gap start (a 1 to 0 transition).
-                for (int i = 0; i < 32; ++i) {
-                    if (!Util.GetBit(gaps, i) && Util.GetBit(gaps, i - 1)) {
-                        firstGap = i;
-                        break;
-                    }
-                }
-
-                List<float> gapList = new List<float>();
-                // Now create gaps.
-                int lastGapStart = firstGap;
-                for (int i = firstGap; i < firstGap + 32; ++i) {
-                    if (Util.GetBit(gaps, i) && !Util.GetBit(gaps, i - 1)) {
-                        // found end of gap.
-                        int endGap = i;
-
-                        gapList.Add((float) ((lastGapStart % 32) * 360.0 / 32));
-                        gapList.Add((float) ((endGap % 32) * 360.0 / 32));
-                    }
-                    else if (!Util.GetBit(gaps, i) && Util.GetBit(gaps, i - 1)) {
-                        lastGapStart = i;
-                    }
-                }
-
-                return gapList.ToArray();
-            }
+            PointSymbol sym = new PointSymbol((PointSymDef)symdef, location, orientation, CircleGap.StartsAndStops(gaps));
+            map.AddSymbol(sym);
         }
 
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {
-            double dist = Geometry.Distance(pt, location) - TrueRadius;
+            double dist = Geometry.Distance(pt, location) - FullRadius;
             return Math.Max(0, dist);
         }
 
@@ -383,7 +347,22 @@ namespace PurplePen
         // Get the bounds of the highlight.
         public override RectangleF GetHighlightBounds()
         {
-            return new RectangleF(location.X - TrueRadius, location.Y - TrueRadius, TrueRadius * 2, TrueRadius * 2);
+            return new RectangleF(location.X - FullRadius, location.Y - FullRadius, FullRadius * 2, FullRadius * 2);
+        }
+
+        public override PointF[] GetHandles()
+        {
+            if (gaps == null)
+                return null;
+            else 
+                return CircleGap.GapStartStopPoints(location, ApparentRadius, movableGaps);
+        }
+
+        // Move a handle on the line.
+        public override void MoveHandle(PointF oldHandle, PointF newHandle)
+        {
+            movableGaps = CircleGap.MoveStartStopPoint(location, ApparentRadius, movableGaps, oldHandle, newHandle);
+            gaps = CircleGap.MoveStartStopPoint(location, ApparentRadius, gaps, oldHandle, newHandle);
         }
 
         // Offset the object by a given amount
@@ -821,10 +800,9 @@ namespace PurplePen
             return result;
         }
 
-        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
-        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        protected static void DrawBorderedRectangle(Graphics g, Matrix xformWorldToPixel, RectangleF rectToDraw, Brush brush, bool erasing)
         {
-            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rect);
+            RectangleF xformedRect = Geometry.TransformRectangle(xformWorldToPixel, rectToDraw);
 
             // Get a brush to fill the interior with.
             Brush fillBrush;
@@ -841,6 +819,12 @@ namespace PurplePen
             using (Pen pen = new Pen(brush, 2)) {
                 g.DrawRectangle(pen, xformedRect.Left, xformedRect.Top, xformedRect.Width, xformedRect.Height);
             }
+        }
+
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            DrawBorderedRectangle(g, xformWorldToPixel, rect, brush, erasing);
         }
 
         // Get the bounds of the highlight.
@@ -928,7 +912,7 @@ namespace PurplePen
     // A rectangle that preserves aspect when resized.
     abstract class AspectPreservingRectCourseObj: RectCourseObj
     {
-        private float aspect;                    // aspect to maintain: width / height
+        protected float aspect;                    // aspect to maintain: width / height
 
         public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
             : base (controlId, courseControlId, specialId, scaleRatio, appearance, rect)
@@ -1186,9 +1170,9 @@ namespace PurplePen
     // A control circle
     class ControlCourseObj : PointCourseObj
     {
-        public const float diameter = 6.0F;
+        public const float diameter = NormalCourseAppearance.controlOutsideDiameter;
 
-        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.0F, location)
         {
         }
@@ -1197,6 +1181,9 @@ namespace PurplePen
         {
             Glyph glyph = new Glyph();
             glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, diameter * scaleRatio * appearance.controlCircleSize);
+            if (appearance.centerDotDiameter > 0.0F) {
+                glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * scaleRatio);
+            }
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Control point", 702000, glyph, false);
@@ -1205,10 +1192,10 @@ namespace PurplePen
             return symdef;
         }
 
-        public override string  ToString()
+        public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  gaps:{0}",  Convert.ToString(gaps, 2));
+            result += string.Format("  gaps:{0}", CircleGap.EncodeGaps(gaps));
             return result;
         }
 
@@ -1226,18 +1213,21 @@ namespace PurplePen
             // Draw the control circle.
             using (Pen pen = new Pen(brush, thickness)) {
                 RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
-                float[] circleGaps = ComputeCircleGaps(gaps);
+                CircleGap[] gapsToDraw = CircleGap.SimplifyGaps(gaps);
 
                 try {
-                    if (circleGaps == null)
+                    if (gapsToDraw == null)
                         g.DrawEllipse(pen, rect);
                     else {
-                        for (int i = 1; i < circleGaps.Length; i += 2) {
-                            float startArc = circleGaps[i];
-                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                            g.DrawArc(pen, rect, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gapsToDraw);
+                        for (int i = 0; i < arcStartSweeps.Length; i += 2) {
+                            float startArc = arcStartSweeps[i];
+                            float sweepArc = arcStartSweeps[i + 1];
+                            g.DrawArc(pen, rect, startArc, sweepArc);
                         }
                     }
+
+                    // No center dot for highlighting (crosshair instead)
                 }
                 catch (ExternalException) {
                     // Ignore this exeption. Not sure what causes it.
@@ -1256,7 +1246,7 @@ namespace PurplePen
         static readonly PointF[] coords = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
 
         public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, 0xFFFFFFFF, orientation, 4.041F, location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 4.041F, location)
         {
         }
 
@@ -1306,7 +1296,7 @@ namespace PurplePen
     // Finish circle
     class FinishCourseObj : PointCourseObj
     {
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, uint gaps, PointF location)
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.5F, location)
         {
         }
@@ -1327,7 +1317,7 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  gaps:{0}", Convert.ToString(gaps, 2));
+            result += string.Format("  gaps:{0}", CircleGap.EncodeGaps(gaps));
             return result;
         }
 
@@ -1348,19 +1338,19 @@ namespace PurplePen
             using (Pen pen = new Pen(brush, thickness)) {
                 RectangleF rect1 = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
                 RectangleF rect2 = RectangleF.FromLTRB(pts[3].X, pts[4].Y, pts[4].X, pts[3].Y);
-                float[] circleGaps = ComputeCircleGaps(gaps);
 
                 try {
-                    if (circleGaps == null) {
+                    if (gaps == null) {
                         g.DrawEllipse(pen, rect1);
                         g.DrawEllipse(pen, rect2);
                     }
                     else {
-                        for (int i = 1; i < circleGaps.Length; i += 2) {
-                            float startArc = circleGaps[i];
-                            float endArc = (i == circleGaps.Length - 1) ? circleGaps[0] : circleGaps[i + 1];
-                            g.DrawArc(pen, rect1, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
-                            g.DrawArc(pen, rect2, -startArc, -(float)((endArc - startArc + 360.0) % 360.0));
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gaps);
+                        for (int i = 0; i < arcStartSweeps.Length; i += 2) {
+                            float startArc = arcStartSweeps[i];
+                            float sweepArc = arcStartSweeps[i + 1];
+                            g.DrawArc(pen, rect1, startArc, sweepArc);
+                            g.DrawArc(pen, rect2, startArc, sweepArc);
                         }
                     }
                 }
@@ -1386,7 +1376,7 @@ namespace PurplePen
             };
 
         public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
         {
         }
 
@@ -1463,7 +1453,7 @@ namespace PurplePen
             };
 
         public WaterCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
         {
         }
 
@@ -1532,7 +1522,7 @@ namespace PurplePen
         static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
         public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, specialId, scaleRatio, appearance, 0xFFFFFFFF, orientation, 1.72F, location)
+            : base(controlId, courseControlId, specialId, scaleRatio, appearance, null, orientation, 1.72F, location)
         {
         }
 
@@ -1621,7 +1611,7 @@ namespace PurplePen
         PointF[] coords2 = { new PointF(0F, -2F), new PointF(0F, 2F) };
 
         public RegMarkCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 2.0F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
         {
         }
 
@@ -1680,7 +1670,7 @@ namespace PurplePen
         PointF[] coords2 = { new PointF(1.06F, -1.06F), new PointF(-1.06F, 1.06F) };
 
         public ForbiddenCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0xFFFFFFFF, 0, 1.5F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
         {
         }
 
@@ -2059,11 +2049,11 @@ namespace PurplePen
     class DescriptionCourseObj: AspectPreservingRectCourseObj
     {
         DescriptionRenderer renderer;        // The description renderer that holds the description.
-        float cellSizeRatio;                        // ratio of cell size to width.
+        float[] aspectAnglesByColumns;       // array describing the angles that are closest for each number of columns.
 
         // Create a new description course object.
-        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind))
+        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind, numColumns))
         {
             // Create the renderer.
             renderer = new DescriptionRenderer(symbolDB);
@@ -2071,11 +2061,12 @@ namespace PurplePen
             renderer.DescriptionKind = kind;
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
-            cellSizeRatio = rect.Width / cellSize;
+            renderer.NumberOfColumns = numColumns;
+            aspectAnglesByColumns = ComputeAspectAngles();
         }
 
         // Get the rectangle used by the description.
-        static RectangleF GetRect(PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
+        static RectangleF GetRect(PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
         {
             // Create the renderer.
             DescriptionRenderer renderer = new DescriptionRenderer(symbolDB);
@@ -2083,17 +2074,33 @@ namespace PurplePen
             renderer.DescriptionKind = kind;
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
+            renderer.NumberOfColumns = numColumns;
 
             SizeF size = renderer.Measure();
             return new RectangleF(topLeft.X, topLeft.Y - size.Height, size.Width, size.Height);
         }
 
+        public override object Clone()
+        {
+            DescriptionCourseObj c = (DescriptionCourseObj)(base.Clone());
+            c.renderer = (DescriptionRenderer) this.renderer.Clone();
+            return c;
+        }
+
         // The user has updated the rectangle. Update the cell size to match.
         public override void RectangleUpdating(ref RectangleF newRect, bool dragAll, bool dragLeft, bool dragTop, bool dragRight, bool dragBottom)
         {
+            int bestNumberOfColumns = BestNumberOfColumns(newRect.Size);
+
+            if (bestNumberOfColumns != renderer.NumberOfColumns) {
+                renderer.NumberOfColumns = bestNumberOfColumns;
+                SizeF size = renderer.Measure();
+                aspect = size.Width / size.Height;
+            }
+
             base.RectangleUpdating(ref newRect, dragAll, dragLeft, dragTop, dragRight, dragBottom);
 
-            renderer.CellSize = newRect.Width / cellSizeRatio;
+            renderer.CellSize = newRect.Height / renderer.ColumnLengthInCells;
         }
 
         // Get the cell size.
@@ -2103,6 +2110,12 @@ namespace PurplePen
             {
                 return renderer.CellSize;
             }
+        }
+
+        // Get the number of columns
+        public int NumberOfColumns
+        {
+            get { return renderer.NumberOfColumns; }
         }
 
         // Add the description to the map. Uses the map rendering functionality in the renderer.
@@ -2123,6 +2136,53 @@ namespace PurplePen
             throw new NotSupportedException("not supported");
         }
 
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            if (NumberOfColumns == 1)
+                base.Highlight(g, xformWorldToPixel, brush, erasing);
+            else {
+                RectangleF currentColumnRect = rect;
+                currentColumnRect.Width = renderer.ColumnWidth;
+                for (int i = 0; i < renderer.NumberOfColumns; ++i) {
+                    DrawBorderedRectangle(g, xformWorldToPixel, currentColumnRect, brush, erasing);
+                    currentColumnRect.X += renderer.ColumnWidth + renderer.ColumnGap;
+                }
+            }
+        }
+
+        private float[] ComputeAspectAngles()
+        {
+            int numColumns = renderer.NumberOfColumns;
+            int maxColumns = Math.Max(1, (renderer.Description.Length - 1) / 4);  // maximum number of columns.
+            float[] aspectAnglesByColumns = new float[maxColumns + 1];
+            for (int i = 1; i <= maxColumns; ++i) {
+                renderer.NumberOfColumns = i;
+                SizeF size = renderer.Measure();
+                aspectAnglesByColumns[i] = (float)Math.Atan2(size.Height, size.Width);
+            }
+
+            renderer.NumberOfColumns = numColumns;
+            return aspectAnglesByColumns;
+        }
+
+        private int BestNumberOfColumns(SizeF currentSize)
+        {
+            float aspectAngle = (float) Math.Atan2(currentSize.Height, currentSize.Width);
+
+            float bestAngleDiff = Math.Abs(aspectAnglesByColumns[1] - aspectAngle);
+            int bestColumns = 1;
+            for (int i = 2; i < aspectAnglesByColumns.Length; ++i) {
+                float angleDiff = Math.Abs(aspectAnglesByColumns[i] - aspectAngle);
+                if (angleDiff < bestAngleDiff) {
+                    bestAngleDiff = angleDiff;
+                    bestColumns = i;
+                }
+            }
+
+            return bestColumns;
+        }
+
         // Are we equal?
         public override bool Equals(object obj)
         {
@@ -2134,6 +2194,8 @@ namespace PurplePen
 
             // Check description kind
             if (renderer.DescriptionKind != other.renderer.DescriptionKind)
+                return false;
+            if (renderer.NumberOfColumns != other.renderer.NumberOfColumns)
                 return false;
 
             // Check description 
@@ -2154,6 +2216,14 @@ namespace PurplePen
         public override int GetHashCode()
         {
             throw new NotSupportedException("The method or operation is not supported.");
+        }
+
+        public override string ToString()
+        {
+            string text = base.ToString();
+            if (NumberOfColumns > 1)
+                text += string.Format(" columns:{0}", NumberOfColumns);
+            return text;
         }
     }
 

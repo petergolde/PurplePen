@@ -48,11 +48,11 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         Controller controller;        // controller
 
-        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key };
+        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key, MapExchangeAtControl };
 
         // These variables have the current active state of the application, apart from 
         // the event database. Changes to the event database could delete these ids.
-        Id<Course> activeCourseId;             // ID of the active course, or None if all controls.
+        CourseDesignator activeCourseDesignator;  // Designator of active course and part, or all controls.
 
         SelectionKind selectionKind;    // What is selected
         Id<CourseControl> selectedCourseControl;      // ID of the selected course control, if any.
@@ -91,6 +91,7 @@ namespace PurplePen
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
             this.controller = controller;
+            this.activeCourseDesignator = CourseDesignator.AllControls;
         }
 
         // Gets a change number that reflects both the selection and the event database.
@@ -143,7 +144,9 @@ namespace PurplePen
                 if (value < 0 || value >= courseViewNames.Length)
                     throw new ArgumentOutOfRangeException("value");
 
-                SelectCourseView(courseViewIds[value]);
+                if (courseViewIds[value] != activeCourseDesignator.CourseId) {
+                    SelectCourseView(new CourseDesignator(courseViewIds[value]));
+                }
             }
         }
 
@@ -157,7 +160,7 @@ namespace PurplePen
         // A struct used to return information about the current selection.
         public struct SelectionInfo
         {
-            public Id<Course> ActiveCourseId;
+            public CourseDesignator ActiveCourseDesignator;
             public SelectionKind SelectionKind;
             public Id<ControlPoint> SelectedControl;
             public Id<CourseControl> SelectedCourseControl;
@@ -175,7 +178,7 @@ namespace PurplePen
                 SelectionInfo info;
                 UpdateState();
 
-                info.ActiveCourseId = activeCourseId;
+                info.ActiveCourseDesignator = activeCourseDesignator;
                 info.SelectionKind = selectionKind;
                 info.SelectedControl = selectedControl;
                 info.SelectedCourseControl = selectedCourseControl;
@@ -242,6 +245,8 @@ namespace PurplePen
                     SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Text)
                     SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
+                else if (kind == DescriptionLineKind.Directive && ((Symbol)(activeDescription[line].boxes[0])).Id == "13.5control")
+                    SetSelection(SelectionKind.MapExchangeAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (activeDescription[line].isLeg)
                     SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else
@@ -260,16 +265,19 @@ namespace PurplePen
         }
 
         // Select the course with the given id as the active tab, id==0 means all controls.
-        public void SelectCourseView(Id<Course> id)
+        public void SelectCourseView(CourseDesignator newDesignator)
         {
             UpdateState();
-            if (activeCourseId != id) {
+            if (activeCourseDesignator != newDesignator) {
+                bool courseChanged = (activeCourseDesignator.CourseId != newDesignator.CourseId);
                 ++selectionChangeNum;
+                activeCourseDesignator = newDesignator;
 
-                // For now, when switching tabs, the selection is cleared.
+                // For now, when switching tabs (but not parts) the selection is cleared.
                 // CONSIDER: maybe change this later; e.g., keep the selected control if it is in common.
-                activeCourseId = id;
-                ClearSelection();
+                if (courseChanged) {
+                    ClearSelection();
+                }
 
                 // CONSIDER: record a non-persistant command with the Undo Manager.
             }
@@ -355,6 +363,12 @@ namespace PurplePen
             SetSelection(SelectionKind.TextLine, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, textLineKind);
         }
 
+        // Set a map exchange at control line
+        public void SelectMapExchangeAtControl(Id<ControlPoint> controlId, Id<CourseControl> courseControlId)
+        {
+            SetSelection(SelectionKind.MapExchangeAtControl, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+        }
+
 
         // Sets the current selection. No feedback is provided as to whether the selection
         // is valid; if invalid, the selection will simply be cleared when it is retrieved.
@@ -413,9 +427,20 @@ namespace PurplePen
         void UpdateSelection()
         {
             // Check the selection validity.
-            if (activeCourseId.IsNotNone && !eventDB.IsCoursePresent(activeCourseId)) {
+            if (!activeCourseDesignator.IsAllControls && !eventDB.IsCoursePresent(activeCourseDesignator.CourseId)) {
                 // Active course was deleted. Switch to all controls.
-                activeCourseId = Id<Course>.None;
+                activeCourseDesignator = CourseDesignator.AllControls;
+                ClearSelection();
+            }
+
+            // Does the current part still exist?
+            if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && activeCourseDesignator.Part >= QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId)) {
+                // No part that large any more.
+                int numberOfParts = QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
+                if (numberOfParts > 1)
+                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId, numberOfParts - 1);
+                else
+                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId);
                 ClearSelection();
             }
 
@@ -425,8 +450,22 @@ namespace PurplePen
                 ClearSelection();
             }
 
+            if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl)) {
+                // Selected course control is not in active part.
+                selectedCourseControl = Id<CourseControl>.None;
+                ClearSelection();
+            }
+
             if (selectedCourseControl2.IsNotNone && !eventDB.IsCourseControlPresent(selectedCourseControl2)) {
                 // Selected course control 2 is no longer there.
+                selectedCourseControl2 = Id<CourseControl>.None;
+                ClearSelection();
+            }
+
+            if (selectedCourseControl2.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
+                !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl2)) {
+                // Selected course control 2 is not in active part.
                 selectedCourseControl2 = Id<CourseControl>.None;
                 ClearSelection();
             }
@@ -441,7 +480,7 @@ namespace PurplePen
                 ClearSelection();
             }
 
-            if (selectedSpecial.IsNotNone && !(activeCourseId.IsNone || QueryEvent.CourseContainsSpecial(eventDB, activeCourseId, selectedSpecial))) {
+            if (selectedSpecial.IsNotNone && !(activeCourseDesignator.IsAllControls || QueryEvent.CourseContainsSpecial(eventDB, activeCourseDesignator, selectedSpecial))) {
                 // Selected special is not in current course
                 ClearSelection();
             }
@@ -467,15 +506,15 @@ namespace PurplePen
 
             // Figure out which course view is the active one. We have already validate that the active course id
             // is present.
-            if (activeCourseId.IsNone) {
+            if (activeCourseDesignator.IsAllControls) {
                 activeCourseViewIndex = 0;
-                activeCourseView = CourseView.CreateAllControlsView(eventDB);
+                activeCourseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             }
             else {
                 for (int i = 1; i < courseViewIds.Length; ++i)
-                    if (courseViewIds[i] == activeCourseId) {
+                    if (courseViewIds[i] == activeCourseDesignator.CourseId) {
                         activeCourseViewIndex = i;
-                        activeCourseView = CourseView.CreateCourseView(eventDB, activeCourseId, true, true);
+                        activeCourseView = CourseView.CreateViewingCourseView(eventDB, activeCourseDesignator);
                     }
             }
         }
@@ -496,9 +535,9 @@ namespace PurplePen
             activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK); 
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
-            if (showAllControls && activeCourseId.IsNotNone) {
+            if (showAllControls && !activeCourseDesignator.IsAllControls) {
                 // Create the all controls view.
-                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new Id<Course>[] { activeCourseId }, allControlsFilter, false, true);
+                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { activeCourseDesignator }, allControlsFilter, false, true);
 
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
@@ -510,7 +549,8 @@ namespace PurplePen
         // Update the active description.
         void UpdateActiveDescription()
         {
-            activeDescription = DescriptionFormatter.CreateDescription(activeCourseView, symbolDB, true);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(activeCourseView, symbolDB);
+            activeDescription = descFormatter.CreateDescription(true);
         }
 
         // Update the selected line in the active description.
@@ -553,6 +593,13 @@ namespace PurplePen
 
                 if (selectionKind == SelectionKind.TextLine && (lineKind == DescriptionLineKind.Text && activeDescription[line].textLineKind == selectedTextLineKind &&
                                                                                           selectedCourseControl == activeDescription[line].courseControlId && selectedControl == activeDescription[line].controlId)) {
+                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
+                    return;
+                }
+
+                if (selectionKind == SelectionKind.MapExchangeAtControl && lineKind == DescriptionLineKind.Directive && (activeDescription[line].boxes[0] is Symbol) &&
+                    (activeDescription[line].boxes[0] as Symbol).Id == "13.5control" && selectedCourseControl == activeDescription[line].courseControlId)
+                {
                     selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }

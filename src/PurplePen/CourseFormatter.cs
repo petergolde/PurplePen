@@ -53,6 +53,7 @@ namespace PurplePen
         public const string CourseLength = "$(CourseLength)";
         public const string CourseClimb = "$(CourseClimb)";
         public const string ClassList = "$(ClassList)";
+        public const string PrintScale = "$(PrintScale)";
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -71,7 +72,14 @@ namespace PurplePen
 
             // Go through all the specials in the view and process them to create course objects
             foreach(Id<Special> specialId in courseView.SpecialIds) {
-                courseObj = CreateSpecial(eventDB, symbolDB, courseView, scaleRatio, appearance, specialId, layer);
+                courseObj = CreateSpecial(eventDB, courseView, scaleRatio, appearance, specialId, layer);
+                if (courseObj != null)
+                    courseLayout.AddCourseObject(courseObj);
+            }
+
+            // Go through all the descriptions in the view and process them to create course objects
+            foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
+                courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView);
                 if (courseObj != null)
                     courseLayout.AddCourseObject(courseObj);
             }
@@ -154,16 +162,23 @@ namespace PurplePen
         private static string GetControlLabelText(EventDB eventDB, ControlLabelKind labelKind, CourseView.ControlView controlView) {
             string text = "";
 
-            if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode) {
+            if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.SequenceAndScore) {
                 text += controlView.ordinal.ToString();
                 if (controlView.variation != 0)
                     text += controlView.variation.ToString();
             }
             if (labelKind == ControlLabelKind.SequenceAndCode)
                 text += "-";
-            if (labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.Code) {
+            if (labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.Code || labelKind == ControlLabelKind.CodeAndScore) {
                 ControlPoint control = eventDB.GetControl(controlView.controlId);
                 text += control.code;
+            }
+
+            if (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore) {
+                int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                if (points > 0) {
+                    text += "(" + points.ToString() + ")";
+                }
             }
 
             return text;
@@ -394,9 +409,13 @@ namespace PurplePen
                     text = text.Replace(TextMacros.CourseClimb, Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));
             }
 
+            if (text.Contains(TextMacros.PrintScale)) {
+                text = text.Replace(TextMacros.PrintScale, string.Format("1:{0:N0}", courseView.PrintScale));
+            }
+
             if (text.Contains(TextMacros.ClassList)) {
                 string classList = "";
-                if (courseView.BaseCourseId.IsNotNone) {
+                if (courseView.CourseDesignator.IsNotAllControls) {
                     classList = eventDB.GetCourse(courseView.BaseCourseId).secondaryTitle;
                     if (classList == null)
                         classList = "";
@@ -411,7 +430,7 @@ namespace PurplePen
         }
 
         // Create the course objects associated with this special. Assign the given layer to it.
-        static CourseObj CreateSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView courseView, float scaleRatio, CourseAppearance appearance, Id<Special> specialId, CourseLayer normalLayer)
+        static CourseObj CreateSpecial(EventDB eventDB, CourseView courseView, float scaleRatio, CourseAppearance appearance, Id<Special> specialId, CourseLayer normalLayer)
         {
             Special special = eventDB.GetSpecial(specialId);
             CourseObj courseObj = null;
@@ -446,46 +465,43 @@ namespace PurplePen
                 break;
 
             case SpecialKind.Descriptions:
-                DescriptionKind descKind;
-                DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, courseView.BaseCourseId, out descKind);
-                courseObj = new DescriptionCourseObj(specialId, special.locations[0], (float) Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind);
-                break;
-
             default:
                 Debug.Fail("bad special kind");
                 return null;
             }
 
-            if (special.kind == SpecialKind.Descriptions)
-                courseObj.layer = CourseLayer.Descriptions;
-            else
-                courseObj.layer = normalLayer;
+            courseObj.layer = normalLayer;
 
             return courseObj;
         }
 
+        // Create the course objects associated with this special. Assign the given layer to it.
+        static CourseObj CreateDescriptionSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView.DescriptionView descriptionView)
+        {
+            Special special = eventDB.GetSpecial(descriptionView.SpecialId);
+            Debug.Assert(special.kind == SpecialKind.Descriptions);
+
+            DescriptionKind descKind;
+            DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind);
+            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind, special.numColumns);
+            courseObj.layer = CourseLayer.Descriptions;
+            return courseObj;
+        }
+
         // Return the description and description kind for a given CourseView.
-        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, Id<Course> courseId, out DescriptionKind descKind)
+        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, out DescriptionKind descKind)
         {
             CourseView courseViewDescription;
             DescriptionLine[] description;
             bool noTextOrSymbols = false;
 
-            // For all controls, show the longest description we have, and don't show text and symbols (just the grid).
-            if (courseId.IsNone) {
-                courseId = FindLongestDescription(eventDB, symbolDB);
-                noTextOrSymbols = true;
-            }
-
             // Get the course view for the description we're using.
-            if (courseId.IsNone)
-                courseViewDescription = CourseView.CreateAllControlsView(eventDB);   // only happens if there are no active courses.
-            else
-                courseViewDescription = CourseView.CreateCourseView(eventDB, courseId, true, true);
+            courseViewDescription = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
 
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
-            descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-            description = DescriptionFormatter.CreateDescription(courseViewDescription, symbolDB, descKind == DescriptionKind.Symbols);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB);
+            descKind = QueryEvent.GetDefaultDescKind(eventDB, courseDesignator.CourseId);
+            description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             if (noTextOrSymbols)
                 DescriptionFormatter.ClearTextAndSymbols(description);
 
@@ -493,17 +509,21 @@ namespace PurplePen
         }
 
         // Find the longest description we have. If we have no courses, then return None.
-        static Id<Course> FindLongestDescription(EventDB eventDB, SymbolDB symbolDB)
+        static CourseDesignator FindLongestDescription(EventDB eventDB, SymbolDB symbolDB)
         {
             int longest = 0;
-            Id<Course> longestCourse = Id<Course>.None;
+            CourseDesignator longestCourse = CourseDesignator.AllControls;
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-                DescriptionLine[] description = DescriptionFormatter.CreateDescription(CourseView.CreateCourseView(eventDB, courseId, true, true), symbolDB, descKind == DescriptionKind.Symbols);
-                if (description.Length > longest) {
-                    longest = description.Length;
-                    longestCourse = courseId;
+                int numberOfParts = QueryEvent.CountCourseParts(eventDB, courseId);
+                for (int part = 0; part < numberOfParts; ++part) {
+                    DescriptionFormatter descFormatter = new DescriptionFormatter(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId, part)), symbolDB);
+                    DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
+                    DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
+                    if (description.Length > longest) {
+                        longest = description.Length;
+                        longestCourse = new CourseDesignator(courseId, part);
+                    }
                 }
             }
 
@@ -515,11 +535,12 @@ namespace PurplePen
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
-            uint gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
             CourseObj courseObj = null;
 
             switch (control.kind) {
             case ControlPointKind.Start:
+            case ControlPointKind.MapExchange:
                 courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
                 break;
 
@@ -709,6 +730,7 @@ namespace PurplePen
                 return scaleRatio * ((NormalCourseAppearance.finishOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
 
             case ControlPointKind.Start:
+            case ControlPointKind.MapExchange:
                 return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
 
             default:
@@ -762,21 +784,19 @@ namespace PurplePen
         // Cut "controlObj" with respect to "courseObj", if courseObj is close enough to overlap.
         private static void CutControlWithRespectTo(PointCourseObj controlObj, PointCourseObj courseObj)
         {
-            float radiusControl = controlObj.TrueRadius;
-            float radiusOther = courseObj.TrueRadius;
+            float radiusControl = controlObj.ApparentRadius;
+            float radiusOther = courseObj.ApparentRadius;
             double distance = Geometry.Distance(controlObj.location, courseObj.location);
 
             if (distance < (radiusControl + radiusOther) * 0.9F && distance > (radiusControl + radiusOther) * 0.35F) {
                 // The other object is close enough to the control to merit cutting, but not too close. (0.9 and 0.35 were just arrived by what looks good.)
-                for (int gapNum = 0; gapNum < 32; ++gapNum) {
-                    PointF gapEnd1 = GapStartLocation(controlObj.location, radiusControl, gapNum);
-                    PointF gapEnd2 = GapStartLocation(controlObj.location, radiusControl, gapNum + 1);
-                    // If both ends of the gap are overlapped, cut it out.
-                    if (Geometry.Distance(gapEnd1, courseObj.location) < radiusOther &&
-                        Geometry.Distance(gapEnd2, courseObj.location) < radiusOther) {
-                        controlObj.gaps &= ~(1U << gapNum);   // add a gap.
-                    }
-                }
+
+                // Law of cosines...
+                double arcCos = (radiusControl * radiusControl + distance * distance - radiusOther * radiusOther) / (2 * radiusControl * distance);
+                float halfAngleGap = (float) (180 * Math.Acos(arcCos) / Math.PI);
+                float angleGap = Geometry.Angle(controlObj.location, courseObj.location);
+
+                controlObj.gaps = CircleGap.AddGap(controlObj.gaps, angleGap - halfAngleGap, angleGap + halfAngleGap);
             }
         }
 

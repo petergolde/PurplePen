@@ -79,6 +79,7 @@ namespace PurplePen
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = false;
+            this.courseSelector.ShowCourseParts = true;
             // 
             // changeDisplayedCoursesLabel
             // 

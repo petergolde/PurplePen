@@ -124,4 +124,7 @@ Nimetus peaks olema lühem kui 25 märki, et ta mahuks legendilehele. Näiteks h
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Võistluse nimetus:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Võistluse pealkiri</value>
+  </data>
 </root>

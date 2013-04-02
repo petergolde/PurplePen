@@ -191,7 +191,7 @@ namespace PurplePen
             return MapViewer.DragAction.None;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             if (draggingWhole) {
                 // Update the rectangle being dragged.
@@ -208,9 +208,9 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
-            LeftButtonDrag(location, pixelSize, ref displayUpdateNeeded);
+            LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
             draggingWhole = draggingHandle = false;
         }
     }

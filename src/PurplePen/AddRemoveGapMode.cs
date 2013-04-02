@@ -46,12 +46,16 @@ namespace PurplePen
     class AddControlGapMode: BaseMode
     {
         Controller controller;
-        PointCourseObj courseObj;            // object to modify.
+        PointCourseObj courseObjStart;            // object to modify.
+        PointCourseObj courseObjDrag;             // object being dragged on.
+
+        PointF startDrag;
 
         public AddControlGapMode(Controller controller, PointCourseObj courseObj)
         {
             this.controller = controller;
-            this.courseObj = (PointCourseObj) courseObj.Clone();
+            this.courseObjStart = (PointCourseObj) courseObj.Clone();
+            this.courseObjDrag = (PointCourseObj) courseObj.Clone();
         }
 
         // Mouse cursor looks like a crosshair
@@ -70,15 +74,49 @@ namespace PurplePen
 
         public override IMapViewerHighlight[] GetHighlights()
         {
-            return new CourseObj[1] { courseObj };
+            return new CourseObj[1] { courseObjDrag };
         }
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // Create the new corner
+            startDrag = location;
+            return MapViewer.DragAction.DelayedDrag;
+        }
+
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // Get the new set of gaps.
+            CircleGap[] newGaps = CircleGap.AddGap(courseObjStart.location, courseObjStart.gaps, startDrag, location);
+            CircleGap[] newMovableGaps = CircleGap.AddGap(courseObjStart.location, courseObjStart.movableGaps, startDrag, location);
+
+            // Put the new gaps into the highlight.
+            courseObjDrag = (PointCourseObj) courseObjStart.Clone();
+            courseObjDrag.gaps = newGaps;
+            courseObjDrag.movableGaps = newMovableGaps;
+
+            displayUpdateNeeded = true;
+        }
+
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            controller.AddControlGap(startDrag, location);
+
+            controller.DefaultCommandMode();
+            displayUpdateNeeded = true;
+        }
+
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // Create the new gap
             controller.AddControlGap(location);
             controller.DefaultCommandMode();
-            return MapViewer.DragAction.None;
+        }
+
+        public override void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        {
+            // Drag was cancelled. Go back to normal mode.
+            controller.DefaultCommandMode();
+            displayUpdateNeeded = true;
         }
     }
 
@@ -200,10 +238,10 @@ namespace PurplePen
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             startDrag = location;
-            return MapViewer.DragAction.ImmediateDrag;
+            return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             // Get the new set of gaps.
             LegGap[] newGaps = LegGap.AddGap(courseObjStart.path, courseObjStart.gaps, startDrag, location);
@@ -215,9 +253,17 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
             controller.AddLegGap(startDrag, location);     // implicitly uses the current selected to determine which leg gets the gap.
+
+            controller.DefaultCommandMode();
+            displayUpdateNeeded = true;
+        }
+
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            controller.AddLegGap(location);     // implicitly uses the current selected to determine which leg gets the gap.
 
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;

@@ -2,8 +2,8 @@
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2013-03-11</Date>
-    <Clock>15:53</Clock>
+    <Date>2013-03-29</Date>
+    <Clock>13:33</Clock>
   </ModifyDate>
   <Map>
     <Scale>10000</Scale>
@@ -233,6 +233,9 @@
   <Course>
     <CourseName>Course 2</CourseName>
     <CourseId>1</CourseId>
+    <ClassShortName>M20</ClassShortName>
+    <ClassShortName>F20</ClassShortName>
+    <ClassShortName>F35</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>2200</CourseLength>
@@ -260,6 +263,8 @@
   <Course>
     <CourseName>Score</CourseName>
     <CourseId>2</CourseId>
+    <ClassShortName>WIOL Elementary</ClassShortName>
+    <ClassShortName>Public Beginner</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <StartPointCode>STA1</StartPointCode>

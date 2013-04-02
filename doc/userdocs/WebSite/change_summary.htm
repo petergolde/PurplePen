@@ -15,6 +15,111 @@
 <body>
 
 <h1>Purple Pen Change Summary</h1>
+<h2>Changes in 2.0.0 beta 1</h2>
+<h3>New Features</h3>
+<ul>
+<li>
+<p>
+    Full support for map exchanges. You can add a map exchange either at a control, or with a 
+    flagged route to a map exchange point. Purple Pen allows you to view either parts of the course,
+    or the entire course, and creates partial or full control descriptions, as appropriate. You can 
+    set a different print area for each part of a course with a map exchange, although all 
+    parts must be on the same map file. 
+</p>
+</li>
+<li>
+<p>
+    Multi-column descriptions on the map. If the control description won’t fit well in a single 
+    column on the map, you can change the shape of the description to appear in multiple columns.
+</p>
+</li>
+<li>
+<p>
+    The "all controls" map can have a description sheet placed on it with descriptions for all the controls.
+</p>
+</li>
+<li>
+<p>
+    When you hover over a control or leg on the map, a small popup appears with information 
+    about the control or leg. This can be turned on or off with the "View/Show Popup Information" menu item.
+</p>
+</li>
+<li>
+<p>
+    On Windows Vista and later, printing has been completely revamped to use a vector-based printing model. This should 
+    result in smaller spool files, faster printing, and better PDF creation when used with a 
+    PDF print driver. You can switch back to the old method (in case of problems) by 
+    checking the "Rasterize Before Printing" check box in the Print Courses dialog. (On Windows XP, 
+    the Rasterize Before Printing option is always on and cannot be disabled).
+</p>
+</li>
+<li>
+<p>
+    The program now uses the "CMYK" (cyan-magenta-yellow-black) color model by default 
+    when printing or displaying on the screen. This should mean that maps print with colors
+     much closer to what the map creator intended, and similar to how OCAD prints them on a
+     PostScript printer. When printing, you now have the option of using the "CMYK" color 
+    model (the new default), the “RGB” printing model (how Purple Pen 1.x did it), or "OCAD Compatible". 
+    The "OCAD Compatible" model should produce the same output as OCAD does on the same printer. 
+</p>
+</li>
+<li>
+<p>
+    Score courses can have the controls labeled with the number of points for the 
+    control (along with the control number or code). 
+</p>
+</li>
+<li>
+<p>Gaps in control circles are now much better and more like gaps in a leg. You can drag a gap of any
+size and adjust the size of a gap after it is created. You can now add a small (2mm) gap in a leg by just
+clicking after selecting the add gap command.
+</p>
+</li>
+<li>
+<p>Provide the option of a center dot for controls in Event/Customize Course Appearance. </p>
+</li>
+<li>
+<p>Add $(PrintScale) to the special text options for Text special items. </p>
+</li>
+<li>
+<p>
+    You can drag the map around with the left mouse button as well as the right mouse button.
+</p>
+</li>
+<li>
+<p>
+    For clarity, the "Create EPunch Interface File" menu item has been renamed 
+    to "Create Data Interchange File (IOF XML)".
+</p>
+</li>
+<li>
+<p>
+    When a new version is available for download, provides the option to automatically 
+    download and install the new version. 
+</p>
+</li>
+<li>
+<p>
+    The setup program is redone. This shouldn't make a large difference, 
+    but hopefully will be more reliable.
+</p>
+</li>
+<li>
+<p>
+    Class names (from the secondary title/class name for a course) are now 
+    exported to the IOF XML. This should improve compatibility with some other software.
+</p>
+</li>
+<li>
+<p>
+    The program now uses the .NET Framework 4.0 instead of the .NET Framework 2.0. 
+    The setup program will automatically download and install the new version if necessary. 
+</p>
+</li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+</ul>
 <h2>Changes in 1.2.2 </h2>
 <h3>New Features</h3>
 <ul>
@@ -29,6 +134,16 @@
 <p>Estonian translation, thanks to Tarmo Klaar. </p>
 </li>
 </ul>
+<h2>Changes in 1.2.1 </h2>
+<h3>New Features</h3>
+<ul>
+<li>
+<p>Estonian translation, thanks to Tarmo Klaar. </p>
+</li>
+</ul>
+</li>
+</ul>
+
 <h2>Changes in 1.2.0 </h2>
 <h3>New Features</h3>
 <ul>
@@ -48,6 +163,7 @@
 <p>Orienteering Interchange XML files are written without a byte order mark.</p>
 </li>
 </ul>
+
 <h2>Changes in 1.1.5 </h2>
 <h3>New Features</h3>
 <ul>

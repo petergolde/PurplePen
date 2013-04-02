@@ -125,4 +125,7 @@ Pentru a încăpea în tabelul de descriere, titlul ar trebui sa aibă o lungime
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Titlul Evenimentului:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Titlul Evenimentului</value>
+  </data>
 </root>

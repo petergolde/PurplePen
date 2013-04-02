@@ -150,11 +150,11 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopien</value>
   </data>
-  <data name="radioButtonMultiPage.Text" xml:space="preserve">
-    <value>Auf mehrere Seiten drucken</value>
-  </data>
-  <data name="radioButtonOnePage.Text" xml:space="preserve">
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Auf eine Seite zuschneiden</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Auf mehrere Seiten drucken</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Auf eine Seite einpassen, wenn der Druckbereich zu groß ist.</value>
@@ -164,5 +164,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bahnen drucken</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Auf mehrere Seiten drucken</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Auf eine Seite zuschneiden</value>
   </data>
 </root>

@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху ъгъл, за да го премахнете.</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката върху окръжността на КТ, за да добавите прекъсване.</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху прекъсването на окръжността на КТ, за да го премахнете.</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и я плъзнете, за да вмъкнете прекъсване в отсечката.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху прекъсването на отсечката, за да го премахнете.</value>

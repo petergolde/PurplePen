@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>Картовият файл беше успешно зареден. Ако изпращате вашия Purple Pen файл на някой друг, той също трябва да има този картов файл.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Картов файл</value>
+  </data>
 </root>

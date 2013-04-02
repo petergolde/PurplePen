@@ -56,6 +56,7 @@ namespace PurplePen.Tests
             // Special appearance to test the usage of CourseAppearance.
             specialAppearance = new CourseAppearance();
             specialAppearance.controlCircleSize = 0.666667F;  // 4mm control circle
+            specialAppearance.centerDotDiameter = 0.75F; // 0.75 mm center dot
             specialAppearance.lineWidth = 2.85714F; // 1mm lines
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;
@@ -172,56 +173,56 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ControlCircle()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0, 0));
             SingleObject(courseobj, "control_circle");
         }
 
         [TestMethod]
         public void ControlCircleSpecial()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0, 0));
             SingleObject(courseobj, "control_circle_special");
         }
 
         [TestMethod]
         public void ControlCircleGaps()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0, 0));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "control_circle_gaps");
         }
 
         [TestMethod]
         public void ControlCircleGapsSpecial()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0, 0));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "control_circle_gaps_special");
         }
 
         [TestMethod]
         public void Finish()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0, 0));
             SingleObject(courseobj, "finish_circle");
         }
 
         [TestMethod]
         public void FinishGaps()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "finish_circle_gaps");
         }
 
         [TestMethod]
         public void FinishSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0, 0));
             SingleObject(courseobj, "finish_circle_special");
         }
 
         [TestMethod]
         public void FinishGapsSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "finish_circle_gaps_special");
         }
 
@@ -477,34 +478,48 @@ namespace PurplePen.Tests
         }
 
         // Create a description course object to use in testing.
-        DescriptionCourseObj CreateDescriptionCourseObj()
+        DescriptionCourseObj CreateDescriptionCourseObj(int numColumns = 1)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3))); 
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F / numColumns, symbolDB, description, DescriptionKind.Symbols, numColumns);
         }
 
         [TestMethod]
         public void Description()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(1);
             CheckRenderBitmap(courseobj, "description", Color.Wheat);
         }
-	
+
+        [TestMethod]
+        public void Description2Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CheckRenderBitmap(courseobj, "description_2col", Color.Wheat);
+        }
+
+        [TestMethod]
+        public void Description3Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CheckRenderBitmap(courseobj, "description_3col", Color.Wheat);
+        }
 
         [TestMethod]
         public void ControlCircleDistance()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(1, 1));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1));
             Assert.AreEqual(2.0, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
-            courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(1, 1));
+            courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(1, 1));
             Assert.AreEqual(3.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
@@ -512,10 +527,10 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FinishDistance()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(1, 1));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1));
             Assert.AreEqual(1.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
-            courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(1, 1));
+            courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(1, 1));
             Assert.AreEqual(3.25, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
@@ -678,23 +693,23 @@ namespace PurplePen.Tests
         {
             // Make sure layer number for non-zero layers are dumped.
 
-            CourseObj courseobj = new ControlCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, 0xFEFFFFFF, new PointF(1, 1.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, new CircleGap[] {new CircleGap(-10, 30)}, new PointF(1, 1.5F));
             courseobj.layer = CourseLayer.AllControls;
-            AssertDump(courseobj, @"Control:        layer:2  control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:11111110111111111111111111111111");
+            AssertDump(courseobj, @"Control:        layer:2  control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:-10:30");
         }
 
         [TestMethod]
         public void ControlCircleDump()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, 0xFEFFFFFF, new PointF(1, 1.5F));
-            AssertDump(courseobj, @"Control:        control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:11111110111111111111111111111111");
+            CourseObj courseobj = new ControlCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, new CircleGap[] { new CircleGap(-10, 30) }, new PointF(1, 1.5F));
+            AssertDump(courseobj, @"Control:        control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:-10:30");
         }
 
         [TestMethod]
         public void FinishDump()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(11), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFEFFFFF0, new PointF(-1, 0));
-            AssertDump(courseobj, @"Finish:         control:11  scale:1  location:(-1,0)  gaps:11111110111111111111111111110000");
+            CourseObj courseobj = new FinishCourseObj(ControlId(11), CourseControlId(0), 1.0F, defaultCourseAppearance, new CircleGap[]{new CircleGap(-10, 40), new CircleGap(90, 270)}, new PointF(-1, 0));
+            AssertDump(courseobj, @"Finish:         control:11  scale:1  location:(-1,0)  gaps:-10:40,90:270");
         }
 
        [TestMethod]
@@ -788,6 +803,13 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj();
             AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=-2.39,Width=7.29,Height=6.39}");
         }
+
+        [TestMethod]
+        public void DescriptionDump2()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.155,Width=7.515,Height=1.845} columns:2");
+        }
 	
 
 
@@ -848,49 +870,49 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ControlCircleHighlight()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             SingleObjectHighlight(courseobj, "control_circle_highlight");
         }
 
         [TestMethod]
         public void ControlCircleHighlightSpecial()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0.5F, 0.5F));
             SingleObjectHighlight(courseobj, "control_circle_highlight_special");
         }
 
         [TestMethod]
         public void ControlCircleGapsHighlight()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.5F, 0.5F));
             SingleObjectHighlight(courseobj, "control_circle_gaps_highlight");
         }
 
         [TestMethod]
         public void FinishHighlight()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "finish_circle_highlight");
         }
 
         [TestMethod]
         public void FinishGapsHighlight()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xF0FF83FF, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "finish_circle_gaps_highlight");
         }
 
         [TestMethod]
         public void FinishHighlightSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xFFFFFFFF, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "finish_circle_highlight_special");
         }
 
         [TestMethod]
         public void FinishGapsHighlightSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0xF0FF83FF, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "finish_circle_gaps_highlight_special");
         }
 
@@ -1143,9 +1165,21 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj();
             CheckHighlightBitmap(courseobj, "description_highlight");
         }
+
+        [TestMethod]
+        public void DescriptionHighlight2Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CheckHighlightBitmap(courseobj, "description_highlight_2col");
+        }
+
+        [TestMethod]
+        public void DescriptionHighlight3Col()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CheckHighlightBitmap(courseobj, "description_highlight_3col");
+        }
 	
-
-
         // Render to a bitmap and check against the saved version.
         internal void CheckOffsetBitmap(CourseObj courseobj, string basename, Color backColor)
         {
@@ -1185,14 +1219,14 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ControlCircleOffset()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             SingleObjectOffset(courseobj, "control_circle_offset");
         }
 
         [TestMethod]
         public void FinishOffset()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F));
             SingleObjectOffset(courseobj, "finish_circle_offset");
         }
 
@@ -1324,18 +1358,18 @@ namespace PurplePen.Tests
         [TestMethod]
         public void  PointObjectEquals()
         {
-            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj2 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj3 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFEFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj4 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.6F));
-            CourseObj courseobj5 = new ControlCourseObj(ControlId(1), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj6 = new ControlCourseObj(ControlId(0), CourseControlId(1), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj7 = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
-            CourseObj courseobj8 = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
+            CourseObj courseobj2 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
+            CourseObj courseobj3 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new CircleGap[] {new CircleGap(10,20)}, new PointF(0.5F, 0.5F));
+            CourseObj courseobj4 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.6F));
+            CourseObj courseobj5 = new ControlCourseObj(ControlId(1), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
+            CourseObj courseobj6 = new ControlCourseObj(ControlId(0), CourseControlId(1), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
+            CourseObj courseobj7 = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
+            CourseObj courseobj8 = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             CourseObj courseobj9 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F));
             CourseObj courseobj10 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F));
             CourseObj courseobj11 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 17, new PointF(0.5F, 0.5F));
-            CourseObj courseobj12 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0xFFFFFFFF, new PointF(0.5F, 0.5F));
+            CourseObj courseobj12 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             courseobj12.layer = CourseLayer.Descriptions;
 
             Assert.AreEqual(courseobj, courseobj);
@@ -1430,36 +1464,38 @@ namespace PurplePen.Tests
             EventDB eventDB = new EventDB(undomgr);
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
-            CourseView courseView = CourseView.CreateCourseView(eventDB, CourseId(3), true, true);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3)));  
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            description = descFormatter.CreateDescription(false);
+            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
             CourseObj courseobj3 = (CourseObj) courseobj1.Clone();
-            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols);
-            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols);
-            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text);
+            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text, 1);
 
             undomgr.BeginCommand(12, "move control");
             ChangeEvent.ChangeControlLocation(eventDB, ControlId(11), new PointF(4, 8));
             undomgr.EndCommand(12);
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            description = descFormatter.CreateDescription(false);
+            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
 
             undomgr.BeginCommand(13, "change description");
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.4");
             undomgr.EndCommand(13);
 
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            description = descFormatter.CreateDescription(false);
+            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
 
             undomgr.BeginCommand(13, "change description");  // change description back
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.2");
             undomgr.EndCommand(13);
 
-            description = DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
-            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols);
+            description = descFormatter.CreateDescription(false);
+            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj10 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 2);
 
             Assert.AreEqual(courseobj1, courseobj2);
             Assert.AreEqual(courseobj1, courseobj3);
@@ -1469,6 +1505,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(courseobj1, courseobj7);
             Assert.AreNotEqual(courseobj1, courseobj8);
             Assert.AreEqual(courseobj1, courseobj9);
+            Assert.AreNotEqual(courseobj9, courseobj10);
         }
 
         [TestMethod]
@@ -1591,31 +1628,6 @@ namespace PurplePen.Tests
             for (int i = 0; i < handles.Length; ++i)
                 Assert.AreEqual(expected[i], handles[i]);
         }
-
-        [TestMethod]
-        public void ComputeCircleGaps()
-        {
-                                                       //     28     24     20     16     12       8       4
-            uint gaps1 = 0x1f8d723e;  // 0001 1111 1000 1101 0111 0010 0011 1110 
-            float[] expectedScaled1 = 
-                { 6, 9, 10,12, 15, 16, 17, 18, 20, 23, 29, 1 };
-            float[] actual = PointCourseObj.ComputeCircleGaps(gaps1);
-            Assert.AreEqual(expectedScaled1.Length, actual.Length);
-            for (int i = 0; i < expectedScaled1.Length; ++i) {
-                Assert.AreEqual(expectedScaled1[i] * 360.0 / 32, actual[i], 0.00001);
-            }
-
-                                                     //     28     24     20     16     12       8       4
-            uint gaps2 = 0xff8d723f;  // 1111 1111 1000 1101 0111 0010 0011 1111 
-            float[] expectedScaled2 = 
-                { 6, 9, 10, 12, 15, 16, 17, 18, 20, 23 };
-            actual = PointCourseObj.ComputeCircleGaps(gaps2);
-            Assert.AreEqual(expectedScaled2.Length, actual.Length);
-            for (int i = 0; i < expectedScaled2.Length; ++i) {
-                Assert.AreEqual(expectedScaled2[i] * 360.0 / 32, actual[i], 0.00001);
-            }
-        }
-
     }
 }
 #endif

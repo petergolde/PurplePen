@@ -132,4 +132,7 @@
   <data name="infoMessage.Text" xml:space="preserve">
     <value>Karttatiedosto ladattiin onnistuneesti. Jos lähetät Purple Pen -tiedoston jollekin muulle, muista lähettää myös karttatiedosto ellei sitä ole vastaanottajalla.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Karttatiedosto</value>
+  </data>
 </root>

@@ -44,11 +44,13 @@ using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Globalization;
+using System.Linq;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
 
 using PurplePen.DebugUI;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -70,12 +72,15 @@ namespace PurplePen
 
         Uri helpFileUrl;                       // URL of the help file.
 
+        Point lastTooltipLocation;
+        bool showToolTips = true;
+
         const double TRACKBAR_MIN = 0.25;      // minimum zoom on the zoom trackbar
         const double TRACKBAR_MAX = 10.0;     // maximum zoom on the zoom trackbar
 
         const string HELP_FILE_NAME = "Purple Pen Help.chm";
 
-        const double DEFAULT_MAP_INTENSITY = 0.6;
+        const float DEFAULT_MAP_INTENSITY = 0.7F;
 
         public MainFrame()
         {
@@ -86,16 +91,18 @@ namespace PurplePen
             courseTabs.Height -= (courseTabs.DisplayRectangle.Height + 5);
 
             // Using the property designer for these doesn't totally work.
-            veryLowIntensityMenu.Tag = 0.2;
-            lowIntensityMenu.Tag = 0.4;
-            mediumIntensityMenu.Tag = 0.6;
-            highIntensityMenu.Tag = 0.8;
+            veryLowIntensityMenu.Tag = 0.4;
+            lowIntensityMenu.Tag = 0.55;
+            mediumIntensityMenu.Tag = 0.7;
+            highIntensityMenu.Tag = 0.85;
             fullIntensityMenu.Tag = 1.0;
                 
             // Set the trackbar properties that can't be done in the designer.
             zoomTracker.TrackBar.TickStyle = TickStyle.None;
             zoomTracker.TrackBar.Minimum = 0;
             zoomTracker.TrackBar.Maximum = 100;
+
+            showToolTips = Settings.Default.ShowPopupInfo;
 
             SetMenuIcons();
 
@@ -114,7 +121,10 @@ namespace PurplePen
             addFinishMenu.Image = addFinishToolStripButton.Image;
             deleteMenu.Image = deleteToolStripButton.Image;
             deleteItemMenu.Image = deleteToolStripButton.Image;
-            addSpecialItemMenu.Image = ncross.Image;
+            addMapExchangeMenu.Image = mapExchangeToolStripMenu.Image;
+            mapExchangeControlMenuItem.Image = mapExchangeControlToolStripMenuItem.Image;
+            mapExchangeSeparateMenuItem.Image = mapExchangeSeparateToolStripMenuItem.Image;
+            addSpecialItemMenu.Image = specialItemToolStripMenu.Image;
             addOptCrossingMenu.Image = optionalCrossingPointToolStripMenuItem.Image;
             addMandatoryCrossingMenu.Image = mandatoryCrossingPointToolStripMenuItem.Image;
             addWaterMenu.Image = waterLocationToolStripMenuItem.Image;
@@ -150,6 +160,11 @@ namespace PurplePen
                 location = new PointF(0, 0);
                 return false;
             }
+        }
+
+        public void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd)
+        {
+            mapViewer.BeginMapDragging(Util.PointFromPointF(mapViewer.WorldToPixel(initialPos)), buttonEnd);
         }
 
         // Prompt the user for a file name to open.
@@ -232,8 +247,8 @@ namespace PurplePen
             if (mapDisplay != controller.MapDisplay) {
                 // The mapDisplay object is new. This currently only happens on startup.
                 mapDisplay = controller.MapDisplay;
-                mapDisplay.MapIntensity = DEFAULT_MAP_INTENSITY;
-                mapDisplay.AntiAlias = true;
+                mapDisplay.MapIntensity = Settings.Default.MapIntensity;
+                mapDisplay.AntiAlias = Settings.Default.MapHighQuality;
                 mapViewer.SetMap(mapDisplay);
                 ShowRectangle(mapDisplay.MapBounds);
             }
@@ -305,6 +320,33 @@ namespace PurplePen
         void UpdateCourse()
         {
             mapDisplay.SetCourse(controller.GetCourseLayout());
+        }
+
+        // Update the part banner in the map pane.
+        void UpdatePartBanner()
+        {
+            if (controller.NumberOfParts <= 1) {
+                SetBannerVisibility(false);
+            }
+            else {
+                coursePartBanner.NumberOfParts = controller.NumberOfParts;
+                coursePartBanner.SelectedPart = controller.CurrentPart;
+                SetBannerVisibility(true);
+            }
+        }
+
+        void SetBannerVisibility(bool bannerVisible)
+        {
+            if (!coursePartBanner.Visible && bannerVisible) {
+                // Banner becoming visible.
+                coursePartBanner.Visible = true;
+                mapViewer.ScrollView(0, - coursePartBanner.Height / 2);
+            }
+            else if (coursePartBanner.Visible && !bannerVisible) {
+                // Banner becoming hidden.
+                mapViewer.ScrollView(0, coursePartBanner.Height / 2);
+                coursePartBanner.Visible = false;
+            }
         }
 
         // Update the description in the description pane.
@@ -469,6 +511,9 @@ namespace PurplePen
                 }
             }
 
+            // Update checkmark on View/Show Popup Information
+            showPopupsMenu.Checked = showToolTips;
+
             // Update Delete menu item
             deleteToolStripButton.Enabled =  deleteMenu.Enabled = deleteItemMenu.Enabled = controller.CanDeleteSelection();
 
@@ -485,6 +530,14 @@ namespace PurplePen
             UpdateMenuItem(rotateMenu, controller.CanRotate());
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
+            UpdateMenuItem(mapExchangeControlMenuItem, controller.CanAddMapExchangeControl());
+            UpdateMenuItem(mapExchangeControlToolStripMenuItem, controller.CanAddMapExchangeControl());
+            UpdateMenuItem(mapExchangeSeparateMenuItem, controller.CanAddMapExchangeSeparate());
+            UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
+            UpdateMenuItem(mapExchangeToolStripMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
+            UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
+            UpdateMenuItem(addDescriptionsMenu, controller.CanAddDescriptions());
+            UpdateMenuItem(descriptionsToolStripMenuItem, controller.CanAddDescriptions());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -509,8 +562,9 @@ namespace PurplePen
                 }
             }
 
-            Id<Course>[] displayedCourses;
-            UpdateMenuItem(changeDisplayedCoursesMenu, controller.CanChangeDisplayedCourses(out displayedCourses));
+            CourseDesignator[] displayedCourses;
+            bool showAllControls;
+            UpdateMenuItem(changeDisplayedCoursesMenu, controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls));
 
             // Update Zoom menu items -- check the correct one (if any).
             float currentZoom = mapViewer.ZoomFactor;
@@ -656,6 +710,7 @@ namespace PurplePen
                         UpdateMapFile();
                         UpdateTabs();
                         UpdateCourse();
+                        UpdatePartBanner();
                         UpdateDescription();
                         UpdateSelection();
                         UpdateHighlight();
@@ -672,6 +727,10 @@ namespace PurplePen
             }
         }
 
+        private void coursePartBanner_SelectedPartChanged(object sender, EventArgs e)
+        {
+            controller.SelectPart(coursePartBanner.SelectedPart);
+        }
 
         private void symbolBrowserMenu_Click(object sender, EventArgs e)
         {
@@ -836,17 +895,27 @@ namespace PurplePen
 
         private void addControlMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Normal);
+            controller.BeginAddControlMode(ControlPointKind.Normal, false);
         }
 
         private void addStartMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Start);
+            controller.BeginAddControlMode(ControlPointKind.Start, false);
         }
 
         private void addFinishMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Finish);
+            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+        }
+
+        private void addMapExchangeControl_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.Normal, true);
+        }
+
+        private void addMapExchangeSeparate_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.MapExchange, false);
         }
 
         private void zoomMenu_Click(object sender, EventArgs e)
@@ -859,7 +928,16 @@ namespace PurplePen
         private void intensityMenu_Click(object sender, EventArgs e)
         {
             double intensityAmount = (double) ((ToolStripMenuItem) sender).Tag;
-            mapDisplay.MapIntensity = intensityAmount;
+            mapDisplay.MapIntensity = (float) intensityAmount;
+            Settings.Default.MapIntensity = mapDisplay.MapIntensity;
+            Settings.Default.Save();
+        }
+
+        private void showPopupsMenu_Click(object sender, EventArgs e)
+        {
+            showToolTips = !showToolTips;
+            Settings.Default.ShowPopupInfo = showToolTips;
+            Settings.Default.Save();
         }
 
         private void courseTabs_Selected(object sender, TabControlEventArgs e)
@@ -889,8 +967,23 @@ namespace PurplePen
                 mapViewer.Cursor = controller.GetMouseCursor(location, mapViewer.PixelSize);
             }
 
+            PointF pixelLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
+            if (pixelLocation != lastTooltipLocation)
+                toolTip.Hide(mapViewer);
+
             UpdatePointerLabel(inViewport, location);
             UpdateStatusText();
+        }
+
+        private void mapViewer_OnPointerHover(object sender, bool inViewport, PointF location)
+        {
+            string tipText, titleText;
+            if (showToolTips && controller.GetToolTip(location, mapViewer.PixelSize, out tipText, out titleText)) {
+                toolTip.Hide(mapViewer);
+                toolTip.ToolTipTitle = titleText;
+                lastTooltipLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
+                toolTip.Show(tipText, mapViewer, lastTooltipLocation.X, lastTooltipLocation.Y + 24, 7000);
+            }
         }
 
         private void mapViewer_MouseEnter(object sender, EventArgs e)
@@ -911,6 +1004,9 @@ namespace PurplePen
 
         private MapViewer.DragAction mapViewer_OnMouseEvent(object sender, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart)
         {
+            if (action != MouseAction.Move)
+                toolTip.Hide(mapViewer);
+
             if (action == MouseAction.Down && buttonNumber == MapViewer.LeftMouseButton)
                 return controller.LeftButtonDown(location, mapViewer.PixelSize);
             else if (action == MouseAction.Down && buttonNumber == MapViewer.RightMouseButton)
@@ -924,13 +1020,13 @@ namespace PurplePen
             else if (action == MouseAction.Click && buttonNumber == MapViewer.RightMouseButton)
                 controller.RightButtonClick(location, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.LeftMouseButton) 
-                controller.LeftButtonDrag(location, mapViewer.PixelSize);
+                controller.LeftButtonDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonDrag(location, mapViewer.PixelSize);
+                controller.RightButtonDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonEndDrag(location, mapViewer.PixelSize);
+                controller.LeftButtonEndDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonEndDrag(location, mapViewer.PixelSize);
+                controller.RightButtonEndDrag(location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.LeftMouseButton)
                 controller.LeftButtonCancelDrag();
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.RightMouseButton)
@@ -1138,7 +1234,7 @@ namespace PurplePen
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
         }
 
         private void addOutOfBoundsMenu_Click(object sender, EventArgs e)
@@ -1260,12 +1356,14 @@ namespace PurplePen
 
         private void changeDisplayedCoursesMenu_Click(object sender, EventArgs e)
         {
-            Id<Course>[] displayedCourses;
+            CourseDesignator[] displayedCourses;
+            bool showAllControls;
 
-            if (controller.CanChangeDisplayedCourses(out displayedCourses) == CommandStatus.Enabled) {
+            if (controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls) == CommandStatus.Enabled) {
                 ChangeSpecialCourses changeCoursesDialog = new ChangeSpecialCourses();
                 changeCoursesDialog.EventDB = controller.GetEventDB();
-                changeCoursesDialog.DisplayedCourses = displayedCourses;
+                changeCoursesDialog.ShowAllControls = showAllControls; changeCoursesDialog.DisplayedCourses = displayedCourses;
+
 
                 DialogResult result = changeCoursesDialog.ShowDialog(this);
                 if (result == DialogResult.OK) {
@@ -1320,7 +1418,8 @@ namespace PurplePen
         private void helpMenu_DropDownOpening(object sender, EventArgs e)
         {
             // The debug and translate menu show up only if Ctrl + Shift also pressed.
-            debugMenu.Visible = translateMenu.Visible = ((Control.ModifierKeys & (Keys.Control | Keys.Shift)) == (Keys.Control | Keys.Shift));
+            Debug.WriteLine(Control.ModifierKeys);
+            debugMenu.Visible = translateMenu.Visible = ((Control.ModifierKeys & (Keys.Control | Keys.Shift)) == (Keys.Control | Keys.Shift)) || ((Control.ModifierKeys & (Keys.Control | Keys.Alt)) == (Keys.Control | Keys.Alt));
         }
 
         // Change the viewport to show the given rectangle.
@@ -1352,12 +1451,19 @@ namespace PurplePen
 
         private void highQualityMenu_Click(object sender, EventArgs e)
         {
-            mapDisplay.AntiAlias = true;
+            SetQuality(true);
         }
 
         private void normalQualityMenu_Click(object sender, EventArgs e)
         {
-            mapDisplay.AntiAlias = false;
+            SetQuality(false);
+        }
+
+        private void SetQuality(bool highQuality)
+        {
+            mapDisplay.AntiAlias = highQuality;
+            Settings.Default.MapHighQuality = highQuality;
+            Settings.Default.Save();
         }
 
         private void changeCodesMenu_Click(object sender, EventArgs e)
@@ -1549,9 +1655,16 @@ namespace PurplePen
 
             // Initialize dialog
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
-            PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB());
+            PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB(), controller.AnyMultipart());
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
+
+            if (Environment.OSVersion.Version.Major <= 5) {
+                // Windows XP. Force rasterization.
+                coursePrintSettings.UseXpsPrinting = false;
+                printCoursesDialog.PrintSettings = coursePrintSettings;
+                printCoursesDialog.EnableRasterizeChoice = false;
+            }
 
             // show the dialog, on success, print.
             if (printCoursesDialog.ShowDialog(this) == DialogResult.OK) {
@@ -1564,11 +1677,11 @@ namespace PurplePen
             printCoursesDialog.Dispose();
         }
 
-        private void SetPrintArea(bool allCourses)
+        private void SetPrintArea(PrintArea printArea)
         {
             SetPrintAreaDialog dialog = new SetPrintAreaDialog();
             dialog.controller = controller;
-            dialog.allCourses = allCourses;
+            dialog.printArea = printArea;
 
             Point location = this.Location;
             location.Offset(10, 100);
@@ -1577,23 +1690,34 @@ namespace PurplePen
             dialog.Show(this);
 
             // Make sure the existing print area is fully visible.
-            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(allCourses);
+            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(printArea);
             if (!mapViewer.Viewport.Contains(rectangleCurrent)) {
                 rectangleCurrent.Inflate(rectangleCurrent.Width * 0.05F, rectangleCurrent.Height * 0.05F);
                 ShowRectangle(rectangleCurrent);
             }
 
-            controller.BeginSetPrintArea(allCourses, dialog);
+            controller.BeginSetPrintArea(printArea, dialog);
+        }
+
+        private void setPrintAreaMenu_DropDownOpening(object sender, EventArgs e)
+        {
+            bool multiPart = (controller.NumberOfParts > 1);
+            UpdateMenuItem(printAreaThisPartMenu, multiPart ? CommandStatus.Enabled : CommandStatus.Hidden);
+        }
+
+        private void printAreaThisPartMenu_Click(object sender, EventArgs e)
+        {
+            SetPrintArea(PrintArea.OnePart);
         }
 
         private void printAreaThisCourseMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(false);
+            SetPrintArea(PrintArea.OneCourse);
         }
 
         private void printAreaAllCoursesMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(true);
+            SetPrintArea(PrintArea.AllCourses);
         }
 
         private void changeMapFileMenu_Click(object sender, EventArgs e)
@@ -1853,40 +1977,12 @@ namespace PurplePen
         }
 
 
-        private void versionCheckWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            // The version check has completed. The result is either null, or the version string of the new version.
-            if (!e.Cancelled && e.Error == null && e.Result != null) {
-                InfoMessage(string.Format(MiscText.NewerVersionAvailable, Util.PrettyVersionString((string) e.Result), Util.PrettyVersionString(VersionNumber.Current)));
-            }
-        }
-
-        private void versionCheckWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // We need to check to see if a new version is available. We do this in the background.
-            // If a new version is available, the version number is returned as the result of the background
-            // processing. If no new version is available, null is returned.
-            WebClient client = new WebClient();
-
-            // Download latest version.
-            string latestVersion = client.DownloadString("http://purple-pen.org/downloads/latest_version.txt");
-
-            // Get first line.
-            int index = latestVersion.IndexOfAny(new char[] { '\r', '\n' });
-            if (index > 0)
-                latestVersion = latestVersion.Substring(0, index);
-
-            // Check against current version.
-            if (!string.IsNullOrEmpty(latestVersion) && Util.CompareVersionStrings(VersionNumber.Current, latestVersion) < 0) {
-                // The latest version is later than our version.
-                e.Result = latestVersion;
-            }
-        }
-
         private void MainFrame_Shown(object sender, EventArgs e)
         {
             // Begin check for new version in the background.
-            versionCheckWorker.RunWorkerAsync();
+            Updater.OwnerWindow = this;
+            Updater.Controller = this.controller;
+            Updater.CheckForUpdates();
         }
 
         private void dotGridTesterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2043,8 +2139,6 @@ namespace PurplePen
 
             openFile.Dispose();
         }
-
-
 
 
 

@@ -270,4 +270,7 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Customize Course Appearance</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Add Map Exchange</value>
+  </data>
 </root>

@@ -99,12 +99,10 @@ namespace PurplePen.DebugUI
             else
                 id = courseItem.id;
 
-            if (id.IsNone)
-                courseView = CourseView.CreateAllControlsView(eventDB);
-            else
-                courseView = CourseView.CreateCourseView(eventDB, id, true, true);
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
 
-            return DescriptionFormatter.CreateDescription(courseView, symbolDB, false);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            return descFormatter.CreateDescription(false);
         }
 
         private void listBoxCourses_SelectedIndexChanged(object sender, EventArgs e)

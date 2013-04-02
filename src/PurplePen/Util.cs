@@ -199,6 +199,21 @@ namespace PurplePen
             }
         }
 
+        // Clone an array and its elemenets.
+        public static T[] CloneArrayAndElements<T>(T[] a)
+            where T : ICloneable
+        {
+            if (a == null)
+                return null;
+
+            T[] newArray = new T[a.Length];
+            for (int i = 0; i < a.Length; ++i) {
+                newArray[i] = (T) a[i].Clone();
+            }
+
+            return newArray;
+        }
+
         // Round a rectangle. Returns a sane hittest of rounding each coordinate. Rectangle.Round doesn't do that!
         public static Rectangle Round(RectangleF rect)
         {
@@ -350,6 +365,14 @@ namespace PurplePen
             return v1.CompareTo(v2);
         }
 
+        // Compare version strings. Return true if all exception last component is same.
+        public static bool SameExceptRevision(string s1, string s2)
+        {
+            Version v1 = new Version(s1);
+            Version v2 = new Version(s2);
+            return (v1.Major == v2.Major && v1.Minor == v2.Minor && v1.Build == v2.Build);
+        }
+
         // Pretty-ize the version string. 
         public static string PrettyVersionString(string verString)
         {
@@ -359,11 +382,11 @@ namespace PurplePen
             if (v.Revision >= VersionNumber.Stable)
                 modifier = "";
             else if (v.Revision >= VersionNumber.RC)
-                modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 10.0);
             else if (v.Revision >= VersionNumber.Beta)
-                modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 10.0);
             else if (v.Revision >= VersionNumber.Alpha)
-                modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 100.0);
+                modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 10.0);
             else
                 modifier = string.Format(" ({0})", v.Revision);
 
@@ -438,6 +461,14 @@ namespace PurplePen
                 else
                     return MiscText.MandCrossing_Short;
 
+            case ControlPointKind.MapExchange:
+                if (style == NameStyle.Long)
+                    return MiscText.MapExchange_Long;
+                else if (style == NameStyle.Medium)
+                    return MiscText.MapExchange_Medium;
+                else
+                    return MiscText.MapExchange_Short;
+
             default:
                 Debug.Fail("bad control kind");
                 return "";
@@ -465,6 +496,29 @@ namespace PurplePen
             return culture.TwoLetterISOLanguageName;
         }
 
+        public static bool EqualArrays<T>(T[] a1, T[] a2)
+        {
+            if (a1 == null)
+                return (a2 == null);
+            else if (a2 == null)
+                return (a1 == null);
+            else {
+                if (a1.Length != a2.Length)
+                    return false;
+
+                for (int i = 0; i < a1.Length; ++i) {
+                    if (!a1[i].Equals(a2[i]))
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static Point PointFromPointF(PointF pointf)
+        {
+            return new Point((int)Math.Round(pointf.X), (int)Math.Round(pointf.Y));
+        }
     }
 
 }

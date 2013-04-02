@@ -38,12 +38,14 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace PurplePen
 {
     partial class CourseSelector: UserControl
     {
         private bool showAllControls;
+        private bool showCourseParts;
         private EventDB eventDB;
 
         private bool loaded = false;
@@ -65,6 +67,18 @@ namespace PurplePen
             }
         }
 
+        public bool ShowCourseParts
+        {
+            get
+            {
+                return showCourseParts;
+            }
+            set
+            {
+                showCourseParts = value;
+            }
+        }
+
         internal EventDB EventDB
         {
             get
@@ -78,16 +92,49 @@ namespace PurplePen
         }
 
         // Get or set the selected courses.
+        // Only use if ShowCourseParts is false.
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
         public Id<Course>[] SelectedCourses
+        {
+            get {
+                CourseDesignator[] array = SelectedCourseDesignators;
+                Id<Course>[] result = new Id<Course>[array.Length];
+                for (int i = 0; i < array.Length; ++i)
+                    result[i] = array[i].CourseId;
+                return result;
+            }
+
+            set
+            {
+                Debug.Assert(!this.ShowCourseParts);
+
+                CourseDesignator[] array = new CourseDesignator[value.Length];
+                for (int i = 0; i < array.Length; ++i)
+                    array[i] = new CourseDesignator(value[i]);
+                SelectedCourseDesignators = array;
+            }
+        }
+
+        // Get or set the selected courses designator
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
+        public CourseDesignator[] SelectedCourseDesignators
         {
             get
             {
                 LoadList();
-                List<Id<Course>> list = new List<Id<Course>>();
-                for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                    if (courseListBox.GetItemChecked(i)) {
-                        list.Add(((CourseItem) courseListBox.Items[i]).courseId);
+
+                List<CourseDesignator> list = new List<CourseDesignator>();
+
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    if (node.Checked) {
+                        list.Add((CourseDesignator)(node.Tag));
+                    }
+                    else {
+                        foreach (TreeNode childNode in node.Nodes) {
+                            if (childNode.Checked) {
+                                list.Add((CourseDesignator)(childNode.Tag));
+                            }
+                        }
                     }
                 }
 
@@ -97,25 +144,35 @@ namespace PurplePen
             set
             {
                 LoadList();
-                for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                    Id<Course> courseId = ((CourseItem) courseListBox.Items[i]).courseId;
-                    courseListBox.SetItemChecked(i, Array.IndexOf(value, courseId) >= 0);
+
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    node.Checked = false;
+                }
+
+                // Do children before parents.
+                foreach (TreeNode node in courseTreeView.Nodes) {
+                    if (Array.IndexOf(value, ((CourseDesignator)(node.Tag))) >= 0)
+                        node.Checked = true;
+                    else {
+                        foreach (TreeNode childNode in node.Nodes) {
+                            if (Array.IndexOf(value, ((CourseDesignator)(childNode.Tag))) >= 0)
+                                childNode.Checked = true;
+                        }
+                    }
                 }
             }
         }
 
-            private void selectAll_Click(object sender, EventArgs e)
+        private void selectAll_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                courseListBox.SetItemChecked(i, true);
-            }
+            foreach (TreeNode node in courseTreeView.Nodes)
+                node.Checked = true;
         }
 
         private void selectNone_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < courseListBox.Items.Count; ++i) {
-                courseListBox.SetItemChecked(i, false);
-            }
+            foreach (TreeNode node in courseTreeView.Nodes)
+                node.Checked = false;
         }
 
         private void CourseSelector_Load(object sender, EventArgs e)
@@ -127,37 +184,83 @@ namespace PurplePen
         {
             if (eventDB != null && !loaded) {
                 if (showAllControls) {
-                    courseListBox.Items.Add(new CourseItem(Id<Course>.None, MiscText.AllControls));
+                    courseTreeView.Nodes.Add(new TreeNode(MiscText.AllControls) {Tag = CourseDesignator.AllControls});
                 }
 
-                List<CourseItem> list = new List<CourseItem>();
                 foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                    list.Add(new CourseItem(courseId, eventDB.GetCourse(courseId).name));
+                    TreeNode[] parts = null;
+
+                    // If the course has parts, get all the parts.
+                    int numberParts = QueryEvent.CountCourseParts(eventDB, courseId);
+                    if (showCourseParts && numberParts > 1) {
+                        parts = new TreeNode[numberParts];
+                        for (int part = 0; part < numberParts; ++part) {
+                            parts[part] = new TreeNode(string.Format(MiscText.PartN, part + 1))
+                            {
+                                Tag = new CourseDesignator(courseId, part),
+                                Checked = true
+                            };
+                        }
+                    }
+
+                    // Add node for the course to the tree.
+                    TreeNode node;
+                    if (parts != null)
+                        node = new TreeNode(eventDB.GetCourse(courseId).name, parts);
+                    else
+                        node = new TreeNode(eventDB.GetCourse(courseId).name);
+
+                    node.Tag = new CourseDesignator(courseId);
+                    node.Checked = true;
+                    courseTreeView.Nodes.Add(node);
                 }
 
-                foreach (CourseItem item in list) {
-                    int index = courseListBox.Items.Add(item);
-                    courseListBox.SetItemChecked(index, true);
-                }
+                courseTreeView.ExpandAll();
                 loaded = true;
             }
         }
 
-        private class CourseItem
+        // Prevent tree nodes from being collapsed.
+        private void courseTreeView_BeforeCollapse(object sender, TreeViewCancelEventArgs e)
         {
-            public Id<Course> courseId;
-            public string name;
+            e.Cancel = true;
+        }
 
-            public CourseItem(Id<Course> courseId, string name)
-            {
-                this.courseId = courseId;
-                this.name = name;
-            }
+        private int inCheckUpdating = 0;
 
-            public override string ToString()
-            {
-                return name;
+        private void courseTreeView_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (inCheckUpdating == 0) {
+                inCheckUpdating++;
+
+                TreeNode node = e.Node;
+                if (node.Level == 0)
+                    UpdateChildNodes(node);
+                else
+                    UpdateNodeBasedOnChildren(node.Parent);
+
+                inCheckUpdating--;
             }
+        }
+
+        // Set all children to checked/unchecked based on the current node state.
+        void UpdateChildNodes(TreeNode node)
+        {
+            bool isChecked = node.Checked;
+            foreach (TreeNode childNode in node.Nodes)
+                childNode.Checked = isChecked;
+        }
+
+        // Update parent node to checked iff all children are checked.
+        void UpdateNodeBasedOnChildren(TreeNode parent)
+        {
+            bool anyUnchecked = false;
+
+            foreach (TreeNode childNode in parent.Nodes)
+                if (!childNode.Checked)
+                    anyUnchecked = true;
+
+            parent.Checked = !anyUnchecked;
         }
     }
 }

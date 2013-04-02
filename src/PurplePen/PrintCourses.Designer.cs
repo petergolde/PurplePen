@@ -78,16 +78,21 @@ namespace PurplePen
             this.copiesLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
-            this.radioButtonMultiPage = new System.Windows.Forms.RadioButton();
-            this.radioButtonOnePage = new System.Windows.Forms.RadioButton();
+            this.checkBoxRasterPrinting = new System.Windows.Forms.CheckBox();
+            this.checkBoxMergeParts = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelColorModel = new System.Windows.Forms.Label();
+            this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
+            this.comboBoxMultiPage = new System.Windows.Forms.ComboBox();
             this.labelAppearanceInfo = new System.Windows.Forms.Label();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copiesUpDown)).BeginInit();
             this.groupBoxAppearance.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -163,6 +168,7 @@ namespace PurplePen
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
+            this.courseSelector.ShowCourseParts = false;
             // 
             // copiesGroupBox
             // 
@@ -174,7 +180,7 @@ namespace PurplePen
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.copiesUpDown, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.copiesUpDown, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.copiesLabel, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
@@ -201,7 +207,6 @@ namespace PurplePen
             // copiesLabel
             // 
             resources.ApplyResources(this.copiesLabel, "copiesLabel");
-            this.copiesLabel.MaximumSize = new System.Drawing.Size(130, 50);
             this.copiesLabel.Name = "copiesLabel";
             // 
             // printDialog
@@ -210,26 +215,59 @@ namespace PurplePen
             // 
             // groupBoxAppearance
             // 
-            this.groupBoxAppearance.Controls.Add(this.radioButtonMultiPage);
-            this.groupBoxAppearance.Controls.Add(this.radioButtonOnePage);
+            this.groupBoxAppearance.Controls.Add(this.checkBoxRasterPrinting);
+            this.groupBoxAppearance.Controls.Add(this.checkBoxMergeParts);
+            this.groupBoxAppearance.Controls.Add(this.tableLayoutPanel4);
+            this.groupBoxAppearance.Controls.Add(this.comboBoxMultiPage);
             this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
             resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
             // 
-            // radioButtonMultiPage
+            // checkBoxRasterPrinting
             // 
-            resources.ApplyResources(this.radioButtonMultiPage, "radioButtonMultiPage");
-            this.radioButtonMultiPage.Name = "radioButtonMultiPage";
-            this.radioButtonMultiPage.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxRasterPrinting, "checkBoxRasterPrinting");
+            this.checkBoxRasterPrinting.Name = "checkBoxRasterPrinting";
+            this.checkBoxRasterPrinting.UseVisualStyleBackColor = true;
             // 
-            // radioButtonOnePage
+            // checkBoxMergeParts
             // 
-            resources.ApplyResources(this.radioButtonOnePage, "radioButtonOnePage");
-            this.radioButtonOnePage.Checked = true;
-            this.radioButtonOnePage.Name = "radioButtonOnePage";
-            this.radioButtonOnePage.TabStop = true;
-            this.radioButtonOnePage.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.checkBoxMergeParts, "checkBoxMergeParts");
+            this.checkBoxMergeParts.Name = "checkBoxMergeParts";
+            this.checkBoxMergeParts.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.Controls.Add(this.labelColorModel, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxColorModel, 1, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            // 
+            // labelColorModel
+            // 
+            resources.ApplyResources(this.labelColorModel, "labelColorModel");
+            this.labelColorModel.Name = "labelColorModel";
+            // 
+            // comboBoxColorModel
+            // 
+            resources.ApplyResources(this.comboBoxColorModel, "comboBoxColorModel");
+            this.comboBoxColorModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxColorModel.FormattingEnabled = true;
+            this.comboBoxColorModel.Items.AddRange(new object[] {
+            resources.GetString("comboBoxColorModel.Items"),
+            resources.GetString("comboBoxColorModel.Items1"),
+            resources.GetString("comboBoxColorModel.Items2")});
+            this.comboBoxColorModel.Name = "comboBoxColorModel";
+            // 
+            // comboBoxMultiPage
+            // 
+            this.comboBoxMultiPage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMultiPage.FormattingEnabled = true;
+            this.comboBoxMultiPage.Items.AddRange(new object[] {
+            resources.GetString("comboBoxMultiPage.Items"),
+            resources.GetString("comboBoxMultiPage.Items1")});
+            resources.ApplyResources(this.comboBoxMultiPage, "comboBoxMultiPage");
+            this.comboBoxMultiPage.Name = "comboBoxMultiPage";
             // 
             // labelAppearanceInfo
             // 
@@ -262,9 +300,10 @@ namespace PurplePen
             this.copiesGroupBox.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.copiesUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copiesUpDown)).EndInit();
             this.groupBoxAppearance.ResumeLayout(false);
-            this.groupBoxAppearance.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +328,11 @@ namespace PurplePen
         private System.Windows.Forms.Label copiesLabel;
         private System.Windows.Forms.GroupBox groupBoxAppearance;
         private System.Windows.Forms.Label labelAppearanceInfo;
-        private System.Windows.Forms.RadioButton radioButtonOnePage;
-        private System.Windows.Forms.RadioButton radioButtonMultiPage;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.ComboBox comboBoxColorModel;
+        private System.Windows.Forms.Label labelColorModel;
+        private System.Windows.Forms.ComboBox comboBoxMultiPage;
+        private System.Windows.Forms.CheckBox checkBoxRasterPrinting;
+        private System.Windows.Forms.CheckBox checkBoxMergeParts;
     }
 }

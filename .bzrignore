@@ -11,6 +11,8 @@ Release
 *.tmp
 *.user
 *.chm
+*.sdf
+*.opensdf
 src/TestResults
 src/tools/TranslateTool/TestResults
 src/tools/TranslateTool/TestFiles
@@ -21,8 +23,11 @@ src/TestFiles/controller/ocad_create3/*.ocd
 src/TestFiles/controller/ocad_create4/*.ocd
 src/TestFiles/controller/ocad_create5/*.ocd
 src/TestFiles/controller/ocad_create6/*.ocd
+src/TestFiles/exportxml/mapexchange1_actual.xml
 doc/userdocs/Help/_vti_cnf
 doc/userdocs/Help/_vti_pvt
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
 src/PPenDXCore.Solution
+src/SetupIS/SetupIS
+

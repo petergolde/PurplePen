@@ -62,19 +62,12 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseSelector));
-            this.courseListBox = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.selectAll = new System.Windows.Forms.Button();
             this.selectNone = new System.Windows.Forms.Button();
+            this.courseTreeView = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // courseListBox
-            // 
-            this.courseListBox.CheckOnClick = true;
-            resources.ApplyResources(this.courseListBox, "courseListBox");
-            this.courseListBox.FormattingEnabled = true;
-            this.courseListBox.Name = "courseListBox";
             // 
             // tableLayoutPanel1
             // 
@@ -97,11 +90,22 @@ namespace PurplePen
             this.selectNone.UseVisualStyleBackColor = true;
             this.selectNone.Click += new System.EventHandler(this.selectNone_Click);
             // 
+            // courseTreeView
+            // 
+            this.courseTreeView.CheckBoxes = true;
+            resources.ApplyResources(this.courseTreeView, "courseTreeView");
+            this.courseTreeView.LineColor = System.Drawing.Color.White;
+            this.courseTreeView.Name = "courseTreeView";
+            this.courseTreeView.ShowPlusMinus = false;
+            this.courseTreeView.ShowRootLines = false;
+            this.courseTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.courseTreeView_AfterCheck);
+            this.courseTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.courseTreeView_BeforeCollapse);
+            // 
             // CourseSelector
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.courseListBox);
+            this.Controls.Add(this.courseTreeView);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CourseSelector";
             this.Load += new System.EventHandler(this.CourseSelector_Load);
@@ -114,9 +118,9 @@ namespace PurplePen
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox courseListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button selectAll;
         private System.Windows.Forms.Button selectNone;
+        private System.Windows.Forms.TreeView courseTreeView;
     }
 }

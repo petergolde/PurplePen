@@ -150,11 +150,11 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Număr exemplare</value>
   </data>
-  <data name="radioButtonMultiPage.Text" xml:space="preserve">
-    <value>Tipărește pe mai multe pagini</value>
-  </data>
-  <data name="radioButtonOnePage.Text" xml:space="preserve">
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Decupare într-o singură pagină</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Tipărește pe mai multe pagini</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Dacă zona de imprimat este prea mare pentru a încăpea într-o pagină:</value>
@@ -164,5 +164,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tipărire Trasee</value>
+  </data>
+  <data name="radioButtonMultiPage.Text" xml:space="preserve">
+    <value>Tipărește pe mai multe pagini</value>
+  </data>
+  <data name="radioButtonOnePage.Text" xml:space="preserve">
+    <value>Decupare într-o singură pagină</value>
   </data>
 </root>

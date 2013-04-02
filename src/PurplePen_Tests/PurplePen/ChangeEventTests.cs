@@ -250,6 +250,27 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeControlExchange()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(119, "Add exchange");
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(204), true);
+            undomgr.EndCommand(119);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsTrue(courseControl.exchange);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsFalse(courseControl.exchange);
+        }
+
+        [TestMethod]
         public void ChangeTextLine()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -817,24 +838,24 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(819, "add gap");
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, 0x3FF1F00F);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 15000F, 0xF0FFFFFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F, 0xFFFFFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, CircleGap.ComputeCircleGaps(0x3FF1F00F));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 15000F, CircleGap.ComputeCircleGaps(0xF0FFFFFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F,  CircleGap.ComputeCircleGaps(0xFFFFFFFF));
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, 0xFFFFFFFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, 0xF00FFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, CircleGap.ComputeCircleGaps(0xF00FFFFF));
 
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, 0xFFFF4FFF);
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, 0xFFFFFFFF);
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, CircleGap.ComputeCircleGaps(0xFFFF4FFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(3), 10000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
 
             undomgr.EndCommand(819);
             eventDB.Validate();
 
-            Assert.AreEqual(0x3FF1F00FU, eventDB.GetControl(ControlId(4)).gaps[10000]);
-            Assert.AreEqual(0xF0FFFFFFU, eventDB.GetControl(ControlId(4)).gaps[15000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0x3FF1F00FU), eventDB.GetControl(ControlId(4)).gaps[10000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xF0FFFFFFU), eventDB.GetControl(ControlId(4)).gaps[15000]);
             Assert.IsFalse(eventDB.GetControl(ControlId(4)).gaps.ContainsKey(5000));
 
-            Assert.AreEqual(0xF00FFFFFU, eventDB.GetControl(ControlId(2)).gaps[10000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xF00FFFFFU), eventDB.GetControl(ControlId(2)).gaps[10000]);
             Assert.IsFalse(eventDB.GetControl(ControlId(2)).gaps.ContainsKey(12000));
 
             Assert.IsFalse(eventDB.GetControl(ControlId(3)).gaps.ContainsKey(10000));
@@ -842,11 +863,33 @@ namespace PurplePen.Tests
             undomgr.Undo();
             eventDB.Validate();
 
-            Assert.AreEqual(0xFFFFFFDFU, eventDB.GetControl(ControlId(4)).gaps[15000]);
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xFFFFFFDFU), eventDB.GetControl(ControlId(4)).gaps[15000]);
             Assert.IsNull(eventDB.GetControl(ControlId(2)).gaps);
             Assert.IsNull(eventDB.GetControl(ControlId(3)).gaps);
         }
 
+        [TestMethod]
+        public void AddGapPoints()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(818, "change gap");
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, new CircleGap[] { new CircleGap(-20, 60) });
+            undomgr.EndCommand(818);
+
+            undomgr.BeginCommand(819, "add gap");
+            ChangeEvent.AddGap(eventDB, 10000F, ControlId(4), new PointF(18, 25), new PointF(-10, 16));
+            undomgr.EndCommand(819);
+
+            eventDB.Validate();
+
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-20, 60), new CircleGap(93.2245255F, 138.544769F) }, eventDB.GetControl(ControlId(4)).gaps[10000]);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-20, 60) }, eventDB.GetControl(ControlId(4)).gaps[10000]);
+        }
 
         [TestMethod]
         public void RemoveCourseControl()
@@ -1070,15 +1113,15 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(957, "Add Control");
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), CourseControlId(204), CourseControlId(205));
             undomgr.EndCommand(957);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(6), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1087,10 +1130,9 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(204)).nextCourseControl == CourseControlId(205));
         }
-
 
         [TestMethod]
         public void AddCourseControl3()
@@ -1101,17 +1143,17 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(958, "Add Control");
             Id<CourseControl> courseControl1 = Id<CourseControl>.None, courseControl2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, CourseId(6), ref courseControl1, ref courseControl2);
+            QueryEvent.FindControlInsertionPoint(eventDB, Designator(6), ref courseControl1, ref courseControl2);
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2);
             undomgr.EndCommand(958);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(6), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(6), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1120,7 +1162,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(212)).nextCourseControl == CourseControlId(213));
         }
 
@@ -1133,15 +1175,15 @@ namespace PurplePen.Tests
             Id<CourseControl> courseControlId;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
 
             undomgr.BeginCommand(959, "Add Control");
             courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(2), Id<CourseControl>.None, Id<CourseControl>.None);
             undomgr.EndCommand(959);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, CourseId(2), controlId);
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, Designator(2), controlId);
             Assert.AreEqual(1, courseControls.Length);
             Assert.IsTrue(courseControls[0] == courseControlId);
 
@@ -1150,7 +1192,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
             Assert.IsTrue(eventDB.GetCourse(CourseId(2)).firstCourseControl.IsNone);
         }
 
@@ -1170,7 +1212,7 @@ namespace PurplePen.Tests
             undomgr.EndCommand(960);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Course course = eventDB.GetCourse(CourseId(6));
             Id<CourseControl> first = course.firstCourseControl;
             Assert.AreEqual(controlId, eventDB.GetCourseControl(course.firstCourseControl).control);
@@ -1178,7 +1220,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             course = eventDB.GetCourse(CourseId(6));
             first = course.firstCourseControl;
             Assert.AreEqual(ControlId(1), eventDB.GetCourseControl(course.firstCourseControl).control);
@@ -1210,13 +1252,13 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Should have added the start to the empty course and course 2
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, noStartCourseId, controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noStartCourseId), controlId));
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, noStartCourseId, controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noStartCourseId), controlId));
         }
 
         [TestMethod]
@@ -1235,7 +1277,7 @@ namespace PurplePen.Tests
             undomgr.EndCommand(960);
             eventDB.Validate();
 
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             Id<CourseControl> last = QueryEvent.LastCourseControl(eventDB, CourseId(6), false);
             Id<CourseControl> lastExceptFinish = QueryEvent.LastCourseControl(eventDB, CourseId(6), true);
             Assert.AreEqual(courseControlId, last);
@@ -1246,7 +1288,7 @@ namespace PurplePen.Tests
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(6), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
             last = QueryEvent.LastCourseControl(eventDB, CourseId(6), false);
             lastExceptFinish = QueryEvent.LastCourseControl(eventDB, CourseId(6), true);
             Assert.AreNotEqual(controlId, eventDB.GetCourseControl(last).control);
@@ -1279,13 +1321,13 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             // Should have added the start to the empty course and course 2
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, noFinishCourseId, controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noFinishCourseId), controlId));
 
             undomgr.Undo();
 
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, CourseId(2), controlId));
-            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, noFinishCourseId, controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, new CourseDesignator(noFinishCourseId), controlId));
         }
 
         [TestMethod]
@@ -1340,9 +1382,12 @@ namespace PurplePen.Tests
             Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(3)));  // only on course 3, so should be gone.
             Special sp2 = eventDB.GetSpecial(SpecialId(2));
             Assert.AreEqual(3, sp2.courses.Length);
-            Assert.AreEqual(1, sp2.courses[0].id);
-            Assert.AreEqual(2, sp2.courses[1].id);
-            Assert.AreEqual(6, sp2.courses[2].id);
+            Assert.AreEqual(1, sp2.courses[0].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[0].AllParts);
+            Assert.AreEqual(2, sp2.courses[1].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[1].AllParts);
+            Assert.AreEqual(6, sp2.courses[2].CourseId.id);
+            Assert.AreEqual(true, sp2.courses[2].AllParts);
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1351,13 +1396,39 @@ namespace PurplePen.Tests
             Assert.IsTrue(eventDB.IsSpecialPresent(SpecialId(3)));
             Special sp3 = eventDB.GetSpecial(SpecialId(3));
             Assert.AreEqual(1, sp3.courses.Length);
-            Assert.AreEqual(3, sp3.courses[0].id);
+            Assert.AreEqual(3, sp3.courses[0].CourseId.id);
             sp2 = eventDB.GetSpecial(SpecialId(2));
             Assert.AreEqual(4, sp2.courses.Length);
-            Assert.AreEqual(1, sp2.courses[0].id);
-            Assert.AreEqual(2, sp2.courses[1].id);
-            Assert.AreEqual(3, sp2.courses[2].id);
-            Assert.AreEqual(6, sp2.courses[3].id);
+            Assert.AreEqual(1, sp2.courses[0].CourseId.id);
+            Assert.AreEqual(2, sp2.courses[1].CourseId.id);
+            Assert.AreEqual(3, sp2.courses[2].CourseId.id);
+            Assert.AreEqual(6, sp2.courses[3].CourseId.id);
+        }
+
+        [TestMethod]
+        public void DeleteCourse3()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "delete course");
+            ChangeEvent.DeleteCourse(eventDB, CourseId(6));
+            ChangeEvent.DeleteCourse(eventDB, CourseId(3));
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Special special = eventDB.GetSpecial(SpecialId(3));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1) });
+
+            special = eventDB.GetSpecial(SpecialId(1));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(0) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(2), Designator(4) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(6)));
+
+            undomgr.Undo();
+            eventDB.Validate();
         }
 
         [TestMethod]
@@ -1495,6 +1566,26 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeDescriptionColumns()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            Assert.AreEqual(1, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+
+            undomgr.BeginCommand(11, "change columns");
+            ChangeEvent.ChangeDescriptionColumns(eventDB, SpecialId(1), 3);
+            undomgr.EndCommand(11);
+            eventDB.Validate();
+
+            Assert.AreEqual(3, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(1, QueryEvent.GetDescriptionColumns(eventDB, SpecialId(1)));
+        }
+
+        [TestMethod]
         public void DeleteSpecial()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1594,7 +1685,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30,40), 4.5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30,40), 4.5F, 2);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1605,6 +1696,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(34.5F, 40F), special.locations[1]);
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
+            Assert.AreEqual(2, special.numColumns);
             Assert.IsTrue(special.allCourses);
 
             undomgr.Undo();
@@ -1619,7 +1711,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(1), CourseId(3) }, new PointF(0, -25.5F), 5F);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(1), Designator(3) }, new PointF(0, -25.5F), 5F, 1);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1630,8 +1722,63 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(5, -25.5F), special.locations[1]);
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
+            Assert.AreEqual(1, special.numColumns);
             Assert.IsFalse(special.allCourses);
-            TestUtil.TestEnumerableAnyOrder(special.courses, new Id<Course>[] { CourseId(1), CourseId(3) });
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(1), Designator(3) });
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+
+        [TestMethod]
+        public void AddDescription3()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "add description");
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) }, new PointF(0, -25.5F), 5F, 1);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 1), Designator(6) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(2), 0), Designator(4) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(6)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+        [TestMethod]
+        public void AddDescription4()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(13, "add description");
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) }, new PointF(0, -25.5F), 5F, 1);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(6), 3), Designator(0) });
+
+            special = eventDB.GetSpecial(SpecialId(5));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { Designator(2), Designator(4) });
+
+            special = eventDB.GetSpecial(SpecialId(6));
+            TestUtil.TestEnumerableAnyOrder(special.courses, new CourseDesignator[] { new CourseDesignator(CourseId(6), 1) });
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(SpecialId(1)));
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1744,35 +1891,67 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(4117, "Change displayed courses");
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(3), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(4), new Id<Course>[] { CourseId(1), CourseId(2) });
-            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new Id<Course>[] {  });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(3), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(4), new CourseDesignator[] { Designator(1), Designator(2) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new CourseDesignator[] {  });
             undomgr.EndCommand(4117);
 
             eventDB.Validate();
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
             Assert.IsTrue(eventDB.GetSpecial(SpecialId(3)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new Id<Course>[] { CourseId(1), CourseId(2) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new CourseDesignator[] { Designator(1), Designator(2) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(4)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new Id<Course>[] {  });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] {  });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
 
             undomgr.Undo();
             eventDB.Validate();
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new Id<Course>[] { CourseId(3) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(3)), new CourseDesignator[] { Designator(3) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(3)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(4)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
             Assert.IsTrue(eventDB.GetSpecial(SpecialId(4)).allCourses);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new Id<Course>[] { CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] { Designator(5) });
             Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
 
         }
+
+
+        [TestMethod]
+        public void ChangeDisplayedCourse2()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(4117, "Change displayed courses");
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(5), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            undomgr.EndCommand(4117);
+
+            eventDB.Validate();
+
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(5)), new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            Assert.IsFalse(eventDB.GetSpecial(SpecialId(5)).allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            undomgr.BeginCommand(4117, "Change displayed courses");
+            ChangeEvent.ChangeDisplayedCourses(eventDB, SpecialId(6), new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            undomgr.EndCommand(4117);
+
+            eventDB.Validate();
+
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(6)), new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6) });
+            Assert.IsTrue(eventDB.GetSpecial(SpecialId(6)).allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+        }
+
 
         [TestMethod]
         public void SingleDescriptionPerCourse()
@@ -1782,26 +1961,26 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(7126, "Add descriptions");
 
-            desc1 = ChangeEvent.AddDescription(eventDB, true, null, new PointF(0, 0), 5);
-            desc2 = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(3), CourseId(5) }, new PointF(0, 0), 5);
-            desc3 = ChangeEvent.AddDescription(eventDB, false, new Id<Course>[] { CourseId(5), CourseId(1) }, new PointF(0, 0), 5);
+            desc1 = ChangeEvent.AddDescription(eventDB, true, null, new PointF(0, 0), 5, 1);
+            desc2 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(3), Designator(5) }, new PointF(0, 0), 5, 1);
+            desc3 = ChangeEvent.AddDescription(eventDB, false, new CourseDesignator[] { Designator(5), Designator(1) }, new PointF(0, 0), 5, 1);
 
             undomgr.EndCommand(7126);
 
             eventDB.Validate();
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new Id<Course>[] { CourseId(2), CourseId(4), CourseId(6) });
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc2), new Id<Course>[] { CourseId(3) });
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new Id<Course>[] { CourseId(1), CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new CourseDesignator[] { Designator(0), Designator(2), Designator(4), Designator(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc2), new CourseDesignator[] { Designator(3) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new CourseDesignator[] { Designator(1), Designator(5) });
 
             undomgr.BeginCommand(7126, "Change descriptions");
 
-            ChangeEvent.ChangeDisplayedCourses(eventDB, desc1, new Id<Course>[] { CourseId(3), CourseId(6) });
+            ChangeEvent.ChangeDisplayedCourses(eventDB, desc1, new CourseDesignator[] { Designator(3), Designator(6) });
 
             undomgr.EndCommand(7126);
 
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new Id<Course>[] { CourseId(3), CourseId(6) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc1), new CourseDesignator[] { Designator(3), Designator(6) });
             Assert.IsFalse(eventDB.IsSpecialPresent(desc2));
-            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new Id<Course>[] { CourseId(1), CourseId(5) });
+            TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new CourseDesignator[] { Designator(1), Designator(5) });
         }
 	
 
@@ -2116,23 +2295,23 @@ namespace PurplePen.Tests
         [TestMethod]
         public void AddGap()
         {
-            uint result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(1, 1.1));
-            Assert.AreEqual(0xFFFFFFC7U, result);
-            result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(0.05, 1));
-            Assert.AreEqual(0x7FFFFFFCU, result);
-            result = ChangeEvent.AddGap(0xFFFFFFFF, Math.Atan2(-2, 1));
-            Assert.AreEqual(0xF1FFFFFFU, result);
+            CircleGap[] result = ChangeEvent.AddGap(null, Math.Atan2(1, 1.1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(27.27369F, 57.27369F) }, result);
+            result = ChangeEvent.AddGap(null, Math.Atan2(0.05, 1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(-12.1376038F, 17.8624058F) }, result);
+            result = ChangeEvent.AddGap(null, Math.Atan2(-2, 1));
+            CollectionAssert.AreEqual(new CircleGap[] { new CircleGap(281.565063F, 311.565063F) }, result);
         }
 
         [TestMethod]
         public void RemoveGap()
         {
-            uint result = ChangeEvent.RemoveGap(0xFFFFFFFF, Math.Atan2(1, 1.1));
-            Assert.AreEqual(0xFFFFFFFF, result);
-            result = ChangeEvent.RemoveGap(0xD17FF03F, Math.Atan2(-2, 1));
-            Assert.AreEqual(0xDF7FF03F, result);
-            result = ChangeEvent.RemoveGap(0x7FF7FFFC, Math.Atan2(0.05, 1));
-            Assert.AreEqual(0xFFF7FFFF, result);
+            CircleGap[] result = ChangeEvent.RemoveGap(null, Math.Atan2(1, 1.1));
+            Assert.IsNull(result);
+            result = ChangeEvent.RemoveGap(CircleGap.ComputeCircleGaps(0xD17FF03F), Math.Atan2(-2, 1));
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xDF7FF03F), result);
+            result = ChangeEvent.RemoveGap(CircleGap.ComputeCircleGaps(0x7FF7FFFC), Math.Atan2(0.05, 1));
+            CollectionAssert.AreEqual(CircleGap.ComputeCircleGaps(0xFFF7FFFF), result);
         }
 
         [TestMethod]
@@ -2434,34 +2613,82 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent7.coursescribe");
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, Id<Course>.None, new RectangleF(25, 50, 110, 130));
+            ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, false, new RectangleF(25, 50, 110, 130));
             undomgr.EndCommand(9151);
           
-            RectangleF result = QueryEvent.GetPrintArea(eventDB, Id<Course>.None, new RectangleF(10, 10, 100, 100));
+            RectangleF result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(25, result.Left);
             Assert.AreEqual(50, result.Top);
             Assert.AreEqual(110 + 25, result.Right);
             Assert.AreEqual(130 + 50, result.Bottom);
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, CourseId(4), new RectangleF(35, 50, 110, 150));
+            ChangeEvent.ChangePrintArea(eventDB, Designator(4), false, new RectangleF(35, 50, 110, 150));
             undomgr.EndCommand(9151);
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseId(4), new RectangleF(10, 10, 100, 100));
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4), new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(35, result.Left);
             Assert.AreEqual(50, result.Top);
             Assert.AreEqual(110 + 35, result.Right);
             Assert.AreEqual(150 + 50, result.Bottom);
 
             undomgr.BeginCommand(9151, "Change print area");
-            ChangeEvent.ChangeCoursePrintArea(eventDB, CourseId(4), new RectangleF());
+            ChangeEvent.ChangePrintArea(eventDB, Designator(4), false, new RectangleF());
             undomgr.EndCommand(9151);
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseId(4), new RectangleF(10, 10, 100, 100));
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4), new RectangleF(10, 10, 100, 100));
             Assert.AreEqual(10, result.Left);
             Assert.AreEqual(10, result.Top);
             Assert.AreEqual(110, result.Right);
             Assert.AreEqual(110, result.Bottom);
+        }
+
+        [TestMethod]
+        public void ChangePrintArea2()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, false, new RectangleF(25, 50, 110, 130));
+            undomgr.EndCommand(9151);
+
+            RectangleF result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(25, result.Left);
+            Assert.AreEqual(50, result.Top);
+            Assert.AreEqual(110 + 25, result.Right);
+            Assert.AreEqual(130 + 50, result.Bottom);
+
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6), 2), false, new RectangleF(35, 50, 110, 150));
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6)), false, new RectangleF(5, 10, 15, 20));
+            undomgr.EndCommand(9151);
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6), 2), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(35, result.Left);
+            Assert.AreEqual(50, result.Top);
+            Assert.AreEqual(35 + 110, result.Right);
+            Assert.AreEqual(50 + 150, result.Bottom); 
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6)), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(5, result.Left);
+            Assert.AreEqual(10, result.Top);
+            Assert.AreEqual(5 + 15, result.Right);
+            Assert.AreEqual(10 + 20, result.Bottom);  
+          
+            undomgr.BeginCommand(9151, "Change print area");
+            ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(CourseId(6)), true, new RectangleF(1, 2, 3, 4));
+            undomgr.EndCommand(9151);
+
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6), 2), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(1, result.Left);
+            Assert.AreEqual(2, result.Top);
+            Assert.AreEqual(1 + 3, result.Right);
+            Assert.AreEqual(2 + 4, result.Bottom);
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(6)), new RectangleF(10, 10, 100, 100));
+            Assert.AreEqual(1, result.Left);
+            Assert.AreEqual(2, result.Top);
+            Assert.AreEqual(1 + 3, result.Right);
+            Assert.AreEqual(2 + 4, result.Bottom);
         }
 
         [TestMethod]

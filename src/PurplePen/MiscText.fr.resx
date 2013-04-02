@@ -279,10 +279,6 @@ Utiliser | pour séparer les lignes</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>La version {0} de Purple Pen est maintenant disponible en téléchargement. (Vous utilisez actuellement la version {1}.)
-Pour télécharger la dernière version, visitez le site web de Purple Pen en choisissant "Site Web Purple Pen" dans le menu Aide (?).</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Le fichier d'Aide '{0}' n'a pas pu être ouvert.</value>
   </data>

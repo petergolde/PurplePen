@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
     <value>Left mouse button: select object;   Right mouse button: move map;   Scroll wheel: zoom in/out</value>
@@ -175,13 +175,13 @@
     <value>Click left mouse button on a corner to remove it</value>
   </data>
   <data name="AddingControlGap" xml:space="preserve">
-    <value>Click left mouse button on the control circle to add a gap</value>
+    <value>Click left mouse button on the control circle to add a small gap; hold down left mouse button and drag to create a large gap</value>
   </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Click left mouse button on a gap in the control circle to remove it</value>
   </data>
   <data name="AddingLegGap" xml:space="preserve">
-    <value>Hold down left mouse button and drag to create a gap in the leg</value>
+    <value>Click left mouse button to create small gap; hold down left mouse button and drag to create a large gap in the leg</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Click left mouse button on a gap in the leg to remove it</value>
@@ -203,5 +203,14 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Hold down left mouse button and drag to create text</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Click left mouse button to add existing map exchange to course</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Click left mouse button to place new map exchange</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Click left mouse button to add map exchange at control "{0}" </value>
   </data>
 </root>

@@ -38,6 +38,7 @@
             this.courseClimbMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usageLabel = new System.Windows.Forms.Label();
+            this.printScaleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specialTextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +71,8 @@
             this.courseNameMenuItem,
             this.courseLengthMenuItem,
             this.courseClimbMenuItem,
-            this.classListMenuItem});
+            this.classListMenuItem,
+            this.printScaleMenuItem});
             this.specialTextMenu.Name = "specialTextMenu";
             this.specialTextMenu.ShowImageMargin = false;
             resources.ApplyResources(this.specialTextMenu, "specialTextMenu");
@@ -110,6 +112,12 @@
             resources.ApplyResources(this.usageLabel, "usageLabel");
             this.usageLabel.Name = "usageLabel";
             // 
+            // printScaleMenuItem
+            // 
+            this.printScaleMenuItem.Name = "printScaleMenuItem";
+            resources.ApplyResources(this.printScaleMenuItem, "printScaleMenuItem");
+            this.printScaleMenuItem.Click += new System.EventHandler(this.printScaleMenuItem_Click);
+            // 
             // ChangeText
             // 
             resources.ApplyResources(this, "$this");
@@ -140,5 +148,6 @@
         private System.Windows.Forms.ToolStripMenuItem courseClimbMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classListMenuItem;
         private System.Windows.Forms.Label usageLabel;
+        private System.Windows.Forms.ToolStripMenuItem printScaleMenuItem;
     }
 }

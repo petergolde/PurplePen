@@ -63,10 +63,17 @@ namespace PurplePen
         }
 
         // CONSDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
-        public PrintCourses(EventDB eventDB)
+        public PrintCourses(EventDB eventDB, bool enableMultipart)
         {
             InitializeComponent();
             courseSelector.EventDB = eventDB;
+
+            checkBoxMergeParts.Visible = enableMultipart;
+        }
+
+        public bool EnableRasterizeChoice {
+            get { return checkBoxRasterPrinting.Enabled; }
+            set { checkBoxRasterPrinting.Enabled = value;  }
         }
 
         // Update the dialog with information from the settings.
@@ -82,8 +89,10 @@ namespace PurplePen
             paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
 
             copiesUpDown.Value = settings.Count;
-            radioButtonOnePage.Checked = settings.CropLargePrintArea;
-            radioButtonMultiPage.Checked = !settings.CropLargePrintArea;
+            comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
+            comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
+            checkBoxMergeParts.Checked = settings.PrintMapExchangesOnOneMap;
+            checkBoxRasterPrinting.Checked = !settings.UseXpsPrinting;
         }
 
         // Update the settings with information from the dialog.
@@ -94,7 +103,12 @@ namespace PurplePen
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
-            settings.CropLargePrintArea = radioButtonOnePage.Checked;
+
+            // Appearance 
+            settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
+            settings.UseXpsPrinting = ! checkBoxRasterPrinting.Checked;
+            settings.PrintMapExchangesOnOneMap = checkBoxMergeParts.Checked;
+            settings.PrintingColorModel = (ColorModel)comboBoxColorModel.SelectedIndex;
         }
 
         private void printerChange_Click(object sender, EventArgs e)

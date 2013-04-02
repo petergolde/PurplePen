@@ -60,10 +60,7 @@ namespace PurplePen
 
             // Get the list of renderers for the descriptions we're printing.
             foreach (Id<Course> courseId in descPrintSettings.CourseIds) {
-                if (courseId.IsNone)
-                    rendererList.Add(GetRenderer(CourseView.CreateAllControlsView(eventDB)));
-                else
-                    rendererList.Add(GetRenderer(CourseView.CreateCourseView(eventDB, courseId, true, true)));
+                rendererList.Add(GetRenderer(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId))));
             }
 
             return rendererList.ToArray();
@@ -85,8 +82,9 @@ namespace PurplePen
         // Get a description renderer for rendering the description from a course view.
         private DescriptionRenderer GetRenderer(CourseView courseView)
         {
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
             DescriptionKind descKind = GetDescriptionKind(courseView);
-            DescriptionLine[] description = DescriptionFormatter.CreateDescription(courseView, symbolDB, descKind == DescriptionKind.Symbols);
+            DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             DescriptionRenderer renderer = new DescriptionRenderer(symbolDB);
             renderer.CellSize = descPrintSettings.BoxSize / 0.254F;
             renderer.Description = description;

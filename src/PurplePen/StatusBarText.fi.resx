@@ -174,14 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Poista kulma klikkaamalla sen kohdalla hiiren vasenta painiketta</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Lisää katko valittuun rastiympyrään klikkaamalla hiiren vasenta painiketta</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Poista katko valitusta rastiympyrästä klikkaamalla sitä hiiren vasemmalla painikkeella</value>
-  </data>
-  <data name="AddingLegGap" xml:space="preserve">
-    <value>Tee katko valitulle rastiväliviivalle painamalla hiiren vasen painike pohjaan ja vetämällä haluamasi pituinen katko</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Poista katko valitulta rastiväliviivalta klikkaamalla sitä hiiren vasemmalla painikkeella</value>

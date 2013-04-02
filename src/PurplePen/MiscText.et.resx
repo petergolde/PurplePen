@@ -279,10 +279,6 @@ Kasuta | eraldamaks ridu</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versioon {0}</value>
   </data>
-  <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>Purple Pen programmis on saadaval uuem versioon {0} . (Sa kasutad hetkel versiooni {1}.)
-Lae alla viimasem versioon Purple Pen koduleheküljelt, mille leiad menüüst Abi.</value>
-  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Abifaili {0} ei saa avada.</value>
   </data>

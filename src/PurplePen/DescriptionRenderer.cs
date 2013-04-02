@@ -72,7 +72,7 @@ namespace PurplePen
     /// <summary>
     /// Renders a CourseView onto a Graphics.
     /// </summary>
-    class DescriptionRenderer: IPrintableRectangle
+    class DescriptionRenderer: IPrintableRectangle, ICloneable
     {
         private SymbolDB symbolDB;
 
@@ -87,13 +87,17 @@ namespace PurplePen
         const int KEY_FONT = 7;
         const int TEXTLINE_FONT = 8;
 
+        private const float columnGap = 0.60F;  // size of gap between columns as fraction of cell size.
+
         private FontDesc[] fontDescs = new FontDesc[NUM_FONTS];
         private StringAlignment[] fontAlignments = new StringAlignment[NUM_FONTS];
         private object[] fonts = new object[NUM_FONTS];
         private object thickPen, thinPen;
 
+        // Note: If you add new state -- be sure to update Clone().
         private float margin = 3;           
         private float cellSize = 30;
+        private int numColumns = 1;
         DescriptionLine[] description;
         DescriptionKind descriptionKind;
 
@@ -103,6 +107,18 @@ namespace PurplePen
         public DescriptionRenderer(SymbolDB symbolDB)
         {
             this.symbolDB = symbolDB;
+        }
+
+        public object Clone()
+        {
+            DescriptionRenderer n = new DescriptionRenderer(symbolDB);
+            n.margin = this.margin;
+            n.cellSize = this.cellSize;
+            n.numColumns = this.numColumns;
+            n.description = this.description;
+            n.descriptionKind = this.descriptionKind;
+            n.replaceMultiplySign = this.replaceMultiplySign;
+            return n;
         }
 
         // The margin around the side, in device units.
@@ -119,6 +135,12 @@ namespace PurplePen
             set { cellSize = value; }
         }
 
+        public int NumberOfColumns
+        {
+            get { return numColumns; }
+            set { numColumns = value; }
+        }
+
         // The description to render.
         public DescriptionLine[] Description
         {
@@ -133,14 +155,24 @@ namespace PurplePen
             set { descriptionKind = value; }
         }
 
-        // Measure the size of the description. Includes the margins.
+        public float ColumnWidth
+        {
+            get { return cellSize * WidthInCells(); }
+        }
+
+        public float ColumnGap
+        {
+            get { return cellSize * columnGap; }
+        }
+
+        // Measure the size of the description. Includes the margins and multi-column splitting.
         public SizeF Measure()
         {
-            SizeF size = new SizeF(cellSize * WidthInCells() + margin * 2, cellSize * description.Length + margin * 2);
+            SizeF size = new SizeF((cellSize * WidthInCells()) * numColumns + cellSize * columnGap * (numColumns - 1) + margin * 2, cellSize * ColumnLengthInCells + margin * 2);
             return size;
         }
 
-        // Measure the size of the descriptions in boxes.
+        // Measure the size of the descriptions in boxes. Does not take column splitting into account for multi-column description.
         public Size Boxes
         {
             get
@@ -150,9 +182,14 @@ namespace PurplePen
         }
 
         // Measure the bounds of one line. Does not include margings or line widths.
+        // If multicolumns, then firstline must equal lastLine.
         public RectangleF LineBounds(int firstLine, int lastLine)
         {
-            RectangleF rect = new RectangleF(0, firstLine * cellSize, WidthInCells() * cellSize, cellSize * (lastLine - firstLine + 1));
+            Debug.Assert(firstLine == lastLine || numColumns == 1);
+
+            int row, col;
+            ColumnAndRow(firstLine, out row, out col);
+            RectangleF rect = new RectangleF((WidthInCells() + columnGap) * cellSize * col, row * cellSize, WidthInCells() * cellSize, cellSize * (lastLine - firstLine + 1));
             rect.Offset(margin, margin);
             return rect;
         }
@@ -160,9 +197,11 @@ namespace PurplePen
         // Measure the bounds of one box.
         public RectangleF BoxBounds(int firstLine, int lastLine, int startBox, int endBox)
         {
+            Debug.Assert(firstLine == lastLine || numColumns == 1);
+
             RectangleF rect = new RectangleF(startBox * cellSize, firstLine * cellSize, cellSize * (endBox - startBox + 1), cellSize * (lastLine - firstLine + 1));
-             rect.Offset(margin, margin);
-             return rect;
+            rect.Offset(margin, margin);
+            return rect;
          }
 
          // Render the description onto the given graphics at (0,0). Only draw the parts that lie within
@@ -217,7 +256,7 @@ namespace PurplePen
         void Render(IRenderer renderer, RectangleF clipRect, int startLine, int countLines)
         {
             int thickLineCounter = 0;
-            PointF upperLeft = new PointF(margin, margin);   // upper left of the current line.
+            PointF upperLeft;   // upper left of the current line.
 
             // Thickness of a thick line, in device units.
             float thickLineWidth = DescriptionAppearance.thickDescriptionLine * (float)cellSize / 100.0F;
@@ -233,6 +272,14 @@ namespace PurplePen
 
                         if (bounds.IntersectsWith(clipRect)) {
                             Matrix matrixSave, matrixNew;
+                            int row, col;
+                            int nextRow, nextCol;
+
+                            ColumnAndRow(line - startLine, out row, out col);
+                            ColumnAndRow(line - startLine + 1, out nextRow, out nextCol);
+                            upperLeft = new PointF(margin + (col * (WidthInCells() + columnGap) * cellSize), margin + row * cellSize);
+                            if (col > 0 && row == 0)
+                                thickLineCounter = 0;
 
                             // Set transform so the each cell is 100x100, and the origin of the line is at (0,0).
                             matrixSave = renderer.Transform;
@@ -249,14 +296,13 @@ namespace PurplePen
 
                             // Draw the line.
                             // Don't draw a top line if it's a title/secondary and so was the previous.
+                            bool lastLine = (line == description.Length - 1 || line == startLine + countLines - 1 || nextCol != col);
+                            bool drawThickLine = (thickLineCounter == 0 || line == startLine);
                             bool noTopLine = (line != 0) && (description[line].kind == DescriptionLineKind.Title || description[line].kind == DescriptionLineKind.SecondaryTitle) && (description[line].kind == description[line - 1].kind);
-                            RenderLine(renderer, description[line], descriptionKind, (line == description.Length - 1 || line == startLine + countLines - 1), 
-                                (thickLineCounter == 0 || line == startLine), noTopLine, clipWorld);
+                            RenderLine(renderer, description[line], descriptionKind, lastLine,  drawThickLine, noTopLine, clipWorld);
 
                             renderer.Transform = matrixSave;
                         }
-
-                        upperLeft.Y += cellSize;
                     }
 
                     UpdateThickLineCounter(description[line], DescriptionKind, ref thickLineCounter);
@@ -281,9 +327,12 @@ namespace PurplePen
                 ++lastLine;
         }
 
-        // Hit test a point (in device coordinates) so we know what was clicked on.
+        // Hit test a point (in device coordinates) so we know what was clicked on. 
+        // Currently only supports single column.
         public HitTestResult HitTest(PointF point)
         {
+            Debug.Assert(numColumns == 1);
+
             HitTestResult result = new HitTestResult();
 
             // Compensate for the margin.
@@ -430,6 +479,35 @@ namespace PurplePen
             return (descriptionKind == DescriptionKind.SymbolsAndText) ? 13 : 8;
         }
 
+        // Number of boxes down a full column.
+        public int ColumnLengthInCells
+        {
+            get
+            {
+                return (description.Length + (numColumns - 1)) / numColumns;
+            }
+        }
+
+        // Taking multi-columns into account, figure out the column and row
+        private void ColumnAndRow(int line, out int row, out int column)
+        {
+            if (numColumns == 1) {
+                row = line;
+                column = 0;
+            }
+            else {
+                column = 0;
+                int numberOfLongColumns = description.Length % numColumns;
+                if (numberOfLongColumns == 0)
+                    numberOfLongColumns = numColumns;
+                int firstColumnLength = ColumnLengthInCells;
+                while (line >= ((column < numberOfLongColumns) ? firstColumnLength : firstColumnLength - 1)) {
+                    line -= (column < numberOfLongColumns) ? firstColumnLength : firstColumnLength - 1;
+                    ++column;
+                }
+                row = line;
+            }
+        }
 
         // Create the drawing objects we need.
         void CreateObjects(IRenderer renderer, float cellSize)

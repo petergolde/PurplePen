@@ -12,12 +12,13 @@ Releasing a new version of Purple Pen.
 
 5. Build MapModel (Debug and Release), and copy new versions over with copy_mapmodel.bat
 
-6. In solution explorer, highlight setup project, select View/Properties Window (NOT Property Pages). Changes
-version code to match, say Yes when prompted to update product code.
+6. In solution explorer, in SetupIS, goto General Information in section 1.
+   Change Product Version to new version. Immediately below, generate a new guid for the
+   Product Code.
 
 7. Build release build.
 
-8. Copy and rename src\Setup\Release\purplepen-setup.exe and place in http://purplepen.golde.org/downloads
+8. Copy and rename src\SetupIS\SetupIS\Express\SingleImage\DiskImages\DISK1\setup.exe and place in http://purplepen.golde.org/downloads
 
 9. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
 

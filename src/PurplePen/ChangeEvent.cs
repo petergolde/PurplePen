@@ -37,8 +37,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Diagnostics;
+using System.Linq;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -182,6 +184,18 @@ namespace PurplePen
             controlPoint.codeLocationAngle = newAngle;
 
             eventDB.ReplaceControlPoint(controlId, controlPoint);
+        }
+
+        // Change the number location for a course-control. If customLocation is false, puts the number location as automaticLocation
+        public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
+        {
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+
+            if (courseControl.exchange != isExchange) {
+                courseControl = (CourseControl)courseControl.Clone();
+                courseControl.exchange = isExchange;
+                eventDB.ReplaceCourseControl(courseControlId, courseControl);
+            }
         }
 
         // Change the event title. Seperate lines with "|".
@@ -343,10 +357,11 @@ namespace PurplePen
         }
 
         // Change the course print area. Use CourseId.None to change the all controls print area. Use empty
-        // rectangle to switch back to the default print area.
-        public static void ChangeCoursePrintArea(EventDB eventDB, Id<Course> courseId, RectangleF printArea)
+        // rectangle to switch back to the default print area. If "removeParts" is true, and the course is an all parts,
+        // then remove print descriptions for each part.
+        public static void ChangePrintArea(EventDB eventDB, CourseDesignator courseDesignator, bool removeParts, RectangleF printArea)
         {
-            if (courseId.IsNone) {
+            if (courseDesignator.IsAllControls) {
                 Event e = eventDB.GetEvent();
 
                 e = (Event) e.Clone();
@@ -355,12 +370,20 @@ namespace PurplePen
                 eventDB.ChangeEvent(e);
             }
             else {
-                Course course = eventDB.GetCourse(courseId);
+                Course course = eventDB.GetCourse(courseDesignator.CourseId);
 
                 course = (Course) course.Clone();
-                course.printArea = printArea;
 
-                eventDB.ReplaceCourse(courseId, course);
+                if (courseDesignator.AllParts) {
+                    course.printArea = printArea;
+                    if (removeParts)
+                        course.partPrintAreas = new Dictionary<int, RectangleF>();
+                }
+                else {
+                    course.partPrintAreas[courseDesignator.Part] = printArea;
+                }
+
+                eventDB.ReplaceCourse(courseDesignator.CourseId, course);
             }
         }
 
@@ -472,7 +495,7 @@ namespace PurplePen
         }
 
         // Change the gaps of a control for a given scale.
-        public static void ChangeControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale, uint newGaps)
+        public static void ChangeControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale, CircleGap[] newGaps)
         {
             ControlPoint control = eventDB.GetControl(controlId);
 
@@ -480,13 +503,13 @@ namespace PurplePen
 
             int scaleInt = (int) Math.Round(scale);     // scale is stored as int in the gaps to prevent rounding problems.
 
-            if (newGaps == 0xFFFFFFFF) {
+            if (newGaps == null || newGaps.Length == 0) {
                 if (control.gaps != null)
                     control.gaps.Remove(scaleInt);
             }
             else {
                 if (control.gaps == null)
-                    control.gaps = new Dictionary<int, uint>();
+                    control.gaps = new Dictionary<int, CircleGap[]>();
                 control.gaps[scaleInt] = newGaps;
             }
 
@@ -531,7 +554,18 @@ namespace PurplePen
             eventDB.ReplaceSpecial(specialId, special);
         }
 
+        // Change the number of columns of a descriptions
+        public static void ChangeDescriptionColumns(EventDB eventDB, Id<Special> specialId, int numColumns)
+        {
+            Special special = eventDB.GetSpecial(specialId);
 
+            Debug.Assert(special.kind == SpecialKind.Descriptions);
+
+            special = (Special)special.Clone();
+            special.numColumns = numColumns;
+
+            eventDB.ReplaceSpecial(specialId, special);
+        }
 
         // Remove a control from a course. Caller must ensure the current is actually in this course.
         public static void RemoveCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdRemove)
@@ -575,7 +609,7 @@ namespace PurplePen
         {
             // Find all of the courses/course-controls that are this control.
             foreach (Id<Course> courseId in QueryEvent.CoursesUsingControl(eventDB, controlId)) {
-                foreach (Id<CourseControl> courseControlId in QueryEvent.GetCourseControlsInCourse(eventDB, courseId, controlId)) {
+                foreach (Id<CourseControl> courseControlId in QueryEvent.GetCourseControlsInCourse(eventDB, new CourseDesignator(courseId), controlId)) {
                     RemoveCourseControl(eventDB, courseId, courseControlId);
                 }
             }
@@ -748,12 +782,13 @@ namespace PurplePen
         }
 
         // Add a description to the event. 
-        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, Id<Course>[] courses, PointF topLeft, float cellSize)
+        public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize, int numColumns)
         {
             Special special = new Special(SpecialKind.Descriptions, new PointF[2] { topLeft, new PointF(topLeft.X + cellSize, topLeft.Y) });
             special.allCourses = allCourses;
             if (! allCourses)
                 special.courses = courses;
+            special.numColumns = numColumns;
             Id<Special> specialId =  eventDB.AddSpecial(special);
 
             // Descriptions special are unique per course -- enforce this.
@@ -778,7 +813,7 @@ namespace PurplePen
         public static void DeleteCourse(EventDB eventDB, Id<Course> courseId)
         {
             // Remember the set of course controls.
-            List<Id<CourseControl>> courseControls = new List<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, courseId));
+            List<Id<CourseControl>> courseControls = new List<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)));
 
             // Remove the course.
             eventDB.RemoveCourse(courseId);
@@ -792,7 +827,7 @@ namespace PurplePen
             List<Id<Special>> specialsToChange = new List<Id<Special>>();
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 Special special = eventDB.GetSpecial(specialId);
-                if (!special.allCourses && Array.IndexOf<Id<Course>>(special.courses, courseId) >= 0) {
+                if (!special.allCourses && special.courses.Any(cd => cd.CourseId == courseId)) {
                     // This special is not an all controls special, and is present on the course being deleted. Update it.
                     specialsToChange.Add(specialId);
                 }
@@ -801,13 +836,12 @@ namespace PurplePen
             // Update each of the specials.
             foreach (Id<Special> specialId in specialsToChange) {
                 Special special = eventDB.GetSpecial(specialId);
-                if (special.courses.Length == 1)
+                CourseDesignator[] newCourses = special.courses.Where(cd => cd.CourseId != courseId).ToArray();
+                if (newCourses.Length == 0)
                     ChangeEvent.DeleteSpecial(eventDB, specialId);
                 else {
                     special = (Special) special.Clone();
-                    List<Id<Course>> list = new List<Id<Course>>(special.courses);
-                    list.Remove(courseId);
-                    special.courses = list.ToArray();
+                    special.courses = newCourses;
                     eventDB.ReplaceSpecial(specialId, special);
                 }
             }
@@ -934,19 +968,24 @@ namespace PurplePen
 
         // Change the set of courses that a special is on. If all the courses are in the new array, changes the special to display in 
         // all courses.
-        public static void ChangeDisplayedCourses(EventDB eventDB, Id<Special> specialId, Id<Course>[] displayedCourses)
+        public static void ChangeDisplayedCourses(EventDB eventDB, Id<Special> specialId, CourseDesignator[] displayedCourses)
         {
             // Check if the array contains all of the courses.
-            bool allCourses = true;;
+            bool allCourses = true;
+            Special special = (Special) eventDB.GetSpecial(specialId).Clone();
 
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                if (Array.IndexOf(displayedCourses, courseId) < 0) {
+                if (Array.IndexOf(displayedCourses, new CourseDesignator(courseId)) < 0) {
                     allCourses = false;
                     break;
                 }
             }
 
-            Special special = (Special) eventDB.GetSpecial(specialId).Clone();
+            if (special.kind == SpecialKind.Descriptions) {
+                if (Array.IndexOf(displayedCourses, CourseDesignator.AllControls) < 0)
+                    allCourses = false;   // all courses includes all controls only for descriptions.
+            }
+
             special.allCourses = allCourses;
             if (allCourses) 
                 special.courses = null;
@@ -963,7 +1002,7 @@ namespace PurplePen
         public static void UpdateDescriptionCourses(EventDB eventDB, Id<Special> descriptionId)
         {
             // Which courses to remove?
-            Id<Course>[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
+            CourseDesignator[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
 
             // Find all descriptions to change.
             List<Id<Special>> allDescriptionIds = new List<Id<Special>>();
@@ -975,11 +1014,29 @@ namespace PurplePen
             foreach (Id<Special> descriptionToChange in allDescriptionIds) {
                 // Remove any courses that overlap with the courses the given description has..
                 bool changes = false;          // track if any changes made.
-                List<Id<Course>> courses = new List<Id<Course>>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange));
-                foreach (Id<Course> courseId in coursesToRemove) {
-                    if (courses.Contains(courseId)) {
-                        changes = true;
-                        courses.Remove(courseId);
+                List<CourseDesignator> courses = new List<CourseDesignator>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange));
+                for (int courseIndex = 0; courseIndex < courses.Count; ++courseIndex) {
+                    foreach (CourseDesignator courseToRemove in coursesToRemove) {
+                        if (courseIndex >= 0 && courseIndex < courses.Count) {
+                            if (courseToRemove == courses[courseIndex]) {
+                                changes = true;
+                                courses.RemoveAt(courseIndex--);
+                            }
+                            else if (courseToRemove.CourseId == courses[courseIndex].CourseId) {
+                                changes = true;
+                                if (!courseToRemove.AllParts && courses[courseIndex].AllParts) {
+                                    int removedPart = courseToRemove.Part;
+                                    courses.RemoveAt(courseIndex--);
+                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove.CourseId); ++part) {
+                                        if (part != removedPart)
+                                            courses.Add(new CourseDesignator(courseToRemove.CourseId, part));
+                                    }
+                                }
+                                else if (courseToRemove.AllParts) {
+                                    courses.RemoveAt(courseIndex--);
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -1236,43 +1293,36 @@ namespace PurplePen
             ChangeSpecialLocations(eventDB, specialId, newPoints);
         }
 
-        // Add a gap at a particular radians to a gap bitflag field.
-        public static uint AddGap(uint start, double radians)
+        // Add a gap at a particular radians to a circle gaps.
+        public static CircleGap[] AddGap(CircleGap[] gaps, double radians)
         {
-            int bitNumber = (int) Math.Round(radians / (2 * Math.PI) * 32.0);
+            float angleInDegrees = (float)(180 * radians / Math.PI);
+            const float gapAngle = 30;
+            return CircleGap.AddGap(gaps, angleInDegrees - gapAngle / 2, angleInDegrees + gapAngle / 2);
+        }
 
-            // Set 3 bits around the location of the gap.
-            uint result = Util.SetBit(start, bitNumber - 1, false);
-            result = Util.SetBit(result, bitNumber, false);
-            result = Util.SetBit(result, bitNumber + 1, false);
-            return result;
+        // Add a gap with two points to a control point.
+        public static void AddGap(EventDB eventDB, float scale, Id<ControlPoint> controlId, PointF pt1, PointF pt2)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+            PointF center = control.location;
+            if (center == pt1 || center == pt2)
+                return;
+
+            float angle1 = Geometry.Angle(center, pt1);
+            float angle2 = Geometry.Angle(center, pt2);
+            CircleGap.OrderGapAngles(ref angle1, ref angle2);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, scale);
+            gaps = CircleGap.AddGap(gaps, angle1, angle2);
+            ChangeControlGaps(eventDB, controlId, scale, gaps);
         }
 
         // Remove a gap at a particular radians  
-        public static uint RemoveGap(uint start, double radians)
+        public static CircleGap[] RemoveGap(CircleGap[] start, double radians)
         {
-            uint result = start;
-            int bitNumber = (int) Math.Round(radians / (2 * Math.PI) * 32.0);
+            float angleInDegrees = (float)(180 * radians / Math.PI);
 
-            // If there is no gap at the given bit number, do nothing.
-            if (Util.GetBit(start, bitNumber) == true)
-                return start;
-
-            // Remove gap going up
-            int i = bitNumber + 1;
-            while (Util.GetBit(result, i) == false) {
-                result = Util.SetBit(result, i, true);
-                ++i;
-            }
-
-            // Remove map going down.
-            i = bitNumber;
-            while (Util.GetBit(result, i) == false) {
-                result = Util.SetBit(result, i, true);
-                --i;
-            }
-
-            return result;
+            return CircleGap.RemoveGap(start, angleInDegrees);
         }
 
         // Set all punch patterns, by code, for the event.
