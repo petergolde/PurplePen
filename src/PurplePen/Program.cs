@@ -42,6 +42,8 @@ namespace PurplePen
 {
     static class Program
     {
+        private static bool crashReported = false;   // Has a crash already been reported?
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -106,17 +108,28 @@ namespace PurplePen
         // Put up dialog to send crash report.
         private static void SendCrashReport(Exception exception)
         {
-            var reportCrash = new ReportCrash {
-                FromEmail = "crashreporting@purple-pen.org",
-                ToEmail = "crashreport@purple-pen.org",
-                SmtpHost = "mail.purple-pen.org",
-                Port = 587,
-                UserName = "crashreporting@purple-pen.org",
-                Password = "PurplePen",
-                EnableSSL = false,
-            };
+            if (!crashReported) {
+                crashReported = true;   // Only report crash one time. Further ones are likely to be annoying and useless.
 
-            reportCrash.Send(exception);
+                var reportCrash = new ReportCrash {
+                    FromEmail = "crashreporting@purple-pen.org",
+                    ToEmail = "crashreport@purple-pen.org",
+                    SmtpHost = "mail.purple-pen.org",
+                    Port = 587,
+                    UserName = "crashreporting@purple-pen.org",
+                    Password = "PurplePen",
+                    EnableSSL = false,
+
+                    TextIntro = MiscText.CrashIntro,
+                    TextEmail = MiscText.CrashEmail,
+                    TextMessage = MiscText.CrashMessage,
+                    TextSend = MiscText.CrashSend,
+                    TextSave = MiscText.CrashSave,
+                    TextCancel = MiscText.CrashCancel
+                };
+
+                reportCrash.Send(exception);
+            }
         }
 
     }

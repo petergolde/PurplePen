@@ -410,4 +410,22 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="PartXOfY" xml:space="preserve">
     <value>Part {0} (of {1})</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Contact Email</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>An error has occurred. In order to help us fix the problem, please enter your email address and additional information, and send us an error report.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Please tell us what you were doing in the program, to help fix the problem</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Send Report</value>
+  </data>
 </root>

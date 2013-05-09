@@ -367,6 +367,60 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string CrashCancel {
+            get {
+                return ResourceManager.GetString("CrashCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Email.
+        /// </summary>
+        internal static string CrashEmail {
+            get {
+                return ResourceManager.GetString("CrashEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error has occurred. In order to help us fix the problem, please enter your email address and additional information, and send us an error report..
+        /// </summary>
+        internal static string CrashIntro {
+            get {
+                return ResourceManager.GetString("CrashIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please tell us what you were doing in the program, to help fix the problem.
+        /// </summary>
+        internal static string CrashMessage {
+            get {
+                return ResourceManager.GetString("CrashMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string CrashSave {
+            get {
+                return ResourceManager.GetString("CrashSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send Report.
+        /// </summary>
+        internal static string CrashSend {
+            get {
+                return ResourceManager.GetString("CrashSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ctrl+Y.
         /// </summary>
         internal static string CtrlY {
