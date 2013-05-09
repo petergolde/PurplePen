@@ -2219,6 +2219,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj">
+      <Project>{67912bda-1572-46b0-8623-5872d9dadbc8}</Project>
+      <Name>CrashReporter.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

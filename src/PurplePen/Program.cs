@@ -36,6 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Globalization;
+using CrashReporterDotNET;
 
 namespace PurplePen
 {
@@ -47,6 +48,13 @@ namespace PurplePen
         [STAThread]
         static void Main(string[] args)
         {
+            // Enable crash reporting.
+            Application.ThreadException += (sender, e) => SendCrashReport(e.Exception);
+            AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
+                    SendCrashReport((Exception)e.ExceptionObject);
+                    Environment.Exit(0);
+                };
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -94,5 +102,22 @@ namespace PurplePen
             mainFrame.Show();
             return true;
         }
+
+        // Put up dialog to send crash report.
+        private static void SendCrashReport(Exception exception)
+        {
+            var reportCrash = new ReportCrash {
+                FromEmail = "crashreporting@purple-pen.org",
+                ToEmail = "crashreport@purple-pen.org",
+                SmtpHost = "mail.purple-pen.org",
+                Port = 587,
+                UserName = "crashreporting@purple-pen.org",
+                Password = "PurplePen",
+                EnableSSL = false,
+            };
+
+            reportCrash.Send(exception);
+        }
+
     }
 }
