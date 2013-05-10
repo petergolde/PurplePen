@@ -2258,6 +2258,33 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             Assert.AreEqual("de", controller.GetDescriptionLanguage());
         }
+
+        [TestMethod]
+        public void CanAddDescriptions()
+        {
+            EventDB eventDB = controller.GetEventDB();
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
+            Assert.IsTrue(success);
+
+            controller.SelectTab(0);    // All controls.
+            Assert.IsTrue(controller.CanAddDescriptions());
+
+            controller.SelectTab(1);   // No map exchange
+            Assert.IsTrue(controller.CanAddDescriptions());
+
+            controller.SelectTab(2);   // Map exchange
+            Assert.IsFalse(controller.CanAddDescriptions());
+
+            controller.SelectPart(0);
+            Assert.IsTrue(controller.CanAddDescriptions());
+
+            controller.SelectPart(1);
+            Assert.IsTrue(controller.CanAddDescriptions());
+
+            controller.SelectPart(-1);
+            Assert.IsFalse(controller.CanAddDescriptions());
+        }
     }
 }
 

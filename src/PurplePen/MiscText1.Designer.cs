@@ -169,6 +169,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descriptions may not be added to a course with a map exchange if &quot;All Parts&quot; is being displayed. Switch to the part you wish to add descriptions to, and then choose &quot;Add Descriptions&quot; again..
+        /// </summary>
+        internal static string CannotAddDescriptionsToAllParts {
+            get {
+                return ResourceManager.GetString("CannotAddDescriptionsToAllParts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot create folder &apos;{0}&apos; for the following reason:.
         /// </summary>
         internal static string CannotCreateDirectory {

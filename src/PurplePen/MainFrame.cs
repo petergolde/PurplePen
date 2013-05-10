@@ -536,8 +536,6 @@ namespace PurplePen
             UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
             UpdateMenuItem(mapExchangeToolStripMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
-            UpdateMenuItem(addDescriptionsMenu, controller.CanAddDescriptions());
-            UpdateMenuItem(descriptionsToolStripMenuItem, controller.CanAddDescriptions());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -1229,7 +1227,10 @@ namespace PurplePen
 
         private void addDescriptionsMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddDescriptionMode();
+            if (controller.CanAddDescriptions())
+                controller.BeginAddDescriptionMode();
+            else
+                InfoMessage(MiscText.CannotAddDescriptionsToAllParts);
         }
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)
