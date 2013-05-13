@@ -354,6 +354,8 @@ namespace PurplePen
 
             renderer.CellSize = boxSize;
 
+            VerticalScroll.SmallChange = (int) Math.Round(boxSize);
+
             if (oldSize != newSize)
                 descriptionPanel.Size = newSize;
             if (oldSize.Width != newSize.Width)
