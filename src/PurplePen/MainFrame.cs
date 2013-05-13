@@ -1033,6 +1033,26 @@ namespace PurplePen
             return MapViewer.DragAction.None;
         }
 
+        private void mapViewer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (! e.Alt && !e.Control && !e.Shift) {
+                switch (e.KeyCode) {
+                    case Keys.Left:
+                        mapViewer.ScrollView(mapViewer.Width / 6, 0);
+                        break;
+                    case Keys.Right:
+                        mapViewer.ScrollView(-mapViewer.Width / 6, 0);
+                        break;
+                    case Keys.Up:
+                        mapViewer.ScrollView(0, mapViewer.Height / 6);
+                        break;
+                    case Keys.Down:
+                        mapViewer.ScrollView(0, -mapViewer.Height / 6);
+                        break;
+                }
+            }
+        }
+
         private void zoomTracker_Scroll(object sender, EventArgs e)
         {
             mapViewer.ZoomFactor = (float) Math.Pow(10.0, (((double) zoomTracker.Value / 100) * (Math.Log10(TRACKBAR_MAX) - Math.Log10(TRACKBAR_MIN))) + Math.Log10(TRACKBAR_MIN));

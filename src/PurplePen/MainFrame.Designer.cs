@@ -348,6 +348,7 @@ namespace PurplePen
             this.mapViewer.OnPointerMove += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerMove);
             this.mapViewer.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerHover);
             this.mapViewer.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewer_OnMouseEvent);
+            this.mapViewer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mapViewer_KeyDown);
             this.mapViewer.MouseEnter += new System.EventHandler(this.mapViewer_MouseEnter);
             // 
             // horizScroll

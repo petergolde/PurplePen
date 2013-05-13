@@ -849,6 +849,18 @@ namespace PurplePen.MapView
 
         #endregion Event Handlers
 
+        #region Keyboard handling
+
+        protected override bool IsInputKey(Keys keyData)
+        {
+            // Capture arrow keys, tab, Enter.
+            if ((keyData == Keys.Left) || (keyData == Keys.Right) || (keyData == Keys.Up) || (keyData == Keys.Down) || (keyData == Keys.Tab) || (keyData == Keys.Enter))
+                return true;
+            else
+                return base.IsInputKey(keyData);
+        }
+
+        #endregion
     }
 
 
