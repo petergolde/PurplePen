@@ -44,7 +44,7 @@ namespace PurplePen
     // product code (you will be prompted for this -- say yes).
     static class VersionNumber
     {
-        public const string Current = "2.0.0.110";
+        public const string Current = "2.0.0.220";
 
         // The last component encodes the Alpha/Beta/RC/Stable notion.
         // 110 is Alpha 1, 220 is Beta 2, 500 is stable release
