@@ -178,11 +178,11 @@ namespace PurplePen
             line.boxes[1] = string.Format("{0:0.0} km", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0);
             if (courseView.TotalClimb < 0) {
                 line.boxes[2] = null;
-                line.textual = string.Format(symbolDB["course_length"].GetText("en"), line.boxes[1]);
+                line.textual = string.Format(symbolDB["course_length"].GetText(language), line.boxes[1]);
             }
             else {
                 line.boxes[2] = Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0) + " m";
-                line.textual = string.Format(symbolDB["course_length_climb"].GetText("en"), line.boxes[1], line.boxes[2]);
+                line.textual = string.Format(symbolDB["course_length_climb"].GetText(language), line.boxes[1], line.boxes[2]);
             }
 
             return line;
@@ -196,7 +196,7 @@ namespace PurplePen
             line.kind = DescriptionLineKind.Header2Box;
             line.boxes = new object[2];
             line.boxes[0] = courseView.CourseName;
-            line.boxes[1] = string.Format(symbolDB["number_controls"].GetText("en"), courseView.TotalNormalControls);
+            line.boxes[1] = string.Format(symbolDB["number_controls"].GetText(language), courseView.TotalNormalControls);
             line.textual = (string) line.boxes[1];
 
             return line;
@@ -214,9 +214,9 @@ namespace PurplePen
             // If there is scoring, display the total score, else display the total number of controls (e.g.,
             // for a score course with no points for each control.
             if (courseView.TotalScore > 0)
-                line.boxes[1] = string.Format(symbolDB["number_points"].GetText("en"), courseView.TotalScore);
+                line.boxes[1] = string.Format(symbolDB["number_points"].GetText(language), courseView.TotalScore);
             else
-                line.boxes[1] = string.Format(symbolDB["number_controls"].GetText("en"), courseView.TotalNormalControls);
+                line.boxes[1] = string.Format(symbolDB["number_controls"].GetText(language), courseView.TotalNormalControls);
 
             line.textual = (string)line.boxes[1];
 
