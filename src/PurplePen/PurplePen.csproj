@@ -1318,6 +1318,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.ro.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>

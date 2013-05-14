@@ -132,7 +132,38 @@ for the symbols.
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
 
-	<!-- Used for the course length, when no climb is present.
+  <!-- Name of the course when showing all controls.
+	-->
+  <symbol kind="@" id="all_controls">
+    <name lang="en">All controls</name>
+    <name lang="fr">Tous Postes</name>
+    <name lang="en-GB">All controls</name>
+    <name lang="sv">Alla kontroller</name>
+    <name lang="nb-NO">Alle poster</name>
+    <name lang="es">Todos los controles</name>
+    <name lang="nn-NO">Alle poster</name>
+    <name lang="fi">Kaikki rastit</name>
+    <name lang="bg">Всички контролни точки</name>
+    <name lang="ro">Toate posturile</name>
+    <name lang="et">Kõik KPd</name>
+    <name lang="de">Alle Posten</name>
+    <text lang="en">All controls</text>
+    <text lang="fr">Tous Postes</text>
+    <text lang="en-GB">All controls</text>
+    <text lang="sv">Alla kontroller</text>
+    <text lang="nb-NO">Alle poster</text>
+    <text lang="es">Todos los controles</text>
+    <text lang="nn-NO">Alle poster</text>
+    <text lang="fi">Kaikki rastit</text>
+    <text lang="bg">Всички контролни точки</text>
+    <text lang="ro">Toate posturile</text>
+    <text lang="et">Kõik KPd</text>
+    <text lang="de">Alle Posten</text>
+  </symbol>
+
+
+
+  <!-- Used for the course length, when no climb is present.
 	{0} is the length
 	-->
 	<symbol kind="@" id="course_length">
