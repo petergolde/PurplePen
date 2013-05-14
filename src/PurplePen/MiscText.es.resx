@@ -249,9 +249,6 @@ Use | para separar líneas</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Un código de control no puede tener espacios.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Un código de control debe ser 31 o mayor</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Un código de control no puede empezar con cero.</value>
   </data>

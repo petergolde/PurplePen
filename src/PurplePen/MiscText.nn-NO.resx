@@ -249,9 +249,6 @@ Bruk | for å skille rader</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>En postkode kan ikkje innehalde mellomrom.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Postkode skal være høgare  enn 31</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Postkoder skal ikkje begynne med 0</value>
   </data>

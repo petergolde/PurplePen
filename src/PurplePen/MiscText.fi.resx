@@ -249,9 +249,6 @@ Käytä | erottaaksesi rivit</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Rastikoodissa ei saa olla välilyöntiä.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Rastikoodin pitää olla suurempi tai yhtä suuri kuin 31.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Rastikoodi ei saa alkaa nollalla.</value>
   </data>

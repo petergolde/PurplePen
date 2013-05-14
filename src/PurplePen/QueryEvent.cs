@@ -454,10 +454,6 @@ namespace PurplePen
                 return false;
 
             if (int.TryParse(code, System.Globalization.NumberStyles.None, null, out codeNumber)) {
-                if (codeNumber < 31) {
-                    reason = MiscText.CodeUnder31;
-                    return true;  // legal but not preferred.
-                }
                 if (code[0] == '0') {
                     reason = MiscText.CodeBeginsWithZero;
                     return true;  // legal but not preferred.

@@ -249,9 +249,6 @@
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Der Kontrollcode darf keine Leerzeichen enthalten.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Ein Kontrollcode muss 31 oder größer sein.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Ein Kontrollcode darf nicht mit einer Null beginnen.</value>
   </data>

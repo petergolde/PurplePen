@@ -249,9 +249,6 @@
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>В сигнатурата не трябва да има празно пространство.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Сигнатурата трябва да е 31 или по-голямо число.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Сигнатурата не трябва да започва с нула.</value>
   </data>

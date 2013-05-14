@@ -249,9 +249,6 @@ Folosiți | pentru a separa liniile</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Un cod de post nu poate conține spațiu.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Un cod de post trebuie să fie 31 sau mai mult.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Un cod de post nu poate începe cu zero.</value>
   </data>

@@ -249,9 +249,6 @@ Använd | för att separera rader</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>En kodsiffra får inte innehålla mellanslag.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>En kodsiffra ska vara 31 eller större.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>En kodsiffra får inte börja med en nolla.</value>
   </data>

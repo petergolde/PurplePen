@@ -249,9 +249,6 @@ Kasuta | eraldamaks ridu</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Tunnusnumber ei tohi sisaldada tühikuid.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Tunnusnumber peab olema 31 või suurem.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Tunnusnumber ei tohi alata nulliga.</value>
   </data>

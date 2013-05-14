@@ -249,9 +249,6 @@ Utiliser | pour séparer les lignes</value>
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Un numéro de poste ne doit pas contenir d'espace.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Un numéro de poste devrait être supérieur ou égal à 31.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Un numéro de poste ne devrait pas commencer par zéro.</value>
   </data>

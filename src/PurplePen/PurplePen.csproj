@@ -1331,23 +1331,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.bg.resx">
       <LastGenOutput>MiscText.bg.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.de.resx" />
+    <EmbeddedResource Include="MiscText.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiscText.es.resx">
       <LastGenOutput>MiscText.es.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.et.resx" />
+    <EmbeddedResource Include="MiscText.et.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiscText.fi.resx">
       <LastGenOutput>MiscText.fi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.fr.resx">
       <LastGenOutput>MiscText.fr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.nb-NO.resx">
       <LastGenOutput>MiscText.nb-NO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.nn-NO.resx">
       <LastGenOutput>MiscText.nn-NO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1356,9 +1366,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.ro.resx">
       <LastGenOutput>MiscText.ro.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.sv.resx">
       <LastGenOutput>MiscText.sv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.bg.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>

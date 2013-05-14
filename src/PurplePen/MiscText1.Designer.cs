@@ -349,15 +349,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A control code should be 31 or higher..
-        /// </summary>
-        internal static string CodeUnder31 {
-            get {
-                return ResourceManager.GetString("CodeUnder31", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Control {0}.
         /// </summary>
         internal static string Control_Code {

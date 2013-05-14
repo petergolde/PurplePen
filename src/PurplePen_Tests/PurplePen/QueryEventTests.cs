@@ -495,9 +495,10 @@ namespace PurplePen.Tests
             Assert.IsTrue(legal);
             Assert.IsNull(reason);
 
+            // Under 31 is no longer flagged as non-preferred.
             legal = QueryEvent.IsPreferredControlCode(eventDB, "30", out reason);
             Assert.IsTrue(legal);
-            Assert.AreEqual(reason, MiscText.CodeUnder31);
+            Assert.IsNull(reason);
 
             legal = QueryEvent.IsPreferredControlCode(eventDB, "051", out reason);
             Assert.IsTrue(legal);
@@ -515,9 +516,10 @@ namespace PurplePen.Tests
             Assert.IsTrue(legal);
             Assert.IsNull(reason);
 
+            // Under 31 is no longer flagged as non-preferred.
             legal = QueryEvent.IsPreferredControlCode(eventDB, "1", out reason);
             Assert.IsTrue(legal);
-            Assert.AreEqual(reason, MiscText.CodeUnder31);
+            Assert.IsNull(reason);
 
             legal = QueryEvent.IsPreferredControlCode(eventDB, "1234", out reason);
             Assert.IsFalse(legal);
