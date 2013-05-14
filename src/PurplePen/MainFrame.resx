@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 238</value>
+    <value>256, 240</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +217,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -253,7 +253,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 125</value>
+    <value>256, 123</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>238</value>
+    <value>240</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -325,7 +325,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADAf7sL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACggLsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -347,7 +347,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwno7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwoA7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -355,7 +355,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -427,7 +427,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -1194,6 +1194,12 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Support/Bug Reporting</value>
   </data>
+  <data name="donateWebSiteMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>225, 22</value>
+  </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Make a &amp;Donation</value>
+  </data>
   <data name="toolStripSeparator13.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 6</value>
   </data>
@@ -1261,7 +1267,7 @@
     <value>225, 22</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Debug</value>
+    <value>Debug</value>
   </data>
   <data name="addDescriptionLanguageMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
@@ -1584,11 +1590,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqCkej/4ChXDBTmrBaC
-        xUIwYbMZtDoLzb+CzUpgk2s2mgQ2QMbrnZ8HHnan3pC5yXf77u55f/tp64gUBTPNzl38G2LFJRjPNX8k
-        4Z6rEww0yGF8oFIdvk41Db9zoknbkhhNHmt87OFSR539tMOmpOiTp5CofGlKsr/xf8W3CAvwJE2Cbsyv
-        p94HfhcevgTGmhkxXLsqE/iU8Gmyj7yrEpDkjkohDms3P9TwqKXWrov/jKqqO7R76GImsJetcya4d1UC
-        OzMjvdjsrsoEwbe2Q/jsqiXIHIw0ejejXWF1kTTp4JQiZ/yH5odc8fBFe5WuupFn34hWsK/+gaf4MsbC
-        wR6eVcsifg17EhT+eWZbqM3qHa3dya+gWgALLm4L0ic+ITcilAlQ7QAAAABJRU5ErkJggg==
+        xUIwYbMZtDoLzb+CzUpgk2s2mowCyHi98/PAw+7UGzI3+W7f3T3vbz9tHZGiYKbZuYt/Q6y4BOO55o8k
+        3HN1goEGOYwPVKrD16mm4XdONGlbEqPJY42PPVzqqLOfdtiUFH3yFBKVL01J9jf+r/gWYQGepEnQjfn1
+        1PvA78LDl8BYMyOGa1dlAp8SPk32kXdVApLcUSnEYe3mhxoetdTadfGfUVV1h3YPXcwE9rJ1zgT3rkpg
+        Z2akF5vdVZkg+NZ2CJ9dtQSZg5FG72a0K6wukiYdnFLkjP/Q/JArHr5or9JVN/LsG9EK9tU/8BRfxlg4
+        2MOzalnEr2FPgsI/z2wLtVm9o7U7+RVUC2DBxW1B+gQ18TcaUkN3kwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2766,6 +2772,12 @@
   <data name="&gt;&gt;supportWebSiteMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;donateWebSiteMenu.Name" xml:space="preserve">
+    <value>donateWebSiteMenu</value>
+  </data>
+  <data name="&gt;&gt;donateWebSiteMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator13.Name" xml:space="preserve">
     <value>toolStripSeparator13</value>
   </data>
@@ -3070,7 +3082,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>

@@ -1942,6 +1942,11 @@ namespace PurplePen
             Util.GoToWebPage("http://purple-pen.org");
         }
 
+        private void donateWebSiteMenu_Click(object sender, EventArgs e)
+        {
+            Util.GoToWebPage("http://purple-pen.org/donate.htm");
+        }
+
         private void courseSummaryMenu_Click(object sender, EventArgs e)
         {
             Reports reportGenerator = new Reports();
@@ -2160,7 +2165,6 @@ namespace PurplePen
 
             openFile.Dispose();
         }
-
 
 
     }

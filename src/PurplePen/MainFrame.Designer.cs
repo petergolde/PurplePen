@@ -197,6 +197,7 @@ namespace PurplePen
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.mainWebSiteToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.supportWebSiteMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.donateWebSiteMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.debugMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -1198,6 +1199,7 @@ namespace PurplePen
             this.toolStripSeparator14,
             this.mainWebSiteToolMenu,
             this.supportWebSiteMenu,
+            this.donateWebSiteMenu,
             this.toolStripSeparator13,
             this.aboutMenu,
             this.debugMenu,
@@ -1234,6 +1236,12 @@ namespace PurplePen
             this.supportWebSiteMenu.Name = "supportWebSiteMenu";
             resources.ApplyResources(this.supportWebSiteMenu, "supportWebSiteMenu");
             this.supportWebSiteMenu.Click += new System.EventHandler(this.supportWebSiteMenu_Click);
+            // 
+            // donateWebSiteMenu
+            // 
+            this.donateWebSiteMenu.Name = "donateWebSiteMenu";
+            resources.ApplyResources(this.donateWebSiteMenu, "donateWebSiteMenu");
+            this.donateWebSiteMenu.Click += new System.EventHandler(this.donateWebSiteMenu_Click);
             // 
             // toolStripSeparator13
             // 
@@ -1853,6 +1861,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem printAreaThisPartMenu;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem showPopupsMenu;
+        private System.Windows.Forms.ToolStripMenuItem donateWebSiteMenu;
 
     }
 }

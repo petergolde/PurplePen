@@ -62,24 +62,15 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialScreen));
-            this.openExistingRadioButton = new System.Windows.Forms.RadioButton();
-            this.createNewRadioButton = new System.Windows.Forms.RadioButton();
             this.okButton = new System.Windows.Forms.Button();
             this.quitButton = new System.Windows.Forms.Button();
-            this.backgroundPanel = new System.Windows.Forms.Panel();
-            this.openSampleRadioButton = new System.Windows.Forms.RadioButton();
+            this.donationLink = new System.Windows.Forms.LinkLabel();
             this.openLastRadioButton = new System.Windows.Forms.RadioButton();
+            this.openSampleRadioButton = new System.Windows.Forms.RadioButton();
+            this.backgroundPanel = new System.Windows.Forms.Panel();
+            this.createNewRadioButton = new System.Windows.Forms.RadioButton();
+            this.openExistingRadioButton = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // openExistingRadioButton
-            // 
-            resources.ApplyResources(this.openExistingRadioButton, "openExistingRadioButton");
-            this.openExistingRadioButton.Name = "openExistingRadioButton";
-            // 
-            // createNewRadioButton
-            // 
-            resources.ApplyResources(this.createNewRadioButton, "createNewRadioButton");
-            this.createNewRadioButton.Name = "createNewRadioButton";
             // 
             // okButton
             // 
@@ -94,17 +85,14 @@ namespace PurplePen
             this.quitButton.Name = "quitButton";
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
-            // backgroundPanel
+            // donationLink
             // 
-            this.backgroundPanel.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.backgroundPanel, "backgroundPanel");
-            this.backgroundPanel.Name = "backgroundPanel";
-            this.backgroundPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.backgroundPanel_Paint);
-            // 
-            // openSampleRadioButton
-            // 
-            resources.ApplyResources(this.openSampleRadioButton, "openSampleRadioButton");
-            this.openSampleRadioButton.Name = "openSampleRadioButton";
+            resources.ApplyResources(this.donationLink, "donationLink");
+            this.donationLink.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.donationLink.Name = "donationLink";
+            this.donationLink.TabStop = true;
+            this.donationLink.UseCompatibleTextRendering = true;
+            this.donationLink.Click += new System.EventHandler(this.donationLink_Click);
             // 
             // openLastRadioButton
             // 
@@ -113,6 +101,28 @@ namespace PurplePen
             this.openLastRadioButton.Name = "openLastRadioButton";
             this.openLastRadioButton.TabStop = true;
             // 
+            // openSampleRadioButton
+            // 
+            resources.ApplyResources(this.openSampleRadioButton, "openSampleRadioButton");
+            this.openSampleRadioButton.Name = "openSampleRadioButton";
+            // 
+            // backgroundPanel
+            // 
+            this.backgroundPanel.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.backgroundPanel, "backgroundPanel");
+            this.backgroundPanel.Name = "backgroundPanel";
+            this.backgroundPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.backgroundPanel_Paint);
+            // 
+            // createNewRadioButton
+            // 
+            resources.ApplyResources(this.createNewRadioButton, "createNewRadioButton");
+            this.createNewRadioButton.Name = "createNewRadioButton";
+            // 
+            // openExistingRadioButton
+            // 
+            resources.ApplyResources(this.openExistingRadioButton, "openExistingRadioButton");
+            this.openExistingRadioButton.Name = "openExistingRadioButton";
+            // 
             // InitialScreen
             // 
             this.AcceptButton = this.okButton;
@@ -120,6 +130,7 @@ namespace PurplePen
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.quitButton;
+            this.Controls.Add(this.donationLink);
             this.Controls.Add(this.openLastRadioButton);
             this.Controls.Add(this.openSampleRadioButton);
             this.Controls.Add(this.backgroundPanel);
@@ -148,5 +159,6 @@ namespace PurplePen
         private System.Windows.Forms.Panel backgroundPanel;
         private System.Windows.Forms.RadioButton openSampleRadioButton;
         private System.Windows.Forms.RadioButton openLastRadioButton;
+        private System.Windows.Forms.LinkLabel donationLink;
     }
 }

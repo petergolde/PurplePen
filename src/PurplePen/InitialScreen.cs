@@ -201,6 +201,11 @@ namespace PurplePen
             Quit();
         }
 
+        private void donationLink_Click(object sender, EventArgs e)
+        {
+            Util.GoToWebPage("http://purple-pen.org/donate.htm");
+        }
+
         private void Quit() {
             Close();
             Dispose();
@@ -224,5 +229,6 @@ namespace PurplePen
             Updater.OwnerWindow = this;
             Updater.CheckForUpdates();
         }
+
     }
 }
