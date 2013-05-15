@@ -258,4 +258,22 @@
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Weiße Fläche</value>
   </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>Kartenwechsel</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>Kartenwechsel</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Kartenwechsel bei Posten {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Auslastung:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Verwendet in:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Bahn "{0}", Teil {1}</value>
+  </data>
 </root>

@@ -244,7 +244,7 @@
     <value>Modifier le nombre de concurrents</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>Personnaliser la description textuelle</value>
+    <value>Personnaliser la description en clair</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Modifier l'ordre des circuits</value>
@@ -269,5 +269,8 @@
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Personnaliser la présentation du circuit</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Ajouter un Echange de Carte</value>
   </data>
 </root>

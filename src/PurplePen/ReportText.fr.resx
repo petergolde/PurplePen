@@ -199,7 +199,7 @@
     <value>Éléments manquants sur les circuits</value>
   </data>
   <data name="EventAudit_MissingLoad" xml:space="preserve">
-    <value>Le circuit devrait posséder un nombre attendu de concurrents</value>
+    <value>Le circuit devrait indiquer le nombre prévisionnel de concurrents</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
     <value>Aucun schéma de poinçons n'est défini</value>

@@ -379,4 +379,10 @@ După ce apăsați OK, încercați să localizați o copie a fișierului hartă 
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Dacă există un site în limba tradusă care conține documentație pentru Purple Pen, introduceți adresa de internet URL (inclusiv http) ca și traducere a acestui element. Altfel lăsați-l neatins.</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Salvare</value>
+  </data>
 </root>

@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Når arrangementsfilen er lagret velger du "Ny løype..." fra løypemenyen for å lage en eller flere løyper.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Lag arrangement</value>
+  </data>
 </root>

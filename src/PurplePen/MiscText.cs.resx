@@ -213,9 +213,6 @@
   <data name="CodeContainsSpace" xml:space="preserve">
     <value>Kód kontroly nesmí obsahovat mezeru.</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Kód kontroly by měl být 31 nebo vyšší.</value>
-  </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Kód kontroly by neměl začínat nulou.</value>
   </data>
@@ -272,5 +269,14 @@
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>Otevřít "{0}"</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Kód kontroly by měl být 31 nebo vyšší.</value>
   </data>
 </root>

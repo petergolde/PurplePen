@@ -135,4 +135,7 @@ L'échelle de la carte précise comment est représenté le monde réel sur la c
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Echelle de la carte :</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Résolution Bitmap</value>
+  </data>
 </root>

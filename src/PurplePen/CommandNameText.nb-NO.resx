@@ -270,4 +270,7 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Endre løypens utseende</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Legg til kartbytte</value>
+  </data>
 </root>

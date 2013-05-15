@@ -137,4 +137,7 @@
   <data name="oneToPrefixLabel2.Text" xml:space="preserve">
     <value>1 :</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Echelle d'impression</value>
+  </data>
 </root>

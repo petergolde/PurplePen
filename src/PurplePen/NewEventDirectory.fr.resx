@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Dossier sélectionné</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Emplacement Fichier Course</value>
+  </data>
 </root>

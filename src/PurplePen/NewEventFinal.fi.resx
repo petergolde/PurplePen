@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Kun tapahtuma on luotu, valitse Rata-valikosta "Lisää rata..." luodaksesi yhden tai useampia ratoja.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Luo tapahtuma</value>
+  </data>
 </root>

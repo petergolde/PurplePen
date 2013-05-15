@@ -258,4 +258,22 @@
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Lage hvitt område</value>
   </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>kart bytte</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>kart bytte</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Kart bytte ved {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Last inn</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Brukt i:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Løype "{0}", Del {1}</value>
+  </data>
 </root>

@@ -445,7 +445,7 @@
     <value>Typsnittsmått</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Felsökning</value>
+    <value>Felsökning</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lägg till språk för kontrollbeskrivning...</value>

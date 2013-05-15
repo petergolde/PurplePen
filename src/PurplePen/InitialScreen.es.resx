@@ -117,23 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="openExistingRadioButton.Text" xml:space="preserve">
-    <value>Abrir un evento existente...</value>
-  </data>
-  <data name="createNewRadioButton.Text" xml:space="preserve">
-    <value>Crear un nuevo evento...</value>
-  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceptar</value>
   </data>
   <data name="quitButton.Text" xml:space="preserve">
     <value>Salir</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Abrir el último evento utilizado...</value>
+  </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
     <value>Abrir el evento de ejemplo...</value>
   </data>
-  <data name="openLastRadioButton.Text" xml:space="preserve">
-    <value>Abrir el último evento utilizado...</value>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>Crear un nuevo evento...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>Abrir un evento existente...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bienvenido a Purple Pen</value>

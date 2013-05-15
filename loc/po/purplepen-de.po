@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-04-01 17:54-07:00\n"
+"POT-Creation-Date: 2013-05-15 09:42-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -115,11 +115,11 @@ msgstr "Posten- und Kontrollcode (3-61)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr ""
+msgstr "Postennummer und Punktzahl (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr ""
+msgstr "Kontrollcode und Punktzahl (61(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -388,7 +388,7 @@ msgstr "Altersklassenliste"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Druckmaßstab"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -589,7 +589,7 @@ msgstr "Bahndesign ändern"
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr ""
+msgstr "Kartenwechsel hinzufügen"
 
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
@@ -602,7 +602,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
-msgstr ""
+msgstr "Mittelpunktdurchmesser:"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
@@ -680,7 +680,7 @@ msgstr "Bahnauslastung"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr ""
+msgstr "Teilstrecke:"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -705,6 +705,7 @@ msgstr "Erstellen"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
+#: MiscText.resx, CrashCancel
 #: NewEventWizard.resx, cancelButton.Text
 #: NonPrintableObjects.resx, cancelButton.Text
 #: OkCancelDialog.resx, cancelButton.Text
@@ -878,25 +879,29 @@ msgstr "Geschlecht:"
 msgid "Customized Symbol Text"
 msgstr "Benutzerdefinierter Symboltext:"
 
-#: InitialScreen.resx, openExistingRadioButton.Text
-msgid "Open an existing event..."
-msgstr "Bestehenden Wettkampf öffnen..."
-
-#: InitialScreen.resx, createNewRadioButton.Text
-msgid "Create a new event..."
-msgstr "Neuen Wettkampf erstellen..."
-
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
 msgstr "Beenden"
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr ""
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "Letzten Wettkampf öffnen"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
 msgstr "Beispielwettkampf öffnen"
 
-#: InitialScreen.resx, openLastRadioButton.Text
-msgid "Open last viewed event"
-msgstr "Letzten Wettkampf öffnen"
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Neuen Wettkampf erstellen..."
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Bestehenden Wettkampf öffnen..."
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -948,7 +953,7 @@ msgstr "Route&Gadget-Dateien erstellen …"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
-msgstr ""
+msgstr "Daten-&Austauschdatei erstellen (IOF XML)..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -964,7 +969,7 @@ msgstr "&Bahnen drucken"
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
-msgstr ""
+msgstr "Nur diese &Teilstrecke"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -1092,7 +1097,7 @@ msgstr "Karten&qualität"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr ""
+msgstr "&Popup Information anzeigen"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
@@ -1176,15 +1181,15 @@ msgstr "P&ostenbeschreibung hinzufügen"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
-msgstr ""
+msgstr "Kartenwechsel an Posten"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "&Flagged Route to Map Exchange"
-msgstr ""
+msgstr "&Ausgeflaggte Strecke zum Kartenwechsel"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Add Map E&xchange"
-msgstr ""
+msgstr "Karten&wechsel hinzufügen"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1343,6 +1348,10 @@ msgstr "Purple Pen &Website"
 msgid "&Support/Bug Reporting"
 msgstr "&Support/Fehler berichten"
 
+#: MainFrame.resx, donateWebSiteMenu.Text
+msgid "Make a &Donation"
+msgstr ""
+
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Über Purple Pen"
@@ -1384,8 +1393,8 @@ msgid "Font Metrics"
 msgstr "Fontmaße"
 
 #: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Debuggen"
+msgid "Debug"
+msgstr "Debuggen"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1416,6 +1425,7 @@ msgid "Open (Ctrl+O)"
 msgstr "Öffnen (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
+#: MiscText.resx, CrashSave
 msgid "Save"
 msgstr "Speichern"
 
@@ -1455,11 +1465,11 @@ msgstr "Postenbeschreibung hinzufügen"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
-msgstr ""
+msgstr "Kartenwechsel an Posten"
 
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
-msgstr ""
+msgstr "Ausgeflaggte Strecke zum Kartenwechsel"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -1671,10 +1681,6 @@ msgstr "Ein Kontrollcode muss aus 1, 2 oder 3 Buchstaben oder "
 msgid "A control code must not contain a space."
 msgstr "Der Kontrollcode darf keine Leerzeichen enthalten."
 
-#: MiscText.resx, CodeUnder31
-msgid "A control code should be 31 or higher."
-msgstr "Ein Kontrollcode muss 31 oder größer sein."
-
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
 msgstr "Ein Kontrollcode darf nicht mit einer Null beginnen."
@@ -1723,7 +1729,11 @@ msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
 "Would you like to download and install the latest version?"
-msgstr ""
+msgstr "Version {0} von Purple Pen ist nun verfügbar. (Sie "
+"verwenden zur Zeit Version {1}.)\n"
+"\n"
+"Wollen Sie die neueste Version herunterladen und "
+"installieren?"
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
@@ -1898,26 +1908,52 @@ msgstr "*** Wenn es eine Website in der Übersetzungssprache gibt, "
 
 #: MiscText.resx, MapExchange_Long
 msgid "Map exchange"
-msgstr ""
+msgstr "Kartenwechsel"
 
 #: MiscText.resx, MapExchange_Medium
 msgid "Exchange"
-msgstr ""
+msgstr "K-Wechsel"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "KW"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr ""
+msgstr "Teil {0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
-msgstr ""
+msgstr "Alle Teilstrecken"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
+msgstr "Teil {0} (von {1})"
+
+#: MiscText.resx, CrashEmail
+msgid "Contact Email"
+msgstr ""
+
+#: MiscText.resx, CrashIntro
+msgid "An error has occurred. In order to help us fix the "
+"problem, please enter your email address and additional "
+"information, and send us an error report."
+msgstr ""
+
+#: MiscText.resx, CrashMessage
+msgid "Please tell us what you were doing in the program, to help "
+"fix the problem"
+msgstr ""
+
+#: MiscText.resx, CrashSend
+msgid "Send Report"
+msgstr ""
+
+#: MiscText.resx, CannotAddDescriptionsToAllParts
+msgid "Descriptions may not be added to a course with a map "
+"exchange if \"All Parts\" is being displayed. Switch to the "
+"part you wish to add descriptions to, and then choose \"Add "
+"Descriptions\" again."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2214,27 +2250,27 @@ msgstr "Kopien"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
-msgstr ""
+msgstr "Vor dem Druck rastern"
 
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr ""
+msgstr "Alle Teilstrecken auf dieser Karte drucken "
 
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
-msgstr ""
+msgstr "Farbmodell:"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "OCAD-kompatibel"
 
 #: PrintCourses.resx, comboBoxColorModel.Items1
 msgid "RGB"
-msgstr ""
+msgstr "RGB"
 
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
-msgstr ""
+msgstr "CMYK"
 
 #: PrintCourses.resx, comboBoxMultiPage.Items
 msgid "Crop to a single page"
@@ -2749,27 +2785,27 @@ msgstr "Verwendet in Bahnen:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
-msgstr ""
+msgstr "Kartenwechsel"
 
 #: SelectionDescriptionText.resx, MapExchange_Singular
 msgid "map exchange"
-msgstr ""
+msgstr "Kartenwechsel"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr ""
+msgstr "Kartenwechsel bei Posten {0}"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "Auslastung:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "Verwendet in:"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr ""
+msgstr "Bahn \"{0}\", Teil {1}"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -2896,7 +2932,10 @@ msgstr "Klicken Sie mit der linken Maustaste auf einen Eckpunkt, "
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr ""
+msgstr "Klicken Sie mit der linken Maustaste auf einen "
+"Postenkreis, um eine kleine Lücke einzufügen; halten Sie "
+"die linke Maustaste gedrückt und ziehen Sie sie, um eine "
+"größere Lücke einzufügen."
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
@@ -2907,7 +2946,10 @@ msgstr "Klicken Sie mit der linken Maustaste auf eine Lücke, um "
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr ""
+msgstr "Klicken Sie mit der linken Maustaste auf eine Linie, um "
+"eine kleine Lücke einzufügen; halten Sie die linke "
+"Maustaste gedrückt und ziehen Sie sie, um eine größere "
+"Lücke einzufügen."
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
@@ -2952,16 +2994,19 @@ msgstr "Halten Sie die linke Maustaste gedrückt und ziehen Sie "
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "Klicken Sie mit der linken Maustaste, um einen bereits "
+"existierenden Kartenwechsel zur Bahn hinzuzufügen."
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "Klicken Sie mit der linken Maustaste, um einen neuen "
+"Kartenwechsel hinzuzufügen."
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "Klicken Sie mit der linken Maustaste, um einen "
+"Kartenwechsel an Posten \"{0}\" hinzuzufügen "
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

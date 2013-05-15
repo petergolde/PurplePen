@@ -121,7 +121,7 @@
     <value>Imprimer...</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
-    <value>Afficher l'aperçu...</value>
+    <value>Aperçu avant impression...</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Fermer</value>

@@ -174,8 +174,14 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Klicken Sie mit der linken Maustaste auf einen Eckpunkt, um diesen zu entfernen.</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf einen Postenkreis, um eine kleine Lücke einzufügen; halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um eine größere Lücke einzufügen.</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Klicken Sie mit der linken Maustaste auf eine Lücke, um sie zu entfernen</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste auf eine Linie, um eine kleine Lücke einzufügen; halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um eine größere Lücke einzufügen.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Klicken Sie mit der linken Maustaste auf eine Lücke in der Etappe, um sie zu entfernen</value>
@@ -197,5 +203,14 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um den Text zu erzeugen</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste, um einen bereits existierenden Kartenwechsel zur Bahn hinzuzufügen.</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste, um einen neuen Kartenwechsel hinzuzufügen.</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Klicken Sie mit der linken Maustaste, um einen Kartenwechsel an Posten "{0}" hinzuzufügen </value>
   </data>
 </root>

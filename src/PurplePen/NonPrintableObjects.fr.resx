@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>La carte "{0}" contient des objets ou des symboles qui ne sont pas totallement supportés par Purple Pen, et qui pourraient ne pas s'imprimer correctement. Ces objets sont listés ci-dessous.
-Afin d'imprimer des cartes de compétition, nous vous suggérons d'exporter les circuits vers des fichiers OCAD (utilisez Fichier/Créer Fichiers OCAD...) puis d'imprimer les cartes à partir d'OCAD.
+    <value>La carte "{0}" contient des objets ou des symboles qui ne sont pas complètement supportés par Purple Pen, et qui pourraient ne pas s'imprimer correctement. Ces objets sont listés ci-dessous.
+Afin d'imprimer des cartes de compétition, nous vous suggérons d'exporter les circuits vers des fichiers OCAD (utilisez Fichier/Créer Fichiers OCAD...) afin d'imprimer les cartes à partir d'OCAD.
 </value>
   </data>
   <data name="okButton.Text" xml:space="preserve">

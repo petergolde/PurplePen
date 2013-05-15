@@ -445,7 +445,7 @@
     <value>Елементи на шрифта</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Откриване на грешки</value>
+    <value>Откриване на грешки</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Добави език на описанията на КТ...</value>

@@ -445,7 +445,7 @@
     <value>Unidades en Metros</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Depurar</value>
+    <value>Depurar</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Añadir idioma de descripción</value>

@@ -163,10 +163,10 @@
     <value>Muu kansio</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Karttatiedoston kanssa samaan kansioon</value>
+    <value>Samaan kuin karttatiedosto</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Purple Pen -tiedoston kanssa samaan kansioon</value>
+    <value>Samaan kuin Purple Pen -tiedosto</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Kansio</value>

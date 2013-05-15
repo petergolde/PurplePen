@@ -374,4 +374,10 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Ühtegi rada ei ole valitud trükkimiseks</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Katkesta</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Salvesta</value>
+  </data>
 </root>

@@ -150,6 +150,24 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copies</value>
   </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Tramer (aplatir) avant impression</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Imprimer les échanges de carte sur la même carte </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modèle couleur :</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>Compatible OCAD</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RVB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMJN</value>
+  </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Réduire à une seule page</value>
   </data>

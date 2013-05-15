@@ -135,4 +135,7 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Catégories de course</value>
   </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Echelle d'impression</value>
+  </data>
 </root>

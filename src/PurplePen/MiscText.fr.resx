@@ -276,6 +276,11 @@ Utiliser | pour séparer les lignes</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>La version {0} de Purple Pen est désormais disponible au téléchargement (vous utilisez actuellement la version {1}).
+
+Souhaitez-vous télécharger et installer la dernière version ?</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Le fichier d'Aide '{0}' n'a pas pu être ouvert.</value>
   </data>
@@ -283,7 +288,10 @@ Utiliser | pour séparer les lignes</value>
     <value>Zoom</value>
   </data>
   <data name="MissingMapFile" xml:space="preserve">
-    <value>La carte "{0}" n'a pas été trouvée.Le fichier de la carte a probablement été déplacé ou supprimé, ou le fichier Purple Pen a été déplacé (éventuellement sur un ordinateur différent). Le fichier de la carte doit être systématiquement présent chaque fois que le fichier Purple Pen de la course est chargé. Si vous envoyez le fichier Purple Pen de la course à une autre personne, assurez-vous que cette personne possède également une copie du fichier de la carte.
+    <value>La carte "{0}" n'a pas été trouvée.
+
+Le fichier de la carte a probablement été déplacé ou supprimé, ou le fichier Purple Pen a été déplacé (éventuellement sur un ordinateur différent). Le fichier de la carte doit être systématiquement présent chaque fois que le fichier Purple Pen de la course est chargé. Si vous envoyez le fichier Purple Pen de la course à une autre personne, assurez-vous que cette personne possède également une copie du fichier de la carte.
+
 Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte sur votre ordinateur.</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
@@ -344,7 +352,7 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
     <value>Le texte personnalisé recquiert une "*" afin d'indiquer l'emplacement de l'objet en cours de modification.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>élaborateur de circuits de course d'orientation</value>
+    <value>créateur de circuits de course d'orientation</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
     <value>Entrer le texte que vous souhaitez disposer sur la carte. Cliquez sur OK, puis glisser la souris pour positionner le texte à l'emplacement désiré.</value>
@@ -375,5 +383,29 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** S'il existe un site web en langue française qui propose la documentation traduite de Purple Pen, entrer ici l'adresse URL complète (incluant http://). Sinon, laissez la zone vide.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Echange de carte</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Echange</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Partie {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Toutes les parties</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Partie {0} (de {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Enregistrer</value>
   </data>
 </root>

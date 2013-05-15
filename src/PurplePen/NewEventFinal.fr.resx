@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Après la création de votre course, sélectionner "Nouveau Circuit..." dans le menu Circuit pour créer un ou plusieurs circuits.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Créer une Course</value>
+  </data>
 </root>

@@ -136,12 +136,12 @@
     <value>Texte standard :</value>
   </data>
   <data name="checkBoxShowKey.Text" xml:space="preserve">
-    <value>Afficher la description textuelle en dessous des définitions</value>
+    <value>Afficher la description en clair en dessous des définitions</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Cliquer sur un symbole pour personnaliser la description textuelle affichée.</value>
+    <value>Cliquer sur un symbole pour personnaliser la description affichée en clair.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personnaliser la description textuelle</value>
+    <value>Personnaliser la description en clair</value>
   </data>
 </root>

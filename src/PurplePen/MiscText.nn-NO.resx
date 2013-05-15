@@ -379,4 +379,10 @@ Trykk OK og forsøk å finne kartfila på datamaskina di.</value>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>http://www.ok-moss.no/mwiki/doku.php?id=purple_pen</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Lagra</value>
+  </data>
 </root>

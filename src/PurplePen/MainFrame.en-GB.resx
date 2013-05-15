@@ -445,7 +445,7 @@
     <value>Font Metrics</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Debug</value>
+    <value>Debug</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Add Description Language...</value>

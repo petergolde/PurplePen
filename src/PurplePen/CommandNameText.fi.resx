@@ -270,4 +270,7 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Muokkaa ratamerkintöjen ulkoasua</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Lisää kartanvaihto</value>
+  </data>
 </root>

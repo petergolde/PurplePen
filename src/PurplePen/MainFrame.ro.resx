@@ -445,7 +445,7 @@
     <value>Metrici de Font</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Depanare</value>
+    <value>Depanare</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Adăugare Limbă Descriere...</value>

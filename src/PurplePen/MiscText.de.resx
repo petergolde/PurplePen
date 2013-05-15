@@ -276,6 +276,11 @@
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} von Purple Pen ist nun verfügbar. (Sie verwenden zur Zeit Version {1}.)
+
+Wollen Sie die neueste Version herunterladen und installieren?</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Die Hilfedatei '{0}' kann nicht geöffnet werden.</value>
   </data>
@@ -378,5 +383,29 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Wenn es eine Website in der Übersetzungssprache gibt, die eine Dokumentation für Purple Pen enthält, fügen Sie bitte die URL (mit "http") als Übersetzung für dieses Objekt ein oder lassen SIe es leer.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kartenwechsel</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>K-Wechsel</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>KW</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Teil {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Alle Teilstrecken</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Teil {0} (von {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Speichern</value>
   </data>
 </root>

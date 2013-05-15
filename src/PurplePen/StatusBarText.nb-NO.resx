@@ -174,8 +174,14 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Klikk venstre museknapp på et hjørne for å slette det.</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Klikk venstre museknapp på postsirkelen for å legge til et lite mellomrom; hold nede venstre museknapp og trekk for å lage et større mellomrom</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Klikk med venstre musetast på et klipp for å fjerne dette</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Klikk venstre museknapp for å legge til et lite mellomrom; hold nede venstre museknapp og trekk for å lage et større mellomrom i løypa</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Klikk venstre musetast på et klipp i en strekkstrek for å slette dette.</value>
@@ -197,5 +203,14 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Hold nede venstre museknapp og fra for å lage tekst</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Klikk på venstre museknapp for å legge til kart bytte i løypa</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Klikk på venstre museknapp for å legge til kart bytte</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Klikk på venstre museknapp for å legge til kart bytte ved post "{0}" </value>
   </data>
 </root>

@@ -445,7 +445,7 @@
     <value>Font berekninger</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Feilsøk</value>
+    <value>Feilsøk</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Legg til språk for postbeskrivelser...</value>

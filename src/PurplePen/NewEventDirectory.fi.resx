@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Valittu kansio</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Tapahtumatiedoston sijainti</value>
+  </data>
 </root>

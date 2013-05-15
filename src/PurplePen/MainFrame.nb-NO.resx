@@ -144,6 +144,9 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Lag Route&amp;Gadget filer...</value>
   </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Lag data &amp;Utvekslingsfil (IOF XML)...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut postbeskrivelser</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Skriv ut løyper...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Bare denne delen</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Denne løypen</value>
@@ -169,7 +175,7 @@
     <value>Avslutt</value>
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Arkiv</value>
+    <value>&amp;Fil</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Blank ut valgt</value>
@@ -243,6 +249,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Kartkvalitet</value>
   </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Vis Popup informasjon</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Alle poster</value>
   </data>
@@ -302,6 +311,15 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Legg til &amp;postbeskrivelser</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartbytte ved kontrollpost</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>Merket rute til kartbytte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Legg til kartbytte</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -445,7 +463,7 @@
     <value>Font beregninger</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Feilsøk</value>
+    <value>Feilsøk</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Legg til språk for postbeskrivelser...</value>
@@ -503,6 +521,15 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Legg til beskrivelser</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kartbytte ved kontrollpost</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Merket rute til kartbytte</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Legg til kartbytte</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>

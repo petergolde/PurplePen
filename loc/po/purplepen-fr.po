@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-04-01 17:56-07:00\n"
+"POT-Creation-Date: 2013-05-15 09:42-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -114,11 +114,11 @@ msgstr "Numéro d'ordre et code (3-145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr ""
+msgstr "Numéro d'ordre et points (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr ""
+msgstr "Code et points (145(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -385,7 +385,7 @@ msgstr "Catégories de course"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Echelle d'impression"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -551,7 +551,7 @@ msgstr "Modifier le nombre de concurrents"
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr "Personnaliser la description textuelle"
+msgstr "Personnaliser la description en clair"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -586,7 +586,7 @@ msgstr "Personnaliser la présentation du circuit"
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr ""
+msgstr "Ajouter un Echange de Carte"
 
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
@@ -599,7 +599,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
-msgstr ""
+msgstr "Diamètre du point central :"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
@@ -677,7 +677,7 @@ msgstr "Nombre de concurrents sur le circuit"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr ""
+msgstr "Partie du Circuit :"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -702,6 +702,7 @@ msgstr "Créer"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
+#: MiscText.resx, CrashCancel
 #: NewEventWizard.resx, cancelButton.Text
 #: NonPrintableObjects.resx, cancelButton.Text
 #: OkCancelDialog.resx, cancelButton.Text
@@ -837,13 +838,13 @@ msgstr "Texte standard :"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr "Afficher la description textuelle en dessous des définitions"
+msgstr "Afficher la description en clair en dessous des définitions"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
 msgstr "Cliquer sur un symbole pour personnaliser la description "
-"textuelle affichée."
+"affichée en clair."
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -875,25 +876,29 @@ msgstr "Genre :"
 msgid "Customized Symbol Text"
 msgstr "Texte personnalisé pour le symbole"
 
-#: InitialScreen.resx, openExistingRadioButton.Text
-msgid "Open an existing event..."
-msgstr "Ouvrir une course existante..."
-
-#: InitialScreen.resx, createNewRadioButton.Text
-msgid "Create a new event..."
-msgstr "Créer une nouvelle course..."
-
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
 msgstr "Quitter"
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr ""
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "Ouvrir la dernière course visualisée"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
 msgstr "Ouvrir un exemple"
 
-#: InitialScreen.resx, openLastRadioButton.Text
-msgid "Open last viewed event"
-msgstr "Ouvrir la dernière course visualisée"
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Créer une nouvelle course..."
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Ouvrir une course existante..."
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -961,7 +966,7 @@ msgstr "Imprimer les &Circuits..."
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
-msgstr ""
+msgstr "Cette &Partie Uniquement"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -1089,7 +1094,7 @@ msgstr "&Qualité de la Carte"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr ""
+msgstr "Afficher les &Popup"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
@@ -1121,7 +1126,7 @@ msgstr "&Poinçons..."
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr "Personnaliser Description &Textuelle..."
+msgstr "Personnaliser Description en Clair..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
@@ -1173,15 +1178,15 @@ msgstr "Ajouter Dé&finitions"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
-msgstr ""
+msgstr "Echange de Carte au &Poste"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "&Flagged Route to Map Exchange"
-msgstr ""
+msgstr "Parcours &Balisé vers Echange de Carte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Add Map E&xchange"
-msgstr ""
+msgstr "Ajouter E&change de Carte"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1340,6 +1345,10 @@ msgstr "Site &Web Purple Pen"
 msgid "&Support/Bug Reporting"
 msgstr "&Support/Remonter un bogue"
 
+#: MainFrame.resx, donateWebSiteMenu.Text
+msgid "Make a &Donation"
+msgstr ""
+
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&À Propos de Purple Pen"
@@ -1381,8 +1390,8 @@ msgid "Font Metrics"
 msgstr "Police"
 
 #: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
-msgstr "&Déboguer"
+msgid "Debug"
+msgstr "Déboguer"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1413,6 +1422,7 @@ msgid "Open (Ctrl+O)"
 msgstr "Ouvrir (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
+#: MiscText.resx, CrashSave
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -1452,11 +1462,11 @@ msgstr "Ajouter les Définitions"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
-msgstr ""
+msgstr "Echange de Carte au Poste"
 
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
-msgstr ""
+msgstr "Parcours Balisé vers Echange de Carte"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -1675,10 +1685,6 @@ msgstr "Un numéro de poste doit correspondre à 1, 2 ou 3 lettres "
 msgid "A control code must not contain a space."
 msgstr "Un numéro de poste ne doit pas contenir d'espace."
 
-#: MiscText.resx, CodeUnder31
-msgid "A control code should be 31 or higher."
-msgstr "Un numéro de poste devrait être supérieur ou égal à 31."
-
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
 msgstr "Un numéro de poste ne devrait pas commencer par zéro."
@@ -1727,7 +1733,11 @@ msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
 "Would you like to download and install the latest version?"
-msgstr ""
+msgstr "La version {0} de Purple Pen est désormais disponible au "
+"téléchargement (vous utilisez actuellement la version {1}).\n"
+"\n"
+"Souhaitez-vous télécharger et installer la dernière "
+"version ?"
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
@@ -1749,15 +1759,17 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr "La carte \"{0}\" n'a pas été trouvée.Le fichier de la carte "
-"a probablement été déplacé ou supprimé, ou le fichier "
-"Purple Pen a été déplacé (éventuellement sur un ordinateur "
-"différent). Le fichier de la carte doit être "
-"systématiquement présent chaque fois que le fichier Purple "
-"Pen de la course est chargé. Si vous envoyez le fichier "
-"Purple Pen de la course à une autre personne, assurez-vous "
-"que cette personne possède également une copie du fichier "
-"de la carte.\n"
+msgstr "La carte \"{0}\" n'a pas été trouvée.\n"
+"\n"
+"Le fichier de la carte a probablement été déplacé ou "
+"supprimé, ou le fichier Purple Pen a été déplacé "
+"(éventuellement sur un ordinateur différent). Le fichier "
+"de la carte doit être systématiquement présent chaque fois "
+"que le fichier Purple Pen de la course est chargé. Si vous "
+"envoyez le fichier Purple Pen de la course à une autre "
+"personne, assurez-vous que cette personne possède "
+"également une copie du fichier de la carte.\n"
+"\n"
 "Après avoir cliqué sur OK, essayez de trouver une copie du "
 "fichier de la carte sur votre ordinateur."
 
@@ -1842,7 +1854,7 @@ msgstr "Le texte personnalisé recquiert une \"*\" afin d'indiquer "
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr "élaborateur de circuits de course d'orientation"
+msgstr "créateur de circuits de course d'orientation"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
@@ -1900,26 +1912,52 @@ msgstr "*** S'il existe un site web en langue française qui "
 
 #: MiscText.resx, MapExchange_Long
 msgid "Map exchange"
-msgstr ""
+msgstr "Echange de carte"
 
 #: MiscText.resx, MapExchange_Medium
 msgid "Exchange"
-msgstr ""
+msgstr "Echange"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr ""
+msgstr "Partie {0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
-msgstr ""
+msgstr "Toutes les parties"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
+msgstr "Partie {0} (de {1})"
+
+#: MiscText.resx, CrashEmail
+msgid "Contact Email"
+msgstr ""
+
+#: MiscText.resx, CrashIntro
+msgid "An error has occurred. In order to help us fix the "
+"problem, please enter your email address and additional "
+"information, and send us an error report."
+msgstr ""
+
+#: MiscText.resx, CrashMessage
+msgid "Please tell us what you were doing in the program, to help "
+"fix the problem"
+msgstr ""
+
+#: MiscText.resx, CrashSend
+msgid "Send Report"
+msgstr ""
+
+#: MiscText.resx, CannotAddDescriptionsToAllParts
+msgid "Descriptions may not be added to a course with a map "
+"exchange if \"All Parts\" is being displayed. Switch to the "
+"part you wish to add descriptions to, and then choose \"Add "
+"Descriptions\" again."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -1986,7 +2024,7 @@ msgstr "Echelle de la carte :"
 
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
-msgstr ""
+msgstr "Résolution Bitmap"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2016,7 +2054,7 @@ msgstr "Dossier sélectionné"
 
 #: NewEventDirectory.resx, labelTitle.Text
 msgid "Event File Location"
-msgstr ""
+msgstr "Emplacement Fichier Course"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
@@ -2033,7 +2071,7 @@ msgstr "Après la création de votre course, sélectionner \"Nouveau "
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
-msgstr ""
+msgstr "Créer une Course"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
@@ -2066,11 +2104,12 @@ msgstr "Les nouveaux postes sont numérotés automatiquement. Merci "
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr ""
+msgstr "(Ce paramètre pourra être modifié ultérieurement en "
+"utilisant Course/Numérotation automatique)"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
-msgstr ""
+msgstr "Numérotation des postes"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
@@ -2115,7 +2154,7 @@ msgstr "Nom de la course :"
 
 #: NewEventWizard.resx, backButton.Text
 msgid "< &Back"
-msgstr "< &Précédent"
+msgstr "< &Retour"
 
 #: NonPrintableObjects.resx, labelWarning.Text
 msgid "Map file \"{0}\" contains objects or symbols that are not "
@@ -2127,12 +2166,12 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
 msgstr "La carte \"{0}\" contient des objets ou des symboles qui ne "
-"sont pas totallement supportés par Purple Pen, et qui "
+"sont pas complètement supportés par Purple Pen, et qui "
 "pourraient ne pas s'imprimer correctement. Ces objets sont "
 "listés ci-dessous.\n"
 "Afin d'imprimer des cartes de compétition, nous vous "
 "suggérons d'exporter les circuits vers des fichiers OCAD "
-"(utilisez Fichier/Créer Fichiers OCAD...) puis d'imprimer "
+"(utilisez Fichier/Créer Fichiers OCAD...) afin d'imprimer "
 "les cartes à partir d'OCAD.\n"
 
 #: NonPrintableObjects.resx, okButton.Text
@@ -2211,27 +2250,27 @@ msgstr "Copies"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
-msgstr ""
+msgstr "Tramer (aplatir) avant impression"
 
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr ""
+msgstr "Imprimer les échanges de carte sur la même carte "
 
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
-msgstr ""
+msgstr "Modèle couleur :"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "Compatible OCAD"
 
 #: PrintCourses.resx, comboBoxColorModel.Items1
 msgid "RGB"
-msgstr ""
+msgstr "RVB"
 
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
-msgstr ""
+msgstr "CMJN"
 
 #: PrintCourses.resx, comboBoxMultiPage.Items
 msgid "Crop to a single page"
@@ -2366,7 +2405,7 @@ msgstr "Imprimer..."
 
 #: ReportForm.resx, previewButton.Text
 msgid "Print Preview..."
-msgstr "Afficher l'aperçu..."
+msgstr "Aperçu avant impression..."
 
 #: ReportForm.resx, okButton.Text
 msgid "Close"
@@ -2494,7 +2533,8 @@ msgstr "Éléments manquants sur les circuits"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr "Le circuit devrait posséder un nombre attendu de concurrents"
+msgstr "Le circuit devrait indiquer le nombre prévisionnel de "
+"concurrents"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
@@ -2715,7 +2755,7 @@ msgstr "départ"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr "Description textuelle :"
+msgstr "Description en clair :"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
@@ -2753,27 +2793,27 @@ msgstr "Utilisé sur les circuits :"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
-msgstr ""
+msgstr "échanges de carte"
 
 #: SelectionDescriptionText.resx, MapExchange_Singular
 msgid "map exchange"
-msgstr ""
+msgstr "échange de carte"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr ""
+msgstr "Echange de carte au poste {0}"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "Charge :"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "Utilisé sur :"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr ""
+msgstr "Circuit \"{0}\", Partie {1}"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -2900,7 +2940,10 @@ msgstr "Cliquer avec le bouton gauche de votre souris sur un coin "
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr ""
+msgstr "Cliquer avec le bouton gauche de votre souris sur le "
+"cercle du poste afin d'ajouter un petit intervalle ; "
+"garder le bouton appuyé et déplacer la souris pour créer "
+"un intervalle plus important"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
@@ -2912,7 +2955,10 @@ msgstr "Cliquer avec le bouton gauche de votre souris sur "
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr ""
+msgstr "Cliquer sur le bouton gauche de la souris afin de créer un "
+"petit intervalle ; garder le bouton appuyé et déplacer la "
+"souris pour créer un intervalle plus important dans "
+"l'interposte"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
@@ -2957,16 +3003,19 @@ msgstr "Appuyer sur le bouton gauche de votre souris et glisser "
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "Cliquer sur le bouton gauche de la souris pour ajouter un "
+"échange de carte existant au circuit"
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "Cliquer sur le bouton gauche de la souris pour positionner "
+"un nouvel échange de carte"
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "Cliquer sur le bouton gauche de la souris pour ajouter un "
+"échange de carte au poste \"{0}\" "
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

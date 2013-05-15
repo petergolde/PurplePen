@@ -156,6 +156,9 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Tulosta &amp;ratoja...</value>
   </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Vain tälle &amp;osalle</value>
+  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Tälle radalle</value>
   </data>
@@ -246,6 +249,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Kartan &amp;laatu</value>
   </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Näytä &amp;ponnahdustiedot</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>K&amp;aikki rastit</value>
   </data>
@@ -305,6 +311,15 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Lisää rasti&amp;nmääritteet</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartanvaihto &amp;rastilla</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Lisää kartanvai&amp;hto</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
@@ -448,7 +463,7 @@
     <value>Font Metrics</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Debug</value>
+    <value>Debug</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lisää rastinmääritteiden kieli...</value>
@@ -506,6 +521,15 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lisää rastinmääritteet</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kartanvaihto rastilla</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Viitoitettu reitti kartanvaihtoon</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Lisää kartanvaihto</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>

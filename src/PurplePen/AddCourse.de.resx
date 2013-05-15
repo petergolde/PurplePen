@@ -150,6 +150,12 @@
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Posten- und Kontrollcode (3-61)</value>
   </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Postennummer und Punktzahl (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Kontrollcode und Punktzahl (61(30))</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Zeige Punkte in:</value>
   </data>

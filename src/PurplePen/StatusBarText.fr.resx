@@ -174,8 +174,14 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Cliquer avec le bouton gauche de votre souris sur un coin pour le supprimer</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Cliquer avec le bouton gauche de votre souris sur le cercle du poste afin d'ajouter un petit intervalle ; garder le bouton appuyé et déplacer la souris pour créer un intervalle plus important</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Cliquer avec le bouton gauche de votre souris sur l'intervalle existant dans le cercle du poste pour le supprimer</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Cliquer sur le bouton gauche de la souris afin de créer un petit intervalle ; garder le bouton appuyé et déplacer la souris pour créer un intervalle plus important dans l'interposte</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Cliquer avec le bouton gauche de votre souris sur l'intervalle d'un interposte pour le supprimer</value>
@@ -197,5 +203,14 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Appuyer sur le bouton gauche de votre souris et glisser pour créer le texte</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Cliquer sur le bouton gauche de la souris pour ajouter un échange de carte existant au circuit</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Cliquer sur le bouton gauche de la souris pour positionner un nouvel échange de carte</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Cliquer sur le bouton gauche de la souris pour ajouter un échange de carte au poste "{0}" </value>
   </data>
 </root>

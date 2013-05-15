@@ -229,7 +229,7 @@
     <value>départ</value>
   </data>
   <data name="TextDescription" xml:space="preserve">
-    <value>Description textuelle :</value>
+    <value>Description en clair :</value>
   </data>
   <data name="TextLine" xml:space="preserve">
     <value>Ligne de texte</value>
@@ -257,5 +257,23 @@
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Zone blanche</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>échanges de carte</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>échange de carte</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Echange de carte au poste {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Charge :</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Utilisé sur :</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Circuit "{0}", Partie {1}</value>
   </data>
 </root>

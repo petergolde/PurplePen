@@ -156,6 +156,9 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Imprimer les &amp;Circuits...</value>
   </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Cette &amp;Partie Uniquement</value>
+  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Ce circuit</value>
   </data>
@@ -246,6 +249,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Qualité de la Carte</value>
   </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Afficher les &amp;Popup</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Tous Postes</value>
   </data>
@@ -268,7 +274,7 @@
     <value>&amp;Poinçons...</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
-    <value>Personnaliser Description &amp;Textuelle...</value>
+    <value>Personnaliser Description en Clair...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Personnaliser Présent&amp;ation Circuit...</value>
@@ -305,6 +311,15 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Ajouter Dé&amp;finitions</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Echange de Carte au &amp;Poste</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>Parcours &amp;Balisé vers Echange de Carte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Ajouter E&amp;change de Carte</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>
@@ -448,7 +463,7 @@
     <value>Police</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
-    <value>&amp;Déboguer</value>
+    <value>Déboguer</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Ajouter une langue pour les Définitions...</value>
@@ -506,6 +521,15 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter les Définitions</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Echange de Carte au Poste</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Parcours Balisé vers Echange de Carte</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Ajouter un Echange de Carte</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>

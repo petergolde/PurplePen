@@ -379,4 +379,10 @@
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Ако на езика, на който се превежда, съществува уебсайт, съдържащ документация за Purple Pen, въведете адреса URL (включително http), както и преведеното наименование на този документ, в противен случай оставете празно.</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Откажи</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Запиши</value>
+  </data>
 </root>

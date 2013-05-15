@@ -150,6 +150,12 @@
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Sekvens og kode (3-145)</value>
   </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Sekvens og poeng</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Postkode og poeng</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Vis poeng i:</value>
   </data>

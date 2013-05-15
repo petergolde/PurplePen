@@ -174,8 +174,14 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Poista kulma klikkaamalla sen kohdalla hiiren vasenta painiketta</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Lyhyt katko: klikkaa hiiren vasenta painiketta; pitkä katko: paina hiiren vasen painike pohjaan ja vedä haluamasi pituinen katko</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Poista katko valitusta rastiympyrästä klikkaamalla sitä hiiren vasemmalla painikkeella</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Lyhyt katko: klikkaa hiiren vasenta painiketta; pitkä katko: paina hiiren vasen painike pohjaan ja vedä haluamasi pituinen katko</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Poista katko valitulta rastiväliviivalta klikkaamalla sitä hiiren vasemmalla painikkeella</value>
@@ -197,5 +203,14 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Paina hiiren vasen painike pohjaan ja vedä lisätäksesi tekstin</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Lisää kartanvaihto radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Lisää uusi kartanvaihto klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Lisää kartanvaihto rastille "{0}" klikkaamalla hiiren vasenta painiketta </value>
   </data>
 </root>

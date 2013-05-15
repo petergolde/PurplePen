@@ -150,6 +150,24 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopien</value>
   </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Vor dem Druck rastern</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Alle Teilstrecken auf dieser Karte drucken </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Farbmodell:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD-kompatibel</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Auf eine Seite zuschneiden</value>
   </data>

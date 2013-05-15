@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-04-01 17:53-07:00\n"
+"POT-Creation-Date: 2013-05-15 09:42-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -691,6 +691,7 @@ msgstr "Vytvořit"
 
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
+#: MiscText.resx, CrashCancel
 #: NewEventWizard.resx, cancelButton.Text
 #: NonPrintableObjects.resx, cancelButton.Text
 #: OkCancelDialog.resx, cancelButton.Text
@@ -859,25 +860,29 @@ msgstr "Pohlaví:"
 msgid "Customized Symbol Text"
 msgstr ""
 
-#: InitialScreen.resx, openExistingRadioButton.Text
-msgid "Open an existing event..."
-msgstr "Otevřít existující závod..."
-
-#: InitialScreen.resx, createNewRadioButton.Text
-msgid "Create a new event..."
-msgstr "Vytvořit nový závod..."
-
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
 msgstr "Ukončit"
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr ""
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "Otevřít naposledy zobrazovaný závod"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
 msgstr "Otevřít vzorový závod"
 
-#: InitialScreen.resx, openLastRadioButton.Text
-msgid "Open last viewed event"
-msgstr "Otevřít naposledy zobrazovaný závod"
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Vytvořit nový závod..."
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Otevřít existující závod..."
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -1324,6 +1329,10 @@ msgstr "&Webová stránka Purple Pen"
 msgid "&Support/Bug Reporting"
 msgstr "&Podpora/Hlášení chyb"
 
+#: MainFrame.resx, donateWebSiteMenu.Text
+msgid "Make a &Donation"
+msgstr ""
+
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&O programu Purple Pen"
@@ -1365,7 +1374,7 @@ msgid "Font Metrics"
 msgstr ""
 
 #: MainFrame.resx, debugMenu.Text
-msgid "&Debug"
+msgid "Debug"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -1397,6 +1406,7 @@ msgid "Open (Ctrl+O)"
 msgstr "Otevřít (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
+#: MiscText.resx, CrashSave
 msgid "Save"
 msgstr "Uložit"
 
@@ -1641,10 +1651,6 @@ msgstr "Kód kontroly musí být jedno, dvě nebo tři písmena nebo "
 msgid "A control code must not contain a space."
 msgstr "Kód kontroly nesmí obsahovat mezeru."
 
-#: MiscText.resx, CodeUnder31
-msgid "A control code should be 31 or higher."
-msgstr "Kód kontroly by měl být 31 nebo vyšší."
-
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
 msgstr "Kód kontroly by neměl začínat nulou."
@@ -1863,6 +1869,32 @@ msgstr ""
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
+msgstr ""
+
+#: MiscText.resx, CrashEmail
+msgid "Contact Email"
+msgstr ""
+
+#: MiscText.resx, CrashIntro
+msgid "An error has occurred. In order to help us fix the "
+"problem, please enter your email address and additional "
+"information, and send us an error report."
+msgstr ""
+
+#: MiscText.resx, CrashMessage
+msgid "Please tell us what you were doing in the program, to help "
+"fix the problem"
+msgstr ""
+
+#: MiscText.resx, CrashSend
+msgid "Send Report"
+msgstr ""
+
+#: MiscText.resx, CannotAddDescriptionsToAllParts
+msgid "Descriptions may not be added to a course with a map "
+"exchange if \"All Parts\" is being displayed. Switch to the "
+"part you wish to add descriptions to, and then choose \"Add "
+"Descriptions\" again."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

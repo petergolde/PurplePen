@@ -137,4 +137,7 @@ Kartan mittakaava kertoo kartan ja sen esittämän todellisen maaston mittojen v
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartan mittakaava:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Kuvan resoluutio</value>
+  </data>
 </root>

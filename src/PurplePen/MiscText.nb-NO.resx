@@ -276,6 +276,11 @@ Bruk | for å skille rader</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versjon {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Versjon {0} av Purple Pener nå tilgjengelig for nedlasting. (Du kjører versjon {1}.)
+
+Vil du laste ned og installere seneste versjon?</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Hjelpfilen '{0}' kunne ikke åpnes.</value>
   </data>
@@ -378,5 +383,29 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>http://www.ok-moss.no/mwiki/doku.php?id=purple_pen</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kartbytte</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Bytte</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Del {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Alle deler</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Del {0} (av {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Lagre</value>
   </data>
 </root>

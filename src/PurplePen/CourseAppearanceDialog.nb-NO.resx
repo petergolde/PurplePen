@@ -120,6 +120,9 @@
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Senterprikk diameter</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Vanlig</value>
   </data>

@@ -276,6 +276,11 @@ Käytä | erottaaksesi rivit</value>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versio {0}</value>
   </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Pen versio {0} on nyt ladattavissa. (Sinulla on nyt käytössä versio {1}.)
+
+Haluatko ladata ja asentaa viimeisimmän version?</value>
+  </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Ohjetiedostoa '{0}' ei voida avata.</value>
   </data>
@@ -378,5 +383,29 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Jos on olemassa verkkosivusto, joka sisältää Purple Pen -ohjeita tällä käännöskielellä, syötä sen täydellinen URL-osoite (http://...). Muutoin jätä tyhjäksi.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kartanvaihto</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>K-vaihto</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>KV</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Osa {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Kaikki osat</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Osa {0} / {1}</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Tallenna</value>
   </data>
 </root>

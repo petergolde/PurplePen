@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Velg mappe</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Arrangement fil plassering</value>
+  </data>
 </root>

@@ -379,4 +379,10 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Si existe una página web traducida a otro idioma que contiene documentación para Purple Pen, introduce la URL (con http://) de la traducción de este tema. En otro caso no introduzcas nada.</value>
   </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
 </root>
