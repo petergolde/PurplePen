@@ -111,6 +111,16 @@ namespace PurplePen
                 dialog.SizeGripStyle = SizeGripStyle.Show;
                 dialog.ShowIcon = false;
 
+                // Remove the "print" button.
+                foreach (Control ctl in dialog.Controls) {
+                    ToolStrip strip = ctl as ToolStrip;
+                    if (strip != null) {
+                        var button = strip.Items[0];
+                        if (button.Name == "printToolStripButton")
+                            strip.Items.Remove(button);
+                    }
+                }
+
                 dialog.ShowDialog();
                 dialog.Dispose();
             }
@@ -187,6 +197,46 @@ namespace PurplePen
 
                 bitmapList.Add(bm);
             } while (printPageArgs.HasMorePages);
+
+            EndPrint(this, printArgs);
+
+            return bitmapList.ToArray();
+        }
+
+        // Do printing to a set of bitmaps using the XPS/WPF path. This is used for testing support.
+        public System.Windows.Media.Imaging.BitmapSource[] PrintXpsBitmaps()
+        {
+            // Set up and position everything.
+            printingToBitmaps = true;
+            printPreviewInProgress = false;
+            SetupPrinting();
+
+            if (totalPages <= 0)
+                return new System.Windows.Media.Imaging.BitmapSource[0];
+
+            PrintEventArgs printArgs = new PrintEventArgs();
+            List<System.Windows.Media.Imaging.BitmapSource> bitmapList = new List<System.Windows.Media.Imaging.BitmapSource>();
+
+            BeginPrint(this, printArgs);
+
+            float paperWidth = pageSettings.PaperSize.Width, paperHeight = pageSettings.PaperSize.Height;
+            if (pageSettings.Landscape) {
+                float temp = paperWidth; paperWidth = paperHeight; paperHeight = temp;
+            }
+            float dpi = 200;
+
+            var paginator = new Paginator(this, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi);
+
+            for (int pageNumber = 0; pageNumber < paginator.PageCount; ++pageNumber) {
+                var docPage = paginator.GetPage(pageNumber);
+                var bitmapNew = new System.Windows.Media.Imaging.RenderTargetBitmap(
+                    (int) Math.Round((float)paperWidth * dpi / 100F), 
+                    (int) Math.Round((float)paperHeight * dpi / 100F), 
+                    dpi, dpi, System.Windows.Media.PixelFormats.Pbgra32);
+                bitmapNew.Render(docPage.Visual);
+                bitmapNew.Freeze();
+                bitmapList.Add(bitmapNew);
+            }
 
             EndPrint(this, printArgs);
 
@@ -353,6 +403,11 @@ namespace PurplePen
                 System.Windows.Media.DrawingVisual visual = new System.Windows.Media.DrawingVisual();
 
                 using (System.Windows.Media.DrawingContext dc = visual.RenderOpen()) {
+                    if (outer.printingToBitmaps) {
+                        // This is kind of hacky way to get the printing to bitmaps white, but much easier than the alternative.
+                        dc.DrawRectangle(System.Windows.Media.Brushes.White, null, new System.Windows.Rect(-1, -1, pageSize.Width + 2, pageSize.Height + 2));
+                    }
+
                     // Clip to the bounding rect within margins.
                     dc.PushClip(new System.Windows.Media.RectangleGeometry(boundingRect));
 

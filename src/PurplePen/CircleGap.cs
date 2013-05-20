@@ -385,5 +385,29 @@ namespace PurplePen
                 return SimplifyGaps(gapList.ToArray());
             }
         }
+
+        // Put the gaps into a old-style bit field approximating these gaps.
+        public static uint ComputeApproximateOldStyleGaps(CircleGap[] gaps)
+        {
+            if (gaps == null || gaps.Length == 0)
+                return 0xFFFFFFFF;              // no gaps
+
+            uint bits = 0xFFFFFFFF;     // Start with all circle on.
+            foreach (CircleGap gap in gaps) {
+                // Go through each bit and determine if on or off.  A bit inefficient, but simple
+                // to get right.
+                for (int bitNum = 0; bitNum < 32; ++bitNum) {
+                    float angle = (bitNum + 0.5F) * 360F / 32F;  // center point of gap represented by this bit
+                    if ((angle >= gap.startAngle && angle <= gap.stopAngle) ||
+                        ((angle - 360F) >= gap.startAngle && (angle - 360F) <= gap.stopAngle)) 
+                    {
+                        // Clear bit.
+                        bits = Util.SetBit(bits, bitNum, false);
+                    }
+                }
+            }
+
+            return bits;
+        }       
     }
 }

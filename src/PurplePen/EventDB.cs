@@ -328,7 +328,7 @@ namespace PurplePen
                 orientation = xmlinput.GetAttributeFloat("orientation");
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "code", "location", "description", "description-text", "gaps", "punch-pattern", "description-text-line")) {
+            while (xmlinput.FindSubElement(first, "code", "location", "description", "description-text", "gaps", "circle-gaps", "punch-pattern", "description-text-line")) {
                 switch (xmlinput.Name) {
                     case "code":
                         if (kind != ControlPointKind.Normal)
@@ -351,7 +351,7 @@ namespace PurplePen
                         string punchPattern = xmlinput.GetContentString();
 
                         int index = 0;
-                        for (int i = 0; i < punches.size; ++i) 
+                        for (int i = 0; i < punches.size; ++i)
                             for (int j = 0; j < punches.size; ++j) {
                                 char c;
                                 do {
@@ -364,10 +364,10 @@ namespace PurplePen
                                 punches.dots[i, j] = (c == '1');
                             }
 
-                        QUITPUNCHPATTERN:
+                    QUITPUNCHPATTERN:
                         break;
 
-                    case "gaps":
+                    case "gaps": {
                         int scale = xmlinput.GetAttributeInt("scale", 0);
                         gapText = xmlinput.GetContentString().Trim();
 
@@ -375,15 +375,34 @@ namespace PurplePen
                             if (gaps == null)
                                 gaps = new Dictionary<int, CircleGap[]>();
                             if (gapText.Contains(":")) {
+                                // For 2.0 beta 1 compatibility only.
                                 gaps[scale] = CircleGap.DecodeGaps(gapText);
                             }
-                            else {
+                            else if (!gaps.ContainsKey(scale)) {
+                                // Only use the old-style if the new-style wasn't found.
                                 uint gapValue = Convert.ToUInt32(gapText, 2);
                                 gaps[scale] = CircleGap.ComputeCircleGaps(gapValue);
                             }
                         }
 
                         break;
+                    }
+
+                    case "circle-gaps": {
+                        int scale = xmlinput.GetAttributeInt("scale", 0);
+                        gapText = xmlinput.GetContentString().Trim();
+
+                        if (gapText != "") {
+                            if (gaps == null)
+                                gaps = new Dictionary<int, CircleGap[]>();
+                            if (gapText.Contains(":")) {
+                                // This is the new-style; overrides old style if both present.
+                                gaps[scale] = CircleGap.DecodeGaps(gapText);
+                            }
+                        }
+
+                        break;
+                    }
 
                     case "description-text":
                         descriptionText = xmlinput.GetContentString();
@@ -408,14 +427,14 @@ namespace PurplePen
                         string text = xmlinput.GetContentString();
 
                         switch (box) {
-                            case "all":     symbolIds[0] = symbolId; break;
-                            case "C":       symbolIds[0] = symbolId; break;
-                            case "D":       symbolIds[1] = symbolId; break;
-                            case "E":       symbolIds[2] = symbolId; break;
-                            case "F":       symbolIds[3] = symbolId; break;
-                            case "G":       symbolIds[4] = symbolId; break;
-                            case "H":       symbolIds[5] = symbolId; break;
-                            default:        xmlinput.BadXml("Invalid box type '{0}'", box); break;
+                            case "all": symbolIds[0] = symbolId; break;
+                            case "C": symbolIds[0] = symbolId; break;
+                            case "D": symbolIds[1] = symbolId; break;
+                            case "E": symbolIds[2] = symbolId; break;
+                            case "F": symbolIds[3] = symbolId; break;
+                            case "G": symbolIds[4] = symbolId; break;
+                            case "H": symbolIds[5] = symbolId; break;
+                            default: xmlinput.BadXml("Invalid box type '{0}'", box); break;
                         }
 
                         if (box == "F" && !string.IsNullOrEmpty(text))
@@ -506,10 +525,22 @@ namespace PurplePen
             // Write gaps.
             if (gaps != null) {
                 foreach (KeyValuePair<int, CircleGap[]> pair in gaps) {
+                    // For compatibility with 1.x and 2.0 beta 1, write in the old style of gaps.
                     xmloutput.WriteStartElement("gaps");
                     xmloutput.WriteAttributeString("scale", XmlConvert.ToString(pair.Key));
 
-                    string gapText = CircleGap.EncodeGaps(pair.Value);
+                    string gapText = Convert.ToString(CircleGap.ComputeApproximateOldStyleGaps(pair.Value), 2);
+                    if (gapText.Length < 32)
+                        gapText = new string('0', 32 - gapText.Length) + gapText;
+                    xmloutput.WriteString(gapText);
+
+                    xmloutput.WriteEndElement();
+
+                    // New-style gap encoding.
+                    xmloutput.WriteStartElement("circle-gaps");
+                    xmloutput.WriteAttributeString("scale", XmlConvert.ToString(pair.Key));
+
+                    gapText = CircleGap.EncodeGaps(pair.Value);
                     xmloutput.WriteString(gapText);
 
                     xmloutput.WriteEndElement();

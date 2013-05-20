@@ -443,8 +443,8 @@ namespace PurplePen
                 // Print directly. Works best with print preview.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
+                PushRectangleClip(graphicsTarget, page.printRectangle);
                 graphicsTarget.PushTransform(transform);
-
                 // Determine the resolution in map coordinates.
                 Matrix inverseTransform = transform.Clone();
                 inverseTransform.Invert();
@@ -455,7 +455,19 @@ namespace PurplePen
                 mapDisplay.Draw(graphicsTarget, page.mapRectangle, minResolutionMap);
 
                 graphicsTarget.PopTransform();
+                graphicsTarget.PopClip();
             }
+        }
+
+        private void PushRectangleClip(IGraphicsTarget graphicsTarget, RectangleF rect)
+        {
+            object rectanglePath = new object();
+            graphicsTarget.CreatePath(rectanglePath, new GraphicsPathPart[] {
+                new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[] { rect.Location }),
+                new GraphicsPathPart(GraphicsPathPartKind.Lines, new PointF[] { new PointF(rect.Right, rect.Top), new PointF(rect.Right, rect.Bottom), new PointF(rect.Left, rect.Bottom), new PointF(rect.Left, rect.Top)}),
+                new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0])
+            }, FillMode.Winding);
+            graphicsTarget.PushClip(rectanglePath);
         }
 
         const float MIN_DPI = 400;

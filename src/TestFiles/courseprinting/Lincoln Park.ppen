@@ -1,0 +1,60 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Lincoln Park</title>
+    <map kind="bitmap" scale="5000" dpi="300">LincolnNov12.gif</map>
+    <all-controls print-scale="5000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
+  </event>
+  <control id="1" kind="start">
+    <location x="140.207184" y="57.44655" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="127.508255" y="110.638184" />
+    <description box="D" iof-2004-ref="1.10" />
+    <gaps scale="5000">11100000000011111111111111111111</gaps>
+    <circle-gaps scale="5000">224.4232:330.1188</circle-gaps>
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="69.6024857" y="122.359322" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.2" />
+    <gaps scale="5000">00011111111111111111111100000000</gaps>
+    <circle-gaps scale="5000">-32.6925049:87.77142</circle-gaps>
+  </control>
+  <control id="5" kind="finish">
+    <location x="134.321289" y="35.8955536" />
+    <description box="all" iof-2004-ref="14.3" />
+    <gaps scale="5000">11111111111000000000011111111111</gaps>
+    <circle-gaps scale="5000">126.475586:231.030273</circle-gaps>
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Short</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="5" />
+  <leg id="1" start-control="3" end-control="5">
+    <bends>
+      <location x="81.8017349" y="67.87238" />
+    </bends>
+    <gaps>
+      <gap start="70.4939" length="15.66552" />
+    </gaps>
+  </leg>
+</course-scribe-event>
