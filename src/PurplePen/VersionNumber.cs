@@ -47,7 +47,7 @@ namespace PurplePen
         public const string Current = "2.0.0.220";
 
         // The last component encodes the Alpha/Beta/RC/Stable notion.
-        // 110 is Alpha 1, 220 is Beta 2, 500 is stable release
+        // 101 is Alpha 1, 220 is Beta 2, 500 is stable release
         public const int Alpha = 100;
         public const int Beta = 200;
         public const int RC = 300;
