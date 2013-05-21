@@ -73,7 +73,13 @@ namespace PurplePen
             containingWizard = (NewEventWizard) Parent;
 
             Bitmap bitmap = (Bitmap) Image.FromFile(containingWizard.mapFileName);
-            dpiTextBox.Text = bitmap.HorizontalResolution.ToString();
+
+            // GIF format doesn't have built-in resolution, so don't default it.
+            if (bitmap.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
+                dpiTextBox.Text = "";
+            else
+                dpiTextBox.Text = bitmap.HorizontalResolution.ToString();
+
             scaleTextBox.Text = "15000";
             bitmap.Dispose();
         }
