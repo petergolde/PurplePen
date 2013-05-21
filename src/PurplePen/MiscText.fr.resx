@@ -405,7 +405,22 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="CrashCancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Contact courriel</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Une erreur est survenue. Afin de nous aider à résoudre le problème, merci d'entrer votre adresse courriel de contact et toutes les informations nécessaires, puis envoyer nous le rapport d'erreur.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Merci de nous dire ce que vous étiez en train de faire avec le programme afin de nous aider à résoudre le problème</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Enregistrer</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Envoyer le Rapport</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Les Définitions ne peuvent pas être ajoutées à un circuit comportant un échange de carte si "Toutes les Parties" est affiché. Basculez sur la partie pour laquelle vous souhaitez ajoutez les définitions, puis choisissez de nouveau l'option "Ajouter Définitions".</value>
   </data>
 </root>

@@ -432,6 +432,9 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Support/Fehler berichten</value>
   </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Spenden Sie</value>
+  </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Über Purple Pen</value>
   </data>

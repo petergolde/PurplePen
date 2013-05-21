@@ -123,6 +123,9 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Quitter</value>
   </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Faire un don</value>
+  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Ouvrir la dernière course visualisée</value>
   </data>

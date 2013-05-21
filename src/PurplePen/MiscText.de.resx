@@ -405,7 +405,13 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CrashCancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontakt-E-Mail</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Speichern</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Bericht senden</value>
   </data>
 </root>

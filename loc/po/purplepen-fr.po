@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-05-15 09:42-07:00\n"
+"POT-Creation-Date: 2013-05-21 14:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -882,7 +882,7 @@ msgstr "Quitter"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
-msgstr ""
+msgstr "Faire un don"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
@@ -1347,7 +1347,7 @@ msgstr "&Support/Remonter un bogue"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "Faire un &Don"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1936,29 +1936,37 @@ msgstr "Partie {0} (de {1})"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "Contact courriel"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "Une erreur est survenue. Afin de nous aider à résoudre le "
+"problème, merci d'entrer votre adresse courriel de contact "
+"et toutes les informations nécessaires, puis envoyer nous "
+"le rapport d'erreur."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Merci de nous dire ce que vous étiez en train de faire "
+"avec le programme afin de nous aider à résoudre le problème"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "Envoyer le Rapport"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Les Définitions ne peuvent pas être ajoutées à un circuit "
+"comportant un échange de carte si \"Toutes les Parties\" est "
+"affiché. Basculez sur la partie pour laquelle vous "
+"souhaitez ajoutez les définitions, puis choisissez de "
+"nouveau l'option \"Ajouter Définitions\"."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
