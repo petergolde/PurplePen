@@ -230,6 +230,18 @@ namespace PurplePen
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            // Delay to see if click or drag.
+            return MapViewer.DragAction.DelayedDrag;
+        }
+
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // Drag is move map.
+            controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
+        }
+
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
             // Create the new control!
 
             // Are we creating a new control point, or using existing one?
@@ -308,8 +320,6 @@ namespace PurplePen
             undoMgr.EndCommand(1321);
 
             controller.DefaultCommandMode();
-
-            return MapViewer.DragAction.None;
         }
 
         // Create the highlight, and put it at the given location.
@@ -494,6 +504,18 @@ namespace PurplePen
 
         public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            // Delay to see if click or drag.
+            return MapViewer.DragAction.DelayedDrag;
+        }
+
+        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            // Drag is move map.
+            controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
+        }
+
+        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        {
             // Create the new special!
 
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
@@ -508,7 +530,6 @@ namespace PurplePen
             undoMgr.EndCommand(1322);
 
             controller.DefaultCommandMode();
-            return MapViewer.DragAction.None;
         }
 
         // Create the highlight, and put it at the given location.

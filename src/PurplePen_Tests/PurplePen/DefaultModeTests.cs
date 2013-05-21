@@ -114,6 +114,12 @@ namespace PurplePen.Tests
 
             // Default mode should not be cancellable
             Assert.IsFalse(controller.CanCancelMode());
+
+            // Click outside anything to de-select.
+            dragAction = controller.LeftButtonDown(new PointF(30, 20), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(30, 20), 0.3F);
+            Assert.IsTrue(controller.GetSelectionMgr().Selection.SelectionKind == SelectionMgr.SelectionKind.None);
         }
 
         [TestMethod]

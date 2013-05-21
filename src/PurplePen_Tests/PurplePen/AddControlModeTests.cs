@@ -122,6 +122,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(27, -18), 0.1F);
 
             // There should be a new control #60, with the given location.
             // Is should be selected.
@@ -217,6 +219,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(29, 30), 0.1F);
 
             // There should be a new control #60, with the given location.
             // Is should be selected.
@@ -269,6 +273,8 @@ namespace PurplePen.Tests
 
             // Mouse down on control #48.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(21, 40), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(21, 40), 0.1F);
 
             // There should not be a new control #60.
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
@@ -341,6 +347,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = ui.LeftButtonDown(28, 8, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(28, 8), 0.1F);
 
             // There should not be a new control #60.
             Assert.IsFalse(QueryEvent.IsCodeInUse(eventDB, "60"));
@@ -444,6 +452,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(27, -18), 0.1F);
 
             // There should be a new start control, with the given location.
             // Is should be selected.
@@ -514,6 +524,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(29, 30), 0.1F);
 
             // There should be a new start control, with the given location.
             // It should be selected.
@@ -564,6 +576,8 @@ namespace PurplePen.Tests
 
             // Mouse down on new start.
             MapViewer.DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(69.8F, 5), 0.1F);
 
             CheckHighlightedLines(controller, 2, 2);
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -619,6 +633,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(27, -18), 0.1F);
 
             // There should be a new finish control, with the given location.
             // Is should be selected.
@@ -690,6 +706,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(29, 30), 0.1F);
 
             // There should be a new finish control, with the given location.
             // It should be selected.
@@ -741,6 +759,8 @@ namespace PurplePen.Tests
 
             // Mouse down on new finish.
             MapViewer.DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(69.8F, 5), 0.1F);
 
             CheckHighlightedLines(controller, 16, 16);
             highlights = (CourseObj[]) controller.GetHighlights();
@@ -795,6 +815,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = controller.LeftButtonDown(new PointF(27, -18), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(27, -18), 0.1F);
 
             // There should be a water special, with the given location.
             // Is should be selected.
@@ -983,6 +1005,8 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             MapViewer.DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            controller.LeftButtonClick(new PointF(29, 30), 0.1F);
 
             // There should be a new mandatory, with the given location.
             // Is should be selected.

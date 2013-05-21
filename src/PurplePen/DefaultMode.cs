@@ -349,14 +349,7 @@ namespace PurplePen
                 return MapViewer.DragAction.ImmediateDrag;
             }
 
-            // Are we clicked a non-selected object? If so, drag will be map move, click will select.
-            clickedObject = HitTest(location, pixelSize);
-            if (clickedObject != null) {
-                return MapViewer.DragAction.DelayedDrag;
-            }
-
-            // drag map.
-            return MapViewer.DragAction.MapDrag;
+            return MapViewer.DragAction.DelayedDrag;
         }
 
         private CourseObj HitTest(PointF location, float pixelSize)
