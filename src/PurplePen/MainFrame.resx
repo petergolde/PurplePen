@@ -208,7 +208,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
+    <value>256, 241</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -253,7 +253,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 123</value>
+    <value>256, 122</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -289,7 +289,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>240</value>
+    <value>241</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -325,7 +325,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACggLsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuAAAgbsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -347,7 +347,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwoA7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwoM7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -1263,6 +1263,12 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
   </data>
+  <data name="crashToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 22</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crash</value>
+  </data>
   <data name="debugMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 22</value>
   </data>
@@ -1589,12 +1595,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqCkej/4ChXDBTmrBaC
-        xUIwYbMZtDoLzb+CzUpgk2s2mowCyHi98/PAw+7UGzI3+W7f3T3vbz9tHZGiYKbZuYt/Q6y4BOO55o8k
-        3HN1goEGOYwPVKrD16mm4XdONGlbEqPJY42PPVzqqLOfdtiUFH3yFBKVL01J9jf+r/gWYQGepEnQjfn1
-        1PvA78LDl8BYMyOGa1dlAp8SPk32kXdVApLcUSnEYe3mhxoetdTadfGfUVV1h3YPXcwE9rJ1zgT3rkpg
-        Z2akF5vdVZkg+NZ2CJ9dtQSZg5FG72a0K6wukiYdnFLkjP/Q/JArHr5or9JVN/LsG9EK9tU/8BRfxlg4
-        2MOzalnEr2FPgsI/z2wLtVm9o7U7+RVUC2DBxW1B+gQ18TcaUkN3kwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVDhPvZKtTwJxGMe/M7gZrDqCkej/4ChXDBTmrBaC
+        xUIwYbMZtDoLzb+CzUpgk2s2mpAAGa93fh542J16Q+Ym3+27u+f97aetI1IUzDQ7d/FviBWXYDzX/JGE
+        e65OMNAgh/GBSnX4OtU0/M6JJm1LYjR5rPGxh0sddfbTDpuSok+eQqLypSnJ/sb/Fd8iLMCTNAm6Mb+e
+        eh/4XXj4EhhrZsRw7apM4FPCp8k+8q5KQJI7KoU4rN38UMOjllq7Lv4zqqru0O6hi5nAXrbOmeDeVQns
+        zIz0YrO7KhME39oO4bOrliBzMNLo3Yx2hdVF0qSDU4qc8R+aH3LFwxftVbrqRp59I1rBvvoHnuLLGAsH
+        e3hWLYv4NexJUPjnmW2hNqt3tHYnv4JqASy4uC1InzHZNxY7d6kYAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -3101,6 +3107,12 @@
   </data>
   <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;crashToolStripMenuItem.Name" xml:space="preserve">
+    <value>crashToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;crashToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>

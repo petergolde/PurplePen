@@ -32,5 +32,9 @@
 			<Name>PurplePen</Name>
 			<Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj">
+			<Name>CrashReporter.NET</Name>
+			<Project>{67912BDA-1572-46B0-8623-5872D9DADBC8}</Project>
+		</ProjectReference>
 	</ItemGroup>
 </Project>

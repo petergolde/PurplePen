@@ -254,6 +254,7 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.crashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1265,7 +1266,8 @@ namespace PurplePen
             this.dotGridTesterToolStripMenuItem,
             this.dumpOCADFileMenu,
             this.reportTesterToolStripMenuItem,
-            this.fontMetricsToolStripMenuItem});
+            this.fontMetricsToolStripMenuItem,
+            this.crashToolStripMenuItem});
             this.debugMenu.Name = "debugMenu";
             resources.ApplyResources(this.debugMenu, "debugMenu");
             // 
@@ -1633,6 +1635,12 @@ namespace PurplePen
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
             // 
+            // crashToolStripMenuItem
+            // 
+            this.crashToolStripMenuItem.Name = "crashToolStripMenuItem";
+            resources.ApplyResources(this.crashToolStripMenuItem, "crashToolStripMenuItem");
+            this.crashToolStripMenuItem.Click += new System.EventHandler(this.crashToolStripMenuItem_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1862,6 +1870,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem showPopupsMenu;
         private System.Windows.Forms.ToolStripMenuItem donateWebSiteMenu;
+        private System.Windows.Forms.ToolStripMenuItem crashToolStripMenuItem;
 
     }
 }

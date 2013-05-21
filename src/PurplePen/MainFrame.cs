@@ -2166,6 +2166,12 @@ namespace PurplePen
             openFile.Dispose();
         }
 
+        private void crashToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 5 / x;
+        }
+
 
     }
 }
