@@ -2050,7 +2050,7 @@ namespace PurplePen
 
             dialog.Culture = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
-            if (dialog.ShowDialog() == DialogResult.OK) {
+            if (dialog.ShowDialog() == DialogResult.OK && dialog.Culture != null) {
                 System.Threading.Thread.CurrentThread.CurrentUICulture = dialog.Culture;
                 Settings.Default.UILanguage = dialog.Culture.Name;
                 Settings.Default.Save();
