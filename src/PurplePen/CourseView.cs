@@ -523,7 +523,7 @@ namespace PurplePen
         public static CourseView CreatePrintingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
             else
                 return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
         }
@@ -532,7 +532,7 @@ namespace PurplePen
         public static CourseView CreatePositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, true);
             else
                 return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
         }

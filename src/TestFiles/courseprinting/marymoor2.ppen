@@ -571,36 +571,42 @@
   </control>
   <course id="1" kind="normal" order="1">
     <name>Course 1</name>
+    <labels label-kind="sequence" />
     <first course-control="101" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="5000" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
+    <labels label-kind="sequence" />
     <first course-control="301" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
+    <labels label-kind="sequence" />
     <first course-control="401" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
+    <labels label-kind="sequence" />
     <first course-control="501" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
+    <labels label-kind="sequence" />
     <first course-control="601" />
     <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
     <options print-scale="10000" description-kind="symbols" />
@@ -863,7 +869,14 @@
   <special-object id="3" kind="descriptions">
     <location x="12.9187737" y="79.75529" />
     <location x="16.39172" y="79.75529" />
-    <courses all="true" />
+    <courses>
+      <course course="1" />
+      <course course="2" />
+      <course course="3" />
+      <course course="4" />
+      <course course="5" />
+      <course course="6" />
+    </courses>
   </special-object>
   <special-object id="4" kind="out-of-bounds">
     <location x="116.736481" y="36.774826" />
@@ -892,5 +905,13 @@
     <location x="97.6301956" y="1.40628886" />
     <location x="97.6301956" y="8.508673" />
     <courses all="true" />
+  </special-object>
+  <special-object id="8" kind="descriptions">
+    <appearance columns="2" />
+    <location x="135.619553" y="3.334381" />
+    <location x="141.199356" y="3.334381" />
+    <courses>
+      <course course="0" />
+    </courses>
   </special-object>
 </course-scribe-event>
