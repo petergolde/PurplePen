@@ -4547,9 +4547,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]PurplePen.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{9E76C620-36D2-4452-9AEA-F96BD598E794}</td><td/></row>
+		<row><td>ProductCode</td><td>{77B1343B-A564-4F73-824B-FB60B7B3AD42}</td><td/></row>
 		<row><td>ProductName</td><td>Purple Pen</td><td/></row>
-		<row><td>ProductVersion</td><td>2.0.220</td><td/></row>
+		<row><td>ProductVersion</td><td>2.0.230</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4833,7 +4833,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.0.220</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
+		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.0.230</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
 	</table>
 
 	<table name="Verb">
