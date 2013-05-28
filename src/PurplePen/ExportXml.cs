@@ -265,7 +265,7 @@ namespace PurplePen
 
             if (!string.IsNullOrEmpty(secondaryTitle)) {
                 // Assumed that classes are separated with commas.
-                return (from s in secondaryTitle.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries) select s.Trim()).ToArray();
+                return (from s in secondaryTitle.Split(new char[] { ',','|' }, StringSplitOptions.RemoveEmptyEntries) select s.Trim()).ToArray();
             }
             else {
                 return new string[0];

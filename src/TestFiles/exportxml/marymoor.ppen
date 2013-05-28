@@ -2,9 +2,12 @@
   <event id="1">
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="OCAD" scale="10000">Marymoor.ocd</map>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false">Marymoor.ocd</map>
+    <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -584,38 +587,44 @@
     <location x="41.6332855" y="52.2354622" />
     <description box="all" iof-2004-ref="13.3" />
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="1">
     <name>Course 1</name>
+    <labels label-kind="sequence" />
     <first course-control="101" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
-  <course id="7" kind="normal">
+  <course id="7" kind="normal" order="2">
     <name>Course 2</name>
-    <secondary-title>  M20 , F20  , F35</secondary-title>
+    <secondary-title>  M20 , F20  , F35|F40,F50,|F65</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="621" />
     <options print-scale="7500" climb="157" description-kind="text" />
   </course>
-  <course id="8" kind="normal">
+  <course id="8" kind="normal" order="4">
     <name>NoStart</name>
     <secondary-title>M20, F20, F35</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="629" />
     <options print-scale="10000" climb="35" description-kind="symbols" />
   </course>
-  <course id="9" kind="normal">
+  <course id="9" kind="normal" order="3">
     <name>NoFinish</name>
+    <labels label-kind="sequence" />
     <first course-control="632" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="10" kind="score">
+  <course id="10" kind="score" order="5">
     <name>Score</name>
     <secondary-title>WIOL Elementary, Public Beginner</secondary-title>
+    <labels label-kind="code" />
     <first course-control="636" />
-    <options print-scale="10000" climb="40" description-kind="symbols" />
+    <options print-scale="10000" climb="40" score-column="A" description-kind="symbols" />
   </course>
-  <course id="11" kind="score">
+  <course id="11" kind="score" order="6">
     <name>ScoreNoPoints</name>
+    <labels label-kind="code" />
     <first course-control="656" />
-    <options print-scale="15000" description-kind="symbols" />
+    <options print-scale="15000" score-column="A" description-kind="symbols" />
   </course>
   <course-control id="101" control="1">
     <next course-control="102" />

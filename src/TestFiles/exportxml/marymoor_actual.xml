@@ -2,8 +2,8 @@
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2013-05-26</Date>
-    <Clock>21:05</Clock>
+    <Date>2013-05-28</Date>
+    <Clock>13:09</Clock>
   </ModifyDate>
   <Map>
     <Scale>10000</Scale>
@@ -236,6 +236,9 @@
     <ClassShortName>M20</ClassShortName>
     <ClassShortName>F20</ClassShortName>
     <ClassShortName>F35</ClassShortName>
+    <ClassShortName>F40</ClassShortName>
+    <ClassShortName>F50</ClassShortName>
+    <ClassShortName>F65</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>2200</CourseLength>
