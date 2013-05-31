@@ -37,11 +37,23 @@ of the checkboxes at once.</p>
 <h2>Copies section</h2>
 <p>This section determines how many copies of each course will be printed. </p>
 <h2>Appearance section</h2>
-<p>This section determines what happens if the <a href="FileSetPrintArea.htm">
+<p>Several things are set in this area:</p>
+    <p><strong>Print area too large</strong>: This setting determines what happens if the <a href="FileSetPrintArea.htm">
 print area</a> is too large to fit on a single sheet of paper. Crop to a single 
 page (the default) will pick the portion of the map that best covers that 
 course. Print on multiple pages will print multiple pages of maps to cover the 
 entire print area.</p>
+    <p><strong>Color Model</strong>: Determines how the colors on the map are converted into colors on the printer:</p>
+    <ul>
+        <li><strong>OCAD Compatible</strong>: Picks the color model based on how OCAD does: the CMYK color model for PostScript and PDF printers, and the RGB color model for other printers. This setting should match OCAD behavior very closely.</li>
+        <li><strong>RGB</strong>: Translates the Cyan-Magenta-Yellow-Black colors in the map to Red-Green-Blue colors using a simple formula. The colors on the printer will typically not match the intended colors exactly. This is the method used by versions of Purple Pen prior to 2.0.</li>
+        <li><strong>CMYK</strong>: The default. Keeps the Cyan-Magenta-Yellow-Black colors as true as possible, using a standard color profile of CMYK colors. This generally produces the most accurate rendition of the intended colors.</li>
+    </ul>
+    <p>
+        <strong>Print Map Exchanges on Same Map</strong>: This setting only appears if a map exchange is present in the event. If this is checked, all parts of the course are printed together, overlapping. If unchecked, a separate map is printed for each part of the course. Typically this should be left unchecked unless you want to see all parts together for some reason.</p>
+    <p>
+        <strong>Rasterize Before Printing</strong>: If checked, Purple Pen converts the map to an in-memory bitmap at the printer&#39;s resolution before sending the bitmap to the Windows printer driver. If unchecked, Purple Pen sends vector drawing commands to the Windows printer driver. If your print appears incorrect, printing doesn&#39;t work at all, or printing is extremely slow, checking this box may help. In most cases, leaving this unchecked should produce faster printing and smaller spool files. On Windows XP, this box is always checked and cannot be changed.
+    </p>
 <h2>Other buttons</h2>
 <p><strong>Print</strong>: This button prints the courses on the selected 
 printer. The dialog box closes.</p>
