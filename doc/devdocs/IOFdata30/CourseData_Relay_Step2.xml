@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Course definitions and assignment to classes in a relay event.
+-->
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            iofVersion="3.0"
+            createTime="2011-07-20T12:16:31+01:00"
+            creator="Example Software">
+  <Event>
+    <Name>Example event</Name>
+    <StartTime>
+      <Date>2011-07-30</Date>
+      <Time>10:00:00+01:00</Time>
+    </StartTime>
+  </Event>
+
+  <!-- one RaceCourseData element per race in the event, single-race events thus use a single RaceCourseData element -->
+  <RaceCourseData>
+    <!-- first, all controls are defined -->
+    <Control>
+      <Id>S</Id>
+      <!-- the position of the control given in latitude and longitude -->
+      <!-- coordinates west of the Greenwich meridian and south of the equator are expressed by negative numbers -->
+      <Position lat="59.760069" lng="17.687623"/>
+      <!-- the position of the control on the printed map, relative to the map's lower left corner -->
+      <MapPosition unit="mm" x="187" y="58"/>
+    </Control>
+    <Control>
+      <Id>31</Id>
+      <Position lat="59.763947" lng="17.685403"/>
+      <MapPosition unit="mm" x="252" y="118"/>
+    </Control>
+    <Control>
+      <Id>32</Id>
+      <Position lat="59.762947" lng="17.680439"/>
+      <MapPosition unit="mm" x="82" y="102"/>
+    </Control>
+    <Control>
+      <Id>33</Id>
+      <Position lat="59.761009" lng="17.687941"/>
+      <MapPosition unit="mm" x="99" y="245"/>
+    </Control>
+    <Control>
+      <Id>34</Id>
+      <Position lat="59.75820" lng="17.685711"/>
+      <MapPosition unit="mm" x="154" y="49"/>
+    </Control>
+    <Control>
+      <Id>100</Id>
+      <Position lat="59.761130" lng="17.684938"/>
+      <MapPosition unit="mm" x="173" y="121"/>
+    </Control>
+    <Control>
+      <Id>F</Id>
+      <Position lat="59.75991" lng="17.68820"/>
+      <MapPosition unit="mm" x="131" y="157"/>
+    </Control>
+
+    <!-- then, all courses are defined -->
+    <Course>
+      <Name>A</Name>
+      <!-- the course A is part of the 'Open long' course group, which groups the forked courses A and B -->
+      <CourseFamily>Open long</CourseFamily>
+      <!-- course length in meters -->
+      <Length>1770</Length>
+      <!-- course climb in meters -->
+      <Climb>45</Climb>
+      <!-- ordered sequence of controls, including start and finish -->
+      <CourseControl type="Start">
+        <!-- use the control code for normal controls, and for example 'S' and 'F' for start and finish -->
+        <Control>S</Control>
+        <!-- for the start, LegLength is the length in meters from the time start to the start flag -->
+        <LegLength>50</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- the text printed next to the control circle, usually the control number -->
+        <MapText>1</MapText>
+        <!-- the center of the text relative to the center of the control circle -->
+        <MapTextPosition unit="mm" x="-15" y="8"/>
+        <!-- the length in meters from the previous control to this control -->
+        <LegLength>410</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>32</Control>
+        <MapText>2</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>360</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>100</Control>
+        <MapText>3</MapText>
+        <MapTextPosition unit="mm" x="-12" y="12"/>
+        <LegLength>800</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish" >
+        <Control>F</Control>
+        <LegLength>150</LegLength>
+      </CourseControl>
+    </Course>
+
+    <Course>
+      <Name>B</Name>
+      <CourseFamily>Open long</CourseFamily>
+      <Length>1770</Length>
+      <Climb>45</Climb>
+      <CourseControl type="Start">
+        <Control>S</Control>
+        <LegLength>50</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <MapText>1</MapText>
+        <MapTextPosition unit="mm" x="-15" y="8"/>
+        <LegLength>410</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>33</Control>
+        <MapText>2</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>360</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>100</Control>
+        <MapText>3</MapText>
+        <MapTextPosition unit="mm" x="-12" y="12"/>
+        <LegLength>800</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish" >
+        <Control>F</Control>
+        <LegLength>150</LegLength>
+      </CourseControl>
+    </Course>
+
+    <Course>
+      <Name>C</Name>
+      <CourseFamily>Open short</CourseFamily>
+      <Length>1100</Length>
+      <Climb>45</Climb>
+      <CourseControl type="Start">
+        <Control>S</Control>
+        <LegLength>50</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <MapText>1</MapText>
+        <MapTextPosition unit="mm" x="-15" y="8"/>
+        <LegLength>410</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>100</Control>
+        <MapText>3</MapText>
+        <MapTextPosition unit="mm" x="-12" y="12"/>
+        <LegLength>540</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish">
+        <Control>F</Control>
+        <LegLength>150</LegLength>
+      </CourseControl>
+    </Course>
+
+    <!-- if courses are assigned to classes in the exporting software, use one or more ClassCourseAssignment elements to represent this assignment -->
+    <ClassCourseAssignment>
+      <!-- All courses in the Open long course family are assigned to Men Open leg 1 and 3 -->
+      <ClassName>Men Open</ClassName>
+      <AllowedOnLeg>1</AllowedOnLeg>
+      <AllowedOnLeg>3</AllowedOnLeg>
+      <CourseFamily>Open long</CourseFamily>
+    </ClassCourseAssignment>
+
+    <ClassCourseAssignment>
+      <!-- All courses in the Open short course family are assigned to Men Open leg 2 -->
+      <ClassName>Men Open</ClassName>
+      <AllowedOnLeg>2</AllowedOnLeg>
+      <CourseFamily>Open short</CourseFamily>
+    </ClassCourseAssignment>
+
+    <ClassCourseAssignment>
+      <!-- All courses in the Open long course family are assigned to Women Open leg 1 and 3 -->
+      <ClassName>Women Open</ClassName>
+      <AllowedOnLeg>1</AllowedOnLeg>
+      <AllowedOnLeg>3</AllowedOnLeg>
+      <CourseFamily>Open long</CourseFamily>
+    </ClassCourseAssignment>
+
+    <ClassCourseAssignment>
+      <!-- All courses in the Open short course family are assigned to Women Open leg 2 -->
+      <ClassName>Women Open</ClassName>
+      <AllowedOnLeg>2</AllowedOnLeg>
+      <CourseFamily>Open short</CourseFamily>
+    </ClassCourseAssignment>
+  </RaceCourseData>
+</CourseData>
