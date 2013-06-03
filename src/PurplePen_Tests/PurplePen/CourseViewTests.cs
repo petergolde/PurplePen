@@ -61,7 +61,11 @@ namespace PurplePen.Tests
             for (int i = 0; i < courseView.ControlViews.Count; ++i) {
                 CourseView.ControlView controlView = courseView.ControlViews[i];
 
-                writer.WriteLine("{0,2}: [{1,2}] Ids:{2,3},{3,3}", i, controlView.ordinal, controlView.controlId, controlView.courseControlId);
+                writer.Write("{0,2}: [{1,2}] Ids:{2,3},{3,3}", i, controlView.ordinal, controlView.controlId, controlView.courseControlId);
+                if (controlView.hiddenControl)
+                    writer.Write(" hidden");
+                writer.WriteLine();
+
                 if (controlView.legTo != null) {
                     writer.Write("    Legs: ");
                     for (int j = 0; j < controlView.legTo.Length; ++j)
@@ -502,7 +506,7 @@ Total Length=5002.36  Part Length=2643.736  Total Climb=-1  ScoreColumn=-1  Tota
     Legs: (Next:9,Id:0,length:316.6276)  
  9: [ 9] Ids: 79,610
     Legs: (Next:10,Id:1,length:208.2787)  
-10: [ 0] Ids: 35,611
+10: [ 0] Ids: 35,611 hidden
 ";
             Assert.AreEqual(expected, actual);
 

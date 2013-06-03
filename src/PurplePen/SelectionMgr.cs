@@ -660,19 +660,24 @@ namespace PurplePen
                     if (selectionKind == SelectionKind.Control &&
                             !(courseobj is LineCourseObj) &&    // don't select legs
                             courseobj.controlId == selectedControl &&
-                            courseobj.courseControlId == selectedCourseControl) {
+                            courseobj.courseControlId == selectedCourseControl) 
+                    {
                         list.Add(courseobj);
                     }
                     else if (selectionKind == SelectionKind.Leg &&
                             courseobj is LineCourseObj &&
                             courseobj.courseControlId == selectedCourseControl &&
-                            ((LineCourseObj) courseobj).courseControlId2 == selectedCourseControl2) {
+                            ((LineCourseObj) courseobj).courseControlId2 == selectedCourseControl2) 
+                    {
                         // The leg may be made up of multiple parts due to flagging and gaps. Create a single course object for the whole thing.
-                        list.Add(CourseFormatter.CreateSimpleLeg(eventDB, courseobj.scaleRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2));
+                        CourseObj legObject = CourseFormatter.CreateSimpleLeg(eventDB, courseobj.scaleRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2);
+                        if (legObject != null)
+                            list.Add(legObject);
                         break;
                     }
                     else if (selectionKind == SelectionKind.Special &&
-                        courseobj.specialId == selectedSpecial) {
+                        courseobj.specialId == selectedSpecial) 
+                    {
                         list.Add(courseobj);
                     }
                 }

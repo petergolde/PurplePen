@@ -88,26 +88,29 @@ namespace PurplePen
             for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
                 CourseView.ControlView controlView = controlViews[controlIndex];
 
-                // Get the angles of the legs into and out of this control, in radians.
-                double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
+                if (!controlView.hiddenControl) {
 
-                // Get the normal course object associated with this control.
-                courseObj = CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale, controlView, angleOut);
-                if (courseObj != null) {
-                    courseObj.layer = layer;
-                    courseLayout.AddCourseObject(courseObj);
-                }
+                    // Get the angles of the legs into and out of this control, in radians.
+                    double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
 
-                // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
-                if (CustomPlaceNumber(eventDB, controlView)) {
-                    if (kind == CourseView.CourseViewKind.AllControls)
-                        courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
-                    else
-                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
-
+                    // Get the normal course object associated with this control.
+                    courseObj = CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale, controlView, angleOut);
                     if (courseObj != null) {
                         courseObj.layer = layer;
                         courseLayout.AddCourseObject(courseObj);
+                    }
+
+                    // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
+                    if (CustomPlaceNumber(eventDB, controlView)) {
+                        if (kind == CourseView.CourseViewKind.AllControls)
+                            courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                        else
+                            courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
+
+                        if (courseObj != null) {
+                            courseObj.layer = layer;
+                            courseLayout.AddCourseObject(courseObj);
+                        }
                     }
                 }
 
@@ -133,7 +136,7 @@ namespace PurplePen
                 CourseView.ControlView controlView = controlViews[controlIndex];
 
                 // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
-                if (! CustomPlaceNumber(eventDB, controlView)) {
+                if (!controlView.hiddenControl && ! CustomPlaceNumber(eventDB, controlView)) {
                     if (kind == CourseView.CourseViewKind.AllControls)
                         courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
@@ -609,7 +612,10 @@ namespace PurplePen
             LegGap[] gaps;                // What kind of gaps are present? Null array if none 
 
             // Get the path of the line, and the gaps.
-            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlView1.controlId, control2.location, control2.kind, controlView2.controlId, scaleRatio, appearance, out gaps);
+            SymPath legPath = GetLegPath(eventDB, 
+                                         control1.location, controlView1.hiddenControl ? ControlPointKind.None : control1.kind, controlView1.controlId, 
+                                         control2.location, controlView2.hiddenControl ? ControlPointKind.None : control2.kind, controlView2.controlId, 
+                                         scaleRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
@@ -732,6 +738,9 @@ namespace PurplePen
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
                 return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
+
+            case ControlPointKind.None:
+                return 0;
 
             default:
                 Debug.Fail("Bad kind");

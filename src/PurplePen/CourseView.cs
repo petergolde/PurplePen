@@ -66,6 +66,7 @@ namespace PurplePen
             public int[] legTo;                 // Indices in the list of the control a leg should be drawn to
             public Id<Leg>[] legId;                 // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
+            public bool hiddenControl;          // If true, hide this control on map, but not legs to it (used for map exchanges)
         };
 
         // A description that is being viewed.
@@ -574,7 +575,7 @@ namespace PurplePen
             ordinal = course.firstControlOrdinal;
 
             // Increase the ordinal value for each normal control before the first one we're considering.
-            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { // also break loop at lastCourseControlId
+            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { 
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
                 if (control.kind == ControlPointKind.Normal)
@@ -600,6 +601,11 @@ namespace PurplePen
 
                 // This kind of view doesn't support variations.
                 controlView.variation = (char)0;
+
+                // Don't show the map exchange for the next part at the end of this part.
+                if (courseControlId == lastCourseControl && !courseDesignator.AllParts && control.kind == ControlPointKind.MapExchange) {
+                    controlView.hiddenControl = true;
+                }
 
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
