@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Spremeni simbol</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Spremeni kodno številko</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Spremeni kontrolno točko</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Spremeni kontrolne točke</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Spremeni naslov</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Spremeni vzpon</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Spremeni ime proge</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Spremeni besedilno vrstico</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Osveži merilo karte</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Premakni kontrolno točko</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Premakni zaporedno številko kontrolne točke</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Premakni objekt</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Izbriši kontrolno točko</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Izbriši objekt</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Izbriši besedilno vrstico</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Dodaj kontrolno točko</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Dodaj start</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Dodaj cilj</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Dodaj obvezen prehod</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Dodaj objekt</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Izbriši progo</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>Nova proga</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Spremeni lastnosti proge</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Spremeni lastnosti vse kontrolnih točk</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Ustvari novo prireditev</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Spremeni označbe predaj</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Spremeni kodne številke</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Spremeni prikazane proge</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Premakni zavoj predaje</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Dodaj zavoj</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Dodaj kot</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Izbriši zavoj</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Izbriši kot</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Dodaj razmak</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Izbriši razmak</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Premakni razmak</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Zavrti</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Avtomatsko številčenje</value>
+  </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Spremeni vzorce luknjic</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Spremeni obliko startnega kartona</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Določi območje tiskanja</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Spremeni količino tekmovalcev</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Prilagodi besedilni opis</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Spremeni vrstni red prog</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Spremeni datoteko s karto</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Spreglej manjkajoče pisave</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Dodaj besedilno vrstico</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Izbriši neuporabljene kontrolne točke</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Spremeni jezik opisov kontrolnih točk</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Spremeni besedilo</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Prilagodi izgled prog</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Dodaj menjavo karte</value>
+  </data>
+</root>
