@@ -15,7 +15,7 @@ namespace PurplePen
         private string pngFileName;
         private ConversionStatus status;
         private string conversionOutput;
-        private string Resolution = "600";  // Resolution to use for generating PNG file.
+        private const string Resolution = "600";  // Resolution to use for generating PNG file.
         private StringBuilder stderrOutput;
         private Process process;
 

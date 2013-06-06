@@ -174,7 +174,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD files (*.ocd)|*.ocd|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>All map files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 18</value>
@@ -251,8 +251,8 @@
   <data name="warningIconPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAScwAA
-        EnMBjCK5BwAABudJREFUWEe9V2lsVFUUPu10GbpIS5ku0CndABss0LpF44KBRMXIEtGAiIWChBaEAgVc
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAScgAA
+        EnIBXmVb4wAABudJREFUWEe9V2lsVFUUPu10GbpIS5ku0CndABss0LpF44KBRMXIEtGAiIWChBaEAgVc
         E7fEYAzu+sOoPxQhGjdcgqDiSilKEbQgCC1t6bSd7st02qGdz++8uZVGxAWLJ/ny7nv33LOfc2fkXAiw
         RwPxs83r/0t+BI0FQjuAcADyaXZ2XoTZOv9EhaGdnYIeL5cIoLQ0oTUyeu1Cw3J+qatTXna7Bf0+G5Vf
         9LsRs2+ZiYiodUWG7fxQn0+Gu+sEjQ0Cf38CFS8D/CwFGrD7OwfC7es6Ro9eMc6wDz152mRTbZWgo1m9

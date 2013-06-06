@@ -52,6 +52,17 @@ namespace PurplePen
         {
             scale = 0; dpi = 0;
             mapType = MapType.None;
+            string fileExtension = Path.GetExtension(mapFileName);
+
+            if (string.Compare(fileExtension, ".pdf", StringComparison.InvariantCultureIgnoreCase) == 0) {
+                if (ValidatePdf(mapFileName, out dpi, out errorMessageText)) {
+                    mapType = MapType.PDF;
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
 
             Map map = new Map(TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(mapFileName)));
 
@@ -60,7 +71,7 @@ namespace PurplePen
             }
             catch (Exception e) {
                 // Didn't load as an OCAD file. If it has a non-OCD extension, try loading as an image.
-                if (string.Compare(Path.GetExtension(mapFileName), ".ocd", true) != 0) {
+                if (string.Compare(fileExtension, ".ocd", StringComparison.InvariantCultureIgnoreCase) != 0) {
                     try {
                         Bitmap bitmap = (Bitmap) Image.FromFile(mapFileName);
                         dpi = bitmap.HorizontalResolution;
@@ -88,6 +99,26 @@ namespace PurplePen
             return true;
         }
 
+        private const string ghostscriptUrl = "http://downloads.ghostscript.com/public/gs907w32.exe";
+        private const string ghostscriptFileName = "gs907w32.exe";
+
+        public static bool ValidatePdf(string pdfFileName, out float dpi, out string errorMessageText)
+        {
+            IPdfLoadingStatus loadingStatus = new PdfLoadingUI();
+            PdfMapFile mapFile = new PdfMapFile(pdfFileName);
+
+            if (!mapFile.GhostscriptInstalled) {
+                loadingStatus.DownloadAndInstall(ghostscriptUrl, ghostscriptFileName);
+            }
+
+            mapFile.BeginConversion();
+
+            // UNDONE
+            errorMessageText = "";
+            dpi = 0;
+            return true;
+        }
+
         public static ToolboxIcon CreateToolboxIcon(Bitmap bm) {
             ToolboxIcon icon = new ToolboxIcon();
 
@@ -103,6 +134,7 @@ namespace PurplePen
 
     interface IPdfLoadingStatus
     {
+        bool DownloadAndInstall(string url, string fileName);
         bool ShowLoadingStatus(string fileName);
         void LoadingComplete(bool success, string errorMessage);
     }

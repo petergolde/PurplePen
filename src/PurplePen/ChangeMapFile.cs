@@ -171,6 +171,11 @@ namespace PurplePen
             UpdateOKButton();
         }
 
+        private void openFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
 
     }
 }

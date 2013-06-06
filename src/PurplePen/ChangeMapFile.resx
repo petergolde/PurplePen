@@ -112,12 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="okButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 205</value>
   </data>
@@ -125,7 +125,7 @@
     <value>okButton</value>
   </data>
   <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -140,7 +140,7 @@
     <value>cancelButton</value>
   </data>
   <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -148,13 +148,58 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;errorMessage.Name" xml:space="preserve">
+    <value>errorMessage</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.Parent" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;errorMessage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="errorDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="errorDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 89</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="errorDisplayPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Name" xml:space="preserve">
+    <value>errorDisplayPanel</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;errorDisplayPanel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="errorMessage.Location" type="System.Drawing.Point, System.Drawing">
     <value>44, 0</value>
   </data>
   <data name="errorMessage.Size" type="System.Drawing.Size, System.Drawing">
     <value>420, 80</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="errorMessage.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -162,7 +207,7 @@
     <value>errorMessage</value>
   </data>
   <data name="&gt;&gt;errorMessage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;errorMessage.Parent" xml:space="preserve">
     <value>errorDisplayPanel</value>
@@ -173,37 +218,37 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAASdAAA
-        EnQB3mYfeAAABtJJREFUWEe1V3ds1GUYftvrODqkpVwH9EoXo4ECrSsaBwYSFMOKaFDAQhmhBaFAARFN
-        XInBGNz4h1H/UNBoXDiCOEBFShllliW0tKXX9rrH9dqjvcfn/d1drZAKUmzy5L77xvs+3/OO7ypyHX+A
-        ORyInnkdR/t/xA2/4UBgCxAMQH5IT88K6b/Va7RAh4GtrYIOp6hzA4WFMY2h4WvmX6OJ/m1ra5V37XZB
-        t8tE52N6SMx8aDpCwtbm9c/6VU53uWSgvUpQWyNwd8fQ+VLAzVSgCnv/sCDYvLZl6NDlI/43Eo4m2VxZ
-        JmipV+ljiQwiCS6HJxRTpsxCWETelv+NQE2FoOaioLMtgA4jiQHEKLg7PAR27YyFKXiNY1jiuvgbTsJR
-        L69WlQqaq9XZTV7nOo4nooE2jt2CB+6fhZDw9ZtvKAF3mwTYy6W75gKdODT5ouB2mvD7Dn+OQ4gUoMPP
-        UOHbL60IMK+vS0paYr1hJBx2ed52VtBm89z+422REPEjhDCjopwESKqrieuXBBMmzEZ4xOqXbhiBmvMC
-        O4Emz+1FgogBCJHx/MzA3KljOZ8AsD/AJdj+SSIk4MnaYam5Uf0m0W6TF2ynBE0qvxH7UO/tByNWJnE8
-        ETPuGs15iycX6riPRO6791GYQ9c/3W8CtWekpfq0wFXtuT3gj4gQVcAKi9zDz/vwxMPJnNf1VEBLlF1y
-        67sjYAraUJY6POv6VXBWyKrKY8z8P2m0nbf3Np3HpoXR8TgkmKdgiP9kbN2sxFQhhqHTgkuVHLcIxo3P
-        Rvig1fnXrYK9WFzVJ9j3K1n3l+jEyAFm+oeagOm4PWkp7h45HRUHWQ36NjjDuM53it0SzYIP3kqDmDaW
-        jUibE/qfSbSXyuqLRYL6YhprYLttJ7QHdAuO/KTZn4wZE97ApIxpRuIZ0rNFGyo4SLacDYtdMzNzPqJi
-        Vqz8zwTsx6TGRgKtZ1jfjgjAHghoGfJmSmRkTCpy5uzEohmZXPc6Z5dEmyZqAlwlHDcK3t40FqbQ/NOW
-        2PywaybRWSLzL+5n2z0s6Ko0M568vRrX2BqdUDB7UgJVeBqfvs7MVwWUHFs1qrRNJ8BdbUaH5g7nUkcu
-        RmzcsqXXTKD+mDRUHeCjY8ivtycJSmo4UCJsua9stJJALoq+CGLieecpORROkuocik6Wr4Zly6Z0BFKF
-        yMg1pquScJ2TLBtvX3eIty/jL55mPjplDAPfAQPqgGHY+1kYguVB1O1nAlJqY17XtWHZ9JcSS7Kc5Pi9
-        lRcZPSYblri87KsSaDws5dWFPMTyQz2dV/HFU6MKjas6YSg6TplgjZjo+a5h0TXfvnOqQhxVsMLFKtL1
-        157NQFB4flHU4LyAPkl0nJJF1QXMfCrgLmVJNQyiUd5eY6lQw+pEb8tQ7PqA65oX+l3XdI+us3EZt0ca
-        94Wi66RnflTaIkTHrcrqk0BtgXRW/SFwHqGsdYMZc97+DA8r+BgZDvSm2m617DT7a70KKAHfHt2v8W+h
-        Ct3D0a0qMIfe35QGU9i6U4Oicq/MBecxWXhxF2O/l7f/k09sNeX3GVJjeit1wN+DhZ9oK9YXMRgj4xLR
-        pcmqKuh+3af7de4cG1cXG1Mp7R0XOFjW6ekLEWVdtvwKFRoK5LxtN9su44+KCEpGCdWIslcJFUqA8UyN
-        U+fajOKITGyYl8Qu6XWs+/ScDzVUsoEVcdBD8sX82zBg4Nrj0ZZlQT0kOorkjsqfWfe/MvOPMoMrWPdq
-        iKwNAj7o7fgqigQQUcgYsgAJoSvxTPY8T0j0jG+vnlWcZQNrsjIPgtBFBVqYY5a4FbAmLJ7TQ6B1n7xZ
-        voO/dqkATrCRnCFOMvkuh3ZF9vmpd8aSQAxiAhfil+3Ajveme5JRpe99pthr4wITujgYjn2ePbOnTUO4
-        ZWVBD4Ga3XK05DtB5U6GYI8f2snSUeAHR6EX3rFzPw0e9cT6hZwkrF/wCL55526AJdvJxtXO8BlnfGf3
-        0RadOonmPYJGKqyqvLLuZgQNXIXklLwMg0TLb/Jy8eeCs18LSr4VlH7TN8q8RF0s1S46babR8u8FF/o4
-        V0JbulZBhRtVYbb3GZNnIjJmJYYlL/n7HxnbD/Lj2a8EB7b649BHfji0Tfh5GbxzRVsFhzk+/LFAxwpj
-        f+8zvca6fvJTwfnt/nhu2W0IG7QG1sQcJKXkPP6Pasi8Zd6s9NHZtRnj5iNz/L8hi+uXo+/9GbR1a+Y8
-        jBu7ADcNXo0h1lwkpiz5MT55qfmKchwQ+VQCe/bc6CF5c4jZBuKJod6xfvqga73Hvr26v/dZjmOI2PgV
-        jyal5D6ekpwz3TpieU8Z/gVMa+jYWdXfrwAAAABJRU5ErkJggg==
+        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
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
@@ -219,7 +264,7 @@
     <value>pictureBox1</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>errorDisplayPanel</value>
@@ -227,41 +272,11 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="errorDisplayPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 106</value>
-  </data>
-  <data name="errorDisplayPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 89</value>
-  </data>
-  <data name="errorDisplayPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;errorDisplayPanel.Name" xml:space="preserve">
-    <value>errorDisplayPanel</value>
-  </data>
-  <data name="&gt;&gt;errorDisplayPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorDisplayPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;errorDisplayPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="mapFileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 18</value>
-  </data>
-  <data name="mapFileNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 23</value>
-  </data>
-  <data name="mapFileNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;mapFileNameTextBox.Name" xml:space="preserve">
     <value>mapFileNameTextBox</value>
   </data>
   <data name="&gt;&gt;mapFileNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mapFileNameTextBox.Parent" xml:space="preserve">
     <value>mapFileDisplay</value>
@@ -285,7 +300,7 @@
     <value>mapFileDisplay</value>
   </data>
   <data name="&gt;&gt;mapFileDisplay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mapFileDisplay.Parent" xml:space="preserve">
     <value>$this</value>
@@ -293,10 +308,31 @@
   <data name="&gt;&gt;mapFileDisplay.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="mapFileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 18</value>
+  </data>
+  <data name="mapFileNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>455, 23</value>
+  </data>
+  <data name="mapFileNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Name" xml:space="preserve">
+    <value>mapFileNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.Parent" xml:space="preserve">
+    <value>mapFileDisplay</value>
+  </data>
+  <data name="&gt;&gt;mapFileNameTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="buttonChooseFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonChooseFile.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -316,7 +352,7 @@
     <value>buttonChooseFile</value>
   </data>
   <data name="&gt;&gt;buttonChooseFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonChooseFile.Parent" xml:space="preserve">
     <value>$this</value>
@@ -324,14 +360,125 @@
   <data name="&gt;&gt;buttonChooseFile.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD files (*.ocd)|*.ocd|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>All map files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>panelScaleDpi</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelDpi" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelScale" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="panelScaleDpi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 106</value>
+  </data>
+  <data name="panelScaleDpi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 76</value>
+  </data>
+  <data name="panelScaleDpi.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panelScaleDpi.Name" xml:space="preserve">
+    <value>panelScaleDpi</value>
+  </data>
+  <data name="&gt;&gt;panelScaleDpi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelScaleDpi.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelScaleDpi.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;labelDpi.Name" xml:space="preserve">
+    <value>labelDpi</value>
+  </data>
+  <data name="&gt;&gt;labelDpi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDpi.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelDpi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelScale.Name" xml:space="preserve">
+    <value>labelScale</value>
+  </data>
+  <data name="&gt;&gt;labelScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelScale.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelScale.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 58</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>panelScaleDpi</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelDpi" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelScale" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="labelDpi.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -358,7 +505,7 @@
     <value>labelDpi</value>
   </data>
   <data name="&gt;&gt;labelDpi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelDpi.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -391,7 +538,7 @@
     <value>labelScale</value>
   </data>
   <data name="&gt;&gt;labelScale.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelScale.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -404,6 +551,54 @@
   </data>
   <data name="flowLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelOneTo.Name" xml:space="preserve">
+    <value>labelOneTo</value>
+  </data>
+  <data name="&gt;&gt;labelOneTo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelOneTo.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelOneTo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBoxScale.Name" xml:space="preserve">
+    <value>textBoxScale</value>
+  </data>
+  <data name="&gt;&gt;textBoxScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxScale.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBoxScale.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 0</value>
+  </data>
+  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 29</value>
+  </data>
+  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="labelOneTo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -430,7 +625,7 @@
     <value>labelOneTo</value>
   </data>
   <data name="&gt;&gt;labelOneTo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelOneTo.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -451,7 +646,7 @@
     <value>textBoxScale</value>
   </data>
   <data name="&gt;&gt;textBoxScale.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBoxScale.Parent" xml:space="preserve">
     <value>flowLayoutPanel1</value>
@@ -459,32 +654,56 @@
   <data name="&gt;&gt;textBoxScale.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 0</value>
-  </data>
-  <data name="flowLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 29</value>
-  </data>
-  <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Name" xml:space="preserve">
-    <value>flowLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="flowLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;textBoxDpi.Name" xml:space="preserve">
+    <value>textBoxDpi</value>
+  </data>
+  <data name="&gt;&gt;textBoxDpi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxDpi.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxDpi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labelDpi2.Name" xml:space="preserve">
+    <value>labelDpi2</value>
+  </data>
+  <data name="&gt;&gt;labelDpi2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDpi2.Parent" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;labelDpi2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 29</value>
+  </data>
+  <data name="flowLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>366, 29</value>
+  </data>
+  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
+    <value>flowLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="textBoxDpi.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -499,7 +718,7 @@
     <value>textBoxDpi</value>
   </data>
   <data name="&gt;&gt;textBoxDpi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBoxDpi.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -532,7 +751,7 @@
     <value>labelDpi2</value>
   </data>
   <data name="&gt;&gt;labelDpi2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelDpi2.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
@@ -540,79 +759,7 @@
   <data name="&gt;&gt;labelDpi2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="flowLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 29</value>
-  </data>
-  <data name="flowLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="flowLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 29</value>
-  </data>
-  <data name="flowLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Name" xml:space="preserve">
-    <value>flowLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 3</value>
-  </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 58</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>panelScaleDpi</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelDpi" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelScale" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel1" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flowLayoutPanel2" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="panelScaleDpi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 106</value>
-  </data>
-  <data name="panelScaleDpi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>465, 76</value>
-  </data>
-  <data name="panelScaleDpi.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelScaleDpi.Name" xml:space="preserve">
-    <value>panelScaleDpi</value>
-  </data>
-  <data name="&gt;&gt;panelScaleDpi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelScaleDpi.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelScaleDpi.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -631,12 +778,12 @@
     <value>openFileDialog</value>
   </data>
   <data name="&gt;&gt;openFileDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ChangeMapFile</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.0.0.3100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

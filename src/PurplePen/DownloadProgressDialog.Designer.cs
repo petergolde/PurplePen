@@ -58,7 +58,7 @@
             this.Controls.Add(this.progressBar);
             this.HelpButton = false;
             this.Name = "DownloadProgressDialog";
-            this.Text = "Downloading Purple Pen";
+            this.Text = "Downloading";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.progressBar, 0);

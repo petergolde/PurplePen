@@ -46,7 +46,7 @@ namespace PurplePen
             this.textBoxDpi = new System.Windows.Forms.TextBox();
             this.labelDpi2 = new System.Windows.Forms.Label();
             this.errorDisplayPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mapFileDisplay.SuspendLayout();
             this.panelScaleDpi.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,6 +107,7 @@ namespace PurplePen
             // 
             this.openFileDialog.DefaultExt = "ocd";
             resources.ApplyResources(this.openFileDialog, "openFileDialog");
+            this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog_FileOk);
             // 
             // panelScaleDpi
             // 
@@ -187,7 +188,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.errorDisplayPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mapFileDisplay.ResumeLayout(false);
             this.mapFileDisplay.PerformLayout();
             this.panelScaleDpi.ResumeLayout(false);

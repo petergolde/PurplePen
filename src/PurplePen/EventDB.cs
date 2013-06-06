@@ -1723,7 +1723,7 @@ namespace PurplePen
     }
 
     // The type of map used.
-    public enum MapType { None, OCAD, Bitmap };
+    public enum MapType { None, OCAD, Bitmap, PDF };
 
     // Describes appearance of the courses.
     public class CourseAppearance

@@ -99,14 +99,15 @@ namespace PurplePen
                     return;
             }
 
-            DownloadAndInstall(fileName);
+            DownloadAndInstall(new Uri(downloadLocation + fileName), fileName, true);
         }
 
-        private static void DownloadAndInstall(string fileName)
+        public static bool DownloadAndInstall(Uri downloadFrom, string fileName, bool exitToInstall)
         {
             WebClient client = new WebClient();
             string downloadedFile = Path.Combine(GetDownloadDirectory(), fileName);
             bool completed = false;
+            bool success = false;
 
             downloadedFile = FindNonexistantFile(downloadedFile);
 
@@ -117,15 +118,16 @@ namespace PurplePen
                 downloadProgressDialog.DialogResult = DialogResult.OK; 
             };
 
-            client.DownloadFileAsync(new Uri(downloadLocation + fileName), downloadedFile);
+            client.DownloadFileAsync(downloadFrom, downloadedFile);
             var result = downloadProgressDialog.ShowDialog(OwnerWindow);
 
             if (result == DialogResult.OK && completed) {
-                Install(downloadedFile);
+                success = Install(downloadedFile, exitToInstall);
             }
 
             client.Dispose();
             downloadProgressDialog.Dispose();
+            return success;
         }
 
         // Find a file name that doesn't exists by appending "(1)", "(2)", etc.
@@ -145,18 +147,29 @@ namespace PurplePen
         }
 
         // Returns on failure. On success, starts installer and exits.
-        private static void Install(string downloadedInstallerFile)
+        private static bool Install(string downloadedInstallerFile, bool exitToInstall)
         {
             try {
                 var process = Process.Start(downloadedInstallerFile);
                 if (process != null) {
-                    Environment.Exit(0);
+                    if (exitToInstall) {
+                        Environment.Exit(0);
+                        return true;
+                    }
+                    else {
+                        process.WaitForExit();
+                        bool success = (process.ExitCode == 0);
+                        process.Dispose();
+                        return success;
+                    }
+                }
+                else {
+                    return false;
                 }
             }
             catch (Exception) {
+                return false;
             }
-
-            return;
         }
 
         private static string GetDownloadDirectory()

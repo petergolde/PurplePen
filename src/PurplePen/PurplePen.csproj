@@ -404,6 +404,7 @@
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Pair.cs" />
+    <Compile Include="PdfLoadingUI.cs" />
     <Compile Include="PdfMapFile.cs" />
     <Compile Include="PrintCourses.cs">
       <SubType>Form</SubType>
