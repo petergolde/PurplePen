@@ -101,6 +101,12 @@ namespace PurplePen
         }
     }
 
+    interface IPdfLoadingStatus
+    {
+        bool ShowLoadingStatus(string fileName);
+        void LoadingComplete(bool success, string errorMessage);
+    }
+
     static class FindPurple
     {
         // All the names called purple in different languages.

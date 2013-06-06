@@ -149,7 +149,6 @@ Global
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.CD_ROM|x86.ActiveCfg = Release|Win32
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|Mixed Platforms.Build.0 = Debug|Win32
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|Win32.ActiveCfg = Debug|Win32
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|Win32.Build.0 = Debug|Win32
 		{9C15B7D2-A01F-49C0-A894-07CD090D01BD}.Debug|x86.ActiveCfg = Debug|Win32
@@ -182,7 +181,6 @@ Global
 		{D744D873-F772-4E7D-983D-FB580E691343}.CD_ROM|x86.Build.0 = CD_ROM
 		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|Any CPU.ActiveCfg = DVD-5
 		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|Mixed Platforms.ActiveCfg = DVD-5
-		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|Mixed Platforms.Build.0 = DVD-5
 		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|Win32.ActiveCfg = DVD-5
 		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|Win32.Build.0 = DVD-5
 		{D744D873-F772-4E7D-983D-FB580E691343}.Debug|x86.ActiveCfg = DVD-5
@@ -244,8 +242,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
