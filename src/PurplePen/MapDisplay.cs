@@ -56,12 +56,15 @@ namespace PurplePen
         MapType mapType;
         string filename;
 
+        // Used for MapType.Bitmap or MapType.PDF
         IGraphicsBitmap bitmap;     // the bitmap
         IGraphicsBitmap dimmedBitmap;  // the dimmed bitmap.
         float bitmapDpi;     // dpi for bitmap
 
         int mapVersion;       // OCAD version. (OCAD maps only)
         Map map;                // The map to draw. (OCAD maps only)
+
+        PdfMapFile pdfMapFile;  // pdfMapFile (PDF maps only)
 
         CourseLayout course;    // The course to display.
         Map courseMap;              // The courses, rendered into a map.
@@ -148,6 +151,7 @@ namespace PurplePen
             {
                 switch (mapType) {
                 case MapType.Bitmap:
+                    case MapType.PDF:
                     return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
 
                 case MapType.OCAD:
@@ -306,11 +310,13 @@ namespace PurplePen
                 map = null;
                 mapVersion = 0;
                 bitmap = null;
+                pdfMapFile = null;
             }
             else if (mapType == MapType.OCAD) {
                 map = new Map(MapUtil.TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(filename)));
                 mapVersion = InputOutput.ReadFile(filename, map);
                 bitmap = null;
+                pdfMapFile = null;
             }
             else if (mapType == MapType.Bitmap) {
                 map = null;
@@ -318,6 +324,21 @@ namespace PurplePen
                 Bitmap bm = (Bitmap)Image.FromFile(filename);
                 bitmap = new GDIPlus_Bitmap(bm);
                 bitmapDpi = bm.HorizontalResolution;
+                pdfMapFile = null;
+            }
+            else if (mapType == MapType.PDF) {
+                string errorText;
+                map = null;
+                mapVersion = 0;
+                pdfMapFile = MapUtil.ValidatePdf(filename, out bitmapDpi, out errorText);
+                if (pdfMapFile == null) {
+                    mapType = MapType.None;
+                    bitmap = null;
+                }
+                else {
+                    Bitmap bm = (Bitmap)Image.FromFile(pdfMapFile.PngFileName);
+                    bitmap = new GDIPlus_Bitmap(bm);
+                }
             }
             else {
                 Debug.Fail("bad maptype");
@@ -348,7 +369,7 @@ namespace PurplePen
             if (dimmedBitmap != null)
                 dimmedBitmap.Dispose();
 
-            if (mapType == MapType.Bitmap && mapIntensity < 0.99F) {
+            if ((mapType == MapType.Bitmap || mapType == MapType.PDF) && mapIntensity < 0.99F) {
                 Bitmap dimmed = new Bitmap(bitmap.PixelWidth, bitmap.PixelHeight);
                 Graphics g = Graphics.FromImage(dimmed);
                 ImageAttributes imageAttributes = new ImageAttributes();
@@ -441,6 +462,7 @@ namespace PurplePen
                 break;
 
             case MapType.Bitmap:
+                case MapType.PDF:
                 grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
                 DrawBitmapMap(grTargetBitmapMap, visRect);
                 grTargetOcadMap.PopAntiAliasing();

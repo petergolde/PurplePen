@@ -146,7 +146,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bitmapScaleLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="dpiTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 165</value>
@@ -167,7 +167,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dpiTextBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="resolutionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -194,7 +194,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;resolutionLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="dpiLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -221,7 +221,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dpiLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="oneToPrefixLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 196</value>
@@ -248,7 +248,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;oneToPrefixLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="mapScaleLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -275,7 +275,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mapScaleLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="scaleTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>192, 193</value>
@@ -296,7 +296,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;scaleTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="labelTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -326,6 +326,37 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pdfScaleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pdfScaleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 17</value>
+  </data>
+  <data name="pdfScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 130</value>
+  </data>
+  <data name="pdfScaleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>When using an PDF file as a map, you must specify the map scale. 
+
+The scale of the map indicates the relationship between the paper map and the real world.
+</value>
+  </data>
+  <data name="&gt;&gt;pdfScaleLabel.Name" xml:space="preserve">
+    <value>pdfScaleLabel</value>
+  </data>
+  <data name="&gt;&gt;pdfScaleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pdfScaleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pdfScaleLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

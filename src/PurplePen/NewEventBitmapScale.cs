@@ -46,6 +46,7 @@ namespace PurplePen
     {
         NewEventWizard containingWizard;
         public float dpi;
+        public MapType mapType;
 
         public NewEventBitmapScale()
         {
@@ -56,7 +57,8 @@ namespace PurplePen
         {
             get {
                 float mapScale = 0;
-                bool result = float.TryParse(dpiTextBox.Text, out dpi) && float.TryParse(scaleTextBox.Text, out mapScale);
+                bool result = (mapType == MapType.PDF || float.TryParse(dpiTextBox.Text, out dpi)) && 
+                              float.TryParse(scaleTextBox.Text, out mapScale);
                 if (result)
                     containingWizard.mapScale = mapScale;
                 return result;
@@ -71,17 +73,27 @@ namespace PurplePen
         private void NewEventBitmapScale_Load(object sender, EventArgs e)
         {
             containingWizard = (NewEventWizard) Parent;
+            mapType = containingWizard.mapType;
 
-            Bitmap bitmap = (Bitmap) Image.FromFile(containingWizard.mapFileName);
+            if (mapType == MapType.Bitmap) {
+                Bitmap bitmap = (Bitmap)Image.FromFile(containingWizard.mapFileName);
 
-            // GIF format doesn't have built-in resolution, so don't default it.
-            if (bitmap.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
-                dpiTextBox.Text = "";
-            else
-                dpiTextBox.Text = bitmap.HorizontalResolution.ToString();
+                // GIF format doesn't have built-in resolution, so don't default it.
+                if (bitmap.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
+                    dpiTextBox.Text = "";
+                else
+                    dpiTextBox.Text = bitmap.HorizontalResolution.ToString();
+
+                pdfScaleLabel.Visible = false;
+                bitmapScaleLabel.Visible = dpiTextBox.Visible = resolutionLabel.Visible = dpiLabel.Visible = true;
+                bitmap.Dispose();
+            }
+            else {
+                pdfScaleLabel.Visible = true;
+                bitmapScaleLabel.Visible = dpiTextBox.Visible = resolutionLabel.Visible = dpiLabel.Visible = false;
+            }
 
             scaleTextBox.Text = "15000";
-            bitmap.Dispose();
         }
     }
 }

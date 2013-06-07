@@ -1930,6 +1930,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("kind", "OCAD");
             else if (mapType == MapType.Bitmap)
                 xmloutput.WriteAttributeString("kind", "bitmap");
+            else if (mapType == MapType.PDF)
+                xmloutput.WriteAttributeString("kind", "PDF");
             else
                 Debug.Fail("Unknown map kind");
 
@@ -2030,6 +2032,7 @@ namespace PurplePen
                             case "none": mapType = MapType.None; break;
                             case "OCAD": mapType = MapType.OCAD; break;
                             case "bitmap": mapType = MapType.Bitmap; break;
+                            case "PDF": mapType = MapType.PDF; break;
                             default: xmlinput.BadXml("Invalid map kind '{0}'", kindString); break;
                         }
 

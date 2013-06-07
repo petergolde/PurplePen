@@ -70,6 +70,7 @@ namespace PurplePen
             this.mapScaleLabel = new System.Windows.Forms.Label();
             this.scaleTextBox = new System.Windows.Forms.TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.pdfScaleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bitmapScaleLabel
@@ -112,10 +113,16 @@ namespace PurplePen
             resources.ApplyResources(this.labelTitle, "labelTitle");
             this.labelTitle.Name = "labelTitle";
             // 
+            // pdfScaleLabel
+            // 
+            resources.ApplyResources(this.pdfScaleLabel, "pdfScaleLabel");
+            this.pdfScaleLabel.Name = "pdfScaleLabel";
+            // 
             // NewEventBitmapScale
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.pdfScaleLabel);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.oneToPrefixLabel);
             this.Controls.Add(this.mapScaleLabel);
@@ -141,5 +148,6 @@ namespace PurplePen
         private System.Windows.Forms.Label mapScaleLabel;
         private System.Windows.Forms.TextBox scaleTextBox;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label pdfScaleLabel;
     }
 }

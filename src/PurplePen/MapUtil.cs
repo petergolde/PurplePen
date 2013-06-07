@@ -55,7 +55,7 @@ namespace PurplePen
             string fileExtension = Path.GetExtension(mapFileName);
 
             if (string.Compare(fileExtension, ".pdf", StringComparison.InvariantCultureIgnoreCase) == 0) {
-                if (ValidatePdf(mapFileName, out dpi, out errorMessageText)) {
+                if (ValidatePdf(mapFileName, out dpi, out errorMessageText) != null) {
                     mapType = MapType.PDF;
                     return true;
                 }
@@ -102,7 +102,7 @@ namespace PurplePen
         private const string ghostscriptUrl = "http://downloads.ghostscript.com/public/gs907w32.exe";
         private const string ghostscriptFileName = "gs907w32.exe";
 
-        public static bool ValidatePdf(string pdfFileName, out float dpi, out string errorMessageText)
+        public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out string errorMessageText)
         {
             IPdfLoadingStatus loadingStatus = new PdfLoadingUI();  // UNDONE: Should this be passed in instead?
 
@@ -126,7 +126,7 @@ namespace PurplePen
             if (!ok || status == PdfMapFile.ConversionStatus.Failure) {
                 errorMessageText = MiscText.PdfConversionFailed;
                 dpi = 0;
-                return false;
+                return null;
             }
 
             // Make sure resulting image file can be read.
@@ -135,13 +135,13 @@ namespace PurplePen
                 dpi = bitmap.HorizontalResolution;
                 bitmap.Dispose();
                 errorMessageText = "";
-                return true;
+                return mapFile;
             }
             catch {
                 // Couldn't read the resulting PNG
                 errorMessageText = string.Format(MiscText.PdfResultNotReadable, mapFile.PngFileName);
                 dpi = 0;
-                return false;
+                return null;
             }
         }
 

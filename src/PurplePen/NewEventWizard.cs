@@ -159,8 +159,8 @@ namespace PurplePen
             else {
                 int nextPage = activePage + 1;
 
-                // Skip the bitmap scale page if the map type is not bitmap.
-                if (pages[nextPage] == bitmapScalePage && mapType != MapType.Bitmap)
+                // Skip the bitmap scale page if the map type is not bitmap or PDF
+                if (pages[nextPage] == bitmapScalePage && mapType != MapType.Bitmap && mapType != MapType.PDF)
                     nextPage += 1;
 
                 ActivatePage(nextPage);
