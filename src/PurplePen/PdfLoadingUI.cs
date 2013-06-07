@@ -24,7 +24,7 @@ namespace PurplePen
         {
             dialog = new PdfConversionInProgress();
             DialogResult result = dialog.ShowDialog();
-            return (dialog.DialogResult != DialogResult.Cancel);
+            return (dialog == null || dialog.DialogResult != DialogResult.Cancel);
         }
 
         // NOTE: This is called on a different thread from the dialog!

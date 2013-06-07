@@ -96,6 +96,7 @@ namespace PurplePen
                 if (gsExe == null) {
                     conversionOutput = MiscText.GhostscriptNotInstalled;
                     status = ConversionStatus.Failure;
+                    return status;
                 }
 
                 string arguments = String.Format(
@@ -120,6 +121,7 @@ namespace PurplePen
                 process.BeginErrorReadLine();
 
                 status = ConversionStatus.Working;
+                pngFileName = cacheFileName;
                 return status;
             }
             catch (Exception e) {

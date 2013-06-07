@@ -116,7 +116,13 @@ namespace PurplePen
                     else if (mapType == MapType.Bitmap) {
                         panelScaleDpi.Visible = true;
                         errorDisplayPanel.Visible = false;
+                        labelDpi.Visible = labelDpi2.Visible = textBoxDpi.Visible = true;
                         textBoxDpi.Text = dpi.ToString();
+                    }
+                    else if (mapType == MapType.PDF) {
+                        panelScaleDpi.Visible = true;
+                        errorDisplayPanel.Visible = false;
+                        labelDpi.Visible = labelDpi2.Visible = textBoxDpi.Visible = false;
                     }
                     else {
                         Debug.Fail("unexpected map type.");
@@ -151,6 +157,10 @@ namespace PurplePen
             else if (mapType == MapType.Bitmap) {
                 float dummy1, dummy2;
                 return (float.TryParse(textBoxDpi.Text, out dummy1) && float.TryParse(textBoxScale.Text, out dummy2));
+            }
+            else if (mapType == MapType.PDF) {
+                float dummy1;
+                return (float.TryParse(textBoxScale.Text, out dummy1));
             }
             else
                 return false;

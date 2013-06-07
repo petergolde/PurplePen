@@ -1750,6 +1750,9 @@ namespace PurplePen
                 dialog.MapScale = controller.MapScale;   // Note: these must be set AFTER the MapFile property
                 dialog.Dpi = controller.MapDpi;
             }
+            else if (controller.MapType == MapType.PDF) {
+                dialog.MapScale = controller.MapScale;
+            }
 
             // Show the dialog.
             DialogResult result = dialog.ShowDialog(this);
