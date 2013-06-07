@@ -616,6 +616,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GPL Ghostscript is not installed.
+        /// </summary>
+        internal static string GhostscriptNotInstalled {
+            get {
+                return ResourceManager.GetString("GhostscriptNotInstalled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help file &apos;{0}&apos; could not be opened..
         /// </summary>
         internal static string HelpFileNotFound {
@@ -807,6 +816,24 @@ namespace PurplePen {
         internal static string PartXOfY {
             get {
                 return ResourceManager.GetString("PartXOfY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPL Ghostscript failed to read PDF file successfully.
+        /// </summary>
+        internal static string PdfConversionFailed {
+            get {
+                return ResourceManager.GetString("PdfConversionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not read result of PDF conversion from file &apos;{0}&apos;.
+        /// </summary>
+        internal static string PdfResultNotReadable {
+            get {
+                return ResourceManager.GetString("PdfResultNotReadable", resourceCulture);
             }
         }
         

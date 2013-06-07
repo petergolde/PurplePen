@@ -104,19 +104,45 @@ namespace PurplePen
 
         public static bool ValidatePdf(string pdfFileName, out float dpi, out string errorMessageText)
         {
-            IPdfLoadingStatus loadingStatus = new PdfLoadingUI();
+            IPdfLoadingStatus loadingStatus = new PdfLoadingUI();  // UNDONE: Should this be passed in instead?
+
             PdfMapFile mapFile = new PdfMapFile(pdfFileName);
 
             if (!mapFile.GhostscriptInstalled) {
                 loadingStatus.DownloadAndInstall(ghostscriptUrl, ghostscriptFileName);
             }
 
-            mapFile.BeginConversion();
+            bool ok = true;
+            PdfMapFile.ConversionStatus status = mapFile.BeginConversion();
+            if (status == PdfMapFile.ConversionStatus.Working) {
+                // Put up a modal dialog until loading is complete.
+                mapFile.ConversionCompleted += delegate { 
+                    loadingStatus.LoadingComplete(mapFile.Status == PdfMapFile.ConversionStatus.Success, mapFile.ConversionOutput);
+                };
+                ok = loadingStatus.ShowLoadingStatus(pdfFileName);
+            }
 
-            // UNDONE
-            errorMessageText = "";
-            dpi = 0;
-            return true;
+            status = mapFile.Status;
+            if (!ok || status == PdfMapFile.ConversionStatus.Failure) {
+                errorMessageText = MiscText.PdfConversionFailed;
+                dpi = 0;
+                return false;
+            }
+
+            // Make sure resulting image file can be read.
+            try {
+                Bitmap bitmap = (Bitmap)Image.FromFile(mapFile.PngFileName);
+                dpi = bitmap.HorizontalResolution;
+                bitmap.Dispose();
+                errorMessageText = "";
+                return true;
+            }
+            catch {
+                // Couldn't read the resulting PNG
+                errorMessageText = string.Format(MiscText.PdfResultNotReadable, mapFile.PngFileName);
+                dpi = 0;
+                return false;
+            }
         }
 
         public static ToolboxIcon CreateToolboxIcon(Bitmap bm) {

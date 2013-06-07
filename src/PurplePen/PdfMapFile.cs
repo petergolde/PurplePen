@@ -94,7 +94,7 @@ namespace PurplePen
 
                 string gsExe = FindGhostscriptExe();
                 if (gsExe == null) {
-                    conversionOutput = "GPL Ghostscript not installed.";
+                    conversionOutput = MiscText.GhostscriptNotInstalled;
                     status = ConversionStatus.Failure;
                 }
 
@@ -107,12 +107,17 @@ namespace PurplePen
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = ProcessWindowStyle.Hidden;
                 startInfo.RedirectStandardError = true;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.UseShellExecute = false;
                 process = new Process();
                 process.StartInfo = startInfo;
                 process.EnableRaisingEvents = true;
-                process.ErrorDataReceived += ProcessErrorDataReceived;
+                process.ErrorDataReceived += ProcessDataReceived;
+                process.OutputDataReceived += ProcessDataReceived;
                 process.Exited += ProcessExited;
                 process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
 
                 status = ConversionStatus.Working;
                 return status;
@@ -124,7 +129,7 @@ namespace PurplePen
             }
         }
 
-        private void ProcessErrorDataReceived(object sender, DataReceivedEventArgs e)
+        private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
         {
             stderrOutput.Append(e.Data);
             stderrOutput.Append("\r\n");

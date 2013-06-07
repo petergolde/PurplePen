@@ -404,6 +404,12 @@
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Pair.cs" />
+    <Compile Include="PdfConversionInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfConversionInProgress.Designer.cs">
+      <DependentUpon>PdfConversionInProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="PdfLoadingUI.cs" />
     <Compile Include="PdfMapFile.cs" />
     <Compile Include="PrintCourses.cs">
@@ -1770,6 +1776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OverwritingOcadFilesDialog.sv.resx">
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfConversionInProgress.resx">
+      <DependentUpon>PdfConversionInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintCourses.bg.resx">
       <DependentUpon>PrintCourses.cs</DependentUpon>
