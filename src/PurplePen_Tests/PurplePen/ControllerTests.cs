@@ -1994,6 +1994,27 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create7\\Course 2_expected.txt") });
         }
 
+        [TestMethod]
+        public void OcadCreation8()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create8");
+            settings.CourseIds = new Id<Course>[1] { Id<Course>.None };
+            settings.version = 11;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\Madrona Permanent11.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create8\\All Controls.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create8\\All Controls_expected.txt") });
+        }
+
         // Test overwritting files
         [TestMethod]
         public void OverwritingOcadFiles()

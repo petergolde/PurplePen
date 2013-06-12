@@ -174,6 +174,15 @@ namespace PurplePen
             }
         }
 
+        // Get the map real world coordinates (default if the map isn't OCAD).
+        public RealWorldCoords MapRealWorldCoords
+        {
+            get
+            {
+                return MapDisplay.RealWorldCoords;
+            }
+        }
+
         // Get the map dpi (only if map type is bitmap.
         public float MapDpi
         {

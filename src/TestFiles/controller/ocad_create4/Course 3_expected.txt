@@ -20,7 +20,7 @@ Setup structure:
   Offset=(0.00,0.00), rGridDist=10
   WorkMode=0, LineMode=0, EditMode=0
   ActSym=0, MapScale=10000
-  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=0
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=500
   GpsAngle=0.0000, nGpsAdjust=0
   DraftScaleX=10000, DraftScaleY=10000
   TempOffset=(0.00,0.00), TemplateFileName=[[TESTDIR]]\controller\Marymoor.ocd

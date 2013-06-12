@@ -80,6 +80,11 @@ namespace PurplePen
                     // OCAD 6 doesn't support another OCAD file as a template.
                     if (creationSettings.version > 6)
                         map.Template = new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true);
+
+                    // Use same real world coordinates as underlying map (nicer, but also works around bug in OCAD 11
+                    // where background maps with real world coordinates aren't displayed if the map map doesn't have same real
+                    // world coordinates).
+                    map.RealWorldCoords = controller.MapRealWorldCoords;
                 }
                 else if (controller.MapType == MapType.Bitmap) {
                     // Set bitmap as template.
