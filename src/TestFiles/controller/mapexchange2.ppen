@@ -2,7 +2,7 @@
   <event id="1">
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="OCAD" scale="10000" ignore-missing-fonts="false">Marymoor.ocd</map>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="true">Marymoor.ocd</map>
     <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
@@ -437,5 +437,12 @@
     <location x="35.8510056" y="57.8114357" />
     <location x="34.263504" y="75.27393" />
     <courses all="true" />
+  </special-object>
+  <special-object id="5" kind="descriptions">
+    <location x="163.315689" y="19.0615425" />
+    <location x="169.108139" y="19.0615425" />
+    <courses>
+      <course course="6" />
+    </courses>
   </special-object>
 </course-scribe-event>

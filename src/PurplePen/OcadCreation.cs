@@ -98,19 +98,24 @@ namespace PurplePen
 
         // Get the full output file name. Uses the name of the course, removes bad characters,
         // checks for duplication of the map file name. Puts in the directory given in the creationSettings.
-        string CreateOutputFileName(Id<Course> courseId)
+        string CreateOutputFileName(CourseDesignator courseDesignator)
         {
             string basename;
 
             // Get the course name.
-            if (courseId.IsNone)
+            if (courseDesignator.IsAllControls)
                 basename = MiscText.AllControls;
             else
-                basename = eventDB.GetCourse(courseId).name;
+                basename = eventDB.GetCourse(courseDesignator.CourseId).name;
 
             // Add prefix, if requested.
             if (! string.IsNullOrEmpty(creationSettings.filePrefix)) 
                 basename = creationSettings.filePrefix + "-" + basename;
+
+            // Add part.
+            if (!courseDesignator.AllParts) {
+                basename = basename + "-" + (courseDesignator.Part + 1).ToString();
+            }
 
             // Remove bad characters.
             basename = Util.FilterInvalidPathChars(basename);
@@ -120,16 +125,32 @@ namespace PurplePen
         }
 
         // Create a single OCAD file. 
-        void CreateFile(Id<Course> courseId)
+        void CreateFile(CourseDesignator courseDesignator)
         {
             // Get the file name of the output.
-            string outputFilename = CreateOutputFileName(courseId);
+            string outputFilename = CreateOutputFileName(courseDesignator);
 
             // Create the course view.
-            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, new CourseDesignator(courseId));
+            CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, courseDesignator);
 
             // Write the OCAD file.
             ExportMap(courseView, outputFilename);
+        }
+
+        // Enumerator all course designators to create.
+        private IEnumerable<CourseDesignator> EnumerateCourseDesignators()
+        {
+            foreach (Id<Course> courseId in creationSettings.CourseIds) {
+                if (courseId.IsNotNone && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
+                    // Create files for each part.
+                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
+                        yield return new CourseDesignator(courseId, part);
+                    }
+                }
+                else {
+                    yield return new CourseDesignator(courseId);
+                }
+            }
         }
 
         // Create all the OCAD files according to their creation settings. Throws exception on I/O error.
@@ -137,8 +158,8 @@ namespace PurplePen
         // set to the directory to use.
         public void CreateOcadFiles()
         {
-            foreach (Id<Course> courseId in creationSettings.CourseIds) {
-                CreateFile(courseId);
+            foreach (CourseDesignator courseDesignator in EnumerateCourseDesignators()) {
+                CreateFile(courseDesignator);
             }
         }
 
@@ -147,8 +168,8 @@ namespace PurplePen
         {
             List<string> overwrittenFiles = new List<string>();
 
-            foreach (Id<Course> courseId in creationSettings.CourseIds) {
-                string outputFilename = CreateOutputFileName(courseId);
+            foreach (CourseDesignator courseDesignator in EnumerateCourseDesignators()) {
+                string outputFilename = CreateOutputFileName(courseDesignator);
                 if (File.Exists(outputFilename))
                     overwrittenFiles.Add(outputFilename);
             }

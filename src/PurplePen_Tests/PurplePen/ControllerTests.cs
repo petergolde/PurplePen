@@ -2015,6 +2015,27 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create8\\All Controls_expected.txt") });
         }
 
+        [TestMethod]
+        public void OcadCreation9()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create9");
+            settings.CourseIds = new Id<Course>[2] { CourseId(5), CourseId(6) };
+            settings.version = 9;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\mapexchange2.ppen"), settings, new CourseAppearance(),
+                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4.ocd") },
+                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4-expected.txt") });
+        }
+
         // Test overwritting files
         [TestMethod]
         public void OverwritingOcadFiles()
