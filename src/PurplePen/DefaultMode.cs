@@ -367,13 +367,14 @@ namespace PurplePen
         public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
         {
             CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseView courseView = selectionMgr.ActiveCourseView;
             CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
 
             if (touchedObject == null)
                 touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
 
             if (touchedObject != null) {
-                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject);
+                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
                 ConvertTextPartsToToolTip(textParts, out tipText, out tipTitle);
                 return true;
             }
