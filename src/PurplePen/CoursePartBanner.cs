@@ -39,6 +39,11 @@ namespace PurplePen
             }
         }
 
+        public void Update()
+        {
+            UpdateNumberOfParts();
+        }
+
         // Return selected part, or 0 for all parts.
         public int SelectedPart
         {

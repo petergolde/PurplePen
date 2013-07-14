@@ -2059,6 +2059,7 @@ namespace PurplePen
 
                 ReloadMainFrameStrings();
                 UpdateLabelsAndScrollBars();
+                coursePartBanner.Update();
                 Application_Idle(this, EventArgs.Empty);     // force update of everything.
                 --changeNum;
 
@@ -2083,6 +2084,10 @@ namespace PurplePen
             ComponentResourceManager resources = new ComponentResourceManager(typeof(MainFrame));
 
             UpdateComponentText(resources, this, "$this");
+
+            resources = new ComponentResourceManager(typeof(CoursePartBanner));
+
+            UpdateComponentText(resources, this.coursePartBanner, "$this");
         }
 
         private void UpdateComponentText(ComponentResourceManager resources, object control, string componentName)

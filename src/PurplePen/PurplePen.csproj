@@ -961,7 +961,37 @@
     <EmbeddedResource Include="CourseLoad.sv.resx">
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.bg.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.de.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.es.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.et.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.fi.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.fr.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.nb-NO.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.nn-NO.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CoursePartBanner.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.ro.resx">
+      <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartBanner.sv.resx">
       <DependentUpon>CoursePartBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.bg.resx">
