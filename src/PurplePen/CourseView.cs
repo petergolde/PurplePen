@@ -169,6 +169,20 @@ namespace PurplePen
             get { return courseName; }
         }
 
+        // Same as CourseName, but add "-1", "-2", etc. for a part of a multi-part course.
+        public string CourseNameWithPart
+        {
+            get
+            {
+                if (!courseDesignator.IsAllControls && !courseDesignator.AllParts) {
+                    return string.Format("{0}-{1}", courseName, courseDesignator.Part + 1);
+                }
+                else {
+                    return courseName;
+                }
+            }
+        }
+
         // If multi-part course, length of all parts
         public float TotalLength {
             get { 

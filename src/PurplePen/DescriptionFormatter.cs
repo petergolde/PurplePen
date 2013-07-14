@@ -174,7 +174,7 @@ namespace PurplePen
 
             line.kind = DescriptionLineKind.Header3Box;
             line.boxes = new object[3];
-            line.boxes[0] = courseView.CourseName;
+            line.boxes[0] = courseView.CourseNameWithPart;
             line.boxes[1] = string.Format("{0:0.0} km", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0);
             if (courseView.TotalClimb < 0) {
                 line.boxes[2] = null;
@@ -209,7 +209,7 @@ namespace PurplePen
 
             line.kind = DescriptionLineKind.Header2Box;
             line.boxes = new object[2];
-            line.boxes[0] = courseView.CourseName;
+            line.boxes[0] = courseView.CourseNameWithPart;
 
             // If there is scoring, display the total score, else display the total number of controls (e.g.,
             // for a score course with no points for each control.

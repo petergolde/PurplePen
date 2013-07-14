@@ -1114,7 +1114,7 @@ Object Sym=81000.2 Otp=5
   Ang=0
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
-  Text=Course 5
+  Text=Course 5-3
     (163.61,2.48) (180.98,2.48) (180.98,6.90) (163.61,6.90) 
 
 Index entry Sym=81000.2
