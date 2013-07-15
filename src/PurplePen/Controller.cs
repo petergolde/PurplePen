@@ -578,9 +578,12 @@ namespace PurplePen
         }
 
         // Get the current description to show in the description pane.
-        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind)
+        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind, out bool isCoursePart)
         {
             kind = selectionMgr.ActiveCourseView.Kind;
+            CourseDesignator courseDesignator = selectionMgr.ActiveCourseView.CourseDesignator;
+            isCoursePart = courseDesignator.IsNotAllControls && !courseDesignator.AllParts;
+
             return selectionMgr.ActiveDescription;
         }
 

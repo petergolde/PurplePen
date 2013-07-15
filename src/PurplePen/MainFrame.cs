@@ -353,10 +353,12 @@ namespace PurplePen
         void UpdateDescription()
         {
             CourseView.CourseViewKind kind;
+            bool isCoursePart;
 
-            descriptionControl.Description = controller.GetDescription(out kind);
+            descriptionControl.Description = controller.GetDescription(out kind, out isCoursePart);
             descriptionControl.CourseKind = kind;
             descriptionControl.ScoreColumn = controller.GetScoreColumn();
+            descriptionControl.IsCoursePart = isCoursePart;
             descriptionControl.LangId = controller.GetDescriptionLanguage();
         }
 
@@ -2059,7 +2061,7 @@ namespace PurplePen
 
                 ReloadMainFrameStrings();
                 UpdateLabelsAndScrollBars();
-                coursePartBanner.Update();
+                coursePartBanner.UpdateDropdown();
                 Application_Idle(this, EventArgs.Empty);     // force update of everything.
                 --changeNum;
 

@@ -63,6 +63,7 @@ namespace PurplePen
         SymbolDB symbolDB;
         DescriptionRenderer renderer;
         CourseView.CourseViewKind courseViewKind;
+        bool isCoursePart;
         SymbolPopup popup;
         int scoreColumn;
 
@@ -309,6 +310,20 @@ namespace PurplePen
             }
         }
 
+        public bool IsCoursePart {
+            get
+            {
+                return isCoursePart;
+            }
+
+            set
+            {
+                isCoursePart = value;
+                // Note that the course kind affects the click behavior, but not the rendering,
+                // so we don't need to invalidate the panel here.
+            }
+        }
+
         // lColumn that displays the score, or -1 if none.
         [System.ComponentModel.DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), System.ComponentModel.Browsable(false)]
         public int ScoreColumn {
@@ -488,7 +503,12 @@ namespace PurplePen
                     if (hitTest.box == 0 && courseViewKind != CourseView.CourseViewKind.AllControls) {
                         // the course name. Can't change the "All Controls" name.
                         popupKind = ChangeKind.CourseName;
-                        popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, (string) renderer.Description[hitTest.firstLine].boxes[0], 6, descriptionPanel, location);
+                        string courseName = (string) renderer.Description[hitTest.firstLine].boxes[0];
+                        if (isCoursePart && courseName.Length > 2) {
+                            // Remove the "-3" etc with the part number.
+                            courseName = courseName.Substring(0, courseName.LastIndexOf('-'));
+                        }
+                        popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, courseName, 6, descriptionPanel, location);
                     }
                     else if (hitTest.box == 2) {
                         // the climb

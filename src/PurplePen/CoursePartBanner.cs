@@ -39,7 +39,7 @@ namespace PurplePen
             }
         }
 
-        public void Update()
+        public void UpdateDropdown()
         {
             UpdateNumberOfParts();
         }
