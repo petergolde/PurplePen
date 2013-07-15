@@ -912,7 +912,8 @@ namespace PurplePen
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             // We can delete any selected control or a special or a text line
-            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.Special || selection.SelectionKind == SelectionMgr.SelectionKind.TextLine)
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.Special || 
+                selection.SelectionKind == SelectionMgr.SelectionKind.TextLine || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl)
                 return true;
 
             return false;
@@ -953,6 +954,13 @@ namespace PurplePen
                     ChangeEvent.ChangeTextLine(eventDB, selection.SelectedCourseControl, null, (textLineKind == DescriptionLine.TextLineKind.BeforeCourseControl));
 
                 undoMgr.EndCommand(811);
+                return true;
+            }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+                // Remove the map exchange at this course control.
+                undoMgr.BeginCommand(812, CommandNameText.DeleteMapExchangeAtControl);
+                ChangeEvent.ChangeControlExchange(eventDB, selection.SelectedCourseControl, false);
+                undoMgr.EndCommand(812);
                 return true;
             }
 

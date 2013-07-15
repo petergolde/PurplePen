@@ -1143,6 +1143,29 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Assert.IsTrue(eventDB.IsControlPresent(ControlId(23)));
         }
 
+        [TestMethod]
+        public void DeleteMapExchangeFromCourseControl()
+        {
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
+            Assert.IsTrue(success);
+
+            controller.SelectTab(6);
+            controller.SelectDescriptionLine(18);
+
+            ui.returnQuestion = DialogResult.No;
+            success = controller.DeleteSelection();
+            Assert.IsTrue(success);
+
+            EventDB eventDB = controller.GetEventDB();
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(615)));
+            Assert.IsFalse(eventDB.GetCourseControl(CourseControlId(615)).exchange);
+
+            controller.Undo();
+
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(615)));
+            Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(615)).exchange);
+        }
+
         // Is there an all controls layer?
         internal static bool IsAllControlsLayer(CourseLayout courseLayout)
         {

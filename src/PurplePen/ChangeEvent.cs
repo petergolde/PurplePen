@@ -186,7 +186,7 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, controlPoint);
         }
 
-        // Change the number location for a course-control. If customLocation is false, puts the number location as automaticLocation
+        // Change if a course-control has a map exchange. 
         public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
         {
             CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
