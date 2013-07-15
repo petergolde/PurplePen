@@ -197,24 +197,36 @@ namespace PurplePen
             if (!this.Visible)
                 owner = null;
 
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(owner, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
         // Show an warning message, with no choice.
         public void WarningMessage(string message)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
         }
 
         // Show an informational message, with no choice.
         public void InfoMessage(string message)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         // Ask a yes-no question.
         public bool YesNoQuestion(string message, bool yesDefault)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             DialogResult result = MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, yesDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
             return result == DialogResult.Yes;
         }
@@ -222,6 +234,9 @@ namespace PurplePen
         // Ask a yes-no-cancel question.
         public DialogResult YesNoCancelQuestion(string message, bool yesDefault)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             return MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, yesDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
         }
 

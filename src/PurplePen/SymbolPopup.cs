@@ -134,6 +134,14 @@ namespace PurplePen
             dropdown.Show(control, pt);
         }
 
+        public void ClosePopup()
+        {
+            if (dropdown != null) {
+                dropdown.Close();
+                DisposeCurrentDropdown();
+            }
+        }
+
         // If the current dropdown still exists, dispose it and null out variables.
         private void DisposeCurrentDropdown()
         {

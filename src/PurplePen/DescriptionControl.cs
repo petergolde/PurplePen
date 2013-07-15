@@ -266,6 +266,12 @@ namespace PurplePen
             }
         }
 
+        public void CloseAnyPopup()
+        {
+            if (popup != null)
+                popup.ClosePopup();
+        }
+
         // Invalidate any lines that have changed between two descriptions.
         void InvalidateChangedLines(DescriptionLine[] old, DescriptionLine[] current)
         {
