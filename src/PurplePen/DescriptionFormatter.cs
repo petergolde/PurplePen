@@ -503,9 +503,9 @@ namespace PurplePen
             if (leg.flagging == FlaggingKind.None || leg.flagging == FlaggingKind.End)
                 return false;
 
-            // Flagged legs that start at a crossing point are not shown. Also, flagged legs that end at the finish or a map exchange are 
+            // Flagged legs that end at the finish or a map exchange are 
             // included in the finish control.
-            if (from.kind == ControlPointKind.CrossingPoint || to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
+            if (to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
                 return false;
 
             return true;

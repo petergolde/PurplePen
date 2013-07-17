@@ -326,6 +326,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SpecialLegsCrossingFormatter()
+        {
+            TestCourseFormatter("descformatter\\speciallegs.coursescribe", CourseId(2), false,
+@"      | SpecialLegs                                   |   [SpecialLegs]
+      |Crossings        |2.5 km           |           |   [Length 2.5 km]
+(  1) |start|     |     |     |     |     |     |     |   [Start: ]
+(  5) |    1|   34|     |     |     |     |     |     |   []
+(  7) |                 13.3:                         |   [Mandatory crossing point]
+(  7) |                 13.2: 410 m                   |   [Follow tapes 410 m between controls]
+(  3) |    2|   32|     |     |     |     |     |     |   []
+(  2) |    3|   31|     |     |     |     |     |     |   []
+(  8) |                 13.3:                         |   [Mandatory crossing point]
+(  8) |                 13.1: 140 m                   |   [Follow tapes 140 m away from control]
+(  9) |    4|   35|     |     |     |     |     |     |   []
+(  6) |                 14.3: 250 m                   |   [Navigate 250 m to finish]
+");
+        }
+
+        [TestMethod]
         public void ClearTextAndSymbols()
         {
             UndoMgr undomgr = new UndoMgr(5);

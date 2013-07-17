@@ -1,10 +1,15 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>SpecialLegs</title>
-    <map kind="none" scale="10000"></map>
+    <map kind="none" scale="10000" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
   </event>
   <control id="1" kind="start">
-    <location x="74.1" y="14.0" />
+    <location x="74.1" y="14" />
   </control>
   <control id="2" kind="normal">
     <code>31</code>
@@ -23,12 +28,31 @@
     <location x="67.7" y="47.2" />
   </control>
   <control id="6" kind="finish">
-    <location x="96.0" y="17.5" />
+    <location x="96" y="17.5" />
     <description box="all" iof-2004-ref="14.3" />
   </control>
-  <course id="1" kind="normal">
+  <control id="7" kind="crossing-point" orientation="0">
+    <location x="23.9447727" y="44.97914" />
+    <description box="all" iof-2004-ref="13.3" />
+  </control>
+  <control id="8" kind="crossing-point" orientation="0">
+    <location x="69.71769" y="-22.225029" />
+    <description box="all" iof-2004-ref="13.3" />
+  </control>
+  <control id="9" kind="normal">
+    <code>35</code>
+    <location x="96.17602" y="-7.93752766" />
+  </control>
+  <course id="1" kind="normal" order="1">
     <name>Leggy</name>
+    <labels label-kind="sequence" />
     <first course-control="1" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Crossings</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course-control id="1" control="1">
@@ -47,26 +71,50 @@
     <next course-control="6" />
   </course-control>
   <course-control id="6" control="6" />
-
-	<!-- fully flagged leg 2 to 3 -->
-	<leg id="2" start-control="2" end-control="3">
-		<flagging kind="all" />
-	</leg>
-
-	<!-- partilly flagged leg 3 to 4 -->
-	<leg id="3" start-control="3" end-control="4">
-		<flagging kind="beginning-part" x="12" y="20" />
-		<bends>
-			<location x="12" y="20" />
-		</bends>
-	</leg>
-
-	<!-- bends 4 to 5 -->
-	<leg id="4" start-control="4" end-control="5">
-		<bends>
-			<location x="35" y="41" />
-			<location x="50" y="30" />
-		</bends>
-	</leg>
-
+  <course-control id="7" control="1">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="8" control="6" />
+  <course-control id="9" control="5">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="7">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="3">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="12" control="2">
+    <next course-control="13" />
+  </course-control>
+  <course-control id="13" control="8">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="14" control="9">
+    <next course-control="8" />
+  </course-control>
+  <leg id="2" start-control="2" end-control="3">
+    <flagging kind="all" />
+  </leg>
+  <leg id="3" start-control="3" end-control="4">
+    <flagging kind="beginning-part" x="12" y="20" />
+    <bends>
+      <location x="12" y="20" />
+    </bends>
+  </leg>
+  <leg id="4" start-control="4" end-control="5">
+    <bends>
+      <location x="35" y="41" />
+      <location x="50" y="30" />
+    </bends>
+  </leg>
+  <leg id="5" start-control="7" end-control="3">
+    <flagging kind="all" />
+  </leg>
+  <leg id="6" start-control="8" end-control="9">
+    <flagging kind="beginning-part" x="82.94685" y="-17.9916954" />
+    <bends>
+      <location x="82.94685" y="-17.9916954" />
+    </bends>
+  </leg>
 </course-scribe-event>
