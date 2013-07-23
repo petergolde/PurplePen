@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.0\n"
+"Project-Id-Version: Purple Pen 2.0.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-06-03 13:26-07:00\n"
+"POT-Creation-Date: 2013-07-23 12:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -366,6 +366,10 @@ msgstr "Navn på arrangement"
 msgid "Course Name"
 msgstr "Løypenavn"
 
+#: ChangeText.resx, coursePartMenuItem.Text
+msgid "Course Part"
+msgstr ""
+
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
 msgstr "Løypelende"
@@ -583,6 +587,10 @@ msgstr "Endre løypens utseende"
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
 msgstr "Legg til kartbytte"
+
+#: CommandNameText.resx, DeleteMapExchangeAtControl
+msgid "Delete Map Exchange"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
