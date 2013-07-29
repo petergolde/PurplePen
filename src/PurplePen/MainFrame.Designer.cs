@@ -210,6 +210,7 @@ namespace PurplePen
             this.dumpOCADFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontMetricsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionLanguageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTranslatedTextsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -254,7 +255,6 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.crashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -322,6 +322,7 @@ namespace PurplePen
             this.descriptionControl.CourseKind = PurplePen.CourseView.CourseViewKind.Normal;
             this.descriptionControl.CustomSymbolText = null;
             this.descriptionControl.Description = null;
+            this.descriptionControl.IsCoursePart = false;
             this.descriptionControl.Name = "descriptionControl";
             this.descriptionControl.SymbolDB = null;
             this.descriptionControl.Change += new PurplePen.DescriptionControl.DescriptionChangedHandler(this.descriptionControl_Change);
@@ -369,10 +370,12 @@ namespace PurplePen
             // 
             this.coursePartBanner.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.coursePartBanner, "coursePartBanner");
+            this.coursePartBanner.EnableProperties = true;
             this.coursePartBanner.Name = "coursePartBanner";
             this.coursePartBanner.NumberOfParts = 1;
             this.coursePartBanner.SelectedPart = -1;
             this.coursePartBanner.SelectedPartChanged += new System.EventHandler(this.coursePartBanner_SelectedPartChanged);
+            this.coursePartBanner.PropertiesClicked += new System.EventHandler(this.coursePartBanner_PropertiesClicked);
             // 
             // openFileDialog
             // 
@@ -1325,6 +1328,12 @@ namespace PurplePen
             resources.ApplyResources(this.fontMetricsToolStripMenuItem, "fontMetricsToolStripMenuItem");
             this.fontMetricsToolStripMenuItem.Click += new System.EventHandler(this.fontMetricsToolStripMenuItem_Click);
             // 
+            // crashToolStripMenuItem
+            // 
+            this.crashToolStripMenuItem.Name = "crashToolStripMenuItem";
+            resources.ApplyResources(this.crashToolStripMenuItem, "crashToolStripMenuItem");
+            this.crashToolStripMenuItem.Click += new System.EventHandler(this.crashToolStripMenuItem_Click);
+            // 
             // translateMenu
             // 
             this.translateMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1634,12 +1643,6 @@ namespace PurplePen
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
-            // 
-            // crashToolStripMenuItem
-            // 
-            this.crashToolStripMenuItem.Name = "crashToolStripMenuItem";
-            resources.ApplyResources(this.crashToolStripMenuItem, "crashToolStripMenuItem");
-            this.crashToolStripMenuItem.Click += new System.EventHandler(this.crashToolStripMenuItem_Click);
             // 
             // MainFrame
             // 

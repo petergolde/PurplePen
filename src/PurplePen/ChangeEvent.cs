@@ -387,6 +387,17 @@ namespace PurplePen
             }
         }
 
+        public static void ChangePartOptions(EventDB eventDB, CourseDesignator courseDesignator, PartOptions partOptions)
+        {
+            Debug.Assert(courseDesignator.IsNotAllControls);
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+
+            course = (Course)course.Clone();
+            course.partOptions[courseDesignator.Part] = partOptions.Clone();
+            eventDB.ReplaceCourse(courseDesignator.CourseId, course);
+        }
+
         // Change the attributes of a course.
         public static void ChangeCourseProperties(EventDB eventDB, Id<Course> courseId, CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {

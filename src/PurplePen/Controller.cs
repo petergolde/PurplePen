@@ -646,6 +646,28 @@ namespace PurplePen
             }
         }
 
+        public PartOptions ActivePartOptions
+        {
+            get
+            {
+                CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+                if (activeCourseDesignator.IsAllControls)
+                    return null;
+                else
+                    return QueryEvent.GetPartOptions(eventDB, activeCourseDesignator);
+            }
+        }
+
+        public void ChangeActivePartOptions(PartOptions partOptions)
+        {
+            CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (activeCourseDesignator.IsNotAllControls) {
+                undoMgr.BeginCommand(5107, CommandNameText.ChangePartProperties);
+                ChangeEvent.ChangePartOptions(eventDB, activeCourseDesignator, partOptions);
+                undoMgr.EndCommand(5107);
+            }
+        }
+
         public void SelectPart(int newPart)
         {
             if (newPart == -1)

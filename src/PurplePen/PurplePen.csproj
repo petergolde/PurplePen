@@ -181,6 +181,12 @@
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseObject.cs" />
+    <Compile Include="CoursePartProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoursePartProperties.Designer.cs">
+      <DependentUpon>CoursePartProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoursePrinting.cs" />
     <Compile Include="CoursePartBanner.cs">
       <SubType>UserControl</SubType>
@@ -993,6 +999,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoursePartBanner.sv.resx">
       <DependentUpon>CoursePartBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoursePartProperties.resx">
+      <DependentUpon>CoursePartProperties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.bg.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>

@@ -311,6 +311,9 @@
     <labels label-kind="sequence" />
     <first course-control="601" />
     <options print-scale="10000" description-kind="symbols" />
+    <part-options part="1" show-finish="false" />
+    <part-options part="2" show-finish="true" />
+    <part-options part="3" show-finish="false" />
   </course>
   <course-control id="101" control="1">
     <next course-control="102" />

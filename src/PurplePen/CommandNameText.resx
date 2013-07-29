@@ -276,4 +276,7 @@
   <data name="DeleteMapExchangeAtControl" xml:space="preserve">
     <value>Delete Map Exchange</value>
   </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Change Course Part Properties</value>
+  </data>
 </root>

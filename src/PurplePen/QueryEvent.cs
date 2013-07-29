@@ -887,6 +887,28 @@ namespace PurplePen
                 return printArea;
         }
 
+        // Get the part options for a specific course part. Returns null for all controls.
+        public static PartOptions GetPartOptions(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return null;
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+            PartOptions partOptions;
+
+            if (!course.partOptions.TryGetValue(courseDesignator.Part, out partOptions)) {
+                partOptions = PartOptions.Default;
+            }
+
+            // Show Finish is always true for the last part of the course.
+            if (courseDesignator.Part == QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1) {
+                partOptions = partOptions.Clone();
+                partOptions.ShowFinish = true;
+            }
+
+            return partOptions;
+        }
+
         // Gets the custom symbol text/key dictionary. Makes a copy of them, so that changes don't cause weird effects.
         public static void GetCustomSymbolText(EventDB eventDB, out Dictionary<string, List<SymbolText>> customSymbolText, out Dictionary<string, bool> customSymbolKey)
         {

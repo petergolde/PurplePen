@@ -1166,6 +1166,29 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GetPartOptions()
+        {
+            Setup("queryEvent\\mapexchange1.ppen");
+
+            PartOptions result;
+
+            result = QueryEvent.GetPartOptions(eventDB, Designator(2));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 0));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 1));
+            Assert.AreEqual(false, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 2));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 3));
+            Assert.AreEqual(true, result.ShowFinish);
+        }
+
+        [TestMethod]
         public void GetControlLoad()
         {
             int load;

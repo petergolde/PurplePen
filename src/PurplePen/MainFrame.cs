@@ -346,8 +346,16 @@ namespace PurplePen
             else {
                 coursePartBanner.NumberOfParts = controller.NumberOfParts;
                 coursePartBanner.SelectedPart = controller.CurrentPart;
+                UpdatePartBannerProperties();
                 SetBannerVisibility(true);
             }
+        }
+
+        // Update the properties button in the part banner.
+        void UpdatePartBannerProperties()
+        {
+            // Don't enable properties for all parts.
+            coursePartBanner.EnableProperties = (controller.CurrentPart >= 0);
         }
 
         void SetBannerVisibility(bool bannerVisible)
@@ -745,6 +753,23 @@ namespace PurplePen
         private void coursePartBanner_SelectedPartChanged(object sender, EventArgs e)
         {
             controller.SelectPart(coursePartBanner.SelectedPart);
+            UpdatePartBannerProperties();
+        }
+
+        private void coursePartBanner_PropertiesClicked(object sender, EventArgs e)
+        {
+            int currentPart = controller.CurrentPart;
+            int numberOfParts = controller.NumberOfParts;
+
+            if (currentPart >= 0 && numberOfParts >= 0) {
+                CoursePartProperties coursePartOptionsDialog = new CoursePartProperties();
+                coursePartOptionsDialog.PartOptions = controller.ActivePartOptions;
+                coursePartOptionsDialog.ShowFinishCircleEnabled = (currentPart != numberOfParts - 1);
+
+                if (coursePartOptionsDialog.ShowDialog(this) == DialogResult.OK) {
+                    controller.ChangeActivePartOptions(coursePartOptionsDialog.PartOptions);
+                }
+            }
         }
 
         private void symbolBrowserMenu_Click(object sender, EventArgs e)

@@ -2692,6 +2692,45 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangePartOptions()
+        {
+            Setup("changeevent\\mapexchange1.ppen");
+
+            undomgr.BeginCommand(9152, "Change part options");
+            ChangeEvent.ChangePartOptions(eventDB, new CourseDesignator(CourseId(6), 1), new PartOptions() { ShowFinish = true });
+            ChangeEvent.ChangePartOptions(eventDB, new CourseDesignator(CourseId(6), 0), new PartOptions() { ShowFinish = false });
+            undomgr.EndCommand(9152);
+
+            PartOptions result;
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 0));
+            Assert.AreEqual(false, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 1));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 2));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 3));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            undomgr.Undo();
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 0));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 1));
+            Assert.AreEqual(false, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 2));
+            Assert.AreEqual(true, result.ShowFinish);
+
+            result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 3));
+            Assert.AreEqual(true, result.ShowFinish);
+
+        }
+
+        [TestMethod]
         public void ChangeAllControlsProperties()
         {
             Setup("changeevent\\sampleevent12.ppen");
