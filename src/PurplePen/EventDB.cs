@@ -602,7 +602,7 @@ namespace PurplePen
 
         // Default for parts that don't have a part options set.
         public static PartOptions Default = new PartOptions() {
-            ShowFinish = true
+            ShowFinish = false
         };
 
         public override bool Equals(object obj)

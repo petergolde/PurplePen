@@ -1173,10 +1173,10 @@ namespace PurplePen.Tests
             PartOptions result;
 
             result = QueryEvent.GetPartOptions(eventDB, Designator(2));
-            Assert.AreEqual(true, result.ShowFinish);
+            Assert.AreEqual(false, result.ShowFinish);
 
             result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 0));
-            Assert.AreEqual(true, result.ShowFinish);
+            Assert.AreEqual(false, result.ShowFinish);
 
             result = QueryEvent.GetPartOptions(eventDB, new CourseDesignator(CourseId(6), 1));
             Assert.AreEqual(false, result.ShowFinish);

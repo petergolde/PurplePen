@@ -81,6 +81,10 @@ namespace PurplePen.Tests
             for (int i = 0; i < courseView.DescriptionViews.Count; ++i) {
                 writer.WriteLine("Description {0} ({1})", courseView.DescriptionViews[i].SpecialId, courseView.DescriptionViews[i].CourseDesignator);
             }
+
+            for (int i = 0; i < courseView.ExtraCourseControls.Count; ++i) {
+                writer.WriteLine("Extra course control {0}", courseView.ExtraCourseControls[i].id);
+            }
         }
 
         [TestMethod]
@@ -539,6 +543,7 @@ Total Length=5002.36  Part Length=401.2206  Total Climb=-1  ScoreColumn=-1  Tota
  0: [13] Ids: 43,615
     Legs: (Next:1,Id:2,length:401.2206)  
  1: [14] Ids: 54,616
+Extra course control 620
 ";
             Assert.AreEqual(expected, actual);
 
