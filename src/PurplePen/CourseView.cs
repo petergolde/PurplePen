@@ -89,6 +89,8 @@ namespace PurplePen
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
         private readonly List<DescriptionView> descriptionViews = new List<DescriptionView>();
+        // extra course controls not part of the list of control views. (i.e., finish on first part of multi-part).
+        private readonly List<Id<CourseControl>> extraCourseControls = new List<Id<CourseControl>>();
 
         private int scoreColumn;                // column to put score into.
 
@@ -118,6 +120,11 @@ namespace PurplePen
         public List<DescriptionView> DescriptionViews
         {
             get { return descriptionViews; }
+        }
+
+        public List<Id<CourseControl>> ExtraCourseControls
+        {
+            get { return extraCourseControls; }
         }
 
         public EventDB EventDB {
@@ -634,6 +641,16 @@ namespace PurplePen
                 if (courseControlId == lastCourseControl)
                     break;
                 courseControlId = courseControl.nextCourseControl;
+            }
+
+            // If this is a part that should also have the finish on it, and it isn't the last part, then 
+            // add the finish.
+            if (courseDesignator.IsNotAllControls && !courseDesignator.AllParts && 
+                courseDesignator.Part != QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1 &&
+                QueryEvent.GetPartOptions(eventDB, courseDesignator).ShowFinish) 
+            {
+                if (QueryEvent.HasFinishControl(eventDB, courseDesignator.CourseId))
+                    courseView.extraCourseControls.Add(QueryEvent.LastCourseControl(eventDB, courseDesignator.CourseId, false));
             }
 
             courseView.Finish();

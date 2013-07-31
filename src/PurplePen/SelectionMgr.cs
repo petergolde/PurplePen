@@ -453,8 +453,15 @@ namespace PurplePen
             if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
                 !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl)) {
                 // Selected course control is not in active part.
-                selectedCourseControl = Id<CourseControl>.None;
-                ClearSelection();
+                // Could be allowed if it's the finish.
+                Id<ControlPoint> controlId = eventDB.GetCourseControl(selectedCourseControl).control;
+                if (!(eventDB.IsControlPresent(controlId) && 
+                      eventDB.GetControl(controlId).kind == ControlPointKind.Finish &&
+                      QueryEvent.GetPartOptions(eventDB, activeCourseDesignator).ShowFinish))
+                {
+                    selectedCourseControl = Id<CourseControl>.None;
+                    ClearSelection();
+                }
             }
 
             if (selectedCourseControl2.IsNotNone && !eventDB.IsCourseControlPresent(selectedCourseControl2)) {
