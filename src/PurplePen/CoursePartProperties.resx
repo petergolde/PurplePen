@@ -217,7 +217,7 @@
     <value>Course Part Properties</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>CoursePartOptions</value>
+    <value>CoursePartProperties</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>PurplePen.OkCancelDialog, PurplePen, Version=2.0.2.500, Culture=neutral, PublicKeyToken=null</value>

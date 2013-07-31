@@ -51,12 +51,13 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // CoursePartOptions
+            // CoursePartProperties
             // 
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBoxDisplayFinish);
-            this.Name = "CoursePartOptions";
+            this.HelpTopic = "CoursePartProperties.htm";
+            this.Name = "CoursePartProperties";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.checkBoxDisplayFinish, 0);
