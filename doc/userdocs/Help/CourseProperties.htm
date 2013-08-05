@@ -23,7 +23,9 @@ dialog</a> is displayed instead.)</p>
 <li>Score course: A score-O or freestyle orienteering course, with no fixed order of controls. No lines are drawn between the controls, and no length is computed. Optionally, a score can be associated with each control.</li>
 </ul>
 <p><b>Climb:</b> The climb, in meters, on the course. If left blank, no climb is displayed on the description sheet.</p>
-<p><b>Class list/secondary title:</b> The text entered here is displayed on the second line of the description sheet, below the event title and about the course name, length and climb. This line is often used to list the competitor classes using the course, but this line can be used for alternate course-specific information if needed.</p>
+<p><b>Class list/secondary title:</b> The text entered here is displayed on the second line of the description sheet, below the event title and about the course name, length and climb. This line is often used to list the competitor classes using the course, but this line can be used for alternate course-specific information if needed. 
+When using this line to specify competitor classes, separate the class names 
+with commas, so that they are exported correctly to IOF XML format.</p>
 <p><b>Map printing scale:</b> The scale that the course is to be printed at. Setting this correctly is important, because it affects the size of the control circles on the map, as well as the actual printed scale. Note that different courses can be printed at different scales (e.g., Brown at 1:10,000 and Blue at 1:15,000).</p>
 <p><b>Description appearance:</b> Controls how control description sheets appears. The choices are:</p>
 <ul>
@@ -42,9 +44,12 @@ dialog</a> is displayed instead.)</p>
 are display. The default setting is the usual form using the sequence number of 
 the control (1, 2, 3, ...). Other options include the control code, or both the 
 sequence number and the code (e.g., "3-145"), as commonly used in mountain bike 
-orienteering.</p>
+orienteering. In a score course, you can also use sequence and score, or code 
+and score.</p>
 <p><b>First control number:</b> The number given to the first control. This is typically 1, so that the course is numbered 1, 2, 3, .... If you set it to, for example, 7, 
-then the controls in the course will be numbered 7, 8, 9, .... This can be used to handle multi-part courses, map exchanges, or other special cases.</p>
+then the controls in the course will be numbered 7, 8, 9, .... This can be used to handle multi-part courses, map exchanges, or other special cases. 
+However, a better way to handle map exchanges or multi-part courses is to insert 
+a map exchange directly.</p>
 <p><strong>Show points in:</strong> (available for score courses only) Controls 
 which column of the description sheet the point value for each control is 
 displayed in: column A, B, H, or not displayed.</p>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.0\n"
+"Project-Id-Version: Purple Pen 2.0.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-05-21 14:01-07:00\n"
+"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -355,6 +355,10 @@ msgstr "イベント名"
 msgid "Course Name"
 msgstr ""
 
+#: ChangeText.resx, coursePartMenuItem.Text
+msgid "Course Part"
+msgstr ""
+
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
 msgstr ""
@@ -573,6 +577,14 @@ msgstr ""
 msgid "Add Map Exchange"
 msgstr ""
 
+#: CommandNameText.resx, DeleteMapExchangeAtControl
+msgid "Delete Map Exchange"
+msgstr ""
+
+#: CommandNameText.resx, ChangePartProperties
+msgid "Change Course Part Properties"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -661,6 +673,23 @@ msgstr ""
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
+msgstr ""
+
+#: CoursePartBanner.resx, buttonProperties.Text
+msgid "Properties..."
+msgstr ""
+
+#: CoursePartProperties.resx, checkBoxDisplayFinish.Text
+msgid "Display finish circle on this course part"
+msgstr ""
+
+#: CoursePartProperties.resx, label1.Text
+msgid "These settings control the appearance of this part of a "
+"multi-part course."
+msgstr ""
+
+#: CoursePartProperties.resx, $this.Text
+msgid "Course Part Properties"
 msgstr ""
 
 #: CourseSelector.resx, selectAll.Text
@@ -1366,6 +1395,10 @@ msgstr ""
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
+msgstr ""
+
+#: MainFrame.resx, crashToolStripMenuItem.Text
+msgid "Crash"
 msgstr ""
 
 #: MainFrame.resx, debugMenu.Text

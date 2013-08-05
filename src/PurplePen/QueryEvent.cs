@@ -56,6 +56,9 @@ namespace PurplePen
         // Find the control with a code, and return its ID. Else return None.
         public static Id<ControlPoint> FindCode(EventDB eventDB, string code)
         {
+            if (string.IsNullOrWhiteSpace(code))
+                return Id<ControlPoint>.None;
+
             foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds) {
                 if (eventDB.GetControl(controlId).code == code)
                     return controlId;
@@ -422,7 +425,7 @@ namespace PurplePen
         // Determine if a given control code is valid.
         public static bool IsLegalControlCode(string code, out string reason)
         {
-            if (code.Length < 1) {
+            if (code == null || code.Length < 1) {
                 reason = MiscText.CodeBadLength;
                 return false;
             }
@@ -885,6 +888,28 @@ namespace PurplePen
                 return defaultPrintArea;
             else
                 return printArea;
+        }
+
+        // Get the part options for a specific course part. Returns null for all controls.
+        public static PartOptions GetPartOptions(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return null;
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+            PartOptions partOptions;
+
+            if (!course.partOptions.TryGetValue(courseDesignator.Part, out partOptions)) {
+                partOptions = PartOptions.Default;
+            }
+
+            // Show Finish is always true for the last part of the course.
+            if (courseDesignator.Part == QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1) {
+                partOptions = partOptions.Clone();
+                partOptions.ShowFinish = true;
+            }
+
+            return partOptions;
         }
 
         // Gets the custom symbol text/key dictionary. Makes a copy of them, so that changes don't cause weird effects.

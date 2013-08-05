@@ -1143,6 +1143,29 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Assert.IsTrue(eventDB.IsControlPresent(ControlId(23)));
         }
 
+        [TestMethod]
+        public void DeleteMapExchangeFromCourseControl()
+        {
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
+            Assert.IsTrue(success);
+
+            controller.SelectTab(6);
+            controller.SelectDescriptionLine(18);
+
+            ui.returnQuestion = DialogResult.No;
+            success = controller.DeleteSelection();
+            Assert.IsTrue(success);
+
+            EventDB eventDB = controller.GetEventDB();
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(615)));
+            Assert.IsFalse(eventDB.GetCourseControl(CourseControlId(615)).exchange);
+
+            controller.Undo();
+
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(615)));
+            Assert.IsTrue(eventDB.GetCourseControl(CourseControlId(615)).exchange);
+        }
+
         // Is there an all controls layer?
         internal static bool IsAllControlsLayer(CourseLayout courseLayout)
         {
@@ -1992,6 +2015,48 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create7\\Course 2.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create7\\Course 2_expected.txt") });
+        }
+
+        [TestMethod]
+        public void OcadCreation8()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create8");
+            settings.CourseIds = new Id<Course>[1] { Id<Course>.None };
+            settings.version = 11;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\Madrona Permanent11.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create8\\All Controls.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create8\\All Controls_expected.txt") });
+        }
+
+        [TestMethod]
+        public void OcadCreation9()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create9");
+            settings.CourseIds = new Id<Course>[2] { CourseId(5), CourseId(6) };
+            settings.version = 9;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\mapexchange2.ppen"), settings, new CourseAppearance(),
+                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4.ocd") },
+                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4-expected.txt") });
         }
 
         // Test overwritting files

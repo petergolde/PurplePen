@@ -124,7 +124,7 @@
 				<param name="Local" value="FileCreateRouteGadget.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Create E-Punch Interchange File...">
+				<param name="Name" value="Create Data Interchange File (IOF XML)...">
 				<param name="Local" value="FileCreateXml.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
@@ -198,6 +198,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Map Quality">
 				<param name="Local" value="ViewMapQuality.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show Popup Information">
+				<param name="Local" value="ViewShowPopupInfo.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="All Controls">
@@ -281,6 +285,24 @@
 				<param name="Name" value="Add Finish">
 				<param name="Local" value="EditAddFinish.htm">
 				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add Descriptions">
+				<param name="Local" value="EditAddControlDescriptions.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add Map Exchange">
+				<param name="Local" value="EditAddMapExchange.htm">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Map Exchange At Control Point">
+					<param name="Local" value="EditAddMapExchangeAtControlPoint.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Flagged Route To Map Exchange">
+					<param name="Local" value="EditAddFlaggedRouteToMapExchange.htm">
+					</OBJECT>
+			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Add Special Item">
 				<param name="Local" value="EditAddSpecialItem.htm">
@@ -418,6 +440,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Support/Bug Reporting">
 				<param name="Local" value="HelpSupport.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Make A Donation">
+				<param name="Local" value="HelpDonation.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="About Purple Pen">

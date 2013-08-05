@@ -222,6 +222,12 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Course Name</value>
   </data>
+  <data name="coursePartMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Course Part</value>
+  </data>
   <data name="courseLengthMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 22</value>
   </data>
@@ -247,7 +253,7 @@
     <value>Print Scale</value>
   </data>
   <data name="specialTextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 158</value>
+    <value>128, 180</value>
   </data>
   <data name="&gt;&gt;specialTextMenu.Name" xml:space="preserve">
     <value>specialTextMenu</value>
@@ -327,10 +333,16 @@
   <data name="&gt;&gt;printScaleMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;coursePartMenuItem.Name" xml:space="preserve">
+    <value>coursePartMenuItem</value>
+  </data>
+  <data name="&gt;&gt;coursePartMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ChangeText</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=1.2.0.5000, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.0.1.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

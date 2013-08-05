@@ -128,6 +128,7 @@ for the symbols.
 	<language lang="ro" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">română</language>
 	<language lang="et" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">eesti</language>
 	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="maskulin,feminin,neutrum">Deutsch (Deutschland)</language>
+	<language lang="en-AU" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English (Australia)</language>
 	
 
 
@@ -136,6 +137,8 @@ for the symbols.
   <!-- Name of the course when showing all controls.
 	-->
   <symbol kind="@" id="all_controls">
+		<name lang="en-AU">All controls</name>
+		
     <name lang="en">All controls</name>
     <name lang="fr">Tous Postes</name>
     <name lang="en-GB">All controls</name>
@@ -148,6 +151,7 @@ for the symbols.
     <name lang="ro">Toate posturile</name>
     <name lang="et">Kõik KPd</name>
     <name lang="de">Alle Posten</name>
+		<text lang="en-AU">All controls</text>
     <text lang="en">All controls</text>
     <text lang="fr">Tous Postes</text>
     <text lang="en-GB">All controls</text>
@@ -168,6 +172,7 @@ for the symbols.
 	{0} is the length
 	-->
 	<symbol kind="@" id="course_length">
+		<name lang="en-AU">Course Length</name>
 		<name lang="en">Course Length</name>
 		<name lang="fr">Longueur du circuit</name>
 		<name lang="en-GB">Course Length</name>
@@ -180,6 +185,7 @@ for the symbols.
 		<name lang="ro">Lungime traseu</name>
 		<name lang="et">Raja pikkus</name>
 		<name lang="de">Bahnlänge</name>
+		<text lang="en-AU">Length {0}</text>
 		
 		<text lang="en">Length {0}</text>
 		<text lang="fr">Longueur {0}</text>
@@ -201,6 +207,7 @@ for the symbols.
 	{1} is the climb
 	-->
 	<symbol kind="@" id="course_length_climb">
+		<name lang="en-AU">Course Length and Climb</name>
 		<name lang="en">Course Length and Climb</name>
 		<name lang="fr">Longueur du circuit et Dénivelée</name>
 		<name lang="en-GB">Course Length and Climb</name>
@@ -213,6 +220,7 @@ for the symbols.
 		<name lang="ro">Lungimea și diferența de nivel</name>
 		<name lang="et">Raja pikkus ja tõusude summa</name>
 		<name lang="de">Bahnlänge und Höhenmeter</name>
+		<text lang="en-AU">Length {0}, climb {1}</text>
 		
 		<text lang="en">Length {0}, climb {1}</text>
 		<text lang="fr">Longueur {0}, dénivelée {1}</text>
@@ -233,6 +241,7 @@ for the symbols.
 	{0} is the number of controls
 	-->
 	<symbol kind="@" id="number_controls">
+		<name lang="en-AU">Number of Controls</name>
 		<name lang="en">Number of Controls</name>
 		<name lang="fr">Nombre de poste</name>
 		<name lang="en-GB">Number of Controls</name>
@@ -245,6 +254,7 @@ for the symbols.
 		<name lang="ro">Numărul de posturi</name>
 		<name lang="et">Kontrollpunktide arv</name>
 		<name lang="de">Postenanzahl</name>
+		<text lang="en-AU">{0} controls</text>
 		
 		<text lang="en">{0} controls</text>
 		<text lang="fr">{0} postes</text>
@@ -265,6 +275,7 @@ for the symbols.
 	{0} is the total points
 	-->
 	<symbol kind="@" id="number_points">
+		<name lang="en-AU">Number of Points</name>
 		<name lang="en">Number of Points</name>
 		<name lang="fr">Nombre de point</name>
 		<name lang="en-GB">Number of Points</name>
@@ -277,6 +288,7 @@ for the symbols.
 		<name lang="ro">Numărul de Puncte</name>
 		<name lang="et">Punktide arv</name>
 		<name lang="de">Punkteanzahl</name>
+		<text lang="en-AU">{0} points</text>
 		
 		<text lang="en">{0} points</text>
 		<text lang="fr">{0} points</text>
@@ -299,6 +311,7 @@ for the symbols.
 	{1} is the column E symbol 
 	-->
 	<symbol kind="@" id="basic_combo">
+		<name lang="en-AU">And</name>
 		<name lang="en">And</name>
 		<name lang="fr">Et</name>
 		<name lang="en-GB">And</name>
@@ -311,6 +324,7 @@ for the symbols.
 		<name lang="ro">Și</name>
 		<name lang="et">ja</name>
 		<name lang="de">Und</name>
+		<text lang="en-AU">{0} and {1}</text>
 		
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
@@ -336,6 +350,7 @@ for the symbols.
 	       the description -->
 	
 	<symbol kind="A" id="start">
+		<name lang="en-AU">Start</name>
 		<name lang="en">Start</name>
 		<name lang="fr">Départ</name>
 		<name lang="en-GB">Start</name>
@@ -348,6 +363,7 @@ for the symbols.
 		<name lang="ro">Start</name>
 		<name lang="et">Start</name>
 		<name lang="de">Start</name>
+		<text lang="en-AU">start</text>
 		
 		<text lang="en">start</text>
 		<text lang="fr">départ </text>
@@ -376,6 +392,7 @@ for the symbols.
 		 -->
 
 	<symbol kind="C" id="0.1N">
+		<name lang="en-AU">Northern</name>
 		<name lang="en">Northern</name>
 		<name lang="fr">Le plus au Nord</name>
 		<name lang="en-GB">Northern</name>
@@ -388,6 +405,7 @@ for the symbols.
 		<name lang="ro">Nordic</name>
 		<name lang="et">Põhjapoolne</name>
 		<name lang="de">Nördliches</name>
+		<text lang="en-AU">N {0}</text>
 		
 		<text lang="en">N {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Nord</text>
@@ -417,6 +435,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.2NE">
+		<name lang="en-AU">North-eastern</name>
 		<name lang="en">North-eastern</name>
 		<name lang="fr">Le plus au NE</name>
 		<name lang="en-GB">North-eastern</name>
@@ -429,6 +448,7 @@ for the symbols.
 		<name lang="ro">Nord-estic</name>
 		<name lang="et">Kirdepoolne</name>
 		<name lang="de">Nord-östliches</name>
+		<text lang="en-AU">NE {0}</text>
 		
 		<text lang="en">NE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NE</text>
@@ -458,6 +478,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.1E">
+		<name lang="en-AU">Eastern</name>
 		<name lang="en">Eastern</name>
 		<name lang="fr">Le plus à l'Est</name>
 		<name lang="en-GB">Eastern</name>
@@ -470,6 +491,7 @@ for the symbols.
 		<name lang="ro">Estic</name>
 		<name lang="et">Idapoolne</name>
 		<name lang="de">Östliches</name>
+		<text lang="en-AU">E {0}</text>
 		
 		<text lang="en">E {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Est</text>
@@ -499,6 +521,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.2SE">
+		<name lang="en-AU">South-eastern</name>
 		<name lang="en">South-eastern</name>
 		<name lang="fr">Le plus au SE</name>
 		<name lang="en-GB">South-eastern</name>
@@ -511,6 +534,7 @@ for the symbols.
 		<name lang="ro">Sud-estic</name>
 		<name lang="et">Kagupoolne</name>
 		<name lang="de">Süd-östliches</name>
+		<text lang="en-AU">SE {0}</text>
 		
 		<text lang="en">SE {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SE</text>
@@ -540,6 +564,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.1S">
+		<name lang="en-AU">Southern</name>
 		<name lang="en">Southern</name>
 		<name lang="fr">Le plus au Sud</name>
 		<name lang="en-GB">Southern</name>
@@ -552,6 +577,7 @@ for the symbols.
 		<name lang="ro">Sudic</name>
 		<name lang="et">Lõunapoolne</name>
 		<name lang="de">Südliches</name>
+		<text lang="en-AU">S {0}</text>
 		
 		<text lang="en">S {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au Sud</text>
@@ -581,6 +607,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.2SW">
+		<name lang="en-AU">South-western</name>
 		<name lang="en">South-western</name>
 		<name lang="fr">Le plus au SO</name>
 		<name lang="en-GB">South-western</name>
@@ -593,6 +620,7 @@ for the symbols.
 		<name lang="ro">Sud-vestic</name>
 		<name lang="et">Edelapoolne</name>
 		<name lang="de">Süd-westliches</name>
+		<text lang="en-AU">SW {0}</text>
 		
 		<text lang="en">SW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au SO</text>
@@ -622,6 +650,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.1W">
+		<name lang="en-AU">Western</name>
 		<name lang="en">Western</name>
 		<name lang="fr">Le plus à l'Ouest</name>
 		<name lang="en-GB">Western</name>
@@ -634,6 +663,7 @@ for the symbols.
 		<name lang="ro">Vestic</name>
 		<name lang="et">Läänepoolne</name>
 		<name lang="de">Westliches</name>
+		<text lang="en-AU">W {0}</text>
 		
 		<text lang="en">W {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus à l'Ouest</text>
@@ -663,6 +693,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.2NW">
+		<name lang="en-AU">North-western</name>
 		<name lang="en">North-western</name>
 		<name lang="fr">Le plus au NO</name>
 		<name lang="en-GB">North-western</name>
@@ -675,6 +706,7 @@ for the symbols.
 		<name lang="ro">Nord-vestic</name>
 		<name lang="et">Loodepoolne</name>
 		<name lang="de">Nord-westliches</name>
+		<text lang="en-AU">NW {0}</text>
 		
 		<text lang="en">NW {0}</text>
 		<text lang="fr" gender="féminin">{0}, la plus au NO</text>
@@ -704,6 +736,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.3">
+		<name lang="en-AU">Upper</name>
 		<name lang="en">Upper</name>
 		<name lang="fr">Supérieur</name>
 		<name lang="en-GB">Upper</name>
@@ -716,6 +749,7 @@ for the symbols.
 		<name lang="ro">Superior</name>
 		<name lang="et">Ülemine</name>
 		<name lang="de">Oberes</name>
+		<text lang="en-AU">upper {0}</text>
 		
 		<text lang="en">upper {0}</text>
 		<text lang="fr" gender="féminin">{0} supérieure</text>
@@ -751,6 +785,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.4">
+		<name lang="en-AU">Lower</name>
 		<name lang="en">Lower</name>
 		<name lang="fr">Inférieur</name>
 		<name lang="en-GB">Lower</name>
@@ -763,6 +798,7 @@ for the symbols.
 		<name lang="ro">Inferior</name>
 		<name lang="et">Alumine</name>
 		<name lang="de">Unteres</name>
+		<text lang="en-AU">lower {0}</text>
 		
 		<text lang="en">lower {0}</text>
 		<text lang="fr" gender="féminin">{0} inférieure</text>
@@ -798,6 +834,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="C" id="0.5">
+		<name lang="en-AU">Middle</name>
 		<name lang="en">Middle</name>
 		<name lang="fr">Central</name>
 		<name lang="en-GB">Middle</name>
@@ -810,6 +847,7 @@ for the symbols.
 		<name lang="ro">Mijloc</name>
 		<name lang="et">Keskmine</name>
 		<name lang="de">Mittleres</name>
+		<text lang="en-AU">middle {0}</text>
 		
 		<text lang="en">middle {0}</text>
 		<text lang="fr" gender="féminin">{0} centrale</text>
@@ -853,6 +891,7 @@ for the symbols.
 		 E in some cases (crossing/junction/between). -->
 
 	<symbol kind="D" id="1.1">
+		<name lang="en-AU">Terrace</name>
 		<name lang="en">Terrace</name>
 		<name lang="fr">Terrasse</name>
 		<name lang="en-GB">Terrace</name>
@@ -865,6 +904,8 @@ for the symbols.
 		<name lang="ro">Terasa</name>
 		<name lang="et">Terass</name>
 		<name lang="de">Terrasse</name>
+		<text lang="en-AU" plural="true">terraces</text>
+		<text lang="en-AU">terrace</text>
 		
 		<text lang="en">terrace</text>
 		<text lang="en" plural="true">terraces</text>
@@ -915,6 +956,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.2">
+		<name lang="en-AU">Spur</name>
 		<name lang="en">Spur</name>
 		<name lang="fr">Éperon</name>
 		<name lang="en-GB">Spur</name>
@@ -927,6 +969,8 @@ for the symbols.
 		<name lang="ro">Pinten</name>
 		<name lang="et">Nina</name>
 		<name lang="de">Nase</name>
+		<text lang="en-AU" plural="true">spurs</text>
+		<text lang="en-AU">spur</text>
 		
 		<text lang="en">spur</text>
 		<text lang="en" plural="true">spurs</text>
@@ -977,6 +1021,8 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.3" size-is-depth="true">
+		<name lang="en-AU">Reentrant</name>
+		
 		<name lang="en">Reentrant</name>
 		<name lang="fr">Rentrant</name>
 		<name lang="en-GB">Re-entrant</name>
@@ -989,6 +1035,10 @@ for the symbols.
 		<name lang="ro">Vâlcel</name>
 		<name lang="et">Orvand</name>
 		<name lang="de">Mulde</name>
+		<text lang="en-AU" plural="true">gullies</text>
+		<text lang="en-AU">gully</text>
+		
+		
 		
 		<text lang="en">reentrant</text>
 		<text lang="en" plural="true">reentrants</text>
@@ -1033,6 +1083,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.4">
+		<name lang="en-AU">Earth bank</name>
 		<name lang="en">Earth bank</name>
 		<name lang="fr">Talus raide</name>
 		<name lang="en-GB">Earth bank</name>
@@ -1045,6 +1096,8 @@ for the symbols.
 		<name lang="ro">Ruptură de teren</name>
 		<name lang="et">Järsak</name>
 		<name lang="de">Erdböschung</name>
+		<text lang="en-AU" plural="true">earth banks</text>
+		<text lang="en-AU">earth bank</text>
 		
 		<text lang="en">earth bank</text>
 		<text lang="en" plural="true">earth banks</text>
@@ -1096,6 +1149,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.5" size-is-depth="true">
+		<name lang="en-AU">Quarry</name>
 		<name lang="en">Quarry</name>
 		<name lang="fr">Carrière</name>
 		<name lang="en-GB">Quarry</name>
@@ -1108,6 +1162,8 @@ for the symbols.
 		<name lang="ro">Carieră</name>
 		<name lang="et">Karjäär</name>
 		<name lang="de">Grube</name>
+		<text lang="en-AU" plural="true">quarries</text>
+		<text lang="en-AU">quarry</text>
 		
 		<text lang="en">quarry</text>
 		<text lang="en" plural="true">quarries</text>
@@ -1161,6 +1217,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.6">
+		<name lang="en-AU">Earth wall</name>
 		<name lang="en">Earth wall</name>
 		<name lang="fr">Levée de terre</name>
 		<name lang="en-GB">Earth wall</name>
@@ -1173,6 +1230,8 @@ for the symbols.
 		<name lang="ro">Zid de pământ</name>
 		<name lang="et">Pinnasevall</name>
 		<name lang="de">Erdwall</name>
+		<text lang="en-AU" plural="true">earth walls</text>
+		<text lang="en-AU">earth wall</text>
 		
 		<text lang="en">earth wall</text>
 		<text lang="en" plural="true">earth walls</text>
@@ -1222,6 +1281,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.7" size-is-depth="true">
+		<name lang="en-AU">Erosion gully</name>
 		<name lang="en">Erosion gully</name>
 		<name lang="fr">Ravine</name>
 		<name lang="en-GB">Erosion gully</name>
@@ -1234,6 +1294,8 @@ for the symbols.
 		<name lang="ro">Viroagă</name>
 		<name lang="et">Uhteorg</name>
 		<name lang="de">Graben</name>
+		<text lang="en-AU" plural="true">gullies</text>
+		<text lang="en-AU">gully</text>
 		
 		<text lang="en">gully</text>
 		<text lang="en" plural="true">gullies</text>
@@ -1268,6 +1330,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.8" size-is-depth="true">
+		<name lang="en-AU">Small erosion gully</name>
 		<name lang="en">Small erosion gully</name>
 		<name lang="fr">Fossé sec</name>
 		<name lang="en-GB">Small erosion gully</name>
@@ -1280,6 +1343,8 @@ for the symbols.
 		<name lang="ro">Viroagă mica</name>
 		<name lang="et">Väike uhteorg</name>
 		<name lang="de">Trockenrinne</name>
+		<text lang="en-AU" plural="true">small gullies</text>
+		<text lang="en-AU">small gully</text>
 		
 		<text lang="en">small gully</text>
 		<text lang="en" plural="true">small gullies</text>
@@ -1332,6 +1397,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.9">
+		<name lang="en-AU">Hill</name>
 		<name lang="en">Hill</name>
 		<name lang="fr">Colline</name>
 		<name lang="en-GB">Hill</name>
@@ -1344,6 +1410,8 @@ for the symbols.
 		<name lang="ro">Mamelon</name>
 		<name lang="et">Küngas</name>
 		<name lang="de">Hügel</name>
+		<text lang="en-AU" plural="true">hills</text>
+		<text lang="en-AU">hill</text>
 		
 		<text lang="en">hill</text>
 		<text lang="en" plural="true">hills</text>
@@ -1388,6 +1456,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.10">
+		<name lang="en-AU">Knoll</name>
 		<name lang="en">Knoll</name>
 		<name lang="fr">Butte</name>
 		<name lang="en-GB">Knoll</name>
@@ -1400,6 +1469,8 @@ for the symbols.
 		<name lang="ro">Movilă</name>
 		<name lang="et">Tipp</name>
 		<name lang="de">Kuppe</name>
+		<text lang="en-AU" plural="true">knolls</text>
+		<text lang="en-AU">knoll</text>
 		
 		<text lang="en">knoll</text>
 		<text lang="en" plural="true">knolls</text>
@@ -1432,6 +1503,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.11">
+		<name lang="en-AU">Saddle</name>
 		<name lang="en">Saddle</name>
 		<name lang="fr">Col, passage</name>
 		<name lang="en-GB">Saddle</name>
@@ -1444,6 +1516,8 @@ for the symbols.
 		<name lang="ro">Șa</name>
 		<name lang="et">Sadul</name>
 		<name lang="de">Sattel</name>
+		<text lang="en-AU" plural="true">saddles</text>
+		<text lang="en-AU">saddle</text>
 		
 		<text lang="en">saddle</text>
 		<text lang="en" plural="true">saddles</text>
@@ -1485,6 +1559,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.12" size-is-depth="true">
+		<name lang="en-AU">Depression</name>
 		<name lang="en">Depression</name>
 		<name lang="fr">Dépression</name>
 		<name lang="en-GB">Depression</name>
@@ -1497,6 +1572,8 @@ for the symbols.
 		<name lang="ro">Găvan</name>
 		<name lang="et">Lohk</name>
 		<name lang="de">Senke</name>
+		<text lang="en-AU" plural="true">depressions</text>
+		<text lang="en-AU">depression</text>
 		
 		<text lang="en">depression</text>
 		<text lang="en" plural="true">depressions</text>
@@ -1549,6 +1626,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.13" size-is-depth="true">
+		<name lang="en-AU">Small depression</name>
 		<name lang="en">Small depression</name>
 		<name lang="fr">Petite dépression</name>
 		<name lang="en-GB">Small depression</name>
@@ -1561,6 +1639,8 @@ for the symbols.
 		<name lang="ro">Groapă mică</name>
 		<name lang="et">Väike lohk</name>
 		<name lang="de">Kleine Senke</name>
+		<text lang="en-AU" plural="true">small depressions</text>
+		<text lang="en-AU">small depression</text>
 		
 		<text lang="en">small depression</text>
 		<text lang="en" plural="true">small depressions</text>
@@ -1599,6 +1679,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.14" size-is-depth="true">
+		<name lang="en-AU">Pit</name>
 		<name lang="en">Pit</name>
 		<name lang="fr">Trou</name>
 		<name lang="en-GB">Pit</name>
@@ -1611,6 +1692,8 @@ for the symbols.
 		<name lang="ro">Groapă mare</name>
 		<name lang="et">Auk</name>
 		<name lang="de">Loch</name>
+		<text lang="en-AU" plural="true">pits</text>
+		<text lang="en-AU">pit</text>
 		
 		<text lang="en">pit</text>
 		<text lang="en" plural="true">pits</text>
@@ -1645,6 +1728,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.15">
+		<name lang="en-AU">Broken ground</name>
 		<name lang="en">Broken ground</name>
 		<name lang="fr">Terrain accidenté</name>
 		<name lang="en-GB">Broken ground</name>
@@ -1657,6 +1741,8 @@ for the symbols.
 		<name lang="ro">Teren frământat</name>
 		<name lang="et">Tõngermaa</name>
 		<name lang="de">Feinkupierter Boden</name>
+		<text lang="en-AU" plural="true">broken ground</text>
+		<text lang="en-AU">broken ground</text>
 		
 		<text lang="en">broken ground</text>
 		<text lang="en" plural="true">broken ground</text>
@@ -1711,6 +1797,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.16">
+		<name lang="en-AU">Ant hill (termite mound)</name>
 		<name lang="en">Ant hill (termite mound)</name>
 		<name lang="fr">Fourmilière</name>
 		<name lang="en-GB">Ant hill (termite mound)</name>
@@ -1723,6 +1810,8 @@ for the symbols.
 		<name lang="ro">Mușuroi</name>
 		<name lang="et">Sipelgapesa</name>
 		<name lang="de">Ameisenhügel</name>
+		<text lang="en-AU" plural="true">ant hills</text>
+		<text lang="en-AU">ant hill</text>
 		
 		<text lang="en">ant hill</text>
 		<text lang="en" plural="true">ant hills</text>
@@ -1768,6 +1857,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.1">
+		<name lang="en-AU">Cliff</name>
 		<name lang="en">Cliff</name>
 		<name lang="fr">Falaise</name>
 		<name lang="en-GB">Crag</name>
@@ -1780,6 +1870,8 @@ for the symbols.
 		<name lang="ro">Margine stâncoasă</name>
 		<name lang="et">Kaljud</name>
 		<name lang="de">Felswand</name>
+		<text lang="en-AU" plural="true">cliffs</text>
+		<text lang="en-AU">cliff</text>
 		
 		<text lang="en">cliff</text>
 		<text lang="en" plural="true">cliffs</text>
@@ -1823,6 +1915,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.2">
+		<name lang="en-AU">Rock pillar</name>
 		<name lang="en">Rock pillar</name>
 		<name lang="fr">Aiguille rocheuse</name>
 		<name lang="en-GB">Rock pillar</name>
@@ -1835,6 +1928,8 @@ for the symbols.
 		<name lang="ro">Stâlp piatră</name>
 		<name lang="et">Suur kivi</name>
 		<name lang="de">Felsturm</name>
+		<text lang="en-AU" plural="true">rock pillars</text>
+		<text lang="en-AU">rock pillar</text>
 		
 		<text lang="en">rock pillar</text>
 		<text lang="en" plural="true">rock pillars</text>
@@ -1869,6 +1964,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.3">
+		<name lang="en-AU">Cave</name>
 		<name lang="en">Cave</name>
 		<name lang="fr">Caverne</name>
 		<name lang="en-GB">Cave</name>
@@ -1881,6 +1977,8 @@ for the symbols.
 		<name lang="ro">Peșteră</name>
 		<name lang="et">Koobas</name>
 		<name lang="de">Höhle</name>
+		<text lang="en-AU" plural="true">caves</text>
+		<text lang="en-AU">cave</text>
 		
 		<text lang="en">cave</text>
 		<text lang="en" plural="true">caves</text>
@@ -1927,6 +2025,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.4">
+		<name lang="en-AU">Boulder</name>
 		<name lang="en">Boulder</name>
 		<name lang="fr">Rocher, bloc</name>
 		<name lang="en-GB">Boulder</name>
@@ -1939,6 +2038,8 @@ for the symbols.
 		<name lang="ro">Bolovan</name>
 		<name lang="et">Kivi</name>
 		<name lang="de">Stein</name>
+		<text lang="en-AU" plural="true">boulders</text>
+		<text lang="en-AU">boulder</text>
 		
 		<text lang="en">boulder</text>
 		<text lang="en" plural="true">boulders</text>
@@ -1973,6 +2074,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.5">
+		<name lang="en-AU">Boulder field</name>
 		<name lang="en">Boulder field</name>
 		<name lang="fr">Zone rocheuse</name>
 		<name lang="en-GB">Boulder field</name>
@@ -1985,6 +2087,8 @@ for the symbols.
 		<name lang="ro">Teren bolovănos</name>
 		<name lang="et">Kivine väli</name>
 		<name lang="de">Blockfeld</name>
+		<text lang="en-AU" plural="true">boulder fields</text>
+		<text lang="en-AU">boulder field</text>
 		
 		<text lang="en">boulder field</text>
 		<text lang="en" plural="true">boulder fields</text>
@@ -2037,6 +2141,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.6">
+		<name lang="en-AU">Boulder cluster</name>
 		<name lang="en">Boulder cluster</name>
 		<name lang="fr">Tas de pierre</name>
 		<name lang="en-GB">Boulder cluster</name>
@@ -2049,6 +2154,8 @@ for the symbols.
 		<name lang="ro">Adunătură de bolovani</name>
 		<name lang="et">Kivihunnik</name>
 		<name lang="de">Steinhaufen</name>
+		<text lang="en-AU" plural="true">boulder clusters</text>
+		<text lang="en-AU">boulder cluster</text>
 		
 		<text lang="en">boulder cluster</text>
 		<text lang="en" plural="true">boulder clusters</text>
@@ -2088,6 +2195,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.7">
+		<name lang="en-AU">Stony ground</name>
 		<name lang="en">Stony ground</name>
 		<name lang="fr">Pierrier</name>
 		<name lang="en-GB">Stony ground</name>
@@ -2100,6 +2208,8 @@ for the symbols.
 		<name lang="ro">teren pietros</name>
 		<name lang="et">Kivine ala</name>
 		<name lang="de">Steingebiet</name>
+		<text lang="en-AU" plural="true">stony ground</text>
+		<text lang="en-AU">stony ground</text>
 		
 		<text lang="en">stony ground</text>
 		<text lang="en" plural="true">stony ground</text>
@@ -2202,6 +2312,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.8">
+		<name lang="en-AU">Bare rock</name>
 		<name lang="en">Bare rock</name>
 		<name lang="fr">Affleurement rocheux</name>
 		<name lang="en-GB">Bare rock</name>
@@ -2214,6 +2325,8 @@ for the symbols.
 		<name lang="ro">Stâncă</name>
 		<name lang="et">Avakalju</name>
 		<name lang="de">Felsplatte</name>
+		<text lang="en-AU" plural="true">bare rock</text>
+		<text lang="en-AU">bare rock</text>
 		
 		<text lang="en">bare rock</text>
 		<text lang="en" plural="true">bare rock</text>
@@ -2274,6 +2387,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="2.9" size-is-depth="true">
+		<name lang="en-AU">Narrow passage</name>
 		<name lang="en">Narrow passage</name>
 		<name lang="fr">Passage étroit (entre falaise)</name>
 		<name lang="en-GB">Narrow passage</name>
@@ -2286,6 +2400,8 @@ for the symbols.
 		<name lang="ro">Pasaj îngust</name>
 		<name lang="et">Kitsas läbipääs</name>
 		<name lang="de">Enge Passage</name>
+		<text lang="en-AU" plural="true">narrow passages</text>
+		<text lang="en-AU">narrow passage</text>
 		
 		<text lang="en">narrow passage</text>
 		<text lang="en" plural="true">narrow passages</text>
@@ -2327,6 +2443,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.1">
+		<name lang="en-AU">Lake</name>
 		<name lang="en">Lake</name>
 		<name lang="fr">Étang ou lac</name>
 		<name lang="en-GB">Lake</name>
@@ -2339,6 +2456,8 @@ for the symbols.
 		<name lang="ro">Lac</name>
 		<name lang="et">Järv</name>
 		<name lang="de">See</name>
+		<text lang="en-AU" plural="true">lakes</text>
+		<text lang="en-AU">lake</text>
 		
 		<text lang="en">lake</text>
 		<text lang="en" plural="true">lakes</text>
@@ -2401,6 +2520,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.2">
+		<name lang="en-AU">Pond</name>
 		<name lang="en">Pond</name>
 		<name lang="fr">Mare</name>
 		<name lang="en-GB">Pond</name>
@@ -2413,6 +2533,8 @@ for the symbols.
 		<name lang="ro">Baltă</name>
 		<name lang="et">Tiik</name>
 		<name lang="de">Teich</name>
+		<text lang="en-AU" plural="true">ponds</text>
+		<text lang="en-AU">pond</text>
 		
 		<text lang="en">pond</text>
 		<text lang="en" plural="true">ponds</text>
@@ -2475,6 +2597,8 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.3" size-is-depth="true">
+		<name lang="en-AU">Water hole</name>
+		
 		<name lang="en">Water hole</name>
 		<name lang="fr">Trou d'eau</name>
 		<name lang="en-GB">Water hole</name>
@@ -2487,6 +2611,8 @@ for the symbols.
 		<name lang="ro">Groapă cu apă</name>
 		<name lang="et">Vee auk</name>
 		<name lang="de">Wasserloch</name>
+		<text lang="en-AU" plural="true">water holes</text>
+		<text lang="en-AU">water hole</text>
 		
 		<text lang="en">water hole</text>
 		<text lang="en" plural="true">water holes</text>
@@ -2544,6 +2670,8 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.4" size-is-depth="true">
+		<name lang="en-AU">River, watercourse</name>
+		
 		<name lang="en">River, stream, water course</name>
 		<name lang="fr">Cours d'eau</name>
 		<name lang="en-GB">River, stream, water course</name>
@@ -2556,6 +2684,10 @@ for the symbols.
 		<name lang="ro">Râu, fir, curs de apă</name>
 		<name lang="et">Jõgi, kraav, kanal</name>
 		<name lang="de">Fluß, Bach</name>
+		<text lang="en-AU" plural="true">watercourses</text>
+		<text lang="en-AU">watercourse</text>
+		
+		
 		
 		<text lang="en">stream</text>
 		<text lang="en" plural="true">streams</text>
@@ -2614,6 +2746,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.5" size-is-depth="true">
+		<name lang="en-AU">Minor water channel, ditch</name>
 		<name lang="en">Minor water channel, ditch</name>
 		<name lang="fr">Fossé ou rigole</name>
 		<name lang="en-GB">Minor water channel, ditch</name>
@@ -2626,6 +2759,8 @@ for the symbols.
 		<name lang="ro">Canal mic de apă, șanț</name>
 		<name lang="et">Väike kanal, kraav</name>
 		<name lang="de">Wassergraben</name>
+		<text lang="en-AU" plural="true">ditches</text>
+		<text lang="en-AU">ditch</text>
 		
 		<text lang="en">ditch</text>
 		<text lang="en" plural="true">ditches</text>
@@ -2709,6 +2844,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.6">
+		<name lang="en-AU">Narrow marsh</name>
 		<name lang="en">Narrow marsh</name>
 		<name lang="fr">Marais étroit</name>
 		<name lang="en-GB">Narrow marsh</name>
@@ -2721,6 +2857,8 @@ for the symbols.
 		<name lang="ro">Mlaștina ingustă</name>
 		<name lang="et">Soo riba</name>
 		<name lang="de">Schmaler Sumpf</name>
+		<text lang="en-AU" plural="true">narrow marshes</text>
+		<text lang="en-AU">narrow marsh</text>
 		
 		<text lang="en">narrow marsh</text>
 		<text lang="en" plural="true">narrow marshes</text>
@@ -2765,6 +2903,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.7">
+		<name lang="en-AU">Marsh</name>
 		<name lang="en">Marsh</name>
 		<name lang="fr">Marais</name>
 		<name lang="en-GB">Marsh</name>
@@ -2777,6 +2916,8 @@ for the symbols.
 		<name lang="ro">Mlaștină</name>
 		<name lang="et">Soo</name>
 		<name lang="de">Sumpf</name>
+		<text lang="en-AU" plural="true">marshes</text>
+		<text lang="en-AU">marsh</text>
 		
 		<text lang="en">marsh</text>
 		<text lang="en" plural="true">marshes</text>
@@ -2826,6 +2967,7 @@ for the symbols.
 	</symbol>
 	
 	<symbol kind="D" id="3.8">
+		<name lang="en-AU">Firm ground in marsh</name>
 		<name lang="en">Firm ground in marsh</name>
 		<name lang="fr">Terrain ferme dans marais</name>
 		<name lang="en-GB">Firm ground in marsh</name>
@@ -2838,6 +2980,8 @@ for the symbols.
 		<name lang="ro">Teren stabil în mlaștină</name>
 		<name lang="et">Firm ground in marsh</name>
 		<name lang="de">Festboden im Sumpf</name>
+		<text lang="en-AU" plural="true">firm ground in marsh</text>
+		<text lang="en-AU">firm ground in marsh</text>
 		
 		<text lang="en">firm ground in marsh</text>
 		<text lang="en" plural="true">firm ground in marsh</text>
@@ -2919,6 +3063,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.9">
+		<name lang="en-AU">Well</name>
 		<name lang="en">Well</name>
 		<name lang="fr">Puits</name>
 		<name lang="en-GB">Well</name>
@@ -2931,6 +3076,8 @@ for the symbols.
 		<name lang="ro">Fântână</name>
 		<name lang="et">Kaev, Läte</name>
 		<name lang="de">Brunnen</name>
+		<text lang="en-AU" plural="true">wells</text>
+		<text lang="en-AU">well</text>
 		
 		<text lang="en">well</text>
 		<text lang="en" plural="true">wells</text>
@@ -2981,6 +3128,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.10" size-is-depth="true">
+		<name lang="en-AU">Spring</name>
 		<name lang="en">Spring</name>
 		<name lang="fr">Source</name>
 		<name lang="en-GB">Spring</name>
@@ -2993,6 +3141,8 @@ for the symbols.
 		<name lang="ro">Izvor</name>
 		<name lang="et">Oja</name>
 		<name lang="de">Quelle</name>
+		<text lang="en-AU" plural="true">springs</text>
+		<text lang="en-AU">spring</text>
 		
 		<text lang="en">spring</text>
 		<text lang="en" plural="true">springs</text>
@@ -3046,6 +3196,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="3.11">
+		<name lang="en-AU">Water tank, trough</name>
 		<name lang="en">Water tank, trough</name>
 		<name lang="fr">Réservoir d'eau, citerne</name>
 		<name lang="en-GB">Water tank, trough</name>
@@ -3058,6 +3209,8 @@ for the symbols.
 		<name lang="ro">Rezervor de apă</name>
 		<name lang="et">Veeanum, bassein</name>
 		<name lang="de">Wassertank</name>
+		<text lang="en-AU" plural="true">water tanks</text>
+		<text lang="en-AU">water tank</text>
 		
 		<text lang="en">water tank</text>
 		<text lang="en" plural="true">water tanks</text>
@@ -3116,6 +3269,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.1">
+		<name lang="en-AU">Open land</name>
 		<name lang="en">Open land</name>
 		<name lang="fr">Champ</name>
 		<name lang="en-GB">Open land</name>
@@ -3128,6 +3282,8 @@ for the symbols.
 		<name lang="ro">Teren deschis</name>
 		<name lang="et">Avatud ala</name>
 		<name lang="de">Offenes Gebiet</name>
+		<text lang="en-AU" plural="true">open land</text>
+		<text lang="en-AU">open land</text>
 		
 		<text lang="en">open land</text>
 		<text lang="en" plural="true">open land</text>
@@ -3161,6 +3317,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.2">
+		<name lang="en-AU">Semi-open land</name>
 		<name lang="en">Semi-open land</name>
 		<name lang="fr">Zone partiellement boisée</name>
 		<name lang="en-GB">Semi-open land</name>
@@ -3173,6 +3330,8 @@ for the symbols.
 		<name lang="ro">Teren semideschis</name>
 		<name lang="et">Pool-avatud alad</name>
 		<name lang="de">Halboffenes Gebiet</name>
+		<text lang="en-AU" plural="true">semi-open land</text>
+		<text lang="en-AU">semi-open land</text>
 		
 		<text lang="en">semi-open land</text>
 		<text lang="en" plural="true">semi-open land</text>
@@ -3236,6 +3395,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.3">
+		<name lang="en-AU">Forest corner</name>
 		<name lang="en">Forest corner</name>
 		<name lang="fr">Corne de forêt</name>
 		<name lang="en-GB">Forest corner</name>
@@ -3248,6 +3408,8 @@ for the symbols.
 		<name lang="ro">Colț pădure</name>
 		<name lang="et">Metsa nurgad</name>
 		<name lang="de">Waldecke</name>
+		<text lang="en-AU" plural="true">forest corners</text>
+		<text lang="en-AU">forest corner</text>
 		
 		<text lang="en">forest corner</text>
 		<text lang="en" plural="true">forest corners</text>
@@ -3283,6 +3445,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.4">
+		<name lang="en-AU">Clearing</name>
 		<name lang="en">Clearing</name>
 		<name lang="fr">Clairière</name>
 		<name lang="en-GB">Clearing</name>
@@ -3295,6 +3458,8 @@ for the symbols.
 		<name lang="ro">Defrișare</name>
 		<name lang="et">Lagendik</name>
 		<name lang="de">Lichtung</name>
+		<text lang="en-AU" plural="true">clearings</text>
+		<text lang="en-AU">clearing</text>
 		
 		<text lang="en">clearing</text>
 		<text lang="en" plural="true">clearings</text>
@@ -3360,6 +3525,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.5">
+		<name lang="en-AU">Thicket</name>
 		<name lang="en">Thicket</name>
 		<name lang="fr">Fourré</name>
 		<name lang="en-GB">Thicket</name>
@@ -3372,6 +3538,8 @@ for the symbols.
 		<name lang="ro">Desiș</name>
 		<name lang="et">Tihnik</name>
 		<name lang="de">Dickicht</name>
+		<text lang="en-AU" plural="true">thickets</text>
+		<text lang="en-AU">thicket</text>
 		
 		<text lang="en">thicket</text>
 		<text lang="en" plural="true">thickets</text>
@@ -3426,6 +3594,7 @@ for the symbols.
 
 
 	<symbol kind="D" id="4.6">
+		<name lang="en-AU">Hedge, Linear thicket</name>
 		<name lang="en">Hedge, Linear thicket</name>
 		<name lang="fr">Haie</name>
 		<name lang="en-GB">Hedge</name>
@@ -3438,6 +3607,8 @@ for the symbols.
 		<name lang="ro">Acoperire, desiș linear</name>
 		<name lang="et">Hekk, tihe puude rivi</name>
 		<name lang="de">Hecke, längliches Dickicht</name>
+		<text lang="en-AU" plural="true">hedges</text>
+		<text lang="en-AU">hedge</text>
 		
 		<text lang="en">hedge</text>
 		<text lang="en" plural="true">hedges</text>
@@ -3492,6 +3663,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.7">
+		<name lang="en-AU">Vegetation boundary</name>
 		<name lang="en">Vegetation boundary</name>
 		<name lang="fr">Limite de végétation</name>
 		<name lang="en-GB">Vegetation boundary</name>
@@ -3504,6 +3676,8 @@ for the symbols.
 		<name lang="ro">Limită de vegetație</name>
 		<name lang="et">Kõlviku/taimestiku piir</name>
 		<name lang="de">Vegetationsgrenze</name>
+		<text lang="en-AU" plural="true">vegetation boundaries</text>
+		<text lang="en-AU">vegetation boundary</text>
 		
 		<text lang="en">vegetation boundary</text>
 		<text lang="en" plural="true">vegetation boundaries</text>
@@ -3559,6 +3733,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.8">
+		<name lang="en-AU">Copse</name>
 		<name lang="en">Copse</name>
 		<name lang="fr">Bosquet</name>
 		<name lang="en-GB">Copse</name>
@@ -3571,6 +3746,8 @@ for the symbols.
 		<name lang="ro">Crâng</name>
 		<name lang="et">Puudegrupp</name>
 		<name lang="de">Baumgruppe</name>
+		<text lang="en-AU" plural="true">copses</text>
+		<text lang="en-AU">copse</text>
 		
 		<text lang="en">copse</text>
 		<text lang="en" plural="true">copses</text>
@@ -3615,6 +3792,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="4.9">
+		<name lang="en-AU">Distinctive tree</name>
 		<name lang="en">Distinctive tree</name>
 		<name lang="fr">Arbre remarquable</name>
 		<name lang="en-GB">Distinctive tree</name>
@@ -3627,6 +3805,8 @@ for the symbols.
 		<name lang="ro">Copac distinctiv</name>
 		<name lang="et">Üksik puu</name>
 		<name lang="de">Einzelbaum</name>
+		<text lang="en-AU" plural="true">lone trees</text>
+		<text lang="en-AU">lone tree</text>
 		
 		<text lang="en">lone tree</text>
 		<text lang="en" plural="true">lone trees</text>
@@ -3665,6 +3845,7 @@ for the symbols.
 	</symbol>
 	
 	<symbol kind="D" id="4.10">
+		<name lang="en-AU">Tree stump, Root stock</name>
 		<name lang="en">Tree stump, Root stock</name>
 		<name lang="fr">Souche</name>
 		<name lang="en-GB">Tree stump, Root stock</name>
@@ -3677,6 +3858,8 @@ for the symbols.
 		<name lang="ro">Buturugă</name>
 		<name lang="et">Känd, murdunud puu</name>
 		<name lang="de">Wurzelstock</name>
+		<text lang="en-AU" plural="true">root stocks</text>
+		<text lang="en-AU">root stock</text>
 		
 		<text lang="en">root stock</text>
 		<text lang="en" plural="true">root stocks</text>
@@ -3717,6 +3900,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.1">
+		<name lang="en-AU">Road</name>
 		<name lang="en">Road</name>
 		<name lang="fr">Route</name>
 		<name lang="en-GB">Road</name>
@@ -3729,6 +3913,8 @@ for the symbols.
 		<name lang="ro">Drum</name>
 		<name lang="et">Tee</name>
 		<name lang="de">Weg</name>
+		<text lang="en-AU" plural="true">roads</text>
+		<text lang="en-AU">road</text>
 		
 		<text lang="en">road</text>
 		<text lang="en" plural="true">roads</text>
@@ -3762,6 +3948,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.2">
+		<name lang="en-AU">Track, Path</name>
 		<name lang="en">Track, Path</name>
 		<name lang="fr">Chemin, sentier</name>
 		<name lang="en-GB">Track, Path</name>
@@ -3774,6 +3961,8 @@ for the symbols.
 		<name lang="ro">Potecă</name>
 		<name lang="et">Rada, teerada</name>
 		<name lang="de">Pfad</name>
+		<text lang="en-AU" plural="true">paths</text>
+		<text lang="en-AU">path</text>
 		
 		<text lang="en">path</text>
 		<text lang="en" plural="true">paths</text>
@@ -3815,6 +4004,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.3">
+		<name lang="en-AU">Ride</name>
 		<name lang="en">Ride</name>
 		<name lang="fr">Layon étroit</name>
 		<name lang="en-GB">Ride</name>
@@ -3827,6 +4017,8 @@ for the symbols.
 		<name lang="ro">Defrișare</name>
 		<name lang="et">Siht</name>
 		<name lang="de">Schneise</name>
+		<text lang="en-AU" plural="true">rides</text>
+		<text lang="en-AU">ride</text>
 		
 		<text lang="en">ride</text>
 		<text lang="en" plural="true">rides</text>
@@ -3891,6 +4083,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.4">
+		<name lang="en-AU">Bridge</name>
 		<name lang="en">Bridge</name>
 		<name lang="fr">Pont, passerelle</name>
 		<name lang="en-GB">Bridge</name>
@@ -3903,6 +4096,8 @@ for the symbols.
 		<name lang="ro">Pod</name>
 		<name lang="et">Sild</name>
 		<name lang="de">Brücke</name>
+		<text lang="en-AU" plural="true">bridges</text>
+		<text lang="en-AU">bridge</text>
 		
 		<text lang="en">bridge</text>
 		<text lang="en" plural="true">bridges</text>
@@ -3944,6 +4139,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.5">
+		<name lang="en-AU">Power line</name>
 		<name lang="en">Power line</name>
 		<name lang="fr">Ligne à Haute Tension</name>
 		<name lang="en-GB">Power line</name>
@@ -3956,6 +4152,8 @@ for the symbols.
 		<name lang="ro">Linie de curent</name>
 		<name lang="et">Elektri liin</name>
 		<name lang="de">Stromleitung</name>
+		<text lang="en-AU" plural="true">power lines</text>
+		<text lang="en-AU">power line</text>
 		
 		<text lang="en">power line</text>
 		<text lang="en" plural="true">power lines</text>
@@ -4001,6 +4199,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.6">
+		<name lang="en-AU">Power line pylon</name>
 		<name lang="en">Power line pylon</name>
 		<name lang="fr">Pylône de ligne HT</name>
 		<name lang="en-GB">Power line pylon</name>
@@ -4013,6 +4212,8 @@ for the symbols.
 		<name lang="ro">Stâlp de curent</name>
 		<name lang="et">Kõrgepinge mast</name>
 		<name lang="de">Leitungsmast</name>
+		<text lang="en-AU" plural="true">power pylons</text>
+		<text lang="en-AU">power pylon</text>
 		
 		<text lang="en">power pylon</text>
 		<text lang="en" plural="true">power pylons</text>
@@ -4061,6 +4262,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.7">
+		<name lang="en-AU">Tunnel</name>
 		<name lang="en">Tunnel</name>
 		<name lang="fr">Tunnel</name>
 		<name lang="en-GB">Tunnel</name>
@@ -4073,6 +4275,8 @@ for the symbols.
 		<name lang="ro">Tunel</name>
 		<name lang="et">Tunnel</name>
 		<name lang="de">Tunnel</name>
+		<text lang="en-AU" plural="true">tunnels</text>
+		<text lang="en-AU">tunnel</text>
 		
 		<text lang="en">tunnel</text>
 		<text lang="en" plural="true">tunnels</text>
@@ -4120,6 +4324,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.8">
+		<name lang="en-AU">Stone wall</name>
 		<name lang="en">Stone wall</name>
 		<name lang="fr">Mur</name>
 		<name lang="en-GB">Stone wall</name>
@@ -4132,6 +4337,8 @@ for the symbols.
 		<name lang="ro">Zid piatră</name>
 		<name lang="et">Kivimüür/aed</name>
 		<name lang="de">Steinmauer</name>
+		<text lang="en-AU" plural="true">stone walls</text>
+		<text lang="en-AU">stone wall</text>
 		
 		<text lang="en">stone wall</text>
 		<text lang="en" plural="true">stone walls</text>
@@ -4174,6 +4381,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.9">
+		<name lang="en-AU">Fence</name>
 		<name lang="en">Fence</name>
 		<name lang="fr">Clôture</name>
 		<name lang="en-GB">Fence</name>
@@ -4186,6 +4394,8 @@ for the symbols.
 		<name lang="ro">Gard</name>
 		<name lang="et">Aed</name>
 		<name lang="de">Zaun</name>
+		<text lang="en-AU" plural="true">fences</text>
+		<text lang="en-AU">fence</text>
 		
 		<text lang="en">fence</text>
 		<text lang="en" plural="true">fences</text>
@@ -4235,6 +4445,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.10">
+		<name lang="en-AU">Crossing point</name>
 		<name lang="en">Crossing point</name>
 		<name lang="fr">Passage</name>
 		<name lang="en-GB">Crossing point</name>
@@ -4247,6 +4458,8 @@ for the symbols.
 		<name lang="ro">Punct de trecere</name>
 		<name lang="et">Läbipääsu koht</name>
 		<name lang="de">Durchlass</name>
+		<text lang="en-AU" plural="true">crossing points</text>
+		<text lang="en-AU">crossing point</text>
 		
 		<text lang="en">crossing point</text>
 		<text lang="en" plural="true">crossing points</text>
@@ -4291,6 +4504,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.11">
+		<name lang="en-AU">Building</name>
 		<name lang="en">Building</name>
 		<name lang="fr">Construction</name>
 		<name lang="en-GB">Building</name>
@@ -4303,6 +4517,8 @@ for the symbols.
 		<name lang="ro">Clădire</name>
 		<name lang="et">Ehitis</name>
 		<name lang="de">Gebäude</name>
+		<text lang="en-AU" plural="true">buildings</text>
+		<text lang="en-AU">building</text>
 		
 		<text lang="en">building</text>
 		<text lang="en" plural="true">buildings</text>
@@ -4338,6 +4554,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.12">
+		<name lang="en-AU">Paved area</name>
 		<name lang="en">Paved area</name>
 		<name lang="fr">Zone pavée</name>
 		<name lang="en-GB">Paved area</name>
@@ -4350,6 +4567,8 @@ for the symbols.
 		<name lang="ro">Zonă pavată</name>
 		<name lang="et">Kattega plats</name>
 		<name lang="de">Befestigte Fläche</name>
+		<text lang="en-AU" plural="true">paved areas</text>
+		<text lang="en-AU">paved area</text>
 		
 		<text lang="en">paved area</text>
 		<text lang="en" plural="true">paved areas</text>
@@ -4400,6 +4619,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.13">
+		<name lang="en-AU">Ruin</name>
 		<name lang="en">Ruin</name>
 		<name lang="fr">Ruine</name>
 		<name lang="en-GB">Ruin</name>
@@ -4412,6 +4632,8 @@ for the symbols.
 		<name lang="ro">Ruine</name>
 		<name lang="et">Vare, lagunenud hoone</name>
 		<name lang="de">Ruine</name>
+		<text lang="en-AU" plural="true">ruins</text>
+		<text lang="en-AU">ruin</text>
 		
 		<text lang="en">ruin</text>
 		<text lang="en" plural="true">ruins</text>
@@ -4461,6 +4683,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.14">
+		<name lang="en-AU">Pipeline</name>
 		<name lang="en">Pipeline</name>
 		<name lang="fr">Pipeline</name>
 		<name lang="en-GB">Pipeline</name>
@@ -4473,6 +4696,8 @@ for the symbols.
 		<name lang="ro">Conductă</name>
 		<name lang="et">Torujuhe</name>
 		<name lang="de">Pipeline</name>
+		<text lang="en-AU" plural="true">pipelines</text>
+		<text lang="en-AU">pipeline</text>
 		
 		<text lang="en">pipeline</text>
 		<text lang="en" plural="true">pipelines</text>
@@ -4521,6 +4746,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.15">
+		<name lang="en-AU">Tower</name>
 		<name lang="en">Tower</name>
 		<name lang="fr">Tour</name>
 		<name lang="en-GB">Tower</name>
@@ -4533,6 +4759,8 @@ for the symbols.
 		<name lang="ro">Turn</name>
 		<name lang="et">Torn</name>
 		<name lang="de">Turm</name>
+		<text lang="en-AU" plural="true">towers</text>
+		<text lang="en-AU">tower</text>
 		
 		<text lang="en">tower</text>
 		<text lang="en" plural="true">towers</text>
@@ -4570,6 +4798,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.16">
+		<name lang="en-AU">Shooting platform</name>
 		<name lang="en">Shooting platform</name>
 		<name lang="fr">Poste d'observation</name>
 		<name lang="en-GB">Shooting platform</name>
@@ -4582,6 +4811,8 @@ for the symbols.
 		<name lang="ro">Platformă de vânătoare</name>
 		<name lang="et">Jahi-isteplatvorm/torn</name>
 		<name lang="de">Hochsitz</name>
+		<text lang="en-AU" plural="true">shooting platforms</text>
+		<text lang="en-AU">shooting platform</text>
 		
 		<text lang="en">shooting platform</text>
 		<text lang="en" plural="true">shooting platforms</text>
@@ -4615,6 +4846,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.17">
+		<name lang="en-AU">Boundary stone, Cairn</name>
 		<name lang="en">Boundary stone, Cairn</name>
 		<name lang="fr">Borne</name>
 		<name lang="en-GB">Boundary stone, Cairn</name>
@@ -4627,6 +4859,8 @@ for the symbols.
 		<name lang="ro">Bornă</name>
 		<name lang="et">Kupits, piiritähis</name>
 		<name lang="de">Grenzstein</name>
+		<text lang="en-AU" plural="true">cairns</text>
+		<text lang="en-AU">cairn</text>
 		
 		<text lang="en">cairn</text>
 		<text lang="en" plural="true">cairns</text>
@@ -4662,6 +4896,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.18">
+		<name lang="en-AU">Fodder rack</name>
 		<name lang="en">Fodder rack</name>
 		<name lang="fr">Mangeoire</name>
 		<name lang="en-GB">Fodder rack</name>
@@ -4674,6 +4909,8 @@ for the symbols.
 		<name lang="ro">Iesle/Hrănitoare</name>
 		<name lang="et">Söödasõim</name>
 		<name lang="de">Futterkrippe</name>
+		<text lang="en-AU" plural="true">fodder racks</text>
+		<text lang="en-AU">fodder rack</text>
 		
 		<text lang="en">fodder rack</text>
 		<text lang="en" plural="true">fodder racks</text>
@@ -4716,6 +4953,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.19">
+		<name lang="en-AU">Charcoal burning ground</name>
 		<name lang="en">Charcoal burning ground</name>
 		<name lang="fr">Charbonnière</name>
 		<name lang="en-GB">Charcoal burning ground</name>
@@ -4728,6 +4966,8 @@ for the symbols.
 		<name lang="ro">Pământ cu cărbune ars</name>
 		<name lang="et">Lõkkease</name>
 		<name lang="de">Kohlenmeiler</name>
+		<text lang="en-AU" plural="true">charcoal burning grounds</text>
+		<text lang="en-AU">charcoal burning ground</text>
 		
 		<text lang="en">charcoal burning ground</text>
 		<text lang="en" plural="true">charcoal burning grounds</text>
@@ -4765,6 +5005,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.20">
+		<name lang="en-AU">Monument or statue</name>
 		<name lang="en">Monument or statue</name>
 		<name lang="fr">Monument ou statue</name>
 		<name lang="en-GB">Monument or statue</name>
@@ -4777,6 +5018,8 @@ for the symbols.
 		<name lang="ro">Monument sau statuie</name>
 		<name lang="et">Ausammas</name>
 		<name lang="de">Denkmal, Statue</name>
+		<text lang="en-AU" plural="true">statues</text>
+		<text lang="en-AU">statue</text>
 		
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
@@ -4815,6 +5058,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.23">
+		<name lang="en-AU">Building pass-through</name>
 		<name lang="en">Building pass-through</name>
 		<name lang="fr">Passage couvert</name>
 		<name lang="en-GB">Building pass-through</name>
@@ -4827,6 +5071,8 @@ for the symbols.
 		<name lang="ro">Trecere</name>
 		<name lang="et">Sisse/läbipääs</name>
 		<name lang="de">Gebäudedurchlass</name>
+		<text lang="en-AU" plural="true">building pass-throughs</text>
+		<text lang="en-AU">building pass-through</text>
 		
 		<text lang="en">building pass-through</text>
 		<text lang="en" plural="true">building pass-throughs</text>
@@ -4868,6 +5114,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="5.24">
+		<name lang="en-AU">Stairway</name>
 		<name lang="en">Stairway</name>
 		<name lang="fr">Escalier</name>
 		<name lang="en-GB">Stairway</name>
@@ -4880,6 +5127,8 @@ for the symbols.
 		<name lang="ro">Scări</name>
 		<name lang="et">Trepp</name>
 		<name lang="de">Treppe</name>
+		<text lang="en-AU" plural="true">stairways</text>
+		<text lang="en-AU">stairway</text>
 		
 		<text lang="en">stairway</text>
 		<text lang="en" plural="true">stairways</text>
@@ -4918,6 +5167,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="6.1">
+		<name lang="en-AU">Special item</name>
 		<name lang="en">Special item</name>
 		<name lang="fr">Objet particulier devant être défini au préalable</name>
 		<name lang="en-GB">Special item</name>
@@ -4930,6 +5180,8 @@ for the symbols.
 		<name lang="ro">Reper special</name>
 		<name lang="et">Pisiobjekt</name>
 		<name lang="de">Besonderes Objekt</name>
+		<text lang="en-AU" plural="true">special items</text>
+		<text lang="en-AU">special item</text>
 		
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
@@ -4967,6 +5219,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="6.2">
+		<name lang="en-AU">Special item</name>
 		<name lang="en">Special item</name>
 		<name lang="fr">Objet particulier devant être défini au préalable</name>
 		<name lang="en-GB">Special item</name>
@@ -4979,6 +5232,8 @@ for the symbols.
 		<name lang="ro">Reper special</name>
 		<name lang="et">Pisiobjekt</name>
 		<name lang="de">Besonderes Objekt</name>
+		<text lang="en-AU" plural="true">special items</text>
+		<text lang="en-AU">special item</text>
 		
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
@@ -5014,6 +5269,7 @@ for the symbols.
 	     appearance.  {0} is the object being described. -->
 
 	<symbol kind="E" id="8.1">
+		<name lang="en-AU">Low</name>
 		<name lang="en">Low</name>
 		<name lang="fr">Plat</name>
 		<name lang="en-GB">Low</name>
@@ -5026,6 +5282,7 @@ for the symbols.
 		<name lang="ro">Jos</name>
 		<name lang="et">Madal</name>
 		<name lang="de">Niedrig</name>
+		<text lang="en-AU">low {0}</text>
 		
 		<text lang="en">low {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} aplaties</text>
@@ -5070,6 +5327,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.2">
+		<name lang="en-AU">Shallow</name>
 		<name lang="en">Shallow</name>
 		<name lang="fr">Évasé</name>
 		<name lang="en-GB">Shallow</name>
@@ -5082,6 +5340,7 @@ for the symbols.
 		<name lang="ro">Puțin adânc</name>
 		<name lang="et">Lame</name>
 		<name lang="de">Flach</name>
+		<text lang="en-AU">shallow {0}</text>
 		
 		<text lang="en">shallow {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} évasées</text>
@@ -5124,6 +5383,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.3">
+		<name lang="en-AU">Deep</name>
 		<name lang="en">Deep</name>
 		<name lang="fr">Profond</name>
 		<name lang="en-GB">Deep</name>
@@ -5136,6 +5396,7 @@ for the symbols.
 		<name lang="ro">Adânc</name>
 		<name lang="et">Sügav</name>
 		<name lang="de">Tief</name>
+		<text lang="en-AU">deep {0}</text>
 		
 		<text lang="en">deep {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} profondes</text>
@@ -5189,6 +5450,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.4">
+		<name lang="en-AU">Overgrown</name>
 		<name lang="en">Overgrown</name>
 		<name lang="fr">Couvert de végétation</name>
 		<name lang="en-GB">Overgrown</name>
@@ -5201,6 +5463,7 @@ for the symbols.
 		<name lang="ro">Super crescut</name>
 		<name lang="et">Tihe ala</name>
 		<name lang="de">Überwachsen</name>
+		<text lang="en-AU">overgrown {0}</text>
 		
 		<text lang="en">overgrown {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} couvertes de végétation</text>
@@ -5268,6 +5531,7 @@ for the symbols.
 	</symbol>
 	
 	<symbol kind="E" id="8.5">
+		<name lang="en-AU">Open</name>
 		<name lang="en">Open</name>
 		<name lang="fr">Dégagé</name>
 		<name lang="en-GB">Open</name>
@@ -5280,6 +5544,7 @@ for the symbols.
 		<name lang="ro">Deschis</name>
 		<name lang="et">Avatud</name>
 		<name lang="de">Offen</name>
+		<text lang="en-AU">open {0}</text>
 		
 		<text lang="en">open {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} dégagées</text>
@@ -5351,6 +5616,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.6">
+		<name lang="en-AU">Rocky, stony</name>
 		<name lang="en">Rocky, stony</name>
 		<name lang="fr">Rocailleux</name>
 		<name lang="en-GB">Rocky, stony</name>
@@ -5363,6 +5629,7 @@ for the symbols.
 		<name lang="ro">Stâncos</name>
 		<name lang="et">Kivine, kaljune</name>
 		<name lang="de">Felsig, steinig</name>
+		<text lang="en-AU">rocky {0}</text>
 		
 		<text lang="en">rocky {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} rocailleuses</text>
@@ -5413,6 +5680,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.7">
+		<name lang="en-AU">Marshy</name>
 		<name lang="en">Marshy</name>
 		<name lang="fr">Marécageux</name>
 		<name lang="en-GB">Marshy</name>
@@ -5425,6 +5693,7 @@ for the symbols.
 		<name lang="ro">Mlăștinos</name>
 		<name lang="et">Soine</name>
 		<name lang="de">Sumpfig</name>
+		<text lang="en-AU">marshy {0}</text>
 		
 		<text lang="en">marshy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} marécageuses</text>
@@ -5472,6 +5741,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.8">
+		<name lang="en-AU">Sandy</name>
 		<name lang="en">Sandy</name>
 		<name lang="fr">Sablonneux</name>
 		<name lang="en-GB">Sandy</name>
@@ -5484,6 +5754,7 @@ for the symbols.
 		<name lang="ro">Nisipos</name>
 		<name lang="et">Liivane</name>
 		<name lang="de">Sandig</name>
+		<text lang="en-AU">sandy {0}</text>
 		
 		<text lang="en">sandy {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} sablonneuses</text>
@@ -5669,6 +5940,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.9">
+		<name lang="en-AU">Needle-leaved</name>
 		<name lang="en">Needle-leaved</name>
 		<name lang="fr">Conifère</name>
 		<name lang="en-GB">Needle-leaved</name>
@@ -5681,6 +5953,7 @@ for the symbols.
 		<name lang="ro">Ace de brad</name>
 		<name lang="et">Okaspuu</name>
 		<name lang="de">Nadelbaum</name>
+		<text lang="en-AU">needle-leaved {0}</text>
 		
 		<text lang="en">needle-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, conifères</text>
@@ -5721,6 +5994,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.10">
+		<name lang="en-AU">Broad-leaved</name>
 		<name lang="en">Broad-leaved</name>
 		<name lang="fr">Feuillu</name>
 		<name lang="en-GB">Broad-leaved</name>
@@ -5733,6 +6007,7 @@ for the symbols.
 		<name lang="ro">Frunze-late</name>
 		<name lang="et">Lehtpuu</name>
 		<name lang="de">Laubbaum</name>
+		<text lang="en-AU">broad-leaved {0}</text>
 		
 		<text lang="en">broad-leaved {0}</text>
 		<text lang="fr" plural="true">{0}, feuillus</text>
@@ -5794,6 +6069,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="E" id="8.11">
+		<name lang="en-AU">Ruined</name>
 		<name lang="en">Ruined</name>
 		<name lang="fr">Ruiné ou tombé</name>
 		<name lang="en-GB">Ruined</name>
@@ -5806,6 +6082,7 @@ for the symbols.
 		<name lang="ro">Dărăpănat</name>
 		<name lang="et">Lagunenud</name>
 		<name lang="de">Verfallen</name>
+		<text lang="en-AU">ruined {0}</text>
 		
 		<text lang="en">ruined {0}</text>
 		<text lang="fr" plural="true" gender="féminin">{0} ruinées ou tombées</text>
@@ -5874,6 +6151,7 @@ for the symbols.
 	-->
 	
 	<symbol kind="F" id="10.1">
+		<name lang="en-AU">Crossing</name>
 		<name lang="en">Crossing</name>
 		<name lang="fr">Croisement</name>
 		<name lang="en-GB">Crossing</name>
@@ -5886,6 +6164,8 @@ for the symbols.
 		<name lang="ro">Intersecţie</name>
 		<name lang="et">Ristumine</name>
 		<name lang="de">Kreuzung</name>
+		<text lang="en-AU" plural="true">{0} and {1} crossings</text>
+		<text lang="en-AU">{0} and {1} crossing</text>
 		
 		<text lang="en">{0} and {1} crossing</text>
 		<text lang="en" plural="true">{0} and {1} crossings</text>
@@ -5918,6 +6198,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="10.1single">
+		<name lang="en-AU">Crossing (objects of same kind)</name>
 		<name lang="en">Crossing (objects of same kind)</name>
 		<name lang="fr">Croisement (mêmes symboles)</name>
 		<name lang="en-GB">Crossing (objects of same kind)</name>
@@ -5930,6 +6211,8 @@ for the symbols.
 		<name lang="ro">Intersecţie (obiecte de același tip)</name>
 		<name lang="et">Ristumine (samad objektid)</name>
 		<name lang="de">Kreuzung (gleicher Objekte)</name>
+		<text lang="en-AU" plural="true">{0} crossings</text>
+		<text lang="en-AU">{0} crossing</text>
 		
 		<text lang="en">{0} crossing</text>
 		<text lang="en" plural="true">{0} crossings</text>
@@ -5955,6 +6238,7 @@ for the symbols.
 	</symbol>
 	
 	<symbol kind="F" id="10.2">
+		<name lang="en-AU">Junction</name>
 		<name lang="en">Junction</name>
 		<name lang="fr">Jonction</name>
 		<name lang="en-GB">Junction</name>
@@ -5967,6 +6251,8 @@ for the symbols.
 		<name lang="ro">Bifurcație</name>
 		<name lang="et">Hargnemine</name>
 		<name lang="de">Gabelung</name>
+		<text lang="en-AU" plural="true">{0} and {1} junctions</text>
+		<text lang="en-AU">{0} and {1} junction</text>
 		
 		<text lang="en">{0} and {1} junction</text>
 		<text lang="en" plural="true">{0} and {1} junctions</text>
@@ -6000,6 +6286,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="10.2single">
+		<name lang="en-AU">Junction (objects of same kind)</name>
 		<name lang="en">Junction (objects of same kind)</name>
 		<name lang="fr">Jonction (mêmes symboles)</name>
 		<name lang="en-GB">Junction (objects of same kind)</name>
@@ -6012,6 +6299,8 @@ for the symbols.
 		<name lang="ro">Bifurcație (obiecte de același tip)</name>
 		<name lang="et">Hargnemine (samad objektid)</name>
 		<name lang="de">Gabelung (gleicher Objekte)</name>
+		<text lang="en-AU" plural="true">{0} junctions</text>
+		<text lang="en-AU">{0} junction</text>
 		
 		<text lang="en">{0} junction</text>
 		<text lang="en" plural="true">{0} junctions</text>
@@ -6043,6 +6332,7 @@ for the symbols.
 		   {0} is the size of the feature
     -->
 	<symbol kind="F" id="9.1high">
+		<name lang="en-AU">Height of feature</name>
 		<name lang="en">Height of feature</name>
 		<name lang="fr">Hauteur en mètre</name>
 		<name lang="en-GB">Height of feature</name>
@@ -6055,6 +6345,7 @@ for the symbols.
 		<name lang="ro">Înălțimea reperului</name>
 		<name lang="et">Objekti kõrgus</name>
 		<name lang="de">Höhe des Objektes</name>
+		<text lang="en-AU">{0} high</text>
 		
 		<text lang="en">{0} high</text>
 		<text lang="fr">hauteur {0}</text>
@@ -6072,6 +6363,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="9.1deep">
+		<name lang="en-AU">Depth of feature</name>
 		<name lang="en">Depth of feature</name>
 		<name lang="fr">Profondeur en mètre</name>
 		<name lang="en-GB">Depth of feature</name>
@@ -6084,6 +6376,7 @@ for the symbols.
 		<name lang="ro">Adâncimea reperului</name>
 		<name lang="et">Objekti sügavus</name>
 		<name lang="de">Tiefe des Objektes</name>
+		<text lang="en-AU">{0} deep</text>
 		
 		<text lang="en">{0} deep</text>
 		<text lang="fr">profondeur {0}</text>
@@ -6101,6 +6394,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="9.2">
+		<name lang="en-AU">Size of feature</name>
 		<name lang="en">Size of feature</name>
 		<name lang="fr">Dimension en mètre</name>
 		<name lang="en-GB">Size of feature</name>
@@ -6113,6 +6407,7 @@ for the symbols.
 		<name lang="ro">Dimensiunea reperului</name>
 		<name lang="et">Objekti suurus</name>
 		<name lang="de">Größe des Objektes</name>
+		<text lang="en-AU">{0} by {1}</text>
 		
 		<text lang="en">{0} by {1}</text>
 		<text lang="fr">{0} x {1}</text>
@@ -6130,6 +6425,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="9.3high">
+		<name lang="en-AU">Height of feature on slope</name>
 		<name lang="en">Height of feature on slope</name>
 		<name lang="fr">Hauteur d'un élément sur une pente</name>
 		<name lang="en-GB">Height of feature on slope</name>
@@ -6142,6 +6438,7 @@ for the symbols.
 		<name lang="ro">Înălțimea pantei</name>
 		<name lang="et">Kõrgus nõlval</name>
 		<name lang="de">Höhe auf Abhang</name>
+		<text lang="en-AU">{0} to {1} high</text>
 		
 		<text lang="en">{0} to {1} high</text>
 		<text lang="fr">de {0} à {1} de haut</text>
@@ -6159,6 +6456,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="9.3deep">
+		<name lang="en-AU">Depth of feature on slope</name>
 		<name lang="en">Depth of feature on slope</name>
 		<name lang="fr">Profondeur d'un élément sur une pente</name>
 		<name lang="en-GB">Depth of feature on slope</name>
@@ -6171,6 +6469,7 @@ for the symbols.
 		<name lang="ro">Adâncimea pantei</name>
 		<name lang="et">Objekti sügavus nõlval</name>
 		<name lang="de">Tiefe am Abhang</name>
+		<text lang="en-AU">{0} to {1} deep</text>
 		
 		<text lang="en">{0} to {1} deep</text>
 		<text lang="fr">de {0} à {1} de profondeur</text>
@@ -6192,6 +6491,7 @@ for the symbols.
 		   the final result could be "5m by 3m and 2m by 1m".
     -->
 	<symbol kind="F" id="9.4">
+		<name lang="en-AU">Size of two features</name>
 		<name lang="en">Size of two features</name>
 		<name lang="fr">Hauteur de deux éléments</name>
 		<name lang="en-GB">Size of two features</name>
@@ -6204,6 +6504,7 @@ for the symbols.
 		<name lang="ro">Dimensiunea a două repere</name>
 		<name lang="et">Kahe objekti suurused</name>
 		<name lang="de">Größe von zwei Objekten</name>
+		<text lang="en-AU">{0} and {1}</text>
 		
 		<text lang="en">{0} and {1}</text>
 		<text lang="fr">{0} et {1}</text>
@@ -6229,6 +6530,7 @@ for the symbols.
 		 -->
 
 	<symbol kind="G" id="11.1N">
+		<name lang="en-AU">North side</name>
 		<name lang="en">North side</name>
 		<name lang="fr">Côté Nord</name>
 		<name lang="en-GB">North side</name>
@@ -6241,6 +6543,7 @@ for the symbols.
 		<name lang="ro">Partea nordică</name>
 		<name lang="et">Põhjaküljel</name>
 		<name lang="de">Nordseite</name>
+		<text lang="en-AU">N side of {0}</text>
 		
 		<text lang="en">N side of {0}</text>
 		<text lang="fr">{0}, côté Nord</text>
@@ -6264,6 +6567,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1NE">
+		<name lang="en-AU">North-east side</name>
 		<name lang="en">North-east side</name>
 		<name lang="fr">Côté NE</name>
 		<name lang="en-GB">North-east side</name>
@@ -6276,6 +6580,7 @@ for the symbols.
 		<name lang="ro">Partea nord estică</name>
 		<name lang="et">Kirdeküljel</name>
 		<name lang="de">Nord-Ostseite</name>
+		<text lang="en-AU">NE side of {0}</text>
 		
 		<text lang="en">NE side of {0}</text>
 		<text lang="fr">{0}, côté NE</text>
@@ -6299,6 +6604,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1E">
+		<name lang="en-AU">East side</name>
 		<name lang="en">East side</name>
 		<name lang="fr">Côté Est</name>
 		<name lang="en-GB">East side</name>
@@ -6311,6 +6617,7 @@ for the symbols.
 		<name lang="ro">Partea estică</name>
 		<name lang="et">Idaküljel</name>
 		<name lang="de">Ostseite</name>
+		<text lang="en-AU">E side of {0}</text>
 		
 		<text lang="en">E side of {0}</text>
 		<text lang="fr">{0}, côté Est</text>
@@ -6334,6 +6641,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1SE">
+		<name lang="en-AU">South-east side</name>
 		<name lang="en">South-east side</name>
 		<name lang="fr">Côté SE</name>
 		<name lang="en-GB">South-east side</name>
@@ -6346,6 +6654,7 @@ for the symbols.
 		<name lang="ro">Partea sud estică</name>
 		<name lang="et">Kaguküljel</name>
 		<name lang="de">Süd-Ostseite</name>
+		<text lang="en-AU">SE side of {0}</text>
 		
 		<text lang="en">SE side of {0}</text>
 		<text lang="fr">{0}, côté SE</text>
@@ -6369,6 +6678,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1S">
+		<name lang="en-AU">South side</name>
 		<name lang="en">South side</name>
 		<name lang="fr">Côté Sud</name>
 		<name lang="en-GB">South side</name>
@@ -6381,6 +6691,7 @@ for the symbols.
 		<name lang="ro">Partea sudică</name>
 		<name lang="et">Lõunaküljel</name>
 		<name lang="de">Südseite</name>
+		<text lang="en-AU">S side of {0}</text>
 		
 		<text lang="en">S side of {0}</text>
 		<text lang="fr">{0}, côté Sud</text>
@@ -6404,6 +6715,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1SW">
+		<name lang="en-AU">South-west side</name>
 		<name lang="en">South-west side</name>
 		<name lang="fr">Côté SO</name>
 		<name lang="en-GB">South-west side</name>
@@ -6416,6 +6728,7 @@ for the symbols.
 		<name lang="ro">Partea sud-vestică</name>
 		<name lang="et">Edelaküljel</name>
 		<name lang="de">Süd-Westseite</name>
+		<text lang="en-AU">SW side of {0}</text>
 		
 		<text lang="en">SW side of {0}</text>
 		<text lang="fr">{0}, côté SO</text>
@@ -6439,6 +6752,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1W">
+		<name lang="en-AU">West side</name>
 		<name lang="en">West side</name>
 		<name lang="fr">Côté Ouest</name>
 		<name lang="en-GB">West side</name>
@@ -6451,6 +6765,7 @@ for the symbols.
 		<name lang="ro">Partea vestică</name>
 		<name lang="et">Lääneküljel</name>
 		<name lang="de">Westseite</name>
+		<text lang="en-AU">W side of {0}</text>
 		
 		<text lang="en">W side of {0}</text>
 		<text lang="fr">{0}, côté Ouest</text>
@@ -6474,6 +6789,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.1NW">
+		<name lang="en-AU">North-west side</name>
 		<name lang="en">North-west side</name>
 		<name lang="fr">Côté NO</name>
 		<name lang="en-GB">North-west side</name>
@@ -6486,6 +6802,7 @@ for the symbols.
 		<name lang="ro">Partea nord-vestică</name>
 		<name lang="et">Loodeküljel</name>
 		<name lang="de">Nord-Westseite</name>
+		<text lang="en-AU">NW side of {0}</text>
 		
 		<text lang="en">NW side of {0}</text>
 		<text lang="fr">{0}, côté NO</text>
@@ -6509,6 +6826,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2N">
+		<name lang="en-AU">North edge</name>
 		<name lang="en">North edge</name>
 		<name lang="fr">Bord Nord</name>
 		<name lang="en-GB">North edge</name>
@@ -6521,6 +6839,7 @@ for the symbols.
 		<name lang="ro">Marginea nordică</name>
 		<name lang="et">Põhjaservas</name>
 		<name lang="de">Nordrand</name>
+		<text lang="en-AU">N edge of {0}</text>
 		
 		<text lang="en">N edge of {0}</text>
 		<text lang="fr">{0}, bord Nord</text>
@@ -6545,6 +6864,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2NE">
+		<name lang="en-AU">North-east edge</name>
 		<name lang="en">North-east edge</name>
 		<name lang="fr">Bord NE</name>
 		<name lang="en-GB">North-east edge</name>
@@ -6557,6 +6877,7 @@ for the symbols.
 		<name lang="ro">Marginea nord-estică</name>
 		<name lang="et">Kirdeservas</name>
 		<name lang="de">Nord-Ostrand</name>
+		<text lang="en-AU">NE edge of {0}</text>
 		
 		<text lang="en">NE edge of {0}</text>
 		<text lang="fr">{0}, bord NE</text>
@@ -6581,6 +6902,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2E">
+		<name lang="en-AU">East edge</name>
 		<name lang="en">East edge</name>
 		<name lang="fr">Bord Est</name>
 		<name lang="en-GB">East edge</name>
@@ -6593,6 +6915,7 @@ for the symbols.
 		<name lang="ro">Marginea estică</name>
 		<name lang="et">Idaservas</name>
 		<name lang="de">Ostrand</name>
+		<text lang="en-AU">E edge of {0}</text>
 		
 		<text lang="en">E edge of {0}</text>
 		<text lang="fr">{0}, bord Est</text>
@@ -6617,6 +6940,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2SE">
+		<name lang="en-AU">South-east edge</name>
 		<name lang="en">South-east edge</name>
 		<name lang="fr">Bord SE</name>
 		<name lang="en-GB">South-east edge</name>
@@ -6629,6 +6953,7 @@ for the symbols.
 		<name lang="ro">Marginea sud-estică</name>
 		<name lang="et">Kaguservas</name>
 		<name lang="de">Süd-Ostrand</name>
+		<text lang="en-AU">SE edge of {0}</text>
 		
 		<text lang="en">SE edge of {0}</text>
 		<text lang="fr">{0}, bord SE</text>
@@ -6653,6 +6978,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2S">
+		<name lang="en-AU">South edge</name>
 		<name lang="en">South edge</name>
 		<name lang="fr">Bord Sud</name>
 		<name lang="en-GB">South edge</name>
@@ -6665,6 +6991,7 @@ for the symbols.
 		<name lang="ro">marginea sudică</name>
 		<name lang="et">Lõunaservas</name>
 		<name lang="de">Südrand</name>
+		<text lang="en-AU">S edge of {0}</text>
 		
 		<text lang="en">S edge of {0}</text>
 		<text lang="fr">{0}, bord Sud</text>
@@ -6689,6 +7016,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2SW">
+		<name lang="en-AU">South-west edge</name>
 		<name lang="en">South-west edge</name>
 		<name lang="fr">Bord SO</name>
 		<name lang="en-GB">South-west edge</name>
@@ -6701,6 +7029,7 @@ for the symbols.
 		<name lang="ro">marginea sud-vestică</name>
 		<name lang="et">Edelaservas</name>
 		<name lang="de">Süd-Westrand</name>
+		<text lang="en-AU">SW edge of {0}</text>
 		
 		<text lang="en">SW edge of {0}</text>
 		<text lang="fr">{0}, bord SO</text>
@@ -6725,6 +7054,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2W">
+		<name lang="en-AU">West edge</name>
 		<name lang="en">West edge</name>
 		<name lang="fr">Bord Ouest</name>
 		<name lang="en-GB">West edge</name>
@@ -6737,6 +7067,7 @@ for the symbols.
 		<name lang="ro">marginea vestică</name>
 		<name lang="et">Lääneservas</name>
 		<name lang="de">Westrand</name>
+		<text lang="en-AU">W edge of {0}</text>
 		
 		<text lang="en">W edge of {0}</text>
 		<text lang="fr">{0}, bord Ouest</text>
@@ -6761,6 +7092,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.2NW">
+		<name lang="en-AU">North-west edge</name>
 		<name lang="en">North-west edge</name>
 		<name lang="fr">Bord NO</name>
 		<name lang="en-GB">North-west edge</name>
@@ -6773,6 +7105,7 @@ for the symbols.
 		<name lang="ro">Marginea nord-vestică</name>
 		<name lang="et">Loodeservas</name>
 		<name lang="de">Nord-Westrand</name>
+		<text lang="en-AU">NW edge of {0}</text>
 		
 		<text lang="en">NW edge of {0}</text>
 		<text lang="fr">{0}, Bord NO</text>
@@ -6797,6 +7130,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3N">
+		<name lang="en-AU">North part</name>
 		<name lang="en">North part</name>
 		<name lang="fr">Partie Nord</name>
 		<name lang="en-GB">North part</name>
@@ -6809,6 +7143,7 @@ for the symbols.
 		<name lang="ro">Partea nordică interior</name>
 		<name lang="et">Põhjaosas</name>
 		<name lang="de">Nördlicher Teil</name>
+		<text lang="en-AU">N part of {0}</text>
 		
 		<text lang="en">N part of {0}</text>
 		<text lang="fr">{0}, partie Nord</text>
@@ -6832,6 +7167,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3NE">
+		<name lang="en-AU">North-east part</name>
 		<name lang="en">North-east part</name>
 		<name lang="fr">Partie NE</name>
 		<name lang="en-GB">North-east part</name>
@@ -6844,6 +7180,7 @@ for the symbols.
 		<name lang="ro">Partea nord-estică interior</name>
 		<name lang="et">Kirdeosas</name>
 		<name lang="de">Nordöstlicher Teil</name>
+		<text lang="en-AU">NE part of {0}</text>
 		
 		<text lang="en">NE part of {0}</text>
 		<text lang="fr">{0}, partie NE</text>
@@ -6867,6 +7204,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3E">
+		<name lang="en-AU">East part</name>
 		<name lang="en">East part</name>
 		<name lang="fr">Partie Est</name>
 		<name lang="en-GB">East part</name>
@@ -6879,6 +7217,7 @@ for the symbols.
 		<name lang="ro">Partea estică interior</name>
 		<name lang="et">Idaosas</name>
 		<name lang="de">Östlicher Teil</name>
+		<text lang="en-AU">E part of {0}</text>
 		
 		<text lang="en">E part of {0}</text>
 		<text lang="fr">{0}, partie Est</text>
@@ -6902,6 +7241,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3SE">
+		<name lang="en-AU">South-east part</name>
 		<name lang="en">South-east part</name>
 		<name lang="fr">Partie SE</name>
 		<name lang="en-GB">South-east part</name>
@@ -6914,6 +7254,7 @@ for the symbols.
 		<name lang="ro">Partea sud-estică interior</name>
 		<name lang="et">Kaguosas</name>
 		<name lang="de">Südöstlicher Teil</name>
+		<text lang="en-AU">SE part of {0}</text>
 		
 		<text lang="en">SE part of {0}</text>
 		<text lang="fr">{0}, partie SE</text>
@@ -6937,6 +7278,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3S">
+		<name lang="en-AU">South part</name>
 		<name lang="en">South part</name>
 		<name lang="fr">Partie Sud</name>
 		<name lang="en-GB">South part</name>
@@ -6949,6 +7291,7 @@ for the symbols.
 		<name lang="ro">Partea sudică interior</name>
 		<name lang="et">Lõunaosas</name>
 		<name lang="de">Südlicher Teil</name>
+		<text lang="en-AU">S part of {0}</text>
 		
 		<text lang="en">S part of {0}</text>
 		<text lang="fr">{0}, partie Sud</text>
@@ -6972,6 +7315,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3SW">
+		<name lang="en-AU">South-west part</name>
 		<name lang="en">South-west part</name>
 		<name lang="fr">Partie SO</name>
 		<name lang="en-GB">South-west part</name>
@@ -6984,6 +7328,7 @@ for the symbols.
 		<name lang="ro">Partea sud-vestică interior</name>
 		<name lang="et">Edelaosas</name>
 		<name lang="de">Südwestlicher Teil</name>
+		<text lang="en-AU">SW part of {0}</text>
 		
 		<text lang="en">SW part of {0}</text>
 		<text lang="fr">{0}, partie SO</text>
@@ -7007,6 +7352,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3W">
+		<name lang="en-AU">West part</name>
 		<name lang="en">West part</name>
 		<name lang="fr">Partie Ouest</name>
 		<name lang="en-GB">West part</name>
@@ -7019,6 +7365,7 @@ for the symbols.
 		<name lang="ro">Partea vestică interior</name>
 		<name lang="et">Lääneosas</name>
 		<name lang="de">Westlicher Teil</name>
+		<text lang="en-AU">W part of {0}</text>
 		
 		<text lang="en">W part of {0}</text>
 		<text lang="fr">{0}, partie Ouest</text>
@@ -7042,6 +7389,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.3NW">
+		<name lang="en-AU">North-west part</name>
 		<name lang="en">North-west part</name>
 		<name lang="fr">Partie NO</name>
 		<name lang="en-GB">North-west part</name>
@@ -7054,6 +7402,7 @@ for the symbols.
 		<name lang="ro">Partea nord-vestică interior</name>
 		<name lang="et">Loodeosas</name>
 		<name lang="de">Nordwestlicher Teil</name>
+		<text lang="en-AU">NW part of {0}</text>
 		
 		<text lang="en">NW part of {0}</text>
 		<text lang="fr">{0}, partie NO</text>
@@ -7077,6 +7426,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4N">
+		<name lang="en-AU">North corner (inside)</name>
 		<name lang="en">North corner (inside)</name>
 		<name lang="fr">Angle Nord (intérieur)</name>
 		<name lang="en-GB">North corner (inside)</name>
@@ -7089,6 +7439,7 @@ for the symbols.
 		<name lang="ro">Colț nord interior</name>
 		<name lang="et">Põhjapoolne sisenurk</name>
 		<name lang="de">Nordecke, innen</name>
+		<text lang="en-AU">N inside corner of {0}</text>
 		
 		<text lang="en">N inside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (intérieur)</text>
@@ -7114,6 +7465,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4NE">
+		<name lang="en-AU">North-east corner (inside)</name>
 		<name lang="en">North-east corner (inside)</name>
 		<name lang="fr">Angle NE (intérieur)</name>
 		<name lang="en-GB">North-east corner (inside)</name>
@@ -7126,6 +7478,7 @@ for the symbols.
 		<name lang="ro">colț nord-est interior</name>
 		<name lang="et">Kirdepoolne sisenurk</name>
 		<name lang="de">Nordostecke, innen</name>
+		<text lang="en-AU">NE inside corner of {0}</text>
 		
 		<text lang="en">NE inside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (intérieur)</text>
@@ -7151,6 +7504,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4E">
+		<name lang="en-AU">East corner (inside)</name>
 		<name lang="en">East corner (inside)</name>
 		<name lang="fr">Angle Est (intérieur)</name>
 		<name lang="en-GB">East corner (inside)</name>
@@ -7163,6 +7517,7 @@ for the symbols.
 		<name lang="ro">Colț est interior</name>
 		<name lang="et">Idapoolne sisenurk</name>
 		<name lang="de">Ostecke, innen</name>
+		<text lang="en-AU">E inside corner of {0}</text>
 		
 		<text lang="en">E inside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (intérieur)</text>
@@ -7188,6 +7543,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4SE">
+		<name lang="en-AU">South-east corner (inside)</name>
 		<name lang="en">South-east corner (inside)</name>
 		<name lang="fr">Angle SE (intérieur)</name>
 		<name lang="en-GB">South-east corner (inside)</name>
@@ -7200,6 +7556,7 @@ for the symbols.
 		<name lang="ro">Colț sud-est interior</name>
 		<name lang="et">Kagupoolne sisenurk</name>
 		<name lang="de">Südostecke, innen</name>
+		<text lang="en-AU">SE inside corner of {0}</text>
 		
 		<text lang="en">SE inside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (intérieur)</text>
@@ -7225,6 +7582,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4S">
+		<name lang="en-AU">South corner (inside)</name>
 		<name lang="en">South corner (inside)</name>
 		<name lang="fr">Angle Sud (intérieur)</name>
 		<name lang="en-GB">South corner (inside)</name>
@@ -7237,6 +7595,7 @@ for the symbols.
 		<name lang="ro">Colț sud interior</name>
 		<name lang="et">Lõunapoolne sisenurk</name>
 		<name lang="de">Südecke, innen</name>
+		<text lang="en-AU">S inside corner of {0}</text>
 		
 		<text lang="en">S inside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (intérieur)</text>
@@ -7262,6 +7621,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4SW">
+		<name lang="en-AU">South-west corner (inside)</name>
 		<name lang="en">South-west corner (inside)</name>
 		<name lang="fr">Angle SO (intérieur)</name>
 		<name lang="en-GB">South-west corner (inside)</name>
@@ -7274,6 +7634,7 @@ for the symbols.
 		<name lang="ro">Colț sud-vest interior</name>
 		<name lang="et">Edalapoolne sisenurk</name>
 		<name lang="de">Südwestecke, innen</name>
+		<text lang="en-AU">SW inside corner of {0}</text>
 		
 		<text lang="en">SW inside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (intérieur)</text>
@@ -7299,6 +7660,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4W">
+		<name lang="en-AU">West corner (inside)</name>
 		<name lang="en">West corner (inside)</name>
 		<name lang="fr">Angle Ouest (intérieur)</name>
 		<name lang="en-GB">West corner (inside)</name>
@@ -7311,6 +7673,7 @@ for the symbols.
 		<name lang="ro">Colț vest interior</name>
 		<name lang="et">Läänepoolne sisenurk</name>
 		<name lang="de">Westecke, innen</name>
+		<text lang="en-AU">W inside corner of {0}</text>
 		
 		<text lang="en">W inside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (intérieur)</text>
@@ -7336,6 +7699,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.4NW">
+		<name lang="en-AU">North-west corner (inside)</name>
 		<name lang="en">North-west corner (inside)</name>
 		<name lang="fr">Angle NO (intérieur)</name>
 		<name lang="en-GB">North-west corner (inside)</name>
@@ -7348,6 +7712,7 @@ for the symbols.
 		<name lang="ro">Colț nord-vest interior</name>
 		<name lang="et">Loodepoolne sisenurk</name>
 		<name lang="de">Nordwestecke, innen</name>
+		<text lang="en-AU">NW inside corner of {0}</text>
 		
 		<text lang="en">NW inside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (intérieur)</text>
@@ -7373,6 +7738,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5N">
+		<name lang="en-AU">North corner (outside)</name>
 		<name lang="en">North corner (outside)</name>
 		<name lang="fr">Angle Nord (extérieur)</name>
 		<name lang="en-GB">North corner (outside)</name>
@@ -7385,6 +7751,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nordic</name>
 		<name lang="et">Põhjapoolne välisnurk</name>
 		<name lang="de">Nordecke, außen</name>
+		<text lang="en-AU">N outside corner of {0}</text>
 		
 		<text lang="en">N outside corner of {0}</text>
 		<text lang="fr">{0}, angle Nord (extérieur)</text>
@@ -7410,6 +7777,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5NE">
+		<name lang="en-AU">North-east corner (outside)</name>
 		<name lang="en">North-east corner (outside)</name>
 		<name lang="fr">Angle NE (extérieur)</name>
 		<name lang="en-GB">North-east corner (outside)</name>
@@ -7422,6 +7790,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nord-estic</name>
 		<name lang="et">Kirdepoolne välisnurk</name>
 		<name lang="de">Nordostecke, außen</name>
+		<text lang="en-AU">NE outside corner of {0}</text>
 		
 		<text lang="en">NE outside corner of {0}</text>
 		<text lang="fr">{0}, angle NE (extérieur)</text>
@@ -7447,6 +7816,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5E">
+		<name lang="en-AU">East corner (outside)</name>
 		<name lang="en">East corner (outside)</name>
 		<name lang="fr">Angle Est (extérieur)</name>
 		<name lang="en-GB">East corner (outside)</name>
@@ -7459,6 +7829,7 @@ for the symbols.
 		<name lang="ro">Colț exterior estic</name>
 		<name lang="et">Idapoolne välisnurk</name>
 		<name lang="de">Ostecke, außen</name>
+		<text lang="en-AU">E outside corner of {0}</text>
 		
 		<text lang="en">E outside corner of {0}</text>
 		<text lang="fr">{0}, angle Est (extérieur)</text>
@@ -7484,6 +7855,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5SE">
+		<name lang="en-AU">South-east corner (outside)</name>
 		<name lang="en">South-east corner (outside)</name>
 		<name lang="fr">Angle SE (extérieur)</name>
 		<name lang="en-GB">South-east corner (outside)</name>
@@ -7496,6 +7868,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sud-estic</name>
 		<name lang="et">Kagupoolne välisnurk</name>
 		<name lang="de">Südostecke, außen</name>
+		<text lang="en-AU">SE outside corner of {0}</text>
 		
 		<text lang="en">SE outside corner of {0}</text>
 		<text lang="fr">{0}, angle SE (extérieur)</text>
@@ -7521,6 +7894,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5S">
+		<name lang="en-AU">South corner (outside)</name>
 		<name lang="en">South corner (outside)</name>
 		<name lang="fr">Angle Sud (extérieur)</name>
 		<name lang="en-GB">South corner (outside)</name>
@@ -7533,6 +7907,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sudic</name>
 		<name lang="et">Lõunapoolne välisnurk</name>
 		<name lang="de">Südecke, außen</name>
+		<text lang="en-AU">S outside corner of {0}</text>
 		
 		<text lang="en">S outside corner of {0}</text>
 		<text lang="fr">{0}, angle Sud (extérieur)</text>
@@ -7558,6 +7933,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5SW">
+		<name lang="en-AU">South-west corner (outside)</name>
 		<name lang="en">South-west corner (outside)</name>
 		<name lang="fr">Angle SO (extérieur)</name>
 		<name lang="en-GB">South-west corner (outside)</name>
@@ -7570,6 +7946,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sud-vestic</name>
 		<name lang="et">Edelapoolne välisnurk</name>
 		<name lang="de">Südwestecke, außen</name>
+		<text lang="en-AU">SW outside corner of {0}</text>
 		
 		<text lang="en">SW outside corner of {0}</text>
 		<text lang="fr">{0}, angle SO (extérieur)</text>
@@ -7595,6 +7972,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5W">
+		<name lang="en-AU">West corner (outside)</name>
 		<name lang="en">West corner (outside)</name>
 		<name lang="fr">Angle Ouest (extérieur)</name>
 		<name lang="en-GB">West corner (outside)</name>
@@ -7607,6 +7985,7 @@ for the symbols.
 		<name lang="ro">Colț exterior vestic</name>
 		<name lang="et">Läänepoolne välisnurk</name>
 		<name lang="de">Westecke, außen</name>
+		<text lang="en-AU">W outside corner of {0}</text>
 		
 		<text lang="en">W outside corner of {0}</text>
 		<text lang="fr">{0}, angle Ouest (extérieur)</text>
@@ -7632,6 +8011,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.5NW">
+		<name lang="en-AU">North-west corner (outside)</name>
 		<name lang="en">North-west corner (outside)</name>
 		<name lang="fr">Angle NO(extérieur)</name>
 		<name lang="en-GB">North-west corner (outside)</name>
@@ -7644,6 +8024,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nord-vestic</name>
 		<name lang="et">Loodepoolne välisnurk</name>
 		<name lang="de">Nordwestecke, außen</name>
+		<text lang="en-AU">NW outside corner of {0}</text>
 		
 		<text lang="en">NW outside corner of {0}</text>
 		<text lang="fr">{0}, angle NO (extérieur)</text>
@@ -7669,6 +8050,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6N">
+		<name lang="en-AU">North tip</name>
 		<name lang="en">North tip</name>
 		<name lang="fr">Pointe Nord</name>
 		<name lang="en-GB">North tip</name>
@@ -7681,6 +8063,7 @@ for the symbols.
 		<name lang="ro">Vârf nordic</name>
 		<name lang="et">Põhjatipp</name>
 		<name lang="de">Nordspitze</name>
+		<text lang="en-AU">N tip of {0}</text>
 		
 		<text lang="en">N tip of {0}</text>
 		<text lang="fr">{0}, pointe Nord</text>
@@ -7706,6 +8089,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6NE">
+		<name lang="en-AU">North-east tip</name>
 		<name lang="en">North-east tip</name>
 		<name lang="fr">Pointe NE</name>
 		<name lang="en-GB">North-east tip</name>
@@ -7718,6 +8102,7 @@ for the symbols.
 		<name lang="ro">Vârf nord-estic</name>
 		<name lang="et">Kirdetipus</name>
 		<name lang="de">Nordostspitze</name>
+		<text lang="en-AU">NE tip of {0}</text>
 		
 		<text lang="en">NE tip of {0}</text>
 		<text lang="fr">{0}, pointe NE</text>
@@ -7743,6 +8128,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6E">
+		<name lang="en-AU">East tip</name>
 		<name lang="en">East tip</name>
 		<name lang="fr">Pointe Est</name>
 		<name lang="en-GB">East tip</name>
@@ -7755,6 +8141,7 @@ for the symbols.
 		<name lang="ro">Vârf estic</name>
 		<name lang="et">Idatipp</name>
 		<name lang="de">Ostspitze</name>
+		<text lang="en-AU">E tip of {0}</text>
 		
 		<text lang="en">E tip of {0}</text>
 		<text lang="fr">{0}, pointe Est</text>
@@ -7780,6 +8167,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6SE">
+		<name lang="en-AU">South-east tip</name>
 		<name lang="en">South-east tip</name>
 		<name lang="fr">Pointe SE</name>
 		<name lang="en-GB">South-east tip</name>
@@ -7792,6 +8180,7 @@ for the symbols.
 		<name lang="ro">Vârf sud-estic</name>
 		<name lang="et">Kagutipus</name>
 		<name lang="de">Südostspitze</name>
+		<text lang="en-AU">SE tip of {0}</text>
 		
 		<text lang="en">SE tip of {0}</text>
 		<text lang="fr">{0}, pointe SE</text>
@@ -7817,6 +8206,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6S">
+		<name lang="en-AU">South tip</name>
 		<name lang="en">South tip</name>
 		<name lang="fr">Pointe Sud</name>
 		<name lang="en-GB">South tip</name>
@@ -7829,6 +8219,7 @@ for the symbols.
 		<name lang="ro">Vârf sudic</name>
 		<name lang="et">Lõunatipp</name>
 		<name lang="de">Südspitze</name>
+		<text lang="en-AU">S tip of {0}</text>
 		
 		<text lang="en">S tip of {0}</text>
 		<text lang="fr">{0}, pointe Sud</text>
@@ -7854,6 +8245,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6SW">
+		<name lang="en-AU">South-west tip</name>
 		<name lang="en">South-west tip</name>
 		<name lang="fr">Pointe SO</name>
 		<name lang="en-GB">South-west tip</name>
@@ -7866,6 +8258,7 @@ for the symbols.
 		<name lang="ro">Vârf sud-vestic</name>
 		<name lang="et">Edelatipp</name>
 		<name lang="de">Südwestspitze</name>
+		<text lang="en-AU">SW tip of {0}</text>
 		
 		<text lang="en">SW tip of {0}</text>
 		<text lang="fr">{0}, pointe SO</text>
@@ -7891,6 +8284,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6W">
+		<name lang="en-AU">West tip</name>
 		<name lang="en">West tip</name>
 		<name lang="fr">Pointe Ouest</name>
 		<name lang="en-GB">West tip</name>
@@ -7903,6 +8297,7 @@ for the symbols.
 		<name lang="ro">Vârf vestic</name>
 		<name lang="et">Läänetipp</name>
 		<name lang="de">Westspitze</name>
+		<text lang="en-AU">W tip of {0}</text>
 		
 		<text lang="en">W tip of {0}</text>
 		<text lang="fr">{0}, pointe Ouest</text>
@@ -7928,6 +8323,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.6NW">
+		<name lang="en-AU">North-west tip</name>
 		<name lang="en">North-west tip</name>
 		<name lang="fr">Pointe NO</name>
 		<name lang="en-GB">North-west tip</name>
@@ -7940,6 +8336,7 @@ for the symbols.
 		<name lang="ro">Vârf nord-vestic</name>
 		<name lang="et">Loodetipp</name>
 		<name lang="de">Nordwestspitze</name>
+		<text lang="en-AU">NW tip of {0}</text>
 		
 		<text lang="en">NW tip of {0}</text>
 		<text lang="fr">{0}, pointe NO</text>
@@ -7965,6 +8362,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8N">
+		<name lang="en-AU">North end</name>
 		<name lang="en">North end</name>
 		<name lang="fr">Extrémité Nord</name>
 		<name lang="en-GB">North end</name>
@@ -7977,6 +8375,7 @@ for the symbols.
 		<name lang="ro">Capăt nordic</name>
 		<name lang="et">Põhja otsa</name>
 		<name lang="de">Nordende</name>
+		<text lang="en-AU">N end of {0}</text>
 		
 		<text lang="en">N end of {0}</text>
 		<text lang="fr">{0}, extrémité Nord</text>
@@ -8002,6 +8401,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8NE">
+		<name lang="en-AU">North-east end</name>
 		<name lang="en">North-east end</name>
 		<name lang="fr">Extrémité NE</name>
 		<name lang="en-GB">North-east end</name>
@@ -8014,6 +8414,7 @@ for the symbols.
 		<name lang="ro">Capăt nord-estic</name>
 		<name lang="et">Kirdeots</name>
 		<name lang="de">Nordostende</name>
+		<text lang="en-AU">NE end of {0}</text>
 		
 		<text lang="en">NE end of {0}</text>
 		<text lang="fr">{0}, extrémité NE</text>
@@ -8039,6 +8440,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8E">
+		<name lang="en-AU">East end</name>
 		<name lang="en">East end</name>
 		<name lang="fr">Extrémité Est</name>
 		<name lang="en-GB">East end</name>
@@ -8051,6 +8453,7 @@ for the symbols.
 		<name lang="ro">Capăt estic</name>
 		<name lang="et">Idaots</name>
 		<name lang="de">Ostende</name>
+		<text lang="en-AU">E end of {0}</text>
 		
 		<text lang="en">E end of {0}</text>
 		<text lang="fr">{0}, extrémité Est</text>
@@ -8076,6 +8479,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8SE">
+		<name lang="en-AU">South-east end</name>
 		<name lang="en">South-east end</name>
 		<name lang="fr">Extrémité SE</name>
 		<name lang="en-GB">South-east end</name>
@@ -8088,6 +8492,7 @@ for the symbols.
 		<name lang="ro">Capăt sud-estic</name>
 		<name lang="et">Kaguots</name>
 		<name lang="de">Südostende</name>
+		<text lang="en-AU">SE end of {0}</text>
 		
 		<text lang="en">SE end of {0}</text>
 		<text lang="fr">{0}, extrémité SE</text>
@@ -8113,6 +8518,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8S">
+		<name lang="en-AU">South end</name>
 		<name lang="en">South end</name>
 		<name lang="fr">Extrémité Sud</name>
 		<name lang="en-GB">South end</name>
@@ -8125,6 +8531,7 @@ for the symbols.
 		<name lang="ro">Capăt sudic</name>
 		<name lang="et">Lõunaots</name>
 		<name lang="de">Südende</name>
+		<text lang="en-AU">S end of {0}</text>
 		
 		<text lang="en">S end of {0}</text>
 		<text lang="fr">{0}, extrémité Sud</text>
@@ -8150,6 +8557,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8SW">
+		<name lang="en-AU">South-west end</name>
 		<name lang="en">South-west end</name>
 		<name lang="fr">Extrémité SO</name>
 		<name lang="en-GB">South-west end</name>
@@ -8162,6 +8570,7 @@ for the symbols.
 		<name lang="ro">Capăt sud-vestic</name>
 		<name lang="et">Edelaots</name>
 		<name lang="de">Südwestende</name>
+		<text lang="en-AU">SW end of {0}</text>
 		
 		<text lang="en">SW end of {0}</text>
 		<text lang="fr">{0}, extrémité SO</text>
@@ -8187,6 +8596,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8W">
+		<name lang="en-AU">West end</name>
 		<name lang="en">West end</name>
 		<name lang="fr">Extrémité Ouest</name>
 		<name lang="en-GB">West end</name>
@@ -8199,6 +8609,7 @@ for the symbols.
 		<name lang="ro">Capăt vestic</name>
 		<name lang="et">Lääneots</name>
 		<name lang="de">Westende</name>
+		<text lang="en-AU">W end of {0}</text>
 		
 		<text lang="en">W end of {0}</text>
 		<text lang="fr">{0}, extrémité Ouest</text>
@@ -8224,6 +8635,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.8NW">
+		<name lang="en-AU">North-west end</name>
 		<name lang="en">North-west end</name>
 		<name lang="fr">Extrémité NO</name>
 		<name lang="en-GB">North-west end</name>
@@ -8236,6 +8648,7 @@ for the symbols.
 		<name lang="ro">Capăt nord-vestic</name>
 		<name lang="et">Loodeots</name>
 		<name lang="de">Nordwestende</name>
+		<text lang="en-AU">NW end of {0}</text>
 		
 		<text lang="en">NW end of {0}</text>
 		<text lang="fr">{0}, extrémité NO</text>
@@ -8261,6 +8674,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14N">
+		<name lang="en-AU">North foot</name>
 		<name lang="en">North foot</name>
 		<name lang="fr">Pied Nord</name>
 		<name lang="en-GB">North foot</name>
@@ -8273,6 +8687,7 @@ for the symbols.
 		<name lang="ro">Piciorul nordic</name>
 		<name lang="et">Põhjajalam</name>
 		<name lang="de">Nordfuß</name>
+		<text lang="en-AU">N foot of {0}</text>
 		
 		<text lang="en">N foot of {0}</text>
 		<text lang="fr">{0}, pied Nord</text>
@@ -8298,6 +8713,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14NE">
+		<name lang="en-AU">North-east foot</name>
 		<name lang="en">North-east foot</name>
 		<name lang="fr">Pied NE</name>
 		<name lang="en-GB">North-east foot</name>
@@ -8310,6 +8726,7 @@ for the symbols.
 		<name lang="ro">Piciorul nord-estic</name>
 		<name lang="et">Kirdejalam</name>
 		<name lang="de">Nordostfuß</name>
+		<text lang="en-AU">NE foot of {0}</text>
 		
 		<text lang="en">NE foot of {0}</text>
 		<text lang="fr">{0}, pied NE</text>
@@ -8335,6 +8752,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14E">
+		<name lang="en-AU">East foot</name>
 		<name lang="en">East foot</name>
 		<name lang="fr">Pied Est</name>
 		<name lang="en-GB">East foot</name>
@@ -8347,6 +8765,7 @@ for the symbols.
 		<name lang="ro">Piciorul estic</name>
 		<name lang="et">Idajalam</name>
 		<name lang="de">Ostfuß</name>
+		<text lang="en-AU">E foot of {0}</text>
 		
 		<text lang="en">E foot of {0}</text>
 		<text lang="fr">{0}, pied Est</text>
@@ -8372,6 +8791,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14SE">
+		<name lang="en-AU">South-east foot</name>
 		<name lang="en">South-east foot</name>
 		<name lang="fr">Pied SE</name>
 		<name lang="en-GB">South-east foot</name>
@@ -8384,6 +8804,7 @@ for the symbols.
 		<name lang="ro">Piciorul sud-estic</name>
 		<name lang="et">Kagujalam</name>
 		<name lang="de">Südostfuß</name>
+		<text lang="en-AU">SE foot of {0}</text>
 		
 		<text lang="en">SE foot of {0}</text>
 		<text lang="fr">{0}, pied SE</text>
@@ -8409,6 +8830,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14S">
+		<name lang="en-AU">South foot</name>
 		<name lang="en">South foot</name>
 		<name lang="fr">Pied Sud</name>
 		<name lang="en-GB">South foot</name>
@@ -8421,6 +8843,7 @@ for the symbols.
 		<name lang="ro">Piciorul sudic</name>
 		<name lang="et">Lõunajalam</name>
 		<name lang="de">Südfuß</name>
+		<text lang="en-AU">S foot of {0}</text>
 		
 		<text lang="en">S foot of {0}</text>
 		<text lang="fr">{0}, pied Sud</text>
@@ -8446,6 +8869,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14SW">
+		<name lang="en-AU">South-west foot</name>
 		<name lang="en">South-west foot</name>
 		<name lang="fr">Pied SO</name>
 		<name lang="en-GB">South-west foot</name>
@@ -8458,6 +8882,7 @@ for the symbols.
 		<name lang="ro">Piciorul sud-vestic</name>
 		<name lang="et">Edelajalam</name>
 		<name lang="de">Südwestfuß</name>
+		<text lang="en-AU">SW foot of {0}</text>
 		
 		<text lang="en">SW foot of {0}</text>
 		<text lang="fr">{0}, pied SO</text>
@@ -8483,6 +8908,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14W">
+		<name lang="en-AU">West foot</name>
 		<name lang="en">West foot</name>
 		<name lang="fr">Pied Ouest</name>
 		<name lang="en-GB">West foot</name>
@@ -8495,6 +8921,7 @@ for the symbols.
 		<name lang="ro">Piciorul vestic</name>
 		<name lang="et">Läänejalam</name>
 		<name lang="de">West fuß</name>
+		<text lang="en-AU">W foot of {0}</text>
 		
 		<text lang="en">W foot of {0}</text>
 		<text lang="fr">{0}, pied Ouest</text>
@@ -8520,6 +8947,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.14NW">
+		<name lang="en-AU">North-west foot</name>
 		<name lang="en">North-west foot</name>
 		<name lang="fr">Pied NO</name>
 		<name lang="en-GB">North-west foot</name>
@@ -8532,6 +8960,7 @@ for the symbols.
 		<name lang="ro">Piciorul nord-vestic</name>
 		<name lang="et">Loodejalam</name>
 		<name lang="de">Nordwestfuß</name>
+		<text lang="en-AU">NW foot of {0}</text>
 		
 		<text lang="en">NW foot of {0}</text>
 		<text lang="fr">{0}, pied NO</text>
@@ -8557,6 +8986,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.7">
+		<name lang="en-AU">Bend</name>
 		<name lang="en">Bend</name>
 		<name lang="fr">Coude</name>
 		<name lang="en-GB">Bend</name>
@@ -8569,6 +8999,7 @@ for the symbols.
 		<name lang="ro">Cotitură</name>
 		<name lang="et">Käänak</name>
 		<name lang="de">Biegung</name>
+		<text lang="en-AU">bend in {0}</text>
 		
 		<text lang="en">bend in {0}</text>
 		<text lang="fr">{0}, au coude</text>
@@ -8598,6 +9029,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.9">
+		<name lang="en-AU">Upper part</name>
 		<name lang="en">Upper part</name>
 		<name lang="fr">Partie amont</name>
 		<name lang="en-GB">Upper part</name>
@@ -8610,6 +9042,7 @@ for the symbols.
 		<name lang="ro">Partea superioară</name>
 		<name lang="et">Ülaosas</name>
 		<name lang="de">Oberer Teil</name>
+		<text lang="en-AU">upper part of {0}</text>
 		
 		<text lang="en">upper part of {0}</text>
 		<text lang="fr">{0}, partie amont</text>
@@ -8638,6 +9071,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.10">
+		<name lang="en-AU">Lower part</name>
 		<name lang="en">Lower part</name>
 		<name lang="fr">Partie aval</name>
 		<name lang="en-GB">Lower part</name>
@@ -8650,6 +9084,7 @@ for the symbols.
 		<name lang="ro">Partea inferioară</name>
 		<name lang="et">Lower part</name>
 		<name lang="de">Unterer Teil</name>
+		<text lang="en-AU">lower part of {0}</text>
 		
 		<text lang="en">lower part of {0}</text>
 		<text lang="fr">{0}, partie aval</text>
@@ -8678,6 +9113,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.11">
+		<name lang="en-AU">Top</name>
 		<name lang="en">Top</name>
 		<name lang="fr">Sur</name>
 		<name lang="en-GB">Top</name>
@@ -8690,6 +9126,7 @@ for the symbols.
 		<name lang="ro">În vârful</name>
 		<name lang="et">Peal</name>
 		<name lang="de">Obenauf</name>
+		<text lang="en-AU">top of {0}</text>
 		
 		<text lang="en">top of {0}</text>
 		<text lang="fr">sur {0}</text>
@@ -8716,6 +9153,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.12">
+		<name lang="en-AU">Beneath</name>
 		<name lang="en">Beneath</name>
 		<name lang="fr">Sous</name>
 		<name lang="en-GB">Beneath</name>
@@ -8728,6 +9166,7 @@ for the symbols.
 		<name lang="ro">Sub</name>
 		<name lang="et">All</name>
 		<name lang="de">Unterhalb</name>
+		<text lang="en-AU">beneath {0}</text>
 		
 		<text lang="en">beneath {0}</text>
 		<text lang="fr">sous {0}</text>
@@ -8754,6 +9193,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.13">
+		<name lang="en-AU">Foot</name>
 		<name lang="en">Foot</name>
 		<name lang="fr">Au pied</name>
 		<name lang="en-GB">Foot</name>
@@ -8766,6 +9206,7 @@ for the symbols.
 		<name lang="ro">La piciorul</name>
 		<name lang="et">Jalamil</name>
 		<name lang="de">Fuß</name>
+		<text lang="en-AU">foot of {0}</text>
 		
 		<text lang="en">foot of {0}</text>
 		<text lang="fr">{0}, au pied</text>
@@ -8805,6 +9246,7 @@ for the symbols.
 	-->
 
 	<symbol kind="G" id="11.15">
+		<name lang="en-AU">Between</name>
 		<name lang="en">Between</name>
 		<name lang="fr">Entre</name>
 		<name lang="en-GB">Between</name>
@@ -8817,6 +9259,7 @@ for the symbols.
 		<name lang="ro">Între</name>
 		<name lang="et">Vahel</name>
 		<name lang="de">Zwischen</name>
+		<text lang="en-AU">between {0} and {1}</text>
 		
 		<text lang="en">between {0} and {1}</text>
 		<text lang="fr">entre {0} et {1}</text>
@@ -8845,6 +9288,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="G" id="11.15single">
+		<name lang="en-AU">Between (objects of same kind)</name>
 		<name lang="en">Between (objects of same kind)</name>
 		<name lang="fr">Entre (objets de même symbole)</name>
 		<name lang="en-GB">Between (objects of same kind)</name>
@@ -8857,6 +9301,7 @@ for the symbols.
 		<name lang="ro">Între (obiecte de același tio)</name>
 		<name lang="et">Vahel (samad objektid)</name>
 		<name lang="de">Zwischen gleichen Objekten</name>
+		<text lang="en-AU">between {1}</text>
 		
 		<text lang="en">between {1}</text>
 		<text lang="fr">entre les {1}</text>
@@ -8877,6 +9322,7 @@ for the symbols.
 	     other information. -->
 
 	<symbol kind="H" id="12.1">
+		<name lang="en-AU">First aid post</name>
 		<name lang="en">First aid post</name>
 		<name lang="fr">Secours</name>
 		<name lang="en-GB">First aid post</name>
@@ -8889,6 +9335,7 @@ for the symbols.
 		<name lang="ro">Punct de prim ajutor</name>
 		<name lang="et">Esmaabi</name>
 		<name lang="de">Erste Hilfe - Posten</name>
+		<text lang="en-AU">first aid</text>
 		
 		<text lang="en">first aid</text>
 		<text lang="fr">secours</text>
@@ -8920,6 +9367,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="H" id="12.2">
+		<name lang="en-AU">Refreshment point</name>
 		<name lang="en">Refreshment point</name>
 		<name lang="fr">Ravitaillement</name>
 		<name lang="en-GB">Refreshment point</name>
@@ -8932,6 +9380,7 @@ for the symbols.
 		<name lang="ro">Punct de reînvigorare</name>
 		<name lang="et">Joogi koht</name>
 		<name lang="de">Getränkeposten</name>
+		<text lang="en-AU">water</text>
 		
 		<text lang="en">water</text>
 		<text lang="fr">ravitaillement</text>
@@ -8981,6 +9430,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="H" id="12.3">
+		<name lang="en-AU">Radio or TV control</name>
 		<name lang="en">Radio or TV control</name>
 		<name lang="fr">Radio ou TV (transmission)</name>
 		<name lang="en-GB">Radio or TV control</name>
@@ -8993,6 +9443,7 @@ for the symbols.
 		<name lang="ro">Punct radio sau TV</name>
 		<name lang="et">Raadio või TV kontrollpunkt</name>
 		<name lang="de">Funkposten</name>
+		<text lang="en-AU">radio</text>
 		
 		<text lang="en">radio</text>
 		<text lang="fr">radio ou TV</text>
@@ -9016,6 +9467,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="H" id="12.4">
+		<name lang="en-AU">Control check</name>
 		<name lang="en">Control check</name>
 		<name lang="fr">Contrôleur</name>
 		<name lang="en-GB">Control check</name>
@@ -9028,6 +9480,7 @@ for the symbols.
 		<name lang="ro">Punct de control</name>
 		<name lang="et">Kohtunikuga punkt</name>
 		<name lang="de">Kontrollposten</name>
+		<text lang="en-AU">manned</text>
 		
 		<text lang="en">manned</text>
 		<text lang="fr">contrôleur</text>
@@ -9066,6 +9519,7 @@ for the symbols.
 	  -->
 
 	<symbol kind="W" id="13.1">
+		<name lang="en-AU">Taped route away from control</name>
 		<name lang="en">Taped route away from control</name>
 		<name lang="fr">Parcours balisé après le poste</name>
 		<name lang="en-GB">Taped route away from control</name>
@@ -9078,6 +9532,7 @@ for the symbols.
 		<name lang="ro">Urmează ruta cu banda departe de control</name>
 		<name lang="et">Tähistus KPst väljumisel</name>
 		<name lang="de">Vom Posten weg ausgeflaggte Strecke</name>
+		<text lang="en-AU">follow tapes {0}away from control</text>
 		
 		<text lang="en">follow tapes {0}away from control</text>
 		<text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
@@ -9127,6 +9582,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="W" id="13.2">
+		<name lang="en-AU">Taped route between controls</name>
 		<name lang="en">Taped route between controls</name>
 		<name lang="fr">Parcours balisé entre deux postes</name>
 		<name lang="en-GB">Taped route between controls</name>
@@ -9139,6 +9595,7 @@ for the symbols.
 		<name lang="ro">Bandă între punctele de control</name>
 		<name lang="et">Tähistus KPde vahel</name>
 		<name lang="de">Ausgeflaggte Strecke zwischen zwei Posten</name>
+		<text lang="en-AU">follow tapes {0}between controls</text>
 		
 		<text lang="en">follow tapes {0}between controls</text>
 		<text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
@@ -9193,6 +9650,7 @@ for the symbols.
 	<!-- Kind "X". Crossing point instructional lines. -->
 
 	<symbol kind="X" id="13.3">
+		<name lang="en-AU">Mandatory crossing point or points</name>
 		<name lang="en">Mandatory crossing point or points</name>
 		<name lang="fr">Point de passage obligatoire</name>
 		<name lang="en-GB">Mandatory crossing point or points</name>
@@ -9205,6 +9663,7 @@ for the symbols.
 		<name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
 		<name lang="et">Kohustuslik ristumine</name>
 		<name lang="de">Pflichtübergang</name>
+		<text lang="en-AU">mandatory crossing point</text>
 		
 		<text lang="en">mandatory crossing point</text>
 		<text lang="fr">point de passage obligatoire</text>
@@ -9250,6 +9709,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="X" id="13.4">
+		<name lang="en-AU">Mandatory passage</name>
 		<name lang="en">Mandatory passage</name>
 		<name lang="fr">Passage obligatoire dans une zone interdite</name>
 		<name lang="en-GB">Mandatory passage</name>
@@ -9262,6 +9722,7 @@ for the symbols.
 		<name lang="ro">Pasaj obligatoriu</name>
 		<name lang="et">Kohustuslik läbipääs</name>
 		<name lang="de">Pflichtpassage</name>
+		<text lang="en-AU">mandatory passage</text>
 		
 		<text lang="en">mandatory passage</text>
 		<text lang="fr">passage obligatoire à travers une zone interdite</text>
@@ -9310,6 +9771,7 @@ for the symbols.
 	<!-- {0} has the distance, plus a space
 	-->
 	<symbol kind="W" id="13.5">
+		<name lang="en-AU">Map exchange</name>
 		<name lang="en">Map exchange</name>
 		<name lang="fr">Parcours balisé jusqu'au changement de carte</name>
 		<name lang="en-GB">Map exchange</name>
@@ -9322,6 +9784,7 @@ for the symbols.
 		<name lang="ro">Schimb de hartă</name>
 		<name lang="et">Kaardivahetus</name>
 		<name lang="de">Kartenwechsel</name>
+		<text lang="en-AU">follow tapes {0}to map exchange</text>
 		
 		<text lang="en">follow tapes {0}to map exchange</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
@@ -9378,8 +9841,10 @@ for the symbols.
 
 	<!-- Used for a map exchange at a control. -->
 	<symbol kind="W" id="13.5control">
+		<name lang="en-AU">Map exchange at a control</name>
 		<name lang="en">Map exchange at a control</name>
 		<name lang="en-GB">Map exchange at a control</name>
+		<text lang="en-AU">map exchange at the control</text>
 		<text lang="en">map exchange at the control</text>
 		<text lang="en-GB">Map exchange at the control</text>
 		<circle thickness="10" radius="70">
@@ -9428,6 +9893,7 @@ for the symbols.
 	-->
 
 	<symbol kind="Z" id="14.1">
+		<name lang="en-AU">Taped route to finish</name>
 		<name lang="en">Taped route to finish</name>
 		<name lang="fr">Parcours entièrement balisé</name>
 		<name lang="en-GB">Taped route to finish</name>
@@ -9440,6 +9906,7 @@ for the symbols.
 		<name lang="ro">Bandă până la sosire</name>
 		<name lang="et">Tähistus Finišisse</name>
 		<name lang="de">Ausgeflaggte Strecke zum Ziel</name>
+		<text lang="en-AU">follow tapes {0}to finish</text>
 		
 		<text lang="en">follow tapes {0}to finish</text>
 		<text lang="fr">suivre le parcours balisé sur {0}jusqu'à l'arrivée</text>
@@ -9495,6 +9962,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="Z" id="14.2">
+		<name lang="en-AU">Navigate to finish funnel</name>
 		<name lang="en">Navigate to finish funnel</name>
 		<name lang="fr">Balisage convergent</name>
 		<name lang="en-GB">Navigate to finish funnel</name>
@@ -9507,6 +9975,7 @@ for the symbols.
 		<name lang="ro">Parcurgere până la pâlnia de sosire</name>
 		<name lang="et">Suundu finišikoridori</name>
 		<name lang="de">Zum Ziel orientieren</name>
+		<text lang="en-AU">navigate {0}to finish funnel</text>
 		
 		<text lang="en">navigate {0}to finish funnel</text>
 		<text lang="fr">{0}jusqu'à l'arrivée (balisage convergent)</text>
@@ -9563,6 +10032,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="Z" id="14.3">
+		<name lang="en-AU">Navigate to finish (no tapes)</name>
 		<name lang="en">Navigate to finish (no tapes)</name>
 		<name lang="fr">Trajet non balisé</name>
 		<name lang="en-GB">Navigate to finish (no tapes)</name>
@@ -9575,6 +10045,7 @@ for the symbols.
 		<name lang="ro">Parcurgere până la sosire (fără bandă)</name>
 		<name lang="et">Suundu finišisse (tähistus puudub)</name>
 		<name lang="de">Nichtmarkierte Strecke zum Ziel</name>
+		<text lang="en-AU">navigate {0}to finish</text>
 		
 		<text lang="en">navigate {0}to finish</text>
 		<text lang="fr">s'orienter sur {0}jusqu'à l'arrivée (trajet non balisé)</text>

@@ -883,6 +883,9 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
             Assert.AreEqual("Course 1", result);
 
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
+            Assert.AreEqual("", result);
+
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(EventTitle): $(CourseName)");
             Assert.AreEqual("Marymoor WIOL 2 The remake: Course 1", result);
 
@@ -903,8 +906,48 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName) / $(ClassList)");
             Assert.AreEqual("All controls / ", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
+            Assert.AreEqual("", result);
         }
-	
+
+        [TestMethod]
+        public void ExpandTextMapExchange()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            CourseView courseView;
+
+            // Map Exchange
+            eventDB.Load(TestUtil.GetTestFile("courseformat\\mapexchange1.ppen"));
+            eventDB.Validate();
+
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(6)));
+
+            string result;
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 5", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
+            Assert.AreEqual("", result);
+
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(6), 0));
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 5", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
+            Assert.AreEqual("1", result);
+
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(6), 3));
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 5", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
+            Assert.AreEqual("4", result);
+        }
+
     }
 }
 

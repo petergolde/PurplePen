@@ -2,9 +2,12 @@
   <event id="1">
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="OCAD" scale="10000">Marymoor.ocd</map>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false">Marymoor.ocd</map>
+    <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -565,33 +568,39 @@
 0001000
 </punch-pattern>
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="1">
     <name>Course 1</name>
+    <labels label-kind="sequence" />
     <first course-control="101" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
-  <course id="2" kind="normal">
+  <course id="2" kind="normal" order="2">
     <name>Course 2</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
     <options print-scale="7500" description-kind="symbols-and-text" />
   </course>
-  <course id="3" kind="normal">
+  <course id="3" kind="normal" order="3">
     <name>Course 3</name>
+    <labels label-kind="sequence" />
     <first course-control="301" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal">
+  <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
+    <labels label-kind="sequence" />
     <first course-control="401" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="5" kind="normal">
+  <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
+    <labels label-kind="sequence" />
     <first course-control="501" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="6" kind="normal">
+  <course id="6" kind="normal" order="6">
     <name>Course 5</name>
+    <labels label-kind="sequence" />
     <first course-control="601" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
@@ -853,6 +862,20 @@
   <special-object id="3" kind="descriptions">
     <location x="152.2823" y="42.0981445" />
     <location x="158.2241" y="42.0981445" />
-    <courses all="true" />
+    <courses>
+      <course course="1" />
+      <course course="2" />
+      <course course="3" />
+      <course course="4" />
+      <course course="5" />
+      <course course="6" />
+    </courses>
+  </special-object>
+  <special-object id="4" kind="descriptions">
+    <location x="187.667084" y="77.91532" />
+    <location x="192.274841" y="77.91532" />
+    <courses>
+      <course course="0" />
+    </courses>
   </special-object>
 </course-scribe-event>

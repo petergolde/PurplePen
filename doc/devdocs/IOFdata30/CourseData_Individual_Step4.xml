@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Course definitions and assignment to classes in an individual event.
+-->
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            iofVersion="3.0"
+            createTime="2011-07-20T12:16:31+01:00"
+            creator="Example Software">
+  <Event>
+    <Name>Example event</Name>
+    <StartTime>
+      <Date>2011-07-30</Date>
+      <Time>10:00:00+01:00</Time>
+    </StartTime>
+  </Event>
+
+  <!-- one RaceCourseData element per race in the event, single-race events thus use a single RaceCourseData element -->
+  <RaceCourseData>
+    <!-- first, all controls are defined -->
+    <Control>
+      <Id>S</Id>
+      <!-- the position of the control given in latitude and longitude -->
+      <!-- coordinates west of the Greenwich meridian and south of the equator are expressed by negative numbers -->
+      <Position lat="59.760069" lng="17.687623"/>
+      <!-- the position of the control on the printed map, relative to the map's lower left corner -->
+      <MapPosition unit="mm" x="187" y="58"/>
+    </Control>
+    <Control>
+      <Id>31</Id>
+      <Position lat="59.763947" lng="17.685403"/>
+      <MapPosition unit="mm" x="252" y="118"/>
+    </Control>
+    <Control>
+      <Id>32</Id>
+      <Position lat="59.762947" lng="17.680439"/>
+      <MapPosition unit="mm" x="82" y="102"/>
+    </Control>
+    <Control>
+      <Id>33</Id>
+      <Position lat="59.761009" lng="17.687941"/>
+      <MapPosition unit="mm" x="99" y="245"/>
+    </Control>
+    <Control>
+      <Id>34</Id>
+      <Position lat="59.75820" lng="17.685711"/>
+      <MapPosition unit="mm" x="154" y="49"/>
+    </Control>
+    <Control>
+      <Id>35</Id>
+      <Position lat="59.75993" lng="17.681302"/>
+      <MapPosition unit="mm" x="126" y="85"/>
+    </Control>
+    <Control>
+      <Id>100</Id>
+      <Position lat="59.761130" lng="17.684938"/>
+      <MapPosition unit="mm" x="173" y="121"/>
+    </Control>
+    <Control>
+      <Id>F</Id>
+      <Position lat="59.75991" lng="17.68820"/>
+      <MapPosition unit="mm" x="131" y="157"/>
+    </Control>
+
+    <!-- then, all courses are defined; in this case two butterfly-style courses where the butterfly loops are run in different order in course A and B -->
+    <Course>
+      <Name>A</Name>
+      <!-- the course A is part of the 'Open long' course group, which groups the forked courses A and B -->
+      <CourseFamily>Open long</CourseFamily>
+      <!-- course length in meters -->
+      <Length>2960</Length>
+      <!-- course climb in meters -->
+      <Climb>95</Climb>
+      <!-- ordered sequence of controls, including start and finish -->
+      <CourseControl type="Start">
+        <!-- use the control code for normal controls, and for example 'S' and 'F' for start and finish -->
+        <Control>S</Control>
+        <!-- for the start, LegLength is the length in meters from the time start to the start flag -->
+        <LegLength>50</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- the text printed next to the control circle, usually the control number, in tis case a control that is visited multiple times -->
+        <MapText>1/4/7</MapText>
+        <!-- the center of the text relative to the center of the control circle -->
+        <MapTextPosition unit="mm" x="-15" y="8"/>
+        <!-- the length in meters from the previous control to this control -->
+        <LegLength>410</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>32</Control>
+        <MapText>2</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>360</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>33</Control>
+        <MapText>3</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>190</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- no map text here since it already is defined in the information for first control -->
+        <LegLength>280</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>34</Control>
+        <MapText>5</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>370</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>35</Control>
+        <MapText>6</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>130</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- no map text here since it already is defined in the information for first control -->
+        <LegLength>220</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>100</Control>
+        <MapText>8</MapText>
+        <MapTextPosition unit="mm" x="-12" y="12"/>
+        <LegLength>800</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish" >
+        <Control>F</Control>
+        <LegLength>150</LegLength>
+      </CourseControl>
+    </Course>
+
+    <Course>
+      <Name>B</Name>
+      <CourseFamily>Open long</CourseFamily>
+      <Length>2960</Length>
+      <!-- course climb in meters -->
+      <Climb>95</Climb>
+      <!-- ordered sequence of controls, including start and finish -->
+      <CourseControl type="Start">
+        <!-- use the control code for normal controls, and for example 'S' and 'F' for start and finish -->
+        <Control>S</Control>
+        <!-- for the start, LegLength is the length in meters from the time start to the start flag -->
+        <LegLength>50</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- the text printed next to the control circle, usually the control number, in tis case a control that is visited multiple times -->
+        <MapText>1/4/7</MapText>
+        <!-- the center of the text relative to the center of the control circle -->
+        <MapTextPosition unit="mm" x="-15" y="8"/>
+        <!-- the length in meters from the previous control to this control -->
+        <LegLength>410</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>34</Control>
+        <MapText>2</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>370</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>35</Control>
+        <MapText>3</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>130</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- no map text here since it already is defined in the information for first control -->
+        <LegLength>280</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>32</Control>
+        <MapText>5</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>360</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>33</Control>
+        <MapText>6</MapText>
+        <MapTextPosition unit="mm" x="11" y="-14"/>
+        <LegLength>190</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <!-- no map text here since it already is defined in the information for first control -->
+        <LegLength>220</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>100</Control>
+        <MapText>8</MapText>
+        <MapTextPosition unit="mm" x="-12" y="12"/>
+        <LegLength>800</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish" >
+        <Control>F</Control>
+        <LegLength>150</LegLength>
+      </CourseControl>
+    </Course>
+  
+
+    <!-- if courses are assigned to classes in the exporting software, use one or more CourseAssignment elements to represent this assignment -->
+    <PersonCourseAssignment>
+      <!-- the competitor with bib number 101 is assigned the course A in the course family Open long -->
+      <BibNumber>101</BibNumber>
+      <CourseName>A</CourseName>
+      <CourseFamily>Open long</CourseFamily>
+    </PersonCourseAssignment>
+
+    <PersonCourseAssignment>
+      <!-- the competitor with bib number 102 is assigned the course B in the course family Open long -->
+      <BibNumber>102</BibNumber>
+      <CourseName>B</CourseName>
+      <CourseFamily>Open long</CourseFamily>
+    </PersonCourseAssignment>
+
+  </RaceCourseData>
+</CourseData>

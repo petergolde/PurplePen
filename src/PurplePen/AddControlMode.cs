@@ -211,7 +211,8 @@ namespace PurplePen
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
 
-            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control)
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control && 
+                (courseDesignator.IsAllControls || QueryEvent.IsCourseControlInPart(eventDB, courseDesignator, selection.SelectedCourseControl)))
                 courseControlId1 = selection.SelectedCourseControl;
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
                 courseControlId1 = selection.SelectedCourseControl;

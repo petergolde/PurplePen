@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.0\n"
+"Project-Id-Version: Purple Pen 2.0.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-05-21 14:01-07:00\n"
+"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -373,6 +373,10 @@ msgstr "Wettkampfname"
 msgid "Course Name"
 msgstr "Bahnbezeichnung"
 
+#: ChangeText.resx, coursePartMenuItem.Text
+msgid "Course Part"
+msgstr ""
+
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
 msgstr "Länge der Bahn"
@@ -591,6 +595,14 @@ msgstr "Bahndesign ändern"
 msgid "Add Map Exchange"
 msgstr "Kartenwechsel hinzufügen"
 
+#: CommandNameText.resx, DeleteMapExchangeAtControl
+msgid "Delete Map Exchange"
+msgstr ""
+
+#: CommandNameText.resx, ChangePartProperties
+msgid "Change Course Part Properties"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -681,6 +693,23 @@ msgstr "Bahnauslastung"
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
 msgstr "Teilstrecke:"
+
+#: CoursePartBanner.resx, buttonProperties.Text
+msgid "Properties..."
+msgstr ""
+
+#: CoursePartProperties.resx, checkBoxDisplayFinish.Text
+msgid "Display finish circle on this course part"
+msgstr ""
+
+#: CoursePartProperties.resx, label1.Text
+msgid "These settings control the appearance of this part of a "
+"multi-part course."
+msgstr ""
+
+#: CoursePartProperties.resx, $this.Text
+msgid "Course Part Properties"
+msgstr ""
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -1392,6 +1421,10 @@ msgstr "Berichtstester"
 msgid "Font Metrics"
 msgstr "Fontmaße"
 
+#: MainFrame.resx, crashToolStripMenuItem.Text
+msgid "Crash"
+msgstr ""
+
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
 msgstr "Debuggen"
@@ -1938,12 +1971,17 @@ msgstr "Kontakt-E-Mail"
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "Es ist ein Fehler aufgetreten. Um uns zu helfen das "
+"Problem zu beheben, können Sie uns einen Fehlerbericht "
+"zusenden. Geben Sie hierzu bitte Ihre E-Mail Adresse und "
+"weitere Informationen an."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Sie können uns helfen, den Fehler zu beheben, indem Sie "
+"uns beschreiben, was Sie gerade mit dem Programm gemacht "
+"haben."
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
@@ -1954,7 +1992,12 @@ msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Postenbeschreibungen können zu einer Bahn mit "
+"Kartenwechsel nicht hinzugefügt werden, wenn \"Alle "
+"Teilstrecken\" angezeigt werden. Wenn Sie "
+"Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte "
+"auf die gewünschte Teilstrecke und wählen dann "
+"\"Postenbeschreibung hinzufügen\" nochmals aus."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

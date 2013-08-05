@@ -54,6 +54,7 @@ namespace PurplePen
         public const string CourseClimb = "$(CourseClimb)";
         public const string ClassList = "$(ClassList)";
         public const string PrintScale = "$(PrintScale)";
+        public const string CoursePart = "$(CoursePart)";
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -88,26 +89,29 @@ namespace PurplePen
             for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
                 CourseView.ControlView controlView = controlViews[controlIndex];
 
-                // Get the angles of the legs into and out of this control, in radians.
-                double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
+                if (!controlView.hiddenControl) {
 
-                // Get the normal course object associated with this control.
-                courseObj = CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale, controlView, angleOut);
-                if (courseObj != null) {
-                    courseObj.layer = layer;
-                    courseLayout.AddCourseObject(courseObj);
-                }
+                    // Get the angles of the legs into and out of this control, in radians.
+                    double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
 
-                // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
-                if (CustomPlaceNumber(eventDB, controlView)) {
-                    if (kind == CourseView.CourseViewKind.AllControls)
-                        courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
-                    else
-                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
-
+                    // Get the normal course object associated with this control.
+                    courseObj = CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale, controlView, angleOut);
                     if (courseObj != null) {
                         courseObj.layer = layer;
                         courseLayout.AddCourseObject(courseObj);
+                    }
+
+                    // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
+                    if (CustomPlaceNumber(eventDB, controlView)) {
+                        if (kind == CourseView.CourseViewKind.AllControls)
+                            courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                        else
+                            courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
+
+                        if (courseObj != null) {
+                            courseObj.layer = layer;
+                            courseLayout.AddCourseObject(courseObj);
+                        }
                     }
                 }
 
@@ -127,13 +131,19 @@ namespace PurplePen
                 }
             }
 
+            // Add any additional controls
+            foreach (Id<CourseControl> extraCourseControl in courseView.ExtraCourseControls) {
+                courseLayout.AddCourseObject(CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale,
+                                                                eventDB.GetCourseControl(extraCourseControl).control, extraCourseControl, double.NaN));
+            }
+
             // No go through each control again and add an automatically placed number/code to each. We do this last so that the placement
             // of all fixed-position objects influences the auto-positioned numbers so that they don't interfere.
             for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
                 CourseView.ControlView controlView = controlViews[controlIndex];
 
                 // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
-                if (! CustomPlaceNumber(eventDB, controlView)) {
+                if (!controlView.hiddenControl && ! CustomPlaceNumber(eventDB, controlView)) {
                     if (kind == CourseView.CourseViewKind.AllControls)
                         courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
@@ -399,6 +409,13 @@ namespace PurplePen
             if (text.Contains(TextMacros.CourseName))
                 text = text.Replace(TextMacros.CourseName, courseView.CourseName);
 
+            if (text.Contains(TextMacros.CoursePart)) {
+                if (courseView.CourseDesignator.IsNotAllControls && !courseView.CourseDesignator.AllParts)
+                    text = text.Replace(TextMacros.CoursePart, (courseView.CourseDesignator.Part + 1).ToString());
+                else
+                    text = text.Replace(TextMacros.CoursePart, "");
+            }
+
             if (text.Contains(TextMacros.CourseLength))
                 text = text.Replace(TextMacros.CourseLength, string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
 
@@ -534,26 +551,32 @@ namespace PurplePen
         // AngleOut is the direction IN RADIANs leaving the control.
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
-            ControlPoint control = eventDB.GetControl(controlView.controlId);
-            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
+            return CreateCourseObject(eventDB, scaleRatio, appearance, printScale, controlView.controlId, controlView.courseControlId, angleOut);
+        }
+
+        static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, 
+                                            Id<ControlPoint> controlId, Id<CourseControl> courseControlId, double angleOut)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, printScale);
             CourseObj courseObj = null;
 
             switch (control.kind) {
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
-                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
                 break;
 
             case ControlPointKind.Finish:
-                courseObj = new FinishCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
+                courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.Normal:
-                courseObj = new ControlCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
+                courseObj = new ControlCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.CrossingPoint:
-                courseObj = new CrossingCourseObj(controlView.controlId, controlView.courseControlId, Id<Special>.None, scaleRatio, appearance, control.orientation, control.location);
+                courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, control.orientation, control.location);
                 break;
 
             default:
@@ -609,7 +632,10 @@ namespace PurplePen
             LegGap[] gaps;                // What kind of gaps are present? Null array if none 
 
             // Get the path of the line, and the gaps.
-            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlView1.controlId, control2.location, control2.kind, controlView2.controlId, scaleRatio, appearance, out gaps);
+            SymPath legPath = GetLegPath(eventDB, 
+                                         control1.location, controlView1.hiddenControl ? ControlPointKind.None : control1.kind, controlView1.controlId, 
+                                         control2.location, controlView2.hiddenControl ? ControlPointKind.None : control2.kind, controlView2.controlId, 
+                                         scaleRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
@@ -732,6 +758,9 @@ namespace PurplePen
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
                 return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
+
+            case ControlPointKind.None:
+                return 0;
 
             default:
                 Debug.Fail("Bad kind");

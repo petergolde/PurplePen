@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.0\n"
+"Project-Id-Version: Purple Pen 2.0.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-05-21 14:01-07:00\n"
+"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -114,11 +114,11 @@ msgstr "Järjestysnumero ja koodi (3-145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr "Järjestysnumero ja pistemäärä (3(30))"
+msgstr "Järjestysnumero ja pisteet (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr "Rastikoodi ja pistemäärä (145(30))"
+msgstr "Rastikoodi ja pisteet (145(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -368,6 +368,10 @@ msgstr "Tapahtuman nimi"
 msgid "Course Name"
 msgstr "Radan nimi"
 
+#: ChangeText.resx, coursePartMenuItem.Text
+msgid "Course Part"
+msgstr ""
+
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
 msgstr "Radan pituus"
@@ -586,6 +590,14 @@ msgstr "Muokkaa ratamerkintöjen ulkoasua"
 msgid "Add Map Exchange"
 msgstr "Lisää kartanvaihto"
 
+#: CommandNameText.resx, DeleteMapExchangeAtControl
+msgid "Delete Map Exchange"
+msgstr ""
+
+#: CommandNameText.resx, ChangePartProperties
+msgid "Change Course Part Properties"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -676,6 +688,23 @@ msgstr "Kuormitus"
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
 msgstr "Radan osa:"
+
+#: CoursePartBanner.resx, buttonProperties.Text
+msgid "Properties..."
+msgstr ""
+
+#: CoursePartProperties.resx, checkBoxDisplayFinish.Text
+msgid "Display finish circle on this course part"
+msgstr ""
+
+#: CoursePartProperties.resx, label1.Text
+msgid "These settings control the appearance of this part of a "
+"multi-part course."
+msgstr ""
+
+#: CoursePartProperties.resx, $this.Text
+msgid "Course Part Properties"
+msgstr ""
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -899,11 +928,11 @@ msgstr "Avaa olemassa oleva tapahtuma..."
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
-msgstr "Tervetuloa Purple Peniin"
+msgstr "Purple Pen"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
-msgstr "Purple Pen on julkaistu \"BSD\"-tyylisellä lisenssillä."
+msgstr "Purple Pen -ohjelma on julkaistu BSD-tyylisellä lisenssillä."
 
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
@@ -1385,6 +1414,10 @@ msgstr "Report Tester"
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
 msgstr "Font Metrics"
+
+#: MainFrame.resx, crashToolStripMenuItem.Text
+msgid "Crash"
+msgstr ""
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
@@ -1917,29 +1950,34 @@ msgstr "Osa {0} / {1}"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "Sähköpostiosoitteesi"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "Ohjelman toiminnassa tapahtui virhe. Auta meitä korjaamaan "
+"ongelma lähettämällä virheraportti."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Auta korjaamaan ongelma kertomalla meille, mitä olit "
+"tekemässä ongelman ilmetessä."
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "Lähetä raportti"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos "
+"radan \"Kaikki osat\" on näkyvissä. Vaihda näkyviin radan "
+"osa, jolle haluat lisätä rastinmääritteet ja valitse "
+"\"Lisää rastinmääritteet\" uudelleen."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

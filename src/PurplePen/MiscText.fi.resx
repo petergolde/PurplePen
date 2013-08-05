@@ -405,7 +405,22 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CrashCancel" xml:space="preserve">
     <value>Peruuta</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Sähköpostiosoitteesi</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Ohjelman toiminnassa tapahtui virhe. Auta meitä korjaamaan ongelma lähettämällä virheraportti.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Auta korjaamaan ongelma kertomalla meille, mitä olit tekemässä ongelman ilmetessä.</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Tallenna</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Lähetä raportti</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos radan "Kaikki osat" on näkyvissä. Vaihda näkyviin radan osa, jolle haluat lisätä rastinmääritteet ja valitse "Lisää rastinmääritteet" uudelleen.</value>
   </data>
 </root>

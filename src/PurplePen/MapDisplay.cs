@@ -144,6 +144,21 @@ namespace PurplePen
             }
         }
 
+        // Real world coordinates
+        public RealWorldCoords RealWorldCoords
+        {
+            get
+            {
+                if (map != null) {
+                    using (map.Read())
+                        return map.RealWorldCoords;
+                }
+                else {
+                    return new RealWorldCoords();
+                }
+            }
+        }
+
         // Bounds of the map, or empty if no map.
         public RectangleF MapBounds
         {

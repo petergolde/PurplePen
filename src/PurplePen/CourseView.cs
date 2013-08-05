@@ -66,6 +66,7 @@ namespace PurplePen
             public int[] legTo;                 // Indices in the list of the control a leg should be drawn to
             public Id<Leg>[] legId;                 // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
+            public bool hiddenControl;          // If true, hide this control on map, but not legs to it (used for map exchanges)
         };
 
         // A description that is being viewed.
@@ -88,6 +89,8 @@ namespace PurplePen
         private readonly List<ControlView> controlViews = new List<ControlView>();
         private readonly List<Id<Special>> specialIds = new List<Id<Special>>();
         private readonly List<DescriptionView> descriptionViews = new List<DescriptionView>();
+        // extra course controls not part of the list of control views. (i.e., finish on first part of multi-part).
+        private readonly List<Id<CourseControl>> extraCourseControls = new List<Id<CourseControl>>();
 
         private int scoreColumn;                // column to put score into.
 
@@ -117,6 +120,11 @@ namespace PurplePen
         public List<DescriptionView> DescriptionViews
         {
             get { return descriptionViews; }
+        }
+
+        public List<Id<CourseControl>> ExtraCourseControls
+        {
+            get { return extraCourseControls; }
         }
 
         public EventDB EventDB {
@@ -166,6 +174,20 @@ namespace PurplePen
         public string CourseName
         {
             get { return courseName; }
+        }
+
+        // Same as CourseName, but add "-1", "-2", etc. for a part of a multi-part course.
+        public string CourseNameWithPart
+        {
+            get
+            {
+                if (!courseDesignator.IsAllControls && !courseDesignator.AllParts) {
+                    return string.Format("{0}-{1}", courseName, courseDesignator.Part + 1);
+                }
+                else {
+                    return courseName;
+                }
+            }
         }
 
         // If multi-part course, length of all parts
@@ -523,7 +545,7 @@ namespace PurplePen
         public static CourseView CreatePrintingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, false);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
             else
                 return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
         }
@@ -532,7 +554,7 @@ namespace PurplePen
         public static CourseView CreatePositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, true);
             else
                 return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
         }
@@ -574,7 +596,7 @@ namespace PurplePen
             ordinal = course.firstControlOrdinal;
 
             // Increase the ordinal value for each normal control before the first one we're considering.
-            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { // also break loop at lastCourseControlId
+            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { 
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
                 if (control.kind == ControlPointKind.Normal)
@@ -601,6 +623,11 @@ namespace PurplePen
                 // This kind of view doesn't support variations.
                 controlView.variation = (char)0;
 
+                // Don't show the map exchange for the next part at the end of this part.
+                if (courseControlId == lastCourseControl && !courseDesignator.AllParts && control.kind == ControlPointKind.MapExchange) {
+                    controlView.hiddenControl = true;
+                }
+
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
                 if (courseControl.nextCourseControl.IsNotNone && courseControlId != lastCourseControl) {
@@ -614,6 +641,16 @@ namespace PurplePen
                 if (courseControlId == lastCourseControl)
                     break;
                 courseControlId = courseControl.nextCourseControl;
+            }
+
+            // If this is a part that should also have the finish on it, and it isn't the last part, then 
+            // add the finish.
+            if (courseDesignator.IsNotAllControls && !courseDesignator.AllParts && 
+                courseDesignator.Part != QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1 &&
+                QueryEvent.GetPartOptions(eventDB, courseDesignator).ShowFinish) 
+            {
+                if (QueryEvent.HasFinishControl(eventDB, courseDesignator.CourseId))
+                    courseView.extraCourseControls.Add(QueryEvent.LastCourseControl(eventDB, courseDesignator.CourseId, false));
             }
 
             courseView.Finish();

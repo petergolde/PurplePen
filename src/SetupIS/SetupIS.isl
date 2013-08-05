@@ -1855,7 +1855,7 @@
 		<col def="S255">ProgId_</col>
 		<col def="S64">MIME_</col>
 		<col def="s38">Feature_</col>
-		<row><td>.ppen</td><td>C__75BEA61185F8480D8B278E736F729F55</td><td>Purple Pen Files</td><td/><td>AlwaysInstall</td></row>
+		<row><td>ppen</td><td>C__75BEA61185F8480D8B278E736F729F55</td><td>Purple Pen Files</td><td/><td>AlwaysInstall</td></row>
 	</table>
 
 	<table name="Feature">
@@ -3922,6 +3922,7 @@
 		<row><td>ID_STRING5</td><td>1033</td><td>Purple Pen</td><td>0</td><td/><td>-257837777</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>Golde Software</td><td>0</td><td/><td>-257862289</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-257854193</td></row>
+		<row><td>NEW_STRING1</td><td>1033</td><td>ppen</td><td>0</td><td/><td>723631561</td></row>
 	</table>
 
 	<table name="ISSwidtagProperty">
@@ -4164,7 +4165,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{E4185BA4-307F-423D-848B-3CBF12075047}</td></row>
 		<row><td>ISUSSignature</td><td>{D171439B-D33A-486A-B147-672928C85CDE}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewDependencies,viewSystemSearch,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewAppFiles,viewObjects,viewRelease,viewUI,viewSupportFiles,viewInstallScriptStd,viewFeatureFiles,viewProject,viewUpgradePaths,viewUpdateService</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewDependencies,viewSystemSearch,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewAppFiles,viewObjects,viewRelease,viewUI,viewSupportFiles,viewInstallScriptStd,viewFeatureFiles,viewProject,viewUpgradePaths,viewUpdateService,viewEnvironmentVariables,viewFileExtensions</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4252,7 +4253,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col key="yes" def="s64">ContentType</col>
 		<col def="s255">Extension_</col>
 		<col def="S38">CLSID</col>
-		<row><td>MIME Type1</td><td>.ppen</td><td/></row>
+		<row><td>MIME Type1</td><td>ppen</td><td/></row>
 	</table>
 
 	<table name="Media">
@@ -4547,9 +4548,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]PurplePen.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{9E76C620-36D2-4452-9AEA-F96BD598E794}</td><td/></row>
+		<row><td>ProductCode</td><td>{28A0421F-72A9-45ED-8B83-7B900BD4F825}</td><td/></row>
 		<row><td>ProductName</td><td>Purple Pen</td><td/></row>
-		<row><td>ProductVersion</td><td>2.0.220</td><td/></row>
+		<row><td>ProductVersion</td><td>2.0.3500</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4833,7 +4834,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.0.220</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
+		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.0.3500</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
 	</table>
 
 	<table name="Verb">
@@ -4842,7 +4843,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="I2">Sequence</col>
 		<col def="L255">Command</col>
 		<col def="L255">Argument</col>
-		<row><td>.ppen</td><td>open</td><td>0</td><td>&amp;Open</td><td>"%1"</td></row>
+		<row><td>ppen</td><td>open</td><td>0</td><td>&amp;Open</td><td>"%1"</td></row>
 	</table>
 
 	<table name="_Validation">

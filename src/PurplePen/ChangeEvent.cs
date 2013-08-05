@@ -186,7 +186,7 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, controlPoint);
         }
 
-        // Change the number location for a course-control. If customLocation is false, puts the number location as automaticLocation
+        // Change if a course-control has a map exchange. 
         public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
         {
             CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
@@ -385,6 +385,17 @@ namespace PurplePen
 
                 eventDB.ReplaceCourse(courseDesignator.CourseId, course);
             }
+        }
+
+        public static void ChangePartOptions(EventDB eventDB, CourseDesignator courseDesignator, PartOptions partOptions)
+        {
+            Debug.Assert(courseDesignator.IsNotAllControls);
+
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+
+            course = (Course)course.Clone();
+            course.partOptions[courseDesignator.Part] = partOptions.Clone();
+            eventDB.ReplaceCourse(courseDesignator.CourseId, course);
         }
 
         // Change the attributes of a course.

@@ -109,6 +109,7 @@ namespace PurplePen
                     else {
                         // Test if Arial Narrow is installed.
                         try {
+                            new FontFamily("Arial Narrow");
                             new Font("Arial Narrow", 10, FontStyle.Regular);
                             new Font("Arial Narrow", 10, FontStyle.Bold);
                             installedArialNarrow = true;

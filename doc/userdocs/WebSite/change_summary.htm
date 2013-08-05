@@ -15,6 +15,109 @@
 <body>
 
 <h1>Purple Pen Change Summary</h1>
+
+<h2>Changes in 2.0.3</h2>
+<h3>New Features</h3>
+<ul>
+    <li>
+        <p>Add Course Part Options to allow adding the finish to parts of a course with a map exchange. </p>
+    </li>
+</ul>
+
+<h2>Changes in 2.0.2</h2>
+<h3>New Features</h3>
+<ul>
+    <li>
+        <p>Add $(CoursePart) to the special text options for Text special items. </p>
+    </li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+    <li>
+        <p>
+            Fixed OCAD export of courses with map exchange to export parts separately. 
+            (Thanks to Oliver O'Brien for the report on this.)
+        </p>
+    </li>
+    <li>
+        <p>
+            Fixed display of description line height in tool tip. (Thanks to Mike Godfree for the report on this.)
+        </p>
+    </li>
+    <li>
+        <p>
+            You can now delete a map exchange at a control point by selecting it in the description sheet and 
+            pressing Delete.
+        </p>
+    </li>
+    <li>
+        <p>
+            Flagged lags after mandatory crossing points now display in the description sheet.
+        </p>
+    </li>
+</ul>
+
+<h2>Changes in 2.0.1</h2>
+<h3>Bug Fixes</h3>
+<ul>
+    <li>
+        <p>
+            Fixed exception with certain OCAD line symbols. (Thanks to Steve Watkins for the report on this.)
+        </p>
+        <p>
+            When exporting to OCAD, copy the real world coordinates of this underlying OCAD map. This fixes a problem
+            in OCAD 11 where the underlying map is not displayed.
+        </p>
+    </li>
+</ul>
+
+<h2>Changes in 2.0.0</h2>
+<h3>New Features</h3>
+<ul>
+    <li>
+        <p>Added Australian English as a new language for control descriptions. This is the same as the normal 
+            English descriptions, except that "reentrant" becomes "gully" and "stream" becomes "watercourse". I'm
+            happy to take further changes from any Australians who wish to make them.
+        </p>
+        <p>
+            Added documentation to the help file for all new features.
+        </p>
+    </li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+    <li>
+        <p>
+            Fixed problem with XML and RouteGadget export when the classes are multiple lines.
+            (Thanks to Paul Frost for finding this issue.)
+        </p>
+        <p>
+            When using map exchange with marked route, the map exchange point is not shown on the 
+            previous part, but the marked route is (if long enough to extend beyond the last control circle).
+        </p>
+        <p>
+            Fixed problem with setup program not associated .ppen files correctly.
+        </p>
+    </li>
+
+</ul>
+
+<h2>Changes in 2.0.0 beta 3</h2>
+<h3>Bug Fixes</h3>
+<ul>
+    <li>
+        <p>
+            Printing of descriptions on All Controls now works.
+        </p>
+    </li>
+    <li>
+        <p>
+            A few crashing bugs fixed.
+        </p>
+    </li>
+</ul>
+
 <h2>Changes in 2.0.0 beta 2</h2>
 <h3>New Features</h3>
 <ul>
