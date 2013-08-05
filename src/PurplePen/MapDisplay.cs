@@ -462,7 +462,7 @@ namespace PurplePen
                 break;
 
             case MapType.Bitmap:
-                case MapType.PDF:
+            case MapType.PDF:
                 grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
                 DrawBitmapMap(grTargetBitmapMap, visRect);
                 grTargetOcadMap.PopAntiAliasing();

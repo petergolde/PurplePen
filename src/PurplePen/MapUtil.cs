@@ -112,6 +112,11 @@ namespace PurplePen
                 loadingStatus.DownloadAndInstall(ghostscriptUrl, ghostscriptFileName);
             }
 
+            if (!mapFile.GhostscriptInstalled) {
+                errorMessageText = MiscText.GhostscriptNotInstalled;
+
+            }
+
             bool ok = true;
             PdfMapFile.ConversionStatus status = mapFile.BeginConversion();
             if (status == PdfMapFile.ConversionStatus.Working) {
@@ -125,6 +130,8 @@ namespace PurplePen
             status = mapFile.Status;
             if (!ok || status == PdfMapFile.ConversionStatus.Failure) {
                 errorMessageText = MiscText.PdfConversionFailed;
+                if (!string.IsNullOrWhiteSpace(mapFile.ConversionOutput))
+                    errorMessageText += ": " + mapFile.ConversionOutput;
                 dpi = 0;
                 return null;
             }
