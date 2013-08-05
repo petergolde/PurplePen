@@ -84,7 +84,7 @@ namespace PurplePen
         private RectangleF portraitPrintableArea, landscapePrintableArea;
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
-        public CoursePageLayout(EventDB eventDB, SymbolDB symbolDB, Controller controller, IEnumerable<CourseDesignator> courseDesignators, 
+        public CoursePageLayout(EventDB eventDB, SymbolDB symbolDB, Controller controller,  
                                 CourseAppearance appearance, bool cropLargePrintArea, RectangleF portraitPrintableArea, RectangleF landscapePrintableArea)
         {
             this.eventDB = eventDB;
@@ -97,7 +97,7 @@ namespace PurplePen
         }
 
         // Layout all the pages, return the total number of pages.
-        public List<CoursePage> LayoutPages(List<Id<Course>> courseIds, bool printMapExchangesOnOneMap)
+        public List<CoursePage> LayoutPages(Id<Course>[] courseIds, bool printMapExchangesOnOneMap)
         {
             List<CoursePage> pages = new List<CoursePage>();
 

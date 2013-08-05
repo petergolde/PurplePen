@@ -63,8 +63,8 @@ namespace PurplePen.Tests
         public void LayoutPageDimension()
         {
             // Should fit on one page
-            List<CoursePrinting.DimensionLayout> result = new List<CoursePrinting.DimensionLayout>(
-                CoursePrinting.LayoutPageDimension(-10.0F, 240.0F, 50F, 1000F, 1.0F));
+            List<CoursePageLayout.DimensionLayout> result = new List<CoursePageLayout.DimensionLayout>(
+                CoursePageLayout.LayoutPageDimension(-10.0F, 240.0F, 50F, 1000F, 1.0F));
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(-10.0F, result[0].startMap);
             Assert.AreEqual(240.0F, result[0].lengthMap);
@@ -72,8 +72,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(944.88F, result[0].lengthPage, 0.01F);
 
             // Fit on two pages
-            result = new List<CoursePrinting.DimensionLayout>(
-                CoursePrinting.LayoutPageDimension(-100.0F, 380.0F, 50F, 1000F, 1.0F));
+            result = new List<CoursePageLayout.DimensionLayout>(
+                CoursePageLayout.LayoutPageDimension(-100.0F, 380.0F, 50F, 1000F, 1.0F));
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual(-100.0F, result[0].startMap);
             Assert.AreEqual(254.0F, result[0].lengthMap, 0.01F);
@@ -85,8 +85,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(1000F, result[1].lengthPage, 0.01F);
 
             // Barely fit 3 pages, with minimum 1 inch overlap.
-            result = new List<CoursePrinting.DimensionLayout>(
-                CoursePrinting.LayoutPageDimension(-100.0F, 710.0F, 50F, 1000F, 1.0F));
+            result = new List<CoursePageLayout.DimensionLayout>(
+                CoursePageLayout.LayoutPageDimension(-100.0F, 710.0F, 50F, 1000F, 1.0F));
             Assert.AreEqual(3, result.Count);
             Assert.AreEqual(-100.0F, result[0].startMap);
             Assert.AreEqual(254.0F, result[0].lengthMap, 0.01F);
@@ -102,8 +102,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(1000F, result[2].lengthPage, 0.01F);
 
             // Must go onto 4 pages
-            result = new List<CoursePrinting.DimensionLayout>(
-                CoursePrinting.LayoutPageDimension(-100.0F, 715.0F, 50F, 1000F, 1.0F));
+            result = new List<CoursePageLayout.DimensionLayout>(
+                CoursePageLayout.LayoutPageDimension(-100.0F, 715.0F, 50F, 1000F, 1.0F));
             Assert.AreEqual(4, result.Count);
         }
 
@@ -111,8 +111,8 @@ namespace PurplePen.Tests
         public void LayoutPageDimensionScaleRatio()
         {
             // Would fit on one page with 1.0 scale ratio. Now requires 2.
-            List<CoursePrinting.DimensionLayout> result = new List<CoursePrinting.DimensionLayout>(
-                CoursePrinting.LayoutPageDimension(-10.0F, 200.0F, 50F, 1000F, 0.5F));
+            List<CoursePageLayout.DimensionLayout> result = new List<CoursePageLayout.DimensionLayout>(
+                CoursePageLayout.LayoutPageDimension(-10.0F, 200.0F, 50F, 1000F, 0.5F));
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual(-10.0F, result[0].startMap, 0.01F);
             Assert.AreEqual(127.0F, result[0].lengthMap, 0.01F);
@@ -283,21 +283,21 @@ Settings to access printer 'foobar' are not valid.'
             float area;
 
             // Printable area bigger than printArea -- should just get printArea back.
-            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(30, 40, 140, 80), new SizeF(110, 100), out area);
+            result = CoursePageLayout.CropPrintArea(printArea, RectangleF.FromLTRB(30, 40, 140, 80), new SizeF(110, 100), out area);
             Assert.AreEqual(printArea, result);
             Assert.AreEqual(90 * 40, area);
 
             // Printable area smaller than print area, larger than courseObjects
-            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(70, 40), out area);
+            result = CoursePageLayout.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(70, 40), out area);
             Assert.AreEqual(RectangleF.FromLTRB(17.5F, 40, 87.5F, 80), result);
             Assert.AreEqual(55 * 20, area);
 
-            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 60, 80, 85), new SizeF(70, 40), out area);
+            result = CoursePageLayout.CropPrintArea(printArea, RectangleF.FromLTRB(25, 60, 80, 85), new SizeF(70, 40), out area);
             Assert.AreEqual(RectangleF.FromLTRB(17.5F, 50, 87.5F, 90), result);
             Assert.AreEqual(55 * 25, area);
 
             // Printable area smaller than  courseObjects
-            result = CoursePrinting.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(15, 10), out area);
+            result = CoursePageLayout.CropPrintArea(printArea, RectangleF.FromLTRB(25, 30, 80, 60), new SizeF(15, 10), out area);
             Assert.AreEqual(RectangleF.FromLTRB(45, 40, 60, 50), result);
             //Assert.AreEqual(55 * 20, area);
         }
