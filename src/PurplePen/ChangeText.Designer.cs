@@ -37,8 +37,9 @@
             this.courseLengthMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseClimbMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classListMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usageLabel = new System.Windows.Forms.Label();
             this.printScaleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usageLabel = new System.Windows.Forms.Label();
+            this.coursePartMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specialTextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@
             this.specialTextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eventTitleMenuItem,
             this.courseNameMenuItem,
+            this.coursePartMenuItem,
             this.courseLengthMenuItem,
             this.courseClimbMenuItem,
             this.classListMenuItem,
@@ -107,16 +109,22 @@
             resources.ApplyResources(this.classListMenuItem, "classListMenuItem");
             this.classListMenuItem.Click += new System.EventHandler(this.classListMenuItem_Click);
             // 
-            // usageLabel
-            // 
-            resources.ApplyResources(this.usageLabel, "usageLabel");
-            this.usageLabel.Name = "usageLabel";
-            // 
             // printScaleMenuItem
             // 
             this.printScaleMenuItem.Name = "printScaleMenuItem";
             resources.ApplyResources(this.printScaleMenuItem, "printScaleMenuItem");
             this.printScaleMenuItem.Click += new System.EventHandler(this.printScaleMenuItem_Click);
+            // 
+            // usageLabel
+            // 
+            resources.ApplyResources(this.usageLabel, "usageLabel");
+            this.usageLabel.Name = "usageLabel";
+            // 
+            // coursePartMenuItem
+            // 
+            this.coursePartMenuItem.Name = "coursePartMenuItem";
+            resources.ApplyResources(this.coursePartMenuItem, "coursePartMenuItem");
+            this.coursePartMenuItem.Click += new System.EventHandler(this.coursePartMenuItem_Click);
             // 
             // ChangeText
             // 
@@ -149,5 +157,6 @@
         private System.Windows.Forms.ToolStripMenuItem classListMenuItem;
         private System.Windows.Forms.Label usageLabel;
         private System.Windows.Forms.ToolStripMenuItem printScaleMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coursePartMenuItem;
     }
 }

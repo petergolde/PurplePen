@@ -2,7 +2,7 @@
   <event id="1">
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="none" scale="10000" />
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false">Marymoor.ocd</map>
     <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />

@@ -59,6 +59,11 @@ namespace PurplePen
             InsertSpecialText(TextMacros.CourseName);
         }
 
+        private void coursePartMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.CoursePart);
+        }
+
         private void courseLengthMenuItem_Click(object sender, EventArgs e)
         {
             InsertSpecialText(TextMacros.CourseLength);

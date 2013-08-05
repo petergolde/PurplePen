@@ -408,10 +408,19 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CrashEmail" xml:space="preserve">
     <value>Kontakt-E-Mail</value>
   </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Es ist ein Fehler aufgetreten. Um uns zu helfen das Problem zu beheben, können Sie uns einen Fehlerbericht zusenden. Geben Sie hierzu bitte Ihre E-Mail Adresse und weitere Informationen an.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Sie können uns helfen, den Fehler zu beheben, indem Sie uns beschreiben, was Sie gerade mit dem Programm gemacht haben.</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Speichern</value>
   </data>
   <data name="CrashSend" xml:space="preserve">
     <value>Bericht senden</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Postenbeschreibungen können zu einer Bahn mit Kartenwechsel nicht hinzugefügt werden, wenn "Alle Teilstrecken" angezeigt werden. Wenn Sie Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte auf die gewünschte Teilstrecke und wählen dann "Postenbeschreibung hinzufügen" nochmals aus.</value>
   </data>
 </root>

@@ -214,6 +214,31 @@ namespace PurplePen
             return newArray;
         }
 
+        // Clone a dictionary and its elements.
+        public static Dictionary<K, V> CloneDictionary<K, V>(Dictionary<K, V> dict)
+        {
+            Dictionary<K, V> newDict = new Dictionary<K, V>(dict.Count);
+
+            foreach (KeyValuePair<K, V> pair in dict) {
+                K key = pair.Key;
+                V value = pair.Value;
+
+                ICloneable cloneableKey = key as ICloneable;
+                if (cloneableKey != null) {
+                    key = (K) cloneableKey.Clone();
+                }
+
+                ICloneable cloneableValue = value as ICloneable;
+                if (cloneableValue != null) {
+                    value = (V) cloneableValue.Clone();
+                }
+
+                newDict.Add(key, value);
+            }
+
+            return newDict;
+        }
+
         // Round a rectangle. Returns a sane hittest of rounding each coordinate. Rectangle.Round doesn't do that!
         public static Rectangle Round(RectangleF rect)
         {

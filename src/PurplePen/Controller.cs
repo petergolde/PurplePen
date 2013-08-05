@@ -174,6 +174,15 @@ namespace PurplePen
             }
         }
 
+        // Get the map real world coordinates (default if the map isn't OCAD).
+        public RealWorldCoords MapRealWorldCoords
+        {
+            get
+            {
+                return MapDisplay.RealWorldCoords;
+            }
+        }
+
         // Get the map dpi (only if map type is bitmap.
         public float MapDpi
         {
@@ -569,9 +578,12 @@ namespace PurplePen
         }
 
         // Get the current description to show in the description pane.
-        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind)
+        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind, out bool isCoursePart)
         {
             kind = selectionMgr.ActiveCourseView.Kind;
+            CourseDesignator courseDesignator = selectionMgr.ActiveCourseView.CourseDesignator;
+            isCoursePart = courseDesignator.IsNotAllControls && !courseDesignator.AllParts;
+
             return selectionMgr.ActiveDescription;
         }
 
@@ -631,6 +643,28 @@ namespace PurplePen
                 else {
                     return selectionMgr.Selection.ActiveCourseDesignator.Part;
                 }
+            }
+        }
+
+        public PartOptions ActivePartOptions
+        {
+            get
+            {
+                CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+                if (activeCourseDesignator.IsAllControls)
+                    return null;
+                else
+                    return QueryEvent.GetPartOptions(eventDB, activeCourseDesignator);
+            }
+        }
+
+        public void ChangeActivePartOptions(PartOptions partOptions)
+        {
+            CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (activeCourseDesignator.IsNotAllControls) {
+                undoMgr.BeginCommand(5107, CommandNameText.ChangePartProperties);
+                ChangeEvent.ChangePartOptions(eventDB, activeCourseDesignator, partOptions);
+                undoMgr.EndCommand(5107);
             }
         }
 
@@ -900,7 +934,8 @@ namespace PurplePen
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             // We can delete any selected control or a special or a text line
-            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.Special || selection.SelectionKind == SelectionMgr.SelectionKind.TextLine)
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.Special || 
+                selection.SelectionKind == SelectionMgr.SelectionKind.TextLine || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl)
                 return true;
 
             return false;
@@ -941,6 +976,13 @@ namespace PurplePen
                     ChangeEvent.ChangeTextLine(eventDB, selection.SelectedCourseControl, null, (textLineKind == DescriptionLine.TextLineKind.BeforeCourseControl));
 
                 undoMgr.EndCommand(811);
+                return true;
+            }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+                // Remove the map exchange at this course control.
+                undoMgr.BeginCommand(812, CommandNameText.DeleteMapExchangeAtControl);
+                ChangeEvent.ChangeControlExchange(eventDB, selection.SelectedCourseControl, false);
+                undoMgr.EndCommand(812);
                 return true;
             }
 

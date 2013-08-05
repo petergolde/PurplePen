@@ -54,6 +54,7 @@ namespace PurplePen
         public const string CourseClimb = "$(CourseClimb)";
         public const string ClassList = "$(ClassList)";
         public const string PrintScale = "$(PrintScale)";
+        public const string CoursePart = "$(CoursePart)";
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -128,6 +129,12 @@ namespace PurplePen
                         }
                     }
                 }
+            }
+
+            // Add any additional controls
+            foreach (Id<CourseControl> extraCourseControl in courseView.ExtraCourseControls) {
+                courseLayout.AddCourseObject(CreateCourseObject(eventDB, scaleRatio, appearance, courseView.PrintScale,
+                                                                eventDB.GetCourseControl(extraCourseControl).control, extraCourseControl, double.NaN));
             }
 
             // No go through each control again and add an automatically placed number/code to each. We do this last so that the placement
@@ -402,6 +409,13 @@ namespace PurplePen
             if (text.Contains(TextMacros.CourseName))
                 text = text.Replace(TextMacros.CourseName, courseView.CourseName);
 
+            if (text.Contains(TextMacros.CoursePart)) {
+                if (courseView.CourseDesignator.IsNotAllControls && !courseView.CourseDesignator.AllParts)
+                    text = text.Replace(TextMacros.CoursePart, (courseView.CourseDesignator.Part + 1).ToString());
+                else
+                    text = text.Replace(TextMacros.CoursePart, "");
+            }
+
             if (text.Contains(TextMacros.CourseLength))
                 text = text.Replace(TextMacros.CourseLength, string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
 
@@ -537,26 +551,32 @@ namespace PurplePen
         // AngleOut is the direction IN RADIANs leaving the control.
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
-            ControlPoint control = eventDB.GetControl(controlView.controlId);
-            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlView.controlId, printScale);
+            return CreateCourseObject(eventDB, scaleRatio, appearance, printScale, controlView.controlId, controlView.courseControlId, angleOut);
+        }
+
+        static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, 
+                                            Id<ControlPoint> controlId, Id<CourseControl> courseControlId, double angleOut)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, printScale);
             CourseObj courseObj = null;
 
             switch (control.kind) {
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
-                courseObj = new StartCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
                 break;
 
             case ControlPointKind.Finish:
-                courseObj = new FinishCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
+                courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.Normal:
-                courseObj = new ControlCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, gaps, control.location);
+                courseObj = new ControlCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location);
                 break;
 
             case ControlPointKind.CrossingPoint:
-                courseObj = new CrossingCourseObj(controlView.controlId, controlView.courseControlId, Id<Special>.None, scaleRatio, appearance, control.orientation, control.location);
+                courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, control.orientation, control.location);
                 break;
 
             default:

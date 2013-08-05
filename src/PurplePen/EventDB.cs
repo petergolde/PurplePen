@@ -596,6 +596,36 @@ namespace PurplePen
         SymbolsAndText                  // Symbols and text
     }
 
+    public class PartOptions: ICloneable
+    {
+        public bool ShowFinish;         // Show the course finish of this part if not the last part
+
+        // Default for parts that don't have a part options set.
+        public static PartOptions Default = new PartOptions() {
+            ShowFinish = false
+        };
+
+        public override bool Equals(object obj)
+        {
+            PartOptions other = obj as PartOptions;
+            if (other != null) {
+                return other.ShowFinish == this.ShowFinish;
+            }
+
+            return false;
+        }
+
+        public PartOptions Clone()
+        {
+            return (PartOptions)base.MemberwiseClone();
+        }
+
+        object ICloneable.Clone()
+        {
+            return this.Clone(); ;
+        }
+    }   
+
     // Description a main course (not a particular variation, map part, or all controls--
     // those exist only in a particular view).
     public class Course : StorableObject
@@ -613,11 +643,13 @@ namespace PurplePen
         public DescriptionKind descKind;// Kind of description to print
         public RectangleF printArea;  // print area, or empty if no defined print area.
         public Dictionary<int, RectangleF> partPrintAreas; // print area of parts.
+        public Dictionary<int, PartOptions> partOptions;  // options of parts.
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
         {
             this.partPrintAreas = new Dictionary<int, RectangleF>();
+            this.partOptions = new Dictionary<int, PartOptions>();
         }
 
         public Course(CourseKind kind, string name, float printScale, int sortOrder): this()
@@ -707,6 +739,15 @@ namespace PurplePen
             throw new ApplicationException("no join point reached");
         }
 
+        public override StorableObject Clone()
+        {
+            Course n = (Course)base.Clone();
+
+            n.partPrintAreas = Util.CloneDictionary(n.partPrintAreas);
+            n.partOptions = Util.CloneDictionary(n.partOptions);
+
+            return n;
+        }
 
         public override bool Equals(object obj)
         {
@@ -750,6 +791,13 @@ namespace PurplePen
                 if (!other.partPrintAreas.TryGetValue(kvp.Key, out rect) || rect != kvp.Value)
                     return false;
             }
+            if (other.partOptions.Count != this.partOptions.Count)
+                return false;
+            foreach (KeyValuePair<int, PartOptions> kvp in this.partOptions) {
+                PartOptions partOptions;
+                if (!other.partOptions.TryGetValue(kvp.Key, out partOptions) || ! partOptions.Equals(kvp.Value))
+                    return false;
+            }
 
             return true;
         }
@@ -774,7 +822,7 @@ namespace PurplePen
             scoreColumn = (kind == CourseKind.Score) ? 0 : -1;
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels")) {
+            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options")) {
                 switch (xmlinput.Name) {
                     case "name":
                         name = xmlinput.GetContentString();
@@ -815,6 +863,17 @@ namespace PurplePen
                         descKind = EventDBUtil.ReadDescriptionKindAttribute(xmlinput);
                         xmlinput.Skip();
                         break;
+
+                    case "part-options":
+                        part = xmlinput.GetAttributeInt("part", -1);
+                        bool showFinish = xmlinput.GetAttributeBool("show-finish");
+
+                        if (part != -1)
+                            partOptions[part] = new PartOptions() { ShowFinish = showFinish };
+
+                        xmlinput.Skip();
+                        break;
+
 
                     case "labels":
                         string labelKindText = xmlinput.GetAttributeString("label-kind");
@@ -906,6 +965,13 @@ namespace PurplePen
             EventDBUtil.WriteDescriptionKindAttribute(xmloutput, descKind);
 
             xmloutput.WriteEndElement();
+
+            foreach (KeyValuePair<int, PartOptions> kvp in partOptions) {
+                xmloutput.WriteStartElement("part-options");
+                xmloutput.WriteAttributeString("part", XmlConvert.ToString(kvp.Key));
+                xmloutput.WriteAttributeString("show-finish", XmlConvert.ToString(kvp.Value.ShowFinish));
+                xmloutput.WriteEndElement();
+            }
         }
 
         public override string ElementName

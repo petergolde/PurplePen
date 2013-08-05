@@ -326,6 +326,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SpecialLegsCrossingFormatter()
+        {
+            TestCourseFormatter("descformatter\\speciallegs.coursescribe", CourseId(2), false,
+@"      | SpecialLegs                                   |   [SpecialLegs]
+      |Crossings        |2.5 km           |           |   [Length 2.5 km]
+(  1) |start|     |     |     |     |     |     |     |   [Start: ]
+(  5) |    1|   34|     |     |     |     |     |     |   []
+(  7) |                 13.3:                         |   [Mandatory crossing point]
+(  7) |                 13.2: 410 m                   |   [Follow tapes 410 m between controls]
+(  3) |    2|   32|     |     |     |     |     |     |   []
+(  2) |    3|   31|     |     |     |     |     |     |   []
+(  8) |                 13.3:                         |   [Mandatory crossing point]
+(  8) |                 13.1: 140 m                   |   [Follow tapes 140 m away from control]
+(  9) |    4|   35|     |     |     |     |     |     |   []
+(  6) |                 14.3: 250 m                   |   [Navigate 250 m to finish]
+");
+        }
+
+        [TestMethod]
         public void ClearTextAndSymbols()
         {
             UndoMgr undomgr = new UndoMgr(5);
@@ -450,7 +469,7 @@ namespace PurplePen.Tests
         {
             TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 0), true,
 @"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
-      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+      |Course 5-1       |5.0 km           |           |   [Length 5.0 km]
 (  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
 ( 59) |    1|   59|     |  4.5|     |     |11.1N|     |   [N side of thicket]
 ( 51) |    2|   51|     |  4.5|     |     |11.1NW|     |   [NW side of thicket]
@@ -470,7 +489,7 @@ namespace PurplePen.Tests
         {
             TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 1), true,
 @"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
-      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+      |Course 5-2       |5.0 km           |           |   [Length 5.0 km]
 ( 35) |start|     | 0.1E|  4.5|     |     |11.2E|     |   [Start: E edge of E thicket]
 ( 37) |   10|   37|     |  4.5|     |     |11.6NW|     |   [NW tip of thicket]
 ( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
@@ -485,7 +504,7 @@ namespace PurplePen.Tests
         {
             TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 2), true,
 @"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
-      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+      |Course 5-3       |5.0 km           |           |   [Length 5.0 km]
 ( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
 ( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
@@ -497,7 +516,7 @@ namespace PurplePen.Tests
         {
             TestCourseFormatter("descformatter\\mapexchange1.ppen", new CourseDesignator(CourseId(6), 3), true,
 @"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
-      |Course 5         |5.0 km           |           |   [Length 5.0 km]
+      |Course 5-4       |5.0 km           |           |   [Length 5.0 km]
 ( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
 ( 42) |   16|   42|     |  4.7|  4.7| 10.2|     |     |   [Vegetation boundary junction]

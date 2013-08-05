@@ -174,7 +174,7 @@ namespace PurplePen
 
             line.kind = DescriptionLineKind.Header3Box;
             line.boxes = new object[3];
-            line.boxes[0] = courseView.CourseName;
+            line.boxes[0] = courseView.CourseNameWithPart;
             line.boxes[1] = string.Format("{0:0.0} km", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0);
             if (courseView.TotalClimb < 0) {
                 line.boxes[2] = null;
@@ -209,7 +209,7 @@ namespace PurplePen
 
             line.kind = DescriptionLineKind.Header2Box;
             line.boxes = new object[2];
-            line.boxes[0] = courseView.CourseName;
+            line.boxes[0] = courseView.CourseNameWithPart;
 
             // If there is scoring, display the total score, else display the total number of controls (e.g.,
             // for a score course with no points for each control.
@@ -503,9 +503,9 @@ namespace PurplePen
             if (leg.flagging == FlaggingKind.None || leg.flagging == FlaggingKind.End)
                 return false;
 
-            // Flagged legs that start at a crossing point are not shown. Also, flagged legs that end at the finish or a map exchange are 
+            // Flagged legs that end at the finish or a map exchange are 
             // included in the finish control.
-            if (from.kind == ControlPointKind.CrossingPoint || to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
+            if (to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
                 return false;
 
             return true;

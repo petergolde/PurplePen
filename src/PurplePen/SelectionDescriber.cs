@@ -100,7 +100,7 @@ namespace PurplePen
 
         // Describe a course object, and return an array of TextParts for display in the UI. Return null if nothing useful
         // can be said.
-        public static TextPart[] DescribeCourseObject(SymbolDB symbolDB, EventDB eventDB, CourseObj courseObj)
+        public static TextPart[] DescribeCourseObject(SymbolDB symbolDB, EventDB eventDB, CourseObj courseObj, float scaleRatio)
         {
             if (courseObj is LineCourseObj && courseObj.courseControlId.IsNotNone && ((LineCourseObj)courseObj).courseControlId2.IsNotNone) {
                 return DescribeLeg(eventDB, courseObj.courseControlId, ((LineCourseObj)courseObj).courseControlId2, DescKind.Tooltip);
@@ -109,7 +109,7 @@ namespace PurplePen
                 return DescribeControlPoint(symbolDB, eventDB, courseObj.controlId, DescKind.Tooltip);
             }
             else if (courseObj.specialId.IsNotNone) {
-                return DescribeSpecial(eventDB, courseObj.specialId, courseObj.scaleRatio, DescKind.Tooltip);
+                return DescribeSpecial(eventDB, courseObj.specialId, scaleRatio, DescKind.Tooltip);
             }
             else {
                 return null;

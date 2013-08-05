@@ -25,6 +25,7 @@ namespace PurplePen
         }
 
         public event EventHandler SelectedPartChanged;
+        public event EventHandler PropertiesClicked;
 
         public int NumberOfParts
         {
@@ -37,6 +38,22 @@ namespace PurplePen
                     UpdateNumberOfParts();
                 }
             }
+        }
+
+        public bool EnableProperties
+        {
+            get {
+                return buttonProperties.Visible;
+            }
+
+            set {
+                buttonProperties.Visible = value;
+            }
+        }
+
+        public void UpdateDropdown()
+        {
+            UpdateNumberOfParts();
         }
 
         // Return selected part, or 0 for all parts.
@@ -82,6 +99,12 @@ namespace PurplePen
             using (Pen pen = new Pen(Color.FromKnownColor(KnownColor.ControlDark), 1)) {
                 e.Graphics.DrawLine(pen, new Point(0, this.Height - 1), new Point(this.Width - 1, this.Height - 1));
             }
+        }
+
+        private void buttonProperties_Click(object sender, EventArgs e)
+        {
+            if (PropertiesClicked != null)
+                PropertiesClicked(this, EventArgs.Empty);
         }
     }
 }

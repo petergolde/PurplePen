@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.coursePartLabel = new System.Windows.Forms.Label();
             this.partComboBox = new System.Windows.Forms.ComboBox();
+            this.buttonProperties = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.coursePartLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.partComboBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonProperties, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // coursePartLabel
@@ -54,6 +56,13 @@
             resources.ApplyResources(this.partComboBox, "partComboBox");
             this.partComboBox.Name = "partComboBox";
             this.partComboBox.SelectedIndexChanged += new System.EventHandler(this.partComboBox_SelectedIndexChanged);
+            // 
+            // buttonProperties
+            // 
+            resources.ApplyResources(this.buttonProperties, "buttonProperties");
+            this.buttonProperties.Name = "buttonProperties";
+            this.buttonProperties.UseVisualStyleBackColor = true;
+            this.buttonProperties.Click += new System.EventHandler(this.buttonProperties_Click);
             // 
             // CoursePartBanner
             // 
@@ -74,6 +83,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label coursePartLabel;
         private System.Windows.Forms.ComboBox partComboBox;
+        private System.Windows.Forms.Button buttonProperties;
 
     }
 }

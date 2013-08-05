@@ -197,24 +197,36 @@ namespace PurplePen
             if (!this.Visible)
                 owner = null;
 
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(owner, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
         // Show an warning message, with no choice.
         public void WarningMessage(string message)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
         }
 
         // Show an informational message, with no choice.
         public void InfoMessage(string message)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         // Ask a yes-no question.
         public bool YesNoQuestion(string message, bool yesDefault)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             DialogResult result = MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, yesDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
             return result == DialogResult.Yes;
         }
@@ -222,6 +234,9 @@ namespace PurplePen
         // Ask a yes-no-cancel question.
         public DialogResult YesNoCancelQuestion(string message, bool yesDefault)
         {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
             return MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, yesDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
         }
 
@@ -331,8 +346,16 @@ namespace PurplePen
             else {
                 coursePartBanner.NumberOfParts = controller.NumberOfParts;
                 coursePartBanner.SelectedPart = controller.CurrentPart;
+                UpdatePartBannerProperties();
                 SetBannerVisibility(true);
             }
+        }
+
+        // Update the properties button in the part banner.
+        void UpdatePartBannerProperties()
+        {
+            // Don't enable properties for all parts.
+            coursePartBanner.EnableProperties = (controller.CurrentPart >= 0);
         }
 
         void SetBannerVisibility(bool bannerVisible)
@@ -353,10 +376,12 @@ namespace PurplePen
         void UpdateDescription()
         {
             CourseView.CourseViewKind kind;
+            bool isCoursePart;
 
-            descriptionControl.Description = controller.GetDescription(out kind);
+            descriptionControl.Description = controller.GetDescription(out kind, out isCoursePart);
             descriptionControl.CourseKind = kind;
             descriptionControl.ScoreColumn = controller.GetScoreColumn();
+            descriptionControl.IsCoursePart = isCoursePart;
             descriptionControl.LangId = controller.GetDescriptionLanguage();
         }
 
@@ -728,6 +753,23 @@ namespace PurplePen
         private void coursePartBanner_SelectedPartChanged(object sender, EventArgs e)
         {
             controller.SelectPart(coursePartBanner.SelectedPart);
+            UpdatePartBannerProperties();
+        }
+
+        private void coursePartBanner_PropertiesClicked(object sender, EventArgs e)
+        {
+            int currentPart = controller.CurrentPart;
+            int numberOfParts = controller.NumberOfParts;
+
+            if (currentPart >= 0 && numberOfParts >= 0) {
+                CoursePartProperties coursePartOptionsDialog = new CoursePartProperties();
+                coursePartOptionsDialog.PartOptions = controller.ActivePartOptions;
+                coursePartOptionsDialog.ShowFinishCircleEnabled = (currentPart != numberOfParts - 1);
+
+                if (coursePartOptionsDialog.ShowDialog(this) == DialogResult.OK) {
+                    controller.ChangeActivePartOptions(coursePartOptionsDialog.PartOptions);
+                }
+            }
         }
 
         private void symbolBrowserMenu_Click(object sender, EventArgs e)
@@ -2059,6 +2101,7 @@ namespace PurplePen
 
                 ReloadMainFrameStrings();
                 UpdateLabelsAndScrollBars();
+                coursePartBanner.UpdateDropdown();
                 Application_Idle(this, EventArgs.Empty);     // force update of everything.
                 --changeNum;
 
@@ -2083,6 +2126,10 @@ namespace PurplePen
             ComponentResourceManager resources = new ComponentResourceManager(typeof(MainFrame));
 
             UpdateComponentText(resources, this, "$this");
+
+            resources = new ComponentResourceManager(typeof(CoursePartBanner));
+
+            UpdateComponentText(resources, this.coursePartBanner, "$this");
         }
 
         private void UpdateComponentText(ComponentResourceManager resources, object control, string componentName)

@@ -1011,12 +1011,12 @@ String of type 1039
   ObjIndex=0
   firstField=
   code=m, value=10000
-  code=g, value=10.00
+  code=g, value=10
   code=r, value=0
-  code=x, value=0.0
-  code=y, value=0.0
-  code=a, value=0.0
-  code=d, value=500.0
+  code=x, value=0
+  code=y, value=0
+  code=a, value=0
+  code=d, value=500
 
 String of type 1026
   ObjIndex=0

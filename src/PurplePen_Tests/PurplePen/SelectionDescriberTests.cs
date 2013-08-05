@@ -122,7 +122,7 @@ namespace PurplePen.Tests
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.controlId == ControlId(70) && co is ControlCourseObj select co).Single();
 
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -196,7 +196,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectControl(ControlId(81));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.controlId == ControlId(81) && co is ControlCourseObj select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -279,7 +279,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(2));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.controlId == ControlId(53) && co is ControlCourseObj select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -362,7 +362,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(2));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.controlId == ControlId(1) && co is StartCourseObj select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -779,7 +779,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(6));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.courseControlId == CourseControlId(606) && co is LegCourseObj && ((LegCourseObj)co).courseControlId2 == CourseControlId(607) select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -871,7 +871,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(6));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.courseControlId == CourseControlId(606) && co is LegCourseObj && ((LegCourseObj)co).courseControlId2 == CourseControlId(607) select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -1104,7 +1104,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(4));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.specialId == SpecialId(4) select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -1171,7 +1171,7 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(3));
             CourseLayout layout = controller.GetCourseLayout();
             CourseObj courseObj = (from co in layout where co.specialId == SpecialId(2) select co).Single();
-            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj);
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
             index = 0;
 
             textpart = description[index++];
@@ -1235,6 +1235,45 @@ namespace PurplePen.Tests
             Assert.AreEqual(index, description.Length);
         }
 
+
+        [TestMethod]
+        public void DescriptionTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(10));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.specialId == SpecialId(8) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control Descriptions", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Line height:  ", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("5.0 mm", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
         [TestMethod]
         public void DescriptionScaled()
         {
@@ -1276,6 +1315,44 @@ namespace PurplePen.Tests
             textpart = description[index++];
             Assert.AreEqual("All courses", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
+        public void DescriptionScaledTooltip()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(5));
+            CourseLayout layout = controller.GetCourseLayout();
+            CourseObj courseObj = (from co in layout where co.specialId == SpecialId(8) select co).Single();
+            TextPart[] description = SelectionDescriber.DescribeCourseObject(ui.symbolDB, eventDB, courseObj, selectionMgr.ActiveCourseView.ScaleRatio);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Control Descriptions", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Line height:  ", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("3.3 mm", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
         }
