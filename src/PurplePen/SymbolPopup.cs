@@ -146,6 +146,7 @@ namespace PurplePen
         private void DisposeCurrentDropdown()
         {
             if (dropdown != null) {
+                dropdown.Close();
                 dropdown.Dispose();
                 dropdown = null;
             }

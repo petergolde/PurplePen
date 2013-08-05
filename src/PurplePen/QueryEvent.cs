@@ -56,6 +56,9 @@ namespace PurplePen
         // Find the control with a code, and return its ID. Else return None.
         public static Id<ControlPoint> FindCode(EventDB eventDB, string code)
         {
+            if (string.IsNullOrWhiteSpace(code))
+                return Id<ControlPoint>.None;
+
             foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds) {
                 if (eventDB.GetControl(controlId).code == code)
                     return controlId;
@@ -422,7 +425,7 @@ namespace PurplePen
         // Determine if a given control code is valid.
         public static bool IsLegalControlCode(string code, out string reason)
         {
-            if (code.Length < 1) {
+            if (code == null || code.Length < 1) {
                 reason = MiscText.CodeBadLength;
                 return false;
             }
