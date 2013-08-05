@@ -1075,7 +1075,7 @@ namespace PurplePen
             List<Id<ControlPoint>> orphanedControls = new List<Id<ControlPoint>>();
             string orphanedControlsText = "";
             foreach (Id<ControlPoint> controlId in usedControls) {
-                if (QueryEvent.CoursesUsingControl(eventDB, controlId).Length == 0) {
+                if (QueryEvent.CoursesUsingControl(eventDB, controlId).Length == 0 && !orphanedControls.Contains(controlId)) {
                     orphanedControls.Add(controlId);
                     if (orphanedControlsText != "")
                         orphanedControlsText += ", ";

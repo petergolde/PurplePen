@@ -67,9 +67,6 @@ namespace PurplePen
             public string PrereleaseFileName;
         }
 
-        // Owner window for dialogs and messages we put up.
-        public static IWin32Window OwnerWindow { get; set; }
-
         // If non-null, controller to check to see if we can save.
         public static Controller Controller { get; set; }
 
@@ -88,7 +85,7 @@ namespace PurplePen
         {
             // Ask to see if user wants to update.
             string message = string.Format(MiscText.NewerVersionAvailable, Util.PrettyVersionString(versionNumber), Util.PrettyVersionString(VersionNumber.Current));
-            DialogResult answer = MessageBox.Show(OwnerWindow, message, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            DialogResult answer = MessageBox.Show(message, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
             if (answer != DialogResult.Yes) {
                 return;
             }
@@ -118,7 +115,7 @@ namespace PurplePen
             };
 
             client.DownloadFileAsync(new Uri(downloadLocation + fileName), downloadedFile);
-            var result = downloadProgressDialog.ShowDialog(OwnerWindow);
+            var result = downloadProgressDialog.ShowDialog();
 
             if (result == DialogResult.OK && completed) {
                 Install(downloadedFile);

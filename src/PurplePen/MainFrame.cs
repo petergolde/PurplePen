@@ -2048,7 +2048,6 @@ namespace PurplePen
         private void MainFrame_Shown(object sender, EventArgs e)
         {
             // Begin check for new version in the background.
-            Updater.OwnerWindow = this;
             Updater.Controller = this.controller;
             Updater.CheckForUpdates();
         }
