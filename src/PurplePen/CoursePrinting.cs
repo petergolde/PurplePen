@@ -288,7 +288,7 @@ namespace PurplePen
                 // Crop the print area to a single page, portrait or landscape.
                 // Try to keep CourseObjects in view as much as possible.
                 CourseLayout layout = new CourseLayout();
-                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, controller.GetCourseAppearance(), layout, 0);
+                CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, layout, 0);
                 RectangleF courseObjectsArea = layout.BoundingRect();
                 courseObjectsArea.Intersect(printArea);
 

@@ -181,6 +181,7 @@
       <DependentUpon>CourseLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="CourseObject.cs" />
+    <Compile Include="CoursePageLayout.cs" />
     <Compile Include="CoursePrinting.cs" />
     <Compile Include="CoursePartBanner.cs">
       <SubType>UserControl</SubType>
