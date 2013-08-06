@@ -166,6 +166,12 @@
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CreatePdfCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePdfCourses.Designer.cs">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseAppearanceDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,7 @@
     <Compile Include="CoursePartProperties.Designer.cs">
       <DependentUpon>CoursePartProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoursePdf.cs" />
     <Compile Include="CoursePrinting.cs" />
     <Compile Include="CoursePartBanner.cs">
       <SubType>UserControl</SubType>
@@ -909,6 +916,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.sv.resx">
       <LastGenOutput>CommandNameText.sv1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.bg.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.de.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.es.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.et.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.fi.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.fr.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.nb-NO.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.nn-NO.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.ro.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePdfCourses.sv.resx">
+      <DependentUpon>CreatePdfCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.bg.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>

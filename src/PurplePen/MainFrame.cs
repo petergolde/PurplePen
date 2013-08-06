@@ -67,6 +67,7 @@ namespace PurplePen
         DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();     // printing settings for the description;
         PunchPrintSettings punchPrintSettings = new PunchPrintSettings();     // printing settings for the description;
         CoursePrintSettings coursePrintSettings = new CoursePrintSettings();   // printing settings for courses.
+        CoursePdfSettings coursePdfSettings = null;   // PDF creation settings for courses.
         OcadCreationSettings ocadCreationSettingsPrevious = null;     // creation settings for OCAD creation, if it has been done before.
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
 
@@ -1702,19 +1703,8 @@ namespace PurplePen
 
         private void printCoursesMenu_Click(object sender, EventArgs e)
         {
-            // Check for objects that aren't renderable, and warn. If user choses cancel, then cancel.
-            string[] nonRenderableObjects = mapDisplay.NonRenderableObjects();
-
-            if (nonRenderableObjects != null && nonRenderableObjects.Length > 0) {
-                NonPrintableObjects dialog = new NonPrintableObjects();
-                dialog.MapName = Path.GetFileName(controller.MapFileName);
-                dialog.BadObjectList = nonRenderableObjects;
-
-                DialogResult result = dialog.ShowDialog();
-
-                if (result == DialogResult.Cancel)
-                    return;
-            }
+            if (!CheckForNonRenderableObjects())
+                return;
 
             // Initialize dialog
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
@@ -1738,6 +1728,59 @@ namespace PurplePen
 
             // And the dialog is done.
             printCoursesDialog.Dispose();
+        }
+
+        private void createCoursePdfMenu_Click(object sender, EventArgs e)
+        {
+            if (! CheckForNonRenderableObjects())
+                return;
+
+            CoursePdfSettings settings;
+            if (coursePdfSettings != null)
+                settings = coursePdfSettings.Clone();
+            else {
+                // Default settings: creating in file directory
+                settings = new CoursePdfSettings();
+
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
+            }
+
+            // Initialize dialog
+            CreatePdfCourses createPdfDialog = new CreatePdfCourses(controller.GetEventDB(), controller.AnyMultipart());
+            createPdfDialog.controller = controller;
+            createPdfDialog.PdfSettings = settings;
+
+            // show the dialog, on success, print.
+            if (createPdfDialog.ShowDialog(this) == DialogResult.OK) {
+                // Save the settings for the next invocation of the dialog.
+                coursePdfSettings = createPdfDialog.PdfSettings;
+                //controller.CreateCoursePdfs(coursePdfSettings);
+            }
+
+            // And the dialog is done.
+            createPdfDialog.Dispose();
+        }
+
+        // Warn user about non-renderable objects. Return false if shouldn't continue
+        private bool CheckForNonRenderableObjects()
+        {
+            // Check for objects that aren't renderable, and warn. If user choses cancel, then cancel.
+            string[] nonRenderableObjects = mapDisplay.NonRenderableObjects();
+
+            if (nonRenderableObjects != null && nonRenderableObjects.Length > 0) {
+                NonPrintableObjects dialog = new NonPrintableObjects();
+                dialog.MapName = Path.GetFileName(controller.MapFileName);
+                dialog.BadObjectList = nonRenderableObjects;
+
+                DialogResult result = dialog.ShowDialog();
+
+                if (result == DialogResult.Cancel)
+                    return false;
+            }
+
+            return true;
         }
 
         private void SetPrintArea(PrintArea printArea)

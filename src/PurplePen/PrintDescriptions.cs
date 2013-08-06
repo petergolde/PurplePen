@@ -182,8 +182,8 @@ namespace PurplePen
                     if (RegionInfo.CurrentRegion.IsMetric)     // work around bug
                         settings.PageSettings.Margins = PrinterUnitConvert.Convert(settings.PageSettings.Margins, PrinterUnit.Display, PrinterUnit.TenthsOfAMillimeter);
 
-                    pageSetupDialog.PageSettings = settings.PageSettings;
                     pageSetupDialog.PrinterSettings = settings.PageSettings.PrinterSettings;
+                    pageSetupDialog.PageSettings = settings.PageSettings;
                     DialogResult result = pageSetupDialog.ShowDialog(this);
                     if (result == DialogResult.OK) {
                         settings.PageSettings = pageSetupDialog.PageSettings;

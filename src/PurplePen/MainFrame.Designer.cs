@@ -84,6 +84,7 @@ namespace PurplePen
             this.saveAsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.createOcadFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -411,6 +412,7 @@ namespace PurplePen
             this.saveAsMenu,
             this.toolStripSeparator18,
             this.createOcadFilesMenu,
+            this.createCoursePdfMenu,
             this.createRouteGadgetFilesMenu,
             this.createXmlMenu,
             this.toolStripMenuItem1,
@@ -464,6 +466,12 @@ namespace PurplePen
             this.createOcadFilesMenu.Name = "createOcadFilesMenu";
             resources.ApplyResources(this.createOcadFilesMenu, "createOcadFilesMenu");
             this.createOcadFilesMenu.Click += new System.EventHandler(this.createOcadFilesMenu_Click);
+            // 
+            // createCoursePdfMenu
+            // 
+            this.createCoursePdfMenu.Name = "createCoursePdfMenu";
+            resources.ApplyResources(this.createCoursePdfMenu, "createCoursePdfMenu");
+            this.createCoursePdfMenu.Click += new System.EventHandler(this.createCoursePdfMenu_Click);
             // 
             // createRouteGadgetFilesMenu
             // 
@@ -1874,6 +1882,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem showPopupsMenu;
         private System.Windows.Forms.ToolStripMenuItem donateWebSiteMenu;
         private System.Windows.Forms.ToolStripMenuItem crashToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createCoursePdfMenu;
 
     }
 }
