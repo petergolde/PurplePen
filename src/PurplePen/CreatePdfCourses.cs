@@ -75,14 +75,11 @@ namespace PurplePen
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
-            PageSettings pageSettings = settings.PageSettings;
-            PrinterSettings printerSettings = pageSettings.PrinterSettings;
-
             // CONSIDER: Currently we always select courses, because the courses in the print settings could be out of date.
 
             // Output section.
-            paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
-            marginsLabel.Text = printerSettings.IsValid ? Util.GetMarginsText(pageSettings.Margins) : "";
+            paperSize.Text = Util.GetPaperSizeText(settings.PaperSize);
+            marginsLabel.Text = Util.GetMarginsText(settings.Margins);
 
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.ColorModel - 1;
@@ -136,26 +133,19 @@ namespace PurplePen
 
         private void marginChange_Click(object sender, EventArgs e)
         {
-            controller.HandleExceptions(
-                delegate {
-                    UpdateSettings();
-                    Margins originalMargins = settings.PageSettings.Margins;
+            UpdateSettings();
 
-                    if (RegionInfo.CurrentRegion.IsMetric)     // work around bug
-                        settings.PageSettings.Margins = PrinterUnitConvert.Convert(settings.PageSettings.Margins, PrinterUnit.Display, PrinterUnit.TenthsOfAMillimeter);
+            PrinterMargins printerMarginsDialog = new PrinterMargins();
+            printerMarginsDialog.EnableOrientation = false;
+            printerMarginsDialog.PaperSize = settings.PaperSize;
+            printerMarginsDialog.Margins = settings.Margins;
 
-                    pageSetupDialog.PageSettings = settings.PageSettings;
-                    pageSetupDialog.PrinterSettings = settings.PageSettings.PrinterSettings;
-                    DialogResult result = pageSetupDialog.ShowDialog(this);
-                    if (result == DialogResult.OK) {
-                        settings.PageSettings = pageSetupDialog.PageSettings;
-                        UpdateDialog();
-                    }
-                    else {
-                        settings.PageSettings.Margins = originalMargins;
-                    }
-                }
-            );
+            DialogResult result = printerMarginsDialog.ShowDialog(this);
+            if (result == DialogResult.OK) {
+                settings.PaperSize = printerMarginsDialog.PaperSize;
+                settings.Margins = printerMarginsDialog.Margins;
+                UpdateDialog();
+            }
         }
 
         // If at least one course is selected, return true. Otherwise, show an error message an 

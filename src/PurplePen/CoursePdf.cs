@@ -48,6 +48,7 @@ namespace PurplePen
 {
     using PurplePen.Graphics2D;
     using PurplePen.MapModel;
+    using System.Globalization;
 
     // Class to output courses to PDF
     class CoursePdf 
@@ -87,9 +88,9 @@ namespace PurplePen
         // Get the printable area and store them.
         void StorePrintableAreas()
         {
-            int height = coursePdfSettings.PageSettings.PaperSize.Height;
-            int width = coursePdfSettings.PageSettings.PaperSize.Width;
-            Margins margins = coursePdfSettings.PageSettings.Margins;
+            int height = coursePdfSettings.PaperSize.Height;
+            int width = coursePdfSettings.PaperSize.Width;
+            Margins margins = coursePdfSettings.Margins;
 
             portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
             landscapePrintableArea = new RectangleF(margins.Top, margins.Left, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
@@ -164,25 +165,8 @@ namespace PurplePen
     // All the information needed to print courses.
     class CoursePdfSettings
     {
-        private PageSettings pageSettings;
-
-        public PageSettings PageSettings
-        {
-            get
-            {
-                if (pageSettings == null) {
-                    pageSettings = new PageSettings();
-                    pageSettings.Margins = new Margins(25, 25, 25, 25);    // Default is 1/4" margins
-                }
-
-                pageSettings.Landscape = false;                        // Set to not landscape. We change this on a page by page basis later.
-                return pageSettings;
-            }
-            set
-            {
-                pageSettings = value;
-            }
-        }
+        public PaperSize PaperSize;
+        public Margins Margins = new Margins(25, 25, 25, 25);
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
@@ -196,6 +180,16 @@ namespace PurplePen
         public string filePrefix;                    // if non-null, non-empty, prefix this an "-" onto the front of files.
 
         public enum PdfFileCreation { SingleFile, FilePerCourse, FilePerCoursePart };
+
+        public CoursePdfSettings()
+        {
+            if (RegionInfo.CurrentRegion.IsMetric) {
+                PaperSize = new PaperSize("A4", 827, 1169);
+            }
+            else {
+                PaperSize = new PaperSize("Letter", 850, 1100);
+            }
+        }
 
         public CoursePdfSettings Clone()
         {

@@ -438,6 +438,12 @@
     <Compile Include="PrintDescriptions.Designer.cs">
       <DependentUpon>PrintDescriptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrinterMargins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrinterMargins.Designer.cs">
+      <DependentUpon>PrinterMargins.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintPunches.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1925,6 +1931,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintDescriptions.sv.resx">
       <DependentUpon>PrintDescriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrinterMargins.resx">
+      <DependentUpon>PrinterMargins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintPunches.bg.resx">
       <DependentUpon>PrintPunches.cs</DependentUpon>

@@ -419,13 +419,43 @@ namespace PurplePen
         }
 
         // Get text describing a distance. The input is in hundreths of an inch.
-        // UNDONE: handle metric if we're in a metric locale.
-        public static string GetDistanceText(int distance)
+        public static string GetDistanceText(int distance, bool addUnits = true)
         {
-            if (RegionInfo.CurrentRegion.IsMetric)
-                return (distance * 25.4 / 100.0).ToString("0") + "mm";
-            else
-                return (distance / 100.0).ToString("0.#") + "\"";
+            string result;
+            if (RegionInfo.CurrentRegion.IsMetric) {
+                result = (distance * 25.4 / 100.0).ToString("0");
+                if (addUnits)
+                    result += "mm";
+            }
+            else {
+                result = (distance / 100.0).ToString("0.##");
+                if (addUnits)
+                    result += "\"";
+            }
+
+            return result;
+        }
+
+        // Get decimal for a distance.
+        public static decimal GetDistanceValue(int distance)
+        {
+            if (RegionInfo.CurrentRegion.IsMetric) {
+                return ((decimal) distance * 25.4M / 100.0M);
+            }
+            else {
+                return ((decimal)distance / 100.0M);
+            }
+        }
+
+        // Get distance in hundredth of an inch from a decimal.
+        public static int GetDistanceFromValue(decimal value)
+        {
+            if (RegionInfo.CurrentRegion.IsMetric) {
+                return (int) Math.Round(value * 100.0M / 25.4M);
+            }
+            else {
+                return (int) Math.Round(value * 100.0M);
+            }
         }
 
         // Get text describing a paper size.

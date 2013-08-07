@@ -90,7 +90,6 @@ namespace PurplePen
             this.filenamePrefixTextBox = new System.Windows.Forms.TextBox();
             this.filesLabel = new System.Windows.Forms.Label();
             this.comboBoxFileFormat = new System.Windows.Forms.ComboBox();
-            this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.printerGroup.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -310,11 +309,6 @@ namespace PurplePen
             resources.GetString("comboBoxFileFormat.Items2")});
             this.comboBoxFileFormat.Name = "comboBoxFileFormat";
             // 
-            // pageSetupDialog
-            // 
-            this.pageSetupDialog.AllowOrientation = false;
-            this.pageSetupDialog.AllowPrinter = false;
-            // 
             // folderBrowserDialog
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
@@ -383,7 +377,6 @@ namespace PurplePen
         private System.Windows.Forms.TextBox filenamePrefixTextBox;
         private System.Windows.Forms.Label filesLabel;
         private System.Windows.Forms.ComboBox comboBoxFileFormat;
-        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     }
 }
