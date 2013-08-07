@@ -20,6 +20,10 @@ copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Debug\Map_WPF.dll" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Debug\Map_WPF.pdb" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Release\Map_WPF.dll" Release
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Release\Map_WPF.pdb" Release
+copy "..\..\..\..\..\Programs\MapModel\src\Map_PDF\bin\Debug\Map_PDF.dll" Debug
+copy "..\..\..\..\..\Programs\MapModel\src\Map_PDF\bin\Debug\Map_PDF.pdb" Debug
+copy "..\..\..\..\..\Programs\MapModel\src\Map_PDF\bin\Release\Map_PDF.dll" Release
+copy "..\..\..\..\..\Programs\MapModel\src\Map_PDF\bin\Release\Map_PDF.pdb" Release
 copy "..\..\..\..\..\Programs\MapModel\src\PdfSharp\bin\Debug\PdfSharp.dll" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\PdfSharp\bin\Debug\PdfSharp.pdb" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\PdfSharp\bin\Release\PdfSharp.dll" Release

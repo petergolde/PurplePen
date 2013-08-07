@@ -440,6 +440,9 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Could not read result of PDF conversion from file '{0}'</value>
   </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Cannot create PDFs for the following reason:</value>
+  </data>
   <data name="UserDefined" xml:space="preserve">
     <value>User Defined</value>
   </data>

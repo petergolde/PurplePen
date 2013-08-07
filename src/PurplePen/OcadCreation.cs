@@ -100,26 +100,7 @@ namespace PurplePen
         // checks for duplication of the map file name. Puts in the directory given in the creationSettings.
         string CreateOutputFileName(CourseDesignator courseDesignator)
         {
-            string basename;
-
-            // Get the course name.
-            if (courseDesignator.IsAllControls)
-                basename = MiscText.AllControls;
-            else
-                basename = eventDB.GetCourse(courseDesignator.CourseId).name;
-
-            // Add prefix, if requested.
-            if (! string.IsNullOrEmpty(creationSettings.filePrefix)) 
-                basename = creationSettings.filePrefix + "-" + basename;
-
-            // Add part.
-            if (!courseDesignator.AllParts) {
-                basename = basename + "-" + (courseDesignator.Part + 1).ToString();
-            }
-
-            // Remove bad characters.
-            basename = Util.FilterInvalidPathChars(basename);
-            basename += ".ocd";      // add OCAD extension.
+            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, ".ocd");
 
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, basename));
         }
@@ -140,17 +121,7 @@ namespace PurplePen
         // Enumerator all course designators to create.
         private IEnumerable<CourseDesignator> EnumerateCourseDesignators()
         {
-            foreach (Id<Course> courseId in creationSettings.CourseIds) {
-                if (courseId.IsNotNone && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
-                    // Create files for each part.
-                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
-                        yield return new CourseDesignator(courseId, part);
-                    }
-                }
-                else {
-                    yield return new CourseDesignator(courseId);
-                }
-            }
+            return QueryEvent.EnumerateCourseDesignators(eventDB, creationSettings.CourseIds, true);
         }
 
         // Create all the OCAD files according to their creation settings. Throws exception on I/O error.

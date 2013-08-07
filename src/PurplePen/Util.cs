@@ -574,6 +574,8 @@ namespace PurplePen
         {
             return new Point((int)Math.Round(pointf.X), (int)Math.Round(pointf.Y));
         }
+
+
     }
 
 }

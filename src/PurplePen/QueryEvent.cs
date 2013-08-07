@@ -259,6 +259,23 @@ namespace PurplePen
             return currentPart + 1;
         }
 
+        // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
+        public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, bool enumeratePartsSeparately)
+        {
+            foreach (Id<Course> courseId in courseIds) {
+                if (courseId.IsNotNone && enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
+                    // Create files for each part.
+                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
+                        yield return new CourseDesignator(courseId, part);
+                    }
+                }
+                else {
+                    yield return new CourseDesignator(courseId);
+                }
+            }
+        }
+
+
 
         // Get the start and end coursecontrols (inclusive on both ends) for a particular part of a course (parts separated by map exchanges).
         // If the given part doesn't exist, return false. If there are no map exchanges, then part 0 is the entire course.
@@ -942,5 +959,38 @@ namespace PurplePen
             Event ev = eventDB.GetEvent();
             return ev.title.Replace("|", lineSep);            // In internal storage, | is used as line seperator.
         }
+
+        // Get the full output file name. Uses the name of the course, removes bad characters,
+        // checks for duplication of the map file name. 
+        // If courseDesignator is null, uses the event title insteand.
+        public static string CreateOutputFileName(EventDB eventDB, CourseDesignator courseDesignator, string filePrefix, string extension)
+        {
+            string basename;
+
+            // Get the course name.
+            if (courseDesignator == null)
+                basename = GetEventTitle(eventDB, " ");
+            else if (courseDesignator.IsAllControls)
+                basename = MiscText.AllControls;
+            else
+                basename = eventDB.GetCourse(courseDesignator.CourseId).name;
+
+            // Add prefix, if requested.
+            if (!string.IsNullOrEmpty(filePrefix))
+                basename = filePrefix + "-" + basename;
+
+            // Add part.
+            if (courseDesignator != null && !courseDesignator.AllParts) {
+                basename = basename + "-" + (courseDesignator.Part + 1).ToString();
+            }
+
+            // Remove bad characters.
+            basename = Util.FilterInvalidPathChars(basename);
+            basename += extension;      // add OCAD extension.
+
+            return basename;
+        }
+
+
     }
 }

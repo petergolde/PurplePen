@@ -1756,7 +1756,7 @@ namespace PurplePen
             if (createPdfDialog.ShowDialog(this) == DialogResult.OK) {
                 // Save the settings for the next invocation of the dialog.
                 coursePdfSettings = createPdfDialog.PdfSettings;
-                //controller.CreateCoursePdfs(coursePdfSettings);
+                controller.CreateCoursePdfs(coursePdfSettings);
             }
 
             // And the dialog is done.

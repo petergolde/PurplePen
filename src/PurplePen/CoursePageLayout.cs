@@ -97,23 +97,13 @@ namespace PurplePen
         }
 
         // Layout all the pages, return the total number of pages.
-        public List<CoursePage> LayoutPages(Id<Course>[] courseIds, bool printMapExchangesOnOneMap)
+        public List<CoursePage> LayoutPages(IEnumerable<CourseDesignator> courseDesignators)
         {
             List<CoursePage> pages = new List<CoursePage>();
 
             // Go through each course and lay it out, then add to the page list.
-            foreach (Id<Course> courseId in courseIds) {
-                int partCount = courseId.IsNotNone ? QueryEvent.CountCourseParts(eventDB, courseId) : 1;
-
-                if (partCount == 1 || printMapExchangesOnOneMap) {
-                    // Get the layout for the course.
-                    pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId)));
-                }
-                else {
-                    for (int part = 0; part < partCount; ++part) {
-                        pages.AddRange(LayoutOptimizedCourse(new CourseDesignator(courseId, part)));
-                    }
-                }
+            foreach (CourseDesignator courseDesignator in courseDesignators) {
+                pages.AddRange(LayoutOptimizedCourse(courseDesignator));
             }
 
             return pages;

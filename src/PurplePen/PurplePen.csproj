@@ -71,6 +71,9 @@
     <Reference Include="Map_WPF">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_WPF.dll</HintPath>
     </Reference>
+    <Reference Include="Map_PDF">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\Map_PDF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

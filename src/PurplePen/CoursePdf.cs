@@ -32,15 +32,13 @@
  * OF SUCH DAMAGE.
  */
 
-#define BITMAPPRINTING
-
 using System;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Drawing.Drawing2D;
-using System.Windows.Forms;
+using Margins = System.Drawing.Printing.Margins;
+using PaperSize = System.Drawing.Printing.PaperSize;
 using System.Diagnostics;
 
 
@@ -49,13 +47,12 @@ namespace PurplePen
     using PurplePen.Graphics2D;
     using PurplePen.MapModel;
     using System.Globalization;
+    using System.IO;
+    using System.Linq;
 
     // Class to output courses to PDF
     class CoursePdf 
     {
-        // List of all the pages, constructed during layout.
-        private List<CoursePage> pages = new List<CoursePage>();
-
         private CoursePdfSettings coursePdfSettings;
         private EventDB eventDB;
         private SymbolDB symbolDB;
@@ -96,26 +93,94 @@ namespace PurplePen
             landscapePrintableArea = new RectangleF(margins.Top, margins.Left, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
         }
 
-        // Layout all the pages, return the total number of pages.
-        int LayoutPages()
+        public void CreatePdfs()
         {
-            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePdfSettings.CropLargePrintArea, portraitPrintableArea, landscapePrintableArea);
-            pages = pageLayout.LayoutPages(coursePdfSettings.CourseIds, coursePdfSettings.PrintMapExchangesOnOneMap);
+            List<Pair<string, IEnumerable<CourseDesignator>>> fileList = GetFilesToCreate();
 
-            return pages.Count;            // total number of pages.
+            foreach (var pair in fileList) {
+                CreateOnePdfFile(pair.First, pair.Second);
+            }
+        }
+
+        // Get the files that we should create. along with the corresponding courses on them.
+        List<Pair<string, IEnumerable<CourseDesignator>>> GetFilesToCreate()
+        {
+            List<Pair<string, IEnumerable<CourseDesignator>>> fileList = new List<Pair<string, IEnumerable<CourseDesignator>>>();
+
+            switch (coursePdfSettings.FileCreation) {
+                case CoursePdfSettings.PdfFileCreation.SingleFile:
+                    // All pages go into a single file.
+                    fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(null),
+                                 QueryEvent.EnumerateCourseDesignators(eventDB, coursePdfSettings.CourseIds, !coursePdfSettings.PrintMapExchangesOnOneMap)));
+                    break;
+
+                case CoursePdfSettings.PdfFileCreation.FilePerCourse:
+                    // Create a file for each course.
+                    foreach (Id<Course> courseId in coursePdfSettings.CourseIds) {
+                        fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(new CourseDesignator(courseId)),
+                                     QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[1] { courseId }, !coursePdfSettings.PrintMapExchangesOnOneMap)));
+                    }
+                    break;
+
+                case CoursePdfSettings.PdfFileCreation.FilePerCoursePart:
+                    // Create a file for each course part
+                    foreach (Id<Course> courseId in coursePdfSettings.CourseIds) {
+                        if (!coursePdfSettings.PrintMapExchangesOnOneMap && courseId.IsNotNone && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
+                            // Multi-part course.
+                            for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
+                                CourseDesignator courseDesignator = new CourseDesignator(courseId, part);
+                                fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(courseDesignator),
+                                             new CourseDesignator[1] { courseDesignator }));
+                            }
+                        }
+                        else {
+                            fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(new CourseDesignator(courseId)),
+                                         new CourseDesignator[1] { new CourseDesignator(courseId) }));
+                        }
+                    }
+                    break;
+            }
+
+            return fileList;
+        }
+
+        // Get the full output file name. Uses the name of the course, removes bad characters,
+        // checks for duplication of the map file name. Puts in the directory given in the creationSettings.
+        string CreateOutputFileName(CourseDesignator courseDesignator)
+        {
+            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, coursePdfSettings.filePrefix, ".pdf");
+
+            return Path.GetFullPath(Path.Combine(coursePdfSettings.outputDirectory, basename));
         }
 
         // Create a single PDF file
         void CreateOnePdfFile(string fileName, IEnumerable<CourseDesignator> courseDesignators)
         {
+            SizeF sizePortrait = new SizeF(coursePdfSettings.PaperSize.Width / 100F, coursePdfSettings.PaperSize.Height / 100F);
+            SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
+            List<CoursePage> pages = LayoutPages(courseDesignators);
+            PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(fileName), coursePdfSettings.ColorModel == ColorModel.CMYK);
 
+            foreach (CoursePage page in pages) {
+                using (IGraphicsTarget grTarget = pdfWriter.BeginPage(page.landscape ? sizeLandscape : sizePortrait)) {
+                    DrawPage(grTarget, page);
+                    pdfWriter.EndPage(grTarget);
+                }
+            }
+
+            pdfWriter.Save(fileName);
+        }
+
+        // Layout the pages for a set of course designators.
+        List<CoursePage> LayoutPages(IEnumerable<CourseDesignator> courseDesignators)
+        {
+            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePdfSettings.CropLargePrintArea, portraitPrintableArea, landscapePrintableArea);
+            return pageLayout.LayoutPages(courseDesignators);
         }
 
         // The core printing routine. 
-        void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber)
+        void DrawPage(IGraphicsTarget graphicsTarget, CoursePage page)
         {
-            CoursePage page = pages[pageNumber];
-
             // Get the course view for the course we are printing.
             CourseView courseView = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator);
 

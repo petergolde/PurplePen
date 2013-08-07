@@ -112,7 +112,8 @@ namespace PurplePen
             pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
 
             CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePrintSettings.CropLargePrintArea, portraitPrintableArea, landscapePrintableArea);
-            pages = pageLayout.LayoutPages(coursePrintSettings.CourseIds, coursePrintSettings.PrintMapExchangesOnOneMap);
+            IEnumerable<CourseDesignator> courseDesignators = QueryEvent.EnumerateCourseDesignators(eventDB, coursePrintSettings.CourseIds, !coursePrintSettings.PrintMapExchangesOnOneMap);
+            pages = pageLayout.LayoutPages(courseDesignators);
 
             return pages.Count;            // total number of pages.
         }

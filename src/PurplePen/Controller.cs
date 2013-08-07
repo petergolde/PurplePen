@@ -856,7 +856,7 @@ namespace PurplePen
             return success;
         }
 
-        // Print or print preview the descriptions. Returns success or failure; any errors are already reported to the user.
+        // Print or print preview the courses. Returns success or failure; any errors are already reported to the user.
         public bool PrintCourses(CoursePrintSettings coursePrintSettings, bool preview)
         {
             bool success = HandleExceptions(
@@ -870,6 +870,19 @@ namespace PurplePen
                         coursePrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
+
+            return success;
+        }
+
+        // Create PDFs for the courses. Returns success or failure; any errors are already reported to the user.
+        public bool CreateCoursePdfs(CoursePdfSettings coursePdfSettings)
+        {
+            bool success = HandleExceptions(
+                delegate {
+                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, mapDisplay.Clone(), coursePdfSettings, GetCourseAppearance());
+                    coursePdf.CreatePdfs();
+                },
+                MiscText.CannotCreatePdfs);
 
             return success;
         }
