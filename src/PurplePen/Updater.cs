@@ -235,11 +235,15 @@ namespace PurplePen
             catch (WebException) {
                 latestVersion = null;
             }
-            try {
-                latestPrerelease = client.DownloadString(downloadLocation + latestPreleaseName);
-            }
-            catch (WebException) {
-                latestPrerelease = null;
+
+            // Only check latest prerelease if this is a pre-release.
+            if (Util.IsPrerelease(VersionNumber.Current)) { 
+                try {
+                    latestPrerelease = client.DownloadString(downloadLocation + latestPreleaseName);
+                }
+                catch (WebException) {
+                    latestPrerelease = null;
+                }
             }
 
             if (latestVersion != null) {

@@ -382,6 +382,12 @@ namespace PurplePen
                 return u & ~(1U << (bitNumber & 0x1F));
         }
 
+        public static bool IsPrerelease(string version)
+        {
+            Version v = new Version(version);
+            return (v.Revision < VersionNumber.Stable);
+        }
+
         // Compare version strings. If s1 < s2, return -1; if s1 > s2, return 1, else return 0.
         public static int CompareVersionStrings(string s1, string s2)
         {
