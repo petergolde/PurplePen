@@ -15,10 +15,11 @@ namespace PurplePen
         private string pngFileName;
         private ConversionStatus status;
         private string conversionOutput;
-        private const string Resolution = "600";  // Resolution to use for generating PNG file.
         private StringBuilder stderrOutput;
         private Process process;
 
+        private const int Resolution = 600; // Resolution in DPI
+        
         public PdfMapFile(string pdfFileName)
         {
             this.pdfFileName = pdfFileName;
@@ -58,10 +59,6 @@ namespace PurplePen
         {
             get
             {
-                if (status == ConversionStatus.Working) {
-                    CheckForCompletion();
-                }
-
                 return status;
             }
         }
@@ -76,19 +73,25 @@ namespace PurplePen
         // Try to begin conversion into bitmap. 
         public ConversionStatus BeginConversion()
         {
+            string cacheFileName = GetCacheFileName(pdfFileName);
+            if (File.Exists(cacheFileName)) {
+                // Cached file still exists. Use it.
+                conversionOutput = "";
+                pngFileName = cacheFileName;
+                status = ConversionStatus.Success;
+                return status;
+            }
+
+            return BeginUncachedConversion(cacheFileName, Resolution);
+        }
+
+        // Try to begin conversion into bitmap. 
+        public ConversionStatus BeginUncachedConversion(string fileName, int resolution)
+        {
             try {
                 if (!SourceExists) {
                     conversionOutput = string.Format("File '{0}' does not exist.", pdfFileName);
                     status = ConversionStatus.Failure;
-                    return status;
-                }
-
-                string cacheFileName = GetCacheFileName(pdfFileName);
-                if (File.Exists(cacheFileName)) {
-                    // Cached file still exists. Use it.
-                    conversionOutput = "";
-                    pngFileName = cacheFileName;
-                    status = ConversionStatus.Success;
                     return status;
                 }
 
@@ -101,7 +104,7 @@ namespace PurplePen
 
                 string arguments = String.Format(
                     "-q -dSAFER -dBATCH -dNOPAUSE -r{2} -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDEVICE=png16m -sOutputFile=\"{1}\" \"{0}\"",
-                    pdfFileName, cacheFileName, Resolution);
+                    pdfFileName, fileName, resolution);
 
                 stderrOutput = new StringBuilder();
                 ProcessStartInfo startInfo = new ProcessStartInfo(gsExe, arguments);
@@ -121,7 +124,7 @@ namespace PurplePen
                 process.BeginErrorReadLine();
 
                 status = ConversionStatus.Working;
-                pngFileName = cacheFileName;
+                pngFileName = fileName;
                 return status;
             }
             catch (Exception e) {

@@ -40,6 +40,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Globalization;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
@@ -1541,6 +1542,59 @@ namespace PurplePen.Tests
             Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(112)));
             Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(102)));
             Assert.IsTrue(QueryEvent.IsCourseControlInPart(eventDB, Designator(1, 0), CourseControlId(111)));
+        }
+
+        [TestMethod]
+        public void EnumerateCourseDesignators()
+        {
+            IEnumerable<CourseDesignator> result;
+
+            Setup("queryevent\\mapexchange1.ppen");
+
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, false);
+            CollectionAssert.AreEqual(new CourseDesignator[] { Designator(2), Designator(3), CourseDesignator.AllControls}, result.ToList());
+
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, true);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), 0), new CourseDesignator(CourseId(2), 1), Designator(3), CourseDesignator.AllControls }, result.ToList());
+
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, false);
+            CollectionAssert.AreEqual(new CourseDesignator[] { Designator(6), Designator(3) }, result.ToList());
+
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, true);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(6), 0), new CourseDesignator(CourseId(6), 1), new CourseDesignator(CourseId(6), 2), new CourseDesignator(CourseId(6), 3), Designator(3) }, result.ToList());
+        }
+
+        [TestMethod] 
+        public void CreateOutputFileName()
+        {
+            string result;
+
+            Setup("queryevent\\mapexchange1.ppen");
+ 
+            result = QueryEvent.CreateOutputFileName(eventDB, null, "", ".xyz");
+            Assert.AreEqual("Marymoor WIOL 2.xyz", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, null, "PRE/TEST", ".a");
+            Assert.AreEqual("PRE_TEST-Marymoor WIOL 2.a", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "", ".xyz");
+            Assert.AreEqual("Course 2.xyz", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "PRETEST", ".a");
+            Assert.AreEqual("PRETEST-Course 2.a", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(2), 0), "", ".xyz");
+            Assert.AreEqual("Course 2-1.xyz", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(6), 2), "PRETEST", ".a");
+            Assert.AreEqual("PRETEST-Course 5-3.a", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, null, ".xyz");
+            Assert.AreEqual("All controls.xyz", result);
+
+            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, "A", ".a");
+            Assert.AreEqual("A-All controls.a", result);
+
         }
     }
 }

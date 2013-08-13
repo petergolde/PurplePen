@@ -90,7 +90,7 @@ namespace PurplePen
             Margins margins = coursePdfSettings.Margins;
 
             portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
-            landscapePrintableArea = new RectangleF(margins.Top, margins.Left, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
+            landscapePrintableArea = new RectangleF(margins.Top, margins.Right, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
         }
 
         public void CreatePdfs()
@@ -103,6 +103,9 @@ namespace PurplePen
         }
 
         // Get the files that we should create. along with the corresponding courses on them.
+#if TEST
+        internal
+#endif
         List<Pair<string, IEnumerable<CourseDesignator>>> GetFilesToCreate()
         {
             List<Pair<string, IEnumerable<CourseDesignator>>> fileList = new List<Pair<string, IEnumerable<CourseDesignator>>>();
@@ -231,7 +234,7 @@ namespace PurplePen
     class CoursePdfSettings
     {
         public PaperSize PaperSize;
-        public Margins Margins = new Margins(25, 25, 25, 25);
+        public Margins Margins = new Margins(0, 0, 0, 0);
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
 
