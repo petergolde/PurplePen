@@ -11,12 +11,14 @@ namespace PurplePen
 {
     class SwopColorConverter: GDIPlus_ColorConverter
     {
+        public readonly static string SwopFileName;
         public readonly static Uri SwopUri;
         private static Dictionary<CmykColor, SD.Color> cmykToColor = new Dictionary<CmykColor,SD.Color>();
 
         static SwopColorConverter()
         {
-            SwopUri = new Uri(Util.GetFileInAppDirectory("RSWOP.icm"));
+            SwopFileName = Util.GetFileInAppDirectory("USWebCoatedSWOP.icc");
+            SwopUri = new Uri(SwopFileName);
         }
 
         public static SD.Color CmykToRgbColor(CmykColor cmykColor)

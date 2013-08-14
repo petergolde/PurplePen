@@ -2287,7 +2287,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="RSWOP.ICM">
+    <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -2328,9 +2328,6 @@
     <None Include="latest_version.txt" />
     <EmbeddedResource Include="MapView\DragCursor.cur" />
     <None Include="MapView\MapViewer.csproj" />
-    <Content Include="RSWOP-readme.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

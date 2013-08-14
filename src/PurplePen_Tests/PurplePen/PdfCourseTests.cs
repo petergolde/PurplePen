@@ -53,14 +53,33 @@ namespace PurplePen.Tests
         private void CheckPdfDump(string pdfFile, string expectedPng)
         {
             PdfMapFile mapFile = new PdfMapFile(pdfFile);
-            string pngFile = Path.Combine(Path.GetDirectoryName(pdfFile), Path.GetFileNameWithoutExtension(pdfFile) + "_temp.png");
+            string pngFile = Path.Combine(Path.GetDirectoryName(pdfFile), Path.GetFileNameWithoutExtension(pdfFile) + "_page%d_temp.png");
             mapFile.BeginUncachedConversion(pngFile, 200); // Convert 200 DPI.
             while (mapFile.Status == PdfMapFile.ConversionStatus.Working)
                 System.Threading.Thread.Sleep(10);
             Assert.AreEqual(PdfMapFile.ConversionStatus.Success, mapFile.Status);
 
-            using (Bitmap bmNew = (Bitmap)Image.FromFile(mapFile.PngFileName)) {
-                TestUtil.CompareBitmapBaseline(bmNew, expectedPng);
+            int pageNum = 1;
+            for (; ; ) {
+                string pngExpectedPage = expectedPng.Replace("%d", pageNum.ToString());
+                bool expectedPageExists = File.Exists(pngExpectedPage);
+                string pngActualPage = pngFile.Replace("%d", pageNum.ToString());
+                bool actualPageExists = File.Exists(pngActualPage);
+                    
+                Assert.AreEqual(expectedPageExists, actualPageExists);
+                if (expectedPageExists) {
+                    using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
+                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
+                    }
+                }
+                else {
+                    break;
+                }
+
+                if (!expectedPng.Contains("%d"))
+                    break;
+
+                pageNum++;
             }
         }
 
@@ -213,6 +232,26 @@ namespace PurplePen.Tests
             CoursePdfSettings settings = new CoursePdfSettings();
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
+            settings.PrintMapExchangesOnOneMap = false;
+            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\Marymoor WIOL 2.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\test1_page%d_baseline.png") });
+        }
+
+
+        [TestMethod]
+        public void PdfCreation4()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create4");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
             settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
@@ -223,8 +262,8 @@ namespace PurplePen.Tests
             Directory.CreateDirectory(settings.outputDirectory);
 
             CreatePdfFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, new CourseAppearance(),
-                new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\Course 2.pdf") },
-                new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\Course 2_expected.png") });
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create4\\Course 2.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create4\\Course 2_expected.png") });
         }
 
     }

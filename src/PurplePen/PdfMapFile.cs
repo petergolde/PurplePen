@@ -103,8 +103,8 @@ namespace PurplePen
                 }
 
                 string arguments = String.Format(
-                    "-q -dSAFER -dBATCH -dNOPAUSE -r{2} -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDEVICE=png16m -sOutputFile=\"{1}\" \"{0}\"",
-                    pdfFileName, fileName, resolution);
+                    "-q -dSAFER -dBATCH -dNOPAUSE -r{2} -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDEVICE=png16m -sDefaultCMYKProfile=\"{3}\" -sOutputFile=\"{1}\" \"{0}\"",
+                    pdfFileName, fileName, resolution, SwopColorConverter.SwopFileName);
 
                 stderrOutput = new StringBuilder();
                 ProcessStartInfo startInfo = new ProcessStartInfo(gsExe, arguments);
