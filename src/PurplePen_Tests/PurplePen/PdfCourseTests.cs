@@ -245,6 +245,38 @@ namespace PurplePen.Tests
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\test1_page%d_baseline.png") });
         }
 
+        [TestMethod]
+        public void PdfCreation2()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create2");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.RGB;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.controlCircleSize = 0.75F;  //smaller circles
+            appearance.lineWidth = 3F; // thin lines
+            appearance.numberHeight = 0.5F; // small numbers.
+            appearance.numberBold = true; // bold numbers.
+            appearance.useDefaultPurple = false;
+            appearance.purpleC = 0.32F;
+            appearance.purpleY = 1.00F;
+            appearance.purpleM = 0;
+            appearance.purpleK = 0.30F;
+
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create2\\Course 1.pdf"), TestUtil.GetTestFile("controller\\pdf_create2\\Course 2.pdf"), TestUtil.GetTestFile("controller\\pdf_create2\\All controls.pdf") },
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create2\\test2_course1_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create2\\test2_course2_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create2\\test2_allcontrols_page%d_baseline.png") });
+
+        }
 
         [TestMethod]
         public void PdfCreation4()
