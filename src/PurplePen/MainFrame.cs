@@ -1735,6 +1735,8 @@ namespace PurplePen
             if (! CheckForNonRenderableObjects())
                 return;
 
+            bool isPdfMap = controller.MapType == MapType.PDF;
+
             CoursePdfSettings settings;
             if (coursePdfSettings != null)
                 settings = coursePdfSettings.Clone();
@@ -1747,16 +1749,38 @@ namespace PurplePen
                 settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
             }
 
+            if (isPdfMap) {
+                // If the map file is a PDF, then created PDF must use that paper size, zero margins, and crop courses to that size.
+                settings.CropLargePrintArea = true;
+                RectangleF bounds = controller.MapDisplay.MapBounds;
+                settings.PaperSize = new PaperSize(MiscText.PdfMapSize, (int)Math.Round(Geometry.HundredthsInchesFromMm(bounds.Width)), (int)Math.Round(Geometry.HundredthsInchesFromMm(bounds.Height)));
+                settings.Margins = new Margins(0, 0, 0, 0);
+            }
+
             // Initialize dialog
             CreatePdfCourses createPdfDialog = new CreatePdfCourses(controller.GetEventDB(), controller.AnyMultipart());
             createPdfDialog.controller = controller;
             createPdfDialog.PdfSettings = settings;
+            if (isPdfMap) {
+                createPdfDialog.EnableChangeMargins = false;
+                createPdfDialog.EnableChangeCropping = false;
+            }
 
             // show the dialog, on success, print.
-            if (createPdfDialog.ShowDialog(this) == DialogResult.OK) {
+            while (createPdfDialog.ShowDialog(this) == DialogResult.OK) {
+                List<string> overwritingFiles = controller.OverwritingPdfFiles(createPdfDialog.PdfSettings);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
+                    overwriteDialog.Filenames = overwritingFiles;
+                    if (overwriteDialog.ShowDialog(this) == DialogResult.Cancel)
+                        continue;
+                }
+
                 // Save the settings for the next invocation of the dialog.
                 coursePdfSettings = createPdfDialog.PdfSettings;
                 controller.CreateCoursePdfs(coursePdfSettings);
+
+                break;
             }
 
             // And the dialog is done.

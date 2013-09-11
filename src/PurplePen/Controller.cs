@@ -861,7 +861,7 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.Clone(), coursePrintSettings, GetCourseAppearance());
+                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePrintSettings, GetCourseAppearance());
                     if (preview)
                         coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
                     else if (coursePrintSettings.UseXpsPrinting)
@@ -877,14 +877,25 @@ namespace PurplePen
         // Create PDFs for the courses. Returns success or failure; any errors are already reported to the user.
         public bool CreateCoursePdfs(CoursePdfSettings coursePdfSettings)
         {
+            SetOutputDirectory(coursePdfSettings);
+
             bool success = HandleExceptions(
                 delegate {
-                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, mapDisplay.Clone(), coursePdfSettings, GetCourseAppearance());
+                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePdfSettings, GetCourseAppearance());
                     coursePdf.CreatePdfs();
                 },
                 MiscText.CannotCreatePdfs);
 
             return success;
+        }
+
+        // Get the list of files that will be overwritteing by creating PDF files
+        public List<string> OverwritingPdfFiles(CoursePdfSettings coursePdfSettings)
+        {
+            SetOutputDirectory(coursePdfSettings);
+
+            CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePdfSettings, GetCourseAppearance());
+            return coursePdf.OverwrittenFiles();
         }
 
         // Set the outputDirectory field of OcadCreationSettings.
@@ -896,6 +907,18 @@ namespace PurplePen
             }
             else if (creationSettings.mapDirectory) {
                 creationSettings.outputDirectory = Path.GetDirectoryName(MapFileName);
+            }
+        }
+
+        // Set the outputDirectory field of OcadCreationSettings.
+        private void SetOutputDirectory(CoursePdfSettings coursePdfSettings)
+        {
+            // Process the fileDirectory and mapDirectory fields.
+            if (coursePdfSettings.fileDirectory) {
+                coursePdfSettings.outputDirectory = Path.GetDirectoryName(FileName);
+            }
+            else if (coursePdfSettings.mapDirectory) {
+                coursePdfSettings.outputDirectory = Path.GetDirectoryName(MapFileName);
             }
         }
 

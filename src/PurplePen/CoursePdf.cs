@@ -35,6 +35,7 @@
 using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Linq;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using Margins = System.Drawing.Printing.Margins;
@@ -115,6 +116,14 @@ namespace PurplePen
                 portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
                 landscapePrintableArea = new RectangleF(margins.Top, margins.Right, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
             }
+        }
+
+        public List<string> OverwrittenFiles()
+        {
+            return (from filePair in GetFilesToCreate() 
+                    let fileName = filePair.First
+                    where File.Exists(fileName)
+                    select fileName).ToList();
         }
 
         public void CreatePdfs()

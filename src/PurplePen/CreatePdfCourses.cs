@@ -72,6 +72,18 @@ namespace PurplePen
             checkBoxMergeParts.Visible = enableMultipart;
         }
 
+        public bool EnableChangeMargins
+        {
+            get { return marginChange.Enabled; }
+            set { marginChange.Enabled = value; }
+        }
+
+        public bool EnableChangeCropping
+        {
+            get { return comboBoxMultiPage.Enabled; }
+            set { comboBoxMultiPage.Enabled = value; }
+        }
+
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
@@ -127,8 +139,11 @@ namespace PurplePen
             // Folder name
             settings.outputDirectory = otherDirectoryTextBox.Text;
 
-            // Filename prefix
+            // Filenames
             settings.filePrefix = filenamePrefixTextBox.Text;
+            settings.FileCreation = (CoursePdfSettings.PdfFileCreation)comboBoxFileFormat.SelectedIndex;
+
+            // Paper size and margins handled in marginChange_Click.
         }
 
         private void marginChange_Click(object sender, EventArgs e)

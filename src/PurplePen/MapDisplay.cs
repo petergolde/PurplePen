@@ -85,6 +85,17 @@ namespace PurplePen
             return newMapDisplay;
         }
 
+        // Clones this map display, and set the clone to full intensity
+        public MapDisplay CloneToFullIntensity()
+        {
+            MapDisplay newMapDisplay = (MapDisplay)MemberwiseClone();
+
+            newMapDisplay.dimmedBitmap = null;         // clones should not share dimmed bitmaps.
+            newMapDisplay.mapIntensity = 1;
+
+            return newMapDisplay;
+        }
+
         // Map type we're drawing.
         public MapType MapType
         {

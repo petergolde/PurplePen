@@ -57,7 +57,7 @@ namespace PurplePen
         {
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
-            this.mapDisplay = mapDisplay.Clone();
+            this.mapDisplay = mapDisplay.CloneToFullIntensity();
             this.mapDisplay.SetCourse(null);
         }
 

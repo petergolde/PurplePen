@@ -838,6 +838,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map size from PDF.
+        /// </summary>
+        internal static string PdfMapSize {
+            get {
+                return ResourceManager.GetString("PdfMapSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not read result of PDF conversion from file &apos;{0}&apos;.
         /// </summary>
         internal static string PdfResultNotReadable {
