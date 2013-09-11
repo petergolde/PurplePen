@@ -298,6 +298,45 @@ namespace PurplePen.Tests
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create4\\Course 2_expected.png") });
         }
 
+        [TestMethod]
+        public void PdfCreationBitmapBaseMap()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create5");
+            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create5\\Short.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create5\\Short_expected.png") });
+
+        }
+
+        [TestMethod]
+        public void PdfCreationPdfBaseMap()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create6");
+            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short.pdf") },
+                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short_expected.png") });
+
+        }
+
+
     }
 }
 #endif

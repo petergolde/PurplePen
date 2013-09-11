@@ -217,7 +217,6 @@ namespace PurplePen.Tests
             CoursePrintingTest("courseprinting\\test3", coursePrintSettings, new CourseAppearance());
         }
 
-        // Test with crop print area.
         [TestMethod]
         public void PrintBitmapBaseMap()
         {

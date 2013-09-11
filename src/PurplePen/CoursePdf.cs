@@ -49,6 +49,7 @@ namespace PurplePen
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using PdfSharp.Pdf;
 
     // Class to output courses to PDF
     class CoursePdf 
@@ -59,6 +60,9 @@ namespace PurplePen
         private Controller controller;
         private MapDisplay mapDisplay;
         private CourseAppearance appearance;
+        private RectangleF mapBounds;  // bounds of the map, in map coordinates.
+        private string sourcePdfMapFileName;
+        private PdfPage pdfMapPage;
 
         private RectangleF portraitPrintableArea, landscapePrintableArea;
 
@@ -79,27 +83,57 @@ namespace PurplePen
             mapDisplay.Printing = true;
             mapDisplay.ColorModel = coursePdfSettings.ColorModel;
 
+            mapBounds = mapDisplay.MapBounds;
+
+            if (mapDisplay.MapType == MapType.PDF) {
+                // For PDF maps, we remove the PDF map from the MapDisplay and add it in separately.
+                sourcePdfMapFileName = mapDisplay.FileName;
+                mapDisplay.SetMapFile(MapType.None, null);
+            }
+
             StorePrintableAreas();
+        }
+
+        // Is the map a PDF map?
+        private bool IsPdfMap
+        {
+            get { return sourcePdfMapFileName != null; }
         }
 
         // Get the printable area and store them.
         void StorePrintableAreas()
         {
-            int height = coursePdfSettings.PaperSize.Height;
-            int width = coursePdfSettings.PaperSize.Width;
-            Margins margins = coursePdfSettings.Margins;
+            if (IsPdfMap) {
+                portraitPrintableArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Width), Geometry.HundredthsInchesFromMm(mapBounds.Height));
+                landscapePrintableArea = new RectangleF(0, 0, portraitPrintableArea.Height, portraitPrintableArea.Width);
+            }
+            else {
+                int height = coursePdfSettings.PaperSize.Height;
+                int width = coursePdfSettings.PaperSize.Width;
+                Margins margins = coursePdfSettings.Margins;
 
-            portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
-            landscapePrintableArea = new RectangleF(margins.Top, margins.Right, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
+                portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
+                landscapePrintableArea = new RectangleF(margins.Top, margins.Right, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
+            }
         }
 
         public void CreatePdfs()
         {
             List<Pair<string, IEnumerable<CourseDesignator>>> fileList = GetFilesToCreate();
+            PdfImporter importer = null;
+
+            if (IsPdfMap) {
+                importer = new PdfImporter(sourcePdfMapFileName);
+                pdfMapPage = importer.GetPage(0);
+            }
 
             foreach (var pair in fileList) {
                 CreateOnePdfFile(pair.First, pair.Second);
             }
+
+            if (importer != null)
+                importer.Dispose();
+            
         }
 
         // Get the files that we should create. along with the corresponding courses on them.
@@ -159,16 +193,23 @@ namespace PurplePen
         // Create a single PDF file
         void CreateOnePdfFile(string fileName, IEnumerable<CourseDesignator> courseDesignators)
         {
-            SizeF sizePortrait = new SizeF(coursePdfSettings.PaperSize.Width / 100F, coursePdfSettings.PaperSize.Height / 100F);
-            SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
             List<CoursePage> pages = LayoutPages(courseDesignators);
             PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(fileName), coursePdfSettings.ColorModel == ColorModel.CMYK);
 
+            SizeF sizePortrait = new SizeF(coursePdfSettings.PaperSize.Width / 100F, coursePdfSettings.PaperSize.Height / 100F);
+            SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
+
             foreach (CoursePage page in pages) {
-                using (IGraphicsTarget grTarget = pdfWriter.BeginPage(page.landscape ? sizeLandscape : sizePortrait)) {
-                    DrawPage(grTarget, page);
-                    pdfWriter.EndPage(grTarget);
-                }
+                IGraphicsTarget grTarget;
+
+                if (IsPdfMap)
+                    grTarget = pdfWriter.BeginCopiedPage(pdfMapPage);
+                else
+                    grTarget = pdfWriter.BeginPage(page.landscape ? sizeLandscape : sizePortrait);
+
+                DrawPage(grTarget, page);
+                pdfWriter.EndPage(grTarget);
+                grTarget.Dispose();
             }
 
             pdfWriter.Save(fileName);
@@ -177,8 +218,31 @@ namespace PurplePen
         // Layout the pages for a set of course designators.
         List<CoursePage> LayoutPages(IEnumerable<CourseDesignator> courseDesignators)
         {
-            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePdfSettings.CropLargePrintArea, portraitPrintableArea, landscapePrintableArea);
-            return pageLayout.LayoutPages(courseDesignators);
+            if (IsPdfMap) {
+                // For PDF maps, each page is fixed in layout to match the source PDF.
+                return LayoutPdfMapPages(courseDesignators);
+            }
+            else {
+                CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance,
+                                                                   coursePdfSettings.CropLargePrintArea,
+                                                                   portraitPrintableArea, landscapePrintableArea);
+
+                return pageLayout.LayoutPages(courseDesignators);
+            }
+        }
+
+        private List<CoursePage> LayoutPdfMapPages(IEnumerable<CourseDesignator> courseDesignators)
+        {
+            List<CoursePage> list = new List<CoursePage>();
+            foreach (CourseDesignator designator in courseDesignators) {
+                list.Add(new CoursePage() {
+                    courseDesignator = designator,
+                    landscape = false,
+                    mapRectangle = mapBounds,
+                    printRectangle = portraitPrintableArea
+                });
+            }
+            return list;
         }
 
         // The core printing routine. 

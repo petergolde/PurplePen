@@ -166,7 +166,7 @@ namespace PurplePen
             {
                 switch (mapType) {
                 case MapType.Bitmap:
-                    case MapType.PDF:
+                case MapType.PDF:
                     return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
 
                 case MapType.OCAD:
@@ -484,9 +484,6 @@ namespace PurplePen
                 break;
 
             case MapType.None:
-                object brushKey = new object();
-                grTargetBitmapMap.CreateSolidBrush(brushKey, CmykColor.FromRgb(1, 1, 1));
-                grTargetBitmapMap.FillRectangle(brushKey, visRect);
                 break;
             }
 

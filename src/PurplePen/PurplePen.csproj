@@ -74,6 +74,9 @@
     <Reference Include="Map_PDF">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_PDF.dll</HintPath>
     </Reference>
+    <Reference Include="PdfSharp">
+      <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
