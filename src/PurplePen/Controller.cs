@@ -948,7 +948,6 @@ namespace PurplePen
             return creation.OverwrittenFiles();
         }
 
-
         // Combine two status.
         CommandStatus CombineStatus(CommandStatus status1, CommandStatus status2)
         {

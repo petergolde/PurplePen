@@ -38,6 +38,8 @@ using System.IO;
 using System.Drawing;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Drawing.Imaging;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -75,21 +77,43 @@ namespace PurplePen
                 map.PrintScale = courseView.PrintScale;
                 map.PrintArea = controller.GetPrintArea(courseView.CourseDesignator);
 
-                if (controller.MapType == MapType.OCAD) {
-                    // Set OCAD map as template.
-                    // OCAD 6 doesn't support another OCAD file as a template.
-                    if (creationSettings.version > 6)
-                        map.Template = new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true);
+                switch (controller.MapType) {
+                    case MapType.OCAD:
+                        // Set OCAD map as template.
+                        // OCAD 6 doesn't support another OCAD file as a template.
+                        if (creationSettings.version > 6)
+                            map.Template = new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true);
 
-                    // Use same real world coordinates as underlying map (nicer, but also works around bug in OCAD 11
-                    // where background maps with real world coordinates aren't displayed if the map map doesn't have same real
-                    // world coordinates).
-                    map.RealWorldCoords = controller.MapRealWorldCoords;
-                }
-                else if (controller.MapType == MapType.Bitmap) {
-                    // Set bitmap as template.
-                    PointF centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
-                    map.Template = new TemplateInfo(controller.MapFileName, centerPoint, controller.MapDpi, 0, true);
+                        // Use same real world coordinates as underlying map (nicer, but also works around bug in OCAD 11
+                        // where background maps with real world coordinates aren't displayed if the map map doesn't have same real
+                        // world coordinates).
+                        map.RealWorldCoords = controller.MapRealWorldCoords;
+                        break;
+
+                    case MapType.Bitmap:
+                        // Set bitmap as template.
+                        PointF centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
+                        map.Template = new TemplateInfo(controller.MapFileName, centerPoint, controller.MapDpi, 0, true);
+                        break;
+
+                    case MapType.PDF:
+                        string pdfBitmapFileName;
+                        ImageFormat imageFormat;
+                        float dpi;
+
+                        pdfBitmapFileName = CreatePdfBitmapFileName(out imageFormat);
+                        controller.MapDisplay.WriteBitmapMap(pdfBitmapFileName, imageFormat, out dpi);
+
+                        centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
+                        map.Template = new TemplateInfo(pdfBitmapFileName, centerPoint, dpi, 0, true);
+                        break;
+
+                    case MapType.None:
+                        break;
+                    
+                    default:
+                        Debug.Fail("Unexpected map type");
+                        break;
                 }
             }
 
@@ -103,6 +127,18 @@ namespace PurplePen
             string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, ".ocd");
 
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, basename));
+        }
+
+        // PDF files need to have a bitmap saved with the OCAD file(s). Return the file name and format of the bitmap file.
+        string CreatePdfBitmapFileName(out ImageFormat imageFormat)
+        {
+            Debug.Assert(controller.MapType == MapType.PDF);
+
+            string extension = ".png";
+            imageFormat = ImageFormat.Png;
+
+            string basePdfName = Path.GetFileName(controller.MapFileName);
+            return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, Path.ChangeExtension(basePdfName, extension)));
         }
 
         // Create a single OCAD file. 
@@ -143,6 +179,13 @@ namespace PurplePen
                 string outputFilename = CreateOutputFileName(courseDesignator);
                 if (File.Exists(outputFilename))
                     overwrittenFiles.Add(outputFilename);
+            }
+
+            if (controller.MapType == MapType.PDF) {
+                ImageFormat imageFormat;
+                string pdfBitmap = CreatePdfBitmapFileName(out imageFormat);
+                if (File.Exists(pdfBitmap))
+                    overwrittenFiles.Add(pdfBitmap);
             }
 
             return overwrittenFiles;

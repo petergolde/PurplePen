@@ -442,6 +442,13 @@ namespace PurplePen
             grTarget.PopTransform();
         }
 
+        // For bitmap or PDF background, write the bitmap to the given file with the given format.
+        public void WriteBitmapMap(string fileName, ImageFormat format, out float dpi)
+        {
+            dpi = this.bitmapDpi;
+            ((GDIPlus_Bitmap)bitmap).Bitmap.Save(fileName, format);
+        }
+
         // Draw the map and course onto a graphics.
         public void Draw(Graphics g, RectangleF visRect, float minResolution)
         {
