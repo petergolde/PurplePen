@@ -73,6 +73,12 @@ namespace PurplePen
         // Try to begin conversion into bitmap. 
         public ConversionStatus BeginConversion()
         {
+            if (!SourceExists) {
+                conversionOutput = string.Format("File '{0}' does not exist.", pdfFileName);
+                status = ConversionStatus.Failure;
+                return status;
+            }
+
             string cacheFileName = GetCacheFileName(pdfFileName);
             if (File.Exists(cacheFileName)) {
                 // Cached file still exists. Use it.
@@ -89,12 +95,6 @@ namespace PurplePen
         public ConversionStatus BeginUncachedConversion(string fileName, int resolution)
         {
             try {
-                if (!SourceExists) {
-                    conversionOutput = string.Format("File '{0}' does not exist.", pdfFileName);
-                    status = ConversionStatus.Failure;
-                    return status;
-                }
-
                 string gsExe = FindGhostscriptExe();
                 if (gsExe == null) {
                     conversionOutput = MiscText.GhostscriptNotInstalled;
