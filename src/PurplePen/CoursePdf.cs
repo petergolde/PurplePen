@@ -64,6 +64,7 @@ namespace PurplePen
         private RectangleF mapBounds;  // bounds of the map, in map coordinates.
         private string sourcePdfMapFileName;
         private PdfPage pdfMapPage;
+        private int totalPages, currentPage;
 
         private RectangleF portraitPrintableArea, landscapePrintableArea;
 
@@ -136,13 +137,25 @@ namespace PurplePen
                 pdfMapPage = importer.GetPage(0);
             }
 
+            totalPages = 0;
             foreach (var pair in fileList) {
-                CreateOnePdfFile(pair.First, pair.Second);
+                totalPages += LayoutPages(pair.Second).Count;
             }
 
-            if (importer != null)
-                importer.Dispose();
-            
+            controller.ShowProgressDialog(true);
+
+            try {
+                currentPage = 0;
+                foreach (var pair in fileList) {
+                    CreateOnePdfFile(pair.First, pair.Second);
+                }
+            }
+            finally {
+                if (importer != null)
+                    importer.Dispose();
+
+                controller.EndProgressDialog();
+            }
         }
 
         // Get the files that we should create. along with the corresponding courses on them.
@@ -209,6 +222,9 @@ namespace PurplePen
             SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
 
             foreach (CoursePage page in pages) {
+                if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double)currentPage / (double)totalPages))
+                    throw new Exception(MiscText.CancelledByUser);
+
                 IGraphicsTarget grTarget;
 
                 if (IsPdfMap)
@@ -219,6 +235,8 @@ namespace PurplePen
                 DrawPage(grTarget, page);
                 pdfWriter.EndPage(grTarget);
                 grTarget.Dispose();
+
+                currentPage += 1;
             }
 
             pdfWriter.Save(fileName);

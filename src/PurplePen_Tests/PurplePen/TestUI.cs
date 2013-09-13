@@ -171,6 +171,20 @@ namespace PurplePen.Tests
         {
             throw new NotSupportedException();
         }
+
+
+        public void ShowProgressDialog(bool knownDuration)
+        {
+        }
+
+        public bool UpdateProgressDialog(string info, double fractionDone)
+        {
+            return false;
+        }
+
+        public void EndProgressDialog()
+        {
+        }
     }
 }
 

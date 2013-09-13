@@ -2291,6 +2291,39 @@ namespace PurplePen
             int y = 5 / x;
         }
 
+        private OperationInProgress operationInProgressDialog = null;
 
+        public void ShowProgressDialog(bool knownDuration)
+        {
+            operationInProgressDialog = new OperationInProgress();
+            operationInProgressDialog.IndefiniteDuration = !knownDuration;
+            operationInProgressDialog.Show(this);
+            this.Enabled = false;
+            Application.DoEvents();
+        }
+
+        public bool UpdateProgressDialog(string info, double fractionDone)
+        {
+            if (operationInProgressDialog != null) {
+                operationInProgressDialog.StatusText = info;
+                if (!operationInProgressDialog.IndefiniteDuration)
+                    operationInProgressDialog.SetProgress(fractionDone);
+                Application.DoEvents();
+                return operationInProgressDialog.CancelPressed;
+            }
+            else {
+                return true;
+            }
+        }
+
+        public void EndProgressDialog()
+        {
+            if (operationInProgressDialog != null) {
+                this.Enabled = true;
+                operationInProgressDialog.Hide();
+                operationInProgressDialog.Dispose();
+                operationInProgressDialog = null;
+            }
+        }
     }
 }

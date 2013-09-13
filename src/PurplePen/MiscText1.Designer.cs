@@ -151,6 +151,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancelled by user.
+        /// </summary>
+        internal static string CancelledByUser {
+            get {
+                return ResourceManager.GetString("CancelledByUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel Operation.
         /// </summary>
         internal static string CancelOperation {
@@ -426,6 +435,15 @@ namespace PurplePen {
         internal static string CrashSend {
             get {
                 return ResourceManager.GetString("CrashSend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating {0}....
+        /// </summary>
+        internal static string CreatingFile {
+            get {
+                return ResourceManager.GetString("CreatingFile", resourceCulture);
             }
         }
         

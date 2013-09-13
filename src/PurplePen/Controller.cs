@@ -2613,6 +2613,21 @@ namespace PurplePen
             return eventDB;
         }
 
+        public void ShowProgressDialog(bool knownDuration)
+        {
+            ui.ShowProgressDialog(knownDuration);
+        }
+
+        public bool UpdateProgressDialog(string info, double fractionDone)
+        {
+            return ui.UpdateProgressDialog(info, fractionDone);
+        }
+
+        public void EndProgressDialog()
+        {
+            ui.EndProgressDialog();
+        }
+
         // Get the undo manager. This is ONLY for test support purposes.
 #if TEST
         internal
@@ -2745,6 +2760,11 @@ namespace PurplePen
 
         // Initiate map dragging.
         void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd);
+
+        // Put up a progress dialog for long-running operation.
+        void ShowProgressDialog(bool knownDuration);
+        bool UpdateProgressDialog(string info, double fractionDone);
+        void EndProgressDialog();
     }
 
     // Indicates the status of a contextual command

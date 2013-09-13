@@ -449,4 +449,10 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="PdfMapSize" xml:space="preserve">
     <value>Map size from PDF</value>
   </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Cancelled by user</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Creating {0}...</value>
+  </data>
 </root>

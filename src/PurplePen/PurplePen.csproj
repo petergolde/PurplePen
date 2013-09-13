@@ -417,6 +417,12 @@
     <Compile Include="OkCancelDialog.Designer.cs">
       <DependentUpon>OkCancelDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperationInProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationInProgress.Designer.cs">
+      <DependentUpon>OperationInProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="OverwritingOcadFilesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1835,6 +1841,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OkCancelDialog.sv.resx">
       <DependentUpon>OkCancelDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationInProgress.resx">
+      <DependentUpon>OperationInProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverwritingOcadFilesDialog.bg.resx">
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
