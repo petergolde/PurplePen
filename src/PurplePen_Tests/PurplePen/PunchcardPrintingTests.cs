@@ -61,7 +61,7 @@ namespace PurplePen.Tests
         private void PunchPrintingTest(string basename, PunchPrintSettings punchPrintSettings)
         {
             // Get the pages of the printing.
-            PunchPrinting punchPrinter = new PunchPrinting(controller.GetEventDB(), punchPrintSettings);
+            PunchPrinting punchPrinter = new PunchPrinting(controller.GetEventDB(), controller, punchPrintSettings);
             Bitmap[] bitmaps = punchPrinter.PrintBitmaps();
 
             // Check all the pages against the baseline.

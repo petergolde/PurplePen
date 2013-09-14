@@ -58,7 +58,6 @@ namespace PurplePen
         private CoursePrintSettings coursePrintSettings;
         private EventDB eventDB;
         private SymbolDB symbolDB;
-        private Controller controller;
         private MapDisplay mapDisplay;
         private CourseAppearance appearance;
 
@@ -66,7 +65,7 @@ namespace PurplePen
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), controller, coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;

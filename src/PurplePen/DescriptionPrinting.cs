@@ -46,8 +46,8 @@ namespace PurplePen
         private EventDB eventDB;
         private SymbolDB symbolDB;
 
-        public DescriptionPrinting(EventDB eventDB, SymbolDB symbolDB, DescriptionPrintSettings descPrintSettings)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), descPrintSettings.PageSettings, descPrintSettings.BoxSize, descPrintSettings.CountKind, descPrintSettings.Count)
+        public DescriptionPrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, DescriptionPrintSettings descPrintSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), controller, descPrintSettings.PageSettings, descPrintSettings.BoxSize, descPrintSettings.CountKind, descPrintSettings.Count)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;

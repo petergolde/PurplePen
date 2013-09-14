@@ -67,8 +67,8 @@ namespace PurplePen
         // Get all the descriptions we are going to print.
         protected abstract IPrintableRectangle[] GetDescriptionList();
 
-        public RectanglePrinting(string title, PageSettings pageSettings, float boxSize, PrintingCountKind countKind, int count)
-            : base(title, pageSettings, ColorModel.RGB)
+        public RectanglePrinting(string title, Controller controller, PageSettings pageSettings, float boxSize, PrintingCountKind countKind, int count)
+            : base(title, controller, pageSettings, ColorModel.RGB)
         {
             this.boxSize = boxSize;
             this.countKind = countKind;

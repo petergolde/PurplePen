@@ -829,7 +829,7 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, descriptionPrintSettings);
+                    DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, this, descriptionPrintSettings);
                     if (preview)
                         descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
                     else
@@ -845,7 +845,7 @@ namespace PurplePen
         {
             bool success = HandleExceptions(
                 delegate {
-                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings);
+                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, this, punchPrintSettings);
                     if (preview)
                         punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
                     else
@@ -865,7 +865,7 @@ namespace PurplePen
                     if (preview)
                         coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
                     else if (coursePrintSettings.UseXpsPrinting)
-                        coursePrinter.PrintUsingXps();
+                        coursePrinter.PrintUsingXps(true);
                     else
                         coursePrinter.Print();
                 },

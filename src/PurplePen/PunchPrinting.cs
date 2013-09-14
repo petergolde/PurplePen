@@ -45,8 +45,8 @@ namespace PurplePen
         private PunchPrintSettings punchPrintSettings;
         private EventDB eventDB;
 
-        public PunchPrinting(EventDB eventDB,  PunchPrintSettings punchPrintSettings)
-            : base(QueryEvent.GetEventTitle(eventDB, " "), punchPrintSettings.PageSettings, punchPrintSettings.BoxSize, PrintingCountKind.CopyCount, punchPrintSettings.Count)
+        public PunchPrinting(EventDB eventDB, Controller controller, PunchPrintSettings punchPrintSettings)
+            : base(QueryEvent.GetEventTitle(eventDB, " "), controller, punchPrintSettings.PageSettings, punchPrintSettings.BoxSize, PrintingCountKind.CopyCount, punchPrintSettings.Count)
         {
             this.eventDB = eventDB;
             this.punchPrintSettings = punchPrintSettings;

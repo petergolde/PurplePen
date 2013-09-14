@@ -59,13 +59,15 @@ namespace PurplePen
     {
         private PageSettings pageSettings;
         private string documentTitle;
+        protected Controller controller;
         protected ColorModel colorModel;
         private int currentPage, totalPages;
         private bool printingToBitmaps = false;
         private bool printPreviewInProgress = false;
 
-        public BasicPrinting(string title, PageSettings pageSettings, ColorModel colorModel)
+        public BasicPrinting(string title, Controller controller, PageSettings pageSettings, ColorModel colorModel)
         {
+            this.controller = controller;
             this.pageSettings = pageSettings;
             this.documentTitle = title;
 
@@ -225,7 +227,7 @@ namespace PurplePen
             }
             float dpi = 200;
 
-            var paginator = new Paginator(this, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi);
+            var paginator = new Paginator(this, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi, false);
 
             for (int pageNumber = 0; pageNumber < paginator.PageCount; ++pageNumber) {
                 var docPage = paginator.GetPage(pageNumber);
@@ -310,22 +312,31 @@ namespace PurplePen
 
         #region Xps Printing Support
 
-        public void PrintUsingXps()
+        public void PrintUsingXps(bool showProgressDialog)
         {
-            // Set up and position everything.
-            SetupPrinting();
+            if (showProgressDialog)
+                controller.ShowProgressDialog(true);
 
-            PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
-            PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
-            Margins margins = pageSettings.Margins;
+            try {
+                // Set up and position everything.
+                SetupPrinting();
 
-            BeginPrint(this, new PrintEventArgs());
+                PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
+                PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
+                Margins margins = pageSettings.Margins;
 
-            printQueue.CurrentJobSettings.Description = documentTitle;
-            XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
-            documentWriter.Write(new Paginator(this, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket)), printTicket);
+                BeginPrint(this, new PrintEventArgs());
 
-            EndPrint(this, new PrintEventArgs());
+                printQueue.CurrentJobSettings.Description = documentTitle;
+                XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
+                documentWriter.Write(new Paginator(this, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket), showProgressDialog), printTicket);
+
+                EndPrint(this, new PrintEventArgs());
+            }
+            finally {
+                if (showProgressDialog)
+                    controller.EndProgressDialog();
+            }
         }
 
         private PrintTicket GetPrintTicket(PrintQueue printQueue, System.Drawing.Printing.PageSettings pageSettings)
@@ -376,17 +387,24 @@ namespace PurplePen
             private System.Windows.Size pageSize;  // page size in 1/96 of an inch.
             private Margins margins;  // margins in 1/100 of an inch.
             private float dpi;
+            private bool showProgressDialog;
 
-            public Paginator(BasicPrinting outer, SizeF pageSize, Margins margins, float dpi)
+            public Paginator(BasicPrinting outer, SizeF pageSize, Margins margins, float dpi, bool showProgressDialog)
             {
                 this.outer = outer;
                 this.margins = margins;
                 this.dpi = dpi;
                 this.pageSize = new System.Windows.Size(HundrethsToPoints(pageSize.Width), HundrethsToPoints(pageSize.Height));
+                this.showProgressDialog = showProgressDialog;
             }
 
             public override DocumentPage GetPage(int pageNumber)
             {
+                if (showProgressDialog) {
+                    if (outer.controller.UpdateProgressDialog(string.Format(MiscText.PrintingPage, pageNumber + 1, outer.totalPages), (double)pageNumber / (double)outer.totalPages))
+                        throw new Exception(MiscText.CancelledByUser);
+                }
+                
                 Margins margins = new Margins(this.margins.Left, this.margins.Right, this.margins.Top, this.margins.Bottom);
                 bool landscape = outer.pageSettings.Landscape;
                 bool rotate;

@@ -892,6 +892,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Printing page {0} (of {1}).
+        /// </summary>
+        internal static string PrintingPage {
+            get {
+                return ResourceManager.GetString("PrintingPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Redo.
         /// </summary>
         internal static string Redo {
