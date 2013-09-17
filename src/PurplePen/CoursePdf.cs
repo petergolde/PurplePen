@@ -51,6 +51,7 @@ namespace PurplePen
     using System.IO;
     using System.Linq;
     using PdfSharp.Pdf;
+    using PdfSharp.Drawing;
 
     // Class to output courses to PDF
     class CoursePdf 
@@ -63,6 +64,7 @@ namespace PurplePen
         private CourseAppearance appearance;
         private RectangleF mapBounds;  // bounds of the map, in map coordinates.
         private string sourcePdfMapFileName;
+        private PdfImporter pdfImporter;
         private PdfPage pdfMapPage;
         private int totalPages, currentPage;
 
@@ -130,11 +132,11 @@ namespace PurplePen
         public void CreatePdfs()
         {
             List<Pair<string, IEnumerable<CourseDesignator>>> fileList = GetFilesToCreate();
-            PdfImporter importer = null;
+            pdfImporter = null;
 
             if (IsPdfMap) {
-                importer = new PdfImporter(sourcePdfMapFileName);
-                pdfMapPage = importer.GetPage(0);
+                pdfImporter = new PdfImporter(sourcePdfMapFileName);
+                pdfMapPage = pdfImporter.GetPage(0);
             }
 
             totalPages = 0;
@@ -151,8 +153,10 @@ namespace PurplePen
                 }
             }
             finally {
-                if (importer != null)
-                    importer.Dispose();
+                if (pdfImporter != null) {
+                    pdfImporter.Dispose();
+                    pdfImporter = null;
+                }
 
                 controller.EndProgressDialog();
             }
@@ -222,17 +226,36 @@ namespace PurplePen
             SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
 
             foreach (CoursePage page in pages) {
+                CoursePage pageToDraw = page;
+
                 if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double)currentPage / (double)totalPages))
                     throw new Exception(MiscText.CancelledByUser);
 
                 IGraphicsTarget grTarget;
 
-                if (IsPdfMap)
-                    grTarget = pdfWriter.BeginCopiedPage(pdfMapPage);
-                else
+                if (IsPdfMap) {
+                    float scaleRatio = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator).ScaleRatio;
+                    if (scaleRatio == 1.0) {
+                        // If we're doing a PDF at scale 1, we just copy the page directly.
+                        grTarget = pdfWriter.BeginCopiedPage(pdfMapPage);
+                        pageToDraw = PdfNonScaledPage(page.courseDesignator);
+                    }
+                    else {
+                        using (XForm xForm = pdfImporter.GetXForm(0)) {
+                            RectangleF printableArea = page.landscape ? landscapePrintableArea : portraitPrintableArea;
+                            Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
+                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, printableArea);
+                            Matrix mapToPortraitPage = Geometry.CreateInvertedRectangleTransform(mapBounds, new RectangleF(new PointF(0, 0), sizePortrait));
+                            RectangleF sourcePartialRectInInches = Geometry.TransformRectangle(mapToPortraitPage, printedPortionInMapCoords);
+                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, page.landscape ? sizeLandscape : sizePortrait, sourcePartialRectInInches);
+                        }
+                    }
+                }
+                else {
                     grTarget = pdfWriter.BeginPage(page.landscape ? sizeLandscape : sizePortrait);
+                }
 
-                DrawPage(grTarget, page);
+                DrawPage(grTarget, pageToDraw);
                 pdfWriter.EndPage(grTarget);
                 grTarget.Dispose();
 
@@ -245,31 +268,30 @@ namespace PurplePen
         // Layout the pages for a set of course designators.
         List<CoursePage> LayoutPages(IEnumerable<CourseDesignator> courseDesignators)
         {
-            if (IsPdfMap) {
-                // For PDF maps, each page is fixed in layout to match the source PDF.
-                return LayoutPdfMapPages(courseDesignators);
-            }
-            else {
-                CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance,
-                                                                   coursePdfSettings.CropLargePrintArea,
-                                                                   portraitPrintableArea, landscapePrintableArea);
+            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance,
+                                                                coursePdfSettings.CropLargePrintArea,
+                                                                portraitPrintableArea, landscapePrintableArea);
 
-                return pageLayout.LayoutPages(courseDesignators);
-            }
+            return pageLayout.LayoutPages(courseDesignators);
         }
 
         private List<CoursePage> LayoutPdfMapPages(IEnumerable<CourseDesignator> courseDesignators)
         {
             List<CoursePage> list = new List<CoursePage>();
             foreach (CourseDesignator designator in courseDesignators) {
-                list.Add(new CoursePage() {
-                    courseDesignator = designator,
-                    landscape = false,
-                    mapRectangle = mapBounds,
-                    printRectangle = portraitPrintableArea
-                });
+                list.Add(PdfNonScaledPage(designator));
             }
             return list;
+        }
+
+        private CoursePage PdfNonScaledPage(CourseDesignator designator)
+        {
+            return new CoursePage() {
+                        courseDesignator = designator,
+                        landscape = false,
+                        mapRectangle = mapBounds,
+                        printRectangle = portraitPrintableArea
+                    };
         }
 
         // The core printing routine. 

@@ -213,11 +213,11 @@ namespace PurplePen
         }
 
         // Get the printable size, scaled to map units(mm) and taking scaleRatio into account. To avoid some round-off problems, the size
-        // is reduced by 0.1mm in each direction
+        // is reduced by 0.01mm in each direction
         SizeF GetScaledPrintableSizeInMapUnits(RectangleF printableArea, float scaleRatio)
         {
             float mmPerPageUnit = (0.254F * scaleRatio);
-            return new SizeF(printableArea.Width * mmPerPageUnit - 0.1F, printableArea.Height * mmPerPageUnit - 0.1F);
+            return new SizeF(printableArea.Width * mmPerPageUnit - 0.01F, printableArea.Height * mmPerPageUnit - 0.01F);
         }
 
 
