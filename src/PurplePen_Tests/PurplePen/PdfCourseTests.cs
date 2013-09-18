@@ -323,7 +323,7 @@ namespace PurplePen.Tests
             CoursePdfSettings settings = new CoursePdfSettings();
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create6");
-            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
             settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
@@ -331,11 +331,42 @@ namespace PurplePen.Tests
             settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF.ppen"), settings, new CourseAppearance(),
-                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short.pdf") },
-                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short_expected.png") });
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\SmallScale.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\LargeScale.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\MediumScale.pdf")},
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\SmallScale_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\LargeScale_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create6\\MediumScale_expected.png")});
 
         }
 
+
+        [TestMethod]
+        public void PdfCreationPdfBaseMapRGB()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create7");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF RGB.ppen"), settings, new CourseAppearance(),
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create7\\Short.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\SmallScale.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\LargeScale.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\MediumScale.pdf")},
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create7\\Short_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\SmallScale_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\LargeScale_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create7\\MediumScale_expected.png")});
+
+        }
 
     }
 }
