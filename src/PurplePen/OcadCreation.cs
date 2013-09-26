@@ -91,21 +91,25 @@ namespace PurplePen
                         break;
 
                     case MapType.Bitmap:
+                    case MapType.PDF:
                         // Set bitmap as template.
                         PointF centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
-                        map.Template = new TemplateInfo(controller.MapFileName, centerPoint, controller.MapDpi, 0, true);
-                        break;
 
-                    case MapType.PDF:
-                        string pdfBitmapFileName;
                         ImageFormat imageFormat;
+                        string mapFileName;
                         float dpi;
+                        if (CreateBitmapFile()) {
+                            // Write a copy of the bitmap map.
+                            mapFileName = CreateBitmapFileName(out imageFormat);
+                            controller.MapDisplay.WriteBitmapMap(mapFileName, imageFormat, out dpi);
+                        }
+                        else {
+                            // Use existing map file.
+                            mapFileName = controller.MapFileName;
+                            dpi = controller.MapDpi;
+                        }
 
-                        pdfBitmapFileName = CreatePdfBitmapFileName(out imageFormat);
-                        controller.MapDisplay.WriteBitmapMap(pdfBitmapFileName, imageFormat, out dpi);
-
-                        centerPoint = Geometry.RectCenter(controller.MapDisplay.MapBounds);
-                        map.Template = new TemplateInfo(pdfBitmapFileName, centerPoint, dpi, 0, true);
+                        map.Template = new TemplateInfo(mapFileName, centerPoint, dpi, 0, true);
                         break;
 
                     case MapType.None:
@@ -129,13 +133,48 @@ namespace PurplePen
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, basename));
         }
 
-        // PDF files need to have a bitmap saved with the OCAD file(s). Return the file name and format of the bitmap file.
-        string CreatePdfBitmapFileName(out ImageFormat imageFormat)
+        // Do we need to create a bitmap copy of the map file?
+        // Always with PDF, only if the current format is incompatible with bitmaps.
+        bool CreateBitmapFile()
         {
-            Debug.Assert(controller.MapType == MapType.PDF);
+            if (controller.MapType == MapType.PDF)
+                return true;
+            else if (controller.MapType == MapType.Bitmap) {
+                ImageFormat imageFormat = controller.MapDisplay.BitmapImageFormat;
 
-            string extension = ".png";
-            imageFormat = ImageFormat.Png;
+                if (creationSettings.version <= 7)
+                    return (imageFormat != ImageFormat.Bmp);
+                else if (creationSettings.version <= 10) {
+                    return (imageFormat != ImageFormat.Bmp && imageFormat != ImageFormat.Tiff && imageFormat != ImageFormat.Jpeg && imageFormat != ImageFormat.Gif);
+                }
+                else {
+                    return (imageFormat != ImageFormat.Bmp && imageFormat != ImageFormat.Tiff && imageFormat != ImageFormat.Jpeg && imageFormat != ImageFormat.Gif && imageFormat != ImageFormat.Png);
+                }
+            }
+
+            return false;
+        }
+
+        // PDF files need to have a bitmap saved with the OCAD file(s). Return the file name and format of the bitmap file.
+        // The format used depends on the OCAD version we are targeting.
+        string CreateBitmapFileName(out ImageFormat imageFormat)
+        {
+            string extension;
+
+            Debug.Assert(controller.MapType == MapType.PDF || controller.MapType == MapType.Bitmap);
+
+            if (creationSettings.version <= 7) {
+                extension = ".bmp";
+                imageFormat = ImageFormat.Bmp;
+            }
+            else if (creationSettings.version <= 10) {
+                extension = ".gif";
+                imageFormat = ImageFormat.Gif;
+            }
+            else {
+                extension = ".png";
+                imageFormat = ImageFormat.Png;
+            }
 
             string basePdfName = Path.GetFileName(controller.MapFileName);
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, Path.ChangeExtension(basePdfName, extension)));
@@ -181,9 +220,9 @@ namespace PurplePen
                     overwrittenFiles.Add(outputFilename);
             }
 
-            if (controller.MapType == MapType.PDF) {
+            if (CreateBitmapFile()) {
                 ImageFormat imageFormat;
-                string pdfBitmap = CreatePdfBitmapFileName(out imageFormat);
+                string pdfBitmap = CreateBitmapFileName(out imageFormat);
                 if (File.Exists(pdfBitmap))
                     overwrittenFiles.Add(pdfBitmap);
             }

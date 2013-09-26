@@ -1823,7 +1823,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
         }
 
         // Create some courses, write them, and check against a dump.
-        void CreateOcadFiles(string file, OcadCreationSettings settings, CourseAppearance appearance, string[] expectedFiles, string[] expectedDumps)
+        void CreateOcadFiles(string file, OcadCreationSettings settings, CourseAppearance appearance, string[] expectedFiles, string[] expectedDumps, string[] bitmapFileNames = null, string[] bitmapFileBaselines = null)
         {
             EventDB eventDB = controller.GetEventDB();
 
@@ -1841,6 +1841,12 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 CheckDump(expectedFiles[i], expectedDumps[i]);
+            }
+
+            if (bitmapFileNames != null) {
+                for (int i = 0; i < bitmapFileNames.Length; ++i) {
+                    TestUtil.CompareBitmapBaseline(bitmapFileNames[0], bitmapFileBaselines[0]);
+                }
             }
         }
 
@@ -2057,6 +2063,35 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             CreateOcadFiles(TestUtil.GetTestFile("controller\\mapexchange2.ppen"), settings, new CourseAppearance(),
                 new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4.ocd") },
                 new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4-expected.txt") });
+        }
+
+        [TestMethod]
+        public void OcadCreation10()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create10");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
+            settings.version = 9;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\Lincoln Park PDF.ppen"), settings, new CourseAppearance(),
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Short.ocd"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\SmallScale.ocd"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\LargeScale.ocd"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\MediumScale.ocd")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Short_expected.txt"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\SmallScale_expected.txt"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\LargeScale_expected.txt"),
+                               TestUtil.GetTestFile("controller\\ocad_create10\\MediumScale_expected.txt")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln-CMYK.gif")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln-CMYK-baseline.png")});
         }
 
         // Test overwritting files

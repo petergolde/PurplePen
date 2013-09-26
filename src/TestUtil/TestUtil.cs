@@ -201,6 +201,16 @@ namespace TestingUtils
         // same, launch a interactive dialog which displays the baselines.
         // (Unlike AssertBaseline/CheckBaseline, the file name is a the full file name, including extension).
         // bmNew is always disposed.
+        public static void CompareBitmapBaseline(string bitmapNew, string baselineFile)
+        {
+            Assert.IsTrue(File.Exists(bitmapNew));
+
+            using (Bitmap bmNew = (Bitmap) Image.FromFile(bitmapNew))
+            {
+                CompareBitmapBaseline(bmNew, baselineFile);
+            }
+        }
+
         public static void CompareBitmapBaseline(Bitmap bmNew, string baselineFile)
         {
             // Is the file different than the baseline?

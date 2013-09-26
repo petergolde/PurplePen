@@ -241,6 +241,18 @@ namespace PurplePen
             }
         }
 
+        public ImageFormat BitmapImageFormat
+        {
+            get
+            {
+                if (MapType == MapType.Bitmap && bitmap != null)
+                    return ((GDIPlus_Bitmap)bitmap).Bitmap.RawFormat;
+                else
+                    return ImageFormat.MemoryBmp;
+            }
+        }
+
+
         // Missing fonts?
         public string[] MissingFonts()
         {
@@ -446,7 +458,9 @@ namespace PurplePen
         public void WriteBitmapMap(string fileName, ImageFormat format, out float dpi)
         {
             dpi = this.bitmapDpi;
-            ((GDIPlus_Bitmap)bitmap).Bitmap.Save(fileName, format);
+            Bitmap bmp = ((GDIPlus_Bitmap)bitmap).Bitmap;
+            
+            BitmapUtil.SaveBitmap(bmp, fileName, format);
         }
 
         // Draw the map and course onto a graphics.

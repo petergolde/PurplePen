@@ -134,6 +134,7 @@
       <DependentUpon>BaseDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="BasicPrinting.cs" />
+    <Compile Include="BitmapUtil.cs" />
     <Compile Include="ChangeAllCodes.cs">
       <SubType>Form</SubType>
     </Compile>
