@@ -134,8 +134,10 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CoursePrintingTest(string basename, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
+        private void CoursePrintingTest(string basename, CoursePrintSettings coursePrintSettings, CourseAppearance appearance, float dpi = 200)
         {
+            GC.Collect();
+
             // Get the map display
             MapDisplay mapDisplay = new MapDisplay();
             mapDisplay.MapIntensity = 0.6F;
@@ -153,19 +155,23 @@ namespace PurplePen.Tests
                 Bitmap bm = bitmaps[page];
                 string baseFileName = basename + "_page" + (page + 1).ToString();
                 TestUtil.CheckBitmapsBase(bm, baseFileName);
+                bm.Dispose();
             }
 
-            // Get the pages of the printing in XPS/WPF mode
-            System.Windows.Media.Imaging.BitmapSource[] xpsBitmaps = coursePrinter.PrintXpsBitmaps();
+            // Only OCAD maps can be printed in XPS mode.
+            if (controller.MapType == MapType.OCAD) {
+                // Get the pages of the printing in XPS/WPF mode
+                System.Windows.Media.Imaging.BitmapSource[] xpsBitmaps = coursePrinter.PrintXpsBitmaps(dpi);
 
-            // Check all the pages against the baseline.
-            for (int page = 0; page < bitmaps.Length; ++page) {
-                var bm = xpsBitmaps[page];
-                string baseFileName = basename + "_xps_page" + (page + 1).ToString();
-                string newFileName = TestUtil.GetTestFile(basename + "_xps_page" + (page + 1).ToString() + "_new");
-                WritePng(bm, newFileName);
-                Bitmap newBitmap = (Bitmap)Image.FromFile(newFileName);
-                TestUtil.CheckBitmapsBase(newBitmap, baseFileName);
+                // Check all the pages against the baseline.
+                for (int page = 0; page < bitmaps.Length; ++page) {
+                    var bm = xpsBitmaps[page];
+                    string baseFileName = basename + "_xps_page" + (page + 1).ToString();
+                    string newFileName = TestUtil.GetTestFile(basename + "_xps_page" + (page + 1).ToString() + "_new");
+                    WritePng(bm, newFileName);
+                    Bitmap newBitmap = (Bitmap)Image.FromFile(newFileName);
+                    TestUtil.CheckBitmapsBase(newBitmap, baseFileName);
+                }
             }
         }
 
@@ -227,6 +233,18 @@ namespace PurplePen.Tests
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
             CoursePrintingTest("courseprinting\\bitmapbase", coursePrintSettings, new CourseAppearance());
+        }
+
+        [TestMethod]
+        public void PrintPdfBaseMap()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lincoln Park PDF.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = true;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
+            CoursePrintingTest("courseprinting\\pdfbase", coursePrintSettings, new CourseAppearance(), 200);
         }
 
         [TestMethod]

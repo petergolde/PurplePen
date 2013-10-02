@@ -1,0 +1,339 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x7
+  Version=7
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=2, nColorSep=0
+  CyanFreq=1500; CyanAng=150
+  MagentaFreq=1500; MagentaAng=750
+  YellowFreq=1500; YellowAng=0
+  BlackFreq=1500; BlackAng=450
+  Reserved1=0x0 Reserved2=0x0
+
+Color #11:   name:  Purple  value:  Cy=30 Mg=180 Yl=0 Bk=50
+Color #44:   name:  White  value:  Cy=0 Mg=0 Yl=0 Bk=0
+
+
+Setup structure:
+  Offset=(0.00,0.00), rGridDist=10
+  WorkMode=0, LineMode=0, EditMode=0
+  ActSym=0, MapScale=5000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=100
+  GpsAngle=0.0000, nGpsAdjust=0
+  DraftScaleX=5000, DraftScaleY=5000
+  TempOffset=(101.47,126.24), TemplateFileName=[[TESTDIR]]\controller\ocad_create11\LincolnNov12.bmp
+  TemplateEnabled=1, TempResol=300, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(0.00,0.00), PrUpperRight=(202.95,252.48)
+  PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
+  PrintScale=5000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+
+Symbol definition for '890.0'
+ White out': 
+  Size=380, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 F F F F F F F F F F F F F F F F 0 F F 
+    F F 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  Flags=0, FillOn=True, FillColor=44
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
+Symbol definition for '701.0'
+ Start': 
+  Size=400, Otp=1, SymTp=0, Flags=1
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F D D D D D D D D D D D D D D F F F F 
+    F F F F D D D D D D D D D D D D D 7 F F F F 
+    F F F F F D D F F F F F F F F D D F F F F F 
+    F F F F F 7 D D F F F F F F D D F F F F F F 
+    F F F F F F D D 7 F F F F 7 D D F F F F F F 
+    F F F F F F F D D F F F F D D F F F F F F F 
+    F F F F F F F D D D F F D D D F F F F F F F 
+    F F F F F F F F D D F F D D F F F F F F F F 
+    F F F F F F F F D D D D D 7 F F F F F F F F 
+    F F F F F F F F F D D D D F F F F F F F F F 
+    F F F F F F F F F 7 D D F F F F F F F F F F 
+    F F F F F F F F F F D D F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 1 -- line
+    stFlags=4  stColor=11  stLineWidth=35  
+    (0.00,4.04) (3.50,-2.02) (-3.50,-2.02) (0.00,4.04) 
+
+Symbol definition for '704.0'
+ Line': 
+  Size=424, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F 7 F F F F F F F F F F F F F F F 
+    F F F F F 7 D D F F F F F F F F F F F F F F 
+    F F F F F F D D 7 F F F F F F F F F F F F F 
+    F F F F F F 7 D D F F F F F F F F F F F F F 
+    F F F F F F F D D F F F F F F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F F D D F F F F F F F F F F F F 
+    F F F F F F F F D D D F F F F F F F F F F F 
+    F F F F F F F F F D D F F F F F F F F F F F 
+    F F F F F F F F F D D D F F F F F F F F F F 
+    F F F F F F F F F F D D F F F F F F F F F F 
+    F F F F F F F F F F D D D F F F F F F F F F 
+    F F F F F F F F F F F D D F F F F F F F F F 
+    F F F F F F F F F F F D D D F F F F F F F F 
+    F F F F F F F F F F F F D D F F F F F F F F 
+    F F F F F F F F F F F F D D F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  LineColor=11, LineWidth=35, LineEnds=0
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+
+Symbol definition for '702.0'
+ Control point': 
+  Size=376, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F D D D D D D F F F F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F 7 D D D F F F F D D D 7 F F F F F 
+    F F F F F D D 7 F F F F F F 7 D D F F F F F 
+    F F F F D D D F F F F F F F F D D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D F F F F F F F F F F D D F F F F 
+    F F F F D D D F F F F F F F F D D D F F F F 
+    F F F F F D D F F F F F F F 7 D D F F F F F 
+    F F F F F 7 D D D F F F F D D D 7 F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F F F F D D D D D D F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=3
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=35  stDiameter=600
+    (0.00,0.00) 
+
+Symbol definition for '706.0'
+ Finish': 
+  Size=400, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F 7 7 F F F F F F F F F F 
+    F F F F F F F D D D D D D D D F F F F F F F 
+    F F F F F F D D D D F F D D D D F F F F F F 
+    F F F F F D D D F F F F F F D D D F F F F F 
+    F F F F D D 7 F F D D D D F F D D D F F F F 
+    F F F F D D F F D D D D D D F F D D F F F F 
+    F F F F D 7 F D D 7 F F F D D F D D F F F F 
+    F F F 7 D F F D D F F F F D D F F D 7 F F F 
+    F F F 7 D F F D D F F F F D D F F D 7 F F F 
+    F F F F D 7 F D D D F F 7 D D F D D F F F F 
+    F F F F D D F F D D D D D D F F D D F F F F 
+    F F F F D D 7 F F D D D D F F D D D F F F F 
+    F F F F F D D 7 F F F F F F 7 D D F F F F F 
+    F F F F F F D D D 7 F F 7 D D D F F F F F F 
+    F F F F F F F D D D D D D D D F F F F F F F 
+    F F F F F F F F F F 7 7 F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=35  stDiameter=500
+    (0.00,0.00) 
+  SymbolElement of type 3 -- circle
+    stColor=11  stLineWidth=35  stDiameter=700
+    (0.00,0.00) 
+
+Symbol definition for '703.0'
+ Control number': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F D D D D D F F F F F F F F 
+    F F F F F F F F D D D D D D D F F F F F F F 
+    F F F F F F F D D D D D D D D D F F F F F F 
+    F F F F F F 7 D D D F F F D D D 7 F F F F F 
+    F F F F F F D D D 7 F F F F D D D F F F F F 
+    F F F F F F D D D F F F F F D D D F F F F F 
+    F F F F F F F F F F F F F F D D D F F F F F 
+    F F F F F F F F F F F F F F D D D F F F F F 
+    F F F F F F D D D 7 F F F D D D D F F F F F 
+    F F F F F F D D D D D D D D D D F F F F F F 
+    F F F F F F 7 D D D D D D D D 7 F F F F F F 
+    F F F F F F F D D D D D D D F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F D D D F F F F F F F F F F F F 
+    F F F F F F F D D D D D D D D D F F F F F F 
+    F F F F F F F F D D D D D D D D F F F F F F 
+    F F F F F F F F D D D D D D D D F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Arial, FontColor=11, FontSize=158
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=100, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Index entry Sym=701.0
+Object Sym=701 Otp=1
+  nItem=1, nText=0
+  Ang=134
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (140.21,57.45) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (139.27,61.38) (128.16,107.89) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (127.51,110.64) (0.08,0.12, NoLeft, Corner, NoRight) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (124.74,111.20) (72.37,121.80) 
+
+Index entry Sym=702.0
+Object Sym=702 Otp=1
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (69.60,122.36) (-0.02,0.03, Curve1, Gap, Hole, NoRight, DashPt) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=3, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (70.22,119.60) (81.80,67.87) (94.32,60.25) 
+
+Index entry Sym=704.0
+Object Sym=704 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (107.70,52.10) (131.48,37.62) 
+
+Index entry Sym=706.0
+Object Sym=706 Otp=1
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (134.32,35.90) (0.04,0.09, Curve1, Hole, NoRight) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=1
+    (131.41,113.48) (131.41,112.30) (134.50,112.30) (134.50,119.05) 
+    (131.41,119.05) 
+
+Index entry Sym=703.0
+Object Sym=703 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=2
+    (63.24,125.91) (63.24,124.73) (66.34,124.73) (66.34,131.48) 
+    (63.24,131.48) 
+

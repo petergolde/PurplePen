@@ -1712,8 +1712,8 @@ namespace PurplePen
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
 
-            if (Environment.OSVersion.Version.Major <= 5) {
-                // Windows XP. Force rasterization.
+            if (Environment.OSVersion.Version.Major <= 5 || controller.MapType != MapType.OCAD) {
+                // Windows XP or map is already a bitmap. Force rasterization.
                 coursePrintSettings.UseXpsPrinting = false;
                 printCoursesDialog.PrintSettings = coursePrintSettings;
                 printCoursesDialog.EnableRasterizeChoice = false;

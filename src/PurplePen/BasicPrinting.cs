@@ -206,7 +206,7 @@ namespace PurplePen
         }
 
         // Do printing to a set of bitmaps using the XPS/WPF path. This is used for testing support.
-        public System.Windows.Media.Imaging.BitmapSource[] PrintXpsBitmaps()
+        public System.Windows.Media.Imaging.BitmapSource[] PrintXpsBitmaps(float dpi)
         {
             // Set up and position everything.
             printingToBitmaps = true;
@@ -225,7 +225,6 @@ namespace PurplePen
             if (pageSettings.Landscape) {
                 float temp = paperWidth; paperWidth = paperHeight; paperHeight = temp;
             }
-            float dpi = 200;
 
             var paginator = new Paginator(this, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi, false);
 

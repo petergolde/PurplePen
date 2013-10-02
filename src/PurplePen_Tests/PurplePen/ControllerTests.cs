@@ -2094,6 +2094,29 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln-CMYK-baseline.png")});
         }
 
+        [TestMethod]
+        public void OcadCreation11()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create11");
+            settings.CourseIds = new Id<Course>[] { CourseId(1) };
+            settings.version = 7;
+
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\Lincoln Park.ppen"), settings, new CourseAppearance(),
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\Short.ocd")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\Short_expected.txt")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\LincolnNov12.bmp") },
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\LincolnNov12.png") });
+        }
+
         // Test overwritting files
         [TestMethod]
         public void OverwritingOcadFiles()
