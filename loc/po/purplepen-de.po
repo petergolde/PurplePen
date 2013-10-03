@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.3\n"
+"Project-Id-Version: Purple Pen 2.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
+"POT-Creation-Date: 2013-10-03 12:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -143,6 +143,7 @@ msgstr "nicht sichtbar"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
@@ -320,11 +321,11 @@ msgstr "&Kartendatei auswählen..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
-msgid "OCAD files (*.ocd)|*.ocd|Image "
+msgid "All map "
+"files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "OCAD-Dateien "
-"(*.ocd)|*.ocd|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*."
-"png;*.gif"
+msgstr ""
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -721,6 +722,7 @@ msgid "None"
 msgstr "Keine"
 
 #: CreateOcadFiles.resx, coursesGroupBox.Text
+#: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
@@ -728,6 +730,7 @@ msgid "Courses"
 msgstr "Bahnen"
 
 #: CreateOcadFiles.resx, createButton.Text
+#: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Erstellen"
@@ -783,6 +786,7 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
+#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -790,26 +794,31 @@ msgid "Output"
 msgstr "Ausgabe"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Ordner auswählen..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Anderer Ordner"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
+#: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Selber Ordner wie Kartendatei"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Selber Ordner wie Purple Pen-Datei"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
 msgstr "Ordner"
@@ -817,6 +826,103 @@ msgstr "Ordner"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "OCAD-Dateien erstellen"
+
+#: CreatePdfCourses.resx, label1.Text
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Ränder:"
+
+#: CreatePdfCourses.resx, marginChange.Text
+msgid "Change..."
+msgstr ""
+
+#: CreatePdfCourses.resx, paperSizeLabel.Text
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Papiergröße:"
+
+#: CreatePdfCourses.resx, paperSize.Text
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: CreatePdfCourses.resx, marginsLabel.Text
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Oben 0.55\", Unten: 0.55\", Link: 0.55\", Rechts: 0.55\""
+
+#: CreatePdfCourses.resx, checkBoxMergeParts.Text
+#: PrintCourses.resx, checkBoxMergeParts.Text
+msgid "Print Map Exchanges on Same Map "
+msgstr "Alle Teilstrecken auf dieser Karte drucken "
+
+#: CreatePdfCourses.resx, labelColorModel.Text
+#: PrintCourses.resx, labelColorModel.Text
+msgid "Color Model:"
+msgstr "Farbmodell:"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr "RGB"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr "CMYK"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items
+#: PrintCourses.resx, comboBoxMultiPage.Items
+msgid "Crop to a single page"
+msgstr "Auf eine Seite zuschneiden"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items1
+#: PrintCourses.resx, comboBoxMultiPage.Items1
+msgid "Print on multiple pages"
+msgstr "Auf mehrere Seiten drucken"
+
+#: CreatePdfCourses.resx, labelAppearanceInfo.Text
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr "Auf eine Seite einpassen, wenn der Druckbereich zu groß ist."
+
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr ""
+
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items2
+msgid "One per course part"
+msgstr ""
+
+#: CreatePdfCourses.resx, outputGroupBox.Text
+msgid "Files"
+msgstr ""
+
+#: CreatePdfCourses.resx, folderBrowserDialog.Description
+msgid "Select a folder for the PDF files"
+msgstr ""
+
+#: CreatePdfCourses.resx, $this.Text
+msgid "Create PDF Files"
+msgstr "Bahnen drucken"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
@@ -975,6 +1081,10 @@ msgstr "Speichern &unter …"
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
 msgstr "OCAD-Da&teien erstellen …"
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1739,11 +1849,13 @@ msgstr "Bahneigenschaften"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
+#: PrinterMargins.resx, radioButtonLandscape.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
 msgstr "Querformat"
 
 #: MiscText.resx, Portrait
+#: PrinterMargins.resx, radioButtonPortrait.Text
 msgid "Portrait"
 msgstr "Hochformat"
 
@@ -1999,6 +2111,48 @@ msgstr "Postenbeschreibungen können zu einer Bahn mit "
 "auf die gewünschte Teilstrecke und wählen dann "
 "\"Postenbeschreibung hinzufügen\" nochmals aus."
 
+#: MiscText.resx, DownloadGhostscript
+msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
+"installed. Would you like to automatically download and "
+"install it now?"
+msgstr ""
+
+#: MiscText.resx, GhostscriptNotInstalled
+msgid "GPL Ghostscript is not installed"
+msgstr ""
+
+#: MiscText.resx, PdfConversionFailed
+msgid "GPL Ghostscript failed to read PDF file successfully"
+msgstr ""
+
+#: MiscText.resx, PdfResultNotReadable
+msgid "Could not read result of PDF conversion from file '{0}'"
+msgstr ""
+
+#: MiscText.resx, CannotCreatePdfs
+msgid "Cannot create PDFs for the following reason:"
+msgstr ""
+
+#: MiscText.resx, UserDefined
+msgid "User Defined"
+msgstr ""
+
+#: MiscText.resx, PdfMapSize
+msgid "Map size from PDF"
+msgstr ""
+
+#: MiscText.resx, CancelledByUser
+msgid "Cancelled by user"
+msgstr ""
+
+#: MiscText.resx, CreatingFile
+msgid "Creating {0}..."
+msgstr ""
+
+#: MiscText.resx, PrintingPage
+msgid "Printing page {0} (of {1})"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Für diesen Wettkampf nie mehr wegen fehlender Fonts warnen."
@@ -2067,6 +2221,14 @@ msgstr "Kartenmaßstab:"
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
 msgstr "Bildauflösung"
+
+#: NewEventBitmapScale.resx, pdfScaleLabel.Text
+msgid "When using an PDF file as a map, you must specify the map "
+"scale. \n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr ""
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2251,18 +2413,6 @@ msgstr "Drucken"
 msgid "Change Printer..."
 msgstr "Drucker ändern..."
 
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
-
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Papiergröße:"
-
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
@@ -2295,37 +2445,9 @@ msgstr "Kopien"
 msgid "Rasterize Before Printing"
 msgstr "Vor dem Druck rastern"
 
-#: PrintCourses.resx, checkBoxMergeParts.Text
-msgid "Print Map Exchanges on Same Map "
-msgstr "Alle Teilstrecken auf dieser Karte drucken "
-
-#: PrintCourses.resx, labelColorModel.Text
-msgid "Color Model:"
-msgstr "Farbmodell:"
-
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
 msgstr "OCAD-kompatibel"
-
-#: PrintCourses.resx, comboBoxColorModel.Items1
-msgid "RGB"
-msgstr "RGB"
-
-#: PrintCourses.resx, comboBoxColorModel.Items2
-msgid "CMYK"
-msgstr "CMYK"
-
-#: PrintCourses.resx, comboBoxMultiPage.Items
-msgid "Crop to a single page"
-msgstr "Auf eine Seite zuschneiden"
-
-#: PrintCourses.resx, comboBoxMultiPage.Items1
-msgid "Print on multiple pages"
-msgstr "Auf mehrere Seiten drucken"
-
-#: PrintCourses.resx, labelAppearanceInfo.Text
-msgid "If the print area is too large to fit on one page:"
-msgstr "Auf eine Seite einpassen, wenn der Druckbereich zu groß ist."
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
@@ -2335,16 +2457,6 @@ msgstr "Bahnen drucken"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Ränder ändern..."
-
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Oben 0.55\", Unten: 0.55\", Link: 0.55\", Rechts: 0.55\""
-
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Ränder:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -2390,6 +2502,50 @@ msgstr "Drucken:"
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
 msgstr "Postenbeschreibungen drucken"
+
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr ""
+
+#: PrinterMargins.resx, label2.Text
+msgid "Width:"
+msgstr ""
+
+#: PrinterMargins.resx, label3.Text
+msgid "Height:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxPaperSize.Text
+msgid "Paper Size ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, groupBox1.Text
+msgid "Orientation"
+msgstr ""
+
+#: PrinterMargins.resx, label1.Text
+msgid "Left:"
+msgstr ""
+
+#: PrinterMargins.resx, label4.Text
+msgid "Top:"
+msgstr ""
+
+#: PrinterMargins.resx, label5.Text
+msgid "Right:"
+msgstr ""
+
+#: PrinterMargins.resx, label6.Text
+msgid "Bottom:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxMargins.Text
+msgid "Margins ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, $this.Text
+msgid "Page Setup"
+msgstr ""
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text

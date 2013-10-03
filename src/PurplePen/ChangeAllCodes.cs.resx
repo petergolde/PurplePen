@@ -123,6 +123,9 @@
   <data name="NewCode.HeaderText" xml:space="preserve">
     <value>Nový kód</value>
   </data>
+  <data name="changeControlCodesLabel.Text" xml:space="preserve">
+    <value>Pro změnu kódu jedné nebo více kontrol, klikněte do sloupce "Nový kód" a vložte jeho číslo. </value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Změnit kódy kontrol</value>
   </data>

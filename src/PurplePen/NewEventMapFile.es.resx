@@ -123,9 +123,6 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Seleccionar otro archivo de mapa...</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Archivos OCAD (*.ocd)|*.ocd|Archivos de Imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Seleccionar Archivo de Mapa</value>
   </data>

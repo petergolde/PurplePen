@@ -123,9 +123,6 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Vali kaardi fail...</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD failid (*.ocd)|*.ocd|Pildifailid|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vali kaardi fail</value>
   </data>

@@ -123,9 +123,6 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Välj kartfil...</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD-filer (*.ocd)|*.ocd|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vald kartfil</value>
   </data>

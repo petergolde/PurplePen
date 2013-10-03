@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit složku '{0}' :</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Z následujícího důvodu nelze načíst mapu: '{0}' Používání Optimize/Repair v OCAD může opravit problémy.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit soubory OCADu:</value>
   </data>
@@ -167,6 +170,15 @@
   </data>
   <data name="CodeInUse" xml:space="preserve">
     <value>Kód kontroly '{0}' je již použit jinou kontrolou.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Body za kontroly musí být celé číslo 1-999</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Převýšení pro trať musí být číslo 0-9999 nebo prázdné</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Počet závodníků na trati musí být celé číslo 0-999999, nebo prázdné</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>&amp;Zpět</value>

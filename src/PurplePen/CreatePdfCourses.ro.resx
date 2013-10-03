@@ -118,37 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Tipărire</value>
+    <value>Creare</value>
   </data>
-  <data name="printerChange.Text" xml:space="preserve">
-    <value>Schimbare Imprimantă...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Margini:</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Dimensiune Hârtie:</value>
   </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Nume Imprimantă</value>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
   </data>
-  <data name="printerLabel.Text" xml:space="preserve">
-    <value>Imprimantă:</value>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Sus: 0.55", Jos: 0.55", Stânga: 0.55", Dreapta: 0.55"</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Rezultat</value>
   </data>
-  <data name="previewButton.Text" xml:space="preserve">
-    <value>Previzualizare...</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasee</value>
-  </data>
-  <data name="copiesLabel.Text" xml:space="preserve">
-    <value>Număr exemplare pe fiecare traseu:</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Număr exemplare</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Decupare într-o singură pagină</value>
@@ -162,8 +150,41 @@
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Aspect</value>
   </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Selectare director...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Alt director</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Același director ca și fișierul hartă</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Același director ca și fișierul Purple Pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Director</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tipărire Trasee</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Schimbare Imprimantă...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Nume Imprimantă</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Imprimantă:</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Previzualizare...</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Număr exemplare pe fiecare traseu:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Număr exemplare</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Tipărește pe mai multe pagini</value>

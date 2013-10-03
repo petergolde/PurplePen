@@ -118,40 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Skriv ut</value>
+    <value>Opprett</value>
   </data>
-  <data name="printerChange.Text" xml:space="preserve">
-    <value>Endre skriver...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Marger:</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Papirstørrelse:</value>
   </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Skrivernavn</value>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
   </data>
-  <data name="printerLabel.Text" xml:space="preserve">
-    <value>Skriver:</value>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Over: 0.55", Under: 0.55", Venstre: 0.55", Høyre: 0.55"</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Utdata</value>
   </data>
-  <data name="previewButton.Text" xml:space="preserve">
-    <value>Forhåndsvisning …</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Løyper</value>
-  </data>
-  <data name="copiesLabel.Text" xml:space="preserve">
-    <value>Antall kopier av hver løype:</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopier</value>
-  </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Skriv ut som raster</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Skriv ut kartbytte på samme kart </value>
@@ -160,12 +145,9 @@
     <value>Farge modell</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
-    <value>OCAD kompatibel</value>
-  </data>
-  <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>RGB</value>
   </data>
-  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
@@ -180,8 +162,47 @@
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Velg mappe...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annen mappe</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som kartfila</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som Purple Pen filen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Mappe</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut løyper</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Endre skriver...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Skrivernavn</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Skriver:</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Forhåndsvisning …</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Antall kopier av hver løype:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopier</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Skriv ut som raster</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Skriv ut på flere sider</value>

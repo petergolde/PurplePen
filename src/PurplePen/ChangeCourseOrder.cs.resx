@@ -120,6 +120,9 @@
   <data name="moveDownButton.Text" xml:space="preserve">
     <value>Posunout dolů</value>
   </data>
+  <data name="courseOrderLabel.Text" xml:space="preserve">
+    <value>Klikněte na "Nahour" nebo "Dolů" a změňte tak pořadí tratí v zobrazení, reportech a tisku.</value>
+  </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Posunout nahoru</value>
   </data>

@@ -120,4 +120,13 @@
   <data name="CourseName.HeaderText" xml:space="preserve">
     <value>Kategorie</value>
   </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Počty závodníků</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Nastavte počty závodníků pro každou kategorii tak, že kliknete do druhého sloupce a napíšete počet.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Počty závodníků na trati</value>
+  </data>
 </root>

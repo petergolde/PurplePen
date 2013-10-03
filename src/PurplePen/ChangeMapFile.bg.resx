@@ -123,9 +123,6 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Избери картов файл...</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD файлове (*.ocd)|*.ocd|Графични файлове|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Резолюция:</value>
   </data>

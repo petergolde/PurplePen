@@ -123,6 +123,9 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Ukončit</value>
   </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Přispět na vývoj</value>
+  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Otevřít naposledy zobrazovaný závod</value>
   </data>

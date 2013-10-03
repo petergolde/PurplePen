@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.3\n"
+"Project-Id-Version: Purple Pen 2.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
+"POT-Creation-Date: 2013-10-03 12:00-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr "O Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Číslo první kontroly"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -94,50 +94,51 @@ msgstr "Symboly a text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "Popis kolečka kontroly"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Pořadí (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Kód kontroly (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Pořadí a kód (3 - 145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr ""
+msgstr "Pořadí a body (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr ""
+msgstr "Kód a body (145(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Zobraz body v:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Sloupec A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Sloupec B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Sloupec H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(nezobrazovat)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
@@ -152,7 +153,7 @@ msgstr "Následující text (volitelný) se zobrazí na druhém řádku "
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr ""
+msgstr "Seznam kategorií / podtitulek"
 
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
@@ -173,7 +174,7 @@ msgstr "Normální trať"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr ""
+msgstr "Scorelauf"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
@@ -187,7 +188,8 @@ msgstr "Nová trať"
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr ""
+msgstr "Vlož text, který se zobrazí na samostatné řádce v popisech "
+"kontrol:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -221,7 +223,8 @@ msgstr "Přidat řádku textu"
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr ""
+msgstr "Tato nastavení řeší jak budou vytištěny mapa a popisy pro "
+"\"Všechny kontroly\"."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
@@ -273,7 +276,8 @@ msgstr "Nový kód"
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr ""
+msgstr "Pro změnu kódu jedné nebo více kontrol, klikněte do "
+"sloupce \"Nový kód\" a vložte jeho číslo. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
@@ -287,7 +291,8 @@ msgstr "Posunout dolů"
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr ""
+msgstr "Klikněte na \"Nahour\" nebo \"Dolů\" a změňte tak pořadí tratí "
+"v zobrazení, reportech a tisku."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
@@ -308,11 +313,11 @@ msgstr "&Vybrat mapový soubor..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
-msgid "OCAD files (*.ocd)|*.ocd|Image "
+msgid "All map "
+"files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "Soubory OCADu "
-"(*.ocd)|*.ocd|Obrázky|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;"
-"*.gif"
+msgstr ""
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -338,12 +343,12 @@ msgstr "Mapový soubor"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr ""
+msgstr "Vyberte tratě na kterých bude tento objekt zobrazen:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr ""
+msgstr "Změnit zobrazení tratí"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -362,7 +367,7 @@ msgstr "Kategorie"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Část trati"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -379,7 +384,7 @@ msgstr "Seznam kategorií"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Měřítko tisku"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -395,7 +400,7 @@ msgstr "Změnit kontrolu"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr ""
+msgstr "Změnit body kontroly"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
@@ -411,7 +416,7 @@ msgstr "Změnit název trati"
 
 #: CommandNameText.resx, ChangeTextLine
 msgid "Change Text Line"
-msgstr ""
+msgstr "Změnit čáru textu"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
@@ -439,7 +444,7 @@ msgstr "Odstranit objekt"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr ""
+msgstr "Smazat čáru textu"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
@@ -458,7 +463,7 @@ msgstr "Přidat Cíl"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
-msgstr ""
+msgstr "Přidat povinný bod"
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
@@ -483,7 +488,7 @@ msgstr "Vytvořit nový závod"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
-msgstr ""
+msgstr "Změnit značený úsek"
 
 #: CommandNameText.resx, ChangeCodes
 msgid "Change Codes"
@@ -491,7 +496,7 @@ msgstr "Změnit kódy"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr ""
+msgstr "Přesunout ohyb spojnice"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
@@ -531,7 +536,7 @@ msgstr "Změnit vzorek ražení"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr ""
+msgstr "Změnit vzhled průkazky"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -540,12 +545,12 @@ msgstr "Nastavit oblast pro tisk"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr ""
+msgstr "Změnit počty závodníků"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr ""
+msgstr "Upravit textový popis"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -575,20 +580,20 @@ msgstr "Změnit text"
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr ""
+msgstr "Nastavit zobrazení tratí"
 
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr ""
+msgstr "Přidat výměnu map"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Smazat výměnu map"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Změnit vlastnosti části trati"
 
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
@@ -601,19 +606,19 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
-msgstr ""
+msgstr "Průměr tečky ve středu kolečka:"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
-msgstr ""
+msgstr "Pravidelný"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
 msgid "Bold"
-msgstr ""
+msgstr "Tučně"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr ""
+msgstr "Styl čísla kontroly:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
@@ -621,7 +626,7 @@ msgstr "Výška čísla kontroly:"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
-msgstr "Šířka čáry:"
+msgstr "Tloušťka čáry:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
@@ -653,11 +658,11 @@ msgstr "Azurová:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr ""
+msgstr "Použít purpurovou z mapy"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr ""
+msgstr "Purpurová"
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
@@ -665,48 +670,51 @@ msgstr "Náhled"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr ""
+msgstr "Počty závodníků"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr ""
+msgstr "Nastavte počty závodníků pro každou kategorii tak, že "
+"kliknete do druhého sloupce a napíšete počet."
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr ""
+msgstr "Počty závodníků na trati"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr ""
+msgstr "Část trati"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Vlastnosti..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Zobrazit cíl (dvojité kolečko) na části trati"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Tato nastavení se týkají zobrazení tohoto úseku trati "
+"(trať s více úseky)"
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Vlastnosti části tratě"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
-msgstr ""
+msgstr "Vše"
 
 #: CourseSelector.resx, selectNone.Text
 #: SelectionDescriptionText.resx, CourseList_None
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 #: CreateOcadFiles.resx, coursesGroupBox.Text
+#: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
@@ -714,6 +722,7 @@ msgid "Courses"
 msgstr "Tratě"
 
 #: CreateOcadFiles.resx, createButton.Text
+#: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Vytvořit"
@@ -762,13 +771,14 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
-msgstr ""
+msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
+#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -776,56 +786,161 @@ msgid "Output"
 msgstr "Výstup"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Vybrat složku..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Jiná složka"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
+#: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Stejná složka jako u mapového souboru"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Stejná složka jako u souboru Purple Pen"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
 msgstr "Složka"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
+msgstr "Vytvořit soubory OCAD"
+
+#: CreatePdfCourses.resx, label1.Text
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Okraje:"
+
+#: CreatePdfCourses.resx, marginChange.Text
+msgid "Change..."
+msgstr ""
+
+#: CreatePdfCourses.resx, paperSizeLabel.Text
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Velikost papíru:"
+
+#: CreatePdfCourses.resx, paperSize.Text
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr ""
+
+#: CreatePdfCourses.resx, marginsLabel.Text
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr ""
+
+#: CreatePdfCourses.resx, checkBoxMergeParts.Text
+#: PrintCourses.resx, checkBoxMergeParts.Text
+msgid "Print Map Exchanges on Same Map "
+msgstr ""
+
+#: CreatePdfCourses.resx, labelColorModel.Text
+#: PrintCourses.resx, labelColorModel.Text
+msgid "Color Model:"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items
+#: PrintCourses.resx, comboBoxMultiPage.Items
+msgid "Crop to a single page"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items1
+#: PrintCourses.resx, comboBoxMultiPage.Items1
+msgid "Print on multiple pages"
+msgstr ""
+
+#: CreatePdfCourses.resx, labelAppearanceInfo.Text
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr ""
+
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr ""
+
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items2
+msgid "One per course part"
+msgstr ""
+
+#: CreatePdfCourses.resx, outputGroupBox.Text
+msgid "Files"
+msgstr ""
+
+#: CreatePdfCourses.resx, folderBrowserDialog.Description
+msgid "Select a folder for the PDF files"
+msgstr ""
+
+#: CreatePdfCourses.resx, $this.Text
+msgid "Create PDF Files"
 msgstr ""
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Název souboru"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "Zadejte jméno (bez .xml a .gif) pro oba soubory pro "
+"RouteGadget:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Dozvědět se více o RouteGadget"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget vyžaduje soubor s mapou (.gif) a IOF XML "
+"(.xml) s tratěmi. Vyberte jméno a cestu pro oba tyto "
+"soubory."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr ""
+msgstr "Vytvořit soubory pro RouteGadget"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
@@ -853,12 +968,13 @@ msgstr "Výchozí text:"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr ""
+msgstr "Zobrazit význam pod piktogramy"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr ""
+msgstr "Klikněte na piktogram a změňte text, který bude použit "
+"jako textový popis kontroly."
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -870,7 +986,7 @@ msgstr "Pohlaví"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
-msgstr ""
+msgstr "Zobrazit množná čísla"
 
 #: EnterSymbolText.resx, checkBoxGender.Text
 msgid "Show gender forms"
@@ -879,7 +995,7 @@ msgstr ""
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr ""
+msgstr "Vložte vlastní text pro symbol ve sloupci \"Text\""
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
@@ -887,7 +1003,7 @@ msgstr "Pohlaví:"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
-msgstr ""
+msgstr "Vlastní text symbolu"
 
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
@@ -895,7 +1011,7 @@ msgstr "Ukončit"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
-msgstr ""
+msgstr "Přispět na vývoj"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
@@ -957,21 +1073,25 @@ msgstr "Uložit &jako..."
 msgid "Create OCAD &Files..."
 msgstr "Vytvořit &soubory OCAD..."
 
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr ""
+
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
-msgstr ""
+msgstr "Vytvořit soubory Route&Gadget..."
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
-msgstr ""
+msgstr "Vytvořit soubory Data &Interchange File (IOF XML)..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
-msgstr ""
+msgstr "Tisk &popisů..."
 
 #: MainFrame.resx, printPunchCardsMenu.Text
 msgid "Print Pu&nch Cards..."
-msgstr ""
+msgstr "Tisk Průkaze&k..."
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
@@ -979,7 +1099,7 @@ msgstr "Tisknout &tratě..."
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
-msgstr ""
+msgstr "&Pouze tutu část"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -1031,11 +1151,11 @@ msgstr "&Úpravy"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr ""
+msgstr "&Celá trať"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr ""
+msgstr "Celá &mapa"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1071,43 +1191,43 @@ msgstr "&Zvětšení"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr ""
+msgstr "&Velmi nízká"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
-msgstr ""
+msgstr "Níz&ká"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
-msgstr ""
+msgstr "&Střední"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
-msgstr ""
+msgstr "&Vysoká"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr ""
+msgstr "P&lné"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr ""
+msgstr "&Intenzita Mapy"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
-msgstr ""
+msgstr "Nízká"
 
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
-msgstr ""
+msgstr "Vysoká"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
-msgstr ""
+msgstr "&Kvalita mapy"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr ""
+msgstr "Zobrazit vyskakovací informaci"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
@@ -1135,11 +1255,11 @@ msgstr "Odstranit nepo&užité kontroly..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr ""
+msgstr "Vzo&ry ražení"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr ""
+msgstr "&Upravit textové popisy"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
@@ -1147,7 +1267,7 @@ msgstr "Přizpůsobit vzhled tr&ati..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
-msgstr "U&dálost"
+msgstr "Závo&d"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1167,7 +1287,7 @@ msgstr "Pořadí tratí..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr ""
+msgstr "Poč&ty startujících"
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1191,15 +1311,15 @@ msgstr "Přidat &popisy"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
-msgstr ""
+msgstr "Výměna mapy na &kontrole"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "&Flagged Route to Map Exchange"
-msgstr ""
+msgstr "Značený úsek na výměnu mapy"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Add Map E&xchange"
-msgstr ""
+msgstr "Přidat výměnu mapy"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1227,24 +1347,24 @@ msgstr "Nebezpečná oblast"
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Water
 msgid "Water Location"
-msgstr ""
+msgstr "Občerstvení"
 
 #: MainFrame.resx, addFirstAidMenu.Text
 #: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_FirstAid
 msgid "First Aid Location"
-msgstr ""
+msgstr "První pomoc"
 
 #: MainFrame.resx, addForbiddenMenu.Text
 #: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
 msgid "Forbidden Route Marking"
-msgstr ""
+msgstr "Zakázané křížení"
 
 #: MainFrame.resx, addBoundaryMenu.Text
 #: MainFrame.resx, boundaryToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Boundary
 msgid "Uncrossable Boundary"
-msgstr ""
+msgstr "Nepřekonatelná hranice"
 
 #: MainFrame.resx, addRegMarkMenu.Text
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
@@ -1256,15 +1376,15 @@ msgstr ""
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
-msgstr ""
+msgstr "Zabílená oblast"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
-msgstr ""
+msgstr "Vložit spec&iální symbol"
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Add Text &Line..."
-msgstr ""
+msgstr "V&ložit Text a čáru"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1288,47 +1408,47 @@ msgstr "Změnit &text..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
-msgstr "O&točit"
+msgstr "&Otočit"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
-msgstr ""
+msgstr "Bez zančení"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr ""
+msgstr "Celý úsek je značený"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr ""
+msgstr "Začátek úseku je značený"
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr ""
+msgstr "Konec úseku je značený"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr ""
+msgstr "&Značení úseku"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
-msgstr ""
+msgstr "Z&měnit zobrazené tratě"
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr ""
+msgstr "Ob&jekt"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
-msgstr ""
+msgstr "Shrnutí tratí"
 
 #: MainFrame.resx, eventAuditMenu.Text
 msgid "Event &Audit"
-msgstr ""
+msgstr "&Revize závodu"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr ""
+msgstr "Dé&lky úseků"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
@@ -1340,7 +1460,7 @@ msgstr ""
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
-msgstr ""
+msgstr "&Výkazy"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1348,7 +1468,7 @@ msgstr "&Nápověda Purple Pen"
 
 #: MainFrame.resx, helpTranslatedMenu.Text
 msgid "Purple Pen Help (Translated)"
-msgstr ""
+msgstr "Nápověda Purple Pen (přeložená)"
 
 #: MainFrame.resx, mainWebSiteToolMenu.Text
 msgid "Purple Pen &Web Site"
@@ -1360,7 +1480,7 @@ msgstr "&Podpora/Hlášení chyb"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "&Přispějte"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1372,7 +1492,7 @@ msgstr "Prohlížeč symbolů"
 
 #: MainFrame.resx, descriptionBrowserMenu.Text
 msgid "Description Browser"
-msgstr ""
+msgstr "Prohlížení popisů"
 
 #: MainFrame.resx, controlTesterMenu.Text
 msgid "Control Tester"
@@ -1396,7 +1516,7 @@ msgstr ""
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
-msgstr ""
+msgstr "Tester reportů"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
@@ -1404,19 +1524,19 @@ msgstr ""
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "Selhání"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
-msgstr ""
+msgstr "Ladění"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
-msgstr ""
+msgstr "Přidat jazyk popisů"
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr ""
+msgstr "Přidat přeložené texty"
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
@@ -1424,7 +1544,7 @@ msgstr ""
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr ""
+msgstr "Přeloži&t popisy"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
@@ -1479,15 +1599,15 @@ msgstr "Přidat popisy"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
-msgstr ""
+msgstr "Výměna map na kontrole"
 
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
-msgstr ""
+msgstr "Značený úsek na výměnu map"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
-msgstr ""
+msgstr "Přidat speciální prvek"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
@@ -1495,7 +1615,7 @@ msgstr "Přidat ohyb (Ctrl+B)"
 
 #: MainFrame.resx, addGapToolStripButton.Text
 msgid "toolStripButton1"
-msgstr ""
+msgstr "toolStripButton1"
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
@@ -1515,7 +1635,7 @@ msgstr "XML soubor|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr ""
+msgstr "Vytvořit soubor IOF XML"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1573,7 +1693,8 @@ msgstr "Z následujícího důvodu nelze vytvořit složku '{0}' :"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair in OCAD may fix problems."
-msgstr ""
+msgstr "Z následujícího důvodu nelze načíst mapu: '{0}' Používání "
+"Optimize/Repair v OCAD může opravit problémy."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -1597,15 +1718,16 @@ msgstr "Kód kontroly '{0}' je již použit jinou kontrolou."
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
-msgstr ""
+msgstr "Body za kontroly musí být celé číslo 1-999"
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr ""
+msgstr "Převýšení pro trať musí být číslo 0-9999 nebo prázdné"
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr ""
+msgstr "Počet závodníků na trati musí být celé číslo 0-999999, "
+"nebo prázdné"
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
@@ -1707,11 +1829,13 @@ msgstr "Vlastnosti trati"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
+#: PrinterMargins.resx, radioButtonLandscape.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
 msgstr "Na šířku"
 
 #: MiscText.resx, Portrait
+#: PrinterMargins.resx, radioButtonPortrait.Text
 msgid "Portrait"
 msgstr "Na výšku"
 
@@ -1930,6 +2054,48 @@ msgid "Descriptions may not be added to a course with a map "
 "Descriptions\" again."
 msgstr ""
 
+#: MiscText.resx, DownloadGhostscript
+msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
+"installed. Would you like to automatically download and "
+"install it now?"
+msgstr ""
+
+#: MiscText.resx, GhostscriptNotInstalled
+msgid "GPL Ghostscript is not installed"
+msgstr ""
+
+#: MiscText.resx, PdfConversionFailed
+msgid "GPL Ghostscript failed to read PDF file successfully"
+msgstr ""
+
+#: MiscText.resx, PdfResultNotReadable
+msgid "Could not read result of PDF conversion from file '{0}'"
+msgstr ""
+
+#: MiscText.resx, CannotCreatePdfs
+msgid "Cannot create PDFs for the following reason:"
+msgstr ""
+
+#: MiscText.resx, UserDefined
+msgid "User Defined"
+msgstr ""
+
+#: MiscText.resx, PdfMapSize
+msgid "Map size from PDF"
+msgstr ""
+
+#: MiscText.resx, CancelledByUser
+msgid "Cancelled by user"
+msgstr ""
+
+#: MiscText.resx, CreatingFile
+msgid "Creating {0}..."
+msgstr ""
+
+#: MiscText.resx, PrintingPage
+msgid "Printing page {0} (of {1})"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr ""
@@ -1978,6 +2144,14 @@ msgstr "Měřítko mapy:"
 
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
+msgstr ""
+
+#: NewEventBitmapScale.resx, pdfScaleLabel.Text
+msgid "When using an PDF file as a map, you must specify the map "
+"scale. \n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
 msgstr ""
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
@@ -2132,18 +2306,6 @@ msgstr "Tisk"
 msgid "Change Printer..."
 msgstr "Změnit tiskárnu..."
 
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr ""
-
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Velikost papíru:"
-
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
@@ -2176,36 +2338,8 @@ msgstr "Kopie"
 msgid "Rasterize Before Printing"
 msgstr ""
 
-#: PrintCourses.resx, checkBoxMergeParts.Text
-msgid "Print Map Exchanges on Same Map "
-msgstr ""
-
-#: PrintCourses.resx, labelColorModel.Text
-msgid "Color Model:"
-msgstr ""
-
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
-
-#: PrintCourses.resx, comboBoxColorModel.Items1
-msgid "RGB"
-msgstr ""
-
-#: PrintCourses.resx, comboBoxColorModel.Items2
-msgid "CMYK"
-msgstr ""
-
-#: PrintCourses.resx, comboBoxMultiPage.Items
-msgid "Crop to a single page"
-msgstr ""
-
-#: PrintCourses.resx, comboBoxMultiPage.Items1
-msgid "Print on multiple pages"
-msgstr ""
-
-#: PrintCourses.resx, labelAppearanceInfo.Text
-msgid "If the print area is too large to fit on one page:"
 msgstr ""
 
 #: PrintCourses.resx, $this.Text
@@ -2216,16 +2350,6 @@ msgstr ""
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Změnit okraje..."
-
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
-
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Okraje:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -2270,6 +2394,50 @@ msgstr ""
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
+msgstr ""
+
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr ""
+
+#: PrinterMargins.resx, label2.Text
+msgid "Width:"
+msgstr ""
+
+#: PrinterMargins.resx, label3.Text
+msgid "Height:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxPaperSize.Text
+msgid "Paper Size ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, groupBox1.Text
+msgid "Orientation"
+msgstr ""
+
+#: PrinterMargins.resx, label1.Text
+msgid "Left:"
+msgstr ""
+
+#: PrinterMargins.resx, label4.Text
+msgid "Top:"
+msgstr ""
+
+#: PrinterMargins.resx, label5.Text
+msgid "Right:"
+msgstr ""
+
+#: PrinterMargins.resx, label6.Text
+msgid "Bottom:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxMargins.Text
+msgid "Margins ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, $this.Text
+msgid "Page Setup"
 msgstr ""
 
 #: PrintPunches.resx, punchCardLayoutButton.Text

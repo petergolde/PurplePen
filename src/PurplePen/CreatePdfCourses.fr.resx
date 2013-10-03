@@ -118,40 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Imprimer</value>
+    <value>Créer</value>
   </data>
-  <data name="printerChange.Text" xml:space="preserve">
-    <value>Changer d'imprimante...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Marges :</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Taille du papier :</value>
   </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Nom de l'imprimante</value>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
   </data>
-  <data name="printerLabel.Text" xml:space="preserve">
-    <value>Imprimante :</value>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Haut : 0.55", Bas : 0.55", Gauche : 0.55", Droite : 0.55"</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Sortie</value>
   </data>
-  <data name="previewButton.Text" xml:space="preserve">
-    <value>Aperçu...</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Circuits</value>
-  </data>
-  <data name="copiesLabel.Text" xml:space="preserve">
-    <value>Nombre de copies de chaque circuit :</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Copies</value>
-  </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Tramer (aplatir) avant impression</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Imprimer les échanges de carte sur la même carte </value>
@@ -160,12 +145,9 @@
     <value>Modèle couleur :</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
-    <value>Compatible OCAD</value>
-  </data>
-  <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>RVB</value>
   </data>
-  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMJN</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
@@ -180,8 +162,47 @@
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Présentation</value>
   </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Sélectionner un dossier...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Autre dossier</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Même dossier que la carte</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Même dossier que le fichier Purple Pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dossier</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimer les circuits</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Changer d'imprimante...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Nom de l'imprimante</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Imprimante :</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Aperçu...</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Nombre de copies de chaque circuit :</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Copies</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Tramer (aplatir) avant impression</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMJN</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Imprimer sur plusieurs pages</value>

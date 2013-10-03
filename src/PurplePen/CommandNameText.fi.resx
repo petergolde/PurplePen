@@ -273,4 +273,10 @@
   <data name="AddMapExchange" xml:space="preserve">
     <value>Lisää kartanvaihto</value>
   </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Poista kartanvaihto</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Muuta radan osan ominaisuuksia</value>
+  </data>
 </root>

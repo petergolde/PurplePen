@@ -120,6 +120,18 @@
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Průměr tečky ve středu kolečka:</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Pravidelný</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Tučně</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>Styl čísla kontroly:</value>
+  </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Výška čísla kontroly:</value>
   </data>
@@ -127,7 +139,7 @@
     <value>mm</value>
   </data>
   <data name="labelLineWidth.Text" xml:space="preserve">
-    <value>Šířka čáry:</value>
+    <value>Tloušťka čáry:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
@@ -156,7 +168,16 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Azurová:</value>
   </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Použít purpurovou z mapy</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Purpurová</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Náhled</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Nastavit zobrazení tratí</value>
   </data>
 </root>

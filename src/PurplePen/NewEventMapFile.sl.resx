@@ -120,9 +120,6 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Izberi datoteko s karto</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>OCAD datoteke (*.ocd)|*.ocd|slikovne datoteke|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Datoteka s karto</value>
   </data>

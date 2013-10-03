@@ -126,6 +126,9 @@
   <data name="ChangeControl" xml:space="preserve">
     <value>Změnit kontrolu</value>
   </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Změnit body kontroly</value>
+  </data>
   <data name="ChangeTitle" xml:space="preserve">
     <value>Změnit název</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Změnit název trati</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Změnit čáru textu</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
     <value>Změnit měřítko</value>
@@ -153,6 +159,9 @@
   <data name="DeleteObject" xml:space="preserve">
     <value>Odstranit objekt</value>
   </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Smazat čáru textu</value>
+  </data>
   <data name="AddControl" xml:space="preserve">
     <value>Přidat kontrolu</value>
   </data>
@@ -161,6 +170,9 @@
   </data>
   <data name="AddFinish" xml:space="preserve">
     <value>Přidat Cíl</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Přidat povinný bod</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>Přidat objekt</value>
@@ -180,8 +192,17 @@
   <data name="NewEvent" xml:space="preserve">
     <value>Vytvořit nový závod</value>
   </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Změnit značený úsek</value>
+  </data>
   <data name="ChangeCodes" xml:space="preserve">
     <value>Změnit kódy</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Změnit zobrazení tratí</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Přesunout ohyb spojnice</value>
   </data>
   <data name="AddBend" xml:space="preserve">
     <value>Přidat ohyb</value>
@@ -213,8 +234,17 @@
   <data name="ChangePunchPatterns" xml:space="preserve">
     <value>Změnit vzorek ražení</value>
   </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Změnit vzhled průkazky</value>
+  </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Nastavit oblast pro tisk</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Změnit počty závodníků</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Upravit textový popis</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Změnit pořadí tratí</value>
@@ -236,5 +266,17 @@
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Změnit text</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Nastavit zobrazení tratí</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Přidat výměnu map</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Smazat výměnu map</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Změnit vlastnosti části trati</value>
   </data>
 </root>

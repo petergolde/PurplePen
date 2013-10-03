@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.0.3\n"
+"Project-Id-Version: Purple Pen 2.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-07-31 12:07-07:00\n"
+"POT-Creation-Date: 2013-10-03 12:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -142,6 +142,7 @@ msgstr "(älä näytä)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
@@ -316,11 +317,11 @@ msgstr "&Valitse karttatiedosto..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
-msgid "OCAD files (*.ocd)|*.ocd|Image "
+msgid "All map "
+"files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "OCAD-tiedostot "
-"(*.ocd)|*.ocd|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;"
-"*.png;*.gif"
+msgstr ""
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -370,7 +371,7 @@ msgstr "Radan nimi"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Radan osa"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -592,11 +593,11 @@ msgstr "Lisää kartanvaihto"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Poista kartanvaihto"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Muuta radan osan ominaisuuksia"
 
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
@@ -691,20 +692,21 @@ msgstr "Radan osa:"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Ominaisuudet..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Näytä maaliympyrä tällä radan osalla"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Nämä asetukset vaikuttavat kartanvaihtoradan tämän osan "
+"ulkoasuun."
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Radan osan ominaisuudet"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -716,6 +718,7 @@ msgid "None"
 msgstr "Ei mikään"
 
 #: CreateOcadFiles.resx, coursesGroupBox.Text
+#: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
@@ -723,6 +726,7 @@ msgid "Courses"
 msgstr "Radat"
 
 #: CreateOcadFiles.resx, createButton.Text
+#: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Vie"
@@ -778,6 +782,7 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
+#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -785,26 +790,31 @@ msgid "Output"
 msgstr "Tuotos"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Valitse kansio..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Muu kansio"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
+#: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Samaan kuin karttatiedosto"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Samaan kuin Purple Pen -tiedosto"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
 msgstr "Kansio"
@@ -812,6 +822,103 @@ msgstr "Kansio"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "Vie OCAD-tiedostoihin"
+
+#: CreatePdfCourses.resx, label1.Text
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Marginaalit:"
+
+#: CreatePdfCourses.resx, marginChange.Text
+msgid "Change..."
+msgstr ""
+
+#: CreatePdfCourses.resx, paperSizeLabel.Text
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Paperin koko:"
+
+#: CreatePdfCourses.resx, paperSize.Text
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: CreatePdfCourses.resx, marginsLabel.Text
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Ylä: 0.55\", Ala: 0.55\", Vasen: 0.55\", Oikea: 0.55\""
+
+#: CreatePdfCourses.resx, checkBoxMergeParts.Text
+#: PrintCourses.resx, checkBoxMergeParts.Text
+msgid "Print Map Exchanges on Same Map "
+msgstr "Tulosta kartanvaihtoratojen koko rata samalle kartalle "
+
+#: CreatePdfCourses.resx, labelColorModel.Text
+#: PrintCourses.resx, labelColorModel.Text
+msgid "Color Model:"
+msgstr "Värimalli:"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr "RGB"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr "CMYK"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items
+#: PrintCourses.resx, comboBoxMultiPage.Items
+msgid "Crop to a single page"
+msgstr "Rajaa yhdelle sivulle"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items1
+#: PrintCourses.resx, comboBoxMultiPage.Items1
+msgid "Print on multiple pages"
+msgstr "Tulosta useille sivuille"
+
+#: CreatePdfCourses.resx, labelAppearanceInfo.Text
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr "Jos tulostusalue on liian suuri mahtuakseen yhdelle sivulle:"
+
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr ""
+
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr ""
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items2
+msgid "One per course part"
+msgstr ""
+
+#: CreatePdfCourses.resx, outputGroupBox.Text
+msgid "Files"
+msgstr ""
+
+#: CreatePdfCourses.resx, folderBrowserDialog.Description
+msgid "Select a folder for the PDF files"
+msgstr ""
+
+#: CreatePdfCourses.resx, $this.Text
+msgid "Create PDF Files"
+msgstr "Tulosta radat"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
@@ -969,6 +1076,10 @@ msgstr "Tallenna &nimellä..."
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
 msgstr "Vie &OCAD-tiedostoihin..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1730,11 +1841,13 @@ msgstr "Radan ominaisuudet"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
+#: PrinterMargins.resx, radioButtonLandscape.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
 msgstr "Vaaka"
 
 #: MiscText.resx, Portrait
+#: PrinterMargins.resx, radioButtonPortrait.Text
 msgid "Portrait"
 msgstr "Pysty"
 
@@ -1979,6 +2092,48 @@ msgstr "Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos "
 "osa, jolle haluat lisätä rastinmääritteet ja valitse "
 "\"Lisää rastinmääritteet\" uudelleen."
 
+#: MiscText.resx, DownloadGhostscript
+msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
+"installed. Would you like to automatically download and "
+"install it now?"
+msgstr ""
+
+#: MiscText.resx, GhostscriptNotInstalled
+msgid "GPL Ghostscript is not installed"
+msgstr ""
+
+#: MiscText.resx, PdfConversionFailed
+msgid "GPL Ghostscript failed to read PDF file successfully"
+msgstr ""
+
+#: MiscText.resx, PdfResultNotReadable
+msgid "Could not read result of PDF conversion from file '{0}'"
+msgstr ""
+
+#: MiscText.resx, CannotCreatePdfs
+msgid "Cannot create PDFs for the following reason:"
+msgstr ""
+
+#: MiscText.resx, UserDefined
+msgid "User Defined"
+msgstr ""
+
+#: MiscText.resx, PdfMapSize
+msgid "Map size from PDF"
+msgstr ""
+
+#: MiscText.resx, CancelledByUser
+msgid "Cancelled by user"
+msgstr ""
+
+#: MiscText.resx, CreatingFile
+msgid "Creating {0}..."
+msgstr ""
+
+#: MiscText.resx, PrintingPage
+msgid "Printing page {0} (of {1})"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Älä jatkossa varoita puuttuvista fonteista tässä "
@@ -2044,6 +2199,14 @@ msgstr "Kartan mittakaava:"
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
 msgstr "Kuvan resoluutio"
+
+#: NewEventBitmapScale.resx, pdfScaleLabel.Text
+msgid "When using an PDF file as a map, you must specify the map "
+"scale. \n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr ""
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2224,18 +2387,6 @@ msgstr "Tulosta"
 msgid "Change Printer..."
 msgstr "Vaihda tulostin..."
 
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
-
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Paperin koko:"
-
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
@@ -2268,37 +2419,9 @@ msgstr "Kopiot"
 msgid "Rasterize Before Printing"
 msgstr "Rasteroi ennen tulostusta"
 
-#: PrintCourses.resx, checkBoxMergeParts.Text
-msgid "Print Map Exchanges on Same Map "
-msgstr "Tulosta kartanvaihtoratojen koko rata samalle kartalle "
-
-#: PrintCourses.resx, labelColorModel.Text
-msgid "Color Model:"
-msgstr "Värimalli:"
-
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
 msgstr "OCAD yhteensopiva"
-
-#: PrintCourses.resx, comboBoxColorModel.Items1
-msgid "RGB"
-msgstr "RGB"
-
-#: PrintCourses.resx, comboBoxColorModel.Items2
-msgid "CMYK"
-msgstr "CMYK"
-
-#: PrintCourses.resx, comboBoxMultiPage.Items
-msgid "Crop to a single page"
-msgstr "Rajaa yhdelle sivulle"
-
-#: PrintCourses.resx, comboBoxMultiPage.Items1
-msgid "Print on multiple pages"
-msgstr "Tulosta useille sivuille"
-
-#: PrintCourses.resx, labelAppearanceInfo.Text
-msgid "If the print area is too large to fit on one page:"
-msgstr "Jos tulostusalue on liian suuri mahtuakseen yhdelle sivulle:"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
@@ -2308,16 +2431,6 @@ msgstr "Tulosta radat"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Muuta marginaaleja..."
-
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Ylä: 0.55\", Ala: 0.55\", Vasen: 0.55\", Oikea: 0.55\""
-
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Marginaalit:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -2363,6 +2476,50 @@ msgstr "Tulosta:"
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
 msgstr "Tulosta rastinmääritteet"
+
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr ""
+
+#: PrinterMargins.resx, label2.Text
+msgid "Width:"
+msgstr ""
+
+#: PrinterMargins.resx, label3.Text
+msgid "Height:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxPaperSize.Text
+msgid "Paper Size ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, groupBox1.Text
+msgid "Orientation"
+msgstr ""
+
+#: PrinterMargins.resx, label1.Text
+msgid "Left:"
+msgstr ""
+
+#: PrinterMargins.resx, label4.Text
+msgid "Top:"
+msgstr ""
+
+#: PrinterMargins.resx, label5.Text
+msgid "Right:"
+msgstr ""
+
+#: PrinterMargins.resx, label6.Text
+msgid "Bottom:"
+msgstr ""
+
+#: PrinterMargins.resx, groupBoxMargins.Text
+msgid "Margins ({0})"
+msgstr ""
+
+#: PrinterMargins.resx, $this.Text
+msgid "Page Setup"
+msgstr ""
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text

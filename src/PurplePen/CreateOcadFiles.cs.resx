@@ -147,6 +147,12 @@
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
   </data>
+  <data name="fileFormatCombo.Items4" xml:space="preserve">
+    <value>OCAD 10</value>
+  </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Výstup</value>
   </data>
@@ -164,5 +170,8 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Složka</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vytvořit soubory OCAD</value>
   </data>
 </root>

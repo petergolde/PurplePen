@@ -118,37 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Imprimir</value>
+    <value>Crear</value>
   </data>
-  <data name="printerChange.Text" xml:space="preserve">
-    <value>Seleccionar Impresora...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloide (11"x17")</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Márgenes:</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Tamaño del Papel:</value>
   </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Nombre de la Impresora</value>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloide (11"x17")</value>
   </data>
-  <data name="printerLabel.Text" xml:space="preserve">
-    <value>Impresora:</value>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Arriba: 0.55", Abajo: 0.55", Izquierda: 0.55", Derecha: 0.55"</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Salida</value>
   </data>
-  <data name="previewButton.Text" xml:space="preserve">
-    <value>Vista previa...</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Recorridos</value>
-  </data>
-  <data name="copiesLabel.Text" xml:space="preserve">
-    <value>Copias por recorrido:</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Copias</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Recortar a una página</value>
@@ -162,8 +150,41 @@
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Apariencia</value>
   </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Seleccionar carpeta...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Otra Carpeta</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Misma carpeta que el archivo del mapa</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Misma carpeta que el archivo de Purple Pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Carpeta</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimir Recorridos</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Seleccionar Impresora...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Nombre de la Impresora</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Impresora:</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Vista previa...</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Copias por recorrido:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Copias</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Imprime en multiples páginas</value>

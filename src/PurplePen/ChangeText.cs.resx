@@ -126,6 +126,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Kategorie</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Část trati</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Délka tratě</value>
   </data>
@@ -134,5 +137,8 @@
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Seznam kategorií</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Měřítko tisku</value>
   </data>
 </root>

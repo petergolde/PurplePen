@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>Číslo první kontroly</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Popis zobrazení:</value>
   </data>
@@ -135,11 +138,47 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Symboly a text</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Popis kolečka kontroly</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Pořadí (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Kód kontroly (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Pořadí a kód (3 - 145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Pořadí a body (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Kód a body (145(30))</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Zobraz body v:</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Sloupec A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Sloupec B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Sloupec H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(nezobrazovat)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Zobrazení</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>Následující text (volitelný) se zobrazí na druhém řádku popisů kontrol:</value>
+  </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>Seznam kategorií / podtitulek</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Převýšení:</value>
@@ -152,6 +191,9 @@
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>Normální trať</value>
+  </data>
+  <data name="courseKindCombo.Items1" xml:space="preserve">
+    <value>Scorelauf</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metry</value>

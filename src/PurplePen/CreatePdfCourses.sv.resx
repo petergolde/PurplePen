@@ -118,37 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Skriv ut</value>
+    <value>Skapa</value>
   </data>
-  <data name="printerChange.Text" xml:space="preserve">
-    <value>Byt skrivare...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Marginaler:</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Pappersstorlek:</value>
   </data>
-  <data name="printerName.Text" xml:space="preserve">
-    <value>Skrivarnamn</value>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
   </data>
-  <data name="printerLabel.Text" xml:space="preserve">
-    <value>Skrivare:</value>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Ovanför: 0.55", Nedanför: 0.55", Vänster: 0.55", Höger: 0.55"</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Utdata</value>
   </data>
-  <data name="previewButton.Text" xml:space="preserve">
-    <value>Förhandsgranska...</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Banor</value>
-  </data>
-  <data name="copiesLabel.Text" xml:space="preserve">
-    <value>Antal kopior av varje bana:</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopior</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Beskär till en enskild sida</value>
@@ -162,8 +150,41 @@
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Välj katalog...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annan katalog</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som kartfilen</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samma katalog som Puple Pen-filen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Katalog</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut banor</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Byt skrivare...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Skrivarnamn</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Skrivare:</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Förhandsgranska...</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Antal kopior av varje bana:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopior</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Skriv ut på fler sidor</value>

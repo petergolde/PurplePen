@@ -126,7 +126,16 @@
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>Zobrazit množná čísla</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Vložte vlastní text pro symbol ve sloupci "Text"</value>
+  </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Pohlaví:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vlastní text symbolu</value>
   </data>
 </root>

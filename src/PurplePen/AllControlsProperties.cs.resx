@@ -138,6 +138,9 @@
   <data name="appearanceGroupBox.Text" xml:space="preserve">
     <value>Zobrazení</value>
   </data>
+  <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
+    <value>Tato nastavení řeší jak budou vytištěny mapa a popisy pro "Všechny kontroly".</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vlastnosti všech kontrol</value>
   </data>
