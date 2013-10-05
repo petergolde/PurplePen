@@ -355,7 +355,9 @@
 		<row><td>Graphics2D.dll</td><td>{F29B890B-6478-4CF2-8644-FBA88E84131E}</td><td>INSTALLDIR</td><td>2</td><td/><td>graphics2d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MapModel.dll</td><td>{9351DD6B-9305-4619-B1AA-39842DB57FCA}</td><td>INSTALLDIR</td><td>2</td><td/><td>mapmodel.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_GDIPlus.dll</td><td>{A1582BE9-302C-418B-A5F0-D0F427951E8D}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_gdiplus.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Map_PDF.dll</td><td>{976760BE-1AFB-4A29-BAF3-CECF018672BE}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_pdf.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_WPF.dll</td><td>{DB480BAA-7341-4EA8-9912-CA25B22BA79A}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_wpf.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PdfSharp.dll</td><td>{1335D4AD-07CA-4523-B621-3F8031C9AFAA}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1887,7 +1889,9 @@
 		<row><td>AlwaysInstall</td><td>Graphics2D.dll</td></row>
 		<row><td>AlwaysInstall</td><td>MapModel.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_GDIPlus.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Map_PDF.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_WPF.dll</td></row>
+		<row><td>AlwaysInstall</td><td>PdfSharp.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1911,8 +1915,10 @@
 		<row><td>crashreporter.net.primary_ou</td><td>CrashReporter.NET.Primary_output</td><td>CrashReporter.NET.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;CrashReporter.NET&gt;|Built</td><td>3</td><td/></row>
 		<row><td>graphics2d.dll</td><td>Graphics2D.dll</td><td>GRAPHI~1.DLL|Graphics2D.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Graphics2D.dll</td><td>1</td><td/></row>
 		<row><td>map_gdiplus.dll</td><td>Map_GDIPlus.dll</td><td>MAP_GD~1.DLL|Map_GDIPlus.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_GDIPlus.dll</td><td>1</td><td/></row>
+		<row><td>map_pdf.dll</td><td>Map_PDF.dll</td><td>Map_PDF.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_PDF.dll</td><td>1</td><td/></row>
 		<row><td>map_wpf.dll</td><td>Map_WPF.dll</td><td>Map_WPF.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_WPF.dll</td><td>1</td><td/></row>
 		<row><td>mapmodel.dll</td><td>MapModel.dll</td><td>MapModel.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\MapModel.dll</td><td>1</td><td/></row>
+		<row><td>pdfsharp.dll</td><td>PdfSharp.dll</td><td>PdfSharp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\PdfSharp.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2179,7 +2185,9 @@
 		<row><td>Graphics2D.dll</td><td/><td/><td>_39F59A57_5D8F_4D59_8858_2A438FB81BB8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MapModel.dll</td><td/><td/><td>_9F109AA4_25A9_41BC_A1C2_1ACD5DA4583E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_GDIPlus.dll</td><td/><td/><td>_61804E8A_0948_46EC_BDAA_931A439D7A12_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Map_PDF.dll</td><td/><td/><td>_E1503259_3094_4F2F_BB37_27FC50EC2D49_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_WPF.dll</td><td/><td/><td>_BEE5851D_918B_40AA_8E31_A06131D196DB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PdfSharp.dll</td><td/><td/><td>_D6165809_0E2F_49A5_9FBC_E1FA85C51144_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -4548,9 +4556,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]PurplePen.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{28A0421F-72A9-45ED-8B83-7B900BD4F825}</td><td/></row>
+		<row><td>ProductCode</td><td>{E0C667D6-1959-4F4F-A96C-4D6F547E9102}</td><td/></row>
 		<row><td>ProductName</td><td>Purple Pen</td><td/></row>
-		<row><td>ProductVersion</td><td>2.0.3500</td><td/></row>
+		<row><td>ProductVersion</td><td>2.1.500</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4834,7 +4842,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.0.3500</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
+		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.1.500</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
 	</table>
 
 	<table name="Verb">
