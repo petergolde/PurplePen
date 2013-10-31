@@ -147,7 +147,9 @@ namespace PurplePen
         {
             if (dropdown != null) {
                 dropdown.Close();
-                dropdown.Dispose();
+                // We are getting occasional crash reports with drop downs being disposed. Removing this call
+                // to see if they go away.
+                //dropdown.Dispose();
                 dropdown = null;
             }
 
