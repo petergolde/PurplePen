@@ -368,6 +368,25 @@ namespace PurplePen.Tests
 
         }
 
+        [TestMethod]
+        public void PdfCreationTemplateBaseMap()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create8");
+            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Template.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create8\\Course 1.pdf") },
+                new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create8\\Course 1.png") });
+
+        }
+
     }
 }
 #endif

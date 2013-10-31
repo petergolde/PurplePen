@@ -498,7 +498,7 @@ namespace PurplePen
                 renderOptions.usePatternBitmaps = true;
 
             renderOptions.showSymbolBounds = showBounds;
-
+            renderOptions.showTemplates = true;
 
             // First draw the real map.
             switch (mapType) {

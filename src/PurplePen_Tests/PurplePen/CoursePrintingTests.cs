@@ -149,7 +149,7 @@ namespace PurplePen.Tests
             // Get the pages of the printing.
             CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, appearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
-
+            
             // Check all the pages against the baseline.
             for (int page = 0; page < bitmaps.Length; ++page) {
                 Bitmap bm = bitmaps[page];
@@ -157,14 +157,14 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bm, baseFileName);
                 bm.Dispose();
             }
-
+            
             // Only OCAD maps can be printed in XPS mode.
             if (controller.MapType == MapType.OCAD) {
                 // Get the pages of the printing in XPS/WPF mode
                 System.Windows.Media.Imaging.BitmapSource[] xpsBitmaps = coursePrinter.PrintXpsBitmaps(dpi);
 
                 // Check all the pages against the baseline.
-                for (int page = 0; page < bitmaps.Length; ++page) {
+                for (int page = 0; page < xpsBitmaps.Length; ++page) {
                     var bm = xpsBitmaps[page];
                     string baseFileName = basename + "_xps_page" + (page + 1).ToString();
                     string newFileName = TestUtil.GetTestFile(basename + "_xps_page" + (page + 1).ToString() + "_new");
@@ -245,6 +245,18 @@ namespace PurplePen.Tests
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
             CoursePrintingTest("courseprinting\\pdfbase", coursePrintSettings, new CourseAppearance(), 200);
+        }
+
+        [TestMethod]
+        public void PrintTemplatedBaseMap()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Template.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = true;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
+            CoursePrintingTest("courseprinting\\templatebase", coursePrintSettings, new CourseAppearance(), 200);
         }
 
         [TestMethod]

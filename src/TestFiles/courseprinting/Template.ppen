@@ -1,0 +1,43 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Template</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">template.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
+  </event>
+  <control id="1" kind="start">
+    <location x="-71.79929" y="20.8764057" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="-37.66362" y="21.1078339" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="-35.5807648" y="-6.200705" />
+  </control>
+  <control id="4" kind="finish">
+    <location x="-72.03072" y="-10.250701" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area left="-76.8402939" top="31.0103455" right="-8.000832" bottom="-22.2721214" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4" />
+</course-scribe-event>

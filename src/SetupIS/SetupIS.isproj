@@ -26,7 +26,7 @@
 			<TargetPath>My Test Exe.exe</TargetPath>
 		</TaggedOutputs> -->
 	</ItemGroup>
-	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2012SpringLimited\InstallShield.targets"/>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
 	<ItemGroup>
 		<ProjectReference Include="..\PurplePen\PurplePen.csproj">
 			<Name>PurplePen</Name>
