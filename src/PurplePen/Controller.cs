@@ -57,6 +57,7 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         string fileName;        // full file name of the event.
         MapDisplay mapDisplay = new MapDisplay();  // The map display being used.
+        bool mapCantLoad;       // If true, means the map didn't load last time we tried to load it.
         DateTime mapFileLastWrite;        // last write time of the map file, if any.
 
         ICommandMode currentMode;     // current command mode.
@@ -220,9 +221,6 @@ namespace PurplePen
         {
             get
             {
-                if (mapDisplay.FileName != MapFileName)
-                    NewMapFileLoaded(false);
-
                 return mapDisplay;
             }
         }
@@ -237,15 +235,19 @@ namespace PurplePen
             }
 
             bool success = HandleExceptions(
-                delegate { 
-                    if (mapDisplay.FileName != MapFileName)
+                delegate {
+                    if (!File.Exists(MapFileName))
+                        mapDisplay.SetMapFile(MapType.None, null);
+                    else if (mapDisplay.FileName != MapFileName || mapDisplay.MapType != MapType)
                         mapDisplay.SetMapFile(MapType, MapFileName); 
                 },
                 MiscText.CannotLoadMapFile, MapFileName);
 
+            if (MapFileName != null)
+                mapFileLastWrite = File.GetLastWriteTime(MapFileName);
+
             if (success) {
-                if (MapFileName != null)
-                    mapFileLastWrite = File.GetLastWriteTime(MapFileName);
+                mapCantLoad = false;
 
                 // Update the map scale from the scale of the map.
                 this.MapScale = mapDisplay.MapScale;
@@ -256,6 +258,7 @@ namespace PurplePen
             }
             else {
                 // Display no map.
+                mapCantLoad = true;
                 mapDisplay.SetMapFile(MapType.None, null);
             }
 
@@ -294,9 +297,18 @@ namespace PurplePen
                 inChangeMapFileCheck = true;
 
                 try {
-                    ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
-                    mapDisplay.SetMapFile(MapType, MapFileName);
-                    NewMapFileLoaded(false);
+                    if (File.Exists(MapFileName)) {
+                        ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
+                        mapDisplay.SetMapFile(MapType, MapFileName);
+                        NewMapFileLoaded(false);
+                    }
+                    else {
+                        // Map file no longer exists.
+                        ui.InfoMessage(string.Format(MiscText.MapFileDeleted, MapFileName));
+                        if (File.Exists(MapFileName))
+                            mapDisplay.SetMapFile(MapType, MapFileName);
+                        NewMapFileLoaded(true);
+                    }
                 }
                 finally {
                     inChangeMapFileCheck = false;
