@@ -57,7 +57,7 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         string fileName;        // full file name of the event.
         MapDisplay mapDisplay = new MapDisplay();  // The map display being used.
-        bool mapCantLoad;       // If true, means the map didn't load last time we tried to load it.
+        string mapCantLoad;       // If non-null, means the map with this name didn't load last time we tried to load it.
         DateTime mapFileLastWrite;        // last write time of the map file, if any.
 
         ICommandMode currentMode;     // current command mode.
@@ -221,6 +221,9 @@ namespace PurplePen
         {
             get
             {
+                if (mapDisplay.FileName != MapFileName && MapFileName != mapCantLoad)
+                    NewMapFileLoaded(false);
+
                 return mapDisplay;
             }
         }
@@ -247,7 +250,7 @@ namespace PurplePen
                 mapFileLastWrite = File.GetLastWriteTime(MapFileName);
 
             if (success) {
-                mapCantLoad = false;
+                mapCantLoad = null;
 
                 // Update the map scale from the scale of the map.
                 this.MapScale = mapDisplay.MapScale;
@@ -258,7 +261,7 @@ namespace PurplePen
             }
             else {
                 // Display no map.
-                mapCantLoad = true;
+                mapCantLoad = MapFileName;
                 mapDisplay.SetMapFile(MapType.None, null);
             }
 

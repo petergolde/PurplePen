@@ -1,4 +1,5 @@
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
 		<!-- Select a Product Configuration -->
 		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
@@ -28,13 +29,13 @@
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
 	<ItemGroup>
-		<ProjectReference Include="..\PurplePen\PurplePen.csproj">
-			<Name>PurplePen</Name>
-			<Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
-		</ProjectReference>
 		<ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj">
 			<Name>CrashReporter.NET</Name>
 			<Project>{67912BDA-1572-46B0-8623-5872D9DADBC8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\PurplePen\PurplePen.csproj">
+			<Name>PurplePen</Name>
+			<Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
 		</ProjectReference>
 	</ItemGroup>
 </Project>
