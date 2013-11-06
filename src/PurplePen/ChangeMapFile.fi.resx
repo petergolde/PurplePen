@@ -123,6 +123,9 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Valitse karttatiedosto...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Kaikki karttatiedostot|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD-tiedostot (*.ocd)|*.ocd|PDF-tiedostot (*.pdf)|*.pdf|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Resoluutio:</value>
   </data>

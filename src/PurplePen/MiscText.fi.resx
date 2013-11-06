@@ -423,4 +423,34 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos radan "Kaikki osat" on näkyvissä. Vaihda näkyviin radan osa, jolle haluat lisätä rastinmääritteet ja valitse "Lisää rastinmääritteet" uudelleen.</value>
   </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscriptiä ei ole asennettu</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript epäonnistui PDF-tiedoston lukemisessa</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Ei voitu lukea PDF-muuntamisen tulosta tiedostosta '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>PDF-tiedostojen luominen ei onnistunut seuraavasta syystä:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Käyttäjän määrittelemä</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>PDF-kartan koko</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Käyttäjä peruutti toimenpiteen</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Luodaan {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Tulostetaan sivua {0} (/ {1})</value>
+  </data>
 </root>

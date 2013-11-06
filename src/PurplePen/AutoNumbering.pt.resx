@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
+    <value>Impedir os códigos capicua, que podem ser lidos de cabeça para baixo (por exemplo, "68" / "89")</value>
+  </data>
+  <data name="renumberExistingRadioButton.Text" xml:space="preserve">
+    <value>Renumerar também os controlos existentes</value>
+  </data>
+  <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
+    <value>Aplicar estas configurações apenas nos postos de controlo recém-criados</value>
+  </data>
+  <data name="existingControlsGroupBox.Text" xml:space="preserve">
+    <value>Postos de controlo existentes</value>
+  </data>
+  <data name="automaticNumberingLabel.Text" xml:space="preserve">
+    <value>Postos de controlo recém-criados são numerados automaticamente de acordo com as seguintes definições.</value>
+  </data>
+  <data name="startingCodeLabel.Text" xml:space="preserve">
+    <value>Código inicial:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Numeração Automática</value>
+  </data>
 </root>

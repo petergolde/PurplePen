@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelPaper.Text" xml:space="preserve">
+    <value>Koko:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Leveys:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Korkeus:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Paperikoko ({0})</value>
+  </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
     <value>Vaaka</value>
   </data>
   <data name="radioButtonPortrait.Text" xml:space="preserve">
     <value>Pysty</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Suunta</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Vasen:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Yläreuna:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Oikea:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Alareuna:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Marginaalit ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Sivun asetukset</value>
   </data>
 </root>

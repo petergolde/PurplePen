@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Vie &amp;OCAD-tiedostoihin...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Vie PDF-tiedostoihin...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Vie Reitti&amp;härveli-tiedostoihin...</value>
   </data>
@@ -409,10 +412,10 @@
     <value>&amp;Virheraportti</value>
   </data>
   <data name="legLengthsMenu.Text" xml:space="preserve">
-    <value>&amp;Rastivälien pituudet</value>
+    <value>Rastivälien &amp;pituudet</value>
   </data>
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
-    <value>&amp;Rastien kiertojärjestys -raportti</value>
+    <value>&amp;Rastien ristiviiteraportti</value>
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>&amp;Kuormitusraportti</value>
@@ -431,6 +434,9 @@
   </data>
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>Tuki/&amp;Virheraportointi</value>
+  </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Lahjoita</value>
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Tietoja ohjelmasta</value>
@@ -461,6 +467,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kaatuminen</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Debug</value>

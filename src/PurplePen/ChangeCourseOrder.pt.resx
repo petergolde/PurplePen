@@ -120,7 +120,13 @@
   <data name="moveDownButton.Text" xml:space="preserve">
     <value>Mover para baixo</value>
   </data>
+  <data name="courseOrderLabel.Text" xml:space="preserve">
+    <value>Use os botões "Para Cima" e "Para Baixo" para alterar a ordem em que os percursos são listados na interface de utilizador, relatórios e impressão.</value>
+  </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Mover para cima</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ordem de Percurso</value>
   </data>
 </root>

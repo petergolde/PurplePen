@@ -123,4 +123,10 @@
   <data name="NewCode.HeaderText" xml:space="preserve">
     <value>Novo código</value>
   </data>
+  <data name="changeControlCodesLabel.Text" xml:space="preserve">
+    <value>Para alterar o código de um ou mais postos de controlo, clique na coluna "Novo Código" e digite o novo código. </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Alterar códigos de posto de controlo</value>
+  </data>
 </root>

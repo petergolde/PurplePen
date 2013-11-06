@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.1.0\n"
+"Project-Id-Version: Purple Pen 2.2.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-10-03 12:02-07:00\n"
+"POT-Creation-Date: 2013-11-06 13:41-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -2074,6 +2074,11 @@ msgstr ""
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
+msgstr ""
+
+#: MiscText.resx, MapFileDeleted
+msgid "The map file \"{0}\" has been deleted. Please try to restore "
+"the map file, then press \"Ok\"."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

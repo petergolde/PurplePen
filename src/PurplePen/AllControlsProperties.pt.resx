@@ -135,4 +135,13 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Símbolos e texto</value>
   </data>
+  <data name="appearanceGroupBox.Text" xml:space="preserve">
+    <value>Aspecto</value>
+  </data>
+  <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
+    <value>Estas configurações controlam como são impressos o mapa e a sinalética da matriz de postos de controlo.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propriedades de Matriz de postos de controlo</value>
+  </data>
 </root>

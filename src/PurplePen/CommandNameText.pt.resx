@@ -117,7 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Alterar Símbolo</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Alterar Código de Posto de controlo</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Alterar Posto de controlo</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Alterar Pontuação de Posto de controlo</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Mudar Título</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Alterar Desnível positivo</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Alterar Nome do Percurso</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Alterar Linha de Texto</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Actualizar Escala do Mapa</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Mover Posto de controlo</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Mover Número do Posto de controlo</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Mover Objecto</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Remover Posto de controlo</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Remover Objecto</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Adicionar Posto de controlo</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Adicionar Objecto</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Eliminar Percurso</value>
+  </data>
   <data name="NewCourse" xml:space="preserve">
     <value>Novo Percurso</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Criar Novo Evento</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Numeração Automática</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Definir Área de Impressão</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Alterar Ordem dos Percursos</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Alterar Ficheiro do Mapa</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Adicionar Linha de Texto</value>
   </data>
 </root>

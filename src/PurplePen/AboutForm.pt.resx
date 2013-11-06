@@ -123,6 +123,9 @@
   <data name="freeLabel.Text" xml:space="preserve">
     <value>Purple Pen é um software livre e pode ser copiado e compartilhado</value>
   </data>
+  <data name="disclaimerLabel.Text" xml:space="preserve">
+    <value>ESTE SOFTWARE É FORNECIDO PELOS DETENTORES DE DIREITOS AUTORAIS E COLABORADORES "COMO ESTÁ" E NÃO ACARRETA QUALQUER GARANTIA EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO LIMITADO A, AS GARANTIAS DE COMERCIALIZAÇÃO E ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO.</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceitar</value>
   </data>

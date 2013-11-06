@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.1.0\n"
+"Project-Id-Version: Purple Pen 2.2.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-10-03 12:02-07:00\n"
+"POT-Creation-Date: 2013-11-06 13:41-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,7 +30,11 @@ msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
 "WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
 "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
 "PURPOSE ARE DISCLAIMED."
-msgstr ""
+msgstr "ESTE SOFTWARE É FORNECIDO PELOS DETENTORES DE DIREITOS "
+"AUTORAIS E COLABORADORES \"COMO ESTÁ\" E NÃO ACARRETA "
+"QUALQUER GARANTIA EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS "
+"NÃO LIMITADO A, AS GARANTIAS DE COMERCIALIZAÇÃO E "
+"ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO."
 
 #: AboutForm.resx, okButton.Text
 #: InitialScreen.resx, okButton.Text
@@ -54,7 +58,7 @@ msgstr "Sobre o Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Código do primeiro posto de controlo:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -94,47 +98,47 @@ msgstr "Símbolos e texto"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "Etiquetas do círculo do posto de controlo:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Número de sequência (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Código de controlo (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Sequência e código (3-145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr ""
+msgstr "Sequência e pontuação (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr ""
+msgstr "Código e pontuação (3(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Mostrar pontos em:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Coluna A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Coluna B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Coluna H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(não mostrar)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -143,7 +147,7 @@ msgstr ""
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
 msgid "Appearance"
-msgstr ""
+msgstr "Aspecto"
 
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
@@ -188,7 +192,7 @@ msgstr "Novo Percurso"
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr ""
+msgstr "Digite o texto para colocar em linha separada da sinalética:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -217,49 +221,53 @@ msgstr "Todos os percursos com"
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr ""
+msgstr "Adicionar Linha de Texto"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr ""
+msgstr "Estas configurações controlam como são impressos o mapa e "
+"a sinalética da matriz de postos de controlo."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr ""
+msgstr "Propriedades de Matriz de postos de controlo"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr ""
+msgstr "Impedir os códigos capicua, que podem ser lidos de cabeça "
+"para baixo (por exemplo, \"68\" / \"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr ""
+msgstr "Renumerar também os controlos existentes"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr ""
+msgstr "Aplicar estas configurações apenas nos postos de controlo "
+"recém-criados"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
-msgstr ""
+msgstr "Postos de controlo existentes"
 
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr ""
+msgstr "Postos de controlo recém-criados são numerados "
+"automaticamente de acordo com as seguintes definições."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
 msgid "Starting code:"
-msgstr ""
+msgstr "Código inicial:"
 
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
 msgid "Automatic Numbering"
-msgstr ""
+msgstr "Numeração Automática"
 
 #: ChangeAllCodes.resx, OldCode.HeaderText
 msgid "Original Code"
@@ -272,11 +280,12 @@ msgstr "Novo código"
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr ""
+msgstr "Para alterar o código de um ou mais postos de controlo, "
+"clique na coluna \"Novo Código\" e digite o novo código. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
-msgstr ""
+msgstr "Alterar códigos de posto de controlo"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
@@ -286,7 +295,9 @@ msgstr "Mover para baixo"
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr ""
+msgstr "Use os botões \"Para Cima\" e \"Para Baixo\" para alterar a "
+"ordem em que os percursos são listados na interface de "
+"utilizador, relatórios e impressão."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
@@ -294,16 +305,16 @@ msgstr "Mover para cima"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr ""
+msgstr "Ordem de Percurso"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
-msgstr ""
+msgstr "Ficheiro do Mapa actual"
 
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr ""
+msgstr "&Escolher ficheiro do mapa..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
@@ -323,17 +334,17 @@ msgstr "Escala:"
 
 #: ChangeMapFile.resx, labelOneTo.Text
 msgid "1 :"
-msgstr ""
+msgstr "1 :"
 
 #: ChangeMapFile.resx, labelDpi2.Text
 #: NewEventBitmapScale.resx, dpiLabel.Text
 msgid "dots per inch"
-msgstr ""
+msgstr "pontos por polegada (dpi)"
 
 #: ChangeMapFile.resx, $this.Text
 #: NewEventMapFile.resx, labelTitle.Text
 msgid "Map File"
-msgstr ""
+msgstr "Ficheiro do Mapa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
@@ -346,95 +357,95 @@ msgstr ""
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
-msgstr ""
+msgstr "Inserir Texto Especial"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
-msgstr ""
+msgstr "Nome do Evento"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
 #: SelectionDescriptionText.resx, SpecialName_CourseName
 msgid "Course Name"
-msgstr ""
+msgstr "Nome do Percurso"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Secção do Percurso"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
-msgstr ""
+msgstr "Distância do Percurso"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr ""
+msgstr "Desnível positivo do Percurso"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
-msgstr ""
+msgstr "Lista de Escalões"
 
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Escala de Impressão"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
-msgstr ""
+msgstr "Alterar Símbolo"
 
 #: CommandNameText.resx, ChangeCode
 msgid "Change Control Code"
-msgstr ""
+msgstr "Alterar Código de Posto de controlo"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
-msgstr ""
+msgstr "Alterar Posto de controlo"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr ""
+msgstr "Alterar Pontuação de Posto de controlo"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
-msgstr ""
+msgstr "Mudar Título"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
-msgstr ""
+msgstr "Alterar Desnível positivo"
 
 #: CommandNameText.resx, ChangeCourseName
 msgid "Change Course Name"
-msgstr ""
+msgstr "Alterar Nome do Percurso"
 
 #: CommandNameText.resx, ChangeTextLine
 msgid "Change Text Line"
-msgstr ""
+msgstr "Alterar Linha de Texto"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr ""
+msgstr "Actualizar Escala do Mapa"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
-msgstr ""
+msgstr "Mover Posto de controlo"
 
 #: CommandNameText.resx, MoveControlNumber
 msgid "Move Control Number"
-msgstr ""
+msgstr "Mover Número do Posto de controlo"
 
 #: CommandNameText.resx, MoveObject
 msgid "Move Object"
-msgstr ""
+msgstr "Mover Objecto"
 
 #: CommandNameText.resx, DeleteControl
 msgid "Delete Control"
-msgstr ""
+msgstr "Remover Posto de controlo"
 
 #: CommandNameText.resx, DeleteObject
 msgid "Delete Object"
-msgstr ""
+msgstr "Remover Objecto"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
@@ -443,7 +454,7 @@ msgstr ""
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr ""
+msgstr "Adicionar Posto de controlo"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
@@ -461,11 +472,11 @@ msgstr ""
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
-msgstr ""
+msgstr "Adicionar Objecto"
 
 #: CommandNameText.resx, DeleteCourse
 msgid "Delete Course"
-msgstr ""
+msgstr "Eliminar Percurso"
 
 #: CommandNameText.resx, ChangeCourseProperties
 msgid "Change Course Properties"
@@ -478,7 +489,7 @@ msgstr ""
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
 msgid "Create New Event"
-msgstr ""
+msgstr "Criar Novo Evento"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
@@ -535,7 +546,7 @@ msgstr ""
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
 msgid "Set Print Area"
-msgstr ""
+msgstr "Definir Área de Impressão"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
@@ -548,11 +559,11 @@ msgstr ""
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
-msgstr ""
+msgstr "Alterar Ordem dos Percursos"
 
 #: CommandNameText.resx, ChangeMapFile
 msgid "Change Map File"
-msgstr ""
+msgstr "Alterar Ficheiro do Mapa"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
@@ -596,7 +607,7 @@ msgstr ""
 #: PrintDescriptions.resx, mmSuffixLabel.Text
 #: PrintPunches.resx, mmSuffixLabel.Text
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -604,11 +615,11 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
-msgstr ""
+msgstr "Normal"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
 msgid "Bold"
-msgstr ""
+msgstr "Negrito"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -620,7 +631,7 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
-msgstr ""
+msgstr "Largura da linha:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
@@ -636,19 +647,19 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, label5.Text
 msgid "Black:"
-msgstr ""
+msgstr "Preto:"
 
 #: CourseAppearanceDialog.resx, label6.Text
 msgid "Yellow:"
-msgstr ""
+msgstr "Amarelo:"
 
 #: CourseAppearanceDialog.resx, label3.Text
 msgid "Magenta:"
-msgstr ""
+msgstr "Magenta:"
 
 #: CourseAppearanceDialog.resx, label1.Text
 msgid "Cyan:"
-msgstr ""
+msgstr "Ciano:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -660,7 +671,7 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
 msgid "Preview"
-msgstr ""
+msgstr "Pré-visualizar"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -681,7 +692,7 @@ msgstr ""
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Propriedades..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -2076,6 +2087,11 @@ msgstr ""
 msgid "Printing page {0} (of {1})"
 msgstr ""
 
+#: MiscText.resx, MapFileDeleted
+msgid "The map file \"{0}\" has been deleted. Please try to restore "
+"the map file, then press \"Ok\"."
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr ""
@@ -3024,7 +3040,7 @@ msgstr ""
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: UnusedControls.resx, unusedControlsLabel.Text
 msgid "The following controls are in the All Controls collection, "

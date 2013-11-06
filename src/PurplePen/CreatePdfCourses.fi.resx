@@ -123,6 +123,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Marginaalit:</value>
   </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Muuta...</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Paperin koko:</value>
   </data>
@@ -176,6 +179,27 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Kansio</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Nimen etuliite:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Tiedostoja:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Yksi</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Yksi per rata</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Yksi per radan osa</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Tiedostot</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Valitse kansio PDF-tiedostoille</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tulosta radat</value>

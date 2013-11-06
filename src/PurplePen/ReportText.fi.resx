@@ -169,7 +169,7 @@
     <value>Tapahtuman {0} ratayhteenveto</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>Tapahtuman {0} rastien kiertojärjestys -raportti</value>
+    <value>Tapahtuman {0} rastien ristiviiteraportti</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Toisiaan lähellä olevat rastit</value>

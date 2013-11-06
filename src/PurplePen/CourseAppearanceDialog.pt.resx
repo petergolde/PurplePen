@@ -117,4 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Negrito</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Largura da linha:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelMM1.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Preto:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Amarelo:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ciano:</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>Pré-visualizar</value>
+  </data>
 </root>

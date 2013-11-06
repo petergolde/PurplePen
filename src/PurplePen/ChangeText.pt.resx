@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Inserir Texto Especial</value>
+  </data>
+  <data name="eventTitleMenuItem.Text" xml:space="preserve">
+    <value>Nome do Evento</value>
+  </data>
+  <data name="courseNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do Percurso</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Secção do Percurso</value>
+  </data>
+  <data name="courseLengthMenuItem.Text" xml:space="preserve">
+    <value>Distância do Percurso</value>
+  </data>
+  <data name="courseClimbMenuItem.Text" xml:space="preserve">
+    <value>Desnível positivo do Percurso</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>Lista de Escalões</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Escala de Impressão</value>
+  </data>
 </root>

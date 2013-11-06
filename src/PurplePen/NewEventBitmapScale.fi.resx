@@ -140,4 +140,10 @@ Kartan mittakaava kertoo kartan ja sen esittämän todellisen maaston mittojen v
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Kuvan resoluutio</value>
   </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Kun käytät PDF-tiedostoa karttana, sinun on määritettävä kartan mittakaava. 
+
+Mittakaava ilmaisee kartan ja sen kuvaaman todellisen maaston mittojen välisen suhteen.
+</value>
+  </data>
 </root>

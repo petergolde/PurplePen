@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.1.0\n"
+"Project-Id-Version: Purple Pen 2.2.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-10-03 12:01-07:00\n"
+"POT-Creation-Date: 2013-11-06 13:41-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -321,7 +321,11 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Kaikki "
+"karttatiedostot|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;"
+"*.png;*.gif|OCAD-tiedostot (*.ocd)|*.ocd|PDF-tiedostot "
+"(*.pdf)|*.pdf|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;"
+"*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -831,7 +835,7 @@ msgstr "Marginaalit:"
 
 #: CreatePdfCourses.resx, marginChange.Text
 msgid "Change..."
-msgstr ""
+msgstr "Muuta..."
 
 #: CreatePdfCourses.resx, paperSizeLabel.Text
 #: PrintCourses.resx, paperSizeLabel.Text
@@ -890,31 +894,31 @@ msgstr "Jos tulostusalue on liian suuri mahtuakseen yhdelle sivulle:"
 
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr ""
+msgstr "Nimen etuliite:"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr ""
+msgstr "Tiedostoja:"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
-msgstr ""
+msgstr "Yksi"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items1
 msgid "One per course"
-msgstr ""
+msgstr "Yksi per rata"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part"
-msgstr ""
+msgstr "Yksi per radan osa"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
-msgstr ""
+msgstr "Tiedostot"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "Valitse kansio PDF-tiedostoille"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
@@ -1015,7 +1019,7 @@ msgstr "Sulje"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
-msgstr ""
+msgstr "Lahjoita"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
@@ -1079,7 +1083,7 @@ msgstr "Vie &OCAD-tiedostoihin..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
-msgstr ""
+msgstr "Vie PDF-tiedostoihin..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1452,11 +1456,11 @@ msgstr "&Virheraportti"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr "&Rastivälien pituudet"
+msgstr "Rastivälien &pituudet"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr "&Rastien kiertojärjestys -raportti"
+msgstr "&Rastien ristiviiteraportti"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
@@ -1484,7 +1488,7 @@ msgstr "Tuki/&Virheraportointi"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "&Lahjoita"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1528,7 +1532,7 @@ msgstr "Font Metrics"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "Kaatuminen"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
@@ -2096,42 +2100,49 @@ msgstr "Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos "
 msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
 "installed. Would you like to automatically download and "
 "install it now?"
-msgstr ""
+msgstr "Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript "
+"olla asennettuna. Haluatko, että se automaattisesti "
+"ladataan ja asennetaan nyt?"
 
 #: MiscText.resx, GhostscriptNotInstalled
 msgid "GPL Ghostscript is not installed"
-msgstr ""
+msgstr "GPL Ghostscriptiä ei ole asennettu"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "GPL Ghostscript failed to read PDF file successfully"
-msgstr ""
+msgstr "GPL Ghostscript epäonnistui PDF-tiedoston lukemisessa"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Ei voitu lukea PDF-muuntamisen tulosta tiedostosta '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "PDF-tiedostojen luominen ei onnistunut seuraavasta syystä:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Käyttäjän määrittelemä"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "PDF-kartan koko"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Käyttäjä peruutti toimenpiteen"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Luodaan {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
+msgstr "Tulostetaan sivua {0} (/ {1})"
+
+#: MiscText.resx, MapFileDeleted
+msgid "The map file \"{0}\" has been deleted. Please try to restore "
+"the map file, then press \"Ok\"."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2206,7 +2217,11 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Kun käytät PDF-tiedostoa karttana, sinun on määritettävä "
+"kartan mittakaava. \n"
+"\n"
+"Mittakaava ilmaisee kartan ja sen kuvaaman todellisen "
+"maaston mittojen välisen suhteen.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2479,47 +2494,47 @@ msgstr "Tulosta rastinmääritteet"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Koko:"
 
 #: PrinterMargins.resx, label2.Text
 msgid "Width:"
-msgstr ""
+msgstr "Leveys:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Korkeus:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Paperikoko ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Suunta"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Vasen:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Yläreuna:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Oikea:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Alareuna:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Marginaalit ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Sivun asetukset"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
@@ -2653,7 +2668,7 @@ msgstr "Tapahtuman {0} ratayhteenveto"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "Tapahtuman {0} rastien kiertojärjestys -raportti"
+msgstr "Tapahtuman {0} rastien ristiviiteraportti"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
