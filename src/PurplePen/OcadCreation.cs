@@ -137,9 +137,9 @@ namespace PurplePen
         // Always with PDF, only if the current format is incompatible with bitmaps.
         bool CreateBitmapFile()
         {
-            if (controller.MapType == MapType.PDF)
+            if (controller.MapDisplay.MapType == MapType.PDF)
                 return true;
-            else if (controller.MapType == MapType.Bitmap) {
+            else if (controller.MapDisplay.MapType == MapType.Bitmap) {
                 ImageFormat imageFormat = controller.MapDisplay.BitmapImageFormat;
 
                 if (creationSettings.version <= 7)
@@ -161,7 +161,7 @@ namespace PurplePen
         {
             string extension;
 
-            Debug.Assert(controller.MapType == MapType.PDF || controller.MapType == MapType.Bitmap);
+            Debug.Assert(controller.MapDisplay.MapType == MapType.PDF || controller.MapDisplay.MapType == MapType.Bitmap);
 
             if (creationSettings.version <= 7) {
                 extension = ".bmp";
