@@ -62,11 +62,11 @@ namespace PurplePen
                 return s;
         }
 
-        // Translate * to {0} if desired
+        // Translate * to {0} if desired, and conversion null to empty string
         string UnsanitizeFillIn(string s)
         {
             if (s == null)
-                return null;
+                return "";
 
             if (translateFillIn)
                 return s.Replace("*", "{0}");
