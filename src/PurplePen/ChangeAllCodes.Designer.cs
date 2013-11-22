@@ -162,7 +162,6 @@ namespace PurplePen
             // changeControlCodesLabel
             // 
             resources.ApplyResources(this.changeControlCodesLabel, "changeControlCodesLabel");
-            this.changeControlCodesLabel.MaximumSize = new System.Drawing.Size(273, 100);
             this.changeControlCodesLabel.Name = "changeControlCodesLabel";
             // 
             // ChangeAllCodes
@@ -178,7 +177,6 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 

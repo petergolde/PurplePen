@@ -52,9 +52,11 @@
             // 
             // labelReadingPDF
             // 
+            this.labelReadingPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelReadingPDF.Location = new System.Drawing.Point(13, 13);
             this.labelReadingPDF.Name = "labelReadingPDF";
-            this.labelReadingPDF.Size = new System.Drawing.Size(331, 38);
+            this.labelReadingPDF.Size = new System.Drawing.Size(331, 27);
             this.labelReadingPDF.TabIndex = 7;
             this.labelReadingPDF.Text = "GPL Ghostscript is reading your PDF...";
             // 
@@ -74,6 +76,8 @@
             // 
             // labelFailure
             // 
+            this.labelFailure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFailure.ForeColor = System.Drawing.Color.Red;
             this.labelFailure.Location = new System.Drawing.Point(11, 99);
             this.labelFailure.Name = "labelFailure";

@@ -177,6 +177,7 @@ namespace PurplePen
             this.HelpTopic = "ControlsCustomizeDescriptionText.htm";
             this.Name = "CustomSymbolText";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Load += new System.EventHandler(this.CustomSymbolText_Load);
             this.Controls.SetChildIndex(this.labelChooseLanguage, 0);
             this.Controls.SetChildIndex(this.buttonDefault, 0);
             this.Controls.SetChildIndex(this.comboBoxLanguage, 0);

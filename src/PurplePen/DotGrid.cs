@@ -224,6 +224,7 @@ namespace PurplePen
         {
             clientSize = this.ClientSize;
             UpdateGridSize();
+            Invalidate();
         }
 
         private void DotGrid_Paint(object sender, PaintEventArgs e)

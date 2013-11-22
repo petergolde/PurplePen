@@ -392,5 +392,10 @@ namespace PurplePen
             UpdateControlsFromId(selectedId);
             listBoxSymbols.Refresh();
         }
+
+        private void CustomSymbolText_Load(object sender, EventArgs e)
+        {
+            listBoxSymbols.Height = this.ClientSize.Height - listBoxSymbols.Top - 25;
+        }
     }
 }
