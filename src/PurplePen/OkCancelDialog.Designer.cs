@@ -35,7 +35,6 @@
             // okButton
             // 
             resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.MinimumSize = new System.Drawing.Size(75, 0);
             this.okButton.Name = "okButton";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
@@ -55,6 +54,7 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.Name = "OkCancelDialog";
+            this.Load += new System.EventHandler(this.OkCancelDialog_Load);
             this.ResumeLayout(false);
 
         }

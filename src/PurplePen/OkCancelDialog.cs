@@ -27,5 +27,12 @@ namespace PurplePen
             if (OkButtonClicked())
                 DialogResult = DialogResult.OK;
         }
+
+        private void OkCancelDialog_Load(object sender, EventArgs e)
+        {
+            if (okButton.Bounds.Right > cancelButton.Bounds.Left - 6) {
+                okButton.Left = okButton.Left - (okButton.Bounds.Right - cancelButton.Bounds.Left + 6);
+            }
+        }
     }
 }
