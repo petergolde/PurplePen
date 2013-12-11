@@ -228,6 +228,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(-1, Util.CompareVersionStrings("1.4.2", "2.1.2.1"));
             Assert.AreEqual(-1, Util.CompareVersionStrings("0.0.4.2", "2.0"));
             Assert.AreEqual(0, Util.CompareVersionStrings("0.0.4.2", "0.0.4.2"));
+            Assert.AreEqual(0, Util.CompareVersionStrings("0.0.3.1", "foobar"));
+            Assert.AreEqual(0, Util.CompareVersionStrings("zapf", "1.1.2.3"));
         }
 
         [TestMethod]
@@ -238,6 +240,7 @@ namespace PurplePen.Tests
             Assert.AreEqual("2.1.1 Beta 2", Util.PrettyVersionString("2.1.1.220"));
             Assert.AreEqual("1.0.0 RC 3", Util.PrettyVersionString("1.0.0.330"));
             Assert.AreEqual("1.0.1 Alpha 1", Util.PrettyVersionString("1.0.1.110"));
+            Assert.AreEqual("baaz", Util.PrettyVersionString("baaz"));
         }
 
         [TestMethod]

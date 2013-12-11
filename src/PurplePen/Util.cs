@@ -389,39 +389,51 @@ namespace PurplePen
         }
 
         // Compare version strings. If s1 < s2, return -1; if s1 > s2, return 1, else return 0.
+        // Returns 0 if one or both didn't parse.
         public static int CompareVersionStrings(string s1, string s2)
         {
-            Version v1 = new Version(s1);
-            Version v2 = new Version(s2);
-            return v1.CompareTo(v2);
+            Version v1, v2;
+            if (Version.TryParse(s1, out v1) && Version.TryParse(s2, out v2))
+                return v1.CompareTo(v2);
+            else
+                return 0;
         }
 
         // Compare version strings. Return true if all exception last component is same.
+        // Return false if one or both didn't parse.
         public static bool SameExceptRevision(string s1, string s2)
         {
-            Version v1 = new Version(s1);
-            Version v2 = new Version(s2);
-            return (v1.Major == v2.Major && v1.Minor == v2.Minor && v1.Build == v2.Build);
+            Version v1, v2;
+            if (Version.TryParse(s1, out v1) && Version.TryParse(s2, out v2))
+                return (v1.Major == v2.Major && v1.Minor == v2.Minor && v1.Build == v2.Build);
+            else
+                return false;
         }
 
         // Pretty-ize the version string. 
         public static string PrettyVersionString(string verString)
         {
-            Version v = new Version(verString);
-            string modifier;
+            Version v;
 
-            if (v.Revision >= VersionNumber.Stable)
-                modifier = "";
-            else if (v.Revision >= VersionNumber.RC)
-                modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 10.0);
-            else if (v.Revision >= VersionNumber.Beta)
-                modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 10.0);
-            else if (v.Revision >= VersionNumber.Alpha)
-                modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 10.0);
-            else
-                modifier = string.Format(" ({0})", v.Revision);
+            if (Version.TryParse(verString, out v)) {
+                string modifier;
 
-            return string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
+                if (v.Revision >= VersionNumber.Stable)
+                    modifier = "";
+                else if (v.Revision >= VersionNumber.RC)
+                    modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 10.0);
+                else if (v.Revision >= VersionNumber.Beta)
+                    modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 10.0);
+                else if (v.Revision >= VersionNumber.Alpha)
+                    modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 10.0);
+                else
+                    modifier = string.Format(" ({0})", v.Revision);
+
+                return string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
+            }
+            else {
+                return verString;
+            }
         }
 
         // Get text describing a distance. The input is in hundreths of an inch.
