@@ -39,7 +39,15 @@ namespace PurplePen
 
         public override SD.Color ToColor(CmykColor cmykColor)
         {
-            return CmykToRgbColor(cmykColor);
+            try {
+                return CmykToRgbColor(cmykColor);
+            }
+            catch (TypeInitializationException) {
+                // In some cases, a weirdly installed .NET framework will cause an exception here.
+                System.Windows.Forms.MessageBox.Show(MiscText.BadDotNetFramework, MiscText.AppTitle);
+                Environment.Exit(1);
+                return new SD.Color();
+            }
         }
     }
 

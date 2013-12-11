@@ -124,6 +124,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The  .NET framework on your computer does not appear to be correctly installed. Please visit http://microsoft.com/net and install the latest version of the .NET framework for your Windows operating system..
+        /// </summary>
+        internal static string BadDotNetFramework {
+            get {
+                return ResourceManager.GetString("BadDotNetFramework", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The load for a course must be an integer 0-999999, or blank..
         /// </summary>
         internal static string BadLoad {
