@@ -406,9 +406,18 @@ namespace PurplePen
         {
             if (dimmedBitmap != null)
                 dimmedBitmap.Dispose();
+            dimmedBitmap = null;
 
-            if ((mapType == MapType.Bitmap || mapType == MapType.PDF) && mapIntensity < 0.99F) {
-                Bitmap dimmed = new Bitmap(bitmap.PixelWidth, bitmap.PixelHeight);
+            // Only dim bitmap if size isn't too large. Otherwise takes too much memory.
+            if ((mapType == MapType.Bitmap || mapType == MapType.PDF) && mapIntensity < 0.99F && (bitmap.PixelWidth * bitmap.PixelHeight) < 36000000) {
+                Bitmap dimmed = null;
+                try {
+                    dimmed = new Bitmap(bitmap.PixelWidth, bitmap.PixelHeight);
+                }
+                catch (Exception) {
+                    return;  // typically because not enough memory. Uses alternate dimming method.
+                }
+
                 Graphics g = Graphics.FromImage(dimmed);
                 ImageAttributes imageAttributes = new ImageAttributes();
                 imageAttributes.SetColorMatrix(ComputeColorMatrix());
@@ -439,6 +448,8 @@ namespace PurplePen
 
             // Setup drawing map and intensity.
             BitmapScaling scalingMode = antialiased ? BitmapScaling.MediumQuality : BitmapScaling.NearestNeighbor;
+            if (bitmap.PixelHeight * bitmap.PixelWidth > 50000000)
+                scalingMode = BitmapScaling.NearestNeighbor;            // Turn off high quality scaling for very large bitmaps.
 
             // Get source bitmap. Use the dimmed bitmap if there is one.
             IGraphicsBitmap sourceBitmap;
@@ -449,6 +460,14 @@ namespace PurplePen
 
             // Draw it.
             grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), scalingMode);
+
+            if (mapIntensity < 0.99 && sourceBitmap == bitmap) {
+                // Dimming desired, but we don't have a dimmed bitmap. Use an alpha mask instead.
+                CmykColor dimmedWhite = CmykColor.FromCmyka(0, 0, 0, 0, 1-mapIntensity);
+                object brush = new object();
+                grTarget.CreateSolidBrush(brush, dimmedWhite);
+                grTarget.FillRectangle(brush, new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight));
+            }
 
             // Pop transform
             grTarget.PopTransform();
@@ -510,9 +529,9 @@ namespace PurplePen
 
             case MapType.Bitmap:
             case MapType.PDF:
-                grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+                grTargetBitmapMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
                 DrawBitmapMap(grTargetBitmapMap, visRect);
-                grTargetOcadMap.PopAntiAliasing();
+                grTargetBitmapMap.PopAntiAliasing();
                 break;
 
             case MapType.None:

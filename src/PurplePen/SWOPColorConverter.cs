@@ -28,7 +28,7 @@ namespace PurplePen
             if (!cmykToColor.TryGetValue(cmykColor, out result)) {
                 float[] colorValues = new float[4] { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
                 SWM.Color color = SWM.Color.FromValues(colorValues, SwopUri);
-                result = SD.Color.FromArgb(color.R, color.G, color.B);
+                result = SD.Color.FromArgb((byte) Math.Round(cmykColor.Alpha * 255), color.R, color.G, color.B);
                 lock (cmykToColor) {
                     cmykToColor[cmykColor] = result;
                 }
