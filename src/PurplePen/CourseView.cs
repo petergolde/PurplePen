@@ -708,7 +708,7 @@ namespace PurplePen
 
             // Assign ordinals, if applicable. If scores in column A, then no ordinals will be assigned.
             if (courseView.scoreColumn != 0) {
-                int ordinal = 1;
+                int ordinal = course.firstControlOrdinal;
                 foreach (ControlView control in courseView.controlViews) {
                     if (eventDB.GetControl(control.controlId).kind == ControlPointKind.Normal)
                         control.ordinal = ordinal++;

@@ -315,6 +315,47 @@ Special 4 (OOB)
         }
 
         [TestMethod]
+        public void ScoreCourseViewWithCustomOrdinals()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent4.coursescribe"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
+            DumpCourseView(courseView, writer);
+            actual = writer.ToString();
+            expected =
+@"Name='Score 4', Kind='Score', CourseId=5
+Total Length=0  Part Length=0  Total Climb=-1  ScoreColumn=1  Total Score=155  Total Controls=11
+ 0: [-1] Ids:  1,101
+ 1: [ 7] Ids: 17,109
+ 2: [ 8] Ids:  2,113
+ 3: [ 9] Ids:  7,114
+ 4: [10] Ids: 11,102
+ 5: [11] Ids:  8,115
+ 6: [12] Ids: 20,112
+ 7: [13] Ids:  5,107
+ 8: [14] Ids:  4,105
+ 9: [15] Ids: 16,108
+10: [16] Ids: 18,110
+11: [17] Ids: 19,111
+12: [-1] Ids:  6,116
+13: [-1] Ids:  3,104
+14: [-1] Ids: 15,106
+15: [-1] Ids: 22,103
+Special 1 (FirstAid)
+Special 3 (Boundary)
+Special 4 (OOB)
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void ScoreDescriptionSpecialsOnly()
         {
             UndoMgr undomgr = new UndoMgr(5);
