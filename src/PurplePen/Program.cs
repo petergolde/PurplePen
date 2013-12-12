@@ -61,6 +61,7 @@ namespace PurplePen
             Application.SetCompatibleTextRenderingDefault(false);
 
             InitUILanguage();
+            InitClientId();
 
             if (args.Length > 0 && LoadCommandLineFile(args[0])) {
                 // We successfully loaded a file from the command line.
@@ -84,6 +85,16 @@ namespace PurplePen
                     System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(uiLanguage);
                 }
                 catch (Exception) { }        // Ignore problem -- e.g. this culture name isn't supported.
+            }
+        }
+
+        // Initialize the client id if we don't have one.
+        static void InitClientId()
+        {
+            Guid clientId = Settings.Default.ClientId;
+            if (clientId == new Guid()) {
+                Settings.Default.ClientId = Guid.NewGuid();
+                Settings.Default.Save();
             }
         }
 

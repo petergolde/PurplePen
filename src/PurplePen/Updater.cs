@@ -36,6 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -270,7 +271,36 @@ namespace PurplePen
                 }
             }
 
+            // Collect anonymous statistics, so we can know number of time the program is invoked, and from where, which version and language people are using.
+            string uiLanguage = Settings.Default.UILanguage;
+            if (string.IsNullOrEmpty(uiLanguage))
+                uiLanguage = CultureInfo.CurrentUICulture.Name;
+
+            string status = string.Format("{{\"Version\":\"{0}\", \"Locale\":\"{1}\", \"TimeZone\":\"{2}\", \"UILang\":\"{3}\", \"ClientId\":\"{4}\"}}",
+                JsonEncode(VersionNumber.Current),
+                JsonEncode(CultureInfo.CurrentCulture.Name),
+                JsonEncode(TimeZone.CurrentTimeZone.StandardName),
+                JsonEncode(uiLanguage),
+                JsonEncode(Settings.Default.ClientId.ToString()));
+            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            client.Encoding = Encoding.UTF8;
+
+            try {
+                client.UploadStringAsync(new Uri("http://monitor.purple-pen.org/api/Invocation"), status);
+            }
+            catch (WebException) {
+                // Ignore problems.
+            }
+
             e.Result = results;
+        }
+
+        // Encode a string for JSON
+        static string JsonEncode(string s)
+        {
+            if (s == null)
+                s = "";
+            return s.Replace("\\", "\\\\").Replace("\"", "\\\"");
         }
     }
 }
