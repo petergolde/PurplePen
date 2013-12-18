@@ -2184,6 +2184,10 @@ namespace PurplePen
         // A change has been made to a box in the description.
         public void DescriptionChange(DescriptionControl.ChangeKind kind, int line, int box, object newValue)
         {
+            string newStringValue = "";  // never null!
+            if (newValue is string)
+                newStringValue = (string)newValue;
+
             CancelMode();
 
             switch (kind) {
@@ -2193,13 +2197,13 @@ namespace PurplePen
                 case DescriptionControl.ChangeKind.Climb:
                     float newClimb;
 
-                    if ((string)newValue == "" || (string)newValue == null) {
+                    if (newStringValue == "") {
                         newClimb = -1F;
                     }
                     else {
-                        if (!float.TryParse(Util.RemoveMeterSuffix((string)newValue), out newClimb) || newClimb < 0 || newClimb >= 10000) {
+                        if (!float.TryParse(Util.RemoveMeterSuffix(newStringValue), out newClimb) || newClimb < 0 || newClimb >= 10000) {
                             // Invalid climb value.
-                            ui.ErrorMessage(string.Format(MiscText.BadClimb, (string)newValue));
+                            ui.ErrorMessage(string.Format(MiscText.BadClimb, newStringValue));
                             break;
                         }
                     }
@@ -2212,13 +2216,13 @@ namespace PurplePen
                 case DescriptionControl.ChangeKind.Score:
                     int newScore;
 
-                    if ((string)newValue == "" || (string)newValue == null) {
+                    if (newStringValue == "") {
                         newScore = 0;
                     }
                     else {
-                        if (!int.TryParse((string)newValue, out newScore) || newScore < 0 || newScore >= 1000) {
+                        if (!int.TryParse(newStringValue, out newScore) || newScore < 0 || newScore >= 1000) {
                             // Invalid score value.
-                            ui.ErrorMessage(string.Format(MiscText.BadScore, (string)newValue));
+                            ui.ErrorMessage(string.Format(MiscText.BadScore, newStringValue));
                             break;
                         }
                     }
@@ -2231,35 +2235,35 @@ namespace PurplePen
                 case DescriptionControl.ChangeKind.SecondaryTitle:
                     Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(106, CommandNameText.ChangeTitle);
-                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newStringValue);
                     undoMgr.EndCommand(106);
                     break;
 
                 case DescriptionControl.ChangeKind.CourseName:
                     Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(105, CommandNameText.ChangeCourseName);
-                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (string)newValue);
+                    ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newStringValue);
                     undoMgr.EndCommand(105);
                     break;
 
                 case DescriptionControl.ChangeKind.Title:
                     undoMgr.BeginCommand(104, CommandNameText.ChangeTitle);
-                    ChangeEvent.ChangeEventTitle(eventDB, (string)newValue);
+                    ChangeEvent.ChangeEventTitle(eventDB, newStringValue);
                     undoMgr.EndCommand(104);
                     break;
 
                 case DescriptionControl.ChangeKind.Code:
-                    if (eventDB.GetControl(selectionMgr.ActiveDescription[line].controlId).code == (string)newValue)
+                    if (eventDB.GetControl(selectionMgr.ActiveDescription[line].controlId).code == newStringValue)
                         break;  // no change to control.
 
-                    if (QueryEvent.IsCodeInUse(eventDB, (string)newValue)) {
+                    if (QueryEvent.IsCodeInUse(eventDB, newStringValue)) {
                         if (selectionMgr.Selection.ActiveCourseDesignator.IsAllControls) {
                             // In all controls. We can't change to a control that is in use.
-                            ui.ErrorMessage(string.Format(MiscText.CodeInUse, (string) newValue));
+                            ui.ErrorMessage(string.Format(MiscText.CodeInUse, newStringValue));
                         }
                         else {
                             // In a course, we can change a control to a new control by typing in the new code.
-                            Id<ControlPoint> newControlId = QueryEvent.FindCode(eventDB, (string) newValue);
+                            Id<ControlPoint> newControlId = QueryEvent.FindCode(eventDB, newStringValue);
                             undoMgr.BeginCommand(193, CommandNameText.ChangeControl);
                             ChangeEvent.ChangeControl(eventDB, selectionMgr.ActiveDescription[line].courseControlId, newControlId);
                             undoMgr.EndCommand(193);
@@ -2269,7 +2273,7 @@ namespace PurplePen
                         // The new code is not in use. Change the code to the new code after validating.
                         string reason;
                         bool valid;
-                        valid = QueryEvent.IsPreferredControlCode(eventDB, (string) newValue, out reason);
+                        valid = QueryEvent.IsPreferredControlCode(eventDB, newStringValue, out reason);
                         if (reason != null) {
                             if (valid)
                                 ui.WarningMessage(reason);   // valid, but not preferred. Warn the user but continue with the change.
@@ -2279,7 +2283,7 @@ namespace PurplePen
 
                         if (valid) {
                             undoMgr.BeginCommand(103, CommandNameText.ChangeCode);
-                            ChangeEvent.ChangeCode(eventDB, selectionMgr.ActiveDescription[line].controlId, (string) newValue);
+                            ChangeEvent.ChangeCode(eventDB, selectionMgr.ActiveDescription[line].controlId, newStringValue);
                             undoMgr.EndCommand(103);
                         }
                     }
@@ -2294,7 +2298,7 @@ namespace PurplePen
                         ChangeEvent.ChangeDescriptionSymbol(eventDB, selectionMgr.ActiveDescription[line].controlId, box - 2, ((Symbol)newValue).Id);
                     else {
                         Debug.Assert(box == 5);         // must be column F.
-                        ChangeEvent.ChangeColumnFText(eventDB, selectionMgr.ActiveDescription[line].controlId, (string)newValue);
+                        ChangeEvent.ChangeColumnFText(eventDB, selectionMgr.ActiveDescription[line].controlId, newStringValue);
                     }
 
                     undoMgr.EndCommand(101);
@@ -2322,7 +2326,7 @@ namespace PurplePen
 
                     // Update the custom symbol text. Empty string means revert to standard text.
                     QueryEvent.GetCustomSymbolText(eventDB, out customSymbolText, out customSymbolKey);
-                    if (String.IsNullOrEmpty((string)newValue)) {
+                    if (String.IsNullOrEmpty(newStringValue)) {
                         customSymbolText.Remove(symbolId);
                         customSymbolKey.Remove(symbolId);
                     }
@@ -2330,7 +2334,7 @@ namespace PurplePen
                         List<SymbolText> newTexts = new List<SymbolText>();
                         foreach (SymbolText symtext in customSymbolText[symbolId]) {
                             SymbolText newText = symtext.Clone();
-                            newText.Text = (string) newValue;
+                            newText.Text = newStringValue;
                             newTexts.Add(newText);
                         }
 
@@ -2345,7 +2349,7 @@ namespace PurplePen
                 case DescriptionControl.ChangeKind.TextLine:
                     // Change a text line.
                     Debug.Assert(newValue == null || newValue is String);
-                    string text = (string) newValue;
+                    string text = newStringValue;
                     DescriptionLine.TextLineKind textLineKind = selectionMgr.Selection.SelectedTextLineKind;
 
                     undoMgr.BeginCommand(8173, CommandNameText.ChangeTextLine);
