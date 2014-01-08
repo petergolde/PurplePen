@@ -994,11 +994,12 @@ namespace PurplePen
         public string fontName;                  // font name
         public FontStyle fontStyle;              // font style
         private float emHeight;                     // em height of the font.
+        private float outlineWidth;                 // width of white outline (0 for none)
 
         protected SizeF size;                       // size of the text.
 
         // NOTE: scale ratio is not used for this type of object!
-        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight)
+        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight, bool outline)
             :
            base(controlId, courseControlId, specialId, 1.0F, new CourseAppearance())
        {
@@ -1007,6 +1008,7 @@ namespace PurplePen
             this.fontName = fontName;
             this.fontStyle = fontStyle;
             this.emHeight = emHeight;
+            this.outlineWidth = outline ? NormalCourseAppearance.textOutlineWidth : 0;
             this.size = MeasureText();
        }
 
@@ -1033,6 +1035,7 @@ namespace PurplePen
             public string fontName;
             public FontStyle fontStyle;
             public float emHeight;
+            public float outineWidth;
         }
 
         protected override object SymDefKey()
@@ -1041,21 +1044,48 @@ namespace PurplePen
             key.fontName = fontName;
             key.fontStyle = fontStyle;
             key.emHeight = emHeight;
+            key.outineWidth = outlineWidth;
 
             return key;
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
+            throw new NotImplementedException("Should not be called.");
+        }
+
+        protected virtual SymDef CreateSymDef(Map map, SymColor symColor, SymColor whiteColor)
+        {
             // Find a free id.
             int ocadId = map.GetFreeSymdefOcadId(OcadIdIntegerPart);
 
             TextSymDef symdef = new TextSymDef(SymDefName, ocadId, null);
             symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
+            if (outlineWidth > 0) {
+                TextSymDef.Framing framing = new TextSymDef.Framing() {
+                    framingColor = whiteColor,
+                    framingStyle = TextSymDef.FramingStyle.Line,
+                    lineStyle = LineStyle.Rounded,
+                    lineWidth = outlineWidth
+                };
+                symdef.SetFraming(framing);
+            }
 
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Number_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
+        }
+
+        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        {
+            object key = new Pair<short, object>(symColor.OcadId, SymDefKey());
+
+            if (!dict.ContainsKey(key)) {
+                SymColor whiteColor = ((AreaSymDef)dict[CourseLayout.KeyWhiteOut]).FillColor;
+                dict[key] = CreateSymDef(map, symColor, whiteColor);
+            }
+
+            AddToMap(map, dict[key]);
         }
 
        protected override void AddToMap(Map map, SymDef symdef)
@@ -1857,7 +1887,7 @@ namespace PurplePen
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
                    appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, 
-                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight)
+                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight, appearance.numberOutlined)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -1881,8 +1911,8 @@ namespace PurplePen
         public PointF centerPoint;
 
         public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, 
-            NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style,
+            NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight, appearance.numberOutlined)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -1906,7 +1936,7 @@ namespace PurplePen
        private RectangleF rectBounding;
 
        public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle)
-           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size))
+           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), false)
        {
            this.rectBounding = rectBounding;
        }

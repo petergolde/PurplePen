@@ -1799,6 +1799,7 @@ namespace PurplePen
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
         public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
+        public bool numberOutlined = false;             // Is the number outlined?
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false

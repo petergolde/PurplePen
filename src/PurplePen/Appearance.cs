@@ -206,6 +206,9 @@ namespace PurplePen
 
         public const double defaultControlNumberAngle = Math.PI / 6;  // default angle of the control number absent constraints, in radian.
 
+        public const float textOutlineWidth = 0.13F;  // Amount in mm to outline text in white.
+
+
         // The color to use in the map display for the control descriptions (black).
         public const string blackColorName = "Black";
         public const short blackColorOcadId = 0;

@@ -60,6 +60,7 @@ namespace PurplePen.Tests
             specialAppearance.lineWidth = 2.85714F; // 1mm lines
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;
+            specialAppearance.numberOutlined = true;
         }
 
         // Draw a grid on the graphics
@@ -434,9 +435,9 @@ namespace PurplePen.Tests
         public void ControlNumberSpecial()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "37", new PointF(0, 0));
-            CheckRenderBitmap(courseobj, "control_number_special");
+            CheckRenderBitmap(courseobj, "control_number_special", Color.Aquamarine);
             courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "37", new PointF(0, 0));
-            CheckRenderBitmapSmall(courseobj, "control_number_special");
+            CheckRenderBitmapSmall(courseobj, "control_number_special", Color.Aquamarine);
         }
 
         [TestMethod]
@@ -452,9 +453,9 @@ namespace PurplePen.Tests
         public void CodeSpecial()
         {
             CourseObj courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, "108", new PointF(0, 0));
-            CheckRenderBitmap(courseobj, "code_number_special");
+            CheckRenderBitmap(courseobj, "code_number_special", Color.Aquamarine);
             courseobj = new CodeCourseObj(ControlId(0), CourseControlId(0), 0.5F, specialAppearance, "108", new PointF(0, 0));
-            CheckRenderBitmapSmall(courseobj, "code_number_special");
+            CheckRenderBitmapSmall(courseobj, "code_number_special", Color.Aquamarine);
         }
 
         [TestMethod]
