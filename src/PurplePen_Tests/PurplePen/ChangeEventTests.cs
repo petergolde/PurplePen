@@ -2498,6 +2498,7 @@ namespace PurplePen.Tests
             courseAppearance.controlCircleSize = 0.9F;
             courseAppearance.numberHeight = 1.1F;
             courseAppearance.numberBold = true;
+            courseAppearance.numberOutlined = true;
             courseAppearance.useDefaultPurple = false;
             courseAppearance.purpleC = 0.4F;
             courseAppearance.purpleM = 0.5F;
@@ -2515,6 +2516,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.9F, n.controlCircleSize);
             Assert.AreEqual(1.1F, n.numberHeight);
             Assert.AreEqual(true, n.numberBold);
+            Assert.AreEqual(true, n.numberOutlined);
             Assert.AreEqual(false, n.useDefaultPurple);
             Assert.AreEqual(0.4F, n.purpleC);
             Assert.AreEqual(0.5F, n.purpleM);
@@ -2529,6 +2531,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(1.0F, n.controlCircleSize);
             Assert.AreEqual(1.0F, n.numberHeight);
             Assert.AreEqual(false, n.numberBold);
+            Assert.AreEqual(false, n.numberOutlined);
             Assert.AreEqual(true, n.useDefaultPurple);
         }
 

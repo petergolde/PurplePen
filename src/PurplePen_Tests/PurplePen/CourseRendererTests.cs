@@ -105,6 +105,7 @@ namespace PurplePen.Tests
             specialAppearance.lineWidth = 0.2F; // thin lines
             specialAppearance.numberHeight = 2F; // really big numbers.
             specialAppearance.numberBold = true; // bold numbers
+            specialAppearance.numberOutlined = true; // outlined numbers
             specialAppearance.useDefaultPurple = false;
             specialAppearance.purpleC = 0.32F;
             specialAppearance.purpleY = 1.00F;

@@ -469,6 +469,7 @@ namespace PurplePen.Tests
             e.courseAppearance.centerDotDiameter = 0.53F;
             e.courseAppearance.numberHeight = 1.1F;
             e.courseAppearance.numberBold = true;
+            e.courseAppearance.numberOutlined = true;
             e.courseAppearance.useDefaultPurple = false;
             e.courseAppearance.purpleC = 0.4F;
             e.courseAppearance.purpleM = 0.5F;

@@ -1821,6 +1821,8 @@ namespace PurplePen
                 return false;
             if (numberBold != other.numberBold)
                 return false;
+            if (numberOutlined != other.numberOutlined)
+                return false;
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
             if (useDefaultPurple == false) {
@@ -2053,6 +2055,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
             if (courseAppearance.numberBold)
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
+            if (courseAppearance.numberOutlined)
+                xmloutput.WriteAttributeString("number-outlined", XmlConvert.ToString(courseAppearance.numberOutlined));
             if (courseAppearance.useDefaultPurple == false) {
                 xmloutput.WriteAttributeString("purple-cyan", XmlConvert.ToString(courseAppearance.purpleC));
                 xmloutput.WriteAttributeString("purple-magenta", XmlConvert.ToString(courseAppearance.purpleM));
@@ -2148,6 +2152,7 @@ namespace PurplePen
                         courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
+                        courseAppearance.numberOutlined = xmlinput.GetAttributeBool("number-outlined", false);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);
