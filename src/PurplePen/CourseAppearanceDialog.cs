@@ -10,6 +10,7 @@ using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 
 using ColorConverter = PurplePen.Graphics2D.ColorConverter;
+using System.Drawing.Drawing2D;
 
 namespace PurplePen
 {
@@ -33,16 +34,16 @@ namespace PurplePen
                 if (checkBoxStandardSizes.Checked) {
                     result.lineWidth = result.numberHeight = result.controlCircleSize = 1.0F;
                     result.centerDotDiameter = 0.0F;
-                    result.numberBold = false;
                 }
                 else {
                     result.controlCircleSize = ((float) upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter;
                     result.lineWidth = ((float) upDownLineWidth.Value) / NormalCourseAppearance.lineThickness;
                     result.centerDotDiameter = ((float)upDownCenterDot.Value);
                     result.numberHeight = ((float) upDownNumberHeight.Value) / NormalCourseAppearance.nominalControlNumberHeight;
-                    result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
                 }
 
+                result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
+                result.numberOutlineWidth = ((float) upDownOutlineWidth.Value);
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
                 result.purpleC = (float) (upDownCyan.Value / 100);
                 result.purpleM = (float) (upDownMagenta.Value / 100);
@@ -61,6 +62,8 @@ namespace PurplePen
                     comboBoxControlNumberStyle.SelectedIndex = 1;
                 else
                     comboBoxControlNumberStyle.SelectedIndex = 0;
+
+                upDownOutlineWidth.Value = (decimal) value.numberOutlineWidth;
 
                 checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F && value.numberBold == false);
 
@@ -93,11 +96,10 @@ namespace PurplePen
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness);
                 upDownNumberHeight.Value = (decimal) (NormalCourseAppearance.nominalControlNumberHeight);
                 upDownCenterDot.Value = (decimal)(NormalCourseAppearance.centerDotDiameter);
-                comboBoxControlNumberStyle.SelectedIndex = 0;
-                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = false;
+                upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = false;
             }
             else {
-                comboBoxControlNumberStyle.Enabled = upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = true;
+                upDownControlCircle.Enabled = upDownCenterDot.Enabled = upDownLineWidth.Enabled = upDownNumberHeight.Enabled = true;
             }
         }
 
@@ -150,7 +152,12 @@ namespace PurplePen
             Color purple = GetCurrentColor();
             
             using (Brush brush = new SolidBrush(purple))
-            using (Pen pen = new Pen(purple, lineWidth)) {
+            using (Pen pen = new Pen(purple, lineWidth))
+            using (Brush lightGreenBrush = new SolidBrush(Color.LightGreen))
+            {
+                // Draw light green background.
+                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(22, -30, 70, 20));
+
                 // Draw control circle
                 PointF centerCircle = new PointF(25, 5);
                 g.DrawEllipse(pen, RectangleF.FromLTRB(centerCircle.X - circleDrawRadius, centerCircle.Y - circleDrawRadius, centerCircle.X + circleDrawRadius, centerCircle.Y + circleDrawRadius));
@@ -180,7 +187,17 @@ namespace PurplePen
                                                             NormalCourseAppearance.controlNumberHeightFactor * numberHeight,
                                                             style, GraphicsUnit.World)) 
                 {
-                    g.DrawString("4", font, brush, new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F));
+                    string controlNumberText = "13";
+                    PointF controlNumberLocation = new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F);
+
+                    using (GraphicsPath grPath = new GraphicsPath(FillMode.Winding)) { 
+                        grPath.AddString(controlNumberText, font.FontFamily, (int)font.Style, font.Size, controlNumberLocation, new StringFormat());
+                        if (upDownOutlineWidth.Value > 0) {
+                            using (Pen whitePen = new Pen(Color.White, (float) upDownOutlineWidth.Value * 2))
+                                g.DrawPath(whitePen, grPath);
+                        }
+                        g.FillPath(brush, grPath);
+                    }
                 }
             }
         }
@@ -191,6 +208,11 @@ namespace PurplePen
         }
 
         private void comboBoxControlNumberStyle_SelectedIndexChanged(object sender, EventArgs e) 
+        {
+            UpdatePreview();
+        }
+
+        private void upDownOutlineWidth_ValueChanged(object sender, EventArgs e)
         {
             UpdatePreview();
         }

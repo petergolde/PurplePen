@@ -60,7 +60,7 @@ namespace PurplePen.Tests
             specialAppearance.lineWidth = 2.85714F; // 1mm lines
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;
-            specialAppearance.numberOutlined = true;
+            specialAppearance.numberOutlineWidth = 0.13F;
         }
 
         // Draw a grid on the graphics

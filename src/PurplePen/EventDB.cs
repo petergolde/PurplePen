@@ -1799,7 +1799,7 @@ namespace PurplePen
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
         public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
-        public bool numberOutlined = false;             // Is the number outlined?
+        public float numberOutlineWidth = 0.0F;             // Width of outline
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
@@ -1821,7 +1821,7 @@ namespace PurplePen
                 return false;
             if (numberBold != other.numberBold)
                 return false;
-            if (numberOutlined != other.numberOutlined)
+            if (numberOutlineWidth != other.numberOutlineWidth)
                 return false;
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
@@ -2055,8 +2055,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
             if (courseAppearance.numberBold)
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
-            if (courseAppearance.numberOutlined)
-                xmloutput.WriteAttributeString("number-outlined", XmlConvert.ToString(courseAppearance.numberOutlined));
+            if (courseAppearance.numberOutlineWidth > 0)
+                xmloutput.WriteAttributeString("number-outline-width", XmlConvert.ToString(courseAppearance.numberOutlineWidth));
             if (courseAppearance.useDefaultPurple == false) {
                 xmloutput.WriteAttributeString("purple-cyan", XmlConvert.ToString(courseAppearance.purpleC));
                 xmloutput.WriteAttributeString("purple-magenta", XmlConvert.ToString(courseAppearance.purpleM));
@@ -2152,7 +2152,7 @@ namespace PurplePen
                         courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
-                        courseAppearance.numberOutlined = xmlinput.GetAttributeBool("number-outlined", false);
+                        courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);

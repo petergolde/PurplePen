@@ -999,7 +999,7 @@ namespace PurplePen
         protected SizeF size;                       // size of the text.
 
         // NOTE: scale ratio is not used for this type of object!
-        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight, bool outline)
+        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight, float outlineWidth)
             :
            base(controlId, courseControlId, specialId, 1.0F, new CourseAppearance())
        {
@@ -1008,7 +1008,7 @@ namespace PurplePen
             this.fontName = fontName;
             this.fontStyle = fontStyle;
             this.emHeight = emHeight;
-            this.outlineWidth = outline ? NormalCourseAppearance.textOutlineWidth : 0;
+            this.outlineWidth = outlineWidth;
             this.size = MeasureText();
        }
 
@@ -1887,7 +1887,7 @@ namespace PurplePen
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
                    appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, 
-                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight, appearance.numberOutlined)
+                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -1912,7 +1912,7 @@ namespace PurplePen
 
         public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style,
-            NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight, appearance.numberOutlined)
+            NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -1936,7 +1936,7 @@ namespace PurplePen
        private RectangleF rectBounding;
 
        public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle)
-           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), false)
+           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), 0.0F)
        {
            this.rectBounding = rectBounding;
        }

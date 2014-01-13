@@ -29,6 +29,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAppearanceDialog));
             this.groupBoxSizes = new System.Windows.Forms.GroupBox();
+            this.labelOutlineWidth = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.upDownOutlineWidth = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.upDownCenterDot = new System.Windows.Forms.NumericUpDown();
@@ -58,6 +61,7 @@
             this.groupBoxPreview = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.groupBoxSizes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).BeginInit();
@@ -82,6 +86,9 @@
             // groupBoxSizes
             // 
             resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
+            this.groupBoxSizes.Controls.Add(this.labelOutlineWidth);
+            this.groupBoxSizes.Controls.Add(this.label10);
+            this.groupBoxSizes.Controls.Add(this.upDownOutlineWidth);
             this.groupBoxSizes.Controls.Add(this.label8);
             this.groupBoxSizes.Controls.Add(this.label7);
             this.groupBoxSizes.Controls.Add(this.upDownCenterDot);
@@ -99,6 +106,38 @@
             this.groupBoxSizes.Controls.Add(this.checkBoxStandardSizes);
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
+            // 
+            // labelOutlineWidth
+            // 
+            resources.ApplyResources(this.labelOutlineWidth, "labelOutlineWidth");
+            this.labelOutlineWidth.Name = "labelOutlineWidth";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // upDownOutlineWidth
+            // 
+            this.upDownOutlineWidth.DecimalPlaces = 2;
+            this.upDownOutlineWidth.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            resources.ApplyResources(this.upDownOutlineWidth, "upDownOutlineWidth");
+            this.upDownOutlineWidth.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            65536});
+            this.upDownOutlineWidth.Name = "upDownOutlineWidth";
+            this.upDownOutlineWidth.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            65536});
+            this.upDownOutlineWidth.ValueChanged += new System.EventHandler(this.upDownOutlineWidth_ValueChanged);
             // 
             // label8
             // 
@@ -372,6 +411,7 @@
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLineWidth)).EndInit();
@@ -419,5 +459,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown upDownCenterDot;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelOutlineWidth;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown upDownOutlineWidth;
     }
 }
