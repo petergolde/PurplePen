@@ -273,4 +273,10 @@
   <data name="AddMapExchange" xml:space="preserve">
     <value>Ajouter un Echange de Carte</value>
   </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Supprimer l'échange de carte</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Modifier les propriétés des parties de circuit</value>
+  </data>
 </root>

@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>印刷...</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>印刷プレビュー...</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
 </root>

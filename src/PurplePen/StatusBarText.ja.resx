@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>左マウスボタン: オブジェクトを選択; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>左マウスボタン:  矩形の移動・サイズ変更; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>左マウスボタンを押したままドラッグで選択中のオブジェクトを移動します</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>左マウスボタンを押したままオブジェクトの角をドラッグで移動します</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>オブジェクトを所望の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>オブジェクトの角を所望の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
+  </data>
   <data name="AddingControl" xml:space="preserve">
     <value>左クリックで新しくコントロールを配置します</value>
   </data>
@@ -136,15 +154,63 @@
     <value>左クリックで既存のフィニッシュをコースに追加します</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
-    <value>左クリックで新しく横断地点を追加します</value>
+    <value>左クリックで新しく必須の横断地点を追加します</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
-    <value>左クリックで既存の横断地点をコースに追加します</value>
+    <value>左クリックで既存の必須の横断地点をコースに追加します</value>
   </data>
   <data name="AddingObject" xml:space="preserve">
     <value>左クリックで新しくオブジェクトを追加します</value>
   </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>左クリックの位置にBendを追加します</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>左クリックで新しいCornerを追加します</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>左クリックでBendを削除します</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>左クリックでオブジェクトの角を削除します</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>左クリックでコントロール円に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>左クリックでコントロール円のGapを除去します</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>左クリックでレッグ線に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>左クリックでレッグ線のGapを削除します</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>左マウスボタンを押したままドラッグで選択中のオブジェクトのサイズを変更します</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>オブジェクトの縁を所望の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
+  </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>マウスの左ボタンを押さえたままドラッグしてディスクリプションを作成します</value>
+    <value>左マウスボタンを押したままドラッグでディスクリプションを作成します</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>横断地点を正しい角度に回転し、左クリックしてください</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>左マウスボタンを押したままドラッグで線を引きます; 左クリックでオブジェクトの作成を完了します</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>左マウスボタンを押したままドラッグでテキストを作成します</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>左クリックで既存の地図交換所をコースに追加します</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>左クリックで新しく地図交換所をコースに追加します</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>左クリックでコントロール "{0}" に地図交換所を追加します </value>
   </data>
 </root>

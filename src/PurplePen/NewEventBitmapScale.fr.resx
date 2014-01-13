@@ -138,4 +138,10 @@ L'échelle de la carte précise comment est représenté le monde réel sur la c
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Résolution Bitmap</value>
   </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Lorsque vous utilisez un fichier PDF comme carte, vous devez précisez l'échelle de la carte. 
+
+L'échelle de la carte précise la relation qui existe entre la carte "papier" et le monde réel.
+</value>
+  </data>
 </root>

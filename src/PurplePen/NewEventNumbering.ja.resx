@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventNumberingLabel.Text" xml:space="preserve">
+    <value>新しく作成するコントロールには自動で連番のコントロール識別番号が割り当てられます。連番の初期値を選択してください。</value>
+  </data>
+  <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
+    <value>逆さに見ると違う番号に読み取れるコントロールコードを使用しない(例: 「68」/「89」)</value>
+  </data>
+  <data name="startingCodeLabel.Text" xml:space="preserve">
+    <value>連番の初期値:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(この設定は後からメニュー[イベント]＞[番号付けの設定]で変更できます)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>番号付けの設定</value>
+  </data>
 </root>

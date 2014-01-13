@@ -117,4 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label10.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>センタードットの直径:</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>太字</value>
+  </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>コントロール番号のフォントスタイル:</value>
+  </data>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>コントロール番号のフォントサイズ(高さ):</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>線の幅:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>コントロール円の直径:</value>
+  </data>
+  <data name="labelMM1.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>IOF標準サイズを使用</value>
+  </data>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>アイテムサイズ</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ブラック:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>イエロー:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>マゼンタ:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>シアン:</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>コースの外観をカスタマイズ</value>
+  </data>
 </root>

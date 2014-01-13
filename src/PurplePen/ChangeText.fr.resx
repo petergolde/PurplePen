@@ -126,6 +126,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Nom du circuit</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Partie de circuit</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Longueur du circuit</value>
   </data>

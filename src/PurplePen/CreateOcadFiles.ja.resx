@@ -117,4 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>コース</value>
+  </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>OCADファイルを保存するフォルダを選択してください</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>ファイル名プリフィックス</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>ファイル形式:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
+  <data name="fileFormatCombo.Items3" xml:space="preserve">
+    <value>OCAD 9</value>
+  </data>
+  <data name="fileFormatCombo.Items4" xml:space="preserve">
+    <value>OCAD 10</value>
+  </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>出力</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>フォルダを選択...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>その他のフォルダ</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>地図ファイルと同じフォルダ</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen ファイルと同じフォルダ</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>フォルダ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>OCADファイルを作成</value>
+  </data>
 </root>

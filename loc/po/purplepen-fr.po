@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.2.3\n"
+"Project-Id-Version: Purple Pen 2.2.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2013-12-12 13:34-08:00\n"
+"POT-Creation-Date: 2014-01-13 13:59-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -323,7 +323,11 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Tous les fichiers "
+"carte|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|Fichiers OCAD (*.ocd)|*.ocd|Fichiers PDF "
+"(*.pdf)|*.pdf|Fichiers "
+"image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -374,7 +378,7 @@ msgstr "Nom du circuit"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Partie de circuit"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -596,12 +600,17 @@ msgstr "Ajouter un Echange de Carte"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Supprimer l'échange de carte"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
+msgstr "Modifier les propriétés des parties de circuit"
+
+#: CourseAppearanceDialog.resx, labelOutlineWidth.Text
+msgid "White outline around numbers:"
 msgstr ""
 
+#: CourseAppearanceDialog.resx, label10.Text
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
@@ -695,20 +704,21 @@ msgstr "Partie du Circuit :"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Propriétés…"
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Afficher le cercle Arrivée sur cette partie de circuit"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Ces paramètres contrôlent l'apparence de cette partie pour "
+"un circuit en plusieurs parties."
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Propriétés partie de circuit"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -833,7 +843,7 @@ msgstr "Marges :"
 
 #: CreatePdfCourses.resx, marginChange.Text
 msgid "Change..."
-msgstr ""
+msgstr "Modifier…"
 
 #: CreatePdfCourses.resx, paperSizeLabel.Text
 #: PrintCourses.resx, paperSizeLabel.Text
@@ -893,31 +903,31 @@ msgstr "Si la zone d'impression est trop grande pour tenir sur une "
 
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr ""
+msgstr "Préfixe du nom :"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr ""
+msgstr "Fichiers :"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
-msgstr ""
+msgstr "Un pour tous les circuits"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items1
 msgid "One per course"
-msgstr ""
+msgstr "Un par circuit"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part"
-msgstr ""
+msgstr "Un par partie de circuit"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "Sélectionner un répertoire pour les fichiers PDF"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
@@ -1083,7 +1093,7 @@ msgstr "Créer des &Fichiers OCAD..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
-msgstr ""
+msgstr "Créer des PDFs..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1532,7 +1542,7 @@ msgstr "Police"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "Erreur bloquante (plantage)"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
@@ -2119,48 +2129,53 @@ msgstr "Les Définitions ne peuvent pas être ajoutées à un circuit "
 msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
 "installed. Would you like to automatically download and "
 "install it now?"
-msgstr ""
+msgstr "Le chargement des fichiers PDF requiert qu'une copie de "
+"GPL Ghostscript soit installée. Souhaitez-vous qu'elle "
+"soit automatiquement téléchargée et installée maintenant ?"
 
 #: MiscText.resx, GhostscriptNotInstalled
 msgid "GPL Ghostscript is not installed"
-msgstr ""
+msgstr "GPL Ghostscript n'est pas installé"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "GPL Ghostscript failed to read PDF file successfully"
-msgstr ""
+msgstr "GPL Ghostscript n'a pas réussi à lire correctement le "
+"fichier PDF"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Impossible de lire le résultat de la conversion PDF depuis "
+"le fichier '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "Impossible de créer des PDFs pour la raison suivante :"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Défini par l'utilisateur"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "Taille de la carte depuis le PDF"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Annulé par l'utilisateur"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Création de {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "Impression de la page {0} (sur {1})"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "Le fichier carte \"{0}\" a été supprimé. Merci d'essayer de "
+"restaurer le fichier carte, puis cliquez sur \"Ok\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
@@ -2241,7 +2256,11 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Lorsque vous utilisez un fichier PDF comme carte, vous "
+"devez précisez l'échelle de la carte. \n"
+"\n"
+"L'échelle de la carte précise la relation qui existe entre "
+"la carte \"papier\" et le monde réel.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2517,47 +2536,47 @@ msgstr "Imprimer les définitions"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Taille :"
 
 #: PrinterMargins.resx, label2.Text
 msgid "Width:"
-msgstr ""
+msgstr "Largeur :"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Hauteur :"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Taille du papier ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Orientation"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Gauche :"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Haute :"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Droite :"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Basse :"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Marges ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Mise en page"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text

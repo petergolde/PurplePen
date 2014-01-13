@@ -117,8 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>記号の変更</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>コントロールコードの変更</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>コントロールの変更</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>コントロールポイントの変更</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>タイトルの変更</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>登高の変更</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>コース名の変更</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>テキスト行の変更</value>
+  </data>
   <data name="ChangeScale" xml:space="preserve">
     <value>地図の縮尺を更新する</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>コントロールの移動</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>コントロール番号の移動</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>オブジェクトの移動</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>コントロールを削除</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>オブジェクトを削除</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>テキスト行を削除</value>
   </data>
   <data name="AddControl" xml:space="preserve">
     <value>コントロールを追加</value>
@@ -130,24 +172,108 @@
     <value>フィニッシュを追加</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
-    <value>横断地点を追加</value>
+    <value>必須の横断地点を追加</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>オブジェクトを追加</value>
   </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>コースの削除</value>
+  </data>
   <data name="NewCourse" xml:space="preserve">
     <value>新規コース</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>コースプロパティの変更</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>「すべてのコントロール」のプロパティの変更</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>新規イベントを作成</value>
   </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>テープ誘導の変更</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>コードの変更</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>表示するコースの変更</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Leg Bend の移動</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Bendを追加</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Cornerを追加</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Bendを除去</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Cornerを除去</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Gapを追加</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Gapを除去</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Gapの移動</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>回転</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>番号付けの設定</value>
+  </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>パンチパターンの変更</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>コントロールカードのレイアウトを変更</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>印刷領域を設定</value>
+  </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>ディスクリプションのテキストをカスタマイズする</value>
   </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>コースの順序の変更</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>地図ファイルを変更</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>見つからないフォントを無視する</value>
+  </data>
   <data name="AddTextLine" xml:space="preserve">
-    <value>テキストラインを追加</value>
+    <value>テキスト行を追加</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>未使用のコントロールを除去</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
     <value>ディスクリプションの言語を変更する</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>テキストを変更</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>コースの外観をカスタマイズ</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>地図交換所を追加</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>地図交換所を削除</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>コースパート・プロパティの変更</value>
   </data>
 </root>

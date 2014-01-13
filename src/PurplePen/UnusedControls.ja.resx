@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>以下のコントロールは「すべてのコントロール」コレクションに含まれていますが、どのコースでも使われていません。「削除」をクリックで、チェックの付いたコントロールすべてを削除します。</value>
+  </data>
 </root>

@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>「完了」をクリックして新規イベントを作成してください。イベントファイルは次の名前で保存されます。</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>イベントの作成が完了したら、「コース」メニューから「コースを追加」を選択し、コースを作成してください。</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>イベントを作成</value>
+  </data>
 </root>

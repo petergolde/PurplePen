@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="OldCode.HeaderText" xml:space="preserve">
+    <value>元のコード</value>
+  </data>
   <data name="NewCode.HeaderText" xml:space="preserve">
-    <value>新規コード</value>
+    <value>新しいコード</value>
+  </data>
+  <data name="changeControlCodesLabel.Text" xml:space="preserve">
+    <value>「新しいコード」欄に新しいコントロールコードを入力してコントロールコードを変更します。 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>コントロールコードの変更</value>
   </data>
 </root>

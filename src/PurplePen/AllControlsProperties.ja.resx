@@ -136,9 +136,12 @@
     <value>記号とテキスト</value>
   </data>
   <data name="appearanceGroupBox.Text" xml:space="preserve">
-    <value>表示</value>
+    <value>外観</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>この設定は地図と全コントロールのディスクリプションがどのように印刷されるかを変更します。</value>
+    <value>この設定は「すべてのコントロール」の地図とディスクリプションがどのように印刷されるかを変更します。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>「すべてのコントロール」のプロパティ</value>
   </data>
 </root>

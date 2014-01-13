@@ -130,10 +130,10 @@
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Credits</value>
+    <value>クレジット</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
-    <value>ライセンスをすべて表示.</value>
+    <value>ライセンスをすべて表示</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen について</value>

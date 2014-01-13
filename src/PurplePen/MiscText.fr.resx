@@ -423,4 +423,37 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Les Définitions ne peuvent pas être ajoutées à un circuit comportant un échange de carte si "Toutes les Parties" est affiché. Basculez sur la partie pour laquelle vous souhaitez ajoutez les définitions, puis choisissez de nouveau l'option "Ajouter Définitions".</value>
   </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript n'est pas installé</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript n'a pas réussi à lire correctement le fichier PDF</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Impossible de lire le résultat de la conversion PDF depuis le fichier '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Impossible de créer des PDFs pour la raison suivante :</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Défini par l'utilisateur</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Taille de la carte depuis le PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Annulé par l'utilisateur</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Création de {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Impression de la page {0} (sur {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Le fichier carte "{0}" a été supprimé. Merci d'essayer de restaurer le fichier carte, puis cliquez sur "Ok".</value>
+  </data>
 </root>

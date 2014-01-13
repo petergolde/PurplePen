@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>このイベントでは見つからないフォントについての警告を表示しない</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>地図ファイル "{0}" は、コンピュータにインストールされていないフォントを使用しています。これらのフォントを使用したテキストはデフォルトのフォントで表示・印刷され、テキストの表示がマップデザイナーの意図と異なったものとなる可能性があります。
+
+この問題を解決するには、Windowsのコントロールパネルから以下のリストのフォントをインストールし、Purple Penを再起動してください。
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>見つからないフォント</value>
   </data>
 </root>

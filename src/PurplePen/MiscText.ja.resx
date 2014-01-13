@@ -117,6 +117,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>記号なし</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>すべてのコントロール</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>'{0}' を保存できません。以下の理由:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>地図ファイル '{0}' を以下の理由でロードできませんでした。:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>画像ファイル '{0}' をロードできません。</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>'{0}' を印刷できません。以下の理由:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>'{0}' を作成できません。以下の理由:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>フォルダ '{0}' を作成できません。以下の理由:</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>OCAD ファイル '{0}' を作成できません。以下の理由:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>'{0}' への変更を保存しますか?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>指定のフォルダには '{0}' というファイルがすでに存在します。「戻る」ボタンで前の画面に戻り、別のフォルダを選択するか新しいイベント名を設定してください。</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>コントロールコード '{0}' はすでに他のコントロールで使われています。</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>コースの登高には0から9999の数字を入れてください。(または空白)</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>元に戻す(&amp;U)</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>元に戻す</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>やり直す(&amp;R)</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>やり直す</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>選択をクリア(&amp;C)</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>新しいスコアを入力</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>新しいコードを入力</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>新しいイベント名を入力してください。
+「 | 」を使用すると改行になります。
+（すべてのコースに反映されます）</value>
+  </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>新規コース名を入力</value>
   </data>
@@ -126,11 +203,95 @@
   <data name="EnterTextLine" xml:space="preserve">
     <value>新規テキストを追加</value>
   </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>コントロール {0} を使用しているコースが無くなりました。これらのコントロールをコントロール・コレクションからも削除しますか？</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>コントロール {0} を使用しているコースが無くなりました。このコントロールをコントロール・コレクションからも削除しますか？</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>現在、コントロール {0} はコース: {1} で使用されています。それでもこのコントロールを削除しますか？</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>コントロールコードには1～3桁の数字または文字を設定してください。</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>コントロールコードにスペースを入れないでください。</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>コントロールコードは0から始めるべきではありません。</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>コントロール識別番号には、逆さに見ると違う番号に読み取れる番号は使わないほうがよいでしょう</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>コントロールコード "{0}" が複数回使われています。</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>印刷の縮尺には100から100,000の数字を入れてください。</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>コース・プロパティ</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>横</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>縦</value>
+  </data>
   <data name="PageTooSmall" xml:space="preserve">
-    <value>ディスクリプションを印刷するページサイズが小さすぎます。</value>
+    <value>ディスクリプションを印刷する用紙のサイズが小さすぎます。</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>バージョン {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Penのバージョン {0} がダウンロードできます。 (現在ご利用中のバージョンは {1} です。)
+
+最新バージョンをダウンロードしてインストールしますか?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>ヘルプファイル '{0}'　を開くことができませんでした。</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>ズーム</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>地図ファイル "{0}" が見つかりませんでした。
+
+地図ファイルが移動または削除されたか、Purple Penが(他のコンピュータに)移動された可能性が考えられます。Purple Penのイベントファイルがロードされる際は地図ファイルも存在する必要があります。Purple Penのイベントファイルを他の人に送信する際は受信者も地図ファイルのコピーを持っていることを確認してください。
+
+OKを押して、コンピュータ上で地図ファイルのコピーを探してください。</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>すべてのコントロールがコースで使用されています。</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>完了(&amp;F)</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>次へ(&amp;N) &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>コントロール {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>必須の横断地点</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>スタート</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>複数形</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>単数形</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>地図上に表示させたいテキストを入力し、OKを押したあと、テキストを所望の位置にドラッグで移動させてください。</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>テキストを追加</value>
@@ -138,10 +299,79 @@
   <data name="ChangeTextSpecialExplanation" xml:space="preserve">
     <value>新規テキストを追加。</value>
   </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>テキストを変更</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>他のプログラムが地図ファイル "{0}" に変更を加えました。Purple Penは地図をリロードします。</value>
+  </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
-    <value>現在のイベントは {0} で文字によるディスクリプションがあります。ディスクリプションの言語を{1} に変更しますか?</value>
+    <value>現在のイベントは文字によるディスクリプションに {0} を使用しています。ディスクリプションの言語を{1} に変更しますか?</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>開く "{0}"</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>印刷するコースが選択されていません。</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>地図交換所</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>交換</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>パート {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>すべてのパート</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>パート {0} / {1}</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>連絡先Email</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>エラーが発生しました。問題を修正するため、emailアドレスと追加の情報を記載してエラーレポートを送信してください。</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Please tell us what you were doing in the program, to help fix the problem</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>レポート送信</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript がインストールされていません</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript が PDF の読み込みに失敗しました</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>ファイル '{0}' からのPDF変換の結果が読み込めませんでした</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>PDF '{0}' を作成できません。以下の理由:</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>{0} を作成しています...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>ページ {0} (/ {1}) を印刷中</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>地図ファイル "{0}" が削除されました。地図ファイルのリストアを試み、その後「OK」を押してください。</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>.NET frameworkが正しくインストールされていないおそれがあります。マイクロソフト社(http://www.microsoft.com/ja-jp/net/) より最新の.Net frameworkを入手しインストールしてください。</value>
   </data>
 </root>

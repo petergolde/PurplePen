@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>特殊なテキストを入力</value>
+  </data>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
     <value>イベント名</value>
+  </data>
+  <data name="courseNameMenuItem.Text" xml:space="preserve">
+    <value>コース名</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>コースパート</value>
+  </data>
+  <data name="courseLengthMenuItem.Text" xml:space="preserve">
+    <value>コース距離</value>
+  </data>
+  <data name="courseClimbMenuItem.Text" xml:space="preserve">
+    <value>登高</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>クラスリスト</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>印刷の縮尺</value>
   </data>
 </root>

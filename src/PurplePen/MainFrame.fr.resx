@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Créer des &amp;Fichiers OCAD...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Créer des PDFs...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Création des fichiers RouteGadget...</value>
   </data>
@@ -464,6 +467,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Police</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Erreur bloquante (plantage)</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Déboguer</value>

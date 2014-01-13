@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="numberColumn.HeaderText" xml:space="preserve">
+    <value>番号</value>
+  </data>
+  <data name="genderColumn.HeaderText" xml:space="preserve">
+    <value>名詞の性</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>複数形を表示</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>名詞の性を表示する</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>記号についてカスタマイズされたテキストを「テキスト」欄に入力してください。</value>
+  </data>
+  <data name="labelGenderChooser.Text" xml:space="preserve">
+    <value>名詞の性:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>カスタマイズされた記号テキスト</value>
   </data>
 </root>

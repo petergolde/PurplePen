@@ -120,4 +120,7 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
 </root>

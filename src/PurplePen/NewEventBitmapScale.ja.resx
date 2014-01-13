@@ -117,7 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>地図に画像ファイルを使う場合は、画像の解像度と地図の縮尺を指定する必要があります。
+
+画像の解像度は、紙上での1インチ当たりにどれだけの個数の画像ピクセル（ドット）が割り当てられるかを表します; 「dpi」(dot per inch)の単位で表示されます。
+
+地図の縮尺は、地図上での距離と現地における対応する距離の比を表します。
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>画像の解像度</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>dpi (ドット/インチ)</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>地図の縮尺:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>ビットマップの解像度</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>地図にPDFファイルを使う場合は、地図の縮尺を指定する必要があります。
+
+地図の縮尺は、地図上での距離と現地における対応する距離の比を表します。
+</value>
   </data>
 </root>

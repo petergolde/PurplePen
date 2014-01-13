@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>地図ファイル "{0}" は、Purple Penが十分にサポートしていないオブジェクトまたはシンボルを含んでいます。そのため、印刷が正しくできない可能性があります。正しく印刷されない可能性のあるオブジェクトを以下のリストに挙げます。
+
+コンペティションの地図を印刷する場合には、コースをOCADファイルで出力　( [ファイル]メニュー＞[OCADファイルを作成...] )　し、OCADでファイルを印刷することをお勧めします。
+</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>地図ファイルを正確に印刷できません</value>
+  </data>
 </root>

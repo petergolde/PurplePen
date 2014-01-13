@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>OCADファイルを保存するフォルダを選択してください</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>フォルダ</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>フォルダを選択...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>その他のフォルダ</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>地図ファイルと同じフォルダ</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen ファイルと同じフォルダ</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>RouteGadgetファイルを作成</value>
+  </data>
 </root>

@@ -117,7 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>印刷</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>プリンタを変更...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>用紙サイズ:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>プリンタ名</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>プリンタ:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>出力</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>プレビュー...</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>コース</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>コースごとの部数:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>部数</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>印刷の前にラスタ化する</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD Compatible</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>クロップして1ページにする</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>複数のページに印刷する</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>表示</value>
+    <value>外観</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>コースを印刷</value>
   </data>
 </root>

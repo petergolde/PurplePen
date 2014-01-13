@@ -123,6 +123,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Marges :</value>
   </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Modifier…</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Taille du papier :</value>
   </data>
@@ -176,6 +179,27 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Dossier</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Préfixe du nom :</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Fichiers :</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Un pour tous les circuits</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Un par circuit</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Un par partie de circuit</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Fichiers</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Sélectionner un répertoire pour les fichiers PDF</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimer les circuits</value>

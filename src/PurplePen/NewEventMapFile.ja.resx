@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>コースに使用する地図ファイルを選択してください。一般的にはOCADファイルです(代わりにJPEG等の画像ファイルも使用可能です)。「選択...」ボタンをクリックして地図ファイルを選択してください。</value>
+  </data>
+  <data name="chooseMapFileButton.Text" xml:space="preserve">
+    <value>地図ファイルを選択 (&amp;C)...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>すべての地図ファイル|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>選択中の地図ファイル</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>地図ファイルのロードに成功しました。Purple Penファイルを他の人に送信する場合は、受信者も同じ地図ファイル (のコピー) を使用します。</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>地図ファイル</value>
   </data>
 </root>

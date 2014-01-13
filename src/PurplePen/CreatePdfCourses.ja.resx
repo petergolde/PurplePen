@@ -117,7 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>余白:</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>変更...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>用紙サイズ:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>出力</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>コース</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>クロップして1ページにする</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>複数のページに印刷する</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>表示</value>
+    <value>外観</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>フォルダを選択...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>その他のフォルダ</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>地図ファイルと同じフォルダ</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen ファイルと同じフォルダ</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>フォルダ</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>ファイル:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>すべてのコースで一つ</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>コースごとに一つ</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>コースパートごとに一つ</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>PDFファイルを保存するフォルダを選択してください</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>PDFファイルを作成</value>
   </data>
 </root>

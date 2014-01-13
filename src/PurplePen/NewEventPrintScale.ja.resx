@@ -117,7 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
+    <value>コースの印刷に使用する縮尺を設定してください。ほとんどの場合は地図の縮尺をそのまま使用します。
+
+</value>
+  </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>地図の縮尺:</value>
+  </data>
+  <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
+    <value>デフォルトの印刷の縮尺:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(印刷の縮尺は後からメニュー[コース]＞[プロパティ]で変更できます。)</value>
+  </data>
+  <data name="oneToPrefixLabel1.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="oneToPrefixLabel2.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>印刷の縮尺</value>
   </data>
 </root>

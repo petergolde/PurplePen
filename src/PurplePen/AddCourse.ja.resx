@@ -138,6 +138,27 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>記号とテキスト</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>コントロール円のラベル</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>コントロール番号 (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>コントロールコード (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>コントロール番号とコントロールコード (3-145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>コントロール番号とスコア (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>コントロールコードとスコア(145(30))</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>得点の表示</value>
+  </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>A欄</value>
   </data>
@@ -151,13 +172,22 @@
     <value>(非表示)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>表示</value>
+    <value>外観</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>以下に入力したテキストはディスクリプションの2行目に表示されます(任意):</value>
   </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>クラスリスト / 副タイトル</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>登高</value>
+  </data>
+  <data name="courseTypeLabel.Text" xml:space="preserve">
+    <value>コースタイプ:</value>
+  </data>
+  <data name="courseNameLabel.Text" xml:space="preserve">
+    <value>コース名:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>通常のコース</value>
@@ -166,7 +196,7 @@
     <value>スコア-Oのコース</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
-    <value>メートル</value>
+    <value>m</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>新規コース</value>

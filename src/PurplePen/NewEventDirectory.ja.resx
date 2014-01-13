@@ -126,7 +126,16 @@
   <data name="useOtherFolder.Text" xml:space="preserve">
     <value>保存するフォルダを選択する。</value>
   </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>フォルダを選択...</value>
+  </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>イベントファイルを保存するフォルダを選択してください。</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>フォルダを選択</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>イベントファイルの場所</value>
   </data>
 </root>

@@ -120,6 +120,21 @@
   <data name="labelChooseLanguage.Text" xml:space="preserve">
     <value>文字によるコントロール位置説明の言語を選択する:</value>
   </data>
+  <data name="labelSymbolName.Text" xml:space="preserve">
+    <value>記号名:</value>
+  </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>カスタマイズされたテキスト:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>テキストを変更...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>標準に戻す</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>標準のテキスト:</value>
+  </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>クリックでディスクリプション記号を選択して、文字によるコントロール位置説明に使用されるテキストをカスタマイズします。</value>
   </data>
