@@ -143,12 +143,12 @@ namespace PurplePen
                 ImageFormat imageFormat = controller.MapDisplay.BitmapImageFormat;
 
                 if (creationSettings.version <= 7)
-                    return (imageFormat != ImageFormat.Bmp);
+                    return (imageFormat.Guid != ImageFormat.Bmp.Guid);
                 else if (creationSettings.version <= 10) {
-                    return (imageFormat != ImageFormat.Bmp && imageFormat != ImageFormat.Tiff && imageFormat != ImageFormat.Jpeg && imageFormat != ImageFormat.Gif);
+                    return (imageFormat.Guid != ImageFormat.Bmp.Guid && imageFormat.Guid != ImageFormat.Tiff.Guid && imageFormat.Guid != ImageFormat.Jpeg.Guid && imageFormat.Guid != ImageFormat.Gif.Guid);
                 }
                 else {
-                    return (imageFormat != ImageFormat.Bmp && imageFormat != ImageFormat.Tiff && imageFormat != ImageFormat.Jpeg && imageFormat != ImageFormat.Gif && imageFormat != ImageFormat.Png);
+                    return (imageFormat.Guid != ImageFormat.Bmp.Guid && imageFormat.Guid != ImageFormat.Tiff.Guid && imageFormat.Guid != ImageFormat.Jpeg.Guid && imageFormat.Guid != ImageFormat.Gif.Guid && imageFormat.Guid != ImageFormat.Png.Guid);
                 }
             }
 
