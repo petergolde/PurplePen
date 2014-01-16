@@ -535,7 +535,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8;
+            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9;
 
             undomgr.BeginCommand(88, "Command1");
 
@@ -561,6 +561,9 @@ namespace PurplePen.Tests
             sp7.fontItalic = true;
             sp7.text = "$(CourseName)";
             sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
+            sp9 = new Special(SpecialKind.Image, new PointF[2] { new PointF(18, 17), new PointF(28, 15) });
+            sp9.orientation = 90;
+            sp9.imageBitmap = (Bitmap)Image.FromFile(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
@@ -570,6 +573,7 @@ namespace PurplePen.Tests
             eventDB.AddSpecial(sp6);
             eventDB.AddSpecial(sp7);
             eventDB.AddSpecial(sp8);
+            eventDB.AddSpecial(sp9);
 
             undomgr.EndCommand(88);
 
@@ -579,6 +583,14 @@ namespace PurplePen.Tests
             eventDB = new EventDB(undomgr);
 
             eventDB.Load(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
+
+            // The loaded image won't compare equal. Check the image is the same, then force equal.
+            Special loadedSp9 = eventDB.GetSpecial(SpecialId(9));
+            Assert.IsNotNull(loadedSp9.imageBitmap);
+            Assert.AreEqual(loadedSp9.imageBitmap.Width, sp9.imageBitmap.Width);
+            Assert.AreEqual(loadedSp9.imageBitmap.Height, sp9.imageBitmap.Height);
+            Assert.AreEqual(loadedSp9.imageBitmap.RawFormat, sp9.imageBitmap.RawFormat);
+            loadedSp9.imageBitmap = sp9.imageBitmap;  
 
             TestUtil.TestEnumerableAnyOrder(eventDB.AllSpecialPairs,
                 new KeyValuePair<Id<Special>, Special>[] {
@@ -590,6 +602,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Special>,Special>(SpecialId(6), sp6),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(7), sp7),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(8), sp8),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(9), sp9),
                 }
             );
         }

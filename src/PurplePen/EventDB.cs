@@ -1219,6 +1219,7 @@ namespace PurplePen
         WhiteOut,                        // white out area (area)
         Text,                                // arbitrary text, with replacements   (rectangle)
         Descriptions,                    // control description sheet (rectangle of first square)
+        Image,                           // A bitmap image.
     }
 
 
@@ -1238,6 +1239,7 @@ namespace PurplePen
         public string fontName;             // for text objects, the font name
         public bool fontBold, fontItalic;   // for text objects, the font style
         public int numColumns = 1;          // for description objects, the number of columns.
+        public Bitmap imageBitmap;          // for image objects, the bitmap.
 
         public Special()
         {
@@ -1276,6 +1278,7 @@ namespace PurplePen
 
             case SpecialKind.Text:
             case SpecialKind.Descriptions:
+            case SpecialKind.Image:
                 if (locations.Length != 2)
                     throw new ApplicationException(string.Format("Text or descriptions object {0} should have 2 coordinates", id));
                 break;
@@ -1295,6 +1298,15 @@ namespace PurplePen
             if (kind == SpecialKind.Dangerous) {
                 if (numColumns < 1 || numColumns > 100)
                     throw new ApplicationException(string.Format("Description object {0} should have 1-100 columns", id));
+            }
+
+            if (kind == SpecialKind.Image) {
+                if (imageBitmap == null)
+                    throw new ApplicationException(string.Format("Image object {0} should have a non-null image", id));
+            }
+            else {
+                if (imageBitmap != null)
+                    throw new ApplicationException(string.Format("Non-Image object {0} should have a null image", id));
             }
 
             if (allCourses) {
@@ -1340,6 +1352,7 @@ namespace PurplePen
             if (courses != null) {
                 n.courses = Util.CloneArrayAndElements(n.courses);
             }
+
             n.locations = (PointF[]) n.locations.Clone();
             return n;
         }
@@ -1366,6 +1379,8 @@ namespace PurplePen
             if (other.fontItalic != fontItalic)
                 return false;
             if (other.numColumns != numColumns)
+                return false;
+            if (other.imageBitmap != imageBitmap)
                 return false;
             if ((other.courses == null || courses == null)) {
                 if (other.courses != courses)
@@ -1404,23 +1419,36 @@ namespace PurplePen
             case "white-out": kind = SpecialKind.WhiteOut; break;
             case "text": kind = SpecialKind.Text; break;
             case "descriptions": kind = SpecialKind.Descriptions; break;
+            case "image": kind = SpecialKind.Image; break;
             default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
             }
 
-            if (kind == SpecialKind.OptCrossing)
+            if (kind == SpecialKind.OptCrossing || kind == SpecialKind.Image)
                 orientation = xmlinput.GetAttributeFloat("orientation");
 
             text = null;
             locations = null;
             allCourses = true;
             courses = null;
+            imageBitmap = null;
             List<PointF> locationList = new List<PointF>();
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses")) {
+            while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses", "image-data")) {
                 switch (xmlinput.Name) {
                 case "text":
                     text = xmlinput.GetContentString();
+                    break;
+
+                case "image-data":
+                    // We ignore the format, since Image.FromStream auto-detects.
+                    MemoryStream stm = xmlinput.GetContentBase64();
+                    try {
+                        imageBitmap = (Bitmap) Image.FromStream(stm);
+                    }
+                    catch (ArgumentException) {
+                        xmlinput.BadXml("Image data could not be loaded");
+                    }
                     break;
 
                 case "font":
@@ -1475,6 +1503,8 @@ namespace PurplePen
                 xmlinput.BadXml("missing 'location' element");
             if ((kind == SpecialKind.Text) && fontName == null)
                 xmlinput.BadXml("missing 'font' element");
+            if ((kind == SpecialKind.Image) && imageBitmap == null)
+                xmlinput.BadXml("Missing 'image-data' element");
             locations = locationList.ToArray();
         }
 
@@ -1495,18 +1525,30 @@ namespace PurplePen
             case SpecialKind.WhiteOut: kindText = "white-out"; break;
             case SpecialKind.Text: kindText = "text"; break;
             case SpecialKind.Descriptions: kindText = "descriptions"; break;
+            case SpecialKind.Image: kindText = "image"; break;
             default:
                 Debug.Fail("bad kind"); kindText = "none";  break;
             }
 
             xmloutput.WriteAttributeString("kind", kindText);
 
-            if (kind == SpecialKind.OptCrossing)
+            if (kind == SpecialKind.OptCrossing || kind == SpecialKind.Image)
                 xmloutput.WriteAttributeString("orientation", XmlConvert.ToString(orientation));
 
             // Write sub-elements
             if (text != null) {
                 xmloutput.WriteElementString("text", text);
+            }
+
+            if (imageBitmap != null) {
+                xmloutput.WriteStartElement("image-data");
+                xmloutput.WriteAttributeString("format", Util.ImageFormatText(imageBitmap.RawFormat));
+                MemoryStream stm = new MemoryStream();
+                imageBitmap.Save(stm, imageBitmap.RawFormat);
+                stm.Flush();
+                byte[] bytes = stm.ToArray();
+                xmloutput.WriteBase64(bytes, 0, bytes.Length);
+                xmloutput.WriteEndElement();
             }
 
             if (kind == SpecialKind.Descriptions && numColumns > 1) {

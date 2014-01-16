@@ -46,6 +46,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Drawing.Imaging;
 
 namespace PurplePen
 {
@@ -593,7 +594,15 @@ namespace PurplePen
             return new Point((int)Math.Round(pointf.X), (int)Math.Round(pointf.Y));
         }
 
-
+        public static string ImageFormatText(ImageFormat imageFormat)
+        {
+            if (imageFormat.Guid == ImageFormat.Bmp.Guid) return "bmp";
+            if (imageFormat.Guid == ImageFormat.Gif.Guid) return "gif";
+            if (imageFormat.Guid == ImageFormat.Jpeg.Guid) return "jpeg";
+            if (imageFormat.Guid == ImageFormat.Png.Guid) return "png";
+            if (imageFormat.Guid == ImageFormat.Tiff.Guid) return "tiff";
+            return "unknown";
+        }
     }
 
 }

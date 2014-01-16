@@ -256,6 +256,21 @@ namespace PurplePen
             return value;
         }
 
+        public MemoryStream GetContentBase64()
+        {
+            byte[] buffer = new byte[1024];
+            int readBytes;
+
+            MemoryStream stm = new MemoryStream();
+            while ((readBytes = Reader.ReadElementContentAsBase64(buffer, 0, buffer.Length)) > 0) {
+                stm.Write(buffer, 0, readBytes);
+            }
+
+            stm.Flush();
+            stm.Seek(0, SeekOrigin.Begin);
+            return stm;
+        }
+
         // Searches for an element with one of the given names. If found, true is returns and the reader is positioned on that
         // sub-element's Element node. If not found before the end of this element, false is returned, and
         // the reader is positioned just beyond the EndElement node.
