@@ -94,6 +94,11 @@ namespace PurplePen.Tests
                 map.AddSymdef(whiteArea);
                 dict[CourseLayout.KeyWhiteOut] = whiteArea;
 
+                // Create layout symdef.
+                ImageSymDef layoutSymDef = new ImageSymDef(SymLayer.Layout);
+                map.AddSymdef(layoutSymDef);
+                dict[CourseLayout.KeyLayout] = layoutSymDef;
+
                 SymColor symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
                 courseobj.AddToMap(map, symColor, dict);
             }
@@ -515,6 +520,19 @@ namespace PurplePen.Tests
             CheckRenderBitmap(courseobj, "description_3col", Color.Wheat);
         }
 
+        ImageCourseObj CreateImageCourseObj()
+        {
+            Bitmap bm = (Bitmap)Image.FromFile(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg"));
+            return new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(-0.5F, 2F), new PointF(2F, -1.859F) }, "mrsneeze.jpg", bm);
+        }
+
+        [TestMethod]
+        public void ImageBitmap()
+        {
+            ImageCourseObj courseobj = CreateImageCourseObj();
+            CheckRenderBitmap(courseobj, "image");
+        }
+
         [TestMethod]
         public void ControlCircleDistance()
         {
@@ -683,7 +701,17 @@ namespace PurplePen.Tests
             Assert.AreEqual(1.0, courseobj.DistanceFromPoint(new Point(-5, 1)));
             Assert.AreEqual(2.0 * Math.Sqrt(2), courseobj.DistanceFromPoint(new Point(-6, 6)), 0.01);
         }
-	
+
+        [TestMethod]
+        public void ImageBitmapDistance()
+        {
+            ImageCourseObj courseobj = CreateImageCourseObj();
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new Point(1, 1)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new Point(0, 0)));
+            Assert.AreEqual(0.5, courseobj.DistanceFromPoint(new Point(-1, 0)));
+            Assert.AreEqual(1.80277, courseobj.DistanceFromPoint(new Point(-2, 3)), 0.001);
+        }
+
         // validate a course object dump against a string.
         void AssertDump(CourseObj courseobj, string expected)
         {
@@ -811,6 +839,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = CreateDescriptionCourseObj(2);
             AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.155,Width=7.515,Height=1.845} columns:2");
+        }
+
+        [TestMethod]
+        public void ImageBitmapDump()
+        {
+            CourseObj courseobj = CreateImageCourseObj();
+            AssertDump(courseobj, @"Image:          scale:1  rect:{X=-0.5,Y=-1.859,Width=2.5,Height=3.859}");
         }
 	
 
@@ -1181,6 +1216,13 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj(3);
             CheckHighlightBitmap(courseobj, "description_highlight_3col");
         }
+
+        [TestMethod]
+        public void ImageBitmapHighlight()
+        {
+            CourseObj courseobj = CreateImageCourseObj();
+            CheckHighlightBitmap(courseobj, "image_highlight");
+        }
 	
         // Render to a bitmap and check against the saved version.
         internal void CheckOffsetBitmap(CourseObj courseobj, string basename, Color backColor)
@@ -1354,6 +1396,13 @@ namespace PurplePen.Tests
             CourseObj courseobj = CreateDescriptionCourseObj();
             CheckOffsetBitmap(courseobj, "description_offset", Color.Wheat);
         }
+
+        [TestMethod]
+        public void ImageBitmapOffset()
+        {
+            CourseObj courseobj = CreateImageCourseObj();
+            CheckOffsetBitmap(courseobj, "image_offset", Color.Wheat);
+        }
 	
 
 
@@ -1511,6 +1560,23 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ImageBitmapEquals()
+        {
+            Bitmap bm1 = (Bitmap)Image.FromFile(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg"));
+            Bitmap bm2 = (Bitmap)Image.FromFile(TestUtil.GetTestFile("coursesymbols\\flower.png"));
+            CourseObj courseObj1 = new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(-0.5F, 2F), new PointF(2F, -1.859F) }, "mrsneeze.jpg", bm1);
+            CourseObj courseObj2 = new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(-0.5F, 2F), new PointF(2F, -1.859F) }, "mrsneeze.jpg", bm1);
+            CourseObj courseObj3 = new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(-0.5F, 2F), new PointF(2F, -1.859F) }, "flower.png", bm2);
+            CourseObj courseObj4 = new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(-0.5F, 2F), new PointF(2F, -1.859F) }, "mrsneeze.jpg", bm2);
+            CourseObj courseObj5 = new ImageCourseObj(Id<Special>.None, 1.0F, defaultCourseAppearance, new PointF[] { new PointF(0.5F, 2F), new PointF(3F, -1.859F) }, "mrsneeze.jpg", bm1);
+
+            Assert.AreEqual(courseObj1, courseObj2);
+            Assert.AreNotEqual(courseObj1, courseObj3);
+            Assert.AreNotEqual(courseObj1, courseObj4);
+            Assert.AreNotEqual(courseObj1, courseObj5);
+        }
+
+        [TestMethod]
         public void GetAreaHandles()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -1549,6 +1615,21 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GetImageBitmapHandles()
+        {
+            ImageCourseObj courseObj = CreateImageCourseObj();
+            RectangleF rect = courseObj.rect;
+            float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
+
+            PointF[] handles = courseObj.GetHandles();
+            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+               new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
+               new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
+
+            TestUtil.TestEnumerableAnyOrder(expected, handles);
+        }
+
+        [TestMethod]
         public void GetDescriptionHandleCursors()
         {
             DescriptionCourseObj courseObj = CreateDescriptionCourseObj();
@@ -1565,10 +1646,26 @@ namespace PurplePen.Tests
                 Assert.AreSame(expectedCursors[i], courseObj.GetHandleCursor(expected[i]));
         }
 
-        // Move a description handle and make sure the description ends up in the right place.
-        void MoveDescriptionHandle(PointF initialHandle, PointF finalHandle, RectangleF finalRect)
+        [TestMethod]
+        public void GetImageHandleCursors()
         {
-            DescriptionCourseObj courseObj = CreateDescriptionCourseObj();
+            ImageCourseObj courseObj = CreateImageCourseObj();
+            RectangleF rect = courseObj.rect;
+            float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
+
+            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+               new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
+               new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
+            Cursor[] expectedCursors = new Cursor[] { Cursors.SizeNWSE, Cursors.SizeNESW, Cursors.SizeNESW, Cursors.SizeNWSE, 
+                Cursors.SizeNS, Cursors.SizeNS, Cursors.SizeWE, Cursors.SizeWE };
+
+            for (int i = 0; i < expected.Length; ++i)
+                Assert.AreSame(expectedCursors[i], courseObj.GetHandleCursor(expected[i]));
+        }
+
+        // Move a description handle and make sure the description ends up in the right place.
+        void MoveRectangleHandle(RectCourseObj courseObj, PointF initialHandle, PointF finalHandle, RectangleF finalRect)
+        {
             courseObj.MoveHandle(initialHandle, finalHandle);
             RectangleF result = courseObj.rect;
             Assert.AreEqual(finalRect.Left, result.Left, 0.001F);
@@ -1585,8 +1682,22 @@ namespace PurplePen.Tests
             float ratio = rect.Width / rect.Height;
             float left = rect.Left, right = rect.Right, top= rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
-            MoveDescriptionHandle(new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
-            MoveDescriptionHandle(new PointF(right, (bottom + top) / 2), new PointF(right + 3, 17), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
+            MoveRectangleHandle(courseObj, new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
+            courseObj = CreateDescriptionCourseObj();
+            MoveRectangleHandle(courseObj, new PointF(right, (bottom + top) / 2), new PointF(right + 3, 17), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
+        }
+
+        [TestMethod]
+        public void MoveImageBitmapHandles()
+        {
+            ImageCourseObj courseObj = CreateImageCourseObj();
+            RectangleF rect = courseObj.rect;
+            float ratio = rect.Width / rect.Height;
+            float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
+
+            MoveRectangleHandle(courseObj, new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
+            courseObj = CreateImageCourseObj();
+            MoveRectangleHandle(courseObj, new PointF(right, (bottom + top) / 2), new PointF(right + 3, 17), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
         }
 
         [TestMethod]

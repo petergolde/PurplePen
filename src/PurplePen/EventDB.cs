@@ -1423,7 +1423,7 @@ namespace PurplePen
             default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
             }
 
-            if (kind == SpecialKind.OptCrossing || kind == SpecialKind.Image)
+            if (kind == SpecialKind.OptCrossing)
                 orientation = xmlinput.GetAttributeFloat("orientation");
 
             text = null;
@@ -1532,7 +1532,7 @@ namespace PurplePen
 
             xmloutput.WriteAttributeString("kind", kindText);
 
-            if (kind == SpecialKind.OptCrossing || kind == SpecialKind.Image)
+            if (kind == SpecialKind.OptCrossing)
                 xmloutput.WriteAttributeString("orientation", XmlConvert.ToString(orientation));
 
             // Write sub-elements

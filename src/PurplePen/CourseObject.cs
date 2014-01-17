@@ -2257,4 +2257,94 @@ namespace PurplePen
         }
     }
 
+    
+    class ImageCourseObj: AspectPreservingRectCourseObj
+    {
+        private string imageName;
+        private Bitmap imageBitmap;
+        private ImageLoader imageLoader;
+
+        public ImageCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] locations, string imageName, Bitmap imageBitmap)
+            :base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, Geometry.RectFromPoints(locations[0].X, locations[0].Y, locations[1].X, locations[1].Y))
+        {
+            this.imageName = imageName;
+            this.imageBitmap = imageBitmap;
+            this.imageLoader = new ImageLoader(imageName, imageBitmap);
+        }
+
+        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        {
+            ImageSymDef layoutSymDef = (ImageSymDef) dict[CourseLayout.KeyLayout];
+
+            PointF center = Geometry.RectCenter(rect);
+            ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
+            map.AddSymbol(symbol);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType()) {
+                return false;
+            }
+            if (((ImageCourseObj)obj).imageName != imageName)
+                return false;
+            if (((ImageCourseObj)obj).imageBitmap != imageBitmap)
+                return false;
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ imageName.GetHashCode();
+        }
+
+        protected override void AddToMap(Map map, SymDef symdef)
+        {
+            // Shouldn't be called.
+            throw new NotImplementedException();
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            // Shouldn't be called.
+            throw new NotImplementedException();
+        }
+
+        // The ImageLoader handles providing images to the map based on the image name.
+        private class ImageLoader: IFileLoader
+        {
+            private string imageName;
+            private Bitmap imageBitmap;
+
+            public ImageLoader(string imageName, Bitmap imageBitmap)
+            {
+                this.imageName = imageName;
+                this.imageBitmap = imageBitmap;
+            }
+
+            public FileKind CheckFileKind(string path)
+            {
+                if (string.Equals(path, imageName, StringComparison.InvariantCultureIgnoreCase))
+                    return FileKind.OtherFile;
+                else
+                    return FileKind.DoesntExist;
+            }
+
+            public IGraphicsBitmap LoadBitmap(string path, bool isTemplate)
+            {
+                if (string.Equals(path, imageName, StringComparison.InvariantCultureIgnoreCase))
+                    return new GDIPlus_Bitmap(imageBitmap);
+                else
+                    return null;
+            }
+
+            public Map LoadMap(string path, Map referencingMap)
+            {
+                return null;
+            }
+
+        }
+    }
+    
 }

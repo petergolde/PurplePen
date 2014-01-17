@@ -988,6 +988,124 @@ namespace PurplePen.Tests
  
         }
 
+        [TestMethod]
+        // Move a image special with the mouse.
+        public void MoveImageSpecial()
+        {
+            Setup("modes\\marymoor3.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on image special
+            var dragAction = controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(62F, 36F), 0.3F);
+
+            // text special should be selected.
+            CourseObj[] highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=34,Width=25,Height=6}",
+                                        highlights[0].ToString());
+
+            // Drag the special
+            dragAction = controller.LeftButtonDown(new PointF(58F, 35.5F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
+
+            controller.LeftButtonDrag(new PointF(99F, 48.5F), new PointF(58F, 35.5F), 0.1F);
+            ui.MouseMoved(99F, 48.5F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=86,Y=47,Width=25,Height=6}",
+                                        highlights[0].ToString());
+
+            // Check the status text
+            Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
+
+            // Finish dragging the special
+            controller.LeftButtonEndDrag(new PointF(100F, 47.5F), new PointF(58F, 35.5F), 0.1F);
+            ui.MouseMoved(100F, 47.5F, 0.1F);
+            // Check the status text
+            Assert.AreEqual(StatusBarText.DragObject, controller.StatusText);
+
+            // Check the highlights
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=87,Y=46,Width=25,Height=6}",
+                                        highlights[0].ToString());
+
+            // Make sure the special is now moved.
+            Special newSpecial = eventDB.GetSpecial(SpecialId(7));
+            Assert.AreEqual(newSpecial.kind, SpecialKind.Image);
+            Assert.AreEqual("testimage.jpg", newSpecial.text);
+            Assert.IsNotNull(newSpecial.imageBitmap);
+            Assert.AreEqual(new PointF(87, 52), newSpecial.locations[0]);
+            Assert.AreEqual(new PointF(112, 46), newSpecial.locations[1]);
+        }
+
+        [TestMethod]
+        // Size a text special with the mouse.
+        public void SizeImageSpecialHandle()
+        {
+            Setup("modes\\marymoor3.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on text special
+            var dragAction = controller.LeftButtonDown(new PointF(62F, 36F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(new PointF(62F, 36F), 0.3F);
+
+            // text special should be selected.
+            CourseObj[] highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=34,Width=25,Height=6}",
+                                        highlights[0].ToString());
+
+            // Drag the handle
+            dragAction = controller.LeftButtonDown(new PointF(57.5F, 34F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
+            Cursor cursor = controller.GetMouseCursor(new PointF(57.5F, 34F), 0.1F);
+            Assert.AreSame(Cursors.SizeNS, cursor);
+
+            controller.LeftButtonDrag(new PointF(60F, 29F), new PointF(57.5F, 34F), 0.1F);
+            ui.MouseMoved(60F, 29F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=29,Width=45.83333,Height=11}",
+                                        highlights[0].ToString());
+
+            // Check the status text
+            Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
+
+            // Finish dragging the special
+            controller.LeftButtonEndDrag(new PointF(66F, 22F), new PointF(57.5F, 34F), 0.1F);
+            ui.MouseMoved(66F, 22F, 0.1F);
+
+            // Check the highlights
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=22,Width=75,Height=18}",
+                                        highlights[0].ToString());
+
+
+            // Make sure the special is now moved.
+            Special newSpecial = eventDB.GetSpecial(SpecialId(7));
+            Assert.AreEqual(newSpecial.kind, SpecialKind.Image);
+            Assert.AreEqual("testimage.jpg", newSpecial.text);
+            Assert.IsNotNull(newSpecial.imageBitmap);
+            Assert.AreEqual(new PointF(45, 40), newSpecial.locations[0]);
+            Assert.AreEqual(new PointF(120, 22), newSpecial.locations[1]);
+
+        }
+
 
     }
 }

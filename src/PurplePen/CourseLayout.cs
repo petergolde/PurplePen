@@ -65,6 +65,7 @@ namespace PurplePen
         float[] colorK = new float[LAYERCOUNT];
 
         public static readonly object KeyWhiteOut = "WhiteOutKey";   // key to get the "white out" symdef.
+        public static readonly object KeyLayout = "LayoutKey";   // key to get the "layout" symdef.
 
         // Set the color of a particular layer. Layer 0 is black, layer 1 is the primary course, layer 2 all other controls, 
         // and layers 3 and above for other courses.
@@ -128,6 +129,11 @@ namespace PurplePen
                 whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);
                 dict[KeyWhiteOut] = whiteArea;
+
+                // Create layout symdef.
+                ImageSymDef layoutSymDef = new ImageSymDef(SymLayer.Layout);
+                map.AddSymdef(layoutSymDef);
+                dict[KeyLayout] = layoutSymDef;
 
                 foreach (CourseObj courseObject in this) {
                     int layerIndex = (int) courseObject.layer;

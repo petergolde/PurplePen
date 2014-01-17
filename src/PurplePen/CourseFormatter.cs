@@ -471,6 +471,12 @@ namespace PurplePen
                 courseObj = new DangerousCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.WhiteOut:
                 courseObj = new WhiteOutCourseObj(specialId, scaleRatio, appearance, special.locations); break;
+
+            case SpecialKind.Image:
+                Special imageSpecial = eventDB.GetSpecial(specialId);
+                courseObj = new ImageCourseObj(specialId, scaleRatio, appearance, special.locations, imageSpecial.text, imageSpecial.imageBitmap); 
+                break;
+
             case SpecialKind.Text:
                 string text = ExpandText(eventDB, courseView, special.text);
                 FontStyle fontStyle = special.fontBold ? FontStyle.Bold : FontStyle.Regular;
@@ -480,7 +486,6 @@ namespace PurplePen
                                                                                               (float)Math.Max(special.locations[0].X, special.locations[1].X), (float)Math.Max(special.locations[0].Y, special.locations[1].Y));
                 courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle);
                 break;
-
             case SpecialKind.Descriptions:
             default:
                 Debug.Fail("bad special kind");

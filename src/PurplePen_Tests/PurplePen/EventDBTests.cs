@@ -562,8 +562,8 @@ namespace PurplePen.Tests
             sp7.text = "$(CourseName)";
             sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
             sp9 = new Special(SpecialKind.Image, new PointF[2] { new PointF(18, 17), new PointF(28, 15) });
-            sp9.orientation = 90;
             sp9.imageBitmap = (Bitmap)Image.FromFile(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
+            sp9.text = "testimage.jpg";
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);

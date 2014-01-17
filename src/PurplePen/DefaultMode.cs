@@ -593,9 +593,16 @@ namespace PurplePen
                     descObj.MoveHandle(handleLocation, location);
                     controller.MoveSpecial(specialId, new PointF[2] { new PointF(descObj.rect.Left, descObj.rect.Bottom), new PointF(descObj.rect.Left + descObj.CellSize, descObj.rect.Bottom) }, descObj.NumberOfColumns);
                 }
+                else if (courseObjectStart is RectCourseObj) {
+                    // Moving rectangle handles is sort of special too.
+                    RectCourseObj rectObj = (RectCourseObj)courseObjectStart.Clone();
+                    rectObj.MoveHandle(handleLocation, location);
+                    RectangleF rect = rectObj.GetHighlightBounds();
+                    controller.MoveSpecial(specialId, new PointF[2] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) });
+                }
                 else if (courseObjectStart is BasicTextCourseObj) {
                     // Moving text handles is sort of special too.
-                    BasicTextCourseObj textObj = (BasicTextCourseObj) courseObjectStart.Clone();
+                    BasicTextCourseObj textObj = (BasicTextCourseObj)courseObjectStart.Clone();
                     textObj.MoveHandle(handleLocation, location);
                     RectangleF rect = textObj.GetHighlightBounds();
                     controller.MoveSpecial(specialId, new PointF[2] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) });
