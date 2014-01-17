@@ -205,6 +205,9 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>First Aid Location</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Forbidden Route</value>
   </data>
@@ -259,6 +262,9 @@
   </data>
   <data name="UsedInCourses" xml:space="preserve">
     <value>Used in courses:</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Name:</value>
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>White Out Area</value>

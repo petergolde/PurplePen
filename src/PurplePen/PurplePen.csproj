@@ -2149,6 +2149,7 @@
     <EmbeddedResource Include="SelectionDescriptionText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.ro.resx">
       <LastGenOutput>SelectionDescriptionText.ro.Designer.cs</LastGenOutput>

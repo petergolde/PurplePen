@@ -483,6 +483,11 @@ namespace PurplePen
                 }
             }
 
+            if (special.kind == SpecialKind.Image) {
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.FileName + "  "));
+                list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", special.text)));
+            }
+
             // Line height for descriptions.
             if (special.kind == SpecialKind.Descriptions) {
                 list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.LineHeight + "  "));

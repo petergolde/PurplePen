@@ -1358,6 +1358,44 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ImageBitmap()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor2.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(10));
+            selectionMgr.SelectSpecial(SpecialId(9));
+            TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Image", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Name:  ", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("testimage.jpg", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Used in courses:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+
+        [TestMethod]
         public void Text()
         {
             TextPart textpart;
