@@ -168,6 +168,7 @@ namespace PurplePen
             this.addRegMarkMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.whiteOutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteItemMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -245,6 +246,7 @@ namespace PurplePen
             this.registrationMarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whiteOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addBendToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addGapToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -256,6 +258,7 @@ namespace PurplePen
             this.locationDisplay = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -984,7 +987,8 @@ namespace PurplePen
             this.addBoundaryMenu,
             this.addRegMarkMenu,
             this.whiteOutMenu,
-            this.addTextMenu});
+            this.addTextMenu,
+            this.addImageMenu});
             this.addSpecialItemMenu.Name = "addSpecialItemMenu";
             resources.ApplyResources(this.addSpecialItemMenu, "addSpecialItemMenu");
             // 
@@ -1053,6 +1057,12 @@ namespace PurplePen
             this.addTextMenu.Name = "addTextMenu";
             resources.ApplyResources(this.addTextMenu, "addTextMenu");
             this.addTextMenu.Click += new System.EventHandler(this.addTextMenu_Click);
+            // 
+            // addImageMenu
+            // 
+            this.addImageMenu.Name = "addImageMenu";
+            resources.ApplyResources(this.addImageMenu, "addImageMenu");
+            this.addImageMenu.Click += new System.EventHandler(this.addImageMenu_Click);
             // 
             // addTextLineMenu
             // 
@@ -1511,7 +1521,8 @@ namespace PurplePen
             this.boundaryToolStripMenuItem,
             this.registrationMarkToolStripMenuItem,
             this.whiteOutToolStripMenuItem,
-            this.textToolStripMenuItem});
+            this.textToolStripMenuItem,
+            this.imageToolStripMenuItem});
             resources.ApplyResources(this.specialItemToolStripMenu, "specialItemToolStripMenu");
             this.specialItemToolStripMenu.Name = "specialItemToolStripMenu";
             // 
@@ -1580,6 +1591,12 @@ namespace PurplePen
             resources.ApplyResources(this.textToolStripMenuItem, "textToolStripMenuItem");
             this.textToolStripMenuItem.Name = "textToolStripMenuItem";
             this.textToolStripMenuItem.Click += new System.EventHandler(this.addTextMenu_Click);
+            // 
+            // imageToolStripMenuItem
+            // 
+            resources.ApplyResources(this.imageToolStripMenuItem, "imageToolStripMenuItem");
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.Click += new System.EventHandler(this.addImageMenu_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1651,6 +1668,10 @@ namespace PurplePen
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
+            // 
+            // openImageDialog
+            // 
+            resources.ApplyResources(this.openImageDialog, "openImageDialog");
             // 
             // MainFrame
             // 
@@ -1883,6 +1904,9 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem donateWebSiteMenu;
         private System.Windows.Forms.ToolStripMenuItem crashToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createCoursePdfMenu;
+        private System.Windows.Forms.ToolStripMenuItem addImageMenu;
+        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openImageDialog;
 
     }
 }

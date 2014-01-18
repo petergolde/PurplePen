@@ -820,6 +820,19 @@ namespace PurplePen
             return eventDB.AddSpecial(special);
         }
 
+        // Add a text special to the event
+        public static Id<Special> AddImageSpecial(EventDB eventDB, RectangleF boundingRectangle, Bitmap imageBitmap, string imageName)
+        {
+            Debug.Assert(imageBitmap != null);
+            Debug.Assert(imageName != null);
+            
+            Special special = new Special(SpecialKind.Image, new PointF[2] { new PointF(boundingRectangle.Left, boundingRectangle.Bottom), new PointF(boundingRectangle.Right, boundingRectangle.Top) });
+            special.text = imageName;
+            special.imageBitmap = imageBitmap;
+
+            return eventDB.AddSpecial(special);
+        }
+
         // Delete a course and all of its course controls.
         public static void DeleteCourse(EventDB eventDB, Id<Course> courseId)
         {

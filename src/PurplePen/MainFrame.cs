@@ -137,6 +137,8 @@ namespace PurplePen
             addDangerousMenu.Image = dangerousToolStripMenuItem.Image;
             addBoundaryMenu.Image = boundaryToolStripMenuItem.Image;
             addTextMenu.Image = textToolStripMenuItem.Image;
+            addImageMenu.Image = imageToolStripMenuItem.Image;
+            whiteOutMenu.Image = whiteOutToolStripMenuItem.Image;
             addGapMenu.Image = addGapToolStripButton.Image;
             addBendMenu.Image = addBendToolStripButton.Image;
         }
@@ -1350,6 +1352,17 @@ namespace PurplePen
             }
 
             dialog.Dispose();
+        }
+
+        private void addImageMenu_Click(object sender, EventArgs e)
+        {
+            openImageDialog.FileName = null;
+            DialogResult result = openImageDialog.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                string fileName = openImageDialog.FileName;
+                controller.BeginAddImageSpecialMode(fileName);
+            }
         }
 
         private void changeTextMenu_Click(object sender, EventArgs e)

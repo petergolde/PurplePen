@@ -213,4 +213,7 @@
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>Click left mouse button to add map exchange at control "{0}" </value>
   </data>
+  <data name="AddingImage" xml:space="preserve">
+    <value>Hold down left mouse button and drag to place image</value>
+  </data>
 </root>

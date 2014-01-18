@@ -2434,6 +2434,23 @@ namespace PurplePen
             SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text));
         }
 
+        // Start the mode to add text to a course
+        public void BeginAddImageSpecialMode(string fileName)
+        {
+            Bitmap imageBitmap = null;
+
+            bool success = HandleExceptions(
+                delegate {
+                    imageBitmap = (Bitmap)Image.FromFile(fileName);
+                },
+                MiscText.CannotReadImageFile, fileName);
+
+            if (success) {
+                string imageName = Path.GetFileName(fileName);
+                SetCommandMode(new AddImageMode(this, undoMgr, selectionMgr, eventDB, imageBitmap, imageName));
+            }
+        }
+
         // Move a control.
         public void MoveControl(Id<ControlPoint> controlId, PointF newLocation)
         {
