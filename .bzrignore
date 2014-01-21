@@ -13,6 +13,7 @@ Release
 *.chm
 *.sdf
 *.opensdf
+*.DS_Store
 src/TestResults
 src/tools/TranslateTool/TestResults
 src/tools/TranslateTool/TestFiles
