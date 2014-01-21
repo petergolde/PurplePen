@@ -2274,11 +2274,26 @@ namespace PurplePen
 
         public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
         {
+            IList<TemplateInfo> currentTemplates = map.Templates;
+            
+            PointF center = Geometry.RectCenter(rect);
+            float dpi = (25.4F * imageBitmap.Width) / rect.Width;
+            TemplateInfo newTemplate = new TemplateInfo(imageName, center, dpi, 0, true, imageLoader);
+
+            List<TemplateInfo> newTemplates = new List<TemplateInfo>(currentTemplates.Count + 1);
+            newTemplates.Add(newTemplate);
+            newTemplates.AddRange(currentTemplates);
+            map.Templates = newTemplates;
+
+            /* The following code creates the image as a ImageSymDef instead of a template. We use templates because
+             * they are compatible with OCAD 8,9,10, while ImageSymDef only works for OCAD 11+.
+             
             ImageSymDef layoutSymDef = (ImageSymDef) dict[CourseLayout.KeyLayout];
 
             PointF center = Geometry.RectCenter(rect);
             ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
             map.AddSymbol(symbol);
+             */
         }
 
         public override bool Equals(object obj)
