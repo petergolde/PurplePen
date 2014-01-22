@@ -1845,7 +1845,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             if (bitmapFileNames != null) {
                 for (int i = 0; i < bitmapFileNames.Length; ++i) {
-                    TestUtil.CompareBitmapBaseline(bitmapFileNames[0], bitmapFileBaselines[0]);
+                    TestUtil.CompareBitmapBaseline(bitmapFileNames[i], bitmapFileBaselines[i]);
                 }
             }
         }
@@ -2116,6 +2116,31 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\LincolnNov12.bmp") },
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create11\\LincolnNov12.png") });
         }
+
+        [TestMethod]
+        public void OcadCreation12()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create12");
+            settings.CourseIds = new Id<Course>[1] { CourseId(2) };
+            settings.version = 8;
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor6.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2_expected.txt") },
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze.jpg"), TestUtil.GetTestFile("controller\\ocad_create12\\flower.gif") },
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.png"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
+        }
+
+
+
 
         // Test overwritting files
         [TestMethod]

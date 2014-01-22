@@ -1361,6 +1361,65 @@ namespace PurplePen.Tests
             Assert.IsInstanceOfType(highlights[0], typeof(BasicTextCourseObj));
         }
 
+        [TestMethod]
+        public void AddImageSpecial()
+        {
+            CourseObj[] highlights;
+
+            // Select All Controls.
+            controller.SelectTab(3);
+
+            // Begin adding a description.
+            controller.BeginAddImageSpecialMode(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg"));
+
+            // Check the status text.
+            Assert.AreEqual(StatusBarText.AddingImage, controller.StatusText);
+
+            // Click the mouse and drag.
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
+            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(23, 37), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, action);
+            Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));
+
+            controller.LeftButtonDrag(new PointF(74, 12), new PointF(23, 37), 0.1F);
+
+            // Check the highlights.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            ImageCourseObj obj = (ImageCourseObj)highlights[0];
+            Assert.AreEqual(23F, obj.GetHighlightBounds().Left, 0.01F);
+            Assert.AreEqual(37F, obj.GetHighlightBounds().Bottom, 0.01F);
+            Assert.AreEqual(74F, obj.GetHighlightBounds().Right, 0.01F);
+            Assert.AreEqual(-41.83279F, obj.GetHighlightBounds().Top, 0.01F);
+            Assert.AreEqual("mrsneeze.jpg", obj.imageName);
+            Assert.IsNotNull(obj.imageBitmap);
+
+            // Finish the drag.
+            controller.LeftButtonEndDrag(new PointF(76, 11), new PointF(23, 37), 0.1F);
+
+            // There should be a image special, with the given location.
+            // Is should be selected.
+            int countImageSpecials = 0;
+            EventDB eventDB = controller.GetEventDB();
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Image) {
+                    ++countImageSpecials;
+                    Assert.AreEqual(23F, special.locations[0].X, 0.01F);
+                    Assert.AreEqual(37F, special.locations[0].Y, 0.01F);
+                    Assert.AreEqual(76F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(-44.92439F, special.locations[1].Y, 0.01F);
+                    Assert.IsTrue(special.allCourses);
+                    Assert.AreEqual("mrsneeze.jpg", special.text);
+                }
+            }
+            Assert.AreEqual(1, countImageSpecials);
+
+            // The text special should be highlighted.
+            highlights = (CourseObj[])controller.GetHighlights();
+            Assert.AreEqual(1, highlights.Length);
+            Assert.IsInstanceOfType(highlights[0], typeof(ImageCourseObj));
+        }
+
 
     }
 

@@ -2260,8 +2260,8 @@ namespace PurplePen
     
     class ImageCourseObj: AspectPreservingRectCourseObj
     {
-        private string imageName;
-        private Bitmap imageBitmap;
+        public readonly string imageName;
+        public readonly Bitmap imageBitmap;
         private ImageLoader imageLoader;
 
         public ImageCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] locations, string imageName, Bitmap imageBitmap)

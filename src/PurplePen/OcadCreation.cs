@@ -64,11 +64,7 @@ namespace PurplePen
         void ExportMap(CourseView courseView, string outputFilename)
         {
             // Create the CourseLayout.
-            CourseLayout courseLayout = new CourseLayout();
-            courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
-            courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
-                creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseAppearance, courseLayout, CourseLayer.MainCourse);
+            CourseLayout courseLayout = CreateCourseLayout(courseView);
 
             // Create the map and write it out.
             Map map = courseLayout.RenderToMap();
@@ -82,7 +78,7 @@ namespace PurplePen
                         // Set OCAD map as template.
                         // OCAD 6 doesn't support another OCAD file as a template.
                         if (creationSettings.version > 6)
-                            map.Templates = new TemplateInfo[] {new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true)};
+                            AddTemplateToMap(map, new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true));
 
                         // Use same real world coordinates as underlying map (nicer, but also works around bug in OCAD 11
                         // where background maps with real world coordinates aren't displayed if the map map doesn't have same real
@@ -109,7 +105,7 @@ namespace PurplePen
                             dpi = controller.MapDpi;
                         }
 
-                        map.Templates = new TemplateInfo[] {new TemplateInfo(mapFileName, centerPoint, dpi, 0, true)};
+                        AddTemplateToMap(map, new TemplateInfo(mapFileName, centerPoint, dpi, 0, true));
                         break;
 
                     case MapType.None:
@@ -121,7 +117,36 @@ namespace PurplePen
                 }
             }
 
+            WriteImageBitmaps(map);
+
             InputOutput.WriteFile(outputFilename, map, creationSettings.version);
+        }
+
+        // Add a template to a map. If the format is 7 or earlier, which only support one template, replace templates.  Otherwise, 
+        // add at the end.
+        void AddTemplateToMap(Map map, TemplateInfo template)
+        {
+            if (creationSettings.version <= 7) {
+                map.Templates = new TemplateInfo[] { template };
+            }
+            else {
+                List<TemplateInfo> templates = new List<TemplateInfo>();
+                templates.AddRange(map.Templates);
+                templates.Add(template);
+                map.Templates = templates;
+            }
+        }
+
+        CourseLayout CreateCourseLayout(CourseView courseView)
+        {
+            // Create the CourseLayout.
+            CourseLayout courseLayout = new CourseLayout();
+            courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
+            courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
+                creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseAppearance, courseLayout, CourseLayer.MainCourse);
+
+            return courseLayout;
         }
 
         // Get the full output file name. Uses the name of the course, removes bad characters,
@@ -227,7 +252,66 @@ namespace PurplePen
                     overwrittenFiles.Add(pdfBitmap);
             }
 
+            foreach (BitmapToWrite bitmapToWrite in BitmapsToWrite()) {
+                if (File.Exists(bitmapToWrite.FullPath))
+                    overwrittenFiles.Add(bitmapToWrite.FullPath);
+            }
+
             return overwrittenFiles;
+        }
+
+        private struct BitmapToWrite
+        {
+            public string Name;
+            public string FullPath;
+            public Bitmap Bitmap;
+            public ImageFormat Format;
+        }
+
+        // Get all the bitmaps to write, in the dictionary as fully-qualified-path, mapped to bitmap.
+        // Currently we don't filter to only bitmaps that are used in the given courses. Seems like
+        // extra complexity that isn't needed.
+        private ICollection<BitmapToWrite> BitmapsToWrite()
+        {
+            Dictionary<string, BitmapToWrite> bitmapsToWrite = new Dictionary<string, BitmapToWrite>();
+
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Image) {
+                    string name = special.text;
+                    string path = Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, special.text));
+                    ImageFormat format = special.imageBitmap.RawFormat;
+
+                    if (creationSettings.version <= 10 && format.Guid == ImageFormat.Png.Guid) {
+                        // Versions prior to 10 don't handle PNG. Use gif instead.
+                        format = ImageFormat.Gif;
+                        path = Path.ChangeExtension(path, ".gif");
+                    }
+
+                    if (!bitmapsToWrite.ContainsKey(name))
+                        bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = format });
+                }
+            }
+
+            return bitmapsToWrite.Values;
+        }
+
+        // Write all the image bitmaps. Also updates the file names in the templates to the full path names.
+        private void WriteImageBitmaps(Map map)
+        {
+            using (map.Write()) {
+                List<TemplateInfo> templates = new List<TemplateInfo>(map.Templates);
+
+                foreach (BitmapToWrite bitmapToWrite in BitmapsToWrite()) {
+                    BitmapUtil.SaveBitmap(bitmapToWrite.Bitmap, bitmapToWrite.FullPath, bitmapToWrite.Format);
+
+                    for (int i = 0; i < templates.Count; ++i) {
+                        if (templates[i].absoluteFileName == bitmapToWrite.Name)
+                            templates[i] = templates[i].UpdateFileName(bitmapToWrite.FullPath);
+                    }
+                }
+
+                map.Templates = templates;
+            }
         }
     }
 
