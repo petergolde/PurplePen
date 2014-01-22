@@ -991,6 +991,33 @@ namespace PurplePen
             return basename;
         }
 
+        // Is the given image name in use?
+        public static bool IsImageNameUsed(EventDB eventDB, string imageName)
+        {
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Image && string.Equals(special.text, imageName, StringComparison.InvariantCultureIgnoreCase))
+                    return true;
+            }
 
+            return false;
+        }
+
+        // Get a unique image name.
+        public static string UniqueImageName(EventDB eventDB, string imageName)
+        {
+            if (!IsImageNameUsed(eventDB, imageName))
+                return imageName;
+
+            for (int i = 1; i < 999999; ++i) {
+                int lastDot = imageName.LastIndexOf('.');
+                if (lastDot < 0)
+                    lastDot = imageName.Length;
+                string newName = imageName.Substring(0, lastDot) + "(" + i.ToString() + ")" + imageName.Substring(lastDot);
+                if (!IsImageNameUsed(eventDB, newName))
+                    return newName;
+            }
+
+            return imageName;
+        }
     }
 }

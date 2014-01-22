@@ -1596,6 +1596,52 @@ namespace PurplePen.Tests
             Assert.AreEqual("A-All controls.a", result);
 
         }
+
+        [TestMethod]
+        public void IsImageNameInUse()
+        {
+            bool result;
+            Setup("queryevent\\sampleevent14.coursescribe");
+
+            result = QueryEvent.IsImageNameUsed(eventDB, "mrsneeze.jpg");
+            Assert.IsTrue(result);
+            result = QueryEvent.IsImageNameUsed(eventDB, "test.jpg");
+            Assert.IsFalse(result);
+
+            undomgr.BeginCommand(1038, "add image");
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), (Bitmap) Image.FromFile(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), "test.jpg");
+            undomgr.EndCommand(1038);
+
+            result = QueryEvent.IsImageNameUsed(eventDB, "test.jpg");
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void UniqueImageName()
+        {
+            string result;
+            Setup("queryevent\\sampleevent14.coursescribe");
+
+            result = QueryEvent.UniqueImageName(eventDB, "test.jpg");
+            Assert.AreEqual("test.jpg", result);
+            result = QueryEvent.UniqueImageName(eventDB, "mrsneeze.jpg");
+            Assert.AreEqual("mrsneeze(1).jpg", result);
+
+            undomgr.BeginCommand(1038, "add image");
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), (Bitmap)Image.FromFile(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), result);
+            undomgr.EndCommand(1038);
+
+            result = QueryEvent.UniqueImageName(eventDB, "mrsneeze.jpg");
+            Assert.AreEqual("mrsneeze(2).jpg", result);
+
+            undomgr.BeginCommand(1038, "add image");
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), (Bitmap)Image.FromFile(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), "foo");
+            undomgr.EndCommand(1038);
+
+            result = QueryEvent.UniqueImageName(eventDB, "foo");
+            Assert.AreEqual("foo(1)", result);
+        }
+
     }
 }
 #endif
