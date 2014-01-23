@@ -39,6 +39,8 @@ using System.Drawing;
 using System.Xml;
 using System.Diagnostics;
 using System.IO;
+using PurplePen.Graphics2D;
+using System.Globalization;
 
 #pragma warning disable 659
 
@@ -1220,6 +1222,88 @@ namespace PurplePen
         Text,                                // arbitrary text, with replacements   (rectangle)
         Descriptions,                    // control description sheet (rectangle of first square)
         Image,                           // A bitmap image.
+        Line,                            // A line.
+        Rectangle                        // A rectangle.
+    }
+
+    // Kinds of a line
+    public enum LineKind { Single, Double, Dashed};
+
+    // Color of a special item: Black, Purple, White, or Custom.
+    public class SpecialColor
+    {
+        public enum ColorKind { Black, Purple, White, Custom }
+
+        public readonly ColorKind Kind;
+        public readonly CmykColor CustomColor;
+
+        public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black);
+        public readonly static SpecialColor Purple = new SpecialColor(ColorKind.Purple);
+        public readonly static SpecialColor White = new SpecialColor(ColorKind.White);
+
+        public SpecialColor(ColorKind colorKind)
+        {
+            Debug.Assert(colorKind != ColorKind.Custom);
+            this.Kind = colorKind;
+        }
+
+        public SpecialColor(float cyan, float magenta, float yellow, float black)
+        {
+            this.Kind = ColorKind.Custom;
+            this.CustomColor = CmykColor.FromCmyk(cyan, magenta, yellow, black);
+        }
+
+        public override string ToString()
+        {
+            switch (Kind) {
+                case ColorKind.Black: return "black";
+                case ColorKind.Purple: return "purple";
+                case ColorKind.White: return "white";
+                case ColorKind.Custom: return string.Format(CultureInfo.InvariantCulture, "{0:F},{1:F},{2:F},{3:F}", CustomColor.Cyan, CustomColor.Magenta, CustomColor.Yellow, CustomColor.Black);
+                default: return base.ToString();
+            }
+        }
+
+        public static SpecialColor Parse(string s)
+        {
+            if (s == "black")
+                return SpecialColor.Black;
+            else if (s == "purple")
+                return SpecialColor.Purple;
+            else if (s == "white")
+                return SpecialColor.White;
+            else {
+                float c, m, y, k;
+                string[] colors = s.Split(',');
+                if (colors.Length != 4)
+                    throw new FormatException();
+                c = float.Parse(colors[0], CultureInfo.InvariantCulture);
+                m = float.Parse(colors[1], CultureInfo.InvariantCulture);
+                y = float.Parse(colors[2], CultureInfo.InvariantCulture);
+                k = float.Parse(colors[3], CultureInfo.InvariantCulture);
+                return new SpecialColor(c, m, y, k);
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            SpecialColor other = obj as SpecialColor;
+            if (other == null)
+                return false;
+
+            if (Kind != ColorKind.Custom)
+                return Kind == other.Kind;
+            else
+                return (Kind == other.Kind && CustomColor.Equals(other.CustomColor));
+        }
+
+        public override int GetHashCode()
+        {
+            if (Kind != ColorKind.Custom)
+                return Kind.GetHashCode();
+            else
+                return CustomColor.GetHashCode();
+        }
     }
 
 
@@ -1235,6 +1319,11 @@ namespace PurplePen
         public float orientation;           // For crossing points only, the orientation in degress
         public bool allCourses;             // If true, special is in all courses.
         public CourseDesignator[] courses;  // If allCourses is false, an array of the course designators this special is in.
+        public SpecialColor color;          // For text, line, rectangle, the color
+        public LineKind lineKind;           // For line/rectangle, the kind of line.
+        public float lineWidth;             // For line/rectangle, the width of the line.
+        public float gapSize;               // For line/rectangle, either gap in dashes, or gap between double lines
+        public float dashSize;              // For line/rectangle, length of gaps
         public string text;                 // for text objects, the text.
         public string fontName;             // for text objects, the font name
         public bool fontBold, fontItalic;   // for text objects, the font style
@@ -1265,6 +1354,7 @@ namespace PurplePen
                 break;
 
             case SpecialKind.Boundary:
+            case SpecialKind.Line:
                 if (locations.Length < 2)
                     throw new ApplicationException(string.Format("Special line object {0} should have 2 or more coordinates", id));
                 break;
@@ -1279,6 +1369,7 @@ namespace PurplePen
             case SpecialKind.Text:
             case SpecialKind.Descriptions:
             case SpecialKind.Image:
+            case SpecialKind.Rectangle:
                 if (locations.Length != 2)
                     throw new ApplicationException(string.Format("Text or descriptions object {0} should have 2 coordinates", id));
                 break;
@@ -1293,6 +1384,13 @@ namespace PurplePen
             if (kind == SpecialKind.Text) {
                 if (fontName == null || fontName == "")
                     throw new ApplicationException(string.Format("Text object {0} should have non-null font name", id));
+                if (color == null)
+                    throw new ApplicationException(string.Format("Text object {0} should have non-null color", id));
+            }
+
+            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+                if (color == null)
+                    throw new ApplicationException(string.Format("Text object {0} should have non-null color", id));
             }
 
             if (kind == SpecialKind.Dangerous) {
@@ -1370,6 +1468,16 @@ namespace PurplePen
                 return false;
             if (other.allCourses != allCourses)
                 return false;
+            if (!object.Equals(color, other.color))
+                return false;
+            if (other.lineKind != lineKind)
+                return false;
+            if (other.lineWidth != lineWidth)
+                return false;
+            if (other.gapSize != gapSize)
+                return false;
+            if (other.dashSize != dashSize)
+                return false;
             if (other.text != text)
                 return false;
             if (other.fontName != fontName)
@@ -1420,6 +1528,9 @@ namespace PurplePen
             case "text": kind = SpecialKind.Text; break;
             case "descriptions": kind = SpecialKind.Descriptions; break;
             case "image": kind = SpecialKind.Image; break;
+            case "line": kind = SpecialKind.Line; break;
+            case "rectangle": kind = SpecialKind.Rectangle; break;
+              
             default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
             }
 
@@ -1432,6 +1543,9 @@ namespace PurplePen
             courses = null;
             imageBitmap = null;
             List<PointF> locationList = new List<PointF>();
+
+            if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle)
+                color = SpecialColor.Purple;  // default color is purple.
 
             bool first = true;
             while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses", "image-data")) {
@@ -1467,6 +1581,21 @@ namespace PurplePen
 
                 case "appearance":
                     numColumns = xmlinput.GetAttributeInt("columns", 1);
+
+                    if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+                        color = xmlinput.GetAttributeColor("color", SpecialColor.Purple);
+                    }
+
+                    string lineKindValue = xmlinput.GetAttributeString("line-kind", "");
+                    switch (lineKindValue) {
+                        case "single": lineKind = LineKind.Single; break;
+                        case "double": lineKind = LineKind.Double; break;
+                        case "dashed": lineKind = LineKind.Dashed; break;
+                    }
+
+                    lineWidth = xmlinput.GetAttributeFloat("line-width", 0);
+                    gapSize = xmlinput.GetAttributeFloat("gap-size", 0);
+                    dashSize = xmlinput.GetAttributeFloat("dash-size", 0);
                     xmlinput.Skip();
                     break;
 
@@ -1526,6 +1655,8 @@ namespace PurplePen
             case SpecialKind.Text: kindText = "text"; break;
             case SpecialKind.Descriptions: kindText = "descriptions"; break;
             case SpecialKind.Image: kindText = "image"; break;
+            case SpecialKind.Line: kindText = "line"; break;
+            case SpecialKind.Rectangle: kindText = "rectangle"; break;
             default:
                 Debug.Fail("bad kind"); kindText = "none";  break;
             }
@@ -1562,6 +1693,25 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("name", fontName);
                 xmloutput.WriteAttributeString("bold", XmlConvert.ToString(fontBold));
                 xmloutput.WriteAttributeString("italic", XmlConvert.ToString(fontItalic));
+                xmloutput.WriteEndElement();
+                xmloutput.WriteStartElement("appearance");
+                xmloutput.WriteAttributeString("color", color.ToString());
+                xmloutput.WriteEndElement();
+            }
+
+            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+                xmloutput.WriteStartElement("appearance");
+                switch (lineKind) {
+                    case LineKind.Single: xmloutput.WriteAttributeString("line-kind", "single"); break;
+                    case LineKind.Double: xmloutput.WriteAttributeString("line-kind", "double"); break;
+                    case LineKind.Dashed: xmloutput.WriteAttributeString("line-kind", "dashed"); break;
+                }
+                xmloutput.WriteAttributeString("color", color.ToString());
+                xmloutput.WriteAttributeString("line-width", XmlConvert.ToString(lineWidth));
+                if (lineKind == LineKind.Double || lineKind == LineKind.Dashed)
+                    xmloutput.WriteAttributeString("gap-size", XmlConvert.ToString(gapSize));
+                if (lineKind == LineKind.Dashed)
+                    xmloutput.WriteAttributeString("dash-size", XmlConvert.ToString(dashSize));
                 xmloutput.WriteEndElement();
             }
 

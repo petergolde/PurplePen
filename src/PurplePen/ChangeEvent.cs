@@ -816,6 +816,7 @@ namespace PurplePen
             special.fontName = fontName;
             special.fontBold = bold;
             special.fontItalic = italic;
+            special.color = SpecialColor.Purple;
 
             return eventDB.AddSpecial(special);
         }

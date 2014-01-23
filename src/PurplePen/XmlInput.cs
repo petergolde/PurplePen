@@ -249,6 +249,22 @@ namespace PurplePen
             return XmlConvert.ToBoolean(value);
         }
 
+        public SpecialColor GetAttributeColor(string name, SpecialColor defValue)
+        {
+            string value = Reader.GetAttribute(name);
+            if (value == null || value == string.Empty)
+                return defValue;
+            else {
+                try {
+                    return SpecialColor.Parse(value);
+                }
+                catch (FormatException) {
+                    BadXml("Bad format for color attribute '{0}'", name);
+                    return defValue;
+                }
+            }
+        }
+
         // Get content of the element as a string, and skip the element.
         public string GetContentString()
         {

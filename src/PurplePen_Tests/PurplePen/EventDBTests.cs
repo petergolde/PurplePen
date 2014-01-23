@@ -535,7 +535,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9;
+            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9, sp10, sp11, sp12, sp13;
 
             undomgr.BeginCommand(88, "Command1");
 
@@ -552,6 +552,7 @@ namespace PurplePen.Tests
             sp5.fontBold = true;
             sp5.fontItalic = false;
             sp5.allCourses = false;
+            sp5.color = new SpecialColor(0.2F, 0.5F, 0.3F, 0F);
             sp5.courses = new CourseDesignator[2] { Designator(2), new CourseDesignator(CourseId(3), 1) };
             sp6 = new Special(SpecialKind.Descriptions, new PointF[2] { new PointF(5, 6), new PointF(11, 6) });
             sp6.numColumns = 2;
@@ -560,10 +561,30 @@ namespace PurplePen.Tests
             sp7.fontBold = false;
             sp7.fontItalic = true;
             sp7.text = "$(CourseName)";
+            sp7.color = SpecialColor.Purple;
             sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
             sp9 = new Special(SpecialKind.Image, new PointF[2] { new PointF(18, 17), new PointF(28, 15) });
             sp9.imageBitmap = (Bitmap)Image.FromFile(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
             sp9.text = "testimage.jpg";
+            sp10 = new Special(SpecialKind.Line, new PointF[3] { new PointF(8, 7), new PointF(1, 2), new PointF(5, 12) });
+            sp10.color = SpecialColor.Black;
+            sp10.lineKind = LineKind.Single;
+            sp10.lineWidth = 0.1F;
+            sp11 = new Special(SpecialKind.Line, new PointF[3] { new PointF(8, 7), new PointF(1, 2), new PointF(5, 12) });
+            sp11.color = new SpecialColor(1F, 0.66F, 0.45F, 0.83F);
+            sp11.lineKind = LineKind.Double;
+            sp11.lineWidth = 0.1F;
+            sp11.gapSize = 0.15F;
+            sp12 = new Special(SpecialKind.Line, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
+            sp12.color = SpecialColor.White;
+            sp12.lineKind = LineKind.Dashed;
+            sp12.lineWidth = 0.1F;
+            sp12.gapSize = 0.15F;
+            sp12.dashSize = 0.44F;
+            sp13 = new Special(SpecialKind.Rectangle, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
+            sp13.color = SpecialColor.Purple;
+            sp13.lineKind = LineKind.Single;
+            sp12.lineWidth = 0.1F;
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
@@ -574,6 +595,10 @@ namespace PurplePen.Tests
             eventDB.AddSpecial(sp7);
             eventDB.AddSpecial(sp8);
             eventDB.AddSpecial(sp9);
+            eventDB.AddSpecial(sp10);
+            eventDB.AddSpecial(sp11);
+            eventDB.AddSpecial(sp12);
+            eventDB.AddSpecial(sp13);
 
             undomgr.EndCommand(88);
 
@@ -603,6 +628,10 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Special>,Special>(SpecialId(7), sp7),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(8), sp8),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(9), sp9),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(10), sp10),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(11), sp11),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(12), sp12),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(13), sp13),
                 }
             );
         }

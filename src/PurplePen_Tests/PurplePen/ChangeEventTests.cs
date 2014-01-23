@@ -1808,6 +1808,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(special.fontBold);
             Assert.IsTrue(special.fontItalic);
             Assert.IsTrue(special.allCourses);
+            Assert.IsTrue(special.color.Equals(SpecialColor.Purple));
 
             undomgr.Undo();
             eventDB.Validate();
