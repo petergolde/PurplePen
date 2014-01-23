@@ -135,6 +135,12 @@ namespace PurplePen
         // Create the SymDef for this symbol kind. Only called once for each "key"
         protected abstract SymDef CreateSymDef(Map map, SymColor symColor);
 
+        // If returns non-null, indicates the color of the object. Null means use default for the layer it is in.
+        public virtual SpecialColor CustomColor
+        {
+            get { return null; }
+        }
+
         // Add a symbol to the map.
         protected abstract void AddToMap(Map map, SymDef symdef);
 
@@ -1818,6 +1824,92 @@ namespace PurplePen
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
+        }
+    }
+
+    // An arbitrary line.
+    class LineSpecialCourseObj: LineCourseObj
+    {
+        public readonly SpecialColor color;
+        public readonly LineKind lineKind;
+        public readonly float lineWidth;
+        public readonly float gapSize;
+        public readonly float dashSize;
+
+        public LineSpecialCourseObj(Id<Special> specialId, CourseAppearance appearance, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, SymPath path)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, 1.0F, appearance, 
+                   (lineKind == LineKind.Double) ? (lineWidth * 2 + gapSize) : lineWidth, path, null)
+        {
+            this.color = color;
+            this.lineKind = lineKind;
+            this.lineWidth = lineWidth;
+            this.gapSize = gapSize;
+            this.dashSize = dashSize;
+        }
+
+        // A struct synthesizes Equals/GetHashCode automatically.
+        // CONSIDER: use FontDesc instead!
+        struct MySymdefKey
+        {
+            public SpecialColor color; 
+            public LineKind lineKind; 
+            public float lineWidth;
+            public float gapSize;
+            public float dashSize;
+        }
+
+        protected override object SymDefKey()
+        {
+            MySymdefKey key = new MySymdefKey();
+            key.color = color; 
+            key.lineKind = lineKind; 
+            key.lineWidth = lineWidth;
+            key.gapSize = gapSize;
+            key.dashSize = dashSize;
+
+            return key;
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            int ocadId = map.GetFreeSymdefOcadId(901);
+
+            LineSymDef symdef;
+            switch (lineKind) {
+                case LineKind.Single:
+                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, LineStyle.Beveled);
+                    break;
+
+                case LineKind.Double:
+                    LineSymDef.DoubleLineInfo doubleInfo = new LineSymDef.DoubleLineInfo();
+                    doubleInfo.doubleLeftColor = doubleInfo.doubleRightColor = symColor;
+                    doubleInfo.doubleThick = gapSize;
+                    doubleInfo.doubleLeftWidth = doubleInfo.doubleRightWidth = lineWidth;
+                    symdef = new LineSymDef("Line", ocadId, null, 0, LineStyle.Beveled);
+                    symdef.SetDoubleLines(doubleInfo);
+                    break;
+
+                case LineKind.Dashed:
+                    LineSymDef.DashInfo dashInfo = new LineSymDef.DashInfo();
+                    dashInfo.dashLength = dashInfo.firstDashLength = dashInfo.lastDashLength = dashSize;
+                    dashInfo.gapLength = gapSize;
+                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, LineStyle.Beveled);
+                    symdef.SetDashInfo(dashInfo);
+                    break;
+
+                default: throw new ApplicationException("Unexpected line kind");
+            }
+
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
+            map.AddSymdef(symdef);
+            return symdef;
+        }
+
+        public override SpecialColor CustomColor
+        {
+            get {
+                return color;
+            }
         }
     }
 

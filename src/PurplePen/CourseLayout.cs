@@ -38,6 +38,7 @@ using System.IO;
 using System.Drawing;
 
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -122,6 +123,7 @@ namespace PurplePen
             using (map.Write()) {
                 // Create dictionary for holding Symdef state
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
+                Dictionary<SpecialColor, SymColor> customColors = new Dictionary<SpecialColor, SymColor>();
 
                 // Create white color and white-out symdef.
                 SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
@@ -135,8 +137,25 @@ namespace PurplePen
                 map.AddSymdef(layoutSymDef);
                 dict[KeyLayout] = layoutSymDef;
 
+                // Create colors for the special colors.
+                short customColorId = 61;
+                foreach (CourseObj courseObject in this) {
+                    if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Custom) {
+                        if (!customColors.ContainsKey(courseObject.CustomColor)) {
+                            CmykColor cmyk = courseObject.CustomColor.CustomColor;
+                            customColors.Add(courseObject.CustomColor, map.AddColor(string.Format("Color {0}", customColorId), customColorId,
+                                                                                    cmyk.Cyan, cmyk.Magenta, cmyk.Yellow, cmyk.Black));
+                            ++customColorId;
+                        }
+                    }
+                }
+
                 foreach (CourseObj courseObject in this) {
                     int layerIndex = (int) courseObject.layer;
+
+                    if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Black) {
+                        layerIndex = (int)CourseLayer.Descriptions; break;
+                    }
 
                     if (colors[layerIndex] == null) {
                         // Create the symColor for rendering.
@@ -144,7 +163,12 @@ namespace PurplePen
                             colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex]);
                     }
 
-                    courseObject.AddToMap(map, colors[layerIndex], dict);
+                    SymColor color = colors[layerIndex];
+
+                    if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Custom)
+                        color = customColors[courseObject.CustomColor];
+
+                    courseObject.AddToMap(map, color, dict);
                 }
             }
 

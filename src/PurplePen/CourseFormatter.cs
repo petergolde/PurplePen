@@ -465,6 +465,8 @@ namespace PurplePen
                 courseObj = new RegMarkCourseObj(specialId, scaleRatio, appearance, special.locations[0]); break;
             case SpecialKind.Boundary:
                 courseObj = new BoundaryCourseObj(specialId, scaleRatio, appearance, new SymPath(special.locations)); break;
+            case SpecialKind.Line:
+                courseObj = new LineSpecialCourseObj(specialId, appearance, special.color, special.lineKind, special.lineWidth, special.gapSize, special.dashSize, new SymPath(special.locations)); break;
             case SpecialKind.OOB:
                 courseObj = new OOBCourseObj(specialId, scaleRatio, appearance, special.locations); break;
             case SpecialKind.Dangerous:

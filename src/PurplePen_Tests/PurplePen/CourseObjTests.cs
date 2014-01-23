@@ -43,6 +43,7 @@ using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 using PurplePen.MapModel;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.Tests
 {
@@ -99,7 +100,21 @@ namespace PurplePen.Tests
                 map.AddSymdef(layoutSymDef);
                 dict[CourseLayout.KeyLayout] = layoutSymDef;
 
-                SymColor symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
+                SymColor symColor = null;
+                SpecialColor specialColor = courseobj.CustomColor ?? SpecialColor.Purple;
+                switch (specialColor.Kind) {
+                    case SpecialColor.ColorKind.Black:
+                        symColor = map.AddColor("Black", 1, 0, 0, 0, 1F);
+                        break;
+                    case SpecialColor.ColorKind.Purple:
+                        symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
+                        break;
+                    case SpecialColor.ColorKind.Custom:
+                        CmykColor cmyk = specialColor.CustomColor;
+                        symColor = map.AddColor("Custom", 61, cmyk.Cyan, cmyk.Magenta, cmyk.Yellow, cmyk.Black);
+                        break;
+                }
+
                 courseobj.AddToMap(map, symColor, dict);
             }
             return map;
@@ -171,10 +186,11 @@ namespace PurplePen.Tests
         }
 
         // Check a course made up of a single object.
-        void SingleObject(CourseObj courseobj, string name)
+        void SingleObject(CourseObj courseobj, string name, bool checkSmall = true)
         {
             CheckRenderBitmap(courseobj, name);
-            CheckRenderBitmapSmall(courseobj, name);
+            if (checkSmall)
+                CheckRenderBitmapSmall(courseobj, name);
         }
 
         [TestMethod]
@@ -425,6 +441,27 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, specialAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObject(courseobj, "boundary_special");
+        }
+
+        [TestMethod]
+        public void LineSpecial1()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Black, LineKind.Single, 0.7F, 0, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "line1", false);
+        }
+
+        [TestMethod]
+        public void LineSpecial2()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, new SpecialColor(0.8F, 0.1F, 0.7F, 0), LineKind.Dashed, 0.5F, 0.3F, 1.2F, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "line2", false);
+        }
+
+        [TestMethod]
+        public void LineSpecial3()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "line3", false);
         }
 
         [TestMethod]
@@ -897,11 +934,13 @@ namespace PurplePen.Tests
         }
 
         // Check a course made up of a single object.
-        void SingleObjectHighlight(CourseObj courseobj, string name)
+        void SingleObjectHighlight(CourseObj courseobj, string name, bool checkSmall = true)
         {
             CheckHighlightBitmap(courseobj, name);
-            CheckHighlightBitmapSmall(courseobj, name);
-            CheckHighlightBitmapTiny(courseobj, name);
+            if (checkSmall) {
+                CheckHighlightBitmapSmall(courseobj, name);
+                CheckHighlightBitmapTiny(courseobj, name);
+            }
         }
 
         [TestMethod]
@@ -1112,6 +1151,27 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void LineSpecialHighlight1()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Black, LineKind.Single, 0.7F, 0, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectHighlight(courseobj, "line_highlight1", false);
+        }
+
+        [TestMethod]
+        public void LineSpecialHighlight2()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, new SpecialColor(0.8F, 0.1F, 0.7F, 0), LineKind.Dashed, 0.5F, 0.3F, 1.2F, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectHighlight(courseobj, "line_highlight2", false);
+        }
+
+        [TestMethod]
+        public void LineSpecialHighlight3()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectHighlight(courseobj, "line_highlight3", false);
+        }
+
+        [TestMethod]
         public void ControlNumberHighlight()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
@@ -1254,10 +1314,11 @@ namespace PurplePen.Tests
         }
 
         // Check a course made up of a single object.
-        void SingleObjectOffset(CourseObj courseobj, string name)
+        void SingleObjectOffset(CourseObj courseobj, string name, bool checkSmall = true)
         {
             CheckOffsetBitmap(courseobj, name);
-            CheckOffsetBitmapSmall(courseobj, name);
+            if (checkSmall)
+                CheckOffsetBitmapSmall(courseobj, name);
         }
 
         [TestMethod]
@@ -1335,6 +1396,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectOffset(courseobj, "boundary_offset");
+        }
+
+        [TestMethod]
+        public void LineSpecialOffset3()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectOffset(courseobj, "line3_offset", false);
         }
 
         [TestMethod]

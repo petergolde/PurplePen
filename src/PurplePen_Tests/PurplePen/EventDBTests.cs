@@ -576,7 +576,7 @@ namespace PurplePen.Tests
             sp11.lineWidth = 0.1F;
             sp11.gapSize = 0.15F;
             sp12 = new Special(SpecialKind.Line, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
-            sp12.color = SpecialColor.White;
+            sp12.color = SpecialColor.Purple;
             sp12.lineKind = LineKind.Dashed;
             sp12.lineWidth = 0.1F;
             sp12.gapSize = 0.15F;

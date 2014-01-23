@@ -1394,7 +1394,7 @@ namespace PurplePen
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 SpecialKind kind = eventDB.GetSpecial(selection.SelectedSpecial).kind;
-                if (kind == SpecialKind.Boundary || kind == SpecialKind.Dangerous || kind == SpecialKind.OOB || kind == SpecialKind.WhiteOut)
+                if (kind == SpecialKind.Boundary || kind == SpecialKind.Line || kind == SpecialKind.Dangerous || kind == SpecialKind.OOB || kind == SpecialKind.WhiteOut)
                     return CommandStatus.Enabled;    // can always add a new leg.
                 else
                     return CommandStatus.Disabled;
@@ -1451,7 +1451,7 @@ namespace PurplePen
                     // An area special must have >3 corners to be able to remove one.
                     return (special.locations.Length > 3) ? CommandStatus.Enabled : CommandStatus.Disabled;
                 }
-                else if (kind == SpecialKind.Boundary) {
+                else if (kind == SpecialKind.Boundary || kind == SpecialKind.Line) {
                     // A line special must have >2 corners to be able to remove one.
                     return (special.locations.Length > 2) ? CommandStatus.Enabled : CommandStatus.Disabled;
                 }

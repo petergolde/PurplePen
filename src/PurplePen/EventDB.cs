@@ -1232,14 +1232,13 @@ namespace PurplePen
     // Color of a special item: Black, Purple, White, or Custom.
     public class SpecialColor
     {
-        public enum ColorKind { Black, Purple, White, Custom }
+        public enum ColorKind { Black, Purple, Custom }
 
         public readonly ColorKind Kind;
         public readonly CmykColor CustomColor;
 
         public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black);
         public readonly static SpecialColor Purple = new SpecialColor(ColorKind.Purple);
-        public readonly static SpecialColor White = new SpecialColor(ColorKind.White);
 
         public SpecialColor(ColorKind colorKind)
         {
@@ -1258,7 +1257,6 @@ namespace PurplePen
             switch (Kind) {
                 case ColorKind.Black: return "black";
                 case ColorKind.Purple: return "purple";
-                case ColorKind.White: return "white";
                 case ColorKind.Custom: return string.Format(CultureInfo.InvariantCulture, "{0:F},{1:F},{2:F},{3:F}", CustomColor.Cyan, CustomColor.Magenta, CustomColor.Yellow, CustomColor.Black);
                 default: return base.ToString();
             }
@@ -1270,8 +1268,6 @@ namespace PurplePen
                 return SpecialColor.Black;
             else if (s == "purple")
                 return SpecialColor.Purple;
-            else if (s == "white")
-                return SpecialColor.White;
             else {
                 float c, m, y, k;
                 string[] colors = s.Split(',');
