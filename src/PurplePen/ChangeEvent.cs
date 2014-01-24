@@ -792,6 +792,17 @@ namespace PurplePen
             return eventDB.AddSpecial(special);
         }
 
+        public static Id<Special> AddLineSpecial(EventDB eventDB, PointF[] locations, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize)
+        {
+            Special special = new Special(SpecialKind.Line, locations);
+            special.color = color;
+            special.lineKind = lineKind;
+            special.lineWidth = lineWidth;
+            special.gapSize = gapSize;
+            special.dashSize = dashSize;
+            return eventDB.AddSpecial(special);
+        }
+
         // Add a description to the event. 
         public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize, int numColumns)
         {

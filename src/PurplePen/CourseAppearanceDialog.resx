@@ -163,7 +163,7 @@
     <value>36, 184</value>
   </data>
   <data name="labelOutlineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 13</value>
+    <value>172, 15</value>
   </data>
   <data name="labelOutlineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -193,7 +193,7 @@
     <value>286, 182</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>29, 15</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -217,7 +217,7 @@
     <value>226, 182</value>
   </data>
   <data name="upDownOutlineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>54, 23</value>
   </data>
   <data name="upDownOutlineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -244,7 +244,7 @@
     <value>286, 102</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>29, 15</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -274,7 +274,7 @@
     <value>37, 102</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>116, 15</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -298,7 +298,7 @@
     <value>226, 100</value>
   </data>
   <data name="upDownCenterDot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>54, 23</value>
   </data>
   <data name="upDownCenterDot.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -325,7 +325,7 @@
     <value>226, 154</value>
   </data>
   <data name="comboBoxControlNumberStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 21</value>
+    <value>81, 23</value>
   </data>
   <data name="comboBoxControlNumberStyle.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -352,7 +352,7 @@
     <value>36, 157</value>
   </data>
   <data name="labelControlNumberStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 13</value>
+    <value>122, 15</value>
   </data>
   <data name="labelControlNumberStyle.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -382,7 +382,7 @@
     <value>36, 130</value>
   </data>
   <data name="labelControlNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="labelControlNumber.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -412,7 +412,7 @@
     <value>286, 128</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>29, 15</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -436,7 +436,7 @@
     <value>226, 128</value>
   </data>
   <data name="upDownNumberHeight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>54, 23</value>
   </data>
   <data name="upDownNumberHeight.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -463,7 +463,7 @@
     <value>36, 74</value>
   </data>
   <data name="labelLineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>65, 15</value>
   </data>
   <data name="labelLineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -493,7 +493,7 @@
     <value>286, 73</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>29, 15</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -517,7 +517,7 @@
     <value>226, 72</value>
   </data>
   <data name="upDownLineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>54, 23</value>
   </data>
   <data name="upDownLineWidth.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -541,7 +541,7 @@
     <value>36, 46</value>
   </data>
   <data name="labelControlCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>131, 15</value>
   </data>
   <data name="labelControlCircle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -571,7 +571,7 @@
     <value>286, 47</value>
   </data>
   <data name="labelMM1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>29, 15</value>
   </data>
   <data name="labelMM1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -595,7 +595,7 @@
     <value>226, 44</value>
   </data>
   <data name="upDownControlCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>54, 23</value>
   </data>
   <data name="upDownControlCircle.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -619,7 +619,7 @@
     <value>19, 19</value>
   </data>
   <data name="checkBoxStandardSizes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
+    <value>142, 19</value>
   </data>
   <data name="checkBoxStandardSizes.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -676,7 +676,7 @@
     <value>187, 76</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
+    <value>38, 15</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -700,7 +700,7 @@
     <value>259, 74</value>
   </data>
   <data name="upDownBlack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>48, 23</value>
   </data>
   <data name="upDownBlack.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -727,7 +727,7 @@
     <value>16, 76</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
+    <value>45, 15</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -751,7 +751,7 @@
     <value>88, 74</value>
   </data>
   <data name="upDownYellow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>48, 23</value>
   </data>
   <data name="upDownYellow.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -778,7 +778,7 @@
     <value>187, 48</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>57, 15</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -802,7 +802,7 @@
     <value>259, 46</value>
   </data>
   <data name="upDownMagenta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>48, 23</value>
   </data>
   <data name="upDownMagenta.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -826,7 +826,7 @@
     <value>16, 48</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
+    <value>37, 15</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -850,7 +850,7 @@
     <value>88, 46</value>
   </data>
   <data name="upDownCyan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+    <value>48, 23</value>
   </data>
   <data name="upDownCyan.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -874,7 +874,7 @@
     <value>19, 20</value>
   </data>
   <data name="checkBoxDefaultPurple.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
+    <value>168, 19</value>
   </data>
   <data name="checkBoxDefaultPurple.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -931,10 +931,10 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBoxPreview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>3, 19</value>
   </data>
   <data name="pictureBoxPreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 71</value>
+    <value>313, 68</value>
   </data>
   <data name="pictureBoxPreview.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -984,9 +984,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>344, 514</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customize Course Appearance</value>
   </data>
@@ -1000,6 +997,6 @@
     <value>CourseAppearanceDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.2.3.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.2.4.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

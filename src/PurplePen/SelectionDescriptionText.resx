@@ -289,4 +289,7 @@
     <value>Course "{0}", Part {1}</value>
     <comment>{0} gets course name, {1} is part number</comment>
   </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
 </root>

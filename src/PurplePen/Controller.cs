@@ -39,6 +39,7 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Linq;
 using PurplePen.MapView;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
@@ -1262,6 +1263,47 @@ namespace PurplePen
             }
         }
 
+        // Get the properties for a selected special line/rectangle (selectedLineSpecial == true), or the defaults for a new one (selectedLineSpecial == false).
+        public void GetLineSpecialProperties(SpecialKind specialKind, bool selectedLineSpecial, out SpecialColor color, out LineKind lineKind, out float lineWidth, out float gapSize, out float dashSize)
+        {
+            if (selectedLineSpecial) {
+                SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+                if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
+                    Special selectedSpecial = eventDB.GetSpecial(selection.SelectedSpecial);
+                    if (selectedSpecial.kind == specialKind) {
+                        color = selectedSpecial.color;
+                        lineKind = selectedSpecial.lineKind;
+                        lineWidth = selectedSpecial.lineWidth;
+                        dashSize = selectedSpecial.dashSize;
+                        gapSize = selectedSpecial.gapSize;
+                        return;
+                    }
+                }
+            }
+
+            // We do not have a selected special of the given kind.
+            // Find the special with the highest ID.
+            var specials = eventDB.AllSpecialPairs.Where(s => s.Value.kind == specialKind);
+            if (specials.Any()) {
+                Special maxIdSpecial = (specials.Aggregate((s1, s2) => s1.Key.id > s2.Key.id ? s1 : s2)).Value;
+                color = maxIdSpecial.color;
+                lineKind = maxIdSpecial.lineKind;
+                lineWidth = maxIdSpecial.lineWidth;
+                dashSize = maxIdSpecial.dashSize;
+                gapSize = maxIdSpecial.gapSize;
+                return;
+            }
+            else {
+                // No specials of the given kind. Use defaults.
+                color = NormalCourseAppearance.lineSpecialColor;
+                lineKind = NormalCourseAppearance.lineSpecialKind;
+                lineWidth = NormalCourseAppearance.lineSpecialWidth;
+                dashSize = NormalCourseAppearance.lineSpecialDashSize;
+                gapSize = NormalCourseAppearance.lineSpecialGapSize;
+                return;
+            }
+        }
+
         // Move a special to a new location
         public void MoveSpecial(Id<Special> specialId, PointF[] newLocations)
         {
@@ -2399,9 +2441,19 @@ namespace PurplePen
         }
 
         // Start the mode to add a line or area special of a certain kind (OOB, Boundary, ...
-        public void BeginAddLineAreaSpecialMode(SpecialKind specialKind, bool isArea)
+        public void BeginAddLineOrAreaSpecialMode(SpecialKind specialKind, bool isArea)
         {
-            SetCommandMode(new AddLineAreaSpecialMode(this, selectionMgr, undoMgr, eventDB, specialKind, isArea));
+            SetCommandMode(new AddLineAreaSpecialMode(this, selectionMgr, undoMgr, eventDB, 
+                           pts => ChangeEvent.AddLineAreaSpecial(eventDB, specialKind, pts),
+                           isArea));
+        }
+
+        // Start the mode to add a line special 
+        public void BeginAddLineSpecialMode(SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize)
+        {
+            SetCommandMode(new AddLineAreaSpecialMode(this, selectionMgr, undoMgr, eventDB,
+                           pts => ChangeEvent.AddLineSpecial(eventDB, pts, color, lineKind, lineWidth, gapSize, dashSize),
+                           false));
         }
 
         // Can we add descriptions. The only reason we can't is all parts of a multi-part. If other reasons

@@ -240,6 +240,13 @@ namespace PurplePen
         public static string fontNameTextSpecial = "Arial";
         public static FontStyle fontStyleTextSpecial = FontStyle.Bold;
         public static float emHeightDefaultTextSpecial = 6F;    // default size when click instead of drag.
+
+        // Default options for line specials.
+        public static SpecialColor lineSpecialColor = SpecialColor.Purple;
+        public static LineKind lineSpecialKind = LineKind.Single;
+        public const float lineSpecialWidth = 0.50F;
+        public const float lineSpecialGapSize = 0.70F;
+        public const float lineSpecialDashSize = 2.0F;
     }
 
     // Class with constants that describe how a punch card should appear.

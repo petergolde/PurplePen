@@ -575,8 +575,8 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
-        SpecialKind specialKind;      // Kind of special we are adding.
         bool isArea;                     // is it an area special?
+        Func<PointF[], Id<Special>> createObject; // Function to create the object.
         float scaleRatio;
         CourseAppearance appearance;
 
@@ -585,13 +585,13 @@ namespace PurplePen
                                                                             // The last coordinate in points may or may not be fixed depending on this value vs. points.Count.
         BoundaryCourseObj highlight;    // the highlight of the path we are creating.
 
-        public AddLineAreaSpecialMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SpecialKind specialKind, bool isArea)
+        public AddLineAreaSpecialMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, Func<PointF[], Id<Special>> createObject, bool isArea)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
             this.undoMgr = undoMgr;
             this.eventDB = eventDB;
-            this.specialKind = specialKind;
+            this.createObject = createObject;
             this.isArea = isArea;
             this.scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
             this.appearance = controller.GetCourseAppearance();
@@ -696,7 +696,7 @@ namespace PurplePen
             undoMgr.BeginCommand(1327, CommandNameText.AddObject);
 
             // Create the special
-            Id<Special> specialId = ChangeEvent.AddLineAreaSpecial(eventDB, specialKind, points.GetRange(0, numberFixedPoints).ToArray());
+            Id<Special> specialId = createObject(points.GetRange(0, numberFixedPoints).ToArray());
 
             // select the new special.
             selectionMgr.SelectSpecial(specialId);

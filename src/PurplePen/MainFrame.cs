@@ -138,6 +138,7 @@ namespace PurplePen
             addBoundaryMenu.Image = boundaryToolStripMenuItem.Image;
             addTextMenu.Image = textToolStripMenuItem.Image;
             addImageMenu.Image = imageToolStripMenuItem.Image;
+            addLineMenu.Image = lineToolStripMenuItem.Image;
             whiteOutMenu.Image = whiteOutToolStripMenuItem.Image;
             addGapMenu.Image = addGapToolStripButton.Image;
             addBendMenu.Image = addBendToolStripButton.Image;
@@ -1305,17 +1306,17 @@ namespace PurplePen
 
         private void addOutOfBoundsMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.OOB, true);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.OOB, true);
         }
 
         private void addDangerousMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Dangerous, true);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Dangerous, true);
         }
 
         private void addBoundaryMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Boundary, false);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Boundary, false);
         }
 
         private void addOptCrossingMenu_Click(object sender, EventArgs e)
@@ -1365,6 +1366,38 @@ namespace PurplePen
             }
         }
 
+        private void addLineMenu_Click(object sender, EventArgs e)
+        {
+            // Get the correct default purple color to use.
+            float c, m, y, k;
+            short ocadId;
+            FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k);
+
+            // Set the course appearance into the dialog
+            CourseAppearance appearance = controller.GetCourseAppearance();
+
+            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
+
+            // Get the defaults for a new line.
+            SpecialColor color;
+            LineKind lineKind;
+            float lineWidth, gapSize, dashSize;
+            controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            linePropertiesDialog.Color = color;
+            linePropertiesDialog.LineKind = lineKind;
+            linePropertiesDialog.LineWidth = lineWidth;
+            linePropertiesDialog.GapSize = gapSize;
+            linePropertiesDialog.DashSize = dashSize;
+
+            DialogResult result = linePropertiesDialog.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                controller.BeginAddLineSpecialMode(linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize);
+            }
+
+            linePropertiesDialog.Dispose();
+        }
+
         private void changeTextMenu_Click(object sender, EventArgs e)
         {
             if (controller.CanChangeText() == CommandStatus.Enabled) {
@@ -1383,7 +1416,7 @@ namespace PurplePen
 
         private void whiteOutMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.WhiteOut, true);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.WhiteOut, true);
         }
 
         private void addBendMenu_Click(object sender, EventArgs e)
@@ -2338,5 +2371,6 @@ namespace PurplePen
                 operationInProgressDialog = null;
             }
         }
+
     }
 }

@@ -464,4 +464,31 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="BadDotNetFramework" xml:space="preserve">
     <value>The  .NET framework on your computer does not appear to be correctly installed. Please visit http://microsoft.com/net and install the latest version of the .NET framework for your Windows operating system.</value>
   </data>
+  <data name="Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Choose Color...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Custom Color</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Dark Blue</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Light Blue</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
 </root>

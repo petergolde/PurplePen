@@ -1226,7 +1226,7 @@ namespace PurplePen
         Rectangle                        // A rectangle.
     }
 
-    // Kinds of a line
+    // Kinds of a line. Note: order must match combo box order in line properties dialog.
     public enum LineKind { Single, Double, Dashed};
 
     // Color of a special item: Black, Purple, White, or Custom.
@@ -1250,6 +1250,12 @@ namespace PurplePen
         {
             this.Kind = ColorKind.Custom;
             this.CustomColor = CmykColor.FromCmyk(cyan, magenta, yellow, black);
+        }
+
+        public SpecialColor(CmykColor color)
+        {
+            this.Kind = ColorKind.Custom;
+            this.CustomColor = color;
         }
 
         public override string ToString()

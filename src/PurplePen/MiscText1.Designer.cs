@@ -160,6 +160,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Black.
+        /// </summary>
+        internal static string Black {
+            get {
+                return ResourceManager.GetString("Black", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancelled by user.
         /// </summary>
         internal static string CancelledByUser {
@@ -309,6 +318,15 @@ namespace PurplePen {
         internal static string ChangeTextTitle {
             get {
                 return ResourceManager.GetString("ChangeTextTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose Color....
+        /// </summary>
+        internal static string ChooseOtherColor {
+            get {
+                return ResourceManager.GetString("ChooseOtherColor", resourceCulture);
             }
         }
         
@@ -471,6 +489,24 @@ namespace PurplePen {
         internal static string CtrlZ {
             get {
                 return ResourceManager.GetString("CtrlZ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom Color.
+        /// </summary>
+        internal static string CustomColor {
+            get {
+                return ResourceManager.GetString("CustomColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark Blue.
+        /// </summary>
+        internal static string DarkBlue {
+            get {
+                return ResourceManager.GetString("DarkBlue", resourceCulture);
             }
         }
         
@@ -661,6 +697,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Green.
+        /// </summary>
+        internal static string Green {
+            get {
+                return ResourceManager.GetString("Green", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help file &apos;{0}&apos; could not be opened..
         /// </summary>
         internal static string HelpFileNotFound {
@@ -675,6 +720,15 @@ namespace PurplePen {
         internal static string Landscape {
             get {
                 return ResourceManager.GetString("Landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Blue.
+        /// </summary>
+        internal static string LightBlue {
+            get {
+                return ResourceManager.GetString("LightBlue", resourceCulture);
             }
         }
         
@@ -919,6 +973,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purple.
+        /// </summary>
+        internal static string Purple {
+            get {
+                return ResourceManager.GetString("Purple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Red.
+        /// </summary>
+        internal static string Red {
+            get {
+                return ResourceManager.GetString("Red", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Redo.
         /// </summary>
         internal static string Redo {
@@ -1050,6 +1122,15 @@ namespace PurplePen {
         internal static string VersionLabel {
             get {
                 return ResourceManager.GetString("VersionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yellow.
+        /// </summary>
+        internal static string Yellow {
+            get {
+                return ResourceManager.GetString("Yellow", resourceCulture);
             }
         }
         

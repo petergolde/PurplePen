@@ -171,6 +171,12 @@
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
     <Compile Include="CircleGap.cs" />
+    <Compile Include="ColorChooserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorChooserDialog.Designer.cs">
+      <DependentUpon>ColorChooserDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommandNameText.bg.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -383,6 +389,12 @@
     </Compile>
     <Compile Include="LicenseForm.Designer.cs">
       <DependentUpon>LicenseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinePropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinePropertiesDialog.Designer.cs">
+      <DependentUpon>LinePropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MainFrame.cs">
       <SubType>Form</SubType>
@@ -1160,6 +1172,9 @@
     <EmbeddedResource Include="ChangeText.sv.resx">
       <DependentUpon>ChangeText.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ColorChooserDialog.resx">
+      <DependentUpon>ColorChooserDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.bg.resx">
       <LastGenOutput>CommandNameText.bg.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1666,6 +1681,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LicenseForm.sv.resx">
       <DependentUpon>LicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinePropertiesDialog.resx">
+      <DependentUpon>LinePropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.bg.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>

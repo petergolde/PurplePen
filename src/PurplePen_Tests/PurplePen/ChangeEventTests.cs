@@ -1654,7 +1654,7 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
-        public void AddLineSpecial()
+        public void AddBoundarySpecial()
         {
             PointF[] locations = { new PointF(10, 10), new PointF(20, 40), new PointF(17, 66) };
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1672,6 +1672,37 @@ namespace PurplePen.Tests
             Assert.AreEqual(SpecialKind.Boundary, special.kind);
             Assert.AreEqual(0, special.orientation);
             Assert.IsTrue(special.allCourses);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+        [TestMethod]
+        public void AddLineSpecial()
+        {
+            PointF[] locations = { new PointF(10, 10), new PointF(20, 40), new PointF(17, 66) };
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(13, "add special");
+            Id<Special> newSpecialId = ChangeEvent.AddLineSpecial(eventDB, locations, SpecialColor.Black, LineKind.Dashed, 1.2F, 2.3F, 3.7F);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            Assert.AreEqual(3, special.locations.Length);
+            for (int i = 0; i < special.locations.Length; ++i)
+                Assert.AreEqual(locations[i], special.locations[i]);
+            Assert.AreEqual(SpecialKind.Line, special.kind);
+            Assert.AreEqual(0, special.orientation);
+            Assert.IsTrue(special.allCourses);
+            Assert.AreEqual(SpecialColor.Black, special.color);
+            Assert.AreEqual(LineKind.Dashed, special.lineKind);
+            Assert.AreEqual(1.2F, special.lineWidth);
+            Assert.AreEqual(2.3F, special.gapSize);
+            Assert.AreEqual(3.7F, special.dashSize);
 
             undomgr.Undo();
             eventDB.Validate();

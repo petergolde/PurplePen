@@ -1040,7 +1040,7 @@ namespace PurplePen.Tests
 
             // Begin adding an area special. No highlight yet.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Dangerous, true);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Dangerous, true);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.IsNull(highlights);
             Assert.AreEqual(Cursors.Cross, controller.GetMouseCursor(new PointF(32, 37), 0.1F));
@@ -1107,7 +1107,7 @@ namespace PurplePen.Tests
 
             // Begin adding an area special. No highlight yet.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Dangerous, true);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Dangerous, true);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.IsNull(highlights);
             Assert.AreEqual(Cursors.Cross, controller.GetMouseCursor(new PointF(32, 37), 0.1F));
@@ -1174,7 +1174,7 @@ namespace PurplePen.Tests
 
             // Begin adding an area special. No highlight yet.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Boundary, false);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Boundary, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.IsNull(highlights);
             Assert.AreEqual(Cursors.Cross, controller.GetMouseCursor(new PointF(32, 37), 0.1F));
@@ -1242,7 +1242,7 @@ namespace PurplePen.Tests
 
             // Begin adding an area special. No highlight yet.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddLineAreaSpecialMode(SpecialKind.Boundary, false);
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Boundary, false);
             highlights = (CourseObj[]) controller.GetHighlights();
             Assert.IsNull(highlights);
             Assert.AreEqual(Cursors.Cross, controller.GetMouseCursor(new PointF(32, 37), 0.1F));

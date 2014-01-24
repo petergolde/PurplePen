@@ -394,6 +394,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Line.
+        /// </summary>
+        internal static string SpecialName_Line {
+            get {
+                return ResourceManager.GetString("SpecialName_Line", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Out-of-bounds Area.
         /// </summary>
         internal static string SpecialName_OOB {
