@@ -1900,7 +1900,7 @@ namespace PurplePen
                 default: throw new ApplicationException("Unexpected line kind");
             }
 
-            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.LineSpecial_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
