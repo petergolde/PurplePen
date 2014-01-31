@@ -483,12 +483,10 @@ namespace PurplePen
 
             case SpecialKind.Text:
                 string text = ExpandText(eventDB, courseView, special.text);
-                FontStyle fontStyle = special.fontBold ? FontStyle.Bold : FontStyle.Regular;
-                if (special.fontItalic)
-                    fontStyle |= FontStyle.Italic;
+                FontStyle fontStyle = Util.GetFontStyle(special.fontBold, special.fontItalic);
                 RectangleF boundingRect = RectangleF.FromLTRB((float)Math.Min(special.locations[0].X, special.locations[1].X), (float)Math.Min(special.locations[0].Y, special.locations[1].Y),
                                                                                               (float)Math.Max(special.locations[0].X, special.locations[1].X), (float)Math.Max(special.locations[0].Y, special.locations[1].Y));
-                courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle);
+                courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle, special.color);
                 break;
             case SpecialKind.Descriptions:
             default:

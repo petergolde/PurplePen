@@ -603,6 +603,16 @@ namespace PurplePen
             if (imageFormat.Guid == ImageFormat.Tiff.Guid) return "tiff";
             return "unknown";
         }
+
+        public static FontStyle GetFontStyle(bool bold, bool italic)
+        {
+            FontStyle fontStyle = FontStyle.Regular;
+            if (bold)
+                fontStyle |= FontStyle.Bold;
+            if (italic)
+                fontStyle |= FontStyle.Italic;
+            return fontStyle;
+        }
     }
 
 }

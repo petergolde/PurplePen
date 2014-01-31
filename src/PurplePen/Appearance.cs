@@ -72,12 +72,7 @@ namespace PurplePen
         {
             get
             {
-                FontStyle fontStyle = FontStyle.Regular;
-                if (Bold)
-                    fontStyle |= FontStyle.Bold;
-                if (Italic)
-                    fontStyle |= FontStyle.Italic;
-                return fontStyle;
+                return Util.GetFontStyle(Bold, Italic);
             }
         }
 
@@ -239,6 +234,7 @@ namespace PurplePen
         // The font used for text specials.
         public static string fontNameTextSpecial = "Arial";
         public static FontStyle fontStyleTextSpecial = FontStyle.Bold;
+        public static SpecialColor fontColorTextSpecial = SpecialColor.Purple;
         public static float emHeightDefaultTextSpecial = 6F;    // default size when click instead of drag.
 
         // Default options for line specials.

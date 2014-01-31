@@ -999,13 +999,14 @@ namespace PurplePen
         public PointF topLeft;                      // top-left of the text.
         public string fontName;                  // font name
         public FontStyle fontStyle;              // font style
+        public SpecialColor fontColor;           // font color
         private float emHeight;                     // em height of the font.
         private float outlineWidth;                 // width of white outline (0 for none)
 
         protected SizeF size;                       // size of the text.
 
         // NOTE: scale ratio is not used for this type of object!
-        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, float emHeight, float outlineWidth)
+        public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, SpecialColor fontColor, float emHeight, float outlineWidth)
             :
            base(controlId, courseControlId, specialId, 1.0F, new CourseAppearance())
        {
@@ -1013,6 +1014,7 @@ namespace PurplePen
             this.topLeft = topLeft;
             this.fontName = fontName;
             this.fontStyle = fontStyle;
+            this.fontColor = fontColor;
             this.emHeight = emHeight;
             this.outlineWidth = outlineWidth;
             this.size = MeasureText();
@@ -1040,6 +1042,7 @@ namespace PurplePen
         {
             public string fontName;
             public FontStyle fontStyle;
+            public SpecialColor fontColor;
             public float emHeight;
             public float outineWidth;
         }
@@ -1049,6 +1052,7 @@ namespace PurplePen
             MySymdefKey key = new MySymdefKey();
             key.fontName = fontName;
             key.fontStyle = fontStyle;
+            key.fontColor = fontColor;
             key.emHeight = emHeight;
             key.outineWidth = outlineWidth;
 
@@ -1092,6 +1096,14 @@ namespace PurplePen
             }
 
             AddToMap(map, dict[key]);
+        }
+
+        public override SpecialColor CustomColor
+        {
+            get
+            {
+                return fontColor;
+            }
         }
 
        protected override void AddToMap(Map map, SymDef symdef)
@@ -1190,7 +1202,7 @@ namespace PurplePen
 
             TextCourseObj other = (TextCourseObj) obj;
 
-            if (text != other.text || topLeft != other.topLeft || fontName != other.fontName || fontStyle != other.fontStyle || emHeight != other.emHeight)
+            if (text != other.text || topLeft != other.topLeft || fontName != other.fontName || fontStyle != other.fontStyle || !fontColor.Equals(other.fontColor) || emHeight != other.emHeight)
                 return false;
 
             return base.Equals(obj);
@@ -1978,7 +1990,7 @@ namespace PurplePen
 
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
-                   appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, 
+                   appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, SpecialColor.Purple,
                    NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
@@ -2003,7 +2015,7 @@ namespace PurplePen
         public PointF centerPoint;
 
         public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style,
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, SpecialColor.Purple,
             NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
@@ -2027,8 +2039,8 @@ namespace PurplePen
    {
        private RectangleF rectBounding;
 
-       public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle)
-           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), 0.0F)
+       public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle, SpecialColor color)
+           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, color, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), 0.0F)
        {
            this.rectBounding = rectBounding;
        }

@@ -52,6 +52,7 @@ namespace PurplePen
     {
         ComboBox comboBox;
         Button button;
+        CmykColor purpleColor;
 
         public event EventHandler ColorChanged;
 
@@ -59,6 +60,7 @@ namespace PurplePen
         {
             this.comboBox = comboBox;
             this.button = button;
+            this.purpleColor = purpleColor;
             InitColors(purpleColor);
             WireEvents();
             Color = SpecialColor.Black;
@@ -88,6 +90,20 @@ namespace PurplePen
                 if (index == comboBox.Items.Count - 1)
                     comboBox.Items[index] = new ColorAndText(MiscText.CustomColor, value.CustomColor);
                 comboBox.SelectedIndex = index;
+            }
+        }
+
+        public CmykColor CmykColor
+        {
+            get
+            {
+                SpecialColor color = this.Color;
+                if (color.Kind == SpecialColor.ColorKind.Black)
+                    return CmykColor.FromCmyk(0, 0, 0, 1);
+                else if (color.Kind == SpecialColor.ColorKind.Purple)
+                    return purpleColor;
+                else
+                    return color.CustomColor;
             }
         }
 

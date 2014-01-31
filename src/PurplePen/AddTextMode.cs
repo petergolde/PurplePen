@@ -60,13 +60,22 @@ namespace PurplePen
         // The text to display
         string displayText;
 
-        public AddTextMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, string text)
+        // The text properties
+        string fontName;
+        bool fontBold, fontItalic;
+        SpecialColor fontColor;
+
+        public AddTextMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor)
         {
             this.controller = controller;
             this.undoMgr = undoMgr;
             this.selectionMgr = selectionMgr;
             this.eventDB = eventDB;
             this.text = text;
+            this.fontName = fontName;
+            this.fontBold = fontBold;
+            this.fontItalic = fontItalic;
+            this.fontColor = fontColor;
             this.displayText = CourseFormatter.ExpandText(eventDB, selectionMgr.ActiveCourseView, text);
         }
 
@@ -103,7 +112,7 @@ namespace PurplePen
         {
             // Begin dragging out the description block.
             startLocation = location;
-            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.fontStyleTextSpecial);
+            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), fontName, Util.GetFontStyle(fontBold, fontItalic), fontColor);
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
@@ -149,7 +158,7 @@ namespace PurplePen
         void CreateTextSpecial(RectangleF boundingRect)
         {
             undoMgr.BeginCommand(1551, CommandNameText.AddObject);
-            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, boundingRect, text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0);
+            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, boundingRect, text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0, currentObj.fontColor);
             undoMgr.EndCommand(1551);
 
             selectionMgr.SelectSpecial(specialId);

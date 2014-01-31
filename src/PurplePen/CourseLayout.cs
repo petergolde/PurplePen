@@ -154,7 +154,7 @@ namespace PurplePen
                     int layerIndex = (int) courseObject.layer;
 
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Black) {
-                        layerIndex = (int)CourseLayer.Descriptions; break;
+                        layerIndex = (int)CourseLayer.Descriptions; 
                     }
 
                     if (colors[layerIndex] == null) {

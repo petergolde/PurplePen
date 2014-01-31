@@ -1553,11 +1553,15 @@ namespace PurplePen.Tests
             Assert.AreEqual("$(CourseName)", eventDB.GetSpecial(SpecialId(7)).text);
 
             undomgr.BeginCommand(11, "change text");
-            ChangeEvent.ChangeSpecialText(eventDB, SpecialId(7), "Mr. Mr.");
+            ChangeEvent.ChangeSpecialText(eventDB, SpecialId(7), "Mr. Mr.", "Times New Roman", true, true, new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F));
             undomgr.EndCommand(11);
             eventDB.Validate();
 
             Assert.AreEqual("Mr. Mr.", eventDB.GetSpecial(SpecialId(7)).text);
+            Assert.AreEqual("Times New Roman", eventDB.GetSpecial(SpecialId(7)).fontName);
+            Assert.AreEqual(true, eventDB.GetSpecial(SpecialId(7)).fontBold);
+            Assert.AreEqual(true, eventDB.GetSpecial(SpecialId(7)).fontItalic);
+            Assert.AreEqual(new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), eventDB.GetSpecial(SpecialId(7)).color);
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1823,7 +1827,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add text special");
-            Id<Special> newSpecialId = ChangeEvent.AddTextSpecial(eventDB, new RectangleF(10, 20, 30, 40), "hello $(CourseName)", "Arial", true, true);
+            Id<Special> newSpecialId = ChangeEvent.AddTextSpecial(eventDB, new RectangleF(10, 20, 30, 40), "hello $(CourseName)", "Arial", true, true, new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F));
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -1836,10 +1840,11 @@ namespace PurplePen.Tests
             Assert.AreEqual(0, special.orientation);
             Assert.AreEqual("Arial", special.fontName);
             Assert.AreEqual("hello $(CourseName)", special.text);
+            Assert.AreEqual(new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F), special.color);
             Assert.IsTrue(special.fontBold);
             Assert.IsTrue(special.fontItalic);
             Assert.IsTrue(special.allCourses);
-            Assert.IsTrue(special.color.Equals(SpecialColor.Purple));
+            Assert.IsTrue(special.color.Equals(new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F)));
 
             undomgr.Undo();
             eventDB.Validate();

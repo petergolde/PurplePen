@@ -1904,12 +1904,56 @@ namespace PurplePen
                 return null;
         }
 
+        // Get the text properties of a object if can change the text.
+        public bool GetChangableTextProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor specialColor)
+        {
+            if (CanChangeText() == CommandStatus.Enabled) {
+                Special special = eventDB.GetSpecial(selectionMgr.Selection.SelectedSpecial);
+                fontName = special.fontName;
+                fontBold = special.fontBold;
+                fontItalic = special.fontItalic;
+                specialColor = special.color;
+                return true;
+            }
+            else {
+                fontName = "Arial";
+                fontBold = false;
+                fontItalic = false;
+                specialColor = SpecialColor.Purple;
+                return false;
+            }
+        }
+
+        // Get the properties of a new text object.
+        public void GetAddTextDefaultProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor fontColor)
+        {
+            var specials = eventDB.AllSpecialPairs.Where(s => s.Value.kind == SpecialKind.Text);
+            if (specials.Any()) {
+                // Look at the text special with the largest id (most recently added).
+                Special maxIdSpecial = (specials.Aggregate((s1, s2) => s1.Key.id > s2.Key.id ? s1 : s2)).Value;
+                fontName = maxIdSpecial.fontName;
+                fontBold = maxIdSpecial.fontBold;
+                fontItalic = maxIdSpecial.fontItalic;
+                fontColor = maxIdSpecial.color;
+                return;
+            }
+            else {
+                // No text specials. Use defaults.
+                fontName = NormalCourseAppearance.fontNameTextSpecial;
+                fontBold = (NormalCourseAppearance.fontStyleTextSpecial & FontStyle.Bold) != 0;
+                fontItalic = (NormalCourseAppearance.fontStyleTextSpecial & FontStyle.Italic) != 0;
+                fontColor = NormalCourseAppearance.fontColorTextSpecial;
+                return;
+            }
+        }
+
+
         // Change the text.
-        public void ChangeText(string newText)
+        public void ChangeText(string newText, string fontName, bool fontBold, bool fontItalic, SpecialColor specialColor)
         {
             if (CanChangeText() == CommandStatus.Enabled) {
                 undoMgr.BeginCommand(7114, CommandNameText.ChangeText);
-                ChangeEvent.ChangeSpecialText(eventDB, selectionMgr.Selection.SelectedSpecial, newText);
+                ChangeEvent.ChangeSpecialText(eventDB, selectionMgr.Selection.SelectedSpecial, newText, fontName, fontBold, fontItalic, specialColor);
                 undoMgr.EndCommand(7114);
             }
         }
@@ -2480,9 +2524,15 @@ namespace PurplePen
         }
 
         // Start the mode to add text to a course
-        public void BeginAddTextSpecialMode(string text)
+        public void BeginAddTextSpecialMode(string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor)
         {
-            SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text));
+            SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text, fontName, fontBold, fontItalic, fontColor));
+        }
+
+        // expand text via current state.
+        public string ExpandText(string text)
+        {
+            return CourseFormatter.ExpandText(eventDB, selectionMgr.ActiveCourseView, text);
         }
 
         // Start the mode to add text to a course
