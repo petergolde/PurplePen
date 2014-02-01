@@ -1326,6 +1326,7 @@ namespace PurplePen
         public float lineWidth;             // For line/rectangle, the width of the line.
         public float gapSize;               // For line/rectangle, either gap in dashes, or gap between double lines
         public float dashSize;              // For line/rectangle, length of gaps
+        public float cornerRadius;          // For rectangle, the corner radius.
         public string text;                 // for text objects, the text.
         public string fontName;             // for text objects, the font name
         public bool fontBold, fontItalic;   // for text objects, the font style
@@ -1480,6 +1481,8 @@ namespace PurplePen
                 return false;
             if (other.dashSize != dashSize)
                 return false;
+            if (other.cornerRadius != cornerRadius)
+                return false;
             if (other.text != text)
                 return false;
             if (other.fontName != fontName)
@@ -1598,6 +1601,9 @@ namespace PurplePen
                     lineWidth = xmlinput.GetAttributeFloat("line-width", 0);
                     gapSize = xmlinput.GetAttributeFloat("gap-size", 0);
                     dashSize = xmlinput.GetAttributeFloat("dash-size", 0);
+                    if (kind == SpecialKind.Rectangle)
+                        cornerRadius = xmlinput.GetAttributeFloat("corner-radius", 0);
+
                     xmlinput.Skip();
                     break;
 
@@ -1714,6 +1720,8 @@ namespace PurplePen
                     xmloutput.WriteAttributeString("gap-size", XmlConvert.ToString(gapSize));
                 if (lineKind == LineKind.Dashed)
                     xmloutput.WriteAttributeString("dash-size", XmlConvert.ToString(dashSize));
+                if (kind == SpecialKind.Rectangle)
+                    xmloutput.WriteAttributeString("corner-radius", XmlConvert.ToString(cornerRadius));
                 xmloutput.WriteEndElement();
             }
 

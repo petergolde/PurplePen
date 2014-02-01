@@ -1884,6 +1884,12 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
+            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize);
+        }
+
+        // This is used by both line and rectangle specials.
+        public static SymDef CreateLineSpecialSymDef(Map map, SymColor symColor, LineKind lineKind, float lineWidth, float gapSize, float dashSize)
+        {
             int ocadId = map.GetFreeSymdefOcadId(901);
 
             LineSymDef symdef;
@@ -1922,6 +1928,100 @@ namespace PurplePen
             get {
                 return color;
             }
+        }
+
+        public override string ToString()
+        {
+            string result = base.ToString();
+            result += string.Format("  color:{0}  lineKind:{1}  lineWidth:{2}  gapSize:{3}  dashSize:{4}", color, lineKind, lineWidth, gapSize, dashSize);
+            return result;
+        }
+    }
+
+    // An arbitrary rectangle
+    class RectSpecialCourseObj : RectCourseObj
+    {
+        public readonly SpecialColor color;
+        public readonly LineKind lineKind;
+        public readonly float lineWidth;
+        public readonly float cornerRadius;
+        public readonly float gapSize;
+        public readonly float dashSize;
+
+        public RectSpecialCourseObj(Id<Special> specialId, CourseAppearance appearance, SpecialColor color, LineKind lineKind, float lineWidth, float cornerRadius, float gapSize, float dashSize, RectangleF rect)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1.0F, appearance, rect)
+        {
+            this.color = color;
+            this.lineKind = lineKind;
+            this.lineWidth = lineWidth;
+            this.cornerRadius = cornerRadius;
+            this.gapSize = gapSize;
+            this.dashSize = dashSize;
+        }
+
+        private SymPath CreateSymPath()
+        {
+            return SymPath.CreateRoundedRectangle(rect, cornerRadius);
+        }
+
+        // A struct synthesizes Equals/GetHashCode automatically.
+        // CONSIDER: use FontDesc instead!
+        struct MySymdefKey
+        {
+            public SpecialColor color;
+            public LineKind lineKind;
+            public float lineWidth;
+            public float gapSize;
+            public float dashSize;
+        }
+
+        protected override object SymDefKey()
+        {
+            MySymdefKey key = new MySymdefKey();
+            key.color = color;
+            key.lineKind = lineKind;
+            key.lineWidth = lineWidth;
+            key.gapSize = gapSize;
+            key.dashSize = dashSize;
+
+            return key;
+        }
+
+        // Get the distance of a point from this object, or 0 if the point is covered by the object.
+        public override double DistanceFromPoint(PointF pt)
+        {
+            PointF closestPoint;
+
+            SymPath path = CreateSymPath();
+            return path.DistanceFromPoint(pt, out closestPoint);
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize);
+        }
+
+        protected override void AddToMap(Map map, SymDef symdef)
+        {
+            SymPath symPath = CreateSymPath();
+
+            LineSymbol sym = new LineSymbol((LineSymDef)symdef, symPath);
+            map.AddSymbol(sym);
+        }
+
+        public override SpecialColor CustomColor
+        {
+            get
+            {
+                return color;
+            }
+        }
+
+        public override string ToString()
+        {
+            string result = base.ToString();
+            result += string.Format("  color:{0}  lineKind:{1}  lineWidth:{2}  cornerRadius:{3}  gapSize:{4}  dashSize:{5}", color, lineKind, cornerRadius, lineWidth, gapSize, dashSize);
+            return result;
         }
     }
 

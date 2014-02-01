@@ -584,7 +584,8 @@ namespace PurplePen.Tests
             sp13 = new Special(SpecialKind.Rectangle, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
             sp13.color = SpecialColor.Purple;
             sp13.lineKind = LineKind.Single;
-            sp12.lineWidth = 0.1F;
+            sp13.lineWidth = 0.1F;
+            sp13.cornerRadius = 0.23F;
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
