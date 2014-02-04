@@ -278,11 +278,23 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   <data name="Finish" xml:space="preserve">
     <value>完了</value>
   </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
   <data name="MandCrossing_Long" xml:space="preserve">
     <value>必須の横断地点</value>
   </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>すべて: {0}</value>
+  </data>
   <data name="Start" xml:space="preserve">
     <value>スタート</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
   </data>
   <data name="Plural" xml:space="preserve">
     <value>複数形</value>

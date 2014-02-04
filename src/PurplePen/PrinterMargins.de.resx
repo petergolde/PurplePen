@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelPaper.Text" xml:space="preserve">
+    <value>Größe:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Breite:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Höhe:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Papiergröße ({0})</value>
+  </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
     <value>Querformat</value>
   </data>
   <data name="radioButtonPortrait.Text" xml:space="preserve">
     <value>Hochformat</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ausrichtung</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Links:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Oben:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Rechts:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Unten:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Seitenränder ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Seiteneinstellungen</value>
   </data>
 </root>

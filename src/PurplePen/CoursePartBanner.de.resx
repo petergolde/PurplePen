@@ -120,4 +120,7 @@
   <data name="coursePartLabel.Text" xml:space="preserve">
     <value>Teilstrecke:</value>
   </data>
+  <data name="buttonProperties.Text" xml:space="preserve">
+    <value>Eigenschaften...</value>
+  </data>
 </root>

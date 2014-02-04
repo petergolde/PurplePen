@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.2.4\n"
+"Project-Id-Version: Purple Pen 2.3.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-01-13 13:58-08:00\n"
+"POT-Creation-Date: 2014-02-04 13:23-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -84,6 +84,7 @@ msgstr "Symbole"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
+#: ChangeText.resx, groupBox3.Text
 #: EnterSymbolText.resx, textColumn.HeaderText
 #: MainFrame.resx, addTextMenu.Text
 #: MainFrame.resx, textToolStripMenuItem.Text
@@ -143,6 +144,7 @@ msgstr "nicht sichtbar"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: ChangeText.resx, groupBox1.Text
 #: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
@@ -325,7 +327,11 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Alle "
+"Kartendateien|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*."
+"png;*.gif|OCAD Dateien (*.ocd)|*.ocd|PDF Dateien "
+"(*.pdf)|*.pdf|Bilddateien|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*."
+"png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -359,10 +365,6 @@ msgstr "Wählen Sie die Bahnen, auf denen dieses Objekt angezeigt "
 msgid "Change Displayed Courses"
 msgstr "Die angezeigten Bahnen wechseln"
 
-#: ChangeText.resx, insertSpecialButton.Text
-msgid "Insert Special Text"
-msgstr "Speziellen Text einfügen"
-
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
@@ -376,7 +378,7 @@ msgstr "Bahnbezeichnung"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Teilstrecke"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -394,6 +396,35 @@ msgstr "Altersklassenliste"
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
 msgstr "Druckmaßstab"
+
+#: ChangeText.resx, buttonChangeColor.Text
+msgid "Change Color..."
+msgstr ""
+
+#: ChangeText.resx, label2.Text
+msgid "Color:"
+msgstr ""
+
+#: ChangeText.resx, checkBoxItalic.Text
+msgid "Italic"
+msgstr ""
+
+#: ChangeText.resx, checkBoxBold.Text
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "Fett"
+
+#: ChangeText.resx, label1.Text
+msgid "Font:"
+msgstr ""
+
+#: ChangeText.resx, groupBox2.Text
+msgid "Sample"
+msgstr ""
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "Speziellen Text einfügen"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -589,7 +620,7 @@ msgstr "Text ändern"
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr "Bahndesign ändern"
+msgstr "Bahndesign anpassen"
 
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
@@ -598,15 +629,15 @@ msgstr "Kartenwechsel hinzufügen"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Kartenwechsel entfernen"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Eigenschaften Teilstrecke"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "Weiße Textfreistellung:"
 
 #: CourseAppearanceDialog.resx, label10.Text
 #: CourseAppearanceDialog.resx, label8.Text
@@ -625,10 +656,6 @@ msgstr "Mittelpunktdurchmesser:"
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
 msgstr "Normal"
-
-#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
-msgid "Bold"
-msgstr "Fett"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -702,20 +729,21 @@ msgstr "Teilstrecke:"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Eigenschaften..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Zielkreis auf dieser Teilstrecke anzeigen"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Diese Einstellungen bestimmen das Aussehen dieser "
+"Teilstrecke der Gesamtbahn."
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Eigenschaften Teilstrecke"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -840,7 +868,7 @@ msgstr "Ränder:"
 
 #: CreatePdfCourses.resx, marginChange.Text
 msgid "Change..."
-msgstr ""
+msgstr "Ändern..."
 
 #: CreatePdfCourses.resx, paperSizeLabel.Text
 #: PrintCourses.resx, paperSizeLabel.Text
@@ -899,31 +927,31 @@ msgstr "Auf eine Seite einpassen, wenn der Druckbereich zu groß ist."
 
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr ""
+msgstr "Namens-Präfix:"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr ""
+msgstr "Dateien:"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
-msgstr ""
+msgstr "Eine für alle Bahnen"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items1
 msgid "One per course"
-msgstr ""
+msgstr "Eine pro Bahn"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part"
-msgstr ""
+msgstr "Eine pro Teilstrecke"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
-msgstr ""
+msgstr "Dateien"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "Wählen Sie einen Ordner für die PDF-Dateien aus"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
@@ -1089,7 +1117,7 @@ msgstr "OCAD-Da&teien erstellen …"
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
-msgstr ""
+msgstr "PDFs erzeugen..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1277,7 +1305,7 @@ msgstr "&Textpostenbeschreibung anpassen"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize Course &Appearance..."
-msgstr "&Bahndesign anpassen"
+msgstr "&Bahndesign anpassen..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1391,6 +1419,23 @@ msgstr "Passkreuz"
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
 msgstr "Weiße Fläche"
+
+#: MainFrame.resx, addImageMenu.Text
+#: MainFrame.resx, imageToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Image
+msgid "Image"
+msgstr ""
+
+#: MainFrame.resx, addLineMenu.Text
+#: MainFrame.resx, lineToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Line
+msgid "Line"
+msgstr ""
+
+#: MainFrame.resx, addRectangleMenu.Text
+#: MainFrame.resx, rectangleToolStripMenuItem.Text
+msgid "Rectangle"
+msgstr ""
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1538,7 +1583,7 @@ msgstr "Fontmaße"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "Absturz"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
@@ -1650,6 +1695,10 @@ msgstr "XML-Datei|*.xml"
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
 msgstr "XML-Austausch Datei erstellen"
+
+#: MainFrame.resx, openImageDialog.Filter
+msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr ""
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -2120,54 +2169,99 @@ msgstr "Postenbeschreibungen können zu einer Bahn mit "
 msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
 "installed. Would you like to automatically download and "
 "install it now?"
-msgstr ""
+msgstr "Um PDF-Dateien laden zu können muss eine Kopie von GPL "
+"Ghostscript installiert sein. Möchten Sie es automatisch "
+"herunterladen und installieren lassen?"
 
 #: MiscText.resx, GhostscriptNotInstalled
 msgid "GPL Ghostscript is not installed"
-msgstr ""
+msgstr "GPL Ghostscript ist nicht installiert"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "GPL Ghostscript failed to read PDF file successfully"
-msgstr ""
+msgstr "GPL Ghostscript konnte die PDF-Dateien nicht lesen"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Das Ergebnis der PDF-Konvertierung aus Datei '{0}' konnte "
+"nicht gelesen werden"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "PDFs können aus folgendem Grund nicht gelesen werden:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Benutzerdefiniert"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "Kartengröße aus PDF"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Vom Nutzer abgebrochen"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Erzeuge {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "Seite {0} (von {1}) wird gedruckt"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "Das Kartendokument \"{0}\" wurde gelöscht. Bitte versuchen "
+"Sie das Kartendokument wieder herzustellen und klicken "
+"dann auf \"Ok\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
+msgstr "Das .NET Framework auf Ihrem Computer scheint nicht "
+"korrekt installiert zu sein. Bitte gehen Sie auf "
+"http://microsoft.com/net und installieren Sie die aktuelle "
+"Version des .NET Framework's auf Ihrem Windows "
+"Betriebssystem."
+
+#: MiscText.resx, Black
+msgid "Black"
+msgstr ""
+
+#: MiscText.resx, ChooseOtherColor
+msgid "Choose Color..."
+msgstr ""
+
+#: MiscText.resx, CustomColor
+msgid "Custom Color"
+msgstr ""
+
+#: MiscText.resx, DarkBlue
+msgid "Dark Blue"
+msgstr ""
+
+#: MiscText.resx, Green
+msgid "Green"
+msgstr ""
+
+#: MiscText.resx, LightBlue
+msgid "Light Blue"
+msgstr ""
+
+#: MiscText.resx, Purple
+msgid "Purple"
+msgstr ""
+
+#: MiscText.resx, Red
+msgid "Red"
+msgstr ""
+
+#: MiscText.resx, Yellow
+msgid "Yellow"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2245,7 +2339,11 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Wenn Sie eine PDF-Datei als Kartenvorlage verwenden, "
+"müssen Sie den Kartenmaßstab angeben. \n"
+"\n"
+"Der Maßstab der Karte zeigt die Beziehung zwischen der "
+"Karte und der Natur.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2522,47 +2620,47 @@ msgstr "Postenbeschreibungen drucken"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Größe:"
 
 #: PrinterMargins.resx, label2.Text
 msgid "Width:"
-msgstr ""
+msgstr "Breite:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Höhe:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Papiergröße ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Ausrichtung"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Links:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Oben:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Rechts:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Unten:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Seitenränder ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Seiteneinstellungen"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
@@ -2999,6 +3097,10 @@ msgstr "Gesamtzahl Punkte:"
 msgid "Used in courses:"
 msgstr "Verwendet in Bahnen:"
 
+#: SelectionDescriptionText.resx, FileName
+msgid "Name:"
+msgstr ""
+
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
 msgstr "Kartenwechsel"
@@ -3223,6 +3325,10 @@ msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
 msgstr "Klicken Sie mit der linken Maustaste, um einen "
 "Kartenwechsel an Posten \"{0}\" hinzuzufügen "
+
+#: StatusBarText.resx, AddingImage
+msgid "Hold down left mouse button and drag to place image"
+msgstr ""
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

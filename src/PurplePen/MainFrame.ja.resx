@@ -159,6 +159,9 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>コースを印刷 (&amp;C)</value>
   </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>現在のパートのみ(&amp;P)</value>
+  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>現在のコース(&amp;T)</value>
   </data>
@@ -294,6 +297,9 @@
   <data name="courseOrderMenu.Text" xml:space="preserve">
     <value>コースの順序...</value>
   </data>
+  <data name="courseLoadMenu.Text" xml:space="preserve">
+    <value>競技者数(&amp;L)...</value>
+  </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>コース(&amp;C)</value>
   </data>
@@ -344,6 +350,9 @@
   </data>
   <data name="addRegMarkMenu.Text" xml:space="preserve">
     <value>内トンボ</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>白抜き</value>
   </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>テキスト</value>
@@ -542,6 +551,9 @@
   </data>
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
     <value>内トンボ</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>白抜き</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>テキスト</value>

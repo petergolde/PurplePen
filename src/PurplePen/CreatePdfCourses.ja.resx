@@ -135,6 +135,9 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>コース</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>複数のコースパートを同じ地図に印刷 </value>
+  </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>フォルダ</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>ネームプレフィックス:</value>
   </data>
   <data name="filesLabel.Text" xml:space="preserve">
     <value>ファイル:</value>

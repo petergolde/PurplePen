@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>OCAD-Da&amp;teien erstellen …</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>PDFs erzeugen...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Route&amp;Gadget-Dateien erstellen …</value>
   </data>
@@ -277,7 +280,7 @@
     <value>&amp;Textpostenbeschreibung anpassen</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>&amp;Bahndesign anpassen</value>
+    <value>&amp;Bahndesign anpassen...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Wettkampf</value>
@@ -464,6 +467,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Fontmaße</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Absturz</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Debuggen</value>

@@ -123,6 +123,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Ränder:</value>
   </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Ändern...</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Papiergröße:</value>
   </data>
@@ -176,6 +179,27 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Namens-Präfix:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Dateien:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Eine für alle Bahnen</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Eine pro Bahn</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Eine pro Teilstrecke</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Dateien</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Wählen Sie einen Ordner für die PDF-Dateien aus</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bahnen drucken</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.2.4\n"
+"Project-Id-Version: Purple Pen 2.3.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-01-13 13:58-08:00\n"
+"POT-Creation-Date: 2014-02-04 13:23-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -79,6 +79,7 @@ msgstr "Symboly"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
+#: ChangeText.resx, groupBox3.Text
 #: EnterSymbolText.resx, textColumn.HeaderText
 #: MainFrame.resx, addTextMenu.Text
 #: MainFrame.resx, textToolStripMenuItem.Text
@@ -138,6 +139,7 @@ msgstr "(nezobrazovat)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: ChangeText.resx, groupBox1.Text
 #: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
@@ -350,10 +352,6 @@ msgstr "Vyberte tratě na kterých bude tento objekt zobrazen:"
 msgid "Change Displayed Courses"
 msgstr "Změnit zobrazení tratí"
 
-#: ChangeText.resx, insertSpecialButton.Text
-msgid "Insert Special Text"
-msgstr "Vložit speciální text"
-
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
@@ -385,6 +383,35 @@ msgstr "Seznam kategorií"
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
 msgstr "Měřítko tisku"
+
+#: ChangeText.resx, buttonChangeColor.Text
+msgid "Change Color..."
+msgstr ""
+
+#: ChangeText.resx, label2.Text
+msgid "Color:"
+msgstr ""
+
+#: ChangeText.resx, checkBoxItalic.Text
+msgid "Italic"
+msgstr ""
+
+#: ChangeText.resx, checkBoxBold.Text
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "Tučně"
+
+#: ChangeText.resx, label1.Text
+msgid "Font:"
+msgstr ""
+
+#: ChangeText.resx, groupBox2.Text
+msgid "Sample"
+msgstr ""
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "Vložit speciální text"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -616,10 +643,6 @@ msgstr "Průměr tečky ve středu kolečka:"
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
 msgstr "Pravidelný"
-
-#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
-msgid "Bold"
-msgstr "Tučně"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -1383,6 +1406,23 @@ msgstr ""
 msgid "White Out Area"
 msgstr "Zabílená oblast"
 
+#: MainFrame.resx, addImageMenu.Text
+#: MainFrame.resx, imageToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Image
+msgid "Image"
+msgstr ""
+
+#: MainFrame.resx, addLineMenu.Text
+#: MainFrame.resx, lineToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Line
+msgid "Line"
+msgstr ""
+
+#: MainFrame.resx, addRectangleMenu.Text
+#: MainFrame.resx, rectangleToolStripMenuItem.Text
+msgid "Rectangle"
+msgstr ""
+
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
 msgstr "Vložit spec&iální symbol"
@@ -1641,6 +1681,10 @@ msgstr "XML soubor|*.xml"
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
 msgstr "Vytvořit soubor IOF XML"
+
+#: MainFrame.resx, openImageDialog.Filter
+msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr ""
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -2111,6 +2155,42 @@ msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
+msgstr ""
+
+#: MiscText.resx, Black
+msgid "Black"
+msgstr ""
+
+#: MiscText.resx, ChooseOtherColor
+msgid "Choose Color..."
+msgstr ""
+
+#: MiscText.resx, CustomColor
+msgid "Custom Color"
+msgstr ""
+
+#: MiscText.resx, DarkBlue
+msgid "Dark Blue"
+msgstr ""
+
+#: MiscText.resx, Green
+msgid "Green"
+msgstr ""
+
+#: MiscText.resx, LightBlue
+msgid "Light Blue"
+msgstr ""
+
+#: MiscText.resx, Purple
+msgid "Purple"
+msgstr ""
+
+#: MiscText.resx, Red
+msgid "Red"
+msgstr ""
+
+#: MiscText.resx, Yellow
+msgid "Yellow"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2875,6 +2955,10 @@ msgstr ""
 msgid "Used in courses:"
 msgstr ""
 
+#: SelectionDescriptionText.resx, FileName
+msgid "Name:"
+msgstr ""
+
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
 msgstr ""
@@ -3058,6 +3142,10 @@ msgstr ""
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
+msgstr ""
+
+#: StatusBarText.resx, AddingImage
+msgid "Hold down left mouse button and drag to place image"
 msgstr ""
 
 #: UnusedControls.resx, okButton.Text

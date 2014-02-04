@@ -112,20 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxDontWarnAgain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="checkBoxDontWarnAgain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxDontWarnAgain.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 260</value>
   </data>
@@ -142,7 +142,7 @@
     <value>checkBoxDontWarnAgain</value>
   </data>
   <data name="&gt;&gt;checkBoxDontWarnAgain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;checkBoxDontWarnAgain.Parent" xml:space="preserve">
     <value>$this</value>
@@ -169,7 +169,7 @@
     <value>okButton</value>
   </data>
   <data name="&gt;&gt;okButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;okButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -179,38 +179,38 @@
   </data>
   <data name="iconPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-        WdXfrwAAAABJRU5ErkJggg==
+        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
+        tKHIb0xr6Nj0gjRMAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="iconPictureBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -226,7 +226,7 @@
     <value>iconPictureBox</value>
   </data>
   <data name="&gt;&gt;iconPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;iconPictureBox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -262,7 +262,7 @@
     <value>listBoxFonts</value>
   </data>
   <data name="&gt;&gt;listBoxFonts.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listBoxFonts.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -278,6 +278,9 @@
   </data>
   <data name="labelWarning.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
+  </data>
+  <data name="labelWarning.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>375, 60</value>
   </data>
   <data name="labelWarning.Size" type="System.Drawing.Size, System.Drawing">
     <value>375, 90</value>
@@ -295,7 +298,7 @@ To fix this problem, find and install the fonts listed below with the Windows co
     <value>labelWarning</value>
   </data>
   <data name="&gt;&gt;labelWarning.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;labelWarning.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
@@ -319,7 +322,7 @@ To fix this problem, find and install the fonts listed below with the Windows co
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -330,7 +333,7 @@ To fix this problem, find and install the fonts listed below with the Windows co
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="listBoxFonts" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelWarning" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -349,6 +352,6 @@ To fix this problem, find and install the fonts listed below with the Windows co
     <value>MissingFonts</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.0.0.2400, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

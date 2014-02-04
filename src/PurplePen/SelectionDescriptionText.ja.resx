@@ -186,6 +186,9 @@
   <data name="TextDescription" xml:space="preserve">
     <value>文字によるディスクリプション</value>
   </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>白抜き</value>
+  </data>
   <data name="MapExchange_Plural" xml:space="preserve">
     <value>地図交換所</value>
   </data>

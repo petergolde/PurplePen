@@ -140,4 +140,10 @@ Der Maßstab der Karte stellt das Verhältnis zwischen Papierkarte und der reale
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Bildauflösung</value>
   </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Wenn Sie eine PDF-Datei als Kartenvorlage verwenden, müssen Sie den Kartenmaßstab angeben. 
+
+Der Maßstab der Karte zeigt die Beziehung zwischen der Karte und der Natur.
+</value>
+  </data>
 </root>

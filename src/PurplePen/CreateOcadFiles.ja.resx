@@ -130,7 +130,7 @@
     <value>OCADファイルを保存するフォルダを選択してください</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>ファイル名プリフィックス</value>
+    <value>ファイル名プレフィックス:</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>ファイル形式:</value>

@@ -268,9 +268,15 @@
     <value>Text ändern</value>
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
-    <value>Bahndesign ändern</value>
+    <value>Bahndesign anpassen</value>
   </data>
   <data name="AddMapExchange" xml:space="preserve">
     <value>Kartenwechsel hinzufügen</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Kartenwechsel entfernen</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Eigenschaften Teilstrecke</value>
   </data>
 </root>

@@ -240,6 +240,9 @@
   <data name="SetPrintArea" xml:space="preserve">
     <value>印刷領域を設定</value>
   </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>競技者数の変更</value>
+  </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>ディスクリプションのテキストをカスタマイズする</value>
   </data>

@@ -144,6 +144,9 @@
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>RouteGadgetの詳細</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>RouteGadgetファイルを作成</value>
   </data>

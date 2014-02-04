@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -15,6 +16,7 @@ namespace PurplePen
         SpecialColorChooser colorChooser;
         CourseAppearance appearance;
         Color purpleColor;
+        bool showRadius = true;
 
         public LinePropertiesDialog(CmykColor purpleColor, CourseAppearance appearance)
         {
@@ -73,11 +75,42 @@ namespace PurplePen
             UpdatePreview();
         }
 
+        public bool ShowRadius
+        {
+            get { return showRadius; }
+            set
+            {
+                if (showRadius == value)
+                    return;
+
+                showRadius = value;
+                upDownRadius.Visible = labelCornerRadius.Visible = labelRadiusMm.Visible = showRadius;
+                if (showRadius) {
+                    tableLayoutPanel.Height = tableLayoutPanel.Height * 6 / 5;
+                    tableLayoutPanel.RowStyles[2] = new RowStyle(tableLayoutPanel.RowStyles[3].SizeType, tableLayoutPanel.RowStyles[3].Height);
+                }
+                else {
+                    tableLayoutPanel.Height = tableLayoutPanel.Height * 5 / 6;
+                    tableLayoutPanel.RowStyles[2] = new RowStyle(SizeType.Absolute, 0);
+                }
+            }
+        }
+
         public float LineWidth
         {
             get { return (float) upDownWidth.Value; }
             set { 
                 upDownWidth.Value = (decimal)value; 
+                UpdatePreview();
+            }
+        }
+
+        public float CornerRadius
+        {
+            get { return (float)upDownRadius.Value; }
+            set
+            {
+                upDownRadius.Value = (decimal)value;
                 UpdatePreview();
             }
         }
@@ -172,8 +205,30 @@ namespace PurplePen
                                             (float)(centerCircle.X + Math.Cos(angle) * controlCircleDrawRadius), (float)(centerCircle.Y + Math.Sin(angle) * controlCircleDrawRadius));
 
                 // Draw line
-                PointF lineStart = new PointF(12, 5), lineEnd = new PointF(100, 5);
-                g.DrawLine(linePen, lineStart, lineEnd);
+                PointF lineStart = new PointF(12, -5), lineCorner = new PointF(12, 5), lineEnd = new PointF(100, 5);
+                using (GraphicsPath path = new GraphicsPath()) {
+                    if (!this.showRadius) {
+                        // Line, not rectangle. Just show line.
+                        path.AddLine(lineCorner, lineEnd);
+                    }
+                    else if (this.CornerRadius > 0) {
+                        const float kappa = 0.5522847498F;  // constant used to create near-circle with a bezier.
+
+                        PointF roundStart = new PointF(lineCorner.X, lineCorner.Y - CornerRadius);
+                        PointF roundEnd = new PointF(lineCorner.X + CornerRadius, lineCorner.Y);
+                        PointF control1 = new PointF(lineCorner.X, lineCorner.Y - (1-kappa) * CornerRadius);
+                        PointF control2 = new PointF(lineCorner.X + (1-kappa) * CornerRadius, lineCorner.Y);
+                        path.AddLine(lineStart, roundStart);
+                        path.AddBezier(roundStart, control1, control2, roundEnd);
+                        path.AddLine(roundEnd, lineEnd);
+                    }
+                    else {
+                        // No corner radius.
+                        path.AddLine(lineStart, lineCorner);
+                        path.AddLine(lineCorner, lineEnd);
+                    }
+                    g.DrawPath(linePen, path);
+                }
             }
         }
 

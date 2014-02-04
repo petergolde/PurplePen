@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.2.4\n"
+"Project-Id-Version: Purple Pen 2.3.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-01-13 13:59-08:00\n"
+"POT-Creation-Date: 2014-02-04 13:23-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -79,6 +79,7 @@ msgstr "記号"
 
 #: AddCourse.resx, descKindCombo.Items1
 #: AllControlsProperties.resx, descKindCombo.Items1
+#: ChangeText.resx, groupBox3.Text
 #: EnterSymbolText.resx, textColumn.HeaderText
 #: MainFrame.resx, addTextMenu.Text
 #: MainFrame.resx, textToolStripMenuItem.Text
@@ -138,6 +139,7 @@ msgstr "(非表示)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
+#: ChangeText.resx, groupBox1.Text
 #: CreatePdfCourses.resx, groupBoxAppearance.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
@@ -348,10 +350,6 @@ msgstr "選択中のオブジェクトを表示するコースを選択してく
 msgid "Change Displayed Courses"
 msgstr "表示するコースの変更"
 
-#: ChangeText.resx, insertSpecialButton.Text
-msgid "Insert Special Text"
-msgstr "特殊なテキストを入力"
-
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
@@ -383,6 +381,35 @@ msgstr "クラスリスト"
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
 msgstr "印刷の縮尺"
+
+#: ChangeText.resx, buttonChangeColor.Text
+msgid "Change Color..."
+msgstr ""
+
+#: ChangeText.resx, label2.Text
+msgid "Color:"
+msgstr ""
+
+#: ChangeText.resx, checkBoxItalic.Text
+msgid "Italic"
+msgstr ""
+
+#: ChangeText.resx, checkBoxBold.Text
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "太字"
+
+#: ChangeText.resx, label1.Text
+msgid "Font:"
+msgstr ""
+
+#: ChangeText.resx, groupBox2.Text
+msgid "Sample"
+msgstr ""
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "特殊なテキストを入力"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -543,7 +570,7 @@ msgstr "印刷領域を設定"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr ""
+msgstr "競技者数の変更"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
@@ -595,7 +622,7 @@ msgstr "コースパート・プロパティの変更"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "数字の白アウトライン"
 
 #: CourseAppearanceDialog.resx, label10.Text
 #: CourseAppearanceDialog.resx, label8.Text
@@ -614,10 +641,6 @@ msgstr "センタードットの直径:"
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
 msgstr "標準"
-
-#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
-msgid "Bold"
-msgstr "太字"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -673,16 +696,16 @@ msgstr "プレビュー"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr ""
+msgstr "競技者数"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr ""
+msgstr "コースごとの競技者数を入力してください。ここの数字を元にコントロールやレッグごとの通過人数が算出されます。"
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr ""
+msgstr "コースごとの競技者数"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
@@ -748,7 +771,7 @@ msgstr "OCADファイルを保存するフォルダを選択してください"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
-msgstr "ファイル名プリフィックス"
+msgstr "ファイル名プレフィックス:"
 
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -853,7 +876,7 @@ msgstr ""
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr ""
+msgstr "複数のコースパートを同じ地図に印刷 "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
@@ -887,7 +910,7 @@ msgstr ""
 
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr ""
+msgstr "ネームプレフィックス:"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
@@ -928,7 +951,7 @@ msgstr ""
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "RouteGadgetの詳細"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
@@ -1096,7 +1119,7 @@ msgstr "コースを印刷 (&C)"
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
-msgstr ""
+msgstr "現在のパートのみ(&P)"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
@@ -1284,7 +1307,7 @@ msgstr "コースの順序..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr ""
+msgstr "競技者数(&L)..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1373,6 +1396,23 @@ msgstr "内トンボ"
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
+msgstr "白抜き"
+
+#: MainFrame.resx, addImageMenu.Text
+#: MainFrame.resx, imageToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Image
+msgid "Image"
+msgstr ""
+
+#: MainFrame.resx, addLineMenu.Text
+#: MainFrame.resx, lineToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Line
+msgid "Line"
+msgstr ""
+
+#: MainFrame.resx, addRectangleMenu.Text
+#: MainFrame.resx, rectangleToolStripMenuItem.Text
+msgid "Rectangle"
 msgstr ""
 
 #: MainFrame.resx, addSpecialItemMenu.Text
@@ -1633,6 +1673,10 @@ msgstr "XML ファイル|*.xml"
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
 msgstr "データ交換ファイル(IOF XML)を作成"
+
+#: MainFrame.resx, openImageDialog.Filter
+msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr ""
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1904,7 +1948,7 @@ msgstr "完了"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: MiscText.resx, MandCrossing_Long
 msgid "Mandatory crossing point"
@@ -1916,11 +1960,11 @@ msgstr ""
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr ""
+msgstr "すべて: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
@@ -1932,7 +1976,7 @@ msgstr "スタート"
 
 #: MiscText.resx, Start_Short
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
@@ -2116,6 +2160,42 @@ msgid "The  .NET framework on your computer does not appear to be "
 msgstr ".NET "
 "frameworkが正しくインストールされていないおそれがあります。マイクロソフト社(http://www.micros"
 "oft.com/ja-jp/net/) より最新の.Net frameworkを入手しインストールしてください。"
+
+#: MiscText.resx, Black
+msgid "Black"
+msgstr ""
+
+#: MiscText.resx, ChooseOtherColor
+msgid "Choose Color..."
+msgstr ""
+
+#: MiscText.resx, CustomColor
+msgid "Custom Color"
+msgstr ""
+
+#: MiscText.resx, DarkBlue
+msgid "Dark Blue"
+msgstr ""
+
+#: MiscText.resx, Green
+msgid "Green"
+msgstr ""
+
+#: MiscText.resx, LightBlue
+msgid "Light Blue"
+msgstr ""
+
+#: MiscText.resx, Purple
+msgid "Purple"
+msgstr ""
+
+#: MiscText.resx, Red
+msgid "Red"
+msgstr ""
+
+#: MiscText.resx, Yellow
+msgid "Yellow"
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2903,6 +2983,10 @@ msgstr ""
 msgid "Used in courses:"
 msgstr ""
 
+#: SelectionDescriptionText.resx, FileName
+msgid "Name:"
+msgstr ""
+
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
 msgstr "地図交換所"
@@ -3087,6 +3171,10 @@ msgstr "左クリックで新しく地図交換所をコースに追加します
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
 msgstr "左クリックでコントロール \"{0}\" に地図交換所を追加します "
+
+#: StatusBarText.resx, AddingImage
+msgid "Hold down left mouse button and drag to place image"
+msgstr ""
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Speziellen Text einfügen</value>
-  </data>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
     <value>Wettkampfname</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Bahnbezeichnung</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Teilstrecke</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Länge der Bahn</value>
@@ -137,5 +137,17 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Druckmaßstab</value>
+  </data>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Fett</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Darstellung</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Speziellen Text einfügen</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Text</value>
   </data>
 </root>

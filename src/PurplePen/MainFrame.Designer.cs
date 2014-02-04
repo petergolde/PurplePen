@@ -170,6 +170,7 @@ namespace PurplePen
             this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addLineMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRectangleMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteItemMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -249,6 +250,7 @@ namespace PurplePen
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rectangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addBendToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addGapToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -991,7 +993,8 @@ namespace PurplePen
             this.whiteOutMenu,
             this.addTextMenu,
             this.addImageMenu,
-            this.addLineMenu});
+            this.addLineMenu,
+            this.addRectangleMenu});
             this.addSpecialItemMenu.Name = "addSpecialItemMenu";
             resources.ApplyResources(this.addSpecialItemMenu, "addSpecialItemMenu");
             // 
@@ -1072,6 +1075,12 @@ namespace PurplePen
             this.addLineMenu.Name = "addLineMenu";
             resources.ApplyResources(this.addLineMenu, "addLineMenu");
             this.addLineMenu.Click += new System.EventHandler(this.addLineMenu_Click);
+            // 
+            // addRectangleMenu
+            // 
+            this.addRectangleMenu.Name = "addRectangleMenu";
+            resources.ApplyResources(this.addRectangleMenu, "addRectangleMenu");
+            this.addRectangleMenu.Click += new System.EventHandler(this.addRectangleMenu_Click);
             // 
             // addTextLineMenu
             // 
@@ -1532,7 +1541,8 @@ namespace PurplePen
             this.whiteOutToolStripMenuItem,
             this.textToolStripMenuItem,
             this.imageToolStripMenuItem,
-            this.lineToolStripMenuItem});
+            this.lineToolStripMenuItem,
+            this.rectangleToolStripMenuItem});
             resources.ApplyResources(this.specialItemToolStripMenu, "specialItemToolStripMenu");
             this.specialItemToolStripMenu.Name = "specialItemToolStripMenu";
             // 
@@ -1613,6 +1623,12 @@ namespace PurplePen
             resources.ApplyResources(this.lineToolStripMenuItem, "lineToolStripMenuItem");
             this.lineToolStripMenuItem.Name = "lineToolStripMenuItem";
             this.lineToolStripMenuItem.Click += new System.EventHandler(this.addLineMenu_Click);
+            // 
+            // rectangleToolStripMenuItem
+            // 
+            resources.ApplyResources(this.rectangleToolStripMenuItem, "rectangleToolStripMenuItem");
+            this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
+            this.rectangleToolStripMenuItem.Click += new System.EventHandler(this.addRectangleMenu_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1925,6 +1941,8 @@ namespace PurplePen
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.ToolStripMenuItem addLineMenu;
         private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addRectangleMenu;
+        private System.Windows.Forms.ToolStripMenuItem rectangleToolStripMenuItem;
 
     }
 }

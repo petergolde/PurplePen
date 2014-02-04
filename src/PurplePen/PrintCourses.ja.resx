@@ -150,6 +150,9 @@
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>印刷の前にラスタ化する</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>複数のコースパートを同じ地図に印刷 </value>
+  </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>OCAD Compatible</value>
   </data>

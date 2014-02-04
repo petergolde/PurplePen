@@ -34,7 +34,7 @@ namespace PurplePen
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxFonts = new System.Windows.Forms.ListBox();
             this.labelWarning = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.iconPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +74,6 @@ namespace PurplePen
             // labelWarning
             // 
             resources.ApplyResources(this.labelWarning, "labelWarning");
-            this.labelWarning.MinimumSize = new System.Drawing.Size(375, 60);
             this.labelWarning.Name = "labelWarning";
             // 
             // MissingFonts
@@ -91,7 +90,7 @@ namespace PurplePen
             this.HelpTopic = "MissingFontsDialog.htm";
             this.Name = "MissingFonts";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            ((System.ComponentModel.ISupportInitialize) (this.iconPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

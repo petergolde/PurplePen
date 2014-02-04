@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Weiße Textfreistellung:</value>
+  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -181,7 +184,7 @@
     <value>Vorschau</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Bahndesign ändern</value>
+    <value>Bahndesign anpassen</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Farbauswahl...</value>

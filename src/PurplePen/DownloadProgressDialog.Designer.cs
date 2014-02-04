@@ -27,38 +27,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DownloadProgressDialog));
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(177, 20);
-            this.okButton.Text = "";
-            this.okButton.Visible = false;
+            resources.ApplyResources(this.okButton, "okButton");
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(300, 16);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             // 
             // progressBar
             // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(12, 16);
+            resources.ApplyResources(this.progressBar, "progressBar");
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(282, 23);
-            this.progressBar.TabIndex = 7;
             // 
             // DownloadProgressDialog
             // 
             this.AcceptButton = null;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.ClientSize = new System.Drawing.Size(399, 54);
+            resources.ApplyResources(this, "$this");
             this.ControlBox = false;
             this.Controls.Add(this.progressBar);
             this.HelpButton = false;
             this.Name = "DownloadProgressDialog";
-            this.Text = "Downloading";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.progressBar, 0);
