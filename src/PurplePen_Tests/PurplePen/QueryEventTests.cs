@@ -1070,6 +1070,17 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GetSpecialLength()
+        {
+            Setup("queryevent\\specials.ppen");
+
+            float result = QueryEvent.ComputeSpecialLength(eventDB, SpecialId(10));
+            Assert.AreEqual(304.2248F, result);
+            result = QueryEvent.ComputeSpecialLength(eventDB, SpecialId(9));
+            Assert.AreEqual(905.0821F, result);
+        }
+
+        [TestMethod]
         public void CountCourses()
         {
             Setup("queryEvent\\specials.ppen");

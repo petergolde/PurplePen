@@ -488,6 +488,12 @@ namespace PurplePen
                 list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", special.text)));
             }
 
+            if (special.kind == SpecialKind.Boundary || special.kind == SpecialKind.Line) {
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
+                list.Add(new TextPart(TextFormat.SameLine,
+                    string.Format("{0:#,###} m", QueryEvent.ComputeSpecialLength(eventDB, specialId))));
+            }
+
             // Line height for descriptions.
             if (special.kind == SpecialKind.Descriptions) {
                 list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.LineHeight + "  "));

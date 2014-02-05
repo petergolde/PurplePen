@@ -717,6 +717,14 @@ namespace PurplePen
             }
         }
 
+        // Get Length of a special, in meters.
+        public static float ComputeSpecialLength(EventDB eventDB, Id<Special> specialId)
+        { 
+            Special special = eventDB.GetSpecial(specialId);
+            SymPath path = new SymPath(special.locations);
+            return (float) ((eventDB.GetEvent().mapScale * path.Length) / 1000.0);
+        }
+
         // Find a leg object, if one exists, between the two controls.
         public static Id<Leg> FindLeg(EventDB eventDB, Id<ControlPoint> controlId1, Id<ControlPoint> controlId2)
         {

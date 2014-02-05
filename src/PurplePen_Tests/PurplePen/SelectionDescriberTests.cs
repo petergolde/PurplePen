@@ -1414,6 +1414,14 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
             textpart = description[index++];
+            Assert.AreEqual("Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("675 m", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
             Assert.AreEqual("Used in courses:", textpart.text);
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
