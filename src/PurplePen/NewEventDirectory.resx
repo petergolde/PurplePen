@@ -150,7 +150,7 @@
     <value>32, 59</value>
   </data>
   <data name="useMapDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 17</value>
+    <value>203, 19</value>
   </data>
   <data name="useMapDirectory.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -177,7 +177,7 @@
     <value>32, 87</value>
   </data>
   <data name="useOtherFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
+    <value>163, 19</value>
   </data>
   <data name="useOtherFolder.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -207,7 +207,7 @@
     <value>61, 115</value>
   </data>
   <data name="chooseFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
+    <value>130, 25</value>
   </data>
   <data name="chooseFolder.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -261,7 +261,7 @@
     <value>6, 18</value>
   </data>
   <data name="directoryName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 20</value>
+    <value>432, 23</value>
   </data>
   <data name="directoryName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -312,7 +312,7 @@
     <value>0, 233</value>
   </data>
   <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+    <value>106, 15</value>
   </data>
   <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -340,6 +340,9 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>529, 247</value>

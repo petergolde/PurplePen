@@ -747,12 +747,12 @@ namespace PurplePen
     }
 
     // A type of course object that spans an rectangular area.
-    abstract class RectCourseObj: CourseObj
+    class RectCourseObj: CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         public RectangleF rect;                // rectangle with the area.
 
-        protected RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
+        public RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
             :
            base(controlId, courseControlId, specialId, scaleRatio, appearance)
         {
@@ -912,6 +912,16 @@ namespace PurplePen
         public override int GetHashCode()
         {
             throw new NotSupportedException("The method or operation is not supported.");
+        }
+
+        protected override void AddToMap(Map map, SymDef symdef)
+        {
+            throw new NotImplementedException("Must be overridden");
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            throw new NotImplementedException("Must be overridden");
         }
     }
 
@@ -1884,18 +1894,18 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize);
+            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineStyle.Beveled);
         }
 
         // This is used by both line and rectangle specials.
-        public static SymDef CreateLineSpecialSymDef(Map map, SymColor symColor, LineKind lineKind, float lineWidth, float gapSize, float dashSize)
+        public static SymDef CreateLineSpecialSymDef(Map map, SymColor symColor, LineKind lineKind, float lineWidth, float gapSize, float dashSize, LineStyle lineStyle)
         {
             int ocadId = map.GetFreeSymdefOcadId(901);
 
             LineSymDef symdef;
             switch (lineKind) {
                 case LineKind.Single:
-                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, LineStyle.Beveled);
+                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, lineStyle);
                     break;
 
                 case LineKind.Double:
@@ -1903,7 +1913,7 @@ namespace PurplePen
                     doubleInfo.doubleLeftColor = doubleInfo.doubleRightColor = symColor;
                     doubleInfo.doubleThick = gapSize;
                     doubleInfo.doubleLeftWidth = doubleInfo.doubleRightWidth = lineWidth;
-                    symdef = new LineSymDef("Line", ocadId, null, 0, LineStyle.Beveled);
+                    symdef = new LineSymDef("Line", ocadId, null, 0, lineStyle);
                     symdef.SetDoubleLines(doubleInfo);
                     break;
 
@@ -1911,7 +1921,7 @@ namespace PurplePen
                     LineSymDef.DashInfo dashInfo = new LineSymDef.DashInfo();
                     dashInfo.dashLength = dashInfo.firstDashLength = dashInfo.lastDashLength = dashSize;
                     dashInfo.gapLength = gapSize;
-                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, LineStyle.Beveled);
+                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, lineStyle);
                     symdef.SetDashInfo(dashInfo);
                     break;
 
@@ -1987,18 +1997,44 @@ namespace PurplePen
             return key;
         }
 
+        // The full width of the line, even if a double line.
+        private float FullWidth
+        {
+            get
+            {
+                if (lineKind == LineKind.Double)
+                    return lineWidth * 2 + gapSize;
+                else
+                    return lineWidth;
+            }
+        }
+
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {
             PointF closestPoint;
 
             SymPath path = CreateSymPath();
-            return path.DistanceFromPoint(pt, out closestPoint);
+            return Math.Max(0, path.DistanceFromPoint(pt, out closestPoint) - (FullWidth/2));
+        }
+
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            object brushKey = new object();
+            object penKey = new object();
+
+            using (GDIPlus_GraphicsTarget graphicsTarget = new GDIPlus_GraphicsTarget(g)) {
+                graphicsTarget.CreateGdiPlusBrush(brushKey, brush, false);
+                graphicsTarget.CreatePen(penKey, brushKey, Geometry.TransformDistance(FullWidth, xformWorldToPixel), LineCap.Flat, LineJoin.Miter, 10);
+                SymPath path = CreateSymPath();
+                path = path.Transform(xformWorldToPixel);
+                path.Draw(graphicsTarget, penKey);
+            }
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize);
+            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineStyle.Mitered);
         }
 
         protected override void AddToMap(Map map, SymDef symdef)

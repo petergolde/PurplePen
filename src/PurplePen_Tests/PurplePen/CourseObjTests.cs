@@ -465,6 +465,27 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RectSpecial1()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Black, LineKind.Single, 0.7F, 0.5F, 0, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObject(courseobj, "rect1", false);
+        }
+
+        [TestMethod]
+        public void RectSpecial2()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, new SpecialColor(0.8F, 0.1F, 0.7F, 0), LineKind.Dashed, 0.5F, 0F, 0.4F, 0.6F, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObject(courseobj, "rect2", false);
+        }
+
+        [TestMethod]
+        public void RectSpecial3()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObject(courseobj, "rect3", false);
+        }
+
+        [TestMethod]
         public void ControlNumber()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
@@ -1172,6 +1193,29 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RectSpecialHighlight1()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Black, LineKind.Single, 0.7F, 0.5F, 0, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectHighlight(courseobj, "rect_highlight1", false);
+        }
+
+        [TestMethod]
+        public void RectSpecialHighlight2()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, new SpecialColor(0.8F, 0.1F, 0.7F, 0), LineKind.Dashed, 0.5F, 0F, 0.4F, 0.6F, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectHighlight(courseobj, "rect_highlight2", false);
+        }
+
+        [TestMethod]
+        public void RectSpecialHighlight3()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectHighlight(courseobj, "rect_highlight3", false);
+        }
+
+
+
+        [TestMethod]
         public void ControlNumberHighlight()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
@@ -1403,6 +1447,27 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectOffset(courseobj, "line3_offset", false);
+        }
+
+        [TestMethod]
+        public void RectSpecialOffset1()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Black, LineKind.Single, 0.7F, 0.5F, 0, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectOffset(courseobj, "rect1_offset", false);
+        }
+
+        [TestMethod]
+        public void RectSpecialOffset2()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, new SpecialColor(0.8F, 0.1F, 0.7F, 0), LineKind.Dashed, 0.5F, 0F, 0.4F, 0.6F, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectOffset(courseobj, "rect2_offset", false);
+        }
+
+        [TestMethod]
+        public void RectSpecialOffset3()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObjectOffset(courseobj, "rect3_offset", false);
         }
 
         [TestMethod]

@@ -1264,7 +1264,7 @@ namespace PurplePen
         }
 
         // Get the properties for a selected special line/rectangle (selectedLineSpecial == true), or the defaults for a new one (selectedLineSpecial == false).
-        public void GetLineSpecialProperties(SpecialKind specialKind, bool selectedLineSpecial, out SpecialColor color, out LineKind lineKind, out float lineWidth, out float gapSize, out float dashSize)
+        public void GetLineSpecialProperties(SpecialKind specialKind, bool selectedLineSpecial, out SpecialColor color, out LineKind lineKind, out float lineWidth, out float gapSize, out float dashSize, out float cornerRadius)
         {
             if (selectedLineSpecial) {
                 SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
@@ -1276,6 +1276,7 @@ namespace PurplePen
                         lineWidth = selectedSpecial.lineWidth;
                         dashSize = selectedSpecial.dashSize;
                         gapSize = selectedSpecial.gapSize;
+                        cornerRadius = selectedSpecial.cornerRadius;
                         return;
                     }
                 }
@@ -1291,6 +1292,7 @@ namespace PurplePen
                 lineWidth = maxIdSpecial.lineWidth;
                 dashSize = maxIdSpecial.dashSize;
                 gapSize = maxIdSpecial.gapSize;
+                cornerRadius = maxIdSpecial.cornerRadius;
                 return;
             }
             else {
@@ -1300,6 +1302,7 @@ namespace PurplePen
                 lineWidth = NormalCourseAppearance.lineSpecialWidth;
                 dashSize = NormalCourseAppearance.lineSpecialDashSize;
                 gapSize = NormalCourseAppearance.lineSpecialGapSize;
+                cornerRadius = 0;
                 return;
             }
         }
@@ -2500,6 +2503,14 @@ namespace PurplePen
                            false));
         }
 
+        // Start the mode to add a line special 
+        public void BeginAddRectangleSpecialMode(SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        {
+            SetCommandMode(new AddRectangleMode(this, undoMgr, selectionMgr, eventDB, 1.0F,
+                           rect => new RectSpecialCourseObj(Id<Special>.None, GetCourseAppearance(), color, lineKind, lineWidth, cornerRadius, gapSize, dashSize, rect),
+                           rect => ChangeEvent.AddRectangleSpecial(eventDB, rect, color, lineKind, lineWidth, gapSize, dashSize, cornerRadius)));
+        }
+
         // Can we add descriptions. The only reason we can't is all parts of a multi-part. If other reasons
         // come about we would need to return why because this is used to trigger a message.
         public bool CanAddDescriptions()
@@ -2548,7 +2559,12 @@ namespace PurplePen
 
             if (success) {
                 string imageName = QueryEvent.UniqueImageName(eventDB, Path.GetFileName(fileName));
-                SetCommandMode(new AddImageMode(this, undoMgr, selectionMgr, eventDB, imageBitmap, imageName));
+                SetCommandMode(new AddRectangleMode(this, undoMgr, selectionMgr, eventDB, (float) imageBitmap.Height / (float) imageBitmap.Width,
+                    rect => new ImageCourseObj(Id<Special>.None, 1.0F, GetCourseAppearance(),
+                                             new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom) },
+                                             imageName, imageBitmap),
+                    rect => ChangeEvent.AddImageSpecial(eventDB, rect, imageBitmap, imageName)
+                    ));
             }
         }
 

@@ -169,15 +169,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hold down left mouse button and drag to place image.
-        /// </summary>
-        internal static string AddingImage {
-            get {
-                return ResourceManager.GetString("AddingImage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Click left mouse button to create small gap; hold down left mouse button and drag to create a large gap in the leg.
         /// </summary>
         internal static string AddingLegGap {
@@ -219,6 +210,15 @@ namespace PurplePen {
         internal static string AddingObject {
             get {
                 return ResourceManager.GetString("AddingObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hold down left mouse button and drag to create object.
+        /// </summary>
+        internal static string AddingRectangle {
+            get {
+                return ResourceManager.GetString("AddingRectangle", resourceCulture);
             }
         }
         

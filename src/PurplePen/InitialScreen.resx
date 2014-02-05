@@ -208,7 +208,7 @@
     <value>3, 119</value>
   </data>
   <data name="donationLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 18</value>
+    <value>97, 21</value>
   </data>
   <data name="donationLink.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -417,9 +417,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>335, 319</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 8.25pt</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAICAAAAAACACoCAAAJgAAABAQAAAAAAgAaAUAAM4IAAAoAAAAIAAAAEAAAAABAAgAAAAAAAAE
@@ -498,6 +495,6 @@
     <value>InitialScreen</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.0.0.220, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

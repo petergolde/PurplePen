@@ -807,6 +807,18 @@ namespace PurplePen
             return eventDB.AddSpecial(special);
         }
 
+        public static Id<Special> AddRectangleSpecial(EventDB eventDB, RectangleF rect, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        {
+            Special special = new Special(SpecialKind.Rectangle, new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom)});
+            special.color = color;
+            special.lineKind = lineKind;
+            special.lineWidth = lineWidth;
+            special.gapSize = gapSize;
+            special.dashSize = dashSize;
+            special.cornerRadius = cornerRadius;
+            return eventDB.AddSpecial(special);
+        }
+
         // Add a description to the event. 
         public static Id<Special> AddDescription(EventDB eventDB, bool allCourses, CourseDesignator[] courses, PointF topLeft, float cellSize, int numColumns)
         {

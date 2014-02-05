@@ -43,6 +43,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.Tests
 {
@@ -1707,6 +1708,37 @@ namespace PurplePen.Tests
             Assert.AreEqual(1.2F, special.lineWidth);
             Assert.AreEqual(2.3F, special.gapSize);
             Assert.AreEqual(3.7F, special.dashSize);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
+        }
+
+        [TestMethod]
+        public void AddRectangleSpecial()
+        {
+            RectangleF rect = new RectangleF(20, 40, 17, 66);
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(13, "add special");
+            Id<Special> newSpecialId = ChangeEvent.AddRectangleSpecial(eventDB, rect, new SpecialColor(0.4F, 0.5F, 0.2F, 0.1F), LineKind.Dashed, 1.2F, 2.3F, 3.7F, 3.3F);
+            undomgr.EndCommand(13);
+            eventDB.Validate();
+
+            Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
+            Special special = eventDB.GetSpecial(newSpecialId);
+            Assert.AreEqual(2, special.locations.Length);
+            Assert.AreEqual(rect, Geometry.RectFromPoints(special.locations[0].X, special.locations[0].Y, special.locations[1].X, special.locations[1].Y));
+            Assert.AreEqual(SpecialKind.Rectangle, special.kind);
+            Assert.AreEqual(0, special.orientation);
+            Assert.IsTrue(special.allCourses);
+            Assert.AreEqual(new SpecialColor(0.4F, 0.5F, 0.2F, 0.1F), special.color);
+            Assert.AreEqual(LineKind.Dashed, special.lineKind);
+            Assert.AreEqual(1.2F, special.lineWidth);
+            Assert.AreEqual(2.3F, special.gapSize);
+            Assert.AreEqual(3.7F, special.dashSize);
+            Assert.AreEqual(3.3F, special.cornerRadius);
 
             undomgr.Undo();
             eventDB.Validate();

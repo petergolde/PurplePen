@@ -1398,8 +1398,8 @@ namespace PurplePen
             // Get the defaults for a new line.
             SpecialColor color;
             LineKind lineKind;
-            float lineWidth, gapSize, dashSize;
-            controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            float lineWidth, gapSize, dashSize, cornerRadius;
+            controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             linePropertiesDialog.ShowRadius = false;
             linePropertiesDialog.Color = color;
             linePropertiesDialog.LineKind = lineKind;
@@ -1431,19 +1431,20 @@ namespace PurplePen
             // Get the defaults for a new line.
             SpecialColor color;
             LineKind lineKind;
-            float lineWidth, gapSize, dashSize;
-            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            float lineWidth, gapSize, dashSize, cornerRadius;
+            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             linePropertiesDialog.ShowRadius = true;
             linePropertiesDialog.Color = color;
             linePropertiesDialog.LineKind = lineKind;
             linePropertiesDialog.LineWidth = lineWidth;
             linePropertiesDialog.GapSize = gapSize;
             linePropertiesDialog.DashSize = dashSize;
+            linePropertiesDialog.CornerRadius = cornerRadius;
 
             DialogResult result = linePropertiesDialog.ShowDialog();
 
             if (result == DialogResult.OK) {
-                //controller.BeginAddRectangleSpecialMode(linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize);
+                controller.BeginAddRectangleSpecialMode(linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, linePropertiesDialog.CornerRadius);
             }
 
             linePropertiesDialog.Dispose();

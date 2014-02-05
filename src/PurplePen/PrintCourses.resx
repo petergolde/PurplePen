@@ -202,7 +202,7 @@
     <value>NoControl</value>
   </data>
   <data name="paperSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 32</value>
+    <value>72, 30</value>
   </data>
   <data name="paperSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 13</value>
@@ -235,10 +235,10 @@
     <value>NoControl</value>
   </data>
   <data name="paperSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 32</value>
+    <value>3, 29</value>
   </data>
   <data name="paperSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>63, 15</value>
   </data>
   <data name="paperSizeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -265,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="printerName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 6</value>
+    <value>72, 5</value>
   </data>
   <data name="printerName.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 13</value>
@@ -298,10 +298,10 @@
     <value>NoControl</value>
   </data>
   <data name="printerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
+    <value>3, 4</value>
   </data>
   <data name="printerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>45, 15</value>
   </data>
   <data name="printerLabel.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -325,13 +325,13 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>3, 19</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 52</value>
+    <value>492, 49</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -421,7 +421,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -469,10 +469,10 @@
     <value>True</value>
   </data>
   <data name="copiesUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 3</value>
+    <value>135, 3</value>
   </data>
   <data name="copiesUpDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
+    <value>47, 23</value>
   </data>
   <data name="copiesUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -511,7 +511,7 @@
     <value>0, 0, 0, 3</value>
   </data>
   <data name="copiesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 16</value>
+    <value>126, 18</value>
   </data>
   <data name="copiesLabel.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -538,7 +538,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 26</value>
+    <value>185, 29</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -646,10 +646,10 @@
     <value>True</value>
   </data>
   <data name="labelColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
+    <value>3, 7</value>
   </data>
   <data name="labelColorModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+    <value>76, 15</value>
   </data>
   <data name="labelColorModel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -682,10 +682,10 @@
     <value>CMYK</value>
   </data>
   <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 4</value>
+    <value>85, 3</value>
   </data>
   <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 21</value>
+    <value>142, 23</value>
   </data>
   <data name="comboBoxColorModel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -739,7 +739,7 @@
     <value>30, 55</value>
   </data>
   <data name="comboBoxMultiPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 21</value>
+    <value>203, 23</value>
   </data>
   <data name="comboBoxMultiPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -816,9 +816,6 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>528, 406</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Print Courses</value>
   </data>
@@ -832,6 +829,6 @@
     <value>PrintCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.0.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

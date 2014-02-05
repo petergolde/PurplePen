@@ -95,11 +95,11 @@ namespace PurplePen
             this.tableLayoutPanel1.SuspendLayout();
             this.layoutGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.boxSizeUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boxSizeUpDown)).BeginInit();
             this.coursesGroupBox.SuspendLayout();
             this.copiesGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.descriptionsUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionsUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // printerGroup
@@ -268,6 +268,7 @@ namespace PurplePen
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
+            this.courseSelector.ShowCourseParts = false;
             // 
             // pageSetupDialog
             // 
@@ -337,12 +338,12 @@ namespace PurplePen
             this.layoutGroup.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.boxSizeUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boxSizeUpDown)).EndInit();
             this.coursesGroupBox.ResumeLayout(false);
             this.copiesGroupBox.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.descriptionsUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionsUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -2444,16 +2444,16 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             SpecialColor color;
             LineKind lineKind;
-            float lineWidth, gapSize, dashSize;
+            float lineWidth, gapSize, dashSize, cornerRadius;
 
-            controller.GetLineSpecialProperties(SpecialKind.Line, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Line, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialColor, color);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialKind, lineKind);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialWidth, lineWidth);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialGapSize, gapSize);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialDashSize, dashSize);
 
-            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialColor, color);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialKind, lineKind);
             Assert.AreEqual(NormalCourseAppearance.lineSpecialWidth, lineWidth);
@@ -2471,16 +2471,16 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             SpecialColor color;
             LineKind lineKind;
-            float lineWidth, gapSize, dashSize;
+            float lineWidth, gapSize, dashSize, cornerRadius;
 
-            controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(new SpecialColor(0.3F, 0.2F, 0.6F, 0), color);
             Assert.AreEqual(LineKind.Double, lineKind);
             Assert.AreEqual(0.7F, lineWidth);
             Assert.AreEqual(1.2F, gapSize);
             Assert.AreEqual(4.3F, dashSize);
 
-            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(SpecialColor.Black, color);
             Assert.AreEqual(LineKind.Dashed, lineKind);
             Assert.AreEqual(1.7F, lineWidth);
@@ -2489,14 +2489,14 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             controller.GetSelectionMgr().SelectSpecial(SpecialId(2));
 
-            controller.GetLineSpecialProperties(SpecialKind.Line, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Line, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(SpecialColor.Purple, color);
             Assert.AreEqual(LineKind.Single, lineKind);
             Assert.AreEqual(0.4F, lineWidth);
             Assert.AreEqual(0.2F, gapSize);
             Assert.AreEqual(0.3F, dashSize);
 
-            controller.GetLineSpecialProperties(SpecialKind.Rectangle, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize);
+            controller.GetLineSpecialProperties(SpecialKind.Rectangle, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             Assert.AreEqual(SpecialColor.Black, color);
             Assert.AreEqual(LineKind.Dashed, lineKind);
             Assert.AreEqual(1.7F, lineWidth);

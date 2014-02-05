@@ -42,36 +42,34 @@ using PurplePen.MapModel;
 
 namespace PurplePen
 {
-    // Mode for adding an image to a course.
-    class AddImageMode : BaseMode
+    // Mode for adding an image or rectangleSpecial to a course.
+    class AddRectangleMode : BaseMode
     {
         Controller controller;
         SelectionMgr selectionMgr;
         UndoMgr undoMgr;
         EventDB eventDB;
-        RectCourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
-        RectCourseObj currentObj;           // current object being dragged out.
+        CourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
+        CourseObj currentObj;           // current object being dragged out.
         PointF startLocation;                               // location where dragging started.
         PointF handleDragging;
 
-        // The image being added.
-        Bitmap imageBitmap;
-
-        // Aspect ratio (height/width) of image.
+        // Aspect ratio 
         float aspectRatio;
 
-        // The image name
-        string imageName;
+        Func<RectangleF, CourseObj> createCourseObj;
+        Func<RectangleF, Id<Special>> createSpecial;
 
-        public AddImageMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, Bitmap imageBitmap, string imageName)
+
+        public AddRectangleMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, float aspectRatio, Func<RectangleF, CourseObj> createCourseObj, Func<RectangleF, Id<Special>> createSpecial)
         {
             this.controller = controller;
             this.undoMgr = undoMgr;
             this.selectionMgr = selectionMgr;
             this.eventDB = eventDB;
-            this.imageBitmap = imageBitmap;
-            this.aspectRatio = (float) imageBitmap.Height / (float) imageBitmap.Width;
-            this.imageName = imageName;
+            this.aspectRatio = aspectRatio;
+            this.createCourseObj = createCourseObj;
+            this.createSpecial = createSpecial;
         }
 
         // Mouse cursor looks like a crosshair
@@ -84,7 +82,7 @@ namespace PurplePen
         {
             get
             {
-                return StatusBarText.AddingImage;
+                return StatusBarText.AddingRectangle;
             }
         }
 
@@ -107,9 +105,7 @@ namespace PurplePen
         {
             // Begin dragging out the image.
             startLocation = location;
-            startingObj = new ImageCourseObj(Id<Special>.None, 1.0F, controller.GetCourseAppearance(), 
-                                             new PointF[]{location, new PointF(location.X + 0.001F, location.Y + 0.001F*aspectRatio)}, 
-                                             imageName, imageBitmap);
+            startingObj = createCourseObj(new RectangleF(location.X, location.Y, 0.001F, 0.001F * aspectRatio));
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
@@ -124,7 +120,7 @@ namespace PurplePen
 
         public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // User just clicked. Create image of a default size.
+            // User just clicked. Create rectangle of a default size.
             CreateImageSpecial(new RectangleF(location, new SizeF(20F, 20F * aspectRatio)));
             displayUpdateNeeded = true;
         }
@@ -147,7 +143,7 @@ namespace PurplePen
         void CreateImageSpecial(RectangleF boundingRect)
         {
             undoMgr.BeginCommand(1851, CommandNameText.AddObject);
-            Id<Special> specialId = ChangeEvent.AddImageSpecial(eventDB, boundingRect, imageBitmap, imageName);
+            Id<Special> specialId = createSpecial(boundingRect);
             undoMgr.EndCommand(1851);
 
             selectionMgr.SelectSpecial(specialId);
@@ -155,5 +151,4 @@ namespace PurplePen
             controller.DefaultCommandMode();
         }
     }
-
 }

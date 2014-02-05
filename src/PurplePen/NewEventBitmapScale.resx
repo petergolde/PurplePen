@@ -152,7 +152,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>192, 165</value>
   </data>
   <data name="dpiTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
+    <value>72, 23</value>
   </data>
   <data name="dpiTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -176,7 +176,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>29, 168</value>
   </data>
   <data name="resolutionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>99, 15</value>
   </data>
   <data name="resolutionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -203,7 +203,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>270, 168</value>
   </data>
   <data name="dpiLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+    <value>76, 15</value>
   </data>
   <data name="dpiLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -257,7 +257,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>29, 196</value>
   </data>
   <data name="mapScaleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>63, 15</value>
   </data>
   <data name="mapScaleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -281,7 +281,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>192, 193</value>
   </data>
   <data name="scaleTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 20</value>
+    <value>72, 23</value>
   </data>
   <data name="scaleTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -305,7 +305,7 @@ The scale of the map indicates the relationship between the paper map and the re
     <value>0, 233</value>
   </data>
   <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
+    <value>104, 15</value>
   </data>
   <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -364,6 +364,9 @@ The scale of the map indicates the relationship between the paper map and the re
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>529, 247</value>

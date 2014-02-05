@@ -466,7 +466,7 @@ namespace PurplePen
             case SpecialKind.Boundary:
                 courseObj = new BoundaryCourseObj(specialId, scaleRatio, appearance, new SymPath(special.locations)); break;
             case SpecialKind.Rectangle:
-                return null;
+                courseObj = new RectSpecialCourseObj(specialId, appearance, special.color, special.lineKind, special.lineWidth, special.cornerRadius, special.gapSize, special.dashSize, Geometry.RectFromPoints(special.locations[0], special.locations[1])); break;
             case SpecialKind.Line:
                 courseObj = new LineSpecialCourseObj(specialId, appearance, special.color, special.lineKind, special.lineWidth, special.gapSize, special.dashSize, new SymPath(special.locations)); break;
             case SpecialKind.OOB:

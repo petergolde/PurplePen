@@ -421,6 +421,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rectangle.
+        /// </summary>
+        internal static string SpecialName_Rectangle {
+            get {
+                return ResourceManager.GetString("SpecialName_Rectangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registration Mark.
         /// </summary>
         internal static string SpecialName_RegMark {

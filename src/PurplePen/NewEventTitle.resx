@@ -152,7 +152,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>29, 157</value>
   </data>
   <data name="eventTitleLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>65, 15</value>
   </data>
   <data name="eventTitleLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -179,7 +179,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>35</value>
   </data>
   <data name="titleText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 20</value>
+    <value>274, 23</value>
   </data>
   <data name="titleText.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -203,7 +203,7 @@ To fit on the description sheet, it should be less than 25 characters in length.
     <value>0, 233</value>
   </data>
   <data name="labelTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>62, 15</value>
   </data>
   <data name="labelTitle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -231,6 +231,9 @@ To fit on the description sheet, it should be less than 25 characters in length.
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>96, 96</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>529, 247</value>

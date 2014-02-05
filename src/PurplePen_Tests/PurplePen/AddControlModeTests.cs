@@ -1373,7 +1373,7 @@ namespace PurplePen.Tests
             controller.BeginAddImageSpecialMode(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg"));
 
             // Check the status text.
-            Assert.AreEqual(StatusBarText.AddingImage, controller.StatusText);
+            Assert.AreEqual(StatusBarText.AddingRectangle, controller.StatusText);
 
             // Click the mouse and drag.
             Assert.AreSame(Cursors.Cross, controller.GetMouseCursor(new PointF(23, 37), 0.1F));

@@ -124,14 +124,11 @@
   <data name="coursePartLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="coursePartLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="coursePartLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="coursePartLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 8</value>
   </data>
@@ -139,7 +136,7 @@
     <value>3, 8, 3, 0</value>
   </data>
   <data name="coursePartLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>71, 15</value>
   </data>
   <data name="coursePartLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -160,7 +157,7 @@
     <value>0</value>
   </data>
   <data name="partComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 3</value>
+    <value>80, 3</value>
   </data>
   <data name="partComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 23</value>
@@ -184,7 +181,7 @@
     <value>True</value>
   </data>
   <data name="buttonProperties.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 3</value>
+    <value>262, 3</value>
   </data>
   <data name="buttonProperties.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>25, 3, 3, 3</value>
