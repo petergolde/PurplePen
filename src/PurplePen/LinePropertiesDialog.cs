@@ -16,7 +16,7 @@ namespace PurplePen
         SpecialColorChooser colorChooser;
         CourseAppearance appearance;
         Color purpleColor;
-        bool showRadius = true;
+        bool showRadius = true, showLineKind = true;
 
         public LinePropertiesDialog(CmykColor purpleColor, CourseAppearance appearance)
         {
@@ -92,6 +92,27 @@ namespace PurplePen
                 else {
                     tableLayoutPanel.Height = tableLayoutPanel.Height * 5 / 6;
                     tableLayoutPanel.RowStyles[2] = new RowStyle(SizeType.Absolute, 0);
+                }
+            }
+        }
+
+        public bool ShowLineKind
+        {
+            get { return showLineKind; }
+            set
+            {
+                if (showLineKind == value)
+                    return;
+
+                showLineKind = value;
+                comboBoxStyle.Visible = label2.Visible = showLineKind;
+                if (showLineKind) {
+                    tableLayoutPanel.Height = tableLayoutPanel.Height * 6 / 5;
+                    tableLayoutPanel.RowStyles[1] = new RowStyle(tableLayoutPanel.RowStyles[3].SizeType, tableLayoutPanel.RowStyles[3].Height);
+                }
+                else {
+                    tableLayoutPanel.Height = tableLayoutPanel.Height * 5 / 6;
+                    tableLayoutPanel.RowStyles[1] = new RowStyle(SizeType.Absolute, 0);
                 }
             }
         }

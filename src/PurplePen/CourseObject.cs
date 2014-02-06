@@ -1892,6 +1892,30 @@ namespace PurplePen
             return key;
         }
 
+        public override bool Equals(object obj)
+        {
+            LineSpecialCourseObj other = obj as LineSpecialCourseObj;
+            if (other == null)
+                return false;
+            if (!other.color.Equals(color))
+                return false;
+            if (other.lineKind != lineKind)
+                return false;
+            if (other.lineWidth != lineWidth)
+                return false;
+            if (other.gapSize != gapSize)
+                return false;
+            if (other.dashSize != dashSize)
+                return false;
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode() ;
+        }
+
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineStyle.Beveled);
@@ -1995,6 +2019,31 @@ namespace PurplePen
             key.dashSize = dashSize;
 
             return key;
+        }
+        public override bool Equals(object obj)
+        {
+            RectSpecialCourseObj other = obj as RectSpecialCourseObj;
+            if (other == null)
+                return false;
+            if (!other.color.Equals(color))
+                return false;
+            if (other.lineKind != lineKind)
+                return false;
+            if (other.lineWidth != lineWidth)
+                return false;
+            if (other.gapSize != gapSize)
+                return false;
+            if (other.dashSize != dashSize)
+                return false;
+            if (other.cornerRadius != cornerRadius)
+                return false;
+
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode() + cornerRadius.GetHashCode();
         }
 
         // The full width of the line, even if a double line.

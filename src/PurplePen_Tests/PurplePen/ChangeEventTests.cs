@@ -1571,6 +1571,58 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeSpecialLineAppearance1()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            Assert.AreEqual(SpecialKind.Line, eventDB.GetSpecial(SpecialId(8)).kind);
+            Assert.AreEqual(LineKind.Single, eventDB.GetSpecial(SpecialId(8)).lineKind);
+
+            undomgr.BeginCommand(11, "change line appearance");
+            ChangeEvent.ChangeSpecialLineAppearance(eventDB, SpecialId(8), new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), LineKind.Dashed, 0.77F, 1.33F, 1.22F, 3.4F);
+            undomgr.EndCommand(11);
+            eventDB.Validate();
+
+            Assert.AreEqual(new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), eventDB.GetSpecial(SpecialId(8)).color);
+            Assert.AreEqual(LineKind.Dashed, eventDB.GetSpecial(SpecialId(8)).lineKind);
+            Assert.AreEqual(0.77F, eventDB.GetSpecial(SpecialId(8)).lineWidth);
+            Assert.AreEqual(1.33F, eventDB.GetSpecial(SpecialId(8)).gapSize);
+            Assert.AreEqual(1.22F, eventDB.GetSpecial(SpecialId(8)).dashSize);
+            Assert.AreEqual(0, eventDB.GetSpecial(SpecialId(8)).cornerRadius);  // corner radius not changed on line
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(LineKind.Single, eventDB.GetSpecial(SpecialId(8)).lineKind);
+        }
+
+        [TestMethod]
+        public void ChangeSpecialLineAppearance2()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            Assert.AreEqual(SpecialKind.Rectangle, eventDB.GetSpecial(SpecialId(9)).kind);
+            Assert.AreEqual(LineKind.Single, eventDB.GetSpecial(SpecialId(9)).lineKind);
+
+            undomgr.BeginCommand(11, "change line appearance");
+            ChangeEvent.ChangeSpecialLineAppearance(eventDB, SpecialId(9), new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), LineKind.Double, 0.77F, 1.33F, 0F, 3.4F);
+            undomgr.EndCommand(11);
+            eventDB.Validate();
+
+            Assert.AreEqual(new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), eventDB.GetSpecial(SpecialId(9)).color);
+            Assert.AreEqual(LineKind.Double, eventDB.GetSpecial(SpecialId(9)).lineKind);
+            Assert.AreEqual(0.77F, eventDB.GetSpecial(SpecialId(9)).lineWidth);
+            Assert.AreEqual(1.33F, eventDB.GetSpecial(SpecialId(9)).gapSize);
+            Assert.AreEqual(0F, eventDB.GetSpecial(SpecialId(9)).dashSize);
+            Assert.AreEqual(3.4F, eventDB.GetSpecial(SpecialId(9)).cornerRadius);  
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(LineKind.Single, eventDB.GetSpecial(SpecialId(9)).lineKind);
+        }
+
+        [TestMethod]
         public void ChangeDescriptionColumns()
         {
             Setup("changeevent\\mapexchange1.ppen");

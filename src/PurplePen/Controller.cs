@@ -1961,6 +1961,59 @@ namespace PurplePen
             }
         }
 
+        // Command status for changing the line appearance of a given item.
+        public CommandStatus CanChangeLineAppearance()
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            // Only line and rectangle special can have their text changed.
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
+                Special special = eventDB.GetSpecial(selection.SelectedSpecial);
+                if (special.kind == SpecialKind.Line || special.kind == SpecialKind.Rectangle)
+                    return CommandStatus.Enabled;
+            }
+                
+            return CommandStatus.Disabled;
+        }
+
+        // Get the properties of a line objects that can be changed
+        public bool GetChangableLineProperties(out bool showRadius, out SpecialColor color, out LineKind lineKind, out float lineWidth, out float gapSize, out float dashSize, out float cornerRadius)
+        {
+            if (CanChangeLineAppearance() == CommandStatus.Enabled) {
+                Special special = eventDB.GetSpecial(selectionMgr.Selection.SelectedSpecial);
+
+                showRadius = (special.kind == SpecialKind.Rectangle);
+                color = special.color;
+                lineKind = special.lineKind;
+                lineWidth = special.lineWidth;
+                gapSize = special.gapSize;
+                dashSize = special.dashSize;
+                cornerRadius = special.cornerRadius;
+                return true;
+            }
+            else {
+                showRadius = false;
+                color = SpecialColor.Purple;
+                lineKind = LineKind.Single;
+                lineWidth = 0;
+                gapSize = 0;
+                dashSize = 0;
+                cornerRadius = 0;
+                return true;
+            }
+        }
+
+        // Change the line appearance.
+        public void ChangeLineAppearance(SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        {
+            if (CanChangeLineAppearance() == CommandStatus.Enabled) {
+                undoMgr.BeginCommand(7154, CommandNameText.ChangeLineAppearance);
+                ChangeEvent.ChangeSpecialLineAppearance(eventDB, selectionMgr.Selection.SelectedSpecial, color, lineKind, lineWidth, gapSize, dashSize, cornerRadius);
+                undoMgr.EndCommand(7154);
+            }
+        }
+
+
         // Get all the controls codes, sorted in display order and keyed by an object used
         // for SetAllControlCodes.
         public KeyValuePair<object, string>[] GetAllControlCodes()

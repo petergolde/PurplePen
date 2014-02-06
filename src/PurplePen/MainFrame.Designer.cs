@@ -181,6 +181,7 @@ namespace PurplePen
             this.removeGapMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator20 = new System.Windows.Forms.ToolStripSeparator();
             this.changeTextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeLineAppearanceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.legFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.noFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -263,6 +264,8 @@ namespace PurplePen
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -927,6 +930,7 @@ namespace PurplePen
             this.removeGapMenu,
             this.toolStripSeparator20,
             this.changeTextMenu,
+            this.changeLineAppearanceMenu,
             this.rotateMenu,
             this.legFlaggingMenu,
             this.toolStripSeparator19,
@@ -990,6 +994,7 @@ namespace PurplePen
             this.addForbiddenMenu,
             this.addBoundaryMenu,
             this.addRegMarkMenu,
+            this.toolStripSeparator23,
             this.whiteOutMenu,
             this.addTextMenu,
             this.addImageMenu,
@@ -1138,6 +1143,12 @@ namespace PurplePen
             this.changeTextMenu.Name = "changeTextMenu";
             resources.ApplyResources(this.changeTextMenu, "changeTextMenu");
             this.changeTextMenu.Click += new System.EventHandler(this.changeTextMenu_Click);
+            // 
+            // changeLineAppearanceMenu
+            // 
+            this.changeLineAppearanceMenu.Name = "changeLineAppearanceMenu";
+            resources.ApplyResources(this.changeLineAppearanceMenu, "changeLineAppearanceMenu");
+            this.changeLineAppearanceMenu.Click += new System.EventHandler(this.changeLineAppearanceMenu_Click);
             // 
             // rotateMenu
             // 
@@ -1538,6 +1549,7 @@ namespace PurplePen
             this.forbiddenRouteMarkingToolStripMenuItem,
             this.boundaryToolStripMenuItem,
             this.registrationMarkToolStripMenuItem,
+            this.toolStripSeparator22,
             this.whiteOutToolStripMenuItem,
             this.textToolStripMenuItem,
             this.imageToolStripMenuItem,
@@ -1704,6 +1716,16 @@ namespace PurplePen
             // openImageDialog
             // 
             resources.ApplyResources(this.openImageDialog, "openImageDialog");
+            // 
+            // toolStripSeparator22
+            // 
+            this.toolStripSeparator22.Name = "toolStripSeparator22";
+            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+            // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
             // 
             // MainFrame
             // 
@@ -1943,6 +1965,9 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRectangleMenu;
         private System.Windows.Forms.ToolStripMenuItem rectangleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeLineAppearanceMenu;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
 
     }
 }

@@ -559,6 +559,7 @@ namespace PurplePen
             UpdateMenuItem(removeGapMenu, controller.CanRemoveGap());
             UpdateMenuItem(rotateMenu, controller.CanRotate());
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
+            UpdateMenuItem(changeLineAppearanceMenu, controller.CanChangeLineAppearance());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
             UpdateMenuItem(mapExchangeControlMenuItem, controller.CanAddMapExchangeControl());
             UpdateMenuItem(mapExchangeControlToolStripMenuItem, controller.CanAddMapExchangeControl());
@@ -1385,13 +1386,13 @@ namespace PurplePen
 
         private void addLineMenu_Click(object sender, EventArgs e)
         {
+            // Set the course appearance into the dialog
+            CourseAppearance appearance = controller.GetCourseAppearance();
+
             // Get the correct default purple color to use.
             float c, m, y, k;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k);
-
-            // Set the course appearance into the dialog
-            CourseAppearance appearance = controller.GetCourseAppearance();
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
 
             LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
 
@@ -1401,6 +1402,7 @@ namespace PurplePen
             float lineWidth, gapSize, dashSize, cornerRadius;
             controller.GetLineSpecialProperties(SpecialKind.Line, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             linePropertiesDialog.ShowRadius = false;
+            linePropertiesDialog.ShowLineKind = true;
             linePropertiesDialog.Color = color;
             linePropertiesDialog.LineKind = lineKind;
             linePropertiesDialog.LineWidth = lineWidth;
@@ -1418,13 +1420,13 @@ namespace PurplePen
 
         private void addRectangleMenu_Click(object sender, EventArgs e)
         {
+            // Set the course appearance into the dialog
+            CourseAppearance appearance = controller.GetCourseAppearance();
+
             // Get the correct default purple color to use.
             float c, m, y, k;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k);
-
-            // Set the course appearance into the dialog
-            CourseAppearance appearance = controller.GetCourseAppearance();
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
 
             LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
 
@@ -1434,8 +1436,9 @@ namespace PurplePen
             float lineWidth, gapSize, dashSize, cornerRadius;
             controller.GetLineSpecialProperties(SpecialKind.Rectangle, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
             linePropertiesDialog.ShowRadius = true;
+            linePropertiesDialog.ShowLineKind = false;
             linePropertiesDialog.Color = color;
-            linePropertiesDialog.LineKind = lineKind;
+            linePropertiesDialog.LineKind = LineKind.Single;
             linePropertiesDialog.LineWidth = lineWidth;
             linePropertiesDialog.GapSize = gapSize;
             linePropertiesDialog.DashSize = dashSize;
@@ -1478,6 +1481,44 @@ namespace PurplePen
                 dialog.Dispose();
             }
         }
+
+
+        private void changeLineAppearanceMenu_Click(object sender, EventArgs e)
+        {
+            if (controller.CanChangeLineAppearance() == CommandStatus.Enabled) {
+                CourseAppearance appearance = controller.GetCourseAppearance();
+
+                short colorOcadId;
+                float c, m, y, k;
+                FindPurple.GetPurpleColor(mapDisplay, appearance, out colorOcadId, out c, out m, out y, out k);
+
+                LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
+
+                // Get the defaults for a new line.
+                SpecialColor color;
+                LineKind lineKind;
+                bool showRadius;
+                float lineWidth, gapSize, dashSize, cornerRadius;
+                controller.GetChangableLineProperties(out showRadius, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
+                linePropertiesDialog.ShowRadius = showRadius;
+                linePropertiesDialog.ShowLineKind = !showRadius;
+                linePropertiesDialog.Color = color;
+                linePropertiesDialog.LineKind = lineKind;
+                linePropertiesDialog.LineWidth = lineWidth;
+                linePropertiesDialog.GapSize = gapSize;
+                linePropertiesDialog.DashSize = dashSize;
+                linePropertiesDialog.CornerRadius = cornerRadius;
+
+                DialogResult result = linePropertiesDialog.ShowDialog();
+
+                if (result == DialogResult.OK) {
+                    controller.ChangeLineAppearance(linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, linePropertiesDialog.CornerRadius);
+                }
+
+                linePropertiesDialog.Dispose();
+            }
+        }
+
 
         private void whiteOutMenu_Click(object sender, EventArgs e)
         {

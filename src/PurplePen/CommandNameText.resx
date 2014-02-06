@@ -279,4 +279,7 @@
   <data name="ChangePartProperties" xml:space="preserve">
     <value>Change Course Part Properties</value>
   </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Change Line Appearance</value>
+  </data>
 </root>

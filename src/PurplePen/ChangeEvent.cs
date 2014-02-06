@@ -569,6 +569,25 @@ namespace PurplePen
             eventDB.ReplaceSpecial(specialId, special);
         }
 
+        // Change the line properties associated with a special
+        internal static void ChangeSpecialLineAppearance(EventDB eventDB, Id<Special> specialId, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        {
+            Special special = eventDB.GetSpecial(specialId);
+
+            Debug.Assert(special.kind == SpecialKind.Rectangle || special.kind == SpecialKind.Line);
+
+            special = (Special)special.Clone();
+            special.color = color;
+            special.lineKind = lineKind;
+            special.lineWidth = lineWidth;
+            special.gapSize = gapSize;
+            special.dashSize = dashSize;
+            if (special.kind == SpecialKind.Rectangle)
+                special.cornerRadius = cornerRadius;
+
+            eventDB.ReplaceSpecial(specialId, special);
+        }
+
         // Change the number of columns of a descriptions
         public static void ChangeDescriptionColumns(EventDB eventDB, Id<Special> specialId, int numColumns)
         {

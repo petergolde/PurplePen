@@ -2,7 +2,12 @@
   <event id="1">
     <title>Sample Event 1</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="none" scale="15000"></map>
+    <map kind="none" scale="15000" />
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
   </event>
   <control id="1" kind="start">
     <location x="5" y="0" />
@@ -20,11 +25,15 @@
     <location x="13" y="-7.8" />
     <description box="all" iof-2004-ref="13.3" />
   </control>
-  <control id="4" kind="normal" gaps="11111111111111111111111111011111">
+  <control id="4" kind="normal">
     <code>32</code>
     <location x="20" y="-10.5" />
     <description box="D" iof-2004-ref="3.7" />
     <description box="H" iof-2004-ref="12.1" />
+    <gaps scale="15000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="15000">56.25:67.5</circle-gaps>
+    <gaps scale="10000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="10000">56.25:67.5</circle-gaps>
     <description-text>very marshy spot</description-text>
   </control>
   <control id="5" kind="normal">
@@ -153,41 +162,42 @@
     <location x="14.3" y="-7.11" />
     <description box="all" iof-2004-ref="14.1" />
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="5">
     <name>White</name>
     <secondary-title>White is right</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="1" />
     <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
-  <course id="2" kind="normal">
+  <course id="2" kind="normal" order="6">
     <name>Yellow</name>
+    <labels label-kind="sequence" />
     <options print-scale="15000" description-kind="symbols-and-text" />
   </course>
-  <course id="3" kind="score">
+  <course id="3" kind="score" order="2">
     <name>Rambo</name>
+    <labels label-kind="code" />
     <first course-control="51" />
-    <options print-scale="10000" description-kind="symbols" />
-    <description square-size="6" left-edge="10.5" top-edge="-10.5" />
+    <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal">
+  <course id="4" kind="normal" order="3">
     <name>SampleCourse4</name>
+    <labels label-kind="sequence" />
     <first course-control="11" />
     <options print-scale="15000" climb="173" description-kind="symbols" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
-  <course id="5" kind="score">
+  <course id="5" kind="score" order="4">
     <name>Score 4</name>
     <secondary-title>Score more!</secondary-title>
+    <labels label-kind="code" />
     <first course-control="101" />
-    <options print-scale="15000" description-kind="symbols" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
+    <options print-scale="15000" score-column="A" description-kind="symbols" />
   </course>
-  <course id="6" kind="normal">
+  <course id="6" kind="normal" order="1">
     <name>Green Y</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
     <options print-scale="15000" description-kind="symbols" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
   <course-control id="1" control="1">
     <next course-control="2" />
@@ -339,57 +349,72 @@
     <next course-control="213" />
   </course-control>
   <course-control id="213" control="6" />
-	<special-object id="1" kind="first-aid">
-		<location x="14.5" y="31.2" />
-		<courses all="true" />
-	</special-object>
-	<special-object id="2" kind="optional-crossing-point" orientation="45">
-		<location x="-4.2" y="21.7" />
-		<courses>
-			<course course="1" />
-			<course course="2" />
-			<course course="3" />
-			<course course="6" />
-		</courses>
-	</special-object>
-	<special-object id="3" kind="boundary">
-		<location x="11" y="2" />
-		<location x="0" y="-7" />
-		<location x="-12" y="-3" />
-		<courses>
-			<course course="3" />
-		</courses>
-	</special-object>
-	<special-object id="4" kind="out-of-bounds">
-		<location x="3" y="7" />
-		<location x="11" y="2" />
-		<location x="0" y="-7" />
-		<location x="-12" y="-3" />
-		<courses all="true" />
-	</special-object>
-	<special-object id="5" kind="text">
-		<text>Banana Apple</text>
-		<font name="Times New Roman" italic="false" bold="true"></font>
-		<location x="13" y="17" />
-		<location x="71" y="1" />
-		<courses>
-			<course course="5" />
-		</courses>
-	</special-object>
-	<special-object id="6" kind="text">
-		<text>Frank Zappa</text>
-		<font name="Arial" italic="false" bold="true"></font>
-		<location x="13" y="-17" />
-		<location x="71" y="-14" />
-		<courses>
-			<course course="5" />
-		</courses>
-	</special-object>
-	<special-object id="7" kind="text">
-		<text>$(CourseName)</text>
-		<font name="Times New Roman" italic="true" bold="true"></font>
-		<location x="-30" y="-27" />
-		<location x="-5" y="-21" />
-		<courses all="true"/>
-	</special-object>
+  <special-object id="1" kind="first-aid">
+    <location x="14.5" y="31.2" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="optional-crossing-point" orientation="45">
+    <location x="-4.2" y="21.7" />
+    <courses>
+      <course course="1" />
+      <course course="2" />
+      <course course="3" />
+      <course course="6" />
+    </courses>
+  </special-object>
+  <special-object id="3" kind="boundary">
+    <location x="11" y="2" />
+    <location x="0" y="-7" />
+    <location x="-12" y="-3" />
+    <courses>
+      <course course="3" />
+    </courses>
+  </special-object>
+  <special-object id="4" kind="out-of-bounds">
+    <location x="3" y="7" />
+    <location x="11" y="2" />
+    <location x="0" y="-7" />
+    <location x="-12" y="-3" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="5" kind="text">
+    <text>Banana Apple</text>
+    <font name="Times New Roman" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="13" y="17" />
+    <location x="71" y="1" />
+    <courses>
+      <course course="5" />
+    </courses>
+  </special-object>
+  <special-object id="6" kind="text">
+    <text>Frank Zappa</text>
+    <font name="Arial" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="13" y="-17" />
+    <location x="71" y="-14" />
+    <courses>
+      <course course="5" />
+    </courses>
+  </special-object>
+  <special-object id="7" kind="text">
+    <text>$(CourseName)</text>
+    <font name="Times New Roman" bold="true" italic="true" />
+    <appearance color="purple" />
+    <location x="-30" y="-27" />
+    <location x="-5" y="-21" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="8" kind="line">
+    <appearance line-kind="single" color="purple" line-width="0.5" />
+    <location x="65.0177" y="-2.24200583" />
+    <location x="55.0533" y="-11.7081881" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="9" kind="rectangle">
+    <appearance line-kind="single" color="purple" line-width="0.5" corner-radius="0" />
+    <location x="61.53116" y="-27.6512318" />
+    <location x="73.48744" y="-18.1840515" />
+    <courses all="true" />
+  </special-object>
 </course-scribe-event>
