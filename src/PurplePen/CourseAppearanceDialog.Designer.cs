@@ -57,9 +57,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.upDownCyan = new System.Windows.Forms.NumericUpDown();
             this.checkBoxDefaultPurple = new System.Windows.Forms.CheckBox();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.groupBoxPreview = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDescriptionColor = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).BeginInit();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownCyan)).BeginInit();
             this.groupBoxPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -85,7 +89,6 @@
             // 
             // groupBoxSizes
             // 
-            resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
             this.groupBoxSizes.Controls.Add(this.labelOutlineWidth);
             this.groupBoxSizes.Controls.Add(this.label10);
             this.groupBoxSizes.Controls.Add(this.upDownOutlineWidth);
@@ -104,6 +107,7 @@
             this.groupBoxSizes.Controls.Add(this.labelMM1);
             this.groupBoxSizes.Controls.Add(this.upDownControlCircle);
             this.groupBoxSizes.Controls.Add(this.checkBoxStandardSizes);
+            resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
             // 
@@ -375,11 +379,6 @@
             this.checkBoxDefaultPurple.UseVisualStyleBackColor = true;
             this.checkBoxDefaultPurple.CheckedChanged += new System.EventHandler(this.checkBoxDefaultPurple_CheckedChanged);
             // 
-            // colorDialog
-            // 
-            this.colorDialog.AnyColor = true;
-            this.colorDialog.FullOpen = true;
-            // 
             // groupBoxPreview
             // 
             resources.ApplyResources(this.groupBoxPreview, "groupBoxPreview");
@@ -395,10 +394,39 @@
             this.pictureBoxPreview.TabStop = false;
             this.pictureBoxPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxPreview_Paint);
             // 
+            // colorDialog
+            // 
+            this.colorDialog.AnyColor = true;
+            this.colorDialog.FullOpen = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxDescriptionColor);
+            this.groupBox1.Controls.Add(this.label9);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // comboBoxDescriptionColor
+            // 
+            this.comboBoxDescriptionColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDescriptionColor.FormattingEnabled = true;
+            this.comboBoxDescriptionColor.Items.AddRange(new object[] {
+            resources.GetString("comboBoxDescriptionColor.Items"),
+            resources.GetString("comboBoxDescriptionColor.Items1")});
+            resources.ApplyResources(this.comboBoxDescriptionColor, "comboBoxDescriptionColor");
+            this.comboBoxDescriptionColor.Name = "comboBoxDescriptionColor";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
             // CourseAppearanceDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxSizes);
             this.Controls.Add(this.groupBoxPurple);
             this.Controls.Add(this.groupBoxPreview);
@@ -409,6 +437,7 @@
             this.Controls.SetChildIndex(this.groupBoxSizes, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).EndInit();
@@ -424,6 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownCyan)).EndInit();
             this.groupBoxPreview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -451,7 +482,6 @@
         private System.Windows.Forms.NumericUpDown upDownYellow;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown upDownMagenta;
-        private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.GroupBox groupBoxPreview;
         private System.Windows.Forms.PictureBox pictureBoxPreview;
         private System.Windows.Forms.ComboBox comboBoxControlNumberStyle;
@@ -462,5 +492,9 @@
         private System.Windows.Forms.Label labelOutlineWidth;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown upDownOutlineWidth;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxDescriptionColor;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -80,7 +80,8 @@ namespace PurplePen
 
             // Go through all the descriptions in the view and process them to create course objects
             foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
-                courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView);
+                // The layer depends on "descriptions in purple" setting in the course appearance.
+                courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView, appearance.descriptionsPurple ? layer : CourseLayer.Descriptions);
                 if (courseObj != null)
                     courseLayout.AddCourseObject(courseObj);
             }
@@ -500,7 +501,7 @@ namespace PurplePen
         }
 
         // Create the course objects associated with this special. Assign the given layer to it.
-        static CourseObj CreateDescriptionSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView.DescriptionView descriptionView)
+        static CourseObj CreateDescriptionSpecial(EventDB eventDB, SymbolDB symbolDB, CourseView.DescriptionView descriptionView, CourseLayer layer)
         {
             Special special = eventDB.GetSpecial(descriptionView.SpecialId);
             Debug.Assert(special.kind == SpecialKind.Descriptions);
@@ -508,7 +509,7 @@ namespace PurplePen
             DescriptionKind descKind;
             DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind);
             CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind, special.numColumns);
-            courseObj.layer = CourseLayer.Descriptions;
+            courseObj.layer = layer;
             return courseObj;
         }
 

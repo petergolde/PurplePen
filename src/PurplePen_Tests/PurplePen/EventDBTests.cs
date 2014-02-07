@@ -475,6 +475,7 @@ namespace PurplePen.Tests
             e.courseAppearance.purpleM = 0.5F;
             e.courseAppearance.purpleY = 0.6F;
             e.courseAppearance.purpleK = 0.74F;
+            e.courseAppearance.descriptionsPurple = true;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

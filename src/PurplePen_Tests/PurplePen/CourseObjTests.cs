@@ -62,6 +62,7 @@ namespace PurplePen.Tests
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;
             specialAppearance.numberOutlineWidth = 0.13F;
+            specialAppearance.descriptionsPurple = true;
         }
 
         // Draw a grid on the graphics
@@ -543,7 +544,7 @@ namespace PurplePen.Tests
         }
 
         // Create a description course object to use in testing.
-        DescriptionCourseObj CreateDescriptionCourseObj(int numColumns = 1)
+        DescriptionCourseObj CreateDescriptionCourseObj(CourseAppearance appearance, int numColumns = 1)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
@@ -560,23 +561,31 @@ namespace PurplePen.Tests
         [TestMethod]
         public void Description()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(1);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 1);
             CheckRenderBitmap(courseobj, "description", Color.Wheat);
         }
 
         [TestMethod]
         public void Description2Col()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 2);
             CheckRenderBitmap(courseobj, "description_2col", Color.Wheat);
         }
 
         [TestMethod]
         public void Description3Col()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 3);
             CheckRenderBitmap(courseobj, "description_3col", Color.Wheat);
         }
+
+        [TestMethod]
+        public void DescriptionSpecial()
+        {
+            CourseObj courseobj = CreateDescriptionCourseObj(specialAppearance, 1);
+            CheckRenderBitmap(courseobj, "description_special", Color.Wheat);
+        }
+
 
         ImageCourseObj CreateImageCourseObj()
         {
@@ -754,7 +763,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DescriptionDistance()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new Point(1, 1)));
             Assert.AreEqual(1.0, courseobj.DistanceFromPoint(new Point(-5, 1)));
             Assert.AreEqual(2.0 * Math.Sqrt(2), courseobj.DistanceFromPoint(new Point(-6, 6)), 0.01);
@@ -888,14 +897,14 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DescriptionDump()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance);
             AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=-2.39,Width=7.29,Height=6.39}");
         }
 
         [TestMethod]
         public void DescriptionDump2()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 2);
             AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.155,Width=7.515,Height=1.845} columns:2");
         }
 
@@ -1303,21 +1312,21 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DescriptionHighlight()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance);
             CheckHighlightBitmap(courseobj, "description_highlight");
         }
 
         [TestMethod]
         public void DescriptionHighlight2Col()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(2);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 2);
             CheckHighlightBitmap(courseobj, "description_highlight_2col");
         }
 
         [TestMethod]
         public void DescriptionHighlight3Col()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj(3);
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 3);
             CheckHighlightBitmap(courseobj, "description_highlight_3col");
         }
 
@@ -1526,7 +1535,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DescriptionOffset()
         {
-            CourseObj courseobj = CreateDescriptionCourseObj();
+            CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance);
             CheckOffsetBitmap(courseobj, "description_offset", Color.Wheat);
         }
 
@@ -1733,7 +1742,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void GetDescriptionHandles()
         {
-            DescriptionCourseObj courseObj = CreateDescriptionCourseObj();
+            DescriptionCourseObj courseObj = CreateDescriptionCourseObj(defaultCourseAppearance);
             RectangleF rect = courseObj.rect;
             float left = rect.Left, right = rect.Right, top= rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
@@ -1763,7 +1772,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void GetDescriptionHandleCursors()
         {
-            DescriptionCourseObj courseObj = CreateDescriptionCourseObj();
+            DescriptionCourseObj courseObj = CreateDescriptionCourseObj(defaultCourseAppearance);
             RectangleF rect = courseObj.rect;
             float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
@@ -1808,13 +1817,13 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MoveDescriptionHandles()
         {
-            DescriptionCourseObj courseObj = CreateDescriptionCourseObj();
+            DescriptionCourseObj courseObj = CreateDescriptionCourseObj(defaultCourseAppearance);
             RectangleF rect = courseObj.rect;
             float ratio = rect.Width / rect.Height;
             float left = rect.Left, right = rect.Right, top= rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
             MoveRectangleHandle(courseObj, new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
-            courseObj = CreateDescriptionCourseObj();
+            courseObj = CreateDescriptionCourseObj(defaultCourseAppearance);
             MoveRectangleHandle(courseObj, new PointF(right, (bottom + top) / 2), new PointF(right + 3, 17), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
         }
 

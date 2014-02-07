@@ -2006,6 +2006,8 @@ namespace PurplePen
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
 
+        public bool descriptionsPurple = false;         // If true, descriptions in purple instead of black.
+
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is CourseAppearance))
@@ -2038,6 +2040,8 @@ namespace PurplePen
                 if (purpleK != other.purpleK)
                     return false;
             }
+            if (descriptionsPurple != other.descriptionsPurple)
+                return false;
 
             return true;
         }
@@ -2265,10 +2269,12 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("purple-yellow", XmlConvert.ToString(courseAppearance.purpleY));
                 xmloutput.WriteAttributeString("purple-black", XmlConvert.ToString(courseAppearance.purpleK));
             }
+
             xmloutput.WriteEndElement();
 
             xmloutput.WriteStartElement("descriptions");
             xmloutput.WriteAttributeString("lang", descriptionLangId);
+            xmloutput.WriteAttributeString("color", courseAppearance.descriptionsPurple ? "purple" : "black");
             xmloutput.WriteEndElement();
 
             foreach (string iofId in customSymbolText.Keys) {
@@ -2381,6 +2387,13 @@ namespace PurplePen
 
                     case "descriptions":
                         descriptionLangId = xmlinput.GetAttributeString("lang");
+
+                        string descriptionColor = xmlinput.GetAttributeString("color", "black");
+                        if (descriptionColor.Equals("purple", StringComparison.InvariantCultureIgnoreCase))
+                            courseAppearance.descriptionsPurple = true;
+                        else
+                            courseAppearance.descriptionsPurple = false;
+
                         xmlinput.Skip();
                         break;
 

@@ -50,6 +50,8 @@ namespace PurplePen
                 result.purpleY = (float) (upDownYellow.Value / 100);
                 result.purpleK = (float) (upDownBlack.Value / 100);
 
+                result.descriptionsPurple = (comboBoxDescriptionColor.SelectedIndex == 1);
+
                 return result;
             }
             set
@@ -70,6 +72,8 @@ namespace PurplePen
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
                 checkBoxDefaultPurple.Checked = value.useDefaultPurple;
+
+                comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
 
                 UpdatePreview();
             }
@@ -156,7 +160,7 @@ namespace PurplePen
             using (Brush lightGreenBrush = new SolidBrush(Color.LightGreen))
             {
                 // Draw light green background.
-                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(22, -30, 70, 20));
+                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(22, -30, 45, 20));
 
                 // Draw control circle
                 PointF centerCircle = new PointF(25, 5);
