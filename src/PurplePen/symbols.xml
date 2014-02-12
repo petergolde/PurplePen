@@ -129,6 +129,7 @@ for the symbols.
 	<language lang="et" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">eesti</language>
 	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="maskulin,feminin,neutrum">Deutsch (Deutschland)</language>
 	<language lang="en-AU" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English (Australia)</language>
+	<language lang="ca" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculí,femení">Català</language>
 	
 
 
@@ -185,6 +186,7 @@ for the symbols.
 		<name lang="ro">Lungime traseu</name>
 		<name lang="et">Raja pikkus</name>
 		<name lang="de">Bahnlänge</name>
+		<name lang="ca">Distància de la cursa</name>
 		<text lang="en-AU">Length {0}</text>
 		
 		<text lang="en">Length {0}</text>
@@ -199,6 +201,7 @@ for the symbols.
 		<text lang="ro">Lungime {0}</text>
 		<text lang="et">Pikkus {0}</text>
 		<text lang="de">Länge {0}</text>
+		<text lang="ca">Distància {0}</text>
 		
 	</symbol>
 
@@ -220,6 +223,7 @@ for the symbols.
 		<name lang="ro">Lungimea și diferența de nivel</name>
 		<name lang="et">Raja pikkus ja tõusude summa</name>
 		<name lang="de">Bahnlänge und Höhenmeter</name>
+		<name lang="ca">Distància de la cursa i desnivell</name>
 		<text lang="en-AU">Length {0}, climb {1}</text>
 		
 		<text lang="en">Length {0}, climb {1}</text>
@@ -234,6 +238,7 @@ for the symbols.
 		<text lang="ro">Lungime {0}, diferență de nivel {1}</text>
 		<text lang="et">Pikkus {0}, tõus {1}</text>
 		<text lang="de">Länge {0}, Höhenmeter {1}</text>
+		<text lang="ca">Distància {0}, desnivell {1}</text>
 		
 	</symbol>
 
@@ -254,6 +259,7 @@ for the symbols.
 		<name lang="ro">Numărul de posturi</name>
 		<name lang="et">Kontrollpunktide arv</name>
 		<name lang="de">Postenanzahl</name>
+		<name lang="ca">Nombre de controls</name>
 		<text lang="en-AU">{0} controls</text>
 		
 		<text lang="en">{0} controls</text>
@@ -268,6 +274,7 @@ for the symbols.
 		<text lang="ro">{0} posturi</text>
 		<text lang="et">{0} KPd</text>
 		<text lang="de">{0} Posten</text>
+		<text lang="ca">{0} controls</text>
 		
 	</symbol>
 
@@ -288,6 +295,7 @@ for the symbols.
 		<name lang="ro">Numărul de Puncte</name>
 		<name lang="et">Punktide arv</name>
 		<name lang="de">Punkteanzahl</name>
+		<name lang="ca">Nombre de punts</name>
 		<text lang="en-AU">{0} points</text>
 		
 		<text lang="en">{0} points</text>
@@ -302,6 +310,7 @@ for the symbols.
 		<text lang="ro">{0} puncte</text>
 		<text lang="et">{0} punkti</text>
 		<text lang="de">{0} Punkte</text>
+		<text lang="ca">{0} punts</text>
 		
 	</symbol>
 
@@ -324,6 +333,7 @@ for the symbols.
 		<name lang="ro">Și</name>
 		<name lang="et">ja</name>
 		<name lang="de">Und</name>
+		<name lang="ca">I</name>
 		<text lang="en-AU">{0} and {1}</text>
 		
 		<text lang="en">{0} and {1}</text>
@@ -338,6 +348,7 @@ for the symbols.
 		<text lang="ro">{0} și {1}</text>
 		<text lang="et">{0} ja {1}</text>
 		<text lang="de">{0} und {1}</text>
+		<text lang="ca">{0} i {1}</text>
 		
 	</symbol>
 
@@ -363,6 +374,7 @@ for the symbols.
 		<name lang="ro">Start</name>
 		<name lang="et">Start</name>
 		<name lang="de">Start</name>
+		<name lang="ca">Sortida</name>
 		<text lang="en-AU">start</text>
 		
 		<text lang="en">start</text>
@@ -377,6 +389,7 @@ for the symbols.
 		<text lang="ro">start</text>
 		<text lang="et">start</text>
 		<text lang="de">Start</text>
+		<text lang="ca">sortida</text>
 		
 		<polygon thickness="12.5" corners="sharp">
 			<point x="-56" y="65" />
@@ -405,6 +418,7 @@ for the symbols.
 		<name lang="ro">Nordic</name>
 		<name lang="et">Põhjapoolne</name>
 		<name lang="de">Nördliches</name>
+		<name lang="ca">El del nord</name>
 		<text lang="en-AU">N {0}</text>
 		
 		<text lang="en">N {0}</text>
@@ -422,6 +436,8 @@ for the symbols.
 		<text lang="ro">N {0}</text>
 		<text lang="et">Põhjapoolne {0}</text>
 		<text lang="de">N {0}</text>
+		<text lang="ca" gender="femení">{0}, la del nord</text>
+		<text lang="ca" gender="masculí">{0}, el del nord</text>
 		
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
@@ -448,6 +464,7 @@ for the symbols.
 		<name lang="ro">Nord-estic</name>
 		<name lang="et">Kirdepoolne</name>
 		<name lang="de">Nord-östliches</name>
+		<name lang="ca">El del nord-est</name>
 		<text lang="en-AU">NE {0}</text>
 		
 		<text lang="en">NE {0}</text>
@@ -465,6 +482,8 @@ for the symbols.
 		<text lang="ro">NE {0}</text>
 		<text lang="et">Kirdepoolne {0}</text>
 		<text lang="de">NÖ {0}</text>
+		<text lang="ca" gender="femení">{0}, la del nord-est</text>
+		<text lang="ca" gender="masculí">{0}, el del nord-est</text>
 		
 		<lines thickness="12.5">
 			<point x="-55" y="-55" />
@@ -491,6 +510,7 @@ for the symbols.
 		<name lang="ro">Estic</name>
 		<name lang="et">Idapoolne</name>
 		<name lang="de">Östliches</name>
+		<name lang="ca">El del est</name>
 		<text lang="en-AU">E {0}</text>
 		
 		<text lang="en">E {0}</text>
@@ -508,6 +528,8 @@ for the symbols.
 		<text lang="ro">E {0}</text>
 		<text lang="et">Idapoolne {0}</text>
 		<text lang="de">Ö {0}</text>
+		<text lang="ca" gender="femení">{0}, la del est</text>
+		<text lang="ca" gender="masculí">{0}, el del est</text>
 		
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
@@ -534,6 +556,7 @@ for the symbols.
 		<name lang="ro">Sud-estic</name>
 		<name lang="et">Kagupoolne</name>
 		<name lang="de">Süd-östliches</name>
+		<name lang="ca">El del sud-est</name>
 		<text lang="en-AU">SE {0}</text>
 		
 		<text lang="en">SE {0}</text>
@@ -551,6 +574,8 @@ for the symbols.
 		<text lang="ro">SE {0}</text>
 		<text lang="et">Kagupoolne {0}</text>
 		<text lang="de">SÖ {0}</text>
+		<text lang="ca" gender="femení">{0}, la del sud-est</text>
+		<text lang="ca" gender="masculí">{0}, el del sud-est</text>
 		
 		<lines thickness="12.5">
 			<point x="-55" y="55" />
@@ -577,6 +602,7 @@ for the symbols.
 		<name lang="ro">Sudic</name>
 		<name lang="et">Lõunapoolne</name>
 		<name lang="de">Südliches</name>
+		<name lang="ca">El del sud</name>
 		<text lang="en-AU">S {0}</text>
 		
 		<text lang="en">S {0}</text>
@@ -594,6 +620,8 @@ for the symbols.
 		<text lang="ro">S {0}</text>
 		<text lang="et">Lõunapoolne {0}</text>
 		<text lang="de">S {0}</text>
+		<text lang="ca" gender="femení">{0}, la del sud</text>
+		<text lang="ca" gender="masculí">{0}, el del sud</text>
 		
 	<lines thickness="12.5">
 			<point x="0" y="-65" />
@@ -620,6 +648,7 @@ for the symbols.
 		<name lang="ro">Sud-vestic</name>
 		<name lang="et">Edelapoolne</name>
 		<name lang="de">Süd-westliches</name>
+		<name lang="ca">El del sud-oest</name>
 		<text lang="en-AU">SW {0}</text>
 		
 		<text lang="en">SW {0}</text>
@@ -637,6 +666,8 @@ for the symbols.
 		<text lang="ro">SW {0}</text>
 		<text lang="et">Edelapoolne {0}</text>
 		<text lang="de">SW {0}</text>
+		<text lang="ca" gender="femení">{0}, la del sud-oest</text>
+		<text lang="ca" gender="masculí">{0}, el del sud-oest</text>
 		
 		<lines thickness="12.5">
 			<point x="55" y="55" />
@@ -663,6 +694,7 @@ for the symbols.
 		<name lang="ro">Vestic</name>
 		<name lang="et">Läänepoolne</name>
 		<name lang="de">Westliches</name>
+		<name lang="ca">El del oest</name>
 		<text lang="en-AU">W {0}</text>
 		
 		<text lang="en">W {0}</text>
@@ -680,6 +712,8 @@ for the symbols.
 		<text lang="ro">W {0}</text>
 		<text lang="et">Läänepoolne {0}</text>
 		<text lang="de">W {0}</text>
+		<text lang="ca" gender="femení">{0}, la del oest</text>
+		<text lang="ca" gender="masculí">{0}, el del oest</text>
 		
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
@@ -706,6 +740,7 @@ for the symbols.
 		<name lang="ro">Nord-vestic</name>
 		<name lang="et">Loodepoolne</name>
 		<name lang="de">Nord-westliches</name>
+		<name lang="ca">El del nord-oest</name>
 		<text lang="en-AU">NW {0}</text>
 		
 		<text lang="en">NW {0}</text>
@@ -723,6 +758,8 @@ for the symbols.
 		<text lang="ro">NW {0}</text>
 		<text lang="et">Loodepoolne {0}</text>
 		<text lang="de">NW {0}</text>
+		<text lang="ca" gender="femení">{0}, la del nord-oest</text>
+		<text lang="ca" gender="masculí">{0}, el del nord-oest</text>
 		
 		<lines thickness="12.5">
 			<point x="55" y="-55" />
@@ -749,6 +786,7 @@ for the symbols.
 		<name lang="ro">Superior</name>
 		<name lang="et">Ülemine</name>
 		<name lang="de">Oberes</name>
+		<name lang="ca">El superior</name>
 		<text lang="en-AU">upper {0}</text>
 		
 		<text lang="en">upper {0}</text>
@@ -768,6 +806,8 @@ for the symbols.
 		<text lang="de" gender="neutrum">oberes {0}</text>
 		<text lang="de" gender="feminin">obere {0}</text>
 		<text lang="de" gender="maskulin">oberer {0}</text>
+		<text lang="ca" gender="femení">{0}, la superior</text>
+		<text lang="ca" gender="masculí">{0}, el superior</text>
 		
 		
 		
@@ -798,6 +838,7 @@ for the symbols.
 		<name lang="ro">Inferior</name>
 		<name lang="et">Alumine</name>
 		<name lang="de">Unteres</name>
+		<name lang="ca">L'inferior</name>
 		<text lang="en-AU">lower {0}</text>
 		
 		<text lang="en">lower {0}</text>
@@ -817,6 +858,8 @@ for the symbols.
 		<text lang="de" gender="neutrum">unteres {0}</text>
 		<text lang="de" gender="feminin">untere {0}</text>
 		<text lang="de" gender="maskulin">unterer {0}</text>
+		<text lang="ca" gender="femení">{0}, la inferior</text>
+		<text lang="ca" gender="masculí">{0}, l'inferior</text>
 		
 		
 		
@@ -847,6 +890,7 @@ for the symbols.
 		<name lang="ro">Mijloc</name>
 		<name lang="et">Keskmine</name>
 		<name lang="de">Mittleres</name>
+		<name lang="ca">El central</name>
 		<text lang="en-AU">middle {0}</text>
 		
 		<text lang="en">middle {0}</text>
@@ -866,6 +910,8 @@ for the symbols.
 		<text lang="de" gender="neutrum">mittleres {0}</text>
 		<text lang="de" gender="feminin">mittlere {0}</text>
 		<text lang="de" gender="maskulin">mittlerer {0}</text>
+		<text lang="ca" gender="femení">{0}, la central</text>
+		<text lang="ca" gender="masculí">{0}, el central</text>
 		
 		
 		
@@ -904,6 +950,7 @@ for the symbols.
 		<name lang="ro">Terasa</name>
 		<name lang="et">Terass</name>
 		<name lang="de">Terrasse</name>
+		<name lang="ca">Terrassa</name>
 		<text lang="en-AU" plural="true">terraces</text>
 		<text lang="en-AU">terrace</text>
 		
@@ -930,6 +977,8 @@ for the symbols.
 		<text lang="et">terass</text>
 		<text lang="de" plural="true" gender="feminin">Terrassen</text>
 		<text lang="de" gender="feminin">Terrasse</text>
+		<text lang="ca" plural="true" gender="femení">terrasses</text>
+		<text lang="ca" gender="femení">terrassa</text>
 		
 		
 		<beziers thickness="12.5">
@@ -969,6 +1018,7 @@ for the symbols.
 		<name lang="ro">Pinten</name>
 		<name lang="et">Nina</name>
 		<name lang="de">Nase</name>
+		<name lang="ca">Esperó</name>
 		<text lang="en-AU" plural="true">spurs</text>
 		<text lang="en-AU">spur</text>
 		
@@ -995,6 +1045,8 @@ for the symbols.
 		<text lang="et">nina</text>
 		<text lang="de" plural="true" gender="feminin">Nasen</text>
 		<text lang="de" gender="feminin">Nase</text>
+		<text lang="ca" plural="true" gender="masculí">esperons</text>
+		<text lang="ca" gender="masculí">esperó</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1035,6 +1087,7 @@ for the symbols.
 		<name lang="ro">Vâlcel</name>
 		<name lang="et">Orvand</name>
 		<name lang="de">Mulde</name>
+		<name lang="ca">Tàlveg</name>
 		<text lang="en-AU" plural="true">gullies</text>
 		<text lang="en-AU">gully</text>
 		
@@ -1063,6 +1116,8 @@ for the symbols.
 		<text lang="et">orvand</text>
 		<text lang="de" plural="true" gender="feminin">Mulden</text>
 		<text lang="de" gender="feminin">Mulde</text>
+		<text lang="ca" plural="true" gender="masculí">tàlvegs</text>
+		<text lang="ca" gender="masculí">tàlveg</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1096,6 +1151,7 @@ for the symbols.
 		<name lang="ro">Ruptură de teren</name>
 		<name lang="et">Järsak</name>
 		<name lang="de">Erdböschung</name>
+		<name lang="ca">Talús</name>
 		<text lang="en-AU" plural="true">earth banks</text>
 		<text lang="en-AU">earth bank</text>
 		
@@ -1122,6 +1178,8 @@ for the symbols.
 		<text lang="et">järsak</text>
 		<text lang="de" plural="true" gender="feminin">Erdböschungen</text>
 		<text lang="de" gender="feminin">Erdböschung</text>
+		<text lang="ca" plural="true" gender="masculí">talussos</text>
+		<text lang="ca" gender="masculí">talús</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1162,6 +1220,7 @@ for the symbols.
 		<name lang="ro">Carieră</name>
 		<name lang="et">Karjäär</name>
 		<name lang="de">Grube</name>
+		<name lang="ca">Pedrera</name>
 		<text lang="en-AU" plural="true">quarries</text>
 		<text lang="en-AU">quarry</text>
 		
@@ -1187,6 +1246,8 @@ for the symbols.
 		<text lang="et">karjäär</text>
 		<text lang="de" plural="true" gender="feminin">Gruben</text>
 		<text lang="de" gender="feminin">Grube</text>
+		<text lang="ca" plural="true" gender="femení">pedreres</text>
+		<text lang="ca" gender="femení">pedrera</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1230,6 +1291,7 @@ for the symbols.
 		<name lang="ro">Zid de pământ</name>
 		<name lang="et">Pinnasevall</name>
 		<name lang="de">Erdwall</name>
+		<name lang="ca">Mur de terra</name>
 		<text lang="en-AU" plural="true">earth walls</text>
 		<text lang="en-AU">earth wall</text>
 		
@@ -1256,6 +1318,8 @@ for the symbols.
 		<text lang="et">vall</text>
 		<text lang="de" plural="true" gender="maskulin">Erdwällen</text>
 		<text lang="de" gender="maskulin">Erdwall</text>
+		<text lang="ca" plural="true" gender="masculí">murs de terra</text>
+		<text lang="ca" gender="masculí">mur de terra</text>
 		
 		
 		<lines thickness="12.5">
@@ -1294,6 +1358,7 @@ for the symbols.
 		<name lang="ro">Viroagă</name>
 		<name lang="et">Uhteorg</name>
 		<name lang="de">Graben</name>
+		<name lang="ca">Barranc</name>
 		<text lang="en-AU" plural="true">gullies</text>
 		<text lang="en-AU">gully</text>
 		
@@ -1320,6 +1385,8 @@ for the symbols.
 		<text lang="et">uhteorg</text>
 		<text lang="de" plural="true" gender="maskulin">Gräben</text>
 		<text lang="de" gender="maskulin">Graben</text>
+		<text lang="ca" plural="true" gender="masculí">barrancs</text>
+		<text lang="ca" gender="masculí">barranc</text>
 		
 		
 		<lines thickness="12.5">
@@ -1343,6 +1410,7 @@ for the symbols.
 		<name lang="ro">Viroagă mica</name>
 		<name lang="et">Väike uhteorg</name>
 		<name lang="de">Trockenrinne</name>
+		<name lang="ca">Rasa</name>
 		<text lang="en-AU" plural="true">small gullies</text>
 		<text lang="en-AU">small gully</text>
 		
@@ -1369,6 +1437,8 @@ for the symbols.
 		<text lang="et">väike uhteorg</text>
 		<text lang="de" plural="true" gender="feminin">Trockenrinnen</text>
 		<text lang="de" gender="feminin">Trockenrinne</text>
+		<text lang="ca" plural="true" gender="femení">rases</text>
+		<text lang="ca" gender="femení">rasa</text>
 		
 		
 		<lines thickness="12.5">
@@ -1410,6 +1480,7 @@ for the symbols.
 		<name lang="ro">Mamelon</name>
 		<name lang="et">Küngas</name>
 		<name lang="de">Hügel</name>
+		<name lang="ca">Turó</name>
 		<text lang="en-AU" plural="true">hills</text>
 		<text lang="en-AU">hill</text>
 		
@@ -1436,6 +1507,8 @@ for the symbols.
 		<text lang="et">küngas</text>
 		<text lang="de" plural="true" gender="maskulin">Hügeln</text>
 		<text lang="de" gender="maskulin">Hügel</text>
+		<text lang="ca" plural="true" gender="masculí">turons</text>
+		<text lang="ca" gender="masculí">turó</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1469,6 +1542,7 @@ for the symbols.
 		<name lang="ro">Movilă</name>
 		<name lang="et">Tipp</name>
 		<name lang="de">Kuppe</name>
+		<name lang="ca">Pujol</name>
 		<text lang="en-AU" plural="true">knolls</text>
 		<text lang="en-AU">knoll</text>
 		
@@ -1495,6 +1569,8 @@ for the symbols.
 		<text lang="et">tipp</text>
 		<text lang="de" plural="true" gender="feminin">Kuppen</text>
 		<text lang="de" gender="feminin">Kuppe</text>
+		<text lang="ca" plural="true" gender="masculí">pujols</text>
+		<text lang="ca" gender="masculí">pujol</text>
 		
 		
 		<filled-circle radius="23">
@@ -1516,6 +1592,7 @@ for the symbols.
 		<name lang="ro">Șa</name>
 		<name lang="et">Sadul</name>
 		<name lang="de">Sattel</name>
+		<name lang="ca">Coll</name>
 		<text lang="en-AU" plural="true">saddles</text>
 		<text lang="en-AU">saddle</text>
 		
@@ -1542,6 +1619,8 @@ for the symbols.
 		<text lang="et">sadul</text>
 		<text lang="de" plural="true" gender="maskulin">Sätteln</text>
 		<text lang="de" gender="maskulin">Sattel</text>
+		<text lang="ca" plural="true" gender="masculí">colls</text>
+		<text lang="ca" gender="masculí">coll</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1572,6 +1651,7 @@ for the symbols.
 		<name lang="ro">Găvan</name>
 		<name lang="et">Lohk</name>
 		<name lang="de">Senke</name>
+		<name lang="ca">Depressió</name>
 		<text lang="en-AU" plural="true">depressions</text>
 		<text lang="en-AU">depression</text>
 		
@@ -1598,6 +1678,8 @@ for the symbols.
 		<text lang="et">lohk</text>
 		<text lang="de" plural="true" gender="feminin">Senken</text>
 		<text lang="de" gender="feminin">Senke</text>
+		<text lang="ca" plural="true" gender="femení">depressions</text>
+		<text lang="ca" gender="femení">depressió</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1639,6 +1721,7 @@ for the symbols.
 		<name lang="ro">Groapă mică</name>
 		<name lang="et">Väike lohk</name>
 		<name lang="de">Kleine Senke</name>
+		<name lang="ca">Depressió petita</name>
 		<text lang="en-AU" plural="true">small depressions</text>
 		<text lang="en-AU">small depression</text>
 		
@@ -1665,6 +1748,8 @@ for the symbols.
 		<text lang="et">väike lohk</text>
 		<text lang="de" plural="true" gender="feminin">kleinen Senken</text>
 		<text lang="de" gender="feminin">kleine Senke</text>
+		<text lang="ca" plural="true" gender="femení">depressions petites</text>
+		<text lang="ca" gender="femení">depressió petita</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1692,6 +1777,7 @@ for the symbols.
 		<name lang="ro">Groapă mare</name>
 		<name lang="et">Auk</name>
 		<name lang="de">Loch</name>
+		<name lang="ca">Clot</name>
 		<text lang="en-AU" plural="true">pits</text>
 		<text lang="en-AU">pit</text>
 		
@@ -1718,6 +1804,8 @@ for the symbols.
 		<text lang="et">auk</text>
 		<text lang="de" plural="true" gender="neutrum">Löchern</text>
 		<text lang="de" gender="neutrum">Loch</text>
+		<text lang="ca" plural="true" gender="masculí">clots</text>
+		<text lang="ca" gender="masculí">clot</text>
 		
 		
 		<lines thickness="12.5">
@@ -1741,6 +1829,7 @@ for the symbols.
 		<name lang="ro">Teren frământat</name>
 		<name lang="et">Tõngermaa</name>
 		<name lang="de">Feinkupierter Boden</name>
+		<name lang="ca">Terreny accidentat</name>
 		<text lang="en-AU" plural="true">broken ground</text>
 		<text lang="en-AU">broken ground</text>
 		
@@ -1765,6 +1854,8 @@ for the symbols.
 		<text lang="et">tõngermaa</text>
 		<text lang="de" plural="true" gender="maskulin">feinkupierten Böden</text>
 		<text lang="de" gender="maskulin">feinkupierter Boden</text>
+		<text lang="ca" plural="true" gender="masculí">terrenys accidentats</text>
+		<text lang="ca" gender="masculí">terreny accidentat</text>
 		
 		
 		<beziers thickness="12.5">
@@ -1810,6 +1901,7 @@ for the symbols.
 		<name lang="ro">Mușuroi</name>
 		<name lang="et">Sipelgapesa</name>
 		<name lang="de">Ameisenhügel</name>
+		<name lang="ca">Termiter</name>
 		<text lang="en-AU" plural="true">ant hills</text>
 		<text lang="en-AU">ant hill</text>
 		
@@ -1836,6 +1928,8 @@ for the symbols.
 		<text lang="et">sipelgapesa</text>
 		<text lang="de" plural="true" gender="maskulin">Ameisenhügeln</text>
 		<text lang="de" gender="maskulin">Ameisenhügel</text>
+		<text lang="ca" plural="true" gender="masculí">termiters</text>
+		<text lang="ca" gender="masculí">termiter</text>
 		
 		
 		<lines thickness="12.5">
@@ -1870,6 +1964,7 @@ for the symbols.
 		<name lang="ro">Margine stâncoasă</name>
 		<name lang="et">Kaljud</name>
 		<name lang="de">Felswand</name>
+		<name lang="ca">Escarpat</name>
 		<text lang="en-AU" plural="true">cliffs</text>
 		<text lang="en-AU">cliff</text>
 		
@@ -1896,6 +1991,8 @@ for the symbols.
 		<text lang="et">kalju</text>
 		<text lang="de" plural="true" gender="feminin">Felswänden</text>
 		<text lang="de" gender="feminin">Felswand</text>
+		<text lang="ca" plural="true" gender="masculí">escarpats</text>
+		<text lang="ca" gender="masculí">escarpat</text>
 		
 		
 		<lines thickness="12.5">
@@ -1928,6 +2025,7 @@ for the symbols.
 		<name lang="ro">Stâlp piatră</name>
 		<name lang="et">Suur kivi</name>
 		<name lang="de">Felsturm</name>
+		<name lang="ca">Agulla rocosa</name>
 		<text lang="en-AU" plural="true">rock pillars</text>
 		<text lang="en-AU">rock pillar</text>
 		
@@ -1954,6 +2052,8 @@ for the symbols.
 		<text lang="et">suur kivi</text>
 		<text lang="de" plural="true" gender="maskulin">Felstürmen</text>
 		<text lang="de" gender="maskulin">Felsturm</text>
+		<text lang="ca" plural="true" gender="femení">agulles rocoses</text>
+		<text lang="ca" gender="femení">agulla rocosa</text>
 		
 		
 		<filled-polygon>
@@ -1977,6 +2077,7 @@ for the symbols.
 		<name lang="ro">Peșteră</name>
 		<name lang="et">Koobas</name>
 		<name lang="de">Höhle</name>
+		<name lang="ca">Cova</name>
 		<text lang="en-AU" plural="true">caves</text>
 		<text lang="en-AU">cave</text>
 		
@@ -2003,6 +2104,8 @@ for the symbols.
 		<text lang="et">koobas</text>
 		<text lang="de" plural="true" gender="feminin">Höhlen</text>
 		<text lang="de" gender="feminin">Höhle</text>
+		<text lang="ca" plural="true" gender="femení">coves</text>
+		<text lang="ca" gender="femení">cova</text>
 		
 		
 		<lines thickness="12.5">
@@ -2038,6 +2141,7 @@ for the symbols.
 		<name lang="ro">Bolovan</name>
 		<name lang="et">Kivi</name>
 		<name lang="de">Stein</name>
+		<name lang="ca">Roca</name>
 		<text lang="en-AU" plural="true">boulders</text>
 		<text lang="en-AU">boulder</text>
 		
@@ -2064,6 +2168,8 @@ for the symbols.
 		<text lang="et">kivi</text>
 		<text lang="de" plural="true" gender="maskulin">Steinen</text>
 		<text lang="de" gender="maskulin">Stein</text>
+		<text lang="ca" plural="true" gender="femení">roques</text>
+		<text lang="ca" gender="femení">roca</text>
 		
 		
 		<filled-polygon>
@@ -2087,6 +2193,7 @@ for the symbols.
 		<name lang="ro">Teren bolovănos</name>
 		<name lang="et">Kivine väli</name>
 		<name lang="de">Blockfeld</name>
+		<name lang="ca">Zona rocosa</name>
 		<text lang="en-AU" plural="true">boulder fields</text>
 		<text lang="en-AU">boulder field</text>
 		
@@ -2111,6 +2218,8 @@ for the symbols.
 		<text lang="et">kivine ala</text>
 		<text lang="de" plural="true" gender="neutrum">Blockfeldern</text>
 		<text lang="de" gender="neutrum">Blockfeld</text>
+		<text lang="ca" plural="true" gender="femení">zones rocoses</text>
+		<text lang="ca" gender="femení">zona rocosa</text>
 		
 		
 		<filled-polygon>
@@ -2154,6 +2263,7 @@ for the symbols.
 		<name lang="ro">Adunătură de bolovani</name>
 		<name lang="et">Kivihunnik</name>
 		<name lang="de">Steinhaufen</name>
+		<name lang="ca">Grup de roques</name>
 		<text lang="en-AU" plural="true">boulder clusters</text>
 		<text lang="en-AU">boulder cluster</text>
 		
@@ -2180,6 +2290,8 @@ for the symbols.
 		<text lang="et">kivihunnik</text>
 		<text lang="de" plural="true" gender="maskulin">Steinhaufen</text>
 		<text lang="de" gender="maskulin">Steinhaufen</text>
+		<text lang="ca" plural="true" gender="masculí">grups de roques</text>
+		<text lang="ca" gender="masculí">grup de roques</text>
 		
 		
 		<filled-polygon>
@@ -2208,6 +2320,7 @@ for the symbols.
 		<name lang="ro">teren pietros</name>
 		<name lang="et">Kivine ala</name>
 		<name lang="de">Steingebiet</name>
+		<name lang="ca">Pedregar</name>
 		<text lang="en-AU" plural="true">stony ground</text>
 		<text lang="en-AU">stony ground</text>
 		
@@ -2232,6 +2345,8 @@ for the symbols.
 		<text lang="et">kivine pinnas</text>
 		<text lang="de" plural="true" gender="neutrum">Steingebieten</text>
 		<text lang="de" gender="neutrum">Steingebiet</text>
+		<text lang="ca" plural="true" gender="masculí">pedregars</text>
+		<text lang="ca" gender="masculí">pedregar</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -2325,6 +2440,7 @@ for the symbols.
 		<name lang="ro">Stâncă</name>
 		<name lang="et">Avakalju</name>
 		<name lang="de">Felsplatte</name>
+		<name lang="ca">Roca viva</name>
 		<text lang="en-AU" plural="true">bare rock</text>
 		<text lang="en-AU">bare rock</text>
 		
@@ -2350,6 +2466,8 @@ for the symbols.
 		<text lang="et">avakalju</text>
 		<text lang="de" plural="true" gender="feminin">Felsplatten</text>
 		<text lang="de" gender="feminin">Felsplatte</text>
+		<text lang="ca" plural="true" gender="femení">roques vives</text>
+		<text lang="ca" gender="femení">roca viva</text>
 		
 		
 		<lines thickness="12.5">
@@ -2400,6 +2518,7 @@ for the symbols.
 		<name lang="ro">Pasaj îngust</name>
 		<name lang="et">Kitsas läbipääs</name>
 		<name lang="de">Enge Passage</name>
+		<name lang="ca">Pas estret</name>
 		<text lang="en-AU" plural="true">narrow passages</text>
 		<text lang="en-AU">narrow passage</text>
 		
@@ -2426,6 +2545,8 @@ for the symbols.
 		<text lang="et">kitsas läbipääs</text>
 		<text lang="de" plural="true" gender="feminin">engen Felspassagen</text>
 		<text lang="de" gender="feminin">enge Felspassage</text>
+		<text lang="ca" plural="true" gender="masculí">passos estrets</text>
+		<text lang="ca" gender="masculí">pas estret</text>
 		
 		
 		<lines thickness="12.5">
@@ -2456,6 +2577,7 @@ for the symbols.
 		<name lang="ro">Lac</name>
 		<name lang="et">Järv</name>
 		<name lang="de">See</name>
+		<name lang="ca">Llac</name>
 		<text lang="en-AU" plural="true">lakes</text>
 		<text lang="en-AU">lake</text>
 		
@@ -2482,6 +2604,8 @@ for the symbols.
 		<text lang="et">järv</text>
 		<text lang="de" plural="true" gender="maskulin">Seen</text>
 		<text lang="de" gender="maskulin">See</text>
+		<text lang="ca" plural="true" gender="masculí">llacs</text>
+		<text lang="ca" gender="masculí">llac</text>
 		
 		
 		<beziers thickness="10">
@@ -2533,6 +2657,7 @@ for the symbols.
 		<name lang="ro">Baltă</name>
 		<name lang="et">Tiik</name>
 		<name lang="de">Teich</name>
+		<name lang="ca">Gorg</name>
 		<text lang="en-AU" plural="true">ponds</text>
 		<text lang="en-AU">pond</text>
 		
@@ -2559,6 +2684,8 @@ for the symbols.
 		<text lang="et">tiik</text>
 		<text lang="de" plural="true" gender="maskulin">Teichen</text>
 		<text lang="de" gender="maskulin">Teich</text>
+		<text lang="ca" plural="true" gender="masculí">gorgs</text>
+		<text lang="ca" gender="masculí">gorg</text>
 		
 		
 		<beziers thickness="10">
@@ -2611,6 +2738,7 @@ for the symbols.
 		<name lang="ro">Groapă cu apă</name>
 		<name lang="et">Vee auk</name>
 		<name lang="de">Wasserloch</name>
+		<name lang="ca">Bassa</name>
 		<text lang="en-AU" plural="true">water holes</text>
 		<text lang="en-AU">water hole</text>
 		
@@ -2636,6 +2764,8 @@ for the symbols.
 		<text lang="et">vee auk</text>
 		<text lang="de" plural="true" gender="neutrum">Wasserlöchern</text>
 		<text lang="de" gender="neutrum">Wasserloch</text>
+		<text lang="ca" plural="true" gender="femení">basses</text>
+		<text lang="ca" gender="femení">bassa</text>
 		
 		
 		<beziers thickness="10">
@@ -2684,6 +2814,7 @@ for the symbols.
 		<name lang="ro">Râu, fir, curs de apă</name>
 		<name lang="et">Jõgi, kraav, kanal</name>
 		<name lang="de">Fluß, Bach</name>
+		<name lang="ca">Curs d'aigua</name>
 		<text lang="en-AU" plural="true">watercourses</text>
 		<text lang="en-AU">watercourse</text>
 		
@@ -2711,6 +2842,8 @@ for the symbols.
 		<text lang="et">jõgi</text>
 		<text lang="de" plural="true" gender="maskulin">Flüssen oder Bächen</text>
 		<text lang="de" gender="maskulin">Fluss oder Bach</text>
+		<text lang="ca" plural="true" gender="masculí">cursos d'aigua</text>
+		<text lang="ca" gender="masculí">curs d'aigua</text>
 		
 		
 		<beziers thickness="12.5">
@@ -2759,6 +2892,7 @@ for the symbols.
 		<name lang="ro">Canal mic de apă, șanț</name>
 		<name lang="et">Väike kanal, kraav</name>
 		<name lang="de">Wassergraben</name>
+		<name lang="ca">Canal, rec</name>
 		<text lang="en-AU" plural="true">ditches</text>
 		<text lang="en-AU">ditch</text>
 		
@@ -2785,6 +2919,8 @@ for the symbols.
 		<text lang="et">kraav</text>
 		<text lang="de" plural="true" gender="maskulin">Wassergräben</text>
 		<text lang="de" gender="maskulin">Wassergraben</text>
+		<text lang="ca" plural="true" gender="masculí">canals o recs</text>
+		<text lang="ca" gender="masculí">canal o rec</text>
 		
 		
 		<beziers thickness="10">
@@ -2857,6 +2993,7 @@ for the symbols.
 		<name lang="ro">Mlaștina ingustă</name>
 		<name lang="et">Soo riba</name>
 		<name lang="de">Schmaler Sumpf</name>
+		<name lang="ca">Aiguamoll estret</name>
 		<text lang="en-AU" plural="true">narrow marshes</text>
 		<text lang="en-AU">narrow marsh</text>
 		
@@ -2883,6 +3020,8 @@ for the symbols.
 		<text lang="et">sooriba</text>
 		<text lang="de" plural="true" gender="maskulin">schmalen Sümpfen</text>
 		<text lang="de" gender="maskulin">schmaler Sumpf</text>
+		<text lang="ca" plural="true" gender="masculí">aiguamolls estrets</text>
+		<text lang="ca" gender="masculí">aigumoll estret</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -2916,6 +3055,7 @@ for the symbols.
 		<name lang="ro">Mlaștină</name>
 		<name lang="et">Soo</name>
 		<name lang="de">Sumpf</name>
+		<name lang="ca">Aiguamoll</name>
 		<text lang="en-AU" plural="true">marshes</text>
 		<text lang="en-AU">marsh</text>
 		
@@ -2942,6 +3082,8 @@ for the symbols.
 		<text lang="et">soo</text>
 		<text lang="de" plural="true" gender="maskulin">Sümpfen</text>
 		<text lang="de" gender="maskulin">Sumpf</text>
+		<text lang="ca" plural="true" gender="masculí">aiguamolls</text>
+		<text lang="ca" gender="masculí">aiguamoll</text>
 		
 		
 		<lines thickness="12.5">
@@ -2980,6 +3122,7 @@ for the symbols.
 		<name lang="ro">Teren stabil în mlaștină</name>
 		<name lang="et">Firm ground in marsh</name>
 		<name lang="de">Festboden im Sumpf</name>
+		<name lang="ca">Terreny ferm en un aiguamoll</name>
 		<text lang="en-AU" plural="true">firm ground in marsh</text>
 		<text lang="en-AU">firm ground in marsh</text>
 		
@@ -3004,6 +3147,8 @@ for the symbols.
 		<text lang="et">mineraalmaa</text>
 		<text lang="de" plural="true" gender="maskulin">Festböden im Sumpf</text>
 		<text lang="de" gender="maskulin">Festboden im Sumpf</text>
+		<text lang="ca" plural="true" gender="masculí">terrenys ferms en un aiguamoll</text>
+		<text lang="ca" gender="masculí">terreny ferm en un aiguamoll</text>
 		
 		
 		<filled-polygon>
@@ -3076,6 +3221,7 @@ for the symbols.
 		<name lang="ro">Fântână</name>
 		<name lang="et">Kaev, Läte</name>
 		<name lang="de">Brunnen</name>
+		<name lang="ca">Pou</name>
 		<text lang="en-AU" plural="true">wells</text>
 		<text lang="en-AU">well</text>
 		
@@ -3102,6 +3248,8 @@ for the symbols.
 		<text lang="et">kaev</text>
 		<text lang="de" plural="true" gender="maskulin">Brunnen</text>
 		<text lang="de" gender="maskulin">Brunnen</text>
+		<text lang="ca" plural="true" gender="masculí">pous</text>
+		<text lang="ca" gender="masculí">pou</text>
 		
 		
 		<beziers thickness="10">
@@ -3141,6 +3289,7 @@ for the symbols.
 		<name lang="ro">Izvor</name>
 		<name lang="et">Oja</name>
 		<name lang="de">Quelle</name>
+		<name lang="ca">Font</name>
 		<text lang="en-AU" plural="true">springs</text>
 		<text lang="en-AU">spring</text>
 		
@@ -3167,6 +3316,8 @@ for the symbols.
 		<text lang="et">allikas</text>
 		<text lang="de" plural="true" gender="feminin">Quellen</text>
 		<text lang="de" gender="feminin">Quelle</text>
+		<text lang="ca" plural="true" gender="femení">fonts</text>
+		<text lang="ca" gender="femení">font</text>
 		
 		
 		<beziers thickness="12.5">
@@ -3209,6 +3360,7 @@ for the symbols.
 		<name lang="ro">Rezervor de apă</name>
 		<name lang="et">Veeanum, bassein</name>
 		<name lang="de">Wassertank</name>
+		<name lang="ca">Diposit d'aigua, cisterna</name>
 		<text lang="en-AU" plural="true">water tanks</text>
 		<text lang="en-AU">water tank</text>
 		
@@ -3234,6 +3386,8 @@ for the symbols.
 		<text lang="et">veemahuti</text>
 		<text lang="de" plural="true" gender="maskulin">Wassertanks</text>
 		<text lang="de" gender="maskulin">Wassertank</text>
+		<text lang="ca" plural="true" gender="masculí">diposits d'aigua o cisternes</text>
+		<text lang="ca" gender="masculí">diposit d'aigua o cisterna</text>
 		
 		
 		<beziers thickness="10">
@@ -3282,6 +3436,7 @@ for the symbols.
 		<name lang="ro">Teren deschis</name>
 		<name lang="et">Avatud ala</name>
 		<name lang="de">Offenes Gebiet</name>
+		<name lang="ca">Camp</name>
 		<text lang="en-AU" plural="true">open land</text>
 		<text lang="en-AU">open land</text>
 		
@@ -3306,6 +3461,8 @@ for the symbols.
 		<text lang="et">avatud ala</text>
 		<text lang="de" plural="true" gender="neutrum">offenen Gebieten</text>
 		<text lang="de" gender="neutrum">offenes Gebiet</text>
+		<text lang="ca" plural="true" gender="masculí">camps</text>
+		<text lang="ca" gender="masculí">camp</text>
 		
 		
 		<polygon thickness="12.5" corners="round">
@@ -3330,6 +3487,7 @@ for the symbols.
 		<name lang="ro">Teren semideschis</name>
 		<name lang="et">Pool-avatud alad</name>
 		<name lang="de">Halboffenes Gebiet</name>
+		<name lang="ca">Terreny parcialment boscós</name>
 		<text lang="en-AU" plural="true">semi-open land</text>
 		<text lang="en-AU">semi-open land</text>
 		
@@ -3354,6 +3512,8 @@ for the symbols.
 		<text lang="et">poollage ala</text>
 		<text lang="de" plural="true" gender="neutrum">halboffenen Gebieten</text>
 		<text lang="de" gender="neutrum">halboffenes Gebiet</text>
+		<text lang="ca" plural="true" gender="masculí">terrenys parcialment boscosos</text>
+		<text lang="ca" gender="masculí">terreny parcialment doscós</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -3408,6 +3568,7 @@ for the symbols.
 		<name lang="ro">Colț pădure</name>
 		<name lang="et">Metsa nurgad</name>
 		<name lang="de">Waldecke</name>
+		<name lang="ca">Racó del bosc</name>
 		<text lang="en-AU" plural="true">forest corners</text>
 		<text lang="en-AU">forest corner</text>
 		
@@ -3433,6 +3594,8 @@ for the symbols.
 		<text lang="et">metsa nurk</text>
 		<text lang="de" plural="true" gender="feminin">Waldecken</text>
 		<text lang="de" gender="feminin">Waldecke</text>
+		<text lang="ca" plural="true" gender="masculí">racons del bosc</text>
+		<text lang="ca" gender="masculí">racó del bosc</text>
 		
 		
 		<polygon thickness="12.5" corners="round">
@@ -3458,6 +3621,7 @@ for the symbols.
 		<name lang="ro">Defrișare</name>
 		<name lang="et">Lagendik</name>
 		<name lang="de">Lichtung</name>
+		<name lang="ca">Clariana</name>
 		<text lang="en-AU" plural="true">clearings</text>
 		<text lang="en-AU">clearing</text>
 		
@@ -3484,6 +3648,8 @@ for the symbols.
 		<text lang="et">lagendik</text>
 		<text lang="de" plural="true" gender="feminin">Lichtungen</text>
 		<text lang="de" gender="feminin">Lichtung</text>
+		<text lang="ca" plural="true" gender="femení">clarianes</text>
+		<text lang="ca" gender="femení">clariana</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -3538,6 +3704,7 @@ for the symbols.
 		<name lang="ro">Desiș</name>
 		<name lang="et">Tihnik</name>
 		<name lang="de">Dickicht</name>
+		<name lang="ca">Espessor</name>
 		<text lang="en-AU" plural="true">thickets</text>
 		<text lang="en-AU">thicket</text>
 		
@@ -3563,6 +3730,8 @@ for the symbols.
 		<text lang="et">tihnik</text>
 		<text lang="de" plural="true" gender="neutrum">Dickichten</text>
 		<text lang="de" gender="neutrum">Dickicht</text>
+		<text lang="ca" plural="true" gender="femení">espessors</text>
+		<text lang="ca" gender="femení">espessor</text>
 		
 		
 		<lines thickness="12.5">
@@ -3607,6 +3776,7 @@ for the symbols.
 		<name lang="ro">Acoperire, desiș linear</name>
 		<name lang="et">Hekk, tihe puude rivi</name>
 		<name lang="de">Hecke, längliches Dickicht</name>
+		<name lang="ca">Tanca de bardissa</name>
 		<text lang="en-AU" plural="true">hedges</text>
 		<text lang="en-AU">hedge</text>
 		
@@ -3633,6 +3803,8 @@ for the symbols.
 		<text lang="et">hekk</text>
 		<text lang="de" plural="true" gender="feminin">Hecken</text>
 		<text lang="de" gender="feminin">Hecke</text>
+		<text lang="ca" plural="true" gender="femení">tanques de bardissa</text>
+		<text lang="ca" gender="femení">tanca de bardissa</text>
 		
 		
 		<lines thickness="12.5">
@@ -3676,6 +3848,7 @@ for the symbols.
 		<name lang="ro">Limită de vegetație</name>
 		<name lang="et">Kõlviku/taimestiku piir</name>
 		<name lang="de">Vegetationsgrenze</name>
+		<name lang="ca">Limit de vegetació</name>
 		<text lang="en-AU" plural="true">vegetation boundaries</text>
 		<text lang="en-AU">vegetation boundary</text>
 		
@@ -3701,6 +3874,8 @@ for the symbols.
 		<text lang="et">kõlviku piir</text>
 		<text lang="de" plural="true" gender="feminin">Vegetationsgrenzen</text>
 		<text lang="de" gender="feminin">Vegetationsgrenze</text>
+		<text lang="ca" plural="true" gender="masculí">limits de vegetació</text>
+		<text lang="ca" gender="masculí">limit de vegetació</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -3746,6 +3921,7 @@ for the symbols.
 		<name lang="ro">Crâng</name>
 		<name lang="et">Puudegrupp</name>
 		<name lang="de">Baumgruppe</name>
+		<name lang="ca">Bosquet</name>
 		<text lang="en-AU" plural="true">copses</text>
 		<text lang="en-AU">copse</text>
 		
@@ -3772,6 +3948,8 @@ for the symbols.
 		<text lang="et">puudegrupp</text>
 		<text lang="de" plural="true" gender="feminin">Baumgruppen</text>
 		<text lang="de" gender="feminin">Baumgruppe</text>
+		<text lang="ca" plural="true" gender="masculí">bosquets</text>
+		<text lang="ca" gender="masculí">bosquet</text>
 		
 		
 		<polygon thickness="12.5">
@@ -3805,6 +3983,7 @@ for the symbols.
 		<name lang="ro">Copac distinctiv</name>
 		<name lang="et">Üksik puu</name>
 		<name lang="de">Einzelbaum</name>
+		<name lang="ca">Arbre remarcable</name>
 		<text lang="en-AU" plural="true">lone trees</text>
 		<text lang="en-AU">lone tree</text>
 		
@@ -3831,6 +4010,8 @@ for the symbols.
 		<text lang="et">üksik puu</text>
 		<text lang="de" plural="true" gender="maskulin">Einzelbäumen</text>
 		<text lang="de" gender="maskulin">Einzelbaum</text>
+		<text lang="ca" plural="true" gender="masculí">arbres remarcables</text>
+		<text lang="ca" gender="masculí">arbre remarcable</text>
 		
 		
 		<polygon thickness="12.5">
@@ -3858,6 +4039,7 @@ for the symbols.
 		<name lang="ro">Buturugă</name>
 		<name lang="et">Känd, murdunud puu</name>
 		<name lang="de">Wurzelstock</name>
+		<name lang="ca">Soca</name>
 		<text lang="en-AU" plural="true">root stocks</text>
 		<text lang="en-AU">root stock</text>
 		
@@ -3884,6 +4066,8 @@ for the symbols.
 		<text lang="et">känd</text>
 		<text lang="de" plural="true" gender="maskulin">Wurzelstöcken</text>
 		<text lang="de" gender="maskulin">Wurelstock</text>
+		<text lang="ca" plural="true" gender="femení">soques</text>
+		<text lang="ca" gender="femení">soca</text>
 		
 		
 		<circle thickness="12.5" radius="60">
@@ -3913,6 +4097,7 @@ for the symbols.
 		<name lang="ro">Drum</name>
 		<name lang="et">Tee</name>
 		<name lang="de">Weg</name>
+		<name lang="ca">Pista o carretera</name>
 		<text lang="en-AU" plural="true">roads</text>
 		<text lang="en-AU">road</text>
 		
@@ -3939,6 +4124,8 @@ for the symbols.
 		<text lang="et">tee</text>
 		<text lang="de" plural="true" gender="maskulin">Wegen</text>
 		<text lang="de" gender="maskulin">Weg</text>
+		<text lang="ca" plural="true" gender="femení">pistes o carreteres</text>
+		<text lang="ca" gender="femení">pista o carretera</text>
 		
 		
 		<lines thickness="15">
@@ -3961,6 +4148,7 @@ for the symbols.
 		<name lang="ro">Potecă</name>
 		<name lang="et">Rada, teerada</name>
 		<name lang="de">Pfad</name>
+		<name lang="ca">Camí</name>
 		<text lang="en-AU" plural="true">paths</text>
 		<text lang="en-AU">path</text>
 		
@@ -3987,6 +4175,8 @@ for the symbols.
 		<text lang="et">rada</text>
 		<text lang="de" plural="true" gender="maskulin">Pfaden</text>
 		<text lang="de" gender="maskulin">Pfad</text>
+		<text lang="ca" plural="true" gender="masculí">camins</text>
+		<text lang="ca" gender="masculí">camí</text>
 		
 		
 		<lines thickness="12.5">
@@ -4017,6 +4207,7 @@ for the symbols.
 		<name lang="ro">Defrișare</name>
 		<name lang="et">Siht</name>
 		<name lang="de">Schneise</name>
+		<name lang="ca">Tallafoc</name>
 		<text lang="en-AU" plural="true">rides</text>
 		<text lang="en-AU">ride</text>
 		
@@ -4042,6 +4233,8 @@ for the symbols.
 		<text lang="et">siht</text>
 		<text lang="de" plural="true" gender="feminin">Schneisen</text>
 		<text lang="de" gender="feminin">Schneise</text>
+		<text lang="ca" plural="true" gender="masculí">tallafocs</text>
+		<text lang="ca" gender="masculí">tallafoc</text>
 		
 		
 		<filled-circle radius="7.5">
@@ -4096,6 +4289,7 @@ for the symbols.
 		<name lang="ro">Pod</name>
 		<name lang="et">Sild</name>
 		<name lang="de">Brücke</name>
+		<name lang="ca">Pont</name>
 		<text lang="en-AU" plural="true">bridges</text>
 		<text lang="en-AU">bridge</text>
 		
@@ -4122,6 +4316,8 @@ for the symbols.
 		<text lang="et">sild</text>
 		<text lang="de" plural="true" gender="feminin">Brücken</text>
 		<text lang="de" gender="feminin">Brücke</text>
+		<text lang="ca" plural="true" gender="masculí">ponts</text>
+		<text lang="ca" gender="masculí">pont</text>
 		
 		
 		<lines thickness="12.5">
@@ -4152,6 +4348,7 @@ for the symbols.
 		<name lang="ro">Linie de curent</name>
 		<name lang="et">Elektri liin</name>
 		<name lang="de">Stromleitung</name>
+		<name lang="ca">Línia elèctrica</name>
 		<text lang="en-AU" plural="true">power lines</text>
 		<text lang="en-AU">power line</text>
 		
@@ -4178,6 +4375,8 @@ for the symbols.
 		<text lang="et">elektriliin</text>
 		<text lang="de" plural="true" gender="feminin">Stromleitungen</text>
 		<text lang="de" gender="feminin">Stromleitung</text>
+		<text lang="ca" plural="true" gender="femení">línies elèctriques</text>
+		<text lang="ca" gender="femení">línia elèctrica</text>
 		
 		
 		<lines thickness="12.5">
@@ -4212,6 +4411,7 @@ for the symbols.
 		<name lang="ro">Stâlp de curent</name>
 		<name lang="et">Kõrgepinge mast</name>
 		<name lang="de">Leitungsmast</name>
+		<name lang="ca">Pal elèctric</name>
 		<text lang="en-AU" plural="true">power pylons</text>
 		<text lang="en-AU">power pylon</text>
 		
@@ -4238,6 +4438,8 @@ for the symbols.
 		<text lang="et">kõrgepinge mast</text>
 		<text lang="de" plural="true" gender="maskulin">Leitungsmasten</text>
 		<text lang="de" gender="maskulin">Leitungsmast</text>
+		<text lang="ca" plural="true" gender="masculí">pals elèctrics</text>
+		<text lang="ca" gender="masculí">pal elèctric</text>
 		
 		
 		<lines thickness="10">
@@ -4275,6 +4477,7 @@ for the symbols.
 		<name lang="ro">Tunel</name>
 		<name lang="et">Tunnel</name>
 		<name lang="de">Tunnel</name>
+		<name lang="ca">Tunel</name>
 		<text lang="en-AU" plural="true">tunnels</text>
 		<text lang="en-AU">tunnel</text>
 		
@@ -4301,6 +4504,8 @@ for the symbols.
 		<text lang="et">tunnel</text>
 		<text lang="de" plural="true" gender="maskulin">Tunnels</text>
 		<text lang="de" gender="maskulin">Tunnel</text>
+		<text lang="ca" plural="true" gender="masculí">tunels</text>
+		<text lang="ca" gender="masculí">tunel</text>
 		
 		
 		<lines thickness="12.5">
@@ -4337,6 +4542,7 @@ for the symbols.
 		<name lang="ro">Zid piatră</name>
 		<name lang="et">Kivimüür/aed</name>
 		<name lang="de">Steinmauer</name>
+		<name lang="ca">Mur</name>
 		<text lang="en-AU" plural="true">stone walls</text>
 		<text lang="en-AU">stone wall</text>
 		
@@ -4363,6 +4569,8 @@ for the symbols.
 		<text lang="et">kivimüür</text>
 		<text lang="de" plural="true" gender="feminin">Steinmauern</text>
 		<text lang="de" gender="feminin">Steinmauer</text>
+		<text lang="ca" plural="true" gender="masculí">murs</text>
+		<text lang="ca" gender="masculí">mur</text>
 		
 		
 		<lines thickness="12.5">
@@ -4394,6 +4602,7 @@ for the symbols.
 		<name lang="ro">Gard</name>
 		<name lang="et">Aed</name>
 		<name lang="de">Zaun</name>
+		<name lang="ca">Tancat</name>
 		<text lang="en-AU" plural="true">fences</text>
 		<text lang="en-AU">fence</text>
 		
@@ -4420,6 +4629,8 @@ for the symbols.
 		<text lang="et">aed</text>
 		<text lang="de" plural="true" gender="maskulin">Zäunen</text>
 		<text lang="de" gender="maskulin">Zaun</text>
+		<text lang="ca" plural="true" gender="masculí">tancats</text>
+		<text lang="ca" gender="masculí">tancat</text>
 		
 		
 		<lines thickness="12.5">
@@ -4458,6 +4669,7 @@ for the symbols.
 		<name lang="ro">Punct de trecere</name>
 		<name lang="et">Läbipääsu koht</name>
 		<name lang="de">Durchlass</name>
+		<name lang="ca">Pas</name>
 		<text lang="en-AU" plural="true">crossing points</text>
 		<text lang="en-AU">crossing point</text>
 		
@@ -4483,6 +4695,8 @@ for the symbols.
 		<text lang="et">läbipääsu koht</text>
 		<text lang="de" plural="true" gender="maskulin">Durchlässen</text>
 		<text lang="de" gender="maskulin">Durchlass</text>
+		<text lang="ca" plural="true" gender="masculí">passos</text>
+		<text lang="ca" gender="masculí">pas</text>
 		
 		
 		<lines thickness="12.5">
@@ -4517,6 +4731,7 @@ for the symbols.
 		<name lang="ro">Clădire</name>
 		<name lang="et">Ehitis</name>
 		<name lang="de">Gebäude</name>
+		<name lang="ca">Construcció</name>
 		<text lang="en-AU" plural="true">buildings</text>
 		<text lang="en-AU">building</text>
 		
@@ -4543,6 +4758,8 @@ for the symbols.
 		<text lang="et">building</text>
 		<text lang="de" plural="true" gender="neutrum">Gebäuden</text>
 		<text lang="de" gender="neutrum">Gebäude</text>
+		<text lang="ca" plural="true" gender="femení">contruccions</text>
+		<text lang="ca" gender="femení">construcció</text>
 		
 		
 		<filled-polygon>
@@ -4567,6 +4784,7 @@ for the symbols.
 		<name lang="ro">Zonă pavată</name>
 		<name lang="et">Kattega plats</name>
 		<name lang="de">Befestigte Fläche</name>
+		<name lang="ca">Zona pavimentada</name>
 		<text lang="en-AU" plural="true">paved areas</text>
 		<text lang="en-AU">paved area</text>
 		
@@ -4592,6 +4810,8 @@ for the symbols.
 		<text lang="et">kattega plats</text>
 		<text lang="de" plural="true" gender="feminin">befestigten Flächen</text>
 		<text lang="de" gender="feminin">befestigte Fläche</text>
+		<text lang="ca" plural="true" gender="femení">zones pavimentades</text>
+		<text lang="ca" gender="femení">zona pavimentada</text>
 		
 		
 		<polygon thickness="12.5">
@@ -4632,6 +4852,7 @@ for the symbols.
 		<name lang="ro">Ruine</name>
 		<name lang="et">Vare, lagunenud hoone</name>
 		<name lang="de">Ruine</name>
+		<name lang="ca">Ruïnes</name>
 		<text lang="en-AU" plural="true">ruins</text>
 		<text lang="en-AU">ruin</text>
 		
@@ -4658,6 +4879,8 @@ for the symbols.
 		<text lang="et">vare</text>
 		<text lang="de" plural="true" gender="feminin">Ruinen</text>
 		<text lang="de" gender="feminin">Ruine</text>
+		<text lang="ca" plural="true" gender="femení">constuccions en ruïnes</text>
+		<text lang="ca" gender="femení">construcció en ruïnes</text>
 		
 		
 		<lines thickness="12.5">
@@ -4696,6 +4919,7 @@ for the symbols.
 		<name lang="ro">Conductă</name>
 		<name lang="et">Torujuhe</name>
 		<name lang="de">Pipeline</name>
+		<name lang="ca">Canonada</name>
 		<text lang="en-AU" plural="true">pipelines</text>
 		<text lang="en-AU">pipeline</text>
 		
@@ -4722,6 +4946,8 @@ for the symbols.
 		<text lang="et">torujuhe</text>
 		<text lang="de" plural="true" gender="feminin">Pipelines</text>
 		<text lang="de" gender="feminin">Pipeline</text>
+		<text lang="ca" plural="true" gender="femení">canonades</text>
+		<text lang="ca" gender="femení">canonada</text>
 		
 		
 		<lines thickness="12.5">
@@ -4759,6 +4985,7 @@ for the symbols.
 		<name lang="ro">Turn</name>
 		<name lang="et">Torn</name>
 		<name lang="de">Turm</name>
+		<name lang="ca">Torre</name>
 		<text lang="en-AU" plural="true">towers</text>
 		<text lang="en-AU">tower</text>
 		
@@ -4785,6 +5012,8 @@ for the symbols.
 		<text lang="et">torn</text>
 		<text lang="de" plural="true" gender="maskulin">Türmen</text>
 		<text lang="de" gender="maskulin">Turm</text>
+		<text lang="ca" plural="true" gender="femení">torres</text>
+		<text lang="ca" gender="femení">torre</text>
 		
 		
 		<lines thickness="12.5">
@@ -4811,6 +5040,7 @@ for the symbols.
 		<name lang="ro">Platformă de vânătoare</name>
 		<name lang="et">Jahi-isteplatvorm/torn</name>
 		<name lang="de">Hochsitz</name>
+		<name lang="ca">Lloc d'ovservació</name>
 		<text lang="en-AU" plural="true">shooting platforms</text>
 		<text lang="en-AU">shooting platform</text>
 		
@@ -4836,6 +5066,8 @@ for the symbols.
 		<text lang="et">jahiplatvorm</text>
 		<text lang="de" plural="true" gender="maskulin">Hochsitzen</text>
 		<text lang="de" gender="maskulin">Hochsitz</text>
+		<text lang="ca" plural="true" gender="masculí">llocs d'ovservació</text>
+		<text lang="ca" gender="masculí">lloc d'ovservació</text>
 		
 		
 		<lines thickness="12.5">
@@ -4859,6 +5091,7 @@ for the symbols.
 		<name lang="ro">Bornă</name>
 		<name lang="et">Kupits, piiritähis</name>
 		<name lang="de">Grenzstein</name>
+		<name lang="ca">Fita</name>
 		<text lang="en-AU" plural="true">cairns</text>
 		<text lang="en-AU">cairn</text>
 		
@@ -4885,6 +5118,8 @@ for the symbols.
 		<text lang="et">kupits</text>
 		<text lang="de" plural="true" gender="maskulin">Grenzsteinen</text>
 		<text lang="de" gender="maskulin">Grenzstein</text>
+		<text lang="ca" plural="true" gender="femení">fites</text>
+		<text lang="ca" gender="femení">fita</text>
 		
 		
 		<circle radius="60" thickness="12.5">
@@ -4909,6 +5144,7 @@ for the symbols.
 		<name lang="ro">Iesle/Hrănitoare</name>
 		<name lang="et">Söödasõim</name>
 		<name lang="de">Futterkrippe</name>
+		<name lang="ca">Menjadora</name>
 		<text lang="en-AU" plural="true">fodder racks</text>
 		<text lang="en-AU">fodder rack</text>
 		
@@ -4935,6 +5171,8 @@ for the symbols.
 		<text lang="et">söödasõin</text>
 		<text lang="de" plural="true" gender="feminin">Futterkrippen</text>
 		<text lang="de" gender="feminin">Futterkrippe</text>
+		<text lang="ca" plural="true" gender="femení">menjadores</text>
+		<text lang="ca" gender="femení">menjadora</text>
 		
 		
 		<lines thickness="12.5">
@@ -4966,6 +5204,7 @@ for the symbols.
 		<name lang="ro">Pământ cu cărbune ars</name>
 		<name lang="et">Lõkkease</name>
 		<name lang="de">Kohlenmeiler</name>
+		<name lang="ca">Carbonera</name>
 		<text lang="en-AU" plural="true">charcoal burning grounds</text>
 		<text lang="en-AU">charcoal burning ground</text>
 		
@@ -4992,6 +5231,8 @@ for the symbols.
 		<text lang="et">lõkkease</text>
 		<text lang="de" plural="true" gender="maskulin">Kohlenmeilern</text>
 		<text lang="de" gender="maskulin">Kohlenmeiler</text>
+		<text lang="ca" plural="true" gender="femení">carboneres</text>
+		<text lang="ca" gender="femení">carbonera</text>
 		
 		
 		<circle radius="68" thickness="12.5">
@@ -5018,6 +5259,7 @@ for the symbols.
 		<name lang="ro">Monument sau statuie</name>
 		<name lang="et">Ausammas</name>
 		<name lang="de">Denkmal, Statue</name>
+		<name lang="ca">Monument</name>
 		<text lang="en-AU" plural="true">statues</text>
 		<text lang="en-AU">statue</text>
 		
@@ -5044,6 +5286,8 @@ for the symbols.
 		<text lang="et">ausammas</text>
 		<text lang="de" plural="true" gender="neutrum">Denkmälern</text>
 		<text lang="de" gender="neutrum">Denkmal</text>
+		<text lang="ca" plural="true" gender="masculí">monuments</text>
+		<text lang="ca" gender="masculí">monument</text>
 		
 		
 		<lines thickness="12.5">
@@ -5071,6 +5315,7 @@ for the symbols.
 		<name lang="ro">Trecere</name>
 		<name lang="et">Sisse/läbipääs</name>
 		<name lang="de">Gebäudedurchlass</name>
+		<name lang="ca">Pas cobert</name>
 		<text lang="en-AU" plural="true">building pass-throughs</text>
 		<text lang="en-AU">building pass-through</text>
 		
@@ -5097,6 +5342,8 @@ for the symbols.
 		<text lang="et">läbipääs</text>
 		<text lang="de" plural="true" gender="maskulin">Gebäudedurchlässen</text>
 		<text lang="de" gender="maskulin">Gebäudedurchlass</text>
+		<text lang="ca" plural="true" gender="masculí">passos coberts</text>
+		<text lang="ca" gender="masculí">pas cobert</text>
 		
 		
 		<lines thickness="12.5">
@@ -5127,6 +5374,7 @@ for the symbols.
 		<name lang="ro">Scări</name>
 		<name lang="et">Trepp</name>
 		<name lang="de">Treppe</name>
+		<name lang="ca">Escala</name>
 		<text lang="en-AU" plural="true">stairways</text>
 		<text lang="en-AU">stairway</text>
 		
@@ -5152,6 +5400,8 @@ for the symbols.
 		<text lang="et">trepp</text>
 		<text lang="de" plural="true" gender="feminin">Treppen</text>
 		<text lang="de" gender="feminin">Treppe</text>
+		<text lang="ca" plural="true" gender="femení">escales</text>
+		<text lang="ca" gender="femení">escala</text>
 		
 		
 		<lines thickness="12.5">
@@ -5180,6 +5430,7 @@ for the symbols.
 		<name lang="ro">Reper special</name>
 		<name lang="et">Pisiobjekt</name>
 		<name lang="de">Besonderes Objekt</name>
+		<name lang="ca">Objecte particular</name>
 		<text lang="en-AU" plural="true">special items</text>
 		<text lang="en-AU">special item</text>
 		
@@ -5206,6 +5457,8 @@ for the symbols.
 		<text lang="et">pisiobjekt</text>
 		<text lang="de" plural="true" gender="neutrum">besonderen Objekten</text>
 		<text lang="de" gender="neutrum">besonderes Objekt</text>
+		<text lang="ca" plural="true" gender="masculí">objectes particulars</text>
+		<text lang="ca" gender="masculí">objecte particular</text>
 		
 		
 		<lines thickness="12.5">
@@ -5232,6 +5485,7 @@ for the symbols.
 		<name lang="ro">Reper special</name>
 		<name lang="et">Pisiobjekt</name>
 		<name lang="de">Besonderes Objekt</name>
+		<name lang="ca">Objecte particular</name>
 		<text lang="en-AU" plural="true">special items</text>
 		<text lang="en-AU">special item</text>
 		
@@ -5258,6 +5512,8 @@ for the symbols.
 		<text lang="et">pisiobjekt</text>
 		<text lang="de" plural="true" gender="neutrum">besonderen Objekten</text>
 		<text lang="de" gender="neutrum">besonderes Objekt</text>
+		<text lang="ca" plural="true" gender="masculí">objectes particulars</text>
+		<text lang="ca" gender="masculí">objecte particular</text>
 		
 		
 		<circle radius="55" thickness="12.5">
@@ -5282,6 +5538,7 @@ for the symbols.
 		<name lang="ro">Jos</name>
 		<name lang="et">Madal</name>
 		<name lang="de">Niedrig</name>
+		<name lang="ca">Aplanat</name>
 		<text lang="en-AU">low {0}</text>
 		
 		<text lang="en">low {0}</text>
@@ -5312,6 +5569,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">niedriges {0}</text>
 		<text lang="de" gender="feminin">niedrige {0}</text>
 		<text lang="de" gender="maskulin">niedriger {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} aplanades</text>
+		<text lang="ca" plural="true" gender="masculí">{0} aplanats</text>
+		<text lang="ca" gender="femení">{0} aplanada</text>
+		<text lang="ca" gender="masculí">{0} aplanat</text>
 		
 		
 		
@@ -5340,6 +5601,7 @@ for the symbols.
 		<name lang="ro">Puțin adânc</name>
 		<name lang="et">Lame</name>
 		<name lang="de">Flach</name>
+		<name lang="ca">Poc profund</name>
 		<text lang="en-AU">shallow {0}</text>
 		
 		<text lang="en">shallow {0}</text>
@@ -5368,6 +5630,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">flaches {0}</text>
 		<text lang="de" gender="feminin">flache {0}</text>
 		<text lang="de" gender="maskulin">flacher {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} poc profundes</text>
+		<text lang="ca" plural="true" gender="masculí">{0} poc profunds</text>
+		<text lang="ca" gender="femení">{0} poc profunda</text>
+		<text lang="ca" gender="masculí">{0} poc profund</text>
 		
 		
 		
@@ -5396,6 +5662,7 @@ for the symbols.
 		<name lang="ro">Adânc</name>
 		<name lang="et">Sügav</name>
 		<name lang="de">Tief</name>
+		<name lang="ca">Profund</name>
 		<text lang="en-AU">deep {0}</text>
 		
 		<text lang="en">deep {0}</text>
@@ -5426,6 +5693,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">tiefe {0}</text>
 		<text lang="de" gender="feminin">tiefe {0}</text>
 		<text lang="de" gender="maskulin">tiefer {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} profundes</text>
+		<text lang="ca" plural="true" gender="masculí">{0} profunds</text>
+		<text lang="ca" gender="femení">{0} profunda</text>
+		<text lang="ca" gender="masculí">{0} profund</text>
 		
 		
 		
@@ -5463,6 +5734,7 @@ for the symbols.
 		<name lang="ro">Super crescut</name>
 		<name lang="et">Tihe ala</name>
 		<name lang="de">Überwachsen</name>
+		<name lang="ca">Cobert de vegetació</name>
 		<text lang="en-AU">overgrown {0}</text>
 		
 		<text lang="en">overgrown {0}</text>
@@ -5490,6 +5762,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">überwachsenes {0}</text>
 		<text lang="de" gender="feminin">überwachsene {0}</text>
 		<text lang="de" gender="maskulin">überwachsener {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} cobertes de vegetació</text>
+		<text lang="ca" plural="true" gender="masculí">{0} coberts de vegetació</text>
+		<text lang="ca" gender="femení">{0} coberta de vegetació</text>
+		<text lang="ca" gender="masculí">{0} cobert de vegetació</text>
 		
 		
 		
@@ -5544,6 +5820,7 @@ for the symbols.
 		<name lang="ro">Deschis</name>
 		<name lang="et">Avatud</name>
 		<name lang="de">Offen</name>
+		<name lang="ca">Obert</name>
 		<text lang="en-AU">open {0}</text>
 		
 		<text lang="en">open {0}</text>
@@ -5571,6 +5848,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">offenes {0}</text>
 		<text lang="de" gender="feminin">offene {0}</text>
 		<text lang="de" gender="maskulin">offener {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} obertes</text>
+		<text lang="ca" plural="true" gender="masculí">{0} oberts</text>
+		<text lang="ca" gender="femení">{0} oberta</text>
+		<text lang="ca" gender="masculí">{0} obert</text>
 		
 		
 		
@@ -5629,6 +5910,7 @@ for the symbols.
 		<name lang="ro">Stâncos</name>
 		<name lang="et">Kivine, kaljune</name>
 		<name lang="de">Felsig, steinig</name>
+		<name lang="ca">Pedregós</name>
 		<text lang="en-AU">rocky {0}</text>
 		
 		<text lang="en">rocky {0}</text>
@@ -5656,6 +5938,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">steiniges {0}</text>
 		<text lang="de" gender="feminin">steinige {0}</text>
 		<text lang="de" gender="maskulin">steiniger {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} pedregoses</text>
+		<text lang="ca" plural="true" gender="masculí">{0} pedregosos</text>
+		<text lang="ca" gender="femení">{0} pedregosa</text>
+		<text lang="ca" gender="masculí">{0} pedregós</text>
 		
 		
 		
@@ -5693,6 +5979,7 @@ for the symbols.
 		<name lang="ro">Mlăștinos</name>
 		<name lang="et">Soine</name>
 		<name lang="de">Sumpfig</name>
+		<name lang="ca">Fangós</name>
 		<text lang="en-AU">marshy {0}</text>
 		
 		<text lang="en">marshy {0}</text>
@@ -5720,6 +6007,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">sumpfiges {0}</text>
 		<text lang="de" gender="feminin">sumpfige {0}</text>
 		<text lang="de" gender="maskulin">sumpfiger {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} fangoses</text>
+		<text lang="ca" plural="true" gender="masculí">{0} fangosos</text>
+		<text lang="ca" gender="femení">{0} fangosa</text>
+		<text lang="ca" gender="masculí">{0} fangós</text>
 		
 		
 		
@@ -5754,6 +6045,7 @@ for the symbols.
 		<name lang="ro">Nisipos</name>
 		<name lang="et">Liivane</name>
 		<name lang="de">Sandig</name>
+		<name lang="ca">Sorrenc</name>
 		<text lang="en-AU">sandy {0}</text>
 		
 		<text lang="en">sandy {0}</text>
@@ -5781,6 +6073,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">sandiges {0}</text>
 		<text lang="de" gender="feminin">sandige {0}</text>
 		<text lang="de" gender="maskulin">sandiger {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} sorrenques</text>
+		<text lang="ca" plural="true" gender="masculí">{0} sorrencs</text>
+		<text lang="ca" gender="femení">{0} sorrenca</text>
+		<text lang="ca" gender="masculí">{0} sorrenc</text>
 		
 		
 		
@@ -5953,6 +6249,7 @@ for the symbols.
 		<name lang="ro">Ace de brad</name>
 		<name lang="et">Okaspuu</name>
 		<name lang="de">Nadelbaum</name>
+		<name lang="ca">Arbre perennifoli</name>
 		<text lang="en-AU">needle-leaved {0}</text>
 		
 		<text lang="en">needle-leaved {0}</text>
@@ -5974,6 +6271,8 @@ for the symbols.
 		<text lang="et">okaspuu {0}</text>
 		<text lang="de" plural="true">Nadel-{0}</text>
 		<text lang="de">Nadel-{0}</text>
+		<text lang="ca" plural="true">{0} perennifolis</text>
+		<text lang="ca">{0} perennifoli</text>
 		
 		
 		<polygon thickness="12.5">
@@ -6007,6 +6306,7 @@ for the symbols.
 		<name lang="ro">Frunze-late</name>
 		<name lang="et">Lehtpuu</name>
 		<name lang="de">Laubbaum</name>
+		<name lang="ca">Arbre caducifoli</name>
 		<text lang="en-AU">broad-leaved {0}</text>
 		
 		<text lang="en">broad-leaved {0}</text>
@@ -6028,6 +6328,8 @@ for the symbols.
 		<text lang="et">lehtpuu {0}</text>
 		<text lang="de" plural="true">Laub-{0}</text>
 		<text lang="de">Laub-{0}</text>
+		<text lang="ca" plural="true">{0} caducifolis</text>
+		<text lang="ca">{0} caducifoli</text>
 		
 		
 		<beziers thickness="12.5">
@@ -6082,6 +6384,7 @@ for the symbols.
 		<name lang="ro">Dărăpănat</name>
 		<name lang="et">Lagunenud</name>
 		<name lang="de">Verfallen</name>
+		<name lang="ca">En ruïna </name>
 		<text lang="en-AU">ruined {0}</text>
 		
 		<text lang="en">ruined {0}</text>
@@ -6109,6 +6412,10 @@ for the symbols.
 		<text lang="de" gender="neutrum">verfallenes {0}</text>
 		<text lang="de" gender="feminin">verfallene {0}</text>
 		<text lang="de" gender="maskulin">verfallener {0}</text>
+		<text lang="ca" plural="true" gender="femení">{0} ruïnoses  o tombades</text>
+		<text lang="ca" plural="true" gender="masculí">{0} ruïnosos o tombats </text>
+		<text lang="ca" gender="femení">{0} ruïnosa o tombada</text>
+		<text lang="ca" gender="masculí">{0} ruïnós o tombat</text>
 		
 		
 		
@@ -6164,6 +6471,7 @@ for the symbols.
 		<name lang="ro">Intersecţie</name>
 		<name lang="et">Ristumine</name>
 		<name lang="de">Kreuzung</name>
+		<name lang="ca">Cruïlla</name>
 		<text lang="en-AU" plural="true">{0} and {1} crossings</text>
 		<text lang="en-AU">{0} and {1} crossing</text>
 		
@@ -6185,6 +6493,7 @@ for the symbols.
 		<text lang="et">{0} ja {1} ristumine</text>
 		<text lang="de" plural="true" gender="feminin">{0} und {1} - Kreuzungen</text>
 		<text lang="de" gender="feminin">{0}, {1} - Kreuzung</text>
+		<text lang="ca" gender="masculí">creuament de {0} amb {1}</text>
 		
 		
 		<lines thickness="12.5">
@@ -6211,6 +6520,7 @@ for the symbols.
 		<name lang="ro">Intersecţie (obiecte de același tip)</name>
 		<name lang="et">Ristumine (samad objektid)</name>
 		<name lang="de">Kreuzung (gleicher Objekte)</name>
+		<name lang="ca">Cruïlla (mateix símbol)</name>
 		<text lang="en-AU" plural="true">{0} crossings</text>
 		<text lang="en-AU">{0} crossing</text>
 		
@@ -6233,6 +6543,7 @@ for the symbols.
 		<text lang="et">{0} ristumine</text>
 		<text lang="de" plural="true" gender="feminin">{0} - Kreuzungen</text>
 		<text lang="de" gender="feminin">{0} - Kreuzung</text>
+		<text lang="ca" gender="masculí">creuament de {1}</text>
 		
 		
 	</symbol>
@@ -6251,6 +6562,7 @@ for the symbols.
 		<name lang="ro">Bifurcație</name>
 		<name lang="et">Hargnemine</name>
 		<name lang="de">Gabelung</name>
+		<name lang="ca">Unió</name>
 		<text lang="en-AU" plural="true">{0} and {1} junctions</text>
 		<text lang="en-AU">{0} and {1} junction</text>
 		
@@ -6273,6 +6585,7 @@ for the symbols.
 		<text lang="et">{0} ja {1} hargnemine</text>
 		<text lang="de" plural="true" gender="feminin">{0}, {1} - Gabelungen</text>
 		<text lang="de" gender="feminin">{0}, {1} - Gabelung</text>
+		<text lang="ca">unió de {0} amb {1}</text>
 		
 		
 		<lines thickness="12.5">
@@ -6299,6 +6612,7 @@ for the symbols.
 		<name lang="ro">Bifurcație (obiecte de același tip)</name>
 		<name lang="et">Hargnemine (samad objektid)</name>
 		<name lang="de">Gabelung (gleicher Objekte)</name>
+		<name lang="ca">Unió (mateix símbol)</name>
 		<text lang="en-AU" plural="true">{0} junctions</text>
 		<text lang="en-AU">{0} junction</text>
 		
@@ -6322,6 +6636,7 @@ for the symbols.
 		<text lang="et">{0} hargnemine</text>
 		<text lang="de" plural="true" gender="feminin">{0} - Gabelungen</text>
 		<text lang="de" gender="feminin">{0} - Gabelung</text>
+		<text lang="ca" gender="femení">unió de {1}</text>
 		
 		
 	</symbol>
@@ -6345,6 +6660,7 @@ for the symbols.
 		<name lang="ro">Înălțimea reperului</name>
 		<name lang="et">Objekti kõrgus</name>
 		<name lang="de">Höhe des Objektes</name>
+		<name lang="ca">Altura en metres</name>
 		<text lang="en-AU">{0} high</text>
 		
 		<text lang="en">{0} high</text>
@@ -6359,6 +6675,7 @@ for the symbols.
 		<text lang="ro">{0} înălțime</text>
 		<text lang="et">{0} kõrge</text>
 		<text lang="de">{0} Höhe</text>
+		<text lang="ca">altura {0}</text>
 		
 	</symbol>
 
@@ -6376,6 +6693,7 @@ for the symbols.
 		<name lang="ro">Adâncimea reperului</name>
 		<name lang="et">Objekti sügavus</name>
 		<name lang="de">Tiefe des Objektes</name>
+		<name lang="ca">Profunditat en metres</name>
 		<text lang="en-AU">{0} deep</text>
 		
 		<text lang="en">{0} deep</text>
@@ -6390,6 +6708,7 @@ for the symbols.
 		<text lang="ro">{0} adâncime</text>
 		<text lang="et">{0} sügav</text>
 		<text lang="de">{0} Tiefe</text>
+		<text lang="ca">profunditat {0}</text>
 		
 	</symbol>
 
@@ -6407,6 +6726,7 @@ for the symbols.
 		<name lang="ro">Dimensiunea reperului</name>
 		<name lang="et">Objekti suurus</name>
 		<name lang="de">Größe des Objektes</name>
+		<name lang="ca">Dimensions en metres</name>
 		<text lang="en-AU">{0} by {1}</text>
 		
 		<text lang="en">{0} by {1}</text>
@@ -6421,6 +6741,7 @@ for the symbols.
 		<text lang="ro">{0} pe {1}</text>
 		<text lang="et">{0} korda {1}</text>
 		<text lang="de">{0} mal {1}</text>
+		<text lang="ca">{0} x {1}</text>
 		
 	</symbol>
 
@@ -6438,6 +6759,7 @@ for the symbols.
 		<name lang="ro">Înălțimea pantei</name>
 		<name lang="et">Kõrgus nõlval</name>
 		<name lang="de">Höhe auf Abhang</name>
+		<name lang="ca">Altura en pendent a dalt i a baix</name>
 		<text lang="en-AU">{0} to {1} high</text>
 		
 		<text lang="en">{0} to {1} high</text>
@@ -6452,6 +6774,7 @@ for the symbols.
 		<text lang="ro">{0} pâna la {1} pantă</text>
 		<text lang="et">{0} kuni {1} kõrge</text>
 		<text lang="de">{0} bis {1} hoch</text>
+		<text lang="ca">de {0} a {1} d'altura</text>
 		
 	</symbol>
 
@@ -6469,6 +6792,7 @@ for the symbols.
 		<name lang="ro">Adâncimea pantei</name>
 		<name lang="et">Objekti sügavus nõlval</name>
 		<name lang="de">Tiefe am Abhang</name>
+		<name lang="ca">Profunditat en pendent a dalt i a baix</name>
 		<text lang="en-AU">{0} to {1} deep</text>
 		
 		<text lang="en">{0} to {1} deep</text>
@@ -6483,6 +6807,7 @@ for the symbols.
 		<text lang="ro">{0} până la {1} pantă de adâncime</text>
 		<text lang="et">{0} kuni {1} sügav</text>
 		<text lang="de">{0} bis {1} tief</text>
+		<text lang="ca">de {0} a {1} de profunditat</text>
 		
 	</symbol>
 
@@ -6504,6 +6829,7 @@ for the symbols.
 		<name lang="ro">Dimensiunea a două repere</name>
 		<name lang="et">Kahe objekti suurused</name>
 		<name lang="de">Größe von zwei Objekten</name>
+		<name lang="ca">Altura de dos elements</name>
 		<text lang="en-AU">{0} and {1}</text>
 		
 		<text lang="en">{0} and {1}</text>
@@ -6518,6 +6844,7 @@ for the symbols.
 		<text lang="ro">{0} și {1}</text>
 		<text lang="et">{0} ja {1}</text>
 		<text lang="de">{0} und {1}</text>
+		<text lang="ca">{0} i {1}</text>
 		
 	</symbol>
 
@@ -6543,6 +6870,7 @@ for the symbols.
 		<name lang="ro">Partea nordică</name>
 		<name lang="et">Põhjaküljel</name>
 		<name lang="de">Nordseite</name>
+		<name lang="ca">Banda nord</name>
 		<text lang="en-AU">N side of {0}</text>
 		
 		<text lang="en">N side of {0}</text>
@@ -6557,6 +6885,8 @@ for the symbols.
 		<text lang="ro">{0} partea nordică</text>
 		<text lang="et">{0} põhjaküljel </text>
 		<text lang="de">{0}, N-Seite</text>
+		<text lang="ca" gender="femení">al nord d'una {0}</text>
+		<text lang="ca" gender="masculí">al nord d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="-20" />
@@ -6580,6 +6910,7 @@ for the symbols.
 		<name lang="ro">Partea nord estică</name>
 		<name lang="et">Kirdeküljel</name>
 		<name lang="de">Nord-Ostseite</name>
+		<name lang="ca">Banda nord-est</name>
 		<text lang="en-AU">NE side of {0}</text>
 		
 		<text lang="en">NE side of {0}</text>
@@ -6594,6 +6925,8 @@ for the symbols.
 		<text lang="ro">{0} partea nord estică</text>
 		<text lang="et">{0} kirdeküljel</text>
 		<text lang="de">{0}, NO-Seite</text>
+		<text lang="ca" gender="femení">al nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al nord-est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="-14.14" />
@@ -6617,6 +6950,7 @@ for the symbols.
 		<name lang="ro">Partea estică</name>
 		<name lang="et">Idaküljel</name>
 		<name lang="de">Ostseite</name>
+		<name lang="ca">Banda est</name>
 		<text lang="en-AU">E side of {0}</text>
 		
 		<text lang="en">E side of {0}</text>
@@ -6631,6 +6965,8 @@ for the symbols.
 		<text lang="ro">{0} partea estică</text>
 		<text lang="et">{0} idaküljel</text>
 		<text lang="de">{0}, O-Seite</text>
+		<text lang="ca" gender="femení">a l'est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="-20" y="0" />
@@ -6654,6 +6990,7 @@ for the symbols.
 		<name lang="ro">Partea sud estică</name>
 		<name lang="et">Kaguküljel</name>
 		<name lang="de">Süd-Ostseite</name>
+		<name lang="ca">Banda sud-est</name>
 		<text lang="en-AU">SE side of {0}</text>
 		
 		<text lang="en">SE side of {0}</text>
@@ -6668,6 +7005,8 @@ for the symbols.
 		<text lang="ro">{0} partea sud estică</text>
 		<text lang="et">{0} kaguküljel</text>
 		<text lang="de">{0}, SO-Seite</text>
+		<text lang="ca" gender="femení">al sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al sud-est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="14.14" />
@@ -6691,6 +7030,7 @@ for the symbols.
 		<name lang="ro">Partea sudică</name>
 		<name lang="et">Lõunaküljel</name>
 		<name lang="de">Südseite</name>
+		<name lang="ca">Banda sud</name>
 		<text lang="en-AU">S side of {0}</text>
 		
 		<text lang="en">S side of {0}</text>
@@ -6705,6 +7045,8 @@ for the symbols.
 		<text lang="ro">{0} partea sudică</text>
 		<text lang="et">{0} lõunaküljel</text>
 		<text lang="de">{0}, S-Seite</text>
+		<text lang="ca" gender="femení">al sud d'una {0}</text>
+		<text lang="ca" gender="masculí">al sud d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="20" />
@@ -6728,6 +7070,7 @@ for the symbols.
 		<name lang="ro">Partea sud-vestică</name>
 		<name lang="et">Edelaküljel</name>
 		<name lang="de">Süd-Westseite</name>
+		<name lang="ca">Banda sud-oest</name>
 		<text lang="en-AU">SW side of {0}</text>
 		
 		<text lang="en">SW side of {0}</text>
@@ -6742,6 +7085,8 @@ for the symbols.
 		<text lang="ro">{0} partea sud vestică</text>
 		<text lang="et">{0} edelaküljel</text>
 		<text lang="de">{0}, SW-Seite</text>
+		<text lang="ca" gender="femení">al sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al sud-oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="14.14" />
@@ -6765,6 +7110,7 @@ for the symbols.
 		<name lang="ro">Partea vestică</name>
 		<name lang="et">Lääneküljel</name>
 		<name lang="de">Westseite</name>
+		<name lang="ca">Banda oest</name>
 		<text lang="en-AU">W side of {0}</text>
 		
 		<text lang="en">W side of {0}</text>
@@ -6779,6 +7125,8 @@ for the symbols.
 		<text lang="ro">{0} partea vestică</text>
 		<text lang="et">{0} lääneküljel</text>
 		<text lang="de">{0}, W-Seite</text>
+		<text lang="ca" gender="femení">a l'oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="20" y="0" />
@@ -6802,6 +7150,7 @@ for the symbols.
 		<name lang="ro">Partea nord-vestică</name>
 		<name lang="et">Loodeküljel</name>
 		<name lang="de">Nord-Westseite</name>
+		<name lang="ca">Banda nord-oest</name>
 		<text lang="en-AU">NW side of {0}</text>
 		
 		<text lang="en">NW side of {0}</text>
@@ -6816,6 +7165,8 @@ for the symbols.
 		<text lang="ro">{0} partea nord-vestică</text>
 		<text lang="et">{0} loodeküljel</text>
 		<text lang="de">{0}, NW-Seite</text>
+		<text lang="ca" gender="femení">al nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al nord-oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="-14.14" />
@@ -6839,6 +7190,7 @@ for the symbols.
 		<name lang="ro">Marginea nordică</name>
 		<name lang="et">Põhjaservas</name>
 		<name lang="de">Nordrand</name>
+		<name lang="ca">Límit nord</name>
 		<text lang="en-AU">N edge of {0}</text>
 		
 		<text lang="en">N edge of {0}</text>
@@ -6853,6 +7205,8 @@ for the symbols.
 		<text lang="ro">{0} marginea nordică</text>
 		<text lang="et">{0} põhjaservas</text>
 		<text lang="de">{0}, N-Rand</text>
+		<text lang="ca" gender="femení">al límit nord d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit nord d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -6877,6 +7231,7 @@ for the symbols.
 		<name lang="ro">Marginea nord-estică</name>
 		<name lang="et">Kirdeservas</name>
 		<name lang="de">Nord-Ostrand</name>
+		<name lang="ca">Límit nord-est</name>
 		<text lang="en-AU">NE edge of {0}</text>
 		
 		<text lang="en">NE edge of {0}</text>
@@ -6891,6 +7246,8 @@ for the symbols.
 		<text lang="ro">{0} marginea nord-estică</text>
 		<text lang="et">{0} kirdeservas</text>
 		<text lang="de">{0}, NO-Rand</text>
+		<text lang="ca" gender="femení">al límit nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit nord-est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -6915,6 +7272,7 @@ for the symbols.
 		<name lang="ro">Marginea estică</name>
 		<name lang="et">Idaservas</name>
 		<name lang="de">Ostrand</name>
+		<name lang="ca">Límit est</name>
 		<text lang="en-AU">E edge of {0}</text>
 		
 		<text lang="en">E edge of {0}</text>
@@ -6929,6 +7287,8 @@ for the symbols.
 		<text lang="ro">{0} marginea estică</text>
 		<text lang="et">{0} idaservas</text>
 		<text lang="de">{0}, Ostrand</text>
+		<text lang="ca" gender="femení">al límit est d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -6953,6 +7313,7 @@ for the symbols.
 		<name lang="ro">Marginea sud-estică</name>
 		<name lang="et">Kaguservas</name>
 		<name lang="de">Süd-Ostrand</name>
+		<name lang="ca">Límit sud-est</name>
 		<text lang="en-AU">SE edge of {0}</text>
 		
 		<text lang="en">SE edge of {0}</text>
@@ -6967,6 +7328,8 @@ for the symbols.
 		<text lang="ro">{0} marginea sud-estică</text>
 		<text lang="et">{0} kaguservas</text>
 		<text lang="de">{0}, SO-Rand</text>
+		<text lang="ca" gender="femení">al límit sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit sud-est d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -6991,6 +7354,7 @@ for the symbols.
 		<name lang="ro">marginea sudică</name>
 		<name lang="et">Lõunaservas</name>
 		<name lang="de">Südrand</name>
+		<name lang="ca">Límit sud</name>
 		<text lang="en-AU">S edge of {0}</text>
 		
 		<text lang="en">S edge of {0}</text>
@@ -7005,6 +7369,8 @@ for the symbols.
 		<text lang="ro">{0} marginea sudică</text>
 		<text lang="et">{0} lõunaservas</text>
 		<text lang="de">{0}, Südrand</text>
+		<text lang="ca" gender="femení">al límit sud d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit sud d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -7029,6 +7395,7 @@ for the symbols.
 		<name lang="ro">marginea sud-vestică</name>
 		<name lang="et">Edelaservas</name>
 		<name lang="de">Süd-Westrand</name>
+		<name lang="ca">Límit sud-oest</name>
 		<text lang="en-AU">SW edge of {0}</text>
 		
 		<text lang="en">SW edge of {0}</text>
@@ -7043,6 +7410,8 @@ for the symbols.
 		<text lang="ro">{0} marginea sud-vestică</text>
 		<text lang="et">{0} edelaservas</text>
 		<text lang="de">{0}, SW-Rand</text>
+		<text lang="ca" gender="femení">al límit sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit sud-oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -7067,6 +7436,7 @@ for the symbols.
 		<name lang="ro">marginea vestică</name>
 		<name lang="et">Lääneservas</name>
 		<name lang="de">Westrand</name>
+		<name lang="ca">Límit oest</name>
 		<text lang="en-AU">W edge of {0}</text>
 		
 		<text lang="en">W edge of {0}</text>
@@ -7081,6 +7451,8 @@ for the symbols.
 		<text lang="ro">{0} marginea vestică</text>
 		<text lang="et">{0} lääneservas</text>
 		<text lang="de">{0}, W-Rand</text>
+		<text lang="ca" gender="femení">al límit oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -7105,6 +7477,7 @@ for the symbols.
 		<name lang="ro">Marginea nord-vestică</name>
 		<name lang="et">Loodeservas</name>
 		<name lang="de">Nord-Westrand</name>
+		<name lang="ca">Límit nord-oest</name>
 		<text lang="en-AU">NW edge of {0}</text>
 		
 		<text lang="en">NW edge of {0}</text>
@@ -7119,6 +7492,8 @@ for the symbols.
 		<text lang="ro">{0} marginea nord-vestică</text>
 		<text lang="et">{0} loodeservas</text>
 		<text lang="de">{0}, NW-Rand</text>
+		<text lang="ca" gender="femení">al límit nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al límit nord-oest d'un {0}</text>
 		
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -7143,6 +7518,7 @@ for the symbols.
 		<name lang="ro">Partea nordică interior</name>
 		<name lang="et">Põhjaosas</name>
 		<name lang="de">Nördlicher Teil</name>
+		<name lang="ca">Banda nord interior</name>
 		<text lang="en-AU">N part of {0}</text>
 		
 		<text lang="en">N part of {0}</text>
@@ -7157,6 +7533,8 @@ for the symbols.
 		<text lang="ro">{0} partea nordică interior</text>
 		<text lang="et">{0} põhjaosas</text>
 		<text lang="de">{0}, nördl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior nord d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior nord d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7180,6 +7558,7 @@ for the symbols.
 		<name lang="ro">Partea nord-estică interior</name>
 		<name lang="et">Kirdeosas</name>
 		<name lang="de">Nordöstlicher Teil</name>
+		<name lang="ca">Banda nord-est interior</name>
 		<text lang="en-AU">NE part of {0}</text>
 		
 		<text lang="en">NE part of {0}</text>
@@ -7194,6 +7573,8 @@ for the symbols.
 		<text lang="ro">{0} partea nord-estică interior</text>
 		<text lang="et">{0} kirdeosas</text>
 		<text lang="de">{0}, nordöstl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior nord-est d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7217,6 +7598,7 @@ for the symbols.
 		<name lang="ro">Partea estică interior</name>
 		<name lang="et">Idaosas</name>
 		<name lang="de">Östlicher Teil</name>
+		<name lang="ca">Banda est interior</name>
 		<text lang="en-AU">E part of {0}</text>
 		
 		<text lang="en">E part of {0}</text>
@@ -7231,6 +7613,8 @@ for the symbols.
 		<text lang="ro">{0} partea estică interior</text>
 		<text lang="et">{0} idaosas</text>
 		<text lang="de">{0}, östl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior est d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7254,6 +7638,7 @@ for the symbols.
 		<name lang="ro">Partea sud-estică interior</name>
 		<name lang="et">Kaguosas</name>
 		<name lang="de">Südöstlicher Teil</name>
+		<name lang="ca">Banda sud-est interior</name>
 		<text lang="en-AU">SE part of {0}</text>
 		
 		<text lang="en">SE part of {0}</text>
@@ -7268,6 +7653,8 @@ for the symbols.
 		<text lang="ro">{0} partea sud-estică interior</text>
 		<text lang="et">{0} kaguosas</text>
 		<text lang="de">{0}, südöstl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior sud-est d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7291,6 +7678,7 @@ for the symbols.
 		<name lang="ro">Partea sudică interior</name>
 		<name lang="et">Lõunaosas</name>
 		<name lang="de">Südlicher Teil</name>
+		<name lang="ca">Banda sud interior</name>
 		<text lang="en-AU">S part of {0}</text>
 		
 		<text lang="en">S part of {0}</text>
@@ -7305,6 +7693,8 @@ for the symbols.
 		<text lang="ro">{0} partea sudică interior</text>
 		<text lang="et">{0} lõunaosas</text>
 		<text lang="de">{0}, südl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior sud d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior sud d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7328,6 +7718,7 @@ for the symbols.
 		<name lang="ro">Partea sud-vestică interior</name>
 		<name lang="et">Edelaosas</name>
 		<name lang="de">Südwestlicher Teil</name>
+		<name lang="ca">Banda sud-oest interior</name>
 		<text lang="en-AU">SW part of {0}</text>
 		
 		<text lang="en">SW part of {0}</text>
@@ -7342,6 +7733,8 @@ for the symbols.
 		<text lang="ro">{0} partea sud-vestică interior</text>
 		<text lang="et">{0} edelaosas</text>
 		<text lang="de">{0}, südwestl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior sud-oest d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7365,6 +7758,7 @@ for the symbols.
 		<name lang="ro">Partea vestică interior</name>
 		<name lang="et">Lääneosas</name>
 		<name lang="de">Westlicher Teil</name>
+		<name lang="ca">Banda oest interior</name>
 		<text lang="en-AU">W part of {0}</text>
 		
 		<text lang="en">W part of {0}</text>
@@ -7379,6 +7773,8 @@ for the symbols.
 		<text lang="ro">{0} partea vestică interior</text>
 		<text lang="et">{0} lääneosas</text>
 		<text lang="de">{0}, westl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior oest d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7402,6 +7798,7 @@ for the symbols.
 		<name lang="ro">Partea nord-vestică interior</name>
 		<name lang="et">Loodeosas</name>
 		<name lang="de">Nordwestlicher Teil</name>
+		<name lang="ca">Banda nord-oest interior</name>
 		<text lang="en-AU">NW part of {0}</text>
 		
 		<text lang="en">NW part of {0}</text>
@@ -7416,6 +7813,8 @@ for the symbols.
 		<text lang="ro">{0} partea nord-vestică interior</text>
 		<text lang="et">{0} loodeosas</text>
 		<text lang="de">{0} nordwestl. Teil</text>
+		<text lang="ca" gender="femení">a l'interior nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'interior nord-oest d'un {0}</text>
 		
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -7439,6 +7838,7 @@ for the symbols.
 		<name lang="ro">Colț nord interior</name>
 		<name lang="et">Põhjapoolne sisenurk</name>
 		<name lang="de">Nordecke, innen</name>
+		<name lang="ca">Angle nord interior</name>
 		<text lang="en-AU">N inside corner of {0}</text>
 		
 		<text lang="en">N inside corner of {0}</text>
@@ -7453,6 +7853,8 @@ for the symbols.
 		<text lang="ro">{0} colț nord interior</text>
 		<text lang="et">{0} põhjapoolne sisenurk</text>
 		<text lang="de">{0}, Nordecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle nord interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="-15" />
@@ -7478,6 +7880,7 @@ for the symbols.
 		<name lang="ro">colț nord-est interior</name>
 		<name lang="et">Kirdepoolne sisenurk</name>
 		<name lang="de">Nordostecke, innen</name>
+		<name lang="ca">Angle nord-est interior</name>
 		<text lang="en-AU">NE inside corner of {0}</text>
 		
 		<text lang="en">NE inside corner of {0}</text>
@@ -7492,6 +7895,8 @@ for the symbols.
 		<text lang="ro">{0} colț nord-est interior</text>
 		<text lang="et">{0} kirdepoolne sisenurk</text>
 		<text lang="de">{0}, Nordostecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle nord-est interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord-est interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-56.57" y="35.36" />
@@ -7517,6 +7922,7 @@ for the symbols.
 		<name lang="ro">Colț est interior</name>
 		<name lang="et">Idapoolne sisenurk</name>
 		<name lang="de">Ostecke, innen</name>
+		<name lang="ca">Angle est interior</name>
 		<text lang="en-AU">E inside corner of {0}</text>
 		
 		<text lang="en">E inside corner of {0}</text>
@@ -7531,6 +7937,8 @@ for the symbols.
 		<text lang="ro">{0} colț est interior</text>
 		<text lang="et">{0} idapoolne sisenurk</text>
 		<text lang="de">{0}, Ostecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle est interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle est interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-15" y="-65" />
@@ -7556,6 +7964,7 @@ for the symbols.
 		<name lang="ro">Colț sud-est interior</name>
 		<name lang="et">Kagupoolne sisenurk</name>
 		<name lang="de">Südostecke, innen</name>
+		<name lang="ca">Angle sud-est interior</name>
 		<text lang="en-AU">SE inside corner of {0}</text>
 		
 		<text lang="en">SE inside corner of {0}</text>
@@ -7570,6 +7979,8 @@ for the symbols.
 		<text lang="ro">{0} colț sud-est interior</text>
 		<text lang="et">{0} kagupoolne sisenurk</text>
 		<text lang="de">{0}, Südostecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle sud-est interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud-est interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-56.57" y="-35.36" />
@@ -7595,6 +8006,7 @@ for the symbols.
 		<name lang="ro">Colț sud interior</name>
 		<name lang="et">Lõunapoolne sisenurk</name>
 		<name lang="de">Südecke, innen</name>
+		<name lang="ca">Angle sud interior</name>
 		<text lang="en-AU">S inside corner of {0}</text>
 		
 		<text lang="en">S inside corner of {0}</text>
@@ -7609,6 +8021,8 @@ for the symbols.
 		<text lang="ro">{0} colț sud interior</text>
 		<text lang="et">{0} lõunapoolne sisenurk</text>
 		<text lang="de">{0}, Südecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle sud interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="15" />
@@ -7634,6 +8048,7 @@ for the symbols.
 		<name lang="ro">Colț sud-vest interior</name>
 		<name lang="et">Edalapoolne sisenurk</name>
 		<name lang="de">Südwestecke, innen</name>
+		<name lang="ca">Angle sud-oest interior</name>
 		<text lang="en-AU">SW inside corner of {0}</text>
 		
 		<text lang="en">SW inside corner of {0}</text>
@@ -7648,6 +8063,8 @@ for the symbols.
 		<text lang="ro">{0} colț sud-vest interior</text>
 		<text lang="et">{0} edelapoolne sisenurk</text>
 		<text lang="de">{0}, Südwestecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle sud-oest interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud-oest interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="56.57" y="-35.36" />
@@ -7673,6 +8090,7 @@ for the symbols.
 		<name lang="ro">Colț vest interior</name>
 		<name lang="et">Läänepoolne sisenurk</name>
 		<name lang="de">Westecke, innen</name>
+		<name lang="ca">Angle oest interior</name>
 		<text lang="en-AU">W inside corner of {0}</text>
 		
 		<text lang="en">W inside corner of {0}</text>
@@ -7687,6 +8105,8 @@ for the symbols.
 		<text lang="ro">{0} colț vest interior</text>
 		<text lang="et">{0} läänepoolne sisenurk</text>
 		<text lang="de">{0}, Westecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle oest interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle oest interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="15" y="-65" />
@@ -7712,6 +8132,7 @@ for the symbols.
 		<name lang="ro">Colț nord-vest interior</name>
 		<name lang="et">Loodepoolne sisenurk</name>
 		<name lang="de">Nordwestecke, innen</name>
+		<name lang="ca">Angle nord-oest interior</name>
 		<text lang="en-AU">NW inside corner of {0}</text>
 		
 		<text lang="en">NW inside corner of {0}</text>
@@ -7726,6 +8147,8 @@ for the symbols.
 		<text lang="ro">{0} colț nord-vest interior</text>
 		<text lang="et">{0} loodepoolne sisenurk</text>
 		<text lang="de">{0}, Nordwestecke, innen</text>
+		<text lang="ca" gender="femení">a l'angle nord-oest interior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord-oest interior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="56.57" y="35.36" />
@@ -7751,6 +8174,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nordic</name>
 		<name lang="et">Põhjapoolne välisnurk</name>
 		<name lang="de">Nordecke, außen</name>
+		<name lang="ca">Angle nord exterior</name>
 		<text lang="en-AU">N outside corner of {0}</text>
 		
 		<text lang="en">N outside corner of {0}</text>
@@ -7765,6 +8189,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior nordic</text>
 		<text lang="et">{0} põhjapoolne välisnurk</text>
 		<text lang="de">{0}, Nordecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle nord exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="65" y="-40" />
@@ -7790,6 +8216,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nord-estic</name>
 		<name lang="et">Kirdepoolne välisnurk</name>
 		<name lang="de">Nordostecke, außen</name>
+		<name lang="ca">Angle nord-est exterior</name>
 		<text lang="en-AU">NE outside corner of {0}</text>
 		
 		<text lang="en">NE outside corner of {0}</text>
@@ -7804,6 +8231,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior nord-estic</text>
 		<text lang="et">{0} kirdepoolne välisnurk</text>
 		<text lang="de">{0}, Nordostecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle nord-est exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord-est exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-69.25" y="22.68" />
@@ -7829,6 +8258,7 @@ for the symbols.
 		<name lang="ro">Colț exterior estic</name>
 		<name lang="et">Idapoolne välisnurk</name>
 		<name lang="de">Ostecke, außen</name>
+		<name lang="ca">Angle est exterior</name>
 		<text lang="en-AU">E outside corner of {0}</text>
 		
 		<text lang="en">E outside corner of {0}</text>
@@ -7843,6 +8273,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior estic</text>
 		<text lang="et">{0} idapoolne välisnurk</text>
 		<text lang="de">{0}, Ostecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle est exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle est exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-40" y="-65" />
@@ -7868,6 +8300,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sud-estic</name>
 		<name lang="et">Kagupoolne välisnurk</name>
 		<name lang="de">Südostecke, außen</name>
+		<name lang="ca">Angle sud-est exterior</name>
 		<text lang="en-AU">SE outside corner of {0}</text>
 		
 		<text lang="en">SE outside corner of {0}</text>
@@ -7882,6 +8315,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior sud-estic</text>
 		<text lang="et">{0} kagupoolne välisnurk</text>
 		<text lang="de">{0}, Südostecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle sud-est exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud-est exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-69.25" y="-22.68" />
@@ -7907,6 +8342,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sudic</name>
 		<name lang="et">Lõunapoolne välisnurk</name>
 		<name lang="de">Südecke, außen</name>
+		<name lang="ca">Angle sud exterior</name>
 		<text lang="en-AU">S outside corner of {0}</text>
 		
 		<text lang="en">S outside corner of {0}</text>
@@ -7921,6 +8357,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior sudic</text>
 		<text lang="et">{0} lõunapoolne välisnurk</text>
 		<text lang="de">{0}, Südecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle sud exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="65" y="40" />
@@ -7946,6 +8384,7 @@ for the symbols.
 		<name lang="ro">Colț exterior sud-vestic</name>
 		<name lang="et">Edelapoolne välisnurk</name>
 		<name lang="de">Südwestecke, außen</name>
+		<name lang="ca">Angle sud-oest exterior</name>
 		<text lang="en-AU">SW outside corner of {0}</text>
 		
 		<text lang="en">SW outside corner of {0}</text>
@@ -7960,6 +8399,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior sud-vestic</text>
 		<text lang="et">{0} edelapoolne välisnurk</text>
 		<text lang="de">{0}, Südwestecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle sud-oest exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle sud-oest exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="69.25" y="-22.68" />
@@ -7985,6 +8426,7 @@ for the symbols.
 		<name lang="ro">Colț exterior vestic</name>
 		<name lang="et">Läänepoolne välisnurk</name>
 		<name lang="de">Westecke, außen</name>
+		<name lang="ca">Angle oest exterior</name>
 		<text lang="en-AU">W outside corner of {0}</text>
 		
 		<text lang="en">W outside corner of {0}</text>
@@ -7999,6 +8441,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior vestic</text>
 		<text lang="et">{0} läänepoolne välisnurk</text>
 		<text lang="de">{0}, Westecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle oest exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle oest exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="40" y="-65" />
@@ -8024,6 +8468,7 @@ for the symbols.
 		<name lang="ro">Colț exterior nord-vestic</name>
 		<name lang="et">Loodepoolne välisnurk</name>
 		<name lang="de">Nordwestecke, außen</name>
+		<name lang="ca">Angle nord-oest exterior</name>
 		<text lang="en-AU">NW outside corner of {0}</text>
 		
 		<text lang="en">NW outside corner of {0}</text>
@@ -8038,6 +8483,8 @@ for the symbols.
 		<text lang="ro">{0} colț exterior nord-vestic</text>
 		<text lang="et">{0} loodepoolne välisnurk</text>
 		<text lang="de">{0}, Nordwestecke, außen</text>
+		<text lang="ca" gender="femení">a l'angle nord-oest exterior d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'angle nord-oest exterior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="69.25" y="22.68" />
@@ -8063,6 +8510,7 @@ for the symbols.
 		<name lang="ro">Vârf nordic</name>
 		<name lang="et">Põhjatipp</name>
 		<name lang="de">Nordspitze</name>
+		<name lang="ca">Punta nord</name>
 		<text lang="en-AU">N tip of {0}</text>
 		
 		<text lang="en">N tip of {0}</text>
@@ -8077,6 +8525,8 @@ for the symbols.
 		<text lang="ro">{0} vârf nordic</text>
 		<text lang="et">{0} põhjatipus</text>
 		<text lang="de">{0}, Nordspitze</text>
+		<text lang="ca" gender="femení">a la punta nord d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta nord d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="30" y="-65" />
@@ -8102,6 +8552,7 @@ for the symbols.
 		<name lang="ro">Vârf nord-estic</name>
 		<name lang="et">Kirdetipus</name>
 		<name lang="de">Nordostspitze</name>
+		<name lang="ca">Punta nord-est</name>
 		<text lang="en-AU">NE tip of {0}</text>
 		
 		<text lang="en">NE tip of {0}</text>
@@ -8116,6 +8567,8 @@ for the symbols.
 		<text lang="ro">{0} vârf nord-estic</text>
 		<text lang="et">{0} kirdetipus</text>
 		<text lang="de">{0}, NO-Spitze</text>
+		<text lang="ca" gender="femení">a la punta nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta nord-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-67.18" y="-24.75" />
@@ -8141,6 +8594,7 @@ for the symbols.
 		<name lang="ro">Vârf estic</name>
 		<name lang="et">Idatipp</name>
 		<name lang="de">Ostspitze</name>
+		<name lang="ca">Punta est</name>
 		<text lang="en-AU">E tip of {0}</text>
 		
 		<text lang="en">E tip of {0}</text>
@@ -8155,6 +8609,8 @@ for the symbols.
 		<text lang="ro">{0} vârf estic</text>
 		<text lang="et">{0} idatipus</text>
 		<text lang="de">{0}, Ostspitze</text>
+		<text lang="ca" gender="femení">a la punta est d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="30" />
@@ -8180,6 +8636,7 @@ for the symbols.
 		<name lang="ro">Vârf sud-estic</name>
 		<name lang="et">Kagutipus</name>
 		<name lang="de">Südostspitze</name>
+		<name lang="ca">Punta sud-est</name>
 		<text lang="en-AU">SE tip of {0}</text>
 		
 		<text lang="en">SE tip of {0}</text>
@@ -8194,6 +8651,8 @@ for the symbols.
 		<text lang="ro">{0} vârf sud-estic</text>
 		<text lang="et">{0} kagutipus</text>
 		<text lang="de">{0}, SO-Spitze</text>
+		<text lang="ca" gender="femení">a la punta sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta sud-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-67.18" y="24.75" />
@@ -8219,6 +8678,7 @@ for the symbols.
 		<name lang="ro">Vârf sudic</name>
 		<name lang="et">Lõunatipp</name>
 		<name lang="de">Südspitze</name>
+		<name lang="ca">Punta sud</name>
 		<text lang="en-AU">S tip of {0}</text>
 		
 		<text lang="en">S tip of {0}</text>
@@ -8233,6 +8693,8 @@ for the symbols.
 		<text lang="ro">{0} vârf sudic</text>
 		<text lang="et">{0} lõunatipus</text>
 		<text lang="de">{0}, Südspitze</text>
+		<text lang="ca" gender="femení">a la punta sud d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta sud d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="30" y="65" />
@@ -8258,6 +8720,7 @@ for the symbols.
 		<name lang="ro">Vârf sud-vestic</name>
 		<name lang="et">Edelatipp</name>
 		<name lang="de">Südwestspitze</name>
+		<name lang="ca">Punta sud-oest</name>
 		<text lang="en-AU">SW tip of {0}</text>
 		
 		<text lang="en">SW tip of {0}</text>
@@ -8272,6 +8735,8 @@ for the symbols.
 		<text lang="ro">{0} vârf sud-vestic</text>
 		<text lang="et">{0} edelatipus</text>
 		<text lang="de">{0}, SW-Spitze</text>
+		<text lang="ca" gender="femení">a la punta sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta sud-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="67.18" y="24.75" />
@@ -8297,6 +8762,7 @@ for the symbols.
 		<name lang="ro">Vârf vestic</name>
 		<name lang="et">Läänetipp</name>
 		<name lang="de">Westspitze</name>
+		<name lang="ca">Punta oest</name>
 		<text lang="en-AU">W tip of {0}</text>
 		
 		<text lang="en">W tip of {0}</text>
@@ -8311,6 +8777,8 @@ for the symbols.
 		<text lang="ro">{0} vârf vestic</text>
 		<text lang="et">{0} läänetipus</text>
 		<text lang="de">{0}, Westspitze</text>
+		<text lang="ca" gender="femení">a la punta oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="65" y="30" />
@@ -8336,6 +8804,7 @@ for the symbols.
 		<name lang="ro">Vârf nord-vestic</name>
 		<name lang="et">Loodetipp</name>
 		<name lang="de">Nordwestspitze</name>
+		<name lang="ca">Punta nord-oest</name>
 		<text lang="en-AU">NW tip of {0}</text>
 		
 		<text lang="en">NW tip of {0}</text>
@@ -8350,6 +8819,8 @@ for the symbols.
 		<text lang="ro">{0} vârf nord-vestic</text>
 		<text lang="et">{0} loodetipus</text>
 		<text lang="de">{0}, NW-Spitze</text>
+		<text lang="ca" gender="femení">a la punta nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a la punta nord-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="67.18" y="-24.75" />
@@ -8375,6 +8846,7 @@ for the symbols.
 		<name lang="ro">Capăt nordic</name>
 		<name lang="et">Põhja otsa</name>
 		<name lang="de">Nordende</name>
+		<name lang="ca">Extrem nord</name>
 		<text lang="en-AU">N end of {0}</text>
 		
 		<text lang="en">N end of {0}</text>
@@ -8389,6 +8861,8 @@ for the symbols.
 		<text lang="ro">{0} capăt nordic</text>
 		<text lang="et">{0} põhja ots</text>
 		<text lang="de">{0}, Nordende</text>
+		<text lang="ca" gender="femení">a l'extrem nord d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem nord d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="0" y="-65" />
@@ -8414,6 +8888,7 @@ for the symbols.
 		<name lang="ro">Capăt nord-estic</name>
 		<name lang="et">Kirdeots</name>
 		<name lang="de">Nordostende</name>
+		<name lang="ca">Extrem nord-est</name>
 		<text lang="en-AU">NE end of {0}</text>
 		
 		<text lang="en">NE end of {0}</text>
@@ -8428,6 +8903,8 @@ for the symbols.
 		<text lang="ro">{0} capăt nord-estic</text>
 		<text lang="et">{0} kirde ots</text>
 		<text lang="de">{0}, NO-Ende</text>
+		<text lang="ca" gender="femení">a l'extrem nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem nord-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-45.96" y="-45.96" />
@@ -8453,6 +8930,7 @@ for the symbols.
 		<name lang="ro">Capăt estic</name>
 		<name lang="et">Idaots</name>
 		<name lang="de">Ostende</name>
+		<name lang="ca">Extrem est</name>
 		<text lang="en-AU">E end of {0}</text>
 		
 		<text lang="en">E end of {0}</text>
@@ -8467,6 +8945,8 @@ for the symbols.
 		<text lang="ro">{0} capăt estic</text>
 		<text lang="et">{0} ida ots</text>
 		<text lang="de">{0}, Ostende</text>
+		<text lang="ca" gender="femení">a l'extrem est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="0" />
@@ -8492,6 +8972,7 @@ for the symbols.
 		<name lang="ro">Capăt sud-estic</name>
 		<name lang="et">Kaguots</name>
 		<name lang="de">Südostende</name>
+		<name lang="ca">Extrem sud-est</name>
 		<text lang="en-AU">SE end of {0}</text>
 		
 		<text lang="en">SE end of {0}</text>
@@ -8506,6 +8987,8 @@ for the symbols.
 		<text lang="ro">{0} capăt sud-estic</text>
 		<text lang="et">{0} kagu ots</text>
 		<text lang="de">{0}, SO-Ende</text>
+		<text lang="ca" gender="femení">a l'extrem sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem sud-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-45.96" y="45.96" />
@@ -8531,6 +9014,7 @@ for the symbols.
 		<name lang="ro">Capăt sudic</name>
 		<name lang="et">Lõunaots</name>
 		<name lang="de">Südende</name>
+		<name lang="ca">Extrem sud</name>
 		<text lang="en-AU">S end of {0}</text>
 		
 		<text lang="en">S end of {0}</text>
@@ -8545,6 +9029,8 @@ for the symbols.
 		<text lang="ro">{0} capăt sudic</text>
 		<text lang="et">{0} lõuna ots</text>
 		<text lang="de">{0}, Südende</text>
+		<text lang="ca" gender="femení">a l'extrem sud d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem sud d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="0" y="-65" />
@@ -8570,6 +9056,7 @@ for the symbols.
 		<name lang="ro">Capăt sud-vestic</name>
 		<name lang="et">Edelaots</name>
 		<name lang="de">Südwestende</name>
+		<name lang="ca">Extrem sud-oest</name>
 		<text lang="en-AU">SW end of {0}</text>
 		
 		<text lang="en">SW end of {0}</text>
@@ -8584,6 +9071,8 @@ for the symbols.
 		<text lang="ro">{0} capăt sud-vestic</text>
 		<text lang="et">{0} edela ots</text>
 		<text lang="de">{0}, SW-Ende</text>
+		<text lang="ca" gender="femení">a l'extrem sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem sud-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="45.96" y="45.96" />
@@ -8609,6 +9098,7 @@ for the symbols.
 		<name lang="ro">Capăt vestic</name>
 		<name lang="et">Lääneots</name>
 		<name lang="de">Westende</name>
+		<name lang="ca">Extrem oest</name>
 		<text lang="en-AU">W end of {0}</text>
 		
 		<text lang="en">W end of {0}</text>
@@ -8623,6 +9113,8 @@ for the symbols.
 		<text lang="ro">{0} capăt vestic</text>
 		<text lang="et">{0} lääne ots</text>
 		<text lang="de">{0}, Westende</text>
+		<text lang="ca" gender="femení">a l'extrem oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="0" />
@@ -8648,6 +9140,7 @@ for the symbols.
 		<name lang="ro">Capăt nord-vestic</name>
 		<name lang="et">Loodeots</name>
 		<name lang="de">Nordwestende</name>
+		<name lang="ca">Extrem nord-oest</name>
 		<text lang="en-AU">NW end of {0}</text>
 		
 		<text lang="en">NW end of {0}</text>
@@ -8662,6 +9155,8 @@ for the symbols.
 		<text lang="ro">{0} capăt nord-vestic</text>
 		<text lang="et">{0} loode ots</text>
 		<text lang="de">{0}, NW-Ende</text>
+		<text lang="ca" gender="femení">a l'extrem nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">a l'extrem nord-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="45.96" y="-45.96" />
@@ -8687,6 +9182,7 @@ for the symbols.
 		<name lang="ro">Piciorul nordic</name>
 		<name lang="et">Põhjajalam</name>
 		<name lang="de">Nordfuß</name>
+		<name lang="ca">Al peu nord</name>
 		<text lang="en-AU">N foot of {0}</text>
 		
 		<text lang="en">N foot of {0}</text>
@@ -8701,6 +9197,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul nordic</text>
 		<text lang="et">{0} põhjajalamil</text>
 		<text lang="de">{0}, Nordfuß</text>
+		<text lang="ca" gender="femení">al peu nord d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu nord d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-10" y="80" />
@@ -8726,6 +9224,7 @@ for the symbols.
 		<name lang="ro">Piciorul nord-estic</name>
 		<name lang="et">Kirdejalam</name>
 		<name lang="de">Nordostfuß</name>
+		<name lang="ca">Al peu nord-est</name>
 		<text lang="en-AU">NE foot of {0}</text>
 		
 		<text lang="en">NE foot of {0}</text>
@@ -8740,6 +9239,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul nord-estic</text>
 		<text lang="et">{0} kirdejalamil</text>
 		<text lang="de">{0}, NO-Fuß</text>
+		<text lang="ca" gender="femení">al peu nord-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu nord-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="40" y="70" />
@@ -8765,6 +9266,7 @@ for the symbols.
 		<name lang="ro">Piciorul estic</name>
 		<name lang="et">Idajalam</name>
 		<name lang="de">Ostfuß</name>
+		<name lang="ca">Al peu est</name>
 		<text lang="en-AU">E foot of {0}</text>
 		
 		<text lang="en">E foot of {0}</text>
@@ -8779,6 +9281,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul estic</text>
 		<text lang="et">{0} idajalamil</text>
 		<text lang="de">{0}, Ostfuß</text>
+		<text lang="ca" gender="femení">al peu est d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="50" y="20" />
@@ -8804,6 +9308,7 @@ for the symbols.
 		<name lang="ro">Piciorul sud-estic</name>
 		<name lang="et">Kagujalam</name>
 		<name lang="de">Südostfuß</name>
+		<name lang="ca">Al peu sud-est</name>
 		<text lang="en-AU">SE foot of {0}</text>
 		
 		<text lang="en">SE foot of {0}</text>
@@ -8818,6 +9323,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul sud-estic</text>
 		<text lang="et">{0} kagujalamil</text>
 		<text lang="de">{0}, SO-Fuß</text>
+		<text lang="ca" gender="femení">al peu sud-est d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu sud-est d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="40" y="-30" />
@@ -8843,6 +9350,7 @@ for the symbols.
 		<name lang="ro">Piciorul sudic</name>
 		<name lang="et">Lõunajalam</name>
 		<name lang="de">Südfuß</name>
+		<name lang="ca">Al peu sud</name>
 		<text lang="en-AU">S foot of {0}</text>
 		
 		<text lang="en">S foot of {0}</text>
@@ -8857,6 +9365,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul sudic</text>
 		<text lang="et">{0} lõunajalamil</text>
 		<text lang="de">{0}, Südfuß</text>
+		<text lang="ca" gender="femení">al peu sud d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu sud d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-10" y="-40" />
@@ -8882,6 +9392,7 @@ for the symbols.
 		<name lang="ro">Piciorul sud-vestic</name>
 		<name lang="et">Edelajalam</name>
 		<name lang="de">Südwestfuß</name>
+		<name lang="ca">Al peu sud-oest</name>
 		<text lang="en-AU">SW foot of {0}</text>
 		
 		<text lang="en">SW foot of {0}</text>
@@ -8896,6 +9407,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul sud-vestic</text>
 		<text lang="et">{0} edelajalamil</text>
 		<text lang="de">{0}, SW-Fuß</text>
+		<text lang="ca" gender="femení">al peu sud-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu sud-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="-30" />
@@ -8921,6 +9434,7 @@ for the symbols.
 		<name lang="ro">Piciorul vestic</name>
 		<name lang="et">Läänejalam</name>
 		<name lang="de">West fuß</name>
+		<name lang="ca">Al peu oest</name>
 		<text lang="en-AU">W foot of {0}</text>
 		
 		<text lang="en">W foot of {0}</text>
@@ -8935,6 +9449,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul vestic</text>
 		<text lang="et">{0} läänejalamil</text>
 		<text lang="de">{0}, Westfuß</text>
+		<text lang="ca" gender="femení">al peu oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-75" y="20" />
@@ -8960,6 +9476,7 @@ for the symbols.
 		<name lang="ro">Piciorul nord-vestic</name>
 		<name lang="et">Loodejalam</name>
 		<name lang="de">Nordwestfuß</name>
+		<name lang="ca">Al peu nord-oest</name>
 		<text lang="en-AU">NW foot of {0}</text>
 		
 		<text lang="en">NW foot of {0}</text>
@@ -8974,6 +9491,8 @@ for the symbols.
 		<text lang="ro">{0} piciorul nord-vestic</text>
 		<text lang="et">{0} loodejalamil</text>
 		<text lang="de">{0}, NW-Fuß</text>
+		<text lang="ca" gender="femení">al peu nord-oest d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu nord-oest d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-65" y="70" />
@@ -8999,6 +9518,7 @@ for the symbols.
 		<name lang="ro">Cotitură</name>
 		<name lang="et">Käänak</name>
 		<name lang="de">Biegung</name>
+		<name lang="ca">Corba</name>
 		<text lang="en-AU">bend in {0}</text>
 		
 		<text lang="en">bend in {0}</text>
@@ -9013,6 +9533,8 @@ for the symbols.
 		<text lang="ro">cotitură de {0}</text>
 		<text lang="et">{0} käänakul</text>
 		<text lang="de">{0}, Biegung</text>
+		<text lang="ca" gender="femení">a la corba d'una {0}</text>
+		<text lang="ca" gender="masculí">a la corba d'un {0}</text>
 		
 		<beziers thickness="10">
 			<point x="35" y="70" />
@@ -9042,6 +9564,7 @@ for the symbols.
 		<name lang="ro">Partea superioară</name>
 		<name lang="et">Ülaosas</name>
 		<name lang="de">Oberer Teil</name>
+		<name lang="ca">Part superior</name>
 		<text lang="en-AU">upper part of {0}</text>
 		
 		<text lang="en">upper part of {0}</text>
@@ -9056,6 +9579,8 @@ for the symbols.
 		<text lang="ro">partea superioară {0}</text>
 		<text lang="et">{0} ülaosas</text>
 		<text lang="de">{0}, oberer Teil</text>
+		<text lang="ca" gender="femení">a la part superior d'una {0}</text>
+		<text lang="ca" gender="masculí">a la part superior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -9084,6 +9609,7 @@ for the symbols.
 		<name lang="ro">Partea inferioară</name>
 		<name lang="et">Lower part</name>
 		<name lang="de">Unterer Teil</name>
+		<name lang="ca">Part inferior</name>
 		<text lang="en-AU">lower part of {0}</text>
 		
 		<text lang="en">lower part of {0}</text>
@@ -9098,6 +9624,8 @@ for the symbols.
 		<text lang="ro">partea inferioară {0}</text>
 		<text lang="et">{0} alumises osas</text>
 		<text lang="de">{0}, unterer Teil</text>
+		<text lang="ca" gender="femení">a la part inferior d'una {0}</text>
+		<text lang="ca" gender="masculí">a la part inferior d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -9126,6 +9654,7 @@ for the symbols.
 		<name lang="ro">În vârful</name>
 		<name lang="et">Peal</name>
 		<name lang="de">Obenauf</name>
+		<name lang="ca">Sobre</name>
 		<text lang="en-AU">top of {0}</text>
 		
 		<text lang="en">top of {0}</text>
@@ -9140,6 +9669,8 @@ for the symbols.
 		<text lang="ro">în vârful {0}</text>
 		<text lang="et">{0} peal</text>
 		<text lang="de">{0}, obenauf</text>
+		<text lang="ca" gender="femení">sobre d'una {0}</text>
+		<text lang="ca" gender="masculí">sobre d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-28" y="-60" />
@@ -9166,6 +9697,7 @@ for the symbols.
 		<name lang="ro">Sub</name>
 		<name lang="et">All</name>
 		<name lang="de">Unterhalb</name>
+		<name lang="ca">Sota</name>
 		<text lang="en-AU">beneath {0}</text>
 		
 		<text lang="en">beneath {0}</text>
@@ -9180,6 +9712,8 @@ for the symbols.
 		<text lang="ro">sub {0}</text>
 		<text lang="et">{0} all</text>
 		<text lang="de">{0}, unterhalb</text>
+		<text lang="ca" gender="femení">sota d'una {0}</text>
+		<text lang="ca" gender="masculí">sota d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-50" y="-30" />
@@ -9206,6 +9740,7 @@ for the symbols.
 		<name lang="ro">La piciorul</name>
 		<name lang="et">Jalamil</name>
 		<name lang="de">Fuß</name>
+		<name lang="ca">Al peu</name>
 		<text lang="en-AU">foot of {0}</text>
 		
 		<text lang="en">foot of {0}</text>
@@ -9220,6 +9755,8 @@ for the symbols.
 		<text lang="ro">La piciorul {0}</text>
 		<text lang="et">{0} jalamil</text>
 		<text lang="de">{0}, Fuß</text>
+		<text lang="ca" gender="femení">al peu d'una {0}</text>
+		<text lang="ca" gender="masculí">al peu d'un {0}</text>
 		
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -9259,6 +9796,7 @@ for the symbols.
 		<name lang="ro">Între</name>
 		<name lang="et">Vahel</name>
 		<name lang="de">Zwischen</name>
+		<name lang="ca">Entre</name>
 		<text lang="en-AU">between {0} and {1}</text>
 		
 		<text lang="en">between {0} and {1}</text>
@@ -9273,6 +9811,7 @@ for the symbols.
 		<text lang="ro">Între {0} și {1}</text>
 		<text lang="et">{0} ja {1} vahel</text>
 		<text lang="de">Zwischen {0} und {1}</text>
+		<text lang="ca" gender="femení">entre {0} i {1}</text>
 		
 		<lines thickness="10">
 			<point x="-60" y="40" />
@@ -9301,6 +9840,7 @@ for the symbols.
 		<name lang="ro">Între (obiecte de același tio)</name>
 		<name lang="et">Vahel (samad objektid)</name>
 		<name lang="de">Zwischen gleichen Objekten</name>
+		<name lang="ca">Entre (objectes amb el mateix símbol)</name>
 		<text lang="en-AU">between {1}</text>
 		
 		<text lang="en">between {1}</text>
@@ -9315,6 +9855,7 @@ for the symbols.
 		<text lang="ro">între {1}</text>
 		<text lang="et">{1} vahel</text>
 		<text lang="de">Zwischen den {1}</text>
+		<text lang="ca">entre {1}</text>
 		
 	</symbol>
 
@@ -9335,6 +9876,7 @@ for the symbols.
 		<name lang="ro">Punct de prim ajutor</name>
 		<name lang="et">Esmaabi</name>
 		<name lang="de">Erste Hilfe - Posten</name>
+		<name lang="ca">Primers auxilis</name>
 		<text lang="en-AU">first aid</text>
 		
 		<text lang="en">first aid</text>
@@ -9349,6 +9891,7 @@ for the symbols.
 		<text lang="ro">punct de prim ajutor</text>
 		<text lang="et">esmaabi</text>
 		<text lang="de">Erste Hilfe</text>
+		<text lang="ca">primers auxilis</text>
 		
 		<filled-polygon>
 			<point x="-20" y="60" />
@@ -9380,6 +9923,7 @@ for the symbols.
 		<name lang="ro">Punct de reînvigorare</name>
 		<name lang="et">Joogi koht</name>
 		<name lang="de">Getränkeposten</name>
+		<name lang="ca">Avituallament</name>
 		<text lang="en-AU">water</text>
 		
 		<text lang="en">water</text>
@@ -9394,6 +9938,7 @@ for the symbols.
 		<text lang="ro">apă</text>
 		<text lang="et">jook</text>
 		<text lang="de">Getränkeposten</text>
+		<text lang="ca">avituallament</text>
 		
 		<beziers thickness="12.5">
 			<point x="60" y="55" />
@@ -9443,6 +9988,7 @@ for the symbols.
 		<name lang="ro">Punct radio sau TV</name>
 		<name lang="et">Raadio või TV kontrollpunkt</name>
 		<name lang="de">Funkposten</name>
+		<name lang="ca">Lloc de transmissió</name>
 		<text lang="en-AU">radio</text>
 		
 		<text lang="en">radio</text>
@@ -9457,6 +10003,7 @@ for the symbols.
 		<text lang="ro">radio-tv</text>
 		<text lang="et">raadio</text>
 		<text lang="de">Funkposten</text>
+		<text lang="ca">lloc de transmissió</text>
 		
 		<lines thickness="12.5">
 			<point x="40" y="70" />
@@ -9480,6 +10027,7 @@ for the symbols.
 		<name lang="ro">Punct de control</name>
 		<name lang="et">Kohtunikuga punkt</name>
 		<name lang="de">Kontrollposten</name>
+		<name lang="ca">Organitzadors</name>
 		<text lang="en-AU">manned</text>
 		
 		<text lang="en">manned</text>
@@ -9494,6 +10042,7 @@ for the symbols.
 		<text lang="ro">cu arbitru</text>
 		<text lang="et">kohtunik</text>
 		<text lang="de">Kontrollposten</text>
+		<text lang="ca">organitzadors</text>
 		
 		<lines thickness="12.5">
 			<point x="-35" y="-70" />
@@ -9532,6 +10081,7 @@ for the symbols.
 		<name lang="ro">Urmează ruta cu banda departe de control</name>
 		<name lang="et">Tähistus KPst väljumisel</name>
 		<name lang="de">Vom Posten weg ausgeflaggte Strecke</name>
+		<name lang="ca">Tram encintat despres del control</name>
 		<text lang="en-AU">follow tapes {0}away from control</text>
 		
 		<text lang="en">follow tapes {0}away from control</text>
@@ -9546,6 +10096,7 @@ for the symbols.
 		<text lang="ro">urmează ruta cu banda {0} departe de control</text>
 		<text lang="et">järgi tähistust {0} KPst väljumisel</text>
 		<text lang="de">Ausgeflaggte Strecke über {0}von Posten weg</text>
+		<text lang="ca">seguiu el tram encintat {0}despres del control</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9595,6 +10146,7 @@ for the symbols.
 		<name lang="ro">Bandă între punctele de control</name>
 		<name lang="et">Tähistus KPde vahel</name>
 		<name lang="de">Ausgeflaggte Strecke zwischen zwei Posten</name>
+		<name lang="ca">Tram encintat entre controls</name>
 		<text lang="en-AU">follow tapes {0}between controls</text>
 		
 		<text lang="en">follow tapes {0}between controls</text>
@@ -9609,6 +10161,7 @@ for the symbols.
 		<text lang="ro">urmează banda {0} între punctele de control</text>
 		<text lang="et">järgi tähistust {0} KPde vahel</text>
 		<text lang="de">Ausgeflaggte Strecke über {0}zwischen Posten</text>
+		<text lang="ca">siguiu el tram encintat {0}entre els dos controls</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9663,6 +10216,7 @@ for the symbols.
 		<name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
 		<name lang="et">Kohustuslik ristumine</name>
 		<name lang="de">Pflichtübergang</name>
+		<name lang="ca">Punt de pas obligatori</name>
 		<text lang="en-AU">mandatory crossing point</text>
 		
 		<text lang="en">mandatory crossing point</text>
@@ -9677,6 +10231,7 @@ for the symbols.
 		<text lang="ro">punct de trecere obligatoriu</text>
 		<text lang="et">kohustuslik ristumine</text>
 		<text lang="de">Pflichtübergang</text>
+		<text lang="ca">punt de pas obligatori</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9722,6 +10277,7 @@ for the symbols.
 		<name lang="ro">Pasaj obligatoriu</name>
 		<name lang="et">Kohustuslik läbipääs</name>
 		<name lang="de">Pflichtpassage</name>
+		<name lang="ca">Tram de pas obligatori</name>
 		<text lang="en-AU">mandatory passage</text>
 		
 		<text lang="en">mandatory passage</text>
@@ -9736,6 +10292,7 @@ for the symbols.
 		<text lang="ro">pasaj obligatoriu</text>
 		<text lang="et">kohustuslik läbipääs</text>
 		<text lang="de">Pflichtpassage</text>
+		<text lang="ca">tram de pas obligatori</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9784,6 +10341,7 @@ for the symbols.
 		<name lang="ro">Schimb de hartă</name>
 		<name lang="et">Kaardivahetus</name>
 		<name lang="de">Kartenwechsel</name>
+		<name lang="ca">Canvi de mapa</name>
 		<text lang="en-AU">follow tapes {0}to map exchange</text>
 		
 		<text lang="en">follow tapes {0}to map exchange</text>
@@ -9798,6 +10356,7 @@ for the symbols.
 		<text lang="ro">urmează banda {0} pentru schimb de hartă</text>
 		<text lang="et">järgi tähistust {0} kaardivahetuseni</text>
 		<text lang="de">Ausgeflaggte Strecke {0}zum Kartenwechsel</text>
+		<text lang="ca"> {0}de tram encintat fins el canvi de mapa</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9906,6 +10465,7 @@ for the symbols.
 		<name lang="ro">Bandă până la sosire</name>
 		<name lang="et">Tähistus Finišisse</name>
 		<name lang="de">Ausgeflaggte Strecke zum Ziel</name>
+		<name lang="ca">Tram encintat</name>
 		<text lang="en-AU">follow tapes {0}to finish</text>
 		
 		<text lang="en">follow tapes {0}to finish</text>
@@ -9920,6 +10480,7 @@ for the symbols.
 		<text lang="ro">urmează banda {0} până la sosire</text>
 		<text lang="et">tähistus {0} finišisse</text>
 		<text lang="de">Ausgeflaggte Strecke {0}zum Ziel</text>
+		<text lang="ca">{0}de tram encintat fins l'arribada</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -9975,6 +10536,7 @@ for the symbols.
 		<name lang="ro">Parcurgere până la pâlnia de sosire</name>
 		<name lang="et">Suundu finišikoridori</name>
 		<name lang="de">Zum Ziel orientieren</name>
+		<name lang="ca">Tram parcialment encintat</name>
 		<text lang="en-AU">navigate {0}to finish funnel</text>
 		
 		<text lang="en">navigate {0}to finish funnel</text>
@@ -9989,6 +10551,7 @@ for the symbols.
 		<text lang="ro">parcurgere {0} până la pâlnia de sosire</text>
 		<text lang="et">suundu {0} finišikoridori</text>
 		<text lang="de">{0}zum Zieleinlauf</text>
+		<text lang="ca">{0}de tram parcialment encintat fins l'arribada</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -10045,6 +10608,7 @@ for the symbols.
 		<name lang="ro">Parcurgere până la sosire (fără bandă)</name>
 		<name lang="et">Suundu finišisse (tähistus puudub)</name>
 		<name lang="de">Nichtmarkierte Strecke zum Ziel</name>
+		<name lang="ca">Tram lliure (no encintat)</name>
 		<text lang="en-AU">navigate {0}to finish</text>
 		
 		<text lang="en">navigate {0}to finish</text>
@@ -10059,6 +10623,7 @@ for the symbols.
 		<text lang="ro">parcurgere {0} până la sosire</text>
 		<text lang="et">suundu {0} finišisse</text>
 		<text lang="de">{0}zum Ziel</text>
+		<text lang="ca">{0}de tram no encintat fins l'arribada</text>
 		
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
