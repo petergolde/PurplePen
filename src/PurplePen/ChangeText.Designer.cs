@@ -241,11 +241,11 @@
             this.Controls.Add(this.usageLabel);
             this.Name = "ChangeText";
             this.Controls.SetChildIndex(this.usageLabel, 0);
-            this.Controls.SetChildIndex(this.okButton, 0);
-            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
             this.Controls.SetChildIndex(this.groupBox3, 0);
+            this.Controls.SetChildIndex(this.okButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.specialTextMenu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

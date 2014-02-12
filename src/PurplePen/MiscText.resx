@@ -491,4 +491,22 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="Yellow" xml:space="preserve">
     <value>Yellow</value>
   </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Set the appearance of the line. After pressing OK, drag the mouse to draw the line segments in the desired location.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Add Line</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Set the appearance of the rectangle. After pressing OK, drag the mouse to place the rectangle in the desired location.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Add Rectangle</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Change the appearance of the line or rectangle.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Change Line Appearance</value>
+  </data>
 </root>

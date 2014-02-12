@@ -120,7 +120,7 @@
             // ColorChooserDialog
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.groupBoxPreview);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.upDownBlack);

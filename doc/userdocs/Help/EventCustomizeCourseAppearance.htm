@@ -31,7 +31,7 @@ markings, which will be scaled in the same ratio. The IOF standard is 6.0 mm.</p
 circles, start triangle, and the finish circle. The IOF standard is 0.35 mm.</p>
     <p><strong>Center dot diameter</strong>: If set to something higher than 0.00m (the IOF standard), places a dot of the indicated diameter in the center of the control circle. Although not typically used, it is useful for certain types of maps.</p>
 <p><strong>Control number height</strong>: Sets the height of digits used for 
-controls numbers. The IOF standard is 4.0 mm.</p>
+control numbers. The IOF standard is 4.0 mm.</p>
     <p><strong>Control number style</strong>: Determines if the control number is regular or boldface. The IOF standard is regular.</p>
     <p><strong>White outline around numbers</strong>: If greater than zero, a white outline of the given width is placed around numbers to make them more visible against colored or complex backgrounds.
     A value between 0.1mm and 0.4mm usually works best.</p>
@@ -42,13 +42,14 @@ be determined, a default purple color is used. Uncheck this to specify the
 purple color directly.</p>
 <p><strong>Cyan, Magenta, Yellow, Black</strong>: Specifies the percentages of 
 each pigment used to create the purple color, from 0 to 100.</p>
+    <p><strong>Control Descriptions, Color</strong>: Specifies whether control descriptions on the map are displayed in black or purple. The default is black.</p>
 <p>&nbsp;</p>
 <p><strong>Note:</strong> the sizes of control circles and other feature are 
-calculated based on the scale the map will be printed at. If the circles appears 
+calculated based on the scale the map will be printed at. If the circles appear 
 too large or too small, it is likely that the <a href="EventMapFile.htm">map 
 scale</a> or <a href="CourseProperties.htm">print scale</a> is set incorrectly, 
 or (if an image file is used for the map) the <a href="EventMapFile.htm">dots 
-per inch</a> of the image is set incorrectly.</p>
+per inch</a> of the image is set incorrectly. This type of error will likely result in the length of the courses being calculated incorrectly as well, so it is highly recommended to fix the scale or dots per inch instead of adjusting the circle sizes.</p>
 <!-- #EndEditable -->
 </BODY>
 <!-- #EndTemplate -->

@@ -48,6 +48,8 @@
             this.labelRadiusMm = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.usageLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownGapSize)).BeginInit();
@@ -55,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownRadius)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -262,17 +265,31 @@
             this.pictureBoxPreview.TabStop = false;
             this.pictureBoxPreview.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxPreview_Paint);
             // 
+            // groupBox2
+            // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.tableLayoutPanel);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // usageLabel
+            // 
+            resources.ApplyResources(this.usageLabel, "usageLabel");
+            this.usageLabel.Name = "usageLabel";
+            // 
             // LinePropertiesDialog
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.usageLabel);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.tableLayoutPanel);
             this.Name = "LinePropertiesDialog";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBox2, 0);
+            this.Controls.SetChildIndex(this.usageLabel, 0);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownWidth)).EndInit();
@@ -281,6 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownRadius)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -307,5 +325,7 @@
         private System.Windows.Forms.Label labelCornerRadius;
         private System.Windows.Forms.NumericUpDown upDownRadius;
         private System.Windows.Forms.Label labelRadiusMm;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label usageLabel;
     }
 }

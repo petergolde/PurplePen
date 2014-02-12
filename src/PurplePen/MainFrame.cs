@@ -1394,7 +1394,7 @@ namespace PurplePen
             short ocadId;
             FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
 
-            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
+            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.AddLineTitle, MiscText.AddLineExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
             // Get the defaults for a new line.
             SpecialColor color;
@@ -1428,7 +1428,7 @@ namespace PurplePen
             short ocadId;
             FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
 
-            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
+            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.AddRectangleTitle, MiscText.AddRectangleExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
             // Get the defaults for a new line.
             SpecialColor color;
@@ -1492,7 +1492,7 @@ namespace PurplePen
                 float c, m, y, k;
                 FindPurple.GetPurpleColor(mapDisplay, appearance, out colorOcadId, out c, out m, out y, out k);
 
-                LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(CmykColor.FromCmyk(c, m, y, k), appearance);
+                LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.ChangeLineAppearanceTitle, MiscText.ChangeLineAppearanceExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
                 // Get the defaults for a new line.
                 SpecialColor color;

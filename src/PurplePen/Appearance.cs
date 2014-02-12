@@ -240,8 +240,8 @@ namespace PurplePen
         // Default options for line specials.
         public static SpecialColor lineSpecialColor = SpecialColor.Purple;
         public static LineKind lineSpecialKind = LineKind.Single;
-        public const float lineSpecialWidth = 0.50F;
-        public const float lineSpecialGapSize = 0.70F;
+        public const float lineSpecialWidth = 0.35F;
+        public const float lineSpecialGapSize = 0.50F;
         public const float lineSpecialDashSize = 2.0F;
     }
 

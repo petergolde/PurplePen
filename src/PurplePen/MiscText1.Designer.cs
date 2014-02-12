@@ -61,6 +61,42 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set the appearance of the line. After pressing OK, drag the mouse to draw the line segments in the desired location..
+        /// </summary>
+        internal static string AddLineExplanation {
+            get {
+                return ResourceManager.GetString("AddLineExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Line.
+        /// </summary>
+        internal static string AddLineTitle {
+            get {
+                return ResourceManager.GetString("AddLineTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set the appearance of the rectangle. After pressing OK, drag the mouse to place the rectangle in the desired location..
+        /// </summary>
+        internal static string AddRectangleExplanation {
+            get {
+                return ResourceManager.GetString("AddRectangleExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Rectangle.
+        /// </summary>
+        internal static string AddRectangleTitle {
+            get {
+                return ResourceManager.GetString("AddRectangleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter the text you wish to place on the map. After pressing OK, drag the mouse to place the text in the desired location..
         /// </summary>
         internal static string AddTextSpecialExplanation {
@@ -300,6 +336,24 @@ namespace PurplePen {
         internal static string ChangeDescriptionLanguage {
             get {
                 return ResourceManager.GetString("ChangeDescriptionLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change the appearance of the line or rectangle..
+        /// </summary>
+        internal static string ChangeLineAppearanceExplanation {
+            get {
+                return ResourceManager.GetString("ChangeLineAppearanceExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Line Appearance.
+        /// </summary>
+        internal static string ChangeLineAppearanceTitle {
+            get {
+                return ResourceManager.GetString("ChangeLineAppearanceTitle", resourceCulture);
             }
         }
         

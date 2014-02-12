@@ -360,6 +360,18 @@
 					<param name="Name" value="Text">
 					<param name="Local" value="EditAddText.htm">
 					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Image">
+					<param name="Local" value="EditAddImage.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Line">
+					<param name="Local" value="EditAddLine.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Rectangle">
+					<param name="Local" value="EditAddRectangle.htm">
+					</OBJECT>
 			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Add Text line...">
@@ -388,6 +400,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Change Text...">
 				<param name="Local" value="ItemChangeText.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change Line Appearance...">
+				<param name="Local" value="ItemChangeLineAppearance.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Rotate">
