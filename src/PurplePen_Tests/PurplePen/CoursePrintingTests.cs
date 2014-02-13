@@ -223,6 +223,19 @@ namespace PurplePen.Tests
             CoursePrintingTest("courseprinting\\test3", coursePrintSettings, new CourseAppearance());
         }
 
+        // Test with graphics things
+        [TestMethod]
+        public void PrintCourses4()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor_graphics.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = true;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] {CourseId(2) };
+            CoursePrintingTest("courseprinting\\test4", coursePrintSettings, new CourseAppearance());
+        }
+
         [TestMethod]
         public void PrintBitmapBaseMap()
         {

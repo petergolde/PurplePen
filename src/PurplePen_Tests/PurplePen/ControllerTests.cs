@@ -2139,6 +2139,36 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.png"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
         }
 
+        [TestMethod]
+        public void OcadCreation13()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create13");
+            settings.CourseIds = new Id<Course>[1] { CourseId(2) };
+            settings.version = 8;
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("courseprinting\\marymoor_graphics.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create13\\Course 2.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create13\\Course 2_expected.txt") },
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create13\\mrsneeze.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Water lilies.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter(1).jpg") 
+                },
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create13\\mrsneeze_expected.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Water lilies_expected.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter_expected.jpg"), 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter(1)_expected.jpg") 
+                });
+        }
+
 
 
 

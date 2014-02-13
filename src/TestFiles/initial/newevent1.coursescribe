@@ -6,6 +6,6 @@
     <numbering start="55" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
     <course-appearance />
-    <descriptions lang="en" />
+    <descriptions lang="en" color="black" />
   </event>
 </course-scribe-event>
