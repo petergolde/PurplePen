@@ -1027,5 +1027,17 @@ namespace PurplePen
 
             return imageName;
         }
+
+        // Get all fonts used by text specials.
+        public static IEnumerable<string> GetTextSpecialFonts(EventDB eventDB)
+        {
+            HashSet<string> fonts = new HashSet<string>();
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Text)
+                    fonts.Add(special.fontName);
+            }
+
+            return fonts;
+        }
     }
 }

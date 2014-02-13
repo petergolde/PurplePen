@@ -1795,7 +1795,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
             // First time, should get the list of missing fonts.
             string[] result = controller.MissingFontList();
-            TestUtil.TestEnumerableAnyOrder(result, new string[] { "Spyroclassic", "GeosansLight" });
+            TestUtil.TestEnumerableAnyOrder(result, new string[] { "Spyroclassic", "GeosansLight", "Aberdeen" });
 
             // Second time, should be null or empty.
             result = controller.MissingFontList();

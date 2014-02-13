@@ -329,8 +329,16 @@ namespace PurplePen
                 Event ev = eventDB.GetEvent();
                 if (ev.ignoreMissingFonts)            // Never return a list of missing fonts if the event says so.
                     return null;
-                else
-                    return mapDisplay.MissingFonts();
+                else {
+                    // Return the fonts missing from map or text specials.
+                    HashSet<string> missingFonts = new HashSet<string>();
+                    missingFonts.UnionWith(mapDisplay.MissingFonts());
+                    missingFonts.UnionWith(MissingFontsInTextSpecials());
+                    if (missingFonts.Count > 0)
+                        return missingFonts.ToArray();
+                    else
+                        return null;
+                }
             }
             else {
                 return null;
@@ -352,6 +360,12 @@ namespace PurplePen
 
                 undoMgr.EndCommand(797);
             }
+        }
+
+        private IEnumerable<string> MissingFontsInTextSpecials()
+        {
+            ITextMetrics metrics = MapUtil.TextMetricsProvider;
+            return QueryEvent.GetTextSpecialFonts(eventDB).Where(fontName => !metrics.TextFaceIsInstalled(fontName));
         }
 
         // Change the command mode that is active.

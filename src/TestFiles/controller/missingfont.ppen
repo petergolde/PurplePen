@@ -3,8 +3,11 @@
     <title>Sample Event 1</title>
     <notes>This is a sample event for testing.</notes>
     <map kind="OCAD" scale="10000" ignore-missing-fonts="false">missingfont9.ocd</map>
+    <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" color="black" />
   </event>
   <control id="1" kind="start">
     <location x="5" y="0" />
@@ -22,11 +25,15 @@
     <location x="13" y="-7.8" />
     <description box="all" iof-2004-ref="13.3" />
   </control>
-  <control id="4" kind="normal" gaps="11111111111111111111111111011111">
+  <control id="4" kind="normal">
     <code>32</code>
     <location x="20" y="-10.5" />
     <description box="D" iof-2004-ref="3.7" />
     <description box="H" iof-2004-ref="12.1" />
+    <gaps scale="10000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="10000">56.25:67.5</circle-gaps>
+    <gaps scale="15000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="15000">56.25:67.5</circle-gaps>
     <description-text>very marshy spot</description-text>
   </control>
   <control id="5" kind="normal">
@@ -158,31 +165,37 @@
   <course id="1" kind="normal" order="5">
     <name>White</name>
     <secondary-title>White is right</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="1" />
     <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="6">
     <name>Yellow</name>
+    <labels label-kind="sequence" />
     <options print-scale="15000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="score" order="2">
     <name>Rambo</name>
+    <labels label-kind="code" />
     <first course-control="51" />
-    <options print-scale="10000" description-kind="symbols" />
+    <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="3">
     <name>SampleCourse4</name>
+    <labels label-kind="sequence" />
     <first course-control="11" />
     <options print-scale="15000" climb="173" description-kind="symbols" />
   </course>
   <course id="5" kind="score" order="4">
     <name>Score 4</name>
     <secondary-title>Score more!</secondary-title>
+    <labels label-kind="code" />
     <first course-control="101" />
-    <options print-scale="15000" description-kind="symbols" />
+    <options print-scale="15000" score-column="A" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="1">
     <name>Green Y</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
     <options print-scale="15000" description-kind="symbols" />
   </course>
@@ -336,4 +349,36 @@
     <next course-control="213" />
   </course-control>
   <course-control id="213" control="6" />
+  <special-object id="1" kind="text">
+    <text>Hi There</text>
+    <font name="Times New Roman" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="-3.744251" y="26.0640049" />
+    <location x="21.2941322" y="18.891531" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="text">
+    <text>Yo</text>
+    <font name="Arial" bold="false" italic="false" />
+    <appearance color="purple" />
+    <location x="15.4607134" y="16.8261738" />
+    <location x="24.8190937" y="10.5045528" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="3" kind="text">
+    <text>Zippy</text>
+    <font name="Aberdeen" bold="false" italic="false" />
+    <appearance color="purple" />
+    <location x="-16.3193321" y="16.83987" />
+    <location x="-5.054964" y="11.9846878" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="4" kind="text">
+    <text>Sly</text>
+    <font name="Aberdeen" bold="false" italic="false" />
+    <appearance color="purple" />
+    <location x="-14.3043861" y="-7.06468964" />
+    <location x="-1.75778294" y="-14.5759354" />
+    <courses all="true" />
+  </special-object>
 </course-scribe-event>
