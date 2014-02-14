@@ -158,8 +158,10 @@ namespace PurplePen
             }
 
             // Automatically add cuts to close control circles in the layout.
-            if (courseView.Kind != CourseView.CourseViewKind.AllControls)
+            if (courseView.Kind != CourseView.CourseViewKind.AllControls) {
                 AutoCutCircles(courseLayout, layer);
+                AutoCutLegs(eventDB, courseView.CourseDesignator, courseLayout, layer);
+            }
         }
 
         // Does this control view have a custom number placement?
@@ -837,10 +839,64 @@ namespace PurplePen
             }
         }
 
-        // Find location where the gap begins.
-        private static PointF GapStartLocation(PointF pointF, float radiusControl, int gapNum)
+        // Cut any overlapping legs in the given layer.
+        private static void AutoCutLegs(EventDB eventDB, CourseDesignator courseDesignator, CourseLayout courseLayout, CourseLayer layer)
         {
-            return Geometry.MoveDistance(pointF, radiusControl, gapNum * (360F / 32F));
+            foreach (CourseObj courseObj in courseLayout) {
+                if (courseObj.layer == layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
+                    AutoCutLeg(eventDB, courseDesignator, (LineCourseObj)courseObj, courseLayout);
+            }
         }
+
+        // Check this leg and add cuts to it if needed.
+        private static void AutoCutLeg(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, CourseLayout courseLayout)
+        {
+            foreach (CourseObj courseObj in courseLayout) {
+                if (courseObj != legObj && courseObj.layer == legObj.layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
+                    CutLegWithRespectTo(eventDB, courseDesignator, legObj, (LineCourseObj)courseObj);
+                if (courseObj != legObj && courseObj.layer == legObj.layer && courseObj is PointCourseObj)
+                    CutLegWithRespectTo(eventDB, courseDesignator, legObj, (PointCourseObj)courseObj);
+            }
+        }
+
+        // Cut the leg "legObj" with respect to "otherObj", if they intersect
+        private static void CutLegWithRespectTo(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, LineCourseObj otherObj)
+        {
+            PointF[] intersectionPoints;
+
+            if (legObj.path.Intersects(otherObj.path, out intersectionPoints) && intersectionPoints != null) {
+                // The other line intersections this one. Only the later leg is split.
+                if (QueryEvent.DoesCourseControlPrecede(eventDB, courseDesignator, otherObj.courseControlId, legObj.courseControlId)) {
+                    foreach (PointF intersectionPoint in intersectionPoints) {
+                        float gapRadius = (eventDB.GetEvent().courseAppearance.controlCircleSize * NormalCourseAppearance.lineOverlapGapSize) / 2;
+                        CutLegAtPoint(legObj, intersectionPoint, gapRadius);
+                    }
+                }
+            }
+        }
+
+        private static void CutLegAtPoint(LineCourseObj legObj, PointF intersectionPoint, float gapRadius)
+        {
+            float distanceAlongLine = legObj.path.LengthToPoint(intersectionPoint);
+            PointF pt1 = legObj.path.PointAtLength(distanceAlongLine - gapRadius);
+            PointF pt2 = legObj.path.PointAtLength(distanceAlongLine + gapRadius);
+            legObj.gaps = LegGap.AddGap(legObj.path, legObj.gaps, pt1, pt2);
+        }
+
+        // Cut the leg "legObj" with respect to "otherObj", if they overlap
+        private static void CutLegWithRespectTo(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, PointCourseObj otherObj)
+        {
+            float radiusOther = otherObj.ApparentRadius;
+            PointF nearestPointOnLeg;
+            float distance = legObj.path.DistanceFromPoint(otherObj.location, out nearestPointOnLeg);
+
+            if (distance < radiusOther && nearestPointOnLeg != legObj.path.FirstPoint && nearestPointOnLeg != legObj.path.LastPoint) {
+                float gapRadius = (float) Math.Sqrt(radiusOther * radiusOther - distance * distance);
+                gapRadius += (eventDB.GetEvent().courseAppearance.controlCircleSize * NormalCourseAppearance.lineOverlapGapSize) / 2;
+
+                CutLegAtPoint(legObj, nearestPointOnLeg, gapRadius);
+            }
+        }
+
     }
 }

@@ -407,6 +407,7 @@ namespace PurplePen
         public Id<CourseControl> courseControlId2;            // Id of second associated course control (normal leg/flagged leg)
         public SymPath path;                      // Path of the line   
         public LegGap[] gaps;                     // Gaps (can be null)
+        public LegGap[] movableGaps;              // Gaps that can be moved with a handle (can be null)
         float thickness;                               // thickness of the line  (unscaled)        
 
         protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float thickness, SymPath path, LegGap[] gaps) :
@@ -416,7 +417,7 @@ namespace PurplePen
            this.thickness = thickness;
 
            this.path = path;
-           this.gaps = gaps;
+           this.gaps = this.movableGaps = gaps;
        }
 
         // Should the ends of the line have handles?
@@ -437,9 +438,9 @@ namespace PurplePen
                handleList.RemoveAt(handleList.Count - 1);
            }
 
-           // Add handles for the gaps.
-           if (gaps != null) {
-               handleList.AddRange(LegGap.GapStartStopPoints(path, gaps));
+           // Add handles for the gaps. (Only the moveable ones)
+           if (movableGaps != null) {
+               handleList.AddRange(LegGap.GapStartStopPoints(path, movableGaps));
            }
 
            // Return the handles as an array.
@@ -566,6 +567,8 @@ namespace PurplePen
                // Handle may be on the gaps. Update those.
                 if (gaps != null) 
                     gaps = LegGap.MoveStartStopPoint(path, gaps, oldHandle, newHandle);
+                if (movableGaps != null)
+                    movableGaps = LegGap.MoveStartStopPoint(path, movableGaps, oldHandle, newHandle);
            }
        }
 

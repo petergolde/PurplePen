@@ -329,6 +329,21 @@ namespace PurplePen
                 return -1;
         }
 
+        // Does courseControl1 precede courseControl2 in the given course.
+        public static bool DoesCourseControlPrecede(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControl1, Id<CourseControl> courseControl2)
+        {
+            bool sawFirst = false, sawSecond = false;
+
+            foreach (Id<CourseControl> id in EnumCourseControlIds(eventDB, courseDesignator)) {
+                if (id == courseControl1)
+                    sawFirst = true;
+                else if (sawFirst && id == courseControl2)
+                    sawSecond = true;
+            }
+
+            return (sawFirst && sawSecond);
+        }
+
         // What is the control load for this control. Return -1 if not used in any courses that have a load set for them.
         public static int GetControlLoad(EventDB eventDB, Id<ControlPoint> controlId)
         {

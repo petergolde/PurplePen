@@ -387,6 +387,41 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void DoesCourseControlPrecede()
+        {
+            bool result;
+
+            Setup("queryevent\\mapexchange1.ppen");
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(601), CourseControlId(613));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(613), CourseControlId(601));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(603), CourseControlId(604));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(604), CourseControlId(603));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(610), CourseControlId(620));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(620), CourseControlId(610));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(603), CourseControlId(603));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(204), CourseControlId(603));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.DoesCourseControlPrecede(eventDB, Designator(6), CourseControlId(603), CourseControlId(204));
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
         public void GetCourseControlsInCourse()
         {
             Setup("queryevent\\sampleevent1.coursescribe");

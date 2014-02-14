@@ -150,7 +150,7 @@ Leg:            control:43  course-control:310  scale:1  course-control2:311  pa
 Control:        control:75  course-control:311  scale:1  location:(72,27)  gaps:
 Leg:            control:75  course-control:311  scale:1  course-control2:312  path:N(69.19,26.76)--N(58.71,25.84)
 Control:        control:45  course-control:312  scale:1  location:(55.9,25.6)  gaps:
-Leg:            control:45  course-control:312  scale:1  course-control2:313  path:N(54.21,23.33)--N(43.59,9.07)
+Leg:            control:45  course-control:312  scale:1  course-control2:313  path:N(54.21,23.33)--N(43.59,9.07)  gaps: (s:4.24,l:5)
 Control:        control:80  course-control:313  scale:1  location:(41.9,6.8)  gaps:
 Leg:            control:80  course-control:313  scale:1  course-control2:314  path:N(44.46,5.61)--N(47.74,4.09)
 Control:        control:38  course-control:314  scale:1  location:(50.3,2.9)  gaps:
