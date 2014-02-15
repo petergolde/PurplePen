@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CrashReporterDotNET
 {
-    internal static class HelperMethods
+    public static class HelperMethods
     {
         [DllImport("kernel32", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
         private static extern IntPtr LoadLibrary(string libraryName);

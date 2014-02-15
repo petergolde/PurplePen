@@ -276,12 +276,13 @@ namespace PurplePen
             if (string.IsNullOrEmpty(uiLanguage))
                 uiLanguage = CultureInfo.CurrentUICulture.Name;
 
-            string status = string.Format("{{\"Version\":\"{0}\", \"Locale\":\"{1}\", \"TimeZone\":\"{2}\", \"UILang\":\"{3}\", \"ClientId\":\"{4}\"}}",
+            string status = string.Format("{{\"Version\":\"{0}\", \"Locale\":\"{1}\", \"TimeZone\":\"{2}\", \"UILang\":\"{3}\", \"ClientId\":\"{4}\", \"OSVersion\":\"{5}\"}}",
                 JsonEncode(VersionNumber.Current),
                 JsonEncode(CultureInfo.CurrentCulture.Name),
                 JsonEncode(TimeZone.CurrentTimeZone.StandardName),
                 JsonEncode(uiLanguage),
-                JsonEncode(Settings.Default.ClientId.ToString()));
+                JsonEncode(Settings.Default.ClientId.ToString()),
+                JsonEncode(CrashReporterDotNET.HelperMethods.GetWindowsVersion()));
             client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
             client.Encoding = Encoding.UTF8;
 
