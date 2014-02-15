@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Largeur :</value>
+  </data>
+  <data name="labelWidthMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelGapSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelDashSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelRadiusMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Présentation</value>
+  </data>
 </root>

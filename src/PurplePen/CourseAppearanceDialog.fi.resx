@@ -180,6 +180,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Esikatselu</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Rastinmääritteet</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokkaa ratamerkintöjen ulkoasua</value>
   </data>

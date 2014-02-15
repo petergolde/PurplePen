@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.3.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-04 13:23-08:00\n"
+"POT-Creation-Date: 2014-02-14 17:08-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -145,6 +145,7 @@ msgstr "(nu afișa)"
 #: AllControlsProperties.resx, appearanceGroupBox.Text
 #: ChangeText.resx, groupBox1.Text
 #: CreatePdfCourses.resx, groupBoxAppearance.Text
+#: LinePropertiesDialog.resx, groupBox2.Text
 #: PrintCourses.resx, groupBoxAppearance.Text
 #: PrintDescriptions.resx, layoutGroup.Text
 #: PrintPunches.resx, layoutGroup.Text
@@ -394,6 +395,8 @@ msgid "Change Color..."
 msgstr ""
 
 #: ChangeText.resx, label2.Text
+#: CourseAppearanceDialog.resx, label9.Text
+#: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
 msgstr ""
 
@@ -411,12 +414,42 @@ msgid "Font:"
 msgstr ""
 
 #: ChangeText.resx, groupBox2.Text
+#: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
 msgstr ""
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
 msgstr "Adaugă Text Special"
+
+#: ColorChooserDialog.resx, label5.Text
+#: CourseAppearanceDialog.resx, label5.Text
+msgid "Black:"
+msgstr "Negru:"
+
+#: ColorChooserDialog.resx, label6.Text
+#: CourseAppearanceDialog.resx, label6.Text
+msgid "Yellow:"
+msgstr "Galben:"
+
+#: ColorChooserDialog.resx, label3.Text
+#: CourseAppearanceDialog.resx, label3.Text
+msgid "Magenta:"
+msgstr "Magenta:"
+
+#: ColorChooserDialog.resx, label1.Text
+#: CourseAppearanceDialog.resx, label1.Text
+msgid "Cyan:"
+msgstr "Cyan:"
+
+#: ColorChooserDialog.resx, groupBoxPreview.Text
+#: CourseAppearanceDialog.resx, groupBoxPreview.Text
+msgid "Preview"
+msgstr "Previzualizare"
+
+#: ColorChooserDialog.resx, $this.Text
+msgid "Choose Color"
+msgstr ""
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -627,6 +660,11 @@ msgstr ""
 msgid "Change Course Part Properties"
 msgstr ""
 
+#: CommandNameText.resx, ChangeLineAppearance
+#: MiscText.resx, ChangeLineAppearanceTitle
+msgid "Change Line Appearance"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
 msgstr ""
@@ -636,6 +674,10 @@ msgstr ""
 #: CourseAppearanceDialog.resx, label4.Text
 #: CourseAppearanceDialog.resx, label2.Text
 #: CourseAppearanceDialog.resx, labelMM1.Text
+#: LinePropertiesDialog.resx, labelWidthMm.Text
+#: LinePropertiesDialog.resx, labelGapSizeMm.Text
+#: LinePropertiesDialog.resx, labelDashSizeMm.Text
+#: LinePropertiesDialog.resx, labelRadiusMm.Text
 #: PrintDescriptions.resx, mmSuffixLabel.Text
 #: PrintPunches.resx, mmSuffixLabel.Text
 msgid "mm"
@@ -673,22 +715,6 @@ msgstr "Utilizează standardele de dimensiune IOF"
 msgid "Item Sizes"
 msgstr "Dimensiuni Element"
 
-#: CourseAppearanceDialog.resx, label5.Text
-msgid "Black:"
-msgstr "Negru:"
-
-#: CourseAppearanceDialog.resx, label6.Text
-msgid "Yellow:"
-msgstr "Galben:"
-
-#: CourseAppearanceDialog.resx, label3.Text
-msgid "Magenta:"
-msgstr "Magenta:"
-
-#: CourseAppearanceDialog.resx, label1.Text
-msgid "Cyan:"
-msgstr "Cyan:"
-
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Folosește culoarea violet din hartă"
@@ -697,9 +723,20 @@ msgstr "Folosește culoarea violet din hartă"
 msgid "Purple Color"
 msgstr "Culoarea Violet"
 
-#: CourseAppearanceDialog.resx, groupBoxPreview.Text
-msgid "Preview"
-msgstr "Previzualizare"
+#: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
+#: MiscText.resx, Black
+msgid "Black"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
+#: MiscText.resx, Purple
+msgid "Purple"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Descrierea Posturilor"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -765,6 +802,7 @@ msgstr "Creare"
 #: NewEventWizard.resx, cancelButton.Text
 #: NonPrintableObjects.resx, cancelButton.Text
 #: OkCancelDialog.resx, cancelButton.Text
+#: OperationInProgress.resx, cancelButton.Text
 #: OverwritingOcadFilesDialog.resx, buttonCancel.Text
 #: PrintDescriptions.resx, cancelButton.Text
 #: PrintPunches.resx, cancelButton.Text
@@ -1009,6 +1047,10 @@ msgid "Click on a description symbol to customize the text that "
 msgstr "Click pe un simbol de descriere pentru a personaliza "
 "textul folosit în descrierea textuală a postului."
 
+#: DownloadProgressDialog.resx, $this.Text
+msgid "Downloading"
+msgstr ""
+
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
 msgstr "Număr"
@@ -1073,6 +1115,43 @@ msgstr "Purple Pen este oferit sub tipul de licență \"BSD\""
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
 msgstr "Licența Purple Pen"
+
+#: LinePropertiesDialog.resx, buttonChangeColor.Text
+msgid " Change Color..."
+msgstr ""
+
+#: LinePropertiesDialog.resx, label2.Text
+msgid "Style:"
+msgstr ""
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items
+msgid "Single"
+msgstr ""
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items1
+msgid "Double"
+msgstr ""
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items2
+msgid "Dashed"
+msgstr ""
+
+#: LinePropertiesDialog.resx, labelWidth.Text
+#: PrinterMargins.resx, label2.Text
+msgid "Width:"
+msgstr ""
+
+#: LinePropertiesDialog.resx, labelGapSize.Text
+msgid "Gap Size:"
+msgstr ""
+
+#: LinePropertiesDialog.resx, labelDashSize.Text
+msgid "Dash Size:"
+msgstr ""
+
+#: LinePropertiesDialog.resx, labelCornerRadius.Text
+msgid "Corner Radius:"
+msgstr ""
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
@@ -1425,6 +1504,7 @@ msgstr ""
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
 msgstr ""
 
@@ -1455,6 +1535,10 @@ msgstr "Ștergere Spațiu G&ol"
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
 msgstr "Schimbare &Text..."
+
+#: MainFrame.resx, changeLineAppearanceMenu.Text
+msgid "Change Line &Appearance..."
+msgstr ""
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -2192,10 +2276,6 @@ msgid "The  .NET framework on your computer does not appear to be "
 "your Windows operating system."
 msgstr ""
 
-#: MiscText.resx, Black
-msgid "Black"
-msgstr ""
-
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
 msgstr ""
@@ -2216,16 +2296,35 @@ msgstr ""
 msgid "Light Blue"
 msgstr ""
 
-#: MiscText.resx, Purple
-msgid "Purple"
-msgstr ""
-
 #: MiscText.resx, Red
 msgid "Red"
 msgstr ""
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
+msgstr ""
+
+#: MiscText.resx, AddLineExplanation
+msgid "Set the appearance of the line. After pressing OK, drag "
+"the mouse to draw the line segments in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddLineTitle
+msgid "Add Line"
+msgstr ""
+
+#: MiscText.resx, AddRectangleExplanation
+msgid "Set the appearance of the rectangle. After pressing OK, "
+"drag the mouse to place the rectangle in the desired "
+"location."
+msgstr ""
+
+#: MiscText.resx, AddRectangleTitle
+msgid "Add Rectangle"
+msgstr ""
+
+#: MiscText.resx, ChangeLineAppearanceExplanation
+msgid "Change the appearance of the line or rectangle."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2457,6 +2556,10 @@ msgstr "Continuare"
 msgid "Map File Cannot Be Printed Accurately"
 msgstr "Fișierul Hartă nu poate fi tipărit cu acuratețe."
 
+#: OperationInProgress.resx, $this.Text
+msgid "Operation In Progress"
+msgstr ""
+
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
@@ -2470,6 +2573,18 @@ msgstr "Înlocuire"
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
 msgstr "Confirmare Înlocuire Fișiere"
+
+#: PdfConversionInProgress.resx, labelReadingPDF.Text
+msgid "GPL Ghostscript is reading your PDF..."
+msgstr ""
+
+#: PdfConversionInProgress.resx, labelFailure.Text
+msgid "PDF reading has failed. The errors are shown below."
+msgstr ""
+
+#: PdfConversionInProgress.resx, $this.Text
+msgid "Reading PDF"
+msgstr ""
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -2575,10 +2690,6 @@ msgstr "Tipărește Descrieri"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
-
-#: PrinterMargins.resx, label2.Text
-msgid "Width:"
 msgstr ""
 
 #: PrinterMargins.resx, label3.Text
@@ -3002,10 +3113,6 @@ msgstr "punct de trecere obligatoriu"
 msgid "none"
 msgstr "nici unul"
 
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Descrierea Posturilor"
-
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
 msgstr "Rută interzisă"
@@ -3271,8 +3378,8 @@ msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
 msgstr ""
 
-#: StatusBarText.resx, AddingImage
-msgid "Hold down left mouse button and drag to place image"
+#: StatusBarText.resx, AddingRectangle
+msgid "Hold down left mouse button and drag to create object"
 msgstr ""
 
 #: UnusedControls.resx, okButton.Text

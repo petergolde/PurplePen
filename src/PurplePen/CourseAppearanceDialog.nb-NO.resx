@@ -180,6 +180,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Forhåndsvisning</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Postveskrivelser</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Endre løypens utseende</value>
   </data>

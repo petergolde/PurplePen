@@ -183,6 +183,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vorschau</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Postenbeschreibungen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bahndesign anpassen</value>
   </data>

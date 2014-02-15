@@ -177,6 +177,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Förhandsvisning</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Kontrollbeskrivning</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ändra Banans Utseende</value>
   </data>

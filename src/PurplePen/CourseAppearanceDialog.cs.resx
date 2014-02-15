@@ -180,6 +180,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Náhled</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Popisy kontrol</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nastavit zobrazení tratí</value>
   </data>

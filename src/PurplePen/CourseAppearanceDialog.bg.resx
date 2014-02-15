@@ -177,6 +177,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Преглед преди печат</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Описания на контролните точки</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Персонализирай външния изглед на маршрута</value>
   </data>

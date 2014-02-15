@@ -177,6 +177,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Previzualizare</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Descrierea Posturilor</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizare Aspect Traseu</value>
   </data>

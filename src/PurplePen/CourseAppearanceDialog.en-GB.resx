@@ -177,6 +177,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Preview</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Control Descriptions</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customise Course Appearance</value>
   </data>

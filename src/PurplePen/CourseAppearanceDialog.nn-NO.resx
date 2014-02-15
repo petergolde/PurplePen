@@ -177,6 +177,9 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Førehandsvising</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Postbeskrivelser</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Endre løypens utsjånad</value>
   </data>
