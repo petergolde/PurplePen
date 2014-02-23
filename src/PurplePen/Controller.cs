@@ -332,8 +332,14 @@ namespace PurplePen
                 else {
                     // Return the fonts missing from map or text specials.
                     HashSet<string> missingFonts = new HashSet<string>();
-                    missingFonts.UnionWith(mapDisplay.MissingFonts());
-                    missingFonts.UnionWith(MissingFontsInTextSpecials());
+                    string[] mapMissingFonts = mapDisplay.MissingFonts();
+                    if (mapMissingFonts != null)
+                        missingFonts.UnionWith(mapMissingFonts);
+
+                    var missingFontsInSpecials = MissingFontsInTextSpecials();
+                    if (missingFontsInSpecials != null)
+                        missingFonts.UnionWith(missingFontsInSpecials);
+
                     if (missingFonts.Count > 0)
                         return missingFonts.ToArray();
                     else
