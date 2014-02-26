@@ -890,7 +890,7 @@ namespace PurplePen
             PointF nearestPointOnLeg;
             float distance = legObj.path.DistanceFromPoint(otherObj.location, out nearestPointOnLeg);
 
-            if (distance < radiusOther && nearestPointOnLeg != legObj.path.FirstPoint && nearestPointOnLeg != legObj.path.LastPoint) {
+            if (distance < radiusOther && Geometry.Distance(nearestPointOnLeg, legObj.path.FirstPoint) > 0.5 && Geometry.Distance(nearestPointOnLeg, legObj.path.LastPoint) > 0.5) {
                 float gapRadius = (float) Math.Sqrt(radiusOther * radiusOther - distance * distance);
                 gapRadius += (eventDB.GetEvent().courseAppearance.controlCircleSize * NormalCourseAppearance.lineOverlapGapSize) / 2;
 
