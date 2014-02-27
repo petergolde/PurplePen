@@ -357,6 +357,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Teksti</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Kuva</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Viiva</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Suorakulmio</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Lisää &amp;erityiskohde</value>
   </data>
@@ -380,6 +389,9 @@
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Muokkaa tek&amp;stiä...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Muuta v&amp;iivan ulkoasua...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Kierrä</value>
@@ -436,7 +448,7 @@
     <value>Tuki/&amp;Virheraportointi</value>
   </data>
   <data name="donateWebSiteMenu.Text" xml:space="preserve">
-    <value>&amp;Lahjoita</value>
+    <value>Make a &amp;Donation</value>
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Tietoja ohjelmasta</value>
@@ -573,6 +585,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Teksti</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kuva</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Viiva</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Suorakulmio</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Lisää erityiskohde</value>
   </data>
@@ -596,6 +617,9 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Vie XML-tiedostoon</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

@@ -120,4 +120,7 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Peruuta</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Toiminta käynnissä</value>
+  </data>
 </root>

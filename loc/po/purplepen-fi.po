@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.0\n"
+"Project-Id-Version: Purple Pen 2.3.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-14 17:08-08:00\n"
+"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -73,7 +73,7 @@ msgstr "Tulostusmittakaava:"
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
 msgid "1 : "
-msgstr "1: "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -395,17 +395,17 @@ msgstr "Tulostusmittakaava"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Vaihda väri..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Väri:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Kursivoitu"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -414,12 +414,12 @@ msgstr "Lihavoitu"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Fontti:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Näyte"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -452,7 +452,7 @@ msgstr "Esikatselu"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Valitse väri"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -604,7 +604,7 @@ msgstr "Muokkaa leimauskuvioita"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr "Muuta leimauskuviokortin asettelua"
+msgstr "Muuta leimauskortin asettelua"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -666,12 +666,13 @@ msgstr "Muuta radan osan ominaisuuksia"
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
+msgstr "Muuta viivan ulkoasua"
+
+#: CourseAppearanceDialog.resx, labelAutoGapSize.Text
+msgid "Automatic leg gap size:"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, labelOutlineWidth.Text
-msgid "White outline around numbers:"
-msgstr ""
-
+#: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
 #: CourseAppearanceDialog.resx, label8.Text
 #: CourseAppearanceDialog.resx, label4.Text
@@ -685,6 +686,10 @@ msgstr ""
 #: PrintPunches.resx, mmSuffixLabel.Text
 msgid "mm"
 msgstr "mm"
+
+#: CourseAppearanceDialog.resx, labelOutlineWidth.Text
+msgid "White outline around numbers:"
+msgstr "Valkoinen ääriviiva numeroiden ympärillä:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -729,12 +734,12 @@ msgstr "Violetti väri"
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Musta"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Violetti"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
@@ -1052,7 +1057,7 @@ msgstr "Klikkaa symbolia muokataksesi sanallisessa "
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr ""
+msgstr "Ladataan"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1089,7 +1094,7 @@ msgstr "Sulje"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
-msgstr "Lahjoita"
+msgstr "Make a donation"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
@@ -1113,7 +1118,7 @@ msgstr "Purple Pen"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
-msgstr "Purple Pen -ohjelma on julkaistu BSD-tyylisellä lisenssillä."
+msgstr "Purple Pen -ohjelman lisenssi on BSD-tyylinen."
 
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
@@ -1121,23 +1126,23 @@ msgstr "Purple Pen lisenssi"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " Vaihda väri..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
-msgstr ""
+msgstr "Tyyli:"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items
 msgid "Single"
-msgstr ""
+msgstr "Yksi viiva"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items1
 msgid "Double"
-msgstr ""
+msgstr "Kaksi viivaa"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items2
 msgid "Dashed"
-msgstr ""
+msgstr "Katkoviiva"
 
 #: LinePropertiesDialog.resx, labelWidth.Text
 #: PrinterMargins.resx, label2.Text
@@ -1146,15 +1151,15 @@ msgstr "Leveys:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "Välin koko:"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
-msgstr ""
+msgstr "Viivan koko:"
 
 #: LinePropertiesDialog.resx, labelCornerRadius.Text
 msgid "Corner Radius:"
-msgstr ""
+msgstr "Kulmasäde:"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
@@ -1497,19 +1502,19 @@ msgstr "Valkoinen alue"
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "Kuva"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "Viiva"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "Suorakulmio"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1541,7 +1546,7 @@ msgstr "Muokkaa tek&stiä..."
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "Muuta v&iivan ulkoasua..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -1617,7 +1622,7 @@ msgstr "Tuki/&Virheraportointi"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr "&Lahjoita"
+msgstr "Make a &Donation"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1776,7 +1781,7 @@ msgstr "Vie XML-tiedostoon"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
-msgstr ""
+msgstr "Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -2127,7 +2132,7 @@ msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
 msgstr "Syötä teksti, jonka haluat lisätä kartalle. Paina OK, "
-"jonka jälkeen paina hiiren vasen painike pohjaan ja vedä "
+"minkä jälkeen paina hiiren vasen painike pohjaan ja vedä "
 "sijoittaaksesi tekstin haluamaasi kohtaan kartalle."
 
 #: MiscText.resx, AddTextSpecialTitle
@@ -2276,65 +2281,73 @@ msgstr "Tulostetaan sivua {0} (/ {1})"
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "Karttatiedosto \"{0}\" on poistettu. Yritä palauttaa "
+"karttatiedosto ja paina sitten \"Ok\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr ".NET Framework ei näytä olevan oikein asennettu "
+"tietokoneellasi. Käy osoitteessa http://microsoft.com/net "
+"ja asenna Windows -käyttöjärjestelmääsi .NET Framework "
+"-ohjelmistokäyttöympäristön viimeisin versio."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Valitse väri..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Oma väri"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Tummansininen"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Vihreä"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Vaaleansininen"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Punainen"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Keltainen"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Aseta viivan ulkoasu. Paina OK, minkä jälkeen paina hiiren "
+"vasen painike pohjaan ja vedä piirtääksesi viivan "
+"haluamaasi kohtaan kartalle."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Lisää viiva"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Aseta suorakulmion ulkoasu. Paina OK, minkä jälkeen paina "
+"hiiren vasen painike pohjaan ja vedä sijoittaaksesi "
+"suorakulmion haluamaasi kohtaan kartalle."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Lisää suorakulmio"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
-msgstr ""
+msgstr "Muuta viivan tai suorakulmion ulkoasua"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2530,8 +2543,8 @@ msgstr "Tapahtuman nimi näytetään kaikkien rastinmääritteiden "
 "nimenä, kun tapahtuma tallennetaan levylle.\n"
 "\n"
 "Jotta nimi mahtuu rastinmääritteisiin, sen pitää olla alle "
-"25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat "
-"\"Tunturisuunnistus, 1. pv\" tai \"Keskilaakso-Rastit 29.9.\"."
+"25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat \"Kevät "
+"Suunnistus, 1. pv\" tai \"Keskilaakso-Rastit 29.9.\"."
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
@@ -2569,7 +2582,7 @@ msgstr "Karttatiedostoa ei voida tulostaa asianmukaisesti"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Toiminta käynnissä"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -2587,15 +2600,16 @@ msgstr "Vahvista tiedostojen korvaaminen"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr ""
+msgstr "GPL Ghostscript lukee PDF-tiedostoa..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "PDF-tiedoston lukeminen epäonnistui. Virheet on näytetty "
+"alla."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Luetaan PDF-tiedostoa"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -2677,7 +2691,7 @@ msgstr "Ruutukoko:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr "rastinmääritteitä rataa kohden"
+msgstr "rastinmääritteitä rataa kohden (vähintään)"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
@@ -2742,7 +2756,7 @@ msgstr "Sivun asetukset"
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr "Leimauskuviokortin asettelu..."
+msgstr "Leimauskortin asettelu..."
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
@@ -2774,7 +2788,7 @@ msgstr "Koko"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr "Leimauskuviokortin asettelu"
+msgstr "Leimauskortin asettelu"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
@@ -2823,7 +2837,7 @@ msgstr "Rastikoodit"
 
 #: ReportText.resx, ColumnHeader_Controls
 msgid "Controls"
-msgstr "Rasteja"
+msgstr "Rastit"
 
 #: ReportText.resx, ColumnHeader_Course
 msgid "Course"
@@ -3173,7 +3187,7 @@ msgstr "Käytössä radoilla:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Nimi:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
@@ -3389,7 +3403,8 @@ msgstr "Lisää kartanvaihto rastille \"{0}\" klikkaamalla hiiren "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Paina hiiren vasen painike pohjaan ja vedä luodaksesi "
+"kohteen"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

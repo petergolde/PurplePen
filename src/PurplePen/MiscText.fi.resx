@@ -355,7 +355,7 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
     <value>suunnistuksen ratasuunnitteluun</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
-    <value>Syötä teksti, jonka haluat lisätä kartalle. Paina OK, jonka jälkeen paina hiiren vasen painike pohjaan ja vedä sijoittaaksesi tekstin haluamaasi kohtaan kartalle.</value>
+    <value>Syötä teksti, jonka haluat lisätä kartalle. Paina OK, minkä jälkeen paina hiiren vasen painike pohjaan ja vedä sijoittaaksesi tekstin haluamaasi kohtaan kartalle.</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Lisää teksti</value>
@@ -452,5 +452,56 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="PrintingPage" xml:space="preserve">
     <value>Tulostetaan sivua {0} (/ {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Karttatiedosto "{0}" on poistettu. Yritä palauttaa karttatiedosto ja paina sitten "Ok".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>.NET Framework ei näytä olevan oikein asennettu tietokoneellasi. Käy osoitteessa http://microsoft.com/net ja asenna Windows -käyttöjärjestelmääsi .NET Framework -ohjelmistokäyttöympäristön viimeisin versio.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Musta</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Valitse väri...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Oma väri</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Tummansininen</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Vihreä</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Vaaleansininen</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Violetti</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Punainen</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Keltainen</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Aseta viivan ulkoasu. Paina OK, minkä jälkeen paina hiiren vasen painike pohjaan ja vedä piirtääksesi viivan haluamaasi kohtaan kartalle.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Lisää viiva</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Aseta suorakulmion ulkoasu. Paina OK, minkä jälkeen paina hiiren vasen painike pohjaan ja vedä sijoittaaksesi suorakulmion haluamaasi kohtaan kartalle.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Lisää suorakulmio</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Muuta viivan tai suorakulmion ulkoasua</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Muuta viivan ulkoasua</value>
   </data>
 </root>

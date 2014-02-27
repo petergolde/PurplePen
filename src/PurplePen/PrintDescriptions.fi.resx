@@ -190,7 +190,7 @@
     <value>Kopiot</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>rastinmääritteitä rataa kohden</value>
+    <value>rastinmääritteitä rataa kohden (vähintään)</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
     <value>yksi kopio jokaista rataa</value>

@@ -127,7 +127,7 @@
     <value>Tulostusmittakaava:</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
+    <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symbolit</value>

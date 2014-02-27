@@ -151,7 +151,7 @@
     <value>Tuotos</value>
   </data>
   <data name="punchCardLayoutButton.Text" xml:space="preserve">
-    <value>Leimauskuviokortin asettelu...</value>
+    <value>Leimauskortin asettelu...</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>

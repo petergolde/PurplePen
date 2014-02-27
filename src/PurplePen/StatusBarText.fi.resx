@@ -213,4 +213,7 @@
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>Lisää kartanvaihto rastille "{0}" klikkaamalla hiiren vasenta painiketta </value>
   </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä luodaksesi kohteen</value>
+  </data>
 </root>

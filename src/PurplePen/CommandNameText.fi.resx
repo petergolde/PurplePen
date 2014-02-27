@@ -235,7 +235,7 @@
     <value>Muokkaa leimauskuvioita</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Muuta leimauskuviokortin asettelua</value>
+    <value>Muuta leimauskortin asettelua</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Aseta tulostusalue</value>
@@ -278,5 +278,8 @@
   </data>
   <data name="ChangePartProperties" xml:space="preserve">
     <value>Muuta radan osan ominaisuuksia</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Muuta viivan ulkoasua</value>
   </data>
 </root>

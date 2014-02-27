@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label12.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Valkoinen ääriviiva numeroiden ympärillä:</value>
+  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -179,6 +185,15 @@
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Esikatselu</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
+    <value>Musta</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
+    <value>Violetti</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Väri:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Rastinmääritteet</value>

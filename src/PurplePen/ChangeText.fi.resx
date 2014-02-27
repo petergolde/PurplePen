@@ -138,11 +138,26 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Tulostusmittakaava</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Vaihda väri...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Väri:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kursivoitu</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Lihavoitu</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Fontti:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Ulkoasu</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Näyte</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Lisää erityisteksti</value>
