@@ -243,9 +243,6 @@ namespace PurplePen
         public const float lineSpecialWidth = 0.35F;
         public const float lineSpecialGapSize = 0.50F;
         public const float lineSpecialDashSize = 2.0F;
-
-        // Gap size when lines overlaps
-        public const float lineOverlapGapSize = 5.0F;
     }
 
     // Class with constants that describe how a punch card should appear.

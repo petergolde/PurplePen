@@ -266,6 +266,7 @@ namespace PurplePen.Tests
             appearance.numberBold = true; // bold numbers.
             appearance.numberOutlineWidth = 0.13F;
             appearance.useDefaultPurple = false;
+            appearance.autoLegGapSize = 0.0F;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;
             appearance.purpleM = 0;

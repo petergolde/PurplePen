@@ -470,6 +470,7 @@ namespace PurplePen.Tests
             e.courseAppearance.numberHeight = 1.1F;
             e.courseAppearance.numberBold = true;
             e.courseAppearance.numberOutlineWidth = 0.5F;
+            e.courseAppearance.autoLegGapSize = 2.75F;
             e.courseAppearance.useDefaultPurple = false;
             e.courseAppearance.purpleC = 0.4F;
             e.courseAppearance.purpleM = 0.5F;

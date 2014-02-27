@@ -44,6 +44,7 @@ namespace PurplePen
 
                 result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
                 result.numberOutlineWidth = ((float) upDownOutlineWidth.Value);
+                result.autoLegGapSize = ((float) upDownLegGapSize.Value);
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
                 result.purpleC = (float) (upDownCyan.Value / 100);
                 result.purpleM = (float) (upDownMagenta.Value / 100);
@@ -66,6 +67,7 @@ namespace PurplePen
                     comboBoxControlNumberStyle.SelectedIndex = 0;
 
                 upDownOutlineWidth.Value = (decimal) value.numberOutlineWidth;
+                upDownLegGapSize.Value = (decimal) value.autoLegGapSize;
 
                 checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F && value.numberBold == false);
 
@@ -149,6 +151,7 @@ namespace PurplePen
             float circleDiameter = (float) upDownControlCircle.Value;    // outside diameter
             float dotDiameter = (float) upDownCenterDot.Value;
             float numberHeight = (float) upDownNumberHeight.Value;     // number height
+            float autoLegGapSize = (float) upDownLegGapSize.Value;
             float circleDrawRadius = (circleDiameter - lineWidth) / 2;    // radius to pen center
             float finishDrawRadiusOuter = ((circleDiameter * 7F / NormalCourseAppearance.controlOutsideDiameter) - lineWidth) / 2F;
             float finishDrawRadiusInner = ((circleDiameter * 5.35F / NormalCourseAppearance.controlOutsideDiameter) - 2F * lineWidth) / 2F;
@@ -160,10 +163,10 @@ namespace PurplePen
             using (Brush lightGreenBrush = new SolidBrush(Color.LightGreen))
             {
                 // Draw light green background.
-                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(22, -30, 45, 20));
+                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(37, -30, 60, 20));
 
                 // Draw control circle
-                PointF centerCircle = new PointF(25, 5);
+                PointF centerCircle = new PointF(40, 5);
                 g.DrawEllipse(pen, RectangleF.FromLTRB(centerCircle.X - circleDrawRadius, centerCircle.Y - circleDrawRadius, centerCircle.X + circleDrawRadius, centerCircle.Y + circleDrawRadius));
 
                 // Draw center dot.
@@ -182,6 +185,16 @@ namespace PurplePen
                                             (float) (centerCircle.X + Math.Cos(angle) * circleDrawRadius), (float) (centerCircle.Y + Math.Sin(angle) * circleDrawRadius));
 
                 g.DrawLine(pen, centerFinish.X + finishDrawRadiusOuter, centerFinish.Y, centerCircle.X - circleDrawRadius, centerFinish.Y);
+
+                // Draw crossing leg.
+                double crossAngle = (110 * Math.PI / 180.0);
+                PointF crossPt = new PointF((centerFinish.X + centerCircle.X) / 2, (centerFinish.Y + centerCircle.Y) / 2);
+                PointF start1 = new PointF(crossPt.X + (float)Math.Cos(crossAngle) * 10, crossPt.Y + (float)Math.Sin(crossAngle) * 10);
+                PointF end1 = new PointF(crossPt.X + (float)Math.Cos(crossAngle) * (autoLegGapSize / 2) , crossPt.Y + (float)Math.Sin(crossAngle) * (autoLegGapSize / 2));
+                PointF start2 = new PointF(crossPt.X - (float)Math.Cos(crossAngle) * 10, crossPt.Y - (float)Math.Sin(crossAngle) * 10);
+                PointF end2 = new PointF(crossPt.X - (float)Math.Cos(crossAngle) * (autoLegGapSize / 2), crossPt.Y - (float)Math.Sin(crossAngle) * (autoLegGapSize / 2));
+                g.DrawLine(pen, start1, end1);
+                g.DrawLine(pen, start2, end2);
 
                 // Draw control number
                 FontStyle style = NormalCourseAppearance.controlNumberFont.Style;

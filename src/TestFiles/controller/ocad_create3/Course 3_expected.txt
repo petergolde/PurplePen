@@ -1962,7 +1962,7 @@ Object Sym=704 Otp=2
   Ang=0
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
-    (54.04,23.11) (51.68,19.93) 
+    (54.04,23.11) (51.23,19.33) 
 
 Index entry Sym=704.0
 Object Sym=704 Otp=2
@@ -1970,7 +1970,7 @@ Object Sym=704 Otp=2
   Ang=0
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
-    (48.69,15.92) (43.76,9.29) 
+    (49.14,16.52) (43.76,9.29) 
 
 Index entry Sym=702.0
 Object Sym=702 Otp=1

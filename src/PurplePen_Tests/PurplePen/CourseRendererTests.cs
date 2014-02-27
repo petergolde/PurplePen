@@ -106,6 +106,7 @@ namespace PurplePen.Tests
             specialAppearance.numberHeight = 2F; // really big numbers.
             specialAppearance.numberBold = true; // bold numbers
             specialAppearance.numberOutlineWidth = 0.13F;
+            specialAppearance.autoLegGapSize = 0.0F;
             specialAppearance.useDefaultPurple = false;
             specialAppearance.purpleC = 0.32F;
             specialAppearance.purpleY = 1.00F;

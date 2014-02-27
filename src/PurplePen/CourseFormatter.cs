@@ -160,7 +160,7 @@ namespace PurplePen
             // Automatically add cuts to close control circles in the layout.
             if (courseView.Kind != CourseView.CourseViewKind.AllControls) {
                 AutoCutCircles(courseLayout, layer);
-                AutoCutLegs(eventDB, courseView.CourseDesignator, courseLayout, layer);
+                AutoCutLegs(eventDB, appearance, courseView.CourseDesignator, courseLayout, layer);
             }
         }
 
@@ -840,27 +840,30 @@ namespace PurplePen
         }
 
         // Cut any overlapping legs in the given layer.
-        private static void AutoCutLegs(EventDB eventDB, CourseDesignator courseDesignator, CourseLayout courseLayout, CourseLayer layer)
+        private static void AutoCutLegs(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, CourseLayout courseLayout, CourseLayer layer)
         {
+            if (appearance.autoLegGapSize <= 0)
+                return;     // No cutting requested.
+
             foreach (CourseObj courseObj in courseLayout) {
                 if (courseObj.layer == layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
-                    AutoCutLeg(eventDB, courseDesignator, (LineCourseObj)courseObj, courseLayout);
+                    AutoCutLeg(eventDB, appearance, courseDesignator, (LineCourseObj)courseObj, courseLayout);
             }
         }
 
         // Check this leg and add cuts to it if needed.
-        private static void AutoCutLeg(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, CourseLayout courseLayout)
+        private static void AutoCutLeg(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, CourseLayout courseLayout)
         {
             foreach (CourseObj courseObj in courseLayout) {
                 if (courseObj != legObj && courseObj.layer == legObj.layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
-                    CutLegWithRespectTo(eventDB, courseDesignator, legObj, (LineCourseObj)courseObj);
+                    CutLegWithRespectTo(eventDB, appearance, courseDesignator, legObj, (LineCourseObj)courseObj);
                 if (courseObj != legObj && courseObj.layer == legObj.layer && courseObj is PointCourseObj)
-                    CutLegWithRespectTo(eventDB, courseDesignator, legObj, (PointCourseObj)courseObj);
+                    CutLegWithRespectTo(eventDB, appearance, courseDesignator, legObj, (PointCourseObj)courseObj);
             }
         }
 
         // Cut the leg "legObj" with respect to "otherObj", if they intersect
-        private static void CutLegWithRespectTo(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, LineCourseObj otherObj)
+        private static void CutLegWithRespectTo(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, LineCourseObj otherObj)
         {
             PointF[] intersectionPoints;
 
@@ -868,7 +871,7 @@ namespace PurplePen
                 // The other line intersections this one. Only the later leg is split.
                 if (QueryEvent.DoesCourseControlPrecede(eventDB, courseDesignator, otherObj.courseControlId, legObj.courseControlId)) {
                     foreach (PointF intersectionPoint in intersectionPoints) {
-                        float gapRadius = (eventDB.GetEvent().courseAppearance.controlCircleSize * NormalCourseAppearance.lineOverlapGapSize) / 2;
+                        float gapRadius = appearance.autoLegGapSize / 2;
                         CutLegAtPoint(legObj, intersectionPoint, gapRadius);
                     }
                 }
@@ -884,15 +887,15 @@ namespace PurplePen
         }
 
         // Cut the leg "legObj" with respect to "otherObj", if they overlap
-        private static void CutLegWithRespectTo(EventDB eventDB, CourseDesignator courseDesignator, LineCourseObj legObj, PointCourseObj otherObj)
+        private static void CutLegWithRespectTo(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, PointCourseObj otherObj)
         {
             float radiusOther = otherObj.ApparentRadius;
             PointF nearestPointOnLeg;
             float distance = legObj.path.DistanceFromPoint(otherObj.location, out nearestPointOnLeg);
 
             if (distance < radiusOther && Geometry.Distance(nearestPointOnLeg, legObj.path.FirstPoint) > 0.5 && Geometry.Distance(nearestPointOnLeg, legObj.path.LastPoint) > 0.5) {
-                float gapRadius = (float) Math.Sqrt(radiusOther * radiusOther - distance * distance);
-                gapRadius += (eventDB.GetEvent().courseAppearance.controlCircleSize * NormalCourseAppearance.lineOverlapGapSize) / 2;
+                float gapRadius = (float) Math.Sqrt(radiusOther * radiusOther - distance * distance);  // pythagorean theorem.
+                gapRadius += appearance.autoLegGapSize / 2;
 
                 CutLegAtPoint(legObj, nearestPointOnLeg, gapRadius);
             }

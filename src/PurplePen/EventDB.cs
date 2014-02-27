@@ -2002,6 +2002,7 @@ namespace PurplePen
         public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
         public float numberOutlineWidth = 0.0F;             // Width of outline
+        public float autoLegGapSize = 3.5F;             // Size in mm of automatic gap in legs.
 
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
@@ -2026,6 +2027,8 @@ namespace PurplePen
             if (numberBold != other.numberBold)
                 return false;
             if (numberOutlineWidth != other.numberOutlineWidth)
+                return false;
+            if (autoLegGapSize != other.autoLegGapSize)
                 return false;
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
@@ -2263,6 +2266,7 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
             if (courseAppearance.numberOutlineWidth > 0)
                 xmloutput.WriteAttributeString("number-outline-width", XmlConvert.ToString(courseAppearance.numberOutlineWidth));
+            xmloutput.WriteAttributeString("auto-leg-gap-size", XmlConvert.ToString(courseAppearance.autoLegGapSize));
             if (courseAppearance.useDefaultPurple == false) {
                 xmloutput.WriteAttributeString("purple-cyan", XmlConvert.ToString(courseAppearance.purpleC));
                 xmloutput.WriteAttributeString("purple-magenta", XmlConvert.ToString(courseAppearance.purpleM));
@@ -2361,6 +2365,7 @@ namespace PurplePen
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
+                        courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);

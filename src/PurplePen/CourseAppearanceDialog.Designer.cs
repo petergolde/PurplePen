@@ -29,6 +29,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAppearanceDialog));
             this.groupBoxSizes = new System.Windows.Forms.GroupBox();
+            this.labelAutoGapSize = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.upDownLegGapSize = new System.Windows.Forms.NumericUpDown();
             this.labelOutlineWidth = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.upDownOutlineWidth = new System.Windows.Forms.NumericUpDown();
@@ -64,6 +67,7 @@
             this.comboBoxDescriptionColor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBoxSizes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).BeginInit();
@@ -89,6 +93,9 @@
             // 
             // groupBoxSizes
             // 
+            this.groupBoxSizes.Controls.Add(this.labelAutoGapSize);
+            this.groupBoxSizes.Controls.Add(this.label12);
+            this.groupBoxSizes.Controls.Add(this.upDownLegGapSize);
             this.groupBoxSizes.Controls.Add(this.labelOutlineWidth);
             this.groupBoxSizes.Controls.Add(this.label10);
             this.groupBoxSizes.Controls.Add(this.upDownOutlineWidth);
@@ -110,6 +117,38 @@
             resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
+            // 
+            // labelAutoGapSize
+            // 
+            resources.ApplyResources(this.labelAutoGapSize, "labelAutoGapSize");
+            this.labelAutoGapSize.Name = "labelAutoGapSize";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // upDownLegGapSize
+            // 
+            this.upDownLegGapSize.DecimalPlaces = 2;
+            this.upDownLegGapSize.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            resources.ApplyResources(this.upDownLegGapSize, "upDownLegGapSize");
+            this.upDownLegGapSize.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            65536});
+            this.upDownLegGapSize.Name = "upDownLegGapSize";
+            this.upDownLegGapSize.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            65536});
+            this.upDownLegGapSize.ValueChanged += new System.EventHandler(this.upDown_ValueChanged);
             // 
             // labelOutlineWidth
             // 
@@ -440,6 +479,7 @@
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownCenterDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberHeight)).EndInit();
@@ -496,5 +536,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxDescriptionColor;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelAutoGapSize;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown upDownLegGapSize;
     }
 }

@@ -62,6 +62,7 @@ namespace PurplePen.Tests
             specialAppearance.numberHeight = 1.75F; // 7mm numbers.
             specialAppearance.numberBold = true;
             specialAppearance.numberOutlineWidth = 0.13F;
+            specialAppearance.autoLegGapSize = 0.0F;
             specialAppearance.descriptionsPurple = true;
         }
 

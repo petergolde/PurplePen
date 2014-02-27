@@ -196,6 +196,7 @@ namespace PurplePen.Tests
             appearance.numberHeight = 0.5F; // small numbers.
             appearance.numberBold = true; // bold numbers.
             appearance.useDefaultPurple = false;
+            appearance.autoLegGapSize = 0.0F;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;
             appearance.purpleM = 0;
