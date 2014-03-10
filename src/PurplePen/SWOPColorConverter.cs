@@ -42,7 +42,7 @@ namespace PurplePen
             try {
                 return CmykToRgbColor(cmykColor);
             }
-            catch (TypeInitializationException) {
+            catch (Exception) {
                 // In some cases, a weirdly installed .NET framework will cause an exception here.
                 System.Windows.Forms.MessageBox.Show(MiscText.BadDotNetFramework, MiscText.AppTitle);
                 Environment.Exit(1);

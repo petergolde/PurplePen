@@ -276,6 +276,8 @@ namespace PurplePen
         {
             // Try the file name in the same directory as the purple pen event file.
             string directory = Path.GetDirectoryName(FileName);
+            if (directory == null)
+                directory = ".";
             string localMapFile = Path.Combine(directory, Path.GetFileName(missingMapFile));
 
             if (File.Exists(localMapFile)) {
