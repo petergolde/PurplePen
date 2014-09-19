@@ -210,6 +210,17 @@ namespace PurplePen
                 return new List<SymColor>();
         }
 
+        // Get a coordinate mapper for the map, or null if mapping coordinates isn't possible.
+        public CoordinateMapper CoordinateMapper
+        {
+            get {
+                if (mapType == MapType.OCAD && map != null)
+                    return new CoordinateMapper(map);
+                else
+                    return null;
+            }
+        }
+
         // Intensity to draw the map at.
         public float MapIntensity
         {

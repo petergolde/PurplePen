@@ -62,6 +62,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotSpatial.Projections">
+      <HintPath>..\Libraries\DotSpatialProjections\Debug\DotSpatial.Projections.dll</HintPath>
+    </Reference>
     <Reference Include="Graphics2D">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
     </Reference>
@@ -330,6 +333,7 @@
     <Compile Include="ExportBitmap.cs" />
     <Compile Include="ExportRouteGadget.cs" />
     <Compile Include="ExportXml.cs" />
+    <Compile Include="GpxFile.cs" />
     <Compile Include="GraphicsHelper.cs" />
     <Compile Include="Highlights.cs" />
     <Compile Include="InitialScreen.cs">

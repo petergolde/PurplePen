@@ -101,6 +101,7 @@
     <Compile Include="PurplePen\EventDBTests.cs" />
     <Compile Include="PurplePen\ExportXmlTests.cs" />
     <Compile Include="PurplePen\FindPurpleTests.cs" />
+    <Compile Include="PurplePen\GpxTests.cs" />
     <Compile Include="PurplePen\LegGapTests.cs" />
     <Compile Include="PurplePen\MainFrameTests.cs" />
     <Compile Include="PurplePen\MapDisplayTests.cs" />

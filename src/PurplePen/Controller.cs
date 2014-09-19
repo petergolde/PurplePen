@@ -519,6 +519,20 @@ namespace PurplePen
             }
         }
 
+        // Export GPX file to the give file name.
+        public bool ExportGpx(string filename)
+        {
+            GpxFile gpxFile = new GpxFile(eventDB, mapDisplay.CoordinateMapper, "");
+
+            bool success = HandleExceptions(
+                delegate {
+                    gpxFile.WriteGpx(filename);
+                },
+                MiscText.CannotCreateFile, filename);
+
+            return success;
+        }
+
         // Export XML interchange file to the give file name.
         public bool ExportXml(string filename, RectangleF mapBounds)
         {
