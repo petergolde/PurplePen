@@ -285,9 +285,9 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to export. Course.None means all controls.
         public string CodePrefix;               // Add this to control codes
 
-        public OcadCreationSettings Clone()
+        public GpxCreationSettings Clone()
         {
-            var clone = (OcadCreationSettings) base.MemberwiseClone();
+            var clone = (GpxCreationSettings) base.MemberwiseClone();
             clone.CourseIds = (Id<Course>[]) clone.CourseIds.Clone();
             return clone;
         }
@@ -307,7 +307,6 @@ namespace PurplePen
                 throw new Exception(MiscText.GpxMustBeOcadMap);
 
             using (map.Read()) {
-                // UNDONE: move text to localizable.
                 realWorldCoords = map.RealWorldCoords;
                 if (!realWorldCoords.RealWorldOn)
                     throw new Exception(MiscText.GpxMustHaveRealWorldCoord);

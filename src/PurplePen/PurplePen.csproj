@@ -191,6 +191,12 @@
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="CreateGpx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateGpx.Designer.cs">
+      <DependentUpon>CreateGpx.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatePdfCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1102,6 +1108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CourseSelector.ja.resx">
       <DependentUpon>CourseSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateGpx.resx">
+      <DependentUpon>CreateGpx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.ja.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>

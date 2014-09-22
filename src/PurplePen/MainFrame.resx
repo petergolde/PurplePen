@@ -211,7 +211,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 257</value>
+    <value>256, 260</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -220,7 +220,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -256,7 +256,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 106</value>
+    <value>256, 103</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>257</value>
+    <value>260</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -328,7 +328,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuABghrsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACAh7sL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -350,7 +350,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwq47J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwrc7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -358,7 +358,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -433,7 +433,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -1167,6 +1167,18 @@
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Item</value>
   </data>
+  <data name="createGPXFileMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Create &amp;GPX File...</value>
+  </data>
+  <data name="gpsMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
+  </data>
   <data name="courseSummaryMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
   </data>
@@ -1634,12 +1646,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVDhPvZKtTwJxGMe/I7gZrDqD0ej/4ChXDBbmrBYD
-        xUIwYbMZpDKLzb/CzWpwk2vXaNAAGa93fh542J14Q8Ym3+27u+f97aetI1YcTDS5dHEzJEpKMJlqWifh
-        rqtT9NQ7xFij0iv8HGscLnOkUdOSGE0eanji4VJb7b2sw7qk6JOnkKhcNiXZI/5v+J7DIjzNkqA78+uo
-        84XflYfPgfHZjBhuXZULfEr4fLCPY1elIMkDlUIcVm6+r/5RQ40dF/8ZVVULtHvgYi6wX1vnTPDoqhR2
-        ZkZ6s9ldlQuC722H8MVVc5A5GGjQMqNdYXGRLOngjCIX/Ifmh1zx8Fl7lUhR7NnXohXsqrvvKX6MMXOw
-        h2fV8ojfuz0JCv8+sy3UZvWOVu7kT1AtgEUXtwXpG/BKNtZIPj6nAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZIrT8NwFMVPJkgQs5AJ5OS+A5mpQWAWgsUg
+        MDMTqOFwCLAEg+NTLMEiSFjFkjkcc3tlz5bf3S5pB81YSNhJTtr7fv21dUSKgplmpy7+DbHiCoznmt+T
+        cNfVCfrqFzDeUakB36aaht850eTdkhhNHmtc8nCpo04+7bApKfrgKSQqX5iS7G3+q3yPYRkepknQlfl1
+        1R3gd+bhS2B8NCOGS1dlAp8KPq/so+iqBCS5oVKIw9rNDzU8aKq54+I/o656jnb3XcwE9nPrnAluXZXA
+        zsxIzza7qzJB8LXtED65agkyByONPsxoV/i6SJp0cESRE/5D80OuefiivVpLrcizb0Qr2FNvz1OsjLFw
+        sIdn1bKI34s9CQr/PLMt1Gb1jtbu5FdQLYBlF7cF6RPkAjbK/RbN1QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2055,6 +2067,15 @@
   </metadata>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <metadata name="saveGpxFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>863, 17</value>
+  </metadata>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX file|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Create GPX File</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2697,6 +2718,12 @@
   <data name="&gt;&gt;addRegMarkMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
+    <value>toolStripSeparator23</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;whiteOutMenu.Name" xml:space="preserve">
     <value>whiteOutMenu</value>
   </data>
@@ -2839,6 +2866,18 @@
     <value>changeDisplayedCoursesMenu</value>
   </data>
   <data name="&gt;&gt;changeDisplayedCoursesMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpsMenu.Name" xml:space="preserve">
+    <value>gpsMenu</value>
+  </data>
+  <data name="&gt;&gt;gpsMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;createGPXFileMenu.Name" xml:space="preserve">
+    <value>createGPXFileMenu</value>
+  </data>
+  <data name="&gt;&gt;createGPXFileMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;reportMenu.Name" xml:space="preserve">
@@ -3177,6 +3216,12 @@
   <data name="&gt;&gt;registrationMarkToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
+    <value>toolStripSeparator22</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;whiteOutToolStripMenuItem.Name" xml:space="preserve">
     <value>whiteOutToolStripMenuItem</value>
   </data>
@@ -3247,7 +3292,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>
@@ -3273,17 +3318,11 @@
   <data name="&gt;&gt;openImageDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator22.Name" xml:space="preserve">
-    <value>toolStripSeparator22</value>
+  <data name="&gt;&gt;saveGpxFileDialog.Name" xml:space="preserve">
+    <value>saveGpxFileDialog</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
-    <value>toolStripSeparator23</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;saveGpxFileDialog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>

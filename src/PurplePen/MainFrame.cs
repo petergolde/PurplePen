@@ -70,6 +70,7 @@ namespace PurplePen
         CoursePdfSettings coursePdfSettings = null;   // PDF creation settings for courses.
         OcadCreationSettings ocadCreationSettingsPrevious = null;     // creation settings for OCAD creation, if it has been done before.
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
+        GpxCreationSettings gpxCreationSettingsPrevious = null;  // creation settings for Gpx creation, if it has been done before.
 
         Uri helpFileUrl;                       // URL of the help file.
 
@@ -1937,6 +1938,42 @@ namespace PurplePen
 
             // And the dialog is done.
             createPdfDialog.Dispose();
+        }
+
+        private void createGpxMenu_Click(object sender, EventArgs e)
+        {
+            GpxCreationSettings settings;
+            if (gpxCreationSettingsPrevious != null)
+                settings = gpxCreationSettingsPrevious.Clone();
+            else {
+                // Default settings
+                settings = new GpxCreationSettings();
+            }
+
+            // Initialize the dialog.
+            CreateGpx createGpxDialog = new CreateGpx(controller.GetEventDB());
+            createGpxDialog.CreationSettings = settings;
+
+            // show the dialog; on success, create the files.
+            if (createGpxDialog.ShowDialog(this) == DialogResult.OK) {
+                // Show common save dialog to choose output file name.
+               // The default output for the XML is the same as the event file name, with xml extension.
+                string gpxFileName = Path.ChangeExtension(controller.FileName, ".gpx");
+
+                saveGpxFileDialog.FileName = gpxFileName;
+                DialogResult result = saveGpxFileDialog.ShowDialog();
+
+                if (result == DialogResult.OK) {
+                    gpxFileName = saveGpxFileDialog.FileName;
+
+                    // Save settings persisted between invocations of this dialog.
+                    gpxCreationSettingsPrevious = createGpxDialog.CreationSettings;
+                    controller.ExportGpx(gpxFileName, createGpxDialog.CreationSettings);
+                }
+            }
+
+            // And the dialog is done.
+            createGpxDialog.Dispose();
         }
 
         // Warn user about non-renderable objects. Return false if shouldn't continue

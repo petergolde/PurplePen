@@ -166,6 +166,7 @@ namespace PurplePen
             this.addForbiddenMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addBoundaryMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addRegMarkMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
             this.whiteOutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -190,6 +191,8 @@ namespace PurplePen
             this.endFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator19 = new System.Windows.Forms.ToolStripSeparator();
             this.changeDisplayedCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.gpsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseSummaryMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventAuditMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -247,6 +250,7 @@ namespace PurplePen
             this.forbiddenRouteMarkingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boundaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrationMarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.whiteOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -264,8 +268,7 @@ namespace PurplePen
             this.saveXmlFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -407,6 +410,7 @@ namespace PurplePen
             this.eventMenu,
             this.courseMenu,
             this.itemMenu,
+            this.gpsMenu,
             this.reportMenu,
             this.helpMenu});
             resources.ApplyResources(this.mainMenu, "mainMenu");
@@ -1057,6 +1061,11 @@ namespace PurplePen
             resources.ApplyResources(this.addRegMarkMenu, "addRegMarkMenu");
             this.addRegMarkMenu.Click += new System.EventHandler(this.addRegMarkMenu_Click);
             // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+            // 
             // whiteOutMenu
             // 
             this.whiteOutMenu.Name = "whiteOutMenu";
@@ -1200,6 +1209,19 @@ namespace PurplePen
             this.changeDisplayedCoursesMenu.Name = "changeDisplayedCoursesMenu";
             resources.ApplyResources(this.changeDisplayedCoursesMenu, "changeDisplayedCoursesMenu");
             this.changeDisplayedCoursesMenu.Click += new System.EventHandler(this.changeDisplayedCoursesMenu_Click);
+            // 
+            // gpsMenu
+            // 
+            this.gpsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createGPXFileMenu});
+            this.gpsMenu.Name = "gpsMenu";
+            resources.ApplyResources(this.gpsMenu, "gpsMenu");
+            // 
+            // createGPXFileMenu
+            // 
+            this.createGPXFileMenu.Name = "createGPXFileMenu";
+            resources.ApplyResources(this.createGPXFileMenu, "createGPXFileMenu");
+            this.createGPXFileMenu.Click += new System.EventHandler(this.createGpxMenu_Click);
             // 
             // reportMenu
             // 
@@ -1612,6 +1634,11 @@ namespace PurplePen
             this.registrationMarkToolStripMenuItem.Name = "registrationMarkToolStripMenuItem";
             this.registrationMarkToolStripMenuItem.Click += new System.EventHandler(this.addRegMarkMenu_Click);
             // 
+            // toolStripSeparator22
+            // 
+            this.toolStripSeparator22.Name = "toolStripSeparator22";
+            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
+            // 
             // whiteOutToolStripMenuItem
             // 
             resources.ApplyResources(this.whiteOutToolStripMenuItem, "whiteOutToolStripMenuItem");
@@ -1717,15 +1744,10 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.openImageDialog, "openImageDialog");
             // 
-            // toolStripSeparator22
+            // saveGpxFileDialog
             // 
-            this.toolStripSeparator22.Name = "toolStripSeparator22";
-            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
-            // 
-            // toolStripSeparator23
-            // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+            this.saveGpxFileDialog.DefaultExt = "gpx";
+            resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
             // MainFrame
             // 
@@ -1968,6 +1990,9 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem changeLineAppearanceMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator23;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
+        private System.Windows.Forms.ToolStripMenuItem gpsMenu;
+        private System.Windows.Forms.ToolStripMenuItem createGPXFileMenu;
+        private System.Windows.Forms.SaveFileDialog saveGpxFileDialog;
 
     }
 }
