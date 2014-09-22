@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1"
+creator="OCAD Version 11.5.6  Special Build 2031" version="1.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 
+http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+  <metadata>
+    <name>testproj2_ocad.gpx</name>
+    <link href="http://www.ocad.com">
+      <text>OCAD AG</text>
+    </link>
+    <time>2014-09-21T13:29:13</time>
+    <bounds maxlat="49.83796750" maxlon="-7.42842499" minlat="49.83212191" minlon="-7.44873162"/>
+  </metadata>
+
+  <wpt lat="49.83712315" lon="-7.44664071" >
+    <name> wpt1 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+  <wpt lat="49.83902670" lon="-7.43928965" >
+    <name> wpt2 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+  <wpt lat="49.83647804" lon="-7.43692011" >
+    <name> wpt3 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+  <wpt lat="49.83263910" lon="-7.43061940" >
+    <name> wpt4 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+  <wpt lat="49.83193388" lon="-7.44457964" >
+    <name> wpt5 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+  <wpt lat="49.83262485" lon="-7.43796187" >
+    <name> wpt6 </name>
+    <cmt> Registration mark </cmt>
+  </wpt>
+</gpx>

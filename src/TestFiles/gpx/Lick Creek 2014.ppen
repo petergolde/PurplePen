@@ -266,6 +266,12 @@
     <print-area left="-40.2361526" top="180.005951" right="141.610291" bottom="39.1233139" />
     <options print-scale="10000" climb="140" load="40" description-kind="symbols" />
   </course>
+  <course id="5" kind="score" order="5">
+    <name>Score</name>
+    <labels label-kind="sequence" />
+    <first course-control="65" />
+    <options print-scale="10000" score-column="H" description-kind="symbols" />
+  </course>
   <course-control id="1" control="1">
     <next course-control="2" />
   </course-control>
@@ -449,6 +455,37 @@
   <course-control id="64" control="40">
     <next course-control="18" />
     <number-location x="4.27469635" y="-3.19228363" />
+  </course-control>
+  <course-control id="65" control="1">
+    <next course-control="67" />
+  </course-control>
+  <course-control id="66" control="14" />
+  <course-control id="67" control="36">
+    <next course-control="68" />
+  </course-control>
+  <course-control id="68" control="2">
+    <next course-control="69" />
+  </course-control>
+  <course-control id="69" control="18">
+    <next course-control="70" />
+  </course-control>
+  <course-control id="70" control="28">
+    <next course-control="71" />
+  </course-control>
+  <course-control id="71" control="4">
+    <next course-control="72" />
+  </course-control>
+  <course-control id="72" control="15">
+    <next course-control="73" />
+  </course-control>
+  <course-control id="73" control="26">
+    <next course-control="74" />
+  </course-control>
+  <course-control id="74" control="13">
+    <next course-control="75" />
+  </course-control>
+  <course-control id="75" control="21">
+    <next course-control="66" />
   </course-control>
   <special-object id="1" kind="descriptions">
     <location x="108.418579" y="177.17305" />

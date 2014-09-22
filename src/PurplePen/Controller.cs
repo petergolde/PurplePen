@@ -520,12 +520,12 @@ namespace PurplePen
         }
 
         // Export GPX file to the give file name.
-        public bool ExportGpx(string filename)
+        public bool ExportGpx(string filename, GpxCreationSettings settings)
         {
-            GpxFile gpxFile = new GpxFile(eventDB, mapDisplay.CoordinateMapper, "");
-
             bool success = HandleExceptions(
                 delegate {
+                    GpxFile gpxFile = new GpxFile(eventDB, mapDisplay.CoordinateMapper, settings);
+
                     gpxFile.WriteGpx(filename);
                 },
                 MiscText.CannotCreateFile, filename);

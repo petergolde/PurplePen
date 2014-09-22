@@ -509,4 +509,19 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Change Line Appearance</value>
   </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>The map file must be an OCAD file to use GPX files.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>The OCAD file must have a coordinate system defined to use GPX files.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>The OCAD file must have real world coordinates defined to use GPX files.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Could not reproject points; either the coordinate system or the real world coordinates in the OCAD map are wrong.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>The OCAD file uses a coordinate system that is not supported by Purple Pen.</value>
+  </data>
 </root>

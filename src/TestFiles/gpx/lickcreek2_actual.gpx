@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx creator="Purple Pen 2.3.2" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>lickcreek2_actual.gpx</name>
+    <desc>Lick Creek 2014</desc>
+    <link href="http://purple-pen.org">
+      <text>Purple Pen</text>
+    </link>
+    <time>2014-09-22T18:45:48Z</time>
+    <bounds minlat="47.280142217402854" minlon="-120.89206423383212" maxlat="47.287290060417114" maxlon="-120.8740802719054" />
+  </metadata>
+  <wpt lat="47.280142217402854" lon="-120.8777055333771">
+    <name>SSTA1</name>
+    <sym>Navaid, Green</sym>
+  </wpt>
+  <wpt lat="47.2854728245645" lon="-120.88060605526918">
+    <name>S101</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.286072919212657" lon="-120.89126106557015">
+    <name>S103</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.282180698094209" lon="-120.87528422954527">
+    <name>S112</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.283998061541332" lon="-120.89206423383212">
+    <name>S113</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.284875245157309" lon="-120.8779412350234">
+    <name>S116</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.28559976696932" lon="-120.8740802719054">
+    <name>S119</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.282813945012769" lon="-120.88561718344052">
+    <name>S124</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.287290060417114" lon="-120.88591862122618">
+    <name>S126</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.28341959417989" lon="-120.88331590118973">
+    <name>S131</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="47.28022601404755" lon="-120.87684690138453">
+    <name>SFIN1</name>
+    <sym>Navaid, Red</sym>
+  </wpt>
+</gpx>

@@ -66,32 +66,103 @@ namespace PurplePen.Tests
 
 
         [TestMethod]
-        public void ExportGpxTest()
+        public void ExportGpx()
         {
             string outputFile = TestUtil.GetTestFile("gpx\\lickcreek_actual.gpx");
             string expectedFile = TestUtil.GetTestFile("gpx\\lickcreek_expected.gpx");
 
             Setup("gpx\\Lick Creek 2014.ppen");
 
-            controller.ExportGpx(outputFile);
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None, new Id<Course>(3), new Id<Course>(4), new Id<Course>(2) },
+                CodePrefix = "PR"
+            });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
         }
 
         [TestMethod]
-        public void ExportXmlTestMapExchange()
+        public void ExportGpx2()
         {
-            Dictionary<string, string> exceptions = ExportXml.TestFileExceptionMap();
+            string outputFile = TestUtil.GetTestFile("gpx\\lickcreek2_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\lickcreek2_expected.gpx");
 
-            string outputFile = TestUtil.GetTestFile("exportxml\\mapexchange1_actual.xml");
-            string expectedFile = TestUtil.GetTestFile("exportxml\\mapexchange1_expected.xml");
+            Setup("gpx\\Lick Creek 2014.ppen");
 
-            Setup("exportxml\\mapexchange1.ppen");
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { new Id<Course>(5) },
+                CodePrefix = "S"
+            });
 
-            controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F));
-
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
         }
+
+        [TestMethod]
+        public void ExportGpxProj1()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\testproj1_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\testproj1_expected.gpx");
+
+            Setup("gpx\\testproj1.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None },
+                CodePrefix = ""
+            });
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+        }
+
+
+        [TestMethod]
+        public void ExportGpxProj2()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\testproj2_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\testproj2_expected.gpx");
+
+            Setup("gpx\\testproj2.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None },
+                CodePrefix = ""
+            });
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+        }
+
+        [TestMethod]
+        public void ExportGpxProj3()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\testproj3_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\testproj3_expected.gpx");
+
+            Setup("gpx\\testproj3.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None },
+                CodePrefix = ""
+            });
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+        }
+
+        [TestMethod]
+        public void ExportGpxProj4()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\testproj4_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\testproj4_expected.gpx");
+
+            Setup("gpx\\testproj4.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None },
+                CodePrefix = ""
+            });
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+        }
+
+
 
     }
 }

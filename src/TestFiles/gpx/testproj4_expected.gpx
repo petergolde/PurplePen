@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpx creator="Purple Pen 2.3.2" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>testproj4_actual.gpx</name>
+    <desc>Test Projection</desc>
+    <link href="http://purple-pen.org">
+      <text>Purple Pen</text>
+    </link>
+    <time>2014-09-22T18:34:26Z</time>
+    <bounds minlat="-37.470121302071313" minlon="-117.7647649933287" maxlat="-37.463206389044458" maxlon="-117.75232090761503" />
+  </metadata>
+  <wpt lat="-37.464649015751924" lon="-117.7647649933287">
+    <name>31</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="-37.463206389044458" lon="-117.75858009594182">
+    <name>32</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="-37.465897426014735" lon="-117.75696623248258">
+    <name>33</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="-37.470121302071313" lon="-117.75232090761503">
+    <name>34</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="-37.469960330321832" lon="-117.76372091275333">
+    <name>35</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+  <wpt lat="-37.4696814981614" lon="-117.75827403872003">
+    <name>36</name>
+    <sym>Navaid, Violet</sym>
+  </wpt>
+</gpx>

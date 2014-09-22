@@ -1,157 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gpx creator="Purple Pen" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
+<gpx creator="Purple Pen 2.3.2" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
   <metadata>
+    <name>lickcreek_actual.gpx</name>
+    <desc>Lick Creek 2014</desc>
     <link href="http://purple-pen.org">
       <text>Purple Pen</text>
     </link>
-    <time>2014-09-19T16:51:39Z</time>
+    <time>2014-09-22T18:39:27Z</time>
+    <bounds minlat="47.27725924523714" minlon="-120.89547226092165" maxlat="47.291566282154065" maxlon="-120.87027416660048" />
   </metadata>
   <wpt lat="47.280142217402854" lon="-120.8777055333771">
-    <name>STA1</name>
-    <sym>Navaid, Red</sym>
+    <name>PRSTA1</name>
+    <sym>Navaid, Green</sym>
   </wpt>
   <wpt lat="47.2854728245645" lon="-120.88060605526918">
-    <name>101</name>
+    <name>PR101</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.286072919212657" lon="-120.89126106557015">
-    <name>103</name>
+    <name>PR103</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.287916371620256" lon="-120.89547226092165">
-    <name>104</name>
+    <name>PR104</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.290546631276953" lon="-120.89415219983377">
-    <name>105</name>
+    <name>PR105</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.291379038123033" lon="-120.88707727363341">
-    <name>106</name>
+    <name>PR106</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.291293248048014" lon="-120.88285456175028">
-    <name>107</name>
+    <name>PR107</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.291566282154065" lon="-120.878887270367">
-    <name>108</name>
+    <name>PR108</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.2906904668932" lon="-120.87435582314133">
-    <name>109</name>
+    <name>PR109</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.289305987536224" lon="-120.8760539254283">
-    <name>110</name>
+    <name>PR110</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.285090966896128" lon="-120.8773512681165">
-    <name>111</name>
+    <name>PR111</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.282180698094209" lon="-120.87528422954527">
-    <name>112</name>
+    <name>PR112</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.283998061541332" lon="-120.89206423383212">
-    <name>113</name>
+    <name>PR113</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.285686047163082" lon="-120.89472289984386">
-    <name>114</name>
+    <name>PR114</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.283862470396471" lon="-120.87688359404427">
-    <name>115</name>
+    <name>PR115</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.284875245157309" lon="-120.8779412350234">
-    <name>116</name>
+    <name>PR116</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.286400826676555" lon="-120.87785977919563">
-    <name>117</name>
+    <name>PR117</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.285087883634638" lon="-120.87644237683152">
-    <name>118</name>
+    <name>PR118</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.28559976696932" lon="-120.8740802719054">
-    <name>119</name>
+    <name>PR119</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.284520123176655" lon="-120.87027416660048">
-    <name>120</name>
+    <name>PR120</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.283195902151284" lon="-120.87219913989939">
-    <name>121</name>
+    <name>PR121</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.27725924523714" lon="-120.88219201418423">
-    <name>122</name>
+    <name>PR122</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.279610014431405" lon="-120.88435061299904">
-    <name>123</name>
+    <name>PR123</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.282813945012769" lon="-120.88561718344052">
-    <name>124</name>
+    <name>PR124</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.2845506719141" lon="-120.88692367323392">
-    <name>125</name>
+    <name>PR125</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.287290060417114" lon="-120.88591862122618">
-    <name>126</name>
+    <name>PR126</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.28924697655745" lon="-120.8848176914359">
-    <name>127</name>
+    <name>PR127</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.287681992756639" lon="-120.87912575360124">
-    <name>128</name>
+    <name>PR128</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.283989812046251" lon="-120.87498319359037">
-    <name>129</name>
+    <name>PR129</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.282530599317887" lon="-120.87790923513457">
-    <name>102</name>
+    <name>PR102</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.283514659718428" lon="-120.87981262756823">
-    <name>130</name>
+    <name>PR130</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.28341959417989" lon="-120.88331590118973">
-    <name>131</name>
+    <name>PR131</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.290197145677965" lon="-120.88284172341628">
-    <name>132</name>
+    <name>PR132</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.289511499041296" lon="-120.88096794482412">
-    <name>133</name>
+    <name>PR133</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.2882178499214" lon="-120.88805395789639">
-    <name>134</name>
+    <name>PR134</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.281569202289432" lon="-120.8736198576737">
-    <name>135</name>
+    <name>PR135</name>
     <sym>Navaid, Violet</sym>
   </wpt>
   <wpt lat="47.28022601404755" lon="-120.87684690138453">
-    <name>FIN1</name>
-    <sym>Navaid, Green</sym>
+    <name>PRFIN1</name>
+    <sym>Navaid, Red</sym>
   </wpt>
+  <trk>
+    <name>Course 2</name>
+    <trkseg>
+      <trkpt lat="47.280142217402854" lon="-120.8777055333771">
+        <name>PRSTA1</name>
+      </trkpt>
+      <trkpt lat="47.27725924523714" lon="-120.88219201418423">
+        <name>PR122</name>
+      </trkpt>
+      <trkpt lat="47.279610014431405" lon="-120.88435061299904">
+        <name>PR123</name>
+      </trkpt>
+      <trkpt lat="47.282813945012769" lon="-120.88561718344052">
+        <name>PR124</name>
+      </trkpt>
+      <trkpt lat="47.2845506719141" lon="-120.88692367323392">
+        <name>PR125</name>
+      </trkpt>
+      <trkpt lat="47.287290060417114" lon="-120.88591862122618">
+        <name>PR126</name>
+      </trkpt>
+      <trkpt lat="47.28924697655745" lon="-120.8848176914359">
+        <name>PR127</name>
+      </trkpt>
+      <trkpt lat="47.287681992756639" lon="-120.87912575360124">
+        <name>PR128</name>
+      </trkpt>
+      <trkpt lat="47.285090966896128" lon="-120.8773512681165">
+        <name>PR111</name>
+      </trkpt>
+      <trkpt lat="47.283989812046251" lon="-120.87498319359037">
+        <name>PR129</name>
+      </trkpt>
+      <trkpt lat="47.28022601404755" lon="-120.87684690138453">
+        <name>PRFIN1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Course 3</name>
+    <trkseg>
+      <trkpt lat="47.280142217402854" lon="-120.8777055333771">
+        <name>PRSTA1</name>
+      </trkpt>
+      <trkpt lat="47.282530599317887" lon="-120.87790923513457">
+        <name>PR102</name>
+      </trkpt>
+      <trkpt lat="47.283514659718428" lon="-120.87981262756823">
+        <name>PR130</name>
+      </trkpt>
+      <trkpt lat="47.28341959417989" lon="-120.88331590118973">
+        <name>PR131</name>
+      </trkpt>
+      <trkpt lat="47.2845506719141" lon="-120.88692367323392">
+        <name>PR125</name>
+      </trkpt>
+      <trkpt lat="47.286072919212657" lon="-120.89126106557015">
+        <name>PR103</name>
+      </trkpt>
+      <trkpt lat="47.2882178499214" lon="-120.88805395789639">
+        <name>PR134</name>
+      </trkpt>
+      <trkpt lat="47.28924697655745" lon="-120.8848176914359">
+        <name>PR127</name>
+      </trkpt>
+      <trkpt lat="47.290197145677965" lon="-120.88284172341628">
+        <name>PR132</name>
+      </trkpt>
+      <trkpt lat="47.289511499041296" lon="-120.88096794482412">
+        <name>PR133</name>
+      </trkpt>
+      <trkpt lat="47.289305987536224" lon="-120.8760539254283">
+        <name>PR110</name>
+      </trkpt>
+      <trkpt lat="47.285090966896128" lon="-120.8773512681165">
+        <name>PR111</name>
+      </trkpt>
+      <trkpt lat="47.283989812046251" lon="-120.87498319359037">
+        <name>PR129</name>
+      </trkpt>
+      <trkpt lat="47.282180698094209" lon="-120.87528422954527">
+        <name>PR112</name>
+      </trkpt>
+      <trkpt lat="47.28022601404755" lon="-120.87684690138453">
+        <name>PRFIN1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Course 1</name>
+    <trkseg>
+      <trkpt lat="47.280142217402854" lon="-120.8777055333771">
+        <name>PRSTA1</name>
+      </trkpt>
+      <trkpt lat="47.283862470396471" lon="-120.87688359404427">
+        <name>PR115</name>
+      </trkpt>
+      <trkpt lat="47.284875245157309" lon="-120.8779412350234">
+        <name>PR116</name>
+      </trkpt>
+      <trkpt lat="47.286400826676555" lon="-120.87785977919563">
+        <name>PR117</name>
+      </trkpt>
+      <trkpt lat="47.285087883634638" lon="-120.87644237683152">
+        <name>PR118</name>
+      </trkpt>
+      <trkpt lat="47.28559976696932" lon="-120.8740802719054">
+        <name>PR119</name>
+      </trkpt>
+      <trkpt lat="47.284520123176655" lon="-120.87027416660048">
+        <name>PR120</name>
+      </trkpt>
+      <trkpt lat="47.283195902151284" lon="-120.87219913989939">
+        <name>PR121</name>
+      </trkpt>
+      <trkpt lat="47.281569202289432" lon="-120.8736198576737">
+        <name>PR135</name>
+      </trkpt>
+      <trkpt lat="47.28022601404755" lon="-120.87684690138453">
+        <name>PRFIN1</name>
+      </trkpt>
+    </trkseg>
+  </trk>
 </gpx>

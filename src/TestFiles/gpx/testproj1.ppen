@@ -1,0 +1,35 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Test Projection</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">testproj1.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" />
+    <descriptions lang="en" color="black" />
+  </event>
+  <control id="1" kind="normal">
+    <code>31</code>
+    <location x="-34.751503" y="6.08946037" />
+  </control>
+  <control id="2" kind="normal">
+    <code>32</code>
+    <location x="-2.91370344" y="26.8727589" />
+  </control>
+  <control id="3" kind="normal">
+    <code>33</code>
+    <location x="11.96515" y="10.5626183" />
+  </control>
+  <control id="4" kind="normal">
+    <code>34</code>
+    <location x="47.2456055" y="-11.4327507" />
+  </control>
+  <control id="5" kind="normal">
+    <code>35</code>
+    <location x="-17.4749813" y="-29.7571125" />
+  </control>
+  <control id="6" kind="normal">
+    <code>36</code>
+    <location x="12.6859293" y="-18.4803925" />
+  </control>
+</course-scribe-event>
