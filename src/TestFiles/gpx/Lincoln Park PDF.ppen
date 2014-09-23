@@ -1,0 +1,154 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Lincoln Park</title>
+    <map kind="PDF" scale="5000">Lincoln-CMYK.pdf</map>
+    <all-controls print-scale="5000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance />
+    <descriptions lang="en" />
+  </event>
+  <control id="1" kind="start">
+    <location x="148.540009" y="69.59859" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="127.356186" y="125.047028" />
+    <description box="D" iof-2004-ref="1.10" />
+    <gaps scale="5000">11100000000011111111111111111111</gaps>
+    <circle-gaps scale="5000">224.4232:330.1188</circle-gaps>
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="76.04214" y="136.214325" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.2" />
+    <gaps scale="5000">00011111111111111111111100000000</gaps>
+    <circle-gaps scale="5000">-32.6925049:87.77142</circle-gaps>
+  </control>
+  <control id="5" kind="finish">
+    <location x="140.956085" y="48.9699936" />
+    <description box="all" iof-2004-ref="14.3" />
+    <gaps scale="5000">11111111111000000000011111111111</gaps>
+    <circle-gaps scale="5000">126.475586:231.030273</circle-gaps>
+  </control>
+  <control id="6" kind="normal">
+    <code>33</code>
+    <location x="128.020172" y="81.34616" />
+  </control>
+  <control id="7" kind="normal">
+    <code>34</code>
+    <location x="103.336723" y="83.28826" />
+  </control>
+  <control id="8" kind="normal">
+    <code>35</code>
+    <location x="97.82367" y="67.50087" />
+  </control>
+  <control id="9" kind="normal">
+    <code>36</code>
+    <location x="118.947639" y="200.539688" />
+  </control>
+  <control id="10" kind="normal">
+    <code>37</code>
+    <location x="81.58466" y="240.011871" />
+  </control>
+  <control id="11" kind="normal">
+    <code>38</code>
+    <location x="64.10844" y="117.979553" />
+  </control>
+  <control id="12" kind="normal">
+    <code>39</code>
+    <location x="121.358154" y="148.713623" />
+  </control>
+  <control id="13" kind="normal">
+    <code>40</code>
+    <location x="86.10438" y="158.657" />
+  </control>
+  <control id="14" kind="normal">
+    <code>41</code>
+    <location x="80.68072" y="98.092804" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Short</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>SmallScale</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area left="88.28509" top="88.66856" right="163.773071" bottom="42.1839943" />
+    <options print-scale="2000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>LargeScale</name>
+    <labels label-kind="sequence" />
+    <first course-control="12" />
+    <options print-scale="8000" description-kind="symbols" />
+  </course>
+  <course id="4" kind="normal" order="4">
+    <name>MediumScale</name>
+    <labels label-kind="sequence" />
+    <first course-control="17" />
+    <options print-scale="3000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="5" />
+  <course-control id="7" control="1">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="8" control="5" />
+  <course-control id="9" control="6">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="7">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="8">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="12" control="1">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="13" control="5" />
+  <course-control id="14" control="9">
+    <next course-control="15" />
+  </course-control>
+  <course-control id="15" control="10">
+    <next course-control="16" />
+  </course-control>
+  <course-control id="16" control="11">
+    <next course-control="13" />
+  </course-control>
+  <course-control id="17" control="1">
+    <next course-control="19" />
+  </course-control>
+  <course-control id="18" control="5" />
+  <course-control id="19" control="12">
+    <next course-control="20" />
+  </course-control>
+  <course-control id="20" control="13">
+    <next course-control="21" />
+  </course-control>
+  <course-control id="21" control="14">
+    <next course-control="18" />
+  </course-control>
+  <leg id="1" start-control="3" end-control="5">
+    <bends>
+      <location x="89.21709" y="79.9711151" />
+    </bends>
+    <gaps>
+      <gap start="74.7756348" length="14.7844925" />
+    </gaps>
+  </leg>
+</course-scribe-event>

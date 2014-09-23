@@ -308,11 +308,11 @@ namespace PurplePen
 
             using (map.Read()) {
                 realWorldCoords = map.RealWorldCoords;
-                if (!realWorldCoords.RealWorldOn)
+                if (!realWorldCoords.RealWorldOn && realWorldCoords.RealWorldAngle == 0 && realWorldCoords.RealWorldOffsetX == 0 && realWorldCoords.RealWorldOffsetY == 0)
                     throw new Exception(MiscText.GpxMustHaveRealWorldCoord);
                 if (realWorldCoords.ProjectionType != MapProjectionType.Known) {
                     if (realWorldCoords.ProjectionType == MapProjectionType.None)
-                        throw new Exception(MiscText.GpxMustHaveRealWorldCoord);
+                        throw new Exception(MiscText.GpxMustHaveCoordSystem);
                     else if (realWorldCoords.ProjectionType == MapProjectionType.Unknown)
                         throw new Exception(MiscText.GpxUnsupportedCoordSystem);
                 }

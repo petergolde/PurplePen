@@ -79,6 +79,7 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
 
         [TestMethod]
@@ -95,6 +96,7 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
 
         [TestMethod]
@@ -111,6 +113,7 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
 
 
@@ -128,6 +131,7 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
 
         [TestMethod]
@@ -144,6 +148,7 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
 
         [TestMethod]
@@ -160,7 +165,90 @@ namespace PurplePen.Tests
             });
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            Assert.AreEqual("", ui.output.ToString());
         }
+
+
+        [TestMethod]
+        public void ExportGpxNotOcad()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\lincoln_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\lincoln_expected.gpx");
+
+            Setup("gpx\\Lincoln Park PDF.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None, },
+                CodePrefix = ""
+            });
+
+            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
+
+The map file must be an OCAD file to use GPX files.'
+", ui.output.ToString());
+            Assert.IsFalse(File.Exists(outputFile));
+        }
+
+        [TestMethod]
+        public void ExportGpxNoRealWorld()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\lickcreeknorealworld_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\lickcreeknorealworld_expected.gpx");
+
+            Setup("gpx\\Lick Creek 2014 NoRealWorld.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None, new Id<Course>(3), new Id<Course>(4), new Id<Course>(2) },
+                CodePrefix = ""
+            });
+
+            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
+
+The OCAD file must have real world coordinates defined to use GPX files.'
+", ui.output.ToString());
+            Assert.IsFalse(File.Exists(outputFile));
+        }
+
+        [TestMethod]
+        public void ExportGpxNoCoordSystem()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\lickcreeknocoord_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\lickcreeknocoord_expected.gpx");
+
+            Setup("gpx\\Lick Creek 2014 NoCoordSystem.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None, new Id<Course>(3), new Id<Course>(4), new Id<Course>(2) },
+                CodePrefix = ""
+            });
+
+            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
+
+The OCAD file must have a coordinate system defined to use GPX files.'
+", ui.output.ToString());
+            Assert.IsFalse(File.Exists(outputFile));
+        }
+
+        [TestMethod]
+        public void ExportGpxUnsupCoordSystem()
+        {
+            string outputFile = TestUtil.GetTestFile("gpx\\lickcreekunsupcoord_actual.gpx");
+            string expectedFile = TestUtil.GetTestFile("gpx\\lickcreekunsupcoord_expected.gpx");
+
+            Setup("gpx\\Lick Creek 2014 UnsupCoordSystem.ppen");
+
+            controller.ExportGpx(outputFile, new GpxCreationSettings() {
+                CourseIds = new Id<Course>[] { Id<Course>.None, new Id<Course>(3), new Id<Course>(4), new Id<Course>(2) },
+                CodePrefix = ""
+            });
+
+            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
+
+The OCAD file uses a coordinate system that is not supported by Purple Pen.'
+", ui.output.ToString());
+            Assert.IsFalse(File.Exists(outputFile));
+        }
+
 
 
 
