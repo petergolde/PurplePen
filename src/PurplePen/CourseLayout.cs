@@ -126,7 +126,7 @@ namespace PurplePen
                 Dictionary<SpecialColor, SymColor> customColors = new Dictionary<SpecialColor, SymColor>();
 
                 // Create white color and white-out symdef.
-                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
+                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0, false);
                 AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
                 whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);
@@ -144,7 +144,7 @@ namespace PurplePen
                         if (!customColors.ContainsKey(courseObject.CustomColor)) {
                             CmykColor cmyk = courseObject.CustomColor.CustomColor;
                             customColors.Add(courseObject.CustomColor, map.AddColor(string.Format("Color {0}", customColorId), customColorId,
-                                                                                    cmyk.Cyan, cmyk.Magenta, cmyk.Yellow, cmyk.Black));
+                                                                                    cmyk.Cyan, cmyk.Magenta, cmyk.Yellow, cmyk.Black, false));
                             ++customColorId;
                         }
                     }
@@ -160,7 +160,7 @@ namespace PurplePen
                     if (colors[layerIndex] == null) {
                         // Create the symColor for rendering.
                         colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
-                            colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex]);
+                            colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], false);
                     }
 
                     SymColor color = colors[layerIndex];

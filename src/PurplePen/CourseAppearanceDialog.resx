@@ -744,6 +744,36 @@
   <data name="groupBoxPurple.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="checkBoxBlendPurple.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxBlendPurple.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxBlendPurple.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 23</value>
+  </data>
+  <data name="checkBoxBlendPurple.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 17</value>
+  </data>
+  <data name="checkBoxBlendPurple.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Blend purple with underlying map colors</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBlendPurple.Name" xml:space="preserve">
+    <value>checkBoxBlendPurple</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBlendPurple.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBlendPurple.Parent" xml:space="preserve">
+    <value>groupBoxPurple</value>
+  </data>
+  <data name="&gt;&gt;checkBoxBlendPurple.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -751,7 +781,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 76</value>
+    <value>187, 102</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
@@ -772,10 +802,10 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="upDownBlack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 74</value>
+    <value>259, 100</value>
   </data>
   <data name="upDownBlack.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -793,7 +823,7 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;upDownBlack.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -802,7 +832,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 76</value>
+    <value>16, 102</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
@@ -823,10 +853,10 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="upDownYellow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 74</value>
+    <value>88, 100</value>
   </data>
   <data name="upDownYellow.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -844,7 +874,7 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;upDownYellow.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -853,7 +883,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 48</value>
+    <value>187, 74</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -874,10 +904,10 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="upDownMagenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 46</value>
+    <value>259, 72</value>
   </data>
   <data name="upDownMagenta.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -895,13 +925,13 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;upDownMagenta.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 48</value>
+    <value>16, 74</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -922,10 +952,10 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="upDownCyan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 46</value>
+    <value>88, 72</value>
   </data>
   <data name="upDownCyan.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -943,13 +973,13 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;upDownCyan.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="checkBoxDefaultPurple.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="checkBoxDefaultPurple.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 20</value>
+    <value>19, 46</value>
   </data>
   <data name="checkBoxDefaultPurple.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
@@ -970,13 +1000,13 @@
     <value>groupBoxPurple</value>
   </data>
   <data name="&gt;&gt;checkBoxDefaultPurple.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="groupBoxPurple.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 13</value>
   </data>
   <data name="groupBoxPurple.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 120</value>
+    <value>335, 129</value>
   </data>
   <data name="groupBoxPurple.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1060,7 +1090,7 @@
     <value>Purple</value>
   </data>
   <data name="comboBoxDescriptionColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 21</value>
+    <value>137, 26</value>
   </data>
   <data name="comboBoxDescriptionColor.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 21</value>
@@ -1084,7 +1114,7 @@
     <value>True</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 24</value>
+    <value>20, 29</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 13</value>
@@ -1108,10 +1138,10 @@
     <value>1</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 158</value>
+    <value>354, 148</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>335, 100</value>
+    <value>335, 110</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1156,6 +1186,6 @@
     <value>CourseAppearanceDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.3.1.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

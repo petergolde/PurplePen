@@ -66,6 +66,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxDescriptionColor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.checkBoxBlendPurple = new System.Windows.Forms.CheckBox();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
@@ -351,6 +352,7 @@
             // groupBoxPurple
             // 
             resources.ApplyResources(this.groupBoxPurple, "groupBoxPurple");
+            this.groupBoxPurple.Controls.Add(this.checkBoxBlendPurple);
             this.groupBoxPurple.Controls.Add(this.label5);
             this.groupBoxPurple.Controls.Add(this.upDownBlack);
             this.groupBoxPurple.Controls.Add(this.label6);
@@ -461,6 +463,13 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
+            // checkBoxBlendPurple
+            // 
+            resources.ApplyResources(this.checkBoxBlendPurple, "checkBoxBlendPurple");
+            this.checkBoxBlendPurple.Name = "checkBoxBlendPurple";
+            this.checkBoxBlendPurple.UseVisualStyleBackColor = true;
+            this.checkBoxBlendPurple.CheckedChanged += new System.EventHandler(this.checkBoxBlendPurple_CheckedChanged);
+            // 
             // CourseAppearanceDialog
             // 
             resources.ApplyResources(this, "$this");
@@ -539,5 +548,6 @@
         private System.Windows.Forms.Label labelAutoGapSize;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown upDownLegGapSize;
+        private System.Windows.Forms.CheckBox checkBoxBlendPurple;
     }
 }

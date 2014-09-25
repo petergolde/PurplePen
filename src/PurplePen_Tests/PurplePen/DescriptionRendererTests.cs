@@ -282,13 +282,13 @@ namespace PurplePen.Tests
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
 
                 // Create white color and white-out symdef.
-                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0);
+                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0, false);
                 AreaSymDef whiteArea = new AreaSymDef("White out", 890000, white, null);
                 whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);
                 dict[CourseLayout.KeyWhiteOut] = whiteArea;
 
-                SymColor color = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
+                SymColor color = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
                 descriptionRenderer.RenderToMap(map, color, location, dict);
             }
 

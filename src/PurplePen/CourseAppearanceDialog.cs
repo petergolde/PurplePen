@@ -110,10 +110,10 @@ namespace PurplePen
         }
 
         // Get a color value from the CMYK boxes
-        Color GetCurrentColor()
+        CmykColor GetCurrentColor()
         {
             CmykColor cmykColor = CmykColor.FromCmyk((float) upDownCyan.Value / 100F, (float) upDownMagenta.Value / 100F, (float) upDownYellow.Value / 100F, (float) upDownBlack.Value / 100F);
-            return SwopColorConverter.CmykToRgbColor(cmykColor);
+            return cmykColor;
         }
 
         // Set a CMYK value into the CMYK boxes.
@@ -140,83 +140,120 @@ namespace PurplePen
         private void pictureBoxPreview_Paint(object sender, PaintEventArgs e)
         {
             // Get the graphics, size to 10 mm high.
-            float scale = 10.0F / pictureBoxPreview.ClientSize.Height;
-            Graphics g = e.Graphics;
-            g.ScaleTransform(1/ scale, 1/scale);
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            const int bitmapScaleFactor = 4;  // Scale bitmap by 4x for better accuracy.
+            RectangleF rect = new RectangleF(0, 0, 10F * pictureBoxPreview.ClientSize.Width / pictureBoxPreview.ClientSize.Height, 10F);
+            var grTarget = new GDIPlus_BitmapGraphicsTarget(pictureBoxPreview.ClientSize.Width * bitmapScaleFactor, pictureBoxPreview.ClientSize.Height * bitmapScaleFactor, 
+                false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, new SwopColorConverter());
+            Bitmap bitmap;
 
-            // Get sizes and colors and so forth.
-            float lineWidth = (float) upDownLineWidth.Value;           
-            float circleDiameter = (float) upDownControlCircle.Value;    // outside diameter
-            float dotDiameter = (float) upDownCenterDot.Value;
-            float numberHeight = (float) upDownNumberHeight.Value;     // number height
-            float autoLegGapSize = (float) upDownLegGapSize.Value;
-            float circleDrawRadius = (circleDiameter - lineWidth) / 2;    // radius to pen center
-            float finishDrawRadiusOuter = ((circleDiameter * 7F / NormalCourseAppearance.controlOutsideDiameter) - lineWidth) / 2F;
-            float finishDrawRadiusInner = ((circleDiameter * 5.35F / NormalCourseAppearance.controlOutsideDiameter) - 2F * lineWidth) / 2F;
+            using (grTarget) {
+                grTarget.PushAntiAliasing(true);
 
-            Color purple = GetCurrentColor();
-            
-            using (Brush brush = new SolidBrush(purple))
-            using (Pen pen = new Pen(purple, lineWidth))
-            using (Brush lightGreenBrush = new SolidBrush(Color.LightGreen))
-            {
+                // Get sizes and colors and so forth.
+                float lineWidth = (float)upDownLineWidth.Value;
+                float circleDiameter = (float)upDownControlCircle.Value;    // outside diameter
+                float dotDiameter = (float)upDownCenterDot.Value;
+                float numberHeight = (float)upDownNumberHeight.Value;     // number height
+                float autoLegGapSize = (float)upDownLegGapSize.Value;
+                float circleDrawRadius = (circleDiameter - lineWidth) / 2;    // radius to pen center
+                float finishDrawRadiusOuter = ((circleDiameter * 7F / NormalCourseAppearance.controlOutsideDiameter) - lineWidth) / 2F;
+                float finishDrawRadiusInner = ((circleDiameter * 5.35F / NormalCourseAppearance.controlOutsideDiameter) - 2F * lineWidth) / 2F;
+
+                PointF centerCircle = new PointF(40, 5);
+
+                CmykColor purple = GetCurrentColor();
+                object brush = new object(), pen = new object(), lightGreenBrush = new object();
+
+                grTarget.CreateSolidBrush(brush, purple);
+                grTarget.CreatePen(pen, purple, lineWidth, LineCap.Round, LineJoin.Round, 5F);
+                grTarget.CreateSolidBrush(lightGreenBrush, CmykColor.FromCmyk(0.455F, 0, 0.545F, 0));
+
                 // Draw light green background.
-                g.FillEllipse(lightGreenBrush, RectangleF.FromLTRB(37, -30, 60, 20));
+                grTarget.FillEllipse(lightGreenBrush, new PointF(44F, -5), 6F, 25);
+
+                // Draw road
+                object roadPen = new object();
+                grTarget.CreatePen(roadPen, CmykColor.FromCmyk(0, 0, 0, 1), 0.35F, LineCap.Flat, LineJoin.Round, 5F);
+                PointF[] roadPts = { new PointF(28.3F, 8.7F), new PointF(28.7F, 6.7F), new PointF(30.8F, 6.3F), new PointF(33.1F, 5.9F), 
+                                       new PointF(34.4F, 6.3F), new PointF(36.5F, 5.4F), new PointF(38.9F, 4.3F), new PointF(38.4F, 1.1F), new PointF(37.6F, -0.5F)};
+                GraphicsPathPart roadPathStart = new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] { new PointF(27.8F, 10.5F) });
+                GraphicsPathPart roadPathPart = new GraphicsPathPart(GraphicsPathPartKind.Beziers, roadPts);
+                grTarget.DrawPath(roadPen, new List<GraphicsPathPart> { roadPathStart, roadPathPart });
+
+                // Draw boulder cluster.
+                object boulderBrush = new object();
+                grTarget.CreateSolidBrush(boulderBrush, CmykColor.FromCmyk(0, 0, 0, 1));
+                PointF[] boulderPts = {new PointF(0, -0.4F), new PointF(0.4F, 0.3F), new PointF(-0.4F, 0.3F)};
+                Matrix xformBoulder = new Matrix();
+                xformBoulder.Translate(18, 5.1F);
+                grTarget.PushTransform(xformBoulder);
+                grTarget.FillPolygon(boulderBrush, boulderPts, FillMode.Alternate);
+                grTarget.PopTransform();
+
+                // Calculate control number position
+                bool bold = NormalCourseAppearance.controlNumberFont.Bold;
+                bool italic = NormalCourseAppearance.controlNumberFont.Italic;
+                if (comboBoxControlNumberStyle.SelectedIndex == 1)
+                    bold = true;
+
+                object font = new object();
+                grTarget.CreateFont(font, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberHeightFactor * numberHeight, bold, italic);
+
+                string controlNumberText = "13";
+                PointF controlNumberLocation = new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F);
+
+                // Draw control number outline.
+                if (upDownOutlineWidth.Value > 0) {
+                    object whitePen = new object();
+                    grTarget.CreatePen(whitePen, CmykColor.FromCmyk(0, 0, 0, 0), (float)upDownOutlineWidth.Value * 2, LineCap.Round, LineJoin.Round, 5F);
+                    grTarget.DrawTextOutline(controlNumberText, font, whitePen, controlNumberLocation);
+                }
+
+                if (checkBoxBlendPurple.Checked)
+                    grTarget.PushBlending(BlendMode.Darken);
 
                 // Draw control circle
-                PointF centerCircle = new PointF(40, 5);
-                g.DrawEllipse(pen, RectangleF.FromLTRB(centerCircle.X - circleDrawRadius, centerCircle.Y - circleDrawRadius, centerCircle.X + circleDrawRadius, centerCircle.Y + circleDrawRadius));
+                grTarget.DrawEllipse(pen, centerCircle, circleDrawRadius, circleDrawRadius);
 
                 // Draw center dot.
                 if (dotDiameter > 0.0F) {
-                    g.FillEllipse(brush, RectangleF.FromLTRB(centerCircle.X - dotDiameter / 2, centerCircle.Y - dotDiameter / 2, centerCircle.X + dotDiameter / 2, centerCircle.Y + dotDiameter / 2));
+                    grTarget.FillEllipse(brush, centerCircle, dotDiameter / 2, dotDiameter / 2);
                 }
 
                 // Draw finish
                 PointF centerFinish = new PointF(7, 5);
-                g.DrawEllipse(pen, RectangleF.FromLTRB(centerFinish.X - finishDrawRadiusInner, centerFinish.Y - finishDrawRadiusInner, centerFinish.X + finishDrawRadiusInner, centerFinish.Y + finishDrawRadiusInner));
-                g.DrawEllipse(pen, RectangleF.FromLTRB(centerFinish.X - finishDrawRadiusOuter, centerFinish.Y - finishDrawRadiusOuter, centerFinish.X + finishDrawRadiusOuter, centerFinish.Y + finishDrawRadiusOuter));
+                grTarget.DrawEllipse(pen, centerFinish, finishDrawRadiusInner, finishDrawRadiusInner);
+                grTarget.DrawEllipse(pen, centerFinish, finishDrawRadiusOuter, finishDrawRadiusOuter);
 
                 // Draw legs
                 double angle = (Math.PI * 1.4);
-                g.DrawLine(pen, (float) (centerCircle.X + Math.Cos(angle) * 15), (float)(centerCircle.Y + Math.Sin(angle) * 15), 
-                                            (float) (centerCircle.X + Math.Cos(angle) * circleDrawRadius), (float) (centerCircle.Y + Math.Sin(angle) * circleDrawRadius));
+                grTarget.DrawLine(pen, new PointF((float)(centerCircle.X + Math.Cos(angle) * 15), (float)(centerCircle.Y + Math.Sin(angle) * 15)),
+                                        new PointF((float)(centerCircle.X + Math.Cos(angle) * circleDrawRadius), (float)(centerCircle.Y + Math.Sin(angle) * circleDrawRadius)));
 
-                g.DrawLine(pen, centerFinish.X + finishDrawRadiusOuter, centerFinish.Y, centerCircle.X - circleDrawRadius, centerFinish.Y);
+                grTarget.DrawLine(pen, new PointF(centerFinish.X + finishDrawRadiusOuter, centerFinish.Y), new PointF(centerCircle.X - circleDrawRadius, centerFinish.Y));
 
                 // Draw crossing leg.
                 double crossAngle = (110 * Math.PI / 180.0);
                 PointF crossPt = new PointF((centerFinish.X + centerCircle.X) / 2, (centerFinish.Y + centerCircle.Y) / 2);
                 PointF start1 = new PointF(crossPt.X + (float)Math.Cos(crossAngle) * 10, crossPt.Y + (float)Math.Sin(crossAngle) * 10);
-                PointF end1 = new PointF(crossPt.X + (float)Math.Cos(crossAngle) * (autoLegGapSize / 2) , crossPt.Y + (float)Math.Sin(crossAngle) * (autoLegGapSize / 2));
+                PointF end1 = new PointF(crossPt.X + (float)Math.Cos(crossAngle) * (autoLegGapSize / 2), crossPt.Y + (float)Math.Sin(crossAngle) * (autoLegGapSize / 2));
                 PointF start2 = new PointF(crossPt.X - (float)Math.Cos(crossAngle) * 10, crossPt.Y - (float)Math.Sin(crossAngle) * 10);
                 PointF end2 = new PointF(crossPt.X - (float)Math.Cos(crossAngle) * (autoLegGapSize / 2), crossPt.Y - (float)Math.Sin(crossAngle) * (autoLegGapSize / 2));
-                g.DrawLine(pen, start1, end1);
-                g.DrawLine(pen, start2, end2);
+                grTarget.DrawLine(pen, start1, end1);
+                grTarget.DrawLine(pen, start2, end2);
 
-                // Draw control number
-                FontStyle style = NormalCourseAppearance.controlNumberFont.Style;
-                if (comboBoxControlNumberStyle.SelectedIndex == 1)
-                    style = style | FontStyle.Bold;
-                using (Font font = new Font(new FontFamily(NormalCourseAppearance.controlNumberFont.Name),
-                                                            NormalCourseAppearance.controlNumberHeightFactor * numberHeight,
-                                                            style, GraphicsUnit.World)) 
-                {
-                    string controlNumberText = "13";
-                    PointF controlNumberLocation = new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F);
+                // Draw control number.
+                grTarget.DrawText(controlNumberText, font, brush, controlNumberLocation);
 
-                    using (GraphicsPath grPath = new GraphicsPath(FillMode.Winding)) { 
-                        grPath.AddString(controlNumberText, font.FontFamily, (int)font.Style, font.Size, controlNumberLocation, new StringFormat());
-                        if (upDownOutlineWidth.Value > 0) {
-                            using (Pen whitePen = new Pen(Color.White, (float) upDownOutlineWidth.Value * 2))
-                                g.DrawPath(whitePen, grPath);
-                        }
-                        g.FillPath(brush, grPath);
-                    }
-                }
+                if (checkBoxBlendPurple.Checked)
+                    grTarget.PopBlending();
+
+                grTarget.PopAntiAliasing();
+
+                bitmap = grTarget.Bitmap;
             }
+
+            e.Graphics.DrawImage(bitmap, pictureBoxPreview.ClientRectangle);
         }
 
         private void upDown_ValueChanged(object sender, EventArgs e)
@@ -230,6 +267,11 @@ namespace PurplePen
         }
 
         private void upDownOutlineWidth_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
+        private void checkBoxBlendPurple_CheckedChanged(object sender, EventArgs e)
         {
             UpdatePreview();
         }

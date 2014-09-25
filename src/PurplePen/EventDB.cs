@@ -2004,6 +2004,7 @@ namespace PurplePen
         public float numberOutlineWidth = 0.0F;             // Width of outline
         public float autoLegGapSize = 3.5F;             // Size in mm of automatic gap in legs.
 
+        public bool purpleColorBlend = true;        // if true, overprint (blend) purple color on map.
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
 

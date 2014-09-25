@@ -65,11 +65,11 @@ namespace PurplePen.Tests
         {
             Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
-                map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0);
-                map.AddColor("Purple", 11, 0.2F, 1F, 0.1F, 0.08F);
-                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0);
-                map.AddColor("Purplatci", 18, 0, 1F, 0, 0);
-                map.AddColor("Black", 88, 0, 0, 0, 1F);
+                map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0, false);
+                map.AddColor("Purple", 11, 0.2F, 1F, 0.1F, 0.08F, false);
+                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0, false);
+                map.AddColor("Purplatci", 18, 0, 1F, 0, 0, false);
+                map.AddColor("Black", 88, 0, 0, 0, 1F, false);
             }
 
             short ocadId;
@@ -91,10 +91,10 @@ namespace PurplePen.Tests
         {
             Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
-                map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0);
-                map.AddColor("Purplicious", 11, 0.2F, 1F, 0.1F, 0.08F);
-                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0);
-                map.AddColor("Black", 88, 0, 0, 0, 1F);
+                map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0, false);
+                map.AddColor("Purplicious", 11, 0.2F, 1F, 0.1F, 0.08F, false);
+                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0, false);
+                map.AddColor("Black", 88, 0, 0, 0, 1F, false);
             }
 
             short ocadId;
@@ -116,9 +116,9 @@ namespace PurplePen.Tests
         {
             Map map = new Map(new GDIPlus_TextMetrics(), null);
             using (map.Write()) {
-                map.AddColor("Yellow", 11, 0.0F, 0.25F, 0.79F, 0.08F);
-                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0);
-                map.AddColor("Black", 88, 0, 0, 0, 1F);
+                map.AddColor("Yellow", 11, 0.0F, 0.25F, 0.79F, 0.08F, false);
+                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0, false);
+                map.AddColor("Black", 88, 0, 0, 0, 1F, false);
             }
 
             short ocadId;

@@ -335,7 +335,7 @@ namespace PurplePen.Tests
 
             using (map.Write()) {
                 //Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
-                SymColor symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F);
+                SymColor symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
                 PointSymDef symdef = sym.CreateSymdef(map, symColor, boxSize);
                 PointSymbol symbol = new PointSymbol(symdef, new PointF(0,0), 0, null);
                 map.AddSymbol(symbol);
