@@ -5,7 +5,7 @@
     <all-controls print-scale="7500" description-kind="symbols" />
     <numbering start="55" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance auto-leg-gap-size="3.5" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
     <descriptions lang="en" color="black" />
   </event>
 </course-scribe-event>

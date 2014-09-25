@@ -212,9 +212,9 @@ namespace PurplePen
         // The color to use in the map display for the course (purple).
         public const string courseColorName = "Purple";
         public const short courseOcadId = 11;
-        public const float courseColorC = 0F;
+        public const float courseColorC = 0.35F;
         public const float courseColorM = 1.0F;
-        public const float courseColorY = 0F;
+        public const float courseColorY = 0.15F;
         public const float courseColorK = 0F;
 
         // The color to use in the map display for all other controls (low intensity purple).
