@@ -51,6 +51,7 @@
             this.upDownControlCircle = new System.Windows.Forms.NumericUpDown();
             this.checkBoxStandardSizes = new System.Windows.Forms.CheckBox();
             this.groupBoxPurple = new System.Windows.Forms.GroupBox();
+            this.checkBoxBlendPurple = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.upDownBlack = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxDescriptionColor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBoxBlendPurple = new System.Windows.Forms.CheckBox();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
@@ -365,6 +365,13 @@
             this.groupBoxPurple.Name = "groupBoxPurple";
             this.groupBoxPurple.TabStop = false;
             // 
+            // checkBoxBlendPurple
+            // 
+            resources.ApplyResources(this.checkBoxBlendPurple, "checkBoxBlendPurple");
+            this.checkBoxBlendPurple.Name = "checkBoxBlendPurple";
+            this.checkBoxBlendPurple.UseVisualStyleBackColor = true;
+            this.checkBoxBlendPurple.CheckedChanged += new System.EventHandler(this.checkBoxBlendPurple_CheckedChanged);
+            // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
@@ -462,13 +469,6 @@
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            // 
-            // checkBoxBlendPurple
-            // 
-            resources.ApplyResources(this.checkBoxBlendPurple, "checkBoxBlendPurple");
-            this.checkBoxBlendPurple.Name = "checkBoxBlendPurple";
-            this.checkBoxBlendPurple.UseVisualStyleBackColor = true;
-            this.checkBoxBlendPurple.CheckedChanged += new System.EventHandler(this.checkBoxBlendPurple_CheckedChanged);
             // 
             // CourseAppearanceDialog
             // 

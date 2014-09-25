@@ -409,6 +409,7 @@ namespace PurplePen.Tests
             e.notes = null;
             e.mapType = MapType.None;
             e.mapFileName = null;
+            e.courseAppearance.purpleColorBlend = true;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

@@ -2033,6 +2033,8 @@ namespace PurplePen
                 return false;
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
+            if (purpleColorBlend != other.purpleColorBlend)
+                return false;
             if (useDefaultPurple == false) {
                 // The specific purple colors are not used if useDefaultPurple is false.
                 if (purpleC != other.purpleC)
@@ -2274,6 +2276,7 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("purple-yellow", XmlConvert.ToString(courseAppearance.purpleY));
                 xmloutput.WriteAttributeString("purple-black", XmlConvert.ToString(courseAppearance.purpleK));
             }
+            xmloutput.WriteAttributeString("blend-purple", XmlConvert.ToString(courseAppearance.purpleColorBlend));
 
             xmloutput.WriteEndElement();
 
@@ -2367,6 +2370,7 @@ namespace PurplePen
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
+                        courseAppearance.purpleColorBlend = xmlinput.GetAttributeBool("blend-purple", false);
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);
