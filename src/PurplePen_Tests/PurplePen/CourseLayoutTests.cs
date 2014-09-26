@@ -170,15 +170,15 @@ namespace PurplePen.Tests
             // Create the all controls course
             courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             course = new CourseLayout();
-            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
-            course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
+            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
+            course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create the all controls course again
             courseView2 = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             course2 = new CourseLayout();
-            course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
-            course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
+            course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
+            course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.
@@ -201,15 +201,15 @@ namespace PurplePen.Tests
             // Create the a course view and layout
             courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3)));
             course = new CourseLayout();
-            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
-            course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
+            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
+            course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create it again
             courseView2 = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3)));
             course2 = new CourseLayout();
-            course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
-            course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F);
+            course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
+            course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.

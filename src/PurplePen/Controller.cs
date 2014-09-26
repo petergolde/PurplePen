@@ -2285,9 +2285,9 @@ namespace PurplePen
         }
 
         // Get the purple color to use.
-        public void GetPurpleColor(out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
+        public void GetPurpleColor(out short ocadId, out float cyan, out float magenta, out float yellow, out float black, out bool overprint)
         {
-            FindPurple.GetPurpleColor(mapDisplay, GetCourseAppearance(), out ocadId, out cyan, out magenta, out yellow, out black);
+            FindPurple.GetPurpleColor(mapDisplay, GetCourseAppearance(), out ocadId, out cyan, out magenta, out yellow, out black, out overprint);
         }
 
         // Change the course appearance

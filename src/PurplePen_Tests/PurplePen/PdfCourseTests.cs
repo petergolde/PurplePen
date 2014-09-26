@@ -240,7 +240,10 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
             settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
 
-            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, new CourseAppearance(),
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = false;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\Marymoor WIOL 2.pdf") },
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\test1_page%d_baseline.png") });
         }
@@ -266,6 +269,7 @@ namespace PurplePen.Tests
             appearance.numberBold = true; // bold numbers.
             appearance.numberOutlineWidth = 0.13F;
             appearance.useDefaultPurple = false;
+            appearance.purpleColorBlend = true;
             appearance.autoLegGapSize = 0.0F;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;
@@ -288,14 +292,17 @@ namespace PurplePen.Tests
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create4");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
             settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
-            settings.ColorModel = ColorModel.CMYK;
+            settings.ColorModel = ColorModel.RGB;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.Margins = new System.Drawing.Printing.Margins(100, 25, 50, 120);
 
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
             Directory.CreateDirectory(settings.outputDirectory);
 
-            CreatePdfFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, new CourseAppearance(),
+            CreatePdfFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create4\\Course 2.pdf") },
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create4\\Course 2_expected.png") });
         }
@@ -334,9 +341,34 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
-            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, new CourseAppearance(),
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create5\\Short.pdf") },
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create5\\Short_expected.png") });
+
+        }
+
+        [TestMethod]
+        public void PdfCreationBitmapBaseMapRGB()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create8");
+            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.RGB;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create8\\Short.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create8\\Short_expected.png") });
 
         }
 
@@ -353,7 +385,10 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
-            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF.ppen"), settings, new CourseAppearance(),
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short.pdf"),
                                TestUtil.GetTestFile("pdfcourse\\pdf_create6\\SmallScale.pdf"),
                                TestUtil.GetTestFile("pdfcourse\\pdf_create6\\LargeScale.pdf"),
@@ -379,7 +414,10 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
-            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF RGB.ppen"), settings, new CourseAppearance(),
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF RGB.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create7\\Short.pdf"),
                                TestUtil.GetTestFile("pdfcourse\\pdf_create7\\SmallScale.pdf"),
                                TestUtil.GetTestFile("pdfcourse\\pdf_create7\\LargeScale.pdf"),

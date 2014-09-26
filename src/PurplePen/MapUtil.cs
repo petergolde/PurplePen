@@ -232,8 +232,10 @@ namespace PurplePen
 
         // Get the purple color to use for display, taking into account the user preferences in courseAppearance, the map loaded into the mapDisplay, 
         // and the default purple if none of those provide a color. MapDisplay and courseAppearance can be null, in which case they won't be used.
-        public static void GetPurpleColor(MapDisplay mapDisplay, CourseAppearance courseAppearance, out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
+        public static void GetPurpleColor(MapDisplay mapDisplay, CourseAppearance courseAppearance, out short ocadId, out float cyan, out float magenta, out float yellow, out float black, out bool overprint)
         {
+            overprint = (courseAppearance == null) ? true : courseAppearance.purpleColorBlend;
+
             if (courseAppearance != null && !courseAppearance.useDefaultPurple) {
                 // Use the purple from the course display.
                 cyan = courseAppearance.purpleC;

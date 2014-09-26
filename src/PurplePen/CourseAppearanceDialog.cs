@@ -46,6 +46,7 @@ namespace PurplePen
                 result.numberOutlineWidth = ((float) upDownOutlineWidth.Value);
                 result.autoLegGapSize = ((float) upDownLegGapSize.Value);
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
+                result.purpleColorBlend = checkBoxBlendPurple.Checked;
                 result.purpleC = (float) (upDownCyan.Value / 100);
                 result.purpleM = (float) (upDownMagenta.Value / 100);
                 result.purpleY = (float) (upDownYellow.Value / 100);
@@ -74,6 +75,7 @@ namespace PurplePen
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
                 checkBoxDefaultPurple.Checked = value.useDefaultPurple;
+                checkBoxBlendPurple.Checked = value.purpleColorBlend;
 
                 comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
 

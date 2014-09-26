@@ -141,9 +141,9 @@ namespace PurplePen
         {
             // Create the CourseLayout.
             CourseLayout courseLayout = new CourseLayout();
-            courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK);
+            courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
             courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
-                creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black);
+                creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black, creationSettings.purpleOverprint);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseAppearance, courseLayout, CourseLayer.MainCourse);
 
             return courseLayout;
@@ -325,6 +325,7 @@ namespace PurplePen
         public string filePrefix;                      // if non-null, non-empty, prefix this an "-" onto the front of files.
         public short colorOcadId;                         // ocadID for the purple stuff.
         public float cyan, magenta, yellow, black;   // color to use for the "Purple" stuff.
+        public bool purpleOverprint;
 
         public OcadCreationSettings Clone()
         {

@@ -1351,11 +1351,12 @@ namespace PurplePen
         {
             short colorOcadId;
             float c, m, y, k;
+            bool purpleOverprint;
             string fontName;
             bool fontBold, fontItalic;
             SpecialColor fontColor;
 
-            FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k);
+            FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
 
             ChangeText dialog = new ChangeText(MiscText.AddTextSpecialTitle, MiscText.AddTextSpecialExplanation, true, 
                                                CmykColor.FromCmyk(c, m, y, k), controller.ExpandText);
@@ -1392,8 +1393,9 @@ namespace PurplePen
 
             // Get the correct default purple color to use.
             float c, m, y, k;
+            bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
 
             LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.AddLineTitle, MiscText.AddLineExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
@@ -1426,8 +1428,9 @@ namespace PurplePen
 
             // Get the correct default purple color to use.
             float c, m, y, k;
+            bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k);
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
 
             LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.AddRectangleTitle, MiscText.AddRectangleExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
@@ -1459,10 +1462,11 @@ namespace PurplePen
             if (controller.CanChangeText() == CommandStatus.Enabled) {
                 short colorOcadId;
                 float c, m, y, k;
+                bool purpleOverprint;
                 string fontName;
                 bool fontBold, fontItalic;
                 SpecialColor fontColor;
-                FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k);
+                FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
 
                 string oldText = controller.GetChangableText();
                 controller.GetChangableTextProperties(out fontName, out fontBold, out fontItalic, out fontColor);
@@ -1491,7 +1495,8 @@ namespace PurplePen
 
                 short colorOcadId;
                 float c, m, y, k;
-                FindPurple.GetPurpleColor(mapDisplay, appearance, out colorOcadId, out c, out m, out y, out k);
+                bool purpleOverprint;
+                FindPurple.GetPurpleColor(mapDisplay, appearance, out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
 
                 LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.ChangeLineAppearanceTitle, MiscText.ChangeLineAppearanceExplanation, CmykColor.FromCmyk(c, m, y, k), appearance);
 
@@ -1780,8 +1785,9 @@ namespace PurplePen
 
             // Get the correct default purple color to use.
             float c, m, y, k;
+            bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k);
+            FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k, out purpleOverprint);
             dialog.SetDefaultPurple(c, m, y, k);
  
             // Set the course appearance into the dialog
@@ -2124,7 +2130,7 @@ namespace PurplePen
             }
 
             // Get the correct purple color to use.
-            FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out settings.colorOcadId, out settings.cyan, out settings.magenta, out settings.yellow, out settings.black);
+            FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out settings.colorOcadId, out settings.cyan, out settings.magenta, out settings.yellow, out settings.black, out settings.purpleOverprint);
 
             // Initialize the dialog.
             // CONSIDER: shouldn't have GetEventDB here! Do something different.

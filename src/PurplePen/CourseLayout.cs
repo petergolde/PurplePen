@@ -64,13 +64,14 @@ namespace PurplePen
         float[] colorM = new float[LAYERCOUNT];
         float[] colorY = new float[LAYERCOUNT];
         float[] colorK = new float[LAYERCOUNT];
+        bool[] colorOverprint = new bool[LAYERCOUNT];
 
         public static readonly object KeyWhiteOut = "WhiteOutKey";   // key to get the "white out" symdef.
         public static readonly object KeyLayout = "LayoutKey";   // key to get the "layout" symdef.
 
         // Set the color of a particular layer. Layer 0 is black, layer 1 is the primary course, layer 2 all other controls, 
         // and layers 3 and above for other courses.
-        public void SetLayerColor(CourseLayer layer, short ocadColorId, string colorName, float colorC, float colorM, float colorY, float colorK)
+        public void SetLayerColor(CourseLayer layer, short ocadColorId, string colorName, float colorC, float colorM, float colorY, float colorK, bool overprint)
         {
             this.ocadColorId[(int) layer] = ocadColorId;
             this.colorName[(int) layer] = colorName;
@@ -78,6 +79,7 @@ namespace PurplePen
             this.colorM[(int) layer] = colorM;
             this.colorY[(int) layer] = colorY;
             this.colorK[(int) layer] = colorK;
+            this.colorOverprint[(int)layer] = overprint;
         }
 
         // Index to get a course objects.
@@ -160,7 +162,7 @@ namespace PurplePen
                     if (colors[layerIndex] == null) {
                         // Create the symColor for rendering.
                         colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
-                            colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], false);
+                            colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
                     }
 
                     SymColor color = colors[layerIndex];
@@ -247,7 +249,7 @@ namespace PurplePen
             CourseLayout other = (CourseLayout)obj;
 
             for (int i = 0; i < LAYERCOUNT; i++) {
-                if (other.colorC[i] != colorC[i] || other.colorK[i] != colorK[i] || other.colorM[i] != colorM[i] || other.colorY[i] != colorY[i])
+                if (other.colorC[i] != colorC[i] || other.colorK[i] != colorK[i] || other.colorM[i] != colorM[i] || other.colorY[i] != colorY[i] || other.colorOverprint[i] != colorOverprint[i])
                     return false;
                 if (other.ocadColorId[i] != ocadColorId[i] || other.colorName[i] != colorName[i])
                     return false;

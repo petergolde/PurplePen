@@ -60,14 +60,14 @@ namespace PurplePen.Tests
             // Create the course
             courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
             course = new CourseLayout();
-            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F);
-            course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F);
+            course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
+            course.SetLayerColor(CourseLayer.MainCourse, 11, "Purple", 0.2F, 1.0F, 0.0F, 0.07F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, course, CourseLayer.MainCourse);
 
             // Add all controls if requested.
             if (addAllControls && courseDesignator.IsNotAllControls) {
                 courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { courseDesignator }, ControlPointKind.None, false, true);
-                course.SetLayerColor(CourseLayer.AllControls, 12, "LightPurple", 0.1F, 0.5F, 0.0F, 0.0F);
+                course.SetLayerColor(CourseLayer.AllControls, 12, "LightPurple", 0.1F, 0.5F, 0.0F, 0.0F, false);
                 CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, course, CourseLayer.AllControls);
             }
 
