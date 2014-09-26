@@ -50,6 +50,8 @@ namespace PurplePen.MapView {
     public interface IMapDisplay
     {
         void Draw(Graphics g, RectangleF visRect, float minResolution);
+        void Draw(Bitmap bitmap, Matrix transform, Region clipRegion = null);
+
         event MapDisplayChanged Changed;
     }
 
@@ -123,31 +125,15 @@ namespace PurplePen.MapView {
 
 			if (!allValid) {
 				// Part of the cache is invalid. Draw from the map to the cache.
-				Graphics g = Graphics.FromImage(bitmap);
 				if (bitmapBrush != null)
 					bitmapBrush.Dispose();
 				bitmapBrush = null;
 
 				if (allInvalid) {
-					g.Transform = transform;
-					g.Clear(Color.White);
-					// No draft images were drawn; we can just draw the map.
-					DrawMap(g, bitmap, mapAreaToView); 
-					g.Dispose();
+                    mapDisplay.Draw(bitmap, transform, null);
 				}
 				else {
-					g.IntersectClip(invalidRegion);
-					Rectangle pixelBounds = Util.RectFromRectF(invalidRegion.GetBounds(g));
-					g.Transform = transform;
-					RectangleF clipBounds = g.ClipBounds;
-
-					// Draw the background.
-					g.Clear(Color.White);
-
-                    // No draft images were drawn; we can just draw the map.
-					DrawMap(g, bitmap, clipBounds);
-
-                    g.Dispose();
+                    mapDisplay.Draw(bitmap, transform, invalidRegion);
 				}
 			}
 

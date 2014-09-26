@@ -506,6 +506,33 @@ namespace PurplePen
             }
         }
 
+        // Draw the map and course onto a bitmap of the given size. The given rectangle is mapped onto the whole bitmap, then
+        // the given clip region is applied.
+        public void Draw(Bitmap bitmap, Matrix transform, Region clipRegion = null)
+        {
+            Debug.Assert(colorModel == ColorModel.CMYK || colorModel == ColorModel.RGB);
+            GDIPlus_ColorConverter colorConverter = (colorModel == ColorModel.CMYK) ? new SwopColorConverter() : new GDIPlus_ColorConverter();
+
+            if (bitmap.Height == 0 || bitmap.Width == 0)
+                return;
+
+            // Note that courses always drawn full intensity.
+            using (var grTargetDimmed = new GDIPlus_BitmapGraphicsTarget(bitmap, CmykColor.FromCmyk(0,0,0,0), transform, colorConverter, mapIntensity))
+            using (var grTargetUndimmed = new GDIPlus_BitmapGraphicsTarget(bitmap, null, transform, colorConverter)) {
+                float minResolution = GetMinResolution(transform);
+                RectangleF clipBounds = grTargetDimmed.Graphics.ClipBounds;
+                DrawHelper(grTargetDimmed, grTargetUndimmed, grTargetUndimmed, clipBounds, minResolution);
+            }
+        }
+
+        float GetMinResolution(Matrix transform)
+        {
+            Matrix m = transform.Clone();
+            m.Invert();
+            return Geometry.TransformDistance(1, m);
+        }
+
+
         // Draw the map and course onto a graphics target. The color model is ignored. The intensity
         // must be 1.
         public void Draw(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
@@ -529,6 +556,7 @@ namespace PurplePen
 
             renderOptions.showSymbolBounds = showBounds;
             renderOptions.showTemplates = true;
+            renderOptions.blendOverprintedColors = false; // Don't blend on the map.
 
             // First draw the real map.
             switch (mapType) {
@@ -554,6 +582,9 @@ namespace PurplePen
                 grTargetCourses.PushAntiAliasing(false);
             else
                 grTargetCourses.PushAntiAliasing(true);   // always anti-alias the course unless printing
+
+            // Always turn blending on.
+            renderOptions.blendOverprintedColors = true;
 
             if (courseMap != null) {
                 using (courseMap.Read())
