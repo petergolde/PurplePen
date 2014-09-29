@@ -25,6 +25,14 @@ namespace PurplePen
         {
             SD.Color result;
 
+            if (cmykColor.Cyan == 0 && cmykColor.Magenta == 0 && cmykColor.Yellow == 0 && cmykColor.Black == 0) {
+                // The default mapping doesn't quite map white to pure white.
+                if (cmykColor.Alpha == 1)
+                    return SD.Color.White;
+                else
+                    return SD.Color.FromArgb((byte) Math.Round(cmykColor.Alpha * 255), SD.Color.White);
+            }
+
             if (!cmykToColor.TryGetValue(cmykColor, out result)) {
                 float[] colorValues = new float[4] { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
                 SWM.Color color = SWM.Color.FromValues(colorValues, SwopUri);

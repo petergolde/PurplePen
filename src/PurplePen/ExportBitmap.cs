@@ -77,21 +77,11 @@ namespace PurplePen
             Bitmap bitmap = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format24bppRgb);
             bitmap.SetResolution(dpi, dpi);
 
-            using (Graphics bitmapGraphics = Graphics.FromImage(bitmap)) {
-                bitmapGraphics.Clear(Color.White);
+            // Set the transform
+            Matrix transform = Geometry.CreateInvertedRectangleTransform(rect, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
 
-                // Set the transform
-                Matrix transform = Geometry.CreateInvertedRectangleTransform(rect, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
-                bitmapGraphics.MultiplyTransform(transform);
-
-                // Determine the resolution in map coordinates.
-                Matrix inverseTransform = transform.Clone();
-                inverseTransform.Invert();
-                float minResolution = Geometry.TransformDistance(1F, inverseTransform);
-
-                // And draw.
-                mapDisplay.Draw(bitmapGraphics, rect, minResolution);
-            }
+            // And draw.
+            mapDisplay.Draw(bitmap, transform);
 
             // JPEG and GIF have special code paths because the default Save method isn't
             // really good enough.

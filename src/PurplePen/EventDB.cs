@@ -2299,6 +2299,7 @@ namespace PurplePen
         {
             firstControlCode = 31;
             disallowInvertibleCodes = true;
+            courseAppearance.purpleColorBlend = false; // default for existing events is false, true for new events.
 
             bool first = true;
             while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "custom-symbol-text")) {

@@ -649,16 +649,6 @@ namespace PurplePen.MapView
             pen.Dispose();
         }
 
-        // This is old code that doesn't use the ViewCache. It's never used right now.
-        void DrawMap(Graphics g, RectangleF visRect) {
-            // Determine pixel size in world coordinates.
-            float minResolution = PixelToWorldDistance(1);
-            
-            if (mapDisplay != null) {
-                mapDisplay.Draw(g, visRect, minResolution);
-            }
-        }
-
         void DrawCachedMap(Graphics g, Rectangle visRect) {
             viewcache.Draw(g, visRect, ClientSize, viewport, xformWorldToPixel);
         }

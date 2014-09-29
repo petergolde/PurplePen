@@ -247,13 +247,6 @@ namespace PurplePen.MapView {
 			return Util.DistanceF(pts[0], pts[1]);
 		}
 
-		// Draw the map 
-		void DrawMap(Graphics g, Bitmap bitmap, RectangleF visRect) {
-            float minResolution = GetMinResolution(g);
-
-            mapDisplay.Draw(g, visRect, minResolution);
-		}
-
 
 		// Called whenever the map display changes.
 		void MapChanged(Region regionChanged) {
