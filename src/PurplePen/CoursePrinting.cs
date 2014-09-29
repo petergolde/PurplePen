@@ -148,10 +148,13 @@ namespace PurplePen
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);
 
-            // Sometimes GDI+ gets angry and throws an exception below. I'm hoping collecting garbage might help.
+            // Collecting garbage should make out of memory less common.
             GC.Collect();
 
-            if (!PrintPreviewInProgress && graphicsTarget is GDIPlus_GraphicsTarget) {
+            if (graphicsTarget is GDIPlus_GraphicsTarget) {
+                // We print to intermediate bands of bitmaps. This is the only way to get purple blending correct.
+                // Other code ensure that if purple blending is on, we always take this code path.
+
                 GDIPlus_GraphicsTarget gdiGraphicsTarget = ((GDIPlus_GraphicsTarget)graphicsTarget);
                 Graphics g = gdiGraphicsTarget.Graphics;
                 // Save and restore state so we can mess with stuff.
@@ -169,24 +172,9 @@ namespace PurplePen
                 Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
 
                 foreach (CoursePage band in bands) {
-                    // Create graphics to draw into the bitmap.
-                    Graphics bitmapGraphics = Graphics.FromImage(bitmap);
-                    bitmapGraphics.Clear(Color.White);
-
                     // Set the transform
                     Matrix transform = Geometry.CreateInvertedRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
-                    bitmapGraphics.MultiplyTransform(transform);
-
-                    // Determine the resolution in map coordinates.
-                    Matrix inverseTransform = transform.Clone();
-                    inverseTransform.Invert();
-                    float minResolution = Geometry.TransformDistance(1F, inverseTransform);
-
-                    // And draw.
-                    using (IGraphicsTarget gt = new GDIPlus_GraphicsTarget(bitmapGraphics, gdiGraphicsTarget.ColorConverter)) {
-                        mapDisplay.Draw(gt, band.mapRectangle, minResolution);
-                    }
-                    bitmapGraphics.Dispose();
+                    mapDisplay.Draw(bitmap, transform);
 
                     // Draw the bitmap on the printer.
                     g.DrawImage(bitmap, band.printRectangle);
@@ -197,7 +185,7 @@ namespace PurplePen
                 bitmap.Dispose();
             }
             else {
-                // Print directly. Works best with print preview.
+                // Print directly. Used only when prerasterization is off.
                 // Set the transform, and the clip.
                 Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
                 PushRectangleClip(graphicsTarget, page.printRectangle);
@@ -322,7 +310,7 @@ namespace PurplePen
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
-        public bool UseXpsPrinting = true;          // If true, use XPS printing
+        public bool UseXpsPrinting = false;          // If true, use XPS printing; default to not.
         public ColorModel PrintingColorModel = ColorModel.CMYK;
 
     }

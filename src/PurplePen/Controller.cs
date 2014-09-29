@@ -907,6 +907,20 @@ namespace PurplePen
             return success;
         }
 
+        // Return true if we must rasterize before printing.
+        public bool MustRasterizePrinting
+        {
+            get
+            {
+                // Windows XP -> must rasterize because print drivers don't work well.
+                // Bitmap/PDF maps should rasterize because they are already bitmaps so more efficient to.
+                // Purple color blend requires rasterization to work properly.
+                return (Environment.OSVersion.Version.Major <= 5 ||
+                        MapType != MapType.OCAD ||
+                        eventDB.GetEvent().courseAppearance.purpleColorBlend);
+            }
+        }
+
         // Print or print preview the courses. Returns success or failure; any errors are already reported to the user.
         public bool PrintCourses(CoursePrintSettings coursePrintSettings, bool preview)
         {
