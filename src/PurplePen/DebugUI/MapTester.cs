@@ -110,17 +110,12 @@ namespace PurplePen.DebugUI
 
             // Draw into a new bitmap.
             Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
-            using (Graphics g = Graphics.FromImage(bitmapNew)) {
-                float minResolution = mapArea.Width / (float) bitmapSize.Width;
+            float minResolution = mapArea.Width / (float) bitmapSize.Width;
 
-                g.Clear(Color.White);
-                g.Transform = matrix;
-
-                if (mapDisplay != null) {
-                    mapDisplay.AntiAlias = false;
-                    mapDisplay.ShowSymbolBounds = showBoundsCheckBox.Checked;
-                    mapDisplay.Draw(g, mapArea, minResolution);
-                }
+            if (mapDisplay != null) {
+                mapDisplay.AntiAlias = false;
+                mapDisplay.ShowSymbolBounds = showBoundsCheckBox.Checked;
+                mapDisplay.Draw(bitmapNew, matrix);
             }
 
             return bitmapNew;

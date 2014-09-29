@@ -49,7 +49,6 @@ namespace PurplePen.MapView {
     // set up in world coordinates, as it the visible rectangle and the changedRegion.
     public interface IMapDisplay
     {
-        void Draw(Graphics g, RectangleF visRect, float minResolution);
         void Draw(Bitmap bitmap, Matrix transform, Region clipRegion = null);
 
         event MapDisplayChanged Changed;

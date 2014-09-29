@@ -493,19 +493,6 @@ namespace PurplePen
             BitmapUtil.SaveBitmap(bmp, fileName, format);
         }
 
-        // Draw the map and course onto a graphics.
-        public void Draw(Graphics g, RectangleF visRect, float minResolution)
-        {
-            Debug.Assert(colorModel == ColorModel.CMYK || colorModel == ColorModel.RGB);
-            GDIPlus_ColorConverter colorConverter = (colorModel == ColorModel.CMYK) ? new SwopColorConverter() : new GDIPlus_ColorConverter();
-
-            // Note that courses always drawn full intensity.
-            using (IGraphicsTarget grTargetDimmed = new GDIPlus_GraphicsTarget(g, colorConverter, mapIntensity))
-            using (IGraphicsTarget grTargetUndimmed = new GDIPlus_GraphicsTarget(g, colorConverter)) {
-                DrawHelper(grTargetDimmed, grTargetUndimmed, grTargetUndimmed, visRect, minResolution);
-            }
-        }
-
         // Draw the map and course onto a bitmap of the given size. The given rectangle is mapped onto the whole bitmap, then
         // the given clip region is applied.
         public void Draw(Bitmap bitmap, Matrix transform, Region clipRegion = null)
@@ -534,7 +521,7 @@ namespace PurplePen
 
 
         // Draw the map and course onto a graphics target. The color model is ignored. The intensity
-        // must be 1.
+        // must be 1, and purple blending is never performed.
         public void Draw(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
         {
             Debug.Assert(MapIntensity == 1.0F);

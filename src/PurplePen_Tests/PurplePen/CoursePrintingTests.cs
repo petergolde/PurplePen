@@ -147,7 +147,7 @@ namespace PurplePen.Tests
                 mapDisplay.Dpi = controller.MapDpi;
 
             // Get the pages of the printing.
-            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.Clone(), coursePrintSettings, appearance);
+            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.CloneToFullIntensity(), coursePrintSettings, appearance);
             Bitmap[] bitmaps = coursePrinter.PrintBitmaps();
             
             // Check all the pages against the baseline.
@@ -185,6 +185,21 @@ namespace PurplePen.Tests
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\test1", coursePrintSettings, new CourseAppearance());
+        }
+
+        [TestMethod]
+        public void PrintCoursesNoBlend()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = false;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            CoursePrintingTest("courseprinting\\noblend", coursePrintSettings, appearance);
         }
 
         [TestMethod]

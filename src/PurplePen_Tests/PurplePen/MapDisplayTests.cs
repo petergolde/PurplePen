@@ -47,17 +47,26 @@ namespace PurplePen.Tests
     [TestClass]
     public class MapDisplayTests: TestFixtureBase
     {
-        Graphics bitmapGraphics;
+        Matrix transform;
         Bitmap bitmap;
 
         void SetupBitmap()
         {
             bitmap = new Bitmap(400, 400);
-            bitmapGraphics = Graphics.FromImage(bitmap);
-            bitmapGraphics.TranslateTransform(0, bitmap.Height);
-            bitmapGraphics.ScaleTransform(8F, -8F);
-            bitmapGraphics.TranslateTransform(-50F, -170F);
-            bitmapGraphics.Clear(Color.White);
+            transform = new Matrix();
+            transform.Translate(0, bitmap.Height);
+            transform.Scale(8F, -8F);
+            transform.Translate(-50F, -170F);
+        }
+
+        void DrawToBitmap(MapDisplay mapdisplay, RectangleF clip)
+        {
+            Matrix inverse = transform.Clone();
+            inverse.Invert();
+            using (Region clipRegion = new Region(clip)) {
+                clipRegion.Transform(inverse);
+                mapdisplay.Draw(bitmap, transform, clipRegion);
+            }
         }
 
         [TestMethod]
@@ -91,9 +100,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 1.0F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\BasicOcadMap.png"));
         }
@@ -110,9 +117,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 1.0F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\BasicBitmapMap.png"));
         }
@@ -129,9 +134,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 1.0F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\AntialiasOcadMap.png"));
         }
@@ -149,9 +152,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 1.0F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\AntialiasBitmapMap.png"));
         }
@@ -168,9 +169,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 0.3F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\IntensityOcadMap.png"));
         }
@@ -188,9 +187,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 0.3F;
 
             RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\IntensityBitmapMap.png"));
         }
@@ -211,16 +208,12 @@ namespace PurplePen.Tests
             SetupBitmap();
             cloned.AntiAlias = true;
             cloned.MapIntensity = 1.0F;
-            bitmapGraphics.IntersectClip(drawRect);
-            cloned.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(cloned, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\ClonedOcadMap.png"));
 
             SetupBitmap();
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\NonclonedOcadMap.png"));
         }
@@ -242,21 +235,15 @@ namespace PurplePen.Tests
             SetupBitmap();
             cloned.AntiAlias = true;
             cloned.MapIntensity = 1.0F;
-            bitmapGraphics.IntersectClip(drawRect);
-            cloned.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(cloned, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\ClonedBitmapMap.png"));
 
             SetupBitmap();
-            bitmapGraphics.IntersectClip(drawRect);
-            mapDisplay.Draw(bitmapGraphics, drawRect, 0.1F);
-            bitmapGraphics.Dispose();
+            DrawToBitmap(mapDisplay, drawRect);
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\NonclonedBitmapMap.png"));
         }
-	
-    
     }
 }
 
