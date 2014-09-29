@@ -206,6 +206,13 @@ namespace PurplePen
             Util.GoToWebPage("http://purple-pen.org/donate.htm");
         }
 
+        private void donationLink_Click(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            donationLink_Click(sender, EventArgs.Empty);
+        }
+
+
+
         private void Quit() {
             Close();
             Dispose();
