@@ -2762,6 +2762,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Images\LineSpecial_OcadToolbox.png" />
+    <Content Include="..\Libraries\MapModel\$(Configuration)\GDIPlusNative.dll">
+      <Link>GDIPlusNative.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

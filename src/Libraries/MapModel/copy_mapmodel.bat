@@ -16,6 +16,8 @@ copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Debug\Map_GDIPlus.dll
 copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Debug\Map_GDIPlus.pdb" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Release\Map_GDIPlus.dll" Release
 copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Release\Map_GDIPlus.pdb" Release
+copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Debug\GDIPlusNative.dll" Debug
+copy "..\..\..\..\..\Programs\MapModel\src\Map_GDIPlus\bin\Release\GDIPlusNative.dll" Release
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Debug\Map_WPF.dll" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Debug\Map_WPF.pdb" Debug
 copy "..\..\..\..\..\Programs\MapModel\src\Map_WPF\bin\Release\Map_WPF.dll" Release
