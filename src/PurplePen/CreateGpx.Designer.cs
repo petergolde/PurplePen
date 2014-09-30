@@ -97,6 +97,7 @@
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.waypointGroupBox);
             this.Controls.Add(this.coursesGroupBox);
+            this.HelpTopic = "GpsCreateGpxFile.htm";
             this.Name = "CreateGpx";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);

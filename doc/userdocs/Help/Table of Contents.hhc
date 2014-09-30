@@ -419,6 +419,16 @@
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GPS Menu">
+			<param name="Local" value="GpsMenu.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create GPX File...">
+				<param name="Local" value="GpsCreateGPXFile.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Reports Menu">
 			<param name="Local" value="ReportsMenu.htm">
 			</OBJECT>
