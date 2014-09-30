@@ -2169,6 +2169,26 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 });
         }
 
+        [TestMethod]
+        public void OcadCreation14()
+        {
+            OcadCreationSettings settings = new OcadCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create14");
+            settings.CourseIds = new Id<Course>[1] { CourseId(2) };
+            settings.version = 8;
+            settings.cyan = 0.15F;
+            settings.magenta = 0.9F;
+            settings.yellow = 0;
+            settings.black = 0.25F;
+            settings.purpleOverprint = true;  // test with purple overprinting on.
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreateOcadFiles(TestUtil.GetTestFile("controller\\marymoor4.ppen"), settings, new CourseAppearance(),
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create14\\Course 2.ocd") },
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create14\\Course 2_expected.txt") });
+        }
 
 
 
