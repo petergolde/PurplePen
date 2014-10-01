@@ -1,9 +1,12 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>Sample Event</title>
-    <map kind="OCAD" scale="15000">SampleMap.ocd</map>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">SampleMap.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
   </event>
   <control id="1" kind="finish">
     <location x="-0.602915764" y="33.6102524" />
@@ -433,26 +436,31 @@
   </control>
   <course id="1" kind="normal" order="1">
     <name>White</name>
+    <labels label-kind="sequence" />
     <first course-control="6" />
     <options print-scale="15000" climb="25" load="10" description-kind="text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Yellow</name>
+    <labels label-kind="sequence" />
     <first course-control="7" />
     <options print-scale="15000" climb="45" load="10" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Orange</name>
+    <labels label-kind="sequence" />
     <first course-control="8" />
     <options print-scale="15000" climb="70" load="20" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Green</name>
+    <labels label-kind="sequence" />
     <first course-control="9" />
     <options print-scale="15000" climb="110" load="45" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Red</name>
+    <labels label-kind="sequence" />
     <first course-control="10" />
     <options print-scale="15000" climb="210" load="40" description-kind="symbols" />
   </course>

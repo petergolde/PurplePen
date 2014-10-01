@@ -352,6 +352,7 @@
 		<row><td>C__8386CAA3DD8041BD87ED7C53B515B349</td><td>{C9A57B91-A870-4B8C-AD99-42566B97EB37}</td><td>INSTALLDIR</td><td>2</td><td/><td>_8386CAA3DD8041BD87ED7C53B515B349</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>C__CCCD39442E3F482E930F72F7115C0432</td><td>{7C34D9F7-BD4D-4300-8E76-87A0683DE323}</td><td>INSTALLDIR</td><td>2</td><td/><td>_CCCD39442E3F482E930F72F7115C0432</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>CrashReporter.NET.Primary_output</td><td>{78824081-99B0-408A-8003-C91D6AAC2E87}</td><td>INSTALLDIR</td><td>2</td><td/><td>crashreporter.net.primary_ou</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>DotSpatial.Projections.dll</td><td>{67F20794-8598-41E4-880B-568CAE4BA5A9}</td><td>INSTALLDIR</td><td>2</td><td/><td>dotspatial.projections.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Graphics2D.dll</td><td>{F29B890B-6478-4CF2-8644-FBA88E84131E}</td><td>INSTALLDIR</td><td>2</td><td/><td>graphics2d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MapModel.dll</td><td>{9351DD6B-9305-4619-B1AA-39842DB57FCA}</td><td>INSTALLDIR</td><td>2</td><td/><td>mapmodel.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_GDIPlus.dll</td><td>{A1582BE9-302C-418B-A5F0-D0F427951E8D}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_gdiplus.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1889,6 +1890,7 @@
 		<row><td>AlwaysInstall</td><td>C__8386CAA3DD8041BD87ED7C53B515B349</td></row>
 		<row><td>AlwaysInstall</td><td>C__CCCD39442E3F482E930F72F7115C0432</td></row>
 		<row><td>AlwaysInstall</td><td>CrashReporter.NET.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>DotSpatial.Projections.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Graphics2D.dll</td></row>
 		<row><td>AlwaysInstall</td><td>MapModel.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_GDIPlus.dll</td></row>
@@ -1916,6 +1918,7 @@
 		<row><td>_8386CAA3DD8041BD87ED7C53B515B349</td><td>C__8386CAA3DD8041BD87ED7C53B515B349</td><td>PurplePen.Content Files</td><td>0</td><td/><td/><td>512</td><td>1</td><td>&lt;PurplePen&gt;|ContentFiles</td><td>7</td><td/></row>
 		<row><td>_CCCD39442E3F482E930F72F7115C0432</td><td>C__CCCD39442E3F482E930F72F7115C0432</td><td>PURPLE~1.CHM|Purple Pen Help.chm</td><td>0</td><td/><td/><td>512</td><td>1</td><td>&lt;ISProjectFolder&gt;\..\PurplePen\bin\release\Purple Pen Help.chm</td><td>5</td><td/></row>
 		<row><td>crashreporter.net.primary_ou</td><td>CrashReporter.NET.Primary_output</td><td>CrashReporter.NET.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;CrashReporter.NET&gt;|Built</td><td>3</td><td/></row>
+		<row><td>dotspatial.projections.dll</td><td>DotSpatial.Projections.dll</td><td>DOTSPA~1.DLL|DotSpatial.Projections.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\DotSpatialProjections\Release\DotSpatial.Projections.dll</td><td>1</td><td/></row>
 		<row><td>graphics2d.dll</td><td>Graphics2D.dll</td><td>GRAPHI~1.DLL|Graphics2D.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Graphics2D.dll</td><td>1</td><td/></row>
 		<row><td>map_gdiplus.dll</td><td>Map_GDIPlus.dll</td><td>MAP_GD~1.DLL|Map_GDIPlus.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_GDIPlus.dll</td><td>1</td><td/></row>
 		<row><td>map_pdf.dll</td><td>Map_PDF.dll</td><td>Map_PDF.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_PDF.dll</td><td>1</td><td/></row>
@@ -2072,6 +2075,7 @@
 		<row><td>C__8386CAA3DD8041BD87ED7C53B515B349</td><td/><td/><td>_66536F9B_DD53_40AE_9135_3EF3FE08B7BB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>C__CCCD39442E3F482E930F72F7115C0432</td><td/><td/><td>_60FFD70D_849A_4A0D_A7F8_F962714C16CA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>CrashReporter.NET.Primary_output</td><td/><td/><td>_157C0C47_0D8E_4AB7_9797_04141769C260_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>DotSpatial.Projections.dll</td><td/><td/><td>_C33FDF2C_D690_4066_8EFD_62EC0FFC6247_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Graphics2D.dll</td><td/><td/><td>_39F59A57_5D8F_4D59_8858_2A438FB81BB8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MapModel.dll</td><td/><td/><td>_9F109AA4_25A9_41BC_A1C2_1ACD5DA4583E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_GDIPlus.dll</td><td/><td/><td>_61804E8A_0948_46EC_BDAA_931A439D7A12_FILTER</td><td/><td/><td/><td/></row>
@@ -4436,9 +4440,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]PurplePen.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{5BDA646D-D28B-421D-AB9B-5A665B155857}</td><td/></row>
+		<row><td>ProductCode</td><td>{4FA6D9DF-9AAE-4107-9788-FE50B568F0E7}</td><td/></row>
 		<row><td>ProductName</td><td>Purple Pen</td><td/></row>
-		<row><td>ProductVersion</td><td>2.3.2500</td><td/></row>
+		<row><td>ProductVersion</td><td>2.4.500</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4722,7 +4726,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.3.2500</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
+		<row><td>{C0E8738F-7F00-4AB6-A237-B0800A6C58C9}</td><td>1.0.0</td><td>2.4.500</td><td></td><td>1284</td><td/><td>ISACTIONPROP2</td><td>Previous Versions</td></row>
 	</table>
 
 	<table name="Verb">
