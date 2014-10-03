@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>すべてのコントロール</value>
+    <value>全コントロール</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen ファイル|*.ppen|すべてのファイル|*.*</value>
@@ -196,10 +196,10 @@
     <value>編集 (&amp;E)</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>コース全体の表示 (&amp;C)</value>
+    <value>コース全体を表示 (&amp;C)</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>地図全体の表示 (&amp;M)</value>
+    <value>地図全体を表示 (&amp;M)</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -256,7 +256,7 @@
     <value>ポップアップ情報を表示する(&amp;P)</value>
   </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>すべてのコントロール(&amp;A)</value>
+    <value>全コントロール(&amp;A)</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>表示(&amp;V)</value>
@@ -298,7 +298,7 @@
     <value>コースの順序...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>競技者数(&amp;L)...</value>
+    <value>走行人数(&amp;L)...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>コース(&amp;C)</value>
@@ -357,6 +357,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>テキスト</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>線</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>長方形</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>特殊なコース記号を追加(&amp;I)</value>
   </data>
@@ -367,19 +376,22 @@
     <value>削除(&amp;D)</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
-    <value>Bendを追加(&amp;B)</value>
+    <value>曲げ点を追加(&amp;B)</value>
   </data>
   <data name="removeBendMenu.Text" xml:space="preserve">
-    <value>Bendを除去(&amp;E)</value>
+    <value>曲げ点を除去(&amp;E)</value>
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
-    <value>Gapを追加(&amp;G)</value>
+    <value>切れ目を追加(&amp;G)</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Gapを除去(&amp;A)</value>
+    <value>切れ目を除去(&amp;A)</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>テキストを変更(&amp;T)...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>線の外観を変更(&amp;A)...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>回転(&amp;R)</value>
@@ -413,6 +425,12 @@
   </data>
   <data name="legLengthsMenu.Text" xml:space="preserve">
     <value>レッグ長(&amp;L)</value>
+  </data>
+  <data name="controlCrossrefMenu.Text" xml:space="preserve">
+    <value>コントロールのクロスリファレンス(&amp;C)</value>
+  </data>
+  <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
+    <value>コントロールおよびレッグごとの走行人数(&amp;D)</value>
   </data>
   <data name="reportMenu.Text" xml:space="preserve">
     <value>レポート(&amp;R)</value>
@@ -456,6 +474,9 @@
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>レポートテスター</value>
   </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>フォントメトリック</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>クラッシュ</value>
   </data>
@@ -467,6 +488,9 @@
   </data>
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>翻訳テキストの追加...</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Symbols.xml をマージ...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>ディスクリプションのテキストを翻訳する(&amp;T)</value>
@@ -558,23 +582,38 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>テキスト</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>線</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>長方形</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>特殊なコース記号を追加</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Bendを追加(Ctrl+B)</value>
+    <value>曲げ点を追加(Ctrl+B)</value>
   </data>
   <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Gapを追加(Ctrl+G)</value>
+    <value>切れ目を追加(Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>ズーム: 100%</value>
+  </data>
+  <data name="locationDisplay.Text" xml:space="preserve">
+    <value>X:-999.99 Y:-999.99</value>
   </data>
   <data name="saveXmlFileDialog.Filter" xml:space="preserve">
     <value>XML ファイル|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>データ交換ファイル(IOF XML)を作成</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

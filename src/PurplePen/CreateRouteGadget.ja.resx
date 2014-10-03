@@ -144,8 +144,14 @@
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>ファイル名</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>RouteGadgetファイル両方に使用されるファイル名を(.xml / .gifの拡張子を付けずに)入力してください:</value>
+  </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
-    <value>RouteGadgetの詳細</value>
+    <value>RouteGadgetファイルを作成について詳細</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadgetは画像ファイル(.gif)とIOF XMLファイル(.xml)の両方を必要とします。これら両方のファイルのためのファイル名とフォルダを選択してください。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>RouteGadgetファイルを作成</value>

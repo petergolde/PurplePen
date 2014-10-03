@@ -130,12 +130,12 @@
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Crediti</value>
+    <value>Riconoscimenti</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>Visualizza Licenza Completa</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Riguardo a Purple Pen</value>
+    <value>Informazioni su Purple Pen</value>
   </data>
 </root>

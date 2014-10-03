@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -322,7 +322,10 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Alle bilde "
+"filer|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|OCAD filer (*.ocd)|*.ocd|PDF filer (*.pdf)|*.pdf|Bilde "
+"filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -368,7 +371,7 @@ msgstr "Løypenavn"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Løype del"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -389,17 +392,17 @@ msgstr "Utskrifts skala"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Endre farge …"
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Farge:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Kursiv"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -408,12 +411,12 @@ msgstr "Fet"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Skrift:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Eksempel"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -446,7 +449,7 @@ msgstr "Forhåndsvisning"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Velg farge"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -651,20 +654,20 @@ msgstr "Legg til kartbytte"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Slett Kartbytte"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Endre egenskaper for løypedel"
 
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Endre strek utseende"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Automatisk strekk mellomrom størrelse:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -683,7 +686,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "Hvit uthevelse rundt nummer:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -717,6 +720,10 @@ msgstr "Bruk IOF-standardstørrelse"
 msgid "Item Sizes"
 msgstr "Objektets størrelse"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Bruk lilla farge fra kartet"
@@ -728,12 +735,12 @@ msgstr "Lilla farge"
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Sort"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Lilla"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
@@ -760,20 +767,21 @@ msgstr "Løype del"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Egenskaper..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Vis målsirkel på denne løypedelen"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Disse innstillingene kontrollerer utseende til denne delen "
+"av en fler-dels løype"
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Løypedel egenskaper"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -784,6 +792,7 @@ msgstr "Alle"
 msgid "None"
 msgstr "Ingen"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -791,6 +800,26 @@ msgstr "Ingen"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Løyper"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "Navn prefix:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -899,7 +928,7 @@ msgstr "Marger:"
 
 #: CreatePdfCourses.resx, marginChange.Text
 msgid "Change..."
-msgstr ""
+msgstr "Endre …"
 
 #: CreatePdfCourses.resx, paperSizeLabel.Text
 #: PrintCourses.resx, paperSizeLabel.Text
@@ -956,33 +985,29 @@ msgstr "Skriv ut på flere sider"
 msgid "If the print area is too large to fit on one page:"
 msgstr "Dersom utskriftsomfådet er for stort til å passe på en side:"
 
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr ""
-
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr ""
+msgstr "Filer:"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
-msgstr ""
+msgstr "En for alle løyper"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items1
 msgid "One per course"
-msgstr ""
+msgstr "En for hver løype"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part"
-msgstr ""
+msgstr "En for hver løypedel"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
-msgstr ""
+msgstr "Filer"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "Velg en mappe for PDF filene"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
@@ -1050,7 +1075,7 @@ msgstr "Klikk på en symbolbeksrivelse for å tilpasse tekst som "
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr ""
+msgstr "Laster ned"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1085,10 +1110,6 @@ msgstr "Tilpasset symboltekst"
 msgid "Exit"
 msgstr "Avslutt"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr ""
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Åpne sist åpnede arrangement"
@@ -1105,6 +1126,16 @@ msgstr "Lag et nytt arrangement..."
 msgid "Open an existing event..."
 msgstr "Åpne et eksisterende arrangenment"
 
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "Gi et bidrag"
+
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
 msgstr "Velkommen til Purple Pen"
@@ -1119,40 +1150,40 @@ msgstr "Lisens for Purple Pen"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " Endre farge..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
-msgstr ""
+msgstr "Stil:"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items
 msgid "Single"
-msgstr ""
+msgstr "Enkel"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items1
 msgid "Double"
-msgstr ""
+msgstr "Dobbel"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items2
 msgid "Dashed"
-msgstr ""
+msgstr "Stiplet"
 
 #: LinePropertiesDialog.resx, labelWidth.Text
 #: PrinterMargins.resx, label2.Text
 msgid "Width:"
-msgstr ""
+msgstr "Bredde:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "Mellomrom størrelse:"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
-msgstr ""
+msgstr "Stiplet størrelse:"
 
 #: LinePropertiesDialog.resx, labelCornerRadius.Text
 msgid "Corner Radius:"
-msgstr ""
+msgstr "Hjørne radius:"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
@@ -1188,7 +1219,7 @@ msgstr "Lage OCAD &Filer..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
-msgstr ""
+msgstr "Lag PDF..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1495,19 +1526,19 @@ msgstr "Lage hvitt område"
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "Bilde"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "Linje"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "Firkant"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1539,7 +1570,7 @@ msgstr "Endre &tekst"
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "Endre strek og utseende..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -1572,6 +1603,14 @@ msgstr "Endre viste løyper"
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
 msgstr "&Objekt"
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1615,7 +1654,7 @@ msgstr "&Support/feilrapportering"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "Gi et bidrag"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1659,7 +1698,7 @@ msgstr "Font beregninger"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "Programstopp"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
@@ -1774,6 +1813,10 @@ msgstr "Lag en XML-fil for eksport"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr "Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -2192,133 +2235,168 @@ msgstr "Del {0} (av {1})"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "Kontakt-epost"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "En feil har oppstått. For å hjelpe oss å rette problemet "
+"vær vennlig å legg inn epost adresse og annen relevant "
+"informassjon og send oss feilrapporten."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Beskriv hva du gjorde da feilen oppstod for at vi skal "
+"finne ut hva som gikk galt"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "Send Rapport"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Postbeskrivelsene er kanskje ikke lagt til ved kart bytte "
+"hvis \"Alle deler\" er vist. Bytt til den delen du vil legge "
+"til postbeskrivelsen og velg \"Legg til beskrivelser\" igjen."
 
 #: MiscText.resx, DownloadGhostscript
 msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
 "installed. Would you like to automatically download and "
 "install it now?"
-msgstr ""
+msgstr "Lasting av PDF filer krever GPL Ghostscript installert. "
+"Vil du laste ned og installere det automatisk?"
 
 #: MiscText.resx, GhostscriptNotInstalled
 msgid "GPL Ghostscript is not installed"
-msgstr ""
+msgstr "GPL Ghostscript er ikke installert"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "GPL Ghostscript failed to read PDF file successfully"
-msgstr ""
+msgstr "GPL Ghostscript klarte ikke å lese PDF filen"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Kunne ikke lese resultatet av PDF konvertering fra fil '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "Kan ikke lage PDF pga følgende:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Egendefinert"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "Kart størrelse fra PDF"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Avbrutt av bruker"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Oppretter {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "Skriver side {0} (av {1})"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "Kartfilen \"{0}\" er slettet. Prøv å legge inn kartfilen på "
+"nytt og trykk \"OK\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr ".NET rammeverket ser ikke ut til å være riktig installert. "
+"Gå til http://microsoft.com/net og installer siste versjon "
+"av .NET rammeverket til ditt operativsystem."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Endre farge..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Egendefinert Farge"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Mørk blå"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Grønn"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Lys blå"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Rød"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Gul"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Sett utseende til linja. Etter å ha trykket OK kan du "
+"bruke musa til å tegne en linje på ønsket sted."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Legg til linje"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Sett utseende til rektangelet. Etter å ha trykket OK kan "
+"du bruke musa til å tegne et rektangel på ønsket sted."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Legg til rektangel"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr "Endre utseende til linje eller rektangel."
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2391,7 +2469,9 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Når du bruker en PDF fil som kart må du oppgi målestokk. \n"
+"Målestokken til kartet indikerer forholdet mellom "
+"papirkart og den virkelige verden.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2544,7 +2624,7 @@ msgstr "Kartfil kan ikke skrives ut korrekt"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Utfører oppgave"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -2562,15 +2642,15 @@ msgstr "Bekreft overskriving av filer"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr ""
+msgstr "GPL Ghostscript leser din PDF fil..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "Lesing av PDF filen feilet. Feilen er beskrevet under."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Leser PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -2676,43 +2756,43 @@ msgstr "Skriv ut postbeskrivelser"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Størrelse:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Høyde:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Papir størrelse ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Retning"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Venstre:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Topp:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Høyre:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Bunn:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Marger ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Sideoppsett"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
@@ -3144,7 +3224,7 @@ msgstr "Benyttes i løyper:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Navn :"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
@@ -3353,7 +3433,7 @@ msgstr "Klikk på venstre museknapp for å legge til kart bytte ved "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Hold nede venstre museknapp og dra for å opprette objekt"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

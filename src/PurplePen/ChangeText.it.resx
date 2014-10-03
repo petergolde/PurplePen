@@ -121,19 +121,43 @@
     <value>Titolo Evento</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>Nome Corso</value>
+    <value>Nome Percorso</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Parte del Percorso</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
-    <value>Durata Corso</value>
+    <value>Lunghezza Percorso</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
-    <value>Scalata Corso</value>
+    <value>Dislivello Percorso</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Lista Classe</value>
   </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Scala di Stampa</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Cambia colore...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Colore:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Corsivo</value>
+  </data>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Grassetto</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Tipo di carattere:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Esempio</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Inserisci Testo Speciale</value>

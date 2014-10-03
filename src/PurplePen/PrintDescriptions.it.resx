@@ -120,6 +120,12 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Output</value>
   </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Dimensione carta:</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Margini:</value>
+  </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Aspetto</value>
   </data>

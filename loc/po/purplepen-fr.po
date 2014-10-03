@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -398,17 +398,17 @@ msgstr "Echelle d'impression"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Modifier la couleur..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Couleur :"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -417,12 +417,12 @@ msgstr "Gras"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Police :"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Exemple"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -455,7 +455,7 @@ msgstr "Aperçu"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Choisir la couleur"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -669,11 +669,11 @@ msgstr "Modifier les propriétés des parties de circuit"
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Modifier le style de ligne"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Dimension auto pour espace d'interposte"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -692,7 +692,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "Halo blanc autour des numéros :"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -726,6 +726,10 @@ msgstr "Utiliser les tailles IOF standards"
 msgid "Item Sizes"
 msgstr "Tailles des objets"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Utiliser la couleur violine de la carte"
@@ -737,12 +741,12 @@ msgstr "Couleur violine"
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Noir"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Violine"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
@@ -794,6 +798,7 @@ msgstr "Tous"
 msgid "None"
 msgstr "Aucun"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -801,6 +806,26 @@ msgstr "Aucun"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Circuits"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "Préfixe du nom :"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -967,10 +992,6 @@ msgid "If the print area is too large to fit on one page:"
 msgstr "Si la zone d'impression est trop grande pour tenir sur une "
 "seule page :"
 
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr "Préfixe du nom :"
-
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
 msgstr "Fichiers :"
@@ -1061,7 +1082,7 @@ msgstr "Cliquer sur un symbole pour personnaliser la description "
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr ""
+msgstr "Téléchargement en cours"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1097,10 +1118,6 @@ msgstr "Texte personnalisé pour le symbole"
 msgid "Exit"
 msgstr "Quitter"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr "Faire un don"
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Ouvrir la dernière course visualisée"
@@ -1117,6 +1134,16 @@ msgstr "Créer une nouvelle course..."
 msgid "Open an existing event..."
 msgstr "Ouvrir une course existante..."
 
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "Faire un don"
+
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
 msgstr "Bienvenue sur Purple Pen"
@@ -1131,23 +1158,23 @@ msgstr "Licence de Purple Pen"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " Modifier la couleur..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
-msgstr ""
+msgstr "Style :"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items
 msgid "Single"
-msgstr ""
+msgstr "Unique"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items1
 msgid "Double"
-msgstr ""
+msgstr "Double"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items2
 msgid "Dashed"
-msgstr ""
+msgstr "Pointillé"
 
 #: LinePropertiesDialog.resx, labelWidth.Text
 #: PrinterMargins.resx, label2.Text
@@ -1156,15 +1183,15 @@ msgstr "Largeur :"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "Taille de l'espace :"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
-msgstr ""
+msgstr "Taille du pointillé :"
 
 #: LinePropertiesDialog.resx, labelCornerRadius.Text
 msgid "Corner Radius:"
-msgstr ""
+msgstr "Rayon de l'angle :"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
@@ -1507,19 +1534,19 @@ msgstr "Zone blanche"
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "Ligne"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "Rectangle"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1551,7 +1578,7 @@ msgstr "Modifier &Texte..."
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "Modifier le style de ligne..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -1584,6 +1611,14 @@ msgstr "&Modifier Affichage Circuits..."
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
 msgstr "Élémen&t"
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1786,6 +1821,10 @@ msgstr "Créer un fichier d'interchange XML"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr "Fichier image|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -2315,57 +2354,89 @@ msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr "Le framework .NET ne semble pas correctement installé sur "
+"votre ordinateur. Rendez-vous à l'adresse "
+"http://microsoft.com/net et installez la dernière version "
+"du framework .NET qui correspond à votre système "
+"d'exploitation Windows."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Choisir la couleur..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Couleur personnalisée"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Bleu foncé"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Vert"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Bleu clair"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Rouge"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Jaune"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Définissez le style de la ligne. Après avoir cliqué sur "
+"OK, faîtes glisser votre souris afin de dessiner les "
+"segments de ligne à l'emplacement souhaité."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Ajouter ligne"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Définissez le style du rectangle. Après avoir cliqué sur "
+"OK, faîtes glisser votre souris afin de positionner le "
+"rectangle à l'emplacement souhaité."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Ajouter un rectangle"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr "Modifier le style de la ligne ou du rectangle"
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2604,7 +2675,7 @@ msgstr "La carte ne peut pas être imprimée de manière fiable"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Opération en cours"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -2622,15 +2693,16 @@ msgstr "Confirmer le remplacement des fichiers"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr ""
+msgstr "GPL Ghostscript est en train de lire votre PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "La lecture du PDF a échoué. Les erreurs sont affichées "
+"ci-dessous."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Lecture du PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -3214,7 +3286,7 @@ msgstr "Utilisé sur les circuits :"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Nom :"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
@@ -3444,7 +3516,8 @@ msgstr "Cliquer sur le bouton gauche de la souris pour ajouter un "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Appuyez sur le bouton principal de votre souris et "
+"glissez-la afin de créer l'objet"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

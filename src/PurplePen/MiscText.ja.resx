@@ -133,13 +133,16 @@
     <value>記号なし</value>
   </data>
   <data name="AllControls" xml:space="preserve">
-    <value>すべてのコントロール</value>
+    <value>全コントロール</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>'{0}' を以下の理由でロードできませんでした:</value>
   </data>
   <data name="CannotSaveFile" xml:space="preserve">
     <value>'{0}' を保存できません。以下の理由:</value>
   </data>
   <data name="CannotLoadMapFile" xml:space="preserve">
-    <value>地図ファイル '{0}' を以下の理由でロードできませんでした。:</value>
+    <value>地図ファイル '{0}' を以下の理由でロードできませんでした:</value>
   </data>
   <data name="CannotReadImageFile" xml:space="preserve">
     <value>画像ファイル '{0}' をロードできません。</value>
@@ -153,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>フォルダ '{0}' を作成できません。以下の理由:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>次の理由により地図が読み込めません: '{0}' OCAD で Optimize/Repair を行うことで問題が改善される可能性があります。</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>OCAD ファイル '{0}' を作成できません。以下の理由:</value>
   </data>
@@ -165,8 +171,14 @@
   <data name="CodeInUse" xml:space="preserve">
     <value>コントロールコード '{0}' はすでに他のコントロールで使われています。</value>
   </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>コントロールの得点は1から999の整数でなくてはなりません。</value>
+  </data>
   <data name="BadClimb" xml:space="preserve">
     <value>コースの登高には0から9999の数字を入れてください。(または空白)</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>コースの走行人数は、空白にするか、0から999999までの数字を入力してください。</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
     <value>元に戻す(&amp;U)</value>
@@ -183,6 +195,12 @@
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
     <value>選択をクリア(&amp;C)</value>
   </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>操作をキャンセル(&amp;N)</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>操作をキャンセル</value>
+  </data>
   <data name="EnterScore" xml:space="preserve">
     <value>新しいスコアを入力</value>
   </data>
@@ -193,6 +211,10 @@
     <value>新しいイベント名を入力してください。
 「 | 」を使用すると改行になります。
 （すべてのコースに反映されます）</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>新しい副タイトルを入力してください。
+「 | 」を使用すると改行になります。</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>新規コース名を入力</value>
@@ -222,7 +244,7 @@
     <value>コントロールコードは0から始めるべきではありません。</value>
   </data>
   <data name="CodeCouldBeUpsideDown" xml:space="preserve">
-    <value>コントロール識別番号には、逆さに見ると違う番号に読み取れる番号は使わないほうがよいでしょう</value>
+    <value>コントロールコードには、上下逆さに見ると違う数字に見える番号は使わないほうがよいでしょう。</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>コントロールコード "{0}" が複数回使われています。</value>
@@ -259,9 +281,9 @@
   <data name="MissingMapFile" xml:space="preserve">
     <value>地図ファイル "{0}" が見つかりませんでした。
 
-地図ファイルが移動または削除されたか、Purple Penが(他のコンピュータに)移動された可能性が考えられます。Purple Penのイベントファイルがロードされる際は地図ファイルも存在する必要があります。Purple Penのイベントファイルを他の人に送信する際は受信者も地図ファイルのコピーを持っていることを確認してください。
+地図ファイルが移動または削除されたか、Purple Penファイルが(他のコンピュータに)移動された可能性が考えられます。Purple Penのイベントファイルをロードする際は地図ファイルも存在しなくてはなりません。Purple Penのイベントファイルを他の人に送信する際は受信者も地図ファイルのコピーを持っているようにしてください。
 
-OKを押して、コンピュータ上で地図ファイルのコピーを探してください。</value>
+OKを押し、コンピュータ上で地図ファイルのコピーを探してください。</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>すべてのコントロールがコースで使用されています。</value>
@@ -276,7 +298,7 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
     <value>コントロール {0}</value>
   </data>
   <data name="Finish" xml:space="preserve">
-    <value>完了</value>
+    <value>フィニッシュ</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
     <value>F</value>
@@ -284,11 +306,17 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   <data name="MandCrossing_Long" xml:space="preserve">
     <value>必須の横断地点</value>
   </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>交点</value>
+  </data>
   <data name="MandCrossing_Short" xml:space="preserve">
     <value>C</value>
   </data>
   <data name="Margins_All" xml:space="preserve">
     <value>すべて: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>左: {0}, 右: {1}, 上: {2}, 下: {3}</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>スタート</value>
@@ -296,11 +324,23 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   <data name="Start_Short" xml:space="preserve">
     <value>S</value>
   </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
   <data name="Plural" xml:space="preserve">
     <value>複数形</value>
   </data>
   <data name="Singular" xml:space="preserve">
     <value>単数形</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>course setting for orienteering</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
     <value>地図上に表示させたいテキストを入力し、OKを押したあと、テキストを所望の位置にドラッグで移動させてください。</value>
@@ -309,7 +349,7 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
     <value>テキストを追加</value>
   </data>
   <data name="ChangeTextSpecialExplanation" xml:space="preserve">
-    <value>新規テキストを追加。</value>
+    <value>新規テキストを追加します。</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>テキストを変更</value>
@@ -321,7 +361,10 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
     <value>現在のイベントは文字によるディスクリプションに {0} を使用しています。ディスクリプションの言語を{1} に変更しますか?</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
-    <value>開く "{0}"</value>
+    <value>"{0}" を開く</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>作成されたOCADファイルを読み込む前にPurple Penを閉じる必要があります。</value>
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>印刷するコースが選択されていません。</value>
@@ -331,6 +374,9 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   </data>
   <data name="MapExchange_Medium" xml:space="preserve">
     <value>交換</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
   </data>
   <data name="PartN" xml:space="preserve">
     <value>パート {0}</value>
@@ -374,6 +420,12 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   <data name="CannotCreatePdfs" xml:space="preserve">
     <value>PDF '{0}' を作成できません。以下の理由:</value>
   </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>ユーザ定義</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>ユーザーによりキャンセル</value>
+  </data>
   <data name="CreatingFile" xml:space="preserve">
     <value>{0} を作成しています...</value>
   </data>
@@ -385,5 +437,50 @@ OKを押して、コンピュータ上で地図ファイルのコピーを探し
   </data>
   <data name="BadDotNetFramework" xml:space="preserve">
     <value>.NET frameworkが正しくインストールされていないおそれがあります。マイクロソフト社(http://www.microsoft.com/ja-jp/net/) より最新の.Net frameworkを入手しインストールしてください。</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>黒</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>色を選択...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>カスタムカラー</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>濃青色</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>緑</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>薄青色</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>紫</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>赤</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>線の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に線分を引きます。</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>線を追加</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>長方形の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に長方形を配置します。</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>長方形を追加</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>線または長方形の外観を変更</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>線の外観を変更</value>
   </data>
 </root>

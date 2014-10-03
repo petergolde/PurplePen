@@ -132,4 +132,7 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Anteprima</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Scegli il colore</value>
+  </data>
 </root>

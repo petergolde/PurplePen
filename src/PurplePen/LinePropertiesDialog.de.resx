@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Farbe:</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Farbe ändern...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Einzel</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Doppel</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Gestrichelt</value>
+  </data>
   <data name="labelWidth.Text" xml:space="preserve">
     <value>Breite:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Abstand</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Strichgrösse:</value>
   </data>
   <data name="labelWidthMm.Text" xml:space="preserve">
     <value>mm</value>
@@ -129,8 +153,14 @@
   <data name="labelDashSizeMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Eckenradius:</value>
+  </data>
   <data name="labelRadiusMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Beispiel</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Darstellung</value>

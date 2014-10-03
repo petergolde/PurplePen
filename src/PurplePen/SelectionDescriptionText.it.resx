@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Climb" xml:space="preserve">
-    <value>Arrampica:</value>
+    <value>Dislivello</value>
   </data>
   <data name="CourseList_None" xml:space="preserve">
     <value>Niente</value>
@@ -127,10 +127,13 @@
     <value>Confine Non Attraversabile</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
-    <value>Nome Corso</value>
+    <value>Nome Percorso</value>
   </data>
   <data name="SpecialName_Dangerous" xml:space="preserve">
     <value>Area Pericolosa</value>
+  </data>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>Descrizioni Controllo</value>
   </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Posizione Del Primo Soccorso</value>

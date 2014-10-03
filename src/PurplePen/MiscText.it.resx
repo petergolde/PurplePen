@@ -132,4 +132,13 @@
   <data name="CrashCancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
+  <data name="Black" xml:space="preserve">
+    <value>Nero</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Viola</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Cambia Stile Linea</value>
+  </data>
 </root>

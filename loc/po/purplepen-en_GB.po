@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -720,6 +720,10 @@ msgstr "Use IOF standard sizes"
 msgid "Item Sizes"
 msgstr "Item Sizes"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Use purple colour from map"
@@ -787,6 +791,7 @@ msgstr "All"
 msgid "None"
 msgstr "None"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -794,6 +799,26 @@ msgstr "None"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Courses"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr ""
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -959,10 +984,6 @@ msgstr "Print on multiple pages"
 msgid "If the print area is too large to fit on one page:"
 msgstr "If the print area is too large to fit on one page:"
 
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr ""
-
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
 msgstr ""
@@ -1089,10 +1110,6 @@ msgstr "Customised Symbol Text"
 msgid "Exit"
 msgstr "Exit"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr ""
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Open last viewed event"
@@ -1108,6 +1125,16 @@ msgstr "Create a new event..."
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
 msgstr "Open an existing event..."
+
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr ""
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -1577,6 +1604,14 @@ msgstr "Change Displa&yed Courses..."
 msgid "&Item"
 msgstr "&Item"
 
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
+
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
 msgstr "Course &Summary"
@@ -1778,6 +1813,10 @@ msgstr "Create XML Interchange File"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr ""
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -2326,6 +2365,30 @@ msgstr ""
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr ""
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

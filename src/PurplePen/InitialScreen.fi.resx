@@ -123,9 +123,6 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Sulje</value>
   </data>
-  <data name="donationLink.Text" xml:space="preserve">
-    <value>Make a donation</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Avaa viimeksi katsottu tapahtuma</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Avaa olemassa oleva tapahtuma...</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Make a donation</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

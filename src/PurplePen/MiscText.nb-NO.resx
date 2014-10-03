@@ -405,7 +405,103 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="CrashCancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontakt-epost</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>En feil har oppstått. For å hjelpe oss å rette problemet vær vennlig å legg inn epost adresse og annen relevant informassjon og send oss feilrapporten.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Beskriv hva du gjorde da feilen oppstod for at vi skal finne ut hva som gikk galt</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Lagre</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Send Rapport</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Postbeskrivelsene er kanskje ikke lagt til ved kart bytte hvis "Alle deler" er vist. Bytt til den delen du vil legge til postbeskrivelsen og velg "Legg til beskrivelser" igjen.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript er ikke installert</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript klarte ikke å lese PDF filen</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Kunne ikke lese resultatet av PDF konvertering fra fil '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Kan ikke lage PDF pga følgende:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Egendefinert</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Kart størrelse fra PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Avbrutt av bruker</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Oppretter {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Skriver side {0} (av {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Kartfilen "{0}" er slettet. Prøv å legge inn kartfilen på nytt og trykk "OK".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>.NET rammeverket ser ikke ut til å være riktig installert. Gå til http://microsoft.com/net og installer siste versjon av .NET rammeverket til ditt operativsystem.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Endre farge...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Egendefinert Farge</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Mørk blå</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Grønn</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Lys blå</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Lilla</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rød</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Gul</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Sett utseende til linja. Etter å ha trykket OK kan du bruke musa til å tegne en linje på ønsket sted.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Legg til linje</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Sett utseende til rektangelet. Etter å ha trykket OK kan du bruke musa til å tegne et rektangel på ønsket sted.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Legg til rektangel</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Endre utseende til linje eller rektangel.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Endre strek utseende</value>
   </data>
 </root>

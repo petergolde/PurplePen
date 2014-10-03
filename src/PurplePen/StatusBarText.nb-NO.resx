@@ -213,4 +213,7 @@
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>Klikk på venstre museknapp for å legge til kart bytte ved post "{0}" </value>
   </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Hold nede venstre museknapp og dra for å opprette objekt</value>
+  </data>
 </root>

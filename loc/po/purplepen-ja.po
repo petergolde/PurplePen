@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -194,7 +194,7 @@ msgstr "ディスクリプションの独立した行に配置するテキスト
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
-msgstr "コース"
+msgstr "コース:"
 
 #: AddTextLine.resx, positionLabel.Text
 msgid "Position:"
@@ -224,17 +224,17 @@ msgstr "テキスト行を追加"
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "この設定は「すべてのコントロール」の地図とディスクリプションがどのように印刷されるかを変更します。"
+msgstr "この設定は「全コントロール」の地図とディスクリプションがどのように印刷されるかを変更します。"
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr "「すべてのコントロール」のプロパティ"
+msgstr "「全コントロール」のプロパティ"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "逆さに見ると違う番号に読み取れるコントロールコードを使用しない(例: 「68」/「89」)"
+msgstr "上下逆さに見ると違う番号に見えるコントロールコードを使用しない(例: 「68」/「89」)"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
@@ -242,7 +242,7 @@ msgstr "既存のコントロールにも適用"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "新しく作成されるコントロールにのみ適用"
+msgstr "新しく作成されるコントロールから適用"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
@@ -251,7 +251,7 @@ msgstr "既存のコントロールに対して"
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr "新しく作成するコントロールは以下の設定に従って自動で連番のコントロール番号が割り当てられます。"
+msgstr "新しく作成するコントロールは以下の設定に従って連番のコントロール番号が自動で割り当てられます。"
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
@@ -385,17 +385,17 @@ msgstr "印刷の縮尺"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "色を変更..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "色:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -404,12 +404,12 @@ msgstr "太字"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "フォント:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "サンプル"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -442,7 +442,7 @@ msgstr "プレビュー"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "色を選択"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -537,7 +537,7 @@ msgstr "コースプロパティの変更"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr "「すべてのコントロール」のプロパティの変更"
+msgstr "「全コントロール」のプロパティの変更"
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
@@ -554,35 +554,35 @@ msgstr "コードの変更"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr "Leg Bend の移動"
+msgstr "レッグ線の曲げ点を移動"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr "Bendを追加"
+msgstr "曲げ点を追加"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
-msgstr "Cornerを追加"
+msgstr "角を追加"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "Bendを除去"
+msgstr "曲げ点を除去"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
-msgstr "Cornerを除去"
+msgstr "角を除去"
 
 #: CommandNameText.resx, AddGap
 msgid "Add Gap"
-msgstr "Gapを追加"
+msgstr "切れ目を追加"
 
 #: CommandNameText.resx, RemoveGap
 msgid "Remove Gap"
-msgstr "Gapを除去"
+msgstr "切れ目を除去"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr "Gapの移動"
+msgstr "切れ目を移動"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
@@ -603,12 +603,12 @@ msgstr "印刷領域を設定"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr "競技者数の変更"
+msgstr "走行人数の変更"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr "ディスクリプションのテキストをカスタマイズする"
+msgstr "ディスクリプションのテキストをカスタマイズ"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -656,11 +656,11 @@ msgstr "コースパート・プロパティの変更"
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "線の外観を変更"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "自動で作成される切れ目のサイズ:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -713,23 +713,27 @@ msgstr "IOF標準サイズを使用"
 msgid "Item Sizes"
 msgstr "アイテムサイズ"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr ""
+msgstr "地図ファイル(OCAD)のパープルカラーを使用する"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr ""
+msgstr "パープルカラー"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "黒"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "紫"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
@@ -738,16 +742,16 @@ msgstr "ディスクリプション"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "競技者数"
+msgstr "走行人数"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr "コースごとの競技者数を入力してください。ここの数字を元にコントロールやレッグごとの通過人数が算出されます。"
+msgstr "コースごとの走行人数を入力してください。ここの数字を元にコントロールおよびレッグごとの走行人数が算出されます。"
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr "コースごとの競技者数"
+msgstr "コースごとの走行人数"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
@@ -772,13 +776,14 @@ msgstr "コースパート・プロパティ"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
-msgstr "すべて"
+msgstr "全選択"
 
 #: CourseSelector.resx, selectNone.Text
 #: SelectionDescriptionText.resx, CourseList_None
 msgid "None"
-msgstr "None"
+msgstr "全解除"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -786,6 +791,26 @@ msgstr "None"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "コース"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "ファイル名プレフィックス:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -908,13 +933,13 @@ msgstr "用紙サイズ:"
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr ""
+msgstr "Tabloid (11\"x17\")"
 
 #: CreatePdfCourses.resx, marginsLabel.Text
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
+msgstr "上: 0.55\", 下: 0.55\", 左: 0.55\", 右: 0.55\""
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -924,7 +949,7 @@ msgstr "複数のコースパートを同じ地図に印刷 "
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
-msgstr ""
+msgstr "カラーモデル:"
 
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
 #: PrintCourses.resx, comboBoxColorModel.Items1
@@ -939,7 +964,7 @@ msgstr "CMYK"
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items
 #: PrintCourses.resx, comboBoxMultiPage.Items
 msgid "Crop to a single page"
-msgstr "クロップして1ページにする"
+msgstr "1ページに切り抜いて印刷する"
 
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items1
 #: PrintCourses.resx, comboBoxMultiPage.Items1
@@ -949,11 +974,7 @@ msgstr "複数のページに印刷する"
 #: CreatePdfCourses.resx, labelAppearanceInfo.Text
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr ""
-
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr "ネームプレフィックス:"
+msgstr "印刷領域が広すぎて1ページに収まらない場合:"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
@@ -990,17 +1011,18 @@ msgstr "ファイル名"
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "RouteGadgetファイル両方に使用されるファイル名を(.xml / .gifの拡張子を付けずに)入力してください:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr "RouteGadgetの詳細"
+msgstr "RouteGadgetファイルを作成について詳細"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadgetは画像ファイル(.gif)とIOF "
+"XMLファイル(.xml)の両方を必要とします。これら両方のファイルのためのファイル名とフォルダを選択してください。"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1008,7 +1030,7 @@ msgstr "RouteGadgetファイルを作成"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
-msgstr "文字によるコントロール位置説明の言語を選択する:"
+msgstr "文字によるコントロールディスクリプションの言語を選択する:"
 
 #: CustomSymbolText.resx, labelSymbolName.Text
 msgid "Symbol name:"
@@ -1032,16 +1054,17 @@ msgstr "標準のテキスト:"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr ""
+msgstr "意味を記号ディスクリプション下部に表示"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr "クリックでディスクリプション記号を選択して、文字によるコントロール位置説明に使用されるテキストをカスタマイズします。"
+msgstr "クリックでディスクリプション記号を選択して、文字によるコントロールディスクリプションに使用されるテキストをカスタマイズし"
+"ます。"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr ""
+msgstr "ダウンロード中"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1062,7 +1085,7 @@ msgstr "名詞の性を表示する"
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr "記号についてカスタマイズされたテキストを「テキスト」欄に入力してください。"
+msgstr "記号についてカスタマイズ後のテキストを「テキスト」欄に入力してください。"
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
@@ -1075,10 +1098,6 @@ msgstr "カスタマイズされた記号テキスト"
 #: InitialScreen.resx, quitButton.Text
 msgid "Exit"
 msgstr "終了"
-
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr "寄付する"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
@@ -1096,6 +1115,16 @@ msgstr "新規イベントを作成..."
 msgid "Open an existing event..."
 msgstr "既存のイベントを開く..."
 
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "寄付する"
+
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
 msgstr "Purple Pen へようこそ"
@@ -1110,23 +1139,23 @@ msgstr "Purple Pen ライセンス"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " 色を変更..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
-msgstr ""
+msgstr "スタイル:"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items
 msgid "Single"
-msgstr ""
+msgstr "単線"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items1
 msgid "Double"
-msgstr ""
+msgstr "二重線"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items2
 msgid "Dashed"
-msgstr ""
+msgstr "破線"
 
 #: LinePropertiesDialog.resx, labelWidth.Text
 #: PrinterMargins.resx, label2.Text
@@ -1135,19 +1164,19 @@ msgstr "幅:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "隙間のサイズ:"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
-msgstr ""
+msgstr "破線のサイズ:"
 
 #: LinePropertiesDialog.resx, labelCornerRadius.Text
 msgid "Corner Radius:"
-msgstr ""
+msgstr "コーナー半径"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
-msgstr "すべてのコントロール"
+msgstr "全コントロール"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1255,11 +1284,11 @@ msgstr "編集 (&E)"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr "コース全体の表示 (&C)"
+msgstr "コース全体を表示 (&C)"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr "地図全体の表示 (&M)"
+msgstr "地図全体を表示 (&M)"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1335,7 +1364,7 @@ msgstr "ポップアップ情報を表示する(&P)"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
-msgstr "すべてのコントロール(&A)"
+msgstr "全コントロール(&A)"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1391,7 +1420,7 @@ msgstr "コースの順序..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "競技者数(&L)..."
+msgstr "走行人数(&L)..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1486,19 +1515,19 @@ msgstr "白抜き"
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "画像"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "線"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "長方形"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1510,19 +1539,19 @@ msgstr "テキストラインを追加(&L)"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
-msgstr "Bendを追加(&B)"
+msgstr "曲げ点を追加(&B)"
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr "Bendを除去(&E)"
+msgstr "曲げ点を除去(&E)"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr "Gapを追加(&G)"
+msgstr "切れ目を追加(&G)"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove G&ap"
-msgstr "Gapを除去(&A)"
+msgstr "切れ目を除去(&A)"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -1530,7 +1559,7 @@ msgstr "テキストを変更(&T)..."
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "線の外観を変更(&A)..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -1564,6 +1593,14 @@ msgstr "表示するコースの変更(&Y)..."
 msgid "&Item"
 msgstr "アイテム(&I)"
 
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
+
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
 msgstr "コースの概要(&S)"
@@ -1578,11 +1615,11 @@ msgstr "レッグ長(&L)"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr ""
+msgstr "コントロールのクロスリファレンス(&C)"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr ""
+msgstr "コントロールおよびレッグごとの走行人数(&D)"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
@@ -1646,7 +1683,7 @@ msgstr "レポートテスター"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
+msgstr "フォントメトリック"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -1666,7 +1703,7 @@ msgstr "翻訳テキストの追加..."
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr ""
+msgstr "Symbols.xml をマージ..."
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
@@ -1737,7 +1774,7 @@ msgstr "特殊なコース記号を追加"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
-msgstr "Bendを追加(Ctrl+B)"
+msgstr "曲げ点を追加(Ctrl+B)"
 
 #: MainFrame.resx, addGapToolStripButton.Text
 msgid "toolStripButton1"
@@ -1745,7 +1782,7 @@ msgstr ""
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
-msgstr "Gapを追加(Ctrl+G)"
+msgstr "切れ目を追加(Ctrl+G)"
 
 #: MainFrame.resx, zoomAmountLabel.Text
 msgid "Zoom: 100%"
@@ -1753,7 +1790,7 @@ msgstr "ズーム: 100%"
 
 #: MainFrame.resx, locationDisplay.Text
 msgid "X:-999.99 Y:-999.99"
-msgstr ""
+msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "XML file|*.xml"
@@ -1765,6 +1802,10 @@ msgstr "データ交換ファイル(IOF XML)を作成"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr "画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -1790,11 +1831,11 @@ msgstr "記号なし"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr "すべてのコントロール"
+msgstr "全コントロール"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
-msgstr ""
+msgstr "'{0}' を以下の理由でロードできませんでした:"
 
 #: MiscText.resx, CannotSaveFile
 msgid "Cannot save '{0}' for the following reason:"
@@ -1802,7 +1843,7 @@ msgstr "'{0}' を保存できません。以下の理由:"
 
 #: MiscText.resx, CannotLoadMapFile
 msgid "Cannot load map file '{0}' for the following reason:"
-msgstr "地図ファイル '{0}' を以下の理由でロードできませんでした。:"
+msgstr "地図ファイル '{0}' を以下の理由でロードできませんでした:"
 
 #: MiscText.resx, CannotReadImageFile
 msgid "Cannot read image file '{0}'."
@@ -1823,7 +1864,8 @@ msgstr "フォルダ '{0}' を作成できません。以下の理由:"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair in OCAD may fix problems."
-msgstr ""
+msgstr "次の理由により地図が読み込めません: '{0}' OCAD で Optimize/Repair "
+"を行うことで問題が改善される可能性があります。"
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -1847,7 +1889,7 @@ msgstr "コントロールコード '{0}' はすでに他のコントロール�
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
-msgstr ""
+msgstr "コントロールの得点は1から999の整数でなくてはなりません。"
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
@@ -1855,15 +1897,15 @@ msgstr "コースの登高には0から9999の数字を入れてください。(
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr ""
+msgstr "コースの走行人数は、空白にするか、0から999999までの数字を入力してください。"
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
-msgstr ""
+msgstr "操作をキャンセル(&N)"
 
 #: MiscText.resx, CancelOperation
 msgid "Cancel Operation"
-msgstr ""
+msgstr "操作をキャンセル"
 
 #: MiscText.resx, EnterScore
 msgid "Enter new score"
@@ -1890,7 +1932,8 @@ msgstr "新しいイベント名を入力してください。\n"
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "新しい副タイトルを入力してください。\n"
+"「 | 」を使用すると改行になります。"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
@@ -1941,7 +1984,7 @@ msgstr "コントロールコードは0から始めるべきではありませ�
 #: MiscText.resx, CodeCouldBeUpsideDown
 msgid "A control code should not look like another number when "
 "upside-down."
-msgstr "コントロール識別番号には、逆さに見ると違う番号に読み取れる番号は使わないほうがよいでしょう"
+msgstr "コントロールコードには、上下逆さに見ると違う数字に見える番号は使わないほうがよいでしょう。"
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
@@ -2008,11 +2051,11 @@ msgid "The map file \"{0}\" could not be found.\n"
 msgstr "地図ファイル \"{0}\" が見つかりませんでした。\n"
 "\n"
 "地図ファイルが移動または削除されたか、Purple "
-"Penが(他のコンピュータに)移動された可能性が考えられます。Purple "
-"Penのイベントファイルがロードされる際は地図ファイルも存在する必要があります。Purple "
-"Penのイベントファイルを他の人に送信する際は受信者も地図ファイルのコピーを持っていることを確認してください。\n"
+"Penファイルが(他のコンピュータに)移動された可能性が考えられます。Purple "
+"Penのイベントファイルをロードする際は地図ファイルも存在しなくてはなりません。Purple "
+"Penのイベントファイルを他の人に送信する際は受信者も地図ファイルのコピーを持っているようにしてください。\n"
 "\n"
-"OKを押して、コンピュータ上で地図ファイルのコピーを探してください。"
+"OKを押し、コンピュータ上で地図ファイルのコピーを探してください。"
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
@@ -2033,7 +2076,7 @@ msgstr "コントロール {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr "完了"
+msgstr "フィニッシュ"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
@@ -2045,7 +2088,7 @@ msgstr "必須の横断地点"
 
 #: MiscText.resx, MandCrossing_Medium
 msgid "Crossing"
-msgstr ""
+msgstr "交点"
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
@@ -2057,7 +2100,7 @@ msgstr "すべて: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr ""
+msgstr "左: {0}, 右: {1}, 上: {2}, 下: {3}"
 
 #: MiscText.resx, Start
 msgid "Start"
@@ -2069,15 +2112,15 @@ msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr ""
+msgstr "Alpha {0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr ""
+msgstr "Beta {0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
-msgstr ""
+msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
@@ -2094,7 +2137,7 @@ msgstr ""
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr ""
+msgstr "course setting for orienteering"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
@@ -2108,7 +2151,7 @@ msgstr "テキストを追加"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr "新規テキストを追加。"
+msgstr "新規テキストを追加します。"
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
@@ -2124,12 +2167,12 @@ msgstr "現在のイベントは文字によるディスクリプションに {0
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr "開く \"{0}\""
+msgstr "\"{0}\" を開く"
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr ""
+msgstr "作成されたOCADファイルを読み込む前にPurple Penを閉じる必要があります。"
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
@@ -2152,7 +2195,7 @@ msgstr "交換"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
@@ -2218,7 +2261,7 @@ msgstr "PDF '{0}' を作成できません。以下の理由:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "ユーザ定義"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
@@ -2226,7 +2269,7 @@ msgstr ""
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "ユーザーによりキャンセル"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
@@ -2252,53 +2295,77 @@ msgstr ".NET "
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "色を選択..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "カスタムカラー"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "濃青色"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "緑"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "薄青色"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "赤"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "黄色"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "線の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に線分を引きます。"
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "線を追加"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "長方形の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に長方形を配置します。"
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "長方形を追加"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr "線または長方形の外観を変更"
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2420,7 +2487,7 @@ msgid "In order to design your courses, you must select the map "
 "(although image files like JPEGs can be used instead). "
 "Click the \"Choose...\" button to select a map file."
 msgstr "コースに使用する地図ファイルを選択してください。一般的にはOCADファイルです(代わりにJPEG等の画像ファイルも使用可"
-"能です)。「選択...」ボタンをクリックして地図ファイルを選択してください。"
+"能です)。「地図ファイルを選択(C)...」ボタンをクリックして地図ファイルを選択してください。"
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -2429,13 +2496,13 @@ msgstr "選択中の地図ファイル"
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If send your Purple "
 "Pen file to someone else, they must have the map file also."
-msgstr "地図ファイルのロードに成功しました。Purple Penファイルを他の人に送信する場合は、受信者も同じ地図ファイル "
-"(のコピー) を使用します。"
+msgstr "地図ファイルのロードに成功しました。Purple "
+"Penファイルを他の人に送信する場合には、受信者も同じ地図ファイルを使用できるようにしてください。"
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr "新しく作成するコントロールには自動で連番のコントロール識別番号が割り当てられます。連番の初期値を選択してください。"
+msgstr "新しく作成するコントロールには連番のコントロールコードが自動で割り当てられます。連番の初期値を選択してください。"
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
@@ -2451,7 +2518,7 @@ msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr "コースの印刷に使用する縮尺を設定してください。ほとんどの場合は地図の縮尺をそのまま使用します。\n"
+msgstr "コースの印刷に使用する縮尺を設定してください。通常は地図の縮尺をそのまま使用します。\n"
 "\n"
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
@@ -2471,11 +2538,11 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr "イベント名はコントロール位置説明表の先頭行に表示されます。イベント名はまた、イベントをディスクに保存する際のファイル名に"
-"も使用されます。\n"
+msgstr "イベント名はコントロールディスクリプションの先頭行に表示されます。イベント名はまた、イベントをディスクに保存する際のファ"
+"イル名にも使用されます。\n"
 "\n"
-"コントロール位置説明表に合わせて、イベント名は25文字(半角)以内に収めると良いでしょう。良いイベント名の例として「US"
-" Champs Day 1」や「Riverview Park, 4/12/06」などが挙げられます。"
+"コントロールディスクリプションの幅に合うよう、イベント名は25文字(半角)以内に収めると良いでしょう。良いイベント名の例"
+"として「US Champs Day 1」や「Riverview Park, 4/12/06」などが挙げられます。"
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
@@ -2503,7 +2570,7 @@ msgstr "地図ファイル \"{0}\" は、Purple "
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr ""
+msgstr "続行"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
@@ -2511,7 +2578,7 @@ msgstr "地図ファイルを正確に印刷できません"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "処理が進行中"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -2528,15 +2595,15 @@ msgstr "ファイルの置き換えの確認"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr ""
+msgstr "GPL Ghostscript が PDF を読み込み中です..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "以下のエラーによりPDFの読み込みに失敗しました。"
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "PDFを読込中"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -2598,15 +2665,15 @@ msgstr "ページ設定..."
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
 msgid "Orientation:"
-msgstr "向き:"
+msgstr "印刷の向き"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr ""
+msgstr "コースのデフォルト"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr ""
+msgstr "記号とテキスト"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
@@ -2614,7 +2681,7 @@ msgstr "ディスクリプションタイプ:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr ""
+msgstr "行のサイズ:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
@@ -2750,7 +2817,7 @@ msgstr "コード"
 
 #: ReportText.resx, ColumnHeader_Column
 msgid "Column"
-msgstr ""
+msgstr "欄"
 
 #: ReportText.resx, ColumnHeader_Control
 msgid "Control"
@@ -2786,11 +2853,11 @@ msgstr "長さ"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr ""
+msgstr "走行人数"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
-msgstr ""
+msgstr "場所"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
@@ -2810,11 +2877,11 @@ msgstr "{0} のコースの概要"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr ""
+msgstr "｛0｝ のコントロールのクロスリファレンス"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr ""
+msgstr "近くにあるコントロール"
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
@@ -2825,7 +2892,7 @@ msgstr ""
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr ""
+msgstr "ディスクリプションボックスの欠損"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
@@ -2843,7 +2910,7 @@ msgstr ""
 #: ReportText.resx, EventAudit_MissingEJunction
 msgid "When \"junction\" or \"crossing\" is in column F, two features "
 "must be shown in columns D and E"
-msgstr ""
+msgstr "「分岐」または「交点」がF欄にある場合、D欄とE欄に2つの特徴物が必要です。"
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
@@ -2851,11 +2918,11 @@ msgstr "正規のコースではフィニッシュコントロールを置くべ
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr ""
+msgstr "コース内アイテムの欠損"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr ""
+msgstr "コースに予想される走行人数を設定すべきです"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
@@ -2868,11 +2935,12 @@ msgstr "パンチパターンの欠損"
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
 "controls"
-msgstr "スコア-Oのコースではすべてのコントロールにスコアを記載するかまたはまったく記載しないべきです"
+msgstr "スコア-Oのコースでは、すべてのコントロールにスコアを記載するか、またはどのコントロールにもスコアを記載しないようにして"
+"ください"
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr ""
+msgstr "スコアの欠損"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
@@ -2888,7 +2956,7 @@ msgstr "いいえ"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr ""
+msgstr "問題は見つかりませんでした。"
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -2897,7 +2965,7 @@ msgstr "{0} のイベント監査"
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
 msgid "Unused Controls"
-msgstr ""
+msgstr "未使用のコントロール"
 
 #: ReportText.resx, EventAudit_UnusedControlsExplanation
 msgid "The following controls are present in the All Controls "
@@ -2905,7 +2973,9 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr ""
+msgstr "以下のコントロールは全コントロールのコレクションに含まれていますが、どのコースにも使用されていません。除去するには「未使"
+"用のコントロールを除去」コマンドを「イベント」メニューから実行してください。それらのコントロールが以降このレポートで表示"
+"されなくなります。"
 
 #: ReportText.resx, EventAudit_Yes
 msgid "Yes"
@@ -2913,15 +2983,15 @@ msgstr "はい"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
-msgstr ""
+msgstr "平均"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
-msgstr ""
+msgstr "{0} (コントロール数: {1} , 長さ: {2:0.0} km, 登高: {3} m )"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2:0.0} km)"
-msgstr ""
+msgstr "{0} ({1} コントロール、 {2:0.0} km)"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
@@ -2929,27 +2999,28 @@ msgstr "{0} のレッグ長レポート"
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr ""
+msgstr "コントロールごとの走行人数"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr ""
+msgstr "レッグごとの走行人数"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr ""
+msgstr "走行人数の設定されていないコースがあります。そのため、下の表のコントロールごとの走行人数は不正確だったり間違いのある可能"
+"性があります。コースごとの走行人数を設定するには、[コース]メニューから[走行人数]を選択してください。"
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr ""
+msgstr "(次の表には1つ以上のコースで使われているレッグのみが表示されます。)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr ""
+msgstr "{0} の走行人数のサマリ"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -2961,15 +3032,15 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr ""
+msgstr "走行人数:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr ""
+msgstr "使用されているコントロール数:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr ""
+msgstr "未使用のコントロール"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
@@ -3021,11 +3092,11 @@ msgstr "フィニッシュまで漏斗状の誘導"
 
 #: SelectionDescriptionText.resx, Length
 msgid "Length:"
-msgstr ""
+msgstr "長さ:"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr ""
+msgstr "行の高さ:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
@@ -3057,7 +3128,7 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, Start_Singular
 msgid "start"
-msgstr ""
+msgstr "スタート"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
@@ -3065,7 +3136,7 @@ msgstr "文字によるディスクリプション"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
-msgstr ""
+msgstr "テキストライン"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
@@ -3093,11 +3164,11 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr ""
+msgstr "使用コース:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "名前:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
@@ -3113,11 +3184,11 @@ msgstr "{0} で地図交換"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "走行人数:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "使用コース:"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
@@ -3143,12 +3214,12 @@ msgstr "言語設定"
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr "左マウスボタン: オブジェクトを選択; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小"
+msgstr "左クリック: オブジェクトを選択; 右クリック: 地図を移動; スクロールホイール: 地図を拡大/縮小"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr "左マウスボタン:  矩形の移動・サイズ変更; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小"
+msgstr "左クリック:  矩形の移動・サイズ変更; 右クリック: 地図を移動; スクロールホイール: 地図を拡大/縮小"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
@@ -3208,39 +3279,39 @@ msgstr "左クリックで新しくオブジェクトを追加します"
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr "左クリックの位置にBendを追加します"
+msgstr "左クリックの位置に曲げ点を追加します"
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr "左クリックで新しいCornerを追加します"
+msgstr "左クリックで新しい角を追加します"
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr "左クリックでBendを削除します"
+msgstr "左クリックで曲げ点を除去します"
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr "左クリックでオブジェクトの角を削除します"
+msgstr "左クリックでオブジェクトの角を除去します"
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr "左クリックでコントロール円に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します"
+msgstr "左クリックでコントロール円に小さな切れ目を追加します; 左マウスボタンを押したままドラッグで大きな切れ目を作成します"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "左クリックでコントロール円のGapを除去します"
+msgstr "左クリックでコントロール円の切れ目を除去します"
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr "左クリックでレッグ線に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します"
+msgstr "左クリックでレッグ線に小さな切れ目を追加します; 左マウスボタンを押したままドラッグで大きな切れ目を作成します"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr "左クリックでレッグ線のGapを削除します"
+msgstr "左クリックでレッグ線の切れ目を除去します"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
@@ -3286,7 +3357,7 @@ msgstr "左クリックでコントロール \"{0}\" に地図交換所を追加
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "左マウスボタンを押したままドラッグでオブジェクトを作成します"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -3296,6 +3367,6 @@ msgstr "削除"
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
-msgstr "以下のコントロールは「すべてのコントロール」コレクションに含まれていますが、どのコースでも使われていません。「削除」をク"
-"リックで、チェックの付いたコントロールすべてを削除します。"
+msgstr "以下のコントロールは「全コントロール」コレクションに含まれていますが、どのコースでも使われていません。「削除」をクリック"
+"すると、チェックの付いたコントロールすべてを削除します。"
 

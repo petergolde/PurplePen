@@ -357,6 +357,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>&amp;Besonderes Objekt hinzufügen</value>
   </data>
@@ -380,6 +389,9 @@
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Text &amp;ändern</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Linie &amp; Aussehen ändern</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Drehen</value>
@@ -573,6 +585,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Besonderes Objekt hinzufügen</value>
   </data>
@@ -596,6 +617,9 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>XML-Austausch Datei erstellen</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Bild Datei|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

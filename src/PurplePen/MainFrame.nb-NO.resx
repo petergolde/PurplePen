@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Lage OCAD &amp;Filer...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Lag PDF...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Lag Route&amp;Gadget filer...</value>
   </data>
@@ -354,6 +357,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Bilde</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Firkant</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Legg til spesielt &amp;symbol</value>
   </data>
@@ -377,6 +389,9 @@
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Endre &amp;tekst</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Endre strek og utseende...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otere</value>
@@ -432,6 +447,9 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Support/feilrapportering</value>
   </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Gi et bidrag</value>
+  </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Om Purple Pen</value>
   </data>
@@ -461,6 +479,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font beregninger</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Programstopp</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Feilsøk</value>
@@ -564,6 +585,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bilde</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Firkant</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Legg til spesielt symbol</value>
   </data>
@@ -587,6 +617,9 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Lag en XML-fil for eksport</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

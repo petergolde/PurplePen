@@ -64,5 +64,10 @@ namespace PurplePen
         {
             Util.ShowHelpTopic(this, "Credits.htm");
         }
+
+        private void copyrightLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

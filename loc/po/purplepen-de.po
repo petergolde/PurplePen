@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -400,17 +400,17 @@ msgstr "Druckmaßstab"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Farbe ändern ..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Farbe:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Kursiv"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -419,12 +419,12 @@ msgstr "Fett"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Schriftart:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Beispiel"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -457,7 +457,7 @@ msgstr "Vorschau"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Farbe wählen"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -671,11 +671,11 @@ msgstr "Eigenschaften Teilstrecke"
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Aussehen der Linie ändern"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Automatische Linienunterbrechung:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -728,6 +728,10 @@ msgstr "Benutze IOF Standardgrößen"
 msgid "Item Sizes"
 msgstr "Maße der Bahnobjekte"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Violetten Farbton der Karte verwenden"
@@ -739,12 +743,12 @@ msgstr "Violetter Farbton"
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Schwarz"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Purpur"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
@@ -796,6 +800,7 @@ msgstr "Alle"
 msgid "None"
 msgstr "Keine"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -803,6 +808,26 @@ msgstr "Keine"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Bahnen"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "Namens-Präfix:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -968,10 +993,6 @@ msgstr "Auf mehrere Seiten drucken"
 msgid "If the print area is too large to fit on one page:"
 msgstr "Auf eine Seite einpassen, wenn der Druckbereich zu groß ist."
 
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr "Namens-Präfix:"
-
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
 msgstr "Dateien:"
@@ -1062,7 +1083,7 @@ msgstr "Klicke auf das Symbol um den entsprechenden Text in der "
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr ""
+msgstr "Herunterladen"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1098,10 +1119,6 @@ msgstr "Benutzerdefinierter Symboltext:"
 msgid "Exit"
 msgstr "Beenden"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr "Spenden Sie"
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Letzten Wettkampf öffnen"
@@ -1118,6 +1135,16 @@ msgstr "Neuen Wettkampf erstellen..."
 msgid "Open an existing event..."
 msgstr "Bestehenden Wettkampf öffnen..."
 
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "Spenden Sie"
+
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
 msgstr "Willkommen bei Purple Pen"
@@ -1132,23 +1159,23 @@ msgstr "Purple Pen Lizenz"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " Farbe ändern..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
-msgstr ""
+msgstr "Stil:"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items
 msgid "Single"
-msgstr ""
+msgstr "Einzel"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items1
 msgid "Double"
-msgstr ""
+msgstr "Doppel"
 
 #: LinePropertiesDialog.resx, comboBoxStyle.Items2
 msgid "Dashed"
-msgstr ""
+msgstr "Gestrichelt"
 
 #: LinePropertiesDialog.resx, labelWidth.Text
 #: PrinterMargins.resx, label2.Text
@@ -1157,15 +1184,15 @@ msgstr "Breite:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "Abstand"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
-msgstr ""
+msgstr "Strichgrösse:"
 
 #: LinePropertiesDialog.resx, labelCornerRadius.Text
 msgid "Corner Radius:"
-msgstr ""
+msgstr "Eckenradius:"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
@@ -1508,19 +1535,19 @@ msgstr "Weiße Fläche"
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "Linie"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "Rechteck"
 
 #: MainFrame.resx, addSpecialItemMenu.Text
 msgid "Add Special &Item"
@@ -1552,7 +1579,7 @@ msgstr "Text &ändern"
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "Linie & Aussehen ändern"
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
@@ -1585,6 +1612,14 @@ msgstr "Anze&ige besonderer Objekte..."
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
 msgstr "&Objekte"
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1787,6 +1822,10 @@ msgstr "XML-Austausch Datei erstellen"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr "Bild Datei|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -1919,7 +1958,7 @@ msgstr "Neuen Wettkampfnamen eingeben\n"
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr "Neuer Zusatztitel eingeben\n"
+msgstr "Neuen Zusatztitel eingeben\n"
 "\"|\" für eine neue Zeile verwenden"
 
 #: MiscText.resx, EnterCourseName
@@ -2319,53 +2358,81 @@ msgstr "Das .NET Framework auf Ihrem Computer scheint nicht "
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Farbe wählen"
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Benutzerdefinierte Farbe"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Dunkelblau"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Grün"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Hellblau"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Rot"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Gelb"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Lege das Aussehen der Linie fest. Nach dem drücken von OK, "
+"ziehe die Maus um die Liniensegmente an der gewünschte "
+"Stelle zu zeichnen."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Linie hinzufügen"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Lege das Aussehen des Rechteck fest. Nach dem drücken von "
+"OK, ziehe die Maus um die Liniensegmente an der gewünschte "
+"Stelle zu zeichnen."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Rechteck hinzufügen"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr "Ändere das Aussehen der Linie oder Rechteck"
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2489,7 +2556,7 @@ msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
 msgstr "Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie "
 "bitte \"Neue Bahn...\" im Bahnen-Menü aus, um eine oder "
-"mehrere neuen Bahnen anzulegen."
+"mehrere neue Bahnen anzulegen."
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
@@ -2607,7 +2674,7 @@ msgstr "Die Kartendatei kann nicht korrekt gedruckt werden"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Vorgang wird ausgeführt"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -2626,15 +2693,16 @@ msgstr "Bitte bestätigen Sie, dass die Dateien überschrieben "
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr ""
+msgstr "GPL Ghostscript liest ihre PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "PDF lesen ist fehlgeschlagen. Die Fehler werden unten "
+"angezeigt."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Lese PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -3211,7 +3279,7 @@ msgstr "Verwendet in Bahnen:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
@@ -3440,7 +3508,7 @@ msgstr "Klicken Sie mit der linken Maustaste, um einen "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Halte die linke Maustaste und ziehen um Objekt zu erstellen"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

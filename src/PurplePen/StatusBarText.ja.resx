@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
-    <value>左マウスボタン: オブジェクトを選択; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
+    <value>左クリック: オブジェクトを選択; 右クリック: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
   </data>
   <data name="DefaultRectangle" xml:space="preserve">
-    <value>左マウスボタン:  矩形の移動・サイズ変更; 右マウスボタン: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
+    <value>左クリック:  矩形の移動・サイズ変更; 右クリック: 地図を移動; スクロールホイール: 地図を拡大/縮小</value>
   </data>
   <data name="DragObject" xml:space="preserve">
     <value>左マウスボタンを押したままドラッグで選択中のオブジェクトを移動します</value>
@@ -163,28 +163,28 @@
     <value>左クリックで新しくオブジェクトを追加します</value>
   </data>
   <data name="AddingBend" xml:space="preserve">
-    <value>左クリックの位置にBendを追加します</value>
+    <value>左クリックの位置に曲げ点を追加します</value>
   </data>
   <data name="AddingCorner" xml:space="preserve">
-    <value>左クリックで新しいCornerを追加します</value>
+    <value>左クリックで新しい角を追加します</value>
   </data>
   <data name="DeletingBend" xml:space="preserve">
-    <value>左クリックでBendを削除します</value>
+    <value>左クリックで曲げ点を除去します</value>
   </data>
   <data name="DeletingCorner" xml:space="preserve">
-    <value>左クリックでオブジェクトの角を削除します</value>
+    <value>左クリックでオブジェクトの角を除去します</value>
   </data>
   <data name="AddingControlGap" xml:space="preserve">
-    <value>左クリックでコントロール円に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します</value>
+    <value>左クリックでコントロール円に小さな切れ目を追加します; 左マウスボタンを押したままドラッグで大きな切れ目を作成します</value>
   </data>
   <data name="RemovingControlGap" xml:space="preserve">
-    <value>左クリックでコントロール円のGapを除去します</value>
+    <value>左クリックでコントロール円の切れ目を除去します</value>
   </data>
   <data name="AddingLegGap" xml:space="preserve">
-    <value>左クリックでレッグ線に小さなGapを追加します; 左マウスボタンを押したままドラッグで大きなGapを作成します</value>
+    <value>左クリックでレッグ線に小さな切れ目を追加します; 左マウスボタンを押したままドラッグで大きな切れ目を作成します</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
-    <value>左クリックでレッグ線のGapを削除します</value>
+    <value>左クリックでレッグ線の切れ目を除去します</value>
   </data>
   <data name="SizeRectangle" xml:space="preserve">
     <value>左マウスボタンを押したままドラッグで選択中のオブジェクトのサイズを変更します</value>
@@ -212,5 +212,8 @@
   </data>
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>左クリックでコントロール "{0}" に地図交換所を追加します </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>左マウスボタンを押したままドラッグでオブジェクトを作成します</value>
   </data>
 </root>

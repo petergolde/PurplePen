@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>逆さに見ると違う番号に読み取れるコントロールコードを使用しない(例: 「68」/「89」)</value>
+    <value>上下逆さに見ると違う番号に見えるコントロールコードを使用しない(例: 「68」/「89」)</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
     <value>既存のコントロールにも適用</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
-    <value>新しく作成されるコントロールにのみ適用</value>
+    <value>新しく作成されるコントロールから適用</value>
   </data>
   <data name="existingControlsGroupBox.Text" xml:space="preserve">
     <value>既存のコントロールに対して</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
-    <value>新しく作成するコントロールは以下の設定に従って自動で連番のコントロール番号が割り当てられます。</value>
+    <value>新しく作成するコントロールは以下の設定に従って連番のコントロール番号が自動で割り当てられます。</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>連番の初期値:</value>

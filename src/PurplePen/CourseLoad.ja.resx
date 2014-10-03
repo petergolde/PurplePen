@@ -121,12 +121,12 @@
     <value>コース名</value>
   </data>
   <data name="Load.HeaderText" xml:space="preserve">
-    <value>競技者数</value>
+    <value>走行人数</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
-    <value>コースごとの競技者数を入力してください。ここの数字を元にコントロールやレッグごとの通過人数が算出されます。</value>
+    <value>コースごとの走行人数を入力してください。ここの数字を元にコントロールおよびレッグごとの走行人数が算出されます。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>コースごとの競技者数</value>
+    <value>コースごとの走行人数</value>
   </data>
 </root>

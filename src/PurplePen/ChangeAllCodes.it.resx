@@ -124,9 +124,9 @@
     <value>Nuovo Codice</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Per cambiare il codice di uno o più controlli,clicca nella colonna "Nuovo Codice" e inserisci il nuovo codice. </value>
+    <value>Per cambiare il codice di uno o più controlli, clicca nella colonna "Nuovo Codice" e inserisci il nuovo codice. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Cambia Codici Di Controllo</value>
+    <value>Cambia Codici Dei Controlli</value>
   </data>
 </root>

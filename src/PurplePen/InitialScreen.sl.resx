@@ -123,9 +123,6 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Končaj</value>
   </data>
-  <data name="donationLink.Text" xml:space="preserve">
-    <value>Doniraj</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Odpri zadnjo prireditev</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Odpri obstoječo prireditev</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Doniraj</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Dobrodošli v programu Purple Pen</value>

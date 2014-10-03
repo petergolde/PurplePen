@@ -120,11 +120,38 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Crea</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Margini:</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Modifica...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Dimensione carta:</value>
+  </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Output</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percorsi</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Stampa i Cambi Carta sulla Stessa Mappa </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modello di Colore:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Stampa su piu' pagine</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Se l'area da stampare e' troppo grande per stare in una pagina</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Aspetto</value>
@@ -143,5 +170,29 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Cartella</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>prefisso Nome:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Files:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Uno per tutti i percorsi</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Uno per percorso</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Uno per parte di percorso</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selezionare una cartella per i files PDF</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Creare Files PDF</value>
   </data>
 </root>

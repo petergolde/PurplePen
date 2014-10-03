@@ -123,9 +123,6 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Ukončit</value>
   </data>
-  <data name="donationLink.Text" xml:space="preserve">
-    <value>Přispět na vývoj</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Otevřít naposledy zobrazovaný závod</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Otevřít existující závod...</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Přispět na vývoj</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vítejte v Purple Pen</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -670,7 +670,7 @@ msgstr "Muuta viivan ulkoasua"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Automaattisen katkon pituus:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -689,7 +689,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr "Valkoinen ääriviiva numeroiden ympärillä:"
+msgstr "Rastinumeron valkoinen ääriviiva:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -722,6 +722,10 @@ msgstr "Käytä IOF:n standardimittoja"
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
 msgstr "Kohteiden mitat"
+
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -791,6 +795,7 @@ msgstr "Kaikki"
 msgid "None"
 msgstr "Ei mikään"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -798,6 +803,26 @@ msgstr "Ei mikään"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Radat"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "Nimen etuliite:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -963,10 +988,6 @@ msgstr "Tulosta useille sivuille"
 msgid "If the print area is too large to fit on one page:"
 msgstr "Jos tulostusalue on liian suuri mahtuakseen yhdelle sivulle:"
 
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr "Nimen etuliite:"
-
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
 msgstr "Tiedostoja:"
@@ -1092,10 +1113,6 @@ msgstr "Muokattu symboliteksti"
 msgid "Exit"
 msgstr "Sulje"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr "Make a donation"
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Avaa viimeksi katsottu tapahtuma"
@@ -1111,6 +1128,16 @@ msgstr "Luo uusi tapahtuma..."
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
 msgstr "Avaa olemassa oleva tapahtuma..."
+
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "Make a donation"
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -1580,6 +1607,14 @@ msgstr "Muuta näk&ymisasetuksia..."
 msgid "&Item"
 msgstr "&Kohde"
 
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
+
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
 msgstr "Rata&yhteenveto"
@@ -1782,6 +1817,10 @@ msgstr "Vie XML-tiedostoon"
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 msgstr "Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
+msgstr ""
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -2348,6 +2387,30 @@ msgstr "Lisää suorakulmio"
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
 msgstr "Muuta viivan tai suorakulmion ulkoasua"
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

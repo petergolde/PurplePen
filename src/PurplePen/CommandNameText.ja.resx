@@ -187,7 +187,7 @@
     <value>コースプロパティの変更</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>「すべてのコントロール」のプロパティの変更</value>
+    <value>「全コントロール」のプロパティの変更</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>新規イベントを作成</value>
@@ -202,28 +202,28 @@
     <value>表示するコースの変更</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>Leg Bend の移動</value>
+    <value>レッグ線の曲げ点を移動</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>Bendを追加</value>
+    <value>曲げ点を追加</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
-    <value>Cornerを追加</value>
+    <value>角を追加</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Bendを除去</value>
+    <value>曲げ点を除去</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
-    <value>Cornerを除去</value>
+    <value>角を除去</value>
   </data>
   <data name="AddGap" xml:space="preserve">
-    <value>Gapを追加</value>
+    <value>切れ目を追加</value>
   </data>
   <data name="RemoveGap" xml:space="preserve">
-    <value>Gapを除去</value>
+    <value>切れ目を除去</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Gapの移動</value>
+    <value>切れ目を移動</value>
   </data>
   <data name="Rotate" xml:space="preserve">
     <value>回転</value>
@@ -241,10 +241,10 @@
     <value>印刷領域を設定</value>
   </data>
   <data name="SetCourseLoad" xml:space="preserve">
-    <value>競技者数の変更</value>
+    <value>走行人数の変更</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>ディスクリプションのテキストをカスタマイズする</value>
+    <value>ディスクリプションのテキストをカスタマイズ</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>コースの順序の変更</value>
@@ -278,5 +278,8 @@
   </data>
   <data name="ChangePartProperties" xml:space="preserve">
     <value>コースパート・プロパティの変更</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>線の外観を変更</value>
   </data>
 </root>

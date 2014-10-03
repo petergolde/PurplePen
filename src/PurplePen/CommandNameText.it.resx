@@ -121,7 +121,7 @@
     <value>Cambia Simbolo</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Cambia Codice Di Controllo</value>
+    <value>Cambia Codice Del Controllo</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
     <value>Cambia Controllo</value>
@@ -133,22 +133,22 @@
     <value>Cambia Titolo</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
-    <value>Cambia Scalata</value>
+    <value>Cambia Dislivello</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
-    <value>Cambia Nome Corso</value>
+    <value>Cambia Nome Percorso</value>
   </data>
   <data name="ChangeTextLine" xml:space="preserve">
     <value>Cambia Linea Di Testo</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Aggiorna Scala Mappa</value>
+    <value>Aggiorna Scala della Mappa</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
     <value>Muovi Controllo</value>
   </data>
   <data name="MoveControlNumber" xml:space="preserve">
-    <value>Muovi Numero Di Controllo</value>
+    <value>Muovi Numero del Controllo</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
     <value>Muovi Oggetto</value>
@@ -166,7 +166,7 @@
     <value>Aggiungi Controllo</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Aggiungi Inizio</value>
+    <value>Aggiungi Partenza</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
     <value>Aggiungi Fine</value>
@@ -178,16 +178,16 @@
     <value>Aggiungi Oggetto</value>
   </data>
   <data name="DeleteCourse" xml:space="preserve">
-    <value>Elimina Corso</value>
+    <value>Elimina Percorso</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
-    <value>Nuovo Corso</value>
+    <value>Nuovo Percorso</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
-    <value>Cambia Proprietà Del Corso</value>
+    <value>Cambia Proprietà del Percorso</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Cambia Le Proprietà Di Tutti I Controlli</value>
+    <value>Cambia Le Proprietà Di Tutti i Controlli</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Crea Nuovo Evento</value>
@@ -199,7 +199,7 @@
     <value>Cambia Codici</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Cambia Corsi Visualizzati</value>
+    <value>Cambia Percorsi Visualizzati</value>
   </data>
   <data name="AddBend" xml:space="preserve">
     <value>Aggiungi Curva</value>
@@ -228,17 +228,29 @@
   <data name="AutoNumbering" xml:space="preserve">
     <value>Numerazione Automatica</value>
   </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Cambia Punzonature</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Cambia Schema Punzonature Cartellino</value>
+  </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Imposta Area Di Stampa</value>
   </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Cambia Numero Concorrenti</value>
+  </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>Personalizza il testo descrittivo</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Cambia Ordine Percorsi</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
     <value>Cambia il file mappa</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignora i caratteri non trovati</value>
+    <value>Ignora i tipi di carattere non trovati</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Aggiungi Linea Di Testo</value>
@@ -247,9 +259,21 @@
     <value>Rimuovi i controlli inutilizzati</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Modifica il linguaggio di descrizione</value>
+    <value>Modifica il linguaggio della descrizione</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Cambia Testo</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Personalizza lo stile del percorso</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Aggiungi Cambio Carta</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Cancella Cambio Carta</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Cambia Stile Linea</value>
   </data>
 </root>

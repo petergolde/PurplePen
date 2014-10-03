@@ -123,6 +123,9 @@
 コンペティションの地図を印刷する場合には、コースをOCADファイルで出力　( [ファイル]メニュー＞[OCADファイルを作成...] )　し、OCADでファイルを印刷することをお勧めします。
 </value>
   </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>続行</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>

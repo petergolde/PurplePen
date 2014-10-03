@@ -135,6 +135,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Åpne et eksisterende arrangenment</value>
   </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Gi et bidrag</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Velkommen til Purple Pen</value>
   </data>

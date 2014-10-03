@@ -123,8 +123,14 @@
   <data name="marginChange.Text" xml:space="preserve">
     <value>ページ設定...</value>
   </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>用紙サイズ:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>上: 0.55", 下: 0.55", 左: 0.55", 右: 0.55"</value>
   </data>
   <data name="marginsLabel.Text" xml:space="preserve">
     <value>余白:</value>
@@ -133,7 +139,7 @@
     <value>横</value>
   </data>
   <data name="orientationLabel.Text" xml:space="preserve">
-    <value>向き:</value>
+    <value>印刷の向き</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>プリンタ名</value>
@@ -147,17 +153,26 @@
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>外観</value>
   </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>コースのデフォルト</value>
+  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>記号</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
     <value>テキスト</value>
   </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>記号とテキスト</value>
+  </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
     <value>ディスクリプションタイプ:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="lineSizeLabel.Text" xml:space="preserve">
+    <value>行のサイズ:</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>キャンセル</value>

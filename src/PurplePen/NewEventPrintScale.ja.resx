@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
-    <value>コースの印刷に使用する縮尺を設定してください。ほとんどの場合は地図の縮尺をそのまま使用します。
+    <value>コースの印刷に使用する縮尺を設定してください。通常は地図の縮尺をそのまま使用します。
 
 </value>
   </data>

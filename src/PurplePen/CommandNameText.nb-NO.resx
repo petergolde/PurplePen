@@ -273,4 +273,13 @@
   <data name="AddMapExchange" xml:space="preserve">
     <value>Legg til kartbytte</value>
   </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Slett Kartbytte</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Endre egenskaper for løypedel</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Endre strek utseende</value>
+  </data>
 </root>

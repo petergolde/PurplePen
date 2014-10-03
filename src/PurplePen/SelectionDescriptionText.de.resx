@@ -204,6 +204,9 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Erste Hilfe</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Verbotene Strecke</value>
   </data>
@@ -255,6 +258,9 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Verwendet in Bahnen:</value>
   </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Weiße Fläche</value>
   </data>
@@ -275,5 +281,11 @@
   </data>
   <data name="CourseNameAndPart" xml:space="preserve">
     <value>Bahn "{0}", Teil {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Rechteck</value>
   </data>
 </root>

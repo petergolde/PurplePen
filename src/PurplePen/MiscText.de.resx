@@ -218,7 +218,7 @@
 (wirkt sich auf alle Bahnen aus)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>Neuer Zusatztitel eingeben
+    <value>Neuen Zusatztitel eingeben
 "|" für eine neue Zeile verwenden</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
@@ -458,5 +458,50 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="BadDotNetFramework" xml:space="preserve">
     <value>Das .NET Framework auf Ihrem Computer scheint nicht korrekt installiert zu sein. Bitte gehen Sie auf http://microsoft.com/net und installieren Sie die aktuelle Version des .NET Framework's auf Ihrem Windows Betriebssystem.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Schwarz</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Farbe wählen</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Benutzerdefinierte Farbe</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Dunkelblau</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Grün</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Hellblau</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purpur</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rot</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Gelb</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Lege das Aussehen der Linie fest. Nach dem drücken von OK, ziehe die Maus um die Liniensegmente an der gewünschte Stelle zu zeichnen.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Linie hinzufügen</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Lege das Aussehen des Rechteck fest. Nach dem drücken von OK, ziehe die Maus um die Liniensegmente an der gewünschte Stelle zu zeichnen.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Rechteck hinzufügen</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Ändere das Aussehen der Linie oder Rechteck</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Aussehen der Linie ändern</value>
   </data>
 </root>

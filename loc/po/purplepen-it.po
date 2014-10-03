@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.3.2\n"
+"Project-Id-Version: Purple Pen 2.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-02-27 13:33-08:00\n"
+"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -46,7 +46,7 @@ msgstr "OK"
 
 #: AboutForm.resx, creditsButton.Text
 msgid "Credits"
-msgstr "Crediti"
+msgstr "Riconoscimenti"
 
 #: AboutForm.resx, licenseButton.Text
 msgid "View Full License"
@@ -54,11 +54,11 @@ msgstr "Visualizza Licenza Completa"
 
 #: AboutForm.resx, $this.Text
 msgid "About Purple Pen"
-msgstr "Riguardo a Purple Pen"
+msgstr "Informazioni su Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Numero del Primo Controllo"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -99,47 +99,47 @@ msgstr "Simboli e testo."
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr ""
+msgstr "Etichetta del cerchio del controllo"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr ""
+msgstr "Numero di sequenza (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr ""
+msgstr "Codice Controllo (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr ""
+msgstr "Sequenza e codice (3-145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr ""
+msgstr "Sequenza e punteggio (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr ""
+msgstr "Codice e punteggio (145(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Mostra punti in"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Colonna A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Colonna B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Colonna H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(non visualizza)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -165,23 +165,23 @@ msgstr "Lista classe / Titolo secondario"
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
-msgstr "Arrampica:"
+msgstr "Dislivello"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
-msgstr "Tipo corso:"
+msgstr "Tipo corsa"
 
 #: AddCourse.resx, courseNameLabel.Text
 msgid "Course name:"
-msgstr "Nome corso:"
+msgstr "Nome Percorso"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr "Corso Normale"
+msgstr "Percorso Normale"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr "Risultato Corso"
+msgstr "Percorso a Punteggio"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
@@ -190,17 +190,17 @@ msgstr "metri"
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr "Nuovo Corso"
+msgstr "Nuovo Percorso"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Inserisci un testo da posizionare in una linea separata "
-"delle descrizioni di controllo:"
+msgstr "Inserisci il testo da mettere su una linea separata nelle "
+"descrizioni del controllo:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
-msgstr "Corsi:"
+msgstr "Percorsi"
 
 #: AddTextLine.resx, positionLabel.Text
 msgid "Position:"
@@ -216,11 +216,11 @@ msgstr "Sotto {0}"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
-msgstr "Solamente questo corso"
+msgstr "Solamente queso percorso"
 
 #: AddTextLine.resx, comboBoxCourses.Items1
 msgid "All courses with {0}"
-msgstr "Tutti i corsi con {0}"
+msgstr "Tutti i percorsi con {0}"
 
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
@@ -230,28 +230,27 @@ msgstr "Aggiungi Linea Di Testo"
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "Queste impostazioni controllano come la mappa e le "
-"descrizioni per Tutti I Controlli sono stampate."
+msgstr "Queste impostazioni controllano come sono stampate la "
+"mappa e le descrizioni per Tutti i Controlli."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr "Proprietà di Tutti I Controlli"
+msgstr "Proprietà di Tutti i Controlli"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Disabilita i codici che possono essere letti sotto-sopra "
+msgstr "Disabilita i codici che possono essere letti rovesciati "
 "(per esempio, \"68\"/\"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr "Renumera anche i controlli esistenti"
+msgstr "Rinumera anche i controlli esistenti"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "Applica queste impostazioni solamente a controlli creati "
-"di recente"
+msgstr "Applica queste impostazioni solamente ai controlli nuovi"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
@@ -260,8 +259,8 @@ msgstr "Controlli Esistenti"
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr "Controlli creati di recente sono numerati automaticamente "
-"secondo le impostazioni seguenti."
+msgstr "I nuovi controlli vengono numerati automaticamente secondo "
+"le seguenti impostazioni."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
@@ -284,12 +283,12 @@ msgstr "Nuovo Codice"
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr "Per cambiare il codice di uno o più controlli,clicca nella "
-"colonna \"Nuovo Codice\" e inserisci il nuovo codice. "
+msgstr "Per cambiare il codice di uno o più controlli, clicca "
+"nella colonna \"Nuovo Codice\" e inserisci il nuovo codice. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
-msgstr "Cambia Codici Di Controllo"
+msgstr "Cambia Codici Dei Controlli"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
@@ -300,7 +299,7 @@ msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
 msgstr "Usa i bottoni \"Sposta In Alto\" e \"Sposta In Basso\" per "
-"cambiare l'ordine in cui i corsi sono elencati "
+"cambiare l'ordine in cui i percorsi sono elencati "
 "nell'interfaccia utente, nei rapporti, e nella stampa"
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
@@ -309,7 +308,7 @@ msgstr "Sposta in alto"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr "Ordine Corso"
+msgstr "Ordine Percorso"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
@@ -326,7 +325,11 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Files "
+"mappa|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|Files carta OCAD (*.ocd)|*.ocd|Files PDF "
+"(*.pdf)|*.pdf|Files "
+"Immagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -343,7 +346,7 @@ msgstr "1 :"
 #: ChangeMapFile.resx, labelDpi2.Text
 #: NewEventBitmapScale.resx, dpiLabel.Text
 msgid "dots per inch"
-msgstr "punti per oncia"
+msgstr "punti per pollice"
 
 #: ChangeMapFile.resx, $this.Text
 #: NewEventMapFile.resx, labelTitle.Text
@@ -352,12 +355,12 @@ msgstr "File Mappa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr "Scegli i corsi in cui sarà mostrato questo oggetto:"
+msgstr "Scegli i percorsi in cui sarà mostrato questo oggetto:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr "Cambia Corsi Visualizzati"
+msgstr "Cambia Percorsi Visualizzati"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
@@ -368,19 +371,19 @@ msgstr "Titolo Evento"
 #: CourseLoad.resx, CourseName.HeaderText
 #: SelectionDescriptionText.resx, SpecialName_CourseName
 msgid "Course Name"
-msgstr "Nome Corso"
+msgstr "Nome Percorso"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr ""
+msgstr "Parte del Percorso"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
-msgstr "Durata Corso"
+msgstr "Lunghezza Percorso"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr "Scalata Corso"
+msgstr "Dislivello Percorso"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
@@ -389,35 +392,35 @@ msgstr "Lista Classe"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Scala di Stampa"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Cambia colore..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Colore:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Corsivo"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
 msgid "Bold"
-msgstr ""
+msgstr "Grassetto"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Tipo di carattere:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Esempio"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -450,7 +453,7 @@ msgstr "Anteprima"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Scegli il colore"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -458,7 +461,7 @@ msgstr "Cambia Simbolo"
 
 #: CommandNameText.resx, ChangeCode
 msgid "Change Control Code"
-msgstr "Cambia Codice Di Controllo"
+msgstr "Cambia Codice Del Controllo"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
@@ -474,11 +477,11 @@ msgstr "Cambia Titolo"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
-msgstr "Cambia Scalata"
+msgstr "Cambia Dislivello"
 
 #: CommandNameText.resx, ChangeCourseName
 msgid "Change Course Name"
-msgstr "Cambia Nome Corso"
+msgstr "Cambia Nome Percorso"
 
 #: CommandNameText.resx, ChangeTextLine
 msgid "Change Text Line"
@@ -486,7 +489,7 @@ msgstr "Cambia Linea Di Testo"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr "Aggiorna Scala Mappa"
+msgstr "Aggiorna Scala della Mappa"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
@@ -494,7 +497,7 @@ msgstr "Muovi Controllo"
 
 #: CommandNameText.resx, MoveControlNumber
 msgid "Move Control Number"
-msgstr "Muovi Numero Di Controllo"
+msgstr "Muovi Numero del Controllo"
 
 #: CommandNameText.resx, MoveObject
 msgid "Move Object"
@@ -520,7 +523,7 @@ msgstr "Aggiungi Controllo"
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr "Aggiungi Inizio"
+msgstr "Aggiungi Partenza"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
@@ -537,15 +540,15 @@ msgstr "Aggiungi Oggetto"
 
 #: CommandNameText.resx, DeleteCourse
 msgid "Delete Course"
-msgstr "Elimina Corso"
+msgstr "Elimina Percorso"
 
 #: CommandNameText.resx, ChangeCourseProperties
 msgid "Change Course Properties"
-msgstr "Cambia Proprietà Del Corso"
+msgstr "Cambia Proprietà del Percorso"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr "Cambia Le Proprietà Di Tutti I Controlli"
+msgstr "Cambia Le Proprietà Di Tutti i Controlli"
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
@@ -598,11 +601,11 @@ msgstr "Ruota"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr ""
+msgstr "Cambia Punzonature"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr ""
+msgstr "Cambia Schema Punzonature Cartellino"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -611,7 +614,7 @@ msgstr "Imposta Area Di Stampa"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr ""
+msgstr "Cambia Numero Concorrenti"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
@@ -620,7 +623,7 @@ msgstr "Personalizza il testo descrittivo"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
-msgstr ""
+msgstr "Cambia Ordine Percorsi"
 
 #: CommandNameText.resx, ChangeMapFile
 msgid "Change Map File"
@@ -628,7 +631,7 @@ msgstr "Cambia il file mappa"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr "Ignora i caratteri non trovati"
+msgstr "Ignora i tipi di carattere non trovati"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
@@ -636,7 +639,7 @@ msgstr "Rimuovi i controlli inutilizzati"
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr "Modifica il linguaggio di descrizione"
+msgstr "Modifica il linguaggio della descrizione"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
@@ -646,16 +649,16 @@ msgstr "Cambia Testo"
 #: CommandNameText.resx, ChangeCourseAppearance
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
-msgstr ""
+msgstr "Personalizza lo stile del percorso"
 
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr ""
+msgstr "Aggiungi Cambio Carta"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Cancella Cambio Carta"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
@@ -664,7 +667,7 @@ msgstr ""
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Cambia Stile Linea"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -687,23 +690,23 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "Spazio Bianco intorno ai numeri:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
-msgstr ""
+msgstr "Diametro punto centrale"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
-msgstr ""
+msgstr "Normale"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr ""
+msgstr "Stile Numero del Controllo"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
-msgstr "Numero di controllo altezza:"
+msgstr "Altezza del Numero del controllo:"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
@@ -711,7 +714,7 @@ msgstr "Spessore linea:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr "Controllo diametro del cerchio:"
+msgstr "Diametro del Cerchio del Controllo:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
@@ -721,32 +724,36 @@ msgstr "Usa le dimensioni standard IOF"
 msgid "Item Sizes"
 msgstr "Dimensioni Oggetto"
 
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr "Usa il colore dalla mappa"
+msgstr "Usa il colore viola dalla mappa"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr "Colore di Purple"
+msgstr "Colore Viola"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Nero"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Viola"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
-msgstr ""
+msgstr "Descrizioni Controllo"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "Carico del concorrente"
+msgstr "Numero Concorrenti"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
@@ -756,28 +763,29 @@ msgstr "Imposta il numero di concorrenti per ciascun percorso "
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr ""
+msgstr "Numero Concorrenti Percorsi"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr ""
+msgstr "Parte Percorso:"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
-msgstr ""
+msgstr "Proprietà..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Visualizza cerchio arrivo su questa parte percorso"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "Queste impostazioni controllo come appare questa parte di "
+"un percorso multi-parte."
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr ""
+msgstr "Proprietà Parte Percorso"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -788,6 +796,7 @@ msgstr "Tutto"
 msgid "None"
 msgstr "Niente"
 
+#: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -795,6 +804,26 @@ msgstr "Niente"
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
 msgstr "Percorsi"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "prefisso Nome:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -847,11 +876,11 @@ msgstr "OCAD 9"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items4
 msgid "OCAD 10"
-msgstr ""
+msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
-msgstr ""
+msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: CreatePdfCourses.resx, printerGroup.Text
@@ -899,18 +928,18 @@ msgstr "Crea File OCAD"
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
 msgid "Margins:"
-msgstr ""
+msgstr "Margini:"
 
 #: CreatePdfCourses.resx, marginChange.Text
 msgid "Change..."
-msgstr ""
+msgstr "Modifica..."
 
 #: CreatePdfCourses.resx, paperSizeLabel.Text
 #: PrintCourses.resx, paperSizeLabel.Text
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
 msgid "Paper Size:"
-msgstr ""
+msgstr "Dimensione carta:"
 
 #: CreatePdfCourses.resx, paperSize.Text
 #: PrintCourses.resx, paperSize.Text
@@ -928,22 +957,22 @@ msgstr ""
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr ""
+msgstr "Stampa i Cambi Carta sulla Stessa Mappa "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
-msgstr ""
+msgstr "Modello di Colore:"
 
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
 #: PrintCourses.resx, comboBoxColorModel.Items1
 msgid "RGB"
-msgstr ""
+msgstr "RGB"
 
 #: CreatePdfCourses.resx, comboBoxColorModel.Items1
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
-msgstr ""
+msgstr "CMYK"
 
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items
 #: PrintCourses.resx, comboBoxMultiPage.Items
@@ -953,63 +982,63 @@ msgstr ""
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items1
 #: PrintCourses.resx, comboBoxMultiPage.Items1
 msgid "Print on multiple pages"
-msgstr ""
+msgstr "Stampa su piu' pagine"
 
 #: CreatePdfCourses.resx, labelAppearanceInfo.Text
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr ""
-
-#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
-msgid "Name prefix:"
-msgstr ""
+msgstr "Se l'area da stampare e' troppo grande per stare in una "
+"pagina"
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr ""
+msgstr "Files:"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
-msgstr ""
+msgstr "Uno per tutti i percorsi"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items1
 msgid "One per course"
-msgstr ""
+msgstr "Uno per percorso"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part"
-msgstr ""
+msgstr "Uno per parte di percorso"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
-msgstr ""
+msgstr "Files"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "Selezionare una cartella per i files PDF"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
-msgstr ""
+msgstr "Creare Files PDF"
 
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Nome file"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "Inserire il nome (senza .xml o .gif) per entrambi i files "
+"RouteGadget:"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "Sapere di piu' su  RouteGadget"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget richiede un file immagine (.gif) e un file IOF "
+"XML (.xml). Scegliere il nome e la cartella per entrambi "
+"questi files."
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1088,10 +1117,6 @@ msgstr "Testo Simbolo Personalizzato"
 msgid "Exit"
 msgstr "Esci"
 
-#: InitialScreen.resx, donationLink.Text
-msgid "Make a donation"
-msgstr ""
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Apri l'ultimo evento visualizzato"
@@ -1107,6 +1132,16 @@ msgstr "Crea un nuovo evento..."
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
 msgstr "Apri un evento esistente"
+
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr ""
 
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
@@ -1576,6 +1611,14 @@ msgstr ""
 msgid "&Item"
 msgstr "&Oggetto"
 
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
+
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
 msgstr "&Sommario Corso"
@@ -1777,6 +1820,10 @@ msgstr ""
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr ""
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
 msgstr ""
 
 #: MainFrame.resx, $this.Text
@@ -2291,6 +2338,30 @@ msgstr ""
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
+msgstr ""
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

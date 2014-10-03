@@ -121,7 +121,7 @@
     <value>Klicken Sie auf "Fertigstellen", um Ihren neuen Wettkampf anzulegen. Ihre Wettkampfdatei wird gespeichert als:</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
-    <value>Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie bitte "Neue Bahn..." im Bahnen-Menü aus, um eine oder mehrere neuen Bahnen anzulegen.</value>
+    <value>Nachdem Ihr neuer Wettkampf angelegt wurde, wählen Sie bitte "Neue Bahn..." im Bahnen-Menü aus, um eine oder mehrere neue Bahnen anzulegen.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Wettkampf Anlegen</value>

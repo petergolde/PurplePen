@@ -279,4 +279,7 @@
   <data name="ChangePartProperties" xml:space="preserve">
     <value>Modifier les propriétés des parties de circuit</value>
   </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Modifier le style de ligne</value>
+  </data>
 </root>

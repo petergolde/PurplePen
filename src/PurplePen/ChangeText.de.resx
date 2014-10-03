@@ -138,11 +138,26 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Druckmaßstab</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Farbe ändern ...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Farbe:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kursiv</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Fett</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Schriftart:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Darstellung</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Beispiel</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Speziellen Text einfügen</value>

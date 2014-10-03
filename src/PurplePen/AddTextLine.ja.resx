@@ -121,7 +121,7 @@
     <value>ディスクリプションの独立した行に配置するテキストを入力してください:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
-    <value>コース</value>
+    <value>コース:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>位置:</value>

@@ -123,6 +123,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Løypenavn</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Løype del</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Løypelende</value>
   </data>
@@ -135,11 +138,26 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Utskrifts skala</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Endre farge …</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Farge:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kursiv</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Fet</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Skrift:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Eksempel</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Sett inn spesialtekst</value>

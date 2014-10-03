@@ -357,6 +357,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Ligne</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Ajouter S&amp;ymbole Spécial</value>
   </data>
@@ -380,6 +389,9 @@
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Modifier &amp;Texte...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Modifier le style de ligne...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Rotation</value>
@@ -573,6 +585,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Texte</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ligne</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Ajouter un Symbole Spécial</value>
   </data>
@@ -596,6 +617,9 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Créer un fichier d'interchange XML</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Fichier image|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

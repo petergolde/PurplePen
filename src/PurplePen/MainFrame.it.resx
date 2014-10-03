@@ -340,13 +340,16 @@
     <value>&amp;Riguardo A Purple Pen</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
-    <value>Aggiungi Inizio</value>
+    <value>Aggiungi Partenza</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
     <value>Aggiungi Controllo</value>
   </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
     <value>Aggiungi Fine</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Aggiungi Cambio Carta</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Punti di attraversamento obbligati</value>

@@ -456,4 +456,52 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="MapFileDeleted" xml:space="preserve">
     <value>Le fichier carte "{0}" a été supprimé. Merci d'essayer de restaurer le fichier carte, puis cliquez sur "Ok".</value>
   </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Le framework .NET ne semble pas correctement installé sur votre ordinateur. Rendez-vous à l'adresse http://microsoft.com/net et installez la dernière version du framework .NET qui correspond à votre système d'exploitation Windows.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Noir</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Choisir la couleur...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Couleur personnalisée</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Bleu foncé</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Vert</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Bleu clair</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Violine</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rouge</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Jaune</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Définissez le style de la ligne. Après avoir cliqué sur OK, faîtes glisser votre souris afin de dessiner les segments de ligne à l'emplacement souhaité.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Ajouter ligne</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Définissez le style du rectangle. Après avoir cliqué sur OK, faîtes glisser votre souris afin de positionner le rectangle à l'emplacement souhaité.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Ajouter un rectangle</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Modifier le style de la ligne ou du rectangle</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Modifier le style de ligne</value>
+  </data>
 </root>

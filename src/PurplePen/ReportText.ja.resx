@@ -123,6 +123,9 @@
   <data name="ColumnHeader_Code" xml:space="preserve">
     <value>コード</value>
   </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>欄</value>
+  </data>
   <data name="ColumnHeader_Control" xml:space="preserve">
     <value>コントロール</value>
   </data>
@@ -147,6 +150,12 @@
   <data name="ColumnHeader_Length" xml:space="preserve">
     <value>長さ</value>
   </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>走行人数</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>場所</value>
+  </data>
   <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
     <value># コース</value>
   </data>
@@ -156,14 +165,32 @@
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>{0} のコースの概要</value>
   </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>｛0｝ のコントロールのクロスリファレンス</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>近くにあるコントロール</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>ディスクリプションボックスの欠損</value>
+  </data>
   <data name="EventAudit_MissingClimb" xml:space="preserve">
     <value>正規のコースでは登高を記載すべきです</value>
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
     <value>すべてのコントロールで特徴物・特徴部をディスクリプションのD欄に表記してください</value>
   </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>「分岐」または「交点」がF欄にある場合、D欄とE欄に2つの特徴物が必要です。</value>
+  </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
     <value>正規のコースではフィニッシュコントロールを置くべきです</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>コース内アイテムの欠損</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>コースに予想される走行人数を設定すべきです</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
     <value>パンチパターンが定義されていません</value>
@@ -172,7 +199,10 @@
     <value>パンチパターンの欠損</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>スコア-Oのコースではすべてのコントロールにスコアを記載するかまたはまったく記載しないべきです</value>
+    <value>スコア-Oのコースでは、すべてのコントロールにスコアを記載するか、またはどのコントロールにもスコアを記載しないようにしてください</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>スコアの欠損</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
     <value>正規のコースではスタートコントロールを置くべきです</value>
@@ -183,14 +213,47 @@
   <data name="EventAudit_No" xml:space="preserve">
     <value>いいえ</value>
   </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>問題は見つかりませんでした。</value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>{0} のイベント監査</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>未使用のコントロール</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>以下のコントロールは全コントロールのコレクションに含まれていますが、どのコースにも使用されていません。除去するには「未使用のコントロールを除去」コマンドを「イベント」メニューから実行してください。それらのコントロールが以降このレポートで表示されなくなります。</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>はい</value>
   </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>平均</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} (コントロール数: {1} , 長さ: {2:0.0} km, 登高: {3} m )</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} コントロール、 {2:0.0} km)</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>{0} のレッグ長レポート</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>コントロールごとの走行人数</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>レッグごとの走行人数</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>走行人数の設定されていないコースがあります。そのため、下の表のコントロールごとの走行人数は不正確だったり間違いのある可能性があります。コースごとの走行人数を設定するには、[コース]メニューから[走行人数]を選択してください。</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(次の表には1つ以上のコースで使われているレッグのみが表示されます。)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>{0} の走行人数のサマリ</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>注意:</value>

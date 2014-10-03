@@ -207,7 +207,10 @@ namespace PurplePen
                 // Draw control number outline.
                 if (upDownOutlineWidth.Value > 0) {
                     object whitePen = new object();
+                    object whiteBrush = new object();
                     grTarget.CreatePen(whitePen, CmykColor.FromCmyk(0, 0, 0, 0), (float)upDownOutlineWidth.Value * 2, LineCap.Round, LineJoin.Round, 5F);
+                    grTarget.CreateSolidBrush(whiteBrush, CmykColor.FromCmyk(0, 0, 0, 0));
+                    grTarget.DrawText(controlNumberText, font, whiteBrush, controlNumberLocation);
                     grTarget.DrawTextOutline(controlNumberText, font, whitePen, controlNumberLocation);
                 }
 

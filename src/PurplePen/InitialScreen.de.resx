@@ -123,9 +123,6 @@
   <data name="quitButton.Text" xml:space="preserve">
     <value>Beenden</value>
   </data>
-  <data name="donationLink.Text" xml:space="preserve">
-    <value>Spenden Sie</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Letzten Wettkampf öffnen</value>
   </data>
@@ -137,6 +134,9 @@
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Bestehenden Wettkampf öffnen...</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Spenden Sie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Willkommen bei Purple Pen</value>

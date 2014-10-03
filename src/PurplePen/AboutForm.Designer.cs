@@ -85,6 +85,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.copyrightLabel, "copyrightLabel");
             this.copyrightLabel.Name = "copyrightLabel";
+            this.copyrightLabel.Click += new System.EventHandler(this.copyrightLabel_Click);
             // 
             // freeLabel
             // 
@@ -113,14 +114,12 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.okButton, "okButton");
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.MinimumSize = new System.Drawing.Size(85, 20);
             this.okButton.Name = "okButton";
             this.okButton.UseVisualStyleBackColor = true;
             // 
             // creditsButton
             // 
             resources.ApplyResources(this.creditsButton, "creditsButton");
-            this.creditsButton.MinimumSize = new System.Drawing.Size(85, 20);
             this.creditsButton.Name = "creditsButton";
             this.creditsButton.UseVisualStyleBackColor = true;
             this.creditsButton.Click += new System.EventHandler(this.creditsButton_Click);
@@ -128,7 +127,6 @@ namespace PurplePen
             // licenseButton
             // 
             resources.ApplyResources(this.licenseButton, "licenseButton");
-            this.licenseButton.MinimumSize = new System.Drawing.Size(85, 20);
             this.licenseButton.Name = "licenseButton";
             this.licenseButton.UseVisualStyleBackColor = true;
             this.licenseButton.Click += new System.EventHandler(this.licenseButton_Click);

@@ -139,4 +139,9 @@ Kartets skala angir forholdet mellom utskrift av kartet og virkeligheten.
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Bitmap oppløsning</value>
   </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Når du bruker en PDF fil som kart må du oppgi målestokk. 
+Målestokken til kartet indikerer forholdet mellom papirkart og den virkelige verden.
+</value>
+  </data>
 </root>

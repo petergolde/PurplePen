@@ -213,4 +213,7 @@
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>Klicken Sie mit der linken Maustaste, um einen Kartenwechsel an Posten "{0}" hinzuzufügen </value>
   </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Halte die linke Maustaste und ziehen um Objekt zu erstellen</value>
+  </data>
 </root>

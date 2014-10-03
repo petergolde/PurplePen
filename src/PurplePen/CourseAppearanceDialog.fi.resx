@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Automaattisen katkon pituus:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="labelOutlineWidth.Text" xml:space="preserve">
-    <value>Valkoinen ääriviiva numeroiden ympärillä:</value>
+    <value>Rastinumeron valkoinen ääriviiva:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>

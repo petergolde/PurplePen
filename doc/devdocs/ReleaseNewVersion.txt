@@ -10,9 +10,13 @@ Releasing a new version of Purple Pen.
 
 4. Update VersionNumber.cs in MapModel
 
-5. Build MapModel (Debug and Release), and copy new versions over with copy_mapmodel.bat
+5. Update version number in GDIPlusNative project resource file.
 
-6. In solution explorer, in SetupIS, goto General Information in section 1.
+6. Build MapModel (Debug and Release), and copy new versions over with copy_mapmodel.bat
+
+7. Build DotSpatialProjects (Debug and Release) and copy new versions over with batch file.
+
+8. In solution explorer, in SetupIS, goto General Information in section 1.
    Change Product Version to new version. Immediately below, generate a new guid for the
    Product Code.
    In SetupIS, section 1, Update paths, under Previous Versions, enter the new version number 
@@ -20,23 +24,23 @@ Releasing a new version of Purple Pen.
    In SetupIS, section 6, Releases, select "Builds/Expressi/SingleImage" in tree on left, then signing tab on right, then
    enter private key password (usual with 5) in the private key password spot.
 
-7. Build release build.
+9. Build release build.
 
-7b. Erase private key password.
+9b. Erase private key password.
 
-8. Copy and rename src\SetupIS\SetupIS\Express\SingleImage\DiskImages\DISK1\setup.exe and place in http://purplepen.golde.org/downloads
+10. Copy and rename src\SetupIS\SetupIS\Express\SingleImage\DiskImages\DISK1\setup.exe and place in http://purplepen.golde.org/downloads
 
-9. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
+11. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
 
-10. Update News page with news about the new version.
+12. Update News page with news about the new version.
 
-11. Upload a new change list document.
+13. Upload a new change list document.
 
-12. Change "latest_version.txt" on web server http://purplepen.golde.org/downloads
+14. Change "latest_version.txt" on web server http://purplepen.golde.org/downloads
 
-13. Create a new tag in BZR.
+15. Create a new tag in BZR.
 
-14. Push BZR up to LaunchPad.
+16. Push BZR up to LaunchPad.
     
 
 

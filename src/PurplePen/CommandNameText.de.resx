@@ -279,4 +279,7 @@
   <data name="ChangePartProperties" xml:space="preserve">
     <value>Eigenschaften Teilstrecke</value>
   </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Aussehen der Linie ändern</value>
+  </data>
 </root>

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="firstControlLabel.Text" xml:space="preserve">
+    <value>Numero del Primo Controllo</value>
+  </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Aspetto della descrizione:</value>
   </data>
@@ -135,6 +138,39 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Simboli e testo.</value>
   </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Etichetta del cerchio del controllo</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Numero di sequenza (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Codice Controllo (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sequenza e codice (3-145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Sequenza e punteggio (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Codice e punteggio (145(30))</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Mostra punti in</value>
+  </data>
+  <data name="scoreColumnCombo.Items" xml:space="preserve">
+    <value>Colonna A</value>
+  </data>
+  <data name="scoreColumnCombo.Items1" xml:space="preserve">
+    <value>Colonna B</value>
+  </data>
+  <data name="scoreColumnCombo.Items2" xml:space="preserve">
+    <value>Colonna H</value>
+  </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(non visualizza)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
   </data>
@@ -145,24 +181,24 @@
     <value>Lista classe / Titolo secondario</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Arrampica:</value>
+    <value>Dislivello</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Tipo corso:</value>
+    <value>Tipo corsa</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Nome corso:</value>
+    <value>Nome Percorso</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Corso Normale</value>
+    <value>Percorso Normale</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Risultato Corso</value>
+    <value>Percorso a Punteggio</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metri</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nuovo Corso</value>
+    <value>Nuovo Percorso</value>
   </data>
 </root>

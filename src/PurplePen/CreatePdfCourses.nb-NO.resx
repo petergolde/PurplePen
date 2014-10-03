@@ -123,6 +123,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Marger:</value>
   </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Endre …</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Papirstørrelse:</value>
   </data>
@@ -176,6 +179,27 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Navn prefix:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Filer:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>En for alle løyper</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>En for hver løype</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>En for hver løypedel</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Filer</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Velg en mappe for PDF filene</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut løyper</value>

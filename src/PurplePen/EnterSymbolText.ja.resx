@@ -133,7 +133,7 @@
     <value>名詞の性を表示する</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
-    <value>記号についてカスタマイズされたテキストを「テキスト」欄に入力してください。</value>
+    <value>記号についてカスタマイズ後のテキストを「テキスト」欄に入力してください。</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>名詞の性:</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>コースに使用する地図ファイルを選択してください。一般的にはOCADファイルです(代わりにJPEG等の画像ファイルも使用可能です)。「選択...」ボタンをクリックして地図ファイルを選択してください。</value>
+    <value>コースに使用する地図ファイルを選択してください。一般的にはOCADファイルです(代わりにJPEG等の画像ファイルも使用可能です)。「地図ファイルを選択(C)...」ボタンをクリックして地図ファイルを選択してください。</value>
   </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>地図ファイルを選択 (&amp;C)...</value>
@@ -130,7 +130,7 @@
     <value>選択中の地図ファイル</value>
   </data>
   <data name="infoMessage.Text" xml:space="preserve">
-    <value>地図ファイルのロードに成功しました。Purple Penファイルを他の人に送信する場合は、受信者も同じ地図ファイル (のコピー) を使用します。</value>
+    <value>地図ファイルのロードに成功しました。Purple Penファイルを他の人に送信する場合には、受信者も同じ地図ファイルを使用できるようにしてください。</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>地図ファイル</value>

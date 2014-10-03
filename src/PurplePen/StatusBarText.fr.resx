@@ -213,4 +213,7 @@
   <data name="AddingMapExchangeToControl" xml:space="preserve">
     <value>Cliquer sur le bouton gauche de la souris pour ajouter un échange de carte au poste "{0}" </value>
   </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Appuyez sur le bouton principal de votre souris et glissez-la afin de créer l'objet</value>
+  </data>
 </root>

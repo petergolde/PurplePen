@@ -141,4 +141,16 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Stessa cartella come file di Purple Pen</value>
   </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Nome file</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Inserire il nome (senza .xml o .gif) per entrambi i files RouteGadget:</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Sapere di piu' su  RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget richiede un file immagine (.gif) e un file IOF XML (.xml). Scegliere il nome e la cartella per entrambi questi files.</value>
+  </data>
 </root>

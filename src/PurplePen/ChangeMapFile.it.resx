@@ -123,6 +123,9 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Scegli file mappa...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Files mappa|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Files carta OCAD (*.ocd)|*.ocd|Files PDF (*.pdf)|*.pdf|Files Immagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Risoluzione:</value>
   </data>
@@ -133,7 +136,7 @@
     <value>1 :</value>
   </data>
   <data name="labelDpi2.Text" xml:space="preserve">
-    <value>punti per oncia</value>
+    <value>punti per pollice</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>File Mappa</value>

@@ -121,12 +121,12 @@
     <value>Sposta in basso</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Usa i bottoni "Sposta In Alto" e "Sposta In Basso" per cambiare l'ordine in cui i corsi sono elencati nell'interfaccia utente, nei rapporti, e nella stampa</value>
+    <value>Usa i bottoni "Sposta In Alto" e "Sposta In Basso" per cambiare l'ordine in cui i percorsi sono elencati nell'interfaccia utente, nei rapporti, e nella stampa</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Sposta in alto</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ordine Corso</value>
+    <value>Ordine Percorso</value>
   </data>
 </root>

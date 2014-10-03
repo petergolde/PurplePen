@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="changeDisplayedCoursesLabel.Text" xml:space="preserve">
-    <value>Scegli i corsi in cui sarà mostrato questo oggetto:</value>
+    <value>Scegli i percorsi in cui sarà mostrato questo oggetto:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Cambia Corsi Visualizzati</value>
+    <value>Cambia Percorsi Visualizzati</value>
   </data>
 </root>
