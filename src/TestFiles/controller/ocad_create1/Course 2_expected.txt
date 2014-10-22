@@ -151,6 +151,7 @@ Uncompressed:
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '810.1'
  Description: line': 
@@ -212,6 +213,7 @@ Uncompressed:
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '810.2'
  Description: text': 
@@ -2055,6 +2057,7 @@ Uncompressed:
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '702.0'
  Control point': 

@@ -160,6 +160,7 @@ Symbol definition for '810.0'
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '810.1'
  Description: line': 
@@ -202,6 +203,7 @@ Symbol definition for '810.1'
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '810.2'
  Description: text': 
@@ -1095,6 +1097,7 @@ Symbol definition for '704.0'
   FrWidth = 0
   DblRes=[0,0,0]
   DecRes=0
+UseSymbolFlags:0  Reserved:0
 
 Symbol definition for '702.0'
  Control point': 

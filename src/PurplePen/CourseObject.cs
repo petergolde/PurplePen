@@ -1421,6 +1421,9 @@ namespace PurplePen
                 catch (ExternalException) {
                     // Ignore this exeption. Not sure what causes it.
                 }
+                catch (OutOfMemoryException) {
+                    // Similar.
+                }
 
             }
 
