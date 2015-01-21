@@ -1000,7 +1000,7 @@ namespace PurplePen
         public object CreateFont(string fontName, float emHeight, bool bold, bool italic, StringAlignment alignment)
         {
             TextSymDefHorizAlignment fontAlign;
-            TextSymDef symdef = new TextSymDef("Description: text", GetOcadId(), null);
+            TextSymDef symdef = new TextSymDef("Description: text", GetOcadId(), TextSymDef.PreferredSymbolKind.NormalText, null);
 
             if (alignment == StringAlignment.Far)
                 fontAlign = TextSymDefHorizAlignment.Right;
@@ -1030,7 +1030,7 @@ namespace PurplePen
 
             // Calc size of the text. 
             float[] wrappedWidths;
-            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, out wrappedWidths); // no wrapping.
+            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, null, out wrappedWidths); // no wrapping.
             symdef.CalcBounds(wrappedText, wrappedWidths, baseLocation, 0, 0, out size);
 
             return Geometry.TransformDistance(size.Width, inverseTransform);

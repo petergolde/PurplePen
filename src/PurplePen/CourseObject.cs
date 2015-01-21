@@ -1082,7 +1082,7 @@ namespace PurplePen
             // Find a free id.
             int ocadId = map.GetFreeSymdefOcadId(OcadIdIntegerPart);
 
-            TextSymDef symdef = new TextSymDef(SymDefName, ocadId, null);
+            TextSymDef symdef = new TextSymDef(SymDefName, ocadId, TextSymDef.PreferredSymbolKind.NormalText, null);
             symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
             if (outlineWidth > 0) {
                 TextSymDef.Framing framing = new TextSymDef.Framing() {

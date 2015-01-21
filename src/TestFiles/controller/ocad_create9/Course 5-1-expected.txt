@@ -3350,10 +3350,10 @@ String of type 1026
   firstField=
   code=a, value=10000
   code=r, value=1
-  code=L, value=-29.26066
-  code=B, value=-113.6907
-  code=R, value=233.2406
-  code=T, value=86.88066
+  code=L, value=-28.95
+  code=B, value=-113.38
+  code=R, value=232.93
+  code=T, value=86.57
 
 String of type 8
   ObjIndex=0
