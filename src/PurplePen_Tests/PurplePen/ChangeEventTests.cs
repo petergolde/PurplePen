@@ -41,6 +41,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 using PurplePen.Graphics2D;
@@ -575,6 +576,83 @@ namespace PurplePen.Tests
             Assert.AreEqual(-1, course.scoreColumn);
             Assert.AreEqual(DescriptionKind.SymbolsAndText, course.descKind);
             Assert.AreEqual(1, course.firstControlOrdinal);
+        }
+
+        void TestDuplicateCourse(Id<Course> oldCourseId)
+        {
+            Id<Course> newCourseId;
+            undomgr.BeginCommand(4713, "Duplicate course");
+            newCourseId = ChangeEvent.DuplicateCourse(eventDB, oldCourseId, "Duplicate");
+            undomgr.EndCommand(4713);
+
+            Course courseOld = eventDB.GetCourse(oldCourseId), courseNew = eventDB.GetCourse(newCourseId);
+            Assert.AreEqual(courseOld.climb, courseNew.climb);
+            Assert.AreEqual(courseOld.descKind, courseNew.descKind);
+            Assert.AreEqual(courseOld.kind, courseNew.kind);
+            Assert.AreEqual(courseOld.labelKind, courseNew.labelKind);
+            Assert.AreEqual(courseOld.load, courseNew.load);
+            Assert.AreEqual(courseOld.printArea, courseNew.printArea);
+            Assert.AreEqual(courseOld.printScale, courseNew.printScale);
+            Assert.AreEqual(courseOld.scoreColumn, courseNew.scoreColumn);
+            Assert.AreEqual(courseOld.secondaryTitle, courseNew.secondaryTitle);
+            Assert.AreEqual(courseOld.sortOrder + 1, courseNew.sortOrder);
+
+            Id<CourseControl>[] oldCourseControlIds = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(oldCourseId)).ToArray();
+            Id<CourseControl>[] newCourseControlIds = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(newCourseId)).ToArray();
+            Assert.AreEqual(oldCourseControlIds.Length, newCourseControlIds.Length);
+
+            for (int i = 0; i < oldCourseControlIds.Length; ++i) {
+                Assert.AreNotEqual(oldCourseControlIds[i], newCourseControlIds[i]);
+                CourseControl oldCC = eventDB.GetCourseControl(oldCourseControlIds[i]);
+                CourseControl newCC = eventDB.GetCourseControl(newCourseControlIds[i]);
+                Assert.AreEqual(oldCC.customNumberPlacement, newCC.customNumberPlacement);
+                Assert.AreEqual(oldCC.control, newCC.control);
+                Assert.AreEqual(oldCC.descTextAfter, newCC.descTextAfter);
+                Assert.AreEqual(oldCC.descTextBefore, newCC.descTextBefore);
+                Assert.AreEqual(oldCC.exchange, newCC.exchange);
+                Assert.AreEqual(oldCC.join, newCC.join);
+                Assert.AreEqual(oldCC.numberDeltaX, newCC.numberDeltaX);
+                Assert.AreEqual(oldCC.numberDeltaY, newCC.numberDeltaY);
+                Assert.AreEqual(oldCC.points, newCC.points);
+                Assert.AreEqual(oldCC.split, newCC.split);
+            }
+
+            eventDB.Validate();
+
+            undomgr.Undo();
+
+            Assert.IsFalse(eventDB.AllCourseIds.Contains(newCourseId));
+
+            eventDB.Validate();
+        }
+
+        void DuplicateCourseTestAllCourses(string filename)
+        {
+            Setup(filename);
+
+            foreach (var courseId in eventDB.AllCourseIds.ToArray()) {
+                // Duplicate course doesnt work if a split.
+                bool hasSplit = (from cc in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId))
+                                 where eventDB.GetCourseControl(cc).split
+                                 select cc).Any();
+
+                if (!hasSplit)
+                    TestDuplicateCourse(courseId);
+            }
+
+        }
+
+        [TestMethod]
+        public void DuplicateCourse()
+        {
+            DuplicateCourseTestAllCourses("changeevent\\mapexchange1.ppen");
+            DuplicateCourseTestAllCourses("changeevent\\marymoor4.coursescribe");
+            DuplicateCourseTestAllCourses("changeevent\\sampleevent1.coursescribe");
+            DuplicateCourseTestAllCourses("changeevent\\sampleevent3.ppen");
+            DuplicateCourseTestAllCourses("changeevent\\sampleevent7.coursescribe");
+            DuplicateCourseTestAllCourses("changeevent\\sampleevent12.ppen");
+            DuplicateCourseTestAllCourses("changeevent\\SpecialLegs.coursescribe");
+            DuplicateCourseTestAllCourses("changeevent\\sampleevent7.coursescribe");
         }
 
         [TestMethod]
