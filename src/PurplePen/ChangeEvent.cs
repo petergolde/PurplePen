@@ -442,6 +442,67 @@ namespace PurplePen
             eventDB.ReplaceCourse(courseId, course);
         }
 
+        // Duplicate a course with a new name, new course controls (since course controls can't be shared),
+        // but all other attributes the same.
+        public static Id<Course> DuplicateCourse(EventDB eventDB, Id<Course> oldCourseId, string newName)
+        {
+            Course oldCourse = eventDB.GetCourse(oldCourseId);
+            int newSortOrder = oldCourse.sortOrder + 1;
+
+            // Update existing sort orders after by adding one to existing course orders after the new one.
+            foreach (Id<Course> courseToChangeId in eventDB.AllCourseIds.ToList()) {
+                int sortOrder = eventDB.GetCourse(courseToChangeId).sortOrder;
+                if (sortOrder >= newSortOrder)
+                    ChangeCourseSortOrder(eventDB, courseToChangeId, sortOrder + 1);
+            }
+
+            // Create a new course with no course controls in it and the new name, sort order.
+            Course newCourse = (Course)oldCourse.Clone();
+            newCourse.firstCourseControl = Id<CourseControl>.None;
+            newCourse.name = newName;
+            newCourse.sortOrder = newSortOrder;
+            Id<Course> newCourseId =  eventDB.AddCourse(newCourse);
+
+            // Duplicate the course controls.
+            Id<CourseControl> previousCourseControlId = Id<CourseControl>.None;
+            foreach (Id<CourseControl> oldCourseControlId in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(oldCourseId))) {
+                // Add a new course control to the new course.
+                CourseControl oldCourseControl = eventDB.GetCourseControl(oldCourseControlId);
+                Id<CourseControl> newCourseControlId = AddCourseControl(eventDB, oldCourseControl.control, newCourseId, previousCourseControlId, Id<CourseControl>.None);
+                
+                // Clone all fields of old course control, except the linking fields.
+                CourseControl newCourseControl = (CourseControl) oldCourseControl.Clone();
+                newCourseControl.nextCourseControl = eventDB.GetCourseControl(newCourseControlId).nextCourseControl;
+                newCourseControl.nextSplitCourseControls = eventDB.GetCourseControl(newCourseControlId).nextSplitCourseControls;
+                eventDB.ReplaceCourseControl(newCourseControlId, newCourseControl);
+
+                previousCourseControlId = newCourseControlId;
+            }
+
+            // Duplicate any specials from the old course.
+            foreach (Id<Special> specialId in eventDB.AllSpecialIds.ToList()) {
+                Special special = eventDB.GetSpecial(specialId);
+                if (!special.allCourses) {
+                    List<CourseDesignator> addedCourseDesignators = new List<CourseDesignator>();
+                    foreach (CourseDesignator designatorWithSpecial in special.courses) {
+                        if (designatorWithSpecial.CourseId == oldCourseId) {
+                            if (designatorWithSpecial.AllParts)
+                                addedCourseDesignators.Add(new CourseDesignator(newCourseId));
+                            else
+                                addedCourseDesignators.Add(new CourseDesignator(newCourseId, designatorWithSpecial.Part));
+                        }
+                    }
+
+                    if (addedCourseDesignators.Count > 0) {
+                        ChangeDisplayedCourses(eventDB, specialId, special.courses.Concat(addedCourseDesignators).ToArray());
+                    }
+                }
+            }
+
+            return newCourseId;
+        }
+
+
 
         // temp struct used to maintain information about which legs need gaps to be updated.
         struct LegGapChange

@@ -551,6 +551,9 @@ namespace PurplePen
             // Update Delete Course menu item.
             deleteCourseMenu.Enabled = controller.CanDeleteCurrentCourse();
 
+            // Update Duplicate Course menu item
+            duplicateCourseMenu.Enabled = controller.CanDuplicateCurrentCourse();
+
             // Update contextual Item menu items.
             UpdateMenuItem(addBendMenu, controller.CanAddBend());
             UpdateMenuItem(addBendToolStripButton, controller.CanAddBend());
@@ -1177,33 +1180,64 @@ namespace PurplePen
             }
         }
 
+        private void InitializeCoursePropertiesDialogWithCurrentValues(AddCourse addCourseDialog)
+        {
+            // Get the properties of the current course.
+            CourseKind courseKind;
+            string courseName, secondaryTitle;
+            float printScale, climb;
+            DescriptionKind descKind;
+            int firstControlOrdinal;
+            ControlLabelKind labelKind;
+            int scoreColumn;
+            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out descKind, out firstControlOrdinal);
+
+            // Initialize the dialog
+            addCourseDialog.InitializePrintScales(controller.MapScale);
+            addCourseDialog.CourseKind = courseKind;
+            addCourseDialog.CourseName = courseName;
+            addCourseDialog.SecondaryTitle = secondaryTitle;
+            addCourseDialog.PrintScale = printScale;
+            addCourseDialog.Climb = climb;
+            addCourseDialog.DescKind = descKind;
+            addCourseDialog.FirstControlOrdinal = firstControlOrdinal;
+            addCourseDialog.ControlLabelKind = labelKind;
+            addCourseDialog.ScoreColumn = scoreColumn;
+
+        }
+        private void duplicateCourseMenu_Click(object sender, EventArgs e)
+        {
+            if (controller.CanDuplicateCurrentCourse()) {
+                // Initialize the dialog
+                AddCourse addCourseDialog = new AddCourse();
+                InitializeCoursePropertiesDialogWithCurrentValues(addCourseDialog);
+                addCourseDialog.SetTitle(MiscText.DuplicateCourseTitle);
+                addCourseDialog.HelpTopic = "DuplicateCourse.htm";
+                addCourseDialog.CourseName = "";
+                addCourseDialog.CanChangeCourseKind = false;
+
+                // Display the dialog
+                DialogResult result = addCourseDialog.ShowDialog();
+
+                // If the dialog completed successfully, then add the course.
+                if (result == DialogResult.OK) {
+                    controller.DuplicateCurrentCourse(addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
+                                                      addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
+                }
+
+            }
+        }
+
+
+
         private void propertiesMenu_Click(object sender, EventArgs e)
         {
             if (controller.CanChangeCourseProperties()) {
-                // Get the properties of the current course.
-                CourseKind courseKind;
-                string courseName, secondaryTitle;
-                float printScale, climb;
-                DescriptionKind descKind;
-                int firstControlOrdinal;
-                ControlLabelKind labelKind;
-                int scoreColumn;
-                controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out descKind, out firstControlOrdinal);
-
                 // Initialize the dialog
                 AddCourse addCourseDialog = new AddCourse();
-                addCourseDialog.SetCoursePropertiesTitle();
+                InitializeCoursePropertiesDialogWithCurrentValues(addCourseDialog);
+                addCourseDialog.SetTitle(MiscText.CoursePropertiesTitle);
                 addCourseDialog.HelpTopic = "CourseProperties.htm";
-                addCourseDialog.InitializePrintScales(controller.MapScale);
-                addCourseDialog.CourseKind = courseKind;
-                addCourseDialog.CourseName = courseName;
-                addCourseDialog.SecondaryTitle = secondaryTitle;
-                addCourseDialog.PrintScale = printScale;
-                addCourseDialog.Climb = climb;
-                addCourseDialog.DescKind = descKind;
-                addCourseDialog.FirstControlOrdinal = firstControlOrdinal;
-                addCourseDialog.ControlLabelKind = labelKind;
-                addCourseDialog.ScoreColumn = scoreColumn;
 
                 // Display the dialog
                 DialogResult result = addCourseDialog.ShowDialog();

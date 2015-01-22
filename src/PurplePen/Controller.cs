@@ -1198,6 +1198,38 @@ namespace PurplePen
             return true;
         }
 
+        // Can we duplicate the current course
+        public bool CanDuplicateCurrentCourse()
+        {
+            return (selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
+        }
+
+        // Duplicate the current course, with new properties. Duplicates all the course controls.
+        // The course kind cannot be changed.
+        public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
+        {
+            Id<Course> currentCourseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            Course currentCourse = eventDB.GetCourse(currentCourseId);
+
+            undoMgr.BeginCommand(24713, CommandNameText.DuplicateCourse);
+
+            // Duplicate the course.
+            Id<Course> newCourseId = ChangeEvent.DuplicateCourse(eventDB, currentCourseId, name);
+
+            // Change properties as desired.
+            ChangeEvent.ChangeCourseProperties(eventDB, newCourseId, currentCourse.kind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
+            
+            // Show the new (duplicated) course (with same part as before).
+            CourseDesignator newCourseDesignator;
+            if (selectionMgr.Selection.ActiveCourseDesignator.Part >= 0)
+                newCourseDesignator = new CourseDesignator(newCourseId, selectionMgr.Selection.ActiveCourseDesignator.Part);
+            else
+                newCourseDesignator = new CourseDesignator(newCourseId);
+            selectionMgr.SelectCourseView(newCourseDesignator);
+            
+            undoMgr.EndCommand(24713);
+        }
+
         // Add a new course. If a unique start or finish control is found, it is added.
         public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
         {

@@ -66,9 +66,15 @@ namespace PurplePen
             CourseKindChanged();
         }
 
-        public void SetCoursePropertiesTitle()
+        public void SetTitle(string titleText)
         {
-            this.Text = MiscText.CoursePropertiesTitle;
+            this.Text = titleText;
+        }
+
+        public bool CanChangeCourseKind
+        {
+            get { return courseKindCombo.Enabled; }
+            set { courseKindCombo.Enabled = value; }
         }
 
         public float PrintScale

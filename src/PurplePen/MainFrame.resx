@@ -211,7 +211,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 260</value>
+    <value>256, 261</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -220,7 +220,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -256,7 +256,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 103</value>
+    <value>256, 102</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>260</value>
+    <value>261</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -328,7 +328,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACAh7sL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADgh7sL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -350,7 +350,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwrc7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwro7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -358,7 +358,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -433,7 +433,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -885,6 +885,12 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Delete Course</value>
   </data>
+  <data name="duplicateCourseMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>D&amp;uplicate Course...</value>
+  </data>
   <data name="propertiesMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
@@ -898,7 +904,7 @@
     <value>173, 22</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Course Order...</value>
+    <value>Course &amp;Order...</value>
   </data>
   <data name="courseLoadMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -1647,11 +1653,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZIrT8NwFMVPJkgQs5AJ5OS+A5mpQWAWgsUg
-        MDMTqOFwCLAEg+NTLMEiSFjFkjkcc3tlz5bf3S5pB81YSNhJTtr7fv21dUSKgplmpy7+DbHiCoznmt+T
+        MDMTqOFwCLAEg+NTLMEiSFiTiTkcc3tlz5bf3S5pB81YSNhJTtr7fv21dUSKgplmpy7+DbHiCoznmt+T
         cNfVCfrqFzDeUakB36aaht850eTdkhhNHmtc8nCpo04+7bApKfrgKSQqX5iS7G3+q3yPYRkepknQlfl1
         1R3gd+bhS2B8NCOGS1dlAp8KPq/so+iqBCS5oVKIw9rNDzU8aKq54+I/o656jnb3XcwE9nPrnAluXZXA
         zsxIzza7qzJB8LXtED65agkyByONPsxoV/i6SJp0cESRE/5D80OuefiivVpLrcizb0Qr2FNvz1OsjLFw
-        sIdn1bKI34s9CQr/PLMt1Gb1jtbu5FdQLYBlF7cF6RPkAjbK/RbN1QAAAABJRU5ErkJggg==
+        sIdn1bKI34s9CQr/PLMt1Gb1jtbu5FdQLYBlF7cF6RPf6jbGDbAtAAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -3292,7 +3298,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>
@@ -3323,6 +3329,12 @@
   </data>
   <data name="&gt;&gt;saveGpxFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;duplicateCourseMenu.Name" xml:space="preserve">
+    <value>duplicateCourseMenu</value>
+  </data>
+  <data name="&gt;&gt;duplicateCourseMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>

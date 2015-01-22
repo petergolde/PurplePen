@@ -610,6 +610,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate Course.
+        /// </summary>
+        internal static string DuplicateCourseTitle {
+            get {
+                return ResourceManager.GetString("DuplicateCourseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter new climb in meters.
         /// </summary>
         internal static string EnterClimb {

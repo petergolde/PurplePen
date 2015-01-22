@@ -282,4 +282,7 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Change Line Appearance</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicate Course</value>
+  </data>
 </root>
