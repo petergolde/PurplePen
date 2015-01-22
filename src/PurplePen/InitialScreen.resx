@@ -154,42 +154,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;okButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="quitButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="quitButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="quitButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="quitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 262</value>
-  </data>
-  <data name="quitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="quitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 25</value>
-  </data>
-  <data name="quitButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="&gt;&gt;quitButton.Name" xml:space="preserve">
-    <value>quitButton</value>
-  </data>
-  <data name="&gt;&gt;quitButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;quitButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;quitButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="openLastRadioButton.AutoSize" type="System.Boolean, mscorlib">
@@ -328,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;createNewRadioButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="openExistingRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -364,7 +328,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;openExistingRadioButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -543,6 +507,6 @@
     <value>InitialScreen</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.3.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

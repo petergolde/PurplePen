@@ -63,7 +63,6 @@ namespace PurplePen
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialScreen));
             this.okButton = new System.Windows.Forms.Button();
-            this.quitButton = new System.Windows.Forms.Button();
             this.openLastRadioButton = new System.Windows.Forms.RadioButton();
             this.openSampleRadioButton = new System.Windows.Forms.RadioButton();
             this.backgroundPanel = new System.Windows.Forms.Panel();
@@ -80,13 +79,6 @@ namespace PurplePen
             resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
-            // quitButton
-            // 
-            resources.ApplyResources(this.quitButton, "quitButton");
-            this.quitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.quitButton.Name = "quitButton";
-            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
             // 
             // openLastRadioButton
             // 
@@ -146,12 +138,10 @@ namespace PurplePen
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.CancelButton = this.quitButton;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.openLastRadioButton);
             this.Controls.Add(this.openSampleRadioButton);
             this.Controls.Add(this.backgroundPanel);
-            this.Controls.Add(this.quitButton);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.createNewRadioButton);
             this.Controls.Add(this.openExistingRadioButton);
@@ -173,7 +163,6 @@ namespace PurplePen
         private System.Windows.Forms.RadioButton openExistingRadioButton;
         private System.Windows.Forms.RadioButton createNewRadioButton;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.Button quitButton;
         private System.Windows.Forms.Panel backgroundPanel;
         private System.Windows.Forms.RadioButton openSampleRadioButton;
         private System.Windows.Forms.RadioButton openLastRadioButton;
