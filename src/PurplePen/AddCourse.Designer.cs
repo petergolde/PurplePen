@@ -81,6 +81,7 @@ namespace PurplePen
             this.secondaryTitleTextBox = new System.Windows.Forms.TextBox();
             this.secondaryTitleDescription = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lengthLabel = new System.Windows.Forms.Label();
             this.climbLabel = new System.Windows.Forms.Label();
             this.courseTypeLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -89,6 +90,9 @@ namespace PurplePen
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.climbTextBox = new System.Windows.Forms.TextBox();
             this.metersSuffix = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lengthTextBox = new System.Windows.Forms.TextBox();
+            this.kmSuffix = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -97,6 +101,7 @@ namespace PurplePen
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -259,13 +264,20 @@ namespace PurplePen
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.lengthLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.climbLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.courseTypeLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.courseNameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.courseKindCombo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // lengthLabel
+            // 
+            resources.ApplyResources(this.lengthLabel, "lengthLabel");
+            this.lengthLabel.Name = "lengthLabel";
             // 
             // climbLabel
             // 
@@ -316,6 +328,23 @@ namespace PurplePen
             resources.ApplyResources(this.metersSuffix, "metersSuffix");
             this.metersSuffix.Name = "metersSuffix";
             // 
+            // flowLayoutPanel3
+            // 
+            resources.ApplyResources(this.flowLayoutPanel3, "flowLayoutPanel3");
+            this.flowLayoutPanel3.Controls.Add(this.lengthTextBox);
+            this.flowLayoutPanel3.Controls.Add(this.kmSuffix);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            // 
+            // lengthTextBox
+            // 
+            resources.ApplyResources(this.lengthTextBox, "lengthTextBox");
+            this.lengthTextBox.Name = "lengthTextBox";
+            // 
+            // kmSuffix
+            // 
+            resources.ApplyResources(this.kmSuffix, "kmSuffix");
+            this.kmSuffix.Name = "kmSuffix";
+            // 
             // AddCourse
             // 
             resources.ApplyResources(this, "$this");
@@ -343,7 +372,10 @@ namespace PurplePen
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -376,5 +408,9 @@ namespace PurplePen
         private System.Windows.Forms.ComboBox labelKindCombo;
         private System.Windows.Forms.Label scoreColumnLabel;
         private System.Windows.Forms.ComboBox scoreColumnCombo;
+        private System.Windows.Forms.Label lengthLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.TextBox lengthTextBox;
+        private System.Windows.Forms.Label kmSuffix;
     }
 }

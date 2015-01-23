@@ -524,6 +524,12 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
     <value>The OCAD file uses a coordinate system that is not supported by Purple Pen.</value>
   </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>The length for a course must be a number 0.1 - 99.9, or blank to calculate length automatically.</value>
+  </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Duplicate Course</value>
   </data>

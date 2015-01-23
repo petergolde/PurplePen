@@ -47,6 +47,7 @@ namespace PurplePen
     {
         float printScale;
         float climb;
+        float? length;
         object[] labelKindItems;
 
         public AddCourse()
@@ -63,6 +64,7 @@ namespace PurplePen
             courseKindCombo.SelectedIndex = 0;
             labelKindCombo.SelectedIndex = 0;
             scoreColumnCombo.SelectedIndex = 2;
+            Length = null;
             CourseKindChanged();
         }
 
@@ -96,6 +98,18 @@ namespace PurplePen
                     climbTextBox.Text = "";
                 else
                     climbTextBox.Text = value.ToString();
+            }
+        }
+
+        public float? Length
+        {
+            get { return length; }
+            set
+            {
+                if (value.HasValue)
+                    lengthTextBox.Text = string.Format("{0:0.0##}", value.Value / 1000F);  // Convert from meters to km.
+                else
+                    lengthTextBox.Text = MiscText.AutomaticLength;
             }
         }
 
@@ -306,6 +320,20 @@ namespace PurplePen
                 climb = enteredClimb;
             }
 
+            // Validate length.
+            float enteredLength;
+            if (lengthTextBox.Text == "" || string.Compare(lengthTextBox.Text, MiscText.AutomaticLength, StringComparison.CurrentCultureIgnoreCase) == 0) {
+                length = null;
+            }
+            else if (!float.TryParse(lengthTextBox.Text, out enteredLength) || enteredLength <= 0 || enteredLength >= 100) {
+                MessageBox.Show(this, MiscText.BadLength, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                lengthTextBox.Focus();
+                return false;
+            }
+            else {
+                length = enteredLength * 1000;  // Convert from km to meters.
+            }
+
             return true;
         }
 
@@ -316,6 +344,8 @@ namespace PurplePen
         private void CourseKindChanged() {
             bool enableScoreControls = (CourseKind == CourseKind.Score);
             scoreColumnLabel.Visible = scoreColumnCombo.Visible = enableScoreControls;
+            lengthLabel.Visible = lengthTextBox.Visible = kmSuffix.Visible = !enableScoreControls;
+            climbLabel.Visible = climbTextBox.Visible = metersSuffix.Visible = !enableScoreControls;
 
             // Only show the label kinds for the given kind.
             SetLabelKindLength((CourseKind == CourseKind.Score) ? 5 : 3);

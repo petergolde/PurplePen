@@ -1206,7 +1206,7 @@ namespace PurplePen
 
         // Duplicate the current course, with new properties. Duplicates all the course controls.
         // The course kind cannot be changed.
-        public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             Id<Course> currentCourseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             Course currentCourse = eventDB.GetCourse(currentCourseId);
@@ -1217,7 +1217,7 @@ namespace PurplePen
             Id<Course> newCourseId = ChangeEvent.DuplicateCourse(eventDB, currentCourseId, name);
 
             // Change properties as desired.
-            ChangeEvent.ChangeCourseProperties(eventDB, newCourseId, currentCourse.kind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, newCourseId, currentCourse.kind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal);
             
             // Show the new (duplicated) course (with same part as before).
             CourseDesignator newCourseDesignator;
@@ -1231,10 +1231,10 @@ namespace PurplePen
         }
 
         // Add a new course. If a unique start or finish control is found, it is added.
-        public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
-            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal, true);
+            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, true);
             selectionMgr.SelectCourseView(new CourseDesignator(newCourse));
             undoMgr.EndCommand(713);
         }
@@ -1246,7 +1246,7 @@ namespace PurplePen
         }
 
         // Get the properties of the current course?
-        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out DescriptionKind descKind, out int firstControlOrdinal)
+        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out float? length, out DescriptionKind descKind, out int firstControlOrdinal)
         {
             Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
             courseKind = course.kind;
@@ -1255,16 +1255,17 @@ namespace PurplePen
             secondaryTitle = course.secondaryTitle;
             printScale = course.printScale;
             climb = course.climb;
+            length = course.overrideCourseLength;
             descKind = course.descKind;
             firstControlOrdinal = course.firstControlOrdinal;
             scoreColumn = course.scoreColumn;
         }
 
         // Change the properties of the current course.
-        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal);
             undoMgr.EndCommand(888);
         }
 

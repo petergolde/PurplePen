@@ -639,6 +639,7 @@ namespace PurplePen
         public string secondaryTitle;   // Secondary title line, or null if none.
         public float printScale;        // Print scale of the course
         public float climb;             // Climb in meters, or negative for no climb.
+        public float? overrideCourseLength;  // Course length, or null for automatic measurement.
         public int load;                 // Competitor load, or negative for no load set.
         public int firstControlOrdinal;  // Ordinal number of first control (usually 1 for a normal course.)
         public int scoreColumn;         // column for score, or -1 for none (must be -1 for a non-score course)
@@ -661,6 +662,7 @@ namespace PurplePen
             this.printScale = printScale; 
             this.sortOrder = sortOrder;
             this.labelKind = (kind == CourseKind.Score) ? ControlLabelKind.Code : ControlLabelKind.Sequence;
+            this.overrideCourseLength = null;
             this.climb = -1;
             this.load = -1;
             this.firstControlOrdinal = 1;
@@ -768,6 +770,8 @@ namespace PurplePen
                 return false;
             if (other.climb != climb)
                 return false;
+            if (other.overrideCourseLength != overrideCourseLength)
+                return false;
             if (other.load != load)
                 return false;
             if (other.printScale != printScale)
@@ -863,6 +867,13 @@ namespace PurplePen
                         if (kind == CourseKind.Score) 
                             scoreColumn = EventDBUtil.ReadScoreColumnAttribute(xmlinput);
                         descKind = EventDBUtil.ReadDescriptionKindAttribute(xmlinput);
+
+                        float len = xmlinput.GetAttributeFloat("course-length", -1F);
+                        if (len > 0)
+                            overrideCourseLength = len;
+                        else
+                            overrideCourseLength = null;
+
                         xmlinput.Skip();
                         break;
 
@@ -960,6 +971,8 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("climb", XmlConvert.ToString(climb));
             if (load >= 0)
                 xmloutput.WriteAttributeString("load", XmlConvert.ToString(load));
+            if (overrideCourseLength.HasValue)
+                xmloutput.WriteAttributeString("course-length", XmlConvert.ToString(overrideCourseLength.Value));
 
             if (kind == CourseKind.Score) 
                 EventDBUtil.WriteScoreColumnAttribute(xmloutput, scoreColumn);

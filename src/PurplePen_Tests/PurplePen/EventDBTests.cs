@@ -184,6 +184,7 @@ namespace PurplePen.Tests
             course4.firstCourseControl = CourseControlId(2);
             course4.load = 0;
             course4.climb = 25;
+            course4.overrideCourseLength = 4243;
             course4.firstControlOrdinal = 3;
             course4.labelKind = ControlLabelKind.SequenceAndScore;
             course4.descKind = DescriptionKind.SymbolsAndText;

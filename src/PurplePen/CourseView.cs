@@ -96,7 +96,8 @@ namespace PurplePen
 
         private int normalControlCount;         // number of normal controls.
         private float totalPoints;              // total points.
-        private float totalLength;              // total length.
+        private float measuredLength;           // measured length
+        private float totalLength;              // total length (differs from measured length only if course properies overrides)
         private float partLength;
         private float totalClimb;
 
@@ -355,11 +356,12 @@ namespace PurplePen
             totalPoints = 0;
             normalControlCount = 0;
             partLength = 0;
+            Course course = courseDesignator.IsAllControls ? null : eventDB.GetCourse(courseDesignator.CourseId);
 
             if (courseDesignator.IsAllControls)
                 totalClimb = -1;
             else
-                totalClimb = eventDB.GetCourse(courseDesignator.CourseId).climb;
+                totalClimb = course.climb;
 
             for (int i = 0; i < controlViews.Count; ++i) {
                 ControlView controlView = controlViews[i];
@@ -384,11 +386,16 @@ namespace PurplePen
 
             // Get the total length from another course view, if this is just a partial course.
             if (courseDesignator.AllParts || courseDesignator.IsAllControls)
-                totalLength = partLength;
+                measuredLength = partLength;
             else {
                 CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false, false);
-                totalLength = viewEntireCourse.TotalLength;
+                measuredLength = viewEntireCourse.TotalLength;
             }
+
+            if (course != null && course.overrideCourseLength.HasValue)
+                totalLength = course.overrideCourseLength.Value;
+            else
+                totalLength = measuredLength;
         }
 
         // Finalize the course view

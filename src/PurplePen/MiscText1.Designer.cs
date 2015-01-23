@@ -151,6 +151,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        internal static string AutomaticLength {
+            get {
+                return ResourceManager.GetString("AutomaticLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The climb for a course must be a number 0-9999, or blank..
         /// </summary>
         internal static string BadClimb {
@@ -165,6 +174,15 @@ namespace PurplePen {
         internal static string BadDotNetFramework {
             get {
                 return ResourceManager.GetString("BadDotNetFramework", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The length for a course must be a number 0.1 - 99.9, or blank to calculate length automatically..
+        /// </summary>
+        internal static string BadLength {
+            get {
+                return ResourceManager.GetString("BadLength", resourceCulture);
             }
         }
         

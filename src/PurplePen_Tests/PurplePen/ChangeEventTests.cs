@@ -550,7 +550,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(713, "Change secondary title");
-            ChangeEvent.ChangeCourseProperties(eventDB, CourseId(1), CourseKind.Score, "Xavier", ControlLabelKind.SequenceAndCode, 1, null, 5000, 55, DescriptionKind.Text, 10);
+            ChangeEvent.ChangeCourseProperties(eventDB, CourseId(1), CourseKind.Score, "Xavier", ControlLabelKind.SequenceAndCode, 1, null, 5000, 55, 7.6F, DescriptionKind.Text, 10);
             undomgr.EndCommand(713);
 
             Course course = eventDB.GetCourse(CourseId(1));
@@ -1521,9 +1521,9 @@ namespace PurplePen.Tests
             undomgr.EndCommand(77);
 
             undomgr.BeginCommand(183, "Create Course");
-            Id<Course> courseId1 = ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "My New Course", ControlLabelKind.SequenceAndCode, -1, "Secondary Title", 15000, 25, DescriptionKind.Symbols, 1, true);
-            Id<Course> courseId2 = ChangeEvent.CreateCourse(eventDB, CourseKind.Score, "My New Course 2", ControlLabelKind.Sequence, 1, null, 7600, -1, DescriptionKind.Text, 1, true);
-            Id<Course> courseId3 = ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "My New Course 3", ControlLabelKind.Sequence, -1, null, 7500, 101, DescriptionKind.SymbolsAndText, 7, false);
+            Id<Course> courseId1 = ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "My New Course", ControlLabelKind.SequenceAndCode, -1, "Secondary Title", 15000, 25, null, DescriptionKind.Symbols, 1, true);
+            Id<Course> courseId2 = ChangeEvent.CreateCourse(eventDB, CourseKind.Score, "My New Course 2", ControlLabelKind.Sequence, 1, null, 7600, -1, null, DescriptionKind.Text, 1, true);
+            Id<Course> courseId3 = ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "My New Course 3", ControlLabelKind.Sequence, -1, null, 7500, 101, 7500F, DescriptionKind.SymbolsAndText, 7, false);
             undomgr.EndCommand(183);
             eventDB.Validate();
 
@@ -1536,6 +1536,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(DescriptionKind.Symbols, course.descKind);
             Assert.AreEqual(15000F, course.printScale);
             Assert.AreEqual(25F, course.climb);
+            Assert.AreEqual(null, course.overrideCourseLength);
             Assert.AreEqual(1, course.firstControlOrdinal);
             Assert.AreEqual(ControlLabelKind.SequenceAndCode, course.labelKind);
             Assert.AreEqual(-1, course.scoreColumn);
@@ -1549,6 +1550,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(DescriptionKind.Text, course.descKind);
             Assert.AreEqual(7600F, course.printScale);
             Assert.IsTrue(course.climb < 0);
+            Assert.AreEqual(null, course.overrideCourseLength);
             Assert.AreEqual(1, course.firstControlOrdinal);
             Assert.AreEqual(ControlLabelKind.Sequence, course.labelKind);
             Assert.AreEqual(1, course.scoreColumn);
@@ -1562,6 +1564,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(DescriptionKind.SymbolsAndText, course.descKind);
             Assert.AreEqual(7500F, course.printScale);
             Assert.AreEqual(101F, course.climb);
+            Assert.AreEqual(7500F, course.overrideCourseLength);
             Assert.AreEqual(7, course.firstControlOrdinal);
             Assert.AreEqual(ControlLabelKind.Sequence, course.labelKind);
             Assert.AreEqual(-1, course.scoreColumn);
