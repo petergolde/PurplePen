@@ -629,11 +629,12 @@ namespace PurplePen
         }
 
         // Get the current description to show in the description pane.
-        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind, out bool isCoursePart)
+        public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind, out bool isCoursePart, out bool hasCustomLength)
         {
             kind = selectionMgr.ActiveCourseView.Kind;
             CourseDesignator courseDesignator = selectionMgr.ActiveCourseView.CourseDesignator;
             isCoursePart = courseDesignator.IsNotAllControls && !courseDesignator.AllParts;
+            hasCustomLength = courseDesignator.IsNotAllControls && eventDB.GetCourse(courseDesignator.CourseId).overrideCourseLength.HasValue;
 
             return selectionMgr.ActiveDescription;
         }
@@ -2435,6 +2436,26 @@ namespace PurplePen
                     undoMgr.BeginCommand(108, CommandNameText.ChangeClimb);
                     ChangeEvent.ChangeCourseClimb(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newClimb);
                     undoMgr.EndCommand(108);
+                    break;
+
+                case DescriptionControl.ChangeKind.Length:
+                    float newLength;
+
+                    if (newStringValue == "") {
+                        newLength = -1;
+                    }
+                    else {
+                        if (!float.TryParse(Util.RemoveSuffix(newStringValue, "km"), out newLength) || newLength <= 0 || newLength >= 100) {
+                            // Invalid length value.
+                            ui.ErrorMessage(string.Format(MiscText.BadLength, newStringValue));
+                            break;
+                        }
+                    }
+
+                    undoMgr.BeginCommand(45108, CommandNameText.ChangeClimb);
+                    // convert km to meters.
+                    ChangeEvent.ChangeCourseOverrideLength(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, (newLength > 0) ? (float?)newLength * 1000F : (float?)null);
+                    undoMgr.EndCommand(45108);
                     break;
 
                 case DescriptionControl.ChangeKind.Score:

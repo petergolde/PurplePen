@@ -295,4 +295,7 @@
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>Rectangle</value>
   </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Calculated Length:</value>
+  </data>
 </root>

@@ -343,6 +343,17 @@ namespace PurplePen
             eventDB.ReplaceCourse(courseId, course);
         }
 
+        // Change the course override length.
+        public static void ChangeCourseOverrideLength(EventDB eventDB, Id<Course> courseId, float? length)
+        {
+            Course course = eventDB.GetCourse(courseId);
+
+            course = (Course)course.Clone();
+            course.overrideCourseLength = length;
+
+            eventDB.ReplaceCourse(courseId, course);
+        }
+
         // Change the course secondary title. Use "" or null to remove the secondary title.
         public static void ChangeCourseSecondaryTitle(EventDB eventDB, Id<Course> courseId, string newTitle)
         {

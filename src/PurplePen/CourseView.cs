@@ -191,10 +191,21 @@ namespace PurplePen
             }
         }
 
-        // If multi-part course, length of all parts
+        // If multi-part course, length of all parts. If the user
+        // specified a course length, this is that length.
         public float TotalLength {
             get { 
                 return totalLength;
+            }
+        }
+
+        // If multi-part course, length of all parts, as calculated.
+        // Not affected if the user specified a course length.
+        public float MeasuredLength
+        {
+            get
+            {
+                return measuredLength;
             }
         }
 

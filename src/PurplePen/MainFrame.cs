@@ -382,12 +382,13 @@ namespace PurplePen
         void UpdateDescription()
         {
             CourseView.CourseViewKind kind;
-            bool isCoursePart;
+            bool isCoursePart, hasCustomLength;
 
-            descriptionControl.Description = controller.GetDescription(out kind, out isCoursePart);
+            descriptionControl.Description = controller.GetDescription(out kind, out isCoursePart, out hasCustomLength);
             descriptionControl.CourseKind = kind;
             descriptionControl.ScoreColumn = controller.GetScoreColumn();
             descriptionControl.IsCoursePart = isCoursePart;
+            descriptionControl.HasCustomLength = hasCustomLength;
             descriptionControl.LangId = controller.GetDescriptionLanguage();
         }
 

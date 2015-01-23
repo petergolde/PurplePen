@@ -262,7 +262,6 @@ namespace PurplePen
         {
             List<TextPart> list = new List<TextPart>();
             CourseDesignator courseDesignator = activeCourseView.CourseDesignator;
-            // UNDONE MAPEXCHANGE: do special something for a part of a course.
 
             // Course name
             if (courseDesignator.AllParts) {
@@ -274,10 +273,21 @@ namespace PurplePen
 
             if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
                 // Course length
-                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
-                list.Add(new TextPart(TextFormat.SameLine,
-                    string.Format("{0:0.00} km", Math.Round(activeCourseView.PartLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                if (courseDesignator.AllParts && activeCourseView.TotalLength != activeCourseView.MeasuredLength) {
+                    // If the user specified a length, show both that length and the calculated length.
+                    list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
+                    list.Add(new TextPart(TextFormat.SameLine,
+                        string.Format("{0:0.00} km", Math.Round(activeCourseView.TotalLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
 
+                    list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.CalculatedLength));
+                    list.Add(new TextPart(TextFormat.SameLine,
+                        string.Format("{0:0.00} km", Math.Round(activeCourseView.MeasuredLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                }
+                else {
+                    list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
+                    list.Add(new TextPart(TextFormat.SameLine,
+                        string.Format("{0:0.00} km", Math.Round(activeCourseView.PartLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                }
                 // Don't have climb for a single part of multi-part course.
                 if (activeCourseView.TotalClimb >= 0 && courseDesignator.AllParts) {
                     list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Climb + "  "));

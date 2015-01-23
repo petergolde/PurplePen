@@ -52,6 +52,7 @@ namespace PurplePen
             SecondaryTitle,     // Secondary title
             CourseName,         // Course name
             Climb,              // Course climb box
+            Length,             // Course length box
             Score,              // Score box for a control (column A on score course)
             Code,               // Code box for a control (column B)
             DescriptionBox,     // Other box (C-H) on a control
@@ -63,7 +64,7 @@ namespace PurplePen
         SymbolDB symbolDB;
         DescriptionRenderer renderer;
         CourseView.CourseViewKind courseViewKind;
-        bool isCoursePart;
+        bool isCoursePart, hasCustomLength;
         SymbolPopup popup;
         int scoreColumn;
 
@@ -325,9 +326,19 @@ namespace PurplePen
             set
             {
                 isCoursePart = value;
-                // Note that the course kind affects the click behavior, but not the rendering,
-                // so we don't need to invalidate the panel here.
+                descriptionPanel.Invalidate();
             }
+        }
+
+        public bool HasCustomLength
+        {
+            get { return hasCustomLength; }
+            set
+            {
+                hasCustomLength = value;
+                // Only affects click behavior, so no need to invalidate.
+            }
+
         }
 
         // lColumn that displays the score, or -1 if none.
@@ -515,6 +526,17 @@ namespace PurplePen
                             courseName = courseName.Substring(0, courseName.LastIndexOf('-'));
                         }
                         popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, courseName, 6, descriptionPanel, location);
+                    }
+                    else if (hitTest.box == 1  && courseViewKind == CourseView.CourseViewKind.Normal) {
+                        // the length
+                        string lengthText;
+                        if (hasCustomLength)
+                            lengthText = Util.RemoveSuffix((string)renderer.Description[hitTest.firstLine].boxes[1], "km");
+                        else 
+                            lengthText = "";  // automatically calculated length.
+
+                        popupKind = ChangeKind.Length;
+                        popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterLength, lengthText, 4, descriptionPanel, location);
                     }
                     else if (hitTest.box == 2) {
                         // the climb

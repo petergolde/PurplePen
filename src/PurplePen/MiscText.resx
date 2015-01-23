@@ -533,4 +533,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Duplicate Course</value>
   </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Enter length in km, or leave blank to calculate automatically</value>
+  </data>
 </root>

@@ -686,6 +686,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter length in km, or leave blank to calculate automatically.
+        /// </summary>
+        internal static string EnterLength {
+            get {
+                return ResourceManager.GetString("EnterLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter new score.
         /// </summary>
         internal static string EnterScore {

@@ -606,6 +606,42 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SelectedCourseCustomLength()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\marymoor.coursescribe"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(6));
+            TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Course \"Course 5\"", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("7.60 km", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Calculated Length:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("5.00 km", textpart.text);
+            Assert.AreEqual(TextFormat.SameLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
         public void SelectedCourseWithLoad()
         {
             TextPart textpart;

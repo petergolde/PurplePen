@@ -3,8 +3,11 @@
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
     <map kind="none" scale="10000" />
+    <all-controls print-scale="10000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -258,33 +261,39 @@
   </control>
   <course id="1" kind="normal" order="1">
     <name>Course 1</name>
+    <labels label-kind="sequence" />
     <first course-control="101" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
+    <labels label-kind="sequence" />
     <first course-control="301" />
     <options print-scale="10000" climb="37" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
+    <labels label-kind="sequence" />
     <first course-control="401" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
+    <labels label-kind="sequence" />
     <first course-control="501" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
+    <labels label-kind="sequence" />
     <first course-control="601" />
-    <options print-scale="10000" description-kind="symbols" />
+    <options print-scale="10000" course-length="7600" description-kind="symbols" />
   </course>
   <course-control id="101" control="1">
     <next course-control="102" />

@@ -143,19 +143,26 @@ namespace PurplePen
         {
             return s.Replace("&", "");
         }
-
-        // Remove a "m" or " m" suffix from a string. If none, return the string itself.
-        public static string RemoveMeterSuffix(string s)
+        
+        // Remove a suffix from a string. If none, return the string itself.
+        public static string RemoveSuffix(string s, string suffix)
         {
             if (s == null)
                 return s;
 
             string sTrim = s.Trim();
 
-            if (sTrim.EndsWith("m"))
-                return sTrim.Substring(0, sTrim.Length - 1).Trim();
+            if (sTrim.EndsWith(suffix))
+                return sTrim.Substring(0, sTrim.Length - suffix.Length).Trim();
             else
                 return s;
+        }
+
+
+        // Remove a "m" or " m" suffix from a string. If none, return the string itself.
+        public static string RemoveMeterSuffix(string s)
+        {
+            return RemoveSuffix(s, "m");
         }
 
         // Get a list of print scales from a map scale.
