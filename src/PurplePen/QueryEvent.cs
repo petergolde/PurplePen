@@ -47,6 +47,9 @@ namespace PurplePen
     // The class queries the event database in useful ways.
     static class QueryEvent
     {
+        // Number of meters a control must move to get a warning.
+        const float MOVE_THRESHOLD = 50;
+
         // Determine if a code is in use in the database.
         public static bool IsCodeInUse(EventDB eventDB, string code)
         {
@@ -211,6 +214,38 @@ namespace PurplePen
             return false;
         }
 
+        // Determine if you should warn about moving a shared course control. If a normal control is being 
+        // moved more than 75 meters, and is in other courses, then warn. 
+        // Returns null to not warn, or array of other courses to warn.
+        public static Id<Course>[] ShouldWarnAboutMovingControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlId, PointF newLocation)
+        {
+            Id<ControlPoint> controlId = eventDB.GetCourseControl(courseControlId).control;
+
+            Debug.Assert(CourseUsesControl(eventDB, new CourseDesignator(courseId), controlId));
+
+            if (eventDB.GetControl(controlId).kind != ControlPointKind.Normal)
+                return null;
+
+            float distance = DistanceBetweenPointsInMeters(eventDB, eventDB.GetControl(controlId).location, newLocation);
+            if (distance < MOVE_THRESHOLD)
+                return null;
+
+            List<Id<Course>> list = new List<Id<Course>>();
+
+            foreach (Id<Course> containingCourseId in SortedCourseIds(eventDB)) {
+                if (containingCourseId != courseId &&
+                    CourseUsesControl(eventDB, new CourseDesignator(containingCourseId), controlId))
+                {
+                    list.Add(containingCourseId);
+                }
+            }
+
+            if (list.Count == 0)
+                return null;
+            else
+                return list.ToArray();
+        }
+
         // Find which courses are using a particular control. If none, return an 
         // empty array.
         public static Id<Course>[] CoursesUsingControl(EventDB eventDB, Id<ControlPoint> controlId)
@@ -296,6 +331,22 @@ namespace PurplePen
             }
 
             return startFound;
+        }
+
+        // Get a textual version of a list of courses.
+        public static string CourseList(EventDB eventDB, IEnumerable<Id<Course>> courses)
+        {
+            StringBuilder courseNames = new StringBuilder();
+            bool first = true;
+
+            foreach (Id<Course> courseId in courses) {
+                if (!first)
+                    courseNames.Append(", ");
+                courseNames.Append(eventDB.GetCourse(courseId).name);
+                first = false;
+            }
+
+            return courseNames.ToString();
         }
 
         // Determine if the given course control is in the given part.
@@ -664,6 +715,12 @@ namespace PurplePen
             }
         }
 
+        // Get the real world distance, in meters, between two points.
+        public static float DistanceBetweenPointsInMeters(EventDB eventDB, PointF pt1, PointF pt2)
+        {
+            return (float)((eventDB.GetEvent().mapScale * Geometry.Distance(pt1, pt2)) / 1000.0);
+        }
+
         // Compute the length of a leg between two controls, in meters. The indicated leg id, if non-zero, is used
         // to get bend information. The event map scale converts between the map scale, in mm, which is used
         // for the coordinate information, to meters in the world scale.
@@ -683,7 +740,7 @@ namespace PurplePen
             PointF location1 = eventDB.GetControl(controlId1).location;
             PointF location2 = eventDB.GetControl(controlId2).location;
 
-            return (float) ((eventDB.GetEvent().mapScale * Geometry.Distance(location1, location2)) / 1000.0);
+            return DistanceBetweenPointsInMeters(eventDB, location1, location2);
         }
 
         // Similar to ComputeLegLength. However, if the leg is flagged partially, only the length of the flagged portion is returned.

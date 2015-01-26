@@ -1410,6 +1410,28 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ReplaceControlInCourse()
+        {
+            Setup("changeevent\\mapexchange2.ppen");
+
+            undomgr.BeginCommand(34124, "ReplaceControlInCourse");
+
+            ChangeEvent.ReplaceControlInCourse(eventDB, CourseId(6), ControlId(41), ControlId(81));
+            undomgr.EndCommand(34124);
+            eventDB.Validate();
+
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(81)));
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(41)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(81)));
+            Assert.IsTrue(QueryEvent.CourseUsesControl(eventDB, Designator(6), ControlId(41)));
+
+        }
+
+        [TestMethod]
         public void DeleteCourse()
         {
             Setup("changeevent\\sampleevent1.coursescribe");

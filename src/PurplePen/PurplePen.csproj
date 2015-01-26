@@ -392,6 +392,12 @@
     <Compile Include="MissingFonts.Designer.cs">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveControlChoiceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveControlChoiceDialog.Designer.cs">
+      <DependentUpon>MoveControlChoiceDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewEventBitmapScale.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -574,6 +580,12 @@
     <Compile Include="SymbolDB.cs" />
     <Compile Include="SymbolPopup.cs" />
     <Compile Include="Textifier.cs" />
+    <Compile Include="TitleDetailButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TitleDetailButton.Designer.cs">
+      <DependentUpon>TitleDetailButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolStripTrackBar.cs" />
     <Compile Include="UndoMgr.cs" />
     <Compile Include="UnusedControls.cs">
@@ -1788,6 +1800,9 @@
     <EmbeddedResource Include="MissingFonts.sv.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MoveControlChoiceDialog.resx">
+      <DependentUpon>MoveControlChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventBitmapScale.bg.resx">
       <DependentUpon>NewEventBitmapScale.cs</DependentUpon>
     </EmbeddedResource>
@@ -2705,6 +2720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.sv.resx">
       <DependentUpon>StatusBarText.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleDetailButton.resx">
+      <DependentUpon>TitleDetailButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.bg.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>

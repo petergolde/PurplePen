@@ -95,6 +95,30 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ShouldWarnAboutMovingCourse()
+        {
+            Setup("queryevent\\sampleevent1.coursescribe");
+
+            Id<Course>[] result;
+
+            result = QueryEvent.ShouldWarnAboutMovingControl(eventDB, CourseId(6), CourseControlId(205), new PointF(25, 30));
+            TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(3), CourseId(4), CourseId(5) });
+
+            result = QueryEvent.ShouldWarnAboutMovingControl(eventDB, CourseId(6), CourseControlId(205), new PointF(20, -10));
+            Assert.IsNull(result);
+
+            result = QueryEvent.ShouldWarnAboutMovingControl(eventDB, CourseId(4), CourseControlId(19), new PointF(30, -25));
+            Assert.IsNull(result);
+
+            Setup("queryevent\\marymoor5.ppen");
+
+            result = QueryEvent.ShouldWarnAboutMovingControl(eventDB, CourseId(6), CourseControlId(612), new PointF(30, -25));
+            Assert.IsNull(result);
+
+
+        }
+
+        [TestMethod]
         public void ControlsUnusedInCourses()
         {
             Setup("queryevent\\marymoor5.ppen");

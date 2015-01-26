@@ -246,6 +246,13 @@ namespace PurplePen
             return MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, yesDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
         }
 
+        public DialogResult MovingSharedControl(string controlCode, string otherCourses)
+        {
+            using (MoveControlChoiceDialog dialog = new MoveControlChoiceDialog(controlCode, otherCourses)) {
+                return dialog.ShowDialog();
+            }
+        }
+
         // Update the title of the window to match the file name.
         void UpdateWindowTitle()
         {

@@ -155,6 +155,13 @@ namespace PurplePen.Tests
             return retVal;
         }
 
+        public System.Windows.Forms.DialogResult MovingSharedControl(string controlCode, string otherCourses)
+        {
+            output.WriteLine("MOVING SHARED CONTROL QUESTION: '{0}' in '{1}'", controlCode, otherCourses);
+            return returnQuestion;
+        }
+
+
         // Strings expected and returned from FindMissingMapFile.
         public string expectedMissingMapFile, newMapFile;
         public MapType newMapType;

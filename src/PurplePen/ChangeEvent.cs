@@ -744,6 +744,19 @@ namespace PurplePen
             return eventDB.AddControlPoint(newControlPoint);
         }
 
+        public static void ReplaceControlInCourse(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> oldControlId, Id<ControlPoint> newControlId)
+        {
+            foreach (Id<CourseControl> courseControlId in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).ToList()) {
+                if (eventDB.GetCourseControl(courseControlId).control == oldControlId) {
+                    // Replace the course control with a new one.
+                    CourseControl newCourseControl = (CourseControl) eventDB.GetCourseControl(courseControlId).Clone();
+                    newCourseControl.control = newControlId;
+                    newCourseControl.customNumberPlacement = false;
+                    eventDB.ReplaceCourseControl(courseControlId, newCourseControl);
+                }
+            }
+        }
+
         // Add a new course control to a course. Adds a new CourseControl referencing controlId into courseId. The place to insert is
         // given by courseControl1 and courseControl2. These control should have been gotten by calling FindControlInsertionPoint.
         public static Id<CourseControl> AddCourseControl(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, Id<CourseControl> courseControl1, Id<CourseControl> courseControl2)

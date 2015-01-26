@@ -1120,17 +1120,8 @@ namespace PurplePen
             // If the control is used by any courses, ask the user if he is sure.
             Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl);
             if (coursesUsingControl.Length > 0) {
-                bool first = true;
-                string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\""; 
-                StringBuilder courseNames = new StringBuilder();
-
-                foreach (Id<Course> courseId in coursesUsingControl) {
-                    if (!first)
-                        courseNames.Append(", ");
-                    courseNames.Append(eventDB.GetCourse(courseId).name);
-                    first = false;
-                }
-
+                string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\"";
+                string courseNames = QueryEvent.CourseList(eventDB, coursesUsingControl);
 
                 delete = ui.YesNoQuestion(string.Format(MiscText.DeleteControlFromAllControls, controlName, courseNames), false);
             }
@@ -2726,8 +2717,40 @@ namespace PurplePen
         }
 
         // Move a control.
-        public void MoveControl(Id<ControlPoint> controlId, PointF newLocation)
+        public void MoveControlInCurrentCourse(Id<ControlPoint> controlId, PointF newLocation)
         {
+            CourseDesignator currentCourse = selectionMgr.Selection.ActiveCourseDesignator;
+            if (!currentCourse.IsAllControls) { 
+                Id<Course> courseId = currentCourse.CourseId;
+                Id<CourseControl>[] courseControls = QueryEvent.GetCourseControlsInCourse(eventDB, new CourseDesignator(courseId), controlId);
+                Debug.Assert(courseControls.Length > 0);  // Control better be in current course.
+
+                Id<Course>[] otherCourses = QueryEvent.ShouldWarnAboutMovingControl(eventDB, courseId, courseControls[0], newLocation);
+
+                if (otherCourses != null) {
+                    string courseList = QueryEvent.CourseList(eventDB, otherCourses);
+                    string code = eventDB.GetControl(controlId).code;
+                    DialogResult result = ui.MovingSharedControl(code, courseList);
+                    if (result == DialogResult.Cancel) {
+                        // Cancel -- do nothing.
+                        return;
+                    }
+                    else if (result == DialogResult.No) {
+                        undoMgr.BeginCommand(9137, CommandNameText.MoveControl);
+                        // Create new control at location.
+                        string newCode = QueryEvent.NextUnusedControlCode(eventDB);
+                        Id<ControlPoint> newControlId = ChangeEvent.AddControlPoint(eventDB, eventDB.GetControl(controlId).kind, newCode, newLocation, 0);
+                        ChangeEvent.ReplaceControlInCourse(eventDB, courseId, controlId, newControlId);
+                        undoMgr.EndCommand(9137);
+                        return;
+                    }
+                    else {
+                        // Fall through to moving the control.
+                    }
+                }
+            }
+
+            // Just move the control.
             undoMgr.BeginCommand(137, CommandNameText.MoveControl);
             ChangeEvent.ChangeControlLocation(eventDB, controlId, newLocation);
             undoMgr.EndCommand(137);
@@ -3064,6 +3087,9 @@ namespace PurplePen
         void InfoMessage(string message);
         bool YesNoQuestion(string message, bool yesDefault);
         DialogResult YesNoCancelQuestion(string message, bool yesDefault);
+
+        // Yes = move control, No = create new control, Cancel = do nothing.
+        DialogResult MovingSharedControl(string controlCode, string otherCourses);
 
         // Find a missing map file.
         bool FindMissingMapFile(string missingMapFile);
