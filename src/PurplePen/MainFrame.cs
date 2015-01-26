@@ -1892,6 +1892,7 @@ namespace PurplePen
             PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB());
             printPunchesDialog.controller = controller;
             printPunchesDialog.PrintSettings = punchPrintSettings;
+            printPunchesDialog.PrintSettings.Count = 1;
 
             // show the dialog, on success, print.
             if (printPunchesDialog.ShowDialog(this) == DialogResult.OK) {
@@ -1914,6 +1915,7 @@ namespace PurplePen
             PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB(), controller.AnyMultipart());
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
+            printCoursesDialog.PrintSettings.Count = 1;
 
             if (controller.MustRasterizePrinting) {
                 // Force rasterization.
