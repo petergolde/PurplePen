@@ -1090,9 +1090,31 @@ namespace PurplePen
             return false;
         }
 
+        // Get the previous control in the selection.
+        private Id<CourseControl> PreviousCourseControlInSelection()
+        {
+            CourseView courseView = selectionMgr.ActiveCourseView;
+            if (courseView == null)
+                return Id<CourseControl>.None;
+            if (courseView.Kind != CourseView.CourseViewKind.Normal)
+                return Id<CourseControl>.None;
+
+            for (int i = 0; i < courseView.ControlViews.Count; ++i)
+            {
+                if (courseView.ControlViews[i].courseControlId == selectionMgr.Selection.SelectedCourseControl) {
+                    int prevIndex = courseView.GetPrevControl(i);
+                    if (prevIndex >= 0)
+                        return courseView.ControlViews[prevIndex].courseControlId;
+                }
+            }
+
+            return Id<CourseControl>.None;
+        }
+
         private bool DeleteControlFromCourse(SelectionMgr.SelectionInfo selection)
         {
             Debug.Assert(selection.ActiveCourseDesignator.IsNotAllControls);
+            Id<CourseControl> previous = PreviousCourseControlInSelection();
 
             undoMgr.BeginCommand(177, CommandNameText.DeleteControl);
 
@@ -1106,6 +1128,10 @@ namespace PurplePen
             }
 
             undoMgr.EndCommand(177);
+
+            // Select the previous course control. Makes inserting a new control easier.
+            if (previous.IsNotNone)
+                selectionMgr.SelectCourseControl(previous);
 
             return true;
         }
