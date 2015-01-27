@@ -47,6 +47,7 @@ using System.Printing.Interop;
 using System.Runtime.InteropServices;
 using System.Windows.Xps;
 using System.Windows.Documents;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -85,16 +86,28 @@ namespace PurplePen
             get { return printPreviewInProgress; }
         }
 
-        // Print the descriptions.
+        // Print normally (not using XPS).
         public void Print()
         {
             // Set up and position everything.
             SetupPrinting();
             printPreviewInProgress = false;
 
-            using (PrintDocument printDocument = CreatePrintDocument()) {
-                printDocument.Print();
-            }
+            do {
+                using (PrintDocument printDocument = CreatePrintDocument()) {
+                    printDocument.Print();
+                }
+
+                // If we didn't print all the pages, then we must have been doing a pause
+                // between pages.
+                if (currentPage < totalPages) {
+                    string pauseMessage;
+                    bool pause = PausePrintingAfterPage(currentPage - 1, out pauseMessage);
+                    Debug.Assert(pause);
+                    if (!controller.OkCancelMessage(pauseMessage, true))
+                        break;
+                }
+            } while (currentPage < totalPages);
         }
 
         // Do a print preview of the descriptions.
@@ -139,6 +152,7 @@ namespace PurplePen
         private void SetupPrinting()
         {
             totalPages = LayoutPages(pageSettings, GetPrintArea(pageSettings));
+            currentPage = 0;
         }
 
         // Setup the print document for printing. Should be called after SetupPrinting().
@@ -226,7 +240,7 @@ namespace PurplePen
                 float temp = paperWidth; paperWidth = paperHeight; paperHeight = temp;
             }
 
-            var paginator = new Paginator(this, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi, false);
+            var paginator = new Paginator(this, 0, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi, false);
 
             for (int pageNumber = 0; pageNumber < paginator.PageCount; ++pageNumber) {
                 var docPage = paginator.GetPage(pageNumber);
@@ -280,7 +294,14 @@ namespace PurplePen
                 ++currentPage;
             }
 
-            e.HasMorePages = (currentPage < totalPages);
+            e.HasMorePages = (currentPage < totalPages) && !StopDocumentAfterPage(currentPage - 1);
+        }
+
+        // Should we pause printing after the given page.
+        private bool StopDocumentAfterPage(int pageNumber)
+        {
+            string pauseMessage; // not used.
+            return (!printPreviewInProgress && !printingToBitmaps && pageNumber < totalPages - 1 && PausePrintingAfterPage(pageNumber, out pauseMessage));
         }
 
         // These can be overridden in the derived class if needed. Most useful is to override QueryPageSettings
@@ -288,7 +309,6 @@ namespace PurplePen
 
         protected virtual void BeginPrint(object sender, PrintEventArgs e)
         {
-            currentPage = 0;
         }
 
         protected virtual void EndPrint(object sender, PrintEventArgs e)
@@ -299,14 +319,14 @@ namespace PurplePen
         {
             if (currentPage < totalPages) {
                 bool landscape = e.PageSettings.Landscape;
+                string pausePrintingMessage = null;
                 ChangePageSettings(currentPage, ref landscape, e.PageSettings.Margins);
+                if (!printPreviewInProgress && pausePrintingMessage != null) {
+                    if (!controller.OkCancelMessage(pausePrintingMessage, true))
+                        e.Cancel = true;
+                }
                 e.PageSettings.Landscape = landscape;
             }
-        }
-
-        // Routine to change page settings for a particular page.
-        protected virtual void ChangePageSettings(int pageNumber, ref bool landscape, Margins margins)
-        {
         }
 
         #region Xps Printing Support
@@ -321,16 +341,31 @@ namespace PurplePen
                 SetupPrinting();
 
                 PrintQueue printQueue = GetPrintQueue(pageSettings.PrinterSettings.PrinterName);
-                PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
-                Margins margins = pageSettings.Margins;
 
-                BeginPrint(this, new PrintEventArgs());
+                do {
+                    PrintTicket printTicket = GetPrintTicket(printQueue, pageSettings);
+                    Margins margins = pageSettings.Margins;
 
-                printQueue.CurrentJobSettings.Description = documentTitle;
-                XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
-                documentWriter.Write(new Paginator(this, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket), showProgressDialog), printTicket);
+                    BeginPrint(this, new PrintEventArgs());
 
-                EndPrint(this, new PrintEventArgs());
+                    printQueue.CurrentJobSettings.Description = documentTitle;
+                    XpsDocumentWriter documentWriter = PrintQueue.CreateXpsDocumentWriter(printQueue);
+                    Paginator paginator = new Paginator(this, currentPage, new SizeF(pageSettings.PaperSize.Width, pageSettings.PaperSize.Height), margins, GetDPI(printTicket), showProgressDialog);
+                    documentWriter.Write(paginator, printTicket);
+                    currentPage += paginator.PageCount;
+
+                    EndPrint(this, new PrintEventArgs());
+
+                    // If we didn't print all the pages, then we must have been doing a pause
+                    // between pages.
+                    if (currentPage < totalPages) {
+                        string pauseMessage;
+                        bool pause = PausePrintingAfterPage(currentPage - 1, out pauseMessage);
+                        Debug.Assert(pause);
+                        if (!controller.OkCancelMessage(pauseMessage, true))
+                            break;
+                    }
+                } while (currentPage < totalPages);
             }
             finally {
                 if (showProgressDialog)
@@ -383,22 +418,29 @@ namespace PurplePen
         private class Paginator : DocumentPaginator
         {
             private BasicPrinting outer;
+            private int startingPage, pageCount;
             private System.Windows.Size pageSize;  // page size in 1/96 of an inch.
             private Margins margins;  // margins in 1/100 of an inch.
             private float dpi;
             private bool showProgressDialog;
 
-            public Paginator(BasicPrinting outer, SizeF pageSize, Margins margins, float dpi, bool showProgressDialog)
+            public Paginator(BasicPrinting outer, int startingPage, SizeF pageSize, Margins margins, float dpi, bool showProgressDialog)
             {
                 this.outer = outer;
+                this.startingPage = startingPage;
                 this.margins = margins;
                 this.dpi = dpi;
                 this.pageSize = new System.Windows.Size(HundrethsToPoints(pageSize.Width), HundrethsToPoints(pageSize.Height));
                 this.showProgressDialog = showProgressDialog;
+
+                pageCount = CountPages();
             }
 
             public override DocumentPage GetPage(int pageNumber)
             {
+                // This is called starting at zero, but we are really starting at the given page.
+                pageNumber += startingPage;
+
                 if (showProgressDialog) {
                     if (outer.controller.UpdateProgressDialog(string.Format(MiscText.PrintingPage, pageNumber + 1, outer.totalPages), (double)pageNumber / (double)outer.totalPages))
                         throw new Exception(MiscText.CancelledByUser);
@@ -467,7 +509,20 @@ namespace PurplePen
 
             public override int PageCount
             {
-                get { return outer.totalPages; }
+                get { return pageCount; }
+            }
+
+            // Count the number of pages we are going to print, taking into account stopping
+            // after some pages.
+            int CountPages()
+            {
+                int p = startingPage, count = 0;
+                do {
+                    count += 1;
+                    p += 1;
+                } while (p < outer.totalPages && !outer.StopDocumentAfterPage(p - 1));
+
+                return count;
             }
 
             public override System.Windows.Size PageSize
@@ -544,6 +599,18 @@ namespace PurplePen
         // and the printArea is the size to draw into (in hundreths of an inch), within the margins.
         // dpi is the resolution of the printing in dots per inch.
         protected abstract void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi);
+
+        // Routine to change page settings for a particular page.
+        protected virtual void ChangePageSettings(int pageNumber, ref bool landscape, Margins margins)
+        {
+        }
+
+        // Should we pause printing after this page?
+        protected virtual bool PausePrintingAfterPage(int pageNumber, out string pauseMessage)
+        {
+            pauseMessage = null;
+            return false;
+        }
 
         [DllImport("kernel32.dll")]
         static extern IntPtr GlobalLock(IntPtr hMem);

@@ -124,6 +124,23 @@ namespace PurplePen
             margins.Left = margins.Right = margins.Top = margins.Bottom = 0;
         }
 
+        protected override bool PausePrintingAfterPage(int pageNumber, out string pauseMessage)
+        {
+            if (coursePrintSettings.PauseAfterCourseOrPart && pages[pageNumber].lastPageOfCourseOrPart && pageNumber + 1 < pages.Count) {
+                pauseMessage = PausePrintingMessage(pageNumber);
+                return true;
+            }
+            else {
+                pauseMessage = null;
+                return false;
+            }
+        }
+
+        private string PausePrintingMessage(int pageNumber)
+        {
+            return string.Format(MiscText.PausePrinting, pages[pageNumber].description, pages[pageNumber + 1].description);
+        }
+
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // and the printArea in the size to draw into (in hundreths of an inch).
         protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
@@ -311,6 +328,7 @@ namespace PurplePen
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
         public bool UseXpsPrinting = false;          // If true, use XPS printing; default to not.
+        public bool PauseAfterCourseOrPart = false;  // If true, printing pauses after each course or part of course printed.
         public ColorModel PrintingColorModel = ColorModel.CMYK;
 
     }

@@ -47,9 +47,11 @@ namespace PurplePen
     class CoursePage
     {
         public CourseDesignator courseDesignator;             // course to print
+        public string description;           // description of course
         public RectangleF mapRectangle;      // rectangle to print in map coordinates
         public RectangleF printRectangle;     // rectangle to print to on page, in hundredth of inch.
         public bool landscape;                       // true if page should be printed in landscape orientation
+        public bool lastPageOfCourseOrPart;    // true if last page of a course or part of course (used for pausing printing)
     }
 
     // Class to layout the printing onto pages. Used for both printing and PDF creation.
@@ -104,6 +106,7 @@ namespace PurplePen
             // Go through each course and lay it out, then add to the page list.
             foreach (CourseDesignator courseDesignator in courseDesignators) {
                 pages.AddRange(LayoutOptimizedCourse(courseDesignator));
+                pages[pages.Count - 1].lastPageOfCourseOrPart = true;
             }
 
             return pages;
@@ -149,11 +152,12 @@ namespace PurplePen
         // Layout a course onto one or more pages.
         List<CoursePage> LayoutCourse(bool landscape, CourseDesignator courseDesignator)
         {
+            string description;
             List<CoursePage> pageList = new List<CoursePage>();
 
             // Get the area of the map we want to print, in map coordinates, and the ratio between print scale and map scale.
             float scaleRatio;
-            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseDesignator, out scaleRatio);
+            RectangleF mapArea = GetPrintAreaForCourse(landscape, courseDesignator, out scaleRatio, out description);
 
             // Get the available page size on the page. 
             RectangleF printableArea = landscape ? landscapePrintableArea : portraitPrintableArea;
@@ -164,6 +168,7 @@ namespace PurplePen
                 foreach (DimensionLayout horizontalLayout in LayoutPageDimension(mapArea.Left, mapArea.Width, printableArea.Left, printableArea.Width, scaleRatio)) {
                     CoursePage page = new CoursePage();
                     page.courseDesignator = courseDesignator;
+                    page.description = description;
                     page.landscape = landscape;
                     page.mapRectangle = new RectangleF(horizontalLayout.startMap, verticalLayout.startMap, horizontalLayout.lengthMap, verticalLayout.lengthMap);
                     page.printRectangle = new RectangleF(horizontalLayout.startPage, verticalLayout.startPage, horizontalLayout.lengthPage, verticalLayout.lengthPage);
@@ -224,11 +229,12 @@ namespace PurplePen
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
         // If asked for, crop to a single page size.
-        RectangleF GetPrintAreaForCourse(bool landscape, CourseDesignator courseDesignator, out float scaleRatio)
+        RectangleF GetPrintAreaForCourse(bool landscape, CourseDesignator courseDesignator, out float scaleRatio, out string description)
         {
             // Get the course view to get the scale ratio.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             scaleRatio = courseView.ScaleRatio;
+            description = courseView.CourseNameWithPart;
 
             RectangleF printArea = controller.GetPrintArea(courseDesignator);
 

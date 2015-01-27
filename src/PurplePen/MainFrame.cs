@@ -227,6 +227,16 @@ namespace PurplePen
             MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
+        // Show a ok-cancel message.
+        public bool OKCancelMessage(string message, bool okDefault)
+        {
+            if (descriptionControl != null)
+                descriptionControl.CloseAnyPopup();
+
+            DialogResult result = MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, okDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
+            return result == DialogResult.OK;
+        }
+
         // Ask a yes-no question.
         public bool YesNoQuestion(string message, bool yesDefault)
         {
@@ -1928,6 +1938,7 @@ namespace PurplePen
             if (printCoursesDialog.ShowDialog(this) == DialogResult.OK) {
                 // Save the settings for the next invocation of the dialog.
                 coursePrintSettings = printCoursesDialog.PrintSettings;
+                coursePrintSettings.PauseAfterCourseOrPart = true;
                 controller.PrintCourses(coursePrintSettings, false);
             }
 

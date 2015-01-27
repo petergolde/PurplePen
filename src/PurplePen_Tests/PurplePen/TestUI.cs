@@ -141,6 +141,21 @@ namespace PurplePen.Tests
             return retVal;
         }
 
+        public bool OKCancelMessage(string message, bool okDefault)
+        {
+            output.WriteLine("OK/CANCEL MESSAGE: '{0}' (default {1})", message, okDefault ? "ok" : "cancel");
+            bool retVal;
+
+            if (returnQuestion == System.Windows.Forms.DialogResult.None)
+                retVal = okDefault;
+            else if (returnQuestion == System.Windows.Forms.DialogResult.OK)
+                retVal = true;
+            else
+                retVal = false;
+            output.WriteLine("  (returned {0})", retVal ? "ok" : "cancel");
+            return retVal;
+        }
+
         public System.Windows.Forms.DialogResult YesNoCancelQuestion(string message, bool yesDefault)
         {
             output.WriteLine("YES/NO/CANCEL QUESTION: '{0}' (default {1})", message, yesDefault ? "yes" : "no");

@@ -1054,6 +1054,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finished printing &quot;{0}&quot;. Press OK to begin printing &quot;{1}&quot;..
+        /// </summary>
+        internal static string PausePrinting {
+            get {
+                return ResourceManager.GetString("PausePrinting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GPL Ghostscript failed to read PDF file successfully.
         /// </summary>
         internal static string PdfConversionFailed {

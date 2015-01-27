@@ -2987,6 +2987,11 @@ namespace PurplePen
             ui.EndProgressDialog();
         }
 
+        public bool OkCancelMessage(string message, bool okDefault)
+        {
+            return ui.OKCancelMessage(message, okDefault);
+        }
+
         // Get the undo manager. This is ONLY for test support purposes.
 #if TEST
         internal
@@ -3111,6 +3116,7 @@ namespace PurplePen
         void ErrorMessage(string message);
         void WarningMessage(string message);
         void InfoMessage(string message);
+        bool OKCancelMessage(string message, bool okDefault);
         bool YesNoQuestion(string message, bool yesDefault);
         DialogResult YesNoCancelQuestion(string message, bool yesDefault);
 
