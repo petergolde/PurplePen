@@ -283,6 +283,7 @@ namespace PurplePen
     class GpxCreationSettings
     {
         public Id<Course>[] CourseIds;          // Courses to export. Course.None means all controls.
+        public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
         public string CodePrefix;               // Add this to control codes
 
         public GpxCreationSettings Clone()

@@ -37,6 +37,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -112,6 +113,36 @@ namespace PurplePen
                 for (int i = 0; i < array.Length; ++i)
                     array[i] = new CourseDesignator(value[i]);
                 SelectedCourseDesignators = array;
+            }
+        }
+
+        // Get or set if all courses (other than all controls) is set.
+        // Only use if ShowCourseParts is false.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden), Browsable(false)]
+        public bool AllCoursesSelected
+        {
+            get
+            {
+                Debug.Assert(!this.ShowCourseParts);
+                List<Id<Course>> selectedCourseIds = SelectedCourses.ToList();
+                selectedCourseIds.Remove(Id<Course>.None);
+                return selectedCourseIds.Count == eventDB.AllCourseIds.Count;
+            }
+            set
+            {
+                Debug.Assert(!this.ShowCourseParts);
+
+                List<Id<Course>> selectedCourseIds = SelectedCourses.ToList();
+                bool allControls = selectedCourseIds.Contains(Id<Course>.None);
+                selectedCourseIds.Clear();
+                if (allControls)
+                    selectedCourseIds.Add(Id<Course>.None);
+
+                if (value) {
+                    selectedCourseIds.AddRange(eventDB.AllCourseIds);
+                }
+
+                SelectedCourses = selectedCourseIds.ToArray();
             }
         }
 

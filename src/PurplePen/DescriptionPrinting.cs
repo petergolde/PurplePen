@@ -118,6 +118,7 @@ namespace PurplePen
         }
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
+        public bool AllCourses = true;          // If true, overrides the course ids in CourseIds except for "all controls".
 
         public PrintingCountKind CountKind = PrintingCountKind.OneDescription;
         public int Count = 1;                         // count of descriptions

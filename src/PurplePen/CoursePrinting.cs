@@ -323,6 +323,7 @@ namespace PurplePen
         }
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
+        public bool AllCourses = true;          // If true, overrides the course ids in CourseIds except for "all controls".
 
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 

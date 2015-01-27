@@ -70,6 +70,12 @@ namespace PurplePen
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
+            // Courses
+            if (settings.CourseIds != null)
+                courseSelector.SelectedCourses = settings.CourseIds;
+            if (settings.AllCourses)
+                courseSelector.AllCoursesSelected = true;
+
             // Folder name
             otherDirectoryTextBox.Text = settings.outputDirectory;
 
@@ -104,6 +110,7 @@ namespace PurplePen
         {
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
+            settings.AllCourses = courseSelector.AllCoursesSelected;
 
             // Which folder?
             settings.mapDirectory = mapDirectory.Checked;

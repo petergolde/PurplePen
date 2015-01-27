@@ -76,7 +76,11 @@ namespace PurplePen
             PageSettings pageSettings = settings.PageSettings;
             PrinterSettings printerSettings = pageSettings.PrinterSettings;
 
-            // CONSIDER: Currently we always select courses, because the courses in the print settings could be out of date.
+            // Courses
+            if (settings.CourseIds != null)
+                courseSelector.SelectedCourses = settings.CourseIds;
+            if (settings.AllCourses)
+                courseSelector.AllCoursesSelected = true;
 
             // Output section.
             printerName.Text = printerSettings.PrinterName;
@@ -126,6 +130,7 @@ namespace PurplePen
         {
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
+            settings.AllCourses = courseSelector.AllCoursesSelected;
 
             // Copies section.
             if (copiesCombo.SelectedIndex == 0) {

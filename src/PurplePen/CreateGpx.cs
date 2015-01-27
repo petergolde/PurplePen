@@ -24,11 +24,6 @@ namespace PurplePen
             {
                 settings = value;
                 UpdateDialog();
-
-                // Select all controls in addition to all courses.
-                List<Id<Course>> courseList = courseSelector.SelectedCourses.ToList();
-                courseList.Add(Id<Course>.None);
-                courseSelector.SelectedCourses = courseList.ToArray();
             }
         }
 
@@ -42,6 +37,17 @@ namespace PurplePen
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
+            if (settings.CourseIds == null) {
+                List<Id<Course>> courseList = courseSelector.SelectedCourses.ToList();
+                courseList.Add(Id<Course>.None);
+                courseSelector.SelectedCourses = courseList.ToArray();
+            }
+            else {
+                courseSelector.SelectedCourses = settings.CourseIds;
+            }
+            if (settings.AllCourses)
+                courseSelector.AllCoursesSelected = true;
+
             namePrefixTextBox.Text = settings.CodePrefix;
         }
 
@@ -50,6 +56,7 @@ namespace PurplePen
         {
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
+            settings.AllCourses = courseSelector.AllCoursesSelected;
             settings.CodePrefix = namePrefixTextBox.Text;
         }
 

@@ -87,7 +87,11 @@ namespace PurplePen
         // Update the dialog with information from the settings.
         void UpdateDialog()
         {
-            // CONSIDER: Currently we always select courses, because the courses in the print settings could be out of date.
+            // Courses
+            if (settings.CourseIds != null)
+                courseSelector.SelectedCourses = settings.CourseIds;
+            if (settings.AllCourses)
+                courseSelector.AllCoursesSelected = true;
 
             // Output section.
             paperSize.Text = Util.GetPaperSizeText(settings.PaperSize);
@@ -126,6 +130,7 @@ namespace PurplePen
         {
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
+            settings.AllCourses = courseSelector.AllCoursesSelected;
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);

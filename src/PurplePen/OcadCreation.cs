@@ -319,6 +319,7 @@ namespace PurplePen
     class OcadCreationSettings
     {
         public Id<Course>[] CourseIds;          // Courses to print. Course.None means all controls.
+        public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
         public int version;                                // OCAD version to use (6,7,8,9)
         public bool mapDirectory, fileDirectory;   // directory to place output files in
         public string outputDirectory;              // the output directory if mapDirectory and fileDirectoy are false.
