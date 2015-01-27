@@ -89,6 +89,8 @@ namespace PurplePen
             paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
 
             copiesUpDown.Value = settings.Count;
+            checkBoxPausePrinting.Checked = settings.PauseAfterCourseOrPart;
+
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
             checkBoxMergeParts.Checked = settings.PrintMapExchangesOnOneMap;
@@ -103,6 +105,7 @@ namespace PurplePen
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
+            settings.PauseAfterCourseOrPart = checkBoxPausePrinting.Checked;
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);

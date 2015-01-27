@@ -233,7 +233,7 @@ namespace PurplePen
             if (descriptionControl != null)
                 descriptionControl.CloseAnyPopup();
 
-            DialogResult result = MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Question, okDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
+            DialogResult result = MessageBox.Show(this, message, MiscText.AppTitle, MessageBoxButtons.OKCancel, MessageBoxIcon.Information, okDefault ? MessageBoxDefaultButton.Button1 : MessageBoxDefaultButton.Button2);
             return result == DialogResult.OK;
         }
 
@@ -1925,7 +1925,6 @@ namespace PurplePen
             PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB(), controller.AnyMultipart());
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
-            printCoursesDialog.PrintSettings.Count = 1;
 
             if (controller.MustRasterizePrinting) {
                 // Force rasterization.
@@ -1934,11 +1933,12 @@ namespace PurplePen
                 printCoursesDialog.EnableRasterizeChoice = false;
             }
 
+            printCoursesDialog.PrintSettings.Count = 1;
+
             // show the dialog, on success, print.
             if (printCoursesDialog.ShowDialog(this) == DialogResult.OK) {
                 // Save the settings for the next invocation of the dialog.
                 coursePrintSettings = printCoursesDialog.PrintSettings;
-                coursePrintSettings.PauseAfterCourseOrPart = true;
                 controller.PrintCourses(coursePrintSettings, false);
             }
 

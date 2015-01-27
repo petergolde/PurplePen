@@ -76,6 +76,7 @@ namespace PurplePen
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.copiesUpDown = new System.Windows.Forms.NumericUpDown();
             this.copiesLabel = new System.Windows.Forms.Label();
+            this.checkBoxPausePrinting = new System.Windows.Forms.CheckBox();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
             this.checkBoxRasterPrinting = new System.Windows.Forms.CheckBox();
@@ -182,6 +183,7 @@ namespace PurplePen
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
             this.tableLayoutPanel2.Controls.Add(this.copiesUpDown, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.copiesLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxPausePrinting, 0, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // copiesUpDown
@@ -208,6 +210,13 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.copiesLabel, "copiesLabel");
             this.copiesLabel.Name = "copiesLabel";
+            // 
+            // checkBoxPausePrinting
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.checkBoxPausePrinting, 3);
+            resources.ApplyResources(this.checkBoxPausePrinting, "checkBoxPausePrinting");
+            this.checkBoxPausePrinting.Name = "checkBoxPausePrinting";
+            this.checkBoxPausePrinting.UseVisualStyleBackColor = true;
             // 
             // printDialog
             // 
@@ -334,5 +343,6 @@ namespace PurplePen
         private System.Windows.Forms.ComboBox comboBoxMultiPage;
         private System.Windows.Forms.CheckBox checkBoxRasterPrinting;
         private System.Windows.Forms.CheckBox checkBoxMergeParts;
+        private System.Windows.Forms.CheckBox checkBoxPausePrinting;
     }
 }
