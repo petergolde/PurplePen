@@ -16,16 +16,62 @@
 
 <h1>Purple Pen Change Summary</h1>
 
-<h2>Changes in 2.4.0</h2>
+<h2>Changes in 2.5.0</h2>
 <h3>New features</h3>
 <ul>
     <li>
         <p>
-            Remove the "Exit" button from the initial screen, since there is already an "X" button in the
-            top corner.
+            Added the "Course/Duplicate Course..." command to duplicate a course. (Requested by several people.)
         </p>
     </li>
-
+    <li>
+        <p>
+            Added the ability to override the automatic computation of course length and specify a course length
+            in the course properties. (Thanks to David Rosen for this request.)
+        </p>
+    </li>
+    <li>
+        <p>
+            When a control that is shared between multiple courses is moved, a dialog now comes up asking if 
+            you want to move that control is all courses, or create a new control (thereby not changing the other
+            courses.) This does not occur if you move a control on the All Controls display, or move a control less
+            than 50 meters. This helps a common confusion, especially among beginners.
+        </p>
+    </li>
+    <li>
+        <p>
+            After deleting a control, the control that preceded it is selected. This makes it easier to add a new 
+            control. (Thanks to Mark Roberts for this suggestion.)
+        </p>
+    </li>    
+    <li>
+        <p>
+            On commands that have a list of courses to select from (Print, Create OCAD files, etc.), the set of 
+            courses selected is preserved between invocations of the command. (Thanks to Mark Roberts for this suggestion.)
+        </p>
+    </li>   
+    <li>
+        <p>
+            Printing courses has an option to pause printing after each course or course part is printed. This allows
+            easily changing paper or flipping paper over to print the back side. (Thanks to Mike Gammon for this suggestion.)
+        </p>
+    </li>   
+    <li>
+        <p>
+            Textual control descriptions can be done in Japanese. (Thanks to Tojo Masaya for this translation.)
+        </p>
+    </li>  
+    <li>
+        <p>
+            The default number of copies of a course to print is always 1. (Thanks to Mark Roberts for this suggestion.)
+        </p>
+    </li>   
+    <li>
+        <p>
+            Remove the "Exit" button from the initial screen, since there is already an "X" button in the
+            top corner. (Thanks to Mark Roberts for this suggestion.)
+        </p>
+    </li>
 </ul>
 
 <h3>Bug Fixes</h3>
