@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Minden ellenőrzőpont</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Purple Pen fájlok|*.ppen|Minden fájl|*.*</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>Purple Pen fájl|*.ppen</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>Új &amp;Esemény</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Megnyitás…</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>Men&amp;tés</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Mentés más&amp;ként…</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>OCAD fájlok létrehozása...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>PDF fájlok létrehozása...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>RouteGadget fájlok létrehozása...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Adatcsere fájl létrehozása (IOF XML)...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Leírások nyomtatása...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Kartonok &amp;nyomtatása...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Pályák nyomtatása...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Csak ez a &amp;Rész</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Ez a pálya</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Minden pálya</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Nyomtatandó &amp;terület</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>A program nyel&amp;ve:</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Kilépés</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Fájl</value>
+  </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Kijelölés megszüntetése</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Visszavonás</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>Ú&amp;jra</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Törlés</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>S&amp;zerkesztés</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Teljes pálya</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Te&amp;ljes térkép</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>Na&amp;gyítás</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>Nagyon &amp;alacsony</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>Alacs&amp;ony</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>Kö&amp;zepes</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>Maga&amp;s</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Teljes</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Térkép intenzitás</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Alacsony</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Magas</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Térkép&amp;minőség</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Mutassa a &amp;Felugró adatokat</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Minden ellenőrzőpont</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Nézet</value>
+  </data>
+  <data name="changeMapFileMenu.Text" xml:space="preserve">
+    <value>&amp;Térkép fájl...</value>
+  </data>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>&amp;Ellenőrző kódok módosítása</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>A&amp;utomatikus számozás</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Nem használt ellenőrzöpontok törlése</value>
+  </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>&amp;Szúrásminták...</value>
+  </data>
+  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Leírás testreszabása</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>&amp;Pálya kinézetének testreszabása...</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Esemény</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>Új &amp;pálya</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>Pálya &amp;törlése</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>Tu&amp;lajdonságok…</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Pálya sorrend...</value>
+  </data>
+  <data name="courseLoadMenu.Text" xml:space="preserve">
+    <value>&amp;Versenyzőszám...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Pálya</value>
+  </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Új &amp;rajt</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Új &amp;ellenőrzőpont</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>Új &amp;cél</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Új &amp;pontleírás</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>&amp;Térképcsere az ellenőrzőpontnál</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Szalagozás a térképcseréig</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Új &amp;térképcsere</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Kötelező átkelő</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Átkelő</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Elzárt terület</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Veszélyes hely</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Vizes hely</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Elsősegély hely</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Tiltott út jelzése</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Nem keresztezhető határ</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Regisztrációs jel</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Fehér terület</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Vonal</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Téglalap</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Új &amp;speciális elem</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Új szö&amp;vegsor</value>
+  </data>
+  <data name="deleteItemMenu.Text" xml:space="preserve">
+    <value>&amp;Törlés</value>
+  </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>Új kanyar</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>Kanyar törlése</value>
+  </data>
+  <data name="addGapMenu.Text" xml:space="preserve">
+    <value>Új rés</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>Rés törlése</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Szöveg módosítása...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>&amp;Sor kinézete...</value>
+  </data>
+  <data name="rotateMenu.Text" xml:space="preserve">
+    <value>&amp;Forgatás</value>
+  </data>
+  <data name="noFlaggingMenu.Text" xml:space="preserve">
+    <value>Nincs szalagozás</value>
+  </data>
+  <data name="entireFlaggingMenu.Text" xml:space="preserve">
+    <value>A teljes átmenet szalagos</value>
+  </data>
+  <data name="beginFlaggingMenu.Text" xml:space="preserve">
+    <value>Az átmenet eleje szalagozott</value>
+  </data>
+  <data name="endFlaggingMenu.Text" xml:space="preserve">
+    <value>Az átmenet vége szalagozott</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Át&amp;menet szalagozása</value>
+  </data>
+  <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
+    <value>A megjelenített pályák módosítása...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Elem</value>
+  </data>
+  <data name="courseSummaryMenu.Text" xml:space="preserve">
+    <value>Pálya összefoglaló</value>
+  </data>
+  <data name="eventAuditMenu.Text" xml:space="preserve">
+    <value>Esemény ellenőrzése</value>
+  </data>
+  <data name="legLengthsMenu.Text" xml:space="preserve">
+    <value>Átmenet hosszak</value>
+  </data>
+  <data name="controlCrossrefMenu.Text" xml:space="preserve">
+    <value>Ellenőrzőpontok keresztreferenciája</value>
+  </data>
+  <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
+    <value>Ellenőrzőpont és átmenet forgalma</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Jelentések</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Súgó</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Súgó (lefordított)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Web oldal</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Segítség/Hibabejelentés</value>
+  </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Támogatás</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>A Purple Pen programról</value>
+  </data>
+  <data name="symbolBrowserMenu.Text" xml:space="preserve">
+    <value>Szimbólum böngésző</value>
+  </data>
+  <data name="descriptionBrowserMenu.Text" xml:space="preserve">
+    <value>Leírás böngésző</value>
+  </data>
+  <data name="controlTesterMenu.Text" xml:space="preserve">
+    <value>Ellenőrzőpont teszt</value>
+  </data>
+  <data name="mapTesterMenu.Text" xml:space="preserve">
+    <value>Térkép teszt</value>
+  </data>
+  <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
+    <value>Pálya választó teszt</value>
+  </data>
+  <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pont háló teszt</value>
+  </data>
+  <data name="dumpOCADFileMenu.Text" xml:space="preserve">
+    <value>OCAD fájl listázása</value>
+  </data>
+  <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Jelentés teszt</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Betűméretek</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Összeomlás</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Hibakeresés</value>
+  </data>
+  <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
+    <value>Leírás nyelvének hozzáadása</value>
+  </data>
+  <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
+    <value>Fordított szövegek megadása</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Symbols.xml összefűzése</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>Leírás lefordítása</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Súgó</value>
+  </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>Megnyitás</value>
+  </data>
+  <data name="openToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Megnyitás (Ctrl+O)</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="saveToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Mentés (Ctrl+S)</value>
+  </data>
+  <data name="undoToolStripButton.Text" xml:space="preserve">
+    <value>Visszavonás</value>
+  </data>
+  <data name="undoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Visszavonás (Ctrl+Z)</value>
+  </data>
+  <data name="redoToolStripButton.Text" xml:space="preserve">
+    <value>Újra</value>
+  </data>
+  <data name="redoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Újra (Ctrl+Y)</value>
+  </data>
+  <data name="deleteToolStripButton.Text" xml:space="preserve">
+    <value>Törlés (Del)</value>
+  </data>
+  <data name="addStartToolStripButton.Text" xml:space="preserve">
+    <value>Új rajt</value>
+  </data>
+  <data name="addControlToolStripButton.Text" xml:space="preserve">
+    <value>Új ellenőrzőpont</value>
+  </data>
+  <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Új ellenőrzőpont (Ctrl+A)</value>
+  </data>
+  <data name="addFinishToolStripButton.Text" xml:space="preserve">
+    <value>Új cél</value>
+  </data>
+  <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Új pontleírás</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Térképcsere az ellenőrzőpontnál</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Szalagozás a térképcseréig</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Új térképcsere</value>
+  </data>
+  <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kötelező átkelő</value>
+  </data>
+  <data name="optionalCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Átkelő</value>
+  </data>
+  <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elzárt terület</value>
+  </data>
+  <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Veszélyes hely</value>
+  </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vizes hely</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elsősegély hely</value>
+  </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tiltott út jelzése</value>
+  </data>
+  <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nem keresztezhető határ</value>
+  </data>
+  <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Regisztrációs jel</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fehér terület</value>
+  </data>
+  <data name="textToolStripMenuItem.Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vonal</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Téglalap</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Új speciális elem</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Új kanyar (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Új rés (Ctrl+G)</value>
+  </data>
+  <data name="zoomAmountLabel.Text" xml:space="preserve">
+    <value>Nagyítás: 100%</value>
+  </data>
+  <data name="locationDisplay.Text" xml:space="preserve">
+    <value>X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>XML fájl|*.xml</value>
+  </data>
+  <data name="saveXmlFileDialog.Title" xml:space="preserve">
+    <value>XML fájl létrehozása</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Kép fájl|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+</root>

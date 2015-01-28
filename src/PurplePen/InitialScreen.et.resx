@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>Lahku</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Ava viimati vaadatud võistlus</value>
   </data>
@@ -137,5 +134,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Teretulemast Purple Peni</value>
+  </data>
+  <data name="quitButton.Text" xml:space="preserve">
+    <value>Lahku</value>
   </data>
 </root>

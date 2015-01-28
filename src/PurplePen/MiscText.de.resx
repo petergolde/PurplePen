@@ -436,7 +436,7 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Das Ergebnis der PDF-Konvertierung aus Datei '{0}' konnte nicht gelesen werden</value>
   </data>
   <data name="CannotCreatePdfs" xml:space="preserve">
-    <value>PDFs können aus folgendem Grund nicht gelesen werden:</value>
+    <value>PDFs können aus folgendem Grund nicht erzeugt werden:</value>
   </data>
   <data name="UserDefined" xml:space="preserve">
     <value>Benutzerdefiniert</value>

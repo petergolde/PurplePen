@@ -207,9 +207,14 @@
   <data name="EnterCode" xml:space="preserve">
     <value>新しいコードを入力</value>
   </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>特徴物のサイズを入力
+「/」で傾斜上の高さ
+「|」で2つの特徴物の高さ</value>
+  </data>
   <data name="EnterEventTitle" xml:space="preserve">
     <value>新しいイベント名を入力してください。
-「 | 」を使用すると改行になります。
+「 | 」を使用すると改行できます。
 （すべてのコースに反映されます）</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
@@ -221,6 +226,10 @@
   </data>
   <data name="EnterClimb" xml:space="preserve">
     <value>新規登高を入力</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>記号の新しい意味を入力
+(全コースに反映されます)</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
     <value>新規テキストを追加</value>
@@ -244,7 +253,7 @@
     <value>コントロールコードは0から始めるべきではありません。</value>
   </data>
   <data name="CodeCouldBeUpsideDown" xml:space="preserve">
-    <value>コントロールコードには、上下逆さに見ると違う数字に見える番号は使わないほうがよいでしょう。</value>
+    <value>コントロールコードには、逆さにも読める番号を使用しないことを勧めます。</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>コントロールコード "{0}" が複数回使われています。</value>
@@ -339,11 +348,14 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="Singular" xml:space="preserve">
     <value>単数形</value>
   </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>このテキストにより説明される対象のオブジェクトの記載される場所を示す「*」が必要です。</value>
+  </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>course setting for orienteering</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
-    <value>地図上に表示させたいテキストを入力し、OKを押したあと、テキストを所望の位置にドラッグで移動させてください。</value>
+    <value>地図上に表示させたいテキストを入力し、OKを押したあと、テキストを任意の位置にドラッグで移動させてください。</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>テキストを追加</value>
@@ -368,6 +380,9 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>印刷するコースが選択されていません。</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** 翻訳先の言葉で書かれた Purple Pen のドキュメントを含むウェブサイトがある場合は、ここに http から始まる URL を入れてください。無い場合はそのまま空欄にしてください。</value>
   </data>
   <data name="MapExchange_Long" xml:space="preserve">
     <value>地図交換所</value>
@@ -405,6 +420,9 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="CrashSend" xml:space="preserve">
     <value>レポート送信</value>
   </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>[すべてのパート] を表示している場合ディスクリプションを配置できません。ディスクリプションを配置するコースパートに表示を切り換えてから、[ディスクリプションを配置]を選択してください。</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
   </data>
@@ -422,6 +440,9 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="UserDefined" xml:space="preserve">
     <value>ユーザ定義</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>PDF のマップサイズ</value>
   </data>
   <data name="CancelledByUser" xml:space="preserve">
     <value>ユーザーによりキャンセル</value>
@@ -466,13 +487,13 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
     <value>黄色</value>
   </data>
   <data name="AddLineExplanation" xml:space="preserve">
-    <value>線の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に線分を引きます。</value>
+    <value>線の外観を設定してください。OKを押したあと、マウスをドラッグして任意の位置に線分を引きます。</value>
   </data>
   <data name="AddLineTitle" xml:space="preserve">
     <value>線を追加</value>
   </data>
   <data name="AddRectangleExplanation" xml:space="preserve">
-    <value>長方形の外観を設定してください。OKを押したあと、マウスをドラッグして所望の場所に長方形を配置します。</value>
+    <value>長方形の外観を設定してください。OKを押したあと、マウスをドラッグして任意の場所に長方形を配置します。</value>
   </data>
   <data name="AddRectangleTitle" xml:space="preserve">
     <value>長方形を追加</value>

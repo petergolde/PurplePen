@@ -121,12 +121,12 @@
     <value>下へ移動</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Purple Penのユーザインタフェース、レポート、印刷でリスト表示されるコースの順序を、「上へ移動」と「下へ移動」ボタンで変更します。</value>
+    <value>Purple Penのユーザインタフェース、レポート、印刷でリスト表示されるコースの並び順を、「上へ移動」と「下へ移動」ボタンで変更します。</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>上へ移動</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>コースの順序</value>
+    <value>コースの並び順</value>
   </data>
 </root>

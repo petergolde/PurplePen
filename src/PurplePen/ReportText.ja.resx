@@ -154,7 +154,7 @@
     <value>走行人数</value>
   </data>
   <data name="ColumnHeader_Location" xml:space="preserve">
-    <value>場所</value>
+    <value>位置</value>
   </data>
   <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
     <value># コース</value>
@@ -162,14 +162,20 @@
   <data name="ColumnHeader_Reason" xml:space="preserve">
     <value>理由</value>
   </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>同じ地図記号?</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>{0} のコースの概要</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>｛0｝ のコントロールのクロスリファレンス</value>
+    <value>{0} のコントロール・クロスリファレンス</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
-    <value>近くにあるコントロール</value>
+    <value>近接しているコントロール</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>{0} メートル以内の距離で近接しているコントロールの組み合わせを表示します。「同じ地図記号?」列では、近接するコントロールの地図記号(D欄)が同じであるかを表示します。</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
     <value>ディスクリプションボックスの欠損</value>
@@ -179,6 +185,9 @@
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
     <value>すべてのコントロールで特徴物・特徴部をディスクリプションのD欄に表記してください</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>「between」がG欄にある場合、D欄とE欄に2つの特徴物が必要です。</value>
   </data>
   <data name="EventAudit_MissingEJunction" xml:space="preserve">
     <value>「分岐」または「交点」がF欄にある場合、D欄とE欄に2つの特徴物が必要です。</value>

@@ -133,7 +133,7 @@
     <value>オブジェクトを所望の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
   </data>
   <data name="DraggingCorner" xml:space="preserve">
-    <value>オブジェクトの角を所望の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
+    <value>オブジェクトの角を任意の位置にドラッグで移動させ、マウスボタンをリリースで配置します</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
     <value>左クリックで新しくコントロールを配置します</value>

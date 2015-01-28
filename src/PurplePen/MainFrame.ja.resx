@@ -127,7 +127,7 @@
     <value>Purple Pen ファイル|*.ppen</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
-    <value>新規イベント(&amp;N)</value>
+    <value>新規イベント(&amp;N)...</value>
   </data>
   <data name="openMenu.Text" xml:space="preserve">
     <value>開く(&amp;O)...</value>
@@ -295,7 +295,7 @@
     <value>プロパティ(&amp;P)...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>コースの順序...</value>
+    <value>コースの並び順...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>走行人数(&amp;L)...</value>
@@ -313,7 +313,7 @@
     <value>フィニッシュを追加(&amp;F)</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>ディスクリプションを追加(&amp;D)</value>
+    <value>ディスクリプションを配置(&amp;D)</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>コントロールの場所で地図交換</value>
@@ -370,7 +370,7 @@
     <value>特殊なコース記号を追加(&amp;I)</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>テキストラインを追加(&amp;L)</value>
+    <value>テキスト行を追加(&amp;L)</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>削除(&amp;D)</value>
@@ -427,7 +427,7 @@
     <value>レッグ長(&amp;L)</value>
   </data>
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
-    <value>コントロールのクロスリファレンス(&amp;C)</value>
+    <value>コントロール・クロスリファレンス(&amp;C)</value>
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>コントロールおよびレッグごとの走行人数(&amp;D)</value>
@@ -437,6 +437,9 @@
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen のヘルプ(&amp;H)</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen ヘルプ (日本語)</value>
   </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Purple Pen ウェブサイト(&amp;W)</value>
@@ -538,7 +541,7 @@
     <value>フィニッシュを追加</value>
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>ディスクリプションを追加</value>
+    <value>ディスクリプションを配置</value>
   </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>コントロールの場所で地図交換</value>
@@ -596,6 +599,9 @@
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>曲げ点を追加(Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
   </data>
   <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
     <value>切れ目を追加(Ctrl+G)</value>

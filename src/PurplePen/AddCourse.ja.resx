@@ -180,11 +180,14 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>クラスリスト / 副タイトル</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>長さ:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>登高</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>コースタイプ:</value>
+    <value>コースの種類:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
     <value>コース名:</value>

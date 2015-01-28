@@ -121,7 +121,7 @@
     <value>OK</value>
   </data>
   <data name="bsdLicenseLinkLabel.Text" xml:space="preserve">
-    <value>Purple Pen -ohjelman lisenssi on BSD-tyylinen.</value>
+    <value>Ohjelman Purple Pen lisenssi on BSD-tyylinen.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen lisenssi</value>

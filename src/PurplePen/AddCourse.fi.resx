@@ -180,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Sarjalista / Alaotsikko</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Pituus:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Kokonaisnousu:</value>
   </data>

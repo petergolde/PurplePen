@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Open last viewed event</value>
   </data>
@@ -137,5 +134,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Welcome to Purple Pen</value>
+  </data>
+  <data name="quitButton.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
 </root>

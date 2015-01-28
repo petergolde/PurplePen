@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>終了</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>前回使用したイベントを開く</value>
   </data>
@@ -140,5 +137,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen へようこそ</value>
+  </data>
+  <data name="quitButton.Text" xml:space="preserve">
+    <value>終了</value>
   </data>
 </root>

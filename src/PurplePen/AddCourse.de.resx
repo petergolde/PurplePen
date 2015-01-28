@@ -180,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Kategorie</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Länge:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Höhenmeter:</value>
   </data>

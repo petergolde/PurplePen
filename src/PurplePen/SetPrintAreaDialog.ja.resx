@@ -124,7 +124,7 @@
     <value>キャンセル</value>
   </data>
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
-    <value>マウスドラッグで所望の印刷領域を設定してください。</value>
+    <value>マウスドラッグで印刷領域を設定してください。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>印刷領域を設定</value>

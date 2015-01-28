@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.4.0\n"
+"Project-Id-Version: Purple Pen 2.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2014-10-01 15:55-07:00\n"
+"POT-Creation-Date: 2015-01-27 17:51-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © 2007-2012 by Peter Golde"
-msgstr "Copyright © 2007-2012 Peter Golde"
+msgid "Copyright © 2007-2014 by Peter Golde"
+msgstr "Copyright © 2007-2014 Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -160,6 +160,11 @@ msgstr "Følgjande tekst vises på andre linje i postbeskrivelsen "
 msgid "Class list / Secondary title"
 msgstr "Klasseliste / sekundær tittel"
 
+#: AddCourse.resx, lengthLabel.Text
+#: SelectionDescriptionText.resx, Length
+msgid "Length:"
+msgstr "Lengd:"
+
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
@@ -184,6 +189,10 @@ msgstr "Poengløype"
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
 msgstr "meter"
+
+#: AddCourse.resx, kmSuffix.Text
+msgid "km"
+msgstr ""
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -662,6 +671,11 @@ msgstr ""
 msgid "Change Line Appearance"
 msgstr ""
 
+#: CommandNameText.resx, DuplicateCourse
+#: MiscText.resx, DuplicateCourseTitle
+msgid "Duplicate Course"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
 msgstr ""
@@ -1102,10 +1116,6 @@ msgstr "Kjønn:"
 msgid "Customized Symbol Text"
 msgstr "Tilpasset symboltekst"
 
-#: InitialScreen.resx, quitButton.Text
-msgid "Exit"
-msgstr "Avslutt"
-
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
 msgstr "Åpne sist opna arrangement"
@@ -1417,12 +1427,16 @@ msgstr "&Legg til løype"
 msgid "&Delete Course"
 msgstr "&Slett løype"
 
+#: MainFrame.resx, duplicateCourseMenu.Text
+msgid "D&uplicate Course..."
+msgstr ""
+
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
 msgstr "&Eigenskapar …"
 
 #: MainFrame.resx, courseOrderMenu.Text
-msgid "Course Order..."
+msgid "Course &Order..."
 msgstr "Løyperekkefølge..."
 
 #: MainFrame.resx, courseLoadMenu.Text
@@ -2381,6 +2395,24 @@ msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
 msgstr ""
 
+#: MiscText.resx, AutomaticLength
+msgid "Automatic"
+msgstr ""
+
+#: MiscText.resx, BadLength
+msgid "The length for a course must be a number 0.1 - 99.9, or "
+"blank to calculate length automatically."
+msgstr ""
+
+#: MiscText.resx, EnterLength
+msgid "Enter length in km, or leave blank to calculate "
+"automatically"
+msgstr ""
+
+#: MiscText.resx, PausePrinting
+msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Ikkje varsle om manglende fonter igjen"
@@ -2664,6 +2696,10 @@ msgstr "Førehandsvising …"
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Antall kopier av kvar løype:"
+
+#: PrintCourses.resx, checkBoxPausePrinting.Text
+msgid "Pause printing after each course or part"
+msgstr ""
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
@@ -3125,10 +3161,6 @@ msgstr "inn til posten"
 msgid "into finish funnel"
 msgstr "målsluse"
 
-#: SelectionDescriptionText.resx, Length
-msgid "Length:"
-msgstr "Lengd:"
-
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
 msgstr "Linjehøgde:"
@@ -3227,6 +3259,10 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
+msgstr ""
+
+#: SelectionDescriptionText.resx, CalculatedLength
+msgid "Calculated Length:"
 msgstr ""
 
 #: SetPrintAreaDialog.resx, okButton.Text

@@ -1,0 +1,3506 @@
+# Purple Pen localization file
+# Copyright (C) 2008
+# This file is distributed under the same license as the Purple Pen package.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Purple Pen 2.5.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2015-01-27 17:51-08:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AboutForm.resx, copyrightLabel.Text
+msgid "Copyright © 2007-2014 by Peter Golde"
+msgstr "Copyright © 2007-2014 Peter Golde"
+
+#: AboutForm.resx, freeLabel.Text
+msgid "Purple Pen is free software and may be copied and shared."
+msgstr "A Purple Pen szabadszoftver, másolható és megosztható."
+
+#: AboutForm.resx, disclaimerLabel.Text
+msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
+"CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED "
+"WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED."
+msgstr "EZT A SZOFTVERT A SZERZŐI JOG TULAJDONOSAI ÉS A "
+"HOZZÁJÁRULÓK ÚGY BIZTOSÍTJÁK, „AHOGY VAN”, ÉS SEMMILYEN "
+"NYÍLT VAGY BURKOLT GARANCIA – BELEÉRTVE, DE NEM ERRE "
+"KORLÁTOZVA AZ ELADHATÓSÁGOT VAGY EGY ADOTT CÉLRA VALÓ "
+"ALKALMATOSSÁGOT – NEM ÉRVÉNYESÍTHETŐ."
+
+#: AboutForm.resx, okButton.Text
+#: InitialScreen.resx, okButton.Text
+#: LicenseForm.resx, okButton.Text
+#: MissingFonts.resx, okButton.Text
+#: OkCancelDialog.resx, okButton.Text
+msgid "OK"
+msgstr "Rendben"
+
+#: AboutForm.resx, creditsButton.Text
+msgid "Credits"
+msgstr "Névjegy"
+
+#: AboutForm.resx, licenseButton.Text
+msgid "View Full License"
+msgstr "A teljes licensz"
+
+#: AboutForm.resx, $this.Text
+msgid "About Purple Pen"
+msgstr "A Purple Pen programról"
+
+#: AddCourse.resx, firstControlLabel.Text
+msgid "First control number:"
+msgstr "Első ellenőrzőpont:"
+
+#: AddCourse.resx, descriptionAppearanceLabel.Text
+#: AllControlsProperties.resx, descriptionAppearanceLabel.Text
+msgid "Description appearance:"
+msgstr "Pontleírás kinézete:"
+
+#: AddCourse.resx, mapScaleLabel.Text
+#: AllControlsProperties.resx, printingScaleLabel.Text
+msgid "Map printing scale:"
+msgstr "Térkép nyomtatás léptéke:"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
+
+#: AddCourse.resx, descKindCombo.Items
+#: AllControlsProperties.resx, descKindCombo.Items
+#: PrintDescriptions.resx, descriptionKindCombo.Items1
+msgid "Symbols"
+msgstr "Szimbólumok"
+
+#: AddCourse.resx, descKindCombo.Items1
+#: AllControlsProperties.resx, descKindCombo.Items1
+#: ChangeText.resx, groupBox3.Text
+#: EnterSymbolText.resx, textColumn.HeaderText
+#: MainFrame.resx, addTextMenu.Text
+#: MainFrame.resx, textToolStripMenuItem.Text
+#: PrintDescriptions.resx, descriptionKindCombo.Items2
+#: SelectionDescriptionText.resx, SpecialName_Text
+msgid "Text"
+msgstr "Szöveg"
+
+#: AddCourse.resx, descKindCombo.Items2
+#: AllControlsProperties.resx, descKindCombo.Items2
+msgid "Symbols and text"
+msgstr "Szimbólumok és szöveg"
+
+#: AddCourse.resx, labelKindLabel.Text
+msgid "Control circle labels:"
+msgstr "Ellenőrzőpont kör címke:"
+
+#: AddCourse.resx, labelKindCombo.Items
+msgid "Sequence number (3)"
+msgstr "Sorszám (3)"
+
+#: AddCourse.resx, labelKindCombo.Items1
+msgid "Control code (145)"
+msgstr "Ellenőrző kód (145)"
+
+#: AddCourse.resx, labelKindCombo.Items2
+msgid "Sequence and code (3-145)"
+msgstr "Sorszám és kód (3-145)"
+
+#: AddCourse.resx, labelKindCombo.Items3
+msgid "Sequence and score (3(30))"
+msgstr "Sorszám és érték (3(30))"
+
+#: AddCourse.resx, labelKindCombo.Items4
+msgid "Code and score (145(30))"
+msgstr "Kód és érték (145(30))"
+
+#: AddCourse.resx, scoreColumnLabel.Text
+msgid "Show points in:"
+msgstr "Pontok megjelenítése:"
+
+#: AddCourse.resx, scoreColumnCombo.Items
+msgid "Column A"
+msgstr "A oszlop"
+
+#: AddCourse.resx, scoreColumnCombo.Items1
+msgid "Column B"
+msgstr "B oszlop"
+
+#: AddCourse.resx, scoreColumnCombo.Items2
+msgid "Column H"
+msgstr "H oszlop"
+
+#: AddCourse.resx, scoreColumnCombo.Items3
+msgid "(do not display)"
+msgstr "(nem jelenik meg)"
+
+#: AddCourse.resx, groupBox1.Text
+#: AllControlsProperties.resx, appearanceGroupBox.Text
+#: ChangeText.resx, groupBox1.Text
+#: CreatePdfCourses.resx, groupBoxAppearance.Text
+#: LinePropertiesDialog.resx, groupBox2.Text
+#: PrintCourses.resx, groupBoxAppearance.Text
+#: PrintDescriptions.resx, layoutGroup.Text
+#: PrintPunches.resx, layoutGroup.Text
+msgid "Appearance"
+msgstr "Kinézet"
+
+#: AddCourse.resx, secondaryTitleDescription.Text
+msgid "The following (optional) text will appear on the second "
+"line of the control description sheet:"
+msgstr "A következő (esetleges) szöveg meg fog jelenni az "
+"ellenőrzőpont leírásánál a második sorban:"
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Osztály lista / Másodlagos cím"
+
+#: AddCourse.resx, lengthLabel.Text
+#: SelectionDescriptionText.resx, Length
+msgid "Length:"
+msgstr "Hossz:"
+
+#: AddCourse.resx, climbLabel.Text
+#: SelectionDescriptionText.resx, Climb
+msgid "Climb:"
+msgstr "Emelkedés:"
+
+#: AddCourse.resx, courseTypeLabel.Text
+msgid "Course type:"
+msgstr "Pálya típus:"
+
+#: AddCourse.resx, courseNameLabel.Text
+msgid "Course name:"
+msgstr "Pálya neve:"
+
+#: AddCourse.resx, courseKindCombo.Items
+msgid "Normal Course"
+msgstr "Normál pálya"
+
+#: AddCourse.resx, courseKindCombo.Items1
+msgid "Score Course"
+msgstr "Értékes pálya"
+
+#: AddCourse.resx, metersSuffix.Text
+msgid "meters"
+msgstr "méter"
+
+#: AddCourse.resx, kmSuffix.Text
+msgid "km"
+msgstr ""
+
+#: AddCourse.resx, $this.Text
+#: CommandNameText.resx, NewCourse
+msgid "New Course"
+msgstr "Új pálya"
+
+#: AddTextLine.resx, textLineLabel.Text
+msgid "Enter text to place on separate line of control "
+"descriptions:"
+msgstr "Írja be az ellenőrző pont leírások elválasztó sorába "
+"kerülő szöveget:"
+
+#: AddTextLine.resx, coursesLabel.Text
+msgid "Courses:"
+msgstr "Pályák:"
+
+#: AddTextLine.resx, positionLabel.Text
+msgid "Position:"
+msgstr "Pozíció:"
+
+#: AddTextLine.resx, comboBoxPosition.Items
+msgid "Above {0}"
+msgstr "{0} alatt"
+
+#: AddTextLine.resx, comboBoxPosition.Items1
+msgid "Below {0}"
+msgstr "{0} felett"
+
+#: AddTextLine.resx, comboBoxCourses.Items
+msgid "This course only"
+msgstr "Csak ez a pálya"
+
+#: AddTextLine.resx, comboBoxCourses.Items1
+msgid "All courses with {0}"
+msgstr "Minden pálya ezzel: {0}"
+
+#: AddTextLine.resx, $this.Text
+#: CommandNameText.resx, AddTextLine
+msgid "Add Text Line"
+msgstr "Szövegsor hozzáadása"
+
+#: AllControlsProperties.resx, allControlsPropertiesLabel.Text
+msgid "These settings control how the map and descriptions for "
+"All Controls are printed."
+msgstr "Ezek a beállítások vezérlik a térkép és pontleírások "
+"nyomtatását Minden ellenőrzőpont esetén"
+
+#: AllControlsProperties.resx, $this.Text
+msgid "All Controls Properties"
+msgstr "Minden ellenőrzőpont beállításai"
+
+#: AutoNumbering.resx, disallowInvertibleCheckBox.Text
+#: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
+msgid "Disallow codes that could be read upside-down (e.g., "
+"\"68\"/\"89\")"
+msgstr "Nem javasoltak az olyan kódok melyek fejjel lefelé is "
+"olvashatóak (pl. \"68\"/\"89\")"
+
+#: AutoNumbering.resx, renumberExistingRadioButton.Text
+msgid "Renumber existing controls also"
+msgstr "Átszámozni a már meglevő ellenőrzőpontokat is"
+
+#: AutoNumbering.resx, newControlsOnlyRadioButton.Text
+msgid "Apply these settings to newly created controls only"
+msgstr "A beállítások csak az új ellenőrzőpontokra lesznek hatással"
+
+#: AutoNumbering.resx, existingControlsGroupBox.Text
+msgid "Existing Controls"
+msgstr "Létező ellenőrzőpontok"
+
+#: AutoNumbering.resx, automaticNumberingLabel.Text
+msgid "Newly created controls are automatically numbered "
+"according to the following settings."
+msgstr "Az újonnan létrehozott ellenőrzőpontok automatikusan "
+"számozódnak az alábbi beállítások szerint."
+
+#: AutoNumbering.resx, startingCodeLabel.Text
+#: NewEventNumbering.resx, startingCodeLabel.Text
+msgid "Starting code:"
+msgstr "Kezdő kód:"
+
+#: AutoNumbering.resx, $this.Text
+#: CommandNameText.resx, AutoNumbering
+msgid "Automatic Numbering"
+msgstr "Automatikus számozás"
+
+#: ChangeAllCodes.resx, OldCode.HeaderText
+msgid "Original Code"
+msgstr "Eredeti kód"
+
+#: ChangeAllCodes.resx, NewCode.HeaderText
+msgid "New Code"
+msgstr "Új kód"
+
+#: ChangeAllCodes.resx, changeControlCodesLabel.Text
+msgid "To change the code for one or more controls,click in the "
+"\"New Code\" column and enter the new code. "
+msgstr "A kód megváltoztatásához az egyes ellenőrzőpontokon "
+"kattintson az \"új kód\" oszlopra és írja be az új kódot. "
+
+#: ChangeAllCodes.resx, $this.Text
+msgid "Change Control Codes"
+msgstr "Ellenőrzőkódok megváltoztatása"
+
+#: ChangeCourseOrder.resx, moveDownButton.Text
+msgid "Move down"
+msgstr "Mozgatás le"
+
+#: ChangeCourseOrder.resx, courseOrderLabel.Text
+msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
+"order that courses are listed in the user interface, "
+"reports, and printing."
+msgstr "A \"Mozgatás fel\" és \"Mozgatás le\" gombokkal lehet a pályák "
+"sorrendjét változtatni a felületen, jelentésekben és "
+"nyomtatáskor."
+
+#: ChangeCourseOrder.resx, moveUpButton.Text
+msgid "Move up"
+msgstr "Mozgatás fel"
+
+#: ChangeCourseOrder.resx, $this.Text
+msgid "Course Order"
+msgstr "Pályasorrend"
+
+#: ChangeMapFile.resx, mapFileDisplay.Text
+msgid "Current Map File"
+msgstr "Jelenlegi térképfájl"
+
+#: ChangeMapFile.resx, buttonChooseFile.Text
+#: NewEventMapFile.resx, chooseMapFileButton.Text
+msgid "&Choose map file..."
+msgstr "&Válasszon térképet..."
+
+#: ChangeMapFile.resx, openFileDialog.Filter
+#: NewEventMapFile.resx, openFileDialog.Filter
+msgid "All map "
+"files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
+"f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+msgstr "Minden térkép "
+"fájl|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+"|OCAD fájlok (*.ocd)|*.ocd|PDF fájlok (*.pdf)|*.pdf|Kép "
+"fájlok|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+
+#: ChangeMapFile.resx, labelDpi.Text
+msgid "Resolution:"
+msgstr "Felbontás:"
+
+#: ChangeMapFile.resx, labelScale.Text
+msgid "Scale:"
+msgstr "Lépték:"
+
+#: ChangeMapFile.resx, labelOneTo.Text
+msgid "1 :"
+msgstr "1 :"
+
+#: ChangeMapFile.resx, labelDpi2.Text
+#: NewEventBitmapScale.resx, dpiLabel.Text
+msgid "dots per inch"
+msgstr "pont/hüvelyk"
+
+#: ChangeMapFile.resx, $this.Text
+#: NewEventMapFile.resx, labelTitle.Text
+msgid "Map File"
+msgstr "Térkép fájl"
+
+#: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
+msgid "Choose the courses that this object will be displayed on:"
+msgstr "Válasszon pályákat ahol ez az objektum megjelenik:"
+
+#: ChangeSpecialCourses.resx, $this.Text
+#: CommandNameText.resx, ChangeDisplayedCourses
+msgid "Change Displayed Courses"
+msgstr "Válassza ki a megjelenítendő pályákat"
+
+#: ChangeText.resx, eventTitleMenuItem.Text
+#: NewEventTitle.resx, labelTitle.Text
+msgid "Event Title"
+msgstr "Esemény neve"
+
+#: ChangeText.resx, courseNameMenuItem.Text
+#: CourseLoad.resx, CourseName.HeaderText
+#: SelectionDescriptionText.resx, SpecialName_CourseName
+msgid "Course Name"
+msgstr "A pálya neve"
+
+#: ChangeText.resx, coursePartMenuItem.Text
+msgid "Course Part"
+msgstr "Pálya rész"
+
+#: ChangeText.resx, courseLengthMenuItem.Text
+msgid "Course Length"
+msgstr "Pálya hossz"
+
+#: ChangeText.resx, courseClimbMenuItem.Text
+msgid "Course Climb"
+msgstr "Pálya emelkedés"
+
+#: ChangeText.resx, classListMenuItem.Text
+msgid "Class List"
+msgstr "Osztálylista"
+
+#: ChangeText.resx, printScaleMenuItem.Text
+#: NewEventPrintScale.resx, labelTitle.Text
+msgid "Print Scale"
+msgstr "Nyomtatási lépték"
+
+#: ChangeText.resx, buttonChangeColor.Text
+msgid "Change Color..."
+msgstr "A szín megváltoztatása..."
+
+#: ChangeText.resx, label2.Text
+#: CourseAppearanceDialog.resx, label9.Text
+#: LinePropertiesDialog.resx, label1.Text
+msgid "Color:"
+msgstr "Szín:"
+
+#: ChangeText.resx, checkBoxItalic.Text
+msgid "Italic"
+msgstr "Dőlt"
+
+#: ChangeText.resx, checkBoxBold.Text
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
+msgid "Bold"
+msgstr "Félkövér"
+
+#: ChangeText.resx, label1.Text
+msgid "Font:"
+msgstr "Betűtípus:"
+
+#: ChangeText.resx, groupBox2.Text
+#: LinePropertiesDialog.resx, groupBox1.Text
+msgid "Sample"
+msgstr "Minta"
+
+#: ChangeText.resx, insertSpecialButton.Text
+msgid "Insert Special Text"
+msgstr "Speciális szöveg beszúrása"
+
+#: ColorChooserDialog.resx, label5.Text
+#: CourseAppearanceDialog.resx, label5.Text
+msgid "Black:"
+msgstr "Fekete:"
+
+#: ColorChooserDialog.resx, label6.Text
+#: CourseAppearanceDialog.resx, label6.Text
+msgid "Yellow:"
+msgstr "Sárga:"
+
+#: ColorChooserDialog.resx, label3.Text
+#: CourseAppearanceDialog.resx, label3.Text
+msgid "Magenta:"
+msgstr "Bíborvörös:"
+
+#: ColorChooserDialog.resx, label1.Text
+#: CourseAppearanceDialog.resx, label1.Text
+msgid "Cyan:"
+msgstr "Ciánkék:"
+
+#: ColorChooserDialog.resx, groupBoxPreview.Text
+#: CourseAppearanceDialog.resx, groupBoxPreview.Text
+msgid "Preview"
+msgstr "Előnézet"
+
+#: ColorChooserDialog.resx, $this.Text
+msgid "Choose Color"
+msgstr "Szín választás"
+
+#: CommandNameText.resx, ChangeSymbol
+msgid "Change Symbol"
+msgstr "Szimbólum módosítás"
+
+#: CommandNameText.resx, ChangeCode
+msgid "Change Control Code"
+msgstr "Ellenőrző kód módosítás"
+
+#: CommandNameText.resx, ChangeControl
+msgid "Change Control"
+msgstr "Ellenőrzőpont módosítás"
+
+#: CommandNameText.resx, ChangeScore
+msgid "Change Control Points"
+msgstr "Ellenőrző pontok módosítása"
+
+#: CommandNameText.resx, ChangeTitle
+msgid "Change Title"
+msgstr "Név módosítás"
+
+#: CommandNameText.resx, ChangeClimb
+msgid "Change Climb"
+msgstr "Emelkedés módosítás"
+
+#: CommandNameText.resx, ChangeCourseName
+msgid "Change Course Name"
+msgstr "Pályanév módosítása"
+
+#: CommandNameText.resx, ChangeTextLine
+msgid "Change Text Line"
+msgstr "Szövegsor módosítása"
+
+#: CommandNameText.resx, ChangeScale
+msgid "Update Map Scale"
+msgstr "Térkép lépték aktualizálás"
+
+#: CommandNameText.resx, MoveControl
+msgid "Move Control"
+msgstr "Ellenőrzőpont mozgatása"
+
+#: CommandNameText.resx, MoveControlNumber
+msgid "Move Control Number"
+msgstr "Ellenőrzőpont számának mozgatása"
+
+#: CommandNameText.resx, MoveObject
+msgid "Move Object"
+msgstr "Objektum mozgatása"
+
+#: CommandNameText.resx, DeleteControl
+msgid "Delete Control"
+msgstr "Ellenőrőzpont törlése"
+
+#: CommandNameText.resx, DeleteObject
+msgid "Delete Object"
+msgstr "Objektum törlése"
+
+#: CommandNameText.resx, DeleteTextLine
+msgid "Delete Text Line"
+msgstr "Szövegsor törlése"
+
+#: CommandNameText.resx, AddControl
+#: MainFrame.resx, addControlToolStripButton.Text
+msgid "Add Control"
+msgstr "Új ellenőrzőpont"
+
+#: CommandNameText.resx, AddStart
+#: MainFrame.resx, addStartToolStripButton.Text
+msgid "Add Start"
+msgstr "Új rajt"
+
+#: CommandNameText.resx, AddFinish
+#: MainFrame.resx, addFinishToolStripButton.Text
+msgid "Add Finish"
+msgstr "Új cél"
+
+#: CommandNameText.resx, AddCrossingPoint
+msgid "Add Mandatory Crossing Point"
+msgstr "Új kötelező átkelő"
+
+#: CommandNameText.resx, AddObject
+msgid "Add Object"
+msgstr "Új objektum"
+
+#: CommandNameText.resx, DeleteCourse
+msgid "Delete Course"
+msgstr "Pálya törlése"
+
+#: CommandNameText.resx, ChangeCourseProperties
+msgid "Change Course Properties"
+msgstr "Pálya adatainak módosítása"
+
+#: CommandNameText.resx, ChangeAllControlsProperties
+msgid "Change All Controls Properties"
+msgstr "Ellenőrzőpontok tulajdonságainak módosítása"
+
+#: CommandNameText.resx, NewEvent
+#: NewEventWizard.resx, $this.Text
+msgid "Create New Event"
+msgstr "Új esemény létrehozása"
+
+#: CommandNameText.resx, SetLegFlagging
+msgid "Change Leg Flagging"
+msgstr "Átmenet szalagozásának módosítása"
+
+#: CommandNameText.resx, ChangeCodes
+msgid "Change Codes"
+msgstr "Kódok módosítása"
+
+#: CommandNameText.resx, MoveBend
+msgid "Move Leg Bend"
+msgstr "Átmenet kanyarjának mozgatása"
+
+#: CommandNameText.resx, AddBend
+msgid "Add Bend"
+msgstr "Új kanyar"
+
+#: CommandNameText.resx, AddCorner
+msgid "Add Corner"
+msgstr "Új sarok"
+
+#: CommandNameText.resx, DeleteBend
+msgid "Remove Bend"
+msgstr "Kanyar eltávolítása"
+
+#: CommandNameText.resx, DeleteCorner
+msgid "Remove Corner"
+msgstr "Sarok eltávolítása"
+
+#: CommandNameText.resx, AddGap
+msgid "Add Gap"
+msgstr "Új rés"
+
+#: CommandNameText.resx, RemoveGap
+msgid "Remove Gap"
+msgstr "Rés eltávolítása"
+
+#: CommandNameText.resx, MoveGap
+msgid "Move Gap"
+msgstr "Rés mozgatása"
+
+#: CommandNameText.resx, Rotate
+msgid "Rotate"
+msgstr "Forgatás"
+
+#: CommandNameText.resx, ChangePunchPatterns
+msgid "Change Punch Patterns"
+msgstr "Szúráskép módosítása"
+
+#: CommandNameText.resx, ChangePunchcardFormat
+msgid "Change Punch Card Layout"
+msgstr "Karton felépítésének módosítása"
+
+#: CommandNameText.resx, SetPrintArea
+#: SetPrintAreaDialog.resx, $this.Text
+msgid "Set Print Area"
+msgstr "Nyomtatási terület beállítása"
+
+#: CommandNameText.resx, SetCourseLoad
+msgid "Change Competitor Load"
+msgstr "Versenyzőszám módosítása"
+
+#: CommandNameText.resx, SetCustomSymbolText
+#: CustomSymbolText.resx, $this.Text
+msgid "Customize Description Text"
+msgstr "A leírás testreazabása"
+
+#: CommandNameText.resx, ChangeCourseOrder
+msgid "Change Course Order"
+msgstr "Pályasorrend módosítása"
+
+#: CommandNameText.resx, ChangeMapFile
+msgid "Change Map File"
+msgstr "Térkép fájl módosítása"
+
+#: CommandNameText.resx, IgnoreMissingFonts
+msgid "Ignore Missing Fonts"
+msgstr "Hiányzó betűtípusok mellőzése"
+
+#: CommandNameText.resx, RemoveUnusedControls
+msgid "Remove Unused Controls"
+msgstr "A nem használt ellenőrzőpontok törlése"
+
+#: CommandNameText.resx, SetDescriptionLanguage
+msgid "Change Description Language"
+msgstr "A leírás nyelvének kiválasztása"
+
+#: CommandNameText.resx, ChangeText
+#: MiscText.resx, ChangeTextTitle
+msgid "Change Text"
+msgstr "Szöveg módosítása"
+
+#: CommandNameText.resx, ChangeCourseAppearance
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Course Appearance"
+msgstr "Pályakép testreszabása"
+
+#: CommandNameText.resx, AddMapExchange
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Exchange"
+msgstr "Új térképcsere"
+
+#: CommandNameText.resx, DeleteMapExchangeAtControl
+msgid "Delete Map Exchange"
+msgstr "Térképcsere törlése"
+
+#: CommandNameText.resx, ChangePartProperties
+msgid "Change Course Part Properties"
+msgstr "Pálya rész tulajdonságainak módosítása"
+
+#: CommandNameText.resx, ChangeLineAppearance
+#: MiscText.resx, ChangeLineAppearanceTitle
+msgid "Change Line Appearance"
+msgstr "Sor kinézetének módosítása"
+
+#: CommandNameText.resx, DuplicateCourse
+#: MiscText.resx, DuplicateCourseTitle
+msgid "Duplicate Course"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelAutoGapSize.Text
+msgid "Automatic leg gap size:"
+msgstr "Automatikus átmenet rés mérete:"
+
+#: CourseAppearanceDialog.resx, label12.Text
+#: CourseAppearanceDialog.resx, label10.Text
+#: CourseAppearanceDialog.resx, label8.Text
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: LinePropertiesDialog.resx, labelWidthMm.Text
+#: LinePropertiesDialog.resx, labelGapSizeMm.Text
+#: LinePropertiesDialog.resx, labelDashSizeMm.Text
+#: LinePropertiesDialog.resx, labelRadiusMm.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr "mm"
+
+#: CourseAppearanceDialog.resx, labelOutlineWidth.Text
+msgid "White outline around numbers:"
+msgstr "Fehér körvonal a számok körül:"
+
+#: CourseAppearanceDialog.resx, label7.Text
+msgid "Center dot diameter:"
+msgstr "A középpont átmérője:"
+
+#: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
+msgid "Regular"
+msgstr "Szabályos"
+
+#: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
+msgid "Control number style:"
+msgstr "Ellenőrzőpont stílusa:"
+
+#: CourseAppearanceDialog.resx, labelControlNumber.Text
+msgid "Control number height:"
+msgstr "Ellenőrzőpont sorszám magassága:"
+
+#: CourseAppearanceDialog.resx, labelLineWidth.Text
+msgid "Line width:"
+msgstr "Vonalvastagság:"
+
+#: CourseAppearanceDialog.resx, labelControlCircle.Text
+msgid "Control circle diameter:"
+msgstr "Ellenőrzőpont körének átmérője:"
+
+#: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
+msgid "Use IOF standard sizes"
+msgstr "IOF normál méretek használata"
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Elem méretek"
+
+#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
+msgid "Blend purple with underlying map colors"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
+msgid "Use purple color from map"
+msgstr "A térkép lila színét használja"
+
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "A lila szín"
+
+#: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
+#: MiscText.resx, Black
+msgid "Black"
+msgstr "Fekete"
+
+#: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
+#: MiscText.resx, Purple
+msgid "Purple"
+msgstr "Lila"
+
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Pontleírás"
+
+#: CourseLoad.resx, Load.HeaderText
+msgid "Competitor Load"
+msgstr "Versenyzőszám"
+
+#: CourseLoad.resx, courseLoadLabel.Text
+msgid "Set the number of competitors on each course by clicking "
+"in the second column and typing a number."
+msgstr "A versenyzőszámok beállításához kattintson az egyes "
+"pályáknál a második oszlopba és írja be a számot!"
+
+#: CourseLoad.resx, $this.Text
+msgid "Course Load"
+msgstr "Pálya terhelés"
+
+#: CoursePartBanner.resx, coursePartLabel.Text
+msgid "Course Part:"
+msgstr "Pálya rész:"
+
+#: CoursePartBanner.resx, buttonProperties.Text
+msgid "Properties..."
+msgstr "Tulajdonságok..."
+
+#: CoursePartProperties.resx, checkBoxDisplayFinish.Text
+msgid "Display finish circle on this course part"
+msgstr "Cél megjelenítése ezen a pálya részen"
+
+#: CoursePartProperties.resx, label1.Text
+msgid "These settings control the appearance of this part of a "
+"multi-part course."
+msgstr "Ezek a beállítások vezérlik ennek a résznek a "
+"megjelenítését többrészes pálya esetén"
+
+#: CoursePartProperties.resx, $this.Text
+msgid "Course Part Properties"
+msgstr "Pálya rész tulajdonságok"
+
+#: CourseSelector.resx, selectAll.Text
+msgid "All"
+msgstr "Összes"
+
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Egyik sem"
+
+#: CreateGpx.resx, coursesGroupBox.Text
+#: CreateOcadFiles.resx, coursesGroupBox.Text
+#: CreatePdfCourses.resx, coursesGroupBox.Text
+#: PrintCourses.resx, coursesGroupBox.Text
+#: PrintDescriptions.resx, coursesGroupBox.Text
+#: PrintPunches.resx, coursesGroupBox.Text
+msgid "Courses"
+msgstr "Pályák"
+
+#: CreateGpx.resx, namePrefixLabel.Text
+#: CreatePdfCourses.resx, fileNamePrefixLabel.Text
+msgid "Name prefix:"
+msgstr "Név előtag:"
+
+#: CreateGpx.resx, waypointGroupBox.Text
+msgid "Waypoints"
+msgstr ""
+
+#: CreateGpx.resx, headerLabel.Text
+msgid "A GPX File contains GPS coordinates for controls, and can "
+"be loaded onto a GPS or smartphone to verify the correct "
+"location of controls."
+msgstr ""
+
+#: CreateGpx.resx, $this.Text
+#: MainFrame.resx, saveGpxFileDialog.Title
+msgid "Create GPX File"
+msgstr ""
+
+#: CreateOcadFiles.resx, createButton.Text
+#: CreatePdfCourses.resx, okButton.Text
+#: CreateRouteGadget.resx, createButton.Text
+msgid "Create"
+msgstr "Létrehozás"
+
+#: CreateOcadFiles.resx, cancelButton.Text
+#: CreateRouteGadget.resx, cancelButton.Text
+#: MiscText.resx, CrashCancel
+#: NewEventWizard.resx, cancelButton.Text
+#: NonPrintableObjects.resx, cancelButton.Text
+#: OkCancelDialog.resx, cancelButton.Text
+#: OperationInProgress.resx, cancelButton.Text
+#: OverwritingOcadFilesDialog.resx, buttonCancel.Text
+#: PrintDescriptions.resx, cancelButton.Text
+#: PrintPunches.resx, cancelButton.Text
+#: SetPrintAreaDialog.resx, cancelButton.Text
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: CreateOcadFiles.resx, folderBrowserDialog.Description
+#: CreateRouteGadget.resx, folderBrowserDialog.Description
+msgid "Select a folder for the OCAD files"
+msgstr "Válassza ki az OCAD fájlok könyvtárát"
+
+#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
+msgid "File name prefix:"
+msgstr "Fájlnév előtag:"
+
+#: CreateOcadFiles.resx, fileFormatLabel.Text
+msgid "File format:"
+msgstr "Fájlformátum:"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items
+msgid "OCAD 6"
+msgstr "OCAD 6"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items1
+msgid "OCAD 7"
+msgstr "OCAD 7"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items2
+msgid "OCAD 8"
+msgstr "OCAD 8"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items3
+msgid "OCAD 9"
+msgstr "OCAD 9"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items4
+msgid "OCAD 10"
+msgstr "OCAD 10"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items5
+msgid "OCAD 11"
+msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: CreatePdfCourses.resx, printerGroup.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Kimenet"
+
+#: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
+#: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
+#: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
+msgid "Select folder..."
+msgstr "Könyvtár kiválasztása.."
+
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Másik könyvtár"
+
+#: CreateOcadFiles.resx, mapDirectory.Text
+#: CreatePdfCourses.resx, mapDirectory.Text
+#: CreateRouteGadget.resx, mapDirectory.Text
+msgid "Same folder as map file"
+msgstr "A térkép fájllal azonos könyvtár"
+
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "A Purple Pen fájllal azonos könyvtár"
+
+#: CreateOcadFiles.resx, folderGroupBox.Text
+#: CreatePdfCourses.resx, folderGroupBox.Text
+#: CreateRouteGadget.resx, folderGroupBox.Text
+msgid "Folder"
+msgstr "Könyvtár"
+
+#: CreateOcadFiles.resx, $this.Text
+msgid "Create OCAD Files"
+msgstr "OCAD fájlok létrehozása"
+
+#: CreatePdfCourses.resx, label1.Text
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Margók:"
+
+#: CreatePdfCourses.resx, marginChange.Text
+msgid "Change..."
+msgstr "Módosítás…"
+
+#: CreatePdfCourses.resx, paperSizeLabel.Text
+#: PrintCourses.resx, paperSizeLabel.Text
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Papírméret:"
+
+#: CreatePdfCourses.resx, paperSize.Text
+#: PrintCourses.resx, paperSize.Text
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tábla (11\"x17\")"
+
+#: CreatePdfCourses.resx, marginsLabel.Text
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Fent, Lent, Bal, Jobb: 14 mm"
+
+#: CreatePdfCourses.resx, checkBoxMergeParts.Text
+#: PrintCourses.resx, checkBoxMergeParts.Text
+msgid "Print Map Exchanges on Same Map "
+msgstr "Térképcserék nyomtatása ugyanarra a térképre "
+
+#: CreatePdfCourses.resx, labelColorModel.Text
+#: PrintCourses.resx, labelColorModel.Text
+msgid "Color Model:"
+msgstr "Szín modell:"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr "RGB"
+
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr "CMYK"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items
+#: PrintCourses.resx, comboBoxMultiPage.Items
+msgid "Crop to a single page"
+msgstr "Levágni egy oldalra"
+
+#: CreatePdfCourses.resx, comboBoxMultiPage.Items1
+#: PrintCourses.resx, comboBoxMultiPage.Items1
+msgid "Print on multiple pages"
+msgstr "Több oldalra nyomtatni"
+
+#: CreatePdfCourses.resx, labelAppearanceInfo.Text
+#: PrintCourses.resx, labelAppearanceInfo.Text
+msgid "If the print area is too large to fit on one page:"
+msgstr "Ha nem fér ki egy oldalra:"
+
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "Fájlok:"
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "Egy az összes pályához"
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "Pályánként különböző"
+
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items2
+msgid "One per course part"
+msgstr "Pálya részenként eltérő"
+
+#: CreatePdfCourses.resx, outputGroupBox.Text
+msgid "Files"
+msgstr "Fájlok"
+
+#: CreatePdfCourses.resx, folderBrowserDialog.Description
+msgid "Select a folder for the PDF files"
+msgstr "Válassza ki a PDF fájlok könyvtárát"
+
+#: CreatePdfCourses.resx, $this.Text
+msgid "Create PDF Files"
+msgstr "PDF fájlok létrehozása"
+
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Fájl neve"
+
+#: CreateRouteGadget.resx, label1.Text
+msgid "Enter the name (without .xml or .gif) for both of the "
+"RouteGadget files:"
+msgstr "Írja be a nevet (.xml vagy .gif kiterjesztés nélkül) a "
+"RouteGadget fájlokhoz:"
+
+#: CreateRouteGadget.resx, learnMoreLink.Text
+msgid "Learn more about RouteGadget"
+msgstr "További információk a RouteGadget-ról"
+
+#: CreateRouteGadget.resx, label2.Text
+msgid "RouteGadget requires both an image file (.gif) and IOF XML "
+"file (.xml). Choose the name and folder for both of these "
+"files."
+msgstr "A RouteGadget-hez szükséges a képfájl (.gif) és az IOF "
+"fájl (.xml) is. Válasszon nevet és könyvtárat ezeknek a "
+"fájloknak!"
+
+#: CreateRouteGadget.resx, $this.Text
+msgid "Create RouteGadget Files"
+msgstr "RouteGadget fájlok létrehozása"
+
+#: CustomSymbolText.resx, labelChooseLanguage.Text
+msgid "Choose the language used for textual control descriptions:"
+msgstr "Válassza ki a pontleírások nyelvét:"
+
+#: CustomSymbolText.resx, labelSymbolName.Text
+msgid "Symbol name:"
+msgstr "Szimbólum neve:"
+
+#: CustomSymbolText.resx, labelCustomizedText.Text
+msgid "Customized text:"
+msgstr "Egyedi szöveg:"
+
+#: CustomSymbolText.resx, buttonChangeText.Text
+msgid "Change text..."
+msgstr "Szöveg módosítása..."
+
+#: CustomSymbolText.resx, buttonDefault.Text
+msgid "Reset to standard"
+msgstr "Visszaállítás"
+
+#: CustomSymbolText.resx, labelStandardText.Text
+msgid "Standard text:"
+msgstr "Eredeti szöveg:"
+
+#: CustomSymbolText.resx, checkBoxShowKey.Text
+msgid "Show meaning below symbolic descriptions"
+msgstr "Mutassa a jelentését is a szimbólumnak"
+
+#: CustomSymbolText.resx, labelCustomizeText.Text
+msgid "Click on a description symbol to customize the text that "
+"is used in textual control descriptions."
+msgstr "Kattintson a leírásra a szöveg testreszabásához!"
+
+#: DownloadProgressDialog.resx, $this.Text
+msgid "Downloading"
+msgstr "Letöltés"
+
+#: EnterSymbolText.resx, numberColumn.HeaderText
+msgid "Number"
+msgstr "Szám"
+
+#: EnterSymbolText.resx, genderColumn.HeaderText
+msgid "Gender"
+msgstr "Nem"
+
+#: EnterSymbolText.resx, checkBoxPlural.Text
+msgid "Show plural forms"
+msgstr "Mutassa a többesszám űrlapját"
+
+#: EnterSymbolText.resx, checkBoxGender.Text
+msgid "Show gender forms"
+msgstr "Mutassa a nem űrlapját"
+
+#: EnterSymbolText.resx, labelDescription.Text
+msgid "Enter the customized text for the symbol in the \"Text\" "
+"column."
+msgstr "Írja be az egyedi szöveget a szimbólumhoz a \"Szöveg\" "
+"oszlopban!"
+
+#: EnterSymbolText.resx, labelGenderChooser.Text
+msgid "Gender:"
+msgstr "Nem:"
+
+#: EnterSymbolText.resx, $this.Text
+msgid "Customized Symbol Text"
+msgstr "Egyedi szöveg"
+
+#: InitialScreen.resx, openLastRadioButton.Text
+msgid "Open last viewed event"
+msgstr "A legutóbbi esemény megnyitása"
+
+#: InitialScreen.resx, openSampleRadioButton.Text
+msgid "Open a sample event"
+msgstr "A példa esemény megnyitása"
+
+#: InitialScreen.resx, createNewRadioButton.Text
+msgid "Create a new event..."
+msgstr "Új esemény létrehozása..."
+
+#: InitialScreen.resx, openExistingRadioButton.Text
+msgid "Open an existing event..."
+msgstr "Létező esemény megnyitása"
+
+#: InitialScreen.resx, label1.Text
+msgid "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
+msgstr ""
+
+#: InitialScreen.resx, donationLink.Text
+msgid "Make a donation"
+msgstr "Adományozás"
+
+#: InitialScreen.resx, $this.Text
+msgid "Welcome to Purple Pen"
+msgstr "Üdözöljük a Purple Pen-ben"
+
+#: LicenseForm.resx, bsdLicenseLinkLabel.Text
+msgid "Purple Pen is provided under a \"BSD\" style license."
+msgstr "A Purple Pen  \"BSD\" stílusú licensz alatt közzétéve."
+
+#: LicenseForm.resx, $this.Text
+msgid "Purple Pen License"
+msgstr "Purple Pen licensz"
+
+#: LinePropertiesDialog.resx, buttonChangeColor.Text
+msgid " Change Color..."
+msgstr " Szín módosítás..."
+
+#: LinePropertiesDialog.resx, label2.Text
+msgid "Style:"
+msgstr "Stílus:"
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items
+msgid "Single"
+msgstr "Egyszeres"
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items1
+msgid "Double"
+msgstr "Dupla"
+
+#: LinePropertiesDialog.resx, comboBoxStyle.Items2
+msgid "Dashed"
+msgstr "Szaggatott"
+
+#: LinePropertiesDialog.resx, labelWidth.Text
+#: PrinterMargins.resx, label2.Text
+msgid "Width:"
+msgstr "Szélesség:"
+
+#: LinePropertiesDialog.resx, labelGapSize.Text
+msgid "Gap Size:"
+msgstr "Rés mérete:"
+
+#: LinePropertiesDialog.resx, labelDashSize.Text
+msgid "Dash Size:"
+msgstr "Vonás mérete:"
+
+#: LinePropertiesDialog.resx, labelCornerRadius.Text
+msgid "Corner Radius:"
+msgstr "Sarok sugara:"
+
+#: MainFrame.resx, tabPage1.Text
+msgid "All Controls"
+msgstr "Minden ellenőrzőpont"
+
+#: MainFrame.resx, openFileDialog.Filter
+msgid "Purple Pen files|*.ppen|All files|*.*"
+msgstr "Purple Pen fájlok|*.ppen|Minden fájl|*.*"
+
+#: MainFrame.resx, saveFileDialog.Filter
+msgid "Purple Pen file|*.ppen"
+msgstr "Purple Pen fájl|*.ppen"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "Új &Esemény"
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Megnyitás…"
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "Men&tés"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Mentés más&ként…"
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "OCAD fájlok létrehozása..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr "PDF fájlok létrehozása..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "RouteGadget fájlok létrehozása..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr "Adatcsere fájl létrehozása (IOF XML)..."
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Leírások nyomtatása..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Kartonok &nyomtatása..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "&Pályák nyomtatása..."
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr "Csak ez a &Rész"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Ez a pálya"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Minden pálya"
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Nyomtatandó &terület"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "A program nyel&ve:"
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Kilépés"
+
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fájl"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Kijelölés megszüntetése"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Visszavonás"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "Ú&jra"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Törlés"
+
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "S&zerkesztés"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "&Teljes pálya"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Te&ljes térkép"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "Na&gyítás"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "Nagyon &alacsony"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "Alacs&ony"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "Kö&zepes"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "Maga&s"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Teljes"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Térkép intenzitás"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Alacsony"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Magas"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Térkép&minőség"
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr "Mutassa a &Felugró adatokat"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Minden ellenőrzőpont"
+
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Nézet"
+
+#: MainFrame.resx, changeMapFileMenu.Text
+msgid "&Map File..."
+msgstr "&Térkép fájl..."
+
+#: MainFrame.resx, changeCodesMenu.Text
+msgid "Change Control &Codes..."
+msgstr "&Ellenőrző kódok módosítása"
+
+#: MainFrame.resx, autoNumberingMenu.Text
+msgid "Automatic &Numbering..."
+msgstr "A&utomatikus számozás"
+
+#: MainFrame.resx, removeUnusedControlsMenu.Text
+msgid "Remove &Unused Controls..."
+msgstr "&Nem használt ellenőrzöpontok törlése"
+
+#: MainFrame.resx, punchPatternsMenu.Text
+msgid "&Punch Patterns..."
+msgstr "&Szúrásminták..."
+
+#: MainFrame.resx, customizeDescriptionsMenu.Text
+msgid "Customize &Description Text..."
+msgstr "&Leírás testreszabása"
+
+#: MainFrame.resx, customizeCourseAppearanceMenu.Text
+msgid "Customize Course &Appearance..."
+msgstr "&Pálya kinézetének testreszabása..."
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Esemény"
+
+#: MainFrame.resx, addCourseMenu.Text
+msgid "&Add Course..."
+msgstr "Új &pálya"
+
+#: MainFrame.resx, deleteCourseMenu.Text
+msgid "&Delete Course"
+msgstr "Pálya &törlése"
+
+#: MainFrame.resx, duplicateCourseMenu.Text
+msgid "D&uplicate Course..."
+msgstr ""
+
+#: MainFrame.resx, propertiesMenu.Text
+msgid "&Properties..."
+msgstr "Tu&lajdonságok…"
+
+#: MainFrame.resx, courseOrderMenu.Text
+msgid "Course &Order..."
+msgstr "Pálya sorrend..."
+
+#: MainFrame.resx, courseLoadMenu.Text
+msgid "Competitor &Load..."
+msgstr "&Versenyzőszám..."
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Pálya"
+
+#: MainFrame.resx, addStartMenu.Text
+msgid "Add &Start"
+msgstr "Új &rajt"
+
+#: MainFrame.resx, addControlMenu.Text
+msgid "Add &Control"
+msgstr "Új &ellenőrzőpont"
+
+#: MainFrame.resx, addFinishMenu.Text
+msgid "Add &Finish"
+msgstr "Új &cél"
+
+#: MainFrame.resx, addDescriptionsMenu.Text
+msgid "Add &Descriptions"
+msgstr "Új &pontleírás"
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr "&Térképcsere az ellenőrzőpontnál"
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr "&Szalagozás a térképcseréig"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Add Map E&xchange"
+msgstr "Új &térképcsere"
+
+#: MainFrame.resx, addMandatoryCrossingMenu.Text
+#: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
+msgid "Mandatory Crossing Point"
+msgstr "Kötelező átkelő"
+
+#: MainFrame.resx, addOptCrossingMenu.Text
+#: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_OptCrossing
+msgid "Optional Crossing Point"
+msgstr "Átkelő"
+
+#: MainFrame.resx, addOutOfBoundsMenu.Text
+#: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
+msgid "Out Of Bounds Area"
+msgstr "Elzárt terület"
+
+#: MainFrame.resx, addDangerousMenu.Text
+#: MainFrame.resx, dangerousToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Dangerous
+msgid "Dangerous Area"
+msgstr "Veszélyes hely"
+
+#: MainFrame.resx, addWaterMenu.Text
+#: MainFrame.resx, waterLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Water
+msgid "Water Location"
+msgstr "Vizes hely"
+
+#: MainFrame.resx, addFirstAidMenu.Text
+#: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_FirstAid
+msgid "First Aid Location"
+msgstr "Elsősegély hely"
+
+#: MainFrame.resx, addForbiddenMenu.Text
+#: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
+msgid "Forbidden Route Marking"
+msgstr "Tiltott út jelzése"
+
+#: MainFrame.resx, addBoundaryMenu.Text
+#: MainFrame.resx, boundaryToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Boundary
+msgid "Uncrossable Boundary"
+msgstr "Nem keresztezhető határ"
+
+#: MainFrame.resx, addRegMarkMenu.Text
+#: MainFrame.resx, registrationMarkToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_RegMark
+msgid "Registration Mark"
+msgstr "Regisztrációs jel"
+
+#: MainFrame.resx, whiteOutMenu.Text
+#: MainFrame.resx, whiteOutToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_WhiteOut
+msgid "White Out Area"
+msgstr "Fehér terület"
+
+#: MainFrame.resx, addImageMenu.Text
+#: MainFrame.resx, imageToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Image
+msgid "Image"
+msgstr "Kép"
+
+#: MainFrame.resx, addLineMenu.Text
+#: MainFrame.resx, lineToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Line
+msgid "Line"
+msgstr "Vonal"
+
+#: MainFrame.resx, addRectangleMenu.Text
+#: MainFrame.resx, rectangleToolStripMenuItem.Text
+#: SelectionDescriptionText.resx, SpecialName_Rectangle
+msgid "Rectangle"
+msgstr "Téglalap"
+
+#: MainFrame.resx, addSpecialItemMenu.Text
+msgid "Add Special &Item"
+msgstr "Új &speciális elem"
+
+#: MainFrame.resx, addTextLineMenu.Text
+msgid "Add Text &Line..."
+msgstr "Új szö&vegsor"
+
+#: MainFrame.resx, addBendMenu.Text
+msgid "Add &Bend"
+msgstr "Új kanyar"
+
+#: MainFrame.resx, removeBendMenu.Text
+msgid "Remove B&end"
+msgstr "Kanyar törlése"
+
+#: MainFrame.resx, addGapMenu.Text
+msgid "Add &Gap"
+msgstr "Új rés"
+
+#: MainFrame.resx, removeGapMenu.Text
+msgid "Remove G&ap"
+msgstr "Rés törlése"
+
+#: MainFrame.resx, changeTextMenu.Text
+msgid "Change &Text..."
+msgstr "Szöveg módosítása..."
+
+#: MainFrame.resx, changeLineAppearanceMenu.Text
+msgid "Change Line &Appearance..."
+msgstr "&Sor kinézete..."
+
+#: MainFrame.resx, rotateMenu.Text
+msgid "R&otate"
+msgstr "&Forgatás"
+
+#: MainFrame.resx, noFlaggingMenu.Text
+msgid "No Flagging"
+msgstr "Nincs szalagozás"
+
+#: MainFrame.resx, entireFlaggingMenu.Text
+msgid "Entire Leg Flagged"
+msgstr "A teljes átmenet szalagos"
+
+#: MainFrame.resx, beginFlaggingMenu.Text
+msgid "Beginning of Leg Flagged"
+msgstr "Az átmenet eleje szalagozott"
+
+#: MainFrame.resx, endFlaggingMenu.Text
+msgid "End of Leg Flagged"
+msgstr "Az átmenet vége szalagozott"
+
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "Át&menet szalagozása"
+
+#: MainFrame.resx, changeDisplayedCoursesMenu.Text
+msgid "Change Displa&yed Courses..."
+msgstr "A megjelenített pályák módosítása..."
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Elem"
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create &GPX File..."
+msgstr ""
+
+#: MainFrame.resx, gpsMenu.Text
+msgid "&GPS"
+msgstr ""
+
+#: MainFrame.resx, courseSummaryMenu.Text
+msgid "Course &Summary"
+msgstr "Pálya összefoglaló"
+
+#: MainFrame.resx, eventAuditMenu.Text
+msgid "Event &Audit"
+msgstr "Esemény ellenőrzése"
+
+#: MainFrame.resx, legLengthsMenu.Text
+msgid "&Leg Lengths"
+msgstr "Átmenet hosszak"
+
+#: MainFrame.resx, controlCrossrefMenu.Text
+msgid "Control &Cross-reference"
+msgstr "Ellenőrzőpontok keresztreferenciája"
+
+#: MainFrame.resx, controlAndLegLoadMenu.Text
+msgid "Control and Leg Loa&d"
+msgstr "Ellenőrzőpont és átmenet forgalma"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Jelentések"
+
+#: MainFrame.resx, helpContentsMenu.Text
+msgid "Purple Pen &Help"
+msgstr "Purple Pen &Súgó"
+
+#: MainFrame.resx, helpTranslatedMenu.Text
+msgid "Purple Pen Help (Translated)"
+msgstr "Purple Pen Súgó (lefordított)"
+
+#: MainFrame.resx, mainWebSiteToolMenu.Text
+msgid "Purple Pen &Web Site"
+msgstr "Purple Pen &Web oldal"
+
+#: MainFrame.resx, supportWebSiteMenu.Text
+msgid "&Support/Bug Reporting"
+msgstr "&Segítség/Hibabejelentés"
+
+#: MainFrame.resx, donateWebSiteMenu.Text
+msgid "Make a &Donation"
+msgstr "&Támogatás"
+
+#: MainFrame.resx, aboutMenu.Text
+msgid "&About Purple Pen"
+msgstr "A Purple Pen programról"
+
+#: MainFrame.resx, symbolBrowserMenu.Text
+msgid "Symbol Browser"
+msgstr "Szimbólum böngésző"
+
+#: MainFrame.resx, descriptionBrowserMenu.Text
+msgid "Description Browser"
+msgstr "Leírás böngésző"
+
+#: MainFrame.resx, controlTesterMenu.Text
+msgid "Control Tester"
+msgstr "Ellenőrzőpont teszt"
+
+#: MainFrame.resx, mapTesterMenu.Text
+msgid "Map Tester"
+msgstr "Térkép teszt"
+
+#: MainFrame.resx, courseSelectorTesterMenu.Text
+msgid "Course Selector Tester"
+msgstr "Pálya választó teszt"
+
+#: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
+msgid "Dot Grid Tester"
+msgstr "Pont háló teszt"
+
+#: MainFrame.resx, dumpOCADFileMenu.Text
+msgid "Dump OCAD File"
+msgstr "OCAD fájl listázása"
+
+#: MainFrame.resx, reportTesterToolStripMenuItem.Text
+msgid "Report Tester"
+msgstr "Jelentés teszt"
+
+#: MainFrame.resx, fontMetricsToolStripMenuItem.Text
+msgid "Font Metrics"
+msgstr "Betűméretek"
+
+#: MainFrame.resx, crashToolStripMenuItem.Text
+msgid "Crash"
+msgstr "Összeomlás"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Hibakeresés"
+
+#: MainFrame.resx, addDescriptionLanguageMenu.Text
+msgid "Add Description Language..."
+msgstr "Leírás nyelvének hozzáadása"
+
+#: MainFrame.resx, addTranslatedTextsMenu.Text
+msgid "Add Translated Texts..."
+msgstr "Fordított szövegek megadása"
+
+#: MainFrame.resx, mergeSymbolsMenu.Text
+msgid "Merge Symbols.xml..."
+msgstr "Symbols.xml összefűzése"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "Leírás lefordítása"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Súgó"
+
+#: MainFrame.resx, openToolStripButton.Text
+msgid "Open"
+msgstr "Megnyitás"
+
+#: MainFrame.resx, openToolStripButton.ToolTipText
+msgid "Open (Ctrl+O)"
+msgstr "Megnyitás (Ctrl+O)"
+
+#: MainFrame.resx, saveToolStripButton.Text
+#: MiscText.resx, CrashSave
+msgid "Save"
+msgstr "Mentés"
+
+#: MainFrame.resx, saveToolStripButton.ToolTipText
+msgid "Save (Ctrl+S)"
+msgstr "Mentés (Ctrl+S)"
+
+#: MainFrame.resx, undoToolStripButton.Text
+#: MiscText.resx, Undo
+msgid "Undo"
+msgstr "Visszavonás"
+
+#: MainFrame.resx, undoToolStripButton.ToolTipText
+msgid "Undo (Ctrl+Z)"
+msgstr "Visszavonás (Ctrl+Z)"
+
+#: MainFrame.resx, redoToolStripButton.Text
+#: MiscText.resx, Redo
+msgid "Redo"
+msgstr "Újra"
+
+#: MainFrame.resx, redoToolStripButton.ToolTipText
+msgid "Redo (Ctrl+Y)"
+msgstr "Újra (Ctrl+Y)"
+
+#: MainFrame.resx, deleteToolStripButton.Text
+msgid "Delete (Del)"
+msgstr "Törlés (Del)"
+
+#: MainFrame.resx, addControlToolStripButton.ToolTipText
+msgid "Add Control (Ctrl+A)"
+msgstr "Új ellenőrzőpont (Ctrl+A)"
+
+#: MainFrame.resx, descriptionsToolStripMenuItem.Text
+msgid "Add Descriptions"
+msgstr "Új pontleírás"
+
+#: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
+msgid "Map Exchange at Control Point"
+msgstr "Térképcsere az ellenőrzőpontnál"
+
+#: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
+msgid "Flagged Route to Map Exchange"
+msgstr "Szalagozás a térképcseréig"
+
+#: MainFrame.resx, specialItemToolStripMenu.Text
+msgid "Add Special Item"
+msgstr "Új speciális elem"
+
+#: MainFrame.resx, addBendToolStripButton.ToolTipText
+msgid "Add Bend (Ctrl+B)"
+msgstr "Új kanyar (Ctrl+B)"
+
+#: MainFrame.resx, addGapToolStripButton.Text
+msgid "toolStripButton1"
+msgstr "toolStripButton1"
+
+#: MainFrame.resx, addGapToolStripButton.ToolTipText
+msgid "Add Gap (Ctrl+G)"
+msgstr "Új rés (Ctrl+G)"
+
+#: MainFrame.resx, zoomAmountLabel.Text
+msgid "Zoom: 100%"
+msgstr "Nagyítás: 100%"
+
+#: MainFrame.resx, locationDisplay.Text
+msgid "X:-999.99 Y:-999.99"
+msgstr "X:-999.99 Y:-999.99"
+
+#: MainFrame.resx, saveXmlFileDialog.Filter
+msgid "XML file|*.xml"
+msgstr "XML fájl|*.xml"
+
+#: MainFrame.resx, saveXmlFileDialog.Title
+msgid "Create XML Interchange File"
+msgstr "XML fájl létrehozása"
+
+#: MainFrame.resx, openImageDialog.Filter
+msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+msgstr "Kép fájl|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
+
+#: MainFrame.resx, saveGpxFileDialog.Filter
+msgid "GPX file|*.gpx"
+msgstr ""
+
+#: MainFrame.resx, $this.Text
+#: MiscText.resx, AppTitle
+msgid "Purple Pen"
+msgstr "Purple Pen"
+
+#: MiscText.resx, CtrlZ
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: MiscText.resx, CtrlY
+msgid "Ctrl+Y"
+msgstr "Ctrl+Y"
+
+#: MiscText.resx, Esc
+msgid "Esc"
+msgstr "Esc"
+
+#: MiscText.resx, NoSymbol
+msgid "No symbol"
+msgstr "Nincs szimbólum"
+
+#: MiscText.resx, AllControls
+msgid "All controls"
+msgstr "Minden ellenőrzőpont"
+
+#: MiscText.resx, CannotLoadFile
+msgid "Cannot load '{0}' for the following reason:"
+msgstr "'{0}' nem betölthető a következő okból:"
+
+#: MiscText.resx, CannotSaveFile
+msgid "Cannot save '{0}' for the following reason:"
+msgstr "'{0}' nem menthető a következő okból:"
+
+#: MiscText.resx, CannotLoadMapFile
+msgid "Cannot load map file '{0}' for the following reason:"
+msgstr "'{0}' térkép fájl nem betölthető a következő okból:"
+
+#: MiscText.resx, CannotReadImageFile
+msgid "Cannot read image file '{0}'."
+msgstr "'{0}' kép fájl nem betölthető a következő okból:"
+
+#: MiscText.resx, CannotPrint
+msgid "Cannot print '{0}' for the following reason:"
+msgstr "'{0}' nem nyomtatható a következő okból:"
+
+#: MiscText.resx, CannotCreateFile
+msgid "Cannot create '{0}' for the following reason:"
+msgstr "'{0}' nem létrehozható a következő okból:"
+
+#: MiscText.resx, CannotCreateDirectory
+msgid "Cannot create folder '{0}' for the following reason:"
+msgstr "'{0}' könyvtár nem hozható létre a következő okból:"
+
+#: MiscText.resx, CannotReadMap
+msgid "Cannot read map for the following reason: '{0}' Using "
+"Optimize/Repair in OCAD may fix problems."
+msgstr "A térkép fájl nem olvasható az alábbi okból: '{0}' "
+"Használja az Optimize/Repair parancsot az OCAD programban, "
+"ami megoldhatja a problémát!"
+
+#: MiscText.resx, CannotCreateOcadFiles
+msgid "Cannot create OCAD files for the following reason:"
+msgstr "OCAD fájl nem létrehozható az alábbi okból:"
+
+#: MiscText.resx, SaveChanges
+msgid "Do you want to save the changes you made to '{0}'?"
+msgstr "Akarja menteni a(z) '{0}' fájl változásait?"
+
+#: MiscText.resx, FileAlreadyExists
+msgid "File '{0}' already exists in the specified folder. Click "
+"the \"Back\" button and choose a new folder or a new event "
+"title."
+msgstr "A(z) '{0}' fájl már létezik a megadott könyvtárban. "
+"Kattintson a \"Vissza\" gombra és válasszon egy másik "
+"könyvtárat vagy új esemény nevet."
+
+#: MiscText.resx, CodeInUse
+msgid "The control code '{0}' is already used by another control."
+msgstr "A(z) '{0}' kód már használt másik ellenőrzőpontnál."
+
+#: MiscText.resx, BadScore
+msgid "The points for a control must be an integer 1-999."
+msgstr "Az ellenőrzőpont értéke 1-999 lehet."
+
+#: MiscText.resx, BadClimb
+msgid "The climb for a course must be a number 0-9999, or blank."
+msgstr "Az emelkedés 0-9999, vagy üres lehet."
+
+#: MiscText.resx, BadLoad
+msgid "The load for a course must be an integer 0-999999, or blank."
+msgstr "A versenyzőszám egész szám 0-999999, vagy üres lehet."
+
+#: MiscText.resx, CancelOperationWithShortcut
+msgid "Ca&ncel Operation"
+msgstr "&Művelet megszakítása"
+
+#: MiscText.resx, CancelOperation
+msgid "Cancel Operation"
+msgstr "Művelet megszakítása"
+
+#: MiscText.resx, EnterScore
+msgid "Enter new score"
+msgstr "Írja be az új értéket"
+
+#: MiscText.resx, EnterCode
+msgid "Enter new code"
+msgstr "Írja be az új kódot"
+
+#: MiscText.resx, EnterDimensions
+msgid "Enter feature size\n"
+"Use / for height on a slope\n"
+"Use | for two features"
+msgstr "Írja be a méretet\n"
+"Használja a /-t lejtős mérethez\n"
+"Használja a |-t két értékhez"
+
+#: MiscText.resx, EnterEventTitle
+msgid "Enter new event title\n"
+"Use | to separate lines\n"
+"(affects all courses)"
+msgstr "Írja be az új esemény nevét\n"
+"Használja a |-t a sortöréshez\n"
+"(minden pályára kihat)"
+
+#: MiscText.resx, EnterSecondaryTitle
+msgid "Enter new secondary title\n"
+"Use | to separate lines"
+msgstr "Írja be az új másodlagos nevet\n"
+"Használja a |-t a sortöréshez"
+
+#: MiscText.resx, EnterCourseName
+msgid "Enter new course name"
+msgstr "Írja be az új pálya nevét"
+
+#: MiscText.resx, EnterClimb
+msgid "Enter new climb in meters"
+msgstr "Az új emelkedés méterben"
+
+#: MiscText.resx, EnterSymbolText
+msgid "Enter new symbol meaning\n"
+"(affects all courses)"
+msgstr "Írja be az új szimbólum jelentést\n"
+"(minden pályára kihat)"
+
+#: MiscText.resx, EnterTextLine
+msgid "Enter new text"
+msgstr "Írja be az új szöveget"
+
+#: MiscText.resx, DeleteMultipleControlsFromControlsCollection
+msgid "Controls {0} are no longer used by any course. Do you want "
+"to delete these controls from the control collection?"
+msgstr "Az alábbi ellenőrzőpontok {0} nem használtak egyik pályán "
+"sem. Akarja törölni ezeket?"
+
+#: MiscText.resx, DeleteControlFromControlsCollection
+msgid "Control {0} is no longer used by any course. Do you want "
+"to delete this control from the control collection?"
+msgstr "A(z) {0} ellenőrzőpont nem használt egyik pályán sem. "
+"Akarja törölni ezt?"
+
+#: MiscText.resx, DeleteControlFromAllControls
+msgid "Control {0} is currently used by the following courses: "
+"{1}. Do you want to delete this control anyway?"
+msgstr "Az ellenőrzőpont {0} használt az alábbi pályákon: {1}. "
+"Tényleg törölni akarja ennek ellenére?"
+
+#: MiscText.resx, CodeBadLength
+msgid "A control code must be one, two, or three letters or digits."
+msgstr "Az ellenőrzőpont kódja egy, kettő vagy három betű vagy "
+"számjegy lehet."
+
+#: MiscText.resx, CodeContainsSpace
+msgid "A control code must not contain a space."
+msgstr "Az ellenőrzőpont kódja nem tartalmazhat szóközt."
+
+#: MiscText.resx, CodeBeginsWithZero
+msgid "A control code should not begin with zero."
+msgstr "Az ellenőrzőpont kódja nem kezdődhet nullával."
+
+#: MiscText.resx, CodeCouldBeUpsideDown
+msgid "A control code should not look like another number when "
+"upside-down."
+msgstr "Az ellenőrzőpont kódja célszerű, ha nem egyezik meg egy "
+"másik pont kódjának fejjel lefelé fordított változatával."
+
+#: MiscText.resx, DuplicateCode
+msgid "The code \"{0}\" is used more than once."
+msgstr "A {0} kód többszörösen van használva."
+
+#: MiscText.resx, BadScale
+msgid "The print scale must be a number between 100 and 100,000."
+msgstr "A nyomtatási lépték 100 és 100 000 között kell legyen."
+
+#: MiscText.resx, CoursePropertiesTitle
+msgid "Course Properties"
+msgstr "Pálya tulajdonságai"
+
+#: MiscText.resx, Landscape
+#: PrintDescriptions.resx, orientation.Text
+#: PrinterMargins.resx, radioButtonLandscape.Text
+#: PrintPunches.resx, orientation.Text
+msgid "Landscape"
+msgstr "Fekvő"
+
+#: MiscText.resx, Portrait
+#: PrinterMargins.resx, radioButtonPortrait.Text
+msgid "Portrait"
+msgstr "Álló"
+
+#: MiscText.resx, PageTooSmall
+msgid "The page size is too small for any descriptions to be "
+"printed."
+msgstr "A lapméret túl kicsi ahhoz, hogy akár egyetlen leírás is "
+"kiférjen rá."
+
+#: MiscText.resx, VersionLabel
+msgid "Version {0}"
+msgstr "{0} verzió"
+
+#: MiscText.resx, NewerVersionAvailable
+msgid "Version {0} of Purple Pen is now available for download. "
+"(You are currently running version {1}.)\n"
+"\n"
+"Would you like to download and install the latest version?"
+msgstr "A Purple Pen {0} verziója letölthető. (Az Ön jelenlegi "
+"verziója: {1}.)\n"
+"\n"
+"Kívánja letölteni és telepíteni a legújabb verziót?"
+
+#: MiscText.resx, HelpFileNotFound
+msgid "Help file '{0}' could not be opened."
+msgstr "A Súgó fájl '{0}' nem megnyitható."
+
+#: MiscText.resx, Zoom
+msgid "Zoom"
+msgstr "Nagyítás"
+
+#: MiscText.resx, MissingMapFile
+msgid "The map file \"{0}\" could not be found.\n"
+"\n"
+"Most likely, the map file has been moved or deleted, or "
+"the Purple Pen file has been moved (possibly to a "
+"different computer). The map file must be present every "
+"time the Purple Pen event file is loaded. If you send a "
+"Purple Pen event file to another person, be sure that "
+"person has a copy of the map file also.\n"
+"\n"
+"After pressing OK, try to find a copy of the map file on "
+"your computer."
+msgstr "A \"{0}\" térkép fájl nem található.\n"
+"\n"
+"Leggyakrabban áthelyezve, vagy letörölve lett a térkép "
+"fájl. Ha másik gépre próbáljuk átvinni a Purple Pen fájlt, "
+"akkor vele kell vinnünk a térkép fájlt is.\n"
+"\n"
+"A Rendben lenyomása után próbálja megkeresni a térkép "
+"fájlt a számítógépén."
+
+#: MiscText.resx, NoUnusedControls
+msgid "All controls are used in a course."
+msgstr "Minden ellenőrzőpont használt a pályában."
+
+#: MiscText.resx, FinishButtonText
+msgid "&Finish"
+msgstr "Be&fejezés"
+
+#: MiscText.resx, NextButtonText
+#: NewEventWizard.resx, nextButton.Text
+msgid "&Next >"
+msgstr "&Tovább >"
+
+#: MiscText.resx, Control_Code
+msgid "Control {0}"
+msgstr "Ellenőrzőpont {0}"
+
+#: MiscText.resx, Finish
+msgid "Finish"
+msgstr "Cél"
+
+#: MiscText.resx, Finish_Short
+msgid "F"
+msgstr "C"
+
+#: MiscText.resx, MandCrossing_Long
+msgid "Mandatory crossing point"
+msgstr "Kötelező átkelőhely"
+
+#: MiscText.resx, MandCrossing_Medium
+msgid "Crossing"
+msgstr "Kereszteződés"
+
+#: MiscText.resx, MandCrossing_Short
+msgid "C"
+msgstr "X"
+
+#: MiscText.resx, Margins_All
+msgid "All: {0}"
+msgstr "Minden: {0}"
+
+#: MiscText.resx, Margins_LRTB
+msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
+msgstr "Bal: {0}, Jobb: {1}, Felső: {2}, Alsó: {3}"
+
+#: MiscText.resx, Start
+msgid "Start"
+msgstr "Rajt"
+
+#: MiscText.resx, Start_Short
+msgid "S"
+msgstr "R"
+
+#: MiscText.resx, Version_Alpha
+msgid "Alpha {0}"
+msgstr "{0} Alfa"
+
+#: MiscText.resx, Version_Beta
+msgid "Beta {0}"
+msgstr "{0} Béta"
+
+#: MiscText.resx, Version_RC
+msgid "RC {0}"
+msgstr "{0} RC"
+
+#: MiscText.resx, Plural
+msgid "plural"
+msgstr "többes szám"
+
+#: MiscText.resx, Singular
+msgid "singular"
+msgstr "egyes szám"
+
+#: MiscText.resx, RequireStar
+msgid "The customized text requires a \"*\" to indicate where the "
+"object being modified is placed."
+msgstr "Az egyedi szövegben a \"*\" jelöli a módosítás kezdetét "
+"miután leraktuk."
+
+#: MiscText.resx, AppSubtitle
+msgid "course setting for orienteering"
+msgstr "pálya tervezés tájékozódási futáshoz"
+
+#: MiscText.resx, AddTextSpecialExplanation
+msgid "Enter the text you wish to place on the map. After "
+"pressing OK, drag the mouse to place the text in the "
+"desired location."
+msgstr "Írja be a térképre helyezendő szöveget. A Rendben "
+"lenyomása után húzza az egérrel a kívánt helyre a szöveget."
+
+#: MiscText.resx, AddTextSpecialTitle
+msgid "Add Text"
+msgstr "Új szöveg"
+
+#: MiscText.resx, ChangeTextSpecialExplanation
+msgid "Enter the new text."
+msgstr "Írja be az új szöveget!"
+
+#: MiscText.resx, MapFileChanged
+msgid "Another program has changed the map file \"{0}\". Purple Pen "
+"will now reload the map."
+msgstr "Egy másik program módosította a(z) '{0}' térkép fájlt. A "
+"Purple Pen újra fogja olvasni."
+
+#: MiscText.resx, ChangeDescriptionLanguage
+msgid "The current event has textual control descriptions in {0}. "
+"Would you like to change the language of control "
+"descriptions to {1}?"
+msgstr "Az esemény tartalmaz szöveges pontleírást az alábbi "
+"pályákon: {0}. Biztosan megváltoztatja a nyelvet, az új "
+"nyelv {1} lesz?"
+
+#: MiscText.resx, OpenLastEvent
+msgid "Open \"{0}\""
+msgstr "Megnyitás \"{0}\""
+
+#: MiscText.resx, ClosePPBeforeLoadingOCAD
+msgid "Purple Pen must be closed before loading the created OCAD "
+"files."
+msgstr "A Purple Pen programot be kell zárni mielőtt betölti az "
+"elkészült OCAD fájlokat."
+
+#: MiscText.resx, NoCoursesSelected
+msgid "No courses were selected to print."
+msgstr "Egyetlen pályát sem választott a nyomtatáshoz."
+
+#: MiscText.resx, TranslatedHelpWebSite
+msgid "*** If there exists a web site in the translated language "
+"that contains documentation for Purple Pen, enter the URL "
+"(including http) as the translation of this item. "
+"Otherwise leave it alone."
+msgstr "*** Ha létezik web oldal amin megtalálható a Purple Pen "
+"dokumentációja a lefordított nyelven, írja be a címet "
+"(http-vel együtt) fordításként. Egyéb esetben hagyja üresen."
+
+#: MiscText.resx, MapExchange_Long
+msgid "Map exchange"
+msgstr "Térképcsere"
+
+#: MiscText.resx, MapExchange_Medium
+msgid "Exchange"
+msgstr "Csere"
+
+#: MiscText.resx, MapExchange_Short
+msgid "MX"
+msgstr "TCs"
+
+#: MiscText.resx, PartN
+msgid "Part {0}"
+msgstr "Rész {0}"
+
+#: MiscText.resx, AllParts
+msgid "All Parts"
+msgstr "Minden rész"
+
+#: MiscText.resx, PartXOfY
+msgid "Part {0} (of {1})"
+msgstr "Rész {0} (/ {1})"
+
+#: MiscText.resx, CrashEmail
+msgid "Contact Email"
+msgstr "Kapcsolati Email cím"
+
+#: MiscText.resx, CrashIntro
+msgid "An error has occurred. In order to help us fix the "
+"problem, please enter your email address and additional "
+"information, and send us an error report."
+msgstr "Hiba keletkezett. A probléma megoldása érdekében adja meg "
+"email címét és egyéb információkat, és küldje el nekünk a "
+"jelentést."
+
+#: MiscText.resx, CrashMessage
+msgid "Please tell us what you were doing in the program, to help "
+"fix the problem"
+msgstr "Kérem írja meg nekünk, hogy mit csinált a programmal, hogy "
+"kijavíthassuk a problémát!"
+
+#: MiscText.resx, CrashSend
+msgid "Send Report"
+msgstr "Jelentés küldése"
+
+#: MiscText.resx, CannotAddDescriptionsToAllParts
+msgid "Descriptions may not be added to a course with a map "
+"exchange if \"All Parts\" is being displayed. Switch to the "
+"part you wish to add descriptions to, and then choose \"Add "
+"Descriptions\" again."
+msgstr "A pontleírás lehet, hogy nem tartalmazza a térképcserét ha "
+"\"Minden rész\" van megjelenítve.  Váltson a megfelelő "
+"részre és használja az \"Új pontleírás\"-t újra."
+
+#: MiscText.resx, DownloadGhostscript
+msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
+"installed. Would you like to automatically download and "
+"install it now?"
+msgstr "A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. "
+"Kívánja automatikusan letölteni és telepíteni?"
+
+#: MiscText.resx, GhostscriptNotInstalled
+msgid "GPL Ghostscript is not installed"
+msgstr "A GPL Ghostscript nincs telepítve."
+
+#: MiscText.resx, PdfConversionFailed
+msgid "GPL Ghostscript failed to read PDF file successfully"
+msgstr "A GPL Ghostscript nem tudta sikeresen beolvasni a PDF fájlt."
+
+#: MiscText.resx, PdfResultNotReadable
+msgid "Could not read result of PDF conversion from file '{0}'"
+msgstr "Nem olvasható be a PDF fájl átalakítás eredménye a(z) "
+"'{0}' fájlból"
+
+#: MiscText.resx, CannotCreatePdfs
+msgid "Cannot create PDFs for the following reason:"
+msgstr "A PDF fájl nem hozható létre az alábbi okból:"
+
+#: MiscText.resx, UserDefined
+msgid "User Defined"
+msgstr "Felhasználói"
+
+#: MiscText.resx, PdfMapSize
+msgid "Map size from PDF"
+msgstr "Térkép méret PDF-ből"
+
+#: MiscText.resx, CancelledByUser
+msgid "Cancelled by user"
+msgstr "A felhasználó megszakította"
+
+#: MiscText.resx, CreatingFile
+msgid "Creating {0}..."
+msgstr "{0} elkészítése..."
+
+#: MiscText.resx, PrintingPage
+msgid "Printing page {0} (of {1})"
+msgstr "Nyomtatás (0} / {1}. oldal"
+
+#: MiscText.resx, MapFileDeleted
+msgid "The map file \"{0}\" has been deleted. Please try to restore "
+"the map file, then press \"Ok\"."
+msgstr "A térkép fájl \"{0}\" törölve lett. Kérem próbálja meg "
+"visszaállítani és utána nyomjon \"Rendben\"-t!"
+
+#: MiscText.resx, BadDotNetFramework
+msgid "The  .NET framework on your computer does not appear to be "
+"correctly installed. Please visit http://microsoft.com/net "
+"and install the latest version of the .NET framework for "
+"your Windows operating system."
+msgstr "A .NET keretrendszer a számítógépén nincs megfelelően "
+"telepítve. Kérem látogassa meg a http://microsoft.com/net "
+"oldalt és telepítse .NET keretrendszer legújabb verzióját "
+"az Ön Windows operációs rendszerére."
+
+#: MiscText.resx, ChooseOtherColor
+msgid "Choose Color..."
+msgstr "Válasszon színt..."
+
+#: MiscText.resx, CustomColor
+msgid "Custom Color"
+msgstr "Egyéni szín"
+
+#: MiscText.resx, DarkBlue
+msgid "Dark Blue"
+msgstr "Sötétkék"
+
+#: MiscText.resx, Green
+msgid "Green"
+msgstr "Zöld"
+
+#: MiscText.resx, LightBlue
+msgid "Light Blue"
+msgstr "Világos kék"
+
+#: MiscText.resx, Red
+msgid "Red"
+msgstr "Piros"
+
+#: MiscText.resx, Yellow
+msgid "Yellow"
+msgstr "Sárga"
+
+#: MiscText.resx, AddLineExplanation
+msgid "Set the appearance of the line. After pressing OK, drag "
+"the mouse to draw the line segments in the desired location."
+msgstr "Sor megjelenésének beállítása. A Rendben lenyomása után "
+"húzza az egérrel a sor elemeit a megfelelő helyre."
+
+#: MiscText.resx, AddLineTitle
+msgid "Add Line"
+msgstr "Új sor"
+
+#: MiscText.resx, AddRectangleExplanation
+msgid "Set the appearance of the rectangle. After pressing OK, "
+"drag the mouse to place the rectangle in the desired "
+"location."
+msgstr "A téglalap megjelenésének beállítása. A Rendben lenyomása "
+"után húzza az egérrel a kívánt helyre."
+
+#: MiscText.resx, AddRectangleTitle
+msgid "Add Rectangle"
+msgstr "Új téglalap"
+
+#: MiscText.resx, ChangeLineAppearanceExplanation
+msgid "Change the appearance of the line or rectangle."
+msgstr "A téglalap vagy vonal kinézetének módosítása."
+
+#: MiscText.resx, GpxMustBeOcadMap
+msgid "The map file must be an OCAD file to use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveCoordSystem
+msgid "The OCAD file must have a coordinate system defined to use "
+"GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxMustHaveRealWorldCoord
+msgid "The OCAD file must have real world coordinates defined to "
+"use GPX files."
+msgstr ""
+
+#: MiscText.resx, GpxReprojectFailure
+msgid "Could not reproject points; either the coordinate system "
+"or the real world coordinates in the OCAD map are wrong."
+msgstr ""
+
+#: MiscText.resx, GpxUnsupportedCoordSystem
+msgid "The OCAD file uses a coordinate system that is not "
+"supported by Purple Pen."
+msgstr ""
+
+#: MiscText.resx, AutomaticLength
+msgid "Automatic"
+msgstr ""
+
+#: MiscText.resx, BadLength
+msgid "The length for a course must be a number 0.1 - 99.9, or "
+"blank to calculate length automatically."
+msgstr ""
+
+#: MiscText.resx, EnterLength
+msgid "Enter length in km, or leave blank to calculate "
+"automatically"
+msgstr ""
+
+#: MiscText.resx, PausePrinting
+msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
+msgstr ""
+
+#: MissingFonts.resx, checkBoxDontWarnAgain.Text
+msgid "Don't warn about missing fonts for this event again"
+msgstr "Ne figyelmeztessen újra ebben az eseményben ha hiányzik "
+"betűtípus"
+
+#: MissingFonts.resx, labelWarning.Text
+msgid "Map file \"{0}\" uses fonts that are not installed on your "
+"computer. Text using these fonts will be drawn and printed "
+"with a default font, which may cause text to appear "
+"differently than the map designer intended. \n"
+"\n"
+"To fix this problem, find and install the fonts listed "
+"below with the Windows control panel, then start Purple "
+"Pen again.\n"
+msgstr "A térkép fájl \"{0}\" olyan betűtípusokat használ, amik "
+"nincsenek telepítve a számítógépén. A szövegek amik ezeket "
+"használják az alapértelmezett betútípussal jelennek meg és "
+"kerülnek nyomtatásre, ami jelentősen eltérhet attól amit a "
+"térkép tervezője megadott. \n"
+"\n"
+"A probléma megoldására szerezze be és telepítse a Windows "
+"vezérlőpultban az alábbi betűtípusokat, majd indítsa újra "
+"a Purple Pen programot.\n"
+
+#: MissingFonts.resx, $this.Text
+msgid "Missing Fonts"
+msgstr "Hiányzó betűtípusok"
+
+#: NewEventBitmapScale.resx, bitmapScaleLabel.Text
+msgid "When using an image file as a map, you must specify the "
+"resolution of the image and the map scale. \n"
+"\n"
+"The resolution of the image indicates how may pixels or "
+"dots are in the image for each inch on the paper map; "
+"usually termed dots per inch or \"dpi\".\n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr "Amikor egy képet használ térképként, meg kell adnia a "
+"felbontást és a térkép léptékét. \n"
+"\n"
+"A felbontás azt jelenti, hogy hány pixel/pont található "
+"egy inch távolságon a papír térképen; általában \"dpi\"-ben "
+"(dot per inch) van megadva.\n"
+"\n"
+"A lépték pedig a papír térkép és a valóság arányát adja "
+"meg.\n"
+
+#: NewEventBitmapScale.resx, resolutionLabel.Text
+msgid "Image resolution:"
+msgstr "Kép felbontása:"
+
+#: NewEventBitmapScale.resx, oneToPrefixLabel.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel1.Text
+#: NewEventPrintScale.resx, oneToPrefixLabel2.Text
+msgid "1:"
+msgstr "1:"
+
+#: NewEventBitmapScale.resx, mapScaleLabel.Text
+#: NewEventPrintScale.resx, mapScaleLabel.Text
+msgid "Map scale:"
+msgstr "Térkép léptéke:"
+
+#: NewEventBitmapScale.resx, labelTitle.Text
+msgid "Bitmap Resolution"
+msgstr "Kép felbontása:"
+
+#: NewEventBitmapScale.resx, pdfScaleLabel.Text
+msgid "When using an PDF file as a map, you must specify the map "
+"scale. \n"
+"\n"
+"The scale of the map indicates the relationship between "
+"the paper map and the real world.\n"
+msgstr "Ha PDF fájlt használunk térképként, meg kell adnia a "
+"térkép léptékét. \n"
+"\n"
+"A lépték a papír térkép és a valóság aránya.\n"
+
+#: NewEventDirectory.resx, newEventDirectoryLabel.Text
+msgid "What folder (directory) do you want to save your course "
+"event file in?"
+msgstr "Melyik könyvtárba kívánja menteni az esemény pályáinak "
+"fájlját?"
+
+#: NewEventDirectory.resx, useMapDirectory.Text
+msgid "In the same folder as the map file."
+msgstr "A térképpel megegyező könyvtárba."
+
+#: NewEventDirectory.resx, useOtherFolder.Text
+msgid "In another folder I choose."
+msgstr "Másik könyvtárba, amit kiválasztok."
+
+#: NewEventDirectory.resx, chooseFolder.Text
+msgid "Choose Folder..."
+msgstr "Könyvtár választás..."
+
+#: NewEventDirectory.resx, folderBrowserDialog.Description
+msgid "Select the folder for your event file"
+msgstr "Válassza ki a könyvtárat az esemény fájl részére"
+
+#: NewEventDirectory.resx, directoryDisplay.Text
+msgid "Selected Folder"
+msgstr "Kiválasztott könyvtár"
+
+#: NewEventDirectory.resx, labelTitle.Text
+msgid "Event File Location"
+msgstr "Esemény fájl helye"
+
+#: NewEventFinal.resx, newEventFinalLabel.Text
+msgid "Click \"Finish\" to create your new event. Your event file "
+"will be saved as:"
+msgstr "Nyomjon \"Kész\"-t az új esemény létrehozásához. Az esemény "
+"fájl az alábbi néven lesz elmentve:"
+
+#: NewEventFinal.resx, afterEventCreatedLabel.Text
+msgid "After your event is created, select \"New Course...\" from "
+"the Course menu to create one or more courses."
+msgstr "Az esemény létrehozása után válassza az \"Új pálya...\" "
+"menüpontot a Pálya menüből egy vagy több pálya "
+"létrehozására."
+
+#: NewEventFinal.resx, labelTitle.Text
+msgid "Create Event"
+msgstr "Esemény létrehozása"
+
+#: NewEventMapFile.resx, newEventMapFileLabel.Text
+msgid "In order to design your courses, you must select the map "
+"file you will be using. Typically this is an OCAD file "
+"(although image files like JPEGs can be used instead). "
+"Click the \"Choose...\" button to select a map file."
+msgstr "A pályák tervezése előtt választania kell egy térkép "
+"fájlt. Ez általában egy OCAD fájl (de használható képfájl "
+"is pl. JPEG). Kattintson a \"Választás...\" gombra a térkép "
+"fájl megadásához."
+
+#: NewEventMapFile.resx, mapFileDisplay.Text
+msgid "Selected Map File"
+msgstr "Kiválasztott térkép fájl"
+
+#: NewEventMapFile.resx, infoMessage.Text
+msgid "The map file was successfully loaded. If send your Purple "
+"Pen file to someone else, they must have the map file also."
+msgstr "A térkép fájl betöltése sikeres volt. Ha a Purple Pen "
+"fájlt továbbküldi valahová, akkor vele kell küldenie a "
+"térkép fájlt is!"
+
+#: NewEventNumbering.resx, newEventNumberingLabel.Text
+msgid "Newly created controls are automatically numbered. Please "
+"choose the starting control number to use."
+msgstr "Az új ellenőrzőpontok automatikusan számozódnak. Kérem "
+"adja meg a kezdőértéket."
+
+#: NewEventNumbering.resx, changeLaterLabel.Text
+msgid "(This setting can be changed later using Event/Automatic "
+"Numbering)"
+msgstr "(Ez a beállítás később megváltoztatható az "
+"Esemény/Automatikus számozás alatt)"
+
+#: NewEventNumbering.resx, labelTitle.Text
+msgid "Control Numbering"
+msgstr "Ellenőrzőpont számozás"
+
+#: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
+msgid "What scale will you be using to print your courses? In "
+"most cases, you will want to use the existing scale of the "
+"map.\n"
+"\n"
+msgstr "Milyen léptéket fog használni a pályáinak nyomtatásához? "
+"Általában a térkép léptékét használják.\n"
+"\n"
+
+#: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
+msgid "Default &printing scale:"
+msgstr "Alapértelmezett &nyomtatási lépték:"
+
+#: NewEventPrintScale.resx, changeLaterLabel.Text
+msgid "(You can change the printing scale later for any course by "
+"choosing Course/Properties.)"
+msgstr "(Megváltoztathatja a nyomtatási léptéket bármely pályához "
+"a Pálya/Beállítások alatt.)"
+
+#: NewEventTitle.resx, newEventTitleLabel.Text
+msgid "The event title will be displayed on the first line of "
+"every control description sheet. It is also used as the "
+"file name for storing your event on disk.\n"
+"\n"
+"To fit on the description sheet, it should be less than 25 "
+"characters in length. Examples of good event titles are "
+"\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
+msgstr "Az esemény neve a pontleírások első sorában fog "
+"megjelenni. Ezt használjuk fájlnévként is az esemény "
+"lemezre írásakor.\n"
+"\n"
+"Ahhoz, hogy elférjen a pontleíráson kevesebb mint 25 "
+"karaktert tartalmazzon. Példák jó nevekre \"Magyar kupa 1. "
+"nap\" vagy \"Keselyű-bérc 2014.06.08.\"."
+
+#: NewEventTitle.resx, eventTitleLabel.Text
+msgid "Event Title:"
+msgstr "Esemény neve:"
+
+#: NewEventWizard.resx, backButton.Text
+msgid "< &Back"
+msgstr "< &Vissza"
+
+#: NonPrintableObjects.resx, labelWarning.Text
+msgid "Map file \"{0}\" contains objects or symbols that are not "
+"fully supported by Purple Pen, and may not print "
+"correctly. The objects that may not print correctly are "
+"listed below.\n"
+"\n"
+"For printing competition maps, it is suggested that "
+"courses be exported to OCAD files (use File/Create OCAD "
+"Files...) and to print the maps from OCAD.\n"
+msgstr "A térkép fájl \"{0}\" tartalmaz olyan objektumokat vagy "
+"szimbólumokat amiket a Purple Pen nem teljesen támogat. Az "
+"objektumok amik nem nyomtathatók tökéletesen, a lenti "
+"listában szereplenek.\n"
+"\n"
+"A versenytérképek nyomtatásához javasolt a pályákat OCAD "
+"formátumba exportálni (Fájl/OCAD fájlok létrehozása...) és "
+"a térképeket az OCAD-ben nyomtatni.\n"
+
+#: NonPrintableObjects.resx, okButton.Text
+msgid "Continue"
+msgstr "Folytatás"
+
+#: NonPrintableObjects.resx, $this.Text
+msgid "Map File Cannot Be Printed Accurately"
+msgstr "A térképfájl nem nyomtatható pontosan"
+
+#: OperationInProgress.resx, $this.Text
+msgid "Operation In Progress"
+msgstr "A művelet folyamatban"
+
+#: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
+msgid "The following files already exist. If you continue, they "
+"will be replaced."
+msgstr "A következő fájlok már léteznek. Ha folytatja le lesznek "
+"cserélve."
+
+#: OverwritingOcadFilesDialog.resx, buttonOK.Text
+msgid "Replace"
+msgstr "Csere"
+
+#: OverwritingOcadFilesDialog.resx, $this.Text
+msgid "Confirm Replace Files"
+msgstr "Fájl csere jóváhagyása"
+
+#: PdfConversionInProgress.resx, labelReadingPDF.Text
+msgid "GPL Ghostscript is reading your PDF..."
+msgstr "A GPL Ghostscript olvassa az Ön PFD fájlját..."
+
+#: PdfConversionInProgress.resx, labelFailure.Text
+msgid "PDF reading has failed. The errors are shown below."
+msgstr "A PDF beolvasás nem sikerült. A hiba lejjebb olvasható."
+
+#: PdfConversionInProgress.resx, $this.Text
+msgid "Reading PDF"
+msgstr "PDF olvasás"
+
+#: PrintCourses.resx, okButton.Text
+#: PrintDescriptions.resx, printButton.Text
+#: PrintPunches.resx, printButton.Text
+msgid "Print"
+msgstr "Nyomtatás"
+
+#: PrintCourses.resx, printerChange.Text
+#: PrintDescriptions.resx, printerChange.Text
+#: PrintPunches.resx, printerChange.Text
+msgid "Change Printer..."
+msgstr "Nyomtató módosítás..."
+
+#: PrintCourses.resx, printerName.Text
+#: PrintDescriptions.resx, printerName.Text
+#: PrintPunches.resx, printerName.Text
+msgid "Printer Name"
+msgstr "Nyomtatónév"
+
+#: PrintCourses.resx, printerLabel.Text
+#: PrintDescriptions.resx, printerLabel.Text
+#: PrintPunches.resx, printerLabel.Text
+msgid "Printer:"
+msgstr "Nyomtató:"
+
+#: PrintCourses.resx, previewButton.Text
+#: PrintDescriptions.resx, previewButton.Text
+#: PrintPunches.resx, previewButton.Text
+msgid "Preview..."
+msgstr "Előnézet..."
+
+#: PrintCourses.resx, copiesLabel.Text
+msgid "Copies of each course:"
+msgstr "Az egyes pályák példányszáma:"
+
+#: PrintCourses.resx, checkBoxPausePrinting.Text
+msgid "Pause printing after each course or part"
+msgstr ""
+
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Példányszám"
+
+#: PrintCourses.resx, checkBoxRasterPrinting.Text
+msgid "Rasterize Before Printing"
+msgstr "Rasztrerizálás nyomtatás előtt"
+
+#: PrintCourses.resx, comboBoxColorModel.Items
+msgid "OCAD Compatible"
+msgstr "OCAD kompatíbilis"
+
+#: PrintCourses.resx, $this.Text
+msgid "Print Courses"
+msgstr "Pályák nyomtatása"
+
+#: PrintDescriptions.resx, marginChange.Text
+#: PrintPunches.resx, marginChange.Text
+msgid "Change Margins..."
+msgstr "Margók módosítása..."
+
+#: PrintDescriptions.resx, orientationLabel.Text
+#: PrintPunches.resx, orientationLabel.Text
+msgid "Orientation:"
+msgstr "Tájolás:"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items
+msgid "Course default"
+msgstr "Pálya alapértelmezés"
+
+#: PrintDescriptions.resx, descriptionKindCombo.Items3
+msgid "Symbols & Text"
+msgstr "Szimbólum és szöveg"
+
+#: PrintDescriptions.resx, descriptionTypeLabel.Text
+msgid "Description type:"
+msgstr "Pontleírás típusa:"
+
+#: PrintDescriptions.resx, lineSizeLabel.Text
+msgid "Line size:"
+msgstr "Sorméret:"
+
+#: PrintDescriptions.resx, descriptionsLabel.Text
+msgid "descriptions per course"
+msgstr "pontleírások pályánként"
+
+#: PrintDescriptions.resx, copiesCombo.Items
+msgid "one copy of each course"
+msgstr "egy minden pályáról"
+
+#: PrintDescriptions.resx, copiesCombo.Items1
+msgid "one page of each course"
+msgstr "egy oldal minden pályáról"
+
+#: PrintDescriptions.resx, copiesCombo.Items2
+msgid "multiple pages of each course"
+msgstr "több oldal minden pályáról"
+
+#: PrintDescriptions.resx, whatToPrintLabel.Text
+msgid "Print:"
+msgstr "Nyomtatás:"
+
+#: PrintDescriptions.resx, $this.Text
+msgid "Print Descriptions"
+msgstr "Pontleírások nyomtatása"
+
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr "Méret:"
+
+#: PrinterMargins.resx, label3.Text
+msgid "Height:"
+msgstr "Magasság:"
+
+#: PrinterMargins.resx, groupBoxPaperSize.Text
+msgid "Paper Size ({0})"
+msgstr "Papírméret ({0})"
+
+#: PrinterMargins.resx, groupBox1.Text
+msgid "Orientation"
+msgstr "Tájolás"
+
+#: PrinterMargins.resx, label1.Text
+msgid "Left:"
+msgstr "Bal:"
+
+#: PrinterMargins.resx, label4.Text
+msgid "Top:"
+msgstr "Felső:"
+
+#: PrinterMargins.resx, label5.Text
+msgid "Right:"
+msgstr "Jobb:"
+
+#: PrinterMargins.resx, label6.Text
+msgid "Bottom:"
+msgstr "Alsó:"
+
+#: PrinterMargins.resx, groupBoxMargins.Text
+msgid "Margins ({0})"
+msgstr "Margók ({0})"
+
+#: PrinterMargins.resx, $this.Text
+msgid "Page Setup"
+msgstr "Oldalbeállítás"
+
+#: PrintPunches.resx, punchCardLayoutButton.Text
+#: PunchPatternDialog.resx, formatButton.Text
+msgid "Punch Card Layout..."
+msgstr "Karton elrendezés..."
+
+#: PrintPunches.resx, punchBoxSizeLabel.Text
+msgid "Punch box size:"
+msgstr "Bélyegzés mérete:"
+
+#: PrintPunches.resx, descriptionsLabel.Text
+msgid "Copies:"
+msgstr "Példányszám:"
+
+#: PrintPunches.resx, $this.Text
+msgid "Print Punch Cards"
+msgstr "Karton nyomtatás"
+
+#: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
+msgid "Box Order"
+msgstr "Hely sorrend"
+
+#: PunchcardLayoutDialog.resx, columnsLabel.Text
+msgid "Columns:"
+msgstr "Oszlopok:"
+
+#: PunchcardLayoutDialog.resx, rowsLabel.Text
+msgid "Rows:"
+msgstr "Sorok:"
+
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Méret"
+
+#: PunchcardLayoutDialog.resx, $this.Text
+msgid "Punch Card Layout"
+msgstr "Karton elrendezés"
+
+#: PunchPatternDialog.resx, punchPatternsLabel.Text
+msgid "Click on a control code in the left-side list, and design "
+"the punch pattern in the right side. Red codes indicate "
+"controls that have no punch pattern defined."
+msgstr "Kattintson egy ellenőrzőpontra a bal oldali listában és "
+"adja meg a szúrásképet a jobb oldalon. A piros kódok "
+"jelzik, hogy az adott ponthoz nincs szúráskép megadva."
+
+#: PunchPatternDialog.resx, $this.Text
+msgid "Punch Patterns"
+msgstr "Szúrásképek"
+
+#: ReportForm.resx, printButton.Text
+msgid "Print..."
+msgstr "Nyomtatás…"
+
+#: ReportForm.resx, previewButton.Text
+msgid "Print Preview..."
+msgstr "Nyomtatási kép…"
+
+#: ReportForm.resx, okButton.Text
+msgid "Close"
+msgstr "Bezárás"
+
+#: ReportText.resx, ColumnHeader_Climb
+msgid "Climb"
+msgstr "Emelkedés"
+
+#: ReportText.resx, ColumnHeader_Code
+msgid "Code"
+msgstr "Kód"
+
+#: ReportText.resx, ColumnHeader_Column
+msgid "Column"
+msgstr "Oszlop"
+
+#: ReportText.resx, ColumnHeader_Control
+msgid "Control"
+msgstr "Ellenőrzőpont"
+
+#: ReportText.resx, ColumnHeader_ControlCodes
+msgid "Control codes"
+msgstr "Ellenőrző kód"
+
+#: ReportText.resx, ColumnHeader_Controls
+msgid "Controls"
+msgstr "Ellenőrzőpontok"
+
+#: ReportText.resx, ColumnHeader_Course
+msgid "Course"
+msgstr "Pálya"
+
+#: ReportText.resx, ColumnHeader_Distance
+msgid "Distance"
+msgstr "Távolság"
+
+#: ReportText.resx, ColumnHeader_Item
+msgid "Item"
+msgstr "Elem"
+
+#: ReportText.resx, ColumnHeader_Leg
+msgid "Leg"
+msgstr "Átmenet"
+
+#: ReportText.resx, ColumnHeader_Length
+msgid "Length"
+msgstr "Hossz"
+
+#: ReportText.resx, ColumnHeader_Load
+msgid "Load"
+msgstr "Terhelés"
+
+#: ReportText.resx, ColumnHeader_Location
+msgid "Location"
+msgstr "Hely"
+
+#: ReportText.resx, ColumnHeader_NumberOfCourses
+msgid "# Courses"
+msgstr "Pályaszám"
+
+#: ReportText.resx, ColumnHeader_Reason
+msgid "Reason"
+msgstr "Ok"
+
+#: ReportText.resx, ColumnHeader_SameSymbol
+msgid "Same symbol?"
+msgstr "Azonos szimbólum?"
+
+#: ReportText.resx, CourseSummary_Title
+msgid "Course Summary for {0}"
+msgstr "Összefoglaló a(z) {0} pályához"
+
+#: ReportText.resx, CrossRef_Title
+msgid "Control cross-reference for {0}"
+msgstr "Ellenőrzőpont keresztreferencia {0}-hoz"
+
+#: ReportText.resx, EventAudit_CloseTogetherControls
+msgid "Close Together Controls"
+msgstr "Közeli ellenőrzőpontok"
+
+#: ReportText.resx, EventAudit_CloseTogetherExplanation
+msgid "The following table shows all control pairs that are "
+"within {0} meters of each other. The same symbol column "
+"shows whether the two controls have the same primary "
+"symbol (column D)."
+msgstr "A következő táblázat mutatja az olyan ellenőrzőpont "
+"párokat amik {0} méteren belül helyezkednek el. Az azonos "
+"szimbólum oszlop jelzi, ha a két ellenőrzőpont elsődleges "
+"szimbóluma (D oszlop) megegyezik."
+
+#: ReportText.resx, EventAudit_MissingBoxes
+msgid "Missing Description Boxes"
+msgstr "Hiányzó pontleírás pozíciók"
+
+#: ReportText.resx, EventAudit_MissingClimb
+msgid "Regular courses should indicate the amount of climb"
+msgstr "A szabályos pályáknak tartalmaznia kell az emelkedést"
+
+#: ReportText.resx, EventAudit_MissingD
+msgid "All controls must have a main feature in column D"
+msgstr "Minden ellenőrzőpontnak tartalmazni kell szimbólumot a D "
+"oszlopban"
+
+#: ReportText.resx, EventAudit_MissingEBetween
+msgid "When \"between\" is in column G, two features must be shown "
+"in columns D and E"
+msgstr "Ha a G oszlopban \"között\" szerepel, akkor két dolognak "
+"kell lennie a D és E oszlopban"
+
+#: ReportText.resx, EventAudit_MissingEJunction
+msgid "When \"junction\" or \"crossing\" is in column F, two features "
+"must be shown in columns D and E"
+msgstr "Ha \"elágazás\" vagy \"kereszteződés\" szerepel az F "
+"oszlopban, akkor két dolognak kell lennie a D és E oszlopban"
+
+#: ReportText.resx, EventAudit_MissingFinish
+msgid "Regular courses should have a finish circle"
+msgstr "Szabályos pályának tartalmaznia kell célkört"
+
+#: ReportText.resx, EventAudit_MissingItems
+msgid "Missing Items in Courses"
+msgstr "Hiányzó elemek a pályákban"
+
+#: ReportText.resx, EventAudit_MissingLoad
+msgid "Course should have expected competitor load"
+msgstr "A pálya terhelését meg kell adni"
+
+#: ReportText.resx, EventAudit_MissingPunch
+msgid "No punch pattern defined"
+msgstr "Szúráskép nincs megadva"
+
+#: ReportText.resx, EventAudit_MissingPunchPatterns
+msgid "Missing Punch Patterns"
+msgstr "Hiányzó szúrásképek"
+
+#: ReportText.resx, EventAudit_MissingScore
+msgid "Score course should have score set for all controls or no "
+"controls"
+msgstr "Értékes pályán minden ellenőrző és egyéb pontnak értékkel "
+"kell rendelkeznie"
+
+#: ReportText.resx, EventAudit_MissingScores
+msgid "Missing Scores"
+msgstr "Hiányzó értékek"
+
+#: ReportText.resx, EventAudit_MissingStart
+msgid "Regular courses should have a start triangle"
+msgstr "Szabályos pályának tartalmaznia kell rajt háromszöget"
+
+#: ReportText.resx, EventAudit_MissingStartScore
+msgid "Score courses should have a start triangle"
+msgstr "Értékes pályának tartalmaznia kell rajt háromszöget"
+
+#: ReportText.resx, EventAudit_No
+msgid "No"
+msgstr "Nem"
+
+#: ReportText.resx, EventAudit_NoProblems
+msgid "No problems found."
+msgstr "Nem található probléma."
+
+#: ReportText.resx, EventAudit_Title
+msgid "Event Audit for {0}"
+msgstr "{0} esemény ellenőrzése"
+
+#: ReportText.resx, EventAudit_UnusedControls
+#: UnusedControls.resx, $this.Text
+msgid "Unused Controls"
+msgstr "Nem használt ellenőrzőpontok"
+
+#: ReportText.resx, EventAudit_UnusedControlsExplanation
+msgid "The following controls are present in the All Controls "
+"collection but are not used in any course. To remove them, "
+"use the \"Remove Unused Controls\" command on the \"Event\" "
+"menu. These controls will not be considered further in "
+"this report."
+msgstr "A következő ellenőrzőpontok szerepelnek a Minden "
+"ellenőrzőpont gyűjteményben, de nem használtak egyetlen "
+"pályán sem. Eltávolításukhoz használja a \"Nem használt "
+"ellenőrzőpontok törlése\" parancsot az \"Esemény\" menüből. "
+"Ezek az ellenőrzőpontok nem vesznek részt a jelentés "
+"további részében."
+
+#: ReportText.resx, EventAudit_Yes
+msgid "Yes"
+msgstr "Igen"
+
+#: ReportText.resx, LegLength_Average
+msgid "Average"
+msgstr "Átlag"
+
+#: ReportText.resx, LegLength_CourseInfo
+msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
+msgstr "{0} ({1} ellenőrzőpont, {2:0.0} km, {3} m emelkedés)"
+
+#: ReportText.resx, LegLength_CourseInfoNoClimb
+msgid "{0} ({1} controls, {2:0.0} km)"
+msgstr "{0} ({1} ellenőrzőpont, {2:0.0} km)"
+
+#: ReportText.resx, LegLength_Title
+msgid "Leg Length Report for {0}"
+msgstr "Átmenet hossz jelentés {0}-hoz"
+
+#: ReportText.resx, Load_ControlLoadSection
+msgid "Control load"
+msgstr "Ellenőrzőpont terhelés"
+
+#: ReportText.resx, Load_LegLoadSection
+msgid "Leg load"
+msgstr "Átmenet terhelés"
+
+#: ReportText.resx, Load_MissingLoads
+msgid "Some or all courses do not have competitor loads set for "
+"them. The loads listed below may be incorrect or missing "
+"for this reason. To set competitor loads, select "
+"\"Competitor Load\" from the \"Course\" menu."
+msgstr "Néhány pályánál nincs megadva a versenyzők száma, állítsa "
+"be ezeket. A terhelési listában szereplő adatok e nélkül "
+"hibásak lesznek. A versenyzők számát a \"Pálya\" menü "
+"\"Versenyzőszám\" parancsával adhatja meg."
+
+#: ReportText.resx, Load_OnlyLegsMoreThanOnce
+msgid "(only legs used by more than one course appear in the "
+"following table)"
+msgstr "(csak a több pálya által használt átmenetek jelennek meg a "
+"táblázatban)"
+
+#: ReportText.resx, Load_Title
+msgid "Competitor Load Summary for {0}"
+msgstr "{0} versenyzőszám összefoglalója"
+
+#: ReportText.resx, Load_Warning
+msgid "WARNING:"
+msgstr "FIGYELMEZTETÉS:"
+
+#: SelectionDescriptionText.resx, AwayFromControl
+msgid "away from control"
+msgstr "közeli ellenőrzőpontok"
+
+#: SelectionDescriptionText.resx, CompetitorLoad
+msgid "Competitor load:"
+msgstr "Versenyzőszám:"
+
+#: SelectionDescriptionText.resx, ControlsInUse
+msgid "Controls in use:"
+msgstr "Használt ellenőrzőpontok:"
+
+#: SelectionDescriptionText.resx, ControlsNotInUse
+msgid "Controls not in use:"
+msgstr "Nem használt ellenőrzőpontok:"
+
+#: SelectionDescriptionText.resx, Control_Plural
+msgid "controls"
+msgstr "ellenőrzőpontok"
+
+#: SelectionDescriptionText.resx, Control_Singular
+msgid "control"
+msgstr "ellenőrzőpont"
+
+#: SelectionDescriptionText.resx, CourseList_AllCourses
+msgid "All courses"
+msgstr "Minden pálya"
+
+#: SelectionDescriptionText.resx, CourseName
+msgid "Course \"{0}\""
+msgstr "{0} pálya"
+
+#: SelectionDescriptionText.resx, CustomizedSymbolDesc
+msgid "Customized symbol description"
+msgstr "Egyedi szimbólum leírás"
+
+#: SelectionDescriptionText.resx, EntireLeg
+msgid "entire leg"
+msgstr "teljes átmenet"
+
+#: SelectionDescriptionText.resx, FinishFunnel
+msgid "finish funnel"
+msgstr "célfolyosó"
+
+#: SelectionDescriptionText.resx, Finish_Plural
+msgid "finishes"
+msgstr "cél"
+
+#: SelectionDescriptionText.resx, Finish_Singular
+msgid "finish"
+msgstr "cél"
+
+#: SelectionDescriptionText.resx, Flagging
+msgid "Flagging:"
+msgstr "Szalagozás:"
+
+#: SelectionDescriptionText.resx, IntoControl
+msgid "into control"
+msgstr "ellenőrzőpontig"
+
+#: SelectionDescriptionText.resx, IntoFinishFunnel
+msgid "into finish funnel"
+msgstr "célfolyosóig"
+
+#: SelectionDescriptionText.resx, LineHeight
+msgid "Line height:"
+msgstr "Sormagasság:"
+
+#: SelectionDescriptionText.resx, Location
+msgid "Location:"
+msgstr "Hely:"
+
+#: SelectionDescriptionText.resx, MandCrossing_Plural
+msgid "mandatory crossing points"
+msgstr "kötelező átkelőhely"
+
+#: SelectionDescriptionText.resx, MandCrossing_Singular
+msgid "mandatory crossing point"
+msgstr "kötelező átkelőhely"
+
+#: SelectionDescriptionText.resx, None
+msgid "none"
+msgstr "nincs"
+
+#: SelectionDescriptionText.resx, SpecialName_Forbidden
+msgid "Forbidden Route"
+msgstr "Tiltott út"
+
+#: SelectionDescriptionText.resx, SpecialName_OOB
+msgid "Out-of-bounds Area"
+msgstr "Elzárt terület"
+
+#: SelectionDescriptionText.resx, Start_Plural
+msgid "starts"
+msgstr "rajt"
+
+#: SelectionDescriptionText.resx, Start_Singular
+msgid "start"
+msgstr "rajt"
+
+#: SelectionDescriptionText.resx, TextDescription
+msgid "Text description:"
+msgstr "Szöveges leírás"
+
+#: SelectionDescriptionText.resx, TextLine
+msgid "Text line"
+msgstr "Szövegsor"
+
+#: SelectionDescriptionText.resx, TextLine_AboveAllCourses
+msgid "Appears above {0}, in all courses that contain {0}"
+msgstr "Megjelenik {0} felett, minden olyan pályán ahol {0} szerepel"
+
+#: SelectionDescriptionText.resx, TextLine_AboveThisCourse
+msgid "Appears above {0}, in this course only"
+msgstr "Megjelenik {0} felett, csak ezen a pályán"
+
+#: SelectionDescriptionText.resx, TextLine_BelowAllCourses
+msgid "Appears below {0}, in all courses that contain {0}"
+msgstr "Megjelenik {0} alatt, minden olyan pályán ahol {0} szerepel"
+
+#: SelectionDescriptionText.resx, TextLine_BelowThisCourse
+msgid "Appears below {0}, in this course only"
+msgstr "Megjelenik {0} alatt, csak ezen a pályán"
+
+#: SelectionDescriptionText.resx, TotalControls
+msgid "Total controls:"
+msgstr "Összes ellenőrzőpont:"
+
+#: SelectionDescriptionText.resx, TotalScore
+msgid "Total score:"
+msgstr "Összérték:"
+
+#: SelectionDescriptionText.resx, UsedInCourses
+msgid "Used in courses:"
+msgstr "Pályákban használt:"
+
+#: SelectionDescriptionText.resx, FileName
+msgid "Name:"
+msgstr "Név:"
+
+#: SelectionDescriptionText.resx, MapExchange_Plural
+msgid "map exchanges"
+msgstr "térképcsere"
+
+#: SelectionDescriptionText.resx, MapExchange_Singular
+msgid "map exchange"
+msgstr "térképcsere"
+
+#: SelectionDescriptionText.resx, MapExchangeAtControl
+msgid "Map exchange at {0}"
+msgstr "Térképcsere a(z) {0} pontnál"
+
+#: SelectionDescriptionText.resx, Load
+msgid "Load:"
+msgstr "Terhelés:"
+
+#: SelectionDescriptionText.resx, UsedIn
+msgid "Used in:"
+msgstr "Használatban:"
+
+#: SelectionDescriptionText.resx, CourseNameAndPart
+msgid "Course \"{0}\", Part {1}"
+msgstr "\"{0}\" pálya , {1} rész"
+
+#: SelectionDescriptionText.resx, CalculatedLength
+msgid "Calculated Length:"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, okButton.Text
+msgid "Done"
+msgstr "Kész"
+
+#: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
+msgid "Set the desired printing area by dragging with the mouse."
+msgstr "Az egérrel jelölje ki a nyomtatási területet."
+
+#: SetUILanguage.resx, introLabel.Text
+msgid "Select the language that you would like to use for the "
+"user interface of Purple Pen (menus, windows, etc.)"
+msgstr "Válasza ki a Purple Pen felhasználói felületének nyelvét "
+"(menük, ablakok, stb.)"
+
+#: SetUILanguage.resx, $this.Text
+msgid "Program Language"
+msgstr "A program nyelve"
+
+#: StatusBarText.resx, DefaultStatus
+msgid "Left mouse button: select object;   Right mouse button: "
+"move map;   Scroll wheel: zoom in/out"
+msgstr "Bal egérgomb: objektum kiválasztás; Jobb egérgomb: térkép "
+"mozgatás; Görgetőgomb: nagyítás +/-"
+
+#: StatusBarText.resx, DefaultRectangle
+msgid "Left mouse button: move/size rectangle;   Right mouse "
+"button: move map;   Scroll wheel: zoom in/out"
+msgstr "Bal egérgomb: téglalap mozgatás/méretezés; Jobb egérgomb: "
+"térkép mozgatás; Görgetőgomb: nagyítás +/-"
+
+#: StatusBarText.resx, DragObject
+msgid "Hold down left mouse button and drag to move selected object"
+msgstr "Tartsa lenyomva a bal gombot és húzza a mozgatáshoz az "
+"objektumot"
+
+#: StatusBarText.resx, DragCorner
+msgid "Hold down left mouse button and drag corner point to move it"
+msgstr "Tartsa lenyomva a bal gombot és húzza a sarokpontot az "
+"elmozdításhoz"
+
+#: StatusBarText.resx, DraggingObject
+msgid "Move object to desired location and release mouse button"
+msgstr "Mozgassa az objektumot a kívánt helyre és engedje el az "
+"egérgombot"
+
+#: StatusBarText.resx, DraggingCorner
+msgid "Move corner point to desired location and release mouse "
+"button"
+msgstr "Mozgassa a sarokpontot a kívánt helyre és engedje el az "
+"egérgombot"
+
+#: StatusBarText.resx, AddingControl
+msgid "Click left mouse button to place new control"
+msgstr "Kattintson a bal egérgombbal az új ellenőrzőpont lerakásához"
+
+#: StatusBarText.resx, AddingExistingControl
+msgid "Click left mouse button to add existing control \"{0}\" to "
+"course"
+msgstr "Kattintson a bal gombbal a létező ellenőrzőpont \"{0}\" "
+"pályához adásához"
+
+#: StatusBarText.resx, AddingStart
+msgid "Click left mouse button to place new start"
+msgstr "Kattintson a bal gombbal az új rajt lerakásához"
+
+#: StatusBarText.resx, AddingExistingStart
+msgid "Click left mouse button to add existing start to course"
+msgstr "Kattintson a bal gombbal a létező rajt pályához adásához"
+
+#: StatusBarText.resx, AddingFinish
+msgid "Click left mouse button to place new finish"
+msgstr "Kattintson a bal gombbal az új cél lerakásához"
+
+#: StatusBarText.resx, AddingExistingFinish
+msgid "Click left mouse button to add existing finish to course"
+msgstr "Kattintson a bal gombbal a létező cél pályához adásához"
+
+#: StatusBarText.resx, AddingCrossingPoint
+msgid "Click left mouse button to place new mandatory crossing "
+"point"
+msgstr "Kattintson a bal gombbal az új kötelező átkelő lerakásához"
+
+#: StatusBarText.resx, AddingExistingCrossingPoint
+msgid "Click left mouse button to add existing mandatory crossing "
+"point to course"
+msgstr "Kattintson a bal gombbal a létező kötelező átkelő pályához "
+"adásához"
+
+#: StatusBarText.resx, AddingObject
+msgid "Click left mouse button to place new object"
+msgstr "Kattintson a bal gombbal egy új objektum lerakásához"
+
+#: StatusBarText.resx, AddingBend
+msgid "Click left mouse button at the location of the bend"
+msgstr "Kattintson a bal gombbal a kanyar helyén"
+
+#: StatusBarText.resx, AddingCorner
+msgid "Click left mouse button to add a new corner"
+msgstr "Kattintson a bal gombbal a sarok helyén"
+
+#: StatusBarText.resx, DeletingBend
+msgid "Click left mouse button on a bend to remove it"
+msgstr "Kattintson a bal gombbal a kanyaron az eltávolításához"
+
+#: StatusBarText.resx, DeletingCorner
+msgid "Click left mouse button on a corner to remove it"
+msgstr "Kattintson a bal gombbal a sarkon az eltávolításához"
+
+#: StatusBarText.resx, AddingControlGap
+msgid "Click left mouse button on the control circle to add a "
+"small gap; hold down left mouse button and drag to create "
+"a large gap"
+msgstr "Kattintson a bal gombbal az ellenőrzőpont körén kis rés "
+"hozzáadásához, tartsa lenyomva a gombot és mozgassa az "
+"egeret nagy rés létrehozásához"
+
+#: StatusBarText.resx, RemovingControlGap
+msgid "Click left mouse button on a gap in the control circle to "
+"remove it"
+msgstr "Kattintson a bal gombbal a résen annak eltávolításához"
+
+#: StatusBarText.resx, AddingLegGap
+msgid "Click left mouse button to create small gap; hold down "
+"left mouse button and drag to create a large gap in the leg"
+msgstr "Kattintson a bal gombbal egy kis rés létrehozásához; "
+"tartsa lenyomva a gombot és mozgassa nagy rés létrehozásához"
+
+#: StatusBarText.resx, RemovingLegGap
+msgid "Click left mouse button on a gap in the leg to remove it"
+msgstr "Kattintson a bal gombbal a résen annak eltávolításához"
+
+#: StatusBarText.resx, SizeRectangle
+msgid "Hold down left mouse button and drag to size the selected "
+"object"
+msgstr "Tartsa lenyomva a bal gombot és mozgassa az egeret az "
+"objektum méretezéséhez"
+
+#: StatusBarText.resx, SizingRectangle
+msgid "Move edge(s) to desired location and release mouse button"
+msgstr "Mozgassa az él(ek)et a kívánt helyre és engedje el a gombot"
+
+#: StatusBarText.resx, AddingDescription
+msgid "Hold down left mouse button and drag to create control "
+"descriptions"
+msgstr "Tartsa lenyomva a bal gombot és mozgassa a pontleírás "
+"létrehozásához"
+
+#: StatusBarText.resx, RotatingObject
+msgid "Click left mouse button when the crossing point is rotated "
+"to the correct angle"
+msgstr "Kattintson a bal gombbal amikor a kereszteződés a kívánt "
+"szögben áll"
+
+#: StatusBarText.resx, AddingLineArea
+msgid "Hold down left mouse button and drag to add a line "
+"segment; click the left mouse button to finish adding object"
+msgstr "Tartsa lenyomva a bal gombot és mozgassa új vonaldarab "
+"hozzáadásához; kattintson a bal gombbal az objektum "
+"hozzáadásának befejezéséhez"
+
+#: StatusBarText.resx, AddingText
+msgid "Hold down left mouse button and drag to create text"
+msgstr "Tartsa lenyomva a bal gombot és mozgassa a szöveg "
+"hozzáadásához"
+
+#: StatusBarText.resx, AddingExistingMapExchange
+msgid "Click left mouse button to add existing map exchange to "
+"course"
+msgstr "Kattintson a bal gombbal a létező térképcsere pályához "
+"adásához"
+
+#: StatusBarText.resx, AddingMapExchange
+msgid "Click left mouse button to place new map exchange"
+msgstr "Kattintson a bal gombbal új térképcsere lerakásához"
+
+#: StatusBarText.resx, AddingMapExchangeToControl
+msgid "Click left mouse button to add map exchange at control "
+"\"{0}\" "
+msgstr "Kattintson a bal gombbal a térképcsere a(z) \"{0}\" "
+"ellenőrzőpontnál hozzáadásához "
+
+#: StatusBarText.resx, AddingRectangle
+msgid "Hold down left mouse button and drag to create object"
+msgstr "Tartsa lenyomva és mozgassa az egeret az új objektum "
+"létrehozásához"
+
+#: UnusedControls.resx, okButton.Text
+msgid "Delete"
+msgstr "Törlés"
+
+#: UnusedControls.resx, unusedControlsLabel.Text
+msgid "The following controls are in the All Controls collection, "
+"but not used in any course. Click Delete to remove all "
+"checked controls."
+msgstr "A következő ellenőrzőpontok szerepelnek a Minden "
+"ellenőrzőpont gyűjteményben, de nem használtak egyetlen "
+"pályán sem. Kattintson a Törlésre a kijelölt "
+"ellenőrzőpontok törléséhez."
+

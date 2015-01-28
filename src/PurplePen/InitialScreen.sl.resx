@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Potrdi</value>
   </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>Končaj</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Odpri zadnjo prireditev</value>
   </data>
@@ -140,5 +137,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Dobrodošli v programu Purple Pen</value>
+  </data>
+  <data name="quitButton.Text" xml:space="preserve">
+    <value>Končaj</value>
   </data>
 </root>

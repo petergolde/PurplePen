@@ -247,7 +247,7 @@
     <value>ディスクリプションのテキストをカスタマイズ</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
-    <value>コースの順序の変更</value>
+    <value>コースの並び順の変更</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
     <value>地図ファイルを変更</value>

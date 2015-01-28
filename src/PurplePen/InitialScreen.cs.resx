@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="quitButton.Text" xml:space="preserve">
-    <value>Ukončit</value>
-  </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Otevřít naposledy zobrazovaný závod</value>
   </data>
@@ -140,5 +137,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vítejte v Purple Pen</value>
+  </data>
+  <data name="quitButton.Text" xml:space="preserve">
+    <value>Ukončit</value>
   </data>
 </root>

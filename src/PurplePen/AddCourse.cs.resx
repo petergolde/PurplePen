@@ -180,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Seznam kategorií / podtitulek</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Délka:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Převýšení:</value>
   </data>

@@ -174,6 +174,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasseliste / sekundær tittel</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Lengd:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Stigning:</value>
   </data>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>ディスクリプションの独立した行に配置するテキストを入力してください:</value>
+    <value>ディスクリプションの独立した行に表示させるテキストを入力してください:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>コース:</value>

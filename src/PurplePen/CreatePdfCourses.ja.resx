@@ -190,7 +190,7 @@
     <value>すべてのコースで一つ</value>
   </data>
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
-    <value>コースごとに一つ</value>
+    <value>1個 / コース</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
     <value>コースパートごとに一つ</value>

@@ -121,7 +121,7 @@
     <value>新しく作成するコントロールには連番のコントロールコードが自動で割り当てられます。連番の初期値を選択してください。</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>上下逆さに見ると違う番号に見えるコントロールコードを使用しない(例: 「68」/「89」)</value>
+    <value>逆さにも読めるコントロールコードを使用しない(例: 「68」/「89」)</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>連番の初期値:</value>

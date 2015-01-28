@@ -180,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Liste des catégories / Titre secondaire</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Distance :</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Dénivelée :</value>
   </data>

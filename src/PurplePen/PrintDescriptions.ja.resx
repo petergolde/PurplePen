@@ -190,16 +190,16 @@
     <value>部数</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>コースごとのディスクリプション</value>
+    <value>個 / コース</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
-    <value>コースごとにディスクリプション1つ</value>
+    <value>1個 / 1コース</value>
   </data>
   <data name="copiesCombo.Items1" xml:space="preserve">
-    <value>コースごとに1ページ</value>
+    <value>1ページ / コース</value>
   </data>
   <data name="copiesCombo.Items2" xml:space="preserve">
-    <value>コースごとに複数ページ</value>
+    <value>X個 / コース</value>
   </data>
   <data name="whatToPrintLabel.Text" xml:space="preserve">
     <value>印刷:</value>

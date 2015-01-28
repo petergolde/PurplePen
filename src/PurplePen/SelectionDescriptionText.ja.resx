@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>レッグ前半でテープ誘導</value>
+  </data>
   <data name="Climb" xml:space="preserve">
     <value>登高</value>
   </data>
@@ -128,6 +131,12 @@
   </data>
   <data name="ControlsNotInUse" xml:space="preserve">
     <value>未使用のコントロール</value>
+  </data>
+  <data name="Control_Plural" xml:space="preserve">
+    <value>コントロール</value>
+  </data>
+  <data name="Control_Singular" xml:space="preserve">
+    <value>コントロール</value>
   </data>
   <data name="CourseList_AllCourses" xml:space="preserve">
     <value>すべてのコース</value>
@@ -156,6 +165,9 @@
   <data name="Flagging" xml:space="preserve">
     <value>テープ誘導</value>
   </data>
+  <data name="IntoControl" xml:space="preserve">
+    <value>レッグ後半でテープ誘導</value>
+  </data>
   <data name="IntoFinishFunnel" xml:space="preserve">
     <value>フィニッシュまで漏斗状の誘導</value>
   </data>
@@ -165,11 +177,17 @@
   <data name="LineHeight" xml:space="preserve">
     <value>行の高さ:</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>位置:</value>
+  </data>
   <data name="MandCrossing_Plural" xml:space="preserve">
     <value>必須の横断地点</value>
   </data>
   <data name="MandCrossing_Singular" xml:space="preserve">
     <value>必須の横断地点</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>なし</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
     <value>横断不能な境界線</value>
@@ -189,6 +207,12 @@
   <data name="SpecialName_Image" xml:space="preserve">
     <value>画像</value>
   </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>立入禁止ルート</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>立入禁止区域</value>
+  </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
     <value>随意の横断地点</value>
   </data>
@@ -201,6 +225,9 @@
   <data name="SpecialName_Water" xml:space="preserve">
     <value>給水所</value>
   </data>
+  <data name="Start_Plural" xml:space="preserve">
+    <value>スタート</value>
+  </data>
   <data name="Start_Singular" xml:space="preserve">
     <value>スタート</value>
   </data>
@@ -208,7 +235,25 @@
     <value>文字によるディスクリプション</value>
   </data>
   <data name="TextLine" xml:space="preserve">
-    <value>テキストライン</value>
+    <value>テキスト行</value>
+  </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>{0} の上に表示、(0} を含む全てのコース</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>{0} の上に表示、現在のコースのみ</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>{0} の下に表示、(0} を含む全てのコース</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>{0} の下に表示、現在のコースのみ</value>
+  </data>
+  <data name="TotalControls" xml:space="preserve">
+    <value>コントロール数:</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>ポイント合計:</value>
   </data>
   <data name="UsedInCourses" xml:space="preserve">
     <value>使用コース:</value>

@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Nincs szimbólum</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Minden ellenőrzőpont</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>'{0}' nem betölthető a következő okból:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>'{0}' nem menthető a következő okból:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>'{0}' térkép fájl nem betölthető a következő okból:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>'{0}' kép fájl nem betölthető a következő okból:</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>'{0}' nem nyomtatható a következő okból:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>'{0}' nem létrehozható a következő okból:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>'{0}' könyvtár nem hozható létre a következő okból:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>A térkép fájl nem olvasható az alábbi okból: '{0}' Használja az Optimize/Repair parancsot az OCAD programban, ami megoldhatja a problémát!</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>OCAD fájl nem létrehozható az alábbi okból:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Akarja menteni a(z) '{0}' fájl változásait?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>A(z) '{0}' fájl már létezik a megadott könyvtárban. Kattintson a "Vissza" gombra és válasszon egy másik könyvtárat vagy új esemény nevet.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>A(z) '{0}' kód már használt másik ellenőrzőpontnál.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Az ellenőrzőpont értéke 1-999 lehet.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Az emelkedés 0-9999, vagy üres lehet.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>A versenyzőszám egész szám 0-999999, vagy üres lehet.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Visszavonás</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Visszavonás</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>Ú&amp;jra</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Újra</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Kijelölés megszüntetése</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>&amp;Művelet megszakítása</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Művelet megszakítása</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Írja be az új értéket</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Írja be az új kódot</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Írja be a méretet
+Használja a /-t lejtős mérethez
+Használja a |-t két értékhez</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Írja be az új esemény nevét
+Használja a |-t a sortöréshez
+(minden pályára kihat)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Írja be az új másodlagos nevet
+Használja a |-t a sortöréshez</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Írja be az új pálya nevét</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Az új emelkedés méterben</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Írja be az új szimbólum jelentést
+(minden pályára kihat)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Írja be az új szöveget</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Az alábbi ellenőrzőpontok {0} nem használtak egyik pályán sem. Akarja törölni ezeket?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>A(z) {0} ellenőrzőpont nem használt egyik pályán sem. Akarja törölni ezt?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Az ellenőrzőpont {0} használt az alábbi pályákon: {1}. Tényleg törölni akarja ennek ellenére?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Az ellenőrzőpont kódja egy, kettő vagy három betű vagy számjegy lehet.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Az ellenőrzőpont kódja nem tartalmazhat szóközt.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Az ellenőrzőpont kódja nem kezdődhet nullával.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Az ellenőrzőpont kódja célszerű, ha nem egyezik meg egy másik pont kódjának fejjel lefelé fordított változatával.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>A {0} kód többszörösen van használva.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>A nyomtatási lépték 100 és 100 000 között kell legyen.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Pálya tulajdonságai</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Fekvő</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Álló</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>A lapméret túl kicsi ahhoz, hogy akár egyetlen leírás is kiférjen rá.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>{0} verzió</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>A Purple Pen {0} verziója letölthető. (Az Ön jelenlegi verziója: {1}.)
+
+Kívánja letölteni és telepíteni a legújabb verziót?</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>A Súgó fájl '{0}' nem megnyitható.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Nagyítás</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>A "{0}" térkép fájl nem található.
+
+Leggyakrabban áthelyezve, vagy letörölve lett a térkép fájl. Ha másik gépre próbáljuk átvinni a Purple Pen fájlt, akkor vele kell vinnünk a térkép fájlt is.
+
+A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítógépén.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Minden ellenőrzőpont használt a pályában.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Be&amp;fejezés</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Tovább &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Ellenőrzőpont {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Cél</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Kötelező átkelőhely</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Kereszteződés</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Minden: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Bal: {0}, Jobb: {1}, Felső: {2}, Alsó: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Rajt</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>{0} Alfa</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>{0} Béta</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>{0} RC</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>többes szám</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>egyes szám</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Az egyedi szövegben a "*" jelöli a módosítás kezdetét miután leraktuk.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>pálya tervezés tájékozódási futáshoz</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Írja be a térképre helyezendő szöveget. A Rendben lenyomása után húzza az egérrel a kívánt helyre a szöveget.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Új szöveg</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Írja be az új szöveget!</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Szöveg módosítása</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Egy másik program módosította a(z) '{0}' térkép fájlt. A Purple Pen újra fogja olvasni.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Az esemény tartalmaz szöveges pontleírást az alábbi pályákon: {0}. Biztosan megváltoztatja a nyelvet, az új nyelv {1} lesz?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Megnyitás "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>A Purple Pen programot be kell zárni mielőtt betölti az elkészült OCAD fájlokat.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Egyetlen pályát sem választott a nyomtatáshoz.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Ha létezik web oldal amin megtalálható a Purple Pen dokumentációja a lefordított nyelven, írja be a címet (http-vel együtt) fordításként. Egyéb esetben hagyja üresen.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Térképcsere</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Csere</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>TCs</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Rész {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Minden rész</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Rész {0} (/ {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kapcsolati Email cím</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Hiba keletkezett. A probléma megoldása érdekében adja meg email címét és egyéb információkat, és küldje el nekünk a jelentést.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Kérem írja meg nekünk, hogy mit csinált a programmal, hogy kijavíthassuk a problémát!</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Jelentés küldése</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>A pontleírás lehet, hogy nem tartalmazza a térképcserét ha "Minden rész" van megjelenítve.  Váltson a megfelelő részre és használja az "Új pontleírás"-t újra.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>A GPL Ghostscript nincs telepítve.</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>A GPL Ghostscript nem tudta sikeresen beolvasni a PDF fájlt.</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Nem olvasható be a PDF fájl átalakítás eredménye a(z) '{0}' fájlból</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>A PDF fájl nem hozható létre az alábbi okból:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Felhasználói</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Térkép méret PDF-ből</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>A felhasználó megszakította</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>{0} elkészítése...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Nyomtatás (0} / {1}. oldal</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>A térkép fájl "{0}" törölve lett. Kérem próbálja meg visszaállítani és utána nyomjon "Rendben"-t!</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>A .NET keretrendszer a számítógépén nincs megfelelően telepítve. Kérem látogassa meg a http://microsoft.com/net oldalt és telepítse .NET keretrendszer legújabb verzióját az Ön Windows operációs rendszerére.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Fekete</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Válasszon színt...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Egyéni szín</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Sötétkék</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Zöld</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Világos kék</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Lila</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Piros</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Sárga</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Sor megjelenésének beállítása. A Rendben lenyomása után húzza az egérrel a sor elemeit a megfelelő helyre.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Új sor</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>A téglalap megjelenésének beállítása. A Rendben lenyomása után húzza az egérrel a kívánt helyre.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Új téglalap</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>A téglalap vagy vonal kinézetének módosítása.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Sor kinézetének módosítása</value>
+  </data>
+</root>
