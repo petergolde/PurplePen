@@ -108,6 +108,7 @@
             this.Controls.Add(this.duplicateButton);
             this.Controls.Add(this.labelExplanation);
             this.Controls.Add(this.moveButton);
+            this.HelpTopic = "MovingSharedControl.htm";
             this.KeyPreview = true;
             this.Name = "MoveControlChoiceDialog";
             this.Text = "Moving Shared Control";

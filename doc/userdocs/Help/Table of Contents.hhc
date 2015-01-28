@@ -260,6 +260,10 @@
 				<param name="Local" value="CourseDeleteCourse.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Duplicate Course...">
+				<param name="Local" value="CourseDuplicate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Properties...">
 				<param name="Local" value="CourseProperties.htm">
 				</OBJECT>

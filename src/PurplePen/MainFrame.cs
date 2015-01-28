@@ -1232,7 +1232,7 @@ namespace PurplePen
                 AddCourse addCourseDialog = new AddCourse();
                 InitializeCoursePropertiesDialogWithCurrentValues(addCourseDialog);
                 addCourseDialog.SetTitle(MiscText.DuplicateCourseTitle);
-                addCourseDialog.HelpTopic = "DuplicateCourse.htm";
+                addCourseDialog.HelpTopic = "CourseDuplicate.htm";
                 addCourseDialog.CourseName = "";
                 addCourseDialog.CanChangeCourseKind = false;
 
