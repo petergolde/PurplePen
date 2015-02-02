@@ -43,6 +43,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PurplePen.Tests
 {
+    using PurplePen.MapModel;
+
     [TestClass]
     public class CourseLayoutTests: TestFixtureBase
     {

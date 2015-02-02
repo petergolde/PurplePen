@@ -43,6 +43,8 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using PurplePen.MapModel;
+
 
     [TestClass]
     public class DescriptionFormatterTests: TestFixtureBase

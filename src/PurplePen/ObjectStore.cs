@@ -41,6 +41,8 @@ using System.IO;
 
 namespace PurplePen
 {
+    using PurplePen.MapModel;
+
     // A semi-opaque handle for ids so that we get stronger typing.
     public struct Id<T>: IEquatable<Id<T>>
     {

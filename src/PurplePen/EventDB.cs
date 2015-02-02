@@ -39,7 +39,6 @@ using System.Drawing;
 using System.Xml;
 using System.Diagnostics;
 using System.IO;
-using PurplePen.Graphics2D;
 using System.Globalization;
 
 #pragma warning disable 659
@@ -47,6 +46,9 @@ using System.Globalization;
 
 namespace PurplePen
 {
+    using PurplePen.Graphics2D;
+    using PurplePen.MapModel;
+
     // Utilities to help event DB classes.
     static class EventDBUtil
     {

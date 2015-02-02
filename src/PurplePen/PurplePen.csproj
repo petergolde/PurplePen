@@ -587,7 +587,6 @@
       <DependentUpon>TitleDetailButton.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolStripTrackBar.cs" />
-    <Compile Include="UndoMgr.cs" />
     <Compile Include="UnusedControls.cs">
       <SubType>Form</SubType>
     </Compile>

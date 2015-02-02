@@ -46,9 +46,12 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using PurplePen.MapModel;
+
     [TestClass]
     public class ControllerTests: TestFixtureBase
     {
+
         TestUI ui;
         Controller controller;
 

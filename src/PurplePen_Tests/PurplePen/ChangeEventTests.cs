@@ -48,6 +48,8 @@ using PurplePen.Graphics2D;
 
 namespace PurplePen.Tests
 {
+    using PurplePen.MapModel;
+
 
     [TestClass]
     public class ChangeEventTests: TestFixtureBase
