@@ -122,7 +122,6 @@
     <Compile Include="PurplePen\TestFixtureBase.cs" />
     <Compile Include="PurplePen\TestUI.cs" />
     <Compile Include="PurplePen\TextifierTests.cs" />
-    <Compile Include="PurplePen\UndoMgrTests.cs" />
     <Compile Include="PurplePen\UtilTests.cs" />
     <Compile Include="PurplePen\XmlInputTests.cs" />
   </ItemGroup>
