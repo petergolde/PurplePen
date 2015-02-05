@@ -287,6 +287,7 @@ namespace PurplePen
                 mapDisplay = controller.MapDisplay;
                 mapDisplay.MapIntensity = Settings.Default.MapIntensity;
                 mapDisplay.AntiAlias = Settings.Default.MapHighQuality;
+                controller.ShowAllControls = Settings.Default.ViewAllControls;
                 mapViewer.SetMap(mapDisplay);
                 ShowRectangle(mapDisplay.MapBounds);
             }
@@ -959,6 +960,8 @@ namespace PurplePen
         private void allControlsMenu_Click(object sender, EventArgs e)
         {
             controller.ShowAllControls = !controller.ShowAllControls;
+            Settings.Default.ViewAllControls = controller.ShowAllControls;
+            Settings.Default.Save();
         }
 
         private void addControlMenu_Click(object sender, EventArgs e)
