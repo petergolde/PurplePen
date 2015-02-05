@@ -242,7 +242,7 @@
 				<param name="Local" value="ControlsCustomizeDescriptionText.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Customize Course Appearance...">
+				<param name="Name" value="Customize Appearance...">
 				<param name="Local" value="EventCustomizeCourseAppearance.htm">
 				</OBJECT>
 		</UL>

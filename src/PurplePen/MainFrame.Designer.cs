@@ -144,6 +144,7 @@ namespace PurplePen
             this.courseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.duplicateCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.propertiesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.courseOrderMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -269,7 +270,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.duplicateCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -337,6 +337,7 @@ namespace PurplePen
             this.descriptionControl.CourseKind = PurplePen.CourseView.CourseViewKind.Normal;
             this.descriptionControl.CustomSymbolText = null;
             this.descriptionControl.Description = null;
+            this.descriptionControl.HasCustomLength = false;
             this.descriptionControl.IsCoursePart = false;
             this.descriptionControl.Name = "descriptionControl";
             this.descriptionControl.SymbolDB = null;
@@ -893,6 +894,12 @@ namespace PurplePen
             this.deleteCourseMenu.Name = "deleteCourseMenu";
             resources.ApplyResources(this.deleteCourseMenu, "deleteCourseMenu");
             this.deleteCourseMenu.Click += new System.EventHandler(this.deleteCourseMenu_Click);
+            // 
+            // duplicateCourseMenu
+            // 
+            this.duplicateCourseMenu.Name = "duplicateCourseMenu";
+            resources.ApplyResources(this.duplicateCourseMenu, "duplicateCourseMenu");
+            this.duplicateCourseMenu.Click += new System.EventHandler(this.duplicateCourseMenu_Click);
             // 
             // propertiesMenu
             // 
@@ -1750,12 +1757,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // duplicateCourseMenu
-            // 
-            this.duplicateCourseMenu.Name = "duplicateCourseMenu";
-            resources.ApplyResources(this.duplicateCourseMenu, "duplicateCourseMenu");
-            this.duplicateCourseMenu.Click += new System.EventHandler(this.duplicateCourseMenu_Click);
             // 
             // MainFrame
             // 

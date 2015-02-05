@@ -211,7 +211,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 261</value>
+    <value>256, 262</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -220,7 +220,7 @@
     <value>descriptionControl</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DescriptionControl, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
     <value>splitDescription.Panel1</value>
@@ -256,7 +256,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 102</value>
+    <value>256, 101</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>261</value>
+    <value>262</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -328,7 +328,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADgh7sL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuABAiLsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -350,7 +350,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwro7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwrw7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -358,7 +358,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -433,7 +433,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -817,55 +817,55 @@
     <value>&amp;View</value>
   </data>
   <data name="changeMapFileMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Map File...</value>
   </data>
   <data name="toolStripSeparator10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>224, 6</value>
   </data>
   <data name="changeCodesMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="changeCodesMenu.Text" xml:space="preserve">
     <value>Change Control &amp;Codes...</value>
   </data>
   <data name="autoNumberingMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="autoNumberingMenu.Text" xml:space="preserve">
     <value>Automatic &amp;Numbering...</value>
   </data>
   <data name="removeUnusedControlsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>Remove &amp;Unused Controls...</value>
   </data>
   <data name="toolStripSeparator11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>224, 6</value>
   </data>
   <data name="punchPatternsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Punch Patterns...</value>
   </data>
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 6</value>
+    <value>224, 6</value>
   </data>
   <data name="customizeDescriptionsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Customize &amp;Description Text...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 22</value>
+    <value>227, 22</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Customize Course &amp;Appearance...</value>
+    <value>Customize &amp;Appearance...</value>
   </data>
   <data name="eventMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
@@ -1653,11 +1653,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZIrT8NwFMVPJkgQs5AJ5OS+A5mpQWAWgsUg
-        MDMTqOFwCLAEg+NTLMEiSFiTiTkcc3tlz5bf3S5pB81YSNhJTtr7fv21dUSKgplmpy7+DbHiCoznmt+T
-        cNfVCfrqFzDeUakB36aaht850eTdkhhNHmtc8nCpo04+7bApKfrgKSQqX5iS7G3+q3yPYRkepknQlfl1
-        1R3gd+bhS2B8NCOGS1dlAp8KPq/so+iqBCS5oVKIw9rNDzU8aKq54+I/o656jnb3XcwE9nPrnAluXZXA
-        zsxIzza7qzJB8LXtED65agkyByONPsxoV/i6SJp0cESRE/5D80OuefiivVpLrcizb0Qr2FNvz1OsjLFw
-        sIdn1bKI34s9CQr/PLMt1Gb1jtbu5FdQLYBlF7cF6RPf6jbGDbAtAAAAAABJRU5ErkJggg==
+        MDMTqOFwCLAEg+NTLMEiSFgzM4djbq/s2fK72yXtoBkLCTvJSXvfr7+2jkhRMNPs1MW/IVZcgfFc83sS
+        7ro6QV/9AsY7KjXg21TT8DsnmrxbEqPJY41LHi511MmnHTYlRR88hUTlC1OSvc1/le8xLMPDNAm6Mr+u
+        ugP8zjx8CYyPZsRw6apM4FPB55V9FF2VgCQ3VApxWLv5oYYHTTV3XPxn1FXP0e6+i5nAfm6dM8GtqxLY
+        mRnp2WZ3VSYIvrYdwidXLUHmYKTRhxntCl8XSZMOjihywn9ofsg1D1+0V2upFXn2jWgFe+rteYqVMRYO
+        9vCsWhbxe7EnQeGfZ7aF2qze0dqd/AqqBbDs4rYgfQLb0jbCG5rWugAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2592,6 +2592,12 @@
   <data name="&gt;&gt;deleteCourseMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;duplicateCourseMenu.Name" xml:space="preserve">
+    <value>duplicateCourseMenu</value>
+  </data>
+  <data name="&gt;&gt;duplicateCourseMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;propertiesMenu.Name" xml:space="preserve">
     <value>propertiesMenu</value>
   </data>
@@ -3298,7 +3304,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>
@@ -3329,12 +3335,6 @@
   </data>
   <data name="&gt;&gt;saveGpxFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;duplicateCourseMenu.Name" xml:space="preserve">
-    <value>duplicateCourseMenu</value>
-  </data>
-  <data name="&gt;&gt;duplicateCourseMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>
