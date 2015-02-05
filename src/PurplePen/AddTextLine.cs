@@ -65,13 +65,18 @@ namespace PurplePen
 
         public string TextLine
         {
-            get
-            {
-                return textBoxText.Text;
+            get {
+                if (textBoxText.Text == "")
+                    return null;
+                else
+                    return textBoxText.Text.Replace("\r\n", "|"); 
             }
             set
             {
-                textBoxText.Text = value;
+                if (value == null)
+                    textBoxText.Text = "";
+                else
+                    textBoxText.Text = value.Replace("|", "\r\n");
             }
         }
 

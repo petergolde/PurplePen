@@ -85,7 +85,6 @@ namespace PurplePen
             // textLineLabel
             // 
             resources.ApplyResources(this.textLineLabel, "textLineLabel");
-            this.textLineLabel.MaximumSize = new System.Drawing.Size(410, 0);
             this.textLineLabel.Name = "textLineLabel";
             // 
             // tableLayoutPanel1
@@ -97,6 +96,7 @@ namespace PurplePen
             // 
             // textBoxText
             // 
+            this.textBoxText.AcceptsReturn = true;
             resources.ApplyResources(this.textBoxText, "textBoxText");
             this.textBoxText.Name = "textBoxText";
             // 
