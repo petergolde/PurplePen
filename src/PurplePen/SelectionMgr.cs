@@ -589,18 +589,20 @@ namespace PurplePen
                     titleFound = true;
                 }
 
+                if (selectionKind == SelectionKind.TextLine && (lineKind == DescriptionLineKind.Text && activeDescription[line].textLineKind == selectedTextLineKind &&
+                                                                                          selectedCourseControl == activeDescription[line].courseControlId && selectedControl == activeDescription[line].controlId)) {
+                    if (!titleFound)
+                        selectedDescriptionLineFirst = line;
+                    selectedDescriptionLineLast = line;
+                    titleFound = true;
+                }
+
                 if (selectionKind == SelectionKind.Header && (lineKind == DescriptionLineKind.Header2Box || lineKind == DescriptionLineKind.Header3Box)) {
                     selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }
 
                 if (selectionKind == SelectionKind.Key && (lineKind == DescriptionLineKind.Key && activeDescription[line].boxes[0] == selectedKeySymbol)) {
-                    selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
-                    return;
-                }
-
-                if (selectionKind == SelectionKind.TextLine && (lineKind == DescriptionLineKind.Text && activeDescription[line].textLineKind == selectedTextLineKind &&
-                                                                                          selectedCourseControl == activeDescription[line].courseControlId && selectedControl == activeDescription[line].controlId)) {
                     selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;
                 }

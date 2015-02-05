@@ -325,8 +325,10 @@ namespace PurplePen
 
             set
             {
-                isCoursePart = value;
-                descriptionPanel.Invalidate();
+                if (isCoursePart != value) {
+                    isCoursePart = value;
+                    descriptionPanel.Invalidate();
+                }
             }
         }
 

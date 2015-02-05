@@ -70,6 +70,22 @@ namespace PurplePen
         public Id<CourseControl> courseControlId2;                 // If isLeg is true, the course control Id of the end of the leg, for editing/selection purposes.
         public Id<ControlPoint> controlId;                       // The control ID, just for editing/selection purposes.
 
+        // Should there be no boundry between the following description lines.
+        public static bool NoBoundaryBetween(DescriptionLine descLine1, DescriptionLine descLine2)
+        {
+            if (descLine1.kind == descLine2.kind) {
+                switch (descLine1.kind) {
+                    case DescriptionLineKind.Title:
+                    case DescriptionLineKind.SecondaryTitle:
+                        return true;
+                    case DescriptionLineKind.Text:
+                        return descLine1.textLineKind == descLine2.textLineKind;
+                }
+            }
+
+            return false;
+        }
+
         // Determine if this description line is the same as another, primarily so we don't have to repaint it.
         public override bool Equals(object obj)
         {
@@ -223,27 +239,33 @@ namespace PurplePen
             return line;
         }
 
-        // Given the text, create a text line for that text.
-        private DescriptionLine GetTextLineFromText(string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
+        // Given the text, create one or more text lines for that text. Lines are split by vertical bars.
+        private DescriptionLine[] GetTextLineFromText(string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
         {
-            DescriptionLine line = new DescriptionLine();
+            string[] texts = text.Split(new char[] { '|' });
+            int lineCount = texts.Length;
 
-            line.kind = DescriptionLineKind.Text;
-            line.boxes = new object[1];
-            line.boxes[0] = text;
-            line.textual = text;
-            line.courseControlId = courseControlId;
-            line.controlId = controlId;
-            line.textLineKind = textLineKind;
+            DescriptionLine[] lines = new DescriptionLine[lineCount];
+            for (int index = 0; index < lineCount; ++index) {
+                DescriptionLine line = new DescriptionLine();
+                line.kind = DescriptionLineKind.Text;
+                line.boxes = new object[1];
+                line.boxes[0] = texts[index];
+                line.textual = texts[index];
+                line.courseControlId = courseControlId;
+                line.controlId = controlId;
+                line.textLineKind = textLineKind;
+                lines[index] = line;
+            }
 
-            return line;
+            return lines;
         }
 
         // Given some text, a text line for it to a list if the text is non-empty.
         private void AddTextLine(List<DescriptionLine> list, string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
         {
             if (!string.IsNullOrEmpty(text)) {
-                list.Add(GetTextLineFromText(text, courseControlId, controlId, textLineKind));
+                list.AddRange(GetTextLineFromText(text, courseControlId, controlId, textLineKind));
             }
         }
 

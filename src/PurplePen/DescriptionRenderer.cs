@@ -298,7 +298,7 @@ namespace PurplePen
                             // Don't draw a top line if it's a title/secondary and so was the previous.
                             bool lastLine = (line == description.Length - 1 || line == startLine + countLines - 1 || nextCol != col);
                             bool drawThickLine = (thickLineCounter == 0 || line == startLine);
-                            bool noTopLine = (line != 0) && (description[line].kind == DescriptionLineKind.Title || description[line].kind == DescriptionLineKind.SecondaryTitle) && (description[line].kind == description[line - 1].kind);
+                            bool noTopLine = (line != 0) && (DescriptionLine.NoBoundaryBetween(description[line], description[line - 1]));
                             RenderLine(renderer, description[line], descriptionKind, lastLine,  drawThickLine, noTopLine, clipWorld);
 
                             renderer.Transform = matrixSave;
@@ -314,16 +314,16 @@ namespace PurplePen
         }
 
         // Find line bounds of lines of a given kind.
-        void LineBoundsOfKind(int line, out int firstLine, out int lastLine)
+        void LineBounds(int line, out int firstLine, out int lastLine)
         {
-            DescriptionLineKind lineKind = description[line].kind;
+            DescriptionLine descLine = description[line];
 
             firstLine = line;
-            while (firstLine > 0 && description[firstLine - 1].kind == lineKind)
+            while (firstLine > 0 && DescriptionLine.NoBoundaryBetween(description[firstLine - 1], descLine))
                 --firstLine;
 
             lastLine = line;
-            while (lastLine < description.Length - 1 && description[lastLine + 1].kind == lineKind)
+            while (lastLine < description.Length - 1 && DescriptionLine.NoBoundaryBetween(description[lastLine + 1], descLine))
                 ++lastLine;
         }
 
@@ -364,14 +364,14 @@ namespace PurplePen
                 case DescriptionLineKind.Title:
                     result.kind = HitTestKind.Title;
                     result.box = 0;
-                    LineBoundsOfKind(iLine, out result.firstLine, out result.lastLine);
+                    LineBounds(iLine, out result.firstLine, out result.lastLine);
                     result.rect = new RectangleF(0, result.firstLine * cellSize, width, cellSize * (result.lastLine - result.firstLine + 1));
                     break;
 
                 case DescriptionLineKind.SecondaryTitle:
                     result.kind = HitTestKind.SecondaryTitle;
                     result.box = 0;
-                    LineBoundsOfKind(iLine, out result.firstLine, out result.lastLine);
+                    LineBounds(iLine, out result.firstLine, out result.lastLine);
                     result.rect = new RectangleF(0, result.firstLine * cellSize, width, cellSize * (result.lastLine - result.firstLine + 1));
                     break;
 
@@ -455,7 +455,8 @@ namespace PurplePen
                 case DescriptionLineKind.Text:
                     result.kind = HitTestKind.OtherTextLine;
                     result.box = 0;
-                    result.rect = new RectangleF(0, iLine * cellSize, width, cellSize);
+                    LineBounds(iLine, out result.firstLine, out result.lastLine);
+                    result.rect = new RectangleF(0, result.firstLine * cellSize, width, cellSize * (result.lastLine - result.firstLine + 1));
                     break;
 
                 case DescriptionLineKind.Key:
