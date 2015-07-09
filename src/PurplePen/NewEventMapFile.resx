@@ -339,7 +339,7 @@
     <value>8</value>
   </data>
   <data name="infoMessage.Text" xml:space="preserve">
-    <value>The map file was successfully loaded. If send your Purple Pen file to someone else, they must have the map file also.</value>
+    <value>The map file was successfully loaded. If you send your Purple Pen file to someone else, they must have the map file also.</value>
   </data>
   <data name="&gt;&gt;infoMessage.Name" xml:space="preserve">
     <value>infoMessage</value>
