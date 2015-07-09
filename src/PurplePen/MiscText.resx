@@ -232,7 +232,8 @@ Use | to separate lines</value>
 (affects all courses)</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
-    <value>Enter new text</value>
+    <value>Enter new text
+Use | to separate lines</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Controls {0} are no longer used by any course. Do you want to delete these controls from the control collection?</value>

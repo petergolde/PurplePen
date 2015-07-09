@@ -554,7 +554,7 @@ namespace PurplePen
 
                 case HitTestKind.OtherTextLine:
                     popupKind = ChangeKind.TextLine;
-                    popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterTextLine, (string) renderer.Description[hitTest.firstLine].boxes[0], 8, descriptionPanel, location);
+                    popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterTextLine, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
                     break;
 
                 default: Debug.Fail("bad hit test kind"); break;

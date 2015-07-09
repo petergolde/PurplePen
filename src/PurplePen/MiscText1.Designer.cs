@@ -724,7 +724,8 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter new text.
+        ///   Looks up a localized string similar to Enter new text
+        ///Use | to separate lines.
         /// </summary>
         internal static string EnterTextLine {
             get {
