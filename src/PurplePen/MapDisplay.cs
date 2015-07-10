@@ -452,7 +452,7 @@ namespace PurplePen
         }
 
         // Draw the bitmap map part.
-        void DrawBitmapMap(IGraphicsTarget grTarget, RectangleF visRect)
+        void DrawBitmapMap(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
         {
             // Setup transform.
             grTarget.PushTransform(BitmapTransform());
@@ -470,7 +470,7 @@ namespace PurplePen
                 sourceBitmap = bitmap;
 
             // Draw it.
-            grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), scalingMode);
+            grTarget.DrawBitmap(sourceBitmap, new RectangleF(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), scalingMode, minResolution);
 
             if (mapIntensity < 0.99 && sourceBitmap == bitmap) {
                 // Dimming desired, but we don't have a dimmed bitmap. Use an alpha mask instead.
@@ -556,7 +556,7 @@ namespace PurplePen
             case MapType.Bitmap:
             case MapType.PDF:
                 grTargetBitmapMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
-                DrawBitmapMap(grTargetBitmapMap, visRect);
+                DrawBitmapMap(grTargetBitmapMap, visRect, minResolution);
                 grTargetBitmapMap.PopAntiAliasing();
                 break;
 
