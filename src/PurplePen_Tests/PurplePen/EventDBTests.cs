@@ -441,6 +441,7 @@ namespace PurplePen.Tests
             e.allControlsPrintScale = 7500;
             e.allControlsDescKind = DescriptionKind.Text;
             e.descriptionLangId = "bg";
+            e.courseAppearance.useOcadOverprint = true;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

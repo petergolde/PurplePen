@@ -67,6 +67,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxDescriptionColor = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBoxOcadMap = new System.Windows.Forms.GroupBox();
+            this.checkBoxOverprint = new System.Windows.Forms.CheckBox();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
@@ -82,6 +84,7 @@
             this.groupBoxPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBoxOcadMap.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -470,22 +473,38 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
+            // groupBoxOcadMap
+            // 
+            this.groupBoxOcadMap.Controls.Add(this.checkBoxOverprint);
+            resources.ApplyResources(this.groupBoxOcadMap, "groupBoxOcadMap");
+            this.groupBoxOcadMap.Name = "groupBoxOcadMap";
+            this.groupBoxOcadMap.TabStop = false;
+            // 
+            // checkBoxOverprint
+            // 
+            resources.ApplyResources(this.checkBoxOverprint, "checkBoxOverprint");
+            this.checkBoxOverprint.Name = "checkBoxOverprint";
+            this.checkBoxOverprint.UseVisualStyleBackColor = true;
+            // 
             // CourseAppearanceDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.groupBoxOcadMap);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxSizes);
             this.Controls.Add(this.groupBoxPurple);
             this.Controls.Add(this.groupBoxPreview);
             this.HelpTopic = "EventCustomizeCourseAppearance.htm";
             this.Name = "CourseAppearanceDialog";
+            this.Load += new System.EventHandler(this.CourseAppearanceDialog_Load);
             this.Controls.SetChildIndex(this.groupBoxPreview, 0);
             this.Controls.SetChildIndex(this.groupBoxPurple, 0);
             this.Controls.SetChildIndex(this.groupBoxSizes, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.groupBoxOcadMap, 0);
             this.groupBoxSizes.ResumeLayout(false);
             this.groupBoxSizes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).EndInit();
@@ -504,6 +523,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxOcadMap.ResumeLayout(false);
+            this.groupBoxOcadMap.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +570,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown upDownLegGapSize;
         private System.Windows.Forms.CheckBox checkBoxBlendPurple;
+        private System.Windows.Forms.GroupBox groupBoxOcadMap;
+        private System.Windows.Forms.CheckBox checkBoxOverprint;
     }
 }

@@ -301,6 +301,10 @@ namespace PurplePen
                 // Reset the OCAD file creating settings dialog to default settings.
                 ocadCreationSettingsPrevious = null;
             }
+
+            if (mapDisplay.OcadOverprintEffect != controller.OcadOverprintEffect) {
+                mapDisplay.OcadOverprintEffect = controller.OcadOverprintEffect;
+            }
         }
 
         // Check for missing fonts in the map file, and warn about them. Only do if the window is visible, of course.
@@ -1846,6 +1850,7 @@ namespace PurplePen
             short ocadId;
             FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k, out purpleOverprint);
             dialog.SetDefaultPurple(c, m, y, k);
+            dialog.UsesOcadMap = (mapDisplay.MapType == MapType.OCAD);
  
             // Set the course appearance into the dialog
             dialog.CourseAppearance = controller.GetCourseAppearance();

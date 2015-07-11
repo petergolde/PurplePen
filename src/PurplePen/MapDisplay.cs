@@ -72,6 +72,7 @@ namespace PurplePen
         float mapIntensity = 1.0F;   // Intensity to display the map at.
         ColorModel colorModel = ColorModel.CMYK; // color model to use (cannot be OCADCompatible)
         bool antialiased = false;        // anti-alias (high quality) the map display?
+        bool ocadOverprintEffect = false; // overprint effect for colors in the OCAD map (not the purple of the course on top).
         bool showBounds = false;       // show symbols bounds (for testing)
 
         // Clones this map display.
@@ -298,6 +299,22 @@ namespace PurplePen
             }
         }
 
+        // User Overprint effect for OCAD map
+        public bool OcadOverprintEffect
+        {
+            get
+            {
+                return ocadOverprintEffect;
+            }
+            set
+            {
+                if (ocadOverprintEffect != value) {
+                    ocadOverprintEffect = value;
+                    RaiseChanged(null);
+                }
+            }
+        }
+        
         // Are we printing?
         public bool Printing { get; set; }
 
@@ -543,7 +560,7 @@ namespace PurplePen
 
             renderOptions.showSymbolBounds = showBounds;
             renderOptions.showTemplates = true;
-            renderOptions.blendOverprintedColors = false; // Don't blend on the map.
+            renderOptions.blendOverprintedColors = ocadOverprintEffect; 
 
             // First draw the real map.
             switch (mapType) {

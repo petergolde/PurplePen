@@ -918,7 +918,8 @@ namespace PurplePen
                 // Purple color blend requires rasterization to work properly.
                 return (Environment.OSVersion.Version.Major <= 5 ||
                         MapType != MapType.OCAD ||
-                        eventDB.GetEvent().courseAppearance.purpleColorBlend);
+                        eventDB.GetEvent().courseAppearance.purpleColorBlend ||
+                        eventDB.GetEvent().courseAppearance.useOcadOverprint);
             }
         }
 
@@ -2361,6 +2362,11 @@ namespace PurplePen
             undoMgr.BeginCommand(318, CommandNameText.ChangeCourseAppearance);
             ChangeEvent.ChangeCourseAppearance(eventDB, courseAppearance);
             undoMgr.EndCommand(318);
+        }
+
+        public bool OcadOverprintEffect
+        {
+            get { return GetCourseAppearance().useOcadOverprint; }
         }
 
         // Get the auto-number values.

@@ -25,6 +25,12 @@ namespace PurplePen
             InitializeComponent();
         }
 
+        public bool UsesOcadMap 
+        {
+            get { return groupBoxOcadMap.Enabled;}
+            set { groupBoxOcadMap.Enabled = checkBoxOverprint.Enabled = value;}
+        }
+
         // Set/Get the CourseAppearance this dialog sets.
         public CourseAppearance CourseAppearance
         {
@@ -54,6 +60,8 @@ namespace PurplePen
 
                 result.descriptionsPurple = (comboBoxDescriptionColor.SelectedIndex == 1);
 
+                result.useOcadOverprint = checkBoxOverprint.Checked;
+
                 return result;
             }
             set
@@ -78,6 +86,8 @@ namespace PurplePen
                 checkBoxBlendPurple.Checked = value.purpleColorBlend;
 
                 comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
+
+                checkBoxOverprint.Checked = value.useOcadOverprint;
 
                 UpdatePreview();
             }
@@ -279,6 +289,11 @@ namespace PurplePen
         private void checkBoxBlendPurple_CheckedChanged(object sender, EventArgs e)
         {
             UpdatePreview();
+        }
+
+        private void CourseAppearanceDialog_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

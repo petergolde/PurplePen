@@ -2025,6 +2025,8 @@ namespace PurplePen
 
         public bool descriptionsPurple = false;         // If true, descriptions in purple instead of black.
 
+        public bool useOcadOverprint = false;       // If true, use overprint effect when rendering OCAD map.
+
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is CourseAppearance))
@@ -2062,6 +2064,8 @@ namespace PurplePen
                     return false;
             }
             if (descriptionsPurple != other.descriptionsPurple)
+                return false;
+            if (useOcadOverprint != other.useOcadOverprint)
                 return false;
 
             return true;
@@ -2300,6 +2304,10 @@ namespace PurplePen
             xmloutput.WriteAttributeString("color", courseAppearance.descriptionsPurple ? "purple" : "black");
             xmloutput.WriteEndElement();
 
+            xmloutput.WriteStartElement("ocad");
+            xmloutput.WriteAttributeString("overprint-colors", XmlConvert.ToString(courseAppearance.useOcadOverprint));
+            xmloutput.WriteEndElement();
+
             foreach (string iofId in customSymbolText.Keys) {
                 xmloutput.WriteStartElement("custom-symbol-text");
                 xmloutput.WriteAttributeString("iof-2004-ref", iofId);
@@ -2317,7 +2325,7 @@ namespace PurplePen
             courseAppearance.purpleColorBlend = false; // default for existing events is false, true for new events.
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "custom-symbol-text")) {
+            while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text")) {
                 switch (xmlinput.Name) {
                     case "title":
                         title = xmlinput.GetContentString();
@@ -2420,6 +2428,11 @@ namespace PurplePen
                         else
                             courseAppearance.descriptionsPurple = false;
 
+                        xmlinput.Skip();
+                        break;
+
+                    case "ocad":
+                        courseAppearance.useOcadOverprint = xmlinput.GetAttributeBool("overprint-colors", false);
                         xmlinput.Skip();
                         break;
 
