@@ -265,6 +265,8 @@ namespace PurplePen
                 mapDisplay.SetMapFile(MapType.None, null);
             }
 
+            mapDisplay.OcadOverprintEffect = (eventDB != null && eventDB.GetEvent().courseAppearance.useOcadOverprint);
+
             checkForMissingFonts = true;          // Warn about missing fonts once for this map.
         }
 

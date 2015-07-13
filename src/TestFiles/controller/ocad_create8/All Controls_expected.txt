@@ -4519,6 +4519,12 @@ String of type 1026
   code=R, value=121.5
   code=T, value=2.910004
 
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+  code=p, value=1
+
 String of type 8
   ObjIndex=0
   firstField=[[TESTDIR]]\controller\Madrona.11.ocd

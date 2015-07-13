@@ -244,6 +244,45 @@ namespace PurplePen.Tests
 
             TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\NonclonedBitmapMap.png"));
         }
+
+        [TestMethod]
+        public void OverprintOcadMap()
+        {
+            SetupBitmap();
+            MapDisplay mapDisplay = new MapDisplay();
+
+
+            mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\overprint.ocd"));
+            mapDisplay.AntiAlias = false;
+            mapDisplay.MapIntensity = 1F;
+            mapDisplay.OcadOverprintEffect = true;
+
+            RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
+            DrawToBitmap(mapDisplay, drawRect);
+
+            TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\OverprintOcadMap.png"));
+        }
+
+
+        [TestMethod]
+        public void NoOverprintOcadMap()
+        {
+            SetupBitmap();
+            MapDisplay mapDisplay = new MapDisplay();
+
+
+            mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\overprint.ocd"));
+            mapDisplay.AntiAlias = false;
+            mapDisplay.MapIntensity = 1F;
+            mapDisplay.OcadOverprintEffect = false;
+
+            RectangleF drawRect = RectangleF.FromLTRB(50F, 170F, 100F, 220F);
+            DrawToBitmap(mapDisplay, drawRect);
+
+            TestUtil.CompareBitmapBaseline(bitmap, TestUtil.GetTestFile(@"mapdisplay\NoOverprintOcadMap.png"));
+        }
+
+
     }
 }
 

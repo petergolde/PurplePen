@@ -371,6 +371,11 @@ String of type 1026
   code=R, value=215.9004
   code=T, value=279.4005
 
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+
 String of type 8
   ObjIndex=0
   firstField=[[TESTDIR]]\controller\ocad_create10\Lincoln-CMYK.gif

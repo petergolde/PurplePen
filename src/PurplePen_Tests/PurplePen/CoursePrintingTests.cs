@@ -145,6 +145,7 @@ namespace PurplePen.Tests
             mapDisplay.SetMapFile(controller.MapType, controller.MapFileName);
             if (controller.MapType == MapType.Bitmap)
                 mapDisplay.Dpi = controller.MapDpi;
+            mapDisplay.OcadOverprintEffect = appearance.useOcadOverprint;
 
             // Get the pages of the printing.
             CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.CloneToFullIntensity(), coursePrintSettings, appearance);
@@ -274,6 +275,23 @@ namespace PurplePen.Tests
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
             CoursePrintingTest("courseprinting\\pdfbase", coursePrintSettings, new CourseAppearance(), 200);
+        }
+
+        [TestMethod]
+        public void PrintOverprint()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Overprint test.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = true;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+            appearance.useOcadOverprint = true;
+
+            CoursePrintingTest("courseprinting\\overprint", coursePrintSettings, appearance, 200);
         }
 
         [TestMethod]

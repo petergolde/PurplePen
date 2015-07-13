@@ -448,6 +448,30 @@ namespace PurplePen.Tests
 
         }
 
+
+        [TestMethod]
+        public void PdfCreationOverprint()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_overprint");
+            settings.CourseIds = new Id<Course>[] { CourseId(1) };
+            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
+            settings.PrintMapExchangesOnOneMap = false;
+            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Overprint test.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_overprint\\Overprint test.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_overprint\\Overprint test_expected.png") });
+        }
+
+
     }
 }
 #endif

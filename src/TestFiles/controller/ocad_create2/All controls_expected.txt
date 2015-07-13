@@ -1028,6 +1028,11 @@ String of type 1026
   code=R, value=232.93
   code=T, value=86.57
 
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+
 String of type 8
   ObjIndex=0
   firstField=[[TESTDIR]]\controller\Marymoor.ocd

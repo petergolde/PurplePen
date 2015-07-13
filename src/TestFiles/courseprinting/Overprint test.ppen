@@ -1,0 +1,36 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Overprint test</title>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false">overprint.ocd</map>
+    <all-controls print-scale="4000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="true" />
+  </event>
+  <control id="1" kind="start">
+    <location x="-6.08809328" y="-1.411027" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="-1.51795876" y="3.55126572" />
+  </control>
+  <control id="3" kind="finish">
+    <location x="4.816881" y="-2.1802578" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 12</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <options print-scale="4000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="2" control="3" />
+  <course-control id="3" control="2">
+    <next course-control="2" />
+  </course-control>
+</course-scribe-event>
