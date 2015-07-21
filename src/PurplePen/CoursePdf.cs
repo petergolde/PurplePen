@@ -314,6 +314,7 @@ namespace PurplePen
 
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);
+            mapDisplay.SetPrintArea(null);
 
             // Set the transform, and the clip.
             Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);

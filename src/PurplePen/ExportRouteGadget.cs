@@ -59,6 +59,7 @@ namespace PurplePen
             this.eventDB = eventDB;
             this.mapDisplay = mapDisplay.CloneToFullIntensity();
             this.mapDisplay.SetCourse(null);
+            this.mapDisplay.SetPrintArea(null);
         }
 
         public void ExportXml(string xmlFileName)

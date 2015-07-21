@@ -164,6 +164,7 @@ namespace PurplePen
 
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);
+            this.mapDisplay.SetPrintArea(null);
 
             // Collecting garbage should make out of memory less common.
             GC.Collect();
