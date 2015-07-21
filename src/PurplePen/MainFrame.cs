@@ -365,6 +365,12 @@ namespace PurplePen
             mapDisplay.SetCourse(controller.GetCourseLayout());
         }
 
+        // Update the print area in the map pane.
+        void UpdatePrintArea()
+        {
+            mapDisplay.SetPrintArea(controller.GetCurrentPrintArea(PrintArea.OnePart));
+        }
+
         // Update the part banner in the map pane.
         void UpdatePartBanner()
         {
@@ -766,6 +772,7 @@ namespace PurplePen
                         UpdateMapFile();
                         UpdateTabs();
                         UpdateCourse();
+                        UpdatePrintArea();
                         UpdatePartBanner();
                         UpdateDescription();
                         UpdateSelection();

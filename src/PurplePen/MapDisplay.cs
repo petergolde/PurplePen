@@ -75,6 +75,8 @@ namespace PurplePen
         bool ocadOverprintEffect = false; // overprint effect for colors in the OCAD map (not the purple of the course on top).
         bool showBounds = false;       // show symbols bounds (for testing)
 
+        RectangleF? printArea;          // print area to display, or null for none.
+
         // Clones this map display.
         public MapDisplay Clone()
         {
@@ -429,6 +431,15 @@ namespace PurplePen
             }
         }
 
+        // Set the print area to display, or null to not display print area.
+        public void SetPrintArea(RectangleF? printArea)
+        {
+            if (!this.printArea.Equals(printArea)) {
+                this.printArea = printArea;
+                RaiseChanged(null);
+            }
+        }
+
         // Update the dimmed bitmap. If the intensity is < 1 and we're using a bitmap, dim it.
         public void UpdateDimmedBitmap()
         {
@@ -593,6 +604,31 @@ namespace PurplePen
             if (courseMap != null) {
                 using (courseMap.Read())
                     courseMap.Draw(grTargetCourses, visRect, renderOptions, null);
+            }
+
+            grTargetCourses.PopAntiAliasing();
+
+            grTargetCourses.PushAntiAliasing(false);
+
+            if (printArea.HasValue && !printArea.Value.Contains(visRect)) {
+                object printAreaOutline = new object();
+                grTargetCourses.CreateSolidBrush(printAreaOutline, CmykColor.FromCmyka(0, 0, 0, 1, 0.15F));
+                if (printArea.Value.Top > visRect.Top) {
+                    RectangleF draw = RectangleF.FromLTRB(visRect.Left, visRect.Top, visRect.Right, printArea.Value.Top);
+                    grTargetCourses.FillRectangle(printAreaOutline, draw);
+                }
+                if (printArea.Value.Bottom < visRect.Bottom) {
+                    RectangleF draw = RectangleF.FromLTRB(visRect.Left, printArea.Value.Bottom, visRect.Right, visRect.Bottom);
+                    grTargetCourses.FillRectangle(printAreaOutline, draw);
+                }
+                if (printArea.Value.Left > visRect.Left) {
+                    RectangleF draw = RectangleF.FromLTRB(visRect.Left, printArea.Value.Top, printArea.Value.Left, printArea.Value.Bottom);
+                    grTargetCourses.FillRectangle(printAreaOutline, draw);
+                }
+                if (printArea.Value.Right < visRect.Right) {
+                    RectangleF draw = RectangleF.FromLTRB(printArea.Value.Right, printArea.Value.Top, visRect.Right, printArea.Value.Bottom);
+                    grTargetCourses.FillRectangle(printAreaOutline, draw);
+                }
             }
 
             grTargetCourses.PopAntiAliasing();
