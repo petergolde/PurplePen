@@ -473,6 +473,12 @@
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Pair.cs" />
+    <Compile Include="PaperSizeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PaperSizeControl.Designer.cs">
+      <DependentUpon>PaperSizeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PdfConversionInProgress.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2235,6 +2241,9 @@
     <EmbeddedResource Include="OverwritingOcadFilesDialog.sv.resx">
       <DependentUpon>OverwritingOcadFilesDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaperSizeControl.resx">
+      <DependentUpon>PaperSizeControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PdfConversionInProgress.bg.resx">
       <DependentUpon>PdfConversionInProgress.cs</DependentUpon>
     </EmbeddedResource>
@@ -2783,6 +2792,8 @@
       <Link>GDIPlusNative.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Images\Portrait.PNG" />
+    <None Include="Images\Landscape.PNG" />
     <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
