@@ -79,7 +79,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 149);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(254, 149);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // checkBoxPortrait
@@ -157,8 +157,9 @@
             this.comboBoxPaperSize.FormattingEnabled = true;
             this.comboBoxPaperSize.Location = new System.Drawing.Point(47, 3);
             this.comboBoxPaperSize.Name = "comboBoxPaperSize";
-            this.comboBoxPaperSize.Size = new System.Drawing.Size(235, 21);
+            this.comboBoxPaperSize.Size = new System.Drawing.Size(204, 21);
             this.comboBoxPaperSize.TabIndex = 1;
+            this.comboBoxPaperSize.SelectedIndexChanged += new System.EventHandler(this.comboBoxPaperSize_SelectedIndexChanged);
             // 
             // upDownHeight
             // 
@@ -236,7 +237,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PaperSizeControl";
-            this.Size = new System.Drawing.Size(291, 155);
+            this.Size = new System.Drawing.Size(260, 155);
+            this.Load += new System.EventHandler(this.PaperSizeControl_Loaded);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownHeight)).EndInit();

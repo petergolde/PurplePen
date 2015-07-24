@@ -32,7 +32,8 @@ namespace PurplePen
             InitializeComponent();
  
             InitPaperSizes();
-            InitUnits();       }
+            InitUnits();
+        }
 
         public PaperSize PaperSize
         {
@@ -155,7 +156,7 @@ namespace PurplePen
         {
             string paperSizeText;
 
-            if (comboBoxPaperSize.SelectedIndex < standardPaperSizes.Length)
+            if (comboBoxPaperSize.SelectedIndex < standardPaperSizes.Length && comboBoxPaperSize.SelectedIndex >= 0)
                 paperSizeText = standardPaperSizes[comboBoxPaperSize.SelectedIndex].PaperName;
             else
                 paperSizeText = comboBoxPaperSize.SelectedText;
@@ -182,7 +183,7 @@ namespace PurplePen
             }
         }
 
-        private void PrinterMargins_Shown(object sender, EventArgs e)
+        private void PaperSizeControl_Loaded(object sender, EventArgs e)
         {
             UpdateDialog();
         }

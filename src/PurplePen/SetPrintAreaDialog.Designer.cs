@@ -65,6 +65,9 @@ namespace PurplePen
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.setPrintAreaLabel = new System.Windows.Forms.Label();
+            this.groupBoxPaperSize = new System.Windows.Forms.GroupBox();
+            this.paperSizeControl1 = new PurplePen.PaperSizeControl();
+            this.groupBoxPaperSize.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -87,18 +90,37 @@ namespace PurplePen
             resources.ApplyResources(this.setPrintAreaLabel, "setPrintAreaLabel");
             this.setPrintAreaLabel.Name = "setPrintAreaLabel";
             // 
+            // groupBoxPaperSize
+            // 
+            resources.ApplyResources(this.groupBoxPaperSize, "groupBoxPaperSize");
+            this.groupBoxPaperSize.Controls.Add(this.paperSizeControl1);
+            this.groupBoxPaperSize.Name = "groupBoxPaperSize";
+            this.groupBoxPaperSize.TabStop = false;
+            // 
+            // paperSizeControl1
+            // 
+            resources.ApplyResources(this.paperSizeControl1, "paperSizeControl1");
+            this.paperSizeControl1.Landscape = false;
+            this.paperSizeControl1.MarginSize = 0;
+            this.paperSizeControl1.Name = "paperSizeControl1";
+            this.paperSizeControl1.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl1.PaperSize")));
+            // 
             // SetPrintAreaDialog
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
+            this.Controls.Add(this.groupBoxPaperSize);
             this.Controls.Add(this.setPrintAreaLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SetPrintAreaDialog";
+            this.groupBoxPaperSize.ResumeLayout(false);
+            this.groupBoxPaperSize.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,5 +129,7 @@ namespace PurplePen
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label setPrintAreaLabel;
+        private System.Windows.Forms.GroupBox groupBoxPaperSize;
+        private PaperSizeControl paperSizeControl1;
     }
 }
