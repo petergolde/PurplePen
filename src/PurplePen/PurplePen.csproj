@@ -428,6 +428,12 @@
     <Compile Include="NewEventNumbering.Designer.cs">
       <DependentUpon>NewEventNumbering.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewEventPaperSize.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventPaperSize.Designer.cs">
+      <DependentUpon>NewEventPaperSize.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewEventPrintScale.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1987,6 +1993,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventNumbering.sv.resx">
       <DependentUpon>NewEventNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEventPaperSize.resx">
+      <DependentUpon>NewEventPaperSize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEventPrintScale.bg.resx">
       <DependentUpon>NewEventPrintScale.cs</DependentUpon>

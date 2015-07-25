@@ -50,6 +50,7 @@ namespace PurplePen
         NewEventMapFile mapFilePage;
         NewEventBitmapScale bitmapScalePage;
         NewEventPrintScale printScalePage;
+        NewEventPaperSize paperSizePage;
         NewEventDirectory directoryPage;
         NewEventNumbering numberingPage;
         NewEventFinal finalPage;
@@ -86,11 +87,12 @@ namespace PurplePen
             mapFilePage = new NewEventMapFile();
             bitmapScalePage = new NewEventBitmapScale();
             printScalePage = new NewEventPrintScale();
+            paperSizePage = new NewEventPaperSize();
             directoryPage = new NewEventDirectory();
             numberingPage = new NewEventNumbering();
             finalPage = new NewEventFinal();
 
-            pages = new IWizardPage[] { eventTitlePage, mapFilePage, bitmapScalePage, printScalePage, directoryPage, numberingPage, finalPage};
+            pages = new IWizardPage[] { eventTitlePage, mapFilePage, bitmapScalePage, printScalePage, paperSizePage, directoryPage, numberingPage, finalPage};
         }
 
         private void NewEventWizard_Load(object sender, EventArgs e)

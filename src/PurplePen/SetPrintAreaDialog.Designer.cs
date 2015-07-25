@@ -67,6 +67,8 @@ namespace PurplePen
             this.setPrintAreaLabel = new System.Windows.Forms.Label();
             this.groupBoxPaperSize = new System.Windows.Forms.GroupBox();
             this.paperSizeControl1 = new PurplePen.PaperSizeControl();
+            this.checkBoxAutomatic = new System.Windows.Forms.CheckBox();
+            this.checkBoxFixSizeToPaper = new System.Windows.Forms.CheckBox();
             this.groupBoxPaperSize.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,12 +107,26 @@ namespace PurplePen
             this.paperSizeControl1.Name = "paperSizeControl1";
             this.paperSizeControl1.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl1.PaperSize")));
             // 
+            // checkBoxAutomatic
+            // 
+            resources.ApplyResources(this.checkBoxAutomatic, "checkBoxAutomatic");
+            this.checkBoxAutomatic.Name = "checkBoxAutomatic";
+            this.checkBoxAutomatic.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxFixSizeToPaper
+            // 
+            resources.ApplyResources(this.checkBoxFixSizeToPaper, "checkBoxFixSizeToPaper");
+            this.checkBoxFixSizeToPaper.Name = "checkBoxFixSizeToPaper";
+            this.checkBoxFixSizeToPaper.UseVisualStyleBackColor = true;
+            // 
             // SetPrintAreaDialog
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
+            this.Controls.Add(this.checkBoxFixSizeToPaper);
+            this.Controls.Add(this.checkBoxAutomatic);
             this.Controls.Add(this.groupBoxPaperSize);
             this.Controls.Add(this.setPrintAreaLabel);
             this.Controls.Add(this.cancelButton);
@@ -131,5 +147,7 @@ namespace PurplePen
         private System.Windows.Forms.Label setPrintAreaLabel;
         private System.Windows.Forms.GroupBox groupBoxPaperSize;
         private PaperSizeControl paperSizeControl1;
+        private System.Windows.Forms.CheckBox checkBoxAutomatic;
+        private System.Windows.Forms.CheckBox checkBoxFixSizeToPaper;
     }
 }
