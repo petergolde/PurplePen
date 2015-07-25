@@ -94,7 +94,7 @@ namespace PurplePen
             return ShowDialog(owner);
         }
 
-        // The map file name has been updated.
+        // The map file name has been updated. Test.
         void UpdateMapFile()
         {
             if (mapFile == null || mapFile == "") {
