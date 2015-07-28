@@ -47,19 +47,22 @@ namespace PurplePen
         public static ITextMetrics TextMetricsProvider = new GDIPlus_TextMetrics();
 
         // Validate the map file to make sure it is readable. If OK, return true and set the scale.
-        // If not OK, return false and set the error message.
-        public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out MapType mapType, out string errorMessageText)
+        // If not OK, return false and set the error message. test
+        public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out string errorMessageText)
         {
             scale = 0; dpi = 0;
             mapType = MapType.None;
+            bitmapSize = new Size();
             string fileExtension = Path.GetExtension(mapFileName);
 
             if (string.Compare(fileExtension, ".pdf", StringComparison.InvariantCultureIgnoreCase) == 0) {
-                if (ValidatePdf(mapFileName, out dpi, out errorMessageText) != null) {
+                if (ValidatePdf(mapFileName, out dpi, out bitmapSize, out errorMessageText) != null) {
                     mapType = MapType.PDF;
+                    mapBounds = new RectangleF(0, 0, (float)bitmapSize.Width / dpi * 25.4F, (float) bitmapSize.Height / dpi * 25.4F);
                     return true;
                 }
                 else {
+                    mapBounds = new RectangleF();
                     return false;
                 }
             }
@@ -74,25 +77,32 @@ namespace PurplePen
                 if (string.Compare(fileExtension, ".ocd", StringComparison.InvariantCultureIgnoreCase) != 0) {
                     try {
                         Bitmap bitmap = (Bitmap) Image.FromFile(mapFileName);
+                        bitmapSize = bitmap.Size;
                         dpi = bitmap.HorizontalResolution;
                         bitmap.Dispose();
                         mapType = MapType.Bitmap;
+                        mapBounds = new RectangleF(0, 0, (float)bitmapSize.Width / dpi * 25.4F, (float)bitmapSize.Height / dpi * 25.4F);
                         errorMessageText = "";
                         return true;
                     }
                     catch {
                         // Wasn't an bitmap file either.
                         errorMessageText = string.Format(MiscText.CannotReadImageFile, mapFileName);
+                        mapBounds = new RectangleF();
                         return false;
                     }
                 }
 
                 errorMessageText = string.Format(MiscText.CannotReadMap, e.Message);
+                mapBounds = new RectangleF();
                 return false;
             }
 
             using (map.Read())
+            {
                 scale = map.MapScale;
+                mapBounds = map.Bounds;
+            }
 
             errorMessageText = "";
             mapType = MapType.OCAD;
@@ -102,7 +112,7 @@ namespace PurplePen
         private const string ghostscriptUrl = "http://downloads.ghostscript.com/public/gs907w32.exe";
         private const string ghostscriptFileName = "gs907w32.exe";
 
-        public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out string errorMessageText)
+        public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out Size bitmapSize, out string errorMessageText)
         {
             IPdfLoadingStatus loadingStatus = new PdfLoadingUI();  // UNDONE: Should this be passed in instead?
 
@@ -133,6 +143,7 @@ namespace PurplePen
                 if (!string.IsNullOrWhiteSpace(mapFile.ConversionOutput))
                     errorMessageText += ": " + mapFile.ConversionOutput;
                 dpi = 0;
+                bitmapSize = default(Size);
                 return null;
             }
 
@@ -140,6 +151,7 @@ namespace PurplePen
             try {
                 Bitmap bitmap = (Bitmap)Image.FromFile(mapFile.PngFileName);
                 dpi = bitmap.HorizontalResolution;
+                bitmapSize = bitmap.Size;
                 bitmap.Dispose();
                 errorMessageText = "";
                 return mapFile;
@@ -148,6 +160,7 @@ namespace PurplePen
                 // Couldn't read the resulting PNG
                 errorMessageText = string.Format(MiscText.PdfResultNotReadable, mapFile.PngFileName);
                 dpi = 0;
+                bitmapSize = default(Size);
                 return null;
             }
         }

@@ -106,7 +106,9 @@ namespace PurplePen
                 // Validate the map file.
                 string errorMessageText;
                 float dpi, mapScale;
-                bool ok = MapUtil.ValidateMapFile(mapFile, out mapScale, out dpi, out mapType, out errorMessageText);
+                Size bitmapSize;
+                RectangleF mapBounds;
+                bool ok = MapUtil.ValidateMapFile(mapFile, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
                 if (ok) {
                     if (mapType == MapType.OCAD) {
                         panelScaleDpi.Visible = false;

@@ -73,7 +73,9 @@ namespace PurplePen
                 float dpi;  // not used here.
                 float mapScale;
                 MapType mapType;
-                if (MapUtil.ValidateMapFile(containingWizard.mapFileName, out mapScale, out dpi, out mapType, out errorMessageText)) 
+                Size bitmapSize;
+                RectangleF mapBounds;
+                if (MapUtil.ValidateMapFile(containingWizard.mapFileName, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText)) 
                 {
                     // map file is OK.
                     containingWizard.mapScale = mapScale;

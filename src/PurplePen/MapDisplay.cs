@@ -398,7 +398,8 @@ namespace PurplePen
                 string errorText;
                 map = null;
                 mapVersion = 0;
-                pdfMapFile = MapUtil.ValidatePdf(filename, out bitmapDpi, out errorText);
+                Size bitmapSize;
+                pdfMapFile = MapUtil.ValidatePdf(filename, out bitmapDpi, out bitmapSize, out errorText);
                 if (pdfMapFile == null) {
                     mapType = MapType.None;
                     bitmap = null;
