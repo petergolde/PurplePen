@@ -45,7 +45,7 @@ namespace PurplePen
     public partial class SetPrintAreaDialog: BaseDialog
     {
         internal Controller controller;
-        internal PrintArea printArea;
+        internal PrintAreaKind printArea;
 
         public SetPrintAreaDialog()
         {

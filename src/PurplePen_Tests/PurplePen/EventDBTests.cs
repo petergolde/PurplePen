@@ -383,7 +383,8 @@ namespace PurplePen.Tests
             e.mapScale = 14000;
             e.allControlsPrintScale = 10000;
             e.allControlsDescKind = DescriptionKind.SymbolsAndText;
-            e.printArea = new RectangleF(50, 70, 200, 300);
+            e.printArea = new PrintArea();
+            e.printArea.printAreaRectangle = new RectangleF(50, 70, 200, 300);
             e.punchcardFormat.boxesAcross = 7;
             e.punchcardFormat.boxesDown = 5;
             e.punchcardFormat.leftToRight = false;

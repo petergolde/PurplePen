@@ -41,6 +41,8 @@ using System.Drawing.Drawing2D;
 using TestingUtils;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Globalization;
+using System.Threading;
 
 namespace PurplePen.Tests
 {
@@ -118,6 +120,109 @@ namespace PurplePen.Tests
             Assert.AreEqual(215.9F, mapBounds.Width, 0.01F);
             Assert.AreEqual(279.4F, mapBounds.Height, 0.01F);
         }
+
+        [TestMethod]
+        public void GetDefaultPageSizeMetric()
+        {
+            int pageWidth, pageHeight, pageMargins;
+            bool landscape;
+            CultureInfo currentCulture;
+
+            currentCulture = Thread.CurrentThread.CurrentCulture;
+            try {
+
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de");
+                Assert.IsTrue(RegionInfo.CurrentRegion.IsMetric);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(1169, pageWidth);
+                Assert.AreEqual(1654, pageHeight);
+                Assert.AreEqual(28, pageMargins);
+                Assert.IsTrue(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 290, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(827, pageWidth);
+                Assert.AreEqual(1169, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsTrue(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 190, 270), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(827, pageWidth);
+                Assert.AreEqual(1169, pageHeight);
+                Assert.AreEqual(28, pageMargins);
+                Assert.IsFalse(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 1350, 2210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(827, pageWidth);
+                Assert.AreEqual(1169, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsFalse(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 210, 296), 2.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(1654, pageWidth);
+                Assert.AreEqual(2339, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsFalse(landscape);
+
+
+
+            }
+            finally {
+                Thread.CurrentThread.CurrentCulture = currentCulture;
+            }
+        }
+
+        [TestMethod]
+        public void GetDefaultPageSizeEnglish()
+        {
+            int pageWidth, pageHeight, pageMargins;
+            bool landscape;
+            CultureInfo currentCulture;
+
+            currentCulture = Thread.CurrentThread.CurrentCulture;
+            try {
+
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+                Assert.IsFalse(RegionInfo.CurrentRegion.IsMetric);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(850, pageWidth);
+                Assert.AreEqual(1400, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsTrue(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 260, 190), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(850, pageWidth);
+                Assert.AreEqual(1100, pageHeight);
+                Assert.AreEqual(25, pageMargins);
+                Assert.IsTrue(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 200, 270), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(850, pageWidth);
+                Assert.AreEqual(1100, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsFalse(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 1350, 2210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(850, pageWidth);
+                Assert.AreEqual(1100, pageHeight);
+                Assert.AreEqual(0, pageMargins);
+                Assert.IsFalse(landscape);
+
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 125, 200), 2.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                Assert.AreEqual(1100, pageWidth);
+                Assert.AreEqual(1700, pageHeight);
+                Assert.AreEqual(25, pageMargins);
+                Assert.IsFalse(landscape);
+
+
+
+            }
+            finally {
+                Thread.CurrentThread.CurrentCulture = currentCulture;
+            }
+        }
+
     }
 }
 

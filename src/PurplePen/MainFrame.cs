@@ -368,7 +368,7 @@ namespace PurplePen
         // Update the print area in the map pane.
         void UpdatePrintArea()
         {
-            mapDisplay.SetPrintArea(controller.GetCurrentPrintArea(PrintArea.OnePart));
+            mapDisplay.SetPrintArea(controller.GetCurrentPrintArea(PrintAreaKind.OnePart));
         }
 
         // Update the part banner in the map pane.
@@ -2087,7 +2087,7 @@ namespace PurplePen
             return true;
         }
 
-        private void SetPrintArea(PrintArea printArea)
+        private void SetPrintArea(PrintAreaKind printArea)
         {
             SetPrintAreaDialog dialog = new SetPrintAreaDialog();
             dialog.controller = controller;
@@ -2117,17 +2117,17 @@ namespace PurplePen
 
         private void printAreaThisPartMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(PrintArea.OnePart);
+            SetPrintArea(PrintAreaKind.OnePart);
         }
 
         private void printAreaThisCourseMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(PrintArea.OneCourse);
+            SetPrintArea(PrintAreaKind.OneCourse);
         }
 
         private void printAreaAllCoursesMenu_Click(object sender, EventArgs e)
         {
-            SetPrintArea(PrintArea.AllCourses);
+            SetPrintArea(PrintAreaKind.AllCourses);
         }
 
         private void changeMapFileMenu_Click(object sender, EventArgs e)

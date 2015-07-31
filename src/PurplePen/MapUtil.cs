@@ -39,6 +39,8 @@ using System.Drawing;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using ColorConverter = PurplePen.Graphics2D.ColorConverter;
+using System.Drawing.Printing;
+using System.Globalization;
 
 namespace PurplePen
 {
@@ -46,8 +48,28 @@ namespace PurplePen
     {
         public static ITextMetrics TextMetricsProvider = new GDIPlus_TextMetrics();
 
+        public static PaperSize[] StandardPaperSizes = {
+            new PaperSize("A2", 1654, 2339),
+            new PaperSize("A3", 1169, 1654),
+            new PaperSize("A4", 827, 1169),
+            new PaperSize("A5", 583, 827),
+            new PaperSize("A6", 413, 583),
+            new PaperSize("Letter", 850, 1100),
+            new PaperSize("Legal", 850, 1400),
+            new PaperSize("Tabloid", 1100, 1700)
+        };
+
+        public const int FirstEnglishPaperSizeIndex = 5;
+        public const int DefaultEnglighPaperSizeIndex = 5;
+        public const int DefaultMetricPaperSizeindex = 2;
+
+        public const int DefaultEnglishMargin = 25;  // 1/4 of a inch.
+        public const int DefaultMetricMargin = 28; // 7mm
+
+
+
         // Validate the map file to make sure it is readable. If OK, return true and set the scale.
-        // If not OK, return false and set the error message. test
+        // If not OK, return false and set the error message. 
         public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out string errorMessageText)
         {
             scale = 0; dpi = 0;
@@ -175,6 +197,73 @@ namespace PurplePen
             }
 
             return icon;
+        }
+
+        // Given a print area rectangle, find the best default page size that encloses it, using either the default
+        // metric or english paper sizes. If the rectangle is empty, return default page.
+        public static void GetDefaultPageSize(RectangleF printAreaRectangle, float printScaleRatio, out int pageWidth, out int pageHeight, out int pageMargin, out bool landscape)
+        {
+            bool metric = RegionInfo.CurrentRegion.IsMetric;
+
+            if (printAreaRectangle.IsEmpty) {
+                PaperSize paperSize = StandardPaperSizes[metric ? DefaultMetricPaperSizeindex : DefaultEnglighPaperSizeIndex];
+                pageWidth = paperSize.Width;
+                pageHeight = paperSize.Height;
+                pageMargin = 0;
+                landscape = false;
+            }
+            else {
+                landscape = printAreaRectangle.Width > printAreaRectangle.Height;
+                // Get needed page width and height in 1/100 of inch.
+                float printAreaWidth = (landscape ? printAreaRectangle.Height : printAreaRectangle.Width) * printScaleRatio * 100 / 25.4F;
+                float printAreaHeight = (landscape ? printAreaRectangle.Width : printAreaRectangle.Height) * printScaleRatio * 100 / 25.4F;
+
+                int firstIndex = metric ? 0 : FirstEnglishPaperSizeIndex;
+                int endIndex = metric ? FirstEnglishPaperSizeIndex : StandardPaperSizes.Length;
+                int bestIndex = -1;
+
+                // Scan through all paper indexes to find the smallest paper that fits the area.
+                for (int i = firstIndex; i < endIndex; ++i) {
+                    if (StandardPaperSizes[i].Width > printAreaWidth && StandardPaperSizes[i].Height > printAreaHeight &&
+                        (bestIndex == -1 || StandardPaperSizes[i].Width < StandardPaperSizes[bestIndex].Width))
+                        bestIndex = i;
+                }
+                if (bestIndex < 0)
+                    bestIndex = metric ? DefaultMetricPaperSizeindex : DefaultEnglighPaperSizeIndex;
+
+                pageWidth = StandardPaperSizes[bestIndex].Width;
+                pageHeight = StandardPaperSizes[bestIndex].Height;
+
+                // Use the default margin if it can fit, otherwise 0 margin.
+                int defaultMargin = metric ? DefaultMetricMargin : DefaultEnglishMargin;
+                if (pageWidth - printAreaWidth > defaultMargin * 2 &&
+                    pageHeight - printAreaHeight > defaultMargin * 2) {
+                    pageMargin = defaultMargin;
+                }
+                else {
+                    pageMargin = 0;
+                }
+            }
+        }
+
+        // Give a map file name, get the default print area.
+        public static PrintArea GetDefaultPrintArea(string mapFileName, float printScaleRatio)
+        {
+            float scale, dpi;
+            Size bitmapSize;
+            RectangleF mapBounds;
+            MapType mapType;
+            string errorMessageText;
+
+            // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
+            ValidateMapFile(mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+
+            PrintArea printArea = new PrintArea();
+            printArea.autoPrintArea = true;
+            printArea.restrictToPageSize = true;
+            GetDefaultPageSize(mapBounds, printScaleRatio, out printArea.pageWidth, out printArea.pageHeight, out printArea.pageMargins, out printArea.pageLandscape);
+            return printArea;
+
         }
     }
 

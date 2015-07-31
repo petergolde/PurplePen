@@ -973,7 +973,7 @@ namespace PurplePen
             RectangleF printArea;
 
             if (courseDesignator.IsAllControls)
-                printArea = eventDB.GetEvent().printArea;
+                printArea = eventDB.GetEvent().printArea.printAreaRectangle;
             else {
                 Course course = eventDB.GetCourse(courseDesignator.CourseId);
                 printArea = course.printArea;

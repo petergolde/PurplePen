@@ -2076,7 +2076,88 @@ namespace PurplePen
             return this.MemberwiseClone();
         }
     }
-    
+
+    public class PrintArea: ICloneable
+    {
+        public bool autoPrintArea;  // automatically set print area, printAreaRectangle should be ignored.
+        public bool restrictToPageSize; // Don't allow print area to change from 
+        public RectangleF printAreaRectangle;
+        public int pageWidth;  // page width in 1/100th of inch
+        public int pageHeight; // page height in 1/100th of inch
+        public int pageMargins; // page margins in 1/100th of inch
+        public bool pageLandscape;  // page is landscape.
+
+        public override bool Equals(object obj)
+        {
+            PrintArea other = obj as PrintArea;
+            if (other == null)
+                return false;
+
+            if (autoPrintArea != other.autoPrintArea) return false;
+            if (restrictToPageSize != other.restrictToPageSize) return false;
+            if (printAreaRectangle != other.printAreaRectangle) return false;
+            if (pageWidth != other.pageWidth) return false;
+            if (pageHeight != other.pageHeight) return false;
+
+            return true;
+        }
+
+        public object Clone()
+        {
+            return base.MemberwiseClone();
+        }
+
+        public void WriteAttributesAndContent(System.Xml.XmlTextWriter xmloutput)
+        {
+            xmloutput.WriteStartElement("print-area");
+
+            xmloutput.WriteAttributeString("automatic", XmlConvert.ToString(autoPrintArea));
+            xmloutput.WriteAttributeString("restrict-to-page-size", XmlConvert.ToString(restrictToPageSize));
+            if (!autoPrintArea)
+            {
+                xmloutput.WriteAttributeString("left", XmlConvert.ToString(printAreaRectangle.Left));
+                xmloutput.WriteAttributeString("top", XmlConvert.ToString(printAreaRectangle.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
+                xmloutput.WriteAttributeString("right", XmlConvert.ToString(printAreaRectangle.Right));
+                xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printAreaRectangle.Top));   // rectangle is reversed, so top is really the bottom and vice versa
+            }
+            xmloutput.WriteAttributeString("page-width", XmlConvert.ToString(pageWidth));
+            xmloutput.WriteAttributeString("page-height", XmlConvert.ToString(pageHeight));
+            xmloutput.WriteAttributeString("page-margins", XmlConvert.ToString(pageMargins));
+            xmloutput.WriteAttributeString("page-landscape", XmlConvert.ToString(pageLandscape));
+
+            xmloutput.WriteEndElement();
+        }
+
+        public void ReadAttributesAndContent(XmlInput xmlinput, float scaleRatio)
+        {
+            autoPrintArea = xmlinput.GetAttributeBool("automatic", false);
+            restrictToPageSize = xmlinput.GetAttributeBool("restrict-to-page-size", false);
+
+            float left = xmlinput.GetAttributeFloat("left", float.NaN);
+            float top = xmlinput.GetAttributeFloat("top", float.NaN);
+            float right = xmlinput.GetAttributeFloat("right", float.NaN);
+            float bottom = xmlinput.GetAttributeFloat("bottom", float.NaN);
+            if (autoPrintArea || float.IsNaN(left) || float.IsNaN(top) || float.IsNaN(right) || float.IsNaN(bottom)) {
+                autoPrintArea = true;
+                printAreaRectangle = new RectangleF();
+            }
+            else {
+                printAreaRectangle = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
+            }
+
+            pageWidth = xmlinput.GetAttributeInt("page-width", -1);
+            pageHeight = xmlinput.GetAttributeInt("page-height", -1);
+            pageMargins = xmlinput.GetAttributeInt("page-margins", 0);
+            pageLandscape = xmlinput.GetAttributeBool("page-landscape", false);
+            if (pageWidth <= 0 || pageHeight <= 0) {
+                MapUtil.GetDefaultPageSize(printAreaRectangle, scaleRatio, out pageWidth, out pageHeight, out pageMargins, out pageLandscape);
+            }
+
+            xmlinput.Skip();
+        }
+
+    }
+
     // Describes the entire event. Only one of these should ever be in the event DB at a 
     // time. If none are, a default one is returned.
     public class Event: StorableObject
@@ -2089,7 +2170,7 @@ namespace PurplePen
         public float mapDpi;                 // dpi of a bitmap map.
         public float allControlsPrintScale; // scale to print all controls at
         public DescriptionKind allControlsDescKind;  // description kind for all controls.
-        public RectangleF printArea;    // print area for all controls, or empty if none defined.
+        public PrintArea printArea;    // print area for all controls, or empty if none defined.
         public int firstControlCode;      // initial control code to use (default: 31)
         public bool disallowInvertibleCodes;   // disallow codes that are invertable (e.g., 161).
         public bool ignoreMissingFonts;   // If true, don't warn about missing fonts in the map.
@@ -2147,6 +2228,7 @@ namespace PurplePen
             ev.customSymbolKey = Util.CopyDictionary(customSymbolKey);
             ev.punchcardFormat = (PunchcardFormat) punchcardFormat.Clone();
             ev.courseAppearance = (CourseAppearance) courseAppearance.Clone();
+            ev.printArea = (PrintArea)printArea.Clone();
             return ev;
         }
 
@@ -2183,7 +2265,7 @@ namespace PurplePen
                 return false;
             if (!object.Equals(courseAppearance, other.courseAppearance))
                 return false;
-            if (other.printArea != printArea)
+            if (! (object.Equals(printArea, other.printArea)))
                 return false;
             if (other.descriptionLangId != descriptionLangId)
                 return false;
@@ -2254,14 +2336,7 @@ namespace PurplePen
             EventDBUtil.WriteDescriptionKindAttribute(xmloutput, allControlsDescKind);
             xmloutput.WriteEndElement();
 
-            if (!printArea.IsEmpty) {
-                xmloutput.WriteStartElement("print-area");
-                xmloutput.WriteAttributeString("left", XmlConvert.ToString(printArea.Left));
-                xmloutput.WriteAttributeString("top", XmlConvert.ToString(printArea.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
-                xmloutput.WriteAttributeString("right", XmlConvert.ToString(printArea.Right));
-                xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printArea.Top));   // rectangle is reversed, so top is really the bottom and vice versa
-                xmloutput.WriteEndElement();
-            }
+            printArea.WriteAttributesAndContent(xmloutput);
 
             xmloutput.WriteStartElement("numbering");
             xmloutput.WriteAttributeString("start", XmlConvert.ToString(firstControlCode));
@@ -2411,12 +2486,14 @@ namespace PurplePen
                         break;
 
                     case "print-area":
-                        float left = xmlinput.GetAttributeFloat("left");
-                        float top = xmlinput.GetAttributeFloat("top");
-                        float right = xmlinput.GetAttributeFloat("right");
-                        float bottom = xmlinput.GetAttributeFloat("bottom");
-                        printArea = RectangleF.FromLTRB(left, bottom, right, top);   // top and bottom reverse due to map orientation.
-                        xmlinput.Skip();
+                        float scaleRatio;
+                        if (mapScale > 0 && allControlsPrintScale > 0)
+                            scaleRatio = allControlsPrintScale / mapScale;
+                        else
+                            scaleRatio = 1.0F;
+                        
+                        printArea = new PrintArea();
+                        printArea.ReadAttributesAndContent(xmlinput, scaleRatio);
                         break;
 
                     case "descriptions":
@@ -2477,6 +2554,17 @@ namespace PurplePen
 
             if (allControlsPrintScale == 0)
                 allControlsPrintScale = mapScale;
+
+
+            if (printArea == null) {
+                float scaleRatio;
+                if (mapScale > 0 && allControlsPrintScale > 0)
+                    scaleRatio = allControlsPrintScale / mapScale;
+                else
+                    scaleRatio = 1.0F;
+
+                printArea = MapUtil.GetDefaultPrintArea(mapFileName, scaleRatio);
+            }
         }
 
 
