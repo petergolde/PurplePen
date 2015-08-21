@@ -66,7 +66,7 @@ namespace PurplePen
         private void button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
-                containingWizard.mapFileName = mapFileNameTextBox.Text = openFileDialog.FileName;
+                containingWizard.MapFileName = mapFileNameTextBox.Text = openFileDialog.FileName;
                 mapFileDisplay.Visible = true;
 
                 string errorMessageText;
@@ -75,11 +75,13 @@ namespace PurplePen
                 MapType mapType;
                 Size bitmapSize;
                 RectangleF mapBounds;
-                if (MapUtil.ValidateMapFile(containingWizard.mapFileName, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText)) 
+                if (MapUtil.ValidateMapFile(containingWizard.MapFileName, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText)) 
                 {
                     // map file is OK.
-                    containingWizard.mapScale = mapScale;
-                    containingWizard.mapType = mapType;
+                    containingWizard.MapScale = mapScale;
+                    containingWizard.MapType = mapType;
+                    containingWizard.BitmapSize = bitmapSize;
+                    containingWizard.mapBounds = mapBounds;
                     errorDisplayPanel.Visible = false;
                     infoDisplayPanel.Visible = true;
                     ((Control)ParentForm.AcceptButton).Focus();

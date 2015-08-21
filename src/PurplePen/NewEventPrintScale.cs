@@ -24,7 +24,7 @@ namespace PurplePen
                 float printScale = 0;
                 bool result = float.TryParse(comboBoxPrintScale.Text, out printScale);
                 if (result && printScale > 0) {
-                    containingWizard.defaultPrintScale = printScale;
+                    containingWizard.DefaultPrintScale = printScale;
                     return true;
                 }
                 else
@@ -45,17 +45,17 @@ namespace PurplePen
         private void NewEventPrintScale_VisibleChanged(object sender, EventArgs e)
         {
             if (Visible) {
-                if (containingWizard.defaultPrintScale == 0)
-                    containingWizard.defaultPrintScale = containingWizard.mapScale;
+                if (containingWizard.DefaultPrintScale == 0)
+                    containingWizard.DefaultPrintScale = containingWizard.MapScale;
 
                 // map scale label
-                labelMapScale.Text = Convert.ToString(containingWizard.mapScale);
+                labelMapScale.Text = Convert.ToString(containingWizard.MapScale);
 
                 // print scale combo box
                 comboBoxPrintScale.Items.Clear();
-                foreach (float f in Util.PrintScaleList(containingWizard.mapScale))
+                foreach (float f in Util.PrintScaleList(containingWizard.MapScale))
                     comboBoxPrintScale.Items.Add(f);
-                comboBoxPrintScale.Text = Convert.ToString(containingWizard.defaultPrintScale);
+                comboBoxPrintScale.Text = Convert.ToString(containingWizard.DefaultPrintScale);
             }
         }
     }

@@ -58,10 +58,12 @@ namespace PurplePen
         // Which page is active?
         int activePage = -1;
 
-        internal MapType mapType;
-        internal float mapScale;
-        internal float defaultPrintScale;
-        internal string mapFileName;
+        internal MapType MapType;
+        internal float MapScale;
+        internal float DefaultPrintScale;
+        internal string MapFileName;
+        internal Size BitmapSize;
+        internal RectangleF mapBounds;
 
         Controller.CreateEventInfo createEventInfo;
 
@@ -162,7 +164,7 @@ namespace PurplePen
                 int nextPage = activePage + 1;
 
                 // Skip the bitmap scale page if the map type is not bitmap or PDF
-                if (pages[nextPage] == bitmapScalePage && mapType != MapType.Bitmap && mapType != MapType.PDF)
+                if (pages[nextPage] == bitmapScalePage && MapType != MapType.Bitmap && MapType != MapType.PDF)
                     nextPage += 1;
 
                 ActivatePage(nextPage);
@@ -180,7 +182,7 @@ namespace PurplePen
                 int nextPage = activePage - 1;
 
                 // Skip the bitmap scale page if the map type is not bitmap.
-                if (pages[nextPage] == bitmapScalePage && mapType != MapType.Bitmap)
+                if (pages[nextPage] == bitmapScalePage && MapType != MapType.Bitmap)
                     nextPage -= 1;
 
                 ActivatePage(nextPage);
@@ -219,10 +221,10 @@ namespace PurplePen
         {
             createEventInfo.title = eventTitlePage.titleText.Text;
             createEventInfo.eventFileName = GetEventFullPath();
-            createEventInfo.mapType = mapType;
-            createEventInfo.mapFileName = mapFileName;
-            createEventInfo.scale = mapScale;
-            createEventInfo.allControlsPrintScale = defaultPrintScale;
+            createEventInfo.mapType = MapType;
+            createEventInfo.mapFileName = MapFileName;
+            createEventInfo.scale = MapScale;
+            createEventInfo.allControlsPrintScale = DefaultPrintScale;
             createEventInfo.dpi = bitmapScalePage.dpi;
             createEventInfo.firstCode = (int) numberingPage.startingCodeNumericUpDown.Value;
             createEventInfo.disallowInvertibleCodes = numberingPage.disallowInvertibleCheckBox.Checked;

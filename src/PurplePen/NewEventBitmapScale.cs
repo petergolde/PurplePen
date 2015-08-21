@@ -60,7 +60,7 @@ namespace PurplePen
                 bool result = (mapType == MapType.PDF || float.TryParse(dpiTextBox.Text, out dpi)) && 
                               float.TryParse(scaleTextBox.Text, out mapScale);
                 if (result)
-                    containingWizard.mapScale = mapScale;
+                    containingWizard.MapScale = mapScale;
                 return result;
             }
         }
@@ -73,10 +73,10 @@ namespace PurplePen
         private void NewEventBitmapScale_Load(object sender, EventArgs e)
         {
             containingWizard = (NewEventWizard) Parent;
-            mapType = containingWizard.mapType;
+            mapType = containingWizard.MapType;
 
             if (mapType == MapType.Bitmap) {
-                Bitmap bitmap = (Bitmap)Image.FromFile(containingWizard.mapFileName);
+                Bitmap bitmap = (Bitmap)Image.FromFile(containingWizard.MapFileName);
 
                 // GIF format doesn't have built-in resolution, so don't default it.
                 if (bitmap.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
