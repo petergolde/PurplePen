@@ -158,7 +158,7 @@ namespace PurplePen.Tests
                 Assert.AreEqual(0, pageMargins);
                 Assert.IsFalse(landscape);
 
-                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 210, 296), 2.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 210, 296), 0.5F, out pageWidth, out pageHeight, out pageMargins, out landscape);
                 Assert.AreEqual(1654, pageWidth);
                 Assert.AreEqual(2339, pageHeight);
                 Assert.AreEqual(0, pageMargins);
@@ -209,7 +209,7 @@ namespace PurplePen.Tests
                 Assert.AreEqual(0, pageMargins);
                 Assert.IsFalse(landscape);
 
-                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 125, 200), 2.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
+                MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 125, 200), 0.5F, out pageWidth, out pageHeight, out pageMargins, out landscape);
                 Assert.AreEqual(1100, pageWidth);
                 Assert.AreEqual(1700, pageHeight);
                 Assert.AreEqual(25, pageMargins);

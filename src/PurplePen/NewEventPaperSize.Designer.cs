@@ -29,23 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEventPaperSize));
-            this.paperSizeControl1 = new PurplePen.PaperSizeControl();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.paperSizeControl = new PurplePen.PaperSizeControl();
             this.SuspendLayout();
-            // 
-            // paperSizeControl1
-            // 
-            this.paperSizeControl1.AutoSize = true;
-            this.paperSizeControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.paperSizeControl1.Landscape = false;
-            this.paperSizeControl1.Location = new System.Drawing.Point(25, 51);
-            this.paperSizeControl1.MarginSize = 0;
-            this.paperSizeControl1.Name = "paperSizeControl1";
-            this.paperSizeControl1.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl1.PaperSize")));
-            this.paperSizeControl1.Size = new System.Drawing.Size(271, 163);
-            this.paperSizeControl1.TabIndex = 0;
             // 
             // label1
             // 
@@ -61,7 +49,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(31, 225);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(266, 15);
+            this.label2.Size = new System.Drawing.Size(265, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "You can change this later with File/Set Print Area.";
             // 
@@ -75,6 +63,18 @@
             this.labelTitle.Text = "Paper Size";
             this.labelTitle.Visible = false;
             // 
+            // paperSizeControl
+            // 
+            this.paperSizeControl.AutoSize = true;
+            this.paperSizeControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.paperSizeControl.Landscape = false;
+            this.paperSizeControl.Location = new System.Drawing.Point(25, 51);
+            this.paperSizeControl.MarginSize = 0;
+            this.paperSizeControl.Name = "paperSizeControl";
+            this.paperSizeControl.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl.PaperSize")));
+            this.paperSizeControl.Size = new System.Drawing.Size(271, 161);
+            this.paperSizeControl.TabIndex = 0;
+            // 
             // NewEventPaperSize
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -82,20 +82,20 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.paperSizeControl1);
+            this.Controls.Add(this.paperSizeControl);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "NewEventPaperSize";
             this.Size = new System.Drawing.Size(529, 247);
+            this.Load += new System.EventHandler(this.NewEventPaperSize_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private PaperSizeControl paperSizeControl1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTitle;
+        internal PaperSizeControl paperSizeControl;
     }
 }

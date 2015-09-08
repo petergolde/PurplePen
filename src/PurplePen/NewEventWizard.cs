@@ -229,6 +229,14 @@ namespace PurplePen
             createEventInfo.firstCode = (int) numberingPage.startingCodeNumericUpDown.Value;
             createEventInfo.disallowInvertibleCodes = numberingPage.disallowInvertibleCheckBox.Checked;
             createEventInfo.descriptionLangId = "en";  // UNDONE: how to set the initial description language?
+
+            PrintArea printArea = new PrintArea();
+            printArea.autoPrintArea = true;
+            printArea.restrictToPageSize = true;
+            printArea.pageWidth = paperSizePage.paperSizeControl.PaperSize.Width;
+            printArea.pageHeight = paperSizePage.paperSizeControl.PaperSize.Height;
+            printArea.pageMargins = paperSizePage.paperSizeControl.MarginSize;
+            createEventInfo.printArea = printArea;
         }
 
         // See if it is OK to try creating the event information. Check that no existing file is there, and also try to 

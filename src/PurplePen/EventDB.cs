@@ -2228,7 +2228,8 @@ namespace PurplePen
             ev.customSymbolKey = Util.CopyDictionary(customSymbolKey);
             ev.punchcardFormat = (PunchcardFormat) punchcardFormat.Clone();
             ev.courseAppearance = (CourseAppearance) courseAppearance.Clone();
-            ev.printArea = (PrintArea)printArea.Clone();
+            if (ev.printArea != null)
+                ev.printArea = (PrintArea)printArea.Clone();
             return ev;
         }
 

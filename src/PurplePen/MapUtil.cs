@@ -215,8 +215,8 @@ namespace PurplePen
             else {
                 landscape = printAreaRectangle.Width > printAreaRectangle.Height;
                 // Get needed page width and height in 1/100 of inch.
-                float printAreaWidth = (landscape ? printAreaRectangle.Height : printAreaRectangle.Width) * printScaleRatio * 100 / 25.4F;
-                float printAreaHeight = (landscape ? printAreaRectangle.Width : printAreaRectangle.Height) * printScaleRatio * 100 / 25.4F;
+                float printAreaWidth = (landscape ? printAreaRectangle.Height : printAreaRectangle.Width) / printScaleRatio * 100 / 25.4F;
+                float printAreaHeight = (landscape ? printAreaRectangle.Width : printAreaRectangle.Height) / printScaleRatio * 100 / 25.4F;
 
                 int firstIndex = metric ? 0 : FirstEnglishPaperSizeIndex;
                 int endIndex = metric ? FirstEnglishPaperSizeIndex : StandardPaperSizes.Length;

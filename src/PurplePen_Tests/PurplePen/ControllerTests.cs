@@ -162,6 +162,7 @@ Invalid control point kind 'norfmal''
             info.firstCode = 100;
             info.disallowInvertibleCodes = true;
             info.descriptionLangId = "de";
+            info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             bool success = controller.InitialNewEvent(info);
             Assert.IsTrue(success);
@@ -217,6 +218,7 @@ Invalid control point kind 'norfmal''
             info.firstCode = 55;
             info.disallowInvertibleCodes = false;
             info.descriptionLangId = "en";
+            info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             success = controller.TryCloseFile();
             Assert.IsTrue(success);
@@ -270,6 +272,7 @@ Invalid control point kind 'norfmal''
             info.firstCode = 55;
             info.disallowInvertibleCodes = false;
             info.descriptionLangId = "en";
+            info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             bool success = controller.InitialNewEvent(info);
             Assert.IsFalse(success);

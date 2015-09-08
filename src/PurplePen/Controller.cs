@@ -457,6 +457,7 @@ namespace PurplePen
             public int firstCode;                      // first code to use for numbering
             public bool disallowInvertibleCodes;  // Can invertible codes be used?
             public string descriptionLangId;   // language for descriptions.
+            public PrintArea printArea;        // default print area.
         }
 
         // Create a new event. Should only be called before any file has been loaded.
@@ -477,6 +478,7 @@ namespace PurplePen
             ev.ignoreMissingFonts = false;
             ev.notes = null;
             ev.descriptionLangId = info.descriptionLangId;
+            ev.printArea = info.printArea;
             eventDB.ChangeEvent(ev);
 
             undoMgr.EndCommand(8112);
