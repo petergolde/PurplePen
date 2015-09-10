@@ -100,7 +100,7 @@ namespace PurplePen
             string formatNumberString = settings.version.ToString();
 
             foreach (string s in fileFormatCombo.Items) {
-                if (s.EndsWith(formatNumberString))
+                if (s.EndsWith(formatNumberString, StringComparison.InvariantCulture))
                     fileFormatCombo.SelectedItem = s;
             }
         }
@@ -124,7 +124,7 @@ namespace PurplePen
 
             // Version.
             for (int version = 6; version <= 11; ++version) {
-                if (((string)(fileFormatCombo.SelectedItem)).EndsWith(version.ToString())) {
+                if (((string)(fileFormatCombo.SelectedItem)).EndsWith(version.ToString(), StringComparison.InvariantCulture)) {
                     settings.version = version;
                     break;
                 }

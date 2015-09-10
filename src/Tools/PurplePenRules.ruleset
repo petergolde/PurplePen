@@ -66,7 +66,10 @@
   </Rules>
   <Rules AnalyzerId="RefactoringEssentials" RuleNamespace="RefactoringEssentials">
     <Rule Id="RECS0018" Action="None" />
+    <Rule Id="RECS0022" Action="None" />
+    <Rule Id="RECS0025" Action="None" />
     <Rule Id="RECS0072" Action="None" />
+    <Rule Id="RECS0073" Action="None" />
     <Rule Id="RECS0091" Action="None" />
     <Rule Id="RECS0129" Action="None" />
     <Rule Id="RECS0145" Action="None" />

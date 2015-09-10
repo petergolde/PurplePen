@@ -59,10 +59,10 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SimplifyGaps()
         {
-            CircleGap[] gaps = new CircleGap[] { new CircleGap(125, 134), new CircleGap(290, 270), new CircleGap(125, 140), 
+            CircleGap[] gaps = { new CircleGap(125, 134), new CircleGap(290, 270), new CircleGap(125, 140), 
                 new CircleGap(-40, -20), new CircleGap(180, 180), new CircleGap(-30, 45), new CircleGap(50, 100), 
                 new CircleGap(-140, -120), new CircleGap(55, 65), new CircleGap(75, 102), new CircleGap(129, 130) };
-            CircleGap[] expected = new CircleGap[] { new CircleGap(-40, 45), new CircleGap(50, 102), new CircleGap(125, 140), new CircleGap(220, 240) };
+            CircleGap[] expected = { new CircleGap(-40, 45), new CircleGap(50, 102), new CircleGap(125, 140), new CircleGap(220, 240) };
 
             CircleGap[] result = CircleGap.SimplifyGaps(gaps);
             Assert.AreEqual(expected.Length, result.Length);
@@ -73,9 +73,9 @@ namespace PurplePen.Tests
         [TestMethod]
         public void GapStartStopPoints()
         {
-            CircleGap[] gaps = new CircleGap[] { new CircleGap(-45, 30), new CircleGap(60, 270), new CircleGap(290, 300) };
+            CircleGap[] gaps = { new CircleGap(-45, 30), new CircleGap(60, 270), new CircleGap(290, 300) };
             PointF[] result = CircleGap.GapStartStopPoints(new PointF(7F, 13F), 10F, gaps);
-            PointF[] expected = new PointF[] { new PointF((float) (10.0 * Math.Sqrt(2)/2 + 7), (float) (10.0 * -Math.Sqrt(2)/2 + 13)),
+            PointF[] expected = { new PointF((float) (10.0 * Math.Sqrt(2)/2 + 7), (float) (10.0 * -Math.Sqrt(2)/2 + 13)),
                                                new PointF((float) (10.0 * Math.Sqrt(3)/2 + 7), (float) (5 + 13)),
                                                new PointF((float) (5 + 7), (float) (10.0 * Math.Sqrt(3)/2 + 13)),
                                                new PointF((float) ( 7), (float) (-10 + 13)),
@@ -94,9 +94,9 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ArcStartSweeps()
         {
-            CircleGap[] gaps = new CircleGap[] { new CircleGap(-45, 30), new CircleGap(55, 270), new CircleGap(290, 300) };
+            CircleGap[] gaps = { new CircleGap(-45, 30), new CircleGap(55, 270), new CircleGap(290, 300) };
             float[] result = CircleGap.ArcStartSweeps(gaps);
-            float[] expected = new float[] { -30F, -25F, -270F, -20F, -300F, -15F};
+            float[] expected = { -30F, -25F, -270F, -20F, -300F, -15F};
             
             Assert.AreEqual(expected.Length, result.Length);
 

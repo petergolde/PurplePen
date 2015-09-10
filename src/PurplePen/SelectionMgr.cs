@@ -142,7 +142,7 @@ namespace PurplePen
             {
                 UpdateState();
                 if (value < 0 || value >= courseViewNames.Length)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new ArgumentOutOfRangeException(nameof(value));
 
                 if (courseViewIds[value] != activeCourseDesignator.CourseId) {
                     SelectCourseView(new CourseDesignator(courseViewIds[value]));

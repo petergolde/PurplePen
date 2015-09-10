@@ -65,8 +65,8 @@ namespace PurplePen
             xmlTextWriter.WriteEndDocument();
             xmlTextWriter.Close();
             string report = stringWriter.ToString();
-            int bodyStart = report.IndexOf("<body>") + 6;
-            int bodyEnd = report.LastIndexOf("</body>");
+            int bodyStart = report.IndexOf("<body>", StringComparison.InvariantCulture) + 6;
+            int bodyEnd = report.LastIndexOf("</body>", StringComparison.InvariantCulture);
             return report.Substring(bodyStart, bodyEnd - bodyStart) + "\r\n";
         }
 

@@ -364,7 +364,7 @@ namespace PurplePen
             return clickedObject;
         }
 
-        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
         {
             CourseLayout activeCourse = controller.GetCourseLayout();
             CourseView courseView = selectionMgr.ActiveCourseView;
@@ -375,11 +375,11 @@ namespace PurplePen
 
             if (touchedObject != null) {
                 TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
-                ConvertTextPartsToToolTip(textParts, out tipText, out tipTitle);
+                ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
                 return true;
             }
             else {
-                tipText = tipTitle = "";
+                tipText = titleText = "";
                 return false;
             }
         }

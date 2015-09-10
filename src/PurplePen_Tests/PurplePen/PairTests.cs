@@ -75,7 +75,7 @@ namespace PurplePen.Tests
         /// </summary>
         class OddEvenComparable : System.IComparable
         {
-            public int val;
+            public readonly int val;
 
             public OddEvenComparable(int v)
             {
@@ -118,7 +118,7 @@ namespace PurplePen.Tests
         /// </summary>
         class GOddEvenComparable : System.IComparable<GOddEvenComparable>
         {
-            public int val;
+            public readonly int val;
 
             public GOddEvenComparable(int v)
             {
@@ -141,9 +141,9 @@ namespace PurplePen.Tests
                     return 0;
             }
 
-            public override bool Equals(object other)
+            public override bool Equals(object obj)
             {
-                return (other is GOddEvenComparable) && CompareTo((GOddEvenComparable)other) == 0;
+                return (obj is GOddEvenComparable) && CompareTo((GOddEvenComparable)obj) == 0;
             }
 
             public override int GetHashCode()
@@ -182,28 +182,6 @@ namespace PurplePen.Tests
 			Assert.AreSame(o, p4.Second);
 		}
 
-		/// <summary>
-		/// Test get and set of First and Second.
-		/// </summary>
-		[TestMethod]
-		public void Elements()
-		{
-			Pair<int,string> p1 = new Pair<int,string>();
-			string s = new string('z', 3);
-
-			p1.First = 217;
-			p1.Second = s;
-			Assert.AreEqual(217, p1.First);
-			Assert.AreSame(s, p1.Second);
-
-			Pair<string,int> p2 = new Pair<string,int>("hello", 1);
-			p2.Second = 212;
-			p2.First = s;
-			Assert.AreEqual(212, p2.Second);
-			Assert.AreSame(s, p2.First);
-			p2.First = null;
-			Assert.IsNull(p2.First);
-		}
 
 		[TestMethod]
 		public void Equals()

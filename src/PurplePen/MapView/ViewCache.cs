@@ -184,7 +184,7 @@ namespace PurplePen.MapView {
 					Math.Abs(elements[3] - 1.0F) < SMALL) {
 					// The transformation is a simple translation. Copy parts of the old bitmap to the new bitmap, if they intersect, and
 					// if the translation is a whole number of pixels.
-					PointF[] newUpperRight = new PointF[] { new PointF(0,0)};
+					PointF[] newUpperRight = { new PointF(0,0)};
 					transformOldToNew.TransformPoints(newUpperRight);
 					if (Math.Round(newUpperRight[0].X) - newUpperRight[0].X < SMALL &&
 						Math.Round(newUpperRight[0].Y) - newUpperRight[0].Y < SMALL) {
@@ -241,7 +241,7 @@ namespace PurplePen.MapView {
 
 		float GetMinResolution(Graphics g) {
 			// Determine pixel size in world coordinates.
-			PointF[] pts = new PointF[] {new PointF(0,0), new PointF(1, 0)};
+			PointF[] pts = {new PointF(0,0), new PointF(1, 0)};
 			g.TransformPoints(CoordinateSpace.World, CoordinateSpace.Device, pts);
 			return Util.DistanceF(pts[0], pts[1]);
 		}

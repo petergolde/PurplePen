@@ -34,7 +34,7 @@ namespace PurplePen
             }
 
             if (!cmykToColor.TryGetValue(cmykColor, out result)) {
-                float[] colorValues = new float[4] { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
+                float[] colorValues = { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
                 SWM.Color color = SWM.Color.FromValues(colorValues, SwopUri);
                 result = SD.Color.FromArgb((byte) Math.Round(cmykColor.Alpha * 255), color.R, color.G, color.B);
                 lock (cmykToColor) {
@@ -68,7 +68,7 @@ namespace PurplePen
             SWM.Color result;
 
             if (!cmykToColor.TryGetValue(cmykColor, out result)) {
-                float[] colorValues = new float[4] { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
+                float[] colorValues = { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
                 result = SWM.Color.FromValues(colorValues, SwopColorConverter.SwopUri);
                 cmykToColor[cmykColor] = result;
             }

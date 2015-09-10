@@ -200,7 +200,7 @@ namespace PurplePen.DebugUI
             string text = zoomCombo.Text;
 
             text = text.Trim();
-            if (text.EndsWith("%"))
+            if (text.EndsWith("%", StringComparison.InvariantCulture))
                 text = text.Substring(0, text.Length - 1);
 
             float percent;

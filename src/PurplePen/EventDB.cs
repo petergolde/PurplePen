@@ -626,7 +626,7 @@ namespace PurplePen
 
         object ICloneable.Clone()
         {
-            return this.Clone(); ;
+            return this.Clone(); 
         }
     }   
 
@@ -706,7 +706,7 @@ namespace PurplePen
 
                 CourseControl courseCtl = validateInfo.eventDB.GetCourseControl(nextCourseControl);
                 if (courseCtl.split) {
-                    Id<CourseControl > idJoin = Id<CourseControl>.None; ;
+                    Id<CourseControl > idJoin = Id<CourseControl>.None; 
                     for (int i = 0; i < courseCtl.nextSplitCourseControls.Length; ++i) {
                         Id<CourseControl> idJoinRet = ValidateCourseControlsToJoin(courseCtl.nextSplitCourseControls[i], id, validateInfo);
                         if (idJoinRet.IsNone)
@@ -2554,7 +2554,7 @@ namespace PurplePen
                         if (xmlinput.Reader.NodeType == XmlNodeType.Text) {
                             // Reading the old-style custom symbol text.
                             string customText = xmlinput.Reader.ReadString();
-                            if (iof2004id.StartsWith("8."))
+                            if (iof2004id.StartsWith("8.", StringComparison.InvariantCulture))
                                 customText += " {0}";     // old style for modifiers didn't have the fill-in placeholder.
                             SymbolText text = new SymbolText();
                             text.Lang = "en";
@@ -2908,7 +2908,7 @@ namespace PurplePen
                 courseIds.Sort(delegate(Id<Course> courseId1, Id<Course> courseId2) {
                     string name1 = GetCourse(courseId1).name;
                     string name2 = GetCourse(courseId2).name;
-                    return string.Compare(name1, name2, true);
+                    return string.Compare(name1, name2, StringComparison.CurrentCultureIgnoreCase);
                 });
 
                 // Assign course orders. Note that we are modifying course objects directly, which is normally a BAD thing, because is bypasses the 

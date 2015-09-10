@@ -101,9 +101,8 @@ namespace TestingUtils
             xformPixelToWorld = matrix;
 
             // Calculate the viewport in world coordinates.
-            PointF[] pts = new PointF[] {
-											new PointF(0.0F, 0.0F),
-											new PointF((float) sizeInPixels.Width, (float) sizeInPixels.Height) };
+            PointF[] pts = { new PointF(0.0F, 0.0F),
+							 new PointF((float) sizeInPixels.Width, (float) sizeInPixels.Height) };
             xformPixelToWorld.TransformPoints(pts);
             viewport = new RectangleF(pts[0].X, pts[0].Y, pts[1].X - pts[0].X, pts[1].Y - pts[0].Y);
         }
@@ -116,7 +115,7 @@ namespace TestingUtils
         // Transform one point from world to pixel coordinates. 
         public PointF WorldToPixel(PointF ptWorld)
         {
-            PointF[] pts = new PointF[] { ptWorld };
+            PointF[] pts = { ptWorld };
             xformWorldToPixel.TransformPoints(pts);
             return pts[0];
         }
@@ -124,7 +123,7 @@ namespace TestingUtils
         // Transform one point from pixel to world coordinates. 
         public PointF PixelToWorld(PointF ptPixel)
         {
-            PointF[] pts = new PointF[] { ptPixel };
+            PointF[] pts = { ptPixel };
             xformPixelToWorld.TransformPoints(pts);
             return pts[0];
         }
@@ -132,7 +131,7 @@ namespace TestingUtils
         // Transform distance from world to pixel coordinates. 
         public float WorldToPixelDistance(float distWorld)
         {
-            PointF[] pts = new PointF[] { new PointF(distWorld, 0) };
+            PointF[] pts = { new PointF(distWorld, 0) };
             xformWorldToPixel.TransformVectors(pts);
             return pts[0].X;
         }
@@ -140,7 +139,7 @@ namespace TestingUtils
         // Transform distance from pixe to world coordinates. 
         public float PixelToWorldDistance(float distPixel)
         {
-            PointF[] pts = new PointF[] { new PointF(distPixel, 0) };
+            PointF[] pts = { new PointF(distPixel, 0) };
             xformPixelToWorld.TransformVectors(pts);
             return pts[0].X;
         }

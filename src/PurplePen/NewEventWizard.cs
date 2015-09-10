@@ -263,7 +263,7 @@ namespace PurplePen
             }
 
             // Create a one byte file to see if we can.
-            byte[] bytes = new byte[1] {0};
+            byte[] bytes = {0};
             try {
                 File.WriteAllBytes(createEventInfo.eventFileName, bytes);
             }

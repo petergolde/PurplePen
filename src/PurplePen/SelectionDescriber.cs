@@ -137,7 +137,7 @@ namespace PurplePen
         private static string CourseListText(EventDB eventDB, Id<Course>[] courseIds)
         {
             if (courseIds.Length == 0)
-                return SelectionDescriptionText.CourseList_None; ;
+                return SelectionDescriptionText.CourseList_None; 
 
             if (courseIds.Length == QueryEvent.CountCourses(eventDB))
                 return SelectionDescriptionText.CourseList_AllCourses;

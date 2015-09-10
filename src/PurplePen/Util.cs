@@ -152,7 +152,7 @@ namespace PurplePen
 
             string sTrim = s.Trim();
 
-            if (sTrim.EndsWith(suffix))
+            if (sTrim.EndsWith(suffix, StringComparison.InvariantCulture))
                 return sTrim.Substring(0, sTrim.Length - suffix.Length).Trim();
             else
                 return s;
@@ -309,7 +309,7 @@ namespace PurplePen
             else if (isInt1 && isInt2)
                 return int.Parse(code1).CompareTo(int.Parse(code2));
             else if (!isInt1 && !isInt2)
-                return string.Compare(code1, code2);
+                return string.Compare(code1, code2, StringComparison.CurrentCulture);
 
             return 0;  // can't get here.
         }

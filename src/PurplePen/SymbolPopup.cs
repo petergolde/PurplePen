@@ -293,7 +293,7 @@ namespace PurplePen
         {
             int index = 0;
             int count = 1;
-            while ((index = text.IndexOf("\r\n", index)) >= 0) {
+            while ((index = text.IndexOf("\r\n", index, StringComparison.CurrentCulture)) >= 0) {
                 ++count;
                 ++index;
             }

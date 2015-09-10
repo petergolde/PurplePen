@@ -154,9 +154,7 @@ namespace PurplePen.MapView
             xformPixelToWorld = matrix;
 
             // Calculate the viewport in world coordinates.
-            PointF[] pts = new PointF[] {
-                                            new PointF(0.0F, (float) sizeInPixels.Height),
-                                            new PointF((float) sizeInPixels.Width, 0.0F) };
+            PointF[] pts = { new PointF(0.0F, (float) sizeInPixels.Height), new PointF((float) sizeInPixels.Width, 0.0F) };
             xformPixelToWorld.TransformPoints(pts);
             viewport = new RectangleF(pts[0].X, pts[0].Y, pts[1].X - pts[0].X, pts[1].Y - pts[0].Y);
         }
@@ -167,7 +165,7 @@ namespace PurplePen.MapView
 
         // Transform rectangle from world to pixel coordinates. 
         public RectangleF WorldToPixel(RectangleF rectWorld) {
-            PointF[] pts = new PointF[] {rectWorld.Location, new PointF(rectWorld.Right, rectWorld.Bottom)};
+            PointF[] pts = {rectWorld.Location, new PointF(rectWorld.Right, rectWorld.Bottom)};
             xformWorldToPixel.TransformPoints(pts);
             // Note that Y's are reversed, so we reverse the rectangle to make the rect height always positive.
             return new RectangleF(new PointF(pts[0].X, pts[1].Y), new SizeF(pts[1].X - pts[0].X, pts[0].Y - pts[1].Y)); 
@@ -175,7 +173,7 @@ namespace PurplePen.MapView
 
         // Transform rectangle from pixel to world coordinates. 
         public RectangleF PixelToWorld(RectangleF rectPixel) {
-            PointF[] pts = new PointF[] {rectPixel.Location, new PointF(rectPixel.Right, rectPixel.Bottom)};
+            PointF[] pts = {rectPixel.Location, new PointF(rectPixel.Right, rectPixel.Bottom)};
             xformPixelToWorld.TransformPoints(pts);
 
             // Note that Y's are reversed, so we reverse the rectangle to make the rect height always positive.
@@ -184,28 +182,28 @@ namespace PurplePen.MapView
 
         // Transform one point from world to pixel coordinates. 
         public PointF WorldToPixel(PointF ptWorld) {
-            PointF[] pts = new PointF[] {ptWorld};
+            PointF[] pts = {ptWorld};
             xformWorldToPixel.TransformPoints(pts);
             return pts[0];
         }
 
         // Transform one point from pixel to world coordinates. 
         public PointF PixelToWorld(PointF ptPixel) {
-            PointF[] pts = new PointF[] {ptPixel};
+            PointF[] pts = {ptPixel};
             xformPixelToWorld.TransformPoints(pts);
             return pts[0];
         }
 
         // Transform distance from world to pixel coordinates. 
         public float WorldToPixelDistance(float distWorld) {
-            PointF[] pts = new PointF[] {new PointF(distWorld, 0)};
+            PointF[] pts = {new PointF(distWorld, 0)};
             xformWorldToPixel.TransformVectors(pts);
             return pts[0].X;
         }
 
         // Transform distance from pixe to world coordinates. 
         public float PixelToWorldDistance(float distPixel) {
-            PointF[] pts = new PointF[] {new PointF(distPixel, 0)};
+            PointF[] pts = {new PointF(distPixel, 0)};
             xformPixelToWorld.TransformVectors(pts);
             return pts[0].X;
         }

@@ -134,7 +134,7 @@ namespace PurplePen
         void FillLanguages()
         {
             languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
-            languages.Sort((lang1, lang2) => string.Compare(lang1.Name, lang2.Name, true));
+            languages.Sort((lang1, lang2) => string.Compare(lang1.Name, lang2.Name, StringComparison.CurrentCultureIgnoreCase));
 
             foreach (SymbolLanguage lang in languages) {
                 comboBoxLanguage.Items.Add(lang.Name);
@@ -363,7 +363,7 @@ namespace PurplePen
             }
 
             bool isModifier = (kind == 'E' || kind=='C' || kind == 'G') && selectedId != "11.15";   // column C, E, G, but not between
-            bool isNoun = (kind == 'D' || selectedId == "11.15" || selectedId.StartsWith("10."));  // column D or between/junction/crossing
+            bool isNoun = (kind == 'D' || selectedId == "11.15" || selectedId.StartsWith("10.", StringComparison.InvariantCulture));  // column D or between/junction/crossing
 
             dialog.SetAllowableForms((isNoun && language.PluralNouns) || (kind=='E' && language.PluralModifiers), hasPlural,
                                                        isModifier && language.GenderModifiers, hasGender,

@@ -874,7 +874,7 @@ namespace PurplePen
                     if (!success) {
                         // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution, 
                         // I guess.
-                        Application.Idle -= new EventHandler(Application_Idle); ;
+                        Application.Idle -= new EventHandler(Application_Idle); 
                         this.Dispose();
                         new InitialScreen().Show();
                     }
@@ -899,7 +899,7 @@ namespace PurplePen
                     if (!success) {
                         // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution, 
                         // I guess.
-                        Application.Idle -= new EventHandler(Application_Idle); ;
+                        Application.Idle -= new EventHandler(Application_Idle); 
                         this.Dispose();
                         new InitialScreen().Show();
                     }

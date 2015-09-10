@@ -742,8 +742,8 @@ namespace PurplePen
     // It describes the current view.
     public class CourseDesignator: ICloneable
     {
-        private Id<Course> courseId;   // ID of the course, none for all controls.
-        private int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
+        private readonly Id<Course> courseId;   // ID of the course, none for all controls.
+        private readonly int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
 
         public override bool Equals(object obj)
         {

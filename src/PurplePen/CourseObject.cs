@@ -119,7 +119,7 @@ namespace PurplePen
         // Transform X-distance via a transform. 
         protected float TransformDistance(float distance, Matrix xform)
         {
-            PointF[] vectors = new PointF[1] { new PointF(distance, 0) };
+            PointF[] vectors = { new PointF(distance, 0) };
             xform.TransformVectors(vectors);
             return (float) Math.Sqrt(vectors[0].X * vectors[0].X + vectors[0].Y * vectors[0].Y);
         }
@@ -232,7 +232,7 @@ namespace PurplePen
             string result = "";
 
             string typeName = GetType().Name;
-            if (typeName.EndsWith("CourseObj"))
+            if (typeName.EndsWith("CourseObj", StringComparison.InvariantCulture))
                 result += string.Format("{0,-16}", GetType().Name.Substring(0, typeName.Length - "CourseObj".Length) + ":");
 
             if (layer != 0)
@@ -1268,7 +1268,7 @@ namespace PurplePen
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
             float radius = ((diameter * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
-            PointF[] pts = new PointF[] { location, new PointF(location.X - radius, location.Y - radius), new PointF(location.X + radius, location.Y + radius) };
+            PointF[] pts = { location, new PointF(location.X - radius, location.Y - radius), new PointF(location.X + radius, location.Y + radius) };
             xformWorldToPixel.TransformPoints(pts);
 
             // Draw the control circle.
@@ -1316,7 +1316,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            PointKind[] kinds = new PointKind[4] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
+            PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[]) coords.Clone());
             SymPath path = new SymPath(pts, kinds);
 
@@ -1394,7 +1394,7 @@ namespace PurplePen
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner inner, 2 = lower-right corner inner, 3 = upper-left outer, 4=lower-right outer
             float radiusOuter = ((7.0F * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
             float radiusInner = ((5.35F * appearance.controlCircleSize - 2 * NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
-            PointF[] pts = new PointF[] { location, new PointF(location.X - radiusInner, location.Y - radiusInner), new PointF(location.X + radiusInner, location.Y + radiusInner),
+            PointF[] pts = { location, new PointF(location.X - radiusInner, location.Y - radiusInner), new PointF(location.X + radiusInner, location.Y + radiusInner),
                                                                          new PointF(location.X - radiusOuter, location.Y - radiusOuter), new PointF(location.X + radiusOuter, location.Y + radiusOuter)};
             xformWorldToPixel.TransformPoints(pts);
 
@@ -1449,7 +1449,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            PointKind[] kinds = new PointKind[13] { 
+            PointKind[] kinds = { 
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal
@@ -1601,7 +1601,7 @@ namespace PurplePen
 
         void GetPaths(out SymPath path1, out SymPath path2)
         {
-            PointKind[] kinds = new PointKind[4] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
+            PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[]) coords1.Clone());
             path1 = new SymPath(pts, kinds);
 
@@ -2308,7 +2308,7 @@ namespace PurplePen
            // Draw the text.
            base.Highlight(g, xformWorldToPixel, brush, erasing);
 
-           PointF[] corners = new PointF[] { new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Top) };
+           PointF[] corners = { new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Top) };
            xformWorldToPixel.TransformPoints(corners);
 
            // Draw an outline.

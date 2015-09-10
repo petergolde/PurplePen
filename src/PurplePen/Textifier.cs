@@ -87,7 +87,7 @@ namespace PurplePen
 
                 default:
                     Debug.Fail("bad control point kind"); text = ""; break;
-            };
+            }
 
             return CapitalizeFirstLetter(text);
         }
@@ -328,7 +328,7 @@ namespace PurplePen
                 // Simple string.
                 // Trim spaces and any "m" suffix.
                 size = size.Trim();
-                if (size.EndsWith("m")) {
+                if (size.EndsWith("m", StringComparison.InvariantCulture)) {
                     size = size.Substring(0, size.Length - 1);
                 }
 

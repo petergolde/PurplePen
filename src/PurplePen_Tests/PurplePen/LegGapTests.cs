@@ -58,15 +58,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SplitPathWithGaps()
         {
-            PointF[] points = new PointF[] {
+            PointF[] points = {
 				new PointF(0,0), new PointF(10,10), new PointF(20,40), new PointF(-10, 10),
 				new PointF(20,20), new PointF(25, 30), new PointF(25,30), new PointF(40,25) };
-            PointKind[] kinds = new PointKind[] {
+            PointKind[] kinds = {
 				PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl,
 				PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
             SymPath p = new SymPath(points, kinds);
 
-            LegGap[] gapStartStops = new LegGap[] { new LegGap(-2, 3), new LegGap(15, 7), new LegGap(25, 1.5F), new LegGap(300, 5) };
+            LegGap[] gapStartStops = { new LegGap(-2, 3), new LegGap(15, 7), new LegGap(25, 1.5F), new LegGap(300, 5) };
 
             SymPath[] results = LegGap.SplitPathWithGaps(p, gapStartStops);
 
@@ -81,8 +81,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SimplifyGaps()
         {
-            LegGap[] gaps = new LegGap[] { new LegGap(7, 8), new LegGap(5, 0), new LegGap(25, 5), new LegGap(-7, 2), new LegGap(-1, 3), new LegGap(8.1F, 2.2F), new LegGap(100, 100), new LegGap(8, 1.4F), new LegGap(14, 8.5F), new LegGap(3, 0.5F) };
-            LegGap[] expected = new LegGap[] { new LegGap(0, 2), new LegGap(3, 0.5F), new LegGap(7, 15.5F), new LegGap(25, 2) };
+            LegGap[] gaps = { new LegGap(7, 8), new LegGap(5, 0), new LegGap(25, 5), new LegGap(-7, 2), new LegGap(-1, 3), new LegGap(8.1F, 2.2F), new LegGap(100, 100), new LegGap(8, 1.4F), new LegGap(14, 8.5F), new LegGap(3, 0.5F) };
+            LegGap[] expected = { new LegGap(0, 2), new LegGap(3, 0.5F), new LegGap(7, 15.5F), new LegGap(25, 2) };
 
             LegGap[] result = LegGap.SimplifyGaps(gaps, 27);
             Assert.AreEqual(expected.Length, result.Length);
@@ -94,9 +94,9 @@ namespace PurplePen.Tests
         public void MoveGapsToNewPath()
         {
             SymPath oldPath = new SymPath(new PointF[] { new PointF(0, 0), new PointF(10, 10) });
-            LegGap[] oldGaps = new LegGap[] { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
+            LegGap[] oldGaps = { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
             SymPath newPath = new SymPath(new PointF[] { new PointF(10, 10), new PointF(10, 0), new PointF(0, 0) });
-            LegGap[] expected = new LegGap[] { new LegGap(0.1F, 1.414F), new LegGap(17.88F, 1.414F) };
+            LegGap[] expected = { new LegGap(0.1F, 1.414F), new LegGap(17.88F, 1.414F) };
 
             LegGap[] newGaps = LegGap.MoveGapsToNewPath(oldGaps, oldPath, newPath);
 
@@ -112,8 +112,8 @@ namespace PurplePen.Tests
         public void GapStartStopPoints()
         {
             SymPath path = new SymPath(new PointF[] { new PointF(10, 10), new PointF(10, 0), new PointF(0, 0) });
-            LegGap[] gaps = new LegGap[] { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
-            PointF[] expected = new PointF[] { new PointF(10, 9), new PointF(10, 7), new PointF(10, 3), new PointF(10, 2.5F), new PointF(8, 0), new PointF(6, 0) };
+            LegGap[] gaps = { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
+            PointF[] expected = { new PointF(10, 9), new PointF(10, 7), new PointF(10, 3), new PointF(10, 2.5F), new PointF(8, 0), new PointF(6, 0) };
 
             PointF[] result = LegGap.GapStartStopPoints(path, gaps);
             TestUtil.TestEnumerableAnyOrder(result, expected);
@@ -123,10 +123,10 @@ namespace PurplePen.Tests
         public void MoveStartStopPoint()
         {
             SymPath path = new SymPath(new PointF[] { new PointF(10, 10), new PointF(10, 0), new PointF(0, 0) });
-            LegGap[] gaps = new LegGap[] { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
+            LegGap[] gaps = { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(12, 2) };
 
             LegGap[] result = LegGap.MoveStartStopPoint(path, gaps, new PointF(8, 0), new PointF(8.5F, 0));
-            LegGap[] expected = new LegGap[] { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(11.5F, 2.5F) };
+            LegGap[] expected = { new LegGap(1, 2), new LegGap(7, 0.5F), new LegGap(11.5F, 2.5F) };
             TestUtil.TestEnumerableAnyOrder(result, expected);
 
             result = LegGap.MoveStartStopPoint(path, gaps, new PointF(10, 2.5F), new PointF(8,2));

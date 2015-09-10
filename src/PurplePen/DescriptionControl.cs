@@ -209,9 +209,9 @@ namespace PurplePen
         public void SetSelection(int firstLine, int lastLine)
         {
             if (firstLine < -1 || firstLine >= ((Description == null) ? 0 : Description.Length))
-                throw new ArgumentOutOfRangeException("firstLine");
+                throw new ArgumentOutOfRangeException(nameof(firstLine));
             if (lastLine < -1 || lastLine >= ((Description == null) ? 0 : Description.Length))
-                throw new ArgumentOutOfRangeException("lastLine");
+                throw new ArgumentOutOfRangeException(nameof(lastLine));
 
             int oldFirstLine = firstSelectedLine, oldLastLine = lastSelectedLine;
             firstSelectedLine = firstLine;
@@ -384,7 +384,7 @@ namespace PurplePen
                 else {
                     break; // we're done, we'll use scroll bars.
                 }
-            };
+            }
 
             renderer.CellSize = boxSize;
 

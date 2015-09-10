@@ -390,7 +390,7 @@ namespace PurplePen
         {
             PrintServer server = null;
 
-            if (printerName.StartsWith(@"\\")) {
+            if (printerName.StartsWith(@"\\", StringComparison.InvariantCulture)) {
                 int indexOfSecondSlash = printerName.IndexOf('\\', 2);
                 if (indexOfSecondSlash > 2) {
                     string serverName = printerName.Substring(0, indexOfSecondSlash);
@@ -528,7 +528,9 @@ namespace PurplePen
             public override System.Windows.Size PageSize
             {
                 get { return pageSize; }
+#pragma warning disable RECS0029 // Warns about property or indexer setters and event adders or removers that do not use the value parameter
                 set { return; }
+#pragma warning restore RECS0029 // Warns about property or indexer setters and event adders or removers that do not use the value parameter
             }
 
             public override IDocumentPaginatorSource Source
@@ -580,11 +582,13 @@ namespace PurplePen
                     if (test != 0) return true; // if any of the checks pass, return true
                 }
             }
-            catch (Exception) {  }
+            catch (Exception) {
+                return false;
+            }
             finally {
                 if (hDC != IntPtr.Zero) DeleteDC(hDC);
                 if (BLOB != IntPtr.Zero) Marshal.FreeCoTaskMem(BLOB);
-            };
+            }
 
             return false;
 

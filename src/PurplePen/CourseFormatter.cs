@@ -492,6 +492,8 @@ namespace PurplePen
                 courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle, special.color);
                 break;
             case SpecialKind.Descriptions:
+                Debug.Fail("description specials should not be passed to this function");
+                return null;
             default:
                 Debug.Fail("bad special kind");
                 return null;

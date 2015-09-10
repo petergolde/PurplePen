@@ -104,9 +104,11 @@ namespace PurplePen
                     else {
                         // Test if Arial Narrow is installed.
                         try {
+#pragma warning disable RECS0026 // Possible unassigned object created by 'new'
                             new FontFamily("Arial Narrow");
                             new Font("Arial Narrow", 10, FontStyle.Regular);
                             new Font("Arial Narrow", 10, FontStyle.Bold);
+#pragma warning restore RECS0026 // Possible unassigned object created by 'new'
                             installedArialNarrow = true;
                         }
                         catch (ArgumentException) {

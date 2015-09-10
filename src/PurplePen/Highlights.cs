@@ -56,7 +56,7 @@ namespace PurplePen
         {
             using (Pen redPen = new Pen(Color.Red, penWidth))
             using (Brush blueBrush = new HatchBrush(HatchStyle.Percent25, Color.DarkBlue, Color.Transparent)) {
-                PointF[] pts = new PointF[] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) };
+                PointF[] pts = { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) };
                 xformWorldToPixel.TransformPoints(pts);
                 RectangleF rectPixel = RectangleF.FromLTRB(pts[0].X, pts[0].Y, pts[1].X, pts[1].Y);
                 g.FillRectangle(blueBrush, rectPixel.X, rectPixel.Y, rectPixel.Width, rectPixel.Height);
@@ -66,7 +66,7 @@ namespace PurplePen
 
         public void EraseHighlight(Graphics g, Matrix xformWorldToPixel, Brush eraseBrush)
         {
-            PointF[] pts = new PointF[] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) };
+            PointF[] pts = { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) };
             xformWorldToPixel.TransformPoints(pts);
             RectangleF rectPixel = RectangleF.FromLTRB(pts[0].X, pts[0].Y, pts[1].X, pts[1].Y);
 

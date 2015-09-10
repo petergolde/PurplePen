@@ -53,7 +53,7 @@ namespace PurplePen.MapView.Tests
         public void CombineBitmaps()
         {
             string srcfile1 = TestUtil.GetTestFile("bitmap\\combine1.png");
-            string srcfile2 = TestUtil.GetTestFile("bitmap\\combine2.png"); ;
+            string srcfile2 = TestUtil.GetTestFile("bitmap\\combine2.png"); 
 
             Bitmap src = (Bitmap)Image.FromFile(srcfile1);
             Bitmap dest = (Bitmap)Image.FromFile(srcfile2);

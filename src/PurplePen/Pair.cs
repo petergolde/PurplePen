@@ -32,12 +32,12 @@ namespace PurplePen
         /// <summary>
         /// The first element of the pair.
         /// </summary>
-        public TFirst First;
+        public readonly TFirst First;
 
         /// <summary>
         /// The second element of the pair.
         /// </summary>
-        public TSecond Second;
+        public readonly TSecond Second;
 
         /// <summary>
         /// Creates a new pair with given first and second elements.
@@ -99,10 +99,12 @@ namespace PurplePen
         /// <returns>The hash code.</returns>
         public override int GetHashCode()
         {
+#pragma warning disable RECS0017 // Possible compare of value type with 'null'
             // Build the hash code from the hash codes of First and Second. 
             int hashFirst = (First == null) ? 0x61E04917 : First.GetHashCode();
             int hashSecond = (Second == null) ? 0x198ED6A3 : Second.GetHashCode();
             return hashFirst ^ hashSecond;
+#pragma warning restore RECS0017 // Possible compare of value type with 'null'
         }
 
         /// <summary>
@@ -165,8 +167,9 @@ namespace PurplePen
             if (obj is Pair<TFirst, TSecond>)
                 return CompareTo((Pair<TFirst, TSecond>)obj);
             else
-                throw new ArgumentException("Comparand is not of the correct type.", "obj");
+                throw new ArgumentException("Comparand is not of the correct type.", nameof(obj));
         }
+
 
         /// <summary>
         /// Returns a string representation of the pair. The string representation of the pair is
@@ -176,6 +179,7 @@ namespace PurplePen
         /// "null" if they are null.)
         /// </summary>
         /// <returns> The string representation of the pair.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Potential Code Quality Issues", "RECS0017:Possible compare of value type with 'null'", Justification = "Might not be value type.")]
         public override string ToString()
         {
             return string.Format("First: {0}, Second: {1}", (First == null) ? "null" : First.ToString(), (Second == null) ? "null" : Second.ToString());

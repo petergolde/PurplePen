@@ -1722,7 +1722,7 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             PointF[] handles = courseobj.GetHandles();
-            PointF[] expected = new PointF[] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) };
+            PointF[] expected = { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) };
 
             Assert.AreEqual(expected.Length, handles.Length);
             for (int i = 0; i < handles.Length; ++i)
@@ -1748,7 +1748,7 @@ namespace PurplePen.Tests
             float left = rect.Left, right = rect.Right, top= rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
             PointF[] handles = courseObj.GetHandles();
-            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+            PointF[] expected = { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
                new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
                new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
 
@@ -1763,7 +1763,7 @@ namespace PurplePen.Tests
             float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
             PointF[] handles = courseObj.GetHandles();
-            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+            PointF[] expected = { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
                new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
                new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
 
@@ -1777,10 +1777,10 @@ namespace PurplePen.Tests
             RectangleF rect = courseObj.rect;
             float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
-            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+            PointF[] expected = { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
                new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
                new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
-            Cursor[] expectedCursors = new Cursor[] { Cursors.SizeNWSE, Cursors.SizeNESW, Cursors.SizeNESW, Cursors.SizeNWSE, 
+            Cursor[] expectedCursors = { Cursors.SizeNWSE, Cursors.SizeNESW, Cursors.SizeNESW, Cursors.SizeNWSE, 
                 Cursors.SizeNS, Cursors.SizeNS, Cursors.SizeWE, Cursors.SizeWE };
 
             for (int i = 0; i < expected.Length; ++i)
@@ -1794,10 +1794,10 @@ namespace PurplePen.Tests
             RectangleF rect = courseObj.rect;
             float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
-            PointF[] expected = new PointF[] { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
+            PointF[] expected = { new PointF(left, top), new PointF(right, top), new PointF(left, bottom), new PointF(right, bottom),
                new PointF((left + right) / 2, top), new PointF((left + right) / 2, bottom),
                new PointF(left, (top + bottom) / 2), new PointF(right, (top + bottom) / 2) };
-            Cursor[] expectedCursors = new Cursor[] { Cursors.SizeNWSE, Cursors.SizeNESW, Cursors.SizeNESW, Cursors.SizeNWSE, 
+            Cursor[] expectedCursors = { Cursors.SizeNWSE, Cursors.SizeNESW, Cursors.SizeNESW, Cursors.SizeNWSE, 
                 Cursors.SizeNS, Cursors.SizeNS, Cursors.SizeWE, Cursors.SizeWE };
 
             for (int i = 0; i < expected.Length; ++i)
@@ -1855,7 +1855,7 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             PointF[] handles = courseobj.GetHandles();
-            PointF[] expected = new PointF[] {new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) };
+            PointF[] expected = {new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) };
 
             Assert.AreEqual(expected.Length, handles.Length);
             for (int i = 0; i < handles.Length; ++i)
@@ -1876,7 +1876,7 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new LegCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }), null);
             PointF[] handles = courseobj.GetHandles();
-            PointF[] expected = new PointF[] { new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F) };
+            PointF[] expected = { new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F) };
 
             Assert.AreEqual(expected.Length, handles.Length);
             for (int i = 0; i < handles.Length; ++i)
