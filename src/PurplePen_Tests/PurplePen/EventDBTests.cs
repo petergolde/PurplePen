@@ -156,6 +156,7 @@ namespace PurplePen.Tests
             course1.secondaryTitle = "White is right";
             course1.load = 0;
             course1.firstCourseControl = CourseControlId(1);
+            course1.UpdateUnknownPageSizes(15000);
             eventDB.AddCourse(course1);
 
             course2 = new Course(CourseKind.Normal, "Yellow", 15000, 2);
@@ -163,11 +164,12 @@ namespace PurplePen.Tests
             course2.climb = 95;
             course2.labelKind = ControlLabelKind.Code;
             course2.firstCourseControl = CourseControlId(0);
-            course2.printArea = new RectangleF(50, 70, 200, 100);
-            course2.partPrintAreas[1] = new RectangleF(10, 20, 30, 40);
-            course2.partPrintAreas[0] = new RectangleF(70, 10, 130, 140);
+            course2.printArea = new PrintArea(false, true, new RectangleF(50, 70, 200, 100));
+            course2.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(10, 20, 30, 40), 1.1F);
+            course2.partPrintAreas[0] = new PrintArea(true, false, new RectangleF(70, 10, 130, 140));
             course2.partOptions[1] = new PartOptions() { ShowFinish = true };
             course2.partOptions[0] = new PartOptions() { ShowFinish = false };
+            course2.UpdateUnknownPageSizes(15000);
             eventDB.AddCourse(course2);
 
             course3 = new Course(CourseKind.Score, "Rambo", 10000, 3);
@@ -178,7 +180,8 @@ namespace PurplePen.Tests
             course3.firstControlOrdinal = 7;
             course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
-            course3.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            course3.partPrintAreas[1] = new PrintArea(true, true, new RectangleF(-10, -20, 90, 80), 0.9F);
+            course3.UpdateUnknownPageSizes(15000);
             eventDB.AddCourse(course3);
 
             course4 = new Course(CourseKind.Score, "Silly1", 10000, 3);
@@ -190,8 +193,9 @@ namespace PurplePen.Tests
             course4.firstControlOrdinal = 3;
             course4.labelKind = ControlLabelKind.SequenceAndScore;
             course4.descKind = DescriptionKind.SymbolsAndText;
-            course4.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            course4.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80));
             course4.partOptions[1] = new PartOptions() { ShowFinish = false };
+            course4.UpdateUnknownPageSizes(15000);
             eventDB.AddCourse(course4);
 
             course5 = new Course(CourseKind.Score, "Silly2", 10000, 3);
@@ -202,7 +206,8 @@ namespace PurplePen.Tests
             course5.firstControlOrdinal = 1;
             course5.labelKind = ControlLabelKind.CodeAndScore;
             course5.descKind = DescriptionKind.Symbols;
-            course5.partPrintAreas[1] = new RectangleF(-10, -20, 90, 80);
+            course5.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80), 1.25F);
+            course5.UpdateUnknownPageSizes(15000);
             eventDB.AddCourse(course5);
 
             undomgr.EndCommand(61);
@@ -213,6 +218,12 @@ namespace PurplePen.Tests
             eventDB = new EventDB(undomgr);
 
             eventDB.Load(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
+
+            Assert.AreEqual(eventDB.GetCourse(CourseId(1)), course1);
+            Assert.AreEqual(eventDB.GetCourse(CourseId(2)), course2);
+            Assert.AreEqual(eventDB.GetCourse(CourseId(3)), course3);
+            Assert.AreEqual(eventDB.GetCourse(CourseId(4)), course4);
+            Assert.AreEqual(eventDB.GetCourse(CourseId(5)), course5);
 
             TestUtil.TestEnumerableAnyOrder(eventDB.AllCoursePairs,
                 new KeyValuePair<Id<Course>, Course>[] {
@@ -383,8 +394,7 @@ namespace PurplePen.Tests
             e.mapScale = 14000;
             e.allControlsPrintScale = 10000;
             e.allControlsDescKind = DescriptionKind.SymbolsAndText;
-            e.printArea = new PrintArea();
-            e.printArea.printAreaRectangle = new RectangleF(50, 70, 200, 300);
+            e.printArea = new PrintArea(false, false, new RectangleF(50, 70, 200, 300));
             e.punchcardFormat.boxesAcross = 7;
             e.punchcardFormat.boxesDown = 5;
             e.punchcardFormat.leftToRight = false;

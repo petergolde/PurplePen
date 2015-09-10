@@ -377,6 +377,7 @@ namespace PurplePen
 
                 e = (Event) e.Clone();
                 e.printArea.printAreaRectangle = printAreaRectangle;
+                e.printArea.autoPrintArea = printAreaRectangle.IsEmpty;
 
                 eventDB.ChangeEvent(e);
             }
@@ -386,12 +387,20 @@ namespace PurplePen
                 course = (Course) course.Clone();
 
                 if (courseDesignator.AllParts) {
-                    course.printArea = printAreaRectangle;
+                    course.printArea.printAreaRectangle = printAreaRectangle;
+                    course.printArea.autoPrintArea = printAreaRectangle.IsEmpty;
+
                     if (removeParts)
-                        course.partPrintAreas = new Dictionary<int, RectangleF>();
+                        course.partPrintAreas = new Dictionary<int, PrintArea>();
                 }
                 else {
-                    course.partPrintAreas[courseDesignator.Part] = printAreaRectangle;
+                    PrintArea area;
+                    if (! course.partPrintAreas.TryGetValue(courseDesignator.Part, out area)) {
+                        area = course.printArea;
+                    }
+                    area.printAreaRectangle = printAreaRectangle;
+                    area.autoPrintArea = printAreaRectangle.IsEmpty;
+                    course.partPrintAreas[courseDesignator.Part] = area;
                 }
 
                 eventDB.ReplaceCourse(courseDesignator.CourseId, course);

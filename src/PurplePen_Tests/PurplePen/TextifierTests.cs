@@ -257,6 +257,7 @@ namespace PurplePen.Tests
             Assert.AreEqual("5.2m deep", textifier.GetTextFromSize("5.2", true, true, "", true, ""));
             Assert.AreEqual("5.2m high", textifier.GetTextFromSize("5,2", true, false, "", false, ""));
 
+            CultureInfo.CurrentCulture.ClearCachedData();
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
 
             Assert.AreEqual("5m deep", textifier.GetTextFromSize("5.0", true, true, "", true, ""));

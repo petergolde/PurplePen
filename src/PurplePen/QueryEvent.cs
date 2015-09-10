@@ -967,13 +967,13 @@ namespace PurplePen
         }
 
         // Get the print area for a course, or for all controls if CourseId is none.
-        // If none is defined, returns the default one.
+        // If the print area has autoPrintArea set to true, returns "defaultPrintArea".
         public static RectangleF GetPrintArea(EventDB eventDB, CourseDesignator courseDesignator, RectangleF defaultPrintArea)
         {
-            RectangleF printArea;
+            PrintArea printArea;
 
             if (courseDesignator.IsAllControls)
-                printArea = eventDB.GetEvent().printArea.printAreaRectangle;
+                printArea = eventDB.GetEvent().printArea;
             else {
                 Course course = eventDB.GetCourse(courseDesignator.CourseId);
                 printArea = course.printArea;
@@ -981,10 +981,10 @@ namespace PurplePen
                     printArea = course.partPrintAreas[courseDesignator.Part];
             }
 
-            if (printArea.IsEmpty)
+            if (printArea.autoPrintArea)
                 return defaultPrintArea;
             else
-                return printArea;
+                return printArea.printAreaRectangle;
         }
 
         // Get the part options for a specific course part. Returns null for all controls.
