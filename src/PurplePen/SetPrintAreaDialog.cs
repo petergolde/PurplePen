@@ -46,12 +46,14 @@ namespace PurplePen
     {
         Controller controller;
         PrintAreaKind printAreaKind;
+        MainFrame mainFrame;
         PrintArea printArea;
         bool updateInProgress = false;
 
-        internal SetPrintAreaDialog(Controller controller, PrintAreaKind printAreaKind)
+        internal SetPrintAreaDialog(MainFrame mainFrame, Controller controller, PrintAreaKind printAreaKind)
         {
             InitializeComponent();
+            this.mainFrame = mainFrame;
             this.controller = controller;
             this.printAreaKind = printAreaKind;
             this.printArea = PrintArea.DefaultPrintArea;

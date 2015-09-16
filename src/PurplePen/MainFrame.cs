@@ -76,6 +76,7 @@ namespace PurplePen
 
         Point lastTooltipLocation;
         bool showToolTips = true;
+        bool hidePrintArea = false;   // If true, don't show print area right now despite settings.
 
         const double TRACKBAR_MIN = 0.25;      // minimum zoom on the zoom trackbar
         const double TRACKBAR_MAX = 10.0;     // maximum zoom on the zoom trackbar
@@ -151,6 +152,16 @@ namespace PurplePen
             this.controller = controller;
             this.symbolDB = symbolDB;
             descriptionControl.SymbolDB = symbolDB;
+        }
+
+        public bool HidePrintArea
+        {
+            get { return hidePrintArea; }
+            set
+            {
+                hidePrintArea = value;
+                controller.ForceChangeUpdate();
+            }
         }
 
         // Get the current location of the mouse pointer.
@@ -368,7 +379,10 @@ namespace PurplePen
         // Update the print area in the map pane.
         void UpdatePrintArea()
         {
-            mapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
+            if (hidePrintArea)
+                mapDisplay.SetPrintArea(null);
+            else
+                mapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
         }
 
         // Update the part banner in the map pane.
@@ -2089,7 +2103,7 @@ namespace PurplePen
 
         private void SetPrintArea(PrintAreaKind printAreaKind)
         {
-            SetPrintAreaDialog dialog = new SetPrintAreaDialog(controller, printAreaKind);
+            SetPrintAreaDialog dialog = new SetPrintAreaDialog(this, controller, printAreaKind);
 
             Point location = this.Location;
             location.Offset(10, 100);
@@ -2097,13 +2111,14 @@ namespace PurplePen
 
             dialog.Show(this);
 
-            // Make sure the existing print area is fully visible.
+            // Make sure the existing print area is fully visible, but hide the gray display.
             RectangleF rectangleCurrent = controller.GetCurrentPrintAreaRectangle(printAreaKind);
             if (!mapViewer.Viewport.Contains(rectangleCurrent)) {
                 rectangleCurrent.Inflate(rectangleCurrent.Width * 0.05F, rectangleCurrent.Height * 0.05F);
                 ShowRectangle(rectangleCurrent);
             }
-
+            HidePrintArea = true;
+            
             controller.BeginSetPrintArea(printAreaKind, dialog);
             dialog.PrintArea = controller.GetCurrentPrintArea(printAreaKind);
         }
