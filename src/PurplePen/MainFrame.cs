@@ -368,7 +368,7 @@ namespace PurplePen
         // Update the print area in the map pane.
         void UpdatePrintArea()
         {
-            mapDisplay.SetPrintArea(controller.GetCurrentPrintArea(PrintAreaKind.OnePart));
+            mapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
         }
 
         // Update the part banner in the map pane.
@@ -2087,11 +2087,9 @@ namespace PurplePen
             return true;
         }
 
-        private void SetPrintArea(PrintAreaKind printArea)
+        private void SetPrintArea(PrintAreaKind printAreaKind)
         {
-            SetPrintAreaDialog dialog = new SetPrintAreaDialog();
-            dialog.controller = controller;
-            dialog.printArea = printArea;
+            SetPrintAreaDialog dialog = new SetPrintAreaDialog(controller, printAreaKind);
 
             Point location = this.Location;
             location.Offset(10, 100);
@@ -2100,13 +2098,14 @@ namespace PurplePen
             dialog.Show(this);
 
             // Make sure the existing print area is fully visible.
-            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(printArea);
+            RectangleF rectangleCurrent = controller.GetCurrentPrintAreaRectangle(printAreaKind);
             if (!mapViewer.Viewport.Contains(rectangleCurrent)) {
                 rectangleCurrent.Inflate(rectangleCurrent.Width * 0.05F, rectangleCurrent.Height * 0.05F);
                 ShowRectangle(rectangleCurrent);
             }
 
-            controller.BeginSetPrintArea(printArea, dialog);
+            controller.BeginSetPrintArea(printAreaKind, dialog);
+            dialog.PrintArea = controller.GetCurrentPrintArea(printAreaKind);
         }
 
         private void setPrintAreaMenu_DropDownOpening(object sender, EventArgs e)

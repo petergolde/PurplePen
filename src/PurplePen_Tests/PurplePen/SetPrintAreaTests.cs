@@ -112,36 +112,38 @@ namespace PurplePen.Tests
             TestUtil.AssertEqualRect(currentRect, finalRect, 0.01, "rectangle moving algorithm");
         }
 
-        void SetPrintArea(int tabIndex, RectangleF expectedCurrent, RectangleF newPrintArea, PrintAreaKind printArea)
+        void SetPrintArea(int tabIndex, RectangleF expectedCurrent, RectangleF newPrintArea, PrintAreaKind printAreaKind)
         {
             Dictionary<int, RectangleF> printAreas = new Dictionary<int, RectangleF>();
 
             // Remember print areas for all tabs.
             for (int tab = 0; tab < controller.GetTabNames().Length; ++tab) {
                 controller.SelectTab(tab);
-                printAreas.Add(tab, controller.GetCurrentPrintArea(PrintAreaKind.OneCourse));
+                printAreas.Add(tab, controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OneCourse));
             }
 
             controller.SelectTab(tabIndex);
 
-            RectangleF rectangleCurrent = controller.GetCurrentPrintArea(printArea);
+            RectangleF rectangleCurrent = controller.GetCurrentPrintAreaRectangle(printAreaKind);
 
             TestUtil.AssertEqualRect(expectedCurrent, rectangleCurrent, 0.1, "initial print rectangle");
 
-            controller.BeginSetPrintArea(printArea, null);
+            controller.BeginSetPrintArea(printAreaKind, null);
 
             ChangeRectangle(expectedCurrent, newPrintArea);
 
-            controller.EndSetPrintArea(printArea);
+            // TODO: Fix this test!
+            //controller.EndSetPrintArea(printAreaKind);
+            Assert.Fail("Test must be fixed.");
 
-            rectangleCurrent = controller.GetCurrentPrintArea(printArea);
+            rectangleCurrent = controller.GetCurrentPrintAreaRectangle(printAreaKind);
             TestUtil.AssertEqualRect(newPrintArea, rectangleCurrent, 0.1, "final print rectangle");
 
             // Check all other tabs.
             for (int tab = 0; tab < controller.GetTabNames().Length; ++tab) {
                 controller.SelectTab(tab);
-                RectangleF rect = controller.GetCurrentPrintArea(PrintAreaKind.OneCourse);
-                if (printArea == PrintAreaKind.AllCourses || tab == tabIndex)
+                RectangleF rect = controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OneCourse);
+                if (printAreaKind == PrintAreaKind.AllCourses || tab == tabIndex)
                     TestUtil.AssertEqualRect(newPrintArea, rect, 0.1, "final print rectangle");
                 else 
                     TestUtil.AssertEqualRect(printAreas[tab], rect, 0.1, "original print rectangle  for that tab");

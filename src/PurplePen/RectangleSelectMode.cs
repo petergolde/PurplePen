@@ -61,6 +61,9 @@ namespace PurplePen
         PointF handleDrag;         // if draggingHandle is true, the exact handle location being dragged.
         Cursor cursorDrag;         // if draggingHandle is true, the cursor used for the drag.
 
+        bool allowDrag = true;    // Allow dragging the entire size.
+        bool allowResize = true;  // Allow resized with a handle.
+
         public RectangleSelectMode(Controller controller, RectangleF rect, IDisposable disposeOnEndMode)
         {
             this.controller = controller;
@@ -73,6 +76,33 @@ namespace PurplePen
         public RectangleF Rectangle
         {
             get { return selectingCourseObj.rect; }
+            set {
+                selectingCourseObj = (SelectingRectangleCourseObj) selectingCourseObj.Clone();
+                selectingCourseObj.rect = value;
+            }
+        }
+
+        public bool AllowDragging
+        {
+            get { return allowDrag; }
+            set {
+                if (allowDrag != value) {
+                    allowDrag = value;
+                }
+            }
+        }
+
+        public bool AllowResize
+        {
+            get { return allowResize; }
+            set
+            {
+                if (allowResize != value) {
+                    allowResize = value;
+                    selectingCourseObj = (SelectingRectangleCourseObj)selectingCourseObj.Clone();
+                    selectingCourseObj.showHandles = allowResize;
+                }
+            }
         }
 
         public override bool CanCancel()
@@ -138,7 +168,7 @@ namespace PurplePen
         // Hit test a location to see if it is over the draggable object.
         bool HitTestDraggable(PointF location, float pixelSize)
         {
-            if (selectingCourseObj.DistanceFromPoint(location) < pixelSize * 3)
+            if (allowDrag && selectingCourseObj.DistanceFromPoint(location) < pixelSize * 3)
                 return true;
             else
                 return false;
@@ -150,16 +180,28 @@ namespace PurplePen
             PointF dummy;
             Cursor handleCursor;
 
-            if (draggingWhole)
+            Debug.WriteLine("allowdrag = {0}", allowDrag);
+
+            if (draggingWhole) {
+                Debug.WriteLine("dragging whole");
                 return Cursors.SizeAll;
-            else if (draggingHandle)
+            }
+            else if (draggingHandle) {
+                Debug.WriteLine("dragging handle");
                 return cursorDrag;
-            else if (HitTestHandle(location, pixelSize, out dummy, out handleCursor))
+            }
+            else if (HitTestHandle(location, pixelSize, out dummy, out handleCursor)) {
+                Debug.WriteLine("over handle");
                 return handleCursor;
-            else if (HitTestDraggable(location, pixelSize))
+            }
+            else if (HitTestDraggable(location, pixelSize)) {
+                Debug.WriteLine("draggable");
                 return Cursors.SizeAll;
-            else
+            }
+            else {
+                Debug.WriteLine("Not over anything");
                 return Cursors.Default;
+            }
         }
 
         // Left mouse button selects the object clicked on, or drag something already selected.
@@ -218,9 +260,39 @@ namespace PurplePen
     // CourseObj used to display the selecting rectangle. 
     class SelectingRectangleCourseObj: RectCourseObj
     {
+        public bool showHandles = true;               // Should drag handles be shown?
+
         public SelectingRectangleCourseObj(RectangleF rect) :
             base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, 1.0F, new CourseAppearance(), rect)
         {}
+
+        public override PointF[] GetHandles()
+        {
+            if (showHandles)
+                return base.GetHandles();
+            else
+                return new PointF[0];
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType()) {
+                return false;
+            }
+
+            SelectingRectangleCourseObj other = (SelectingRectangleCourseObj)obj;
+
+            if (showHandles != other.showHandles)
+                return false;
+
+            return base.Equals(obj);
+        }
+
+        // override object.GetHashCode
+        public override int GetHashCode()
+        {
+            throw new NotSupportedException("The method or operation is not supported.");
+        }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {

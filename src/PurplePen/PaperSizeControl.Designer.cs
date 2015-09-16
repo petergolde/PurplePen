@@ -170,6 +170,7 @@
             this.upDownHeight.Name = "upDownHeight";
             this.upDownHeight.Size = new System.Drawing.Size(50, 20);
             this.upDownHeight.TabIndex = 5;
+            this.upDownHeight.ValueChanged += new System.EventHandler(this.upDownHeight_ValueChanged);
             // 
             // upDownWidth
             // 
@@ -178,6 +179,7 @@
             this.upDownWidth.Name = "upDownWidth";
             this.upDownWidth.Size = new System.Drawing.Size(50, 20);
             this.upDownWidth.TabIndex = 3;
+            this.upDownWidth.ValueChanged += new System.EventHandler(this.upDownWidth_ValueChanged);
             // 
             // upDownMargin
             // 
@@ -188,6 +190,7 @@
             this.upDownMargin.Name = "upDownMargin";
             this.upDownMargin.Size = new System.Drawing.Size(50, 20);
             this.upDownMargin.TabIndex = 6;
+            this.upDownMargin.ValueChanged += new System.EventHandler(this.upDownMargin_ValueChanged);
             // 
             // label3
             // 

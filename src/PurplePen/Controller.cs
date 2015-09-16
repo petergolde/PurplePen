@@ -1307,61 +1307,139 @@ namespace PurplePen
             undoMgr.EndCommand(4888);
         }
 
-        // Get the print area for a course. Null means all controls. Uses the default print area, or the specific one set.
-        public RectangleF GetPrintArea(CourseDesignator courseDesignator)
+        // Given a PrintArea and a particular course, get the actual print area rectangle in map units. If the PrintArea
+        // is restricting to the page size, or is automatically computed, handles that computation.
+        public RectangleF GetPrintAreaRectangle(CourseDesignator courseDesignator, PrintArea printArea)
         {
-            RectangleF defaultPrintArea;
-
-            // The default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
+            // Get the course view and course layout for this course.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             CourseLayout layout = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, GetCourseAppearance(), layout, 0);
-            RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
-            defaultPrintArea = RectangleF.Union(courseObjects, mapDisplay.MapBounds);
 
-            return QueryEvent.GetPrintArea(eventDB, courseDesignator, defaultPrintArea);
+            // Determine the page size in map units, taking into account the scale ratio and portrait/landscape.
+            float mmPerPageUnit = (0.254F * courseView.ScaleRatio);
+            SizeF pageSizeInMapUnits = new SizeF(Math.Max(0, (printArea.pageWidth - 2 * printArea.pageMargins) * mmPerPageUnit), 
+                                                 Math.Max(0, (printArea.pageHeight - 2 * printArea.pageMargins) * mmPerPageUnit)); 
+            
+            if (printArea.pageLandscape) {
+                pageSizeInMapUnits = new SizeF(pageSizeInMapUnits.Height, pageSizeInMapUnits.Width);
+            }
+
+            RectangleF printRectangle;
+
+            if (printArea.autoPrintArea) {
+                // Automatically determine the print rectangle.
+                // The first attempt at default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
+                RectangleF courseObjectsRectangle = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
+                RectangleF mapRectangle = mapDisplay.MapBounds;
+                printRectangle = RectangleF.Union(courseObjectsRectangle, mapDisplay.MapBounds);
+
+                if (printRectangle.Width > pageSizeInMapUnits.Width || printRectangle.Height > pageSizeInMapUnits.Height) {
+                    // If that is bigger than the page size, then just use the course objects rectangle.
+                    printRectangle = courseObjectsRectangle;
+                }
+            }
+            else {
+                printRectangle = printArea.printAreaRectangle;
+            }
+
+            if (printArea.restrictToPageSize || printArea.autoPrintArea) {
+                // Make it a page-size rectangle centered at the same center.
+                printRectangle = Geometry.RectangleFromCenterSize(Geometry.RectCenter(printRectangle), pageSizeInMapUnits);
+            }
+
+            return printRectangle;
+        }
+
+        public RectangleF GetPrintAreaRectangle(PrintAreaKind printAreaKind, PrintArea printArea)
+        {
+            return GetPrintAreaRectangle(CourseDesignatorFromPrintAreaKind(printAreaKind), printArea);
         }
 
         // Get the current print area, for the current course or all courses.
-        public RectangleF GetCurrentPrintArea(PrintAreaKind printArea)
+        public RectangleF GetCurrentPrintAreaRectangle(PrintAreaKind printAreaKind)
         {
-            switch (printArea) {
+            return GetCurrentPrintAreaRectangle(CourseDesignatorFromPrintAreaKind(printAreaKind));
+        }
+
+        // Get the print area rectangle for a course. If the print area indicates a default positioned
+        // rectangle, then calculate he default position and return it.
+        public RectangleF GetCurrentPrintAreaRectangle(CourseDesignator courseDesignator)
+        {
+            PrintArea printArea = QueryEvent.GetPrintArea(eventDB, courseDesignator);
+            return GetPrintAreaRectangle(courseDesignator, printArea);
+        }
+
+
+        public PrintArea GetCurrentPrintArea(PrintAreaKind printAreaKind)
+        {
+            return QueryEvent.GetPrintArea(eventDB, CourseDesignatorFromPrintAreaKind(printAreaKind));
+        }
+
+        CourseDesignator CourseDesignatorFromPrintAreaKind(PrintAreaKind printAreaKind)
+        {
+            switch (printAreaKind) {
                 case PrintAreaKind.AllCourses:
-                    return GetPrintArea(CourseDesignator.AllControls);
+                    return CourseDesignator.AllControls;
                 case PrintAreaKind.OneCourse:
-                    return GetPrintArea(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId));
+                    return new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
                 case PrintAreaKind.OnePart:
-                    return GetPrintArea(selectionMgr.Selection.ActiveCourseDesignator);
+                    return selectionMgr.Selection.ActiveCourseDesignator;
                 default:
-                    Debug.Fail("unknown print area");
-                    return new RectangleF();
+                    Debug.Fail("unknown print area kind");
+                    return CourseDesignator.AllControls;
             }
+
         }
 
         // Begin the mode to set the print area, for the current course or all courses.
         public void BeginSetPrintArea(PrintAreaKind printArea, IDisposable disposeOnEndMode)
         {
-            RectangleF initialPrintArea = GetCurrentPrintArea(printArea);
+            RectangleF initialPrintArea = GetCurrentPrintAreaRectangle(printArea);
 
             SetCommandMode(new RectangleSelectMode(this, initialPrintArea, disposeOnEndMode));  
         }
 
-        // End the mode to set the print area, and set it.
-        public void EndSetPrintArea(PrintAreaKind printArea)
+        public void SetPrintAreaUpdate(PrintAreaKind printAreaKind, PrintArea printArea)
+        {
+            RectangleSelectMode rectSelectMode = currentMode as RectangleSelectMode;
+            if (rectSelectMode != null) {
+                rectSelectMode.Rectangle = GetPrintAreaRectangle(CourseDesignatorFromPrintAreaKind(printAreaKind), printArea);
+                rectSelectMode.AllowDragging = true;
+                rectSelectMode.AllowResize = !printArea.restrictToPageSize;
+
+                ++changeNum;
+            }
+        }
+
+        public RectangleF SetPrintAreaCurrentRectangle()
         {
             if (currentMode is RectangleSelectMode) {
                 RectangleF newRectangle = ((RectangleSelectMode)currentMode).Rectangle;
+                return newRectangle;
+            }
+            else {
+                return new RectangleF();
+            }
+        }
+
+        // End the mode to set the print area, and set it.
+        public void EndSetPrintArea(PrintAreaKind printAreaKind, PrintArea printArea)
+        {
+            if (currentMode is RectangleSelectMode) {
+                RectangleF newRectangle = ((RectangleSelectMode)currentMode).Rectangle;
+                printArea.printAreaRectangle = newRectangle;
 
                 undoMgr.BeginCommand(1127, CommandNameText.SetPrintArea);
-                if (printArea == PrintAreaKind.AllCourses) {
-                    ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, true, newRectangle);    // all controls
+                if (printAreaKind == PrintAreaKind.AllCourses) {
+                    ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, true, printArea);    // all controls
                     Id<Course>[] courses = QueryEvent.SortedCourseIds(eventDB);
                     foreach (Id<Course> courseId in courses) {
-                        ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(courseId), true, newRectangle);  
+                        ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(courseId), true, printArea);  
                     }
                 }
                 else {
-                    ChangeEvent.ChangePrintArea(eventDB, selectionMgr.Selection.ActiveCourseDesignator, (printArea == PrintAreaKind.OneCourse), newRectangle);
+                    ChangeEvent.ChangePrintArea(eventDB, selectionMgr.Selection.ActiveCourseDesignator, (printAreaKind == PrintAreaKind.OneCourse), printArea);
                 }
                 undoMgr.EndCommand(1127);
 

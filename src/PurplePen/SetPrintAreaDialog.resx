@@ -207,16 +207,16 @@
   <data name="groupBoxPaperSize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="paperSizeControl1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="paperSizeControl.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="paperSizeControl1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+  <data name="paperSizeControl.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
-  <data name="paperSizeControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="paperSizeControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 22</value>
   </data>
-  <data name="paperSizeControl1.PaperSize" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="paperSizeControl.PaperSize" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uRHJh
@@ -226,22 +226,22 @@
         CAIAAAAAAAAABgQAAAAAAAAAAAAAAAAACw==
 </value>
   </data>
-  <data name="paperSizeControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="paperSizeControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 161</value>
   </data>
-  <data name="paperSizeControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="paperSizeControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;paperSizeControl1.Name" xml:space="preserve">
-    <value>paperSizeControl1</value>
+  <data name="&gt;&gt;paperSizeControl.Name" xml:space="preserve">
+    <value>paperSizeControl</value>
   </data>
-  <data name="&gt;&gt;paperSizeControl1.Type" xml:space="preserve">
+  <data name="&gt;&gt;paperSizeControl.Type" xml:space="preserve">
     <value>PurplePen.PaperSizeControl, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;paperSizeControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;paperSizeControl.Parent" xml:space="preserve">
     <value>groupBoxPaperSize</value>
   </data>
-  <data name="&gt;&gt;paperSizeControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;paperSizeControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBoxPaperSize.Location" type="System.Drawing.Point, System.Drawing">
@@ -325,6 +325,9 @@
   <data name="&gt;&gt;checkBoxFixSizeToPaper.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="updateTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -342,6 +345,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Set Print Area</value>
+  </data>
+  <data name="&gt;&gt;updateTimer.Name" xml:space="preserve">
+    <value>updateTimer</value>
+  </data>
+  <data name="&gt;&gt;updateTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SetPrintAreaDialog</value>

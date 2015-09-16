@@ -370,14 +370,15 @@ namespace PurplePen
         // Change the course print area. Use CourseId.None to change the all controls print area. Use empty
         // rectangle to switch back to the default print area. If "removeParts" is true, and the course is an all parts,
         // then remove print descriptions for each part.
-        public static void ChangePrintArea(EventDB eventDB, CourseDesignator courseDesignator, bool removeParts, RectangleF printAreaRectangle)
+        public static void ChangePrintArea(EventDB eventDB, CourseDesignator courseDesignator, bool removeParts, PrintArea printArea)
         {
+            printArea = (PrintArea) printArea.Clone();
+                   
             if (courseDesignator.IsAllControls) {
                 Event e = eventDB.GetEvent();
 
                 e = (Event) e.Clone();
-                e.printArea.printAreaRectangle = printAreaRectangle;
-                e.printArea.autoPrintArea = printAreaRectangle.IsEmpty;
+                e.printArea = printArea;
 
                 eventDB.ChangeEvent(e);
             }
@@ -387,20 +388,13 @@ namespace PurplePen
                 course = (Course) course.Clone();
 
                 if (courseDesignator.AllParts) {
-                    course.printArea.printAreaRectangle = printAreaRectangle;
-                    course.printArea.autoPrintArea = printAreaRectangle.IsEmpty;
+                    course.printArea = printArea;
 
                     if (removeParts)
                         course.partPrintAreas = new Dictionary<int, PrintArea>();
                 }
                 else {
-                    PrintArea area;
-                    if (! course.partPrintAreas.TryGetValue(courseDesignator.Part, out area)) {
-                        area = course.printArea;
-                    }
-                    area.printAreaRectangle = printAreaRectangle;
-                    area.autoPrintArea = printAreaRectangle.IsEmpty;
-                    course.partPrintAreas[courseDesignator.Part] = area;
+                    course.partPrintAreas[courseDesignator.Part] = printArea;
                 }
 
                 eventDB.ReplaceCourse(courseDesignator.CourseId, course);

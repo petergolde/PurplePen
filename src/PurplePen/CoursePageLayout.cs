@@ -236,7 +236,7 @@ namespace PurplePen
             scaleRatio = courseView.ScaleRatio;
             description = courseView.CourseNameWithPart;
 
-            RectangleF printArea = controller.GetPrintArea(courseDesignator);
+            RectangleF printArea = controller.GetCurrentPrintAreaRectangle(courseDesignator);
 
             if (cropLargePrintArea) {
                 // Crop the print area to a single page, portrait or landscape.

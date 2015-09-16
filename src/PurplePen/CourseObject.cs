@@ -769,8 +769,8 @@ namespace PurplePen
             float middleWidth = (rect.Left + rect.Right) / 2;
             float middleHeight = (rect.Top + rect.Bottom) / 2;
             PointF[] handles = { new PointF(rect.Left, rect.Top), new PointF(middleWidth, rect.Top), new PointF(rect.Right, rect.Top),
-                                             new PointF(rect.Left, middleHeight), new PointF(rect.Right, middleHeight),
-                                             new PointF(rect.Left, rect.Bottom), new PointF(middleWidth, rect.Bottom), new PointF(rect.Right, rect.Bottom)};
+                                            new PointF(rect.Left, middleHeight), new PointF(rect.Right, middleHeight),
+                                            new PointF(rect.Left, rect.Bottom), new PointF(middleWidth, rect.Bottom), new PointF(rect.Right, rect.Bottom)};
             return handles;
         }
 

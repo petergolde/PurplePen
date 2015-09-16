@@ -1181,25 +1181,24 @@ namespace PurplePen.Tests
             Setup("queryevent\\sampleevent7.coursescribe");
 
             RectangleF defaultArea = new RectangleF(40, 70, 100.5F, 200.5F);
-            RectangleF result;
+            PrintArea result;
 
-            result = QueryEvent.GetPrintArea(eventDB, Designator(4), defaultArea);
-            Assert.AreEqual(10.3F, result.Left, 0.001F);
-            Assert.AreEqual(23.1F, result.Bottom, 0.001F);
-            Assert.AreEqual(31.1F, result.Right, 0.001F);
-            Assert.AreEqual(-123.5F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.AreEqual(10.3F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(23.1F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(31.1F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-123.5F, result.printAreaRectangle.Top, 0.001F);
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, defaultArea);
-            Assert.AreEqual(100.3F, result.Left, 0.001F);
-            Assert.AreEqual(234.1F, result.Bottom, 0.001F);
-            Assert.AreEqual(312.1F, result.Right, 0.001F);
-            Assert.AreEqual(-23.5F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls);
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.AreEqual(100.3F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(234.1F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(312.1F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-23.5F, result.printAreaRectangle.Top, 0.001F);
 
-            result = QueryEvent.GetPrintArea(eventDB, Designator(6), defaultArea);
-            Assert.AreEqual(40, result.Left, 0.001F);
-            Assert.AreEqual(270.5F, result.Bottom, 0.001F);
-            Assert.AreEqual(140.5F, result.Right, 0.001F);
-            Assert.AreEqual(70F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, Designator(6));
+            Assert.IsTrue(result.autoPrintArea);
         }
 
 
@@ -1209,31 +1208,31 @@ namespace PurplePen.Tests
             Setup("queryevent\\mapexchange1.ppen");
 
             RectangleF defaultArea = new RectangleF(40, 70, 100.5F, 200.5F);
-            RectangleF result;
+            PrintArea result;
 
-            result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls, defaultArea);
-            Assert.AreEqual(40, result.Left, 0.001F);
-            Assert.AreEqual(270.5F, result.Bottom, 0.001F);
-            Assert.AreEqual(140.5F, result.Right, 0.001F);
-            Assert.AreEqual(70F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls);
+            Assert.IsTrue(result.autoPrintArea);
 
-            result = QueryEvent.GetPrintArea(eventDB, Designator(2), defaultArea);
-            Assert.AreEqual(10F, result.Left, 0.001F);
-            Assert.AreEqual(50F, result.Bottom, 0.001F);
-            Assert.AreEqual(55F, result.Right, 0.001F);
-            Assert.AreEqual(-10F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, Designator(2));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.AreEqual(10F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(50F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(55F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-10F, result.printAreaRectangle.Top, 0.001F);
 
-            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(2), 0), defaultArea);
-            Assert.AreEqual(10F, result.Left, 0.001F);
-            Assert.AreEqual(50F, result.Bottom, 0.001F);
-            Assert.AreEqual(55F, result.Right, 0.001F);
-            Assert.AreEqual(-10F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(2), 0));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.AreEqual(10F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(50F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(55F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-10F, result.printAreaRectangle.Top, 0.001F);
 
-            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(2), 1), defaultArea);
-            Assert.AreEqual(0F, result.Left, 0.001F);
-            Assert.AreEqual(80F, result.Bottom, 0.001F);
-            Assert.AreEqual(90F, result.Right, 0.001F);
-            Assert.AreEqual(30F, result.Top, 0.001F);
+            result = QueryEvent.GetPrintArea(eventDB, new CourseDesignator(CourseId(2), 1));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.AreEqual(0F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(80F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(90F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(30F, result.printAreaRectangle.Top, 0.001F);
         }
 
         [TestMethod]

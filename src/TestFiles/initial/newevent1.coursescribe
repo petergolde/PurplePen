@@ -3,7 +3,7 @@
     <title>My New Event</title>
     <map kind="OCAD" scale="10000" ignore-missing-fonts="false">marymoor.ocd</map>
     <all-controls print-scale="7500" description-kind="symbols" />
-    <print-area automatic="true" restrict-to-page-size="true" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" page-width="1654" page-height="2339" page-margins="28" page-landscape="true" />
     <numbering start="55" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
     <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />

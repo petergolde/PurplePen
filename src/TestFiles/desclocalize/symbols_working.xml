@@ -116,11 +116,10 @@ for the symbols.
 <symbols>
 	<!-- Languages. Lists of the languages available for descriptions. -->
 
-	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English</language>
+	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="true" genders="male,female">Anglais</language>
 	<language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">Francais</language>
 	<language lang="de" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine,neuter">Deutsch</language>
-	<language lang="nl" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">Dutch</language>
-	<language lang="ko" plural-nouns="true" plural-modifiers="false" gender-modifiers="true" genders="masculine,feminine">Korean</language>
+	<language lang="ko" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">Korean</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
@@ -130,10 +129,8 @@ for the symbols.
 	-->
 	<symbol kind="@" id="course_length">
 		<name lang="ko">Course Length</name>
-		<name lang="nl">Course Length</name>
 		<name lang="en">Course Length</name>
 		<text lang="ko">Length {0}</text>
-		<text lang="nl">Length {0}</text>
 		<text lang="en">Length {0}</text>
 	</symbol>
 
@@ -143,10 +140,8 @@ for the symbols.
 	-->
 	<symbol kind="@" id="course_length_climb">
 		<name lang="ko">Course Length and Climb</name>
-		<name lang="nl">Course Length and Climb</name>
 		<name lang="en">Course Length and Climb</name>
 		<text lang="ko">Length {0}, climb {1}</text>
-		<text lang="nl">Length {0}, climb {1}</text>
 		<text lang="en">Length {0}, climb {1}</text>
 	</symbol>
 
@@ -155,10 +150,8 @@ for the symbols.
 	-->
 	<symbol kind="@" id="number_controls">
 		<name lang="ko">Number of Controls</name>
-		<name lang="nl">Number of Controls</name>
 		<name lang="en">Number of Controls</name>
 		<text lang="ko">{0} controls</text>
-		<text lang="nl">{0} controls</text>
 		<text lang="en">{0} controls</text>
 	</symbol>
 
@@ -167,10 +160,8 @@ for the symbols.
 	-->
 	<symbol kind="@" id="number_points">
 		<name lang="ko">Number of Points</name>
-		<name lang="nl">Number of Points</name>
 		<name lang="en">Number of Points</name>
 		<text lang="ko">{0} points</text>
-		<text lang="nl">{0} points</text>
 		<text lang="en">{0} points</text>
 	</symbol>
 
@@ -181,10 +172,8 @@ for the symbols.
 	-->
 	<symbol kind="@" id="basic_combo">
 		<name lang="ko">Two main symbols</name>
-		<name lang="nl">Two main symbols</name>
 		<name lang="en">Two main symbols</name>
 		<text lang="ko">{0} and {1}</text>
-		<text lang="nl">{0} and {1}</text>
 		<text lang="en">{0} and {1}</text>
 	</symbol>
 
@@ -198,10 +187,8 @@ for the symbols.
 	
 	<symbol kind="A" id="start">
 		<name lang="ko">Start</name>
-		<name lang="nl">Start</name>
 		<name lang="en">Start</name>
 		<text lang="ko">start</text>
-		<text lang="nl">start</text>
 		<text lang="en">start</text>
 		<polygon thickness="12.5" corners="sharp">
 			<point x="-56" y="65" />
@@ -218,10 +205,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.1N">
 		<name lang="ko">Northern</name>
-		<name lang="nl">Northern</name>
 		<name lang="en">Northern</name>
 		<text lang="ko">N {0}</text>
-		<text lang="nl">N {0}</text>
 		<text lang="en">N {0}</text>
 		<lines thickness="12.5">
 			<point x="0" y="-65" />
@@ -236,10 +221,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.2NE">
 		<name lang="ko">North-eastern</name>
-		<name lang="nl">North-eastern</name>
 		<name lang="en">North-eastern</name>
 		<text lang="ko">NE {0}</text>
-		<text lang="nl">NE {0}</text>
 		<text lang="en">NE {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="-55" />
@@ -254,10 +237,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.1E">
 		<name lang="ko">Eastern</name>
-		<name lang="nl">Eastern</name>
 		<name lang="en">Eastern</name>
 		<text lang="ko">E {0}</text>
-		<text lang="nl">E {0}</text>
 		<text lang="en">E {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
@@ -272,10 +253,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.2SE">
 		<name lang="ko">South-eastern</name>
-		<name lang="nl">South-eastern</name>
 		<name lang="en">South-eastern</name>
 		<text lang="ko">SE {0}</text>
-		<text lang="nl">SE {0}</text>
 		<text lang="en">SE {0}</text>
 		<lines thickness="12.5">
 			<point x="-55" y="55" />
@@ -290,10 +269,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.1S">
 		<name lang="ko">Southern</name>
-		<name lang="nl">Southern</name>
 		<name lang="en">Southern</name>
 		<text lang="ko">S {0}</text>
-		<text lang="nl">S {0}</text>
 		<text lang="en">S {0}</text>
 	<lines thickness="12.5">
 			<point x="0" y="-65" />
@@ -308,10 +285,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.2SW">
 		<name lang="ko">South-western</name>
-		<name lang="nl">South-western</name>
 		<name lang="en">South-western</name>
 		<text lang="ko">SW {0}</text>
-		<text lang="nl">SW {0}</text>
 		<text lang="en">SW {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="55" />
@@ -326,10 +301,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.1W">
 		<name lang="ko">Western</name>
-		<name lang="nl">Western</name>
 		<name lang="en">Western</name>
 		<text lang="ko">W {0}</text>
-		<text lang="nl">W {0}</text>
 		<text lang="en">W {0}</text>
 		<lines thickness="12.5">
 			<point x="-65" y="0" />
@@ -344,10 +317,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.2NW">
 		<name lang="ko">North-western</name>
-		<name lang="nl">North-western</name>
 		<name lang="en">North-western</name>
 		<text lang="ko">NW {0}</text>
-		<text lang="nl">NW {0}</text>
 		<text lang="en">NW {0}</text>
 		<lines thickness="12.5">
 			<point x="55" y="-55" />
@@ -362,10 +333,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.3">
 		<name lang="ko">Upper</name>
-		<name lang="nl">Upper</name>
 		<name lang="en">Upper</name>
 		<text lang="ko">upper {0}</text>
-		<text lang="nl">upper {0}</text>
 		<text lang="en">upper {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
@@ -382,10 +351,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.4">
 		<name lang="ko">Lower</name>
-		<name lang="nl">Lower</name>
 		<name lang="en">Lower</name>
 		<text lang="ko">lower {0}</text>
-		<text lang="nl">lower {0}</text>
 		<text lang="en">lower {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-60" y="40" />
@@ -402,10 +369,8 @@ for the symbols.
 
 	<symbol kind="C" id="0.5">
 		<name lang="ko">Middle</name>
-		<name lang="nl">Middle</name>
 		<name lang="en">Middle</name>
 		<text lang="ko">middle {0}</text>
-		<text lang="nl">middle {0}</text>
 		<text lang="en">middle {0}</text>
 		<lines thickness="12.5" ends="round">
 			<point x="-50" y="60" />
@@ -430,12 +395,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.1">
 		<name lang="ko">Terrace</name>
-		<name lang="nl">Terrace</name>
 		<name lang="en">Terrace</name>
 		<text lang="ko" plural="true">terraces</text>
 		<text lang="ko">terrace</text>
-		<text lang="nl" plural="true">terraces</text>
-		<text lang="nl">terrace</text>
 		<text lang="en">terrace</text>
 		<text lang="en" plural="true">terraces</text>
 		<beziers thickness="12.5">
@@ -463,12 +425,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.2">
 		<name lang="ko">Spur</name>
-		<name lang="nl">Spur</name>
 		<name lang="en">Spur</name>
 		<text lang="ko" plural="true">spurs</text>
 		<text lang="ko">spur</text>
-		<text lang="nl" plural="true">spurs</text>
-		<text lang="nl">spur</text>
 		<text lang="en">spur</text>
 		<text lang="en" plural="true">spurs</text>
 		<beziers thickness="12.5">
@@ -496,12 +455,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.3" size-is-depth="true">
 		<name lang="ko">Reentrant</name>
-		<name lang="nl">Reentrant</name>
 		<name lang="en">Reentrant</name>
 		<text lang="ko" plural="true">reentrants</text>
 		<text lang="ko">reentrant</text>
-		<text lang="nl" plural="true">reentrants</text>
-		<text lang="nl">reentrant</text>
 		<text lang="en">reentrant</text>
 		<text lang="en" plural="true">reentrants</text>
 		<beziers thickness="12.5">
@@ -523,12 +479,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.4">
 		<name lang="ko">Earth bank</name>
-		<name lang="nl">Earth bank</name>
 		<name lang="en">Earth bank</name>
 		<text lang="ko" plural="true">earth banks</text>
 		<text lang="ko">earth bank</text>
-		<text lang="nl" plural="true">earth banks</text>
-		<text lang="nl">earth bank</text>
 		<text lang="en">earth bank</text>
 		<text lang="en" plural="true">earth banks</text>
 		<beziers thickness="12.5">
@@ -557,12 +510,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.5" size-is-depth="true">
 		<name lang="ko">Quarry</name>
-		<name lang="nl">Quarry</name>
 		<name lang="en">Quarry</name>
 		<text lang="ko" plural="true">quarries</text>
 		<text lang="ko">quarry</text>
-		<text lang="nl" plural="true">quarries</text>
-		<text lang="nl">quarry</text>
 		<text lang="en">quarry</text>
 		<text lang="en" plural="true">quarries</text>
 		<beziers thickness="12.5">
@@ -594,12 +544,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.6">
 		<name lang="ko">Earth wall</name>
-		<name lang="nl">Earth wall</name>
 		<name lang="en">Earth wall</name>
 		<text lang="ko" plural="true">earth walls</text>
 		<text lang="ko">earth wall</text>
-		<text lang="nl" plural="true">earth walls</text>
-		<text lang="nl">earth wall</text>
 		<text lang="en">earth wall</text>
 		<text lang="en" plural="true">earth walls</text>
 		<lines thickness="12.5">
@@ -626,12 +573,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.7" size-is-depth="true">
 		<name lang="ko">Erosion gully</name>
-		<name lang="nl">Erosion gully</name>
 		<name lang="en">Erosion gully</name>
 		<text lang="ko" plural="true">gullies</text>
 		<text lang="ko">gully</text>
-		<text lang="nl" plural="true">gullies</text>
-		<text lang="nl">gully</text>
 		<text lang="en">gully</text>
 		<text lang="en" plural="true">gullies</text>
 		<lines thickness="12.5">
@@ -643,12 +587,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.8" size-is-depth="true">
 		<name lang="ko">Small erosion gully</name>
-		<name lang="nl">Small erosion gully</name>
 		<name lang="en">Small erosion gully</name>
 		<text lang="ko" plural="true">small gullies</text>
 		<text lang="ko">small gully</text>
-		<text lang="nl" plural="true">small gullies</text>
-		<text lang="nl">small gully</text>
 		<text lang="en">small gully</text>
 		<text lang="en" plural="true">small gullies</text>
 		<lines thickness="12.5">
@@ -678,12 +619,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.9">
 		<name lang="ko">Hill</name>
-		<name lang="nl">Hill</name>
 		<name lang="en">Hill</name>
 		<text lang="ko" plural="true">hills</text>
 		<text lang="ko">hill</text>
-		<text lang="nl" plural="true">hills</text>
-		<text lang="nl">hill</text>
 		<text lang="en">hill</text>
 		<text lang="en" plural="true">hills</text>
 		<beziers thickness="12.5">
@@ -705,12 +643,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.10">
 		<name lang="ko">Knoll</name>
-		<name lang="nl">Knoll</name>
 		<name lang="en">Knoll</name>
 		<text lang="ko" plural="true">knolls</text>
 		<text lang="ko">knoll</text>
-		<text lang="nl" plural="true">knolls</text>
-		<text lang="nl">knoll</text>
 		<text lang="en">knoll</text>
 		<text lang="en" plural="true">knolls</text>
 		<filled-circle radius="23">
@@ -720,12 +655,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.11">
 		<name lang="ko">Saddle</name>
-		<name lang="nl">Saddle</name>
 		<name lang="en">Saddle</name>
 		<text lang="ko" plural="true">saddles</text>
 		<text lang="ko">saddle</text>
-		<text lang="nl" plural="true">saddles</text>
-		<text lang="nl">saddle</text>
 		<text lang="en">saddle</text>
 		<text lang="en" plural="true">saddles</text>
 		<beziers thickness="12.5">
@@ -744,12 +676,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.12" size-is-depth="true">
 		<name lang="ko">Depression</name>
-		<name lang="nl">Depression</name>
 		<name lang="en">Depression</name>
 		<text lang="ko" plural="true">depressions</text>
 		<text lang="ko">depression</text>
-		<text lang="nl" plural="true">depressions</text>
-		<text lang="nl">depression</text>
 		<text lang="en">depression</text>
 		<text lang="en" plural="true">depressions</text>
 		<beziers thickness="12.5">
@@ -779,12 +708,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.13" size-is-depth="true">
 		<name lang="ko">Small depression</name>
-		<name lang="nl">Small depression</name>
 		<name lang="en">Small depression</name>
 		<text lang="ko" plural="true">small depressions</text>
 		<text lang="ko">small depression</text>
-		<text lang="nl" plural="true">small depressions</text>
-		<text lang="nl">small depression</text>
 		<text lang="en">small depression</text>
 		<text lang="en" plural="true">small depressions</text>
 		<beziers thickness="12.5">
@@ -800,12 +726,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.14" size-is-depth="true">
 		<name lang="ko">Pit</name>
-		<name lang="nl">Pit</name>
 		<name lang="en">Pit</name>
 		<text lang="ko" plural="true">pits</text>
 		<text lang="ko">pit</text>
-		<text lang="nl" plural="true">pits</text>
-		<text lang="nl">pit</text>
 		<text lang="en">pit</text>
 		<text lang="en" plural="true">pits</text>
 		<lines thickness="12.5">
@@ -817,12 +740,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.15">
 		<name lang="ko">Broken ground</name>
-		<name lang="nl">Broken ground</name>
 		<name lang="en">Broken ground</name>
 		<text lang="ko" plural="true">broken ground</text>
 		<text lang="ko">broken ground</text>
-		<text lang="nl" plural="true">broken ground</text>
-		<text lang="nl">broken ground</text>
 		<text lang="en">broken ground</text>
 		<text lang="en" plural="true">broken ground</text>
 		<beziers thickness="12.5">
@@ -856,12 +776,9 @@ for the symbols.
 
 	<symbol kind="D" id="1.16">
 		<name lang="ko">Ant hill (termite mound)</name>
-		<name lang="nl">Ant hill (termite mound)</name>
 		<name lang="en">Ant hill (termite mound)</name>
 		<text lang="ko" plural="true">ant hills</text>
 		<text lang="ko">ant hill</text>
-		<text lang="nl" plural="true">ant hills</text>
-		<text lang="nl">ant hill</text>
 		<text lang="en">ant hill</text>
 		<text lang="en" plural="true">ant hills</text>
 		<lines thickness="12.5">
@@ -884,12 +801,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.1">
 		<name lang="ko">Cliff</name>
-		<name lang="nl">Cliff</name>
 		<name lang="en">Cliff</name>
 		<text lang="ko" plural="true">cliffs</text>
 		<text lang="ko">cliff</text>
-		<text lang="nl" plural="true">cliffs</text>
-		<text lang="nl">cliff</text>
 		<text lang="en">cliff</text>
 		<text lang="en" plural="true">cliffs</text>
 		<lines thickness="12.5">
@@ -910,12 +824,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.2">
 		<name lang="ko">Rock pillar</name>
-		<name lang="nl">Rock pillar</name>
 		<name lang="en">Rock pillar</name>
 		<text lang="ko" plural="true">rock pillars</text>
 		<text lang="ko">rock pillar</text>
-		<text lang="nl" plural="true">rock pillars</text>
-		<text lang="nl">rock pillar</text>
 		<text lang="en">rock pillar</text>
 		<text lang="en" plural="true">rock pillars</text>
 		<filled-polygon>
@@ -927,12 +838,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.3">
 		<name lang="ko">Cave</name>
-		<name lang="nl">Cave</name>
 		<name lang="en">Cave</name>
 		<text lang="ko" plural="true">caves</text>
 		<text lang="ko">cave</text>
-		<text lang="nl" plural="true">caves</text>
-		<text lang="nl">cave</text>
 		<text lang="en">cave</text>
 		<text lang="en" plural="true">caves</text>
 		<lines thickness="12.5">
@@ -956,12 +864,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.4">
 		<name lang="ko">Boulder</name>
-		<name lang="nl">Boulder</name>
 		<name lang="en">Boulder</name>
 		<text lang="ko" plural="true">boulders</text>
 		<text lang="ko">boulder</text>
-		<text lang="nl" plural="true">boulders</text>
-		<text lang="nl">boulder</text>
 		<text lang="en">boulder</text>
 		<text lang="en" plural="true">boulders</text>
 		<filled-polygon>
@@ -973,12 +878,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.5">
 		<name lang="ko">Boulder field</name>
-		<name lang="nl">Boulder field</name>
 		<name lang="en">Boulder field</name>
 		<text lang="ko" plural="true">boulder fields</text>
 		<text lang="ko">boulder field</text>
-		<text lang="nl" plural="true">boulder fields</text>
-		<text lang="nl">boulder field</text>
 		<text lang="en">boulder field</text>
 		<text lang="en" plural="true">boulder fields</text>
 		<filled-polygon>
@@ -1010,12 +912,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.6">
 		<name lang="ko">Boulder cluster</name>
-		<name lang="nl">Boulder cluster</name>
 		<name lang="en">Boulder cluster</name>
 		<text lang="ko" plural="true">boulder clusters</text>
 		<text lang="ko">boulder cluster</text>
-		<text lang="nl" plural="true">boulder clusters</text>
-		<text lang="nl">boulder cluster</text>
 		<text lang="en">boulder cluster</text>
 		<text lang="en" plural="true">boulder clusters</text>
 		<filled-polygon>
@@ -1032,12 +931,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.7">
 		<name lang="ko">Stony ground</name>
-		<name lang="nl">Stony ground</name>
 		<name lang="en">Stony ground</name>
 		<text lang="ko" plural="true">stony ground</text>
 		<text lang="ko">stony ground</text>
-		<text lang="nl" plural="true">stony ground</text>
-		<text lang="nl">stony ground</text>
 		<text lang="en">stony ground</text>
 		<text lang="en" plural="true">stony ground</text>
 		<filled-circle radius="7.5">
@@ -1119,12 +1015,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.8">
 		<name lang="ko">Bare rock</name>
-		<name lang="nl">Bare rock</name>
 		<name lang="en">Bare rock</name>
 		<text lang="ko" plural="true">bare rock</text>
 		<text lang="ko">bare rock</text>
-		<text lang="nl" plural="true">bare rock</text>
-		<text lang="nl">bare rock</text>
 		<text lang="en">bare rock</text>
 		<text lang="en" plural="true">bare rock</text>
 		<lines thickness="12.5">
@@ -1163,12 +1056,9 @@ for the symbols.
 
 	<symbol kind="D" id="2.9" size-is-depth="true">
 		<name lang="ko">Narrow passage</name>
-		<name lang="nl">Narrow passage</name>
 		<name lang="en">Narrow passage</name>
 		<text lang="ko" plural="true">narrow passages</text>
 		<text lang="ko">narrow passage</text>
-		<text lang="nl" plural="true">narrow passages</text>
-		<text lang="nl">narrow passage</text>
 		<text lang="en">narrow passage</text>
 		<text lang="en" plural="true">narrow passages</text>
 		<lines thickness="12.5">
@@ -1187,12 +1077,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.1">
 		<name lang="ko">Lake</name>
-		<name lang="nl">Lake</name>
 		<name lang="en">Lake</name>
 		<text lang="ko" plural="true">lakes</text>
 		<text lang="ko">lake</text>
-		<text lang="nl" plural="true">lakes</text>
-		<text lang="nl">lake</text>
 		<text lang="en">lake</text>
 		<text lang="en" plural="true">lakes</text>
 		<beziers thickness="10">
@@ -1232,12 +1119,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.2">
 		<name lang="ko">Pond</name>
-		<name lang="nl">Pond</name>
 		<name lang="en">Pond</name>
 		<text lang="ko" plural="true">ponds</text>
 		<text lang="ko">pond</text>
-		<text lang="nl" plural="true">ponds</text>
-		<text lang="nl">pond</text>
 		<text lang="en">pond</text>
 		<text lang="en" plural="true">ponds</text>
 		<beziers thickness="10">
@@ -1277,12 +1161,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.3" size-is-depth="true">
 		<name lang="ko">Water hole</name>
-		<name lang="nl">Water hole</name>
 		<name lang="en">Water hole</name>
 		<text lang="ko" plural="true">water holes</text>
 		<text lang="ko">water hole</text>
-		<text lang="nl" plural="true">water holes</text>
-		<text lang="nl">water hole</text>
 		<text lang="en">water hole</text>
 		<text lang="en" plural="true">water holes</text>
 		<beziers thickness="10">
@@ -1318,12 +1199,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.4" size-is-depth="true">
 		<name lang="ko">River, stream, water course</name>
-		<name lang="nl">River, stream, water course</name>
 		<name lang="en">River, stream, water course</name>
 		<text lang="ko" plural="true">streams</text>
 		<text lang="ko">stream</text>
-		<text lang="nl" plural="true">streams</text>
-		<text lang="nl">stream</text>
 		<text lang="en">stream</text>
 		<text lang="en" plural="true">streams</text>
 		<beziers thickness="12.5">
@@ -1360,12 +1238,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.5" size-is-depth="true">
 		<name lang="ko">Minor water channel, ditch</name>
-		<name lang="nl">Minor water channel, ditch</name>
 		<name lang="en">Minor water channel, ditch</name>
 		<text lang="ko" plural="true">ditches</text>
 		<text lang="ko">ditch</text>
-		<text lang="nl" plural="true">ditches</text>
-		<text lang="nl">ditch</text>
 		<text lang="en">ditch</text>
 		<text lang="en" plural="true">ditches</text>
 		<beziers thickness="10">
@@ -1426,12 +1301,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.6">
 		<name lang="ko">Narrow marsh</name>
-		<name lang="nl">Narrow marsh</name>
 		<name lang="en">Narrow marsh</name>
 		<text lang="ko" plural="true">narrow marshes</text>
 		<text lang="ko">narrow marsh</text>
-		<text lang="nl" plural="true">narrow marshes</text>
-		<text lang="nl">narrow marsh</text>
 		<text lang="en">narrow marsh</text>
 		<text lang="en" plural="true">narrow marshes</text>
 		<filled-circle radius="7.5">
@@ -1453,12 +1325,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.7">
 		<name lang="ko">Marsh</name>
-		<name lang="nl">Marsh</name>
 		<name lang="en">Marsh</name>
 		<text lang="ko" plural="true">marshes</text>
 		<text lang="ko">marsh</text>
-		<text lang="nl" plural="true">marshes</text>
-		<text lang="nl">marsh</text>
 		<text lang="en">marsh</text>
 		<text lang="en" plural="true">marshes</text>
 		<lines thickness="12.5">
@@ -1485,12 +1354,9 @@ for the symbols.
 	
 	<symbol kind="D" id="3.8">
 		<name lang="ko">Firm ground in marsh</name>
-		<name lang="nl">Firm ground in marsh</name>
 		<name lang="en">Firm ground in marsh</name>
 		<text lang="ko" plural="true">firm ground in marsh</text>
 		<text lang="ko">firm ground in marsh</text>
-		<text lang="nl" plural="true">firm ground in marsh</text>
-		<text lang="nl">firm ground in marsh</text>
 		<text lang="en">firm ground in marsh</text>
 		<text lang="en" plural="true">firm ground in marsh</text>
 		<filled-polygon>
@@ -1551,12 +1417,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.9">
 		<name lang="ko">Well</name>
-		<name lang="nl">Well</name>
 		<name lang="en">Well</name>
 		<text lang="ko" plural="true">wells</text>
 		<text lang="ko">well</text>
-		<text lang="nl" plural="true">wells</text>
-		<text lang="nl">well</text>
 		<text lang="en">well</text>
 		<text lang="en" plural="true">wells</text>
 		<beziers thickness="10">
@@ -1584,12 +1447,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.10" size-is-depth="true">
 		<name lang="ko">Spring</name>
-		<name lang="nl">Spring</name>
 		<name lang="en">Spring</name>
 		<text lang="ko" plural="true">springs</text>
 		<text lang="ko">spring</text>
-		<text lang="nl" plural="true">springs</text>
-		<text lang="nl">spring</text>
 		<text lang="en">spring</text>
 		<text lang="en" plural="true">springs</text>
 		<beziers thickness="12.5">
@@ -1620,12 +1480,9 @@ for the symbols.
 
 	<symbol kind="D" id="3.11">
 		<name lang="ko">Water tank, trough</name>
-		<name lang="nl">Water tank, trough</name>
 		<name lang="en">Water tank, trough</name>
 		<text lang="ko" plural="true">water tanks</text>
 		<text lang="ko">water tank</text>
-		<text lang="nl" plural="true">water tanks</text>
-		<text lang="nl">water tank</text>
 		<text lang="en">water tank</text>
 		<text lang="en" plural="true">water tanks</text>
 		<beziers thickness="10">
@@ -1662,12 +1519,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.1">
 		<name lang="ko">Open land</name>
-		<name lang="nl">Open land</name>
 		<name lang="en">Open land</name>
 		<text lang="ko" plural="true">open land</text>
 		<text lang="ko">open land</text>
-		<text lang="nl" plural="true">open land</text>
-		<text lang="nl">open land</text>
 		<text lang="en">open land</text>
 		<text lang="en" plural="true">open land</text>
 		<polygon thickness="12.5" corners="round">
@@ -1680,12 +1534,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.2">
 		<name lang="ko">Semi-open land</name>
-		<name lang="nl">Semi-open land</name>
 		<name lang="en">Semi-open land</name>
 		<text lang="ko" plural="true">semi-open land</text>
 		<text lang="ko">semi-open land</text>
-		<text lang="nl" plural="true">semi-open land</text>
-		<text lang="nl">semi-open land</text>
 		<text lang="en">semi-open land</text>
 		<text lang="en" plural="true">semi-open land</text>
 		<filled-circle radius="7.5">
@@ -1728,12 +1579,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.3">
 		<name lang="ko">Forest corner</name>
-		<name lang="nl">Forest corner</name>
 		<name lang="en">Forest corner</name>
 		<text lang="ko" plural="true">forest corners</text>
 		<text lang="ko">forest corner</text>
-		<text lang="nl" plural="true">forest corners</text>
-		<text lang="nl">forest corner</text>
 		<text lang="en">forest corner</text>
 		<text lang="en" plural="true">forest corners</text>
 		<polygon thickness="12.5" corners="round">
@@ -1747,12 +1595,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.4">
 		<name lang="ko">Clearing</name>
-		<name lang="nl">Clearing</name>
 		<name lang="en">Clearing</name>
 		<text lang="ko" plural="true">clearings</text>
 		<text lang="ko">clearing</text>
-		<text lang="nl" plural="true">clearings</text>
-		<text lang="nl">clearing</text>
 		<text lang="en">clearing</text>
 		<text lang="en" plural="true">clearings</text>
 		<filled-circle radius="7.5">
@@ -1795,12 +1640,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.5">
 		<name lang="ko">Thicket</name>
-		<name lang="nl">Thicket</name>
 		<name lang="en">Thicket</name>
 		<text lang="ko" plural="true">thickets</text>
 		<text lang="ko">thicket</text>
-		<text lang="nl" plural="true">thickets</text>
-		<text lang="nl">thicket</text>
 		<text lang="en">thicket</text>
 		<text lang="en" plural="true">thickets</text>
 		<lines thickness="12.5">
@@ -1833,12 +1675,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.6">
 		<name lang="ko">Linear thicket</name>
-		<name lang="nl">Linear thicket</name>
 		<name lang="en">Linear thicket</name>
 		<text lang="ko" plural="true">thin thickets</text>
 		<text lang="ko">thin thicket</text>
-		<text lang="nl" plural="true">thin thickets</text>
-		<text lang="nl">thin thicket</text>
 		<text lang="en">thin thicket</text>
 		<text lang="en" plural="true">thin thickets</text>
 		<lines thickness="12.5">
@@ -1870,12 +1709,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.7">
 		<name lang="ko">Vegetation boundary</name>
-		<name lang="nl">Vegetation boundary</name>
 		<name lang="en">Vegetation boundary</name>
 		<text lang="ko" plural="true">vegetation boundaries</text>
 		<text lang="ko">vegetation boundary</text>
-		<text lang="nl" plural="true">vegetation boundaries</text>
-		<text lang="nl">vegetation boundary</text>
 		<text lang="en">vegetation boundary</text>
 		<text lang="en" plural="true">vegetation boundaries</text>
 		<filled-circle radius="7.5">
@@ -1909,12 +1745,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.8">
 		<name lang="ko">Copse</name>
-		<name lang="nl">Copse</name>
 		<name lang="en">Copse</name>
 		<text lang="ko" plural="true">copses</text>
 		<text lang="ko">copse</text>
-		<text lang="nl" plural="true">copses</text>
-		<text lang="nl">copse</text>
 		<text lang="en">copse</text>
 		<text lang="en" plural="true">copses</text>
 		<polygon thickness="12.5">
@@ -1936,12 +1769,9 @@ for the symbols.
 
 	<symbol kind="D" id="4.9">
 		<name lang="ko">Distinctive tree</name>
-		<name lang="nl">Distinctive tree</name>
 		<name lang="en">Distinctive tree</name>
 		<text lang="ko" plural="true">lone trees</text>
 		<text lang="ko">lone tree</text>
-		<text lang="nl" plural="true">lone trees</text>
-		<text lang="nl">lone tree</text>
 		<text lang="en">lone tree</text>
 		<text lang="en" plural="true">lone trees</text>
 		<polygon thickness="12.5">
@@ -1957,12 +1787,9 @@ for the symbols.
 	
 	<symbol kind="D" id="4.10">
 		<name lang="ko">Tree stump, Root stock</name>
-		<name lang="nl">Tree stump, Root stock</name>
 		<name lang="en">Tree stump, Root stock</name>
 		<text lang="ko" plural="true">root stocks</text>
 		<text lang="ko">root stock</text>
-		<text lang="nl" plural="true">root stocks</text>
-		<text lang="nl">root stock</text>
 		<text lang="en">root stock</text>
 		<text lang="en" plural="true">root stocks</text>
 		<circle thickness="12.5" radius="60">
@@ -1980,12 +1807,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.1">
 		<name lang="ko">Road</name>
-		<name lang="nl">Road</name>
 		<name lang="en">Road</name>
 		<text lang="ko" plural="true">roads</text>
 		<text lang="ko">road</text>
-		<text lang="nl" plural="true">roads</text>
-		<text lang="nl">road</text>
 		<text lang="en">road</text>
 		<text lang="en" plural="true">roads</text>
 		<lines thickness="15">
@@ -1996,12 +1820,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.2">
 		<name lang="ko">Track / Path</name>
-		<name lang="nl">Track / Path</name>
 		<name lang="en">Track / Path</name>
 		<text lang="ko" plural="true">paths</text>
 		<text lang="ko">path</text>
-		<text lang="nl" plural="true">paths</text>
-		<text lang="nl">path</text>
 		<text lang="en">path</text>
 		<text lang="en" plural="true">paths</text>
 		<lines thickness="12.5">
@@ -2020,12 +1841,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.3">
 		<name lang="ko">Ride</name>
-		<name lang="nl">Ride</name>
 		<name lang="en">Ride</name>
 		<text lang="ko" plural="true">rides</text>
 		<text lang="ko">ride</text>
-		<text lang="nl" plural="true">rides</text>
-		<text lang="nl">ride</text>
 		<text lang="en">ride</text>
 		<text lang="en" plural="true">rides</text>
 		<filled-circle radius="7.5">
@@ -2068,12 +1886,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.4">
 		<name lang="ko">Bridge</name>
-		<name lang="nl">Bridge</name>
 		<name lang="en">Bridge</name>
 		<text lang="ko" plural="true">bridges</text>
 		<text lang="ko">bridge</text>
-		<text lang="nl" plural="true">bridges</text>
-		<text lang="nl">bridge</text>
 		<text lang="en">bridge</text>
 		<text lang="en" plural="true">bridges</text>
 		<lines thickness="12.5">
@@ -2092,12 +1907,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.5">
 		<name lang="ko">Power line</name>
-		<name lang="nl">Power line</name>
 		<name lang="en">Power line</name>
 		<text lang="ko" plural="true">power lines</text>
 		<text lang="ko">power line</text>
-		<text lang="nl" plural="true">power lines</text>
-		<text lang="nl">power line</text>
 		<text lang="en">power line</text>
 		<text lang="en" plural="true">power lines</text>
 		<lines thickness="12.5">
@@ -2120,12 +1932,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.6">
 		<name lang="ko">Power line pylon</name>
-		<name lang="nl">Power line pylon</name>
 		<name lang="en">Power line pylon</name>
 		<text lang="ko" plural="true">power pylons</text>
 		<text lang="ko">power pylon</text>
-		<text lang="nl" plural="true">power pylons</text>
-		<text lang="nl">power pylon</text>
 		<text lang="en">power pylon</text>
 		<text lang="en" plural="true">power pylons</text>
 		<lines thickness="10">
@@ -2151,12 +1960,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.7">
 		<name lang="ko">Tunnel</name>
-		<name lang="nl">Tunnel</name>
 		<name lang="en">Tunnel</name>
 		<text lang="ko" plural="true">tunnels</text>
 		<text lang="ko">tunnel</text>
-		<text lang="nl" plural="true">tunnels</text>
-		<text lang="nl">tunnel</text>
 		<text lang="en">tunnel</text>
 		<text lang="en" plural="true">tunnels</text>
 		<lines thickness="12.5">
@@ -2181,12 +1987,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.8">
 		<name lang="ko">Stone wall</name>
-		<name lang="nl">Stone wall</name>
 		<name lang="en">Stone wall</name>
 		<text lang="ko" plural="true">stone walls</text>
 		<text lang="ko">stone wall</text>
-		<text lang="nl" plural="true">stone walls</text>
-		<text lang="nl">stone wall</text>
 		<text lang="en">stone wall</text>
 		<text lang="en" plural="true">stone walls</text>
 		<lines thickness="12.5">
@@ -2206,12 +2009,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.9">
 		<name lang="ko">Fence</name>
-		<name lang="nl">Fence</name>
 		<name lang="en">Fence</name>
 		<text lang="ko" plural="true">fences</text>
 		<text lang="ko">fence</text>
-		<text lang="nl" plural="true">fences</text>
-		<text lang="nl">fence</text>
 		<text lang="en">fence</text>
 		<text lang="en" plural="true">fences</text>
 		<lines thickness="12.5">
@@ -2238,12 +2038,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.10">
 		<name lang="ko">Crossing point</name>
-		<name lang="nl">Crossing point</name>
 		<name lang="en">Crossing point</name>
 		<text lang="ko" plural="true">crossing points</text>
 		<text lang="ko">crossing point</text>
-		<text lang="nl" plural="true">crossing points</text>
-		<text lang="nl">crossing point</text>
 		<text lang="en">crossing point</text>
 		<text lang="en" plural="true">crossing points</text>
 		<lines thickness="12.5">
@@ -2266,12 +2063,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.11">
 		<name lang="ko">Building</name>
-		<name lang="nl">Building</name>
 		<name lang="en">Building</name>
 		<text lang="ko" plural="true">buildings</text>
 		<text lang="ko">building</text>
-		<text lang="nl" plural="true">buildings</text>
-		<text lang="nl">building</text>
 		<text lang="en">building</text>
 		<text lang="en" plural="true">buildings</text>
 		<filled-polygon>
@@ -2284,12 +2078,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.12">
 		<name lang="ko">Paved area</name>
-		<name lang="nl">Paved area</name>
 		<name lang="en">Paved area</name>
 		<text lang="ko" plural="true">paved areas</text>
 		<text lang="ko">paved area</text>
-		<text lang="nl" plural="true">paved areas</text>
-		<text lang="nl">paved area</text>
 		<text lang="en">paved area</text>
 		<text lang="en" plural="true">paved areas</text>
 		<polygon thickness="12.5">
@@ -2318,12 +2109,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.13">
 		<name lang="ko">Ruin</name>
-		<name lang="nl">Ruin</name>
 		<name lang="en">Ruin</name>
 		<text lang="ko" plural="true">ruins</text>
 		<text lang="ko">ruin</text>
-		<text lang="nl" plural="true">ruins</text>
-		<text lang="nl">ruin</text>
 		<text lang="en">ruin</text>
 		<text lang="en" plural="true">ruins</text>
 		<lines thickness="12.5">
@@ -2350,12 +2138,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.14">
 		<name lang="ko">Pipeline</name>
-		<name lang="nl">Pipeline</name>
 		<name lang="en">Pipeline</name>
 		<text lang="ko" plural="true">pipelines</text>
 		<text lang="ko">pipeline</text>
-		<text lang="nl" plural="true">pipelines</text>
-		<text lang="nl">pipeline</text>
 		<text lang="en">pipeline</text>
 		<text lang="en" plural="true">pipelines</text>
 		<lines thickness="12.5">
@@ -2381,12 +2166,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.15">
 		<name lang="ko">Tower</name>
-		<name lang="nl">Tower</name>
 		<name lang="en">Tower</name>
 		<text lang="ko" plural="true">towers</text>
 		<text lang="ko">tower</text>
-		<text lang="nl" plural="true">towers</text>
-		<text lang="nl">tower</text>
 		<text lang="en">tower</text>
 		<text lang="en" plural="true">towers</text>
 		<lines thickness="12.5">
@@ -2401,12 +2183,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.16">
 		<name lang="ko">Shooting platform</name>
-		<name lang="nl">Shooting platform</name>
 		<name lang="en">Shooting platform</name>
 		<text lang="ko" plural="true">shooting platforms</text>
 		<text lang="ko">shooting platform</text>
-		<text lang="nl" plural="true">shooting platforms</text>
-		<text lang="nl">shooting platform</text>
 		<text lang="en">shooting platform</text>
 		<text lang="en" plural="true">shooting platforms</text>
 		<lines thickness="12.5">
@@ -2418,12 +2197,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.17">
 		<name lang="ko">Boundary stone, Cairn</name>
-		<name lang="nl">Boundary stone, Cairn</name>
 		<name lang="en">Boundary stone, Cairn</name>
 		<text lang="ko" plural="true">cairns</text>
 		<text lang="ko">cairn</text>
-		<text lang="nl" plural="true">cairns</text>
-		<text lang="nl">cairn</text>
 		<text lang="en">cairn</text>
 		<text lang="en" plural="true">cairns</text>
 		<circle radius="60" thickness="12.5">
@@ -2436,12 +2212,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.18">
 		<name lang="ko">Fodder rack</name>
-		<name lang="nl">Fodder rack</name>
 		<name lang="en">Fodder rack</name>
 		<text lang="ko" plural="true">fodder racks</text>
 		<text lang="ko">fodder rack</text>
-		<text lang="nl" plural="true">fodder racks</text>
-		<text lang="nl">fodder rack</text>
 		<text lang="en">fodder rack</text>
 		<text lang="en" plural="true">fodder racks</text>
 		<lines thickness="12.5">
@@ -2461,12 +2234,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.19">
 		<name lang="ko">Charcoal burning ground</name>
-		<name lang="nl">Charcoal burning ground</name>
 		<name lang="en">Charcoal burning ground</name>
 		<text lang="ko" plural="true">charcoal burning grounds</text>
 		<text lang="ko">charcoal burning ground</text>
-		<text lang="nl" plural="true">charcoal burning grounds</text>
-		<text lang="nl">charcoal burning ground</text>
 		<text lang="en">charcoal burning ground</text>
 		<text lang="en" plural="true">charcoal burning grounds</text>
 		<circle radius="68" thickness="12.5">
@@ -2481,12 +2251,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.20">
 		<name lang="ko">Monument or statue</name>
-		<name lang="nl">Monument or statue</name>
 		<name lang="en">Monument or statue</name>
 		<text lang="ko" plural="true">statues</text>
 		<text lang="ko">statue</text>
-		<text lang="nl" plural="true">statues</text>
-		<text lang="nl">statue</text>
 		<text lang="en">statue</text>
 		<text lang="en" plural="true">statues</text>
 		<lines thickness="12.5">
@@ -2502,12 +2269,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.23">
 		<name lang="ko">Building pass-through</name>
-		<name lang="nl">Building pass-through</name>
 		<name lang="en">Building pass-through</name>
 		<text lang="ko" plural="true">building pass-throughs</text>
 		<text lang="ko">building pass-through</text>
-		<text lang="nl" plural="true">building pass-throughs</text>
-		<text lang="nl">building pass-through</text>
 		<text lang="en">building pass-through</text>
 		<text lang="en" plural="true">building pass-throughs</text>
 		<lines thickness="12.5">
@@ -2526,12 +2290,9 @@ for the symbols.
 
 	<symbol kind="D" id="5.24">
 		<name lang="ko">Stairway</name>
-		<name lang="nl">Stairway</name>
 		<name lang="en">Stairway</name>
 		<text lang="ko" plural="true">stairways</text>
 		<text lang="ko">stairway</text>
-		<text lang="nl" plural="true">stairways</text>
-		<text lang="nl">stairway</text>
 		<text lang="en">stairway</text>
 		<text lang="en" plural="true">stairways</text>
 		<lines thickness="12.5">
@@ -2548,12 +2309,9 @@ for the symbols.
 
 	<symbol kind="D" id="6.1">
 		<name lang="ko">Special item</name>
-		<name lang="nl">Special item</name>
 		<name lang="en">Special item</name>
 		<text lang="ko" plural="true">special items</text>
 		<text lang="ko">special item</text>
-		<text lang="nl" plural="true">special items</text>
-		<text lang="nl">special item</text>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<lines thickness="12.5">
@@ -2568,12 +2326,9 @@ for the symbols.
 
 	<symbol kind="D" id="6.2">
 		<name lang="ko">Special item</name>
-		<name lang="nl">Special item</name>
 		<name lang="en">Special item</name>
 		<text lang="ko" plural="true">special items</text>
 		<text lang="ko">special item</text>
-		<text lang="nl" plural="true">special items</text>
-		<text lang="nl">special item</text>
 		<text lang="en">special item</text>
 		<text lang="en" plural="true">special items</text>
 		<circle radius="55" thickness="12.5">
@@ -2586,10 +2341,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.1">
 		<name lang="ko">Low</name>
-		<name lang="nl">Low</name>
 		<name lang="en">Low</name>
 		<text lang="ko">low {0}</text>
-		<text lang="nl">low {0}</text>
 		<text lang="en">low {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="-10" />
@@ -2601,10 +2354,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.2">
 		<name lang="ko">Shallow</name>
-		<name lang="nl">Shallow</name>
 		<name lang="en">Shallow</name>
 		<text lang="ko">shallow {0}</text>
-		<text lang="nl">shallow {0}</text>
 		<text lang="en">shallow {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="10" />
@@ -2616,10 +2367,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.3">
 		<name lang="ko">Deep</name>
-		<name lang="nl">Deep</name>
 		<name lang="en">Deep</name>
 		<text lang="ko">deep {0}</text>
-		<text lang="nl">deep {0}</text>
 		<text lang="en">deep {0}</text>
 		<beziers thickness="12.5">
 			<point x="-70" y="70" />
@@ -2640,10 +2389,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.4">
 		<name lang="ko">Overgrown</name>
-		<name lang="nl">Overgrown</name>
 		<name lang="en">Overgrown</name>
 		<text lang="ko">overgrown {0}</text>
-		<text lang="nl">overgrown {0}</text>
 		<text lang="en">overgrown {0}</text>
 		<lines thickness="10">
 			<point x="42" y="64" />
@@ -2681,10 +2428,8 @@ for the symbols.
 	
 	<symbol kind="E" id="8.5">
 		<name lang="ko">Open</name>
-		<name lang="nl">Open</name>
 		<name lang="en">Open</name>
 		<text lang="ko">open {0}</text>
-		<text lang="nl">open {0}</text>
 		<text lang="en">open {0}</text>
 		<filled-circle radius="7.5">
 			<point x="-60" y="60" />
@@ -2726,10 +2471,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.6">
 		<name lang="ko">Rocky, stony</name>
-		<name lang="nl">Rocky, stony</name>
 		<name lang="en">Rocky, stony</name>
 		<text lang="ko">rocky {0}</text>
-		<text lang="nl">rocky {0}</text>
 		<text lang="en">rocky {0}</text>
 		<filled-polygon>
 			<point x="-72" y="0" />
@@ -2750,10 +2493,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.7">
 		<name lang="ko">Marshy</name>
-		<name lang="nl">Marshy</name>
 		<name lang="en">Marshy</name>
 		<text lang="ko">marshy {0}</text>
-		<text lang="nl">marshy {0}</text>
 		<text lang="en">marshy {0}</text>
 		<lines thickness="12.5">
 			<point x="30" y="35" />
@@ -2771,10 +2512,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.8">
 		<name lang="ko">Sandy</name>
-		<name lang="nl">Sandy</name>
 		<name lang="en">Sandy</name>
 		<text lang="ko">sandy {0}</text>
-		<text lang="nl">sandy {0}</text>
 		<text lang="en">sandy {0}</text>
 		<filled-circle radius="5">
 			<point x="-15" y="-31" />
@@ -2930,10 +2669,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.9">
 		<name lang="ko">Needle-leaved</name>
-		<name lang="nl">Needle-leaved</name>
 		<name lang="en">Needle-leaved</name>
 		<text lang="ko">needle-leaved {0}</text>
-		<text lang="nl">needle-leaved {0}</text>
 		<text lang="en">needle-leaved {0}</text>
 		<polygon thickness="12.5">
 			<point x="0" y="70" />
@@ -2954,10 +2691,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.10">
 		<name lang="ko">Broad-leaved</name>
-		<name lang="nl">Broad-leaved</name>
 		<name lang="en">Broad-leaved</name>
 		<text lang="ko">broad-leaved {0}</text>
-		<text lang="nl">broad-leaved {0}</text>
 		<text lang="en">broad-leaved {0}</text>
 		<beziers thickness="12.5">
 			<point x="0" y="-20" />
@@ -2999,10 +2734,8 @@ for the symbols.
 
 	<symbol kind="E" id="8.11">
 		<name lang="ko">Ruined</name>
-		<name lang="nl">Ruined</name>
 		<name lang="en">Ruined</name>
 		<text lang="ko">ruined {0}</text>
-		<text lang="nl">ruined {0}</text>
 		<text lang="en">ruined {0}</text>
 		<beziers thickness="12.5">
 			<point x="-60" y="-60" />
@@ -3041,12 +2774,9 @@ for the symbols.
 	
 	<symbol kind="F" id="10.1">
 		<name lang="ko">Crossing</name>
-		<name lang="nl">Crossing</name>
 		<name lang="en">Crossing</name>
 		<text lang="ko" plural="true">{0} and {1} crossings</text>
 		<text lang="ko">{0} and {1} crossing</text>
-		<text lang="nl" plural="true">{0} and {1} crossings</text>
-		<text lang="nl">{0} and {1} crossing</text>
 		<text lang="en">{0} and {1} crossing</text>
 		<text lang="en" plural="true">{0} and {1} crossings</text>
 		<lines thickness="12.5">
@@ -3061,24 +2791,18 @@ for the symbols.
 
 	<symbol kind="F" id="10.1single">
 		<name lang="ko">Crossing (both items are same)</name>
-		<name lang="nl">Crossing (both items are same)</name>
 		<name lang="en">Crossing (both items are same)</name>
 		<text lang="ko" plural="true">{0} crossings</text>
 		<text lang="ko">{0} crossing</text>
-		<text lang="nl" plural="true">{0} crossings</text>
-		<text lang="nl">{0} crossing</text>
 		<text lang="en">{0} crossing</text>
 		<text lang="en" plural="true">{0} crossings</text>
 	</symbol>
 	
 	<symbol kind="F" id="10.2">
 		<name lang="ko">Junction</name>
-		<name lang="nl">Junction</name>
 		<name lang="en">Junction</name>
 		<text lang="ko" plural="true">{0} and {1} junctions</text>
 		<text lang="ko">{0} and {1} junction</text>
-		<text lang="nl" plural="true">{0} and {1} junctions</text>
-		<text lang="nl">{0} and {1} junction</text>
 		<text lang="en">{0} and {1} junction</text>
 		<text lang="en" plural="true">{0} and {1} junctions</text>
 		<lines thickness="12.5">
@@ -3093,12 +2817,9 @@ for the symbols.
 
 	<symbol kind="F" id="10.2single">
 		<name lang="ko">Junction (both items are same)</name>
-		<name lang="nl">Junction (both items are same)</name>
 		<name lang="en">Junction (both items are same)</name>
 		<text lang="ko" plural="true">{0} junctions</text>
 		<text lang="ko">{0} junction</text>
-		<text lang="nl" plural="true">{0} junctions</text>
-		<text lang="nl">{0} junction</text>
 		<text lang="en">{0} junction</text>
 		<text lang="en" plural="true">{0} junctions</text>
 	</symbol>
@@ -3110,46 +2831,36 @@ for the symbols.
     -->
 	<symbol kind="F" id="9.1high">
 		<name lang="ko">Height of feature</name>
-		<name lang="nl">Height of feature</name>
 		<name lang="en">Height of feature</name>
 		<text lang="ko">{0} high</text>
-		<text lang="nl">{0} high</text>
 		<text lang="en">{0} high</text>
 	</symbol>
 
 	<symbol kind="F" id="9.1deep">
 		<name lang="ko">Depth of feature</name>
-		<name lang="nl">Depth of feature</name>
 		<name lang="en">Depth of feature</name>
 		<text lang="ko">{0} deep</text>
-		<text lang="nl">{0} deep</text>
 		<text lang="en">{0} deep</text>
 	</symbol>
 
 	<symbol kind="F" id="9.2">
 		<name lang="ko">Size of feature</name>
-		<name lang="nl">Size of feature</name>
 		<name lang="en">Size of feature</name>
 		<text lang="ko">{0} by {1}</text>
-		<text lang="nl">{0} by {1}</text>
 		<text lang="en">{0} by {1}</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3high">
 		<name lang="ko">Height of feature on slope</name>
-		<name lang="nl">Height of feature on slope</name>
 		<name lang="en">Height of feature on slope</name>
 		<text lang="ko">{0} to {1} high</text>
-		<text lang="nl">{0} to {1} high</text>
 		<text lang="en">{0} to {1} high</text>
 	</symbol>
 
 	<symbol kind="F" id="9.3deep">
 		<name lang="ko">Depth of feature on slope</name>
-		<name lang="nl">Depth of feature on slope</name>
 		<name lang="en">Depth of feature on slope</name>
 		<text lang="ko">{0} to {1} deep</text>
-		<text lang="nl">{0} to {1} deep</text>
 		<text lang="en">{0} to {1} deep</text>
 	</symbol>
 
@@ -3159,10 +2870,8 @@ for the symbols.
     -->
 	<symbol kind="F" id="9.4">
 		<name lang="ko">Size of two features</name>
-		<name lang="nl">Size of two features</name>
 		<name lang="en">Size of two features</name>
 		<text lang="ko">{0} and {1}</text>
-		<text lang="nl">{0} and {1}</text>
 		<text lang="en">{0} and {1}</text>
 	</symbol>
 
@@ -3176,10 +2885,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1N">
 		<name lang="ko">North side</name>
-		<name lang="nl">North side</name>
 		<name lang="en">North side</name>
 		<text lang="ko">N side of {0}</text>
-		<text lang="nl">N side of {0}</text>
 		<text lang="en">N side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="-20" />
@@ -3191,10 +2898,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1NE">
 		<name lang="ko">North-east side</name>
-		<name lang="nl">North-east side</name>
 		<name lang="en">North-east side</name>
 		<text lang="ko">NE side of {0}</text>
-		<text lang="nl">NE side of {0}</text>
 		<text lang="en">NE side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="-14.14" />
@@ -3206,10 +2911,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1E">
 		<name lang="ko">East side</name>
-		<name lang="nl">East side</name>
 		<name lang="en">East side</name>
 		<text lang="ko">E side of {0}</text>
-		<text lang="nl">E side of {0}</text>
 		<text lang="en">E side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="-20" y="0" />
@@ -3221,10 +2924,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1SE">
 		<name lang="ko">South-east side</name>
-		<name lang="nl">South-east side</name>
 		<name lang="en">South-east side</name>
 		<text lang="ko">SE side of {0}</text>
-		<text lang="nl">SE side of {0}</text>
 		<text lang="en">SE side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="-14.14" y="14.14" />
@@ -3236,10 +2937,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1S">
 		<name lang="ko">South side</name>
-		<name lang="nl">South side</name>
 		<name lang="en">South side</name>
 		<text lang="ko">S side of {0}</text>
-		<text lang="nl">S side of {0}</text>
 		<text lang="en">S side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="20" />
@@ -3251,10 +2950,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1SW">
 		<name lang="ko">South-west side</name>
-		<name lang="nl">South-west side</name>
 		<name lang="en">South-west side</name>
 		<text lang="ko">SW side of {0}</text>
-		<text lang="nl">SW side of {0}</text>
 		<text lang="en">SW side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="14.14" />
@@ -3266,10 +2963,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1W">
 		<name lang="ko">West side</name>
-		<name lang="nl">West side</name>
 		<name lang="en">West side</name>
 		<text lang="ko">W side of {0}</text>
-		<text lang="nl">W side of {0}</text>
 		<text lang="en">W side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="20" y="0" />
@@ -3281,10 +2976,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.1NW">
 		<name lang="ko">North-west side</name>
-		<name lang="nl">North-west side</name>
 		<name lang="en">North-west side</name>
 		<text lang="ko">NW side of {0}</text>
-		<text lang="nl">NW side of {0}</text>
 		<text lang="en">NW side of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="14.14" y="-14.14" />
@@ -3296,10 +2989,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2N">
 		<name lang="ko">North edge</name>
-		<name lang="nl">North edge</name>
 		<name lang="en">North edge</name>
 		<text lang="ko">N edge of {0}</text>
-		<text lang="nl">N edge of {0}</text>
 		<text lang="en">N edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3312,10 +3003,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2NE">
 		<name lang="ko">North-east edge</name>
-		<name lang="nl">North-east edge</name>
 		<name lang="en">North-east edge</name>
 		<text lang="ko">NE edge of {0}</text>
-		<text lang="nl">NE edge of {0}</text>
 		<text lang="en">NE edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3328,10 +3017,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2E">
 		<name lang="ko">East edge</name>
-		<name lang="nl">East edge</name>
 		<name lang="en">East edge</name>
 		<text lang="ko">E edge of {0}</text>
-		<text lang="nl">E edge of {0}</text>
 		<text lang="en">E edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3344,10 +3031,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2SE">
 		<name lang="ko">South-east edge</name>
-		<name lang="nl">South-east edge</name>
 		<name lang="en">South-east edge</name>
 		<text lang="ko">SE edge of {0}</text>
-		<text lang="nl">SE edge of {0}</text>
 		<text lang="en">SE edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3360,10 +3045,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2S">
 		<name lang="ko">South edge</name>
-		<name lang="nl">South edge</name>
 		<name lang="en">South edge</name>
 		<text lang="ko">S edge of {0}</text>
-		<text lang="nl">S edge of {0}</text>
 		<text lang="en">S edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3376,10 +3059,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2SW">
 		<name lang="ko">South-west edge</name>
-		<name lang="nl">South-west edge</name>
 		<name lang="en">South-west edge</name>
 		<text lang="ko">SW edge of {0}</text>
-		<text lang="nl">SW edge of {0}</text>
 		<text lang="en">SW edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3392,10 +3073,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2W">
 		<name lang="ko">West edge</name>
-		<name lang="nl">West edge</name>
 		<name lang="en">West edge</name>
 		<text lang="ko">W edge of {0}</text>
-		<text lang="nl">W edge of {0}</text>
 		<text lang="en">W edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3408,10 +3087,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.2NW">
 		<name lang="ko">North-west edge</name>
-		<name lang="nl">North-west edge</name>
 		<name lang="en">North-west edge</name>
 		<text lang="ko">NW edge of {0}</text>
-		<text lang="nl">NW edge of {0}</text>
 		<text lang="en">NW edge of {0}</text>
 		<circle radius="55" thickness="10">
 			<point x="0" y="0" />
@@ -3424,10 +3101,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3N">
 		<name lang="ko">North part</name>
-		<name lang="nl">North part</name>
 		<name lang="en">North part</name>
 		<text lang="ko">N part of {0}</text>
-		<text lang="nl">N part of {0}</text>
 		<text lang="en">N part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3439,10 +3114,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3NE">
 		<name lang="ko">North-east part</name>
-		<name lang="nl">North-east part</name>
 		<name lang="en">North-east part</name>
 		<text lang="ko">NE part of {0}</text>
-		<text lang="nl">NE part of {0}</text>
 		<text lang="en">NE part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3454,10 +3127,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3E">
 		<name lang="ko">East part</name>
-		<name lang="nl">East part</name>
 		<name lang="en">East part</name>
 		<text lang="ko">E part of {0}</text>
-		<text lang="nl">E part of {0}</text>
 		<text lang="en">E part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3469,10 +3140,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3SE">
 		<name lang="ko">South-east part</name>
-		<name lang="nl">South-east part</name>
 		<name lang="en">South-east part</name>
 		<text lang="ko">SE part of {0}</text>
-		<text lang="nl">SE part of {0}</text>
 		<text lang="en">SE part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3484,10 +3153,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3S">
 		<name lang="ko">South part</name>
-		<name lang="nl">South part</name>
 		<name lang="en">South part</name>
 		<text lang="ko">S part of {0}</text>
-		<text lang="nl">S part of {0}</text>
 		<text lang="en">S part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3499,10 +3166,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3SW">
 		<name lang="ko">South-west part</name>
-		<name lang="nl">South-west part</name>
 		<name lang="en">South-west part</name>
 		<text lang="ko">SW part of {0}</text>
-		<text lang="nl">SW part of {0}</text>
 		<text lang="en">SW part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3514,10 +3179,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3W">
 		<name lang="ko">West part</name>
-		<name lang="nl">West part</name>
 		<name lang="en">West part</name>
 		<text lang="ko">W part of {0}</text>
-		<text lang="nl">W part of {0}</text>
 		<text lang="en">W part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3529,10 +3192,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.3NW">
 		<name lang="ko">North-west part</name>
-		<name lang="nl">North-west part</name>
 		<name lang="en">North-west part</name>
 		<text lang="ko">NW part of {0}</text>
-		<text lang="nl">NW part of {0}</text>
 		<text lang="en">NW part of {0}</text>
 		<circle radius="65" thickness="10">
 			<point x="0" y="0" />
@@ -3544,10 +3205,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4N">
 		<name lang="ko">North corner (inside)</name>
-		<name lang="nl">North corner (inside)</name>
 		<name lang="en">North corner (inside)</name>
 		<text lang="ko">N inside corner of {0}</text>
-		<text lang="nl">N inside corner of {0}</text>
 		<text lang="en">N inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="-15" />
@@ -3561,10 +3220,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4NE">
 		<name lang="ko">North-east corner (inside)</name>
-		<name lang="nl">North-east corner (inside)</name>
 		<name lang="en">North-east corner (inside)</name>
 		<text lang="ko">NE inside corner of {0}</text>
-		<text lang="nl">NE inside corner of {0}</text>
 		<text lang="en">NE inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-56.57" y="35.36" />
@@ -3578,10 +3235,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4E">
 		<name lang="ko">East corner (inside)</name>
-		<name lang="nl">East corner (inside)</name>
 		<name lang="en">East corner (inside)</name>
 		<text lang="ko">E inside corner of {0}</text>
-		<text lang="nl">E inside corner of {0}</text>
 		<text lang="en">E inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-15" y="-65" />
@@ -3595,10 +3250,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4SE">
 		<name lang="ko">South-east corner (inside)</name>
-		<name lang="nl">South-east corner (inside)</name>
 		<name lang="en">South-east corner (inside)</name>
 		<text lang="ko">SE inside corner of {0}</text>
-		<text lang="nl">SE inside corner of {0}</text>
 		<text lang="en">SE inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-56.57" y="-35.36" />
@@ -3612,10 +3265,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4S">
 		<name lang="ko">South corner (inside)</name>
-		<name lang="nl">South corner (inside)</name>
 		<name lang="en">South corner (inside)</name>
 		<text lang="ko">S inside corner of {0}</text>
-		<text lang="nl">S inside corner of {0}</text>
 		<text lang="en">S inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="15" />
@@ -3629,10 +3280,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4SW">
 		<name lang="ko">South-west corner (inside)</name>
-		<name lang="nl">South-west corner (inside)</name>
 		<name lang="en">South-west corner (inside)</name>
 		<text lang="ko">SW inside corner of {0}</text>
-		<text lang="nl">SW inside corner of {0}</text>
 		<text lang="en">SW inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="56.57" y="-35.36" />
@@ -3646,10 +3295,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4W">
 		<name lang="ko">West corner (inside)</name>
-		<name lang="nl">West corner (inside)</name>
 		<name lang="en">West corner (inside)</name>
 		<text lang="ko">W inside corner of {0}</text>
-		<text lang="nl">W inside corner of {0}</text>
 		<text lang="en">W inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="15" y="-65" />
@@ -3663,10 +3310,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.4NW">
 		<name lang="ko">North-west corner (inside)</name>
-		<name lang="nl">North-west corner (inside)</name>
 		<name lang="en">North-west corner (inside)</name>
 		<text lang="ko">NW inside corner of {0}</text>
-		<text lang="nl">NW inside corner of {0}</text>
 		<text lang="en">NW inside corner of {0}</text>
 		<lines thickness="10">
 			<point x="56.57" y="35.36" />
@@ -3680,10 +3325,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5N">
 		<name lang="ko">North corner (outside)</name>
-		<name lang="nl">North corner (outside)</name>
 		<name lang="en">North corner (outside)</name>
 		<text lang="ko">N outside corner of {0}</text>
-		<text lang="nl">N outside corner of {0}</text>
 		<text lang="en">N outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="65" y="-40" />
@@ -3697,10 +3340,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5NE">
 		<name lang="ko">North-east corner (outside)</name>
-		<name lang="nl">North-east corner (outside)</name>
 		<name lang="en">North-east corner (outside)</name>
 		<text lang="ko">NE outside corner of {0}</text>
-		<text lang="nl">NE outside corner of {0}</text>
 		<text lang="en">NE outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-69.25" y="22.68" />
@@ -3714,10 +3355,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5E">
 		<name lang="ko">East corner (outside)</name>
-		<name lang="nl">East corner (outside)</name>
 		<name lang="en">East corner (outside)</name>
 		<text lang="ko">E outside corner of {0}</text>
-		<text lang="nl">E outside corner of {0}</text>
 		<text lang="en">E outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-40" y="-65" />
@@ -3731,10 +3370,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5SE">
 		<name lang="ko">South-east corner (outside)</name>
-		<name lang="nl">South-east corner (outside)</name>
 		<name lang="en">South-east corner (outside)</name>
 		<text lang="ko">SE outside corner of {0}</text>
-		<text lang="nl">SE outside corner of {0}</text>
 		<text lang="en">SE outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="-69.25" y="-22.68" />
@@ -3748,10 +3385,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5S">
 		<name lang="ko">South corner (outside)</name>
-		<name lang="nl">South corner (outside)</name>
 		<name lang="en">South corner (outside)</name>
 		<text lang="ko">S outside corner of {0}</text>
-		<text lang="nl">S outside corner of {0}</text>
 		<text lang="en">S outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="65" y="40" />
@@ -3765,10 +3400,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5SW">
 		<name lang="ko">South-west corner (outside)</name>
-		<name lang="nl">South-west corner (outside)</name>
 		<name lang="en">South-west corner (outside)</name>
 		<text lang="ko">SW outside corner of {0}</text>
-		<text lang="nl">SW outside corner of {0}</text>
 		<text lang="en">SW outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="69.25" y="-22.68" />
@@ -3782,10 +3415,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5W">
 		<name lang="ko">West corner (outside)</name>
-		<name lang="nl">West corner (outside)</name>
 		<name lang="en">West corner (outside)</name>
 		<text lang="ko">W outside corner of {0}</text>
-		<text lang="nl">W outside corner of {0}</text>
 		<text lang="en">W outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="40" y="-65" />
@@ -3799,10 +3430,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.5NW">
 		<name lang="ko">North-west corner (outside)</name>
-		<name lang="nl">North-west corner (outside)</name>
 		<name lang="en">North-west corner (outside)</name>
 		<text lang="ko">NW outside corner of {0}</text>
-		<text lang="nl">NW outside corner of {0}</text>
 		<text lang="en">NW outside corner of {0}</text>
 		<lines thickness="10">
 			<point x="69.25" y="22.68" />
@@ -3816,10 +3445,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6N">
 		<name lang="ko">North tip</name>
-		<name lang="nl">North tip</name>
 		<name lang="en">North tip</name>
 		<text lang="ko">N tip of {0}</text>
-		<text lang="nl">N tip of {0}</text>
 		<text lang="en">N tip of {0}</text>
 		<lines thickness="10">
 			<point x="30" y="-65" />
@@ -3833,10 +3460,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6NE">
 		<name lang="ko">North-east tip</name>
-		<name lang="nl">North-east tip</name>
 		<name lang="en">North-east tip</name>
 		<text lang="ko">NE tip of {0}</text>
-		<text lang="nl">NE tip of {0}</text>
 		<text lang="en">NE tip of {0}</text>
 		<lines thickness="10">
 			<point x="-67.18" y="-24.75" />
@@ -3850,10 +3475,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6E">
 		<name lang="ko">East tip</name>
-		<name lang="nl">East tip</name>
 		<name lang="en">East tip</name>
 		<text lang="ko">E tip of {0}</text>
-		<text lang="nl">E tip of {0}</text>
 		<text lang="en">E tip of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="30" />
@@ -3867,10 +3490,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6SE">
 		<name lang="ko">South-east tip</name>
-		<name lang="nl">South-east tip</name>
 		<name lang="en">South-east tip</name>
 		<text lang="ko">SE tip of {0}</text>
-		<text lang="nl">SE tip of {0}</text>
 		<text lang="en">SE tip of {0}</text>
 		<lines thickness="10">
 			<point x="-67.18" y="24.75" />
@@ -3884,10 +3505,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6S">
 		<name lang="ko">South tip</name>
-		<name lang="nl">South tip</name>
 		<name lang="en">South tip</name>
 		<text lang="ko">S tip of {0}</text>
-		<text lang="nl">S tip of {0}</text>
 		<text lang="en">S tip of {0}</text>
 		<lines thickness="10">
 			<point x="30" y="65" />
@@ -3901,10 +3520,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6SW">
 		<name lang="ko">South-west tip</name>
-		<name lang="nl">South-west tip</name>
 		<name lang="en">South-west tip</name>
 		<text lang="ko">SW tip of {0}</text>
-		<text lang="nl">SW tip of {0}</text>
 		<text lang="en">SW tip of {0}</text>
 		<lines thickness="10">
 			<point x="67.18" y="24.75" />
@@ -3918,10 +3535,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6W">
 		<name lang="ko">West tip</name>
-		<name lang="nl">West tip</name>
 		<name lang="en">West tip</name>
 		<text lang="ko">W tip of {0}</text>
-		<text lang="nl">W tip of {0}</text>
 		<text lang="en">W tip of {0}</text>
 		<lines thickness="10">
 			<point x="65" y="30" />
@@ -3935,10 +3550,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.6NW">
 		<name lang="ko">North-west tip</name>
-		<name lang="nl">North-west tip</name>
 		<name lang="en">North-west tip</name>
 		<text lang="ko">NW tip of {0}</text>
-		<text lang="nl">NW tip of {0}</text>
 		<text lang="en">NW tip of {0}</text>
 		<lines thickness="10">
 			<point x="67.18" y="-24.75" />
@@ -3952,10 +3565,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8N">
 		<name lang="ko">North end</name>
-		<name lang="nl">North end</name>
 		<name lang="en">North end</name>
 		<text lang="ko">N end of {0}</text>
-		<text lang="nl">N end of {0}</text>
 		<text lang="en">N end of {0}</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
@@ -3969,10 +3580,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8NE">
 		<name lang="ko">North-east end</name>
-		<name lang="nl">North-east end</name>
 		<name lang="en">North-east end</name>
 		<text lang="ko">NE end of {0}</text>
-		<text lang="nl">NE end of {0}</text>
 		<text lang="en">NE end of {0}</text>
 		<lines thickness="10">
 			<point x="-45.96" y="-45.96" />
@@ -3986,10 +3595,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8E">
 		<name lang="ko">East end</name>
-		<name lang="nl">East end</name>
 		<name lang="en">East end</name>
 		<text lang="ko">E end of {0}</text>
-		<text lang="nl">E end of {0}</text>
 		<text lang="en">E end of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
@@ -4003,10 +3610,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8SE">
 		<name lang="ko">South-east end</name>
-		<name lang="nl">South-east end</name>
 		<name lang="en">South-east end</name>
 		<text lang="ko">SE end of {0}</text>
-		<text lang="nl">SE end of {0}</text>
 		<text lang="en">SE end of {0}</text>
 		<lines thickness="10">
 			<point x="-45.96" y="45.96" />
@@ -4020,10 +3625,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8S">
 		<name lang="ko">South end</name>
-		<name lang="nl">South end</name>
 		<name lang="en">South end</name>
 		<text lang="ko">S end of {0}</text>
-		<text lang="nl">S end of {0}</text>
 		<text lang="en">S end of {0}</text>
 		<lines thickness="10">
 			<point x="0" y="-65" />
@@ -4037,10 +3640,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8SW">
 		<name lang="ko">South-west end</name>
-		<name lang="nl">South-west end</name>
 		<name lang="en">South-west end</name>
 		<text lang="ko">SW end of {0}</text>
-		<text lang="nl">SW end of {0}</text>
 		<text lang="en">SW end of {0}</text>
 		<lines thickness="10">
 			<point x="45.96" y="45.96" />
@@ -4054,10 +3655,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8W">
 		<name lang="ko">West end</name>
-		<name lang="nl">West end</name>
 		<name lang="en">West end</name>
 		<text lang="ko">W end of {0}</text>
-		<text lang="nl">W end of {0}</text>
 		<text lang="en">W end of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="0" />
@@ -4071,10 +3670,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.8NW">
 		<name lang="ko">North-west end</name>
-		<name lang="nl">North-west end</name>
 		<name lang="en">North-west end</name>
 		<text lang="ko">NW end of {0}</text>
-		<text lang="nl">NW end of {0}</text>
 		<text lang="en">NW end of {0}</text>
 		<lines thickness="10">
 			<point x="45.96" y="-45.96" />
@@ -4088,10 +3685,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14N">
 		<name lang="ko">North foot</name>
-		<name lang="nl">North foot</name>
 		<name lang="en">North foot</name>
 		<text lang="ko">N foot of {0}</text>
-		<text lang="nl">N foot of {0}</text>
 		<text lang="en">N foot of {0}</text>
 		<lines thickness="10">
 			<point x="-10" y="80" />
@@ -4105,10 +3700,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14NE">
 		<name lang="ko">North-east foot</name>
-		<name lang="nl">North-east foot</name>
 		<name lang="en">North-east foot</name>
 		<text lang="ko">NE foot of {0}</text>
-		<text lang="nl">NE foot of {0}</text>
 		<text lang="en">NE foot of {0}</text>
 		<lines thickness="10">
 			<point x="40" y="70" />
@@ -4122,10 +3715,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14E">
 		<name lang="ko">East foot</name>
-		<name lang="nl">East foot</name>
 		<name lang="en">East foot</name>
 		<text lang="ko">E foot of {0}</text>
-		<text lang="nl">E foot of {0}</text>
 		<text lang="en">E foot of {0}</text>
 		<lines thickness="10">
 			<point x="50" y="20" />
@@ -4139,10 +3730,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14SE">
 		<name lang="ko">South-east foot</name>
-		<name lang="nl">South-east foot</name>
 		<name lang="en">South-east foot</name>
 		<text lang="ko">SE foot of {0}</text>
-		<text lang="nl">SE foot of {0}</text>
 		<text lang="en">SE foot of {0}</text>
 		<lines thickness="10">
 			<point x="40" y="-30" />
@@ -4156,10 +3745,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14S">
 		<name lang="ko">South foot</name>
-		<name lang="nl">South foot</name>
 		<name lang="en">South foot</name>
 		<text lang="ko">S foot of {0}</text>
-		<text lang="nl">S foot of {0}</text>
 		<text lang="en">S foot of {0}</text>
 		<lines thickness="10">
 			<point x="-10" y="-40" />
@@ -4173,10 +3760,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14SW">
 		<name lang="ko">South-west foot</name>
-		<name lang="nl">South-west foot</name>
 		<name lang="en">South-west foot</name>
 		<text lang="ko">SW foot of {0}</text>
-		<text lang="nl">SW foot of {0}</text>
 		<text lang="en">SW foot of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="-30" />
@@ -4190,10 +3775,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14W">
 		<name lang="ko">West foot</name>
-		<name lang="nl">West foot</name>
 		<name lang="en">West foot</name>
 		<text lang="ko">W foot of {0}</text>
-		<text lang="nl">W foot of {0}</text>
 		<text lang="en">W foot of {0}</text>
 		<lines thickness="10">
 			<point x="-75" y="20" />
@@ -4207,10 +3790,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.14NW">
 		<name lang="ko">North-west foot</name>
-		<name lang="nl">North-west foot</name>
 		<name lang="en">North-west foot</name>
 		<text lang="ko">NW foot of {0}</text>
-		<text lang="nl">NW foot of {0}</text>
 		<text lang="en">NW foot of {0}</text>
 		<lines thickness="10">
 			<point x="-65" y="70" />
@@ -4224,10 +3805,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.7">
 		<name lang="ko">Bend</name>
-		<name lang="nl">Bend</name>
 		<name lang="en">Bend</name>
 		<text lang="ko">bend in {0}</text>
-		<text lang="nl">bend in {0}</text>
 		<text lang="en">bend in {0}</text>
 		<beziers thickness="10">
 			<point x="35" y="70" />
@@ -4245,10 +3824,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.9">
 		<name lang="ko">Upper part</name>
-		<name lang="nl">Upper part</name>
 		<name lang="en">Upper part</name>
 		<text lang="ko">upper part of {0}</text>
-		<text lang="nl">upper part of {0}</text>
 		<text lang="en">upper part of {0}</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -4265,10 +3842,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.10">
 		<name lang="ko">Lower part</name>
-		<name lang="nl">Lower part</name>
 		<name lang="en">Lower part</name>
 		<text lang="ko">lower part of {0}</text>
-		<text lang="nl">lower part of {0}</text>
 		<text lang="en">lower part of {0}</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -4285,10 +3860,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.11">
 		<name lang="ko">Top</name>
-		<name lang="nl">Top</name>
 		<name lang="en">Top</name>
 		<text lang="ko">top of {0}</text>
-		<text lang="nl">top of {0}</text>
 		<text lang="en">top of {0}</text>
 		<lines thickness="10">
 			<point x="-28" y="-60" />
@@ -4303,10 +3876,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.12">
 		<name lang="ko">Beneath</name>
-		<name lang="nl">Beneath</name>
 		<name lang="en">Beneath</name>
 		<text lang="ko">beneath {0}</text>
-		<text lang="nl">beneath {0}</text>
 		<text lang="en">beneath {0}</text>
 		<lines thickness="10">
 			<point x="-50" y="-30" />
@@ -4321,10 +3892,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.13">
 		<name lang="ko">Foot</name>
-		<name lang="nl">Foot</name>
 		<name lang="en">Foot</name>
 		<text lang="ko">foot of {0}</text>
-		<text lang="nl">foot of {0}</text>
 		<text lang="en">foot of {0}</text>
 		<lines thickness="10">
 			<point x="-30" y="60" />
@@ -4352,10 +3921,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.15">
 		<name lang="ko">Between</name>
-		<name lang="nl">Between</name>
 		<name lang="en">Between</name>
 		<text lang="ko">between {0} and {1}</text>
-		<text lang="nl">between {0} and {1}</text>
 		<text lang="en">between {0} and {1}</text>
 		<lines thickness="10">
 			<point x="-60" y="40" />
@@ -4372,10 +3939,8 @@ for the symbols.
 
 	<symbol kind="G" id="11.15single">
 		<name lang="ko">Between (both items are same)</name>
-		<name lang="nl">Between (both items are same)</name>
 		<name lang="en">Between (both items are same)</name>
 		<text lang="ko">between {1}</text>
-		<text lang="nl">between {1}</text>
 		<text lang="en">between {1}</text>
 	</symbol>
 
@@ -4384,10 +3949,8 @@ for the symbols.
 
 	<symbol kind="H" id="12.1">
 		<name lang="ko">First aid post</name>
-		<name lang="nl">First aid post</name>
 		<name lang="en">First aid post</name>
 		<text lang="ko">first aid</text>
-		<text lang="nl">first aid</text>
 		<text lang="en">first aid</text>
 		<filled-polygon>
 			<point x="-20" y="60" />
@@ -4407,10 +3970,8 @@ for the symbols.
 
 	<symbol kind="H" id="12.2">
 		<name lang="ko">Refreshment point</name>
-		<name lang="nl">Refreshment point</name>
 		<name lang="en">Refreshment point</name>
 		<text lang="ko">water</text>
-		<text lang="nl">water</text>
 		<text lang="en">water</text>
 		<beziers thickness="12.5">
 			<point x="60" y="55" />
@@ -4448,10 +4009,8 @@ for the symbols.
 
 	<symbol kind="H" id="12.3">
 		<name lang="ko">Radio or TV control</name>
-		<name lang="nl">Radio or TV control</name>
 		<name lang="en">Radio or TV control</name>
 		<text lang="ko">radio</text>
-		<text lang="nl">radio</text>
 		<text lang="en">radio</text>
 		<lines thickness="12.5">
 			<point x="40" y="70" />
@@ -4463,10 +4022,8 @@ for the symbols.
 
 	<symbol kind="H" id="12.4">
 		<name lang="ko">Control check</name>
-		<name lang="nl">Control check</name>
 		<name lang="en">Control check</name>
 		<text lang="ko">manned</text>
-		<text lang="nl">manned</text>
 		<text lang="en">manned</text>
 		<lines thickness="12.5">
 			<point x="-35" y="-70" />
@@ -4493,10 +4050,8 @@ for the symbols.
 
 	<symbol kind="W" id="13.1">
 		<name lang="ko">Taped route away from control</name>
-		<name lang="nl">Taped route away from control</name>
 		<name lang="en">Taped route away from control</name>
 		<text lang="ko">follow tapes {0}away from control</text>
-		<text lang="nl">follow tapes {0}away from control</text>
 		<text lang="en">follow tapes {0}away from control</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4534,10 +4089,8 @@ for the symbols.
 
 	<symbol kind="W" id="13.2">
 		<name lang="ko">Taped route between controls</name>
-		<name lang="nl">Taped route between controls</name>
 		<name lang="en">Taped route between controls</name>
 		<text lang="ko">follow tapes {0}between controls</text>
-		<text lang="nl">follow tapes {0}between controls</text>
 		<text lang="en">follow tapes {0}between controls</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4580,10 +4133,8 @@ for the symbols.
 
 	<symbol kind="X" id="13.3">
 		<name lang="ko">Mandatory crossing point or points</name>
-		<name lang="nl">Mandatory crossing point or points</name>
 		<name lang="en">Mandatory crossing point or points</name>
 		<text lang="ko">mandatory crossing point</text>
-		<text lang="nl">mandatory crossing point</text>
 		<text lang="en">mandatory crossing point</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4617,10 +4168,8 @@ for the symbols.
 
 	<symbol kind="X" id="13.4">
 		<name lang="ko">Mandatory passage</name>
-		<name lang="nl">Mandatory passage</name>
 		<name lang="en">Mandatory passage</name>
 		<text lang="ko">mandatory passage</text>
-		<text lang="nl">mandatory passage</text>
 		<text lang="en">mandatory passage</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4657,10 +4206,8 @@ for the symbols.
 	-->
 	<symbol kind="W" id="13.5">
 		<name lang="ko">Map exchange</name>
-		<name lang="nl">Map exchange</name>
 		<name lang="en">Map exchange</name>
 		<text lang="ko">follow tapes {0}to map exchange</text>
-		<text lang="nl">follow tapes {0}to map exchange</text>
 		<text lang="en">follow tapes {0}to map exchange</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4709,10 +4256,8 @@ for the symbols.
 
 	<symbol kind="Z" id="14.1">
 		<name lang="ko">Taped route to finish</name>
-		<name lang="nl">Taped route to finish</name>
 		<name lang="en">Taped route to finish</name>
 		<text lang="ko">follow tapes {0}to finish</text>
-		<text lang="nl">follow tapes {0}to finish</text>
 		<text lang="en">follow tapes {0}to finish</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4756,10 +4301,8 @@ for the symbols.
 
 	<symbol kind="Z" id="14.2">
 		<name lang="ko">Navigate to finish funnel</name>
-		<name lang="nl">Navigate to finish funnel</name>
 		<name lang="en">Navigate to finish funnel</name>
 		<text lang="ko">navigate {0}to finish funnel</text>
-		<text lang="nl">navigate {0}to finish funnel</text>
 		<text lang="en">navigate {0}to finish funnel</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />
@@ -4804,10 +4347,8 @@ for the symbols.
 
 	<symbol kind="Z" id="14.3">
 		<name lang="ko">Navigate to finish (no tapes)</name>
-		<name lang="nl">Navigate to finish (no tapes)</name>
 		<name lang="en">Navigate to finish (no tapes)</name>
 		<text lang="ko">navigate {0}to finish</text>
-		<text lang="nl">navigate {0}to finish</text>
 		<text lang="en">navigate {0}to finish</text>
 		<circle thickness="10" radius="70">
 			<point x="-700" y="0" />

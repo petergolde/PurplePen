@@ -61,14 +61,16 @@ namespace PurplePen
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetPrintAreaDialog));
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.setPrintAreaLabel = new System.Windows.Forms.Label();
             this.groupBoxPaperSize = new System.Windows.Forms.GroupBox();
-            this.paperSizeControl1 = new PurplePen.PaperSizeControl();
+            this.paperSizeControl = new PurplePen.PaperSizeControl();
             this.checkBoxAutomatic = new System.Windows.Forms.CheckBox();
             this.checkBoxFixSizeToPaper = new System.Windows.Forms.CheckBox();
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBoxPaperSize.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,29 +97,38 @@ namespace PurplePen
             // groupBoxPaperSize
             // 
             resources.ApplyResources(this.groupBoxPaperSize, "groupBoxPaperSize");
-            this.groupBoxPaperSize.Controls.Add(this.paperSizeControl1);
+            this.groupBoxPaperSize.Controls.Add(this.paperSizeControl);
             this.groupBoxPaperSize.Name = "groupBoxPaperSize";
             this.groupBoxPaperSize.TabStop = false;
             // 
-            // paperSizeControl1
+            // paperSizeControl
             // 
-            resources.ApplyResources(this.paperSizeControl1, "paperSizeControl1");
-            this.paperSizeControl1.Landscape = false;
-            this.paperSizeControl1.MarginSize = 0;
-            this.paperSizeControl1.Name = "paperSizeControl1";
-            this.paperSizeControl1.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl1.PaperSize")));
+            resources.ApplyResources(this.paperSizeControl, "paperSizeControl");
+            this.paperSizeControl.Landscape = false;
+            this.paperSizeControl.MarginSize = 0;
+            this.paperSizeControl.Name = "paperSizeControl";
+            this.paperSizeControl.PaperSize = ((System.Drawing.Printing.PaperSize)(resources.GetObject("paperSizeControl.PaperSize")));
+            this.paperSizeControl.Changed += new System.EventHandler(this.paperSizeControl_Changed);
             // 
             // checkBoxAutomatic
             // 
             resources.ApplyResources(this.checkBoxAutomatic, "checkBoxAutomatic");
             this.checkBoxAutomatic.Name = "checkBoxAutomatic";
             this.checkBoxAutomatic.UseVisualStyleBackColor = true;
+            this.checkBoxAutomatic.CheckedChanged += new System.EventHandler(this.checkBoxAutomatic_CheckedChanged);
             // 
             // checkBoxFixSizeToPaper
             // 
             resources.ApplyResources(this.checkBoxFixSizeToPaper, "checkBoxFixSizeToPaper");
             this.checkBoxFixSizeToPaper.Name = "checkBoxFixSizeToPaper";
             this.checkBoxFixSizeToPaper.UseVisualStyleBackColor = true;
+            this.checkBoxFixSizeToPaper.CheckedChanged += new System.EventHandler(this.checkBoxFixSizeToPaper_CheckedChanged);
+            // 
+            // updateTimer
+            // 
+            this.updateTimer.Enabled = true;
+            this.updateTimer.Interval = 500;
+            this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
             // SetPrintAreaDialog
             // 
@@ -146,8 +157,9 @@ namespace PurplePen
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label setPrintAreaLabel;
         private System.Windows.Forms.GroupBox groupBoxPaperSize;
-        private PaperSizeControl paperSizeControl1;
+        private PaperSizeControl paperSizeControl;
         private System.Windows.Forms.CheckBox checkBoxAutomatic;
         private System.Windows.Forms.CheckBox checkBoxFixSizeToPaper;
+        private System.Windows.Forms.Timer updateTimer;
     }
 }

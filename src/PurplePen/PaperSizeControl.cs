@@ -17,6 +17,8 @@ namespace PurplePen
         private int margin;  // margin in hundreths of inch
         private bool landscape;
 
+        public event EventHandler Changed;
+
         public PaperSizeControl()
         {
             InitializeComponent();
@@ -127,11 +129,11 @@ namespace PurplePen
             if (!foundStandardSize)
             {
                 comboBoxPaperSize.SelectedIndex = MapUtil.StandardPaperSizes.Length;
-                upDownWidth.ReadOnly = upDownHeight.ReadOnly = false;
+                upDownWidth.Enabled = upDownHeight.Enabled = true;
             }
             else
             {
-                upDownWidth.ReadOnly = upDownHeight.ReadOnly = true;
+                upDownWidth.Enabled = upDownHeight.Enabled = false;
             }
 
             upDownWidth.Value = Util.GetDistanceValue(paperSize.Width);
@@ -158,19 +160,27 @@ namespace PurplePen
             landscape = checkBoxLandscape.Checked;
         }
 
+        private void SendChangedEvent()
+        {
+            if (Changed != null)
+                Changed(this, EventArgs.Empty);
+        }
+
         private void comboBoxPaperSize_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxPaperSize.SelectedIndex < MapUtil.StandardPaperSizes.Length)
             {
-                upDownWidth.ReadOnly = upDownHeight.ReadOnly = true;
+                upDownWidth.Enabled = upDownHeight.Enabled = false;
                 PaperSize ps = MapUtil.StandardPaperSizes[comboBoxPaperSize.SelectedIndex];
                 upDownWidth.Value = Util.GetDistanceValue(ps.Width);
                 upDownHeight.Value = Util.GetDistanceValue(ps.Height);
             }
             else
             {
-                upDownWidth.ReadOnly = upDownHeight.ReadOnly = false;
+                upDownWidth.Enabled = upDownHeight.Enabled = true;
             }
+
+            SendChangedEvent();
         }
 
         private void PaperSizeControl_Loaded(object sender, EventArgs e)
@@ -181,11 +191,28 @@ namespace PurplePen
         private void checkBoxPortrait_CheckedChanged(object sender, EventArgs e)
         {
             checkBoxLandscape.Checked = ! checkBoxPortrait.Checked;
+            SendChangedEvent();
         }
 
         private void checkBoxLandscape_CheckedChanged(object sender, EventArgs e)
         {
             checkBoxPortrait.Checked = ! checkBoxLandscape.Checked;
+            SendChangedEvent();
+        }
+
+        private void upDownWidth_ValueChanged(object sender, EventArgs e)
+        {
+            SendChangedEvent();
+        }
+
+        private void upDownHeight_ValueChanged(object sender, EventArgs e)
+        {
+            SendChangedEvent();
+        }
+
+        private void upDownMargin_ValueChanged(object sender, EventArgs e)
+        {
+            SendChangedEvent();
         }
     }
 }
