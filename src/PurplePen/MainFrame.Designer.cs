@@ -270,6 +270,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.showPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -630,6 +631,7 @@ namespace PurplePen
             this.mapIntensityMenu,
             this.mapQualityMenu,
             this.showPopupsMenu,
+            this.showPrintAreaMenu,
             this.toolStripSeparator7,
             this.allControlsMenu});
             this.viewMenu.Name = "viewMenu";
@@ -1758,6 +1760,12 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // showPrintAreaMenu
+            // 
+            this.showPrintAreaMenu.Name = "showPrintAreaMenu";
+            resources.ApplyResources(this.showPrintAreaMenu, "showPrintAreaMenu");
+            this.showPrintAreaMenu.Click += new System.EventHandler(this.showPrintAreaMenu_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2003,6 +2011,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createGPXFileMenu;
         private System.Windows.Forms.SaveFileDialog saveGpxFileDialog;
         private System.Windows.Forms.ToolStripMenuItem duplicateCourseMenu;
-
+        private System.Windows.Forms.ToolStripMenuItem showPrintAreaMenu;
     }
 }

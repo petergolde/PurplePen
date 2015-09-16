@@ -379,7 +379,7 @@ namespace PurplePen
         // Update the print area in the map pane.
         void UpdatePrintArea()
         {
-            if (hidePrintArea)
+            if (hidePrintArea || !Settings.Default.ShowPrintArea)
                 mapDisplay.SetPrintArea(null);
             else
                 mapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
@@ -587,6 +587,9 @@ namespace PurplePen
 
             // Update checkmark on View/Show Popup Information
             showPopupsMenu.Checked = showToolTips;
+
+            // Update checkmark on View/Show Print Area
+            showPrintAreaMenu.Checked = Settings.Default.ShowPrintArea;
 
             // Update Delete menu item
             deleteToolStripButton.Enabled =  deleteMenu.Enabled = deleteItemMenu.Enabled = controller.CanDeleteSelection();
@@ -1034,6 +1037,13 @@ namespace PurplePen
             showToolTips = !showToolTips;
             Settings.Default.ShowPopupInfo = showToolTips;
             Settings.Default.Save();
+        }
+
+        private void showPrintAreaMenu_Click(object sender, EventArgs e)
+        {
+            Settings.Default.ShowPrintArea = !Settings.Default.ShowPrintArea;
+            Settings.Default.Save();
+            controller.ForceChangeUpdate();
         }
 
         private void courseTabs_Selected(object sender, TabControlEventArgs e)
@@ -2619,6 +2629,5 @@ namespace PurplePen
                 operationInProgressDialog = null;
             }
         }
-
     }
 }
