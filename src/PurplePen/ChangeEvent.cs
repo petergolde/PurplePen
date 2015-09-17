@@ -1034,6 +1034,8 @@ namespace PurplePen
                 if (course.sortOrder > maxSortOrder)
                     maxSortOrder = course.sortOrder;
 
+            PrintArea printArea = (PrintArea) eventDB.GetEvent().printArea.Clone();
+
             Course newCourse = new Course(courseKind, name, printScale, maxSortOrder + 1);
             newCourse.secondaryTitle = secondaryTitle;
             newCourse.climb = climb;
@@ -1042,6 +1044,7 @@ namespace PurplePen
             newCourse.labelKind = labelKind;
             newCourse.scoreColumn = scoreColumn;
             newCourse.firstControlOrdinal = firstControlOrdinal;
+            newCourse.printArea = printArea;
 
             Id<Course> newCourseId = eventDB.AddCourse(newCourse);
 
