@@ -146,6 +146,7 @@ namespace PurplePen.Tests
         {
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
+            RectangleF mapBounds = new RectangleF(0, 0, 200, 300);
 
             Course course1, course2, course3, course4, course5;
 
@@ -156,7 +157,7 @@ namespace PurplePen.Tests
             course1.secondaryTitle = "White is right";
             course1.load = 0;
             course1.firstCourseControl = CourseControlId(1);
-            course1.UpdateUnknownPageSizes(15000);
+            course1.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course1);
 
             course2 = new Course(CourseKind.Normal, "Yellow", 15000, 2);
@@ -169,7 +170,7 @@ namespace PurplePen.Tests
             course2.partPrintAreas[0] = new PrintArea(true, false, new RectangleF(70, 10, 130, 140));
             course2.partOptions[1] = new PartOptions() { ShowFinish = true };
             course2.partOptions[0] = new PartOptions() { ShowFinish = false };
-            course2.UpdateUnknownPageSizes(15000);
+            course2.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course2);
 
             course3 = new Course(CourseKind.Score, "Rambo", 10000, 3);
@@ -181,7 +182,7 @@ namespace PurplePen.Tests
             course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
             course3.partPrintAreas[1] = new PrintArea(true, true, new RectangleF(-10, -20, 90, 80), 0.9F);
-            course3.UpdateUnknownPageSizes(15000);
+            course3.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course3);
 
             course4 = new Course(CourseKind.Score, "Silly1", 10000, 3);
@@ -195,7 +196,7 @@ namespace PurplePen.Tests
             course4.descKind = DescriptionKind.SymbolsAndText;
             course4.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80));
             course4.partOptions[1] = new PartOptions() { ShowFinish = false };
-            course4.UpdateUnknownPageSizes(15000);
+            course4.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course4);
 
             course5 = new Course(CourseKind.Score, "Silly2", 10000, 3);
@@ -207,7 +208,7 @@ namespace PurplePen.Tests
             course5.labelKind = ControlLabelKind.CodeAndScore;
             course5.descKind = DescriptionKind.Symbols;
             course5.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80), 1.25F);
-            course5.UpdateUnknownPageSizes(15000);
+            course5.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course5);
 
             undomgr.EndCommand(61);

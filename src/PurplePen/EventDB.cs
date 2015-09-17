@@ -913,7 +913,7 @@ namespace PurplePen
         }
 
         // Update unknown page sizes after reading based on the map scale.
-        public void UpdateUnknownPageSizes(float mapScale)
+        public void UpdateUnknownPageSizes(RectangleF mapBounds, float mapScale)
         {
             float scaleRatio;
             if (mapScale > 0 && printScale > 0)
@@ -921,9 +921,9 @@ namespace PurplePen
             else
                 scaleRatio = 1.0F;
 
-            printArea.UpdateUnknownPageSize(scaleRatio);
+            printArea.UpdateUnknownPageSize(mapBounds, scaleRatio);
             foreach (PrintArea area in partPrintAreas.Values)
-                area.UpdateUnknownPageSize(scaleRatio);
+                area.UpdateUnknownPageSize(mapBounds, scaleRatio);
         }
 
         public override void WriteAttributesAndContent(System.Xml.XmlTextWriter xmloutput)
@@ -2100,7 +2100,7 @@ namespace PurplePen
             this.autoPrintArea = autoPrintArea;
             this.restrictToPageSize = restrictToPageSize;
             this.printAreaRectangle = printAreaRectangle;
-            UpdateUnknownPageSize(scaleRatio);
+            UpdateUnknownPageSize(printAreaRectangle, scaleRatio);
         }
 
         public override bool Equals(object obj)
@@ -2177,10 +2177,16 @@ namespace PurplePen
 
         // This must be called after ReadAttributesAndContent, once the scale ratio is known. This updates the page size if it
         // wasn't known earlier.
-        public void UpdateUnknownPageSize(float scaleRatio)
+        public void UpdateUnknownPageSize(RectangleF mapBounds, float scaleRatio)
         {
             if (pageWidth <= 0 || pageHeight <= 0) {
-                MapUtil.GetDefaultPageSize(printAreaRectangle, scaleRatio, out pageWidth, out pageHeight, out pageMargins, out pageLandscape);
+                RectangleF printArea;
+                if (autoPrintArea)
+                    printArea = mapBounds;  // best we can do now for picking the page size.
+                else
+                    printArea = this.printAreaRectangle;
+
+                MapUtil.GetDefaultPageSize(printArea, scaleRatio, out pageWidth, out pageHeight, out pageMargins, out pageLandscape);
             }
         }
 
@@ -2594,9 +2600,6 @@ namespace PurplePen
             if (printArea == null) {
                 printArea = MapUtil.GetDefaultPrintArea(mapFileName, scaleRatio);
             }
-            else {
-                printArea.UpdateUnknownPageSize(scaleRatio);
-            }
         }
 
 
@@ -2946,11 +2949,21 @@ namespace PurplePen
         {
             Event eventDB = GetEvent();
             float mapScale = eventDB.mapScale;
-            eventDB.printArea.UpdateUnknownPageSize(mapScale);
+
+            float scale, dpi;
+            Size bitmapSize;
+            RectangleF mapBounds;
+            MapType mapType;
+            string errorMessageText;
+
+            // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
+            MapUtil.ValidateMapFile(eventDB.mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+
+            eventDB.printArea.UpdateUnknownPageSize(mapBounds, mapScale);
 
             foreach (Id<Course> courseId in AllCourseIds) {
                 Course course = GetCourse(courseId);
-                course.UpdateUnknownPageSizes(mapScale);
+                course.UpdateUnknownPageSizes(mapBounds, mapScale);
             }
         }
 
