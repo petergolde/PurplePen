@@ -1329,15 +1329,22 @@ namespace PurplePen
 
             if (printArea.autoPrintArea) {
                 // Automatically determine the print rectangle.
-                // The first attempt at default print area is the union of the bounding rectangle of the course objects, and the map, with a 1mm padding.
+                // High priority: conver the bounding rect of the course objects with a 1mm padding.
+                // Lower priority: cover the map rectangle.
                 RectangleF courseObjectsRectangle = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
                 RectangleF mapRectangle = mapDisplay.MapBounds;
-                printRectangle = RectangleF.Union(courseObjectsRectangle, mapDisplay.MapBounds);
 
-                if (printRectangle.Width > pageSizeInMapUnits.Width || printRectangle.Height > pageSizeInMapUnits.Height) {
-                    // If that is bigger than the page size, then just use the course objects rectangle.
-                    printRectangle = courseObjectsRectangle;
-                }
+                float l, b, r, t;
+                PositionPrintInterval(pageSizeInMapUnits.Width, courseObjectsRectangle.Left, courseObjectsRectangle.Right, mapRectangle.Left, mapRectangle.Right, out l, out r);
+                PositionPrintInterval(pageSizeInMapUnits.Height, courseObjectsRectangle.Top, courseObjectsRectangle.Bottom, mapRectangle.Top, mapRectangle.Bottom, out t, out b);
+                printRectangle = RectangleF.FromLTRB(l, t, r, b);
+
+                //printRectangle = RectangleF.Union(courseObjectsRectangle, mapDisplay.MapBounds);
+
+                //if (printRectangle.Width > pageSizeInMapUnits.Width || printRectangle.Height > pageSizeInMapUnits.Height) {
+                //    // If that is bigger than the page size, then just use the course objects rectangle.
+                //    printRectangle = courseObjectsRectangle;
+                //}
             }
             else {
                 printRectangle = printArea.printAreaRectangle;
@@ -1354,6 +1361,53 @@ namespace PurplePen
         public RectangleF GetPrintAreaRectangle(PrintAreaKind printAreaKind, PrintArea printArea)
         {
             return GetPrintAreaRectangle(CourseDesignatorFromPrintAreaKind(printAreaKind), printArea);
+        }
+
+        // Input: Given two intervals [lowPriL,lowPriR] and [highPriL, highPriR], and a width.
+        // Output: Returns the best interval of the given width. It should best cover the high pri interval, then 
+        // best cover the low pri interval, centering as much as possible given those constraints.
+        void PositionPrintInterval(float width, float highPriL, float highPriR, float lowPriL, float lowPriR, out float resultL, out float resultR)
+        {
+            float minL = Math.Min(lowPriL, highPriL), maxR = Math.Max(lowPriR, highPriR);
+            float mid;
+
+            // Case 1: the given width can cover both intervals. Center it over both.
+            if (maxR - minL <= width) {
+                mid = (minL + maxR) / 2F;
+                resultL = mid - width / 2F;
+                resultR = mid + width / 2F;
+                return;
+            }
+
+            // center on the high priority interval.
+            mid = (highPriL + highPriR) / 2F;
+            resultL = mid - width / 2F;
+            resultR = mid + width / 2F;
+
+            // Case 2: the given width is smaller than the high priority interval. Centering on hgh priority interval is correct.
+            if (highPriR - highPriL > width) {
+                return;
+            }
+
+            // Case 3: centering on the high priority interval is fully within the low priority interval.
+            if (resultL >= lowPriL && resultR <= lowPriR) {
+                return;
+            }
+
+            // Case 4: the given width can covert the high priority interval, but not both intervals. Find the one that 
+            // covers the most of the high priority interval.
+            float marginL = Math.Max(0, highPriL - lowPriL);
+            float marginR = Math.Max(0, lowPriR - highPriR);
+            if (marginL < marginR) {
+                resultL = highPriL - marginL;
+                resultR = resultL + width;
+                return;
+            }
+            else {
+                resultR = highPriR + marginR;
+                resultL = resultR - width;
+                return;
+            }
         }
 
         // Get the current print area, for the current course or all courses.
