@@ -388,10 +388,10 @@ String of type 1026
   firstField=
   code=a, value=8000
   code=r, value=1
-  code=L, value=0
-  code=B, value=-3.120303E-05
-  code=R, value=215.9004
-  code=T, value=279.4005
+  code=L, value=-54.6098
+  code=B, value=-73.65976
+  code=R, value=270.5102
+  code=T, value=353.0603
 
 String of type 1030
   ObjIndex=0

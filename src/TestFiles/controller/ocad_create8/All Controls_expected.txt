@@ -4514,10 +4514,10 @@ String of type 1026
   firstField=
   code=a, value=2400
   code=r, value=1
-  code=L, value=-101.36
-  code=B, value=-292.52
-  code=R, value=121.5
-  code=T, value=2.910004
+  code=L, value=-123.28
+  code=B, value=-354.355
+  code=R, value=143.42
+  code=T, value=64.745
 
 String of type 1030
   ObjIndex=0

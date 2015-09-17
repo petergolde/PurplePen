@@ -25,7 +25,7 @@ Setup structure:
   TempOffset=(101.47,126.24), TemplateFileName=[[TESTDIR]]\controller\ocad_create11\LincolnNov12.bmp
   TemplateEnabled=1, TempResol=300, rTempAng=0
   Res1=(0.00,0.00), Res2=0
-  PrLowerLeft=(0.00,0.00), PrUpperRight=(202.95,252.48)
+  PrLowerLeft=(-6.48,-13.46), PrUpperRight=(209.42,265.94)
   PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
   PrintScale=5000, PrIntensity=0, prLineWidth=0, PrReserved=0
   PrStdFonts=0, PrReserved2=0, PrReserved3=0
