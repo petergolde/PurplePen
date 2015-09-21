@@ -3,10 +3,12 @@
     <title>Lincoln Park</title>
     <map kind="bitmap" scale="5000" dpi="300">LincolnNov12.gif</map>
     <all-controls print-scale="5000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance />
-    <descriptions lang="en" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="140.207184" y="57.44655" />
@@ -37,6 +39,7 @@
     <name>Short</name>
     <labels label-kind="sequence" />
     <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" page-width="850" page-height="1100" page-margins="25" page-landscape="false" />
     <options print-scale="5000" description-kind="symbols" />
   </course>
   <course-control id="1" control="1">

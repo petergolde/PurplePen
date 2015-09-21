@@ -3,10 +3,12 @@
     <title>Lincoln Park</title>
     <map kind="PDF" scale="5000">Lincoln-CMYK.pdf</map>
     <all-controls print-scale="5000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="true" left="5.24472046" top="274.721954" right="208.444733" bottom="8.02193451" page-width="850" page-height="1100" page-margins="25" page-landscape="false" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance />
-    <descriptions lang="en" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="148.540009" y="69.59859" />
@@ -73,25 +75,28 @@
     <name>Short</name>
     <labels label-kind="sequence" />
     <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="true" left="6.205368" top="274.682861" right="209.40538" bottom="7.982834" page-width="850" page-height="1100" page-margins="25" page-landscape="false" />
     <options print-scale="5000" description-kind="symbols" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>SmallScale</name>
     <labels label-kind="sequence" />
     <first course-control="7" />
-    <print-area left="88.28509" top="88.66856" right="163.773071" bottom="42.1839943" />
+    <print-area automatic="false" restrict-to-page-size="false" left="88.28509" top="88.66856" right="163.773071" bottom="42.1839943" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="2000" description-kind="symbols" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>LargeScale</name>
     <labels label-kind="sequence" />
     <first course-control="12" />
+    <print-area automatic="true" restrict-to-page-size="true" page-width="850" page-height="1100" page-margins="25" page-landscape="false" />
     <options print-scale="8000" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>MediumScale</name>
     <labels label-kind="sequence" />
     <first course-control="17" />
+    <print-area automatic="true" restrict-to-page-size="true" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="3000" description-kind="symbols" />
   </course>
   <course-control id="1" control="1">
