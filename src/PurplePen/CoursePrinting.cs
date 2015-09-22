@@ -118,7 +118,7 @@ namespace PurplePen
         }
 
         // Set landscape/portrait and margins for a particular page.
-        protected override void ChangePageSettings(int pageNumber, ref bool landscape, Margins margins)
+        protected override void ChangePageSettings(int pageNumber, ref bool landscape, ref PaperSize paperSize, Margins margins)
         {
             landscape = pages[pageNumber].landscape;
             margins.Left = margins.Right = margins.Top = margins.Bottom = 0;

@@ -243,10 +243,14 @@ namespace PurplePen
             var paginator = new Paginator(this, 0, new SizeF(paperWidth, paperHeight), pageSettings.Margins, dpi, false);
 
             for (int pageNumber = 0; pageNumber < paginator.PageCount; ++pageNumber) {
-                var docPage = paginator.GetPage(pageNumber);
+                DocumentPage docPage = paginator.GetPage(pageNumber);
+
+                paperWidth = (float)PointsToHundreths(docPage.Size.Width);
+                paperHeight = (float)PointsToHundreths(docPage.Size.Height);
+
                 var bitmapNew = new System.Windows.Media.Imaging.RenderTargetBitmap(
-                    (int) Math.Round((float)paperWidth * dpi / 100F), 
-                    (int) Math.Round((float)paperHeight * dpi / 100F), 
+                    (int) Math.Round(paperWidth * dpi / 100F), 
+                    (int) Math.Round(paperHeight * dpi / 100F), 
                     dpi, dpi, System.Windows.Media.PixelFormats.Pbgra32);
                 bitmapNew.Render(docPage.Visual);
                 bitmapNew.Freeze();
@@ -320,12 +324,14 @@ namespace PurplePen
             if (currentPage < totalPages) {
                 bool landscape = e.PageSettings.Landscape;
                 string pausePrintingMessage = null;
-                ChangePageSettings(currentPage, ref landscape, e.PageSettings.Margins);
+                PaperSize paperSize = e.PageSettings.PaperSize;
+                ChangePageSettings(currentPage, ref landscape, ref paperSize, e.PageSettings.Margins);
                 if (!printPreviewInProgress && pausePrintingMessage != null) {
                     if (!controller.OkCancelMessage(pausePrintingMessage, true))
                         e.Cancel = true;
                 }
                 e.PageSettings.Landscape = landscape;
+                e.PageSettings.PaperSize = paperSize;
             }
         }
 
@@ -415,6 +421,20 @@ namespace PurplePen
             return dpi;
         }
 
+        // Convert 1/100 of an inch to 1/96 of an inch.
+        private static double HundrethsToPoints(double hundreths)
+        {
+            return hundreths / 100.0 * 96.0;
+        }
+
+        // Convert 1/96 of an inch to 1/100 of an inch.
+        private static double PointsToHundreths(double points)
+        {
+            return points / 96.0 * 100.0;
+        }
+
+
+
         private class Paginator : DocumentPaginator
         {
             private BasicPrinting outer;
@@ -448,9 +468,14 @@ namespace PurplePen
                 
                 Margins margins = new Margins(this.margins.Left, this.margins.Right, this.margins.Top, this.margins.Bottom);
                 bool landscape = outer.pageSettings.Landscape;
+                PaperSize paperSize = outer.pageSettings.PaperSize;
                 bool rotate;
-                outer.ChangePageSettings(pageNumber, ref landscape, margins);
+                outer.ChangePageSettings(pageNumber, ref landscape, ref paperSize, margins);
                 rotate = (landscape != outer.pageSettings.Landscape);
+                this.pageSize = new System.Windows.Size(HundrethsToPoints(paperSize.Width), HundrethsToPoints(paperSize.Height));
+                if (outer.pageSettings.Landscape) {
+                    this.pageSize = new System.Windows.Size(this.pageSize.Height, this.pageSize.Width);
+                }
 
                 // Get margins in terms of normal page orientation, in points.
                 double leftMargin = HundrethsToPoints(rotate ? margins.Bottom : margins.Left);
@@ -494,12 +519,6 @@ namespace PurplePen
                 }
 
                 return new DocumentPage(visual, pageSize, contentRect, contentRect);
-            }
-
-            // Convert 1/100 of an inch to 1/96 of an inch.
-            private double HundrethsToPoints(double hundreths)
-            {
-                return hundreths / 100.0 * 96.0;
             }
 
             public override bool IsPageCountValid
@@ -605,7 +624,7 @@ namespace PurplePen
         protected abstract void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi);
 
         // Routine to change page settings for a particular page.
-        protected virtual void ChangePageSettings(int pageNumber, ref bool landscape, Margins margins)
+        protected virtual void ChangePageSettings(int pageNumber, ref bool landscape, ref PaperSize paperSize, Margins margins)
         {
         }
 
