@@ -121,6 +121,7 @@ namespace PurplePen
         protected override void ChangePageSettings(int pageNumber, ref bool landscape, ref PaperSize paperSize, Margins margins)
         {
             landscape = pages[pageNumber].landscape;
+            paperSize = pages[pageNumber].paperSize;
             margins.Left = margins.Right = margins.Top = margins.Bottom = 0;
         }
 

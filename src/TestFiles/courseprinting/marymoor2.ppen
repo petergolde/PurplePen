@@ -4,11 +4,12 @@
     <notes>This is a sample event for testing.</notes>
     <map kind="OCAD" scale="10000" ignore-missing-fonts="false">Marymoor.ocd</map>
     <all-controls print-scale="7500" description-kind="symbols" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance />
-    <descriptions lang="en" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -573,42 +574,42 @@
     <name>Course 1</name>
     <labels label-kind="sequence" />
     <first course-control="101" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="5000" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
     <labels label-kind="sequence" />
     <first course-control="301" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
     <labels label-kind="sequence" />
     <first course-control="401" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
     <labels label-kind="sequence" />
     <first course-control="501" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
     <labels label-kind="sequence" />
     <first course-control="601" />
-    <print-area left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-29.26066" top="86.88066" right="233.240646" bottom="-113.690659" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course-control id="101" control="1">
@@ -895,6 +896,7 @@
   <special-object id="6" kind="text">
     <text>Name: $(CourseName)</text>
     <font name="Arial" bold="true" italic="false" />
+    <appearance color="purple" />
     <location x="62.68746" y="7.373291" />
     <location x="96.20972" y="2.82676554" />
     <courses all="true" />

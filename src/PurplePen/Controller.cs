@@ -1427,7 +1427,12 @@ namespace PurplePen
 
         public PrintArea GetCurrentPrintArea(PrintAreaKind printAreaKind)
         {
-            return QueryEvent.GetPrintArea(eventDB, CourseDesignatorFromPrintAreaKind(printAreaKind));
+            return GetCurrentPrintArea(CourseDesignatorFromPrintAreaKind(printAreaKind));
+        }
+
+        public PrintArea GetCurrentPrintArea(CourseDesignator courseDesignator)
+        {
+            return QueryEvent.GetPrintArea(eventDB, courseDesignator);
         }
 
         CourseDesignator CourseDesignatorFromPrintAreaKind(PrintAreaKind printAreaKind)
