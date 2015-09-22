@@ -132,9 +132,7 @@ namespace PurplePen.Tests
 
             ChangeRectangle(expectedCurrent, newPrintArea);
 
-            // TODO: Fix this test!
-            //controller.EndSetPrintArea(printAreaKind);
-            Assert.Fail("Test must be fixed.");
+            controller.EndSetPrintArea(printAreaKind, new PrintArea(false, false, new RectangleF()));
 
             rectangleCurrent = controller.GetCurrentPrintAreaRectangle(printAreaKind);
             TestUtil.AssertEqualRect(newPrintArea, rectangleCurrent, 0.1, "final print rectangle");
@@ -154,7 +152,7 @@ namespace PurplePen.Tests
         public void SetPrintArea1()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F);
+            RectangleF currentPrintArea = new RectangleF(-77.68744F, -142.4035F, 215.9F, 279.4F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
             SetPrintArea(1, currentPrintArea, newPrintArea, PrintAreaKind.OneCourse);
@@ -184,7 +182,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllControls()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
+            RectangleF currentPrintArea = new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, 20F, 70F, 130F);
 
             SetPrintArea(0, currentPrintArea, newPrintArea, PrintAreaKind.OneCourse);
@@ -199,7 +197,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllCourses()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F);
+            RectangleF currentPrintArea = new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
             SetPrintArea(1, currentPrintArea, newPrintArea, PrintAreaKind.AllCourses);
@@ -252,13 +250,14 @@ namespace PurplePen.Tests
         {
             Setup("modes\\printarea.ppen");
 
-            SetPrintArea(1, new RectangleF(-3.05F, -33.67F, 66.63F, 61.93F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), PrintAreaKind.OneCourse);
+            SetPrintArea(1, new RectangleF(-77.68744F, -142.4035F, 215.9F, 279.4F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), PrintAreaKind.OneCourse);
             SetPrintArea(2, RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F), RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F), PrintAreaKind.OneCourse);
-            SetPrintArea(0, RectangleF.FromLTRB(-17.05F, -35.22F, 136.38F, 48.39F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), PrintAreaKind.OneCourse);
+            SetPrintArea(0, new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), PrintAreaKind.OneCourse);
 
             OcadCreationSettings settings = new OcadCreationSettings();
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("modes\\ocad_print_area");
+
             settings.CourseIds = new Id<Course>[4] { CourseId(1), CourseId(2), CourseId(4), Id<Course>.None };
             settings.version = ocadVersion;
             settings.cyan = 0.15F;
