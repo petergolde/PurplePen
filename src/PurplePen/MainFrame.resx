@@ -211,7 +211,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 263</value>
+    <value>256, 264</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -256,7 +256,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 100</value>
+    <value>256, 99</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -292,7 +292,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>263</value>
+    <value>264</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -328,7 +328,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACAiLsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADgiLsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -350,7 +350,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwr87J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwsI7J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -792,17 +792,17 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Map &amp;Quality</value>
   </data>
-  <data name="showPopupsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="showPopupsMenu.Text" xml:space="preserve">
-    <value>Show &amp;Popup Information</value>
-  </data>
   <data name="showPrintAreaMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Show P&amp;rint Area</value>
+  </data>
+  <data name="showPopupsMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Show &amp;Popup Information</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 6</value>
@@ -1658,12 +1658,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVDhPvZIrT8NwFMVPJkgQs5AJ5OS+A5mpQWAWgsUg
-        MDMTqOFwCLAEg+NTLMEiSFin5nDM7ZU9W353u6QdNGMhYSc5ae/79dfWESkKZpqduvg3xIorMJ5rfk/C
-        XVcn6KtfwHhHpQZ8m2oafudEk3dLYjR5rHHJw6WOOvm0w6ak6IOnkKh8YUqyt/mv8j2GZXiYJkFX5tdV
-        d4DfmYcvgfHRjBguXZUJfCr4vLKPoqsSkOSGSiEOazc/1PCgqeaOi/+Muuo52t13MRPYz61zJrh1VQI7
-        MyM92+yuygTB17ZD+OSqJcgcjDT6MKNd4esiadLBEUVO+A/ND7nm4Yv2ai21Is++Ea1gT709T7EyxsLB
-        Hp5VyyJ+L/YkKPzzzLZQm9U7WruTX0G1AJZd3BakT9e6Nr7eJP43AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVDhPvZItT0JhGIbvGdwMVp3BSPQ/OMopBgpzVgrB
+        YiGYsNkMWp2F5q9wsxrc5G00mjRAxuc5Xg887Bz1DJmb3Nu9c57vr1cbR6w4mmp65uLfkCgpw2Sm2T0J
+        d1ydoq/+AcY7Kj3Bt4km4TvHGrctidHkkUZHHi511NnNOqxLij54ConK56Yke4v/C74lWITHWRJ0ZX5d
+        dT/wq3j4AhgbZsRw6apc4FPG55V9FFyVgiQ3VAo4rNz8QIPDpprbLv4z6qpv0e6+i7nAXrXOmeDWVSns
+        zIz0bLO7KhcEX9sO4aOrFiBzNNTw3Yx2heVFsqSDE4qc8h/MD7nm4fP2akEh9uxr0Qr21NvzFF/GmDvY
+        w7NqecTvxZ4EhX+e2RZqs3pHK3fyK6gWwaKLm4L0CdOiNrrC9O+aAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2500,6 +2500,12 @@
     <value>showPopupsMenu</value>
   </data>
   <data name="&gt;&gt;showPopupsMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;showPrintAreaMenu.Name" xml:space="preserve">
+    <value>showPrintAreaMenu</value>
+  </data>
+  <data name="&gt;&gt;showPrintAreaMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator7.Name" xml:space="preserve">
@@ -3341,12 +3347,6 @@
   </data>
   <data name="&gt;&gt;saveGpxFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;showPrintAreaMenu.Name" xml:space="preserve">
-    <value>showPrintAreaMenu</value>
-  </data>
-  <data name="&gt;&gt;showPrintAreaMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainFrame</value>

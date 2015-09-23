@@ -128,6 +128,7 @@ namespace PurplePen
             this.normalQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.highQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -270,7 +271,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.showPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -630,8 +630,8 @@ namespace PurplePen
             this.allControlsToolStripMenuItem,
             this.mapIntensityMenu,
             this.mapQualityMenu,
-            this.showPopupsMenu,
             this.showPrintAreaMenu,
+            this.showPopupsMenu,
             this.toolStripSeparator7,
             this.allControlsMenu});
             this.viewMenu.Name = "viewMenu";
@@ -787,6 +787,12 @@ namespace PurplePen
             this.showPopupsMenu.Name = "showPopupsMenu";
             resources.ApplyResources(this.showPopupsMenu, "showPopupsMenu");
             this.showPopupsMenu.Click += new System.EventHandler(this.showPopupsMenu_Click);
+            // 
+            // showPrintAreaMenu
+            // 
+            this.showPrintAreaMenu.Name = "showPrintAreaMenu";
+            resources.ApplyResources(this.showPrintAreaMenu, "showPrintAreaMenu");
+            this.showPrintAreaMenu.Click += new System.EventHandler(this.showPrintAreaMenu_Click);
             // 
             // toolStripSeparator7
             // 
@@ -1759,12 +1765,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // showPrintAreaMenu
-            // 
-            this.showPrintAreaMenu.Name = "showPrintAreaMenu";
-            resources.ApplyResources(this.showPrintAreaMenu, "showPrintAreaMenu");
-            this.showPrintAreaMenu.Click += new System.EventHandler(this.showPrintAreaMenu_Click);
             // 
             // MainFrame
             // 
