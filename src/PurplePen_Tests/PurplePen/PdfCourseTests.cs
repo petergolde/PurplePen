@@ -93,12 +93,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(6), Id<Course>.None };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(100, 25, 50, 120);
 
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
             Assert.IsTrue(success);
@@ -141,12 +139,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(6), Id<Course>.None };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCoursePart;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(100, 25, 50, 120);
 
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
             Assert.IsTrue(success);
@@ -193,12 +189,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(6), Id<Course>.None };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(100, 25, 50, 120);
 
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\mapexchange1.ppen"), true);
             Assert.IsTrue(success);
@@ -233,12 +227,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = false;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = false;
@@ -255,12 +247,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create2");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.RGB;
             settings.CropLargePrintArea = false;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.controlCircleSize = 0.75F;  //smaller circles
@@ -291,11 +281,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create4");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.RGB;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(100, 25, 50, 120);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
@@ -314,11 +302,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create6");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             Directory.CreateDirectory(settings.outputDirectory);
 
@@ -335,11 +321,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create5");
             settings.CourseIds = new Id<Course>[1] { CourseId(1) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
@@ -357,11 +341,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create8");
             settings.CourseIds = new Id<Course>[1] { CourseId(1) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.RGB;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
@@ -379,11 +361,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create6");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
@@ -408,11 +388,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create7");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
@@ -436,11 +414,9 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create8");
             settings.CourseIds = new Id<Course>[1] { CourseId(1) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = true;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
-            settings.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Template.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("pdfcourse\\pdf_create8\\Course 1.pdf") },
@@ -456,12 +432,10 @@ namespace PurplePen.Tests
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_overprint");
             settings.CourseIds = new Id<Course>[] { CourseId(1) };
-            settings.PaperSize = new System.Drawing.Printing.PaperSize("Letter", 850, 1100);
             settings.ColorModel = ColorModel.CMYK;
             settings.CropLargePrintArea = false;
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
             settings.PrintMapExchangesOnOneMap = false;
-            settings.Margins = new System.Drawing.Printing.Margins(15, 15, 15, 15);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;

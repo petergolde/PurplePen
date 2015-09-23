@@ -65,8 +65,6 @@ namespace PurplePen
             this.printerGroup = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.printerChange = new System.Windows.Forms.Button();
-            this.paperSize = new System.Windows.Forms.Label();
-            this.paperSizeLabel = new System.Windows.Forms.Label();
             this.printerName = new System.Windows.Forms.Label();
             this.printerLabel = new System.Windows.Forms.Label();
             this.previewButton = new System.Windows.Forms.Button();
@@ -116,8 +114,6 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.printerChange, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.paperSize, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.paperSizeLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.printerName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.printerLabel, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -126,19 +122,8 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.printerChange, "printerChange");
             this.printerChange.Name = "printerChange";
-            this.tableLayoutPanel1.SetRowSpan(this.printerChange, 2);
             this.printerChange.UseVisualStyleBackColor = true;
             this.printerChange.Click += new System.EventHandler(this.printerChange_Click);
-            // 
-            // paperSize
-            // 
-            resources.ApplyResources(this.paperSize, "paperSize");
-            this.paperSize.Name = "paperSize";
-            // 
-            // paperSizeLabel
-            // 
-            resources.ApplyResources(this.paperSizeLabel, "paperSizeLabel");
-            this.paperSizeLabel.Name = "paperSizeLabel";
             // 
             // printerName
             // 
@@ -328,8 +313,6 @@ namespace PurplePen
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button printerChange;
-        private System.Windows.Forms.Label paperSize;
-        private System.Windows.Forms.Label paperSizeLabel;
         private System.Windows.Forms.Label printerName;
         private System.Windows.Forms.Label printerLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

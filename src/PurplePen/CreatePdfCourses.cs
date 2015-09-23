@@ -72,12 +72,6 @@ namespace PurplePen
             checkBoxMergeParts.Visible = enableMultipart;
         }
 
-        public bool EnableChangeMargins
-        {
-            get { return marginChange.Enabled; }
-            set { marginChange.Enabled = value; }
-        }
-
         public bool EnableChangeCropping
         {
             get { return comboBoxMultiPage.Enabled; }
@@ -92,10 +86,6 @@ namespace PurplePen
                 courseSelector.SelectedCourses = settings.CourseIds;
             if (settings.AllCourses)
                 courseSelector.AllCoursesSelected = true;
-
-            // Output section.
-            paperSize.Text = Util.GetPaperSizeText(settings.PaperSize);
-            marginsLabel.Text = Util.GetMarginsText(settings.Margins);
 
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.ColorModel - 1;
@@ -157,13 +147,9 @@ namespace PurplePen
 
             PrinterMargins printerMarginsDialog = new PrinterMargins();
             printerMarginsDialog.EnableOrientation = false;
-            printerMarginsDialog.PaperSize = settings.PaperSize;
-            printerMarginsDialog.Margins = settings.Margins;
 
             DialogResult result = printerMarginsDialog.ShowDialog(this);
             if (result == DialogResult.OK) {
-                settings.PaperSize = printerMarginsDialog.PaperSize;
-                settings.Margins = printerMarginsDialog.Margins;
                 UpdateDialog();
             }
         }

@@ -581,7 +581,7 @@
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
-    <print-area automatic="false" restrict-to-page-size="false" left="-30.0698414" top="87.54993" right="234.04985" bottom="-113.3923" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <print-area automatic="false" restrict-to-page-size="false" left="-30.0698414" top="87.54993" right="234.04985" bottom="-113.3923" page-width="850" page-height="1100" page-margins="20" page-landscape="false" />
     <options print-scale="7500" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">

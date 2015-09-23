@@ -85,17 +85,13 @@ namespace PurplePen
         private CourseAppearance appearance;
         private bool cropLargePrintArea;
 
-        private RectangleF portraitPrintableArea, landscapePrintableArea;
-
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePageLayout(EventDB eventDB, SymbolDB symbolDB, Controller controller,  
-                                CourseAppearance appearance, bool cropLargePrintArea, RectangleF portraitPrintableArea, RectangleF landscapePrintableArea)
+                                CourseAppearance appearance, bool cropLargePrintArea)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
             this.controller = controller;
-            this.portraitPrintableArea = portraitPrintableArea;
-            this.landscapePrintableArea = landscapePrintableArea;
             this.appearance = appearance;
             this.cropLargePrintArea = cropLargePrintArea;
         }
@@ -121,6 +117,16 @@ namespace PurplePen
             return LayoutCourse(courseDesignator);
         }
 
+        // Return the printable page area in 1/100 of an inch, given the page size, margins, and landscape.
+        RectangleF GetPrintablePageArea(bool landscape, PaperSize paperSize, int margins)
+        {
+            if (landscape) {
+                return new RectangleF(margins, margins, paperSize.Height - (2 * margins), paperSize.Width - (2 * margins));
+            }
+            else {
+                return new RectangleF(margins, margins, paperSize.Width - (2 * margins), paperSize.Height - (2 * margins));
+            }
+        }
 
         // Layout a course onto one or more pages.
         List<CoursePage> LayoutCourse(CourseDesignator courseDesignator)
@@ -132,10 +138,11 @@ namespace PurplePen
             bool landscape;
             PaperSize paperSize;
             string description;
-            RectangleF mapArea = GetPrintAreaForCourse(courseDesignator, out landscape, out paperSize, out scaleRatio, out description);
+            int margins;
+            RectangleF mapArea = GetPrintAreaForCourse(courseDesignator, out landscape, out paperSize, out margins, out scaleRatio, out description);
 
-            // Get the available page size on the page. 
-            RectangleF printableArea = landscape ? landscapePrintableArea : portraitPrintableArea;
+            // Get the available page size on the page.
+            RectangleF printableArea = GetPrintablePageArea(landscape, paperSize, margins);
             SizeF pageSizeAvailable = printableArea.Size;
 
             // Layout both page dimensions, iterate through them to get all the pages we have.
@@ -205,7 +212,7 @@ namespace PurplePen
         // Get the area of the map we want to print, in map coordinates, and the print scale.
         // if the courseId is None, do all controls.
         // If asked for, crop to a single page size.
-        RectangleF GetPrintAreaForCourse(CourseDesignator courseDesignator, out bool landscape, out PaperSize paperSize, out float scaleRatio, out string description)
+        RectangleF GetPrintAreaForCourse(CourseDesignator courseDesignator, out bool landscape, out PaperSize paperSize, out int margins, out float scaleRatio, out string description)
         {
             // Get the course view to get the scale ratio.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
@@ -216,6 +223,7 @@ namespace PurplePen
             PrintArea printArea = controller.GetCurrentPrintArea(courseDesignator);
             landscape = printArea.pageLandscape;
             paperSize = new PaperSize("", printArea.pageWidth, printArea.pageHeight);
+            margins = printArea.pageMargins;
 
             if (cropLargePrintArea) {
                 // Crop the print area to a single page, portrait or landscape.
@@ -227,7 +235,8 @@ namespace PurplePen
 
                 // We may need to crop the print area to fit. 
                 float areaCovered;
-                RectangleF croppedRectangle = CropPrintArea(printRectangle, courseObjectsArea, GetScaledPrintableSizeInMapUnits(landscape ? landscapePrintableArea : portraitPrintableArea, scaleRatio), out areaCovered);
+                RectangleF printableArea = GetPrintablePageArea(landscape, paperSize, margins);
+                RectangleF croppedRectangle = CropPrintArea(printRectangle, courseObjectsArea, GetScaledPrintableSizeInMapUnits(printableArea, scaleRatio), out areaCovered);
 
                 return croppedRectangle;
             }

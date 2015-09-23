@@ -2008,8 +2008,6 @@ namespace PurplePen
                 // If the map file is a PDF, then created PDF must use that paper size, zero margins, and crop courses to that size.
                 settings.CropLargePrintArea = true;
                 RectangleF bounds = controller.MapDisplay.MapBounds;
-                settings.PaperSize = new PaperSize(MiscText.PdfMapSize, (int)Math.Round(Geometry.HundredthsInchesFromMm(bounds.Width)), (int)Math.Round(Geometry.HundredthsInchesFromMm(bounds.Height)));
-                settings.Margins = new Margins(0, 0, 0, 0);
             }
 
             // Initialize dialog
@@ -2017,7 +2015,6 @@ namespace PurplePen
             createPdfDialog.controller = controller;
             createPdfDialog.PdfSettings = settings;
             if (isPdfMap) {
-                createPdfDialog.EnableChangeMargins = false;
                 createPdfDialog.EnableChangeCropping = false;
             }
 

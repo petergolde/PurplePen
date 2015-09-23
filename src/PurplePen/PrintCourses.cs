@@ -90,7 +90,6 @@ namespace PurplePen
 
             // Output section.
             printerName.Text = printerSettings.PrinterName;
-            paperSize.Text = printerSettings.IsValid ? Util.GetPaperSizeText(pageSettings.PaperSize) : "";
 
             copiesUpDown.Value = settings.Count;
             checkBoxPausePrinting.Checked = settings.PauseAfterCourseOrPart;

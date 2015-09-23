@@ -26,7 +26,7 @@ Setup structure:
   TempOffset=(0.00,0.00), TemplateFileName=
   TemplateEnabled=0, TempResol=0, rTempAng=0
   Res1=(0.00,0.00), Res2=0
-  PrLowerLeft=(-27.41,-68.83), PrUpperRight=(168.17,82.30)
+  PrLowerLeft=(-28.34,-70.05), PrUpperRight=(167.24,81.08)
   PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
   PrintScale=7000, PrIntensity=0, prLineWidth=0, PrReserved=0
   PrStdFonts=0, PrReserved2=0, PrReserved3=0

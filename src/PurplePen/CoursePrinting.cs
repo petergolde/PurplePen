@@ -61,8 +61,6 @@ namespace PurplePen
         private MapDisplay mapDisplay;
         private CourseAppearance appearance;
 
-        private RectangleF portraitPrintableArea, landscapePrintableArea;
-
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
             : base(QueryEvent.GetEventTitle(eventDB, " "), controller, coursePrintSettings.PageSettings, coursePrintSettings.PrintingColorModel)
@@ -91,26 +89,13 @@ namespace PurplePen
             return printableArea;
         }
 
-        // Get the printable area and store them.
-        void StorePrintableAreas(PageSettings pageSettings)
-        {
-            bool saveLandscape = pageSettings.Landscape;
-            pageSettings.Landscape = false;
-            portraitPrintableArea = GetPrintableArea(pageSettings);
-            pageSettings.Landscape = true;
-            landscapePrintableArea = GetPrintableArea(pageSettings);
-            pageSettings.Landscape = saveLandscape;
-        }
-
         // Layout all the pages, return the total number of pages.
         protected override int LayoutPages(PageSettings pageSettings, SizeF printArea)
         {
-            StorePrintableAreas(pageSettings);
-
             pageSettings.PrinterSettings.Copies = (short)coursePrintSettings.Count;
             pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
 
-            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePrintSettings.CropLargePrintArea, portraitPrintableArea, landscapePrintableArea);
+            CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePrintSettings.CropLargePrintArea);
             IEnumerable<CourseDesignator> courseDesignators = QueryEvent.EnumerateCourseDesignators(eventDB, coursePrintSettings.CourseIds, !coursePrintSettings.PrintMapExchangesOnOneMap);
             pages = pageLayout.LayoutPages(courseDesignators);
 

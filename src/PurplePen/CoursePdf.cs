@@ -68,8 +68,6 @@ namespace PurplePen
         private PdfPage pdfMapPage;
         private int totalPages, currentPage;
 
-        private RectangleF portraitPrintableArea, landscapePrintableArea;
-
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
         public CoursePdf(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, 
                          CoursePdfSettings coursePdfSettings, CourseAppearance appearance)
@@ -94,31 +92,12 @@ namespace PurplePen
                 sourcePdfMapFileName = mapDisplay.FileName;
                 mapDisplay.SetMapFile(MapType.None, null);
             }
-
-            StorePrintableAreas();
         }
 
         // Is the map a PDF map?
         private bool IsPdfMap
         {
             get { return sourcePdfMapFileName != null; }
-        }
-
-        // Get the printable area and store them.
-        void StorePrintableAreas()
-        {
-            if (IsPdfMap) {
-                portraitPrintableArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Width), Geometry.HundredthsInchesFromMm(mapBounds.Height));
-                landscapePrintableArea = new RectangleF(0, 0, portraitPrintableArea.Height, portraitPrintableArea.Width);
-            }
-            else {
-                int height = coursePdfSettings.PaperSize.Height;
-                int width = coursePdfSettings.PaperSize.Width;
-                Margins margins = coursePdfSettings.Margins;
-
-                portraitPrintableArea = new RectangleF(margins.Left, margins.Top, width - margins.Left - margins.Right, height - margins.Top - margins.Bottom);
-                landscapePrintableArea = new RectangleF(margins.Top, margins.Right, height - margins.Top - margins.Bottom, width - margins.Left - margins.Right);
-            }
         }
 
         public List<string> OverwrittenFiles()
@@ -222,11 +201,12 @@ namespace PurplePen
             List<CoursePage> pages = LayoutPages(courseDesignators);
             PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(fileName), coursePdfSettings.ColorModel == ColorModel.CMYK);
 
-            SizeF sizePortrait = new SizeF(coursePdfSettings.PaperSize.Width / 100F, coursePdfSettings.PaperSize.Height / 100F);
-            SizeF sizeLandscape = new SizeF(sizePortrait.Height, sizePortrait.Width);
-
             foreach (CoursePage page in pages) {
                 CoursePage pageToDraw = page;
+
+                SizeF paperSize = new SizeF(pageToDraw.paperSize.Width / 100F, pageToDraw.paperSize.Height / 100F);
+                if (pageToDraw.landscape)
+                    paperSize = new SizeF(paperSize.Height, paperSize.Width);
 
                 if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double)currentPage / (double)totalPages))
                     throw new Exception(MiscText.CancelledByUser);
@@ -242,17 +222,22 @@ namespace PurplePen
                     }
                     else {
                         using (XForm xForm = pdfImporter.GetXForm(0)) {
-                            RectangleF printableArea = page.landscape ? landscapePrintableArea : portraitPrintableArea;
+                            RectangleF pageArea;
+                            if (page.landscape)
+                                pageArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Height), Geometry.HundredthsInchesFromMm(mapBounds.Width));
+                            else
+                                pageArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Width), Geometry.HundredthsInchesFromMm(mapBounds.Height));
+
                             Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
-                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, printableArea);
-                            Matrix mapToPortraitPage = Geometry.CreateInvertedRectangleTransform(mapBounds, new RectangleF(new PointF(0, 0), sizePortrait));
+                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, pageArea);
+                            Matrix mapToPortraitPage = Geometry.CreateInvertedRectangleTransform(mapBounds, new RectangleF(0, 0, page.paperSize.Width / 100F, page.paperSize.Height / 100F));
                             RectangleF sourcePartialRectInInches = Geometry.TransformRectangle(mapToPortraitPage, printedPortionInMapCoords);
-                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, page.landscape ? sizeLandscape : sizePortrait, sourcePartialRectInInches);
+                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, paperSize, sourcePartialRectInInches);
                         }
                     }
                 }
                 else {
-                    grTarget = pdfWriter.BeginPage(page.landscape ? sizeLandscape : sizePortrait);
+                    grTarget = pdfWriter.BeginPage(paperSize);
                 }
 
                 DrawPage(grTarget, pageToDraw);
@@ -269,29 +254,21 @@ namespace PurplePen
         List<CoursePage> LayoutPages(IEnumerable<CourseDesignator> courseDesignators)
         {
             CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance,
-                                                                coursePdfSettings.CropLargePrintArea,
-                                                                portraitPrintableArea, landscapePrintableArea);
+                                                                coursePdfSettings.CropLargePrintArea);
 
             return pageLayout.LayoutPages(courseDesignators);
         }
 
-        private List<CoursePage> LayoutPdfMapPages(IEnumerable<CourseDesignator> courseDesignators)
-        {
-            List<CoursePage> list = new List<CoursePage>();
-            foreach (CourseDesignator designator in courseDesignators) {
-                list.Add(PdfNonScaledPage(designator));
-            }
-            return list;
-        }
-
         private CoursePage PdfNonScaledPage(CourseDesignator designator)
         {
+            RectangleF pageArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Width), Geometry.HundredthsInchesFromMm(mapBounds.Height));
             return new CoursePage() {
-                        courseDesignator = designator,
-                        landscape = false,
-                        mapRectangle = mapBounds,
-                        printRectangle = portraitPrintableArea
-                    };
+                courseDesignator = designator,
+                landscape = false,
+                mapRectangle = mapBounds,
+                printRectangle = pageArea,
+                paperSize = new PaperSize("", (int) Math.Round(pageArea.Width), (int) Math.Round(pageArea.Height))
+            };
         }
 
         // The core printing routine. 
@@ -348,9 +325,6 @@ namespace PurplePen
     // All the information needed to print courses.
     class CoursePdfSettings
     {
-        public PaperSize PaperSize;
-        public Margins Margins = new Margins(0, 0, 0, 0);
-
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
 
@@ -364,16 +338,6 @@ namespace PurplePen
         public string filePrefix;                    // if non-null, non-empty, prefix this an "-" onto the front of files.
 
         public enum PdfFileCreation { SingleFile, FilePerCourse, FilePerCoursePart };
-
-        public CoursePdfSettings()
-        {
-            if (RegionInfo.CurrentRegion.IsMetric) {
-                PaperSize = new PaperSize("A4", 827, 1169);
-            }
-            else {
-                PaperSize = new PaperSize("Letter", 850, 1100);
-            }
-        }
 
         public CoursePdfSettings Clone()
         {

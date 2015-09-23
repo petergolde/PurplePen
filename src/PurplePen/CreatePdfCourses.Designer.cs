@@ -62,13 +62,6 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePdfCourses));
-            this.printerGroup = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.marginChange = new System.Windows.Forms.Button();
-            this.paperSizeLabel = new System.Windows.Forms.Label();
-            this.paperSize = new System.Windows.Forms.Label();
-            this.marginsLabel = new System.Windows.Forms.Label();
             this.coursesGroupBox = new System.Windows.Forms.GroupBox();
             this.courseSelector = new PurplePen.CourseSelector();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
@@ -91,8 +84,6 @@ namespace PurplePen
             this.filesLabel = new System.Windows.Forms.Label();
             this.comboBoxFileFormat = new System.Windows.Forms.ComboBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.printerGroup.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -109,51 +100,6 @@ namespace PurplePen
             // cancelButton
             // 
             resources.ApplyResources(this.cancelButton, "cancelButton");
-            // 
-            // printerGroup
-            // 
-            this.printerGroup.Controls.Add(this.tableLayoutPanel1);
-            resources.ApplyResources(this.printerGroup, "printerGroup");
-            this.printerGroup.Name = "printerGroup";
-            this.printerGroup.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.marginChange, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.paperSizeLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.paperSize, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.marginsLabel, 1, 1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // marginChange
-            // 
-            resources.ApplyResources(this.marginChange, "marginChange");
-            this.marginChange.Name = "marginChange";
-            this.tableLayoutPanel1.SetRowSpan(this.marginChange, 2);
-            this.marginChange.UseVisualStyleBackColor = true;
-            this.marginChange.Click += new System.EventHandler(this.marginChange_Click);
-            // 
-            // paperSizeLabel
-            // 
-            resources.ApplyResources(this.paperSizeLabel, "paperSizeLabel");
-            this.paperSizeLabel.Name = "paperSizeLabel";
-            // 
-            // paperSize
-            // 
-            resources.ApplyResources(this.paperSize, "paperSize");
-            this.paperSize.Name = "paperSize";
-            // 
-            // marginsLabel
-            // 
-            resources.ApplyResources(this.marginsLabel, "marginsLabel");
-            this.marginsLabel.Name = "marginsLabel";
             // 
             // coursesGroupBox
             // 
@@ -321,19 +267,14 @@ namespace PurplePen
             this.Controls.Add(this.folderGroupBox);
             this.Controls.Add(this.groupBoxAppearance);
             this.Controls.Add(this.coursesGroupBox);
-            this.Controls.Add(this.printerGroup);
             this.HelpTopic = "FileCreatePdfFiles.htm";
             this.Name = "CreatePdfCourses";
-            this.Controls.SetChildIndex(this.printerGroup, 0);
             this.Controls.SetChildIndex(this.coursesGroupBox, 0);
             this.Controls.SetChildIndex(this.groupBoxAppearance, 0);
             this.Controls.SetChildIndex(this.folderGroupBox, 0);
             this.Controls.SetChildIndex(this.outputGroupBox, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
-            this.printerGroup.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.coursesGroupBox.ResumeLayout(false);
             this.groupBoxAppearance.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -348,13 +289,8 @@ namespace PurplePen
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox printerGroup;
         private System.Windows.Forms.GroupBox coursesGroupBox;
         private CourseSelector courseSelector;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button marginChange;
-        private System.Windows.Forms.Label paperSize;
         private System.Windows.Forms.GroupBox groupBoxAppearance;
         private System.Windows.Forms.Label labelAppearanceInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
@@ -362,9 +298,6 @@ namespace PurplePen
         private System.Windows.Forms.Label labelColorModel;
         private System.Windows.Forms.ComboBox comboBoxMultiPage;
         private System.Windows.Forms.CheckBox checkBoxMergeParts;
-        private System.Windows.Forms.Label paperSizeLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label marginsLabel;
         private System.Windows.Forms.GroupBox folderGroupBox;
         private System.Windows.Forms.TextBox otherDirectoryTextBox;
         private System.Windows.Forms.Button selectOtherDirectoryButton;
