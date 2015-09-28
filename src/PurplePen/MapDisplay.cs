@@ -613,6 +613,7 @@ namespace PurplePen
 
             if (printArea.HasValue && !printArea.Value.Contains(visRect)) {
                 object printAreaOutline = new object();
+
                 grTargetCourses.CreateSolidBrush(printAreaOutline, CmykColor.FromCmyka(0, 0, 0, 1, 0.12F));
                 if (printArea.Value.Top > visRect.Top) {
                     RectangleF draw = RectangleF.FromLTRB(visRect.Left, visRect.Top, visRect.Right, printArea.Value.Top);

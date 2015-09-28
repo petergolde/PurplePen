@@ -328,6 +328,20 @@ Settings to access printer 'foobar' are not valid.'
         }
 
         [TestMethod]
+        public void PrintAreasAndPageSizes()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lincoln Park PrintAreas 2.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
+            CoursePrintingTest("courseprinting\\areas", coursePrintSettings, new CourseAppearance());
+        }
+
+
+
+        [TestMethod]
         public void AdjustDpi()
         {
             float result;

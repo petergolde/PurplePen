@@ -445,6 +445,34 @@ namespace PurplePen.Tests
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create_overprint\\Overprint test_expected.png") });
         }
 
+        [TestMethod]
+        public void PdfPrintAreasAndPageSizes()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_area");
+            settings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park PrintAreas 2.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("controller\\pdf_area\\All controls.pdf"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Short.pdf"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Long.pdf"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Landscape.pdf"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\LandscapeLetter.pdf")},
+                new string[] { TestUtil.GetTestFile("controller\\pdf_area\\All controls_expected.png"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Short_expected.png"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Long_expected.png"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\Landscape_expected.png"),
+                               TestUtil.GetTestFile("controller\\pdf_area\\LandscapeLetter_expected.png")});
+        }
+
 
     }
 }

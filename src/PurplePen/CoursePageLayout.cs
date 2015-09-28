@@ -174,8 +174,8 @@ namespace PurplePen
             // Figure out the length this map part will need on the page, in 1/100 of an inch, given the scale ratio.
             float pageLengthNeeded = mapLength / mmPerPageUnit;
 
-            // If it fits in the printable area, just center it and a single page suffices.
-            if (pageLengthNeeded <= printableAreaLength) {
+            // If it fits in the printable area, just center it and a single page suffices. 1/1000 of an inch slop allowed for roundoff issues.
+            if (pageLengthNeeded <= printableAreaLength + 0.1F) {
                 float borderAmount = (printableAreaLength - pageLengthNeeded) / 2F;
                 yield return new DimensionLayout(mapStart, mapLength, printableAreaStart + borderAmount, pageLengthNeeded);
             }
