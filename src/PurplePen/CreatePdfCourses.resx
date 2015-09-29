@@ -274,7 +274,7 @@
     <value>CMYK</value>
   </data>
   <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 7</value>
+    <value>85, 8</value>
   </data>
   <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 23</value>
@@ -682,7 +682,7 @@
     <value>One per course part</value>
   </data>
   <data name="comboBoxFileFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 33</value>
+    <value>83, 34</value>
   </data>
   <data name="comboBoxFileFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 23</value>

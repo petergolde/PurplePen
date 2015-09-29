@@ -46,6 +46,8 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using System.Globalization;
+    using System.Threading;
     using PurplePen.MapModel;
 
     [TestClass]
@@ -726,6 +728,161 @@ namespace PurplePen.Tests
 
 
         }
+
+        [TestMethod]
+        public void MigratePrintArea()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("eventdb\\Lk Samm print area.ppen"));
+            eventDB.Validate();
+
+            PrintArea result;
+
+            result = eventDB.GetEvent().printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+
+
+            result = eventDB.GetCourse(CourseId(1)).printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+
+            result = eventDB.GetCourse(CourseId(2)).printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(0, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+
+            result = eventDB.GetCourse(CourseId(3)).printArea;
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.IsFalse(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsFalse(result.pageLandscape);
+            Assert.AreEqual(-71.2542343F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(72.57579F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(50.98423F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-79.690155F, result.printAreaRectangle.Top, 0.001F);
+
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4, 0));
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4, 1));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.IsFalse(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-77.77993F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(41.0349922F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(63.4918137F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-57.73753F, result.printAreaRectangle.Top, 0.001F);
+        }
+
+        [TestMethod]
+        public void MigratePrintAreaMetric()
+        {
+            CultureInfo currentCulture;
+
+            currentCulture = Thread.CurrentThread.CurrentCulture;
+            try {
+                CultureInfo.CurrentCulture.ClearCachedData();
+                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
+
+                Assert.IsTrue(RegionInfo.CurrentRegion.IsMetric);
+
+                UndoMgr undomgr = new UndoMgr(5);
+                EventDB eventDB = new EventDB(undomgr);
+
+                eventDB.Load(TestUtil.GetTestFile("eventdb\\Lk Samm print area.ppen"));
+                eventDB.Validate();
+
+                PrintArea result;
+
+                result = eventDB.GetEvent().printArea;
+                Assert.IsTrue(result.autoPrintArea);
+                Assert.IsTrue(result.restrictToPageSize);
+                Assert.AreEqual(827, result.pageWidth);
+                Assert.AreEqual(1169, result.pageHeight);
+                Assert.AreEqual(28, result.pageMargins);
+                Assert.IsTrue(result.pageLandscape);
+
+                result = eventDB.GetCourse(CourseId(1)).printArea;
+                Assert.IsTrue(result.autoPrintArea);
+                Assert.IsTrue(result.restrictToPageSize);
+                Assert.AreEqual(827, result.pageWidth);
+                Assert.AreEqual(1169, result.pageHeight);
+                Assert.AreEqual(28, result.pageMargins);
+                Assert.IsTrue(result.pageLandscape);
+
+                result = eventDB.GetCourse(CourseId(2)).printArea;
+                Assert.IsTrue(result.autoPrintArea);
+                Assert.IsTrue(result.restrictToPageSize);
+                Assert.AreEqual(1169, result.pageWidth);
+                Assert.AreEqual(1654, result.pageHeight);
+                Assert.AreEqual(0, result.pageMargins);
+                Assert.IsTrue(result.pageLandscape);
+
+                result = eventDB.GetCourse(CourseId(3)).printArea;
+                Assert.IsFalse(result.autoPrintArea);
+                Assert.IsFalse(result.restrictToPageSize);
+                Assert.AreEqual(583, result.pageWidth);
+                Assert.AreEqual(827, result.pageHeight);
+                Assert.AreEqual(28, result.pageMargins);
+                Assert.IsFalse(result.pageLandscape);
+                Assert.AreEqual(-71.2542343F, result.printAreaRectangle.Left, 0.001F);
+                Assert.AreEqual(72.57579F, result.printAreaRectangle.Bottom, 0.001F);
+                Assert.AreEqual(50.98423F, result.printAreaRectangle.Right, 0.001F);
+                Assert.AreEqual(-79.690155F, result.printAreaRectangle.Top, 0.001F);
+
+                result = QueryEvent.GetPrintArea(eventDB, Designator(4, 0));
+                Assert.IsTrue(result.autoPrintArea);
+                Assert.IsTrue(result.restrictToPageSize);
+                Assert.AreEqual(827, result.pageWidth);
+                Assert.AreEqual(1169, result.pageHeight);
+                Assert.AreEqual(28, result.pageMargins);
+                Assert.IsTrue(result.pageLandscape);
+
+                result = QueryEvent.GetPrintArea(eventDB, Designator(4, 1));
+                Assert.IsFalse(result.autoPrintArea);
+                Assert.IsFalse(result.restrictToPageSize);
+                Assert.AreEqual(413, result.pageWidth);
+                Assert.AreEqual(583, result.pageHeight);
+                Assert.AreEqual(0, result.pageMargins);
+                Assert.IsTrue(result.pageLandscape);
+                Assert.AreEqual(-77.77993F, result.printAreaRectangle.Left, 0.001F);
+                Assert.AreEqual(41.0349922F, result.printAreaRectangle.Bottom, 0.001F);
+                Assert.AreEqual(63.4918137F, result.printAreaRectangle.Right, 0.001F);
+                Assert.AreEqual(-57.73753F, result.printAreaRectangle.Top, 0.001F);
+
+
+            }
+            finally {
+                CultureInfo.CurrentCulture.ClearCachedData();
+                Thread.CurrentThread.CurrentCulture = currentCulture;
+            }
+        }
+
+
     }
 }
 

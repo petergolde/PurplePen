@@ -169,6 +169,7 @@ namespace PurplePen.Tests
 
             }
             finally {
+                CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = currentCulture;
             }
         }

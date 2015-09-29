@@ -1,0 +1,87 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Lk Samm print area</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">..\Lake Sammamish.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+  </event>
+  <control id="1" kind="start">
+    <location x="-36.0374" y="13.6156473" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="8.039583" y="6.17407846" />
+  </control>
+  <control id="3" kind="map-exchange">
+    <location x="22.92272" y="-1.26749015" />
+  </control>
+  <control id="4" kind="normal">
+    <code>32</code>
+    <location x="10.9016953" y="-18.1541348" />
+  </control>
+  <control id="5" kind="normal">
+    <code>33</code>
+    <location x="-26.8785782" y="-17.581707" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="-30.3131466" y="2.16707277" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Default Area</name>
+    <labels label-kind="sequence" />
+    <first course-control="2" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Default area 1:10</name>
+    <labels label-kind="sequence" />
+    <first course-control="3" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>Specific area</name>
+    <labels label-kind="sequence" />
+    <first course-control="4" />
+    <print-area left="-71.2542343" top="72.57579" right="50.98423" bottom="-79.690155" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="4" kind="normal" order="4">
+    <name>Map exchg</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area part="1" left="-77.77993" top="41.0349922" right="63.4918137" bottom="-57.73753" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="2" control="1">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="3" control="1">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="4" control="1">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="5" control="2">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="3" map-exchange="true">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="7" control="4">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="5">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="6" />
+  <course-control id="10" control="6" />
+  <course-control id="11" control="6" />
+  <course-control id="12" control="6" />
+</course-scribe-event>
