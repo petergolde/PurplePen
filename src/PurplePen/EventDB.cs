@@ -2086,7 +2086,7 @@ namespace PurplePen
     {
         public bool autoPrintArea;  // automatically set print area, printAreaRectangle should be ignored.
         public bool restrictToPageSize; // Don't allow print area size to change from the print size, but position can change.
-        public RectangleF printAreaRectangle;
+        public RectangleF printAreaRectangle; // if autoPrintArea==true, shows the automatic area last calculated so it can be saved for backward compatibility.
         public int pageWidth;  // page width in 1/100th of inch
         public int pageHeight; // page height in 1/100th of inch
         public int pageMargins; // page margins in 1/100th of inch
@@ -2132,13 +2132,13 @@ namespace PurplePen
 
             xmloutput.WriteAttributeString("automatic", XmlConvert.ToString(autoPrintArea));
             xmloutput.WriteAttributeString("restrict-to-page-size", XmlConvert.ToString(restrictToPageSize));
-            if (!autoPrintArea)
-            {
-                xmloutput.WriteAttributeString("left", XmlConvert.ToString(printAreaRectangle.Left));
-                xmloutput.WriteAttributeString("top", XmlConvert.ToString(printAreaRectangle.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
-                xmloutput.WriteAttributeString("right", XmlConvert.ToString(printAreaRectangle.Right));
-                xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printAreaRectangle.Top));   // rectangle is reversed, so top is really the bottom and vice versa
-            }
+
+            // Always save the print area rectangle for backward compatibility.
+            // This should be set to the rectangle equivalent even when automatic is set.
+            xmloutput.WriteAttributeString("left", XmlConvert.ToString(printAreaRectangle.Left));
+            xmloutput.WriteAttributeString("top", XmlConvert.ToString(printAreaRectangle.Bottom));  // rectangle is reversed, so top is really the bottom and vice versa
+            xmloutput.WriteAttributeString("right", XmlConvert.ToString(printAreaRectangle.Right));
+            xmloutput.WriteAttributeString("bottom", XmlConvert.ToString(printAreaRectangle.Top));   // rectangle is reversed, so top is really the bottom and vice versa
 
             if (pageWidth > 0 && pageHeight > 0) {
                 xmloutput.WriteAttributeString("page-width", XmlConvert.ToString(pageWidth));
@@ -2159,7 +2159,7 @@ namespace PurplePen
             float top = xmlinput.GetAttributeFloat("top", float.NaN);
             float right = xmlinput.GetAttributeFloat("right", float.NaN);
             float bottom = xmlinput.GetAttributeFloat("bottom", float.NaN);
-            if (autoPrintArea || float.IsNaN(left) || float.IsNaN(top) || float.IsNaN(right) || float.IsNaN(bottom)) {
+            if (float.IsNaN(left) || float.IsNaN(top) || float.IsNaN(right) || float.IsNaN(bottom)) {
                 autoPrintArea = true;
                 printAreaRectangle = new RectangleF();
             }

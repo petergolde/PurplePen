@@ -2565,6 +2565,90 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
 
         }
 
+        [TestMethod]
+        public void MigratePrintAreaWithBackwardCompatibility()
+        {
+            EventDB eventDB = controller.GetEventDB();
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("eventdb\\Lk Samm print area.ppen"), true);
+            Assert.IsTrue(success);
+
+            PrintArea result;
+
+            result = eventDB.GetEvent().printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-143.485016F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(95.61001F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(123.215F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-107.590004F, result.printAreaRectangle.Top, 0.001F);
+
+            result = eventDB.GetCourse(CourseId(1)).printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-143.485016F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(95.61001F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(123.215F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-107.590004F, result.printAreaRectangle.Top, 0.001F);
+
+            result = eventDB.GetCourse(CourseId(2)).printArea;
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(0, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-126.488945F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(80.03836F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(59.7777328F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-63.8949738F, result.printAreaRectangle.Top, 0.001F);
+
+            result = eventDB.GetCourse(CourseId(3)).printArea;
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.IsFalse(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsFalse(result.pageLandscape);
+            Assert.AreEqual(-71.2542343F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(72.57579F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(50.98423F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-79.690155F, result.printAreaRectangle.Top, 0.001F);
+
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4, 0));
+            Assert.IsTrue(result.autoPrintArea);
+            Assert.IsTrue(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-143.485016F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(95.61001F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(123.215F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-107.590004F, result.printAreaRectangle.Top, 0.001F);
+
+            result = QueryEvent.GetPrintArea(eventDB, Designator(4, 1));
+            Assert.IsFalse(result.autoPrintArea);
+            Assert.IsFalse(result.restrictToPageSize);
+            Assert.AreEqual(850, result.pageWidth);
+            Assert.AreEqual(1100, result.pageHeight);
+            Assert.AreEqual(25, result.pageMargins);
+            Assert.IsTrue(result.pageLandscape);
+            Assert.AreEqual(-77.77993F, result.printAreaRectangle.Left, 0.001F);
+            Assert.AreEqual(41.0349922F, result.printAreaRectangle.Bottom, 0.001F);
+            Assert.AreEqual(63.4918137F, result.printAreaRectangle.Right, 0.001F);
+            Assert.AreEqual(-57.73753F, result.printAreaRectangle.Top, 0.001F);
+        }
+
+
     }
 }
 

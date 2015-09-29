@@ -265,6 +265,9 @@ namespace PurplePen
                 mapDisplay.SetMapFile(MapType.None, null);
             }
 
+            // For backward compatibility, update the automatic print areas.
+            UpdateAutomaticPrintAreas();
+
             mapDisplay.OcadOverprintEffect = (eventDB != null && eventDB.GetEvent().courseAppearance.useOcadOverprint);
 
             checkForMissingFonts = true;          // Warn about missing fonts once for this map.
@@ -1486,6 +1489,8 @@ namespace PurplePen
         public void EndSetPrintArea(PrintAreaKind printAreaKind, PrintArea printArea)
         {
             if (currentMode is RectangleSelectMode) {
+                // Always set the print area rectangle into the print area, even if automatic is selected.
+                // This is for backward compatibility.
                 RectangleF newRectangle = ((RectangleSelectMode)currentMode).Rectangle;
                 printArea.printAreaRectangle = newRectangle;
 
@@ -1503,6 +1508,42 @@ namespace PurplePen
                 undoMgr.EndCommand(1127);
 
                 DefaultCommandMode();
+            }
+        }
+
+        // Update all the automatic print area in the event. Done after load for backward compatibility purposes.
+        private void UpdateAutomaticPrintAreas()
+        {
+            undoMgr.BeginCommand(44527, "");
+
+            UpdateAutomaticPrintArea(CourseDesignator.AllControls);
+
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                UpdateAutomaticPrintArea(new CourseDesignator(courseId));
+                int parts = QueryEvent.CountCourseParts(eventDB, courseId);
+                if (parts > 1) {
+                    for (int part = 0; part < parts; ++part) {
+                        UpdateAutomaticPrintArea(new CourseDesignator(courseId, part));
+                    }
+                }
+            }
+
+            undoMgr.EndCommand(44527);
+        }
+
+        // If the print area associated with this designator is automatic, update the printAreaRectangle field
+        // to have the default print area in it. This is for backward compatibility when saving files.
+        private void UpdateAutomaticPrintArea(CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsNotAllControls && !courseDesignator.AllParts && !QueryEvent.HasPartSpecificPrintArea(eventDB, courseDesignator))
+                return;
+
+            PrintArea printArea = QueryEvent.GetPrintArea(eventDB, courseDesignator);
+
+            if (printArea.autoPrintArea) {
+                printArea = (PrintArea)printArea.Clone();
+                printArea.printAreaRectangle = GetPrintAreaRectangle(courseDesignator, printArea);
+                ChangeEvent.ChangePrintArea(eventDB, courseDesignator, false, printArea);
             }
         }
 

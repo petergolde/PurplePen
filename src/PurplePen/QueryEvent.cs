@@ -983,6 +983,17 @@ namespace PurplePen
             return printArea;
         }
 
+        // Returns true if the course designator is a specific part and that part has a custom print area
+        // just for that part.
+        public static bool HasPartSpecificPrintArea(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return false;
+            else {
+                return (!courseDesignator.AllParts && eventDB.GetCourse(courseDesignator.CourseId).partPrintAreas.ContainsKey(courseDesignator.Part));
+            }
+        }
+
         // Get the part options for a specific course part. Returns null for all controls.
         public static PartOptions GetPartOptions(EventDB eventDB, CourseDesignator courseDesignator)
         {
