@@ -14,28 +14,26 @@
 
 <p>The Set Print Area command sets the area of the map that will be printed when
 <a href="FilePrintCourses.htm">printing courses</a>. If you do not set the print 
-area, the entire map will be printed. If you <a href="FileCreateOcadFiles.htm">
+area, the program will automatically chose a print area based on the paper size you chose when creating the event.. If you <a href="FileCreateOcadFiles.htm">
 create an OCAD file from a course</a>, the print area becomes the default print 
 area in the resulting OCAD file.</p>
 <p>There are two sub-commands: either This Course or All Courses. Just as they 
 sound, selecting &quot;This Course&quot; sets the print area for the currently displayed 
 course, selecting &quot;All Courses&quot; changes the print area for all the courses. 
 (Note: if All Controls is displayed, doing Set Print Area/This Course sets the 
-print area for when the control collection is printed.)</p>
+print area for when the control collection is printed.) When displaying a single part from a course with a map exchange, you can also set the print area for just that part.</p>
 <p>After selecting the desired sub-command, the current print area is 
-highlighted in red, and a small window appears:</p>
+highlighted in red, and a window appears:</p>
 <p>
-<img alt="Set Print Area dialog" src="SetPrintArea.png" width="207" height="155"> </p>
-<p>The displayed print area has small blue squares at each corner and along each 
-edge. These squares are used to resize the print area: press the left mouse 
-button over one of these squares, hold down the mouse button, and drag the 
-corner or edge to the desired location. While changing the print area, you can 
+<img alt="Set Print Area dialog" src="SetPrintArea.png"> </p>
+<p>In the &quot;Paper Size&quot; section, you can chose the size of the paper you wish to print on, the orientation of the paper, and the margins along the edge of the paper. The default for the paper size was set when you created the event.</p>
+    <p>If <strong>Set Print Area Automatically</strong> is checked (the default), then the print area is automatically set based on the paper size, the map, and the course on the map.</p>
+    <p>If <strong>Fix Print Area Size to Paper Size</strong> is checked, then the print area can be repositioned by dragging, but cannot be resized. If it is unchecked, you can set the print area to be larger or smaller than the paper size (small blue squares at the corners and edges of the print area allow resizing).</p>
+    <p>The displayed print area can be dragged using the mouse: position the mouse on the print area, hold down the left mouse button, and drag the print area to the has small blue squares at each corner and along each 
+edge. While changing the print area, you can 
 also <a href="Moving%20around.htm">move and zoom the map</a> as usual.</p>
 <p>Once the print area is correct, click the &quot;Done&quot; button in the Set Print Area 
 window.</p>
-<p><strong>Note: </strong>when printing courses, Purple Pen will automatically 
-crop the print area to a single printed page, best fitting the course. Thus, in 
-many cases, it is not necessary to use this command to set the print area.</p>
 <!-- #EndEditable -->
 </BODY>
 <!-- #EndTemplate -->

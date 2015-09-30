@@ -204,6 +204,10 @@
 				<param name="Local" value="ViewMapQuality.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Show Print Area">
+				<param name="Local" value="ViewShowPrintArea.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Show Popup Information">
 				<param name="Local" value="ViewShowPopupInfo.htm">
 				</OBJECT>

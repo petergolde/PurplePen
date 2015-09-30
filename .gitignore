@@ -36,3 +36,4 @@ src/SetupIS/SetupIS
 .bzr/
 
 Thumbs.db
+src/.vs/
