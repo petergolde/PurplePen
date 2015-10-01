@@ -473,6 +473,26 @@ namespace PurplePen.Tests
                                TestUtil.GetTestFile("controller\\pdf_area\\LandscapeLetter_expected.png")});
         }
 
+        [TestMethod]
+        public void PdfBadIStreamFallback()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_badistream");
+            settings.CourseIds = new Id<Course>[] { CourseId(1) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Bad PDF Test.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("controller\\pdf_badistream\\Long.pdf") },
+                new string[] { TestUtil.GetTestFile("controller\\pdf_badistream\\Long_expected.png") });
+        }
+
 
     }
 }

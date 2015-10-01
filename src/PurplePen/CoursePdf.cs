@@ -90,7 +90,6 @@ namespace PurplePen
             if (mapDisplay.MapType == MapType.PDF) {
                 // For PDF maps, we remove the PDF map from the MapDisplay and add it in separately.
                 sourcePdfMapFileName = mapDisplay.FileName;
-                mapDisplay.SetMapFile(MapType.None, null);
             }
         }
 
@@ -115,7 +114,13 @@ namespace PurplePen
 
             if (IsPdfMap) {
                 pdfImporter = new PdfImporter(sourcePdfMapFileName);
-                pdfMapPage = pdfImporter.GetPage(0);
+                try {
+                    pdfMapPage = pdfImporter.GetPage(0);
+                }
+                catch (Exception) {
+                    // We couldn't import the page. Fall back to normal map rendering methods.
+                    sourcePdfMapFileName = null; // IsPdfMap will now be false.
+                }
             }
 
             totalPages = 0;
@@ -235,6 +240,9 @@ namespace PurplePen
                             grTarget = pdfWriter.BeginCopiedPartialPage(xForm, paperSize, sourcePartialRectInInches);
                         }
                     }
+
+                    // Don't draw the map normally.
+                    mapDisplay.SetMapFile(MapType.None, null);
                 }
                 else {
                     grTarget = pdfWriter.BeginPage(paperSize);

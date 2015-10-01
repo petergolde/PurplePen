@@ -1,0 +1,73 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Bad PDF Test</title>
+    <map kind="PDF" scale="10000">St. Edward.pdf</map>
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-10.6465912" top="201.73967" right="268.753418" bottom="-14.1603394" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="172.933685" y="114.982368" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="137.28511" y="139.313919" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="48.72954" y="116.679916" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="77.30498" y="60.9436569" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="112.670624" y="36.61209" />
+  </control>
+  <control id="6" kind="normal">
+    <code>35</code>
+    <location x="155.958176" y="60.094883" />
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="209.996887" y="83.5776749" />
+  </control>
+  <control id="8" kind="finish">
+    <location x="178.026337" y="102.816582" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Long</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-10.6465912" top="201.73967" right="268.753418" bottom="-14.1603394" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="7" control="7">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="8" />
+</course-scribe-event>
