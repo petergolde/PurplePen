@@ -439,7 +439,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
 
             Assert.AreEqual("marymoor.ppen", Path.GetFileName(controller.FileName));
             controller.GetEventDB().Validate();
-            Assert.IsFalse(controller.GetUndoStatus().CanUndo);
+            Assert.IsTrue(controller.GetUndoStatus().CanUndo); // because of print area fixing.
             Assert.IsFalse(controller.GetUndoStatus().CanRedo);
             Assert.IsFalse(controller.IsDirty);
             Assert.AreEqual(0, controller.ActiveTab);
@@ -454,7 +454,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Assert.IsFalse(controller.IsDirty);
 
             UndoStatus status = controller.GetUndoStatus();
-            Assert.IsFalse(status.CanUndo);
+            Assert.IsTrue(status.CanUndo);
             Assert.IsFalse(status.CanRedo);
 
             MakeDirty();
@@ -468,7 +468,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             Assert.IsFalse(controller.IsDirty);
 
             status = controller.GetUndoStatus();
-            Assert.IsFalse(status.CanUndo);
+            Assert.IsTrue(status.CanUndo);
             Assert.IsTrue(status.CanRedo);
             Assert.AreEqual("Add Control Point", status.RedoName);
 

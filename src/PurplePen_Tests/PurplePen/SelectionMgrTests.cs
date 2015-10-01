@@ -288,6 +288,13 @@ namespace PurplePen.Tests
             RoundtripSelectedLines("selectionmgr\\mapexchange2.ppen", false);
         }
 
+        [TestMethod]
+        public void RoundtripSelectedLine7()
+        {
+            RoundtripSelectedLines("selectionmgr\\desctextmultiline.ppen", false);
+        }
+
+
         void CheckSelectedLines(int expectedFirstLine, int expectedLastLine)
         {
             int firstLine, lastLine;

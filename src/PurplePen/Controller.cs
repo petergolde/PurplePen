@@ -265,9 +265,6 @@ namespace PurplePen
                 mapDisplay.SetMapFile(MapType.None, null);
             }
 
-            // For backward compatibility, update the automatic print areas.
-            UpdateAutomaticPrintAreas();
-
             mapDisplay.OcadOverprintEffect = (eventDB != null && eventDB.GetEvent().courseAppearance.useOcadOverprint);
 
             checkForMissingFonts = true;          // Warn about missing fonts once for this map.
@@ -435,6 +432,9 @@ namespace PurplePen
                 selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
                 NewMapFileLoaded(true);
+
+                // For backward compatibility, update the automatic print areas.
+                UpdateAutomaticPrintAreas();
             }
 
             return success;
@@ -1514,6 +1514,8 @@ namespace PurplePen
         // Update all the automatic print area in the event. Done after load for backward compatibility purposes.
         private void UpdateAutomaticPrintAreas()
         {
+            bool wasDirty = undoMgr.IsDirty;
+
             undoMgr.BeginCommand(44527, "");
 
             UpdateAutomaticPrintArea(CourseDesignator.AllControls);
@@ -1529,6 +1531,11 @@ namespace PurplePen
             }
 
             undoMgr.EndCommand(44527);
+
+            if (!wasDirty) {
+                // These changes shouldn't cause the file to become dirty if it wasn't already.
+                undoMgr.MarkClean();
+            }
         }
 
         // If the print area associated with this designator is automatic, update the printAreaRectangle field

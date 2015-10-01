@@ -2,7 +2,14 @@
   <event id="1">
     <title>Sample Event 1</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="OCAD" scale="15000">Lake Sammamish.ocd</map>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">Lake Sammamish.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="5" y="0" />
@@ -20,11 +27,15 @@
     <location x="13" y="-7.8" />
     <description box="all" iof-2004-ref="13.3" />
   </control>
-  <control id="4" kind="normal" gaps="11111111111111111111111111011111">
+  <control id="4" kind="normal">
     <code>32</code>
     <location x="20" y="-10.5" />
     <description box="D" iof-2004-ref="3.7" />
     <description box="H" iof-2004-ref="12.1" />
+    <gaps scale="15000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="15000">56.25:67.5</circle-gaps>
+    <gaps scale="10000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="10000">56.25:67.5</circle-gaps>
     <description-text>very marshy spot</description-text>
   </control>
   <control id="5" kind="normal">
@@ -153,35 +164,47 @@
     <location x="14.3" y="-7.11" />
     <description box="all" iof-2004-ref="14.1" />
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="5">
     <name>White</name>
     <secondary-title>White is right</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
   </course>
-  <course id="2" kind="normal">
+  <course id="2" kind="normal" order="6">
     <name>Yellow</name>
+    <labels label-kind="sequence" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="15000" description-kind="symbols-and-text" />
   </course>
-  <course id="3" kind="score">
+  <course id="3" kind="score" order="2">
     <name>Rambo</name>
+    <labels label-kind="code" />
     <first course-control="51" />
-    <options print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-86.9311142" top="61.9305267" right="99.33556" bottom="-82.00281" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal">
+  <course id="4" kind="normal" order="3">
     <name>SampleCourse4</name>
+    <labels label-kind="sequence" />
     <first course-control="11" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="15000" climb="173" description-kind="symbols" />
   </course>
-  <course id="5" kind="score">
+  <course id="5" kind="score" order="4">
     <name>Score 4</name>
     <secondary-title>Score more!</secondary-title>
+    <labels label-kind="code" />
     <first course-control="101" />
-    <options print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" score-column="A" description-kind="symbols" />
   </course>
-  <course id="6" kind="normal">
+  <course id="6" kind="normal" order="1">
     <name>Green Y</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="15000" description-kind="symbols" />
   </course>
   <course-control id="1" control="1">

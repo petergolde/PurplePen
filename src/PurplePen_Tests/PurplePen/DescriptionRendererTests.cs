@@ -241,6 +241,14 @@ namespace PurplePen.Tests
             CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.Text);
         }
 
+        [TestMethod]
+        public void MultiLineTextLines()
+        {
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.Symbols);
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.SymbolsAndText);
+            CheckRenderBitmap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.Text);
+        }
+
         [TestMethod] 
         public void MultiLineTitle()
         {
@@ -479,6 +487,14 @@ namespace PurplePen.Tests
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.Symbols);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.SymbolsAndText);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctext.ppen"), CourseId(6), DescriptionKind.Text);
+        }
+
+        [TestMethod]
+        public void MultiLineTextLinesToMap()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.Symbols);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.SymbolsAndText);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\desctextmultiline.ppen"), CourseId(6), DescriptionKind.Text);
         }
 
         [TestMethod]
