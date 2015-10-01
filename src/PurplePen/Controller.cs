@@ -480,7 +480,7 @@ namespace PurplePen
             ev.disallowInvertibleCodes = info.disallowInvertibleCodes;
             ev.ignoreMissingFonts = false;
             ev.notes = null;
-            ev.descriptionLangId = info.descriptionLangId;
+            ev.descriptionLangId = info.descriptionLangId ?? DefaultDescriptionLanguage;
             ev.printArea = info.printArea;
             eventDB.ChangeEvent(ev);
 
@@ -2435,6 +2435,25 @@ namespace PurplePen
             undoMgr.BeginCommand(9377, CommandNameText.SetDescriptionLanguage);
             ChangeEvent.ChangeDescriptionLanguage(eventDB, descriptionLangId);
             undoMgr.EndCommand(9377);
+        }
+
+        // Get/Set the default description language for new events.
+        public string DefaultDescriptionLanguage
+        {
+            get
+            {
+                string defaultLang = Settings.Default.DefaultDescriptionLanguage;
+                if (string.IsNullOrEmpty(defaultLang))
+                    defaultLang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
+                return defaultLang;
+            }
+            set
+            {
+                if (HasDescriptionLanguage(value)) {
+                    Settings.Default.DefaultDescriptionLanguage = value;
+                    Settings.Default.Save();
+                }
+            }
         }
 
         // Can we set a text line for the selected object? If so, return default text and position, name of object, and whether to enable the "this course only" option.

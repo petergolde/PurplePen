@@ -66,6 +66,7 @@ namespace PurplePen
             if (useAsLocalizeTool) {
                 labelSymbolName.Visible = textBoxSymbolName.Visible = true;
                 buttonDefault.Visible = checkBoxShowKey.Visible = false;
+                checkBoxDefaultLanguage.Visible = false;
             }
         }
 
@@ -112,6 +113,12 @@ namespace PurplePen
                 if (index >= 0)
                     comboBoxLanguage.SelectedIndex = index;
             }
+        }
+
+        public bool UseAsDefaultLanguage
+        {
+            get { return checkBoxDefaultLanguage.Checked; }
+            set { checkBoxDefaultLanguage.Checked = value; }
         }
 
         // Fill the list box with the ids of the symbols we allow customizing.

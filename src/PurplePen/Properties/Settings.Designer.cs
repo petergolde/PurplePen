@@ -118,5 +118,17 @@ namespace PurplePen {
                 this["ShowPrintArea"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DefaultDescriptionLanguage {
+            get {
+                return ((string)(this["DefaultDescriptionLanguage"]));
+            }
+            set {
+                this["DefaultDescriptionLanguage"] = value;
+            }
+        }
     }
 }

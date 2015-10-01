@@ -74,6 +74,7 @@ namespace PurplePen
             this.checkBoxShowKey = new System.Windows.Forms.CheckBox();
             this.listBoxSymbols = new System.Windows.Forms.ListBox();
             this.labelCustomizeText = new System.Windows.Forms.Label();
+            this.checkBoxDefaultLanguage = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // okButton
@@ -157,10 +158,17 @@ namespace PurplePen
             resources.ApplyResources(this.labelCustomizeText, "labelCustomizeText");
             this.labelCustomizeText.Name = "labelCustomizeText";
             // 
+            // checkBoxDefaultLanguage
+            // 
+            resources.ApplyResources(this.checkBoxDefaultLanguage, "checkBoxDefaultLanguage");
+            this.checkBoxDefaultLanguage.Name = "checkBoxDefaultLanguage";
+            this.checkBoxDefaultLanguage.UseVisualStyleBackColor = true;
+            // 
             // CustomSymbolText
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.checkBoxDefaultLanguage);
             this.Controls.Add(this.textBoxCurrent);
             this.Controls.Add(this.labelCustomizedText);
             this.Controls.Add(this.textBoxSymbolName);
@@ -192,6 +200,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.cancelButton, 0);
             this.Controls.SetChildIndex(this.labelCustomizedText, 0);
             this.Controls.SetChildIndex(this.textBoxCurrent, 0);
+            this.Controls.SetChildIndex(this.checkBoxDefaultLanguage, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +220,6 @@ namespace PurplePen
         private System.Windows.Forms.CheckBox checkBoxShowKey;
         private System.Windows.Forms.ListBox listBoxSymbols;
         private System.Windows.Forms.Label labelCustomizeText;
+        private System.Windows.Forms.CheckBox checkBoxDefaultLanguage;
     }
 }

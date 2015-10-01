@@ -1865,6 +1865,8 @@ namespace PurplePen
             if (result == DialogResult.OK) {
                 // dialog changes the dictionaries, so we don't need to retrieve tham.
                 controller.SetCustomSymbolText(customSymbolText, customSymbolKey, dialog.LangId);
+                if (dialog.UseAsDefaultLanguage)
+                    controller.DefaultDescriptionLanguage = dialog.LangId;
             }
 
             dialog.Dispose();
@@ -2486,6 +2488,7 @@ namespace PurplePen
                                                  true)) 
                     {
                         controller.SetDescriptionLanguage(dialog.Culture.Name);
+                        controller.DefaultDescriptionLanguage = dialog.Culture.Name;
                     }
                 }
             }

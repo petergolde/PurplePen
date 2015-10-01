@@ -228,7 +228,7 @@ namespace PurplePen
             createEventInfo.dpi = bitmapScalePage.dpi;
             createEventInfo.firstCode = (int) numberingPage.startingCodeNumericUpDown.Value;
             createEventInfo.disallowInvertibleCodes = numberingPage.disallowInvertibleCheckBox.Checked;
-            createEventInfo.descriptionLangId = "en";  // UNDONE: how to set the initial description language?
+            createEventInfo.descriptionLangId = null;  // use default description language.
 
             PrintArea printArea = new PrintArea();
             printArea.autoPrintArea = true;
