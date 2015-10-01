@@ -236,6 +236,7 @@ namespace PurplePen
             printArea.pageWidth = paperSizePage.paperSizeControl.PaperSize.Width;
             printArea.pageHeight = paperSizePage.paperSizeControl.PaperSize.Height;
             printArea.pageMargins = paperSizePage.paperSizeControl.MarginSize;
+            printArea.pageLandscape = paperSizePage.paperSizeControl.Landscape;
             createEventInfo.printArea = printArea;
         }
 
