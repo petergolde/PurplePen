@@ -282,4 +282,7 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Aussehen der Linie ändern</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Bahn duplizieren ...</value>
+  </data>
 </root>

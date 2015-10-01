@@ -120,15 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Vytvořit</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Okraje:</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Velikost papíru:</value>
-  </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Výstup</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Tratě</value>
   </data>
@@ -149,6 +140,15 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Složka</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Okraje:</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Velikost papíru:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Výstup</value>
   </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Změnit tiskárnu...</value>

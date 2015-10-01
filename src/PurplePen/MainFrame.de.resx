@@ -142,7 +142,7 @@
     <value>OCAD-Da&amp;teien erstellen …</value>
   </data>
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>PDF-Dateien erzeugen...</value>
+    <value>PDF-Dateien erstellen ...</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Route&amp;Gadget-Dateien erstellen …</value>
@@ -291,11 +291,14 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>Bahn &amp;löschen</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>Bahn d&amp;uplizieren ...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Eigenschaften...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Bahnreihenfolge...</value>
+    <value>Bahn&amp;reihenfolge ...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Läu&amp;ferauslastung...</value>
@@ -416,6 +419,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Objekte</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>&amp;GPX-Datei erstellen ...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Alle &amp;Bahndaten</value>
@@ -620,6 +629,12 @@
   </data>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>Bild Datei|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX-Datei|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>GPX-File erstellen ...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

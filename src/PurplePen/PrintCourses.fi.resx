@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Tulosta</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Tuotos</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Vaihda tulostin...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Paperin koko:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Tulostimen nimi</value>
@@ -135,26 +132,29 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Tulostin:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Tuotos</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Esikatselu...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Radat</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopiot</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Kopioita jokaisesta radasta:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopiot</value>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Keskeytä tulostus jokaisen radan tai osan jälkeen</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Ulkoasu</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>Rasteroi ennen tulostusta</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
-    <value>Tulosta kartanvaihtoratojen koko rata samalle kartalle </value>
+    <value>Tulosta kartanvaihdot samalle kartalle </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Värimalli:</value>
@@ -177,11 +177,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Jos tulostusalue on liian suuri mahtuakseen yhdelle sivulle:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Ulkoasu</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tulosta radat</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Paperin koko:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Tulosta useille sivuille</value>

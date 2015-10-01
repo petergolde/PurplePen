@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelPaper.Text" xml:space="preserve">
-    <value>Taille :</value>
+    <value>Taille :</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Largeur :</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Hauteur :</value>
+    <value>Hauteur :</value>
   </data>
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
     <value>Taille du papier ({0})</value>

@@ -150,6 +150,12 @@
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Sekvens och kodsiffra (3-145)</value>
   </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Sekvens och poäng (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Kodsiffra och poäng (145(30))</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Visa poäng i:</value>
   </data>
@@ -194,6 +200,9 @@
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>meter</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ny bana</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:50-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © 2007-2014 by Peter Golde"
-msgstr "Copyright (C) 2007-2014 Peter Golde"
+msgstr ""
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -647,7 +647,6 @@ msgid "Change Text"
 msgstr "Muuda teksti"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "Muuda raja sümbolite väljanägemist"
 
@@ -673,6 +672,10 @@ msgstr ""
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
 msgstr ""
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Suurused"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -725,9 +728,9 @@ msgstr "KP rõnga diameeter:"
 msgid "Use IOF standard sizes"
 msgstr "Kasuta IOF standard suuruseid"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Suurused"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Lilla värv"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -737,9 +740,10 @@ msgstr ""
 msgid "Use purple color from map"
 msgstr "Kasuta kaardil määratud lillat värvi"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Lilla värv"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "KP legendid"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -751,10 +755,17 @@ msgstr ""
 msgid "Purple"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "KP legendid"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "Muuda raja sümbolite väljanägemist"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -887,7 +898,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -927,36 +937,6 @@ msgstr "Kaust"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "Tee OCADi failid"
-
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Äärised:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr ""
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Paberi suurus:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Paber (11\"x17\")"
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Ülalt: 0.55\", Alt: 0.55\", Vasakult: 0.55\", Paremalt: 0.55\""
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -1079,6 +1059,10 @@ msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
 msgstr "Kliki sümbolil, kohendamaks teksti mis on kasutusel KP "
 "legendis."
+
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1372,6 +1356,10 @@ msgstr "Kõrge"
 msgid "Map &Quality"
 msgstr "Kaardi &kvaliteet"
 
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
 msgstr ""
@@ -1409,7 +1397,7 @@ msgid "Customize &Description Text..."
 msgstr "Muuda &selgituse teksti"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "Muuda &rajasümboleid"
 
 #: MainFrame.resx, eventMenu.Text
@@ -1434,7 +1422,7 @@ msgstr "O&madused..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr "Radade järjestus..."
+msgstr ""
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
@@ -1972,8 +1960,9 @@ msgstr "Sisesta uus objekti legend\n"
 "(mõjutab kõikki radu)"
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "Sisesta uus tekst"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2538,8 +2527,9 @@ msgid "Selected Map File"
 msgstr "Vali kaardi fail"
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr "Kaardi fail on edukalt loetud. Kui saadad Purple Pen faili "
 "kellegile teisele, siis pead saatma ka kaardifaili."
 
@@ -2682,6 +2672,12 @@ msgstr "Printer:"
 msgid "Preview..."
 msgstr "Eelvaatlus..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Koopiad"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Koopiate arv iga raja kohta:"
@@ -2689,12 +2685,6 @@ msgstr "Koopiate arv iga raja kohta:"
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
 msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Koopiad"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2712,6 +2702,26 @@ msgstr "Trüki rajad"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Muuda ääriseid"
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Paber (11\"x17\")"
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Paberi suurus:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Ülalt: 0.55\", Alt: 0.55\", Vasakult: 0.55\", Paremalt: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Äärised:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3258,6 +3268,18 @@ msgstr "Valmis"
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
 msgstr "Määra hiirega vedadel soovitud prindi ala"
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

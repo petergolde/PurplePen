@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:50-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -195,7 +195,7 @@ msgstr "Meter"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -660,7 +660,6 @@ msgid "Change Text"
 msgstr "Text ändern"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "Bahndesign anpassen"
 
@@ -685,7 +684,11 @@ msgstr "Aussehen der Linie ändern"
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr ""
+msgstr "Bahn duplizieren ..."
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Maße der Bahnobjekte"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -738,21 +741,22 @@ msgstr "Postenkreisdurchmesser:"
 msgid "Use IOF standard sizes"
 msgstr "Benutze IOF Standardgrößen"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Maße der Bahnobjekte"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Violetter Farbton"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
-msgstr ""
+msgstr "Violett mit darunterliegenden Farben mischen"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Violetten Farbton der Karte verwenden"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Violetter Farbton"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Postenbeschreibungen"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -764,10 +768,17 @@ msgstr "Schwarz"
 msgid "Purple"
 msgstr "Purpur"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Postenbeschreibungen"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "Bahndesign anpassen"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -830,18 +841,20 @@ msgstr "Namens-Präfix:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Wegpunkte"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
 "be loaded onto a GPS or smartphone to verify the correct "
 "location of controls."
-msgstr ""
+msgstr "Eine GPX-Datei enthält GPS-Koordinaten für die Posten und "
+"kann in ein GPS-Gerät oder Smartphone geladen werden, um "
+"die korrekte Position der Posten zu kontrollieren."
 
 #: CreateGpx.resx, $this.Text
 #: MainFrame.resx, saveGpxFileDialog.Title
 msgid "Create GPX File"
-msgstr ""
+msgstr "GPX-File erstellen ..."
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -901,7 +914,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -941,36 +953,6 @@ msgstr "Ordner"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "OCAD-Dateien erstellen"
-
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Ränder:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr "Ändern..."
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Papiergröße:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Oben 0.55\", Unten: 0.55\", Link: 0.55\", Rechts: 0.55\""
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -1095,6 +1077,10 @@ msgid "Click on a description symbol to customize the text that "
 msgstr "Klicke auf das Symbol um den entsprechenden Text in der "
 "textuellen Postenbeschreibung zu ändern."
 
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
+
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
 msgstr "Herunterladen"
@@ -1149,7 +1135,9 @@ msgstr "Bestehenden Wettkampf öffnen..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen ist eine kostenlose Software und darf kopiert "
+"und weitergegeben werden. Die Entwicklung von Purple Pen "
+"wird ausschließlich durch Spenden finanziert."
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1238,7 +1226,7 @@ msgstr "OCAD-Da&teien erstellen …"
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
-msgstr "PDF-Dateien erzeugen..."
+msgstr "PDF-Dateien erstellen ..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1388,6 +1376,10 @@ msgstr "Hoch"
 msgid "Map &Quality"
 msgstr "Karten&qualität"
 
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
 msgstr "&Popup Information anzeigen"
@@ -1425,7 +1417,7 @@ msgid "Customize &Description Text..."
 msgstr "&Textpostenbeschreibung anpassen"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "&Bahndesign anpassen..."
 
 #: MainFrame.resx, eventMenu.Text
@@ -1442,7 +1434,7 @@ msgstr "Bahn &löschen"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr ""
+msgstr "Bahn d&uplizieren ..."
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
@@ -1450,7 +1442,7 @@ msgstr "&Eigenschaften..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr "Bahnreihenfolge..."
+msgstr "Bahn&reihenfolge ..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
@@ -1629,11 +1621,11 @@ msgstr "&Objekte"
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create &GPX File..."
-msgstr ""
+msgstr "&GPX-Datei erstellen ..."
 
 #: MainFrame.resx, gpsMenu.Text
 msgid "&GPS"
-msgstr ""
+msgstr "&GPS"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1840,7 +1832,7 @@ msgstr "Bild Datei|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPX-Datei|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1990,8 +1982,9 @@ msgstr "Neue Symbolbezeichnung festlegen\n"
 "(wirkt sich auf alle Bahnen aus)"
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "Neuen Text eingeben"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2311,7 +2304,7 @@ msgstr "Postenbeschreibungen können zu einer Bahn mit "
 msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
 "installed. Would you like to automatically download and "
 "install it now?"
-msgstr "Um PDF-Dateien laden zu können muss eine Kopie von GPL "
+msgstr "Um PDF-Dateien laden zu können, muss eine Kopie von GPL "
 "Ghostscript installiert sein. Möchten Sie es automatisch "
 "herunterladen und installieren lassen?"
 
@@ -2427,45 +2420,55 @@ msgstr "Ändere das Aussehen der Linie oder Rechteck"
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "Um GPX-Dateien zu nutzen, muss eine OCAD-Kartendatei "
+"verwendet werden."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "Um GPX-Dateien nutzen zu können, muss für die OCAD-Datei "
+"ein Koordinatensystem definiert sein."
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "Um GPX-Dateien nutzen zu können, müssen für die OCAD-Datei "
+"Weltkoordinaten definiert sein."
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Punkte können nicht umprojiziert werden; in der OCAD-Datei "
+"sind entweder das Koordinatensystem oder die "
+"Weltkoordinaten nicht richtig."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "Die OCAD-Datei verwendet ein Koordinatensystem, das von "
+"Purple Pen nicht unterstützt wird."
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr ""
+msgstr "Automatisch"
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "Die Länge einer Bahn muss eine Zahl zwischen 0,1 - 99,9 "
+"sein. Bleibt sie leer, wird die Bahnlänge automatisch "
+"berechnet."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "Die Länge in km eintragen, oder leer lassen, um die "
+"Bahnlänge automatisch zu berechnen."
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "Drucken von \"{0}\" fertig. OK klicken, um Drucken von \"{1}\" "
+"zu starten."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2610,8 +2613,9 @@ msgid "Selected Map File"
 msgstr "Ausgewählte Kartendatei"
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr "Die Kartendatei wurde erfolgreich geladen. Wenn Sie Ihre "
 "Purple Pen-Datei jemand anderem schicken, müssen Sie die "
 "Kartendatei ebenfalls mitschicken."
@@ -2725,11 +2729,11 @@ msgstr "Bitte bestätigen Sie, dass die Dateien überschrieben "
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "GPL Ghostscript is reading your PDF..."
-msgstr "GPL Ghostscript liest ihre PDF..."
+msgstr "GPL Ghostscript liest ihr PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr "PDF lesen ist fehlgeschlagen. Die Fehler werden unten "
+msgstr "PDF Lesen ist fehlgeschlagen. Die Fehler werden unten "
 "angezeigt."
 
 #: PdfConversionInProgress.resx, $this.Text
@@ -2766,19 +2770,19 @@ msgstr "Drucker:"
 msgid "Preview..."
 msgstr "Vorschau..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Kopien"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Kopien jeder Bahn:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Kopien"
+msgstr "Drucken nach jeder Bahn bzw. Teilbahn unterbrechen"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2796,6 +2800,26 @@ msgstr "Bahnen drucken"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Ränder ändern..."
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Papiergröße:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Oben 0.55\", Unten: 0.55\", Link: 0.55\", Rechts: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Ränder:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3339,7 +3363,7 @@ msgstr "Bahn \"{0}\", Teil {1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "Länge berechnen:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3349,6 +3373,18 @@ msgstr "Fertig"
 msgid "Set the desired printing area by dragging with the mouse."
 msgstr "Legen Sie den gewünschten Druckbereich fest, indem Sie mit "
 "der Maus ein Rechteck aufziehen."
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

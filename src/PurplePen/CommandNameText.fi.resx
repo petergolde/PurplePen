@@ -282,4 +282,7 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Muuta viivan ulkoasua</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Kopioi rata</value>
+  </data>
 </root>

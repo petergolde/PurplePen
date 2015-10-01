@@ -120,24 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>作成</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>余白:</value>
-  </data>
-  <data name="marginChange.Text" xml:space="preserve">
-    <value>変更...</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>用紙サイズ:</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="marginsLabel.Text" xml:space="preserve">
-    <value>上: 0.55", 下: 0.55", 左: 0.55", 右: 0.55"</value>
-  </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>出力</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>コース</value>
   </data>
@@ -203,5 +185,23 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PDFファイルを作成</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>余白:</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>変更...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>用紙サイズ:</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>上: 0.55", 下: 0.55", 左: 0.55", 右: 0.55"</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>出力</value>
   </data>
 </root>

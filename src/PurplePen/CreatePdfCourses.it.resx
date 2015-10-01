@@ -120,18 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Crea</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Margini:</value>
-  </data>
-  <data name="marginChange.Text" xml:space="preserve">
-    <value>Modifica...</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Dimensione carta:</value>
-  </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percorsi</value>
   </data>
@@ -194,5 +182,17 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Creare Files PDF</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Margini:</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Modifica...</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Dimensione carta:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Output</value>
   </data>
 </root>

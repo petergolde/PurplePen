@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:51-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:41-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -189,7 +189,7 @@ msgstr "m"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -645,7 +645,6 @@ msgid "Change Text"
 msgstr "テキストを変更"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "コースの外観をカスタマイズ"
 
@@ -670,7 +669,11 @@ msgstr "線の外観を変更"
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr ""
+msgstr "コースを複製"
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "アイテムサイズ"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -723,21 +726,22 @@ msgstr "コントロール円の直径:"
 msgid "Use IOF standard sizes"
 msgstr "IOF標準サイズを使用"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "アイテムサイズ"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "パープルカラー"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
-msgstr ""
+msgstr "パープルを地図の色とブレンドする"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "地図ファイル(OCAD)のパープルカラーを使用する"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "パープルカラー"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "ディスクリプション"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -749,10 +753,17 @@ msgstr "黒"
 msgid "Purple"
 msgstr "紫"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "ディスクリプション"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "コースの外観をカスタマイズ"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -813,18 +824,19 @@ msgstr "ファイル名プレフィックス:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "ウェイポイント"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
 "be loaded onto a GPS or smartphone to verify the correct "
 "location of controls."
-msgstr ""
+msgstr "GPXファイルはコントロールのGPS座標を含み、コントロールの正確な位置を検証するためにGPSやスマートフォンにロードで"
+"きます。"
 
 #: CreateGpx.resx, $this.Text
 #: MainFrame.resx, saveGpxFileDialog.Title
 msgid "Create GPX File"
-msgstr ""
+msgstr "GPXファイルを作成"
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -884,7 +896,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -924,36 +935,6 @@ msgstr "フォルダ"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "OCADファイルを作成"
-
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "余白:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr "変更..."
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "用紙サイズ:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "上: 0.55\", 下: 0.55\", 左: 0.55\", 右: 0.55\""
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -1077,6 +1058,10 @@ msgid "Click on a description symbol to customize the text that "
 msgstr "クリックでディスクリプション記号を選択して、文字によるコントロールディスクリプションに使用されるテキストをカスタマイズし"
 "ます。"
 
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
+
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
 msgstr "ダウンロード中"
@@ -1130,7 +1115,8 @@ msgstr "既存のイベントを開く..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen はフリーソフトです。複製・再配布は自由です。Purple Pen "
+"の開発は皆様の寄付のみによりサポートされています。"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1355,7 +1341,7 @@ msgstr "フル(&F)"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr "地図の画像の強度(&I)"
+msgstr "地図の画像強度(&I)"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1368,6 +1354,10 @@ msgstr "高"
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
 msgstr "地図の画質(&Q)"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1406,7 +1396,7 @@ msgid "Customize &Description Text..."
 msgstr "ディスクリプションのテキストをカスタマイズ"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "コースの外観をカスタマイズ(&A)"
 
 #: MainFrame.resx, eventMenu.Text
@@ -1423,7 +1413,7 @@ msgstr "コースを削除(&D)"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr ""
+msgstr "コースを複製(&U)"
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
@@ -1431,7 +1421,7 @@ msgstr "プロパティ(&P)..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr "コースの並び順..."
+msgstr "コースの並び順(&O)"
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
@@ -1610,11 +1600,11 @@ msgstr "アイテム(&I)"
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create &GPX File..."
-msgstr ""
+msgstr "GPXファイルを作成(&G)"
 
 #: MainFrame.resx, gpsMenu.Text
 msgid "&GPS"
-msgstr ""
+msgstr "GPS(&G)"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1821,7 +1811,7 @@ msgstr "画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPXファイル|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1967,8 +1957,9 @@ msgstr "記号の新しい意味を入力\n"
 "(全コースに反映されます)"
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "新規テキストを追加"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2367,45 +2358,45 @@ msgstr "線または長方形の外観を変更"
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "GPXファイルを使用するためには、地図ファイルがOCADファイルである必要があります。"
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "OCADファイルにはGPXファイル用に定義された座標系が必要です。"
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "OCADファイルにはGPXファイル用に定義されたリアルワールド座標が必要です。"
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "点を再投影できません。座標系またはOCADマップのリアルワールド座標に誤りがあります。"
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "このOCADファイルはPurple Pen でサポートされていない座標系を使用しています。"
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr ""
+msgstr "自動入力"
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "コースの「長さ」には 0.1 から 99.9 の数字を入力してください。または空白にすると自動で長さが計算されます。"
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "長さをキロメートル単位で入力してください。または空白のままにすると自動で長さが計算されます。"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "「{0}」の印刷が終わりました。OKをクリックで「{1}」の印刷を開始します。"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2533,8 +2524,9 @@ msgid "Selected Map File"
 msgstr "選択中の地図ファイル"
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr "地図ファイルのロードに成功しました。Purple "
 "Penファイルを他の人に送信する場合には、受信者も同じ地図ファイルを使用できるようにしてください。"
 
@@ -2674,19 +2666,19 @@ msgstr "プリンタ:"
 msgid "Preview..."
 msgstr "プレビュー..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "部数"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "コースごとの部数:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "部数"
+msgstr "コースパートごとに印刷を休止する"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2704,6 +2696,26 @@ msgstr "コースを印刷"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "ページ設定..."
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "用紙サイズ:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "上: 0.55\", 下: 0.55\", 左: 0.55\", 右: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "余白:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3237,7 +3249,7 @@ msgstr "コース \"{0}\"、パート {1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "計算された長さ"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3246,6 +3258,18 @@ msgstr "完了"
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
 msgstr "マウスドラッグで印刷領域を設定してください。"
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

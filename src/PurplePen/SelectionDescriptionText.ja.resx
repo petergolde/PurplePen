@@ -288,4 +288,7 @@
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>長方形</value>
   </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>計算された長さ</value>
+  </data>
 </root>

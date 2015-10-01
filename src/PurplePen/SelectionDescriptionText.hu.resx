@@ -288,4 +288,7 @@
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>Téglalap</value>
   </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Számított hosszúság:</value>
+  </data>
 </root>

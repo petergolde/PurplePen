@@ -141,8 +141,14 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Skapa OCAD &amp;Filer...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Skapa PDF...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Skapa RouteGadget-filer</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Skapa Data &amp;Utbytesfil (IOF XML)...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut kontrollbeskrivningar...</value>
@@ -152,6 +158,9 @@
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Skriv ut banor...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Endast denna del</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Denna bana</value>
@@ -243,6 +252,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Kartans kvalitet</value>
   </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Visa popup-information</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Alla kontroller</value>
   </data>
@@ -279,11 +291,14 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Radera bana</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>D&amp;uplicera bana...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Egenskaper...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Banordning...</value>
+    <value>Ban&amp;ordning...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Ladda antal löpare...</value>
@@ -302,6 +317,15 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Lägg till &amp;kontrollbeskrivning</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartbyte vid &amp;kontrollpunkt</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Markerad sträcka till kartbyte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Lägg till kartb&amp;yte</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk passage</value>
@@ -336,6 +360,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Lägg till speciellt &amp;föremål</value>
   </data>
@@ -360,6 +393,9 @@
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Ändra &amp;Text</value>
   </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Ändr&amp;a linjeutseende...</value>
+  </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otera</value>
   </data>
@@ -383,6 +419,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Objekt</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Skapa &amp;GPX-fil...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Sammanfattning av banor</value>
@@ -444,6 +486,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Typsnittsmått</value>
   </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Krasch</value>
+  </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Felsökning</value>
   </data>
@@ -504,6 +549,15 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lägg till kontrollbeskrivning</value>
   </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kartbyte vid kontrollpunkt</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Markerad sträcka till kartbyte</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Lägg till kartbyte</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk passage</value>
   </data>
@@ -537,6 +591,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rektangel</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Lägg till specialsymbol</value>
   </data>
@@ -560,6 +623,15 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Skapa en XML-fil för export</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Bildfil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX-fil|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Skapa GPX-fil</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

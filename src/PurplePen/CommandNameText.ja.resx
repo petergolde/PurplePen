@@ -282,4 +282,7 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>線の外観を変更</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>コースを複製</value>
+  </data>
 </root>

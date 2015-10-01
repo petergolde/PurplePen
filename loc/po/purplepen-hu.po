@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:51-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:41-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -193,7 +193,7 @@ msgstr "méter"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -654,7 +654,6 @@ msgid "Change Text"
 msgstr "Szöveg módosítása"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "Pályakép testreszabása"
 
@@ -680,6 +679,10 @@ msgstr "Sor kinézetének módosítása"
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
 msgstr ""
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Elem méretek"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -732,9 +735,9 @@ msgstr "Ellenőrzőpont körének átmérője:"
 msgid "Use IOF standard sizes"
 msgstr "IOF normál méretek használata"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Elem méretek"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "A lila szín"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -744,9 +747,10 @@ msgstr ""
 msgid "Use purple color from map"
 msgstr "A térkép lila színét használja"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "A lila szín"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Pontleírás"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -758,10 +762,17 @@ msgstr "Fekete"
 msgid "Purple"
 msgstr "Lila"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Pontleírás"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "Pályakép testreszabása"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -824,7 +835,7 @@ msgstr "Név előtag:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Útvonalpontok"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
@@ -895,7 +906,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -935,36 +945,6 @@ msgstr "Könyvtár"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "OCAD fájlok létrehozása"
-
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Margók:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr "Módosítás…"
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Papírméret:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tábla (11\"x17\")"
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Fent, Lent, Bal, Jobb: 14 mm"
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -1087,6 +1067,10 @@ msgstr "Mutassa a jelentését is a szimbólumnak"
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
 msgstr "Kattintson a leírásra a szöveg testreszabásához!"
+
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1381,6 +1365,10 @@ msgstr "Magas"
 msgid "Map &Quality"
 msgstr "Térkép&minőség"
 
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
 msgstr "Mutassa a &Felugró adatokat"
@@ -1418,7 +1406,7 @@ msgid "Customize &Description Text..."
 msgstr "&Leírás testreszabása"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "&Pálya kinézetének testreszabása..."
 
 #: MainFrame.resx, eventMenu.Text
@@ -1980,8 +1968,9 @@ msgstr "Írja be az új szimbólum jelentést\n"
 "(minden pályára kihat)"
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "Írja be az új szöveget"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2422,7 +2411,7 @@ msgstr ""
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr ""
+msgstr "Automatikus"
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
@@ -2578,8 +2567,9 @@ msgid "Selected Map File"
 msgstr "Kiválasztott térkép fájl"
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr "A térkép fájl betöltése sikeres volt. Ha a Purple Pen "
 "fájlt továbbküldi valahová, akkor vele kell küldenie a "
 "térkép fájlt is!"
@@ -2729,6 +2719,12 @@ msgstr "Nyomtató:"
 msgid "Preview..."
 msgstr "Előnézet..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Példányszám"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Az egyes pályák példányszáma:"
@@ -2736,12 +2732,6 @@ msgstr "Az egyes pályák példányszáma:"
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
 msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Példányszám"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2759,6 +2749,26 @@ msgstr "Pályák nyomtatása"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Margók módosítása..."
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tábla (11\"x17\")"
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Papírméret:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Fent, Lent, Bal, Jobb: 14 mm"
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Margók:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3303,7 +3313,7 @@ msgstr "\"{0}\" pálya , {1} rész"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "Számított hosszúság:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3312,6 +3322,18 @@ msgstr "Kész"
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
 msgstr "Az egérrel jelölje ki a nyomtatási területet."
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

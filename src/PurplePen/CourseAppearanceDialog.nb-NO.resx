@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Objektets størrelse</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatisk strekk mellomrom størrelse:</value>
   </data>
@@ -165,8 +168,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Bruk IOF-standardstørrelse</value>
   </data>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Objektets størrelse</value>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lilla farge</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Svart:</value>
@@ -183,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Bruk lilla farge fra kartet</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lilla farge</value>
-  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Forhåndsvisning</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Postveskrivelser</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Sort</value>
@@ -197,9 +200,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Farge:</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Postveskrivelser</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Endre løypens utseende</value>

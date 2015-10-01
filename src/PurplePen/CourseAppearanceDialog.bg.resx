@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Размери на елемента</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>мм</value>
   </data>
@@ -156,8 +159,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Използвай стандартните размери според МФО</value>
   </data>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Размери на елемента</value>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Лилав цвят</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Черно:</value>
@@ -173,9 +176,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Използвай лилавия цвят от картата</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Лилав цвят</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Преглед преди печат</value>

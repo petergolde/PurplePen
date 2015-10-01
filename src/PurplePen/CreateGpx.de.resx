@@ -123,4 +123,13 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Namens-Präfix:</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Wegpunkte</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Eine GPX-Datei enthält GPS-Koordinaten für die Posten und kann in ein GPS-Gerät oder Smartphone geladen werden, um die korrekte Position der Posten zu kontrollieren.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GPX-File erstellen ...</value>
+  </data>
 </root>

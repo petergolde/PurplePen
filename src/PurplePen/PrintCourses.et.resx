@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Trüki</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Väljund</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Vali printer...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Paber (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Paberi suurus:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Printeri nimi</value>
@@ -135,20 +132,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Printer:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Väljund</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Eelvaatlus...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Rajad</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Koopiad</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Koopiate arv iga raja kohta:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Koopiad</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Välimus</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Mahuta ühele lehele</value>
@@ -159,11 +156,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Kui trükiala on liiga suur, siis mahuta ühele lehele:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Välimus</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trüki rajad</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Paber (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Paberi suurus:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Trüki mitmele lehele</value>

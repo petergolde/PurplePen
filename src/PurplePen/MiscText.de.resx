@@ -231,9 +231,6 @@
     <value>Neue Symbolbezeichnung festlegen
 (wirkt sich auf alle Bahnen aus)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Neuen Text eingeben</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Die Posten {0} werden von keiner Bahn mehr verwendet. Sollen diese Posten von der Postenliste gelöscht werden?</value>
   </data>
@@ -424,7 +421,7 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Postenbeschreibungen können zu einer Bahn mit Kartenwechsel nicht hinzugefügt werden, wenn "Alle Teilstrecken" angezeigt werden. Wenn Sie Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte auf die gewünschte Teilstrecke und wählen dann "Postenbeschreibung hinzufügen" nochmals aus.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Um PDF-Dateien laden zu können muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
+    <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript ist nicht installiert</value>
@@ -503,5 +500,35 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Aussehen der Linie ändern</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Um GPX-Dateien zu nutzen, muss eine OCAD-Kartendatei verwendet werden.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>Um GPX-Dateien nutzen zu können, muss für die OCAD-Datei ein Koordinatensystem definiert sein.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Um GPX-Dateien nutzen zu können, müssen für die OCAD-Datei Weltkoordinaten definiert sein.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Punkte können nicht umprojiziert werden; in der OCAD-Datei sind entweder das Koordinatensystem oder die Weltkoordinaten nicht richtig.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Die OCAD-Datei verwendet ein Koordinatensystem, das von Purple Pen nicht unterstützt wird.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Die Länge einer Bahn muss eine Zahl zwischen 0,1 - 99,9 sein. Bleibt sie leer, wird die Bahnlänge automatisch berechnet.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Bahn duplizieren ...</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Die Länge in km eintragen, oder leer lassen, um die Bahnlänge automatisch zu berechnen.</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Drucken von "{0}" fertig. OK klicken, um Drucken von "{1}" zu starten.</value>
   </data>
 </root>

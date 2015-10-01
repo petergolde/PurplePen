@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Tailles des objets</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Dimension auto pour espace d'interposte</value>
   </data>
@@ -165,8 +168,11 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Utiliser les tailles IOF standards</value>
   </data>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Tailles des objets</value>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Couleur violine</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Fondre le magenta avec les couleurs de la carte</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Noir :</value>
@@ -183,11 +189,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Utiliser la couleur violine de la carte</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Couleur violine</value>
-  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Aperçu</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Définitions des postes</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Noir</value>
@@ -197,9 +203,6 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Couleur :</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Définitions des postes</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personnaliser la présentation du circuit</value>

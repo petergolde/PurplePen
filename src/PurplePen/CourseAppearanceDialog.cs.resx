@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Velikosti položek</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -159,8 +162,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Používat velikosti standarní podle IOF</value>
   </data>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Velikosti položek</value>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Purpurová</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Černá:</value>
@@ -177,14 +180,14 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Použít purpurovou z mapy</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Purpurová</value>
-  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Náhled</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Popisy kontrol</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Barva:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nastavit zobrazení tratí</value>

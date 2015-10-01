@@ -282,9 +282,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Propiedades...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Orden de Recorridos...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Densidad de &amp;Corredores...</value>
   </data>

@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Print</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Change Printer...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Paper Size:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Printer Name</value>
@@ -135,20 +132,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Printer:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Preview...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Courses</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Copies</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Copies of each course:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Copies</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Crop to a single page</value>
@@ -159,11 +156,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>If the print area is too large to fit on one page:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Appearance</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Print Courses</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Paper Size:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Print on multiple pages</value>

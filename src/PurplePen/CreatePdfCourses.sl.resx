@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Ustvari</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Izhod</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Proge</value>
   </data>
@@ -143,5 +140,8 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mapa</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Izhod</value>
   </data>
 </root>

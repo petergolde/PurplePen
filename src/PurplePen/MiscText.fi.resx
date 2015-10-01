@@ -231,9 +231,6 @@ Käytä | erottaaksesi rivit</value>
     <value>Syötä uusi symbolin merkitys
 (vaikuttaa kaikkiin ratoihin)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Syötä uusi teksti</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kohteet {0} eivät ole enää käytössä millään radalla. Haluatko poistaa nämä kohteet kaikki rastit -kokoelmasta?</value>
   </data>
@@ -503,5 +500,35 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Muuta viivan ulkoasua</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Karttatiedoston pitää olla OCAD-tiedosto, jotta voit käyttää GPX-tiedostoja.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD-tiedoston koordinaatiston täytyy olla määritelty, jotta voit käyttää GPX-tiedostoja.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCAD-tiedoston täytyy olla geo-viitattu, jotta GPX-tiedostoja voidaan käyttää.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Ei voitu uudelleenprojektoida pisteitä. Joko koordinaatistossa tai maastokoordinaateissa OCAD-kartalla on virhe.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Purple Pen ei tue OCAD-tiedoston käyttämää koordinaatistoa.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automaattinen</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Radan pituuden pitää olla numero väliltä 0.1 - 99.9 tai tyhjä, jolloin pituus lasketaan automaattisesti.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Kopioi rata</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Syötä pituus kilometreissä tai jätä tyhjäksi, jolloin pituus lasketaan automaattisesti</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Radan "{0}" tulostus on valmis. Aloita radan "{1}" tulostus painamalla OK.</value>
   </data>
 </root>

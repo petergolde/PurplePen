@@ -231,9 +231,6 @@ Bruk | for å skille rader</value>
     <value>Skriv inn ny symbolforklaring
 (påvirker all løyper)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Skriv inn ny tekst</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Postene {0} brukes ikke lengre i noen løyper. Vil du slette disse postene?</value>
   </data>
@@ -503,5 +500,8 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Endre strek utseende</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Kartfilen må være en OCAD fil for å bruke GPX filer.</value>
   </data>
 </root>

@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>印刷</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>出力</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>プリンタを変更...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>用紙サイズ:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>プリンタ名</value>
@@ -135,20 +132,23 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>プリンタ:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>出力</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>プレビュー...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>コース</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>部数</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>コースごとの部数:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>部数</value>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>コースパートごとに印刷を休止する</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>外観</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>印刷の前にラスタ化する</value>
@@ -177,10 +177,13 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>印刷領域が広すぎて1ページに収まらない場合:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>外観</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>コースを印刷</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>用紙サイズ:</value>
   </data>
 </root>

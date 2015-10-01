@@ -291,6 +291,9 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Supprimer un Circuit</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>D&amp;upliquerCircuit...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Propriétés...</value>
   </data>
@@ -416,6 +419,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>Élémen&amp;t</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Créer Fichier &amp;GPX...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Synthèse Circuit</value>
@@ -620,6 +629,12 @@
   </data>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>Fichier image|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>Fichier GPX|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Créer un fichier GPX</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

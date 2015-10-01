@@ -291,9 +291,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Vlastnosti...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Pořadí tratí...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Poč&amp;ty startujících</value>
   </data>

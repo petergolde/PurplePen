@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:50-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © 2007-2014 by Peter Golde"
-msgstr "Copyright © 2007-2014 Peter Golde"
+msgstr "Copyright © 2007-2014 by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -190,7 +190,7 @@ msgstr "metry"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -329,7 +329,10 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Všechny "
+"formáty|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*."
+"gif|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -396,17 +399,17 @@ msgstr "Měřítko tisku"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Změnit barvu..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Barva:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Kurzíva"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -415,7 +418,7 @@ msgstr "Tučně"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Písmo:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -453,7 +456,7 @@ msgstr "Náhled"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Vybrat barvu"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -647,7 +650,6 @@ msgid "Change Text"
 msgstr "Změnit text"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "Nastavit zobrazení tratí"
 
@@ -673,6 +675,10 @@ msgstr ""
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
 msgstr ""
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Velikosti položek"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -725,9 +731,9 @@ msgstr "Průměr kruhu kontroly:"
 msgid "Use IOF standard sizes"
 msgstr "Používat velikosti standarní podle IOF"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Velikosti položek"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Purpurová"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -737,9 +743,10 @@ msgstr ""
 msgid "Use purple color from map"
 msgstr "Použít purpurovou z mapy"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Purpurová"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Popisy kontrol"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -751,10 +758,17 @@ msgstr ""
 msgid "Purple"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Popisy kontrol"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "Nastavit zobrazení tratí"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -888,7 +902,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -928,36 +941,6 @@ msgstr "Složka"
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "Vytvořit soubory OCAD"
-
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Okraje:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr ""
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Velikost papíru:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr ""
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
 
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
@@ -1081,6 +1064,10 @@ msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
 msgstr "Klikněte na piktogram a změňte text, který bude použit "
 "jako textový popis kontroly."
+
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1374,6 +1361,10 @@ msgstr "Vysoká"
 msgid "Map &Quality"
 msgstr "&Kvalita mapy"
 
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
 msgstr "Zobrazit vyskakovací informaci"
@@ -1411,7 +1402,7 @@ msgid "Customize &Description Text..."
 msgstr "&Upravit textové popisy"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "Přizpůsobit vzhled tr&ati..."
 
 #: MainFrame.resx, eventMenu.Text
@@ -1436,7 +1427,7 @@ msgstr "&Vlastnosti..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr "Pořadí tratí..."
+msgstr ""
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
@@ -1967,8 +1958,9 @@ msgid "Enter new symbol meaning\n"
 msgstr ""
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "Zadat nový text"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2506,8 +2498,9 @@ msgid "Selected Map File"
 msgstr ""
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr ""
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
@@ -2636,6 +2629,12 @@ msgstr "Tiskárna:"
 msgid "Preview..."
 msgstr "Náhled..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Kopie"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr ""
@@ -2643,12 +2642,6 @@ msgstr ""
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
 msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Kopie"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2666,6 +2659,26 @@ msgstr ""
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Změnit okraje..."
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr ""
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Velikost papíru:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr ""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Okraje:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3200,6 +3213,18 @@ msgstr "Dokončeno"
 
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
+msgstr ""
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
 msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text

@@ -231,9 +231,6 @@ Använd | för att separera rader</value>
     <value>Ange ny betydelse för symbol
 (påverkar alla banor)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Skriv in ny text</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kontrollerna {0} används inte längre av någon bana. Vill du ta bort dessa kontroller?</value>
   </data>
@@ -275,6 +272,11 @@ Använd | för att separera rader</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} av Purple Pen finns nu tillgänglig för nedladdning. (Du kör just nu version {1}.)
+
+Vill du ladda ner och installera den senaste versionen?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Hjälpfilen '{0}' kunde inte öppnas.</value>
@@ -379,10 +381,154 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Om det finns en webbsida på det översatta språket som innehåller hjälp för Purple Pen, fyll i adressen (med http://) som översättning för denna sak. Lämna annars blankt.</value>
   </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kartbyte</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Byte</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Del {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Alla delar</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Del {0} (av {1})</value>
+  </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>E-mail för kontakt</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Ett fel har uppstått. För att hjälpa oss att rätta felet, vänligen skriv in din e-mailadress samt ytterligare information och skicka oss en felrapport.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Vänligen berätta vad du gjorde i programmet för att hjälpa oss att läsa problemet</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Spara</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Skicka rapport</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Beskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till beskrivningar" igen.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript är inte installerat</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript misslyckades med att läsa in PDF-fil</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Kunde inte läsa resultatet av PDF-konvertering från fil '{0}</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Kan inte skapa PDF av följande orsaker:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Användardefinierad</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Kartstorlek från PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Avbruten av användaren</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Skapar {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Skriver ut sida {0} (av {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Kartfilen "{0}" har raderats. Vänligen försök att återställa kartfilen och tryck därefter på "Ok".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>.NET-ramverket på din dator verkar inte vara korrekt installerat. Vänligen besök http://microsoft.com/net och installera den senaste versionen av .NET för ditt Windows-operativsystem.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Svart</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Välj färg...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Egen färg</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Mörkblå</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Grön</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Ljusblå</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Lila</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Röd</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Gul</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Sätt utseendet på linjen. Efter att du tryckt OK, dra med musen för att rita ett linjesegment på önskad plats.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Lägg till linje</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Sätt utseendet på rektangeln. Efter att du tryckt OK, dra med musen för att placera rektangeln på önskad plats.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Lägg till rektangel</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Ändra utseendet på linjen eller rektangeln.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Ändra linjeutseende</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Kartfilen måste vara en OCAD-fil för att kunna använda GPX-filer.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD-filen måste ha ett koordinatsystem definierat för att kunna använda GPX-filer.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCAD-filen måste ha riktiga världskoordinater definierat för att kunna använda GPX-filer.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Kunde inte projicera om punkter; antingen är koordinatsystemet eller de riktiga världskoordinaterna i OCAD-kartan fel.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD-filen använder ett koordinatsystem som inte stöds av Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Längden på en bana måste vara ett nummer mellan 0.1 - 99.1, eller lämnas tom för att längden ska beräknas automatiskt.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Duplicera bana</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Skriv in en längd i km, eller lämna tomt för att beräkna automatiskt</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Klar med att skriva ut "{0}". Tryck OK för att börja skriva ut "{1}".</value>
   </data>
 </root>

@@ -241,7 +241,7 @@
     <value>フル(&amp;F)</value>
   </data>
   <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>地図の画像の強度(&amp;I)</value>
+    <value>地図の画像強度(&amp;I)</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>低</value>
@@ -291,11 +291,14 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>コースを削除(&amp;D)</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>コースを複製(&amp;U)</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>プロパティ(&amp;P)...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>コースの並び順...</value>
+    <value>コースの並び順(&amp;O)</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>走行人数(&amp;L)...</value>
@@ -416,6 +419,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>アイテム(&amp;I)</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>GPXファイルを作成(&amp;G)</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>GPS(&amp;G)</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>コースの概要(&amp;S)</value>
@@ -620,6 +629,12 @@
   </data>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPXファイル|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>GPXファイルを作成</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

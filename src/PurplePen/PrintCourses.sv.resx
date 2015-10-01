@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Skriv ut</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Byt skrivare...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Pappersstorlek:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Skrivarnamn</value>
@@ -135,20 +132,32 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Skrivare:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Förhandsgranska...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Banor</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopior</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Antal kopior av varje bana:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopior</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Skriv ut kartbyten på samma karta </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Färgläge:</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Beskär till en enskild sida</value>
@@ -159,11 +168,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Om utskriftsområdet är för stort för en sida:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Utseende</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut banor</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Pappersstorlek:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Skriv ut på fler sidor</value>

@@ -291,14 +291,17 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Poista rata</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Kopioi rata...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Ominaisuudet...</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Ratojen järjestys...</value>
+    <value>Ratojen &amp;järjestys...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>Aseta &amp;kuormitus...</value>
+    <value>&amp;Aseta kuormitus...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Rata</value>
@@ -416,6 +419,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Kohde</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Luo &amp;GPX-tiedosto...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Rata&amp;yhteenveto</value>
@@ -620,6 +629,12 @@
   </data>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX-tiedosto|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Luo GPX-tiedosto</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

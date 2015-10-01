@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>© Peter Golde, 2007-2014</value>
-  </data>
   <data name="freeLabel.Text" xml:space="preserve">
     <value>Purple Pen е свободен софтуер, който може да бъде копиран и споделян.</value>
   </data>

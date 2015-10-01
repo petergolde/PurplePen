@@ -204,6 +204,9 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Sjukvårdsplats</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Bild</value>
+  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Förbjudet vägval</value>
   </data>
@@ -257,5 +260,11 @@
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Blankt område</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Linje</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Rektangel</value>
   </data>
 </root>

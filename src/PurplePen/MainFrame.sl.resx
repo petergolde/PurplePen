@@ -288,9 +288,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Lastnosti...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Vrstni red prog...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Tekmovalec &amp;Obremenitev...</value>
   </data>

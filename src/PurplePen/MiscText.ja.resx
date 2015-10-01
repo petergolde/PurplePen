@@ -231,9 +231,6 @@
     <value>記号の新しい意味を入力
 (全コースに反映されます)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>新規テキストを追加</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>コントロール {0} を使用しているコースが無くなりました。これらのコントロールをコントロール・コレクションからも削除しますか？</value>
   </data>
@@ -503,5 +500,35 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>線の外観を変更</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>GPXファイルを使用するためには、地図ファイルがOCADファイルである必要があります。</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCADファイルにはGPXファイル用に定義された座標系が必要です。</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCADファイルにはGPXファイル用に定義されたリアルワールド座標が必要です。</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>点を再投影できません。座標系またはOCADマップのリアルワールド座標に誤りがあります。</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>このOCADファイルはPurple Pen でサポートされていない座標系を使用しています。</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>自動入力</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>コースの「長さ」には 0.1 から 99.9 の数字を入力してください。または空白にすると自動で長さが計算されます。</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>コースを複製</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>長さをキロメートル単位で入力してください。または空白のままにすると自動で長さが計算されます。</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>「{0}」の印刷が終わりました。OKをクリックで「{1}」の印刷を開始します。</value>
   </data>
 </root>

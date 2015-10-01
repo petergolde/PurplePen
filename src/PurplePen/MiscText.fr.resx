@@ -231,9 +231,6 @@ Utiliser | pour séparer les lignes</value>
     <value>Entrer une nouvelle signification pour le symbole
 (affecte tous les circuits)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Entrer le nouveau texte</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Les numéros de postes {0} ne sont plus utilisés sur un quelconque circuit. Voulez-vous supprimer ces numéros de la bibliothèque de postes ?</value>
   </data>
@@ -503,5 +500,35 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Modifier le style de ligne</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Pour utiliser des fichier GPX, le fichier Carte doit obligatoirement être un fichier OCAD.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>Pour utiliser des fichiers GPX, un système de coordonnées doit obligatoirement être défini pour le fichier OCAD.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Pour utiliser des fichiers GPX, le fichier OCAD doit obligatoirement avoir des coordonnées du monde réel.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Impossible de re-projeter les points. Le système de coordonnées ou les coordonnées du monde réel de la carte OCAD sont faux.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Le fichier OCAD utilise un système de coordonnées non supporté par Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>La longueur d'un circuit doit être un nombre compris entre 0.1 et 99.9 ou doit être laissé à blanc afin qu'il soit calculé automatiquement.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Dupliquer le Circuit</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Saisissez la longueur en km ou laissez la zone à blanc afin qu'elle soit calculée automatiquement.</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Impression de "{0}" terminée. Cliquez sur OK pour démarrer l'impression de "{1}".</value>
   </data>
 </root>

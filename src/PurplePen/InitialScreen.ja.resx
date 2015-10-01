@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>既存のイベントを開く...</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen はフリーソフトです。複製・再配布は自由です。Purple Pen の開発は皆様の寄付のみによりサポートされています。</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>寄付する</value>
   </data>

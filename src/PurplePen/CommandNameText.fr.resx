@@ -282,4 +282,7 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Modifier le style de ligne</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Dupliquer le Circuit</value>
+  </data>
 </root>

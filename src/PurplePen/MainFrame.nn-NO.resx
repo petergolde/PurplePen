@@ -282,9 +282,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Eigenskapar …</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Løyperekkefølge...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Antall deltakarar</value>
   </data>

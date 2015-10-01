@@ -123,4 +123,13 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Préfixe du nom :</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Points de passage</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Un fichier GPX contient les coordonnées GPS des postes et peut ainsi être chargé dans un GPS ou un smartphone afin de vérifier l'exactitude de chaque emplacement.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Créer un fichier GPX</value>
+  </data>
 </root>

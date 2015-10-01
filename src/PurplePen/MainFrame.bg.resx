@@ -282,9 +282,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Информация...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Поредност на маршрутите...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Брой състезатели на маршрут...</value>
   </data>

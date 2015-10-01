@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Tipărire</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Rezultat</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Schimbare Imprimantă...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Dimensiune Hârtie:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Nume Imprimantă</value>
@@ -135,20 +132,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Imprimantă:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Rezultat</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Previzualizare...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasee</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Număr exemplare</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Număr exemplare pe fiecare traseu:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Număr exemplare</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Aspect</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Decupare într-o singură pagină</value>
@@ -159,11 +156,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Dacă zona de imprimat este prea mare pentru a încăpea într-o pagină:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Aspect</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tipărire Trasee</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Dimensiune Hârtie:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Tipărește pe mai multe pagini</value>

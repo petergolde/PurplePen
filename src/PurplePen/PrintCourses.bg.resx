@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Отпечатай</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Извеждане към</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Смени принтер...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Размер на хартията:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Име на принтера</value>
@@ -135,20 +132,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Принтер:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Извеждане към</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Преглед:</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Маршрути</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Разпечатки</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Разпечатки за всеки маршрут:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Разпечатки</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Оформление</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Подрежи до единична страница</value>
@@ -159,11 +156,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Ако зоната за печат е твърде широка за побиране в една страница:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Оформление</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Отпечатай маршрутите</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Размер на хартията:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Отпечатай на много страници</value>

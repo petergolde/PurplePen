@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Bestehenden Wettkampf öffnen...</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen ist eine kostenlose Software und darf kopiert und weitergegeben werden. Die Entwicklung von Purple Pen wird ausschließlich durch Spenden finanziert.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Spenden Sie</value>
   </data>

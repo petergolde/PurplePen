@@ -231,9 +231,6 @@ Bruk | for å skille rader</value>
     <value>Skriv inn ny symbolforklaring
 (påvirker all løyper)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Skriv inn ny tekst</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Postene {0} brukes ikkje lengre i noen løyper. Vil du slette disse postene?</value>
   </data>

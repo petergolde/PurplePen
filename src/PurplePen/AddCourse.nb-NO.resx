@@ -201,6 +201,9 @@
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>meter</value>
   </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ny løype</value>
   </data>

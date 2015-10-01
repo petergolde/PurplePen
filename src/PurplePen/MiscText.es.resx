@@ -231,9 +231,6 @@ Use | para separar líneas</value>
     <value>Introduce el significado del nuevo símbolo
 (afecta a todos los recorridos)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Introducir nuevo texto</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Los Controles {0} no se usan en ningún recorrido. ¿Quieres borrarlos del mapa de controles maestro?.</value>
   </data>

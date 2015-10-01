@@ -137,4 +137,7 @@ Kartans skala anger förhållandet mellan (utskriven) karta och verkligheten.
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartskala:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Upplösning på bitmap</value>
+  </data>
 </root>

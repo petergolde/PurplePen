@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Ouvrir une course existante...</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen est une application gratuite qui peut être copiée et partagée. Le développement de Purple Pen est uniquement supporté par vos donations.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Faire un don</value>
   </data>

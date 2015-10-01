@@ -231,9 +231,6 @@
     <value>Въведи ново значение на символа
 (ще се приложи върху всички маршрути)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Въведи нов текст</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Контролните точки {0} повече не са използвани от никой от маршрутите. Искате ли да ги изтриете от сбирката с всички контролни точки?</value>
   </data>

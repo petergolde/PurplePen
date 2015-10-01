@@ -294,9 +294,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Egenskaper …</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Løyperekkefølge...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Antall deltakere</value>
   </data>
@@ -416,6 +413,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Objekt</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Lag &amp;GPX fil...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Løypesammendrag</value>
@@ -620,6 +623,12 @@
   </data>
   <data name="openImageDialog.Filter" xml:space="preserve">
     <value>Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX fil|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Lag GPX fil</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

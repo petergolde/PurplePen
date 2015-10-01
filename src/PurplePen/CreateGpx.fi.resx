@@ -123,4 +123,13 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Nimen etuliite:</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Reittipisteet</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>GPX-tiedosto sisältää rastien GPS-koordinaatit ja se voidaan ladata GPS-laitteeseen tai älypuhelimeen esimerkiksi rastien oikean sijainnin tarkistamiseksi.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Luo GPX-tiedosto</value>
+  </data>
 </root>

@@ -231,9 +231,6 @@ Kasuta | eraldamaks ridu</value>
     <value>Sisesta uus objekti legend
 (mõjutab kõikki radu)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Sisesta uus tekst</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>KPd {0} ei ole kasutusel ühegil rajal. Kas sa soovid need eemaldada?</value>
   </data>

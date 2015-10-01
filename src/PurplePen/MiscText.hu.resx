@@ -231,9 +231,6 @@ Használja a |-t a sortöréshez</value>
     <value>Írja be az új szimbólum jelentést
 (minden pályára kihat)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Írja be az új szöveget</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Az alábbi ellenőrzőpontok {0} nem használtak egyik pályán sem. Akarja törölni ezeket?</value>
   </data>
@@ -503,5 +500,8 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Sor kinézetének módosítása</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatikus</value>
   </data>
 </root>

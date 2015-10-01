@@ -120,24 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Létrehozás</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Margók:</value>
-  </data>
-  <data name="marginChange.Text" xml:space="preserve">
-    <value>Módosítás…</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Papírméret:</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tábla (11"x17")</value>
-  </data>
-  <data name="marginsLabel.Text" xml:space="preserve">
-    <value>Fent, Lent, Bal, Jobb: 14 mm</value>
-  </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Kimenet</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Pályák</value>
   </data>
@@ -203,5 +185,23 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PDF fájlok létrehozása</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Margók:</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Módosítás…</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Papírméret:</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tábla (11"x17")</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Fent, Lent, Bal, Jobb: 14 mm</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Kimenet</value>
   </data>
 </root>

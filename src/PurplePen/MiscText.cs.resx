@@ -207,9 +207,6 @@
   <data name="EnterCourseName" xml:space="preserve">
     <value>Zadat název nové trati</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Zadat nový text</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kontroly {0} již nejsou dále používány žádnou tratí. Přejete si smazat tyto kontroly z kolekce kontrol?</value>
   </data>

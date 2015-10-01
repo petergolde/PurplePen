@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.5.0\n"
+"Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-01-27 17:50-08:00\n"
+"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -194,7 +194,7 @@ msgstr "metriä"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -655,7 +655,6 @@ msgid "Change Text"
 msgstr "Muokkaa tekstiä"
 
 #: CommandNameText.resx, ChangeCourseAppearance
-#: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Course Appearance"
 msgstr "Muokkaa ratamerkintöjen ulkoasua"
 
@@ -680,7 +679,11 @@ msgstr "Muuta viivan ulkoasua"
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr ""
+msgstr "Kopioi rata"
+
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Kohteiden mitat"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -733,21 +736,22 @@ msgstr "Rastiympyrän halkaisija:"
 msgid "Use IOF standard sizes"
 msgstr "Käytä IOF:n standardimittoja"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Kohteiden mitat"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Violetti väri"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
-msgstr ""
+msgstr "Läpinäkyvä violetti"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
 msgstr "Käytä kartan violettia väriä"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Violetti väri"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Rastinmääritteet"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -759,10 +763,17 @@ msgstr "Musta"
 msgid "Purple"
 msgstr "Violetti"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Rastinmääritteet"
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, checkBoxOverprint.Text
+msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, $this.Text
+msgid "Customize Appearance"
+msgstr "Muokkaa ratamerkintöjen ulkoasua"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -825,18 +836,20 @@ msgstr "Nimen etuliite:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Reittipisteet"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
 "be loaded onto a GPS or smartphone to verify the correct "
 "location of controls."
-msgstr ""
+msgstr "GPX-tiedosto sisältää rastien GPS-koordinaatit ja se "
+"voidaan ladata GPS-laitteeseen tai älypuhelimeen "
+"esimerkiksi rastien oikean sijainnin tarkistamiseksi."
 
 #: CreateGpx.resx, $this.Text
 #: MainFrame.resx, saveGpxFileDialog.Title
 msgid "Create GPX File"
-msgstr ""
+msgstr "Luo GPX-tiedosto"
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -896,7 +909,6 @@ msgid "OCAD 11"
 msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
-#: CreatePdfCourses.resx, printerGroup.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
@@ -937,40 +949,10 @@ msgstr "Kansio"
 msgid "Create OCAD Files"
 msgstr "Vie OCAD-tiedostoihin"
 
-#: CreatePdfCourses.resx, label1.Text
-#: PrintDescriptions.resx, marginsLabel.Text
-#: PrintPunches.resx, marginsLabel.Text
-msgid "Margins:"
-msgstr "Marginaalit:"
-
-#: CreatePdfCourses.resx, marginChange.Text
-msgid "Change..."
-msgstr "Muuta..."
-
-#: CreatePdfCourses.resx, paperSizeLabel.Text
-#: PrintCourses.resx, paperSizeLabel.Text
-#: PrintDescriptions.resx, paperSizeLabel.Text
-#: PrintPunches.resx, paperSizeLabel.Text
-msgid "Paper Size:"
-msgstr "Paperin koko:"
-
-#: CreatePdfCourses.resx, paperSize.Text
-#: PrintCourses.resx, paperSize.Text
-#: PrintDescriptions.resx, paperSize.Text
-#: PrintPunches.resx, paperSize.Text
-msgid "Tabloid (11\"x17\")"
-msgstr "Tabloid (11\"x17\")"
-
-#: CreatePdfCourses.resx, marginsLabel.Text
-#: PrintDescriptions.resx, margins.Text
-#: PrintPunches.resx, margins.Text
-msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr "Ylä: 0.55\", Ala: 0.55\", Vasen: 0.55\", Oikea: 0.55\""
-
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr "Tulosta kartanvaihtoratojen koko rata samalle kartalle "
+msgstr "Tulosta kartanvaihdot samalle kartalle "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
@@ -1090,6 +1072,10 @@ msgid "Click on a description symbol to customize the text that "
 msgstr "Klikkaa symbolia muokataksesi sanallisessa "
 "rastinmääritteessä käytettävää tekstiä."
 
+#: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
+msgid "Make this the default language for new events"
+msgstr ""
+
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
 msgstr "Ladataan"
@@ -1143,7 +1129,9 @@ msgstr "Avaa olemassa oleva tapahtuma..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen is free software and may be copied and shared. "
+"Development of Purple Pen is supported only by your "
+"donations."
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1382,6 +1370,10 @@ msgstr "Korkea"
 msgid "Map &Quality"
 msgstr "Kartan &laatu"
 
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
 msgstr "Näytä &ponnahdustiedot"
@@ -1419,7 +1411,7 @@ msgid "Customize &Description Text..."
 msgstr "Muokkaa &sanallisia rastinmääritteitä..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize Course &Appearance..."
+msgid "Customize &Appearance..."
 msgstr "Muokkaa ratamerkintöjen &ulkoasua..."
 
 #: MainFrame.resx, eventMenu.Text
@@ -1436,7 +1428,7 @@ msgstr "&Poista rata"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr ""
+msgstr "&Kopioi rata..."
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
@@ -1444,11 +1436,11 @@ msgstr "&Ominaisuudet..."
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr "Ratojen järjestys..."
+msgstr "Ratojen &järjestys..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "Aseta &kuormitus..."
+msgstr "&Aseta kuormitus..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1623,11 +1615,11 @@ msgstr "&Kohde"
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create &GPX File..."
-msgstr ""
+msgstr "Luo &GPX-tiedosto..."
 
 #: MainFrame.resx, gpsMenu.Text
 msgid "&GPS"
-msgstr ""
+msgstr "&GPS"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1834,7 +1826,7 @@ msgstr "Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPX-tiedosto|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1981,8 +1973,9 @@ msgstr "Syötä uusi symbolin merkitys\n"
 "(vaikuttaa kaikkiin ratoihin)"
 
 #: MiscText.resx, EnterTextLine
-msgid "Enter new text"
-msgstr "Syötä uusi teksti"
+msgid "Enter new text\n"
+"Use | to separate lines"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2404,45 +2397,53 @@ msgstr "Muuta viivan tai suorakulmion ulkoasua"
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "Karttatiedoston pitää olla OCAD-tiedosto, jotta voit "
+"käyttää GPX-tiedostoja."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "OCAD-tiedoston koordinaatiston täytyy olla määritelty, "
+"jotta voit käyttää GPX-tiedostoja."
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "OCAD-tiedoston täytyy olla geo-viitattu, jotta "
+"GPX-tiedostoja voidaan käyttää."
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Ei voitu uudelleenprojektoida pisteitä. Joko "
+"koordinaatistossa tai maastokoordinaateissa OCAD-kartalla "
+"on virhe."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "Purple Pen ei tue OCAD-tiedoston käyttämää koordinaatistoa."
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr ""
+msgstr "Automaattinen"
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "Radan pituuden pitää olla numero väliltä 0.1 - 99.9 tai "
+"tyhjä, jolloin pituus lasketaan automaattisesti."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "Syötä pituus kilometreissä tai jätä tyhjäksi, jolloin "
+"pituus lasketaan automaattisesti"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "Radan \"{0}\" tulostus on valmis. Aloita radan \"{1}\" "
+"tulostus painamalla OK."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2584,8 +2585,9 @@ msgid "Selected Map File"
 msgstr "Valittu karttatiedosto"
 
 #: NewEventMapFile.resx, infoMessage.Text
-msgid "The map file was successfully loaded. If send your Purple "
-"Pen file to someone else, they must have the map file also."
+msgid "The map file was successfully loaded. If you send your "
+"Purple Pen file to someone else, they must have the map "
+"file also."
 msgstr "Karttatiedosto ladattiin onnistuneesti. Jos lähetät Purple "
 "Pen -tiedoston jollekin muulle, muista lähettää myös "
 "karttatiedosto ellei sitä ole vastaanottajalla."
@@ -2736,19 +2738,19 @@ msgstr "Tulostin:"
 msgid "Preview..."
 msgstr "Esikatselu..."
 
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Kopiot"
+
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Kopioita jokaisesta radasta:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
-
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Kopiot"
+msgstr "Keskeytä tulostus jokaisen radan tai osan jälkeen"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2766,6 +2768,26 @@ msgstr "Tulosta radat"
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
 msgstr "Muuta marginaaleja..."
+
+#: PrintDescriptions.resx, paperSize.Text
+#: PrintPunches.resx, paperSize.Text
+msgid "Tabloid (11\"x17\")"
+msgstr "Tabloid (11\"x17\")"
+
+#: PrintDescriptions.resx, paperSizeLabel.Text
+#: PrintPunches.resx, paperSizeLabel.Text
+msgid "Paper Size:"
+msgstr "Paperin koko:"
+
+#: PrintDescriptions.resx, margins.Text
+#: PrintPunches.resx, margins.Text
+msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
+msgstr "Ylä: 0.55\", Ala: 0.55\", Vasen: 0.55\", Oikea: 0.55\""
+
+#: PrintDescriptions.resx, marginsLabel.Text
+#: PrintPunches.resx, marginsLabel.Text
+msgid "Margins:"
+msgstr "Marginaalit:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
@@ -3310,7 +3332,7 @@ msgstr "Rata \"{0}\", osa {1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "Mitattu pituus:"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3320,6 +3342,18 @@ msgstr "Valmis"
 msgid "Set the desired printing area by dragging with the mouse."
 msgstr "Määritä tulostusalue muokkaamalla suorakulmion kokoa ja "
 "sijaintia."
+
+#: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
+msgid "Paper Size"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
+msgid "Set Print Area Automatically"
+msgstr ""
+
+#: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
+msgid "Fix Print Area Size to Paper Size"
+msgstr ""
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

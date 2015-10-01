@@ -120,24 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Créer</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Marges :</value>
-  </data>
-  <data name="marginChange.Text" xml:space="preserve">
-    <value>Modifier…</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Taille du papier :</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="marginsLabel.Text" xml:space="preserve">
-    <value>Haut : 0.55", Bas : 0.55", Gauche : 0.55", Droite : 0.55"</value>
-  </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Sortie</value>
-  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Circuits</value>
   </data>
@@ -203,6 +185,24 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimer les circuits</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Marges :</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Modifier…</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Taille du papier :</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Haut : 0.55", Bas : 0.55", Gauche : 0.55", Droite : 0.55"</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Sortie</value>
   </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Changer d'imprimante...</value>

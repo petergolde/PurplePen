@@ -123,4 +123,13 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>ファイル名プレフィックス:</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>ウェイポイント</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>GPXファイルはコントロールのGPS座標を含み、コントロールの正確な位置を検証するためにGPSやスマートフォンにロードできます。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GPXファイルを作成</value>
+  </data>
 </root>

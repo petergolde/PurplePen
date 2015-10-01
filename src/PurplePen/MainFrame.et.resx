@@ -285,9 +285,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>O&amp;madused...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Radade järjestus...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Osalejate &amp;arv...</value>
   </data>

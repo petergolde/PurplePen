@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Dimensiuni Element</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -156,8 +159,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Utilizează standardele de dimensiune IOF</value>
   </data>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Dimensiuni Element</value>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Culoarea Violet</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Negru:</value>
@@ -173,9 +176,6 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Folosește culoarea violet din hartă</value>
-  </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Culoarea Violet</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Previzualizare</value>

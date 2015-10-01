@@ -273,9 +273,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Proprietà...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Ordine Corso...</value>
-  </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Corso</value>
   </data>

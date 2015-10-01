@@ -120,14 +120,11 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Skriv ut</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Endre skriver...</value>
-  </data>
-  <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
-  </data>
-  <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Papirstørrelse:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Skrivernavn</value>
@@ -135,20 +132,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Skriver:</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
-  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Forhåndsvisning …</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Løyper</value>
   </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopier</value>
+  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Antall kopier av hver løype:</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopier</value>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Utseende</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>Skriv ut som raster</value>
@@ -177,11 +174,14 @@
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Dersom utskriftsomfådet er for stort til å passe på en side:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Utseende</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut løyper</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Papirstørrelse:</value>
   </data>
   <data name="radioButtonMultiPage.Text" xml:space="preserve">
     <value>Skriv ut på flere sider</value>

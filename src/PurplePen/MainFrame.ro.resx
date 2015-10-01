@@ -282,9 +282,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Proprietăți...</value>
   </data>
-  <data name="courseOrderMenu.Text" xml:space="preserve">
-    <value>Ordine Trasee...</value>
-  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Încărcare Participanți...</value>
   </data>

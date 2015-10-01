@@ -123,6 +123,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Banans namn</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Del av bana</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Banlängd</value>
   </data>
@@ -132,11 +135,29 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Klasslista</value>
   </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Utskriftsskala</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Ändra färg...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Färg:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kursiv</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Fet</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Typsnitt:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Exempel</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Infoga text</value>

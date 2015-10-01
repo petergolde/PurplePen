@@ -288,4 +288,7 @@
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>Suorakulmio</value>
   </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Mitattu pituus:</value>
+  </data>
 </root>

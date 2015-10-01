@@ -123,4 +123,7 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Név előtag:</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Útvonalpontok</value>
+  </data>
 </root>

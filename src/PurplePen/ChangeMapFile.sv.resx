@@ -123,6 +123,9 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Välj kartfil...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Alla kartfiler|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD-filer (*.ocd)|*.ocd|PDF-filer (*.pdf)|*.pdf|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Upplösning:</value>
   </data>

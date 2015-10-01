@@ -270,4 +270,19 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Ändra Banans Utseende</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Lägg till kartbyte</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Ta bort kartbyte</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Ändra egenskaper för del av bana</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Ändra linjeutseende</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicera bana</value>
+  </data>
 </root>
