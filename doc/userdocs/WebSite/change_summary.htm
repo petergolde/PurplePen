@@ -16,6 +16,105 @@
 
 <h1>Purple Pen Change Summary</h1>
 
+<h2>Changes in 2.6.0 beta 1</h2>
+<h3>New features</h3>
+<ul>
+    <li>
+        <p>
+            The handling of print areas, paper sizes, and orientation (landscape/portrait) has been substantially
+            redone in order to make it simpler to use. Instead of setting the paper size when printing or creating
+            a PDF, you now set the paper size when creating a new event, or when using the File/Set Print Area
+            command. You can set different paper sizes for different courses. 
+        </p>
+        <p>
+            The print area can now be viewed all the time using the View/Show Print Area command. When changing
+            the print area, you can now have the print area fixed to be the same as the page size, which greatly
+            simplifies setting the print area. Also, there is an automatic setting which automatically choses
+            the print area based on the map and the course.
+        </p>
+        <p>
+            When loading files created in a previous version of Purple Pen, you should check the 
+            paper size and make sure it is set correctly.
+        </p>
+    </li>
+    <li>
+        <p>
+            A new option is present on the Event/Customize Appearance dialog: Use overprint effect for 
+            colors marked overprint. On an OCAD map, this causes Purple Pen to use the overprinting effect
+            when printing (or creating a PDF) for colors in the color table that request it. 
+            This is off by default. If you don't know what this means, you probably want to leave it off.
+        </p>
+    </li>
+    <li>
+        <p>
+            When adding textual lines in the middle of a description using "Item/Add Text Line", you can now
+            have multiple lines of text.
+        </p>
+    </li>
+    <li>
+        <p>
+            On the "Event/Customize Description Text" dialog, there is now an option for "Make this the default
+            language for new events." This does just what it sounds like; change the language that is used
+            for textual control descriptions on new events.
+        </p>
+    </li>
+    <li>
+        <p>
+            Textual control descriptions for Chinese (Traditional) are included. Thanks to Raphael Mak.
+        </p>
+    </li>
+    <li>
+        <p>
+            The setting of View/All Controls" is now saved between runs of the program.
+        </p>
+    </li>
+</ul>
+
+<h3>Bug Fixes</h3>
+<ul>
+    <li>
+        <p>
+            If the "White outline around numbers" options was used, and a PDF was created, the number "11"
+            in had the white outline on the second "1" offset. This was due to different kerning rules being
+            used for the control number and the outline. This is now fixed.
+        </p>
+    </li>
+    <li>
+        <p>
+            OCAD 11 changed the way that dashed lines were drawn, then in OCAD 11.5.4 added the 
+            View/Line Objects Appearance as in OCAD 10. Purple Pen now respects both options when drawing
+            dashed lines. (Thanks to Mark Roberts for noticing this.)
+        </p>
+    </li>
+    <li>
+        <p>
+            In rare cases Purple Pen would draw fences and similar features with corner points different
+            than OCAD. (Thanks for Mark Roberts for noticing this.)
+        </p>
+    </li>
+    <li>
+        <p>
+            A text symbol with an attached point symbol did not display correctly in some cases.
+        </p>
+    </li>
+    <li>
+        <p>
+           When loading bitmaps used as background maps, Purple Pen would lock the files so that OCAD could not
+           load them. Purple Pen no longer locks bitmap files. 
+        </p>
+    </li>
+    <li>
+        <p>
+           When using PDF files that used to produce the error "Cannot handle iref streams", Purple Pen
+           now detects the problem and works around it (at the cost of bigger file size and slightly reduced
+           resolution.)
+        </p>
+    </li>
+
+</ul>
+
+
+
 <h2>Changes in 2.5.0</h2>
 <h3>New features</h3>
 <ul>
