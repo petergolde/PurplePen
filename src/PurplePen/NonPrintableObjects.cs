@@ -13,9 +13,13 @@ namespace PurplePen
         string mapName;
         string[] badObjectList;
 
-        public NonPrintableObjects()
+        public NonPrintableObjects(bool showCancelAndContinue)
         {
             InitializeComponent();
+            if (!showCancelAndContinue) {
+                cancelButton.Visible = false;
+                okButton.Location = cancelButton.Location;
+            }
         }
 
         public string MapName

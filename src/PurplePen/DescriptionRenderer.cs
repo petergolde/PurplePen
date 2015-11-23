@@ -1031,7 +1031,8 @@ namespace PurplePen
 
             // Calc size of the text. 
             float[] wrappedWidths;
-            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, null, out wrappedWidths); // no wrapping.
+            TextCoordMapper coordMapper;
+            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, out coordMapper, out wrappedWidths); // no wrapping.
             symdef.CalcBounds(wrappedText, wrappedWidths, baseLocation, 0, 0, out size);
 
             return Geometry.TransformDistance(size.Width, inverseTransform);

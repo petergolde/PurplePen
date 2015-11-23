@@ -311,6 +311,9 @@ namespace PurplePen
 
                 // Reset the OCAD file creating settings dialog to default settings.
                 ocadCreationSettingsPrevious = null;
+
+                // Check for unhandled features.
+                CheckForNonRenderableObjects(false);
             }
 
             if (mapDisplay.OcadOverprintEffect != controller.OcadOverprintEffect) {
@@ -1958,7 +1961,7 @@ namespace PurplePen
 
         private void printCoursesMenu_Click(object sender, EventArgs e)
         {
-            if (!CheckForNonRenderableObjects())
+            if (!CheckForNonRenderableObjects(true))
                 return;
 
             // Initialize dialog
@@ -1989,7 +1992,7 @@ namespace PurplePen
 
         private void createCoursePdfMenu_Click(object sender, EventArgs e)
         {
-            if (! CheckForNonRenderableObjects())
+            if (! CheckForNonRenderableObjects(true))
                 return;
 
             bool isPdfMap = controller.MapType == MapType.PDF;
@@ -2091,13 +2094,13 @@ namespace PurplePen
         }
 
         // Warn user about non-renderable objects. Return false if shouldn't continue
-        private bool CheckForNonRenderableObjects()
+        private bool CheckForNonRenderableObjects(bool showCancelAndContinue)
         {
             // Check for objects that aren't renderable, and warn. If user choses cancel, then cancel.
             string[] nonRenderableObjects = mapDisplay.NonRenderableObjects();
 
             if (nonRenderableObjects != null && nonRenderableObjects.Length > 0) {
-                NonPrintableObjects dialog = new NonPrintableObjects();
+                NonPrintableObjects dialog = new NonPrintableObjects(showCancelAndContinue);
                 dialog.MapName = Path.GetFileName(controller.MapFileName);
                 dialog.BadObjectList = nonRenderableObjects;
 
