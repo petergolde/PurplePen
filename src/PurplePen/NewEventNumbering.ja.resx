@@ -127,7 +127,7 @@
     <value>連番の初期値:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(この設定は後からメニュー[イベント]＞[番号付けの設定]で変更できます)</value>
+    <value>(この設定は後からメニュー[イベント] &gt; [番号付けの設定]で変更できます)</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>番号付けの設定</value>

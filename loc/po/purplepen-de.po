@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -770,15 +770,16 @@ msgstr "Purpur"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "OCAD-Karte"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "Überdruck-Effekt für mit \"Überdruck\" markierte Farben "
+"verwenden."
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "Bahndesign anpassen"
+msgstr "Aussehen anpassen"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -912,6 +913,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1079,7 +1084,7 @@ msgstr "Klicke auf das Symbol um den entsprechenden Text in der "
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "Dies als Standardeinstellung für neue Läufe verwenden."
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1378,7 +1383,7 @@ msgstr "Karten&qualität"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "Druckbe&reich anzeigen"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1418,7 +1423,7 @@ msgstr "&Textpostenbeschreibung anpassen"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "&Bahndesign anpassen..."
+msgstr "Aussehen &anpassen"
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1984,7 +1989,8 @@ msgstr "Neue Symbolbezeichnung festlegen\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Neuen Text eingeben\n"
+"| für einen Zeilenumbruch verwenden"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2616,8 +2622,8 @@ msgstr "Ausgewählte Kartendatei"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr "Die Kartendatei wurde erfolgreich geladen. Wenn Sie Ihre "
-"Purple Pen-Datei jemand anderem schicken, müssen Sie die "
+msgstr "Die Kartendatei wurde erfolgreich geladen. Wenn sie ihre "
+"Purple Pen-Datei jemandem schicken, müssen sie die "
 "Kartendatei ebenfalls mitschicken."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
@@ -3376,15 +3382,15 @@ msgstr "Legen Sie den gewünschten Druckbereich fest, indem Sie mit "
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Papiergrösse"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Druckbereich automatisch festlegen"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Druckbereich auf Papiergrösse des Druckers festlegen"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

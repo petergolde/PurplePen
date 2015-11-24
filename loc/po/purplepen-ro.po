@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:42-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -770,7 +770,7 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "Personalizare Aspect Traseu"
+msgstr ""
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -901,6 +901,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1405,7 +1409,7 @@ msgstr "Personalizare Text &Descriere..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "Personalizare &Aspect Traseu..."
+msgstr ""
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1970,7 +1974,7 @@ msgstr "Introduceți noua semnificație de simbol\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr "Introduceți noul text"
+msgstr ""
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2555,9 +2559,7 @@ msgstr "Selectează Fișierul Hartă"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr "Fișierul hartă a fost încărcat. Dacă transmiteți fișierul "
-"Purple Pen altor persoane, acestea trebuie sa dețină "
-"deasemeni și fișierul hartă."
+msgstr ""
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "

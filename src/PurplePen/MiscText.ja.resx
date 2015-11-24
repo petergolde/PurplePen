@@ -218,8 +218,8 @@
 （すべてのコースに反映されます）</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>新しい副タイトルを入力してください。
-「 | 」を使用すると改行になります。</value>
+    <value>新しいサブタイトルを入力してください。
+「 | 」を使用すると改行できます。</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>新規コース名を入力</value>
@@ -230,6 +230,10 @@
   <data name="EnterSymbolText" xml:space="preserve">
     <value>記号の新しい意味を入力
 (全コースに反映されます)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>新しいテキストを入力してください。
+「 | 」を使用すると改行できます。</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>コントロール {0} を使用しているコースが無くなりました。これらのコントロールをコントロール・コレクションからも削除しますか？</value>

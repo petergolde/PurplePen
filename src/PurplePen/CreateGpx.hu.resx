@@ -126,4 +126,10 @@
   <data name="waypointGroupBox.Text" xml:space="preserve">
     <value>Útvonalpontok</value>
   </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>A GPX fájl tartalmazza az ellenőrzőpontok GPS koordinátáit, amit GPS-be vagy okostelefonba töltve ellenőrizhetjük a helyes elhelyezkedésüket.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GPX fájl készítése</value>
+  </data>
 </root>

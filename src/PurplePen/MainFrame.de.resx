@@ -252,6 +252,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Karten&amp;qualität</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Druckbe&amp;reich anzeigen</value>
+  </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>&amp;Popup Information anzeigen</value>
   </data>
@@ -280,7 +283,7 @@
     <value>&amp;Textpostenbeschreibung anpassen</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>&amp;Bahndesign anpassen...</value>
+    <value>Aussehen &amp;anpassen</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Wettkampf</value>

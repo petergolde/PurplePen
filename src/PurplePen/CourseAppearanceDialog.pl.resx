@@ -171,9 +171,6 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Podgląd</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Zmień Wygląd Tras</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Wybierz Kolor...</value>
   </data>

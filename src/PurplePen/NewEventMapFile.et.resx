@@ -126,9 +126,6 @@
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vali kaardi fail</value>
   </data>
-  <data name="infoMessage.Text" xml:space="preserve">
-    <value>Kaardi fail on edukalt loetud. Kui saadad Purple Pen faili kellegile teisele, siis pead saatma ka kaardifaili.</value>
-  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Kaardi fail</value>
   </data>

@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>クリックでディスクリプション記号を選択して、文字によるコントロールディスクリプションに使用されるテキストをカスタマイズします。</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>この言語設定を新規イベントのデフォルトにする</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ディスクリプションのテキストをカスタマイズ</value>
   </data>

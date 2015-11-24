@@ -231,6 +231,10 @@ Käytä | erottaaksesi rivit</value>
     <value>Syötä uusi symbolin merkitys
 (vaikuttaa kaikkiin ratoihin)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Lisää uusi teksti
+Käytä | -merkkiä erottamaan rivit</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kohteet {0} eivät ole enää käytössä millään radalla. Haluatko poistaa nämä kohteet kaikki rastit -kokoelmasta?</value>
   </data>
@@ -287,7 +291,7 @@ Haluatko ladata ja asentaa viimeisimmän version?</value>
   <data name="MissingMapFile" xml:space="preserve">
     <value>Karttatiedostoa "{0}" ei löytynyt.
 
-Todennäköisesti karttatiedosto on siirretty tai poistettu tai Purple Pen -tiedosto on siirretty (mahdollisesti toiselle tietokoneelle). Karttatiedosto on oltava aina, kun Purple Pen -tiedostoa käytetään. Jos lähetät Purple Pen -tiedoston jollekin muulle, muista lähettää myös karttatiedosto ellei sitä ole vastaanottajalla.
+Todennäköisesti karttatiedosto on siirretty tai poistettu tai Purple Pen -tiedosto on siirretty (mahdollisesti toiselle tietokoneelle). Karttatiedosto on oltava aina, kun Purple Pen -tiedostoa käytetään. Jos lähetät Purple Pen -tiedoston jollekin muulle, muista lähettää myös karttatiedosto, ellei sitä ole vastaanottajalla.
 
 Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>

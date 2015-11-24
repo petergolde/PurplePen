@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Kattintson a leírásra a szöveg testreszabásához!</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Ez legyen az alapértelmezett nyelv az új eseményekhez</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>A leírás testreazabása</value>
   </data>

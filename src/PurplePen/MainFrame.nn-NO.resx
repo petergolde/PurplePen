@@ -267,9 +267,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Tilpass &amp;beskrivelsestekst</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Tilpass løypas &amp;utsjånad</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Arrangement</value>
   </data>

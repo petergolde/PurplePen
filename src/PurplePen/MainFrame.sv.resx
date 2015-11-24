@@ -279,9 +279,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Anpassa &amp;Beskrivningstext...</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Ändra banans &amp;utseende...</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Tävling</value>
   </data>

@@ -183,9 +183,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Control Descriptions</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Customise Course Appearance</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Colour Chooser...</value>
   </data>

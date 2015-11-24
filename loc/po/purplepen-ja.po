@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:41-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -155,7 +155,7 @@ msgstr "以下に入力したテキストはディスクリプションの2行�
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "クラスリスト / 副タイトル"
+msgstr "クラスリスト / サブタイトル"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -677,7 +677,7 @@ msgstr "アイテムサイズ"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr "自動で作成される切れ目のサイズ:"
+msgstr "自動で作成される切れ目の長さ:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -755,15 +755,15 @@ msgstr "紫"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "OCADマップ"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "「オーバープリント」にマークされた色を重ね合わせする"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "コースの外観をカスタマイズ"
+msgstr "外観をカスタマイズ"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -894,6 +894,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1060,7 +1064,7 @@ msgstr "クリックでディスクリプション記号を選択して、文字
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "この言語設定を新規イベントのデフォルトにする"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1116,7 +1120,7 @@ msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
 msgstr "Purple Pen はフリーソフトです。複製・再配布は自由です。Purple Pen "
-"の開発は皆様の寄付のみによりサポートされています。"
+"の開発は皆様の寄付のみで支えられています。"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1225,7 +1229,7 @@ msgstr "コントロールカードを印刷(&N)..."
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
-msgstr "コースを印刷 (&C)"
+msgstr "コースを印刷(&C)"
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
@@ -1277,15 +1281,15 @@ msgstr "削除(&D)"
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
-msgstr "編集 (&E)"
+msgstr "編集(&E)"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr "コース全体を表示 (&C)"
+msgstr "コース全体を表示(&C)"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr "地図全体を表示 (&M)"
+msgstr "地図全体を表示(&M)"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1357,7 +1361,7 @@ msgstr "地図の画質(&Q)"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "印刷領域を表示(&P)"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1397,7 +1401,7 @@ msgstr "ディスクリプションのテキストをカスタマイズ"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "コースの外観をカスタマイズ(&A)"
+msgstr "外観をカスタマイズ(&A)"
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1939,8 +1943,8 @@ msgstr "新しいイベント名を入力してください。\n"
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr "新しい副タイトルを入力してください。\n"
-"「 | 」を使用すると改行になります。"
+msgstr "新しいサブタイトルを入力してください。\n"
+"「 | 」を使用すると改行できます。"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
@@ -1959,7 +1963,8 @@ msgstr "記号の新しい意味を入力\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "新しいテキストを入力してください。\n"
+"「 | 」を使用すると改行できます。"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2527,8 +2532,8 @@ msgstr "選択中の地図ファイル"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr "地図ファイルのロードに成功しました。Purple "
-"Penファイルを他の人に送信する場合には、受信者も同じ地図ファイルを使用できるようにしてください。"
+msgstr "地図ファイルのロードに成功しました。もしPurple "
+"Penファイルを他の人に送る場合は、受け取った人も同じ地図ファイルを使うようにしてください。"
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
@@ -2538,7 +2543,7 @@ msgstr "新しく作成するコントロールには連番のコントロール
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr "(この設定は後からメニュー[イベント]＞[番号付けの設定]で変更できます)"
+msgstr "(この設定は後からメニュー[イベント] > [番号付けの設定]で変更できます)"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
@@ -2559,7 +2564,7 @@ msgstr "デフォルトの印刷の縮尺:"
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr "(印刷の縮尺は後からメニュー[コース]＞[プロパティ]で変更できます。)"
+msgstr "(印刷の縮尺は後からメニュー[コース] > [プロパティ]で変更できます。)"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -2596,8 +2601,8 @@ msgstr "地図ファイル \"{0}\" は、Purple "
 "Penが十分にサポートしていないオブジェクトまたはシンボルを含んでいます。そのため、印刷が正しくできない可能性があります"
 "。正しく印刷されない可能性のあるオブジェクトを以下のリストに挙げます。\n"
 "\n"
-"コンペティションの地図を印刷する場合には、コースをOCADファイルで出力　( "
-"[ファイル]メニュー＞[OCADファイルを作成...] )　し、OCADでファイルを印刷することをお勧めします。\n"
+"コンペティションの地図を印刷する場合には、コースをOCADファイルで出力　( [ファイル]メニュー > "
+"[OCADファイルを作成...] )　し、OCADでファイルを印刷することをお勧めします。\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
@@ -3067,8 +3072,8 @@ msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr "走行人数の設定されていないコースがあります。そのため、下の表のコントロールごとの走行人数は不正確だったり間違いのある可能"
-"性があります。コースごとの走行人数を設定するには、[コース]メニューから[走行人数]を選択してください。"
+msgstr "走行人数の設定されていないコースがあります。そのため、下の表の走行人数は不正確なものとなっています。走行人数を設定するに"
+"は、[コース]メニューから[走行人数]を選択してください。"
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
@@ -3261,15 +3266,15 @@ msgstr "マウスドラッグで印刷領域を設定してください。"
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "用紙サイズ"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "印刷領域を自動で設定する"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "印刷領域のサイズを用紙サイズに合わせる"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

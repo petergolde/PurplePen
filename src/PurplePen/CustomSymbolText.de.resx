@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Klicke auf das Symbol um den entsprechenden Text in der textuellen Postenbeschreibung zu ändern.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Dies als Standardeinstellung für neue Läufe verwenden.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Textbeschreibung anpassen</value>
   </data>

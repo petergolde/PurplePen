@@ -256,7 +256,7 @@
     <value>レッグごとの走行人数</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>走行人数の設定されていないコースがあります。そのため、下の表のコントロールごとの走行人数は不正確だったり間違いのある可能性があります。コースごとの走行人数を設定するには、[コース]メニューから[走行人数]を選択してください。</value>
+    <value>走行人数の設定されていないコースがあります。そのため、下の表の走行人数は不正確なものとなっています。走行人数を設定するには、[コース]メニューから[走行人数]を選択してください。</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
     <value>(次の表には1つ以上のコースで使われているレッグのみが表示されます。)</value>

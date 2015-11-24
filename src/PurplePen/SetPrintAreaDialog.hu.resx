@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Az egérrel jelölje ki a nyomtatási területet.</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Papírméret</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Nyomtatási terület automatikus beállítása</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Nyomtatási terület rögzítése a papírmérethez</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nyomtatási terület beállítása</value>
   </data>

@@ -267,9 +267,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Персонализирай &amp;текста на описанията</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Персонализирай &amp;изгледа на маршрута</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Състезание</value>
   </data>

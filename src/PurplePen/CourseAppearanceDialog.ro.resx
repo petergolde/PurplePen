@@ -183,9 +183,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Descrierea Posturilor</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Personalizare Aspect Traseu</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Alege Culoarea...</value>
   </data>

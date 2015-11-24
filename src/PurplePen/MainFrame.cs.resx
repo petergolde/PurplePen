@@ -276,9 +276,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Upravit textové popisy</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Přizpůsobit vzhled tr&amp;ati...</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Závo&amp;d</value>
   </data>

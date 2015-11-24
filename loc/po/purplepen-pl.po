@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:41-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -764,7 +764,7 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "Zmień Wygląd Tras"
+msgstr ""
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -893,6 +893,10 @@ msgstr "OCAD 10"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
+msgstr ""
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
 msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
@@ -1393,7 +1397,7 @@ msgstr ""
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "Zmień &Wygląd Tras..."
+msgstr ""
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"

@@ -231,9 +231,6 @@ Folosiți | pentru a separa liniile</value>
     <value>Introduceți noua semnificație de simbol
 (afectează toate traseele)</value>
   </data>
-  <data name="EnterTextLine" xml:space="preserve">
-    <value>Introduceți noul text</value>
-  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Postul {0} nu mai este folosit în nici un traseu. Doriți sa-l stergeți din colecția de posturi?</value>
   </data>

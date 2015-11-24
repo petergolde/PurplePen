@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Klikkaa symbolia muokataksesi sanallisessa rastinmääritteessä käytettävää tekstiä.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Valitse tämä oletuskieleksi uusiin tapahtumiin</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokkaa sanallisia rastinmääritteitä</value>
   </data>

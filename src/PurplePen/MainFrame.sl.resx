@@ -273,9 +273,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Prilagodi &amp;Besedilni opis</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Prilagodi progo &amp;Izgled...</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Prire&amp;ditev</value>
   </data>

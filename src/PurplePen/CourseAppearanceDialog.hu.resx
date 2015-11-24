@@ -171,6 +171,9 @@
   <data name="groupBoxPurple.Text" xml:space="preserve">
     <value>A lila szín</value>
   </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Keverje a lila színt a térkép alapszínével</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Fekete:</value>
   </data>
@@ -200,6 +203,12 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Szín:</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD térkép</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Felülnyomás használata a megjelölt színekhez</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pályakép testreszabása</value>

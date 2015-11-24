@@ -252,6 +252,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Kartan &amp;laatu</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Nä&amp;ytä tulostusalue</value>
+  </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>Näytä &amp;ponnahdustiedot</value>
   </data>
@@ -280,7 +283,7 @@
     <value>Muokkaa &amp;sanallisia rastinmääritteitä...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Muokkaa ratamerkintöjen &amp;ulkoasua...</value>
+    <value>Muokkaa &amp;ulkoasua...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Tapa&amp;htuma</value>

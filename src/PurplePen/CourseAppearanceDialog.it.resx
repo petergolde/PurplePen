@@ -198,9 +198,6 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Colore:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Personalizza lo stile del percorso</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Selettore Del Colore...</value>
   </data>

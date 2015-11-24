@@ -204,9 +204,6 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Couleur :</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Personnaliser la présentation du circuit</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Sélecteur de couleur...</value>
   </data>

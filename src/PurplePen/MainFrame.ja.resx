@@ -157,7 +157,7 @@
     <value>コントロールカードを印刷(&amp;N)...</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>コースを印刷 (&amp;C)</value>
+    <value>コースを印刷(&amp;C)</value>
   </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>現在のパートのみ(&amp;P)</value>
@@ -193,13 +193,13 @@
     <value>削除(&amp;D)</value>
   </data>
   <data name="editMenu.Text" xml:space="preserve">
-    <value>編集 (&amp;E)</value>
+    <value>編集(&amp;E)</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>コース全体を表示 (&amp;C)</value>
+    <value>コース全体を表示(&amp;C)</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>地図全体を表示 (&amp;M)</value>
+    <value>地図全体を表示(&amp;M)</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -252,6 +252,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>地図の画質(&amp;Q)</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>印刷領域を表示(&amp;P)</value>
+  </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>ポップアップ情報を表示する(&amp;P)</value>
   </data>
@@ -280,7 +283,7 @@
     <value>ディスクリプションのテキストをカスタマイズ</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>コースの外観をカスタマイズ(&amp;A)</value>
+    <value>外観をカスタマイズ(&amp;A)</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>イベント(&amp;N)</value>

@@ -267,9 +267,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Personalizare Text &amp;Descriere...</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Personalizare &amp;Aspect Traseu...</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Eve&amp;niment</value>
   </data>

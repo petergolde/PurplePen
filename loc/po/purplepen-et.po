@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -765,7 +765,7 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "Muuda raja sümbolite väljanägemist"
+msgstr ""
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -896,6 +896,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1398,7 +1402,7 @@ msgstr "Muuda &selgituse teksti"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "Muuda &rajasümboleid"
+msgstr ""
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -2530,8 +2534,7 @@ msgstr "Vali kaardi fail"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr "Kaardi fail on edukalt loetud. Kui saadad Purple Pen faili "
-"kellegile teisele, siis pead saatma ka kaardifaili."
+msgstr ""
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "

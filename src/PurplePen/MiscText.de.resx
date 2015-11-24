@@ -231,6 +231,10 @@
     <value>Neue Symbolbezeichnung festlegen
 (wirkt sich auf alle Bahnen aus)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Neuen Text eingeben
+| für einen Zeilenumbruch verwenden</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Die Posten {0} werden von keiner Bahn mehr verwendet. Sollen diese Posten von der Postenliste gelöscht werden?</value>
   </data>

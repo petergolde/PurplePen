@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Määritä tulostusalue muokkaamalla suorakulmion kokoa ja sijaintia.</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Paperikoko</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Aseta tulostusalue automaattisesti</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Kiinnitä tulostusalueen koko paperikokoon</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aseta tulostusalue</value>
   </data>

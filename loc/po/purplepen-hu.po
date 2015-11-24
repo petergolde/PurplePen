@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:41-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -678,7 +678,7 @@ msgstr "Sor kinézetének módosítása"
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr ""
+msgstr "Pálya másolása"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -741,7 +741,7 @@ msgstr "A lila szín"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
-msgstr ""
+msgstr "Keverje a lila színt a térkép alapszínével"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -764,11 +764,11 @@ msgstr "Lila"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "OCAD térkép"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "Felülnyomás használata a megjelölt színekhez"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -841,12 +841,14 @@ msgstr "Útvonalpontok"
 msgid "A GPX File contains GPS coordinates for controls, and can "
 "be loaded onto a GPS or smartphone to verify the correct "
 "location of controls."
-msgstr ""
+msgstr "A GPX fájl tartalmazza az ellenőrzőpontok GPS "
+"koordinátáit, amit GPS-be vagy okostelefonba töltve "
+"ellenőrizhetjük a helyes elhelyezkedésüket."
 
 #: CreateGpx.resx, $this.Text
 #: MainFrame.resx, saveGpxFileDialog.Title
 msgid "Create GPX File"
-msgstr ""
+msgstr "GPX fájl készítése"
 
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
@@ -904,6 +906,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1070,7 +1076,7 @@ msgstr "Kattintson a leírásra a szöveg testreszabásához!"
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "Ez legyen az alapértelmezett nyelv az új eseményekhez"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1126,7 +1132,9 @@ msgstr "Létező esemény megnyitása"
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "A Purple Pen program szabadszoftver, így szabadon "
+"másolható és terjeszthető. A Purple Pen fejlesztését csak "
+"az Ön adománya támogatja."
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1367,7 +1375,7 @@ msgstr "Térkép&minőség"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "Mutassa &Nyomtatott területet"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1423,7 +1431,7 @@ msgstr "Pálya &törlése"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr ""
+msgstr "Pálya &másolása..."
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
@@ -1610,11 +1618,11 @@ msgstr "&Elem"
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create &GPX File..."
-msgstr ""
+msgstr "&GPX fájl készítése..."
 
 #: MainFrame.resx, gpsMenu.Text
 msgid "&GPS"
-msgstr ""
+msgstr "&GPS"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1821,7 +1829,7 @@ msgstr "Kép fájl|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPX fájl|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -1970,7 +1978,8 @@ msgstr "Írja be az új szimbólum jelentést\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Írja be az új szöveget\n"
+"Használja a | jelet sorelválsztóként"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2387,27 +2396,33 @@ msgstr "A téglalap vagy vonal kinézetének módosítása."
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "A térképnek OCAD fájlnak kell lennie GPX fájlok "
+"használatához."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "Az OCAD fájlnak definiált koordináta rendszerrel kell "
+"rendelkeznie GPX fájlok használatához."
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "Az OCAD fájl koordináta rendszere csak valós földi lehet "
+"GPX fájlok használatához."
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Nem lehet újravetíteni a pontokat; valamelyik koordináta "
+"rendszer vagy a valós földi koordináták az OCAD fájlban "
+"hibásak."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "Az OCAD fájl a Purple Pen által nem ismert koordináta "
+"rendszert használ."
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
@@ -2416,16 +2431,19 @@ msgstr "Automatikus"
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "A pályahossz 0.1 - 99.9 között lehet, vagy üres az "
+"automatikus meghatározáshoz."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "Írja be a hosszt km-ben, vagy hagyja üresen az automatikus "
+"számoláshoz"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "A {0} nyomtatása befejeződött. Nyomjon OK-t a(z) {1} "
+"nyomtatásához!"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2731,7 +2749,7 @@ msgstr "Az egyes pályák példányszáma:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "Szünet a nyomtatásban az egyes pályák vagy részek között"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -3325,15 +3343,15 @@ msgstr "Az egérrel jelölje ki a nyomtatási területet."
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Papírméret"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Nyomtatási terület automatikus beállítása"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Nyomtatási terület rögzítése a papírmérethez"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

@@ -231,6 +231,10 @@ Használja a |-t a sortöréshez</value>
     <value>Írja be az új szimbólum jelentést
 (minden pályára kihat)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Írja be az új szöveget
+Használja a | jelet sorelválsztóként</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Az alábbi ellenőrzőpontok {0} nem használtak egyik pályán sem. Akarja törölni ezeket?</value>
   </data>
@@ -501,7 +505,34 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Sor kinézetének módosítása</value>
   </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>A térképnek OCAD fájlnak kell lennie GPX fájlok használatához.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>Az OCAD fájlnak definiált koordináta rendszerrel kell rendelkeznie GPX fájlok használatához.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Az OCAD fájl koordináta rendszere csak valós földi lehet GPX fájlok használatához.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Nem lehet újravetíteni a pontokat; valamelyik koordináta rendszer vagy a valós földi koordináták az OCAD fájlban hibásak.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Az OCAD fájl a Purple Pen által nem ismert koordináta rendszert használ.</value>
+  </data>
   <data name="AutomaticLength" xml:space="preserve">
     <value>Automatikus</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>A pályahossz 0.1 - 99.9 között lehet, vagy üres az automatikus meghatározáshoz.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Pálya másolása</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Írja be a hosszt km-ben, vagy hagyja üresen az automatikus számoláshoz</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>A {0} nyomtatása befejeződött. Nyomjon OK-t a(z) {1} nyomtatásához!</value>
   </data>
 </root>

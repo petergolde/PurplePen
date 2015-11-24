@@ -129,7 +129,7 @@
     <value>デフォルトの印刷の縮尺:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(印刷の縮尺は後からメニュー[コース]＞[プロパティ]で変更できます。)</value>
+    <value>(印刷の縮尺は後からメニュー[コース] &gt; [プロパティ]で変更できます。)</value>
   </data>
   <data name="oneToPrefixLabel1.Text" xml:space="preserve">
     <value>1:</value>

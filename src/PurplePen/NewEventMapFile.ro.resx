@@ -126,9 +126,6 @@
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Selectează Fișierul Hartă</value>
   </data>
-  <data name="infoMessage.Text" xml:space="preserve">
-    <value>Fișierul hartă a fost încărcat. Dacă transmiteți fișierul Purple Pen altor persoane, acestea trebuie sa dețină deasemeni și fișierul hartă.</value>
-  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Fișier Hartă</value>
   </data>

@@ -183,9 +183,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>KP legendid</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Muuda raja sümbolite väljanägemist</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värvi valik...</value>
   </data>

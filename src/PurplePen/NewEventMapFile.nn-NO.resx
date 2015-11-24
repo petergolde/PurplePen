@@ -126,9 +126,6 @@
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Valgt kartfil</value>
   </data>
-  <data name="infoMessage.Text" xml:space="preserve">
-    <value>Kartet er lest inn. Desom du sender en Purpel Pen fil til noen må denne også ha tilgang til kartfila.</value>
-  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Kartfil</value>
   </data>

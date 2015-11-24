@@ -183,9 +183,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Descripciones de Controles</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar la Impresión del Recorrido</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Paleta de Colores...</value>
   </data>

@@ -204,8 +204,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Väri:</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD kartta</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>"Overprint"-värit läpikuultavina</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Muokkaa ratamerkintöjen ulkoasua</value>
+    <value>Muokkaa ulkoasua</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värinvalitsin...</value>

@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Létező esemény megnyitása</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>A Purple Pen program szabadszoftver, így szabadon másolható és terjeszthető. A Purple Pen fejlesztését csak az Ön adománya támogatja.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Adományozás</value>
   </data>

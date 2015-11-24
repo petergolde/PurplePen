@@ -201,9 +201,6 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Farge:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Endre løypens utseende</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Fargevelger...</value>
   </data>

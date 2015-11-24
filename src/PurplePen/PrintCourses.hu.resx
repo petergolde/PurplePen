@@ -144,6 +144,9 @@
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Az egyes pályák példányszáma:</value>
   </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Szünet a nyomtatásban az egyes pályák vagy részek között</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Kinézet</value>
   </data>

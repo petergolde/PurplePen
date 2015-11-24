@@ -178,7 +178,7 @@
     <value>以下に入力したテキストはディスクリプションの2行目に表示されます(任意):</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>クラスリスト / 副タイトル</value>
+    <value>クラスリスト / サブタイトル</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>長さ:</value>

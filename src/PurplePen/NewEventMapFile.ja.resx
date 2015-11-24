@@ -130,7 +130,7 @@
     <value>選択中の地図ファイル</value>
   </data>
   <data name="infoMessage.Text" xml:space="preserve">
-    <value>地図ファイルのロードに成功しました。Purple Penファイルを他の人に送信する場合には、受信者も同じ地図ファイルを使用できるようにしてください。</value>
+    <value>地図ファイルのロードに成功しました。もしPurple Penファイルを他の人に送る場合は、受け取った人も同じ地図ファイルを使うようにしてください。</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>地図ファイル</value>

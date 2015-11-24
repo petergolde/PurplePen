@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Legen Sie den gewünschten Druckbereich fest, indem Sie mit der Maus ein Rechteck aufziehen.</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Papiergrösse</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Druckbereich automatisch festlegen</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Druckbereich auf Papiergrösse des Druckers festlegen</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Druckbereich festlegen</value>
   </data>

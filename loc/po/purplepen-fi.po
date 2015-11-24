@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 2.6.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-10-01 15:40-07:00\n"
+"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -765,15 +765,15 @@ msgstr "Violetti"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "OCAD kartta"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "\"Overprint\"-värit läpikuultavina"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr "Muokkaa ratamerkintöjen ulkoasua"
+msgstr "Muokkaa ulkoasua"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -907,6 +907,10 @@ msgstr "OCAD 10"
 #: CreateOcadFiles.resx, fileFormatCombo.Items5
 msgid "OCAD 11"
 msgstr "OCAD 11"
+
+#: CreateOcadFiles.resx, fileFormatCombo.Items6
+msgid "OCAD 12"
+msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1074,7 +1078,7 @@ msgstr "Klikkaa symbolia muokataksesi sanallisessa "
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "Valitse tämä oletuskieleksi uusiin tapahtumiin"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1372,7 +1376,7 @@ msgstr "Kartan &laatu"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "Nä&ytä tulostusalue"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1412,7 +1416,7 @@ msgstr "Muokkaa &sanallisia rastinmääritteitä..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr "Muokkaa ratamerkintöjen &ulkoasua..."
+msgstr "Muokkaa &ulkoasua..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1975,7 +1979,8 @@ msgstr "Syötä uusi symbolin merkitys\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Lisää uusi teksti\n"
+"Käytä | -merkkiä erottamaan rivit"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2085,7 +2090,7 @@ msgstr "Karttatiedostoa \"{0}\" ei löytynyt.\n"
 "toiselle tietokoneelle). Karttatiedosto on oltava aina, "
 "kun Purple Pen -tiedostoa käytetään. Jos lähetät Purple "
 "Pen -tiedoston jollekin muulle, muista lähettää myös "
-"karttatiedosto ellei sitä ole vastaanottajalla.\n"
+"karttatiedosto, ellei sitä ole vastaanottajalla.\n"
 "\n"
 "Paina OK ja yritä etsiä karttatiedoston kopio "
 "tietokoneeltasi."
@@ -2589,8 +2594,8 @@ msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
 msgstr "Karttatiedosto ladattiin onnistuneesti. Jos lähetät Purple "
-"Pen -tiedoston jollekin muulle, muista lähettää myös "
-"karttatiedosto ellei sitä ole vastaanottajalla."
+"Pen -tiedostosi jollekin muulle, muista lähettää myös "
+"karttatiedosto, ellei sitä ole vastaanottajalla."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
@@ -3345,15 +3350,15 @@ msgstr "Määritä tulostusalue muokkaamalla suorakulmion kokoa ja "
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Paperikoko"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Aseta tulostusalue automaattisesti"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Kiinnitä tulostusalueen koko paperikokoon"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

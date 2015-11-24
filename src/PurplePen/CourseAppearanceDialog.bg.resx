@@ -183,9 +183,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Описания на контролните точки</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Персонализирай външния изглед на маршрута</value>
-  </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Избор на цвят...</value>
   </data>

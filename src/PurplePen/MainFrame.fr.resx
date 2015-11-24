@@ -279,9 +279,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Personnaliser Description en Clair...</value>
   </data>
-  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
-    <value>Personnaliser Présent&amp;ation Circuit...</value>
-  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>C&amp;ourse</value>
   </data>
