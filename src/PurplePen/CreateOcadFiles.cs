@@ -123,7 +123,7 @@ namespace PurplePen
             settings.filePrefix = filenamePrefixTextBox.Text;
 
             // Version.
-            for (int version = 6; version <= 11; ++version) {
+            for (int version = 6; version <= 12; ++version) {
                 if (((string)(fileFormatCombo.SelectedItem)).EndsWith(version.ToString(), StringComparison.InvariantCulture)) {
                     settings.version = version;
                     break;

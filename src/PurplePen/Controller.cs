@@ -70,6 +70,7 @@ namespace PurplePen
         public bool scrollHighlightIntoView;  // If true, the UI should scroll the highlight into view.
 
         bool checkForMissingFonts = true;   // If true, should check for missing font. Only check once for each map file.
+        bool checkForUnrenderableObjects = true; // If true, should check for non-renderangle objects. Only check once for each map file.
 
         int changeNum;          // Maintains a change number for state held in the controller (e.g., FileName).
 
@@ -268,6 +269,7 @@ namespace PurplePen
             mapDisplay.OcadOverprintEffect = (eventDB != null && eventDB.GetEvent().courseAppearance.useOcadOverprint);
 
             checkForMissingFonts = true;          // Warn about missing fonts once for this map.
+            checkForUnrenderableObjects = true;   // warn about non-renderable objects.
         }
 
         // Try to recover from a missing map file. If the map file can be found in the same directory as the event file, then
@@ -353,6 +355,18 @@ namespace PurplePen
             else {
                 return null;
             }
+        }
+
+        // Return a list of non-renderable objects. If "onlyOnce" is set, only return once per map file.
+        public string[] NonrenderableObjects(bool onlyOnce)
+        {
+            if (onlyOnce) {
+                if (!checkForUnrenderableObjects)
+                    return null;
+                checkForUnrenderableObjects = false;
+            }
+
+            return mapDisplay.NonRenderableObjects();
         }
 
         // Set the state of whether to ignore missing fonts forever, even on reload. If non set, then the list of missing fonts

@@ -97,6 +97,7 @@ namespace PurplePen
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
+            this.courseSelector.ShowCourseParts = false;
             // 
             // createButton
             // 
@@ -158,7 +159,8 @@ namespace PurplePen
             resources.GetString("fileFormatCombo.Items2"),
             resources.GetString("fileFormatCombo.Items3"),
             resources.GetString("fileFormatCombo.Items4"),
-            resources.GetString("fileFormatCombo.Items5")});
+            resources.GetString("fileFormatCombo.Items5"),
+            resources.GetString("fileFormatCombo.Items6")});
             this.fileFormatCombo.Name = "fileFormatCombo";
             // 
             // folderGroupBox
