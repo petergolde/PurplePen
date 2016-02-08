@@ -120,4 +120,7 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Eliminar</value>
   </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Os seguintes postos de controlo não são usados em nenhum dos percursos. Selecione Excluir para remover todos os postos de controlo indicados .</value>
+  </data>
 </root>

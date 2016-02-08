@@ -120,14 +120,23 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Suurused</value>
   </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Automaatne joone vahe</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Valge ääris numbri ümber</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Keskpunkti diameeter</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Tavaline</value>
@@ -162,6 +171,9 @@
   <data name="groupBoxPurple.Text" xml:space="preserve">
     <value>Lilla värv</value>
   </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Sulata lilla alusvärvidesse</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Must:</value>
   </data>
@@ -182,6 +194,24 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>KP legendid</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
+    <value>Must</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
+    <value>Lilla</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Värv:</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD kaart</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Kasuta ületrüki effekti värvidele tunnusega "ületrükk"</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kohanda väljanägemist</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värvi valik...</value>

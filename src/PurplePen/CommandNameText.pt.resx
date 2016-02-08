@@ -159,8 +159,20 @@
   <data name="DeleteObject" xml:space="preserve">
     <value>Remover Objecto</value>
   </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Apagar a linha de texto</value>
+  </data>
   <data name="AddControl" xml:space="preserve">
     <value>Adicionar Posto de controlo</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Criar partida</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Criar chegada</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Criar passagem obrigatória</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>Adicionar Objecto</value>
@@ -171,14 +183,68 @@
   <data name="NewCourse" xml:space="preserve">
     <value>Novo Percurso</value>
   </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Alterar as propriedades do percurso</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Alterar as propriedades do "All controls"</value>
+  </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Criar Novo Evento</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Alterar a "pernada" sinalizada</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Alterar os códigos</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Alterar percursos exibidos</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Mover a curva da "pernada"</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Adicionar curva</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Adicionar Canto</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Remover curva</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Remover canto</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Adicionar espaço</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Remover espaço</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Mover espaço</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Rodar</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
     <value>Numeração Automática</value>
   </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Alterar padrões dos picotadores</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Alterar formato do cartão de controlo</value>
+  </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Definir Área de Impressão</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Alterar quantidade de participantes</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Personalize a descrição em texto</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Alterar Ordem dos Percursos</value>
@@ -186,7 +252,34 @@
   <data name="ChangeMapFile" xml:space="preserve">
     <value>Alterar Ficheiro do Mapa</value>
   </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Ignorar fontes inexistentes</value>
+  </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Adicionar Linha de Texto</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Remover postos de controlo não usados</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Alterar a linguagem da descrição dos postos de controlo</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Mudar o Texto</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Definir a aparência do percurso</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Adicionar troca de mapa</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Eliminar troca de mapa</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Alterar propriedades desta parte do percurso</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Alterar aparência da linha</value>
   </data>
 </root>

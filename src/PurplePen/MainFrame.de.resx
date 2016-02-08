@@ -238,10 +238,10 @@
     <value>&amp;Hoch</value>
   </data>
   <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Volle Helligkeit</value>
+    <value>&amp;Volle Intensität</value>
   </data>
   <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Karten&amp;helligkeit</value>
+    <value>Kartenfarb&amp;intensität</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Niedrig</value>

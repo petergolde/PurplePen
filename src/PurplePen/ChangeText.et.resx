@@ -123,6 +123,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Raja nimi</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Raja osa</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Raja pikkus</value>
   </data>
@@ -132,11 +135,29 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Klasside nimekiri</value>
   </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Trüki mõõtkava</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Muuda värvi...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Värv:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kaldkiri</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Paks</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Font:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Välimus</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Näide</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Sisesta lisa tekst</value>

@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Värv:</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Muuda värvi ...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Stiil:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Üksik</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Kahekordne</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Kriipsjoon</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Jämedus:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Vahe pikkus:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Joone pikkus:</value>
+  </data>
   <data name="labelWidthMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -126,8 +153,14 @@
   <data name="labelDashSizeMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Ääre raadius:</value>
+  </data>
   <data name="labelRadiusMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Näide</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Välimus</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.6.0\n"
-"Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2015-11-24 13:55-08:00\n"
+"Project-Id-Version: Purple Pen 2.6.1\n"
+"Report-Msgid-Bugs-To: 2.6.1\n"
+"POT-Creation-Date: 2016-02-08 13:58-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © 2007-2014 by Peter Golde"
-msgstr ""
+msgstr "Copyright © 2007-2014 by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -165,7 +165,7 @@ msgstr "Relação de categorias/ Título secundário"
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
 msgid "Length:"
-msgstr ""
+msgstr "Comprimento:"
 
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
@@ -194,7 +194,7 @@ msgstr "metros"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -334,7 +334,10 @@ msgid "All map "
 "files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
 "f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Todos os ficheiros de "
+"mapa|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+"|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -360,12 +363,12 @@ msgstr "Ficheiro do Mapa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr ""
+msgstr "Escolha os percursos que este objeto será exibido:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr ""
+msgstr "Alterar percursos exibidos"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
@@ -401,17 +404,17 @@ msgstr "Escala de Impressão"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Mudar a Cor..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Cor:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
-msgstr ""
+msgstr "Itálico"
 
 #: ChangeText.resx, checkBoxBold.Text
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
@@ -420,12 +423,12 @@ msgstr "Negrito"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr ""
+msgstr "Tipo de letra:"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
 msgid "Sample"
-msgstr ""
+msgstr "Amostra"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
@@ -458,7 +461,7 @@ msgstr "Pré-visualizar"
 
 #: ColorChooserDialog.resx, $this.Text
 msgid "Choose Color"
-msgstr ""
+msgstr "Escolher a Cor"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
@@ -518,7 +521,7 @@ msgstr "Remover Objecto"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr ""
+msgstr "Apagar a linha de texto"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
@@ -528,16 +531,16 @@ msgstr "Adicionar Posto de controlo"
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr ""
+msgstr "Criar partida"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
 msgid "Add Finish"
-msgstr ""
+msgstr "Criar chegada"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
-msgstr ""
+msgstr "Criar passagem obrigatória"
 
 #: CommandNameText.resx, AddObject
 msgid "Add Object"
@@ -549,11 +552,11 @@ msgstr "Eliminar Percurso"
 
 #: CommandNameText.resx, ChangeCourseProperties
 msgid "Change Course Properties"
-msgstr ""
+msgstr "Alterar as propriedades do percurso"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr ""
+msgstr "Alterar as propriedades do \"All controls\""
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
@@ -562,55 +565,55 @@ msgstr "Criar Novo Evento"
 
 #: CommandNameText.resx, SetLegFlagging
 msgid "Change Leg Flagging"
-msgstr ""
+msgstr "Alterar a \"pernada\" sinalizada"
 
 #: CommandNameText.resx, ChangeCodes
 msgid "Change Codes"
-msgstr ""
+msgstr "Alterar os códigos"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr ""
+msgstr "Mover a curva da \"pernada\""
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr ""
+msgstr "Adicionar curva"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
-msgstr ""
+msgstr "Adicionar Canto"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr ""
+msgstr "Remover curva"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
-msgstr ""
+msgstr "Remover canto"
 
 #: CommandNameText.resx, AddGap
 msgid "Add Gap"
-msgstr ""
+msgstr "Adicionar espaço"
 
 #: CommandNameText.resx, RemoveGap
 msgid "Remove Gap"
-msgstr ""
+msgstr "Remover espaço"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr ""
+msgstr "Mover espaço"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
-msgstr ""
+msgstr "Rodar"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr ""
+msgstr "Alterar padrões dos picotadores"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr ""
+msgstr "Alterar formato do cartão de controlo"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -619,12 +622,12 @@ msgstr "Definir Área de Impressão"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr ""
+msgstr "Alterar quantidade de participantes"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr ""
+msgstr "Personalize a descrição em texto"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -636,42 +639,42 @@ msgstr "Alterar Ficheiro do Mapa"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr ""
+msgstr "Ignorar fontes inexistentes"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
-msgstr ""
+msgstr "Remover postos de controlo não usados"
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr ""
+msgstr "Alterar a linguagem da descrição dos postos de controlo"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
 msgid "Change Text"
-msgstr ""
+msgstr "Mudar o Texto"
 
 #: CommandNameText.resx, ChangeCourseAppearance
 msgid "Customize Course Appearance"
-msgstr ""
+msgstr "Definir a aparência do percurso"
 
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr ""
+msgstr "Adicionar troca de mapa"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
-msgstr ""
+msgstr "Eliminar troca de mapa"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Alterar propriedades desta parte do percurso"
 
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Alterar aparência da linha"
 
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
@@ -680,11 +683,11 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr ""
+msgstr "Duplicar percurso"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Espaço em branco na linha da \"pernada\" automatico:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -703,7 +706,7 @@ msgstr "mm"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
-msgstr ""
+msgstr "Números realçados com linha branca:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
@@ -715,11 +718,11 @@ msgstr "Normal"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr ""
+msgstr "Tipo de letra do número do posto de controlo:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
-msgstr ""
+msgstr "Altura do número do posto de controlo:"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
@@ -727,15 +730,15 @@ msgstr "Largura da linha:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr ""
+msgstr "Diâmetro do círculo do posto de controlo:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
-msgstr ""
+msgstr "Utilizar tamanhos \"standard\" da IOF"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr ""
+msgstr "Cor púrpura (roxo)"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -743,51 +746,53 @@ msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
-msgstr ""
+msgstr "Utiliza a cor púrpura do mapa"
 
 #: CourseAppearanceDialog.resx, groupBox1.Text
 #: SelectionDescriptionText.resx, SpecialName_Descriptions
 msgid "Control Descriptions"
-msgstr ""
+msgstr "Descrição dos postos de controlo"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
 msgid "Black"
-msgstr ""
+msgstr "Preto"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items1
 #: MiscText.resx, Purple
 msgid "Purple"
-msgstr ""
+msgstr "Púrpura"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "Mapa OCAD"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "Utiliza efeito de impressão sobreposta para cores marcadas "
+"com \"sobrepor\" (\"overprint\")"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr ""
+msgstr "Personalizar aparência"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr ""
+msgstr "Indicar competidores"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr ""
+msgstr "Defina o número de concorrentes em cada percurso clicando "
+"na segunda coluna e digitando o número."
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr ""
+msgstr "Indicar percurso"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr ""
+msgstr "Parte do Percurso:"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -795,7 +800,7 @@ msgstr "Propriedades..."
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr ""
+msgstr "Mostar a chegada nesta parte do percurso"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
@@ -822,7 +827,7 @@ msgstr ""
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
 msgid "Courses"
-msgstr ""
+msgstr "Percursos"
 
 #: CreateGpx.resx, namePrefixLabel.Text
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
@@ -3277,103 +3282,122 @@ msgstr ""
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para adicionar ao "
+"percurso um ponto de chegada existente"
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para colocar uma nova "
+"passagem obrigatória"
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para adicionar ao "
+"percurso uma passagem obrigatória existente"
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para colocar um novo objeto"
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato no local da curva"
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para adicionar um novo "
+"canto"
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato na curva para remove-la"
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato no canto para remove-lo"
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato no círculo para criar "
+"um espaço em branco ; segure o botão esquerdo do rato e "
+"arraste para criar um grande espaço"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato no espaço para remove-lo"
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr ""
+msgstr "Clique com o botão esquerdo do rato na linha, para criar "
+"um espaço em branco ; segure o botão esquerdo do rato e "
+"arraste para criar um grande espaço na linha da \"pernada\""
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato no espaço da linha da "
+"\"pernada\" para remove-lo"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
 "object"
-msgstr ""
+msgstr "Segure o botão esquerdo do rato e arraste para alterar o "
+"tamanho do objeto"
 
 #: StatusBarText.resx, SizingRectangle
 msgid "Move edge(s) to desired location and release mouse button"
-msgstr ""
+msgstr "Mover o bordo para o  local desejado e largar o botão do "
+"rato"
 
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr ""
+msgstr "Segure o botão esquerdo do rato e arraste para criar "
+"descrição dos postos de controlo"
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato quando o símbolo de "
+"passagem está rodado no ângulo correto"
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
 "segment; click the left mouse button to finish adding object"
-msgstr ""
+msgstr "Segure o botão esquerdo do rato e arraste para criar um "
+"segmento de linha; Clique no botão esquerdo do rato para "
+"terminar a criação do objeto"
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr ""
+msgstr "Segure o botão esquerdo do rato e arraste para criar texto"
 
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "Clique no botão esquerdo para adicionar ao percurso uma "
+"troca de mapa existente"
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para posicionar uma nova "
+"troca de mapa"
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "Clique no botão esquerdo do rato para definir troca de "
+"mapa no posto de controlo \"(0)\" "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Segure o botão esquerdo do rato e arraste para criar o "
+"objeto"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -3383,5 +3407,7 @@ msgstr "Eliminar"
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
-msgstr ""
+msgstr "Os seguintes postos de controlo não são usados em nenhum "
+"dos percursos. Selecione Excluir para remover todos os "
+"postos de controlo indicados ."
 

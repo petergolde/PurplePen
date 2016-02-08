@@ -120,4 +120,16 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Rajad</value>
   </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>Nime eesliide:</value>
+  </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Teekonnapunktid</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>GPX fail sisaldab KPde GPS koordinaate ja selle saab laadida GPSi või nutitelefoni, et kontrollida KPde asukohta õigust.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Loo GPX fail</value>
+  </data>
 </root>

@@ -135,4 +135,13 @@ Kaardi mastaap näitab kui mitu korda on kaardil kujutatu väiksem reaalsest.
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kaardi mõõtkava:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Rasterkaardi resolutsioon</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Kasutamaks PDF faili kaardifailina, pead määrama kaardi mõõtkava. 
+
+Kaardi mõõtkava määrab suhte paber kaardi ja reaalse pikkuse vahel.
+</value>
+  </data>
 </root>

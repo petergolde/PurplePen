@@ -141,6 +141,9 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Tee OCADi &amp;failid...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Salvesta PDFid...</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Salvesta Route&amp;Gadget failid...</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Trüki &amp;Rajad</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>See &amp;osa ainult</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>See &amp;rada</value>
@@ -246,6 +252,12 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Kaardi &amp;kvaliteet</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Näita &amp;trükiala</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Kuva hüpik infot</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Kõik KPd</value>
   </data>
@@ -270,6 +282,9 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Muuda &amp;selgituse teksti</value>
   </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Muuda &amp;väljanägemist</value>
+  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Võistlus</value>
   </data>
@@ -279,8 +294,14 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>Kustuta rada</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>Kopeeri rada...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>O&amp;madused...</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Radade &amp;järjekod...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Osalejate &amp;arv...</value>
@@ -299,6 +320,15 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Lisa &amp;legend</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kaardivahetus on &amp;kontrollpunktis</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Märgitud rada kaardivahetusse</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Lisa kaardivahetus</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Kohustuslik läbipääsu punk</value>
@@ -333,6 +363,15 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Pildi failid</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Joon</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Ristkülik</value>
+  </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Lisa eri&amp;sümbol</value>
   </data>
@@ -357,6 +396,9 @@
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Muuda &amp;teksti</value>
   </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Muuda joone &amp;omadusi</value>
+  </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Pööra</value>
   </data>
@@ -380,6 +422,12 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>Sümbol</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Salvesta &amp;GPX fail...</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Raja kokkuvõte</value>
@@ -411,6 +459,9 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Tugi ja vigadest teadaandmine</value>
   </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Tee &amp;annetus</value>
+  </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Programmist Purple Pen</value>
   </data>
@@ -440,6 +491,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Krahh</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Silumine</value>
@@ -501,6 +555,15 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lisa legend</value>
   </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kaardivahetus kontrollpunktis</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tähistatud rada kaardivahetusse</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Lisa kaardivahetus</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Kohustuslik läbipääsu punk</value>
   </data>
@@ -534,6 +597,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pildi failid</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Joon</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ristkülik</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Lisa erisümbol</value>
   </data>
@@ -557,6 +629,15 @@
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Tee rajakirjelduse XML fail</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Graafika fail|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX fail|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Loo GPX fail</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

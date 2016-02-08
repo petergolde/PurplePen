@@ -174,8 +174,14 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Nurgapunkti eemaldamiseks klõpsa hiire vasaku nupuga</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Kliki hiire vasaku nupuga kontrollpunkti rõngal väikese lõike tegemiseks; hoia vasakut nuppu all ja vea lõige suuremaks.</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>KP rõnga katkestuse eemaldamiseks klõpsa hiire vasaku nupuga</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Kliki hiire vasaku nupuga väikese lõike tegemiseks; hoia vasakut nuppu all ja vea lõige suuremaks.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Hiire vasaku nupuga eemalda etapilt katkestus</value>
@@ -197,5 +203,17 @@
   </data>
   <data name="AddingText" xml:space="preserve">
     <value>Hoia all hiire vasakut nuppu ja lohistadel lisa tekst</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Hiire vasaku nupuga lisa eksisteeriv kaardivahetus rajale</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Lisa uus kaardivahetus kaardile hiire vasaku nupuga</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Hiire vasaku klikiga lisa kaardivahetuse  kontrollpunkti {0} </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Hoia all hiire vasakut nuppu ja lohista objekti lisamiseks</value>
   </data>
 </root>

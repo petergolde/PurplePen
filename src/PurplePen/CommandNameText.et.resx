@@ -270,4 +270,19 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Muuda raja sümbolite väljanägemist</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Lisa kaardivahetus</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Eemalda kaardivahetus</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Muuda raja seadeid</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Muuda joone väljanägemist</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Dublikeeri rada</value>
+  </data>
 </root>

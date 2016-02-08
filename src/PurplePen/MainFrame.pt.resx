@@ -120,8 +120,17 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Texto</value>
   </data>
+  <data name="addStartToolStripButton.Text" xml:space="preserve">
+    <value>Criar partida</value>
+  </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
     <value>Adicionar Posto de controlo</value>
+  </data>
+  <data name="addFinishToolStripButton.Text" xml:space="preserve">
+    <value>Criar chegada</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Adicionar troca de mapa</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Texto</value>

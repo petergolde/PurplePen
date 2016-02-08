@@ -120,4 +120,13 @@
   <data name="CourseName.HeaderText" xml:space="preserve">
     <value>Nome do Percurso</value>
   </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Indicar competidores</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Defina o número de concorrentes em cada percurso clicando na segunda coluna e digitando o número.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Indicar percurso</value>
+  </data>
 </root>

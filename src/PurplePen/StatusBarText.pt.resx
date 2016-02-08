@@ -117,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para adicionar ao percurso um ponto de chegada existente</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para colocar uma nova passagem obrigatória</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para adicionar ao percurso uma passagem obrigatória existente</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para colocar um novo objeto</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato no local da curva</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para adicionar um novo canto</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato na curva para remove-la</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato no canto para remove-lo</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato no círculo para criar um espaço em branco ; segure o botão esquerdo do rato e arraste para criar um grande espaço</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato no espaço para remove-lo</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Clique com o botão esquerdo do rato na linha, para criar um espaço em branco ; segure o botão esquerdo do rato e arraste para criar um grande espaço na linha da "pernada"</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato no espaço da linha da "pernada" para remove-lo</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Segure o botão esquerdo do rato e arraste para alterar o tamanho do objeto</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Mover o bordo para o  local desejado e largar o botão do rato</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Segure o botão esquerdo do rato e arraste para criar descrição dos postos de controlo</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato quando o símbolo de passagem está rodado no ângulo correto</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Segure o botão esquerdo do rato e arraste para criar um segmento de linha; Clique no botão esquerdo do rato para terminar a criação do objeto</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Segure o botão esquerdo do rato e arraste para criar texto</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Clique no botão esquerdo para adicionar ao percurso uma troca de mapa existente</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para posicionar uma nova troca de mapa</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Clique no botão esquerdo do rato para definir troca de mapa no posto de controlo "(0)" </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Segure o botão esquerdo do rato e arraste para criar o objeto</value>
+  </data>
 </root>

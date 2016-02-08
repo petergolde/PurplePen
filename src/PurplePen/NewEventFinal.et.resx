@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Kui võistlus on loodud, vali "Uus rada..." Rajad menüüst lisamaks ühe või mitu rada.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Lisa võistlus</value>
+  </data>
 </root>

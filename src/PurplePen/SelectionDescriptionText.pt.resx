@@ -120,8 +120,14 @@
   <data name="Climb" xml:space="preserve">
     <value>Aclive</value>
   </data>
+  <data name="Length" xml:space="preserve">
+    <value>Comprimento:</value>
+  </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
     <value>Nome do Percurso</value>
+  </data>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>Descrição dos postos de controlo</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Texto</value>

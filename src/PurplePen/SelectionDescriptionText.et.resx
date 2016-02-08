@@ -204,6 +204,9 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Esmaaabi koht</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Pildi failid</value>
+  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Keelatud tee</value>
   </data>
@@ -255,7 +258,37 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Kasutusel radadel:</value>
   </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Valge taust</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>kaardivahetused</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>kaardivahetus</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Kaardivahetus punktis {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Loe:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Kasutatud:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Rada "{0}", Osa {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Joon</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Ristkülik</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Arvutatud pikkus:</value>
   </data>
 </root>

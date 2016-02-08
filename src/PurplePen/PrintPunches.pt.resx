@@ -123,4 +123,7 @@
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Aspecto</value>
   </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Percursos</value>
+  </data>
 </root>

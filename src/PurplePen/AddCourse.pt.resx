@@ -180,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Relação de categorias/ Título secundário</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Comprimento:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Aclive</value>
   </data>
@@ -197,6 +200,9 @@
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metros</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Novo Percurso</value>

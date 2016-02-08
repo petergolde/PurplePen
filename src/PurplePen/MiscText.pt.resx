@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Mudar o Texto</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Púrpura</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Alterar aparência da linha</value>
+  </data>
 </root>

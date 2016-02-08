@@ -123,8 +123,14 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Vali kaardi fail...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Kõik kaardi failid|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|PDF failid (*.pdf)|*.pdf|Graafika failid |*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vali kaardi fail</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Kaardifail on edukalt loetud. Kui saadad Purple Pen faili edasi, siis pead lisama ka kaardifaili.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Kaardi fail</value>

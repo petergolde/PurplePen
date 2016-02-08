@@ -231,6 +231,10 @@ Kasuta | eraldamaks ridu</value>
     <value>Sisesta uus objekti legend
 (mõjutab kõikki radu)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Sisesta uus tekst
+Kasuta | ridade eraldamiseks</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>KPd {0} ei ole kasutusel ühegil rajal. Kas sa soovid need eemaldada?</value>
   </data>
@@ -272,6 +276,11 @@ Kasuta | eraldamaks ridu</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Versioon {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Versioon {0}  Purple Penist on olemas alla laadimiseks. (Sa kasutad hetkel versiooni {1}.)
+
+Kas soovid alla laadida ja installeerida viimase versiooni?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Abifaili {0} ei saa avada.</value>
@@ -371,10 +380,157 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Ühtegi rada ei ole valitud trükkimiseks</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Kui eksisteerib veebilehekülg kus on Purple Pen tõlgitud dokumentatsioon, sisesta aadress (koos http'ga) kui tõlke viide, muidu jäta tühjaks</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kaardivahetus</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Vahetus</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>KV</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Osa {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Kõik osad</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Osa {0} (/ {1})</value>
+  </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Katkesta</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontakt e-post</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Tekkis viga. Aitamaks meil viga parandada, palun lisa oma e-posti aadress ja lisa täiendavat infot meile saadetavasse vea aruandess.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Palun kirjelda meile, mida sa tegid. See info aitab meil programmi parandada.</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Salvesta</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Saada aruanne</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Raja legend võib jääda lisamata kaardile, kui on kaardivahetus ja "Kõik osad" on valitud. Vali rajaosa kuhu tahad lisada legende ja vali "Lisa legendid" uuesti.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript on installeeritud</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>GPL Ghostscript ei suutnud PDF faili korralikult sisse lugeda.</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Ei saanud konverteerida PDFi failist '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Ei saanud salvestada PDFe järgmise põhjuse pärast:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Kasutaja määratud</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Kaardi suurus PDFist</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Katkestatud kasutaja poolt</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Loomas {0} ...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Printimas lehekülge {0} / {1}</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Kaardifail "{0}" on kustutatud. Palun proovi taastada kaardifail ja siis vajuta "Ok".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Sinu arvutis olev .NET raamistik paistab valesti installeeritud olevat. Palun külasta  http://microsoft.com/net ja installeri viimane versioon .NET raamistikust oma Windowsi operatsioonisüsteemi jaoks</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Must</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Vali värv ...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Kohandatud värv</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Tumesinine</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Roheline</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Helesinine</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Lilla</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Punane</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Kollane</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Määra joone väljanägemine. Peale OK vajutamist, joonista hiirega joone osa soovitud kohta.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Lisa joon</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Määra ristküliku välimus. Peale OK vajutamist, lohista hiirega ristkülik soovitud kohta.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Lisa ristkülik</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Muuda joone või ristküliku väljanägemist</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Muuda joone väljanägemist</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>GPX faili tegemiseks, peab kaardi fail olema OCADi fail</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>GPXi jaoks on vaja OCADi faili, kus koorinaatsüsteem on määratud.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>GPX faili loomiseks on vaja, et OCADi kaardifaili oleks õiges koordinaatsüsteemis.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Ei suutnud määrate punkte; võimalik, et koordinaatsüsteem OCAD kaardifailis on vale või määramata.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD kaardifailis on kasutusel koordinaadid, mis ei ole toetatud Purpe Peni poolt.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automaatne</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Raja pikkus peab olema number vahemikus 0.1-99.99, või tühi - siis arvutatakse automaatselt.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Dublikeeri rada</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Sisesta pikkus km, või jäta tühjaks - siis arvutatakse automaatselt.</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>"{0}" trükkimine on lõpetatud. Vajuta OK trükkimaks "{1}".</value>
   </data>
 </root>

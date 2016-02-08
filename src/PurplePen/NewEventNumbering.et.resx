@@ -126,4 +126,10 @@
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Stardi kood:</value>
   </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Seda seadistust saab hiljem muuta - Võistlus/Automaatne nummerdamine)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Kontrollpunkti nummerdamine</value>
+  </data>
 </root>

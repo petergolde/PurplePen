@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Kliki sümbolil, kohendamaks teksti mis on kasutusel KP legendis.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Määra valitud keel vaikimisi kõigile uutele võistlustele</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muuda legendi</value>
   </data>
