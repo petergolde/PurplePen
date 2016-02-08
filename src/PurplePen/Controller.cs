@@ -2463,10 +2463,25 @@ namespace PurplePen
         {
             get
             {
+                // Use language set as default language.
                 string defaultLang = Settings.Default.DefaultDescriptionLanguage;
+
+                // If none, use current.
                 if (string.IsNullOrEmpty(defaultLang))
                     defaultLang = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
-                return defaultLang;
+
+                if (HasDescriptionLanguage(defaultLang))
+                    return defaultLang;
+
+                // Truncate at the dash.
+                int dash = defaultLang.IndexOf('-');
+                if (dash > 0)
+                    defaultLang = defaultLang.Substring(0, dash);
+                if (HasDescriptionLanguage(defaultLang))
+                    return defaultLang;
+
+                // Use English.
+                return "en";
             }
             set
             {
