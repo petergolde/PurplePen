@@ -81,7 +81,7 @@ namespace PurplePen.Tests
 
                 options.usePatternBitmaps = true;
                 options.minResolution = (float) (rect.Width / bm.Width);
-                options.showTemplates = true;
+                options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
                 g.ScaleTransform((float) (bm.Width / rect.Width), - (float) (bm.Height / rect.Height));
                 g.TranslateTransform(-rect.Left, -rect.Top-rect.Height);

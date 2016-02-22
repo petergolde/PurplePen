@@ -571,7 +571,7 @@ namespace PurplePen
                 renderOptions.usePatternBitmaps = true;
 
             renderOptions.showSymbolBounds = showBounds;
-            renderOptions.showTemplates = true;
+            renderOptions.renderTemplates = RenderTemplateOption.MapAndTemplates;
             renderOptions.blendOverprintedColors = ocadOverprintEffect; 
 
             // First draw the real map.

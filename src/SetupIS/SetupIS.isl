@@ -4440,9 +4440,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]PurplePen.Primary output</td><td/></row>
-		<row><td>ProductCode</td><td>{02CC5ED8-227C-4533-AB89-14E8D0C0EF5B}</td><td/></row>
+		<row><td>ProductCode</td><td>{AAC50A38-6ED4-4702-89FF-E2B1FBE459F2}</td><td/></row>
 		<row><td>ProductName</td><td>Purple Pen</td><td/></row>
-		<row><td>ProductVersion</td><td>2.6.500</td><td/></row>
+		<row><td>ProductVersion</td><td>2.6.1500</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>

@@ -306,7 +306,7 @@ namespace PurplePen.Tests
                 RenderOptions renderOpts = new RenderOptions();
                 renderOpts.usePatternBitmaps = true;
                 renderOpts.minResolution = 0.1F;
-                renderOpts.showTemplates = true;
+                renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
                 map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height), renderOpts, null);
             }
 

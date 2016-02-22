@@ -365,7 +365,7 @@ namespace PurplePen.Tests
 
                 options.usePatternBitmaps = true;
                 options.minResolution = (float) (8.0 / bm.Width);
-                options.showTemplates = true;
+                options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
                 Matrix saveTransform = g.Transform;
 
