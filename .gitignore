@@ -38,3 +38,4 @@ src/SetupIS/SetupIS
 Thumbs.db
 src/.vs/
 *.opendb
+*.db
