@@ -120,8 +120,8 @@ namespace PurplePen
             xmlWriter.WriteElementString("Scale", XmlConvert.ToString(eventDB.GetEvent().mapScale));
 
             xmlWriter.WriteStartElement("MapPosition");
-            xmlWriter.WriteAttributeString("x", Convert.ToString(Math.Round(mapBounds.Left, 2)));
-            xmlWriter.WriteAttributeString("y", Convert.ToString(Math.Round(mapBounds.Bottom, 2)));
+            xmlWriter.WriteAttributeString("x", XmlConvert.ToString(Math.Round(mapBounds.Left, 2)));
+            xmlWriter.WriteAttributeString("y", XmlConvert.ToString(Math.Round(mapBounds.Bottom, 2)));
             xmlWriter.WriteEndElement();
 
             xmlWriter.WriteEndElement();
@@ -148,8 +148,8 @@ namespace PurplePen
                     xmlWriter.WriteStartElement(elementName);
                     xmlWriter.WriteElementString(elementName + "Code", code);
                     xmlWriter.WriteStartElement("MapPosition");
-                    xmlWriter.WriteAttributeString("x", Convert.ToString(Math.Round(control.location.X, 2)));
-                    xmlWriter.WriteAttributeString("y", Convert.ToString(Math.Round(control.location.Y, 2)));
+                    xmlWriter.WriteAttributeString("x", XmlConvert.ToString(Math.Round(control.location.X, 2)));
+                    xmlWriter.WriteAttributeString("y", XmlConvert.ToString(Math.Round(control.location.Y, 2)));
                     xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
                 }

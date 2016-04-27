@@ -43,6 +43,8 @@ using System.Drawing;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
+using System.Globalization;
+using System.Threading;
 
 // Things to test:
 // -- score course
@@ -78,6 +80,32 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F));
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+        }
+
+        [TestMethod]
+        public void ExportXmlTestOtherLocale()
+        {
+            CultureInfo cultureUISave = Thread.CurrentThread.CurrentUICulture;
+            CultureInfo cultureSave = Thread.CurrentThread.CurrentCulture;
+
+            try {
+                Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("fr");
+
+                Dictionary<string, string> exceptions = ExportXml.TestFileExceptionMap();
+
+                string outputFile = TestUtil.GetTestFile("exportxml\\marymoor_actual.xml");
+                string expectedFile = TestUtil.GetTestFile("exportxml\\marymoor_expected.xml");
+
+                Setup("exportxml\\marymoor.ppen");
+
+                controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F));
+
+                TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            }
+            finally {
+                Thread.CurrentThread.CurrentCulture = cultureSave;
+                Thread.CurrentThread.CurrentUICulture = cultureUISave;
+            }
         }
 
         [TestMethod]
