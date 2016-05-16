@@ -68,7 +68,7 @@ namespace PurplePen
             RectangleF mapArea = GetAllCourseAreas();
 
             // Export the XML file.
-            ExportXml exportXml = new ExportXml();
+            ExportXmlBase exportXml = new ExportXmlVersion2();
             exportXml.WriteXml(xmlFileName, eventDB, mapArea);
         }
 

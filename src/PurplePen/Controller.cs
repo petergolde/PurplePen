@@ -555,9 +555,16 @@ namespace PurplePen
         }
 
         // Export XML interchange file to the give file name.
-        public bool ExportXml(string filename, RectangleF mapBounds)
+        public bool ExportXml(string filename, RectangleF mapBounds, int version)
         {
-            ExportXml exportXml = new ExportXml();
+            ExportXmlBase exportXml;
+
+            if (version == 2)
+                exportXml = new ExportXmlVersion2();
+            else if (version == 3)
+                exportXml = new ExportXmlVersion3();
+            else
+                throw new ArgumentException("Bad version");
 
             bool success = HandleExceptions(
                 delegate {
