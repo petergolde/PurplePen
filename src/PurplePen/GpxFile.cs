@@ -294,13 +294,14 @@ namespace PurplePen
         }
     }
 
-    // This class maps between paper coordinates and WGS84 lat/long.
+    // This class maps between paper coordinates, real world coordinates, and WGS84 lat/long.
     class CoordinateMapper
     {
         double mapScale;
         RealWorldCoords realWorldCoords;
         ProjectionInfo mapProjection, wgs1984Projection;
-        Matrix paperToRealWorldTransform;
+        MapProjectionType mapProjectionType;
+        bool hasRealWorldCoords;
 
         public CoordinateMapper(Map map)
         {
@@ -308,19 +309,32 @@ namespace PurplePen
                 throw new Exception(MiscText.GpxMustBeOcadMap);
 
             using (map.Read()) {
+                mapScale = map.MapScale;
                 realWorldCoords = map.RealWorldCoords;
-                if (!realWorldCoords.RealWorldOn && realWorldCoords.RealWorldAngle == 0 && realWorldCoords.RealWorldOffsetX == 0 && realWorldCoords.RealWorldOffsetY == 0)
-                    throw new Exception(MiscText.GpxMustHaveRealWorldCoord);
-                if (realWorldCoords.ProjectionType != MapProjectionType.Known) {
-                    if (realWorldCoords.ProjectionType == MapProjectionType.None)
-                        throw new Exception(MiscText.GpxMustHaveCoordSystem);
-                    else if (realWorldCoords.ProjectionType == MapProjectionType.Unknown)
-                        throw new Exception(MiscText.GpxUnsupportedCoordSystem);
+
+                if (!realWorldCoords.RealWorldOn && realWorldCoords.RealWorldAngle == 0 && realWorldCoords.RealWorldOffsetX == 0 && realWorldCoords.RealWorldOffsetY == 0) {
+                    hasRealWorldCoords = false;
+                    mapProjectionType = MapProjectionType.None;
+                }
+                else {
+                    hasRealWorldCoords = true;
+                    mapProjectionType = realWorldCoords.ProjectionType;
+                    if (mapProjectionType == MapProjectionType.Known) {
+                        SetupProjection(realWorldCoords.Proj4String);
+                    }
                 }
 
-                mapScale = map.MapScale;
-                SetupProjection(realWorldCoords.Proj4String);
             }
+        }
+
+        public bool HasRealWorldCoords
+        {
+            get { return hasRealWorldCoords; }
+        }
+
+        public MapProjectionType MapProjectionType
+        {
+            get { return mapProjectionType; }
         }
 
         private void SetupProjection(string proj4String)
@@ -329,31 +343,38 @@ namespace PurplePen
             wgs1984Projection = ProjectionInfo.FromProj4String("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs");
         }
 
-        private void SetupTransform(double mapScale)
+        // Get the real world coordinate that matches a paper coordinate.
+        public bool GetRealWorld(PointF paperCoord, out double realX, out double realY)
         {
-            float scaleFactor = (float) (mapScale / 1000.0);
-            paperToRealWorldTransform = new Matrix();
-            paperToRealWorldTransform.Scale(scaleFactor, scaleFactor, MatrixOrder.Append);
-            paperToRealWorldTransform.Rotate(-(float)realWorldCoords.RealWorldAngle, MatrixOrder.Append);
-            paperToRealWorldTransform.Translate((float)realWorldCoords.RealWorldOffsetX, (float)realWorldCoords.RealWorldOffsetY, MatrixOrder.Append);
-        }
-
-        public bool GetLatLong(PointF paperCoord, out double latitude, out double longitude)
-        {
-            latitude = longitude = 0;
-            try {
-                // Convert paper coord to real world coord. Must use double rather than Matrix to
-                // keep precision.
+            if (hasRealWorldCoords) {
                 double x = paperCoord.X, y = paperCoord.Y;
                 x *= (mapScale / 1000.0); y *= (mapScale / 1000.0);
                 double ang = (-realWorldCoords.RealWorldAngle * Math.PI) / 180.0;
-                double realX = x * Math.Cos(ang) - y * Math.Sin(ang);
-                double realY = x * Math.Sin(ang) + y * Math.Cos(ang);
+                realX = x * Math.Cos(ang) - y * Math.Sin(ang);
+                realY = x * Math.Sin(ang) + y * Math.Cos(ang);
                 realX += realWorldCoords.RealWorldOffsetX;
                 realY += realWorldCoords.RealWorldOffsetY;
 
                 realX -= realWorldCoords.RealWorldLocalOffsetX;
                 realY -= realWorldCoords.RealWorldLocalOffsetY;
+                return true;
+            }
+            else {
+                realX = realY = 0;
+                return false;
+            }
+        }
+
+        public bool GetLatLong(PointF paperCoord, out double latitude, out double longitude)
+        {
+            latitude = longitude = 0;
+
+            try {
+                // Convert paper coord to real world coord. Must use double rather than Matrix to
+                // keep precision.
+                double realX, realY;
+                if (!GetRealWorld(paperCoord, out realX, out realY))
+                    return false;
 
                 double[] xy = { realX, realY };
                 double[] z = {1};

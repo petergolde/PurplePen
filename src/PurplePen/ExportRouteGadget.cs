@@ -69,7 +69,7 @@ namespace PurplePen
 
             // Export the XML file.
             ExportXmlBase exportXml = new ExportXmlVersion2();
-            exportXml.WriteXml(xmlFileName, eventDB, mapArea);
+            exportXml.WriteXml(xmlFileName, eventDB, mapArea, mapDisplay.CoordinateMapper);
         }
 
         public void ExportGif(string gifFileName)

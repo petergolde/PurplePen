@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CourseData>
+  <IOFVersion version="2.0.3" />
+  <ModifyDate>
+    <Date>2016-05-16</Date>
+    <Clock>15:42</Clock>
+  </ModifyDate>
+  <Map>
+    <Scale>15000</Scale>
+    <MapPosition x="-22" y="-54" />
+  </Map>
+  <StartPoint>
+    <StartPointCode>STA1</StartPointCode>
+    <ControlPosition x="658106" y="5237162" />
+    <MapPosition x="172.86" y="-165.02" />
+  </StartPoint>
+  <Control>
+    <ControlCode>31</ControlCode>
+    <ControlPosition x="656488" y="5237610" />
+    <MapPosition x="61.07" y="-160.31" />
+  </Control>
+  <Control>
+    <ControlCode>32</ControlCode>
+    <ControlPosition x="657333" y="5236566" />
+    <MapPosition x="131.61" y="-215.4" />
+  </Control>
+  <FinishPoint>
+    <FinishPointCode>FIN1</FinishPointCode>
+    <ControlPosition x="657432" y="5236791" />
+    <MapPosition x="134.7" y="-199.28" />
+  </FinishPoint>
+  <Course>
+    <CourseName>Course 1</CourseName>
+    <CourseId>0</CourseId>
+    <CourseVariation>
+      <CourseVariationId>0</CourseVariationId>
+      <CourseLength>3300</CourseLength>
+      <StartPointCode>STA1</StartPointCode>
+      <CourseControl>
+        <Sequence>1</Sequence>
+        <ControlCode>31</ControlCode>
+        <LegLength>1678</LegLength>
+      </CourseControl>
+      <CourseControl>
+        <Sequence>2</Sequence>
+        <ControlCode>32</ControlCode>
+        <LegLength>1343</LegLength>
+      </CourseControl>
+      <FinishPointCode>FIN1</FinishPointCode>
+      <DistanceToFinish>246</DistanceToFinish>
+    </CourseVariation>
+  </Course>
+</CourseData>

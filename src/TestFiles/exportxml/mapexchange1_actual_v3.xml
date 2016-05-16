@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2016-05-16T12:30:17.5212229-07:00" creator="Purple Pen version 2.6.1">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2016-05-16T15:44:45.6856599-07:00" creator="Purple Pen version 2.6.1">
   <Event>
     <Name>Marymoor WIOL 2</Name>
   </Event>
@@ -9,179 +9,179 @@
       <MapPositionTopLeft x="-29.5" y="86.7" />
       <MapPositionBottomRight x="232.9" y="-113.1" />
     </Map>
-    <Control type="Start" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Start">
       <Id>STA1</Id>
       <MapPosition x="56.8" y="-8.7" />
     </Control>
-    <Control type="Start" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Start">
       <Id>STA2</Id>
       <MapPosition x="41.67" y="41.54" />
     </Control>
-    <Control type="Start" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Start">
       <Id>XCHG1</Id>
       <MapPosition x="115.6" y="-11.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>36</Id>
       <MapPosition x="128.4" y="6.1" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>37</Id>
       <MapPosition x="121.8" y="-23" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>38</Id>
       <MapPosition x="50.3" y="2.9" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>39</Id>
       <MapPosition x="129.2" y="37.7" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>40</Id>
       <MapPosition x="124.2" y="29.5" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>41</Id>
       <MapPosition x="28" y="6.2" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>42</Id>
       <MapPosition x="38.4" y="-14" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>43</Id>
       <MapPosition x="84" y="34.5" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>44</Id>
       <MapPosition x="37.6" y="-22.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>45</Id>
       <MapPosition x="55.9" y="25.6" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>46</Id>
       <MapPosition x="-9.2" y="8.3" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>47</Id>
       <MapPosition x="2.51" y="31.32" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>48</Id>
       <MapPosition x="21.5" y="40.2" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>50</Id>
       <MapPosition x="45.2" y="22.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>51</Id>
       <MapPosition x="16.4" y="-11.9" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>52</Id>
       <MapPosition x="43" y="-11.1" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>53</Id>
       <MapPosition x="25.8" y="-10.5" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>54</Id>
       <MapPosition x="53.7" y="8.2" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>55</Id>
       <MapPosition x="51.2" y="10.5" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>56</Id>
       <MapPosition x="81.3" y="24" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>57</Id>
       <MapPosition x="90" y="19.3" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>59</Id>
       <MapPosition x="51.2" y="-27" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>70</Id>
       <MapPosition x="21.3" y="11.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>71</Id>
       <MapPosition x="40.1" y="17.4" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>72</Id>
       <MapPosition x="-0.7" y="10.3" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>74</Id>
       <MapPosition x="61.2" y="-18.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>75</Id>
       <MapPosition x="72" y="27" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>76</Id>
       <MapPosition x="5.6" y="-5.7" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>77</Id>
       <MapPosition x="74.7" y="19.2" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>78</Id>
       <MapPosition x="93.9" y="28.1" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>79</Id>
       <MapPosition x="119.8" y="8.6" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>80</Id>
       <MapPosition x="41.9" y="6.8" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>60</Id>
       <MapPosition x="-12.89" y="25.33" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>31</Id>
       <MapPosition x="-9.66" y="-10.58" />
     </Control>
-    <Control type="Control" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Control">
       <Id>32</Id>
       <MapPosition x="83.74" y="-16.4" />
     </Control>
-    <Control type="Finish" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Finish">
       <Id>FIN1</Id>
       <MapPosition x="53.2" y="-2.8" />
     </Control>
-    <Control type="Finish" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="Finish">
       <Id>FIN2</Id>
       <MapPosition x="-1.72" y="-31.22" />
     </Control>
-    <Control type="CrossingPoint" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="CrossingPoint">
       <Id>CROSS1</Id>
       <MapPosition x="31.62" y="21.7" />
     </Control>
-    <Control type="CrossingPoint" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="CrossingPoint">
       <Id>CROSS2</Id>
       <MapPosition x="104.64" y="16.14" />
     </Control>
-    <Control type="CrossingPoint" modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Control type="CrossingPoint">
       <Id>CROSS3</Id>
       <MapPosition x="-23.42" y="-3.18" />
     </Control>
-    <Course modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Course>
       <Name>Course 2</Name>
       <Length>2100</Length>
       <CourseControl type="Start">
@@ -246,7 +246,7 @@
         <LegLength>64</LegLength>
       </CourseControl>
     </Course>
-    <Course modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Course>
       <Name>Course 4G</Name>
       <Length>3700</Length>
       <CourseControl type="Start">
@@ -317,7 +317,7 @@
         <LegLength>64</LegLength>
       </CourseControl>
     </Course>
-    <Course modifyTime="2016-05-16T12:30:17.5212229-07:00">
+    <Course>
       <Name>Course 5</Name>
       <Length>5000</Length>
       <CourseControl type="Start">

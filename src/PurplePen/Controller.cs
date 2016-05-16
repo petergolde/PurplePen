@@ -540,11 +540,42 @@ namespace PurplePen
             }
         }
 
+        public bool CanExportGpx(out string message)
+        {
+            // First check and give immediate message if we can't do coordinate mapping.
+            CoordinateMapper coordinateMapper = mapDisplay.CoordinateMapper;
+            if (coordinateMapper == null) {
+                message = MiscText.GpxMustBeOcadMap;
+                return false;
+            }
+            else if (!coordinateMapper.HasRealWorldCoords) {
+                message = MiscText.GpxMustHaveRealWorldCoord;
+                return false;
+            }
+            else if (coordinateMapper.MapProjectionType == MapProjectionType.None) {
+                message = MiscText.GpxMustHaveCoordSystem;
+                return false;
+            }
+            else if (coordinateMapper.MapProjectionType == MapProjectionType.Unknown) {
+                message = MiscText.GpxUnsupportedCoordSystem;
+                return false;
+            }
+            else {
+                message = "";
+                return true;
+            }
+        }
+
         // Export GPX file to the give file name.
         public bool ExportGpx(string filename, GpxCreationSettings settings)
         {
             bool success = HandleExceptions(
                 delegate {
+                    string msg;
+                    if (!CanExportGpx(out msg)) {
+                        throw new Exception(msg);
+                    }
+
                     GpxFile gpxFile = new GpxFile(eventDB, mapDisplay.CoordinateMapper, settings);
 
                     gpxFile.WriteGpx(filename);
@@ -568,7 +599,7 @@ namespace PurplePen
 
             bool success = HandleExceptions(
                 delegate {
-                    exportXml.WriteXml(filename, eventDB, mapBounds);
+                    exportXml.WriteXml(filename, eventDB, mapBounds, mapDisplay.CoordinateMapper);
                 },
                 MiscText.CannotCreateFile, filename);
 

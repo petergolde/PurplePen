@@ -49,12 +49,13 @@ namespace PurplePen
         protected RectangleF mapBounds;
         protected DateTimeOffset modificationDate;
         protected Dictionary<Id<ControlPoint>, string> controlCodeMap;
+        protected CoordinateMapper coordinateMapper;
 
-
-        public void WriteXml(string filename, EventDB eventDB, RectangleF mapBounds)
+        public void WriteXml(string filename, EventDB eventDB, RectangleF mapBounds, CoordinateMapper coordinateMapper)
         {
             this.eventDB = eventDB;
             this.mapBounds = mapBounds;
+            this.coordinateMapper = coordinateMapper;
             this.modificationDate = DateTimeOffset.Now;
             controlCodeMap = new Dictionary<Id<ControlPoint>, string>();
 
@@ -264,8 +265,17 @@ namespace PurplePen
             // Write the XML.
             xmlWriter.WriteStartElement("Control");
             xmlWriter.WriteAttributeString("type", controlType);
-            xmlWriter.WriteAttributeString("modifyTime", XmlConvert.ToString(modificationDate));
             xmlWriter.WriteElementString("Id", code);
+
+            if (coordinateMapper != null && coordinateMapper.HasRealWorldCoords && coordinateMapper.MapProjectionType == MapModel.MapProjectionType.Known) {
+                double lat, lng;
+                coordinateMapper.GetLatLong(control.location, out lat, out lng);
+                xmlWriter.WriteStartElement("Position");
+                xmlWriter.WriteAttributeString("lng", XmlConvert.ToString(lng));
+                xmlWriter.WriteAttributeString("lat", XmlConvert.ToString(lat));
+                xmlWriter.WriteEndElement();
+            }
+
 
             xmlWriter.WriteStartElement("MapPosition");
             xmlWriter.WriteAttributeString("x", XmlConvert.ToString(Math.Round(control.location.X, 2)));
@@ -280,7 +290,6 @@ namespace PurplePen
         protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore)
         {
             xmlWriter.WriteStartElement("Course");
-            xmlWriter.WriteAttributeString("modifyTime", XmlConvert.ToString(modificationDate));
             xmlWriter.WriteElementString("Name", courseName);
             if (!isScore) {
                 xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.TotalLength / 100F) * 100F));   // round to nearest 100m
@@ -467,6 +476,16 @@ namespace PurplePen
             // Write the XML.
             xmlWriter.WriteStartElement(elementName);
             xmlWriter.WriteElementString(elementName + "Code", code);
+
+            if (coordinateMapper != null && coordinateMapper.HasRealWorldCoords) {
+                double realX, realY;
+                coordinateMapper.GetRealWorld(control.location, out realX, out realY);
+                xmlWriter.WriteStartElement("ControlPosition");
+                xmlWriter.WriteAttributeString("x", XmlConvert.ToString(Math.Round(realX)));
+                xmlWriter.WriteAttributeString("y", XmlConvert.ToString(Math.Round(realY)));
+                xmlWriter.WriteEndElement();
+            }
+
             xmlWriter.WriteStartElement("MapPosition");
             xmlWriter.WriteAttributeString("x", XmlConvert.ToString(Math.Round(control.location.X, 2)));
             xmlWriter.WriteAttributeString("y", XmlConvert.ToString(Math.Round(control.location.Y, 2)));

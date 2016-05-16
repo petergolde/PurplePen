@@ -179,6 +179,37 @@ namespace PurplePen.Tests
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
         }
 
+        [TestMethod]
+        public void ExportGeoreferencedXmlTestV2()
+        {
+            Dictionary<string, string> exceptions = ExportXmlVersion2.TestFileExceptionMap();
+
+            string outputFile = TestUtil.GetTestFile("exportxml\\teanaway_actual.xml");
+            string expectedFile = TestUtil.GetTestFile("exportxml\\teanaway_expected.xml");
+
+            Setup("exportxml\\teanawayxml.ppen");
+
+            controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 2);
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+        }
+
+        [TestMethod]
+        public void ExportGeoreferencedXmlTestV3()
+        {
+            Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
+
+            string outputFile = TestUtil.GetTestFile("exportxml\\teanaway_actual_v3.xml");
+            string expectedFile = TestUtil.GetTestFile("exportxml\\teanaway_expected_v3.xml");
+
+            Setup("exportxml\\teanawayxml.ppen");
+
+            controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 3);
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+        }
+
+
     }
 }
 

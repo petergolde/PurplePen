@@ -2045,15 +2045,9 @@ namespace PurplePen
         private void createGpxMenu_Click(object sender, EventArgs e)
         {
             // First check and give immediate message if we can't do coordinate mapping.
-            try {
-                CoordinateMapper coordinateMapper = mapDisplay.CoordinateMapper;
-                if (coordinateMapper == null) {
-                    ErrorMessage(MiscText.GpxMustBeOcadMap);
-                    return;
-                }
-            }
-            catch (Exception ex) {
-                ErrorMessage(ex.Message);
+            string message;
+            if (!controller.CanExportGpx(out message)) {
+                ErrorMessage(message);
                 return;
             }
 
