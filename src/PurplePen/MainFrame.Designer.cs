@@ -127,8 +127,8 @@ namespace PurplePen
             this.mapQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.normalQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.highQualityMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.showPrintAreaMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -782,17 +782,17 @@ namespace PurplePen
             resources.ApplyResources(this.highQualityMenu, "highQualityMenu");
             this.highQualityMenu.Click += new System.EventHandler(this.highQualityMenu_Click);
             // 
-            // showPopupsMenu
-            // 
-            this.showPopupsMenu.Name = "showPopupsMenu";
-            resources.ApplyResources(this.showPopupsMenu, "showPopupsMenu");
-            this.showPopupsMenu.Click += new System.EventHandler(this.showPopupsMenu_Click);
-            // 
             // showPrintAreaMenu
             // 
             this.showPrintAreaMenu.Name = "showPrintAreaMenu";
             resources.ApplyResources(this.showPrintAreaMenu, "showPrintAreaMenu");
             this.showPrintAreaMenu.Click += new System.EventHandler(this.showPrintAreaMenu_Click);
+            // 
+            // showPopupsMenu
+            // 
+            this.showPopupsMenu.Name = "showPopupsMenu";
+            resources.ApplyResources(this.showPopupsMenu, "showPopupsMenu");
+            this.showPopupsMenu.Click += new System.EventHandler(this.showPopupsMenu_Click);
             // 
             // toolStripSeparator7
             // 
@@ -1756,6 +1756,7 @@ namespace PurplePen
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
+            this.saveXmlFileDialog.SupportMultiDottedExtensions = true;
             // 
             // openImageDialog
             // 

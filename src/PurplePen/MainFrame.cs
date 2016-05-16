@@ -2313,7 +2313,10 @@ namespace PurplePen
             DialogResult result = saveXmlFileDialog.ShowDialog();
 
             if (result == DialogResult.OK) {
-                controller.ExportXml(saveXmlFileDialog.FileName, mapDisplay.MapBounds, 2);
+                int version = 2;
+                if (saveXmlFileDialog.FilterIndex == 2)
+                    version = 3;
+                controller.ExportXml(saveXmlFileDialog.FileName, mapDisplay.MapBounds, version);
             }
         }
 

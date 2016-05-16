@@ -281,7 +281,6 @@ namespace PurplePen
         {
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteAttributeString("modifyTime", XmlConvert.ToString(modificationDate));
-            xmlWriter.WriteElementString("Id", XmlConvert.ToString(courseNumber));
             xmlWriter.WriteElementString("Name", courseName);
             if (!isScore) {
                 xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.TotalLength / 100F) * 100F));   // round to nearest 100m
