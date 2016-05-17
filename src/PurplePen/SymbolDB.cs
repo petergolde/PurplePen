@@ -56,6 +56,8 @@ namespace PurplePen
         public bool PluralModifiers {get; private set; }
         public bool GenderModifiers {get; private set; }
         public string[] Genders {get; private set; }
+        public bool CaseModifiers { get; private set; }
+        public string[] Cases { get; private set; }
 
         public override bool Equals(object obj)
         {
@@ -83,7 +85,7 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return Name.GetHashCode() ^ LangId.GetHashCode() ^ PluralNouns.GetHashCode() ^ PluralModifiers.GetHashCode() ^ GenderModifiers.GetHashCode() ^ Util.ArrayHashCode(Genders);
+            return Name.GetHashCode() ^ LangId.GetHashCode() ^ PluralNouns.GetHashCode() ^ PluralModifiers.GetHashCode() ^ GenderModifiers.GetHashCode() ^ Util.ArrayHashCode(Genders) ^ CaseModifiers.GetHashCode() ^ Util.ArrayHashCode(Cases);
         }
 
         public override string ToString()
@@ -100,10 +102,16 @@ namespace PurplePen
             this.PluralNouns = xmlinput.GetAttributeBool("plural-nouns", false);
             this.PluralModifiers = xmlinput.GetAttributeBool("plural-modifiers", false);
             this.GenderModifiers = xmlinput.GetAttributeBool("gender-modifiers", false);
-            
+            this.CaseModifiers = xmlinput.GetAttributeBool("case-modifiers", false);
+
             string genders = xmlinput.GetAttributeString("genders", "");
             if (genders != "") {
                 this.Genders = genders.Split(new char[] {','});
+            }
+
+            string cases = xmlinput.GetAttributeString("cases", "");
+            if (cases != "") {
+                this.Cases = cases.Split(new char[] { ',' });
             }
 
             this.Name = xmlinput.GetContentString();
@@ -117,9 +125,13 @@ namespace PurplePen
             element.SetAttribute("plural-nouns", XmlConvert.ToString(PluralNouns));
             element.SetAttribute("plural-modifiers", XmlConvert.ToString(PluralModifiers));
             element.SetAttribute("gender-modifiers", XmlConvert.ToString(GenderModifiers));
+            element.SetAttribute("case-modifers", XmlConvert.ToString(CaseModifiers));
 
             if (Genders != null && Genders.Length > 0)
                 element.SetAttribute("genders", string.Join(",", Genders));
+
+            if (Cases != null && Cases.Length > 0)
+                element.SetAttribute("cases", string.Join(",", Cases));
 
             XmlText content = xmldoc.CreateTextNode(Name);
             element.AppendChild(content);
@@ -131,7 +143,7 @@ namespace PurplePen
         {
         }
 
-        public SymbolLanguage(string name, string langId, bool pluralNouns, bool pluralModifiers, bool genderModifiers, string[] genders)
+        public SymbolLanguage(string name, string langId, bool pluralNouns, bool pluralModifiers, bool genderModifiers, string[] genders, bool caseModifiers, string[] cases)
         {
             this.Name = name;
             this.LangId = langId;
@@ -139,6 +151,8 @@ namespace PurplePen
             this.PluralModifiers = pluralModifiers;
             this.GenderModifiers = genderModifiers;
             this.Genders = genders;
+            this.CaseModifiers = caseModifiers;
+            this.Cases = cases;
         }
     }
 
@@ -149,6 +163,8 @@ namespace PurplePen
         public string Lang;
         public bool Plural;
         public string Gender;
+        public string Case;
+        public string CaseOfModified;
 
         public override bool Equals(object obj)
         {
@@ -163,13 +179,17 @@ namespace PurplePen
                 return false;
             if (other.Gender != Gender)
                 return false;
+            if (other.Case != Case)
+                return false;
+            if (other.CaseOfModified != CaseOfModified)
+                return false;
 
             return true;
         }
 
         public override int GetHashCode()
         {
-            return Text.GetHashCode() ^ Lang.GetHashCode() ^ Plural.GetHashCode() ^ Gender.GetHashCode();
+            return Text.GetHashCode() ^ Lang.GetHashCode() ^ Plural.GetHashCode() ^ Gender.GetHashCode() ^ Case.GetHashCode() ^ CaseOfModified.GetHashCode(); ;
         }
 
         public void ReadXml(XmlInput xmlinput)
@@ -177,6 +197,8 @@ namespace PurplePen
             this.Lang = xmlinput.GetAttributeString("lang");
             this.Plural = xmlinput.GetAttributeBool("plural", false);
             this.Gender = xmlinput.GetAttributeString("gender", "");
+            this.Case = xmlinput.GetAttributeString("case", "");
+            this.CaseOfModified = xmlinput.GetAttributeString("modified-case", "");
             this.Text = xmlinput.GetContentString();
         }
 
@@ -186,6 +208,8 @@ namespace PurplePen
             string pluralString = xmlnode.GetAttribute("plural");
             this.Plural = pluralString == "" ? false : XmlConvert.ToBoolean(pluralString);
             this.Gender = xmlnode.GetAttribute("Gender");
+            this.Case = xmlnode.GetAttribute("Case");
+            this.CaseOfModified = xmlnode.GetAttribute("modified-case", "");
             this.Text = xmlnode.InnerText;
         }
 
@@ -197,6 +221,10 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("plural", XmlConvert.ToString(Plural));
             if (!string.IsNullOrEmpty(Gender))
                 xmloutput.WriteAttributeString("gender", Gender);
+            if (!string.IsNullOrEmpty(Case))
+                xmloutput.WriteAttributeString("case", Case);
+            if (!string.IsNullOrEmpty(Case))
+                xmloutput.WriteAttributeString("case-of-modified", CaseOfModified);
             xmloutput.WriteString(Text);
             xmloutput.WriteEndElement();
         }
@@ -209,6 +237,11 @@ namespace PurplePen
                 xmlnode.SetAttribute("plural", XmlConvert.ToString(Plural));
             if (!string.IsNullOrEmpty(Gender))
                 xmlnode.SetAttribute("gender", Gender);
+            if (!string.IsNullOrEmpty(Case))
+                xmlnode.SetAttribute("case", Case);
+            if (!string.IsNullOrEmpty(CaseOfModified))
+                xmlnode.SetAttribute("modified-case", CaseOfModified);
+
 
             XmlText content = xmldoc.CreateTextNode(Text);
             xmlnode.AppendChild(content);
@@ -293,7 +326,7 @@ namespace PurplePen
         }
 
         // Find the best matching SymbolText. Gender can be null or empty for don't care.
-        static SymbolText FindBestText(List<SymbolText> texts, string language, bool plural, string gender)
+        static SymbolText FindBestText(List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
         {
             int best = 99999;
             SymbolText bestSymText = null;
@@ -310,6 +343,8 @@ namespace PurplePen
                 if (symtext.Plural != plural)
                     metric += 10;
                 if (gender != "" && symtext.Gender != gender)
+                    metric += 5;
+                if (nounCase != "" && symtext.Case != nounCase)
                     metric += 1;
 
                 if (metric < best) {
@@ -331,9 +366,9 @@ namespace PurplePen
             return GetText(language, null);
         }
 
-        public string GetText(string language, string gender)
+        public string GetText(string language, string gender, string nounCase = "")
         {
-            SymbolText best = FindBestText(texts, language, false, gender);
+            SymbolText best = FindBestText(texts, language, false, gender, nounCase);
             if (best != null)
                 return best.Text;
             else
@@ -341,9 +376,9 @@ namespace PurplePen
         }
 
         // Get the best symbol text for a language from a list of symbol texts.
-        public static string GetBestSymbolText(List<SymbolText> texts, string language, bool plural, string gender)
+        public static string GetBestSymbolText(List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
         {
-            SymbolText best = FindBestText(texts, language, plural, gender);
+            SymbolText best = FindBestText(texts, language, plural, gender, nounCase);
             if (best != null)
                 return best.Text;
             else
@@ -368,14 +403,10 @@ namespace PurplePen
         /// </summary>
         /// <param name="language">The language to use.</param>
         /// <returns>The text string to use.</returns>
-        public string GetPluralText(string language)
-        {
-            return GetPluralText(language, null);
-        }
 
-        public string GetPluralText(string language, string gender)
+        public string GetPluralText(string language, string gender = null, string nounCase = "")
         {
-            SymbolText best = FindBestText(texts, language, true, gender);
+            SymbolText best = FindBestText(texts, language, true, gender, nounCase);
             if (best != null)
                 return best.Text;
             else
@@ -385,7 +416,7 @@ namespace PurplePen
         // Get the gender of this item.
         public string GetGender(string language)
         {
-            SymbolText best = FindBestText(texts, language, false, null);
+            SymbolText best = FindBestText(texts, language, false, null, "");
             if (best != null)
                 return best.Gender;
             else
@@ -395,7 +426,7 @@ namespace PurplePen
         // Get the gender for a item from a list of symbol texts.
         public static string GetSymbolGender(List<SymbolText> texts, string language)
         {
-            SymbolText best = FindBestText(texts, language, false, "");
+            SymbolText best = FindBestText(texts, language, false, "", "");
             if (best != null)
                 return best.Gender;
             else

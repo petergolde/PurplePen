@@ -46,6 +46,15 @@ namespace PurplePen.DebugUI
             get { return gendersTextBox.Text; }
         }
 
+        public bool CaseModifiers
+        {
+            get { return caseModifiersCheckBox.Checked; }
+        }
+
+        public string Cases
+        {
+            get { return casesTextBox.Text;  }
+        }
 
 
         private void NewLanguage_Load(object sender, EventArgs e)
@@ -56,6 +65,7 @@ namespace PurplePen.DebugUI
 
             pluralNounCheckBox_CheckedChanged(this, EventArgs.Empty);
             genderAdjectiveCheckBox_CheckedChanged(this, EventArgs.Empty);
+            caseModifiersCheckBox_CheckedChanged(this, EventArgs.Empty);
         }
 
         private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +82,11 @@ namespace PurplePen.DebugUI
         private void genderAdjectiveCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             gendersLabel.Enabled = gendersTextBox.Enabled = genderAdjectiveCheckBox.Checked;
+        }
+
+        private void caseModifiersCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            casesLabel.Enabled = casesTextBox.Enabled = caseModifiersCheckBox.Checked;
         }
     }
 }

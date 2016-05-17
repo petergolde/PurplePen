@@ -361,20 +361,29 @@ namespace PurplePen
             // Only consider the current language.
             symTexts = symTexts.FindAll(symtext => (symtext.Lang == language.LangId));
 
-            bool hasPlural = false, hasGender = false;
+            bool hasPlural = false, hasGender = false, hasCase = false;
             foreach (SymbolText symtext in symTexts) {
                 if (symtext.Plural)
                     hasPlural = true;
                 if (!string.IsNullOrEmpty(symtext.Gender))
                     hasGender = true;
+                if (!string.IsNullOrEmpty(symtext.Case))
+                    hasCase = true;
             }
 
             bool isModifier = (kind == 'E' || kind=='C' || kind == 'G') && selectedId != "11.15";   // column C, E, G, but not between
             bool isNoun = (kind == 'D' || selectedId == "11.15" || selectedId.StartsWith("10.", StringComparison.InvariantCulture));  // column D or between/junction/crossing
 
+            // Note that between/junction/crossing can both modify case of somthing inside, and have it's own case.
+            bool canHaveCase = isNoun;
+            bool canModifyCase = (kind=='F' || kind == 'E' || kind=='C' || kind == 'G');
+
+
             dialog.SetAllowableForms((isNoun && language.PluralNouns) || (kind=='E' && language.PluralModifiers), hasPlural,
                                                        isModifier && language.GenderModifiers, hasGender,
+                                                       canHaveCase && language.CaseModifiers, hasCase,
                                                        isNoun && language.GenderModifiers,
+                                                       canModifyCase && language.CaseModifiers,
                                                        !useAsLocalizeTool && isModifier);     
 
             dialog.SymbolTexts = symTexts;

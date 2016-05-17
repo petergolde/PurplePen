@@ -13,7 +13,9 @@ namespace PurplePen
         List<SymbolText> symbolTexts;
         SymbolLanguage symLanguage;
         bool showGenderList;
+        bool showCaseList;
         bool translateFillIn;
+        const string defaultCaseText = "(unchanged)";
 
         public EnterSymbolText()
         {
@@ -39,6 +41,16 @@ namespace PurplePen
                             break;
                         }
                 }
+
+                if (showCaseList) {
+                    comboBoxCaseChooser.Text = defaultCaseText;
+                    foreach (SymbolText symtext in symbolTexts) {
+                        if (!string.IsNullOrEmpty(symtext.CaseOfModified)) {
+                            comboBoxCaseChooser.Text = symtext.CaseOfModified;
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -48,6 +60,10 @@ namespace PurplePen
 
             if (symLanguage.Genders != null && symLanguage.Genders.Length > 0) 
                 comboBoxGenderChooser.Items.AddRange(symLanguage.Genders);
+            if (symLanguage.CaseModifiers && symLanguage.Cases != null && symLanguage.Cases.Length > 0) {
+                comboBoxCaseChooser.Items.Add(defaultCaseText);
+                comboBoxCaseChooser.Items.AddRange(symLanguage.Cases);
+            }
         }
 
         // Translate {0} to * if desired.
@@ -79,24 +95,32 @@ namespace PurplePen
         {
             bool usePlurals = numberColumn.Visible = checkBoxPlural.Checked;
             bool useGender = genderColumn.Visible = checkBoxGender.Checked;
+            bool useCases = caseColumn.Visible = checkBoxCases.Checked;
 
             dataGridView.Rows.Clear();
 
-            int genderIndex = 0;
+            int genderIndex = 0, caseIndex = 0;
             bool plural = false;
             for (; ; ) {
                 string gender = useGender ? symLanguage.Genders[genderIndex] : "";
-                string text = Symbol.GetBestSymbolText(symbolTexts, symLanguage.LangId, plural, gender);
+                string nounCase = useCases ? symLanguage.Cases[caseIndex] : "";
+                string text = Symbol.GetBestSymbolText(symbolTexts, symLanguage.LangId, plural, gender, nounCase);
                 int index = dataGridView.Rows.Add();
                 dataGridView[0, index].Value = plural ? MiscText.Plural : MiscText.Singular;
                 dataGridView[1, index].Value = gender;
-                dataGridView[2, index].Value = SanitizeFillIn(text);
+                dataGridView[2, index].Value = nounCase;
+                dataGridView[3, index].Value = SanitizeFillIn(text);
 
-                if (useGender && genderIndex < symLanguage.Genders.Length - 1) {
+                if (useCases && caseIndex < symLanguage.Cases.Length - 1) {
+                    caseIndex += 1;
+                }
+                else if (useGender && genderIndex < symLanguage.Genders.Length - 1) {
                     genderIndex += 1;      // go to next gender
+                    caseIndex = 0;
                 }
                 else if (usePlurals && !plural) {
                     genderIndex = 0;     // go to next number
+                    caseIndex = 0;
                     plural = true;
                 }
                 else {
@@ -105,7 +129,7 @@ namespace PurplePen
             }
 
             dataGridView.AutoResizeColumns();
-            dataGridView.CurrentCell = dataGridView[2, 0];
+            dataGridView.CurrentCell = dataGridView[3, 0];
         }
 
         // Read the values in the grid into symbolTexts.
@@ -116,7 +140,7 @@ namespace PurplePen
             foreach (DataGridViewRow row in dataGridView.Rows) {
                 SymbolText text = new SymbolText();
                 text.Lang = symLanguage.LangId;
-                text.Text = UnsanitizeFillIn((string) row.Cells[2].Value);
+                text.Text = UnsanitizeFillIn((string) row.Cells[3].Value);
 
                 if (genderColumn.Visible)
                     text.Gender = (string) row.Cells[1].Value;
@@ -130,23 +154,38 @@ namespace PurplePen
                 else
                     text.Plural = false;
 
+                if (caseColumn.Visible) {
+                    text.Case = (string)row.Cells[2].Value;
+                }
+
+                if (showCaseList) {
+                    if (comboBoxCaseChooser.SelectedIndex <= 0)
+                        text.CaseOfModified = "";
+                    else
+                        text.CaseOfModified = (string) comboBoxCaseChooser.SelectedItem;
+                }
+
                 symtexts.Add(text);
             }
 
             symbolTexts = symtexts;
         }
 
-        public void SetAllowableForms(bool allowPluralForms, bool showPluralForms, bool allowGenderForms, bool showGenderForms, bool showGenderList, bool translateFillIn)
+        public void SetAllowableForms(bool allowPluralForms, bool showPluralForms, bool allowGenderForms, bool showGenderForms, bool allowCaseForms, bool showCaseForms, bool showGenderList, bool showCaseList, bool translateFillIn)
         {
             checkBoxPlural.Visible = allowPluralForms;
             checkBoxPlural.Checked = allowPluralForms && showPluralForms;
             checkBoxGender.Visible = allowGenderForms;
             checkBoxGender.Checked = allowGenderForms && showGenderForms;
+            checkBoxCases.Visible = allowCaseForms;
+            checkBoxCases.Checked = allowCaseForms && showCaseForms;
             labelGenderChooser.Visible = comboBoxGenderChooser.Visible = this.showGenderList = showGenderList;
+            labelCaseChooser.Visible = comboBoxCaseChooser.Visible = this.showCaseList = showCaseList;
+            
             this.translateFillIn = translateFillIn;
         }
 
-        private void checkBoxPluralOrGender_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxPluralOrGenderOrCase_CheckedChanged(object sender, EventArgs e)
         {
             if (symbolTexts != null) {
                 ReadGrid();

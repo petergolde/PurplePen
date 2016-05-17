@@ -31,13 +31,17 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.numberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caseColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBoxPlural = new System.Windows.Forms.CheckBox();
             this.checkBoxGender = new System.Windows.Forms.CheckBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelGenderChooser = new System.Windows.Forms.Label();
             this.comboBoxGenderChooser = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).BeginInit();
+            this.labelCaseChooser = new System.Windows.Forms.Label();
+            this.comboBoxCaseChooser = new System.Windows.Forms.ComboBox();
+            this.checkBoxCases = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -61,6 +65,7 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numberColumn,
             this.genderColumn,
+            this.caseColumn,
             this.textColumn});
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
@@ -84,6 +89,14 @@
             this.genderColumn.ReadOnly = true;
             this.genderColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // caseColumn
+            // 
+            this.caseColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            resources.ApplyResources(this.caseColumn, "caseColumn");
+            this.caseColumn.Name = "caseColumn";
+            this.caseColumn.ReadOnly = true;
+            this.caseColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // textColumn
             // 
             this.textColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -96,14 +109,14 @@
             resources.ApplyResources(this.checkBoxPlural, "checkBoxPlural");
             this.checkBoxPlural.Name = "checkBoxPlural";
             this.checkBoxPlural.UseVisualStyleBackColor = true;
-            this.checkBoxPlural.CheckedChanged += new System.EventHandler(this.checkBoxPluralOrGender_CheckedChanged);
+            this.checkBoxPlural.CheckedChanged += new System.EventHandler(this.checkBoxPluralOrGenderOrCase_CheckedChanged);
             // 
             // checkBoxGender
             // 
             resources.ApplyResources(this.checkBoxGender, "checkBoxGender");
             this.checkBoxGender.Name = "checkBoxGender";
             this.checkBoxGender.UseVisualStyleBackColor = true;
-            this.checkBoxGender.CheckedChanged += new System.EventHandler(this.checkBoxPluralOrGender_CheckedChanged);
+            this.checkBoxGender.CheckedChanged += new System.EventHandler(this.checkBoxPluralOrGenderOrCase_CheckedChanged);
             // 
             // labelDescription
             // 
@@ -122,10 +135,32 @@
             resources.ApplyResources(this.comboBoxGenderChooser, "comboBoxGenderChooser");
             this.comboBoxGenderChooser.Name = "comboBoxGenderChooser";
             // 
+            // labelCaseChooser
+            // 
+            resources.ApplyResources(this.labelCaseChooser, "labelCaseChooser");
+            this.labelCaseChooser.Name = "labelCaseChooser";
+            // 
+            // comboBoxCaseChooser
+            // 
+            this.comboBoxCaseChooser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCaseChooser.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxCaseChooser, "comboBoxCaseChooser");
+            this.comboBoxCaseChooser.Name = "comboBoxCaseChooser";
+            // 
+            // checkBoxCases
+            // 
+            resources.ApplyResources(this.checkBoxCases, "checkBoxCases");
+            this.checkBoxCases.Name = "checkBoxCases";
+            this.checkBoxCases.UseVisualStyleBackColor = true;
+            this.checkBoxCases.CheckedChanged += new System.EventHandler(this.checkBoxPluralOrGenderOrCase_CheckedChanged);
+            // 
             // EnterSymbolText
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.checkBoxCases);
+            this.Controls.Add(this.comboBoxCaseChooser);
+            this.Controls.Add(this.labelCaseChooser);
             this.Controls.Add(this.comboBoxGenderChooser);
             this.Controls.Add(this.labelGenderChooser);
             this.Controls.Add(this.labelDescription);
@@ -143,7 +178,10 @@
             this.Controls.SetChildIndex(this.comboBoxGenderChooser, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).EndInit();
+            this.Controls.SetChildIndex(this.labelCaseChooser, 0);
+            this.Controls.SetChildIndex(this.comboBoxCaseChooser, 0);
+            this.Controls.SetChildIndex(this.checkBoxCases, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +197,10 @@
         private System.Windows.Forms.ComboBox comboBoxGenderChooser;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn caseColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn textColumn;
+        private System.Windows.Forms.Label labelCaseChooser;
+        private System.Windows.Forms.ComboBox comboBoxCaseChooser;
+        private System.Windows.Forms.CheckBox checkBoxCases;
     }
 }

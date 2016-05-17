@@ -170,27 +170,27 @@ namespace PurplePen
         }
 
         // Get the text for a symbol. Checks the eventDB for overrides to the symbol text; otherwise uses the default for the symbol.
-        string GetSymbolText(Symbol symbol, string gender)
+        string GetSymbolText(Symbol symbol, string gender, string nounCase = "")
         {
             Event ev = eventDB.GetEvent();
             string id = symbol.Id;
 
             if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
-                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, false, gender);
+                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, false, gender, nounCase);
             else
-                return symbol.GetText(language, gender);
+                return symbol.GetText(language, gender, nounCase);
         }
 
         // Get the plural text for a symbol. Checks the eventDB for overrides to the symbol text; otherwise uses the default for the symbol.
-        string GetSymbolPluralText(Symbol symbol, string gender)
+        string GetSymbolPluralText(Symbol symbol, string gender, string nounCase = "")
         {
             Event ev = eventDB.GetEvent();
             string id = symbol.Id;
 
             if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
-                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, true, gender);
+                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, true, gender, nounCase);
             else
-                return symbol.GetPluralText(language, gender);
+                return symbol.GetPluralText(language, gender, nounCase);
         }
 
         // Get the gender for a symbol. Checks the eventDB for overrides to the symbol text; otherwise uses the default for the symbol.

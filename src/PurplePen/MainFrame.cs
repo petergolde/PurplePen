@@ -764,7 +764,7 @@ namespace PurplePen
 
             foreach (var pair in customSymbolText) {
                 if (Symbol.ContainsLanguage(pair.Value, langId))
-                    symbolTextDict.Add(pair.Key, Symbol.GetBestSymbolText(pair.Value, langId, false, ""));
+                    symbolTextDict.Add(pair.Key, Symbol.GetBestSymbolText(pair.Value, langId, false, "", ""));
             }
 
             descriptionControl.CustomSymbolText = symbolTextDict;
@@ -2543,7 +2543,9 @@ namespace PurplePen
             if (newLanguageDialog.ShowDialog(this) == DialogResult.OK) {
                 SymbolLanguage symLanguage = new SymbolLanguage(newLanguageDialog.LanguageName, newLanguageDialog.LangId, newLanguageDialog.PluralNouns, 
                     newLanguageDialog.PluralModifiers, newLanguageDialog.GenderModifiers, 
-                    newLanguageDialog.GenderModifiers ? newLanguageDialog.Genders.Split(new string[] {",", " "}, StringSplitOptions.RemoveEmptyEntries) : new string[0]);
+                    newLanguageDialog.GenderModifiers ? newLanguageDialog.Genders.Split(new string[] {",", " "}, StringSplitOptions.RemoveEmptyEntries) : new string[0],
+                    newLanguageDialog.CaseModifiers,
+                    newLanguageDialog.CaseModifiers ? newLanguageDialog.Cases.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries) : new string[0]);
                 controller.AddDescriptionLanguage(symLanguage);
                 controller.SetDescriptionLanguage(symLanguage.LangId);
             }

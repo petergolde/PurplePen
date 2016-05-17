@@ -38,6 +38,9 @@
             this.textBoxLanguageName = new System.Windows.Forms.TextBox();
             this.gendersTextBox = new System.Windows.Forms.TextBox();
             this.gendersLabel = new System.Windows.Forms.Label();
+            this.caseModifiersCheckBox = new System.Windows.Forms.CheckBox();
+            this.casesLabel = new System.Windows.Forms.Label();
+            this.casesTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +54,7 @@
             // 
             // languageComboBox
             // 
-            this.languageComboBox.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.languageComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.languageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.languageComboBox.FormattingEnabled = true;
             this.languageComboBox.Location = new System.Drawing.Point(139, 13);
@@ -95,9 +98,9 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(248, 195);
+            this.cancelButton.Location = new System.Drawing.Point(248, 244);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 5;
@@ -106,9 +109,9 @@
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(167, 194);
+            this.okButton.Location = new System.Drawing.Point(167, 243);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 6;
@@ -126,8 +129,8 @@
             // 
             // textBoxLanguageName
             // 
-            this.textBoxLanguageName.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLanguageName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxLanguageName.Location = new System.Drawing.Point(139, 44);
             this.textBoxLanguageName.Name = "textBoxLanguageName";
             this.textBoxLanguageName.Size = new System.Drawing.Size(185, 20);
@@ -149,13 +152,43 @@
             this.gendersLabel.TabIndex = 10;
             this.gendersLabel.Text = "Genders:";
             // 
+            // caseModifiersCheckBox
+            // 
+            this.caseModifiersCheckBox.AutoSize = true;
+            this.caseModifiersCheckBox.Location = new System.Drawing.Point(12, 179);
+            this.caseModifiersCheckBox.Name = "caseModifiersCheckBox";
+            this.caseModifiersCheckBox.Size = new System.Drawing.Size(213, 17);
+            this.caseModifiersCheckBox.TabIndex = 11;
+            this.caseModifiersCheckBox.Text = "Nouns change case based on modifiers";
+            this.caseModifiersCheckBox.UseVisualStyleBackColor = true;
+            this.caseModifiersCheckBox.CheckedChanged += new System.EventHandler(this.caseModifiersCheckBox_CheckedChanged);
+            // 
+            // casesLabel
+            // 
+            this.casesLabel.AutoSize = true;
+            this.casesLabel.Location = new System.Drawing.Point(29, 203);
+            this.casesLabel.Name = "casesLabel";
+            this.casesLabel.Size = new System.Drawing.Size(39, 13);
+            this.casesLabel.TabIndex = 12;
+            this.casesLabel.Text = "Cases:";
+            // 
+            // casesTextBox
+            // 
+            this.casesTextBox.Location = new System.Drawing.Point(85, 200);
+            this.casesTextBox.Name = "casesTextBox";
+            this.casesTextBox.Size = new System.Drawing.Size(234, 20);
+            this.casesTextBox.TabIndex = 13;
+            // 
             // NewLanguage
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(336, 230);
+            this.ClientSize = new System.Drawing.Size(336, 279);
+            this.Controls.Add(this.casesTextBox);
+            this.Controls.Add(this.casesLabel);
+            this.Controls.Add(this.caseModifiersCheckBox);
             this.Controls.Add(this.gendersLabel);
             this.Controls.Add(this.gendersTextBox);
             this.Controls.Add(this.textBoxLanguageName);
@@ -194,5 +227,8 @@
         private System.Windows.Forms.TextBox textBoxLanguageName;
         private System.Windows.Forms.TextBox gendersTextBox;
         private System.Windows.Forms.Label gendersLabel;
+        private System.Windows.Forms.CheckBox caseModifiersCheckBox;
+        private System.Windows.Forms.Label casesLabel;
+        private System.Windows.Forms.TextBox casesTextBox;
     }
 }

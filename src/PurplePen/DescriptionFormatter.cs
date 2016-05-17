@@ -308,7 +308,7 @@ namespace PurplePen
                     // See if we need to add this to the key.
                     bool addToKey;
                     if (ev.customSymbolKey.TryGetValue(symbolID, out addToKey) && addToKey && Symbol.ContainsLanguage(ev.customSymbolText[symbolID], language)) {
-                        descriptionKey[symbolID] = Symbol.GetBestSymbolText(ev.customSymbolText[symbolID], language, false, "");
+                        descriptionKey[symbolID] = Symbol.GetBestSymbolText(ev.customSymbolText[symbolID], language, false, "", "");
                     }
                 }
             }

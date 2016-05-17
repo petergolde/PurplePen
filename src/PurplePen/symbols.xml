@@ -31,6 +31,9 @@ for the symbols.
    gender-modifiers - true/false if the language uses gendered forms of modifiers depending on the 
                           gender of the object being modified (default: false)
    genders - list of genders, seperated by commas, if gender-modifiers is true
+   cased-nouns - true/false if the language changes the case of nouns based on modifiers
+   cases - list of cases, separated by commas, if cased-nouns is true. First must be the default case
+           if no modifier is present.
    
    
 
@@ -62,6 +65,11 @@ for the symbols.
 	               column D texts should specify a gender. Each column E adjective should specify text
 				   for each possible gender. Column C and G can specify different version for genders also
 				   if needed.
+  case - if the language has the ability for modifiers to change the case of nouns, then nouns should
+         have versions for each possible case, marked using this attribute.
+  modified-case - if the language has the ability for modifiers to change the case of nouns, then
+         modifiers should specify the case of the noun that is modified. Leave off to leave the case unchanged or
+         at the default. 
 
 <lines>            A child of symbol. A sequence of connected lines that makes up part of the 
                    symbol. Child <point> elements given the endpoints of the lines; there must
@@ -132,7 +140,7 @@ for the symbols.
 	<language lang="ca" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculí,femení">Català</language>
 	<language lang="ja" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">日本語 (日本)</language>
 	<language lang="zh-HK" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">中文(香港特別行政區)</language>
-	<language lang="pl" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="męski,żeński,nijaki">polski</language>
+	<language lang="pl" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="męski,żeński,nijaki" case-modifiers="true" cases="nominative,genitive">polski</language>
 	
 	
 
@@ -142,6 +150,8 @@ for the symbols.
   <!-- Name of the course when showing all controls.
 	-->
   <symbol kind="@" id="all_controls">
+		<name lang="pl">All controls</name>
+		
 		<name lang="en-AU">All controls</name>
 		
     <name lang="en">All controls</name>
@@ -159,7 +169,7 @@ for the symbols.
 		<name lang="ca">Tots els controls</name>
 		<name lang="ja">全コントロール</name>
 		<name lang="zh-HK">All controls</name>
-		<name lang="pl">All controls</name>
+		
 		<text lang="en-AU">All controls</text>
     <text lang="en">All controls</text>
     <text lang="fr">Tous Postes</text>
@@ -1648,6 +1658,7 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="D" id="1.8" size-is-depth="true">
+		<name lang="pl">Small erosion gully</name>
 		<name lang="en-AU">Small erosion gully</name>
 		<name lang="en">Small erosion gully</name>
 		<name lang="fr">Fossé sec</name>
@@ -1664,7 +1675,11 @@ for the symbols.
 		<name lang="ca">Rasa</name>
 		<name lang="ja">小さなきれつ</name>
 		<name lang="zh-HK">Small erosion gully</name>
-		<name lang="pl">Small erosion gully</name>
+		<text lang="pl" plural="true" gender="męski" case="genitive">suchych rowów</text>
+		<text lang="pl" plural="true" gender="męski" case="nominative">suche rowy</text>
+		<text lang="pl" gender="męski" case="genitive">suchego rowu</text>
+		<text lang="pl" gender="męski" case="nominative">suchy rów</text>
+		
 		
 		<text lang="en-AU" plural="true">small gullies</text>
 		<text lang="en-AU">small gully</text>
@@ -1696,8 +1711,8 @@ for the symbols.
 		<text lang="ca" gender="femení">rasa</text>
 		<text lang="ja">小さなきれつ</text>
 		<text lang="zh-HK">小乾溝</text>
-		<text lang="pl" plural="true" gender="męski">suche rowy</text>
-		<text lang="pl" gender="męski">suchy rów</text>
+		
+		
 		
 		
 		
@@ -7511,6 +7526,7 @@ for the symbols.
 	-->
 	
 	<symbol kind="F" id="10.1">
+		<name lang="pl">Crossing</name>
 		<name lang="en-AU">Crossing</name>
 		<name lang="en">Crossing</name>
 		<name lang="fr">Croisement</name>
@@ -7527,7 +7543,7 @@ for the symbols.
 		<name lang="ca">Cruïlla</name>
 		<name lang="ja">交点</name>
 		<name lang="zh-HK">Crossing</name>
-		<name lang="pl">Crossing</name>
+		
 		
 		<text lang="en-AU" plural="true">{0} and {1} crossings</text>
 		<text lang="en-AU">{0} and {1} crossing</text>
@@ -7569,6 +7585,8 @@ for the symbols.
 	</symbol>
 
 	<symbol kind="F" id="10.1single">
+		<name lang="pl">Crossing (objects of same kind)</name>
+		
 		<name lang="en-AU">Crossing (objects of same kind)</name>
 		<name lang="en">Crossing (objects of same kind)</name>
 		<name lang="fr">Croisement (mêmes symboles)</name>
@@ -7585,7 +7603,11 @@ for the symbols.
 		<name lang="ca">Cruïlla (mateix símbol)</name>
 		<name lang="ja">(同種の特徴物の)交点</name>
 		<name lang="zh-HK">Crossing (objects of same kind)</name>
-		<name lang="pl">Crossing (objects of same kind)</name>
+		<text lang="pl" plural="true" gender="nijaki" modified-case="genitive">skrzyżowania {1}</text>
+		<text lang="pl" gender="nijaki" modified-case="genitive">skrzyżowanie {1}</text>
+		
+		
+		
 		
 		<text lang="en-AU" plural="true">{0} crossings</text>
 		<text lang="en-AU">{0} crossing</text>
@@ -7612,8 +7634,8 @@ for the symbols.
 		<text lang="ca" gender="masculí">creuament de {1}</text>
 		<text lang="ja">{0}の交点</text>
 		<text lang="zh-HK">兩{0}的交叉處</text>
-		<text lang="pl" plural="true" gender="nijaki">skrzyżowania {0}</text>
-		<text lang="pl" gender="nijaki">skrzyżowanie {0}</text>
+		
+		
 		
 		
 		

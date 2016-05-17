@@ -55,15 +55,15 @@ namespace PurplePen.Tests
             SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("desclocalize\\symbols_working.xml"));
             DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
 
-            localizer.AddLanguage(new SymbolLanguage("Dutch", "nl", false, false, false, null), "en");
-            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" }), "en");
+            localizer.AddLanguage(new SymbolLanguage("Dutch", "nl", false, false, false, null, false, null), "en");
+            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" }, false, null), "en");
 
             SymbolLanguage[] expected = {
-                                            new SymbolLanguage("English", "en", true, false, false, null),
-                                            new SymbolLanguage("Francais", "fr", true, true, true, new string[] { "masculine", "feminine" }),
-                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"}),
-                                            new SymbolLanguage("Dutch", "nl", false, false, false, null),
-                                            new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" })};
+                                            new SymbolLanguage("English", "en", true, false, false, null, false, null),
+                                            new SymbolLanguage("Francais", "fr", true, true, true, new string[] { "masculine", "feminine" }, false, null),
+                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"}, false, null),
+                                            new SymbolLanguage("Dutch", "nl", false, false, false, null, false, null),
+                                            new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" }, false, null)};
 
             List<SymbolLanguage> languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
 
@@ -92,15 +92,15 @@ namespace PurplePen.Tests
             SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("desclocalize\\symbols_working.xml"));
             DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
 
-            localizer.AddLanguage(new SymbolLanguage("Anglais", "en", true, false, true, new string[] { "male", "female" }), "en");
-            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" }), "en");
-            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", false, false, false, null), "en");
+            localizer.AddLanguage(new SymbolLanguage("Anglais", "en", true, false, true, new string[] { "male", "female" }, false, null), "en");
+            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", true, false, true, new string[] { "masculine", "feminine" }, false, null), "en");
+            localizer.AddLanguage(new SymbolLanguage("Korean", "ko", false, false, false, null, false, null), "en");
 
             SymbolLanguage[] expected = {
-                                            new SymbolLanguage("Anglais", "en", true, false, true, new string[] { "male", "female" }),
-                                            new SymbolLanguage("Francais", "fr", true, true, true, new string[] { "masculine", "feminine" }),
-                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"}),
-                                            new SymbolLanguage("Korean", "ko", false, false, false, null) };
+                                            new SymbolLanguage("Anglais", "en", true, false, true, new string[] { "male", "female" }, false, null),
+                                            new SymbolLanguage("Francais", "fr", true, true, true, new string[] { "masculine", "feminine" }, false, null),
+                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"}, false, null),
+                                            new SymbolLanguage("Korean", "ko", false, false, false, null, false, null) };
 
             List<SymbolLanguage> languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
 
@@ -238,9 +238,9 @@ namespace PurplePen.Tests
             localizer.MergeSymbolsFile(TestUtil.GetTestFile("desclocalize\\symbols-to-merge.xml"), "fr");
 
             SymbolLanguage[] expected = {
-                                            new SymbolLanguage("English", "en", true, false, false, null),
-                                            new SymbolLanguage("French", "fr", true, true, true, new string[] { "masculine", "feminine" }),
-                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"})};
+                                            new SymbolLanguage("English", "en", true, false, false, null, false, null),
+                                            new SymbolLanguage("French", "fr", true, true, true, new string[] { "masculine", "feminine" }, false, null),
+                                            new SymbolLanguage("Deutsch", "de", true, true, true, new string[] {"masculine", "feminine", "neuter"}, false, null)};
 
             List<SymbolLanguage> languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
 
