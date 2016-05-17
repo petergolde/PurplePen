@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2011-10-12</Date>
-    <Clock>08:54</Clock>
+    <Date>2016-05-17</Date>
+    <Clock>08:55</Clock>
   </ModifyDate>
   <Map>
     <Scale>15000</Scale>
@@ -11,118 +11,147 @@
   </Map>
   <StartPoint>
     <StartPointCode>STA1</StartPointCode>
+    <ControlPosition x="520282" y="5221838" />
     <MapPosition x="1.65" y="58.91" />
   </StartPoint>
   <Control>
     <ControlCode>31</ControlCode>
+    <ControlPosition x="520537" y="5221884" />
     <MapPosition x="16.97" y="66.82" />
   </Control>
   <Control>
     <ControlCode>32</ControlCode>
+    <ControlPosition x="520254" y="5222250" />
     <MapPosition x="-8.15" y="84.62" />
   </Control>
   <Control>
     <ControlCode>33</ControlCode>
+    <ControlPosition x="520124" y="5222034" />
     <MapPosition x="-12.25" y="68.33" />
   </Control>
   <Control>
     <ControlCode>34</ControlCode>
+    <ControlPosition x="519955" y="5221803" />
     <MapPosition x="-18.5" y="50.32" />
   </Control>
   <Control>
     <ControlCode>35</ControlCode>
+    <ControlPosition x="519565" y="5221706" />
     <MapPosition x="-41.47" y="36.52" />
   </Control>
   <Control>
     <ControlCode>36</ControlCode>
+    <ControlPosition x="519839" y="5221429" />
     <MapPosition x="-18.64" y="24.23" />
   </Control>
   <Control>
     <ControlCode>37</ControlCode>
+    <ControlPosition x="520055" y="5221365" />
     <MapPosition x="-3.62" y="24.34" />
   </Control>
   <Control>
     <ControlCode>38</ControlCode>
+    <ControlPosition x="520547" y="5222085" />
     <MapPosition x="13.74" y="79.87" />
   </Control>
   <Control>
     <ControlCode>39</ControlCode>
+    <ControlPosition x="519912" y="5222657" />
     <MapPosition x="-37.91" y="103.92" />
   </Control>
   <Control>
     <ControlCode>40</ControlCode>
+    <ControlPosition x="519427" y="5221890" />
     <MapPosition x="-53.87" y="45.58" />
   </Control>
   <Control>
     <ControlCode>41</ControlCode>
+    <ControlPosition x="519899" y="5221203" />
     <MapPosition x="-10.42" y="10.97" />
   </Control>
   <Control>
     <ControlCode>42</ControlCode>
+    <ControlPosition x="520377" y="5222501" />
     <MapPosition x="-5.24" y="103.05" />
   </Control>
   <Control>
     <ControlCode>43</ControlCode>
+    <ControlPosition x="520803" y="5222878" />
     <MapPosition x="14.6" y="135.4" />
   </Control>
   <Control>
     <ControlCode>44</ControlCode>
+    <ControlPosition x="521022" y="5223107" />
     <MapPosition x="24.09" y="154.28" />
   </Control>
   <Control>
     <ControlCode>45</ControlCode>
+    <ControlPosition x="520756" y="5223177" />
     <MapPosition x="5.75" y="153.54" />
   </Control>
   <Control>
     <ControlCode>46</ControlCode>
+    <ControlPosition x="519859" y="5222008" />
     <MapPosition x="-28.64" y="61.54" />
   </Control>
   <Control>
     <ControlCode>47</ControlCode>
+    <ControlPosition x="520818" y="5221596" />
     <MapPosition x="40.52" y="53.92" />
   </Control>
   <Control>
     <ControlCode>48</ControlCode>
+    <ControlPosition x="521169" y="5221317" />
     <MapPosition x="68.34" y="43.02" />
   </Control>
   <Control>
     <ControlCode>49</ControlCode>
+    <ControlPosition x="521040" y="5222107" />
     <MapPosition x="44.69" y="90.85" />
   </Control>
   <Control>
     <ControlCode>50</ControlCode>
+    <ControlPosition x="520768" y="5222400" />
     <MapPosition x="21.67" y="104.19" />
   </Control>
   <Control>
     <ControlCode>51</ControlCode>
+    <ControlPosition x="520125" y="5222429" />
     <MapPosition x="-19.88" y="93.55" />
   </Control>
   <Control>
     <ControlCode>52</ControlCode>
+    <ControlPosition x="519865" y="5222480" />
     <MapPosition x="-37.45" y="91.75" />
   </Control>
   <Control>
     <ControlCode>53</ControlCode>
+    <ControlPosition x="519691" y="5222238" />
     <MapPosition x="-43.85" y="72.88" />
   </Control>
   <Control>
     <ControlCode>54</ControlCode>
+    <ControlPosition x="519512" y="5221311" />
     <MapPosition x="-37.19" y="10.32" />
   </Control>
   <Control>
     <ControlCode>55</ControlCode>
+    <ControlPosition x="520447" y="5220852" />
     <MapPosition x="31.41" y="-0.71" />
   </Control>
   <Control>
     <ControlCode>56</ControlCode>
+    <ControlPosition x="519651" y="5222014" />
     <MapPosition x="-42" y="57.87" />
   </Control>
   <Control>
     <ControlCode>57</ControlCode>
+    <ControlPosition x="520879" y="5222528" />
     <MapPosition x="26.28" y="114.58" />
   </Control>
   <FinishPoint>
     <FinishPointCode>FIN1</FinishPointCode>
+    <ControlPosition x="520139" y="5221485" />
     <MapPosition x="-0.6" y="33.61" />
   </FinishPoint>
   <Course>
