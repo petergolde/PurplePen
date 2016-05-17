@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelPaper.Text" xml:space="preserve">
+    <value>Rozmiar:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Szerokość:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Wysokość:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Rozmiar papieru ({0})</value>
+  </data>
+  <data name="radioButtonLandscape.Text" xml:space="preserve">
+    <value>Układ poziomy</value>
+  </data>
+  <data name="radioButtonPortrait.Text" xml:space="preserve">
+    <value>Układ pionowy</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ułożenie strony</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Lewy:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Górny:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Prawy:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Dolny:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Marginesy ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ustawienia Strony</value>
+  </data>
 </root>

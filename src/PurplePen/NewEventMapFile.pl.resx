@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Aby zaprojektować trasy, musisz wybrać plik mapy. Zwyczajowo jest to plik OCAD (lecz można również użyć JPEG). Kliknij przycisk "Wybierz..." aby wybrac plik mapy.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Wybierz plik mapy...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Wszystkie pliki map|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Wybierz plik mapy</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Podkład mapy został pomyślnie załadowany. Jeżeli prześlesz plik Purple Pen osobie trzeciej, musisz pamiętać aby dołączyć również plik podkładu mapy.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Plik Mapy</value>

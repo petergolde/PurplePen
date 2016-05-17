@@ -117,7 +117,410 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Brak symbolu</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Wszystkie PK</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Nie mogę załadować '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Nie mogę zapisać '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Nie mogę załadować pliku mapy '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Nie mogę przeczytać obrazu '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Nie mogę wydrukować '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Nie mogę utworzyć '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Nie mogę utworzyc folderu '{0}' z następującego powodu:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Nie mogę przeczytać mapy z następującego powodu: '{0}'. Użycie 'Zoptymalizuj/napraw' w OCAD może naprawić problem.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Nie mogę utworzyć plików OCAD z następującego powodu:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Czy na pewno chcesz zapisać zmiany do '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Plik '{0}' już istnieje w wybranym folderze. Kliknij przycisk "Wstecz" i wybierz inny folder lub inny tytuł zawodów.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Kod PK '{0}' jest już używany przez inny PK.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Liczba punktów dla PK musi być z przedziału 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Przewyższenie musi być liczbą całkowitą z zakresu 0-9999 lub pozostawione puste.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Obciążenie musi być liczbą całkowitą z zakresu 0-999999 lub pozostawione puste.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Cofnij</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Cofnij</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Ponów</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Ponów</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>U&amp;suń zaznaczenie</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>A&amp;nuluj operację</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Anuluj operację</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Wprowadź nową punktację</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Wprowadź nowy kod PK</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Wprowadź rozmiar obiektu
+Użyj / dla wysokości lub nachylenia stoku
+Użyj | dla dwóch obiektów</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Wprowadź nazwę nowych zawodów
+Użyj | aby rozdzielić linie
+(ma wpływ na wszystkie trasy)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Wprowadź drugorzędną nazwę nowych zawodów</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Wprowadź nazwę nowej trasy</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Wprowadź przewyższenie w metrach</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Wprowadź nowe znaczenie symbolu</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Wprowadź nowy tekst</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>PK {0} nie są już używane na żadnej trasie. Czy chcesz usunąć te PK ze zbioru?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>PK {0} nie jest już używany na żadnej trasie. Czy chcesz usunąć ten PK ze zbioru?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>PK {0} jest obecnie używany przez następujące trasy: {1}. Czy mimo wszystko chcesz usunąć ten PK?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Kod PK musi składać się z jednej, dwóch lub trzech liter i/lub cyfr.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Kod PK nie może zawierać spacji.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Kod PK nie może zaczynać się wiodącym zerem.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Kod PK nie powinien wyglądać jak inna liczba odczytywana do góry nogami.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Kod PK "{0}" jest użyty więcej niż raz.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Skala wydruku musi być liczbą całkowitą pomiędzy 100 i 100,000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Właściwości trasy</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Układ poziomy</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Układ pionowy</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Rozmiar strony jest zbyt mały aby wydrukować jakiekolwiek opisy PK.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Wersja {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Wersja {0} Purple Pen jest dostępna do pobrania (obecnie używasz wersji {1}).</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Nie udało się otworzyć pliku pomocy '{0}'.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Powiększenie</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Nie udało się odnaleźć pliku mapy "{0}".</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Wszystkie PK są użyte na trasie.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Zakończ</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Dalej &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>PK {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Meta</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Obowiązkowy punkt przebiegu</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Punkt przejścia</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Wszystkie: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Lewy: {0}, Prawy: {1}, Górny: {2}, Dolny: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>liczba mnoga</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>liczba pojedyncza</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Dostosowany tekst wymaga "*" aby podać gdzie modyfikowany obiekt ma być umieszczony.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>budowa tras dla orientacji sportowej</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Wprowadź tekst, który chcesz umieścić na mapie. Po wciśnięciu OK, przeciągnij mysz aby umieścić tekst w wybranej lokalizacji.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Dodaj tekst</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Wprowadź nowy tekst.</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Zmień Tekst</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Inny program zmodyfikował plik mapy "{0}". Purple Pen przeładuje teraz tę mapę.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Obecnie otwarte zawody posiadają opisy punktów kontrolnych w {0}. Czy cchesz zmienić ich język na {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Otwórz "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen musi zostać zamknięty przed załadowanie utworzonych plików OCAD.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Żadne trasy nie zostały wybrane do druku.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Jeżeli istnieje strona WWW w przetłumaczonym języku, która zawiera dokumentację Purple Pen, wprowadź ten URL (poprzedzając go http) jako tłumaczenie. W przeciwnym wypadku pozostaw puste.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Zmiana map</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Wymiana</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>ZM</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Część {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Wszystkie części</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Część {0} (z {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontakt e-mail</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Wystąpił błąd. Aby pomóc nam naprawić ten błąd, podaj swój adres e-mail oraz dodatkowe informacje. Następnie wyślij raport do nas.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Opisz czynności, które wykonywałeś w programie, aby pomóc zdiagnozować problem.</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Wyślij raport</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Opisy mogą nie zostać dodane do trasy ze zmianą map, jeżeli "Wszystkie części" są aktualnie wyświetlane. Przełącz się na część, do której chcesz dodać opisy, a następnie wybierz "Dodaj opisy" ponownie.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript nie jest zainstalowany</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Nie udało się odczytać pliku PDF za pomocą GPS Ghostscript</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Nie można przeczytać rezultatu konwersji do PDF z pliku '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Nie udało się utworzyć plików PDF z następującego powodu:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Zdefiniowane przez użytkownika</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Rozmiar mapy z PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Anulowane przez użytkownika</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Tworzenie {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Drukowanie strony {0} (z {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Plik mapy "{0}" został skasowany. Spróbuj odzyskać plik mapy, następnie kliknij "OK".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Instalacja .NET framework na twoim komputerze nie wygląda na poprawną. Odwiedź http://microsoft.com/net i zainstaluj najnowszą wersję.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Czarny</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Wybierz kolor...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Kolor użytkownika</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Ciemnoniebieski</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Zielony</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Jasnoniebieski</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purpurowy</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Czerwony</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Żółty</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Ustaw sposób wyświetlania linii. Po wciśnięciu OK, przeciągnij myszkę aby narysować krzywą w wybranym położeniu.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Dodaj linię</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Ustaw wygląd prostokąta. Po wciśnięciu OK, przeciągnij mysz aby umieścić prostokąt w wybranym położeniu.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Dodaj prostokąt</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Zmień wygląd linii lub prostokąta.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Zmień wygląd linii</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Plik mapy musi być plikiem OCAD aby można było używać plików GPX.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>Plik OCAD musi mieć zdefiniowany układ współrzędnych geograficznych (odniesienia) aby możliwe było użycie plików GPX.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Plik OCAD musi mieć zdefiniowany układ odniesienia z prawdziwymi współrzędnymi geograficznymi (nielokalne) aby można było używać plików GPX.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Plik OCAD używa układu odniesienia, który nie jest wspierany przez Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatyczna</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Długość trasy musi być liczbą z przedziału 0,1 - 99,9 lub pozostać pusty (automatyczna kalkulacja długości trasy).</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Zduplikuj trasę</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Wprowadź długośc w kilometrach lub pozostaw pole puste aby program przeliczył automatycznie</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Zakończono drukowanie "{0}". Naciśnij OK aby rozpocząć drukowanie "{1}".</value>
   </data>
 </root>

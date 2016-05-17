@@ -123,6 +123,9 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Nazwa Trasy</value>
   </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Część trasy</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Długość Trasy</value>
   </data>
@@ -132,11 +135,29 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Lista Kategorii</value>
   </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Zmień kolor...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Kolor:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Kursywa</value>
+  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Pogrubione</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Czcionka:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Wygląd</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Przykład</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Wstaw Tekst Specjalny</value>

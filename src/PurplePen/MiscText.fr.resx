@@ -175,7 +175,7 @@
     <value>Les points affectés à un poste doivent correspondre à un nombre entier compris entre 1 et 999.</value>
   </data>
   <data name="BadClimb" xml:space="preserve">
-    <value>La dénivelée d'un circuit doit être vide ou un nombre compris entre 0 et 9999.</value>
+    <value>Le dénivelé d'un circuit doit être vide ou compris entre 0 et 9999.</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
     <value>Le nombre de concurrents sur un circuit doit être vide ou un nombre entier compris entre 0 et 999999.</value>
@@ -225,11 +225,15 @@ Utiliser | pour séparer les lignes</value>
     <value>Entrer un nouveau nom pour le circuit</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
-    <value>Entrer la nouvelle dénivelée en mètres</value>
+    <value>Entrer le nouveau dénivelé en mètres</value>
   </data>
   <data name="EnterSymbolText" xml:space="preserve">
     <value>Entrer une nouvelle signification pour le symbole
 (affecte tous les circuits)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Saisir un nouveau texte
+Utiliser | pour séparer les lignes</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Les numéros de postes {0} ne sont plus utilisés sur un quelconque circuit. Voulez-vous supprimer ces numéros de la bibliothèque de postes ?</value>
@@ -523,7 +527,7 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
     <value>La longueur d'un circuit doit être un nombre compris entre 0.1 et 99.9 ou doit être laissé à blanc afin qu'il soit calculé automatiquement.</value>
   </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
-    <value>Dupliquer le Circuit</value>
+    <value>Dupliquer le circuit</value>
   </data>
   <data name="EnterLength" xml:space="preserve">
     <value>Saisissez la longueur en km ou laissez la zone à blanc afin qu'elle soit calculée automatiquement.</value>

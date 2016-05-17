@@ -133,7 +133,7 @@
     <value>Changer le titre</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
-    <value>Modifier la dénivelée</value>
+    <value>Modifier le dénivelé</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Modifier le nom du circuit</value>
@@ -163,13 +163,13 @@
     <value>Supprimer la ligne de texte</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Ajouter un Poste</value>
+    <value>Ajouter un poste</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Ajouter un Départ</value>
+    <value>Ajouter un départ</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Ajouter une Arrivée</value>
+    <value>Ajouter une arrivée</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
     <value>Ajouter un passage obligatoire</value>
@@ -181,7 +181,7 @@
     <value>Supprimer le circuit</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
-    <value>Nouveau Circuit</value>
+    <value>Nouveau circuit</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
     <value>Modifier les propriétés du circuit</value>
@@ -211,7 +211,7 @@
     <value>Insérer un coin</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Supprimer un Coude</value>
+    <value>Supprimer un coude</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
     <value>Supprimer un coin</value>
@@ -223,19 +223,19 @@
     <value>Supprimer un intervalle</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Bouger un intervalle</value>
+    <value>Déplacer un intervalle</value>
   </data>
   <data name="Rotate" xml:space="preserve">
     <value>Rotation</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
-    <value>Numérotation Automatique</value>
+    <value>Numérotation automatique</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>Modifier Poinçons</value>
+    <value>Modifier les poinçons</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Modifier format carton de contrôle</value>
+    <value>Modifier le format du carton de contrôle</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Définir la zone d'impression</value>
@@ -253,7 +253,7 @@
     <value>Changer de carte</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignorer les polices manquantes</value>
+    <value>Ignorer les polices de caractères manquantes</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Ajouter une ligne de texte</value>
@@ -271,7 +271,7 @@
     <value>Personnaliser la présentation du circuit</value>
   </data>
   <data name="AddMapExchange" xml:space="preserve">
-    <value>Ajouter un Echange de Carte</value>
+    <value>Ajouter un échange de carte</value>
   </data>
   <data name="DeleteMapExchangeAtControl" xml:space="preserve">
     <value>Supprimer l'échange de carte</value>
@@ -283,6 +283,6 @@
     <value>Modifier le style de ligne</value>
   </data>
   <data name="DuplicateCourse" xml:space="preserve">
-    <value>Dupliquer le Circuit</value>
+    <value>Dupliquer le circuit</value>
   </data>
 </root>

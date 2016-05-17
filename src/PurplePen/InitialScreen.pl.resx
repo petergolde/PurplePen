@@ -120,4 +120,25 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Otwórz ostatnio oglądane zawody</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>Otwórz przykładowe zawody</value>
+  </data>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>Utwórz nowe zawody...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>Otwórz istniejące zawody...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen jest darmowym oprogramowaniem i może być kopiowane oraz współdzielone. Rozwój Purple Pen jest wspierany tylko poprzez Twoje darowizny.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Przekaż datek</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Witaj w Purple Pen</value>
+  </data>
 </root>

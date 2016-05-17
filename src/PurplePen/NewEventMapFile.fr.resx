@@ -129,6 +129,9 @@
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Carte sélectionnée</value>
   </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Le fichier de la carte a été chargé avec succès. Si vous envoyez votre fichier Purple Pen à quelqu'un d'autre, ils devra avoir le fichier de la carte aussi.</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Carte</value>
   </data>

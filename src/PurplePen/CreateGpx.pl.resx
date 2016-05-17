@@ -120,4 +120,16 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasy</value>
   </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>Przedrostek nazwy:</value>
+  </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Punkty pośrednie</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Plik GPX zawiera współrzędne GPS PK i może być załadowany na odbiornik GPS lub telefon celem weryfikacji ustawienia PK w terenie.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Utwórz plik GPX</value>
+  </data>
 </root>

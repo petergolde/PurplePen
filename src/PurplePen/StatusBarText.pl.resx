@@ -117,4 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Lewy przycisk myszy: wybierz obiekt; Prawy przycisk myszy: przesuń mapę; Kółko przewijania: powiększ/pomniejsz.</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Przytrzymaj lewy przycisk myszy i przeciągnij aby przesunąć wybrany obiekt</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Przytrzymaj lewy przycisk myszy i przeciągnij uchwyt w narożniku aby go przesunąć</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Przesuń obiekt w pożądane położenie i zwolnij przycisk myszy</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Przesuń uchwyt w narożniku do pożądanego położenia i zwolnij przycisk myszy</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Kliknij lewym przyciskiem myszy aby umieścić nowy PK</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby dodać istniejący PK "{0}" do trasy</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby umieścic nowy start</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby dodać istniejący start do trasy</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby umieścić nową metę</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby dodać istniejącą metę do trasy</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby umieścić nowe obowiązkowe miejsce przejścia</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby dodać istniejące obowiązkowe miejsce przejścia do trasy</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy aby umieścić nowy obiekt</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy w miejscu gdzie ma być dodane zgięcie</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy, aby dodać nowy narożnik</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy na zgięciu, aby je usunąć</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy na narożniku, aby go usunąć</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy na przerwie w kółku PK aby ją usunąć</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Kliknij lewy przycisk myszy na przerwie w przebiegu aby ją usunąć</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Przytrzymaj i przeciągnij lewy przycisk myszy aby zmienić rozmiar zaznaczonego obiektu</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Przesuń krawędź (krawędzie) do pożądanego położenia i zwolnij przycisk myszy</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Przytrzymaj i przeciągnij lewy przycisk myszy aby stworzyć opisy punktów kontrolnych</value>
+  </data>
 </root>

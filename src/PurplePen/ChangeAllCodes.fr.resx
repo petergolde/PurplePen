@@ -121,7 +121,7 @@
     <value>Numéro Initial</value>
   </data>
   <data name="NewCode.HeaderText" xml:space="preserve">
-    <value>Nouveau Numéro</value>
+    <value>Nouveau numéro</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
     <value>Pour changer le numéro d'un ou plusieurs postes, veuillez cliquer sur la colonne "Nouveau Numéro" puis renseignez-le. </value>

@@ -124,7 +124,7 @@
     <value>Format des définitions :</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Echelle d'impression :</value>
+    <value>Échelle d'impression :</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1 : </value>
@@ -139,7 +139,7 @@
     <value>Texte et symboles</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Etiquette des postes :</value>
+    <value>Étiquette des postes :</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Numéro d'ordre (3)</value>
@@ -184,7 +184,7 @@
     <value>Distance :</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Dénivelée :</value>
+    <value>Dénivelé :</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
     <value>Type de circuit :</value>
@@ -193,7 +193,7 @@
     <value>Nom du circuit :</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Circuit Normal</value>
+    <value>Circuit normal</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
     <value>Course au score</value>
@@ -205,6 +205,6 @@
     <value>km</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nouveau Circuit</value>
+    <value>Nouveau circuit</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Ecarter les numéros de poste pouvant être lus à l'envers (exemple : 68 / 89)</value>
+    <value>Écarter les numéros de poste pouvant être lus à l'envers (exemple : 68 / 89)</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
     <value>Renuméroter également les postes existant</value>
@@ -136,6 +136,6 @@
     <value>Premier numéro de poste :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Numérotation Automatique</value>
+    <value>Numérotation automatique</value>
   </data>
 </root>

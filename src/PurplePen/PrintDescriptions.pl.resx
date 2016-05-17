@@ -117,8 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Wyjście</value>
+  </data>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Zmień marginesy...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Rozmiar papieru:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Góra: 0.55", Dół: 0.55", Lewy: 0.55", Prawy: 0.55"</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Marginesy:</value>
+  </data>
+  <data name="orientation.Text" xml:space="preserve">
+    <value>Układ poziomy</value>
+  </data>
+  <data name="orientationLabel.Text" xml:space="preserve">
+    <value>Ułożenie papieru:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Nazwa drukarki</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Zmień Drukarkę...</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Drukarka:</value>
+  </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Wygląd</value>
+  </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Domyślne dla trasy</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Piktografiki</value>
@@ -126,10 +162,49 @@
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
     <value>Opis</value>
   </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>Symbole i tekst</value>
+  </data>
+  <data name="descriptionTypeLabel.Text" xml:space="preserve">
+    <value>Typ opisu:</value>
+  </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="lineSizeLabel.Text" xml:space="preserve">
+    <value>Rozmiar linii:</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>Drukuj</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Podgląd...</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasy</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Liczba kopii</value>
+  </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>opisów na trasę</value>
+  </data>
+  <data name="copiesCombo.Items" xml:space="preserve">
+    <value>jedna kopia każdej trasy</value>
+  </data>
+  <data name="copiesCombo.Items1" xml:space="preserve">
+    <value>jedna strona każdej trasy</value>
+  </data>
+  <data name="copiesCombo.Items2" xml:space="preserve">
+    <value>wiele stron każdej trasy</value>
+  </data>
+  <data name="whatToPrintLabel.Text" xml:space="preserve">
+    <value>Drukuj:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Drukuj opisy</value>
   </data>
 </root>

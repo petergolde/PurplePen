@@ -130,7 +130,7 @@
     <value>Longueur du circuit</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
-    <value>Dénivelée du circuit</value>
+    <value>Dénivelé du circuit</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Catégories de course</value>
@@ -142,7 +142,7 @@
     <value>Modifier la couleur...</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Couleur :</value>
+    <value>Couleur :</value>
   </data>
   <data name="checkBoxItalic.Text" xml:space="preserve">
     <value>Italique</value>
@@ -151,7 +151,7 @@
     <value>Gras</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Police :</value>
+    <value>Police de caractères :</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Présentation</value>
@@ -160,7 +160,7 @@
     <value>Exemple</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Insérer Texte Prédéfini</value>
+    <value>Insérer le texte prédéfini</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Texte</value>

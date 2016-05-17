@@ -121,7 +121,7 @@
     <value>éloigné du poste</value>
   </data>
   <data name="Climb" xml:space="preserve">
-    <value>Dénivelée :</value>
+    <value>Dénivelé :</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
     <value>Nombre de concurrents :</value>

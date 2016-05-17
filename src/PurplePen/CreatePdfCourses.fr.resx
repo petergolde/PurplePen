@@ -127,7 +127,7 @@
     <value>Imprimer les échanges de carte sur la même carte </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
-    <value>Modèle couleur :</value>
+    <value>Modèle de couleur :</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RVB</value>
@@ -166,7 +166,7 @@
     <value>Préfixe du nom :</value>
   </data>
   <data name="filesLabel.Text" xml:space="preserve">
-    <value>Fichiers :</value>
+    <value>Fichiers :</value>
   </data>
   <data name="comboBoxFileFormat.Items" xml:space="preserve">
     <value>Un pour tous les circuits</value>

@@ -124,6 +124,6 @@
     <value>Ces paramètres contrôlent l'apparence de cette partie pour un circuit en plusieurs parties.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Propriétés partie de circuit</value>
+    <value>Propriétés de la partie de circuit</value>
   </data>
 </root>

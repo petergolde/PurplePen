@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasy</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Wydrukuj zmiany map na tej samej mapie </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Przestrzeń barw</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Przytnij do pojedynczej strony</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Drukuj na kliku stronach</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Jeżeli obszar wydruku jest zbyt duży aby zmieścić się na jednej stronie:</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Wygląd</value>
@@ -137,5 +161,29 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Folder</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Przedrostek nazwy:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Pliki:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Jeden dla wszystkich tras</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Jeden na każdą trasę</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Jeden na każdą część trasy</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Pliki</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Wybierz Katalog dla plików PDF</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Utwórz pliki PDF</value>
   </data>
 </root>

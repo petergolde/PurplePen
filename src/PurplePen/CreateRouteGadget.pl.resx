@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Wybierz folder dla plików OCAD</value>
   </data>
@@ -138,7 +144,16 @@
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>Nazwa pliku</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Wprowadź nazwę (bez rozszerzenia .xml czy .gif) dla obydwu plików RouteGadget:</value>
+  </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Dowiedz się więcej o RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget wymaga zarówno pliku obrazu (.gif) jak i pliku IOF XML (.xml). Wybierz nazwę oraz folder dla obydwu z tych plików.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Utwórz pliki RouteGadget</value>
   </data>
 </root>

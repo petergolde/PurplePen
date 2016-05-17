@@ -178,13 +178,13 @@
     <value>Noir :</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Jaune :</value>
+    <value>Jaune :</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Magenta :</value>
+    <value>Magenta :</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Bleu :</value>
+    <value>Cyan :</value>
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Utiliser la couleur violine de la carte</value>
@@ -202,7 +202,16 @@
     <value>Violine</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Couleur :</value>
+    <value>Couleur :</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Carte OCAD</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Utiliser l'effet de surimpression pour les couleurs marquées « surimpression »</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Personnaliser l'apparence</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Sélecteur de couleur...</value>

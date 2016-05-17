@@ -123,6 +123,9 @@
   <data name="Load.HeaderText" xml:space="preserve">
     <value>Zawodnicy</value>
   </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Ustaw liczbę zawodników na każdej trasie poprzez kliknięcie w drugiej kolumnie i wpisanie liczby.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Obciążenie Tras</value>
   </data>

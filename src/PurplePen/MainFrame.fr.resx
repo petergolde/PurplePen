@@ -252,6 +252,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Qualité de la Carte</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Afficher la zone d'imp&amp;ression</value>
+  </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>Afficher les &amp;Popup</value>
   </data>
@@ -278,6 +281,9 @@
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Personnaliser Description en Clair...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Personnaliser l'&amp;apparence...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>C&amp;ourse</value>
@@ -535,16 +541,16 @@
     <value>Supprimer (Suppr)</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter un Départ</value>
+    <value>Ajouter un départ</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter un Poste</value>
+    <value>Ajouter un poste</value>
   </data>
   <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
     <value>Ajouter un poste (Ctrl+A)</value>
   </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
-    <value>Ajouter une Arrivée</value>
+    <value>Ajouter une arrivée</value>
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter les Définitions</value>
@@ -556,7 +562,7 @@
     <value>Parcours Balisé vers Echange de Carte</value>
   </data>
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
-    <value>Ajouter un Echange de Carte</value>
+    <value>Ajouter un échange de carte</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Point de passage obligatoire</value>
@@ -617,9 +623,6 @@
   </data>
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X : -999.99 Y : -999.99</value>
-  </data>
-  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
-    <value>Fichier XML|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Créer un fichier d'interchange XML</value>

@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Définissez la zone d'impression souhaitée en glissant avec la souris</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Format du papier</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Définir la zone d'impression automatiquement</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Ajuster la zone d'impression à la taille du papier</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Définir la zone d'impression</value>
   </data>

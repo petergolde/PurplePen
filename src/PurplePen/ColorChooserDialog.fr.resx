@@ -121,13 +121,13 @@
     <value>Noir :</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Jaune :</value>
+    <value>Jaune :</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Magenta :</value>
+    <value>Magenta :</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Bleu :</value>
+    <value>Cyan :</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Aperçu</value>

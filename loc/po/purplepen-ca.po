@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.6.1\n"
-"Report-Msgid-Bugs-To: 2.6.1\n"
-"POT-Creation-Date: 2016-02-08 13:58-08:00\n"
+"Project-Id-Version: Purple Pen 1.6.2\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2016-05-17 09:29-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1791,7 +1791,7 @@ msgid "X:-999.99 Y:-999.99"
 msgstr ""
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
-msgid "XML file|*.xml"
+msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
 msgstr ""
 
 #: MainFrame.resx, saveXmlFileDialog.Title

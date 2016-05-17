@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 2.6.1\n"
-"Report-Msgid-Bugs-To: 2.6.1\n"
-"POT-Creation-Date: 2016-02-08 13:58-08:00\n"
+"Project-Id-Version: Purple Pen 1.6.2\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2016-05-17 09:29-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,10 +30,10 @@ msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
 "WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
 "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
 "PURPOSE ARE DISCLAIMED."
-msgstr "CE LOGICIEL EST FOURNI \"TEL QUEL\" PAR LES DÉTENTEURS DU "
-"COPYRIGHT ET PAR LES CONTRIBUTEURS. TOUTES GARANTIES "
-"EXPLICITES OU IMPLICITES (INCLUANT, MAIS NON LIMITEE A, LA "
-"GARANTIE IMPLICITE DE COMMERCIABILITÉ ET CELLE "
+msgstr "CE LOGICIEL EST FOURNI \"TEL QUEL\" PAR LES DÉTENTEURS DES "
+"DROITS D'AUTEUR ET PAR LES CONTRIBUTEURS. TOUTES GARANTIES "
+"EXPLICITES OU IMPLICITES (INCLUANT, MAIS NON LIMITÉE A, LA "
+"GARANTIE IMPLICITE DE COMMERCIALISATION ET CELLE "
 "D'ADÉQUATION À UN USAGE SPÉCIFIQUE) SONT REJETÉES."
 
 #: AboutForm.resx, okButton.Text
@@ -68,7 +68,7 @@ msgstr "Format des définitions :"
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
-msgstr "Echelle d'impression :"
+msgstr "Échelle d'impression :"
 
 #: AddCourse.resx, oneToPrefixLabel.Text
 #: AllControlsProperties.resx, oneToPrefix.Text
@@ -99,7 +99,7 @@ msgstr "Texte et symboles"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "Etiquette des postes :"
+msgstr "Étiquette des postes :"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
@@ -170,7 +170,7 @@ msgstr "Distance :"
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
 msgid "Climb:"
-msgstr "Dénivelée :"
+msgstr "Dénivelé :"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
@@ -182,7 +182,7 @@ msgstr "Nom du circuit :"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
-msgstr "Circuit Normal"
+msgstr "Circuit normal"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
@@ -199,7 +199,7 @@ msgstr "km"
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr "Nouveau Circuit"
+msgstr "Nouveau circuit"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -250,7 +250,7 @@ msgstr "Propriétés pour Tous Postes"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Ecarter les numéros de poste pouvant être lus à l'envers "
+msgstr "Écarter les numéros de poste pouvant être lus à l'envers "
 "(exemple : 68 / 89)"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
@@ -280,7 +280,7 @@ msgstr "Premier numéro de poste :"
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
 msgid "Automatic Numbering"
-msgstr "Numérotation Automatique"
+msgstr "Numérotation automatique"
 
 #: ChangeAllCodes.resx, OldCode.HeaderText
 msgid "Original Code"
@@ -288,7 +288,7 @@ msgstr "Numéro Initial"
 
 #: ChangeAllCodes.resx, NewCode.HeaderText
 msgid "New Code"
-msgstr "Nouveau Numéro"
+msgstr "Nouveau numéro"
 
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
@@ -343,11 +343,11 @@ msgstr "Tous les fichiers "
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
-msgstr "Résolution :"
+msgstr "Résolution :"
 
 #: ChangeMapFile.resx, labelScale.Text
 msgid "Scale:"
-msgstr "Echelle :"
+msgstr "Échelle :"
 
 #: ChangeMapFile.resx, labelOneTo.Text
 msgid "1 :"
@@ -394,7 +394,7 @@ msgstr "Longueur du circuit"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr "Dénivelée du circuit"
+msgstr "Dénivelé du circuit"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
@@ -413,7 +413,7 @@ msgstr "Modifier la couleur..."
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr "Couleur :"
+msgstr "Couleur :"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
@@ -426,7 +426,7 @@ msgstr "Gras"
 
 #: ChangeText.resx, label1.Text
 msgid "Font:"
-msgstr "Police :"
+msgstr "Police de caractères :"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -435,7 +435,7 @@ msgstr "Exemple"
 
 #: ChangeText.resx, insertSpecialButton.Text
 msgid "Insert Special Text"
-msgstr "Insérer Texte Prédéfini"
+msgstr "Insérer le texte prédéfini"
 
 #: ColorChooserDialog.resx, label5.Text
 #: CourseAppearanceDialog.resx, label5.Text
@@ -445,17 +445,17 @@ msgstr "Noir :"
 #: ColorChooserDialog.resx, label6.Text
 #: CourseAppearanceDialog.resx, label6.Text
 msgid "Yellow:"
-msgstr "Jaune :"
+msgstr "Jaune :"
 
 #: ColorChooserDialog.resx, label3.Text
 #: CourseAppearanceDialog.resx, label3.Text
 msgid "Magenta:"
-msgstr "Magenta :"
+msgstr "Magenta :"
 
 #: ColorChooserDialog.resx, label1.Text
 #: CourseAppearanceDialog.resx, label1.Text
 msgid "Cyan:"
-msgstr "Bleu :"
+msgstr "Cyan :"
 
 #: ColorChooserDialog.resx, groupBoxPreview.Text
 #: CourseAppearanceDialog.resx, groupBoxPreview.Text
@@ -488,7 +488,7 @@ msgstr "Changer le titre"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
-msgstr "Modifier la dénivelée"
+msgstr "Modifier le dénivelé"
 
 #: CommandNameText.resx, ChangeCourseName
 msgid "Change Course Name"
@@ -529,17 +529,17 @@ msgstr "Supprimer la ligne de texte"
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr "Ajouter un Poste"
+msgstr "Ajouter un poste"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
 msgid "Add Start"
-msgstr "Ajouter un Départ"
+msgstr "Ajouter un départ"
 
 #: CommandNameText.resx, AddFinish
 #: MainFrame.resx, addFinishToolStripButton.Text
 msgid "Add Finish"
-msgstr "Ajouter une Arrivée"
+msgstr "Ajouter une arrivée"
 
 #: CommandNameText.resx, AddCrossingPoint
 msgid "Add Mandatory Crossing Point"
@@ -588,7 +588,7 @@ msgstr "Insérer un coin"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "Supprimer un Coude"
+msgstr "Supprimer un coude"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
@@ -604,7 +604,7 @@ msgstr "Supprimer un intervalle"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr "Bouger un intervalle"
+msgstr "Déplacer un intervalle"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
@@ -612,11 +612,11 @@ msgstr "Rotation"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr "Modifier Poinçons"
+msgstr "Modifier les poinçons"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr "Modifier format carton de contrôle"
+msgstr "Modifier le format du carton de contrôle"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -642,7 +642,7 @@ msgstr "Changer de carte"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr "Ignorer les polices manquantes"
+msgstr "Ignorer les polices de caractères manquantes"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
@@ -664,7 +664,7 @@ msgstr "Personnaliser la présentation du circuit"
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
-msgstr "Ajouter un Echange de Carte"
+msgstr "Ajouter un échange de carte"
 
 #: CommandNameText.resx, DeleteMapExchangeAtControl
 msgid "Delete Map Exchange"
@@ -682,7 +682,7 @@ msgstr "Modifier le style de ligne"
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr "Dupliquer le Circuit"
+msgstr "Dupliquer le circuit"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -768,15 +768,16 @@ msgstr "Violine"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "Carte OCAD"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "Utiliser l'effet de surimpression pour les couleurs "
+"marquées « surimpression »"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr ""
+msgstr "Personnaliser l'apparence"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -794,7 +795,7 @@ msgstr "Nombre de concurrents sur le circuit"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part:"
-msgstr "Partie du Circuit :"
+msgstr "Partie du circuit :"
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -812,7 +813,7 @@ msgstr "Ces paramètres contrôlent l'apparence de cette partie pour "
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
-msgstr "Propriétés partie de circuit"
+msgstr "Propriétés de la partie de circuit"
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
@@ -913,7 +914,7 @@ msgstr "OCAD 11"
 
 #: CreateOcadFiles.resx, fileFormatCombo.Items6
 msgid "OCAD 12"
-msgstr ""
+msgstr "OCAD 12"
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -964,7 +965,7 @@ msgstr "Imprimer les échanges de carte sur la même carte "
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
-msgstr "Modèle couleur :"
+msgstr "Modèle de couleur :"
 
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
 #: PrintCourses.resx, comboBoxColorModel.Items1
@@ -994,7 +995,7 @@ msgstr "Si la zone d'impression est trop grande pour tenir sur une "
 
 #: CreatePdfCourses.resx, filesLabel.Text
 msgid "Files:"
-msgstr "Fichiers :"
+msgstr "Fichiers :"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items
 msgid "One for all courses"
@@ -1082,7 +1083,7 @@ msgstr "Cliquer sur un symbole pour personnaliser la description "
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "Langue par défaut pour les nouveaux événements"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1381,7 +1382,7 @@ msgstr "&Qualité de la Carte"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "Afficher la zone d'imp&ression"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1421,7 +1422,7 @@ msgstr "Personnaliser Description en Clair..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr ""
+msgstr "Personnaliser l'&apparence..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1822,8 +1823,8 @@ msgid "X:-999.99 Y:-999.99"
 msgstr "X : -999.99 Y : -999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
-msgid "XML file|*.xml"
-msgstr "Fichier XML|*.xml"
+msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
+msgstr ""
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -1928,8 +1929,8 @@ msgstr "Les points affectés à un poste doivent correspondre à un "
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr "La dénivelée d'un circuit doit être vide ou un nombre "
-"compris entre 0 et 9999."
+msgstr "Le dénivelé d'un circuit doit être vide ou compris entre 0 "
+"et 9999."
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
@@ -1980,7 +1981,7 @@ msgstr "Entrer un nouveau nom pour le circuit"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr "Entrer la nouvelle dénivelée en mètres"
+msgstr "Entrer le nouveau dénivelé en mètres"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
@@ -1991,7 +1992,8 @@ msgstr "Entrer une nouvelle signification pour le symbole\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Saisir un nouveau texte\n"
+"Utiliser | pour séparer les lignes"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2622,7 +2624,9 @@ msgstr "Carte sélectionnée"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr ""
+msgstr "Le fichier de la carte a été chargé avec succès. Si vous "
+"envoyez votre fichier Purple Pen à quelqu'un d'autre, ils "
+"devra avoir le fichier de la carte aussi."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
@@ -2973,7 +2977,7 @@ msgstr "Fermer"
 
 #: ReportText.resx, ColumnHeader_Climb
 msgid "Climb"
-msgstr "Dénivelée"
+msgstr "Dénivelé"
 
 #: ReportText.resx, ColumnHeader_Code
 msgid "Code"
@@ -3063,8 +3067,8 @@ msgstr "Cases de définition manquantes"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr "Les circuits standards devraient indiquer la dénivelée "
-"positive"
+msgstr "Les circuits standards devraient indiquer le dénivelé "
+"positif"
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
@@ -3162,7 +3166,7 @@ msgstr "Moyenne"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
-msgstr "{0} ({1} postes, {2:0.0} km, dénivelée {3} m)"
+msgstr "{0} ({1} postes, {2:0.0} km, dénivelé {3} m)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2:0.0} km)"
@@ -3386,15 +3390,15 @@ msgstr "Définissez la zone d'impression souhaitée en glissant avec "
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Format du papier"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Définir la zone d'impression automatiquement"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Ajuster la zone d'impression à la taille du papier"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "

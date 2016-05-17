@@ -120,6 +120,9 @@
   <data name="moveDownButton.Text" xml:space="preserve">
     <value>Przesuń niżej</value>
   </data>
+  <data name="courseOrderLabel.Text" xml:space="preserve">
+    <value>Użyj przycisków "W góre" oraz "W dół" aby zmienić kolejność według której trasy są wyświetlane na interfejsie użytkownika, w raportach oraz na wydrukach.</value>
+  </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Przesuń wyżej</value>
   </data>

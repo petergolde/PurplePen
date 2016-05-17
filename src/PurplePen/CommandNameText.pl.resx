@@ -138,6 +138,9 @@
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Zmień Nazwę Trasy</value>
   </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Zmień linię tekstu</value>
+  </data>
   <data name="ChangeScale" xml:space="preserve">
     <value>Aktualizuj Skalę Mapy</value>
   </data>
@@ -172,7 +175,7 @@
     <value>Dodaj Obowiązkowe Przejście</value>
   </data>
   <data name="AddObject" xml:space="preserve">
-    <value>Dodaj Obiekt</value>
+    <value>Dodaj obiekt</value>
   </data>
   <data name="DeleteCourse" xml:space="preserve">
     <value>Usuń Trasę</value>
@@ -189,11 +192,17 @@
   <data name="NewEvent" xml:space="preserve">
     <value>Stwórz Wydarzenie</value>
   </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Zmień sposób otaśmowania przebiegu</value>
+  </data>
   <data name="ChangeCodes" xml:space="preserve">
     <value>Zmieni Kody</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
     <value>Zmień Widoczne Kursy</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Przesuń punkt zgięcia przebiegu</value>
   </data>
   <data name="AddBend" xml:space="preserve">
     <value>Dodaj Zgięcie</value>
@@ -231,6 +240,9 @@
   <data name="SetPrintArea" xml:space="preserve">
     <value>Ustaw Obszar Wydruku</value>
   </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Zmień prognozowaną liczbę zawodników</value>
+  </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>Zmień Tekst Opisu</value>
   </data>
@@ -257,5 +269,20 @@
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Zmień Wygląd Tras</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Dodaj zmianę mapy</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Usuń zmianę mapy</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Zmień właściwości częsci trasy</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Zmień wygląd linii</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Zduplikuj trasę</value>
   </data>
 </root>

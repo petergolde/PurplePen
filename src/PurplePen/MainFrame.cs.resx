@@ -537,9 +537,6 @@
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
   </data>
-  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
-    <value>XML soubor|*.xml</value>
-  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Vytvořit soubor IOF XML</value>
   </data>

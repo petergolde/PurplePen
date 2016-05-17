@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Numer pierwszego punktu:</value>
+    <value>Numer pierwszego PK:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Wygląd opisu:</value>
@@ -150,6 +150,12 @@
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Liczba porządkowa i kod (3-145)</value>
   </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Numer PK oraz punktacja (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Kod PK oraz punktacja (145(30))</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Pokaż punkty w:</value>
   </data>
@@ -174,6 +180,9 @@
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Lista kategorii / Podtytuł</value>
   </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Długość:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Przewyższenie</value>
   </data>
@@ -191,6 +200,9 @@
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metry</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nowy Kurs</value>

@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Kliknij "Zakończ" aby stworzyć nowe zawody. Plik z zawodami będzie zapisany jako:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Po utworzeniu zawodów, wybierz "Nowa trasa..." z menu Trasy aby stworzyć jedną lub więcej tras.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Stwórz zawody</value>
+  </data>
 </root>

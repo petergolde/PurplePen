@@ -120,6 +120,12 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasy</value>
   </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Wybierz folder dla plików OCAD</value>
   </data>
@@ -144,6 +150,15 @@
   <data name="fileFormatCombo.Items4" xml:space="preserve">
     <value>OCAD 10</value>
   </data>
+  <data name="fileFormatCombo.Items5" xml:space="preserve">
+    <value>OCAD 11</value>
+  </data>
+  <data name="fileFormatCombo.Items6" xml:space="preserve">
+    <value>OCAD 12</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Wyjście</value>
+  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Wybierz folder...</value>
   </data>
@@ -158,5 +173,8 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Folder</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Utwórz pliki OCAD</value>
   </data>
 </root>

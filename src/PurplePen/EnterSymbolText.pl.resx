@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="numberColumn.HeaderText" xml:space="preserve">
+    <value>Numer</value>
+  </data>
+  <data name="genderColumn.HeaderText" xml:space="preserve">
+    <value>Płeć</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Opis</value>
+  </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>Pokaż formy liczby mnogiej</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>Pokaż formy rodzaju gramatycznego</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Wpisz dostosowany tekst dla symbolu w kolumnie "Tekst".</value>
+  </data>
+  <data name="labelGenderChooser.Text" xml:space="preserve">
+    <value>Płeć:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Zmieniony Tekst Symbolu</value>

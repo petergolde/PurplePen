@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>Wybierz język używany do opisów tekstowych punktów kontrolnych:</value>
+  </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>Nazwa piktografiki:</value>
   </data>
   <data name="labelCustomizedText.Text" xml:space="preserve">
     <value>Zmieniony tekst:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>Zmień tekst...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>Przywróć do standardowego</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>Standardowy tekst:</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Pokaż znaczenie poniżej opisów symbolicznych</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>Kliknij na symbol opisu PK aby dostosować tekst użyty jako tekstowy opis PK.</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Ustaw jako język domyślny dla nowych zawodów</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Zmień Tekst Opisu</value>

@@ -117,4 +117,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Przewyższenie</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Kod PK</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Kolumna</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>PK</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Kody PK</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>PK</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Trasa</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Odległość</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Element</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Przebieg</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Długość</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Obłożenie</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Położenie</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value>Liczba tras</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Przyczyna</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Ten sam symbol?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Podsumowanie trasy dla {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Indeks PK dla {0}</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Poniższa tabela pokazuje wszystkie pary PK które są w odległości nie większej niż {0} metrów od siebie. Kolumna 'ten sam symbol' pokazuje czy obydwa PK mają ten sam główny obiekt w kolumnie D.</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Brakujące pola opisu</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Trasy na orientację powinny zawierać informację o przewyższeniu</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Wszystkie PK muszą mieć informację o głównym objekcie w kolumnie D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Kiedy "pomiędzy" jest użyty w kolumnie G, obydwa obiekty muszą być wypisane w kolumnie D oraz E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Jeżeli "rozwidlenie" lub "skrzyżowanie" jest użyte w kolumnie F, obydwa obiekty muszą być pokazane w kolumnie D i E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Trasa na orientację powinna mieć metę</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Brakujące elementy tras</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Trasy powinny mieć oczekiwane obciążenie zawodnikami</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Niezdefiniowany żaden wzorzec perforowania</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Brakujące wzorce perforowania</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Bieg scorelauf powinien mieć punkty przypisane do wszystkich PK lub brak jakichkolwiek punktów</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Brakujące punkty</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Trasa na orientację powinna mieć punkt startu (trójkąt)</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Bieg typu scorelauf powinien mieć punkt startu (trójkąt)</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Nie znaleziono problemów.</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Audyt zawodów dla {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Nieużyte PK</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Średnia</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} PK, {2:0.0} km, {3} m przewyższenia)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} PK, {2:0.0} km)</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Raport długości przebiegów dla {0}</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Obłożenie PK</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Obłożenie przebiegów</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(jedynie przebiegi użyte w więcej niż jednej trasie są zaprezentowane w tabeli poniżej)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Podsumowanie obłożenia zawodnikami dla {0}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>UWAGA:</value>
+  </data>
 </root>

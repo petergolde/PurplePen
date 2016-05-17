@@ -624,9 +624,6 @@
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>Copy text t X:-999.99 Y:-999.99</value>
   </data>
-  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
-    <value>XML-Datei|*.xml</value>
-  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>XML-Austausch Datei erstellen</value>
   </data>

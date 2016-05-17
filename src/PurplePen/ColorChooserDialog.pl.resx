@@ -123,7 +123,16 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Żółty:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Purpurowy:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Niebieskozielony:</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Podgląd</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Wybierz kolor</value>
   </data>
 </root>

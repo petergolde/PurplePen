@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ColumnHeader_Climb" xml:space="preserve">
-    <value>Dénivelée</value>
+    <value>Dénivelé</value>
   </data>
   <data name="ColumnHeader_Code" xml:space="preserve">
     <value>Numéro</value>
@@ -181,7 +181,7 @@
     <value>Cases de définition manquantes</value>
   </data>
   <data name="EventAudit_MissingClimb" xml:space="preserve">
-    <value>Les circuits standards devraient indiquer la dénivelée positive</value>
+    <value>Les circuits standards devraient indiquer le dénivelé positif</value>
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
     <value>Tous les postes doivent posséder un élément principal dans la colonne D</value>
@@ -241,7 +241,7 @@
     <value>Moyenne</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} postes, {2:0.0} km, dénivelée {3} m)</value>
+    <value>{0} ({1} postes, {2:0.0} km, dénivelé {3} m)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
     <value>{0} ({1} postes, {2:0.0} km)</value>

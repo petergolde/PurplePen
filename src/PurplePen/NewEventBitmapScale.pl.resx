@@ -117,7 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Rozdzielczość obrazu:</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>punkty na cal</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Skala mapy:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Rozdzielczość bitmapy</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Kiedy używasz pliku PDF jako mapy podkładowej, musisz podać jej skalę.
+
+Skala mapy określa powiązanie pomiędzy wydrukiem a rzeczywistością.
+</value>
   </data>
 </root>
