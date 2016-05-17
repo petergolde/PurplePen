@@ -174,6 +174,11 @@ namespace PurplePen
 
                 try {
                     var latestKeyName = (from versionString in gsKey.GetSubKeyNames() orderby new Version(versionString) descending select versionString).First();
+
+                    // Make sure the latest is bigger or equal to the minimum version.
+                    if (string.Compare(latestKeyName, MapUtil.GhostscriptMinimumVersion, StringComparison.InvariantCultureIgnoreCase) < 0)
+                        return null;
+
                     var latestKey = gsKey.OpenSubKey(latestKeyName);
                     latestValue = (string)(latestKey.GetValue(null));
                     latestKey.Dispose();

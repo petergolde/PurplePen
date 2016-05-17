@@ -131,8 +131,9 @@ namespace PurplePen
             return true;
         }
 
-        private const string ghostscriptUrl = "http://downloads.ghostscript.com/public/gs907w32.exe";
-        private const string ghostscriptFileName = "gs907w32.exe";
+        public const string GhostscriptUrl = "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs919/gs919w32.exe";
+        public const string GhostscriptFileName = "gs919w32.exe";
+        public const string GhostscriptMinimumVersion = "9.19";
 
         public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out Size bitmapSize, out string errorMessageText)
         {
@@ -141,7 +142,7 @@ namespace PurplePen
             PdfMapFile mapFile = new PdfMapFile(pdfFileName);
 
             if (!mapFile.GhostscriptInstalled) {
-                loadingStatus.DownloadAndInstall(ghostscriptUrl, ghostscriptFileName);
+                loadingStatus.DownloadAndInstall(GhostscriptUrl, GhostscriptFileName);
             }
 
             if (!mapFile.GhostscriptInstalled) {
