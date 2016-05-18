@@ -10,6 +10,7 @@ namespace PurplePen
 {
     partial class EnterSymbolText: OkCancelDialog
     {
+        SymbolDB symbolDB;
         List<SymbolText> symbolTexts;
         SymbolLanguage symLanguage;
         bool showGenderList;
@@ -17,8 +18,9 @@ namespace PurplePen
         bool translateFillIn;
         const string defaultCaseText = "(unchanged)";
 
-        public EnterSymbolText()
+        public EnterSymbolText(SymbolDB symbolDB)
         {
+            this.symbolDB = symbolDB;
             InitializeComponent();
         }
 
@@ -104,7 +106,7 @@ namespace PurplePen
             for (; ; ) {
                 string gender = useGender ? symLanguage.Genders[genderIndex] : "";
                 string nounCase = useCases ? symLanguage.Cases[caseIndex] : "";
-                string text = Symbol.GetBestSymbolText(symbolTexts, symLanguage.LangId, plural, gender, nounCase);
+                string text = Symbol.GetBestSymbolText(symbolDB, symbolTexts, symLanguage.LangId, plural, gender, nounCase);
                 int index = dataGridView.Rows.Add();
                 dataGridView[0, index].Value = plural ? MiscText.Plural : MiscText.Singular;
                 dataGridView[1, index].Value = gender;

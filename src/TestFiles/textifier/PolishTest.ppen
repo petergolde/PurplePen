@@ -1,0 +1,106 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>PolishTest</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">..\Programs\PurplePen\src\TestFiles\Lake Sammamish.ocd</map>
+    <all-controls print-scale="15000" description-kind="symbols-and-text" />
+    <print-area automatic="true" restrict-to-page-size="true" left="0" top="0" right="0" bottom="0" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="pl" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="normal">
+    <code>31</code>
+    <location x="1.45665789" y="8.750007" />
+    <description box="D" iof-2004-ref="1.8" />
+  </control>
+  <control id="2" kind="normal">
+    <code>32</code>
+    <location x="-22.8715477" y="43.0957069" />
+    <description box="C" iof-2004-ref="0.1N" />
+    <description box="D" iof-2004-ref="1.8" />
+  </control>
+  <control id="3" kind="normal">
+    <code>33</code>
+    <location x="-86.1248856" y="64.5617752" />
+    <description box="D" iof-2004-ref="1.8" />
+    <description box="E" iof-2004-ref="8.8" />
+  </control>
+  <control id="4" kind="normal">
+    <code>34</code>
+    <location x="-66.94853" y="60.84099" />
+    <description box="D" iof-2004-ref="1.8" />
+    <description box="E" iof-2004-ref="1.8" />
+    <description box="F" iof-2004-ref="10.1" />
+  </control>
+  <control id="5" kind="normal">
+    <code>35</code>
+    <location x="-56.64482" y="64.27556" />
+    <description box="D" iof-2004-ref="1.8" />
+    <description box="G" iof-2004-ref="11.1N" />
+  </control>
+  <control id="6" kind="normal">
+    <code>36</code>
+    <location x="-43.7651825" y="61.1272" />
+    <description box="D" iof-2004-ref="1.8" />
+    <description box="F">1.5</description>
+  </control>
+  <control id="7" kind="normal">
+    <code>37</code>
+    <location x="-35.7511864" y="64.27556" />
+    <description box="D" iof-2004-ref="1.8" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.2" />
+  </control>
+  <control id="8" kind="normal">
+    <code>38</code>
+    <location x="-60.9380341" y="57.1202049" />
+    <description box="D" iof-2004-ref="1.3" />
+  </control>
+  <control id="9" kind="normal">
+    <code>39</code>
+    <location x="-70.09689" y="49.39242" />
+    <description box="C" iof-2004-ref="0.1W" />
+    <description box="D" iof-2004-ref="1.3" />
+  </control>
+  <control id="10" kind="normal">
+    <code>40</code>
+    <location x="-38.0408974" y="53.6856346" />
+    <description box="D" iof-2004-ref="1.3" />
+    <description box="E" iof-2004-ref="8.8" />
+  </control>
+  <control id="11" kind="normal">
+    <code>41</code>
+    <location x="-111.597946" y="67.1377" />
+    <description box="D" iof-2004-ref="1.3" />
+    <description box="E" iof-2004-ref="1.3" />
+    <description box="F" iof-2004-ref="10.1" />
+  </control>
+  <control id="12" kind="normal">
+    <code>42</code>
+    <location x="-100.435593" y="47.6751366" />
+    <description box="D" iof-2004-ref="1.3" />
+    <description box="G" iof-2004-ref="11.1N" />
+  </control>
+  <control id="13" kind="normal">
+    <code>43</code>
+    <location x="-96.4286" y="39.08871" />
+    <description box="D" iof-2004-ref="1.3" />
+    <description box="F">1/2</description>
+  </control>
+  <control id="14" kind="normal">
+    <code>44</code>
+    <location x="-95.5699539" y="23.91936" />
+    <description box="D" iof-2004-ref="1.3" />
+    <description box="E" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="10.2" />
+  </control>
+  <special-object id="1" kind="descriptions">
+    <location x="-237.2537" y="80.017334" />
+    <location x="-229.74057" y="80.017334" />
+    <courses>
+      <course course="0" />
+    </courses>
+  </special-object>
+</course-scribe-event>

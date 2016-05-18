@@ -276,6 +276,16 @@ namespace PurplePen.Tests
             eventDB.Validate();
         }
 
+        // Sets up with special symbols.xml that has fake polish text in it, to test case agreement stuff.
+        public void SetupWithPolish()
+        {
+            undomgr = new UndoMgr(5);
+            eventDB = new EventDB(undomgr);
+            symbolDB = new SymbolDB(TestUtil.GetTestFile("textifier\\pl-symbols.xml"));
+            eventDB.Load(TestUtil.GetTestFile("textifier\\PolishTest.ppen"));
+            eventDB.Validate();
+        }
+
         // Get a simple german symbol.
         [TestMethod]
         public void SimpleGerman()
@@ -321,6 +331,27 @@ namespace PurplePen.Tests
             Assert.AreEqual("De-between de-overgrown-plural-fem de-reentrants", textifier.CreateTextForControl(ControlId(14), ""));
         }
 
+        [TestMethod]
+        public void PolishNounCases()
+        {
+            SetupWithPolish();
+            Textifier textifier = new Textifier(eventDB, symbolDB, "pl");
+
+            Assert.AreEqual("Suchy row", textifier.CreateTextForControl(ControlId(1), ""));
+            Assert.AreEqual("Polnocny suchy row", textifier.CreateTextForControl(ControlId(2), ""));
+            Assert.AreEqual("Piaszczysty suchy row", textifier.CreateTextForControl(ControlId(3), ""));
+            Assert.AreEqual("Skrzyzowanie suchych rowow", textifier.CreateTextForControl(ControlId(4), ""));
+            Assert.AreEqual("Polnocna strona suchego rowu", textifier.CreateTextForControl(ControlId(5), ""));
+            Assert.AreEqual("Suchy row, gleboki na 1.5m", textifier.CreateTextForControl(ControlId(6), ""));
+            Assert.AreEqual("Rozwidlenie suchego rowu oraz sciezki", textifier.CreateTextForControl(ControlId(7), ""));
+            Assert.AreEqual("Mulda", textifier.CreateTextForControl(ControlId(8), ""));
+            Assert.AreEqual("Zachodnia mulda", textifier.CreateTextForControl(ControlId(9), ""));
+            Assert.AreEqual("Piaszczysta mulda", textifier.CreateTextForControl(ControlId(10), ""));
+            Assert.AreEqual("Skrzyzowanie muld", textifier.CreateTextForControl(ControlId(11), ""));
+            Assert.AreEqual("Polnocna strona muldy", textifier.CreateTextForControl(ControlId(12), ""));
+            //Assert.AreEqual("Mulda, gleboka na 1m do 2m", textifier.CreateTextForControl(ControlId(13), ""));
+            Assert.AreEqual("Rozwidlenie muldy oraz sciezki", textifier.CreateTextForControl(ControlId(14), ""));
+        }
     }
 }
 

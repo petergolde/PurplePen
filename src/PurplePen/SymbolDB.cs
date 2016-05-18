@@ -260,6 +260,7 @@ namespace PurplePen
     /// </summary>
     class Symbol
     {
+        private readonly SymbolDB symbolDB;
         private char kind;
         private bool sizeIsDepth;
         private string id;
@@ -270,6 +271,11 @@ namespace PurplePen
         internal   // Allow test code access.
 #endif
         SymbolStroke[] strokes;
+
+        public Symbol(SymbolDB symbolDB)
+        {
+            this.symbolDB = symbolDB;
+        }
 
         /// <summary>
         /// Get a character with the type of symbol -- the usual column for this kind of
@@ -325,13 +331,19 @@ namespace PurplePen
                 return null;
         }
 
-        // Find the best matching SymbolText. Gender can be null or empty for don't care.
-        static SymbolText FindBestText(List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
+        // Find the best matching SymbolText. Gender can be null or empty for don't care. Same with nounCase. If 
+        // nounCase is empty then the first noun case from the language is chosen if possible.
+        static SymbolText FindBestText(SymbolDB symbolDB, List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
         {
             int best = 99999;
             SymbolText bestSymText = null;
             if (gender == null)
                 gender = "";
+
+            string defaultNounCase = "";
+            SymbolLanguage symbolLanguage = symbolDB.GetLanguage(language);
+            if (symbolLanguage != null && symbolLanguage.CaseModifiers && symbolLanguage.Cases.Length > 0)
+                defaultNounCase = symbolLanguage.Cases[0];
 
             // Search for exact match.
             foreach (SymbolText symtext in texts) {
@@ -345,6 +357,8 @@ namespace PurplePen
                 if (gender != "" && symtext.Gender != gender)
                     metric += 5;
                 if (nounCase != "" && symtext.Case != nounCase)
+                    metric += 3;
+                if (nounCase == "" && symtext.Case != null && symtext.Case != defaultNounCase)
                     metric += 1;
 
                 if (metric < best) {
@@ -368,19 +382,39 @@ namespace PurplePen
 
         public string GetText(string language, string gender, string nounCase = "")
         {
-            SymbolText best = FindBestText(texts, language, false, gender, nounCase);
+            SymbolText best = FindBestText(symbolDB, texts, language, false, gender, nounCase);
             if (best != null)
                 return best.Text;
             else
                 return null;
         }
 
-        // Get the best symbol text for a language from a list of symbol texts.
-        public static string GetBestSymbolText(List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
+        // Get the case of what this symbol modifies, or "" if none.
+        public string GetModifiedCase(string language)
         {
-            SymbolText best = FindBestText(texts, language, plural, gender, nounCase);
+            SymbolText best = FindBestText(symbolDB, texts, language, false, "", "");
+            if (best != null)
+                return best.CaseOfModified;
+            else
+                return "";
+        }
+
+        // Get the best symbol text for a language from a list of symbol texts.
+        public static string GetBestSymbolText(SymbolDB symbolDB, List<SymbolText> texts, string language, bool plural, string gender, string nounCase)
+        {
+            SymbolText best = FindBestText(symbolDB, texts, language, plural, gender, nounCase);
             if (best != null)
                 return best.Text;
+            else
+                return null;
+        }
+
+        // Get the case of what this symbol modifies, or "" if none.
+        public static string GetModifiedCase(SymbolDB symbolDB, List<SymbolText> texts, string language)
+        {
+            SymbolText best = FindBestText(symbolDB, texts, language, false, "", "");
+            if (best != null)
+                return best.CaseOfModified;
             else
                 return null;
         }
@@ -406,7 +440,7 @@ namespace PurplePen
 
         public string GetPluralText(string language, string gender = null, string nounCase = "")
         {
-            SymbolText best = FindBestText(texts, language, true, gender, nounCase);
+            SymbolText best = FindBestText(symbolDB, texts, language, true, gender, nounCase);
             if (best != null)
                 return best.Text;
             else
@@ -416,7 +450,7 @@ namespace PurplePen
         // Get the gender of this item.
         public string GetGender(string language)
         {
-            SymbolText best = FindBestText(texts, language, false, null, "");
+            SymbolText best = FindBestText(symbolDB, texts, language, false, null, "");
             if (best != null)
                 return best.Gender;
             else
@@ -424,9 +458,9 @@ namespace PurplePen
         }
 
         // Get the gender for a item from a list of symbol texts.
-        public static string GetSymbolGender(List<SymbolText> texts, string language)
+        public static string GetSymbolGender(SymbolDB symbolDB, List<SymbolText> texts, string language)
         {
-            SymbolText best = FindBestText(texts, language, false, "", "");
+            SymbolText best = FindBestText(symbolDB, texts, language, false, "", "");
             if (best != null)
                 return best.Gender;
             else
@@ -852,7 +886,7 @@ namespace PurplePen
     {
         string filename;
         Dictionary<string, Symbol> symbols = new Dictionary<string,Symbol>();
-        List<SymbolLanguage> languages = new List<SymbolLanguage>();
+        Dictionary<string, SymbolLanguage> languages = new Dictionary<string, SymbolLanguage>();
 
         /// <summary>
         /// Initialize the Symbol database from the given file.
@@ -883,13 +917,22 @@ namespace PurplePen
         // Enumerate all the languages.
         public ICollection<SymbolLanguage> AllLanguages
         {
-            get { return languages; }
+            get { return languages.Values; }
         }
 
         // Does the language exist?
         public bool HasLanguage(string langId)
         {
-            return languages.Exists(symlang => (symlang.LangId == langId));
+            return languages.ContainsKey(langId);
+        }
+
+        public SymbolLanguage GetLanguage(string langId)
+        {
+            SymbolLanguage language;
+            if (languages.TryGetValue(langId, out language))
+                return language;
+            else
+                return null;
         }
 
         /// <summary>
@@ -919,7 +962,7 @@ namespace PurplePen
                 bool first = true;
                 while (xmlinput.FindSubElement(first, new string[] { "symbol", "language" })) {
                     if (xmlinput.Name == "symbol") {
-                        Symbol symbol = new Symbol();
+                        Symbol symbol = new Symbol(this);
 
                         symbol.ReadXml(xmlinput);
 
@@ -929,7 +972,7 @@ namespace PurplePen
                         SymbolLanguage language = new SymbolLanguage();
 
                         language.ReadXml(xmlinput);
-                        languages.Add(language);
+                        languages.Add(language.LangId, language);
                     }
 
                     first = false;

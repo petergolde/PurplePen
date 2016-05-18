@@ -345,7 +345,7 @@ namespace PurplePen
 
         private void buttonChangeText_Click(object sender, EventArgs e)
         {
-            EnterSymbolText dialog = new EnterSymbolText();
+            EnterSymbolText dialog = new EnterSymbolText(symbolDB);
 
             char kind = symbolDB[selectedId].Kind; 
 
@@ -371,7 +371,7 @@ namespace PurplePen
                     hasCase = true;
             }
 
-            bool isModifier = (kind == 'E' || kind=='C' || kind == 'G') && selectedId != "11.15";   // column C, E, G, but not between
+            bool isModifier = (kind == 'E' || kind=='C' || kind == 'G' || kind == 'F') && selectedId != "11.15" && !selectedId.StartsWith("10.", StringComparison.InvariantCulture);   // column C, E, F, G, but not between/crossing/junction
             bool isNoun = (kind == 'D' || selectedId == "11.15" || selectedId.StartsWith("10.", StringComparison.InvariantCulture));  // column D or between/junction/crossing
 
             // Note that between/junction/crossing can both modify case of somthing inside, and have it's own case.

@@ -98,22 +98,12 @@ namespace PurplePen
 
             // Get the main feature, including modifiers and between/crossing/junction modifiers.
             string fullTextGender;
-            string fullText = GetMainFeatureText(symbols, out fullTextGender);
+            string fullText = GetMainFeatureText(controlPoint, symbols, out fullTextGender);
 
             // Add size from coumn F.
             if (!string.IsNullOrEmpty(controlPoint.columnFText)) {
-                bool firstIsDeep, secondIsDeep;
-                string genderFirst = "", genderSecond = "";
-                firstIsDeep = secondIsDeep = (symbols[1] != null && symbols[1].SizeIsDepth);
-                if (symbols[1] != null)
-                    genderFirst = GetSymbolGender(symbols[1]);
-
-                if (symbols[2] != null && symbols[2].Kind == 'D') {
-                    secondIsDeep = symbols[2].SizeIsDepth;
-                    genderSecond = GetSymbolGender(symbols[2]);
-                }
-
-                fullText = fullText + ", " + GetTextFromSize(controlPoint.columnFText, true, firstIsDeep, genderFirst, secondIsDeep, genderSecond);
+                Symbol symbolControllingNounCase; // not used.
+                fullText = fullText + ", " + GetTextFromColumnF(controlPoint.columnFText, symbols, out symbolControllingNounCase);
             }
 
             // Which of many, column C
@@ -176,7 +166,7 @@ namespace PurplePen
             string id = symbol.Id;
 
             if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
-                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, false, gender, nounCase);
+                return Symbol.GetBestSymbolText(symbolDB, ev.customSymbolText[id], language, false, gender, nounCase);
             else
                 return symbol.GetText(language, gender, nounCase);
         }
@@ -188,7 +178,7 @@ namespace PurplePen
             string id = symbol.Id;
 
             if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
-                return Symbol.GetBestSymbolText(ev.customSymbolText[id], language, true, gender, nounCase);
+                return Symbol.GetBestSymbolText(symbolDB, ev.customSymbolText[id], language, true, gender, nounCase);
             else
                 return symbol.GetPluralText(language, gender, nounCase);
         }
@@ -200,9 +190,21 @@ namespace PurplePen
             string id = symbol.Id;
 
             if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
-                return Symbol.GetSymbolGender(ev.customSymbolText[id], language);
+                return Symbol.GetSymbolGender(symbolDB, ev.customSymbolText[id], language);
             else
                 return symbol.GetGender(language);
+        }
+
+        // Get the modified case for a symbol. Checks the eventDB for overrides to the symbol text; otherwise uses the default for the symbol.
+        string GetSymbolModifiedCase(Symbol symbol)
+        {
+            Event ev = eventDB.GetEvent();
+            string id = symbol.Id;
+
+            if (ev.customSymbolText.ContainsKey(id) && Symbol.ContainsLanguage(ev.customSymbolText[id], language))
+                return Symbol.GetModifiedCase(symbolDB, ev.customSymbolText[id], language);
+            else
+                return symbol.GetModifiedCase(language);
         }
 
         // Create a combination string for crossing/junction/between.
@@ -210,7 +212,7 @@ namespace PurplePen
         {
             pluralCombo = null;
             if (secondaryFeature == null && mainFeaturePlural != null) {
-                Symbol singleComboSymbol = symbolDB[comboSymbol.Id + "single"];
+                Symbol singleComboSymbol = GetSingleVersionOfComboSymbol(comboSymbol);
                 pluralCombo = string.Format(singleComboSymbol.GetPluralText(language), mainFeature, mainFeaturePlural);
                 gender = singleComboSymbol.GetGender(language);
                 return string.Format(singleComboSymbol.GetText(language), mainFeature, mainFeaturePlural);
@@ -222,11 +224,22 @@ namespace PurplePen
             }
         }
 
+        // Is this a dual-main symbol (two different main symbols in D and E)
+        bool IsDualMainSymbol(Symbol[] symbols)
+        {
+            return (symbols[1] != null && symbols[2] != null && symbols[2].Kind == 'D' && symbols[2].Id != symbols[1].Id);
+        }
+
+        Symbol GetSingleVersionOfComboSymbol(Symbol comboSymbol)
+        {
+            return symbolDB[comboSymbol.Id + "single"];
+        }
+
         // Get the text associated with the main feature. Normally this is just the symbol in column D. But, 
         // there could be a second main feature in column E. Also handles crossing/junction in column F and between in column G.
-        string GetMainFeatureText(Symbol[] symbols, out string mainFeatureGender)
+        string GetMainFeatureText(ControlPoint controlPoint, Symbol[] symbols, out string mainFeatureGender)
         {
-            string mainFeature, mainFeaturePlural, secondaryFeature = null;
+            string mainFeature, mainFeaturePlural, mainFeatureCase, secondaryFeature = null;
             bool comboUsed = false;
             
             mainFeatureGender = "";
@@ -236,14 +249,15 @@ namespace PurplePen
 
             // Get the main feature (column D) and secondary feature (column E, if a column D symbol is there)
 
-            mainFeature = GetSymbolText(symbols[1], "");
+            mainFeatureCase = GetNounCase(controlPoint, false, false, false);
+            mainFeature = GetSymbolText(symbols[1], "", mainFeatureCase);
             mainFeatureGender = GetSymbolGender(symbols[1]);
-            mainFeaturePlural = GetSymbolPluralText(symbols[1], "");
+            mainFeaturePlural = GetSymbolPluralText(symbols[1], "", mainFeatureCase);
 
             if (symbols[2] != null) {
                 if (symbols[2].Kind == 'D') {
                     // Additional feature used for combination.
-                    secondaryFeature = GetSymbolText(symbols[2], "");
+                    secondaryFeature = GetSymbolText(symbols[2], "", mainFeatureCase);
                     if (secondaryFeature == mainFeature)
                         secondaryFeature = null;        // we treate "road/road/crossing" the same as "road/ /crossing" ==> "road crossing".
                 }
@@ -281,6 +295,89 @@ namespace PurplePen
             return mainFeature;
         }
 
+
+        // Get the case of a noun by looking at modifiers. Options allow ignoring the between or cross/junction modifiers
+        string GetNounCase(ControlPoint controlPoint, bool ignoreBetween, bool ignoreCrossJunction, bool ignoreColumnE)
+        {
+            // We check modifiers in the following order, "out to in", so that inner-most modifiers override outermost.
+            // Column H, column G (except "between"), column C, column F (except "cross/junction"), between, cross or junction, column E
+            string nounCase = "";
+            Symbol[] symbols = GetSymbols(controlPoint);
+
+            // Column H
+            if (symbols[5] != null)
+                nounCase = ApplyNounCase(symbols[5], nounCase);
+
+            // Column G except "between"
+            if (symbols[4] != null && symbols[4].Id != "11.15")
+                nounCase = ApplyNounCase(symbols[4], nounCase);
+
+            // Column C
+            if (symbols[0] != null)
+                nounCase = ApplyNounCase(symbols[0], nounCase);
+
+            // Column F
+            if (!string.IsNullOrEmpty(controlPoint.columnFText)) {
+                Symbol symbolControllingNounCase;
+                GetTextFromColumnF(controlPoint.columnFText, symbols, out symbolControllingNounCase);
+                if (symbolControllingNounCase != null)
+                    nounCase = ApplyNounCase(symbolControllingNounCase, nounCase);
+            }
+
+            // Between
+            if (!ignoreBetween && symbols[4] != null && symbols[4].Id == "11.15") {
+                Symbol s = symbols[4];
+                if (!IsDualMainSymbol(symbols)) {
+                    s = GetSingleVersionOfComboSymbol(s);
+                }
+                nounCase = ApplyNounCase(s, nounCase);
+            }
+
+            // Cross or junction
+            if (!ignoreCrossJunction && symbols[3] != null) {
+                Symbol s = symbols[3];
+                if (!IsDualMainSymbol(symbols)) {
+                    s = GetSingleVersionOfComboSymbol(s);
+                }
+                nounCase = ApplyNounCase(s, nounCase);
+            }
+
+            // Column E
+            if (!ignoreColumnE && symbols[2] != null && symbols[2].Kind == 'E') {
+                nounCase = ApplyNounCase(symbols[2], nounCase);
+            }
+
+            return nounCase;
+        }
+
+        string ApplyNounCase(Symbol symbol, string currentNounCase)
+        {
+            // Get the case to apply to the modified symbol.
+            string modifiedNounCase = GetSymbolModifiedCase(symbol);
+
+            // If it wasn't empty, use, otherwise use the current one.
+            if (string.IsNullOrEmpty(modifiedNounCase))
+                return currentNounCase;
+            else
+                return modifiedNounCase;
+        }
+
+        string GetTextFromColumnF(string columnFText, Symbol[] symbols, out Symbol symbolControllingNounCase)
+        {
+            bool firstIsDeep, secondIsDeep;
+            string genderFirst = "", genderSecond = "";
+            firstIsDeep = secondIsDeep = (symbols[1] != null && symbols[1].SizeIsDepth);
+            if (symbols[1] != null)
+                genderFirst = GetSymbolGender(symbols[1]);
+
+            if (symbols[2] != null && symbols[2].Kind == 'D') {
+                secondIsDeep = symbols[2].SizeIsDepth;
+                genderSecond = GetSymbolGender(symbols[2]);
+            }
+
+            return GetTextFromSize(columnFText, true, firstIsDeep, genderFirst, secondIsDeep, genderSecond, out symbolControllingNounCase);
+        }
+
         // Convert a size text to a textual equivalent. E.g. "2x4" -> "2m by 4m", "5.0m" -> "5m high", etc. 
         // Return the input size text if the number is in an unrecognized format.
         //
@@ -289,11 +386,20 @@ namespace PurplePen
         //    "3.5/2.0" "3.5m/2.0m"
         //    "3.5|2.0" "3.5m|2.0m"
         //    "4x8" "4mx8m"
+
 #if TEST
         internal
 #endif //TEST
- string GetTextFromSize(string size, bool useDeepOrHigh, bool firstIsDeep, string genderFirst, bool secondIsDeep, string genderSecond)
+        string GetTextFromSize(string size, bool useDeepOrHigh, bool firstIsDeep, string genderFirst, bool secondIsDeep, string genderSecond)
         {
+            Symbol symbolControllingNounCase;
+            return GetTextFromSize(size, useDeepOrHigh, firstIsDeep, genderFirst, secondIsDeep, genderSecond, out symbolControllingNounCase);
+        }
+
+        string GetTextFromSize(string size, bool useDeepOrHigh, bool firstIsDeep, string genderFirst, bool secondIsDeep, string genderSecond, out Symbol symbolControllingNounCase)
+        {
+            symbolControllingNounCase = null;
+
             // If it's a combo, figure out which kind and the correct combining word.
             Symbol combiner = null;
             int index = size.IndexOf('|');
@@ -304,12 +410,14 @@ namespace PurplePen
                 index = size.IndexOf('/');
                 if (index >= 0) {
                     combiner = firstIsDeep ? symbolDB["9.3deep"] : symbolDB["9.3high"];
+                    symbolControllingNounCase = combiner;
                     useDeepOrHigh = false;
                 }
                 else {
                     index = size.IndexOf('x');
                     if (index >= 0) {
                         combiner = symbolDB["9.2"];
+                        symbolControllingNounCase = combiner;
                         useDeepOrHigh = false;
                     }
                 }
@@ -317,12 +425,18 @@ namespace PurplePen
 
             if (combiner != null) {
                 // Combo string
-                string firstText = GetTextFromSize(size.Substring(0, index), useDeepOrHigh, firstIsDeep, genderFirst, firstIsDeep, genderFirst);
+                Symbol firstSymbolControllingNounCase;
+                string firstText = GetTextFromSize(size.Substring(0, index), useDeepOrHigh, firstIsDeep, genderFirst, firstIsDeep, genderFirst, out firstSymbolControllingNounCase);
                 string secondText = GetTextFromSize(size.Substring(index + 1), useDeepOrHigh, secondIsDeep, genderSecond, secondIsDeep, genderSecond);
-                if (string.IsNullOrEmpty(firstText) || string.IsNullOrEmpty(secondText))
+                if (string.IsNullOrEmpty(firstText) || string.IsNullOrEmpty(secondText)) {
                     return size;
-                else
+                }
+                else {
+                    if (symbolControllingNounCase == null)
+                        symbolControllingNounCase = firstSymbolControllingNounCase;
+
                     return string.Format(combiner.GetText(language, genderFirst), firstText, secondText);
+                }
             }
             else {
                 // Simple string.
@@ -340,6 +454,7 @@ namespace PurplePen
                     string text = Convert.ToString(value) + "m";
                     if (useDeepOrHigh) {
                         Symbol symbol = firstIsDeep ? symbolDB["9.1deep"] : symbolDB["9.1high"];
+                        symbolControllingNounCase = symbol;
                         return string.Format(symbol.GetText(language, genderFirst), text);
                     }
                     else {

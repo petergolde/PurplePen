@@ -764,7 +764,7 @@ namespace PurplePen
 
             foreach (var pair in customSymbolText) {
                 if (Symbol.ContainsLanguage(pair.Value, langId))
-                    symbolTextDict.Add(pair.Key, Symbol.GetBestSymbolText(pair.Value, langId, false, "", ""));
+                    symbolTextDict.Add(pair.Key, Symbol.GetBestSymbolText(symbolDB, pair.Value, langId, false, "", ""));
             }
 
             descriptionControl.CustomSymbolText = symbolTextDict;
