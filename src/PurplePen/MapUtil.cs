@@ -131,9 +131,9 @@ namespace PurplePen
             return true;
         }
 
-        public const string GhostscriptUrl = "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs919/gs919w32.exe";
-        public const string GhostscriptFileName = "gs919w32.exe";
-        public const string GhostscriptMinimumVersion = "9.19";
+        public const string GhostscriptUrl = "http://downloads.ghostscript.com/public/old-gs-releases/gs916w32.exe";
+        public const string GhostscriptFileName = "gs916w32.exe";
+        public const string GhostscriptMinimumVersion = "9.16";
 
         public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out Size bitmapSize, out string errorMessageText)
         {

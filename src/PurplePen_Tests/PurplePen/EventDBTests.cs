@@ -530,7 +530,7 @@ namespace PurplePen.Tests
             e.customSymbolText["6.1"] = texts;
 
             texts = new List<SymbolText>();
-            text1.Lang = "en"; text1.Gender = ""; text1.Plural = false; text1.Text = "boopsie";
+            text1.Lang = "en"; text1.Gender = ""; text1.Plural = false; text1.Text = "boopsie"; text1.Case = "";
             texts.Add(text1);
             e.customSymbolText["6.2"] = texts;
             e.customSymbolKey["6.2"] = true;

@@ -70,12 +70,12 @@ namespace PurplePen.Tests
             CollectionAssert.AreEquivalent(expected, languages);
 
             SymbolText[] expectedTerraces = {
-                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "terrace"},
-                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "terraces"},
-                new SymbolText() {Lang = "nl", Plural = false, Gender = "", Text = "terrace"},
-                new SymbolText() {Lang = "nl", Plural = true, Gender = "", Text = "terraces"},
-                new SymbolText() {Lang = "ko", Plural = false, Gender = "", Text = "terrace"},
-                new SymbolText() {Lang = "ko", Plural = true, Gender = "", Text = "terraces"},
+                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "terrace", Case="", CaseOfModified = ""},
+                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "terraces", Case="", CaseOfModified = ""},
+                new SymbolText() {Lang = "nl", Plural = false, Gender = "", Text = "terrace", Case="", CaseOfModified = ""},
+                new SymbolText() {Lang = "nl", Plural = true, Gender = "", Text = "terraces", Case="", CaseOfModified = ""},
+                new SymbolText() {Lang = "ko", Plural = false, Gender = "", Text = "terrace", Case="", CaseOfModified = ""},
+                new SymbolText() {Lang = "ko", Plural = true, Gender = "", Text = "terraces", Case="", CaseOfModified = ""},
             };
             CollectionAssert.AreEquivalent(expectedTerraces, symbolDB["1.1"].SymbolTexts);
 
@@ -120,32 +120,32 @@ namespace PurplePen.Tests
 
             dictionary["1.1"] = new List<SymbolText>()
             {
-                new SymbolText() {Lang = "de", Plural = false, Gender = "masculine", Text = "german-terrace"},
-                new SymbolText() {Lang = "de", Plural = true, Gender = "masculine", Text = "german-terraces"},
-                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "french-terrace"},
-                new SymbolText() {Lang = "fr", Plural = true, Gender = "feminine", Text = "french-terraces"},
+                new SymbolText() {Lang = "de", Plural = false, Gender = "masculine", Text = "german-terrace", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = true, Gender = "masculine", Text = "german-terraces", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "french-terrace", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "fr", Plural = true, Gender = "feminine", Text = "french-terraces", Case="", CaseOfModified=""},
             };
             dictionary["5.20"] = new List<SymbolText>()
             {
-                new SymbolText() {Lang = "de", Plural = false, Gender = "neuter", Text = "german-statue"},
-                new SymbolText() {Lang = "de", Plural = true, Gender = "neuter", Text = "german-statues"},
+                new SymbolText() {Lang = "de", Plural = false, Gender = "neuter", Text = "german-statue", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = true, Gender = "neuter", Text = "german-statues", Case="", CaseOfModified=""},
             };
 
             localizer.CustomizeDescriptionTexts(dictionary);
 
             SymbolText[] expectedTerraces = {
-                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "terrace"},
-                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "terraces"},
-                new SymbolText() {Lang = "de", Plural = false, Gender = "masculine", Text = "german-terrace"},
-                new SymbolText() {Lang = "de", Plural = true, Gender = "masculine", Text = "german-terraces"},
-                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "french-terrace"},
-                new SymbolText() {Lang = "fr", Plural = true, Gender = "feminine", Text = "french-terraces"}
+                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "terrace", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "terraces", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = false, Gender = "masculine", Text = "german-terrace", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = true, Gender = "masculine", Text = "german-terraces", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "fr", Plural = false, Gender = "feminine", Text = "french-terrace", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "fr", Plural = true, Gender = "feminine", Text = "french-terraces", Case="", CaseOfModified=""}
             };
             SymbolText[] expectedStatues = {
-                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "statue"},
-                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "statues"},
-                new SymbolText() {Lang = "de", Plural = false, Gender = "neuter", Text = "german-statue"},
-                new SymbolText() {Lang = "de", Plural = true, Gender = "neuter", Text = "german-statues"},
+                new SymbolText() {Lang = "en", Plural = false, Gender = "", Text = "statue", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "en", Plural = true, Gender = "", Text = "statues", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = false, Gender = "neuter", Text = "german-statue", Case="", CaseOfModified=""},
+                new SymbolText() {Lang = "de", Plural = true, Gender = "neuter", Text = "german-statues", Case="", CaseOfModified=""},
             };
 
             CollectionAssert.AreEquivalent(expectedTerraces, symbolDB["1.1"].SymbolTexts);

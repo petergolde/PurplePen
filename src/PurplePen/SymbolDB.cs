@@ -159,12 +159,12 @@ namespace PurplePen
     // Represents one piece of text about a symbol.
     public class SymbolText
     {
-        public string Text;
-        public string Lang;
+        public string Text = "";
+        public string Lang = "";
         public bool Plural;
-        public string Gender;
-        public string Case;
-        public string CaseOfModified;
+        public string Gender = "";
+        public string Case = "";
+        public string CaseOfModified = "";
 
         public override bool Equals(object obj)
         {
