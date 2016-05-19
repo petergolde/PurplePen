@@ -147,7 +147,6 @@ namespace PurplePen
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SetPrintAreaDialog";
             this.groupBoxPaperSize.ResumeLayout(false);
-            this.groupBoxPaperSize.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

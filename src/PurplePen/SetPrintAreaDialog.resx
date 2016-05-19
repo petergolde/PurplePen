@@ -204,12 +204,6 @@
   <data name="groupBoxPaperSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="groupBoxPaperSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="paperSizeControl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="paperSizeControl.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
@@ -236,7 +230,7 @@
     <value>paperSizeControl</value>
   </data>
   <data name="&gt;&gt;paperSizeControl.Type" xml:space="preserve">
-    <value>PurplePen.PaperSizeControl, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.PaperSizeControl, PurplePen, Version=2.6.1.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;paperSizeControl.Parent" xml:space="preserve">
     <value>groupBoxPaperSize</value>
@@ -356,6 +350,6 @@
     <value>SetPrintAreaDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.1.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

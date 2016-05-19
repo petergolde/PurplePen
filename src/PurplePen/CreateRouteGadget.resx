@@ -112,16 +112,20 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="createButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="createButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="createButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>302, 270</value>
   </data>
@@ -138,13 +142,16 @@
     <value>createButton</value>
   </data>
   <data name="&gt;&gt;createButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;createButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;createButton.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="cancelButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -165,7 +172,7 @@
     <value>cancelButton</value>
   </data>
   <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -173,17 +180,32 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="folderBrowserDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Select a folder for the OCAD files</value>
   </data>
+  <data name="otherDirectoryTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="otherDirectoryTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 90</value>
+  </data>
+  <data name="otherDirectoryTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 23</value>
+  </data>
+  <data name="otherDirectoryTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="otherDirectoryTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;otherDirectoryTextBox.Name" xml:space="preserve">
     <value>otherDirectoryTextBox</value>
   </data>
   <data name="&gt;&gt;otherDirectoryTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;otherDirectoryTextBox.Parent" xml:space="preserve">
     <value>folderGroupBox</value>
@@ -191,11 +213,35 @@
   <data name="&gt;&gt;otherDirectoryTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="selectOtherDirectoryButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="selectOtherDirectoryButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="selectOtherDirectoryButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 117</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 25</value>
+  </data>
+  <data name="selectOtherDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Select folder...</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;selectOtherDirectoryButton.Name" xml:space="preserve">
     <value>selectOtherDirectoryButton</value>
   </data>
   <data name="&gt;&gt;selectOtherDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;selectOtherDirectoryButton.Parent" xml:space="preserve">
     <value>folderGroupBox</value>
@@ -203,11 +249,26 @@
   <data name="&gt;&gt;selectOtherDirectoryButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="otherDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="otherDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 66</value>
+  </data>
+  <data name="otherDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 19</value>
+  </data>
+  <data name="otherDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Other folder</value>
+  </data>
   <data name="&gt;&gt;otherDirectory.Name" xml:space="preserve">
     <value>otherDirectory</value>
   </data>
   <data name="&gt;&gt;otherDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;otherDirectory.Parent" xml:space="preserve">
     <value>folderGroupBox</value>
@@ -215,11 +276,26 @@
   <data name="&gt;&gt;otherDirectory.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="mapDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mapDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 42</value>
+  </data>
+  <data name="mapDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 19</value>
+  </data>
+  <data name="mapDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Same folder as map file</value>
+  </data>
   <data name="&gt;&gt;mapDirectory.Name" xml:space="preserve">
     <value>mapDirectory</value>
   </data>
   <data name="&gt;&gt;mapDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mapDirectory.Parent" xml:space="preserve">
     <value>folderGroupBox</value>
@@ -227,11 +303,26 @@
   <data name="&gt;&gt;mapDirectory.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="coursesDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="coursesDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 18</value>
+  </data>
+  <data name="coursesDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 19</value>
+  </data>
+  <data name="coursesDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Same folder as Purple Pen file</value>
+  </data>
   <data name="&gt;&gt;coursesDirectory.Name" xml:space="preserve">
     <value>coursesDirectory</value>
   </data>
   <data name="&gt;&gt;coursesDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;coursesDirectory.Parent" xml:space="preserve">
     <value>folderGroupBox</value>
@@ -255,7 +346,7 @@
     <value>folderGroupBox</value>
   </data>
   <data name="&gt;&gt;folderGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;folderGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -263,153 +354,26 @@
   <data name="&gt;&gt;folderGroupBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="otherDirectoryTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 90</value>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="otherDirectoryTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 23</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
   </data>
-  <data name="otherDirectoryTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 63</value>
   </data>
-  <data name="otherDirectoryTextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Name" xml:space="preserve">
-    <value>otherDirectoryTextBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="selectOtherDirectoryButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="selectOtherDirectoryButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="selectOtherDirectoryButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 119</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
-  </data>
-  <data name="selectOtherDirectoryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Select folder...</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Name" xml:space="preserve">
-    <value>selectOtherDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.ZOrder" xml:space="preserve">
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="otherDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="otherDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 66</value>
-  </data>
-  <data name="otherDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 17</value>
-  </data>
-  <data name="otherDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Other folder</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Name" xml:space="preserve">
-    <value>otherDirectory</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="mapDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="mapDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 42</value>
-  </data>
-  <data name="mapDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="mapDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Same folder as map file</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Name" xml:space="preserve">
-    <value>mapDirectory</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="coursesDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="coursesDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 18</value>
-  </data>
-  <data name="coursesDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="coursesDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Same folder as Purple Pen file</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Name" xml:space="preserve">
-    <value>coursesDirectory</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Enter the name (without .xml or .gif) for both of the RouteGadget files:</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>nameGroupBox</value>
@@ -417,11 +381,23 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="fileNameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="fileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 90</value>
+  </data>
+  <data name="fileNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 23</value>
+  </data>
+  <data name="fileNameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;fileNameTextBox.Name" xml:space="preserve">
     <value>fileNameTextBox</value>
   </data>
   <data name="&gt;&gt;fileNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fileNameTextBox.Parent" xml:space="preserve">
     <value>nameGroupBox</value>
@@ -445,58 +421,13 @@
     <value>nameGroupBox</value>
   </data>
   <data name="&gt;&gt;nameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;nameGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;nameGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 63</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Enter the name (without .xml or .gif) for both of the RouteGadget files:</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>nameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="fileNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 90</value>
-  </data>
-  <data name="fileNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 23</value>
-  </data>
-  <data name="fileNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;fileNameTextBox.Name" xml:space="preserve">
-    <value>fileNameTextBox</value>
-  </data>
-  <data name="&gt;&gt;fileNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileNameTextBox.Parent" xml:space="preserve">
-    <value>nameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;fileNameTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="learnMoreLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -517,13 +448,16 @@
     <value>learnMoreLink</value>
   </data>
   <data name="&gt;&gt;learnMoreLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;learnMoreLink.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;learnMoreLink.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 15</value>
@@ -541,7 +475,7 @@
     <value>label2</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -549,7 +483,7 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
@@ -565,12 +499,12 @@
     <value>folderBrowserDialog</value>
   </data>
   <data name="&gt;&gt;folderBrowserDialog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CreateRouteGadgetFiles</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=1.1.0.1100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.1.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

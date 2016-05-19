@@ -94,8 +94,8 @@ namespace PurplePen
             // 
             // backgroundPanel
             // 
-            this.backgroundPanel.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.backgroundPanel, "backgroundPanel");
+            this.backgroundPanel.BackColor = System.Drawing.Color.White;
             this.backgroundPanel.Name = "backgroundPanel";
             this.backgroundPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.backgroundPanel_Paint);
             // 
