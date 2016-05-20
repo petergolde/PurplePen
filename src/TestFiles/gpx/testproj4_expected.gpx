@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gpx creator="Purple Pen 2.6.1" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
+<gpx creator="Purple Pen 2.6.2" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
   <metadata>
     <name>testproj4_actual.gpx</name>
     <desc>Test Projection</desc>
     <link href="http://purple-pen.org">
       <text>Purple Pen</text>
     </link>
-    <time>2016-02-08T22:11:45Z</time>
+    <time>2016-05-20T00:03:34Z</time>
     <bounds minlat="-37.470121302071313" minlon="-117.7647649933287" maxlat="-37.463206389044458" maxlon="-117.75232090761503" />
   </metadata>
   <wpt lat="-37.464649015751924" lon="-117.7647649933287">
