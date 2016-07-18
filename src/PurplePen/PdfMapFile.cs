@@ -129,6 +129,10 @@ namespace PurplePen
             }
             catch (Exception e) {
                 status = ConversionStatus.Failure;
+
+                if (!string.IsNullOrWhiteSpace(pngFileName))
+                    File.Delete(pngFileName);
+
                 conversionOutput = e.Message;
                 return status;
             }
@@ -146,6 +150,9 @@ namespace PurplePen
             status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
             process.Dispose();
             process = null;
+
+            if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName))
+                File.Delete(pngFileName);
 
             if (ConversionCompleted != null)
                 ConversionCompleted(this, EventArgs.Empty);
