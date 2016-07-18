@@ -40,7 +40,7 @@ Description Texts&quot; is available only if Ctrl and Shift are both held down. 
 <h2>Adding a new language</h2>
 <p>Select the &quot;Add Description Language...&quot; menu item. A dialog window appears 
 to get information about the language that you wish to translate to.</p>
-<p><img alt="screenshot 2" src="screenshot2.png" width="352" height="266" /></p>
+<p><img alt="screenshot 2" src="screenshot2.png"  /></p>
 <p>In the new language drop-down, select the language that you wish to translate 
 to.</p>
 <p>In the &quot;Native language name&quot; text area, type the name of the language, in 
@@ -82,12 +82,19 @@ gender, and adjectives change their form depending on the gender of the noun. If
 this is the case in the language you are translating, check this box. If you 
 check this, for each symbol that can appear in column D, you should set the 
 gender of that word. For adjectives and descriptive phrases that can appear in 
-columns C, E, and G, you can enter different forms for each gender, if 
+columns C, E, F, and G, you can enter different forms for each gender, if 
 necessary.</p>
 <p>If you check this box, you must fill in a list of genders (separated by 
 commas) in the text box below.</p>
+    <h3>Nouns change case based on modifiers</h3>
+    <p>In some lanuages, the forms of nouns (used in column D primarily) can change form based on some kinds of modifiers in other columns. For example:</p>
+    <p><img src="screenshot10.png" /></p>
+    <p>In English, this would &quot;North side of small gully&quot;. The text &quot;small gully&quot; does not change because of the modifier &quot;North side&quot;. In Polish, however, this should be "Północna strona suchego rowu". The 
+        noun of the feature in column D (normally &quot;suchy row&quot;) changes to the genitive case due to the modifier in column G. This is the reverse of the change that occur for noun genders (above); in this case the adjective and modifiers change the form of the noun, instead of the noun changing the form of the adjectives.</p>
+    <p>If your language requires this, check this box and fill in a list of noun cases (separated by commas) in the text box below. You only need to include cases that will actually be required by your translation. The first case must be the default case, which is used if there are no modifying symbols in other columns.</p>
+    <h3>Example</h3>
 <p>So, for example, for French, the dialog would be filled out as follows:</p>
-<p><img alt="screenshot 5" src="screenshot5.png" width="352" height="266" /></p>
+<p><img alt="screenshot 5" src="screenshot5.png"  /></p>
 <p>Once you press OK, your new language is added. It is initialized with the 
 English text for each symbol.</p>
 <h2>Entering translated text for symbols</h2>
@@ -113,7 +120,7 @@ you to enter the text for the symbol, possibly included plural or gender forms.
 For example:</p>
 <p><img alt="screenshot 7" src="screenshot7.png" width="490" height="364" /></p>
 <p>In this window, enter the text in the last column of the grid. If applicable, 
-be sure to set the gender of the word in the dropdown at the bottom of the 
+be sure to set the gender or case of the word in the dropdown at the bottom of the 
 window.</p>
 <p>See the Appendix for information with detailed information about different 
 symbol types and how they are combined to make the full textual description.</p>
