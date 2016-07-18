@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- #BeginTemplate "master.dwt" -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- #BeginEditable "doctitle" -->
+    <title>About Purple Pen</title>
+    <style type="text/css">
+        .style1 {
+            border-width: 0px;
+        }
+    </style>
+    <!-- #EndEditable -->
+    <link rel="shortcut icon" href="http://purplepen.golde.org/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+    <div id="outer">
+        <img alt="Purple Pen" src="title.png" class="logo" />
+        <!-- #BeginEditable "body" -->
+        <ul id="navlist">
+            <li><a href="default.htm">Home</a></li>
+            <li><a href="news.htm">News</a></li>
+            <li><a href="about.htm">About</a></li>
+            <li><a href="download.htm">Download</a></li>
+            <li><a id="current" href="faq.htm">FAQ</a></li>
+            <li><a href="support.htm">Support</a></li>
+            <li><a href="contribute.htm">Contribute</a></li>
+            <li><a href="tools.htm">Tools</a></li>
+            <li><a href="donate.htm">Donate</a></li>
+        </ul>
+        <div id="maindiv">
+            <h2>FAQ</h2>
+            <p>Check the following to see if your question is answered.</p>
+            <h3>Purple Pen Will Not Start</h3>
+            <p>
+                Sometimes existing problems on your Windows installation prevent Purple Pen from starting. The following steps usually can resolve these problems
+            </p>
+            <ol>
+                <li>Turn your computer fully off, then on.</li>
+
+                <li>Make sure you have at least 1GB of free disk space. Delete files and empty the recycle bin if you don't.</li>
+
+                <li>Uninstall Purple Pen using "Uninstall a Program" from Windows Control Panel.</li>
+
+                <li>Fully delete the following directories, if they exist:<br/>
+                C:\Program Files\Purple Pen<br />
+                C:\Program Files (x86)\Purple Pen<br />
+                C:\Users\&lt;username&gt;\AppData\Local\Golde_Software<br/>
+                C:\Users\&lt;username&gt;\AppData\Local\Temp\PurplePen<br/>
+                        (where &lt;username&gt;
+                            is replaced with your username.) Note that the AppData directory may be hidden in File Explorer.</li>
+
+                <li>Run the .NET Framework Repair Tool: <a href="https://www.microsoft.com/en-us/download/details.aspx?id=30135">https://www.microsoft.com/en-us/download/details.aspx?id=30135</a></li>
+
+                <li>Run System File Checker tool: <a href="https://support.microsoft.com/en-us/kb/929833">https://support.microsoft.com/en-us/kb/929833</a></li>
+
+                <li>Reinstall Purple Pen from <a href="http://purple-pen.org">http://purple-pen.org</a></li>
+
+            </ol>
+            <h3>PDF map file does not load or appears incorrectly.</h3>
+            <p>
+                Purple Pen relies on GPL Ghostscript to read PDF files. Sometimes badly formed PDF files will not be converted correctly
+                by this program. You can convert these "bad" PDFs to "good" PDFs with the following procedure.
+            </p>
+            <ol>
+                <li>
+                    Download and install the <strong>free</strong> version of PrimoPDF from <a href="primopdf.com">primopdf.com</a>
+                </li>
+                <li>Open the "bad" PDF in Adobe Reader.</li>
+                <li>In Adobe Reader, select "Print..." from the File menu.</li>
+                <li>In the "Printer" drop-down list at the top, select "PrimoPDF".</li>
+                <li>In the "Page Sizing &amp; Handling section, click the "Size" button.</li>
+                <li>Select "Actual Size".</li>
+                <li>Check "Choose paper source from PDF page size".</li>
+                <li>Check "Use custom paper size when needed".</li>
+                <li>Click "Print" buttom.</li>
+                <li>When the PrimoPDF dialog appears, click "Create PDF" and save the PDF to a new file. This PDF is your "good" PDF
+                that should load correctly into Purple Pen.</li>
+            </ol>
+        </div>
+        <!-- #EndEditable -->
+        <br />
+
+    </div>
+    <script type="text/javascript">
+var uservoiceJsHost = ("https:" == document.location.protocol) ? "https://uservoice.com" : "http://cdn.uservoice.com";
+document.write(unescape("%3Cscript src='" + uservoiceJsHost + "/javascripts/widgets/tab.js' type='text/javascript'%3E%3C/script%3E"))
+    </script>
+    <script type="text/javascript">
+UserVoice.Tab.show({
+  key: 'purplepen',
+  host: 'purplepen.uservoice.com',
+  forum: 'general',
+  alignment: 'right', /* 'left', 'right' */
+  background_color:'#f00',
+  text_color: 'white', /* 'white', 'black' */
+  hover_color: '#06C',
+  lang: 'en' /* 'en', 'de', 'nl', 'es', 'fr' */
+})
+    </script>
+
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
