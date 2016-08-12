@@ -78,6 +78,8 @@ namespace PurplePen
         bool showToolTips = true;
         bool hidePrintArea = false;   // If true, don't show print area right now despite settings.
 
+        bool checkForUpdatedMapFile = false;  // If true, check for updated map file on next idle.
+
         const double TRACKBAR_MIN = 0.25;      // minimum zoom on the zoom trackbar
         const double TRACKBAR_MAX = 10.0;     // maximum zoom on the zoom trackbar
 
@@ -799,6 +801,11 @@ namespace PurplePen
                         CheckForMissingFonts();
                         CheckForNonRenderableObjects(true, false);
                     }
+
+                    if (checkForUpdatedMapFile) {
+                        checkForUpdatedMapFile = false;
+                        controller.CheckForChangedMapFile();
+                    }
                 }
             }
             catch (Exception excep) {
@@ -1096,7 +1103,8 @@ namespace PurplePen
         private void mapViewer_MouseEnter(object sender, EventArgs e)
         {
             // When the mouse enters the map, give it focus. This makes the scroll wheel work correctly.
-            mapViewer.Focus();
+            if (Form.ActiveForm == this)
+                mapViewer.Focus();
         }
 
         private void mapViewer_OnViewportChange(object sender, EventArgs e)
@@ -2572,8 +2580,10 @@ namespace PurplePen
         private void MainFrame_Activated(object sender, EventArgs e)
         {
             // Check whether the map file has changed.
-            if (mapDisplay != null && Visible)
-                controller.CheckForChangedMapFile();
+            if (mapDisplay != null && Visible) {
+                checkForUpdatedMapFile = true;
+            }
+
         }
 
         private void mergeSymbolsMenu_Click(object sender, EventArgs e)
