@@ -95,8 +95,11 @@ namespace PurplePen
                 InputOutput.ReadFile(mapFileName, map);
             }
             catch (Exception e) {
-                // Didn't load as an OCAD file. If it has a non-OCD extension, try loading as an image.
-                if (string.Compare(fileExtension, ".ocd", StringComparison.InvariantCultureIgnoreCase) != 0) {
+                // Didn't load as an OCAD file. If it has a non-OCD/OpenMapper extension, try loading as an image.
+                if ((string.Compare(fileExtension, ".ocd", StringComparison.InvariantCultureIgnoreCase) != 0) && 
+                    (string.Compare(fileExtension, ".omap", StringComparison.InvariantCultureIgnoreCase) != 0) &&
+                    (string.Compare(fileExtension, ".xmap", StringComparison.InvariantCultureIgnoreCase) != 0)) 
+                {
                     try {
                         Bitmap bitmap = (Bitmap) Image.FromFile(mapFileName);
                         bitmapSize = bitmap.Size;
