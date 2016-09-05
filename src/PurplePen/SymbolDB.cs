@@ -514,11 +514,11 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             // Find a free OCAD ID number.
-            int ocadID = map.GetFreeSymdefOcadId(800);
+            string symbolId = map.GetFreeSymbolId(800);
 
             // Create the symdef
             PointSymDef symdef;
-            symdef = new PointSymDef("Description: " + this.GetName(Util.CurrentLangName()), ocadID, glyph, false);
+            symdef = new PointSymDef("Description: " + this.GetName(Util.CurrentLangName()), symbolId, glyph, false);
 
             // Create the toolbox image.
             Bitmap bm = new Bitmap(24, 24);
@@ -801,14 +801,7 @@ namespace PurplePen
                         }
                         SymPath path = new SymPath(pathPoints, pathKinds);
 
-                        LineStyle lineStyle;
-                        if (ends == LineCap.Round)
-                            lineStyle = LineStyle.Rounded;
-                        else if (corners == LineJoin.Miter)
-                            lineStyle = LineStyle.Mitered;
-                        else
-                            lineStyle = LineStyle.Beveled;
-                        glyph.AddLine(color, path, thickness * scaleFactor, lineStyle);
+                        glyph.AddLine(color, path, thickness * scaleFactor, corners, ends);
                         break;
                     }
 
@@ -823,15 +816,7 @@ namespace PurplePen
                         pathPoints[points.Length] = pathPoints[0];
                         SymPath path = new SymPath(pathPoints, pathKinds);
 
-                        LineStyle lineStyle;
-                        if (corners == LineJoin.Miter)
-                            lineStyle = LineStyle.Mitered;
-                        else if (corners == LineJoin.Round)
-                            lineStyle = LineStyle.Rounded;
-                        else
-                            lineStyle = LineStyle.Beveled;
-
-                        glyph.AddLine(color, path, thickness * scaleFactor, lineStyle);
+                        glyph.AddLine(color, path, thickness * scaleFactor, corners, corners == LineJoin.Round ? LineCap.Round : LineCap.Flat);
                         break;
                     }
 
@@ -857,7 +842,7 @@ namespace PurplePen
                             pathPoints[i] = new PointF(points[i].X * scaleFactor, points[i].Y * scaleFactor);
                         }
                         SymPath path = new SymPath(pathPoints, pathKinds);
-                        glyph.AddLine(color, path, thickness * scaleFactor, ends == LineCap.Round ? LineStyle.Rounded : LineStyle.Beveled);
+                        glyph.AddLine(color, path, thickness * scaleFactor, corners, ends);
                         break;
                     }
 

@@ -209,7 +209,7 @@ namespace PurplePen
                     bold = true;
 
                 object font = new object();
-                grTarget.CreateFont(font, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberHeightFactor * numberHeight, bold, italic);
+                grTarget.CreateFont(font, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberHeightFactor * numberHeight, Util.GetTextEffects(bold, italic));
 
                 string controlNumberText = "13";
                 PointF controlNumberLocation = new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F);

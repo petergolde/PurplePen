@@ -244,7 +244,7 @@ namespace PurplePen
             PointF[] pts = {Geometry.TransformPoint(new PointF(0, 0), mat), Geometry.TransformPoint(new PointF(size.Width, 0), mat),Geometry.TransformPoint(new PointF(size.Width, size.Height), mat),
                 Geometry.TransformPoint(new PointF(0, size.Height), mat),Geometry.TransformPoint(new PointF(0, 0), mat) };
             SymPath path = new SymPath(pts, kinds);
-            AreaSymbol whiteout = new AreaSymbol((AreaSymDef) dict[CourseLayout.KeyWhiteOut], new SymPathWithHoles(path, null), 0);
+            AreaSymbol whiteout = new AreaSymbol((AreaSymDef) dict[CourseLayout.KeyWhiteOut], new SymPathWithHoles(path, null), 0, new PointF());
             map.AddSymbol(whiteout);
 
             replaceMultiplySign = false;   // OCAD doesn't handle the multiple character well.
@@ -522,8 +522,8 @@ namespace PurplePen
             matrixNew.Scale(cellSize / 100.0F, cellSize / 100.0F);
             renderer.Transform = matrixNew;
 
-            thickPen = renderer.CreatePen(DescriptionAppearance.thickDescriptionLine, LineStyle.Mitered);
-            thinPen = renderer.CreatePen(DescriptionAppearance.thinDescriptionLine, LineStyle.Mitered);
+            thickPen = renderer.CreatePen(DescriptionAppearance.thickDescriptionLine, LineJoin.Miter, LineCap.Flat);
+            thinPen = renderer.CreatePen(DescriptionAppearance.thinDescriptionLine, LineJoin.Miter, LineCap.Flat);
 
             fontDescs[TITLE_FONT] = DescriptionAppearance.titleFont;                                        fontAlignments[TITLE_FONT] = StringAlignment.Center;
             fontDescs[COLUMNA_FONT] = DescriptionAppearance.columnAFont;                          fontAlignments[COLUMNA_FONT] = StringAlignment.Center;
@@ -828,7 +828,7 @@ namespace PurplePen
         Matrix Transform { get; set; }
 
         // Create a pen used for drawing lines.
-        object CreatePen(float thickness, LineStyle lineStyle);
+        object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap);
 
         // Draw a line with a pen.
         void DrawLine(object pen, float x1, float y1, float x2, float y2);
@@ -876,10 +876,11 @@ namespace PurplePen
             }
         }
 
-        public object CreatePen(float thickness, LineStyle lineStyle)
+        public object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap)
         {
             Pen p = new Pen(Color.Black, thickness);
-            p.StartCap = p.EndCap = (lineStyle == LineStyle.Rounded) ? LineCap.Round : LineCap.Flat;
+            p.LineJoin = lineJoin;
+            p.StartCap = p.EndCap = lineCap;
             return p;
         }
 
@@ -975,14 +976,14 @@ namespace PurplePen
         }
 
         // Get a free OCAD id number
-        int GetOcadId()
+        string GetOcadId()
         {
-            return map.GetFreeSymdefOcadId(810);
+            return map.GetFreeSymbolId(810);
         }
 
-        public object CreatePen(float thickness, LineStyle lineStyle)
+        public object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap)
         {
-            LineSymDef symdef = new LineSymDef("Description: line", GetOcadId(), color, Geometry.TransformDistance(thickness, currentTransform), lineStyle);
+            LineSymDef symdef = new LineSymDef("Description: line", GetOcadId(), color, Geometry.TransformDistance(thickness, currentTransform), lineJoin, lineCap);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DescLine_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1010,7 +1011,7 @@ namespace PurplePen
             else
                 fontAlign = TextSymDefHorizAlignment.Left;
 
-            symdef.SetFont(fontName, Geometry.TransformDistance(emHeight, currentTransform), bold, italic, color, Geometry.TransformDistance(emHeight * 1.1F, currentTransform), 0, 0, 0, null, 0, 1F, fontAlign, TextSymDefVertAlignment.TopAscent);
+            symdef.SetFont(fontName, Geometry.TransformDistance(emHeight, currentTransform), Util.GetTextEffects(bold, italic), color, Geometry.TransformDistance(emHeight * 1.1F, currentTransform), 0, 0, 0, null, 0, 1F, fontAlign, TextSymDefVertAlignment.TopAscent);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DescText_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1032,8 +1033,8 @@ namespace PurplePen
             // Calc size of the text. 
             float[] wrappedWidths;
             TextCoordMapper coordMapper;
-            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, out coordMapper, out wrappedWidths); // no wrapping.
-            symdef.CalcBounds(wrappedText, wrappedWidths, baseLocation, 0, 0, out size);
+            string[] wrappedText = symdef.BreakUnwrappedLines(new string[1] {text}, TextSymDefHorizAlignment.Default, out coordMapper, out wrappedWidths); // no wrapping.
+            symdef.CalcBounds(wrappedText, wrappedWidths, baseLocation, 0, 0, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default, out size);
 
             return Geometry.TransformDistance(size.Width, inverseTransform);
         }
@@ -1046,10 +1047,15 @@ namespace PurplePen
             // Place the top of the character at 1/2 the height of the character above the vertical mid-line of the rectangle.
             float x = rect.Left;
             float y = (rect.Top + rect.Bottom) / 2;    // mid-point.
+            float width = Geometry.TransformDistance(rect.Width, currentTransform);
             baseLocation = Geometry.TransformPoint(new PointF(x, y), currentTransform);
             baseLocation.Y += (symdef.FontAscent + symdef.FontDescent) / 2;      // half the character height.
+            if (horizAlignment == StringAlignment.Center)
+                baseLocation.X += width / 2;
+            else if (horizAlignment == StringAlignment.Far)
+                baseLocation.X += width;
 
-            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Geometry.TransformDistance(rect.Width, currentTransform));
+            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, width, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
             map.AddSymbol(symbol);
         }
 
@@ -1063,7 +1069,7 @@ namespace PurplePen
             baseLocation = Geometry.TransformPoint(new PointF(x, y), currentTransform);
 
             // Need to create the symbol to get it's height.
-            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Geometry.TransformDistance(rect.Width, currentTransform));
+            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Geometry.TransformDistance(rect.Width, currentTransform), TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
             return symbol.TextSize.Height <= Geometry.TransformDistance(rect.Height, currentTransform);
         }
 
@@ -1075,13 +1081,19 @@ namespace PurplePen
             // Place the top of the character at 1/2 the height of the text above the vertical med-line of the rectangle.
             float x = rect.Left;
             float y = (rect.Top + rect.Bottom) / 2;    // mid-point.
+            float width = Geometry.TransformDistance(rect.Width, currentTransform);
             baseLocation = Geometry.TransformPoint(new PointF(x, y), currentTransform);
 
             // Need to create the symbol to get it's height, which is needed to correctly place it. So we create the symbol twice.
-            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Geometry.TransformDistance(rect.Width, currentTransform));
+            TextSymbol symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, width, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
             baseLocation.Y += symbol.TextSize.Height / 2;
 
-            symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, Geometry.TransformDistance(rect.Width, currentTransform));
+            if (horizAlignment == StringAlignment.Center)
+                baseLocation.X += width / 2;
+            else if (horizAlignment == StringAlignment.Far)
+                baseLocation.X += width;
+
+            symbol = new TextSymbol(symdef, new string[1] { text }, baseLocation, 0, width, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
             map.AddSymbol(symbol);
         }
 

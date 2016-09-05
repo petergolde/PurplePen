@@ -182,10 +182,7 @@ namespace PurplePen.Tests
                 CodePrefix = ""
             });
 
-            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
-
-The map file must be an OCAD file to use GPX files.'
-", ui.output.ToString());
+            Assert.AreEqual("ERROR: 'Cannot create '" + outputFile + "' for the following reason:\r\n\r\nThe map file must be an OCAD file to use GPX files.'\r\n", ui.output.ToString());
             Assert.IsFalse(File.Exists(outputFile));
         }
 
@@ -202,10 +199,8 @@ The map file must be an OCAD file to use GPX files.'
                 CodePrefix = ""
             });
 
-            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
-
-The OCAD file must have real world coordinates defined to use GPX files.'
-", ui.output.ToString());
+            Assert.AreEqual("ERROR: 'Cannot create '" + outputFile +"' for the following reason:\r\n\r\nThe OCAD file must have real world coordinates defined to use GPX files.'\r\n", 
+                            ui.output.ToString());
             Assert.IsFalse(File.Exists(outputFile));
         }
 
@@ -222,10 +217,7 @@ The OCAD file must have real world coordinates defined to use GPX files.'
                 CodePrefix = ""
             });
 
-            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
-
-The OCAD file must have a coordinate system defined to use GPX files.'
-", ui.output.ToString());
+            Assert.AreEqual("ERROR: 'Cannot create '" + outputFile + "' for the following reason:\r\n\r\nThe OCAD file must have a coordinate system defined to use GPX files.'\r\n", ui.output.ToString());
             Assert.IsFalse(File.Exists(outputFile));
         }
 
@@ -242,10 +234,7 @@ The OCAD file must have a coordinate system defined to use GPX files.'
                 CodePrefix = ""
             });
 
-            Assert.AreEqual(@"ERROR: 'Cannot create '" + outputFile + @"' for the following reason:
-
-The OCAD file uses a coordinate system that is not supported by Purple Pen.'
-", ui.output.ToString());
+            Assert.AreEqual("ERROR: 'Cannot create '" + outputFile + "' for the following reason:\r\n\r\nThe OCAD file uses a coordinate system that is not supported by Purple Pen.'\r\n", ui.output.ToString());
             Assert.IsFalse(File.Exists(outputFile));
         }
 

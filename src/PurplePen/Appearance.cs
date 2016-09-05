@@ -41,6 +41,8 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
+    using PurplePen.Graphics2D;
+
     // Describes a particular font, without instanting a Font object.
     public struct FontDesc
     {
@@ -73,6 +75,19 @@ namespace PurplePen
             get
             {
                 return Util.GetFontStyle(Bold, Italic);
+            }
+        }
+
+        public TextEffects TextEffects
+        {
+            get
+            {
+                TextEffects effects = TextEffects.None;
+                if (Bold)
+                    effects |= TextEffects.Bold;
+                if (Italic)
+                    effects |= TextEffects.Italic;
+                return effects;
             }
         }
 

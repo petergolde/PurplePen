@@ -620,6 +620,22 @@ namespace PurplePen
                 fontStyle |= FontStyle.Italic;
             return fontStyle;
         }
+
+        public static TextEffects GetTextEffects(bool bold, bool italic)
+        {
+            TextEffects effects = TextEffects.None;
+            if (bold)
+                effects |= TextEffects.Bold;
+            if (italic)
+                effects |= TextEffects.Italic;
+            return effects;
+        }
+
+        public static TextEffects GetTextEffects(FontStyle fontStyle)
+        {
+            return GetTextEffects((fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0);
+        }
+
     }
 
 }

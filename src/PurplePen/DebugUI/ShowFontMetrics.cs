@@ -35,7 +35,7 @@ namespace PurplePen.DebugUI
             if (textMetrics.TextFaceIsInstalled(fontName)) {
                 StringBuilder builder = new StringBuilder();
 
-                ITextFaceMetrics metrics = textMetrics.GetTextFaceMetrics(fontName, emHeight, isBold, isItalic);
+                ITextFaceMetrics metrics = textMetrics.GetTextFaceMetrics(fontName, emHeight, Util.GetTextEffects(isBold, isItalic));
                 builder.AppendFormat("Font metrics: ");
                 builder.AppendLine();
                 builder.AppendFormat("  Em height: {0}", metrics.EmHeight);

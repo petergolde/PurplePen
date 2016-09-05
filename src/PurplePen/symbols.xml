@@ -4722,11 +4722,11 @@ for the symbols.
     <circle thickness="12.5" radius="60">
       <point x="0" y="0" />
     </circle>
-    <lines thickness="12.5" ends="flat">
+    <lines thickness="12.5" ends="flat" >
       <point x="42" y="42" />
       <point x="-42" y="-42" />
     </lines>
-    <lines thickness="12.5" ends="flat">
+    <lines thickness="12.5" ends="flat" >
       <point x="42" y="-42" />
       <point x="-42" y="42" />
     </lines>

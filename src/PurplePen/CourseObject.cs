@@ -647,7 +647,7 @@ namespace PurplePen
 
         protected override void AddToMap(Map map, SymDef symdef)
         {
-            AreaSymbol sym = new AreaSymbol((AreaSymDef)symdef, path, 0);
+            AreaSymbol sym = new AreaSymbol((AreaSymDef)symdef, path, 0, new PointF());
             map.AddSymbol(sym);
         }
 
@@ -1080,10 +1080,10 @@ namespace PurplePen
         protected virtual SymDef CreateSymDef(Map map, SymColor symColor, SymColor whiteColor)
         {
             // Find a free id.
-            int ocadId = map.GetFreeSymdefOcadId(OcadIdIntegerPart);
+            string symbolId = map.GetFreeSymbolId(OcadIdIntegerPart);
 
-            TextSymDef symdef = new TextSymDef(SymDefName, ocadId, TextSymDef.PreferredSymbolKind.NormalText, null);
-            symdef.SetFont(fontName, emHeight, (fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0, symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
+            TextSymDef symdef = new TextSymDef(SymDefName, symbolId, TextSymDef.PreferredSymbolKind.NormalText, null);
+            symdef.SetFont(fontName, emHeight, Util.GetTextEffects(fontStyle), symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
             if (outlineWidth > 0) {
                 TextSymDef.Framing framing = new TextSymDef.Framing() {
                     framingColor = whiteColor,
@@ -1121,7 +1121,7 @@ namespace PurplePen
 
        protected override void AddToMap(Map map, SymDef symdef)
        {
-           TextSymbol sym = new TextSymbol((TextSymDef) symdef, new string[1] { text }, topLeft, 0, 0);
+           TextSymbol sym = new TextSymbol((TextSymDef) symdef, new string[1] { text }, topLeft, 0, 0, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
 
            /*Show size of text
             * PointF[] pts = { topLeft, new PointF(topLeft.X, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y), topLeft };
@@ -1247,7 +1247,7 @@ namespace PurplePen
             }
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Control point", 702000, glyph, false);
+            PointSymDef symdef = new PointSymDef("Control point", "702", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Control_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1321,10 +1321,10 @@ namespace PurplePen
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Start", 701000, glyph, true);
+            PointSymDef symdef = new PointSymDef("Start", "701", glyph, true);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Start_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1372,7 +1372,7 @@ namespace PurplePen
             glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, 7.0F * scaleRatio * appearance.controlCircleSize);
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Finish", 706000, glyph, false);
+            PointSymDef symdef = new PointSymDef("Finish", "706", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Finish_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1461,7 +1461,7 @@ namespace PurplePen
             glyph.AddArea(symColor, new SymPathWithHoles(path, null));
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("First aid post", 712000, glyph, false);
+            PointSymDef symdef = new PointSymDef("First aid post", "712", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.FirstAid_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1529,20 +1529,20 @@ namespace PurplePen
             Glyph glyph = new Glyph();
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords3.Clone()), kinds3);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords4.Clone()), kinds4);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Rounded);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Refreshment point", 713000, glyph, false);
+            PointSymDef symdef = new PointSymDef("Refreshment point", "713", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Water_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1616,12 +1616,12 @@ namespace PurplePen
             SymPath path1, path2;
             
             GetPaths(out path1, out path2);
-            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Mitered);
-            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Mitered);
+            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Crossing point", 708000, glyph, true);
+            PointSymDef symdef = new PointSymDef("Crossing point", "708", glyph, true);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Crossing_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1687,14 +1687,14 @@ namespace PurplePen
             Glyph glyph = new Glyph();
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Registration mark", 714000, glyph, false);
+            PointSymDef symdef = new PointSymDef("Registration mark", "714", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Registration_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1749,14 +1749,14 @@ namespace PurplePen
             // otherwise it would look kind of weird. The scale with the control circle size instead to maintain the ratio.
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineStyle.Mitered);
+            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Forbidden route", 710000, glyph, false);
+            PointSymDef symdef = new PointSymDef("Forbidden route", "710", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Forbidden_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1800,7 +1800,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", 704000, symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Beveled);
+            LineSymDef symdef = new LineSymDef("Line", "704", symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1822,7 +1822,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Marked route", 705000, symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineStyle.Beveled);
+            LineSymDef symdef = new LineSymDef("Marked route", "705", symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
 
             LineSymDef.DashInfo dashes = new LineSymDef.DashInfo();
             dashes.dashLength = dashes.firstDashLength = dashes.lastDashLength = 2.0F * scaleRatio;
@@ -1851,7 +1851,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Uncrossable boundary", 707000, symColor, 0.7F * scaleRatio * appearance.lineWidth, LineStyle.Beveled);
+            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, 0.7F * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1927,18 +1927,18 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineStyle.Beveled);
+            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Bevel, LineCap.Flat);
         }
 
         // This is used by both line and rectangle specials.
-        public static SymDef CreateLineSpecialSymDef(Map map, SymColor symColor, LineKind lineKind, float lineWidth, float gapSize, float dashSize, LineStyle lineStyle)
+        public static SymDef CreateLineSpecialSymDef(Map map, SymColor symColor, LineKind lineKind, float lineWidth, float gapSize, float dashSize, LineJoin lineJoin, LineCap lineCap)
         {
-            int ocadId = map.GetFreeSymdefOcadId(901);
+            string symbolId = map.GetFreeSymbolId(901);
 
             LineSymDef symdef;
             switch (lineKind) {
                 case LineKind.Single:
-                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, lineStyle);
+                    symdef = new LineSymDef("Line", symbolId, symColor, lineWidth, lineJoin, lineCap);
                     break;
 
                 case LineKind.Double:
@@ -1946,7 +1946,7 @@ namespace PurplePen
                     doubleInfo.doubleLeftColor = doubleInfo.doubleRightColor = symColor;
                     doubleInfo.doubleThick = gapSize;
                     doubleInfo.doubleLeftWidth = doubleInfo.doubleRightWidth = lineWidth;
-                    symdef = new LineSymDef("Line", ocadId, null, 0, lineStyle);
+                    symdef = new LineSymDef("Line", symbolId, null, 0, lineJoin, lineCap);
                     symdef.SetDoubleLines(doubleInfo);
                     break;
 
@@ -1954,7 +1954,7 @@ namespace PurplePen
                     LineSymDef.DashInfo dashInfo = new LineSymDef.DashInfo();
                     dashInfo.dashLength = dashInfo.firstDashLength = dashInfo.lastDashLength = dashSize;
                     dashInfo.gapLength = gapSize;
-                    symdef = new LineSymDef("Line", ocadId, symColor, lineWidth, lineStyle);
+                    symdef = new LineSymDef("Line", symbolId, symColor, lineWidth, lineJoin, lineCap);
                     symdef.SetDashInfo(dashInfo);
                     break;
 
@@ -2092,7 +2092,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineStyle.Mitered);
+            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Miter, LineCap.Flat);
         }
 
         protected override void AddToMap(Map map, SymDef symdef)
@@ -2129,8 +2129,13 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            AreaSymDef symdef = new AreaSymDef("Out-of-bounds area", 709000, null, null);
-            symdef.SetHatching(1, symColor, 0.25F * scaleRatio, 0.6F * scaleRatio, 90, 0);
+            AreaSymDef symdef = new AreaSymDef("Out-of-bounds area", "709", null, null);
+            AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
+            hatchInfo.hatchColor = symColor;
+            hatchInfo.hatchWidth = 0.25F * scaleRatio;
+            hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+            hatchInfo.hatchAngle = 90;
+            symdef.AddHatching(hatchInfo);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2147,8 +2152,15 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            AreaSymDef symdef = new AreaSymDef("Dangerous area", 710000, null, null);
-            symdef.SetHatching(2, symColor, 0.25F * scaleRatio, 0.6F * scaleRatio, 45, 135);
+            AreaSymDef symdef = new AreaSymDef("Dangerous area", "710", null, null);
+            AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
+            hatchInfo.hatchColor = symColor;
+            hatchInfo.hatchWidth = 0.25F * scaleRatio;
+            hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+            hatchInfo.hatchAngle = 45;
+            symdef.AddHatching(hatchInfo);
+            hatchInfo.hatchAngle = 135;
+            symdef.AddHatching(hatchInfo);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
