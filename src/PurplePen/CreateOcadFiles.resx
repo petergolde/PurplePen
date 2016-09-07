@@ -136,7 +136,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=2.6.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=2.6.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -323,27 +323,6 @@
   </data>
   <data name="fileFormatCombo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
-  </data>
-  <data name="fileFormatCombo.Items3" xml:space="preserve">
-    <value>OCAD 9</value>
-  </data>
-  <data name="fileFormatCombo.Items4" xml:space="preserve">
-    <value>OCAD 10</value>
-  </data>
-  <data name="fileFormatCombo.Items5" xml:space="preserve">
-    <value>OCAD 11</value>
-  </data>
-  <data name="fileFormatCombo.Items6" xml:space="preserve">
-    <value>OCAD 12</value>
   </data>
   <data name="fileFormatCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>102, 3</value>
@@ -604,6 +583,6 @@
     <value>CreateOcadFiles</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

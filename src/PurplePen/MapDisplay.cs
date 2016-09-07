@@ -53,7 +53,7 @@ namespace PurplePen
     // controls -- it simply has to be able to draw itself, and notify when parts change.
     class MapDisplay: IMapDisplay
     {
-        MapType mapType;
+        MapType mapType;    // Map type. Note that OpenMapper and OCAD files both called MapType.OCAD. See MapVersion property to distinguish.
         string filename;
 
         // Used for MapType.Bitmap or MapType.PDF
@@ -61,7 +61,7 @@ namespace PurplePen
         IGraphicsBitmap dimmedBitmap;  // the dimmed bitmap.
         float bitmapDpi;     // dpi for bitmap
 
-        int mapVersion;       // OCAD version. (OCAD maps only)
+        MapFileFormat mapVersion;       // OCAD version. (OCAD maps only)
         Map map;                // The map to draw. (OCAD maps only)
 
         PdfMapFile pdfMapFile;  // pdfMapFile (PDF maps only)
@@ -118,7 +118,7 @@ namespace PurplePen
         }
 
         // OCAD version of the map.
-        public int MapVersion
+        public MapFileFormat MapVersion
         {
             get
             {
@@ -376,7 +376,7 @@ namespace PurplePen
 
             if (mapType == MapType.None) {
                 map = null;
-                mapVersion = 0;
+                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 bitmap = null;
                 pdfMapFile = null;
             }
@@ -388,7 +388,7 @@ namespace PurplePen
             }
             else if (mapType == MapType.Bitmap) {
                 map = null;
-                mapVersion = 0;
+                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 Bitmap bm = (Bitmap)Image.FromFile(filename);
                 bitmap = new GDIPlus_Bitmap(bm);
                 bitmapDpi = bm.HorizontalResolution;
@@ -397,7 +397,7 @@ namespace PurplePen
             else if (mapType == MapType.PDF) {
                 string errorText;
                 map = null;
-                mapVersion = 0;
+                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 Size bitmapSize;
                 pdfMapFile = MapUtil.ValidatePdf(filename, out bitmapDpi, out bitmapSize, out errorText);
                 if (pdfMapFile == null) {

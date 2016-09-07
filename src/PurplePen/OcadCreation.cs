@@ -63,6 +63,10 @@ namespace PurplePen
         // Write a map to the given file name.
         void ExportMap(CourseView courseView, string outputFilename)
         {
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OpenMapper) {
+                throw new Exception("Creation of Open Orienteering Mapper files is not yet supported in this beta version.");
+            }
+
             // Create the CourseLayout.
             CourseLayout courseLayout = CreateCourseLayout(courseView);
 
@@ -77,7 +81,7 @@ namespace PurplePen
                     case MapType.OCAD:
                         // Set OCAD map as template.
                         // OCAD 6 doesn't support another OCAD file as a template.
-                        if (creationSettings.version > 6)
+                        if (! (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 6))
                             AddTemplateToMap(map, new TemplateInfo(controller.MapFileName, new PointF(0, 0), 0, 0, true));
 
                         // Use same real world coordinates as underlying map (nicer, but also works around bug in OCAD 11
@@ -119,14 +123,14 @@ namespace PurplePen
 
             WriteImageBitmaps(map);
 
-            InputOutput.WriteFile(outputFilename, map, creationSettings.version);
+            InputOutput.WriteFile(outputFilename, map, creationSettings.fileFormat);
         }
 
         // Add a template to a map. If the format is 7 or earlier, which only support one template, replace templates.  Otherwise, 
         // add at the end.
         void AddTemplateToMap(Map map, TemplateInfo template)
         {
-            if (creationSettings.version <= 7) {
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 7) {
                 map.Templates = new TemplateInfo[] { template };
             }
             else {
@@ -153,7 +157,17 @@ namespace PurplePen
         // checks for duplication of the map file name. Puts in the directory given in the creationSettings.
         string CreateOutputFileName(CourseDesignator courseDesignator)
         {
-            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, ".ocd");
+            string extension;
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OpenMapper) {
+                if (creationSettings.fileFormat.subKind == OpenMapperSubKind.XMap)
+                    extension = ".xmap";
+                else
+                    extension = ".omap";
+            }
+            else {
+                extension = ".ocad";
+            }
+            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, extension);
 
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, basename));
         }
@@ -167,9 +181,10 @@ namespace PurplePen
             else if (controller.MapDisplay.MapType == MapType.Bitmap) {
                 ImageFormat imageFormat = controller.MapDisplay.BitmapImageFormat;
 
-                if (creationSettings.version <= 7)
+                if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 7) {
                     return (imageFormat.Guid != ImageFormat.Bmp.Guid);
-                else if (creationSettings.version <= 10) {
+                }
+                else if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10) {
                     return (imageFormat.Guid != ImageFormat.Bmp.Guid && imageFormat.Guid != ImageFormat.Tiff.Guid && imageFormat.Guid != ImageFormat.Jpeg.Guid && imageFormat.Guid != ImageFormat.Gif.Guid);
                 }
                 else {
@@ -188,11 +203,11 @@ namespace PurplePen
 
             Debug.Assert(controller.MapDisplay.MapType == MapType.PDF || controller.MapDisplay.MapType == MapType.Bitmap);
 
-            if (creationSettings.version <= 7) {
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 7) {
                 extension = ".bmp";
                 imageFormat = ImageFormat.Bmp;
             }
-            else if (creationSettings.version <= 10) {
+            else if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10) {
                 extension = ".gif";
                 imageFormat = ImageFormat.Gif;
             }
@@ -281,7 +296,7 @@ namespace PurplePen
                     string path = Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, special.text));
                     ImageFormat format = special.imageBitmap.RawFormat;
 
-                    if (creationSettings.version <= 10 && format.Guid == ImageFormat.Png.Guid) {
+                    if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10 && format.Guid == ImageFormat.Png.Guid) {
                         // Versions prior to 10 don't handle PNG. Use gif instead.
                         format = ImageFormat.Gif;
                         path = Path.ChangeExtension(path, ".gif");
@@ -320,7 +335,7 @@ namespace PurplePen
     {
         public Id<Course>[] CourseIds;          // Courses to print. Course.None means all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
-        public int version;                                // OCAD version to use (6,7,8,9)
+        public MapFileFormat fileFormat;         // OCAD version to use/OpenMapper format
         public bool mapDirectory, fileDirectory;   // directory to place output files in
         public string outputDirectory;              // the output directory if mapDirectory and fileDirectoy are false.
         public string filePrefix;                      // if non-null, non-empty, prefix this an "-" onto the front of files.

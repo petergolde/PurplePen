@@ -1866,7 +1866,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create1");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -1887,7 +1887,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create2");
             settings.CourseIds = new Id<Course>[3] { CourseId(3), CourseId(5), Id<Course>.None };
-            settings.version = 9;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 9);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -1912,7 +1912,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.fileDirectory = true;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create1");  // intentionally wrong!
             settings.CourseIds = new Id<Course>[1] { CourseId(3) };
-            settings.version = 6;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 6);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -1937,7 +1937,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create1");  // intentionally wrong!
             settings.CourseIds = new Id<Course>[1] { CourseId(3) };
-            settings.version = 7;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 7);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -1965,7 +1965,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create5");
             settings.filePrefix = "MyEvent/Coolthing";
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -1985,7 +1985,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create6");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.controlCircleSize = 0.75F;  //smaller circles
@@ -2011,7 +2011,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create7");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.controlCircleSize = 1.1F;  //smaller circles
@@ -2039,7 +2039,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create8");
             settings.CourseIds = new Id<Course>[1] { Id<Course>.None };
-            settings.version = 11;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 11);
 
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
@@ -2060,7 +2060,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create9");
             settings.CourseIds = new Id<Course>[2] { CourseId(5), CourseId(6) };
-            settings.version = 9;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 9);
 
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
@@ -2081,7 +2081,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create10");
             settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4) };
-            settings.version = 9;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 9);
 
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
@@ -2110,7 +2110,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create11");
             settings.CourseIds = new Id<Course>[] { CourseId(1) };
-            settings.version = 7;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 7);
 
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
@@ -2133,7 +2133,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create12");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -2155,7 +2155,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create13");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -2185,7 +2185,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create14");
             settings.CourseIds = new Id<Course>[1] { CourseId(2) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;
@@ -2210,7 +2210,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             settings.outputDirectory = TestUtil.GetTestFile("controller\\ocad_create5");
             settings.filePrefix = "MyEvent/Coolthing";
             settings.CourseIds = new Id<Course>[] { CourseId(4), CourseId(2), CourseId(6) };
-            settings.version = 8;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;

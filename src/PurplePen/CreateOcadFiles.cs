@@ -41,15 +41,54 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
+    using PurplePen.MapModel;
+
     partial class CreateOcadFiles: BaseDialog
     {
         private OcadCreationSettings settings;
 
+        // Strings to put into drop-down list.
+        private string[] fileFormatStrings = {
+            MiscText.OCAD + " 6",
+            MiscText.OCAD + " 7",
+            MiscText.OCAD + " 8",
+            MiscText.OCAD + " 9",
+            MiscText.OCAD + " 10",
+            MiscText.OCAD + " 11",
+            MiscText.OCAD + " 12",
+            MiscText.OpenOrienteeringMapper + " (.omap)",
+            MiscText.OpenOrienteeringMapper + " (.xmap)"
+        };
+
+        // These must match strings above in order.
+        private MapFileFormat[] fileFormatDescriptors = {
+            new MapFileFormat(MapFileFormatKind.OCAD, 6),
+            new MapFileFormat(MapFileFormatKind.OCAD, 7),
+            new MapFileFormat(MapFileFormatKind.OCAD, 8),
+            new MapFileFormat(MapFileFormatKind.OCAD, 9),
+            new MapFileFormat(MapFileFormatKind.OCAD, 10),
+            new MapFileFormat(MapFileFormatKind.OCAD, 11),
+            new MapFileFormat(MapFileFormatKind.OCAD, 12),
+            new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.OMap, 6),
+            new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.XMap, 6),
+        };
+
         // CONSIDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
-        public CreateOcadFiles(EventDB eventDB)
+        public CreateOcadFiles(EventDB eventDB, MapFileFormatKind restrictToFormat, string title)
         {
             InitializeComponent();
+
+            this.Text = title;
             courseSelector.EventDB = eventDB;
+
+            // Initialize the items list in the file format. Only put in items matching "restrictToFormat".
+            fileFormatCombo.Items.Clear();
+
+            for (int i = 0; i < fileFormatDescriptors.Length; ++i) {
+                if (restrictToFormat == MapFileFormatKind.None || restrictToFormat == fileFormatDescriptors[i].kind) {
+                    fileFormatCombo.Items.Add(fileFormatStrings[i]);
+                }
+            }
         }
 
         // Get the settings for creating OCAD files.
@@ -97,11 +136,10 @@ namespace PurplePen
             }
 
             // Format.
-            string formatNumberString = settings.version.ToString();
-
-            foreach (string s in fileFormatCombo.Items) {
-                if (s.EndsWith(formatNumberString, StringComparison.InvariantCulture))
-                    fileFormatCombo.SelectedItem = s;
+            for (int i = 0; i < fileFormatDescriptors.Length; ++i) {
+                if (settings.fileFormat.Equals(fileFormatDescriptors[i])) {
+                    fileFormatCombo.SelectedItem = fileFormatStrings[i];
+                }
             }
         }
 
@@ -122,11 +160,10 @@ namespace PurplePen
             // Filename prefix
             settings.filePrefix = filenamePrefixTextBox.Text;
 
-            // Version.
-            for (int version = 6; version <= 12; ++version) {
-                if (((string)(fileFormatCombo.SelectedItem)).EndsWith(version.ToString(), StringComparison.InvariantCulture)) {
-                    settings.version = version;
-                    break;
+            // Format.
+            for (int i = 0; i < fileFormatDescriptors.Length; ++i) {
+                if ((string)fileFormatCombo.SelectedItem == fileFormatStrings[i]) {
+                    settings.fileFormat = fileFormatDescriptors[i];
                 }
             }
         }

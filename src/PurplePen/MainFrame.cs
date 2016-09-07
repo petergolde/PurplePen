@@ -596,6 +596,10 @@ namespace PurplePen
             // Update Delete menu item
             deleteToolStripButton.Enabled =  deleteMenu.Enabled = deleteItemMenu.Enabled = controller.CanDeleteSelection();
 
+            // Update Create Files menu item
+            string suffix = (createOcadFilesMenu.Text.EndsWith("...", StringComparison.CurrentCultureIgnoreCase)) ? "..." : "";
+            createOcadFilesMenu.Text = controller.CreateOcadFilesText(true) + suffix;
+
             // Update Delete Course menu item.
             deleteCourseMenu.Enabled = controller.CanDeleteCurrentCourse();
 
@@ -2208,12 +2212,26 @@ namespace PurplePen
 
         private void createOcadFilesMenu_Click(object sender, EventArgs e)
         {
+            MapFileFormatKind restrictToKind;  // restrict to outputting this kind of map.
+            if (mapDisplay.MapType == MapType.OCAD) {
+                restrictToKind = mapDisplay.MapVersion.kind;
+            }
+            else {
+                restrictToKind = MapFileFormatKind.None;
+            }
+
             // Get the settings for the dialog. If we've previously show the dialog, then
             // use the previous settings. Note that the previous settings are wiped out when a new map file
             // is loaded.
+
             OcadCreationSettings settings;
-            if (ocadCreationSettingsPrevious != null)
+            if (ocadCreationSettingsPrevious != null) 
+            {
                 settings = ocadCreationSettingsPrevious.Clone();
+                if (restrictToKind != MapFileFormatKind.None & restrictToKind != ocadCreationSettingsPrevious.fileFormat.kind) {
+                    settings.fileFormat = mapDisplay.MapVersion;
+                }
+            }
             else {
                 // Default settings: creating in file directory, use format of the current map file.
                 settings = new OcadCreationSettings();
@@ -2221,10 +2239,12 @@ namespace PurplePen
                 settings.fileDirectory = true;
                 settings.mapDirectory = false;
                 settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
-                if (mapDisplay.MapType == MapType.OCAD)
-                    settings.version = mapDisplay.MapVersion;
-                else
-                    settings.version = 8;
+                if (mapDisplay.MapType == MapType.OCAD) {
+                    settings.fileFormat = mapDisplay.MapVersion;
+                }
+                else {
+                    settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);  // TODO: Maybe change the default to OpenMapper?
+                }
             }
 
             // Get the correct purple color to use.
@@ -2232,7 +2252,7 @@ namespace PurplePen
 
             // Initialize the dialog.
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
-            CreateOcadFiles createOcadFilesDialog = new CreateOcadFiles(controller.GetEventDB());
+            CreateOcadFiles createOcadFilesDialog = new CreateOcadFiles(controller.GetEventDB(), restrictToKind, controller.CreateOcadFilesText(false));
             createOcadFilesDialog.OcadCreationSettings = settings;
 
             // show the dialog; on success, create the files.

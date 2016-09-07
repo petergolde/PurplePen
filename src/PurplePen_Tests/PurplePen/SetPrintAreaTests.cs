@@ -259,7 +259,7 @@ namespace PurplePen.Tests
             settings.outputDirectory = TestUtil.GetTestFile("modes\\ocad_print_area");
 
             settings.CourseIds = new Id<Course>[4] { CourseId(1), CourseId(2), CourseId(4), Id<Course>.None };
-            settings.version = ocadVersion;
+            settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, ocadVersion);
             settings.cyan = 0.15F;
             settings.magenta = 0.9F;
             settings.yellow = 0;

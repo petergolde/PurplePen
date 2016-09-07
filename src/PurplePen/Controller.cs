@@ -1048,6 +1048,25 @@ namespace PurplePen
             }
         }
 
+        // Get the text name of the Create OCAD/OOM Files command. Does not include the "..."
+        public string CreateOcadFilesText(bool includeShortcutKey)
+        {
+            string formatText = CommandNameText.CreateMapFiles;
+            if (!includeShortcutKey)
+                formatText = formatText.Replace("&", "");
+
+            string insertText;
+            MapFileFormatKind formatKind = mapDisplay.MapVersion.kind;
+            if (formatKind == MapFileFormatKind.OCAD)
+                insertText = MiscText.OCAD;
+            else if (formatKind == MapFileFormatKind.OpenMapper)
+                insertText = MiscText.OpenOrienteeringMapper;
+            else
+                insertText = MiscText.OCAD + "/" + MiscText.OpenOrienteeringMapper;
+
+            return string.Format(formatText, insertText);
+        }
+
         // Create OCAD files.
         // Returns success or failure; any errors are already reported to the user.
         // If mapDirectory or fileDirectory is set, the outputDirectory fields is filled in.

@@ -153,14 +153,6 @@ namespace PurplePen
             resources.ApplyResources(this.fileFormatCombo, "fileFormatCombo");
             this.fileFormatCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fileFormatCombo.FormattingEnabled = true;
-            this.fileFormatCombo.Items.AddRange(new object[] {
-            resources.GetString("fileFormatCombo.Items"),
-            resources.GetString("fileFormatCombo.Items1"),
-            resources.GetString("fileFormatCombo.Items2"),
-            resources.GetString("fileFormatCombo.Items3"),
-            resources.GetString("fileFormatCombo.Items4"),
-            resources.GetString("fileFormatCombo.Items5"),
-            resources.GetString("fileFormatCombo.Items6")});
             this.fileFormatCombo.Name = "fileFormatCombo";
             // 
             // folderGroupBox

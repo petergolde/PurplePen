@@ -285,4 +285,7 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Duplicate Course</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Create {0} &amp;Files</value>
+  </data>
 </root>
