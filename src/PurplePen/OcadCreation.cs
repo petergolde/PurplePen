@@ -63,10 +63,6 @@ namespace PurplePen
         // Write a map to the given file name.
         void ExportMap(CourseView courseView, string outputFilename)
         {
-            if (creationSettings.fileFormat.kind == MapFileFormatKind.OpenMapper) {
-                throw new Exception("Creation of Open Orienteering Mapper files is not yet supported in this beta version.");
-            }
-
             // Create the CourseLayout.
             CourseLayout courseLayout = CreateCourseLayout(courseView);
 
