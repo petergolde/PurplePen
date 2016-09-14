@@ -284,7 +284,38 @@ namespace PurplePen.Tests
             CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 2), false, "exch_part3", new RectangleF(-45, -60, 190, 190));
             CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 3), false, "exch_part4", new RectangleF(-45, -60, 190, 190));
         }
-    
+
+        [TestMethod]
+        public void Butterfly1()
+        {
+            CheckCourseBothAppearances("courserenderer\\butterfly.ppen", Designator(7), false, "butterfly1", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
+        public void Butterfly2()
+        {
+            CheckCourseBothAppearances("courserenderer\\butterfly.ppen", new CourseDesignator(CourseId(7), 0), false, "butterfly2", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
+        public void Butterfly3()
+        {
+            CheckCourseBothAppearances("courserenderer\\butterfly.ppen", new CourseDesignator(CourseId(7), 1), false, "butterfly3", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
+        public void ButterflyCode()
+        {
+            CheckCourseBothAppearances("courserenderer\\butterfly2.ppen", Designator(9), false, "butterflycode", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
+        public void ButterflyNumberAndCode()
+        {
+            CheckCourseBothAppearances("courserenderer\\butterfly2.ppen", Designator(8), false, "butterflynumandcode", new RectangleF(-45, -60, 190, 190));
+        }
+
+
     }
 }
 

@@ -107,7 +107,7 @@ namespace PurplePen
                         if (kind == CourseView.CourseViewKind.AllControls)
                             courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
                         else
-                            courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
+                            courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseView, courseLayout);
 
                         if (courseObj != null) {
                             courseObj.layer = layer;
@@ -148,7 +148,7 @@ namespace PurplePen
                     if (kind == CourseView.CourseViewKind.AllControls)
                         courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
                     else
-                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseLayout);
+                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseView, courseLayout);
 
                     if (courseObj != null) {
                         courseObj.layer = layer;
@@ -171,14 +171,44 @@ namespace PurplePen
                         (controlView.courseControlId.IsNone && eventDB.GetControl(controlView.controlId).customCodeLocation));
         }
 
+        // Find all the control view in this courseview that uses the given control id. Used for showing repeated controls in a butterfly course
+        // with a nicer view. 
+        private static List<CourseView.ControlView> FindControlViewsWithControlId(CourseView courseView, Id<ControlPoint> controlId)
+        {
+            List<CourseView.ControlView> list = new List<CourseView.ControlView>();
+
+            for (int controlIndex = 0; controlIndex < courseView.ControlViews.Count; ++controlIndex) {
+                CourseView.ControlView controlView = courseView.ControlViews[controlIndex];
+                if (controlView.controlId == controlId)
+                    list.Add(controlView);
+            }
+
+            return list;
+        }
+
         // Get the text for a control lable
-        private static string GetControlLabelText(EventDB eventDB, ControlLabelKind labelKind, CourseView.ControlView controlView) {
+        private static string GetControlLabelText(EventDB eventDB, ControlLabelKind labelKind, CourseView.ControlView controlView, CourseView courseView) {
             string text = "";
+
+            List<CourseView.ControlView> repeatedControlViews = FindControlViewsWithControlId(courseView, controlView.controlId);
+
+            if (repeatedControlViews.Count > 1 && repeatedControlViews[0] != controlView) {
+                // This control is repeated (e.g., like a butterfly course) and is not the first use of this control. Don't put any text.
+                return "";
+            }
 
             if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.SequenceAndScore) {
                 text += controlView.ordinal.ToString();
                 if (controlView.variation != 0)
                     text += controlView.variation.ToString();
+
+                // Add in numbers for repeated controls.
+                for (int i = 1; i < repeatedControlViews.Count; ++i) {
+                    text += "/";
+                    text += repeatedControlViews[i].ordinal.ToString();
+                    if (repeatedControlViews[i].variation != 0)
+                        text += repeatedControlViews[i].variation.ToString();
+                }
             }
             if (labelKind == ControlLabelKind.SequenceAndCode)
                 text += "-";
@@ -198,7 +228,7 @@ namespace PurplePen
         }
 
         // Create the control number text object, avoiding existing objects on the map. This can be in the form of a sequence number, code, or both.
-        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, ControlLabelKind labelKind, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
+        private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, ControlLabelKind labelKind, CourseView.ControlView controlView, CourseView courseView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlId);
@@ -207,7 +237,7 @@ namespace PurplePen
             string text;
 
             if (control.kind == ControlPointKind.Normal) {
-                text = GetControlLabelText(eventDB, labelKind, controlView);
+                text = GetControlLabelText(eventDB, labelKind, controlView, courseView);
 
                 // Figure out where the control number goes.
                 if (courseControl.customNumberPlacement) {
