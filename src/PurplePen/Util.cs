@@ -200,9 +200,9 @@ namespace PurplePen
             if (a == null)
                 return 98112;
             else {
-                int hash = 991134;
+                int hash = 991137;
                 for (int i = 0; i < a.Length; ++i)
-                    hash ^= a[i].GetHashCode();
+                    hash = hash * 327 + a[i].GetHashCode() ;
                 return hash;
             }
         }

@@ -39,6 +39,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Globalization;
 using System.Drawing;
+using System.Linq;
 
 namespace PurplePen
 {
@@ -738,12 +739,88 @@ namespace PurplePen
         }
     }
 
+    // A VariationPath indicates a path through the variations of a course.
+    public class VariationPath
+    {
+        public struct VariationChoice
+        {
+            public Id<CourseControl> SplitControl;
+            public int SplitChoice; // Which way to go, or -1 to continue on from loop.
+
+            public override bool Equals(object obj)
+            {
+                if (!(obj is VariationChoice))
+                    return false;
+
+                VariationChoice other = (VariationChoice)obj;
+                return (other.SplitControl == this.SplitControl && other.SplitChoice == this.SplitChoice);
+            }
+
+            public override int GetHashCode()
+            {
+                return SplitChoice.GetHashCode() + SplitControl.GetHashCode() * 17;
+            }
+        }
+
+        private VariationChoice[] choices;
+
+        public VariationPath(IEnumerable<VariationChoice> choices)
+        {
+            if (choices == null)
+                choices = new VariationChoice[0];
+            else
+                this.choices = choices.ToArray();
+        }
+
+        public int Count
+        {
+            get { return choices.Length; }
+        }
+
+        public VariationChoice this[int i] {
+            get
+            {
+                if (i < 0 || i >= Count)
+                    throw new ArgumentOutOfRangeException();
+                return choices[i];
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            VariationPath other = obj as VariationPath;
+            if (other == null)
+                return false;
+
+            return Util.ArrayEquals(this.choices, other.choices);
+        }
+
+        public override int GetHashCode()
+        {
+            return Util.ArrayHashCode(this.choices);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (VariationChoice choice in choices) {
+                if (choice.SplitChoice < 0)
+                    builder.Append("|");
+                else
+                    builder.Append(choice.SplitChoice.ToString());
+            }
+
+            return builder.ToString();
+        }
+    }
+
     // A CourseDesignator indicates a course or part of a course for creating a course view.
     // It describes the current view.
     public class CourseDesignator: ICloneable
     {
         private readonly Id<Course> courseId;   // ID of the course, none for all controls.
         private readonly int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
+        private readonly VariationPath variationPath;  // Which path through variations, or null for all or no variations present.
 
         public override bool Equals(object obj)
         {
@@ -751,7 +828,7 @@ namespace PurplePen
                 return false;
             CourseDesignator other = (CourseDesignator) obj;
 
-            return (courseId == other.courseId && part == other.part);
+            return (courseId == other.courseId && part == other.part && object.Equals(variationPath, other.variationPath));
         }
 
         public static bool operator ==(CourseDesignator cd1, CourseDesignator cd2)
@@ -769,15 +846,21 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return courseId.GetHashCode() ^ part.GetHashCode();
+            return courseId.GetHashCode() ^ part.GetHashCode() ^ (variationPath == null ? 0x34255 : variationPath.GetHashCode()) ;
         }
 
         public override string ToString()
         {
+            string s;
             if (AllParts)
-                return string.Format("Course {0}", courseId.id);
+                s = string.Format("Course {0}", courseId.id);
             else
-                return string.Format("Course {0}, Part {1}", courseId.id, part);
+                s = string.Format("Course {0}, Part {1}", courseId.id, part);
+
+            if (variationPath != null)
+                s += "Var: " + variationPath.ToString();
+
+            return s;
         }
 
         public static CourseDesignator AllControls = new CourseDesignator(Id<Course>.None);
@@ -796,6 +879,18 @@ namespace PurplePen
             Debug.Assert(course.IsNotNone);
             this.courseId = course;
             this.part = part;
+        }
+
+        public CourseDesignator(Id<Course> course, VariationPath variationPath)
+            :this(course)
+        {
+            this.variationPath = variationPath;
+        }
+
+        public CourseDesignator(Id<Course> course, int part, VariationPath variationPath)
+            :this(course, part)
+        {
+            this.variationPath = variationPath;
         }
 
         // Accessors.
@@ -822,6 +917,16 @@ namespace PurplePen
         public int Part
         {
             get { return part; }
+        }
+
+        public VariationPath VariationPath
+        {
+            get { return variationPath; }
+        }
+
+        public bool IsVariation
+        {
+            get { return variationPath != null && variationPath.Count > 0; }
         }
 
         public CourseDesignator Clone()
