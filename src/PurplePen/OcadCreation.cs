@@ -161,7 +161,7 @@ namespace PurplePen
                     extension = ".omap";
             }
             else {
-                extension = ".ocad";
+                extension = ".ocd";
             }
             string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, extension);
 
