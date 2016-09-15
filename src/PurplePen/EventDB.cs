@@ -46,6 +46,7 @@ using System.Globalization;
 
 namespace PurplePen
 {
+    using System.Linq;
     using PurplePen.Graphics2D;
     using PurplePen.MapModel;
 
@@ -698,54 +699,37 @@ namespace PurplePen
             validateInfo.sortOrders.Add(sortOrder, id);
 
             // Traverse the course control links, to make sure every course control is used once and only once.
-            while (nextCourseControl.IsNotNone){
+            ValidateCourseControlsToJoin(nextCourseControl, Id<CourseControl>.None, id, validateInfo);
+        }
+
+        // Validate a string of course control until we get to a join control or end of course (if idJoin is None).
+        private void ValidateCourseControlsToJoin(Id<CourseControl> nextCourseControl, Id<CourseControl> idJoin, Id<Course> idCourse, EventDB.ValidateInfo validateInfo)
+        {
+            while (nextCourseControl.IsNotNone && nextCourseControl != idJoin) {
                 validateInfo.eventDB.CheckCourseControlId(nextCourseControl);
                 if (validateInfo.usedCourseControls.ContainsKey(nextCourseControl))
                     throw new ApplicationException(string.Format("Course control {0} already used by course {1}", nextCourseControl, validateInfo.usedCourseControls[nextCourseControl]));
-                validateInfo.usedCourseControls[nextCourseControl] = id;
-
+                validateInfo.usedCourseControls[nextCourseControl] = idCourse;
                 CourseControl courseCtl = validateInfo.eventDB.GetCourseControl(nextCourseControl);
+
                 if (courseCtl.split) {
-                    Id<CourseControl > idJoin = Id<CourseControl>.None; 
+                    bool loop = (courseCtl.splitEnd == nextCourseControl);
                     for (int i = 0; i < courseCtl.nextSplitCourseControls.Length; ++i) {
-                        Id<CourseControl> idJoinRet = ValidateCourseControlsToJoin(courseCtl.nextSplitCourseControls[i], id, validateInfo);
-                        if (idJoinRet.IsNone)
-                            throw new ApplicationException("split next course control can't be zero");
-                        if (idJoin.IsNotNone && idJoinRet != idJoin)
-                            throw new ApplicationException("Split controls don't join correctly");
-                        idJoin = idJoinRet;
+                        ValidateCourseControlsToJoin(courseCtl.nextSplitCourseControls[i], courseCtl.splitEnd, idCourse, validateInfo);
                     }
 
-                    nextCourseControl = idJoin;
+                    if (loop)
+                        nextCourseControl = courseCtl.nextCourseControl;  // loop
+                    else
+                        nextCourseControl = courseCtl.splitEnd;
                 }
                 else {
                     nextCourseControl = courseCtl.nextCourseControl;
                 }
             }
-        }
 
-        // Validate a string of course control until we get to a join control, which is returned.
-        private Id<CourseControl> ValidateCourseControlsToJoin(Id<CourseControl> nextCourseControl, Id<Course> idCourse, EventDB.ValidateInfo validateInfo)
-        {
-            while (nextCourseControl.IsNotNone) {
-                CourseControl courseCtl = validateInfo.eventDB.GetCourseControl(nextCourseControl);
-                if (courseCtl.split) {
-                    throw new ApplicationException("multiple split points before a join point");
-                }
-                else if (courseCtl.join) {
-                    return nextCourseControl;
-                }
-                else {
-                    validateInfo.eventDB.CheckCourseControlId(nextCourseControl);
-                    if (validateInfo.usedCourseControls.ContainsKey(nextCourseControl))
-                        throw new ApplicationException(string.Format("Course control {0} already used by course {1}", nextCourseControl, validateInfo.usedCourseControls[nextCourseControl]));
-                    validateInfo.usedCourseControls[nextCourseControl] = idCourse;
-                }
-
-                nextCourseControl = courseCtl.nextCourseControl;
-            }
-
-            throw new ApplicationException("no join point reached");
+            if (nextCourseControl != idJoin)
+                throw new ApplicationException("join control not reached");
         }
 
         public override StorableObject Clone()
@@ -1007,8 +991,8 @@ namespace PurplePen
     {
         public Id<ControlPoint> control;             // Id of the control.
         public bool exchange;     // Is this control a map exchange? (must be true for ControlPointKind.MapExchange)
-        public bool split;              // Is this the first control before a relay variation split?
-        public bool join;               // Is this the control after a relay variation.
+        public bool split;              // Is this the first control before a variation split?
+        public Id<CourseControl> splitEnd;  // Course control where split ends (if split is true).
         public Id<CourseControl> nextCourseControl;   // Next control, or 0 if this is the last control of the course or split is true.
         public Id<CourseControl>[] nextSplitCourseControls; // null if split is false. Otherwise, the set of next controls in the split (duplicates OK).
         public bool customNumberPlacement;     // If true, the numberDeltaX and numberDeltaY show where to place the code. If false, place in default location.
@@ -1070,7 +1054,7 @@ namespace PurplePen
                 return false;
             if (other.split != split)
                 return false;
-            if (other.join != join)
+            if (other.splitEnd != splitEnd)
                 return false;
             if (other.exchange != exchange)
                 return false;
@@ -1114,11 +1098,16 @@ namespace PurplePen
 
         public override void ReadAttributesAndContent(XmlInput xmlinput)
         {
+            int myId = xmlinput.GetAttributeInt("id");
+
             nextCourseControl = Id<CourseControl>.None;
             nextSplitCourseControls = null;
             control = new Id<ControlPoint>(xmlinput.GetAttributeInt("control"));
-            split = xmlinput.GetAttributeBool("relay-split", false);
-            join = xmlinput.GetAttributeBool("relay-join", false);
+            split = xmlinput.GetAttributeBool("variation-start", false);
+            if (split)
+                splitEnd = new Id<CourseControl>(xmlinput.GetAttributeInt("variation-end"));
+            else
+                splitEnd = Id<CourseControl>.None;
             exchange = xmlinput.GetAttributeBool("map-exchange", false);
             points = xmlinput.GetAttributeInt("points", 0);
 
@@ -1161,7 +1150,16 @@ namespace PurplePen
                 xmlinput.BadXml("Too many 'next' elements");
 
             if (split) {
-                nextSplitCourseControls = nextCourseControls.ToArray();
+                if (splitEnd.id == myId) {
+                    // loop: "nextCourseControl" bypasses the loop.
+                    nextCourseControl = nextCourseControls[0];
+                    nextSplitCourseControls = nextCourseControls.Skip(1).ToArray();
+                }
+                else {
+                    // fork
+                    nextSplitCourseControls = nextCourseControls.ToArray();
+                    nextCourseControl = Id<CourseControl>.None;
+                }
             } 
             else if (nextCourseControls.Count > 0) {
                 nextCourseControl = nextCourseControls[0];
@@ -1173,27 +1171,25 @@ namespace PurplePen
             // Write attributes
 
             xmloutput.WriteAttributeString("control", XmlConvert.ToString(control.id));
-            if (split)
-                xmloutput.WriteAttributeString("relay-split", XmlConvert.ToString(true));
-            if (join)
-                xmloutput.WriteAttributeString("relay-join", XmlConvert.ToString(true));
+            if (split) {
+                xmloutput.WriteAttributeString("variation-start", XmlConvert.ToString(true));
+                xmloutput.WriteAttributeString("variation-end", XmlConvert.ToString(splitEnd.id));
+            }
             if (exchange)
                 xmloutput.WriteAttributeString("map-exchange", XmlConvert.ToString(true));
             if (points != 0)
                 xmloutput.WriteAttributeString("points", XmlConvert.ToString(points));
 
             // Write elements.
-            if (split) {
+            if (nextCourseControl.IsNotNone) {
+                xmloutput.WriteStartElement("next");
+                xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(nextCourseControl.id));
+                xmloutput.WriteEndElement();
+            }
+            if (nextSplitCourseControls != null) {
                 foreach (Id<CourseControl> nextCourseControlId in nextSplitCourseControls) {
                     xmloutput.WriteStartElement("next");
                     xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(nextCourseControlId.id));
-                    xmloutput.WriteEndElement();
-                }
-            }
-            else {
-                if (nextCourseControl.IsNotNone) {
-                    xmloutput.WriteStartElement("next");
-                    xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(nextCourseControl.id));
                     xmloutput.WriteEndElement();
                 }
             }

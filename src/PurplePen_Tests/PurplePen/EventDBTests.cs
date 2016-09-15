@@ -255,7 +255,7 @@ namespace PurplePen.Tests
             ctl2 = new CourseControl(ControlId(2), Id<CourseControl>.None);
             ctl2.split = true;
             ctl2.nextSplitCourseControls = new Id<CourseControl>[2] { CourseControlId(3), CourseControlId(4) };
-            eventDB.AddCourseControl(ctl2);
+            Id<CourseControl> ctl2id = eventDB.AddCourseControl(ctl2);
 
             ctl3 = new CourseControl(ControlId(5), CourseControlId(5));
             ctl3.points = 10;
@@ -269,8 +269,10 @@ namespace PurplePen.Tests
             eventDB.AddCourseControl(ctl4);
 
             ctl5 = new CourseControl(ControlId(7), CourseControlId(6));
-            ctl5.join = true;
-            eventDB.AddCourseControl(ctl5);
+            Id<CourseControl> ctl5Id = eventDB.AddCourseControl(ctl5);
+
+            ctl2.splitEnd = ctl5Id;
+            eventDB.ReplaceCourseControl(ctl2id, ctl2);
 
             ctl6 = new CourseControl(ControlId(8), Id<CourseControl>.None);
             eventDB.AddCourseControl(ctl6);

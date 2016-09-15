@@ -212,7 +212,7 @@
   <course-control id="1" control="1">
     <next course-control="2" />
   </course-control>
-  <course-control id="2" control="2" relay-split="true">
+  <course-control id="2" control="2" variation-start="true" variation-end="5">
     <next course-control="3" />
     <next course-control="4" />
   </course-control>
@@ -222,7 +222,7 @@
   <course-control id="4" control="8" points="20">
     <next course-control="5" />
   </course-control>
-  <course-control id="5" control="7" relay-join="true">
+  <course-control id="5" control="7" >
     <next course-control="6" />
   </course-control>
   <course-control id="6" control="6" />

@@ -612,11 +612,11 @@ namespace PurplePen.Tests
                 Assert.AreEqual(oldCC.descTextAfter, newCC.descTextAfter);
                 Assert.AreEqual(oldCC.descTextBefore, newCC.descTextBefore);
                 Assert.AreEqual(oldCC.exchange, newCC.exchange);
-                Assert.AreEqual(oldCC.join, newCC.join);
                 Assert.AreEqual(oldCC.numberDeltaX, newCC.numberDeltaX);
                 Assert.AreEqual(oldCC.numberDeltaY, newCC.numberDeltaY);
                 Assert.AreEqual(oldCC.points, newCC.points);
                 Assert.AreEqual(oldCC.split, newCC.split);
+                Assert.AreEqual(oldCC.splitEnd, newCC.splitEnd);
             }
 
             eventDB.Validate();

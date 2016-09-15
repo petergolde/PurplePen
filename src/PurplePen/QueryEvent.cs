@@ -77,47 +77,55 @@ namespace PurplePen
 
             Id<Course> courseId = courseDesignator.CourseId;
             int part = courseDesignator.Part;
-            Id<CourseControl> nextCourseControlId = eventDB.GetCourse(courseId).firstCourseControl;
+            Id<CourseControl> firstCourseControlId = eventDB.GetCourse(courseId).firstCourseControl;
+            int currentPart = 0;
+
+            return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, ref currentPart);
+        }
+
+        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join, ref int currentPart)
+        {
+            List<Id<CourseControl>> result = new List<Id<CourseControl>>();
+
+            int part = courseDesignator.Part;
+            Id<CourseControl> nextCourseControlId = start;
 
             // Traverse the course control links.
-            int currentPart = 0;
-            while (nextCourseControlId.IsNotNone) {
+            while (nextCourseControlId.IsNotNone && nextCourseControlId != join) {
                 if (courseDesignator.AllParts || currentPart == part)
-                    yield return nextCourseControlId;
+                    result.Add(nextCourseControlId);
 
                 CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
 
                 if (courseCtl.exchange) {
                     ++currentPart;
                     if (!courseDesignator.AllParts && currentPart == part)
-                        yield return nextCourseControlId;
+                        result.Add(nextCourseControlId);
                 }
 
                 if (courseCtl.split) {
-                    Id<CourseControl> joinId = Id<CourseControl>.None;
-
-                    foreach (Id<CourseControl> splitCourseControlId in courseCtl.nextSplitCourseControls) {
-                        Id<CourseControl> nextCourseControlInSplit = splitCourseControlId;
-                        while (nextCourseControlInSplit.IsNotNone) {
-                            if (eventDB.GetCourseControl(nextCourseControlInSplit).join) {
-                                Debug.Assert(joinId.IsNone || joinId == nextCourseControlInSplit);
-                                joinId = nextCourseControlInSplit;
-                                break;
-                            }
-                            else {
-                                if (courseDesignator.AllParts || currentPart == part)
-                                    yield return nextCourseControlInSplit;
-                                nextCourseControlInSplit = eventDB.GetCourseControl(nextCourseControlInSplit).nextCourseControl;
-                            }
-                        }
+                    bool loop = (courseCtl.splitEnd == nextCourseControlId);
+                    int savePart = currentPart;
+                    for (int i = 0; i < courseCtl.nextSplitCourseControls.Length; ++i) {
+                        currentPart = savePart;
+                        var splitControls = EnumCourseControlsToJoin(eventDB, courseDesignator, courseCtl.nextSplitCourseControls[i], courseCtl.splitEnd, ref currentPart);
+                        result.AddRange(splitControls);
                     }
 
-                    nextCourseControlId = joinId;
+                    if (loop) {
+                        nextCourseControlId = courseCtl.nextCourseControl;  
+                        currentPart = savePart;
+                    }
+                    else {
+                        nextCourseControlId = courseCtl.splitEnd;
+                    }
                 }
                 else {
                     nextCourseControlId = courseCtl.nextCourseControl;
                 }
             }
+
+            return result;
         }
 
         // Describes the information about a leg.
