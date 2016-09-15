@@ -672,6 +672,16 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ValidateVariations1()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("queryevent\\variations.ppen"));
+            eventDB.Validate();
+        }
+
+        [TestMethod]
         public void Event()
         {
             UndoMgr undomgr = new UndoMgr(5);
