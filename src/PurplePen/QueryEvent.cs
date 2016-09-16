@@ -89,7 +89,7 @@ namespace PurplePen
             return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, variationChoices, false, currentPart);
         }
 
-        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join, 
+        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join,
                                                                         IEnumerable<Id<CourseControl>> variationChoices, bool ignoreFirstSplit, int currentPart)
         {
             List<Id<CourseControl>> result = new List<Id<CourseControl>>();
@@ -140,6 +140,29 @@ namespace PurplePen
             return result;
         }
 
+        // Get the next course control 
+        private static Id<CourseControl> GetNextControl(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
+        {
+            Id<CourseControl> next = eventDB.GetCourseControl(courseControlId).nextCourseControl;
+
+            // Simple case, the next control is not starting a split.
+            if (next.IsNone || !eventDB.GetCourseControl(next).split)
+                return next;
+
+            // If it does, then we have to do the complex thing.
+            List<Id<CourseControl>> allCourseControls = EnumCourseControlIds(eventDB, courseDesignator).ToList();
+            for (int i = 0; i < allCourseControls.Count; ++i) {
+                if (allCourseControls[i] == courseControlId) {
+                    if (i < allCourseControls.Count - 1)
+                        return allCourseControls[i + 1];
+                    else
+                        return Id<CourseControl>.None;
+                }
+            }
+
+            throw new Exception("Course does not contain give course control");
+        }
+
         // Describes the information about a leg.
         public struct LegInfo
         {
@@ -168,14 +191,9 @@ namespace PurplePen
             foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 if (first || courseDesignator.AllParts || !courseControl.exchange) {
-                    if (courseControl.split) {
-                        // TODO: handle splits
-                        throw new NotImplementedException();
-                        //foreach (Id<CourseControl> courseControlIdTo in courseControl.nextSplitCourseControls)
-                        //    yield return new LegInfo(courseControlId, courseControlIdTo);
-                    }
-                    else if (courseControl.nextCourseControl.IsNotNone) {
-                        yield return new LegInfo(courseControlId, courseControl.nextCourseControl);
+                    Id<CourseControl> nextCourseControlId = GetNextControl(eventDB, courseDesignator, courseControlId);
+                    if (nextCourseControlId.IsNotNone) {
+                        yield return new LegInfo(courseControlId, nextCourseControlId);
                     }
                 }
                 first = false;
@@ -256,8 +274,7 @@ namespace PurplePen
 
             foreach (Id<Course> containingCourseId in SortedCourseIds(eventDB)) {
                 if (containingCourseId != courseId &&
-                    CourseUsesControl(eventDB, new CourseDesignator(containingCourseId), controlId))
-                {
+                    CourseUsesControl(eventDB, new CourseDesignator(containingCourseId), controlId)) {
                     list.Add(containingCourseId);
                 }
             }
@@ -291,8 +308,7 @@ namespace PurplePen
             foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
                 foreach (LegInfo leg in EnumLegs(eventDB, new CourseDesignator(courseId))) {
                     if (eventDB.GetCourseControl(leg.courseControlId1).control == control1 &&
-                        eventDB.GetCourseControl(leg.courseControlId2).control == control2) 
-                    {
+                        eventDB.GetCourseControl(leg.courseControlId2).control == control2) {
                         list.Add(courseId);
                         break;
                     }
@@ -300,6 +316,16 @@ namespace PurplePen
             }
 
             return list.ToArray();
+        }
+
+        public static bool CourseIsForked(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
+                if (eventDB.GetCourseControl(courseControlId).split)
+                    return true;
+            }
+
+            return false;
         }
 
         // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
@@ -317,6 +343,7 @@ namespace PurplePen
         }
 
         // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
+        // TODO: Add option for enumerating variations.
         public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, bool enumeratePartsSeparately)
         {
             foreach (Id<Course> courseId in courseIds) {
@@ -521,7 +548,7 @@ namespace PurplePen
 
 
         // Numbers that shouldn't be control codes because they look different upside down.
-        static readonly int[] badUpsideDownNumbers = {                                           61,  66,   68,             81,  86,           89,                   98,  99, 
+        static readonly int[] badUpsideDownNumbers = {                                           61,  66,   68,             81,  86,           89,                   98,  99,
                                                                        106, 108, 109,         116, 118, 119, 161, 166, 168, 169,         186, 188, 189, 191, 196, 198, 199,
                                                                601, 606, 608,         611, 616, 618,         661, 666, 668, 669, 681, 686, 688,         691, 696, 698, 699,
                                                                801, 806,         809, 811, 816,         819, 861, 866, 868, 869, 881, 886,         889, 891, 896, 898, 899,
@@ -653,7 +680,7 @@ namespace PurplePen
                 return false;
             else
                 return true;
-       }
+        }
 
         // Does the course have a start control?
         public static bool HasStartControl(EventDB eventDB, Id<Course> courseId)
@@ -724,8 +751,9 @@ namespace PurplePen
                 }
                 else {
                     // Adding after courseControl1.
-                    CourseControl before = (CourseControl) eventDB.GetCourseControl(courseControl1);
+                    CourseControl before = (CourseControl)eventDB.GetCourseControl(courseControl1);
                     if (before.split) {
+                        // TODO: handle splits.
                         throw new NotImplementedException("Not yet implemented.");    // UNDONE: not yet implemented
                     }
                     else {
@@ -752,7 +780,7 @@ namespace PurplePen
             PointF location2 = eventDB.GetControl(controlId2).location;
 
             SymPath path = GetLegPath(eventDB, controlId1, controlId2, legId);
-            return (float) ((eventDB.GetEvent().mapScale * path.Length) / 1000.0);
+            return (float)((eventDB.GetEvent().mapScale * path.Length) / 1000.0);
         }
 
         // Compute the distance between two control points, in meters. The controls need not be part of a leg, and if they are, bends
@@ -781,7 +809,7 @@ namespace PurplePen
             }
 
             if (bends == null) {
-                return (float) ((eventDB.GetEvent().mapScale * Geometry.Distance(location1, location2)) / 1000.0);
+                return (float)((eventDB.GetEvent().mapScale * Geometry.Distance(location1, location2)) / 1000.0);
             }
             else {
                 List<PointF> points = new List<PointF>();
@@ -807,16 +835,16 @@ namespace PurplePen
                 for (int i = bendIndexStart + 1; i <= bendIndexStop; ++i)
                     dist += Geometry.Distance(points[i - 1], points[i]);
 
-                return (float) ((eventDB.GetEvent().mapScale * dist) / 1000.0);
+                return (float)((eventDB.GetEvent().mapScale * dist) / 1000.0);
             }
         }
 
         // Get Length of a special, in meters.
         public static float ComputeSpecialLength(EventDB eventDB, Id<Special> specialId)
-        { 
+        {
             Special special = eventDB.GetSpecial(specialId);
             SymPath path = new SymPath(special.locations);
-            return (float) ((eventDB.GetEvent().mapScale * path.Length) / 1000.0);
+            return (float)((eventDB.GetEvent().mapScale * path.Length) / 1000.0);
         }
 
         // Find a leg object, if one exists, between the two controls.
@@ -865,7 +893,7 @@ namespace PurplePen
             if (legId.IsNotNone) {
                 Leg leg = eventDB.GetLeg(legId);
                 Debug.Assert(leg.controlId1 == controlId1 && leg.controlId2 == controlId2);
-                return (leg.gaps == null) ? null : (LegGap[]) leg.gaps.Clone();
+                return (leg.gaps == null) ? null : (LegGap[])leg.gaps.Clone();
             }
             else {
                 return null;
@@ -927,7 +955,7 @@ namespace PurplePen
                 return list.ToArray();
             }
             else {
-                return (CourseDesignator[]) Util.CloneArrayAndElements(special.courses);       // clone so that changes don't affect it.
+                return (CourseDesignator[])Util.CloneArrayAndElements(special.courses);       // clone so that changes don't affect it.
             }
         }
 
@@ -956,7 +984,7 @@ namespace PurplePen
             }
 
             // Sort by sortOrder field on the Course objects.
-            allCourseIds.Sort(delegate(Id<Course> courseId1, Id<Course> courseId2) {
+            allCourseIds.Sort(delegate (Id<Course> courseId1, Id<Course> courseId2) {
                 return eventDB.GetCourse(courseId1).sortOrder.CompareTo(eventDB.GetCourse(courseId2).sortOrder);
             });
 
@@ -980,7 +1008,7 @@ namespace PurplePen
                 if (control.code != null) {
                     PunchPattern pattern = control.punches;
                     if (pattern != null)
-                        pattern = (PunchPattern) control.punches.Clone();
+                        pattern = (PunchPattern)control.punches.Clone();
                     result.Add(control.code, pattern);
                 }
             }
@@ -998,7 +1026,7 @@ namespace PurplePen
             else {
                 Course course = eventDB.GetCourse(courseDesignator.CourseId);
                 printArea = course.printArea;
-                if (! courseDesignator.AllParts && course.partPrintAreas.ContainsKey(courseDesignator.Part))
+                if (!courseDesignator.AllParts && course.partPrintAreas.ContainsKey(courseDesignator.Part))
                     printArea = course.partPrintAreas[courseDesignator.Part];
             }
 
@@ -1140,5 +1168,131 @@ namespace PurplePen
 
             return fonts;
         }
+
+        // Get the mapping from split course control to letter.
+        private static Dictionary<Id<CourseControl>, char> GetVariantMapping(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            Debug.Assert(!courseDesignator.IsVariation);
+
+            char nextLetter = 'A';
+            Dictionary<Id<CourseControl>, char> result = new Dictionary<Id<CourseControl>, char>();
+
+
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                if (courseControl.split) {
+                    // The loop escape path doesn't get a letter.
+                    if (!(courseControl.loop && courseControl.splitCourseControls[0] == courseControlId)) {
+                        result.Add(courseControlId, nextLetter);
+                        nextLetter++;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private static string GetVariationString(EventDB eventDB, IEnumerable<Id<CourseControl>> choices, Dictionary<Id<CourseControl>, char> variationMapper)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            foreach (Id<CourseControl> choice in choices) {
+                if (variationMapper.ContainsKey(choice))
+                    builder.Append(variationMapper[choice]);
+            }
+
+            return builder.ToString();
+        }
+
+        private static string GetVariationString(EventDB eventDB, CourseDesignator courseDesignator, Dictionary<Id<CourseControl>, char> variationMapper)
+        {
+            Debug.Assert(courseDesignator.IsVariation);
+            return GetVariationString(eventDB, courseDesignator.VariationPath.Choices, variationMapper);
+        }
+
+        public static string GetVariationString(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantMapping(eventDB, courseDesignator.WithAllVariations());
+            return GetVariationString(eventDB, courseDesignator, variationMapper);
+        }
+
+        // Get all the possible variations for a given course, based on the loops/forks. Returns a dictionary of key/value pairs, 
+        // where the key is the string version of the variation, and the value is the corresponding VariationPath object.
+        public static Dictionary<string, VariationPath> GetAllVariations(EventDB eventDB, Id<Course> courseId)
+        {
+            HashSet<Id<CourseControl>> alreadyVisited = new HashSet<PurplePen.Id<PurplePen.CourseControl>>();
+
+            CourseDesignator courseDesignator = new CourseDesignator(courseId);
+            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantMapping(eventDB, courseDesignator);
+            List<List<Id<CourseControl>>> variations = GetVariations(eventDB, courseDesignator, eventDB.GetCourse(courseId).firstCourseControl, alreadyVisited);
+
+            Dictionary<string, VariationPath> result = new Dictionary<string, VariationPath>();
+
+            // Check for no variations.
+            if (variations.Count == 1 && variations[0].Count == 0)
+                return result;
+
+            foreach (var choices in variations) {
+                string variationString = GetVariationString(eventDB, choices, variationMapper);
+                VariationPath variationPath = new VariationPath(choices);
+                result.Add(variationString, variationPath);
+            }
+
+            return result;
+        }
+
+        private static List<List<Id<CourseControl>>> GetVariations(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, HashSet<Id<CourseControl>> alreadyVisited)
+        {
+            List<List<Id<CourseControl>>> result = new List<List<Id<CourseControl>>>();
+            Id<CourseControl> nextCourseControlId = start;
+
+            // Traverse the course control links.
+            while (nextCourseControlId.IsNotNone) {
+                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+
+                if (courseCtl.split) {
+
+                    // If its a loop, we can only continue on the loop skipping path if all other loop
+                    // paths have been visited.
+                    bool allLoopsVisited = true; // true if all loops in this loop are visited, or its a fork.
+                    if (courseCtl.loop) {
+                        for (int i = 1; i < courseCtl.splitCourseControls.Length; ++i) {
+                            if (!alreadyVisited.Contains(courseCtl.splitCourseControls[i]))
+                                allLoopsVisited = false;
+                        }
+                    }
+
+                    for (int i = (allLoopsVisited ? 0 : 1); i < courseCtl.splitCourseControls.Length; ++i) {
+                        Id<CourseControl> split = courseCtl.splitCourseControls[i];
+                        Id<CourseControl> afterSplit = eventDB.GetCourseControl(split).nextCourseControl;
+
+                        if (afterSplit.IsNotNone && !alreadyVisited.Contains(split)) {
+                            // Mark this path as visited so if its part of a loop, we don't visit it again.
+                            alreadyVisited.Add(split);
+                            List<List<Id<CourseControl>>> tailVariants = GetVariations(eventDB, courseDesignator, afterSplit, alreadyVisited);
+                            alreadyVisited.Remove(split);
+
+                            foreach (List<Id<CourseControl>> v in tailVariants) {
+                                List<Id<CourseControl>> l = new List<PurplePen.Id<PurplePen.CourseControl>>(v.Count + 1);
+                                l.Add(courseCtl.splitCourseControls[i]);
+                                l.AddRange(v);
+                                result.Add(l);
+                            }
+                        }
+                    }
+
+                    break;
+                }
+
+                nextCourseControlId = courseCtl.nextCourseControl;
+            }
+
+            // If no variations found, there is one way to go.
+            if (result.Count == 0)
+                result.Add(new List<Id<CourseControl>>());
+
+            return result;
+        }
     }
+
 }

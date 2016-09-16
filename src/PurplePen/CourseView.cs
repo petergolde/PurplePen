@@ -915,6 +915,14 @@ namespace PurplePen
             get { return variationPath != null && variationPath.Count > 0; }
         }
 
+        public CourseDesignator WithAllVariations()
+        {
+            if (AllParts)
+                return new CourseDesignator(courseId);
+            else
+                return new CourseDesignator(courseId, part);
+        }
+
         public CourseDesignator Clone()
         {
             return (CourseDesignator) base.MemberwiseClone();

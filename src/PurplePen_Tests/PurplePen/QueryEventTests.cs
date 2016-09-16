@@ -283,13 +283,13 @@ namespace PurplePen.Tests
             foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(1)))
                 result.Add(id);
 
-            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[] 
+            CollectionAssert.AreEquivalent(result, new QueryEvent.LegInfo[] 
             { 
-                new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2)),
-                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
-                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(4)),
-                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(5)),
+                new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(7)),
+                new QueryEvent.LegInfo(CourseControlId(7), CourseControlId(4)),
                 new QueryEvent.LegInfo(CourseControlId(4), CourseControlId(5)),
+                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
+                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(5)),
                 new QueryEvent.LegInfo(CourseControlId(5), CourseControlId(6)),
             });
 
@@ -300,6 +300,52 @@ namespace PurplePen.Tests
             // Empty course has no legs in it.
             foreach (QueryEvent.LegInfo id in QueryEvent.EnumLegs(eventDB, Designator(2)))
                 Assert.Fail("Empty course should have no legs in it");
+        }
+
+        [TestMethod]
+        public void EnumLegsVariations()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            List<QueryEvent.LegInfo> result;
+
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+            result = QueryEvent.EnumLegs(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+
+            CollectionAssert.AreEqual(result, new[] {
+                new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2)),
+                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
+                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(27)),
+                new QueryEvent.LegInfo(CourseControlId(27), CourseControlId(19)),
+                new QueryEvent.LegInfo(CourseControlId(19), CourseControlId(30)),
+                new QueryEvent.LegInfo(CourseControlId(30), CourseControlId(20)),
+                new QueryEvent.LegInfo(CourseControlId(20), CourseControlId(23)),
+                new QueryEvent.LegInfo(CourseControlId(23), CourseControlId(26)),
+                new QueryEvent.LegInfo(CourseControlId(26), CourseControlId(17)),
+                new QueryEvent.LegInfo(CourseControlId(17), CourseControlId(18)),
+                new QueryEvent.LegInfo(CourseControlId(18), CourseControlId(25)),
+                new QueryEvent.LegInfo(CourseControlId(25), CourseControlId(15)),
+                new QueryEvent.LegInfo(CourseControlId(15), CourseControlId(16)),
+                new QueryEvent.LegInfo(CourseControlId(16), CourseControlId(4)),
+                new QueryEvent.LegInfo(CourseControlId(4), CourseControlId(5)),
+                new QueryEvent.LegInfo(CourseControlId(5), CourseControlId(6)),
+                new QueryEvent.LegInfo(CourseControlId(6), CourseControlId(7)),
+                new QueryEvent.LegInfo(CourseControlId(7), CourseControlId(8)),
+                new QueryEvent.LegInfo(CourseControlId(8), CourseControlId(28)),
+                new QueryEvent.LegInfo(CourseControlId(28), CourseControlId(13)),
+                new QueryEvent.LegInfo(CourseControlId(13), CourseControlId(10)),
+                new QueryEvent.LegInfo(CourseControlId(10), CourseControlId(11))
+            });
+
+
         }
 
         [TestMethod]
@@ -422,6 +468,17 @@ namespace PurplePen.Tests
             result = QueryEvent.FindClosestLeg(eventDB, Designator(2), new PointF(-8.6F, 0.5F));
             Assert.IsTrue(result.courseControlId1.IsNone);
             Assert.IsTrue(result.courseControlId2.IsNone);
+        }
+
+        [TestMethod]
+        public void CourseIsForked()
+        {
+            Setup("queryevent\\variations.ppen");
+            Assert.IsTrue(QueryEvent.CourseIsForked(eventDB, Designator(1)));
+
+            Setup("queryevent\\mapexchange1.ppen");
+            Assert.IsFalse(QueryEvent.CourseIsForked(eventDB, Designator(1)));
+
         }
 
         // Test FindClosesLeg for map exchanges.
@@ -1758,6 +1815,76 @@ namespace PurplePen.Tests
 
             result = QueryEvent.UniqueImageName(eventDB, "foo");
             Assert.AreEqual("foo(1)", result);
+        }
+
+        [TestMethod]
+        public void GetVariationString()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            string result;
+
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+
+            result = QueryEvent.GetVariationString(eventDB, new CourseDesignator(new Id<Course>(1), variationPath));
+            Assert.AreEqual("BEFDCH", result);
+        }
+
+        [TestMethod]
+        public void GetAllVariations()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            var result = QueryEvent.GetAllVariations(eventDB, new Id<Course>(1));
+            List<string> pathStrings = (from pair in result orderby pair.Key select pair.Key).ToList();
+
+            CollectionAssert.AreEquivalent(pathStrings, new[] {
+                "BCDEFJ",
+                "BCDEFH",
+                "BCDEFI",
+                "BCDEGJ",
+                "BCDEGH",
+                "BCDEGI",
+                "BCEFDJ",
+                "BCEFDH",
+                "BCEFDI",
+                "BCEGDJ",
+                "BCEGDH",
+                "BCEGDI",
+                "BDCEFJ",
+                "BDCEFH",
+                "BDCEFI",
+                "BDCEGJ",
+                "BDCEGH",
+                "BDCEGI",
+                "BDEFCJ",
+                "BDEFCH",
+                "BDEFCI",
+                "BDEGCJ",
+                "BDEGCH",
+                "BDEGCI",
+                "BEFCDJ",
+                "BEFCDH",
+                "BEFCDI",
+                "BEFDCJ",
+                "BEFDCH",
+                "BEFDCI",
+                "BEGCDJ",
+                "BEGCDH",
+                "BEGCDI",
+                "BEGDCJ",
+                "BEGDCH",
+                "BEGDCI",
+                "A"
+            });
         }
 
     }
