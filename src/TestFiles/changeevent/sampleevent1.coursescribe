@@ -202,9 +202,15 @@
   <course-control id="1" control="1">
     <next course-control="2" />
   </course-control>
-  <course-control id="2" control="2" variation-start="true" variation-end="5">
+  <course-control id="2" control="2" variation="fork" variation-end="5">
     <next course-control="3" />
+    <variation course-control="2"/>
+    <variation course-control="7"/>
+  </course-control>
+  <course-control id="7" control="2" variation="fork" variation-end="5">
     <next course-control="4" />
+    <variation course-control="2"/>
+    <variation course-control="7"/>
   </course-control>
   <course-control id="3" control="5" points="10">
     <next course-control="5" />

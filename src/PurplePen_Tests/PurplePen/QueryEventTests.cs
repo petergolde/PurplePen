@@ -167,7 +167,56 @@ namespace PurplePen.Tests
             foreach (Id<CourseControl> id in QueryEvent.EnumCourseControlIds(eventDB, Designator(1)))
                 result.Add(id);
 
-            TestUtil.TestEnumerableAnyOrder(result, new Id<CourseControl>[] { CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(4), CourseControlId(5), CourseControlId(6) });
+            TestUtil.TestEnumerableAnyOrder(result, new Id<CourseControl>[] { CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(4), CourseControlId(5), CourseControlId(6), CourseControlId(7) });
+        }
+
+        [TestMethod]
+        public void EnumCourseControlIdsVariation()
+        {
+            Setup("queryevent\\variations.ppen");
+            List<Id<CourseControl>> result;
+
+            result = QueryEvent.EnumCourseControlIds(eventDB, Designator(1)).ToList();
+            CollectionAssert.AreEquivalent(result, new[] {
+                CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(4), CourseControlId(5),
+                CourseControlId(6), CourseControlId(7), CourseControlId(8), CourseControlId(9), CourseControlId(10),
+                CourseControlId(11), CourseControlId(12), CourseControlId(13), CourseControlId(14), CourseControlId(15),
+                CourseControlId(16), CourseControlId(17), CourseControlId(18), CourseControlId(19), CourseControlId(20),
+                CourseControlId(21), CourseControlId(22), CourseControlId(23), CourseControlId(24), CourseControlId(25),
+                CourseControlId(26), CourseControlId(27), CourseControlId(28), CourseControlId(29), CourseControlId(30), 
+            });
+
+            /////////////////////////////////////////////////////////////////
+
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(24)
+            });
+            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+            CollectionAssert.AreEqual(result, new[] {
+                CourseControlId(1), CourseControlId(24), CourseControlId(12), CourseControlId(10), CourseControlId(11)
+            });
+
+            /////////////////////////////////////////////////////////////////
+
+            variationPath = new VariationPath(new[] {
+                CourseControlId(2), 
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4), 
+                CourseControlId(28),
+            });
+            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+            CollectionAssert.AreEqual(result, new[] {
+                CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(27), CourseControlId(19),
+                CourseControlId(30), CourseControlId(20), CourseControlId(23), CourseControlId(26), CourseControlId(17),
+                CourseControlId(18), CourseControlId(25), CourseControlId(15), CourseControlId(16), CourseControlId(4),
+                CourseControlId(5), CourseControlId(6), CourseControlId(7), CourseControlId(8), CourseControlId(28),
+                CourseControlId(13), CourseControlId(10), CourseControlId(11)
+            });
+
+
         }
 
         // Test EnumCourseControlIds for map exchanges.

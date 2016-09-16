@@ -487,7 +487,10 @@ namespace PurplePen
                 // Clone all fields of old course control, except the linking fields.
                 CourseControl newCourseControl = (CourseControl) oldCourseControl.Clone();
                 newCourseControl.nextCourseControl = eventDB.GetCourseControl(newCourseControlId).nextCourseControl;
-                newCourseControl.nextSplitCourseControls = eventDB.GetCourseControl(newCourseControlId).nextSplitCourseControls;
+                // TODO: handle splits.
+                if (oldCourseControl.split)
+                    throw new NotImplementedException();
+                //newCourseControl.nextSplitCourseControls = eventDB.GetCourseControl(newCourseControlId).nextSplitCourseControls;
                 eventDB.ReplaceCourseControl(newCourseControlId, newCourseControl);
 
                 previousCourseControlId = newCourseControlId;

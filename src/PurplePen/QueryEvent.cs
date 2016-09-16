@@ -80,22 +80,52 @@ namespace PurplePen
             Id<CourseControl> firstCourseControlId = eventDB.GetCourse(courseId).firstCourseControl;
             int currentPart = 0;
 
-            return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, ref currentPart);
+            IEnumerable<Id<CourseControl>> variationChoices;
+            if (courseDesignator.VariationPath == null)
+                variationChoices = null;
+            else
+                variationChoices = courseDesignator.VariationPath.Choices;
+
+            return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, variationChoices, false, currentPart);
         }
 
-        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join, ref int currentPart)
+        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join, 
+                                                                        IEnumerable<Id<CourseControl>> variationChoices, bool ignoreFirstSplit, int currentPart)
         {
             List<Id<CourseControl>> result = new List<Id<CourseControl>>();
 
             int part = courseDesignator.Part;
             Id<CourseControl> nextCourseControlId = start;
+            bool first = true;
 
             // Traverse the course control links.
             while (nextCourseControlId.IsNotNone && nextCourseControlId != join) {
+                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+
+                if (courseCtl.split && !(first && ignoreFirstSplit)) {
+                    if (variationChoices != null) {
+                        // Follow the path given by the variantChoices. May be the same as this control.
+                        Id<CourseControl> choice = variationChoices.First();
+                        Debug.Assert(courseCtl.splitCourseControls.Contains(choice));
+
+                        variationChoices = variationChoices.Skip(1);
+
+                        nextCourseControlId = choice;
+                        courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+                    }
+                    else {
+                        // Follow all of the alternate paths except the current one.
+                        for (int i = 0; i < courseCtl.splitCourseControls.Length; ++i) {
+                            if (courseCtl.splitCourseControls[i] != nextCourseControlId) {
+                                var splitControls = EnumCourseControlsToJoin(eventDB, courseDesignator, courseCtl.splitCourseControls[i], courseCtl.splitEnd, variationChoices, true, currentPart);
+                                result.AddRange(splitControls);
+                            }
+                        }
+                    }
+                }
+
                 if (courseDesignator.AllParts || currentPart == part)
                     result.Add(nextCourseControlId);
-
-                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
 
                 if (courseCtl.exchange) {
                     ++currentPart;
@@ -103,26 +133,8 @@ namespace PurplePen
                         result.Add(nextCourseControlId);
                 }
 
-                if (courseCtl.split) {
-                    bool loop = (courseCtl.splitEnd == nextCourseControlId);
-                    int savePart = currentPart;
-                    for (int i = 0; i < courseCtl.nextSplitCourseControls.Length; ++i) {
-                        currentPart = savePart;
-                        var splitControls = EnumCourseControlsToJoin(eventDB, courseDesignator, courseCtl.nextSplitCourseControls[i], courseCtl.splitEnd, ref currentPart);
-                        result.AddRange(splitControls);
-                    }
-
-                    if (loop) {
-                        nextCourseControlId = courseCtl.nextCourseControl;  
-                        currentPart = savePart;
-                    }
-                    else {
-                        nextCourseControlId = courseCtl.splitEnd;
-                    }
-                }
-                else {
-                    nextCourseControlId = courseCtl.nextCourseControl;
-                }
+                nextCourseControlId = courseCtl.nextCourseControl;
+                first = false;
             }
 
             return result;
@@ -157,8 +169,10 @@ namespace PurplePen
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 if (first || courseDesignator.AllParts || !courseControl.exchange) {
                     if (courseControl.split) {
-                        foreach (Id<CourseControl> courseControlIdTo in courseControl.nextSplitCourseControls)
-                            yield return new LegInfo(courseControlId, courseControlIdTo);
+                        // TODO: handle splits
+                        throw new NotImplementedException();
+                        //foreach (Id<CourseControl> courseControlIdTo in courseControl.nextSplitCourseControls)
+                        //    yield return new LegInfo(courseControlId, courseControlIdTo);
                     }
                     else if (courseControl.nextCourseControl.IsNotNone) {
                         yield return new LegInfo(courseControlId, courseControl.nextCourseControl);

@@ -742,32 +742,13 @@ namespace PurplePen
     // A VariationPath indicates a path through the variations of a course.
     public class VariationPath
     {
-        public struct VariationChoice
-        {
-            public Id<CourseControl> SplitControl;
-            public int SplitChoice; // Which way to go, or -1 to continue on from loop.
+        // Every place that 'split' is true, indicates which course control is next.
+        private Id<CourseControl>[] choices;
 
-            public override bool Equals(object obj)
-            {
-                if (!(obj is VariationChoice))
-                    return false;
-
-                VariationChoice other = (VariationChoice)obj;
-                return (other.SplitControl == this.SplitControl && other.SplitChoice == this.SplitChoice);
-            }
-
-            public override int GetHashCode()
-            {
-                return SplitChoice.GetHashCode() + SplitControl.GetHashCode() * 17;
-            }
-        }
-
-        private VariationChoice[] choices;
-
-        public VariationPath(IEnumerable<VariationChoice> choices)
+        public VariationPath(IEnumerable<Id<CourseControl>> choices)
         {
             if (choices == null)
-                choices = new VariationChoice[0];
+                choices = new Id<CourseControl>[0];
             else
                 this.choices = choices.ToArray();
         }
@@ -777,7 +758,12 @@ namespace PurplePen
             get { return choices.Length; }
         }
 
-        public VariationChoice this[int i] {
+        public IEnumerable<Id<CourseControl>> Choices
+        {
+            get { return choices.ToList();  }
+        }
+
+        public Id<CourseControl> this[int i] {
             get
             {
                 if (i < 0 || i >= Count)
@@ -803,11 +789,11 @@ namespace PurplePen
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            foreach (VariationChoice choice in choices) {
-                if (choice.SplitChoice < 0)
+            for (int i = 0; i < choices.Length; ++i) {
+                if (i != 0)
                     builder.Append("|");
-                else
-                    builder.Append(choice.SplitChoice.ToString());
+                
+                builder.Append(choices[i].id);
             }
 
             return builder.ToString();

@@ -254,7 +254,8 @@ namespace PurplePen.Tests
 
             ctl2 = new CourseControl(ControlId(2), Id<CourseControl>.None);
             ctl2.split = true;
-            ctl2.nextSplitCourseControls = new Id<CourseControl>[2] { CourseControlId(3), CourseControlId(4) };
+            ctl2.splitEnd = CourseControlId(5);
+            ctl2.splitCourseControls = new Id<CourseControl>[3] { CourseControlId(2), CourseControlId(3), CourseControlId(4) };
             Id<CourseControl> ctl2id = eventDB.AddCourseControl(ctl2);
 
             ctl3 = new CourseControl(ControlId(5), CourseControlId(5));

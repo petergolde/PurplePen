@@ -706,30 +706,36 @@ namespace PurplePen
         private void ValidateCourseControlsToJoin(Id<CourseControl> nextCourseControl, Id<CourseControl> idJoin, Id<Course> idCourse, EventDB.ValidateInfo validateInfo)
         {
             while (nextCourseControl.IsNotNone && nextCourseControl != idJoin) {
-                validateInfo.eventDB.CheckCourseControlId(nextCourseControl);
-                if (validateInfo.usedCourseControls.ContainsKey(nextCourseControl))
-                    throw new ApplicationException(string.Format("Course control {0} already used by course {1}", nextCourseControl, validateInfo.usedCourseControls[nextCourseControl]));
-                validateInfo.usedCourseControls[nextCourseControl] = idCourse;
                 CourseControl courseCtl = validateInfo.eventDB.GetCourseControl(nextCourseControl);
 
                 if (courseCtl.split) {
-                    bool loop = (courseCtl.splitEnd == nextCourseControl);
-                    for (int i = 0; i < courseCtl.nextSplitCourseControls.Length; ++i) {
-                        ValidateCourseControlsToJoin(courseCtl.nextSplitCourseControls[i], courseCtl.splitEnd, idCourse, validateInfo);
-                    }
+                    if (courseCtl.splitCourseControls == null)
+                        throw new ApplicationException("no variations listed for variation start control");
 
-                    if (loop)
-                        nextCourseControl = courseCtl.nextCourseControl;  // loop
-                    else
-                        nextCourseControl = courseCtl.splitEnd;
+                    // Validate all other branches but this one.
+                    for (int i = 0; i < courseCtl.splitCourseControls.Length; ++i) {
+                        if (courseCtl.splitCourseControls[i] != nextCourseControl) {
+                            ValidateCourseControl(courseCtl.splitCourseControls[i], idCourse, validateInfo);
+                            ValidateCourseControlsToJoin(validateInfo.eventDB.GetCourseControl(courseCtl.splitCourseControls[i]).nextCourseControl,
+                                                         courseCtl.splitEnd, idCourse, validateInfo);
+                        }
+                    }
                 }
-                else {
-                    nextCourseControl = courseCtl.nextCourseControl;
-                }
+
+                ValidateCourseControl(nextCourseControl, idCourse, validateInfo);
+                nextCourseControl = courseCtl.nextCourseControl;
             }
 
             if (nextCourseControl != idJoin)
                 throw new ApplicationException("join control not reached");
+        }
+
+        void ValidateCourseControl(Id<CourseControl> courseControl, Id<Course> idCourse, EventDB.ValidateInfo validateInfo)
+        {
+            validateInfo.eventDB.CheckCourseControlId(courseControl);
+            if (validateInfo.usedCourseControls.ContainsKey(courseControl))
+                throw new ApplicationException(string.Format("Course control {0} already used by course {1}", courseControl, validateInfo.usedCourseControls[courseControl]));
+            validateInfo.usedCourseControls[courseControl] = idCourse;
         }
 
         public override StorableObject Clone()
@@ -992,9 +998,10 @@ namespace PurplePen
         public Id<ControlPoint> control;             // Id of the control.
         public bool exchange;     // Is this control a map exchange? (must be true for ControlPointKind.MapExchange)
         public bool split;              // Is this the first control before a variation split?
-        public Id<CourseControl> splitEnd;  // Course control where split ends (if split is true).
-        public Id<CourseControl> nextCourseControl;   // Next control, or 0 if this is the last control of the course or split is true.
-        public Id<CourseControl>[] nextSplitCourseControls; // null if split is false. Otherwise, the set of next controls in the split (duplicates OK).
+        public bool loop;               // If split is true, indicates this is a loop vs. join.
+        public Id<CourseControl> splitEnd;  // If a split, the course control that ends the split. Same as this for a loop.
+        public Id<CourseControl> nextCourseControl;   // Next control, or 0 if this is the last control of the course.
+        public Id<CourseControl>[] splitCourseControls; // null if split is false. Otherwise, the set of course controls in the split, including this one. If a loop, first is the loop exit.
         public bool customNumberPlacement;     // If true, the numberDeltaX and numberDeltaY show where to place the code. If false, place in default location.
         public float numberDeltaX, numberDeltaY;       // Where to place the control number relative to the control point location. Only used in customNumberPlacement is true
         public int points;              // Points for score-O
@@ -1027,13 +1034,13 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Course control '{0}' is a exchange, but is not a control or map exchange", id));
 
             if (split) {
-                if (nextSplitCourseControls == null)
+                if (splitCourseControls == null)
                     throw new ApplicationException(string.Format("Course control '{0}' must have next control array", id));
-                for (int i = 0; i < nextSplitCourseControls.Length; ++i)
-                    validateInfo.eventDB.CheckCourseControlId(nextSplitCourseControls[i]);
+                for (int i = 0; i < splitCourseControls.Length; ++i)
+                    validateInfo.eventDB.CheckCourseControlId(splitCourseControls[i]);
             }
             else {
-                if (nextSplitCourseControls != null)
+                if (splitCourseControls != null)
                     throw new ApplicationException(string.Format("Course control '{0}' must not have next control array", id));
                 if (nextCourseControl.IsNotNone)
                     validateInfo.eventDB.CheckCourseControlId(nextCourseControl);
@@ -1062,16 +1069,15 @@ namespace PurplePen
                 return false;
 
             if (split) {
-                if (other.nextSplitCourseControls.Length != nextSplitCourseControls.Length)
+                if (other.splitCourseControls.Length != splitCourseControls.Length)
                     return false;
-                for (int i = 0; i < nextSplitCourseControls.Length; ++i)
-                    if (other.nextSplitCourseControls[i] != nextSplitCourseControls[i])
+                for (int i = 0; i < splitCourseControls.Length; ++i)
+                    if (other.splitCourseControls[i] != splitCourseControls[i])
                         return false;
             }
-            else {
-                if (other.nextCourseControl != nextCourseControl)
-                    return false;
-            }
+
+            if (other.nextCourseControl != nextCourseControl)
+                return false;
 
             if (other.customNumberPlacement != customNumberPlacement)
                 return false;
@@ -1091,8 +1097,8 @@ namespace PurplePen
         public override StorableObject Clone()
         {
             CourseControl n = (CourseControl) base.Clone();
-            if (n.nextSplitCourseControls != null)
-                n.nextSplitCourseControls = (Id<CourseControl>[])n.nextSplitCourseControls.Clone();
+            if (n.splitCourseControls != null)
+                n.splitCourseControls = (Id<CourseControl>[])n.splitCourseControls.Clone();
             return n;
         }
 
@@ -1101,69 +1107,72 @@ namespace PurplePen
             int myId = xmlinput.GetAttributeInt("id");
 
             nextCourseControl = Id<CourseControl>.None;
-            nextSplitCourseControls = null;
+            splitCourseControls = null;
             control = new Id<ControlPoint>(xmlinput.GetAttributeInt("control"));
-            split = xmlinput.GetAttributeBool("variation-start", false);
+
+            string variationType = xmlinput.GetAttributeString("variation", "");
+            if (variationType == "fork") {
+                split = true; loop = false;
+            }
+            else if (variationType == "loop") {
+                split = true; loop = true;
+            }
+            else {
+                split = false;
+            }
             if (split)
                 splitEnd = new Id<CourseControl>(xmlinput.GetAttributeInt("variation-end"));
-            else
-                splitEnd = Id<CourseControl>.None;
             exchange = xmlinput.GetAttributeBool("map-exchange", false);
             points = xmlinput.GetAttributeInt("points", 0);
 
-            List<Id<CourseControl>> nextCourseControls = new List<Id<CourseControl>>();
+            List<Id<CourseControl>> variationCourseControls = null;
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "next", "number-location", "description-text-line")) {
+            while (xmlinput.FindSubElement(first, "next", "variation", "number-location", "description-text-line")) {
                 switch (xmlinput.Name) {
-                case "next":
-                    xmlinput.CheckElement("next");
-                    nextCourseControls.Add(new Id<CourseControl>(xmlinput.GetAttributeInt("course-control")));
-                    xmlinput.Skip();
-                    break;
-
-                case "number-location":
-                    xmlinput.CheckElement("number-location");
-                    customNumberPlacement = true;
-                    numberDeltaX = xmlinput.GetAttributeFloat("x");
-                    numberDeltaY = xmlinput.GetAttributeFloat("y");
-                    xmlinput.Skip();
-                    break;
-
-                case "description-text-line":
-                    xmlinput.CheckElement("description-text-line");
-                    string location = xmlinput.GetAttributeString("location");
-                    if (location == "before")
-                        descTextBefore = xmlinput.GetContentString();
-                    else if (location == "after")
-                        descTextAfter = xmlinput.GetContentString();
-                    else {
-                        xmlinput.BadXml("location attribute on description-text-line must be \"before\" or \"after\"");
+                    case "next":
+                        xmlinput.CheckElement("next");
+                        nextCourseControl = new Id<CourseControl>(xmlinput.GetAttributeInt("course-control"));
                         xmlinput.Skip();
-                    }
-                    break;
+                        break;
+
+                    case "variation":
+                        xmlinput.CheckElement("variation");
+                        if (variationCourseControls == null)
+                            variationCourseControls = new List<Id<CourseControl>>();
+                        variationCourseControls.Add(new Id<CourseControl>(xmlinput.GetAttributeInt("course-control")));
+                        xmlinput.Skip();
+                        break;
+
+                    case "number-location":
+                        xmlinput.CheckElement("number-location");
+                        customNumberPlacement = true;
+                        numberDeltaX = xmlinput.GetAttributeFloat("x");
+                        numberDeltaY = xmlinput.GetAttributeFloat("y");
+                        xmlinput.Skip();
+                        break;
+
+                    case "description-text-line":
+                        xmlinput.CheckElement("description-text-line");
+                        string location = xmlinput.GetAttributeString("location");
+                        if (location == "before")
+                            descTextBefore = xmlinput.GetContentString();
+                        else if (location == "after")
+                            descTextAfter = xmlinput.GetContentString();
+                        else {
+                            xmlinput.BadXml("location attribute on description-text-line must be \"before\" or \"after\"");
+                            xmlinput.Skip();
+                        }
+                        break;
                 }
                 first = false;
             }
 
-            if (!split && nextCourseControls.Count > 1)
-                xmlinput.BadXml("Too many 'next' elements");
+            if (!split && variationCourseControls != null)
+                xmlinput.BadXml("Non-variation course control shouldn't have variation sub-element.");
 
-            if (split) {
-                if (splitEnd.id == myId) {
-                    // loop: "nextCourseControl" bypasses the loop.
-                    nextCourseControl = nextCourseControls[0];
-                    nextSplitCourseControls = nextCourseControls.Skip(1).ToArray();
-                }
-                else {
-                    // fork
-                    nextSplitCourseControls = nextCourseControls.ToArray();
-                    nextCourseControl = Id<CourseControl>.None;
-                }
-            } 
-            else if (nextCourseControls.Count > 0) {
-                nextCourseControl = nextCourseControls[0];
-            }
+            if (variationCourseControls != null)
+                splitCourseControls = variationCourseControls.ToArray();
         }
 
         public override void WriteAttributesAndContent(XmlTextWriter xmloutput)
@@ -1172,7 +1181,7 @@ namespace PurplePen
 
             xmloutput.WriteAttributeString("control", XmlConvert.ToString(control.id));
             if (split) {
-                xmloutput.WriteAttributeString("variation-start", XmlConvert.ToString(true));
+                xmloutput.WriteAttributeString("variation", loop ? "loop" : "fork");
                 xmloutput.WriteAttributeString("variation-end", XmlConvert.ToString(splitEnd.id));
             }
             if (exchange)
@@ -1186,10 +1195,10 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(nextCourseControl.id));
                 xmloutput.WriteEndElement();
             }
-            if (nextSplitCourseControls != null) {
-                foreach (Id<CourseControl> nextCourseControlId in nextSplitCourseControls) {
-                    xmloutput.WriteStartElement("next");
-                    xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(nextCourseControlId.id));
+            if (splitCourseControls != null) {
+                foreach (Id<CourseControl> variationControlId in splitCourseControls) {
+                    xmloutput.WriteStartElement("variation");
+                    xmloutput.WriteAttributeString("course-control", XmlConvert.ToString(variationControlId.id));
                     xmloutput.WriteEndElement();
                 }
             }

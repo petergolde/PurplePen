@@ -115,18 +115,46 @@
   <course-control id="1" control="1">
     <next course-control="2" />
   </course-control>
-  <course-control id="2" control="2" variation-start="true" variation-end="10">
+  <course-control id="2" control="2" variation="fork" variation-end="10">
     <next course-control="3" />
+    <variation course-control="2"></variation>
+    <variation course-control="24"></variation>
+  </course-control>
+  <course-control id="24" control="2" variation="fork" variation-end="10">
     <next course-control="12" />
+    <variation course-control="2"></variation>
+    <variation course-control="24"></variation>
   </course-control>
   <course-control id="3" control="3">
     <next course-control="4" />
   </course-control>
-  <course-control id="4" control="4" variation-start="true" variation-end="4">
+  <course-control id="4" control="4" variation="loop" variation-end="4">
     <next course-control="5" />
+    <variation course-control="4"/>
+    <variation course-control="25"/>
+    <variation course-control="26"/>
+    <variation course-control="27"/>
+  </course-control>
+  <course-control id="25" control="4" variation="loop" variation-end="4">
     <next course-control="15" />
+    <variation course-control="4"/>
+    <variation course-control="25"/>
+    <variation course-control="26"/>
+    <variation course-control="27"/>
+  </course-control>
+  <course-control id="26" control="4" variation="loop" variation-end="4">
     <next course-control="17" />
+    <variation course-control="4"/>
+    <variation course-control="25"/>
+    <variation course-control="26"/>
+    <variation course-control="27"/>
+  </course-control>
+  <course-control id="27" control="4" variation="loop" variation-end="4">
     <next course-control="19" />
+    <variation course-control="4"/>
+    <variation course-control="25"/>
+    <variation course-control="26"/>
+    <variation course-control="27"/>
   </course-control>
   <course-control id="5" control="5">
     <next course-control="6" />
@@ -140,10 +168,23 @@
   <course-control id="8" control="8">
     <next course-control="9" />
   </course-control>
-  <course-control id="9" control="9" variation-start="true" variation-end="10">
+  <course-control id="9" control="9" variation="fork" variation-end="10">
     <next course-control="10" />
+    <variation course-control="9"/>
+    <variation course-control="28"/>
+    <variation course-control="29"/>
+  </course-control>
+  <course-control id="28" control="9" variation="fork" variation-end="10">
     <next course-control="13" />
+    <variation course-control="9"/>
+    <variation course-control="28"/>
+    <variation course-control="29"/>
+  </course-control>
+  <course-control id="29" control="9" variation="fork" variation-end="10">
     <next course-control="14" />
+    <variation course-control="9"/>
+    <variation course-control="28"/>
+    <variation course-control="29"/>
   </course-control>
   <course-control id="10" control="10">
     <next course-control="11" />
@@ -176,9 +217,15 @@
   <course-control id="20" control="17">
     <next course-control="23"/>
   </course-control>
-  <course-control id="21" control="18" variation-start="true" variation-end="23">
-    <next course-control="20"/>
+  <course-control id="21" control="18" variation="fork" variation-end="23">
     <next course-control="22"/>
+    <variation course-control="30"/>
+    <variation course-control="21"/>
+  </course-control>
+  <course-control id="30" control="18" variation="fork" variation-end="23">
+    <next course-control="20"/>
+    <variation course-control="30"/>
+    <variation course-control="21"/>
   </course-control>
   <course-control id="22" control="19">
     <next course-control="23"/>
