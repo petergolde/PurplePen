@@ -332,9 +332,18 @@ namespace PurplePen
         // map exchange has 2 parts, etc.
         public static int CountCourseParts(EventDB eventDB, Id<Course> courseId)
         {
+            return CountCourseParts(eventDB, new CourseDesignator(courseId));
+        }
+
+        // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
+        // map exchange has 2 parts, etc.
+        public static int CountCourseParts(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            Debug.Assert(courseDesignator.AllParts);
+
             int currentPart = 0;
 
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, new CourseDesignator(courseId))) {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 if (eventDB.GetCourseControl(courseControlId).exchange)
                     ++currentPart;
             }
@@ -1167,6 +1176,18 @@ namespace PurplePen
             }
 
             return fonts;
+        }
+
+        // See if course has any variations.
+        public static bool HasVariations(EventDB eventDB, Id<Course> courseId)
+        {
+            if (courseId.IsNone)
+                return false;  // All Control has no variations.
+            Course course = eventDB.GetCourse(courseId);
+            if (course.kind == CourseKind.Score)
+                return false;  // Score courses don't have variations.
+
+            return EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).Any(courseControlId => eventDB.GetCourseControl(courseControlId).split);
         }
 
         // Get the mapping from split course control to letter.

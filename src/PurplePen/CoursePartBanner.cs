@@ -56,7 +56,7 @@ namespace PurplePen
             UpdateNumberOfParts();
         }
 
-        // Return selected part, or 0 for all parts.
+        // Return selected part, or -1 for all parts.
         public int SelectedPart
         {
             get { return partComboBox.SelectedIndex - 1; }

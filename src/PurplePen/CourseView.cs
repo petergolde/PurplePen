@@ -592,6 +592,9 @@ namespace PurplePen
         {
             Course course = eventDB.GetCourse(courseDesignator.CourseId);
 
+            if (QueryEvent.HasVariations(eventDB, courseDesignator.CourseId) && courseDesignator.VariationPath == null)
+                throw new ApplicationException("Cannot create course view without specifying which variation");
+
             // Get sub-part of the course. firstCourseControls is the first control to process, lastCourseControl is the last one to 
             // process, or None if process to the end of the course.
             Id<CourseControl> firstCourseControl, lastCourseControl;
@@ -604,26 +607,29 @@ namespace PurplePen
             }
             
             CourseView courseView = new CourseView(eventDB, courseDesignator);
-            Id<CourseControl> courseControlId;
             int ordinal;
 
             courseView.courseName = course.name;
             courseView.scoreColumn = -1;
 
             ordinal = 1;
-            courseControlId = course.firstCourseControl;
             ordinal = course.firstControlOrdinal;
 
+            List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, courseDesignator).ToList();
+            int index = 0;
+
             // Increase the ordinal value for each normal control before the first one we're considering.
-            while (courseControlId.IsNotNone && courseControlId != firstCourseControl) { 
-                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            while (index < courseControls.Count && courseControls[index] != firstCourseControl) { 
+                CourseControl courseControl = eventDB.GetCourseControl(courseControls[index]);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
                 if (control.kind == ControlPointKind.Normal)
                     ++ordinal;
-                courseControlId = courseControl.nextCourseControl;
+                ++index;
             }
 
-            while (courseControlId.IsNotNone) { // also break loop at lastCourseControlId
+            for (; index < courseControls.Count; ++index) {
+                Id<CourseControl> courseControlId = courseControls[index];
+
                 ControlView controlView = new ControlView();
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
@@ -649,17 +655,15 @@ namespace PurplePen
 
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
-                if (courseControl.nextCourseControl.IsNotNone && courseControlId != lastCourseControl) {
-                    controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
+                if (index < courseControls.Count - 1 && courseControlId != lastCourseControl) {
+                    Id<CourseControl> nextCourseControl = courseControls[index + 1];
+                    controlView.legTo = new int[1] { nextCourseControl.id };   // legTo initially holds course control ids, later changed.
                 }
-
                 // Add the controlview.
                 courseView.controlViews.Add(controlView);
 
-                // Move to the next control.
                 if (courseControlId == lastCourseControl)
                     break;
-                courseControlId = courseControl.nextCourseControl;
             }
 
             // If this is a part that should also have the finish on it, and it isn't the last part, then 
@@ -873,7 +877,7 @@ namespace PurplePen
             this.variationPath = variationPath;
         }
 
-        public CourseDesignator(Id<Course> course, int part, VariationPath variationPath)
+        public CourseDesignator(Id<Course> course, VariationPath variationPath, int part)
             :this(course, part)
         {
             this.variationPath = variationPath;

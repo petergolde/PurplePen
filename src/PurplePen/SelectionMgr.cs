@@ -38,7 +38,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
-
+using System.Linq;
 
 namespace PurplePen
 {
@@ -433,6 +433,16 @@ namespace PurplePen
                 ClearSelection();
             }
 
+            // Check that variation still exists.
+            if (activeCourseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, activeCourseDesignator.CourseId)) {
+                Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, activeCourseDesignator.CourseId);
+                if (!variations.Values.Contains(activeCourseDesignator.VariationPath))
+                    activeCourseDesignator = activeCourseDesignator.WithAllVariations();
+            }
+
+            // Switch to default variation if needed.
+            activeCourseDesignator = controller.AddDefaultVariationIfNecessary(activeCourseDesignator);
+
             // Does the current part still exist?
             if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && activeCourseDesignator.Part >= QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId)) {
                 // No part that large any more.
@@ -695,5 +705,7 @@ namespace PurplePen
 
             selectedCourseObjects = list.ToArray();
         }
+
+
     }
 }

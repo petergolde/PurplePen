@@ -46,6 +46,7 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using System.Linq;
     using PurplePen.MapModel;
 
     [TestClass]
@@ -2646,6 +2647,76 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             Assert.AreEqual(41.0349922F, result.printAreaRectangle.Bottom, 0.001F);
             Assert.AreEqual(63.4918137F, result.printAreaRectangle.Right, 0.001F);
             Assert.AreEqual(-57.73753F, result.printAreaRectangle.Top, 0.001F);
+        }
+
+        [TestMethod]
+        public void ChangeVariations()
+        {
+            EventDB eventDB = controller.GetEventDB();
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("queryevent\\variations.ppen"), true);
+            Assert.IsTrue(success);
+
+            controller.SelectTab(0);
+            Assert.IsFalse(controller.HasVariations);
+
+            controller.SelectTab(1);   
+            Assert.IsTrue(controller.HasVariations);
+
+            Assert.AreEqual("A", controller.CurrentVariation.ToString());
+
+            object[] allVariations = controller.GetVariations();
+            string[] variationStrings = allVariations.Select(o => o.ToString()).ToArray();
+
+            CollectionAssert.AreEqual(variationStrings, new[] {
+                "A",
+                "BCDEFH",
+                "BCDEFI",
+                "BCDEFJ",
+                "BCDEGH",
+                "BCDEGI",
+                "BCDEGJ",
+                "BCEFDH",
+                "BCEFDI",
+                "BCEFDJ",
+                "BCEGDH",
+                "BCEGDI",
+                "BCEGDJ",
+                "BDCEFH",
+                "BDCEFI",
+                "BDCEFJ",
+                "BDCEGH",
+                "BDCEGI",
+                "BDCEGJ",
+                "BDEFCH",
+                "BDEFCI",
+                "BDEFCJ",
+                "BDEGCH",
+                "BDEGCI",
+                "BDEGCJ",
+                "BEFCDH",
+                "BEFCDI",
+                "BEFCDJ",
+                "BEFDCH",
+                "BEFDCI",
+                "BEFDCJ",
+                "BEGCDH",
+                "BEGCDI",
+                "BEGCDJ",
+                "BEGDCH",
+                "BEGDCI",
+                "BEGDCJ",
+            });
+
+            controller.CurrentVariation = allVariations[13];
+
+            Assert.AreEqual(variationStrings[13], controller.CurrentVariation.ToString());
+
+            controller.SelectTab(0);
+            Assert.IsFalse(controller.HasVariations);
+
+            controller.SelectTab(1);
+            Assert.IsTrue(controller.HasVariations);
         }
 
 

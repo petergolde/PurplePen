@@ -793,6 +793,84 @@ namespace PurplePen
             return QueryEvent.AnyMultipartCourses(eventDB);
         }
 
+        public bool HasVariations
+        {
+            get
+            {
+                return QueryEvent.HasVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+            }
+        }
+
+        // Get objects representing the variations, where ToString() is used to show variation text.
+        public object[] GetVariations()
+        {
+            Debug.Assert(HasVariations);
+
+            Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+
+            return (from v in variations orderby v.Key select new VariationDescriber(null, v.Key, v.Value)).ToArray();
+        }
+
+        public object CurrentVariation
+        {
+            get
+            {
+                Debug.Assert(HasVariations);
+                VariationPath currentVariationPath = selectionMgr.Selection.ActiveCourseDesignator.VariationPath;
+
+                Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+                return (from v in variations where object.Equals(v.Value, currentVariationPath) select new VariationDescriber(null, v.Key, v.Value)).First();
+            }
+            
+            set
+            {
+                Debug.Assert(HasVariations);
+
+                VariationDescriber newVariationDescriber = (VariationDescriber)value;
+                VariationPath newVariationPath = newVariationDescriber.variationPath;
+
+                CourseDesignator currentDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+                Id<Course> currentCourseId = currentDesignator.CourseId;
+
+                // Don't do anything if changing to current variation path.
+                if (currentDesignator.VariationPath.Equals(newVariationPath))
+                    return;
+
+                CourseDesignator newCourseDesignator = new CourseDesignator(currentCourseId, newVariationPath);
+                if (! currentDesignator.AllParts) {
+                    int currentPart = currentDesignator.Part;
+                    if (currentPart < QueryEvent.CountCourseParts(eventDB, currentDesignator))
+                        newCourseDesignator = new CourseDesignator(currentCourseId, newVariationPath, currentPart);
+                }
+
+                selectionMgr.SelectCourseView(newCourseDesignator);
+                CancelMode();
+            }
+        }
+
+        // If a course designation doesn't have a variation path, and the course has variations, pick the
+        // first variation and use it.
+        public CourseDesignator AddDefaultVariationIfNecessary(CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return courseDesignator;
+            if (!QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
+                return courseDesignator;
+            if (courseDesignator.VariationPath != null)
+                return courseDesignator;
+
+            Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
+            VariationPath firstVariationPart = (from v in variations orderby v.Key select v.Value).First();
+
+            int oldPart = courseDesignator.Part;
+            courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationPart);
+            if (oldPart >= 0 && oldPart < QueryEvent.CountCourseParts(eventDB, courseDesignator))
+                return new CourseDesignator(courseDesignator.CourseId, firstVariationPart, oldPart);
+            else
+                return courseDesignator;  
+        }
+
+
         // Get the text for the status line
         public string StatusText
         {
@@ -1385,6 +1463,8 @@ namespace PurplePen
         // is restricting to the page size, or is automatically computed, handles that computation.
         public RectangleF GetPrintAreaRectangle(CourseDesignator courseDesignator, PrintArea printArea)
         {
+            courseDesignator = AddDefaultVariationIfNecessary(courseDesignator);
+
             // Get the course view and course layout for this course.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             CourseLayout layout = new CourseLayout();
@@ -3341,6 +3421,42 @@ namespace PurplePen
                 string errorMessage = e.Message;
                 ui.ErrorMessage(errorMessage);
                 return false;
+            }
+        }
+
+        // Class that wraps variations, insulating the UI from knowing much about them. The UI
+        // just treats these as objects with ToString().
+        class VariationDescriber: IComparable<VariationDescriber>
+        {
+            internal readonly string name; // Name to display in UI.
+            internal readonly string variationString; // The variation string.
+            internal readonly VariationPath variationPath; // The variation path.
+
+            public VariationDescriber(string name, string variationString, VariationPath variationPath)
+            {
+                this.name = name;
+                this.variationString = variationString;
+                this.variationPath = variationPath;
+            }
+
+            public override string ToString()
+            {
+                if (name != null)
+                    return name;
+                else
+                    return variationString;
+            }
+
+            public int CompareTo(VariationDescriber other)
+            {
+                if (this.name == null && other.name != null)
+                    return 1;
+                else if (this.name != null && other.name == null)
+                    return -1;
+                else if (this.name != null && other.name != null)
+                    return string.Compare(this.name, other.name, StringComparison.CurrentCultureIgnoreCase);
+                else
+                    return string.Compare(this.variationString, other.variationString, StringComparison.InvariantCulture);
             }
         }
 
