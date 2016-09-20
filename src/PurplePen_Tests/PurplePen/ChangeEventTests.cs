@@ -254,6 +254,36 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeControlVariation()
+        {
+            Setup("changeevent\\variations.ppen");
+
+            undomgr.BeginCommand(116, "Move number");
+            ChangeEvent.ChangeNumberLocation(eventDB, CourseControlId(4), true, new PointF(45, 0));
+            undomgr.EndCommand(116);
+            undomgr.BeginCommand(111, "Change control");
+            ChangeEvent.ChangeControl(eventDB, CourseControlId(4), ControlId(25));
+            undomgr.EndCommand(111);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(4));
+            Assert.AreEqual(ControlId(25), courseControl.control);
+            Assert.IsFalse(courseControl.customNumberPlacement);
+            Assert.AreEqual(CourseControlId(5), courseControl.nextCourseControl);
+            Assert.AreEqual(CourseControlId(4), eventDB.GetCourseControl(CourseControlId(3)).nextCourseControl);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(4));
+            Assert.AreEqual(ControlId(4), courseControl.control);
+            Assert.IsTrue(courseControl.customNumberPlacement);
+            Assert.AreEqual(CourseControlId(5), courseControl.nextCourseControl);
+            Assert.AreEqual(CourseControlId(4), eventDB.GetCourseControl(CourseControlId(3)).nextCourseControl);
+        }
+
+        [TestMethod]
         public void ChangeControlExchange()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -271,6 +301,27 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsFalse(courseControl.exchange);
+        }
+
+        [TestMethod]
+        public void ChangeControlExchangeVariation()
+        {
+            Setup("changeevent\\variations.ppen");
+
+            undomgr.BeginCommand(119, "Add exchange");
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(4), true);
+            undomgr.EndCommand(119);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(4));
+            Assert.IsTrue(courseControl.exchange);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(4));
             Assert.IsFalse(courseControl.exchange);
         }
 
@@ -1001,6 +1052,155 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RemoveCourseControlVariation()
+        {
+            Setup("changeevent\\variations.ppen");
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(10));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(10)));
+
+            CourseControl cc = eventDB.GetCourseControl(CourseControlId(12));
+            Assert.AreEqual(11, cc.nextCourseControl.id);
+            cc = eventDB.GetCourseControl(CourseControlId(2));
+            Assert.AreEqual(CourseControlId(11), cc.splitEnd);
+            cc = eventDB.GetCourseControl(CourseControlId(24));
+            Assert.AreEqual(CourseControlId(11), cc.splitEnd);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            ///////////////////////////////
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(11));
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(10));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(11)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(10)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(12)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(24)));
+
+            cc = eventDB.GetCourseControl(CourseControlId(2));
+            Assert.AreEqual(3, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            ///////////////////////////////
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(4));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(4)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(16)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(15)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(17)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(18)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(25)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(26)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(27)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(19)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(20)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(21)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(22)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(23)));
+
+            cc = eventDB.GetCourseControl(CourseControlId(3));
+            Assert.AreEqual(5, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            ///////////////////////////////
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(25));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(16)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(15)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(25)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(4)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(17)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(18)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(26)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(27)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(19)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(20)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(21)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(22)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(23)));
+
+            cc = eventDB.GetCourseControl(CourseControlId(3));
+            Assert.AreEqual(4, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            ///////////////////////////////
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(24));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(24)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(12)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(2)));
+
+            cc = eventDB.GetCourseControl(CourseControlId(2));
+            Assert.AreEqual(3, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            ///////////////////////////////
+
+            undomgr.BeginCommand(912, "Remove Course Control");
+            ChangeEvent.RemoveCourseControl(eventDB, CourseId(1), CourseControlId(9));
+            undomgr.EndCommand(912);
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(9)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(28)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(13)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(29)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(14)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(12)));
+
+            cc = eventDB.GetCourseControl(CourseControlId(8));
+            Assert.AreEqual(10, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+        }
+
+        [TestMethod]
         public void RemoveLastCourseControl()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1139,6 +1339,43 @@ namespace PurplePen.Tests
             undomgr.BeginCommand(9216, "Move control");
             ChangeEvent.ChangeControlLocation(eventDB, ControlId(8), new PointF(20, 0));
             undomgr.EndCommand(9216);
+        }
+
+        [TestMethod]
+        public void RemoveControlInVariation()
+        {
+            Setup("changeevent\\variations.ppen");
+
+            // Remove control id 8.
+            undomgr.BeginCommand(9215, "Remove control");
+            ChangeEvent.RemoveControl(eventDB, ControlId(4));
+            undomgr.EndCommand(9215);
+
+            // Check consistency.
+            eventDB.Validate();
+
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(4)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(16)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(15)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(17)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(18)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(25)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(26)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(27)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(19)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(20)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(21)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(22)));
+            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(23)));
+
+            CourseControl cc = eventDB.GetCourseControl(CourseControlId(3));
+            Assert.AreEqual(5, cc.nextCourseControl.id);
+            Assert.IsFalse(cc.split);
+            Assert.IsNull(cc.splitCourseControls);
+            Assert.IsTrue(cc.splitEnd.IsNone);
+
+            undomgr.Undo();
+            eventDB.Validate();
         }
 
         [TestMethod]

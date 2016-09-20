@@ -1,0 +1,11 @@
+Things to worry about for variations:
+
+- Text lines above/below -- how do these work with variations and with butterfly courses
+- Add report for calculating teams assignment to variations.
+- XML export for variations
+- Allow viewing of variations in UI for course selection. Review all places where that UI is used.
+- Allow per-variation specials? Probably not worth it.
+
+- ChangeEvent.DuplicateCourse
+
+- remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.

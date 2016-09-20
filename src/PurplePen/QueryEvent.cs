@@ -1190,6 +1190,19 @@ namespace PurplePen
             return EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).Any(courseControlId => eventDB.GetCourseControl(courseControlId).split);
         }
 
+        // If a course control is the beginning of a variation split, return all course controls assigned to that variation split.
+        // Otherwise, return just that course control.
+        public static IEnumerable<Id<CourseControl>> AllVariationsOfCourseControl(EventDB eventDB, Id<CourseControl> courseControlId)
+        {
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            if (courseControl.split) {
+                return courseControl.splitCourseControls;
+            }
+            else {
+                return new[] { courseControlId };
+            }
+        }
+
         // Get the mapping from split course control to letter.
         private static Dictionary<Id<CourseControl>, char> GetVariantMapping(EventDB eventDB, CourseDesignator courseDesignator)
         {

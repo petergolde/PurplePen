@@ -135,21 +135,24 @@ namespace PurplePen
         {
             Debug.Assert(newControlId.IsNotNone);
 
-            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
-            Debug.Assert(eventDB.GetControl(courseControl.control).kind == ControlPointKind.Normal);
-            Debug.Assert(eventDB.GetControl(newControlId).kind == ControlPointKind.Normal);
+            foreach (Id<CourseControl> variantCourseControlId in QueryEvent.AllVariationsOfCourseControl(eventDB, courseControlId)) {
+                CourseControl courseControl = eventDB.GetCourseControl(variantCourseControlId);
+                Debug.Assert(eventDB.GetControl(courseControl.control).kind == ControlPointKind.Normal);
+                Debug.Assert(eventDB.GetControl(newControlId).kind == ControlPointKind.Normal);
 
-            courseControl = (CourseControl) courseControl.Clone();
-            courseControl.control = newControlId;
-            courseControl.customNumberPlacement = false;   // any custome number placement is no longer valid
+                courseControl = (CourseControl)courseControl.Clone();
+                courseControl.control = newControlId;
+                courseControl.customNumberPlacement = false;   // any custome number placement is no longer valid
 
-            eventDB.ReplaceCourseControl(courseControlId, courseControl);
+                eventDB.ReplaceCourseControl(variantCourseControlId, courseControl);
+            }
         }
 
         // Change the score for a course-control. Does not validate the score. Use 0 for no score.
         public static void ChangeScore(EventDB eventDB, Id<CourseControl> courseControlId, int newScore)
         {
             CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            Debug.Assert(!courseControl.split); // shouldn't have split course control on a course.
 
             courseControl = (CourseControl)courseControl.Clone();
             courseControl.points = newScore;
@@ -189,12 +192,13 @@ namespace PurplePen
         // Change if a course-control has a map exchange. 
         public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
         {
-            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
-
-            if (courseControl.exchange != isExchange) {
-                courseControl = (CourseControl)courseControl.Clone();
-                courseControl.exchange = isExchange;
-                eventDB.ReplaceCourseControl(courseControlId, courseControl);
+            foreach (Id<CourseControl> variantCourseControlId in QueryEvent.AllVariationsOfCourseControl(eventDB, courseControlId)) {
+                CourseControl courseControl = eventDB.GetCourseControl(variantCourseControlId);
+                if (courseControl.exchange != isExchange) {
+                    courseControl = (CourseControl)courseControl.Clone();
+                    courseControl.exchange = isExchange;
+                    eventDB.ReplaceCourseControl(variantCourseControlId, courseControl);
+                }
             }
         }
 
@@ -682,37 +686,65 @@ namespace PurplePen
         // Remove a control from a course. Caller must ensure the current is actually in this course.
         public static void RemoveCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdRemove)
         {
-            // UNDONE: This function does not correctly handle splits and joins yet.
+            Course course = eventDB.GetCourse(courseId);
+            List<Id<CourseControl>> allCourseControls = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).ToList();
 
-            Id<CourseControl> currentId;   // current course control id
+            // This the course control to change to. Could be None.
             Id<CourseControl> afterRemove = eventDB.GetCourseControl(courseControlIdRemove).nextCourseControl;
 
-            Course course = eventDB.GetCourse(courseId);
+            // For each course control, go throught and change referecnes to the subsequent control.
+            foreach (Id<CourseControl> courseControlId in allCourseControls) {
+                bool changed = false;
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                CourseControl clone = (CourseControl)courseControl.Clone();
+
+                if (courseControl.nextCourseControl == courseControlIdRemove) {
+                    changed = true;
+                    clone.nextCourseControl = afterRemove;
+                }
+                if (courseControl.split && courseControl.splitEnd == courseControlIdRemove) {
+                    changed = true;
+                    clone.splitEnd = afterRemove;
+                    if (afterRemove.IsNone) {
+                        clone.split = false;  // No join control means we remove the split entirely.
+                        clone.splitCourseControls = null;
+                    }
+                }
+                if (clone.split && clone.splitCourseControls.Contains(courseControlIdRemove)) {
+                    changed = true;
+                    clone.splitCourseControls = clone.splitCourseControls.Where(id => id != courseControlIdRemove).ToArray();
+                    if (clone.splitCourseControls.Length < 2) {
+                        clone.split = false;
+                        clone.splitCourseControls = null;
+                        clone.splitEnd = Id<CourseControl>.None;
+                    }
+                }
+                if (changed) {
+                    eventDB.ReplaceCourseControl(courseControlId, clone);
+                }
+            }
+
             if (course.firstCourseControl == courseControlIdRemove) {
                 // Special case -- remove the first course control.
                 course = (Course) course.Clone();
                 course.firstCourseControl = afterRemove;
                 eventDB.ReplaceCourse(courseId, course);
-                eventDB.RemoveCourseControl(courseControlIdRemove);
-                return;
             }
 
-            // Loop through all the course controls, remove one when we find it.
-            currentId = course.firstCourseControl;
-            while (currentId.IsNotNone) {
-                CourseControl current = eventDB.GetCourseControl(currentId);
-                if (current.nextCourseControl == courseControlIdRemove) {
-                    current = (CourseControl) current.Clone();
-                    current.nextCourseControl = afterRemove;
-                    eventDB.ReplaceCourseControl(currentId, current);
-                    eventDB.RemoveCourseControl(courseControlIdRemove);
-                    return;
+            // Remove a split could orphan more than one control. Go through and find orphaned ones.
+            HashSet<Id<CourseControl>> newCourseControls = new HashSet<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)));
+            List<Id<CourseControl>> removedCourseControls = new List<Id<CourseControl>>();
+
+            foreach (Id<CourseControl> courseControlId in allCourseControls) {
+                if (!newCourseControls.Contains(courseControlId)) {
+                    eventDB.RemoveCourseControl(courseControlId);
+                    removedCourseControls.Add(courseControlId);
                 }
-
-                currentId = current.nextCourseControl;
             }
 
-            throw new InvalidOperationException("Course Control not found");
+            if (! removedCourseControls.Contains(courseControlIdRemove)) {
+                Debug.Fail("Did not remove the course control we were removing.");
+            }
         }
 
         // Removes a control from the event. If the control is present in any course as a course-control, those
@@ -721,9 +753,14 @@ namespace PurplePen
         {
             // Find all of the courses/course-controls that are this control.
             foreach (Id<Course> courseId in QueryEvent.CoursesUsingControl(eventDB, controlId)) {
-                foreach (Id<CourseControl> courseControlId in QueryEvent.GetCourseControlsInCourse(eventDB, new CourseDesignator(courseId), controlId)) {
-                    RemoveCourseControl(eventDB, courseId, courseControlId);
-                }
+                Id<CourseControl> courseControlId;
+                do {
+                    // Remove one course control could remove multiple, so only remove first of the course controls that use that control, then
+                    // check again.
+                    courseControlId = QueryEvent.GetCourseControlsInCourse(eventDB, new CourseDesignator(courseId), controlId).FirstOrDefault();
+                    if (courseControlId.IsNotNone)
+                        RemoveCourseControl(eventDB, courseId, courseControlId);
+                } while (courseControlId.IsNotNone);
             }
 
             // Find all of the legs that use this control and remove them.

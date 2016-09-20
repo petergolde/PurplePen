@@ -709,6 +709,8 @@ namespace PurplePen
                 CourseControl courseCtl = validateInfo.eventDB.GetCourseControl(nextCourseControl);
 
                 if (courseCtl.split) {
+                    if (kind == CourseKind.Score)
+                        throw new ApplicationException("Score courses cannot have split variations");
                     if (courseCtl.splitCourseControls == null)
                         throw new ApplicationException("no variations listed for variation start control");
 
@@ -1036,8 +1038,23 @@ namespace PurplePen
             if (split) {
                 if (splitCourseControls == null)
                     throw new ApplicationException(string.Format("Course control '{0}' must have next control array", id));
-                for (int i = 0; i < splitCourseControls.Length; ++i)
+                if (splitCourseControls.Length < 2)
+                    throw new ApplicationException(string.Format("Course control '{0}' must have next control array with at least two controls.", id));
+                for (int i = 0; i < splitCourseControls.Length; ++i) {
                     validateInfo.eventDB.CheckCourseControlId(splitCourseControls[i]);
+                    if (validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).control != control)
+                        throw new ApplicationException(string.Format("Course control '{0}' and '{1}' should have same control.", id, splitCourseControls[i].id));
+                    if (validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).exchange != exchange)
+                        throw new ApplicationException(string.Format("Course control '{0}' and '{1}' should have same exchange.", id, splitCourseControls[i].id));
+                    if (validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).splitEnd != splitEnd)
+                        throw new ApplicationException(string.Format("Course control '{0}' and '{1}' should have same split end.", id, splitCourseControls[i].id));
+                    if (validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).split == false)
+                        throw new ApplicationException(string.Format("Course control '{1}' should be split, because '{0}' is.", id, splitCourseControls[i].id));
+                    if (validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).splitCourseControls.Length != splitCourseControls.Length)
+                        throw new ApplicationException(string.Format("Course control '{0}' and '{1}' should have same length of split.", id, splitCourseControls[i].id));
+                    if (!validateInfo.eventDB.GetCourseControl(splitCourseControls[i]).splitCourseControls.Contains(id))
+                        throw new ApplicationException(string.Format("Course control '{1}' should contain '{0}' in splitCourseControls.", id, splitCourseControls[i].id));
+                }
             }
             else {
                 if (splitCourseControls != null)
