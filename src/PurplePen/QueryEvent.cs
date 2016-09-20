@@ -761,15 +761,8 @@ namespace PurplePen
                 else {
                     // Adding after courseControl1.
                     CourseControl before = (CourseControl)eventDB.GetCourseControl(courseControl1);
-                    if (before.split) {
-                        // TODO: handle splits.
-                        throw new NotImplementedException("Not yet implemented.");    // UNDONE: not yet implemented
-                    }
-                    else {
-                        // Not a split.
-                        courseControl2 = before.nextCourseControl;
-                        return;
-                    }
+                    courseControl2 = before.nextCourseControl;
+                    return;
                 }
             }
         }

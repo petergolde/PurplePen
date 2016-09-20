@@ -474,30 +474,40 @@ namespace PurplePen
                     ChangeCourseSortOrder(eventDB, courseToChangeId, sortOrder + 1);
             }
 
+            // Duplicate the course controls with blank course controls, and record the mapping.
+            Dictionary<Id<CourseControl>, Id<CourseControl>> mapCourseControl = new Dictionary<Id<CourseControl>, Id<CourseControl>>();
+
+            foreach (Id<CourseControl> oldCourseControlId in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(oldCourseId))) {
+                CourseControl newCourseControl = new CourseControl();
+                Id<CourseControl> newCourseControlId = eventDB.AddCourseControl(newCourseControl);
+                mapCourseControl[oldCourseControlId] = newCourseControlId;
+            }
+
             // Create a new course with no course controls in it and the new name, sort order.
             Course newCourse = (Course)oldCourse.Clone();
-            newCourse.firstCourseControl = Id<CourseControl>.None;
+            if (oldCourse.firstCourseControl.IsNotNone)
+                newCourse.firstCourseControl = mapCourseControl[oldCourse.firstCourseControl];
             newCourse.name = newName;
             newCourse.sortOrder = newSortOrder;
             Id<Course> newCourseId =  eventDB.AddCourse(newCourse);
 
-            // Duplicate the course controls.
-            Id<CourseControl> previousCourseControlId = Id<CourseControl>.None;
+            // Now copy all the old course control, updating all the linking fields.
+
             foreach (Id<CourseControl> oldCourseControlId in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(oldCourseId))) {
                 // Add a new course control to the new course.
                 CourseControl oldCourseControl = eventDB.GetCourseControl(oldCourseControlId);
-                Id<CourseControl> newCourseControlId = AddCourseControl(eventDB, oldCourseControl.control, newCourseId, previousCourseControlId, Id<CourseControl>.None);
-                
-                // Clone all fields of old course control, except the linking fields.
                 CourseControl newCourseControl = (CourseControl) oldCourseControl.Clone();
-                newCourseControl.nextCourseControl = eventDB.GetCourseControl(newCourseControlId).nextCourseControl;
-                // TODO: handle splits.
-                if (oldCourseControl.split)
-                    throw new NotImplementedException();
-                //newCourseControl.nextSplitCourseControls = eventDB.GetCourseControl(newCourseControlId).nextSplitCourseControls;
-                eventDB.ReplaceCourseControl(newCourseControlId, newCourseControl);
+                if (newCourseControl.nextCourseControl.IsNotNone)
+                    newCourseControl.nextCourseControl = mapCourseControl[newCourseControl.nextCourseControl];
+                if (newCourseControl.splitEnd.IsNotNone)
+                    newCourseControl.splitEnd = mapCourseControl[newCourseControl.splitEnd];
+                if (newCourseControl.splitCourseControls != null) {
+                    for (int i = 0; i < newCourseControl.splitCourseControls.Length; ++i) {
+                        newCourseControl.splitCourseControls[i] = mapCourseControl[newCourseControl.splitCourseControls[i]];
+                    }
+                }
 
-                previousCourseControlId = newCourseControlId;
+                eventDB.ReplaceCourseControl(mapCourseControl[oldCourseControlId], newCourseControl);
             }
 
             // Duplicate any specials from the old course.
@@ -806,6 +816,9 @@ namespace PurplePen
             CourseControl newCourseControl;
             Id<CourseControl> newCourseControlId;
 
+            // When adding a new course controls, they fit into variations fine because we are never adding or changing an split, just
+            // fitting into existing splits.
+
             if (courseControl1.IsNone) {
                 // Adding at start.
                 Course course = (Course) eventDB.GetCourse(courseId).Clone();
@@ -818,17 +831,11 @@ namespace PurplePen
             else {
                 // Adding after courseControl1.
                 CourseControl before = (CourseControl) eventDB.GetCourseControl(courseControl1).Clone();
-                if (before.split) {
-                    throw new NotImplementedException("Not yet implemented.");    // UNDONE: not yet implemented
-                }
-                else {
-                    // Not a split.
-                    Debug.Assert(courseControl2 == before.nextCourseControl);
-                    newCourseControl = new CourseControl(controlId, before.nextCourseControl);
-                    newCourseControlId = eventDB.AddCourseControl(newCourseControl);
-                    before.nextCourseControl = newCourseControlId;
-                    eventDB.ReplaceCourseControl(courseControl1, before);
-                }
+                Debug.Assert(courseControl2 == before.nextCourseControl);
+                newCourseControl = new CourseControl(controlId, before.nextCourseControl);
+                newCourseControlId = eventDB.AddCourseControl(newCourseControl);
+                before.nextCourseControl = newCourseControlId;
+                eventDB.ReplaceCourseControl(courseControl1, before);
             }
 
             return newCourseControlId;

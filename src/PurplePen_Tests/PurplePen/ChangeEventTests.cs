@@ -706,6 +706,7 @@ namespace PurplePen.Tests
             DuplicateCourseTestAllCourses("changeevent\\sampleevent12.ppen");
             DuplicateCourseTestAllCourses("changeevent\\SpecialLegs.coursescribe");
             DuplicateCourseTestAllCourses("changeevent\\sampleevent7.coursescribe");
+            DuplicateCourseTestAllCourses("changeevent\\variations.ppen");
         }
 
         [TestMethod]
