@@ -15,6 +15,7 @@ namespace PurplePen
     public partial class CoursePartBanner : UserControl
     {
         private int numberOfParts;
+        private object[] availableVariations;
 
         public CoursePartBanner()
         {
@@ -24,6 +25,7 @@ namespace PurplePen
             UpdateNumberOfParts();
         }
 
+        public event EventHandler SelectedVariationChanged;
         public event EventHandler SelectedPartChanged;
         public event EventHandler PropertiesClicked;
 
@@ -40,6 +42,55 @@ namespace PurplePen
             }
         }
 
+        public object[] AvailableVariations
+        {
+            get
+            {
+                return availableVariations;
+            }
+            set
+            {
+                if (value == null)
+                    availableVariations = null;
+                else
+                availableVariations = (object[]) value.Clone();
+
+                object currentVariation = CurrentVariation;
+
+                variationsComboBox.Items.Clear();
+                if (availableVariations != null) {
+                    variationsComboBox.Items.AddRange(availableVariations);
+                }
+
+                CurrentVariation = currentVariation;
+            }
+        }
+
+        public object CurrentVariation
+        {
+            get
+            {
+                return variationsComboBox.SelectedItem;
+            }
+            set
+            {
+                variationsComboBox.SelectedItem = value;
+            }
+        }
+
+        public bool EnableParts
+        {
+            get
+            {
+                return partComboBox.Visible;
+            }
+            set
+            {
+                partComboBox.Visible = value;
+                coursePartLabel.Visible = value;
+            }
+        }
+
         public bool EnableProperties
         {
             get {
@@ -48,6 +99,19 @@ namespace PurplePen
 
             set {
                 buttonProperties.Visible = value;
+            }
+        }
+
+        public bool EnableVariations
+        {
+            get
+            {
+                return variationsComboBox.Visible;
+            }
+            set
+            {
+                variationsComboBox.Visible = value;
+                variationsLabel.Visible = value;
             }
         }
 
@@ -88,10 +152,17 @@ namespace PurplePen
             partComboBox.EndUpdate();
         }
 
+
         private void partComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SelectedPartChanged != null)
                 SelectedPartChanged(this, EventArgs.Empty);
+        }
+
+        private void variationsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SelectedVariationChanged != null)
+                SelectedVariationChanged(this, EventArgs.Empty);
         }
 
         private void CoursePartBanner_Paint(object sender, PaintEventArgs e)
@@ -106,5 +177,6 @@ namespace PurplePen
             if (PropertiesClicked != null)
                 PropertiesClicked(this, EventArgs.Empty);
         }
+
     }
 }

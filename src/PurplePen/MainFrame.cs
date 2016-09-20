@@ -390,13 +390,31 @@ namespace PurplePen
         // Update the part banner in the map pane.
         void UpdatePartBanner()
         {
-            if (controller.NumberOfParts <= 1) {
+            if (controller.NumberOfParts <= 1 && !controller.HasVariations) {
                 SetBannerVisibility(false);
             }
             else {
-                coursePartBanner.NumberOfParts = controller.NumberOfParts;
-                coursePartBanner.SelectedPart = controller.CurrentPart;
-                UpdatePartBannerProperties();
+                if (controller.HasVariations) {
+                    coursePartBanner.AvailableVariations = controller.GetVariations();
+                    coursePartBanner.CurrentVariation = controller.CurrentVariation;
+                    coursePartBanner.EnableVariations = true;
+                }
+                else {
+                    coursePartBanner.AvailableVariations = null;
+                    coursePartBanner.EnableVariations = false;
+                }
+
+                if (controller.NumberOfParts >= 2) {
+                    coursePartBanner.NumberOfParts = controller.NumberOfParts;
+                    coursePartBanner.SelectedPart = controller.CurrentPart;
+                    coursePartBanner.EnableParts = true;
+                    UpdatePartBannerProperties();
+                }
+                else {
+                    coursePartBanner.EnableParts = false;
+                    coursePartBanner.EnableProperties = false;
+                }
+
                 SetBannerVisibility(true);
             }
         }
@@ -817,6 +835,11 @@ namespace PurplePen
                 // the user to recover. [Bug 1688896]
                 Application.OnThreadException(excep);
             }
+        }
+
+        private void coursePartBanner_SelectedVariationChanged(object sender, EventArgs e)
+        {
+            controller.CurrentVariation = coursePartBanner.CurrentVariation;
         }
 
         private void coursePartBanner_SelectedPartChanged(object sender, EventArgs e)

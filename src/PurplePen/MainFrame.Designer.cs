@@ -385,12 +385,15 @@ namespace PurplePen
             // 
             // coursePartBanner
             // 
+            this.coursePartBanner.AvailableVariations = null;
             this.coursePartBanner.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.coursePartBanner.CurrentVariation = null;
             resources.ApplyResources(this.coursePartBanner, "coursePartBanner");
             this.coursePartBanner.EnableProperties = true;
             this.coursePartBanner.Name = "coursePartBanner";
             this.coursePartBanner.NumberOfParts = 1;
             this.coursePartBanner.SelectedPart = -1;
+            this.coursePartBanner.SelectedVariationChanged += new System.EventHandler(this.coursePartBanner_SelectedVariationChanged);
             this.coursePartBanner.SelectedPartChanged += new System.EventHandler(this.coursePartBanner_SelectedPartChanged);
             this.coursePartBanner.PropertiesClicked += new System.EventHandler(this.coursePartBanner_PropertiesClicked);
             // 

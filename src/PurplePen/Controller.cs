@@ -3458,6 +3458,22 @@ namespace PurplePen
                 else
                     return string.Compare(this.variationString, other.variationString, StringComparison.InvariantCulture);
             }
+
+            public override bool Equals(object obj)
+            {
+                VariationDescriber other = obj as VariationDescriber;
+                if (other == null)
+                    return false;
+
+                return (object.Equals(name, other.name) &&
+                        object.Equals(variationString, other.variationString) &&
+                        object.Equals(variationPath, other.variationPath));
+            }
+
+            public override int GetHashCode()
+            {
+                return ((name == null) ? name.GetHashCode() : 542) + variationString.GetHashCode();
+            }
         }
 
     }

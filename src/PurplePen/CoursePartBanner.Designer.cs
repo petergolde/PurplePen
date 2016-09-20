@@ -29,9 +29,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoursePartBanner));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.coursePartLabel = new System.Windows.Forms.Label();
+            this.variationsLabel = new System.Windows.Forms.Label();
             this.partComboBox = new System.Windows.Forms.ComboBox();
             this.buttonProperties = new System.Windows.Forms.Button();
+            this.variationsComboBox = new System.Windows.Forms.ComboBox();
+            this.coursePartLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,15 +41,17 @@
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.coursePartLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.partComboBox, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonProperties, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.variationsComboBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.variationsLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.partComboBox, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonProperties, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.coursePartLabel, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
-            // coursePartLabel
+            // variationsLabel
             // 
-            resources.ApplyResources(this.coursePartLabel, "coursePartLabel");
-            this.coursePartLabel.Name = "coursePartLabel";
+            resources.ApplyResources(this.variationsLabel, "variationsLabel");
+            this.variationsLabel.Name = "variationsLabel";
             // 
             // partComboBox
             // 
@@ -63,6 +67,19 @@
             this.buttonProperties.Name = "buttonProperties";
             this.buttonProperties.UseVisualStyleBackColor = true;
             this.buttonProperties.Click += new System.EventHandler(this.buttonProperties_Click);
+            // 
+            // variationsComboBox
+            // 
+            this.variationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.variationsComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.variationsComboBox, "variationsComboBox");
+            this.variationsComboBox.Name = "variationsComboBox";
+            this.variationsComboBox.SelectedIndexChanged += new System.EventHandler(this.variationsComboBox_SelectedIndexChanged);
+            // 
+            // coursePartLabel
+            // 
+            resources.ApplyResources(this.coursePartLabel, "coursePartLabel");
+            this.coursePartLabel.Name = "coursePartLabel";
             // 
             // CoursePartBanner
             // 
@@ -81,9 +98,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label coursePartLabel;
+        private System.Windows.Forms.Label variationsLabel;
         private System.Windows.Forms.ComboBox partComboBox;
         private System.Windows.Forms.Button buttonProperties;
-
+        private System.Windows.Forms.ComboBox variationsComboBox;
+        private System.Windows.Forms.Label coursePartLabel;
     }
 }
