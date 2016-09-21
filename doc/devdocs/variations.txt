@@ -1,11 +1,19 @@
 Things to worry about for variations:
 
+- UI to add loop/fork
+- UI to change variation naming
+- UI to delete loop/fork.
 - Text lines above/below -- how do these work with variations and with butterfly courses
 - Add report for calculating teams assignment to variations.
 - XML export for variations
 - Allow viewing of variations in UI for course selection. Review all places where that UI is used.
 - Allow per-variation specials? Probably not worth it.
-
-- ChangeEvent.DuplicateCourse
+- Length -- need to calculate range across all variations.
 
 - remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.
+
+- When moving number on loop control, move for all loops variations. Not for forks, though.
+
+- How to deal with climb. Have per-variation climb? Probably not.
+
+- Maybe. Add topology view. Would this replace the map, the description pane, or something else. This is a lot of work.

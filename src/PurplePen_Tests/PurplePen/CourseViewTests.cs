@@ -45,6 +45,7 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using System.Linq;
     using PurplePen.MapModel;
 
     [TestClass]
@@ -100,7 +101,16 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+                CourseDesignator designator;
+                if (QueryEvent.HasVariations(eventDB, courseId)) {
+                    var variationPath = QueryEvent.GetAllVariations(eventDB, courseId).First().Value;
+                    designator = new CourseDesignator(courseId, variationPath);
+                }
+                else {
+                    designator = new CourseDesignator(courseId);
+                }
+
+                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, designator);
                 DumpCourseView(courseView, Console.Out);
                 Console.WriteLine();
             }

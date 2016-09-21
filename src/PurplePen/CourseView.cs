@@ -615,7 +615,8 @@ namespace PurplePen
             ordinal = 1;
             ordinal = course.firstControlOrdinal;
 
-            List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, courseDesignator).ToList();
+            // To get the ordinals correct, we get the course control ids for all parts.
+            List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, courseDesignator.WithAllParts()).ToList();
             int index = 0;
 
             // Increase the ordinal value for each normal control before the first one we're considering.
@@ -925,6 +926,11 @@ namespace PurplePen
                 return new CourseDesignator(courseId);
             else
                 return new CourseDesignator(courseId, part);
+        }
+
+        public CourseDesignator WithAllParts()
+        {
+            return new CourseDesignator(courseId, variationPath);
         }
 
         public CourseDesignator Clone()
