@@ -2669,6 +2669,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             string[] variationStrings = allVariations.Select(o => o.ToString()).ToArray();
 
             CollectionAssert.AreEqual(variationStrings, new[] {
+                "All Variations",
                 "A",
                 "BCDEFH",
                 "BCDEFI",

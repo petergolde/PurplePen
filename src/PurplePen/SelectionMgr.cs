@@ -440,9 +440,6 @@ namespace PurplePen
                     activeCourseDesignator = activeCourseDesignator.WithAllVariations();
             }
 
-            // Switch to default variation if needed.
-            activeCourseDesignator = controller.AddDefaultVariationIfNecessary(activeCourseDesignator);
-
             // Does the current part still exist?
             if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && activeCourseDesignator.Part >= QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId)) {
                 // No part that large any more.

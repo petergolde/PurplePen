@@ -801,6 +801,8 @@ namespace PurplePen
             }
         }
 
+        readonly VariationDescriber allVariations = new VariationDescriber(MiscText.AllVariations, "", null);
+
         // Get objects representing the variations, where ToString() is used to show variation text.
         public object[] GetVariations()
         {
@@ -808,7 +810,7 @@ namespace PurplePen
 
             Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
 
-            return (from v in variations orderby v.Key select new VariationDescriber(null, v.Key, v.Value)).ToArray();
+            return (new[] { allVariations }).Concat(from v in variations orderby v.Key select new VariationDescriber(null, v.Key, v.Value)).ToArray();
         }
 
         public object CurrentVariation
@@ -817,6 +819,9 @@ namespace PurplePen
             {
                 Debug.Assert(HasVariations);
                 VariationPath currentVariationPath = selectionMgr.Selection.ActiveCourseDesignator.VariationPath;
+
+                if (currentVariationPath == null)
+                    return allVariations;
 
                 Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
                 return (from v in variations where object.Equals(v.Value, currentVariationPath) select new VariationDescriber(null, v.Key, v.Value)).First();
@@ -833,7 +838,7 @@ namespace PurplePen
                 Id<Course> currentCourseId = currentDesignator.CourseId;
 
                 // Don't do anything if changing to current variation path.
-                if (currentDesignator.VariationPath.Equals(newVariationPath))
+                if (object.Equals(currentDesignator.VariationPath, newVariationPath))
                     return;
 
                 CourseDesignator newCourseDesignator = new CourseDesignator(currentCourseId, newVariationPath);

@@ -218,6 +218,20 @@ namespace PurplePen
             return line;
         }
 
+        // Get the header line for the All Controls listing.
+        private DescriptionLine GetAllVariationsHeaderLine()
+        {
+            DescriptionLine line = new DescriptionLine();
+
+            line.kind = DescriptionLineKind.Header2Box;
+            line.boxes = new object[2];
+            line.boxes[0] = MiscText.AllVariations;
+            line.boxes[1] = string.Format(symbolDB["number_controls"].GetText(language), courseView.TotalNormalControls);
+            line.textual = (string)line.boxes[1];
+
+            return line;
+        }
+
         // Get a description line for the header line for a score course, which contains the total points
         private DescriptionLine GetScoreHeaderLine()
         {
@@ -494,6 +508,7 @@ namespace PurplePen
                     return true;
 
                 case CourseView.CourseViewKind.Normal:
+                case CourseView.CourseViewKind.AllVariations:
                     // Normal list shows all control kinds. 
 
                     // filter out duplicate crossing points.
@@ -562,13 +577,16 @@ namespace PurplePen
             // Get the header line, depending on the kind of course.
             switch (kind) {
                 case CourseView.CourseViewKind.Normal:
-                line = GetNormalHeaderLine(); break;
+                    line = GetNormalHeaderLine(); break;
 
                 case CourseView.CourseViewKind.AllControls:
                     line = GetAllControlsHeaderLine(); break;
 
                 case CourseView.CourseViewKind.Score:
                     line = GetScoreHeaderLine(); break;
+
+                case CourseView.CourseViewKind.AllVariations:
+                    line = GetAllVariationsHeaderLine(); break;
 
                 default:
                     Debug.Fail("unknown CourseViewKind"); line = null;  break;
@@ -616,7 +634,7 @@ namespace PurplePen
                 }
 
                 // Add any map exchange lines.
-                if (courseView.Kind == CourseView.CourseViewKind.Normal) {
+                if (courseView.Kind == CourseView.CourseViewKind.Normal || courseView.Kind == CourseView.CourseViewKind.AllVariations) {
                     if (controlNext != null && controlNext.kind == ControlPointKind.MapExchange) {
                         line = GetMapExchangeLine(controlView, courseView.ControlViews[controlView.legTo[0]]);
                         list.Add(line);

@@ -133,6 +133,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Variations.
+        /// </summary>
+        internal static string AllVariations {
+            get {
+                return ResourceManager.GetString("AllVariations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to course setting for orienteering.
         /// </summary>
         internal static string AppSubtitle {
