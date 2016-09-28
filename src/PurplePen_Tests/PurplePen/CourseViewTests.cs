@@ -64,7 +64,9 @@ namespace PurplePen.Tests
             for (int i = 0; i < courseView.ControlViews.Count; ++i) {
                 CourseView.ControlView controlView = courseView.ControlViews[i];
 
-                writer.Write("{0,2}: [{1,2}] Ids:{2,3},{3,3}", i, controlView.ordinal, controlView.controlId, controlView.courseControlId);
+                writer.Write("{0,2}: [{1,2}] Ids:{2,3}", i, controlView.ordinal, controlView.controlId, controlView.courseControlIds[0]);
+                for (int j = 0; j < controlView.courseControlIds.Length; ++j)
+                    writer.Write(",{0,3}", controlView.courseControlIds[j]);
                 if (controlView.hiddenControl)
                     writer.Write(" hidden");
                 writer.WriteLine();

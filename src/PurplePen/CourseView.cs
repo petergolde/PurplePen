@@ -54,18 +54,18 @@ namespace PurplePen
         public enum CourseViewKind {
             Normal,
             AllControls,
-            Score
+            Score,
+            AllVariations  // All Variations of a course with variations.
         };
 
         public class ControlView
         {
             public int ordinal;                 // Ordinal number (number in the description sheet).
                                                 // 0 = start, -1 = N/A (finish, crossing, flagged route, etc).
-            public char variation;              // If this is a variation control, the character A-Z of the variation.
             public Id<ControlPoint> controlId;               // ID of control in the event DB
-            public Id<CourseControl> courseControlId;         // ID of course control in the event DB
+            public Id<CourseControl>[] courseControlIds;        // ID of course control in the event DB; always singleton except for AllVariations. 
             public int[] legTo;                 // Indices in the list of the control a leg should be drawn to
-            public Id<Leg>[] legId;                 // If special leg information, the ID in the eventDB.
+            public Id<Leg>[] legId;             // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
             public bool hiddenControl;          // If true, hide this control on map, but not legs to it (used for map exchanges)
         };
@@ -344,7 +344,7 @@ namespace PurplePen
                     if (courseControlId.IsNotNone) {
                         int j;
                         for (j = i + 1; j < controlViews.Count; ++j) {
-                            if (courseControlId == controlViews[j].courseControlId) {
+                            if (controlViews[j].courseControlIds.Contains(courseControlId)) {
                                 controlViews[i].legTo[legIndex] = j;
                                 controlViews[i].legId[legIndex] = QueryEvent.FindLeg(eventDB, controlViews[i].controlId, controlViews[j].controlId);
                                 break;
@@ -384,9 +384,9 @@ namespace PurplePen
                         ++normalControlCount;
                 }
 
-                if (controlView.courseControlId.IsNotNone) {
+                if (controlView.courseControlIds[0].IsNotNone) {
                     ControlPoint control = eventDB.GetControl(controlView.controlId);
-                    CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlId);
+                    CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlIds[0]);
                     if (control.kind == ControlPointKind.Normal && courseControl.points > 0)
                         totalPoints += courseControl.points;
                 }
@@ -517,12 +517,11 @@ namespace PurplePen
 
                 ControlView controlView = new ControlView();
 
-                controlView.courseControlId = Id<CourseControl>.None;
+                controlView.courseControlIds = new[] { Id<CourseControl>.None };
                 controlView.controlId = controlId;
 
-                // All controls doesn't have ordinals or variations.
+                // All controls doesn't have ordinals.
                 controlView.ordinal = -1;
-                controlView.variation = (char)0;
 
                 courseView.controlViews.Add(controlView);
  
@@ -635,7 +634,7 @@ namespace PurplePen
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 ControlPoint control = eventDB.GetControl(courseControl.control);
 
-                controlView.courseControlId = courseControlId;
+                controlView.courseControlIds = new[] { courseControlId };
                 controlView.controlId = courseControl.control;
 
                 // Set the ordinal number.
@@ -645,9 +644,6 @@ namespace PurplePen
                     controlView.ordinal = 0;
                 else
                     controlView.ordinal = -1;
-
-                // This kind of view doesn't support variations.
-                controlView.variation = (char)0;
 
                 // Don't show the map exchange for the next part at the end of this part.
                 if (courseControlId == lastCourseControl && !courseDesignator.AllParts && control.kind == ControlPointKind.MapExchange) {
@@ -697,12 +693,11 @@ namespace PurplePen
                 ControlView controlView = new ControlView();
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
 
-                controlView.courseControlId = courseControlId;
+                controlView.courseControlIds = new[] { courseControlId };
                 controlView.controlId = courseControl.control;
 
                 // Ordinals assigned after sorting.
                 controlView.ordinal = -1;
-                controlView.variation = (char)0;
 
                 // Move to the next control.
                 courseView.controlViews.Add(controlView);
@@ -713,8 +708,8 @@ namespace PurplePen
             courseView.controlViews.Sort(delegate(ControlView view1, ControlView view2) {
                 ControlPoint control1 = eventDB.GetControl(view1.controlId);
                 ControlPoint control2 = eventDB.GetControl(view2.controlId);
-                CourseControl courseControl1 = eventDB.GetCourseControl(view1.courseControlId);
-                CourseControl courseControl2 = eventDB.GetCourseControl(view2.courseControlId);
+                CourseControl courseControl1 = eventDB.GetCourseControl(view1.courseControlIds[0]);
+                CourseControl courseControl2 = eventDB.GetCourseControl(view2.courseControlIds[0]);
 
                 if (control1.kind < control2.kind)
                     return -1;

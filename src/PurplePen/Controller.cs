@@ -1258,10 +1258,10 @@ namespace PurplePen
 
             for (int i = 0; i < courseView.ControlViews.Count; ++i)
             {
-                if (courseView.ControlViews[i].courseControlId == selectionMgr.Selection.SelectedCourseControl) {
+                if (courseView.ControlViews[i].courseControlIds.Contains(selectionMgr.Selection.SelectedCourseControl)) {
                     int prevIndex = courseView.GetPrevControl(i);
                     if (prevIndex >= 0)
-                        return courseView.ControlViews[prevIndex].courseControlId;
+                        return courseView.ControlViews[prevIndex].courseControlIds[0];
                 }
             }
 

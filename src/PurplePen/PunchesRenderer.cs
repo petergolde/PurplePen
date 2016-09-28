@@ -207,8 +207,8 @@ namespace PurplePen
             // If it's a score course, and a score has been defined, then put the score.
             if (courseView.Kind == CourseView.CourseViewKind.Score) {
                 int points = 0;
-                if (controlView.courseControlId.IsNotNone)
-                    points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                if (controlView.courseControlIds[0].IsNotNone)
+                    points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
 
                 if (points > 0) {
                     stringFormat.Alignment = StringAlignment.Center;

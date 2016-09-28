@@ -345,7 +345,7 @@ namespace PurplePen
                 distanceThisLeg = 0;
             }
             if (isScore && kind == ControlPointKind.Normal) {
-                int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                int points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
                 if (points > 0)
                     xmlWriter.WriteElementString("Score", XmlConvert.ToString(points));
             }
@@ -542,7 +542,7 @@ namespace PurplePen
                         distanceThisLeg = 0;
                     }
                     if (isScore) {
-                        int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                        int points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
                         if (points > 0)
                             xmlWriter.WriteElementString("ScoreOPoints", XmlConvert.ToString(points));
                     }

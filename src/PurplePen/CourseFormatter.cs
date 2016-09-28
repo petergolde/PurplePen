@@ -167,8 +167,8 @@ namespace PurplePen
         // Does this control view have a custom number placement?
         private static bool CustomPlaceNumber(EventDB eventDB, CourseView.ControlView controlView)
         {
-            return ((controlView.courseControlId.IsNotNone && eventDB.GetCourseControl(controlView.courseControlId).customNumberPlacement) ||
-                        (controlView.courseControlId.IsNone && eventDB.GetControl(controlView.controlId).customCodeLocation));
+            return ((controlView.courseControlIds[0].IsNotNone && eventDB.GetCourseControl(controlView.courseControlIds[0]).customNumberPlacement) ||
+                        (controlView.courseControlIds[0].IsNone && eventDB.GetControl(controlView.controlId).customCodeLocation));
         }
 
         // Find all the control view in this courseview that uses the given control id. Used for showing repeated controls in a butterfly course
@@ -199,15 +199,11 @@ namespace PurplePen
 
             if (labelKind == ControlLabelKind.Sequence || labelKind == ControlLabelKind.SequenceAndCode || labelKind == ControlLabelKind.SequenceAndScore) {
                 text += controlView.ordinal.ToString();
-                if (controlView.variation != 0)
-                    text += controlView.variation.ToString();
 
                 // Add in numbers for repeated controls.
                 for (int i = 1; i < repeatedControlViews.Count; ++i) {
                     text += "/";
                     text += repeatedControlViews[i].ordinal.ToString();
-                    if (repeatedControlViews[i].variation != 0)
-                        text += repeatedControlViews[i].variation.ToString();
                 }
             }
             if (labelKind == ControlLabelKind.SequenceAndCode)
@@ -218,7 +214,7 @@ namespace PurplePen
             }
 
             if (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore) {
-                int points = eventDB.GetCourseControl(controlView.courseControlId).points;
+                int points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
                 if (points > 0) {
                     text += "(" + points.ToString() + ")";
                 }
@@ -231,7 +227,7 @@ namespace PurplePen
         private static CourseObj CreateControlNumber(EventDB eventDB, float scaleRatio, CourseAppearance appearance, ControlLabelKind labelKind, CourseView.ControlView controlView, CourseView courseView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
-            CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlId);
+            CourseControl courseControl = eventDB.GetCourseControl(controlView.courseControlIds[0]);
             PointF controlLocation = control.location;
             PointF textCenterLocation;
             string text;
@@ -249,7 +245,7 @@ namespace PurplePen
                                                                                   text, fontDesc, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
-                return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
+                return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlIds[0], scaleRatio, appearance, text, textCenterLocation);
             }
             else {
                 // Only normal controls have numbers.
@@ -261,7 +257,7 @@ namespace PurplePen
         private static CourseObj CreateCode(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView, IEnumerable<CourseObj> existingObjects)
         {
             ControlPoint control = eventDB.GetControl(controlView.controlId);
-            CourseControl courseControl = controlView.courseControlId.IsNotNone ? eventDB.GetCourseControl(controlView.courseControlId) : null;
+            CourseControl courseControl = controlView.courseControlIds[0].IsNotNone ? eventDB.GetCourseControl(controlView.courseControlIds[0]) : null;
             PointF controlLocation = control.location;
             string text;
             PointF textCenterLocation;
@@ -281,7 +277,7 @@ namespace PurplePen
                                                                                  text, NormalCourseAppearance.controlCodeFont, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
-                return new CodeCourseObj(controlView.controlId, controlView.courseControlId, scaleRatio, appearance, text, textCenterLocation);
+                return new CodeCourseObj(controlView.controlId, controlView.courseControlIds[0], scaleRatio, appearance, text, textCenterLocation);
             }
             else {
                 // Only normal controls get codes.
@@ -593,7 +589,7 @@ namespace PurplePen
         // AngleOut is the direction IN RADIANs leaving the control.
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
-            return CreateCourseObject(eventDB, scaleRatio, appearance, printScale, controlView.controlId, controlView.courseControlId, angleOut);
+            return CreateCourseObject(eventDB, scaleRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], angleOut);
         }
 
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, 
@@ -716,9 +712,9 @@ namespace PurplePen
             CourseObj[] objs = new CourseObj[paths.Count];
             for (int i = 0; i < paths.Count; ++i) {
                 if (isFlagged[i]) 
-                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, appearance, paths[i], gapsList[i]);
+                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
                 else
-                    objs[i] = new LegCourseObj(controlView1.controlId, controlView1.courseControlId, controlView2.courseControlId, scaleRatio, appearance, paths[i], gapsList[i]);
+                    objs[i] = new LegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
             }
 
             return objs;

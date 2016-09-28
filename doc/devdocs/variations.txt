@@ -1,8 +1,8 @@
 Things to worry about for variations:
 
 - UI to add loop/fork
-- UI to change variation naming
-- UI to delete loop/fork.
+- UI to delete loop/fork. All loops/forks, or just this one.
+- UI to change variation naming (do we need this? I'm not sure. Maybe instead have team/)
 - Text lines above/below -- how do these work with variations and with butterfly courses
 - Add report for calculating teams assignment to variations.
 - XML export for variations

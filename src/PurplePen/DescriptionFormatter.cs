@@ -276,10 +276,10 @@ namespace PurplePen
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl;
 
-            if (controlView.courseControlId.IsNone)
+            if (controlView.courseControlIds[0].IsNone)
                 courseControl = null;
             else
-                courseControl = eventDB.GetCourseControl(controlView.courseControlId);
+                courseControl = eventDB.GetCourseControl(controlView.courseControlIds[0]);
 
             Debug.Assert(control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange);
 
@@ -334,7 +334,7 @@ namespace PurplePen
 
             // The course control ID, for use in coordinating the selection
             line.controlId = controlView.controlId;
-            line.courseControlId = controlView.courseControlId;
+            line.courseControlId = controlView.courseControlIds[0];
 
             return line;
         }
@@ -345,10 +345,10 @@ namespace PurplePen
             ControlPoint control = eventDB.GetControl(controlView.controlId);
             CourseControl courseControl;
 
-            if (controlView.courseControlId.IsNone)
+            if (controlView.courseControlIds[0].IsNone)
                 courseControl = null;
             else
-                courseControl = eventDB.GetCourseControl(controlView.courseControlId);
+                courseControl = eventDB.GetCourseControl(controlView.courseControlIds[0]);
 
             Debug.Assert(control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.CrossingPoint);
 
@@ -379,7 +379,7 @@ namespace PurplePen
 
             // The course control ID, for use in coordinating the selection
             line.controlId = controlView.controlId;
-            line.courseControlId = controlView.courseControlId;
+            line.courseControlId = controlView.courseControlIds[0];
 
             return line;
         }
@@ -416,8 +416,8 @@ namespace PurplePen
             // The course control IDs, for use in coordinating the selection
             line.isLeg = true;
             line.controlId = controlViewFrom.controlId;
-            line.courseControlId = controlViewFrom.courseControlId;
-            line.courseControlId2 = controlViewTo.courseControlId;
+            line.courseControlId = controlViewFrom.courseControlIds[0];
+            line.courseControlId2 = controlViewTo.courseControlIds[0];
 
             return line;
         }
@@ -451,8 +451,8 @@ namespace PurplePen
             // The course control IDs, for use in coordinating the selection
             line.isLeg = true;
             line.controlId = controlViewFrom.controlId;
-            line.courseControlId = controlViewFrom.courseControlId;
-            line.courseControlId2 = controlViewTo.courseControlId;
+            line.courseControlId = controlViewFrom.courseControlIds[0];
+            line.courseControlId2 = controlViewTo.courseControlIds[0];
 
             return line;
         }
@@ -480,7 +480,7 @@ namespace PurplePen
 
             // The course control IDs, for use in coordinating the selection
             line.controlId = controlWithExchange.controlId;
-            line.courseControlId = controlWithExchange.courseControlId;
+            line.courseControlId = controlWithExchange.courseControlIds[0];
 
             return line;
         }
@@ -581,7 +581,7 @@ namespace PurplePen
             for (int iLine = 0; iLine < courseView.ControlViews.Count; ++iLine) {
                 CourseView.ControlView controlView = courseView.ControlViews[iLine];
                 ControlPoint control = eventDB.GetControl(controlView.controlId);
-                CourseControl courseControl = controlView.courseControlId.IsNone ? null : eventDB.GetCourseControl(controlView.courseControlId);
+                CourseControl courseControl = controlView.courseControlIds[0].IsNone ? null : eventDB.GetCourseControl(controlView.courseControlIds[0]);
 
                 // CONSIDER: this might need to be updated for relay or split controls.
                 ControlPoint controlPrev = (iLine > 0) ? eventDB.GetControl(courseView.ControlViews[iLine - 1].controlId) : null;
@@ -593,9 +593,9 @@ namespace PurplePen
                 if (FilterControl(kind, control, controlPrev, controlNext)) 
                 {
                     // Text associated with the course or course control (before)
-                    AddTextLine(list, control.descTextBefore, controlView.courseControlId, controlView.controlId, DescriptionLine.TextLineKind.BeforeControl);
+                    AddTextLine(list, control.descTextBefore, controlView.courseControlIds[0], controlView.controlId, DescriptionLine.TextLineKind.BeforeControl);
                     if (courseControl != null)
-                        AddTextLine(list, courseControl.descTextBefore, controlView.courseControlId, controlView.controlId, DescriptionLine.TextLineKind.BeforeCourseControl);
+                        AddTextLine(list, courseControl.descTextBefore, controlView.courseControlIds[0], controlView.controlId, DescriptionLine.TextLineKind.BeforeCourseControl);
 
                     // The control itself.
                     if (control.kind == ControlPointKind.Finish ||
@@ -611,8 +611,8 @@ namespace PurplePen
 
                     // Text associated with the course or course control (after)
                     if (courseControl != null)
-                        AddTextLine(list, courseControl.descTextAfter, controlView.courseControlId, controlView.controlId, DescriptionLine.TextLineKind.AfterCourseControl);
-                    AddTextLine(list, control.descTextAfter, controlView.courseControlId, controlView.controlId, DescriptionLine.TextLineKind.AfterControl);
+                        AddTextLine(list, courseControl.descTextAfter, controlView.courseControlIds[0], controlView.controlId, DescriptionLine.TextLineKind.AfterCourseControl);
+                    AddTextLine(list, control.descTextAfter, controlView.courseControlIds[0], controlView.controlId, DescriptionLine.TextLineKind.AfterControl);
                 }
 
                 // Add any map exchange lines.

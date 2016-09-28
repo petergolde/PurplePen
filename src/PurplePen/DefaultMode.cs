@@ -42,6 +42,7 @@ using PurplePen.MapView;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using System.Text;
+using System.Linq;
 
 namespace PurplePen
 {
@@ -450,15 +451,15 @@ namespace PurplePen
                 // Find index of this course control in the course view.
                 int index;
                 for (index = 0; index < courseView.ControlViews.Count; ++index) {
-                    if (courseView.ControlViews[index].courseControlId == courseObjectStart.courseControlId)
+                    if (courseView.ControlViews[index].courseControlIds.Contains(courseObjectStart.courseControlId))
                         break;
                 }
 
                 if (index < courseView.ControlViews.Count) {
                     // Get previous and next controls.
                     int prevIndex = courseView.GetPrevControl(index), nextIndex = courseView.GetNextControl(index);
-                    Id<CourseControl> prevCourseControl = (prevIndex >= 0) ? courseView.ControlViews[prevIndex].courseControlId : Id<CourseControl>.None;
-                    Id<CourseControl> nextCourseControl = (nextIndex >= 0) ? courseView.ControlViews[nextIndex].courseControlId : Id<CourseControl>.None;
+                    Id<CourseControl> prevCourseControl = (prevIndex >= 0) ? courseView.ControlViews[prevIndex].courseControlIds[0] : Id<CourseControl>.None;
+                    Id<CourseControl> nextCourseControl = (nextIndex >= 0) ? courseView.ControlViews[nextIndex].courseControlIds[0] : Id<CourseControl>.None;
 
                     // Get additional highlights to and from those controls.
                     additionalHighlights = AddControlMode.CreateLegHighlights(eventDB, ((PointCourseObj) courseObjectDrag).location, courseObjectDrag.controlId, control.kind, prevCourseControl, nextCourseControl, courseView.ScaleRatio, courseObjectStart.appearance);
