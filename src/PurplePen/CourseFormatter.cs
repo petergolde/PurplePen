@@ -106,6 +106,8 @@ namespace PurplePen
                     if (CustomPlaceNumber(eventDB, controlView)) {
                         if (kind == CourseView.CourseViewKind.AllControls)
                             courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                        else if (kind == CourseView.CourseViewKind.AllVariations)
+                            courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
                         else
                             courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseView, courseLayout);
 
@@ -116,7 +118,7 @@ namespace PurplePen
                     }
                 }
 
-                if (kind == CourseView.CourseViewKind.Normal) {
+                if (kind == CourseView.CourseViewKind.Normal || kind == CourseView.CourseViewKind.AllVariations) {
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
@@ -147,6 +149,8 @@ namespace PurplePen
                 if (!controlView.hiddenControl && ! CustomPlaceNumber(eventDB, controlView)) {
                     if (kind == CourseView.CourseViewKind.AllControls)
                         courseObj = CreateCode(eventDB, scaleRatio, appearance, controlView, courseLayout);
+                    else if (kind == CourseView.CourseViewKind.AllVariations)
+                        courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
                     else
                         courseObj = CreateControlNumber(eventDB, scaleRatio, appearance, labelKind, controlView, courseView, courseLayout);
 

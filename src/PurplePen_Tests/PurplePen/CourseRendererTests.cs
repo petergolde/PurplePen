@@ -315,6 +315,32 @@ namespace PurplePen.Tests
             CheckCourseBothAppearances("courserenderer\\butterfly2.ppen", Designator(8), false, "butterflynumandcode", new RectangleF(-45, -60, 190, 190));
         }
 
+        [TestMethod]
+        public void SingleVariation()
+        {
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationPath);
+
+            CheckCourseBothAppearances("queryevent\\variations.ppen", courseDesignator, false, "singlevariation", new RectangleF(-15, -100, 230, 230));
+
+        }
+
+        [TestMethod]
+        public void AllVariations()
+        {
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1));
+
+            CheckCourseBothAppearances("queryevent\\variations.ppen", courseDesignator, false, "allvariations", new RectangleF(-15, -100, 230, 230));
+
+        }
 
     }
 }
