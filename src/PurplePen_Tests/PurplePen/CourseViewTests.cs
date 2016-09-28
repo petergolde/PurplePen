@@ -703,6 +703,75 @@ Total Length=5002.36  Part Length=761.7648  Total Climb=-1  ScoreColumn=-1  Tota
             Assert.IsFalse(d1.AllParts);
             Assert.IsTrue(d1.Part == 1);
         }
+
+        [TestMethod]
+        public void AllVariations()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            StringWriter writer = new StringWriter();
+            string actual, expected;
+
+            eventDB.Load(TestUtil.GetTestFile("queryevent\\variations.ppen"));
+            eventDB.Validate();
+
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(1)));
+            DumpCourseView(courseView, writer);
+            actual = writer.ToString();
+            expected =
+@"Name='Course 1', Kind='AllVariations', CourseId=1
+Total Length=5491.049  Part Length=5491.049  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=21
+ 0: [-1] Ids:  1,  1
+    Legs: (Next:1,Id:0,length:158.8382)  
+ 1: [-1] Ids:  2,  2, 24
+    Legs: (Next:3,Id:0,length:209.0375)  (Next:2,Id:0,length:826.1527)  
+ 2: [-1] Ids: 24, 12
+    Legs: (Next:21,Id:0,length:1333.715)  
+ 3: [-1] Ids:  3,  3
+    Legs: (Next:4,Id:0,length:209.0376)  
+ 4: [-1] Ids:  4,  4, 25, 26, 27
+    Legs: (Next:14,Id:0,length:236.2064)  (Next:5,Id:0,length:292.0621)  (Next:7,Id:0,length:266.2318)  (Next:9,Id:0,length:301.3232)  
+ 5: [-1] Ids: 12, 15
+    Legs: (Next:6,Id:0,length:146.6947)  
+ 6: [-1] Ids: 13, 16
+    Legs: (Next:4,Id:0,length:262.4181)  
+ 7: [-1] Ids: 14, 17
+    Legs: (Next:8,Id:0,length:152.2906)  
+ 8: [-1] Ids: 15, 18
+    Legs: (Next:4,Id:0,length:374.2521)  
+ 9: [-1] Ids: 16, 19
+    Legs: (Next:10,Id:0,length:200.8046)  
+10: [-1] Ids: 18, 30, 21
+    Legs: (Next:11,Id:0,length:158.772)  (Next:12,Id:0,length:155.0242)  
+11: [-1] Ids: 17, 20
+    Legs: (Next:13,Id:0,length:142.4825)  
+12: [-1] Ids: 19, 22
+    Legs: (Next:13,Id:0,length:140.2542)  
+13: [-1] Ids: 20, 23
+    Legs: (Next:4,Id:0,length:260.0061)  
+14: [-1] Ids:  5,  5
+    Legs: (Next:15,Id:0,length:187.8728)  
+15: [-1] Ids:  6,  6
+    Legs: (Next:16,Id:0,length:248.7224)  
+16: [-1] Ids:  7,  7
+    Legs: (Next:17,Id:0,length:206.6461)  
+17: [-1] Ids:  8,  8
+    Legs: (Next:18,Id:0,length:212.0797)  
+18: [-1] Ids:  9,  9, 28, 29
+    Legs: (Next:21,Id:0,length:159.1022)  (Next:19,Id:0,length:153.8228)  (Next:20,Id:0,length:121.1895)  
+19: [-1] Ids: 21, 13
+    Legs: (Next:21,Id:0,length:155.6325)  
+20: [-1] Ids: 22, 14
+    Legs: (Next:21,Id:0,length:139.2523)  
+21: [-1] Ids: 10, 10
+    Legs: (Next:22,Id:0,length:196.9326)  
+22: [-1] Ids: 11, 11
+";
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
 

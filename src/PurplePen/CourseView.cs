@@ -152,10 +152,15 @@ namespace PurplePen
                     return CourseViewKind.AllControls;
                 else {
                     Course course = eventDB.GetCourse(courseDesignator.CourseId);
-                    if (course.kind == CourseKind.Score)
+                    if (course.kind == CourseKind.Score) {
                         return CourseViewKind.Score;
-                    else if (course.kind == CourseKind.Normal)
-                        return CourseViewKind.Normal;
+                    }
+                    else if (course.kind == CourseKind.Normal) {
+                        if (!courseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
+                            return CourseViewKind.AllVariations;
+                        else
+                            return CourseViewKind.Normal;
+                    }
                     else {
                         Debug.Fail("Bad course kind"); return CourseViewKind.Normal;
                     }
@@ -343,7 +348,7 @@ namespace PurplePen
 
                     if (courseControlId.IsNotNone) {
                         int j;
-                        for (j = i + 1; j < controlViews.Count; ++j) {
+                        for (j = 0; j < controlViews.Count; ++j) {
                             if (controlViews[j].courseControlIds.Contains(courseControlId)) {
                                 controlViews[i].legTo[legIndex] = j;
                                 controlViews[i].legId[legIndex] = QueryEvent.FindLeg(eventDB, controlViews[i].controlId, controlViews[j].controlId);
@@ -466,7 +471,10 @@ namespace PurplePen
             if (course.kind == CourseKind.Score) 
                 courseView = CreateScoreCourseView(eventDB, courseDesignator);
             else if (course.kind == CourseKind.Normal) {
-                courseView = CreateStandardCourseView(eventDB, courseDesignator);
+                if (QueryEvent.HasVariations(eventDB, courseDesignator.CourseId) && !courseDesignator.IsVariation)
+                    courseView = CreateAllVariationsCourseView(eventDB, courseDesignator);
+                else
+                    courseView = CreateStandardCourseView(eventDB, courseDesignator);
             }
             else {
                 Debug.Fail("Bad course kind"); return null;
@@ -586,7 +594,7 @@ namespace PurplePen
                 return CourseView.CreateCourseView(eventDB, courseDesignator, false, false);
         }
 
-        // Create the standard view onto a regular course, without variations.
+        // Create the standard view onto a regular course, or a single variation of a variation course.
         private static CourseView CreateStandardCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
             Course course = eventDB.GetCourse(courseDesignator.CourseId);
@@ -671,6 +679,72 @@ namespace PurplePen
             {
                 if (QueryEvent.HasFinishControl(eventDB, courseDesignator.CourseId))
                     courseView.extraCourseControls.Add(QueryEvent.LastCourseControl(eventDB, courseDesignator.CourseId, false));
+            }
+
+            courseView.Finish();
+            return courseView;
+        }
+
+        // Create the view of all variations of a course with variations. Cannot be a single part of a multi-part course.
+        // Does not contain ordinals.
+        private static CourseView CreateAllVariationsCourseView(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            Course course = eventDB.GetCourse(courseDesignator.CourseId);
+
+            if (!courseDesignator.AllParts)
+                throw new ApplicationException("Cannot create all variations of a single part");
+
+            CourseView courseView = new CourseView(eventDB, courseDesignator);
+
+            courseView.courseName = course.name;
+            courseView.scoreColumn = -1;
+
+            // To get the ordinals correct, we get the course control ids for all parts.
+            List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, courseDesignator).ToList();
+
+            for (int index = 0; index < courseControls.Count; ++index) {
+                Id<CourseControl> courseControlId = courseControls[index];
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+
+                // We add each split control only once, even though it has multiple variations. Check to see if we have already 
+                // handled it.
+                bool alreadyHandled = false;
+                if (courseControl.split) {
+                    foreach (ControlView cv in courseView.controlViews) {
+                        if (cv.courseControlIds.Contains(courseControlId))
+                            alreadyHandled = true;
+                    }
+                }
+
+                if (!alreadyHandled) {
+                    ControlView controlView = new ControlView();
+
+                    controlView.controlId = courseControl.control;
+
+                    // Set the ordinal number. All variations does not include an ordinal.
+                    controlView.ordinal = -1;
+
+                    // Set all course control ids associated with split control, or a single one for a non-split control.
+                    // Set the legTo array with the next courseControlID(s). This is later updated
+                    // to the indices.
+                    if (courseControl.split) {
+                        controlView.courseControlIds = QueryEvent.AllVariationsOfCourseControl(eventDB, courseControlId).ToArray();
+                        if (courseControl.nextCourseControl.IsNotNone) {
+                            controlView.legTo = new int[controlView.courseControlIds.Length];
+                            for (int i = 0; i < controlView.legTo.Length; ++i) {
+                                controlView.legTo[i] = eventDB.GetCourseControl(controlView.courseControlIds[i]).nextCourseControl.id;
+                            }
+                        }
+                    }
+                    else {
+                        controlView.courseControlIds = new[] { courseControlId };
+                        if (courseControl.nextCourseControl.IsNotNone)
+                            controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
+                    }
+
+                    // Add the controlview.
+                    courseView.controlViews.Add(controlView);
+                }
             }
 
             courseView.Finish();
