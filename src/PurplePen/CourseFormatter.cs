@@ -122,7 +122,7 @@ namespace PurplePen
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
-                            CourseObj[] courseObjs = CreateLeg(eventDB, scaleRatio, appearance, controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
+                            CourseObj[] courseObjs = CreateLeg(eventDB, scaleRatio, appearance, controlView.courseControlIds[leg], controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
                             if (courseObjs != null) {
                                 foreach (CourseObj o in courseObjs) {
                                     o.layer = layer;
@@ -662,7 +662,7 @@ namespace PurplePen
 
         // Create the objects associated with the leg from controlView1 to controlView2. Could be multiple because
         // a leg may be partly flagged, and so forth. Gaps do not create separate course objects.
-        private static CourseObj[] CreateLeg(EventDB eventDB, float scaleRatio, CourseAppearance appearance, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
+        private static CourseObj[] CreateLeg(EventDB eventDB, float scaleRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
         {
             ControlPoint control1 = eventDB.GetControl(controlView1.controlId);
             ControlPoint control2 = eventDB.GetControl(controlView2.controlId);
@@ -716,9 +716,9 @@ namespace PurplePen
             CourseObj[] objs = new CourseObj[paths.Count];
             for (int i = 0; i < paths.Count; ++i) {
                 if (isFlagged[i]) 
-                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
+                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
                 else
-                    objs[i] = new LegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
+                    objs[i] = new LegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], scaleRatio, appearance, paths[i], gapsList[i]);
             }
 
             return objs;
