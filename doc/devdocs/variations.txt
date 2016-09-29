@@ -16,7 +16,7 @@ Things to worry about for variations:
 
 - How to deal with climb. Have per-variation climb? Probably not.
 
-- All Variations: distance field in COurseView
+- All Variations: distance field in COurseView -- should it be set; probably not. Or should there be a range?
 
 - What to show in course name field in description?
 

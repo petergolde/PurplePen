@@ -271,6 +271,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.topologyViewer = new PurplePen.MapView.MapViewer();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -312,6 +313,7 @@ namespace PurplePen
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer.Panel2.Controls.Add(this.topologyViewer);
             this.splitContainer.Panel2.Controls.Add(this.mapViewer);
             this.splitContainer.Panel2.Controls.Add(this.horizScroll);
             this.splitContainer.Panel2.Controls.Add(this.vertScroll);
@@ -389,7 +391,9 @@ namespace PurplePen
             this.coursePartBanner.BackColor = System.Drawing.SystemColors.ControlLight;
             this.coursePartBanner.CurrentVariation = null;
             resources.ApplyResources(this.coursePartBanner, "coursePartBanner");
+            this.coursePartBanner.EnableParts = true;
             this.coursePartBanner.EnableProperties = true;
+            this.coursePartBanner.EnableVariations = true;
             this.coursePartBanner.Name = "coursePartBanner";
             this.coursePartBanner.NumberOfParts = 1;
             this.coursePartBanner.SelectedPart = -1;
@@ -1770,6 +1774,20 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // topologyViewer
+            // 
+            this.topologyViewer.BackColor = System.Drawing.Color.White;
+            this.topologyViewer.CausesValidation = false;
+            this.topologyViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("topologyViewer.CenterPoint")));
+            resources.ApplyResources(this.topologyViewer, "topologyViewer");
+            this.topologyViewer.ForeColor = System.Drawing.Color.Black;
+            this.topologyViewer.HoverDelay = 400;
+            this.topologyViewer.Name = "topologyViewer";
+            this.topologyViewer.ShowGrid = false;
+            this.topologyViewer.ShowSymbolBounds = false;
+            this.topologyViewer.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("topologyViewer.Viewport")));
+            this.topologyViewer.ZoomFactor = 1F;
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2016,5 +2034,6 @@ namespace PurplePen
         private System.Windows.Forms.SaveFileDialog saveGpxFileDialog;
         private System.Windows.Forms.ToolStripMenuItem duplicateCourseMenu;
         private System.Windows.Forms.ToolStripMenuItem showPrintAreaMenu;
+        private MapView.MapViewer topologyViewer;
     }
 }
