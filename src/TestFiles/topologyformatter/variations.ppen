@@ -112,17 +112,38 @@
     <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="171.393478" right="313.128235" bottom="-95.30653" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="2" kind="normal" order="3">
+  <course id="2" kind="normal" order="6">
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="31" />
     <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="146.579086" right="313.128235" bottom="-120.120926" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal" order="2">
+  <course id="4" kind="normal" order="3">
     <name>ForkA</name>
     <labels label-kind="sequence" />
     <first course-control="71" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="171.393478" right="313.128235" bottom="-95.30653" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="5" kind="normal" order="4">
+    <name>EmptyFork</name>
+    <labels label-kind="sequence" />
+    <first course-control="101" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="138.236023" right="313.128235" bottom="-128.463989" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="6" kind="normal" order="5">
+    <name>BothForksEmpty</name>
+    <labels label-kind="sequence" />
+    <first course-control="111" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="138.236023" right="313.128235" bottom="-128.463989" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="7" kind="normal" order="2">
+    <name>NestedFork</name>
+    <labels label-kind="sequence" />
+    <first course-control="120" />
     <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="171.393478" right="313.128235" bottom="-95.30653" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
@@ -316,4 +337,109 @@
     <next course-control="100" />
   </course-control>
   <course-control id="100" control="11" />
+  <course-control id="101" control="1">
+    <next course-control="104" />
+  </course-control>
+  <course-control id="102" control="2" variation="fork" variation-end="109">
+    <next course-control="109" />
+    <variation course-control="104" />
+    <variation course-control="102" />
+  </course-control>
+  <course-control id="104" control="2" variation="fork" variation-end="109">
+    <next course-control="105" />
+    <variation course-control="104" />
+    <variation course-control="102" />
+  </course-control>
+  <course-control id="105" control="3">
+    <next course-control="106" />
+  </course-control>
+  <course-control id="106" control="5">
+    <next course-control="107" />
+  </course-control>
+  <course-control id="107" control="6">
+    <next course-control="108" />
+  </course-control>
+  <course-control id="108" control="7">
+    <next course-control="109" />
+  </course-control>
+  <course-control id="109" control="10">
+    <next course-control="110" />
+  </course-control>
+  <course-control id="110" control="11" />
+  <course-control id="111" control="1">
+    <next course-control="113" />
+  </course-control>
+  <course-control id="112" control="2" variation="fork" variation-end="118">
+    <next course-control="118" />
+    <variation course-control="113" />
+    <variation course-control="112" />
+  </course-control>
+  <course-control id="113" control="2" variation="fork" variation-end="118">
+    <next course-control="118" />
+    <variation course-control="113" />
+    <variation course-control="112" />
+  </course-control>
+  <course-control id="118" control="10">
+    <next course-control="119" />
+  </course-control>
+  <course-control id="119" control="11" />
+  <course-control id="120" control="1">
+    <next course-control="123" />
+  </course-control>
+  <course-control id="121" control="2" variation="fork" variation-end="148">
+    <next course-control="122" />
+    <variation course-control="123" />
+    <variation course-control="121" />
+  </course-control>
+  <course-control id="122" control="24">
+    <next course-control="148" />
+  </course-control>
+  <course-control id="123" control="2" variation="fork" variation-end="148">
+    <next course-control="124" />
+    <variation course-control="123" />
+    <variation course-control="121" />
+  </course-control>
+  <course-control id="124" control="3">
+    <next course-control="139" />
+  </course-control>
+  <course-control id="139" control="5">
+    <next course-control="140" />
+  </course-control>
+  <course-control id="140" control="6">
+    <next course-control="141" />
+  </course-control>
+  <course-control id="141" control="7">
+    <next course-control="142" />
+  </course-control>
+  <course-control id="142" control="8">
+    <next course-control="147" />
+  </course-control>
+  <course-control id="143" control="9" variation="fork" variation-end="148">
+    <next course-control="144" />
+    <variation course-control="147" />
+    <variation course-control="143" />
+    <variation course-control="145" />
+  </course-control>
+  <course-control id="144" control="21">
+    <next course-control="148" />
+  </course-control>
+  <course-control id="145" control="9" variation="fork" variation-end="148">
+    <next course-control="146" />
+    <variation course-control="147" />
+    <variation course-control="143" />
+    <variation course-control="145" />
+  </course-control>
+  <course-control id="146" control="22">
+    <next course-control="148" />
+  </course-control>
+  <course-control id="147" control="9" variation="fork" variation-end="148">
+    <next course-control="148" />
+    <variation course-control="147" />
+    <variation course-control="143" />
+    <variation course-control="145" />
+  </course-control>
+  <course-control id="148" control="10">
+    <next course-control="149" />
+  </course-control>
+  <course-control id="149" control="11" />
 </course-scribe-event>

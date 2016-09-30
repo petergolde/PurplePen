@@ -67,6 +67,7 @@ namespace PurplePen
             public float height;   // height in multiple of basic height unit (1 for normal control)
             public float width;    // width in multiple of base width unit (1 for normal control)
             public float x, y;     // starting location, in basic height/width units.
+            public PointF[] forkStart;  // If this is a fork, location where fork goes to. Makes drawing empty forks possible.
         }
 
         // Format the given CourseView into a bunch of course objects, and add it to the given course Layout
@@ -103,7 +104,13 @@ namespace PurplePen
             
             if (controlView.legTo != null) {
                 for (int i = 0; i < controlView.legTo.Length; ++i) {
-                    CreateLegBetweenControls(controlView, controlPosition, controlViews[controlView.legTo[i]], controlPositions[controlView.legTo[i]]);
+                    PointF? forkStart;
+                    if (controlPosition.forkStart != null)
+                        forkStart = controlPosition.forkStart[i];
+                    else
+                        forkStart = null;
+
+                    CreateLegBetweenControls(controlView, controlPosition, controlViews[controlView.legTo[i]], controlPositions[controlView.legTo[i]], forkStart);
                 }
             }
             
@@ -145,18 +152,34 @@ namespace PurplePen
             courseLayout.AddCourseObject(courseObj);
         }
 
-        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2)
+        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, PointF? forkStart)
+        {
+            SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart);
+            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, path);
+
+            courseObj.layer = courseLayer;
+            courseLayout.AddCourseObject(courseObj);
+        }
+
+        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, PointF? forkStart)
         {
             float xStart = controlPosition1.x;
             float yStart = controlPosition1.y + 0.3F;
             float xEnd = controlPosition2.x;
             float yEnd = controlPosition2.y - 0.3F;
 
-            SymPath path = PathFromStartToEnd(xStart, yStart, xEnd, yEnd);
-            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, path);
-
-            courseObj.layer = courseLayer;
-            courseLayout.AddCourseObject(courseObj);
+            if (forkStart.HasValue && forkStart.Value.X != controlPosition2.x) {
+                // The fork start in a different horizontal position than it ends. This is probably due to a fork with no controls on it.
+                // Create the path in two pieces.
+                float xMiddle = forkStart.Value.X;
+                float yMiddle = forkStart.Value.Y - 0.3F;
+                SymPath path1 = PathFromStartToEnd(xStart, yStart, xMiddle, yMiddle);
+                SymPath path2 = PathFromStartToEnd(xMiddle, yMiddle, xEnd, yEnd);
+                return SymPath.Join(path1, path2, PointKind.Normal);
+            }
+            else {
+                return PathFromStartToEnd(xStart, yStart, xEnd, yEnd);
+            }
         }
 
         SymPath PathFromStartToEnd(float xStart, float yStart, float xEnd, float yEnd)
@@ -231,7 +254,7 @@ namespace PurplePen
 
                 if (numForks > 1) {
                     // fork or loop subsequent. Two passes -- first determine totalWidth and maxHeight;
-                    float totalForkWidth = 0, maxForkHeight = 0;
+                    float totalForkWidth = 0, maxForkHeight = 1;
                     SizeF[] forkSize = new SizeF[numForks];
                     PointF[] forkStart = new PointF[numForks];
 
@@ -253,6 +276,7 @@ namespace PurplePen
                         forkStart[i] = new PointF(forkX, forkY);
                         forkX += forkSize[i].Width;
                     }
+                    controlPositions[index].forkStart = forkStart;
 
                     // Assign control positions for each fork again, now that we know the start position.
                     for (int i = startFork; i < numForks; ++i) {

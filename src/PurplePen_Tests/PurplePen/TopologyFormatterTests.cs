@@ -99,6 +99,24 @@ namespace PurplePen.Tests
             CheckCourse("topologyformatter\\variations.ppen", Designator(4), "onefork");
         }
 
+        [TestMethod]
+        public void EmptyFork()
+        {
+            CheckCourse("topologyformatter\\variations.ppen", Designator(5), "emptyfork");
+        }
+
+        [TestMethod]
+        public void BothForksEmpty()
+        {
+            CheckCourse("topologyformatter\\variations.ppen", Designator(6), "bothemptyfork");
+        }
+
+        [TestMethod]
+        public void NestedFork()
+        {
+            CheckCourse("topologyformatter\\variations.ppen", Designator(7), "nestedfork");
+        }
+
     }
 }
 
