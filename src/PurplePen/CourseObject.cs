@@ -1841,6 +1841,32 @@ namespace PurplePen
         }
     }
 
+    // A leg in the topology view.
+    class TopologyLegCourseObj: LineCourseObj
+    {
+        const float LineThickness = 0.35F;
+
+        public TopologyLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, LineThickness, path, null)
+        {
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            LineSymDef symdef = new LineSymDef("Line", "704", symColor, LineThickness * scaleRatio, LineJoin.Round, LineCap.Flat);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
+            map.AddSymdef(symdef);
+            return symdef;
+        }
+
+        public override PointF[] GetHandles()
+        {
+            return null;
+        }
+    }
+
+
+
     // A boundary
     class BoundaryCourseObj : LineCourseObj
     {

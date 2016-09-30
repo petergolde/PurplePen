@@ -67,6 +67,7 @@ namespace PurplePen
             public int[] legTo;                 // Indices in the list of the control a leg should be drawn to
             public Id<Leg>[] legId;             // If special leg information, the ID in the eventDB.
             public float[] legLength;           // Length of the leg
+            public int joinIndex;               // If multiple legs, this is the index where they join together again.
             public bool hiddenControl;          // If true, hide this control on map, but not legs to it (used for map exchanges)
         };
 
@@ -364,6 +365,20 @@ namespace PurplePen
                         controlViews[controlViews[i].legTo[legIndex]].controlId,
                         controlViews[i].legId[legIndex]);
                 }
+
+                if (controlViews[i].joinIndex > 0) {
+                    Id<CourseControl> courseControlId = new Id<CourseControl>(controlViews[i].joinIndex);
+
+                    for (int j = 0; j < controlViews.Count; ++j) {
+                        if (controlViews[j].courseControlIds.Contains(courseControlId)) {
+                            controlViews[i].joinIndex = j;
+                            break;
+                        }
+                    }
+                }
+                else {
+                    controlViews[i].joinIndex = -1;
+                }
             }
         }
 
@@ -531,6 +546,8 @@ namespace PurplePen
                 // All controls doesn't have ordinals.
                 controlView.ordinal = -1;
 
+                controlView.joinIndex = -1;
+
                 courseView.controlViews.Add(controlView);
  
        SKIP:        ;
@@ -653,6 +670,8 @@ namespace PurplePen
                 else
                     controlView.ordinal = -1;
 
+                controlView.joinIndex = -1;
+
                 // Don't show the map exchange for the next part at the end of this part.
                 if (courseControlId == lastCourseControl && !courseDesignator.AllParts && control.kind == ControlPointKind.MapExchange) {
                     controlView.hiddenControl = true;
@@ -735,11 +754,16 @@ namespace PurplePen
                                 controlView.legTo[i] = eventDB.GetCourseControl(controlView.courseControlIds[i]).nextCourseControl.id;
                             }
                         }
+                        if (courseControl.loop)
+                            controlView.joinIndex = courseControlId.id;
+                        else
+                            controlView.joinIndex = courseControl.splitEnd.id;
                     }
                     else {
                         controlView.courseControlIds = new[] { courseControlId };
                         if (courseControl.nextCourseControl.IsNotNone)
                             controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
+                        controlView.joinIndex = -1;
                     }
 
                     // Add the controlview.
@@ -772,6 +796,8 @@ namespace PurplePen
 
                 // Ordinals assigned after sorting.
                 controlView.ordinal = -1;
+
+                controlView.joinIndex = -1;
 
                 // Move to the next control.
                 courseView.controlViews.Add(controlView);
