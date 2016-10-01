@@ -123,6 +123,12 @@ namespace PurplePen.Tests
             CheckCourse("topologyformatter\\variations.ppen", Designator(8), "simpleloop");
         }
 
+        [TestMethod]
+        public void ComplexVariations()
+        {
+            CheckCourse("topologyformatter\\variations.ppen", Designator(1), "complexvariations");
+        }
+
     }
 }
 

@@ -326,31 +326,40 @@ namespace PurplePen
                         forkStart[0] = new ForkPosition(forkX, forkY, false);
                         int halfForks = numForks / 2;
 
-                        forkX = x;
+                        totalForkWidth = 0;
+
+                        forkX = x - 0.5F;
                         for (int i = startFork; i < halfForks; ++i) {
                             forkX -= forkSize[i].Width;
                         }
 
+                        totalForkWidth = Math.Max(totalForkWidth, (x-forkX) * 2);
+
                         for (int i = startFork; i < halfForks; ++i) {
+                            forkX += forkSize[i].Width / 2;
                             forkStart[i] = new ForkPosition(forkX, forkY, loop);
-                            forkX += forkSize[i].Width;
+                            forkX += forkSize[i].Width / 2;
                         }
 
-                        forkX = x;
+                        forkX = x + 0.5F;
 
                         for (int i = halfForks; i < numForks; ++i) {
-                            forkX += forkSize[i].Width;
+                            forkX += forkSize[i].Width / 2;
                             forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkX += forkSize[i].Width / 2;
                         }
+
+                        totalForkWidth = Math.Max(totalForkWidth, (forkX-x) * 2);
 
                         controlPositions[index].loopBottom = y + maxForkHeight - 0.5F;
                     }
                     else { 
                         float forkY = y + 0.5F;
-                        float forkX = x - (totalForkWidth - 1) / 2;
+                        float forkX = x - totalForkWidth / 2;
                         for (int i = startFork; i < numForks; ++i) {
+                            forkX += forkSize[i].Width / 2;
                             forkStart[i] = new ForkPosition(forkX, forkY, loop);
-                            forkX += forkSize[i].Width;
+                            forkX += forkSize[i].Width / 2;
                         }
                     }
 
