@@ -2663,7 +2663,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             controller.SelectTab(1);   
             Assert.IsTrue(controller.HasVariations);
 
-            Assert.AreEqual("A", controller.CurrentVariation.ToString());
+            Assert.AreEqual("All Variations", controller.CurrentVariation.ToString());
 
             object[] allVariations = controller.GetVariations();
             string[] variationStrings = allVariations.Select(o => o.ToString()).ToArray();
