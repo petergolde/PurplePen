@@ -67,6 +67,11 @@ namespace PurplePen
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.splitDescription = new System.Windows.Forms.SplitContainer();
+            this.leftColumnPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButtonDescriptions = new System.Windows.Forms.RadioButton();
+            this.radioButtonTopology = new System.Windows.Forms.RadioButton();
+            this.panelDescriptionAndTopology = new System.Windows.Forms.Panel();
+            this.mapViewerTopology = new PurplePen.MapView.MapViewer();
             this.descriptionControl = new PurplePen.DescriptionControl();
             this.selectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mapViewer = new PurplePen.MapView.MapViewer();
@@ -271,7 +276,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.topologyViewer = new PurplePen.MapView.MapViewer();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -281,6 +285,8 @@ namespace PurplePen
             this.splitDescription.Panel1.SuspendLayout();
             this.splitDescription.Panel2.SuspendLayout();
             this.splitDescription.SuspendLayout();
+            this.leftColumnPanel.SuspendLayout();
+            this.panelDescriptionAndTopology.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.toolbar.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -313,7 +319,6 @@ namespace PurplePen
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.splitContainer.Panel2.Controls.Add(this.topologyViewer);
             this.splitContainer.Panel2.Controls.Add(this.mapViewer);
             this.splitContainer.Panel2.Controls.Add(this.horizScroll);
             this.splitContainer.Panel2.Controls.Add(this.vertScroll);
@@ -327,11 +332,57 @@ namespace PurplePen
             // 
             // splitDescription.Panel1
             // 
-            this.splitDescription.Panel1.Controls.Add(this.descriptionControl);
+            this.splitDescription.Panel1.Controls.Add(this.leftColumnPanel);
             // 
             // splitDescription.Panel2
             // 
             this.splitDescription.Panel2.Controls.Add(this.selectionPanel);
+            // 
+            // leftColumnPanel
+            // 
+            this.leftColumnPanel.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.leftColumnPanel, "leftColumnPanel");
+            this.leftColumnPanel.Controls.Add(this.radioButtonDescriptions, 0, 1);
+            this.leftColumnPanel.Controls.Add(this.radioButtonTopology, 1, 1);
+            this.leftColumnPanel.Controls.Add(this.panelDescriptionAndTopology, 0, 0);
+            this.leftColumnPanel.Name = "leftColumnPanel";
+            // 
+            // radioButtonDescriptions
+            // 
+            resources.ApplyResources(this.radioButtonDescriptions, "radioButtonDescriptions");
+            this.radioButtonDescriptions.Checked = true;
+            this.radioButtonDescriptions.Name = "radioButtonDescriptions";
+            this.radioButtonDescriptions.TabStop = true;
+            this.radioButtonDescriptions.UseVisualStyleBackColor = true;
+            this.radioButtonDescriptions.CheckedChanged += new System.EventHandler(this.radioButtonDescriptionsTopology_CheckedChanged);
+            // 
+            // radioButtonTopology
+            // 
+            resources.ApplyResources(this.radioButtonTopology, "radioButtonTopology");
+            this.radioButtonTopology.Name = "radioButtonTopology";
+            this.radioButtonTopology.UseVisualStyleBackColor = true;
+            // 
+            // panelDescriptionAndTopology
+            // 
+            this.leftColumnPanel.SetColumnSpan(this.panelDescriptionAndTopology, 2);
+            this.panelDescriptionAndTopology.Controls.Add(this.mapViewerTopology);
+            this.panelDescriptionAndTopology.Controls.Add(this.descriptionControl);
+            resources.ApplyResources(this.panelDescriptionAndTopology, "panelDescriptionAndTopology");
+            this.panelDescriptionAndTopology.Name = "panelDescriptionAndTopology";
+            // 
+            // mapViewer1
+            // 
+            this.mapViewerTopology.BackColor = System.Drawing.Color.White;
+            this.mapViewerTopology.CausesValidation = false;
+            this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer1.CenterPoint")));
+            resources.ApplyResources(this.mapViewerTopology, "mapViewer1");
+            this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
+            this.mapViewerTopology.HoverDelay = 0;
+            this.mapViewerTopology.Name = "mapViewer1";
+            this.mapViewerTopology.ShowGrid = false;
+            this.mapViewerTopology.ShowSymbolBounds = false;
+            this.mapViewerTopology.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewer1.Viewport")));
+            this.mapViewerTopology.ZoomFactor = 1F;
             // 
             // descriptionControl
             // 
@@ -1774,20 +1825,6 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
-            // topologyViewer
-            // 
-            this.topologyViewer.BackColor = System.Drawing.Color.White;
-            this.topologyViewer.CausesValidation = false;
-            this.topologyViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("topologyViewer.CenterPoint")));
-            resources.ApplyResources(this.topologyViewer, "topologyViewer");
-            this.topologyViewer.ForeColor = System.Drawing.Color.Black;
-            this.topologyViewer.HoverDelay = 400;
-            this.topologyViewer.Name = "topologyViewer";
-            this.topologyViewer.ShowGrid = false;
-            this.topologyViewer.ShowSymbolBounds = false;
-            this.topologyViewer.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("topologyViewer.Viewport")));
-            this.topologyViewer.ZoomFactor = 1F;
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -1813,6 +1850,9 @@ namespace PurplePen
             this.splitDescription.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitDescription)).EndInit();
             this.splitDescription.ResumeLayout(false);
+            this.leftColumnPanel.ResumeLayout(false);
+            this.leftColumnPanel.PerformLayout();
+            this.panelDescriptionAndTopology.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.toolbar.ResumeLayout(false);
@@ -1892,7 +1932,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem forbiddenRouteMarkingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrationMarkToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitDescription;
-        private DescriptionControl descriptionControl;
         private System.Windows.Forms.ToolStripMenuItem entireCourseMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripMenuItem mapQualityMenu;
@@ -2034,6 +2073,11 @@ namespace PurplePen
         private System.Windows.Forms.SaveFileDialog saveGpxFileDialog;
         private System.Windows.Forms.ToolStripMenuItem duplicateCourseMenu;
         private System.Windows.Forms.ToolStripMenuItem showPrintAreaMenu;
-        private MapView.MapViewer topologyViewer;
+        private System.Windows.Forms.TableLayoutPanel leftColumnPanel;
+        private System.Windows.Forms.RadioButton radioButtonDescriptions;
+        private System.Windows.Forms.RadioButton radioButtonTopology;
+        private System.Windows.Forms.Panel panelDescriptionAndTopology;
+        private MapView.MapViewer mapViewerTopology;
+        private DescriptionControl descriptionControl;
     }
 }

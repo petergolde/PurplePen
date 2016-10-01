@@ -2682,5 +2682,11 @@ namespace PurplePen
                 operationInProgressDialog = null;
             }
         }
+
+        private void radioButtonDescriptionsTopology_CheckedChanged(object sender, EventArgs e)
+        {
+            descriptionControl.Visible = radioButtonDescriptions.Checked;
+            mapViewerTopology.Visible = radioButtonTopology.Checked;
+        }
     }
 }
