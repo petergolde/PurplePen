@@ -117,6 +117,12 @@ namespace PurplePen.Tests
             CheckCourse("topologyformatter\\variations.ppen", Designator(7), "nestedfork");
         }
 
+        [TestMethod]
+        public void SimpleLoop()
+        {
+            CheckCourse("topologyformatter\\variations.ppen", Designator(8), "simpleloop");
+        }
+
     }
 }
 

@@ -64,10 +64,19 @@ namespace PurplePen
 
         class ControlPosition
         {
-            public float height;   // height in multiple of basic height unit (1 for normal control)
-            public float width;    // width in multiple of base width unit (1 for normal control)
             public float x, y;     // starting location, in basic height/width units.
-            public PointF[] forkStart;  // If this is a fork, location where fork goes to. Makes drawing empty forks possible.
+            public ForkPosition[] forkStart;  // If this is a fork, location where fork goes to. Makes drawing empty forks possible.
+            public float loopBottom; // bottom of loop, if this is start of a loop.
+        }
+
+        class ForkPosition
+        {
+            public float x, y;
+            public bool startHorizontal;
+            public ForkPosition(float x, float y, bool startHorizontal)
+            {
+                this.x = x; this.y = y; this.startHorizontal = startHorizontal;
+            }
         }
 
         // Format the given CourseView into a bunch of course objects, and add it to the given course Layout
@@ -104,7 +113,7 @@ namespace PurplePen
             
             if (controlView.legTo != null) {
                 for (int i = 0; i < controlView.legTo.Length; ++i) {
-                    PointF? forkStart;
+                    ForkPosition forkStart;
                     if (controlPosition.forkStart != null)
                         forkStart = controlPosition.forkStart[i];
                     else
@@ -152,7 +161,7 @@ namespace PurplePen
             courseLayout.AddCourseObject(courseObj);
         }
 
-        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, PointF? forkStart)
+        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, ForkPosition forkStart)
         {
             SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart);
             CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, path);
@@ -161,40 +170,79 @@ namespace PurplePen
             courseLayout.AddCourseObject(courseObj);
         }
 
-        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, PointF? forkStart)
+        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart)
         {
             float xStart = controlPosition1.x;
-            float yStart = controlPosition1.y + 0.3F;
+            float yStart = controlPosition1.y;
             float xEnd = controlPosition2.x;
-            float yEnd = controlPosition2.y - 0.3F;
+            float yEnd = controlPosition2.y;
 
-            if (forkStart.HasValue && forkStart.Value.X != controlPosition2.x) {
+            bool startHorizontal = false;
+            if (forkStart != null)
+                startHorizontal = forkStart.startHorizontal;
+
+            if (forkStart != null && forkStart.x != controlPosition2.x) {
                 // The fork start in a different horizontal position than it ends. This is probably due to a fork with no controls on it.
                 // Create the path in two pieces.
-                float xMiddle = forkStart.Value.X;
-                float yMiddle = forkStart.Value.Y - 0.3F;
-                SymPath path1 = PathFromStartToEnd(xStart, yStart, xMiddle, yMiddle);
-                SymPath path2 = PathFromStartToEnd(xMiddle, yMiddle, xEnd, yEnd);
-                return SymPath.Join(path1, path2, PointKind.Normal);
+                float xMiddle = forkStart.x;
+                float yMiddle = forkStart.y;
+                SymPath path1 = PathFromStartToEnd(xStart, yStart, xMiddle, yMiddle, startHorizontal, 0);
+                SymPath path3 = PathFromStartToEnd(xMiddle, yMiddle, xEnd, yEnd, false, controlPosition2.loopBottom);
+                SymPath path2 = new SymPath(new[] { path1.LastPoint, path3.FirstPoint });
+                return SymPath.Join(SymPath.Join(path1, path2, PointKind.Normal), path3, PointKind.Normal);
             }
             else {
-                return PathFromStartToEnd(xStart, yStart, xEnd, yEnd);
+                return PathFromStartToEnd(xStart, yStart, xEnd, yEnd, startHorizontal, controlPosition2.loopBottom);
             }
         }
 
-        SymPath PathFromStartToEnd(float xStart, float yStart, float xEnd, float yEnd)
+        SymPath PathFromStartToEnd(float xStart, float yStart, float xEnd, float yEnd, bool startHorizontal, float yLoopBottom)
         {
             const float yUp = 0.45F;  // Horizontal line above end
             const float xCorner = 0.15F, yCorner = xCorner * widthUnit / heightUnit;
             const float xBez = 0.075F, yBez = xBez * widthUnit / heightUnit;
 
+            float xDir = Math.Sign(xEnd - xStart);
+            float yDir = (yEnd <= yStart) ? -1 : 1; 
+
+            yEnd -= 0.3F * yDir;
+            if (startHorizontal) {
+                xStart += 0.4F * xDir;
+            }
+            else {
+                yStart += 0.3F;
+            }
+
             SymPath path;
             if (xStart == xEnd) {
                 path = new SymPath(new[] { LocationFromAbstractPosition(xStart, yStart), LocationFromAbstractPosition(xEnd, yEnd) });
             }
+            else if (startHorizontal) {
+                float yHoriz = yStart;
+                path = new SymPath(new[] { 
+                                            LocationFromAbstractPosition(xStart, yHoriz), 
+                                            /* horizontal line */
+                                            LocationFromAbstractPosition(xEnd - xCorner * xDir, yHoriz),
+                                            LocationFromAbstractPosition(xEnd - xBez * xDir, yHoriz), 
+                                            /* corner: LocationFromAbstractPosition(xEnd, yHoriz), */
+                                            LocationFromAbstractPosition(xEnd, yHoriz + yBez * yDir),
+                                            LocationFromAbstractPosition(xEnd, yHoriz + yCorner * yDir), 
+                                            /* vertical line */
+                                            LocationFromAbstractPosition(xEnd, yEnd) },
+                                   new[] { PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal });
+
+            }
             else {
-                float xDir = Math.Sign(xEnd - xStart);
-                float yHoriz = yEnd - yUp;
+                float yHoriz; 
+
+                if (yDir < 0) {
+                    yHoriz = yLoopBottom + yUp;
+                    xEnd -= 0.3F * xDir;
+                }
+                else {
+                    yHoriz = yEnd - yUp; 
+                }
+
                 path = new SymPath(new[] { LocationFromAbstractPosition(xStart, yStart),
                                             /* vertical line */
                                             LocationFromAbstractPosition(xStart, yHoriz - yCorner),
@@ -206,8 +254,8 @@ namespace PurplePen
                                             LocationFromAbstractPosition(xEnd - xCorner * xDir, yHoriz),
                                             LocationFromAbstractPosition(xEnd - xBez * xDir, yHoriz), 
                                             /* corner: LocationFromAbstractPosition(xEnd, yHoriz), */
-                                            LocationFromAbstractPosition(xEnd, yHoriz + yBez),
-                                            LocationFromAbstractPosition(xEnd, yHoriz + yCorner), 
+                                            LocationFromAbstractPosition(xEnd, yHoriz + yBez * yDir),
+                                            LocationFromAbstractPosition(xEnd, yHoriz + yCorner * yDir), 
                                             /* vertical line */
                                             LocationFromAbstractPosition(xEnd, yEnd) },
                                    new[] { PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal });
@@ -245,22 +293,24 @@ namespace PurplePen
                 controlPositions[index] = new ControlPosition() {
                     x = x,
                     y = y,
-                    width = 1,
-                    height = 1
                 };
                 totalWidth = Math.Max(totalWidth, 1);
                 totalHeight += 1;
                 y += 1;
 
                 if (numForks > 1) {
+                    bool loop = (controlViews[index].joinIndex == index);
+
                     // fork or loop subsequent. Two passes -- first determine totalWidth and maxHeight;
                     float totalForkWidth = 0, maxForkHeight = 1;
                     SizeF[] forkSize = new SizeF[numForks];
-                    PointF[] forkStart = new PointF[numForks];
+                    ForkPosition[] forkStart = new ForkPosition[numForks];
 
                     int startFork = 0;
-                    if (controlViews[index].joinIndex == index)
-                        startFork = 1; // Don't do fall through from loop.
+                    if (loop) {
+                        startFork = 1; 
+                        totalForkWidth = 1;
+                    }
 
                     // Get size of each fork.
                     for (int i = startFork; i < numForks; ++i) {
@@ -270,17 +320,45 @@ namespace PurplePen
                     }
 
                     // Get position of each fork.
-                    float forkX = x - (totalForkWidth - 1) / 2;
-                    float forkY = y + 0.5F;
-                    for (int i = startFork; i < numForks; ++i) {
-                        forkStart[i] = new PointF(forkX, forkY);
-                        forkX += forkSize[i].Width;
+                    if (loop) {
+                        float forkY = y;
+                        float forkX = x;
+                        forkStart[0] = new ForkPosition(forkX, forkY, false);
+                        int halfForks = numForks / 2;
+
+                        forkX = x;
+                        for (int i = startFork; i < halfForks; ++i) {
+                            forkX -= forkSize[i].Width;
+                        }
+
+                        for (int i = startFork; i < halfForks; ++i) {
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkX += forkSize[i].Width;
+                        }
+
+                        forkX = x;
+
+                        for (int i = halfForks; i < numForks; ++i) {
+                            forkX += forkSize[i].Width;
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                        }
+
+                        controlPositions[index].loopBottom = y + maxForkHeight - 0.5F;
                     }
+                    else { 
+                        float forkY = y + 0.5F;
+                        float forkX = x - (totalForkWidth - 1) / 2;
+                        for (int i = startFork; i < numForks; ++i) {
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkX += forkSize[i].Width;
+                        }
+                    }
+
                     controlPositions[index].forkStart = forkStart;
 
                     // Assign control positions for each fork again, now that we know the start position.
                     for (int i = startFork; i < numForks; ++i) {
-                        AssignControlPositions(controlViews[index].legTo[i], controlViews[index].joinIndex, forkStart[i].X, forkStart[i].Y);
+                        AssignControlPositions(controlViews[index].legTo[i], controlViews[index].joinIndex, forkStart[i].x, forkStart[i].y);
                     }
 
                     float height = maxForkHeight + 1;
