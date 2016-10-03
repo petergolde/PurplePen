@@ -613,7 +613,7 @@ namespace PurplePen
         // Update the active description.
         void UpdateActiveDescription()
         {
-            DescriptionFormatter descFormatter = new DescriptionFormatter(topologyCourseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(activeCourseView, symbolDB);
             activeDescription = descFormatter.CreateDescription(true);
         }
 
