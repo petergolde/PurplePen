@@ -78,6 +78,7 @@ namespace PurplePen
         int activeCourseViewIndex;              // Index of the active course view (tab).
 
         CourseView activeCourseView;            // The active course view.
+        CourseView topologyCourseView;            // The active course view, but: null if all controls or score, plus always shows all variations.
 
         DescriptionLine[] activeDescription;    // The active description.
         int selectedDescriptionLineFirst;             // If there is a selection, the first selected row of the description.
@@ -85,6 +86,8 @@ namespace PurplePen
 
         CourseLayout activeCourse;             // The active course.
         CourseObj[] selectedCourseObjects;  // The selected objects in the active course.
+
+        CourseLayout activeTopologyCourseLayout;            // The active topology
 
         public SelectionMgr(EventDB eventDB, SymbolDB symbolDB, Controller controller)
         {
@@ -224,6 +227,16 @@ namespace PurplePen
             {
                 UpdateState();
                 return activeCourse;
+            }
+        }
+
+        // Layout that shows the topology.
+        public CourseLayout TopologyLayout
+        {
+            get
+            {
+                UpdateState();
+                return activeTopologyCourseLayout;
             }
         }
 
@@ -412,6 +425,9 @@ namespace PurplePen
                 // Update the course
                 UpdateCourse();
 
+                // Update the topology course layout.
+                UpdateTopology();
+
                 // Update the active description.
                 UpdateActiveDescription();
 
@@ -525,11 +541,29 @@ namespace PurplePen
                 activeCourseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
             }
             else {
-                for (int i = 1; i < courseViewIds.Length; ++i)
+                for (int i = 1; i < courseViewIds.Length; ++i) {
                     if (courseViewIds[i] == activeCourseDesignator.CourseId) {
                         activeCourseViewIndex = i;
                         activeCourseView = CourseView.CreateViewingCourseView(eventDB, activeCourseDesignator);
                     }
+                }
+            }
+
+            // Get/create the topology course view. Not supported (null) for score and all controls. Always shows
+            // all variations for a course with variations.
+            if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
+                if (QueryEvent.HasVariations(activeCourseView.EventDB, activeCourseView.BaseCourseId)) {
+                    topologyCourseView = CourseView.CreateViewingCourseView(eventDB, activeCourseDesignator.WithAllVariations());
+                }
+                else {
+                    topologyCourseView = activeCourseView;
+                }
+            }
+            else if (activeCourseView.Kind == CourseView.CourseViewKind.AllVariations) {
+                topologyCourseView = activeCourseView;
+            }
+            else {
+                topologyCourseView = null;
             }
         }
 
@@ -561,10 +595,25 @@ namespace PurplePen
             }
         }
 
+        // Update the topology
+        void UpdateTopology()
+        {
+            if (topologyCourseView == null) {
+                activeTopologyCourseLayout = null;
+            }
+            else {
+                // Place the active course in the layout.
+                activeTopologyCourseLayout = new CourseLayout();
+                activeTopologyCourseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
+                TopologyFormatter formatter = new TopologyFormatter();
+                formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeTopologyCourseLayout, CourseLayer.MainCourse);
+            }
+        }
+
         // Update the active description.
         void UpdateActiveDescription()
         {
-            DescriptionFormatter descFormatter = new DescriptionFormatter(activeCourseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(topologyCourseView, symbolDB);
             activeDescription = descFormatter.CreateDescription(true);
         }
 

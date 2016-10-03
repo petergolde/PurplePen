@@ -5,6 +5,11 @@ using System.Text;
 using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Threading;
+using PdfiumViewer;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace PurplePen
 {
@@ -15,8 +20,7 @@ namespace PurplePen
         private string pngFileName;
         private ConversionStatus status;
         private string conversionOutput;
-        private StringBuilder stderrOutput;
-        private Process process;
+        private Task conversionTask;
 
         private const int Resolution = 600; // Resolution in DPI
         
@@ -47,14 +51,6 @@ namespace PurplePen
             }
         }
 
-        public bool GhostscriptInstalled
-        {
-            get
-            {
-                return FindGhostscriptExe() != null;
-            }
-        }
-
         public ConversionStatus Status
         {
             get
@@ -79,7 +75,9 @@ namespace PurplePen
                 return status;
             }
 
+            CleanCacheDirectory();
             string cacheFileName = GetCacheFileName(pdfFileName);
+
             if (File.Exists(cacheFileName)) {
                 // Cached file still exists. Use it.
                 conversionOutput = "";
@@ -94,128 +92,85 @@ namespace PurplePen
         // Try to begin conversion into bitmap. 
         public ConversionStatus BeginUncachedConversion(string fileName, int resolution)
         {
-            try {
-                string gsExe = FindGhostscriptExe();
-                if (gsExe == null) {
-                    conversionOutput = MiscText.GhostscriptNotInstalled;
-                    status = ConversionStatus.Failure;
-                    return status;
-                }
+            TaskScheduler currentContextScheduler = SynchronizationContext.Current == null ? TaskScheduler.Current : TaskScheduler.FromCurrentSynchronizationContext();
 
-                string arguments = String.Format(
-                    "-q -dSAFER -dBATCH -dNOPAUSE -r{2} -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDefaultCMYKProfile=\"{3}\" -sDEVICE=png16m -sOutputFile=\"{1}\" \"{0}\"",
-                    pdfFileName, fileName, resolution, SwopColorConverter.SwopFileName);
+            status = ConversionStatus.Working;
+            pngFileName = fileName;
+            conversionTask = Task.Factory.StartNew(() => ConvertAndSaveImage(fileName, resolution));
+            conversionTask.ContinueWith(ConversionComplete, CancellationToken.None, TaskContinuationOptions.None, currentContextScheduler);
+            return status;
+        }
 
-                stderrOutput = new StringBuilder();
-                ProcessStartInfo startInfo = new ProcessStartInfo(gsExe, arguments);
-                startInfo.CreateNoWindow = true;
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.RedirectStandardError = true;
-                startInfo.RedirectStandardOutput = true;
-                startInfo.UseShellExecute = false;
-                process = new Process();
-                process.StartInfo = startInfo;
-                process.EnableRaisingEvents = true;
-                process.ErrorDataReceived += ProcessDataReceived;
-                process.OutputDataReceived += ProcessDataReceived;
-                process.Exited += ProcessExited;
-                process.Start();
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
+        void ConvertAndSaveImage(string destinationFileName, int resolution)
+        {
+            PdfDocument document = PdfDocument.Load(pdfFileName);
+            Image image = document.Render(0, resolution, resolution, true);
+            image.Save(destinationFileName, ImageFormat.Png);
+        }
 
-                status = ConversionStatus.Working;
-                pngFileName = fileName;
-                return status;
-            }
-            catch (Exception e) {
+        void ConversionComplete(Task task)
+        {
+            if (task.IsFaulted) {
                 status = ConversionStatus.Failure;
-
-                if (!string.IsNullOrWhiteSpace(pngFileName))
-                    File.Delete(pngFileName);
-
+                Exception e = conversionTask.Exception;
+                while (e.InnerException != null)
+                    e = e.InnerException;
                 conversionOutput = e.Message;
-                return status;
             }
-        }
-
-        private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            stderrOutput.Append(e.Data);
-            stderrOutput.Append("\r\n");
-        }
-
-        private void ProcessExited(object sender, EventArgs e)
-        {
-            conversionOutput = stderrOutput.ToString();
-            status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
-            process.Dispose();
-            process = null;
-
-            if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName))
-                File.Delete(pngFileName);
-
-            if (ConversionCompleted != null)
-                ConversionCompleted(this, EventArgs.Empty);
-        }
-
-        internal string FindGhostscriptExe()
-        {
-            // The GhostScript EXE is found by looking in the registry path:
-            //   HKEY_LOCAL_MACHINE\Software\Artifex\GPL Ghostscript\<version number>
-            // where we use the largest version number we can find.
-            RegistryKey gsKey;
-            string latestValue;
-            try {
-                gsKey = Registry.LocalMachine.OpenSubKey("Software\\Artifex\\GPL Ghostscript");
+            else if (task.IsCanceled) {
+                status = ConversionStatus.Failure;
+                conversionOutput = "Cancelled";
             }
-            catch (Exception) {
-                return null;
+            else {
+                status = ConversionStatus.Success;
+                conversionOutput = "";
             }
-            if (gsKey == null)
-                return null;
 
-            using (gsKey) {
-                var subKeys = gsKey.GetSubKeyNames();
-                if (subKeys == null || subKeys.Length == 0)
-                    return null;
+            conversionTask = null;
 
-                try {
-                    var latestKeyName = (from versionString in gsKey.GetSubKeyNames() orderby new Version(versionString) descending select versionString).First();
-
-                    // Make sure the latest is bigger or equal to the minimum version.
-                    if (string.Compare(latestKeyName, MapUtil.GhostscriptMinimumVersion, StringComparison.InvariantCultureIgnoreCase) < 0)
-                        return null;
-
-                    var latestKey = gsKey.OpenSubKey(latestKeyName);
-                    latestValue = (string)(latestKey.GetValue(null));
-                    latestKey.Dispose();
-                }
-                catch (Exception) {
-                    return null;
-                }
-
-                string ghostScriptPath = latestValue + "\\bin\\gswin32c.exe";
-                if (File.Exists(ghostScriptPath))
-                    return ghostScriptPath;
-                else
-                    return null;
-            }
+            ConversionCompleted?.Invoke(this, EventArgs.Empty);
         }
 
         internal string GetCacheFileName(string path)
+        {
+            string cacheDirectory = GetCacheDirectory();
+
+            return Path.Combine(cacheDirectory, CalculateSha1(path) + ".png");
+        }
+
+        private static string GetCacheDirectory()
         {
             string tempPath = Path.GetTempPath();
             string cacheDirectory = Path.Combine(tempPath, "PurplePen");
             if (!Directory.Exists(cacheDirectory))
                 Directory.CreateDirectory(cacheDirectory);
+            return cacheDirectory;
+        }
 
-            return Path.Combine(cacheDirectory, CalculateSha1(path) + ".png");
+        // Clean stale caches (over 6 months old).
+        private static void CleanCacheDirectory()
+        {
+            DateTime oldDate = DateTime.Now.Subtract(TimeSpan.FromDays(180));
+            string cacheDirectory = GetCacheDirectory();
+
+            try {
+                foreach (string filename in Directory.GetFiles(cacheDirectory, "*.png", SearchOption.TopDirectoryOnly)) {
+                    FileInfo fileInfo = new FileInfo(filename);
+                    if (fileInfo.Exists && fileInfo.LastWriteTime < oldDate) {
+                        fileInfo.Delete();
+                    }
+                }
+            } 
+            catch {
+                // Do nothing. Not a problem if we get an exception here.
+            }
         }
 
         internal string CalculateSha1(string path)
         {
             var hashAlgorithm = System.Security.Cryptography.SHA1.Create();
             byte[] hash = hashAlgorithm.ComputeHash(File.ReadAllBytes(path));
+            hash[0] ^= 0xe9;   // Change hash so different from previous (GhostScript)
             return Hexify(hash);
         }
 
@@ -226,12 +181,6 @@ namespace PurplePen
                 builder.Append(b.ToString("X2"));
             }
             return builder.ToString();
-        }
-
-        // Check to see if a conversion has completed.
-        private void CheckForCompletion()
-        {
-            throw new NotImplementedException();
         }
 
         public enum ConversionStatus

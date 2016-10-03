@@ -134,24 +134,11 @@ namespace PurplePen
             return true;
         }
 
-        public const string GhostscriptUrl = "http://downloads.ghostscript.com/public/old-gs-releases/gs916w32.exe";
-        public const string GhostscriptFileName = "gs916w32.exe";
-        public const string GhostscriptMinimumVersion = "9.16";
-
         public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out Size bitmapSize, out string errorMessageText)
         {
             IPdfLoadingStatus loadingStatus = new PdfLoadingUI();  // UNDONE: Should this be passed in instead?
 
             PdfMapFile mapFile = new PdfMapFile(pdfFileName);
-
-            if (!mapFile.GhostscriptInstalled) {
-                loadingStatus.DownloadAndInstall(GhostscriptUrl, GhostscriptFileName);
-            }
-
-            if (!mapFile.GhostscriptInstalled) {
-                errorMessageText = MiscText.GhostscriptNotInstalled;
-
-            }
 
             bool ok = true;
             PdfMapFile.ConversionStatus status = mapFile.BeginConversion();

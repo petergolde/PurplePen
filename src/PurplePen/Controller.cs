@@ -723,6 +723,12 @@ namespace PurplePen
             return currentMode.GetHighlights();
         }
 
+        // Get the current course topology to show in the topology pane. Can be null if there isn't any topology (all controls or score).
+        public CourseLayout GetTopologyLayout()
+        {
+            return selectionMgr.TopologyLayout;
+        }
+
         // Get the active tab.
         public int ActiveTab
         {

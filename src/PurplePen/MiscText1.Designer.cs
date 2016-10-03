@@ -788,15 +788,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GPL Ghostscript is not installed.
-        /// </summary>
-        internal static string GhostscriptNotInstalled {
-            get {
-                return ResourceManager.GetString("GhostscriptNotInstalled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
         internal static string GpxMustBeOcadMap {
