@@ -105,12 +105,13 @@ namespace PurplePen
         {
             int pageNumber = 0;
 
-            PdfDocument document = PdfDocument.Load(pdfFileName);
-            SizeF sizeInPoints = document.PageSizes[pageNumber];
-            int widthInPixels = (int) Math.Round(sizeInPoints.Width * (float)resolution / 72F);
-            int heightInPixels = (int) Math.Round(sizeInPoints.Height * (float)resolution / 72F);
-            Image image = document.Render(pageNumber, widthInPixels, heightInPixels, resolution, resolution, true);
-            image.Save(destinationFileName, ImageFormat.Png);
+            using (PdfDocument document = PdfDocument.Load(pdfFileName)) {
+                SizeF sizeInPoints = document.PageSizes[pageNumber];
+                int widthInPixels = (int)Math.Round(sizeInPoints.Width * (float)resolution / 72F);
+                int heightInPixels = (int)Math.Round(sizeInPoints.Height * (float)resolution / 72F);
+                Image image = document.Render(pageNumber, widthInPixels, heightInPixels, resolution, resolution, true);
+                image.Save(destinationFileName, ImageFormat.Png);
+            }
         }
 
         void ConversionComplete(Task task)
