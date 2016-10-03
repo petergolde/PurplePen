@@ -59,6 +59,7 @@ namespace PurplePen
         Controller controller;
         SymbolDB symbolDB;
         MapDisplay mapDisplay;
+        MapDisplay topologyMapDisplay;
 
         long changeNum = 0;         // When this changes, state information needs to be updated in the UI.
 
@@ -376,6 +377,19 @@ namespace PurplePen
         void UpdateCourse()
         {
             mapDisplay.SetCourse(controller.GetCourseLayout());
+        }
+
+        // Update the topology pane display.
+        void UpdateTopology()
+        {
+            if (topologyMapDisplay == null) {
+                topologyMapDisplay = new MapDisplay();
+                topologyMapDisplay.SetMapFile(MapType.None, null);
+                topologyMapDisplay.AntiAlias = true;
+                mapViewerTopology.SetMap(topologyMapDisplay);
+            }
+
+            topologyMapDisplay.SetCourse(controller.GetTopologyLayout());
         }
 
         // Update the print area in the map pane.
@@ -813,6 +827,7 @@ namespace PurplePen
                         UpdateMapFile();
                         UpdateTabs();
                         UpdateCourse();
+                        UpdateTopology();
                         UpdatePrintArea();
                         UpdatePartBanner();
                         UpdateDescription();

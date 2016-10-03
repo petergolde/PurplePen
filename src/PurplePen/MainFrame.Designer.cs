@@ -370,18 +370,18 @@ namespace PurplePen
             resources.ApplyResources(this.panelDescriptionAndTopology, "panelDescriptionAndTopology");
             this.panelDescriptionAndTopology.Name = "panelDescriptionAndTopology";
             // 
-            // mapViewer1
+            // mapViewerTopology
             // 
             this.mapViewerTopology.BackColor = System.Drawing.Color.White;
             this.mapViewerTopology.CausesValidation = false;
-            this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer1.CenterPoint")));
-            resources.ApplyResources(this.mapViewerTopology, "mapViewer1");
+            this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewerTopology.CenterPoint")));
+            resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
-            this.mapViewerTopology.HoverDelay = 0;
-            this.mapViewerTopology.Name = "mapViewer1";
+            this.mapViewerTopology.HoverDelay = 400;
+            this.mapViewerTopology.Name = "mapViewerTopology";
             this.mapViewerTopology.ShowGrid = false;
             this.mapViewerTopology.ShowSymbolBounds = false;
-            this.mapViewerTopology.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewer1.Viewport")));
+            this.mapViewerTopology.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewerTopology.Viewport")));
             this.mapViewerTopology.ZoomFactor = 1F;
             // 
             // descriptionControl
