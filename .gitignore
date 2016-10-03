@@ -14,6 +14,8 @@ Release
 *.sdf
 *.opensdf
 *.DS_Store
+!src/Libraries/**/Debug
+!src/Libraries/**/Release
 src/TestResults
 src/tools/TranslateTool/TestResults
 src/tools/TranslateTool/TestFiles
