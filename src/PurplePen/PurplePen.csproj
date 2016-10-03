@@ -83,7 +83,7 @@
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_PDF.dll</HintPath>
     </Reference>
     <Reference Include="PdfiumViewer">
-      <HintPath>..\Libraries\PdfiumViewer\Release\PdfiumViewer.dll</HintPath>
+      <HintPath>..\Libraries\PdfiumViewer\$(Configuration)\PdfiumViewer.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp">
       <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
@@ -3334,8 +3334,12 @@
     </Content>
     <None Include="Images\Portrait.PNG" />
     <None Include="Images\Landscape.PNG" />
-    <Content Include="..\Libraries\PdfiumViewer\Release\pdfium.dll">
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\pdfium.dll">
       <Link>pdfium.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\dbghelp.dll">
+      <Link>dbghelp.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="USWebCoatedSWOP.icc">
