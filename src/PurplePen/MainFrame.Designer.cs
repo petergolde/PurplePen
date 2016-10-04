@@ -375,7 +375,7 @@ namespace PurplePen
             this.mapViewerTopology.BackColor = System.Drawing.Color.White;
             this.mapViewerTopology.CausesValidation = false;
             this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewerTopology.CenterPoint")));
-            this.mapViewerTopology.ConstrainScrolling = true;
+            this.mapViewerTopology.ConstrainedScrolling = PurplePen.MapView.MapViewer.ConstrainedScrollingMode.PinTop;
             resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
             this.mapViewerTopology.HoverDelay = 400;
@@ -413,7 +413,7 @@ namespace PurplePen
             this.mapViewer.BackColor = System.Drawing.Color.White;
             this.mapViewer.CausesValidation = false;
             this.mapViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer.CenterPoint")));
-            this.mapViewer.ConstrainScrolling = true;
+            this.mapViewer.ConstrainedScrolling = PurplePen.MapView.MapViewer.ConstrainedScrollingMode.KeepSome;
             resources.ApplyResources(this.mapViewer, "mapViewer");
             this.mapViewer.ForeColor = System.Drawing.Color.Black;
             this.mapViewer.HoverDelay = 400;

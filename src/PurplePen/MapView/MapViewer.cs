@@ -231,29 +231,63 @@ namespace PurplePen.MapView
         {
             PointF newCenter = potentialCenter;
 
-            if (scrollBounds.IsEmpty || viewportSize.IsEmpty)
+            if (ConstrainedScrolling == ConstrainedScrollingMode.None || scrollBounds.IsEmpty || viewportSize.IsEmpty)
                 return potentialCenter;
 
             if (scrollBounds.Width < viewportSize.Width) {
                 // map is narrower than viewport. Constrain to be fully within bounds.
-                newCenter.X = Math.Min(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
-                newCenter.X = Math.Max(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+                if (ConstrainedScrolling == ConstrainedScrollingMode.PinCenter || ConstrainedScrolling == ConstrainedScrollingMode.PinTop) {
+                    newCenter.X = (scrollBounds.Left + scrollBounds.Right) / 2.0F;
+                }
+                else if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                    newCenter.X = Math.Min(newCenter.X, scrollBounds.Right + viewportSize.Width / 2.0F - viewportSize.Width / 10.0F);
+                    newCenter.X = Math.Max(newCenter.X, scrollBounds.Left - viewportSize.Width / 2.0F + viewportSize.Width / 10.0F);
+                }
+                else {
+                    newCenter.X = Math.Min(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
+                    newCenter.X = Math.Max(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+                }
             }
             else {
                 // map is wider than viewport. Constrain to have nothing outside map visibiel
-                newCenter.X = Math.Max(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
-                newCenter.X = Math.Min(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+                if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                    newCenter.X = Math.Min(newCenter.X, scrollBounds.Right + viewportSize.Width / 2.0F - viewportSize.Width / 10.0F);
+                    newCenter.X = Math.Max(newCenter.X, scrollBounds.Left - viewportSize.Width / 2.0F + viewportSize.Width / 10.0F);
+                }
+                else {
+                    newCenter.X = Math.Max(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
+                    newCenter.X = Math.Min(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+                }
             }
 
             if (scrollBounds.Height < viewportSize.Height) {
                 // map is narrower than viewport. Constrain to be fully within bounds.
-                newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
-                newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+                if (ConstrainedScrolling == ConstrainedScrollingMode.PinCenter) {
+                    newCenter.Y = (scrollBounds.Top + scrollBounds.Bottom) / 2.0F;
+                }
+                else if (ConstrainedScrolling == ConstrainedScrollingMode.PinTop) {
+                    newCenter.Y = scrollBounds.Bottom - viewportSize.Height / 2.0F;
+
+                }
+                else if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                    newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Bottom + viewportSize.Height / 2.0F - viewportSize.Height / 10.0F);
+                    newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Top - viewportSize.Height / 2.0F + viewportSize.Height / 10.0F);
+                }
+                else {
+                    newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
+                    newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+                }
             }
             else {
                 // map is wider than viewport. Constrain to have nothing outside map visibiel
-                newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
-                newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+                if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                    newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Bottom + viewportSize.Height / 2.0F - viewportSize.Height / 10.0F);
+                    newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Top - viewportSize.Height / 2.0F + viewportSize.Height / 10.0F);
+                }
+                else {
+                    newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
+                    newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+                }
             }
 
             return newCenter;
@@ -310,8 +344,7 @@ namespace PurplePen.MapView
             get { return centerPoint; }
             set {
                 if (centerPoint != value) {
-                    if (ConstrainScrolling)
-                        centerPoint = ConstrainCenterPoint(value, viewport.Size, GetScrollBounds());
+                    centerPoint = ConstrainCenterPoint(value, viewport.Size, GetScrollBounds());
                     ViewportChanged();			
                 }
             }
@@ -342,8 +375,7 @@ namespace PurplePen.MapView
                 centerPoint = new PointF((value.Left + value.Right) / 2.0F, (value.Top + value.Bottom) / 2.0F);
 
                 SizeF newViewportSize = new SizeF(viewport.Width * oldZoom / zoom, viewport.Height * oldZoom / zoom);
-                if (ConstrainScrolling)
-                    centerPoint = ConstrainCenterPoint(centerPoint, newViewportSize, GetScrollBounds());
+                centerPoint = ConstrainCenterPoint(centerPoint, newViewportSize, GetScrollBounds());
 
                 if (zoom != oldZoom || centerPoint != oldCenterPoint)
                     ViewportChanged();
@@ -394,7 +426,9 @@ namespace PurplePen.MapView
 
         public Size MouseWheelScrollAmount { get; set; } = new Size(0, 20);
 
-        public bool ConstrainScrolling { get; set; } = false;
+        public enum ConstrainedScrollingMode { None, KeepSome, KeepAll, PinTop, PinCenter}
+
+        public ConstrainedScrollingMode ConstrainedScrolling { get; set; } = ConstrainedScrollingMode.None;
 
         #endregion Property Accessors
 
@@ -410,12 +444,10 @@ namespace PurplePen.MapView
                 Invalidate();
             }
 
-            if (ConstrainScrolling) {
-                // Check if we need to scroll things to be within bounds again.
-                PointF constrainedCenter = ConstrainCenterPoint(centerPoint, viewport.Size, GetScrollBounds());
-                if (centerPoint != constrainedCenter) {
-                    CenterPoint = constrainedCenter;
-                }
+            // Check if we need to scroll things to be within bounds again.
+            PointF constrainedCenter = ConstrainCenterPoint(centerPoint, viewport.Size, GetScrollBounds());
+            if (centerPoint != constrainedCenter) {
+                CenterPoint = constrainedCenter;
             }
         }
 
@@ -661,15 +693,13 @@ namespace PurplePen.MapView
             PointF newCenterPixel = new PointF(centerPixels.X - dxPixels, centerPixels.Y - dyPixels);
             PointF newCenter = PixelToWorld(newCenterPixel);
 
-            if (ConstrainScrolling) {
-                PointF constrainedCenter = ConstrainCenterPoint(newCenter, viewport.Size, GetScrollBounds());
-                if (constrainedCenter != newCenter) {
-                    PointF constrainedPixelCenter = WorldToPixel(constrainedCenter);
-                    dxPixels = (int) Math.Truncate(centerPixels.X - constrainedPixelCenter.X);
-                    dyPixels = (int) Math.Truncate(centerPixels.Y - constrainedPixelCenter.Y);
-                    newCenterPixel = new PointF(centerPixels.X - dxPixels, centerPixels.Y - dyPixels);
-                    newCenter = PixelToWorld(newCenterPixel);
-                }
+            PointF constrainedCenter = ConstrainCenterPoint(newCenter, viewport.Size, GetScrollBounds());
+            if (constrainedCenter != newCenter) {
+                PointF constrainedPixelCenter = WorldToPixel(constrainedCenter);
+                dxPixels = (int) Math.Truncate(centerPixels.X - constrainedPixelCenter.X);
+                dyPixels = (int) Math.Truncate(centerPixels.Y - constrainedPixelCenter.Y);
+                newCenterPixel = new PointF(centerPixels.X - dxPixels, centerPixels.Y - dyPixels);
+                newCenter = PixelToWorld(newCenterPixel);
             }
 
             bool success;
@@ -872,6 +902,12 @@ namespace PurplePen.MapView
 
         private void MapViewer_Resize(object sender, System.EventArgs e) {
             ViewportChanged();
+
+            // Check if we need to scroll things to be within bounds again.
+            PointF constrainedCenter = ConstrainCenterPoint(centerPoint, viewport.Size, GetScrollBounds());
+            if (centerPoint != constrainedCenter) {
+                CenterPoint = constrainedCenter;
+            }
         }
 
         private void MapViewer_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e) {

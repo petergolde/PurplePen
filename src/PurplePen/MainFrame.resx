@@ -211,7 +211,7 @@
     <value>True</value>
   </data>
   <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 205</value>
+    <value>3, 212</value>
   </data>
   <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 0, 3</value>
@@ -250,7 +250,7 @@
     <value>True</value>
   </data>
   <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 205</value>
+    <value>128, 212</value>
   </data>
   <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -283,7 +283,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAA0LcL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAAeLgL
 </value>
   </data>
   <data name="mapViewerTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -296,7 +296,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 202</value>
+    <value>256, 209</value>
   </data>
   <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -308,8 +308,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAeHcHwpnI1cF3d4dC
-        ishVQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAeHcHwjQx3cF3d4dC
+        EjFdQgs=
 </value>
   </data>
   <data name="mapViewerTopology.Visible" type="System.Boolean, mscorlib">
@@ -340,7 +340,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 202</value>
+    <value>256, 209</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -367,7 +367,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 202</value>
+    <value>256, 209</value>
   </data>
   <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -394,7 +394,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 233</value>
+    <value>256, 240</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -442,7 +442,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 130</value>
+    <value>256, 123</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -478,7 +478,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>233</value>
+    <value>240</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -514,7 +514,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADAjrsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuABAkbsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -536,7 +536,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwvE7J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6UwgQ8J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -1844,12 +1844,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEwSURBVDhPvZKtTwJxGMe/M7gZrDqC0ej/4ChXDBTmrBYD
-        xUIwYbMZtDoLzb+CTSLBTa7RaNIAGa93fh542J16Q8Ym3+27u+f97aetI1IUTDW9cHEzxIqLMJ5p9kTC
-        PVcn6Kufw/hIpRp8n2gS/uRY47YlMZo80ujEw6WOOvtph3VJ0WdPIVG5ZEqyt/i/5luAeXiaJkG35tdV
-        9xO/Sw9fAGPVjBhuXJUJfIr4vLGPY1clIMk9lUIcVm5+oMFRU81dF/8ZFVV2aPfQxUxgv7LOmeDBVQns
-        zIz0arO7KhME39kO4YurFiBzMNTww4x2heVF0qSDM4qc8x+aH3LZw+ftleuqR559LVrBnnoHnuLbGHMH
-        e3hWLYv4NexJUPj3mW2hNqt3tHInf4JqAcy7uC1IX44KNnaonY2SAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqC0ej/4ChXDBTmrBYD
+        xUIwYbMZtDoLzf+BzY1KcJNrNJo0QMbrnZ8HHnan3JC5yXf77u55f/tp64gUBVNNL1z8G2LFRRjPNHsi
+        4Z6rE/TVz2F8pNIrfJ9oEv7kWOO2JTGaPNLoxMOljjr7aYdNSdFnTyFRuWRKsrf4v+ZbgHl4miZBt+bX
+        VfcTv0sPXwBj1YwYblyVCXyK+Lyxj2NXJSDJPZVCHNZufqDBUVPNXRf/GRVVdmj30MVMYL+yzpngwVUJ
+        7MyMVLfZXZUJgu9sh/DFVQuQORhq+GFGu8LyImnSwRlFzvkPzQ+57OHz9so11SLPvhGtYE+9A0/xbYy5
+        gz08q5ZF/Br2JCi8emZbqM3qHa3dya+gWgDzLm4L0hdxYjZaOeka9QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
