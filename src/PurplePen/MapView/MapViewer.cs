@@ -95,6 +95,8 @@ namespace PurplePen.MapView
         public event PointerEventHandler OnPointerHover;
         public event MouseEventHandler OnMouseEvent;
 
+        public enum WheelAction { None, Zoom, Scroll}
+
         // Various constants
         const int HandleRadius = 4;
         const int HandleDiameter = HandleRadius * 2 + 1;
@@ -143,7 +145,7 @@ namespace PurplePen.MapView
 
             // Calculate the world->window transform.
             Matrix matrix = new Matrix();
-            float scaleFactor = pixelPerMm * zoom;
+            float scaleFactor = ScaleFactor;
             matrix.Translate(midpoint.X, midpoint.Y);
             matrix.Scale(scaleFactor, -scaleFactor);  // y scale is negative to get to cartesian orientation.
             matrix.Translate(- centerPoint.X, - centerPoint.Y);
@@ -157,6 +159,11 @@ namespace PurplePen.MapView
             PointF[] pts = { new PointF(0.0F, (float) sizeInPixels.Height), new PointF((float) sizeInPixels.Width, 0.0F) };
             xformPixelToWorld.TransformPoints(pts);
             viewport = new RectangleF(pts[0].X, pts[0].Y, pts[1].X - pts[0].X, pts[1].Y - pts[0].Y);
+        }
+
+        float ScaleFactor
+        {
+            get { return pixelPerMm * zoom; }
         }
 
         public Matrix GetWorldToPixelXform() {
@@ -219,10 +226,56 @@ namespace PurplePen.MapView
             CenterPoint = centerPtWorld;
         }
 
+        // Update the center point to enforce scrolling bounds (if desired)
+        PointF ConstrainCenterPoint(PointF potentialCenter, SizeF viewportSize, RectangleF scrollBounds)
+        {
+            PointF newCenter = potentialCenter;
+
+            if (scrollBounds.IsEmpty || viewportSize.IsEmpty)
+                return potentialCenter;
+
+            if (scrollBounds.Width < viewportSize.Width) {
+                // map is narrower than viewport. Constrain to be fully within bounds.
+                newCenter.X = Math.Min(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
+                newCenter.X = Math.Max(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+            }
+            else {
+                // map is wider than viewport. Constrain to have nothing outside map visibiel
+                newCenter.X = Math.Max(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F);
+                newCenter.X = Math.Min(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F);
+            }
+
+            if (scrollBounds.Height < viewportSize.Height) {
+                // map is narrower than viewport. Constrain to be fully within bounds.
+                newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
+                newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+            }
+            else {
+                // map is wider than viewport. Constrain to have nothing outside map visibiel
+                newCenter.Y = Math.Max(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F);
+                newCenter.Y = Math.Min(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F);
+            }
+
+            return newCenter;
+        }
+
         Graphics GetWorldGraphics() {
             Graphics g = CreateGraphics();
             g.Transform = xformWorldToPixel;
             return g;
+        }
+
+        // Get bounds to constrain scrolling within.
+        RectangleF GetScrollBounds()
+        {
+            if (mapDisplay != null) {
+                RectangleF bounds = mapDisplay.Bounds;
+                bounds.Inflate(1 / ScaleFactor, 1 / ScaleFactor); // Add up to 1 pixel boundary.
+                return bounds;
+            }
+            else {
+                return new RectangleF();
+            }
         }
 
         // Get the size of one pixel.
@@ -257,7 +310,8 @@ namespace PurplePen.MapView
             get { return centerPoint; }
             set {
                 if (centerPoint != value) {
-                    centerPoint = value;
+                    if (ConstrainScrolling)
+                        centerPoint = ConstrainCenterPoint(value, viewport.Size, GetScrollBounds());
                     ViewportChanged();			
                 }
             }
@@ -286,6 +340,11 @@ namespace PurplePen.MapView
 
                 zoom = (float) Math.Min(newHorizZoom, newVertZoom);
                 centerPoint = new PointF((value.Left + value.Right) / 2.0F, (value.Top + value.Bottom) / 2.0F);
+
+                SizeF newViewportSize = new SizeF(viewport.Width * oldZoom / zoom, viewport.Height * oldZoom / zoom);
+                if (ConstrainScrolling)
+                    centerPoint = ConstrainCenterPoint(centerPoint, newViewportSize, GetScrollBounds());
+
                 if (zoom != oldZoom || centerPoint != oldCenterPoint)
                     ViewportChanged();
             }
@@ -329,6 +388,14 @@ namespace PurplePen.MapView
 
         public int HoverDelay { get; set; }
 
+        public bool MiddleButtonAutoDrag { get; set; } = true;
+
+        public WheelAction MouseWheelAction { get; set; } = MapViewer.WheelAction.Zoom;
+
+        public Size MouseWheelScrollAmount { get; set; } = new Size(0, 20);
+
+        public bool ConstrainScrolling { get; set; } = false;
+
         #endregion Property Accessors
 
         #region Change handling
@@ -341,6 +408,14 @@ namespace PurplePen.MapView
             }
             else {
                 Invalidate();
+            }
+
+            if (ConstrainScrolling) {
+                // Check if we need to scroll things to be within bounds again.
+                PointF constrainedCenter = ConstrainCenterPoint(centerPoint, viewport.Size, GetScrollBounds());
+                if (centerPoint != constrainedCenter) {
+                    CenterPoint = constrainedCenter;
+                }
             }
         }
 
@@ -583,9 +658,19 @@ namespace PurplePen.MapView
         // Scroll the view by a certain number of PIXELs.
         public void ScrollView(int dxPixels, int dyPixels) {
             PointF centerPixels = WorldToPixel(centerPoint);
-            centerPixels.X -= dxPixels;
-            centerPixels.Y -= dyPixels;
-            PointF newCenter = PixelToWorld(centerPixels);
+            PointF newCenterPixel = new PointF(centerPixels.X - dxPixels, centerPixels.Y - dyPixels);
+            PointF newCenter = PixelToWorld(newCenterPixel);
+
+            if (ConstrainScrolling) {
+                PointF constrainedCenter = ConstrainCenterPoint(newCenter, viewport.Size, GetScrollBounds());
+                if (constrainedCenter != newCenter) {
+                    PointF constrainedPixelCenter = WorldToPixel(constrainedCenter);
+                    dxPixels = (int) Math.Truncate(centerPixels.X - constrainedPixelCenter.X);
+                    dyPixels = (int) Math.Truncate(centerPixels.Y - constrainedPixelCenter.Y);
+                    newCenterPixel = new PointF(centerPixels.X - dxPixels, centerPixels.Y - dyPixels);
+                    newCenter = PixelToWorld(newCenterPixel);
+                }
+            }
 
             bool success;
             success = ScrollWindow(this.Handle, dxPixels, dyPixels, IntPtr.Zero, IntPtr.Zero);
@@ -764,7 +849,8 @@ namespace PurplePen.MapView
 
         private void MapViewer_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
             if (e.Button == MouseButtons.Middle) { 
-                BeginMapDragging(new Point(e.X, e.Y), e.Button);
+                if (MiddleButtonAutoDrag)
+                    BeginMapDragging(new Point(e.X, e.Y), e.Button);
             }
             else {
                 int buttonNumber = ButtonNumberForEvent(e.Button);
@@ -809,15 +895,25 @@ namespace PurplePen.MapView
 
         private void MapViewer_MouseWheel(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            if (MouseWheelAction == WheelAction.Zoom) {
+                MouseWheelZoom(e);
+            }
+            else if (MouseWheelAction == WheelAction.Scroll) {
+                MouseWheelScroll(e);
+            }
+        }
+
+        private void MouseWheelZoom(MouseEventArgs e)
+        {
             const double zoomChange = 1.1892;  // The four root of 2. So four scrolls zooms by 2x.
             int wheelDelta = e.Delta;
             float zoom = ZoomFactor;
-            
+
             // Determine the point to zoom around.
             Rectangle rect = this.ClientRectangle;
             PointF zoomPtPixel, zoomPtWorld;
 
-            if (rect.Contains(e.X, e.Y)) 
+            if (rect.Contains(e.X, e.Y))
                 zoomPtPixel = new PointF(e.X, e.Y);
             else
                 return;
@@ -834,6 +930,16 @@ namespace PurplePen.MapView
 
             ZoomAroundPoint(zoomPtWorld, zoom);
         }
+
+        private void MouseWheelScroll(MouseEventArgs e)
+        {
+            double wheelDelta = (double) e.Delta / 120.0;  // Number of wheel scrolls.
+
+            int scrollX = (int)Math.Round(MouseWheelScrollAmount.Width * wheelDelta);
+            int scrollY = (int)Math.Round(MouseWheelScrollAmount.Height * wheelDelta);
+            ScrollView(scrollX, scrollY);
+        }
+
 
         #endregion Event Handlers
 

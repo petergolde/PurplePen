@@ -375,9 +375,13 @@ namespace PurplePen
             this.mapViewerTopology.BackColor = System.Drawing.Color.White;
             this.mapViewerTopology.CausesValidation = false;
             this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewerTopology.CenterPoint")));
+            this.mapViewerTopology.ConstrainScrolling = true;
             resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
             this.mapViewerTopology.HoverDelay = 400;
+            this.mapViewerTopology.MiddleButtonAutoDrag = false;
+            this.mapViewerTopology.MouseWheelAction = PurplePen.MapView.MapViewer.WheelAction.Scroll;
+            this.mapViewerTopology.MouseWheelScrollAmount = new System.Drawing.Size(0, 40);
             this.mapViewerTopology.Name = "mapViewerTopology";
             this.mapViewerTopology.ShowGrid = false;
             this.mapViewerTopology.ShowSymbolBounds = false;
@@ -409,9 +413,13 @@ namespace PurplePen
             this.mapViewer.BackColor = System.Drawing.Color.White;
             this.mapViewer.CausesValidation = false;
             this.mapViewer.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewer.CenterPoint")));
+            this.mapViewer.ConstrainScrolling = true;
             resources.ApplyResources(this.mapViewer, "mapViewer");
             this.mapViewer.ForeColor = System.Drawing.Color.Black;
             this.mapViewer.HoverDelay = 400;
+            this.mapViewer.MiddleButtonAutoDrag = true;
+            this.mapViewer.MouseWheelAction = PurplePen.MapView.MapViewer.WheelAction.Zoom;
+            this.mapViewer.MouseWheelScrollAmount = new System.Drawing.Size(0, 20);
             this.mapViewer.Name = "mapViewer";
             this.mapViewer.ShowGrid = false;
             this.mapViewer.ShowSymbolBounds = false;

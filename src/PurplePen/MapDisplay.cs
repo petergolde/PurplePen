@@ -201,6 +201,28 @@ namespace PurplePen
             }
         }
 
+        // Bounds of both the map and the course.
+        public RectangleF Bounds
+        {
+            get
+            {
+                RectangleF mapBounds = MapBounds;
+                RectangleF courseBounds = new RectangleF();
+                
+                if (courseMap != null) {
+                    using (courseMap.Read())
+                        courseBounds = courseMap.Bounds;
+                }
+
+                if (mapBounds.IsEmpty)
+                    return courseBounds;
+                else if (courseBounds.IsEmpty)
+                    return mapBounds;
+                else
+                    return RectangleF.Union(mapBounds, courseBounds);
+            }
+        }
+
 
         // Colors in the map, or empty list if no map or bitmap map.
         public List<SymColor> GetMapColors()
