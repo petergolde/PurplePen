@@ -56,9 +56,12 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map)
+                return Cursors.Cross;
+            else
+                return Cursors.Arrow;
         }
 
         public override string StatusText
@@ -69,13 +72,19 @@ namespace PurplePen
             }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new CourseObj[1] { courseObj };
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             // Create the new corner
             RotateToAngle(location);
             controller.Rotate(courseObj.orientation);
@@ -83,8 +92,11 @@ namespace PurplePen
             return MapViewer.DragAction.None;
         }
 
-        public override void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             RotateToAngle(location);
             displayUpdateNeeded = true;
         }

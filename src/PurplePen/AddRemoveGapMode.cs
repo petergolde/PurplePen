@@ -39,6 +39,7 @@ using System.Windows.Forms;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -59,9 +60,12 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map)
+                return Cursors.Cross;
+            else
+                return Cursors.Arrow;
         }
 
         public override string StatusText
@@ -72,19 +76,27 @@ namespace PurplePen
             }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new CourseObj[1] { courseObjDrag };
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             startDrag = location;
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Get the new set of gaps.
             CircleGap[] newGaps = CircleGap.AddGap(courseObjStart.location, courseObjStart.gaps, startDrag, location);
             CircleGap[] newMovableGaps = CircleGap.AddGap(courseObjStart.location, courseObjStart.movableGaps, startDrag, location);
@@ -97,23 +109,30 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             controller.AddControlGap(startDrag, location);
 
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             // Create the new gap
             controller.AddControlGap(location);
             controller.DefaultCommandMode();
         }
 
-        public override void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        public override void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag was cancelled. Go back to normal mode.
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;
@@ -133,9 +152,12 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map)
+                return Cursors.Cross;
+            else
+                return Cursors.Arrow;
         }
 
         public override string StatusText
@@ -146,13 +168,19 @@ namespace PurplePen
             }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new CourseObj[1] { courseObj };
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             // Create the new corner
             controller.RemoveControlGap(location);
             controller.DefaultCommandMode();
@@ -173,9 +201,12 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map)
+                return Cursors.Cross;
+            else
+                return Cursors.Arrow;
         }
 
         public override string StatusText
@@ -186,13 +217,19 @@ namespace PurplePen
             }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new CourseObj[1] { courseObj };
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             // Remove the gap
             controller.RemoveLegGap(location);
             controller.DefaultCommandMode();
@@ -216,13 +253,16 @@ namespace PurplePen
             this.courseObjDrag = (LegCourseObj) courseObject.Clone();
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new CourseObj[] { courseObjDrag };
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
             return Cursors.Cross;
         }
@@ -235,14 +275,19 @@ namespace PurplePen
             }
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             startDrag = location;
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Get the new set of gaps.
             LegGap[] newGaps = LegGap.AddGap(courseObjStart.path, courseObjStart.gaps, startDrag, location);
 
@@ -253,24 +298,31 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             controller.AddLegGap(startDrag, location);     // implicitly uses the current selected to determine which leg gets the gap.
 
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             controller.AddLegGap(location);     // implicitly uses the current selected to determine which leg gets the gap.
 
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        public override void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag was cancelled. Go back to normal mode.
             controller.DefaultCommandMode();
             displayUpdateNeeded = true;

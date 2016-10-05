@@ -75,17 +75,17 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select mandatory crossing point.
-            var dragAction = controller.LeftButtonDown(new PointF(25.4F, 25.5F), 0.2F);
+            var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(25.4F, 25.5F), 0.2F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(25.4F, 25.5F), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(25.4F, 25.5F), 0.3F);
 
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(82, highlights[0].controlId.id);
 
             // Begin rotating mode.
             controller.BeginRotate();
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             CrossingCourseObj obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(25.9F, 26.4F), obj.location);
@@ -97,17 +97,17 @@ namespace PurplePen.Tests
             ui.MouseMoved(31, -11, 0.1F);
 
             // The highlight should be in the same place, but rotated.
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(25.9F, 26.4F), obj.location);
             Assert.AreEqual(187.7F, obj.orientation, 0.1F);
 
             // Mouse down somewhere.
-            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(44, 29), 0.1F);
+            MapViewer.DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(44, 29), 0.1F);
 
             // The highlight should be in the same place, but rotated again.
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(25.9F, 26.4F), obj.location);
@@ -129,17 +129,17 @@ namespace PurplePen.Tests
             controller.SelectTab(3);
 
             // Select mandatory crossing point.
-            var dragAction = controller.LeftButtonDown(new PointF(76, -5F), 0.2F);
+            var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(76, -5F), 0.2F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(76, -5F), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(76, -5F), 0.3F);
 
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(2, highlights[0].specialId.id);
 
             // Begin rotating mode.
             controller.BeginRotate();
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             CrossingCourseObj obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(76, -4.8F), obj.location);
@@ -151,17 +151,17 @@ namespace PurplePen.Tests
             ui.MouseMoved(31, -11, 0.1F);
 
             // The highlight should be in the same place, but rotated.
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(76, -4.8F), obj.location);
             Assert.AreEqual(97.8F, obj.orientation, 0.1F);
 
             // Mouse down somewhere.
-            MapViewer.DragAction action = controller.LeftButtonDown(new PointF(44, 29), 0.1F);
+            MapViewer.DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(44, 29), 0.1F);
 
             // The highlight should be in the same place, but rotated again.
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             obj = (CrossingCourseObj) highlights[0];
             Assert.AreEqual(new PointF(76, -4.8F), obj.location);

@@ -61,13 +61,13 @@ namespace PurplePen
         }
 
         // Get the highlights to display.
-        public virtual IMapViewerHighlight[] GetHighlights()
+        public virtual IMapViewerHighlight[] GetHighlights(Pane pane)
         {
             return null;
         }
 
         // Mouse cursor looks like a move cursor when hovering over something that is selected.
-        public virtual Cursor GetMouseCursor(PointF location, float pixelSize)
+        public virtual Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
             return Cursors.Default;
         }
@@ -77,51 +77,56 @@ namespace PurplePen
             get { return ""; }
         }
 
-        public virtual void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             return MapViewer.DragAction.None;
         }
 
         // By default, the right mouse button drags the map.
-        public virtual MapViewer.DragAction RightButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual MapViewer.DragAction RightButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            return MapViewer.DragAction.MapDrag;
+            if (pane == Pane.Map) {
+                return MapViewer.DragAction.MapDrag;
+            }
+            else {
+                return MapViewer.DragAction.None;
+            }
         }
 
-        public virtual void LeftButtonUp(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonUp(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonUp(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonUp(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public virtual void RightButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        public virtual void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         { }
 
-        public virtual void RightButtonCancelDrag(ref bool displayUpdateNeeded)
+        public virtual void RightButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         { }
 
-        public virtual bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        public virtual bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string titleText)
         {
             tipText = titleText = "";
             return false;
@@ -194,14 +199,19 @@ namespace PurplePen
         }
 
         // Get the highlights to display.
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            // No command in progress. Just return the active selected objects.
-            CourseObj[] selectedObjects = selectionMgr.SelectedCourseObjects;
-            if (selectedObjects == null)
-                return null;
+            if (pane == Pane.Map) {
+                // No command in progress. Just return the active selected objects.
+                CourseObj[] selectedObjects = selectionMgr.SelectedCourseObjects;
+                if (selectedObjects == null)
+                    return null;
 
-            return (IMapViewerHighlight[]) selectedObjects;
+                return (IMapViewerHighlight[])selectedObjects;
+            }
+            else {
+                return null;
+            }
         }
 
         public override string StatusText
@@ -290,67 +300,81 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a move cursor when hovering over something that is selected.
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            PointF dummy;
-            Cursor handleCursor;
+            if (pane == Pane.Map) {
+                PointF dummy;
+                Cursor handleCursor;
 
-            if (HitTestHandle(location, pixelSize, out dummy, out handleCursor) != null)
-                return handleCursor;
-            if (HitTestDraggable(location, pixelSize) != null)
-                return Cursors.SizeAll;
-            else
-                return Cursors.Default;
-        }
-
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
-        {
-            CourseObj clickedObject = HitTest(location, pixelSize);
-            if (clickedObject != null) {
-                selectionMgr.SelectCourseObject(clickedObject);
+                if (HitTestHandle(location, pixelSize, out dummy, out handleCursor) != null)
+                    return handleCursor;
+                if (HitTestDraggable(location, pixelSize) != null)
+                    return Cursors.SizeAll;
+                else
+                    return Cursors.Default;
             }
             else {
-                // clicked on nothing. Clear selection.
-                controller.ClearSelection();
+                return Cursors.Default;
             }
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // If we dragged an object or corner, we would have entered a new mode. So this must be a delayed drag that should
-            // become map dragging.
-            controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
+            if (pane == Pane.Map) {
+                CourseObj clickedObject = HitTest(location, pixelSize);
+                if (clickedObject != null) {
+                    selectionMgr.SelectCourseObject(clickedObject);
+                }
+                else {
+                    // clicked on nothing. Clear selection.
+                    controller.ClearSelection();
+                }
+            }
+        }
+
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        {
+            if (pane == Pane.Map) {
+                // If we dragged an object or corner, we would have entered a new mode. So this must be a delayed drag that should
+                // become map dragging.
+                controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
+            }
         }
 
         // Left mouse button selects the object clicked on, or drag something already selected.
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            CourseLayout activeCourse = controller.GetCourseLayout();
-            CourseObj clickedObject;
-            PointF handleLocation;
-            Cursor handleCursor;
+            if (pane == Pane.Map) {
+                CourseLayout activeCourse = controller.GetCourseLayout();
+                CourseObj clickedObject;
+                PointF handleLocation;
+                Cursor handleCursor;
 
-            // Area we initiating a drag of a corner?
-            clickedObject = HitTestHandle(location, pixelSize, out handleLocation, out handleCursor);
-            if (clickedObject != null) {
-                // being dragging the corner
-                DragHandleMode commandMode = new DragHandleMode(controller, clickedObject, handleLocation, location);
-                controller.SetCommandMode(commandMode);
-                displayUpdateNeeded = true;
-                return MapViewer.DragAction.ImmediateDrag;
+                // Area we initiating a drag of a corner?
+                clickedObject = HitTestHandle(location, pixelSize, out handleLocation, out handleCursor);
+                if (clickedObject != null) {
+                    // being dragging the corner
+                    DragHandleMode commandMode = new DragHandleMode(controller, clickedObject, handleLocation, location);
+                    controller.SetCommandMode(commandMode);
+                    displayUpdateNeeded = true;
+                    return MapViewer.DragAction.ImmediateDrag;
+                }
+
+                // Are we initiating a drag of an object?
+                clickedObject = HitTestDraggable(location, pixelSize);
+                if (clickedObject != null) {
+                    // Begin dragging the clicked object.
+                    DragObjectMode commandMode = new DragObjectMode(controller, eventDB, selectionMgr, clickedObject, location);
+                    controller.SetCommandMode(commandMode);
+                    displayUpdateNeeded = true;
+                    return MapViewer.DragAction.ImmediateDrag;
+                }
+
+                return MapViewer.DragAction.DelayedDrag;
             }
-
-            // Are we initiating a drag of an object?
-            clickedObject = HitTestDraggable(location, pixelSize);
-            if (clickedObject != null) {
-                // Begin dragging the clicked object.
-                DragObjectMode commandMode = new DragObjectMode(controller, eventDB, selectionMgr, clickedObject, location);
-                controller.SetCommandMode(commandMode);
-                displayUpdateNeeded = true;
-                return MapViewer.DragAction.ImmediateDrag;
+            else {
+                return MapViewer.DragAction.None;
             }
-
-            return MapViewer.DragAction.DelayedDrag;
         }
 
         private CourseObj HitTest(PointF location, float pixelSize)
@@ -365,19 +389,25 @@ namespace PurplePen
             return clickedObject;
         }
 
-        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        public override bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string titleText)
         {
-            CourseLayout activeCourse = controller.GetCourseLayout();
-            CourseView courseView = selectionMgr.ActiveCourseView;
-            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+            if (pane == Pane.Map) {
+                CourseLayout activeCourse = controller.GetCourseLayout();
+                CourseView courseView = selectionMgr.ActiveCourseView;
+                CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
 
-            if (touchedObject == null)
-                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+                if (touchedObject == null)
+                    touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
 
-            if (touchedObject != null) {
-                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
-                ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
-                return true;
+                if (touchedObject != null) {
+                    TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
+                    ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
+                    return true;
+                }
+                else {
+                    tipText = titleText = "";
+                    return false;
+                }
             }
             else {
                 tipText = titleText = "";
@@ -409,8 +439,10 @@ namespace PurplePen
             this.startDrag = this.currentLocation = startDrag;
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            Debug.Assert(pane == Pane.Map);
+
             if (additionalHighlights != null && additionalHighlights.Length > 0) {
                 CourseObj[] highlights = new CourseObj[additionalHighlights.Length + 1];
                 highlights[0] = courseObjectDrag;
@@ -430,13 +462,20 @@ namespace PurplePen
             }
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            return MapViewer.DragAction.ImmediateDrag;
+            if (pane == Pane.Map) {
+                return MapViewer.DragAction.ImmediateDrag;
+            }
+            else {
+                return MapViewer.DragAction.None;
+            }
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             currentLocation = location;
 
             // Update the highlight.
@@ -484,8 +523,10 @@ namespace PurplePen
             return courseObjectStart.specialId.IsNone && !((courseObjectStart is ControlNumberCourseObj) || (courseObjectStart is CodeCourseObj));
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             Debug.WriteLine(string.Format("DragObject end drag start=({0},{1}), loc=({2},{3})", locationStart.X, locationStart.Y, location.X, location.Y));
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
@@ -514,15 +555,22 @@ namespace PurplePen
             controller.DefaultCommandMode();
         }
 
-        public override void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        public override void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag was cancelled. Go back to normal mode.
             controller.DefaultCommandMode();
         }
 
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.SizeAll;
+            if (pane == Pane.Map) {
+                return Cursors.SizeAll;
+            }
+            else {
+                return Cursors.Arrow;
+            }
         }
     }
 
@@ -545,8 +593,10 @@ namespace PurplePen
             this.startDrag = this.currentLocation = startDrag;
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            Debug.Assert(pane == Pane.Map);
+
             return new CourseObj[] { courseObjectDrag };
         }
 
@@ -561,13 +611,17 @@ namespace PurplePen
             }
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             return MapViewer.DragAction.ImmediateDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             currentLocation = location;
 
             // Update the highlight.
@@ -578,8 +632,10 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
             PointF newHandleLocation = new PointF(handleLocation.X + deltaX, handleLocation.Y + deltaY);
@@ -630,15 +686,22 @@ namespace PurplePen
             controller.DefaultCommandMode();
         }
 
-        public override void LeftButtonCancelDrag(ref bool displayUpdateNeeded)
+        public override void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag was cancelled. Go back to normal mode.
             controller.DefaultCommandMode();
         }
 
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return handleCursor;
+            if (pane == Pane.Map) {
+                return handleCursor;
+            }
+            else {
+                return Cursors.Arrow;
+            }
         }
     }
 

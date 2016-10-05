@@ -179,28 +179,35 @@ namespace PurplePen
             }
         }
 
-        public override void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            PointF highlightLocation;
-            Id<ControlPoint> controlId = HitTestPoint(location, pixelSize, out highlightLocation);
-            SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
+            if (pane == Pane.Map) {
+                PointF highlightLocation;
+                Id<ControlPoint> controlId = HitTestPoint(location, pixelSize, out highlightLocation);
+                SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
+            }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            if (highlight != null) {
-                if (additionalHighlights != null && additionalHighlights.Length > 0) {
-                    CourseObj[] highlights = new CourseObj[additionalHighlights.Length + 1];
-                    highlights[0] = highlight;
-                    Array.Copy(additionalHighlights, 0, highlights, 1, additionalHighlights.Length);
-                    return highlights;
+            if (pane == Pane.Map) {
+                if (highlight != null) {
+                    if (additionalHighlights != null && additionalHighlights.Length > 0) {
+                        CourseObj[] highlights = new CourseObj[additionalHighlights.Length + 1];
+                        highlights[0] = highlight;
+                        Array.Copy(additionalHighlights, 0, highlights, 1, additionalHighlights.Length);
+                        return highlights;
+                    }
+                    else {
+                        return new CourseObj[] { highlight };
+                    }
                 }
-                else {
-                    return new CourseObj[] { highlight };
-                }
+                else
+                    return null;
             }
-            else
+            else {
                 return null;
+            }
         }
 
         // Get the controls the define where to insert the new control point.
@@ -229,20 +236,30 @@ namespace PurplePen
                 QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // Delay to see if click or drag.
-            return MapViewer.DragAction.DelayedDrag;
+            if (pane == Pane.Map) {
+                // Delay to see if click or drag.
+                return MapViewer.DragAction.DelayedDrag;
+            }
+            else {
+                return MapViewer.DragAction.None;
+            }
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag is move map.
             controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             // Create the new control!
 
             // Are we creating a new control point, or using existing one?
@@ -426,18 +443,23 @@ namespace PurplePen
             return highlights.ToArray();
         }
 
-        public override bool GetToolTip(PointF location, float pixelSize, out string tipText, out string titleText)
+        public override bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string titleText)
         {
-            PointF highlightLocation;
-            Id<ControlPoint> existingControl = HitTestPoint(location, pixelSize, out highlightLocation);
-            if (existingControl.IsNotNone) {
-                TextPart[] textParts = SelectionDescriber.DescribeControl(symbolDB, eventDB, existingControl);
-                base.ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
-                return true;
+            if (pane == Pane.Map) {
+                PointF highlightLocation;
+                Id<ControlPoint> existingControl = HitTestPoint(location, pixelSize, out highlightLocation);
+                if (existingControl.IsNotNone) {
+                    TextPart[] textParts = SelectionDescriber.DescribeControl(symbolDB, eventDB, existingControl);
+                    base.ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
+                    return true;
+                }
+                else {
+                    tipText = titleText = "";
+                    return false;
+                }
             }
             else {
-                tipText = titleText = "";
-                return false;
+                return base.GetToolTip(pane, location, pixelSize, out tipText, out titleText);
             }
         }
     }
@@ -489,34 +511,50 @@ namespace PurplePen
             }
         }
 
-        public override void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
             SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             if (highlight != null)
                 return new CourseObj[] { highlight };
             else
                 return null;
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            // Delay to see if click or drag.
-            return MapViewer.DragAction.DelayedDrag;
+            if (pane == Pane.Map) {
+                // Delay to see if click or drag.
+                return MapViewer.DragAction.DelayedDrag;
+            }
+            else {
+                return MapViewer.DragAction.None;
+            }
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // Drag is move map.
             controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             // Create the new special!
 
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
@@ -605,21 +643,29 @@ namespace PurplePen
             }
         }
 
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map) {
+                return Cursors.Cross;
+            }
+            else {
+                return Cursors.Arrow;
+            }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            if (highlight != null)
+            if (pane == Pane.Map && highlight != null)
                 return new CourseObj[] { highlight };
             else
                 return null;
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             if (numberFixedPoints == 0) {
                 // The first point. Fix it at the location.
                 AddFixedPoint(location);
@@ -629,15 +675,19 @@ namespace PurplePen
             return MapViewer.DragAction.DelayedDrag;
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // In the middle of dragging. Current location isn't fixed yet.
             AddUnfixedPoint(location);
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             // If we ended near to the first point, we've create a polygon and creation is done.
             if (numberFixedPoints >= 3 && Geometry.Distance(location, points[0]) < pixelSize * CLOSEDISTANCE) {
                 if (!isArea)
@@ -655,8 +705,11 @@ namespace PurplePen
             }
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             // Left button clicked. Ends creating the item and we're done.
             CreateObject();
 

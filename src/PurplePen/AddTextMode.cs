@@ -39,6 +39,7 @@ using System.Windows.Forms;
 
 using PurplePen.MapView;
 using PurplePen.MapModel;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -80,9 +81,12 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a crosshair
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return Cursors.Cross;
+            if (pane == Pane.Map)
+                return Cursors.Cross;
+            else
+                return Cursors.Arrow;
         }
 
         public override string StatusText
@@ -93,9 +97,9 @@ namespace PurplePen
             }
         }
 
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            if (currentObj != null)
+            if (pane == Pane.Map && currentObj != null)
                 return new CourseObj[] { currentObj };
             else
                 return null;
@@ -108,8 +112,11 @@ namespace PurplePen
             currentObj.MoveHandle(handleDragging, location);
         }
 
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             // Begin dragging out the description block.
             startLocation = location;
             startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), fontName, Util.GetFontStyle(fontBold, fontItalic), fontColor);
@@ -119,14 +126,19 @@ namespace PurplePen
             return MapViewer.DragAction.DelayedDrag;  // Also allow a click.
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             DragTo(location);
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return;
+
             // If text is empty, use a non-empty text
             string measureText = string.IsNullOrEmpty(displayText) ? "000000" : displayText;
 
@@ -140,14 +152,16 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             DragTo(location);
 
             RectangleF rect = currentObj.GetHighlightBounds();
             if (rect.Height < 1 || rect.Width < 1) {
                 // Too small. Use the click action.
-                LeftButtonClick(location, pixelSize, ref displayUpdateNeeded);
+                LeftButtonClick(pane, location, pixelSize, ref displayUpdateNeeded);
             }
             else {
                 CreateTextSpecial(rect);

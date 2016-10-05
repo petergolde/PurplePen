@@ -480,7 +480,7 @@ namespace PurplePen
         // Update the highlights.
         void UpdateHighlight()
         {
-            IMapViewerHighlight[] highlights = controller.GetHighlights();
+            IMapViewerHighlight[] highlights = controller.GetHighlights(Pane.Map);
 
             if (controller.ScrollHighlightIntoView && highlights != null && highlights.Length >= 1) {
                 // Get the bounds of all the highlights.
@@ -497,7 +497,7 @@ namespace PurplePen
 
         void UpdateTopologyHighlight()
         {
-            IMapViewerHighlight[] highlights = controller.GetTopologyHighlights();
+            IMapViewerHighlight[] highlights = controller.GetHighlights(Pane.Map);
 
             mapViewerTopology.ChangeHighlight(highlights);
         }
@@ -1126,10 +1126,10 @@ namespace PurplePen
         private void mapViewer_OnPointerMove(object sender, bool inViewport, PointF location)
         {
             if (inViewport) {
-                controller.MouseMoved(location, mapViewer.PixelSize);
+                controller.MouseMoved(Pane.Map, location, mapViewer.PixelSize);
 
                 // Update the mouse cursor.
-                mapViewer.Cursor = controller.GetMouseCursor(location, mapViewer.PixelSize);
+                mapViewer.Cursor = controller.GetMouseCursor(Pane.Map, location, mapViewer.PixelSize);
             }
 
             PointF pixelLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
@@ -1143,7 +1143,7 @@ namespace PurplePen
         private void mapViewer_OnPointerHover(object sender, bool inViewport, PointF location)
         {
             string tipText, titleText;
-            if (showToolTips && controller.GetToolTip(location, mapViewer.PixelSize, out tipText, out titleText)) {
+            if (showToolTips && controller.GetToolTip(Pane.Map, location, mapViewer.PixelSize, out tipText, out titleText)) {
                 toolTip.Hide(mapViewer);
                 toolTip.ToolTipTitle = titleText;
                 lastTooltipLocation = Util.PointFromPointF(mapViewer.WorldToPixel(location));
@@ -1162,7 +1162,7 @@ namespace PurplePen
         {
             PointF location = mapViewer.PointerLocation;
             if (controller != null) {
-                controller.MouseMoved(location, mapViewer.PixelSize);
+                controller.MouseMoved(Pane.Map, location, mapViewer.PixelSize);
 
                 UpdateLabelsAndScrollBars();
             }
@@ -1174,29 +1174,29 @@ namespace PurplePen
                 toolTip.Hide(mapViewer);
 
             if (action == MouseAction.Down && buttonNumber == MapViewer.LeftMouseButton)
-                return controller.LeftButtonDown(location, mapViewer.PixelSize);
+                return controller.LeftButtonDown(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Down && buttonNumber == MapViewer.RightMouseButton)
-                return controller.RightButtonDown(location, mapViewer.PixelSize);
+                return controller.RightButtonDown(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Up && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonUp(location, mapViewer.PixelSize);
+                controller.LeftButtonUp(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Up && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonUp(location, mapViewer.PixelSize);
+                controller.RightButtonUp(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Click && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonClick(location, mapViewer.PixelSize);
+                controller.LeftButtonClick(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Click && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonClick(location, mapViewer.PixelSize);
+                controller.RightButtonClick(Pane.Map, location, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.LeftMouseButton) 
-                controller.LeftButtonDrag(location, locationStart, mapViewer.PixelSize);
+                controller.LeftButtonDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonDrag(location, locationStart, mapViewer.PixelSize);
+                controller.RightButtonDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonEndDrag(location, locationStart, mapViewer.PixelSize);
+                controller.LeftButtonEndDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonEndDrag(location, locationStart, mapViewer.PixelSize);
+                controller.RightButtonEndDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonCancelDrag();
+                controller.LeftButtonCancelDrag(Pane.Map);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonCancelDrag();
+                controller.RightButtonCancelDrag(Pane.Map);
 
             return MapViewer.DragAction.None;
         }

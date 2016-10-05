@@ -117,8 +117,11 @@ namespace PurplePen
         }
 
         // Get the highlights to display.
-        public override IMapViewerHighlight[] GetHighlights()
+        public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
+            if (pane != Pane.Map)
+                return null;
+
             return new IMapViewerHighlight[] { selectingCourseObj };
         }
 
@@ -175,8 +178,11 @@ namespace PurplePen
         }
 
         // Mouse cursor looks like a move cursor when hovering over something that is selected.
-        public override Cursor GetMouseCursor(PointF location, float pixelSize)
+        public override Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
+            if (pane != Pane.Map)
+                return Cursors.Arrow;
+
             PointF dummy;
             Cursor handleCursor;
 
@@ -205,8 +211,11 @@ namespace PurplePen
         }
 
         // Left mouse button selects the object clicked on, or drag something already selected.
-        public override MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded)
+        public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
+            if (pane != Pane.Map)
+                return MapViewer.DragAction.None;
+
             PointF handleLocation;
 
             // Area we initiating a drag of a corner/side?
@@ -233,8 +242,10 @@ namespace PurplePen
             return MapViewer.DragAction.None;
         }
 
-        public override void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
+            Debug.Assert(pane == Pane.Map);
+
             if (draggingWhole) {
                 // Update the rectangle being dragged.
                 selectingCourseObj = (SelectingRectangleCourseObj) dragStartCourseObj.Clone();
@@ -250,9 +261,11 @@ namespace PurplePen
             displayUpdateNeeded = true;
         }
 
-        public override void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
+        public override void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
-            LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
+            Debug.Assert(pane == Pane.Map);
+
+            LeftButtonDrag(pane, location, locationStart, pixelSize, ref displayUpdateNeeded);
             draggingWhole = draggingHandle = false;
         }
     }

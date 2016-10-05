@@ -77,23 +77,23 @@ namespace PurplePen.Tests
             PointF ptClick = new PointF((initialRect.Left + initialRect.Right) / 2, (initialRect.Top + initialRect.Bottom) / 2);
             
             // Click in center and drag to left/right.
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(ptClick, 0.3F);
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(Pane.Map, ptClick, 0.3F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
             Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
-            Cursor cursor = controller.GetMouseCursor(ptClick, 0.3F);
+            Cursor cursor = controller.GetMouseCursor(Pane.Map, ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeAll, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + delta, ptClick.Y), ptClick, 0.3F);
+            controller.LeftButtonEndDrag(Pane.Map, new PointF(ptClick.X + delta, ptClick.Y), ptClick, 0.3F);
             currentRect.Offset(delta, 0);
 
             // 2. Move the bottom edge up or down.
             delta = finalRect.Top - currentRect.Top;
             ptClick = new PointF((currentRect.Right + currentRect.Left) / 2, currentRect.Top);
-            dragAction = controller.LeftButtonDown(ptClick, 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, ptClick, 0.3F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
-            cursor = controller.GetMouseCursor(ptClick, 0.3F);
+            cursor = controller.GetMouseCursor(Pane.Map, ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNS, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X, ptClick.Y + delta), ptClick, 0.3F);
+            controller.LeftButtonEndDrag(Pane.Map, new PointF(ptClick.X, ptClick.Y + delta), ptClick, 0.3F);
             currentRect.Height = currentRect.Height - delta;
             currentRect.Y = currentRect.Y + delta;
 
@@ -101,12 +101,12 @@ namespace PurplePen.Tests
             float deltaX = finalRect.Right - currentRect.Right;
             float deltaY = finalRect.Bottom - currentRect.Bottom;
             ptClick = new PointF(currentRect.Right, currentRect.Bottom);
-            dragAction = controller.LeftButtonDown(ptClick, 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, ptClick, 0.3F);
             Assert.AreEqual(MapViewer.DragAction.ImmediateDrag, dragAction);
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
-            cursor = controller.GetMouseCursor(ptClick, 0.3F);
+            cursor = controller.GetMouseCursor(Pane.Map, ptClick, 0.3F);
             Assert.AreSame(Cursors.SizeNESW, cursor);
-            controller.LeftButtonEndDrag(new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), ptClick, 0.3F);
+            controller.LeftButtonEndDrag(Pane.Map, new PointF(ptClick.X + deltaX, ptClick.Y + deltaY), ptClick, 0.3F);
             currentRect = RectangleF.FromLTRB(currentRect.Left, currentRect.Top, currentRect.Right + deltaX, currentRect.Bottom + deltaY);
 
             TestUtil.AssertEqualRect(currentRect, finalRect, 0.01, "rectangle moving algorithm");

@@ -76,16 +76,16 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(18.4F, 30.1F), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the add bend mode.
             controller.BeginAddLegBend();
 
             // Should have crosshair cursor
             ui.MouseMoved(12.2F, 14.4F, 0.3F);
-            Cursor cursor = controller.GetMouseCursor(new PointF(12.2F, 14.4F), 0.3F);
+            Cursor cursor = controller.GetMouseCursor(Pane.Map, new PointF(12.2F, 14.4F), 0.3F);
             Assert.AreSame(Cursors.Cross, cursor);
 
             // And the adding bend text.
@@ -93,24 +93,24 @@ namespace PurplePen.Tests
 
 
             // Check the highlights
-            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"Leg:            control:3  course-control:3  scale:1  course-control2:4  path:N(9.1,10.27)--N(12,20)--N(23.65,38.6)",
                                         highlights[0].ToString());
 
             // Click to add a bend.
-            dragAction = controller.LeftButtonDown(new PointF(12.2F, 14.4F), 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(12.2F, 14.4F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.None, dragAction);
 
 
             // Check the status text
             Assert.AreEqual(StatusBarText.DragCorner, controller.StatusText);
             // Check the cursor
-            cursor = controller.GetMouseCursor(new PointF(12.2F, 14.4F), 0.3F);
+            cursor = controller.GetMouseCursor(Pane.Map, new PointF(12.2F, 14.4F), 0.3F);
             Assert.AreSame(Util.MoveHandleCursor, cursor);
 
             // Check the highlights
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual("Leg:            control:3  course-control:3  scale:1  course-control2:4  path:N(9.7,10.02)--N(12.2,14.4)--N(12,20)--N(23.65,38.6)",
                                         highlights[0].ToString());
@@ -134,16 +134,16 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on area objects.
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(1,-2), 0.3F);
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(1,-2), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(1, -2), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(1, -2), 0.3F);
 
             // Begin the add corner mode.
             controller.BeginAddSpecialCorner();
 
             // Should have crosshair cursor
             ui.MouseMoved(-4,7, 0.3F);
-            Cursor cursor = controller.GetMouseCursor(new PointF(-4,7), 0.3F);
+            Cursor cursor = controller.GetMouseCursor(Pane.Map, new PointF(-4,7), 0.3F);
             Assert.AreSame(Cursors.Cross, cursor);
 
             // And the adding corner text.
@@ -151,24 +151,24 @@ namespace PurplePen.Tests
 
 
             // Check the highlights
-            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)",
                                         highlights[0].ToString());
 
             // Click to add a corner.
-            dragAction = controller.LeftButtonDown(new PointF(-4,7), 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(-4,7), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.None, dragAction);
 
 
             // Check the status text
             Assert.AreEqual(StatusBarText.DragCorner, controller.StatusText);
             // Check the cursor
-            cursor = controller.GetMouseCursor(new PointF(-4,7), 0.3F);
+            cursor = controller.GetMouseCursor(Pane.Map, new PointF(-4,7), 0.3F);
             Assert.AreSame(Util.MoveHandleCursor, cursor);
 
             // Check the highlights
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual("OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(-4,7)--N(3,7)",
                                         highlights[0].ToString());
@@ -194,33 +194,33 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on area objects.
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(1, -2), 0.3F);
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(1, -2), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(1, -2), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(1, -2), 0.3F);
 
             // Begin the remove corner mode.
             controller.BeginRemoveBend();
 
             // Should have delete corner cursor
             ui.MouseMoved(3.1F, 7.2F, 0.3F);
-            Cursor cursor = controller.GetMouseCursor(new PointF(3.1F, 7.2F), 0.3F);
+            Cursor cursor = controller.GetMouseCursor(Pane.Map, new PointF(3.1F, 7.2F), 0.3F);
             Assert.AreSame(Util.DeleteHandleCursor, cursor);
 
             // And the deleting corner text.
             Assert.AreEqual(StatusBarText.DeletingCorner, controller.StatusText);
 
             // Check the highlights
-            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)",
                                         highlights[0].ToString());
 
             // Click to delete a corner.
-            dragAction = controller.LeftButtonDown(new PointF(3.1F, 7.2F), 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(3.1F, 7.2F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.None, dragAction);
 
             // Check the highlights
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual("OOB:            special:4  scale:1  path:N(11,2)--N(0,-7)--N(-12,-3)--N(11,2)",
                                         highlights[0].ToString());
@@ -244,38 +244,38 @@ namespace PurplePen.Tests
             CheckHighlightedLines(controller, -1, -1);
 
             // Click on leg to select it.
-            MapViewer.DragAction dragAction = controller.LeftButtonDown(new PointF(18.4F, 30.1F), 0.3F);
+            MapViewer.DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
-            controller.LeftButtonClick(new PointF(18.4F, 30.1F), 0.3F);
+            controller.LeftButtonClick(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the remove bend mode.
             controller.BeginRemoveBend();
 
             // Should have arrow cursor
             ui.MouseMoved(12.2F, 14.4F, 0.3F);
-            Cursor cursor = controller.GetMouseCursor(new PointF(12.2F, 14.4F), 0.3F);
+            Cursor cursor = controller.GetMouseCursor(Pane.Map, new PointF(12.2F, 14.4F), 0.3F);
             Assert.AreSame(Cursors.Arrow, cursor);
 
             // And the adding bend text.
             Assert.AreEqual(StatusBarText.DeletingBend, controller.StatusText);
 
             // Check the highlights
-            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights();
+            CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"Leg:            control:3  course-control:3  scale:1  course-control2:4  path:N(9.1,10.27)--N(12,20)--N(23.65,38.6)",
                                         highlights[0].ToString());
 
             // move over an existing bend
             ui.MouseMoved(12.1F, 19.8F, 0.3F);
-            cursor = controller.GetMouseCursor(new PointF(12.1F, 19.8F), 0.3F);
+            cursor = controller.GetMouseCursor(Pane.Map, new PointF(12.1F, 19.8F), 0.3F);
             Assert.AreSame(Util.DeleteHandleCursor, cursor);
 
             // Click to remove the bend.
-            dragAction = controller.LeftButtonDown(new PointF(12.1F, 19.8F), 0.3F);
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(12.1F, 19.8F), 0.3F);
             Assert.AreEqual(MapViewer.DragAction.None, dragAction);
 
             // Check the highlights
-            highlights = (CourseObj[]) controller.GetHighlights();
+            highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual("Leg:            control:3  course-control:3  scale:1  course-control2:4  path:N(9.57,10.08)--N(23.88,38.48)",
                                         highlights[0].ToString());

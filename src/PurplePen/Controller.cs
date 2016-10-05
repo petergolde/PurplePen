@@ -718,20 +718,15 @@ namespace PurplePen
 
         // Get the current highlight(s) to show in the course pane.
         // Returns null if non.
-        public IMapViewerHighlight[] GetHighlights()
+        public IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            return currentMode.GetHighlights();
+            return currentMode.GetHighlights(pane);
         }
 
         // Get the current course topology to show in the topology pane. Can be null if there isn't any topology (all controls or score).
         public CourseLayout GetTopologyLayout()
         {
             return selectionMgr.TopologyLayout;
-        }
-
-        public IMapViewerHighlight[] GetTopologyHighlights()
-        {
-            return selectionMgr.SelectedTopologyObjects;
         }
 
         // Get the active tab.
@@ -3228,121 +3223,121 @@ namespace PurplePen
         // Mouse actions are delegated to the current mode that is active. If a display updated
         // is requested, the changeNum is incremented.
 
-        public void MouseMoved(PointF location, float pixelSize)
+        public void MouseMoved(Pane pane, PointF location, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.MouseMoved(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.MouseMoved(pane, location, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize)
+        public MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            MapViewer.DragAction dragAction = currentMode.LeftButtonDown(location, pixelSize, ref displayUpdateNeeded); 
+            MapViewer.DragAction dragAction = currentMode.LeftButtonDown(pane, location, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
             return dragAction;
         }
 
-        public MapViewer.DragAction RightButtonDown(PointF location, float pixelSize)
+        public MapViewer.DragAction RightButtonDown(Pane pane, PointF location, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            MapViewer.DragAction dragAction = currentMode.RightButtonDown(location, pixelSize, ref displayUpdateNeeded); 
+            MapViewer.DragAction dragAction = currentMode.RightButtonDown(pane, location, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
             return dragAction;
         }
 
-        public void LeftButtonUp(PointF location, float pixelSize)
+        public void LeftButtonUp(Pane pane, PointF location, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonUp(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.LeftButtonUp(pane, location, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonUp(PointF location, float pixelSize)
+        public void RightButtonUp(Pane pane, PointF location, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonUp(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.RightButtonUp(pane, location, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonClick(PointF location, float pixelSize)
+        public void LeftButtonClick(Pane pane, PointF location, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonClick(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.LeftButtonClick(pane, location, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonClick(PointF location, float pixelSize)
+        public void RightButtonClick(Pane pane, PointF location, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonClick(location, pixelSize, ref displayUpdateNeeded);
+            currentMode.RightButtonClick(pane, location, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize)
+        public void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
+            currentMode.LeftButtonDrag(pane, location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonDrag(PointF location, PointF locationStart, float pixelSize)
+        public void RightButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize)
         { 
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonDrag(location, locationStart, pixelSize, ref displayUpdateNeeded); 
+            currentMode.RightButtonDrag(pane, location, locationStart, pixelSize, ref displayUpdateNeeded); 
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
+        public void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
+            currentMode.LeftButtonEndDrag(pane, location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
+        public void RightButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonEndDrag(location, locationStart, pixelSize, ref displayUpdateNeeded);
+            currentMode.RightButtonEndDrag(pane, location, locationStart, pixelSize, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void LeftButtonCancelDrag()
+        public void LeftButtonCancelDrag(Pane pane)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.LeftButtonCancelDrag(ref displayUpdateNeeded);
+            currentMode.LeftButtonCancelDrag(pane, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
 
-        public void RightButtonCancelDrag()
+        public void RightButtonCancelDrag(Pane pane)
         {
             bool displayUpdateNeeded = false;
 
-            currentMode.RightButtonCancelDrag(ref displayUpdateNeeded);
+            currentMode.RightButtonCancelDrag(pane, ref displayUpdateNeeded);
             if (displayUpdateNeeded)
                 ++changeNum;
         }
@@ -3353,12 +3348,14 @@ namespace PurplePen
         }
 
         // Get the shape that the mouse cursor should be in.
-        public Cursor GetMouseCursor(PointF location, float pixelSize)
-        { return currentMode.GetMouseCursor(location, pixelSize); }
-
-        public bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitle)
+        public Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
-            return currentMode.GetToolTip(location, pixelSize, out tipText, out tipTitle);
+            return currentMode.GetMouseCursor(pane, location, pixelSize);
+        }
+
+        public bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string tipTitle)
+        {
+            return currentMode.GetToolTip(pane, location, pixelSize, out tipText, out tipTitle);
         }
 
         // Get the event database. In most, if not all cases, the UI should NOT interact
@@ -3494,6 +3491,10 @@ namespace PurplePen
 
     }
 
+
+    // Which pane are we interacting in.
+    enum Pane { Map, Topology}
+
     // Describes the interface to a command mode. This handles modal multi-step commands.
     interface ICommandMode
     {
@@ -3505,43 +3506,43 @@ namespace PurplePen
         bool CanCancel();
 
         // Mouse moved
-        void MouseMoved(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // A mouse button went down.
-        MapViewer.DragAction LeftButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        MapViewer.DragAction RightButtonDown(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        MapViewer.DragAction RightButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // A mouse button went up if no dragging enabled.
-        void LeftButtonUp(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonUp(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonUp(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonUp(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // A mouse button was clicked if delayed dragging was enabled.
-        void LeftButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonClick(PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded);
 
         // The mouse is being dragged
-        void LeftButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag is ending (mouse released)
-        void LeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
-        void RightButtonEndDrag(PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void LeftButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
+        void RightButtonEndDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded);
 
         // The drag was canceled (mouse taken away)
-        void LeftButtonCancelDrag(ref bool displayUpdateNeeded);
-        void RightButtonCancelDrag(ref bool displayUpdateNeeded);
+        void LeftButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded);
+        void RightButtonCancelDrag(Pane pane, ref bool displayUpdateNeeded);
 
         // Get the highlights to display.
-        IMapViewerHighlight[] GetHighlights();
+        IMapViewerHighlight[] GetHighlights(Pane pane);
 
         // Get the status line text.
         string StatusText { get; }
 
         // Get shape of the mouse cursor
-        Cursor GetMouseCursor(PointF location, float pixelSize);
+        Cursor GetMouseCursor(Pane pane, PointF location, float pixelSize);
 
         // Get tool tip to be displayed on a hover.
-        bool GetToolTip(PointF location, float pixelSize, out string tipText, out string tipTitleText);
+        bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string tipTitleText);
     }
 
     // Describes the interface to the user interface. Allows the UI

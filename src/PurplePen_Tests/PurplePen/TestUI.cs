@@ -80,14 +80,14 @@ namespace PurplePen.Tests
         {
             this.mouseLocation = new PointF(x, y);
             this.pixelSize = pixelSize;
-            controller.MouseMoved(mouseLocation, pixelSize);
+            controller.MouseMoved(Pane.Map, mouseLocation, pixelSize);
         }
 
         public MapViewer.DragAction LeftButtonDown(float x, float y, float pixelSize)
         {
             this.mouseLocation = new PointF(x, y);
             this.pixelSize = pixelSize;
-            return controller.LeftButtonDown(mouseLocation, pixelSize);
+            return controller.LeftButtonDown(Pane.Map, mouseLocation, pixelSize);
         }
 
 
