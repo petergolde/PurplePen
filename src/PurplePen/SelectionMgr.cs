@@ -86,6 +86,7 @@ namespace PurplePen
 
         CourseLayout activeCourse;             // The active course.
         CourseObj[] selectedCourseObjects;  // The selected objects in the active course.
+        CourseObj[] selectedTopologyObjects;  // The selected objects in the active course.
 
         CourseLayout activeTopologyCourseLayout;            // The active topology
 
@@ -277,6 +278,16 @@ namespace PurplePen
             }
         }
 
+        // What objects in the topology should be highlighted as part of the selection.
+        public CourseObj[] SelectedTopologyObjects
+        {
+            get
+            {
+                UpdateState();
+                return selectedTopologyObjects;
+            }
+        }
+
         // Select the course with the given id as the active tab, id==0 means all controls.
         public void SelectCourseView(CourseDesignator newDesignator)
         {
@@ -436,6 +447,9 @@ namespace PurplePen
 
                 // Find the course objects in the course that are selected.
                 UpdateSelectedCourseObjects();
+
+                // Find the course objects in the topology that are selected.
+                UpdateSelectedTopologyObjects();
             }
         }
 
@@ -752,6 +766,35 @@ namespace PurplePen
             selectedCourseObjects = list.ToArray();
         }
 
+        // Udate the selected course objects in the course.
+        void UpdateSelectedTopologyObjects()
+        {
+            if (selectionKind == SelectionKind.None || activeTopologyCourseLayout == null) {
+                selectedTopologyObjects = null;
+                return;
+            }
 
+            List<CourseObj> list = new List<CourseObj>();
+
+            // Get through each object in the active course and find which ones match. Ignore stuff in the All Controls layer.
+            foreach (CourseObj courseobj in activeTopologyCourseLayout) {
+                if (courseobj.layer != CourseLayer.AllControls) {
+                    if (selectionKind == SelectionKind.Control &&
+                            !(courseobj is LineCourseObj) &&    // don't select legs
+                            courseobj.controlId == selectedControl &&
+                            courseobj.courseControlId == selectedCourseControl) {
+                        list.Add(courseobj);
+                    }
+                    else if (selectionKind == SelectionKind.Leg &&
+                            courseobj is LineCourseObj &&
+                            courseobj.courseControlId == selectedCourseControl &&
+                            ((LineCourseObj)courseobj).courseControlId2 == selectedCourseControl2) {
+                        list.Add(courseobj);
+                    }
+                }
+            }
+
+            selectedTopologyObjects = list.ToArray();
+        }
     }
 }

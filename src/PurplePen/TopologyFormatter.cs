@@ -137,11 +137,12 @@ namespace PurplePen
             switch (control.kind) {
                 case ControlPointKind.Start:
                 case ControlPointKind.MapExchange:
-                    courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio * 0.8F, appearance, 0, location);
+                    // Triangle looks best if we displace it down a bit (0.8 looks right).
+                    courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio * 0.75F, appearance, 0, new PointF(location.X, location.Y - 0.8F), CrossHairOptions.NoCrossHair);
                     break;
 
                 case ControlPointKind.Finish:
-                    courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio * 0.75F, appearance, null, location);
+                    courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio * 0.75F, appearance, null, location, CrossHairOptions.NoCrossHair);
                     break;
 
                 case ControlPointKind.Normal:

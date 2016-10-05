@@ -226,42 +226,42 @@ namespace PurplePen.Tests
         [TestMethod]
         public void Finish()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "finish_circle");
         }
 
         [TestMethod]
         public void FinishGaps()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "finish_circle_gaps");
         }
 
         [TestMethod]
         public void FinishSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "finish_circle_special");
         }
 
         [TestMethod]
         public void FinishGapsSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "finish_circle_gaps_special");
         }
 
         [TestMethod]
         public void Start()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "start_triangle");
         }
 
         [TestMethod]
         public void StartSpecial()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "start_triangle_special");
         }
 
@@ -615,10 +615,10 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FinishDistance()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
             Assert.AreEqual(1.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
-            courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(1, 1));
+            courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
             Assert.AreEqual(3.25, courseobj.DistanceFromPoint(new PointF(4, -3)));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
@@ -626,10 +626,10 @@ namespace PurplePen.Tests
         [TestMethod]
         public void StartDistance()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(1, 1));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
             Assert.AreEqual(0.959, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
-            courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0, new PointF(1, 1));
+            courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
             Assert.AreEqual(2.9795, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
@@ -806,14 +806,14 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FinishDump()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(11), CourseControlId(0), 1.0F, defaultCourseAppearance, new CircleGap[]{new CircleGap(-10, 40), new CircleGap(90, 270)}, new PointF(-1, 0));
+            CourseObj courseobj = new FinishCourseObj(ControlId(11), CourseControlId(0), 1.0F, defaultCourseAppearance, new CircleGap[]{new CircleGap(-10, 40), new CircleGap(90, 270)}, new PointF(-1, 0), CrossHairOptions.HighlightCrossHair);
             AssertDump(courseobj, @"Finish:         control:11  scale:1  location:(-1,0)  gaps:-10:40,90:270");
         }
 
        [TestMethod]
         public void StartDump()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(16), CourseControlId(144), 0.7F, defaultCourseAppearance, 77.6F, new PointF(5.5F, -2.5F));
+            CourseObj courseobj = new StartCourseObj(ControlId(16), CourseControlId(144), 0.7F, defaultCourseAppearance, 77.6F, new PointF(5.5F, -2.5F), CrossHairOptions.HighlightCrossHair);
             AssertDump(courseobj, @"Start:          control:16  course-control:144  scale:0.7  location:(5.5,-2.5)  orientation:77.6");
         }
 
@@ -997,42 +997,42 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FinishHighlight()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "finish_circle_highlight");
         }
 
         [TestMethod]
         public void FinishGapsHighlight()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "finish_circle_gaps_highlight");
         }
 
         [TestMethod]
         public void FinishHighlightSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "finish_circle_highlight_special");
         }
 
         [TestMethod]
         public void FinishGapsHighlightSpecial()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "finish_circle_gaps_highlight_special");
         }
 
         [TestMethod]
         public void StartHighlight()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "start_triangle_highlight");
         }
 
         [TestMethod]
         public void StartHighlightSpecial()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "start_triangle_highlight_special");
         }
 
@@ -1384,14 +1384,14 @@ namespace PurplePen.Tests
         [TestMethod]
         public void FinishOffset()
         {
-            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectOffset(courseobj, "finish_circle_offset");
         }
 
         [TestMethod]
         public void StartOffset()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectOffset(courseobj, "start_triangle_offset");
         }
 
@@ -1556,10 +1556,10 @@ namespace PurplePen.Tests
             CourseObj courseobj5 = new ControlCourseObj(ControlId(1), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             CourseObj courseobj6 = new ControlCourseObj(ControlId(0), CourseControlId(1), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             CourseObj courseobj7 = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
-            CourseObj courseobj8 = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
-            CourseObj courseobj9 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F));
-            CourseObj courseobj10 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F));
-            CourseObj courseobj11 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 17, new PointF(0.5F, 0.5F));
+            CourseObj courseobj8 = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F), CrossHairOptions.HighlightCrossHair);
+            CourseObj courseobj9 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F), CrossHairOptions.HighlightCrossHair);
+            CourseObj courseobj10 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 14, new PointF(0.5F, 0.5F), CrossHairOptions.HighlightCrossHair);
+            CourseObj courseobj11 = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 17, new PointF(0.5F, 0.5F), CrossHairOptions.HighlightCrossHair);
             CourseObj courseobj12 = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.5F, 0.5F));
             courseobj12.layer = CourseLayer.Descriptions;
 

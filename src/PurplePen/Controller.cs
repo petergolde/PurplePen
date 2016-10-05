@@ -729,6 +729,11 @@ namespace PurplePen
             return selectionMgr.TopologyLayout;
         }
 
+        public IMapViewerHighlight[] GetTopologyHighlights()
+        {
+            return selectionMgr.SelectedTopologyObjects;
+        }
+
         // Get the active tab.
         public int ActiveTab
         {

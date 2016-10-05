@@ -385,7 +385,8 @@ namespace PurplePen
             if (topologyMapDisplay == null) {
                 topologyMapDisplay = new MapDisplay();
                 topologyMapDisplay.SetMapFile(MapType.None, null);
-                topologyMapDisplay.AntiAlias = true;
+                topologyMapDisplay.AntiAlias = false;
+                topologyMapDisplay.Printing = true;
                 mapViewerTopology.SetMap(topologyMapDisplay);
             }
 
@@ -492,6 +493,13 @@ namespace PurplePen
             }
 
             mapViewer.ChangeHighlight(highlights);
+        }
+
+        void UpdateTopologyHighlight()
+        {
+            IMapViewerHighlight[] highlights = controller.GetTopologyHighlights();
+
+            mapViewerTopology.ChangeHighlight(highlights);
         }
 
         // Update all the labels and scroll-bars in the main frame.
@@ -833,6 +841,7 @@ namespace PurplePen
                         UpdateDescription();
                         UpdateSelection();
                         UpdateHighlight();
+                        UpdateTopologyHighlight();
                         UpdateSelectionPanel();
                         UpdateCustomSymbolText();
                         CheckForMissingFonts();

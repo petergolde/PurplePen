@@ -43,6 +43,7 @@ using PurplePen.MapModel;
 using PurplePen.MapView;
 using PurplePen.Graphics2D;
 using System.Runtime.InteropServices;
+using System.Drawing.Text;
 
 namespace PurplePen
 {
@@ -277,7 +278,9 @@ namespace PurplePen
         {
             return base.MemberwiseClone();
         }
-}
+    }
+
+    enum CrossHairOptions { NoCrossHair, HighlightCrossHair}
 
     // A type of course object that exists at a single point.
     abstract class PointCourseObj: CourseObj
@@ -1180,15 +1183,40 @@ namespace PurplePen
                 format.Alignment = StringAlignment.Near;
                 format.LineAlignment = StringAlignment.Near;
                 format.FormatFlags |= StringFormatFlags.NoClip;
-                GraphicsPath path = new GraphicsPath();
-                path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
-                path.CloseAllFigures();
-                g.FillPath(brush, path);
-                path.Dispose();
 
-                // The above is similar to this, but produces results slightly more like the anti-aliased text.
-                //using (Font font = new Font(fontFam, pixelEmHight))
-                    //g.DrawString(text, font, brush, topLeftPixel[0], format);
+                // Alternate way of drawing text.
+                //GraphicsPath path = new GraphicsPath();
+                //path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
+                //path.CloseAllFigures();
+                //g.FillPath(brush, path);
+                //path.Dispose();
+
+                if (erasing) {
+                    // Erase a rectangle that encloses the text.
+                    using (Font font = new Font(fontFam, pixelEmHight, fontStyle, GraphicsUnit.World)) {
+                        SizeF textSize = g.MeasureString(text, font, topLeftPixel[0], format);
+                        Size expandedSize = new Size((int)Math.Ceiling(textSize.Width) + 4, (int)Math.Ceiling(textSize.Height) + 4);
+                        g.FillRectangle(brush, topLeftPixel[0].X - 2, topLeftPixel[0].Y - 2, expandedSize.Width, expandedSize.Height);
+                        g.DrawString(text, font, brush, topLeftPixel[0], format);
+                    }
+                }
+                else {
+                    TextRenderingHint saveTextRenderingHint = g.TextRenderingHint;
+                    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                    using (Font font = new Font(fontFam, pixelEmHight, fontStyle, GraphicsUnit.World)) {
+                        // Outline in white, makes the red text pop much better.
+                        GraphicsPath path = new GraphicsPath();
+                        path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
+                        path.CloseAllFigures();
+                        using (Pen pen = new Pen(Color.White, 2))
+                            g.DrawPath(pen, path);
+                        path.Dispose();
+
+                        // Draw red text.
+                        g.DrawString(text, font, brush, topLeftPixel[0], format);
+                    }
+                    g.TextRenderingHint = saveTextRenderingHint;
+                }
             }
         }
 
@@ -1309,9 +1337,13 @@ namespace PurplePen
         // Coordinates of the triangle.
         static readonly PointF[] coords = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
 
-        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
+        CrossHairOptions crossHairOptions;
+
+        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, 
+                              CourseAppearance appearance, float orientation, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 4.041F, location)
         {
+            this.crossHairOptions = crossHairOptions;
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -1352,17 +1384,23 @@ namespace PurplePen
                 g.DrawPolygon(pen, pts);
             }
 
-            // Draw the cross-hair.
-            HighlightCrossHair(g, xformWorldToPixel, brush);
+            if (crossHairOptions == CrossHairOptions.HighlightCrossHair) {
+                // Draw the cross-hair.
+                HighlightCrossHair(g, xformWorldToPixel, brush);
+            }
         }
     }
 
     // Finish circle
     class FinishCourseObj : PointCourseObj
     {
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
+        CrossHairOptions crossHairOptions;
+
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, 
+            CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.5F, location)
         {
+            this.crossHairOptions = crossHairOptions;
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -1427,8 +1465,10 @@ namespace PurplePen
 
             }
 
-            // Draw the cross-hair.
-            HighlightCrossHair(g, xformWorldToPixel, brush);
+            if (crossHairOptions == CrossHairOptions.HighlightCrossHair) {
+                // Draw the cross-hair.
+                HighlightCrossHair(g, xformWorldToPixel, brush);
+            }
         }
    }
 
@@ -1844,7 +1884,7 @@ namespace PurplePen
     // A leg in the topology view.
     class TopologyLegCourseObj: LineCourseObj
     {
-        const float LineThickness = 0.35F;
+        const float LineThickness = 0.55F;
 
         public TopologyLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path)
             : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, LineThickness, path, null)

@@ -474,6 +474,7 @@ namespace PurplePen.MapView
             // Set the rendering origin so the hatch brushes draw correctly and don't scroll weirdly.
             PointF origin = WorldToPixel(new PointF(0, 0));
             g.RenderingOrigin = Util.PointFromPointF(origin);
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
             foreach (IMapViewerHighlight h in highlights) {
                 h.DrawHighlight(g, xformWorldToPixel);
@@ -486,6 +487,8 @@ namespace PurplePen.MapView
 
             // Get brush that erases.
             Brush eraseBrush = viewcache.GetCacheBrush(ClientSize, viewport, xformWorldToPixel);
+
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
             foreach (IMapViewerHighlight h in highlights) {
                 h.EraseHighlight(g, xformWorldToPixel, eraseBrush);
@@ -775,7 +778,9 @@ namespace PurplePen.MapView
                 return;
             }
 
+            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
             DrawCachedMap(g, clip);
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
             DrawHighlights(g, clip, currentHighlights);
 
             g.MultiplyTransform(xformWorldToPixel);

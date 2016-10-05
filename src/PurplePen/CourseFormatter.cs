@@ -606,11 +606,11 @@ namespace PurplePen
             switch (control.kind) {
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
-                courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, CrossHairOptions.HighlightCrossHair);
                 break;
 
             case ControlPointKind.Finish:
-                courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location);
+                courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio, appearance, gaps, control.location, CrossHairOptions.HighlightCrossHair);
                 break;
 
             case ControlPointKind.Normal:

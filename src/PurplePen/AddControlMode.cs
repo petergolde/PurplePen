@@ -354,11 +354,11 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Start:
-                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
+                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation, CrossHairOptions.HighlightCrossHair);
                 break;
 
             case ControlPointKind.MapExchange:
-                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
+                highlight = new StartCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation, CrossHairOptions.HighlightCrossHair);
 
                 if (courseDesignator.IsNotAllControls && eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
@@ -367,7 +367,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Finish:
-                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, null, highlightLocation);
+                highlight = new FinishCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, null, highlightLocation, CrossHairOptions.HighlightCrossHair);
                 break;
 
             case ControlPointKind.CrossingPoint:
