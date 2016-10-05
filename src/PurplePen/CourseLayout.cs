@@ -48,6 +48,7 @@ namespace PurplePen
         MainCourse = 0,                 // The main course in regular purple
         Descriptions,                // The descriptions in black
         AllControls,                  // The All Controls layer
+        AllVariations,                // The All Variations layer in topology when viewing one variation.
         Count
     }
 

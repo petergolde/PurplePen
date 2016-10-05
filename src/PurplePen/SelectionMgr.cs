@@ -619,8 +619,9 @@ namespace PurplePen
                 // Place the active course in the layout.
                 activeTopologyCourseLayout = new CourseLayout();
                 activeTopologyCourseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
+                activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.5F, false);
                 TopologyFormatter formatter = new TopologyFormatter();
-                formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeTopologyCourseLayout, CourseLayer.MainCourse);
+                formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeCourseView, activeTopologyCourseLayout, CourseLayer.AllVariations, CourseLayer.MainCourse);
             }
         }
 

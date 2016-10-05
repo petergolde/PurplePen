@@ -51,7 +51,7 @@ namespace PurplePen.Tests
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
-            CourseView courseView;
+            CourseView courseView, courseViewAllVariations;
             CourseLayout course;
 
             eventDB.Load(TestUtil.GetTestFile(filename));
@@ -59,10 +59,16 @@ namespace PurplePen.Tests
 
             // Create the course
             courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
+            if (courseDesignator.IsVariation)
+                courseViewAllVariations = CourseView.CreateViewingCourseView(eventDB, courseDesignator.WithAllVariations());
+            else
+                courseViewAllVariations = courseView;
+
             course = new CourseLayout();
+            course.SetLayerColor(CourseLayer.AllVariations, 0, "Gray", 0, 0, 0, 0.5F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 0, "Black", 0, 0, 0, 1F, false);
             TopologyFormatter formatter = new TopologyFormatter();
-            RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseView, course, CourseLayer.MainCourse);
+            RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, CourseLayer.AllVariations, CourseLayer.MainCourse);
 
             // Render to a map
             Map map = course.RenderToMap();
