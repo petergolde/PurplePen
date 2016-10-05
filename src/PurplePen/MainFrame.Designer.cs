@@ -387,6 +387,8 @@ namespace PurplePen
             this.mapViewerTopology.ShowSymbolBounds = false;
             this.mapViewerTopology.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewerTopology.Viewport")));
             this.mapViewerTopology.ZoomFactor = 1F;
+            this.mapViewerTopology.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewerTopology_OnPointerHover);
+            this.mapViewerTopology.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewerTopology_OnMouseEvent);
             // 
             // descriptionControl
             // 

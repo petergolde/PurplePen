@@ -497,7 +497,7 @@ namespace PurplePen
 
         void UpdateTopologyHighlight()
         {
-            IMapViewerHighlight[] highlights = controller.GetHighlights(Pane.Map);
+            IMapViewerHighlight[] highlights = controller.GetHighlights(Pane.Topology);
 
             mapViewerTopology.ChangeHighlight(highlights);
         }
@@ -1151,6 +1151,17 @@ namespace PurplePen
             }
         }
 
+        private void mapViewerTopology_OnPointerHover(object sender, bool inViewport, PointF location)
+        {
+            string tipText, titleText;
+            if (showToolTips && controller.GetToolTip(Pane.Topology, location, mapViewer.PixelSize, out tipText, out titleText)) {
+                toolTip.Hide(mapViewerTopology);
+                toolTip.ToolTipTitle = titleText;
+                lastTooltipLocation = Util.PointFromPointF(mapViewerTopology.WorldToPixel(location));
+                toolTip.Show(tipText, mapViewerTopology, lastTooltipLocation.X, lastTooltipLocation.Y + 24, 7000);
+            }
+        }
+
         private void mapViewer_MouseEnter(object sender, EventArgs e)
         {
             // When the mouse enters the map, give it focus. This makes the scroll wheel work correctly.
@@ -1173,30 +1184,43 @@ namespace PurplePen
             if (action != MouseAction.Move)
                 toolTip.Hide(mapViewer);
 
+            return HandleMouseEvent(Pane.Map, mapViewer, action, buttonNumber, whichButtonsDown, location, locationStart);
+        }
+
+        private MapViewer.DragAction mapViewerTopology_OnMouseEvent(object sender, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart)
+        {
+            if (action != MouseAction.Move)
+                toolTip.Hide(mapViewerTopology);
+
+            return HandleMouseEvent(Pane.Topology, mapViewerTopology, action, buttonNumber, whichButtonsDown, location, locationStart);
+        }
+
+        private MapViewer.DragAction HandleMouseEvent(Pane pane, MapViewer activePaneMapViewer, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart)
+        {
             if (action == MouseAction.Down && buttonNumber == MapViewer.LeftMouseButton)
-                return controller.LeftButtonDown(Pane.Map, location, mapViewer.PixelSize);
+                return controller.LeftButtonDown(pane, location, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Down && buttonNumber == MapViewer.RightMouseButton)
-                return controller.RightButtonDown(Pane.Map, location, mapViewer.PixelSize);
+                return controller.RightButtonDown(pane, location, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Up && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonUp(Pane.Map, location, mapViewer.PixelSize);
+                controller.LeftButtonUp(pane, location, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Up && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonUp(Pane.Map, location, mapViewer.PixelSize);
+                controller.RightButtonUp(pane, location, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Click && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonClick(Pane.Map, location, mapViewer.PixelSize);
+                controller.LeftButtonClick(pane, location, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Click && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonClick(Pane.Map, location, mapViewer.PixelSize);
-            else if (action == MouseAction.Drag && buttonNumber == MapViewer.LeftMouseButton) 
-                controller.LeftButtonDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
+                controller.RightButtonClick(pane, location, activePaneMapViewer.PixelSize);
+            else if (action == MouseAction.Drag && buttonNumber == MapViewer.LeftMouseButton)
+                controller.LeftButtonDrag(pane, location, locationStart, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.Drag && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
+                controller.RightButtonDrag(pane, location, locationStart, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonEndDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
+                controller.LeftButtonEndDrag(pane, location, locationStart, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.DragEnd && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonEndDrag(Pane.Map, location, locationStart, mapViewer.PixelSize);
+                controller.RightButtonEndDrag(pane, location, locationStart, activePaneMapViewer.PixelSize);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.LeftMouseButton)
-                controller.LeftButtonCancelDrag(Pane.Map);
+                controller.LeftButtonCancelDrag(pane);
             else if (action == MouseAction.DragCancel && buttonNumber == MapViewer.RightMouseButton)
-                controller.RightButtonCancelDrag(Pane.Map);
+                controller.RightButtonCancelDrag(pane);
 
             return MapViewer.DragAction.None;
         }

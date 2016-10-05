@@ -201,17 +201,18 @@ namespace PurplePen
         // Get the highlights to display.
         public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            if (pane == Pane.Map) {
-                // No command in progress. Just return the active selected objects.
-                CourseObj[] selectedObjects = selectionMgr.SelectedCourseObjects;
-                if (selectedObjects == null)
-                    return null;
+            // No command in progress. Just return the active selected objects.
+            CourseObj[] selectedObjects;
 
-                return (IMapViewerHighlight[])selectedObjects;
-            }
-            else {
+            if (pane == Pane.Map)
+                selectedObjects = selectionMgr.SelectedCourseObjects;
+            else
+                selectedObjects = selectionMgr.SelectedTopologyObjects;
+
+            if (selectedObjects == null)
                 return null;
-            }
+
+            return (IMapViewerHighlight[])selectedObjects;
         }
 
         public override string StatusText
@@ -320,12 +321,12 @@ namespace PurplePen
 
         public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            if (pane == Pane.Map) {
-                CourseObj clickedObject = HitTest(location, pixelSize);
-                if (clickedObject != null) {
-                    selectionMgr.SelectCourseObject(clickedObject);
-                }
-                else {
+            CourseObj clickedObject = HitTest(pane, location, pixelSize);
+            if (clickedObject != null) {
+                selectionMgr.SelectCourseObject(clickedObject);
+            }
+            else {
+                if (pane == Pane.Map) {
                     // clicked on nothing. Clear selection.
                     controller.ClearSelection();
                 }
@@ -377,9 +378,9 @@ namespace PurplePen
             }
         }
 
-        private CourseObj HitTest(PointF location, float pixelSize)
+        private CourseObj HitTest(Pane pane, PointF location, float pixelSize)
         {
-            CourseLayout activeCourse = controller.GetCourseLayout();
+            CourseLayout activeCourse = (pane == Pane.Map) ? controller.GetCourseLayout() : controller.GetTopologyLayout();
             CourseObj clickedObject;
 
             clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
@@ -391,30 +392,31 @@ namespace PurplePen
 
         public override bool GetToolTip(Pane pane, PointF location, float pixelSize, out string tipText, out string titleText)
         {
+            CourseLayout activeCourse;
+            CourseView courseView = selectionMgr.ActiveCourseView;
+
             if (pane == Pane.Map) {
-                CourseLayout activeCourse = controller.GetCourseLayout();
-                CourseView courseView = selectionMgr.ActiveCourseView;
-                CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+                activeCourse = controller.GetCourseLayout();
+            }
+            else {
+                activeCourse = controller.GetTopologyLayout();
+            }
 
-                if (touchedObject == null)
-                    touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
 
-                if (touchedObject != null) {
-                    TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
-                    ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
-                    return true;
-                }
-                else {
-                    tipText = titleText = "";
-                    return false;
-                }
+            if (touchedObject == null)
+                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+
+            if (touchedObject != null) {
+                TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
+                ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
+                return true;
             }
             else {
                 tipText = titleText = "";
                 return false;
             }
         }
-
     }
 
     // Mode when an object is being dragged to a new position.
@@ -441,7 +443,8 @@ namespace PurplePen
 
         public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            Debug.Assert(pane == Pane.Map);
+            if (pane != Pane.Map)
+                return null;
 
             if (additionalHighlights != null && additionalHighlights.Length > 0) {
                 CourseObj[] highlights = new CourseObj[additionalHighlights.Length + 1];

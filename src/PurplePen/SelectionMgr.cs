@@ -370,7 +370,7 @@ namespace PurplePen
             else if (courseObject.specialId.IsNotNone) {
                 SetSelection(SelectionKind.Special, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, courseObject.specialId, null, DescriptionLine.TextLineKind.None);
             }
-            else if (courseObject is LegCourseObj || courseObject is FlaggedLegCourseObj) {
+            else if (courseObject is LegCourseObj || courseObject is FlaggedLegCourseObj || courseObject is TopologyLegCourseObj) {
                 SetSelection(SelectionKind.Leg, courseObject.courseControlId, ((LineCourseObj) courseObject).courseControlId2, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
             }
         }
