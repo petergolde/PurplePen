@@ -391,7 +391,12 @@ namespace PurplePen
                 mapViewerTopology.SetMap(topologyMapDisplay);
             }
 
-            topologyMapDisplay.SetCourse(controller.GetTopologyLayout());
+            CourseLayout topologyCourseLayout = controller.GetTopologyLayout();
+            topologyMapDisplay.SetCourse(topologyCourseLayout);
+
+            if (topologyCourseLayout == null)
+                radioButtonDescriptions.Checked = true;
+            radioButtonTopology.Enabled = (topologyCourseLayout != null);
         }
 
         // Update the print area in the map pane.
