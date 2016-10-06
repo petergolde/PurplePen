@@ -148,6 +148,7 @@ namespace PurplePen
             whiteOutMenu.Image = whiteOutToolStripMenuItem.Image;
             addGapMenu.Image = addGapToolStripButton.Image;
             addBendMenu.Image = addBendToolStripButton.Image;
+            addVariationMenu.Image = addVariationToolStripButton.Image;
         }
 
         public void Initialize(Controller controller, SymbolDB symbolDB)
@@ -663,6 +664,8 @@ namespace PurplePen
             UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
             UpdateMenuItem(mapExchangeToolStripMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
+            UpdateMenuItem(addVariationMenu, controller.CanAddVariation());
+            UpdateMenuItem(addVariationToolStripButton, controller.CanAddVariation());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);

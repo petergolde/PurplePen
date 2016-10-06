@@ -788,7 +788,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suitable for use in relays with {0} participants per team.
+        ///   Looks up a localized string similar to Suitable for use in relays with {0} participants per team..
         /// </summary>
         internal static string ForkSummary {
             get {

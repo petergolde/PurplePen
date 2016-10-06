@@ -163,6 +163,7 @@ namespace PurplePen
             this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addSpecialItemMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -276,7 +277,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVariationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1073,6 +1074,12 @@ namespace PurplePen
             resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
             this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
             // 
+            // addVariationMenu
+            // 
+            this.addVariationMenu.Name = "addVariationMenu";
+            resources.ApplyResources(this.addVariationMenu, "addVariationMenu");
+            this.addVariationMenu.Click += new System.EventHandler(this.addVariationMenu_Click);
+            // 
             // addSpecialItemMenu
             // 
             this.addSpecialItemMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1535,6 +1542,7 @@ namespace PurplePen
             this.toolStripLabel1,
             this.descriptionsToolStripMenuItem,
             this.mapExchangeToolStripMenu,
+            this.addVariationToolStripButton,
             this.specialItemToolStripMenu,
             this.toolStripSeparator1,
             this.addBendToolStripButton,
@@ -1837,11 +1845,11 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
-            // addVariationMenu
+            // addVariationToolStripButton
             // 
-            this.addVariationMenu.Name = "addVariationMenu";
-            resources.ApplyResources(this.addVariationMenu, "addVariationMenu");
-            this.addVariationMenu.Click += new System.EventHandler(this.addVariationMenu_Click);
+            resources.ApplyResources(this.addVariationToolStripButton, "addVariationToolStripButton");
+            this.addVariationToolStripButton.Name = "addVariationToolStripButton";
+            this.addVariationToolStripButton.Click += new System.EventHandler(this.addVariationMenu_Click);
             // 
             // MainFrame
             // 
@@ -2098,5 +2106,6 @@ namespace PurplePen
         private MapView.MapViewer mapViewerTopology;
         private DescriptionControl descriptionControl;
         private System.Windows.Forms.ToolStripMenuItem addVariationMenu;
+        private System.Windows.Forms.ToolStripButton addVariationToolStripButton;
     }
 }
