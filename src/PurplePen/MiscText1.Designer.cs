@@ -788,6 +788,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Suitable for use in relays with {0} participants per team.
+        /// </summary>
+        internal static string ForkSummary {
+            get {
+                return ResourceManager.GetString("ForkSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
         internal static string GpxMustBeOcadMap {
@@ -865,6 +874,15 @@ namespace PurplePen {
         internal static string LightBlue {
             get {
                 return ResourceManager.GetString("LightBlue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The central control in the loop will be visited {0} times. There are {1} possible paths through the loops..
+        /// </summary>
+        internal static string LoopSummary {
+            get {
+                return ResourceManager.GetString("LoopSummary", resourceCulture);
             }
         }
         

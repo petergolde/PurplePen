@@ -117,6 +117,12 @@
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="AddDescriptionMode.cs" />
+    <Compile Include="AddForkDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForkDialog.Designer.cs">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddImageMode.cs" />
     <Compile Include="AddRemoveGapMode.cs" />
     <Compile Include="AddTextLine.cs">
@@ -707,6 +713,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.sv.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTextLine.bg.resx">
       <DependentUpon>AddTextLine.cs</DependentUpon>

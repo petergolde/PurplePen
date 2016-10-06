@@ -1076,6 +1076,17 @@ namespace PurplePen
             controller.BeginAddControlMode(ControlPointKind.MapExchange, false);
         }
 
+        private void addVariationMenu_Click(object sender, EventArgs e)
+        {
+            AddForkDialog addForkDialog = new AddForkDialog();
+
+            DialogResult result = addForkDialog.ShowDialog(this);
+
+            if (result == DialogResult.OK) {
+
+            }
+        }
+
         private void zoomMenu_Click(object sender, EventArgs e)
         {
             float zoomAmount = (float) ((ToolStripMenuItem) sender).Tag;
@@ -2736,5 +2747,6 @@ namespace PurplePen
             descriptionControl.Visible = radioButtonDescriptions.Checked;
             mapViewerTopology.Visible = radioButtonTopology.Checked;
         }
+
     }
 }
