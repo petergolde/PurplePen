@@ -65,7 +65,7 @@ namespace PurplePen.Tests
                 courseViewAllVariations = courseView;
 
             course = new CourseLayout();
-            course.SetLayerColor(CourseLayer.AllVariations, 0, "Gray", 0, 0, 0, 0.4F, false);
+            course.SetLayerColor(CourseLayer.AllVariations, 1, "Gray", 0, 0, 0, 0.4F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 0, "Black", 0, 0, 0, 1F, false);
             TopologyFormatter formatter = new TopologyFormatter();
             RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, CourseLayer.AllVariations, CourseLayer.MainCourse);
@@ -133,6 +133,24 @@ namespace PurplePen.Tests
         public void ComplexVariations()
         {
             CheckCourse("topologyformatter\\variations.ppen", Designator(1), "complexvariations");
+        }
+
+        [TestMethod]
+        public void ComplexVariationsOnePath()
+        {
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+
+
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationPath);
+            CheckCourse("topologyformatter\\variations.ppen", courseDesignator, "complexvariations_onepath");
         }
 
     }
