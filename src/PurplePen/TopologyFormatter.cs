@@ -52,10 +52,11 @@ namespace PurplePen
         EventDB eventDB;
         SymbolDB symbolDB;
         CourseLayout courseLayout;
-        CourseLayer courseLayerAllVariations;
+        CourseLayer courseLayerAllVariationsAndParts;
         CourseLayer courseLayerSpecificVariation;
-        List<CourseView.ControlView> controlViewsAllVariations;
+        List<CourseView.ControlView> controlViewsAllVariationsAndParts;
         List<CourseView.ControlView> controlViewsSpecificVariation;
+        Id<CourseControl>[] courseControlIdsSpecificVariation;
         CourseAppearance appearance;
         float scaleRatio;
 
@@ -87,20 +88,21 @@ namespace PurplePen
             this.eventDB = courseViewAllVariations.EventDB;
             this.symbolDB = symbolDB;
             this.courseLayout = courseLayout;
-            this.courseLayerAllVariations = layerAllVariations;
+            this.courseLayerAllVariationsAndParts = layerAllVariations;
             this.courseLayerSpecificVariation = layerSpecificVariation;
-            this.controlViewsAllVariations = courseViewAllVariations.ControlViews;
+            this.controlViewsAllVariationsAndParts = courseViewAllVariations.ControlViews;
             this.controlViewsSpecificVariation = specificVariation.ControlViews;
-            this.controlPositions = new ControlPosition[controlViewsAllVariations.Count];
+            this.controlPositions = new ControlPosition[controlViewsAllVariationsAndParts.Count];
+            this.courseControlIdsSpecificVariation = QueryEvent.EnumCourseControlIds(eventDB, specificVariation.CourseDesignator).ToArray();
 
-            SizeF totalAbstractSize = AssignControlPositions(0, controlViewsAllVariations.Count, 0, 0);
+            SizeF totalAbstractSize = AssignControlPositions(0, controlViewsAllVariationsAndParts.Count, 0, 0);
 
             // Now create objects now that the positions have been created.
             scaleRatio = 1.0F;
             appearance = new CourseAppearance();
 
-            for (int index = 0; index < controlViewsAllVariations.Count; ++index) {
-                CreateObjectsForControlView(controlViewsAllVariations[index], controlPositions[index]);
+            for (int index = 0; index < controlViewsAllVariationsAndParts.Count; ++index) {
+                CreateObjectsForControlView(controlViewsAllVariationsAndParts[index], controlPositions[index]);
             }
 
             PointF bottomCenter = LocationFromAbstractPosition(0, 0);
@@ -122,7 +124,7 @@ namespace PurplePen
                     else
                         forkStart = null;
 
-                    CreateLegBetweenControls(controlView, controlPosition, controlViewsAllVariations[controlView.legTo[i]], controlPositions[controlView.legTo[i]], forkStart);
+                    CreateLegBetweenControls(controlView, controlPosition, controlViewsAllVariationsAndParts[controlView.legTo[i]], controlPositions[controlView.legTo[i]], i, forkStart);
                 }
             }
             
@@ -131,12 +133,29 @@ namespace PurplePen
         // Is the given control view in the specific variation.
         private bool ControlViewInSpecificVariation(CourseView.ControlView controlView)
         {
-            if (controlViewsSpecificVariation == controlViewsAllVariations)
+            if (controlViewsSpecificVariation == controlViewsAllVariationsAndParts)
                 return true;
 
             foreach (Id<CourseControl> idCourseControl in controlView.courseControlIds) {
-                foreach (CourseView.ControlView controlViewSpecific in controlViewsSpecificVariation) {
-                    if (controlViewSpecific.courseControlIds.Contains(idCourseControl))
+                if (courseControlIdsSpecificVariation.Contains(idCourseControl))
+                    return true;
+            }
+
+            return false;
+        }
+
+        // Is the given control leg in the specific variation.
+        private bool LegInSpecificVariation(Id<CourseControl> start, Id<CourseControl> end)
+        {
+            if (controlViewsSpecificVariation == controlViewsAllVariationsAndParts)
+                return true;
+
+            for (int i = 0; i < courseControlIdsSpecificVariation.Length - 1; ++i) {
+                if (courseControlIdsSpecificVariation[i] == start) {
+                    if (courseControlIdsSpecificVariation[i+1] == end)
+                        return true;
+                    CourseControl endCourseControl = eventDB.GetCourseControl(end);
+                    if (endCourseControl.splitCourseControls != null && endCourseControl.splitCourseControls.Contains(courseControlIdsSpecificVariation[i+1]))
                         return true;
                 }
             }
@@ -156,7 +175,7 @@ namespace PurplePen
             if (ControlViewInSpecificVariation(controlView))
                 layer = courseLayerSpecificVariation;
             else
-                layer = courseLayerAllVariations;
+                layer = courseLayerAllVariationsAndParts;
 
             CourseObj courseObj;
 
@@ -188,16 +207,16 @@ namespace PurplePen
             courseLayout.AddCourseObject(courseObj);
         }
 
-        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, ForkPosition forkStart)
+        private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, int splitLegIndex, ForkPosition forkStart)
         {
             SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart);
-            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[0], controlView2.courseControlIds[0], scaleRatio, appearance, path);
+            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, path);
             CourseLayer layer;
 
-            if (ControlViewInSpecificVariation(controlView1) && ControlViewInSpecificVariation(controlView2))
+            if (LegInSpecificVariation(controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0]))
                 layer = courseLayerSpecificVariation;
             else
-                layer = courseLayerAllVariations;
+                layer = courseLayerAllVariationsAndParts;
 
             courseObj.layer = layer;
             courseLayout.AddCourseObject(courseObj);
@@ -320,7 +339,7 @@ namespace PurplePen
             float x = startX, y = startY;
             float totalWidth = 1, totalHeight = 0;   // Always at least a width of 1.
             while (index != endIndex) {
-                int numForks = (controlViewsAllVariations[index].legTo == null) ? 0 : controlViewsAllVariations[index].legTo.Length;
+                int numForks = (controlViewsAllVariationsAndParts[index].legTo == null) ? 0 : controlViewsAllVariationsAndParts[index].legTo.Length;
 
                 // Simple case, no splitting.
                 controlPositions[index] = new ControlPosition() {
@@ -332,7 +351,7 @@ namespace PurplePen
                 y += 1;
 
                 if (numForks > 1) {
-                    bool loop = (controlViewsAllVariations[index].joinIndex == index);
+                    bool loop = (controlViewsAllVariationsAndParts[index].joinIndex == index);
 
                     // fork or loop subsequent. Two passes -- first determine totalWidth and maxHeight;
                     float totalForkWidth = 0, maxForkHeight = 1;
@@ -347,7 +366,7 @@ namespace PurplePen
 
                     // Get size of each fork.
                     for (int i = startFork; i < numForks; ++i) {
-                        forkSize[i] = AssignControlPositions(controlViewsAllVariations[index].legTo[i], controlViewsAllVariations[index].joinIndex, 0, 0);
+                        forkSize[i] = AssignControlPositions(controlViewsAllVariationsAndParts[index].legTo[i], controlViewsAllVariationsAndParts[index].joinIndex, 0, 0);
                         totalForkWidth += forkSize[i].Width;
                         maxForkHeight = Math.Max(maxForkHeight, forkSize[i].Height);
                     }
@@ -400,7 +419,7 @@ namespace PurplePen
 
                     // Assign control positions for each fork again, now that we know the start position.
                     for (int i = startFork; i < numForks; ++i) {
-                        AssignControlPositions(controlViewsAllVariations[index].legTo[i], controlViewsAllVariations[index].joinIndex, forkStart[i].x, forkStart[i].y);
+                        AssignControlPositions(controlViewsAllVariationsAndParts[index].legTo[i], controlViewsAllVariationsAndParts[index].joinIndex, forkStart[i].x, forkStart[i].y);
                     }
 
                     float height = maxForkHeight + 1;
@@ -408,14 +427,14 @@ namespace PurplePen
                     y += height;
                     totalWidth = Math.Max(totalWidth, totalForkWidth);
 
-                    if (index == controlViewsAllVariations[index].joinIndex)
-                        index = controlViewsAllVariations[index].legTo[0];
+                    if (index == controlViewsAllVariationsAndParts[index].joinIndex)
+                        index = controlViewsAllVariationsAndParts[index].legTo[0];
                     else
-                        index = controlViewsAllVariations[index].joinIndex;
+                        index = controlViewsAllVariationsAndParts[index].joinIndex;
                 }
                 else {
-                    if (controlViewsAllVariations[index].legTo != null && controlViewsAllVariations[index].legTo.Length > 0)
-                        index = controlViewsAllVariations[index].legTo[0];
+                    if (controlViewsAllVariationsAndParts[index].legTo != null && controlViewsAllVariationsAndParts[index].legTo.Length > 0)
+                        index = controlViewsAllVariationsAndParts[index].legTo[0];
                     else
                         break; // no more controls.
                 }

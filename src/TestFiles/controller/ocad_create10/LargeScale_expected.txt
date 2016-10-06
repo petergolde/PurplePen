@@ -364,6 +364,16 @@ String of type 9
 
 String of type 9
   ObjIndex=0
+  firstField=Black
+  code=n, value=0
+  code=c, value=0
+  code=m, value=0
+  code=y, value=0
+  code=k, value=100
+  code=o, value=0
+
+String of type 9
+  ObjIndex=0
   firstField=White
   code=n, value=44
   code=c, value=0

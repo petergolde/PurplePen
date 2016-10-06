@@ -44,6 +44,7 @@ namespace PurplePen
 {
     enum CourseLayer
     {
+        // The lower the integer, they are on top. E.g., MainCourse is layered above AllControls.
         All = -1,                        // For filtering to all layers
         MainCourse = 0,                 // The main course in regular purple
         Descriptions,                // The descriptions in black
@@ -153,17 +154,20 @@ namespace PurplePen
                     }
                 }
 
+                // Create colors for the regular colors in the correct order (lower on top).
+                for (int layerIndex = LAYERCOUNT-1; layerIndex >= 0; --layerIndex) {
+                    if (colorName[layerIndex] != null) {
+                        // Create the symColor for rendering.
+                        colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
+                                                          colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
+                    }
+                }
+
                 foreach (CourseObj courseObject in this) {
                     int layerIndex = (int) courseObject.layer;
 
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Black) {
                         layerIndex = (int)CourseLayer.Descriptions; 
-                    }
-
-                    if (colors[layerIndex] == null) {
-                        // Create the symColor for rendering.
-                        colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
-                            colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
                     }
 
                     SymColor color = colors[layerIndex];

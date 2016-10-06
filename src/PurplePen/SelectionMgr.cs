@@ -78,7 +78,7 @@ namespace PurplePen
         int activeCourseViewIndex;              // Index of the active course view (tab).
 
         CourseView activeCourseView;            // The active course view.
-        CourseView topologyCourseView;            // The active course view, but: null if all controls or score, plus always shows all variations.
+        CourseView topologyCourseView;            // The active course view, but: null if all controls or score, plus always shows all variations and parts.
 
         DescriptionLine[] activeDescription;    // The active description.
         int selectedDescriptionLineFirst;             // If there is a selection, the first selected row of the description.
@@ -487,7 +487,8 @@ namespace PurplePen
                 ClearSelection();
             }
 
-            if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && !activeCourseDesignator.AllParts && 
+            if (selectedCourseControl.IsNotNone && activeCourseDesignator.IsNotAllControls && 
+                (!activeCourseDesignator.AllParts || activeCourseDesignator.IsVariation) && 
                 !QueryEvent.IsCourseControlInPart(eventDB, activeCourseDesignator, selectedCourseControl)) {
                 // Selected course control is not in active part.
                 // Could be allowed if it's the finish.
@@ -566,8 +567,8 @@ namespace PurplePen
             // Get/create the topology course view. Not supported (null) for score and all controls. Always shows
             // all variations for a course with variations.
             if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
-                if (QueryEvent.HasVariations(activeCourseView.EventDB, activeCourseView.BaseCourseId)) {
-                    topologyCourseView = CourseView.CreateViewingCourseView(eventDB, activeCourseDesignator.WithAllVariations());
+                if (QueryEvent.HasVariations(activeCourseView.EventDB, activeCourseView.BaseCourseId) || !activeCourseView.CourseDesignator.AllParts) {
+                    topologyCourseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(activeCourseView.BaseCourseId));
                 }
                 else {
                     topologyCourseView = activeCourseView;
@@ -618,8 +619,8 @@ namespace PurplePen
             else {
                 // Place the active course in the layout.
                 activeTopologyCourseLayout = new CourseLayout();
+                activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.4F, false);
                 activeTopologyCourseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
-                activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.5F, false);
                 TopologyFormatter formatter = new TopologyFormatter();
                 formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeCourseView, activeTopologyCourseLayout, CourseLayer.AllVariations, CourseLayer.MainCourse);
             }

@@ -65,7 +65,7 @@ namespace PurplePen.Tests
                 courseViewAllVariations = courseView;
 
             course = new CourseLayout();
-            course.SetLayerColor(CourseLayer.AllVariations, 0, "Gray", 0, 0, 0, 0.5F, false);
+            course.SetLayerColor(CourseLayer.AllVariations, 0, "Gray", 0, 0, 0, 0.4F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 0, "Black", 0, 0, 0, 1F, false);
             TopologyFormatter formatter = new TopologyFormatter();
             RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, CourseLayer.AllVariations, CourseLayer.MainCourse);
