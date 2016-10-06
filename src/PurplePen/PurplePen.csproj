@@ -604,6 +604,7 @@
       <DependentUpon>TitleDetailButton.cs</DependentUpon>
     </Compile>
     <Compile Include="ToolStripTrackBar.cs" />
+    <Compile Include="TopologyDragControlMode.cs" />
     <Compile Include="TopologyFormatter.cs" />
     <Compile Include="UnusedControls.cs">
       <SubType>Form</SubType>

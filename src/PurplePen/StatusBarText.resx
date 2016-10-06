@@ -216,4 +216,7 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>Hold down left mouse button and drag to create object</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Drag control number to reorder it in the course (hold shift to duplicate)</value>
+  </data>
 </root>

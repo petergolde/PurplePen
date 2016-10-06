@@ -373,9 +373,21 @@ namespace PurplePen
 
                 return MapViewer.DragAction.DelayedDrag;
             }
-            else {
-                return MapViewer.DragAction.None;
+            else if (pane == Pane.Topology) {
+                CourseObj clickedObject = HitTest(pane, location, pixelSize);
+                if (clickedObject is ControlNumberCourseObj || clickedObject is CrossingCourseObj ||
+                    (clickedObject is StartCourseObj && (eventDB.GetControl(((StartCourseObj)clickedObject).controlId).kind == ControlPointKind.MapExchange))) 
+                {
+                    // Can drag control numbers, crossing points, or map exchanges.
+                    selectionMgr.SelectCourseObject(clickedObject);
+                    TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, location);
+                    controller.SetCommandMode(commandMode);
+                    displayUpdateNeeded = true;
+                    return MapViewer.DragAction.ImmediateDrag;
+                }
             }
+
+            return MapViewer.DragAction.None;
         }
 
         private CourseObj HitTest(Pane pane, PointF location, float pixelSize)
@@ -432,7 +444,6 @@ namespace PurplePen
 
         public DragObjectMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF startDrag)
         {
-            Debug.WriteLine(string.Format("DragObjectMode start {0},{1}", startDrag.X, startDrag.Y));
             this.controller = controller;
             this.eventDB = eventDB;
             this.selectionMgr = selectionMgr;
@@ -530,7 +541,6 @@ namespace PurplePen
         {
             Debug.Assert(pane == Pane.Map);
 
-            Debug.WriteLine(string.Format("DragObject end drag start=({0},{1}), loc=({2},{3})", locationStart.X, locationStart.Y, location.X, location.Y));
             float deltaX = (location.X - startDrag.X);
             float deltaY = (location.Y - startDrag.Y);
 

@@ -210,14 +210,17 @@
   <data name="radioButtonDescriptions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="radioButtonDescriptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
   <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 214</value>
+    <value>3, 189</value>
   </data>
   <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 0, 3</value>
   </data>
   <data name="radioButtonDescriptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 25</value>
+    <value>125, 23</value>
   </data>
   <data name="radioButtonDescriptions.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -249,14 +252,17 @@
   <data name="radioButtonTopology.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="radioButtonTopology.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
   <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 214</value>
+    <value>128, 189</value>
   </data>
   <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
   </data>
   <data name="radioButtonTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 25</value>
+    <value>125, 23</value>
   </data>
   <data name="radioButtonTopology.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -283,7 +289,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAAlLgL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAApLgL
 </value>
   </data>
   <data name="mapViewerTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -296,7 +302,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 186</value>
   </data>
   <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -308,8 +314,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAeHcHwhdP38F3d4dC
-        8E5fQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAeHcHwsbZxMF3d4dC
+        mtlEQgs=
 </value>
   </data>
   <data name="mapViewerTopology.Visible" type="System.Boolean, mscorlib">
@@ -340,7 +346,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 186</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -367,7 +373,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 186</value>
   </data>
   <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -394,7 +400,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 242</value>
+    <value>256, 215</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -442,7 +448,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 121</value>
+    <value>256, 148</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -478,7 +484,7 @@
     <value>256, 366</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>242</value>
+    <value>215</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -514,7 +520,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuADAkbsL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAABAuACAkrsL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -536,7 +542,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwgk8J8JmbhRD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAbG6Uwg88J8JmbhRD
         eDenQgs=
 </value>
   </data>
@@ -1845,11 +1851,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqC0ej/4ChXDBTmrBYD
-        xUIwYbMZtDoLzX+B4kYluMk1Gk0aIOP1zs8DD7tTbsjc5Lt9d/e8v/20dUSKgqmmFy7+DbHiIoxnmj2R
+        xUIwYbMZtDoLzf+A5kYluMk1Gk0aIOP1zs8DD7tTbsjc5Lt9d/e8v/20dUSKgqmmFy7+DbHiIoxnmj2R
         cM/VCfrq5zA+UukVvk80CX9yrHHbkhhNHml04uFSR539tMOmpOizp5CoXDIl2Vv8X/MtwDw8TZOgW/Pr
         qvuJ36WHL4CxakYMN67KBD5FfN7Yx7GrEpDknkohDms3P9DgqKnmrov/jIoqO7R76GImsF9Z50zw4KoE
         dmZGqtvsrsoEwXe2Q/jiqgXIHAw1/DCjXWF5kTTp4Iwi5/yH5odc9vB5e+WaapFn34hWsKfegaf4Nsbc
-        wR6eVcsifg17EhRePbMt1Gb1jtbu5FdQLYB5F7cF6QtpMjZSioMjJAAAAABJRU5ErkJggg==
+        wR6eVcsifg17EhRePbMt1Gb1jtbu5FdQLYB5F7cF6QthAjZKbcDbCgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
