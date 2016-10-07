@@ -2656,6 +2656,18 @@ namespace PurplePen
             return QueryEvent.CanAddVariation(eventDB, selection.ActiveCourseDesignator, courseControl) ? CommandStatus.Enabled : CommandStatus.Disabled;
         }
 
+        public void AddVariation(bool loop, int numberOfForks)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            undoMgr.BeginCommand(1992, CommandNameText.AddVariation);
+
+            bool result = ChangeEvent.AddVariation(eventDB, selection.ActiveCourseDesignator, selection.SelectedCourseControl, loop, numberOfForks);
+            Debug.Assert(result);
+
+            undoMgr.EndCommand(1992);
+        }
+
         // Can we set a text line for the selected object? If so, return default text and position, name of object, and whether to enable the "this course only" option.
         public bool CanAddTextLine(out string defaultText, out DescriptionLine.TextLineKind textLineKind, out string objectName, out bool enableThisCourse)
         {

@@ -151,6 +151,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Variation.
+        /// </summary>
+        internal static string AddVariation {
+            get {
+                return ResourceManager.GetString("AddVariation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automatic Numbering.
         /// </summary>
         internal static string AutoNumbering {

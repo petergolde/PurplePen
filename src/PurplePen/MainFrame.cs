@@ -1091,8 +1091,10 @@ namespace PurplePen
             DialogResult result = addForkDialog.ShowDialog(this);
 
             if (result == DialogResult.OK) {
-
+                controller.AddVariation(addForkDialog.Loop, addForkDialog.NumberOfBranches);
             }
+
+            addForkDialog.Dispose();
         }
 
         private void zoomMenu_Click(object sender, EventArgs e)

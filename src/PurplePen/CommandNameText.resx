@@ -288,4 +288,7 @@
   <data name="CreateMapFiles" xml:space="preserve">
     <value>Create {0} &amp;Files</value>
   </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Add Variation</value>
+  </data>
 </root>
