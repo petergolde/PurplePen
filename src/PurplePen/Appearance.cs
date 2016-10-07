@@ -214,6 +214,10 @@ namespace PurplePen
         // Em height of 4.18 yields actual digit height of 3mm.
         public static readonly FontDesc controlCodeFont = new FontDesc("Arial Narrow", true, false, 4.18F, 4.00F);
 
+        // Font to use for the variation code number in topology view.
+        // Em height of 4.18 yields actual digit height of 3mm.
+        public static readonly FontDesc variationCodeFont = new FontDesc("Arial Narrow", false, false, 4.18F, 4.00F);
+
         public const float codeCircleDistance = 0.325F;   // default distance of code from edge of control circle
 
         public const double defaultControlNumberAngle = Math.PI / 6;  // default angle of the control number absent constraints, in radian.

@@ -2306,8 +2306,33 @@ namespace PurplePen
         }
    }
 
-   // Arbitrary text, set withing a bounding rectangle. The text is sized to fit inside the bounding rectangle.
-   class BasicTextCourseObj: TextCourseObj
+    // A Variation code
+    class VariationCodeCourseObj: TextCourseObj
+    {
+        public PointF centerPoint;
+
+        public VariationCodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.variationCodeFont.Name, NormalCourseAppearance.variationCodeFont.Style, SpecialColor.Purple,
+            NormalCourseAppearance.variationCodeFont.EmHeight * scaleRatio, 0)
+        {
+            // Update the top left coord so the text is centered on centerPoint.
+            this.centerPoint = centerPoint;
+            topLeft = new PointF(centerPoint.X - size.Width / 2, centerPoint.Y + size.Height / 2);
+        }
+
+        protected override string SymDefName
+        {
+            get { return "Variation code"; }
+        }
+
+        protected override int OcadIdIntegerPart
+        {
+            get { return 721; }
+        }
+    }
+
+    // Arbitrary text, set withing a bounding rectangle. The text is sized to fit inside the bounding rectangle.
+    class BasicTextCourseObj: TextCourseObj
    {
        private RectangleF rectBounding;
 

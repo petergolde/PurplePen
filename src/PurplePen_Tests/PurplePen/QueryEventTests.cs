@@ -1835,7 +1835,7 @@ namespace PurplePen.Tests
             });
 
             result = QueryEvent.GetVariationString(eventDB, new CourseDesignator(new Id<Course>(1), variationPath));
-            Assert.AreEqual("BEFDCH", result);
+            Assert.AreEqual("AEFDCI", result);
         }
 
         [TestMethod]
@@ -1845,45 +1845,48 @@ namespace PurplePen.Tests
 
             var result = QueryEvent.GetAllVariations(eventDB, new Id<Course>(1));
             List<string> pathStrings = (from pair in result orderby pair.Key select pair.Key).ToList();
+            foreach (string s in pathStrings) {
+                Console.WriteLine(s);
+            }
 
             CollectionAssert.AreEquivalent(pathStrings, new[] {
-                "BCDEFJ",
-                "BCDEFH",
-                "BCDEFI",
-                "BCDEGJ",
-                "BCDEGH",
-                "BCDEGI",
-                "BCEFDJ",
-                "BCEFDH",
-                "BCEFDI",
-                "BCEGDJ",
-                "BCEGDH",
-                "BCEGDI",
-                "BDCEFJ",
-                "BDCEFH",
-                "BDCEFI",
-                "BDCEGJ",
-                "BDCEGH",
-                "BDCEGI",
-                "BDEFCJ",
-                "BDEFCH",
-                "BDEFCI",
-                "BDEGCJ",
-                "BDEGCH",
-                "BDEGCI",
-                "BEFCDJ",
-                "BEFCDH",
-                "BEFCDI",
-                "BEFDCJ",
-                "BEFDCH",
-                "BEFDCI",
-                "BEGCDJ",
-                "BEGCDH",
-                "BEGCDI",
-                "BEGDCJ",
-                "BEGDCH",
-                "BEGDCI",
-                "A"
+                "ACDEFH",
+                "ACDEFI",
+                "ACDEFJ",
+                "ACDEGH",
+                "ACDEGI",
+                "ACDEGJ",
+                "ACEFDH",
+                "ACEFDI",
+                "ACEFDJ",
+                "ACEGDH",
+                "ACEGDI",
+                "ACEGDJ",
+                "ADCEFH",
+                "ADCEFI",
+                "ADCEFJ",
+                "ADCEGH",
+                "ADCEGI",
+                "ADCEGJ",
+                "ADEFCH",
+                "ADEFCI",
+                "ADEFCJ",
+                "ADEGCH",
+                "ADEGCI",
+                "ADEGCJ",
+                "AEFCDH",
+                "AEFCDI",
+                "AEFCDJ",
+                "AEFDCH",
+                "AEFDCI",
+                "AEFDCJ",
+                "AEGCDH",
+                "AEGCDI",
+                "AEGCDJ",
+                "AEGDCH",
+                "AEGDCI",
+                "AEGDCJ",
+                "B"
             });
         }
 

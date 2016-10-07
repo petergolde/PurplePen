@@ -1197,7 +1197,7 @@ namespace PurplePen
         }
 
         // Get the mapping from split course control to letter.
-        private static Dictionary<Id<CourseControl>, char> GetVariantMapping(EventDB eventDB, CourseDesignator courseDesignator)
+        public static Dictionary<Id<CourseControl>, char> GetVariantCodeMapping(EventDB eventDB, CourseDesignator courseDesignator)
         {
             Debug.Assert(!courseDesignator.IsVariation);
 
@@ -1208,10 +1208,14 @@ namespace PurplePen
             foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 if (courseControl.split) {
-                    // The loop escape path doesn't get a letter.
-                    if (!(courseControl.loop && courseControl.splitCourseControls[0] == courseControlId)) {
-                        result.Add(courseControlId, nextLetter);
-                        nextLetter++;
+                    foreach (Id<CourseControl> splitId in courseControl.splitCourseControls) {
+                        // The loop escape path doesn't get a letter.
+                        if (!(courseControl.loop && courseControl.splitCourseControls[0] == splitId)) {
+                            if (!result.ContainsKey(splitId)) {
+                                result.Add(splitId, nextLetter);
+                                nextLetter++;
+                            }
+                        }
                     }
                 }
             }
@@ -1239,7 +1243,7 @@ namespace PurplePen
 
         public static string GetVariationString(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantMapping(eventDB, courseDesignator.WithAllVariations());
+            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantCodeMapping(eventDB, courseDesignator.WithAllVariations());
             return GetVariationString(eventDB, courseDesignator, variationMapper);
         }
 
@@ -1250,7 +1254,7 @@ namespace PurplePen
             HashSet<Id<CourseControl>> alreadyVisited = new HashSet<PurplePen.Id<PurplePen.CourseControl>>();
 
             CourseDesignator courseDesignator = new CourseDesignator(courseId);
-            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantMapping(eventDB, courseDesignator);
+            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantCodeMapping(eventDB, courseDesignator);
             List<List<Id<CourseControl>>> variations = GetVariations(eventDB, courseDesignator, eventDB.GetCourse(courseId).firstCourseControl, alreadyVisited);
 
             Dictionary<string, VariationPath> result = new Dictionary<string, VariationPath>();

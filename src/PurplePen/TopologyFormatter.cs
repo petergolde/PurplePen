@@ -56,6 +56,7 @@ namespace PurplePen
         CourseLayer courseLayerSpecificVariation;
         List<CourseView.ControlView> controlViewsAllVariationsAndParts;
         List<CourseView.ControlView> controlViewsSpecificVariation;
+        Dictionary<Id<CourseControl>, char> variationMap;
         Id<CourseControl>[] courseControlIdsSpecificVariation;
         CourseAppearance appearance;
         float scaleRatio;
@@ -76,9 +77,12 @@ namespace PurplePen
         {
             public float x, y;
             public bool startHorizontal;
-            public ForkPosition(float x, float y, bool startHorizontal)
+            public char variationCode;
+
+            public ForkPosition(float x, float y, bool startHorizontal, char variationCode)
             {
                 this.x = x; this.y = y; this.startHorizontal = startHorizontal;
+                this.variationCode = variationCode;
             }
         }
 
@@ -94,6 +98,7 @@ namespace PurplePen
             this.controlViewsSpecificVariation = specificVariation.ControlViews;
             this.controlPositions = new ControlPosition[controlViewsAllVariationsAndParts.Count];
             this.courseControlIdsSpecificVariation = QueryEvent.EnumCourseControlIds(eventDB, specificVariation.CourseDesignator).ToArray();
+            this.variationMap = QueryEvent.GetVariantCodeMapping(eventDB, courseViewAllVariations.CourseDesignator);
 
             SizeF totalAbstractSize = AssignControlPositions(0, controlViewsAllVariationsAndParts.Count, 0, 0);
 
@@ -220,6 +225,12 @@ namespace PurplePen
 
             courseObj.layer = layer;
             courseLayout.AddCourseObject(courseObj);
+
+            if (forkStart != null && forkStart.variationCode != '\0') {
+                // There is a variation fork.
+                courseObj = CreateVariationCode(controlView1, controlPosition1, splitLegIndex, forkStart);
+                courseLayout.AddCourseObject(courseObj);
+            }
         }
 
         SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart)
@@ -318,6 +329,21 @@ namespace PurplePen
             return path;
         }
 
+        private CourseObj CreateVariationCode(CourseView.ControlView controlView1, ControlPosition controlPosition1, int splitLegIndex, ForkPosition forkStart)
+        {
+            // Delta between position of fork start and position of code.
+            float deltaX = (forkStart.x < controlPosition1.x) ? -0.4F : 0.4F;
+            float deltaY = -0.4F;
+
+            float x = forkStart.x + deltaX;
+            float y = forkStart.y + deltaY;
+
+            string text = "(" + forkStart.variationCode + ")";
+            CourseObj courseObj = new VariationCodeCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], scaleRatio, appearance, text, LocationFromAbstractPosition(x, y));
+            courseObj.layer = CourseLayer.AllVariations;
+            return courseObj;
+        }
+
 
         PointF LocationFromAbstractPosition(float x, float y)
         {
@@ -375,8 +401,8 @@ namespace PurplePen
                     if (loop) {
                         float forkY = y;
                         float forkX = x;
-                        forkStart[0] = new ForkPosition(forkX, forkY, false);
-                        int halfForks = numForks / 2;
+                        forkStart[0] = new ForkPosition(forkX, forkY, false, '\0');
+                        int halfForks = (numForks + 1) / 2;
 
                         totalForkWidth = 0;
 
@@ -389,7 +415,7 @@ namespace PurplePen
 
                         for (int i = startFork; i < halfForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
 
@@ -397,7 +423,7 @@ namespace PurplePen
 
                         for (int i = halfForks; i < numForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
 
@@ -410,7 +436,7 @@ namespace PurplePen
                         float forkX = x - totalForkWidth / 2;
                         for (int i = startFork; i < numForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
                     }
