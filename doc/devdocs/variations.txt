@@ -1,7 +1,5 @@
 Things to worry about for variations:
 
-- show variation letters on the topology view. Have them be in order left to right.
-
 - topology view scaling, scroll bar.
 
 - UI to delete loop/fork. All loops/forks, or just this one.
@@ -12,23 +10,24 @@ Things to worry about for variations:
 
 - XML export for variations
 
-- Allow viewing of variations in UI for course selection. Review all places where that UI is used.
-
-- Length -- need to calculate range across all variations.
+- Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
 
 - remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.
 
 - When moving number on loop control, move for all loops variations. Not for forks, though.
 
-- All Variations: distance field in COurseView -- should it be set; probably not. Or should there be a range?
+Variation naming issues:
+    - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?
 
-- What to show in course name field in description?
+    - UI to change variation naming (do we need this? I'm not sure. )
+
+    - CourseView property for variation code, show in selection describer. Maybe variation name also?
+
+    - special text for variation code, (variation name), team/participant number.
 
 - Loop control with start as the loop. Should this be allowed? This would be a map change, right?
 
-- SelectionDescriber -- show what variations a control or leg is in.
-
-- UI to change variation naming (do we need this? I'm not sure. Maybe instead have team/)
+- SelectionDescriber -- show what variations a control or leg is in. I'm not sure this is that useful.
 
 - better icon for add variation
 

@@ -191,7 +191,8 @@ namespace PurplePen
             line.kind = DescriptionLineKind.Header3Box;
             line.boxes = new object[3];
             line.boxes[0] = courseView.CourseNameWithPart;
-            line.boxes[1] = string.Format("{0:0.0} km", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0);
+            line.boxes[1] = Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1);
+
             if (courseView.TotalClimb < 0) {
                 line.boxes[2] = null;
                 line.textual = string.Format(symbolDB["course_length"].GetText(language), line.boxes[1]);

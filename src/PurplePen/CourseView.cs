@@ -96,10 +96,11 @@ namespace PurplePen
 
         private int scoreColumn;                // column to put score into.
 
-        private int normalControlCount;         // number of normal controls.
+        private int normalControlCount;         // number of normal controls; if all variations, total number of controls.
+        private int minNormalControls, maxNormalControls;  // min and max normal controls over all variations.
         private float totalPoints;              // total points.
-        private float measuredLength;           // measured length
-        private float totalLength;              // total length (differs from measured length only if course properies overrides)
+        private float minMeasuredLength, maxMeasuredLength;  // length of whole course as measured. DIfferent only if this is all variations course view
+        private float minTotalLength, maxTotalLength;        // total length (differs from measured length only if course properies overrides)
         private float partLength;
         private float totalClimb;
 
@@ -200,19 +201,41 @@ namespace PurplePen
 
         // If multi-part course, length of all parts. If the user
         // specified a course length, this is that length.
-        public float TotalLength {
+        // min and max differ only in an all variation case.
+        public float MinTotalLength {
             get { 
-                return totalLength;
+                return minTotalLength;
+            }
+        }
+
+        // If multi-part course, length of all parts. If the user
+        // specified a course length, this is that length.
+        // min and max differ only in an all variation case.
+        public float MaxTotalLength
+        {
+            get
+            {
+                return maxTotalLength;
             }
         }
 
         // If multi-part course, length of all parts, as calculated.
-        // Not affected if the user specified a course length.
-        public float MeasuredLength
+        // Not affected if the user specified a course length. Minumum length if this is all variations
+        public float MinMeasuredLength
         {
             get
             {
-                return measuredLength;
+                return minMeasuredLength;
+            }
+        }
+
+        // If multi-part course, length of all parts, as calculated.
+        // Not affected if the user specified a course length. Minumum length if this is all variations
+        public float MaxMeasuredLength
+        {
+            get
+            {
+                return maxMeasuredLength;
             }
         }
 
@@ -247,6 +270,18 @@ namespace PurplePen
             {
                 return normalControlCount;
             }
+        }
+
+        // If AllVariations, minimum number of controls in a variation.
+        public int MinNormalControls
+        {
+            get { return minNormalControls; }
+        }
+
+        // If AllVariations, maxmimum number of controls in a variation.
+        public int MaxNormalControls
+        {
+            get { return maxNormalControls; }
         }
 
         public int ScoreColumn {
@@ -417,17 +452,51 @@ namespace PurplePen
             }
 
             // Get the total length from another course view, if this is just a partial course.
-            if (courseDesignator.AllParts || courseDesignator.IsAllControls)
-                measuredLength = partLength;
+            if (courseDesignator.IsAllControls) {
+                minMeasuredLength = maxMeasuredLength = partLength;
+            }
+            else if (!courseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, courseDesignator.CourseId)) {
+                // All variations. Get range from every variation.
+                Debug.Assert(courseDesignator.AllParts);
+                List<CourseView> allVariations = AllCourseVariations(courseDesignator.CourseId);
+                minMeasuredLength = (from view in allVariations select view.MinMeasuredLength).Min();
+                partLength = maxMeasuredLength = (from view in allVariations select view.MaxMeasuredLength).Max();
+            }
+            else if (courseDesignator.AllParts) {
+                minMeasuredLength = maxMeasuredLength = partLength;
+            }
             else {
                 CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false, false);
-                measuredLength = viewEntireCourse.TotalLength;
+                minMeasuredLength = viewEntireCourse.MinMeasuredLength;
+                maxMeasuredLength = viewEntireCourse.MaxMeasuredLength;
             }
 
-            if (course != null && course.overrideCourseLength.HasValue)
-                totalLength = course.overrideCourseLength.Value;
-            else
-                totalLength = measuredLength;
+            if (course != null && course.overrideCourseLength.HasValue) {
+                minTotalLength = maxTotalLength = course.overrideCourseLength.Value;
+            }
+            else {
+                minTotalLength = minMeasuredLength;
+                maxTotalLength = maxMeasuredLength;
+            }
+
+            if (!courseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, courseDesignator.CourseId)) {
+                List<CourseView> allVariations = AllCourseVariations(courseDesignator.CourseId);
+                minNormalControls = (from view in allVariations select view.TotalNormalControls).Min();
+                maxNormalControls = (from view in allVariations select view.TotalNormalControls).Max();
+            }
+            else {
+                minNormalControls = maxNormalControls = normalControlCount;
+            }
+        }
+
+        private List<CourseView> AllCourseVariations(Id<Course> courseId)
+        {
+            List<CourseView> result = new List<PurplePen.CourseView>();
+            foreach (VariationPath variationPath in QueryEvent.GetAllVariations(eventDB, courseId).Values) {
+                CourseView viewVariation = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId, variationPath), false, false);
+                result.Add(viewVariation);
+            }
+            return result;
         }
 
         // Finalize the course view

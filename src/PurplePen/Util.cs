@@ -484,6 +484,30 @@ namespace PurplePen
             }
         }
 
+        // Get length in km, handling possible range and rounding.
+        public static string GetLengthInKm(float minLenInMeters, float maxLenInMeters, int decimalPlaces, bool addKmSuffix = true)
+        {
+            double min = Math.Round(minLenInMeters / 1000.0, decimalPlaces, MidpointRounding.AwayFromZero);
+            double max = Math.Round(maxLenInMeters / 1000.0, decimalPlaces, MidpointRounding.AwayFromZero);
+            string formatStr = "{0:0." + new string('0', decimalPlaces) + "}";
+            string minStr = String.Format(formatStr, min);
+            string maxStr = String.Format(formatStr, max);
+
+            string suffix = addKmSuffix ? " km" : "";
+            if (minStr == maxStr)
+                return minStr + suffix;
+            else
+                return minStr + "\u2013" + maxStr + suffix;
+        }
+
+        public static string RangeIfNeeded(int n1, int n2)
+        {
+            if (n1 == n2)
+                return n1.ToString();
+            else
+                return n1.ToString() + "\u2013" + n2.ToString();
+        }
+
         // Get text describing a paper size.
         public static string GetPaperSizeText(PaperSize paperSize)
         {

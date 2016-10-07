@@ -288,13 +288,13 @@ namespace PurplePen
                 WriteTableCell(courseView.CourseName);
 
                 // # of normal controls
-                WriteTableCell(Convert.ToString(courseView.TotalNormalControls));
+                WriteTableCell(Util.RangeIfNeeded(courseView.MinNormalControls, courseView.MaxNormalControls)); 
 
                 // Length (empty for score course)
                 if (courseView.Kind == CourseView.CourseViewKind.Score)
                     WriteTableCell("");
                 else
-                    WriteTableCell(string.Format("{0:0.0} km", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
+                    WriteTableCell(Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1));
 
                 // Climb (empty for score course or no climb defined)
                 if (courseView.Kind == CourseView.CourseViewKind.Score || courseView.TotalClimb < 0) 
@@ -623,9 +623,9 @@ namespace PurplePen
                 // Heading string for course
                 string headerLine;
                 if (courseView.TotalClimb < 0)
-                    headerLine = string.Format(ReportText.LegLength_CourseInfoNoClimb, courseView.CourseName, courseView.TotalNormalControls, Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0);
+                    headerLine = string.Format(ReportText.LegLength_CourseInfoNoClimb, courseView.CourseName, Util.RangeIfNeeded(courseView.MinNormalControls, courseView.MaxNormalControls), Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1));
                 else
-                    headerLine = string.Format(ReportText.LegLength_CourseInfo,  courseView.CourseName, courseView.TotalNormalControls, Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0, Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0);
+                    headerLine = string.Format(ReportText.LegLength_CourseInfo,  courseView.CourseName, Util.RangeIfNeeded(courseView.MinNormalControls, courseView.MaxNormalControls), Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1), Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0);
                 WriteH2(headerLine);
 
                 WriteLegLengthTable(eventDB, courseView);

@@ -59,7 +59,7 @@ namespace PurplePen.Tests
             writer.WriteLine();
 
             writer.WriteLine("Total Length={0}  Part Length={1}  Total Climb={2}  ScoreColumn={3}  Total Score={4}  Total Controls={5}", 
-                             courseView.TotalLength, courseView.PartLength, courseView.TotalClimb, courseView.ScoreColumn, courseView.TotalScore, courseView.TotalNormalControls);
+                             courseView.MaxTotalLength, courseView.PartLength, courseView.TotalClimb, courseView.ScoreColumn, courseView.TotalScore, courseView.TotalNormalControls);
 
             for (int i = 0; i < courseView.ControlViews.Count; ++i) {
                 CourseView.ControlView controlView = courseView.ControlViews[i];
@@ -721,7 +721,7 @@ Total Length=5002.36  Part Length=761.7648  Total Climb=-1  ScoreColumn=-1  Tota
             actual = writer.ToString();
             expected =
 @"Name='Course 1', Kind='AllVariations', CourseId=1
-Total Length=5491.049  Part Length=5491.049  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=21
+Total Length=4732.167  Part Length=4732.167  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=21
  0: [-1] Ids:  1,  1
     Legs: (Next:1,Id:0,length:158.8382)  
  1: [-1] Ids:  2,  2, 24

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ColumnHeader_Climb" xml:space="preserve">
     <value>Climb</value>
@@ -245,12 +245,12 @@
     <value>Average</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} controls, {2:0.0} km, {3} m climb)</value>
-    <comment>{0} is course name, {1} is # controls, {2:0.0} is length, {3} is climb</comment>
+    <value>{0} ({1} controls, {2}, {3} m climb)</value>
+    <comment>{0} is course name, {1} is # controls, {2} is length, {3} is climb</comment>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} controls, {2:0.0} km)</value>
-    <comment>{0} is course name, {1} is # controls, {2:0.0} is length</comment>
+    <value>{0} ({1} controls, {2})</value>
+    <comment>{0} is course name, {1} is # controls, {2} is length</comment>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Leg Length Report for {0}</value>

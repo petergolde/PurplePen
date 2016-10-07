@@ -450,7 +450,7 @@ namespace PurplePen
             }
 
             if (text.Contains(TextMacros.CourseLength))
-                text = text.Replace(TextMacros.CourseLength, string.Format("{0:0.0}", Math.Round(courseView.TotalLength / 100, MidpointRounding.AwayFromZero) / 10.0));
+                text = text.Replace(TextMacros.CourseLength, Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1, false));
 
             if (text.Contains(TextMacros.CourseClimb)) {
                 if (courseView.TotalClimb < 0)

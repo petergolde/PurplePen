@@ -292,7 +292,7 @@ namespace PurplePen
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("Name", courseName);
             if (!isScore) {
-                xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.TotalLength / 100F) * 100F));   // round to nearest 100m
+                xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
                 if (courseView.TotalClimb > 0)
                     xmlWriter.WriteElementString("Climb", XmlConvert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));  // round to nearest 5m
             }
@@ -506,7 +506,7 @@ namespace PurplePen
             xmlWriter.WriteStartElement("CourseVariation");
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
             if (!isScore) {
-                xmlWriter.WriteElementString("CourseLength", XmlConvert.ToString(Math.Round(courseView.TotalLength / 100F) * 100F));   // round to nearest 100m
+                xmlWriter.WriteElementString("CourseLength", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
                 if (courseView.TotalClimb > 0)
                     xmlWriter.WriteElementString("CourseClimb", XmlConvert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));  // round to nearest 5m
             }

@@ -271,23 +271,26 @@ namespace PurplePen
                 list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.CourseNameAndPart, activeCourseView.CourseName, courseDesignator.Part + 1)));
             }
 
-            if (activeCourseView.Kind == CourseView.CourseViewKind.Normal) {
+            if (activeCourseView.Kind == CourseView.CourseViewKind.Normal || activeCourseView.Kind == CourseView.CourseViewKind.AllVariations) {
                 // Course length
-                if (courseDesignator.AllParts && activeCourseView.TotalLength != activeCourseView.MeasuredLength) {
-                    // If the user specified a length, show both that length and the calculated length.
+                if (!courseDesignator.AllParts) {
                     list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
                     list.Add(new TextPart(TextFormat.SameLine,
-                        string.Format("{0:0.00} km", Math.Round(activeCourseView.TotalLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
-
-                    list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.CalculatedLength));
-                    list.Add(new TextPart(TextFormat.SameLine,
-                        string.Format("{0:0.00} km", Math.Round(activeCourseView.MeasuredLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                        Util.GetLengthInKm(activeCourseView.PartLength, activeCourseView.PartLength, 2)));
                 }
                 else {
                     list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Length));
-                    list.Add(new TextPart(TextFormat.SameLine,
-                        string.Format("{0:0.00} km", Math.Round(activeCourseView.PartLength / 10.0, MidpointRounding.AwayFromZero) / 100.0)));
+                    list.Add(new TextPart(TextFormat.SameLine, 
+                        Util.GetLengthInKm(activeCourseView.MinTotalLength, activeCourseView.MaxTotalLength, 2)));
+
+                    // If the user specified a length, show both that length and the calculated length.
+                    if (activeCourseView.MinTotalLength != activeCourseView.MinMeasuredLength || activeCourseView.MaxTotalLength != activeCourseView.MaxMeasuredLength) {
+                        list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.CalculatedLength));
+                        list.Add(new TextPart(TextFormat.SameLine,
+                            Util.GetLengthInKm(activeCourseView.MinMeasuredLength, activeCourseView.MaxMeasuredLength, 2)));
+                    }
                 }
+
                 // Don't have climb for a single part of multi-part course.
                 if (activeCourseView.TotalClimb >= 0 && courseDesignator.AllParts) {
                     list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.Climb + "  "));
