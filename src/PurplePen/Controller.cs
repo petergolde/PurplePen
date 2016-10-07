@@ -2645,13 +2645,6 @@ namespace PurplePen
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
-            // Can't be all controls or score course.
-            if (selection.ActiveCourseDesignator.IsAllControls)
-                return CommandStatus.Disabled;
-            Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
-            if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
-                return CommandStatus.Disabled;
-
             // Must be a selected control.
             if (selection.SelectionKind != SelectionMgr.SelectionKind.Control && selection.SelectionKind != SelectionMgr.SelectionKind.MapExchangeAtControl)
                 return CommandStatus.Disabled;
@@ -2660,11 +2653,7 @@ namespace PurplePen
             if (courseControl.IsNone)
                 return CommandStatus.Disabled;
 
-            // Must not be the last control in the course.
-            if (QueryEvent.LastCourseControl(eventDB, courseId, false) == courseControl)
-                return CommandStatus.Disabled;
-
-            return CommandStatus.Enabled;
+            return QueryEvent.CanAddVariation(eventDB, selection.ActiveCourseDesignator, courseControl) ? CommandStatus.Enabled : CommandStatus.Disabled;
         }
 
         // Can we set a text line for the selected object? If so, return default text and position, name of object, and whether to enable the "this course only" option.

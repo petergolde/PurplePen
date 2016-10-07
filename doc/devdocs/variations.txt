@@ -20,6 +20,8 @@ Things to worry about for variations:
 
 - What to show in course name field in description?
 
+- Loop control with start as the loop. Should this be allowed? This would be a map change, right?
+
 - SelectionDescriber -- show what variations a control or leg is in.
 
 - Maybe. Add topology view. Would this replace the map, the description pane, or something else. This is a lot of work.

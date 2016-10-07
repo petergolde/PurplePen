@@ -1320,6 +1320,30 @@ namespace PurplePen
 
             return result;
         }
+
+        public static bool CanAddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
+        {
+            // Can't be all controls or score course.
+            if (courseDesignator.IsAllControls)
+                return false;
+            Id<Course> courseId = courseDesignator.CourseId;
+            if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
+                return false;
+
+            if (courseControlId.IsNone)
+                return false;
+
+            // Must not be the last control in the course.
+            if (QueryEvent.LastCourseControl(eventDB, courseId, false) == courseControlId)
+                return false;
+
+            // Can't already have a variation there.
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            if (courseControl.split)
+                return false;
+
+            return true;
+        }
     }
 
 }

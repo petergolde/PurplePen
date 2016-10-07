@@ -3230,9 +3230,68 @@ namespace PurplePen.Tests
             Assert.AreEqual(DescriptionKind.SymbolsAndText, ev.allControlsDescKind);
         }
 
-	
-	
-	
+        [TestMethod]
+        public void AddVariation1()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            undomgr.BeginCommand(3413, "Add Variation");
+
+            bool result = ChangeEvent.AddVariation(eventDB, Designator(1), CourseControlId(19), false, 3);
+            Assert.IsTrue(result);
+
+            undomgr.EndCommand(3413);
+
+            eventDB.Validate();
+
+            CourseControl cc = eventDB.GetCourseControl(CourseControlId(19));
+            Assert.IsTrue(cc.split);
+            Assert.IsFalse(cc.loop);
+            Assert.AreEqual(3, cc.splitCourseControls.Length);
+
+            undomgr.Undo();
+            eventDB.Validate();
+        }
+
+        [TestMethod]
+        public void AddVariation2()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+
+            CourseDesignator designator = new CourseDesignator(CourseId(1), variationPath);
+
+            undomgr.BeginCommand(3413, "Add Variation");
+
+            bool result = ChangeEvent.AddVariation(eventDB, designator, CourseControlId(3), true, 2);
+            Assert.IsTrue(result);
+
+            undomgr.EndCommand(3413);
+
+            eventDB.Validate();
+
+            CourseControl cc = eventDB.GetCourseControl(CourseControlId(3));
+            Assert.IsTrue(cc.split);
+            Assert.IsTrue(cc.loop);
+            Assert.AreEqual(3, cc.splitCourseControls.Length);
+
+            undomgr.Undo();
+            eventDB.Validate();
+        }
+
+
+
+
+
     }
 }
 

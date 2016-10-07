@@ -1887,6 +1887,71 @@ namespace PurplePen.Tests
             });
         }
 
+        [TestMethod]
+        public void CanAddVariation()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            bool result = QueryEvent.CanAddVariation(eventDB, CourseDesignator.AllControls, CourseControlId(2));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(3));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(2));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(11));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(4));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(25));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(19));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(1));
+            Assert.IsTrue(result);
+
+            VariationPath variationPath = new VariationPath(new[] {
+                CourseControlId(2),
+                CourseControlId(27),
+                CourseControlId(30),
+                CourseControlId(26),
+                CourseControlId(25),
+                CourseControlId(4),
+                CourseControlId(28),
+            });
+
+            CourseDesignator designator = new CourseDesignator(CourseId(1), variationPath);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(3));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(2));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(11));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(4));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(25));
+            Assert.IsFalse(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(19));
+            Assert.IsTrue(result);
+
+            result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(1));
+            Assert.IsTrue(result);
+
+
+        }
+
     }
 }
 #endif

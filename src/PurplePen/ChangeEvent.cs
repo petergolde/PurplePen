@@ -1585,6 +1585,40 @@ namespace PurplePen
 
             eventDB.ChangeEvent(e); 
         }
+
+        public static bool AddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> variationCourseControlId, bool loop, int numberOfForks)
+        {
+            if (!QueryEvent.CanAddVariation(eventDB, courseDesignator, variationCourseControlId))
+                return false;
+
+            CourseControl variationCourseControl = eventDB.GetCourseControl(variationCourseControlId);
+            CourseControl newVariationCourseControl = (CourseControl)variationCourseControl.Clone();
+
+            newVariationCourseControl.split = true;
+            newVariationCourseControl.loop = loop;
+            newVariationCourseControl.splitEnd = loop ? variationCourseControlId : variationCourseControl.nextCourseControl;
+
+            // If its a loop, we add a new course control for each loop. For a fork, we already have one leg of the fork.
+            int newCourseControls = loop ? numberOfForks : numberOfForks - 1;
+            CourseControl[] splitCourseControls = new CourseControl[newCourseControls + 1];
+            Id<CourseControl>[] splitCourseControlIds = new Id<CourseControl>[newCourseControls + 1];
+            splitCourseControls[0] = newVariationCourseControl;
+            splitCourseControlIds[0] = variationCourseControlId;
+
+            for (int i = 1; i <= newCourseControls; ++i) {
+                splitCourseControls[i] = (CourseControl) newVariationCourseControl.Clone();
+                if (loop)
+                    splitCourseControls[i].nextCourseControl = variationCourseControlId;
+                splitCourseControlIds[i] = eventDB.AddCourseControl(splitCourseControls[i]);
+            }
+
+            for (int i = 0; i <= newCourseControls; ++i) {
+                splitCourseControls[i].splitCourseControls = splitCourseControlIds;
+                eventDB.ReplaceCourseControl(splitCourseControlIds[i], splitCourseControls[i]);
+            }
+
+            return true;
+        }
     }
 
 }
