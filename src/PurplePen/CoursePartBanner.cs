@@ -50,10 +50,13 @@ namespace PurplePen
             }
             set
             {
+                if (Util.EqualArrays(availableVariations, value))
+                    return;
+
                 if (value == null)
                     availableVariations = null;
                 else
-                availableVariations = (object[]) value.Clone();
+                    availableVariations = (object[]) value.Clone();
 
                 object currentVariation = CurrentVariation;
 

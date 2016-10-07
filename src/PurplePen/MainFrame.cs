@@ -424,7 +424,7 @@ namespace PurplePen
                     coursePartBanner.AvailableVariations = null;
                     coursePartBanner.EnableVariations = false;
                 }
-
+                
                 if (controller.NumberOfParts >= 2) {
                     coursePartBanner.NumberOfParts = controller.NumberOfParts;
                     coursePartBanner.SelectedPart = controller.CurrentPart;
@@ -435,7 +435,7 @@ namespace PurplePen
                     coursePartBanner.EnableParts = false;
                     coursePartBanner.EnableProperties = false;
                 }
-
+                
                 SetBannerVisibility(true);
             }
         }
