@@ -75,6 +75,8 @@ namespace PurplePen.MapView
         private Matrix xformPixelToWorld;						// transformation pixel->world coord
         private RectangleF viewport;							// visible area in world coordinates
 
+        private float minZoom = 0.1F, maxZoom = 10F;            // limits of zoom.
+
         bool gridOn = false;									// Is grid visible
         bool drawBounds = false;                        // Draw bounds of objects for testing?
 
@@ -164,6 +166,13 @@ namespace PurplePen.MapView
         float ScaleFactor
         {
             get { return pixelPerMm * zoom; }
+        }
+
+        // Give the zoom factor that would fit the given width in world coordinates in the viewport.
+        public float ZoomFactorForWorldWidth(float worldWidth)
+        {
+            float scaleFactor = this.Width / worldWidth;
+            return scaleFactor / pixelPerMm;
         }
 
         public Matrix GetWorldToPixelXform() {
@@ -328,13 +337,14 @@ namespace PurplePen.MapView
             get { return zoom; }
             set { 
                 // clamp zoom to a reasonable value.
-                if (value < 0.1F)
-                    value = 0.1F;
-                if (value > 100.0F)
-                    value = 100.0F;
+                if (value < minZoom)
+                    value = minZoom;
+                if (value > maxZoom)
+                    value = maxZoom;
 
                 if (zoom != value) {
                     zoom = value;
+                    SizeF newViewportSize = new SizeF((float) this.Width / ScaleFactor, (float) this.Height / ScaleFactor);
                     ViewportChanged();
                 }
             }
@@ -372,6 +382,11 @@ namespace PurplePen.MapView
                 double newVertZoom = viewport.Height / value.Height * zoom;
 
                 zoom = (float) Math.Min(newHorizZoom, newVertZoom);
+                if (zoom < minZoom)
+                    zoom = minZoom;
+                if (zoom > maxZoom)
+                    zoom = maxZoom;
+
                 centerPoint = new PointF((value.Left + value.Right) / 2.0F, (value.Top + value.Bottom) / 2.0F);
 
                 SizeF newViewportSize = new SizeF(viewport.Width * oldZoom / zoom, viewport.Height * oldZoom / zoom);
@@ -403,6 +418,28 @@ namespace PurplePen.MapView
             }
         }
 
+        [DefaultValue(10F)]
+        public float MaxZoomFactor
+        {
+            get { return maxZoom; }
+            set
+            {
+                maxZoom = value;
+                ZoomFactor = zoom;
+            }
+        }
+
+        [DefaultValue(0.1F)]
+        public float MinZoomFactor
+        {
+            get { return minZoom; }
+            set
+            {
+                minZoom = value;
+                ZoomFactor = zoom;
+            }
+        }
+
         public bool ShowSymbolBounds
         {
             get
@@ -415,6 +452,41 @@ namespace PurplePen.MapView
                     drawBounds = value;
                     Invalidate();
                 }
+            }
+        }
+
+        private RectangleF ScrollingRange
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int VScrollLargeChange
+        {
+            get {
+                throw new NotImplementedException();
+
+            }
+        }
+
+        public int VScrollSmallChange
+        {
+            get {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int VScrollValue
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
             }
         }
 

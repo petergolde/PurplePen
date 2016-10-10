@@ -397,6 +397,8 @@ namespace PurplePen
             if (topologyCourseLayout == null)
                 radioButtonDescriptions.Checked = true;
             radioButtonTopology.Enabled = (topologyCourseLayout != null);
+
+            mapViewerTopology.ZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(topologyMapDisplay.Bounds.Width);
         }
 
         // Update the print area in the map pane.
@@ -2756,7 +2758,14 @@ namespace PurplePen
         {
             descriptionControl.Visible = radioButtonDescriptions.Checked;
             mapViewerTopology.Visible = radioButtonTopology.Checked;
+            topologyScrollBar.Visible = radioButtonTopology.Checked;
         }
 
+        private void mapViewerTopology_Resize(object sender, EventArgs e)
+        {
+            if (controller != null) {
+                UpdateTopology();
+            }
+        }
     }
 }

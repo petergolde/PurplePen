@@ -72,6 +72,7 @@ namespace PurplePen
             this.radioButtonTopology = new System.Windows.Forms.RadioButton();
             this.panelDescriptionAndTopology = new System.Windows.Forms.Panel();
             this.mapViewerTopology = new PurplePen.MapView.MapViewer();
+            this.topologyScrollBar = new System.Windows.Forms.VScrollBar();
             this.descriptionControl = new PurplePen.DescriptionControl();
             this.selectionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mapViewer = new PurplePen.MapView.MapViewer();
@@ -248,6 +249,7 @@ namespace PurplePen
             this.mapExchangeToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.mapExchangeControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeSeparateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVariationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.specialItemToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.mandatoryCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionalCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -277,7 +279,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.addVariationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -368,6 +369,7 @@ namespace PurplePen
             // 
             this.leftColumnPanel.SetColumnSpan(this.panelDescriptionAndTopology, 2);
             this.panelDescriptionAndTopology.Controls.Add(this.mapViewerTopology);
+            this.panelDescriptionAndTopology.Controls.Add(this.topologyScrollBar);
             this.panelDescriptionAndTopology.Controls.Add(this.descriptionControl);
             resources.ApplyResources(this.panelDescriptionAndTopology, "panelDescriptionAndTopology");
             this.panelDescriptionAndTopology.Name = "panelDescriptionAndTopology";
@@ -381,7 +383,9 @@ namespace PurplePen
             resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
             this.mapViewerTopology.HoverDelay = 400;
+            this.mapViewerTopology.MaxZoomFactor = 1F;
             this.mapViewerTopology.MiddleButtonAutoDrag = false;
+            this.mapViewerTopology.MinZoomFactor = 0.7F;
             this.mapViewerTopology.MouseWheelAction = PurplePen.MapView.MapViewer.WheelAction.Scroll;
             this.mapViewerTopology.MouseWheelScrollAmount = new System.Drawing.Size(0, 40);
             this.mapViewerTopology.Name = "mapViewerTopology";
@@ -391,6 +395,12 @@ namespace PurplePen
             this.mapViewerTopology.ZoomFactor = 1F;
             this.mapViewerTopology.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewerTopology_OnPointerHover);
             this.mapViewerTopology.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewerTopology_OnMouseEvent);
+            this.mapViewerTopology.Resize += new System.EventHandler(this.mapViewerTopology_Resize);
+            // 
+            // topologyScrollBar
+            // 
+            resources.ApplyResources(this.topologyScrollBar, "topologyScrollBar");
+            this.topologyScrollBar.Name = "topologyScrollBar";
             // 
             // descriptionControl
             // 
@@ -421,6 +431,7 @@ namespace PurplePen
             resources.ApplyResources(this.mapViewer, "mapViewer");
             this.mapViewer.ForeColor = System.Drawing.Color.Black;
             this.mapViewer.HoverDelay = 400;
+            this.mapViewer.MaxZoomFactor = 100F;
             this.mapViewer.MiddleButtonAutoDrag = true;
             this.mapViewer.MouseWheelAction = PurplePen.MapView.MapViewer.WheelAction.Zoom;
             this.mapViewer.MouseWheelScrollAmount = new System.Drawing.Size(0, 20);
@@ -1654,6 +1665,12 @@ namespace PurplePen
             this.mapExchangeSeparateToolStripMenuItem.Name = "mapExchangeSeparateToolStripMenuItem";
             this.mapExchangeSeparateToolStripMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
             // 
+            // addVariationToolStripButton
+            // 
+            resources.ApplyResources(this.addVariationToolStripButton, "addVariationToolStripButton");
+            this.addVariationToolStripButton.Name = "addVariationToolStripButton";
+            this.addVariationToolStripButton.Click += new System.EventHandler(this.addVariationMenu_Click);
+            // 
             // specialItemToolStripMenu
             // 
             this.specialItemToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1844,12 +1861,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // addVariationToolStripButton
-            // 
-            resources.ApplyResources(this.addVariationToolStripButton, "addVariationToolStripButton");
-            this.addVariationToolStripButton.Name = "addVariationToolStripButton";
-            this.addVariationToolStripButton.Click += new System.EventHandler(this.addVariationMenu_Click);
             // 
             // MainFrame
             // 
@@ -2107,5 +2118,6 @@ namespace PurplePen
         private DescriptionControl descriptionControl;
         private System.Windows.Forms.ToolStripMenuItem addVariationMenu;
         private System.Windows.Forms.ToolStripButton addVariationToolStripButton;
+        private System.Windows.Forms.VScrollBar topologyScrollBar;
     }
 }

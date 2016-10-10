@@ -12,8 +12,6 @@ Things to worry about for variations:
 
 - Insertion arrows on topology view; use when dragging control or when leg is selected.
 
-- When moving number on loop control, move for all loops variations. Not for forks, though.
-
 Variation naming issues:
     - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?
 
