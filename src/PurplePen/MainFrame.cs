@@ -408,6 +408,7 @@ namespace PurplePen
             // Get zoom factor for the width, but constrained by min/max on the mapViewerTopology
             float desiredZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(panelTopology.Width - vScrollbarWidth, topologyMapDisplay.Bounds.Width);
             mapViewerTopology.ZoomFactor = desiredZoomFactor;
+            mapViewerTopology.Recenter();
 
             UpdateTopologyScrollBars();
         }

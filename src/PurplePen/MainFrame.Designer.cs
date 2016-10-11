@@ -393,7 +393,7 @@ namespace PurplePen
             this.mapViewerTopology.HoverDelay = 400;
             this.mapViewerTopology.MaxZoomFactor = 1F;
             this.mapViewerTopology.MiddleButtonAutoDrag = false;
-            this.mapViewerTopology.MinZoomFactor = 0.7F;
+            this.mapViewerTopology.MinZoomFactor = 0.4F;
             this.mapViewerTopology.MouseWheelAction = PurplePen.MapView.MapViewer.WheelAction.Scroll;
             this.mapViewerTopology.MouseWheelScrollAmount = new System.Drawing.Size(0, 40);
             this.mapViewerTopology.Name = "mapViewerTopology";

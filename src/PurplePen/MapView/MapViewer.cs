@@ -321,6 +321,12 @@ namespace PurplePen.MapView
             }
         }
 
+        // Apply scrolling constraints.
+        public void Recenter()
+        {
+            CenterPoint = ConstrainCenterPoint(centerPoint, viewport.Size, GetScrollBounds());
+        }
+
         // Get the size of one pixel.
         public float PixelSize
         {
