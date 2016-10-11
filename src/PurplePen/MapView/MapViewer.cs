@@ -169,9 +169,9 @@ namespace PurplePen.MapView
         }
 
         // Give the zoom factor that would fit the given width in world coordinates in the viewport.
-        public float ZoomFactorForWorldWidth(float worldWidth)
+        public float ZoomFactorForWorldWidth(int pixelWidth, float worldWidth)
         {
-            float scaleFactor = this.Width / worldWidth;
+            float scaleFactor = pixelWidth / worldWidth;
             return scaleFactor / pixelPerMm;
         }
 
@@ -455,26 +455,63 @@ namespace PurplePen.MapView
             }
         }
 
+        // The range in which the center point can scroll, in world coordination
         private RectangleF ScrollingRange
         {
             get
             {
-                throw new NotImplementedException();
+                float left, right, top, bottom;
+                SizeF viewportSize = Viewport.Size;
+                RectangleF scrollBounds = GetScrollBounds();
+
+                if (scrollBounds.Width < viewportSize.Width) {
+                    left = right = (scrollBounds.Left + scrollBounds.Right) / 2.0F;
+                }
+                else {
+                    left = scrollBounds.Left + viewportSize.Width / 2.0F;
+                    right = scrollBounds.Right - viewportSize.Width / 2.0F;
+                }
+
+                if (scrollBounds.Height < viewportSize.Height) {
+                    top = bottom = (scrollBounds.Top + scrollBounds.Bottom) / 2.0F;
+                }
+                else {
+                    top = scrollBounds.Top + viewportSize.Height / 2.0F;
+                    bottom = scrollBounds.Bottom - viewportSize.Height / 2.0F;
+                }
+
+                return RectangleF.FromLTRB(left, top, right, bottom);
+            }
+        }
+
+        public bool VScrollEnable
+        {
+            get
+            {
+                RectangleF scrollingRange = ScrollingRange;
+                return !(scrollingRange.Height <= 0);
             }
         }
 
         public int VScrollLargeChange
         {
             get {
-                throw new NotImplementedException();
-
+                RectangleF scrollingRange = ScrollingRange;
+                if (ScrollingRange.Height <= 0)
+                    return 100;
+                int value = (int)Math.Round(100F * viewport.Height / (scrollingRange.Height + viewport.Height));
+                return Math.Max(0, Math.Min(value, 100));
             }
         }
 
         public int VScrollSmallChange
         {
             get {
-                throw new NotImplementedException();
+                RectangleF scrollingRange = ScrollingRange;
+                if (ScrollingRange.Height <= 0)
+                    return 0;
+                int value = (int)Math.Round(100F * (40F / ScaleFactor) / (scrollingRange.Height + viewport.Height));
+                return Math.Max(0, Math.Min(value, 100));
             }
         }
 
@@ -482,11 +519,20 @@ namespace PurplePen.MapView
         {
             get
             {
-                throw new NotImplementedException();
+                RectangleF scrollingRange = ScrollingRange;
+                if (scrollingRange.Height <= 0)
+                    return 0;
+                int value = (int)Math.Round((100F - (VScrollLargeChange - 1)) * ((scrollingRange.Bottom - centerPoint.Y) / scrollingRange.Height));
+                value =  Math.Max(0, Math.Min(value, 100));
+                return value;
             }
             set
             {
-                throw new NotImplementedException();
+                RectangleF scrollingRange = ScrollingRange;
+                if (VScrollLargeChange < 100) {
+                    float newY = scrollingRange.Bottom - (((float)value / (100F - (VScrollLargeChange - 1))) * ScrollingRange.Height);
+                    ScrollView(0, (int) Math.Round((newY - centerPoint.Y) * ScaleFactor));
+                }
             }
         }
 

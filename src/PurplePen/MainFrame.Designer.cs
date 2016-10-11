@@ -71,6 +71,7 @@ namespace PurplePen
             this.radioButtonDescriptions = new System.Windows.Forms.RadioButton();
             this.radioButtonTopology = new System.Windows.Forms.RadioButton();
             this.panelDescriptionAndTopology = new System.Windows.Forms.Panel();
+            this.panelTopology = new System.Windows.Forms.Panel();
             this.mapViewerTopology = new PurplePen.MapView.MapViewer();
             this.topologyScrollBar = new System.Windows.Forms.VScrollBar();
             this.descriptionControl = new PurplePen.DescriptionControl();
@@ -290,6 +291,7 @@ namespace PurplePen
             this.splitDescription.SuspendLayout();
             this.leftColumnPanel.SuspendLayout();
             this.panelDescriptionAndTopology.SuspendLayout();
+            this.panelTopology.SuspendLayout();
             this.mainMenu.SuspendLayout();
             this.toolbar.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -368,19 +370,25 @@ namespace PurplePen
             // panelDescriptionAndTopology
             // 
             this.leftColumnPanel.SetColumnSpan(this.panelDescriptionAndTopology, 2);
-            this.panelDescriptionAndTopology.Controls.Add(this.mapViewerTopology);
-            this.panelDescriptionAndTopology.Controls.Add(this.topologyScrollBar);
+            this.panelDescriptionAndTopology.Controls.Add(this.panelTopology);
             this.panelDescriptionAndTopology.Controls.Add(this.descriptionControl);
             resources.ApplyResources(this.panelDescriptionAndTopology, "panelDescriptionAndTopology");
             this.panelDescriptionAndTopology.Name = "panelDescriptionAndTopology";
             // 
+            // panelTopology
+            // 
+            this.panelTopology.Controls.Add(this.mapViewerTopology);
+            this.panelTopology.Controls.Add(this.topologyScrollBar);
+            resources.ApplyResources(this.panelTopology, "panelTopology");
+            this.panelTopology.Name = "panelTopology";
+            // 
             // mapViewerTopology
             // 
+            resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.BackColor = System.Drawing.Color.White;
             this.mapViewerTopology.CausesValidation = false;
             this.mapViewerTopology.CenterPoint = ((System.Drawing.PointF)(resources.GetObject("mapViewerTopology.CenterPoint")));
             this.mapViewerTopology.ConstrainedScrolling = PurplePen.MapView.MapViewer.ConstrainedScrollingMode.PinTop;
-            resources.ApplyResources(this.mapViewerTopology, "mapViewerTopology");
             this.mapViewerTopology.ForeColor = System.Drawing.Color.Black;
             this.mapViewerTopology.HoverDelay = 400;
             this.mapViewerTopology.MaxZoomFactor = 1F;
@@ -392,7 +400,9 @@ namespace PurplePen
             this.mapViewerTopology.ShowGrid = false;
             this.mapViewerTopology.ShowSymbolBounds = false;
             this.mapViewerTopology.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewerTopology.Viewport")));
+            this.mapViewerTopology.VScrollValue = 0;
             this.mapViewerTopology.ZoomFactor = 1F;
+            this.mapViewerTopology.OnViewportChange += new System.EventHandler(this.mapViewerTopology_OnViewportChange);
             this.mapViewerTopology.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewerTopology_OnPointerHover);
             this.mapViewerTopology.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewerTopology_OnMouseEvent);
             this.mapViewerTopology.Resize += new System.EventHandler(this.mapViewerTopology_Resize);
@@ -401,6 +411,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.topologyScrollBar, "topologyScrollBar");
             this.topologyScrollBar.Name = "topologyScrollBar";
+            this.topologyScrollBar.ValueChanged += new System.EventHandler(this.topologyScrollBar_ValueChanged);
             // 
             // descriptionControl
             // 
@@ -439,6 +450,7 @@ namespace PurplePen
             this.mapViewer.ShowGrid = false;
             this.mapViewer.ShowSymbolBounds = false;
             this.mapViewer.Viewport = ((System.Drawing.RectangleF)(resources.GetObject("mapViewer.Viewport")));
+            this.mapViewer.VScrollValue = 0;
             this.mapViewer.ZoomFactor = 1F;
             this.mapViewer.OnViewportChange += new System.EventHandler(this.mapViewer_OnViewportChange);
             this.mapViewer.OnPointerMove += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewer_OnPointerMove);
@@ -1890,6 +1902,7 @@ namespace PurplePen
             this.leftColumnPanel.ResumeLayout(false);
             this.leftColumnPanel.PerformLayout();
             this.panelDescriptionAndTopology.ResumeLayout(false);
+            this.panelTopology.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.toolbar.ResumeLayout(false);
@@ -2114,10 +2127,11 @@ namespace PurplePen
         private System.Windows.Forms.RadioButton radioButtonDescriptions;
         private System.Windows.Forms.RadioButton radioButtonTopology;
         private System.Windows.Forms.Panel panelDescriptionAndTopology;
-        private MapView.MapViewer mapViewerTopology;
         private DescriptionControl descriptionControl;
         private System.Windows.Forms.ToolStripMenuItem addVariationMenu;
         private System.Windows.Forms.ToolStripButton addVariationToolStripButton;
+        private System.Windows.Forms.Panel panelTopology;
+        private MapView.MapViewer mapViewerTopology;
         private System.Windows.Forms.VScrollBar topologyScrollBar;
     }
 }

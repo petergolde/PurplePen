@@ -88,6 +88,8 @@ namespace PurplePen
 
         const float DEFAULT_MAP_INTENSITY = 0.7F;
 
+        int vScrollbarWidth;  // width of a default scroll bar.
+
         public MainFrame()
         {
             Font = SystemFonts.MessageBoxFont;
@@ -107,6 +109,11 @@ namespace PurplePen
             zoomTracker.TrackBar.TickStyle = TickStyle.None;
             zoomTracker.TrackBar.Minimum = 0;
             zoomTracker.TrackBar.Maximum = 100;
+
+            // Get the size of a vertical scroll bar.
+            VScrollBar scrollBar = new VScrollBar();
+            vScrollbarWidth = scrollBar.GetPreferredSize(new Size(200, 200)).Width;
+            scrollBar.Dispose();
 
             showToolTips = Settings.Default.ShowPopupInfo;
 
@@ -398,7 +405,11 @@ namespace PurplePen
                 radioButtonDescriptions.Checked = true;
             radioButtonTopology.Enabled = (topologyCourseLayout != null);
 
-            mapViewerTopology.ZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(topologyMapDisplay.Bounds.Width);
+            // Get zoom factor for the width, but constrained by min/max on the mapViewerTopology
+            float desiredZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(panelTopology.Width - vScrollbarWidth, topologyMapDisplay.Bounds.Width);
+            mapViewerTopology.ZoomFactor = desiredZoomFactor;
+
+            UpdateTopologyScrollBars();
         }
 
         // Update the print area in the map pane.
@@ -540,6 +551,25 @@ namespace PurplePen
             vertScroll.LargeChange = (int) Math.Round(viewport.Height * 0.9);
             horizScroll.SmallChange = (int) Math.Round(viewport.Width / 8);
             vertScroll.SmallChange = (int) Math.Round(viewport.Height / 8);
+
+        }
+
+        void UpdateTopologyScrollBars()
+        {
+            if (mapViewerTopology.VScrollEnable) {
+                topologyScrollBar.SmallChange = mapViewerTopology.VScrollSmallChange;
+                topologyScrollBar.LargeChange = mapViewerTopology.VScrollLargeChange;
+                topologyScrollBar.Value = mapViewerTopology.VScrollValue;
+                if (!topologyScrollBar.Visible) {
+                    topologyScrollBar.Visible = true;
+                }
+            }
+            else {
+                if (topologyScrollBar.Visible) {
+                    topologyScrollBar.Visible = false;
+                }
+            }
+
         }
 
         // Update the label that shows the current pointer location.
@@ -2757,8 +2787,7 @@ namespace PurplePen
         private void radioButtonDescriptionsTopology_CheckedChanged(object sender, EventArgs e)
         {
             descriptionControl.Visible = radioButtonDescriptions.Checked;
-            mapViewerTopology.Visible = radioButtonTopology.Checked;
-            topologyScrollBar.Visible = radioButtonTopology.Checked;
+            panelTopology.Visible = radioButtonTopology.Checked;
         }
 
         private void mapViewerTopology_Resize(object sender, EventArgs e)
@@ -2766,6 +2795,16 @@ namespace PurplePen
             if (controller != null) {
                 UpdateTopology();
             }
+        }
+
+        private void topologyScrollBar_ValueChanged(object sender, EventArgs e)
+        {
+            mapViewerTopology.VScrollValue = topologyScrollBar.Value;
+        }
+
+        private void mapViewerTopology_OnViewportChange(object sender, EventArgs e)
+        {
+            UpdateTopologyScrollBars();
         }
     }
 }
