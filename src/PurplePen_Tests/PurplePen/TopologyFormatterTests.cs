@@ -73,8 +73,16 @@ namespace PurplePen.Tests
             // Render to a map
             Map map = course.RenderToMap();
 
+            // Make drop targets visible.
+            using (map.Write()) {
+                foreach (SymDef symdef in map.AllSymdefs) {
+                    if (symdef.SymbolId == "781")
+                        map.SetSymdefVisible(symdef, true);
+                }
+            }
+
             // Render map to the graphics.
-            Bitmap bm = new Bitmap((int) (1000 * rect.Width / rect.Height), 1000);
+            Bitmap bm = new Bitmap((int)(1000 * rect.Width / rect.Height), 1000);
             using (Graphics g = Graphics.FromImage(bm)) {
                 RenderOptions options = new RenderOptions();
 
@@ -83,7 +91,7 @@ namespace PurplePen.Tests
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
                 g.ScaleTransform((float)(bm.Width / rect.Width), -(float)(bm.Height / rect.Height));
-                g.TranslateTransform(-rect.Left, -rect.Top-rect.Height);
+                g.TranslateTransform(-rect.Left, -rect.Top - rect.Height);
 
                 g.Clear(Color.White);
                 using (map.Read())

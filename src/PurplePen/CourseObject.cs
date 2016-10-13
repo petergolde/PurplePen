@@ -2762,5 +2762,96 @@ namespace PurplePen
 
         }
     }
-    
+
+    class TopologyDropTargetCourseObj: PointCourseObj
+    {
+        // outline of the arrows
+        const float TIPOFFSET = 0.75F;
+        const float HEADHALFWIDTH = 1.5F;
+        const float TAILHALFWIDTH = 0.5F;
+        const float TAILLENGTH = 1.25F;
+        static readonly float RADIUS = (float) Math.Sqrt(Math.Pow(TIPOFFSET + HEADHALFWIDTH, 2) + Math.Pow(TAILHALFWIDTH, 2));
+
+        static readonly PointF[] outlineCoordsRight = {
+                new PointF(TIPOFFSET, 0),
+                new PointF(TIPOFFSET + HEADHALFWIDTH, HEADHALFWIDTH),
+                new PointF(TIPOFFSET + HEADHALFWIDTH, TAILHALFWIDTH),
+                new PointF(TIPOFFSET + HEADHALFWIDTH + TAILLENGTH, TAILHALFWIDTH),
+                new PointF(TIPOFFSET + HEADHALFWIDTH + TAILLENGTH, - TAILHALFWIDTH),
+                new PointF(TIPOFFSET + HEADHALFWIDTH, - TAILHALFWIDTH),
+                new PointF(TIPOFFSET + HEADHALFWIDTH, - HEADHALFWIDTH),
+                new PointF(TIPOFFSET, 0)
+            };
+
+        static readonly PointF[] outlineCoordsLeft = {
+                new PointF(-TIPOFFSET, 0),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH), HEADHALFWIDTH),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH), TAILHALFWIDTH),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH + TAILLENGTH), TAILHALFWIDTH),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH + TAILLENGTH), - TAILHALFWIDTH),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH), - TAILHALFWIDTH),
+                new PointF(-(TIPOFFSET + HEADHALFWIDTH), - HEADHALFWIDTH),
+                new PointF(-TIPOFFSET, 0)
+            };
+
+        public readonly Id<CourseControl> courseControlId2; 
+
+        public TopologyDropTargetCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, 
+                                          float scaleRatio, CourseAppearance appearance, PointF location)
+            : base(controlId, courseControlId1, Id<Special>.None, scaleRatio, appearance, null, 0, RADIUS, location)
+        {
+            this.courseControlId2 = courseControlId2;
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            PointKind[] kinds = {
+                PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
+                PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
+            };
+            PointF[] coords = ScaleCoords((PointF[])outlineCoordsRight.Clone());
+            SymPath pathRight = new SymPath(coords, kinds);
+            coords = ScaleCoords((PointF[])outlineCoordsLeft.Clone());
+            SymPath pathLeft = new SymPath(coords, kinds);
+
+            Glyph glyph = new Glyph();
+            glyph.AddArea(symColor, new SymPathWithHoles(pathLeft, null));
+            glyph.AddArea(symColor, new SymPathWithHoles(pathRight, null));
+            glyph.ConstructionComplete();
+
+            PointSymDef symdef = new PointSymDef("Move control target", "781", glyph, false);
+            map.AddSymdef(symdef);
+
+            // should not be visible, we only use the highlight part in actual usages.
+            // the map part is very useful for testing, though.
+            map.SetSymdefVisible(symdef, false); 
+            return symdef;
+        }
+
+
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            // Get the world coordinates of the object.
+            PointF[] coords = OffsetCoords(ScaleCoords((PointF[])outlineCoordsLeft.Clone()), location.X, location.Y);
+
+            // Transform to pixel coordinates.
+            xformWorldToPixel.TransformPoints(coords);
+
+            // Draw the object.
+            g.FillPolygon(brush, coords);
+
+            // Get the world coordinates of the object.
+            coords = OffsetCoords(ScaleCoords((PointF[])outlineCoordsRight.Clone()), location.X, location.Y);
+
+            // Transform to pixel coordinates.
+            xformWorldToPixel.TransformPoints(coords);
+
+            // Draw the object.
+            g.FillPolygon(brush, coords);
+
+        }
+
+    }
+
 }

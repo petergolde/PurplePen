@@ -1,7 +1,5 @@
 Things to worry about for variations:
 
-- topology view scaling, scroll bar.
-
 - UI to delete loop/fork. All loops/forks, or just this one.
 
 - Text lines above/below -- how do these work with variations and with butterfly courses
@@ -11,6 +9,8 @@ Things to worry about for variations:
 - remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.
 
 - Insertion arrows on topology view; use when dragging control or when leg is selected.
+
+- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only?
 
 Variation naming issues:
     - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?

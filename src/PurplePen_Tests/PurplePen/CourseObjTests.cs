@@ -118,6 +118,12 @@ namespace PurplePen.Tests
                 }
 
                 courseobj.AddToMap(map, symColor, dict);
+
+                // Make drop targets visible for debugging.
+                foreach (SymDef symdef in map.AllSymdefs) {
+                    if (symdef.SymbolId == "781")
+                        map.SetSymdefVisible(symdef, true);
+                }
             }
             return map;
         }
@@ -334,6 +340,15 @@ namespace PurplePen.Tests
             CourseObj courseobj = new RegMarkCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
             SingleObject(courseobj, "reg_mark_special");
         }
+
+        [TestMethod]
+        public void DropTarget()
+        {
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "droptarget");
+        }
+
+
 
         [TestMethod]
         public void OutOfBounds()
@@ -1086,6 +1101,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void DropTargethighlight()
+        {
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            SingleObjectHighlight(courseobj, "droptarget_highlight");
+        }
+
+        [TestMethod]
         public void WhiteOutHighlight()
         {
             CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -1407,6 +1429,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
             SingleObjectOffset(courseobj, "crossing_point_offset");
+        }
+
+        [TestMethod]
+        public void DropTargetOffset()
+        {
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            SingleObjectOffset(courseobj, "droptarget_offset");
         }
 
         [TestMethod]

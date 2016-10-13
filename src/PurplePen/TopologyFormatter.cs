@@ -76,12 +76,13 @@ namespace PurplePen
         class ForkPosition
         {
             public float x, y;
-            public bool startHorizontal;
+            public bool loopStart;
+            public bool loopFallThru;
             public char variationCode;
 
-            public ForkPosition(float x, float y, bool startHorizontal, char variationCode)
+            public ForkPosition(float x, float y, bool loopStart, bool loopFallThru, char variationCode)
             {
-                this.x = x; this.y = y; this.startHorizontal = startHorizontal;
+                this.x = x; this.y = y; this.loopStart = loopStart; this.loopFallThru = loopFallThru;
                 this.variationCode = variationCode;
             }
         }
@@ -214,7 +215,8 @@ namespace PurplePen
 
         private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, int splitLegIndex, ForkPosition forkStart)
         {
-            SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart);
+            PointF dropTargetPosition;
+            SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart, out dropTargetPosition);
             CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, path);
             CourseLayer layer;
 
@@ -226,6 +228,11 @@ namespace PurplePen
             courseObj.layer = layer;
             courseLayout.AddCourseObject(courseObj);
 
+            // Add the drop target.
+            courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, dropTargetPosition);
+            courseObj.layer = layer;
+            courseLayout.AddCourseObject(courseObj);
+
             if (forkStart != null && forkStart.variationCode != '\0') {
                 // There is a variation fork.
                 courseObj = CreateVariationCode(controlView1, controlPosition1, splitLegIndex, forkStart);
@@ -233,16 +240,34 @@ namespace PurplePen
             }
         }
 
-        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart)
+        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart, out PointF dropTargetPosition)
         {
             float xStart = controlPosition1.x;
             float yStart = controlPosition1.y;
             float xEnd = controlPosition2.x;
             float yEnd = controlPosition2.y;
 
+            if (forkStart != null) {
+                if (forkStart.loopFallThru) {
+                    dropTargetPosition = LocationFromAbstractPosition(xEnd, yEnd - 0.5F);
+                }
+                else {
+                    // above end of fork start.
+                    dropTargetPosition = LocationFromAbstractPosition(forkStart.x, forkStart.y - 0.5F);
+                }
+            }
+            else if (xEnd != xStart) {
+                // Below start control (use when a join is going)
+                dropTargetPosition = LocationFromAbstractPosition(xStart, yStart + 0.5F);
+            }
+            else {
+                // Above end control (other cases).
+                dropTargetPosition = LocationFromAbstractPosition(xEnd, yEnd - 0.5F);
+            }
+
             bool startHorizontal = false;
             if (forkStart != null)
-                startHorizontal = forkStart.startHorizontal;
+                startHorizontal = forkStart.loopStart;
 
             if (forkStart != null && forkStart.x != controlPosition2.x) {
                 // The fork start in a different horizontal position than it ends. This is probably due to a fork with no controls on it.
@@ -401,7 +426,7 @@ namespace PurplePen
                     if (loop) {
                         float forkY = y;
                         float forkX = x;
-                        forkStart[0] = new ForkPosition(forkX, forkY, false, '\0');
+                        forkStart[0] = new ForkPosition(forkX, forkY, false, true, '\0');
                         int halfForks = (numForks + 1) / 2;
 
                         totalForkWidth = 0;
@@ -415,7 +440,7 @@ namespace PurplePen
 
                         for (int i = startFork; i < halfForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, false, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
 
@@ -423,7 +448,7 @@ namespace PurplePen
 
                         for (int i = halfForks; i < numForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, false, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
 
@@ -436,7 +461,7 @@ namespace PurplePen
                         float forkX = x - totalForkWidth / 2;
                         for (int i = startFork; i < numForks; ++i) {
                             forkX += forkSize[i].Width / 2;
-                            forkStart[i] = new ForkPosition(forkX, forkY, loop, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
+                            forkStart[i] = new ForkPosition(forkX, forkY, loop, false, variationMap[controlViewsAllVariationsAndParts[index].courseControlIds[i]]);
                             forkX += forkSize[i].Width / 2;
                         }
                     }
