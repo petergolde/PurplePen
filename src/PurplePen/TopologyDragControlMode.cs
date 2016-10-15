@@ -20,6 +20,8 @@ namespace PurplePen
         private CourseObj courseObjectStart, courseObjectDrag;
         private PointF startDrag, currentLocation;
 
+        private CourseObj dropTargetHighlight;
+
         public TopologyDragControlMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF location)
         {
             this.controller = controller;
@@ -28,6 +30,7 @@ namespace PurplePen
             this.courseObjectStart = courseObject;
             this.courseObjectDrag = (CourseObj)(courseObject.Clone());
             this.startDrag = this.currentLocation = location;
+            this.dropTargetHighlight = null;
         }
 
         public override IMapViewerHighlight[] GetHighlights(Pane pane)
@@ -35,7 +38,10 @@ namespace PurplePen
             if (pane != Pane.Topology)
                 return null;
 
-            return new CourseObj[] { courseObjectDrag };
+            if (dropTargetHighlight == null)
+                return new CourseObj[] { courseObjectDrag };
+            else
+                return new CourseObj[] { courseObjectDrag, dropTargetHighlight };
         }
 
         public override string StatusText
@@ -44,6 +50,29 @@ namespace PurplePen
             {
                 return StatusBarText.DraggingTopologyObject;
             }
+        }
+
+        private TopologyDropTargetCourseObj FindNearbyDropTarget(PointF location)
+        {
+            const float MAXDISTANCE = 15F;
+
+            CourseLayout layout = selectionMgr.TopologyLayout;
+            TopologyDropTargetCourseObj nearest = null;
+            float nearestDistance = float.MaxValue;
+
+            // Find nearest drop target that is within MAXDISTANCE of location.
+            foreach (CourseObj obj in layout) {
+                TopologyDropTargetCourseObj dropTarget = obj as TopologyDropTargetCourseObj;
+                if (dropTarget != null) {
+                    float distance = Geometry.DistanceF(location, dropTarget.location);
+                    if (distance < nearestDistance && distance < MAXDISTANCE) {
+                        nearestDistance = distance;
+                        nearest = dropTarget;
+                    }
+                }
+            }
+
+            return nearest;
         }
 
         public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
@@ -66,6 +95,8 @@ namespace PurplePen
             courseObjectDrag = ((CourseObj)courseObjectStart.Clone());
             courseObjectDrag.Offset(location.X - startDrag.X, location.Y - startDrag.Y);
 
+            dropTargetHighlight = FindNearbyDropTarget(location);
+
             displayUpdateNeeded = true;
         }
 
@@ -85,6 +116,8 @@ namespace PurplePen
                 controller.MoveControlInCurrentCourse(controlId, newLocation);
             */
 
+            dropTargetHighlight = null;
+            displayUpdateNeeded = true;
             controller.DefaultCommandMode();
         }
 
@@ -93,6 +126,9 @@ namespace PurplePen
             Debug.Assert(pane == Pane.Topology);
 
             // Drag was cancelled. Go back to normal mode.
+            dropTargetHighlight = null;
+            displayUpdateNeeded = true;
+
             controller.DefaultCommandMode();
         }
 
