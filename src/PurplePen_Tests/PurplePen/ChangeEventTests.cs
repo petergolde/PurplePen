@@ -3288,6 +3288,74 @@ namespace PurplePen.Tests
             eventDB.Validate();
         }
 
+        string[] CodesInOrder(CourseDesignator designator)
+        {
+            return (from ccid in QueryEvent.EnumCourseControlIds(eventDB, designator)
+                    select eventDB.GetControl(eventDB.GetCourseControl(ccid).control).code).ToArray();
+        }
+
+        [TestMethod]
+        public void MoveControlInCourse1()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            string[] expectedBefore = { null, "305", "211", "210", "32", "302", "GO", "303", "74", "191", "189", "190", null};
+            string[] expectedAfter = { null, "305", "74", "211", "210", "32", "302", "GO", "303", "191", "189", "190", null };
+            CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(6)));
+
+            eventDB.Validate();
+
+            undomgr.BeginCommand(3712, "Move Control");
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(6), CourseControlId(209), CourseControlId(202), CourseControlId(203));
+            undomgr.EndCommand(3712);
+
+            eventDB.Validate();
+            CollectionAssert.AreEqual(expectedAfter, CodesInOrder(Designator(6)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+            CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(6)));
+        }
+
+        [TestMethod]
+        public void MoveControlInCourseVariation()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            string[] expectedBefore = {
+                null, "31", "52", "31", "32",
+                "33", "40", "41", "33", "42",
+                "43", "33", "44", "46", "45",
+                "46", "47", "48", "33", "34",
+                "35", "36", "37", "38", "49",
+                "38", "50", "38", "39", null 
+            };
+            string[] expectedAfter = {
+                null, "31", "52", "31", "32",
+                "33", "49", "40", "41", "33", "42",
+                "43", "33", "44", "46", "45",
+                "46", "47", "48", "33", "34",
+                "35", "36", "37", "38", 
+                "38", "50", "38", "39", null
+            }; string[] codes = CodesInOrder(Designator(1));
+            CollectionAssert.AreEqual(expectedBefore, codes);
+
+            eventDB.Validate();
+
+            
+            undomgr.BeginCommand(3712, "Move Control");
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(1), CourseControlId(13), CourseControlId(25), CourseControlId(15));
+            undomgr.EndCommand(3712);
+
+            eventDB.Validate();
+            CollectionAssert.AreEqual(expectedAfter, CodesInOrder(Designator(1)));
+
+            undomgr.Undo();
+            eventDB.Validate();
+            CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(1)));
+            
+        }
+
 
 
 

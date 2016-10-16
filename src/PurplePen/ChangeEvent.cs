@@ -620,6 +620,7 @@ namespace PurplePen
         }
 
 
+
         // Change the locations associated with a special.
         public static void ChangeSpecialLocations(EventDB eventDB, Id<Special> specialId, PointF[] newLocations)
         {
@@ -807,6 +808,33 @@ namespace PurplePen
                     eventDB.ReplaceCourseControl(courseControlId, newCourseControl);
                 }
             }
+        }
+
+        // Moves a control in a course, creating a new course control referencing the old control.
+        // Cannot move a split control.
+        public static Id<CourseControl> MoveControlInCourse(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdToMove, Id<CourseControl> destinationBefore, Id<CourseControl> destinationAfter)
+        {
+            CourseControl courseControlToMove = eventDB.GetCourseControl(courseControlIdToMove);
+            Debug.Assert(!courseControlToMove.split);
+
+            // Create a new course control.
+            Id<CourseControl> newCourseControlId = AddCourseControl(eventDB, courseControlToMove.control, courseId, destinationBefore, destinationAfter);
+            CourseControl newCourseControl = eventDB.GetCourseControl(newCourseControlId);
+
+            // Copy over applicable parts of the old course control.
+            CourseControl update = (CourseControl) newCourseControl.Clone();
+            update.customNumberPlacement = courseControlToMove.customNumberPlacement;
+            update.numberDeltaX = courseControlToMove.numberDeltaX;
+            update.numberDeltaY = courseControlToMove.numberDeltaY;
+            update.descTextAfter = courseControlToMove.descTextAfter;
+            update.descTextBefore = courseControlToMove.descTextBefore;
+            update.points = courseControlToMove.points;
+            eventDB.ReplaceCourseControl(newCourseControlId, update);
+
+            // Remove the old one.
+            RemoveCourseControl(eventDB, courseId, courseControlIdToMove);
+
+            return newCourseControlId;
         }
 
         // Add a new course control to a course. Adds a new CourseControl referencing controlId into courseId. The place to insert is
