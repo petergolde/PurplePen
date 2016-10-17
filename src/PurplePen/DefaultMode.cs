@@ -340,6 +340,11 @@ namespace PurplePen
                 // become map dragging.
                 controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
             }
+            else if (pane == Pane.Topology) {
+                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize);
+                TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, locationStart, location);
+                controller.SetCommandMode(commandMode);
+            }
         }
 
         // Left mouse button selects the object clicked on, or drag something already selected.
@@ -380,10 +385,8 @@ namespace PurplePen
                 {
                     // Can drag control numbers, crossing points, or map exchanges.
                     selectionMgr.SelectCourseObject(clickedObject);
-                    TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, location);
-                    controller.SetCommandMode(commandMode);
                     displayUpdateNeeded = true;
-                    return MapViewer.DragAction.ImmediateDrag;
+                    return MapViewer.DragAction.DelayedDrag;
                 }
             }
 

@@ -782,6 +782,7 @@ namespace PurplePen
             foreach (CourseObj courseobj in activeTopologyCourseLayout) {
                 if (courseobj.layer != CourseLayer.AllControls) {
                     if (selectionKind == SelectionKind.Control &&
+                            !(courseobj is VariationCodeCourseObj) &&    // don't select legs
                             !(courseobj is LineCourseObj) &&    // don't select legs
                             !(courseobj is TopologyDropTargetCourseObj) && // don't select drop targets
                             courseobj.controlId == selectedControl &&

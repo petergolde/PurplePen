@@ -744,8 +744,16 @@ namespace PurplePen
         public static void FindControlInsertionPoint(EventDB eventDB, CourseDesignator courseDesignator, ref Id<CourseControl> courseControl1, ref Id<CourseControl> courseControl2)
         {
             Id<Course> courseId = courseDesignator.CourseId;
+
             if (courseControl1.IsNotNone && courseControl2.IsNotNone) {
-                // A leg was specified already. Nothing to do.
+                CourseControl cc1 = eventDB.GetCourseControl(courseControl1);
+                CourseControl cc2 = eventDB.GetCourseControl(courseControl2);
+
+                if (cc1.nextCourseControl != courseControl2) {
+                    Debug.Assert(cc2.split && cc2.splitCourseControls.Contains(courseControl2));
+                    courseControl2 = cc1.nextCourseControl;
+                }
+
                 return;
             }
             else {

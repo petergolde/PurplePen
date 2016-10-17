@@ -358,6 +358,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A control that starts a fork or loop cannot be dragged to a new place in the course..
+        /// </summary>
+        internal static string CantRearrangeSplitControl {
+            get {
+                return ResourceManager.GetString("CantRearrangeSplitControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The current event has textual control descriptions in {0}. Would you like to change the language of control descriptions to {1}?.
         /// </summary>
         internal static string ChangeDescriptionLanguage {

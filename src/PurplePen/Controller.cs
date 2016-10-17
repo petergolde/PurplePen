@@ -3223,6 +3223,30 @@ namespace PurplePen
             undoMgr.EndCommand(138);
         }
 
+        // Move a course control to a different place in the course, like from the topology view.
+        // If duplicate is true, makes a duplicate of the control.
+        public bool RearrangeControl(Id<CourseControl> courseControlToMove, Id<CourseControl> courseControlDest1, Id<CourseControl> courseControlDest2, bool duplicate)
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+
+            // Get correct insertion point.
+            QueryEvent.FindControlInsertionPoint(eventDB, new CourseDesignator(courseId), ref courseControlDest1, ref courseControlDest2);
+
+            // Can't move a split control.
+            if (eventDB.GetCourseControl(courseControlToMove).split) {
+                // Message user that you can't move control.
+                ui.ErrorMessage(MiscText.CantRearrangeSplitControl);
+                return false;
+            }
+
+            undoMgr.BeginCommand(139, CommandNameText.MoveControl);
+            Id<CourseControl> newCourseControl = ChangeEvent.MoveControlInCourse(eventDB, courseId, courseControlToMove, courseControlDest1, courseControlDest2);
+            undoMgr.EndCommand(139);
+
+            selectionMgr.SelectCourseControl(newCourseControl);
+            return true;
+        }
+
         // Add a new localization language for descriptions. This is a debug-level command.
         public void AddDescriptionLanguage(SymbolLanguage symbolLanguage)
         {

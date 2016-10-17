@@ -22,14 +22,15 @@ namespace PurplePen
 
         private CourseObj dropTargetHighlight;
 
-        public TopologyDragControlMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF location)
+        public TopologyDragControlMode(Controller controller, EventDB eventDB, SelectionMgr selectionMgr, CourseObj courseObject, PointF startDrag, PointF currentLocation)
         {
             this.controller = controller;
             this.eventDB = eventDB;
             this.selectionMgr = selectionMgr;
             this.courseObjectStart = courseObject;
             this.courseObjectDrag = (CourseObj)(courseObject.Clone());
-            this.startDrag = this.currentLocation = location;
+            this.startDrag = startDrag;
+            this.currentLocation = currentLocation;
             this.dropTargetHighlight = null;
         }
 
@@ -106,17 +107,14 @@ namespace PurplePen
         {
             Debug.Assert(pane == Pane.Topology);
 
-            float deltaX = (location.X - startDrag.X);
-            float deltaY = (location.Y - startDrag.Y);
+            TopologyDropTargetCourseObj dropAt = FindNearbyDropTarget(location);
+            if (dropTargetHighlight != null) {
+                Id<CourseControl> courseControlToMove = courseObjectStart.courseControlId;
+                Id<CourseControl> courseControlDest1 = dropAt.courseControlId;
+                Id<CourseControl> courseControlDest2 = dropAt.courseControlId2;
 
-            /*
-                // Move the control to the new location.
-                Id<ControlPoint> controlId = courseObjectStart.controlId;
-                PointF originalLocation = ((PointCourseObj)courseObjectStart).location;
-                PointF newLocation = PointF.Add(originalLocation, new SizeF(deltaX, deltaY));
-
-                controller.MoveControlInCurrentCourse(controlId, newLocation);
-            */
+                controller.RearrangeControl(courseControlToMove, courseControlDest1, courseControlDest2, false);
+            }
 
             dropTargetHighlight = null;
             displayUpdateNeeded = true;
