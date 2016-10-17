@@ -1,37 +1,43 @@
-Things to worry about for variations:
-
-- UI to delete loop/fork. All loops/forks, or just this one.
-
-- Text lines above/below -- how do these work with variations and with butterfly courses
-
-- Add report for calculating teams assignment to variations.
+Big things to do before first beta:
 
 - remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.
 
-- Insertion arrows on topology view; use when dragging control or when leg is selected.
+- UI to delete loop/fork. All loops/forks, or just this one.
 
-- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only?
+- Add report for calculating teams assignment to variations.
+
+- XML export for variations
+
+- Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
+
+- better icon for add variation
 
 Variation naming issues:
-    - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?
+    - UI to change variation naming. I think this is useful. Simple options: Variation code (default) or name+number or team/participant; include course name first.
 
-    - UI to change variation naming (do we need this? I'm not sure. )
+    - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?
 
     - CourseView property for variation code, show in selection describer. Maybe variation name also?
 
     - special text for variation code, (variation name), team/participant number.
 
-    - XML export for variations
+    - put into XML export too.
 
-- Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
 
-- Loop control with start as the loop. Should this be allowed? This would be a map change, right?
+
+Minor issues to check/add later.
+
+
+- Text lines above/below -- how do these work with variations and with butterfly courses
+
+- Allow insertion allows in different places on the same leg when splitting/joining.
+
+- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only?
+
+- Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
 
 - SelectionDescriber -- show what variations a control or leg is in. I'm not sure this is that useful.
 
-- better icon for add variation
-
-- flicker when dragging number/controls in course view.
 
 - check out other reports -- in particular leg length, control&leg load, audit 
   (audit should check for some control two in a row, empty fork or loop, identical fork or loop, for example)
