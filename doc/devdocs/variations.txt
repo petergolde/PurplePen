@@ -10,8 +10,6 @@ Big things to do before first beta:
 
 - Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
 
-- better icon for add variation
-
 Variation naming issues:
     - UI to change variation naming. I think this is useful. Simple options: Variation code (default) or name+number or team/participant; include course name first.
 

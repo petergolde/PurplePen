@@ -695,7 +695,9 @@ namespace PurplePen
         }
 
         // Remove a control from a course. Caller must ensure the current is actually in this course.
-        public static void RemoveCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdRemove)
+        // Returns a list of all control points that were deleted. This will include the one asked to remove,
+        // but might also remove others if it starts a fork or loop.
+        public static ICollection<Id<ControlPoint>> RemoveCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdRemove)
         {
             Course course = eventDB.GetCourse(courseId);
             List<Id<CourseControl>> allCourseControls = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).ToList();
@@ -745,17 +747,21 @@ namespace PurplePen
             // Remove a split could orphan more than one control. Go through and find orphaned ones.
             HashSet<Id<CourseControl>> newCourseControls = new HashSet<Id<CourseControl>>(QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)));
             List<Id<CourseControl>> removedCourseControls = new List<Id<CourseControl>>();
+            HashSet<Id<ControlPoint>> removedControls = new HashSet<Id<ControlPoint>>();
 
             foreach (Id<CourseControl> courseControlId in allCourseControls) {
                 if (!newCourseControls.Contains(courseControlId)) {
-                    eventDB.RemoveCourseControl(courseControlId);
+                    removedControls.Add(eventDB.GetCourseControl(courseControlId).control);
                     removedCourseControls.Add(courseControlId);
+                    eventDB.RemoveCourseControl(courseControlId);
                 }
             }
 
             if (! removedCourseControls.Contains(courseControlIdRemove)) {
                 Debug.Fail("Did not remove the course control we were removing.");
             }
+
+            return removedControls;
         }
 
         // Removes a control from the event. If the control is present in any course as a course-control, those

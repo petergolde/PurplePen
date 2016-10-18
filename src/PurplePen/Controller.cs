@@ -1286,14 +1286,9 @@ namespace PurplePen
 
             undoMgr.BeginCommand(177, CommandNameText.DeleteControl);
 
-            ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl);
-            if (QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl).Length == 0) {
-                // No other courses are using this control. Ask the user whether to delete it from the controls collection.
-                string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\""; 
-                bool delete = ui.YesNoQuestion(string.Format(MiscText.DeleteControlFromControlsCollection, controlName), false);
-                if (delete)
-                    ChangeEvent.RemoveControl(eventDB, selection.SelectedControl);
-            }
+            ICollection<Id<ControlPoint>> removedControls = ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl);
+
+            AskUserAboutDeletingOrphanedControls(removedControls);
 
             undoMgr.EndCommand(177);
 
@@ -1357,10 +1352,19 @@ namespace PurplePen
             undoMgr.BeginCommand(712, CommandNameText.DeleteCourse);
             ChangeEvent.DeleteCourse(eventDB, courseDesignator.CourseId);
 
+            AskUserAboutDeletingOrphanedControls(usedControls);
+
+            undoMgr.EndCommand(712);
+
+            return true;
+        }
+
+        private void AskUserAboutDeletingOrphanedControls(IEnumerable<Id<ControlPoint>> possibleOrphans)
+        {
             // Determine if any of the controls are "orphaned".
             List<Id<ControlPoint>> orphanedControls = new List<Id<ControlPoint>>();
             string orphanedControlsText = "";
-            foreach (Id<ControlPoint> controlId in usedControls) {
+            foreach (Id<ControlPoint> controlId in possibleOrphans) {
                 if (QueryEvent.CoursesUsingControl(eventDB, controlId).Length == 0 && !orphanedControls.Contains(controlId)) {
                     orphanedControls.Add(controlId);
                     if (orphanedControlsText != "")
@@ -1378,10 +1382,6 @@ namespace PurplePen
                         ChangeEvent.RemoveControl(eventDB, controlId);
                 }
             }
-
-            undoMgr.EndCommand(712);
-
-            return true;
         }
 
         // Can we duplicate the current course
