@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F9CA30D-5D8A-45D0-84CE-7192B327609B}"
 	ProjectSection(SolutionItems) = preProject
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
@@ -24,10 +26,9 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "SetupIS", "SetupIS\SetupIS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrashReporter.NET", "CrashReporter.NET\CrashReporter.NET.csproj", "{67912BDA-1572-46B0-8623-5872D9DADBC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfConverter", "PdfConverter\PdfConverter.csproj", "{89318625-2F71-4C44-BFB1-8984F4D06152}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = PPen1.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
 		CD_ROM|Mixed Platforms = CD_ROM|Mixed Platforms
@@ -239,8 +240,51 @@ Global
 		{67912BDA-1572-46B0-8623-5872D9DADBC8}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
 		{67912BDA-1572-46B0-8623-5872D9DADBC8}.SingleImage|Win32.ActiveCfg = Release|Any CPU
 		{67912BDA-1572-46B0-8623-5872D9DADBC8}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Mixed Platforms.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Win32.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|Win32.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|x86.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.CD_ROM|x86.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|Win32.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Debug|x86.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Mixed Platforms.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Win32.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|Win32.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|x86.ActiveCfg = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.DVD-5|x86.Build.0 = Debug|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Win32.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|Win32.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|x86.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.Release|x86.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Mixed Platforms.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Win32.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|Win32.Build.0 = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|x86.ActiveCfg = Release|Any CPU
+		{89318625-2F71-4C44-BFB1-8984F4D06152}.SingleImage|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = PPen1.vsmdi
 	EndGlobalSection
 EndGlobal

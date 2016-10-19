@@ -628,15 +628,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loading PDF files requires a copy of GPL Ghostscript to be installed. Would you like to automatically download and install it now?.
-        /// </summary>
-        internal static string DownloadGhostscript {
-            get {
-                return ResourceManager.GetString("DownloadGhostscript", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The code &quot;{0}&quot; is used more than once..
         /// </summary>
         internal static string DuplicateCode {
@@ -1109,11 +1100,20 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GPL Ghostscript failed to read PDF file successfully.
+        ///   Looks up a localized string similar to Pdfium PDF converter failed to read PDF file successfully.
         /// </summary>
         internal static string PdfConversionFailed {
             get {
                 return ResourceManager.GetString("PdfConversionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PdfConverter.exe not found.
+        /// </summary>
+        internal static string PdfConverterNotFound {
+            get {
+                return ResourceManager.GetString("PdfConverterNotFound", resourceCulture);
             }
         }
         

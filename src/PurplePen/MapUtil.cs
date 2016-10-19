@@ -147,7 +147,9 @@ namespace PurplePen
                 mapFile.ConversionCompleted += delegate { 
                     loadingStatus.LoadingComplete(mapFile.Status == PdfMapFile.ConversionStatus.Success, mapFile.ConversionOutput);
                 };
-                ok = loadingStatus.ShowLoadingStatus(pdfFileName);
+                if (status == PdfMapFile.ConversionStatus.Working) {
+                    ok = loadingStatus.ShowLoadingStatus(pdfFileName);
+                }
             }
 
             status = mapFile.Status;
@@ -260,7 +262,6 @@ namespace PurplePen
 
     interface IPdfLoadingStatus
     {
-        bool DownloadAndInstall(string url, string fileName);
         bool ShowLoadingStatus(string fileName);
         void LoadingComplete(bool success, string errorMessage);
     }

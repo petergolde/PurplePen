@@ -5,11 +5,6 @@ using System.Text;
 using System.IO;
 using Microsoft.Win32;
 using System.Diagnostics;
-using System.Threading.Tasks;
-using System.Threading;
-using PdfiumViewer;
-using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace PurplePen
 {
@@ -20,7 +15,8 @@ namespace PurplePen
         private string pngFileName;
         private ConversionStatus status;
         private string conversionOutput;
-        private Task conversionTask;
+        private StringBuilder stderrOutput;
+        private Process process;
 
         private const int Resolution = 600; // Resolution in DPI
         
@@ -51,6 +47,14 @@ namespace PurplePen
             }
         }
 
+        public bool PdfConverterExists
+        {
+            get
+            {
+                return FindPdfConverterExe() != null;
+            }
+        }
+
         public ConversionStatus Status
         {
             get
@@ -76,8 +80,8 @@ namespace PurplePen
             }
 
             CleanCacheDirectory();
-            string cacheFileName = GetCacheFileName(pdfFileName);
 
+            string cacheFileName = GetCacheFileName(pdfFileName);
             if (File.Exists(cacheFileName)) {
                 // Cached file still exists. Use it.
                 conversionOutput = "";
@@ -92,52 +96,77 @@ namespace PurplePen
         // Try to begin conversion into bitmap. 
         public ConversionStatus BeginUncachedConversion(string fileName, int resolution)
         {
-            TaskScheduler currentContextScheduler = SynchronizationContext.Current == null ? TaskScheduler.Current : TaskScheduler.FromCurrentSynchronizationContext();
-
-            status = ConversionStatus.Working;
-            pngFileName = fileName;
-            conversionTask = Task.Factory.StartNew(() => ConvertAndSaveImage(fileName, resolution));
-            conversionTask.ContinueWith(ConversionComplete, CancellationToken.None, TaskContinuationOptions.None, currentContextScheduler);
-            return status;
-        }
-
-        void ConvertAndSaveImage(string destinationFileName, int resolution)
-        {
-            int pageNumber = 0;
-
-            using (PdfDocument document = PdfDocument.Load(pdfFileName)) {
-                SizeF sizeInPoints = document.PageSizes[pageNumber];
-                int widthInPixels = (int)Math.Round(sizeInPoints.Width * (float)resolution / 72F);
-                int heightInPixels = (int)Math.Round(sizeInPoints.Height * (float)resolution / 72F);
-                using (Image image = document.Render(pageNumber, widthInPixels, heightInPixels, resolution, resolution, true)) {
-                    image.Save(destinationFileName, ImageFormat.Png);
+            try {
+                string converterExe = FindPdfConverterExe();
+                if (converterExe == null) {
+                    conversionOutput = MiscText.PdfConverterNotFound;
+                    status = ConversionStatus.Failure;
+                    return status;
                 }
-            }
 
-            GC.Collect();
+                string arguments = String.Format(
+                    "{2} \"{0}\" \"{1}\"",
+                    pdfFileName, fileName, resolution);
+
+                stderrOutput = new StringBuilder();
+                ProcessStartInfo startInfo = new ProcessStartInfo(converterExe, arguments);
+                startInfo.CreateNoWindow = true;
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                startInfo.RedirectStandardError = true;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.UseShellExecute = false;
+                process = new Process();
+                process.StartInfo = startInfo;
+                process.EnableRaisingEvents = true;
+                process.ErrorDataReceived += ProcessDataReceived;
+                process.OutputDataReceived += ProcessDataReceived;
+                process.Exited += ProcessExited;
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                status = ConversionStatus.Working;
+                pngFileName = fileName;
+                return status;
+            }
+            catch (Exception e) {
+                status = ConversionStatus.Failure;
+
+                if (!string.IsNullOrWhiteSpace(pngFileName))
+                    File.Delete(pngFileName);
+
+                conversionOutput = e.Message;
+                return status;
+            }
         }
 
-        void ConversionComplete(Task task)
+        private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
         {
-            if (task.IsFaulted) {
-                status = ConversionStatus.Failure;
-                Exception e = conversionTask.Exception;
-                while (e.InnerException != null)
-                    e = e.InnerException;
-                conversionOutput = e.Message;
-            }
-            else if (task.IsCanceled) {
-                status = ConversionStatus.Failure;
-                conversionOutput = "Cancelled";
-            }
-            else {
-                status = ConversionStatus.Success;
-                conversionOutput = "";
-            }
+            stderrOutput.Append(e.Data);
+            stderrOutput.Append("\r\n");
+        }
 
-            conversionTask = null;
+        private void ProcessExited(object sender, EventArgs e)
+        {
+            process.WaitForExit();
 
-            ConversionCompleted?.Invoke(this, EventArgs.Empty);
+            conversionOutput = stderrOutput.ToString();
+            status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
+            process.Dispose();
+            process = null;
+
+            if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName))
+                File.Delete(pngFileName);
+
+            if (ConversionCompleted != null)
+                ConversionCompleted(this, EventArgs.Empty);
+        }
+
+        internal string FindPdfConverterExe()
+        {
+            Uri uri = new Uri(typeof(PdfMapFile).Assembly.CodeBase);
+            string applicationDirectory = Path.GetDirectoryName(uri.LocalPath);
+            return Path.Combine(applicationDirectory, "PdfConverter.exe");
         }
 
         internal string GetCacheFileName(string path)
@@ -169,7 +198,7 @@ namespace PurplePen
                         fileInfo.Delete();
                     }
                 }
-            } 
+            }
             catch {
                 // Do nothing. Not a problem if we get an exception here.
             }

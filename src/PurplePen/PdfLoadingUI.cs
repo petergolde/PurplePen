@@ -10,19 +10,21 @@ namespace PurplePen
     class PdfLoadingUI: IPdfLoadingStatus
     {
         private PdfConversionInProgress dialog;
+        private bool complete;
+        private bool success;
+        private string errorMessage;
 
-        public bool DownloadAndInstall(string downloadFrom, string fileName)
-        {
-            DialogResult result = MessageBox.Show(null, MiscText.DownloadGhostscript, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-            if (result != DialogResult.Yes)
-                return false;
-
-            return Updater.DownloadAndInstall(new Uri(downloadFrom), fileName, false);
-        }
 
         public bool ShowLoadingStatus(string fileName)
         {
             dialog = new PdfConversionInProgress();
+            if (complete) {
+                if (success)
+                    return true;
+                else
+                    dialog.ShowErrorMessage(errorMessage);
+            }
+
             DialogResult result = dialog.ShowDialog();
             return (dialog == null || dialog.DialogResult != DialogResult.Cancel);
         }
@@ -30,6 +32,13 @@ namespace PurplePen
         // NOTE: This is called on a different thread from the dialog!
         public void LoadingComplete(bool success, string errorMessage)
         {
+            complete = true;
+            this.success = success;
+            this.errorMessage = errorMessage;
+
+            if (dialog == null)
+                return;
+
             if (success) {
                 dialog.Invoke((Action)delegate {
                     dialog.Close();
@@ -38,15 +47,13 @@ namespace PurplePen
                 });
             }
             else {
-                if (dialog != null) {
-                    dialog.Invoke((Action)delegate {
-                        dialog.ShowErrorMessage(errorMessage);
-                    });
+                dialog.Invoke((Action)delegate {
+                    dialog.ShowErrorMessage(errorMessage);
+                });
 
-                    // Wait for user to hit cancel button.
-                    while (dialog != null && dialog.Visible) {
-                        Thread.Sleep(50);
-                    }
+                // Wait for user to hit cancel button.
+                while (dialog != null && dialog.Visible) {
+                    Thread.Sleep(50);
                 }
             }
         }

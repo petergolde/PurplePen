@@ -187,7 +187,7 @@
     <value>7</value>
   </data>
   <data name="labelReadingPDF.Text" xml:space="preserve">
-    <value>PDFium is reading your PDF...</value>
+    <value>PDFium PDF converter is reading your PDF...</value>
   </data>
   <data name="&gt;&gt;labelReadingPDF.Name" xml:space="preserve">
     <value>labelReadingPDF</value>

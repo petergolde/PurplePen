@@ -82,9 +82,6 @@
     <Reference Include="Map_PDF">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_PDF.dll</HintPath>
     </Reference>
-    <Reference Include="PdfiumViewer">
-      <HintPath>..\Libraries\PdfiumViewer\$(Configuration)\PdfiumViewer.dll</HintPath>
-    </Reference>
     <Reference Include="PdfSharp">
       <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
     </Reference>
@@ -3428,10 +3425,6 @@
       <Link>pdfium.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\dbghelp.dll">
-      <Link>dbghelp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -3480,6 +3473,10 @@
     <ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj">
       <Project>{67912bda-1572-46b0-8623-5872d9dadbc8}</Project>
       <Name>CrashReporter.NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj">
+      <Project>{89318625-2f71-4c44-bfb1-8984f4d06152}</Project>
+      <Name>PdfConverter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
