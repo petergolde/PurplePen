@@ -132,6 +132,10 @@
     <Content Include="AuthoringTests.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj">
+      <Project>{89318625-2f71-4c44-bfb1-8984f4d06152}</Project>
+      <Name>PdfConverter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PurplePen\PurplePen.csproj">
       <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
       <Name>PurplePen</Name>
