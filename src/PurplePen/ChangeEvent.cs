@@ -703,7 +703,15 @@ namespace PurplePen
             List<Id<CourseControl>> allCourseControls = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).ToList();
 
             // This the course control to change to. Could be None.
-            Id<CourseControl> afterRemove = eventDB.GetCourseControl(courseControlIdRemove).nextCourseControl;
+            CourseControl courseControlRemove = eventDB.GetCourseControl(courseControlIdRemove);
+            Id<CourseControl> afterRemove = courseControlRemove.nextCourseControl;
+            if (courseControlRemove.split && !courseControlRemove.loop) {
+                // Change next to another one of the split controls.
+                if (courseControlRemove.splitCourseControls[0] == courseControlIdRemove)
+                    afterRemove = courseControlRemove.splitCourseControls[1];
+                else
+                    afterRemove = courseControlRemove.splitCourseControls[0];
+            }
 
             // For each course control, go throught and change referecnes to the subsequent control.
             foreach (Id<CourseControl> courseControlId in allCourseControls) {
@@ -728,6 +736,7 @@ namespace PurplePen
                     clone.splitCourseControls = clone.splitCourseControls.Where(id => id != courseControlIdRemove).ToArray();
                     if (clone.splitCourseControls.Length < 2) {
                         clone.split = false;
+                        clone.loop = false;
                         clone.splitCourseControls = null;
                         clone.splitEnd = Id<CourseControl>.None;
                     }

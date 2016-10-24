@@ -403,6 +403,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Fork/Loop.
+        /// </summary>
+        internal static string DeleteFork {
+            get {
+                return ResourceManager.GetString("DeleteFork", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete Map Exchange.
         /// </summary>
         internal static string DeleteMapExchangeAtControl {

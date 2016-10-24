@@ -1088,7 +1088,7 @@ namespace PurplePen
 
         private void deleteForkMenu_Click(object sender, EventArgs e)
         {
-            // TODO.
+            controller.DeleteFork();
         }
 
 

@@ -291,4 +291,7 @@
   <data name="AddVariation" xml:space="preserve">
     <value>Add Variation</value>
   </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Delete Fork/Loop</value>
+  </data>
 </root>

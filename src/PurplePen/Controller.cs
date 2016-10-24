@@ -1224,7 +1224,7 @@ namespace PurplePen
                 }
                 else {
                     // Deleting one control from a course.
-                    return DeleteControlFromCourse(selection);
+                    return DeleteControlFromCourse(selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl, CommandNameText.DeleteControl);
                 }
             }
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
@@ -1279,14 +1279,14 @@ namespace PurplePen
             return Id<CourseControl>.None;
         }
 
-        private bool DeleteControlFromCourse(SelectionMgr.SelectionInfo selection)
+        private bool DeleteControlFromCourse(Id<Course> courseId, Id<CourseControl> courseControl, string commandNameText)
         {
-            Debug.Assert(selection.ActiveCourseDesignator.IsNotAllControls);
+            Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
             Id<CourseControl> previous = PreviousCourseControlInSelection();
 
-            undoMgr.BeginCommand(177, CommandNameText.DeleteControl);
+            undoMgr.BeginCommand(177, commandNameText);
 
-            ICollection<Id<ControlPoint>> removedControls = ChangeEvent.RemoveCourseControl(eventDB, selection.ActiveCourseDesignator.CourseId, selection.SelectedCourseControl);
+            ICollection<Id<ControlPoint>> removedControls = ChangeEvent.RemoveCourseControl(eventDB, courseId, courseControl);
 
             AskUserAboutDeletingOrphanedControls(removedControls);
 
@@ -2692,6 +2692,19 @@ namespace PurplePen
             }
 
             return CommandStatus.Disabled;
+        }
+
+        public void DeleteFork()
+        {
+            if (CanDeleteFork() != CommandStatus.Enabled)
+                return;
+
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+            Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
+
+            Id<CourseControl> forkStart = QueryEvent.GetForkStart(eventDB, courseId, selection.SelectedCourseControl);
+
+            DeleteControlFromCourse(courseId, forkStart, CommandNameText.DeleteFork);
         }
 
         // Can we set a text line for the selected object? If so, return default text and position, name of object, and whether to enable the "this course only" option.
