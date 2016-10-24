@@ -140,6 +140,78 @@ namespace PurplePen
             return result;
         }
 
+        struct CourseControlAndSplitStart
+        {
+            public readonly Id<CourseControl> courseControlId;
+            public readonly Id<CourseControl> splitStart;
+
+            public CourseControlAndSplitStart(Id<CourseControl> courseControlId, Id<CourseControl> splitStart)
+            {
+                this.courseControlId = courseControlId;
+                this.splitStart = splitStart;
+            }
+        }
+
+        // Enumerate all the course controls id and corresponding split starts for a particular course.
+        private static List<CourseControlAndSplitStart> EnumCourseControlsAndSplitStarts(EventDB eventDB, Id<Course> courseId)
+        {
+            Debug.Assert(courseId.IsNotNone);
+
+            Id<CourseControl> firstCourseControlId = eventDB.GetCourse(courseId).firstCourseControl;
+
+            return EnumCourseControlsAndSplitStartsToJoin(eventDB, courseId, firstCourseControlId, Id<CourseControl>.None, Id<CourseControl>.None);
+        }
+
+        private static List<CourseControlAndSplitStart> EnumCourseControlsAndSplitStartsToJoin(EventDB eventDB, Id<Course> courseId, Id<CourseControl> begin, Id<CourseControl> join, Id<CourseControl> splitStart)
+        {
+            List<CourseControlAndSplitStart> result = new List<CourseControlAndSplitStart>();
+
+            Id<CourseControl> nextCourseControlId = begin;
+
+            // Traverse the course control links.
+            while (nextCourseControlId.IsNotNone && nextCourseControlId != join) {
+                CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+
+                if (courseCtl.split) {
+                    // Follow all of the alternate paths 
+                    for (int i = 0; i < courseCtl.splitCourseControls.Length; ++i) {
+                        if (! (courseCtl.loop && i == 0)) {
+                            Id<CourseControl> forkStart = courseCtl.splitCourseControls[i];
+                            result.Add(new CourseControlAndSplitStart(forkStart, forkStart));
+                            var splitControls = EnumCourseControlsAndSplitStartsToJoin(eventDB, courseId, eventDB.GetCourseControl(forkStart).nextCourseControl, courseCtl.splitEnd, forkStart);
+                            result.AddRange(splitControls);
+                        }
+                    }
+
+                    if (!courseCtl.loop) {
+                        nextCourseControlId = courseCtl.splitEnd;
+                        courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+                    }
+                }
+
+                if (nextCourseControlId.IsNone || nextCourseControlId == join)
+                    break;
+
+                result.Add(new CourseControlAndSplitStart(nextCourseControlId, splitStart));
+
+                nextCourseControlId = courseCtl.nextCourseControl;
+            }
+
+            return result;
+        }
+
+        // Get the fork start control that started the fork that courseControlId is one, or None if none.
+        public static Id<CourseControl> GetForkStart(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlId)
+        {
+            List<CourseControlAndSplitStart> allSplitStarts = EnumCourseControlsAndSplitStarts(eventDB, courseId);
+            foreach (CourseControlAndSplitStart ccAndSs in allSplitStarts) {
+                if (ccAndSs.courseControlId == courseControlId)
+                    return ccAndSs.splitStart;
+            }
+
+            return Id<CourseControl>.None;
+        }
+
         // Get the next course control 
         private static Id<CourseControl> GetNextControl(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
         {
