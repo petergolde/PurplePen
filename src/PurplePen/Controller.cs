@@ -2668,6 +2668,32 @@ namespace PurplePen
             undoMgr.EndCommand(1992);
         }
 
+        public CommandStatus CanDeleteFork()
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            if (selection.ActiveCourseDesignator.IsAllControls)
+                return CommandStatus.Disabled;
+            Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
+
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+                // Case 1 -- selected control.
+                Id<CourseControl> courseControlId = selection.SelectedCourseControl;
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                if (!courseControl.split && QueryEvent.GetForkStart(eventDB, courseId, courseControlId).IsNotNone)
+                    return CommandStatus.Enabled;
+            }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
+                // Case 2 -- selected leg.
+                Id<CourseControl> courseControlId1 = selection.SelectedCourseControl;
+                if (QueryEvent.GetForkStart(eventDB, courseId, courseControlId1).IsNotNone)
+                    return CommandStatus.Enabled;
+
+            }
+
+            return CommandStatus.Disabled;
+        }
+
         // Can we set a text line for the selected object? If so, return default text and position, name of object, and whether to enable the "this course only" option.
         public bool CanAddTextLine(out string defaultText, out DescriptionLine.TextLineKind textLineKind, out string objectName, out bool enableThisCourse)
         {

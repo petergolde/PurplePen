@@ -704,6 +704,7 @@ namespace PurplePen
             UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(addVariationMenu, controller.CanAddVariation());
             UpdateMenuItem(addVariationToolStripButton, controller.CanAddVariation());
+            UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -1084,6 +1085,12 @@ namespace PurplePen
         {
             controller.DeleteSelection();
         }
+
+        private void deleteForkMenu_Click(object sender, EventArgs e)
+        {
+            // TODO.
+        }
+
 
         private void allControlsMenu_Click(object sender, EventArgs e)
         {
@@ -2807,5 +2814,6 @@ namespace PurplePen
         {
             UpdateTopologyScrollBars();
         }
+
     }
 }

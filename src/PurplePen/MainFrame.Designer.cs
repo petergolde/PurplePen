@@ -280,6 +280,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.deleteForkMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1038,6 +1039,7 @@ namespace PurplePen
             this.addTextLineMenu,
             this.toolStripSeparator4,
             this.deleteItemMenu,
+            this.deleteForkMenu,
             this.toolStripSeparator15,
             this.addBendMenu,
             this.removeBendMenu,
@@ -1874,6 +1876,12 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // deleteForkMenu
+            // 
+            this.deleteForkMenu.Name = "deleteForkMenu";
+            resources.ApplyResources(this.deleteForkMenu, "deleteForkMenu");
+            this.deleteForkMenu.Click += new System.EventHandler(this.deleteForkMenu_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2133,5 +2141,6 @@ namespace PurplePen
         private System.Windows.Forms.Panel panelTopology;
         private MapView.MapViewer mapViewerTopology;
         private System.Windows.Forms.VScrollBar topologyScrollBar;
+        private System.Windows.Forms.ToolStripMenuItem deleteForkMenu;
     }
 }
