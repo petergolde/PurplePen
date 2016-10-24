@@ -214,7 +214,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 214</value>
+    <value>3, 215</value>
   </data>
   <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 0, 3</value>
@@ -256,7 +256,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 214</value>
+    <value>128, 215</value>
   </data>
   <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -292,7 +292,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAAOLgL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAASLgL
 </value>
   </data>
   <data name="mapViewerTopology.Location" type="System.Drawing.Point, System.Drawing">
@@ -302,7 +302,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 210</value>
+    <value>239, 211</value>
   </data>
   <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -314,8 +314,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wRpA3sEQ8XxC
-        AUBeQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wQtP38EQ8XxC
+        8E5fQgs=
 </value>
   </data>
   <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
@@ -340,7 +340,7 @@
     <value>239, 0</value>
   </data>
   <data name="topologyScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 210</value>
+    <value>17, 211</value>
   </data>
   <data name="topologyScrollBar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -364,7 +364,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 212</value>
   </data>
   <data name="panelTopology.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -397,7 +397,7 @@
     <value>0, 0</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 212</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -424,7 +424,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 211</value>
+    <value>256, 212</value>
   </data>
   <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -451,7 +451,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
+    <value>256, 241</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -499,7 +499,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 129</value>
+    <value>256, 128</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -535,7 +535,7 @@
     <value>256, 372</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>240</value>
+    <value>241</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -571,7 +571,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAkLgL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAqLgL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -593,7 +593,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAARTPLwlpkKsIyM0tD
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAARTPLwlxkKsIyM0tD
         RWSqQgs=
 </value>
   </data>
@@ -794,6 +794,12 @@
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Create Data &amp;Interchange File (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Create G&amp;PX File...</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 6</value>
@@ -1065,6 +1071,159 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;View</value>
   </data>
+  <data name="addStartMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>&amp;Start</value>
+  </data>
+  <data name="addControlMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="addControlMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>&amp;Control</value>
+  </data>
+  <data name="addFinishMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Finish</value>
+  </data>
+  <data name="addDescriptionsMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Descriptions</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Map Exchange at &amp;Control Point</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 22</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Flagged Route to Map Exchange</value>
+  </data>
+  <data name="addMapExchangeMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Map E&amp;xchange</value>
+  </data>
+  <data name="addVariationMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Variation...</value>
+  </data>
+  <data name="addTextLineMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Text &amp;Line...</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 6</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Mandatory Crossing Point</value>
+  </data>
+  <data name="addOptCrossingMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Optional Crossing Point</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Out Of Bounds Area</value>
+  </data>
+  <data name="addDangerousMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Dangerous Area</value>
+  </data>
+  <data name="addWaterMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Water Location</value>
+  </data>
+  <data name="addFirstAidMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>First Aid Location</value>
+  </data>
+  <data name="addForbiddenMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Forbidden Route Marking</value>
+  </data>
+  <data name="addBoundaryMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Uncrossable Boundary</value>
+  </data>
+  <data name="addRegMarkMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Registration Mark</value>
+  </data>
+  <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 6</value>
+  </data>
+  <data name="whiteOutMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>White Out Area</value>
+  </data>
+  <data name="addTextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="addImageMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="addLineMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="addRectangleMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="addMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 20</value>
+  </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
   <data name="changeMapFileMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
@@ -1166,159 +1325,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Course</value>
-  </data>
-  <data name="addStartMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Add &amp;Start</value>
-  </data>
-  <data name="addControlMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
-  </data>
-  <data name="addControlMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Add &amp;Control</value>
-  </data>
-  <data name="addFinishMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Add &amp;Finish</value>
-  </data>
-  <data name="addDescriptionsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Add &amp;Descriptions</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 22</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Map Exchange at &amp;Control Point</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 22</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Flagged Route to Map Exchange</value>
-  </data>
-  <data name="addMapExchangeMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Add Map E&amp;xchange</value>
-  </data>
-  <data name="addVariationMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addVariationMenu.Text" xml:space="preserve">
-    <value>Add &amp;Variation...</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Mandatory Crossing Point</value>
-  </data>
-  <data name="addOptCrossingMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Optional Crossing Point</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Out Of Bounds Area</value>
-  </data>
-  <data name="addDangerousMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Dangerous Area</value>
-  </data>
-  <data name="addWaterMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Water Location</value>
-  </data>
-  <data name="addFirstAidMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>First Aid Location</value>
-  </data>
-  <data name="addForbiddenMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Forbidden Route Marking</value>
-  </data>
-  <data name="addBoundaryMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Uncrossable Boundary</value>
-  </data>
-  <data name="addRegMarkMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Registration Mark</value>
-  </data>
-  <data name="toolStripSeparator23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 6</value>
-  </data>
-  <data name="whiteOutMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>White Out Area</value>
-  </data>
-  <data name="addTextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="addImageMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="addLineMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Line</value>
-  </data>
-  <data name="addRectangleMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Rectangle</value>
-  </data>
-  <data name="addSpecialItemMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Add Special &amp;Item</value>
-  </data>
-  <data name="addTextLineMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Add Text &amp;Line...</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 6</value>
   </data>
   <data name="deleteItemMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
@@ -1433,18 +1439,6 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Item</value>
-  </data>
-  <data name="createGPXFileMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 22</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Create &amp;GPX File...</value>
-  </data>
-  <data name="gpsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -1914,11 +1908,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqC0ej/4ChXDBTmrBYD
-        xUIwYbMZtDoLG4G/wo1KcJNrNJo0QMbrnZ8HHnan3pC5yXf77u55f/tp64gUBTPNLlz8G2LFRRjPNX8i
-        4Z6rEww0yGF8pNILfJtqGn7nRJOOJTGaPNb4xMOlrrr7aYdNSdFnTyFRuWRKsrf5v+ZbgHl4miZBt+bX
-        U+8Dv0sPXwJj1YwYblyVCXyK+Lyyj2NXJSDJPZVCHNZufqjhUUutXRf/GRVVdmj30MVMYL+yzpngwVUJ
-        7MyM1LDZXZUJgu9sh7DuqiXIHIw0ejejXWF1kTTp4Iwi5/yH5odc9vBFe+WaapFn34hWsK/+gaf4MsbC
-        wR6eVcsifk17EhT+eWZbqM3qHa3dya+gWgDzLm4L0icTOjX+NFI/1AAAAABJRU5ErkJggg==
+        xUIwYbMZtDoLo/BXuFEJbnKNRpMGyHi98/PAw+7UGzI3+W7f3T3vbz9tHZGiYKbZhYt/Q6y4COO55k8k
+        3HN1goEGOYyPVHqBb1NNw++caNKxJEaTxxqfeLjUVXc/7bApKfrsKSQql0xJ9jb/13wLMA9P0yTo1vx6
+        6n3gd+nhS2CsmhHDjasygU8Rn1f2ceyqBCS5p1KIw9rNDzU8aqm16+I/o6LKDu0eupgJ7FfWORM8uCqB
+        nZmRGja7qzJB8J3tENZdtQSZg5FG72a0K6wukiYdnFHknP/Q/JDLHr5or1xTLfLsG9EK9tU/8BRfxlg4
+        2MOzalnEr2lPgsI/z2wLtVm9o7U7+RVUC2DexW1B+gQPIjX6syWWogAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -1934,10 +1928,10 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADOSURBVDhPpZM7CsJAGIS328IjaEo77+ctxBxGsPMgAStL
-        sZFYJavfyBAJJO5CBgb+1/wPsglTSCHFPvTHLnQPEbtWzOk8JIZnRBtYYZ8UczoPTZXYrjaqFLObx+IG
-        ullrq4nEPqF2Og9EkYlX+IItvCnmdB4U7ySyq5Mam2WgwRvu7X7BCReb/4FwzcS73QHFW2g60w52R1DO
-        5g8ER68OtsS2Tg8gtiL3lK06fRVpi1/dbJ26Keg6TZp8NLN1ixuwRtGrm63DKfp1p+tS/ACgWQw+8Dkd
-        IAAAAABJRU5ErkJggg==
+        sZHYhKx+I0MkkLgLGRj4X/M/yCZMIYUU+9Afu9A9ROxaMafzkBieEW1ghX1SzOk8NFViu9qoUsxuHosb
+        6GatrSYS+4Ta6TwQRSZe4Qu28KaY03lQvJPIrk5qbJaBBm+4t/sFJ1xs/gfCNRPvdgcUb6HpTDvYHUE5
+        mz8QHL062BLbOj2A2IrcU7bq9FWkLX51s3XqpqDrNGny0czWLW7AGkWvbrYOp+jXna5L8QM0LQwAAfdh
+        9AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="addVariationToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2914,166 +2908,16 @@
   <data name="&gt;&gt;itemMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;addStartMenu.Name" xml:space="preserve">
-    <value>addStartMenu</value>
-  </data>
-  <data name="&gt;&gt;addStartMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addControlMenu.Name" xml:space="preserve">
-    <value>addControlMenu</value>
-  </data>
-  <data name="&gt;&gt;addControlMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addFinishMenu.Name" xml:space="preserve">
-    <value>addFinishMenu</value>
-  </data>
-  <data name="&gt;&gt;addFinishMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addDescriptionsMenu.Name" xml:space="preserve">
-    <value>addDescriptionsMenu</value>
-  </data>
-  <data name="&gt;&gt;addDescriptionsMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addMapExchangeMenu.Name" xml:space="preserve">
-    <value>addMapExchangeMenu</value>
-  </data>
-  <data name="&gt;&gt;addMapExchangeMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mapExchangeControlMenuItem.Name" xml:space="preserve">
-    <value>mapExchangeControlMenuItem</value>
-  </data>
-  <data name="&gt;&gt;mapExchangeControlMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mapExchangeSeparateMenuItem.Name" xml:space="preserve">
-    <value>mapExchangeSeparateMenuItem</value>
-  </data>
-  <data name="&gt;&gt;mapExchangeSeparateMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addVariationMenu.Name" xml:space="preserve">
-    <value>addVariationMenu</value>
-  </data>
-  <data name="&gt;&gt;addVariationMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addSpecialItemMenu.Name" xml:space="preserve">
-    <value>addSpecialItemMenu</value>
-  </data>
-  <data name="&gt;&gt;addSpecialItemMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addMandatoryCrossingMenu.Name" xml:space="preserve">
-    <value>addMandatoryCrossingMenu</value>
-  </data>
-  <data name="&gt;&gt;addMandatoryCrossingMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addOptCrossingMenu.Name" xml:space="preserve">
-    <value>addOptCrossingMenu</value>
-  </data>
-  <data name="&gt;&gt;addOptCrossingMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addOutOfBoundsMenu.Name" xml:space="preserve">
-    <value>addOutOfBoundsMenu</value>
-  </data>
-  <data name="&gt;&gt;addOutOfBoundsMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addDangerousMenu.Name" xml:space="preserve">
-    <value>addDangerousMenu</value>
-  </data>
-  <data name="&gt;&gt;addDangerousMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWaterMenu.Name" xml:space="preserve">
-    <value>addWaterMenu</value>
-  </data>
-  <data name="&gt;&gt;addWaterMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addFirstAidMenu.Name" xml:space="preserve">
-    <value>addFirstAidMenu</value>
-  </data>
-  <data name="&gt;&gt;addFirstAidMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addForbiddenMenu.Name" xml:space="preserve">
-    <value>addForbiddenMenu</value>
-  </data>
-  <data name="&gt;&gt;addForbiddenMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addBoundaryMenu.Name" xml:space="preserve">
-    <value>addBoundaryMenu</value>
-  </data>
-  <data name="&gt;&gt;addBoundaryMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addRegMarkMenu.Name" xml:space="preserve">
-    <value>addRegMarkMenu</value>
-  </data>
-  <data name="&gt;&gt;addRegMarkMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
-    <value>toolStripSeparator23</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;whiteOutMenu.Name" xml:space="preserve">
-    <value>whiteOutMenu</value>
-  </data>
-  <data name="&gt;&gt;whiteOutMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTextMenu.Name" xml:space="preserve">
-    <value>addTextMenu</value>
-  </data>
-  <data name="&gt;&gt;addTextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addImageMenu.Name" xml:space="preserve">
-    <value>addImageMenu</value>
-  </data>
-  <data name="&gt;&gt;addImageMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addLineMenu.Name" xml:space="preserve">
-    <value>addLineMenu</value>
-  </data>
-  <data name="&gt;&gt;addLineMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addRectangleMenu.Name" xml:space="preserve">
-    <value>addRectangleMenu</value>
-  </data>
-  <data name="&gt;&gt;addRectangleMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTextLineMenu.Name" xml:space="preserve">
-    <value>addTextLineMenu</value>
-  </data>
-  <data name="&gt;&gt;addTextLineMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;deleteItemMenu.Name" xml:space="preserve">
     <value>deleteItemMenu</value>
   </data>
   <data name="&gt;&gt;deleteItemMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteForkMenu.Name" xml:space="preserve">
+    <value>deleteForkMenu</value>
+  </data>
+  <data name="&gt;&gt;deleteForkMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator15.Name" xml:space="preserve">
@@ -3170,18 +3014,6 @@
     <value>changeDisplayedCoursesMenu</value>
   </data>
   <data name="&gt;&gt;changeDisplayedCoursesMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gpsMenu.Name" xml:space="preserve">
-    <value>gpsMenu</value>
-  </data>
-  <data name="&gt;&gt;gpsMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;createGPXFileMenu.Name" xml:space="preserve">
-    <value>createGPXFileMenu</value>
-  </data>
-  <data name="&gt;&gt;createGPXFileMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;reportMenu.Name" xml:space="preserve">
@@ -3634,10 +3466,166 @@
   <data name="&gt;&gt;saveGpxFileDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;deleteForkMenu.Name" xml:space="preserve">
-    <value>deleteForkMenu</value>
+  <data name="&gt;&gt;createGPXFileMenu.Name" xml:space="preserve">
+    <value>createGPXFileMenu</value>
   </data>
-  <data name="&gt;&gt;deleteForkMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;createGPXFileMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addMenu.Name" xml:space="preserve">
+    <value>addMenu</value>
+  </data>
+  <data name="&gt;&gt;addMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addStartMenu.Name" xml:space="preserve">
+    <value>addStartMenu</value>
+  </data>
+  <data name="&gt;&gt;addStartMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addControlMenu.Name" xml:space="preserve">
+    <value>addControlMenu</value>
+  </data>
+  <data name="&gt;&gt;addControlMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addFinishMenu.Name" xml:space="preserve">
+    <value>addFinishMenu</value>
+  </data>
+  <data name="&gt;&gt;addFinishMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addDescriptionsMenu.Name" xml:space="preserve">
+    <value>addDescriptionsMenu</value>
+  </data>
+  <data name="&gt;&gt;addDescriptionsMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addMapExchangeMenu.Name" xml:space="preserve">
+    <value>addMapExchangeMenu</value>
+  </data>
+  <data name="&gt;&gt;addMapExchangeMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapExchangeControlMenuItem.Name" xml:space="preserve">
+    <value>mapExchangeControlMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mapExchangeControlMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapExchangeSeparateMenuItem.Name" xml:space="preserve">
+    <value>mapExchangeSeparateMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mapExchangeSeparateMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addVariationMenu.Name" xml:space="preserve">
+    <value>addVariationMenu</value>
+  </data>
+  <data name="&gt;&gt;addVariationMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addTextLineMenu.Name" xml:space="preserve">
+    <value>addTextLineMenu</value>
+  </data>
+  <data name="&gt;&gt;addTextLineMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addMandatoryCrossingMenu.Name" xml:space="preserve">
+    <value>addMandatoryCrossingMenu</value>
+  </data>
+  <data name="&gt;&gt;addMandatoryCrossingMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addOptCrossingMenu.Name" xml:space="preserve">
+    <value>addOptCrossingMenu</value>
+  </data>
+  <data name="&gt;&gt;addOptCrossingMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addOutOfBoundsMenu.Name" xml:space="preserve">
+    <value>addOutOfBoundsMenu</value>
+  </data>
+  <data name="&gt;&gt;addOutOfBoundsMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addDangerousMenu.Name" xml:space="preserve">
+    <value>addDangerousMenu</value>
+  </data>
+  <data name="&gt;&gt;addDangerousMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addWaterMenu.Name" xml:space="preserve">
+    <value>addWaterMenu</value>
+  </data>
+  <data name="&gt;&gt;addWaterMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addFirstAidMenu.Name" xml:space="preserve">
+    <value>addFirstAidMenu</value>
+  </data>
+  <data name="&gt;&gt;addFirstAidMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addForbiddenMenu.Name" xml:space="preserve">
+    <value>addForbiddenMenu</value>
+  </data>
+  <data name="&gt;&gt;addForbiddenMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addBoundaryMenu.Name" xml:space="preserve">
+    <value>addBoundaryMenu</value>
+  </data>
+  <data name="&gt;&gt;addBoundaryMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addRegMarkMenu.Name" xml:space="preserve">
+    <value>addRegMarkMenu</value>
+  </data>
+  <data name="&gt;&gt;addRegMarkMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Name" xml:space="preserve">
+    <value>toolStripSeparator23</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;whiteOutMenu.Name" xml:space="preserve">
+    <value>whiteOutMenu</value>
+  </data>
+  <data name="&gt;&gt;whiteOutMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addTextMenu.Name" xml:space="preserve">
+    <value>addTextMenu</value>
+  </data>
+  <data name="&gt;&gt;addTextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addImageMenu.Name" xml:space="preserve">
+    <value>addImageMenu</value>
+  </data>
+  <data name="&gt;&gt;addImageMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addLineMenu.Name" xml:space="preserve">
+    <value>addLineMenu</value>
+  </data>
+  <data name="&gt;&gt;addLineMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addRectangleMenu.Name" xml:space="preserve">
+    <value>addRectangleMenu</value>
+  </data>
+  <data name="&gt;&gt;addRectangleMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

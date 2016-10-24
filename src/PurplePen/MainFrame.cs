@@ -137,7 +137,6 @@ namespace PurplePen
             addMapExchangeMenu.Image = mapExchangeToolStripMenu.Image;
             mapExchangeControlMenuItem.Image = mapExchangeControlToolStripMenuItem.Image;
             mapExchangeSeparateMenuItem.Image = mapExchangeSeparateToolStripMenuItem.Image;
-            addSpecialItemMenu.Image = specialItemToolStripMenu.Image;
             addOptCrossingMenu.Image = optionalCrossingPointToolStripMenuItem.Image;
             addMandatoryCrossingMenu.Image = mandatoryCrossingPointToolStripMenuItem.Image;
             addWaterMenu.Image = waterLocationToolStripMenuItem.Image;
