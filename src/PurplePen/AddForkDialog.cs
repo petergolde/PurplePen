@@ -50,22 +50,13 @@ namespace PurplePen
             if (Loop) {
                 labelNumberLoops.Visible = true;
                 labelNumberBranches.Visible = false;
-                labelSummary.Text = string.Format(MiscText.LoopSummary, NumberOfBranches + 1, Factorial(NumberOfBranches));
+                labelSummary.Text = string.Format(MiscText.LoopSummary, NumberOfBranches + 1, Util.Factorial(NumberOfBranches));
             }
             else {
                 labelNumberLoops.Visible = false;
                 labelNumberBranches.Visible = true;
                 labelSummary.Text = string.Format(MiscText.ForkSummary, string.Join(", ", from x in PossibleRelayParticipants(NumberOfBranches) select x.ToString()));
             }
-        }
-
-        private long Factorial(int n)
-        {
-            long result = 1;
-            for (int i = 2; i <= n; ++i) {
-                result *= i;
-            }
-            return result;
         }
 
         private List<int> PossibleRelayParticipants(int numForks)

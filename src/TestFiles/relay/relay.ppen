@@ -1,0 +1,432 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>variations</title>
+    <map kind="none" scale="10000" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="149.135956" right="330.9876" bottom="-117.564056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="2.77791548" y="4.89470434" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="18.652914" y="4.36553764" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="39.5549927" y="4.100954" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="59.13415" y="-10.7157145" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="84.00499" y="6.217621" />
+  </control>
+  <control id="6" kind="normal">
+    <code>35</code>
+    <location x="102.790405" y="6.482204" />
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="127.66124" y="6.217621" />
+  </control>
+  <control id="8" kind="normal">
+    <code>37</code>
+    <location x="148.298737" y="7.27595425" />
+  </control>
+  <control id="9" kind="normal">
+    <code>38</code>
+    <location x="169.465408" y="8.598871" />
+  </control>
+  <control id="10" kind="normal">
+    <code>39</code>
+    <location x="185.3404" y="9.657205" />
+  </control>
+  <control id="11" kind="finish">
+    <location x="240.638321" y="2.51345348" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="12" kind="normal">
+    <code>40</code>
+    <location x="44.3174934" y="28.7072048" />
+  </control>
+  <control id="13" kind="normal">
+    <code>41</code>
+    <location x="60.98624" y="35.0572052" />
+  </control>
+  <control id="14" kind="normal">
+    <code>42</code>
+    <location x="72.36333" y="28.1780376" />
+  </control>
+  <control id="15" kind="normal">
+    <code>43</code>
+    <location x="87.44457" y="30.2947044" />
+  </control>
+  <control id="16" kind="normal">
+    <code>44</code>
+    <location x="80.03624" y="-19.9761314" />
+  </control>
+  <control id="17" kind="normal">
+    <code>45</code>
+    <location x="99.87999" y="-40.084465" />
+  </control>
+  <control id="18" kind="normal">
+    <code>46</code>
+    <location x="61.250824" y="-40.084465" />
+  </control>
+  <control id="19" kind="normal">
+    <code>47</code>
+    <location x="89.82583" y="-38.76155" />
+  </control>
+  <control id="20" kind="normal">
+    <code>48</code>
+    <location x="105.965408" y="-9.392797" />
+  </control>
+  <control id="21" kind="normal">
+    <code>49</code>
+    <location x="176.344574" y="22.3572044" />
+  </control>
+  <control id="22" kind="normal">
+    <code>50</code>
+    <location x="176.609146" y="-1.19071293" />
+  </control>
+  <control id="23" kind="normal">
+    <code>51</code>
+    <location x="177.932068" y="-18.3886318" />
+  </control>
+  <control id="24" kind="normal">
+    <code>52</code>
+    <location x="67.07166" y="71.30512" />
+  </control>
+  <control id="25" kind="map-exchange">
+    <location x="105.43631" y="32.1468163" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="130.648514" right="330.9876" bottom="-136.0515" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+    <variation-naming kind="letters" include-course-name="true" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Two Part</name>
+    <labels label-kind="sequence" />
+    <first course-control="31" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="172.114868" right="330.9876" bottom="-94.585144" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+    <variation-naming kind="letters" include-course-name="true" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>TwoWayBranch</name>
+    <labels label-kind="sequence" />
+    <first course-control="39" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.9805" right="330.9876" bottom="-133.719513" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+    <variation-naming kind="letters" include-course-name="true" />
+  </course>
+  <course id="4" kind="normal" order="4">
+    <name>DoubleBranch</name>
+    <labels label-kind="sequence" />
+    <first course-control="48" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="133.482208" right="330.9876" bottom="-133.2178" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+    <variation-naming kind="letters" include-course-name="true" />
+  </course>
+  <course id="5" kind="normal" order="5">
+    <name>ThreeLoop</name>
+    <labels label-kind="sequence" />
+    <first course-control="63" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="149.135956" right="330.9876" bottom="-117.564056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+    <variation-naming kind="letters" include-course-name="true" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2" variation="fork" variation-end="10">
+    <next course-control="3" />
+    <variation course-control="2" />
+    <variation course-control="24" />
+  </course-control>
+  <course-control id="24" control="2" variation="fork" variation-end="10">
+    <next course-control="12" />
+    <variation course-control="2" />
+    <variation course-control="24" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4" variation="loop" variation-end="4">
+    <next course-control="5" />
+    <variation course-control="4" />
+    <variation course-control="25" />
+    <variation course-control="26" />
+    <variation course-control="27" />
+  </course-control>
+  <course-control id="25" control="4" variation="loop" variation-end="4">
+    <next course-control="15" />
+    <variation course-control="4" />
+    <variation course-control="25" />
+    <variation course-control="26" />
+    <variation course-control="27" />
+  </course-control>
+  <course-control id="26" control="4" variation="loop" variation-end="4">
+    <next course-control="17" />
+    <variation course-control="4" />
+    <variation course-control="25" />
+    <variation course-control="26" />
+    <variation course-control="27" />
+  </course-control>
+  <course-control id="27" control="4" variation="loop" variation-end="4">
+    <next course-control="19" />
+    <variation course-control="4" />
+    <variation course-control="25" />
+    <variation course-control="26" />
+    <variation course-control="27" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="7" control="7">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="8">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="9" variation="fork" variation-end="10">
+    <next course-control="10" />
+    <variation course-control="9" />
+    <variation course-control="28" />
+    <variation course-control="29" />
+  </course-control>
+  <course-control id="28" control="9" variation="fork" variation-end="10">
+    <next course-control="13" />
+    <variation course-control="9" />
+    <variation course-control="28" />
+    <variation course-control="29" />
+  </course-control>
+  <course-control id="29" control="9" variation="fork" variation-end="10">
+    <next course-control="14" />
+    <variation course-control="9" />
+    <variation course-control="28" />
+    <variation course-control="29" />
+  </course-control>
+  <course-control id="10" control="10">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="11" />
+  <course-control id="12" control="24">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="13" control="21">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="14" control="22">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="15" control="12">
+    <next course-control="16" />
+  </course-control>
+  <course-control id="16" control="13">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="17" control="14">
+    <next course-control="18" />
+  </course-control>
+  <course-control id="18" control="15">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="19" control="16">
+    <next course-control="21" />
+  </course-control>
+  <course-control id="20" control="17">
+    <next course-control="23" />
+  </course-control>
+  <course-control id="21" control="18" variation="fork" variation-end="23">
+    <next course-control="22" />
+    <variation course-control="30" />
+    <variation course-control="21" />
+  </course-control>
+  <course-control id="30" control="18" variation="fork" variation-end="23">
+    <next course-control="20" />
+    <variation course-control="30" />
+    <variation course-control="21" />
+  </course-control>
+  <course-control id="22" control="19">
+    <next course-control="23" />
+  </course-control>
+  <course-control id="23" control="20">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="31" control="1">
+    <next course-control="33" />
+  </course-control>
+  <course-control id="32" control="11" />
+  <course-control id="33" control="12">
+    <next course-control="34" />
+  </course-control>
+  <course-control id="34" control="24">
+    <next course-control="35" />
+  </course-control>
+  <course-control id="35" control="15">
+    <next course-control="36" />
+  </course-control>
+  <course-control id="36" control="25" map-exchange="true">
+    <next course-control="37" />
+  </course-control>
+  <course-control id="37" control="7">
+    <next course-control="38" />
+  </course-control>
+  <course-control id="38" control="21">
+    <next course-control="32" />
+  </course-control>
+  <course-control id="39" control="1">
+    <next course-control="41" />
+  </course-control>
+  <course-control id="40" control="11" />
+  <course-control id="41" control="2" variation="fork" variation-end="42">
+    <next course-control="45" />
+    <variation course-control="41" />
+    <variation course-control="43" />
+  </course-control>
+  <course-control id="42" control="9">
+    <next course-control="40" />
+  </course-control>
+  <course-control id="43" control="2" variation="fork" variation-end="42">
+    <next course-control="47" />
+    <variation course-control="41" />
+    <variation course-control="43" />
+  </course-control>
+  <course-control id="44" control="15">
+    <next course-control="42" />
+  </course-control>
+  <course-control id="45" control="20">
+    <next course-control="46" />
+  </course-control>
+  <course-control id="46" control="7">
+    <next course-control="42" />
+  </course-control>
+  <course-control id="47" control="12">
+    <next course-control="44" />
+  </course-control>
+  <course-control id="48" control="1">
+    <next course-control="52" />
+  </course-control>
+  <course-control id="49" control="2" variation="fork" variation-end="55">
+    <next course-control="50" />
+    <variation course-control="52" />
+    <variation course-control="49" />
+  </course-control>
+  <course-control id="50" control="12">
+    <next course-control="51" />
+  </course-control>
+  <course-control id="51" control="15">
+    <next course-control="55" />
+  </course-control>
+  <course-control id="52" control="2" variation="fork" variation-end="55">
+    <next course-control="53" />
+    <variation course-control="52" />
+    <variation course-control="49" />
+  </course-control>
+  <course-control id="53" control="20">
+    <next course-control="54" />
+  </course-control>
+  <course-control id="54" control="7">
+    <next course-control="55" />
+  </course-control>
+  <course-control id="55" control="9" variation="fork" variation-end="57">
+    <next course-control="60" />
+    <variation course-control="55" />
+    <variation course-control="58" />
+    <variation course-control="59" />
+  </course-control>
+  <course-control id="56" control="11" />
+  <course-control id="57" control="10">
+    <next course-control="56" />
+  </course-control>
+  <course-control id="58" control="9" variation="fork" variation-end="57">
+    <next course-control="57" />
+    <variation course-control="55" />
+    <variation course-control="58" />
+    <variation course-control="59" />
+  </course-control>
+  <course-control id="59" control="9" variation="fork" variation-end="57">
+    <next course-control="62" />
+    <variation course-control="55" />
+    <variation course-control="58" />
+    <variation course-control="59" />
+  </course-control>
+  <course-control id="60" control="22">
+    <next course-control="57" />
+  </course-control>
+  <course-control id="62" control="21">
+    <next course-control="57" />
+  </course-control>
+  <course-control id="63" control="1">
+    <next course-control="65" />
+  </course-control>
+  <course-control id="64" control="11" />
+  <course-control id="65" control="2" variation="loop" variation-end="65">
+    <next course-control="64" />
+    <variation course-control="65" />
+    <variation course-control="66" />
+    <variation course-control="67" />
+    <variation course-control="68" />
+  </course-control>
+  <course-control id="66" control="2" variation="loop" variation-end="65">
+    <next course-control="69" />
+    <variation course-control="65" />
+    <variation course-control="66" />
+    <variation course-control="67" />
+    <variation course-control="68" />
+  </course-control>
+  <course-control id="67" control="2" variation="loop" variation-end="65">
+    <next course-control="72" />
+    <variation course-control="65" />
+    <variation course-control="66" />
+    <variation course-control="67" />
+    <variation course-control="68" />
+  </course-control>
+  <course-control id="68" control="2" variation="loop" variation-end="65">
+    <next course-control="74" />
+    <variation course-control="65" />
+    <variation course-control="66" />
+    <variation course-control="67" />
+    <variation course-control="68" />
+  </course-control>
+  <course-control id="69" control="18">
+    <next course-control="70" />
+  </course-control>
+  <course-control id="70" control="4">
+    <next course-control="71" />
+  </course-control>
+  <course-control id="71" control="3">
+    <next course-control="65" />
+  </course-control>
+  <course-control id="72" control="12">
+    <next course-control="73" />
+  </course-control>
+  <course-control id="73" control="3">
+    <next course-control="65" />
+  </course-control>
+  <course-control id="74" control="24">
+    <next course-control="75" />
+  </course-control>
+  <course-control id="75" control="15">
+    <next course-control="76" />
+  </course-control>
+  <course-control id="76" control="14">
+    <next course-control="65" />
+  </course-control>
+</course-scribe-event>

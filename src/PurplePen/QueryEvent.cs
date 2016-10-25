@@ -185,16 +185,15 @@ namespace PurplePen
 
                     if (!courseCtl.loop) {
                         nextCourseControlId = courseCtl.splitEnd;
-                        courseCtl = eventDB.GetCourseControl(nextCourseControlId);
+                    }
+                    else {
+                        nextCourseControlId = courseCtl.nextCourseControl;
                     }
                 }
-
-                if (nextCourseControlId.IsNone || nextCourseControlId == join)
-                    break;
-
-                result.Add(new CourseControlAndSplitStart(nextCourseControlId, splitStart));
-
-                nextCourseControlId = courseCtl.nextCourseControl;
+                else {
+                    result.Add(new CourseControlAndSplitStart(nextCourseControlId, splitStart));
+                    nextCourseControlId = courseCtl.nextCourseControl;
+                }
             }
 
             return result;

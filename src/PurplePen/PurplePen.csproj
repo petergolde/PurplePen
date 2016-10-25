@@ -564,6 +564,7 @@
     <Compile Include="QueryEvent.cs" />
     <Compile Include="RectanglePrinting.cs" />
     <Compile Include="RectangleSelectMode.cs" />
+    <Compile Include="RelayVariations.cs" />
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>

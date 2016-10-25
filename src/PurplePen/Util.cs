@@ -660,6 +660,14 @@ namespace PurplePen
             return GetTextEffects((fontStyle & FontStyle.Bold) != 0, (fontStyle & FontStyle.Italic) != 0);
         }
 
+        public static long Factorial(int n)
+        {
+            long result = 1;
+            for (int i = 2; i <= n; ++i) {
+                result *= i;
+            }
+            return result;
+        }
     }
 
 }
