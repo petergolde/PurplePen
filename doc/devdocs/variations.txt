@@ -1,9 +1,5 @@
 Big things to do before first beta:
 
-- remove a course control that starts a fork/loop -- prompt user whether to remove the fork/loop and all controls on it.
-
-- UI to delete loop/fork. All loops/forks, or just this one.
-
 - Add report for calculating teams assignment to variations.
 
 - XML export for variations

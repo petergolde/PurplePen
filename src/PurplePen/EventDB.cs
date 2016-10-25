@@ -631,6 +631,36 @@ namespace PurplePen
         }
     }   
 
+
+    public class VariationNamingOptions: ICloneable
+    {
+        public enum NamingKind { VariationCode, NameWithNumber, TeamAndRunner}
+        public NamingKind kind = NamingKind.VariationCode;
+        public string text = "*";
+        public bool includeCourseName = true;  // Prefix with course name.
+
+        public object Clone()
+        {
+            return base.MemberwiseClone();
+        }
+
+        public override bool Equals(object obj)
+        {
+            VariationNamingOptions other = obj as VariationNamingOptions;
+            if (obj == null)
+                return false;
+
+            if (kind != other.kind)
+                return false;
+            if (kind != NamingKind.VariationCode && text != other.text)
+                return false;
+            if (includeCourseName != other.includeCourseName)
+                return false;
+
+            return true;
+        }
+    }
+
     // Description a main course (not a particular variation, map part, or all controls--
     // those exist only in a particular view).
     public class Course : StorableObject
@@ -650,12 +680,14 @@ namespace PurplePen
         public PrintArea printArea;  // print area, or empty if no defined print area.
         public Dictionary<int, PrintArea> partPrintAreas; // print area of parts.
         public Dictionary<int, PartOptions> partOptions;  // options of parts.
+        public VariationNamingOptions variationNaming;  // options for variation course name
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
         {
             this.partPrintAreas = new Dictionary<int, PrintArea>();
             this.partOptions = new Dictionary<int, PartOptions>();
+            this.variationNaming = new VariationNamingOptions();
         }
 
         public Course(CourseKind kind, string name, float printScale, int sortOrder): this()
@@ -748,6 +780,7 @@ namespace PurplePen
             n.partOptions = Util.CloneDictionary(n.partOptions);
             if (n.printArea != null)
                 n.printArea = (PrintArea) n.printArea.Clone();
+            n.variationNaming = (VariationNamingOptions)n.variationNaming.Clone();
 
             return n;
         }
@@ -798,6 +831,8 @@ namespace PurplePen
             }
             if (other.partOptions.Count != this.partOptions.Count)
                 return false;
+            if (!other.variationNaming.Equals(this.variationNaming))
+                return false;
             foreach (KeyValuePair<int, PartOptions> kvp in this.partOptions) {
                 PartOptions partOptions;
                 if (!other.partOptions.TryGetValue(kvp.Key, out partOptions) || ! partOptions.Equals(kvp.Value))
@@ -825,9 +860,10 @@ namespace PurplePen
             firstControlOrdinal = 1;
             labelKind = (kind == CourseKind.Score) ? ControlLabelKind.Code : ControlLabelKind.Sequence;
             scoreColumn = (kind == CourseKind.Score) ? 0 : -1;
+            variationNaming = new VariationNamingOptions();
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options")) {
+            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "variation-naming")) {
                 switch (xmlinput.Name) {
                     case "name":
                         name = xmlinput.GetContentString();
@@ -893,6 +929,19 @@ namespace PurplePen
                             case "code-and-score":          labelKind = ControlLabelKind.CodeAndScore; break;
                             default:                        labelKind = ControlLabelKind.Sequence; break;
                         }
+                        xmlinput.Skip();
+                        break;
+
+                    case "variation-naming":
+                        string variationKindText = xmlinput.GetAttributeString("kind");
+                        if (variationKindText == "letters")
+                            variationNaming.kind = VariationNamingOptions.NamingKind.VariationCode; 
+                        else if (variationKindText == "numbered")
+                            variationNaming.kind = VariationNamingOptions.NamingKind.NameWithNumber;
+                        else if (variationKindText == "team")
+                            variationNaming.kind = VariationNamingOptions.NamingKind.TeamAndRunner;
+                        variationNaming.text = xmlinput.GetAttributeString("text", "*");
+                        variationNaming.includeCourseName = xmlinput.GetAttributeBool("include-course-name", false);
                         xmlinput.Skip();
                         break;
                 }
@@ -978,6 +1027,17 @@ namespace PurplePen
 
             EventDBUtil.WriteDescriptionKindAttribute(xmloutput, descKind);
 
+            xmloutput.WriteEndElement();
+
+            xmloutput.WriteStartElement("variation-naming");
+            switch (variationNaming.kind) {
+                case VariationNamingOptions.NamingKind.VariationCode:  xmloutput.WriteAttributeString("kind", "letters"); break;
+                case VariationNamingOptions.NamingKind.NameWithNumber: xmloutput.WriteAttributeString("kind", "numbered"); break;
+                case VariationNamingOptions.NamingKind.TeamAndRunner:  xmloutput.WriteAttributeString("kind", "team"); break;
+            }
+            if (variationNaming.kind != VariationNamingOptions.NamingKind.VariationCode)
+                xmloutput.WriteAttributeString("text", variationNaming.text);
+            xmloutput.WriteAttributeString("include-course-name", XmlConvert.ToString(variationNaming.includeCourseName));
             xmloutput.WriteEndElement();
 
             foreach (KeyValuePair<int, PartOptions> kvp in partOptions) {

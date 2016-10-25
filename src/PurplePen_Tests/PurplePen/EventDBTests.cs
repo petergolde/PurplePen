@@ -184,6 +184,7 @@ namespace PurplePen.Tests
             course3.labelKind = ControlLabelKind.SequenceAndCode;
             course3.descKind = DescriptionKind.Text;
             course3.partPrintAreas[1] = new PrintArea(true, true, new RectangleF(-10, -20, 90, 80), 0.9F);
+            course3.variationNaming = new VariationNamingOptions() { kind = VariationNamingOptions.NamingKind.VariationCode, text = "X *", includeCourseName = true };
             course3.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course3);
 
@@ -198,6 +199,7 @@ namespace PurplePen.Tests
             course4.descKind = DescriptionKind.SymbolsAndText;
             course4.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80));
             course4.partOptions[1] = new PartOptions() { ShowFinish = false };
+            course4.variationNaming = new VariationNamingOptions() { kind = VariationNamingOptions.NamingKind.NameWithNumber, text = "Map *", includeCourseName = false };
             course4.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course4);
 
@@ -210,6 +212,7 @@ namespace PurplePen.Tests
             course5.labelKind = ControlLabelKind.CodeAndScore;
             course5.descKind = DescriptionKind.Symbols;
             course5.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80), 1.25F);
+            course5.variationNaming = new VariationNamingOptions() { kind = VariationNamingOptions.NamingKind.TeamAndRunner, text = "Team *", includeCourseName = false };
             course5.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course5);
 
