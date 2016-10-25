@@ -465,8 +465,8 @@ namespace PurplePen
 
             // Check that variation still exists.
             if (activeCourseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, activeCourseDesignator.CourseId)) {
-                Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, activeCourseDesignator.CourseId);
-                if (!variations.Values.Contains(activeCourseDesignator.VariationPath))
+                IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, activeCourseDesignator.CourseId);
+                if (!variations.Any(v => v.VariationPath.Equals(activeCourseDesignator.VariationPath)))
                     activeCourseDesignator = activeCourseDesignator.WithAllVariations();
             }
 
@@ -619,7 +619,7 @@ namespace PurplePen
             else {
                 // Place the active course in the layout.
                 activeTopologyCourseLayout = new CourseLayout();
-                activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.4F, false);
+                activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.55F, false);
                 activeTopologyCourseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
                 TopologyFormatter formatter = new TopologyFormatter();
                 formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeCourseView, activeTopologyCourseLayout, CourseLayer.AllVariations, CourseLayer.MainCourse);

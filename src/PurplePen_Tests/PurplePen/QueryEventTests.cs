@@ -1843,11 +1843,8 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\variations.ppen");
 
-            var result = QueryEvent.GetAllVariations(eventDB, new Id<Course>(1));
-            List<string> pathStrings = (from pair in result orderby pair.Key select pair.Key).ToList();
-            foreach (string s in pathStrings) {
-                Console.WriteLine(s);
-            }
+            IEnumerable<VariationInfo> result = QueryEvent.GetAllVariations(eventDB, new Id<Course>(1));
+            List<string> pathStrings = (from v in result orderby v.VariationCodeString select v.VariationCodeString).ToList();
 
             CollectionAssert.AreEquivalent(pathStrings, new[] {
                 "ACDEFH",

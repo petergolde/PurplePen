@@ -492,7 +492,8 @@ namespace PurplePen
         private List<CourseView> AllCourseVariations(Id<Course> courseId)
         {
             List<CourseView> result = new List<PurplePen.CourseView>();
-            foreach (VariationPath variationPath in QueryEvent.GetAllVariations(eventDB, courseId).Values) {
+            foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, courseId)) {
+                VariationPath variationPath = variationInfo.VariationPath;
                 CourseView viewVariation = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId, variationPath), false, false);
                 result.Add(viewVariation);
             }

@@ -1327,9 +1327,32 @@ namespace PurplePen
             return GetVariationString(eventDB, courseDesignator, variationMapper);
         }
 
-        // Get all the possible variations for a given course, based on the loops/forks. Returns a dictionary of key/value pairs, 
-        // where the key is the string version of the variation, and the value is the corresponding VariationPath object.
-        public static Dictionary<string, VariationPath> GetAllVariations(EventDB eventDB, Id<Course> courseId)
+        private static void CompleteVariationInfo(VariationInfo variationInfo, string courseName, 
+                                                  VariationNamingOptions namingOptions, int ordinal)
+        {
+            switch (namingOptions.kind) {
+                case VariationNamingOptions.NamingKind.VariationCode:
+                case VariationNamingOptions.NamingKind.TeamAndRunner:
+                    variationInfo.PartialName = variationInfo.VariationCodeString; break;
+                case VariationNamingOptions.NamingKind.NameWithNumber:
+                    if (string.IsNullOrEmpty(namingOptions.text))
+                        variationInfo.PartialName = ordinal.ToString();
+                    else if (namingOptions.text.Contains("*"))
+                        variationInfo.PartialName = namingOptions.text.Replace("*", ordinal.ToString());
+                    else
+                        variationInfo.PartialName = namingOptions.text + " " + ordinal.ToString();
+                    break;
+            }
+
+            if (namingOptions.includeCourseName)
+                variationInfo.FullName = courseName + " " + variationInfo.PartialName;
+            else
+                variationInfo.FullName = variationInfo.PartialName;
+        }
+
+        // Get all the possible variations for a given course, based on the loops/forks. Returns a list of VariationInfo, 
+        // giving the code string, VariationPath, and name.
+        public static IEnumerable<VariationInfo> GetAllVariations(EventDB eventDB, Id<Course> courseId)
         {
             HashSet<Id<CourseControl>> alreadyVisited = new HashSet<PurplePen.Id<PurplePen.CourseControl>>();
 
@@ -1337,7 +1360,7 @@ namespace PurplePen
             Dictionary<Id<CourseControl>, char> variationMapper = GetVariantCodeMapping(eventDB, courseDesignator);
             List<List<Id<CourseControl>>> variations = GetVariations(eventDB, courseDesignator, eventDB.GetCourse(courseId).firstCourseControl, alreadyVisited);
 
-            Dictionary<string, VariationPath> result = new Dictionary<string, VariationPath>();
+            List<VariationInfo> result = new List<VariationInfo>();
 
             // Check for no variations.
             if (variations.Count == 1 && variations[0].Count == 0)
@@ -1346,7 +1369,15 @@ namespace PurplePen
             foreach (var choices in variations) {
                 string variationString = GetVariationString(eventDB, choices, variationMapper);
                 VariationPath variationPath = new VariationPath(choices);
-                result.Add(variationString, variationPath);
+                result.Add(new VariationInfo() { VariationCodeString = variationString, VariationPath = variationPath });
+            }
+            result.Sort((vi1, vi2) => string.Compare(vi1.VariationCodeString, vi2.VariationCodeString, StringComparison.OrdinalIgnoreCase));
+
+            string courseName = eventDB.GetCourse(courseId).name;
+            VariationNamingOptions variationNamingOptions = eventDB.GetCourse(courseId).variationNaming;
+
+            for (int i = 0; i < result.Count; ++i) {
+                CompleteVariationInfo(result[i], courseName, variationNamingOptions, i + 1);
             }
 
             return result;
@@ -1429,5 +1460,37 @@ namespace PurplePen
             return true;
         }
     }
+
+    public class VariationInfo
+    {
+        public string VariationCodeString;
+        public VariationPath VariationPath;
+        public string PartialName;
+        public string FullName;  // Includes course name, if selection in variation naming options.
+
+        public override bool Equals(object obj)
+        {
+            VariationInfo other = obj as VariationInfo;
+            if (other == null)
+                return false;
+
+            if (other.VariationCodeString != VariationCodeString)
+                return false;
+            if (!other.VariationPath.Equals(VariationPath))
+                return false;
+            if (other.PartialName != PartialName)
+                return false;
+            if (other.FullName != FullName)
+                return false;
+
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            return VariationCodeString.GetHashCode() + PartialName.GetHashCode() * 7 + FullName.GetHashCode() * 29;
+        }
+    }
+
 
 }

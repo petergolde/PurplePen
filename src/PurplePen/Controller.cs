@@ -807,16 +807,16 @@ namespace PurplePen
             }
         }
 
-        readonly VariationDescriber allVariations = new VariationDescriber(MiscText.AllVariations, "", null);
+        readonly VariationDescriber allVariations = new VariationDescriber(new VariationInfo() { VariationCodeString = "", VariationPath = null, PartialName = MiscText.AllVariations, FullName = MiscText.AllVariations });
 
         // Get objects representing the variations, where ToString() is used to show variation text.
         public object[] GetVariations()
         {
             Debug.Assert(HasVariations);
 
-            Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+            IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
 
-            return (new[] { allVariations }).Concat(from v in variations orderby v.Key select new VariationDescriber(null, v.Key, v.Value)).ToArray();
+            return (new[] { allVariations }).Concat(from v in variations orderby v.VariationCodeString select new VariationDescriber(v)).ToArray();
         }
 
         public object CurrentVariation
@@ -829,8 +829,8 @@ namespace PurplePen
                 if (currentVariationPath == null)
                     return allVariations;
 
-                Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
-                return (from v in variations where object.Equals(v.Value, currentVariationPath) select new VariationDescriber(null, v.Key, v.Value)).First();
+                IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+                return (from v in variations where object.Equals(v.VariationPath, currentVariationPath) select new VariationDescriber(v)).First();
             }
             
             set
@@ -838,7 +838,7 @@ namespace PurplePen
                 Debug.Assert(HasVariations);
 
                 VariationDescriber newVariationDescriber = (VariationDescriber)value;
-                VariationPath newVariationPath = newVariationDescriber.variationPath;
+                VariationPath newVariationPath = newVariationDescriber.VariationInfo.VariationPath;
 
                 CourseDesignator currentDesignator = selectionMgr.Selection.ActiveCourseDesignator;
                 Id<Course> currentCourseId = currentDesignator.CourseId;
@@ -870,8 +870,8 @@ namespace PurplePen
             if (courseDesignator.VariationPath != null)
                 return courseDesignator;
 
-            Dictionary<string, VariationPath> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
-            VariationPath firstVariationPart = (from v in variations orderby v.Key select v.Value).First();
+            IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
+            VariationPath firstVariationPart = (from v in variations orderby v.VariationCodeString select v.VariationPath).First();
 
             int oldPart = courseDesignator.Part;
             courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationPart);
@@ -3532,35 +3532,24 @@ namespace PurplePen
         // just treats these as objects with ToString().
         class VariationDescriber: IComparable<VariationDescriber>
         {
-            internal readonly string name; // Name to display in UI.
-            internal readonly string variationString; // The variation string.
-            internal readonly VariationPath variationPath; // The variation path.
+            public readonly VariationInfo VariationInfo;
 
-            public VariationDescriber(string name, string variationString, VariationPath variationPath)
+            public VariationDescriber(VariationInfo variationInfo)
             {
-                this.name = name;
-                this.variationString = variationString;
-                this.variationPath = variationPath;
+                this.VariationInfo = variationInfo;
             }
 
             public override string ToString()
             {
-                if (name != null)
-                    return name;
+                if (VariationInfo.VariationCodeString != "" && VariationInfo.PartialName != VariationInfo.VariationCodeString)
+                    return VariationInfo.PartialName + "(" + VariationInfo.VariationCodeString + ")";
                 else
-                    return variationString;
+                    return VariationInfo.PartialName;
             }
 
             public int CompareTo(VariationDescriber other)
             {
-                if (this.name == null && other.name != null)
-                    return 1;
-                else if (this.name != null && other.name == null)
-                    return -1;
-                else if (this.name != null && other.name != null)
-                    return string.Compare(this.name, other.name, StringComparison.CurrentCultureIgnoreCase);
-                else
-                    return string.Compare(this.variationString, other.variationString, StringComparison.InvariantCulture);
+                return this.ToString().CompareTo(other.ToString());
             }
 
             public override bool Equals(object obj)
@@ -3569,14 +3558,12 @@ namespace PurplePen
                 if (other == null)
                     return false;
 
-                return (object.Equals(name, other.name) &&
-                        object.Equals(variationString, other.variationString) &&
-                        object.Equals(variationPath, other.variationPath));
+                return (object.Equals(VariationInfo, other.VariationInfo));
             }
 
             public override int GetHashCode()
             {
-                return ((name == null) ? name.GetHashCode() : 542) + variationString.GetHashCode();
+                return VariationInfo.GetHashCode();
             }
         }
 

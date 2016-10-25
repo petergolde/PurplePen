@@ -1184,17 +1184,23 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(9)));
-            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(28)));
-            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(13)));
-            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(29)));
-            Assert.IsFalse(eventDB.IsCourseControlPresent(CourseControlId(14)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(28)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(13)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(29)));
+            Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(14)));
             Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(12)));
 
             cc = eventDB.GetCourseControl(CourseControlId(8));
-            Assert.AreEqual(10, cc.nextCourseControl.id);
+            Assert.AreEqual(28, cc.nextCourseControl.id);
             Assert.IsFalse(cc.split);
             Assert.IsNull(cc.splitCourseControls);
             Assert.IsTrue(cc.splitEnd.IsNone);
+
+            cc = eventDB.GetCourseControl(CourseControlId(28));
+            Assert.AreEqual(13, cc.nextCourseControl.id);
+            Assert.IsTrue(cc.split);
+            Assert.AreEqual(2, cc.splitCourseControls.Length);
+            Assert.AreEqual(10, cc.splitEnd.id);
 
             undomgr.Undo();
             eventDB.Validate();
