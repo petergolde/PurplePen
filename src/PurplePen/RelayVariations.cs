@@ -11,7 +11,7 @@ namespace PurplePen
         Id<Course> courseId;
         int numberTeams, numberLegs;
 
-        int randSeed;
+        Random random;
 
         Dictionary<Id<CourseControl>, char> variationMapping;
 
@@ -54,7 +54,7 @@ namespace PurplePen
             // We want the randomness to be determistic.
             results = new List<string[]>(numberTeams);
             branchWarnings = new List<BranchWarning>();
-            randSeed = 981553472;
+            random = new Random(8713527);
 
             // Find all the forks.
             FindForks();
@@ -62,50 +62,119 @@ namespace PurplePen
             // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
             totalPossiblePaths = ScanFork(firstForkInCourse, numberTeams, 1);
 
-            //for (int i = 0; i < numberTeams; ++i)
-            //    GenerateTeam();
-        }
-
-        int Rand()
-        {
-            randSeed = (randSeed * 1103515245 + 12345) & 0x7fffffff;
-            return randSeed;
-        }
-
-        int Rand(int max)
-        {
-            return Rand() % max;
-        }
-
-        // Represents a fork or loop.
-        class Fork {
-            public string controlCode; // control code at loop start.
-            public bool loop;        // Is it a loop?
-            public int numLegsHere;  // number of legs that reach the start of this fork.
-            public int numBranches;  // number of branches/loops in this fork.
-            public char[] codes;     // codes for the branches.
-
-            public Fork next;        // next fork (after join point)
-            public Fork[] subForks;  // first fork along each fork point.
-        }
-
-        public class BranchWarning
-        {
-            public readonly string ControlCode;
-            public readonly int numMore;
-            public readonly char[] codeMore;
-            public readonly int numLess;
-            public readonly char[] codeLess;
-
-            public BranchWarning(string controlCode, int numMore, IEnumerable<char> codeMore, int numLess, IEnumerable<char> codeLess)
-            {
-                ControlCode = controlCode;
-                this.numMore = numMore;
-                this.codeMore = codeMore.ToArray();
-                this.numLess = numLess;
-                this.codeLess = codeLess.ToArray();
+            for (int i = 0; i < numberTeams; ++i) {
+                results.Add(GenerateTeam());
             }
         }
+
+
+        class LegAssignment
+        {
+            public List<int[]> branchForLeg = new List<int[]>();  // branchForLeg[leg] = branch index 0..numBranches-1
+        }
+
+        private string[] GenerateTeam()
+        {
+            LegAssignment[] teamAssignment = new LegAssignment[allForks.Count];
+            for (int i = 0; i < teamAssignment.Length; ++i)
+                teamAssignment[i] = new LegAssignment();
+
+            for (int leg = 0; leg < numberLegs; ++leg) {
+                AddLegToTeamAssignment(leg, teamAssignment);
+            }
+
+            List<string> legs = new List<string>();
+            for (int leg = 0; leg < numberLegs; ++leg) {
+                legs.Add(ConvertTeamAssignmentToString(teamAssignment, leg));
+            }
+
+            return legs.ToArray();
+        }
+
+        private string ConvertTeamAssignmentToString(LegAssignment[] teamAssignment, int leg)
+        {
+            // Go throught the forks and add to string.
+            StringBuilder builder = new StringBuilder();
+            AddForkToStringBuilder(firstForkInCourse, builder, teamAssignment, leg);
+            return builder.ToString();
+        }
+
+        private void AddForkToStringBuilder(Fork fork, StringBuilder builder, LegAssignment[] teamAssignment, int leg)
+        {
+            if (fork == null)
+                return;
+
+            int forkIndex = allForks.IndexOf(fork);
+            int[] selectedBranch = teamAssignment[forkIndex].branchForLeg[leg];
+            for (int i = 0; i < selectedBranch.Length; ++i) {
+                builder.Append(fork.codes[selectedBranch[i]]);
+                AddForkToStringBuilder(fork.subForks[selectedBranch[i]], builder, teamAssignment, leg);
+            }
+
+            AddForkToStringBuilder(fork.next, builder, teamAssignment, leg);
+        }
+
+        private void AddLegToTeamAssignment(int leg, LegAssignment[] teamAssignment)
+        {
+            for (int count = 0; ; ++count) {
+                for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
+                    AddForkToTeamAssignment(forkIndex, leg, teamAssignment);
+                }
+
+                if (ValidateForkAssignment(leg, teamAssignment) || count >= 10000)
+                    return;
+                else {
+                    for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
+                        RemoveForkFromTeamAssignment(forkIndex, leg, teamAssignment);
+                    }
+                }
+            }
+        }
+
+        private void AddForkToTeamAssignment(int forkIndex, int leg, LegAssignment[] teamAssignment)
+        {
+            Fork fork = allForks[forkIndex];
+
+            if (fork.loop) {
+                // TODO.
+                throw new NotImplementedException();
+            }
+            else {
+                // Get the branches remaining to be used for this team.
+                List<int> possibleBranches = GetPossibleBranches(fork);
+                for (int i = 0; i < leg; ++i)
+                    possibleBranches.Remove(teamAssignment[forkIndex].branchForLeg[i][0]);
+
+                // Pick a random one.
+                int selectedBranch = possibleBranches[random.Next(possibleBranches.Count)];
+
+                // Store it.
+                teamAssignment[forkIndex].branchForLeg.Add(new int[1] { selectedBranch });
+            }
+        }
+
+        private void RemoveForkFromTeamAssignment(int forkIndex, int leg, LegAssignment[] teamAssignment)
+        {
+            teamAssignment[forkIndex].branchForLeg.RemoveAt(teamAssignment[forkIndex].branchForLeg.Count - 1);
+        }
+
+        private bool ValidateForkAssignment(int leg, LegAssignment[] teamAssignment)
+        {
+            // UNDONE.
+            return true;
+        }
+
+        List<int> GetPossibleBranches(Fork fork)
+        {
+            List<int> result = new List<int>();
+            int branch = 0;
+            for (int i = 0; i < numberLegs; ++i) {
+                result.Add(branch);
+                branch = (branch + 1) % fork.numBranches;
+            }
+            return result;
+        }
+
 
         void FindForks()
         {
@@ -215,5 +284,60 @@ namespace PurplePen
 
             return firstFork;
         }
+
+        T[] RandomShuffle<T>(IEnumerable<T> collection)
+        {
+            // We have to copy all items anyway, and there isn't a way to produce the items
+            // on the fly that is linear. So copying to an array and shuffling it is an efficient as we can get.
+            T[] array = collection.ToArray();
+
+            int count = array.Length;
+            for (int i = count - 1; i >= 1; --i) {
+                // Pick an random number 0 through i inclusive.
+                int j = random.Next(i + 1);
+
+                // Swap array[i] and array[j]
+                T temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+
+            return array;
+        }
+
+
+        // Represents a fork or loop.
+        class Fork
+        {
+            public string controlCode; // control code at loop start.
+            public bool loop;        // Is it a loop?
+            public int numLegsHere;  // number of legs that reach the start of this fork.
+            public int numBranches;  // number of branches/loops in this fork.
+            public char[] codes;     // codes for the branches.
+
+            public Fork next;        // next fork (after join point)
+            public Fork[] subForks;  // first fork along each fork point.
+        }
+
+        // Represents a warning about a uneven branch.
+        public class BranchWarning
+        {
+            public readonly string ControlCode;
+            public readonly int numMore;
+            public readonly char[] codeMore;
+            public readonly int numLess;
+            public readonly char[] codeLess;
+
+            public BranchWarning(string controlCode, int numMore, IEnumerable<char> codeMore, int numLess, IEnumerable<char> codeLess)
+            {
+                ControlCode = controlCode;
+                this.numMore = numMore;
+                this.codeMore = codeMore.ToArray();
+                this.numLess = numLess;
+                this.codeLess = codeLess.ToArray();
+            }
+        }
+
+
     }
 }

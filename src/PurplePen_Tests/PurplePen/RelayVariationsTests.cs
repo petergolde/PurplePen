@@ -30,6 +30,19 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
         }
 
+        void DumpAssignment(List<string[]> relayAssignment)
+        {
+            foreach (string[] team in relayAssignment) {
+                Console.Write("{");
+                for (int i = 0; i < team.Length; ++i) {
+                    if (i != 0)
+                        Console.Write(", ");
+                    Console.Write("\"{0}\"", team[i]);
+                }
+                Console.WriteLine("},");
+            }
+        }
+
         [TestMethod]
         public void PossiblePaths()
         {
@@ -46,6 +59,16 @@ namespace PurplePen.Tests
 
             relays = new RelayVariations(eventDB, CourseId(1), 1, 6);
             Assert.AreEqual(37, relays.GetTotalPossiblePaths());
+        }
+
+        [TestMethod]
+        public void GenerateAssignment1()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            var relays = new RelayVariations(eventDB, CourseId(3), 20, 6);
+            var teamAssignment = relays.GetLegAssignments();
+            DumpAssignment(teamAssignment);
         }
     }
 }
