@@ -30,17 +30,28 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
         }
 
-        void DumpAssignment(List<string[]> relayAssignment)
+        void DumpAssignment(RelayVariations relayAssignment, string fileName)
         {
-            foreach (string[] team in relayAssignment) {
-                Console.Write("{");
-                for (int i = 0; i < team.Length; ++i) {
-                    if (i != 0)
-                        Console.Write(", ");
-                    Console.Write("\"{0}\"", team[i]);
+            using (TextWriter writer = new StreamWriter(fileName)) {
+                for (int team = 1; team <= relayAssignment.NumberOfTeams; ++team) {
+                    writer.Write("Team {0,3}: \t", team);
+                    for (int leg = 1; leg <= relayAssignment.NumberOfLegs; ++leg) {
+                        if (leg != 0)
+                            writer.Write("\t");
+                        writer.Write("{0}", relayAssignment.GetVariation(team, leg).VariationCodeString);
+                    }
+                    writer.WriteLine();
                 }
-                Console.WriteLine("},");
             }
+        }
+
+        void ValidateRelayVariationsTest(RelayVariations relayAsignment, string baselineName)
+        {
+            string baselineFileName = TestUtil.GetTestFile(baselineName + ".txt");
+            string tempFileName = TestUtil.GetTestFile(baselineName + "_temp.txt");
+            DumpAssignment(relayAsignment, tempFileName);
+            TestUtil.CompareTextFileBaseline(tempFileName, baselineFileName);
+            File.Delete(tempFileName);
         }
 
         [TestMethod]
@@ -66,9 +77,8 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var relays = new RelayVariations(eventDB, CourseId(3), 20, 6);
-            var teamAssignment = relays.GetLegAssignments();
-            DumpAssignment(teamAssignment);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(3), 64, 6);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\twowayfork");
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -14,11 +15,12 @@ namespace PurplePen
         Random random;
 
         Dictionary<Id<CourseControl>, char> variationMapping;
+        Dictionary<string, VariationInfo> variationInfos;
 
         // Forks in both list and topology form.
         Fork firstForkInCourse;
         List<Fork> allForks;
-        long totalPossiblePaths;  // Number of ways through the forks.
+        int totalPossiblePaths;  // Number of ways through the forks.
 
         // Each element of the list is a team, with variation strings for each leg.
         List<string[]> results;
@@ -31,20 +33,41 @@ namespace PurplePen
             this.numberTeams = numberTeams;
             this.numberLegs = numberLegs;
 
+            variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.VariationCodeString);
+
             Generate();
         }
 
-        public List<string[]> GetLegAssignments()
+        // Get the variation to use for a particular team and leg.
+        public VariationInfo GetVariation(int team, int leg)
         {
-            return results;
+            if (team < 1 || team > numberTeams)
+                throw new ArgumentOutOfRangeException("team", "team numbers are from 1 to number of teams");
+            if (leg < 1 || leg > numberLegs)
+                throw new ArgumentOutOfRangeException("leg", "leg numbers are from 1 to number of legs");
+
+            string variationString = results[team - 1][leg - 1];
+            return variationInfos[variationString];
         }
 
+        public int NumberOfTeams
+        {
+            get { return numberTeams; }
+        }
+
+        public int NumberOfLegs
+        {
+            get { return numberLegs; }
+        }
+
+        // Get any warnings about branches that are used unevenly.
         public IEnumerable<BranchWarning> GetBranchWarnings()
         {
             return branchWarnings;
         }
 
-        public long GetTotalPossiblePaths()
+        // Get the total number of different possible variations.
+        public int GetTotalPossiblePaths()
         {
             return totalPossiblePaths;
         }
@@ -61,6 +84,7 @@ namespace PurplePen
 
             // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
             totalPossiblePaths = ScanFork(firstForkInCourse, numberTeams, 1);
+            Debug.Assert(totalPossiblePaths == variationInfos.Count);
 
             for (int i = 0; i < numberTeams; ++i) {
                 results.Add(GenerateTeam());
@@ -74,6 +98,30 @@ namespace PurplePen
         }
 
         private string[] GenerateTeam()
+        {
+            // Return a potential team that doesn't duplicate previous teams, or failing that,
+            // with the minimum number of duplicates.
+            int minCount = int.MaxValue;
+            string[] minTeam = null;
+
+            for (int i = 0; i < 100; ++i) { 
+                string[] team = GeneratePotentialTeam();
+                int countDups = results.Count(existingTeam => Util.EqualArrays(existingTeam, team));
+                if (countDups == 0) {
+                    Debug.WriteLine("Team {0} formed with 0 dups", results.Count);
+                    return team;
+                }
+                if (countDups < minCount) {
+                    minCount = countDups;
+                    minTeam = team;
+                }
+            }
+
+            Debug.WriteLine("Team {0} formed with {1} dups", results.Count, minCount);
+            return minTeam;
+        }
+
+        private string[] GeneratePotentialTeam()
         {
             LegAssignment[] teamAssignment = new LegAssignment[allForks.Count];
             for (int i = 0; i < teamAssignment.Length; ++i)
@@ -89,6 +137,24 @@ namespace PurplePen
             }
 
             return legs.ToArray();
+        }
+
+        private bool ValidateTeam(string[] team)
+        {
+            for (int teamIndex = 0; teamIndex < results.Count; ++teamIndex) {
+                bool teamEqual = true;
+                
+                for (int leg = 0; leg < team.Length; ++leg) {
+                    if (results[teamIndex][leg] != team[leg])
+                        teamEqual = false;
+                }
+
+                if (teamEqual)
+                    return false;
+            }
+
+            // Different from all other teams.
+            return true;
         }
 
         private string ConvertTeamAssignmentToString(LegAssignment[] teamAssignment, int leg)
@@ -158,10 +224,15 @@ namespace PurplePen
             teamAssignment[forkIndex].branchForLeg.RemoveAt(teamAssignment[forkIndex].branchForLeg.Count - 1);
         }
 
+        // Check to see if the new leg assignment is not a duplicate of previous ones (or the minimum
+        // number of duplicates.)
         private bool ValidateForkAssignment(int leg, LegAssignment[] teamAssignment)
         {
-            // UNDONE.
-            return true;
+            int allowedDuplicates = (int)((long)results.Count / totalPossiblePaths);
+            string variationCode = ConvertTeamAssignmentToString(teamAssignment, leg);
+            int duplicates = results.Count(team => (team[leg] == variationCode));
+
+            return (duplicates <= allowedDuplicates);
         }
 
         List<int> GetPossibleBranches(Fork fork)
@@ -174,7 +245,6 @@ namespace PurplePen
             }
             return result;
         }
-
 
         void FindForks()
         {
@@ -189,7 +259,7 @@ namespace PurplePen
 
         // Scan forks starting at this fork, updating number of legs and generate warning as needed.
         // Return number of paths through.
-        private long ScanFork(Fork startFork, int numLegsOnThisFork, long totalPathsToThisPoint)
+        private int ScanFork(Fork startFork, int numLegsOnThisFork, int totalPathsToThisPoint)
         {
             if (startFork == null)
                 return totalPathsToThisPoint;
@@ -197,13 +267,13 @@ namespace PurplePen
             startFork.numLegsHere = numLegsOnThisFork;
 
             if (startFork.loop) {
-                long waysThroughLoops = totalPathsToThisPoint;
+                int waysThroughLoops = totalPathsToThisPoint;
 
                 for (int i = 0; i < startFork.numBranches; ++i) {
                     waysThroughLoops *= ScanFork(startFork.subForks[i], numLegsOnThisFork, 1);
                 }
 
-                waysThroughLoops *= Util.Factorial(startFork.numBranches);
+                waysThroughLoops *= (int) Util.Factorial(startFork.numBranches);
 
                 return ScanFork(startFork.next, numLegsOnThisFork, waysThroughLoops);
             }
@@ -218,7 +288,7 @@ namespace PurplePen
                                                                                 legsPerBranch, startFork.codes.Skip(branchesMore)));
                 }
 
-                long waysThroughBranches = 0;
+                int waysThroughBranches = 0;
 
                 for (int i = 0; i < startFork.numBranches; ++i) {
                     int legsThisBranch = legsPerBranch;
