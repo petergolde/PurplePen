@@ -46,7 +46,7 @@ namespace PurplePen
             if (leg < 1 || leg > numberLegs)
                 throw new ArgumentOutOfRangeException("leg", "leg numbers are from 1 to number of legs");
 
-            string variationString = this.ConvertTeamAssignmentToString(results[team - 1], leg - 1);
+            string variationString = results[team - 1].GetVariationStringForLeg(leg - 1);
             return variationInfos[variationString];
         }
 
@@ -127,99 +127,18 @@ namespace PurplePen
             return teamAssignment;
         }
 
-        class TeamAssignment
-        {
-            RelayVariations outer;
-            public LegAssignment[] legAssignForFork;
-
-            public TeamAssignment(RelayVariations relayVariations)
-            {
-                outer = relayVariations;
-
-                legAssignForFork = new LegAssignment[outer.allForks.Count];
-                for (int i = 0; i < legAssignForFork.Length; ++i) {
-                    legAssignForFork[i] = new LegAssignment();
-                }
-            }
-
-            override public bool Equals(object obj)
-            {
-                TeamAssignment other = obj as TeamAssignment;
-                if (other == null)
-                    return false;
-
-                return Util.ArrayEquals(legAssignForFork, other.legAssignForFork);
-            }
-
-            public bool LegEquals(int leg, TeamAssignment other, int otherLeg)
-            {
-                for (int i = 0; i < legAssignForFork.Length; ++i) {
-                    int[] thisForkLeg = legAssignForFork[i].branchForLeg[leg];
-                    int[] otherForkLeg = other.legAssignForFork[i].branchForLeg[otherLeg];
-                    if (thisForkLeg.Length != otherForkLeg.Length)
-                        return false;
-                    for (int j = 0; j < thisForkLeg.Length; ++j) {
-                        if (thisForkLeg[j] != otherForkLeg[j])
-                            return false;
-                    }
-                }
-
-                return true;
-            }
-        }
-
-        class LegAssignment
-        {
-            public List<int[]> branchForLeg = new List<int[]>();  // branchForLeg[leg] = branch index 0..numBranches-1
-
-            public override bool Equals(object obj)
-            {
-                LegAssignment other = obj as LegAssignment;
-                if (other == null)
-                    return false;
-
-                if (other.branchForLeg.Count != branchForLeg.Count)
-                    return false;
-
-                for (int i = 0; i < branchForLeg.Count; ++i)
-                    if (!Util.ArrayEquals(other.branchForLeg[i], branchForLeg[i]))
-                        return false;
-
-                return true;
-            }
-        }
-
-
-        private string ConvertTeamAssignmentToString(TeamAssignment teamAssignment, int leg)
-        {
-            // Go throught the forks and add to string.
-            StringBuilder builder = new StringBuilder();
-            AddForkToStringBuilder(firstForkInCourse, builder, teamAssignment, leg);
-            return builder.ToString();
-        }
-
-        private void AddForkToStringBuilder(Fork fork, StringBuilder builder, TeamAssignment teamAssignment, int leg)
-        {
-            if (fork == null)
-                return;
-
-            int forkIndex = allForks.IndexOf(fork);
-            int[] selectedBranch = teamAssignment.legAssignForFork[forkIndex].branchForLeg[leg];
-            for (int i = 0; i < selectedBranch.Length; ++i) {
-                builder.Append(fork.codes[selectedBranch[i]]);
-                AddForkToStringBuilder(fork.subForks[selectedBranch[i]], builder, teamAssignment, leg);
-            }
-
-            AddForkToStringBuilder(fork.next, builder, teamAssignment, leg);
-        }
 
         private void AddLegToTeamAssignment(int leg, TeamAssignment teamAssignment)
         {
             int minScore = int.MaxValue;
 
             for (int count = 0; ; ++count) {
-                for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
-                    AddForkToTeamAssignment(forkIndex, leg, teamAssignment);
+                AddForkToTeamAssignment(firstForkInCourse, leg, teamAssignment);
+
+                // Add empty branch for forks that are not hit in this leg.
+                foreach (Fork fork in allForks) {
+                    if (teamAssignment.legAssignForFork[fork].branchForLeg.Count == leg)
+                        teamAssignment.legAssignForFork[fork].branchForLeg.Add(new int[0]);
                 }
 
                 int score = ScoreLegAssignment(leg, teamAssignment);
@@ -230,15 +149,16 @@ namespace PurplePen
                     return; // good enough; as good as all previous and more than 50 considered.
                 minScore = Math.Min(minScore, score);
 
-                for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
-                    RemoveForkFromTeamAssignment(forkIndex, leg, teamAssignment);
+                foreach (Fork fork in allForks) {
+                    RemoveForkFromTeamAssignment(fork, leg, teamAssignment);
                 }
             }
         }
 
-        private void AddForkToTeamAssignment(int forkIndex, int leg, TeamAssignment teamAssignment)
+        private void AddForkToTeamAssignment(Fork fork, int leg, TeamAssignment teamAssignment)
         {
-            Fork fork = allForks[forkIndex];
+            if (fork == null)
+                return;
 
             if (fork.loop) {
                 int count = 0;
@@ -246,44 +166,52 @@ namespace PurplePen
                 do {
                     selectedLoop = RandomLoop(fork.numBranches);
                     ++count;
-                } while (count < 200 && !ValidateLoopAssignment(selectedLoop, forkIndex, leg, teamAssignment));
+                } while (count < 200 && !ValidateLoopAssignment(selectedLoop, fork, leg, teamAssignment));
 
-                teamAssignment.legAssignForFork[forkIndex].branchForLeg.Add(selectedLoop);
+                teamAssignment.legAssignForFork[fork].branchForLeg.Add(selectedLoop);
+
+                // All subforks are reached.
+                foreach (Fork subFork in fork.subForks)
+                    AddForkToTeamAssignment(subFork, leg, teamAssignment);
             }
             else {
                 // Get the branches remaining to be used for this team.
                 List<int> possibleBranches = GetPossibleBranches(fork);
-                for (int i = 0; i < leg; ++i)
-                    possibleBranches.Remove(teamAssignment.legAssignForFork[forkIndex].branchForLeg[i][0]);
-
+                for (int i = 0; i < leg; ++i) {
+                    if (teamAssignment.legAssignForFork[fork].branchForLeg[i].Length > 0)
+                        possibleBranches.Remove(teamAssignment.legAssignForFork[fork].branchForLeg[i][0]);
+                }
                 // Pick a random one.
                 int selectedBranch = possibleBranches[random.Next(possibleBranches.Count)];
 
                 // Store it.
-                teamAssignment.legAssignForFork[forkIndex].branchForLeg.Add(new int[1] { selectedBranch });
+                teamAssignment.legAssignForFork[fork].branchForLeg.Add(new int[1] { selectedBranch });
+
+                // Only visit the selected subfork.
+                AddForkToTeamAssignment(fork.subForks[selectedBranch], leg, teamAssignment);
             }
+
+            AddForkToTeamAssignment(fork.next, leg, teamAssignment);
         }
 
-        private void RemoveForkFromTeamAssignment(int forkIndex, int leg, TeamAssignment teamAssignment)
+        private void RemoveForkFromTeamAssignment(Fork fork, int leg, TeamAssignment teamAssignment)
         {
-            teamAssignment.legAssignForFork[forkIndex].branchForLeg.RemoveAt(teamAssignment.legAssignForFork[forkIndex].branchForLeg.Count - 1);
+            teamAssignment.legAssignForFork[fork].branchForLeg.RemoveAt(teamAssignment.legAssignForFork[fork].branchForLeg.Count - 1);
         }
 
-        private bool ValidateLoopAssignment(int[] loop, int forkIndex, int leg, TeamAssignment teamAssignment)
+        private bool ValidateLoopAssignment(int[] loop, Fork fork, int leg, TeamAssignment teamAssignment)
         {
-            Fork fork = allForks[forkIndex];
-
             // Restriction 1: the first loop must be different for first N legs (N is number of loops)
             if (leg < fork.numBranches) {
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
-                    if (teamAssignment.legAssignForFork[forkIndex].branchForLeg[otherLeg][0] == loop[0])
+                    if (teamAssignment.legAssignForFork[fork].branchForLeg[otherLeg][0] == loop[0])
                         return false;
                 }
             }
 
             // Restriction 2: the entire loop must be as different as possible.
             int maxDups = leg / (int)Util.Factorial(fork.numBranches);
-            int dups = teamAssignment.legAssignForFork[forkIndex].branchForLeg.Count(branch => Util.EqualArrays(branch, loop));
+            int dups = teamAssignment.legAssignForFork[fork].branchForLeg.Count(branch => Util.EqualArrays(branch, loop));
             if (dups > maxDups)
                 return false;
 
@@ -325,7 +253,7 @@ namespace PurplePen
         {
             List<int> result = new List<int>();
             int branch = 0;
-            for (int i = 0; i < numberLegs; ++i) {
+            for (int i = 0; i < fork.numLegsHere; ++i) {
                 result.Add(branch);
                 branch = (branch + 1) % fork.numBranches;
             }
@@ -490,6 +418,98 @@ namespace PurplePen
                 this.numLess = numLess;
                 this.codeLess = codeLess.ToArray();
             }
+        }
+
+        // Represent one assignment of team to legs on each fork.
+        class TeamAssignment
+        {
+            RelayVariations outer;
+            public Dictionary<Fork, LegAssignmentForOneFork> legAssignForFork;
+
+            public TeamAssignment(RelayVariations relayVariations)
+            {
+                outer = relayVariations;
+
+                legAssignForFork = new Dictionary<Fork, LegAssignmentForOneFork>();
+                foreach (Fork fork in outer.allForks) {
+                    legAssignForFork[fork] = new LegAssignmentForOneFork();
+                }
+            }
+
+            override public bool Equals(object obj)
+            {
+                TeamAssignment other = obj as TeamAssignment;
+                if (other == null)
+                    return false;
+
+                foreach (Fork fork in outer.allForks) {
+                    if (!legAssignForFork[fork].Equals(other.legAssignForFork[fork]))
+                        return false;
+                }
+
+                return true;
+            }
+
+            public bool LegEquals(int leg, TeamAssignment other, int otherLeg)
+            {
+                foreach (Fork fork in outer.allForks) {
+                    int[] thisForkLeg = legAssignForFork[fork].branchForLeg[leg];
+                    int[] otherForkLeg = other.legAssignForFork[fork].branchForLeg[otherLeg];
+                    if (thisForkLeg.Length != otherForkLeg.Length)
+                        return false;
+                    for (int j = 0; j < thisForkLeg.Length; ++j) {
+                        if (thisForkLeg[j] != otherForkLeg[j])
+                            return false;
+                    }
+                }
+
+                return true;
+            }
+
+            public string GetVariationStringForLeg(int leg)
+            {
+                // Go throught the forks and add to string.
+                StringBuilder builder = new StringBuilder();
+                AddForkToStringBuilder(outer.firstForkInCourse, builder, leg);
+                return builder.ToString();
+            }
+
+            private void AddForkToStringBuilder(Fork fork, StringBuilder builder, int leg)
+            {
+                if (fork == null)
+                    return;
+
+                int[] selectedBranch = legAssignForFork[fork].branchForLeg[leg];
+                for (int i = 0; i < selectedBranch.Length; ++i) {
+                    builder.Append(fork.codes[selectedBranch[i]]);
+                    AddForkToStringBuilder(fork.subForks[selectedBranch[i]], builder, leg);
+                }
+
+                AddForkToStringBuilder(fork.next, builder, leg);
+            }
+        }
+
+        // Represents an assignment of legs for a single fork.
+        class LegAssignmentForOneFork
+        {
+            public List<int[]> branchForLeg = new List<int[]>();  // branchForLeg[leg] = branch index 0..numBranches-1
+
+            public override bool Equals(object obj)
+            {
+                LegAssignmentForOneFork other = obj as LegAssignmentForOneFork;
+                if (other == null)
+                    return false;
+
+                if (other.branchForLeg.Count != branchForLeg.Count)
+                    return false;
+
+                for (int i = 0; i < branchForLeg.Count; ++i)
+                    if (!Util.ArrayEquals(other.branchForLeg[i], branchForLeg[i]))
+                        return false;
+
+                return true;
+            }
+
         }
 
 
