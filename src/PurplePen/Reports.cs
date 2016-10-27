@@ -613,7 +613,6 @@ namespace PurplePen
 
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
-                BeginTableRow();
                 CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
 
                 // Don't include score courses in the leg length report.
@@ -1010,6 +1009,44 @@ namespace PurplePen
             }
 
             return FinishReport();
+        }
+
+        public string CreateRelayVariationReport(VariationReportData variationReportData)
+        {
+            string courseName = variationReportData.CourseName;
+            RelayVariations relayVariations = variationReportData.RelayVariations;
+
+            InitReport();
+
+            WriteH1(string.Format(ReportText.RelayVariation_Title, courseName));
+
+            string[] classes = new string[relayVariations.NumberOfLegs + 1];
+            classes[0] = "leftalign";
+            for (int i = 1; i < classes.Length; ++i)
+                classes[i] = "rightalign";
+
+            BeginTable("", classes.Length, classes);
+
+            // Write the header row.
+            BeginTableRow();
+            WriteTableHeaderCell("");
+            for (int i = 1; i <= relayVariations.NumberOfLegs; ++i)
+                WriteTableHeaderCell(string.Format(ReportText.RelayVariation_LegHeader, i));
+            EndTableRow();
+
+            // Write the relay variation rows. Table rule after every 3rd line
+            for (int teamNumber = 1; teamNumber <= relayVariations.NumberOfTeams; ++teamNumber) {
+                bool tablerule = (teamNumber % 3 == 0);
+                BeginTableRow();
+                WriteTableCell(tablerule ? "tablerule" : "", string.Format(ReportText.RelayVariation_TeamNumber, teamNumber));
+                for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber)
+                    WriteTableCell(tablerule ? "tablerule" : "", relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString);
+                EndTableRow();
+            }
+
+            EndTable();
+
+            return FinishReport();    
         }
 
 

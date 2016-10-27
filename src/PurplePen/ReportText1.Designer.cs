@@ -509,5 +509,32 @@ namespace PurplePen {
                 return ResourceManager.GetString("Load_Warning", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leg {0}.
+        /// </summary>
+        internal static string RelayVariation_LegHeader {
+            get {
+                return ResourceManager.GetString("RelayVariation_LegHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Team {0}.
+        /// </summary>
+        internal static string RelayVariation_TeamNumber {
+            get {
+                return ResourceManager.GetString("RelayVariation_TeamNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Relay Assignments for {0}.
+        /// </summary>
+        internal static string RelayVariation_Title {
+            get {
+                return ResourceManager.GetString("RelayVariation_Title", resourceCulture);
+            }
+        }
     }
 }

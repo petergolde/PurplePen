@@ -704,6 +704,7 @@ namespace PurplePen
             UpdateMenuItem(addVariationMenu, controller.CanAddVariation());
             UpdateMenuItem(addVariationToolStripButton, controller.CanAddVariation());
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
+            UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -2576,6 +2577,21 @@ namespace PurplePen
             reportForm.ShowDialog(this);
             reportForm.Dispose();
         }
+
+        private void courseVariationReportMenu_Click(object sender, EventArgs e)
+        {
+            Reports reportGenerator = new Reports();
+            VariationReportData variationReportData = controller.GetVariationReportData(30, 4);
+
+            string reportText = reportGenerator.CreateRelayVariationReport(variationReportData);
+
+            string title = Util.RemoveHotkeyPrefix(courseVariationReportMenu.Text).Replace("...", "");
+            ReportForm reportForm = new ReportForm(title, "", reportText, "CourseRelayVariations.htm");
+            reportForm.ShowDialog(this);
+            reportForm.Dispose();
+        }
+
+
 
 
         private void MainFrame_Shown(object sender, EventArgs e)

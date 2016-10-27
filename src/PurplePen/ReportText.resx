@@ -276,4 +276,16 @@
     <value>WARNING:</value>
     <comment>boldfaced</comment>
   </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Leg {0}</value>
+    <comment>{0} replaced with leg number</comment>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Team {0}</value>
+    <comment>{0} replaced with team number</comment>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Relay Assignments for {0}</value>
+    <comment>{0} replaced with course name</comment>
+  </data>
 </root>

@@ -881,6 +881,26 @@ namespace PurplePen
                 return courseDesignator;  
         }
 
+        public CommandStatus CanGetVariationReport()
+        {
+            CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            if (courseDesignator.IsAllControls)
+                return CommandStatus.Disabled;
+
+            if (QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
+                return CommandStatus.Enabled;
+            else
+                return CommandStatus.Disabled;
+        }
+
+        public VariationReportData GetVariationReportData(int numberTeams, int numberLegs)
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            string courseName = eventDB.GetCourse(courseId).name;
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, numberTeams, numberLegs);
+            return new VariationReportData(courseName, relayVariations);
+        }
+
 
         // Get the text for the status line
         public string StatusText
@@ -3567,6 +3587,18 @@ namespace PurplePen
             }
         }
 
+    }
+
+    class VariationReportData
+    {
+        public readonly string CourseName;
+        public readonly RelayVariations RelayVariations;
+
+        public VariationReportData(string courseName, RelayVariations relayVariations)
+        {
+            CourseName = courseName;
+            RelayVariations = relayVariations;
+        }
     }
 
 

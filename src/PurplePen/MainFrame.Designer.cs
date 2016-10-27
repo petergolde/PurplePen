@@ -94,6 +94,7 @@ namespace PurplePen
             this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.printDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printPunchCardsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,6 +139,32 @@ namespace PurplePen
             this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStartMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFinishMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addOutOfBoundsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDangerousMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addWaterMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFirstAidMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addForbiddenMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addBoundaryMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRegMarkMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
+            this.whiteOutMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addLineMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRectangleMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.changeMapFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -253,33 +280,8 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStartMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addFinishMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addOutOfBoundsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addDangerousMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addWaterMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addFirstAidMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addForbiddenMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addBoundaryMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRegMarkMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator23 = new System.Windows.Forms.ToolStripSeparator();
-            this.whiteOutMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTextMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addLineMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRectangleMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.courseVariationReportMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -596,6 +598,12 @@ namespace PurplePen
             resources.ApplyResources(this.createXmlMenu, "createXmlMenu");
             this.createXmlMenu.Click += new System.EventHandler(this.createXmlMenu_Click);
             // 
+            // createGPXFileMenu
+            // 
+            this.createGPXFileMenu.Name = "createGPXFileMenu";
+            resources.ApplyResources(this.createGPXFileMenu, "createGPXFileMenu");
+            this.createGPXFileMenu.Click += new System.EventHandler(this.createGpxMenu_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -899,6 +907,185 @@ namespace PurplePen
             resources.ApplyResources(this.allControlsMenu, "allControlsMenu");
             this.allControlsMenu.Click += new System.EventHandler(this.allControlsMenu_Click);
             // 
+            // addMenu
+            // 
+            this.addMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStartMenu,
+            this.addControlMenu,
+            this.addFinishMenu,
+            this.addDescriptionsMenu,
+            this.addMapExchangeMenu,
+            this.addVariationMenu,
+            this.addTextLineMenu,
+            this.toolStripMenuItem2,
+            this.addMandatoryCrossingMenu,
+            this.addOptCrossingMenu,
+            this.addOutOfBoundsMenu,
+            this.addDangerousMenu,
+            this.addWaterMenu,
+            this.addFirstAidMenu,
+            this.addForbiddenMenu,
+            this.addBoundaryMenu,
+            this.addRegMarkMenu,
+            this.toolStripSeparator23,
+            this.whiteOutMenu,
+            this.addTextMenu,
+            this.addImageMenu,
+            this.addLineMenu,
+            this.addRectangleMenu});
+            this.addMenu.Name = "addMenu";
+            resources.ApplyResources(this.addMenu, "addMenu");
+            // 
+            // addStartMenu
+            // 
+            this.addStartMenu.Name = "addStartMenu";
+            resources.ApplyResources(this.addStartMenu, "addStartMenu");
+            this.addStartMenu.Click += new System.EventHandler(this.addStartMenu_Click);
+            // 
+            // addControlMenu
+            // 
+            this.addControlMenu.Name = "addControlMenu";
+            resources.ApplyResources(this.addControlMenu, "addControlMenu");
+            this.addControlMenu.Click += new System.EventHandler(this.addControlMenu_Click);
+            // 
+            // addFinishMenu
+            // 
+            this.addFinishMenu.Name = "addFinishMenu";
+            resources.ApplyResources(this.addFinishMenu, "addFinishMenu");
+            this.addFinishMenu.Click += new System.EventHandler(this.addFinishMenu_Click);
+            // 
+            // addDescriptionsMenu
+            // 
+            this.addDescriptionsMenu.Name = "addDescriptionsMenu";
+            resources.ApplyResources(this.addDescriptionsMenu, "addDescriptionsMenu");
+            this.addDescriptionsMenu.Click += new System.EventHandler(this.addDescriptionsMenu_Click);
+            // 
+            // addMapExchangeMenu
+            // 
+            this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapExchangeControlMenuItem,
+            this.mapExchangeSeparateMenuItem});
+            this.addMapExchangeMenu.Name = "addMapExchangeMenu";
+            resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
+            // 
+            // mapExchangeControlMenuItem
+            // 
+            this.mapExchangeControlMenuItem.Name = "mapExchangeControlMenuItem";
+            resources.ApplyResources(this.mapExchangeControlMenuItem, "mapExchangeControlMenuItem");
+            this.mapExchangeControlMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
+            // 
+            // mapExchangeSeparateMenuItem
+            // 
+            this.mapExchangeSeparateMenuItem.Name = "mapExchangeSeparateMenuItem";
+            resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
+            this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
+            // 
+            // addVariationMenu
+            // 
+            this.addVariationMenu.Name = "addVariationMenu";
+            resources.ApplyResources(this.addVariationMenu, "addVariationMenu");
+            this.addVariationMenu.Click += new System.EventHandler(this.addVariationMenu_Click);
+            // 
+            // addTextLineMenu
+            // 
+            this.addTextLineMenu.Name = "addTextLineMenu";
+            resources.ApplyResources(this.addTextLineMenu, "addTextLineMenu");
+            this.addTextLineMenu.Click += new System.EventHandler(this.addTextLineMenu_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            // 
+            // addMandatoryCrossingMenu
+            // 
+            this.addMandatoryCrossingMenu.Name = "addMandatoryCrossingMenu";
+            resources.ApplyResources(this.addMandatoryCrossingMenu, "addMandatoryCrossingMenu");
+            this.addMandatoryCrossingMenu.Click += new System.EventHandler(this.addMandatoryCrossingMenu_Click);
+            // 
+            // addOptCrossingMenu
+            // 
+            this.addOptCrossingMenu.Name = "addOptCrossingMenu";
+            resources.ApplyResources(this.addOptCrossingMenu, "addOptCrossingMenu");
+            this.addOptCrossingMenu.Click += new System.EventHandler(this.addOptCrossingMenu_Click);
+            // 
+            // addOutOfBoundsMenu
+            // 
+            this.addOutOfBoundsMenu.Name = "addOutOfBoundsMenu";
+            resources.ApplyResources(this.addOutOfBoundsMenu, "addOutOfBoundsMenu");
+            this.addOutOfBoundsMenu.Click += new System.EventHandler(this.addOutOfBoundsMenu_Click);
+            // 
+            // addDangerousMenu
+            // 
+            this.addDangerousMenu.Name = "addDangerousMenu";
+            resources.ApplyResources(this.addDangerousMenu, "addDangerousMenu");
+            this.addDangerousMenu.Click += new System.EventHandler(this.addDangerousMenu_Click);
+            // 
+            // addWaterMenu
+            // 
+            this.addWaterMenu.Name = "addWaterMenu";
+            resources.ApplyResources(this.addWaterMenu, "addWaterMenu");
+            this.addWaterMenu.Click += new System.EventHandler(this.addWaterMenu_Click);
+            // 
+            // addFirstAidMenu
+            // 
+            this.addFirstAidMenu.Name = "addFirstAidMenu";
+            resources.ApplyResources(this.addFirstAidMenu, "addFirstAidMenu");
+            this.addFirstAidMenu.Click += new System.EventHandler(this.addFirstAidMenu_Click);
+            // 
+            // addForbiddenMenu
+            // 
+            this.addForbiddenMenu.Name = "addForbiddenMenu";
+            resources.ApplyResources(this.addForbiddenMenu, "addForbiddenMenu");
+            this.addForbiddenMenu.Click += new System.EventHandler(this.addForbiddenMenu_Click);
+            // 
+            // addBoundaryMenu
+            // 
+            this.addBoundaryMenu.Name = "addBoundaryMenu";
+            resources.ApplyResources(this.addBoundaryMenu, "addBoundaryMenu");
+            this.addBoundaryMenu.Click += new System.EventHandler(this.addBoundaryMenu_Click);
+            // 
+            // addRegMarkMenu
+            // 
+            this.addRegMarkMenu.Name = "addRegMarkMenu";
+            resources.ApplyResources(this.addRegMarkMenu, "addRegMarkMenu");
+            this.addRegMarkMenu.Click += new System.EventHandler(this.addRegMarkMenu_Click);
+            // 
+            // toolStripSeparator23
+            // 
+            this.toolStripSeparator23.Name = "toolStripSeparator23";
+            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
+            // 
+            // whiteOutMenu
+            // 
+            this.whiteOutMenu.Name = "whiteOutMenu";
+            resources.ApplyResources(this.whiteOutMenu, "whiteOutMenu");
+            this.whiteOutMenu.Click += new System.EventHandler(this.whiteOutMenu_Click);
+            // 
+            // addTextMenu
+            // 
+            this.addTextMenu.Name = "addTextMenu";
+            resources.ApplyResources(this.addTextMenu, "addTextMenu");
+            this.addTextMenu.Click += new System.EventHandler(this.addTextMenu_Click);
+            // 
+            // addImageMenu
+            // 
+            this.addImageMenu.Name = "addImageMenu";
+            resources.ApplyResources(this.addImageMenu, "addImageMenu");
+            this.addImageMenu.Click += new System.EventHandler(this.addImageMenu_Click);
+            // 
+            // addLineMenu
+            // 
+            this.addLineMenu.Name = "addLineMenu";
+            resources.ApplyResources(this.addLineMenu, "addLineMenu");
+            this.addLineMenu.Click += new System.EventHandler(this.addLineMenu_Click);
+            // 
+            // addRectangleMenu
+            // 
+            this.addRectangleMenu.Name = "addRectangleMenu";
+            resources.ApplyResources(this.addRectangleMenu, "addRectangleMenu");
+            this.addRectangleMenu.Click += new System.EventHandler(this.addRectangleMenu_Click);
+            // 
             // eventMenu
             // 
             this.eventMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -981,7 +1168,9 @@ namespace PurplePen
             this.propertiesMenu,
             this.toolStripSeparator16,
             this.courseOrderMenu,
-            this.courseLoadMenu});
+            this.courseLoadMenu,
+            this.toolStripMenuItem4,
+            this.courseVariationReportMenu});
             this.courseMenu.Name = "courseMenu";
             resources.ApplyResources(this.courseMenu, "courseMenu");
             // 
@@ -1689,190 +1878,16 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
-            // createGPXFileMenu
+            // toolStripMenuItem4
             // 
-            this.createGPXFileMenu.Name = "createGPXFileMenu";
-            resources.ApplyResources(this.createGPXFileMenu, "createGPXFileMenu");
-            this.createGPXFileMenu.Click += new System.EventHandler(this.createGpxMenu_Click);
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
             // 
-            // addMenu
+            // courseVariationReportMenu
             // 
-            this.addMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStartMenu,
-            this.addControlMenu,
-            this.addFinishMenu,
-            this.addDescriptionsMenu,
-            this.addMapExchangeMenu,
-            this.addVariationMenu,
-            this.addTextLineMenu,
-            this.toolStripMenuItem2,
-            this.addMandatoryCrossingMenu,
-            this.addOptCrossingMenu,
-            this.addOutOfBoundsMenu,
-            this.addDangerousMenu,
-            this.addWaterMenu,
-            this.addFirstAidMenu,
-            this.addForbiddenMenu,
-            this.addBoundaryMenu,
-            this.addRegMarkMenu,
-            this.toolStripSeparator23,
-            this.whiteOutMenu,
-            this.addTextMenu,
-            this.addImageMenu,
-            this.addLineMenu,
-            this.addRectangleMenu});
-            this.addMenu.Name = "addMenu";
-            resources.ApplyResources(this.addMenu, "addMenu");
-            // 
-            // addStartMenu
-            // 
-            this.addStartMenu.Name = "addStartMenu";
-            resources.ApplyResources(this.addStartMenu, "addStartMenu");
-            this.addStartMenu.Click += new System.EventHandler(this.addStartMenu_Click);
-            // 
-            // addControlMenu
-            // 
-            this.addControlMenu.Name = "addControlMenu";
-            resources.ApplyResources(this.addControlMenu, "addControlMenu");
-            this.addControlMenu.Click += new System.EventHandler(this.addControlMenu_Click);
-            // 
-            // addFinishMenu
-            // 
-            this.addFinishMenu.Name = "addFinishMenu";
-            resources.ApplyResources(this.addFinishMenu, "addFinishMenu");
-            this.addFinishMenu.Click += new System.EventHandler(this.addFinishMenu_Click);
-            // 
-            // addDescriptionsMenu
-            // 
-            this.addDescriptionsMenu.Name = "addDescriptionsMenu";
-            resources.ApplyResources(this.addDescriptionsMenu, "addDescriptionsMenu");
-            this.addDescriptionsMenu.Click += new System.EventHandler(this.addDescriptionsMenu_Click);
-            // 
-            // addMapExchangeMenu
-            // 
-            this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mapExchangeControlMenuItem,
-            this.mapExchangeSeparateMenuItem});
-            this.addMapExchangeMenu.Name = "addMapExchangeMenu";
-            resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
-            // 
-            // mapExchangeControlMenuItem
-            // 
-            this.mapExchangeControlMenuItem.Name = "mapExchangeControlMenuItem";
-            resources.ApplyResources(this.mapExchangeControlMenuItem, "mapExchangeControlMenuItem");
-            this.mapExchangeControlMenuItem.Click += new System.EventHandler(this.addMapExchangeControl_Click);
-            // 
-            // mapExchangeSeparateMenuItem
-            // 
-            this.mapExchangeSeparateMenuItem.Name = "mapExchangeSeparateMenuItem";
-            resources.ApplyResources(this.mapExchangeSeparateMenuItem, "mapExchangeSeparateMenuItem");
-            this.mapExchangeSeparateMenuItem.Click += new System.EventHandler(this.addMapExchangeSeparate_Click);
-            // 
-            // addVariationMenu
-            // 
-            this.addVariationMenu.Name = "addVariationMenu";
-            resources.ApplyResources(this.addVariationMenu, "addVariationMenu");
-            this.addVariationMenu.Click += new System.EventHandler(this.addVariationMenu_Click);
-            // 
-            // addTextLineMenu
-            // 
-            this.addTextLineMenu.Name = "addTextLineMenu";
-            resources.ApplyResources(this.addTextLineMenu, "addTextLineMenu");
-            this.addTextLineMenu.Click += new System.EventHandler(this.addTextLineMenu_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            // 
-            // addMandatoryCrossingMenu
-            // 
-            this.addMandatoryCrossingMenu.Name = "addMandatoryCrossingMenu";
-            resources.ApplyResources(this.addMandatoryCrossingMenu, "addMandatoryCrossingMenu");
-            this.addMandatoryCrossingMenu.Click += new System.EventHandler(this.addMandatoryCrossingMenu_Click);
-            // 
-            // addOptCrossingMenu
-            // 
-            this.addOptCrossingMenu.Name = "addOptCrossingMenu";
-            resources.ApplyResources(this.addOptCrossingMenu, "addOptCrossingMenu");
-            this.addOptCrossingMenu.Click += new System.EventHandler(this.addOptCrossingMenu_Click);
-            // 
-            // addOutOfBoundsMenu
-            // 
-            this.addOutOfBoundsMenu.Name = "addOutOfBoundsMenu";
-            resources.ApplyResources(this.addOutOfBoundsMenu, "addOutOfBoundsMenu");
-            this.addOutOfBoundsMenu.Click += new System.EventHandler(this.addOutOfBoundsMenu_Click);
-            // 
-            // addDangerousMenu
-            // 
-            this.addDangerousMenu.Name = "addDangerousMenu";
-            resources.ApplyResources(this.addDangerousMenu, "addDangerousMenu");
-            this.addDangerousMenu.Click += new System.EventHandler(this.addDangerousMenu_Click);
-            // 
-            // addWaterMenu
-            // 
-            this.addWaterMenu.Name = "addWaterMenu";
-            resources.ApplyResources(this.addWaterMenu, "addWaterMenu");
-            this.addWaterMenu.Click += new System.EventHandler(this.addWaterMenu_Click);
-            // 
-            // addFirstAidMenu
-            // 
-            this.addFirstAidMenu.Name = "addFirstAidMenu";
-            resources.ApplyResources(this.addFirstAidMenu, "addFirstAidMenu");
-            this.addFirstAidMenu.Click += new System.EventHandler(this.addFirstAidMenu_Click);
-            // 
-            // addForbiddenMenu
-            // 
-            this.addForbiddenMenu.Name = "addForbiddenMenu";
-            resources.ApplyResources(this.addForbiddenMenu, "addForbiddenMenu");
-            this.addForbiddenMenu.Click += new System.EventHandler(this.addForbiddenMenu_Click);
-            // 
-            // addBoundaryMenu
-            // 
-            this.addBoundaryMenu.Name = "addBoundaryMenu";
-            resources.ApplyResources(this.addBoundaryMenu, "addBoundaryMenu");
-            this.addBoundaryMenu.Click += new System.EventHandler(this.addBoundaryMenu_Click);
-            // 
-            // addRegMarkMenu
-            // 
-            this.addRegMarkMenu.Name = "addRegMarkMenu";
-            resources.ApplyResources(this.addRegMarkMenu, "addRegMarkMenu");
-            this.addRegMarkMenu.Click += new System.EventHandler(this.addRegMarkMenu_Click);
-            // 
-            // toolStripSeparator23
-            // 
-            this.toolStripSeparator23.Name = "toolStripSeparator23";
-            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
-            // 
-            // whiteOutMenu
-            // 
-            this.whiteOutMenu.Name = "whiteOutMenu";
-            resources.ApplyResources(this.whiteOutMenu, "whiteOutMenu");
-            this.whiteOutMenu.Click += new System.EventHandler(this.whiteOutMenu_Click);
-            // 
-            // addTextMenu
-            // 
-            this.addTextMenu.Name = "addTextMenu";
-            resources.ApplyResources(this.addTextMenu, "addTextMenu");
-            this.addTextMenu.Click += new System.EventHandler(this.addTextMenu_Click);
-            // 
-            // addImageMenu
-            // 
-            this.addImageMenu.Name = "addImageMenu";
-            resources.ApplyResources(this.addImageMenu, "addImageMenu");
-            this.addImageMenu.Click += new System.EventHandler(this.addImageMenu_Click);
-            // 
-            // addLineMenu
-            // 
-            this.addLineMenu.Name = "addLineMenu";
-            resources.ApplyResources(this.addLineMenu, "addLineMenu");
-            this.addLineMenu.Click += new System.EventHandler(this.addLineMenu_Click);
-            // 
-            // addRectangleMenu
-            // 
-            this.addRectangleMenu.Name = "addRectangleMenu";
-            resources.ApplyResources(this.addRectangleMenu, "addRectangleMenu");
-            this.addRectangleMenu.Click += new System.EventHandler(this.addRectangleMenu_Click);
+            this.courseVariationReportMenu.Name = "courseVariationReportMenu";
+            resources.ApplyResources(this.courseVariationReportMenu, "courseVariationReportMenu");
+            this.courseVariationReportMenu.Click += new System.EventHandler(this.courseVariationReportMenu_Click);
             // 
             // MainFrame
             // 
@@ -2133,5 +2148,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addImageMenu;
         private System.Windows.Forms.ToolStripMenuItem addLineMenu;
         private System.Windows.Forms.ToolStripMenuItem addRectangleMenu;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem courseVariationReportMenu;
     }
 }
