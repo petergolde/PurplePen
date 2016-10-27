@@ -10,7 +10,7 @@ Big things to do before first beta:
 
 - switch to ordering view after add variation operation.
 
-
+- letters after 'Z'
 
 Variation naming issues:
     - UI to change variation naming. I think this is useful. Simple options: Variation code (default) or name+number or team/participant; include course name first.
