@@ -1551,190 +1551,177 @@ namespace PurplePen.Tests
             Reports reports = new Reports();
             string result = reports.CreateLegLengthReport(eventDB);
 
-            Assert.AreEqual(@"
+            string expected = @"
   <h1>Leg Length Report for Marymoor WIOL 2</h1>
-  <tr>
-    <h2>Course 1 (10 controls, 1.6 km)</h2>
-    <table>
-      <col class=""leftcol leftalign"" />
-      <col class=""middlecol leftalign"" />
-      <col class=""rightcol rightalign"" />
-      <tr>
-        <th>Leg</th>
-        <th>Controls</th>
-        <th>Length</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>Start–73</td>
-        <td>51 m</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>73–44</td>
-        <td>344 m</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>44–49</td>
-        <td>157 m</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>49–53</td>
-        <td>110 m</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>53–58</td>
-        <td>85 m</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>58–76</td>
-        <td>148 m</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>76–70</td>
-        <td>235 m</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>70–71</td>
-        <td>196 m</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>71–55</td>
-        <td>131 m</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>55–38</td>
-        <td>77 m</td>
-      </tr>
-      <tr>
-        <td>11</td>
-        <td>38–Finish</td>
-        <td>64 m</td>
-      </tr>
-      <tr class=""summaryrow"">
-        <td colspan=""2"">Average</td>
-        <td>145 m</td>
-      </tr>
-    </table>
+  <h2>Course 1 (10 controls, 1.6 km)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
     <tr>
-      <h2>Course 2 (3 controls, 2.2 km, 155 m climb)</h2>
-      <table>
-        <col class=""leftcol leftalign"" />
-        <col class=""middlecol leftalign"" />
-        <col class=""rightcol rightalign"" />
-        <tr>
-          <th>Leg</th>
-          <th>Controls</th>
-          <th>Length</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Start–59</td>
-          <td>630 m</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>59–72</td>
-          <td>787 m</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>72–48</td>
-          <td>372 m</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>48–Finish</td>
-          <td>383 m</td>
-        </tr>
-        <tr class=""summaryrow"">
-          <td colspan=""2"">Average</td>
-          <td>543 m</td>
-        </tr>
-      </table>
-      <tr>
-        <h2>Empty (0 controls, 0.0 km, 15 m climb)</h2>
-        <table>
-          <col class=""leftcol leftalign"" />
-          <col class=""middlecol leftalign"" />
-          <col class=""rightcol rightalign"" />
-          <tr>
-            <th>Leg</th>
-            <th>Controls</th>
-            <th>Length</th>
-          </tr>
-        </table>
-        <tr>
-          <h2>NoFinish (2 controls, 1.0 km)</h2>
-          <table>
-            <col class=""leftcol leftalign"" />
-            <col class=""middlecol leftalign"" />
-            <col class=""rightcol rightalign"" />
-            <tr>
-              <th>Leg</th>
-              <th>Controls</th>
-              <th>Length</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Start–58</td>
-              <td>661 m</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>58–50</td>
-              <td>366 m</td>
-            </tr>
-            <tr class=""summaryrow"">
-              <td colspan=""2"">Average</td>
-              <td>514 m</td>
-            </tr>
-          </table>
-          <tr>
-            <h2>NoStart (2 controls, 0.4 km, 35 m climb)</h2>
-            <table>
-              <col class=""leftcol leftalign"" />
-              <col class=""middlecol leftalign"" />
-              <col class=""rightcol rightalign"" />
-              <tr>
-                <th>Leg</th>
-                <th>Controls</th>
-                <th>Length</th>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>80–50</td>
-                <td>163 m</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>50–Finish</td>
-                <td>245 m</td>
-              </tr>
-              <tr class=""summaryrow"">
-                <td colspan=""2"">Average</td>
-                <td>204 m</td>
-              </tr>
-            </table>
-            <tr>
-              <tr>
-              </tr>
-            </tr>
-          </tr>
-        </tr>
-      </tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
     </tr>
-  </tr>
+    <tr>
+      <td>1</td>
+      <td>Start–73</td>
+      <td>51 m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>73–44</td>
+      <td>344 m</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>44–49</td>
+      <td>157 m</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>49–53</td>
+      <td>110 m</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>53–58</td>
+      <td>85 m</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>58–76</td>
+      <td>148 m</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>76–70</td>
+      <td>235 m</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>70–71</td>
+      <td>196 m</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>71–55</td>
+      <td>131 m</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>55–38</td>
+      <td>77 m</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>38–Finish</td>
+      <td>64 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>145 m</td>
+    </tr>
+  </table>
+  <h2>Course 2 (3 controls, 2.2 km, 155 m climb)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Start–59</td>
+      <td>630 m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>59–72</td>
+      <td>787 m</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>72–48</td>
+      <td>372 m</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>48–Finish</td>
+      <td>383 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>543 m</td>
+    </tr>
+  </table>
+  <h2>Empty (0 controls, 0.0 km, 15 m climb)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+  </table>
+  <h2>NoFinish (2 controls, 1.0 km)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Start–58</td>
+      <td>661 m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>58–50</td>
+      <td>366 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>514 m</td>
+    </tr>
+  </table>
+  <h2>NoStart (2 controls, 0.4 km, 35 m climb)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>80–50</td>
+      <td>163 m</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>50–Finish</td>
+      <td>245 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>204 m</td>
+    </tr>
+  </table>
 
-", result);
+";
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod]

@@ -362,6 +362,24 @@ namespace TestingUtils
             }
         }
 
+        public static void WriteStringDifference(string s1, string s2)
+        {
+            int len = Math.Min(s1.Length, s2.Length);
+
+            int i;
+            for (i = 0; i < len; ++i) {
+                if (s1[i] != s2[i])
+                    break;
+            }
+
+            Console.WriteLine("Equal parts:");
+            Console.WriteLine(s1.Substring(0, i));
+            Console.WriteLine("Difference1:");
+            Console.WriteLine(s1.Substring(i));
+            Console.WriteLine("Difference2:");
+            Console.WriteLine(s2.Substring(i));
+        }
+
 
     }
 

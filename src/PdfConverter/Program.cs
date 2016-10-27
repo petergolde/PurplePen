@@ -56,15 +56,28 @@ namespace PurplePen.PdfConverter
 
         static void DoConversion()
         {
-            int pageNumber = 0;
-
             using (PdfDocument document = PdfDocument.Load(sourcePdfFileName)) {
-                SizeF sizeInPoints = document.PageSizes[pageNumber];
-                int widthInPixels = (int)Math.Round(sizeInPoints.Width * (float)dpi / 72F);
-                int heightInPixels = (int)Math.Round(sizeInPoints.Height * (float)dpi / 72F);
-                using (Image image = document.Render(pageNumber, widthInPixels, heightInPixels, dpi, dpi, true)) {
-                    image.Save(destinationPngFileName, ImageFormat.Png);
+                if (destinationPngFileName.Contains("%d")) {
+                    // Multi-page convert.
+                    int numPages = document.PageCount;
+                    for (int pageNumber = 0; pageNumber < numPages; ++pageNumber) {
+                        string destFileName = destinationPngFileName.Replace("%d", (pageNumber+1).ToString());
+                        SavePng(document, pageNumber, destFileName);
+                    }
                 }
+                else {
+                    SavePng(document, 0, destinationPngFileName);
+                }
+            }
+        }
+
+        private static void SavePng(PdfDocument document, int pageNumber, string destFileName)
+        {
+            SizeF sizeInPoints = document.PageSizes[pageNumber];
+            int widthInPixels = (int)Math.Round(sizeInPoints.Width * (float)dpi / 72F);
+            int heightInPixels = (int)Math.Round(sizeInPoints.Height * (float)dpi / 72F);
+            using (Image image = document.Render(pageNumber, widthInPixels, heightInPixels, dpi, dpi, true)) {
+                image.Save(destFileName, ImageFormat.Png);
             }
         }
     }
