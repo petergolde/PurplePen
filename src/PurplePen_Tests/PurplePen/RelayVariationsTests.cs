@@ -108,7 +108,8 @@ namespace PurplePen.Tests
             var teamAssignment = new RelayVariations(eventDB, CourseId(6), 64, 6);
             ValidateRelayVariationsTest(teamAssignment, "relay\\loopwithbranches");
         }
-
+        
+        /*
         [TestMethod]
         public void GenerateAssignment5()
         {
@@ -117,7 +118,7 @@ namespace PurplePen.Tests
             var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5);
             ValidateRelayVariationsTest(teamAssignment, "relay\\nestedbranches");
         }
-
+        */
         [TestMethod]
         public void BranchWarnings1()
         {

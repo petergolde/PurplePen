@@ -23,7 +23,7 @@ namespace PurplePen
         int totalPossiblePaths;  // Number of ways through the forks.
 
         // Each element of the list is a team, with variation strings for each leg.
-        List<string[]> results;
+        List<TeamAssignment> results;
         List<BranchWarning> branchWarnings;
 
         public RelayVariations(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs)
@@ -46,7 +46,7 @@ namespace PurplePen
             if (leg < 1 || leg > numberLegs)
                 throw new ArgumentOutOfRangeException("leg", "leg numbers are from 1 to number of legs");
 
-            string variationString = results[team - 1][leg - 1];
+            string variationString = this.ConvertTeamAssignmentToString(results[team - 1], leg - 1);
             return variationInfos[variationString];
         }
 
@@ -75,7 +75,7 @@ namespace PurplePen
         void Generate()
         {
             // We want the randomness to be determistic.
-            results = new List<string[]>(numberTeams);
+            results = new List<TeamAssignment>(numberTeams);
             branchWarnings = new List<BranchWarning>();
             random = new Random(8713527);
 
@@ -92,16 +92,16 @@ namespace PurplePen
         }
 
 
-        private string[] GenerateTeam()
+        private TeamAssignment GenerateTeam()
         {
             // Return a potential team that doesn't duplicate previous teams, or failing that,
             // with the minimum number of duplicates.
             int minCount = int.MaxValue;
-            string[] minTeam = null;
+            TeamAssignment minTeam = null;
 
             for (int i = 0; i < 100; ++i) { 
-                string[] team = GeneratePotentialTeam();
-                int countDups = results.Count(existingTeam => Util.EqualArrays(existingTeam, team));
+                TeamAssignment team = GeneratePotentialTeam();
+                int countDups = results.Count(existingTeam => existingTeam.Equals(team));
                 if (countDups == 0) {
                     Debug.WriteLine("Team {0} formed with 0 dups", results.Count);
                     return team;
@@ -116,56 +116,77 @@ namespace PurplePen
             return minTeam;
         }
 
-        private string[] GeneratePotentialTeam()
+        private TeamAssignment GeneratePotentialTeam()
         {
-            TeamAssignment teamAssignment = new TeamAssignment(allForks.Count);
+            TeamAssignment teamAssignment = new TeamAssignment(this);
 
             for (int leg = 0; leg < numberLegs; ++leg) {
                 AddLegToTeamAssignment(leg, teamAssignment);
             }
 
-            List<string> legs = new List<string>();
-            for (int leg = 0; leg < numberLegs; ++leg) {
-                legs.Add(ConvertTeamAssignmentToString(teamAssignment, leg));
-            }
-
-            return legs.ToArray();
-        }
-
-        private bool ValidateTeam(string[] team)
-        {
-            for (int teamIndex = 0; teamIndex < results.Count; ++teamIndex) {
-                bool teamEqual = true;
-                
-                for (int leg = 0; leg < team.Length; ++leg) {
-                    if (results[teamIndex][leg] != team[leg])
-                        teamEqual = false;
-                }
-
-                if (teamEqual)
-                    return false;
-            }
-
-            // Different from all other teams.
-            return true;
+            return teamAssignment;
         }
 
         class TeamAssignment
         {
+            RelayVariations outer;
             public LegAssignment[] legAssignForFork;
 
-            public TeamAssignment(int forkCount)
+            public TeamAssignment(RelayVariations relayVariations)
             {
-                legAssignForFork = new LegAssignment[forkCount];
+                outer = relayVariations;
+
+                legAssignForFork = new LegAssignment[outer.allForks.Count];
                 for (int i = 0; i < legAssignForFork.Length; ++i) {
                     legAssignForFork[i] = new LegAssignment();
                 }
+            }
+
+            override public bool Equals(object obj)
+            {
+                TeamAssignment other = obj as TeamAssignment;
+                if (other == null)
+                    return false;
+
+                return Util.ArrayEquals(legAssignForFork, other.legAssignForFork);
+            }
+
+            public bool LegEquals(int leg, TeamAssignment other, int otherLeg)
+            {
+                for (int i = 0; i < legAssignForFork.Length; ++i) {
+                    int[] thisForkLeg = legAssignForFork[i].branchForLeg[leg];
+                    int[] otherForkLeg = other.legAssignForFork[i].branchForLeg[otherLeg];
+                    if (thisForkLeg.Length != otherForkLeg.Length)
+                        return false;
+                    for (int j = 0; j < thisForkLeg.Length; ++j) {
+                        if (thisForkLeg[j] != otherForkLeg[j])
+                            return false;
+                    }
+                }
+
+                return true;
             }
         }
 
         class LegAssignment
         {
             public List<int[]> branchForLeg = new List<int[]>();  // branchForLeg[leg] = branch index 0..numBranches-1
+
+            public override bool Equals(object obj)
+            {
+                LegAssignment other = obj as LegAssignment;
+                if (other == null)
+                    return false;
+
+                if (other.branchForLeg.Count != branchForLeg.Count)
+                    return false;
+
+                for (int i = 0; i < branchForLeg.Count; ++i)
+                    if (!Util.ArrayEquals(other.branchForLeg[i], branchForLeg[i]))
+                        return false;
+
+                return true;
+            }
         }
 
 
@@ -194,17 +215,23 @@ namespace PurplePen
 
         private void AddLegToTeamAssignment(int leg, TeamAssignment teamAssignment)
         {
+            int minScore = int.MaxValue;
+
             for (int count = 0; ; ++count) {
                 for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
                     AddForkToTeamAssignment(forkIndex, leg, teamAssignment);
                 }
 
-                if (ValidateLegAssignment(leg, teamAssignment) || count >= 10000)
-                    return;
-                else {
-                    for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
-                        RemoveForkFromTeamAssignment(forkIndex, leg, teamAssignment);
-                    }
+                int score = ScoreLegAssignment(leg, teamAssignment);
+
+                if (score == 0)
+                    return;  // perfect enough to return.
+                if (score <= minScore && count > 50)
+                    return; // good enough; as good as all previous and more than 50 considered.
+                minScore = Math.Min(minScore, score);
+
+                for (int forkIndex = 0; forkIndex < allForks.Count; ++forkIndex) {
+                    RemoveForkFromTeamAssignment(forkIndex, leg, teamAssignment);
                 }
             }
         }
@@ -263,31 +290,35 @@ namespace PurplePen
             return true;
         }
 
-        // Check to see if the new leg assignment is not a duplicate of previous ones (or the minimum
-        // number of duplicates.)
-        private bool ValidateLegAssignment(int leg, TeamAssignment teamAssignment)
+        // Check to see how much the given leg assignment duplicates previous legs on this team, 
+        // or previous team assignments for this leg. Return score (0 = perfect, higher = worse)
+        // indicating how good a match.
+        private int ScoreLegAssignment(int leg, TeamAssignment teamAssignment)
         {
-            string variationCode = ConvertTeamAssignmentToString(teamAssignment, leg);
+            int score = 0;
 
             // Check 1: check again previous teams on same leg.
             int allowedDuplicates = (results.Count / totalPossiblePaths);
             if (allowedDuplicates >= 1) {
                 allowedDuplicates += (int)Math.Ceiling((double)allowedDuplicates / 3); // allow some slop after all options used once.
             }
-            int duplicates = results.Count(team => (team[leg] == variationCode));
+            int duplicates = 0;
+            for (int i = 0; i < results.Count; ++i) {
+                if (results[i].LegEquals(leg, teamAssignment, leg))
+                    ++duplicates;
+            }
 
-            if (duplicates > allowedDuplicates)
-                return false;
+            score += Math.Max(0, (duplicates - allowedDuplicates));
 
-            // Check 2: check against previous legs on same team, if they should be unique
             if (numberLegs <= totalPossiblePaths) {
+                // Check 2: check against previous legs on same team, if they should be unique
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
-                    if (ConvertTeamAssignmentToString(teamAssignment, otherLeg) == variationCode)
-                        return false;
+                    if (teamAssignment.LegEquals(leg, teamAssignment, otherLeg))
+                        score += 10;
                 }
             }
 
-            return true;
+            return score;
         }
 
         List<int> GetPossibleBranches(Fork fork)
