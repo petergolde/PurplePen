@@ -102,5 +102,15 @@ namespace PurplePen
 
             SetReportBody(this.Text, eventArgs.ReportBody);
         }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            webBrowser.ShowPrintDialog();
+        }
+
+        private void buttonPrintPreview_Click(object sender, EventArgs e)
+        {
+            webBrowser.ShowPrintPreviewDialog();
+        }
     }
 }
