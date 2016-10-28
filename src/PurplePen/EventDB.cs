@@ -681,6 +681,8 @@ namespace PurplePen
         public Dictionary<int, PrintArea> partPrintAreas; // print area of parts.
         public Dictionary<int, PartOptions> partOptions;  // options of parts.
         public VariationNamingOptions variationNaming;  // options for variation course name
+        public int relayTeams;           // Number of teams for relay
+        public int relayLegs = 1;            // Number of legs for relay
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
@@ -833,6 +835,10 @@ namespace PurplePen
                 return false;
             if (!other.variationNaming.Equals(this.variationNaming))
                 return false;
+            if (other.relayLegs != relayLegs)
+                return false;
+            if (other.relayTeams != relayTeams)
+                return false;
             foreach (KeyValuePair<int, PartOptions> kvp in this.partOptions) {
                 PartOptions partOptions;
                 if (!other.partOptions.TryGetValue(kvp.Key, out partOptions) || ! partOptions.Equals(kvp.Value))
@@ -863,7 +869,7 @@ namespace PurplePen
             variationNaming = new VariationNamingOptions();
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "variation-naming")) {
+            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "variation-naming", "relay")) {
                 switch (xmlinput.Name) {
                     case "name":
                         name = xmlinput.GetContentString();
@@ -942,6 +948,12 @@ namespace PurplePen
                             variationNaming.kind = VariationNamingOptions.NamingKind.TeamAndRunner;
                         variationNaming.text = xmlinput.GetAttributeString("text", "*");
                         variationNaming.includeCourseName = xmlinput.GetAttributeBool("include-course-name", false);
+                        xmlinput.Skip();
+                        break;
+
+                    case "relay":
+                        relayTeams = xmlinput.GetAttributeInt("teams", 0);
+                        relayLegs = xmlinput.GetAttributeInt("legs", 1);
                         xmlinput.Skip();
                         break;
                 }
@@ -1039,6 +1051,13 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("text", variationNaming.text);
             xmloutput.WriteAttributeString("include-course-name", XmlConvert.ToString(variationNaming.includeCourseName));
             xmloutput.WriteEndElement();
+
+            if (relayTeams > 0) {
+                xmloutput.WriteStartElement("relay");
+                xmloutput.WriteAttributeString("teams", XmlConvert.ToString(relayTeams));
+                xmloutput.WriteAttributeString("legs", XmlConvert.ToString(relayLegs));
+                xmloutput.WriteEndElement();
+            }
 
             foreach (KeyValuePair<int, PartOptions> kvp in partOptions) {
                 xmloutput.WriteStartElement("part-options");
