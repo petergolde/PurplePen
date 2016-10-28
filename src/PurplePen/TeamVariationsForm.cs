@@ -44,7 +44,7 @@ namespace PurplePen
 {
     public partial class TeamVariationsForm: PurplePen.BaseDialog
     {
-        public EventHandler<GetReportBodyEventArgs> GetReportBody;
+        public EventHandler<CalculateVariationsPressedEventArgs> CalculateVariationsPressed;
 
         public TeamVariationsForm()
         {
@@ -73,6 +73,12 @@ namespace PurplePen
                 upDownNumberOfLegs.Value = value;
             }
         }
+        
+        // Send the body of the report.
+        public void SetBody(string body)
+        {
+            SetReportBody(this.Text, body);
+        }
 
         void SetReportBody(string title, string body)
         {
@@ -81,26 +87,22 @@ namespace PurplePen
             webBrowser.DocumentText = htmlText;
         }
 
-        public class GetReportBodyEventArgs: EventArgs
+        public class CalculateVariationsPressedEventArgs: EventArgs
         {
             public int NumberOfTeams;
             public int NumberOfLegs;
-            public string ReportBody;
 
-            public GetReportBodyEventArgs(int numberOfTeams, int numberOfLegs)
+            public CalculateVariationsPressedEventArgs(int numberOfTeams, int numberOfLegs)
             {
                 NumberOfTeams = numberOfTeams;
                 NumberOfLegs = numberOfLegs;
-                ReportBody = "";
             }
         }
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            GetReportBodyEventArgs eventArgs = new GetReportBodyEventArgs(NumberOfTeams, NumberOfLegs);
-            GetReportBody?.Invoke(this, eventArgs);
-
-            SetReportBody(this.Text, eventArgs.ReportBody);
+            CalculateVariationsPressedEventArgs eventArgs = new CalculateVariationsPressedEventArgs(NumberOfTeams, NumberOfLegs);
+            CalculateVariationsPressed?.Invoke(this, eventArgs);
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)

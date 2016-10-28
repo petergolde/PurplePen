@@ -2583,16 +2583,26 @@ namespace PurplePen
             TeamVariationsForm reportForm = new TeamVariationsForm();
             reportForm.NumberOfTeams = 0;
             reportForm.NumberOfLegs = 1;
-            reportForm.GetReportBody += (reportSender, reportEventArgs) => {
-                VariationReportData variationReportData = controller.GetVariationReportData(reportEventArgs.NumberOfTeams, reportEventArgs.NumberOfLegs);
-                reportEventArgs.ReportBody = new Reports().CreateRelayVariationReport(variationReportData);
+            SetVariationReportBody(reportForm);
+
+            reportForm.CalculateVariationsPressed += (reportSender, reportEventArgs) => {
+                SetVariationReportBody(reportForm);
             };
 
             reportForm.ShowDialog(this);
             reportForm.Dispose();
         }
 
-
+        void SetVariationReportBody(TeamVariationsForm form)
+        {
+            if (form.NumberOfTeams == 0) {
+                form.SetBody(new Reports().CreateRelayVariationNotCreated());
+            }
+            else {
+                VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
+                form.SetBody(new Reports().CreateRelayVariationReport(variationReportData));
+            }
+        }
 
 
         private void MainFrame_Shown(object sender, EventArgs e)

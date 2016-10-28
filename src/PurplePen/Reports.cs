@@ -1049,6 +1049,15 @@ namespace PurplePen
             return FinishReport();    
         }
 
+        public string CreateRelayVariationNotCreated()
+        {
+            InitReport();
+
+            WritePara(ReportText.RelayVariation_NoTeams);
+
+            return FinishReport();
+        }
+
 
 
         // Create a test report.

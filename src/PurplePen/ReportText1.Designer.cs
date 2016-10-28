@@ -520,6 +520,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No relay teams have been defined yet. Selected the desired number of teams and legs and press the &quot;Assign Variations&quot; button..
+        /// </summary>
+        internal static string RelayVariation_NoTeams {
+            get {
+                return ResourceManager.GetString("RelayVariation_NoTeams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Team {0}.
         /// </summary>
         internal static string RelayVariation_TeamNumber {
