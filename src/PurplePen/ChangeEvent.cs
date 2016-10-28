@@ -371,6 +371,17 @@ namespace PurplePen
             eventDB.ReplaceCourse(courseId, course);
         }
 
+        public static void SetRelayParameters(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs)
+        {
+            Course course = eventDB.GetCourse(courseId);
+
+            course = (Course)course.Clone();
+            course.relayTeams = numberTeams;
+            course.relayLegs = numberLegs;
+            eventDB.ReplaceCourse(courseId, course);
+        }
+
+
         // Change the course print area. If "removeParts" is true, and the course is an all parts,
         // then remove print descriptions for each part.
         public static void ChangePrintArea(EventDB eventDB, CourseDesignator courseDesignator, bool removeParts, PrintArea printArea)

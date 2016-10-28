@@ -3,7 +3,7 @@
     <title>variations</title>
     <map kind="none" scale="10000" />
     <all-controls print-scale="10000" description-kind="symbols" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="149.135956" right="330.9876" bottom="-117.564056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="150.082764" right="330.9876" bottom="-116.617249" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
     <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
@@ -112,7 +112,7 @@
     <name>Course 1</name>
     <labels label-kind="sequence" />
     <first course-control="1" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="130.648514" right="330.9876" bottom="-136.0515" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="131.614029" right="330.9876" bottom="-135.085983" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
     <variation-naming kind="letters" include-course-name="true" />
   </course>
@@ -128,7 +128,7 @@
     <name>TwoWayBranch</name>
     <labels label-kind="sequence" />
     <first course-control="39" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.9805" right="330.9876" bottom="-133.719513" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.556168" right="330.9876" bottom="-134.143845" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
     <variation-naming kind="letters" include-course-name="true" />
   </course>
@@ -136,7 +136,7 @@
     <name>DoubleBranch</name>
     <labels label-kind="sequence" />
     <first course-control="48" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="133.482208" right="330.9876" bottom="-133.2178" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="133.057877" right="330.9876" bottom="-133.642136" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
     <variation-naming kind="letters" include-course-name="true" />
   </course>
@@ -160,9 +160,10 @@
     <name>NestedBranch</name>
     <labels label-kind="sequence" />
     <first course-control="97" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.9805" right="330.9876" bottom="-133.719513" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.556168" right="330.9876" bottom="-134.143845" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
     <variation-naming kind="letters" include-course-name="true" />
+    <relay teams="60" legs="4" />
   </course>
   <course-control id="1" control="1">
     <next course-control="2" />

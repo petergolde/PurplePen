@@ -2580,9 +2580,11 @@ namespace PurplePen
 
         private void courseVariationReportMenu_Click(object sender, EventArgs e)
         {
+            int numTeams, numLegs;
+            controller.GetRelayParameters(out numTeams, out numLegs);
             TeamVariationsForm reportForm = new TeamVariationsForm();
-            reportForm.NumberOfTeams = 0;
-            reportForm.NumberOfLegs = 1;
+            reportForm.NumberOfTeams = numTeams;
+            reportForm.NumberOfLegs = numLegs;
             SetVariationReportBody(reportForm);
 
             reportForm.CalculateVariationsPressed += (reportSender, reportEventArgs) => {
@@ -2590,6 +2592,10 @@ namespace PurplePen
             };
 
             reportForm.ShowDialog(this);
+
+            if (numTeams != reportForm.NumberOfTeams || numLegs != reportForm.NumberOfLegs)
+                controller.SetRelayParameters(reportForm.NumberOfTeams, reportForm.NumberOfLegs);
+
             reportForm.Dispose();
         }
 

@@ -520,6 +520,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Relay Team Variations.
+        /// </summary>
+        internal static string RelayTeamVariations {
+            get {
+                return ResourceManager.GetString("RelayTeamVariations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove Gap.
         /// </summary>
         internal static string RemoveGap {

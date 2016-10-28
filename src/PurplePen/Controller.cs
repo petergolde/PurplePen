@@ -901,6 +901,32 @@ namespace PurplePen
             return new VariationReportData(courseName, relayVariations);
         }
 
+        // For the current course, get the relay parameters.
+        public void GetRelayParameters(out int numberTeams, out int numberLegs)
+        {
+            numberTeams = 0;
+            numberLegs = 1;
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            if (courseId.IsNone)
+                return;
+
+            Course course = eventDB.GetCourse(courseId);
+            numberTeams = course.relayTeams;
+            numberLegs = course.relayLegs;
+        }
+
+        // For the current course, set the relay parameters.
+        public void SetRelayParameters(int numberTeams, int numberLegs)
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            if (courseId.IsNone)
+                return;
+
+            undoMgr.BeginCommand(9812, CommandNameText.RelayTeamVariations);
+            ChangeEvent.SetRelayParameters(eventDB, courseId, numberTeams, numberLegs);
+            undoMgr.EndCommand(9812);
+        }
+
 
         // Get the text for the status line
         public string StatusText

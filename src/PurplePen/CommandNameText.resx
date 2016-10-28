@@ -294,4 +294,7 @@
   <data name="DeleteFork" xml:space="preserve">
     <value>Delete Fork/Loop</value>
   </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Relay Team Variations</value>
+  </data>
 </root>
