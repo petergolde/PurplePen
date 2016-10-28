@@ -204,7 +204,8 @@ namespace PurplePen
             // Restriction 1: the first loop must be different for first N legs (N is number of loops)
             if (leg < fork.numBranches) {
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
-                    if (teamAssignment.legAssignForFork[fork].branchForLeg[otherLeg][0] == loop[0])
+                    int[] otherBranches = teamAssignment.legAssignForFork[fork].branchForLeg[otherLeg];
+                    if (otherBranches.Length > 0 && otherBranches[0] == loop[0])
                         return false;
                 }
             }

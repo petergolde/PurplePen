@@ -2580,13 +2580,14 @@ namespace PurplePen
 
         private void courseVariationReportMenu_Click(object sender, EventArgs e)
         {
-            Reports reportGenerator = new Reports();
-            VariationReportData variationReportData = controller.GetVariationReportData(30, 4);
+            TeamVariationsForm reportForm = new TeamVariationsForm();
+            reportForm.NumberOfTeams = 0;
+            reportForm.NumberOfLegs = 1;
+            reportForm.GetReportBody += (reportSender, reportEventArgs) => {
+                VariationReportData variationReportData = controller.GetVariationReportData(reportEventArgs.NumberOfTeams, reportEventArgs.NumberOfLegs);
+                reportEventArgs.ReportBody = new Reports().CreateRelayVariationReport(variationReportData);
+            };
 
-            string reportText = reportGenerator.CreateRelayVariationReport(variationReportData);
-
-            string title = Util.RemoveHotkeyPrefix(courseVariationReportMenu.Text).Replace("...", "");
-            ReportForm reportForm = new ReportForm(title, "", reportText, "CourseRelayVariations.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
         }
