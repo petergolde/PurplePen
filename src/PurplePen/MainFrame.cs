@@ -2619,13 +2619,7 @@ namespace PurplePen
         void ExportVariationReport(TeamVariationsForm form, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
         {
             VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
-            
-            if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
-                // export csv
-            }
-            else {
-                // export xml
-            }
+            controller.ExportRelayVariationsReport(form.NumberOfTeams, form.NumberOfLegs, exportFileType, exportFileName);
         }
 
         private void MainFrame_Shown(object sender, EventArgs e)

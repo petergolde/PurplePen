@@ -932,6 +932,23 @@ namespace PurplePen
             return QueryEvent.CreateOutputFileName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.WithAllParts(), "", "_Relay", ".xml");
         }
 
+        public bool ExportRelayVariationsReport(int numberOfTeams, int numberOfLegs, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
+        {
+            bool success = HandleExceptions(
+                delegate {
+                    VariationReportData variationReportData = GetVariationReportData(numberOfTeams, numberOfLegs);
+
+                    if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
+                        var csvWriter = new CsvWriter();
+                        csvWriter.WriteCsv(exportFileName, variationReportData.RelayVariations);
+                    }
+
+                },
+                MiscText.CannotCreateFile, exportFileName);
+
+            return success;
+        }
+
 
         // Get the text for the status line
         public string StatusText

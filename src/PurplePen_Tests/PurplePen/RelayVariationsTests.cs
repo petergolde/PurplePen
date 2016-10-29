@@ -179,6 +179,22 @@ namespace PurplePen.Tests
             CollectionAssert.AreEquivalent(new[] { 'B' }, warnings[0].codeLess);
         }
 
+        [TestMethod]
+        public void ExportCsv()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.csv");
+            string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline.csv");
+
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6);
+            var csvWriter = new CsvWriter();
+            csvWriter.WriteCsv(tempOutputFile, teamAssignment);
+
+            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
+
+            File.Delete(tempOutputFile);
+        }
+
 
 
 

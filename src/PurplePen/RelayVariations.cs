@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -514,5 +516,43 @@ namespace PurplePen
         }
 
 
+    }
+
+    class CsvWriter
+    {
+        RelayVariations relayVariations;
+        TextWriter writer;
+
+        public void WriteCsv(string fileName, RelayVariations relayVariations)
+        {
+            this.relayVariations = relayVariations;
+
+            using (writer = new StreamWriter(fileName, false, Encoding.ASCII)) {
+                WriteHeaderLine();
+                WriteTeams();
+            }
+
+            writer = null;
+            relayVariations = null;
+        }
+
+        void WriteHeaderLine()
+        {
+            writer.Write("Team");
+            for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
+                writer.Write(",Leg {0}", legNumber.ToString(CultureInfo.InvariantCulture));
+            }
+            writer.WriteLine();
+        }
+        private void WriteTeams()
+        {
+            for (int teamNumber = 1; teamNumber <= relayVariations.NumberOfTeams; ++teamNumber) {
+                writer.Write(teamNumber.ToString(CultureInfo.InvariantCulture));
+                for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
+                    writer.Write(",{0}", relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString);
+                }
+                writer.WriteLine();
+            }
+        }
     }
 }
