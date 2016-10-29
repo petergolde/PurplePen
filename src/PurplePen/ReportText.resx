@@ -276,6 +276,9 @@
     <value>WARNING:</value>
     <comment>boldfaced</comment>
   </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Warning: due to the number of legs specified, the fork at control {0} will not be used evenly. {1} leg(s) will use branch(es) {2}, while {3} leg(s) will use branch(es) {4}. </value>
+  </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>Leg {0}</value>
     <comment>{0} replaced with leg number</comment>

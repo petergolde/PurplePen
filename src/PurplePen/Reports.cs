@@ -1020,6 +1020,12 @@ namespace PurplePen
 
             WriteH1(string.Format(ReportText.RelayVariation_Title, courseName));
 
+            foreach (RelayVariations.BranchWarning branchWarning in variationReportData.RelayVariations.GetBranchWarnings()) {
+                string codesMore = string.Join(", ", branchWarning.codeMore);
+                string codesLess = string.Join(", ", branchWarning.codeLess);
+                WritePara(String.Format(ReportText.RelayVariation_BranchWarning, branchWarning.ControlCode, branchWarning.numMore, codesMore, branchWarning.numLess, codesLess));
+            }
+
             string[] classes = new string[relayVariations.NumberOfLegs + 1];
             classes[0] = "leftalign";
             for (int i = 1; i < classes.Length; ++i)

@@ -511,6 +511,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning: due to the number of legs specified, the fork at control {0} will not be used evenly. {1} leg(s) will use branch(es) {2}, while {3} leg(s) will use branch(es) {4}. .
+        /// </summary>
+        internal static string RelayVariation_BranchWarning {
+            get {
+                return ResourceManager.GetString("RelayVariation_BranchWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Leg {0}.
         /// </summary>
         internal static string RelayVariation_LegHeader {
