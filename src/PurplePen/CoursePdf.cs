@@ -195,7 +195,7 @@ namespace PurplePen
         // checks for duplication of the map file name. Puts in the directory given in the creationSettings.
         string CreateOutputFileName(CourseDesignator courseDesignator)
         {
-            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, coursePdfSettings.filePrefix, ".pdf");
+            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, coursePdfSettings.filePrefix, "", ".pdf");
 
             return Path.GetFullPath(Path.Combine(coursePdfSettings.outputDirectory, basename));
         }

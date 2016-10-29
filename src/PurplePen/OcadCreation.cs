@@ -163,7 +163,7 @@ namespace PurplePen
             else {
                 extension = ".ocd";
             }
-            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, extension);
+            string basename = QueryEvent.CreateOutputFileName(eventDB, courseDesignator, creationSettings.filePrefix, "", extension);
 
             return Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, basename));
         }

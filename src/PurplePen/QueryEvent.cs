@@ -1181,7 +1181,7 @@ namespace PurplePen
         // Get the full output file name. Uses the name of the course, removes bad characters,
         // checks for duplication of the map file name. 
         // If courseDesignator is null, uses the event title insteand.
-        public static string CreateOutputFileName(EventDB eventDB, CourseDesignator courseDesignator, string filePrefix, string extension)
+        public static string CreateOutputFileName(EventDB eventDB, CourseDesignator courseDesignator, string filePrefix, string fileSuffix, string extension)
         {
             string basename;
 
@@ -1201,6 +1201,9 @@ namespace PurplePen
             if (courseDesignator != null && !courseDesignator.AllParts) {
                 basename = basename + "-" + (courseDesignator.Part + 1).ToString();
             }
+
+            if (!string.IsNullOrEmpty(fileSuffix))
+                basename = basename + fileSuffix;
 
             // Remove bad characters.
             basename = Util.FilterInvalidPathChars(basename);

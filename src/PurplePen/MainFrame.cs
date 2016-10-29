@@ -2585,10 +2585,16 @@ namespace PurplePen
             TeamVariationsForm reportForm = new TeamVariationsForm();
             reportForm.NumberOfTeams = numTeams;
             reportForm.NumberOfLegs = numLegs;
+            reportForm.DefaultExportFileName = controller.GetDefaultVariationExportFileName();
+
             SetVariationReportBody(reportForm);
 
             reportForm.CalculateVariationsPressed += (reportSender, reportEventArgs) => {
                 SetVariationReportBody(reportForm);
+            };
+
+            reportForm.ExportFilePressed += (reportSender, reportEventArgs) => {
+                ExportVariationReport(reportForm, reportEventArgs.FileType, reportEventArgs.FileName);
             };
 
             reportForm.ShowDialog(this);
@@ -2607,6 +2613,18 @@ namespace PurplePen
             else {
                 VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
                 form.SetBody(new Reports().CreateRelayVariationReport(variationReportData));
+            }
+        }
+
+        void ExportVariationReport(TeamVariationsForm form, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
+        {
+            VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
+            
+            if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
+                // export csv
+            }
+            else {
+                // export xml
             }
         }
 

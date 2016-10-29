@@ -927,6 +927,11 @@ namespace PurplePen
             undoMgr.EndCommand(9812);
         }
 
+        public string GetDefaultVariationExportFileName()
+        {
+            return QueryEvent.CreateOutputFileName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.WithAllParts(), "", "_Relay", ".xml");
+        }
+
 
         // Get the text for the status line
         public string StatusText

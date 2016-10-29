@@ -1746,29 +1746,29 @@ namespace PurplePen.Tests
 
             Setup("queryevent\\mapexchange1.ppen");
 
-            result = QueryEvent.CreateOutputFileName(eventDB, null, "", ".xyz");
+            result = QueryEvent.CreateOutputFileName(eventDB, null, "", "", ".xyz");
             Assert.AreEqual("Marymoor WIOL 2.xyz", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, null, "PRE/TEST", ".a");
+            result = QueryEvent.CreateOutputFileName(eventDB, null, "PRE/TEST", "", ".a");
             Assert.AreEqual("PRE_TEST-Marymoor WIOL 2.a", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "", ".xyz");
-            Assert.AreEqual("Course 2.xyz", result);
+            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "", "-ext", ".xyz");
+            Assert.AreEqual("Course 2-ext.xyz", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "PRETEST", ".a");
+            result = QueryEvent.CreateOutputFileName(eventDB, Designator(2), "PRETEST", "", ".a");
             Assert.AreEqual("PRETEST-Course 2.a", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(2), 0), "", ".xyz");
+            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(2), 0), "", "", ".xyz");
             Assert.AreEqual("Course 2-1.xyz", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(6), 2), "PRETEST", ".a");
+            result = QueryEvent.CreateOutputFileName(eventDB, new CourseDesignator(CourseId(6), 2), "PRETEST", "", ".a");
             Assert.AreEqual("PRETEST-Course 5-3.a", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, null, ".xyz");
+            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, null, "", ".xyz");
             Assert.AreEqual("All controls.xyz", result);
 
-            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, "A", ".a");
-            Assert.AreEqual("A-All controls.a", result);
+            result = QueryEvent.CreateOutputFileName(eventDB, CourseDesignator.AllControls, "A", "_Done", ".a");
+            Assert.AreEqual("A-All controls_Done.a", result);
 
         }
 

@@ -40,6 +40,7 @@
             this.upDownNumberOfTeams = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
@@ -67,6 +68,7 @@
             resources.ApplyResources(this.buttonExport, "buttonExport");
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // buttonPrint
             // 
@@ -146,6 +148,10 @@
             this.webBrowser.Name = "webBrowser";
             this.webBrowser.Url = new System.Uri("http://purple-pen.org", System.UriKind.Absolute);
             // 
+            // saveFileDialog
+            // 
+            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+            // 
             // TeamVariationsForm
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -180,5 +186,6 @@
         private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonPrintPreview;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

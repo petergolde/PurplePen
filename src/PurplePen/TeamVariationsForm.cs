@@ -45,10 +45,22 @@ namespace PurplePen
     public partial class TeamVariationsForm: PurplePen.BaseDialog
     {
         public EventHandler<CalculateVariationsPressedEventArgs> CalculateVariationsPressed;
+        public EventHandler<ExportFilePressedEventArgs> ExportFilePressed;
 
         public TeamVariationsForm()
         {
             InitializeComponent();
+        }
+
+        public string DefaultExportFileName
+        {
+            get
+            {
+                return saveFileDialog.FileName;
+            }
+            set {
+                saveFileDialog.FileName = value;
+            }
         }
 
         public int NumberOfTeams { 
@@ -87,18 +99,6 @@ namespace PurplePen
             webBrowser.DocumentText = htmlText;
         }
 
-        public class CalculateVariationsPressedEventArgs: EventArgs
-        {
-            public int NumberOfTeams;
-            public int NumberOfLegs;
-
-            public CalculateVariationsPressedEventArgs(int numberOfTeams, int numberOfLegs)
-            {
-                NumberOfTeams = numberOfTeams;
-                NumberOfLegs = numberOfLegs;
-            }
-        }
-
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
             CalculateVariationsPressedEventArgs eventArgs = new CalculateVariationsPressedEventArgs(NumberOfTeams, NumberOfLegs);
@@ -114,5 +114,46 @@ namespace PurplePen
         {
             webBrowser.ShowPrintPreviewDialog();
         }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) {
+                ExportFileType exportFileType;
+                string exportFileName = saveFileDialog.FileName;
+                if (saveFileDialog.FilterIndex == 2)
+                    exportFileType = ExportFileType.Csv;
+                else
+                    exportFileType = ExportFileType.Xml;
+
+                ExportFilePressed?.Invoke(this, new ExportFilePressedEventArgs(exportFileType, exportFileName));
+            }
+        }
+
+        public enum ExportFileType { Xml, Csv};
+
+        public class CalculateVariationsPressedEventArgs: EventArgs
+        {
+            public int NumberOfTeams;
+            public int NumberOfLegs;
+
+            public CalculateVariationsPressedEventArgs(int numberOfTeams, int numberOfLegs)
+            {
+                NumberOfTeams = numberOfTeams;
+                NumberOfLegs = numberOfLegs;
+            }
+        }
+
+        public class ExportFilePressedEventArgs: EventArgs
+        {
+            public ExportFileType FileType;
+            public string FileName;
+
+            public ExportFilePressedEventArgs(ExportFileType fileType, string fileName)
+            {
+                FileType = fileType;
+                FileName = fileName;
+            }
+        }
+
     }
 }
