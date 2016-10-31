@@ -68,11 +68,11 @@ namespace TestingUtils.Tests
             Bitmap bm2 = (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare2.gif"));
             Bitmap bm3 = (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare3.gif"));
 
-            Assert.IsNull(TestUtil.CompareBitmaps(bm1, bm2, Color.LightPink, Color.Transparent));
-            Bitmap diff = TestUtil.CompareBitmaps(bm1, bm3, Color.FromArgb(255, 225, 235), Color.Transparent);
+            Assert.IsNull(TestUtil.CompareBitmaps(bm1, bm2, Color.LightPink, Color.Transparent, 0));
+            Bitmap diff = TestUtil.CompareBitmaps(bm1, bm3, Color.FromArgb(255, 225, 235), Color.Transparent, 0);
             Assert.IsNotNull(diff);
 
-            Assert.IsNull(TestUtil.CompareBitmaps(diff, (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare_difference.png")), Color.LightPink, Color.Transparent));
+            Assert.IsNull(TestUtil.CompareBitmaps(diff, (Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\compare_difference.png")), Color.LightPink, Color.Transparent, 0));
         }
 
         private Bitmap CreateTestBitmap(bool addSlash)
@@ -98,7 +98,7 @@ namespace TestingUtils.Tests
 
             // Test against non-existant baseline -- should create a baseline_new.
             Bitmap bm = CreateTestBitmap(false);
-            bool correct = TestUtil.CheckBaseline(bm, @"testutil\missing");
+            bool correct = TestUtil.CheckBaseline(bm, @"testutil\missing", 0);
             Assert.IsFalse(correct);
             Assert.IsTrue(File.Exists(TestUtil.GetTestFile(@"testutil\missing_baseline_new.png")));
 
@@ -115,19 +115,19 @@ namespace TestingUtils.Tests
 
             // Check identical bitmap against the baseline.
             Bitmap bm2 = CreateTestBitmap(false);
-            correct = TestUtil.CheckBaseline(bm2, @"testutil\missing");
+            correct = TestUtil.CheckBaseline(bm2, @"testutil\missing", 0);
             Assert.IsTrue(correct);
             Assert.IsFalse(File.Exists(TestUtil.GetTestFile(@"testutil\missing_new.png")));
             Assert.IsFalse(File.Exists(TestUtil.GetTestFile(@"testutil\missing_diff.png")));
 
             Bitmap bm3 = CreateTestBitmap(true);
-            correct = TestUtil.CheckBaseline(bm3, @"testutil\missing");
+            correct = TestUtil.CheckBaseline(bm3, @"testutil\missing", 0);
             Assert.IsFalse(correct);
             Assert.IsTrue(File.Exists(TestUtil.GetTestFile(@"testutil\missing_new.png")));
             Assert.IsTrue(File.Exists(TestUtil.GetTestFile(@"testutil\missing_diff.png")));
 
             // The "new bitmap" should be correct.
-            Assert.IsTrue(TestUtil.CompareBitmaps((Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\missing_new.png")), CreateTestBitmap(true), Color.LightPink, Color.Transparent) == null);
+            Assert.IsTrue(TestUtil.CompareBitmaps((Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\missing_new.png")), CreateTestBitmap(true), Color.LightPink, Color.Transparent, 0) == null);
         }
 	
 

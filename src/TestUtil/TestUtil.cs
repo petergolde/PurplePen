@@ -65,7 +65,7 @@ namespace TestingUtils
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
         // The difference bitmap has "colorSame" background, and the bits from the second bitmap where differences are.
         // Used as helper from CompareBitmaps if a difference is detected.
-        private static Bitmap DifferenceBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent)
+        private static Bitmap DifferenceBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference)
         {
             int width = bm1.Width, height = bm1.Height;
 
@@ -82,7 +82,7 @@ namespace TestingUtils
                 for (int y = 0; y < height; ++y) {
                     Color color1 = bm1.GetPixel(x, y);
                     Color color2 = bm2.GetPixel(x, y);
-                    if (color1 != color2) {
+                    if (color1 != color2 && (maxPixelDifference == 0 || !SimilarColors(color1, color2, maxPixelDifference))) {
                         if (colorDifferent == Color.Transparent)
                             diff.SetPixel(x, y, color2);
                         else if (colorSame != Color.Transparent)
@@ -103,10 +103,18 @@ namespace TestingUtils
             }
         }
 
+        private static bool SimilarColors(Color color1, Color color2, int maxPixelDifference)
+        {
+            return (Math.Abs(color1.R - color2.R) <= maxPixelDifference &&
+                Math.Abs(color1.G - color2.G) <= maxPixelDifference &&
+                Math.Abs(color1.B - color2.B) <= maxPixelDifference &&
+                Math.Abs(color1.A - color2.A) <= maxPixelDifference);
+        }
+
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
         // The difference bitmap has light gray background, and the bits from the second bitmap where differences are.
         // If the bitmaps are different sizes, bm2 is returned.
-        public static Bitmap CompareBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent)
+        public static Bitmap CompareBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference)
         {
 
             if (bm1.Width != bm2.Width || bm1.Height != bm2.Height)
@@ -136,7 +144,7 @@ namespace TestingUtils
             if (!different)
                 return null;
             else
-                return DifferenceBitmaps(bm1, bm2, colorSame, colorDifferent);
+                return DifferenceBitmaps(bm1, bm2, colorSame, colorDifferent, maxPixelDifference);
         }
 
         // Check a bitmap against a baseline file, named with "_baseline.png" in the normal test files place.
@@ -145,7 +153,7 @@ namespace TestingUtils
         // If the baseline is missing, an _baseline_new is created.
         //
         // If the file "updatebaselines" is in that directory; automatically updates baselines (and fails).
-        public static bool CheckBaseline(Bitmap bmNew, string basefilename)
+        public static bool CheckBaseline(Bitmap bmNew, string basefilename, int maxPixelDifference)
         {
             string baselineFile = GetTestFile(basefilename + "_baseline.png");
             string baselineDir = Path.GetDirectoryName(baselineFile);
@@ -163,7 +171,7 @@ namespace TestingUtils
             }
             else {
                 Bitmap bmBaseline = (Bitmap) Image.FromFile(baselineFile);
-                Bitmap bmDiff = CompareBitmaps(bmBaseline, bmNew, Color.LightPink, Color.Transparent);
+                Bitmap bmDiff = CompareBitmaps(bmBaseline, bmNew, Color.LightPink, Color.Transparent, maxPixelDifference);
                 bmBaseline.Dispose();
 
                 if (bmDiff == null) {
@@ -194,24 +202,24 @@ namespace TestingUtils
         // Same as CheckBaseline, but asserts on failure.
         public static void AssertBaseline(Bitmap bmNew, string basefilename)
         {
-            Assert.IsTrue(CheckBaseline(bmNew, basefilename), string.Format("Bitmap '{0}' does not compare correctly against baseline", basefilename));
+            Assert.IsTrue(CheckBaseline(bmNew, basefilename, 0), string.Format("Bitmap '{0}' does not compare correctly against baseline", basefilename));
         }
 
         // Check a bitmap against a baseline file (which could not exist). If the baseline doesn't exist or doesn't compare the
         // same, launch a interactive dialog which displays the baselines.
         // (Unlike AssertBaseline/CheckBaseline, the file name is a the full file name, including extension).
         // bmNew is always disposed.
-        public static void CompareBitmapBaseline(string bitmapNew, string baselineFile)
+        public static void CompareBitmapBaseline(string bitmapNew, string baselineFile, int maxPixelDifference = 0)
         {
             Assert.IsTrue(File.Exists(bitmapNew));
 
             using (Bitmap bmNew = (Bitmap) Image.FromFile(bitmapNew))
             {
-                CompareBitmapBaseline(bmNew, baselineFile);
+                CompareBitmapBaseline(bmNew, baselineFile, maxPixelDifference);
             }
         }
 
-        public static void CompareBitmapBaseline(Bitmap bmNew, string baselineFile)
+        public static void CompareBitmapBaseline(Bitmap bmNew, string baselineFile, int maxPixelDifference = 0)
         {
             // Is the file different than the baseline?
             bool different = false, fail = false;
@@ -220,7 +228,7 @@ namespace TestingUtils
                 different = true;
             else {
                 using (Bitmap bmBaseline = (Bitmap) Image.FromFile(baselineFile)) {
-                    Bitmap diff = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent);
+                    Bitmap diff = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent, maxPixelDifference);
                     different = (diff != null);
                     if (diff != null)
                         diff.Dispose();
@@ -237,6 +245,7 @@ namespace TestingUtils
                 bmNew.Save(tempNewFile, ImageFormat.Png);
 
                 BitmapCompareDialog2 dialog = new BitmapCompareDialog2();
+                dialog.MaxPixelDifference = maxPixelDifference;
                 dialog.BaselineFilename = baselineFile;
                 dialog.NewFilename = tempNewFile;
                 if (dialog.ShowDialog() == DialogResult.Cancel)
@@ -253,9 +262,9 @@ namespace TestingUtils
         }
 
         // Same, but uses a "base file name".
-        public static void CheckBitmapsBase(Bitmap bmNew, string baselineFileBaseName)
+        public static void CheckBitmapsBase(Bitmap bmNew, string baselineFileBaseName, int maxPixelDifference = 0)
         {
-            CompareBitmapBaseline(bmNew, GetTestFile(baselineFileBaseName + "_baseline.png"));
+            CompareBitmapBaseline(bmNew, GetTestFile(baselineFileBaseName + "_baseline.png"), maxPixelDifference);
         }
 
         public static void TestEnumerableAnyOrder<T>(IEnumerable<T> e, T[] expected)

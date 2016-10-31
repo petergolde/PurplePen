@@ -171,7 +171,9 @@ namespace PurplePen.Tests
                     string newFileName = TestUtil.GetTestFile(basename + "_xps_page" + (page + 1).ToString() + "_new");
                     WritePng(bm, newFileName);
                     Bitmap newBitmap = (Bitmap)Image.FromFile(newFileName);
-                    TestUtil.CheckBitmapsBase(newBitmap, baseFileName);
+
+                    // For some reason, the XPS anti-aliasing varies slightly. Allow pixel difference to account.
+                    TestUtil.CheckBitmapsBase(newBitmap, baseFileName, 19);
                 }
             }
         }

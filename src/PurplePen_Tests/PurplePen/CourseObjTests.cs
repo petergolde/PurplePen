@@ -954,7 +954,7 @@ namespace PurplePen.Tests
             }
 
             Bitmap bmDiff;
-            bmDiff = TestUtil.CompareBitmaps(bmNew, bmErased, Color.LightPink, Color.Transparent);
+            bmDiff = TestUtil.CompareBitmaps(bmNew, bmErased, Color.LightPink, Color.Transparent, 0);
             if (bmDiff != null) 
                 bmDiff.Save(TestUtil.GetTestFile("coursesymbols\\" + basename + "_diff.png"), ImageFormat.Png);
             Assert.IsNull(bmDiff, "after erase does not match with before highlight");

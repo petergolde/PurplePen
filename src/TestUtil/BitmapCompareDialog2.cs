@@ -17,6 +17,9 @@ namespace TestingUtils
         Bitmap bmNew = null, bmBaseline = null, bmDiff = null, bmWhite = null;
         bool nowShowingNew = true;
 
+        public int MaxPixelDifference = 0;
+
+
         public BitmapCompareDialog2()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace TestingUtils
                 else
                     text = string.Format("Baseline file '{0}' is different from new bitmap '{1}'", Path.GetFileName(BaselineFilename), Path.GetFileName(NewFilename));
 #if TEST
-                bmDiff = TestUtil.CompareBitmaps(bmBaseline, bmNew, Color.White, Color.Red);
+                bmDiff = TestUtil.CompareBitmaps(bmBaseline, bmNew, Color.White, Color.Red, MaxPixelDifference);
                 bmWhite = new Bitmap(bmDiff.Width, bmDiff.Height);
                 Graphics g = Graphics.FromImage(bmWhite);
                 g.Clear(Color.White);

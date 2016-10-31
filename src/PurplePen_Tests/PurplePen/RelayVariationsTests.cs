@@ -198,6 +198,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void ExportXml()
         {
+            Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
+
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
             string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.xml");
             string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline.xml");
@@ -206,7 +208,7 @@ namespace PurplePen.Tests
             var xmlExporter = new ExportRelayVariations3();
             xmlExporter.WriteXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
 
-            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
+            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
 
             File.Delete(tempOutputFile);
         }

@@ -53,6 +53,8 @@ namespace TestingUtils
             InitializeComponent();
         }
 
+        public int MaxPixelDifference = 0;
+
         // View some bitmap files.
         public static void ViewFiles(params string[] filenames)
         {
@@ -81,8 +83,8 @@ namespace TestingUtils
                 else
                     text = string.Format("Baseline file '{0}' is different", Path.GetFileName(BaselineFilename));
 #if TEST
-                bmDiff1 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.LightPink, Color.Transparent);
-                bmDiff2 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.DarkBlue, Color.Transparent);
+                bmDiff1 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.LightPink, Color.Transparent, MaxPixelDifference);
+                bmDiff2 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.DarkBlue, Color.Transparent, MaxPixelDifference);
 #endif //TEST
             }
 
