@@ -1295,7 +1295,10 @@ namespace PurplePen
                         if (!(courseControl.loop && courseControl.splitCourseControls[0] == splitId)) {
                             if (!result.ContainsKey(splitId)) {
                                 result.Add(splitId, nextLetter);
-                                nextLetter++;
+                                if (nextLetter == 'Z')
+                                    nextLetter = 'a';
+                                else
+                                    ++nextLetter;
                             }
                         }
                     }

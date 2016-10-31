@@ -48,9 +48,9 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseLayoutTests: TestFixtureBase
     {
-        void CheckHitTest(CourseLayout course, PointF point, CourseLayer layerFilter, Type typeFilter, string expectedObject)
+        void CheckHitTest(CourseLayout course, PointF point, CourseLayer layerFilter, Predicate<CourseObj> filter, string expectedObject)
         {
-            CourseObj courseobj = course.HitTest(point, 0.1F, layerFilter, typeFilter);
+            CourseObj courseobj = course.HitTest(point, 0.1F, layerFilter, filter);
             if (courseobj == null) {
                 Assert.IsNull(expectedObject);
             }
@@ -104,10 +104,10 @@ namespace PurplePen.Tests
             CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.MainCourse, null, null);
 
             // Test the type filter
-            CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, typeof(LegCourseObj), "Leg:            control:71  course-control:307  scale:1  course-control2:308  path:N(42.92,17.55)--N(71.88,19.05)");
-            CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, typeof(PointCourseObj), null);
-            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, typeof(PointCourseObj), "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:");
-            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, typeof(LineCourseObj), null);
+            CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, (co => co is LegCourseObj), "Leg:            control:71  course-control:307  scale:1  course-control2:308  path:N(42.92,17.55)--N(71.88,19.05)");
+            CheckHitTest(course, new PointF(59.2F, 18.5F), CourseLayer.MainCourse, (co => co is PointCourseObj), null);
+            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, (co => co is PointCourseObj), "Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:");
+            CheckHitTest(course, new PointF(-3.5F, 10.3F), CourseLayer.MainCourse, (co => co is LineCourseObj), null);
 
         }
 

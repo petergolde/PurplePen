@@ -1,7 +1,5 @@
 Big things to do before first beta:
 
-- Add report for calculating teams assignment to variations.
-
 - Update XML export for variations (v2 and v3)
 
 - Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
@@ -9,10 +7,6 @@ Big things to do before first beta:
 - limit total permutations (maybe 10,000)
 
 - switch to ordering view after add variation operation.
-
-- letters after 'Z'
-
-- clicking in topology view on legs too fiddly -- should allow more distance from pointer to leg.
 
 - cases where number of routes is uneven causes problems in relay variations.
 

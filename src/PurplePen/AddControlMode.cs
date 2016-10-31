@@ -148,13 +148,13 @@ namespace PurplePen
             else {
                 // Are we over a control we might add?
                 CourseLayout layout = controller.GetCourseLayout();
-                PointCourseObj courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.AllControls, typeof(PointCourseObj)) as PointCourseObj;
+                PointCourseObj courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.AllControls, (co => co is PointCourseObj)) as PointCourseObj;
                 if (courseObj != null) {
                     highlightLocation = courseObj.location;
                     return courseObj.controlId;
                 }
                 else {
-                    courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.MainCourse, typeof(PointCourseObj)) as PointCourseObj;
+                    courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.MainCourse, (co => co is PointCourseObj)) as PointCourseObj;
                     if (courseObj != null && 
                         courseObj.controlId.IsNotNone)
                     {

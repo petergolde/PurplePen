@@ -321,7 +321,7 @@ namespace PurplePen
 
         public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            CourseObj clickedObject = HitTest(pane, location, pixelSize);
+            CourseObj clickedObject = HitTest(pane, location, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
             if (clickedObject != null) {
                 selectionMgr.SelectCourseObject(clickedObject);
             }
@@ -341,7 +341,7 @@ namespace PurplePen
                 controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
             }
             else if (pane == Pane.Topology) {
-                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize);
+                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
                 TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, locationStart, location);
                 controller.SetCommandMode(commandMode);
             }
@@ -379,7 +379,7 @@ namespace PurplePen
                 return MapViewer.DragAction.DelayedDrag;
             }
             else if (pane == Pane.Topology) {
-                CourseObj clickedObject = HitTest(pane, location, pixelSize);
+                CourseObj clickedObject = HitTest(pane, location, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
                 if (clickedObject is ControlNumberCourseObj || clickedObject is CrossingCourseObj ||
                     (clickedObject is StartCourseObj && (eventDB.GetControl(((StartCourseObj)clickedObject).controlId).kind == ControlPointKind.MapExchange))) 
                 {
@@ -393,14 +393,14 @@ namespace PurplePen
             return MapViewer.DragAction.None;
         }
 
-        private CourseObj HitTest(Pane pane, PointF location, float pixelSize)
+        private CourseObj HitTest(Pane pane, PointF location, float pixelSize, Predicate<CourseObj> filter)
         {
             CourseLayout activeCourse = (pane == Pane.Map) ? controller.GetCourseLayout() : controller.GetTopologyLayout();
             CourseObj clickedObject;
 
-            clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+            clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, filter);
             if (clickedObject == null)
-                clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+                clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, filter);
 
             return clickedObject;
         }

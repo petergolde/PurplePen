@@ -185,16 +185,16 @@ namespace PurplePen
         // Find a course object from a point, and a "pixelsize" that says how big one pixel is.
         // If no course object is hit, then we return null. 
         // The layerFilter, if >= 0, limits the objects consider to those in the given layer.
-        // The typeFilter, if non-null, limits objects to those of that type or derived from that type.
-        public CourseObj HitTest(PointF point, float pixelSize, CourseLayer layerFilter, Type typeFilter)
+        // The filter, if non-null, is an additional filter (return true to consider)
+        public CourseObj HitTest(PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
         {
-            return HitTestCollection(this, point, pixelSize, layerFilter, typeFilter);
+            return HitTestCollection(this, point, pixelSize, layerFilter, filter);
         }
 
         // Check a point against a set of course objects. 
         // The layerFilter, if >= 0, limits the objects consider to those in the given layer.
-        // The typeFilter, if non-null, limits objects to those of that type or derived from that type.
-        public static CourseObj HitTestCollection(IEnumerable<CourseObj> courseObjects, PointF point, float pixelSize, CourseLayer layerFilter, Type typeFilter)
+        // The filter, if non-null, is an additional filter (return true to consider)
+        public static CourseObj HitTestCollection(IEnumerable<CourseObj> courseObjects, PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
         {
             // We need to hit within 3 pixels of an object to select it.
             double bestDistance = pixelSize * 3;
@@ -203,7 +203,7 @@ namespace PurplePen
             foreach (CourseObj courseObject in courseObjects) {
                 if (layerFilter >= 0 && courseObject.layer != layerFilter)
                     continue;
-                if (typeFilter != null && !typeFilter.IsAssignableFrom(courseObject.GetType()))
+                if (filter != null && !filter(courseObject))
                     continue;
 
                 double dist = courseObject.DistanceFromPoint(point);
