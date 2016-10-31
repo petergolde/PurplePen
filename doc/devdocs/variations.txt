@@ -6,12 +6,12 @@ Big things to do before first beta:
 
 - limit total permutations (maybe 10,000)
 
-- switch to ordering view after add variation operation.
-
 - cases where number of routes is uneven causes problems in relay variations.
 
 
 Variation naming issues:
+    - Now I'm thinking not to do anything special. Use team/participant when printing that way, otherwise code, always after course name.
+
     - UI to change variation naming. I think this is useful. Simple options: Variation code (default) or name+number or team/participant; include course name first.
 
     - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?

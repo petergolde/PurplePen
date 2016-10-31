@@ -2738,6 +2738,8 @@ namespace PurplePen
             Debug.Assert(result);
 
             undoMgr.EndCommand(1992);
+
+            ui.ShowTopologyView();
         }
 
         public CommandStatus CanDeleteFork()
@@ -3739,6 +3741,9 @@ namespace PurplePen
 
         // Initiate map dragging.
         void InitiateMapDragging(PointF initialPos, System.Windows.Forms.MouseButtons buttonEnd);
+
+        // Switch to topology display
+        void ShowTopologyView();
 
         // Put up a progress dialog for long-running operation.
         void ShowProgressDialog(bool knownDuration);

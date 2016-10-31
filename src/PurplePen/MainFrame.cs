@@ -2841,6 +2841,12 @@ namespace PurplePen
             panelTopology.Visible = radioButtonTopology.Checked;
         }
 
+        public void ShowTopologyView()
+        {
+            panelTopology.Visible = true;
+            descriptionControl.Visible = false;
+        }
+
         private void mapViewerTopology_Resize(object sender, EventArgs e)
         {
             if (controller != null) {

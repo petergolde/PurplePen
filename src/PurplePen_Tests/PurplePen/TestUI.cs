@@ -207,6 +207,10 @@ namespace PurplePen.Tests
         public void EndProgressDialog()
         {
         }
+
+        public void ShowTopologyView()
+        {
+        }
     }
 }
 
