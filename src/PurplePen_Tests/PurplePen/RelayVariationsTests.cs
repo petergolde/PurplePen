@@ -195,6 +195,23 @@ namespace PurplePen.Tests
             File.Delete(tempOutputFile);
         }
 
+        [TestMethod]
+        public void ExportXml()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.xml");
+            string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline.xml");
+
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6);
+            var xmlExporter = new ExportRelayVariations3();
+            xmlExporter.WriteXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
+
+            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
+
+            File.Delete(tempOutputFile);
+        }
+
+
 
 
 

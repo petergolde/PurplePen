@@ -213,8 +213,8 @@ namespace PurplePen
 
         protected override void WriteEnd()
         {
-            xmlWriter.WriteEndElement();  // CourseData
             xmlWriter.WriteEndElement();  // RaceCourseData
+            xmlWriter.WriteEndElement();  // CourseData
         }
 
 
@@ -572,6 +572,113 @@ namespace PurplePen
             return exceptions;
         }
 
+    }
+
+
+    
+
+
+
+
+
+    class ExportRelayVariations3
+    {
+        private XmlWriter xmlWriter;
+        private DateTimeOffset modificationDate;
+        private RelayVariations relayVariations;
+        private EventDB eventDB;
+        private Id<Course> courseId;
+        private string courseName;
+
+        public void WriteXml(string filename, RelayVariations relayVariations, EventDB eventDB, Id<Course> courseId)
+        {
+            this.relayVariations = relayVariations;
+            this.eventDB = eventDB;
+            this.courseId = courseId;
+            this.modificationDate = DateTimeOffset.Now;
+            this.courseName = eventDB.GetCourse(courseId).name;
+
+            // Create the XML writer.
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.Encoding = new UTF8Encoding(false);
+            xmlWriter = XmlWriter.Create(filename, settings);
+
+            WriteStart();
+
+            for (int teamNumber = 1; teamNumber < relayVariations.NumberOfTeams; ++teamNumber) {
+                WriteTeam(teamNumber);
+            }
+
+            WriteEnd();
+
+            // And done.
+            xmlWriter.Close();
+            eventDB = null;
+            xmlWriter = null;
+        }
+
+        private void WriteStart()
+        {
+            // Write the root
+            xmlWriter.WriteStartElement("CourseData", "http://www.orienteering.org/datastandard/3.0");
+            xmlWriter.WriteAttributeString("xmlns", "http://www.orienteering.org/datastandard/3.0");
+            xmlWriter.WriteAttributeString("iofVersion", "3.0");
+            xmlWriter.WriteAttributeString("createTime", XmlConvert.ToString(modificationDate));
+            xmlWriter.WriteAttributeString("creator", string.Format("Purple Pen version {0}", Util.PrettyVersionString(VersionNumber.Current)));
+
+            WriteEventInfo();
+
+            xmlWriter.WriteStartElement("RaceCourseData");
+        }
+
+        private void WriteEnd()
+        {
+            xmlWriter.WriteEndElement();  // RaceCourseData
+            xmlWriter.WriteEndElement();  // CourseData
+        }
+
+        void WriteEventInfo()
+        {
+            xmlWriter.WriteStartElement("Event");
+            xmlWriter.WriteElementString("Name", eventDB.GetEvent().title);
+            xmlWriter.WriteEndElement();
+        }
+
+        private void WriteTeam(int teamNumber)
+        {
+            xmlWriter.WriteStartElement("TeamCourseAssignment");
+            xmlWriter.WriteElementString("TeamName", XmlConvert.ToString(teamNumber));
+
+            for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
+                WriteLeg(teamNumber, legNumber);
+            }
+
+            xmlWriter.WriteEndElement(); // </TeamCourseAssignment>
+        }
+
+        private void WriteLeg(int teamNumber, int legNumber)
+        {
+            xmlWriter.WriteStartElement("TeamMemberCourseAssignment");
+
+            int bibNumber = GetBibNumber(teamNumber, legNumber);
+            string variationString = relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString;
+
+            xmlWriter.WriteElementString("BibNumber", XmlConvert.ToString(bibNumber));
+            xmlWriter.WriteElementString("Leg", XmlConvert.ToString(legNumber));
+            xmlWriter.WriteElementString("CourseName", variationString);
+            xmlWriter.WriteElementString("CourseFamily", courseName);
+
+            xmlWriter.WriteEndElement(); // </TeamMemberCourseAssignment>
+        }
+
+        private int GetBibNumber(int teamNumber, int legNumber)
+        {
+            if (relayVariations.NumberOfLegs >= 10)
+                return teamNumber * 100 + legNumber;
+            else
+                return teamNumber * 10 + legNumber;
+        }
     }
 
 }

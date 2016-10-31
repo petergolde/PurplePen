@@ -939,8 +939,12 @@ namespace PurplePen
                     VariationReportData variationReportData = GetVariationReportData(numberOfTeams, numberOfLegs);
 
                     if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
-                        var csvWriter = new CsvWriter();
+                        CsvWriter csvWriter = new CsvWriter();
                         csvWriter.WriteCsv(exportFileName, variationReportData.RelayVariations);
+                    }
+                    else if (exportFileType == TeamVariationsForm.ExportFileType.Xml) {
+                        ExportRelayVariations3 exporter = new ExportRelayVariations3();
+                        exporter.WriteXml(exportFileName, variationReportData.RelayVariations, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
                     }
 
                 },
