@@ -149,12 +149,40 @@ namespace PurplePen
 
             Course course = eventDB.GetCourse(courseId);
             bool isScore = (course.kind == CourseKind.Score);
+            string[] classNames = GetClassNames(eventDB, courseId);
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+
+            WriteCourseGroupStart(course.name, courseNumber, classNames, isScore);
+
+            WriteCourseVariations(courseId, course.name, courseNumber, classNames, isScore);
+
+            WriteCourseGroupEnd();
+
+            return true;
+        }
+
+        void WriteCourseVariations(Id<Course> courseId, string courseName, int courseNumber, string[] classNames, bool isScore)
+        {
+            if (QueryEvent.HasVariations(eventDB, courseId)) {
+                VariationInfo[] variations = QueryEvent.GetAllVariations(eventDB, courseId).ToArray();
+                for (int variationNumber = 0; variationNumber < variations.Length; ++variationNumber) {
+                    WriteSingleCourseVariation(new CourseDesignator(courseId, variations[variationNumber].VariationPath), courseName, courseNumber, classNames, isScore, variationNumber, variations[variationNumber]);
+                }
+            }
+            else {
+                // No variations.
+                WriteSingleCourseVariation(new CourseDesignator(courseId), courseName, courseNumber, classNames, isScore, 0, null);
+            }
+        }
+
+        void WriteSingleCourseVariation(CourseDesignator courseDesignator, string courseName, int courseNumber, string[] classNames, bool isScore, int variationNumber, VariationInfo variationInfo)
+        {
             float distanceThisLeg = 0;
             int sequenceNumber = 1;     // score courses need sequence #'s, even though there is no sequence.
 
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
 
-            WriteCourseStart(courseView, course.name, courseNumber, GetClassNames(eventDB, courseId), isScore);
+            WriteCourseStart(courseView, courseName, courseNumber, classNames, isScore, variationNumber, variationInfo);
 
             // Go through the control views.
             int controlViewIndex = 0;
@@ -174,8 +202,6 @@ namespace PurplePen
             }
 
             WriteCourseEnd();
-
-            return true;
         }
 
 
@@ -184,11 +210,15 @@ namespace PurplePen
 
         protected abstract void WriteControlPoint(ControlPointKind controlKind, ControlPoint control, string code);
 
-        protected abstract void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore);
+        protected abstract void WriteCourseGroupStart(string courseName, int courseNumber, string[] classNames, bool isScore);
+
+        protected abstract void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore, int variationNumber, VariationInfo variationInfo);
 
         protected abstract void WriteCourseControl(ControlPointKind kind, CourseView.ControlView controlView, bool isScore, ref int sequenceNumber, ref float distanceThisLeg);
 
         protected abstract void WriteCourseEnd();
+
+        protected abstract void WriteCourseGroupEnd();
 
         protected abstract void WriteEnd();
     }
@@ -282,15 +312,26 @@ namespace PurplePen
             xmlWriter.WriteAttributeString("y", XmlConvert.ToString(Math.Round(control.location.Y, 2)));
             xmlWriter.WriteEndElement();
 
-            // UNDONE: georeferenced position.
-
             xmlWriter.WriteEndElement();
         }
 
-        protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore)
+        protected override void WriteCourseGroupStart(string courseName, int courseNumber, string[] classNames, bool isScore)
+        {
+            // Everything is done in WriteCourseStart. Nothing to do.
+        }
+
+        protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore, int variationNumber, VariationInfo variationInfo)
         {
             xmlWriter.WriteStartElement("Course");
-            xmlWriter.WriteElementString("Name", courseName);
+
+            if (variationInfo != null) {
+                xmlWriter.WriteElementString("Name", variationInfo.VariationCodeString);
+                xmlWriter.WriteElementString("CourseFamily", courseName);
+            }
+            else {
+                xmlWriter.WriteElementString("Name", courseName);
+            }
+
             if (!isScore) {
                 xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
                 if (courseView.TotalClimb > 0)
@@ -357,6 +398,11 @@ namespace PurplePen
         {
             xmlWriter.WriteEndElement();     // "Course"
 
+        }
+
+        protected override void WriteCourseGroupEnd()
+        {
+            // Nothing to do.
         }
 
         // Return an exception map used to test exported XML files.
@@ -493,7 +539,7 @@ namespace PurplePen
             xmlWriter.WriteEndElement();
         }
 
-        protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore)
+        protected override void WriteCourseGroupStart(string courseName, int courseNumber, string[] classNames, bool isScore)
         {
             xmlWriter.WriteStartElement("Course");
             xmlWriter.WriteElementString("CourseName", courseName);
@@ -502,9 +548,16 @@ namespace PurplePen
             foreach (string className in classNames) {
                 xmlWriter.WriteElementString("ClassShortName", className);
             }
+        }
 
+        protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore, int variationNumber, VariationInfo variationInfo)
+        {
             xmlWriter.WriteStartElement("CourseVariation");
-            xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(0));
+            xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(variationNumber));
+
+            if (variationInfo != null)
+                xmlWriter.WriteElementString("Name", variationInfo.VariationCodeString);
+
             if (!isScore) {
                 xmlWriter.WriteElementString("CourseLength", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
                 if (courseView.TotalClimb > 0)
@@ -559,8 +612,11 @@ namespace PurplePen
         protected override void WriteCourseEnd()
         {
             xmlWriter.WriteEndElement();     // "CourseVariation"
-            xmlWriter.WriteEndElement();     // "Course"
+        }
 
+        protected override void WriteCourseGroupEnd()
+        {
+            xmlWriter.WriteEndElement();     // "Course"
         }
 
         // Return an exception map used to test exported XML files.

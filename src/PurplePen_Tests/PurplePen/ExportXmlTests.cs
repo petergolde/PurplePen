@@ -80,6 +80,7 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 2);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
 
         [TestMethod]
@@ -95,6 +96,7 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 3);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
 
         [TestMethod]
@@ -116,6 +118,7 @@ namespace PurplePen.Tests
                 controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 2);
 
                 TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+                File.Delete(outputFile);
             }
             finally {
                 Thread.CurrentThread.CurrentCulture = cultureSave;
@@ -142,6 +145,7 @@ namespace PurplePen.Tests
                 controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 3);
 
                 TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+                File.Delete(outputFile);
             }
             finally {
                 Thread.CurrentThread.CurrentCulture = cultureSave;
@@ -162,6 +166,7 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 2);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
 
         [TestMethod]
@@ -177,6 +182,7 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-29.5F, -113.1F, 232.9F, 86.7F), 3);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
 
         [TestMethod]
@@ -192,6 +198,7 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 2);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
 
         [TestMethod]
@@ -207,7 +214,42 @@ namespace PurplePen.Tests
             controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 3);
 
             TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
         }
+
+        [TestMethod]
+        public void ExportRelayV2()
+        {
+            Dictionary<string, string> exceptions = ExportXmlVersion2.TestFileExceptionMap();
+
+            string outputFile = TestUtil.GetTestFile("exportxml\\relay_actual.xml");
+            string expectedFile = TestUtil.GetTestFile("exportxml\\relay_expected.xml");
+
+            Setup("exportxml\\relay.ppen");
+
+            controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 2);
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
+        }
+
+        [TestMethod]
+        public void ExportRelayV3()
+        {
+            Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
+
+            string outputFile = TestUtil.GetTestFile("exportxml\\relay_actual_v3.xml");
+            string expectedFile = TestUtil.GetTestFile("exportxml\\relay_expected_v3.xml");
+
+            Setup("exportxml\\relay.ppen");
+
+            controller.ExportXml(outputFile, RectangleF.FromLTRB(-22F, -270F, 257F, -54F), 3);
+
+            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, exceptions);
+            File.Delete(outputFile);
+        }
+
+
 
 
     }
