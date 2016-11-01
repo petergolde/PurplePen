@@ -555,4 +555,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="CantRearrangeSplitControl" xml:space="preserve">
     <value>A control that starts a fork or loop cannot be dragged to a new place in the course.</value>
   </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Too many total variations in this course. The number of distinct variations is limited to {0}.</value>
+  </data>
 </root>

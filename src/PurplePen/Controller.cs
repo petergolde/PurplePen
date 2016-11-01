@@ -74,6 +74,8 @@ namespace PurplePen
 
         int changeNum;          // Maintains a change number for state held in the controller (e.g., FileName).
 
+        const int maxTotalVariationsAllowed = 3000;  // Total number of variations allowed.
+
         public Controller(IUserInterface ui)
         {
             // Create the core objects needed for the application to run.
@@ -2731,6 +2733,7 @@ namespace PurplePen
         public void AddVariation(bool loop, int numberOfForks)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+            Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
 
             undoMgr.BeginCommand(1992, CommandNameText.AddVariation);
 
@@ -2739,7 +2742,20 @@ namespace PurplePen
 
             undoMgr.EndCommand(1992);
 
+            int totalVariations = CheckTotalVariations(courseId);
+            if (totalVariations > maxTotalVariationsAllowed) {
+                // Adding this variation created too many total variations.
+                undoMgr.Undo();
+                ui.ErrorMessage(string.Format(MiscText.TooManyVariations, maxTotalVariationsAllowed));
+            }
+
             ui.ShowTopologyView();
+        }
+
+        int CheckTotalVariations(Id<Course> courseId)
+        {
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, 1, 4);  // number of teams/legs irrelevant.
+            return relayVariations.GetTotalPossiblePaths();
         }
 
         public CommandStatus CanDeleteFork()

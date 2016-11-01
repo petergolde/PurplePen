@@ -1,10 +1,6 @@
 Big things to do before first beta:
 
-- Update XML export for variations (v2 and v3)
-
 - Allow viewing of variations in UI for course selection. Review all places where that UI is used. At least for printing/PDF export/description printing, etc.
-
-- limit total permutations (maybe 10,000)
 
 - cases where number of routes is uneven causes problems in relay variations.
 

@@ -19,6 +19,9 @@ namespace PurplePen
         Dictionary<Id<CourseControl>, char> variationMapping;
         Dictionary<string, VariationInfo> variationInfos;
 
+        bool forksScanned = false;
+        bool teamsGenerated = false;
+
         // Forks in both list and topology form.
         Fork firstForkInCourse;
         List<Fork> allForks;
@@ -34,15 +37,13 @@ namespace PurplePen
             this.courseId = courseId;
             this.numberTeams = numberTeams;
             this.numberLegs = numberLegs;
-
-            variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.VariationCodeString);
-
-            Generate();
         }
 
         // Get the variation to use for a particular team and leg.
         public VariationInfo GetVariation(int team, int leg)
         {
+            GenerateAllTeams();
+
             if (team < 1 || team > numberTeams)
                 throw new ArgumentOutOfRangeException("team", "team numbers are from 1 to number of teams");
             if (leg < 1 || leg > numberLegs)
@@ -65,31 +66,50 @@ namespace PurplePen
         // Get any warnings about branches that are used unevenly.
         public IEnumerable<BranchWarning> GetBranchWarnings()
         {
+            ScanAllForks();
+
             return branchWarnings;
         }
 
         // Get the total number of different possible variations.
         public int GetTotalPossiblePaths()
         {
+            ScanAllForks();
+
             return totalPossiblePaths;
         }
 
-        void Generate()
+        void ScanAllForks()
         {
-            // We want the randomness to be determistic.
-            results = new List<TeamAssignment>(numberTeams);
-            branchWarnings = new List<BranchWarning>();
-            random = new Random(8713527);
+            if (!forksScanned) {
+                // We want the randomness to be determistic.
+                results = new List<TeamAssignment>(numberTeams);
+                branchWarnings = new List<BranchWarning>();
+                random = new Random(8713527);
 
-            // Find all the forks.
-            FindForks();
+                // Find all the forks.
+                FindForks();
 
-            // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
-            totalPossiblePaths = ScanFork(firstForkInCourse, numberLegs, 1);
-            Debug.Assert(totalPossiblePaths == variationInfos.Count);
+                // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
+                totalPossiblePaths = ScanFork(firstForkInCourse, numberLegs, 1);
 
-            for (int i = 0; i < numberTeams; ++i) {
-                results.Add(GenerateTeam());
+                forksScanned = true;
+            }
+        }
+
+        void GenerateAllTeams()
+        {
+            if (!teamsGenerated) {
+                ScanAllForks();
+
+                variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.VariationCodeString);
+                Debug.Assert(totalPossiblePaths == variationInfos.Count);
+
+                for (int i = 0; i < numberTeams; ++i) {
+                    results.Add(GenerateTeam());
+                }
+
+                teamsGenerated = true;
             }
         }
 

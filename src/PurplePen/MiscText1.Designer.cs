@@ -1244,6 +1244,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Too many total variations in this course. The number of distinct variations is limited to {0}..
+        /// </summary>
+        internal static string TooManyVariations {
+            get {
+                return ResourceManager.GetString("TooManyVariations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to *** If there exists a web site in the translated language that contains documentation for Purple Pen, enter the URL (including http) as the translation of this item. Otherwise leave it alone..
         /// </summary>
         internal static string TranslatedHelpWebSite {
