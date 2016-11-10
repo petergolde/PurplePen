@@ -52,6 +52,8 @@ namespace PurplePen
 
         private bool loaded = false;
 
+        private Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
+
         public CourseSelector()
         {
             InitializeComponent();
@@ -207,6 +209,31 @@ namespace PurplePen
             }
         }
 
+        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse
+        {
+            get {
+                Dictionary<Id<Course>, VariationChoices> result = new Dictionary<Id<Course>, VariationChoices>();
+                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                    VariationChoices variationChoices;
+                    // Create dictionary with all courses, getting default for ones that were not changed.
+                    if (variationChoicesPerCourse.TryGetValue(courseId, out variationChoices)) {
+                        result[courseId] = variationChoices;
+                    }
+                    else {
+                        result[courseId] = new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.AllVariations };
+                    }
+                }
+
+                return result;
+            }
+            set {
+                variationChoicesPerCourse.Clear();
+                foreach (var pair in value) {
+                    variationChoicesPerCourse.Add(pair.Key, pair.Value);
+                }
+            }
+        }
+
         private void selectAll_Click(object sender, EventArgs e)
         {
             foreach (TreeNode node in courseTreeView.Nodes)
@@ -315,7 +342,15 @@ namespace PurplePen
             CourseDesignator courseDesignator = courseTreeView.SelectedNode.Tag as CourseDesignator;
             if (courseDesignator != null) {
                 SelectVariations variationsDialog = new SelectVariations(eventDB, courseDesignator.CourseId);
-                variationsDialog.ShowDialog(this);
+
+                VariationChoices variationChoices;
+                if (variationChoicesPerCourse.TryGetValue(courseDesignator.CourseId, out variationChoices)) {
+                    variationsDialog.VariationChoices = variationChoices;
+                }
+
+                if (variationsDialog.ShowDialog(this) == DialogResult.OK) {
+                    variationChoicesPerCourse[courseDesignator.CourseId] = variationsDialog.VariationChoices;
+                }
             }
         }
 
