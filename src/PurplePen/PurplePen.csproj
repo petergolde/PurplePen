@@ -615,6 +615,12 @@
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </Compile>
     <Compile Include="SelectionMgr.cs" />
+    <Compile Include="SelectVariations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectVariations.Designer.cs">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </Compile>
     <Compile Include="SetPrintAreaDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -3185,6 +3191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.bg.resx">
       <DependentUpon>SetPrintAreaDialog.cs</DependentUpon>

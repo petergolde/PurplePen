@@ -65,6 +65,7 @@ namespace PurplePen
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.selectAll = new System.Windows.Forms.Button();
             this.selectNone = new System.Windows.Forms.Button();
+            this.buttonChooseVariations = new System.Windows.Forms.Button();
             this.courseTreeView = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@ namespace PurplePen
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.selectAll, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.selectNone, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonChooseVariations, 0, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // selectAll
@@ -90,6 +92,14 @@ namespace PurplePen
             this.selectNone.UseVisualStyleBackColor = true;
             this.selectNone.Click += new System.EventHandler(this.selectNone_Click);
             // 
+            // buttonChooseVariations
+            // 
+            resources.ApplyResources(this.buttonChooseVariations, "buttonChooseVariations");
+            this.tableLayoutPanel1.SetColumnSpan(this.buttonChooseVariations, 2);
+            this.buttonChooseVariations.Name = "buttonChooseVariations";
+            this.buttonChooseVariations.UseVisualStyleBackColor = true;
+            this.buttonChooseVariations.Click += new System.EventHandler(this.buttonChooseVariations_Click);
+            // 
             // courseTreeView
             // 
             this.courseTreeView.CheckBoxes = true;
@@ -100,6 +110,7 @@ namespace PurplePen
             this.courseTreeView.ShowRootLines = false;
             this.courseTreeView.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.courseTreeView_AfterCheck);
             this.courseTreeView.BeforeCollapse += new System.Windows.Forms.TreeViewCancelEventHandler(this.courseTreeView_BeforeCollapse);
+            this.courseTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.courseTreeView_AfterSelect);
             // 
             // CourseSelector
             // 
@@ -122,5 +133,6 @@ namespace PurplePen
         private System.Windows.Forms.Button selectAll;
         private System.Windows.Forms.Button selectNone;
         private System.Windows.Forms.TreeView courseTreeView;
+        private System.Windows.Forms.Button buttonChooseVariations;
     }
 }

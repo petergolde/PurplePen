@@ -48,12 +48,15 @@ namespace PurplePen
         private bool showAllControls;
         private bool showCourseParts;
         private EventDB eventDB;
+        private bool eventHasVariations = false;
 
         private bool loaded = false;
 
         public CourseSelector()
         {
             InitializeComponent();
+
+            buttonChooseVariations.Enabled = false;
         }
 
         public bool ShowAllControls
@@ -80,6 +83,9 @@ namespace PurplePen
             }
         }
 
+        // Show the button to choose variations if any courses have variations.
+        public bool ShowVariationChooser { get; set; }
+
         internal EventDB EventDB
         {
             get
@@ -89,6 +95,13 @@ namespace PurplePen
             set
             {
                 eventDB = value;
+
+                // Check to see if any course has variations.
+                eventHasVariations = false;
+                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                    if (QueryEvent.HasVariations(eventDB, courseId))
+                        eventHasVariations = true;
+                }
             }
         }
 
@@ -247,6 +260,9 @@ namespace PurplePen
                 }
 
                 courseTreeView.ExpandAll();
+
+                buttonChooseVariations.Visible = (ShowVariationChooser && eventHasVariations);
+
                 loaded = true;
             }
         }
@@ -292,6 +308,26 @@ namespace PurplePen
                     anyUnchecked = true;
 
             parent.Checked = !anyUnchecked;
+        }
+
+        private void buttonChooseVariations_Click(object sender, EventArgs e)
+        {
+            CourseDesignator courseDesignator = courseTreeView.SelectedNode.Tag as CourseDesignator;
+            if (courseDesignator != null) {
+                SelectVariations variationsDialog = new SelectVariations(eventDB, courseDesignator.CourseId);
+                variationsDialog.ShowDialog(this);
+            }
+        }
+
+        private void courseTreeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            bool courseHasVariations = false;
+            CourseDesignator courseDesignator = courseTreeView.SelectedNode.Tag as CourseDesignator;
+            if (courseDesignator != null && courseDesignator.IsNotAllControls) {
+                courseHasVariations = QueryEvent.HasVariations(eventDB, courseDesignator.CourseId);
+            }
+
+            buttonChooseVariations.Enabled = courseHasVariations;
         }
     }
 }

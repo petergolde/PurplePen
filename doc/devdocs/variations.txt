@@ -4,6 +4,8 @@ Big things to do before first beta:
 
 - cases where number of routes is uneven causes problems in relay variations.
 
+- Add special text $ macros for variation, team, leg
+
 
 Variation naming issues:
     - Now I'm thinking not to do anything special. Use team/participant when printing that way, otherwise code, always after course name.
