@@ -131,7 +131,7 @@ namespace PurplePen.Tests
         {
             CourseDesignator designator;
             if (QueryEvent.HasVariations(eventDB, courseId)) {
-                var variationPath = QueryEvent.GetAllVariations(eventDB, courseId).First().VariationPath;
+                var variationPath = QueryEvent.GetAllVariations(eventDB, courseId).First().Path;
                 designator = new CourseDesignator(courseId, variationPath);
             }
             else {

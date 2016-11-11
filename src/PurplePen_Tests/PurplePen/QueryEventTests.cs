@@ -188,7 +188,7 @@ namespace PurplePen.Tests
 
             /////////////////////////////////////////////////////////////////
 
-            VariationPath variationPath = new VariationPath(new[] {
+            VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(24)
             });
             result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
@@ -198,7 +198,7 @@ namespace PurplePen.Tests
 
             /////////////////////////////////////////////////////////////////
 
-            variationPath = new VariationPath(new[] {
+            variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
                 CourseControlId(30),
@@ -309,7 +309,7 @@ namespace PurplePen.Tests
 
             List<QueryEvent.LegInfo> result;
 
-            VariationPath variationPath = new VariationPath(new[] {
+            VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
                 CourseControlId(30),
@@ -1824,7 +1824,7 @@ namespace PurplePen.Tests
 
             string result;
 
-            VariationPath variationPath = new VariationPath(new[] {
+            VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
                 CourseControlId(30),
@@ -1844,7 +1844,7 @@ namespace PurplePen.Tests
             Setup("queryevent\\variations.ppen");
 
             IEnumerable<VariationInfo> result = QueryEvent.GetAllVariations(eventDB, new Id<Course>(1));
-            List<string> pathStrings = (from v in result orderby v.VariationCodeString select v.VariationCodeString).ToList();
+            List<string> pathStrings = (from v in result orderby v.CodeString select v.CodeString).ToList();
 
             CollectionAssert.AreEquivalent(pathStrings, new[] {
                 "ACDEFH",
@@ -1916,7 +1916,7 @@ namespace PurplePen.Tests
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(1));
             Assert.IsTrue(result);
 
-            VariationPath variationPath = new VariationPath(new[] {
+            VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
                 CourseControlId(30),

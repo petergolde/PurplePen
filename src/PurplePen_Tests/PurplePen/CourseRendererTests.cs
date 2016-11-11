@@ -318,7 +318,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SingleVariation()
         {
-            VariationPath variationPath = new VariationPath(new[] {
+            VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
                 CourseControlId(30),

@@ -39,7 +39,7 @@ namespace PurplePen.Tests
                     for (int leg = 1; leg <= relayAssignment.NumberOfLegs; ++leg) {
                         if (leg != 0)
                             writer.Write("\t");
-                        writer.Write("{0}", relayAssignment.GetVariation(team, leg).VariationCodeString);
+                        writer.Write("{0}", relayAssignment.GetVariation(team, leg).CodeString);
                     }
                     writer.WriteLine();
                 }

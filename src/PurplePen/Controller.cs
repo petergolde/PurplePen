@@ -809,7 +809,7 @@ namespace PurplePen
             }
         }
 
-        readonly VariationDescriber allVariations = new VariationDescriber(new VariationInfo() { VariationCodeString = "", VariationPath = null, PartialName = MiscText.AllVariations, FullName = MiscText.AllVariations });
+        readonly VariationDescriber allVariations = new VariationDescriber(new VariationInfo() { CodeString = "", Path = null, PartialName = MiscText.AllVariations, FullName = MiscText.AllVariations });
 
         // Get objects representing the variations, where ToString() is used to show variation text.
         public object[] GetVariations()
@@ -818,7 +818,7 @@ namespace PurplePen
 
             IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
 
-            return (new[] { allVariations }).Concat(from v in variations orderby v.VariationCodeString select new VariationDescriber(v)).ToArray();
+            return (new[] { allVariations }).Concat(from v in variations orderby v.CodeString select new VariationDescriber(v)).ToArray();
         }
 
         public object CurrentVariation
@@ -826,13 +826,13 @@ namespace PurplePen
             get
             {
                 Debug.Assert(HasVariations);
-                VariationPath currentVariationPath = selectionMgr.Selection.ActiveCourseDesignator.VariationPath;
+                VariationInfo.VariationPath currentVariationPath = selectionMgr.Selection.ActiveCourseDesignator.VariationPath;
 
                 if (currentVariationPath == null)
                     return allVariations;
 
                 IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
-                return (from v in variations where object.Equals(v.VariationPath, currentVariationPath) select new VariationDescriber(v)).First();
+                return (from v in variations where object.Equals(v.Path, currentVariationPath) select new VariationDescriber(v)).First();
             }
             
             set
@@ -840,7 +840,7 @@ namespace PurplePen
                 Debug.Assert(HasVariations);
 
                 VariationDescriber newVariationDescriber = (VariationDescriber)value;
-                VariationPath newVariationPath = newVariationDescriber.VariationInfo.VariationPath;
+                VariationInfo.VariationPath newVariationPath = newVariationDescriber.VariationInfo.Path;
 
                 CourseDesignator currentDesignator = selectionMgr.Selection.ActiveCourseDesignator;
                 Id<Course> currentCourseId = currentDesignator.CourseId;
@@ -873,7 +873,7 @@ namespace PurplePen
                 return courseDesignator;
 
             IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
-            VariationPath firstVariationPart = (from v in variations orderby v.VariationCodeString select v.VariationPath).First();
+            VariationInfo.VariationPath firstVariationPart = (from v in variations orderby v.CodeString select v.Path).First();
 
             int oldPart = courseDesignator.Part;
             courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationPart);
@@ -3631,8 +3631,8 @@ namespace PurplePen
 
             public override string ToString()
             {
-                if (VariationInfo.VariationCodeString != "" && VariationInfo.PartialName != VariationInfo.VariationCodeString)
-                    return VariationInfo.PartialName + "(" + VariationInfo.VariationCodeString + ")";
+                if (VariationInfo.CodeString != "" && VariationInfo.PartialName != VariationInfo.CodeString)
+                    return VariationInfo.PartialName + "(" + VariationInfo.CodeString + ")";
                 else
                     return VariationInfo.PartialName;
             }

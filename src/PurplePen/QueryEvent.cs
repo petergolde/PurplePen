@@ -1338,7 +1338,7 @@ namespace PurplePen
             switch (namingOptions.kind) {
                 case VariationNamingOptions.NamingKind.VariationCode:
                 case VariationNamingOptions.NamingKind.TeamAndRunner:
-                    variationInfo.PartialName = variationInfo.VariationCodeString; break;
+                    variationInfo.PartialName = variationInfo.CodeString; break;
                 case VariationNamingOptions.NamingKind.NameWithNumber:
                     if (string.IsNullOrEmpty(namingOptions.text))
                         variationInfo.PartialName = ordinal.ToString();
@@ -1373,10 +1373,10 @@ namespace PurplePen
 
             foreach (var choices in variations) {
                 string variationString = GetVariationString(eventDB, choices, variationMapper);
-                VariationPath variationPath = new VariationPath(choices);
-                result.Add(new VariationInfo() { VariationCodeString = variationString, VariationPath = variationPath });
+                VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(choices);
+                result.Add(new VariationInfo() { CodeString = variationString, Path = variationPath });
             }
-            result.Sort((vi1, vi2) => string.Compare(vi1.VariationCodeString, vi2.VariationCodeString, StringComparison.OrdinalIgnoreCase));
+            result.Sort((vi1, vi2) => string.Compare(vi1.CodeString, vi2.CodeString, StringComparison.OrdinalIgnoreCase));
 
             string courseName = eventDB.GetCourse(courseId).name;
             VariationNamingOptions variationNamingOptions = eventDB.GetCourse(courseId).variationNaming;
@@ -1464,51 +1464,6 @@ namespace PurplePen
 
             return true;
         }
-    }
-
-    public class VariationInfo
-    {
-        public string VariationCodeString;
-        public VariationPath VariationPath;
-        public string PartialName;
-        public string FullName;  // Includes course name, if selection in variation naming options.
-
-        public override bool Equals(object obj)
-        {
-            VariationInfo other = obj as VariationInfo;
-            if (other == null)
-                return false;
-
-            if (other.VariationCodeString != VariationCodeString)
-                return false;
-            if (!other.VariationPath.Equals(VariationPath))
-                return false;
-            if (other.PartialName != PartialName)
-                return false;
-            if (other.FullName != FullName)
-                return false;
-
-            return true;
-        }
-
-        public override int GetHashCode()
-        {
-            return VariationCodeString.GetHashCode() + PartialName.GetHashCode() * 7 + FullName.GetHashCode() * 29;
-        }
-    }
-
-    public class VariationChoices
-    {
-        public enum VariationChoicesKind {
-            Combined,           // All variations combined in one printout
-            AllVariations,      // All variations separately
-            ChosenVariations,   // A selection of variations separately
-            ChosenTeams         // A set of relay teams
-        }
-
-        public VariationChoicesKind Kind;
-        public List<string> ChosenVariations;  // For Kind==ChosenVariations
-        public int FirstTeam, LastTeam;        // For Kind==ChosenTeams, team 1 is first team.
     }
 
 

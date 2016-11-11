@@ -102,7 +102,7 @@ namespace PurplePen
             if (!teamsGenerated) {
                 ScanAllForks();
 
-                variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.VariationCodeString);
+                variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.CodeString);
                 Debug.Assert(totalPossiblePaths == variationInfos.Count);
 
                 for (int i = 0; i < numberTeams; ++i) {
@@ -569,7 +569,7 @@ namespace PurplePen
             for (int teamNumber = 1; teamNumber <= relayVariations.NumberOfTeams; ++teamNumber) {
                 writer.Write(teamNumber.ToString(CultureInfo.InvariantCulture));
                 for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
-                    writer.Write(",{0}", relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString);
+                    writer.Write(",{0}", relayVariations.GetVariation(teamNumber, legNumber).CodeString);
                 }
                 writer.WriteLine();
             }

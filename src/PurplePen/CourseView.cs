@@ -493,7 +493,7 @@ namespace PurplePen
         {
             List<CourseView> result = new List<PurplePen.CourseView>();
             foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, courseId)) {
-                VariationPath variationPath = variationInfo.VariationPath;
+                VariationInfo.VariationPath variationPath = variationInfo.Path;
                 CourseView viewVariation = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId, variationPath), false, false);
                 result.Add(viewVariation);
             }
@@ -909,66 +909,117 @@ namespace PurplePen
         }
     }
 
-    // A VariationPath indicates a path through the variations of a course.
-    public class VariationPath
+    public class VariationInfo
     {
-        // Every place that 'split' is true, indicates which course control is next.
-        private Id<CourseControl>[] choices;
-
-        public VariationPath(IEnumerable<Id<CourseControl>> choices)
-        {
-            if (choices == null)
-                choices = new Id<CourseControl>[0];
-            else
-                this.choices = choices.ToArray();
-        }
-
-        public int Count
-        {
-            get { return choices.Length; }
-        }
-
-        public IEnumerable<Id<CourseControl>> Choices
-        {
-            get { return choices.ToList();  }
-        }
-
-        public Id<CourseControl> this[int i] {
-            get
-            {
-                if (i < 0 || i >= Count)
-                    throw new ArgumentOutOfRangeException();
-                return choices[i];
-            }
-        }
+        public string CodeString;
+        public VariationPath Path;
+        public string PartialName;
+        public string FullName;  // Includes course name, if selection in variation naming options.
 
         public override bool Equals(object obj)
         {
-            VariationPath other = obj as VariationPath;
+            VariationInfo other = obj as VariationInfo;
             if (other == null)
                 return false;
 
-            return Util.ArrayEquals(this.choices, other.choices);
+            if (other.CodeString != CodeString)
+                return false;
+            if (!other.Path.Equals(Path))
+                return false;
+            if (other.PartialName != PartialName)
+                return false;
+            if (other.FullName != FullName)
+                return false;
+
+            return true;
         }
 
         public override int GetHashCode()
         {
-            return Util.ArrayHashCode(this.choices);
+            return CodeString.GetHashCode() + PartialName.GetHashCode() * 7 + FullName.GetHashCode() * 29;
         }
 
-        public override string ToString()
+
+        // A VariationPath indicates a path through the variations of a course.
+        public class VariationPath
         {
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < choices.Length; ++i) {
-                if (i != 0)
-                    builder.Append("|");
-                
-                builder.Append(choices[i].id);
+            // Every place that 'split' is true, indicates which course control is next.
+            private Id<CourseControl>[] choices;
+
+            public VariationPath(IEnumerable<Id<CourseControl>> choices)
+            {
+                if (choices == null)
+                    choices = new Id<CourseControl>[0];
+                else
+                    this.choices = choices.ToArray();
             }
 
-            return builder.ToString();
+            public int Count
+            {
+                get { return choices.Length; }
+            }
+
+            public IEnumerable<Id<CourseControl>> Choices
+            {
+                get { return choices.ToList(); }
+            }
+
+            public Id<CourseControl> this[int i]
+            {
+                get
+                {
+                    if (i < 0 || i >= Count)
+                        throw new ArgumentOutOfRangeException();
+                    return choices[i];
+                }
+            }
+
+            public override bool Equals(object obj)
+            {
+                VariationPath other = obj as VariationPath;
+                if (other == null)
+                    return false;
+
+                return Util.ArrayEquals(this.choices, other.choices);
+            }
+
+            public override int GetHashCode()
+            {
+                return Util.ArrayHashCode(this.choices);
+            }
+
+            public override string ToString()
+            {
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < choices.Length; ++i) {
+                    if (i != 0)
+                        builder.Append("|");
+
+                    builder.Append(choices[i].id);
+                }
+
+                return builder.ToString();
+            }
         }
+
+
     }
+
+    public class VariationChoices
+    {
+        public enum VariationChoicesKind
+        {
+            Combined,           // All variations combined in one printout
+            AllVariations,      // All variations separately
+            ChosenVariations,   // A selection of variations separately
+            ChosenTeams         // A set of relay teams
+        }
+
+        public VariationChoicesKind Kind;
+        public List<string> ChosenVariations;  // For Kind==ChosenVariations
+        public int FirstTeam, LastTeam;        // For Kind==ChosenTeams, team 1 is first team.
+    }
+
 
     // A CourseDesignator indicates a course or part of a course for creating a course view.
     // It describes the current view.
@@ -976,7 +1027,7 @@ namespace PurplePen
     {
         private readonly Id<Course> courseId;   // ID of the course, none for all controls.
         private readonly int part;              // Which part of the course. -1 means all parts or not a multi-part course. 0 is first part, 1 is second part, etc.
-        private readonly VariationPath variationPath;  // Which path through variations, or null for all or no variations present.
+        private readonly VariationInfo.VariationPath variationPath;  // Which path through variations, or null for all or no variations present.
 
         public override bool Equals(object obj)
         {
@@ -1037,13 +1088,13 @@ namespace PurplePen
             this.part = part;
         }
 
-        public CourseDesignator(Id<Course> course, VariationPath variationPath)
+        public CourseDesignator(Id<Course> course, VariationInfo.VariationPath variationPath)
             :this(course)
         {
             this.variationPath = variationPath;
         }
 
-        public CourseDesignator(Id<Course> course, VariationPath variationPath, int part)
+        public CourseDesignator(Id<Course> course, VariationInfo.VariationPath variationPath, int part)
             :this(course, part)
         {
             this.variationPath = variationPath;
@@ -1075,7 +1126,7 @@ namespace PurplePen
             get { return part; }
         }
 
-        public VariationPath VariationPath
+        public VariationInfo.VariationPath VariationPath
         {
             get { return variationPath; }
         }

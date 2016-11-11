@@ -1046,7 +1046,7 @@ namespace PurplePen
                 BeginTableRow();
                 WriteTableCell(tablerule ? "tablerule" : "", string.Format(ReportText.RelayVariation_TeamNumber, teamNumber));
                 for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber)
-                    WriteTableCell(tablerule ? "tablerule" : "", relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString);
+                    WriteTableCell(tablerule ? "tablerule" : "", relayVariations.GetVariation(teamNumber, legNumber).CodeString);
                 EndTableRow();
             }
 

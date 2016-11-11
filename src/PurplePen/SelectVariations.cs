@@ -139,7 +139,7 @@ namespace PurplePen
             if (!variationListUpdated) {
                 checkedListBoxVariations.BeginUpdate();
                 checkedListBoxVariations.Items.Clear();
-                string[] variations = (from vi in QueryEvent.GetAllVariations(eventDB, courseId) select vi.VariationCodeString).ToArray();
+                string[] variations = (from vi in QueryEvent.GetAllVariations(eventDB, courseId) select vi.CodeString).ToArray();
                 checkedListBoxVariations.Items.AddRange(variations);
                 checkedListBoxVariations.EndUpdate();
                 variationListUpdated = true;

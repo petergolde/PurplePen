@@ -166,7 +166,7 @@ namespace PurplePen
             if (QueryEvent.HasVariations(eventDB, courseId)) {
                 VariationInfo[] variations = QueryEvent.GetAllVariations(eventDB, courseId).ToArray();
                 for (int variationNumber = 0; variationNumber < variations.Length; ++variationNumber) {
-                    WriteSingleCourseVariation(new CourseDesignator(courseId, variations[variationNumber].VariationPath), courseName, courseNumber, classNames, isScore, variationNumber, variations[variationNumber]);
+                    WriteSingleCourseVariation(new CourseDesignator(courseId, variations[variationNumber].Path), courseName, courseNumber, classNames, isScore, variationNumber, variations[variationNumber]);
                 }
             }
             else {
@@ -325,7 +325,7 @@ namespace PurplePen
             xmlWriter.WriteStartElement("Course");
 
             if (variationInfo != null) {
-                xmlWriter.WriteElementString("Name", variationInfo.VariationCodeString);
+                xmlWriter.WriteElementString("Name", variationInfo.CodeString);
                 xmlWriter.WriteElementString("CourseFamily", courseName);
             }
             else {
@@ -556,7 +556,7 @@ namespace PurplePen
             xmlWriter.WriteElementString("CourseVariationId", XmlConvert.ToString(variationNumber));
 
             if (variationInfo != null)
-                xmlWriter.WriteElementString("Name", variationInfo.VariationCodeString);
+                xmlWriter.WriteElementString("Name", variationInfo.CodeString);
 
             if (!isScore) {
                 xmlWriter.WriteElementString("CourseLength", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
@@ -718,7 +718,7 @@ namespace PurplePen
             xmlWriter.WriteStartElement("TeamMemberCourseAssignment");
 
             int bibNumber = GetBibNumber(teamNumber, legNumber);
-            string variationString = relayVariations.GetVariation(teamNumber, legNumber).VariationCodeString;
+            string variationString = relayVariations.GetVariation(teamNumber, legNumber).CodeString;
 
             xmlWriter.WriteElementString("BibNumber", XmlConvert.ToString(bibNumber));
             xmlWriter.WriteElementString("Leg", XmlConvert.ToString(legNumber));
