@@ -81,10 +81,10 @@ namespace PurplePen
             int currentPart = 0;
 
             IEnumerable<Id<CourseControl>> variationChoices;
-            if (courseDesignator.VariationPath == null)
+            if (courseDesignator.VariationInfo == null)
                 variationChoices = null;
             else
-                variationChoices = courseDesignator.VariationPath.Choices;
+                variationChoices = courseDesignator.VariationInfo.Path.Choices;
 
             return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, variationChoices, false, currentPart);
         }
@@ -1320,43 +1320,19 @@ namespace PurplePen
             return builder.ToString();
         }
 
-        private static string GetVariationString(EventDB eventDB, CourseDesignator courseDesignator, Dictionary<Id<CourseControl>, char> variationMapper)
+        private static string GetVariationString(EventDB eventDB, Id<Course> courseId, VariationInfo.VariationPath variationPath, Dictionary<Id<CourseControl>, char> variationMapper)
         {
-            Debug.Assert(courseDesignator.IsVariation);
-            return GetVariationString(eventDB, courseDesignator.VariationPath.Choices, variationMapper);
+            return GetVariationString(eventDB, variationPath.Choices, variationMapper);
         }
 
-        public static string GetVariationString(EventDB eventDB, CourseDesignator courseDesignator)
+        public static string GetVariationString(EventDB eventDB, Id<Course> courseId, VariationInfo.VariationPath variationPath)
         {
-            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantCodeMapping(eventDB, courseDesignator.WithAllVariations());
-            return GetVariationString(eventDB, courseDesignator, variationMapper);
-        }
-
-        private static void CompleteVariationInfo(VariationInfo variationInfo, string courseName, 
-                                                  VariationNamingOptions namingOptions, int ordinal)
-        {
-            switch (namingOptions.kind) {
-                case VariationNamingOptions.NamingKind.VariationCode:
-                case VariationNamingOptions.NamingKind.TeamAndRunner:
-                    variationInfo.PartialName = variationInfo.CodeString; break;
-                case VariationNamingOptions.NamingKind.NameWithNumber:
-                    if (string.IsNullOrEmpty(namingOptions.text))
-                        variationInfo.PartialName = ordinal.ToString();
-                    else if (namingOptions.text.Contains("*"))
-                        variationInfo.PartialName = namingOptions.text.Replace("*", ordinal.ToString());
-                    else
-                        variationInfo.PartialName = namingOptions.text + " " + ordinal.ToString();
-                    break;
-            }
-
-            if (namingOptions.includeCourseName)
-                variationInfo.FullName = courseName + " " + variationInfo.PartialName;
-            else
-                variationInfo.FullName = variationInfo.PartialName;
+            Dictionary<Id<CourseControl>, char> variationMapper = GetVariantCodeMapping(eventDB, new CourseDesignator(courseId));
+            return GetVariationString(eventDB, courseId, variationPath, variationMapper);
         }
 
         // Get all the possible variations for a given course, based on the loops/forks. Returns a list of VariationInfo, 
-        // giving the code string, VariationPath, and name.
+        // giving the code string, VariationPath, and name. Sorted by code string.
         public static IEnumerable<VariationInfo> GetAllVariations(EventDB eventDB, Id<Course> courseId)
         {
             HashSet<Id<CourseControl>> alreadyVisited = new HashSet<PurplePen.Id<PurplePen.CourseControl>>();
@@ -1374,16 +1350,9 @@ namespace PurplePen
             foreach (var choices in variations) {
                 string variationString = GetVariationString(eventDB, choices, variationMapper);
                 VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(choices);
-                result.Add(new VariationInfo() { CodeString = variationString, Path = variationPath });
+                result.Add(new VariationInfo(variationString, variationPath));
             }
             result.Sort((vi1, vi2) => string.Compare(vi1.CodeString, vi2.CodeString, StringComparison.OrdinalIgnoreCase));
-
-            string courseName = eventDB.GetCourse(courseId).name;
-            VariationNamingOptions variationNamingOptions = eventDB.GetCourse(courseId).variationNaming;
-
-            for (int i = 0; i < result.Count; ++i) {
-                CompleteVariationInfo(result[i], courseName, variationNamingOptions, i + 1);
-            }
 
             return result;
         }

@@ -40,6 +40,7 @@ using TestingUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PurplePen.MapModel;
+using System.Linq;
 
 namespace PurplePen.Tests
 {
@@ -318,6 +319,13 @@ namespace PurplePen.Tests
         [TestMethod]
         public void SingleVariation()
         {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("queryevent\\variations.ppen"));
+            eventDB.Validate();
+
             VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
                 CourseControlId(27),
@@ -327,10 +335,11 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
-            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationPath);
+            VariationInfo variationInfo = new VariationInfo("AEFDCI", variationPath);
+
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationInfo);
 
             CheckCourseBothAppearances("queryevent\\variations.ppen", courseDesignator, false, "singlevariation", new RectangleF(-15, -100, 230, 230));
-
         }
 
         [TestMethod]

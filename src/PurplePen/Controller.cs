@@ -809,7 +809,7 @@ namespace PurplePen
             }
         }
 
-        readonly VariationDescriber allVariations = new VariationDescriber(new VariationInfo() { CodeString = "", Path = null, PartialName = MiscText.AllVariations, FullName = MiscText.AllVariations });
+        readonly VariationDescriber allVariations = new VariationDescriber(new VariationInfo("", null));
 
         // Get objects representing the variations, where ToString() is used to show variation text.
         public object[] GetVariations()
@@ -826,13 +826,12 @@ namespace PurplePen
             get
             {
                 Debug.Assert(HasVariations);
-                VariationInfo.VariationPath currentVariationPath = selectionMgr.Selection.ActiveCourseDesignator.VariationPath;
+                VariationInfo currentVariationInfo = selectionMgr.Selection.ActiveCourseDesignator.VariationInfo;
 
-                if (currentVariationPath == null)
+                if (currentVariationInfo == null)
                     return allVariations;
 
-                IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
-                return (from v in variations where object.Equals(v.Path, currentVariationPath) select new VariationDescriber(v)).First();
+                return new VariationDescriber(currentVariationInfo);
             }
             
             set
@@ -840,20 +839,20 @@ namespace PurplePen
                 Debug.Assert(HasVariations);
 
                 VariationDescriber newVariationDescriber = (VariationDescriber)value;
-                VariationInfo.VariationPath newVariationPath = newVariationDescriber.VariationInfo.Path;
+                VariationInfo newVariationInfo = newVariationDescriber.VariationInfo;
 
                 CourseDesignator currentDesignator = selectionMgr.Selection.ActiveCourseDesignator;
                 Id<Course> currentCourseId = currentDesignator.CourseId;
 
                 // Don't do anything if changing to current variation path.
-                if (object.Equals(currentDesignator.VariationPath, newVariationPath))
+                if (object.Equals(currentDesignator.VariationInfo, newVariationInfo))
                     return;
 
-                CourseDesignator newCourseDesignator = new CourseDesignator(currentCourseId, newVariationPath);
+                CourseDesignator newCourseDesignator = new CourseDesignator(currentCourseId, newVariationInfo);
                 if (! currentDesignator.AllParts) {
                     int currentPart = currentDesignator.Part;
                     if (currentPart < QueryEvent.CountCourseParts(eventDB, currentDesignator))
-                        newCourseDesignator = new CourseDesignator(currentCourseId, newVariationPath, currentPart);
+                        newCourseDesignator = new CourseDesignator(currentCourseId, newVariationInfo, currentPart);
                 }
 
                 selectionMgr.SelectCourseView(newCourseDesignator);
@@ -869,16 +868,16 @@ namespace PurplePen
                 return courseDesignator;
             if (!QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
                 return courseDesignator;
-            if (courseDesignator.VariationPath != null)
+            if (courseDesignator.VariationInfo != null)
                 return courseDesignator;
 
             IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
-            VariationInfo.VariationPath firstVariationPart = (from v in variations orderby v.CodeString select v.Path).First();
+            VariationInfo firstVariationInfo = variations.First();
 
             int oldPart = courseDesignator.Part;
-            courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationPart);
+            courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationInfo);
             if (oldPart >= 0 && oldPart < QueryEvent.CountCourseParts(eventDB, courseDesignator))
-                return new CourseDesignator(courseDesignator.CourseId, firstVariationPart, oldPart);
+                return new CourseDesignator(courseDesignator.CourseId, firstVariationInfo, oldPart);
             else
                 return courseDesignator;  
         }
@@ -3631,10 +3630,10 @@ namespace PurplePen
 
             public override string ToString()
             {
-                if (VariationInfo.CodeString != "" && VariationInfo.PartialName != VariationInfo.CodeString)
-                    return VariationInfo.PartialName + "(" + VariationInfo.CodeString + ")";
+                if (VariationInfo.CodeString != "" && VariationInfo.Name != VariationInfo.CodeString)
+                    return VariationInfo.Name + "(" + VariationInfo.CodeString + ")";
                 else
-                    return VariationInfo.PartialName;
+                    return VariationInfo.Name;
             }
 
             public int CompareTo(VariationDescriber other)

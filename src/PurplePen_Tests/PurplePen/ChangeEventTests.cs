@@ -3273,8 +3273,9 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
+            VariationInfo variationInfo = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(1)) where vi.Path.Equals(variationPath) select vi).First();
 
-            CourseDesignator designator = new CourseDesignator(CourseId(1), variationPath);
+            CourseDesignator designator = new CourseDesignator(CourseId(1), variationInfo);
 
             undomgr.BeginCommand(3413, "Add Variation");
 

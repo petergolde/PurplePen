@@ -191,7 +191,9 @@ namespace PurplePen.Tests
             VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(24)
             });
-            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+            VariationInfo variationInfo = new VariationInfo("B", variationPath);
+
+            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationInfo)).ToList();
             CollectionAssert.AreEqual(result, new[] {
                 CourseControlId(1), CourseControlId(24), CourseControlId(12), CourseControlId(10), CourseControlId(11)
             });
@@ -207,7 +209,10 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
-            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+            variationInfo = new VariationInfo("AEFDCI", variationPath);
+
+            // TODO VARIATIONS
+            result = QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationInfo)).ToList();
             CollectionAssert.AreEqual(result, new[] {
                 CourseControlId(1), CourseControlId(2), CourseControlId(3), CourseControlId(27), CourseControlId(19),
                 CourseControlId(30), CourseControlId(20), CourseControlId(23), CourseControlId(26), CourseControlId(17),
@@ -318,7 +323,9 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
-            result = QueryEvent.EnumLegs(eventDB, new CourseDesignator(CourseId(1), variationPath)).ToList();
+            VariationInfo variationInfo = new VariationInfo("AEFDCI", variationPath);
+
+            result = QueryEvent.EnumLegs(eventDB, new CourseDesignator(CourseId(1), variationInfo)).ToList();
 
             CollectionAssert.AreEqual(result, new[] {
                 new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2)),
@@ -1834,7 +1841,7 @@ namespace PurplePen.Tests
                 CourseControlId(28),
             });
 
-            result = QueryEvent.GetVariationString(eventDB, new CourseDesignator(new Id<Course>(1), variationPath));
+            result = QueryEvent.GetVariationString(eventDB, new Id<Course>(1), variationPath);
             Assert.AreEqual("AEFDCI", result);
         }
 
@@ -1925,8 +1932,9 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
+            VariationInfo variationInfo = new VariationInfo("AEFDCI", variationPath);
 
-            CourseDesignator designator = new CourseDesignator(CourseId(1), variationPath);
+            CourseDesignator designator = new CourseDesignator(CourseId(1), variationInfo);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(3));
             Assert.IsTrue(result);

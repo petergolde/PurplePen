@@ -66,8 +66,8 @@ namespace PurplePen.Tests
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
                 CourseDesignator designator;
                 if (QueryEvent.HasVariations(eventDB, courseId)) {
-                    var variationPath = QueryEvent.GetAllVariations(eventDB, courseId).First().Path;
-                    designator = new CourseDesignator(courseId, variationPath);
+                    var variationInfo = QueryEvent.GetAllVariations(eventDB, courseId).First();
+                    designator = new CourseDesignator(courseId, variationInfo);
                 }
                 else {
                     designator = new CourseDesignator(courseId);

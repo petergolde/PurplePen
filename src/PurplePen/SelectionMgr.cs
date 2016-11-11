@@ -466,7 +466,7 @@ namespace PurplePen
             // Check that variation still exists.
             if (activeCourseDesignator.IsVariation && QueryEvent.HasVariations(eventDB, activeCourseDesignator.CourseId)) {
                 IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, activeCourseDesignator.CourseId);
-                if (!variations.Any(v => v.Path.Equals(activeCourseDesignator.VariationPath)))
+                if (!variations.Any(v => v.Equals(activeCourseDesignator.VariationInfo)))
                     activeCourseDesignator = activeCourseDesignator.WithAllVariations();
             }
 

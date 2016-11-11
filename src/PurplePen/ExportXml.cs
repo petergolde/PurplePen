@@ -166,7 +166,7 @@ namespace PurplePen
             if (QueryEvent.HasVariations(eventDB, courseId)) {
                 VariationInfo[] variations = QueryEvent.GetAllVariations(eventDB, courseId).ToArray();
                 for (int variationNumber = 0; variationNumber < variations.Length; ++variationNumber) {
-                    WriteSingleCourseVariation(new CourseDesignator(courseId, variations[variationNumber].Path), courseName, courseNumber, classNames, isScore, variationNumber, variations[variationNumber]);
+                    WriteSingleCourseVariation(new CourseDesignator(courseId, variations[variationNumber]), courseName, courseNumber, classNames, isScore, variationNumber, variations[variationNumber]);
                 }
             }
             else {

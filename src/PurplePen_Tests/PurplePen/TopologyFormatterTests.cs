@@ -155,9 +155,9 @@ namespace PurplePen.Tests
                 CourseControlId(4),
                 CourseControlId(28),
             });
+            VariationInfo variationInfo = new VariationInfo("AEFDCI", variationPath);
 
-
-            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationPath);
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationInfo);
             CheckCourse("topologyformatter\\variations.ppen", courseDesignator, "complexvariations_onepath");
         }
 
