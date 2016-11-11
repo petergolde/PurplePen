@@ -17,7 +17,7 @@ namespace PurplePen
         Random random;
 
         Dictionary<Id<CourseControl>, char> variationMapping;
-        Dictionary<string, VariationInfo> variationInfos;
+        Dictionary<string, VariationInfo.VariationPath> variationPaths;
 
         bool forksScanned = false;
         bool teamsGenerated = false;
@@ -50,7 +50,7 @@ namespace PurplePen
                 throw new ArgumentOutOfRangeException("leg", "leg numbers are from 1 to number of legs");
 
             string variationString = results[team - 1].GetVariationStringForLeg(leg - 1);
-            return variationInfos[variationString];
+            return new VariationInfo(variationString, variationPaths[variationString], team, leg);
         }
 
         public int NumberOfTeams
@@ -102,8 +102,8 @@ namespace PurplePen
             if (!teamsGenerated) {
                 ScanAllForks();
 
-                variationInfos = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.CodeString);
-                Debug.Assert(totalPossiblePaths == variationInfos.Count);
+                variationPaths = QueryEvent.GetAllVariations(eventDB, courseId).ToDictionary(vi => vi.CodeString, vi => vi.Path);
+                Debug.Assert(totalPossiblePaths == variationPaths.Count);
 
                 for (int i = 0; i < numberTeams; ++i) {
                     results.Add(GenerateTeam());

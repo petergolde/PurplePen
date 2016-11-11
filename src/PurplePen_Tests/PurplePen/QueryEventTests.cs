@@ -1961,6 +1961,64 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GetDesignatorsFromVariationChoices()
+        {
+            Setup("queryevent\\variations.ppen");
+
+            List<CourseDesignator> result;
+            CourseDesignator[] expected;
+
+            result = QueryEvent.GetDesignatorsFromVariationChoices(eventDB, CourseId(2), new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.Combined }).ToList();
+            expected = new[] { new CourseDesignator(CourseId(2)) };
+            CollectionAssert.AreEqual(expected, result);
+
+            result = QueryEvent.GetDesignatorsFromVariationChoices(eventDB, CourseId(2), new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.AllVariations }).ToList();
+            expected = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2)) select new CourseDesignator(CourseId(2), vi)).ToArray();
+            CollectionAssert.AreEqual(expected, result);
+
+            result = QueryEvent.GetDesignatorsFromVariationChoices(eventDB, CourseId(2), new VariationChoices() {
+                Kind = VariationChoices.VariationChoicesKind.ChosenVariations,
+                ChosenVariations = new List<string> { "AC", "BD"} 
+                }).ToList();
+            expected = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2))
+                        where vi.CodeString=="AC" || vi.CodeString == "BD"
+                        select new CourseDesignator(CourseId(2), vi)).ToArray();
+            CollectionAssert.AreEqual(expected, result);
+
+            VariationInfo ac, ad, bc, bd;
+            ac = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2))
+                 where vi.CodeString == "AC" 
+                 select vi).First();
+            ad = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2))
+                  where vi.CodeString == "AD"
+                  select vi).First();
+            bc = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2))
+                  where vi.CodeString == "BC"
+                  select vi).First();
+            bd = (from vi in QueryEvent.GetAllVariations(eventDB, CourseId(2))
+                  where vi.CodeString == "BD"
+                  select vi).First();
+            expected = new CourseDesignator[] {
+                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 6, 1)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 6, 2)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 6, 3)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 6, 4)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 7, 1)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 7, 2)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 7, 3)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 7, 4))
+            };
+            result = QueryEvent.GetDesignatorsFromVariationChoices(eventDB, CourseId(2), new VariationChoices() {
+                Kind = VariationChoices.VariationChoicesKind.ChosenTeams,
+                FirstTeam = 6,
+                LastTeam = 7
+            }).ToList();
+
+            CollectionAssert.AreEqual(expected, result);
+
+        }
+
+        [TestMethod]
         public void GetForkStart()
         {
             Setup("queryevent\\variations.ppen");

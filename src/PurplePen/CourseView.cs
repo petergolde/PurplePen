@@ -939,7 +939,9 @@ namespace PurplePen
                 return false;
             if (!other.Path.Equals(Path))
                 return false;
-            if (other.Name != Name)
+            if (Team != other.Team)
+                return false;
+            if (Leg != other.Leg)
                 return false;
 
             return true;
@@ -961,7 +963,7 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return CodeString.GetHashCode() + Name.GetHashCode() * 7;
+            return CodeString.GetHashCode() + Path.GetHashCode() * 7;
         }
 
 

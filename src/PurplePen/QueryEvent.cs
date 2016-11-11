@@ -81,7 +81,7 @@ namespace PurplePen
             int currentPart = 0;
 
             IEnumerable<Id<CourseControl>> variationChoices;
-            if (courseDesignator.VariationInfo == null)
+            if (! courseDesignator.IsVariation)
                 variationChoices = null;
             else
                 variationChoices = courseDesignator.VariationInfo.Path.Choices;
@@ -1408,6 +1408,41 @@ namespace PurplePen
                 result.Add(new List<Id<CourseControl>>());
 
             return result;
+        }
+
+        // Given a VariationChoices, select all the course designators that match.
+        public static IEnumerable<CourseDesignator> GetDesignatorsFromVariationChoices(EventDB eventDB, Id<Course> courseId, VariationChoices variationChoices)
+        {
+            switch (variationChoices.Kind) {
+                case VariationChoices.VariationChoicesKind.Combined:
+                    return new[] { new CourseDesignator(courseId) };
+
+                case VariationChoices.VariationChoicesKind.AllVariations:
+                    return (from vi in GetAllVariations(eventDB, courseId)
+                            select new PurplePen.CourseDesignator(courseId, vi)).ToArray();
+
+                case VariationChoices.VariationChoicesKind.ChosenVariations:
+                    return (from vi in GetAllVariations(eventDB, courseId)
+                            where variationChoices.ChosenVariations.Contains(vi.CodeString)
+                            select new PurplePen.CourseDesignator(courseId, vi)).ToArray();
+
+                case VariationChoices.VariationChoicesKind.ChosenTeams:
+                    Course course = eventDB.GetCourse(courseId);
+                    RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs);
+
+                    List<CourseDesignator> result = new List<CourseDesignator>();
+                    for (int team = variationChoices.FirstTeam; team <= variationChoices.LastTeam; ++team) {
+                        for (int leg = 1; leg <= relayVariations.NumberOfLegs; ++leg) {
+                            result.Add(new CourseDesignator(courseId, relayVariations.GetVariation(team, leg)));
+                        }
+                    }
+
+                    return result;
+
+                default:
+                    Debug.Fail("Bad variation choices kind");
+                    return null;
+            }
         }
 
         public static bool CanAddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
