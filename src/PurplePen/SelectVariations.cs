@@ -63,11 +63,17 @@ namespace PurplePen
                         break;
 
                     case 1:
-                        result.Kind = VariationChoices.VariationChoicesKind.ChosenTeams;
-                        result.FirstTeam = (int) upDownFirstTeam.Value;
-                        result.LastTeam = (int)upDownLastTeam.Value;
-                        if (result.LastTeam < result.FirstTeam)
-                            result.LastTeam = result.FirstTeam;
+                        if (lastTeam.HasValue) {
+                            result.Kind = VariationChoices.VariationChoicesKind.ChosenTeams;
+                            result.FirstTeam = (int)upDownFirstTeam.Value;
+                            result.LastTeam = (int)upDownLastTeam.Value;
+                            if (result.LastTeam < result.FirstTeam)
+                                result.LastTeam = result.FirstTeam;
+                        }
+                        else {
+                            // No teams defined, so just use all variations.
+                            result.Kind = VariationChoices.VariationChoicesKind.AllVariations;
+                        }
                         break;
 
                     case 2:
@@ -129,7 +135,7 @@ namespace PurplePen
             panelByVariation.Visible = (index == 0);
             panelByTeam.Visible = (index == 1 && lastTeam.HasValue);
 
-            if (panelByVariation.Visible && checkBoxSelectIndividualVariations.Checked) {
+            if ((index == 0) && checkBoxSelectIndividualVariations.Checked) {
                 UpdateVariationList();
             }
         }

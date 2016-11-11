@@ -423,7 +423,6 @@ namespace PurplePen
         }
 
         // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
-        // TODO: Add option for enumerating variations.
         public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, bool enumeratePartsSeparately)
         {
             foreach (Id<Course> courseId in courseIds) {
@@ -435,6 +434,40 @@ namespace PurplePen
                 }
                 else {
                     yield return new CourseDesignator(courseId);
+                }
+            }
+        }
+
+        // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
+        public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, 
+                      Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse, bool enumeratePartsSeparately)
+        {
+            foreach (Id<Course> courseId in courseIds) {
+                if (QueryEvent.HasVariations(eventDB, courseId)) {
+                    foreach (CourseDesignator courseDesignator in QueryEvent.GetDesignatorsFromVariationChoices(eventDB, courseId, variationChoicesPerCourse[courseId])) {
+                        if (enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseDesignator) > 1) {
+                            // Create files for each part.
+                            for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseDesignator); ++part) {
+                                yield return new CourseDesignator(courseDesignator.CourseId, courseDesignator.VariationInfo, part);
+                            }
+                        }
+                        else {
+                            yield return courseDesignator;
+                        }
+
+                    }
+                }
+                else {
+                    // No variation.
+                    if (courseId.IsNotNone && enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
+                        // Create files for each part.
+                        for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
+                            yield return new CourseDesignator(courseId, part);
+                        }
+                    }
+                    else {
+                        yield return new CourseDesignator(courseId);
+                    }
                 }
             }
         }

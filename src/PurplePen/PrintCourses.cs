@@ -62,7 +62,6 @@ namespace PurplePen
             }
         }
 
-        // CONSDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
         public PrintCourses(EventDB eventDB, bool enableMultipart)
         {
             InitializeComponent();
@@ -87,6 +86,7 @@ namespace PurplePen
                 courseSelector.SelectedCourses = settings.CourseIds;
             if (settings.AllCourses)
                 courseSelector.AllCoursesSelected = true;
+            courseSelector.VariationChoicesPerCourse = settings.VariationChoicesPerCourse;
 
             // Output section.
             printerName.Text = printerSettings.PrinterName;
@@ -106,6 +106,7 @@ namespace PurplePen
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
             settings.AllCourses = courseSelector.AllCoursesSelected;
+            settings.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;

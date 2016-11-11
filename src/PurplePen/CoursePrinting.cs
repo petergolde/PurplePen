@@ -96,7 +96,7 @@ namespace PurplePen
             pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
 
             CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePrintSettings.CropLargePrintArea);
-            IEnumerable<CourseDesignator> courseDesignators = QueryEvent.EnumerateCourseDesignators(eventDB, coursePrintSettings.CourseIds, !coursePrintSettings.PrintMapExchangesOnOneMap);
+            IEnumerable<CourseDesignator> courseDesignators = QueryEvent.EnumerateCourseDesignators(eventDB, coursePrintSettings.CourseIds, coursePrintSettings.VariationChoicesPerCourse, !coursePrintSettings.PrintMapExchangesOnOneMap);
             pages = pageLayout.LayoutPages(courseDesignators);
 
             return pages.Count;            // total number of pages.
@@ -311,6 +311,9 @@ namespace PurplePen
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides the course ids in CourseIds except for "all controls".
+        
+        // variation choices for courses with variations.
+        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();  
 
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
