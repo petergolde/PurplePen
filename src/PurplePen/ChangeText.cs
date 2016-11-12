@@ -166,6 +166,22 @@ namespace PurplePen
             InsertSpecialText(TextMacros.PrintScale);
         }
 
+        private void variationMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.Variation);
+        }
+
+        private void relayTeamMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.RelayTeam);
+        }
+
+        private void relayLegMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.RelayLeg);
+        }
+
+
         private void textBoxMain_TextChanged(object sender, EventArgs e)
         {
             okButton.Enabled = textBoxMain.Text != "";
@@ -208,5 +224,6 @@ namespace PurplePen
         {
             UpdatePreview();
         }
+
     }
 }

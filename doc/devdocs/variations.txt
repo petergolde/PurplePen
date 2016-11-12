@@ -24,6 +24,8 @@ Variation naming issues:
 
 Minor issues to check/add later.
 
+- GPX tracks.
+
 - Text lines above/below -- how do these work with variations and with butterfly courses
 
 - Allow insertion allows in different places on the same leg when splitting/joining.

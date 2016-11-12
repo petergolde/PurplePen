@@ -44,6 +44,7 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
+    using System.Linq;
     using PurplePen.MapModel;
 
     [TestClass]
@@ -900,6 +901,15 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName) / $(ClassList)");
             Assert.AreEqual("Course 1 / This is cool very cool", result);
 
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
+            Assert.AreEqual("", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
+            Assert.AreEqual("--", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
+            Assert.AreEqual("-", result);
+
             // All Controls
             courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
 
@@ -911,7 +921,65 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(CoursePart)");
             Assert.AreEqual("", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
+            Assert.AreEqual("", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
+            Assert.AreEqual("--", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
+            Assert.AreEqual("-", result);
         }
+
+        [TestMethod]
+        public void ExpandTextRelay()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            CourseView courseView;
+            string result;
+
+            eventDB.Load(TestUtil.GetTestFile("queryevent\\variations.ppen"));
+            eventDB.Validate();
+
+            // Use course 1
+            List<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, CourseId(1)).ToList();
+
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(1), variations[0]));
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 1", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
+            Assert.AreEqual("ACDEFH", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
+            Assert.AreEqual("--", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
+            Assert.AreEqual("-", result);
+
+            CourseDesignator designator = QueryEvent.EnumerateCourseDesignators(eventDB, 
+                new[] { CourseId(1) },
+                new Dictionary<Id<Course>, VariationChoices>() { { CourseId(1), new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.ChosenTeams, FirstTeam = 4, LastTeam = 6 } } }, 
+                true).Skip(1).First();
+            courseView = CourseView.CreateViewingCourseView(eventDB, designator);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(CourseName)");
+            Assert.AreEqual("Course 1", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
+            Assert.AreEqual("AEGCDI", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
+            Assert.AreEqual("4", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
+            Assert.AreEqual("2", result);
+
+        }
+
 
         [TestMethod]
         public void ExpandTextMapExchange()

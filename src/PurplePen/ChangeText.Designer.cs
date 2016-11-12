@@ -52,6 +52,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.insertSpecialButton = new System.Windows.Forms.Button();
             this.textBoxMain = new System.Windows.Forms.TextBox();
+            this.variationMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relayTeamMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relayLegMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specialTextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -74,10 +77,13 @@
             this.eventTitleMenuItem,
             this.courseNameMenuItem,
             this.coursePartMenuItem,
+            this.variationMenuItem,
             this.courseLengthMenuItem,
             this.courseClimbMenuItem,
             this.classListMenuItem,
-            this.printScaleMenuItem});
+            this.printScaleMenuItem,
+            this.relayTeamMenuItem,
+            this.relayLegMenuItem});
             this.specialTextMenu.Name = "specialTextMenu";
             this.specialTextMenu.ShowImageMargin = false;
             resources.ApplyResources(this.specialTextMenu, "specialTextMenu");
@@ -231,6 +237,24 @@
             this.textBoxMain.Name = "textBoxMain";
             this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
+            // variationMenuItem
+            // 
+            this.variationMenuItem.Name = "variationMenuItem";
+            resources.ApplyResources(this.variationMenuItem, "variationMenuItem");
+            this.variationMenuItem.Click += new System.EventHandler(this.variationMenuItem_Click);
+            // 
+            // relayTeamMenuItem
+            // 
+            this.relayTeamMenuItem.Name = "relayTeamMenuItem";
+            resources.ApplyResources(this.relayTeamMenuItem, "relayTeamMenuItem");
+            this.relayTeamMenuItem.Click += new System.EventHandler(this.relayTeamMenuItem_Click);
+            // 
+            // relayLegMenuItem
+            // 
+            this.relayLegMenuItem.Name = "relayLegMenuItem";
+            resources.ApplyResources(this.relayLegMenuItem, "relayLegMenuItem");
+            this.relayLegMenuItem.Click += new System.EventHandler(this.relayLegMenuItem_Click);
+            // 
             // ChangeText
             // 
             resources.ApplyResources(this, "$this");
@@ -283,5 +307,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button insertSpecialButton;
         private System.Windows.Forms.TextBox textBoxMain;
+        private System.Windows.Forms.ToolStripMenuItem variationMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relayTeamMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relayLegMenuItem;
     }
 }

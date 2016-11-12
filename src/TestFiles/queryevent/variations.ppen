@@ -112,6 +112,7 @@
     <print-area automatic="true" restrict-to-page-size="true" left="-105.971771" top="133.294342" right="313.128235" bottom="-133.40567" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
     <variation-naming kind="letters" include-course-name="true" />
+    <relay teams="10" legs="5" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>SimpleForks</name>

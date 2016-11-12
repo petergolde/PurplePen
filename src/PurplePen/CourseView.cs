@@ -180,21 +180,71 @@ namespace PurplePen
             }
         }
 
+        // The name of the course, no variations.
         public string CourseName
         {
             get { return courseName; }
         }
 
-        // Same as CourseName, but add "-1", "-2", etc. for a part of a multi-part course.
-        public string CourseNameWithPart
+        // Same as CourseName, but add the variation name, and also
+        // "-1", "-2", etc. for a part of a multi-part course.
+        public string CourseFullName
         {
             get
             {
+                string nameWithVariation = courseName;
+
+                if (courseDesignator.IsVariation) {
+                    nameWithVariation += " " + courseDesignator.VariationInfo.Name;
+                }
+
                 if (!courseDesignator.IsAllControls && !courseDesignator.AllParts) {
-                    return string.Format("{0}-{1}", courseName, courseDesignator.Part + 1);
+                    return string.Format("{0}-{1}", nameWithVariation, courseDesignator.Part + 1);
                 }
                 else {
-                    return courseName;
+                    return nameWithVariation;
+                }
+            }
+        }
+
+        // Variation code string.
+        public string VariationName
+        {
+            get
+            {
+                if (courseDesignator.IsVariation) {
+                    return courseDesignator.VariationInfo.CodeString;
+                }
+                else {
+                    return "";
+                }
+            }
+        }
+
+        // If a variation that is part of a relay team, the team number.
+        public int? RelayTeam
+        {
+            get
+            {
+                if (courseDesignator.IsVariation) {
+                    return courseDesignator.VariationInfo.Team;
+                }
+                else {
+                    return null;
+                }
+            }
+        }
+
+        // If a variation that is part of a relay team, the leg number.
+        public int? RelayLeg
+        {
+            get
+            {
+                if (courseDesignator.IsVariation) {
+                    return courseDesignator.VariationInfo.Leg;
+                }
+                else {
+                    return null;
                 }
             }
         }

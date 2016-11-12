@@ -55,6 +55,9 @@ namespace PurplePen
         public const string ClassList = "$(ClassList)";
         public const string PrintScale = "$(PrintScale)";
         public const string CoursePart = "$(CoursePart)";
+        public const string Variation = "$(Variation)";
+        public const string RelayTeam = "$(RelayTeam)";
+        public const string RelayLeg = "$(RelayLeg)";
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -447,6 +450,28 @@ namespace PurplePen
                     text = text.Replace(TextMacros.CoursePart, (courseView.CourseDesignator.Part + 1).ToString());
                 else
                     text = text.Replace(TextMacros.CoursePart, "");
+            }
+
+            if (text.Contains(TextMacros.Variation)) {
+                text = text.Replace(TextMacros.Variation, courseView.VariationName);
+            }
+
+            if (text.Contains(TextMacros.RelayTeam)) {
+                if (courseView.RelayTeam.HasValue) {
+                    text = text.Replace(TextMacros.RelayTeam, courseView.RelayTeam.Value.ToString());
+                }
+                else {
+                    text = text.Replace(TextMacros.RelayTeam, "--");
+                }
+            }
+
+            if (text.Contains(TextMacros.RelayLeg)) {
+                if (courseView.RelayLeg.HasValue) {
+                    text = text.Replace(TextMacros.RelayLeg, courseView.RelayLeg.Value.ToString());
+                }
+                else {
+                    text = text.Replace(TextMacros.RelayLeg, "-");
+                }
             }
 
             if (text.Contains(TextMacros.CourseLength))

@@ -611,7 +611,8 @@ namespace PurplePen
 
         public override IMapViewerHighlight[] GetHighlights(Pane pane)
         {
-            Debug.Assert(pane == Pane.Map);
+            if (pane != Pane.Map)
+                return null;
 
             return new CourseObj[] { courseObjectDrag };
         }

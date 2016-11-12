@@ -217,7 +217,7 @@ namespace PurplePen
             // Get the course view to get the scale ratio.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
             scaleRatio = courseView.ScaleRatio;
-            description = courseView.CourseNameWithPart;
+            description = courseView.CourseFullName;
 
             RectangleF printRectangle = controller.GetCurrentPrintAreaRectangle(courseDesignator);
             PrintArea printArea = controller.GetCurrentPrintArea(courseDesignator);
