@@ -420,14 +420,8 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Beskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till beskrivningar" igen.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript är inte installerat</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript misslyckades med att läsa in PDF-fil</value>
+    <value>Pdfium misslyckades med att läsa in PDF-fil</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunde inte läsa resultatet av PDF-konvertering från fil '{0}</value>
@@ -530,5 +524,11 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Klar med att skriva ut "{0}". Tryck OK för att börja skriva ut "{1}".</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript är inte installerat</value>
   </data>
 </root>

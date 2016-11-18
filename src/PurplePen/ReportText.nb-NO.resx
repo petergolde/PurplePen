@@ -241,10 +241,10 @@
     <value>Gjennomsnitt</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} poster, {2:0.0} km, {3} m stigning)</value>
+    <value>{0} ({1} poster, {2}, {3} m stigning)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} poster, {2:0.0} km)</value>
+    <value>{0} ({1} poster, {2})</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Strekklengde rapport for {0}</value>

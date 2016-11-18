@@ -241,10 +241,10 @@
     <value>Keskmine</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} KPd, {2:0.0} km, {3} m tõusu)</value>
+    <value>{0} ({1} KPd, {2}, {3} m tõusu)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} KPd, {2:0.0} km)</value>
+    <value>{0} ({1} KPd, {2})</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>{0} etappide pikkuste aruanee</value>

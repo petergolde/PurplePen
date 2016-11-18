@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelReadingPDF.Text" xml:space="preserve">
-    <value>GPL Ghostscript est en train de lire votre PDF...</value>
+    <value>Pdfium est en train de lire votre PDF...</value>
   </data>
   <data name="labelFailure.Text" xml:space="preserve">
     <value>La lecture du PDF a échoué. Les erreurs sont affichées ci-dessous.</value>

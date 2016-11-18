@@ -243,6 +243,42 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Visualizza</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Inizio</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Controllo</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Descrizioni</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Linea Di Testo</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Punti di attraversamento obbligati</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Punti di attraversamento opzionali</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Area Fuori Dai Limiti</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Area Pericolosa</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Posizione Dell'Acqua</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Posizione Del Primo Soccorso</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Confine Non Attraversabile</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;File Mappa...</value>
   </data>
@@ -272,48 +308,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Corso</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Inizio</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Controllo</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Fine</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Descrizioni</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Punti di attraversamento obbligati</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Punti di attraversamento opzionali</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Area Fuori Dai Limiti</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Area Pericolosa</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Posizione Dell'Acqua</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Posizione Del Primo Soccorso</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Confine Non Attraversabile</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Testo</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Oggetto Speciale</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Linea Di Testo</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Cancella</value>
@@ -368,5 +362,8 @@
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Testo</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Aggiungi &amp;Oggetto Speciale</value>
   </data>
 </root>

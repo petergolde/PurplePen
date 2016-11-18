@@ -124,7 +124,7 @@
     <value>地図ファイルを選択 (&amp;C)...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>すべての地図ファイル|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>すべての地図ファイル|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>選択中の地図ファイル</value>

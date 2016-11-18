@@ -135,16 +135,16 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Merilo tiska</value>
   </data>
-  <data name="checkBoxBold.Text" xml:space="preserve">
-    <value>Krepko</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Prikaz</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Vnesi dodaten tekst</value>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Krepko</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Besedilo</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Vnesi dodaten tekst</value>
   </data>
 </root>

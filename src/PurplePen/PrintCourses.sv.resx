@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Skriv ut</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Byt skrivare...</value>
   </data>
@@ -132,20 +129,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Skrivare:</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Förhandsgranska...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Banor</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopior</value>
-  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Antal kopior av varje bana:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Utseende</value>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopior</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Skriv ut kartbyten på samma karta </value>
@@ -167,6 +164,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Om utskriftsområdet är för stort för en sida:</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Utseende</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut banor</value>

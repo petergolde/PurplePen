@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 1.6.2\n"
+"Project-Id-Version: Purple Pen 3.0.0 beta 1\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2016-05-17 09:30-07:00\n"
+"POT-Creation-Date: 2016-11-18 15:33-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © 2007-2014 by Peter Golde"
-msgstr "Copyright © 2007-2014 by Peter Golde"
+msgid "Copyright © by Peter Golde"
+msgstr "Copyright © by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -201,6 +201,73 @@ msgstr "km"
 msgid "New Course"
 msgstr "Ny bana"
 
+#: AddForkDialog.resx, labelWhichType.Text
+msgid "What type of variation would you like to add?"
+msgstr ""
+
+#: AddForkDialog.resx, radioButtonFork.Text
+msgid "Fork"
+msgstr ""
+
+#: AddForkDialog.resx, radioButtonLoop.Text
+msgid "Loop"
+msgstr ""
+
+#: AddForkDialog.resx, labelNumberBranches.Text
+msgid "Number of branches:"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items
+msgid "2"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items1
+msgid "3"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items2
+msgid "4"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items3
+msgid "5"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items4
+msgid "6"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items5
+msgid "7"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items6
+msgid "8"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items7
+msgid "9"
+msgstr ""
+
+#: AddForkDialog.resx, comboBoxNumberBranches.Items8
+msgid "10"
+msgstr ""
+
+#: AddForkDialog.resx, labelNumberLoops.Text
+msgid "Number of loops:"
+msgstr ""
+
+#: AddForkDialog.resx, labelSummary.Text
+msgid "The loop control will be visited 4 times. There are 24 "
+"different ways through the loops."
+msgstr ""
+
+#: AddForkDialog.resx, $this.Text
+#: CommandNameText.resx, AddVariation
+#: MainFrame.resx, addVariationToolStripButton.Text
+msgid "Add Variation"
+msgstr ""
+
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
@@ -332,12 +399,14 @@ msgstr "&Välj kartfil..."
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
 msgid "All map "
-"files|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
-"f|OCAD files (*.ocd)|*.ocd|PDF files (*.pdf)|*.pdf|Image "
+"files|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*."
+"bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
+"Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 msgstr "Alla "
 "kartfiler|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;"
-"*.gif|OCAD-filer (*.ocd)|*.ocd|PDF-filer "
+"*.gif|OCAD-filer (*.ocd)|*.ocd|Open Orienteering Mapper "
+"Files|*.omap;*.xmap|PDF-filer "
 "(*.pdf)|*.pdf|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.pn"
 "g;*.gif"
 
@@ -387,6 +456,10 @@ msgstr "Banans namn"
 msgid "Course Part"
 msgstr "Del av bana"
 
+#: ChangeText.resx, variationMenuItem.Text
+msgid "Course Variation"
+msgstr ""
+
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
 msgstr "Banlängd"
@@ -403,6 +476,14 @@ msgstr "Klasslista"
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
 msgstr "Utskriftsskala"
+
+#: ChangeText.resx, relayTeamMenuItem.Text
+msgid "Relay Team"
+msgstr ""
+
+#: ChangeText.resx, relayLegMenuItem.Text
+msgid "Relay Leg"
+msgstr ""
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -683,6 +764,18 @@ msgstr "Ändra linjeutseende"
 msgid "Duplicate Course"
 msgstr "Duplicera bana"
 
+#: CommandNameText.resx, CreateMapFiles
+msgid "Create {0} &Files"
+msgstr ""
+
+#: CommandNameText.resx, DeleteFork
+msgid "Delete Fork/Loop"
+msgstr ""
+
+#: CommandNameText.resx, RelayTeamVariations
+msgid "Relay Team Variations"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
 msgstr "Objektets Storlek"
@@ -791,13 +884,17 @@ msgstr "Mata in antalet löpare på varje bana genom att klicka i "
 msgid "Course Load"
 msgstr "Antal löpare"
 
-#: CoursePartBanner.resx, coursePartLabel.Text
-msgid "Course Part:"
-msgstr "Del av bana:"
+#: CoursePartBanner.resx, variationsLabel.Text
+msgid "Course Variation: "
+msgstr ""
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
 msgstr "Egenskaper..."
+
+#: CoursePartBanner.resx, coursePartLabel.Text
+msgid "Course Part: "
+msgstr "Del av bana:"
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -821,6 +918,10 @@ msgstr "Alla"
 #: SelectionDescriptionText.resx, CourseList_None
 msgid "None"
 msgstr "Ingen"
+
+#: CourseSelector.resx, buttonChooseVariations.Text
+msgid "Choose Variations..."
+msgstr ""
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
@@ -885,34 +986,6 @@ msgstr "Filnamnsprefix:"
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
 msgstr "Filformat:"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items
-msgid "OCAD 6"
-msgstr "OCAD 6"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items1
-msgid "OCAD 7"
-msgstr "OCAD 7"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items2
-msgid "OCAD 8"
-msgstr "OCAD 8"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items3
-msgid "OCAD 9"
-msgstr "OCAD 9"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items4
-msgid "OCAD 10"
-msgstr "OCAD 10"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items5
-msgid "OCAD 11"
-msgstr "OCAD 11"
-
-#: CreateOcadFiles.resx, fileFormatCombo.Items6
-msgid "OCAD 12"
-msgstr ""
 
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
@@ -1018,15 +1091,15 @@ msgstr "Välj en mapp för PDF-filerna"
 msgid "Create PDF Files"
 msgstr "Skriv ut banor"
 
-#: CreateRouteGadget.resx, nameGroupBox.Text
-msgid "File Name"
-msgstr "Filnamn"
-
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
 msgstr "Fyll i namnet (utan .xml eller .gif) för båda "
 "RouteGadget-filerna:"
+
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Filnamn"
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
@@ -1093,6 +1166,10 @@ msgstr "Nummer"
 msgid "Gender"
 msgstr "Kön"
 
+#: EnterSymbolText.resx, caseColumn.HeaderText
+msgid "Case"
+msgstr ""
+
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
 msgstr "Visa pluralformer"
@@ -1109,6 +1186,14 @@ msgstr "Ange den anpassade texten för symbolen under \"Text\"-kolumnen"
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
 msgstr "Kön:"
+
+#: EnterSymbolText.resx, labelCaseChooser.Text
+msgid "Case of modified symbol:"
+msgstr ""
+
+#: EnterSymbolText.resx, checkBoxCases.Text
+msgid "Show case forms"
+msgstr ""
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1193,6 +1278,18 @@ msgstr "Hörnradie:"
 msgid "All Controls"
 msgstr "Alla kontroller"
 
+#: MainFrame.resx, radioButtonDescriptions.Text
+msgid "Descriptions"
+msgstr ""
+
+#: MainFrame.resx, radioButtonTopology.Text
+msgid "Ordering"
+msgstr ""
+
+#: MainFrame.resx, mapViewerTopology.Text
+msgid "mapViewerTopology"
+msgstr ""
+
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
 msgstr "Purple Pen filer|*.ppen|Alla filer|*.*"
@@ -1232,6 +1329,10 @@ msgstr "Skapa RouteGadget-filer"
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
 msgstr "Skapa Data &Utbytesfil (IOF XML)..."
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr "Skapa &GPX-fil..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1389,80 +1490,21 @@ msgstr "&Alla kontroller"
 msgid "&View"
 msgstr "&Visa"
 
-#: MainFrame.resx, changeMapFileMenu.Text
-msgid "&Map File..."
-msgstr "&Kartfil..."
-
-#: MainFrame.resx, changeCodesMenu.Text
-msgid "Change Control &Codes..."
-msgstr "Ändra &kontrollkoder"
-
-#: MainFrame.resx, autoNumberingMenu.Text
-msgid "Automatic &Numbering..."
-msgstr "Automatisk &numrering"
-
-#: MainFrame.resx, removeUnusedControlsMenu.Text
-msgid "Remove &Unused Controls..."
-msgstr "Ta bort &oanvända kontroller"
-
-#: MainFrame.resx, punchPatternsMenu.Text
-msgid "&Punch Patterns..."
-msgstr "Stämpel&mönster"
-
-#: MainFrame.resx, customizeDescriptionsMenu.Text
-msgid "Customize &Description Text..."
-msgstr "Anpassa &Beskrivningstext..."
-
-#: MainFrame.resx, customizeCourseAppearanceMenu.Text
-msgid "Customize &Appearance..."
-msgstr ""
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Tävling"
-
-#: MainFrame.resx, addCourseMenu.Text
-msgid "&Add Course..."
-msgstr "&Lägg till bana"
-
-#: MainFrame.resx, deleteCourseMenu.Text
-msgid "&Delete Course"
-msgstr "&Radera bana"
-
-#: MainFrame.resx, duplicateCourseMenu.Text
-msgid "D&uplicate Course..."
-msgstr "D&uplicera bana..."
-
-#: MainFrame.resx, propertiesMenu.Text
-msgid "&Properties..."
-msgstr "&Egenskaper..."
-
-#: MainFrame.resx, courseOrderMenu.Text
-msgid "Course &Order..."
-msgstr "Ban&ordning..."
-
-#: MainFrame.resx, courseLoadMenu.Text
-msgid "Competitor &Load..."
-msgstr "Ladda antal löpare..."
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Bana"
-
 #: MainFrame.resx, addStartMenu.Text
-msgid "Add &Start"
+msgid "&Start"
 msgstr "Lägg till &start"
 
 #: MainFrame.resx, addControlMenu.Text
-msgid "Add &Control"
+msgid "&Control"
 msgstr "Lägg till &kontroll"
 
 #: MainFrame.resx, addFinishMenu.Text
-msgid "Add &Finish"
-msgstr "Lägg till &Mål"
+#: MiscText.resx, FinishButtonText
+msgid "&Finish"
+msgstr "Slut&för"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
-msgid "Add &Descriptions"
+msgid "&Descriptions"
 msgstr "Lägg till &kontrollbeskrivning"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
@@ -1474,8 +1516,16 @@ msgid "&Flagged Route to Map Exchange"
 msgstr "&Markerad sträcka till kartbyte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Add Map E&xchange"
+msgid "Map E&xchange"
 msgstr "Lägg till kartb&yte"
+
+#: MainFrame.resx, addVariationMenu.Text
+msgid "&Variation..."
+msgstr ""
+
+#: MainFrame.resx, addTextLineMenu.Text
+msgid "Text &Line..."
+msgstr "Lägg till textrad..."
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1552,13 +1602,77 @@ msgstr "Linje"
 msgid "Rectangle"
 msgstr "Rektangel"
 
-#: MainFrame.resx, addSpecialItemMenu.Text
-msgid "Add Special &Item"
-msgstr "Lägg till speciellt &föremål"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr ""
 
-#: MainFrame.resx, addTextLineMenu.Text
-msgid "Add Text &Line..."
-msgstr "Lägg till textrad..."
+#: MainFrame.resx, changeMapFileMenu.Text
+msgid "&Map File..."
+msgstr "&Kartfil..."
+
+#: MainFrame.resx, changeCodesMenu.Text
+msgid "Change Control &Codes..."
+msgstr "Ändra &kontrollkoder"
+
+#: MainFrame.resx, autoNumberingMenu.Text
+msgid "Automatic &Numbering..."
+msgstr "Automatisk &numrering"
+
+#: MainFrame.resx, removeUnusedControlsMenu.Text
+msgid "Remove &Unused Controls..."
+msgstr "Ta bort &oanvända kontroller"
+
+#: MainFrame.resx, punchPatternsMenu.Text
+msgid "&Punch Patterns..."
+msgstr "Stämpel&mönster"
+
+#: MainFrame.resx, customizeDescriptionsMenu.Text
+msgid "Customize &Description Text..."
+msgstr "Anpassa &Beskrivningstext..."
+
+#: MainFrame.resx, customizeCourseAppearanceMenu.Text
+msgid "Customize &Appearance..."
+msgstr ""
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Tävling"
+
+#: MainFrame.resx, addCourseMenu.Text
+msgid "&Add Course..."
+msgstr "&Lägg till bana"
+
+#: MainFrame.resx, deleteCourseMenu.Text
+msgid "&Delete Course"
+msgstr "&Radera bana"
+
+#: MainFrame.resx, duplicateCourseMenu.Text
+msgid "D&uplicate Course..."
+msgstr "D&uplicera bana..."
+
+#: MainFrame.resx, propertiesMenu.Text
+msgid "&Properties..."
+msgstr "&Egenskaper..."
+
+#: MainFrame.resx, courseOrderMenu.Text
+msgid "Course &Order..."
+msgstr "Ban&ordning..."
+
+#: MainFrame.resx, courseLoadMenu.Text
+msgid "Competitor &Load..."
+msgstr "Ladda antal löpare..."
+
+#: MainFrame.resx, courseVariationReportMenu.Text
+msgid "Relay Team &Variations..."
+msgstr ""
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Bana"
+
+#: MainFrame.resx, deleteForkMenu.Text
+msgid "Delete For&k/Loop"
+msgstr ""
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1615,14 +1729,6 @@ msgstr "Ändra visade banor..."
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
 msgstr "&Objekt"
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create &GPX File..."
-msgstr "Skapa &GPX-fil..."
-
-#: MainFrame.resx, gpsMenu.Text
-msgid "&GPS"
-msgstr "&GPS"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2096,10 +2202,6 @@ msgstr "Kartfilen '{0}' kunde inte hittas.\n"
 msgid "All controls are used in a course."
 msgstr "Alla kontroller används i någon bana."
 
-#: MiscText.resx, FinishButtonText
-msgid "&Finish"
-msgstr "Slut&för"
-
 #: MiscText.resx, NextButtonText
 #: NewEventWizard.resx, nextButton.Text
 msgid "&Next >"
@@ -2283,21 +2385,13 @@ msgstr "Beskrivningar kan inte läggas till i en bana med kartbyte "
 "vill lägga till beskrivningen till och välj \"Lägg till "
 "beskrivningar\" igen."
 
-#: MiscText.resx, DownloadGhostscript
-msgid "Loading PDF files requires a copy of GPL Ghostscript to be "
-"installed. Would you like to automatically download and "
-"install it now?"
-msgstr "För att läsa in PDF-filer krävs det att GPL Ghostscript "
-"installeras. Vill du automatiskt ladda ner och installera "
-"det nu?"
-
-#: MiscText.resx, GhostscriptNotInstalled
-msgid "GPL Ghostscript is not installed"
-msgstr "GPL Ghostscript är inte installerat"
+#: MiscText.resx, PdfConverterNotFound
+msgid "PdfConverter.exe not found"
+msgstr ""
 
 #: MiscText.resx, PdfConversionFailed
-msgid "GPL Ghostscript failed to read PDF file successfully"
-msgstr "GPL Ghostscript misslyckades med att läsa in PDF-fil"
+msgid "Pdfium PDF converter failed to read PDF file successfully"
+msgstr "Pdfium misslyckades med att läsa in PDF-fil"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2447,6 +2541,37 @@ msgstr "Skriv in en längd i km, eller lämna tomt för att beräkna "
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
 msgstr "Klar med att skriva ut \"{0}\". Tryck OK för att börja "
 "skriva ut \"{1}\"."
+
+#: MiscText.resx, OCAD
+msgid "OCAD"
+msgstr ""
+
+#: MiscText.resx, OpenOrienteeringMapper
+msgid "OOM"
+msgstr ""
+
+#: MiscText.resx, AllVariations
+msgid "All Variations"
+msgstr ""
+
+#: MiscText.resx, ForkSummary
+msgid "Suitable for use in relays with {0} participants per team."
+msgstr ""
+
+#: MiscText.resx, LoopSummary
+msgid "The central control in the loop will be visited {0} times. "
+"There are {1} possible paths through the loops."
+msgstr ""
+
+#: MiscText.resx, CantRearrangeSplitControl
+msgid "A control that starts a fork or loop cannot be dragged to "
+"a new place in the course."
+msgstr ""
+
+#: MiscText.resx, TooManyVariations
+msgid "Too many total variations in this course. The number of "
+"distinct variations is limited to {0}."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2691,7 +2816,7 @@ msgid "Confirm Replace Files"
 msgstr "Bekräfta ersättning av filer"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
-msgid "GPL Ghostscript is reading your PDF..."
+msgid "PDFium PDF converter is reading your PDF..."
 msgstr ""
 
 #: PdfConversionInProgress.resx, labelFailure.Text
@@ -2732,12 +2857,6 @@ msgstr "Skrivare:"
 msgid "Preview..."
 msgstr "Förhandsgranska..."
 
-#: PrintCourses.resx, copiesGroupBox.Text
-#: PrintDescriptions.resx, copiesGroupBox.Text
-#: PrintPunches.resx, copiesGroupBox.Text
-msgid "Copies"
-msgstr "Kopior"
-
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
 msgstr "Antal kopior av varje bana:"
@@ -2745,6 +2864,12 @@ msgstr "Antal kopior av varje bana:"
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
 msgstr ""
+
+#: PrintCourses.resx, copiesGroupBox.Text
+#: PrintDescriptions.resx, copiesGroupBox.Text
+#: PrintPunches.resx, copiesGroupBox.Text
+msgid "Copies"
+msgstr "Kopior"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
@@ -2919,14 +3044,17 @@ msgid "Punch Patterns"
 msgstr "Stämpelmönster"
 
 #: ReportForm.resx, printButton.Text
+#: TeamVariationsForm.resx, buttonPrint.Text
 msgid "Print..."
 msgstr "Skriv ut..."
 
 #: ReportForm.resx, previewButton.Text
+#: TeamVariationsForm.resx, buttonPrintPreview.Text
 msgid "Print Preview..."
 msgstr "Förhandsgranska utskrift..."
 
 #: ReportForm.resx, okButton.Text
+#: TeamVariationsForm.resx, buttonClose.Text
 msgid "Close"
 msgstr "Stäng"
 
@@ -3115,12 +3243,12 @@ msgid "Average"
 msgstr "Medelvärde"
 
 #: ReportText.resx, LegLength_CourseInfo
-msgid "{0} ({1} controls, {2:0.0} km, {3} m climb)"
-msgstr "{0} ({1} kontroller, {2:0.0} km, {3} m stigning)"
+msgid "{0} ({1} controls, {2}, {3} m climb)"
+msgstr "{0} ({1} kontroller, {2}, {3} m stigning)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
-msgid "{0} ({1} controls, {2:0.0} km)"
-msgstr "{0} ({1} kontroller, {2:0.0} km)"
+msgid "{0} ({1} controls, {2})"
+msgstr "{0} ({1} kontroller, {2})"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
@@ -3158,6 +3286,30 @@ msgstr "Sammanfattning av antal löpare för {0}"
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
 msgstr "VARNING:"
+
+#: ReportText.resx, RelayVariation_BranchWarning
+msgid "Warning: due to the number of legs specified, the fork at "
+"control {0} will not be used evenly. {1} leg(s) will use "
+"branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
+msgstr ""
+
+#: ReportText.resx, RelayVariation_LegHeader
+msgid "Leg {0}"
+msgstr ""
+
+#: ReportText.resx, RelayVariation_NoTeams
+msgid "No relay teams have been defined yet. Selected the desired "
+"number of teams and legs and press the \"Assign Variations\" "
+"button."
+msgstr ""
+
+#: ReportText.resx, RelayVariation_TeamNumber
+msgid "Team {0}"
+msgstr ""
+
+#: ReportText.resx, RelayVariation_Title
+msgid "Relay Assignments for {0}"
+msgstr ""
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3325,6 +3477,61 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
+msgstr ""
+
+#: SelectVariations.resx, comboBoxVariations.Items
+msgid "Each Variation Separately"
+msgstr ""
+
+#: SelectVariations.resx, comboBoxVariations.Items1
+msgid "Each Relay Leg Separately"
+msgstr ""
+
+#: SelectVariations.resx, comboBoxVariations.Items2
+msgid "All Variations Combined"
+msgstr ""
+
+#: SelectVariations.resx, label1.Text
+msgid "Variations:"
+msgstr ""
+
+#: SelectVariations.resx, labelAllVariations.Text
+msgid "Display all the forks together on a single map."
+msgstr ""
+
+#: SelectVariations.resx, labelSeparateVariations.Text
+msgid "One map for each possible variation through the course."
+msgstr ""
+
+#: SelectVariations.resx, labelByLeg.Text
+msgid "One map for each leg on the relay teams that you choose."
+msgstr ""
+
+#: SelectVariations.resx, labelByLegNotAvailable.Text
+msgid "You must first define relay teams by selecting Relay Team "
+"Variations... from the Course menu."
+msgstr ""
+
+#: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
+msgid "Select Individual Variations"
+msgstr ""
+
+#: SelectVariations.resx, labelNumberOfTeams.Text
+msgid "This course has {0} relay teams assigned. Use Relay Team "
+"Variations... from the Course menu to change the number of "
+"teams."
+msgstr ""
+
+#: SelectVariations.resx, label3.Text
+msgid "to"
+msgstr ""
+
+#: SelectVariations.resx, label2.Text
+msgid "Select which teams to print/export:"
+msgstr ""
+
+#: SelectVariations.resx, $this.Text
+msgid "Choose Variations"
 msgstr ""
 
 #: SetPrintAreaDialog.resx, okButton.Text
@@ -3518,6 +3725,35 @@ msgstr ""
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
+msgstr ""
+
+#: StatusBarText.resx, DraggingTopologyObject
+msgid "Drag control number to reorder it in the course (hold "
+"shift to duplicate)"
+msgstr ""
+
+#: TeamVariationsForm.resx, buttonExport.Text
+msgid "Export..."
+msgstr ""
+
+#: TeamVariationsForm.resx, label2.Text
+msgid "Number of legs:"
+msgstr ""
+
+#: TeamVariationsForm.resx, buttonCalculate.Text
+msgid "Assign Variations"
+msgstr ""
+
+#: TeamVariationsForm.resx, label1.Text
+msgid "Number of teams:"
+msgstr ""
+
+#: TeamVariationsForm.resx, saveFileDialog.Filter
+msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
+msgstr ""
+
+#: TeamVariationsForm.resx, $this.Text
+msgid "Assign Team Variations"
 msgstr ""
 
 #: UnusedControls.resx, okButton.Text

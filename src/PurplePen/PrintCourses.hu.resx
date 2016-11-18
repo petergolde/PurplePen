@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Nyomtatás</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Kimenet</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Nyomtató módosítás...</value>
   </data>
@@ -132,14 +129,14 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Nyomtató:</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Kimenet</value>
+  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Előnézet...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Pályák</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Példányszám</value>
   </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Az egyes pályák példányszáma:</value>
@@ -147,8 +144,8 @@
   <data name="checkBoxPausePrinting.Text" xml:space="preserve">
     <value>Szünet a nyomtatásban az egyes pályák vagy részek között</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Kinézet</value>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Példányszám</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>Rasztrerizálás nyomtatás előtt</value>
@@ -176,6 +173,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Ha nem fér ki egy oldalra:</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Kinézet</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pályák nyomtatása</value>

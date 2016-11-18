@@ -424,14 +424,8 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>A pontleírás lehet, hogy nem tartalmazza a térképcserét ha "Minden rész" van megjelenítve.  Váltson a megfelelő részre és használja az "Új pontleírás"-t újra.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>A GPL Ghostscript nincs telepítve.</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>A GPL Ghostscript nem tudta sikeresen beolvasni a PDF fájlt.</value>
+    <value>A Pdfium nem tudta sikeresen beolvasni a PDF fájlt.</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Nem olvasható be a PDF fájl átalakítás eredménye a(z) '{0}' fájlból</value>
@@ -534,5 +528,11 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>A {0} nyomtatása befejeződött. Nyomjon OK-t a(z) {1} nyomtatásához!</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>A GPL Ghostscript nincs telepítve.</value>
   </data>
 </root>

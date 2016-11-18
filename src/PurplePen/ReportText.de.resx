@@ -133,7 +133,7 @@
     <value>Kontrollcodes</value>
   </data>
   <data name="ColumnHeader_Controls" xml:space="preserve">
-    <value>Steuerungen</value>
+    <value>Posten</value>
   </data>
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Bahn</value>
@@ -241,10 +241,10 @@
     <value>Im Durchschnitt</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} Posten, {2:0.0} km, {3} m Steigung)</value>
+    <value>{0} ({1} Posten, {2}, {3} m Steigung)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} Posten, {2:0.0} km)</value>
+    <value>{0} ({1} Posten, {2})</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Liste der Etappenlängen für {0}</value>

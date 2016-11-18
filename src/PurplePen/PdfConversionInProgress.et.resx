@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelReadingPDF.Text" xml:space="preserve">
-    <value>GPL Ghostscript loeb PDF faili...</value>
+    <value>Pdfium loeb PDF faili...</value>
   </data>
   <data name="labelFailure.Text" xml:space="preserve">
     <value>PDF lugemine ei õnnestunud. Viga on kirjeldatud allpool.</value>

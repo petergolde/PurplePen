@@ -124,7 +124,7 @@
     <value>&amp;Vali kaardi fail...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Kõik kaardi failid|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|PDF failid (*.pdf)|*.pdf|Graafika failid |*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>Kõik kaardi failid|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF failid (*.pdf)|*.pdf|Graafika failid |*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vali kaardi fail</value>

@@ -121,7 +121,7 @@
     <value>&amp;Scegli file mappa...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Files mappa|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Files carta OCAD (*.ocd)|*.ocd|Files PDF (*.pdf)|*.pdf|Files Immagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>Files mappa|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Files carta OCAD (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|Files PDF (*.pdf)|*.pdf|Files Immagine|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>File Mappa</value>

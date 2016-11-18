@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Velg en mappe for OCAD filer</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Mappe</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Velg mappe...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Samme mappe som Purple Pen filen</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Filnavn</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Mappe</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Skriv inn navnet (uten .xml og .gif) til begge RouteGadget filene:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Filnavn</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Finn ut mer om RouteGadget</value>

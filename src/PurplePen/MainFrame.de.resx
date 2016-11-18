@@ -150,6 +150,9 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Daten-&amp;Austauschdatei erstellen (IOF XML)...</value>
   </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>&amp;GPX-Datei erstellen ...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Postenbeschreibungen &amp;drucken...</value>
   </data>
@@ -264,6 +267,72 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Ansicht</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>&amp;Start hinzufügen</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>&amp;Posten hinzufügen</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Fertigstellen</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>P&amp;ostenbeschreibung hinzufügen</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartenwechsel an Posten</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ausgeflaggte Strecke zum Kartenwechsel</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Karten&amp;wechsel hinzufügen</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>&amp;Textzeile hinzufügen...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Pflichtpassage</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Optionale Passage</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Sperrgebiet</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Gefährliches Gebiet</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Getränkeposten</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Erste Hilfe</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Verbotene Strecke</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Unpassierbare Grenze</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Passkreuz</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Weiße Fläche</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Bild</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rechteck</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kartendatei...</value>
   </data>
@@ -309,75 +378,6 @@
   <data name="courseMenu.Text" xml:space="preserve">
     <value>Bah&amp;nen</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>&amp;Start hinzufügen</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>&amp;Posten hinzufügen</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>&amp;Ziel hinzufügen</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>P&amp;ostenbeschreibung hinzufügen</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Kartenwechsel an Posten</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ausgeflaggte Strecke zum Kartenwechsel</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Karten&amp;wechsel hinzufügen</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Pflichtpassage</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Optionale Passage</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Sperrgebiet</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Gefährliches Gebiet</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Getränkeposten</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Erste Hilfe</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Verbotene Strecke</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Unpassierbare Grenze</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Passkreuz</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Weiße Fläche</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Bild</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Linie</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Rechteck</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>&amp;Besonderes Objekt hinzufügen</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>&amp;Textzeile hinzufügen...</value>
-  </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Löschen</value>
   </data>
@@ -422,12 +422,6 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Objekte</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>&amp;GPX-Datei erstellen ...</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Alle &amp;Bahndaten</value>
@@ -624,6 +618,9 @@
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>Copy text t X:-999.99 Y:-999.99</value>
   </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml</value>
+  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>XML-Austausch Datei erstellen</value>
   </data>
@@ -638,6 +635,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>&amp;Besonderes Objekt hinzufügen</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Besonderes Objekt hinzufügen</value>

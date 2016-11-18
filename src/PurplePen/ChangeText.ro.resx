@@ -132,16 +132,16 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Categoria</value>
   </data>
-  <data name="checkBoxBold.Text" xml:space="preserve">
-    <value>Îngroșat</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspect</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Adaugă Text Special</value>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Îngroșat</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Adaugă Text Special</value>
   </data>
 </root>

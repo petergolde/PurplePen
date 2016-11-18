@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Wählen Sie einen Ordner für die OCAD-Dateien aus</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Ordner</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Ordner auswählen...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Selber Ordner wie Purple Pen-Datei</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Dateiname</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Ordner</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Einen Namen (ohne .xml or .gif) für die beiden RouteGadget-Dateien eintragen:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Dateiname</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Mehr über RouteGadget erfahren</value>

@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Echelle d'impression</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Présentation</value>
+  </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Modifier la couleur...</value>
   </data>
@@ -153,16 +156,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Police de caractères :</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Présentation</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Exemple</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Insérer le texte prédéfini</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Texte</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Insérer le texte prédéfini</value>
   </data>
 </root>

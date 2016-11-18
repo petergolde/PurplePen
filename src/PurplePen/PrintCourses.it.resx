@@ -123,9 +123,6 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percorsi</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Aspetto</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Stampa i Cambi Carta sulla Stessa Mappa </value>
   </data>
@@ -143,6 +140,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Se l'area da stampare e' troppo grande per stare in una pagina</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Aspetto</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Dimensione carta:</value>

@@ -249,6 +249,54 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vizualizare</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Adăugare &amp;Start</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Adăugare &amp;Post Control</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Finalizare</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Adăugare &amp;Descriere</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Adăugare Text Linie...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Punct Trecere Obligatoriu</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Punct Trecere Opțional</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Zonă Înafara Limitelor</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Zonă Periculoasă</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Locație apă</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Locație punct Prim Ajutor</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Marcare Interzisă</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Zonă Inaccesibilă</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Macaj de Înregistrare</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Spațiu Alb</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>Fișier &amp;Hartă...</value>
   </data>
@@ -284,57 +332,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Traseu</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Post Control</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Adăugare S&amp;osire</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Descriere</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Punct Trecere Obligatoriu</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Punct Trecere Opțional</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Zonă Înafara Limitelor</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Zonă Periculoasă</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Locație apă</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Locație punct Prim Ajutor</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Marcare Interzisă</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Zonă Inaccesibilă</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Macaj de Înregistrare</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Spațiu Alb</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Element Special</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Adăugare Text Linie...</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Ștergere</value>
@@ -554,6 +551,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Adăugare &amp;Element Special</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Adăugare Element Special</value>

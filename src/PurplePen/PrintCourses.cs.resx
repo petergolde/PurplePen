@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Tisk</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Výstup</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Změnit tiskárnu...</value>
   </data>
@@ -131,6 +128,9 @@
   </data>
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Tiskárna:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Výstup</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Náhled...</value>

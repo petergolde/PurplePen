@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Imprimir</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Salida</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Seleccionar Impresora...</value>
   </data>
@@ -132,20 +129,20 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Impresora:</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Salida</value>
+  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Vista previa...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Recorridos</value>
   </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Copias</value>
-  </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Copias por recorrido:</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Apariencia</value>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Copias</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Recortar a una página</value>
@@ -155,6 +152,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Si el área de impresión es demasiado grande, ajustar a la página:</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Apariencia</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimir Recorridos</value>

@@ -415,14 +415,8 @@ Użyj | aby rozdzielić linie
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Opisy mogą nie zostać dodane do trasy ze zmianą map, jeżeli "Wszystkie części" są aktualnie wyświetlane. Przełącz się na część, do której chcesz dodać opisy, a następnie wybierz "Dodaj opisy" ponownie.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript nie jest zainstalowany</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Nie udało się odczytać pliku PDF za pomocą GPS Ghostscript</value>
+    <value>Nie udało się odczytać pliku PDF za pomocą Pdfium</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Nie można przeczytać rezultatu konwersji do PDF z pliku '{0}'</value>
@@ -522,5 +516,11 @@ Użyj | aby rozdzielić linie
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Zakończono drukowanie "{0}". Naciśnij OK aby rozpocząć drukowanie "{1}".</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript nie jest zainstalowany</value>
   </data>
 </root>

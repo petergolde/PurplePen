@@ -150,6 +150,9 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Utwórz plik I&amp;OF XML</value>
   </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Utwórz plik &amp;GPX...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Drukuj opisy PK...</value>
   </data>
@@ -261,6 +264,72 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Widok</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;start</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;PK</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Zakończ</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;opisy</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Zmiana &amp;mapy na PK</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>O&amp;taśmowany przebieg do zmiany mapy</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;zmianę mapy</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;tekst</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Obowiązkowy punkt przebiegu</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Opcjonalny punkt przebiegu</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Teren zakazany</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Teren niebezpieczny</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Lokalizacja punktu odżywczego</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Lokalizacja punktu pierwszej pomocy</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Oznaczenie niedozwolonego przebiegu</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Nieprzekraczalna granica</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Znak wewnętrzny</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Wymaż obszar</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Obraz</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Linia</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Prostokąt</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>Plik &amp;mapy</value>
   </data>
@@ -305,75 +374,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Trasa</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;PK</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;metę</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;opisy</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Zmiana &amp;mapy na PK</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>O&amp;taśmowany przebieg do zmiany mapy</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;zmianę mapy</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Obowiązkowy punkt przebiegu</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Opcjonalny punkt przebiegu</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Teren zakazany</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Teren niebezpieczny</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Lokalizacja punktu odżywczego</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Lokalizacja punktu pierwszej pomocy</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Oznaczenie niedozwolonego przebiegu</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Nieprzekraczalna granica</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Znak wewnętrzny</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Wymaż obszar</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Opis</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Obraz</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Linia</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Prostokąt</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Dodaj obiekt &amp;specjalny</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;tekst</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Usuń</value>
@@ -420,12 +420,6 @@
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Obiekt</value>
   </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Utwórz plik &amp;GPX...</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
-  </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Podsumowanie trasy</value>
   </data>
@@ -446,6 +440,9 @@
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Pomoc Purple Pen</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Pomoc Purple Pen (przetłumaczone)</value>
   </data>
   <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
     <value>Strona &amp;domowa Purple Pen</value>
@@ -629,5 +626,11 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Dodaj obiekt &amp;specjalny</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
 </root>

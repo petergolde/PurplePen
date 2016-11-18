@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Vyberte složku pro soubory OCADu</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Složka</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vybrat složku...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Stejná složka jako u souboru Purple Pen</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Název souboru</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Složka</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Zadejte jméno (bez .xml a .gif) pro oba soubory pro RouteGadget:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Název souboru</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Dozvědět se více o RouteGadget</value>

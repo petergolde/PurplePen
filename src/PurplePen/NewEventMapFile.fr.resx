@@ -124,7 +124,7 @@
     <value>&amp;Choisir une carte...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Tous les fichiers carte|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Fichiers OCAD (*.ocd)|*.ocd|Fichiers PDF (*.pdf)|*.pdf|Fichiers image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>Tous les fichiers carte|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Fichiers OCAD (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|Fichiers PDF (*.pdf)|*.pdf|Fichiers image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Carte sélectionnée</value>

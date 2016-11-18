@@ -132,16 +132,16 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Klasseliste</value>
   </data>
-  <data name="checkBoxBold.Text" xml:space="preserve">
-    <value>Feit</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utsjånad</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Sett inn spesialtekst</value>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Feit</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>tekst</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Sett inn spesialtekst</value>
   </data>
 </root>

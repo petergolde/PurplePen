@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Utskriftsskala</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Ändra färg...</value>
   </data>
@@ -153,16 +156,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Typsnitt:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Utseende</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Exempel</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Infoga text</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Infoga text</value>
   </data>
 </root>

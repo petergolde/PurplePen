@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelReadingPDF.Text" xml:space="preserve">
-    <value>GPL Ghostscript leser din PDF fil...</value>
+    <value>Pdfium leser din PDF fil...</value>
   </data>
   <data name="labelFailure.Text" xml:space="preserve">
     <value>Lesing av PDF filen feilet. Feilen er beskrevet under.</value>

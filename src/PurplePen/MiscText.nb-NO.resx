@@ -420,14 +420,8 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Postbeskrivelsene er kanskje ikke lagt til ved kart bytte hvis "Alle deler" er vist. Bytt til den delen du vil legge til postbeskrivelsen og velg "Legg til beskrivelser" igjen.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript er ikke installert</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript klarte ikke å lese PDF filen</value>
+    <value>Pdfium klarte ikke å lese PDF filen</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunne ikke lese resultatet av PDF konvertering fra fil '{0}'</value>
@@ -503,5 +497,11 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="GpxMustBeOcadMap" xml:space="preserve">
     <value>Kartfilen må være en OCAD fil for å bruke GPX filer.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript er ikke installert</value>
   </data>
 </root>

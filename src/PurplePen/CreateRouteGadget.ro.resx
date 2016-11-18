@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Selectați un director pentru fișierul OCAD</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Director</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Selectare director...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Același director ca și fișierul Purple Pen</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Nume fișier</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Director</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Introduceți numele (fără .xml sau .gif) pentru ambele fișiere RouteGadget:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Nume fișier</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Află mai multe despre RouteGadget</value>

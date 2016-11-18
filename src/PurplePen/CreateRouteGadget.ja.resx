@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCADファイルを保存するフォルダを選択してください</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>フォルダ</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>フォルダを選択...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Purple Pen ファイルと同じフォルダ</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>ファイル名</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>フォルダ</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>RouteGadgetファイル両方に使用されるファイル名を(.xml / .gif 等の拡張子を付けずに)入力してください:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>ファイル名</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>RouteGadgetファイル作成について</value>

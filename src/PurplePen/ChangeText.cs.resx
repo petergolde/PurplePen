@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Měřítko tisku</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Zobrazení</value>
+  </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Změnit barvu...</value>
   </data>
@@ -153,13 +156,10 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Písmo:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Zobrazení</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Text</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Vložit speciální text</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Text</value>
   </data>
 </root>

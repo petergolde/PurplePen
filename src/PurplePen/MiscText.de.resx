@@ -424,14 +424,8 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Postenbeschreibungen können zu einer Bahn mit Kartenwechsel nicht hinzugefügt werden, wenn "Alle Teilstrecken" angezeigt werden. Wenn Sie Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte auf die gewünschte Teilstrecke und wählen dann "Postenbeschreibung hinzufügen" nochmals aus.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript ist nicht installiert</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript konnte die PDF-Dateien nicht lesen</value>
+    <value>Pdfium konnte die PDF-Dateien nicht lesen</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Das Ergebnis der PDF-Konvertierung aus Datei '{0}' konnte nicht gelesen werden</value>
@@ -534,5 +528,11 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Drucken von "{0}" fertig. OK klicken, um Drucken von "{1}" zu starten.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript ist nicht installiert</value>
   </data>
 </root>

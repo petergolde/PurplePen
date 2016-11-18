@@ -235,10 +235,10 @@
     <value>Średnia</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} PK, {2:0.0} km, {3} m przewyższenia)</value>
+    <value>{0} ({1} PK, {2}, {3} m przewyższenia)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} PK, {2:0.0} km)</value>
+    <value>{0} ({1} PK, {2})</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Raport długości przebiegów dla {0}</value>

@@ -424,14 +424,8 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Les Définitions ne peuvent pas être ajoutées à un circuit comportant un échange de carte si "Toutes les Parties" est affiché. Basculez sur la partie pour laquelle vous souhaitez ajoutez les définitions, puis choisissez de nouveau l'option "Ajouter Définitions".</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript n'est pas installé</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript n'a pas réussi à lire correctement le fichier PDF</value>
+    <value>Pdfium n'a pas réussi à lire correctement le fichier PDF</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Impossible de lire le résultat de la conversion PDF depuis le fichier '{0}'</value>
@@ -534,5 +528,11 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Impression de "{0}" terminée. Cliquez sur OK pour démarrer l'impression de "{1}".</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript n'est pas installé</value>
   </data>
 </root>

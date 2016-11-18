@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Drukuj</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Wyjście</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Zmień Drukarkę...</value>
   </data>
@@ -132,14 +129,14 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Drukarka:</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Wyjście</value>
+  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Podgląd...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Trasy</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Liczba kopii</value>
   </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Liczba kopii każdej trasy:</value>
@@ -147,8 +144,8 @@
   <data name="checkBoxPausePrinting.Text" xml:space="preserve">
     <value>Wstrzymaj drukowanie po każdej części trasy.</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Wygląd</value>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Liczba kopii</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>Zmień na raster przed wydrukiem</value>
@@ -176,6 +173,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Jeżeli obszar wydruku jest zbyt duży aby zmieścić się na jednej stronie:</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Wygląd</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Drukuj trasy</value>

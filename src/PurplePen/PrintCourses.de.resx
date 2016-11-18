@@ -120,9 +120,6 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Drucken</value>
   </data>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Ausgabe</value>
-  </data>
   <data name="printerChange.Text" xml:space="preserve">
     <value>Drucker ändern...</value>
   </data>
@@ -132,14 +129,14 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Drucker:</value>
   </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Ausgabe</value>
+  </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Vorschau...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Bahnen</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Kopien</value>
   </data>
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Kopien jeder Bahn:</value>
@@ -147,8 +144,8 @@
   <data name="checkBoxPausePrinting.Text" xml:space="preserve">
     <value>Drucken nach jeder Bahn bzw. Teilbahn unterbrechen</value>
   </data>
-  <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Darstellung</value>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopien</value>
   </data>
   <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
     <value>Vor dem Druck rastern</value>
@@ -176,6 +173,9 @@
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Auf eine Seite einpassen, wenn der Druckbereich zu groß ist.</value>
+  </data>
+  <data name="groupBoxAppearance.Text" xml:space="preserve">
+    <value>Darstellung</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Bahnen drucken</value>

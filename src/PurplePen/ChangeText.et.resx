@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Trüki mõõtkava</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Välimus</value>
+  </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Muuda värvi...</value>
   </data>
@@ -153,16 +156,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Font:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Välimus</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Näide</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>Sisesta lisa tekst</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Tekst</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Sisesta lisa tekst</value>
   </data>
 </root>

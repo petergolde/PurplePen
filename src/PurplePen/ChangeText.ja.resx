@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>印刷の縮尺</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>外観</value>
+  </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>色を変更...</value>
   </data>
@@ -153,16 +156,13 @@
   <data name="label1.Text" xml:space="preserve">
     <value>フォント:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>外観</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>サンプル</value>
   </data>
-  <data name="insertSpecialButton.Text" xml:space="preserve">
-    <value>特殊なテキストを入力</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>特殊なテキストを入力</value>
   </data>
 </root>

@@ -150,6 +150,9 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Lag data &amp;Utvekslingsfil (IOF XML)...</value>
   </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Lag &amp;GPX fil...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut postbeskrivelser</value>
   </data>
@@ -261,42 +264,6 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vis</value>
   </data>
-  <data name="changeMapFileMenu.Text" xml:space="preserve">
-    <value>&amp;Kartfil...</value>
-  </data>
-  <data name="changeCodesMenu.Text" xml:space="preserve">
-    <value>Endre &amp;postkoder</value>
-  </data>
-  <data name="autoNumberingMenu.Text" xml:space="preserve">
-    <value>Automatisk &amp;nummerering</value>
-  </data>
-  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
-    <value>Slett &amp;ubrukte poster</value>
-  </data>
-  <data name="punchPatternsMenu.Text" xml:space="preserve">
-    <value>&amp;Stemplingsmønster</value>
-  </data>
-  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
-    <value>Tilpass &amp;beskrivelsestekst</value>
-  </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Arrangement</value>
-  </data>
-  <data name="addCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Legg til løype</value>
-  </data>
-  <data name="deleteCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Slett løype</value>
-  </data>
-  <data name="propertiesMenu.Text" xml:space="preserve">
-    <value>&amp;Egenskaper …</value>
-  </data>
-  <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>Antall deltakere</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Løype</value>
-  </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>Legg til &amp;start</value>
   </data>
@@ -304,7 +271,7 @@
     <value>Legg til &amp;post</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Legg til &amp;mål</value>
+    <value>&amp;Fullfør</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Legg til &amp;postbeskrivelser</value>
@@ -317,6 +284,9 @@
   </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
     <value>Legg til kartbytte</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Legg til tekst&amp;linje</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -360,11 +330,41 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Firkant</value>
   </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Legg til spesielt &amp;symbol</value>
+  <data name="changeMapFileMenu.Text" xml:space="preserve">
+    <value>&amp;Kartfil...</value>
   </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Legg til tekst&amp;linje</value>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>Endre &amp;postkoder</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>Automatisk &amp;nummerering</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>Slett &amp;ubrukte poster</value>
+  </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>&amp;Stemplingsmønster</value>
+  </data>
+  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
+    <value>Tilpass &amp;beskrivelsestekst</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Arrangement</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Legg til løype</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Slett løype</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>&amp;Egenskaper …</value>
+  </data>
+  <data name="courseLoadMenu.Text" xml:space="preserve">
+    <value>Antall deltakere</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Løype</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Slett</value>
@@ -410,12 +410,6 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Objekt</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Lag &amp;GPX fil...</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Løypesammendrag</value>
@@ -626,6 +620,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Legg til spesielt &amp;symbol</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Legg til spesielt symbol</value>

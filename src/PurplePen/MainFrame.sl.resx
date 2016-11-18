@@ -255,6 +255,57 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Pogled</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;start</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;kontrolna točka</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Dodaj &amp;Opisi</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Menjava karte na &amp;kontrolna točka</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;označena pote do menjave karte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Dodaj menja&amp;vo karte</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Dodaj Besedilo &amp;vrstica...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>obvezen prehod</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>možnost prehoda</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Prepovedano območje</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Nevarno območje</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Okrepčevalna točka</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Prva pomoč</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Oznaka prepovedane poti</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Neprehodna meja</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>oznaka registra</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Besedilo</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Datoteka s karto</value>
   </data>
@@ -290,63 +341,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Proga</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;kontrolna točka</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;cilj</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;Opisi</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Menjava karte na &amp;kontrolna točka</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;označena pote do menjave karte</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Dodaj menja&amp;vo karte</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>obvezen prehod</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>možnost prehoda</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Prepovedano območje</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Nevarno območje</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Okrepčevalna točka</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Prva pomoč</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Oznaka prepovedane poti</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Neprehodna meja</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>oznaka registra</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Besedilo</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Dodaj poseben &amp;Objekt</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Dodaj Besedilo &amp;vrstica...</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Izbriši</value>
@@ -461,5 +455,8 @@
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Besedilo</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Dodaj poseben &amp;Objekt</value>
   </data>
 </root>

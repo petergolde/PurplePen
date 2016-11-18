@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Valitse kansio OCAD-tiedostoille</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Kansio</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Valitse kansio...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Samaan kuin Purple Pen -tiedosto</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Tiedoston nimi</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Kansio</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Syötä nimi (ilman .xml tai .gif -päätteitä) molemmille Reittihärveli-tiedostoille:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Tiedoston nimi</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Lisätietoja Reittihärvelistä</value>

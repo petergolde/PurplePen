@@ -424,14 +424,8 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos radan "Kaikki osat" on näkyvissä. Vaihda näkyviin radan osa, jolle haluat lisätä rastinmääritteet ja valitse "Lisää rastinmääritteet" uudelleen.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscriptiä ei ole asennettu</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript epäonnistui PDF-tiedoston lukemisessa</value>
+    <value>Pdfium epäonnistui PDF-tiedoston lukemisessa</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Ei voitu lukea PDF-muuntamisen tulosta tiedostosta '{0}'</value>
@@ -534,5 +528,11 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Radan "{0}" tulostus on valmis. Aloita radan "{1}" tulostus painamalla OK.</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscriptiä ei ole asennettu</value>
   </data>
 </root>

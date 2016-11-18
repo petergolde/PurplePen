@@ -249,6 +249,54 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Изглед</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Добави &amp;старт</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Добави &amp;контролна точка</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Край</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Добави &amp;описание на КТ</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Добави &amp;ред за текст...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Задължително място за преминаване</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Препоръчително място за преминаване</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Забранен район</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Опасна зона</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Подкрепителен пункт</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Медицински пункт</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Маркиране на забранен път</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Органичителна линия</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Пасер</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Празно пространство</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Файл на картата...</value>
   </data>
@@ -284,57 +332,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Маршрут</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Добави &amp;старт</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Добави &amp;контролна точка</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Добави &amp;финал</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Добави &amp;описание на КТ</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Задължително място за преминаване</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Препоръчително място за преминаване</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Забранен район</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Опасна зона</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Подкрепителен пункт</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Медицински пункт</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Маркиране на забранен път</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Органичителна линия</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Пасер</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Празно пространство</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Текст</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Добави специален &amp;елемент</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Добави &amp;ред за текст...</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Изтрий</value>
@@ -554,6 +551,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Добави специален &amp;елемент</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Добави специален елемент</value>

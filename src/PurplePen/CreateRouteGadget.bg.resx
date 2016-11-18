@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Избери папка за OCAD файловете</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Папка</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Избери папка...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Същата папка като на файла Purple Pen</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Име на файла</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Папка</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Въведи име (без .xml или .gif) за двата файла за RouteGadget:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Име на файла</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Научи повече за RouteGadget</value>

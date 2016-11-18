@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Válassza ki az OCAD fájlok könyvtárát</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Könyvtár</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Könyvtár kiválasztása..</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>A Purple Pen fájllal azonos könyvtár</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Fájl neve</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Könyvtár</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Írja be a nevet (.xml vagy .gif kiterjesztés nélkül) a RouteGadget fájlokhoz:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Fájl neve</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>További információk a RouteGadget-ról</value>

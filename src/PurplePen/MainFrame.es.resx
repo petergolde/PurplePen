@@ -249,6 +249,54 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vista</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Añadir &amp;Salida</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Añadir &amp;Control</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Meta</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Añadir &amp;Descripción</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Añadir &amp;Línea de Texto...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Punto de Paso Obligatorio</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Punto de Paso Opcional</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Área Fuera de Competición</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Área Peligrosa</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Punto de Avituallamiento</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Punto de Primeros Auxilios</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Marca de Ruta Prohibida</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Límite Infranqueable</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Marcas de Registro</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Área con Fondo Blanco</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Archivo del Mapa...</value>
   </data>
@@ -284,57 +332,6 @@
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Recorrido</value>
-  </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Salida</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Control</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Meta</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Descripción</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Punto de Paso Obligatorio</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Punto de Paso Opcional</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Área Fuera de Competición</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Área Peligrosa</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Punto de Avituallamiento</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Punto de Primeros Auxilios</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Marca de Ruta Prohibida</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Límite Infranqueable</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Marcas de Registro</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Área con Fondo Blanco</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Texto</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Elemento Especial</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Añadir &amp;Línea de Texto...</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Borrar</value>
@@ -554,6 +551,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Añadir &amp;Elemento Especial</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Añadir Elemento Especial</value>

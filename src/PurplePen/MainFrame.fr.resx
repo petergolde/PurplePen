@@ -150,6 +150,9 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Créer Fichier &amp;Interchange XML...</value>
   </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Créer Fichier &amp;GPX...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Imprimer les Définitions...</value>
   </data>
@@ -264,6 +267,72 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Affichage</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Ajouter &amp;Départ</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Ajouter &amp;Poste</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Terminer</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Ajouter Dé&amp;finitions</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Echange de Carte au &amp;Poste</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>Parcours &amp;Balisé vers Echange de Carte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Ajouter E&amp;change de Carte</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Ajouter une ligne de texte...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Point de passage obligatoire</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Point de passage facultatif</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Zone interdite</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Zone dangereuse</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Ravitaillement</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Secours</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Route interdite</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Limite infranchissable</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Croix de positionnement</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Zone blanche</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Texte</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Ligne</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Carte...</value>
   </data>
@@ -309,75 +378,6 @@
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Circuit</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Ajouter &amp;Départ</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Ajouter &amp;Poste</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Ajouter &amp;Arrivée</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Ajouter Dé&amp;finitions</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Echange de Carte au &amp;Poste</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>Parcours &amp;Balisé vers Echange de Carte</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Ajouter E&amp;change de Carte</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Point de passage obligatoire</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Point de passage facultatif</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Zone interdite</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Zone dangereuse</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Ravitaillement</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Secours</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Route interdite</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Limite infranchissable</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Croix de positionnement</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Zone blanche</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Texte</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Image</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Ligne</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Rectangle</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Ajouter S&amp;ymbole Spécial</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Ajouter une ligne de texte...</value>
-  </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Supprimer</value>
   </data>
@@ -422,12 +422,6 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>Élémen&amp;t</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Créer Fichier &amp;GPX...</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Synthèse Circuit</value>
@@ -638,6 +632,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Ajouter S&amp;ymbole Spécial</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Ajouter un Symbole Spécial</value>

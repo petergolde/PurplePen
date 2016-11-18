@@ -241,10 +241,10 @@
     <value>Átlag</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} ellenőrzőpont, {2:0.0} km, {3} m emelkedés)</value>
+    <value>{0} ({1} ellenőrzőpont, {2}, {3} m emelkedés)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{0} ({1} ellenőrzőpont, {2:0.0} km)</value>
+    <value>{0} ({1} ellenőrzőpont, {2})</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Átmenet hossz jelentés {0}-hoz</value>

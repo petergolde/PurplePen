@@ -150,6 +150,9 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Vie &amp;XML-tiedostoon...</value>
   </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Luo &amp;GPX-tiedosto...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Tulosta rastin&amp;määritteet...</value>
   </data>
@@ -264,6 +267,72 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Näytä</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;lähtö</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;rasti</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>&amp;Valmis</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>Lisää rasti&amp;nmääritteet</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartanvaihto &amp;rastilla</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Lisää kartanvai&amp;hto</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;tekstirivi...</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Pakollinen ylitys/alituspaikka</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Ylitys/alituspaikka</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Kielletty alue</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Vaarallinen alue</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Juomapaikka</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>Ensiapupaikka</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Kielletty reitti</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Ylityskielto</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Kohdistusristi</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Valkoinen alue</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Teksti</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Kuva</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Viiva</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Suorakulmio</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Karttatiedosto...</value>
   </data>
@@ -309,75 +378,6 @@
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Rata</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;lähtö</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;rasti</value>
-  </data>
-  <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;maali</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Lisää rasti&amp;nmääritteet</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Kartanvaihto &amp;rastilla</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Lisää kartanvai&amp;hto</value>
-  </data>
-  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Pakollinen ylitys/alituspaikka</value>
-  </data>
-  <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Ylitys/alituspaikka</value>
-  </data>
-  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Kielletty alue</value>
-  </data>
-  <data name="addDangerousMenu.Text" xml:space="preserve">
-    <value>Vaarallinen alue</value>
-  </data>
-  <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Juomapaikka</value>
-  </data>
-  <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Ensiapupaikka</value>
-  </data>
-  <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Kielletty reitti</value>
-  </data>
-  <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Ylityskielto</value>
-  </data>
-  <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Kohdistusristi</value>
-  </data>
-  <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Valkoinen alue</value>
-  </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Teksti</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Kuva</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Viiva</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Suorakulmio</value>
-  </data>
-  <data name="addSpecialItemMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;erityiskohde</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;tekstirivi...</value>
-  </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Poista</value>
   </data>
@@ -422,12 +422,6 @@
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
     <value>&amp;Kohde</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Luo &amp;GPX-tiedosto...</value>
-  </data>
-  <data name="gpsMenu.Text" xml:space="preserve">
-    <value>&amp;GPS</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Rata&amp;yhteenveto</value>
@@ -638,6 +632,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="addSpecialItemMenu.Text" xml:space="preserve">
+    <value>Lisää &amp;erityiskohde</value>
+  </data>
+  <data name="gpsMenu.Text" xml:space="preserve">
+    <value>&amp;GPS</value>
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Lisää erityiskohde</value>

@@ -126,9 +126,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Vali kaust OCADi failide jaoks</value>
   </data>
-  <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Kaust</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vali kaust...</value>
   </data>
@@ -141,11 +138,14 @@
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Kausta kus asub Purple Pen fail</value>
   </data>
-  <data name="nameGroupBox.Text" xml:space="preserve">
-    <value>Faili nimi</value>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Kaust</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Sisesta nimi (ilma .xml või .gif laiendita) mõlema RouteGadgeti faili jaoks:</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Faili nimi</value>
   </data>
   <data name="learnMoreLink.Text" xml:space="preserve">
     <value>Loe infot RouteGadgeti kohta</value>

@@ -422,14 +422,8 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Raja legend võib jääda lisamata kaardile, kui on kaardivahetus ja "Kõik osad" on valitud. Vali rajaosa kuhu tahad lisada legende ja vali "Lisa legendid" uuesti.</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript on installeeritud</value>
-  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>GPL Ghostscript ei suutnud PDF faili korralikult sisse lugeda.</value>
+    <value>Pdfium ei suutnud PDF faili korralikult sisse lugeda.</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Ei saanud konverteerida PDFi failist '{0}'</value>
@@ -532,5 +526,11 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>"{0}" trükkimine on lõpetatud. Vajuta OK trükkimaks "{1}".</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript on installeeritud</value>
   </data>
 </root>
