@@ -26,6 +26,7 @@ namespace PurplePen
         Fork firstForkInCourse;
         List<Fork> allForks;
         int totalPossiblePaths;  // Number of ways through the forks.
+        int minUniquePaths;  // minimum number of unique ways.
 
         // Each element of the list is a team, with variation strings for each leg.
         List<TeamAssignment> results;
@@ -92,6 +93,8 @@ namespace PurplePen
 
                 // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
                 totalPossiblePaths = ScanFork(firstForkInCourse, numberLegs, 1);
+
+                minUniquePaths = CalcMinUniquePaths(firstForkInCourse, 1);
 
                 forksScanned = true;
             }
@@ -249,7 +252,7 @@ namespace PurplePen
             int score = 0;
 
             // Check 1: check again previous teams on same leg.
-            int allowedDuplicates = (results.Count / totalPossiblePaths);
+            int allowedDuplicates = (results.Count / minUniquePaths);
             if (allowedDuplicates >= 1) {
                 allowedDuplicates += (int)Math.Ceiling((double)allowedDuplicates / 3); // allow some slop after all options used once.
             }
@@ -261,7 +264,7 @@ namespace PurplePen
 
             score += Math.Max(0, (duplicates - allowedDuplicates));
 
-            if (numberLegs <= totalPossiblePaths) {
+            if (numberLegs <= minUniquePaths) {
                 // Check 2: check against previous legs on same team, if they should be unique
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
                     if (teamAssignment.LegEquals(leg, teamAssignment, otherLeg))
@@ -338,6 +341,37 @@ namespace PurplePen
                 return ScanFork(startFork.next, numLegsOnThisFork, waysThroughBranches);
             }
         }
+
+        // Scan forks starting at this fork, returning smallest number of unique paths.
+        private int CalcMinUniquePaths(Fork startFork, int smallestPathsToThisPoint)
+        {
+            if (startFork == null)
+                return smallestPathsToThisPoint;
+
+            if (startFork.loop) {
+                int waysThroughLoops = smallestPathsToThisPoint;
+
+                for (int i = 0; i < startFork.numBranches; ++i) {
+                    waysThroughLoops *= CalcMinUniquePaths(startFork.subForks[i], 1);
+                }
+
+                waysThroughLoops *= (int)Util.Factorial(startFork.numBranches);
+
+                return CalcMinUniquePaths(startFork.next, waysThroughLoops);
+            }
+            else {
+                int minWaysThroughBranches = int.MaxValue;
+
+                for (int i = 0; i < startFork.numBranches; ++i) {
+                    minWaysThroughBranches = Math.Min(CalcMinUniquePaths(startFork.subForks[i], smallestPathsToThisPoint), minWaysThroughBranches);
+                }
+                minWaysThroughBranches *= startFork.numBranches;
+
+                return CalcMinUniquePaths(startFork.next, minWaysThroughBranches);
+            }
+        }
+
+
 
         Fork FindForksToJoin(Id<CourseControl> begin, Id<CourseControl> join)
         {

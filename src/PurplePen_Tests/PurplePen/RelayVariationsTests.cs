@@ -118,7 +118,16 @@ namespace PurplePen.Tests
             var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5);
             ValidateRelayVariationsTest(teamAssignment, "relay\\nestedbranches");
         }
-        
+
+        [TestMethod]
+        public void GenerateAssignment6()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            var teamAssignment = new RelayVariations(eventDB, CourseId(1), 64, 5);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\complexuneven");
+        }
+
         [TestMethod]
         public void BranchWarnings1()
         {
