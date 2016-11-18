@@ -970,7 +970,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.59,57
             Assert.AreEqual("Course 1", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
-            Assert.AreEqual("AEGCDI", result);
+            Assert.AreEqual("ADEFCH", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
             Assert.AreEqual("4", result);

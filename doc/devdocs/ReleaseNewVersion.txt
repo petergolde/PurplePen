@@ -16,6 +16,8 @@ Releasing a new version of Purple Pen.
 
 7. Build DotSpatialProjects (Debug and Release) and copy new versions over with batch file.
 
+7 1/2. Build PdfiumViwer (Debug and Release) and copy new versions over with batch file.
+
 8. In solution explorer, in SetupIS, goto General Information in section 1.
    Change Product Version to new version. Immediately below, generate a new guid for the
    Product Code.
