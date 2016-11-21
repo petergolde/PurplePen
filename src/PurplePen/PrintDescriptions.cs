@@ -81,6 +81,7 @@ namespace PurplePen
                 courseSelector.SelectedCourses = settings.CourseIds;
             if (settings.AllCourses)
                 courseSelector.AllCoursesSelected = true;
+            courseSelector.VariationChoicesPerCourse = settings.VariationChoicesPerCourse;
 
             // Output section.
             printerName.Text = printerSettings.PrinterName;
@@ -131,6 +132,7 @@ namespace PurplePen
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
             settings.AllCourses = courseSelector.AllCoursesSelected;
+            settings.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
 
             // Copies section.
             if (copiesCombo.SelectedIndex == 0) {

@@ -108,6 +108,46 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void PrintDescriptions_Relay1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2), CourseId(0) };
+            DescriptionPrintingTest("printdesc\\relay_desc1", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptions_Relay2()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.CountKind = PrintingCountKind.OnePage;
+            descPrintSettings.Count = 1;
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2), CourseId(0) };
+            DescriptionPrintingTest("printdesc\\relay_desc2", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptions_Relay3()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.VariationChoicesPerCourse[CourseId(2)] = new VariationChoices() {
+                Kind = VariationChoices.VariationChoicesKind.ChosenTeams,
+                FirstTeam = 2,
+                LastTeam = 5
+            };
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2) };
+            DescriptionPrintingTest("printdesc\\relay_desc3", descPrintSettings);
+        }
+
+
+
+
+        [TestMethod]
         public void PrintingException()
         {
             controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
