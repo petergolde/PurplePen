@@ -1092,7 +1092,7 @@ namespace PurplePen
             ChosenTeams         // A set of relay teams
         }
 
-        public VariationChoicesKind Kind;
+        public VariationChoicesKind Kind = VariationChoicesKind.AllVariations;
         public List<string> ChosenVariations;  // For Kind==ChosenVariations
         public int FirstTeam, LastTeam;        // For Kind==ChosenTeams, team 1 is first team.
     }

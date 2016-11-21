@@ -444,7 +444,8 @@ namespace PurplePen
         {
             foreach (Id<Course> courseId in courseIds) {
                 if (QueryEvent.HasVariations(eventDB, courseId)) {
-                    foreach (CourseDesignator courseDesignator in QueryEvent.GetDesignatorsFromVariationChoices(eventDB, courseId, variationChoicesPerCourse[courseId])) {
+                    VariationChoices variationChoices = variationChoicesPerCourse.ContainsKey(courseId) ? variationChoicesPerCourse[courseId] : new VariationChoices();
+                    foreach (CourseDesignator courseDesignator in QueryEvent.GetDesignatorsFromVariationChoices(eventDB, courseId, variationChoices)) {
                         if (enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseDesignator) > 1) {
                             // Create files for each part.
                             for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseDesignator); ++part) {
@@ -1229,6 +1230,11 @@ namespace PurplePen
             // Add prefix, if requested.
             if (!string.IsNullOrEmpty(filePrefix))
                 basename = filePrefix + "-" + basename;
+
+            // Add variation.
+            if (courseDesignator != null && courseDesignator.IsVariation) {
+                basename = basename + " " + courseDesignator.VariationInfo.Name;
+            }
 
             // Add part.
             if (courseDesignator != null && !courseDesignator.AllParts) {

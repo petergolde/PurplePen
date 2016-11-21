@@ -175,7 +175,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -679,7 +679,7 @@
     <value>One per course</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>One per course part</value>
+    <value>One per course part/variation</value>
   </data>
   <data name="comboBoxFileFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 34</value>
@@ -781,6 +781,6 @@
     <value>CreatePdfCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

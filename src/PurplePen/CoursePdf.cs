@@ -158,33 +158,25 @@ namespace PurplePen
                 case CoursePdfSettings.PdfFileCreation.SingleFile:
                     // All pages go into a single file.
                     fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(null),
-                                 QueryEvent.EnumerateCourseDesignators(eventDB, coursePdfSettings.CourseIds, !coursePdfSettings.PrintMapExchangesOnOneMap)));
+                                 QueryEvent.EnumerateCourseDesignators(eventDB, coursePdfSettings.CourseIds, coursePdfSettings.VariationChoicesPerCourse, !coursePdfSettings.PrintMapExchangesOnOneMap)));
                     break;
 
                 case CoursePdfSettings.PdfFileCreation.FilePerCourse:
                     // Create a file for each course.
                     foreach (Id<Course> courseId in coursePdfSettings.CourseIds) {
                         fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(new CourseDesignator(courseId)),
-                                     QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[1] { courseId }, !coursePdfSettings.PrintMapExchangesOnOneMap)));
+                                     QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[1] { courseId }, coursePdfSettings.VariationChoicesPerCourse, !coursePdfSettings.PrintMapExchangesOnOneMap)));
                     }
                     break;
 
                 case CoursePdfSettings.PdfFileCreation.FilePerCoursePart:
-                    // Create a file for each course part
-                    foreach (Id<Course> courseId in coursePdfSettings.CourseIds) {
-                        if (!coursePdfSettings.PrintMapExchangesOnOneMap && courseId.IsNotNone && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
-                            // Multi-part course.
-                            for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
-                                CourseDesignator courseDesignator = new CourseDesignator(courseId, part);
-                                fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(courseDesignator),
-                                             new CourseDesignator[1] { courseDesignator }));
-                            }
-                        }
-                        else {
-                            fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(new CourseDesignator(courseId)),
-                                         new CourseDesignator[1] { new CourseDesignator(courseId) }));
-                        }
+                    // Create a file for each course part or variation (or both)
+                    foreach (CourseDesignator designator in 
+                             QueryEvent.EnumerateCourseDesignators(eventDB, coursePdfSettings.CourseIds, 
+                                                                   coursePdfSettings.VariationChoicesPerCourse, !coursePdfSettings.PrintMapExchangesOnOneMap)) {
+                        fileList.Add(new Pair<string, IEnumerable<CourseDesignator>>(CreateOutputFileName(designator), new[] { designator }));
                     }
+
                     break;
             }
 
@@ -344,6 +336,9 @@ namespace PurplePen
         public bool mapDirectory, fileDirectory;     // directory to place output files in
         public string outputDirectory;               // the output directory if mapDirectory and fileDirectoy are false.
         public string filePrefix;                    // if non-null, non-empty, prefix this an "-" onto the front of files.
+
+        // variation choices for courses with variations.
+        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
 
         public enum PdfFileCreation { SingleFile, FilePerCourse, FilePerCoursePart };
 

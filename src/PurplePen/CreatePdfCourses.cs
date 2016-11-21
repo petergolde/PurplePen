@@ -86,6 +86,7 @@ namespace PurplePen
                 courseSelector.SelectedCourses = settings.CourseIds;
             if (settings.AllCourses)
                 courseSelector.AllCoursesSelected = true;
+            courseSelector.VariationChoicesPerCourse = settings.VariationChoicesPerCourse;
 
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.ColorModel - 1;
@@ -121,6 +122,7 @@ namespace PurplePen
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
             settings.AllCourses = courseSelector.AllCoursesSelected;
+            settings.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);

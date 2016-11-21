@@ -209,6 +209,8 @@ namespace PurplePen
             }
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse
         {
             get {

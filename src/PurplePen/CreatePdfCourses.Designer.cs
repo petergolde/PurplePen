@@ -114,6 +114,7 @@ namespace PurplePen
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
             this.courseSelector.ShowCourseParts = false;
+            this.courseSelector.ShowVariationChooser = true;
             // 
             // groupBoxAppearance
             // 

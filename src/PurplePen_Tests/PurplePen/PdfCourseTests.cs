@@ -221,6 +221,115 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void Files_Relay_OnePerCoursePart()
+        {
+            EventDB eventDB = controller.GetEventDB();
+            SymbolDB symbolDB = ui.symbolDB;
+
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
+            settings.CourseIds = new Id<Course>[] { CourseId(2), Id<Course>.None };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCoursePart;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            Assert.IsTrue(success);
+
+            var coursePdf = new CoursePdf(eventDB, symbolDB, controller, controller.MapDisplay, settings, new CourseAppearance());
+            var filesToCreate = coursePdf.GetFilesToCreate();
+
+            VariationInfo[] relayVariations = QueryEvent.GetAllVariations(eventDB, CourseId(2)).ToArray();
+
+            Assert.AreEqual(5, filesToCreate.Count);
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\SimpleForks AC.pdf"), filesToCreate[0].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), relayVariations[0]) }, filesToCreate[0].Second.ToList());
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\SimpleForks AD.pdf"), filesToCreate[1].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), relayVariations[1]) }, filesToCreate[1].Second.ToList());
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\SimpleForks BC.pdf"), filesToCreate[2].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), relayVariations[2]) }, filesToCreate[2].Second.ToList());
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\SimpleForks BD.pdf"), filesToCreate[3].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), relayVariations[3]) }, filesToCreate[3].Second.ToList());
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\All controls.pdf"), filesToCreate[4].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { CourseDesignator.AllControls }, filesToCreate[4].Second.ToList());
+
+       }
+
+        [TestMethod]
+        public void Files_Relay_OnePerCourse()
+        {
+            EventDB eventDB = controller.GetEventDB();
+            SymbolDB symbolDB = ui.symbolDB;
+
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
+            settings.CourseIds = new Id<Course>[] { CourseId(2), Id<Course>.None };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            Assert.IsTrue(success);
+
+            var coursePdf = new CoursePdf(eventDB, symbolDB, controller, controller.MapDisplay, settings, new CourseAppearance());
+            var filesToCreate = coursePdf.GetFilesToCreate();
+
+            VariationInfo[] relayVariations = QueryEvent.GetAllVariations(eventDB, CourseId(2)).ToArray();
+
+            Assert.AreEqual(2, filesToCreate.Count);
+
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\SimpleForks.pdf"), filesToCreate[0].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), relayVariations[0]),
+                new CourseDesignator(CourseId(2), relayVariations[1]),
+                new CourseDesignator(CourseId(2), relayVariations[2]),
+                new CourseDesignator(CourseId(2), relayVariations[3]),
+            }, filesToCreate[0].Second.ToList());
+
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\All controls.pdf"), filesToCreate[1].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] { CourseDesignator.AllControls }, filesToCreate[1].Second.ToList());
+
+        }
+
+        [TestMethod]
+        public void Files_Relay_SingleFile()
+        {
+            EventDB eventDB = controller.GetEventDB();
+            SymbolDB symbolDB = ui.symbolDB;
+
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");
+            settings.CourseIds = new Id<Course>[] { CourseId(2), Id<Course>.None };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.SingleFile;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            Assert.IsTrue(success);
+
+            var coursePdf = new CoursePdf(eventDB, symbolDB, controller, controller.MapDisplay, settings, new CourseAppearance());
+            var filesToCreate = coursePdf.GetFilesToCreate();
+
+            VariationInfo[] relayVariations = QueryEvent.GetAllVariations(eventDB, CourseId(2)).ToArray();
+
+            Assert.AreEqual(1, filesToCreate.Count);
+
+            Assert.AreEqual(TestUtil.GetTestFile("controller\\pdf_create1\\variations.pdf"), filesToCreate[0].First);
+            CollectionAssert.AreEqual(new CourseDesignator[] {
+                new CourseDesignator(CourseId(2), relayVariations[0]),
+                new CourseDesignator(CourseId(2), relayVariations[1]),
+                new CourseDesignator(CourseId(2), relayVariations[2]),
+                new CourseDesignator(CourseId(2), relayVariations[3]),
+                CourseDesignator.AllControls
+            }, filesToCreate[0].Second.ToList());
+        }
+
+        [TestMethod]
         public void PdfCreation1()
         {
             CoursePdfSettings settings = new CoursePdfSettings();
