@@ -97,6 +97,51 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void PrintPunchesRelay1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
+            punchPrintSettings.BoxSize = 18;
+
+            punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(2), CourseId(0) };
+            PunchPrintingTest("punchcards\\relay1", punchPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintPunchesRelay2()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
+            punchPrintSettings.BoxSize = 18;
+            punchPrintSettings.VariationChoicesPerCourse[CourseId(2)] =
+                new VariationChoices() {
+                    Kind = VariationChoices.VariationChoicesKind.ChosenTeams,
+                    FirstTeam = 2,
+                    LastTeam = 3
+                };
+
+            punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(2) };
+            PunchPrintingTest("punchcards\\relay2", punchPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintPunchesRelay3()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
+            punchPrintSettings.BoxSize = 18;
+            punchPrintSettings.VariationChoicesPerCourse[CourseId(2)] =
+                new VariationChoices() {
+                    Kind = VariationChoices.VariationChoicesKind.Combined
+                };
+
+            punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(2) };
+            PunchPrintingTest("punchcards\\relay3", punchPrintSettings);
+        }
+
+
+
+        [TestMethod]
         public void PrintingException()
         {
             controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);

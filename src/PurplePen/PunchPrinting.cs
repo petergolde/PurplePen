@@ -57,8 +57,9 @@ namespace PurplePen
             List<IPrintableRectangle> rendererList = new List<IPrintableRectangle>();
 
             // Get the list of renderers for the descriptions we're printing.
-            foreach (Id<Course> courseId in punchPrintSettings.CourseIds) {
-                rendererList.Add(GetRenderer(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId))));
+            foreach (CourseDesignator designator in QueryEvent.EnumerateCourseDesignators(
+                                                    eventDB, punchPrintSettings.CourseIds, punchPrintSettings.VariationChoicesPerCourse, false)) {
+                rendererList.Add(GetRenderer(CourseView.CreateViewingCourseView(eventDB, designator)));
             }
 
             return rendererList.ToArray();
@@ -100,6 +101,11 @@ namespace PurplePen
                 pageSettings = value;
             }
         }
+
+        // variation choices for courses with variations.
+        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
+
+
 
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides the course ids in CourseIds except for "all controls".

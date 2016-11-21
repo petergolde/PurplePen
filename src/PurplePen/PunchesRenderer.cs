@@ -282,7 +282,7 @@ namespace PurplePen
                 stringFormat.LineAlignment = StringAlignment.Center;
                 stringFormat.FormatFlags = StringFormatFlags.NoWrap;
 
-                g.DrawString(courseView.CourseName, titleFont, Brushes.Black, rect, stringFormat);
+                g.DrawString(courseView.CourseFullName, titleFont, Brushes.Black, rect, stringFormat);
             }
             else {
                 // Draw grid lines and the boxes.
