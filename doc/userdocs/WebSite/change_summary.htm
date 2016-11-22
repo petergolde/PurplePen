@@ -16,6 +16,61 @@
 
 <h1>Purple Pen Change Summary</h1>
 
+<h2>Changes in 3.0.0 Beta 1</h2>
+<h3>New features</h3>
+<ul>
+    <li>
+        <p><strong>Open Orienteering Mapper Files</strong></p>
+        <p>
+            Purple Pen now allows an Open Orienteering Mapper file (.xmap or .omap) to be used as the base map for course design. 
+            You can also export your course designs to a new Open Orienteering Mapper file. All Open Orienteering Mapper maps 
+            should display as they appear in OOM. Georeferenced OOM files are supported only if they use the UTM coordinate 
+            system (this restriction may be relaxed in the final version).
+        </p>
+    </li>
+
+    <li>
+        <p><strong>Course Variations and Relays</strong></p>
+        <p>
+            You can now add forks or loops into courses, creating courses with variations. For example, a course might have 
+            two 2-way forks in a row, allowing four possible ways through the course. Each course variation is identified 
+            with a letter code that identifies which forks are taken. In the previous example, "AD" would indication that 
+            choice A is taken at the first fork, and choice D at the second fork. In order to view the variations more easily, 
+            the left side of the Purple Pen display (that normally shows the control descriptions), can be switched to show the 
+            control ordering, with forks displayed. Controls can be dragged around the ordering, and controls and legs can be 
+            easily selected for adding new controls. In order to create a variation, select a control, then click "Add Variation" 
+            on the toolbar. You can chose whether to add a fork or loop, and how many branches to create.
+        </p>
+        <p>
+            When you have a course with variations, Purple Pen can automatically assign variations to relay team members. 
+            Chose "Relay Team Variations" from the Course menu, and chose how many legs and teams you have. You can later 
+            add more teams without disrupting the assignments of existing teams, as long as the number and arrangement of 
+            forks doesn't change.
+        </p>
+        <p>
+            When printing (courses, description sheets, punch cards), you can chose which variations or teams to print. 
+            Click on the course with the variation, and click "Select Variations..." to chose variations for that course.
+        </p>
+    </li>
+
+    <li>
+        <p><strong>Better PDF Files</strong></p>
+        <p>
+            When using a PDF file as the base map for course design, Purple Pen no longer requires the download of 
+            GPL Ghostscript for reading PDF files. Purple Pen now has built in support for reading PDFs, based on the 
+            open source PDFium project used by Google Chrome. Compatibility is much better, especially for PDFs 
+            produced by OCAD.
+        </p>
+    </li>
+
+    <li>
+        <p><strong>User Interface Changes</strong></p>
+        <p>
+            The Item menu has been reorganized, and the entries that add items have been moved to a new "Add" menu.
+        </p>
+    </li>
+</ul>
+
 <h2>Changes in 2.6.2</h2>
 <h3>New features</h3>
 <ul>
