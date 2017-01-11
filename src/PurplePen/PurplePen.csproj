@@ -46,7 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>..\Tools\PurplePenRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -57,7 +57,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -3440,8 +3440,20 @@
     </Content>
     <None Include="Images\Portrait.PNG" />
     <None Include="Images\Landscape.PNG" />
-    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\pdfium.dll">
-      <Link>pdfium.dll</Link>
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\x64\dbghelp.dll">
+      <Link>x64\dbghelp.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\x64\pdfium.dll">
+      <Link>x64\pdfium.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\x86\dbghelp.dll">
+      <Link>x86\dbghelp.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\x86\pdfium.dll">
+      <Link>x86\pdfium.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="USWebCoatedSWOP.icc">

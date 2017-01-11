@@ -1,5 +1,9 @@
 Big things to do before first beta:
 
+- Allow creating variation when leg is selected.
+
+- Better help if Add Variation is not enabled; instead put up a dialog box explaining.
+
 
 Variation naming issues:
     - Now I'm thinking not to do anything special. Use team/participant when printing that way, otherwise code, always after course name.
