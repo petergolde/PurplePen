@@ -4,6 +4,7 @@ Big things to do before first beta:
 
 - Better help if Add Variation is not enabled; instead put up a dialog box explaining.
 
+- tooltips on ordering view don't disappear well, I think.
 
 Variation naming issues:
     - Now I'm thinking not to do anything special. Use team/participant when printing that way, otherwise code, always after course name.
@@ -22,7 +23,9 @@ Minor issues to check/add later.
 
 - Allow insertion allows in different places on the same leg when splitting/joining.
 
-- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only?
+- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only? 
+
+- Allow variation that doesn't join. How to end it?
 
 - Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
 
