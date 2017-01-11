@@ -33,6 +33,10 @@
 			<Name>CrashReporter.NET</Name>
 			<Project>{67912BDA-1572-46B0-8623-5872D9DADBC8}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\PdfConverter\PdfConverter.csproj">
+			<Name>PdfConverter</Name>
+			<Project>{89318625-2F71-4C44-BFB1-8984F4D06152}</Project>
+		</ProjectReference>
 		<ProjectReference Include="..\PurplePen\PurplePen.csproj">
 			<Name>PurplePen</Name>
 			<Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>

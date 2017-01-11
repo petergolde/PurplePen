@@ -3440,6 +3440,10 @@
     </Content>
     <None Include="Images\Portrait.PNG" />
     <None Include="Images\Landscape.PNG" />
+    <Content Include="..\Libraries\MapModel\$(Configuration)\GDIPlusNative64.dll">
+      <Link>GDIPlusNative64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\Libraries\PdfiumViewer\$(Configuration)\x64\dbghelp.dll">
       <Link>x64\dbghelp.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

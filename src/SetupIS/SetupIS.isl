@@ -354,14 +354,19 @@
 		<row><td>CrashReporter.NET.Primary_output</td><td>{78824081-99B0-408A-8003-C91D6AAC2E87}</td><td>INSTALLDIR</td><td>2</td><td/><td>crashreporter.net.primary_ou</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>DotSpatial.Projections.dll</td><td>{67F20794-8598-41E4-880B-568CAE4BA5A9}</td><td>INSTALLDIR</td><td>2</td><td/><td>dotspatial.projections.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Graphics2D.dll</td><td>{F29B890B-6478-4CF2-8644-FBA88E84131E}</td><td>INSTALLDIR</td><td>2</td><td/><td>graphics2d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{3409CCD9-2691-4FEA-8EDA-B8D6A6D25F0D}</td><td>X86</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{2A4FA50F-3998-41B9-AA38-44A6B64B63F7}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MapModel.dll</td><td>{9351DD6B-9305-4619-B1AA-39842DB57FCA}</td><td>INSTALLDIR</td><td>2</td><td/><td>mapmodel.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_GDIPlus.dll</td><td>{A1582BE9-302C-418B-A5F0-D0F427951E8D}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_gdiplus.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_PDF.dll</td><td>{976760BE-1AFB-4A29-BAF3-CECF018672BE}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_pdf.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_WPF.dll</td><td>{DB480BAA-7341-4EA8-9912-CA25B22BA79A}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_wpf.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PdfConverter.Primary_output</td><td>{AA97A06D-3C67-401D-8B4E-E6464435B7DC}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfconverter.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PdfSharp.dll</td><td>{1335D4AD-07CA-4523-B621-3F8031C9AFAA}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfsharp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PdfiumViewer.dll</td><td>{C46850EF-EB28-4B19-B279-80AB2F624A2F}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfiumviewer.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>dbghelp.dll</td><td>{91D609C1-6798-49EB-B3AC-0F307AD59B72}</td><td>INSTALLDIR</td><td>2</td><td/><td>dbghelp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pdfium.dll</td><td>{CFF744DB-52EC-4598-A907-B966247D7DE4}</td><td>INSTALLDIR</td><td>2</td><td/><td>pdfium.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>dbghelp.dll1</td><td>{1B46490D-5663-4B55-B723-51C4C5BCF503}</td><td>X86</td><td>2</td><td/><td>dbghelp.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>dbghelp.dll2</td><td>{A78AEA15-22BF-4D6D-B1F0-D2D2D30E2EAF}</td><td>X64</td><td>2</td><td/><td>dbghelp.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pdfium.dll1</td><td>{76A12459-DF03-4FC2-B6A6-C9C8F182A97C}</td><td>X86</td><td>2</td><td/><td>pdfium.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pdfium.dll2</td><td>{53AB0174-5F49-41B4-A9C8-5CA0D87D5188}</td><td>X64</td><td>2</td><td/><td>pdfium.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1072,9 +1077,20 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>INSTALLDIR</td><td>PdfConverter.Primary_output</td></row>
 		<row><td>INSTALLDIR</td><td>PdfiumViewer.dll</td></row>
-		<row><td>INSTALLDIR</td><td>dbghelp.dll</td></row>
-		<row><td>INSTALLDIR</td><td>pdfium.dll</td></row>
+		<row><td>INSTALLDIR</td><td>dbghelp.dll1</td></row>
+		<row><td>INSTALLDIR</td><td>dbghelp.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>pdfium.dll1</td></row>
+		<row><td>INSTALLDIR</td><td>pdfium.dll2</td></row>
+		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>X64</td><td>dbghelp.dll2</td></row>
+		<row><td>X64</td><td>pdfium.dll2</td></row>
+		<row><td>X86</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>X86</td><td>dbghelp.dll1</td></row>
+		<row><td>X86</td><td>pdfium.dll1</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1175,6 +1191,7 @@
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MY_PRODUCT_NAME</td><td>GOLDE_SOFTWARE</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
+		<row><td>NEW_FOLDER_1</td><td>TARGETDIR</td><td>NEW_FOLDER_1</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
 		<row><td>PURPLE_PEN</td><td>ProgramFilesFolder</td><td>PURPLE~1|Purple Pen</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
@@ -1196,6 +1213,8 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
+		<row><td>X64</td><td>INSTALLDIR</td><td>x64</td><td/><td>0</td><td/></row>
+		<row><td>X86</td><td>INSTALLDIR</td><td>x86</td><td/><td>0</td><td/></row>
 		<row><td>_1ECE700F8DAE446B8DAB82D6FBD9ACE3</td><td>INSTALLDIR</td><td>Samples</td><td/><td>0</td><td/></row>
 	</table>
 
@@ -1898,14 +1917,19 @@
 		<row><td>AlwaysInstall</td><td>CrashReporter.NET.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>DotSpatial.Projections.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Graphics2D.dll</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>MapModel.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_GDIPlus.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_PDF.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_WPF.dll</td></row>
+		<row><td>AlwaysInstall</td><td>PdfConverter.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>PdfSharp.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PdfiumViewer.dll</td></row>
-		<row><td>AlwaysInstall</td><td>dbghelp.dll</td></row>
-		<row><td>AlwaysInstall</td><td>pdfium.dll</td></row>
+		<row><td>AlwaysInstall</td><td>dbghelp.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>dbghelp.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>pdfium.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>pdfium.dll2</td></row>
 	</table>
 
 	<table name="File">
@@ -1927,14 +1951,17 @@
 		<row><td>_8386CAA3DD8041BD87ED7C53B515B349</td><td>C__8386CAA3DD8041BD87ED7C53B515B349</td><td>PurplePen.Content Files</td><td>0</td><td/><td/><td>512</td><td>1</td><td>&lt;PurplePen&gt;|ContentFiles</td><td>7</td><td/></row>
 		<row><td>_CCCD39442E3F482E930F72F7115C0432</td><td>C__CCCD39442E3F482E930F72F7115C0432</td><td>PURPLE~1.CHM|Purple Pen Help.chm</td><td>0</td><td/><td/><td>512</td><td>1</td><td>&lt;ISProjectFolder&gt;\..\PurplePen\bin\release\Purple Pen Help.chm</td><td>5</td><td/></row>
 		<row><td>crashreporter.net.primary_ou</td><td>CrashReporter.NET.Primary_output</td><td>CrashReporter.NET.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;CrashReporter.NET&gt;|Built</td><td>3</td><td/></row>
-		<row><td>dbghelp.dll</td><td>dbghelp.dll</td><td>dbghelp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\dbghelp.dll</td><td>1</td><td/></row>
+		<row><td>dbghelp.dll1</td><td>dbghelp.dll1</td><td>dbghelp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\x86\dbghelp.dll</td><td>1</td><td/></row>
+		<row><td>dbghelp.dll2</td><td>dbghelp.dll2</td><td>dbghelp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\x64\dbghelp.dll</td><td>1</td><td/></row>
 		<row><td>dotspatial.projections.dll</td><td>DotSpatial.Projections.dll</td><td>DOTSPA~1.DLL|DotSpatial.Projections.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\DotSpatialProjections\Release\DotSpatial.Projections.dll</td><td>1</td><td/></row>
 		<row><td>graphics2d.dll</td><td>Graphics2D.dll</td><td>GRAPHI~1.DLL|Graphics2D.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Graphics2D.dll</td><td>1</td><td/></row>
 		<row><td>map_gdiplus.dll</td><td>Map_GDIPlus.dll</td><td>MAP_GD~1.DLL|Map_GDIPlus.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_GDIPlus.dll</td><td>1</td><td/></row>
 		<row><td>map_pdf.dll</td><td>Map_PDF.dll</td><td>Map_PDF.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_PDF.dll</td><td>1</td><td/></row>
 		<row><td>map_wpf.dll</td><td>Map_WPF.dll</td><td>Map_WPF.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\Map_WPF.dll</td><td>1</td><td/></row>
 		<row><td>mapmodel.dll</td><td>MapModel.dll</td><td>MapModel.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\MapModel.dll</td><td>1</td><td/></row>
-		<row><td>pdfium.dll</td><td>pdfium.dll</td><td>pdfium.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\pdfium.dll</td><td>1</td><td/></row>
+		<row><td>pdfconverter.primary_output</td><td>PdfConverter.Primary_output</td><td>PdfConverter.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PdfConverter&gt;|Built</td><td>3</td><td/></row>
+		<row><td>pdfium.dll1</td><td>pdfium.dll1</td><td>pdfium.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\x86\pdfium.dll</td><td>1</td><td/></row>
+		<row><td>pdfium.dll2</td><td>pdfium.dll2</td><td>pdfium.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\x64\pdfium.dll</td><td>1</td><td/></row>
 		<row><td>pdfiumviewer.dll</td><td>PdfiumViewer.dll</td><td>PDFIUM~1.DLL|PdfiumViewer.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\PdfiumViewer\Release\PdfiumViewer.dll</td><td>1</td><td/></row>
 		<row><td>pdfsharp.dll</td><td>PdfSharp.dll</td><td>PdfSharp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISProjectFolder&gt;\..\Libraries\MapModel\Release\PdfSharp.dll</td><td>1</td><td/></row>
 	</table>
@@ -2089,14 +2116,19 @@
 		<row><td>CrashReporter.NET.Primary_output</td><td/><td/><td>_157C0C47_0D8E_4AB7_9797_04141769C260_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>DotSpatial.Projections.dll</td><td/><td/><td>_C33FDF2C_D690_4066_8EFD_62EC0FFC6247_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Graphics2D.dll</td><td/><td/><td>_39F59A57_5D8F_4D59_8858_2A438FB81BB8_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_E5E047B4_136F_4738_A2F3_C11DA83710CE_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_270807DE_AD1B_4522_8C59_A59C9368711F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MapModel.dll</td><td/><td/><td>_9F109AA4_25A9_41BC_A1C2_1ACD5DA4583E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_GDIPlus.dll</td><td/><td/><td>_61804E8A_0948_46EC_BDAA_931A439D7A12_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_PDF.dll</td><td/><td/><td>_E1503259_3094_4F2F_BB37_27FC50EC2D49_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_WPF.dll</td><td/><td/><td>_BEE5851D_918B_40AA_8E31_A06131D196DB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PdfConverter.Primary_output</td><td/><td/><td>_FE159B8D_5AAF_454A_AE1D_9EBC23484001_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PdfSharp.dll</td><td/><td/><td>_D6165809_0E2F_49A5_9FBC_E1FA85C51144_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PdfiumViewer.dll</td><td/><td/><td>_04DB1C08_114E_4039_ABC5_D17CC9398CB8_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>dbghelp.dll</td><td/><td/><td>_28DD0B08_6524_4B5C_A813_186BA438406A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pdfium.dll</td><td/><td/><td>_F82A157F_D08A_4B92_9EAF_B1D5E424A90C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>dbghelp.dll1</td><td/><td/><td>_AAED9D91_382F_46FC_A864_FD8E1F9068C2_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>dbghelp.dll2</td><td/><td/><td>_C3D63341_08A4_4D67_A6AF_77A54F81E53E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pdfium.dll1</td><td/><td/><td>_518D2D02_46C9_4B60_BFEA_EF5B5375CA6B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pdfium.dll2</td><td/><td/><td>_A3ABDB92_886F_4AAA_AC60_D549A9DF9C37_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2408,6 +2440,7 @@
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
+		<row><td>PdfConverter</td><td>PdfConverter\PdfConverter.csproj</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>PurplePen</td><td>PurplePen\PurplePen.csproj</td><td/><td>2</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>

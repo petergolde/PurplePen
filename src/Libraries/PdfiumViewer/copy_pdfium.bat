@@ -19,8 +19,8 @@ copy "..\..\..\..\..\Programs\PdfiumViewer\PdfiumViewer\bin\Release\PdfiumViewer
 copy "..\..\..\..\..\Programs\PdfiumViewer\PdfiumViewer\bin\Release\PdfiumViewer.pdb" Release
 copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x86\pdfium.dll" Release\x86
 copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x86\dbghelp.dll" Release\x86
-copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x64\pdfium.dll" Debug\x64
-copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x64\dbghelp.dll" Debug\x64
+copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x64\pdfium.dll" Release\x64
+copy "..\..\..\..\..\Programs\PdfiumViewer\Libraries\Pdfium\Without V8\x64\dbghelp.dll" Release\x64
 
 goto End
 
