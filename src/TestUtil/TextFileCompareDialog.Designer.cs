@@ -65,12 +65,13 @@ namespace TestingUtils
             this.buttonAcceptBaseline = new System.Windows.Forms.Button();
             this.buttonFail = new System.Windows.Forms.Button();
             this.labelInformation = new System.Windows.Forms.Label();
+            this.buttonFixBitness = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonShowDiff
             // 
-            this.buttonShowDiff.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonShowDiff.Location = new System.Drawing.Point(139, 234);
+            this.buttonShowDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonShowDiff.Location = new System.Drawing.Point(139, 260);
             this.buttonShowDiff.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.buttonShowDiff.Name = "buttonShowDiff";
             this.buttonShowDiff.Size = new System.Drawing.Size(113, 28);
@@ -81,8 +82,8 @@ namespace TestingUtils
             // 
             // buttonAcceptBaseline
             // 
-            this.buttonAcceptBaseline.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAcceptBaseline.Location = new System.Drawing.Point(14, 234);
+            this.buttonAcceptBaseline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonAcceptBaseline.Location = new System.Drawing.Point(14, 260);
             this.buttonAcceptBaseline.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.buttonAcceptBaseline.Name = "buttonAcceptBaseline";
             this.buttonAcceptBaseline.Size = new System.Drawing.Size(113, 28);
@@ -93,9 +94,9 @@ namespace TestingUtils
             // 
             // buttonFail
             // 
-            this.buttonFail.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonFail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonFail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonFail.Location = new System.Drawing.Point(263, 234);
+            this.buttonFail.Location = new System.Drawing.Point(263, 260);
             this.buttonFail.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
             this.buttonFail.Name = "buttonFail";
             this.buttonFail.Size = new System.Drawing.Size(113, 28);
@@ -105,15 +106,27 @@ namespace TestingUtils
             // 
             // labelInformation
             // 
-            this.labelInformation.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelInformation.Location = new System.Drawing.Point(10, 7);
             this.labelInformation.Margin = new System.Windows.Forms.Padding(48, 0, 48, 0);
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(363, 212);
+            this.labelInformation.Size = new System.Drawing.Size(363, 239);
             this.labelInformation.TabIndex = 3;
             this.labelInformation.Text = "labelInformation";
+            // 
+            // buttonFixBitness
+            // 
+            this.buttonFixBitness.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonFixBitness.Location = new System.Drawing.Point(139, 289);
+            this.buttonFixBitness.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            this.buttonFixBitness.Name = "buttonFixBitness";
+            this.buttonFixBitness.Size = new System.Drawing.Size(113, 28);
+            this.buttonFixBitness.TabIndex = 4;
+            this.buttonFixBitness.Text = "Fix Bitness";
+            this.buttonFixBitness.UseVisualStyleBackColor = true;
+            this.buttonFixBitness.Click += new System.EventHandler(this.buttonFixBitness_Click);
             // 
             // TextFileCompareDialog
             // 
@@ -121,7 +134,8 @@ namespace TestingUtils
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.buttonFail;
-            this.ClientSize = new System.Drawing.Size(394, 278);
+            this.ClientSize = new System.Drawing.Size(394, 318);
+            this.Controls.Add(this.buttonFixBitness);
             this.Controls.Add(this.labelInformation);
             this.Controls.Add(this.buttonFail);
             this.Controls.Add(this.buttonAcceptBaseline);
@@ -142,5 +156,6 @@ namespace TestingUtils
         private System.Windows.Forms.Button buttonAcceptBaseline;
         private System.Windows.Forms.Button buttonFail;
         private System.Windows.Forms.Label labelInformation;
+        private System.Windows.Forms.Button buttonFixBitness;
     }
 }

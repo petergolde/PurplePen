@@ -62,6 +62,7 @@ namespace PurplePen.Tests
             int pageNum = 1;
             for (; ; ) {
                 string pngExpectedPage = expectedPng.Replace("%d", pageNum.ToString());
+                pngExpectedPage = TestUtil.GetBitnessSpecificFileName(pngExpectedPage, true);
                 bool expectedPageExists = File.Exists(pngExpectedPage);
                 string pngActualPage = pngFile.Replace("%d", pageNum.ToString());
                 bool actualPageExists = File.Exists(pngActualPage);

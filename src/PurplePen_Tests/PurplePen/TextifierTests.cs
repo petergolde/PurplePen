@@ -258,12 +258,19 @@ namespace PurplePen.Tests
             Assert.AreEqual("5.2m high", textifier.GetTextFromSize("5,2", true, false, "", false, ""));
 
             CultureInfo.CurrentCulture.ClearCachedData();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
+            CultureInfo prev = Thread.CurrentThread.CurrentCulture;
+            try {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
 
-            Assert.AreEqual("5m deep", textifier.GetTextFromSize("5.0", true, true, "", true, ""));
-            Assert.AreEqual("5m high", textifier.GetTextFromSize("5,0", true, false, "", false, ""));
-            Assert.AreEqual("5,2m high", textifier.GetTextFromSize("5.2", true, false, "", false, ""));
-            Assert.AreEqual("5,2m deep", textifier.GetTextFromSize("5,2", true, true, "", true, ""));
+                Assert.AreEqual("5m deep", textifier.GetTextFromSize("5.0", true, true, "", true, ""));
+                Assert.AreEqual("5m high", textifier.GetTextFromSize("5,0", true, false, "", false, ""));
+                Assert.AreEqual("5,2m high", textifier.GetTextFromSize("5.2", true, false, "", false, ""));
+                Assert.AreEqual("5,2m deep", textifier.GetTextFromSize("5,2", true, true, "", true, ""));
+            }
+            finally {
+                CultureInfo.CurrentCulture.ClearCachedData();
+                Thread.CurrentThread.CurrentCulture = prev;
+            }
         }
 
         // Sets up with special symbols.xml that has fake german text in it, to test gender/plural stuff.

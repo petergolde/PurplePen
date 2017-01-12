@@ -83,5 +83,24 @@ namespace TestingUtils
             File.Copy(NewFilename, BaselineFilename, true);
             DialogResult = DialogResult.OK;
         }
+
+        private void buttonFixBitness_Click(object sender, EventArgs e)
+        {
+            string filenameWithoutExt = Path.GetFileNameWithoutExtension(BaselineFilename);
+            if (filenameWithoutExt.EndsWith("-64bit", StringComparison.InvariantCultureIgnoreCase) || filenameWithoutExt.EndsWith("-32bit", StringComparison.InvariantCultureIgnoreCase)) {
+                MessageBox.Show("Already bitness specific.");
+                return;
+            }
+
+            string filenameBaselineSave = TestingUtils.TestUtil.GetBitnessSpecificFileName(BaselineFilename, !Environment.Is64BitProcess, false);
+            string filenameNewSave = TestingUtils.TestUtil.GetBitnessSpecificFileName(BaselineFilename, Environment.Is64BitProcess, false);
+
+            File.Move(BaselineFilename, filenameBaselineSave);
+            File.Copy(NewFilename, filenameNewSave, true);
+
+            DialogResult = DialogResult.OK;
+        }
+
+
     }
 }

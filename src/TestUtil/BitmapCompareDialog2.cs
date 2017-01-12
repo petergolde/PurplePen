@@ -109,6 +109,30 @@ namespace TestingUtils
             SwitchBitmaps();
         }
 
+        private void buttonFixBitness_Click(object sender, EventArgs e)
+        {
+            string filenameWithoutExt = Path.GetFileNameWithoutExtension(BaselineFilename);
+            if (filenameWithoutExt.EndsWith("-64bit", StringComparison.InvariantCultureIgnoreCase) || filenameWithoutExt.EndsWith("-32bit", StringComparison.InvariantCultureIgnoreCase)) {
+                MessageBox.Show("Already bitness specific.");
+                return;
+            }
+
+            if (bmNew != null) {
+                if (bmBaseline != null) {
+                    bmBaseline.Dispose();
+                    bmBaseline = null;
+                }
+
+                string filenameBaselineSave = TestingUtils.TestUtil.GetBitnessSpecificFileName(BaselineFilename, !Environment.Is64BitProcess, false);
+                string filenameNewSave = TestingUtils.TestUtil.GetBitnessSpecificFileName(BaselineFilename, Environment.Is64BitProcess, false);
+
+                File.Move(BaselineFilename, filenameBaselineSave);
+                bmNew.Save(filenameNewSave, ImageFormat.Png);
+
+                DialogResult = DialogResult.OK;
+            }
+        }
+
         private void buttonAccept_Click(object sender, EventArgs e)
         {
             if (bmNew != null) {

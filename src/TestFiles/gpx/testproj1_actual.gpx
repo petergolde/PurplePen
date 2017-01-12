@@ -6,14 +6,14 @@
     <link href="http://purple-pen.org">
       <text>Purple Pen</text>
     </link>
-    <time>2017-01-11T19:33:56Z</time>
-    <bounds minlat="31.773360045466045" minlon="-90.9183478249209" maxlat="31.780389245588182" maxlon="-90.906313294341956" />
+    <time>2017-01-12T19:39:57Z</time>
+    <bounds minlat="31.773360045466045" minlon="-90.9183478249209" maxlat="31.780389245588189" maxlon="-90.906313294341956" />
   </metadata>
   <wpt lat="31.778573647301233" lon="-90.9183478249209">
     <name>31</name>
     <sym>Navaid, Violet</sym>
   </wpt>
-  <wpt lat="31.780389245588182" lon="-90.9127433334056">
+  <wpt lat="31.780389245588189" lon="-90.9127433334056">
     <name>32</name>
     <sym>Navaid, Violet</sym>
   </wpt>
@@ -29,7 +29,7 @@
     <name>35</name>
     <sym>Navaid, Violet</sym>
   </wpt>
-  <wpt lat="31.773973431575552" lon="-90.911872758822526">
+  <wpt lat="31.773973431575552" lon="-90.911872758822525">
     <name>36</name>
     <sym>Navaid, Violet</sym>
   </wpt>

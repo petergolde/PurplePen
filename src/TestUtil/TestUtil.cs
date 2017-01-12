@@ -62,6 +62,31 @@ namespace TestingUtils
             return Path.GetFullPath(Path.Combine(GetTestFileDirectory(), basename));
         }
 
+        public static string GetBitnessSpecificFileName(string path, bool is64, bool checkExistance)
+        {
+            string dir = Path.GetDirectoryName(path);
+            string file = Path.GetFileNameWithoutExtension(path);
+            string ext = Path.GetExtension(path);
+            string specificPath;
+
+            if (is64) {
+                specificPath = Path.Combine(dir, file + "-64bit" + ext);
+            }
+            else {
+                specificPath = Path.Combine(dir, file + "-32bit" + ext);
+            }
+
+            if (!checkExistance || File.Exists(specificPath))
+                return specificPath;
+            else
+                return path;
+        }
+
+        public static string GetBitnessSpecificFileName(string path, bool checkExistance)
+        {
+            return GetBitnessSpecificFileName(path, Environment.Is64BitProcess, checkExistance);
+        }
+
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
         // The difference bitmap has "colorSame" background, and the bits from the second bitmap where differences are.
         // Used as helper from CompareBitmaps if a difference is detected.
@@ -224,6 +249,8 @@ namespace TestingUtils
             // Is the file different than the baseline?
             bool different = false, fail = false;
 
+            baselineFile = GetBitnessSpecificFileName(baselineFile, true);
+
             if (! File.Exists(baselineFile))
                 different = true;
             else {
@@ -347,6 +374,8 @@ namespace TestingUtils
         // Compare text file against a baseline, showing a dialog if they don't compare.
         public static void CompareTextFileBaseline(string newFile, string baseline, Dictionary<string, string> exceptionMap)
         {
+            baseline = GetBitnessSpecificFileName(baseline, true);
+
             if (!File.Exists(baseline) || !CompareTextFiles(newFile, baseline, exceptionMap)) 
             {
                 TextFileCompareDialog dialog = new TextFileCompareDialog();
