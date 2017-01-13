@@ -389,39 +389,39 @@ namespace PurplePen
         }
 
         // Set the map file used to draw. 
-        public void SetMapFile(MapType mapType, string filename)
+        public void SetMapFile(MapType newMapType, string newFilename)
         {
-            this.mapType = mapType;
-            this.filename = filename;
+            this.mapType = newMapType;
+            this.filename = newFilename;
             this.bitmap = null;
             this.map = null;
 
-            if (mapType == MapType.None) {
+            if (newMapType == MapType.None) {
                 map = null;
                 mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 bitmap = null;
                 pdfMapFile = null;
             }
-            else if (mapType == MapType.OCAD) {
-                map = new Map(MapUtil.TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(filename)));
-                mapVersion = InputOutput.ReadFile(filename, map);
+            else if (newMapType == MapType.OCAD) {
+                map = new Map(MapUtil.TextMetricsProvider, new GDIPlus_FileLoader(Path.GetDirectoryName(newFilename)));
+                mapVersion = InputOutput.ReadFile(newFilename, map);
                 bitmap = null;
                 pdfMapFile = null;
             }
-            else if (mapType == MapType.Bitmap) {
+            else if (newMapType == MapType.Bitmap) {
                 map = null;
                 mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
-                Bitmap bm = (Bitmap)Image.FromFile(filename);
+                Bitmap bm = (Bitmap)Image.FromFile(newFilename);
                 bitmap = new GDIPlus_Bitmap(bm);
                 bitmapDpi = bm.HorizontalResolution;
                 pdfMapFile = null;
             }
-            else if (mapType == MapType.PDF) {
+            else if (newMapType == MapType.PDF) {
                 string errorText;
                 map = null;
                 mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 Size bitmapSize;
-                pdfMapFile = MapUtil.ValidatePdf(filename, out bitmapDpi, out bitmapSize, out errorText);
+                pdfMapFile = MapUtil.ValidatePdf(newFilename, out bitmapDpi, out bitmapSize, out errorText);
                 if (pdfMapFile == null) {
                     this.mapType = MapType.None;
                     bitmap = null;
