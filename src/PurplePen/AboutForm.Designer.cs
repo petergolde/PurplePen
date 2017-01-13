@@ -71,6 +71,7 @@ namespace PurplePen
             this.okButton = new System.Windows.Forms.Button();
             this.creditsButton = new System.Windows.Forms.Button();
             this.licenseButton = new System.Windows.Forms.Button();
+            this.bitnessLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.freeLabel, "freeLabel");
             this.freeLabel.Name = "freeLabel";
+            this.freeLabel.Click += new System.EventHandler(this.freeLabel_Click);
             // 
             // disclaimerLabel
             // 
@@ -131,10 +133,17 @@ namespace PurplePen
             this.licenseButton.UseVisualStyleBackColor = true;
             this.licenseButton.Click += new System.EventHandler(this.licenseButton_Click);
             // 
+            // bitnessLabel
+            // 
+            resources.ApplyResources(this.bitnessLabel, "bitnessLabel");
+            this.bitnessLabel.Name = "bitnessLabel";
+            this.bitnessLabel.Click += new System.EventHandler(this.bitnessLabel_Click);
+            // 
             // AboutForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.bitnessLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.disclaimerLabel);
@@ -161,5 +170,6 @@ namespace PurplePen
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.Button creditsButton;
         private System.Windows.Forms.Button licenseButton;
+        private System.Windows.Forms.Label bitnessLabel;
     }
 }

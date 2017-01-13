@@ -48,6 +48,7 @@ namespace PurplePen
             InitializeComponent();
 
             this.versionLabel.Text = string.Format(MiscText.VersionLabel, Util.PrettyVersionString(VersionNumber.Current));
+            this.bitnessLabel.Text = Environment.Is64BitProcess ? "64-bit" : "32-bit";
         }
 
         private void licenseButton_Click(object sender, EventArgs e)
@@ -66,6 +67,16 @@ namespace PurplePen
         }
 
         private void copyrightLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void freeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bitnessLabel_Click(object sender, EventArgs e)
         {
 
         }
