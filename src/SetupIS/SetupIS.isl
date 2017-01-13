@@ -356,6 +356,7 @@
 		<row><td>Graphics2D.dll</td><td>{F29B890B-6478-4CF2-8644-FBA88E84131E}</td><td>INSTALLDIR</td><td>2</td><td/><td>graphics2d.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{3409CCD9-2691-4FEA-8EDA-B8D6A6D25F0D}</td><td>X86</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{2A4FA50F-3998-41B9-AA38-44A6B64B63F7}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{E6B4FEE0-D3B4-4E26-A8AB-9CF4D4CBAB34}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MapModel.dll</td><td>{9351DD6B-9305-4619-B1AA-39842DB57FCA}</td><td>INSTALLDIR</td><td>2</td><td/><td>mapmodel.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_GDIPlus.dll</td><td>{A1582BE9-302C-418B-A5F0-D0F427951E8D}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_gdiplus.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Map_PDF.dll</td><td>{976760BE-1AFB-4A29-BAF3-CECF018672BE}</td><td>INSTALLDIR</td><td>2</td><td/><td>map_pdf.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1079,6 +1080,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>PdfConverter.Primary_output</td></row>
 		<row><td>INSTALLDIR</td><td>PdfiumViewer.dll</td></row>
 		<row><td>INSTALLDIR</td><td>dbghelp.dll1</td></row>
@@ -1919,6 +1921,7 @@
 		<row><td>AlwaysInstall</td><td>Graphics2D.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>MapModel.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_GDIPlus.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Map_PDF.dll</td></row>
@@ -2118,6 +2121,7 @@
 		<row><td>Graphics2D.dll</td><td/><td/><td>_39F59A57_5D8F_4D59_8858_2A438FB81BB8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_E5E047B4_136F_4738_A2F3_C11DA83710CE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_270807DE_AD1B_4522_8C59_A59C9368711F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_B398F129_ACD5_4D2B_9745_A65EC52F5400_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MapModel.dll</td><td/><td/><td>_9F109AA4_25A9_41BC_A1C2_1ACD5DA4583E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_GDIPlus.dll</td><td/><td/><td>_61804E8A_0948_46EC_BDAA_931A439D7A12_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Map_PDF.dll</td><td/><td/><td>_E1503259_3094_4F2F_BB37_27FC50EC2D49_FILTER</td><td/><td/><td/><td/></row>

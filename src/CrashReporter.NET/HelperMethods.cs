@@ -9,57 +9,10 @@ namespace CrashReporterDotNET
 {
     public static class HelperMethods
     {
-        [DllImport("kernel32", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern IntPtr LoadLibrary(string libraryName);
-
-        [DllImport("kernel32", SetLastError = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern IntPtr GetProcAddress(IntPtr hwnd, string procedureName);
-
         private static bool IsOS64Bit()
         {
-            return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
+            return Environment.Is64BitOperatingSystem;
         }
-
-        private static IsWow64ProcessDelegate GetIsWow64ProcessDelegate()
-        {
-            IntPtr handle = LoadLibrary("kernel32");
-
-            if (handle != IntPtr.Zero)
-            {
-                IntPtr fnPtr = GetProcAddress(handle, "IsWow64Process");
-
-                if (fnPtr != IntPtr.Zero)
-                {
-                    return
-                        (IsWow64ProcessDelegate)
-                        Marshal.GetDelegateForFunctionPointer(fnPtr, typeof(IsWow64ProcessDelegate));
-                }
-            }
-
-            return null;
-        }
-
-        private static bool Is32BitProcessOn64BitProcessor()
-        {
-            IsWow64ProcessDelegate fnDelegate = GetIsWow64ProcessDelegate();
-
-            if (fnDelegate == null)
-            {
-                return false;
-            }
-
-            bool isWow64;
-            bool retVal = fnDelegate.Invoke(Process.GetCurrentProcess().Handle, out isWow64);
-
-            if (retVal == false)
-            {
-                return false;
-            }
-
-            return isWow64;
-        }
-
-        private delegate bool IsWow64ProcessDelegate([In] IntPtr handle, [Out] out bool isWow64Process);
 
         public static string GetWindowsVersion()
         {
@@ -105,6 +58,19 @@ namespace CrashReporterDotNET
                                                  windowsVersion);
                         case 2:
                             return string.Format("Windows 8 {0} {1} bit Version {2}",
+                                                 Environment.OSVersion.ServicePack, osArchitecture,
+                                                 windowsVersion);
+                        case 3:
+                            return string.Format("Windows 8.1 {0} {1} bit Version {2}",
+                                                 Environment.OSVersion.ServicePack, osArchitecture,
+                                                 windowsVersion);
+                    }
+                    break;
+
+                case 10:
+                    switch (Environment.OSVersion.Version.Minor) {
+                        case 0:
+                            return string.Format("Windows 10 {0} {1} bit Version {2}",
                                                  Environment.OSVersion.ServicePack, osArchitecture,
                                                  windowsVersion);
                     }
