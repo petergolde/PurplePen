@@ -36,7 +36,7 @@ namespace PurplePen
             this.success = success;
             this.errorMessage = errorMessage;
 
-            if (dialog == null)
+            if (dialog == null || dialog.Handle == IntPtr.Zero)
                 return;
 
             if (success) {

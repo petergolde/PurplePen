@@ -350,7 +350,12 @@ namespace PurplePen
 
         public float ScaleRatio
         {
-            get { return printScale / mapScale; }
+            get {
+                if (printScale == 0 || mapScale == 0)
+                    return 1;
+                else
+                    return printScale / mapScale;
+            }
         }
 
         // Get the index of the next control. If this is a splitting control, just takes the first.
