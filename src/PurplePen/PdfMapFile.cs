@@ -142,15 +142,20 @@ namespace PurplePen
 
         private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
         {
-            stderrOutput.Append(e.Data);
-            stderrOutput.Append("\r\n");
+            lock (stderrOutput) {
+                stderrOutput.Append(e.Data);
+                stderrOutput.Append("\r\n");
+            }
         }
 
         private void ProcessExited(object sender, EventArgs e)
         {
             process.WaitForExit();
 
-            conversionOutput = stderrOutput.ToString();
+            lock (stderrOutput) {
+                conversionOutput = stderrOutput.ToString();
+            }
+
             status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
             process.Dispose();
             process = null;
