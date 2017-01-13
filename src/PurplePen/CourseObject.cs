@@ -1208,8 +1208,17 @@ namespace PurplePen
                         GraphicsPath path = new GraphicsPath();
                         path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
                         path.CloseAllFigures();
-                        using (Pen pen = new Pen(Color.White, 2))
-                            g.DrawPath(pen, path);
+                        using (Pen pen = new Pen(Color.White, 2)) {
+                            try {
+                                g.DrawPath(pen, path);
+                            }
+                            catch (OutOfMemoryException) {
+                                // Do nothing. Very occasionally, GDI+ given an out of memory exception for very short curves. Just ignore it; there's nothing else to do. See bug #1997301.
+                            }
+                            catch (OverflowException) {
+                                // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                            }
+                        }
                         path.Dispose();
 
                         // Draw red text.
