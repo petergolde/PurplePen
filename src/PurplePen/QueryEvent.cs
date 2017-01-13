@@ -103,7 +103,7 @@ namespace PurplePen
                 CourseControl courseCtl = eventDB.GetCourseControl(nextCourseControlId);
 
                 if (courseCtl.split && !(first && ignoreFirstSplit)) {
-                    if (variationChoices != null) {
+                    if (variationChoices != null && variationChoices.Any()) {
                         // Follow the path given by the variantChoices. May be the same as this control.
                         Id<CourseControl> choice = variationChoices.First();
                         Debug.Assert(courseCtl.splitCourseControls.Contains(choice));

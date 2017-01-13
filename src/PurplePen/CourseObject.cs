@@ -1196,8 +1196,19 @@ namespace PurplePen
                     using (Font font = new Font(fontFam, pixelEmHight, fontStyle, GraphicsUnit.World)) {
                         SizeF textSize = g.MeasureString(text, font, topLeftPixel[0], format);
                         Size expandedSize = new Size((int)Math.Ceiling(textSize.Width) + 4, (int)Math.Ceiling(textSize.Height) + 4);
-                        g.FillRectangle(brush, topLeftPixel[0].X - 2, topLeftPixel[0].Y - 2, expandedSize.Width, expandedSize.Height);
-                        g.DrawString(text, font, brush, topLeftPixel[0], format);
+                        try {
+                            g.FillRectangle(brush, topLeftPixel[0].X - 2, topLeftPixel[0].Y - 2, expandedSize.Width, expandedSize.Height);
+                            g.DrawString(text, font, brush, topLeftPixel[0], format);
+                        }
+                        catch (System.Runtime.InteropServices.ExternalException) {
+                            // Do nothing
+                        }
+                        catch (OutOfMemoryException) {
+                            // Sometimes happens with very small items. Nothing to do but ignore it.
+                        }
+                        catch (OverflowException) {
+                            // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                        }
                     }
                 }
                 else {
@@ -1221,8 +1232,19 @@ namespace PurplePen
                         }
                         path.Dispose();
 
-                        // Draw red text.
-                        g.DrawString(text, font, brush, topLeftPixel[0], format);
+                        try {
+                            // Draw red text.
+                            g.DrawString(text, font, brush, topLeftPixel[0], format);
+                        }
+                        catch (System.Runtime.InteropServices.ExternalException) {
+                            // Do nothing
+                        }
+                        catch (OutOfMemoryException) {
+                            // Sometimes happens with very small items. Nothing to do but ignore it.
+                        }
+                        catch (OverflowException) {
+                            // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                        }
                     }
                     g.TextRenderingHint = saveTextRenderingHint;
                 }

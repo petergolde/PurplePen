@@ -304,27 +304,38 @@ namespace PurplePen
         // Check if the map file has changed.
         public void CheckForChangedMapFile()
         {
-            if (!inChangeMapFileCheck && mapDisplay != null && MapFileName != null && mapFileLastWrite != File.GetLastWriteTime(MapFileName)) {
-                inChangeMapFileCheck = true;
-
+            if (!inChangeMapFileCheck && mapDisplay != null && MapFileName != null) {
+                DateTime lastWriteTime;
                 try {
-                    if (File.Exists(MapFileName)) {
-                        ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
-                        mapDisplay.SetMapFile(MapType, MapFileName);
-                        NewMapFileLoaded(false);
-                    }
-                    else {
-                        // Map file no longer exists.
-                        ui.InfoMessage(string.Format(MiscText.MapFileDeleted, MapFileName));
-                        if (File.Exists(MapFileName))
-                            mapDisplay.SetMapFile(MapType, MapFileName);
-                        NewMapFileLoaded(true);
-                    }
+                    lastWriteTime = File.GetLastWriteTime(MapFileName);
                 }
-                finally {
-                    inChangeMapFileCheck = false;
+                catch (IOException) {
+                    return;
+                }
+
+                if (mapFileLastWrite != lastWriteTime) {
+                    inChangeMapFileCheck = true;
+
+                    try {
+                        if (File.Exists(MapFileName)) {
+                            ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
+                            mapDisplay.SetMapFile(MapType, MapFileName);
+                            NewMapFileLoaded(false);
+                        }
+                        else {
+                            // Map file no longer exists.
+                            ui.InfoMessage(string.Format(MiscText.MapFileDeleted, MapFileName));
+                            if (File.Exists(MapFileName))
+                                mapDisplay.SetMapFile(MapType, MapFileName);
+                            NewMapFileLoaded(true);
+                        }
+                    }
+                    finally {
+                        inChangeMapFileCheck = false;
+                    }
                 }
             }
+            
         }
 
         // Once each time the map file is loaded, and if the event is not set to disallow it, return a list of missing fonts. Once this 
