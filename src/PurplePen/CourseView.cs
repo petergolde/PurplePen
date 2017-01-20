@@ -760,7 +760,7 @@ namespace PurplePen
             // process, or None if process to the end of the course.
             Id<CourseControl> firstCourseControl, lastCourseControl;
             if (courseDesignator.AllParts) {
-                firstCourseControl = courseControls[0];
+                firstCourseControl = (courseControls.Count > 0) ? courseControls[0] : Id<CourseControl>.None;
                 lastCourseControl = Id<CourseControl>.None;
             }
             else {

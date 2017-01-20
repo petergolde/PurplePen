@@ -1265,7 +1265,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual("All controls, Course 1, Course 3, Course 4B, Course 4G, Score, SingleControl, StartAngle, Xavier", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
@@ -1304,7 +1304,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual("All controls, Course 1, Course 3, Course 4B, Course 4G, Score, SingleControl, StartAngle, Xavier", textpart.text);
             Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
@@ -1349,7 +1349,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual("All controls, Course 1, Course 3, Course 4B, Course 4G, Score, SingleControl, StartAngle, Xavier", textpart.text);
             Assert.AreEqual(TextFormat.NewLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);
@@ -1387,7 +1387,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(TextFormat.Header, textpart.format);
 
             textpart = description[index++];
-            Assert.AreEqual("All courses", textpart.text);
+            Assert.AreEqual("All controls, Course 1, Course 3, Course 4B, Course 4G, Score, SingleControl, StartAngle, Xavier", textpart.text);
             Assert.AreEqual(TextFormat.SameLine, textpart.format);
 
             Assert.AreEqual(index, description.Length);

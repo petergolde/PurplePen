@@ -133,7 +133,7 @@ namespace PurplePen
 
 
         // Get the text for a list of courses. Returns "None" for no courses. Returns "All courses" for all courses.
-        // The list of course names is sorted.
+        // The list of course names in the canonical order of courses (same as the tab order).
         private static string CourseListText(EventDB eventDB, Id<Course>[] courseIds)
         {
             if (courseIds.Length == 0)
@@ -143,14 +143,20 @@ namespace PurplePen
                 return SelectionDescriptionText.CourseList_AllCourses;
 
             StringBuilder builder = new StringBuilder();
-            string[] courseNames = new string[courseIds.Length];
 
-            for (int i = 0; i < courseIds.Length; ++i) {
-                courseNames[i] = eventDB.GetCourse(courseIds[i]).name;
+            Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB);
+            List<string> courseNames = new List<string>();
+
+            if (courseIds.Contains(new Id<Course>(0))) {
+                courseNames.Add(MiscText.AllControls);
             }
-            Array.Sort(courseNames);
 
-            for (int i = 0; i < courseNames.Length; ++i) {
+            for (int i = 0; i < sortedCourseIds.Length; ++i) {
+                if (courseIds.Contains(sortedCourseIds[i]))
+                    courseNames.Add(eventDB.GetCourse(sortedCourseIds[i]).name);
+            }
+
+            for (int i = 0; i < courseNames.Count; ++i) {
                 if (i != 0)
                     builder.Append(", ");
                 builder.Append(courseNames[i]);
@@ -167,7 +173,7 @@ namespace PurplePen
             HashSet<Id<Course>> courses = new HashSet<Id<Course>>();
             foreach (CourseDesignator designator in courseDesignators) {
                 if (designator.IsAllControls)
-                    return SelectionDescriptionText.CourseList_AllCourses;
+                    courses.Add(new Id<Course>(0));
                 else
                     courses.Add(designator.CourseId);
             }
