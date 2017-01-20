@@ -317,6 +317,28 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void RelayVariations()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("courserenderer\\Fake Relay.ppen"));
+            eventDB.Validate();
+
+            VariationInfo[] variationInfos = QueryEvent.GetAllVariations(eventDB, CourseId(1)).ToArray();
+
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(1), variationInfos.First(vi => vi.CodeString == "BDGHK"));
+            CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_1", RectangleF.FromLTRB(-80, -110, 110, 80));
+            courseDesignator = new CourseDesignator(CourseId(1), variationInfos.First(vi => vi.CodeString == "ADFHJ"));
+            CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_2", RectangleF.FromLTRB(-80, -110, 110, 80));
+            courseDesignator = new CourseDesignator(CourseId(1), variationInfos.First(vi => vi.CodeString == "CEGIL"));
+            CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_3", RectangleF.FromLTRB(-80, -110, 110, 80));
+        }
+
+
+
+        [TestMethod]
         public void SingleVariation()
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));

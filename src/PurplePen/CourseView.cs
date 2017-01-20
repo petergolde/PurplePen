@@ -743,17 +743,6 @@ namespace PurplePen
             if (QueryEvent.HasVariations(eventDB, courseDesignator.CourseId) && courseDesignator.VariationInfo == null)
                 throw new ApplicationException("Cannot create course view without specifying which variation");
 
-            // Get sub-part of the course. firstCourseControls is the first control to process, lastCourseControl is the last one to 
-            // process, or None if process to the end of the course.
-            Id<CourseControl> firstCourseControl, lastCourseControl;
-            if (courseDesignator.AllParts) {
-                firstCourseControl = course.firstCourseControl;
-                lastCourseControl = Id<CourseControl>.None;
-            }
-            else {
-                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator, out firstCourseControl, out lastCourseControl);
-            }
-            
             CourseView courseView = new CourseView(eventDB, courseDesignator);
             int ordinal;
 
@@ -766,6 +755,17 @@ namespace PurplePen
             // To get the ordinals correct, we get the course control ids for all parts.
             List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, courseDesignator.WithAllParts()).ToList();
             int index = 0;
+
+            // Get sub-part of the course. firstCourseControls is the first control to process, lastCourseControl is the last one to 
+            // process, or None if process to the end of the course.
+            Id<CourseControl> firstCourseControl, lastCourseControl;
+            if (courseDesignator.AllParts) {
+                firstCourseControl = courseControls[0];
+                lastCourseControl = Id<CourseControl>.None;
+            }
+            else {
+                QueryEvent.GetCoursePartBounds(eventDB, courseDesignator, out firstCourseControl, out lastCourseControl);
+            }
 
             // Increase the ordinal value for each normal control before the first one we're considering.
             while (index < courseControls.Count && courseControls[index] != firstCourseControl) { 
