@@ -1489,11 +1489,7 @@ namespace PurplePen
                 if (courses == null)  // ok to have zero-length array, if special is in all controls but not on any course.
                     throw new ApplicationException(string.Format("Special {0} should have real courses array", id));
                 foreach (CourseDesignator courseDesignator in courses) {
-                    if (courseDesignator.IsAllControls) {
-                        if (kind != SpecialKind.Descriptions)
-                            throw new ApplicationException("Only descriptions should be directly in all controls");
-                    }
-                    else {
+                    if (!courseDesignator.IsAllControls) {
                         validateInfo.eventDB.CheckCourseId(courseDesignator.CourseId);
                     }
 

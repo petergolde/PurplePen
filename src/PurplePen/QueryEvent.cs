@@ -1063,10 +1063,10 @@ namespace PurplePen
                 foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
                     list.Add(new CourseDesignator(courseId));
                 }
-                if (special.kind == SpecialKind.Descriptions) {
-                    // Descriptions also are on all controls separatedly.
-                    list.Add(CourseDesignator.AllControls);
-                }
+
+                // Also on all controls.
+                list.Add(CourseDesignator.AllControls);
+
                 return list.ToArray();
             }
             else {

@@ -4,10 +4,12 @@
     <notes>This is a sample event for testing.</notes>
     <map kind="none" scale="10000" />
     <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-48.2838135" top="145.310745" right="167.6162" bottom="-134.089249" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance />
-    <descriptions lang="en" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -248,59 +250,69 @@
     <name>Course 1</name>
     <labels label-kind="sequence" />
     <first course-control="101" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-101.661293" top="148.3663" right="114.238716" bottom="-131.033691" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-93.4526" top="148.510117" right="122.447411" bottom="-130.889877" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
     <labels label-kind="sequence" />
     <first course-control="301" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-82.10745" top="146.293762" right="133.792557" bottom="-133.106232" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
     <labels label-kind="sequence" />
     <first course-control="401" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-47.2772675" top="165.8663" right="168.622742" bottom="-113.533691" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
     <labels label-kind="sequence" />
     <first course-control="501" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-64.8526154" top="149.483673" right="151.0474" bottom="-129.916321" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
     <labels label-kind="sequence" />
     <first course-control="601" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-63.2416229" top="134.483673" right="152.658386" bottom="-144.916321" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="7" kind="score" order="8">
     <name>SingleControl</name>
     <labels label-kind="code" />
     <first course-control="701" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-63.5327759" top="165.2" right="152.367233" bottom="-114.2" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
   <course id="8" kind="normal" order="9">
     <name>StartAngle</name>
     <labels label-kind="sequence" />
     <first course-control="801" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-102.5295" top="158.3295" right="113.370506" bottom="-121.070496" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course id="9" kind="score" order="7">
     <name>Score</name>
     <labels label-kind="code" />
     <first course-control="901" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-81.2968" top="148.978058" right="134.60321" bottom="-130.421936" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
   <course id="10" kind="normal" order="10">
     <name>Xavier</name>
     <labels label-kind="sequence" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-133.450012" top="165.2" right="82.45" bottom="-114.2" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols" />
   </course>
   <course-control id="101" control="1">
@@ -624,6 +636,7 @@
     <location x="0" y="-7" />
     <location x="-12" y="-3" />
     <courses>
+      <course course="0" />
       <course course="3" />
     </courses>
   </special-object>
@@ -637,6 +650,7 @@
   <special-object id="5" kind="text">
     <text>Banana Apple</text>
     <font name="Times New Roman" bold="true" italic="false" />
+    <appearance color="purple" />
     <location x="13" y="17" />
     <location x="71" y="1" />
     <courses>
@@ -646,6 +660,7 @@
   <special-object id="6" kind="text">
     <text>Frank Zappa</text>
     <font name="Arial" bold="true" italic="false" />
+    <appearance color="purple" />
     <location x="13" y="-17" />
     <location x="71" y="-14" />
     <courses>
@@ -655,6 +670,7 @@
   <special-object id="7" kind="text">
     <text>$(CourseName)</text>
     <font name="Times New Roman" bold="true" italic="true" />
+    <appearance color="purple" />
     <location x="45" y="40" />
     <location x="70" y="34" />
     <courses all="true" />

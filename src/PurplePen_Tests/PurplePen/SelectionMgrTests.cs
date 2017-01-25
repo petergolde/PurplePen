@@ -562,7 +562,7 @@ namespace PurplePen.Tests
             // Select a special in all controls.
             selectionMgr.SelectCourseView(Designator(0));
             CourseLayout course = selectionMgr.CourseLayout;
-            CourseObj courseobject = course[3];
+            CourseObj courseobject = course[1];
             Assert.IsTrue(courseobject.specialId.id == 4);
             selectionMgr.SelectCourseObject(courseobject);
 

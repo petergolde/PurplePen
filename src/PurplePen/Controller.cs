@@ -2345,7 +2345,7 @@ namespace PurplePen
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 displayedCourses = QueryEvent.GetSpecialDisplayedCourses(eventDB, selection.SelectedSpecial);
-                showAllControls = (eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.Descriptions);
+                showAllControls = true;
                 return CommandStatus.Enabled;
             }
             else {

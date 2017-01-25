@@ -683,16 +683,18 @@ namespace PurplePen
             courseView.Finish();
 
             if (addSpecials) {
-                // Add every special, regardless of courses it is on, except for descriptions. Descriptions are added to all
-                // controls only if they appear in all courses (or specifically for the all controls view), and if "addDescription" is true
+                // Add specials only if in all courses or the all controls course specifically. Descriptions are added only if "addDescription" is true
                 foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                     Special special = eventDB.GetSpecial(specialId);
+
                     if (special.kind == SpecialKind.Descriptions) {
                         if (addDescription && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
                             courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
                     }
-                    else
-                        courseView.specialIds.Add(specialId);
+                    else {
+                        if (QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                            courseView.specialIds.Add(specialId);
+                    }
                 }
             }
 

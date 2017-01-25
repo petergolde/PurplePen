@@ -1235,7 +1235,7 @@ namespace PurplePen.Tests
             Setup("queryevent\\specials.ppen");
 
             result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(7));
-            TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6), Designator(7), Designator(8), Designator(9), Designator(10) });
+            TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6), Designator(7), Designator(8), Designator(9), Designator(10) });
 
             result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(2));
             TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(9) });

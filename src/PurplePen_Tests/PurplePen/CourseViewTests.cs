@@ -451,9 +451,7 @@ Total Length=0  Part Length=0  Total Climb=-1  ScoreColumn=-1  Total Score=0  To
 23: [-1] Ids: 22,  0
 Special 1 (FirstAid)
 Special 2 (OptCrossing)
-Special 3 (Boundary)
 Special 4 (OOB)
-Special 5 (Text)
 ";
             Assert.AreEqual(expected, actual);
         }

@@ -545,13 +545,7 @@ ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(
         {
             CheckCourse("courseformat\\marymoor1.coursescribe", CourseId(0), CourseLayer.AllControls, @"
 FirstAid:       layer:2  special:1  scale:1  location:(14.5,31.2)
-Crossing:       layer:2  special:2  scale:1  location:(-4.2,21.7)  orientation:45
-Boundary:       layer:2  special:3  scale:1  path:N(11,2)--N(0,-7)--N(-12,-3)
 OOB:            layer:2  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
-BasicText:      layer:2  special:5  scale:1  text:Banana Apple  top-left:(13,17)
-                font-name:Times New Roman  font-style:Bold  font-height:9.530931  rect:(13,17)-(71,1)
-BasicText:      layer:2  special:6  scale:1  text:Frank Zappa  top-left:(13,-14)
-                font-name:Arial  font-style:Bold  font-height:2.685315  rect:(13,-14)-(71,-17)
 BasicText:      layer:2  special:7  scale:1  text:All controls  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
@@ -605,47 +599,47 @@ Code:           layer:2  control:39  scale:1  text:39  top-left:(130.72,44.56)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:40  scale:1  text:40  top-left:(118.87,27.42)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:41  scale:1  text:41  top-left:(24.8,3.75)
+Code:           layer:2  control:41  scale:1  text:41  top-left:(28.82,3.86)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:42  scale:1  text:42  top-left:(32.74,-7.33)
+Code:           layer:2  control:42  scale:1  text:42  top-left:(31.26,-12.3)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:43  scale:1  text:43  top-left:(81.46,41.72)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:44  scale:1  text:44  top-left:(33.33,-25.21)
+Code:           layer:2  control:44  scale:1  text:44  top-left:(35.38,-25.25)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:45  scale:1  text:45  top-left:(59.23,27.65)
+Code:           layer:2  control:45  scale:1  text:45  top-left:(57.74,23.71)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:46  scale:1  text:46  top-left:(-8.74,15.49)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:47  scale:1  text:47  top-left:(-0.03,38.54)
+Code:           layer:2  control:47  scale:1  text:47  top-left:(0.29,28.87)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:48  scale:1  text:48  top-left:(23.92,46.38)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:49  scale:1  text:49  top-left:(18.8,-23.25)
+Code:           layer:2  control:49  scale:1  text:49  top-left:(20.73,-23.25)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:50  scale:1  text:50  top-left:(40.56,29.92)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:51  scale:1  text:51  top-left:(11.76,-4.78)
+Code:           layer:2  control:51  scale:1  text:51  top-left:(10.17,-13.3)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:52  scale:1  text:52  top-left:(45.66,-12.22)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:53  scale:1  text:53  top-left:(26.26,-3.31)
+Code:           layer:2  control:53  scale:1  text:53  top-left:(28.22,-4.32)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:54  scale:1  text:54  top-left:(54.52,5.86)
+Code:           layer:2  control:54  scale:1  text:54  top-left:(56.87,8.08)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:55  scale:1  text:55  top-left:(45.87,8.42)
+Code:           layer:2  control:55  scale:1  text:55  top-left:(47.65,17.72)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:56  scale:1  text:56  top-left:(84.34,29.24)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:57  scale:1  text:57  top-left:(89.73,16.85)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:58  scale:1  text:58  top-left:(15.66,3.12)
+Code:           layer:2  control:58  scale:1  text:58  top-left:(16.75,3.22)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:59  scale:1  text:59  top-left:(48.98,-29.45)
+Code:           layer:2  control:59  scale:1  text:59  top-left:(49.93,-29.45)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:70  scale:1  text:70  top-left:(24.34,17.04)
+Code:           layer:2  control:70  scale:1  text:70  top-left:(14.83,17.69)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:71  scale:1  text:71  top-left:(34.44,24.07)
+Code:           layer:2  control:71  scale:1  text:71  top-left:(32.96,19.1)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:72  scale:1  text:72  top-left:(0.82,17.16)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
@@ -653,17 +647,17 @@ Code:           layer:2  control:73  scale:1  text:73  top-left:(52.07,-15.88)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:74  scale:1  text:74  top-left:(63.04,-20.69)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:75  scale:1  text:75  top-left:(73.52,33.86)
+Code:           layer:2  control:75  scale:1  text:75  top-left:(64.86,29.73)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:76  scale:1  text:76  top-left:(3.38,-8.15)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:77  scale:1  text:77  top-left:(76.54,17.31)
+Code:           layer:2  control:77  scale:1  text:77  top-left:(70.43,16.79)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:78  scale:1  text:78  top-left:(97.21,32.26)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 Code:           layer:2  control:79  scale:1  text:79  top-left:(112.81,13.49)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:80  scale:1  text:80  top-left:(36.57,4.72)
+Code:           layer:2  control:80  scale:1  text:80  top-left:(34.76,10.59)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 ");
         }
