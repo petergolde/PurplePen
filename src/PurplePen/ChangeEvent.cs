@@ -838,34 +838,40 @@ namespace PurplePen
 
         // Moves a control in a course, creating a new course control referencing the old control.
         // Cannot move a split control.
-        public static Id<CourseControl> MoveControlInCourse(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdToMove, Id<CourseControl> destinationBefore, Id<CourseControl> destinationAfter)
+        public static Id<CourseControl> MoveControlInCourse(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlIdToMove, 
+                                                            Id<CourseControl> destinationBefore, Id<CourseControl> destinationAfter, LegInsertionLoc legInsertionLoc)
         {
             CourseControl courseControlToMove = eventDB.GetCourseControl(courseControlIdToMove);
             Debug.Assert(!courseControlToMove.split);
 
             // Create a new course control.
-            Id<CourseControl> newCourseControlId = AddCourseControl(eventDB, courseControlToMove.control, courseId, destinationBefore, destinationAfter);
-            CourseControl newCourseControl = eventDB.GetCourseControl(newCourseControlId);
+            Id<CourseControl> addedCourseControlId = AddCourseControl(eventDB, courseControlToMove.control, courseId, destinationBefore, destinationAfter, legInsertionLoc);
 
-            // Copy over applicable parts of the old course control.
-            CourseControl update = (CourseControl) newCourseControl.Clone();
-            update.customNumberPlacement = courseControlToMove.customNumberPlacement;
-            update.numberDeltaX = courseControlToMove.numberDeltaX;
-            update.numberDeltaY = courseControlToMove.numberDeltaY;
-            update.descTextAfter = courseControlToMove.descTextAfter;
-            update.descTextBefore = courseControlToMove.descTextBefore;
-            update.points = courseControlToMove.points;
-            eventDB.ReplaceCourseControl(newCourseControlId, update);
+            foreach (Id<CourseControl> newCourseControlId in QueryEvent.AllVariationsOfCourseControl(eventDB, addedCourseControlId)) {
+                CourseControl newCourseControl = eventDB.GetCourseControl(newCourseControlId);
+
+                // Copy over applicable parts of the old course control.
+                CourseControl update = (CourseControl)newCourseControl.Clone();
+                update.customNumberPlacement = courseControlToMove.customNumberPlacement;
+                update.numberDeltaX = courseControlToMove.numberDeltaX;
+                update.numberDeltaY = courseControlToMove.numberDeltaY;
+                update.descTextAfter = courseControlToMove.descTextAfter;
+                update.descTextBefore = courseControlToMove.descTextBefore;
+                update.points = courseControlToMove.points;
+                eventDB.ReplaceCourseControl(newCourseControlId, update);
+            }
 
             // Remove the old one.
             RemoveCourseControl(eventDB, courseId, courseControlIdToMove);
 
-            return newCourseControlId;
+            return addedCourseControlId;
         }
 
         // Add a new course control to a course. Adds a new CourseControl referencing controlId into courseId. The place to insert is
         // given by courseControl1 and courseControl2. These control should have been gotten by calling FindControlInsertionPoint.
-        public static Id<CourseControl> AddCourseControl(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, Id<CourseControl> courseControl1, Id<CourseControl> courseControl2)
+        // "legInsertionLoc" indicates where the new control goes if courseControl1 is a split or courseControl2 is a join.
+        public static Id<CourseControl> AddCourseControl(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, 
+                                                         Id<CourseControl> courseControl1, Id<CourseControl> courseControl2, LegInsertionLoc legInsertionLoc)
         {
             CourseControl newCourseControl;
             Id<CourseControl> newCourseControlId;
@@ -883,16 +889,105 @@ namespace PurplePen
                 eventDB.ReplaceCourse(courseId, course);
             }
             else {
-                // Adding after courseControl1.
-                CourseControl before = (CourseControl) eventDB.GetCourseControl(courseControl1).Clone();
-                Debug.Assert(courseControl2 == before.nextCourseControl);
-                newCourseControl = new CourseControl(controlId, before.nextCourseControl);
-                newCourseControlId = eventDB.AddCourseControl(newCourseControl);
-                before.nextCourseControl = newCourseControlId;
-                eventDB.ReplaceCourseControl(courseControl1, before);
+                if (legInsertionLoc == LegInsertionLoc.Normal) {
+                    // Adding after courseControl1.
+                    CourseControl before = (CourseControl)eventDB.GetCourseControl(courseControl1).Clone();
+                    Debug.Assert(courseControl2 == before.nextCourseControl);
+                    newCourseControl = new CourseControl(controlId, before.nextCourseControl);
+                    newCourseControlId = eventDB.AddCourseControl(newCourseControl);
+                    before.nextCourseControl = newCourseControlId;
+                    eventDB.ReplaceCourseControl(courseControl1, before);
+                }
+                else if (legInsertionLoc == LegInsertionLoc.PreSplit) {
+                    CourseControl splitBefore = (CourseControl)eventDB.GetCourseControl(courseControl1).Clone();
+                    Debug.Assert(splitBefore.split);
+                    Debug.Assert(courseControl2 == splitBefore.nextCourseControl);
+
+                    // Get info from the old split.
+                    Id<CourseControl>[] splitIdsBefore = splitBefore.splitCourseControls;
+                    int indexInSplitBefore = Array.IndexOf(splitIdsBefore, courseControl1);
+
+                    // We need to create N new course controls for the N course controls in the split.
+                    // Here's where we store them.
+                    CourseControl[] newCourseControls = new CourseControl[splitIdsBefore.Length];
+                    Id<CourseControl>[] newCourseControlIds = new Id<CourseControl>[splitIdsBefore.Length];
+
+                    // Create new course controls -- 1 per split.
+                    for (int iSplit = 0; iSplit < splitIdsBefore.Length; ++iSplit) {
+                        newCourseControls[iSplit] = new CourseControl(controlId, eventDB.GetCourseControl(splitIdsBefore[iSplit]).nextCourseControl);
+                        newCourseControlIds[iSplit] = eventDB.AddCourseControl(newCourseControls[iSplit]);
+                    }
+                    for (int iSplit = 0; iSplit < splitIdsBefore.Length; ++iSplit) {
+                        newCourseControls[iSplit].split = true;
+                        newCourseControls[iSplit].loop = splitBefore.loop;
+                        newCourseControls[iSplit].splitCourseControls = newCourseControlIds;
+                        newCourseControls[iSplit].splitEnd = splitBefore.splitEnd;
+                        eventDB.ReplaceCourseControl(newCourseControlIds[iSplit], newCourseControls[iSplit]);
+                    }
+
+                    // Update the first of the split before course controls to not be a split, 
+                    // and point to the first of the new course controls.
+                    splitBefore = (CourseControl)splitBefore.Clone();
+                    splitBefore.split = false;
+                    splitBefore.loop = false;
+                    splitBefore.splitCourseControls = null;
+                    splitBefore.splitEnd = Id<CourseControl>.None;
+                    splitBefore.nextCourseControl = newCourseControlIds[0];
+                    eventDB.ReplaceCourseControl(splitIdsBefore[0], splitBefore);
+
+                    // Finally, remove the old split course controls that aren't needed. 
+                    // Note loop begins at 1.
+                    for (int iSplit = 1; iSplit < splitIdsBefore.Length; ++iSplit) {
+                        UpdatePointersToCourseControl(eventDB, courseId, splitIdsBefore[iSplit], splitIdsBefore[0]);
+                        eventDB.RemoveCourseControl(splitIdsBefore[iSplit]);
+                    }
+
+                    // Return the correct one of the course course controls.
+                    newCourseControlId = newCourseControlIds[indexInSplitBefore];
+                }
+                else if (legInsertionLoc == LegInsertionLoc.PostJoin) {
+                    // Adding after courseControl1, before courseControl2, which is a join point.
+                    CourseControl before = (CourseControl)eventDB.GetCourseControl(courseControl1).Clone();
+                    Debug.Assert(courseControl2 == before.nextCourseControl);
+                    newCourseControl = new CourseControl(controlId, before.nextCourseControl);
+                    newCourseControlId = eventDB.AddCourseControl(newCourseControl);
+                    before.nextCourseControl = newCourseControlId;
+
+                    // Update all joins, nexts to point to the new course control.
+                    UpdatePointersToCourseControl(eventDB, courseId, courseControl2, newCourseControlId);
+                }
+                else {
+                    throw new ArgumentException("legInsertionLoc has unexpected value");
+                }
             }
 
             return newCourseControlId;
+        }
+
+        // Find any course controls in the given course that point to idReplace, and change them to point to idReplaceWith.
+        // Pointers considered are nextCourseControl and splitEnd.
+        private static void UpdatePointersToCourseControl(EventDB eventDB, Id<Course> courseId, Id<CourseControl> idReplace, Id<CourseControl> idReplaceWith)
+        {
+            Debug.Assert(idReplace.IsNotNone);
+
+            Course course = eventDB.GetCourse(courseId);
+            
+            foreach (Id<CourseControl> currentId in QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(courseId))) {
+                CourseControl current = (CourseControl) eventDB.GetCourseControl(currentId).Clone();
+                bool changed = false;
+                if (current.nextCourseControl == idReplace) {
+                    current.nextCourseControl = idReplaceWith;
+                    changed = true;
+                }
+                if (current.splitEnd == idReplace) {
+                    current.splitEnd = idReplaceWith;
+                    changed = true;
+                }
+                if (changed) {
+                    eventDB.ReplaceCourseControl(currentId, current);
+                }
+            }
+
         }
 
         // Add a start control to a given course. If the course already has a start control as the first control, replace it.

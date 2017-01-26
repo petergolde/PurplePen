@@ -2969,6 +2969,9 @@ namespace PurplePen
             Debug.Assert(undoMgr.CanUndo);
 
             undoMgr.Undo();
+#if DEBUG
+            eventDB.Validate();
+#endif
         }
 
         // Undo one command of changes.
@@ -2979,6 +2982,9 @@ namespace PurplePen
             Debug.Assert(undoMgr.CanRedo);
 
             undoMgr.Redo();
+#if DEBUG
+            eventDB.Validate();
+#endif
         }
 
         // A change has been made to a box in the description.
@@ -3364,7 +3370,8 @@ namespace PurplePen
 
         // Move a course control to a different place in the course, like from the topology view.
         // If duplicate is true, makes a duplicate of the control.
-        public bool RearrangeControl(Id<CourseControl> courseControlToMove, Id<CourseControl> courseControlDest1, Id<CourseControl> courseControlDest2, bool duplicate)
+        public bool RearrangeControl(Id<CourseControl> courseControlToMove, Id<CourseControl> courseControlDest1, Id<CourseControl> courseControlDest2, 
+                                    LegInsertionLoc legInsertionLoc)
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
 
@@ -3379,10 +3386,16 @@ namespace PurplePen
             }
 
             undoMgr.BeginCommand(139, CommandNameText.MoveControl);
-            Id<CourseControl> newCourseControl = ChangeEvent.MoveControlInCourse(eventDB, courseId, courseControlToMove, courseControlDest1, courseControlDest2);
+            Id<CourseControl> newCourseControl = ChangeEvent.MoveControlInCourse(eventDB, courseId, courseControlToMove, 
+                                                                                 courseControlDest1, courseControlDest2, legInsertionLoc);
             undoMgr.EndCommand(139);
 
             selectionMgr.SelectCourseControl(newCourseControl);
+
+#if DEBUG
+            eventDB.Validate();
+#endif
+
             return true;
         }
 

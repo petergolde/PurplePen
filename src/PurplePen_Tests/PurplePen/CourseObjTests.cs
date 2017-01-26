@@ -344,7 +344,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DropTarget()
         {
-            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0), LegInsertionLoc.Normal);
             SingleObject(courseobj, "droptarget");
         }
 
@@ -1103,7 +1103,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DropTargethighlight()
         {
-            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0), LegInsertionLoc.Normal);
             SingleObjectHighlight(courseobj, "droptarget_highlight");
         }
 
@@ -1434,7 +1434,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void DropTargetOffset()
         {
-            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
+            CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0), LegInsertionLoc.Normal);
             SingleObjectOffset(courseobj, "droptarget_offset");
         }
 

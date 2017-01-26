@@ -1441,7 +1441,7 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(957, "Add Control");
-            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), CourseControlId(204), CourseControlId(205));
+            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), CourseControlId(204), CourseControlId(205), LegInsertionLoc.Normal);
             undomgr.EndCommand(957);
             eventDB.Validate();
 
@@ -1473,7 +1473,7 @@ namespace PurplePen.Tests
             undomgr.BeginCommand(958, "Add Control");
             Id<CourseControl> courseControl1 = Id<CourseControl>.None, courseControl2 = Id<CourseControl>.None;
             QueryEvent.FindControlInsertionPoint(eventDB, Designator(6), ref courseControl1, ref courseControl2);
-            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2);
+            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2, LegInsertionLoc.Normal);
             undomgr.EndCommand(958);
             eventDB.Validate();
 
@@ -1503,7 +1503,7 @@ namespace PurplePen.Tests
             Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(2), controlId));
 
             undomgr.BeginCommand(959, "Add Control");
-            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(2), Id<CourseControl>.None, Id<CourseControl>.None);
+            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(2), Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal);
             undomgr.EndCommand(959);
             eventDB.Validate();
 
@@ -1564,7 +1564,7 @@ namespace PurplePen.Tests
             // Create a could with a single non-start control.
             undomgr.BeginCommand(1982, "Create Course");
             noStartCourseId = eventDB.AddCourse(new Course(CourseKind.Normal, "My Course", 15000, 10));
-            ChangeEvent.AddCourseControl(eventDB, ControlId(2), noStartCourseId, Id<CourseControl>.None, Id<CourseControl>.None);
+            ChangeEvent.AddCourseControl(eventDB, ControlId(2), noStartCourseId, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal);
             undomgr.EndCommand(1982);
 
             // Add a new start, plus ask to add to other courses without a start.
@@ -1633,7 +1633,7 @@ namespace PurplePen.Tests
             // Create a course with a single non-Finish control.
             undomgr.BeginCommand(1982, "Create Course");
             noFinishCourseId = eventDB.AddCourse(new Course(CourseKind.Normal, "My Course", 15000, 10));
-            ChangeEvent.AddCourseControl(eventDB, ControlId(2), noFinishCourseId, Id<CourseControl>.None, Id<CourseControl>.None);
+            ChangeEvent.AddCourseControl(eventDB, ControlId(2), noFinishCourseId, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal);
             undomgr.EndCommand(1982);
 
             // Add a new start, plus ask to add to other courses without a start.
@@ -3313,7 +3313,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             undomgr.BeginCommand(3712, "Move Control");
-            ChangeEvent.MoveControlInCourse(eventDB, CourseId(6), CourseControlId(209), CourseControlId(202), CourseControlId(203));
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(6), CourseControlId(209), CourseControlId(202), CourseControlId(203), LegInsertionLoc.Normal);
             undomgr.EndCommand(3712);
 
             eventDB.Validate();
@@ -3351,7 +3351,7 @@ namespace PurplePen.Tests
 
             
             undomgr.BeginCommand(3712, "Move Control");
-            ChangeEvent.MoveControlInCourse(eventDB, CourseId(1), CourseControlId(13), CourseControlId(25), CourseControlId(15));
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(1), CourseControlId(13), CourseControlId(25), CourseControlId(15), LegInsertionLoc.Normal);
             undomgr.EndCommand(3712);
 
             eventDB.Validate();
@@ -3362,6 +3362,79 @@ namespace PurplePen.Tests
             CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(1)));
             
         }
+
+        [TestMethod]
+        public void MoveControlInCourseVariation2()
+        {
+            Setup("changeevent\\variations2.ppen");
+
+            string[] expectedBefore = {
+                null, "31", "52", "31", "32",
+                "34", "35", "36", "39", null
+            };
+            string[] expectedAfter = {
+                null, "31", "35", "52", "35", "32",
+                "34", "36", "39", null
+            };
+            string[] codes = CodesInOrder(Designator(4));
+            var ccids = QueryEvent.EnumCourseControlIds(eventDB, Designator(4)).ToArray();
+
+            CollectionAssert.AreEqual(expectedBefore, codes);
+
+            eventDB.Validate();
+
+
+            undomgr.BeginCommand(3712, "Move Control");
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(4), CourseControlId(91), CourseControlId(72), CourseControlId(73), LegInsertionLoc.PreSplit);
+            undomgr.EndCommand(3712);
+
+            eventDB.Validate();
+            codes = CodesInOrder(Designator(4));
+            CollectionAssert.AreEqual(expectedAfter, codes);
+
+            undomgr.Undo();
+            eventDB.Validate();
+            codes = CodesInOrder(Designator(4));
+            CollectionAssert.AreEqual(expectedBefore, codes);
+
+        }
+
+        [TestMethod]
+        public void MoveControlInCourseVariation3()
+        {
+            Setup("changeevent\\variations2.ppen");
+
+            string[] expectedBefore = {
+                null, "31", "52", "31", "32",
+                "34", "35", "36", "39", null
+            };
+            string[] expectedAfter = {
+                null, "31", "52", "31", "32",
+                "35", "36", "34", "39", null
+            };
+            string[] codes = CodesInOrder(Designator(4));
+            var ccids = QueryEvent.EnumCourseControlIds(eventDB, Designator(4)).ToArray();
+
+            CollectionAssert.AreEqual(expectedBefore, codes);
+
+            eventDB.Validate();
+
+
+            undomgr.BeginCommand(3712, "Move Control");
+            ChangeEvent.MoveControlInCourse(eventDB, CourseId(4), CourseControlId(90), CourseControlId(92), CourseControlId(99), LegInsertionLoc.PostJoin);
+            undomgr.EndCommand(3712);
+
+            eventDB.Validate();
+            codes = CodesInOrder(Designator(4));
+            CollectionAssert.AreEqual(expectedAfter, codes);
+
+            undomgr.Undo();
+            eventDB.Validate();
+            codes = CodesInOrder(Designator(4));
+            CollectionAssert.AreEqual(expectedBefore, codes);
+
+        }
+
 
 
 

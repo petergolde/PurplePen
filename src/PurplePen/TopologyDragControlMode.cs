@@ -113,7 +113,7 @@ namespace PurplePen
                 Id<CourseControl> courseControlDest1 = dropAt.courseControlId;
                 Id<CourseControl> courseControlDest2 = dropAt.courseControlId2;
 
-                controller.RearrangeControl(courseControlToMove, courseControlDest1, courseControlDest2, false);
+                controller.RearrangeControl(courseControlToMove, courseControlDest1, courseControlDest2, dropAt.InsertionLoc);
             }
 
             dropTargetHighlight = null;

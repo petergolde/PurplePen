@@ -2803,6 +2803,9 @@ namespace PurplePen
         const float TAILLENGTH = 1.25F;
         static readonly float RADIUS = (float) Math.Sqrt(Math.Pow(TIPOFFSET + HEADHALFWIDTH, 2) + Math.Pow(TAILHALFWIDTH, 2));
 
+        // When two different drop positions on a leg (in fork/loop situations, which one. (0 or 1)
+        LegInsertionLoc legInsertionLoc;
+
         static readonly PointF[] outlineCoordsRight = {
                 new PointF(TIPOFFSET, 0),
                 new PointF(TIPOFFSET + HEADHALFWIDTH, HEADHALFWIDTH),
@@ -2828,10 +2831,16 @@ namespace PurplePen
         public readonly Id<CourseControl> courseControlId2; 
 
         public TopologyDropTargetCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, 
-                                          float scaleRatio, CourseAppearance appearance, PointF location)
+                                          float scaleRatio, CourseAppearance appearance, PointF location, LegInsertionLoc legInsertionLoc)
             : base(controlId, courseControlId1, Id<Special>.None, scaleRatio, appearance, null, 0, RADIUS, location)
         {
             this.courseControlId2 = courseControlId2;
+            this.legInsertionLoc = legInsertionLoc;
+        }
+
+        public LegInsertionLoc InsertionLoc
+        {
+            get { return legInsertionLoc; }
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)

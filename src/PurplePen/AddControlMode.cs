@@ -314,7 +314,7 @@ namespace PurplePen
                 else if (controlKind == ControlPointKind.Finish)
                     courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.MapExchange) {
-                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2);
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, LegInsertionLoc.Normal);
                     ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
                 }
                 else if (exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, courseDesignator, controlId)) {
@@ -326,7 +326,7 @@ namespace PurplePen
                     }
                 }
                 else {
-                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2);
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, LegInsertionLoc.Normal);
                     if (exchangeAtControl)
                         ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
                 }

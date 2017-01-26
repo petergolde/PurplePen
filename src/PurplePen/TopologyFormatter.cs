@@ -215,8 +215,8 @@ namespace PurplePen
 
         private void CreateLegBetweenControls(CourseView.ControlView controlView1, ControlPosition controlPosition1, CourseView.ControlView controlView2, ControlPosition controlPosition2, int splitLegIndex, ForkPosition forkStart)
         {
-            PointF dropTargetPosition;
-            SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart, out dropTargetPosition);
+            List<DropTarget> dropTargets;
+            SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart, out dropTargets);
             CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, path);
             CourseLayer layer;
 
@@ -228,10 +228,13 @@ namespace PurplePen
             courseObj.layer = layer;
             courseLayout.AddCourseObject(courseObj);
 
-            // Add the drop target.
-            courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, dropTargetPosition);
-            courseObj.layer = layer;
-            courseLayout.AddCourseObject(courseObj);
+            // Add the drop targets
+            foreach (DropTarget dropTarget in dropTargets) {
+                courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, 
+                    LocationFromAbstractPosition(dropTarget.abstractX, dropTarget.abstractY), dropTarget.insertionLoc);
+                courseObj.layer = layer;
+                courseLayout.AddCourseObject(courseObj);
+            }
 
             if (forkStart != null && forkStart.variationCode != '\0') {
                 // There is a variation fork.
@@ -240,29 +243,38 @@ namespace PurplePen
             }
         }
 
-        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart, out PointF dropTargetPosition)
+        SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart, out List<DropTarget> dropTargets)
         {
             float xStart = controlPosition1.x;
             float yStart = controlPosition1.y;
             float xEnd = controlPosition2.x;
             float yEnd = controlPosition2.y;
 
+            dropTargets = new List<DropTarget>();
+
             if (forkStart != null) {
                 if (forkStart.loopFallThru) {
-                    dropTargetPosition = LocationFromAbstractPosition(xEnd, yEnd - 0.5F);
+                    dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.Normal));
+                }
+                else if (forkStart.loopStart) {
+                    dropTargets.Add(new DropTarget(forkStart.x, forkStart.y - 0.5F, LegInsertionLoc.Normal));
                 }
                 else {
-                    // above end of fork start.
-                    dropTargetPosition = LocationFromAbstractPosition(forkStart.x, forkStart.y - 0.5F);
+                    dropTargets.Add(new DropTarget(xStart, yStart + 0.5F, LegInsertionLoc.PreSplit));
+                    dropTargets.Add(new DropTarget(forkStart.x, forkStart.y - 0.5F, LegInsertionLoc.Normal));
                 }
             }
             else if (xEnd != xStart) {
                 // Below start control (use when a join is going)
-                dropTargetPosition = LocationFromAbstractPosition(xStart, yStart + 0.5F);
+                dropTargets.Add(new DropTarget(xStart, yStart + 0.5F, LegInsertionLoc.Normal));
+                if (yEnd > yStart) {
+                    // Right before join point.
+                    dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.PostJoin));
+                }
             }
             else {
                 // Above end control (other cases).
-                dropTargetPosition = LocationFromAbstractPosition(xEnd, yEnd - 0.5F);
+                dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.Normal));
             }
 
             bool startHorizontal = false;
@@ -492,6 +504,19 @@ namespace PurplePen
             }
 
             return new SizeF(totalWidth, totalHeight);
+        }
+
+        class DropTarget
+        {
+            public float abstractX, abstractY;
+            public LegInsertionLoc insertionLoc;
+
+            public DropTarget(float abstractX, float abstractY, LegInsertionLoc insertionLoc)
+            {
+                this.abstractX = abstractX;
+                this.abstractY = abstractY;
+                this.insertionLoc = insertionLoc;
+            }
         }
 
     }
