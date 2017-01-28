@@ -2862,9 +2862,6 @@ namespace PurplePen
             PointSymDef symdef = new PointSymDef("Move control target", "781", glyph, false);
             map.AddSymdef(symdef);
 
-            // should not be visible, we only use the highlight part in actual usages.
-            // the map part is very useful for testing, though.
-            map.SetSymdefVisible(symdef, false); 
             return symdef;
         }
 

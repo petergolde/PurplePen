@@ -67,8 +67,9 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.AllVariations, 1, "Gray", 0, 0, 0, 0.4F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 0, "Black", 0, 0, 0, 1F, false);
+            course.SetLayerColor(CourseLayer.InvisibleObjects, 2, "DropTargets", 1F, 1F, 0, 0, false);
             TopologyFormatter formatter = new TopologyFormatter();
-            RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, CourseLayer.AllVariations, CourseLayer.MainCourse);
+            RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, Id<CourseControl>.None, Id<CourseControl>.None, CourseLayer.AllVariations, CourseLayer.MainCourse);
 
             // Render to a map
             Map map = course.RenderToMap();

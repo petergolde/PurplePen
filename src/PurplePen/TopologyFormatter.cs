@@ -58,6 +58,7 @@ namespace PurplePen
         List<CourseView.ControlView> controlViewsSpecificVariation;
         Dictionary<Id<CourseControl>, char> variationMap;
         Id<CourseControl>[] courseControlIdsSpecificVariation;
+        Id<CourseControl> courseControlIdSelection1, courseControlIdSelection2;
         CourseAppearance appearance;
         float scaleRatio;
 
@@ -88,7 +89,8 @@ namespace PurplePen
         }
 
         // Format the given CourseView into a bunch of course objects, and add it to the given course Layout
-        public RectangleF FormatCourseToLayout(SymbolDB symbolDB, CourseView courseViewAllVariations, CourseView specificVariation, CourseLayout courseLayout, CourseLayer layerAllVariations, CourseLayer layerSpecificVariation)
+        public RectangleF FormatCourseToLayout(SymbolDB symbolDB, CourseView courseViewAllVariations, CourseView specificVariation, CourseLayout courseLayout, 
+                                               Id<CourseControl> ccSelection1, Id<CourseControl> ccSelection2, CourseLayer layerAllVariations, CourseLayer layerSpecificVariation)
         {
             this.eventDB = courseViewAllVariations.EventDB;
             this.symbolDB = symbolDB;
@@ -99,6 +101,8 @@ namespace PurplePen
             this.controlViewsSpecificVariation = specificVariation.ControlViews;
             this.controlPositions = new ControlPosition[controlViewsAllVariationsAndParts.Count];
             this.courseControlIdsSpecificVariation = QueryEvent.EnumCourseControlIds(eventDB, specificVariation.CourseDesignator).ToArray();
+            this.courseControlIdSelection1 = ccSelection1;
+            this.courseControlIdSelection2 = ccSelection2;
             this.variationMap = QueryEvent.GetVariantCodeMapping(eventDB, courseViewAllVariations.CourseDesignator);
 
             SizeF totalAbstractSize = AssignControlPositions(0, controlViewsAllVariationsAndParts.Count, 0, 0);
@@ -232,7 +236,12 @@ namespace PurplePen
             foreach (DropTarget dropTarget in dropTargets) {
                 courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, 
                     LocationFromAbstractPosition(dropTarget.abstractX, dropTarget.abstractY), dropTarget.insertionLoc);
-                courseObj.layer = layer;
+
+                // Along the selected leg, show the drop targets in light gray. Along other legs, drop targets are invisible.
+                if (controlView1.courseControlIds[splitLegIndex] == courseControlIdSelection1 && controlView2.courseControlIds.Contains(courseControlIdSelection2))
+                    courseObj.layer = CourseLayer.AllVariations;
+                else
+                    courseObj.layer = CourseLayer.InvisibleObjects;
                 courseLayout.AddCourseObject(courseObj);
             }
 

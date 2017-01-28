@@ -408,7 +408,7 @@ namespace PurplePen.Tests
 
             selectionMgr.SelectCourseView(Designator(4));
             selectionMgr.SelectDescriptionLine(5);
-            selectionMgr.SelectLeg(CourseControlId(13), CourseControlId(14));
+            selectionMgr.SelectLeg(CourseControlId(13), CourseControlId(14), LegInsertionLoc.Normal);
 
             CheckSelectedLines(-1, -1);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
@@ -430,7 +430,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(1));
-            selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3));
+            selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3), LegInsertionLoc.Normal);
 
             CheckSelectedLines(4, 4);
             SelectionMgr.SelectionInfo selectionInfo = selectionMgr.Selection;
@@ -440,7 +440,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(3, selectionInfo.SelectedCourseControl2.id);
             Assert.AreEqual(0, selectionInfo.SelectedSpecial.id);
 
-            selectionMgr.SelectLeg(CourseControlId(1), CourseControlId(2));
+            selectionMgr.SelectLeg(CourseControlId(1), CourseControlId(2), LegInsertionLoc.Normal);
             CheckSelectedLines(-1, -1);
         }
 
@@ -833,7 +833,7 @@ ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(7.56,19.
             selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 1));
             Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.IsNone);
 
-            selectionMgr.SelectLeg(CourseControlId(611), CourseControlId(612));
+            selectionMgr.SelectLeg(CourseControlId(611), CourseControlId(612), LegInsertionLoc.Normal);
             Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl.id == 611);
             Assert.IsTrue(selectionMgr.Selection.SelectedCourseControl2.id == 612);
             selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, 0));

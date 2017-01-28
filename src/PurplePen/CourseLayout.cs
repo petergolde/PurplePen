@@ -50,6 +50,7 @@ namespace PurplePen
         Descriptions,                // The descriptions in black
         AllControls,                  // The All Controls layer
         AllVariations,                // The All Variations layer in topology when viewing one variation.
+        InvisibleObjects,             // For invisible objects (e.g., the TopologyDropTargets)
         Count
     }
 

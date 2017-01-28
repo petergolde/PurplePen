@@ -163,7 +163,9 @@ namespace PurplePen
                         {
                             Id<CourseControl> courseControl1, courseControl2;
                             CourseDesignator courseDesignator;
-                            GetControlInsertionPoint(courseObj.location, out courseDesignator, out courseControl1, out courseControl2);
+                            LegInsertionLoc legInsertionLoc;
+
+                            GetControlInsertionPoint(courseObj.location, out courseDesignator, out courseControl1, out courseControl2, out legInsertionLoc);
                             if (eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score && 
                                 (exchangeAtControl || 
                                  (courseObj.courseControlId != courseControl1 && courseObj.courseControlId != courseControl2))) {
@@ -211,12 +213,15 @@ namespace PurplePen
         }
 
         // Get the controls the define where to insert the new control point.
-        private void GetControlInsertionPoint(PointF pt, out CourseDesignator courseDesignator, out Id<CourseControl> courseControlId1, out Id<CourseControl> courseControlId2)
+        private void GetControlInsertionPoint(PointF pt, out CourseDesignator courseDesignator, 
+                                              out Id<CourseControl> courseControlId1, out Id<CourseControl> courseControlId2, 
+                                              out LegInsertionLoc legInsertionLoc)
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
             courseDesignator = selection.ActiveCourseDesignator;
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
+            legInsertionLoc = LegInsertionLoc.Normal;
 
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control && 
                 (courseDesignator.IsAllControls || QueryEvent.IsCourseControlInPart(eventDB, courseDesignator, selection.SelectedCourseControl)))
@@ -224,6 +229,7 @@ namespace PurplePen
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Leg) {
                 courseControlId1 = selection.SelectedCourseControl;
                 courseControlId2 = selection.SelectedCourseControl2;
+                legInsertionLoc = selection.LegInsertionLoc;
             }
             else if (courseDesignator.IsNotAllControls) {
                 // Not all control, and neight control or leg is selected. Use the closest leg.
@@ -305,7 +311,9 @@ namespace PurplePen
                 // Get where to add the control.
                 CourseDesignator courseDesignator;
                 Id<CourseControl> courseControl1, courseControl2;
-                GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2);
+                LegInsertionLoc legInsertionLoc;
+
+                GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2, out legInsertionLoc);
 
                 // And add it.
                 Id<CourseControl> courseControlId;
@@ -314,7 +322,7 @@ namespace PurplePen
                 else if (controlKind == ControlPointKind.Finish)
                     courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.MapExchange) {
-                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, LegInsertionLoc.Normal);
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, legInsertionLoc);
                     ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
                 }
                 else if (exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, courseDesignator, controlId)) {
@@ -326,7 +334,7 @@ namespace PurplePen
                     }
                 }
                 else {
-                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, LegInsertionLoc.Normal);
+                    courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, legInsertionLoc);
                     if (exchangeAtControl)
                         ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
                 }
@@ -353,7 +361,9 @@ namespace PurplePen
             // Get where the control is being inserted.
             CourseDesignator courseDesignator;
             Id<CourseControl> courseControl1, courseControl2;
-            GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2);
+            LegInsertionLoc legInsertionLoc;
+
+            GetControlInsertionPoint(highlightLocation, out courseDesignator, out courseControl1, out courseControl2, out legInsertionLoc);
 
             // Note, we cannot changed this existing highlight because it is needed for erasing.
             additionalHighlights = null;

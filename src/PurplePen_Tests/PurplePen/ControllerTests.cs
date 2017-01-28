@@ -1556,7 +1556,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             controller.SelectDescriptionLine(1);
             Assert.AreEqual(CommandStatus.Disabled, controller.CanSetLegFlagging(out flagging));
 
-            controller.GetSelectionMgr().SelectLeg(CourseControlId(2), CourseControlId(3));
+            controller.GetSelectionMgr().SelectLeg(CourseControlId(2), CourseControlId(3), LegInsertionLoc.Normal);
             Assert.AreEqual(CommandStatus.Enabled, controller.CanSetLegFlagging(out flagging));
             Assert.AreEqual(FlaggingKind.All, flagging);
         }
@@ -1576,7 +1576,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             controller.SelectDescriptionLine(1);
             Assert.AreEqual(CommandStatus.Disabled, controller.CanSetLegFlagging(out flagging));
 
-            controller.GetSelectionMgr().SelectLeg(CourseControlId(2), CourseControlId(3));
+            controller.GetSelectionMgr().SelectLeg(CourseControlId(2), CourseControlId(3), LegInsertionLoc.Normal);
             controller.SetLegFlagging(FlaggingKind.Begin);
 
             Assert.AreEqual(FlaggingKind.Begin, QueryEvent.GetLegFlagging(eventDB, ControlId(2), ControlId(3)));

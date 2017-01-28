@@ -57,6 +57,7 @@ namespace PurplePen
         SelectionKind selectionKind;    // What is selected
         Id<CourseControl> selectedCourseControl;      // ID of the selected course control, if any.
         Id<CourseControl> selectedCourseControl2;      // If a leg is selected, the ID of the course control after the leg.
+        LegInsertionLoc legInsertionLoc;               // If a leg is selected, which insertion location to use.
         Id<ControlPoint> selectedControl;            // ID of the selected control, if any.
         Id<Special> selectedSpecial;            // ID of the selected special, if any.
         Symbol selectedKeySymbol;             // Symbol of the selected symbol in the key (SelectionKind.Key)
@@ -169,6 +170,7 @@ namespace PurplePen
             public Id<ControlPoint> SelectedControl;
             public Id<CourseControl> SelectedCourseControl;
             public Id<CourseControl> SelectedCourseControl2;
+            public LegInsertionLoc LegInsertionLoc;
             public Id<Special> SelectedSpecial;
             public Symbol SelectedKeySymbol;
             public DescriptionLine.TextLineKind SelectedTextLineKind;
@@ -187,6 +189,7 @@ namespace PurplePen
                 info.SelectedControl = selectedControl;
                 info.SelectedCourseControl = selectedCourseControl;
                 info.SelectedCourseControl2 = selectedCourseControl2;
+                info.LegInsertionLoc = legInsertionLoc;
                 info.SelectedSpecial = selectedSpecial;
                 info.SelectedKeySymbol = selectedKeySymbol;
                 info.SelectedTextLineKind = selectedTextLineKind;
@@ -250,21 +253,21 @@ namespace PurplePen
             else {
                 DescriptionLineKind kind = activeDescription[line].kind;
                 if (kind == DescriptionLineKind.Title)
-                    SetSelection(SelectionKind.Title, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.Title, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.SecondaryTitle)
-                    SetSelection(SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Header2Box || kind == DescriptionLineKind.Header3Box)
-                    SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Key)
-                    SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Text)
-                    SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
+                    SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
                 else if (kind == DescriptionLineKind.Directive && ((Symbol)(activeDescription[line].boxes[0])).Id == "13.5control")
-                    SetSelection(SelectionKind.MapExchangeAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.MapExchangeAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (activeDescription[line].isLeg)
-                    SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else
-                    SetSelection(SelectionKind.Control, activeDescription[line].courseControlId, Id<CourseControl>.None, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                    SetSelection(SelectionKind.Control, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
             }
         }
 
@@ -310,53 +313,53 @@ namespace PurplePen
         // Don't change current tab, but clear the selection.
         public void ClearSelection()
         {
-            SetSelection(SelectionKind.None, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.None, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select the title in the current course view.
         public void SelectTitle()
         {
-            SetSelection(SelectionKind.Title, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Title, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select the secondary title in the current course view.
         public void SelectSecondaryTitle()
         {
-            SetSelection(SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.SecondaryTitle, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select the header in the current course view.
         public void SelectHeader()
         {
-            SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Header, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select a course control in the current course view.
         public void SelectCourseControl(Id<CourseControl> courseControlId)
         {
-            SetSelection(SelectionKind.Control, courseControlId, Id<CourseControl>.None, eventDB.GetCourseControl(courseControlId).control, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Control, courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, eventDB.GetCourseControl(courseControlId).control, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select a control in the current course view.
         public void SelectControl(Id<ControlPoint> controlId)
         {
             eventDB.CheckControlId(controlId);
-            SetSelection(SelectionKind.Control, Id<CourseControl>.None, Id<CourseControl>.None, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Control, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select a leg in the current course view.
-        public void SelectLeg(Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2)
+        public void SelectLeg(Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, LegInsertionLoc legInsertionLoc)
         {
             eventDB.CheckCourseControlId(courseControlId);
             eventDB.CheckCourseControlId(courseControlId2);
-            SetSelection(SelectionKind.Leg, courseControlId, courseControlId2, eventDB.GetCourseControl(courseControlId).control, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Leg, courseControlId, courseControlId2, legInsertionLoc, eventDB.GetCourseControl(courseControlId).control, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select a special in the current course view
         public void SelectSpecial(Id<Special> specialId)
         {
             eventDB.CheckSpecialId(specialId);
-            SetSelection(SelectionKind.Special, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, specialId, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Special, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, specialId, null, DescriptionLine.TextLineKind.None);
         }
 
         // Select a course object in the current displayed course.
@@ -365,38 +368,42 @@ namespace PurplePen
             if (courseObject is ControlCourseObj || courseObject is StartCourseObj || courseObject is FinishCourseObj ||
                 (courseObject is CrossingCourseObj && courseObject.specialId.IsNone) || courseObject is CodeCourseObj || courseObject is ControlNumberCourseObj)
             {
-                SetSelection(SelectionKind.Control, courseObject.courseControlId, Id<CourseControl>.None, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                SetSelection(SelectionKind.Control, courseObject.courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
             }
             else if (courseObject.specialId.IsNotNone) {
-                SetSelection(SelectionKind.Special, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, courseObject.specialId, null, DescriptionLine.TextLineKind.None);
+                SetSelection(SelectionKind.Special, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, courseObject.specialId, null, DescriptionLine.TextLineKind.None);
             }
             else if (courseObject is LegCourseObj || courseObject is FlaggedLegCourseObj || courseObject is TopologyLegCourseObj) {
-                SetSelection(SelectionKind.Leg, courseObject.courseControlId, ((LineCourseObj) courseObject).courseControlId2, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                SetSelection(SelectionKind.Leg, courseObject.courseControlId, ((LineCourseObj) courseObject).courseControlId2, LegInsertionLoc.Normal, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            }
+            else if (courseObject is TopologyDropTargetCourseObj) {
+                SetSelection(SelectionKind.Leg, courseObject.courseControlId, ((TopologyDropTargetCourseObj)courseObject).courseControlId2, ((TopologyDropTargetCourseObj)courseObject).InsertionLoc, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
             }
         }
 
         // Select a line in the key
         public void SelectKeyLine(Symbol keySymbol)
         {
-            SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, Id<ControlPoint>.None, Id<Special>.None, keySymbol, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, keySymbol, DescriptionLine.TextLineKind.None);
         }
 
         // Select a text line
         public void SelectTextLine(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, DescriptionLine.TextLineKind textLineKind)
         {
-            SetSelection(SelectionKind.TextLine, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, textLineKind);
+            SetSelection(SelectionKind.TextLine, courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, controlId, Id<Special>.None, null, textLineKind);
         }
 
         // Set a map exchange at control line
         public void SelectMapExchangeAtControl(Id<ControlPoint> controlId, Id<CourseControl> courseControlId)
         {
-            SetSelection(SelectionKind.MapExchangeAtControl, courseControlId, Id<CourseControl>.None, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.MapExchangeAtControl, courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
 
         // Sets the current selection. No feedback is provided as to whether the selection
         // is valid; if invalid, the selection will simply be cleared when it is retrieved.
-        private void SetSelection(SelectionKind selectionKind, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<ControlPoint> controlId, Id<Special> specialId, Symbol keySymbol, DescriptionLine.TextLineKind textLineKind)
+        private void SetSelection(SelectionKind selectionKind, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, LegInsertionLoc legInsertionLoc, 
+                                  Id<ControlPoint> controlId, Id<Special> specialId, Symbol keySymbol, DescriptionLine.TextLineKind textLineKind)
         {
             if (this.selectionKind != selectionKind || this.selectedCourseControl != courseControlId ||
                 this.selectedCourseControl2 != courseControlId2 || this.selectedControl != controlId || this.selectedSpecial != specialId) 
@@ -408,6 +415,7 @@ namespace PurplePen
             this.selectionKind = selectionKind;
             this.selectedCourseControl = courseControlId;
             this.selectedCourseControl2 = courseControlId2;
+            this.legInsertionLoc = legInsertionLoc;
             this.selectedControl = controlId;
             this.selectedSpecial = specialId;
             this.selectedKeySymbol = keySymbol;
@@ -621,8 +629,9 @@ namespace PurplePen
                 activeTopologyCourseLayout = new CourseLayout();
                 activeTopologyCourseLayout.SetLayerColor(CourseLayer.AllVariations, 1, NormalCourseAppearance.blackColorName, 0, 0, 0, 0.55F, false);
                 activeTopologyCourseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
+                activeTopologyCourseLayout.SetLayerColor(CourseLayer.InvisibleObjects, 2, "DropTargets", 0, 0, 0, 0, false);
                 TopologyFormatter formatter = new TopologyFormatter();
-                formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeCourseView, activeTopologyCourseLayout, CourseLayer.AllVariations, CourseLayer.MainCourse);
+                formatter.FormatCourseToLayout(symbolDB, topologyCourseView, activeCourseView, activeTopologyCourseLayout, selectedCourseControl, selectedCourseControl2, CourseLayer.AllVariations, CourseLayer.MainCourse);
             }
         }
 
@@ -793,6 +802,14 @@ namespace PurplePen
                             courseobj is LineCourseObj &&
                             courseobj.courseControlId == selectedCourseControl &&
                             ((LineCourseObj)courseobj).courseControlId2 == selectedCourseControl2) {
+                        list.Add(courseobj);
+                    }
+                    else if (selectionKind == SelectionKind.Leg &&
+                            courseobj is TopologyDropTargetCourseObj &&
+                            courseobj.courseControlId == selectedCourseControl &&
+                            ((TopologyDropTargetCourseObj)courseobj).courseControlId2 == selectedCourseControl2 &&
+                            ((TopologyDropTargetCourseObj)courseobj).InsertionLoc == legInsertionLoc) 
+                    {
                         list.Add(courseobj);
                     }
                 }

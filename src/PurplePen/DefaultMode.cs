@@ -321,7 +321,10 @@ namespace PurplePen
 
         public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
-            CourseObj clickedObject = HitTest(pane, location, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
+            // Drop targets are the only think in the All Variations layer we can click on.
+            CourseObj clickedObject = HitTest(pane, location, pixelSize, 
+                co => co.layer != CourseLayer.AllVariations || co is TopologyDropTargetCourseObj);
+
             if (clickedObject != null) {
                 selectionMgr.SelectCourseObject(clickedObject);
             }
@@ -401,6 +404,8 @@ namespace PurplePen
             clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, filter);
             if (clickedObject == null)
                 clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, filter);
+            if (clickedObject == null && pane == Pane.Topology)
+                clickedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.AllVariations, filter);
 
             return clickedObject;
         }
@@ -417,10 +422,10 @@ namespace PurplePen
                 activeCourse = controller.GetTopologyLayout();
             }
 
-            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, null);
+            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, co => !(co is TopologyDropTargetCourseObj));
 
             if (touchedObject == null)
-                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, null);
+                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, co => !(co is TopologyDropTargetCourseObj));
 
             if (touchedObject != null) {
                 TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);

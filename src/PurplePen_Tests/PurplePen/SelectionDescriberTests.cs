@@ -768,7 +768,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(6));
-            selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607));
+            selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607), LegInsertionLoc.Normal);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -851,7 +851,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(6));
-            selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607));
+            selectionMgr.SelectLeg(CourseControlId(606), CourseControlId(607), LegInsertionLoc.Normal);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -952,7 +952,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(1));
-            selectionMgr.SelectLeg(CourseControlId(4), CourseControlId(5));
+            selectionMgr.SelectLeg(CourseControlId(4), CourseControlId(5), LegInsertionLoc.Normal);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -998,7 +998,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(1));
-            selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3));
+            selectionMgr.SelectLeg(CourseControlId(2), CourseControlId(3), LegInsertionLoc.Normal);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
@@ -1043,7 +1043,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             selectionMgr.SelectCourseView(Designator(1));
-            selectionMgr.SelectLeg(CourseControlId(5), CourseControlId(6));
+            selectionMgr.SelectLeg(CourseControlId(5), CourseControlId(6), LegInsertionLoc.Normal);
             TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
             index = 0;
 
