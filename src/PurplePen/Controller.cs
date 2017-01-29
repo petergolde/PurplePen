@@ -1749,7 +1749,10 @@ namespace PurplePen
                     }
                 }
                 else {
-                    ChangeEvent.ChangePrintArea(eventDB, selectionMgr.Selection.ActiveCourseDesignator, (printAreaKind == PrintAreaKind.OneCourse), printArea);
+                    CourseDesignator designator = selectionMgr.Selection.ActiveCourseDesignator;
+                    if (printAreaKind == PrintAreaKind.OneCourse)
+                        designator = designator.WithAllParts();
+                    ChangeEvent.ChangePrintArea(eventDB, designator, (printAreaKind == PrintAreaKind.OneCourse), printArea);
                 }
                 undoMgr.EndCommand(1127);
 
