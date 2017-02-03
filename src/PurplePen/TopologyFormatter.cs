@@ -252,6 +252,7 @@ namespace PurplePen
             }
         }
 
+        // Determine the path between controls, and the drop targets.
         SymPath PathBetweenControls(ControlPosition controlPosition1, ControlPosition controlPosition2, ForkPosition forkStart, out List<DropTarget> dropTargets)
         {
             float xStart = controlPosition1.x;
@@ -271,6 +272,10 @@ namespace PurplePen
                 else {
                     dropTargets.Add(new DropTarget(xStart, yStart + 0.5F, LegInsertionLoc.PreSplit));
                     dropTargets.Add(new DropTarget(forkStart.x, forkStart.y - 0.5F, LegInsertionLoc.Normal));
+                    if (forkStart.x != xEnd) {
+                        // Empty fork.
+                        dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.PostJoin));
+                    }
                 }
             }
             else if (xEnd != xStart) {
@@ -280,6 +285,11 @@ namespace PurplePen
                     // Right before join point.
                     dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.PostJoin));
                 }
+            }
+            else if (yEnd > yStart + 1.25) {
+                // Straight down, but must have join at end.
+                dropTargets.Add(new DropTarget(xStart, yStart + 0.5F, LegInsertionLoc.Normal));
+                dropTargets.Add(new DropTarget(xEnd, yEnd - 0.5F, LegInsertionLoc.PostJoin));
             }
             else {
                 // Above end control (other cases).

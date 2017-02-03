@@ -928,7 +928,7 @@ namespace PurplePen
                 // The other line intersections this one. Only the later leg is split.
                 if (QueryEvent.DoesCourseControlPrecede(eventDB, courseDesignator, otherObj.courseControlId, legObj.courseControlId)) {
                     foreach (PointF intersectionPoint in intersectionPoints) {
-                        float gapRadius = appearance.autoLegGapSize / 2;
+                        float gapRadius = legObj.scaleRatio * (appearance.autoLegGapSize / 2);
                         CutLegAtPoint(legObj, intersectionPoint, gapRadius);
                     }
                 }

@@ -55,7 +55,8 @@ namespace PurplePen
 
         private TopologyDropTargetCourseObj FindNearbyDropTarget(PointF location)
         {
-            const float MAXDISTANCE = 12.5F;
+            const float MAXDISTANCE = 9F;
+            const float MINDRAGDIST = 5F;
 
             CourseLayout layout = selectionMgr.TopologyLayout;
             TopologyDropTargetCourseObj nearest = null;
@@ -66,7 +67,10 @@ namespace PurplePen
             // course control we are dragging.
             foreach (CourseObj obj in layout) {
                 TopologyDropTargetCourseObj dropTarget = obj as TopologyDropTargetCourseObj;
-                if (dropTarget != null && dropTarget.courseControlId != courseControlDrag && dropTarget.courseControlId2 != courseControlDrag) {
+                if (dropTarget != null && 
+                    ((dropTarget.courseControlId != courseControlDrag && dropTarget.courseControlId2 != courseControlDrag) ||
+                     courseObjectStart.DistanceFromPoint(dropTarget.location) > MINDRAGDIST)) 
+                {
                     float distance = Geometry.DistanceF(location, dropTarget.location);
                     if (distance < nearestDistance && distance < MAXDISTANCE) {
                         nearestDistance = distance;
