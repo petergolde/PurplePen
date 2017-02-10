@@ -219,17 +219,15 @@ namespace PurplePen
                     }
                     else {
                         using (XForm xForm = pdfImporter.GetXForm(0)) {
-                            RectangleF pageArea;
-                            if (page.landscape)
-                                pageArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Height), Geometry.HundredthsInchesFromMm(mapBounds.Width));
-                            else
-                                pageArea = new RectangleF(0, 0, Geometry.HundredthsInchesFromMm(mapBounds.Width), Geometry.HundredthsInchesFromMm(mapBounds.Height));
-
                             Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
-                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, pageArea);
-                            Matrix mapToPortraitPage = Geometry.CreateInvertedRectangleTransform(mapBounds, new RectangleF(0, 0, page.paperSize.Width / 100F, page.paperSize.Height / 100F));
-                            RectangleF sourcePartialRectInInches = Geometry.TransformRectangle(mapToPortraitPage, printedPortionInMapCoords);
-                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, paperSize, sourcePartialRectInInches);
+                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, new RectangleF(0, 0, paperSize.Width * 100F, paperSize.Height * 100F));
+                            RectangleF printedPortionInInches = new RectangleF(
+                                Geometry.InchesFromMm(printedPortionInMapCoords.Left),
+                                Geometry.InchesFromMm(mapBounds.Height - printedPortionInMapCoords.Bottom),
+                                Geometry.InchesFromMm(printedPortionInMapCoords.Width),
+                                Geometry.InchesFromMm(printedPortionInMapCoords.Height));
+
+                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, paperSize, printedPortionInInches);
                         }
                     }
 
