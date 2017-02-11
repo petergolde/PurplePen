@@ -584,6 +584,28 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ScalingTest()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\PDF rescale test.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("pdfcourse\\Scaled.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\Unscaled.pdf")},
+                new string[] { TestUtil.GetTestFile("pdfcourse\\Scaled.png"),
+                               TestUtil.GetTestFile("pdfcourse\\Unscaled.png")});
+        }
+
+        [TestMethod]
         public void PdfBadIStreamFallback()
         {
             CoursePdfSettings settings = new CoursePdfSettings();

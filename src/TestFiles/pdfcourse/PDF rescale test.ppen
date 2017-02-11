@@ -1,0 +1,42 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>PDF rescale test</title>
+    <map kind="PDF" scale="15000">CleElumRidge.pdf</map>
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="true" left="73.26744" top="354.1528" right="505.067444" bottom="74.7528" page-width="1100" page-height="1700" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="143.17981" y="307.08667" />
+  </control>
+  <control id="2" kind="finish">
+    <location x="300.779236" y="208.574814" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Scaled</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="true" left="104.720139" top="319.20932" right="320.620148" bottom="179.509323" page-width="1100" page-height="1700" page-margins="0" page-landscape="true" />
+    <options print-scale="7500" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Unscaled</name>
+    <labels label-kind="sequence" />
+    <first course-control="3" />
+    <print-area automatic="false" restrict-to-page-size="true" left="73.26744" top="354.1528" right="505.067444" bottom="74.7528" page-width="1100" page-height="1700" page-margins="0" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2" />
+  <course-control id="3" control="1">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="2" />
+</course-scribe-event>
