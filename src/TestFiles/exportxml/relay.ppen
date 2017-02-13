@@ -106,7 +106,6 @@
     <first course-control="31" />
     <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="172.114868" right="330.9876" bottom="-94.585144" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
-    <variation-naming kind="letters" include-course-name="true" />
   </course>
   <course id="4" kind="normal" order="5">
     <name>DoubleBranch</name>
@@ -114,7 +113,7 @@
     <first course-control="48" />
     <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="133.057877" right="330.9876" bottom="-133.642136" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
-    <variation-naming kind="letters" include-course-name="true" />
+    <relay teams="4" legs="6" />
   </course>
   <course id="5" kind="normal" order="6">
     <name>ThreeLoop</name>
@@ -122,15 +121,14 @@
     <first course-control="63" />
     <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="149.192444" right="330.9876" bottom="-117.507568" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
-    <variation-naming kind="letters" include-course-name="true" />
+    <relay teams="8" legs="4" />
   </course>
   <course id="8" kind="normal" order="7">
     <name>Simple</name>
     <labels label-kind="sequence" />
     <first course-control="114" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="150.082764" right="330.9876" bottom="-116.617249" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="151.606171" right="330.9876" bottom="-115.093842" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
-    <variation-naming kind="letters" include-course-name="true" />
   </course>
   <course id="7" kind="normal" order="4">
     <name>NestedBranch</name>
@@ -138,7 +136,6 @@
     <first course-control="97" />
     <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="132.556168" right="330.9876" bottom="-134.143845" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" description-kind="symbols" />
-    <variation-naming kind="letters" include-course-name="true" />
     <relay teams="60" legs="4" />
   </course>
   <course-control id="31" control="1">

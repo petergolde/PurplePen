@@ -215,7 +215,7 @@ namespace PurplePen.Tests
 
             var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6);
             var xmlExporter = new ExportRelayVariations3();
-            xmlExporter.WriteXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
+            xmlExporter.WriteFullXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
 
             TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
 

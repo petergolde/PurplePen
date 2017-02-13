@@ -956,7 +956,7 @@ namespace PurplePen
                     }
                     else if (exportFileType == TeamVariationsForm.ExportFileType.Xml) {
                         ExportRelayVariations3 exporter = new ExportRelayVariations3();
-                        exporter.WriteXml(exportFileName, variationReportData.RelayVariations, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
+                        exporter.WriteFullXml(exportFileName, variationReportData.RelayVariations, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
                     }
 
                 },

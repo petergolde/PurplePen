@@ -83,6 +83,9 @@ namespace PurplePen
             // Write the course information.
             WriteCourses();
 
+            // Write team assignments for relay courses.
+            WriteTeamAssignments();
+
             WriteEnd();
 
             // And done.
@@ -137,7 +140,18 @@ namespace PurplePen
             }
         }
 
-
+        void WriteTeamAssignments()
+        {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                if (QueryEvent.HasVariations(eventDB, courseId)) {
+                    Course course = eventDB.GetCourse(courseId);
+                    if (course.relayTeams > 0) {
+                        RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs);
+                        WriteRelayVariations(courseId, relayVariations);
+                    }
+                }
+            }
+        }
 
         bool WriteCourse(Id<Course> courseId, int courseNumber)
         {
@@ -219,6 +233,9 @@ namespace PurplePen
         protected abstract void WriteCourseEnd();
 
         protected abstract void WriteCourseGroupEnd();
+
+        protected abstract void WriteRelayVariations(Id<Course> courseId, RelayVariations relayVariations);
+
 
         protected abstract void WriteEnd();
     }
@@ -392,6 +409,12 @@ namespace PurplePen
             }
 
             xmlWriter.WriteEndElement();  // "CourseControl"
+        }
+
+        protected override void WriteRelayVariations(Id<Course> courseId, RelayVariations relayVariations)
+        {
+            ExportRelayVariations3 exportVariations = new ExportRelayVariations3();
+            exportVariations.WriteTeamsPart(xmlWriter, relayVariations, eventDB, courseId);
         }
 
         protected override void WriteCourseEnd()
@@ -609,6 +632,11 @@ namespace PurplePen
             }
         }
 
+        protected override void WriteRelayVariations(Id<Course> courseId, RelayVariations relayVariations)
+        {
+            // Version 2 does not have ability to write relay variations. Do nothing.
+        }
+
         protected override void WriteCourseEnd()
         {
             xmlWriter.WriteEndElement();     // "CourseVariation"
@@ -646,7 +674,7 @@ namespace PurplePen
         private Id<Course> courseId;
         private string courseName;
 
-        public void WriteXml(string filename, RelayVariations relayVariations, EventDB eventDB, Id<Course> courseId)
+        public void WriteFullXml(string filename, RelayVariations relayVariations, EventDB eventDB, Id<Course> courseId)
         {
             this.relayVariations = relayVariations;
             this.eventDB = eventDB;
@@ -662,9 +690,7 @@ namespace PurplePen
 
             WriteStart();
 
-            for (int teamNumber = 1; teamNumber < relayVariations.NumberOfTeams; ++teamNumber) {
-                WriteTeam(teamNumber);
-            }
+            WriteAllTeams();
 
             WriteEnd();
 
@@ -673,6 +699,19 @@ namespace PurplePen
             eventDB = null;
             xmlWriter = null;
         }
+
+        public void WriteTeamsPart(XmlWriter xmlWriter, RelayVariations relayVariations, EventDB eventDB, Id<Course> courseId)
+        {
+            this.xmlWriter = xmlWriter;
+            this.relayVariations = relayVariations;
+            this.eventDB = eventDB;
+            this.courseId = courseId;
+            this.modificationDate = DateTimeOffset.Now;
+            this.courseName = eventDB.GetCourse(courseId).name;
+
+            WriteAllTeams();
+        }
+
 
         private void WriteStart()
         {
@@ -699,6 +738,13 @@ namespace PurplePen
             xmlWriter.WriteStartElement("Event");
             xmlWriter.WriteElementString("Name", eventDB.GetEvent().title);
             xmlWriter.WriteEndElement();
+        }
+
+        private void WriteAllTeams()
+        {
+            for (int teamNumber = 1; teamNumber < relayVariations.NumberOfTeams; ++teamNumber) {
+                WriteTeam(teamNumber);
+            }
         }
 
         private void WriteTeam(int teamNumber)
