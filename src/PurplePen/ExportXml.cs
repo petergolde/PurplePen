@@ -704,6 +704,7 @@ namespace PurplePen
         private void WriteTeam(int teamNumber)
         {
             xmlWriter.WriteStartElement("TeamCourseAssignment");
+            xmlWriter.WriteElementString("BibNumber", XmlConvert.ToString(teamNumber));
             xmlWriter.WriteElementString("TeamName", XmlConvert.ToString(teamNumber));
 
             for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
@@ -717,23 +718,13 @@ namespace PurplePen
         {
             xmlWriter.WriteStartElement("TeamMemberCourseAssignment");
 
-            int bibNumber = GetBibNumber(teamNumber, legNumber);
             string variationString = relayVariations.GetVariation(teamNumber, legNumber).CodeString;
 
-            xmlWriter.WriteElementString("BibNumber", XmlConvert.ToString(bibNumber));
             xmlWriter.WriteElementString("Leg", XmlConvert.ToString(legNumber));
             xmlWriter.WriteElementString("CourseName", variationString);
             xmlWriter.WriteElementString("CourseFamily", courseName);
 
             xmlWriter.WriteEndElement(); // </TeamMemberCourseAssignment>
-        }
-
-        private int GetBibNumber(int teamNumber, int legNumber)
-        {
-            if (relayVariations.NumberOfLegs >= 10)
-                return teamNumber * 100 + legNumber;
-            else
-                return teamNumber * 10 + legNumber;
         }
     }
 
