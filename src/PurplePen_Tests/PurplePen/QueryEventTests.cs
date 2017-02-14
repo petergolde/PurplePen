@@ -877,41 +877,52 @@ namespace PurplePen.Tests
 
             Id<CourseControl> courseControlId1, courseControlId2;
             CourseDesignator courseDesignator = Designator(6);
+            LegInsertionLoc legInsertionLoc;
 
             // Case 1: no course control or leg specified. Should go right before finish.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(212, courseControlId1.id);
             Assert.AreEqual(213, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 2: selected control is start.
             courseControlId1 = CourseControlId(201);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(201, courseControlId1.id);
             Assert.AreEqual(202, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 3: selected control is finish.
             courseControlId1 = CourseControlId(213);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(212, courseControlId1.id);
             Assert.AreEqual(213, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 4: selected control is regular control
             courseControlId1 = CourseControlId(206);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(206, courseControlId1.id);
             Assert.AreEqual(207, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 5: selected leg
             courseControlId1 = CourseControlId(204);
             courseControlId2 = CourseControlId(205);
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(204, courseControlId1.id);
             Assert.AreEqual(205, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
         }
 
         [TestMethod]
@@ -922,49 +933,60 @@ namespace PurplePen.Tests
 
             Id<CourseControl> courseControlId1, courseControlId2;
             CourseDesignator courseDesignator = Designator(7);
+            LegInsertionLoc legInsertionLoc;
 
             // Case 1: no course control or leg specified. Should go at end.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(216, courseControlId1.id);
             Assert.IsTrue(courseControlId2.IsNone);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 2: selected control is last.
             courseControlId1 = CourseControlId(216);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(216, courseControlId1.id);
             Assert.IsTrue(courseControlId2.IsNone);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 3: selected control is start.
             courseControlId1 = CourseControlId(214);
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(214, courseControlId1.id);
             Assert.AreEqual(216, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
 
             // Case 5: selected leg
             courseControlId1 = CourseControlId(214);
             courseControlId2 = CourseControlId(216);
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.AreEqual(214, courseControlId1.id);
             Assert.AreEqual(216, courseControlId2.id);
+            Assert.AreEqual(LegInsertionLoc.Normal, legInsertionLoc);
         }
 
         [TestMethod]
         public void FindControlInsertionPoint3()
         {
-            // Using Yellow -- an empty course
+            // Usi2ng Yellow -- an empty course
             Setup("queryevent\\sampleevent11.ppen");
 
             Id<CourseControl> courseControlId1, courseControlId2;
             CourseDesignator courseDesignator = Designator(2);
+            LegInsertionLoc legInsertionLoc;
 
             // Case 1: no course control or leg specified. Should go as only control.
             courseControlId1 = Id<CourseControl>.None;
             courseControlId2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+            legInsertionLoc = LegInsertionLoc.Normal;
+            QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
             Assert.IsTrue(courseControlId1.IsNone);
             Assert.IsTrue(courseControlId2.IsNone);
         }

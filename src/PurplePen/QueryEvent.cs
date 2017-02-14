@@ -846,7 +846,9 @@ namespace PurplePen
         //     If inserting as last course control -- courseControl1 is the current last control and courseControl2 is None  (only occurs when there is no finish)
         //     If inserting as first course control -- courseControl2 is None and courseControl2 is current first control (only occurs when there is no start)
         //     If inserting as only course control -- both are none (only occurs if course is currently empty)
-        public static void FindControlInsertionPoint(EventDB eventDB, CourseDesignator courseDesignator, ref Id<CourseControl> courseControl1, ref Id<CourseControl> courseControl2)
+        public static void FindControlInsertionPoint(EventDB eventDB, CourseDesignator courseDesignator, 
+                                                     ref Id<CourseControl> courseControl1, ref Id<CourseControl> courseControl2,
+                                                     ref LegInsertionLoc legInsertionLoc)
         {
             Id<Course> courseId = courseDesignator.CourseId;
 
@@ -869,12 +871,17 @@ namespace PurplePen
                 if (courseControl1.IsNone) {
                     // Empty course or adding at start.
                     courseControl2 = eventDB.GetCourse(courseId).firstCourseControl;
+                    legInsertionLoc = LegInsertionLoc.Normal;
                     return;
                 }
                 else {
                     // Adding after courseControl1.
                     CourseControl before = (CourseControl)eventDB.GetCourseControl(courseControl1);
                     courseControl2 = before.nextCourseControl;
+                    if (before.split && !before.loop)
+                        legInsertionLoc = LegInsertionLoc.PreSplit;
+                    else
+                        legInsertionLoc = LegInsertionLoc.Normal;
                     return;
                 }
             }

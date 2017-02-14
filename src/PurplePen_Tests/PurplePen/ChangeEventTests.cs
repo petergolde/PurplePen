@@ -1466,14 +1466,15 @@ namespace PurplePen.Tests
 
             Id<ControlPoint> controlId;
             Id<CourseControl> courseControlId;
+            LegInsertionLoc legInsertionLoc = LegInsertionLoc.Normal;
 
             controlId = QueryEvent.FindCode(eventDB, "290");
             Assert.IsFalse(QueryEvent.CourseUsesControl(eventDB, Designator(6), controlId));
 
             undomgr.BeginCommand(958, "Add Control");
             Id<CourseControl> courseControl1 = Id<CourseControl>.None, courseControl2 = Id<CourseControl>.None;
-            QueryEvent.FindControlInsertionPoint(eventDB, Designator(6), ref courseControl1, ref courseControl2);
-            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2, LegInsertionLoc.Normal);
+            QueryEvent.FindControlInsertionPoint(eventDB, Designator(6), ref courseControl1, ref courseControl2, ref legInsertionLoc);
+            courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, CourseId(6), courseControl1, courseControl2, legInsertionLoc);
             undomgr.EndCommand(958);
             eventDB.Validate();
 

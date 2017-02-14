@@ -2734,10 +2734,6 @@ namespace PurplePen
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
             Id<CourseControl> courseControl = selection.SelectedCourseControl;
-            if (courseControl.IsNone) {
-                reason = MiscText.VariationMustSelectControl;
-                return CommandStatus.Disabled;
-            }
 
             QueryEvent.AddVariationResult result = QueryEvent.CanAddVariation(eventDB, selection.ActiveCourseDesignator, courseControl);
             switch (result) {
@@ -3396,7 +3392,7 @@ namespace PurplePen
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
 
             // Get correct insertion point.
-            QueryEvent.FindControlInsertionPoint(eventDB, new CourseDesignator(courseId), ref courseControlDest1, ref courseControlDest2);
+            QueryEvent.FindControlInsertionPoint(eventDB, new CourseDesignator(courseId), ref courseControlDest1, ref courseControlDest2, ref legInsertionLoc);
 
             // Can't move a split control.
             if (eventDB.GetCourseControl(courseControlToMove).split) {

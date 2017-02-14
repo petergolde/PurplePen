@@ -239,7 +239,7 @@ namespace PurplePen
             }
 
             if (courseDesignator.IsNotAllControls)
-                QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2);
+                QueryEvent.FindControlInsertionPoint(eventDB, courseDesignator, ref courseControlId1, ref courseControlId2, ref legInsertionLoc);
         }
 
         public override MapViewer.DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)

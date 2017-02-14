@@ -798,6 +798,20 @@ namespace PurplePen
                             courseobj.courseControlId == selectedCourseControl) {
                         list.Add(courseobj);
                     }
+                    else if (selectionKind == SelectionKind.Control &&
+                             courseobj is TopologyDropTargetCourseObj && 
+                            courseobj.controlId == selectedControl &&
+                            courseobj.courseControlId == selectedCourseControl) 
+                    {
+                        // Possible drop target. Check find if it's the one we would insert at.
+                        Id<CourseControl> cc1 = selectedCourseControl, cc2 = Id<CourseControl>.None;
+                        LegInsertionLoc loc = LegInsertionLoc.Normal;
+                        QueryEvent.FindControlInsertionPoint(eventDB, activeCourseDesignator, ref cc1, ref cc2, ref loc);
+                        if (((TopologyDropTargetCourseObj)courseobj).courseControlId2 == cc2 &&
+                            ((TopologyDropTargetCourseObj)courseobj).InsertionLoc == loc) {
+                            list.Add(courseobj);
+                        }
+                    }
                     else if (selectionKind == SelectionKind.Leg &&
                             courseobj is LineCourseObj &&
                             courseobj.courseControlId == selectedCourseControl &&
@@ -808,8 +822,7 @@ namespace PurplePen
                             courseobj is TopologyDropTargetCourseObj &&
                             courseobj.courseControlId == selectedCourseControl &&
                             ((TopologyDropTargetCourseObj)courseobj).courseControlId2 == selectedCourseControl2 &&
-                            ((TopologyDropTargetCourseObj)courseobj).InsertionLoc == legInsertionLoc) 
-                    {
+                            ((TopologyDropTargetCourseObj)courseobj).InsertionLoc == legInsertionLoc) {
                         list.Add(courseobj);
                     }
                 }
