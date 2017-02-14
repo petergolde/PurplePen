@@ -1484,28 +1484,44 @@ namespace PurplePen
             }
         }
 
-        public static bool CanAddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
+        public enum AddVariationResult
+        {
+            OK,
+            CantAddInAllControls,
+            CantAddInScoreCourse,
+            NoControlSelected,
+            CantAddToLastControl,
+            CantAddToFinishControl,
+            VariationAlreadyExists
+        }
+
+        public static AddVariationResult CanAddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> courseControlId)
         {
             // Can't be all controls or score course.
             if (courseDesignator.IsAllControls)
-                return false;
+                return AddVariationResult.CantAddInAllControls;
             Id<Course> courseId = courseDesignator.CourseId;
             if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
-                return false;
+                return AddVariationResult.CantAddInScoreCourse;
 
             if (courseControlId.IsNone)
-                return false;
+                return AddVariationResult.NoControlSelected;
+
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            ControlPoint control = eventDB.GetControl(courseControl.control);
+
+            if (control.kind == ControlPointKind.Finish)
+                return AddVariationResult.CantAddToFinishControl;       // Can't add to finish control.
 
             // Must not be the last control in the course.
             if (QueryEvent.LastCourseControl(eventDB, courseId, false) == courseControlId)
-                return false;
+                return AddVariationResult.CantAddToFinishControl;
 
             // Can't already have a variation there.
-            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
             if (courseControl.split)
-                return false;
+                return AddVariationResult.VariationAlreadyExists;
 
-            return true;
+            return AddVariationResult.OK;
         }
     }
 

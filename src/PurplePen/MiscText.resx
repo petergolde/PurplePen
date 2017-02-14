@@ -558,4 +558,25 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="TooManyVariations" xml:space="preserve">
     <value>Too many total variations in this course. The number of distinct variations is limited to {0}.</value>
   </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Cannot add variation.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>A variation already exists at this control.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>A control or leg must be selected to add a variation.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>A variation cannot be added to a finish control.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>A variation cannot be added to the All Controls view.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>A variation cannot be added to a score course.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>A variation cannot be added to the last control. Add a finish control first.</value>
+  </data>
 </root>

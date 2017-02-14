@@ -268,6 +268,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cannot add variation..
+        /// </summary>
+        internal static string CannotAddVariation {
+            get {
+                return ResourceManager.GetString("CannotAddVariation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot create folder &apos;{0}&apos; for the following reason:.
         /// </summary>
         internal static string CannotCreateDirectory {
@@ -1285,6 +1294,60 @@ namespace PurplePen {
         internal static string UserDefined {
             get {
                 return ResourceManager.GetString("UserDefined", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A variation already exists at this control..
+        /// </summary>
+        internal static string VariationAlreadyExists {
+            get {
+                return ResourceManager.GetString("VariationAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A control or leg must be selected to add a variation..
+        /// </summary>
+        internal static string VariationMustSelectControl {
+            get {
+                return ResourceManager.GetString("VariationMustSelectControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A variation cannot be added to a finish control..
+        /// </summary>
+        internal static string VariationNotFinish {
+            get {
+                return ResourceManager.GetString("VariationNotFinish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A variation cannot be added to the All Controls view..
+        /// </summary>
+        internal static string VariationNotInAllControls {
+            get {
+                return ResourceManager.GetString("VariationNotInAllControls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A variation cannot be added to a score course..
+        /// </summary>
+        internal static string VariationNotInScoreCourse {
+            get {
+                return ResourceManager.GetString("VariationNotInScoreCourse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A variation cannot be added to the last control. Add a finish control first..
+        /// </summary>
+        internal static string VariationNotLastControl {
+            get {
+                return ResourceManager.GetString("VariationNotLastControl", resourceCulture);
             }
         }
         

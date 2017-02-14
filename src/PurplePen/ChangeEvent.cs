@@ -1737,7 +1737,7 @@ namespace PurplePen
 
         public static bool AddVariation(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> variationCourseControlId, bool loop, int numberOfForks)
         {
-            if (!QueryEvent.CanAddVariation(eventDB, courseDesignator, variationCourseControlId))
+            if (QueryEvent.CanAddVariation(eventDB, courseDesignator, variationCourseControlId) != QueryEvent.AddVariationResult.OK)
                 return false;
 
             CourseControl variationCourseControl = eventDB.GetCourseControl(variationCourseControlId);

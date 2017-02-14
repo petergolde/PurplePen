@@ -701,8 +701,6 @@ namespace PurplePen
             UpdateMenuItem(mapExchangeSeparateToolStripMenuItem, controller.CanAddMapExchangeSeparate());
             UpdateMenuItem(mapExchangeToolStripMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
-            UpdateMenuItem(addVariationMenu, controller.CanAddVariation());
-            UpdateMenuItem(addVariationToolStripButton, controller.CanAddVariation());
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
             UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
 
@@ -1126,6 +1124,12 @@ namespace PurplePen
 
         private void addVariationMenu_Click(object sender, EventArgs e)
         {
+            string reason;
+            if (controller.CanAddVariation(out reason) != CommandStatus.Enabled) {
+                ErrorMessage(reason);
+                return;                
+            }
+
             AddForkDialog addForkDialog = new AddForkDialog();
 
             DialogResult result = addForkDialog.ShowDialog(this);

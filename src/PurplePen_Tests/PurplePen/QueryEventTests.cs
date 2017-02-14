@@ -1899,29 +1899,29 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\variations.ppen");
 
-            bool result = QueryEvent.CanAddVariation(eventDB, CourseDesignator.AllControls, CourseControlId(2));
-            Assert.IsFalse(result);
+            QueryEvent.AddVariationResult result = QueryEvent.CanAddVariation(eventDB, CourseDesignator.AllControls, CourseControlId(2));
+            Assert.AreEqual(QueryEvent.AddVariationResult.CantAddInAllControls, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(3));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(2));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(11));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.CantAddToFinishControl, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(4));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(25));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(19));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
             result = QueryEvent.CanAddVariation(eventDB, Designator(1), CourseControlId(1));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
             VariationInfo.VariationPath variationPath = new VariationInfo.VariationPath(new[] {
                 CourseControlId(2),
@@ -1937,25 +1937,25 @@ namespace PurplePen.Tests
             CourseDesignator designator = new CourseDesignator(CourseId(1), variationInfo);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(3));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(2));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(11));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.CantAddToFinishControl, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(4));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(25));
-            Assert.IsFalse(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.VariationAlreadyExists, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(19));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
             result = QueryEvent.CanAddVariation(eventDB, designator, CourseControlId(1));
-            Assert.IsTrue(result);
+            Assert.AreEqual(QueryEvent.AddVariationResult.OK, result);
 
 
         }

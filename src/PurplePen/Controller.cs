@@ -2728,19 +2728,36 @@ namespace PurplePen
         }
 
         // Can we add a variation.
-        public CommandStatus CanAddVariation()
+        public CommandStatus CanAddVariation(out string reason)
         {
+            reason = null;
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
-            // Must be a selected control.
-            if (selection.SelectionKind != SelectionMgr.SelectionKind.Control && selection.SelectionKind != SelectionMgr.SelectionKind.MapExchangeAtControl)
-                return CommandStatus.Disabled;
-
             Id<CourseControl> courseControl = selection.SelectedCourseControl;
-            if (courseControl.IsNone)
+            if (courseControl.IsNone) {
+                reason = MiscText.VariationMustSelectControl;
                 return CommandStatus.Disabled;
+            }
 
-            return QueryEvent.CanAddVariation(eventDB, selection.ActiveCourseDesignator, courseControl) ? CommandStatus.Enabled : CommandStatus.Disabled;
+            QueryEvent.AddVariationResult result = QueryEvent.CanAddVariation(eventDB, selection.ActiveCourseDesignator, courseControl);
+            switch (result) {
+                case QueryEvent.AddVariationResult.CantAddInAllControls:
+                    reason = MiscText.VariationNotInAllControls; break;
+                case QueryEvent.AddVariationResult.CantAddInScoreCourse:
+                    reason = MiscText.VariationNotInScoreCourse;  break;
+                case QueryEvent.AddVariationResult.NoControlSelected:
+                    reason = MiscText.VariationMustSelectControl;  break;
+                case QueryEvent.AddVariationResult.CantAddToLastControl:
+                    reason = MiscText.VariationNotLastControl;  break;
+                case QueryEvent.AddVariationResult.CantAddToFinishControl:
+                    reason = MiscText.VariationNotFinish;  break;
+                case QueryEvent.AddVariationResult.VariationAlreadyExists:
+                    reason = MiscText.VariationAlreadyExists;  break;
+                default:
+                    reason = MiscText.CannotAddVariation; break;
+            }
+
+            return (result == QueryEvent.AddVariationResult.OK) ? CommandStatus.Enabled : CommandStatus.Disabled;
         }
 
         public void AddVariation(bool loop, int numberOfForks)
