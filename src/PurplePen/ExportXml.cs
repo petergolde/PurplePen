@@ -532,12 +532,13 @@ namespace PurplePen
 
             switch (controlKind) {
                 case ControlPointKind.Start:
-                case ControlPointKind.MapExchange:
                     elementName = "StartPoint"; break;
                 case ControlPointKind.Normal:
                     elementName = "Control"; break;
                 case ControlPointKind.Finish:
                     elementName = "FinishPoint"; break;
+
+                case ControlPointKind.MapExchange:  // skip map exchanges.
                 default:
                     return;
             }
@@ -604,7 +605,6 @@ namespace PurplePen
                     }
                     break;
 
-                case ControlPointKind.MapExchange:
                 case ControlPointKind.Normal:
                     xmlWriter.WriteStartElement("CourseControl");
 
@@ -626,6 +626,8 @@ namespace PurplePen
                     xmlWriter.WriteEndElement();         // "CourseControl"
                     break;
 
+                case ControlPointKind.MapExchange:
+                    // Intentionally skip map exchanges.
                 case ControlPointKind.CrossingPoint:
                     // Intentionally skip crossing points.
                     break;

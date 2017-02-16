@@ -2,8 +2,8 @@
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2013-03-29</Date>
-    <Clock>13:31</Clock>
+    <Date>2017-02-16</Date>
+    <Clock>12:51</Clock>
   </ModifyDate>
   <Map>
     <Scale>10000</Scale>
@@ -16,10 +16,6 @@
   <StartPoint>
     <StartPointCode>STA2</StartPointCode>
     <MapPosition x="41.67" y="41.54" />
-  </StartPoint>
-  <StartPoint>
-    <StartPointCode>XCHG1</StartPointCode>
-    <MapPosition x="115.6" y="-11.8" />
   </StartPoint>
   <Control>
     <ControlCode>36</ControlCode>
@@ -357,46 +353,41 @@
       </CourseControl>
       <CourseControl>
         <Sequence>10</Sequence>
-        <ControlCode>XCHG1</ControlCode>
-        <LegLength>208</LegLength>
+        <ControlCode>37</ControlCode>
+        <LegLength>336</LegLength>
       </CourseControl>
       <CourseControl>
         <Sequence>11</Sequence>
-        <ControlCode>37</ControlCode>
-        <LegLength>128</LegLength>
-      </CourseControl>
-      <CourseControl>
-        <Sequence>12</Sequence>
         <ControlCode>36</ControlCode>
         <LegLength>298</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>13</Sequence>
+        <Sequence>12</Sequence>
         <ControlCode>39</ControlCode>
         <LegLength>316</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>14</Sequence>
+        <Sequence>13</Sequence>
         <ControlCode>43</ControlCode>
         <LegLength>453</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>15</Sequence>
+        <Sequence>14</Sequence>
         <ControlCode>54</ControlCode>
         <LegLength>401</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>16</Sequence>
+        <Sequence>15</Sequence>
         <ControlCode>41</ControlCode>
         <LegLength>258</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>17</Sequence>
+        <Sequence>16</Sequence>
         <ControlCode>42</ControlCode>
         <LegLength>227</LegLength>
       </CourseControl>
       <CourseControl>
-        <Sequence>18</Sequence>
+        <Sequence>17</Sequence>
         <ControlCode>38</ControlCode>
         <LegLength>207</LegLength>
       </CourseControl>

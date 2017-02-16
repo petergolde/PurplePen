@@ -2,8 +2,8 @@
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2016-10-31</Date>
-    <Clock>17:46</Clock>
+    <Date>2017-02-16</Date>
+    <Clock>12:51</Clock>
   </ModifyDate>
   <Map>
     <Scale>10000</Scale>
@@ -12,10 +12,6 @@
   <StartPoint>
     <StartPointCode>STA1</StartPointCode>
     <MapPosition x="2.78" y="4.89" />
-  </StartPoint>
-  <StartPoint>
-    <StartPointCode>XCHG1</StartPointCode>
-    <MapPosition x="105.44" y="32.15" />
   </StartPoint>
   <Control>
     <ControlCode>31</ControlCode>
@@ -125,16 +121,11 @@
       </CourseControl>
       <CourseControl>
         <Sequence>4</Sequence>
-        <ControlCode>XCHG1</ControlCode>
-        <LegLength>181</LegLength>
+        <ControlCode>36</ControlCode>
+        <LegLength>522</LegLength>
       </CourseControl>
       <CourseControl>
         <Sequence>5</Sequence>
-        <ControlCode>36</ControlCode>
-        <LegLength>342</LegLength>
-      </CourseControl>
-      <CourseControl>
-        <Sequence>6</Sequence>
         <ControlCode>49</ControlCode>
         <LegLength>513</LegLength>
       </CourseControl>
