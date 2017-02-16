@@ -381,8 +381,23 @@ namespace PurplePen
             else
                 distanceText = "";
 
+
             // Box 1: directive graphics.
-            line.boxes[0] = symbolDB[control.symbolIds[0]];
+            string directiveId = control.symbolIds[0];
+
+            // Based on the leg flagging, we may modify the finish directive symbol.
+            if (control.kind == ControlPointKind.Finish && (kind == CourseView.CourseViewKind.Normal || kind == CourseView.CourseViewKind.AllVariations)) {
+                FlaggingKind flagging = FlaggingKind.None;
+                if (controlView != null && controlViewPrev != null) {
+                    flagging = QueryEvent.GetLegFlagging(eventDB, controlViewPrev.controlId, controlView.controlId);
+                }
+                if (flagging == FlaggingKind.All)
+                    directiveId = "14.1";  // If flagging is All, then finish id must be flagging to finish.
+                else if (flagging == FlaggingKind.End)
+                    directiveId = "14.2";  // If flagging is Partial, then finish id must be flagging to funnel.
+            }
+
+            line.boxes[0] = symbolDB[directiveId];
 
             // Box 2: distance for the control, if any.
             if (control.kind == ControlPointKind.Finish)

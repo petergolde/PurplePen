@@ -2301,8 +2301,8 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(5), ControlId(6));
-            Assert.IsTrue(legId.IsNone);
-            Assert.AreEqual("14.1", eventDB.GetControl(ControlId(6)).symbolIds[0]);
+            Assert.IsFalse(legId.IsNone);
+            Assert.AreNotEqual("14.1", eventDB.GetControl(ControlId(6)).symbolIds[0]);
             Assert.AreEqual(FlaggingKind.All, QueryEvent.GetLegFlagging(eventDB, ControlId(5), ControlId(6)));
             
             undomgr.BeginCommand(4112, "Change flagging");
@@ -2351,7 +2351,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(5), ControlId(6));
-            Assert.AreEqual("14.2", eventDB.GetControl(ControlId(6)).symbolIds[0]);
+            Assert.AreNotEqual("14.2", eventDB.GetControl(ControlId(6)).symbolIds[0]);
             Assert.AreEqual(FlaggingKind.End, QueryEvent.GetLegFlagging(eventDB, ControlId(5), ControlId(6)));
 
         }

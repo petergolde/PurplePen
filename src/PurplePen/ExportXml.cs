@@ -367,7 +367,7 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.Finish:
-                    // UNDONE: special instruction for taped route
+                    // UNDONE: handle case based on flagging of the leg.
                     xmlWriter.WriteAttributeString("type", "Finish");
                     if (eventDB.GetControl(controlView.controlId).symbolIds?[0] == "14.1")
                         xmlWriter.WriteAttributeString("specialInstruction", "TapedRoute");

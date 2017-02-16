@@ -1,0 +1,18 @@
+If finish symbol is "flagging to finish", then show dashed line on last leg.
+If finish symbol is other, show dashed last based on flagging that leg has.
+
+If flagging on leg is all flagged, show "flagging to end" symbol for finihs.
+If flagging on leg is end flagged, show "flagging to funnel" symbol for finish.
+
+When changing finish:
+  - If on all controls, change symbol to indicated. Don't update any flagging.
+  - If on a course:
+       If changing to "navigate to finish":
+          - change flagging on last leg(s) to none.
+          - update symbol.
+       Else if changing to "flagging to finish"
+          - change flagging on last leg(s) to all.
+          - DONT update symbol.
+       else if changing to "navigate to funnel"
+          - if flagging on last leg(s) is all, change to none.
+          - update symbol.

@@ -1270,12 +1270,6 @@ namespace PurplePen
             ControlPoint control1 = eventDB.GetControl(controlId1);
             ControlPoint control2 = eventDB.GetControl(controlId2);
 
-            if (control2.kind == ControlPointKind.Finish && flagging == FlaggingKind.All) {
-                // If the leg ends in the finish control, we can set all flagging by just changing the finish control symbol.
-                ChangeDescriptionSymbol(eventDB, controlId2, 0, "14.1");
-                return;
-            }
-
             // We need a leg object. Create a new one or get the existing one.
             Id<Leg> legId = QueryEvent.FindLeg(eventDB, controlId1, controlId2);
             Leg leg;
@@ -1316,10 +1310,6 @@ namespace PurplePen
                 if ((flagging == FlaggingKind.None || flagging == FlaggingKind.Begin) && control2.symbolIds[0] == "14.1") {
                     // Remove the "flagged from last control symbol" and change it to "no flagging".
                     ChangeDescriptionSymbol(eventDB, controlId2, 0, "14.3");
-                }
-                else if (flagging == FlaggingKind.End) {
-                    // If partial flagging on the end part of the leg, change the symbol to finish funnel.
-                    ChangeDescriptionSymbol(eventDB, controlId2, 0, "14.2");
                 }
             }
 

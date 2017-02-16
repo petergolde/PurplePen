@@ -3152,8 +3152,20 @@ namespace PurplePen
                     Debug.Assert(newValue is Symbol);
                     Debug.Assert(box == 0);
 
+                    Id<ControlPoint> controlId = selectionMgr.ActiveDescription[line].controlId;
+
                     undoMgr.BeginCommand(102, CommandNameText.ChangeSymbol);
-                    ChangeEvent.ChangeDescriptionSymbol(eventDB, selectionMgr.ActiveDescription[line].controlId, 0, ((Symbol)newValue).Id);
+
+                    // If changing the directive on the finish, this may update flagging instead.
+                    bool updateControlSymbol = true;
+                    if (eventDB.GetControl(controlId).kind == ControlPointKind.Finish && selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls) {
+                        updateControlSymbol = UpdateFinishFlagging(controlId, ((Symbol)newValue).Id);
+                    }
+
+                    if (updateControlSymbol) { 
+                        ChangeEvent.ChangeDescriptionSymbol(eventDB, selectionMgr.ActiveDescription[line].controlId, 0, ((Symbol)newValue).Id);
+                    }
+
                     undoMgr.EndCommand(102);
                     break;
 
@@ -3205,6 +3217,46 @@ namespace PurplePen
                     
                     break;
             }
+        }
+
+        private bool UpdateFinishFlagging(Id<ControlPoint> finishId, string newSymbolId)
+        {
+            // On all controls, just update the finish symbol according to what was chosen.
+            CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
+            bool modifySymbolId = true;
+
+            if (activeCourseDesignator.IsAllControls)
+                return true;
+
+            // Otherwise, on courses, we need to go through each leg to find leg(s) that end on the finish.
+            foreach (QueryEvent.LegInfo legInfo in QueryEvent.EnumLegs(eventDB, activeCourseDesignator).ToList()) {
+                if (eventDB.GetCourseControl(legInfo.courseControlId2).control == finishId) {
+                    Id<ControlPoint> control1 = eventDB.GetCourseControl(legInfo.courseControlId1).control;
+                    Id<ControlPoint> control2 = eventDB.GetCourseControl(legInfo.courseControlId2).control;
+                    if (newSymbolId == "14.1") {
+                        // Taped route to finish.
+                        ChangeEvent.ChangeFlagging(eventDB, control1, control2, FlaggingKind.All);
+
+                        // Just update the flagging, don't change the symbol. This allows per-course flagging.
+                        modifySymbolId = false;
+                    }
+                    else if (newSymbolId == "14.2") {
+                        // navigate to finish funnel
+                        Id<Leg> legId = QueryEvent.FindLeg(eventDB, control1, control2);
+                        if (legId.IsNotNone && eventDB.GetLeg(legId).flagging == FlaggingKind.All) {
+                            ChangeEvent.ChangeFlagging(eventDB, control1, control2, FlaggingKind.None);
+                        }
+                    }
+                    else if (newSymbolId == "14.3") {
+                        ChangeEvent.ChangeFlagging(eventDB, control1, control2, FlaggingKind.None);
+                    }
+                    else {
+                        Debug.Fail("Unexpected symbol id");
+                    }
+                }
+            }
+
+            return modifySymbolId;
         }
 
         // Can we add a map exchange at a control?
