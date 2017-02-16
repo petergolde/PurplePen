@@ -1544,6 +1544,105 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void CourseSummary2()
+        {
+            Setup(@"reports\relay1.ppen");
+
+            Reports reports = new Reports();
+            string result = reports.CreateCourseSummaryReport(eventDB);
+
+            Assert.AreEqual(@"
+  <h1>Course Summary for Test Event</h1>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol rightalign"" />
+    <col class=""middlecol rightalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Course</th>
+      <th>Controls</th>
+      <th>Length</th>
+      <th>Climb</th>
+    </tr>
+    <tr>
+      <td>Relay</td>
+      <td>5–7</td>
+      <td>3.3–4.1 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    AD</td>
+      <td>6</td>
+      <td>3.7 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    AE</td>
+      <td>6</td>
+      <td>3.5 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    AF</td>
+      <td>6</td>
+      <td>4.1 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    BD</td>
+      <td>7</td>
+      <td>3.8 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    BE</td>
+      <td>7</td>
+      <td>3.6 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    BF</td>
+      <td>7</td>
+      <td>4.1 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    CD</td>
+      <td>5</td>
+      <td>3.5 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    CE</td>
+      <td>5</td>
+      <td>3.3 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>    CF</td>
+      <td>5</td>
+      <td>3.9 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>Normal</td>
+      <td>2</td>
+      <td>2.2 km</td>
+      <td />
+    </tr>
+    <tr>
+      <td>Score</td>
+      <td>4</td>
+      <td />
+      <td />
+    </tr>
+  </table>
+
+", result);
+
+        }
+
+        [TestMethod]
         public void LegLength()
         {
             Setup(@"reports\marymoor5.ppen");

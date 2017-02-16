@@ -281,33 +281,52 @@ namespace PurplePen
 
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
-                BeginTableRow();
-                CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
+                CreateSummaryRow(eventDB, new CourseDesignator(courseId));
 
-                // Course name
-                WriteTableCell(courseView.CourseName);
-
-                // # of normal controls
-                WriteTableCell(Util.RangeIfNeeded(courseView.MinNormalControls, courseView.MaxNormalControls)); 
-
-                // Length (empty for score course)
-                if (courseView.Kind == CourseView.CourseViewKind.Score)
-                    WriteTableCell("");
-                else
-                    WriteTableCell(Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1));
-
-                // Climb (empty for score course or no climb defined)
-                if (courseView.Kind == CourseView.CourseViewKind.Score || courseView.TotalClimb < 0) 
-                    WriteTableCell("");
-                else
-                    WriteTableCell(Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0) + " m");
-
-                EndTableRow();
+                if (QueryEvent.HasVariations(eventDB, courseId)) {
+                    foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, courseId)) {
+                        CreateSummaryRow(eventDB, new CourseDesignator(courseId, variationInfo));
+                    }
+                }
             }
-
             EndTable();
 
             return FinishReport();
+        }
+
+        void CreateSummaryRow(EventDB eventDB, CourseDesignator designator)
+        {
+            BeginTableRow();
+            CourseView courseView = CourseView.CreateViewingCourseView(eventDB, designator);
+
+            // Get the name, indenting variations.
+            string name;
+            if (designator.IsVariation) {
+                name = "\u00a0\u00a0\u00a0\u00a0" + designator.VariationInfo.CodeString;
+            }
+            else {
+                name = courseView.CourseName;
+            }
+
+            // Course name
+            WriteTableCell(name);
+
+            // # of normal controls
+            WriteTableCell(Util.RangeIfNeeded(courseView.MinNormalControls, courseView.MaxNormalControls));
+
+            // Length (empty for score course)
+            if (courseView.Kind == CourseView.CourseViewKind.Score)
+                WriteTableCell("");
+            else
+                WriteTableCell(Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1));
+
+            // Climb (empty for score course or no climb defined)
+            if (courseView.Kind == CourseView.CourseViewKind.Score || courseView.TotalClimb < 0)
+                WriteTableCell("");
+            else
+                WriteTableCell(Convert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0) + " m");
+
+            EndTableRow();
         }
 
         public string CreateLoadReport(EventDB eventDB)
