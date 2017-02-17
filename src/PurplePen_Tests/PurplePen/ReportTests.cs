@@ -1820,6 +1820,209 @@ namespace PurplePen.Tests
   </table>
 
 ";
+            if (expected != result) {
+                TestUtil.WriteStringDifference(expected, result);
+            }
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void LegLength2()
+        {
+            Setup(@"reports\relay2.ppen");
+
+            Reports reports = new Reports();
+            string result = reports.CreateLegLengthReport(eventDB);
+
+            string expected = @"
+  <h1>Leg Length Report for rgerg</h1>
+  <h2>Relay (5–7 controls, 3.2–3.8 km)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+    <tr>
+      <td />
+      <td>Start–31</td>
+      <td>974 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–34</td>
+      <td>319 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–35</td>
+      <td>206 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–32</td>
+      <td>532 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>35–36</td>
+      <td>209 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>36–32</td>
+      <td>381 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>34–32</td>
+      <td>396 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>32–33</td>
+      <td>412 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–38</td>
+      <td>395 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–39</td>
+      <td>339 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–40</td>
+      <td>627 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>39–37</td>
+      <td>359 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>40–37</td>
+      <td>423 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>38–37</td>
+      <td>613 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>37–Finish</td>
+      <td>595 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>452 m</td>
+    </tr>
+  </table>
+  <h2>RelayCross (5–7 controls, 3.3–4.2 km)</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol leftalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Controls</th>
+      <th>Length</th>
+    </tr>
+    <tr>
+      <td />
+      <td>Start–31</td>
+      <td>992 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–34</td>
+      <td>319 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–35</td>
+      <td>206 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>31–32</td>
+      <td>533 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>35–36</td>
+      <td>209 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>36–32</td>
+      <td>381 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>34–32</td>
+      <td>396 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>32–33</td>
+      <td>412 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–38</td>
+      <td>395 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–39</td>
+      <td>339 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>33–40</td>
+      <td>627 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>39–37</td>
+      <td>450 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>40–37</td>
+      <td>734 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>38–37</td>
+      <td>620 m</td>
+    </tr>
+    <tr>
+      <td />
+      <td>37–Finish</td>
+      <td>595 m</td>
+    </tr>
+    <tr class=""summaryrow"">
+      <td colspan=""2"">Average</td>
+      <td>480 m</td>
+    </tr>
+  </table>
+
+";
+            if (expected != result) {
+                TestUtil.WriteStringDifference(expected, result);
+            }
+
             Assert.AreEqual(expected, result);
         }
 

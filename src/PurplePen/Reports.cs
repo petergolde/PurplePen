@@ -574,46 +574,75 @@ namespace PurplePen
             return list.ToArray();
         }
 
+        private float WriteLegLengthRow(EventDB eventDB, CourseView courseView, int controlIndex, int legIndex, int legNumber)
+        {
+            float distance = 0;
+
+            int firstIndex = controlIndex;
+            int nextIndex;
+
+            for (;;) {
+                CourseView.ControlView controlView = courseView.ControlViews[controlIndex];
+                ControlPointKind kind = eventDB.GetControl(controlView.controlId).kind;
+                nextIndex = controlView.legTo[legIndex];
+                distance += controlView.legLength[legIndex];
+
+                // Continue through crossing points that have a unique next control.
+                if (nextIndex < 0)
+                    break;
+                if (eventDB.GetControl(courseView.ControlViews[nextIndex].controlId).kind != ControlPointKind.CrossingPoint)
+                    break;
+                if (courseView.ControlViews[nextIndex].legTo == null)
+                    break;
+                if (courseView.ControlViews[nextIndex].legTo.Length != 1)
+                    break;
+
+                controlIndex = nextIndex;
+                legIndex = 0;
+            }
+
+            if (distance > 0 && nextIndex >= 0) {
+                Id<ControlPoint> firstControlId = courseView.ControlViews[firstIndex].controlId;
+                Id<ControlPoint> secondControlId = courseView.ControlViews[nextIndex].controlId;
+
+                string legText = string.Format("{0}\u2013{1}", Util.ControlPointName(eventDB, firstControlId, NameStyle.Medium), Util.ControlPointName(eventDB, secondControlId, NameStyle.Medium));
+                string legNumberText = courseView.Kind == CourseView.CourseViewKind.Normal ? Convert.ToString(legNumber) : "";
+                WriteTableRow(legNumberText, legText, string.Format("{0} m", Math.Round(distance)));
+
+            }
+            return distance;
+        }
+
         private void WriteLegLengthTable(EventDB eventDB, CourseView courseView)
         {
             BeginTable("", 3, "leftalign", "leftalign", "rightalign");
             WriteTableHeaderRow(ReportText.ColumnHeader_Leg, ReportText.ColumnHeader_Controls, ReportText.ColumnHeader_Length);
 
-            // Go through the control views.
-            int controlViewIndex = 0;
-            float distanceThisLeg = 0;
-            float totalLegs = 0;
             int legNumber = 1;
-            Id<ControlPoint> controlIdPrev = Id<ControlPoint>.None;
+            float totalLength = 0;
 
-            while (controlViewIndex >= 0 && controlViewIndex < courseView.ControlViews.Count) {
-                CourseView.ControlView controlView = courseView.ControlViews[controlViewIndex];
-                ControlPointKind kind = eventDB.GetControl(controlView.controlId).kind;
-
-                // Don't report crossing points.
-                if (kind != ControlPointKind.CrossingPoint) {
-                    if (controlIdPrev.IsNotNone) {
-                        string legText = string.Format("{0}\u2013{1}", Util.ControlPointName(eventDB, controlIdPrev, NameStyle.Medium), Util.ControlPointName(eventDB, controlView.controlId, NameStyle.Medium));
-                        WriteTableRow(Convert.ToString(legNumber), legText, string.Format("{0} m", Math.Round(distanceThisLeg)));
-                        totalLegs += distanceThisLeg;
-                        legNumber += 1;
+            for (int controlIndex = 0; controlIndex < courseView.ControlViews.Count; ++controlIndex) {
+                CourseView.ControlView controlView = courseView.ControlViews[controlIndex];
+                if (controlView.legTo != null) {
+                    for (int legIndex = 0; legIndex < controlView.legTo.Length; ++legIndex) {
+                        if (eventDB.GetControl(controlView.controlId).kind != ControlPointKind.CrossingPoint ||
+                            controlView.legTo.Length > 1) 
+                        {
+                            float distance = WriteLegLengthRow(eventDB, courseView, controlIndex, legIndex, legNumber);
+                            if (distance > 0) {
+                                totalLength += distance;
+                                legNumber += 1;
+                            }
+                        }
                     }
-
-                    controlIdPrev = controlView.controlId;
-                    distanceThisLeg = 0;
                 }
-
-                if (controlView.legLength != null)
-                    distanceThisLeg += controlView.legLength[0];
-
-                controlViewIndex = courseView.GetNextControl(controlViewIndex);
             }
 
             // Write average row
             if (legNumber > 1) {
                 BeginTableRow("summaryrow");
                 WriteSpannedTableCell(2, ReportText.LegLength_Average);
-                WriteTableCell(string.Format("{0} m", Convert.ToString(Math.Round(totalLegs / (float) (legNumber - 1)))));
+                WriteTableCell(string.Format("{0} m", Convert.ToString(Math.Round(totalLength / (float) (legNumber - 1)))));
                 EndTableRow();
             }
 
